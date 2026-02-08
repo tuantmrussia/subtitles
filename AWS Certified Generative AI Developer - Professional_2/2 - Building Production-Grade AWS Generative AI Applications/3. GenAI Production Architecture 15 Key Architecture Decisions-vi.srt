@@ -1,0 +1,560 @@
+1
+00:00:00,000 --> 00:00:05,340
+Bây giờ, trước khi chúng ta đi đến các quyết định kiến trúc, xin hãy nhớ rằng xây dựng bất kỳ sản phẩm nào
+
+2
+00:00:05,340 --> 00:00:13,280
+Các ứng dụng di truyền học cuối cùng là về chất lượng cân bằng, độ dẻo và chi phí.
+
+3
+00:00:13,280 --> 00:00:19,880
+Vì vậy, điều này đôi khi được gọi là Gen Ai Trilema, nơi mà mục tiêu của bạn là xây dựng
+
+4
+00:00:19,880 --> 00:00:24,760
+là ứng dụng chất lượng tốt nhất với chi phí thấp nhất và tiện lợi thấp nhất.
+
+5
+00:00:24,760 --> 00:00:30,120
+Bây giờ, nếu chúng ta chỉ cần nghĩ về trường hợp sử dụng mà chúng ta vừa thảo luận về xây dựng Gen Ai
+
+6
+00:00:30,120 --> 00:00:36,440
+Trợ lý năng lượng SME, làm tóm tắt cho việc tóm tắt, chúng ta cần
+
+7
+00:00:36,440 --> 00:00:39,880
+một mô hình nền tảng hoặc một mô hình ngôn ngữ lớn.
+
+8
+00:00:39,880 --> 00:00:45,000
+Bây giờ, chỉ để giúp bạn tương quan, nếu bạn đã sử dụng chat GPT trước và hãy để chúng tôi nói cho bạn
+
+9
+00:00:45,000 --> 00:00:51,600
+Gửi cho nó một công việc để tóm tắt một tài liệu dài, nó sẽ sử dụng một mô hình nền tảng hoặc một lớn
+
+10
+00:00:51,600 --> 00:00:53,800
+Mô hình ngôn ngữ đằng sau hiện trường.
+
+11
+00:00:53,800 --> 00:01:00,560
+Bạn có thể thấy ở đây chat GPT là một ứng dụng, nhưng nó sử dụng mô hình GPT 5.2 để làm việc.
+
+12
+00:01:00,560 --> 00:01:01,560
+nhiệm vụ.
+
+13
+00:01:01,560 --> 00:01:07,640
+Bây giờ, câu hỏi nằm trong AWS, đó là dịch vụ đúng cung cấp cho bạn truy cập những
+
+14
+00:01:07,640 --> 00:01:10,680
+Mô hình nền tảng hoặc mô hình ngôn ngữ lớn.
+
+15
+00:01:10,680 --> 00:01:17,520
+Vì vậy, đó là quyết định đầu tiên của bạn, sự lựa chọn dịch vụ AWS cung cấp cho bạn năng lực Gen Ai.
+
+16
+00:01:17,520 --> 00:01:23,760
+Trong AWS, có hai dịch vụ quan trọng, một là Amazon Federal và nó là tàu bay AWS
+
+17
+00:01:23,760 --> 00:01:29,400
+phục vụ cho Gen Ai, nhưng chúng tôi cũng có Saage Maker Jump start.
+
+18
+00:01:29,400 --> 00:01:33,400
+Và khi chúng tôi đi dọc theo, chúng tôi sẽ lặn sâu vào cả Amazon Federal và SaageMaker
+
+19
+00:01:33,400 --> 00:01:38,560
+Jump start, xem xét các yếu tố mà chúng tôi chọn Amazon Federal hoặc SageMaker Jump start.
+
+20
+00:01:38,560 --> 00:01:43,600
+Bây giờ, chúng ta hãy giả sử cho một trường hợp sử dụng dựa trên một số yếu tố, bạn đã chọn Amazon
+
+21
+00:01:43,600 --> 00:01:44,600
+Tốt hơn.
+
+22
+00:01:44,600 --> 00:01:50,680
+Điều tiếp theo bạn phải làm là chọn mô hình nền tảng đúng hoặc ngôn ngữ lớn
+
+23
+00:01:50,680 --> 00:01:51,680
+Người mẫu.
+
+24
+00:01:51,680 --> 00:01:57,120
+Vì vậy, đó là tiêu chuẩn quyết định thứ hai của chúng tôi, sự lựa chọn của các mô hình nền tảng hoặc lớn
+
+25
+00:01:57,120 --> 00:01:58,120
+Mô hình ngôn ngữ.
+
+26
+00:01:58,120 --> 00:02:04,120
+Bây giờ, chúng tôi đã chọn Amazon betterock, Amazon betterock cung cấp hơn 100 khác nhau
+
+27
+00:02:04,120 --> 00:02:05,120
+Người mẫu.
+
+28
+00:02:05,120 --> 00:02:12,480
+Vì vậy, bạn sẽ có mô hình từ Song Tử, Mây, Open Ai từ chính Amazon, Noa
+
+29
+00:02:12,480 --> 00:02:15,560
+Pro v.v.
+
+30
+00:02:15,560 --> 00:02:18,200
+Vì vậy, bạn cần phải suy nghĩ về những gì là trường hợp sử dụng của bạn và những gì có thể là nền tảng đúng
+
+31
+00:02:18,200 --> 00:02:19,200
+Người mẫu.
+
+32
+00:02:19,200 --> 00:02:21,000
+Vì vậy, chúng tôi sẽ xem xét tất cả các xem xét.
+
+33
+00:02:21,000 --> 00:02:27,240
+Bây giờ, chúng ta hãy nói rằng chúng tôi chọn dịch vụ AWS, chúng tôi đã chọn các mô hình nền tảng và bây giờ
+
+34
+00:02:27,240 --> 00:02:35,120
+Người dùng cuối cùng của chúng tôi, SME gửi hình ảnh thiết bị và bản ghi phát ra các mô hình nền tảng của chúng tôi
+
+35
+00:02:35,120 --> 00:02:37,240
+để tóm tắt lại.
+
+36
+00:02:37,240 --> 00:02:42,520
+Vì vậy, bây giờ, ngay cả trước khi thiết bị dữ liệu và bản ghi vân vân đi đến mô hình nền tảng này cho
+
+37
+00:02:42,520 --> 00:02:51,560
+Tóm tắt, đối với các tổ chức lớn, an toàn, an ninh, chịu trách nhiệm với A - hi là rất quan trọng
+
+38
+00:02:51,560 --> 00:02:55,720
+bởi vì chúng phải chịu trách nhiệm, lặp đi lặp lại và vân vân.
+
+39
+00:02:55,720 --> 00:03:02,200
+Vì vậy, thỉnh thoảng có khả năng một nhân viên lừa đảo có thể gửi một số nội dung độc hại,
+
+40
+00:03:02,200 --> 00:03:07,040
+lạm dụng bạn thỏa mãn với nền tảng này mô hình hoặc có thể hỏi, chúng ta hãy nói câu hỏi.
+
+41
+00:03:07,040 --> 00:03:13,400
+Làm thế nào để tôi cướp ngân hàng và tổ chức mô hình có thể trả lời câu hỏi đó, nếu không
+
+42
+00:03:13,400 --> 00:03:15,760
+Đủ đồ bảo vệ rồi.
+
+43
+00:03:15,760 --> 00:03:21,880
+Vì vậy, đó là lý do tại sao có thanh quản bảo vệ mà không chỉ bộ lọc đầu vào người dùng đi đến nền tảng
+
+44
+00:03:21,880 --> 00:03:29,720
+Mô hình nhưng cũng là phản ứng từ mô hình nền tảng để xây dựng một ứng dụng Ai có trách nhiệm an toàn
+
+45
+00:03:29,720 --> 00:03:36,520
+Và đó là nơi mà quyết định thứ ba của chúng tôi đi vào chơi trên làm thế nào bạn có thể thực hiện các trục bảo vệ
+
+46
+00:03:36,520 --> 00:03:41,680
+An toàn và một nguyên tắc Ai chịu trách nhiệm và đây là một chủ đề cực kỳ quan trọng không chỉ
+
+47
+00:03:41,680 --> 00:03:47,640
+từ bài kiểm tra nhưng cũng từ việc xây dựng ứng dụng chấm điểm thế giới thực.
+
+48
+00:03:47,640 --> 00:03:52,560
+Vì vậy, đó là quyết định thứ ba mà bạn cần phải suy nghĩ về dựa trên một trường hợp sử dụng
+
+49
+00:03:52,560 --> 00:03:58,320
+Có thể là những thanh gươm bảo vệ và những thực hành có trách nhiệm mà bạn sẽ thực hiện.
+
+50
+00:03:58,320 --> 00:04:03,240
+Bây giờ, xem xét tiếp theo bạn cần phải suy nghĩ về kỹ thuật nhắc.
+
+51
+00:04:03,240 --> 00:04:07,320
+Vì vậy, trước đó chúng tôi đã thảo luận về chi phí chất lượng và độ chịu đựng.
+
+52
+00:04:07,320 --> 00:04:12,640
+Vì vậy, làm thế nào chúng tôi cải thiện chất lượng của các phản ứng được tạo ra bởi các mô hình nền tảng cho
+
+53
+00:04:12,640 --> 00:04:18,680
+Thiết bị SME câu hỏi mà không tăng chi phí và có thể được thực hiện thông qua dấu nhắc
+
+54
+00:04:18,680 --> 00:04:19,680
+Kĩ thuật.
+
+55
+00:04:19,680 --> 00:04:24,800
+Vì vậy, những gì nhắc kỹ thuật cho phép bạn để làm là tạo ra một số mẫu nhắc lại được
+
+56
+00:04:24,800 --> 00:04:30,880
+và trong trường hợp này các thiết bị SME để bạn
+
+57
+00:04:30,880 --> 00:04:33,200
+nhận được một phản ứng tối ưu.
+
+58
+00:04:33,200 --> 00:04:38,440
+Vì vậy, ở đây tôi chỉ mang lại một ví dụ cho chúng tôi nói các thiết bị SME gửi những bản ghi và sau đó
+
+59
+00:04:38,440 --> 00:04:40,640
+Chỉ cần nói tóm tắt trong 10 dòng.
+
+60
+00:04:40,640 --> 00:04:46,600
+Sau đó hệ thống của chúng tôi nhắc nhở những gì nó có thể làm là nó có thể thêm một số bối cảnh bạn có thể nói bạn
+
+61
+00:04:46,600 --> 00:04:51,760
+là một chuyên gia bảo trì sản xuất ở đây là một ví dụ nhìn vào ví dụ này
+
+62
+00:04:51,760 --> 00:04:57,920
+và sau đó tóm tắt trong 10 dòng dựa trên dữ liệu mới và nó sẽ tối ưu hóa phản ứng
+
+63
+00:04:57,920 --> 00:05:01,960
+cho bạn mà không tăng đáng kể chi phí.
+
+64
+00:05:01,960 --> 00:05:05,040
+Chúng ta sẽ đi sâu vào vấn đề này sau.
+
+65
+00:05:05,040 --> 00:05:10,280
+Vì vậy, tiếp theo là tối ưu hóa tối ưu có các dịch vụ khác nhau thắt chặt tại nền móng Amazon
+
+66
+00:05:10,280 --> 00:05:17,560
+và dựa trên sự sẵn có và chi phí của bạn, bạn có thể chọn đúng bộ điều chỉnh.
+
+67
+00:05:17,560 --> 00:05:22,720
+Sau đó, bạn cũng có vượt qua khu vực trong tham khảo nếu ứng dụng của bạn là siêu quan trọng sau đó
+
+68
+00:05:22,720 --> 00:05:26,480
+Bạn có thể chọn các khu vực vượt biên trong tham khảo và chúng tôi sẽ thảo luận về tất cả những điều
+
+69
+00:05:26,480 --> 00:05:32,280
+Nhưng suy luận tối ưu hóa cũng là một tham số quan trọng từ góc nhìn bài thi vì vậy
+
+70
+00:05:32,280 --> 00:05:39,880
+anh cần phải đưa ra những quyết định đó để tối ưu hóa chất lượng và độ khoan.
+
+71
+00:05:39,880 --> 00:05:42,240
+Tiếp theo chúng ta sẽ xem xét tối ưu hóa chi phí.
+
+72
+00:05:42,240 --> 00:05:48,320
+Vì vậy, làm thế nào để bạn tối ưu hóa chi phí cho ứng dụng của bạn và có nhiều kỹ thuật khác nhau
+
+73
+00:05:48,320 --> 00:05:49,320
+Để làm điều đó.
+
+74
+00:05:49,320 --> 00:05:53,520
+Vì vậy, bạn đang nhanh chóng đau đầu và có một số kỹ thuật khác mà chúng tôi sẽ thảo luận.
+
+75
+00:05:53,520 --> 00:05:59,320
+Vì vậy, bây giờ quyết định quan trọng tiếp theo mà bạn cần phải thực hiện là những gì dịch vụ bạn sẽ
+
+76
+00:05:59,320 --> 00:06:02,280
+dùng cho lớp dàn nhạc gen.
+
+77
+00:06:02,280 --> 00:06:06,200
+Vì vậy, bạn có nhiều lựa chọn do đó, bạn có một hàm lambda, bạn có chức năng bước
+
+78
+00:06:06,200 --> 00:06:09,040
+Và bạn có ECS, EC2 và vân vân.
+
+79
+00:06:09,040 --> 00:06:12,920
+Vậy, tại sao chúng ta cần lớp phức tạp này?
+
+80
+00:06:12,920 --> 00:06:18,560
+Bây giờ nghĩ về tất cả những gì chúng ta nói sẽ đi đến các mô hình nền tảng để tạo ra một phản hồi.
+
+81
+00:06:18,560 --> 00:06:24,360
+Đầu tiên là nhật ký thiết bị và thiết bị SME nói tóm tắt
+
+82
+00:06:24,360 --> 00:06:29,920
+Trong 10 dòng, chúng ta hãy nói sau đó chúng tôi thêm một số tỷ lệ bảo vệ mà sẽ chặn và nó độc hại nội dung
+
+83
+00:06:29,920 --> 00:06:36,320
+Và vì vậy, sau đó chúng tôi cũng nói OK thêm một số dấu nhắc hệ thống và ở đây chúng tôi đã nói bạn là một
+
+84
+00:06:36,320 --> 00:06:38,920
+Chuyên gia bảo trì sản xuất vân vân.
+
+85
+00:06:38,920 --> 00:06:45,440
+Bây giờ chúng ta cần dàn xếp tất cả những điều này trước khi đầu vào này được thực sự gửi đến
+
+86
+00:06:45,440 --> 00:06:51,120
+Mô hình cơ bản và đó là nơi mà lớp giao hưởng gen của chúng tôi và phổ biến nhất trong số họ
+
+87
+00:06:51,120 --> 00:06:55,920
+hàm lambda ở đây bởi vì nó là một trường hợp sử dụng đơn giản hơn nhiều nhưng nếu nó phức tạp hơn
+
+88
+00:06:55,920 --> 00:06:58,040
+sau đó có thể bạn sẽ sử dụng chức năng bước.
+
+89
+00:06:58,040 --> 00:07:02,500
+Vì vậy, chúng ta sẽ xem xét tất cả các chi tiết nhưng tôi chỉ bây giờ như tôi đã nói
+
+90
+00:07:02,500 --> 00:07:04,480
+Chỉ là tạo ra một mô hình tâm thần.
+
+91
+00:07:04,480 --> 00:07:09,040
+Bây giờ, 8 quyết định mà chúng tôi phải đưa ra là trên lớp API, nơi chúng tôi có cửa ra vào API và
+
+92
+00:07:09,040 --> 00:07:13,440
+Đây là loại phổ biến nhất trong lựa chọn lớp ADI và chúng ta sẽ lặn sâu vào đây
+
+93
+00:07:13,440 --> 00:07:18,520
+Vậy chúng ta có những ứng dụng trên hệ gen.
+
+94
+00:07:18,520 --> 00:07:22,760
+Và chúng tôi đã viết một chức năng lambda mà gửi các đầu vào đến các mô hình nền nhưng
+
+95
+00:07:22,760 --> 00:07:29,240
+Chúng tôi phải suy nghĩ về làm thế nào chúng tôi an toàn vạch trần dịch vụ của chúng tôi với người dùng cuối này như thế nào
+
+96
+00:07:29,240 --> 00:07:34,000
+chúng tôi cho phép người dùng kết thúc như thế nào chúng tôi cho phép kotas làm thế nào để hiệu lực một số hình thức của throtling
+
+97
+00:07:34,000 --> 00:07:41,280
+Vì vậy mà tất cả những gì được thực hiện thông qua lớp API này vì vậy nếu bạn muốn lộ ra lưng của bạn
+
+98
+00:07:41,280 --> 00:07:47,280
+và dịch vụ an toàn sau đó bạn có thể làm thông qua lựa chọn lớp ADI và như tôi đã nói
+
+99
+00:07:47,280 --> 00:07:50,960
+Hầu hết các cửa ra vào ADI kiểu mẫu và chúng ta sẽ lặn sâu vào đó sau.
+
+100
+00:07:50,960 --> 00:07:56,720
+Được rồi tiếp theo là tính bền vững và giám sát gen vì vậy chủ yếu bạn sẽ làm điều đó thông qua Amazon
+
+101
+00:07:56,720 --> 00:08:02,840
+Cloud Watch bây giờ hãy để chúng tôi nói rằng bạn muốn giám sát chi phí latency lỗi tất cả những gì có thể được
+
+102
+00:08:02,840 --> 00:08:08,800
+Thực hiện thông qua Amazon Cloud Watch và sau đó bạn có thể đặt một số báo động vv nếu họ không đáp ứng
+
+103
+00:08:08,800 --> 00:08:14,800
+Một ngưỡng nhất định để nền Amazon cho phép bạn theo dõi các bản ghi và mét qua
+
+104
+00:08:14,800 --> 00:08:21,120
+Sự kết hợp trực tiếp với Cloud Watch hoặc bạn cũng có thể gửi những bản ghi đến S3 hoặc cả hai bây giờ
+
+105
+00:08:21,120 --> 00:08:26,240
+Quyết định thứ 10 là đánh giá mô hình vì vậy bây giờ chúng tôi hãy nói rằng bạn đã thực hiện tất cả các hoạt động
+
+106
+00:08:26,240 --> 00:08:32,640
+Và bạn xây dựng một generi tuyệt vời cách ứng dụng nhưng thiết bị người dùng cuối SME không hạnh phúc
+
+107
+00:08:32,640 --> 00:08:38,320
+Bởi vì nó không tạo ra kết quả mong muốn vì vậy đó là lý do tại sao nó là quan trọng để
+
+108
+00:08:38,320 --> 00:08:44,400
+Đánh giá mô hình của bạn trước khi bạn bắt đầu xây dựng ứng dụng đầy đủ và đó là thực hiện thông qua
+
+109
+00:08:44,400 --> 00:08:49,760
+Đánh giá mô hình để nền Amazon cung cấp khả năng đánh giá mô hình của bạn có thể là cả hai
+
+110
+00:08:49,760 --> 00:08:55,520
+Thực hiện thông qua con người hoặc tự động đánh giá bây giờ nếu bạn muốn làm một số đánh giá tùy chỉnh
+
+111
+00:08:55,520 --> 00:09:02,560
+Có thể thực hiện thông qua SageMaker Al do đó, 11 quyết định là trên mô hình chỉnh sửa tốt một lần nữa bạn có
+
+112
+00:09:02,560 --> 00:09:08,000
+SageMaker Al và Amazon rocks sẵn sàng cho mô hình điều chỉnh tốt để có thể có
+
+113
+00:09:08,000 --> 00:09:14,400
+Trường hợp mà chúng ta hãy nói rằng bạn xây dựng này gen cách ứng dụng và kể từ khi các mô hình nền tảng là
+
+114
+00:09:14,400 --> 00:09:20,480
+được đào tạo trên sản xuất dữ liệu internet cho phép chúng tôi nói rằng nó là không thể giải thích chính xác
+
+115
+00:09:20,480 --> 00:09:27,440
+Nhật ký tua bin gió vì nó là miền nặng vì vậy trong những trường hợp bạn có thể tùy chỉnh nền tảng của bạn
+
+116
+00:09:27,440 --> 00:09:34,800
+Mô hình hoặc trên miền hoặc công việc cụ thể và trong trường hợp này, nhiệm vụ là chat vì vậy cả Amazon
+
+117
+00:09:34,800 --> 00:09:41,200
+nền và Sage Maker Al cho phép bạn chỉnh sửa mô hình tốt vì vậy tiếp theo chúng tôi có một chủ đề rất quan trọng
+
+118
+00:09:41,200 --> 00:09:46,560
+Đó là về an ninh và bảo vệ dữ liệu vì vậy có các dịch vụ AWS khác nhau như nhận thức, VPC
+
+119
+00:09:46,560 --> 00:09:54,000
+Kết thúc điểm, KMS, Macy etc cho phép bạn bảo vệ các dịch vụ gen của bạn vì vậy ở đây đầu tiên là
+
+120
+00:09:54,000 --> 00:09:59,200
+Người dùng xác thực quyền mà có thể thực hiện thông qua nhận thức Amazon nếu bạn đang ở trong một
+
+121
+00:09:59,200 --> 00:10:05,680
+Thiết lập kinh doanh sau đó bạn có thể sử dụng NTRIID được gọi là AD của bạn trước đó vì vậy bạn phải làm
+
+122
+00:10:05,680 --> 00:10:12,160
+Một số hình thức xác thực sau đó khía cạnh quan trọng thứ hai đặc biệt tương đối genri
+
+123
+00:10:12,160 --> 00:10:19,920
+AI là loại PI do đó mà bạn có thể làm thông qua Macy có được hiểu rằng có Amazon
+
+124
+00:10:19,920 --> 00:10:26,320
+Công nhận và rõ ràng là có các hàng rào bảo vệ Amazon vì vậy chúng tôi sẽ lặn sâu vào tất cả các
+
+125
+00:10:26,320 --> 00:10:33,280
+dịch vụ gì bạn có thể sử dụng okay sau đó chúng tôi có
+
+126
+00:10:33,280 --> 00:10:37,760
+Quản lý dữ liệu kinh doanh bây giờ hãy nói rằng bạn đang tùy chỉnh mô hình nền tảng của bạn vì vậy cho rằng
+
+127
+00:10:37,760 --> 00:10:44,560
+Hãy nói rằng bạn đang đánh giá mô hình nền tảng của bạn một lần nữa cho rằng bạn sẽ cần phải lưu trữ
+
+128
+00:10:44,560 --> 00:10:50,800
+Dữ liệu trong một dịch vụ AWS và đó là nơi bạn cần xem xét quản lý dữ liệu kinh doanh này cho dù
+
+129
+00:10:50,800 --> 00:10:57,680
+S3, FSX hoặc bất kỳ mối quan hệ khác hoặc không tương quan cơ sở dữ liệu sau đó 14 chìa khóa chịu trách nhiệm đơn vị
+
+130
+00:10:57,680 --> 00:11:03,280
+Để suy nghĩ về là gen A ứng dụng và quản trị cho cách ứng dụng gen này cách bạn tạo
+
+131
+00:11:03,280 --> 00:11:08,880
+Các mẫu hình đám mây hoặc CDK và sau đó làm thế nào để bạn triển khai nó thông qua các đường ống như thế nào
+
+132
+00:11:08,880 --> 00:11:16,000
+đăng ký mô hình của bạn và sau đó cuối cùng chúng tôi có 15 chúng tôi có dàn nhạc vì điều này là tương đối
+
+133
+00:11:16,000 --> 00:11:20,720
+Một ứng dụng đơn giản, chúng tôi sẽ không nhìn nhiều về phía dàn nhạc nhưng khi chúng tôi đi
+
+134
+00:11:20,720 --> 00:11:26,400
+để các trường hợp sử dụng trên giẻ và các đại lý vv chúng tôi sẽ xem xét dàn nhạc vì vậy có khác nhau
+
+135
+00:11:26,400 --> 00:11:31,360
+Những cách trong bạn có thể làm phức tạp dàn nhạc qua một số khung mã nguồn mở như
+
+136
+00:11:31,360 --> 00:11:38,800
+Langchail, đồ thị Lang, các đại diện đá nền của bạn và vân vân nhưng bây giờ tôi chỉ cung cấp cho bạn một mô hình tinh thần
+
+137
+00:11:38,800 --> 00:11:44,640
+Trong tất cả những điều bạn cần suy nghĩ trước khi xây dựng một mạng lưới sản xuất theo cách ứng dụng
+
+138
+00:11:45,920 --> 00:11:51,120
+Và hãy nhớ rằng nếu bạn không hiểu một số phần của nó là okay tôi chỉ cho bạn một
+
+139
+00:11:51,120 --> 00:11:57,200
+Mô hình tinh thần chúng tôi sẽ chi tiết mỗi trong những chủ đề này một cách chi tiết khi chúng tôi đi tiếp
+
+140
+00:11:57,200 --> 00:12:01,840
+OK vì vậy đó là khá nhiều nó từ bài giảng này tôi sẽ nhìn thấy bạn trong bài giảng tiếp theo cảm ơn bạn
+
