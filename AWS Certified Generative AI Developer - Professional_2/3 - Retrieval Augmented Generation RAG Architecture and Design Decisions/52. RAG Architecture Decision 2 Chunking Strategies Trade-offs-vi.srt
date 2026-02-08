@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:05,040
+Bây giờ, xem xét kiến trúc tiếp theo hoặc quyết định mà bạn cần phải thực hiện trong khi xây dựng một
+
+2
+00:00:05,040 --> 00:00:11,040
+Ứng dụng dựa trên miếng giẻ là trên chiến lược ép. Vì vậy, đầu tiên hãy nhanh chóng thảo luận những gì là
+
+3
+00:00:11,040 --> 00:00:17,680
+Phân tích dữ liệu. Chunking là quá trình chia tài liệu hay nội dung thành khả năng kiểm soát
+
+4
+00:00:17,680 --> 00:00:24,400
+đoạn văn bản hoặc đoạn để thu hồi dữ liệu hữu hiệu. Vì vậy, nó có nghĩa là hãy nói rằng bạn có
+
+5
+00:00:24,400 --> 00:00:31,280
+một tài liệu PDF là 10 trang. Vì vậy, những gì bạn sẽ làm là bạn sẽ phân tích nó xuống một trang mỗi
+
+6
+00:00:31,280 --> 00:00:37,840
+Sau đó, trên một trang bạn đột nhập vào Paris và sau đó có thể một vài dòng. Vì vậy, bạn tạo ra những
+
+7
+00:00:37,840 --> 00:00:43,360
+Những mảng nhỏ hơn và một khi bạn đã có các đoạn sau đó bạn vượt qua nó thông qua các mô hình đường viền để tạo
+
+8
+00:00:43,360 --> 00:00:50,080
+Gửi tin nhắn. Bây giờ, chúng ta hãy đi và nhìn vào các chiến lược tách khác nhau và các chiến lược tách
+
+9
+00:00:50,080 --> 00:00:56,720
+Anh nên dùng cho trường hợp nào. Bây giờ, hãy lấy một ví dụ chúng ta có tài liệu PDF này
+
+10
+00:00:56,720 --> 00:01:02,000
+Nó nói về Lionel Messi vì vậy anh ta được sinh ra ở Argentina và nó cho biết rất nhiều chi tiết. Nào
+
+11
+00:01:02,000 --> 00:01:08,720
+Hãy nói đây là 5 trang dài. Bây giờ, lựa chọn đầu tiên từ góc nhìn chiến lược ghép chúng tôi có là
+
+12
+00:01:08,720 --> 00:01:14,400
+Không đi vệ sinh. Vì vậy, bạn không làm bất kỳ cắn. Bạn lấy toàn bộ tài liệu này của 10 trang dài
+
+13
+00:01:15,440 --> 00:01:22,960
+Và anh chỉ cần tạo ra một đoạn trích từ toàn bộ tài liệu. Vậy mặt trái của việc không cắn là gì?
+
+14
+00:01:22,960 --> 00:01:30,720
+Độ chính xác của việc thu hồi là công việc bởi vì nó chỉ là một phần nhỏ. Vì vậy, một trường hợp sử dụng để không cắn?
+
+15
+00:01:30,720 --> 00:01:37,440
+Nếu bạn có tài liệu rất nhỏ có thể là nửa trang sau đó bạn có thể sau đó bạn không cần phải trích
+
+16
+00:01:37,440 --> 00:01:42,880
+Bạn có thể tạo ra một đường viền véc tơ. Được rồi, bây giờ hãy xem xét điều thứ hai đó là
+
+17
+00:01:42,880 --> 00:01:49,840
+các đoạn cố định hoặc đôi khi nó cũng được gọi là tích phân mặc định. Ở đây bạn xác định kích cỡ của nó.
+
+18
+00:01:49,840 --> 00:01:55,280
+Cứ 120 từ. Vậy, hoặc bạn định nghĩa dựa trên từ ngữ, có thể là nhân vật,
+
+19
+00:01:55,280 --> 00:02:00,720
+Mã hóa và vân vân. Bây giờ, hãy nói rằng đây là tài liệu ở đây. Vì vậy, bây giờ bạn có thể thấy trong màu xám này
+
+20
+00:02:00,720 --> 00:02:05,760
+Màu chúng ta có mẫu đầu tiên. Vì vậy, tôi không thực sự tính 120 từ nhưng hãy chỉ giả sử
+
+21
+00:02:05,760 --> 00:02:11,600
+Đây là 120 từ. Sau đó, phần thứ hai sẽ là một trong màu cam và tương tự như vậy sau đó
+
+22
+00:02:11,600 --> 00:02:16,960
+Chúng ta có khúc thứ ba. Vì vậy, mỗi 120 ký tự sẽ có một mảng mới sẽ được tạo ra
+
+23
+00:02:16,960 --> 00:02:23,120
+và sau đó nó sẽ được truyền qua mô hình bọc lót. Bây giờ, để ngăn chặn mất dữ liệu cũng có
+
+24
+00:02:23,120 --> 00:02:28,400
+Hầu hết thời gian sẽ là một số hình thức của sự chồng chéo. Vì vậy, bạn có thể thấy ở đây tôi đã hiển thị một số chồng chéo
+
+25
+00:02:28,400 --> 00:02:34,720
+Có lẽ đây là 120 từ và sau đó có thể 10 từ chúng tôi đang làm trong chồng lên nhau. Vì vậy, bạn sẽ có
+
+26
+00:02:34,720 --> 00:02:40,400
+đây là kích thước đầu tiên và sau đó các bit thứ hai kích thước thay vì bắt đầu từ đây sẽ bắt đầu
+
+27
+00:02:40,400 --> 00:02:49,280
+Từ đây. Vì vậy, thứ ba chúng tôi có mảng xi măng là chính xác nhất và điều này dựa trên ý nghĩa.
+
+28
+00:02:49,280 --> 00:02:57,760
+Vì vậy, bạn không ngẫu nhiên tách ra dựa trên số ký tự nhưng bạn nhìn vào ý nghĩa của chủ đề
+
+29
+00:02:57,760 --> 00:03:03,360
+và sau đó tạo ra kích cỡ bit. Vì vậy, bây giờ chúng ta có toàn bộ trang này. Vì vậy, trong trường hợp này
+
+30
+00:03:03,360 --> 00:03:08,080
+là nó sẽ tách ra dựa trên ý nghĩa. Phần đầu tiên có lẽ là phần giới thiệu
+
+31
+00:03:08,080 --> 00:03:14,960
+và sự vĩ đại của Lionel Messi sau đó là tập trung vào thời thơ ấu và Barcelona.
+
+32
+00:03:14,960 --> 00:03:22,480
+Vì vậy, nó có cấu trúc hơn xung quanh ý nghĩa và liên quan. Vì vậy, điều này là bởi vì nhất
+
+33
+00:03:22,480 --> 00:03:29,280
+Chính xác và chính xác nhưng nó cần xử lý nhiều hơn. Vì vậy, cuối cùng là phân cấp
+
+34
+00:03:29,280 --> 00:03:33,680
+Đi ăn. Vì vậy, chúng tôi có các mối quan hệ phụ huynh ở đây nghĩ về một hướng dẫn kỹ thuật. Vậy,
+
+35
+00:03:33,680 --> 00:03:40,240
+Giả sử bạn có một hướng dẫn viên để sửa tua bin gió. Vì vậy, có lẽ nó nói về
+
+36
+00:03:40,240 --> 00:03:44,720
+phân loại từng phần. Vì vậy, có lẽ nó nói về động cơ và sau đó có một số
+
+37
+00:03:44,720 --> 00:03:50,320
+Chi tiết về cách sửa chữa động cơ. Và phần tiếp theo là trên đôi cánh và sau đó nó nói về
+
+38
+00:03:50,320 --> 00:03:56,480
+cánh. Vì vậy, bây giờ từ góc nhìn kiểm tra hãy nói những gì là các chiến lược ghép và điểm quyết định.
+
+39
+00:03:56,480 --> 00:04:02,960
+Vì vậy, bây giờ điều đầu tiên là không cắn câu. Vì vậy, cho không bị tổn thương chuyên nghiệp là nó là dễ dàng nhất để thực hiện
+
+40
+00:04:02,960 --> 00:04:08,480
+có là sẽ được thấp hơn chi phí và điểm tiêu cực ở đây là có là rất
+
+41
+00:04:08,480 --> 00:04:14,320
+Chính xác hơn. Vì vậy, những trường hợp sử dụng tốt nhất có lẽ bạn có tài liệu nhỏ,
+
+42
+00:04:14,320 --> 00:04:21,520
+Nói ngắn gọn thôi. Vì vậy, khi để chọn khi bạn có tài liệu nhỏ hơn và độ chính xác không phải là như vậy
+
+43
+00:04:21,520 --> 00:04:26,880
+rất quan trọng. Vì vậy, tiếp theo chúng tôi có cố định kích thước. Vì vậy, nó giống như một mặc định.
+
+44
+00:04:26,880 --> 00:04:33,680
+Vì vậy, nó sẽ dễ dàng hơn để thực hiện và nó là một giá trị cân bằng chất lượng tốt. Nhưng, những gì là tiêu cực
+
+45
+00:04:33,680 --> 00:04:40,000
+Vấn đề là gì? Nó chỉ phân chia dựa trên các nhân vật cố định. Vì vậy, nó có thể chia đôi một số chủ đề giữa chừng.
+
+46
+00:04:40,000 --> 00:04:45,680
+Vì vậy, một số trường hợp sử dụng tốt là như tôi đã nói nó là mặc định cho hầu hết các ứng dụng kéo. Vậy,
+
+47
+00:04:45,680 --> 00:04:51,760
+Giả sử bạn có blog, hướng dẫn viên và vân vân. Vì vậy, khi để lựa chọn như tôi đã nói nó là mặc định cho
+
+48
+00:04:51,760 --> 00:04:59,440
+Hầu hết các ứng dụng kéo khi bạn cần cân bằng tốt giữa chi phí và chất lượng. Và khi sự chính xác
+
+49
+00:04:59,440 --> 00:05:05,760
+Đó không phải là ưu tiên hàng đầu, sau đó chúng ta có phân cấp. Vì vậy, độ chính xác cao cho
+
+50
+00:05:05,760 --> 00:05:10,880
+tài liệu có cấu trúc và phân cấp. Vì vậy, nó phức tạp hơn nhiều và sẽ có nhiều hơn
+
+51
+00:05:10,880 --> 00:05:16,960
+Chi phí và trường hợp sử dụng tốt nhất là gì? Chúng ta hãy nói rằng các sách hướng dẫn kỹ thuật theo một rất cấp bậc
+
+52
+00:05:16,960 --> 00:05:23,600
+cấu trúc. Vì vậy, khi nào để chọn khi bạn có các tài liệu cấu trúc lớn và độ chính xác là quan trọng.
+
+53
+00:05:23,600 --> 00:05:28,400
+Vì vậy, nó chính xác hơn nhiều so với việc cắt giảm kích thước cố định. Và cuối cùng, chúng tôi có một ngữ nghĩa
+
+54
+00:05:28,400 --> 00:05:34,240
+Nó có độ chính xác cao nhất. Nó cung cấp cho chất lượng tốt nhất dựa trên
+
+55
+00:05:34,240 --> 00:05:40,240
+truy vấn người dùng. Vậy tù nhân là ai? Cố gắng xử lý phức tạp và cao hơn có nghĩa là nó là
+
+56
+00:05:40,240 --> 00:05:45,600
+Sẽ tốn kém hơn. Trường hợp sử dụng tốt nhất là gì? Name
+
+57
+00:05:45,600 --> 00:05:52,160
+Chất lượng là quan trọng, y tế, tài chính pháp lý, tài liệu, giải pháp dựa trên cấp bậc nơi rủi ro
+
+58
+00:05:52,160 --> 00:05:58,720
+cao. Vậy, tại sao lại chọn phân tích ngữ nghĩa? Khi chất lượng câu trả lời quan trọng hơn
+
+59
+00:05:58,720 --> 00:06:04,880
+Chi phí và sự phức tạp thực hiện. Vì vậy, bây giờ, nếu tôi có thể nhanh chóng chỉ cho bạn qua bảng điều khiển,
+
+60
+00:06:04,880 --> 00:06:08,720
+Vì vậy, tôi có trong dịch vụ bamens và mông rock. Vì vậy, hãy để tôi chỉ cần nhấp chuột vào nền tảng kiến thức
+
+61
+00:06:08,720 --> 00:06:14,480
+và sau đó cho tôi chỉ cần nhấp chuột vào tạo và sau đó kiến thức cơ bản với cửa hàng véc tơ và bạn có thể cung cấp
+
+62
+00:06:14,480 --> 00:06:20,240
+Tên ở đây, nhưng chúng ta sẽ bỏ qua bây giờ. Vì vậy, chúng ta hãy chỉ cần chọn các loại dữ liệu tại Amazon S3
+
+63
+00:06:20,240 --> 00:06:24,960
+Và sau đó tôi chỉ cần nhấp chuột vào tiếp theo và nếu tôi chỉ cắt nút để kéo xuống. Vì vậy, bạn có thể thấy
+
+64
+00:06:24,960 --> 00:06:30,480
+Chiến lược của anh. Vì vậy, chúng tôi có các mảng mặc định, sau đó chúng tôi có cố định kích thước tách,
+
+65
+00:06:30,480 --> 00:06:36,400
+Phân cấp về ngữ nghĩa và không có tranh cãi. Vì vậy, đó là tất cả các lựa chọn mà Amazon
+
+66
+00:06:36,400 --> 00:06:40,240
+nền móng. Được rồi. Vì vậy, đó là khá nhiều từ bài giảng này. Như trong bài giảng tiếp theo,
+
+67
+00:06:40,240 --> 00:06:41,240
+Cảm ơn.
+
