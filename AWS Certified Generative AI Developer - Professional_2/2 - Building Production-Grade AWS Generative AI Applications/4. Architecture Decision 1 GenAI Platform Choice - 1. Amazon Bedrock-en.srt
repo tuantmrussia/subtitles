@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:18,000
+ In one of the previous lectures, when we were discussing about the 15 key architectural decisions that we need to make to build a production ready generative application, the first and most important decision was, which AWS generative as service should we use for our use case.
+
+2
+00:00:18,000 --> 00:00:28,000
+ In the next lectures, we're going to look at what are the options available from the AWS generative as service perspective and what are the pros and cons of each service.
+
+3
+00:00:28,000 --> 00:00:35,000
+ So first, let's start with the most important AWS generative as service, which is Amazon bedrock.
+
+4
+00:00:35,000 --> 00:00:40,000
+ In this lecture, we're going to deep dive into what is Amazon bedrock.
+
+5
+00:00:40,000 --> 00:00:50,000
+ So Amazon bedrock makes available base foundation models from Amazon and third party model providers accessible through an API.
+
+6
+00:00:50,000 --> 00:00:57,000
+ So here I pasted a chart of some of the third party model providers that are available as part of Amazon bedrock.
+
+7
+00:00:57,000 --> 00:01:05,000
+ So you can see here we have the third party model provider called as AI 21 labs, and it provides some of the models with the name Jamba.
+
+8
+00:01:05,000 --> 00:01:12,000
+ And here it describes what are the core capabilities of the models that are provided by AI 21 labs.
+
+9
+00:01:12,000 --> 00:01:17,000
+ So it says effective reasoning and rapid analysis for long context windows.
+
+10
+00:01:17,000 --> 00:01:26,000
+ So if you're building a generative application where you have long context window, which means let's say you have input documents that go into hundreds of pages.
+
+11
+00:01:26,000 --> 00:01:28,000
+ Let's say in case of legal contracts.
+
+12
+00:01:28,000 --> 00:01:31,000
+ So this is good for long context window.
+
+13
+00:01:31,000 --> 00:01:37,000
+ Then you have models from Amazon, which go with the name Amazon, NOAA, NOAA pro, NOAA light and so on.
+
+14
+00:01:37,000 --> 00:01:43,000
+ So Amazon says it's the frontier intelligence and industry leading price performance, high quality image and video generation.
+
+15
+00:01:43,000 --> 00:01:47,000
+ So Amazon is focusing on price performance.
+
+16
+00:01:47,000 --> 00:01:53,000
+ Then you have models from anthropic, it says extended thinking and coding including computer use skills.
+
+17
+00:01:53,000 --> 00:01:59,000
+ So it provides various models with the name cloud, cloud 3.5, 3.7, cloud 4.5.
+
+18
+00:01:59,000 --> 00:02:03,000
+ So it focuses on extended thinking and coding.
+
+19
+00:02:03,000 --> 00:02:08,000
+ And here you can see some of the other models and their core capabilities.
+
+20
+00:02:08,000 --> 00:02:16,000
+ Now this is not an exhaustive list. There are a lot more third party model providers and we'll see that once we go to the console.
+
+21
+00:02:16,000 --> 00:02:24,000
+ So in summary you can access any of the models from Amazon or third party model providers through just an API.
+
+22
+00:02:24,000 --> 00:02:30,000
+ Now the good thing about Amazon better office is a fully managed serverless service from AWS.
+
+23
+00:02:30,000 --> 00:02:44,000
+ So what it means is that for all the models that are available as part of Amazon bedrock, AWS will take care of hosting the model monitoring, scaling, patching and everything else related to infrastructure.
+
+24
+00:02:44,000 --> 00:02:51,000
+ So all you need to do is just make an API call to the Amazon bedrock with your user input and you will get a response.
+
+25
+00:02:51,000 --> 00:03:00,000
+ And most importantly you will only be charged for the number of API calls you make. So if you don't make any API calls you don't incur any charges.
+
+26
+00:03:00,000 --> 00:03:08,000
+ Now let's go ahead and understand how Amazon bedrock works at a high level and in the next lecture then we'll take a deep dive into the architecture.
+
+27
+00:03:08,000 --> 00:03:13,000
+ So you can access Amazon bedrock in three ways. So you can do it through the AWS console.
+
+28
+00:03:13,000 --> 00:03:23,000
+ You can do it through a CLI or you can do it through or you can do it programmatically through the SDK. So let's say if you're using Python then you can use a bow to three SDK.
+
+29
+00:03:23,000 --> 00:03:28,000
+ Now let's say our end user has a question who is the best tennis player.
+
+30
+00:03:28,000 --> 00:03:37,000
+ So what you will do is you will make an API call to the Amazon bedrock service. So other than the user input you're going to add some bedrock API configuration parameters.
+
+31
+00:03:37,000 --> 00:03:47,000
+ So if you can see here first thing you will do is you will define the model ID and we saw a lot of different model providers in the last slide and each of them had a large number of models.
+
+32
+00:03:47,000 --> 00:03:58,000
+ So here you will provide the model ID and here you can see we are saying entropic which is a third party model provider and you use applaud three high cool so that is the model we're going to use.
+
+33
+00:03:58,000 --> 00:04:15,000
+ Then next you provide the prompt and that's the question we had here who is the best tennis player and then you additionally provide some inference parameters such as max tokens, temperature and we're going to talk about them in a lot more detail in the subsequent lectures.
+
+34
+00:04:15,000 --> 00:04:24,000
+ But for now just remember you have to pass an inference parameters and this will impact the output you'd get from the large language model. Okay.
+
+35
+00:04:24,000 --> 00:04:39,000
+ So once you send this input and configuration parameters to the Amazon bedrock service then this Amazon bedrock service is going to redirect that request to the backend foundation models depending on the model ID you have provided here.
+
+36
+00:04:39,000 --> 00:04:50,000
+ In this case we provided entropic cloud so it's going to send this request to entropic but let's say if you want to use a model from Google then you can just provide the model ID.
+
+37
+00:04:50,000 --> 00:04:56,000
+ So you can see we have this model from Google and if you just provide the model ID for this it will request it to Google.
+
+38
+00:04:56,000 --> 00:05:15,000
+ Now you have models from Nova you can also send that request to the GPT series by open AI so all these models are provided as part of the Amazon bedrock and all you have to do is define which model ID you want to use and send your user input along with interest parameters and you should be able to get a response.
+
+39
+00:05:15,000 --> 00:05:18,920
+ Okay, so that's pretty much it from this lecture. I'll see you in the next lecture. Thank you.
+
