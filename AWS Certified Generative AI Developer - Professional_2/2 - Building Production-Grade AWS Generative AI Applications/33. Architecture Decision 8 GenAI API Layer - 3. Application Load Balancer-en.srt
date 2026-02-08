@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:04,720
+ In this lecture, we're going to look at the second option for the GenAI API layer,
+
+2
+00:00:04,720 --> 00:00:06,720
+ which is AWS AppSync.
+
+3
+00:00:06,720 --> 00:00:09,920
+ So we need to know about this service at a high level.
+
+4
+00:00:09,920 --> 00:00:12,480
+ So let's go ahead and understand what this service does.
+
+5
+00:00:12,480 --> 00:00:20,320
+ So AWS AppSync is ideal for GenAI chat and live dashboard applications.
+
+6
+00:00:20,320 --> 00:00:24,160
+ So in the previous lecture, we have learned about web socket API,
+
+7
+00:00:24,160 --> 00:00:29,920
+ which maintain a persistent connection and are great for GenAI chat and live dashboard.
+
+8
+00:00:30,080 --> 00:00:35,920
+ So the use case scenarios for AWS AppSync are very similar to the web socket API.
+
+9
+00:00:35,920 --> 00:00:41,120
+ And the only key difference is that in web socket API, you have to manage the routes.
+
+10
+00:00:41,120 --> 00:00:43,760
+ Now what is a primary function?
+
+11
+00:00:43,760 --> 00:00:48,400
+ So AWS AppSync is a fully managed service for building GraphQL.
+
+12
+00:00:48,400 --> 00:00:49,520
+ So what is GraphQL?
+
+13
+00:00:49,520 --> 00:00:52,400
+ So GraphQL was developed by Facebook.
+
+14
+00:00:52,400 --> 00:00:59,520
+ It's a query language for APIs that allow clients to request exactly the data they
+
+15
+00:00:59,520 --> 00:01:03,280
+ require. So if we compare it to the REST API,
+
+16
+00:01:03,280 --> 00:01:08,480
+ if we are trying to retrieve the data using the REST API versus the GraphQL,
+
+17
+00:01:08,480 --> 00:01:15,440
+ it's going to give exact response based on the client query compared to the REST API,
+
+18
+00:01:15,440 --> 00:01:17,680
+ which may under fetch or over fetch.
+
+19
+00:01:17,680 --> 00:01:23,200
+ So with the GraphQL, you can retrieve data from multiple related data sources
+
+20
+00:01:23,200 --> 00:01:27,440
+ in one API call instead of making separate requests for each resource.
+
+21
+00:01:27,440 --> 00:01:31,440
+ Now let's say we have multiple data sources and user has posed a question
+
+22
+00:01:31,440 --> 00:01:34,880
+ where you need to fetch data from these different data sources.
+
+23
+00:01:34,880 --> 00:01:40,160
+ So if you use REST API, maybe you will have to make four API calls for each of the different
+
+24
+00:01:40,160 --> 00:01:44,320
+ data sources. Now so for a similar scenario, if you use GraphQL,
+
+25
+00:01:44,320 --> 00:01:50,080
+ then you will have to just make one request and GraphQL should be able to retrieve the data
+
+26
+00:01:50,080 --> 00:01:54,640
+ from these different data sources through just one API call.
+
+27
+00:01:55,840 --> 00:01:58,160
+ Okay, what's the API type protocol?
+
+28
+00:01:58,160 --> 00:02:03,040
+ So GraphQL over HTTP, HTTPS and web sockets.
+
+29
+00:02:03,040 --> 00:02:09,120
+ Okay, now what are the additional core features for AWS AppSync?
+
+30
+00:02:09,120 --> 00:02:15,680
+ It provides real-time subscription. So what that means is once the client has subscribed,
+
+31
+00:02:15,680 --> 00:02:20,880
+ then he's going to get auto push updates from the server side.
+
+32
+00:02:20,880 --> 00:02:25,520
+ So that's useful for live dashboard. So once you have subscribed to
+
+33
+00:02:25,520 --> 00:02:29,360
+ live dashboards, as there are changes, those changes are going to be
+
+34
+00:02:29,360 --> 00:02:32,720
+ pushed and visible to the client or the user.
+
+35
+00:02:32,720 --> 00:02:37,840
+ Then it also provides offline support. This is especially good for mobile or web.
+
+36
+00:02:37,840 --> 00:02:40,960
+ So if you don't have internet, then you can get offline support.
+
+37
+00:02:40,960 --> 00:02:45,600
+ So it integrates with lambda for orchestration and bedrock for inference.
+
+38
+00:02:45,600 --> 00:02:51,840
+ Some of the key use cases we already discussed, chat words, dashboards requiring live updates.
+
+39
+00:02:51,840 --> 00:02:55,600
+ Now let's try and understand this through a use case. So let's say we have an end user
+
+40
+00:02:55,600 --> 00:03:00,640
+ who is accessing a journey application using web or mobile device.
+
+41
+00:03:00,640 --> 00:03:05,440
+ And he asks a question. And this is sometimes called as mutation,
+
+42
+00:03:05,440 --> 00:03:09,920
+ which you can think of like a state change or just simply a trigger.
+
+43
+00:03:09,920 --> 00:03:15,920
+ Now this AWS AppSync sends that request or prompt to AWS Lambda.
+
+44
+00:03:15,920 --> 00:03:20,160
+ And it's an asynchronous invocation. It's not synchronous.
+
+45
+00:03:20,160 --> 00:03:24,320
+ So it does not wait for response from Lambda.
+
+46
+00:03:24,320 --> 00:03:30,720
+ So once this request goes to AWS Lambda, then it is going to be sent to Amazon
+
+47
+00:03:30,720 --> 00:03:36,800
+ bedrock. And Amazon bedrock is going to stream the response in chunks.
+
+48
+00:03:36,800 --> 00:03:42,960
+ So as the response gets generated and is sent, this AWS Lambda function is going to send
+
+49
+00:03:42,960 --> 00:03:50,880
+ that answer to the AWS AppSync, which is going to send that response back to all the clients
+
+50
+00:03:50,880 --> 00:03:56,800
+ that have subscribed to this event. So there could be multiple clients or users who have
+
+51
+00:03:56,800 --> 00:04:03,200
+ subscribed to this live dashboard as the answer is getting generated. All the subscribers who have
+
+52
+00:04:03,200 --> 00:04:08,960
+ subscribed to this event are going to get the updates. Okay. So that's pretty much it from
+
+53
+00:04:08,960 --> 00:04:11,040
+ this lecture. I'll see in the next lecture. Thank you.
+
