@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:04,400
+Trong bài giảng này, chúng tôi muốn xem xét một cân nhắc kiến trúc khác mà bạn nên
+
+2
+00:00:04,400 --> 00:00:07,680
+Hãy nghĩ trong khi xây dựng các ứng dụng dựa trên giá treo.
+
+3
+00:00:07,680 --> 00:00:10,800
+Có hai cách mà bạn có thể làm tối ưu hóa.
+
+4
+00:00:10,800 --> 00:00:14,800
+Một là sử dụng mô hình quay lại và lọc siêu dữ liệu.
+
+5
+00:00:14,800 --> 00:00:16,480
+Vì vậy bây giờ chúng ta hãy đi trước và nhìn vào cả hai.
+
+6
+00:00:16,480 --> 00:00:24,480
+Vì vậy, các mô hình lặp lại được sử dụng để cải thiện sự liên quan của các kết quả thu hồi cho bất kỳ truy vấn.
+
+7
+00:00:25,760 --> 00:00:32,080
+Vì vậy, quay lại mô hình tính toán sự liên quan của mảng để truy vấn và sắp xếp lại kết quả
+
+8
+00:00:32,080 --> 00:00:34,880
+dựa trên điểm mà nó tính toán.
+
+9
+00:00:34,880 --> 00:00:39,280
+Vì vậy, bây giờ nếu bạn nhìn vào kiến trúc, một khi người dùng đặt ra câu hỏi,
+
+10
+00:00:39,280 --> 00:00:44,480
+Nó đi qua các văn bản phát ra mô hình, bạn tạo ra một đường viền, sau đó tìm kiếm tương tự,
+
+11
+00:00:44,480 --> 00:00:48,800
+Và sau đó thông qua một tìm kiếm tương tự, bạn có được một số đoạn văn.
+
+12
+00:00:48,800 --> 00:00:55,680
+Đây là nơi mô hình quay trở lại và sắp xếp lại các đoạn dựa trên sự liên quan.
+
+13
+00:00:56,320 --> 00:01:00,800
+Vì vậy, đây là một vài mô hình quay lại, do đó, bạn có một từ Amazon re-rank 1.0,
+
+14
+00:01:00,800 --> 00:01:06,640
+Và đây là thẻ căn cước mô hình, và sau đó là một từ Kohir rerank 3.5, và đây là ID mô hình.
+
+15
+00:01:06,640 --> 00:01:10,400
+Bây giờ chúng ta hãy nhanh chóng hiểu thông qua một ví dụ làm thế nào nó hoạt động chính xác.
+
+16
+00:01:10,400 --> 00:01:14,800
+Bây giờ hãy nói rằng bạn đã xây dựng một e-commerce chatbot, và khách hàng đang hỏi,
+
+17
+00:01:14,800 --> 00:01:16,880
+Chính sách hoàn tiền của doanh nghiệp là gì?
+
+18
+00:01:16,880 --> 00:01:18,880
+Vậy quá trình hoạt động như thế nào?
+
+19
+00:01:18,880 --> 00:01:24,960
+Vì vậy, bước đầu tiên là lấy lại các đoạn, và tìm kiếm véc tơ có thể trở lại
+
+20
+00:01:24,960 --> 00:01:28,160
+20 đến 25 khúc, và bạn có thể thấy ở đây.
+
+21
+00:01:28,160 --> 00:01:34,320
+Vì vậy, một khi chúng tôi đã có các truy vấn người dùng, tái thu hồi đầu tiên sẽ lấy được khoảng 25 đoạn, hoặc như vậy,
+
+22
+00:01:34,320 --> 00:01:40,720
+Tiếp theo, sau đó các mô hình re-ranker đánh dấu mỗi cặp thực sự liên quan.
+
+23
+00:01:40,720 --> 00:01:47,520
+Vì vậy, mỗi truy vấn đã được thu hồi, nó sẽ cung cấp cho nó một điểm liên quan dựa trên
+
+24
+00:01:47,520 --> 00:01:49,600
+Truy vấn và kiểm tra.
+
+25
+00:01:50,720 --> 00:01:55,520
+Kết quả được sắp xếp lại, có lẽ chỉ còn 5 đến 8 phần liên quan.
+
+26
+00:01:55,520 --> 00:02:00,400
+Bạn có thể thấy ở đây có 25 đoạn đầu tiên được lấy ra,
+
+27
+00:02:00,400 --> 00:02:05,680
+Sau đó các mô hình quay lại mô hình và chọn chỉ trên năm hoặc như vậy mảng.
+
+28
+00:02:05,680 --> 00:02:11,840
+Và sau đó chúng được gửi đến LM, vì vậy mô hình thấy một bối cảnh rõ ràng hơn, chính xác hơn,
+
+29
+00:02:11,840 --> 00:02:14,320
+và tạo ra kết quả tốt hơn.
+
+30
+00:02:14,320 --> 00:02:18,560
+Vì vậy, những lợi ích của việc sử dụng một mô hình quay lại là gì?
+
+31
+00:02:18,560 --> 00:02:24,080
+Thứ nhất, nó cải thiện chính xác câu trả lời bằng cách chọn ngữ cảnh thích hợp nhất.
+
+32
+00:02:24,080 --> 00:02:31,680
+Sau đó, nó giảm thiểu ảo giác bằng cách loại bỏ những mẩu yếu hoặc không liên quan, và cuối cùng,
+
+33
+00:02:31,680 --> 00:02:37,360
+Nó làm giảm hiệu suất sử dụng bằng cách gửi ít chất lượng cao hơn đến LLM.
+
+34
+00:02:37,360 --> 00:02:40,000
+Được rồi, vậy là khá nhiều từ bài giảng này.
+
+35
+00:02:40,000 --> 00:02:40,800
+Hẹn gặp lại ở bài giảng tiếp theo.
+
+36
+00:02:40,800 --> 00:02:41,200
+Cảm ơn.
+
