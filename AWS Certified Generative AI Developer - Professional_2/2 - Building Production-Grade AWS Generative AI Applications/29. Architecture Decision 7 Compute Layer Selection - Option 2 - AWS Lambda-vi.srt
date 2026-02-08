@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:03,600
+Trong bài giảng này, chúng ta sẽ tập trung vào AWS Lambda.
+
+2
+00:00:03,600 --> 00:00:05,900
+Nếu bạn nhìn vào kiến trúc của AWS,
+
+3
+00:00:05,900 --> 00:00:08,500
+Đó là dịch vụ hoàn toàn không có máy chủ.
+
+4
+00:00:08,500 --> 00:00:10,300
+Trong trường hợp của EC2,
+
+5
+00:00:10,300 --> 00:00:14,000
+Chúng tôi đã thấy một số các lớp này được quản lý bởi AWS
+
+6
+00:00:14,000 --> 00:00:17,000
+Và ít người trong số họ được khách hàng quản lý.
+
+7
+00:00:17,000 --> 00:00:20,000
+Nhưng trong trường hợp của AWS Lambda,
+
+8
+00:00:20,000 --> 00:00:21,700
+Vì vậy, nếu bạn thấy lớp vật lý,
+
+9
+00:00:21,700 --> 00:00:26,000
+Anh có hệ điều hành, siêu tư tưởng, môi trường hành hình,
+
+10
+00:00:26,000 --> 00:00:29,000
+Án tử hình, Lambda runtime,
+
+11
+00:00:29,000 --> 00:00:31,000
+Mọi thứ được quản lý bởi AWS.
+
+12
+00:00:31,000 --> 00:00:35,000
+Và với tư cách là khách hàng, thứ duy nhất anh cần là mã Genia,
+
+13
+00:00:35,000 --> 00:00:37,000
+Bạn có thể viết bằng Python, Java,
+
+14
+00:00:37,000 --> 00:00:41,000
+và hỗ trợ hầu hết các ngôn ngữ lập trình.
+
+15
+00:00:41,000 --> 00:00:43,000
+Đó là về kiến trúc.
+
+16
+00:00:43,000 --> 00:00:47,000
+Nếu bạn nhìn vào ban quản lý, đó là một dịch vụ AWS hoàn toàn được quản lý.
+
+17
+00:00:47,000 --> 00:00:50,000
+AWS quản lý mọi thứ, bao gồm cả cơ sở hạ tầng,
+
+18
+00:00:50,000 --> 00:00:55,000
+Phóng to, bảo trì, anh không cần phải lo gì cả.
+
+19
+00:00:55,000 --> 00:00:58,000
+Bây giờ theo mô hình giá cả của AWS Lambda,
+
+20
+00:00:58,000 --> 00:01:00,000
+Trả tiền rồi.
+
+21
+00:01:00,000 --> 00:01:03,000
+Mỗi lần bạn tạo ra một hàm Lambda,
+
+22
+00:01:03,000 --> 00:01:06,000
+Anh phải phân phát một số bộ nhớ,
+
+23
+00:01:06,000 --> 00:01:09,000
+Và sau đó anh sẽ được tính tiền dựa trên bộ nhớ được phân bổ.
+
+24
+00:01:09,000 --> 00:01:12,000
+Thời gian thi hành án, cứ cho là chức năng Lambda của anh,
+
+25
+00:01:12,000 --> 00:01:15,000
+Điều hành mã Genia và logic trong 5 phút.
+
+26
+00:01:15,000 --> 00:01:19,000
+Vậy anh sẽ bị phạt 5 phút hành hình.
+
+27
+00:01:19,000 --> 00:01:22,000
+Và số Lambda.
+
+28
+00:01:22,000 --> 00:01:24,000
+Bây giờ xét về giới hạn thi hành án,
+
+29
+00:01:24,000 --> 00:01:26,000
+Điều này rất quan trọng.
+
+30
+00:01:26,000 --> 00:01:32,000
+Lambda có thời gian hành quyết tối đa 15 phút mỗi lần cầu xin.
+
+31
+00:01:32,000 --> 00:01:34,000
+Nếu thời gian thực thi hạn chế hơn 15 phút,
+
+32
+00:01:34,000 --> 00:01:38,000
+sau đó bạn cần hoặc là xem qua ECS hoặc EC2.
+
+33
+00:01:38,000 --> 00:01:40,000
+Được rồi, xét về sự tăng trưởng,
+
+34
+00:01:40,000 --> 00:01:44,000
+Nó tự động và năng động dựa trên âm lượng yêu cầu.
+
+35
+00:01:44,000 --> 00:01:48,000
+Thông thường cho mỗi tài khoản trong một vùng, khoảng 1000,
+
+36
+00:01:48,000 --> 00:01:55,000
+Nhưng nó có thể tăng lên hàng chục và hàng ngàn nếu bạn gửi một yêu cầu tới AWS.
+
+37
+00:01:55,000 --> 00:01:58,000
+Được rồi, bây giờ điều quan trọng, các vụ sử dụng.
+
+38
+00:01:58,000 --> 00:02:04,000
+Đầu tiên là bạn có thể viết luận lý dàn nhạc cho Genia.
+
+39
+00:02:04,000 --> 00:02:06,000
+Bây giờ hãy thử và hiểu điều này thông qua một ví dụ.
+
+40
+00:02:06,000 --> 00:02:12,000
+Đây là mô hình kiến trúc phổ biến nhất cho ứng dụng AWS Genia.
+
+41
+00:02:12,000 --> 00:02:16,000
+Vậy là bạn có cổng vào của ADI, Lambda, và đá phiến Amazon.
+
+42
+00:02:16,000 --> 00:02:19,000
+Vì vậy những điều quan trọng cần nhớ về AWS Lambda,
+
+43
+00:02:19,000 --> 00:02:23,000
+Đó là một sự kiện điều khiển dịch vụ tính toán không có máy chủ.
+
+44
+00:02:23,000 --> 00:02:28,000
+Vậy sự kiện này có nghĩa là nó sẽ không tự chạy được.
+
+45
+00:02:28,000 --> 00:02:31,000
+Trừ khi có một cái cò, còn có một sự kiện.
+
+46
+00:02:31,000 --> 00:02:35,000
+Nó sẽ không chạy và anh sẽ không bị buộc tội.
+
+47
+00:02:35,000 --> 00:02:37,000
+Được rồi, vậy sự kiện là gì?
+
+48
+00:02:37,000 --> 00:02:40,000
+Giả sử người dùng của chúng ta gửi một dấu nhắc,
+
+49
+00:02:40,000 --> 00:02:42,000
+Tóm tắt mùa đông bằng những khúc gỗ.
+
+50
+00:02:42,000 --> 00:02:44,000
+Đó là một sự kiện.
+
+51
+00:02:44,000 --> 00:02:48,000
+Được rồi, một khi anh ta gửi yêu cầu đó thông qua cửa vào ADI,
+
+52
+00:02:48,000 --> 00:02:50,000
+Nó sẽ được chuyển tới bộ phận AWS Lambda.
+
+53
+00:02:50,000 --> 00:02:54,000
+Và ở đây bạn có thể viết lập luận hợp lý của bạn.
+
+54
+00:02:54,000 --> 00:02:58,000
+Vì vậy, có lẽ bạn sẽ sử dụng một số kỹ thuật kỹ thuật nhanh chóng.
+
+55
+00:02:58,000 --> 00:03:01,000
+Có lẽ bạn sẽ gửi thông tin liên quan đến mô hình,
+
+56
+00:03:01,000 --> 00:03:05,000
+tham số vô giá trị, dấu nhắc hệ thống, vân vân.
+
+57
+00:03:05,000 --> 00:03:07,000
+Và sau đó nó sẽ được gửi tới nền đá Amazon,
+
+58
+00:03:07,000 --> 00:03:09,000
+và sau đó bạn sẽ nhận được một phản hồi.
+
+59
+00:03:09,000 --> 00:03:10,000
+Vì vậy, đó là trường hợp sử dụng đầu tiên.
+
+60
+00:03:10,000 --> 00:03:13,000
+Cái thứ hai nằm trên một ứng dụng giẻ rách.
+
+61
+00:03:13,000 --> 00:03:17,000
+AWS có một dịch vụ được gọi là nền tảng kiến thức nền tảng,
+
+62
+00:03:17,000 --> 00:03:20,000
+và chúng ta sẽ lặn sâu vào đó.
+
+63
+00:03:20,000 --> 00:03:23,000
+Đây là một chủ đề kiểm tra quan trọng khác ở phần tiếp theo.
+
+64
+00:03:23,000 --> 00:03:26,000
+Vì vậy, nền tảng kiến thức nền tảng cung cấp hai APIs,
+
+65
+00:03:26,000 --> 00:03:29,000
+Thu thập và lấy lại và tạo ra API.
+
+66
+00:03:29,000 --> 00:03:33,000
+Vì vậy, bạn có thể viết cuốn sách của ba mã trong chức năng Lambda của bạn
+
+67
+00:03:33,000 --> 00:03:36,000
+Để lấy dữ liệu từ một ứng dụng dựa trên giẻ rách,
+
+68
+00:03:36,000 --> 00:03:38,000
+Đặc biệt là kiến thức nền tảng.
+
+69
+00:03:38,000 --> 00:03:42,000
+Okay, vậy chúng ta đã thảo luận rằng nó có thể được sử dụng để viết
+
+70
+00:03:42,000 --> 00:03:45,000
+Lập luận hợp lý cho ứng dụng du lịch.
+
+71
+00:03:45,000 --> 00:03:49,000
+Sau đó, nó có thể được sử dụng cho giá treo cổ, lấy lại và lấy lại và tạo ra ADI.
+
+72
+00:03:49,000 --> 00:03:55,000
+Và sau đó nó cũng có thể được sử dụng như một công cụ cho các đại lý nền móng Amazon.
+
+73
+00:03:55,000 --> 00:03:58,000
+Và chúng tôi sẽ thảo luận điều đó trong phần ba,
+
+74
+00:03:58,000 --> 00:04:03,000
+Nhưng hãy nhớ rằng nó cũng có thể được sử dụng cho các đặc vụ Amazon.
+
+75
+00:04:03,000 --> 00:04:08,000
+Bây giờ chúng ta hãy xem xét một vài kịch bản mà bạn không thể sử dụng AWS Lambda.
+
+76
+00:04:08,000 --> 00:04:13,000
+Vì vậy, trước hết bạn không thể làm mô hình tổ chức tại AWS Lambda.
+
+77
+00:04:13,000 --> 00:04:17,000
+Thứ hai, bạn không thể dùng nó trong những nhiệm vụ lâu dài.
+
+78
+00:04:17,000 --> 00:04:20,000
+Bây giờ việc thực hiện nhiệm vụ là hơn 50 phút,
+
+79
+00:04:20,000 --> 00:04:23,000
+Vậy anh không thể dùng AWS Lambda.
+
+80
+00:04:23,000 --> 00:04:25,000
+Được rồi, vậy là khá nhiều từ bài giảng này.
+
+81
+00:04:25,000 --> 00:04:27,000
+Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
