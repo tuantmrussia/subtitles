@@ -1,0 +1,192 @@
+1
+00:00:00,000 --> 00:00:05,280
+Đây sẽ là một bài giảng nhanh chóng để hiểu những gì là cần thiết để tái thiết, tăng cường
+
+2
+00:00:05,280 --> 00:00:08,740
+Thế hệ hoặc RAG.
+
+3
+00:00:08,740 --> 00:00:14,120
+Vì vậy, nếu bạn thấy thách thức lớn nhất với mô hình nền tảng là thiếu thông tin sở hữu
+
+4
+00:00:14,120 --> 00:00:16,680
+hay thông tin kinh doanh.
+
+5
+00:00:16,680 --> 00:00:21,080
+Vì vậy, chúng ta biết rằng các mô hình nền tảng được đào tạo trên dữ liệu internet chung.
+
+6
+00:00:21,080 --> 00:00:27,320
+Vì vậy, nếu bạn hỏi nó một câu hỏi được đặt ra với tổ chức hoặc doanh nghiệp của bạn,
+
+7
+00:00:27,320 --> 00:00:29,760
+nó sẽ không thể trả lời.
+
+8
+00:00:29,760 --> 00:00:36,200
+Thứ hai, vì vậy nó không có một thông tin cập nhật sau khi được huấn luyện.
+
+9
+00:00:36,200 --> 00:00:40,280
+Vì vậy, nếu bạn thấy bất kỳ cơ sở nền tảng có sẵn trên Amazon betterock, nó sẽ
+
+10
+00:00:40,280 --> 00:00:42,280
+có một ngày bị cắt.
+
+11
+00:00:42,280 --> 00:00:46,560
+Có thể nó có ngày giảm án vào tháng 12 năm 2024.
+
+12
+00:00:46,560 --> 00:00:51,280
+Vì vậy, bất kỳ thông tin đăng mà nó sẽ không nhận thức được.
+
+13
+00:00:51,280 --> 00:00:56,120
+Đó là những thách thức mà hệ thống dựa trên RAG cố gắng vượt qua.
+
+14
+00:00:56,120 --> 00:01:02,340
+Vì vậy, tái thu hồi, thế hệ tăng cường hoặc RAG, trang bị các mô hình nền tảng với thông tin độc quyền
+
+15
+00:01:02,340 --> 00:01:06,400
+Bằng cách lấy dữ liệu từ các nguồn dữ liệu của công ty.
+
+16
+00:01:06,400 --> 00:01:11,840
+Vì vậy nó cũng có thể vượt qua những thách thức của không có thông tin cập nhật sau khi đào tạo
+
+17
+00:01:11,840 --> 00:01:18,280
+ngày qua các nguồn bên ngoài như tài liệu v.v...
+
+18
+00:01:18,280 --> 00:01:22,360
+Bây giờ chúng ta hãy hiểu điều này thông qua một ví dụ.
+
+19
+00:01:22,360 --> 00:01:28,080
+Vì vậy, chúng ta hãy nói rằng chúng tôi đang cố gắng xây dựng một m-e-học chatbot giúp nhân viên học AI
+
+20
+00:01:28,080 --> 00:01:29,080
+Công nghệ.
+
+21
+00:01:29,080 --> 00:01:33,720
+Bây giờ chúng ta hãy nói rằng chúng tôi đã xây dựng một ứng dụng AI sáng tạo chỉ sử dụng các mô hình nền tảng.
+
+22
+00:01:33,720 --> 00:01:40,480
+Và nhân viên bây giờ hỏi một câu hỏi cho các mô hình nền tảng mà nói những gì là tham khảo RAG
+
+23
+00:01:40,480 --> 00:01:44,560
+Kiến trúc trong tổ chức XYZ của tôi?
+
+24
+00:01:44,560 --> 00:01:48,960
+Bây giờ chúng ta hãy nói rằng câu hỏi này đi vào ứng dụng AI sáng tạo của chúng tôi xây dựng trên đầu Amazon
+
+25
+00:01:48,960 --> 00:01:53,760
+trên nền đất nên đá trên nền nhà Amazon sẽ đưa câu hỏi này đến một trong những mô hình nền tảng
+
+26
+00:01:53,760 --> 00:02:00,360
+Có lẽ chúng ta sẽ nói về vấn đề này trong trường hợp này và với câu trả lời như sau.
+
+27
+00:02:00,360 --> 00:02:05,960
+Không may là tôi không có đủ thông tin ngữ cảnh để trả lời câu hỏi này bởi vì
+
+28
+00:02:05,960 --> 00:02:10,200
+Tôi không biết cấu trúc tham khảo RAG của tổ chức XYZ là gì.
+
+29
+00:02:10,200 --> 00:02:15,600
+Vì vậy, nó sẽ trở lại với một câu trả lời chung hoặc nó sẽ nói rằng nó không có
+
+30
+00:02:15,600 --> 00:02:17,600
+Đủ thông tin ngữ cảnh.
+
+31
+00:02:17,600 --> 00:02:21,120
+Vì vậy, đó là nơi RAG bắt đầu.
+
+32
+00:02:21,120 --> 00:02:25,560
+Chúng tôi giả sử dữ liệu của bạn là trong điểm chia sẻ nơi bạn có tài liệu PDF liên quan đến
+
+33
+00:02:25,560 --> 00:02:29,360
+Amazon ruprock EC2 và một số dịch vụ khác.
+
+34
+00:02:29,360 --> 00:02:34,760
+Bây giờ chúng tôi cũng giả sử bạn có tổ chức Gen Al tham khảo kho kiến trúc nơi
+
+35
+00:02:34,760 --> 00:02:39,600
+Bạn lưu trữ kiến trúc tham khảo cho tất cả các kiểu kiến trúc.
+
+36
+00:02:39,600 --> 00:02:44,840
+Vì vậy, bây giờ những gì chúng tôi có thể làm là ứng dụng Gen Al được xây dựng trên đỉnh của nền đá Amazon có thể tích hợp
+
+37
+00:02:44,840 --> 00:02:49,920
+Với những kiến thức này trong tổ chức sau đó bạn có thể sử dụng trí thông minh
+
+38
+00:02:49,920 --> 00:02:57,160
+của các mô hình nền tảng nhưng cũng kết hợp nó với các nguồn dữ liệu kinh doanh để có được
+
+39
+00:02:57,160 --> 00:03:03,800
+thông tin ngữ cảnh và nó cũng giải quyết vấn đề thứ hai của ngày cắt bởi vì
+
+40
+00:03:03,800 --> 00:03:07,200
+Tất cả những tài liệu này có thể có thông tin mới nhất.
+
+41
+00:03:07,200 --> 00:03:11,000
+Vì vậy, ngay cả khi các mô hình nền tảng không có những thông tin mới nhất nó có thể lấy lại nó
+
+42
+00:03:11,000 --> 00:03:15,440
+từ những tài liệu này hoặc những nguồn bên ngoài khác.
+
+43
+00:03:15,440 --> 00:03:17,080
+Vậy RAG là gì?
+
+44
+00:03:17,080 --> 00:03:22,640
+RAG là quá trình tối ưu hóa đầu ra của một mô hình ngôn ngữ lớn bằng cách bổ sung
+
+45
+00:03:22,640 --> 00:03:29,480
+kiến thức về một mô hình ngôn ngữ lớn với nguồn dữ liệu nội bộ.
+
+46
+00:03:29,480 --> 00:03:32,080
+Được rồi, đó là khá nhiều từ bài giảng này.
+
+47
+00:03:32,080 --> 00:03:33,080
+Tôi sẽ xem trong bài giảng tiếp theo.
+
+48
+00:03:33,080 --> 00:03:33,280
+Cảm ơn.
+
