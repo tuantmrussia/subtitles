@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:04,240
+Trong bài giảng này, chúng ta sẽ xem xét điểm quyết định kiến trúc thứ 11
+
+2
+00:00:04,240 --> 00:00:09,280
+Cho ứng dụng AI sáng tạo của chúng tôi. Và đó là tùy biến mô hình.
+
+3
+00:00:09,280 --> 00:00:17,040
+Mô hình thích nghi tiếp cận trên nền đá Amazon. Vì vậy, thích nghi mô hình đơn giản có nghĩa là làm thế nào để bạn
+
+4
+00:00:17,040 --> 00:00:23,680
+cải thiện kết xuất mà bạn đang tạo ra từ mô hình nền tảng của bạn dựa trên các nhắc mà bạn có
+
+5
+00:00:23,680 --> 00:00:29,200
+Gửi. Vì vậy, có những cách khác nhau mà bạn có thể làm điều đó. Vì vậy, cách tiếp cận đầu tiên là nhanh chóng
+
+6
+00:00:29,200 --> 00:00:34,480
+Kĩ thuật. Và chúng tôi đã thảo luận kỹ thuật nhắc trước đó. Vì vậy, nó là một chi phí thấp,
+
+7
+00:00:34,480 --> 00:00:41,840
+nhưng kết quả là trung bình. Bây giờ nếu kỹ thuật nhắc không làm việc cho bạn,
+
+8
+00:00:41,840 --> 00:00:48,320
+Cách tiếp theo là tái tạo lại thế hệ hoặc đúng. Vì vậy, ở đây, về cơ bản, bạn kết nối
+
+9
+00:00:48,320 --> 00:00:54,160
+Mô hình ngôn ngữ lớn của bạn cho nguồn dữ liệu nội bộ của bạn. Vì vậy, chúng tôi sẽ lặn sâu vào
+
+10
+00:00:54,160 --> 00:01:00,720
+RAG ở phần tiếp theo, nhưng kết quả tốt hơn nhiều so với kỹ thuật nhắc,
+
+11
+00:01:00,720 --> 00:01:08,400
+Nhưng còn nhiều chi phí hơn. Và cũng mất nhiều thời gian hơn. Sau đó chúng tôi có chỉnh sửa tốt và tiếp tục
+
+12
+00:01:08,400 --> 00:01:15,520
+Trước khi huấn luyện, đó là cách tiếp cận tùy chỉnh mô hình. Hãy nhớ rằng, hai không phải là mô hình tùy biến.
+
+13
+00:01:15,520 --> 00:01:22,240
+Kết quả tốt hơn nhiều, nhưng tốn nhiều thời gian hơn. Bây giờ tùy chỉnh mô hình trong
+
+14
+00:01:22,240 --> 00:01:30,160
+Đá nền Amazon được thực hiện để cải thiện độ chính xác hiệu suất của một mô hình và liên quan đến cụ thể
+
+15
+00:01:30,160 --> 00:01:37,120
+Công việc sở hữu sử dụng các vụ án và nhiệm vụ. Vậy những phương pháp tùy biến khác nhau là gì?
+
+16
+00:01:37,120 --> 00:01:42,000
+Vì vậy, đầu tiên bạn có mô hình chưng cất, sau đó bạn có chỉnh sửa tốt, sau đó bạn đã tiếp tục
+
+17
+00:01:42,000 --> 00:01:47,760
+Trước khi luyện tập, và sau đó bạn có sự tăng cường tốt. Vì vậy, cho đến một vài tuần trước, chúng tôi đã có những
+
+18
+00:01:47,760 --> 00:01:53,280
+Ba cách tiếp cận đầu tiên có sẵn trên đá nền Amazon, nhưng bây giờ họ đang làm
+
+19
+00:01:53,280 --> 00:01:58,720
+Họ đang chuyển cái này cho SageMaker Al và họ đang giới thiệu,
+
+20
+00:01:58,720 --> 00:02:05,200
+Nó vẫn đang được tăng cường. Bây giờ chúng ta hãy xem xét tùy biến
+
+21
+00:02:05,200 --> 00:02:09,920
+Tiếp cận kiến trúc về cách nó hoạt động. Vì vậy, trước đây, chúng tôi đã nhìn thấy một tương tự
+
+22
+00:02:09,920 --> 00:02:15,520
+Kiến trúc cho nền móng Amazon, nhưng có một sự khác biệt nhỏ khi bạn tùy chỉnh.
+
+23
+00:02:15,520 --> 00:02:20,640
+Vì vậy, trước đây chúng tôi đã thảo luận cho mỗi tài khoản, sẽ có một mô hình cơ bản sẽ được
+
+24
+00:02:20,640 --> 00:02:26,560
+ở trong xô S3. Vì vậy, khi bạn thực hiện một yêu cầu hoặc lập trình hoặc thông qua trình duyệt,
+
+25
+00:02:26,560 --> 00:02:32,400
+Nó sẽ đi đến dịch vụ nền Amazon, và sau đó nó sẽ được chuyển hướng đến mô hình cơ sở này trong S3
+
+26
+00:02:32,400 --> 00:02:37,520
+xô và bạn nhận được một phản hồi. Nhưng trong trường hợp bạn đang tùy biến, có nhiều hơn
+
+27
+00:02:37,520 --> 00:02:44,160
+Các yếu tố. Đầu tiên là, trong tài khoản của bạn, tài khoản khách hàng, bạn sẽ tạo ra một xô S3
+
+28
+00:02:44,160 --> 00:02:50,320
+và bạn sẽ tải lên tất cả dữ liệu đào tạo mà bạn muốn sử dụng để tùy chỉnh mô hình của bạn.
+
+29
+00:02:50,320 --> 00:02:56,880
+Vì vậy, hoặc thông qua chương trình hoặc thông qua bàn điều khiển, bạn tạo ra một công việc đào tạo trong
+
+30
+00:02:56,880 --> 00:03:02,720
+Dịch vụ trên nền móng Amazon, và sau đó dịch vụ trên nền móng Amazon sẽ đi đến nơi huấn luyện này
+
+31
+00:03:02,720 --> 00:03:09,120
+Dàn dựng và tạo công việc huấn luyện SageMaker. Vì vậy công việc này sẽ làm gì, nó sẽ mất
+
+32
+00:03:09,120 --> 00:03:17,200
+dữ liệu từ dữ liệu đào tạo S3 xô và sau đó đào tạo mô hình cơ sở này trong S3 xô và cuối cùng
+
+33
+00:03:17,200 --> 00:03:23,440
+tạo ra một mô hình giai điệu tốt được đặt trong một xô S3 riêng biệt. Trong bài giảng này,
+
+34
+00:03:23,440 --> 00:03:28,880
+Chúng tôi muốn xem xét phương pháp tùy biến mô hình đầu tiên đó là cách chưng cất mô hình.
+
+35
+00:03:28,880 --> 00:03:35,440
+Mô hình chưng cất chuyển kiến thức từ một mô hình giáo viên chính xác lớn sang nhỏ hơn
+
+36
+00:03:35,440 --> 00:03:42,080
+Mô hình sinh viên nhanh hơn và rẻ hơn. Điều đó có nghĩa là trong việc chưng cất mô hình, sẽ có hai
+
+37
+00:03:42,080 --> 00:03:48,400
+Người mẫu. Một là mô hình giáo viên, là mô hình lớn hơn, có khả năng hơn. Vì vậy, hãy nói trong
+
+38
+00:03:48,400 --> 00:03:54,480
+Trường hợp của chúng tôi, đó là Nova Pro và nó có thể có hàng trăm và hàng tỷ tham số. Sau đó chúng tôi có một
+
+39
+00:03:54,480 --> 00:04:00,800
+Mô hình sinh viên nhỏ hơn và hiệu quả hơn. Và trong trường hợp của chúng tôi, điều này sẽ là
+
+40
+00:04:00,800 --> 00:04:06,320
+Nova Light. Vì vậy, hãy nói trong trường hợp sử dụng của chúng tôi, chúng tôi đang lên kế hoạch sử dụng Nova Light bởi vì nó đã
+
+41
+00:04:06,320 --> 00:04:14,240
+Sự khoan dung thấp và sử dụng rẻ hơn Nova Pro nhiều. Sau đó, những gì bạn làm là cung cấp dấu nhắc,
+
+42
+00:04:14,240 --> 00:04:21,760
+Vì vậy, bạn gửi nhắc nhở đến mô hình Nova Pro này và nó sẽ tạo ra một phản hồi. Sau đó sử dụng các dấu nhắc
+
+43
+00:04:21,760 --> 00:04:30,400
+Và phản hồi mà bạn nhận được từ mô hình Nova Pro này và sử dụng nó để đào tạo mô hình Nova Light của bạn.
+
+44
+00:04:31,280 --> 00:04:37,360
+Tóm lại, bạn gửi rất nhiều lời nhắc nhở đến mô hình giáo viên này, nó tạo ra một phản hồi,
+
+45
+00:04:37,360 --> 00:04:44,880
+sau đó bạn sử dụng rằng nhắc nhở cộng với trả lời mà bạn nhận được từ các mô hình giáo viên để đào tạo học sinh
+
+46
+00:04:44,880 --> 00:04:51,600
+Người mẫu. Vì vậy, những gì là trường hợp sử dụng cho việc chưng cất mô hình, đạt được gần chính xác mô hình lớn
+
+47
+00:04:51,600 --> 00:04:58,080
+với giá thấp hơn. Vì vậy, khi bạn đào tạo mô hình sinh viên dựa trên các nhắc và phản ứng
+
+48
+00:04:58,080 --> 00:05:04,000
+rằng bạn đã nhận được từ các mô hình giáo viên, độ chính xác của nó sẽ gần bằng các mô hình giáo viên
+
+49
+00:05:04,000 --> 00:05:10,480
+Nhưng chi phí và độ mềm sẽ thấp hơn nhiều. Vâng, vì vậy đó là khá nhiều từ này
+
+50
+00:05:10,480 --> 00:05:12,000
+diễn thuyết. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
