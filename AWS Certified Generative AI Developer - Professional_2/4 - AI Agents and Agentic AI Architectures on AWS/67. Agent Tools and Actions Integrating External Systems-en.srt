@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:04,720
+ now in the previous lecture we discussed about the planning capability of AI agents.
+
+2
+00:00:04,720 --> 00:00:09,360
+ Now in this lecture we want to take a deep dive into tools and action.
+
+3
+00:00:09,360 --> 00:00:15,360
+ Now depending on the domain of the agent, whether it's an insurance agent, banking agent, travel
+
+4
+00:00:15,360 --> 00:00:20,960
+ agent, it will have different set of tools. So it could have a tool to access database,
+
+5
+00:00:20,960 --> 00:00:26,800
+ maybe SharePoint, through a rag based solution, a code interpreter, whether API travel, booking,
+
+6
+00:00:26,800 --> 00:00:32,800
+ and so on. Previously we had discussed that the large language models do not have access to
+
+7
+00:00:32,800 --> 00:00:38,560
+ whether information and then we saw it cannot book flights. Now this is the shortcoming that tools
+
+8
+00:00:38,560 --> 00:00:46,560
+ calling or function calling fulfill in the case of AI agents. So function calling or tool calling
+
+9
+00:00:46,560 --> 00:00:55,360
+ enable agents to connect and retrieve data from external and internal source data and systems
+
+10
+00:00:55,360 --> 00:01:00,800
+ to enhance the capabilities of the agents. And as we discussed, based on the domain,
+
+11
+00:01:00,800 --> 00:01:07,280
+ there could be different tools that could be at the disposal of the agents. So let's say
+
+12
+00:01:07,280 --> 00:01:12,480
+ it might need to connect to Google search. So it will have a tool to access Google search,
+
+13
+00:01:12,480 --> 00:01:18,960
+ capabilities, maybe weather APIs, if the travel agent, maybe it needs to extract some data from my
+
+14
+00:01:18,960 --> 00:01:25,520
+ SQL database. So it could have a tool using the retrieval augmented solution, maybe you have some
+
+15
+00:01:25,520 --> 00:01:30,960
+ PDF documents on SharePoint, which you need to access. Then you could have a code interpreter
+
+16
+00:01:30,960 --> 00:01:37,920
+ for running custom code. So where this is used is, let's say you have a DevOps agent or a developer
+
+17
+00:01:37,920 --> 00:01:45,200
+ agent and there are some issues in the application and the agent is able to pinpoint the issue
+
+18
+00:01:45,200 --> 00:01:51,600
+ that is causing the application to fail. So what it can do is it can generate some code
+
+19
+00:01:51,600 --> 00:01:57,600
+ using the large language model, which will fix the issue. But before that, it might want to run
+
+20
+00:01:57,600 --> 00:02:04,960
+ that code in a sandbox environment. So that's the code interpreter that is provided to the agent
+
+21
+00:02:04,960 --> 00:02:10,160
+ where it can run the custom code where it can test it out and then apply that patch
+
+22
+00:02:10,160 --> 00:02:16,560
+ to the application, which is failing. Now let's understand the tool calling or function calling
+
+23
+00:02:16,560 --> 00:02:21,520
+ capability through an example. Let's take our vacation planning example and we have the
+
+24
+00:02:21,520 --> 00:02:29,440
+ microcool agent app. Now we know to execute this user request, the agent is going to do the planning
+
+25
+00:02:29,440 --> 00:02:35,680
+ and task decomposition and break it into smaller tasks. And now let's say the first thing
+
+26
+00:02:35,680 --> 00:02:42,960
+ it needs to do is call the weather API. So for that, you can have your first tool. But how do you
+
+27
+00:02:42,960 --> 00:02:49,920
+ create that tool? So let's say in case of AWS, you can use an AWS Lambda service where you
+
+28
+00:02:49,920 --> 00:02:57,360
+ write custom code to call the weather API. And then you let the agent know that if there is any
+
+29
+00:02:57,360 --> 00:03:05,040
+ query related to weather, then you can execute this tool one. Similarly, let's say next it needs to
+
+30
+00:03:05,680 --> 00:03:11,520
+ do the hotel booking. So again, you write some custom code in AWS Lambda and maybe call it tool
+
+31
+00:03:11,520 --> 00:03:19,680
+ two and let the agent know that every time there is a call to book a hotel, you need to execute
+
+32
+00:03:19,680 --> 00:03:27,040
+ this tool to then maybe we discussed about code execution. Maybe it's a developer agent or a
+
+33
+00:03:27,040 --> 00:03:33,440
+ DevOps agent and it generates some code which it needs to test out. So it can use the tool three,
+
+34
+00:03:33,440 --> 00:03:39,200
+ which is a code execution environment provided by the agent. And similarly, let's say if it
+
+35
+00:03:39,200 --> 00:03:44,880
+ needs to call an HR system, then you can have tool four where you have integrated the better
+
+36
+00:03:44,880 --> 00:03:50,240
+ knowledge basis with the agent and you have let the agent know that if there is any question related
+
+37
+00:03:50,240 --> 00:03:58,720
+ to HR system, it needs to execute the tool four. Now, let's try and understand how does the agent
+
+38
+00:03:58,720 --> 00:04:06,640
+ know which tool to call. And an example that I'm showing, we are powering the agent using the
+
+39
+00:04:06,640 --> 00:04:16,080
+ cloud sonnet model from entropic. So what cloud says is that if you want the agent to execute
+
+40
+00:04:16,080 --> 00:04:22,720
+ a particular tool, you have to define the tools available to the agent. So here's a prompt template
+
+41
+00:04:22,720 --> 00:04:32,640
+ editor and this provides instructions to the agent on what tools are available to it and when it
+
+42
+00:04:32,640 --> 00:04:38,880
+ should execute those tools. So here you can see you define the tool name, let's say we define,
+
+43
+00:04:38,880 --> 00:04:43,840
+ okay, the first tool is when you need to call the weather API. So you define the tool name,
+
+44
+00:04:43,840 --> 00:04:51,440
+ weather API, then what are the parameters that will be passed as part of the user request.
+
+45
+00:04:51,440 --> 00:04:58,560
+ So maybe if it's a weather API tool, then the user will pass the location for which it needs the
+
+46
+00:04:58,560 --> 00:05:04,960
+ weather details. So this is how you define and tell the agent what tools are available.
+
+47
+00:05:04,960 --> 00:05:12,720
+ So once you have done that, what entropic says is that once you have defined the prompt template
+
+48
+00:05:12,720 --> 00:05:18,960
+ for the agent and based on this prompt template and the user input, it's going to create a
+
+49
+00:05:18,960 --> 00:05:27,200
+ special system prompt from the tool definition tool configuration and user specified system prompt
+
+50
+00:05:27,200 --> 00:05:35,600
+ that it will feed to the large language model and then it will be able to execute those tools.
+
+51
+00:05:35,600 --> 00:05:42,240
+ So here's another example from entropic. So you can see it is using cloud 3.5
+
+52
+00:05:42,240 --> 00:05:49,040
+ sonnet model and then it provides the details, the tools that you can use. So here it says
+
+53
+00:05:49,040 --> 00:05:55,840
+ the name of the tool is get weather and description is get the current weather in the given
+
+54
+00:05:55,840 --> 00:06:01,840
+ location. And then it says, okay, the user is going to provide you the location and that's a
+
+55
+00:06:01,840 --> 00:06:09,520
+ required field. And then it's going to generate an output which it will pass to the agent and
+
+56
+00:06:09,520 --> 00:06:15,840
+ depending on the context of the user question, it can either synthesize that with other information
+
+57
+00:06:15,840 --> 00:06:22,320
+ from other tools or it can send that output back to the user. Okay, that's pretty much it from
+
+58
+00:06:22,320 --> 00:06:24,400
+ this lecture. I'll see in the next lecture. Thank you.
+
