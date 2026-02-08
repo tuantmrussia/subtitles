@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:05,200
+ Okay, now in this lecture we're going to look at the second retrieval optimization method
+
+2
+00:00:05,200 --> 00:00:08,200
+ which is through metadata filtering.
+
+3
+00:00:08,200 --> 00:00:10,280
+ So what is metadata filtering?
+
+4
+00:00:10,280 --> 00:00:16,800
+ Metadata filtering allows you to filter query results based on specific attributes attached
+
+5
+00:00:16,800 --> 00:00:18,800
+ to your vectors.
+
+6
+00:00:18,800 --> 00:00:24,880
+ So what it means is that metadata filtering allows you to reduce the number of vector embeddings
+
+7
+00:00:24,880 --> 00:00:29,320
+ that you search based on certain specific attributes.
+
+8
+00:00:29,320 --> 00:00:31,820
+ Now let's go and try and understand this to an example.
+
+9
+00:00:31,820 --> 00:00:36,200
+ Now let's say you built an HR chatbot and your employees are both based out of India
+
+10
+00:00:36,200 --> 00:00:37,200
+ and US.
+
+11
+00:00:37,200 --> 00:00:42,340
+ Let's say you have the first document which has HR policies related to employees in India
+
+12
+00:00:42,340 --> 00:00:47,040
+ and let's say mainly they are in a finance department and then you have the second HR policy
+
+13
+00:00:47,040 --> 00:00:52,800
+ document which is focused on employees in US and let's say their department is mainly
+
+14
+00:00:52,800 --> 00:00:53,800
+ manufactured.
+
+15
+00:00:53,800 --> 00:01:00,320
+ Now let's say we have this end user who is based out of India and works in the finance
+
+16
+00:01:00,320 --> 00:01:01,320
+ department.
+
+17
+00:01:01,320 --> 00:01:05,000
+ So maybe he asks a question how many leaves can I take?
+
+18
+00:01:05,000 --> 00:01:09,160
+ Now once this user query has been converted into vector embeddings there is going to be similarity
+
+19
+00:01:09,160 --> 00:01:14,960
+ search so it's going to search for similar vectors in both these documents.
+
+20
+00:01:14,960 --> 00:01:20,400
+ Now with metadata filtering what you do is you add certain tags to each document.
+
+21
+00:01:20,400 --> 00:01:25,160
+ So let's say once I upload this document and our data source let's assume S3.
+
+22
+00:01:25,160 --> 00:01:32,160
+ So once I upload this document I will also add this metadata.json tag and it's a very
+
+23
+00:01:32,160 --> 00:01:37,680
+ simple file something like this which says okay employee India department finance.
+
+24
+00:01:37,680 --> 00:01:41,080
+ So when you upload the document related to the US employees.
+
+25
+00:01:41,080 --> 00:01:47,280
+ So here you will say employee USA department manufacturing and this is a JSON file that
+
+26
+00:01:47,280 --> 00:01:51,000
+ you are going to upload with each of these documents.
+
+27
+00:01:51,000 --> 00:01:57,720
+ So now what the metadata filtering does is once this user poses the same question based
+
+28
+00:01:57,720 --> 00:02:03,160
+ on this metadata.json file so it's going to look for a vector embeddings only related
+
+29
+00:02:03,160 --> 00:02:07,160
+ to this file and not this one.
+
+30
+00:02:07,160 --> 00:02:13,640
+ So use metadata filters with query operations to find the vectors that match both similarity
+
+31
+00:02:13,640 --> 00:02:17,240
+ criteria and specific metadata conditions.
+
+32
+00:02:17,240 --> 00:02:22,160
+ And as I explained it's not going to look at vector embeddings and do a similarity search
+
+33
+00:02:22,160 --> 00:02:29,480
+ for both documents only for this document one because it meets the specific metadata conditions
+
+34
+00:02:29,480 --> 00:02:33,120
+ that we have defined in this.json file.
+
+35
+00:02:33,120 --> 00:02:37,160
+ So what are the benefits benefits of metadata filtering?
+
+36
+00:02:37,160 --> 00:02:41,600
+ It reduces the number of chunks that are being searched because we are not searching for
+
+37
+00:02:41,600 --> 00:02:46,200
+ all the documents only the ones which meet the specific criteria.
+
+38
+00:02:46,200 --> 00:02:51,200
+ Then in the cost of querying the vector store and then finally it also helps in improvement
+
+39
+00:02:51,200 --> 00:02:52,600
+ in accuracy.
+
+40
+00:02:52,600 --> 00:02:55,840
+ So benefits related to accuracy and cost.
+
+41
+00:02:55,840 --> 00:02:59,120
+ Okay so that's pretty much it from this lecture as in the next lecture.
+
