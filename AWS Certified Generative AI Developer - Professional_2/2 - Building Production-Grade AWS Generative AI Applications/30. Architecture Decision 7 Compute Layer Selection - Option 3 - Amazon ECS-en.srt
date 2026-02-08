@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:05,000
+ Now, let's take a look at the third option, which is Amazon ECS in AWS.
+
+2
+00:00:05,000 --> 00:00:10,200
+ There are two main container services, one is ECS, which comes in two variants,
+
+3
+00:00:10,200 --> 00:00:17,400
+ Fargate, which is serverless, and then ECS on EC2, where you provision and easy to instance.
+
+4
+00:00:17,400 --> 00:00:20,000
+ And this is an AWS native service.
+
+5
+00:00:20,000 --> 00:00:24,200
+ And then you also have the managed EKS.
+
+6
+00:00:24,200 --> 00:00:29,800
+ But the exam is mainly going to focus on Amazon ECS because it's a AWS native server.
+
+7
+00:00:29,800 --> 00:00:35,800
+ Now, in terms of the architecture for Amazon ECS or Elastic Container service,
+
+8
+00:00:35,800 --> 00:00:41,800
+ so it's a fully managed, highly scalable container orchestration service.
+
+9
+00:00:41,800 --> 00:00:46,800
+ So now in terms of the management, AWS Fargate is a serverless service,
+
+10
+00:00:46,800 --> 00:00:50,800
+ so you don't need to manage any servers.
+
+11
+00:00:50,800 --> 00:00:56,800
+ Everything related to scaling, monitoring will be taken care of by AWS.
+
+12
+00:00:56,800 --> 00:01:01,800
+ And then you also have the option of running the ECS on EC2 instance,
+
+13
+00:01:01,800 --> 00:01:04,800
+ which will be a customer managed instance.
+
+14
+00:01:04,800 --> 00:01:09,800
+ Now, in terms of the scaling, AWS Fargate can scale automatically.
+
+15
+00:01:09,800 --> 00:01:16,800
+ And for once running on Amazon EC2, you can set up some metrics, which allows it to scale.
+
+16
+00:01:16,800 --> 00:01:24,800
+ Now, the important thing to remember here is containers can scale in most cases much faster than EC2 instances.
+
+17
+00:01:24,800 --> 00:01:29,800
+ Now, in terms of pricing model, again, Fargate is completely serverless,
+
+18
+00:01:29,800 --> 00:01:32,800
+ so it's only based on pay as you use.
+
+19
+00:01:32,800 --> 00:01:41,800
+ And in terms of when you use it, it will be based on the VCPU and memory used per second.
+
+20
+00:01:41,800 --> 00:01:50,800
+ In case of the EC2 ECS, it will be based on the EC2 instance provision for the ECS cluster.
+
+21
+00:01:50,800 --> 00:01:54,800
+ Okay, now the important thing, execution limit.
+
+22
+00:01:54,800 --> 00:01:58,800
+ It is suitable for long running genii inference.
+
+23
+00:01:58,800 --> 00:02:06,800
+ And there is no hard execution limit unlike the AWS Lambda function, which is 15 minute limit.
+
+24
+00:02:06,800 --> 00:02:11,800
+ So, this is an important distinction in the exam to determine which service to use.
+
+25
+00:02:11,800 --> 00:02:14,800
+ If it is less than 15 minutes, you go with AWS Lambda.
+
+26
+00:02:14,800 --> 00:02:18,800
+ If it is more than 15 minutes, then you have the option of ECS or EC2.
+
+27
+00:02:18,800 --> 00:02:22,800
+ Now, some of the core use cases for ECS.
+
+28
+00:02:22,800 --> 00:02:24,800
+ First is the custom Genia orchestration.
+
+29
+00:02:24,800 --> 00:02:31,800
+ So, if you have to write your orchestration logic, you can write the code for that and run it on ECS.
+
+30
+00:02:31,800 --> 00:02:33,800
+ The second one is the rack pipelines.
+
+31
+00:02:33,800 --> 00:02:35,800
+ I know we have not discussed a rack pipelines.
+
+32
+00:02:35,800 --> 00:02:41,800
+ And there are various steps involved in the rack pipeline, chunking, vector data bases, the retrieval and so on.
+
+33
+00:02:41,800 --> 00:02:46,800
+ And in those scenarios, and let's say you are using some open source frameworks,
+
+34
+00:02:46,800 --> 00:02:49,800
+ such as Lang Jane or open source databases.
+
+35
+00:02:49,800 --> 00:02:56,800
+ So, to execute those steps, you will need to write some code and that code can run on ECS.
+
+36
+00:02:56,800 --> 00:03:01,800
+ Then microsaves based architecture and in the exam, if you hear anything related to,
+
+37
+00:03:01,800 --> 00:03:05,800
+ then the most likely service is ECS.
+
+38
+00:03:05,800 --> 00:03:13,800
+ It can also be used for model hosting and we saw in EC2 instance how EC2 can be used for hosting the model.
+
+39
+00:03:13,800 --> 00:03:23,800
+ ECS also provides you option for model hosting where you can use GPU based inferences using ECS on EC2.
+
+40
+00:03:23,800 --> 00:03:28,800
+ So, you have G5 and P4D etc that can be used.
+
+41
+00:03:28,800 --> 00:03:33,800
+ And then finally, it can be used for any long running inference workloads.
+
+42
+00:03:33,800 --> 00:03:36,800
+ Okay, so that's pretty much it from this lecture.
+
+43
+00:03:36,800 --> 00:03:37,800
+ I'll see in the next lecture.
+
+44
+00:03:37,800 --> 00:03:38,800
+ Thank you.
+
