@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:04,920
+ Now, in the previous few lectures, we discussed about the planning capability of AI agent
+
+2
+00:00:04,920 --> 00:00:07,120
+ that we looked at tools and action.
+
+3
+00:00:07,120 --> 00:00:13,560
+ Now, let us go ahead and discuss in more detail the memory capability of AI agents.
+
+4
+00:00:13,560 --> 00:00:18,020
+ And there could be two types of memory that it can possess, one is the shorter memory
+
+5
+00:00:18,020 --> 00:00:20,120
+ and other is the long term memory.
+
+6
+00:00:20,120 --> 00:00:27,160
+ So, now, remember that AI agents are driven by large language models and large language
+
+7
+00:00:27,160 --> 00:00:29,280
+ models are stateless.
+
+8
+00:00:29,280 --> 00:00:35,400
+ They have no memory, so let us say if I send a request to an agent driven by a large
+
+9
+00:00:35,400 --> 00:00:38,360
+ language model and let us say it gives me a response.
+
+10
+00:00:38,360 --> 00:00:43,240
+ Now, let us say as a follow up question which has a context to the first query that I had
+
+11
+00:00:43,240 --> 00:00:44,240
+ sent.
+
+12
+00:00:44,240 --> 00:00:51,360
+ But for a large language model, it has no memory, it is stateless, so it would not remember
+
+13
+00:00:51,360 --> 00:00:53,480
+ what was the previous context.
+
+14
+00:00:53,480 --> 00:00:59,480
+ Now, to overcome this challenge, AI agents have short term memory.
+
+15
+00:00:59,480 --> 00:01:06,600
+ Now, in the short term memory, agents retain the conversation and the user input during
+
+16
+00:01:06,600 --> 00:01:08,200
+ the particular session.
+
+17
+00:01:08,200 --> 00:01:16,080
+ So, whatever interaction happens with the user and AI agent, that is retain for the particular
+
+18
+00:01:16,080 --> 00:01:19,000
+ session duration.
+
+19
+00:01:19,000 --> 00:01:25,920
+ First we have the long term memory, the long term memory allows AI agents to retain conversation
+
+20
+00:01:25,920 --> 00:01:28,440
+ across all previous interactions.
+
+21
+00:01:28,440 --> 00:01:34,360
+ Now, let us say I am a user and I had an interaction with the travel agent in the month
+
+22
+00:01:34,360 --> 00:01:36,560
+ of January 2024.
+
+23
+00:01:36,560 --> 00:01:41,600
+ Then next, I have another conversation in the month of March 2024.
+
+24
+00:01:41,600 --> 00:01:48,560
+ So, what it will do is, so for all the previous interaction, it will summarize the conversation
+
+25
+00:01:48,560 --> 00:01:50,440
+ and then store it.
+
+26
+00:01:50,440 --> 00:01:56,560
+ So, next time, let us say in September 2024, when I have a conversation with the agent,
+
+27
+00:01:56,560 --> 00:02:02,120
+ it is going to load all the previous interactions that have been summarized.
+
+28
+00:02:02,120 --> 00:02:10,600
+ So, now, in most cases, you can store all the previous interactions between 1 to 365 days.
+
+29
+00:02:10,600 --> 00:02:16,040
+ And remember, most of the time, it is not the entire conversation that is stored, but it
+
+30
+00:02:16,040 --> 00:02:19,240
+ is a summary of that interaction.
+
+31
+00:02:19,240 --> 00:02:23,160
+ Now, let us try and understand the short term memory through an example.
+
+32
+00:02:23,160 --> 00:02:28,080
+ Now, let us say, we have a user Joe, who is planning a two week scheme vacation.
+
+33
+00:02:28,080 --> 00:02:34,360
+ So, once the user starts interacting with the AI agent, the first thing it does is, in the
+
+34
+00:02:34,360 --> 00:02:39,360
+ short term memory, it will create a session ID for that particular interaction.
+
+35
+00:02:39,360 --> 00:02:42,400
+ So, I just given a random session ID here, 2, 2, 6, 5.
+
+36
+00:02:42,400 --> 00:02:48,500
+ So, once the AI agent gets this request and it creates a session ID, it will reply to
+
+37
+00:02:48,500 --> 00:02:57,000
+ Joe, let me check and get back and then it goes ahead and breaks down the task and maybe
+
+38
+00:02:57,000 --> 00:03:02,120
+ it executes certain tools, maybe it makes a call to HR system, maybe it to the hotel booking
+
+39
+00:03:02,120 --> 00:03:03,120
+ ID.
+
+40
+00:03:03,120 --> 00:03:07,240
+ Now, remember, if it is going to book a hotel, it needs the dates.
+
+41
+00:03:07,240 --> 00:03:10,160
+ So, here, it is talking about mid-December, 2 weeks.
+
+42
+00:03:10,160 --> 00:03:16,060
+ So, all this would be stored in the session ID and then maybe passed on to these tools
+
+43
+00:03:16,060 --> 00:03:19,960
+ so that they can execute based on certain parameters.
+
+44
+00:03:19,960 --> 00:03:26,000
+ Now, let us say, it gets a feedback saying that no rooms are available during this duration
+
+45
+00:03:26,000 --> 00:03:28,240
+ and agent lets Joe know.
+
+46
+00:03:28,240 --> 00:03:35,320
+ So, maybe Joe responds with new dates and those new dates are passed on to the agent and
+
+47
+00:03:35,320 --> 00:03:38,720
+ then it executes and then completes the booking.
+
+48
+00:03:38,720 --> 00:03:44,840
+ But now, these new dates are also stored in the short-term memory to give these tools
+
+49
+00:03:44,840 --> 00:03:45,840
+ some context.
+
+50
+00:03:45,840 --> 00:03:48,800
+ So, this is how a short-term memory works.
+
+51
+00:03:48,800 --> 00:03:54,080
+ So, now, if you have to just summarize it, short-term memory agents are used to store the user
+
+52
+00:03:54,080 --> 00:03:59,960
+ and agent interaction and they are and most likely they are stored in a data store with
+
+53
+00:03:59,960 --> 00:04:01,920
+ a particular session ID.
+
+54
+00:04:01,920 --> 00:04:06,160
+ Now, let us take a quick look on how the long-term memory works.
+
+55
+00:04:06,160 --> 00:04:11,720
+ Again, let us say we have Joe and we have an AI agent and let us say he interacted with
+
+56
+00:04:11,720 --> 00:04:18,640
+ the agent in December 2024 and he says that in its 2 weeks vacation from mid-December
+
+57
+00:04:18,640 --> 00:04:24,040
+ but he wants the hotel rooms to be non-smoking.
+
+58
+00:04:24,040 --> 00:04:29,600
+ And then some interaction happens between the agent and the user and let us say this user
+
+59
+00:04:29,600 --> 00:04:34,240
+ request has been fulfilled by the AI agent and the conversation ends.
+
+60
+00:04:34,240 --> 00:04:40,000
+ So, once the conversation between the user and AI agent ends, then what is going to happen
+
+61
+00:04:40,000 --> 00:04:43,840
+ is it is going to probably use another large language model or the same large language
+
+62
+00:04:43,840 --> 00:04:50,240
+ model to summarize the interaction between the user and agent and then it is going to
+
+63
+00:04:50,240 --> 00:04:57,240
+ store that in some form of data store, maybe some service in AWS, maybe a DynamoDB.
+
+64
+00:04:57,240 --> 00:05:05,680
+ Now, next time when Joe comes and interacts with the agent again, maybe in June 2025 and
+
+65
+00:05:05,680 --> 00:05:08,800
+ this time he wants to plan a 2-week vacation to Egypt.
+
+66
+00:05:08,800 --> 00:05:16,200
+ So, what will happen is before the AI agent starts responding, it will load this interaction
+
+67
+00:05:16,200 --> 00:05:25,000
+ that was stored in the data store before it responds to the new query of Joe in June 2025.
+
+68
+00:05:25,000 --> 00:05:30,680
+ And how does that help, now based on the previous interaction, it already knows that Joe
+
+69
+00:05:30,680 --> 00:05:34,760
+ is looking to book hotel rooms that are non-smoking.
+
+70
+00:05:34,760 --> 00:05:40,320
+ So, now it has an additional content, which adds an element of personalization.
+
+71
+00:05:40,320 --> 00:05:46,400
+ Now, if we just summarize the long-term memory in agents, so what are the benefits or long-term
+
+72
+00:05:46,400 --> 00:05:52,400
+ memory in AI agents, if you can quickly summarize, so it provides user preference to the
+
+73
+00:05:52,400 --> 00:05:58,880
+ agent based on historical interactions, then it also gives broader contextual knowledge
+
+74
+00:05:58,880 --> 00:06:05,440
+ to the agent, maybe microcool employees always use Hilton hotels, so it will already know
+
+75
+00:06:05,440 --> 00:06:11,400
+ that information and it will check on the site of Hilton hotels while he is booking a hotel
+
+76
+00:06:11,400 --> 00:06:13,440
+ for Joe.
+
+77
+00:06:13,440 --> 00:06:19,520
+ Then as we already discussed, it summarizes all the interactions and stores in a data store
+
+78
+00:06:19,520 --> 00:06:26,520
+ and this could be between 1 to 365 days and when a new interaction happens, all these
+
+79
+00:06:26,520 --> 00:06:29,440
+ summarized interactions are loaded.
+
+80
+00:06:29,440 --> 00:06:33,520
+ Okay, that is pretty much it from this lecture, I will see you in the next lecture.
+
+81
+00:06:33,520 --> 00:06:33,960
+ Thank you.
+
