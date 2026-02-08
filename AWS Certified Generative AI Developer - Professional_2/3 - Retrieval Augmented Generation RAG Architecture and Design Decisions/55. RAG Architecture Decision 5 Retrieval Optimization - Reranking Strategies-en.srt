@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:04,400
+ In this lecture, we want to look at another architectural consideration that you should
+
+2
+00:00:04,400 --> 00:00:07,680
+ think about while building rack-based applications.
+
+3
+00:00:07,680 --> 00:00:10,800
+ There are two ways through which you can do the optimization.
+
+4
+00:00:10,800 --> 00:00:14,800
+ One is using the re-ranker model and metadata filtering.
+
+5
+00:00:14,800 --> 00:00:16,480
+ So now let's go ahead and take a look at both.
+
+6
+00:00:16,480 --> 00:00:24,480
+ So re-ranker models are used to improve the relevance of the retrieved results for any query.
+
+7
+00:00:25,760 --> 00:00:32,080
+ So re-ranker model calculates the relevance of chunks to the query and re-orders the results
+
+8
+00:00:32,080 --> 00:00:34,880
+ based on the scores that it calculates.
+
+9
+00:00:34,880 --> 00:00:39,280
+ So now if you take a look at the architecture, so once the user has posed the question,
+
+10
+00:00:39,280 --> 00:00:44,480
+ it passes through the text emitting model, you create an embedding, then do a similarity search,
+
+11
+00:00:44,480 --> 00:00:48,800
+ and then through a similarity search, you get some context chunks.
+
+12
+00:00:48,800 --> 00:00:55,680
+ This is where re-ranker model comes into play and it re-orders the chunks based on relevance.
+
+13
+00:00:56,320 --> 00:01:00,800
+ So here are a couple of re-ranking models, so you have one from Amazon re-rank 1.0,
+
+14
+00:01:00,800 --> 00:01:06,640
+ and this is the model ID, and then there is one from Kohir re-rank 3.5, and here is the model ID.
+
+15
+00:01:06,640 --> 00:01:10,400
+ Now let's quickly understand through an example how it exactly works.
+
+16
+00:01:10,400 --> 00:01:14,800
+ Now let's say you have built an e-commerce chatbot, and the customer is asking,
+
+17
+00:01:14,800 --> 00:01:16,880
+ what is the enterprise refund policy?
+
+18
+00:01:16,880 --> 00:01:18,880
+ So how the process work?
+
+19
+00:01:18,880 --> 00:01:24,960
+ So the first step is retriever fetches the chunks, and vector search could return up to
+
+20
+00:01:24,960 --> 00:01:28,160
+ 20 to 25 chunks, and you can see here.
+
+21
+00:01:28,160 --> 00:01:34,320
+ So once we have the user query, the initial retrieval will retrieve about 25 chunks or so,
+
+22
+00:01:34,320 --> 00:01:40,720
+ then next, so then the re-ranker model scores each pair for true relevance.
+
+23
+00:01:40,720 --> 00:01:47,520
+ So each query that has been retrieved, it will provide it a relevance score based on the
+
+24
+00:01:47,520 --> 00:01:49,600
+ query and the retrieved chunk.
+
+25
+00:01:50,720 --> 00:01:55,520
+ Then the results are re-ordered, maybe only 5 to 8 most relevant chunks remain.
+
+26
+00:01:55,520 --> 00:02:00,400
+ So you can see here there were 25 initial chunks that were retrieved,
+
+27
+00:02:00,400 --> 00:02:05,680
+ then the re-ranker model re-orders and selects only top 5 or so chunks.
+
+28
+00:02:05,680 --> 00:02:11,840
+ And then these are sent to the LLM, so the model sees a cleaner, more accurate context,
+
+29
+00:02:11,840 --> 00:02:14,320
+ and generates better results.
+
+30
+00:02:14,320 --> 00:02:18,560
+ So what are the benefits of using a re-ranker model?
+
+31
+00:02:18,560 --> 00:02:24,080
+ First, it improves answer accuracy by selecting the most relevant context.
+
+32
+00:02:24,080 --> 00:02:31,680
+ Then it reduces hallucinations by removing weak or irrelevant chunks, and then finally,
+
+33
+00:02:31,680 --> 00:02:37,360
+ it lowers token usage by sending fewer higher quality chunks to the LLM.
+
+34
+00:02:37,360 --> 00:02:40,000
+ Okay, so that's pretty much it from this lecture.
+
+35
+00:02:40,000 --> 00:02:40,800
+ I'll see you in the next lecture.
+
+36
+00:02:40,800 --> 00:02:41,200
+ Thank you.
+
