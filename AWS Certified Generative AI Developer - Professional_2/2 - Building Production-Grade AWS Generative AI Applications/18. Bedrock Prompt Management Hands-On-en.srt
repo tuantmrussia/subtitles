@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this lecture, I'm going to show you a quick demo of the bedrock prompt management.
+
+2
+00:00:05,000 --> 00:00:09,000
+ Now let's go ahead and head over to the AWS console.
+
+3
+00:00:09,000 --> 00:00:12,000
+ Now I'm on the AWS console and Amazon bedrock service.
+
+4
+00:00:12,000 --> 00:00:17,000
+ So on the left hand side, if you just scroll, you can just see the prompt management here.
+
+5
+00:00:17,000 --> 00:00:20,000
+ So just click on this prompt management.
+
+6
+00:00:20,000 --> 00:00:24,000
+ Now here you can see prompt management, how it works.
+
+7
+00:00:24,000 --> 00:00:27,000
+ Create a prompt, test the prompt, and use the prompt.
+
+8
+00:00:27,000 --> 00:00:35,000
+ So if you just click on this info, Amazon bedrock allows you to create and save prompts in a prompt management.
+
+9
+00:00:35,000 --> 00:00:40,000
+ A prompt is a reusable message that can be integrated with the larger application.
+
+10
+00:00:40,000 --> 00:00:51,000
+ So basically what it's saying is that you can create reusable prompts through prompt management that can be then used across the JNAI applications.
+
+11
+00:00:51,000 --> 00:00:55,000
+ Now to create a prompt template, just click on this create prompt and just give a name here.
+
+12
+00:00:55,000 --> 00:00:59,000
+ So let me just give a name and I will say demo prompt 01.
+
+13
+00:00:59,000 --> 00:01:04,000
+ Then you can provide the description if you want, but it's optional, so I'll skip.
+
+14
+00:01:04,000 --> 00:01:09,000
+ Now if you want to encrypt your prompt template, then you can use the AWS game itself.
+
+15
+00:01:09,000 --> 00:01:11,000
+ But I'm just going to skip that for now.
+
+16
+00:01:11,000 --> 00:01:14,000
+ Let me just click on create.
+
+17
+00:01:14,000 --> 00:01:18,000
+ Okay, now let me just click on this so that you can see the full view.
+
+18
+00:01:18,000 --> 00:01:23,000
+ So here you can see the prompt and then you can see some configuration details here.
+
+19
+00:01:23,000 --> 00:01:32,000
+ So what you need to do is in place of this text, you need to provide your system prompt and then we have the topic here.
+
+20
+00:01:32,000 --> 00:01:34,000
+ So it's basically the user prompt.
+
+21
+00:01:34,000 --> 00:01:43,000
+ So what's ultimately going to happen is when you provide your system prompt here, then we are also going to add the value of the user prompt,
+
+22
+00:01:43,000 --> 00:01:50,000
+ which is basically the prompt that would be provided every time by the end user of your JNAI application.
+
+23
+00:01:50,000 --> 00:01:56,000
+ So this is going to change every time. This is going to remain static once you have finalized it.
+
+24
+00:01:56,000 --> 00:01:59,000
+ So I'm just going to go back to my slides.
+
+25
+00:01:59,000 --> 00:02:04,000
+ And in this slide, if you remember, we had this system prompt where we're telling the foundation model.
+
+26
+00:02:04,000 --> 00:02:08,000
+ You're a wind turbine subject matter expert and so on.
+
+27
+00:02:08,000 --> 00:02:12,000
+ And then produce a concise one-page summary, highlight key anomalies.
+
+28
+00:02:12,000 --> 00:02:16,000
+ So I'm just going to copy this.
+
+29
+00:02:16,000 --> 00:02:21,000
+ And then I'm just going to paste this system prompt here and let's do a paste.
+
+30
+00:02:21,000 --> 00:02:25,000
+ And this topic value, we're going to provide and I'm going to show you how you can do that.
+
+31
+00:02:25,000 --> 00:02:28,000
+ But before that, we have to do some configuration.
+
+32
+00:02:28,000 --> 00:02:33,000
+ So first, you have to define whether it's an generative application or an agent to get application.
+
+33
+00:02:33,000 --> 00:02:37,000
+ So if I just click on this, you can see agents and models, so I'll just select models.
+
+34
+00:02:37,000 --> 00:02:41,000
+ Then I have to select which foundation model I'm going to use in my application.
+
+35
+00:02:41,000 --> 00:02:47,000
+ So let's just select Amazon, Nova Pro, and apply. So you would have seen, I will mostly use Nova Pro.
+
+36
+00:02:47,000 --> 00:02:56,000
+ The reason is that there is more capacity that AWS provides for Nova Pro for some of the other models, like Anthropic and Cohe, etc.
+
+37
+00:02:56,000 --> 00:03:04,000
+ You'll get a lot of throttling errors. I don't know what's the reason, but that's why I just prefer to use Amazon Nova Pro.
+
+38
+00:03:04,000 --> 00:03:11,000
+ So I'll just do an apply. Then you can see inference parameters here. You have the length, you can define that.
+
+39
+00:03:11,000 --> 00:03:20,000
+ Then you can define the randomness and diversity parameters, temperature, top P and some other parameters as well, but we'll just keep it as it is for now.
+
+40
+00:03:20,000 --> 00:03:33,000
+ So I really should provide the inference parameters that closely mimic your actual JNA application so that you can evaluate the response that you're getting here with what you'd actually get in that JNA application.
+
+41
+00:03:33,000 --> 00:03:42,000
+ Okay, now I'll just cut into a scroll and you can see here we have the variable name where we're going to provide our user prompt under this topic.
+
+42
+00:03:42,000 --> 00:03:50,000
+ And then once I provide this value here, it's going to add to the system prompt and send it to this foundation model.
+
+43
+00:03:50,000 --> 00:04:01,000
+ So let me just go back and this is our user prompt basically just the log details from our manufacturing use case and I'll just paste it here.
+
+44
+00:04:01,000 --> 00:04:13,000
+ You can see the user prompt. Now I'm just going to do the run and this user prompt and system prompt is going to be sent to the foundation model and it's going to generate a response.
+
+45
+00:04:13,000 --> 00:04:19,000
+ You can see it has generated a response. Now you can evaluate this response and see if it makes sense.
+
+46
+00:04:19,000 --> 00:04:30,000
+ If not, then you can maybe you can use a different model, you can change the inference parameters, you can change your system prompt and then you can also try it out with different user prompts.
+
+47
+00:04:30,000 --> 00:04:34,000
+ Till this system prompt is optimized.
+
+48
+00:04:34,000 --> 00:04:40,000
+ So once you're happy with that, you can either click as saved draft or you can create your first version.
+
+49
+00:04:40,000 --> 00:04:47,000
+ So I'm just going to say create version and you can see it has created this version.
+
+50
+00:04:47,000 --> 00:04:51,000
+ Then I can create multiple versions and compare variants as well.
+
+51
+00:04:51,000 --> 00:04:58,000
+ So let me just go on this view prompt details and here you can see our first prompt that we have created.
+
+52
+00:04:58,000 --> 00:05:08,000
+ So you have the user message basically the system prompt, then we have all the configuration parameters that we have logged in and then we have this version.
+
+53
+00:05:08,000 --> 00:05:15,000
+ Okay, so that's how you can create your prompt template and then reuse it across your generative application.
+
+54
+00:05:15,000 --> 00:05:18,520
+ Okay, that's pretty much it from this lecture as in the next lecture. Thank you.
+
