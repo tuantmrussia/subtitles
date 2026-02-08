@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:06,080
+ Previously, we discussed 15 key architectural decisions that we need to build a production-ready
+
+2
+00:00:06,080 --> 00:00:11,440
+ generative application. Now, the first one we discussed on a Gen A service, then we talked about
+
+3
+00:00:11,440 --> 00:00:17,280
+ LLM selection, then the third one we deep dive into responsible AI and guardrails.
+
+4
+00:00:17,280 --> 00:00:23,440
+ Now, the fourth important aspect is the prompt in January. Okay, let's quickly review few
+
+5
+00:00:23,440 --> 00:00:28,880
+ key terms. So, first we have the foundation model and let's say we have the end user who provides
+
+6
+00:00:28,880 --> 00:00:34,720
+ an input to this foundation model to generate a response. So, the prompt here refers to the
+
+7
+00:00:34,720 --> 00:00:42,160
+ input provide to the foundation model to elicit a response. So, the response generated is
+
+8
+00:00:42,160 --> 00:00:48,240
+ called as completion and the entire process where we send the prompt to the model and it generates
+
+9
+00:00:48,240 --> 00:00:54,880
+ a response as inference or inferencing. Now, the quality of the prompts that you provide to
+
+10
+00:00:54,880 --> 00:01:01,680
+ the foundation model can impact the quality of their response. So, there are multiple ways in which
+
+11
+00:01:01,680 --> 00:01:07,120
+ you can improve the quality of the response from the foundation model. So, you have rag or retrieval
+
+12
+00:01:07,120 --> 00:01:14,400
+ augmented generation, then your customization of foundation models using fine tuning and so on.
+
+13
+00:01:14,400 --> 00:01:19,440
+ And we are going to discuss all of these in the later lectures, but the simplest and most cost
+
+14
+00:01:19,440 --> 00:01:24,640
+ effective way to improve the quality of the response from the foundation models known as
+
+15
+00:01:24,640 --> 00:01:31,120
+ prompt engineering. So, prompt engineering refers to the practice of optimizing textual
+
+16
+00:01:31,120 --> 00:01:38,480
+ input to the foundation model to obtain desired response. Now, let's take a look at some of the
+
+17
+00:01:38,480 --> 00:01:44,640
+ elements of a good prompt design. Now, here we have a long article related to football
+
+18
+00:01:44,640 --> 00:01:51,200
+ and Lionel Messi. Let's say we send this to the foundation model with this comment summarize.
+
+19
+00:01:51,200 --> 00:01:56,880
+ Now, our foundation model does not have any context on what is this article and if he has to
+
+20
+00:01:56,880 --> 00:02:03,280
+ summarize in how many words does he need to summarize or what should be the output format.
+
+21
+00:02:03,280 --> 00:02:10,400
+ So, the output that the foundation model is going to generate may not be so great. So, what are the
+
+22
+00:02:10,400 --> 00:02:16,320
+ key elements of a good prompt design? So, the first one is you should provide some contextual
+
+23
+00:02:16,320 --> 00:02:21,040
+ information about the task. So, here you can see now we have provided contextual information
+
+24
+00:02:21,040 --> 00:02:26,640
+ we are saying this is the review of the football world cup from Qatar 2022.
+
+25
+00:02:26,640 --> 00:02:33,120
+ The next we provide the input text for the task and then we clearly lay out the task specification.
+
+26
+00:02:33,120 --> 00:02:40,080
+ In this case we are asking it to summarize this text. Then we are also telling it summarize the
+
+27
+00:02:40,080 --> 00:02:46,480
+ above review in two lines. So, we are giving a clear output specification saying that summarize in
+
+28
+00:02:46,480 --> 00:02:52,000
+ two lines. So, in summary if you have to get great output from the foundation model we should
+
+29
+00:02:52,000 --> 00:02:59,600
+ give it clear and concise instructions define the task to be accomplished at the end and then
+
+30
+00:02:59,600 --> 00:03:06,000
+ also give it the output specification. So, there are different prompt engine techniques
+
+31
+00:03:06,000 --> 00:03:11,520
+ that can help you improve the desired outcome from the foundation model or the large
+
+32
+00:03:11,520 --> 00:03:17,840
+ language model. So, here you can see we start with the baseline foundation model and then we use
+
+33
+00:03:17,840 --> 00:03:23,680
+ zero short prompting and see if we get the desired outcome from the large language model.
+
+34
+00:03:23,680 --> 00:03:29,600
+ So, if this does not work then we move to one short prompting and then few short prompting until
+
+35
+00:03:29,600 --> 00:03:36,560
+ we achieve the perfect outcome. Now, there are two more techniques called as chain of thought
+
+36
+00:03:36,560 --> 00:03:43,040
+ reasoning and re-act reasoning and action which we are going to discuss later in the section on
+
+37
+00:03:43,040 --> 00:03:50,960
+ agents because both of these techniques are used in the agentic AI arena. So, let us start with
+
+38
+00:03:50,960 --> 00:03:56,560
+ zero short prompting. Foundation models are capable of performing some simple tasks
+
+39
+00:03:56,560 --> 00:04:03,280
+ zero short. So, what it means is no examples are needed to be provided to the foundation model
+
+40
+00:04:03,280 --> 00:04:09,360
+ to accomplish the task. Let us say we give a prompt to the foundation model we are
+
+41
+00:04:09,360 --> 00:04:15,840
+ saying write an engaging product description for a t-shirt for a clothing e-commerce site
+
+42
+00:04:15,840 --> 00:04:21,280
+ and our foundation model goes ahead and writes the engaging description.
+
+43
+00:04:21,280 --> 00:04:27,520
+ So, in one short prompting we provide an example to the model to assist the model to
+
+44
+00:04:27,520 --> 00:04:36,640
+ comprehend and generate responses. Now, let us take a look at an example. So, this whole is our
+
+45
+00:04:36,640 --> 00:04:43,040
+ prompt. So, first we give the model an example. Let us say write an engaging product description
+
+46
+00:04:43,040 --> 00:04:50,400
+ for a clothing e-commerce site and then we tell it this is the product women's boho beach dress
+
+47
+00:04:50,400 --> 00:04:56,960
+ and then we define some features here and then we tell the model how to write this description.
+
+48
+00:04:56,960 --> 00:05:03,520
+ So, we give this example of the description. Then we tell model what it needs to do
+
+49
+00:05:03,520 --> 00:05:09,600
+ in the same prompt. So, we tell it write an engaging description for the clothing e-commerce site.
+
+50
+00:05:09,600 --> 00:05:15,120
+ Make sure to include following features in the description. So, we say product this time is humor,
+
+51
+00:05:15,120 --> 00:05:20,080
+ men's graph t-shirt and the features are soft cotton, short, sleeve, have a print,
+
+52
+00:05:20,080 --> 00:05:27,920
+ Einstein code and so on and then we leave this description blank. So, this time it will be able to
+
+53
+00:05:27,920 --> 00:05:33,920
+ write the product description. So, this is the output it has generated by learning through an
+
+54
+00:05:33,920 --> 00:05:40,080
+ example that we had given as part of the prompt. Now, there could be scenarios where the model
+
+55
+00:05:40,080 --> 00:05:45,440
+ still cannot provide the write output even after giving one example.
+
+56
+00:05:47,520 --> 00:05:54,000
+ Now, in future prompting you give few examples to the model to generate high quality output.
+
+57
+00:05:54,000 --> 00:05:59,600
+ So, here is how we write the prompt. So, first we give an example of how to write an engaging
+
+58
+00:05:59,600 --> 00:06:03,920
+ product description. So, we write we tell it about the product then give it the features
+
+59
+00:06:03,920 --> 00:06:09,040
+ and then write the description. Then we give it another example write an engaging product
+
+60
+00:06:09,040 --> 00:06:14,080
+ description. Then we give the second product we give features and write the description ourselves.
+
+61
+00:06:14,880 --> 00:06:21,120
+ Then in the third case we give the product name humor, men's graph t-shirt, we give features
+
+62
+00:06:21,120 --> 00:06:29,200
+ and then ask it to complete the description. And you can see this is the output it has generated.
+
+63
+00:06:29,200 --> 00:06:35,360
+ So, in this scenario our foundation model understands through the multiple examples that we have
+
+64
+00:06:35,360 --> 00:06:41,360
+ given to generate the write output. Now, in some scenarios even this might not work,
+
+65
+00:06:41,360 --> 00:06:48,240
+ then we can look at the chain of thought reasoning, reasoning and action or react or if the
+
+66
+00:06:48,240 --> 00:06:53,920
+ prompt engineering site does not work then we move on to retrieval augmented generation or model
+
+67
+00:06:53,920 --> 00:07:00,720
+ customization. But prompt engineering is the most cost effective and easiest way to improve the
+
+68
+00:07:00,720 --> 00:07:04,800
+ model output. So, that is pretty much it from this lecture I will see in the next lecture.
+
+69
+00:07:04,800 --> 00:07:05,120
+ Thank you.
+
