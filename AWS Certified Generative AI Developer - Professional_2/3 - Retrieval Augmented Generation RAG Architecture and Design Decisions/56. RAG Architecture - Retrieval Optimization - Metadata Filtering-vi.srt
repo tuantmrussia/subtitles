@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:05,200
+Được rồi, bây giờ trong bài giảng này chúng tôi sẽ xem xét phương pháp tái tạo thứ hai
+
+2
+00:00:05,200 --> 00:00:08,200
+Đó là thông qua việc lọc siêu dữ liệu.
+
+3
+00:00:08,200 --> 00:00:10,280
+Vậy việc lọc siêu dữ liệu là gì?
+
+4
+00:00:10,280 --> 00:00:16,800
+Tính năng lọc siêu dữ liệu cho bạn khả năng lọc kết quả truy vấn dựa trên các thuộc tính cụ thể được gắn vào
+
+5
+00:00:16,800 --> 00:00:18,800
+đến véc tơ của bạn.
+
+6
+00:00:18,800 --> 00:00:24,880
+Vì vậy, nó có nghĩa là việc lọc siêu dữ liệu cho phép bạn để giảm số lượng của mô- tơ
+
+7
+00:00:24,880 --> 00:00:29,320
+mà bạn tìm kiếm dựa trên các thuộc tính cụ thể.
+
+8
+00:00:29,320 --> 00:00:31,820
+Bây giờ chúng ta hãy thử và hiểu điều này để một ví dụ.
+
+9
+00:00:31,820 --> 00:00:36,200
+Bây giờ hãy nói rằng bạn xây dựng một robot quan chức cao và nhân viên của bạn là cả hai căn cứ từ Ấn Độ
+
+10
+00:00:36,200 --> 00:00:37,200
+và Mỹ.
+
+11
+00:00:37,200 --> 00:00:42,340
+Giả sử bạn có tài liệu đầu tiên có chính sách nhân sự liên quan đến nhân viên ở Ấn Độ
+
+12
+00:00:42,340 --> 00:00:47,040
+và hãy nói rằng chủ yếu họ đang ở trong một bộ phận tài chính và sau đó bạn có chính sách quan chức cấp cao thứ hai
+
+13
+00:00:47,040 --> 00:00:52,800
+tài liệu tập trung vào nhân viên ở Mỹ và hãy nói rằng sở của họ chủ yếu là
+
+14
+00:00:52,800 --> 00:00:53,800
+Sản xuất.
+
+15
+00:00:53,800 --> 00:01:00,320
+Bây giờ hãy nói rằng chúng tôi có này người sử dụng người được dựa trên Ấn Độ và làm việc trong tài chính
+
+16
+00:01:00,320 --> 00:01:01,320
+phòng điều hành.
+
+17
+00:01:01,320 --> 00:01:05,000
+Vậy có lẽ anh ta hỏi tôi có thể lấy bao nhiêu lá?
+
+18
+00:01:05,000 --> 00:01:09,160
+Bây giờ một khi truy vấn người dùng này đã được chuyển đổi thành véc tơ liên kết có là tương tự
+
+19
+00:01:09,160 --> 00:01:14,960
+Tìm kiếm vì vậy nó sẽ tìm kiếm các véc tơ tương tự trong cả hai tài liệu.
+
+20
+00:01:14,960 --> 00:01:20,400
+Bây giờ với siêu dữ liệu lọc những gì bạn làm là thêm một số thẻ vào mỗi tài liệu.
+
+21
+00:01:20,400 --> 00:01:25,160
+Vì vậy, hãy nói rằng một khi tôi tải lên tài liệu này và nguồn dữ liệu của chúng tôi giả sử S3.
+
+22
+00:01:25,160 --> 00:01:32,160
+Vì vậy, một khi tôi tải tài liệu này tôi cũng sẽ thêm này siêu dữ liệu.json thẻ và nó là một rất
+
+23
+00:01:32,160 --> 00:01:37,680
+Hồ sơ đơn giản như thế này cho thấy đồng ý với tài chính của nhân viên Ấn Độ.
+
+24
+00:01:37,680 --> 00:01:41,080
+Vì vậy, khi bạn tải lên các tài liệu liên quan đến các nhân viên Mỹ.
+
+25
+00:01:41,080 --> 00:01:47,280
+Vì vậy, ở đây bạn sẽ nói các bộ phận nhân viên Mỹ sản xuất và đây là một tập tin JSON rằng
+
+26
+00:01:47,280 --> 00:01:51,000
+bạn sẽ tải lên với mỗi tài liệu này.
+
+27
+00:01:51,000 --> 00:01:57,720
+Vì vậy bây giờ những gì các bộ lọc siêu dữ liệu làm là một khi người dùng này đưa ra cùng một câu hỏi dựa trên
+
+28
+00:01:57,720 --> 00:02:03,160
+Trên tập tin siêu dữ liệu này.json Vì vậy, nó sẽ tìm kiếm một địa chỉ véc tơ chỉ liên quan
+
+29
+00:02:03,160 --> 00:02:07,160
+hồ sơ này và không phải cái này.
+
+30
+00:02:07,160 --> 00:02:13,640
+Vì vậy, sử dụng bộ lọc siêu dữ liệu với thao tác truy vấn để tìm các véc- tơ khớp cả hai cùng một
+
+31
+00:02:13,640 --> 00:02:17,240
+Tiêu chuẩn và điều kiện siêu dữ liệu cụ thể.
+
+32
+00:02:17,240 --> 00:02:22,160
+Và như tôi đã giải thích, nó sẽ không nhìn vào các đường viền véc tơ và tìm kiếm tương tự
+
+33
+00:02:22,160 --> 00:02:29,480
+cho cả hai tài liệu chỉ cho tài liệu này một vì nó đáp ứng các điều kiện siêu dữ liệu cụ thể
+
+34
+00:02:29,480 --> 00:02:33,120
+mà chúng tôi đã xác định trong tập tin.json này.
+
+35
+00:02:33,120 --> 00:02:37,160
+Vậy lợi ích của việc lọc siêu dữ liệu là gì?
+
+36
+00:02:37,160 --> 00:02:41,600
+Nó giảm số lượng các mảng đang được tìm kiếm bởi vì chúng tôi không tìm kiếm
+
+37
+00:02:41,600 --> 00:02:46,200
+tất cả tài liệu chỉ có những cái đáp ứng các tiêu chuẩn cụ thể.
+
+38
+00:02:46,200 --> 00:02:51,200
+Sau đó trong chi phí truy vấn các cửa hàng véc tơ và sau đó cuối cùng nó cũng giúp đỡ trong cải thiện
+
+39
+00:02:51,200 --> 00:02:52,600
+chính xác.
+
+40
+00:02:52,600 --> 00:02:55,840
+Vì thế, lợi ích liên quan đến tính chính xác và chi phí.
+
+41
+00:02:55,840 --> 00:02:59,120
+Đó là khá nhiều từ bài giảng này như trong bài giảng tiếp theo.
+
