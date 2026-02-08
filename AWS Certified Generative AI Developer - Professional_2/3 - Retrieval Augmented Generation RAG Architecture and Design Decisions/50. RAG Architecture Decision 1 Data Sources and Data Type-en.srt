@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:05,520
+ In this lecture, I'm going to discuss about the first architectural consideration or decision
+
+2
+00:00:05,520 --> 00:00:11,680
+ that you need to make while building a rack-based application. And that is the data sources
+
+3
+00:00:11,680 --> 00:00:17,200
+ and data type, whether structured or unstructured data for your rack application.
+
+4
+00:00:17,200 --> 00:00:23,280
+ So the architectural decisions or considerations that we discuss are going to be true for any
+
+5
+00:00:23,280 --> 00:00:28,400
+ rack-based application, but I'm going to discuss it from the perspective of bedrock knowledge
+
+6
+00:00:28,400 --> 00:00:33,120
+ basis. And we already discussed bedrock knowledge basis is a managed rack-based solution,
+
+7
+00:00:33,120 --> 00:00:39,280
+ and the reason is so that I can visually show you all the options. Okay, now the first thing is
+
+8
+00:00:39,280 --> 00:00:47,200
+ bedrock knowledge-based supports both structured and unstructured data. Next, it also supports
+
+9
+00:00:47,200 --> 00:00:53,760
+ a variety of documents, whether it's text, images, multimodal documents that contain table,
+
+10
+00:00:53,760 --> 00:00:59,040
+ charts, diagrams, and other images. And this is especially true for unstructured data.
+
+11
+00:00:59,040 --> 00:01:04,640
+ Let's say for your e-learning app, you have videos, you have images, you have texts.
+
+12
+00:01:04,640 --> 00:01:09,440
+ So with bedrock knowledge basis, you can build a rack-based solution that will retrieve
+
+13
+00:01:09,440 --> 00:01:17,360
+ answers to the user queries based on different type of data. Similarly, it can retrieve
+
+14
+00:01:17,360 --> 00:01:22,720
+ the user queries if we have structured data. And we're going to talk about what are the
+
+15
+00:01:22,720 --> 00:01:28,800
+ different data sources for both structured and unstructured. Okay, now let's take a look at the
+
+16
+00:01:28,800 --> 00:01:34,480
+ data sources that it supports for unstructured data. Now let's say for our e-learning app,
+
+17
+00:01:34,480 --> 00:01:40,880
+ we have different PDFs that are stored in the S3 bucket, maybe some of them are shared in the
+
+18
+00:01:40,880 --> 00:01:47,600
+ SharePoint, or there is some data on confluence, Salesforce. So maybe you need to search,
+
+19
+00:01:47,600 --> 00:01:53,680
+ answer to a user query, which is on the internet through a web crawler, or maybe even have
+
+20
+00:01:53,680 --> 00:01:59,760
+ custom data sources. So these are all the different data sources that bedrock knowledge-based supports.
+
+21
+00:01:59,760 --> 00:02:06,400
+ Then let's say there's a query for structured data, and right now bedrock knowledge-based
+
+22
+00:02:06,400 --> 00:02:14,160
+ directly supports Amazon Redshift. And it can also support data from other data sources through
+
+23
+00:02:14,160 --> 00:02:21,040
+ AWS data catalog. Now let's go and understand how bedrock knowledge-based
+
+24
+00:02:21,040 --> 00:02:27,520
+ retrieves the data from a structured data source and answers the user query. So here is a simplified
+
+25
+00:02:27,520 --> 00:02:34,160
+ view, user poses a query, it goes to bedrock knowledge-based, it generates a SQL query corresponding
+
+26
+00:02:34,160 --> 00:02:41,200
+ to the natural language user query, and that query retrieves the data from Amazon Redshift and
+
+27
+00:02:41,200 --> 00:02:48,160
+ answers the user query. Now we'll get to the complexity of this in a little bit. Now let's
+
+28
+00:02:48,160 --> 00:02:52,960
+ go and understand how bedrock knowledge-based works with structured data. So you have the user
+
+29
+00:02:52,960 --> 00:02:57,840
+ who poses a query, which goes to the bedrock knowledge-based, and bedrock knowledge-based has
+
+30
+00:02:57,840 --> 00:03:05,040
+ Redshift query engine, it can be both provisioned or serverless. Now this query engine can either
+
+31
+00:03:05,040 --> 00:03:10,720
+ directly run the query over the redshift, if your data is in a redshift, or let's say your data
+
+32
+00:03:10,720 --> 00:03:17,440
+ is in S3 or some other data source. So in that case, what the query engine is going to do is,
+
+33
+00:03:17,440 --> 00:03:23,280
+ so it's going to run the engine if you have blue data catalog. So if you don't know what is blue
+
+34
+00:03:23,280 --> 00:03:29,040
+ data catalog, let me give you a little bit of insights if you're using blue data catalog.
+
+35
+00:03:29,040 --> 00:03:34,640
+ Now let's just take an example from the movie industry. Let's say you get a feed every day as a CSV.
+
+36
+00:03:34,640 --> 00:03:40,640
+ Now let's take the example of Hollywood. So let's assume you get a feed every day, which highlights
+
+37
+00:03:40,640 --> 00:03:46,320
+ the new movies that have been released, actors, and some of the other details. So you store that
+
+38
+00:03:46,320 --> 00:03:52,960
+ CSV file in S3 at the end of the day. So as part of the AWS blue service, there's a crawler,
+
+39
+00:03:52,960 --> 00:03:59,360
+ which is going to crawl all the data that is stored in this S3 bucket. And then it's going to generate
+
+40
+00:03:59,360 --> 00:04:05,360
+ a table in the blue data catalog. So you can see here it's going to crawl for all the
+
+41
+00:04:05,360 --> 00:04:11,920
+ column names in your CSV, maybe there's ID, type, actor, and then it's going to define the data type.
+
+42
+00:04:11,920 --> 00:04:16,480
+ So it's going to define the key, etc. So in summary, it's going to define the column name,
+
+43
+00:04:16,480 --> 00:04:23,360
+ data types, and all the metadata attributes. So basically what AWS blue data catalog does is,
+
+44
+00:04:23,360 --> 00:04:29,680
+ it's a centralized metadata repository that stores the metadata about the data sources.
+
+45
+00:04:29,680 --> 00:04:35,280
+ So once you have this table in the blue data catalog, then once the user query comes to
+
+46
+00:04:35,280 --> 00:04:40,240
+ the better knowledge base and it goes to this red shift query engine, it's going to be able to
+
+47
+00:04:40,240 --> 00:04:47,360
+ generate the query and run on top of this glue data catalog, which in turn would retrieve the data
+
+48
+00:04:47,360 --> 00:04:53,200
+ from the different data sources. And in this case, it's going to be S3. But just remember,
+
+49
+00:04:53,200 --> 00:05:02,000
+ the data is in S3. The data is not stored in this glue data catalog table. It's only the metadata
+
+50
+00:05:02,000 --> 00:05:07,680
+ that's stored here. The actual data continues to remain in the S3 or any other data source.
+
+51
+00:05:07,680 --> 00:05:13,200
+ So this is how better knowledge base works with structured data. So one thing I just want to highlight
+
+52
+00:05:13,200 --> 00:05:19,040
+ to you is natural language to SQL is really hard. And I'd just give you a quick example. So this
+
+53
+00:05:19,040 --> 00:05:25,360
+ is one AWS highlights. So what they did was they took a data set, we chose all the transactions
+
+54
+00:05:25,360 --> 00:05:31,040
+ in the gas stations in the checks Republic. So they had a data set and they gave this query to
+
+55
+00:05:31,040 --> 00:05:37,920
+ the large language model. And this is the SQL query that it generated. And here we can see
+
+56
+00:05:37,920 --> 00:05:44,240
+ the country is checks Republic. When they ran this query on the data set, it gave an error.
+
+57
+00:05:44,240 --> 00:05:51,120
+ And the reason is because it was expecting the country code instead of the country name.
+
+58
+00:05:51,120 --> 00:05:57,680
+ That's why converting a natural language request from the user to SQL is a really difficult
+
+59
+00:05:57,680 --> 00:06:03,200
+ thing to do because as we saw, you need to provide the right context to the large language model
+
+60
+00:06:03,200 --> 00:06:09,280
+ to generate the right SQL query. So that's pretty much it from this lecture. I'll see in the next
+
+61
+00:06:09,280 --> 00:06:10,280
+ Thank you.
+
