@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:05,280
+ In this lecture, we're going to learn about e-learning app architecture, the use case that we
+
+2
+00:00:05,280 --> 00:00:10,240
+ discussed previously, and we're going to look at 10 key architecture considerations,
+
+3
+00:00:10,240 --> 00:00:16,800
+ you need to think about to build production ready rag apps. So, this is the business use case
+
+4
+00:00:16,800 --> 00:00:20,000
+ that we discussed previously. Now, let's take a look at the architecture.
+
+5
+00:00:20,000 --> 00:00:26,960
+ The first we have the LNDT, which has the training documents, and they have to upload the documents
+
+6
+00:00:26,960 --> 00:00:34,160
+ in some data source. So, that's the first choice you have to make, the data source and data type.
+
+7
+00:00:34,160 --> 00:00:38,880
+ So, is it structured data, maybe in a relational database, or maybe it's in a data warehouse,
+
+8
+00:00:38,880 --> 00:00:46,800
+ or is it unstructured data like PDF, images, videos, etc. And where are they going to reside?
+
+9
+00:00:46,800 --> 00:00:53,040
+ So, are they on SharePoint, maybe an S3 bucket, or maybe they are in confluence as free text.
+
+10
+00:00:53,040 --> 00:00:58,720
+ So, once you have identified the data source and data type, you have to transform the data
+
+11
+00:00:58,720 --> 00:01:03,280
+ through data chunking. So, there are different type of data chunking strategies,
+
+12
+00:01:03,280 --> 00:01:08,480
+ as we'll go along and discuss each of them in detail. So, there is no chunking,
+
+13
+00:01:08,480 --> 00:01:13,520
+ fix size chunking, semantic chunking, hierarchy chunking. So, based on the use case,
+
+14
+00:01:13,520 --> 00:01:18,400
+ you will need to identify what is the right chunking strategy for your use case.
+
+15
+00:01:19,280 --> 00:01:23,360
+ So, before I continue, I just want to tell you that if you're not understanding some part of
+
+16
+00:01:23,360 --> 00:01:28,800
+ this architecture, it's okay. We're going to deep dive into each of them in detail in the later
+
+17
+00:01:28,800 --> 00:01:35,040
+ sections. So, once you have defined your data chunking strategy, then you have to create the
+
+18
+00:01:35,040 --> 00:01:40,480
+ vector embeddings, and that is through the embedding model. So, you need to identify what's the
+
+19
+00:01:40,480 --> 00:01:45,520
+ right embedding model. So, you have to evaluate the embedding model characteristics,
+
+20
+00:01:45,520 --> 00:01:51,120
+ such as whether it's a multi-modal, does it only support text based, what are the vector size,
+
+21
+00:01:51,120 --> 00:01:57,600
+ is it 512, 1024, number of languages, it supports, and whole lot of other parameters.
+
+22
+00:01:57,600 --> 00:02:03,280
+ So, based on the use case, you need to select the right embedding model. So, once you have made
+
+23
+00:02:03,280 --> 00:02:11,040
+ the decision, next is to select the right vector database. So, you'll store these vector embeddings.
+
+24
+00:02:11,680 --> 00:02:17,280
+ So, there are a lot of different vector databases that AWS supports. So, your S3 vectors,
+
+25
+00:02:17,280 --> 00:02:23,840
+ open search, pine cone, and each of them offer a different capability, and you have to identify the
+
+26
+00:02:23,840 --> 00:02:29,920
+ right vector database based on your use case. And we're going to discuss this in a lot more detail,
+
+27
+00:02:29,920 --> 00:02:33,680
+ but that's a decision you have to make while building your rack application.
+
+28
+00:02:33,680 --> 00:02:40,320
+ Okay, now, this whole process is sometimes called as the ingestion pipeline,
+
+29
+00:02:40,320 --> 00:02:45,920
+ and before the user actually starts querying, you have to build this ingestion pipeline.
+
+30
+00:02:45,920 --> 00:02:52,080
+ Now, once we build this ingestion pipeline, now let's see how our e-learning app would actually work.
+
+31
+00:02:52,080 --> 00:02:57,760
+ Now, we have an employee who poses a question through a chat interface, which says,
+
+32
+00:02:57,760 --> 00:03:04,400
+ which bedrock model offers lowest latency and is approved in my organization. So, what's
+
+33
+00:03:04,400 --> 00:03:10,240
+ going to happen is once he poses this question, it's going to pass through a text embedding model.
+
+34
+00:03:10,240 --> 00:03:15,280
+ The text embedding model that you had selected here, so this question is going to pass through
+
+35
+00:03:15,280 --> 00:03:22,240
+ that text embedding model, vector embeddings are going to be created, and then similarity search
+
+36
+00:03:22,240 --> 00:03:28,480
+ is going to happen. And it's going to search for the relevant chunks in this vector database.
+
+37
+00:03:28,480 --> 00:03:34,000
+ And then from this vector database, 5 to 20 chunks would be retrieve.
+
+38
+00:03:34,800 --> 00:03:41,440
+ Now, the fifth option to optimize the retrieval accuracy is to use re-ranker model.
+
+39
+00:03:41,440 --> 00:03:46,800
+ And I have a separate section on this re-ranker model later, but what re-ranker model is going to do
+
+40
+00:03:46,800 --> 00:03:54,880
+ is based on the 5 to 20 retrieve chunks is going to reduce and re-rank all those chunks based on
+
+41
+00:03:54,880 --> 00:04:01,120
+ the relevance to the user query. So, rather than sending out all the 20 chunks to the large
+
+42
+00:04:01,120 --> 00:04:07,600
+ language model, it's going to re-rank the chunks based on relevance. So, then the chunk sometimes
+
+43
+00:04:07,600 --> 00:04:13,920
+ call as the context along with the user question are sent to a large language model. So,
+
+44
+00:04:13,920 --> 00:04:19,600
+ this is your sixth decision point where you need to select the right large language model for
+
+45
+00:04:19,600 --> 00:04:26,240
+ your use case. So, once this large language model gets the context or the chunks and the user
+
+46
+00:04:26,240 --> 00:04:32,480
+ question, it's going to generate an answer and send it back to the user. So, there are some
+
+47
+00:04:32,480 --> 00:04:38,000
+ other architectural considerations you need to keep in mind. Like we previously discussed on the
+
+48
+00:04:38,000 --> 00:04:44,640
+ model evaluation, so there is also a rag evaluation capability in Amazon bedrock that will help you
+
+49
+00:04:44,640 --> 00:04:50,640
+ evaluate the response from your rag based application. So, then you also need to think about the
+
+50
+00:04:50,640 --> 00:04:56,080
+ monitoring and observability. So, we're going to look at the different monitoring and observability
+
+51
+00:04:56,080 --> 00:05:03,520
+ capabilities that cloud watch offers for rag based apps. And then finally, you have the security
+
+52
+00:05:03,520 --> 00:05:09,680
+ and guard rails and responsible AI that you need to consider while building your rag based
+
+53
+00:05:09,680 --> 00:05:15,200
+ application. So, we have two different sections on security and guard rails and responsible AI
+
+54
+00:05:15,200 --> 00:05:20,400
+ in this course in the later sections. So, these are the 10 decision points you need to
+
+55
+00:05:20,400 --> 00:05:25,920
+ think through from architecture perspective. And then for each decision point, you need to know
+
+56
+00:05:25,920 --> 00:05:31,840
+ what are the various options and which option would be relevant for what kind of a use case.
+
+57
+00:05:31,840 --> 00:05:35,840
+ And this is going to be tested in the exam and we're going to discuss all of these 10 in
+
+58
+00:05:35,840 --> 00:05:40,560
+ lot more details. Okay. So, that's pretty much it from this lecture. I'll see in the next lecture.
+
+59
+00:05:40,560 --> 00:05:40,960
+ Thank you.
+
