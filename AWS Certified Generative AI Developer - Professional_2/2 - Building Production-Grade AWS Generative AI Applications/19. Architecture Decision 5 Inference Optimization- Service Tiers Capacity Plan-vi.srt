@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:04,800
+Vì vậy, trong bài giảng này, chúng tôi muốn xem xét quyết định kiến trúc thứ năm hoặc xem xét
+
+2
+00:00:04,800 --> 00:00:09,680
+để xây dựng một ứng dụng tháng một của chúng tôi, đó là tối ưu hóa.
+
+3
+00:00:09,680 --> 00:00:13,840
+Vì vậy, bây giờ, có ba cách mà bạn có thể tối ưu hóa suy luận.
+
+4
+00:00:13,840 --> 00:00:17,280
+Đầu tiên là thiết bị phục vụ và kế hoạch năng lượng.
+
+5
+00:00:17,280 --> 00:00:18,720
+Bây giờ, hãy xem qua.
+
+6
+00:00:18,720 --> 00:00:26,000
+Vì vậy, đá nền Amazon cung cấp bốn bộ dịch vụ để tối ưu hóa hiệu suất và chi phí.
+
+7
+00:00:26,000 --> 00:00:32,400
+Đầu tiên là thiết bị dự trữ và điều này là tốt nhất cho nhiệm vụ quan trọng luôn luôn là hàng đống công việc.
+
+8
+00:00:32,400 --> 00:00:38,560
+Vì vậy, đối với điều này tier, dự trữ khả năng tính toán trong các ứng dụng quan trọng nhiệm vụ.
+
+9
+00:00:38,560 --> 00:00:44,800
+Đây là mục tiêu cấp độ 99.5 để đáp ứng mô hình.
+
+10
+00:00:44,800 --> 00:00:50,000
+Bạn cần phải tiết kiệm thời gian trong một tháng hoặc ba tháng.
+
+11
+00:00:51,360 --> 00:00:57,200
+Sau đó nó cung cấp sự linh hoạt để phân bổ các tín hiệu đầu vào và đầu ra khác nhau mỗi phút,
+
+12
+00:00:57,200 --> 00:00:59,840
+Khả năng đáp ứng yêu cầu.
+
+13
+00:00:59,840 --> 00:01:03,520
+Vì vậy, nếu bạn có các yêu cầu đầu vào và đầu ra khác nhau cho việc tải,
+
+14
+00:01:03,520 --> 00:01:10,320
+thì có sự linh hoạt để phân bổ các khả năng khác nhau cho cả đầu vào lẫn đầu ra.
+
+15
+00:01:10,320 --> 00:01:15,680
+Và bạn trả một giá cố định cho mỗi phút 1K và được xây dựng hàng tháng.
+
+16
+00:01:16,320 --> 00:01:21,360
+Bây giờ, làm thế nào để mô hình thực sự biết rằng đây là một yêu cầu bảo tồn?
+
+17
+00:01:21,360 --> 00:01:25,280
+Các bạn có thể thấy ở đây bên phải, tôi vừa mới dán mật mã Boto 3
+
+18
+00:01:25,280 --> 00:01:29,520
+Nơi bạn gọi mô hình nền Amazon bằng luồng phản ứng.
+
+19
+00:01:29,520 --> 00:01:34,160
+Và ở đây, có một tham số cấu hình được gọi là tier dịch vụ.
+
+20
+00:01:34,160 --> 00:01:38,880
+Vì vậy, bạn có thể xác định cả hai ưu tiên, mặc định, linh hoạt và đây là kết quả của chúng tôi.
+
+21
+00:01:38,880 --> 00:01:44,160
+Vì vậy, khi ứng dụng của bạn thực hiện một yêu cầu cho các nền đá Amazon và bạn xác định cấu hình này
+
+22
+00:01:44,160 --> 00:01:50,320
+Tham số như dịch vụ an ninh, sau đó dịch vụ nền Amazon sẽ biết yêu cầu này
+
+23
+00:01:50,320 --> 00:01:57,600
+là một phần của bộ phận bảo vệ. Tiếp theo, chúng ta có bộ phận ưu tiên, tốt nhất cho sự nhạy cảm tình dục,
+
+24
+00:01:57,600 --> 00:02:04,320
+Khách hàng phải đối mặt với các ứng dụng, nhưng không được ra lệnh cho 24 đến 7 người đặt phòng.
+
+25
+00:02:04,320 --> 00:02:12,480
+Vì vậy, nó cung cấp thời gian đáp ứng nhanh nhất với giá bảo hiểm hoặc tiêu chuẩn theo yêu cầu giá cả.
+
+26
+00:02:12,480 --> 00:02:18,320
+Vì vậy, bạn có thể thấy ở đây, tiêu chuẩn cơ bản chỉ là mặc định. Vì vậy, nếu bạn không xác định các bộ phận dịch vụ,
+
+27
+00:02:18,320 --> 00:02:22,960
+Sau đó nó sẽ đi đến chế độ mặc định này, đó là không có gì ngoài giá cả tiêu chuẩn.
+
+28
+00:02:22,960 --> 00:02:29,680
+Vì vậy, nếu bạn xác định dịch vụ này là ưu tiên hàng đầu, bạn sẽ được tính phí bảo hiểm hơn mức mặc định,
+
+29
+00:02:29,680 --> 00:02:35,680
+Nhưng anh được ưu tiên hàng đầu. Sau đó đặt tham số dịch vụ tier tùy chọn ưu tiên
+
+30
+00:02:35,680 --> 00:02:39,840
+để được ưu tiên cấp độ yêu cầu. Và chúng ta đã thảo luận về điều đó.
+
+31
+00:02:39,840 --> 00:02:45,280
+Vậy, anh đặt dịch vụ lên hàng đầu. Tiếp theo, chúng ta có ống thông thường,
+
+32
+00:02:45,280 --> 00:02:51,360
+Cái này là dây buộc mặc định và tốt nhất cho việc sản xuất tổng hợp.
+
+33
+00:02:51,360 --> 00:02:56,480
+Vì vậy, nó cung cấp hiệu suất nhất quán cho công việc hàng ngày, thế hệ nội dung,
+
+34
+00:02:56,480 --> 00:03:02,080
+Phân tích văn bản và vân vân, theo mặc định, tất cả các yêu cầu suy luận được chuyển tới bộ thăng bằng chuẩn.
+
+35
+00:03:02,080 --> 00:03:07,440
+Vì vậy, nếu bạn không xác định các tier dịch vụ, sau đó nó là một mức mặc định hoặc tiêu chuẩn.
+
+36
+00:03:07,440 --> 00:03:14,640
+Và cuối cùng, chúng ta có bộ thăng bằng, tốt nhất cho việc tối ưu hóa các công việc không trở lại.
+
+37
+00:03:14,640 --> 00:03:22,800
+Đây là lựa chọn suy luận giá rẻ nhất. Nó sử dụng khả năng dự phòng với sự thay đổi.
+
+38
+00:03:22,800 --> 00:03:27,600
+Vì vậy, nếu tải công việc của bạn là không tăng và điều này là phổ biến nhất khi bạn đang sử dụng mẻ
+
+39
+00:03:27,600 --> 00:03:32,480
+Khi tham khảo ý kiến, bạn có thể định nghĩa dịch vụ này là linh hoạt. Như vậy, bạn có thể giảm bớt
+
+40
+00:03:32,480 --> 00:03:38,960
+chi phí tham khảo. Vì vậy, đó là khá nhiều từ bài giảng này. Tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
