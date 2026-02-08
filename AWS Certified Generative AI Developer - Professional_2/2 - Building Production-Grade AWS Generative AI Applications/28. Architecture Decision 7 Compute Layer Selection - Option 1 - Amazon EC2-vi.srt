@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,440
+Bây giờ trong bài giảng này chúng ta sẽ tập trung vào quyết định kiến trúc thứ 7 đó là
+
+2
+00:00:05,440 --> 00:00:12,480
+Ở đây chúng tôi có ba lựa chọn AWS Lambda,
+
+3
+00:00:12,480 --> 00:00:19,360
+EC2 và ECS và hãy nhớ từ góc nhìn của bài kiểm tra, mục tiêu chính là AWS Lambda.
+
+4
+00:00:19,360 --> 00:00:28,000
+Bây giờ chúng ta biết rằng EC2 chủ yếu là một máy chủ ảo và nếu bạn thấy trong các trách nhiệm
+
+5
+00:00:28,000 --> 00:00:32,720
+trong việc quản lý các lớp khác nhau của EC2 vì vậy chúng tôi có các máy chủ vật lý ở đây mà về cơ bản chỉ là các
+
+6
+00:00:32,720 --> 00:00:38,480
+Phần cứng và sau đó bạn có các máy hệ điều hành có thể là hoặc cửa sổ hoặc Linux và sau đó chúng tôi có
+
+7
+00:00:38,480 --> 00:00:45,680
+Lớp siêu tư bản và AWS chủ yếu sử dụng hệ thống nitro AWS và tất cả các lớp này được quản lý bởi AWS.
+
+8
+00:00:45,680 --> 00:00:51,600
+Và sau đó bạn có thể thấy chúng tôi có ba máy ảo ở đây vì vậy chúng tôi có khách hệ điều hành và trên đầu trang này
+
+9
+00:00:51,600 --> 00:00:56,720
+máy ảo bạn có thể viết logic ứng dụng của bạn. Bây giờ nếu bạn có thể nhanh chóng xem xét một số của các
+
+10
+00:00:56,720 --> 00:01:02,640
+Tính năng cho EC2 vì vậy đầu tiên về kiến trúc chúng tôi đã thảo luận nó là một máy ảo
+
+11
+00:01:02,640 --> 00:01:10,240
+Theo như ban quản lý nên khách hàng quản lý việc tăng cường an ninh cho khách.
+
+12
+00:01:10,240 --> 00:01:16,560
+Bây giờ trong điều kiện của mô hình giá trị cho EC2 bạn sẽ được tính phí mỗi giờ hoặc mỗi giây cho chạy
+
+13
+00:01:16,560 --> 00:01:22,800
+cung cấp trường hợp và có các loại trường hợp khác nhau khi tùy chọn vị trí dành riêng yêu cầu
+
+14
+00:01:22,800 --> 00:01:26,880
+Và ở đây chúng tôi sẽ không đi vào những chi tiết bởi vì điều này không thực sự liên quan đến các bài kiểm tra
+
+15
+00:01:26,880 --> 00:01:34,400
+góc nhìn. Bây giờ về giới hạn thực hiện nó được thiết kế cho các ứng dụng chạy dài
+
+16
+00:01:34,400 --> 00:01:40,800
+Và lý do tại sao tôi đã nhấn mạnh ở đây là trong điều khoản của Lambda chức năng thi hành là 15
+
+17
+00:01:40,800 --> 00:01:48,400
+phút nếu logic ứng dụng Genia cần phải chạy hơn 15 phút thì AWS Lambda không
+
+18
+00:01:48,400 --> 00:01:55,680
+dịch vụ phù hợp vì vậy sau đó hoặc bạn phải xem xét EC2 hoặc ECS mà là lâu hơn chạy
+
+19
+00:01:55,680 --> 00:02:02,160
+ứng dụng. Bây giờ về tỷ lệ bạn có thể hoặc là tỷ lệ bằng tay một thể hiện EC2 hoặc bạn có thể
+
+20
+00:02:02,160 --> 00:02:08,000
+sử dụng một nhóm tự động phóng đại và thường nó cũng bao gồm một bộ cân bằng tải ứng dụng.
+
+21
+00:02:08,000 --> 00:02:12,560
+Bây giờ chúng ta hãy tiếp tục và thảo luận về chủ đề quan trọng về các trường hợp sử dụng cho EC2 từ Genia
+
+22
+00:02:12,560 --> 00:02:19,600
+góc nhìn. Đầu tiên là dàn nhạc của Genia và hội nghị khẩn cấp. Bây giờ nếu chúng ta xem qua
+
+23
+00:02:19,600 --> 00:02:25,280
+Ví dụ trước đó nơi chúng tôi đã thảo luận về tóm tắt các bản ghi của ứng dụng như vậy một điển hình
+
+24
+00:02:25,280 --> 00:02:30,080
+Kiến trúc không khí với biểu hiện EC2 sẽ trông như thế này. Chúng ta sẽ có
+
+25
+00:02:30,080 --> 00:02:35,280
+kết thúc người dùng người sẽ gửi dấu nhắc cho bộ cân bằng tải ứng dụng mà sẽ chuyển hướng nó đến
+
+26
+00:02:35,280 --> 00:02:42,400
+Ví dụ EC2 và sau đó bạn có thể có một số mã viết trên EC2 ví dụ mà làm cho dàn nhạc
+
+27
+00:02:42,400 --> 00:02:49,840
+logic cho ứng dụng Genia đó. Vì vậy, có lẽ các bản ghi được lưu trữ trong S3 Vì vậy, chúng tôi sẽ lấy các bản ghi từ S3
+
+28
+00:02:49,840 --> 00:02:55,360
+Và sau đó cùng với các nhanh chóng gửi nó đến dịch vụ nền Amazon nó nhận được một phản hồi có thể
+
+29
+00:02:55,360 --> 00:03:01,760
+Câu trả lời được lưu trong xô S3 vì vậy nó lấy link đó và gửi nó trở lại cho người dùng cuối.
+
+30
+00:03:01,760 --> 00:03:08,480
+Vì vậy, bạn có thể viết tất cả các logic dàn dựng. Tiếp theo nó cũng có thể giúp bạn chuẩn bị dấu nhắc
+
+31
+00:03:08,480 --> 00:03:15,040
+Vì vậy, có lẽ bạn có đầu vào người dùng và sau đó bạn thêm một số dấu nhắc hệ thống và một số chi tiết khác
+
+32
+00:03:15,040 --> 00:03:20,320
+Và gửi yêu cầu đó đến nhà bếp hoặc Saage Maker Jupso. Đó là cách bạn có thể viết
+
+33
+00:03:20,320 --> 00:03:26,800
+Lập luận hợp lý. Bây giờ trường hợp quan trọng thứ hai mà bạn có thể sử dụng EC2 trong ứng dụng Genia
+
+34
+00:03:26,800 --> 00:03:34,000
+là huấn luyện và tổ chức. Vì vậy, hãy nói rằng bạn muốn xây dựng của riêng mình tổ chức cụ thể
+
+35
+00:03:34,000 --> 00:03:39,840
+Mô hình từ đầu và đây là một ví dụ nếu bạn chỉ cần đi và Google bạn sẽ thấy đó là BAR
+
+36
+00:03:39,840 --> 00:03:46,720
+GPT được phát triển từ đầu hoặc bạn cũng có thể lấy một mô hình mã nguồn mở
+
+37
+00:03:46,720 --> 00:03:54,240
+như từ LAMA và sau đó thêm tàu hỏa và triển khai nó. Vậy làm thế nào mà EC2 xuất hiện? AWS
+
+38
+00:03:54,240 --> 00:04:00,720
+Họ có mục đích này xây dựng máy học chip. Vì vậy, tóm lại có thể nghĩ về AWS
+
+39
+00:04:00,720 --> 00:04:08,000
+đào tạo như loại EC2 thể hiện mà có thể được sử dụng để đào tạo mô hình nền tảng của bạn
+
+40
+00:04:08,000 --> 00:04:15,360
+Và sau đó bạn có thể sử dụng cơ sở hạ tầng AWS để triển khai các mô hình. Vì vậy, từ bàn điều khiển bạn có thể
+
+41
+00:04:15,360 --> 00:04:21,680
+Xem tôi đang phục vụ EC2 và khi tôi tìm kiếm trên AMIs bạn có thể thấy ở đây ôm khuôn mặt
+
+42
+00:04:22,400 --> 00:04:30,480
+Các tế bào thần kinh học sâu ARI ôm lấy nơ-ron học sâu AMI làm cho nó dễ sử dụng Amazon EC2
+
+43
+00:04:30,480 --> 00:04:38,320
+Cơ sở hạ tầng và các trường hợp huấn luyện. Được rồi, chúng ta sẽ thảo luận về huấn luyện và tổ chức và sau đó
+
+44
+00:04:38,320 --> 00:04:45,360
+Bạn cũng có thể sử dụng EC2 cho mô hình điều chỉnh tốt và thử nghiệm. Chúng ta sẽ không bàn về việc thu hồi lại.
+
+45
+00:04:45,360 --> 00:04:51,840
+Thế hệ gia tăng hoặc đường ống ngay bây giờ và khi chúng tôi đi trước và sau đó tìm hiểu về giẻ rách và
+
+46
+00:04:51,840 --> 00:04:57,440
+Cơ sở dữ liệu véc tơ và ổ cứng. Vì vậy, có rất nhiều cơ sở dữ liệu véc tơ là mã nguồn mở
+
+47
+00:04:57,440 --> 00:05:03,680
+Hoặc bạn có khung mã nguồn mở như chuỗi Lang, Langra, v.v... mà có thể giúp bạn trong mảng nhựa.
+
+48
+00:05:03,680 --> 00:05:09,040
+và một số quá trình khác trong đường ống giẻ rách. Vì vậy, nếu bạn muốn sử dụng những nguồn mở
+
+49
+00:05:09,040 --> 00:05:17,040
+Các khuôn khổ hoặc mã nguồn mở vector DB sau đó bạn có thể chứa nó trên EC2 ví dụ. Vậy tóm lại nó có thể
+
+50
+00:05:17,040 --> 00:05:24,080
+được sử dụng cho bất kỳ dịch vụ suy dinh dưỡng nào. Vâng vì vậy đó là khá nhiều nó từ bài giảng này
+
+51
+00:05:24,080 --> 00:05:27,280
+Tôi sẽ xem trong bài giảng tiếp theo cảm ơn bạn.
+
