@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:05,280
+Trong bài giảng này, chúng ta sẽ tìm hiểu về kiến trúc ứng dụng học điện tử, trường hợp sử dụng mà chúng ta
+
+2
+00:00:05,280 --> 00:00:10,240
+thảo luận trước đó, và chúng ta sẽ xem xét 10 quan trọng về kiến trúc,
+
+3
+00:00:10,240 --> 00:00:16,800
+Cậu cần nghĩ đến việc sản xuất sẵn sàng ứng dụng giẻ rách. Vì vậy, đây là trường hợp kinh doanh sử dụng
+
+4
+00:00:16,800 --> 00:00:20,000
+mà chúng ta đã thảo luận trước đó. Bây giờ, hãy xem kiến trúc.
+
+5
+00:00:20,000 --> 00:00:26,960
+Đầu tiên chúng tôi có LNDT, mà có các tài liệu đào tạo, và họ phải tải lên các tài liệu
+
+6
+00:00:26,960 --> 00:00:34,160
+trong một số dữ liệu. Vì vậy, đó là lựa chọn đầu tiên bạn phải thực hiện, nguồn dữ liệu và loại dữ liệu.
+
+7
+00:00:34,160 --> 00:00:38,880
+Vì vậy, nó có cấu trúc dữ liệu, có thể trong một cơ sở dữ liệu có quan hệ, hoặc có thể nó ở trong một kho dữ liệu,
+
+8
+00:00:38,880 --> 00:00:46,800
+hoặc là nó không cấu trúc dữ liệu như PDF, hình ảnh, video, vv. Và họ sẽ cư trú ở đâu?
+
+9
+00:00:46,800 --> 00:00:53,040
+Vì vậy, họ đang trên sharePoint, có thể là một xô S3, hoặc có thể họ đang trong coluence như văn bản miễn phí.
+
+10
+00:00:53,040 --> 00:00:58,720
+Vì vậy, một khi bạn đã xác định được nguồn dữ liệu và kiểu dữ liệu, bạn phải thay đổi dữ liệu
+
+11
+00:00:58,720 --> 00:01:03,280
+thông qua việc thu thập dữ liệu. Vì vậy, có những loại chiến lược phân tích dữ liệu khác nhau,
+
+12
+00:01:03,280 --> 00:01:08,480
+khi chúng ta đi cùng và thảo luận từng chi tiết. Vì vậy, không có chia nhỏ,
+
+13
+00:01:08,480 --> 00:01:13,520
+Kích cỡ cố định, phân tích ngữ nghĩa, phân cấp. Vì vậy, dựa trên trường hợp sử dụng,
+
+14
+00:01:13,520 --> 00:01:18,400
+bạn sẽ cần phải xác định đâu là chiến lược đúng đắn cho trường hợp sử dụng của bạn.
+
+15
+00:01:19,280 --> 00:01:23,360
+Vì vậy, trước khi tôi tiếp tục, tôi chỉ muốn nói với bạn rằng nếu bạn không hiểu một phần của
+
+16
+00:01:23,360 --> 00:01:28,800
+không sao đâu. Chúng ta sẽ lặn sâu vào từng chi tiết ở phần sau.
+
+17
+00:01:28,800 --> 00:01:35,040
+Phần. Vì vậy, một khi bạn đã xác định chiến lược chia dữ liệu của bạn, sau đó bạn phải tạo ra
+
+18
+00:01:35,040 --> 00:01:40,480
+Các đường viền véc tơ, và đó là thông qua mô hình đường viền. Vì vậy, bạn cần phải xác định những gì là
+
+19
+00:01:40,480 --> 00:01:45,520
+Mô hình bọc lót phải. Vì vậy, bạn phải đánh giá các đặc điểm mô hình nhúng,
+
+20
+00:01:45,520 --> 00:01:51,120
+Ví dụ như cho dù nó là một đa mô thức, nó chỉ hỗ trợ văn bản dựa trên, kích thước véc tơ là gì,
+
+21
+00:01:51,120 --> 00:01:57,600
+Nó là 512, 1024, số ngôn ngữ, nó hỗ trợ, và tất cả các tham số khác.
+
+22
+00:01:57,600 --> 00:02:03,280
+Vì vậy, dựa trên trường hợp sử dụng, bạn cần phải chọn mô hình đường viền đúng. Vì vậy, một khi bạn đã thực hiện
+
+23
+00:02:03,280 --> 00:02:11,040
+Quyết định tiếp theo là chọn cơ sở dữ liệu véc- tơ đúng. Vì vậy, bạn sẽ lưu trữ những đường viền véc tơ này.
+
+24
+00:02:11,680 --> 00:02:17,280
+Vì vậy, có rất nhiều cơ sở dữ liệu vector khác nhau mà AWS hỗ trợ. Vì vậy, S3 véc tơ của bạn,
+
+25
+00:02:17,280 --> 00:02:23,840
+Tìm kiếm mở, thông, và mỗi người trong số họ cung cấp một khả năng khác nhau, và bạn phải xác định
+
+26
+00:02:23,840 --> 00:02:29,920
+Cơ sở dữ liệu véc- tơ phải dựa trên trường hợp dùng của bạn. Và chúng ta sẽ thảo luận chi tiết hơn về vấn đề này,
+
+27
+00:02:29,920 --> 00:02:33,680
+Nhưng đó là quyết định trong khi xây dựng đơn xin việc.
+
+28
+00:02:33,680 --> 00:02:40,320
+Được rồi, bây giờ, toàn bộ quá trình này đôi khi được gọi là đường ống nuốt.
+
+29
+00:02:40,320 --> 00:02:45,920
+Và trước khi người dùng bắt đầu truy vấn, bạn phải xây dựng đường ống hút này.
+
+30
+00:02:45,920 --> 00:02:52,080
+Bây giờ, một khi chúng ta xây dựng đường ống tiêu hóa này, bây giờ hãy xem ứng dụng học tập điện tử thực sự hoạt động như thế nào.
+
+31
+00:02:52,080 --> 00:02:57,760
+Bây giờ, chúng tôi có một nhân viên đưa ra một câu hỏi thông qua một giao diện chat, đó là,
+
+32
+00:02:57,760 --> 00:03:04,400
+Cái mô hình nền cho phép làm việc ít tốn kém nhất và được chấp thuận trong tổ chức của tôi. Vì vậy, những gì là
+
+33
+00:03:04,400 --> 00:03:10,240
+Sẽ xảy ra một khi ông đưa ra câu hỏi này, nó sẽ đi qua một mô hình phân loại văn bản.
+
+34
+00:03:10,240 --> 00:03:15,280
+Mô hình nhúng chữ mà bạn đã chọn ở đây, vì vậy câu hỏi này sẽ đi qua
+
+35
+00:03:15,280 --> 00:03:22,240
+Mô hình nhúng chữ sẽ được tạo ra, và tìm kiếm tương tự
+
+36
+00:03:22,240 --> 00:03:28,480
+sẽ xảy ra. Và nó sẽ tìm kiếm các mảng liên quan trong cơ sở dữ liệu véc tơ này.
+
+37
+00:03:28,480 --> 00:03:34,000
+Và sau đó từ cơ sở dữ liệu véc tơ này, từ 5 đến 20 đoạn sẽ được thu hồi.
+
+38
+00:03:34,800 --> 00:03:41,440
+Bây giờ, lựa chọn thứ năm để tối ưu hóa độ chính xác của việc tái thu hồi là sử dụng mô hình quay lại.
+
+39
+00:03:41,440 --> 00:03:46,800
+Và tôi có một phần riêng biệt trên mô hình re-ranker sau này, nhưng những gì re-ranker mô hình sẽ làm
+
+40
+00:03:46,800 --> 00:03:54,880
+là dựa trên 5 đến 20 thu thập các đoạn sẽ giảm và quay trở lại tất cả các mảng dựa trên
+
+41
+00:03:54,880 --> 00:04:01,120
+sự liên quan đến truy vấn người dùng. Vì vậy, thay vì gửi ra tất cả 20 đoạn nhỏ
+
+42
+00:04:01,120 --> 00:04:07,600
+Mô hình ngôn ngữ, nó sẽ lặp lại các mảng dựa trên sự liên quan. Vì vậy, sau đó, sau đó các mảng đôi khi
+
+43
+00:04:07,600 --> 00:04:13,920
+gọi là văn cảnh cùng với câu hỏi người dùng được gửi đến một mô hình ngôn ngữ lớn. Vậy,
+
+44
+00:04:13,920 --> 00:04:19,600
+Đây là điểm quyết định thứ sáu của bạn nơi bạn cần phải chọn mô hình ngôn ngữ lớn phù hợp cho
+
+45
+00:04:19,600 --> 00:04:26,240
+Vụ của anh. Vì vậy, một khi mô hình ngôn ngữ lớn này nhận được bối cảnh hoặc các đoạn và người dùng
+
+46
+00:04:26,240 --> 00:04:32,480
+câu hỏi, nó sẽ tạo ra một câu trả lời và gửi lại cho người dùng. Vì vậy, có một số
+
+47
+00:04:32,480 --> 00:04:38,000
+Bạn cần ghi nhớ những sự cân nhắc kiến trúc khác. Như chúng ta đã thảo luận về
+
+48
+00:04:38,000 --> 00:04:44,640
+Đánh giá mô hình, vì vậy có một khả năng đánh giá giẻ rách trong nền móng Amazon sẽ giúp bạn
+
+49
+00:04:44,640 --> 00:04:50,640
+Đánh giá câu trả lời từ ứng dụng dựa trên miếng giẻ của bạn. Vì vậy, sau đó bạn cũng cần phải suy nghĩ về
+
+50
+00:04:50,640 --> 00:04:56,080
+theo dõi và giữ im lặng. Vì vậy, chúng ta sẽ xem xét các giám sát khác nhau và sự cố hữu
+
+51
+00:04:56,080 --> 00:05:03,520
+Khả năng mà mây xem cung cấp cho các ứng dụng vải. Và cuối cùng, bạn có được sự an toàn
+
+52
+00:05:03,520 --> 00:05:09,680
+và bảo vệ đường ray và có trách nhiệm AI mà bạn cần phải xem xét trong khi xây dựng giẻ rách của bạn
+
+53
+00:05:09,680 --> 00:05:15,200
+ứng dụng. Vì vậy, chúng tôi có hai khu vực khác nhau về an ninh và đường ray bảo vệ và trách nhiệm AI
+
+54
+00:05:15,200 --> 00:05:20,400
+trong khóa học này ở các phần sau. Vì vậy, đây là 10 điểm quyết định bạn cần phải
+
+55
+00:05:20,400 --> 00:05:25,920
+Suy nghĩ thông qua quan điểm kiến trúc. Và sau đó cho mỗi điểm quyết định, bạn cần phải biết
+
+56
+00:05:25,920 --> 00:05:31,840
+những lựa chọn khác nhau là gì và tùy chọn nào là thích hợp cho trường hợp sử dụng.
+
+57
+00:05:31,840 --> 00:05:35,840
+Và điều này sẽ được kiểm tra trong kỳ thi và chúng tôi sẽ thảo luận tất cả các 10 trong
+
+58
+00:05:35,840 --> 00:05:40,560
+Nhiều chi tiết hơn. Được rồi. Vì vậy, đó là khá nhiều từ bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo.
+
+59
+00:05:40,560 --> 00:05:40,960
+Cảm ơn.
+
