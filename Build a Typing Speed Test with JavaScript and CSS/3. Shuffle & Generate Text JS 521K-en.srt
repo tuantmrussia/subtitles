@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:11,020
+ Okay, so now that we have our UI sorted out, we're ready to dive into our functionality.
+
+2
+00:00:11,020 --> 00:00:18,580
+ So I'm going to provide a link in the course to this page within my GitHub repository for
+
+3
+00:00:18,580 --> 00:00:25,860
+ this project, and you'll see that I have a words.json file, and you'll see that I have
+
+4
+00:00:25,860 --> 00:00:32,640
+ about 300 words here, none of them are repeating, and these are the words that I used
+
+5
+00:00:32,640 --> 00:00:38,280
+ for my project, but if you want, you can generate your own words.
+
+6
+00:00:38,280 --> 00:00:45,520
+ You could even use an API call to a random word generator, but just for the sake of simplicity,
+
+7
+00:00:45,520 --> 00:00:51,480
+ I've decided to provide you with a words array just to make things nice and easy.
+
+8
+00:00:51,480 --> 00:00:58,320
+ So again, if you go to this link, you can actually click over here and click copy raw file,
+
+9
+00:00:58,320 --> 00:01:04,240
+ and we're going to close this and go back to our code.
+
+10
+00:01:04,240 --> 00:01:10,320
+ In our script, JS, we're going to start by creating a constant words, and it's going
+
+11
+00:01:10,320 --> 00:01:16,120
+ to be equal to, and then we're going to paste in our array of strings.
+
+12
+00:01:16,120 --> 00:01:22,440
+ Okay, and we're going to go ahead and hover over here next to our one, and we're going
+
+13
+00:01:22,440 --> 00:01:25,480
+ to click on this arrow, and we're going to minimize that.
+
+14
+00:01:25,480 --> 00:01:29,080
+ We don't need to worry about our words anymore.
+
+15
+00:01:29,080 --> 00:01:35,480
+ Okay, so now that we have our words, the next step is we're going to want to shuffle
+
+16
+00:01:35,480 --> 00:01:36,880
+ these words.
+
+17
+00:01:36,880 --> 00:01:41,440
+ We don't always want to have the words in order, because then eventually you would get
+
+18
+00:01:41,440 --> 00:01:46,880
+ really good at just typing those exact words, we want to be able to shuffle the words
+
+19
+00:01:46,880 --> 00:01:49,200
+ in our array.
+
+20
+00:01:49,200 --> 00:01:55,720
+ So we're going to go to the next line here, and we're going to comment out a title shuffle,
+
+21
+00:01:55,720 --> 00:02:06,480
+ the words array, and we're going to create a function called shuffle array, and it's
+
+22
+00:02:06,480 --> 00:02:16,240
+ going to take an array, and this is going to use a Fisher Yates algorithm.
+
+23
+00:02:16,240 --> 00:02:21,040
+ I will explain more once we get to the end of the code, but basically we're going to
+
+24
+00:02:21,040 --> 00:02:28,280
+ use a four loop, we're going to loop through the array, and we're going to switch positions
+
+25
+00:02:28,280 --> 00:02:31,600
+ of items in the array, and then we're going to return the array.
+
+26
+00:02:31,600 --> 00:02:43,200
+ But I'll explain more once we're done, so four, let i, which is our index equals array.length
+
+27
+00:02:43,200 --> 00:02:50,120
+ minus one, so because it's zero index, this is how we get to the last item in our array.
+
+28
+00:02:50,120 --> 00:02:58,400
+ semicolon i once it gets down to zero, once our index becomes zero, or while our index
+
+29
+00:02:58,400 --> 00:03:08,600
+ is not zero, I should say, we want to decrement, so i minus minus, we want to go down,
+
+30
+00:03:08,600 --> 00:03:11,160
+ and make our index a smaller number.
+
+31
+00:03:11,160 --> 00:03:17,200
+ So if our array length hypothetically was 100, we'd be starting at 99, and we'd be looping
+
+32
+00:03:17,200 --> 00:03:23,640
+ through until we hit zero, and we'd be going down by one each time, okay, and then we're
+
+33
+00:03:23,640 --> 00:03:34,800
+ going to create a constant j, and this is going to be equal to math floor, okay, and it's
+
+34
+00:03:34,800 --> 00:03:40,880
+ going to return the greatest integer of a whole number, we don't want to round two decimals
+
+35
+00:03:40,880 --> 00:03:45,440
+ here, we want a whole number for our index, and inside of this we're going to use math
+
+36
+00:03:45,440 --> 00:03:54,440
+ random, which returns a number between zero and one, and we're going to multiply that
+
+37
+00:03:54,440 --> 00:04:02,200
+ by another bracket i plus one, so that means that it'll always, at least, be one, and
+
+38
+00:04:02,200 --> 00:04:12,320
+ then below this, our array item at the current index, so square brackets, array, square
+
+39
+00:04:12,320 --> 00:04:28,360
+ brackets i, comma, sorry inside that, array, square bracket j equals, and then we're going
+
+40
+00:04:28,360 --> 00:04:41,280
+ to swap these, so array, square bracket j, comma, array, square bracket i, okay, and then
+
+41
+00:04:41,280 --> 00:04:50,120
+ we're going to return, whoops, outside of the loop, then we're going to return our array,
+
+42
+00:04:50,120 --> 00:04:57,000
+ just to summarize one more time, we are starting at the last item in our array, and we're
+
+43
+00:04:57,000 --> 00:05:03,080
+ incrementing down, so again, if we're 100 as our length, we're going from 99 until our
+
+44
+00:05:03,080 --> 00:05:09,480
+ index is zero, we're going down by one each time, and we're using math random, which
+
+45
+00:05:09,480 --> 00:05:18,840
+ is like 0.13567 times our index plus one, so it'll always, at least be one, and they're
+
+46
+00:05:18,840 --> 00:05:29,480
+ using math for to make that into a whole number, and then we have our array item at the index,
+
+47
+00:05:29,480 --> 00:05:37,880
+ and then we have a random number that is less than our index, and then we are swapping
+
+48
+00:05:37,880 --> 00:05:46,360
+ these two with the opposite of themselves in order to swap the two elements, so we are
+
+49
+00:05:46,360 --> 00:05:52,840
+ essentially shuffling our array in the most straightforward way that we can, okay, so if
+
+50
+00:05:52,840 --> 00:06:01,680
+ I were to now call this, so let's call our shuffle array, and we're going to pass in words,
+
+51
+00:06:01,680 --> 00:06:12,880
+ and we are going to console log this, we want to see what's going to happen, okay, and
+
+52
+00:06:12,880 --> 00:06:25,560
+ let's go back to our browser, and we'll inspect, and let's go ahead and move this, and
+
+53
+00:06:25,560 --> 00:06:34,800
+ then we'll take off, smart phone, okay, anyway let's space, great, so in our console we
+
+54
+00:06:34,800 --> 00:06:42,240
+ have 253 items, so not quite 300, but you'll see that it's starting with twin kingdom
+
+55
+00:06:42,240 --> 00:06:47,440
+ melt urge, so you can see we have shuffled everything, if you look at what we are actually
+
+56
+00:06:47,440 --> 00:06:52,800
+ starting with, it's actually going A, B, C, D, so abandoned beacon candy dove, you can
+
+57
+00:06:52,800 --> 00:06:59,640
+ see that we have shuffled this, and if we go ahead and refresh the page, you'll see that
+
+58
+00:06:59,640 --> 00:07:04,440
+ we've shuffled it again, so now it's starting with leaf or bolt, and now it's starting
+
+59
+00:07:04,440 --> 00:07:11,760
+ with juice and bird grip, okay, cool, so we're effectively shuffling our array, okay, so we
+
+60
+00:07:11,760 --> 00:07:17,320
+ want to combine this array of words into one long string, and then we want to pass that
+
+61
+00:07:17,320 --> 00:07:24,520
+ string into our text container, okay, so let's jump back to the code, and we can remove
+
+62
+00:07:24,520 --> 00:07:36,720
+ this, it'll come into the title, combine shuffled words into one long string with spaces,
+
+63
+00:07:36,720 --> 00:07:45,040
+ we also want to add spaces, so we're going to create a function generate one text bracket,
+
+64
+00:07:45,040 --> 00:07:52,160
+ and then we're going to have a constant of shuffled words, and it's going to be equal
+
+65
+00:07:52,160 --> 00:08:00,960
+ to shuffle array, and we're actually going to use a spread operator to make another version
+
+66
+00:08:00,960 --> 00:08:06,400
+ of the words array so that the original words array stays intact, and then we're going
+
+67
+00:08:06,400 --> 00:08:15,720
+ to return shuffled words dot join bracket, and then single quotes space, so that is
+
+68
+00:08:15,720 --> 00:08:23,000
+ going to add a space in between all of our words, and then we'll go ahead and say let's
+
+69
+00:08:23,000 --> 00:08:30,680
+ long text, we're using a let because this can be changed, generate long text, and then
+
+70
+00:08:30,680 --> 00:08:41,200
+ we'll go ahead and console log our long text, okay, so let's go ahead and check that out,
+
+71
+00:08:41,200 --> 00:08:48,760
+ okay, so you can see we have one long string here, it's no longer an array, okay, awesome,
+
+72
+00:08:48,760 --> 00:08:55,080
+ now the next thing we need to do is actually pass it into our text container element,
+
+73
+00:08:55,080 --> 00:09:04,480
+ so we're going to do this by adding in constants for our elements here, so constant text
+
+74
+00:09:04,480 --> 00:09:15,280
+ container, capital C there, equals document dot get element by ID, bracket single quote
+
+75
+00:09:15,280 --> 00:09:30,640
+ text dash container, and we'll do the same thing for our timer elements, we're at it,
+
+76
+00:09:30,640 --> 00:09:58,640
+ and our try again button, and lastly our final score element, okay, and then we're
+
+77
+00:09:58,640 --> 00:10:06,160
+ going to instead of console logging, we'll say text container dot text content is going
+
+78
+00:10:06,160 --> 00:10:15,360
+ to be equal to long text, okay, so let's go ahead and check that out, all right, nice,
+
+79
+00:10:15,360 --> 00:10:24,240
+ we have our text inside of our text container, great, okay, so that is it for shuffling
+
+80
+00:10:24,240 --> 00:10:31,680
+ our words and pass it into our text container, in the next one we are going to start looking
+
+81
+00:10:31,680 --> 00:10:40,280
+ at the functionality of actually checking what we are typing and seeing if we're typing
+
+82
+00:10:40,280 --> 00:10:45,720
+ the correct character or not, all right, I'll see you in that one, bye for now.
+
