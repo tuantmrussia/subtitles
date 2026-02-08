@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:04,000
+ In this lecture, I'm going to show you a quick hands-on on model
+
+2
+00:00:04,000 --> 00:00:09,520
+ customization. So I'm on the Amazon bedrock service. So what I can do is I can just
+
+3
+00:00:09,520 --> 00:00:14,880
+ scroll down and go to this tune custom models. So let me just click on custom models.
+
+4
+00:00:14,880 --> 00:00:20,640
+ So here you can see custom models. So you have the distillation, supervised fine tuning and
+
+5
+00:00:20,640 --> 00:00:28,720
+ reinforcement fine tuning. This is still new. And here, what you need to do is just click on this
+
+6
+00:00:28,720 --> 00:00:34,800
+ create and then you can select which fine tuning approach you want to take. So you can either do
+
+7
+00:00:34,800 --> 00:00:40,320
+ distillation job, supervised fine tuning or reinforcement fine tuning. And as I said, it's still new.
+
+8
+00:00:40,320 --> 00:00:48,000
+ So let me just click on this distillation job. So here you can see create distillation job. So when
+
+9
+00:00:48,000 --> 00:00:53,200
+ we create the distillation job from here, as I had shown you in the architecture, it creates a
+
+10
+00:00:53,200 --> 00:00:59,360
+ SageMaker job in the backend. So create a smaller, faster and more cost effective model for your
+
+11
+00:00:59,360 --> 00:01:07,360
+ use case model distillation uses synthetic data from a large foundation model teacher to fine tune
+
+12
+00:01:07,360 --> 00:01:14,400
+ a specialized model student. So the first thing you have to do is create the job. So job name,
+
+13
+00:01:14,400 --> 00:01:20,080
+ so I'll just give a name. So maybe I'll say demo underscore model underscore customization.
+
+14
+00:01:20,080 --> 00:01:24,640
+ Then you can provide the tags if you want, but it's optional. Now you need to give the name
+
+15
+00:01:24,640 --> 00:01:31,760
+ of the distilled model details, which means when the model is customized, what would be the name of
+
+16
+00:01:31,760 --> 00:01:38,880
+ that model? So let me just give a name. So let me just say demo underscore model underscore
+
+17
+00:01:38,880 --> 00:01:43,680
+ students. So this is going to be the name of our customized model. Then you can use gamers if you want
+
+18
+00:01:43,680 --> 00:01:48,560
+ to encrypt your data, provide tags and so on. But we're going to skip it for now. It's optional.
+
+19
+00:01:49,200 --> 00:01:54,480
+ Now we have to provide the details of our teacher model, which is going to be the larger model.
+
+20
+00:01:54,480 --> 00:01:59,440
+ So here I have to select the teacher model. So if we just click on this, okay, so right now,
+
+21
+00:01:59,440 --> 00:02:04,960
+ I think it's providing only one option to me. So let's just click on this, no, a pro, which is the
+
+22
+00:02:04,960 --> 00:02:12,000
+ larger model. And let me just say apply. Now we have to select the student model. So if we just
+
+23
+00:02:12,000 --> 00:02:18,480
+ click on this, so I only have two options because you're only allowed to do the distillation
+
+24
+00:02:18,480 --> 00:02:25,600
+ from the models in the same family. So you cannot have the teacher model as no a pro and then
+
+25
+00:02:25,600 --> 00:02:31,600
+ student model as anthropic. Okay, now I can select either no a light or no a micro. So let me just
+
+26
+00:02:31,600 --> 00:02:38,080
+ let no a micro. Okay, now synthetic data generation model destination allows you to generate synthetic
+
+27
+00:02:38,080 --> 00:02:44,960
+ responses from a large foundation model and use that data to fine tune a smaller model for your
+
+28
+00:02:44,960 --> 00:02:51,760
+ specific use case. So here, you can select the max response link set the inference parameters
+
+29
+00:02:51,760 --> 00:02:56,480
+ to influence the response generator by your teacher model. So this is the inference parameter max
+
+30
+00:02:56,480 --> 00:03:02,560
+ length. So you can order this if you want. Okay, now we have to provide the distillation input
+
+31
+00:03:02,560 --> 00:03:09,760
+ data set, choose a file in Estee location that either contains prompt or prompt response pairs
+
+32
+00:03:09,760 --> 00:03:16,800
+ or invocation logs to generate synthetic data for your student model training. Now what it is saying
+
+33
+00:03:16,800 --> 00:03:23,920
+ is to train my student model, I will need either prompts and if I just give the prompts,
+
+34
+00:03:23,920 --> 00:03:31,040
+ then this job is going to send those prompts to my teacher model generate the prompt response
+
+35
+00:03:31,040 --> 00:03:38,080
+ and then train my student model. The other approach is you yourself provide the prompt response.
+
+36
+00:03:38,080 --> 00:03:43,760
+ So basically you send the prompt to the teacher model, get a response and then consolidate
+
+37
+00:03:43,760 --> 00:03:49,280
+ all the data and provide it here on the Estee market. Now there is one more important thing you
+
+38
+00:03:49,280 --> 00:03:56,640
+ need to remember invocation logs. So remember when we previously looked at invocation logs. So it
+
+39
+00:03:56,640 --> 00:04:03,920
+ sends every time we let's say we have built an application and we send requests to our foundation
+
+40
+00:04:03,920 --> 00:04:10,320
+ model. So that will be our prompt and it will also generate a response. So all that goes to the
+
+41
+00:04:10,320 --> 00:04:16,160
+ CloudWatch logs are on an S3 bucket. So what you can do is you can also provide that data set
+
+42
+00:04:16,160 --> 00:04:23,200
+ to teach your student model. And now why would you want to do that? Now let's say you already
+
+43
+00:04:23,200 --> 00:04:28,640
+ built this application with the teacher model in production and you are already getting a lot
+
+44
+00:04:28,640 --> 00:04:34,400
+ of prompts and logs etc. So you can use same logs that you already have in the Estee bucket
+
+45
+00:04:34,400 --> 00:04:40,480
+ or CloudWatch logs to train your student model and then replace the teacher model with a student
+
+46
+00:04:40,480 --> 00:04:47,680
+ model to reduce your latency and cost. Okay, now we have to create an S3 bucket. So now let me
+
+47
+00:04:47,680 --> 00:04:52,000
+ just go to a new tab and I'll just click on S3 bucket or you can just search.
+
+48
+00:04:55,120 --> 00:05:00,160
+ Now let me just click on create bucket. Make sure you are in the same region as your
+
+49
+00:05:00,160 --> 00:05:06,160
+ bedrock service. So I'm in the U.S. East and I have to give a bucket name. So I've just said demo
+
+50
+00:05:06,160 --> 00:05:12,880
+ model customization 767 just to give it some random numbers so that it's globally unique.
+
+51
+00:05:12,880 --> 00:05:19,360
+ I will just click on create bucket. Okay, now this bucket is created view details. So let's
+
+52
+00:05:19,360 --> 00:05:28,960
+ create a couple of folders create folder and let's create as input and create folder and then we'll
+
+53
+00:05:28,960 --> 00:05:35,040
+ just create output folder. So I'll just create an output folder output. Okay, now I have the
+
+54
+00:05:35,040 --> 00:05:40,960
+ output folder and let me just say create folder. Okay, now I have already created this
+
+55
+00:05:40,960 --> 00:05:46,960
+ model customization distillation data set. So I'll just click on this input and then I'll just
+
+56
+00:05:46,960 --> 00:05:51,840
+ push this file and I'll show you in a little bit what is there in this file. So I'll just say
+
+57
+00:05:51,840 --> 00:06:01,200
+ upload. Okay, now this has been uploaded. Okay, now this is the model customization distillation
+
+58
+00:06:01,200 --> 00:06:08,160
+ data set. Now this data set needs to be in JSON L format and it needs to follow a specific format,
+
+59
+00:06:08,160 --> 00:06:13,040
+ otherwise it's going to fail. So the first one is schema version. So it needs to be bedrock
+
+60
+00:06:13,040 --> 00:06:18,880
+ conversation 2024. So this is for internal usage of AWS. Maybe they will change the schema
+
+61
+00:06:18,880 --> 00:06:26,720
+ version in future. And then next we have this system. It basically provides some context to the
+
+62
+00:06:26,720 --> 00:06:34,480
+ student model on what this prompt and response is about. So you can see here a chat between a
+
+63
+00:06:34,480 --> 00:06:40,240
+ maintenance engineer and AI assistant. So it's giving it some context. The assistant analyzes
+
+64
+00:06:40,240 --> 00:06:46,480
+ manufacturing equipment logs and then it provides some more details on the context of this prompt.
+
+65
+00:06:46,480 --> 00:06:52,960
+ Okay, next we have the roll user. So this is actually the prompt that was sent to the
+
+66
+00:06:52,960 --> 00:06:59,440
+ teacher model. And then then the teacher model generated a response and you can see here roll
+
+67
+00:06:59,440 --> 00:07:05,040
+ assistant and this is the response. It has generated. Now there are four things we discussed.
+
+68
+00:07:05,040 --> 00:07:10,080
+ So the first is the schema version that is for internal AWS usage. Then we have the system
+
+69
+00:07:10,320 --> 00:07:16,800
+ which gives some context. And then third thing is the user where we send the prompt and finally
+
+70
+00:07:16,800 --> 00:07:24,240
+ we have the assistant which is the response to this particular prompt. Now this is the training
+
+71
+00:07:24,240 --> 00:07:30,000
+ dataset that we are going to get from the teacher model and then this dataset we are going to use
+
+72
+00:07:30,000 --> 00:07:36,160
+ to train the student model. Now if I just go back to our job here we have to provide our S3
+
+73
+00:07:36,160 --> 00:07:42,400
+ location of our training data. So let me just click on browse and if I just click on creation
+
+74
+00:07:42,400 --> 00:07:49,200
+ date and this is the bucket we created. So let me just click on this and let me just click on
+
+75
+00:07:49,200 --> 00:07:56,080
+ input and this is going to be our input. Okay, then you can also provide the
+
+76
+00:07:56,080 --> 00:08:02,160
+ distillation output metrics choose S3 path to store the training output metrics input data
+
+77
+00:08:02,160 --> 00:08:08,640
+ reported sample training dataset. So I just click on this. Again creation date creation date
+
+78
+00:08:08,640 --> 00:08:15,280
+ and this is the S3 bucket and I can just provide the location of the output folder. Okay,
+
+79
+00:08:15,280 --> 00:08:20,560
+ now let me just continue to scroll down. Here you can provide the service access. Choose a method
+
+80
+00:08:20,560 --> 00:08:26,160
+ to authorize bedrock using existing service rule or create a new service rule. So let me just
+
+81
+00:08:26,160 --> 00:08:34,480
+ say created new. So let me just say demo 123 and let me just click on create job. Okay,
+
+82
+00:08:34,480 --> 00:08:40,240
+ it's giving me an error so I cannot have underscore and let me just remove these
+
+83
+00:08:40,240 --> 00:08:50,800
+ and let me just go click on create job again. Okay, so it's going to take a few minutes to create
+
+84
+00:08:50,800 --> 00:08:57,600
+ the job. So here you can see new I am a role demo 123 is being created. Please stay on the page.
+
+85
+00:08:57,600 --> 00:09:03,440
+ Okay, now it's setting up the training job. You can see here training setup and model creation
+
+86
+00:09:03,440 --> 00:09:08,240
+ progress preparing your training environment and building your custom model through validation
+
+87
+00:09:08,240 --> 00:09:14,560
+ setup training optimization steps. So it's going to take about two to 24 hours and then one
+
+88
+00:09:14,560 --> 00:09:20,640
+ important thing I want to show you is setup inference. So once it trains the student model then
+
+89
+00:09:20,640 --> 00:09:26,080
+ we had given the name of the new model. So then you have to set it up for inferencing
+
+90
+00:09:26,080 --> 00:09:30,960
+ and if I just click on this earlier we only had the option of purchase provision throughput. So
+
+91
+00:09:30,960 --> 00:09:36,480
+ you have to make a minimum commitment on an early basis for one to three months. But now they've
+
+92
+00:09:36,480 --> 00:09:43,840
+ also given the option to build on demand. So here you can see the job status over you have the data
+
+93
+00:09:43,840 --> 00:09:49,680
+ validation, data processing, training, it's still in progress and these two have not. So we'll give
+
+94
+00:09:49,680 --> 00:09:56,080
+ you some more job details, distillation, input data set, output metrics and so on. So please remember
+
+95
+00:09:56,080 --> 00:10:01,840
+ that training the model can be really really expensive. But I just wanted to show you how the whole
+
+96
+00:10:01,840 --> 00:10:09,360
+ process works. Now ultimately this job is going to fail because you need minimum 100 records
+
+97
+00:10:09,360 --> 00:10:14,720
+ for carrying out the model customization. Okay, so that's pretty much it from this lecture
+
+98
+00:10:14,720 --> 00:10:17,920
+ as in the next lecture. Thank you.
+
