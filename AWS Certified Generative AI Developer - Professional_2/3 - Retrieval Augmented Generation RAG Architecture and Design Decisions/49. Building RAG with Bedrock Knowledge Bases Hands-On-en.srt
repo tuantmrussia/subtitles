@@ -1,0 +1,1064 @@
+1
+00:00:00,000 --> 00:00:02,720
+ In this lecture, I'm going to show you a demo of the Amazon
+
+2
+00:00:02,720 --> 00:00:04,560
+ Bedrock Knowledge Base.
+
+3
+00:00:04,560 --> 00:00:06,760
+ So we're going to build an e-learning app.
+
+4
+00:00:06,760 --> 00:00:09,360
+ And this is the architecture we had discussed earlier.
+
+5
+00:00:09,360 --> 00:00:12,360
+ So we're going to follow this architecture.
+
+6
+00:00:12,360 --> 00:00:14,040
+ So the first thing we're going to do is we're
+
+7
+00:00:14,040 --> 00:00:15,960
+ going to select the data source.
+
+8
+00:00:15,960 --> 00:00:20,000
+ And in our case, the data source is going to be S3 bucket.
+
+9
+00:00:20,000 --> 00:00:21,520
+ From the data perspective, we're going
+
+10
+00:00:21,520 --> 00:00:25,560
+ to have a PDF document of the Amazon Bedrock User Guide,
+
+11
+00:00:25,560 --> 00:00:28,400
+ which we are going to upload to S3 bucket.
+
+12
+00:00:28,400 --> 00:00:30,040
+ So this is going to be our PDF.
+
+13
+00:00:30,040 --> 00:00:33,080
+ It's basically a user guide of Amazon Bedrock.
+
+14
+00:00:33,080 --> 00:00:36,400
+ And it has about 200 pages.
+
+15
+00:00:36,400 --> 00:00:38,440
+ So when the end user makes a query,
+
+16
+00:00:38,440 --> 00:00:40,240
+ the Amazon Bedrock Knowledge Base is going
+
+17
+00:00:40,240 --> 00:00:42,640
+ to refer to this particular document
+
+18
+00:00:42,640 --> 00:00:46,760
+ to retrieve and generate an answer.
+
+19
+00:00:46,760 --> 00:00:48,800
+ So I'm on the AWS console now.
+
+20
+00:00:48,800 --> 00:00:51,880
+ Remember, you cannot create a Bedrock Knowledge Base
+
+21
+00:00:51,880 --> 00:00:53,240
+ through root user.
+
+22
+00:00:53,240 --> 00:00:56,080
+ You need to create an IAM user.
+
+23
+00:00:56,080 --> 00:00:58,440
+ So let me just search for IAM.
+
+24
+00:00:58,440 --> 00:01:00,960
+ And then I'll just click on IAM.
+
+25
+00:01:00,960 --> 00:01:03,040
+ And here, just click on the user.
+
+26
+00:01:03,040 --> 00:01:04,880
+ And just click on create user.
+
+27
+00:01:04,880 --> 00:01:06,640
+ And then you can just give it any name.
+
+28
+00:01:06,640 --> 00:01:09,360
+ So let me just say demo one.
+
+29
+00:01:09,360 --> 00:01:11,680
+ And then I'll just click on this.
+
+30
+00:01:11,680 --> 00:01:14,800
+ And I want to create an IAM user.
+
+31
+00:01:14,800 --> 00:01:17,040
+ And you can just auto generate password.
+
+32
+00:01:17,040 --> 00:01:19,000
+ Then let me just click on next.
+
+33
+00:01:19,000 --> 00:01:20,680
+ And here, you have to do permissions.
+
+34
+00:01:20,680 --> 00:01:22,800
+ So I can say attach policies directly.
+
+35
+00:01:22,800 --> 00:01:25,160
+ Search for the policy here.
+
+36
+00:01:25,160 --> 00:01:27,280
+ And I'll just say admin access.
+
+37
+00:01:27,280 --> 00:01:29,400
+ Just click on this admin access.
+
+38
+00:01:29,400 --> 00:01:31,480
+ And then just click on next.
+
+39
+00:01:31,480 --> 00:01:34,600
+ And just click on create user.
+
+40
+00:01:34,600 --> 00:01:35,840
+ So I'll just copy this.
+
+41
+00:01:35,840 --> 00:01:38,320
+ Maybe go to a new incognito window
+
+42
+00:01:38,320 --> 00:01:40,000
+ and just open it from here.
+
+43
+00:01:40,000 --> 00:01:45,680
+ Now I'll just copy this user name.
+
+44
+00:01:45,680 --> 00:01:48,320
+ And then just provide the user name here.
+
+45
+00:01:48,320 --> 00:01:50,480
+ So I'll just copy this password.
+
+46
+00:01:50,480 --> 00:01:52,800
+ And let me just provide the password.
+
+47
+00:01:52,800 --> 00:01:55,000
+ And then just sign in.
+
+48
+00:01:55,000 --> 00:01:56,520
+ OK, now I'm on the AWS console.
+
+49
+00:01:56,520 --> 00:01:57,800
+ So the first thing we have to do is
+
+50
+00:01:57,800 --> 00:01:59,800
+ we have to create an S3 bucket, which
+
+51
+00:01:59,800 --> 00:02:00,920
+ will be our data source.
+
+52
+00:02:00,920 --> 00:02:03,040
+ So let me just click here.
+
+53
+00:02:03,040 --> 00:02:05,400
+ Just make sure you're in the US East one.
+
+54
+00:02:05,400 --> 00:02:08,480
+ So I'll just go to North Virginia and US East one.
+
+55
+00:02:08,480 --> 00:02:11,760
+ OK, now I have this S3 bucket open again here as well.
+
+56
+00:02:11,760 --> 00:02:14,960
+ Let me just change it to North Virginia.
+
+57
+00:02:14,960 --> 00:02:17,200
+ Now I'm in the North Virginia region.
+
+58
+00:02:17,200 --> 00:02:19,640
+ Let me just click on this create bucket.
+
+59
+00:02:19,640 --> 00:02:21,760
+ And let's just give this bucket a name.
+
+60
+00:02:21,760 --> 00:02:27,040
+ So I'll just say demo bedrock kb01 just to make it unique.
+
+61
+00:02:27,040 --> 00:02:30,160
+ And then let me just say create bucket.
+
+62
+00:02:30,160 --> 00:02:31,640
+ OK, now this bucket has been created.
+
+63
+00:02:31,640 --> 00:02:33,680
+ Let me just click on view details.
+
+64
+00:02:33,680 --> 00:02:36,840
+ Now you hear you can upload our PDF document,
+
+65
+00:02:36,840 --> 00:02:40,080
+ which is in our case bedrock user guide.
+
+66
+00:02:40,080 --> 00:02:42,600
+ But you can upload any document that you
+
+67
+00:02:42,600 --> 00:02:47,440
+ want our users to refer for e learning.
+
+68
+00:02:47,440 --> 00:02:50,360
+ So I'll just drop it here.
+
+69
+00:02:50,360 --> 00:02:55,960
+ And let me just say upload OK.
+
+70
+00:02:55,960 --> 00:02:58,240
+ Now our document has been uploaded.
+
+71
+00:02:58,240 --> 00:02:59,800
+ So let me just close this.
+
+72
+00:02:59,800 --> 00:03:01,760
+ And let me just go back to the console.
+
+73
+00:03:01,760 --> 00:03:05,160
+ And here now I will just search for bedrock.
+
+74
+00:03:05,160 --> 00:03:08,680
+ OK, I'll just click on Amazon bedrock.
+
+75
+00:03:08,680 --> 00:03:10,440
+ Now I'm on the Amazon bedrock service.
+
+76
+00:03:10,440 --> 00:03:12,320
+ So if you just scroll down under build,
+
+77
+00:03:12,320 --> 00:03:13,520
+ I can see knowledge basis.
+
+78
+00:03:13,520 --> 00:03:15,640
+ So let me just click on this.
+
+79
+00:03:15,640 --> 00:03:18,600
+ And I'll scroll down and here I have create.
+
+80
+00:03:18,600 --> 00:03:20,080
+ So I can just click on this create.
+
+81
+00:03:20,080 --> 00:03:22,400
+ And you'll see we have unstructured data,
+
+82
+00:03:22,400 --> 00:03:25,960
+ knowledge basis, vector store, Kendra, Gen A index.
+
+83
+00:03:25,960 --> 00:03:29,240
+ We have structured data, structured data store.
+
+84
+00:03:29,240 --> 00:03:31,560
+ So since we have a PDF document, it's
+
+85
+00:03:31,560 --> 00:03:33,160
+ going to be unstructured data.
+
+86
+00:03:33,160 --> 00:03:35,440
+ And in our case, let's go with this knowledge
+
+87
+00:03:35,440 --> 00:03:36,840
+ base with vector store.
+
+88
+00:03:36,840 --> 00:03:39,440
+ So we're going to look at all of these in the later section.
+
+89
+00:03:39,440 --> 00:03:41,320
+ But for now, let's just go with this knowledge
+
+90
+00:03:41,320 --> 00:03:43,200
+ basis vector store.
+
+91
+00:03:43,200 --> 00:03:45,480
+ OK, now we have to provide the name here.
+
+92
+00:03:45,480 --> 00:03:47,120
+ Maybe I'll just go with the same name
+
+93
+00:03:47,120 --> 00:03:49,200
+ that we had given to the S3 bucket,
+
+94
+00:03:49,200 --> 00:03:51,880
+ which is demo bedrock KB01.
+
+95
+00:03:51,880 --> 00:03:54,880
+ And you can provide description if you may like.
+
+96
+00:03:54,880 --> 00:03:56,240
+ But I'll just keep it blank.
+
+97
+00:03:56,240 --> 00:03:57,760
+ It's optional.
+
+98
+00:03:57,760 --> 00:03:59,880
+ Next, we have the IM permissions.
+
+99
+00:03:59,880 --> 00:04:02,560
+ Certain permissions are necessary to access other services
+
+100
+00:04:02,560 --> 00:04:06,920
+ or perform actions in order to create this resource.
+
+101
+00:04:06,920 --> 00:04:10,480
+ For more information, see the service role for Amazon bedrock.
+
+102
+00:04:10,480 --> 00:04:13,120
+ So we're going to let Amazon bedrock create the service
+
+103
+00:04:13,120 --> 00:04:13,920
+ room.
+
+104
+00:04:13,920 --> 00:04:16,680
+ Amazon bedrock service might need access to other services
+
+105
+00:04:16,680 --> 00:04:20,520
+ like S3 bucket, maybe a vector store and so on.
+
+106
+00:04:20,520 --> 00:04:23,440
+ So we'll let it create the service room.
+
+107
+00:04:23,440 --> 00:04:26,040
+ Next, we have to choose the data source.
+
+108
+00:04:26,040 --> 00:04:29,440
+ So if you just go here in our architecture diagram,
+
+109
+00:04:29,440 --> 00:04:31,160
+ we had to create the data source.
+
+110
+00:04:31,160 --> 00:04:33,400
+ And then we had to add the data.
+
+111
+00:04:33,400 --> 00:04:35,320
+ So we already created the S3 bucket.
+
+112
+00:04:35,320 --> 00:04:40,120
+ And then we have added the PDF document here.
+
+113
+00:04:40,120 --> 00:04:41,680
+ Here, I have multiple options.
+
+114
+00:04:41,680 --> 00:04:44,160
+ So I can select maybe Amazon S3.
+
+115
+00:04:44,160 --> 00:04:46,320
+ Maybe I can have a web crawler.
+
+116
+00:04:46,320 --> 00:04:49,800
+ So maybe our e-learning user wants some information
+
+117
+00:04:49,800 --> 00:04:50,760
+ from the internet.
+
+118
+00:04:50,760 --> 00:04:53,280
+ So our knowledge base can go and crawl some data
+
+119
+00:04:53,280 --> 00:04:55,160
+ and then answer his queries.
+
+120
+00:04:55,160 --> 00:04:57,040
+ So you can also have a custom data source.
+
+121
+00:04:57,040 --> 00:05:00,320
+ You can have confluence, sales force, SharePoint.
+
+122
+00:05:00,320 --> 00:05:02,000
+ So there are multiple options.
+
+123
+00:05:02,000 --> 00:05:04,320
+ For our case, we'll just go with S3 bucket.
+
+124
+00:05:04,320 --> 00:05:06,200
+ So let me just click on S3 bucket.
+
+125
+00:05:06,200 --> 00:05:07,520
+ Then you can add some tags.
+
+126
+00:05:07,520 --> 00:05:11,680
+ If you like, then you can also add some log deliveries,
+
+127
+00:05:11,680 --> 00:05:12,760
+ application logs.
+
+128
+00:05:12,760 --> 00:05:13,640
+ It's an optional.
+
+129
+00:05:13,640 --> 00:05:16,760
+ And we're going to take a look at this in the next few
+
+130
+00:05:16,760 --> 00:05:17,680
+ lectures.
+
+131
+00:05:17,680 --> 00:05:19,680
+ Now, let me just click on next.
+
+132
+00:05:19,680 --> 00:05:22,280
+ And here, you can see, we have this data source name.
+
+133
+00:05:22,280 --> 00:05:23,440
+ So it's auto generated.
+
+134
+00:05:23,440 --> 00:05:24,920
+ So I'll leave it as it is.
+
+135
+00:05:24,920 --> 00:05:26,360
+ Then data source location.
+
+136
+00:05:26,360 --> 00:05:29,760
+ So this AWS account, yeah, this data source S3 bucket
+
+137
+00:05:29,760 --> 00:05:31,600
+ is in this account.
+
+138
+00:05:31,600 --> 00:05:35,200
+ Now we have to give the link of the S3 bucket.
+
+139
+00:05:35,200 --> 00:05:36,920
+ So I'll just click on browse.
+
+140
+00:05:36,920 --> 00:05:41,160
+ And I can just search from creation date and creation date.
+
+141
+00:05:41,160 --> 00:05:46,760
+ So this is the demo bedrock KV01 bucket we had created.
+
+142
+00:05:46,760 --> 00:05:48,680
+ So I'm just going to click on this.
+
+143
+00:05:48,680 --> 00:05:50,240
+ And I'll say choose.
+
+144
+00:05:50,240 --> 00:05:55,480
+ So next, you can also add customer managed KMS key for S3 data.
+
+145
+00:05:55,480 --> 00:05:57,840
+ So if you want to encrypt the data at rest,
+
+146
+00:05:57,840 --> 00:06:01,720
+ then you can use KMS key for that.
+
+147
+00:06:01,720 --> 00:06:03,080
+ So I'm not going to do that.
+
+148
+00:06:03,080 --> 00:06:04,560
+ So let me just continue.
+
+149
+00:06:04,560 --> 00:06:08,320
+ So next is the parsing strategy.
+
+150
+00:06:08,320 --> 00:06:09,520
+ Now we have three options.
+
+151
+00:06:09,520 --> 00:06:12,000
+ We have the Amazon bedrock default parser.
+
+152
+00:06:12,000 --> 00:06:15,400
+ Now if the data in your data source is like text documents,
+
+153
+00:06:15,400 --> 00:06:20,400
+ word, Excel, HTML, then you select this parsing strategy.
+
+154
+00:06:20,400 --> 00:06:24,000
+ But if you have, let's say images, audio, and videos,
+
+155
+00:06:24,000 --> 00:06:28,320
+ then you select the Amazon bedrock data automation as parser.
+
+156
+00:06:28,320 --> 00:06:31,880
+ And then if you have PDFs, images, and then also structure
+
+157
+00:06:31,880 --> 00:06:36,640
+ document tables and forms or visual rich document,
+
+158
+00:06:36,640 --> 00:06:39,320
+ then you select foundation model as a parser.
+
+159
+00:06:39,320 --> 00:06:40,960
+ So now we are done with step one.
+
+160
+00:06:40,960 --> 00:06:45,320
+ Now if you look at this step two, we have this data chunking strategy.
+
+161
+00:06:45,320 --> 00:06:48,920
+ So now if I just go back here, you can see the chunking strategy.
+
+162
+00:06:48,920 --> 00:06:53,520
+ So chunking breaks down the text into smaller segments before embeddings.
+
+163
+00:06:53,520 --> 00:06:57,720
+ There are multiple ways and you can break down, let's say in our case,
+
+164
+00:06:57,720 --> 00:07:01,480
+ we have the 200 page documents into smaller chunks.
+
+165
+00:07:01,480 --> 00:07:04,640
+ So then our embedding model can create vector embeddings.
+
+166
+00:07:04,640 --> 00:07:07,920
+ And we're going to deep dive into each of them a little later.
+
+167
+00:07:07,920 --> 00:07:11,720
+ But for now, just remember, there are multiple strategies for chunking.
+
+168
+00:07:11,720 --> 00:07:14,760
+ So we'll just go with the default one.
+
+169
+00:07:14,760 --> 00:07:17,800
+ OK, then you also have this transformation function.
+
+170
+00:07:17,800 --> 00:07:21,720
+ So now let's say you need to apply some transformation rules, et cetera.
+
+171
+00:07:21,720 --> 00:07:23,880
+ Then you can write your lambda function.
+
+172
+00:07:23,880 --> 00:07:28,600
+ That is going to do that processing of the documents.
+
+173
+00:07:28,600 --> 00:07:32,040
+ OK, now I'm just going to click on next.
+
+174
+00:07:32,040 --> 00:07:36,920
+ Now if I go to the architecture, you can see our third step is embedding model.
+
+175
+00:07:36,920 --> 00:07:38,720
+ So we have to select the embedding model.
+
+176
+00:07:38,720 --> 00:07:41,040
+ So if I just click on the select embedding model,
+
+177
+00:07:41,040 --> 00:07:44,880
+ so you can see we have two model service providers, Amazon and Coheer.
+
+178
+00:07:44,880 --> 00:07:48,120
+ So let me just click on Amazon and then here, you can select the model.
+
+179
+00:07:48,120 --> 00:07:51,160
+ So you have Amazon, no multimodal embeddings.
+
+180
+00:07:51,160 --> 00:07:55,480
+ So multimodal means it can handle both text and images, et cetera.
+
+181
+00:07:55,480 --> 00:07:59,440
+ Then we have the Titan embeddings model and we have the Titan text embedding model,
+
+182
+00:07:59,440 --> 00:08:01,320
+ which can only handle text.
+
+183
+00:08:01,320 --> 00:08:05,320
+ So let me just select this Titan text embeddings V2.
+
+184
+00:08:05,320 --> 00:08:08,120
+ And let me just do apply.
+
+185
+00:08:08,120 --> 00:08:13,880
+ OK, now if I go back to the architecture or fourth step is selecting the vector database.
+
+186
+00:08:13,880 --> 00:08:15,400
+ So that's what we're going to do.
+
+187
+00:08:15,400 --> 00:08:17,560
+ And you can see vector store type.
+
+188
+00:08:17,560 --> 00:08:23,320
+ So there are multiple vector store types that Amazon bedrock provides by default.
+
+189
+00:08:23,320 --> 00:08:25,320
+ So now we have the vector store here.
+
+190
+00:08:25,320 --> 00:08:28,680
+ So here you have two options, quick create a new vector store.
+
+191
+00:08:28,680 --> 00:08:31,120
+ So if you have existing vector store, you can select this.
+
+192
+00:08:31,120 --> 00:08:34,840
+ Otherwise, you can select the quick create new vector store.
+
+193
+00:08:34,840 --> 00:08:37,520
+ And if I just click on this, it will give me some options.
+
+194
+00:08:37,520 --> 00:08:44,720
+ So you have open search serverless, Amazon S3 vectors, Amazon Aurora Postgres, SQL Server.
+
+195
+00:08:44,720 --> 00:08:47,800
+ And then we have the Amazon Neptune analytics.
+
+196
+00:08:47,800 --> 00:08:55,760
+ So I'm just going to select this Amazon S3 vector because it's much cheaper compared to the other vector stores.
+
+197
+00:08:55,760 --> 00:09:01,080
+ So please remember, when you create a better knowledge, especially when you select the vector store,
+
+198
+00:09:01,080 --> 00:09:08,320
+ let's say if you select open search, there's going to be a per hour charge and a repeat per hour charge.
+
+199
+00:09:08,320 --> 00:09:12,960
+ So which is about 50 cents for S3 vectors, it's going to be much lesser.
+
+200
+00:09:12,960 --> 00:09:17,480
+ But if you're following along, make sure you delete the better knowledge basis.
+
+201
+00:09:17,480 --> 00:09:22,880
+ OK, now I just click on Amazon S3 vector, and then I'll just click on next.
+
+202
+00:09:22,880 --> 00:09:26,000
+ And then you are on this review and create page.
+
+203
+00:09:26,000 --> 00:09:31,280
+ And now I'm just going to say create knowledge base.
+
+204
+00:09:31,280 --> 00:09:34,440
+ So it's going to take a few minutes to create the knowledge base.
+
+205
+00:09:34,440 --> 00:09:39,840
+ So you can see it's in the process of creating the better knowledge base.
+
+206
+00:09:39,840 --> 00:09:44,240
+ So I just made it a few minutes and you can see our knowledge base has been created now.
+
+207
+00:09:44,240 --> 00:09:47,080
+ Now if you just scroll down, you can see the data source here.
+
+208
+00:09:47,080 --> 00:09:51,560
+ And if you see here, last sync, so there is no sync that has been done,
+
+209
+00:09:51,560 --> 00:09:57,720
+ which means that no vector embeddings for our data source have been created.
+
+210
+00:09:57,720 --> 00:10:02,520
+ So what we need to do is we just need to click on this and then just click on sync.
+
+211
+00:10:02,520 --> 00:10:05,160
+ Again, it's going to take a few minutes to complete the sync.
+
+212
+00:10:05,160 --> 00:10:08,680
+ So we'll just wait till the sync is complete.
+
+213
+00:10:08,680 --> 00:10:14,640
+ OK, now our sync is complete and if you just see here, it shows last sync is right now.
+
+214
+00:10:14,640 --> 00:10:19,160
+ Now if I just click on this test knowledge base, so let me just do that.
+
+215
+00:10:19,160 --> 00:10:22,600
+ And here you can see some configurations here.
+
+216
+00:10:22,600 --> 00:10:27,160
+ So the first one is retrieval and response generation.
+
+217
+00:10:27,160 --> 00:10:31,040
+ So remember, there are two APIs provided by better knowledge base.
+
+218
+00:10:31,040 --> 00:10:35,920
+ One is retrieve only and then we have retrieve and response generation.
+
+219
+00:10:35,920 --> 00:10:41,360
+ So retrieve only means it's only going to retrieve the vector embeddings from the vector store.
+
+220
+00:10:41,360 --> 00:10:44,000
+ But it's not going to generate an answer.
+
+221
+00:10:44,000 --> 00:10:46,440
+ And then you have retrieval and response generation,
+
+222
+00:10:46,440 --> 00:10:50,680
+ which means that it's going to retrieve the vector embeddings.
+
+223
+00:10:50,680 --> 00:10:56,880
+ And then also it's going to generate the knowledge base from the large language model that we use.
+
+224
+00:10:56,880 --> 00:11:01,880
+ OK, so I'm just going to select retrieve only for now so that I can show you.
+
+225
+00:11:01,880 --> 00:11:07,400
+ OK, so I'm just going to pose a question now and then we're going to take a look at the other configurations a little later.
+
+226
+00:11:07,400 --> 00:11:09,640
+ So I'll say what is Amazon bedrock?
+
+227
+00:11:09,640 --> 00:11:12,640
+ And let me just pose this question.
+
+228
+00:11:12,640 --> 00:11:19,800
+ So you can see it has retrieved only the chunks from the vector store for the PDF document that we had uploaded.
+
+229
+00:11:19,800 --> 00:11:22,360
+ But it's not generated an answer.
+
+230
+00:11:22,360 --> 00:11:27,360
+ Now if I just cancel this and let me select this retrieval and response generation.
+
+231
+00:11:27,360 --> 00:11:30,560
+ So if I just click on this, I have to select the foundation model.
+
+232
+00:11:30,560 --> 00:11:36,320
+ So if I just go to the architecture, you can see here the six step was selecting the large language model.
+
+233
+00:11:36,320 --> 00:11:38,160
+ So I can just select a model here.
+
+234
+00:11:38,160 --> 00:11:44,360
+ Let me say Amazon and let me say no up to and just to a select now if I just ask the same question.
+
+235
+00:11:44,360 --> 00:11:48,640
+ Let me just click here and you will see it will give a full flushed answer.
+
+236
+00:11:48,640 --> 00:11:56,240
+ And you can see here based on the retrieve result Amazon bedrock is a fully managed service that makes base models.
+
+237
+00:11:56,240 --> 00:12:00,040
+ And then it gives some more details and here here are some citations.
+
+238
+00:12:00,040 --> 00:12:05,920
+ So if I just click on any of the citations, it will show me from where it is getting this answer.
+
+239
+00:12:05,920 --> 00:12:10,160
+ And this is the Amazon bedrock user guide that we had uploaded.
+
+240
+00:12:10,160 --> 00:12:13,720
+ Okay, now you can see here there's another option called as details.
+
+241
+00:12:13,720 --> 00:12:20,800
+ And if I just click on these details, so what you can see here is the various chunks that it has retrieved.
+
+242
+00:12:20,800 --> 00:12:27,600
+ So you have the source chunk one and then we have the source chunk two, source chunk three and so on.
+
+243
+00:12:27,600 --> 00:12:32,800
+ So now if you see in the architecture, what we had earlier discussed was when the user poses this question,
+
+244
+00:12:32,800 --> 00:12:40,720
+ it will pass through text embedding model, then it's going to do a similarity search and retrieve the context chunks,
+
+245
+00:12:40,720 --> 00:12:46,560
+ which match in this vector database corresponding to this user question embeddings.
+
+246
+00:12:46,560 --> 00:12:52,560
+ And those are these chunks that have been retrieved that you can see here.
+
+247
+00:12:52,560 --> 00:12:55,760
+ So here you can see some of the configurations we have the guard rail.
+
+248
+00:12:55,760 --> 00:13:00,320
+ And if you just click on this, you'll be able to see all the guard rails that you have created.
+
+249
+00:13:00,320 --> 00:13:02,560
+ And if you want to select one, you can do that.
+
+250
+00:13:02,560 --> 00:13:06,240
+ So guard rail version, then you have the re ranking model.
+
+251
+00:13:06,240 --> 00:13:08,480
+ So you can select any re ranking model.
+
+252
+00:13:08,480 --> 00:13:10,800
+ So right now it only seems to be supporting cohere.
+
+253
+00:13:10,800 --> 00:13:13,120
+ So you have the re rank 3.5.
+
+254
+00:13:13,120 --> 00:13:19,200
+ So what re ranker model does is enables a re ranker model to rescore the relevance of retrieved
+
+255
+00:13:19,200 --> 00:13:23,920
+ source chunks and override the vector database relevance ranking.
+
+256
+00:13:23,920 --> 00:13:26,640
+ So you can see it has retrieved multiple chunks.
+
+257
+00:13:26,640 --> 00:13:32,000
+ So when we use a re ranking model, it's going to re rank these chunks based on the relevance.
+
+258
+00:13:32,000 --> 00:13:35,120
+ And we're going to discuss about re ranking models a little later.
+
+259
+00:13:35,120 --> 00:13:40,000
+ And then if I just continue to scroll down, so here are some other configuration
+
+260
+00:13:40,000 --> 00:13:42,080
+ parameters related to generation.
+
+261
+00:13:42,080 --> 00:13:45,120
+ Like if you want to reset the model inference parameters,
+
+262
+00:13:45,120 --> 00:13:49,280
+ generation prompt, orchestration prompt, and so on, you can do that.
+
+263
+00:13:49,280 --> 00:13:52,560
+ Okay, so that's pretty much it from the demo.
+
+264
+00:13:52,560 --> 00:13:53,840
+ Hope you liked the demo.
+
+265
+00:13:53,840 --> 00:13:54,800
+ I'll see you in the next lecture.
+
+266
+00:13:54,800 --> 00:13:55,200
+ Thank you.
+
