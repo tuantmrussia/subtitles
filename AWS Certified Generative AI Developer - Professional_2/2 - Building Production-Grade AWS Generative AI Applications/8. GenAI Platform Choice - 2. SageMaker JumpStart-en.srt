@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:11,840
+ Now in this lecture, we're going to look at the second option of how you can access foundation models within AWS and that is through the Amazon SageMaker Jumpstart.
+
+2
+00:00:11,840 --> 00:00:23,200
+ So Amazon SageMaker Jumpstart is part of the Amazon SageMaker AI service which we are going to discuss in a lot more detail in the data and responsible AI section.
+
+3
+00:00:23,200 --> 00:00:36,080
+ But let me just give you a two-minute overview of the SageMaker AI service. So Amazon SageMaker AI is an AI ML service to help you build, train and deploy machine learning models.
+
+4
+00:00:36,080 --> 00:00:48,960
+ So if you see this example here, it has different capabilities that can help you generate sample data through fetching data from different sources, then cleaning it and preparing it.
+
+5
+00:00:48,960 --> 00:01:02,440
+ Then it also has the capability which helps you train the model, evaluate the model, and if everything is good, then it can also deploy it to production and monitor it.
+
+6
+00:01:02,440 --> 00:01:10,240
+ So to give you an example, let's say you want to build a machine learning model for Gmail spam filter, which is just a classification problem.
+
+7
+00:01:10,240 --> 00:01:29,480
+ So that you can do through the SageMaker AI. Now AWS positions Amazon SageMaker AI as a unified platform for data analytics and AI, and earlier it was just called as Amazon SageMaker now, they are calling it as Amazon SageMaker AI.
+
+8
+00:01:29,480 --> 00:01:41,480
+ Now we're going to deep dive into Amazon SageMaker AI capabilities in the data and responsible AI sections later. So for now, let's just focus on the SageMaker jumpstart.
+
+9
+00:01:41,480 --> 00:01:51,680
+ Now Amazon SageMaker jumpstart allows you to deploy, fine tune and evaluate foundation models.
+
+10
+00:01:51,680 --> 00:02:04,720
+ Now let's go and understand how it does that. Now we can see here, Amazon SageMaker is a much larger service and within that we have the SageMaker jumpstart, which is focused on Gen AI.
+
+11
+00:02:04,720 --> 00:02:13,560
+ Now Amazon SageMaker jumpstart allows you access to different models in their area of foundation model, so it provides access to both open source and proprietary models.
+
+12
+00:02:13,560 --> 00:02:27,400
+ So you can see some of the models that are available as part of SageMaker jumpstart, so you have AI 21 labs, then you have met our co here, and we've already seen some of these models also available as part of the Amazon bedrock service.
+
+13
+00:02:27,400 --> 00:02:40,880
+ It also provides you access to computer vision models, let's say image processing video processing, or let's say you want to do some content moderation on the images being uploaded to your website, so you can do that.
+
+14
+00:02:40,880 --> 00:02:54,320
+ It also provides you access to NLP models, so let's say you want to do language translation, or you want to do from text to voice or voice to text, so it provides you a lot of models that can work in these areas.
+
+15
+00:02:54,320 --> 00:03:02,240
+ Then it also allows you to fine tune foundation models using the SageMaker training jobs.
+
+16
+00:03:02,240 --> 00:03:12,960
+ And then finally, foundation model evaluation, so it integrates with another SageMaker service called a SageMaker clarify for foundation model evaluation.
+
+17
+00:03:12,960 --> 00:03:28,480
+ So SageMaker jumpstart is really valuable when your focus is more on open source foundation models, though it provides access to proprietary models as well like you can see here air 21 labs co here, but the focus is more open source foundation models.
+
+18
+00:03:28,480 --> 00:03:38,840
+ Then if you want to fine tune your foundation models or evaluate your foundation models, then take a look at Amazon SageMaker jumpstart compared to Amazon bedrock.
+
+19
+00:03:38,840 --> 00:03:48,880
+ Now let's take a look at some of the use cases, any typical Jennie use case text summarization code generation, you can use SageMaker jumpstart.
+
+20
+00:03:48,880 --> 00:03:56,320
+ Then it also allows you to provision infrastructure to deploy and fine tune foundation model.
+
+21
+00:03:56,320 --> 00:03:59,200
+ This is really important, let's take a look at the architecture.
+
+22
+00:03:59,200 --> 00:04:03,760
+ Now let's see how you can deploy foundation models in SageMaker jumpstart.
+
+23
+00:04:03,760 --> 00:04:14,680
+ So what you can do is you can select a foundation model, let's say you select one from co here, so you define the instance type or basically just provision your infrastructure.
+
+24
+00:04:14,680 --> 00:04:28,160
+ So here I just said I will use ml.t3.large instance which will have two VCP use and a Gb memory and it's going to cost about 10 cents per hour.
+
+25
+00:04:28,160 --> 00:04:44,640
+ Once you provision your infrastructure, you define which VPC you want to deploy this model in and that's where it's different from Amazon bedrock because in Amazon bedrock, the model is going to be deployed in the AWS owned VPC.
+
+26
+00:04:44,640 --> 00:04:50,640
+ Here you deploy the model in customer VPC or your own VPC.
+
+27
+00:04:50,640 --> 00:05:04,640
+ So once you have done that, it will give you an endpoint and then you can write some motor 3 code to access that endpoint and then you can expose the lambda function where the API did way.
+
+28
+00:05:04,640 --> 00:05:21,200
+ Okay, so now how is the end user going to use it, so once he has this rest API, he can make a call, let's say our end user is a wind turbine technician and he sends some manufacturing logs with images of the damage.
+
+29
+00:05:21,200 --> 00:05:30,480
+ So once he sent this prompt, this will be routed by AWS lambda to this foundation model hosted on SageMaker jumpstart.
+
+30
+00:05:30,480 --> 00:05:41,600
+ So the two key points note here is it's deployed in your VPC and the second one is that you have to upfront decide your provisioning infrastructure.
+
+31
+00:05:41,600 --> 00:05:50,760
+ Okay, now the third point is who is the users of this service, so it's going to be mainly machine learning engineers data scientists and developers.
+
+32
+00:05:50,760 --> 00:06:00,680
+ Okay, now let's take a look at architecture security and pricing, so we already discussed, this is a very important point that it's going to be deployed in the customer VPC.
+
+33
+00:06:00,680 --> 00:06:18,880
+ So it provides you full control and through VPC and I am services, you can define at a granular level who has access to prompt who has access to your model influencing and training data compared to Amazon bedrock where model is managed within the AWS account and VPC.
+
+34
+00:06:18,880 --> 00:06:31,600
+ Now pricing is based on provisioning capacity, so if we just go to this link, so you can see here on this page if I just go to jumpstart and here is the cost of infrastructure.
+
+35
+00:06:31,600 --> 00:06:37,040
+ So here you can see the infrastructure that you can provision for your foundation model.
+
+36
+00:06:37,040 --> 00:06:42,320
+ So you have the standard instance, which is to VCPU, it has memory and this is the cost.
+
+37
+00:06:42,320 --> 00:07:01,080
+ Now let's take a look at the performance, so you have much better control on latency and throughput for your sensitive workloads on Amazon SageMaker Jumpstart compared to Amazon bedrock because you can control latency to some extent by defining the instance sizing.
+
+38
+00:07:01,080 --> 00:07:13,760
+ So let's take an example, let's say user makes a request to a foundation model hosted on SageMaker Jumpstart and the request takes one second and then response takes four seconds total latency of five seconds.
+
+39
+00:07:13,760 --> 00:07:30,920
+ Now you can reduce the latency to some extent by having a larger provision instance for your foundation model, which is useful compared to Amazon bedrock where you have less control or the latency because it is deployed on the AWS infrastructure.
+
+40
+00:07:31,720 --> 00:08:00,960
+ Now let's take a look at the scalability, availability and monitoring of the foundation models on SageMaker Jumpstart, so it's an AWS managed service, so AWS manages the scalability, availability, monitoring of the infrastructure on which your foundation model is deployed, but customer needs to provision the resources, which means customer needs to decide what kind of an instance this model is going to be deployed on.
+
+41
+00:08:01,080 --> 00:08:05,000
+ So, that is pretty much it from this lecture. I will see in the next lecture. Thank you.
+
