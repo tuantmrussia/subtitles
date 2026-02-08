@@ -1,0 +1,512 @@
+1
+00:00:00,000 --> 00:00:04,600
+Trong bài giảng trước, chúng tôi đã xem xét một số đặc điểm then chốt của các đại lý A và chúng tôi
+
+2
+00:00:04,600 --> 00:00:10,800
+nói rằng nó có bốn đặc tính then chốt như vậy lên kế hoạch, bộ nhớ, công cụ, và hành động và nhớ
+
+3
+00:00:10,800 --> 00:00:16,760
+hành động là không có gì nhưng các đại lý có một số công cụ và khi bạn thực hiện những công cụ bạn có một số
+
+4
+00:00:16,760 --> 00:00:17,760
+diễn
+
+5
+00:00:17,760 --> 00:00:22,680
+Bây giờ chúng ta hãy đi sâu vào từng khu vực này để bắt đầu với kế hoạch.
+
+6
+00:00:22,680 --> 00:00:27,480
+Có ba cách mà một đặc vụ có thể thực hiện kế hoạch.
+
+7
+00:00:27,480 --> 00:00:32,720
+Vì vậy, đầu tiên là chuỗi tư duy, sau đó bạn có ba suy nghĩ và
+
+8
+00:00:32,720 --> 00:00:36,880
+thì cuối cùng bạn sẽ có được lý luận và hành động.
+
+9
+00:00:36,880 --> 00:00:42,320
+Được rồi bây giờ hãy đi trước và kiểm tra làm thế nào kế hoạch được thực hiện bởi các đặc vụ.
+
+10
+00:00:42,320 --> 00:00:49,160
+Vì vậy, trước đó chúng tôi thảo luận rằng các tác nhân được cung cấp năng lượng bởi các mô hình ngôn ngữ lớn hoặc LM và nó
+
+11
+00:00:49,160 --> 00:00:51,880
+bộ não đằng sau các đặc vụ.
+
+12
+00:00:51,880 --> 00:00:57,400
+Bây giờ câu hỏi mà bạn có thể có trong đầu là làm thế nào các đại lý thực sự làm kế hoạch?
+
+13
+00:00:57,400 --> 00:01:03,260
+Và nếu họ được điều khiển bởi mô hình ngôn ngữ lớn và hãy nói rằng tôi đã gửi một bài tập tóm tắt
+
+14
+00:01:03,260 --> 00:01:08,920
+nó sẽ chỉ cho tôi một phản hồi.
+
+15
+00:01:08,920 --> 00:01:13,600
+Vậy làm thế nào các tác nhân được điều khiển bởi các mô hình ngôn ngữ lớn thực sự lập kế hoạch?
+
+16
+00:01:13,600 --> 00:01:18,400
+Vì vậy, có một cơ chế cho nó và để tôi giải thích cho bạn, giả sử chúng ta có một người dùng.
+
+17
+00:01:18,400 --> 00:01:24,760
+Bây giờ hãy nói rằng người dùng đăng một câu hỏi đơn giản, 6 trừ 4 + 2 và nó đã được nhìn thấy trong nghiên cứu
+
+18
+00:01:24,760 --> 00:01:31,400
+mà đôi khi mô hình ngôn ngữ lớn không thể giải quyết ngay cả một số của toán học đơn giản
+
+19
+00:01:31,400 --> 00:01:32,400
+Có vấn đề.
+
+20
+00:01:32,400 --> 00:01:40,440
+Vì vậy, cách tốt nhất để thấy trong nghiên cứu làm thế nào tác nhân có thể giải quyết câu hỏi này là phá vỡ xuống
+
+21
+00:01:40,440 --> 00:01:48,920
+nó vào nhiều bước và làm thế nào bạn có thể làm cho các tác nhân làm điều đó là bằng cách cung cấp một vài mẫu
+
+22
+00:01:48,920 --> 00:01:53,800
+kết quả để giúp nó học cách giải quyết vấn đề.
+
+23
+00:01:53,800 --> 00:01:56,560
+Vì vậy, chúng ta hãy gọi nó là ít nhắc ngắn.
+
+24
+00:01:56,560 --> 00:02:00,320
+Vì vậy, có lẽ những gì bạn sẽ làm là bạn sẽ cung cấp cho nó một câu hỏi khác và hãy nói 3 trừ
+
+25
+00:02:00,320 --> 00:02:06,320
+2 cộng 1 và sau đó bạn hiển thị nó bước đầu tiên nó cần phải mất là thêm hai do đó, bạn
+
+26
+00:02:06,320 --> 00:02:11,880
+làm 3 cộng 1, sau đó bạn nói okay bây giờ bạn có câu trả lời, sau đó làm trừ 2 đó là thứ hai
+
+27
+00:02:11,880 --> 00:02:14,520
+bước thứ ba là bạn có được câu trả lời.
+
+28
+00:02:14,520 --> 00:02:21,120
+Và sau đó bạn đưa ra câu hỏi này mà bạn có 6 trừ 4 cộng với 2 đó là câu hỏi người dùng.
+
+29
+00:02:21,120 --> 00:02:26,720
+Vì vậy, khi câu hỏi người dùng cộng với ví dụ này làm thế nào để giải quyết vấn đề này được gửi đến
+
+30
+00:02:26,720 --> 00:02:32,160
+tác nhân được điều khiển bởi mô hình ngôn ngữ lớn những gì nó sẽ làm cho câu hỏi người dùng này là nó sẽ
+
+31
+00:02:32,160 --> 00:02:37,880
+Phá vỡ nó thành các bước như đã được chỉ dẫn trong sản lượng mẫu này.
+
+32
+00:02:37,880 --> 00:02:44,120
+Vì vậy, đầu tiên nó sẽ làm 6 cộng với 2 như đã được hiển thị ở đây sau đó các bước 2 nó sẽ làm
+
+33
+00:02:44,120 --> 00:02:51,240
+Trừ và bước 3 nó sẽ tạo ra câu trả lời và bạn sẽ thấy rằng nó
+
+34
+00:02:51,240 --> 00:02:54,600
+đã có kết quả đúng đắn.
+
+35
+00:02:54,600 --> 00:03:02,280
+Vì vậy, về cơ bản cho các tác nhân để làm kế hoạch bạn cần để cung cấp cho nó các mẫu dấu nhắc đúng
+
+36
+00:03:02,280 --> 00:03:07,440
+Nó sẽ giúp nó phá vỡ một cuộc nói chuyện phức tạp thành nhiều bước.
+
+37
+00:03:07,440 --> 00:03:13,480
+Bây giờ chúng ta hãy xem xét các cách tiếp cận khác nhau để lên kế hoạch bởi các đặc vụ AI.
+
+38
+00:03:13,480 --> 00:03:19,080
+Vì vậy, có hai, đầu tiên là lên kế hoạch mà không cần phản hồi.
+
+39
+00:03:19,080 --> 00:03:22,560
+Vì vậy, nếu trong kế hoạch mà không có phản hồi chúng tôi có hai cách tiếp cận chính.
+
+40
+00:03:22,560 --> 00:03:28,080
+Vì vậy, chúng tôi có chuỗi suy nghĩ lý luận và tôi sẽ đi sâu vào điều này nhiều hơn nữa bởi vì
+
+41
+00:03:28,080 --> 00:03:34,000
+Các đại lý trên nền móng Amazon thực sự sử dụng điều này sau đó bạn cũng có ba lý luận tư duy.
+
+42
+00:03:34,000 --> 00:03:39,640
+Tiếp cận thứ hai là lên kế hoạch với phản hồi và một lần nữa nó có hai cách tiếp cận.
+
+43
+00:03:39,640 --> 00:03:45,400
+Vì vậy, chúng tôi đã phản ứng hoặc lý luận cộng với hành động một lần nữa nền móng Amazon sử dụng điều này vì vậy tôi sẽ đi
+
+44
+00:03:45,400 --> 00:03:49,560
+để sâu hơn một chút vào trong này và sau đó chúng tôi cũng có sự phản chiếu.
+
+45
+00:03:49,560 --> 00:03:54,040
+Bây giờ hãy nhìn vào chuỗi suy nghĩ thúc đẩy ý nghĩa của nó.
+
+46
+00:03:54,040 --> 00:04:01,280
+Vì vậy, chuỗi suy nghĩ thúc đẩy khả năng lý luận phức tạp cho mLMs thông qua trung gian
+
+47
+00:04:01,280 --> 00:04:03,160
+Những bước lý luận.
+
+48
+00:04:03,160 --> 00:04:08,760
+Vì vậy, như chúng tôi đã thấy trước đó rằng một khi bạn cung cấp một đầu vào cho một tác nhân được điều khiển bởi một lớn
+
+49
+00:04:08,760 --> 00:04:14,120
+Mô hình ngôn ngữ và bạn cung cấp cho nó với một số kịch bản mẫu về cách giải quyết các vấn đề
+
+50
+00:04:14,120 --> 00:04:22,200
+và phá vỡ nó thành bước và đó là những gì sau đó cho người dùng mới yêu cầu các đại lý sẽ có thể
+
+51
+00:04:22,200 --> 00:04:23,960
+để làm.
+
+52
+00:04:23,960 --> 00:04:30,040
+Vì vậy, nghiên cứu cho thấy rằng điều này đặc biệt hiệu quả khi bạn đang cố gắng cải thiện khả năng
+
+53
+00:04:30,040 --> 00:04:37,400
+của các mô hình ngôn ngữ lớn cho các câu hỏi liên quan đến toán học và lý luận phổ biến
+
+54
+00:04:37,400 --> 00:04:40,000
+như chúng ta đã thấy trước đó.
+
+55
+00:04:40,000 --> 00:04:44,960
+Vì vậy, bạn có thể đọc nhiều hơn về nghiên cứu này thông qua liên kết này mà tôi sẽ cung cấp như một phần
+
+56
+00:04:44,960 --> 00:04:46,280
+của PDF này.
+
+57
+00:04:46,280 --> 00:04:51,720
+Ví dụ này là một phần của hơi trắng mà tôi vừa cho các bạn xem đường link.
+
+58
+00:04:51,720 --> 00:04:58,080
+Vì vậy, những gì họ đã làm là một phần của các tiêu chuẩn nhắc nhở họ đưa ra ví dụ cho các mô hình mà
+
+59
+00:04:58,080 --> 00:05:03,720
+Roger có 5 quả bóng tennis, anh ta mua thêm 2 lon bóng tennis.
+
+60
+00:05:03,720 --> 00:05:08,360
+Ba quả bóng tennis anh ta có bao nhiêu quả bóng tennis và rồi họ nói đồng ý
+
+61
+00:05:08,360 --> 00:05:17,160
+Câu trả lời là 11 và bây giờ câu hỏi cho đại lý quán ăn có 23 trái táo nếu họ sử dụng 20 để làm
+
+62
+00:05:17,160 --> 00:05:21,080
+bữa trưa và mang thêm 6 quả táo.
+
+63
+00:05:21,080 --> 00:05:27,200
+Vì vậy, mô hình trả lời với câu trả lời 27 là không đúng.
+
+64
+00:05:27,200 --> 00:05:33,840
+Sau đó, họ sử dụng chuỗi suy nghĩ đạo cụ và ở đây họ đã đưa ra cùng một câu hỏi nhưng
+
+65
+00:05:33,840 --> 00:05:40,360
+Trong câu trả lời, họ chỉ cho nó làm thế nào để phân giải vấn đề thành nhiều bước và sau đó
+
+66
+00:05:40,360 --> 00:05:41,360
+Giải quyết đi.
+
+67
+00:05:41,360 --> 00:05:46,800
+Vì vậy, họ nói OK Roger bắt đầu với năm quả bóng sau đó hai can của ba quả là sáu tennis
+
+68
+00:05:46,800 --> 00:05:50,760
+bi mỗi người sau đó bạn thêm năm và sáu và câu trả lời là 11.
+
+69
+00:05:50,760 --> 00:05:55,520
+Ở đây họ chỉ cần trực tiếp cung cấp câu trả lời sau đó họ cho nó cùng một câu hỏi rằng
+
+70
+00:05:55,520 --> 00:06:02,880
+là ở đây và những gì các mô hình đã làm là nó đã phá vỡ vấn đề thành nhiều bước sau đó
+
+71
+00:06:02,880 --> 00:06:09,160
+Thêm vào đây và nó có câu trả lời đúng và đó là nơi chuỗi suy nghĩ lý luận
+
+72
+00:06:09,160 --> 00:06:16,800
+đến từ nơi bạn cung cấp mô hình với làm thế nào để giải quyết một vấn đề thông qua nhiều bước
+
+73
+00:06:16,800 --> 00:06:23,080
+Và sau đó nhận được câu trả lời đúng okay đó là chuỗi suy nghĩ lý luận tiếp theo chúng tôi có ba
+
+74
+00:06:23,080 --> 00:06:29,120
+của suy nghĩ và đó là điều này một lần nữa lên kế hoạch mà không có phản hồi vì vậy nó là rất giống như chuỗi
+
+75
+00:06:29,120 --> 00:06:34,960
+lập luận nhưng điều duy nhất khác ở đây là khi bạn cung cấp một đầu vào
+
+76
+00:06:34,960 --> 00:06:42,120
+Thay vì tạo ra một kế hoạch nó sẽ tạo ra nhiều cách tiếp cận và sau đó họ sẽ
+
+77
+00:06:42,120 --> 00:06:46,720
+bỏ phiếu và quyết định okay đó là cách tiếp cận tốt nhất giả sử họ quyết định kế hoạch hai là
+
+78
+00:06:46,720 --> 00:06:54,480
+Cách tiếp cận tốt nhất sau đó họ sẽ phá vỡ kế hoạch hai lần nữa thành nhiều bước và sau đó
+
+79
+00:06:54,480 --> 00:06:55,480
+Thực hiện.
+
+80
+00:06:55,480 --> 00:06:58,120
+Vậy sự khác biệt duy nhất giữa chuỗi suy nghĩ và ba suy nghĩ là ở đây
+
+81
+00:06:58,120 --> 00:07:04,720
+sẽ có nhiều kế hoạch được tạo ra tại mỗi bước và sau đó bạn chỉ cần chọn một để bạn có thể
+
+82
+00:07:04,720 --> 00:07:10,680
+Ở đây nó tạo ra nhiều suy nghĩ mỗi bước tạo ra một cấu trúc cây.
+
+83
+00:07:10,680 --> 00:07:16,820
+sẽ có được chi tiết của những điều này bởi vì đây không phải là những gì các đại lý nền móng Amazon sử dụng mà
+
+84
+00:07:16,820 --> 00:07:22,200
+Đây là một trong những cách tiếp cận có thể và đây là một lần nữa dựa trên một giấy trắng và bạn
+
+85
+00:07:22,200 --> 00:07:28,480
+Có thể đọc thêm một chút về điều này về lý do tại sao nó là một kỹ thuật thúc đẩy hiệu quả.
+
+86
+00:07:28,480 --> 00:07:34,600
+Bây giờ chúng ta hãy nhìn vào cách tiếp cận thứ hai mà là lên kế hoạch với phản hồi và
+
+87
+00:07:34,600 --> 00:07:41,360
+Quan trọng nhất là lý luận và hành động cũng được biết đến như là phản ứng và từ Amazon ruprock
+
+88
+00:07:41,360 --> 00:07:48,480
+Các đặc vụ sử dụng và đây cũng là khuôn khổ phổ biến nhất cho kế hoạch đặc vụ.
+
+89
+00:07:48,480 --> 00:07:54,720
+Vì vậy, bạn có thể thấy phản ứng ở đây là một kỹ thuật thúc đẩy tiên tiến kết hợp lý luận và
+
+90
+00:07:54,720 --> 00:08:03,040
+hành động trong một dấu nhắc vì vậy nó là tốt cho trường hợp nơi dữ liệu bên ngoài hoặc nội bộ là cần thiết
+
+91
+00:08:03,040 --> 00:08:10,160
+để thực hiện nhiệm vụ và nó cũng thực hiện một cách sống động khi nó có thể tái tạo lại.
+
+92
+00:08:10,160 --> 00:08:15,600
+Vì vậy, hãy nhớ rằng khi chúng ta đang nói về đặt phòng khách sạn và LN đặt phòng khách sạn không có sẵn
+
+93
+00:08:15,600 --> 00:08:18,360
+Sau đó bạn đi và trồng lại ngày.
+
+94
+00:08:18,360 --> 00:08:19,880
+Vậy nó hoạt động thế nào?
+
+95
+00:08:19,880 --> 00:08:23,400
+Bây giờ hãy xem sự khác biệt giữa chuỗi suy nghĩ và phản ứng.
+
+96
+00:08:23,400 --> 00:08:27,480
+Vì vậy, trong trường hợp của lý luận tư duy, giả sử bạn cung cấp một người dùng đầu vào một lớn
+
+97
+00:08:27,480 --> 00:08:33,920
+Mô hình ngôn ngữ sẽ phân chia thành nhiều phần phụ và sau đó để nó ở đó.
+
+98
+00:08:33,920 --> 00:08:39,920
+Sau đó bạn có thể có hành động nơi bạn thực hiện những công việc nhưng nó sẽ không được năng động
+
+99
+00:08:39,920 --> 00:08:40,920
+Thực hiện.
+
+100
+00:08:40,920 --> 00:08:45,080
+Vì vậy, nó sẽ không liên tục trả lời Vì vậy, nếu nó không nhận được một khách sạn đặt nó không
+
+101
+00:08:45,080 --> 00:08:46,720
+sẽ tái lập.
+
+102
+00:08:46,720 --> 00:08:52,480
+Bây giờ trong trường hợp của phản ứng những gì xảy ra là một khi người dùng đầu vào được gửi cho tác nhân này được điều khiển
+
+103
+00:08:52,480 --> 00:08:58,800
+bởi một mô hình ngôn ngữ lớn nó sẽ phá vỡ nhiệm vụ thành nhiều bước phụ và sau đó
+
+104
+00:08:58,800 --> 00:09:07,240
+Thực hiện chúng và một khi bạn nhận được đầu ra hãy nói rằng bạn gọi và khách sạn.com API và bạn
+
+105
+00:09:07,240 --> 00:09:12,600
+Có một ID đặt chỗ sau đó nó sẽ vượt qua quan sát và quan sát đơn giản có nghĩa là
+
+106
+00:09:12,600 --> 00:09:18,520
+Kết quả nó nhận được từ một số nguồn dữ liệu nó sẽ vượt qua quan sát đó
+
+107
+00:09:18,520 --> 00:09:24,080
+Mô hình ngôn ngữ lớn và nếu nó thỏa mãn yêu cầu của người dùng lớn sẽ cung cấp
+
+108
+00:09:24,080 --> 00:09:32,320
+mà kết xuất cho người dùng nhưng nếu nó không sau đó nó sẽ tái lập và thực hiện các
+
+109
+00:09:32,320 --> 00:09:33,320
+nhiệm vụ lần nữa.
+
+110
+00:09:33,320 --> 00:09:38,120
+Bây giờ chúng ta hãy nhanh chóng cố gắng và hiểu điều này thông qua một ví dụ, giả sử chúng ta có một người dùng
+
+111
+00:09:38,120 --> 00:09:45,640
+yêu cầu và đó là từ vài bài giảng trước đó Vì vậy, chúng tôi có một AI đại diện và John của chúng tôi muốn
+
+112
+00:09:45,640 --> 00:09:51,400
+để đi trượt tuyết vì vậy anh ta gửi thông tin này cho đặc vụ và những gì các đặc vụ sẽ
+
+113
+00:09:51,400 --> 00:09:57,640
+làm là nó sẽ phân tích yêu cầu người dùng này thành nhiều tác vụ.
+
+114
+00:09:57,640 --> 00:10:02,280
+Vì vậy, hãy nói trong bước một ông kiểm tra cân bằng trái trong bước hai sẽ
+
+115
+00:10:02,280 --> 00:10:09,080
+Kiểm tra sổ sách một chuyến bay đặt một khách sạn vì vậy những gì nó sẽ làm là khi nó đã phá vỡ nó
+
+116
+00:10:09,080 --> 00:10:14,240
+trong ba bước sau đó nó sẽ thực hiện nhiệm vụ có thể nó sẽ gọi tốt hơn
+
+117
+00:10:14,240 --> 00:10:19,760
+Mở kiến thức và xem nếu anh ta có ngày nghỉ để quan sát bạn sẽ nhận được một quan sát
+
+118
+00:10:19,760 --> 00:10:26,600
+Nó nói OK John có 20 ngày nghỉ để ông sẽ thông qua phản hồi đó cho các đại lý nói
+
+119
+00:10:26,600 --> 00:10:31,680
+Anh ấy có 20 ngày nghỉ rồi anh ấy sẽ đi đặt vé máy bay và anh ấy sẽ đến
+
+120
+00:10:31,680 --> 00:10:37,880
+Một cuộc gọi đến địa điểm du lịch và chuyến bay để xem vé máy bay có sẵn không
+
+121
+00:10:37,880 --> 00:10:41,520
+Nếu họ sẵn sàng, nó sẽ vượt qua phản hồi đó trở lại các mô hình ngôn ngữ lớn
+
+122
+00:10:41,520 --> 00:10:48,880
+Sau đó, nó sẽ thực hiện khách sạn sách từ địa điểm khách sạn và hãy nói rằng nó nói tiện nghi
+
+123
+00:10:48,880 --> 00:10:53,360
+Không có sẵn và sau đó nó sẽ gửi phản hồi này trở lại mô hình ngôn ngữ lớn
+
+124
+00:10:53,360 --> 00:10:59,760
+LM sẽ xem xét tất cả ba phản hồi mà ông đã nhận được bây giờ nó sẽ biết kể từ khi
+
+125
+00:10:59,760 --> 00:11:07,160
+Khách sạn không có sẵn, nó sẽ trồng lại và sau đó thực hiện khác nhau
+
+126
+00:11:07,160 --> 00:11:14,440
+ngày sau khi kiểm tra với người dùng vì vậy đây là những gì phản ứng phong cách của nhắc làm nó
+
+127
+00:11:14,440 --> 00:11:22,920
+động lực hơn và kết hợp các bước phá vỡ các nhiệm vụ và thực hiện tại cùng một
+
+128
+00:11:22,920 --> 00:11:27,280
+thời gian okay đó là khá nhiều nó từ bài giảng này tôi sẽ xem trong bài giảng tiếp theo cảm ơn bạn
+
