@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:05,840
+Cho đến bây giờ chúng ta đã xem xét năm quyết định kiến trúc quan trọng mà chúng ta cần phải suy nghĩ để thực hiện
+
+2
+00:00:05,840 --> 00:00:10,080
+Ứng dụng sản xuất. Bây giờ trong những bài học tiếp theo chúng tôi sẽ xem xét các
+
+3
+00:00:10,080 --> 00:00:16,640
+Quyết định kiến trúc thứ sáu là làm thế nào để tối ưu hóa chi phí ứng dụng JCA của bạn.
+
+4
+00:00:16,640 --> 00:00:21,040
+Bây giờ chúng ta hãy đi trước và nhìn vào một số các chiến lược tối ưu hóa chi phí.
+
+5
+00:00:21,040 --> 00:00:28,240
+Đầu tiên, hãy xem mô hình giá nền. Có ba mô hình giá trị là nền đá nền.
+
+6
+00:00:28,240 --> 00:00:34,000
+Chúng tôi có nguồn cung cấp qua hệ thống và hàng. Bây giờ chúng ta hãy đi trước và hiểu mỗi người trong số họ
+
+7
+00:00:34,000 --> 00:00:41,360
+chi tiết hơn. Vì vậy, đầu tiên chúng tôi có chế độ trên-demand và trong chế độ trên-demand bạn chỉ cần trả cho những gì bạn sử dụng.
+
+8
+00:00:41,360 --> 00:00:46,880
+Vì vậy, không có thời gian cơ bản cam kết. Vì vậy, tôi không phải cam kết trong một tháng,
+
+9
+00:00:46,880 --> 00:00:51,840
+3 tháng hoặc 6 tháng để sử dụng mô hình đó. Vì vậy, bạn chỉ cần trả dựa trên những gì bạn sử dụng.
+
+10
+00:00:51,840 --> 00:00:56,880
+Vì vậy, hãy nói rằng nếu chúng tôi chỉ cần thực hiện 10 yêu cầu hoặc một thời gian của ba tháng sau đó bạn chỉ trả tiền cho
+
+11
+00:00:57,440 --> 00:01:04,880
+10 yêu cầu đó. Bây giờ làm thế nào họ được tính cho các mô hình thế hệ văn bản? Vì vậy, họ đã được tính phí
+
+12
+00:01:04,880 --> 00:01:12,080
+dựa trên mỗi hiệu bài nhập được xử lý và mỗi hiệu xuất được tạo ra. Vì vậy, thường khi bạn
+
+13
+00:01:12,080 --> 00:01:18,720
+Hãy đưa ra một yêu cầu nếu nó là lên đến 1000 thẻ tín dụng do đó, bạn sẽ được tính phí x số tiền của đô la và đó sẽ
+
+14
+00:01:18,720 --> 00:01:24,880
+Khác nhau dựa trên mô hình để mô hình và chúng tôi sẽ nhận được vào các chi tiết. Nhưng hãy nhớ 1000 vật kỷ niệm là
+
+15
+00:01:24,880 --> 00:01:31,760
+xấp xỉ bằng 750 từ. Vì vậy, nếu bạn đang thực hiện một yêu cầu và chúng là ít hơn 750 từ
+
+16
+00:01:31,760 --> 00:01:37,920
+đó sẽ là tương đương với một yêu cầu EPA. Sau đó cho thế hệ hình ảnh như vậy nếu bạn là
+
+17
+00:01:37,920 --> 00:01:43,760
+Tạo ra ảnh bạn sẽ được tính vào mỗi ảnh được tạo ra và sau đó tương tự cho phát ra mô hình
+
+18
+00:01:43,760 --> 00:01:50,240
+Anh lại bị buộc tội cho mỗi lần xử lý thẻ tín dụng. Được rồi, đó là chế độ cấm.
+
+19
+00:01:51,520 --> 00:01:56,000
+Tiếp theo chúng ta có nguồn cung cấp. Chúng chủ yếu được thiết kế cho sự nhất quán lớn
+
+20
+00:01:56,000 --> 00:02:01,920
+suy luận về việc nạp số lượng cần thiết để đảm bảo thông qua. Vì vậy, nếu bạn có bất kỳ ứng dụng chung quan trọng
+
+21
+00:02:01,920 --> 00:02:08,560
+Sử dụng các mô hình sản xuất sau đó bạn có thể tốt hơn sử dụng các cung cấp thông qua
+
+22
+00:02:08,560 --> 00:02:13,680
+Chế độ vì nó đảm bảo tốc độ truyền qua. Vậy mô hình giá trị cho
+
+23
+00:02:13,680 --> 00:02:20,480
+trợ cấp? Bạn có thể mua các mô hình mô hình cho cơ sở cụ thể hoặc mô hình tùy chỉnh theo thời gian
+
+24
+00:02:20,480 --> 00:02:27,760
+cam kết. Vì vậy, ở đây bạn phải cam kết một hoặc sáu tháng và sau đó bạn cũng quyết định cụ thể
+
+25
+00:02:27,760 --> 00:02:34,880
+Đơn vị mô hình phụ thuộc vào số yêu cầu, số hiệu và vân vân. Vì vậy, bạn phải chọn
+
+26
+00:02:34,880 --> 00:02:41,680
+Số đơn vị mô hình và bạn phải chọn thời gian cam kết. Okay sau đó cuối cùng chúng tôi đã có
+
+27
+00:02:41,680 --> 00:02:49,040
+Mỗi lần tham khảo và tham khảo, bạn có thể chạy mô hình nhập nhanh.
+
+28
+00:02:49,040 --> 00:02:56,800
+trong loạt để thực hiện hiệu quả nhiều yêu cầu cùng một lúc. Bây giờ hãy lấy một ví dụ. Cứ cho là anh...
+
+29
+00:02:56,800 --> 00:03:02,560
+Làm việc trong một bộ phận pháp lý và bạn phải tóm tắt hàng trăm tài liệu lớn nhưng bạn không
+
+30
+00:03:02,560 --> 00:03:08,880
+Cần ngay lập tức và họ có thể chạy qua một mẻ. Vậy trong trường hợp đó
+
+31
+00:03:08,880 --> 00:03:16,560
+Bạn có thể tải lên tất cả tài liệu của bạn trong một xô S3 và sau đó chỉ cần tạo ra một mẻ suy luận công việc
+
+32
+00:03:16,560 --> 00:03:22,720
+Và làm nổi bật mô hình thiệt hại nền tảng mà bạn muốn sử dụng và sau đó những gì nó sẽ làm là
+
+33
+00:03:22,720 --> 00:03:31,360
+Nó sẽ tạo ra một đầu ra trong xô S3 như một tập tin JSON. Vì vậy, AWS nói rằng mẻ
+
+34
+00:03:31,360 --> 00:03:39,520
+suy luận có thể tăng tốc độ suy luận trên tập dữ liệu lớn và điều quan trọng nhất là trong một số trường hợp
+
+35
+00:03:39,520 --> 00:03:47,680
+Lượng khấu hao hàng loạt có thể là 50% giá thấp hơn so với lãi suất cao hơn. Được rồi.
+
+36
+00:03:47,680 --> 00:03:52,320
+Phần lớn là từ bài giảng này. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
