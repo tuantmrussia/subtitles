@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:05,200
+ Now, this is going to be a quick lecture on Amazon bedrock automated reasoning so Amazon
+
+2
+00:00:05,200 --> 00:00:12,000
+ bedrock automated reasoning checks help improve factual accuracy of the large language model
+
+3
+00:00:12,000 --> 00:00:13,000
+ responses.
+
+4
+00:00:13,000 --> 00:00:19,800
+ So, in summary, bedrock automated reasoning helps reduce hallucinations within the large
+
+5
+00:00:19,800 --> 00:00:23,700
+ language model responses.
+
+6
+00:00:23,700 --> 00:00:29,760
+ Automated reasoning checks is part of the Amazon bedrock guardrails.
+
+7
+00:00:29,760 --> 00:00:31,200
+ Now how does it work?
+
+8
+00:00:31,200 --> 00:00:38,000
+ So, through logic based algorithms and mathematical validation automated reasoning checks
+
+9
+00:00:38,000 --> 00:00:45,600
+ validate LLM output against domain knowledge encoded in the automated reasoning policy
+
+10
+00:00:45,600 --> 00:00:49,040
+ to help prevent factual inaccuracies.
+
+11
+00:00:49,040 --> 00:00:52,440
+ Now, that is a lot of complicated words.
+
+12
+00:00:52,440 --> 00:00:57,040
+ Can now let us try and understand this through an example on how Amazon bedrock automated
+
+13
+00:00:57,040 --> 00:00:58,040
+ reasoning works.
+
+14
+00:00:58,040 --> 00:01:01,800
+ Now, let us say you have built a generative A application which allows your customers to
+
+15
+00:01:01,800 --> 00:01:07,200
+ file home insurance claims through a chatbot driven by a large language model.
+
+16
+00:01:07,200 --> 00:01:12,640
+ Now, you have this generative A application here and customer asks which documents are required
+
+17
+00:01:12,640 --> 00:01:14,880
+ to file home insurance claim.
+
+18
+00:01:14,880 --> 00:01:19,640
+ Now, what this generative A application most likely is going to do is it is going to
+
+19
+00:01:19,640 --> 00:01:25,400
+ refer to a document that is stored in backend may be a PDF document in S3 bucket.
+
+20
+00:01:25,400 --> 00:01:31,960
+ So, it is going to refer to the document and return response to the customer question.
+
+21
+00:01:31,960 --> 00:01:37,720
+ Now, there could be some scenarios where it hallucinates and to reduce that what you can
+
+22
+00:01:37,720 --> 00:01:41,320
+ do is you can introduce bedrock automated reasoning.
+
+23
+00:01:41,320 --> 00:01:47,520
+ And if you do that what you need to do first let us say you have this home insurance policy
+
+24
+00:01:47,520 --> 00:01:48,520
+ document.
+
+25
+00:01:48,520 --> 00:01:53,560
+ So, you are going to upload that home insurance policy document and once you upload the
+
+26
+00:01:53,560 --> 00:01:59,160
+ document and enable automated reasoning checks it is going to extract rules from this home
+
+27
+00:01:59,160 --> 00:02:03,840
+ insurance policy document and you can see here automated reasoning policy.
+
+28
+00:02:03,840 --> 00:02:08,960
+ So, what do these rules look like and if we refer this question let us say if you have to
+
+29
+00:02:08,960 --> 00:02:14,960
+ file home insurance claim then maybe you need to attach the policy ID maybe driving license
+
+30
+00:02:14,960 --> 00:02:16,160
+ and few other documents.
+
+31
+00:02:16,160 --> 00:02:20,880
+ So, it will extract all these rules and then what you can also do is you can have your
+
+32
+00:02:20,880 --> 00:02:26,760
+ subject matter expert look at the rules that have been extracted and then refine them based
+
+33
+00:02:26,760 --> 00:02:29,120
+ on your requirements.
+
+34
+00:02:29,120 --> 00:02:34,680
+ Now, once these rules have been created let us understand how it is going to reduce hallucination.
+
+35
+00:02:34,680 --> 00:02:39,960
+ Now, to our same question which documents are required to file home insurance claim let
+
+36
+00:02:39,960 --> 00:02:45,040
+ say our large language model that is driving the generative applications says to file the
+
+37
+00:02:45,040 --> 00:02:50,840
+ insurance claim you need policy ID driving license and maybe it hallucinates and says
+
+38
+00:02:50,840 --> 00:02:54,740
+ the third thing that is required is your income proof.
+
+39
+00:02:54,740 --> 00:02:59,600
+ So, since our bedrock automated reasoning is part of the Amazon bedrock guardrails it is
+
+40
+00:02:59,600 --> 00:03:03,920
+ going to validate the foundation model response where it had said three documents with
+
+41
+00:03:03,920 --> 00:03:07,800
+ these rules that have been extracted by the automated reasoning checks.
+
+42
+00:03:07,800 --> 00:03:13,280
+ So, it will see that only two documents are required policy ID and driving license and
+
+43
+00:03:13,280 --> 00:03:14,880
+ you do not require the income document.
+
+44
+00:03:14,880 --> 00:03:19,920
+ So, that is how it can reduce hallucination within the generative A applications.
+
+45
+00:03:19,920 --> 00:03:23,360
+ Okay, so that's pretty much it from this lecture as in the next lecture. Thank you.
+
