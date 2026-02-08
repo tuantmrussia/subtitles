@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:04,260
+ In this lecture, we're going to learn about Amazon bedrock intelligent prompt routing.
+
+2
+00:00:04,260 --> 00:00:10,920
+ So, Amazon bedrock intelligent prompt routing, dynamically routes requests between foundation
+
+3
+00:00:10,920 --> 00:00:17,620
+ models from the same family, optimizing for response, quality and cost.
+
+4
+00:00:17,620 --> 00:00:21,920
+ Right now, it supports models from entropic, so you can see all the models from entropic
+
+5
+00:00:21,920 --> 00:00:27,880
+ that it supports, then it supports models from metallama, so some small language models
+
+6
+00:00:27,880 --> 00:00:34,840
+ with 8 billion parameters and then some models with 90 billion and 70 billion parameters.
+
+7
+00:00:34,840 --> 00:00:40,620
+ It also supports Amazon nova, so it supports nova light and nova pro, now just remember
+
+8
+00:00:40,620 --> 00:00:47,000
+ that since nova light is a much smaller model, so it's good at simpler task, but more importantly
+
+9
+00:00:47,000 --> 00:00:52,040
+ it's going to be cost effective and there's going to be less latency compared to nova
+
+10
+00:00:52,040 --> 00:00:53,040
+ pro.
+
+11
+00:00:53,040 --> 00:00:58,200
+ So, I've just added a price comparison chart here between nova light and nova pro,
+
+12
+00:00:58,200 --> 00:01:03,880
+ so if you see the pricing for Amazon nova to light, so price per thousand tokens and thousand
+
+13
+00:01:03,880 --> 00:01:12,520
+ tokens are about 750 words, so price per 750 words is dollar 0.000525, now if I take
+
+14
+00:01:12,520 --> 00:01:22,160
+ a look at the Amazon nova to pro and again per thousand input tokens is dollar 0.0021 875, so
+
+15
+00:01:22,160 --> 00:01:29,440
+ that means it's almost 4 times more expensive than nova light, now let's go and understand
+
+16
+00:01:29,440 --> 00:01:35,840
+ how bedrock intelligent problem routing helps us in cost optimization through intelligent
+
+17
+00:01:35,840 --> 00:01:36,840
+ routing.
+
+18
+00:01:36,840 --> 00:01:40,440
+ So, let's go ahead and try and understand this through an example, let's say you have built
+
+19
+00:01:40,440 --> 00:01:46,840
+ a generative AI application using nova light and nova pro, now let's assume that the end
+
+20
+00:01:46,840 --> 00:01:53,200
+ user has sent a query which says summarize this paragraph in one sentence and then he provides
+
+21
+00:01:53,200 --> 00:01:58,480
+ the paragraph, so what the bedrock intelligent problem router is going to do, since it's
+
+22
+00:01:58,480 --> 00:02:04,520
+ a simpler task it's going to route it to the Amazon nova light, because it's cheaper
+
+23
+00:02:04,520 --> 00:02:09,200
+ and there's going to be less latency, now let's take another scenario, this time the
+
+24
+00:02:09,200 --> 00:02:15,600
+ user says analyze these logs and identify the root cause of cascading failures across distributed
+
+25
+00:02:15,600 --> 00:02:22,180
+ manufacturing systems, now here the LLM has to analyze the logs and identify the root cause,
+
+26
+00:02:22,180 --> 00:02:27,880
+ so it's a much more complex task, and this time most likely over bedrock intelligent
+
+27
+00:02:27,880 --> 00:02:34,560
+ problem router is going to send that request to nova pro, now you might say that for every
+
+28
+00:02:34,560 --> 00:02:39,160
+ task there is going to be some quality difference between the two models because one is
+
+29
+00:02:39,160 --> 00:02:45,120
+ a much larger model and another one is smaller, and in that scenario so bedrock intelligent
+
+30
+00:02:45,120 --> 00:02:51,520
+ problem router allows you to define that threshold on the quality difference of the response
+
+31
+00:02:51,520 --> 00:02:57,080
+ between the two models, so now let's say in the first scenario once the request is sent
+
+32
+00:02:57,080 --> 00:03:01,960
+ to a generative AI application, the bedrock intelligent problem router is going to evaluate
+
+33
+00:03:01,960 --> 00:03:06,840
+ the response both from nova light and nova pro, and now let's say it determines that
+
+34
+00:03:06,840 --> 00:03:12,600
+ the difference in the quality is just 4% and your threshold was 5% so it's going to route
+
+35
+00:03:12,600 --> 00:03:16,760
+ it to nova light, but if it determines let's say in the second scenario the threshold
+
+36
+00:03:16,760 --> 00:03:22,600
+ is 32% then it's going to route to Amazon nova pro, so that's how intelligent problem
+
+37
+00:03:22,600 --> 00:03:27,840
+ routing can help you cost optimize, okay so that's pretty much it from this lecture,
+
+38
+00:03:27,840 --> 00:03:29,080
+ I'll see you in the next lecture, thank you.
+
