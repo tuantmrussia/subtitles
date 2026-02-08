@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:03,520
+ So in this lecture, we're going to look at fine tuning approaches.
+
+2
+00:00:03,520 --> 00:00:08,880
+ So we're going to look at the how part, how is it done? Previously, we had tried to answer the
+
+3
+00:00:08,880 --> 00:00:14,640
+ question of what, what is the outcome that we're going to generate? And here, we're going to talk
+
+4
+00:00:14,640 --> 00:00:19,520
+ about the how part, how is it done? And from the exam perspective, you just need to
+
+5
+00:00:19,520 --> 00:00:26,240
+ at a high level know what is the lower technique. Okay, now fine tuning approaches.
+
+6
+00:00:26,240 --> 00:00:32,000
+ So there are two fine tuning approaches at a broad level. First is the full fine tuning.
+
+7
+00:00:32,000 --> 00:00:38,800
+ So the full fine tuning updates all the model parameters across every transformation layer.
+
+8
+00:00:38,800 --> 00:00:43,680
+ See, you can see here, you have the pre-terrain model and in full fine tuning,
+
+9
+00:00:43,680 --> 00:00:47,280
+ you're going to update all the model weights and parameters.
+
+10
+00:00:47,280 --> 00:00:53,920
+ So you get better results, but it requires very high compute and large memory.
+
+11
+00:00:53,920 --> 00:01:00,720
+ So that's why it's used in very few circumstances. Next, we have something known as
+
+12
+00:01:00,720 --> 00:01:08,480
+ PEFT parameter efficient fine tuning. So it freezes the base model weights and trains only
+
+13
+00:01:08,480 --> 00:01:14,720
+ a small set of added parameters. So this is one of the approaches from parameter efficient fine
+
+14
+00:01:14,720 --> 00:01:23,360
+ tuning, where you freeze the base model weights and you only add a small set of added parameters.
+
+15
+00:01:23,360 --> 00:01:30,240
+ So this reduces the training cost while preserving the models pre-terrain knowledge. So that's
+
+16
+00:01:30,240 --> 00:01:37,200
+ why it's a more common approach. So within parameter efficient fine tuning, there are different
+
+17
+00:01:37,200 --> 00:01:44,400
+ ways in which you can achieve this. So one of them is Laura adapters prefix prompt tuning and
+
+18
+00:01:44,400 --> 00:01:50,320
+ Q Laura. And from the exam perspective, you need to only focus on Laura. So now let's go ahead and
+
+19
+00:01:50,320 --> 00:01:59,200
+ take a look. What is Laura? So Laura also called as lower rank adaptation. So AWS gives
+
+20
+00:01:59,200 --> 00:02:05,840
+ two key use cases where you can use Laura. So domain adaptation for enterprise apps.
+
+21
+00:02:05,840 --> 00:02:12,560
+ So healthcare provider might use Laura to adapt a base model to medical terminology and clinical
+
+22
+00:02:12,560 --> 00:02:18,640
+ documentation standards. Again, our use case, let's say we are building a generative application
+
+23
+00:02:18,640 --> 00:02:26,640
+ for physician summarization notes and our base model doesn't do a great job. There we can use
+
+24
+00:02:26,640 --> 00:02:34,880
+ Laura to improve its domain knowledge. Then you have multi language adaptation. Let's say you
+
+25
+00:02:34,880 --> 00:02:41,600
+ are a global e-commerce platform might employ Laura to adapt to their customer service model to
+
+26
+00:02:41,600 --> 00:02:48,000
+ differentiate to different regional languages and cultural context. So these are the two use cases
+
+27
+00:02:48,000 --> 00:02:54,080
+ that AWS highlights for lower rank adaptation. So just from the exam perspective, remember you're
+
+28
+00:02:54,080 --> 00:03:01,280
+ going to use lower rank adaptation or Laura technique for fine tuning because it improves the model
+
+29
+00:03:01,280 --> 00:03:08,560
+ performance, but keeps the training cost low and preserves the model's pre-read knowledge.
+
+30
+00:03:08,560 --> 00:03:13,040
+ Okay, so that's pretty much it from this lecture. I'll see you in the next lecture. Thank you.
+
