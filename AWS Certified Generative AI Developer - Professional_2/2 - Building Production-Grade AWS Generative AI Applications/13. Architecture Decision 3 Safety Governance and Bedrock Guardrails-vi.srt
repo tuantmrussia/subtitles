@@ -1,0 +1,192 @@
+1
+00:00:00,000 --> 00:00:04,160
+Vì vậy, trước đây chúng tôi đã thảo luận để xây dựng một ứng dụng máy phát điện sẵn sàng,
+
+2
+00:00:04,160 --> 00:00:08,960
+Có 15 quyết định quan trọng về kiến trúc hoặc xem xét mà chúng ta cần ghi nhớ.
+
+3
+00:00:08,960 --> 00:00:13,840
+Và sau đó chúng tôi thảo luận về sự lựa chọn dịch vụ Al huyền thoại.
+
+4
+00:00:13,840 --> 00:00:18,000
+Chúng tôi xem xét sự lựa chọn của mô hình nền tảng. Bây giờ trong vài bài giảng tiếp theo,
+
+5
+00:00:18,000 --> 00:00:24,000
+Chúng ta sẽ xem xét quyết định kiến trúc quan trọng thứ ba về AI và Amazon có trách nhiệm
+
+6
+00:00:24,000 --> 00:00:29,280
+Hàng rào bảo vệ. Vì vậy, có trách nhiệm AI là một chủ đề quan trọng và tôi có một phần đầy đủ trong khóa học này
+
+7
+00:00:29,280 --> 00:00:35,120
+dành riêng cho AI có trách nhiệm. Vì vậy, bây giờ, chúng ta hãy tập trung vào các nền đá bảo vệ sông Amazon
+
+8
+00:00:35,120 --> 00:00:40,960
+và lý luận tự động. Bây giờ trước khi làm điều đó, chúng ta hãy đi tiếp và hiểu những thách thức
+
+9
+00:00:40,960 --> 00:00:47,360
+với các mô hình nền tảng và chịu trách nhiệm AI mà Amazon đá phiến canh gác và lý luận tự động
+
+10
+00:00:47,360 --> 00:00:51,680
+làm việc đi. Thử thách lớn nhất với mô hình nền tảng là
+
+11
+00:00:51,680 --> 00:00:57,760
+Ngắt kết nối, có nghĩa là mô hình nền tảng đó có thể tạo ra thực tế sai hoặc
+
+12
+00:00:57,760 --> 00:01:04,400
+Phản ứng được tạo ra. Bây giờ hãy nói rằng bạn xây dựng một con robot quan chức, mà trả lời các câu hỏi nhân viên
+
+13
+00:01:04,400 --> 00:01:10,240
+dựa trên tài liệu chính sách. Vì vậy, có thể có một số kịch bản nơi khi nhân viên
+
+14
+00:01:10,240 --> 00:01:17,920
+đưa ra một câu hỏi, robot chat được điều khiển bởi một mô hình ngôn ngữ lớn có thể trả lời các câu hỏi
+
+15
+00:01:17,920 --> 00:01:26,000
+Không lấy được từ tài liệu chính sách quan chức cấp cao, nhưng chúng chỉ được tạo ra và không có ngữ cảnh.
+
+16
+00:01:26,000 --> 00:01:32,160
+Nguồn gốc. Tiếp theo, chúng ta có thế hệ độc hại của nội dung mà là sự xúc phạm,
+
+17
+00:01:32,160 --> 00:01:38,640
+Phân biệt chủng tộc hoặc có hại. Vì vậy, có thể có một số kịch bản nơi người dùng gửi nội dung độc hại
+
+18
+00:01:38,640 --> 00:01:44,080
+để mô hình ngôn ngữ lớn và nó tạo ra một câu trả lời hoặc người dùng đưa ra một câu hỏi hợp pháp,
+
+19
+00:01:44,080 --> 00:01:50,400
+nhưng mô hình nền tảng phản ứng với một thứ độc hại. Vì vậy, có thể có một số kịch bản nơi
+
+20
+00:01:50,400 --> 00:01:57,600
+Các mô hình rò rỉ, dữ liệu cá nhân hay mật, dữ liệu PI. Vì vậy, đây là một số thách thức then chốt
+
+21
+00:01:57,600 --> 00:02:02,960
+Với các mô hình nền tảng và chúng ta sẽ xem làm thế nào các nền đá bảo vệ các nền móng Amazon có thể bảo vệ chống lại chúng
+
+22
+00:02:02,960 --> 00:02:10,320
+Thử thách. Được rồi, bây giờ chúng ta hãy bàn về việc bảo vệ bãi đất Amazon. Vì vậy, Amazon ruver crails thực hiện
+
+23
+00:02:10,320 --> 00:02:16,880
+Bảo vệ, tùy chỉnh các yêu cầu ứng dụng và chính sách AI có trách nhiệm.
+
+24
+00:02:18,320 --> 00:02:23,840
+Vì vậy, hàng rào bảo vệ cho các nền đá Amazon cung cấp sự bảo vệ trên đỉnh của nền móng bản địa
+
+25
+00:02:23,840 --> 00:02:30,240
+Người mẫu. Vì vậy, mỗi mô hình nền tảng có một số bảo vệ bản địa chống lại những thách thức mà chúng tôi đã thảo luận
+
+26
+00:02:30,240 --> 00:02:37,520
+và những vật bảo vệ là những vật bảo vệ địa phương. Vì vậy, những gì là các khả năng
+
+27
+00:02:37,520 --> 00:02:43,040
+là một phần của nền đá Amazon? Đầu tiên, chúng ta có bộ lọc nội dung, phát hiện và
+
+28
+00:02:43,040 --> 00:02:50,720
+lọc văn bản hoặc nội dung ảnh hại trong dấu nhắc nhập hoặc câu trả lời mô hình. Vì vậy, hãy nói rằng người dùng
+
+29
+00:02:50,720 --> 00:02:56,880
+gửi tin nhắn nguy hiểm, cho tôi một kế hoạch giết người. Đây là văn bản có hại. Đây sẽ là
+
+30
+00:02:56,880 --> 00:03:01,840
+Bị phong tỏa bởi đá phiến Amazon. Và tương tự, nếu loại phản ứng này được tạo ra bởi các tổ chức
+
+31
+00:03:01,840 --> 00:03:08,560
+Mô hình, nó sẽ bị chặn bởi đá phiến Amazon. Tiếp theo là những chủ đề bị từ chối. Vì vậy, chặn không tốt
+
+32
+00:03:08,560 --> 00:03:13,760
+Chủ đề trong ứng dụng AI sáng tạo. Giả sử bạn đã xây dựng một con robot ngân hàng và bạn muốn
+
+33
+00:03:13,760 --> 00:03:21,440
+cấm chatbot đưa ra bất kỳ lời khuyên đầu tư nào. Vì vậy, bạn có thể xác định các chủ đề nơi
+
+34
+00:03:21,440 --> 00:03:29,840
+Mô hình nền sẽ không đáp ứng lại các yêu cầu người dùng. Tiếp theo, bạn có thể làm bộ lọc từ,
+
+35
+00:03:29,840 --> 00:03:35,120
+Bạn có thể chặn nội dung không thích hợp với bộ lọc từ riêng. Vì vậy, hãy nói rằng họ là một cụ thể
+
+36
+00:03:35,120 --> 00:03:41,760
+tập hợp các từ mà bạn muốn chặn cả hai đầu vào và mức đầu ra, sau đó bạn có thể làm điều đó.
+
+37
+00:03:41,760 --> 00:03:49,360
+Tiếp theo, chúng ta có bộ lọc thông tin nhạy cảm. Vì vậy, khi bạn muốn chính thức thông tin nhạy cảm
+
+38
+00:03:49,360 --> 00:03:55,760
+để bảo vệ sự riêng tư. Bây giờ, giả sử người dùng đăng một câu hỏi nơi ông cung cấp dữ liệu PI của mình.
+
+39
+00:03:55,760 --> 00:04:03,360
+Tất cả chúng ta hãy nói, vì một số lý do, mô hình này tiết lộ dữ liệu PI dựa trên các dữ liệu đào tạo của nó.
+
+40
+00:04:03,360 --> 00:04:10,320
+Vì vậy, trong cả hai kịch bản này, bạn có thể hiệu lực bộ lọc thông tin nhạy cảm mà sẽ sửa chữa
+
+41
+00:04:10,320 --> 00:04:17,600
+Thông tin nhạy cảm, bao gồm cả dữ liệu PI. Tiếp theo, chúng tôi có kiểm tra ngữ cảnh,
+
+42
+00:04:17,600 --> 00:04:23,920
+Phát hiện và ảo giác lọc trong các phản ứng mô hình dựa trên mặt đất trong một nguồn và
+
+43
+00:04:23,920 --> 00:04:30,000
+Liên quan đến truy vấn người dùng. Đó là một cách khác để giảm thiểu ảo giác. Trong trường hợp này,
+
+44
+00:04:30,000 --> 00:04:35,840
+Những gì các ngân phiếu mặt đất làm là một khi LLM đã tạo ra một phản hồi
+
+45
+00:04:35,840 --> 00:04:41,360
+dựa trên truy vấn người dùng, nó sẽ kiểm tra xem câu trả lời đã được tạo ra chưa
+
+46
+00:04:41,360 --> 00:04:47,040
+được dựa trên nguồn dữ liệu được chấp nhận cho mô hình nền tảng đó. Và thứ hai,
+
+47
+00:04:47,040 --> 00:04:53,840
+Nó cũng sẽ kiểm tra xem câu trả lời đã được tạo ra có liên quan đến yêu cầu của người dùng không.
+
+48
+00:04:53,840 --> 00:04:58,160
+Được rồi, vậy là khá nhiều từ bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
