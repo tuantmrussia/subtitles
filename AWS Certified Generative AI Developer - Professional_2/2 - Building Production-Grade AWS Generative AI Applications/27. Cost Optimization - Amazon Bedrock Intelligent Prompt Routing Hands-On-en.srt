@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:05,360
+ Okay now let's go ahead and do a quick hands-on on the Amazon bedrock intelligent prompt routing.
+
+2
+00:00:05,360 --> 00:00:11,680
+ So I'm on the AWS console on Amazon bedrock service. So let me just go ahead and scroll down
+
+3
+00:00:11,680 --> 00:00:17,920
+ and go to this tune. Here you can see prompt router models. So I'll just click on this prompt
+
+4
+00:00:17,920 --> 00:00:23,440
+ router model and it takes me to this page route request between foundation models from the
+
+5
+00:00:23,440 --> 00:00:31,680
+ same family, optimizing for response, quality and cost. So what I can do is I can just click on this
+
+6
+00:00:31,680 --> 00:00:37,120
+ configure prompt router. So I just click on this and I'll just give it a name. So let me just
+
+7
+00:00:37,120 --> 00:00:42,480
+ give it a name. So let me just say demo and then you can give it a description if you like. Now we
+
+8
+00:00:42,480 --> 00:00:48,880
+ have the router settings. So models for routing. So we have to choose two base models. So I'll just
+
+9
+00:00:48,880 --> 00:00:55,600
+ click on select model. Let's select from Amazon so I'll select Amazon Nova Pro. I'll do a apply
+
+10
+00:00:55,600 --> 00:01:02,800
+ then select the second model, Nova Light, apply. Okay now we have to select the fallback model.
+
+11
+00:01:02,800 --> 00:01:08,320
+ Choose the default model for request. They do not meet the routing criteria. The response
+
+12
+00:01:08,320 --> 00:01:14,320
+ quality difference is measured based on the fallback model. So this is going to be our default model.
+
+13
+00:01:14,320 --> 00:01:19,520
+ So for any reason if the request do not meet the routing criteria then it's going to send it to
+
+14
+00:01:19,520 --> 00:01:25,280
+ this fallback model. So in our case let's select the fallback model as Nova Pro and then you have
+
+15
+00:01:25,280 --> 00:01:31,520
+ to define the routing criteria. So define the threshold to use for routing requests between
+
+16
+00:01:31,520 --> 00:01:36,960
+ models. The quality of the difference between the fallback model and the other model response for
+
+17
+00:01:36,960 --> 00:01:43,440
+ each prompt as predicted by the model. Lower values indicate similar responses from other models
+
+18
+00:01:43,440 --> 00:01:48,400
+ to the fallback model. So in our case the fallback model is going to be Nova Pro
+
+19
+00:01:48,400 --> 00:01:54,240
+ and the other model is going to be the Nova Light. So I can define the quality threshold. So let's
+
+20
+00:01:54,240 --> 00:02:00,880
+ say 10%. Now if our prompt router determines the quality of the difference is less than 10% then it's
+
+21
+00:02:00,880 --> 00:02:06,960
+ going to route the request to Nova Light. Otherwise it's going to send it to Nova Pro. And if there is
+
+22
+00:02:06,960 --> 00:02:12,160
+ any model that does not meet the criteria then it's still going to go to the fallback model which is
+
+23
+00:02:12,160 --> 00:02:16,800
+ Nova Pro. So you can also put the tags if you want but I'm going to ignore that let me just click on
+
+24
+00:02:16,800 --> 00:02:22,400
+ submit. Okay now you can see it has configured this prompt router. So let me just click on this demo
+
+25
+00:02:22,400 --> 00:02:28,160
+ and if I see the details you can see the details here. So you have the Nova Pro, you have the
+
+26
+00:02:28,160 --> 00:02:34,800
+ ARN for Nova Pro then you have the Amazon resource name or the ARN for Nova Light. And then we know
+
+27
+00:02:34,800 --> 00:02:40,080
+ our fallback model is again Nova Pro. So it's the same one what we have here. But the most important
+
+28
+00:02:40,080 --> 00:02:47,280
+ thing here is this particular Amazon resource name or the ARN which is for the prompt router. So in
+
+29
+00:02:47,280 --> 00:02:53,680
+ case we are using this programmatically what we can do is we can provide this ARN and then behind
+
+30
+00:02:53,680 --> 00:02:59,200
+ the scenes the prompt router is going to determine whether it wants to send the request to this
+
+31
+00:02:59,200 --> 00:03:06,880
+ particular model or the Nova Light. Okay so that's how you can optimize your JNIA application
+
+32
+00:03:06,880 --> 00:03:13,040
+ using this prompt router for your cost latency and accuracy. Okay so that's pretty much it
+
+33
+00:03:13,040 --> 00:03:16,800
+ from this lecture I'll see in the next lecture. Thank you.
+
