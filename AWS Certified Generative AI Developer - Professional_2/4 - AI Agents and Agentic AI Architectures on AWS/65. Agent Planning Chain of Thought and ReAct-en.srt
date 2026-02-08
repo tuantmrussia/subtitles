@@ -1,0 +1,512 @@
+1
+00:00:00,000 --> 00:00:04,600
+ In the previous lecture we looked at some of the key characteristics of A agents and we
+
+2
+00:00:04,600 --> 00:00:10,800
+ said it has four key characteristics so planning, memory, tools, and action and remember
+
+3
+00:00:10,800 --> 00:00:16,760
+ action is nothing but agents has some tools and when you execute those tools you take some
+
+4
+00:00:16,760 --> 00:00:17,760
+ action.
+
+5
+00:00:17,760 --> 00:00:22,680
+ Now let's go ahead and deep dive into each of these areas so we'll start with planning.
+
+6
+00:00:22,680 --> 00:00:27,480
+ There are three ways in which an agent can do plan.
+
+7
+00:00:27,480 --> 00:00:32,720
+ So the first one is chain of thought reasoning, then you have three of thought reasoning and
+
+8
+00:00:32,720 --> 00:00:36,880
+ then finally you have the react reasoning and action.
+
+9
+00:00:36,880 --> 00:00:42,320
+ Okay now let's go ahead and check how planning is done by agents.
+
+10
+00:00:42,320 --> 00:00:49,160
+ So earlier we discussed that agents are powered by large language models or LMs and it's
+
+11
+00:00:49,160 --> 00:00:51,880
+ the brain behind the agents.
+
+12
+00:00:51,880 --> 00:00:57,400
+ Now the question that you might have in mind is how do agents actually do planning?
+
+13
+00:00:57,400 --> 00:01:03,260
+ And if they're driven by large language model and let's say I sent a summarization task
+
+14
+00:01:03,260 --> 00:01:08,920
+ to a large language model, it doesn't do any planning, it will just give me a response.
+
+15
+00:01:08,920 --> 00:01:13,600
+ So how do agents driven by large language models actually do planning?
+
+16
+00:01:13,600 --> 00:01:18,400
+ So there's a mechanism to it and let me just explain to you, let's say we have a user.
+
+17
+00:01:18,400 --> 00:01:24,760
+ Now let's say user posts a simple question, 6 minus 4 plus 2 and it's been seen in research
+
+18
+00:01:24,760 --> 00:01:31,400
+ that sometimes large language models are not able to solve even some of the simple mathematical
+
+19
+00:01:31,400 --> 00:01:32,400
+ problems.
+
+20
+00:01:32,400 --> 00:01:40,440
+ So the best way seen in research on how agent can solve this question is by breaking down
+
+21
+00:01:40,440 --> 00:01:48,920
+ it into multiple steps and how you can make the agent do that is by providing few sample
+
+22
+00:01:48,920 --> 00:01:53,800
+ outputs to help it learn on how to break down the problem.
+
+23
+00:01:53,800 --> 00:01:56,560
+ So let's also call it as few short prompting.
+
+24
+00:01:56,560 --> 00:02:00,320
+ So maybe what you will do is you will provide it another question and let's say 3 minus
+
+25
+00:02:00,320 --> 00:02:06,320
+ 2 plus 1 and then you show it the first step it needs to take is add these two so you
+
+26
+00:02:06,320 --> 00:02:11,880
+ do 3 plus 1, then you say okay now you have the answer, then do minus 2 that's the second
+
+27
+00:02:11,880 --> 00:02:14,520
+ step and the third step is you get the answer.
+
+28
+00:02:14,520 --> 00:02:21,120
+ And then you pose this question that you have 6 minus 4 plus 2 which is the user question.
+
+29
+00:02:21,120 --> 00:02:26,720
+ So when the user question plus this example of how to solve this problem is sent to
+
+30
+00:02:26,720 --> 00:02:32,160
+ the agent driven by large language model what it will do for this user question is it will
+
+31
+00:02:32,160 --> 00:02:37,880
+ break it into steps as it has been instructed in this sample output.
+
+32
+00:02:37,880 --> 00:02:44,120
+ So first it will do 6 plus 2 as was shown here then the step 2 it's going to do the
+
+33
+00:02:44,120 --> 00:02:51,240
+ subtraction and step 3 it's going to generate the answer and then you will see that it
+
+34
+00:02:51,240 --> 00:02:54,600
+ has come up with the right outcome.
+
+35
+00:02:54,600 --> 00:03:02,280
+ So basically for agents to do the planning you need to provide it the right prompt template
+
+36
+00:03:02,280 --> 00:03:07,440
+ which will help it in breaking down a complex talks into multiple steps.
+
+37
+00:03:07,440 --> 00:03:13,480
+ Now let's go ahead and take a look at various approaches to planning by AI agents.
+
+38
+00:03:13,480 --> 00:03:19,080
+ So there are two, the first one is planning without feedback.
+
+39
+00:03:19,080 --> 00:03:22,560
+ So if in planning without feedback we have two main approaches.
+
+40
+00:03:22,560 --> 00:03:28,080
+ So we have chain of thought reasoning and I'm going to deep into this a lot more because
+
+41
+00:03:28,080 --> 00:03:34,000
+ Amazon bedrock agents actually uses this then you also have three of thought reasoning.
+
+42
+00:03:34,000 --> 00:03:39,640
+ Then the second approach is planning with feedback and again it has two approaches.
+
+43
+00:03:39,640 --> 00:03:45,400
+ So we have react or reasoning plus action again Amazon bedrock uses this so I'm going
+
+44
+00:03:45,400 --> 00:03:49,560
+ to deep down a little more into this and then we also have reflection.
+
+45
+00:03:49,560 --> 00:03:54,040
+ Now let's take a look at chain of thought prompting what it means.
+
+46
+00:03:54,040 --> 00:04:01,280
+ So chain of thought prompting enables complex reasoning capabilities for LLMs through intermediate
+
+47
+00:04:01,280 --> 00:04:03,160
+ reasoning steps.
+
+48
+00:04:03,160 --> 00:04:08,760
+ So as we had seen previously that once you provide an input to an agent driven by a large
+
+49
+00:04:08,760 --> 00:04:14,120
+ language model and you provide it with some sample scenarios on how to solve the problems
+
+50
+00:04:14,120 --> 00:04:22,200
+ and break it into steps and that's what then for new user request the agent would be able
+
+51
+00:04:22,200 --> 00:04:23,960
+ to do.
+
+52
+00:04:23,960 --> 00:04:30,040
+ So research shows that this is especially effective when you are trying to improve the capability
+
+53
+00:04:30,040 --> 00:04:37,400
+ of the large language model for questions related to mathematics and common sense reasoning
+
+54
+00:04:37,400 --> 00:04:40,000
+ as we had seen previously.
+
+55
+00:04:40,000 --> 00:04:44,960
+ So you can read more about this research on through this link which I will provide as part
+
+56
+00:04:44,960 --> 00:04:46,280
+ of this PDF.
+
+57
+00:04:46,280 --> 00:04:51,720
+ So this example is part of the white vapor that I had just shown you the link too.
+
+58
+00:04:51,720 --> 00:04:58,080
+ So what they did was as part of the standard prompting they given example to the model which
+
+59
+00:04:58,080 --> 00:05:03,720
+ said okay Roger has five tennis balls he buys two more cans of tennis balls each can
+
+60
+00:05:03,720 --> 00:05:08,360
+ has three tennis balls how many tennis balls does he have and then they said okay the
+
+61
+00:05:08,360 --> 00:05:17,160
+ answer is 11 and now the question for agent the cafeteria had 23 apples if they use 20 to make
+
+62
+00:05:17,160 --> 00:05:21,080
+ lunch and brought six more how many apples do they have.
+
+63
+00:05:21,080 --> 00:05:27,200
+ So the model responded with the answer 27 which is incorrect.
+
+64
+00:05:27,200 --> 00:05:33,840
+ Then they used chain of thought reasoning prop and here they gave the same question but
+
+65
+00:05:33,840 --> 00:05:40,360
+ in the answer they showed it how to break down the problem into multiple steps and then
+
+66
+00:05:40,360 --> 00:05:41,360
+ solve it.
+
+67
+00:05:41,360 --> 00:05:46,800
+ So they said okay Roger started with five balls then two cans of three balls is six tennis
+
+68
+00:05:46,800 --> 00:05:50,760
+ balls each then you add five and six and the answer is 11.
+
+69
+00:05:50,760 --> 00:05:55,520
+ Here they just directly provided the answer then they gave it the same question that
+
+70
+00:05:55,520 --> 00:06:02,880
+ was here and what the model did was it broke down the problem into multiple steps then
+
+71
+00:06:02,880 --> 00:06:09,160
+ added here and it got the right answer and that's where the chain of thought reasoning
+
+72
+00:06:09,160 --> 00:06:16,800
+ comes from where you provide the model with how to solve a problem through multiple steps
+
+73
+00:06:16,800 --> 00:06:23,080
+ and then get the right answer okay that's chain of thought reasoning next we have three
+
+74
+00:06:23,080 --> 00:06:29,120
+ of thought and that's this again planning without feedback so it's very similar to chain
+
+75
+00:06:29,120 --> 00:06:34,960
+ of thought reasoning but the only thing different here is that when you provide an input
+
+76
+00:06:34,960 --> 00:06:42,120
+ instead of generating one plan it will generate multiple approaches and then they will
+
+77
+00:06:42,120 --> 00:06:46,720
+ vote and decide okay which is the best approach let's say they decided plan two is the
+
+78
+00:06:46,720 --> 00:06:54,480
+ best approach then they will break down the plan two again into multiple steps and then
+
+79
+00:06:54,480 --> 00:06:55,480
+ execute.
+
+80
+00:06:55,480 --> 00:06:58,120
+ So the only difference between chain of thought and three of thought is that here there
+
+81
+00:06:58,120 --> 00:07:04,720
+ will be multiple plans generated at each step and then you just select one so you can
+
+82
+00:07:04,720 --> 00:07:10,680
+ see here it generates multiple thoughts per step creating a tree structure so I'm not
+
+83
+00:07:10,680 --> 00:07:16,820
+ going to get into details of these because this is not what Amazon bedrock agents uses but
+
+84
+00:07:16,820 --> 00:07:22,200
+ this is one of the possible approaches and this is again based on a white paper and you
+
+85
+00:07:22,200 --> 00:07:28,480
+ can read a little bit more about this on why it is an effective prompting technique.
+
+86
+00:07:28,480 --> 00:07:34,600
+ Now let's take a look at the second approach which is planning with feedback and the
+
+87
+00:07:34,600 --> 00:07:41,360
+ most important one is reasoning and action also known as react and this word Amazon bedrock
+
+88
+00:07:41,360 --> 00:07:48,480
+ agents uses and this is also the most popular framework for agent planning.
+
+89
+00:07:48,480 --> 00:07:54,720
+ So you can see here react is an advanced prompting technique that combines reasoning and
+
+90
+00:07:54,720 --> 00:08:03,040
+ action within a prompt so it is good for scenarios where external or internal data is required
+
+91
+00:08:03,040 --> 00:08:10,160
+ to execute task and it also does dynamic execution where it can replan.
+
+92
+00:08:10,160 --> 00:08:15,600
+ So remember when we are talking about hotel booking and LN booking the hotel is not available
+
+93
+00:08:15,600 --> 00:08:18,360
+ then you go and replan the days.
+
+94
+00:08:18,360 --> 00:08:19,880
+ So how does it work?
+
+95
+00:08:19,880 --> 00:08:23,400
+ Now let's see the difference between chain of thought reasoning and react.
+
+96
+00:08:23,400 --> 00:08:27,480
+ So in the case of chain of thought reasoning let's say you provide a user input to a large
+
+97
+00:08:27,480 --> 00:08:33,920
+ language model it will break down into multiple subtas and then leave it there.
+
+98
+00:08:33,920 --> 00:08:39,920
+ Then you can have the action where you execute those tasks but it will not be dynamic
+
+99
+00:08:39,920 --> 00:08:40,920
+ execution.
+
+100
+00:08:40,920 --> 00:08:45,080
+ So it will not be continuously replying so if it doesn't get a hotel booking it is not
+
+101
+00:08:45,080 --> 00:08:46,720
+ going to replan.
+
+102
+00:08:46,720 --> 00:08:52,480
+ Now in the case of react what happens is once the user input is sent to this agent driven
+
+103
+00:08:52,480 --> 00:08:58,800
+ by a large language model it is going to break the task into multiple sub steps and then
+
+104
+00:08:58,800 --> 00:09:07,240
+ execute them and once you get the output let's say you call and hotel.com API and you
+
+105
+00:09:07,240 --> 00:09:12,600
+ got a booking ID then it's going to pass that observation and observation simply means
+
+106
+00:09:12,600 --> 00:09:18,520
+ the output it is getting from some data source it is going to pass that observation to
+
+107
+00:09:18,520 --> 00:09:24,080
+ the large language model and if it satisfies the user request great that is going to provide
+
+108
+00:09:24,080 --> 00:09:32,320
+ that output to the user but if it does not then it's going to replan and re execute the
+
+109
+00:09:32,320 --> 00:09:33,320
+ task again.
+
+110
+00:09:33,320 --> 00:09:38,120
+ Now let's quickly try and understand this through an example let's say we have a user
+
+111
+00:09:38,120 --> 00:09:45,640
+ request and which is from the previous few lectures so we have an AI agent and our John wants
+
+112
+00:09:45,640 --> 00:09:51,400
+ to go on a skiing vacation so he sends this input to the agent and what the agent will
+
+113
+00:09:51,400 --> 00:09:57,640
+ do is it will break down this user request into multiple tasks.
+
+114
+00:09:57,640 --> 00:10:02,280
+ So let's say in the step one he checking the leave balance in the step two is going to
+
+115
+00:10:02,280 --> 00:10:09,080
+ check the book a flight book a hotel so what it will do is once it has broken down it
+
+116
+00:10:09,080 --> 00:10:14,240
+ into these three steps then it's going to execute the task maybe it will call the better
+
+117
+00:10:14,240 --> 00:10:19,760
+ open knowledge basis and see if he has vacation days so the observe you'll get an observation
+
+118
+00:10:19,760 --> 00:10:26,600
+ it says okay John has 20 vacation days so he will pass that feedback to the agent saying
+
+119
+00:10:26,600 --> 00:10:31,680
+ that okay he has 20 vacation days then he will go and book a flight and he will make
+
+120
+00:10:31,680 --> 00:10:37,880
+ an API call to the travel site and flight and see if the flight tickets are available
+
+121
+00:10:37,880 --> 00:10:41,520
+ if they're available it's going to pass that feedback back to the large language model
+
+122
+00:10:41,520 --> 00:10:48,880
+ then again it will execute the book hotel from the hotel site and let's say it says accommodation
+
+123
+00:10:48,880 --> 00:10:53,360
+ not available and then it will send this feedback back to the large language model the
+
+124
+00:10:53,360 --> 00:10:59,760
+ LLM will look at all the three feedbacks that he has received now it will know since
+
+125
+00:10:59,760 --> 00:11:07,160
+ the hotel is not available it will do the replanting and then execute for a different
+
+126
+00:11:07,160 --> 00:11:14,440
+ date after checking with the user so this is what React style of prompting does it's
+
+127
+00:11:14,440 --> 00:11:22,920
+ more dynamic and combines the steps of breaking down the task and executing at the same
+
+128
+00:11:22,920 --> 00:11:27,280
+ time okay that's pretty much it from this lecture I'll see in the next lecture thank you
+
