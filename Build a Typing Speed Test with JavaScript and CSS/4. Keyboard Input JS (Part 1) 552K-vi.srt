@@ -1,0 +1,628 @@
+1
+00:00:00,000 --> 00:00:06,000
+Được rồi, trong bài này, chúng ta sẽ lắng nghe các phím bấm.
+
+2
+00:00:06,000 --> 00:00:10,000
+Để làm điều này, chúng tôi sẽ thêm một thính giả sự kiện vào tài liệu của chúng tôi,
+
+3
+00:00:10,000 --> 00:00:13,000
+lắng nghe sự kiện xuống bàn phím.
+
+4
+00:00:13,000 --> 00:00:20,000
+Chúng ta sẽ lắng nghe nếu chúng ta đang lùi lại hay đang bước vào một nhân vật.
+
+5
+00:00:20,000 --> 00:00:25,000
+Chúng tôi sẽ cần thêm một số biến số để theo dõi những gì đã được gõ,
+
+6
+00:00:25,000 --> 00:00:29,000
+chúng ta chỉ số nào trong các nhân vật của chúng ta.
+
+7
+00:00:29,000 --> 00:00:36,000
+Chúng ta sẽ cần chia chuỗi văn bản dài thành một dãy các kí tự đơn để chúng ta có thể theo dõi chúng.
+
+8
+00:00:36,000 --> 00:00:47,000
+Chúng tôi cũng sẽ theo dõi lỗi và sau đó cuối cùng chúng tôi sẽ cũng cần phải tạo ra một cách để thực sự di chuyển văn bản của chúng tôi một khi chúng tôi nhận được đủ xa trong đó chúng tôi cần phải làm điều đó.
+
+9
+00:00:47,000 --> 00:00:52,000
+Để chúng ta thực sự có thể thấy phần văn bản còn lại và tiếp tục gõ.
+
+10
+00:00:52,000 --> 00:00:56,000
+Được rồi, hãy lặn thẳng vào.
+
+11
+00:00:56,000 --> 00:01:03,000
+Vì vậy, tôi sẽ đi trước và thực sự di chuyển các công cụ lên trên cùng,
+
+12
+00:01:03,000 --> 00:01:09,000
+Chỉ cần đặt tất cả các biến số của tôi vào một nơi và hằng số của tôi.
+
+13
+00:01:09,000 --> 00:01:20,000
+Được rồi, vì vậy điều đầu tiên chúng ta cần, chúng ta sẽ cần một cho phép tất cả gõ và điều này sẽ là một chuỗi
+
+14
+00:01:20,000 --> 00:01:31,000
+Và chúng tôi cũng sẽ cần để cho các ký tự hiện tại lần chỉ số nhân vật của chúng tôi bằng 0.
+
+15
+00:01:31,000 --> 00:01:39,000
+Một lần nữa, chúng ta sẽ chia đoạn văn dài này thành một dãy và chúng ta quan tâm đến việc chúng ta đang ở đâu.
+
+16
+00:01:39,000 --> 00:01:45,000
+Và chúng tôi cũng sẽ muốn theo dõi lỗi của chúng tôi, cho phép lỗi bằng không cho bây giờ,
+
+17
+00:01:45,000 --> 00:01:49,000
+Nhưng điều này cuối cùng sẽ ảnh hưởng đến lời nói của chúng ta mỗi phút.
+
+18
+00:01:49,000 --> 00:01:56,000
+Được rồi, và từ đây chúng ta sẽ làm gì, hãy chắc chắn rằng mọi thứ vẫn ổn.
+
+19
+00:01:56,000 --> 00:02:00,000
+Mọi thứ vẫn ổn.
+
+20
+00:02:00,000 --> 00:02:14,000
+Chúng tôi sẽ bình luận ra một tiêu đề ở đây để xử lý gõ trên văn bản hiển thị và cuộn.
+
+21
+00:02:14,000 --> 00:02:19,000
+Vì vậy, bạn sẽ nhận thấy rằng tôi đã không có một đầu vào riêng biệt và sau đó một hộp với một bó của văn bản.
+
+22
+00:02:19,000 --> 00:02:26,000
+Tôi muốn thực sự có thể gõ vào trong hộp văn bản đang hiển thị văn bản và nhấn mạnh văn bản.
+
+23
+00:02:26,000 --> 00:02:31,000
+Tôi chỉ nghĩ rằng nó trông tốt hơn rất nhiều và đó là lý do tại sao chúng tôi làm điều này theo cách này.
+
+24
+00:02:31,000 --> 00:02:38,000
+OK, vậy tài liệu, thêm thính giả, dấu ngoặc đơn, dấu ngoặc kép,
+
+25
+00:02:38,000 --> 00:02:44,000
+Chìa khóa giảm hoặc lắng nghe sự kiện then chốt này. Mỗi lần chúng ta bấm phím trên bàn phím,
+
+26
+00:02:44,000 --> 00:02:54,000
+Sự kiện này sẽ được kích hoạt và chúng ta sẽ bấm E cho sự kiện của chúng ta và sau đó chức năng mũi tên của chúng ta,
+
+27
+00:02:54,000 --> 00:03:02,000
+dấu ngoặc cong, nhấn vào, dấu chấm ở đó và chúng ta sẽ bắt đầu với không gian phía sau.
+
+28
+00:03:02,000 --> 00:03:08,000
+Vì vậy, chúng tôi sẽ theo dõi nếu chúng tôi đang giảm, chúng tôi đang đi trở lại trong danh mục nhân vật của chúng tôi.
+
+29
+00:03:08,000 --> 00:03:13,000
+Nên chúng ta cần theo dõi khi có chìa khóa không gian dự phòng.
+
+30
+00:03:13,000 --> 00:03:23,000
+Vì vậy, nếu e chấm phím bằng ba dấu hiệu bằng nhau, vì vậy nó chính xác bằng ngược không gian,
+
+31
+00:03:23,000 --> 00:03:34,000
+Nếu tổng chiều dài chấm là hơn 0,
+
+32
+00:03:34,000 --> 00:03:39,000
+Vì vậy, hãy nhớ rằng nếu chúng ta đang ở đầu và chúng ta đánh ngược không gian,
+
+33
+00:03:39,000 --> 00:03:42,000
+Chúng tôi không muốn có chuyện gì xảy ra.
+
+34
+00:03:42,000 --> 00:03:48,000
+Và đó là lý do tại sao chúng tôi có điều kiện này ở đây, nhưng nếu chúng tôi không phải là ngay từ đầu,
+
+35
+00:03:48,000 --> 00:03:54,000
+Chúng tôi muốn thực sự hạ thấp chỉ số nhân vật hiện tại.
+
+36
+00:03:54,000 --> 00:04:08,000
+Vì vậy, chỉ mục chăm sóc hiện tại bằng toán học chấm tối đa khung chăm sóc hiện thời trừ một hoặc không.
+
+37
+00:04:08,000 --> 00:04:15,000
+Vì vậy, hãy nói rằng chúng tôi là 10 nhân vật trong, chúng tôi muốn có thể trở lại một.
+
+38
+00:04:15,000 --> 00:04:21,000
+Vì vậy, 9 hoặc chúng tôi muốn đi đến 0, vì vậy bất cứ điều gì là lớn hơn.
+
+39
+00:04:21,000 --> 00:04:24,000
+Vì vậy, cho mười, chúng tôi sẽ trừ đi một và đi chín.
+
+40
+00:04:24,000 --> 00:04:27,000
+Nếu chúng ta bắt đầu từ đầu, nó sẽ chỉ là số không.
+
+41
+00:04:27,000 --> 00:04:30,000
+Nên nó sẽ ở lại vị trí đầu tiên.
+
+42
+00:04:30,000 --> 00:04:41,000
+Và tổng gõ sẽ bằng tổng chấm cắt 0 trừ 1.
+
+43
+00:04:41,000 --> 00:04:50,000
+Vì vậy, điều này sẽ loại bỏ một nhân vật, do đó, đây là một chuỗi dài của những gì chúng tôi đã gõ.
+
+44
+00:04:50,000 --> 00:04:53,000
+Nó sẽ loại bỏ một ký tự của nó.
+
+45
+00:04:53,000 --> 00:04:56,000
+Đó là việc chúng ta đang làm ở đây.
+
+46
+00:04:56,000 --> 00:05:10,000
+Vì vậy nếu chúng tôi không hỗ trợ, các dấu ngoặc khác, xin lỗi, nếu khác nếu phím Et của chúng tôi,
+
+47
+00:05:10,000 --> 00:05:15,000
+Phím chấm, liên kết chấm bằng 1.
+
+48
+00:05:15,000 --> 00:05:19,000
+Vì vậy chúng tôi chỉ muốn theo dõi một phím duy nhất đang được nhập.
+
+49
+00:05:19,000 --> 00:05:24,000
+Chúng tôi không muốn theo dõi các tổ hợp phím cùng lúc.
+
+50
+00:05:24,000 --> 00:05:38,000
+Và chúng tôi cũng không muốn theo dõi nếu chúng tôi đang nhấn phím điều khiển hoặc các siêu chìa khóa.
+
+51
+00:05:38,000 --> 00:05:43,000
+Chúng tôi chỉ muốn theo dõi các chữ cái cơ bản trong trường hợp này.
+
+52
+00:05:43,000 --> 00:05:45,000
+Được rồi.
+
+53
+00:05:45,000 --> 00:05:51,000
+Và trong trường hợp này, tổng số của chúng tôi sẽ thêm vào.
+
+54
+00:05:51,000 --> 00:05:57,000
+Vì vậy, cộng với bằng là thêm giá trị của phím đó.
+
+55
+00:05:57,000 --> 00:06:03,000
+Vì vậy, nếu tôi gõ j, nó sẽ thêm j vào tổng số chuỗi mà chúng tôi có.
+
+56
+00:06:03,000 --> 00:06:08,000
+Bây giờ đi trước và chỉ cần giảm thiểu những cho bây giờ.
+
+57
+00:06:08,000 --> 00:06:11,000
+Vì vậy, chúng tôi chỉ cần loại nhìn thấy giá trị của chúng tôi có một chút.
+
+58
+00:06:11,000 --> 00:06:16,000
+Và sau đó chúng tôi sẽ gia tăng chỉ số nhân vật hiện tại của chúng tôi.
+
+59
+00:06:16,000 --> 00:06:17,000
+Được rồi.
+
+60
+00:06:17,000 --> 00:06:24,000
+Vì vậy, những gì chúng tôi sẽ làm ở đây là tôi sẽ thêm một vài bản ghi bàn điều khiển để chúng tôi có thể hiểu rõ hơn những gì đang xảy ra ở đây.
+
+61
+00:06:24,000 --> 00:06:27,000
+Vì vậy, chúng tôi sẽ làm E chấm chìa khóa.
+
+62
+00:06:27,000 --> 00:06:30,000
+Và chúng ta sẽ ghi lại điều đó.
+
+63
+00:06:30,000 --> 00:06:40,000
+Và sau đó chúng tôi cũng sẽ đăng nhập tổng số của chúng tôi, gõ tổng, gõ.
+
+64
+00:06:40,000 --> 00:06:47,000
+Và chúng tôi cũng sẽ đăng nhập lại chỉ số hiện tại, chỉ số, chỉ số hiện tại của chúng tôi.
+
+65
+00:06:47,000 --> 00:06:48,000
+Được rồi.
+
+66
+00:06:48,000 --> 00:06:53,000
+Vì vậy, hãy thực sự xem những gì đang xảy ra ở đây.
+
+67
+00:06:53,000 --> 00:06:54,000
+Được rồi.
+
+68
+00:06:54,000 --> 00:06:59,000
+Tôi sẽ gõ chữ J.
+
+69
+00:06:59,000 --> 00:07:00,000
+Được rồi.
+
+70
+00:07:00,000 --> 00:07:03,000
+Vì vậy, chúng tôi có thể thấy chúng tôi có chìa khóa sự kiện của chúng tôi là j.
+
+71
+00:07:03,000 --> 00:07:07,000
+Tổng loại của chúng tôi là j và chỉ số nhân vật hiện tại của chúng tôi là một.
+
+72
+00:07:07,000 --> 00:07:15,000
+Vì vậy, nếu tôi chỉ cần gõ một bó các chữ cái ngẫu nhiên khác, bạn có thể thấy rằng nó là trong một chữ cái tại một thời điểm.
+
+73
+00:07:15,000 --> 00:07:17,000
+Và nó đang thêm chúng vào dây của chúng ta ở đây.
+
+74
+00:07:17,000 --> 00:07:20,000
+Và nó đang gia tăng chỉ số của chúng tôi.
+
+75
+00:07:20,000 --> 00:07:22,000
+Bạn có thể thấy nó cứ tiếp tục tăng lên.
+
+76
+00:07:22,000 --> 00:07:28,000
+Và nếu tôi quay ngược không gian, bạn có thể thấy rằng chìa khóa là không gian lùi.
+
+77
+00:07:28,000 --> 00:07:36,000
+Và tổng số đánh máy, chúng tôi thực sự loại bỏ chữ h ở cuối và chỉ số hiện tại của chúng tôi cũng giảm xuống.
+
+78
+00:07:36,000 --> 00:07:42,000
+Vì vậy, đây là những gì sẽ giúp chúng tôi theo dõi chúng tôi đang ở đâu và tổng số những gì chúng tôi đã gõ là.
+
+79
+00:07:42,000 --> 00:07:44,000
+Nó sẽ là một chuỗi dài.
+
+80
+00:07:44,000 --> 00:07:46,000
+Tất nhiên, nó cũng có khoảng trống trong đó.
+
+81
+00:07:46,000 --> 00:07:55,000
+Nhưng tôi chỉ cho các bạn thấy cơ chế này sẽ hoạt động như thế nào để theo dõi không gian của chúng ta và những chữ cái thông thường mà chúng ta đang nhập vào.
+
+82
+00:07:55,000 --> 00:08:02,000
+Được rồi, hãy đi tiếp từ đây.
+
+83
+00:08:02,000 --> 00:08:06,000
+Nên tôi nghĩ tôi sẽ để lại bản ghi bàn điều khiển lúc này, nhưng tôi sẽ tháo nó ra ngay.
+
+84
+00:08:06,000 --> 00:08:13,000
+Từ đây, chúng tôi muốn tạo ra một hằng số cho dãy văn bản của chúng tôi.
+
+85
+00:08:13,000 --> 00:08:19,000
+Và đây sẽ là đoạn văn dài mà chúng tôi tạo ra ở đây.
+
+86
+00:08:19,000 --> 00:08:23,000
+Vì vậy nó đặt dàn dài của chúng tôi vào một chuỗi dài.
+
+87
+00:08:23,000 --> 00:08:27,000
+Và sau đó chúng tôi sẽ đi trước và thực sự chia nó ra.
+
+88
+00:08:27,000 --> 00:08:31,000
+Và chúng ta sẽ chia từng nhân vật một, kể cả không gian.
+
+89
+00:08:31,000 --> 00:08:37,000
+Vì vậy, nó sẽ là một ký tự trên mỗi mục nhập trong hệ thống văn bản của chúng tôi.
+
+90
+00:08:37,000 --> 00:08:41,000
+Vì vậy, hãy đi trước và, tôi đoán chúng ta có thể điều khiển bản ghi.
+
+91
+00:08:41,000 --> 00:08:45,000
+Chúng tôi sẽ tham gia, tôi đoán, tôi không thể làm điều đó vì nó sẽ không xuất hiện.
+
+92
+00:08:45,000 --> 00:08:48,000
+Hãy làm bản ghi bàn điều khiển riêng biệt.
+
+93
+00:08:48,000 --> 00:08:52,000
+Điều đó sẽ không thành công bởi vì chúng ta vẫn chưa bắt đầu chương trình văn bản.
+
+94
+00:08:52,000 --> 00:08:54,000
+Vì vậy, bạn không thể bàn giao tiếp đăng nhập lên đây.
+
+95
+00:08:54,000 --> 00:08:57,000
+Nhưng hãy thử ngay bây giờ.
+
+96
+00:08:57,000 --> 00:09:01,000
+Vì vậy, tôi có thể thấy tôi thực sự phải nhấn một nút.
+
+97
+00:09:01,000 --> 00:09:08,000
+Nhưng bây giờ bạn có thể thấy chúng ta có 1 dãy dài 13 và 98.
+
+98
+00:09:08,000 --> 00:09:16,000
+Và nếu tôi mở rộng nó, bạn có thể thấy rằng chúng tôi có mỗi một nhân vật bao gồm các khoảng trống trong một mảng.
+
+99
+00:09:16,000 --> 00:09:23,000
+Và về cơ bản những gì chúng tôi đang làm với tổng của chúng tôi đánh máy là chúng tôi sẽ phù hợp với nhân vật cho nhân vật.
+
+100
+00:09:23,000 --> 00:09:29,000
+Vì vậy, nếu nhân vật đầu tiên là F và nhân vật đầu tiên ở đây là N, tôi biết rằng đó là không đúng.
+
+101
+00:09:29,000 --> 00:09:32,000
+Chúng tôi đang làm một nhân vật để so sánh nhân vật.
+
+102
+00:09:32,000 --> 00:09:39,000
+Và sau đó chúng tôi đang xem qua chỉ số của chúng tôi để biết, okay, nhân vật thứ hai, tôi đã gõ A?
+
+103
+00:09:39,000 --> 00:09:42,000
+Và nếu nó là A ở đây, thì đó là chính xác.
+
+104
+00:09:42,000 --> 00:09:49,000
+Và sau đó chúng tôi có thể thêm lớp học chính xác của chúng tôi hoặc chúng tôi có thể thêm lớp học lỗi của chúng tôi và tăng lỗi của chúng tôi, vv.
+
+105
+00:09:49,000 --> 00:09:51,000
+Và đó là cách nó hoạt động.
+
+106
+00:09:51,000 --> 00:09:56,000
+Về cơ bản, chúng tôi đang chia tổng hợp thành việc kiểm tra từng nhân vật một.
+
+107
+00:09:56,000 --> 00:10:04,000
+Và chúng tôi đang chia chuỗi lớn của chúng tôi thành một loạt các nhân vật trong một dãy.
+
+108
+00:10:04,000 --> 00:10:16,000
+Được rồi, điều tiếp theo chúng tôi sẽ làm là chúng tôi sẽ thực sự thiết lập lại các container tin nhắn của chúng tôi.
+
+109
+00:10:16,000 --> 00:10:20,000
+Giao tiếp sẽ không là gì cả.
+
+110
+00:10:20,000 --> 00:10:22,000
+Vậy chúng ta sẽ khởi động lại nó.
+
+111
+00:10:22,000 --> 00:10:26,000
+Và chúng tôi cũng sẽ thiết lập lại lỗi của chúng tôi là zero.
+
+112
+00:10:26,000 --> 00:10:33,000
+Lý do chúng ta phải đặt nó vào đây là trong trường hợp chúng ta thực sự đang thực hiện kiểm tra một lần và sau đó nhấn thử lại.
+
+113
+00:10:33,000 --> 00:10:36,000
+Vì vậy, chúng tôi không thực sự tải lại trang trong trường hợp đó.
+
+114
+00:10:36,000 --> 00:10:40,000
+Mặc dù chúng tôi đang thiết lập nó như số không ở đó, chúng tôi sẽ cần thiết lập lại nó.
+
+115
+00:10:40,000 --> 00:10:42,000
+Nên tôi thêm nó vào đó.
+
+116
+00:10:42,000 --> 00:10:44,000
+Và bây giờ chúng ta cần phải lặp lại.
+
+117
+00:10:44,000 --> 00:10:51,000
+Vì vậy, bốn, hãy để tôi bằng không.
+
+118
+00:10:51,000 --> 00:10:54,000
+Vì vậy, chúng tôi sẽ bắt đầu từ chỉ số số 0.
+
+119
+00:10:54,000 --> 00:10:59,000
+Và tôi sẽ đi cho đến khi chúng tôi nhận được chiều dài của dãy văn bản của chúng tôi,
+
+120
+00:10:59,000 --> 00:11:04,000
+Mà có lẽ nó sẽ không bao giờ đạt được bởi vì nó có gần 400 kí tự.
+
+121
+00:11:04,000 --> 00:11:10,000
+Và tôi sẽ tiếp tục gia tăng miễn là chúng ta không đạt đến giới hạn, mà một lần nữa, tôi không nghĩ chúng ta sẽ làm được.
+
+122
+00:11:10,000 --> 00:11:15,000
+Và từ đây, chúng ta sẽ tạo ra một khoảng trống.
+
+123
+00:11:15,000 --> 00:11:23,000
+Và điều này là tương đương với tài liệu tạo ra yếu tố và một dấu ngoặc kép.
+
+124
+00:11:23,000 --> 00:11:34,000
+Chúng ta sẽ tạo ra một khoảng trống. Và nếu tôi nhỏ hơn tổng chiều dài được đánh máy.
+
+125
+00:11:34,000 --> 00:11:43,000
+Và hãy nhớ rằng, chúng ta đang bắt đầu từ 0 ở đây, nhưng tổng chiều dài đánh máy của chúng ta đang bắt đầu ở một trong trường hợp này.
+
+126
+00:11:43,000 --> 00:11:50,000
+Vì vậy, nếu bạn nhớ, nếu tôi nhấn cái này, chiều dài đó là một, nó không bắt đầu bằng không.
+
+127
+00:11:50,000 --> 00:11:55,000
+Và bạn sẽ thấy chúng tôi đã thiết lập lại mọi thứ ở đây.
+
+128
+00:11:55,000 --> 00:12:03,000
+Được rồi, vậy nếu tôi nhỏ hơn tổng chiều dài loại của chúng ta, nếu tổng số chúng ta gõ,
+
+129
+00:12:03,000 --> 00:12:13,000
+và chúng tôi sẽ sử dụng chỉ số đó, là tương đương với chỉ số bảng chỉ số văn bản của chúng tôi.
+
+130
+00:12:13,000 --> 00:12:24,000
+Vậy cả hai đều không có chỉ số. Sau đó, chúng tôi sẽ thêm một danh sách lớp học.
+
+131
+00:12:24,000 --> 00:12:31,000
+Một trích dẫn duy nhất của chính xác. Vì vậy, chúng tôi sẽ thêm rằng màu xanh lá cây.
+
+132
+00:12:31,000 --> 00:12:48,000
+Nếu không, danh sách lớp, thêm lỗi. Và chúng tôi cũng sẽ tăng lỗi của chúng tôi.
+
+133
+00:12:48,000 --> 00:12:58,000
+Được rồi, và sau đó cho khoảng cách của chúng tôi, chúng tôi thực sự sẽ thêm nội dung văn bản đó.
+
+134
+00:12:58,000 --> 00:13:04,000
+Và chúng tôi sẽ thêm nó.
+
+135
+00:13:04,000 --> 00:13:08,000
+Chúng tôi sẽ thêm rằng một nhân vật của chỉ số đó từ các dòng văn bản.
+
+136
+00:13:08,000 --> 00:13:11,000
+Và đó sẽ là nội dung của khoảng thời gian chúng ta tạo ra.
+
+137
+00:13:11,000 --> 00:13:16,000
+Và chúng tôi sẽ thêm lớp đúng hoặc sai. Và nó sẽ biến nó thành màu đỏ hay xanh lá cây.
+
+138
+00:13:16,000 --> 00:13:22,000
+Và sau đó chúng tôi sẽ nối đứa trẻ vào hộp văn bản.
+
+139
+00:13:22,000 --> 00:13:25,000
+Và chúng ta sẽ thay thế khoảng cách đó.
+
+140
+00:13:25,000 --> 00:13:31,000
+Được rồi, hãy đi kiểm tra xem sao.
+
+141
+00:13:31,000 --> 00:13:34,000
+Được rồi, chúng ta sẽ thực sự xem xét lại các yếu tố ở đây.
+
+142
+00:13:34,000 --> 00:13:40,000
+Anh thấy đấy, chúng tôi đã nạp đạn đầy đủ. Và nếu tôi gõ cái gì đó, bạn có thể thấy điều đó.
+
+143
+00:13:40,000 --> 00:13:46,000
+Được rồi, nếu chúng ta mở hộp văn bản ở đây, bạn sẽ thấy rằng chúng ta có một đống khoảng trống.
+
+144
+00:13:46,000 --> 00:13:50,000
+Và họ là những cá thể riêng biệt. Và bạn thấy tôi gõ E chính xác.
+
+145
+00:13:50,000 --> 00:13:55,000
+Và nó có lớp học đúng. Và bạn thấy nó màu xanh.
+
+146
+00:13:55,000 --> 00:14:02,000
+Và nếu tôi gõ nhân vật tiếp theo là F và nó là D, tôi có lỗi.
+
+147
+00:14:02,000 --> 00:14:08,000
+Và sau đó nếu tôi chỉ cần tiếp tục đi, xem rằng tôi có một bó của lỗi.
+
+148
+00:14:08,000 --> 00:14:11,000
+Mà nó đang làm những gì nó phải làm.
+
+149
+00:14:11,000 --> 00:14:16,000
+Và bạn có thể thấy rằng chúng tôi có chỉ số nhân vật đang tăng lên.
+
+150
+00:14:16,000 --> 00:14:22,000
+Đây là tổng độ dài loại của chúng tôi. Và bạn thấy tất cả các chìa khóa mà chúng tôi đang vào đây.
+
+151
+00:14:22,000 --> 00:14:26,000
+Bạn có thể đã nhận thấy một cái gì đó bất thường mặc dù trong hộp văn bản của chúng tôi.
+
+152
+00:14:26,000 --> 00:14:30,000
+Chúng ta đã mất tất cả không gian.
+
+153
+00:14:30,000 --> 00:14:34,000
+Nên chúng ta cần phải sửa chữa nó.
+
+154
+00:14:34,000 --> 00:14:37,000
+Nhưng đoạn video này có vẻ hơi dài.
+
+155
+00:14:37,000 --> 00:14:39,000
+Vì vậy, hãy tạm nghỉ ở đây.
+
+156
+00:14:39,000 --> 00:14:45,000
+Và chúng ta sẽ kết thúc với không gian của chúng ta và di chuyển sang trái trong video tiếp theo.
+
+157
+00:14:45,000 --> 00:14:50,120
+Video. Hẹn gặp lại, tạm biệt.
+
