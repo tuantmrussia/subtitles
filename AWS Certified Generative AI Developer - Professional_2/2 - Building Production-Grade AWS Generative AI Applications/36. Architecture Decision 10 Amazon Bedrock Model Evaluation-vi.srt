@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:03,000
+Trong bài giảng này, tôi sẽ xem xét kiến trúc thứ 10
+
+2
+00:00:03,000 --> 00:00:06,360
+Xem xét mà chúng tôi nên suy nghĩ về trong khi xây dựng
+
+3
+00:00:06,360 --> 00:00:08,760
+hoặc là ứng dụng tạo hóa.
+
+4
+00:00:08,760 --> 00:00:12,920
+Và đó là đánh giá mô hình.
+
+5
+00:00:12,920 --> 00:00:15,360
+Vì vậy, đá phiến Amazon cung cấp công cụ đánh giá
+
+6
+00:00:15,360 --> 00:00:19,720
+Để đánh giá, so sánh và chọn mô hình nền
+
+7
+00:00:19,720 --> 00:00:24,440
+cho trường hợp sử dụng của bạn thông qua nền Amazon
+
+8
+00:00:24,440 --> 00:00:26,120
+Khả năng.
+
+9
+00:00:26,120 --> 00:00:29,120
+Bây giờ, chúng ta hãy đi trước và hiểu làm thế nào mô hình nền Amazon
+
+10
+00:00:29,120 --> 00:00:31,840
+Khả năng đánh giá thành công.
+
+11
+00:00:31,840 --> 00:00:33,560
+Vì vậy, điều đầu tiên bạn cần làm là bạn
+
+12
+00:00:33,560 --> 00:00:37,440
+Cần phải xác định bộ dữ liệu nhắc.
+
+13
+00:00:37,440 --> 00:00:38,440
+Bây giờ, hãy xem một kịch bản.
+
+14
+00:00:38,440 --> 00:00:42,200
+Giả sử bạn muốn đánh giá mô hình nền tảng của bạn.
+
+15
+00:00:42,200 --> 00:00:45,720
+Có lẽ trước khi bạn bắt đầu xây dựng ứng dụng tạo hóa của bạn
+
+16
+00:00:45,720 --> 00:00:48,840
+hoặc một khi bạn đã xây dựng ứng dụng tạo ra
+
+17
+00:00:48,840 --> 00:00:53,840
+Và bạn muốn liên tục đánh giá hiệu suất của nó.
+
+18
+00:00:53,840 --> 00:00:57,120
+Vì vậy, điều đầu tiên bạn sẽ phải làm là tạo ra một dữ liệu nhắc
+
+19
+00:00:57,120 --> 00:00:57,880
+Set.
+
+20
+00:00:57,880 --> 00:01:00,680
+Vì vậy, đây là những gì thiết lập dữ liệu nhắc của bạn có thể trông như thế này.
+
+21
+00:01:00,680 --> 00:01:02,640
+Cho nên tôi chỉ có ba đĩa, nhưng anh...
+
+22
+00:01:02,640 --> 00:01:04,920
+Có thể còn nhiều đĩa nữa.
+
+23
+00:01:04,920 --> 00:01:07,320
+Vậy điều đầu tiên chúng ta phải cung cấp là dấu nhắc.
+
+24
+00:01:07,320 --> 00:01:11,720
+Và ở đây chúng tôi đang cung cấp một nhắc nhở của sản xuất
+
+25
+00:01:11,720 --> 00:01:13,480
+Nhật ký tua bin gió.
+
+26
+00:01:13,480 --> 00:01:17,360
+Và sau đó những gì chúng tôi đang nói là tóm tắt điều này trong một dòng.
+
+27
+00:01:17,360 --> 00:01:19,720
+Vì vậy, bạn có thể thấy tóm tắt điều này trong một dòng.
+
+28
+00:01:19,720 --> 00:01:22,760
+Và sau đó chúng tôi cung cấp một phản ứng tham khảo.
+
+29
+00:01:22,760 --> 00:01:25,720
+Vì vậy, điều đó có nghĩa nếu mô hình sẽ tóm tắt điều này,
+
+30
+00:01:25,720 --> 00:01:29,920
+Chúng ta nên phản ứng thế nào?
+
+31
+00:01:29,920 --> 00:01:31,960
+OK, bạn có tập dữ liệu.
+
+32
+00:01:31,960 --> 00:01:33,760
+Nó thuộc dạng JSON l.
+
+33
+00:01:33,760 --> 00:01:37,240
+Vậy thì anh cần phải tải nó lên cái xô S3.
+
+34
+00:01:37,240 --> 00:01:40,880
+Và bạn cần phải cung cấp cho các mô hình nền đánh giá
+
+35
+00:01:40,880 --> 00:01:44,640
+Khả năng, liên kết đến đó nhắc dữ liệu thiết lập.
+
+36
+00:01:44,640 --> 00:01:49,280
+Vì vậy, một khi bạn đã tải lên file JSON l này trong S3 xô này,
+
+37
+00:01:49,280 --> 00:01:52,480
+sau đó bạn có thể chọn phương pháp đánh giá mô hình.
+
+38
+00:01:52,480 --> 00:01:55,280
+Vì vậy, nó có thể là một trong hai chương trình, mô hình ngôn ngữ lớn
+
+39
+00:01:55,280 --> 00:01:58,720
+là một thẩm phán hoặc nó có thể được đánh giá con người.
+
+40
+00:01:58,720 --> 00:02:00,520
+Và chúng ta sẽ lặn sâu vào từng con
+
+41
+00:02:00,520 --> 00:02:01,640
+Một chút nữa.
+
+42
+00:02:01,640 --> 00:02:05,000
+Nhưng một khi bạn đã chọn, hãy nói rằng LM là một thẩm phán,
+
+43
+00:02:05,000 --> 00:02:09,240
+nó sẽ đánh giá các phản ứng được tạo ra bởi mô hình
+
+44
+00:02:09,240 --> 00:02:11,960
+và sau đó tạo ra một báo cáo.
+
+45
+00:02:11,960 --> 00:02:13,880
+Bạn có thể có một nhà khoa học dữ liệu hoặc một SME
+
+46
+00:02:13,880 --> 00:02:16,880
+Ai có thể xem lại báo cáo.
+
+47
+00:02:16,880 --> 00:02:19,640
+Như chúng ta đã bàn, có 3 cách đánh giá
+
+48
+00:02:19,640 --> 00:02:20,400
+sẵn sàng.
+
+49
+00:02:20,400 --> 00:02:24,360
+Một trong số đó là lập trình LLM như một thẩm phán và người đánh giá.
+
+50
+00:02:24,360 --> 00:02:26,400
+Bây giờ chúng ta hãy nhanh chóng đi qua mỗi người trong số họ.
+
+51
+00:02:26,400 --> 00:02:28,560
+Đầu tiên là lập trình.
+
+52
+00:02:28,560 --> 00:02:32,600
+Nó đánh giá hiệu suất chỉ sử dụng các mô hình và thước đo
+
+53
+00:02:32,600 --> 00:02:34,360
+chọn đi.
+
+54
+00:02:34,360 --> 00:02:38,080
+Đây là một khả năng xây dựng bên trong nền móng Amazon,
+
+55
+00:02:38,080 --> 00:02:41,160
+sẽ đánh giá mô hình.
+
+56
+00:02:41,160 --> 00:02:43,600
+Vậy anh cần làm gì từ phía anh?
+
+57
+00:02:43,600 --> 00:02:45,720
+Vì vậy, bạn chọn loại nhiệm vụ.
+
+58
+00:02:45,720 --> 00:02:47,840
+Vì vậy, cho dù đó là một trường hợp sử dụng cho thế hệ văn bản,
+
+59
+00:02:47,840 --> 00:02:52,400
+tóm tắt văn bản, Q và A, hoặc phân loại văn bản.
+
+60
+00:02:52,400 --> 00:02:55,360
+Sau đó bạn chọn các số đo mà bạn muốn đánh giá,
+
+61
+00:02:55,360 --> 00:02:57,800
+Chính xác, độc hại và mạnh mẽ.
+
+62
+00:02:57,800 --> 00:03:00,200
+Đó là ba thước đo được hỗ trợ của chúng tôi.
+
+63
+00:03:00,200 --> 00:03:03,240
+Sau đó, hoặc bạn có thể mang lại cho riêng của bạn bộ dữ liệu
+
+64
+00:03:03,240 --> 00:03:06,640
+Hoặc bạn có thể sử dụng các xây dựng trong bộ dữ liệu.
+
+65
+00:03:06,640 --> 00:03:09,600
+Vì vậy, tôi đã cho bạn thấy những gì tập dữ liệu sẽ trông như thế nào
+
+66
+00:03:09,600 --> 00:03:11,520
+Nếu bạn mang theo dữ liệu của riêng bạn.
+
+67
+00:03:11,520 --> 00:03:13,640
+Bây giờ nó sẽ trông như thế này.
+
+68
+00:03:13,640 --> 00:03:16,800
+Vì vậy, ở đây bạn xác định các đánh giá tên đầu tiên.
+
+69
+00:03:16,800 --> 00:03:19,760
+Sau đó bạn chọn mô hình bạn muốn đánh giá.
+
+70
+00:03:19,760 --> 00:03:21,520
+Và ở đây tôi không có chuyên gia.
+
+71
+00:03:21,520 --> 00:03:24,520
+Sau đó bạn xác định loại nhiệm vụ, cho dù đó là thế hệ văn bản,
+
+72
+00:03:24,520 --> 00:03:26,240
+Văn bản tóm tắt, và vân vân.
+
+73
+00:03:26,240 --> 00:03:27,960
+Và sau đó bạn xác định vị trí vẫn còn
+
+74
+00:03:27,960 --> 00:03:30,560
+nơi bạn sẽ có bộ dữ liệu nhập
+
+75
+00:03:30,560 --> 00:03:35,200
+và đầu ra sẽ được tạo ra bởi dịch vụ.
+
+76
+00:03:35,200 --> 00:03:38,080
+Được rồi, bây giờ chúng ta hãy xem LLM như một thẩm phán.
+
+77
+00:03:38,080 --> 00:03:42,680
+Vì vậy, một mô hình được đào tạo trước đánh giá phản ứng của bạn mô hình sử dụng
+
+78
+00:03:42,680 --> 00:03:44,160
+Máy đo bạn đã chọn.
+
+79
+00:03:44,160 --> 00:03:46,920
+Vì vậy, sự khác biệt then chốt giữa tự động và LM như một thẩm phán
+
+80
+00:03:46,920 --> 00:03:50,920
+Nó sẽ tự động có cơ chế riêng.
+
+81
+00:03:50,920 --> 00:03:53,960
+Để đánh giá hiệu suất của mô hình nền tảng,
+
+82
+00:03:53,960 --> 00:03:56,280
+Nhưng trong trường hợp ông ta là thẩm phán,
+
+83
+00:03:56,280 --> 00:03:58,760
+bạn có thể chọn một mô hình nền tảng khác.
+
+84
+00:03:58,760 --> 00:04:01,720
+Giả sử bạn đang cố đánh giá Amazon Nova Pro
+
+85
+00:04:01,720 --> 00:04:03,280
+cho vụ của anh.
+
+86
+00:04:03,280 --> 00:04:07,840
+Sau đó bạn có thể chọn bất kỳ mô hình nào từ Antropic hoặc LAMA,
+
+87
+00:04:07,840 --> 00:04:11,120
+Đánh giá hiệu suất của Nova Pro Amazon.
+
+88
+00:04:11,120 --> 00:04:14,400
+Vì vậy, khi là một thẩm phán, một mô hình đã được đào tạo trước đánh giá mô hình của bạn
+
+89
+00:04:14,400 --> 00:04:17,440
+hiệu suất sử dụng đo mà bạn đã chọn.
+
+90
+00:04:17,440 --> 00:04:19,400
+Vậy anh cần làm gì từ phía anh?
+
+91
+00:04:19,400 --> 00:04:23,040
+Bạn cần phải chọn mô hình đánh giá và như chúng ta đã bàn,
+
+92
+00:04:23,040 --> 00:04:26,200
+Chúng ta có thể chọn Antropic, LAMA và vân vân.
+
+93
+00:04:26,200 --> 00:04:28,200
+Vậy thì suy luận.
+
+94
+00:04:28,200 --> 00:04:30,640
+Vậy mô hình nền mà bạn muốn đánh giá.
+
+95
+00:04:30,640 --> 00:04:34,360
+Vì vậy, bạn phải chọn các mô hình mà bạn muốn đánh giá
+
+96
+00:04:34,360 --> 00:04:35,600
+cho vụ của anh.
+
+97
+00:04:35,600 --> 00:04:37,080
+Sau đó bạn định nghĩa các thước đo.
+
+98
+00:04:37,080 --> 00:04:39,440
+Vì vậy, bạn có thể xác định nhiều thước đo xung quanh chất lượng,
+
+99
+00:04:39,440 --> 00:04:42,000
+AI chịu trách nhiệm, và sau đó bạn cũng có thể tạo ra
+
+100
+00:04:42,000 --> 00:04:44,240
+Máy đo mét tùy chỉnh.
+
+101
+00:04:44,240 --> 00:04:46,880
+Và cuối cùng trong bộ dữ liệu,
+
+102
+00:04:46,880 --> 00:04:51,360
+Hoặc bạn có thể sử dụng các xây dựng hoặc bạn có thể mang dữ liệu riêng của bạn
+
+103
+00:04:51,360 --> 00:04:51,920
+Set.
+
+104
+00:04:51,920 --> 00:04:55,120
+Và chúng ta sẽ thấy điều này khi chúng ta bắt tay vào việc.
+
+105
+00:04:55,120 --> 00:04:57,640
+OK, sau đó cuối cùng chúng tôi đã có đánh giá con người.
+
+106
+00:04:57,640 --> 00:05:01,000
+Vì vậy, có hai cách để bạn có thể làm đánh giá con người.
+
+107
+00:05:01,000 --> 00:05:03,080
+Đầu tiên là đội công tác của AWS.
+
+108
+00:05:03,080 --> 00:05:05,920
+Vì vậy, bạn có thể gửi một email đến AWS và AWS
+
+109
+00:05:05,920 --> 00:05:09,840
+sẽ sắp xếp một nhóm làm việc mà có thể tính đến hai mô hình
+
+110
+00:05:09,840 --> 00:05:13,760
+sử dụng một nhóm công việc của bạn để cung cấp phản hồi.
+
+111
+00:05:13,760 --> 00:05:17,400
+Kết quả dự án dựa trên các tham số đã được xác định
+
+112
+00:05:17,400 --> 00:05:19,160
+trong khi tạo ra đánh giá.
+
+113
+00:05:19,160 --> 00:05:21,160
+Vì vậy, về cơ bản chỉ cần liên lạc với AWS.
+
+114
+00:05:21,160 --> 00:05:23,360
+AWS sẽ tạo ra một đội.
+
+115
+00:05:23,360 --> 00:05:25,080
+Bạn cung cấp cho họ các bộ dữ liệu nhắc.
+
+116
+00:05:25,080 --> 00:05:26,400
+Cho họ số đo.
+
+117
+00:05:26,400 --> 00:05:28,720
+Và sau đó họ sẽ đánh giá các mô hình.
+
+118
+00:05:28,720 --> 00:05:32,320
+Người thứ hai là con người mang theo đội của mình.
+
+119
+00:05:32,320 --> 00:05:35,160
+Đánh giá phản ứng từ lên đến hai mô hình
+
+120
+00:05:35,160 --> 00:05:36,680
+sử dụng đội lao động của riêng bạn.
+
+121
+00:05:36,680 --> 00:05:38,400
+Bạn có thể định nghĩa thước đo đánh giá
+
+122
+00:05:38,400 --> 00:05:40,640
+cụ thể là công việc của anh.
+
+123
+00:05:40,640 --> 00:05:43,200
+Một lần nữa, trong trường hợp này, bạn có đội riêng của bạn.
+
+124
+00:05:43,200 --> 00:05:45,480
+Bạn cung cấp cho họ bộ dữ liệu nhắc.
+
+125
+00:05:45,480 --> 00:05:47,320
+Bạn cung cấp cho họ dữ liệu đầu vào.
+
+126
+00:05:47,320 --> 00:05:49,320
+Anh cho họ số đo.
+
+127
+00:05:49,320 --> 00:05:52,520
+Và họ sẽ đánh giá con người.
+
+128
+00:05:52,520 --> 00:05:54,640
+Vâng, đó là khá nhiều từ bài giảng này.
+
+129
+00:05:54,640 --> 00:05:56,920
+Như trong bài giảng tiếp theo, cảm ơn.
+
