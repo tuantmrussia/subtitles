@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:04,720
+Trong bài giảng này, chúng ta sẽ xem xét lựa chọn thứ hai cho lớp học của GARI,
+
+2
+00:00:04,720 --> 00:00:06,720
+Đó là AWS AppSync.
+
+3
+00:00:06,720 --> 00:00:09,920
+Vì vậy chúng ta cần biết về dịch vụ này ở mức độ cao.
+
+4
+00:00:09,920 --> 00:00:12,480
+Vì vậy, hãy đi trước và hiểu những gì dịch vụ này làm.
+
+5
+00:00:12,480 --> 00:00:20,320
+Vì vậy, AWS AppSync là lý tưởng cho việc trò chuyện với GenAI và ứng dụng bảng điều khiển trực tiếp.
+
+6
+00:00:20,320 --> 00:00:24,160
+Vì vậy, trong bài giảng trước, chúng ta đã học được về ổ cắm web ARI,
+
+7
+00:00:24,160 --> 00:00:29,920
+Nó duy trì một sự kết nối bền bỉ và rất tốt cho cuộc trò chuyện của GenAI và bảng điều khiển trực tiếp.
+
+8
+00:00:30,080 --> 00:00:35,920
+Vì vậy, các trường hợp sử dụng cho AWS AppSync là rất giống với các ổ cắm trang web API.
+
+9
+00:00:35,920 --> 00:00:41,120
+Và điểm khác biệt quan trọng duy nhất là trong các ổ cắm mạng, bạn phải quản lý các tuyến đường.
+
+10
+00:00:41,120 --> 00:00:43,760
+Bây giờ một chức năng chính là gì?
+
+11
+00:00:43,760 --> 00:00:48,400
+AWS AppSync là một dịch vụ quản lý đầy đủ cho việc xây dựng graphQL.
+
+12
+00:00:48,400 --> 00:00:49,520
+Vậy BNQL là gì?
+
+13
+00:00:49,520 --> 00:00:52,400
+Biểu đồ thị được phát triển bởi Facebook.
+
+14
+00:00:52,400 --> 00:00:59,520
+Đó là một ngôn ngữ truy vấn cho ADIs cho phép khách hàng yêu cầu chính xác dữ liệu họ
+
+15
+00:00:59,520 --> 00:01:03,280
+yêu cầu. Vì vậy, nếu chúng tôi so sánh nó với các CNT API,
+
+16
+00:01:03,280 --> 00:01:08,480
+Nếu chúng tôi đang cố gắng lấy lại dữ liệu bằng cách sử dụng hệ điều hành RTET và BMQL,
+
+17
+00:01:08,480 --> 00:01:15,440
+Nó sẽ đưa ra câu trả lời chính xác dựa trên yêu cầu khách hàng so với hệ điều hành ROR,
+
+18
+00:01:15,440 --> 00:01:17,680
+mà có thể dưới lấy hoặc over get.
+
+19
+00:01:17,680 --> 00:01:23,200
+Vì vậy với đồ thị, bạn có thể lấy dữ liệu từ nhiều nguồn dữ liệu liên quan
+
+20
+00:01:23,200 --> 00:01:27,440
+trong một cuộc gọi hệ thống CN thay vì yêu cầu riêng cho mỗi tài nguyên.
+
+21
+00:01:27,440 --> 00:01:31,440
+Bây giờ hãy nói rằng chúng tôi có nhiều dữ liệu nguồn và người dùng đã đặt ra một câu hỏi
+
+22
+00:01:31,440 --> 00:01:34,880
+nơi bạn cần lấy dữ liệu từ các nguồn dữ liệu khác nhau.
+
+23
+00:01:34,880 --> 00:01:40,160
+Vì vậy, nếu bạn sử dụng RET API, có lẽ bạn sẽ phải thực hiện bốn cuộc gọi cho mỗi khác nhau
+
+24
+00:01:40,160 --> 00:01:44,320
+Nguồn dữ liệu. Bây giờ với một kịch bản tương tự, nếu bạn sử dụng  GrQL,
+
+25
+00:01:44,320 --> 00:01:50,080
+Sau đó bạn sẽ chỉ cần thực hiện một yêu cầu và  GrQL nên có thể lấy dữ liệu
+
+26
+00:01:50,080 --> 00:01:54,640
+Từ các dữ liệu khác nhau thông qua chỉ một cuộc gọi của API.
+
+27
+00:01:55,840 --> 00:01:58,160
+Được rồi, các giao thức đánh máy kiểu API là gì?
+
+28
+00:01:58,160 --> 00:02:03,040
+Biểu đồ tần xuất qua HTTP, HTTPS và ổ cắm mạng.
+
+29
+00:02:03,040 --> 00:02:09,120
+Được rồi, bây giờ các tính năng cốt lõi cho AWS AppSycc là gì?
+
+30
+00:02:09,120 --> 00:02:15,680
+Nó cung cấp giấy đăng ký thời gian thực. Điều đó có nghĩa là một khi khách hàng đã đăng ký,
+
+31
+00:02:15,680 --> 00:02:20,880
+Sau đó anh ta sẽ có bản cập nhật tự động đẩy từ phía máy chủ.
+
+32
+00:02:20,880 --> 00:02:25,520
+Vì vậy, đó là hữu ích cho bảng điều khiển trực tiếp. Vì vậy, một khi bạn đã đặt mua
+
+33
+00:02:25,520 --> 00:02:29,360
+Các bảng điều khiển sống, khi có thay đổi, những thay đổi sẽ được
+
+34
+00:02:29,360 --> 00:02:32,720
+& Xem được cho ứng dụng khách hay người dùng.
+
+35
+00:02:32,720 --> 00:02:37,840
+Sau đó nó cũng cung cấp hỗ trợ ngoại tuyến. Điều này đặc biệt tốt cho di động hoặc web.
+
+36
+00:02:37,840 --> 00:02:40,960
+Vì vậy, nếu bạn không có internet, sau đó bạn có thể nhận được hỗ trợ ngoại tuyến.
+
+37
+00:02:40,960 --> 00:02:45,600
+Vì vậy, nó kết hợp với lambda cho dàn nhạc và nền tảng cho suy luận.
+
+38
+00:02:45,600 --> 00:02:51,840
+Một số trường hợp chủ yếu chúng ta đã thảo luận, từ ngữ trò chuyện, bảng điều khiển cần cập nhật trực tiếp.
+
+39
+00:02:51,840 --> 00:02:55,600
+Bây giờ hãy thử và hiểu điều này thông qua một trường hợp sử dụng. Vì vậy, hãy nói rằng chúng tôi có một người dùng kết thúc
+
+40
+00:02:55,600 --> 00:03:00,640
+người đang truy cập vào một ứng dụng hành trình sử dụng web hoặc thiết bị di động.
+
+41
+00:03:00,640 --> 00:03:05,440
+Và hắn hỏi. Và điều này đôi khi được gọi là đột biến,
+
+42
+00:03:05,440 --> 00:03:09,920
+Mà bạn có thể nghĩ như một thay đổi trạng thái hoặc chỉ đơn giản là một kích hoạt.
+
+43
+00:03:09,920 --> 00:03:15,920
+Bây giờ AWS AppSSync này gửi yêu cầu đó hoặc là một dấu chân tới AWS Lambda.
+
+44
+00:03:15,920 --> 00:03:20,160
+Và đó là một lời khẩn khoản. Nó không đồng bộ.
+
+45
+00:03:20,160 --> 00:03:24,320
+Vì thế nó không chờ đợi sự hồi đáp của Lambda.
+
+46
+00:03:24,320 --> 00:03:30,720
+Vì vậy, một khi yêu cầu này đi đến AWS Lambda, sau đó nó sẽ được gửi đến Amazon
+
+47
+00:03:30,720 --> 00:03:36,800
+đá phiến. Và nền đá Amazon sẽ truyền tín hiệu phản ứng theo từng mảng.
+
+48
+00:03:36,800 --> 00:03:42,960
+Vì vậy, khi câu trả lời được tạo ra và được gửi đi, chức năng AWS Lambda này sẽ gửi
+
+49
+00:03:42,960 --> 00:03:50,880
+Câu trả lời cho AWS AppSync, mà sẽ gửi câu trả lời đó cho tất cả các khách hàng
+
+50
+00:03:50,880 --> 00:03:56,800
+đã đăng ký vào sự kiện này. Vì vậy, có thể có nhiều khách hàng hoặc người dùng đã
+
+51
+00:03:56,800 --> 00:04:03,200
+Theo dõi bảng điều khiển trực tiếp này khi câu trả lời được tạo ra. Tất cả những người đã đăng ký
+
+52
+00:04:03,200 --> 00:04:08,960
+Việc đăng ký cho sự kiện này sẽ được cập nhật. Được rồi. Vì vậy, đó là khá nhiều từ
+
+53
+00:04:08,960 --> 00:04:11,040
+bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
