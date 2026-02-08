@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:05,280
+Trong bài giảng này, tôi sẽ cung cấp cho bạn một tổng quan cao của Amazon Bedrock Tri thức
+
+2
+00:00:05,280 --> 00:00:12,480
+Cơ bản là năng lực cốt lõi của Amazon Bedrock nơi bạn có thể xây dựng một khung nền tảng
+
+3
+00:00:12,480 --> 00:00:13,480
+ứng dụng.
+
+4
+00:00:13,480 --> 00:00:18,780
+Vì vậy, trên phần này, chúng tôi sẽ lặn sâu vào mỗi khía cạnh của bedrock Amazon
+
+5
+00:00:18,780 --> 00:00:25,200
+Kiến thức cơ bản nhưng bây giờ, tôi sẽ chỉ cung cấp cho bạn một tổng quan cao để bắt đầu.
+
+6
+00:00:25,200 --> 00:00:30,920
+Vậy sự hiểu biết của Amazon Bedrock là gì? Đó là một khả năng quản lý hoàn toàn ở Amazon
+
+7
+00:00:30,920 --> 00:00:31,920
+Đá trải giường.
+
+8
+00:00:31,920 --> 00:00:38,960
+Vì vậy, nó có nghĩa là AWS sẽ chăm sóc chủ thể giám sát, phóng to, vá và vân vân
+
+9
+00:00:38,960 --> 00:00:41,880
+cho dịch vụ đặc biệt này.
+
+10
+00:00:41,880 --> 00:00:48,920
+Vì vậy, Amazon Bedrock kiến thức cơ bản cung cấp các mô hình nền tảng và các tác nhân văn cảnh thông tin
+
+11
+00:00:48,920 --> 00:00:57,040
+từ dữ liệu cá nhân của công ty để cung cấp những phản ứng thích hợp, chính xác và tùy chỉnh hơn.
+
+12
+00:00:57,040 --> 00:01:03,200
+Vì vậy, chúng tôi đã thảo luận trước đó rằng RAG cho phép bạn để kết nối với riêng của công ty của bạn
+
+13
+00:01:03,200 --> 00:01:08,360
+Nguồn dữ liệu do đó, đó là những gì Bedrock Fears làm.
+
+14
+00:01:08,360 --> 00:01:14,600
+Nhưng điều tốt là AWS chăm sóc tất cả sự phức tạp liên quan đến việc xây dựng
+
+15
+00:01:14,600 --> 00:01:19,800
+Ứng dụng dựa trên RAG, chỉ cần chọn cấu hình từ các tùy chọn
+
+16
+00:01:19,800 --> 00:01:26,120
+Được cung cấp bởi Bedrock Hiểu biết cơ sở và sau đó bạn sẽ có thể dễ dàng để xây dựng nền tảng RAG
+
+17
+00:01:26,120 --> 00:01:27,120
+ứng dụng.
+
+18
+00:01:27,120 --> 00:01:33,320
+Bây giờ, trước đây, chúng tôi đã xem xét 10 quyết định kiến trúc khác nhau mà bạn cần
+
+19
+00:01:33,320 --> 00:01:37,360
+để xây dựng một ứng dụng dựa trên RAG.
+
+20
+00:01:37,360 --> 00:01:42,400
+Và ở Nhà tri thức Bedrock, tất cả những khả năng đó đều nằm ngoài tầm kiểm soát.
+
+21
+00:01:42,400 --> 00:01:46,920
+Vì vậy, đầu tiên, bạn có thể chọn nguồn dữ liệu của bạn, nó cung cấp tùy chọn cho cả hai cấu trúc và
+
+22
+00:01:46,920 --> 00:01:51,680
+Dữ liệu chưa được cấu trúc, sau đó bạn có thể chọn chiến lược ghép của bạn, do đó, có khác nhau griting
+
+23
+00:01:51,680 --> 00:01:56,920
+Chiến lược có sẵn ở Amazon Bedrock  dọn dẹp hiểu biết, sau đó bạn có thể chọn cách sắp xếp
+
+24
+00:01:56,920 --> 00:02:02,400
+Mô hình, một lần nữa, có rất nhiều lựa chọn từ Amazon, Coear và vân vân, sau đó bạn có thể chọn
+
+25
+00:02:02,400 --> 00:02:06,320
+cơ sở dữ liệu véc tơ của bạn, có rất nhiều lựa chọn khác nhau dựa trên
+
+26
+00:02:06,320 --> 00:02:10,800
+trường hợp sử dụng của bạn, bạn có thể chọn một mô hình quay lại và sau đó cuối cùng, bạn cũng có thể chọn
+
+27
+00:02:10,800 --> 00:02:16,720
+Mô hình nền tảng từ Amazon Bedrock có thể thích hợp cho trường hợp sử dụng của bạn.
+
+28
+00:02:16,720 --> 00:02:22,160
+Vì vậy, bạn có thể chọn các tùy chọn khác nhau và sau đó ứng dụng RAG của bạn nên được sẵn sàng.
+
+29
+00:02:22,160 --> 00:02:27,400
+Vì vậy, chúng ta sẽ đào sâu vào tất cả 10 điểm quyết định khi chúng ta đi vào
+
+30
+00:02:27,400 --> 00:02:31,720
+khóa học, vì vậy nếu nó không rõ ràng với bạn, đó sẽ là tốt.
+
+31
+00:02:31,720 --> 00:02:36,640
+Vì vậy, điều này là rất quan trọng và bạn nên nhớ từ Amazon Bedrock kiến thức cơ bản
+
+32
+00:02:36,640 --> 00:02:44,200
+Cách tiếp cận, có hai hệ thống ATI sẵn sàng, thu thập hệ thống ATI và lấy và tạo ra ADI,
+
+33
+00:02:44,200 --> 00:02:50,700
+Vì vậy, những gì tìm kiếm ARI làm là, nó là chỉ phục hồi, vì vậy nó sẽ thực hiện tìm kiếm vector trở lại
+
+34
+00:02:50,700 --> 00:02:57,720
+Các đoạn trích đã lấy, vì vậy không có thế hệ đáp ứng LM và nó được sử dụng khi bạn muốn tìm kiếm
+
+35
+00:02:57,720 --> 00:03:05,520
+Kết quả chỉ, vì vậy về cơ bản nó mục tiêu từ bước 1 để bước 4, vì vậy chúng ta hãy nói nếu bạn kêu gọi
+
+36
+00:03:05,520 --> 00:03:11,600
+Công nghệ truy tìm và bạn gửi câu hỏi này, bao nhiêu lá trong năm 2026, nó chỉ chạy
+
+37
+00:03:11,600 --> 00:03:18,640
+nó sẽ không cho bạn câu trả lời cuối cùng.
+
+38
+00:03:18,640 --> 00:03:23,680
+Sau đó, bạn có các thu thập và tạo ra AI, nó lấy lại các đoạn có liên quan và gửi
+
+39
+00:03:23,680 --> 00:03:28,840
+Họ để các mô hình nền tảng để tạo ra câu trả lời cuối cùng, vì vậy đây là đầy đủ-viết, do đó, điều này
+
+40
+00:03:28,840 --> 00:03:35,200
+Xem xét từ bước 1 để bước 5, vì vậy nếu bạn gửi cho chúng tôi nói điều này như là một dấu nhắc và kêu gọi
+
+41
+00:03:35,200 --> 00:03:40,520
+Thu thập và tạo ra ADI, bạn sẽ nhận được một câu trả lời đầy đủ, vì vậy bạn cần phải nhớ
+
+42
+00:03:40,520 --> 00:03:44,320
+Từ góc nhìn kiểm tra, được rồi, vì vậy đó là khá nhiều nó từ bài giảng này, tôi sẽ
+
+43
+00:03:44,320 --> 00:03:45,320
+cảm ơn.
+
