@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:06,080
+Trước đó, chúng ta đã thảo luận 15 quyết định kiến trúc quan trọng mà chúng ta cần để xây dựng một sản phẩm sẵn sàng
+
+2
+00:00:06,080 --> 00:00:11,440
+Ứng dụng sáng tạo. Bây giờ, người đầu tiên chúng ta thảo luận về dịch vụ Gen A, sau đó chúng ta nói về
+
+3
+00:00:11,440 --> 00:00:17,280
+Chọn lọc LM, sau đó là thứ ba chúng tôi đào sâu vào hệ thống AI và bảo vệ.
+
+4
+00:00:17,280 --> 00:00:23,440
+Bây giờ, khía cạnh quan trọng thứ tư là dấu nhắc trong tháng Giêng. Được rồi, hãy nhanh chóng xem xét một vài
+
+5
+00:00:23,440 --> 00:00:28,880
+Điều kiện quan trọng. Vì vậy, đầu tiên chúng tôi có các mô hình cơ bản và hãy nói rằng chúng tôi có người dùng cuối cung cấp
+
+6
+00:00:28,880 --> 00:00:34,720
+một kết nhập vào mô hình nền tảng này để tạo ra một phản hồi. Vì vậy, dấu nhắc ở đây đề cập đến các
+
+7
+00:00:34,720 --> 00:00:42,160
+nhập cung cấp mô hình nền tảng để gợi ý đáp ứng. Vì vậy, câu trả lời được tạo ra là
+
+8
+00:00:42,160 --> 00:00:48,240
+được gọi là hoàn thành và toàn bộ quá trình nơi chúng tôi gửi các nhắc đến các mô hình và nó tạo ra
+
+9
+00:00:48,240 --> 00:00:54,880
+một phản ứng là suy luận hoặc tham khảo ý kiến. Bây giờ, chất lượng của các dấu nhắc mà bạn cung cấp cho
+
+10
+00:00:54,880 --> 00:01:01,680
+Mô hình nền tảng có thể ảnh hưởng đến chất lượng phản ứng của họ. Vì vậy, có nhiều cách mà trong đó
+
+11
+00:01:01,680 --> 00:01:07,120
+Bạn có thể cải thiện chất lượng phản ứng từ mô hình nền tảng. Vì vậy, bạn có giẻ rách hoặc thu hồi
+
+12
+00:01:07,120 --> 00:01:14,400
+Thế hệ tăng cường, sau đó tùy biến các mô hình nền tảng sử dụng chỉnh sửa tốt và vân vân.
+
+13
+00:01:14,400 --> 00:01:19,440
+Và chúng tôi sẽ thảo luận tất cả những điều này trong các bài giảng sau, nhưng chi phí đơn giản nhất và nhất
+
+14
+00:01:19,440 --> 00:01:24,640
+Cách hiệu quả để cải thiện chất lượng phản ứng từ các mô hình nền được biết đến như
+
+15
+00:01:24,640 --> 00:01:31,120
+Kỹ thuật nhắc nhở. Vì vậy, nhắc kỹ thuật đề cập đến thực hành tối ưu hóa văn bản
+
+16
+00:01:31,120 --> 00:01:38,480
+nhập vào mô hình nền để có câu trả lời mong muốn. Bây giờ, hãy xem qua một số
+
+17
+00:01:38,480 --> 00:01:44,640
+Các yếu tố của một thiết kế nhanh chóng. Bây giờ, ở đây chúng tôi có một bài báo dài liên quan đến bóng đá
+
+18
+00:01:44,640 --> 00:01:51,200
+và Lionel Messi. Hãy nói rằng chúng tôi gửi điều này đến các mô hình nền tảng với tóm tắt này.
+
+19
+00:01:51,200 --> 00:01:56,880
+Bây giờ, mô hình nền tảng của chúng tôi không có bất kỳ bối cảnh về bài báo này là gì và nếu anh ta phải
+
+20
+00:01:56,880 --> 00:02:03,280
+Tóm tắt trong bao nhiêu từ cần tóm tắt hoặc nên là dạng xuất.
+
+21
+00:02:03,280 --> 00:02:10,400
+Vì vậy, kết quả mà các mô hình nền tảng sẽ tạo ra có thể không tuyệt vời như vậy. Vì vậy, những gì là
+
+22
+00:02:10,400 --> 00:02:16,320
+Những yếu tố then chốt của một thiết kế nhanh chóng? Vì vậy, điều đầu tiên là bạn nên cung cấp một số bối cảnh
+
+23
+00:02:16,320 --> 00:02:21,040
+thông tin về nhiệm vụ. Vì vậy, ở đây bạn có thể thấy bây giờ chúng tôi đã cung cấp thông tin ngữ cảnh
+
+24
+00:02:21,040 --> 00:02:26,640
+Chúng tôi đang nói rằng đây là bản đánh giá thế giới tách bóng bầu dục từ Qatar 2022.
+
+25
+00:02:26,640 --> 00:02:33,120
+Tiếp theo chúng tôi cung cấp văn bản nhập cho nhiệm vụ và sau đó chúng tôi rõ ràng đặt ra các đặc điểm công việc.
+
+26
+00:02:33,120 --> 00:02:40,080
+Trong trường hợp này chúng tôi yêu cầu nó tóm tắt văn bản này. Sau đó chúng tôi cũng cho nó tóm tắt các
+
+27
+00:02:40,080 --> 00:02:46,480
+trên xem xét trong hai dòng. Vì vậy, chúng tôi cung cấp cho một đặc điểm đầu ra rõ ràng nói rằng tóm tắt trong
+
+28
+00:02:46,480 --> 00:02:52,000
+2 vạch. Tóm lại, nếu bạn phải có được kết quả tuyệt vời từ mô hình nền tảng chúng ta nên
+
+29
+00:02:52,000 --> 00:02:59,600
+đưa ra những hướng dẫn rõ ràng và súc tích định nghĩa công việc phải hoàn thành vào cuối và sau đó
+
+30
+00:02:59,600 --> 00:03:06,000
+cũng cung cấp cho nó đặc điểm đầu ra. Vì vậy, có những kỹ thuật động cơ khác nhau
+
+31
+00:03:06,000 --> 00:03:11,520
+mà có thể giúp bạn cải thiện kết quả mong muốn từ mô hình nền tảng hoặc mẫu lớn
+
+32
+00:03:11,520 --> 00:03:17,840
+Mô hình ngôn ngữ. Vì vậy, ở đây bạn có thể thấy chúng tôi có thể bắt đầu với các nền tảng cơ bản mô hình và sau đó chúng tôi sử dụng
+
+33
+00:03:17,840 --> 00:03:23,680
+0 nhắc ngắn và xem nếu chúng ta có được kết quả mong muốn từ mô hình ngôn ngữ lớn.
+
+34
+00:03:23,680 --> 00:03:29,600
+Vì vậy, nếu điều này không làm việc sau đó chúng tôi di chuyển đến một nhắc ngắn và sau đó ngắn nhắc cho đến khi
+
+35
+00:03:29,600 --> 00:03:36,560
+chúng ta đạt được kết quả hoàn hảo. Có hai kỹ thuật khác được gọi là chuỗi suy nghĩ
+
+36
+00:03:36,560 --> 00:03:43,040
+Lập luận và hành động mà chúng tôi sẽ thảo luận sau trong phần về
+
+37
+00:03:43,040 --> 00:03:50,960
+Các đặc vụ vì cả hai kỹ thuật này đều được sử dụng trong đấu trường AI đặc biệt. Vì vậy, chúng ta hãy bắt đầu với
+
+38
+00:03:50,960 --> 00:03:56,560
+Không có động tĩnh ngắn. Mô hình nền tảng có khả năng thực hiện một số công việc đơn giản
+
+39
+00:03:56,560 --> 00:04:03,280
+Không ngắn. Vì vậy, nó có nghĩa là không có ví dụ cần thiết để được cung cấp cho các mô hình nền tảng
+
+40
+00:04:03,280 --> 00:04:09,360
+để hoàn thành nhiệm vụ. Chúng ta hãy nói rằng chúng tôi cung cấp cho một nhắc nhở để các mô hình cơ bản chúng tôi là
+
+41
+00:04:09,360 --> 00:04:15,840
+nói rằng viết một mô tả sản phẩm hấp dẫn cho một T-shirt cho một trang web điện tử quần áo
+
+42
+00:04:15,840 --> 00:04:21,280
+Và mô hình nền tảng của chúng tôi đi trước và viết mô tả hấp dẫn.
+
+43
+00:04:21,280 --> 00:04:27,520
+Vì vậy, trong một nhắc ngắn chúng tôi cung cấp một ví dụ cho các mô hình để hỗ trợ các mô hình để
+
+44
+00:04:27,520 --> 00:04:36,640
+Hiểu và tạo ra phản ứng. Bây giờ, chúng ta hãy xem một ví dụ. Vì vậy, đây là toàn bộ của chúng tôi
+
+45
+00:04:36,640 --> 00:04:43,040
+Nhắc lại. Đầu tiên, chúng tôi đưa ra một ví dụ về mô hình. Hãy nói rằng viết một mô tả sản phẩm hấp dẫn
+
+46
+00:04:43,040 --> 00:04:50,400
+Cho trang web điện tử quần áo và sau đó chúng tôi nói với nó đây là chiếc váy bãi biển nữ sản phẩm
+
+47
+00:04:50,400 --> 00:04:56,960
+và sau đó chúng tôi xác định một số tính năng ở đây và sau đó chúng tôi nói với các mô hình làm thế nào để viết mô tả này.
+
+48
+00:04:56,960 --> 00:05:03,520
+Vì vậy, chúng tôi đưa ra ví dụ này của mô tả. Sau đó chúng tôi cho mô hình những gì nó cần để làm
+
+49
+00:05:03,520 --> 00:05:09,600
+trong cùng một thời điểm. Vì vậy, chúng tôi nói với nó viết một mô tả hấp dẫn cho trang web điện tử quần áo.
+
+50
+00:05:09,600 --> 00:05:15,120
+Hãy chắc chắn bao gồm những điểm theo đây trong mô tả. Vì vậy, chúng tôi nói sản phẩm thời gian này là hài hước,
+
+51
+00:05:15,120 --> 00:05:20,080
+Áo sơ mi của đàn ông và các nét vẽ mềm, ngắn, tay áo, có in,
+
+52
+00:05:20,080 --> 00:05:27,920
+Mã Einstein và vân vân và rồi chúng ta để trống mô tả này. Vì vậy, lần này nó sẽ có thể
+
+53
+00:05:27,920 --> 00:05:33,920
+viết mô tả sản phẩm. Vì vậy, đây là đầu ra nó đã tạo ra bằng cách học qua một
+
+54
+00:05:33,920 --> 00:05:40,080
+Ví dụ mà chúng tôi đã đưa ra như một phần của dấu nhắc. Bây giờ, có thể có các kịch bản nơi các mô hình
+
+55
+00:05:40,080 --> 00:05:45,440
+vẫn không thể cung cấp kết xuất ghi ngay cả sau khi đưa ra một ví dụ.
+
+56
+00:05:47,520 --> 00:05:54,000
+Bây giờ, trong tương lai thúc đẩy bạn cung cấp một vài ví dụ cho các mô hình để sản xuất chất lượng cao.
+
+57
+00:05:54,000 --> 00:05:59,600
+Vì vậy, đây là cách chúng tôi viết các dấu nhắc. Vì vậy, đầu tiên chúng tôi cho một ví dụ về làm thế nào để viết một hấp dẫn
+
+58
+00:05:59,600 --> 00:06:03,920
+Mô tả sản phẩm. Vì vậy, chúng tôi viết chúng tôi nói với nó về các sản phẩm sau đó cung cấp cho nó các tính năng
+
+59
+00:06:03,920 --> 00:06:09,040
+và sau đó viết mô tả. Sau đó chúng tôi cho nó một ví dụ khác viết một sản phẩm hấp dẫn
+
+60
+00:06:09,040 --> 00:06:14,080
+Mô tả. Sau đó chúng tôi cung cấp cho các sản phẩm thứ hai chúng tôi cung cấp các tính năng và viết các mô tả bản thân mình.
+
+61
+00:06:14,880 --> 00:06:21,120
+Sau đó, trong trường hợp thứ ba chúng tôi cung cấp cho các tên sản phẩm hài hước, đồ thị t-shirt nam, chúng tôi cung cấp các tính năng
+
+62
+00:06:21,120 --> 00:06:29,200
+và yêu cầu nó hoàn thành mô tả. Và bạn có thể thấy đây là kết quả nó đã tạo ra.
+
+63
+00:06:29,200 --> 00:06:35,360
+Vì vậy, trong bối cảnh này mô hình cơ bản của chúng tôi hiểu thông qua nhiều ví dụ mà chúng tôi có
+
+64
+00:06:35,360 --> 00:06:41,360
+tạo ra kết xuất ghi. Bây giờ, trong một số trường hợp ngay cả điều này có thể không hiệu quả,
+
+65
+00:06:41,360 --> 00:06:48,240
+sau đó chúng ta có thể nhìn vào chuỗi suy luận, lý luận và hành động hoặc phản ứng hoặc nếu
+
+66
+00:06:48,240 --> 00:06:53,920
+Trang web kỹ thuật nhắc nhở không hoạt động sau đó chúng tôi chuyển sang retrival tăng cường thế hệ hoặc mô hình
+
+67
+00:06:53,920 --> 00:07:00,720
+Tùy biến. Nhưng kỹ thuật nhanh chóng là cách hiệu quả nhất và dễ nhất để cải thiện
+
+68
+00:07:00,720 --> 00:07:04,800
+Kết quả mô hình. Vì vậy, đó là khá nhiều nó từ bài giảng này tôi sẽ xem trong bài giảng tiếp theo.
+
+69
+00:07:04,800 --> 00:07:05,120
+Cảm ơn.
+
