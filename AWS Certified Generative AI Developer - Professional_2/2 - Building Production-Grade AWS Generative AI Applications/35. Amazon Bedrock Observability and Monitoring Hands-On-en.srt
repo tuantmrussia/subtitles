@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,280
+ In this lecture, we're going to do a quick hands-on demo of the observability and monitoring
+
+2
+00:00:05,280 --> 00:00:10,080
+ capabilities in Amazon bedrock. So the first thing we're going to do is we're going to
+
+3
+00:00:10,080 --> 00:00:18,400
+ search for bedrock here. So here we have our Amazon bedrock. Now I'm on the Amazon
+
+4
+00:00:18,400 --> 00:00:23,040
+ bedrock service. So if I just continue to scroll down, you can see here settings, just click on
+
+5
+00:00:23,040 --> 00:00:28,080
+ this settings. And here you can see model invocation logging. So you have to just enable
+
+6
+00:00:28,080 --> 00:00:33,600
+ model invocation logging. And then you have to define where you want to send your logs. So it can
+
+7
+00:00:33,600 --> 00:00:40,480
+ be S3 bucket, cloud watch only or both S3 and cloud watch. So I will just select cloud watch logs
+
+8
+00:00:40,480 --> 00:00:45,360
+ only. And here then you have to provide the log group name. So I've already set it up and I have
+
+9
+00:00:45,360 --> 00:00:51,920
+ provided this bedrock underscore demo log group name. So for you, you will have to create this log group
+
+10
+00:00:51,920 --> 00:00:58,400
+ name. So let me just open another window. Okay, now I have this another window. Let me just search
+
+11
+00:00:58,400 --> 00:01:06,240
+ for cloud watch. Okay, here I have cloud watch. Okay, now I'm on the Amazon cloud watch service.
+
+12
+00:01:06,240 --> 00:01:13,520
+ So if I just scroll down and click on this log management. And here just click on create log group
+
+13
+00:01:13,520 --> 00:01:18,240
+ and just give the name of the log group. So I'll just say demo underscore bedrock underscore
+
+14
+00:01:18,240 --> 00:01:22,960
+ monitoring. Then we have the retention settings for how long you want to retain these logs.
+
+15
+00:01:22,960 --> 00:01:28,800
+ Maybe I'll say three months, log class standard in frequent access. And then if you want to
+
+16
+00:01:28,800 --> 00:01:34,640
+ encrypt it, you can use KMS, tags, etc. But I'll just skip it for now. So I'll just say create.
+
+17
+00:01:34,640 --> 00:01:43,520
+ So now our log group demo underscore bedrock underscore monitoring has been created.
+
+18
+00:01:43,520 --> 00:01:49,680
+ So I'll just go back to our Amazon bedrock. So here in the settings, now I have to provide the log
+
+19
+00:01:49,680 --> 00:01:55,520
+ group name. So I'll just provide the same log group. I'll say demo underscore bedrock underscore
+
+20
+00:01:55,520 --> 00:02:00,720
+ monitoring. And then choose the method to authorize. So you can either choose an existing role
+
+21
+00:02:00,720 --> 00:02:05,120
+ or you can create a new service role. So I'll just click on create new service role. And maybe I'll
+
+22
+00:02:05,120 --> 00:02:10,240
+ just give it the same name demo underscore bedrock underscore monitoring can give it anything you
+
+23
+00:02:10,240 --> 00:02:17,520
+ want. So if you also want to publish it to S3, then you can just give the S3 bucket name,
+
+24
+00:02:17,520 --> 00:02:22,320
+ but we'll just skip it for now. We'll send the logs only to CloudWatch. Okay. Then I'll just click on
+
+25
+00:02:22,320 --> 00:02:29,440
+ save settings. Okay. I waited a few minutes. And you can see here your settings have been saved
+
+26
+00:02:29,440 --> 00:02:35,280
+ successfully. And here this button is now grayed out. Okay. Now what I can do is let me just
+
+27
+00:02:35,280 --> 00:02:40,960
+ rather than showing through the application itself, let me just go to this text and click on this
+
+28
+00:02:40,960 --> 00:02:47,840
+ chat text playground. And here I can just select a model. Let me just select Amazon. No a pro
+
+29
+00:02:47,840 --> 00:02:54,240
+ apply. Now I can just post a question. And then we'll see how the logs and metrics are captured
+
+30
+00:02:54,240 --> 00:03:00,400
+ for the query we send to the foundation model. So I'll just say paste. And just remember we have used
+
+31
+00:03:00,400 --> 00:03:08,880
+ no a pro here. And let me just do a run. And it will generate a response. So it has generated some
+
+32
+00:03:08,880 --> 00:03:17,600
+ response. Okay. Now what we can do is we can go to our CloudWatch logs and see what kind of logs and
+
+33
+00:03:17,600 --> 00:03:24,000
+ metrics are generated for this request that is being sent to the foundation model. So I'll go to
+
+34
+00:03:24,000 --> 00:03:31,040
+ the log group. And let's search for this demo bedrock. So this particular log group, let me just copy
+
+35
+00:03:31,040 --> 00:03:36,480
+ and just search here. And here we have the log group. So if I just click on this,
+
+36
+00:03:36,480 --> 00:03:46,960
+ I should be able to see the logs. So we can see here AWS bedrock model invocation. And if I just
+
+37
+00:03:46,960 --> 00:03:55,760
+ click on this, so you can see it has generated the logs. Now if I just click on this. And let me just
+
+38
+00:03:55,760 --> 00:04:00,800
+ increase the font. And you can just see here the logs. So you can see the timestamp when it was
+
+39
+00:04:00,800 --> 00:04:06,160
+ generated, you can see the account ID, you can see the region and some other details. And if I just
+
+40
+00:04:06,160 --> 00:04:12,240
+ continue to scroll down, now you can see the input that went to the foundation model. So this
+
+41
+00:04:12,240 --> 00:04:17,520
+ was our question, what is Amazon bedrock? Then it shows some inference configuration. So if I just go
+
+42
+00:04:17,520 --> 00:04:24,720
+ here, so on the left hand side, you can see max output tokens. And that's two five six zero. So
+
+43
+00:04:24,720 --> 00:04:29,920
+ that's what it's showing here. Max tokens two five six zero. When we made a request to the foundation
+
+44
+00:04:29,920 --> 00:04:36,400
+ model, what where our inference configuration pyramid, then it's highlighting input token count.
+
+45
+00:04:37,280 --> 00:04:43,440
+ So when we send the request, what is Amazon bedrock? The total token input token count was eight.
+
+46
+00:04:43,440 --> 00:04:50,160
+ So this is where you can use Amazon CloudWatch to monitor your cost because you can monitor the
+
+47
+00:04:50,160 --> 00:04:55,120
+ token count. And as we had earlier discussed, your charge per thousand token count. So that's how
+
+48
+00:04:55,120 --> 00:05:00,160
+ you can monitor the cost. And then if I just continue to scroll down, you'll see this is the
+
+49
+00:05:00,160 --> 00:05:06,880
+ response that is generated by the foundation model. So it has captured the input prompt, the response,
+
+50
+00:05:06,880 --> 00:05:12,800
+ configuration parameters, then number of tokens, and we'll continue to see some other parameters.
+
+51
+00:05:12,800 --> 00:05:19,360
+ So you can see latency. So latency four, three, eight, nine milliseconds. And that's another
+
+52
+00:05:19,360 --> 00:05:24,240
+ parameter you can monitor through CloudWatch. And then again, you have some usage matrix,
+
+53
+00:05:24,240 --> 00:05:30,640
+ input tokens eight, the output tokens, it has generated, and which is basically this response that is
+
+54
+00:05:30,640 --> 00:05:37,680
+ it has generated. So this output tokens is about 462 and total tokens is 470. Okay, so that's pretty
+
+55
+00:05:37,680 --> 00:05:44,320
+ much on the logs that it has generated for this particular request. Now if I just go and scroll down
+
+56
+00:05:44,320 --> 00:05:49,520
+ and you can see here, we have all metrics. So if I just click on this all metrics. And then you have
+
+57
+00:05:49,520 --> 00:05:56,800
+ this bedrock. So I'll just click on this bedrock. And now here, I can just click on this by model ID.
+
+58
+00:05:58,400 --> 00:06:03,440
+ And if we just see here for this no, uh, pro, so you can see these are the metrics that you can
+
+59
+00:06:03,440 --> 00:06:10,160
+ monitor in vocations, invocation latency, in vocations, output token. So if I just select any of them,
+
+60
+00:06:10,160 --> 00:06:16,400
+ so our model was Amazon Nova Pro, if I just click on this on the dashboard, you can see here.
+
+61
+00:06:16,400 --> 00:06:21,520
+ So invocation one, because we just invoked the foundation model. So I've just selected three
+
+62
+00:06:21,520 --> 00:06:27,120
+ hour timeline. So if we just look at another metrics, if I just click on this, and you can see
+
+63
+00:06:27,120 --> 00:06:33,200
+ we have another metrics here now and which is output token count, which was 462. Now if I just
+
+64
+00:06:33,200 --> 00:06:38,720
+ also select the input token count, I think the total was 470. So you can see here input token
+
+65
+00:06:38,720 --> 00:06:44,720
+ count will be eight and output token was 462, so total of 470. So this is how you can select
+
+66
+00:06:44,720 --> 00:06:50,880
+ metrics and then visualize it on a dashboard or you can also set up some alarms, etc.
+
+67
+00:06:50,880 --> 00:06:56,080
+ Now the last thing I want to show you, and that is important from the exam perspective as well,
+
+68
+00:06:56,800 --> 00:07:03,040
+ on how you can get some analysis through log inside. Okay, if I just click on this log insights,
+
+69
+00:07:03,040 --> 00:07:10,560
+ and you can see here we can write our query and get response from our logs. So now let me just
+
+70
+00:07:10,560 --> 00:07:16,160
+ paste a query here, and this is a simple query, it just basically retrieves all the logs
+
+71
+00:07:16,160 --> 00:07:21,040
+ that are available there, since we don't have a lot of data. But let's say you had a lot of data
+
+72
+00:07:21,040 --> 00:07:28,400
+ and you wanted to identify request where the latency has been more than your threshold. So you can
+
+73
+00:07:28,400 --> 00:07:33,440
+ define that query and get the results. So I will just run this query and basically what we're going
+
+74
+00:07:33,440 --> 00:07:41,200
+ to get is, so we just only have one invocation log here, because we ran only one prompt or one query.
+
+75
+00:07:41,200 --> 00:07:46,720
+ Now what I can also do is I can just do summarize results, so it's going to summarize whatever is
+
+76
+00:07:46,720 --> 00:07:52,640
+ in these logs and show me here. So you can see here, the log shows converse stream,
+
+77
+00:07:52,640 --> 00:07:59,200
+ operation executed at this time, and then it says with eight input tokens and so on. So it
+
+78
+00:07:59,200 --> 00:08:03,520
+ provides you with all the summary. Okay, so that's pretty much it from this lecture as in the next
+
+79
+00:08:03,520 --> 00:08:04,240
+ lecture. Thank you.
+
