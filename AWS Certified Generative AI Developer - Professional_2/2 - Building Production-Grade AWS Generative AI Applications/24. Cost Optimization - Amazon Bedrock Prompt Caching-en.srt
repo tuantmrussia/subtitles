@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:05,120
+ Now in this lecture I'm going to show you a hands-on demo of the Amazon Bedrock Prom caching.
+
+2
+00:00:05,120 --> 00:00:09,360
+ So what I have done is I have just written a Lambda function demo prompt caching.
+
+3
+00:00:09,360 --> 00:00:15,760
+ And if you can just show you the code here, so what I have done is I have created some static
+
+4
+00:00:15,760 --> 00:00:23,040
+ prefix or system prompt and it's just generic information that helps the foundation model
+
+5
+00:00:23,040 --> 00:00:28,400
+ to get some context. So this is going to be reusable or cacheable. And then I said,
+
+6
+00:00:28,400 --> 00:00:35,920
+ okay, cache point as type default. And then I have some dynamic user prompt. Again, I put
+
+7
+00:00:35,920 --> 00:00:42,160
+ a lot of it as static. Now the only thing that is going to change here is the machine ID. So as a
+
+8
+00:00:42,160 --> 00:00:48,400
+ change the value of the machine ID, I will ask it to summarize. So then we'll see what is the
+
+9
+00:00:48,400 --> 00:00:55,600
+ reduction in the number of tokens. So basically, since this is static, we should see some reduction
+
+10
+00:00:55,600 --> 00:01:01,760
+ in the number of tokens and also latency. Okay, so that's basically the function I have written.
+
+11
+00:01:01,760 --> 00:01:07,600
+ Okay, now let's take a look. So I've already written a prompt caching test. So let me just quickly show
+
+12
+00:01:07,600 --> 00:01:14,880
+ you. So you can see here, this is the machine ID. And right now it is 4522. So I will run it once.
+
+13
+00:01:14,880 --> 00:01:20,640
+ So it will store the static part of the prompt. And then I will change the machine ID.
+
+14
+00:01:20,640 --> 00:01:26,880
+ And basically, it will change this machine ID, but we'll still be able to reuse some part of the
+
+15
+00:01:26,880 --> 00:01:34,400
+ static prompt. Okay, now let me just go ahead and invoke this. Let me just go ahead and say test.
+
+16
+00:01:34,400 --> 00:01:45,920
+ Let me just click on this. Okay, now you can see here, basically latency is 1, 3, 4, 5 milliseconds.
+
+17
+00:01:45,920 --> 00:01:52,240
+ And the number of total tokens used is we have the input token 143 and output token is 350.
+
+18
+00:01:52,240 --> 00:01:58,160
+ So let me just copy this and we'll see the change. So let me just paste it here.
+
+19
+00:01:58,160 --> 00:02:03,360
+ And now let me just go back to my lambda function. Okay, now I'm just going to change the machine
+
+20
+00:02:03,360 --> 00:02:11,280
+ ID. So I'll just click on this. And let's say the machine ID is 99. And then I'll just do a save.
+
+21
+00:02:12,400 --> 00:02:16,160
+ Okay, now this has been saved. Now let me just go ahead and test it again.
+
+22
+00:02:16,160 --> 00:02:28,800
+ Okay, so it continues to run. Okay, I've waited a few seconds and now it has generated a response.
+
+23
+00:02:28,800 --> 00:02:34,560
+ So you can see latency this time is 1074 seconds. If we just go to the previous request,
+
+24
+00:02:34,560 --> 00:02:40,720
+ then latency was 1345. So it has reduced the latency. So now we are also able to see
+
+25
+00:02:40,720 --> 00:02:48,800
+ this cache read input tokens. So it has reused 77 tokens. Obviously this was a very short prompt
+
+26
+00:02:48,800 --> 00:02:54,320
+ that we had written. But if you're going to write longer prompts and the documents are going to be
+
+27
+00:02:54,320 --> 00:03:00,320
+ much more large, there's going to be a lot of reusability. So I just wanted to quickly show you
+
+28
+00:03:00,320 --> 00:03:05,680
+ how you can use prompt caching. Now you can also see this capability from the console itself.
+
+29
+00:03:05,680 --> 00:03:10,560
+ So if I just go to this chat playground and let me just select a model, let me say no more pro.
+
+30
+00:03:10,560 --> 00:03:17,440
+ And if I just scroll down here, you'll be able to see prompt caching. So I can enable this and
+
+31
+00:03:17,440 --> 00:03:22,400
+ your prompts and model responses are automatically saved in cache checkpoint. But when
+
+32
+00:03:22,400 --> 00:03:26,480
+ you try it through the console, sometimes it doesn't work. So that's why I showed it to you
+
+33
+00:03:26,480 --> 00:03:30,640
+ programmatically. Okay, so that's pretty much it from this lecture. I'll see in the next lecture.
+
+34
+00:03:30,640 --> 00:03:31,280
+ Thank you.
+
