@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:05,600
+ Okay, now I'm going to show you a quick demo on the rag observability and monitoring and earlier,
+
+2
+00:00:05,600 --> 00:00:09,840
+ if you remember, we had discussed there are two types of logs in bedrock knowledge base.
+
+3
+00:00:09,840 --> 00:00:14,560
+ So let's go ahead and explore how we can monitor this through the cloud watch.
+
+4
+00:00:14,560 --> 00:00:19,920
+ So this is a knowledge base we had created in the previous lecture.
+
+5
+00:00:19,920 --> 00:00:27,040
+ So what I can do is I can just go to this demo bedrock kB001 and just click on this edit here
+
+6
+00:00:27,040 --> 00:00:33,120
+ and then you can see log deliveries. So I can just say add to Amazon cloud watch logs to Amazon
+
+7
+00:00:33,120 --> 00:00:39,840
+ S3 to Amazon data firehouse. So I'll just click on to Amazon cloud watch logs and here it
+
+8
+00:00:39,840 --> 00:00:46,080
+ automatically creates a log group. So just remember it ends with QBU and I'll just say add.
+
+9
+00:00:46,080 --> 00:00:53,440
+ Okay, now it has added this log group. So if I just click on this log group, it will
+
+10
+00:00:53,440 --> 00:00:59,600
+ take me to cloud watch logs. Now you can see there's nothing in this log group at this point of time.
+
+11
+00:00:59,600 --> 00:01:04,480
+ Now what I'm going to do is I'm going to make a little change. So I'll just go to this S3 bucket
+
+12
+00:01:04,480 --> 00:01:12,400
+ and upload one more document. So this is my data source. So I'll just click on this AWS overview.
+
+13
+00:01:12,400 --> 00:01:17,520
+ It just gives you an overview of all the AWS services. So let me just click on upload.
+
+14
+00:01:19,360 --> 00:01:23,760
+ So it's going to take a few minutes. Okay. Now everything has been uploaded. Okay. Now this document
+
+15
+00:01:23,760 --> 00:01:28,800
+ has been uploaded. Now let me just go back to the knowledge base. So I'm here on the knowledge base.
+
+16
+00:01:28,800 --> 00:01:33,600
+ Let me just go here. So we have to sync the data. Now what we have to do is we have to sync the
+
+17
+00:01:33,600 --> 00:01:38,960
+ data. So let me just click on this knowledge base and you can see here sync. So I'll just click on
+
+18
+00:01:38,960 --> 00:01:45,760
+ this sync and it's good to resync. So what sync basically does is when we add new data to the
+
+19
+00:01:45,760 --> 00:01:50,960
+ knowledge base, it will do the chunking, then it will create vector embeddings, store it in the
+
+20
+00:01:50,960 --> 00:01:56,160
+ vector store and do all that behind the scenes. So every time you add new data, you have to
+
+21
+00:01:56,160 --> 00:02:01,520
+ do a resync. Now it has completely synced. So now if I just go back to the cloud watch,
+
+22
+00:02:01,520 --> 00:02:08,400
+ I should be able to see some logs. And you can see now these logs have been generated.
+
+23
+00:02:08,400 --> 00:02:13,280
+ So if I just click on this and let's see some of the logs that are getting generated.
+
+24
+00:02:13,280 --> 00:02:18,880
+ So you can see ingestion jobs started and number of resources and there's some parameters here.
+
+25
+00:02:18,880 --> 00:02:26,720
+ And then so it's showing as event timestamp, then ingestion job ID, what was the source data
+
+26
+00:02:26,720 --> 00:02:33,200
+ location, data sources. And then if you just click, it will show you more details on see here
+
+27
+00:02:33,200 --> 00:02:39,200
+ it's showing as embedding started and then it will show stored in the vector store and so on.
+
+28
+00:02:39,200 --> 00:02:43,920
+ So it will show you all the jobs that have been run, you know, all the processes that it has
+
+29
+00:02:43,920 --> 00:02:48,960
+ followed, which is the data source document uploaded chunking done, vector embedding done,
+
+30
+00:02:48,960 --> 00:02:55,120
+ and if I just continue and it will show you till this job is complete. So if anything fails,
+
+31
+00:02:55,120 --> 00:02:59,840
+ you will be able to see it here. So what you can do is you can monitor all of these statistics
+
+32
+00:02:59,840 --> 00:03:06,080
+ here. So if any resource fails or any part of the process fails, and then you can set up cloud watch
+
+33
+00:03:06,080 --> 00:03:12,720
+ plums. So one last thing I want to highlight is for these resource logs. So just remember because
+
+34
+00:03:12,720 --> 00:03:19,600
+ these resource logs also use a large language model to generate a response to a query. So a
+
+35
+00:03:19,600 --> 00:03:25,120
+ respective of where you are invoking the model from, whether it's from the console here on the
+
+36
+00:03:25,120 --> 00:03:31,760
+ playground or you have built an application using API gateway lambda and Amazon bedrock or through a
+
+37
+00:03:31,760 --> 00:03:39,440
+ rack system, your logs would be stored in the log group. You have configured here under this setting
+
+38
+00:03:39,440 --> 00:03:45,680
+ and earlier we had seen that we had configured the logs under this log group name demo underscore
+
+39
+00:03:45,680 --> 00:03:51,360
+ bedrock underscore monitoring. So irrespective of wherever you send the prompt to the foundation
+
+40
+00:03:51,360 --> 00:03:57,120
+ model, they would be logged here in this particular log group. Okay, so that's pretty much it from
+
+41
+00:03:57,120 --> 00:03:58,780
+ from this lecture as in the next lecture, thank you.
+
