@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,440
+ Now in this lecture we are going to focus on the 7th key architectural decision which is
+
+2
+00:00:05,440 --> 00:00:12,480
+ selection of generic compute and orchestration layer and here we have three options AWS Lambda,
+
+3
+00:00:12,480 --> 00:00:19,360
+ EC2 and ECS and remember from the exam perspective the main focus is going to be on AWS Lambda.
+
+4
+00:00:19,360 --> 00:00:28,000
+ Now we know that EC2 is mainly a virtual server and if you see in terms of the responsibilities
+
+5
+00:00:28,000 --> 00:00:32,720
+ in managing various layers of EC2 so we have the physical server here which is basically just the
+
+6
+00:00:32,720 --> 00:00:38,480
+ hardware and then you have the host OS which can be either windows or Linux and then we have the
+
+7
+00:00:38,480 --> 00:00:45,680
+ hypervisor layer and AWS mainly uses AWS nitro systems and all these layers are AWS managed.
+
+8
+00:00:45,680 --> 00:00:51,600
+ And then you can see we have three virtual machines here so we have the guest OS and on top of this
+
+9
+00:00:51,600 --> 00:00:56,720
+ virtual machine you can write your application logic. Now if you can quickly look at some of the
+
+10
+00:00:56,720 --> 00:01:02,640
+ features for EC2 so first in terms of architecture we already discussed it's a virtual machine
+
+11
+00:01:02,640 --> 00:01:10,240
+ in terms of the management so customer manages the guest OS patching security scaling.
+
+12
+00:01:10,240 --> 00:01:16,560
+ Now in terms of pricing model for EC2 you will be charged per hour or per second for running
+
+13
+00:01:16,560 --> 00:01:22,800
+ provision instances and there are different type of instances on demand reserved spot options
+
+14
+00:01:22,800 --> 00:01:26,880
+ and here we will not go into those details because this is not really relevant from the exam
+
+15
+00:01:26,880 --> 00:01:34,400
+ perspective. Now in terms of the execution limit this is designed for long running applications
+
+16
+00:01:34,400 --> 00:01:40,800
+ and why I have highlighted here is that in terms of the Lambda function the execution limit is 15
+
+17
+00:01:40,800 --> 00:01:48,400
+ minutes if the Genia application logic needs to run for more than 15 minutes then AWS Lambda is not
+
+18
+00:01:48,400 --> 00:01:55,680
+ the right service so then either you have to look at EC2 or ECS which are more long running
+
+19
+00:01:55,680 --> 00:02:02,160
+ applications. Now in terms of scaling you can either manually scale an EC2 instance or you can
+
+20
+00:02:02,160 --> 00:02:08,000
+ use an auto scaling group and typically it also includes an application load balancer.
+
+21
+00:02:08,000 --> 00:02:12,560
+ Now let's go ahead and discuss the important topic on the use cases for EC2 from the Genia
+
+22
+00:02:12,560 --> 00:02:19,600
+ perspective. First is the Genia orchestration and prompt assembly. Now if we take a look at our
+
+23
+00:02:19,600 --> 00:02:25,280
+ previous example where we had discussed about the summarization of application logs so a typical
+
+24
+00:02:25,280 --> 00:02:30,080
+ generative air architecture with EC2 instance this is what it's going to look like. We will have the
+
+25
+00:02:30,080 --> 00:02:35,280
+ end user who will send the prompt to the application load balancer which will redirect it to the
+
+26
+00:02:35,280 --> 00:02:42,400
+ EC2 instance and then you could have some code written on EC2 instance which does the orchestration
+
+27
+00:02:42,400 --> 00:02:49,840
+ logic for that Genia app. So maybe the logs are stored in the S3 so we'll fetch the logs from S3
+
+28
+00:02:49,840 --> 00:02:55,360
+ and then along with the prompt send it to the Amazon bedrock service it gets a response maybe
+
+29
+00:02:55,360 --> 00:03:01,760
+ the response is stored in the S3 bucket so it takes that link and sends it back to the end user.
+
+30
+00:03:01,760 --> 00:03:08,480
+ So you can write all that orchestration logic. Next it can also help you prepare the prompts
+
+31
+00:03:08,480 --> 00:03:15,040
+ so maybe you have the user input and then you add some system prompts and some other details
+
+32
+00:03:15,040 --> 00:03:20,320
+ and send that request to either to the bedrock or SageMaker Jupso. So that's how you can write your
+
+33
+00:03:20,320 --> 00:03:26,800
+ orchestration logic. Now the second key scenario where you can use EC2 instances for Genia application
+
+34
+00:03:26,800 --> 00:03:34,000
+ is LLM training and hosting. So let's say you want to build your own domain specific foundation
+
+35
+00:03:34,000 --> 00:03:39,840
+ model from scratch and there is an example if you just go and Google you'll see there's Bloomberg
+
+36
+00:03:39,840 --> 00:03:46,720
+ GPT which has been developed by Bloomberg from scratch or you can also take an open source model
+
+37
+00:03:46,720 --> 00:03:54,240
+ like from LAMA and then further train and deploy it. So how does EC2 come into play? So what AWS
+
+38
+00:03:54,240 --> 00:04:00,720
+ has done is they have this purpose built machine learning chips. So in summary can think of AWS
+
+39
+00:04:00,720 --> 00:04:08,000
+ training as type of EC2 instance which can be used for training your foundation models
+
+40
+00:04:08,000 --> 00:04:15,360
+ and then you can use AWS infrastructure for deploying the models. So from the console you can
+
+41
+00:04:15,360 --> 00:04:21,680
+ see I'm on the EC2 service and when I did a search on the AMIs you can see here hugging face
+
+42
+00:04:22,400 --> 00:04:30,480
+ neuron deep learning AMI hugging face neuron deep learning AMI makes it easy to use Amazon EC2
+
+43
+00:04:30,480 --> 00:04:38,320
+ infrastructure and training instances. Okay so we'll discuss LLM training and hosting and then
+
+44
+00:04:38,320 --> 00:04:45,360
+ you can also use EC2 for model fine tuning and experimentation. We will not discuss retrieval
+
+45
+00:04:45,360 --> 00:04:51,840
+ augmented generation or right pipelines now and as we go ahead and later learn about rag and
+
+46
+00:04:51,840 --> 00:04:57,440
+ vector databases and chunky. So there are a lot of vector databases that are open source
+
+47
+00:04:57,440 --> 00:05:03,680
+ or you have open source frameworks like Lang chain, Langra, etc which can help you in chunky
+
+48
+00:05:03,680 --> 00:05:09,040
+ and some other other processes within a rag pipeline. So if you want to use those open source
+
+49
+00:05:09,040 --> 00:05:17,040
+ frameworks or open source vector DBs then you can host it on EC2 instance. So in summary it can
+
+50
+00:05:17,040 --> 00:05:24,080
+ be used for any long running inference services. Okay so that's pretty much it from this lecture
+
+51
+00:05:24,080 --> 00:05:27,280
+ I will see in the next lecture thank you.
+
