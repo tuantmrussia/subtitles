@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:05,040
+ Now, the next architectural consideration or decision that you need to make while building a
+
+2
+00:00:05,040 --> 00:00:11,040
+ rag-based application is on the chunking strategy. So, first let's quickly discuss what is
+
+3
+00:00:11,040 --> 00:00:17,680
+ data chunking. Chunking is the process of splitting the documents or content into manageable
+
+4
+00:00:17,680 --> 00:00:24,400
+ text segments or chunks for efficient data retrieval. So, what it means is let's say you have
+
+5
+00:00:24,400 --> 00:00:31,280
+ a PDF document which is 10 pages. So, what you will do is you'll break it down into one page each
+
+6
+00:00:31,280 --> 00:00:37,840
+ then in the one page you break it into Paris and then maybe a few lines. So, you create these
+
+7
+00:00:37,840 --> 00:00:43,360
+ smaller chunks and once you have the chunks then you pass it through the embedding model to create
+
+8
+00:00:43,360 --> 00:00:50,080
+ text embeddings. Now, let's go and look at various chunking strategies and which chunking strategy
+
+9
+00:00:50,080 --> 00:00:56,720
+ you should use for what kind of a use case. Now, let's take a example let's say we have this PDF document
+
+10
+00:00:56,720 --> 00:01:02,000
+ which talks about Lionel Messi so he's born in Argentina and it gives whole bunch of details. Let's
+
+11
+00:01:02,000 --> 00:01:08,720
+ say this is 5 page long. Now, the first option from the chunking strategy perspective we have is
+
+12
+00:01:08,720 --> 00:01:14,400
+ no chunking. So, you don't do any chunking. You take this entire document of 10 pages long
+
+13
+00:01:15,440 --> 00:01:22,960
+ and you just create one embedding from the entire document. So, what's the downside for no chunking?
+
+14
+00:01:22,960 --> 00:01:30,720
+ The retrieval precision is work because it's a single chunk. So, what is a use case for no chunking?
+
+15
+00:01:30,720 --> 00:01:37,440
+ If you have very small documents maybe half a page or so then you can then you don't need chunking
+
+16
+00:01:37,440 --> 00:01:42,880
+ you can just create one vector embedding. Okay, now let's take a look at the second one which is
+
+17
+00:01:42,880 --> 00:01:49,840
+ the fixed chunking or it's sometimes also called default chunking. So, here you define the chunk size.
+
+18
+00:01:49,840 --> 00:01:55,280
+ So, let's say every 120 words. So, either you define based on words, maybe characters,
+
+19
+00:01:55,280 --> 00:02:00,720
+ code and so on. Now, let's say this is the document here. So, now here you can see in this gray
+
+20
+00:02:00,720 --> 00:02:05,760
+ color we have the first chunk. So, I'm not actually calculated 120 words but let's just assume
+
+21
+00:02:05,760 --> 00:02:11,600
+ these are 120 words. Then the second chunk is going to be this one in the orange and similarly then
+
+22
+00:02:11,600 --> 00:02:16,960
+ we have the third chunk. So, every 120 characters there will be a new chunk that will be created
+
+23
+00:02:16,960 --> 00:02:23,120
+ and then it will be passed through the embedding model. Now, to prevent data loss there is also
+
+24
+00:02:23,120 --> 00:02:28,400
+ most of the time going to be some form of overlap. So, you can see here I have shown some overlap
+
+25
+00:02:28,400 --> 00:02:34,720
+ maybe let's say this is 120 words and then maybe 10 words we are doing in overlap. So, you will have
+
+26
+00:02:34,720 --> 00:02:40,400
+ this as the first chunk size and then the second chunk size rather than starting from here will start
+
+27
+00:02:40,400 --> 00:02:49,280
+ from here. So, third we have cementing chunk which is the most precise and this is based on meaning.
+
+28
+00:02:49,280 --> 00:02:57,760
+ So, you don't randomly split based on number of characters but you look at the meaning of topic
+
+29
+00:02:57,760 --> 00:03:03,360
+ and then create chunk sizes. So, now let's say we have this entire page. So, in this case what
+
+30
+00:03:03,360 --> 00:03:08,080
+ is going to do is it's going to split based on the meaning. The first chunk is maybe on introduction
+
+31
+00:03:08,080 --> 00:03:14,960
+ and greatness about Lionel Messi then the second one is focused on childhood and Barcelona.
+
+32
+00:03:14,960 --> 00:03:22,480
+ So, it is more structured around the meaning and relevance. So, this is by for the most
+
+33
+00:03:22,480 --> 00:03:29,280
+ precise and accurate but it needs a lot more processing. So, last one is the hierarchical
+
+34
+00:03:29,280 --> 00:03:33,680
+ chunking. So, we have the parent child relation here think of a technical manual. So,
+
+35
+00:03:33,680 --> 00:03:40,240
+ let's say you have a guide for fixing the wind turbine. So, maybe it talks about
+
+36
+00:03:40,240 --> 00:03:44,720
+ hierarchally about each of the parts. So, maybe it talks about the motor and then there are some
+
+37
+00:03:44,720 --> 00:03:50,320
+ details on how to fix the motor. Then the next section is on the wings and then it talks about the
+
+38
+00:03:50,320 --> 00:03:56,480
+ wings. So, now from the exam perspective let's say what are the chunking strategies and decision points.
+
+39
+00:03:56,480 --> 00:04:02,960
+ So, now the first one is no chunking. So, for no chunking the pros would be it is easiest to implement
+
+40
+00:04:02,960 --> 00:04:08,480
+ there is going to be lower cost and the negative point here is that there is going to be very
+
+41
+00:04:08,480 --> 00:04:14,320
+ low retrieval precision. So, what are the best use cases maybe you have tiny documents,
+
+42
+00:04:14,320 --> 00:04:21,520
+ short FAQs. So, when to choose when you have smaller documents and precision is not so
+
+43
+00:04:21,520 --> 00:04:26,880
+ critical. So, the next we have the fixed size chunking. So, it is more like a default.
+
+44
+00:04:26,880 --> 00:04:33,680
+ So, it is easier to implement and it is a good cost quality balance. But, what is the negative
+
+45
+00:04:33,680 --> 00:04:40,000
+ point? It just splits based on the fixed characters. So, it can split some of the topics midway.
+
+46
+00:04:40,000 --> 00:04:45,680
+ So, some of the good use cases is as I said it is default for most drag applications. So,
+
+47
+00:04:45,680 --> 00:04:51,760
+ let's say you have blogs, guides and so on. So, when to choose as I said it is the default for
+
+48
+00:04:51,760 --> 00:04:59,440
+ most drag applications when you need a good balance between cost and quality. And when the accuracy
+
+49
+00:04:59,440 --> 00:05:05,760
+ is not of the highest priority, then we have the hierarchical chunking. So, high precision for
+
+50
+00:05:05,760 --> 00:05:10,880
+ structured and hierarchy documents. So, it is much more complex and there is going to be more
+
+51
+00:05:10,880 --> 00:05:16,960
+ cost and what is the best use case? Let us say technical manuals which follow a very hierarchy
+
+52
+00:05:16,960 --> 00:05:23,600
+ structure. So, when to choose when you have large structured documents and accuracy is important.
+
+53
+00:05:23,600 --> 00:05:28,400
+ So, it is much more accurate than the fixed size chunking. And then finally, we have a semantic
+
+54
+00:05:28,400 --> 00:05:34,240
+ chunking which has the highest retrieval accuracy. It gives the best answer quality based on the
+
+55
+00:05:34,240 --> 00:05:40,240
+ user query. So, what are the cons? More complex and higher processing effort that means it is
+
+56
+00:05:40,240 --> 00:05:45,600
+ going to be more costly. What are the best use cases? Customer support boards where answer
+
+57
+00:05:45,600 --> 00:05:52,160
+ quality is important, medical, legal finance, documents, rank-based solutions where stakes are
+
+58
+00:05:52,160 --> 00:05:58,720
+ high. So, why to choose semantic chunking? When answer quality is more important than the
+
+59
+00:05:58,720 --> 00:06:04,880
+ cost and implementation complexity. So, now, if I can quickly show you through the console,
+
+60
+00:06:04,880 --> 00:06:08,720
+ so, I have in the bamens and butt rock service. So, let me just click on knowledge base
+
+61
+00:06:08,720 --> 00:06:14,480
+ and then let me just click on create and then knowledge base with vector store and you can give
+
+62
+00:06:14,480 --> 00:06:20,240
+ the name here, but we will skip for now. So, let us just choose the data source type at Amazon S3
+
+63
+00:06:20,240 --> 00:06:24,960
+ and then I can just click on next and if I just cut the node to scroll down. So, you can see
+
+64
+00:06:24,960 --> 00:06:30,480
+ your chunking strategy. So, we have the default chunking, then we have fixed size chunking,
+
+65
+00:06:30,480 --> 00:06:36,400
+ hierarchy of semantic and no chunking. So, those are all the options that Amazon
+
+66
+00:06:36,400 --> 00:06:40,240
+ bedrock provides. Okay. So, that is pretty much it from this lecture. As in the next lecture,
+
+67
+00:06:40,240 --> 00:06:41,240
+ Thank you.
+
