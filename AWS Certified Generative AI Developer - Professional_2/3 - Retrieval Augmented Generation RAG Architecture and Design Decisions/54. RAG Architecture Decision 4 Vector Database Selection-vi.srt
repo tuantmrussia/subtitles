@@ -1,0 +1,264 @@
+1
+00:00:00,000 --> 00:00:03,920
+Trong bài giảng này, chúng ta sẽ thảo luận về một quyết định kiến trúc khác hoặc
+
+2
+00:00:03,920 --> 00:00:09,440
+xem xét trong khi xây dựng ứng dụng dựa trên khung của chúng tôi và đó là vector DB.
+
+3
+00:00:09,440 --> 00:00:13,920
+Được rồi, trước khi chúng ta xem xét tất cả các lựa chọn, một tổng quát nhanh 20 giây.
+
+4
+00:00:13,920 --> 00:00:18,000
+Vì vậy, chúng tôi đã thảo luận trước đây, hãy nói rằng chúng tôi có này dài tài liệu PDF.
+
+5
+00:00:18,000 --> 00:00:22,160
+Vì vậy, chúng tôi sẽ tạo ra nhiều mảng, sau đó chúng tôi sẽ vượt qua nó thông qua các mô hình đẻ,
+
+6
+00:00:22,160 --> 00:00:27,360
+tạo các đường tạo véc tơ, và sau đó chúng tôi sẽ cất giữ nó trong một cửa hàng véc tơ hay véc tơ DB.
+
+7
+00:00:27,360 --> 00:00:32,080
+Một số những người nổi tiếng từ AWS đang mở tìm kiếm và mã Pine.
+
+8
+00:00:32,080 --> 00:00:38,480
+Bây giờ chúng ta hãy đi và xem xét những gì là các tùy chọn véc tơ DB có sẵn với AWS và
+
+9
+00:00:38,480 --> 00:00:41,200
+mà chúng ta nên chọn cho trường hợp sử dụng của chúng ta.
+
+10
+00:00:41,200 --> 00:00:48,960
+Được rồi, đầu tiên là các Postgres Amazon Aurora với phần mở rộng PG vector.
+
+11
+00:00:48,960 --> 00:00:52,160
+Vì vậy chúng ta đã biết về những người dân ở Amazon Aurora Postgres.
+
+12
+00:00:52,160 --> 00:00:54,160
+Nó đã ở đó khá lâu rồi.
+
+13
+00:00:54,160 --> 00:00:58,480
+Bây giờ những gì họ đã thực hiện là họ đã thêm này mục phần bổ sung PG véc tơ hoặc mở rộng,
+
+14
+00:00:58,480 --> 00:01:02,560
+Vì vậy, nó có thể hoạt động như một cơ sở dữ liệu quan hệ cộng với một cơ sở dữ liệu vector.
+
+15
+00:01:02,560 --> 00:01:06,160
+Vì vậy, nó là một cơ sở dữ liệu có liên quan với khung véc tơ.
+
+16
+00:01:06,160 --> 00:01:13,520
+Vì vậy, nó là chi phí cao hiệu quả cho triển khai nhỏ hơn và trường hợp sử dụng tốt nhất cho
+
+17
+00:01:13,520 --> 00:01:16,800
+Name
+
+18
+00:01:17,360 --> 00:01:24,240
+Nó là tốt nhất cho ứng dụng cần cả khả năng định hướng truyền thống và khả năng véc tơ.
+
+19
+00:01:24,240 --> 00:01:30,000
+Vì vậy, khi bạn cần một exx tương lai cộng với véc tơ, sau đó bạn sử dụng Amazon Aurora Postgres.
+
+20
+00:01:30,000 --> 00:01:34,720
+Bây giờ lựa chọn thứ hai là phân tích sao Hải Vương Amazon.
+
+21
+00:01:34,720 --> 00:01:39,920
+Được rồi, phân tích sao Hải Vương là một đồ thị dựa trên tìm kiếm véc tơ.
+
+22
+00:01:39,920 --> 00:01:43,840
+Vì vậy, nó là lý tưởng cho dữ liệu kết nối sử dụng trường hợp như truyền thông xã hội,
+
+23
+00:01:44,480 --> 00:01:49,120
+Hãy nghĩ về Facebook, bạn kết nối với một người bạn kết nối với nhiều người bạn.
+
+24
+00:01:49,120 --> 00:01:52,880
+Bạn có thể thấy có một mạng lưới đồ thị ở đó.
+
+25
+00:01:52,880 --> 00:01:56,640
+Vì vậy, hãy nói rằng tôi sử dụng trường hợp trên truyền thông xã hội hoặc gian lận phân tích,
+
+26
+00:01:56,640 --> 00:02:02,720
+Nơi bạn có rất nhiều hạch nối liền với nhau, sau đó thì phân tích sao Hải Vương Amazon là một lựa chọn tốt.
+
+27
+00:02:02,720 --> 00:02:10,160
+Vì vậy, sử dụng trường hợp phân tích Hải Vương Tinh lý tưởng cho các mối quan hệ phức tạp dựa trên các yêu cầu và kiến thức
+
+28
+00:02:10,160 --> 00:02:14,400
+Đồ thị. Vì vậy, nếu bạn đang tìm kiếm một cửa hàng véc tơ có thể xử lý mối quan hệ phức tạp
+
+29
+00:02:14,400 --> 00:02:18,320
+đồ thị và kiến thức cơ bản như truyền thông xã hội, phát hiện gian lận,
+
+30
+00:02:18,320 --> 00:02:21,200
+Đây là véc tơ DB cho bạn.
+
+31
+00:02:21,200 --> 00:02:27,520
+Tiếp theo chúng tôi có Amazon mở máy chủ tìm kiếm, mà có lẽ là phổ biến nhất
+
+32
+00:02:27,520 --> 00:02:31,600
+vector DB đang được sử dụng trong AWS.
+
+33
+00:02:31,600 --> 00:02:34,960
+Vì vậy, tìm kiếm mở Amazon có hai hương vị.
+
+34
+00:02:34,960 --> 00:02:41,360
+Nó là không có máy chủ nơi bạn chỉ trả tiền cho những gì bạn sử dụng và sau đó bạn cũng có chế độ tạm thời
+
+35
+00:02:41,360 --> 00:02:46,000
+nơi bạn có thể cung cấp OC sử dụng hoặc mở các đơn vị tìm kiếm tính toán.
+
+36
+00:02:46,000 --> 00:02:51,920
+Việc tìm kiếm mở Amazon rất tốt cho việc tìm kiếm và phân tích.
+
+37
+00:02:51,920 --> 00:02:54,720
+Vì vậy, hãy nói rằng bạn có đăng nhập phân tích và giám sát.
+
+38
+00:02:54,720 --> 00:03:00,160
+Vì vậy, hãy lấy ví dụ về các bản ghi xem mây, vì vậy đó là nơi bạn có thể sử dụng tìm kiếm mở.
+
+39
+00:03:00,160 --> 00:03:05,120
+Sau đó, nó cũng là tuyệt vời cho doanh nghiệp tìm kiếm điện tử và sản phẩm tìm kiếm.
+
+40
+00:03:05,120 --> 00:03:07,920
+Đây là một số trường hợp sử dụng để tìm kiếm mở.
+
+41
+00:03:09,040 --> 00:03:14,000
+Bây giờ nó cung cấp các lựa chọn tìm kiếm linh hoạt, bao gồm tìm kiếm từ khóa truyền thống,
+
+42
+00:03:14,000 --> 00:03:18,320
+Tìm kiếm véc tơ và tìm kiếm lai. Vì vậy, hãy nhớ rằng điều này là quan trọng.
+
+43
+00:03:18,320 --> 00:03:23,920
+Vì vậy, tìm kiếm mở tập trung vào tìm kiếm từ khóa và tìm kiếm véc tơ và cách tiếp cận lai.
+
+44
+00:03:23,920 --> 00:03:30,400
+Vì vậy, mở tìm kiếm có thể lưu trữ và tìm kiếm hàng tỷ véc tơ chiều cao trong mili giây sử dụng
+
+45
+00:03:30,400 --> 00:03:36,480
+Thuật toán tiên tiến. Vì vậy, nếu bạn muốn đáp ứng mili giây, sau đó bạn phải đi với mở tìm kiếm.
+
+46
+00:03:36,480 --> 00:03:39,440
+Vì vậy, một trường hợp sử dụng tốt cho Amazon mở máy chủ tìm kiếm?
+
+47
+00:03:39,440 --> 00:03:45,280
+Vì vậy, tìm kiếm mở Amazon là mạnh mẽ trong công nghệ tìm kiếm phân tích và vector tìm kiếm với độ trễ
+
+48
+00:03:45,280 --> 00:03:51,840
+Trả lời đi. Vì vậy, hãy nhớ rằng mở tìm kiếm không chỉ có nghĩa là tìm kiếm véc tơ, mà còn cho
+
+49
+00:03:51,840 --> 00:03:57,440
+Tìm kiếm từ khoá. Tiếp theo là quả thông. Vì vậy, nó là một mục đích xây dựng cơ sở dữ liệu véc tơ.
+
+50
+00:03:57,440 --> 00:04:03,040
+Vì vậy, có lẽ chỉ có cơ sở dữ liệu véc tơ, mà chỉ có nghĩa là lưu trữ véc tơ.
+
+51
+00:04:03,040 --> 00:04:09,120
+Hầu hết những người khác là người lai. Vì vậy nó được tối ưu hóa cho việc tìm kiếm tương tự với mức độ cao.
+
+52
+00:04:09,120 --> 00:04:14,400
+Còn vụ án sử dụng là gì? Vì vậy, nếu bạn cần tìm kiếm véc tơ có hiệu quả cao và phải,
+
+53
+00:04:14,400 --> 00:04:20,960
+Thì quả thông là món quà dành cho anh. Được rồi, cuối cùng chúng ta cũng có Mây Đỏ.
+
+54
+00:04:20,960 --> 00:04:27,280
+Vì vậy, nó là một nền tảng dữ liệu học tập với hỗ trợ tìm kiếm vector. Vì vậy, hãy nhớ ở Redis Enterprise
+
+55
+00:04:27,280 --> 00:04:33,840
+Cloud, chúng tôi đã biết đây là cơ sở dữ liệu bộ nhớ tạm. Vì vậy, trong trường hợp của, do đó, nó lưu trữ véc tơ
+
+56
+00:04:33,840 --> 00:04:42,240
+Đang nhập vào trí nhớ. Vì vậy nó kết hợp việc tìm kiếm véc tơ và ngứa ngáy. Và như chúng ta đã bàn,
+
+57
+00:04:42,240 --> 00:04:48,160
+Nó nằm trong thức thực hiện tìm kiếm các lối nhỏ. Bây giờ lợi ích của việc sử dụng Redis Enterprise là gì
+
+58
+00:04:48,160 --> 00:04:54,560
+Mây? Vì vậy nó cung cấp một cuộc tìm kiếm tương đồng với véc tơ thời gian thực cực kỳ thấp.
+
+59
+00:04:54,560 --> 00:05:01,120
+Và chủ yếu là vì nó nằm trong ký ức. Vì vậy, nó là phù hợp nhất cho các ứng dụng du hành thời gian thực
+
+60
+00:05:01,120 --> 00:05:08,880
+Yêu cầu các câu trả lời phụ mili-seconds để mili giây. Bây giờ hãy nhớ rằng, chúng tôi cũng đã thiết lập tương tự cho tìm kiếm mở,
+
+61
+00:05:08,880 --> 00:05:17,280
+Nhưng đây là trong vòng nhớ và mở tìm kiếm không phải là một trong các véc tơ DB. Được rồi, bây giờ tóm tắt dựa trên
+
+62
+00:05:17,280 --> 00:05:23,360
+trường hợp sử dụng của bạn, làm thế nào để bạn có quyết định cho véc tơ DB đúng? Vì vậy, bạn chọn tìm kiếm mở,
+
+63
+00:05:23,360 --> 00:05:30,720
+Nếu trường hợp sử dụng của bạn cần thiết tìm kiếm từ khoá, phân tích và véc- tơ. Bạn chọn hình nón thông, nếu bạn cần
+
+64
+00:05:30,720 --> 00:05:37,680
+Mục đích quy mô lớn xây dựng véc- tơ DB. Bạn chọn véc tơ giao thoa Aurora, nếu bạn cần cơ sở dữ liệu quan hệ,
+
+65
+00:05:37,680 --> 00:05:45,200
+cộng với véc tơ. Và bạn chọn Redis, nếu bạn cần nhanh nhất theo thời gian thực véc tơ DB. Được rồi.
+
+66
+00:05:45,200 --> 00:05:48,080
+Vì vậy, đó là khá nhiều từ bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
