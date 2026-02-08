@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:11,020
+Được rồi, bây giờ chúng ta đã có UI phân loại, chúng ta đã sẵn sàng đi sâu vào chức năng của mình.
+
+2
+00:00:11,020 --> 00:00:18,580
+Vì vậy, tôi sẽ cung cấp một liên kết trong khóa học để trang này trong kho GitHub của tôi cho
+
+3
+00:00:18,580 --> 00:00:25,860
+Dự án này, và bạn sẽ thấy rằng tôi có một tập tin từ.json, và bạn sẽ thấy rằng tôi có
+
+4
+00:00:25,860 --> 00:00:32,640
+khoảng 300 từ ở đây, không có từ nào lặp lại, và đây là những từ mà tôi sử dụng
+
+5
+00:00:32,640 --> 00:00:38,280
+Cho dự án của tôi, nhưng nếu anh muốn, anh có thể tự tạo ra từ ngữ.
+
+6
+00:00:38,280 --> 00:00:45,520
+Bạn thậm chí có thể sử dụng một cuộc gọi điện thoại đến một máy phát từ ngẫu nhiên, nhưng chỉ để đơn giản hóa,
+
+7
+00:00:45,520 --> 00:00:51,480
+Tôi đã quyết định cung cấp cho bạn một dãy từ chỉ để làm cho mọi thứ tốt đẹp và dễ dàng.
+
+8
+00:00:51,480 --> 00:00:58,320
+Vì vậy, một lần nữa, nếu bạn đi đến liên kết này, bạn có thể thực sự nhấp chuột vào đây và nhấn vào tập tin thô,
+
+9
+00:00:58,320 --> 00:01:04,240
+và chúng ta sẽ kết thúc chuyện này và quay lại với mã của chúng ta.
+
+10
+00:01:04,240 --> 00:01:10,320
+Trong kịch bản của chúng tôi, JS, chúng tôi sẽ bắt đầu bằng cách tạo ra một từ liên tục, và nó đang đi
+
+11
+00:01:10,320 --> 00:01:16,120
+để được bằng, và sau đó chúng tôi sẽ dán trong của chúng tôi chuỗi.
+
+12
+00:01:16,120 --> 00:01:22,440
+Được rồi, và chúng ta sẽ đi trước và lượn quanh đây cạnh cái của chúng ta, và chúng ta sẽ đi
+
+13
+00:01:22,440 --> 00:01:25,480
+để nhấn vào mũi tên này, và chúng tôi sẽ giảm thiểu nó.
+
+14
+00:01:25,480 --> 00:01:29,080
+Chúng ta không cần phải lo về lời nói của mình nữa.
+
+15
+00:01:29,080 --> 00:01:35,480
+Được rồi, bây giờ chúng ta đã có từ ngữ, bước tiếp theo là chúng ta sẽ muốn xáo trộn
+
+16
+00:01:35,480 --> 00:01:36,880
+những lời này.
+
+17
+00:01:36,880 --> 00:01:41,440
+Chúng tôi không luôn luôn muốn có từ ngữ theo thứ tự, bởi vì sau đó bạn sẽ nhận được
+
+18
+00:01:41,440 --> 00:01:46,880
+Thực sự tốt trong chỉ gõ những từ chính xác, chúng tôi muốn có thể để xáo trộn các từ
+
+19
+00:01:46,880 --> 00:01:49,200
+trong hàng ngũ của chúng ta.
+
+20
+00:01:49,200 --> 00:01:55,720
+Vì vậy, chúng tôi sẽ đi đến dòng tiếp theo ở đây, và chúng tôi sẽ bình luận ra một xáo trộn tiêu đề,
+
+21
+00:01:55,720 --> 00:02:06,480
+Các từ mảng, và chúng tôi sẽ tạo ra một chức năng gọi là mảng xáo trộn, và nó là
+
+22
+00:02:06,480 --> 00:02:16,240
+Chúng ta sẽ kiểm tra, và cái này sẽ sử dụng thuật toán Fisher Yates.
+
+23
+00:02:16,240 --> 00:02:21,040
+Tôi sẽ giải thích nhiều hơn một khi chúng tôi nhận được để kết thúc của mã, nhưng về cơ bản chúng tôi sẽ
+
+24
+00:02:21,040 --> 00:02:28,280
+sử dụng một vòng bốn, chúng tôi sẽ vòng qua các mảng, và chúng tôi sẽ chuyển vị trí
+
+25
+00:02:28,280 --> 00:02:31,600
+và sau đó chúng tôi sẽ gửi lại danh sách.
+
+26
+00:02:31,600 --> 00:02:43,200
+Nhưng tôi sẽ giải thích nhiều hơn một khi chúng tôi đã thực hiện, vì vậy bốn, cho tôi, đó là chỉ số của chúng tôi bằng mảng. Chiều dài
+
+27
+00:02:43,200 --> 00:02:50,120
+Trừ 1, vì nó là 0 chỉ số, đây là cách chúng tôi nhận được đến mục cuối cùng trong mảng của chúng tôi.
+
+28
+00:02:50,120 --> 00:02:58,400
+semicolon tôi một khi nó nhận được xuống 0, một khi chỉ số của chúng tôi trở thành zero, hoặc trong khi chỉ số của chúng tôi
+
+29
+00:02:58,400 --> 00:03:08,600
+Không phải là zero, tôi nên nói, chúng tôi muốn giảm dần, vì vậy tôi trừ trừ đi, chúng tôi muốn đi xuống,
+
+30
+00:03:08,600 --> 00:03:11,160
+Và làm cho chỉ số của chúng tôi là một số nhỏ hơn.
+
+31
+00:03:11,160 --> 00:03:17,200
+Vì vậy, nếu các dãy dài giả định là 100, chúng tôi sẽ bắt đầu với 99, và chúng tôi sẽ lặp lại
+
+32
+00:03:17,200 --> 00:03:23,640
+thông qua cho đến khi chúng tôi đạt 0, và chúng tôi sẽ đi xuống bởi một lần, okay, và sau đó chúng tôi
+
+33
+00:03:23,640 --> 00:03:34,800
+sẽ tạo ra một j liên tục, và điều này sẽ bằng sàn toán, okay, và nó là
+
+34
+00:03:34,800 --> 00:03:40,880
+sẽ trả lại số nguyên lớn nhất của một số nguyên, chúng tôi không muốn vòng hai số thập phân
+
+35
+00:03:40,880 --> 00:03:45,440
+Ở đây, chúng tôi muốn một số nguyên cho chỉ số của chúng tôi, và bên trong của điều này chúng tôi sẽ sử dụng toán học
+
+36
+00:03:45,440 --> 00:03:54,440
+ngẫu nhiên, mà trả lại một số giữa zero và một, và chúng tôi sẽ nhân rằng
+
+37
+00:03:54,440 --> 00:04:02,200
+bởi một ngoặc khác tôi cộng với một, vì vậy có nghĩa là nó sẽ luôn luôn, ít nhất, là một, và
+
+38
+00:04:02,200 --> 00:04:12,320
+sau đó bên dưới này, chúng tôi mảng mục tại chỉ số hiện tại, do đó, dấu ngoặc vuông, mảng, vuông
+
+39
+00:04:12,320 --> 00:04:28,360
+wris i, dấu phẩy, xin lỗi bên trong đó, mảng, khung vuông j bằng, và sau đó chúng tôi đang đi
+
+40
+00:04:28,360 --> 00:04:41,280
+Để trao đổi những điều này, vì vậy mảng, khung vuông j, dấu phẩy, mảng, khung vuông i, okay, và sau đó
+
+41
+00:04:41,280 --> 00:04:50,120
+Chúng ta sẽ quay lại, la hét, bên ngoài vòng thời gian, sau đó chúng ta sẽ trở lại hàng ngũ,
+
+42
+00:04:50,120 --> 00:04:57,000
+Chỉ để tóm tắt một lần nữa, chúng tôi đang bắt đầu tại cuối cùng mục trong mảng của chúng tôi, và chúng tôi
+
+43
+00:04:57,000 --> 00:05:03,080
+Tăng dần, vì vậy một lần nữa, nếu chúng tôi 100 như độ dài của chúng tôi, chúng tôi đang đi từ 99 cho đến khi của chúng tôi
+
+44
+00:05:03,080 --> 00:05:09,480
+Chỉ số là 0, chúng tôi đang đi xuống bởi một mỗi lần, và chúng tôi đang sử dụng toán ngẫu nhiên, mà
+
+45
+00:05:09,480 --> 00:05:18,840
+là giống như 0.3567 lần chỉ số của chúng tôi cộng với một, vì vậy nó sẽ luôn luôn, ít nhất là một, và họ là
+
+46
+00:05:18,840 --> 00:05:29,480
+sử dụng toán học để làm cho điều đó thành một số nguyên, và sau đó chúng tôi có mảng mục tại chỉ số,
+
+47
+00:05:29,480 --> 00:05:37,880
+Và sau đó chúng tôi có một số ngẫu nhiên ít hơn chỉ số của chúng tôi, và sau đó chúng tôi đang trao đổi
+
+48
+00:05:37,880 --> 00:05:46,360
+Hai người này với hai người đối lập nhau để trao đổi hai yếu tố, vậy chúng ta là
+
+49
+00:05:46,360 --> 00:05:52,840
+Về cơ bản làm mờ các mảng của chúng tôi theo cách đơn giản nhất mà chúng tôi có thể, okay, vì vậy nếu
+
+50
+00:05:52,840 --> 00:06:01,680
+Tôi đã gọi nó là, hãy gọi hệ thống xáo trộn của chúng ta, và chúng ta sẽ chuyển sang một từ,
+
+51
+00:06:01,680 --> 00:06:12,880
+Và chúng tôi sẽ điều khiển bản ghi này, chúng tôi muốn xem điều gì sẽ xảy ra, OK, và
+
+52
+00:06:12,880 --> 00:06:25,560
+Hãy trở lại trình duyệt của chúng tôi, và chúng tôi sẽ kiểm tra, và chúng ta hãy đi trước và di chuyển điều này, và
+
+53
+00:06:25,560 --> 00:06:34,800
+Sau đó chúng tôi sẽ cất cánh, điện thoại thông minh, được rồi, dù sao cũng không gian, tuyệt vời, vì vậy trong an ủi của chúng tôi chúng tôi
+
+54
+00:06:34,800 --> 00:06:42,240
+Có 253 vật dụng, vậy không phải là 300, nhưng bạn sẽ thấy rằng nó bắt đầu với hai nước
+
+55
+00:06:42,240 --> 00:06:47,440
+Sự thôi thúc tan chảy, vì vậy bạn có thể thấy chúng tôi đã xáo trộn tất cả mọi thứ, nếu bạn nhìn vào chúng tôi thực sự là gì
+
+56
+00:06:47,440 --> 00:06:52,800
+Bắt đầu với, nó thực sự đang đi A, B, C, D, vì vậy bỏ hoang con bồ câu đèn hiệu, bạn có thể
+
+57
+00:06:52,800 --> 00:06:59,640
+Xem rằng chúng tôi đã xáo trộn điều này, và nếu chúng tôi đi trước và làm lại trang, bạn sẽ thấy rằng
+
+58
+00:06:59,640 --> 00:07:04,440
+Chúng tôi đã xáo trộn nó một lần nữa, vì vậy bây giờ nó bắt đầu với lá hoặc bu lông, và bây giờ nó bắt đầu
+
+59
+00:07:04,440 --> 00:07:11,760
+được rồi, được rồi.
+
+60
+00:07:11,760 --> 00:07:17,320
+Muốn kết hợp dãy từ này thành một chuỗi dài, và sau đó chúng tôi muốn vượt qua đó
+
+61
+00:07:17,320 --> 00:07:24,520
+chuỗi vào hộp văn bản của chúng tôi, được rồi, vậy hãy quay lại mã, và chúng tôi có thể loại bỏ
+
+62
+00:07:24,520 --> 00:07:36,720
+cái này, nó sẽ đi vào tiêu đề, kết hợp các từ đã xáo trộn thành một chuỗi dài với không gian,
+
+63
+00:07:36,720 --> 00:07:45,040
+chúng tôi cũng muốn thêm không gian, vì vậy chúng tôi sẽ tạo ra một chức năng tạo ra một khung văn bản,
+
+64
+00:07:45,040 --> 00:07:52,160
+Và sau đó chúng ta sẽ có một hằng số các từ được xáo trộn, và nó sẽ bằng
+
+65
+00:07:52,160 --> 00:08:00,960
+để xáo trộn dãy, và chúng tôi thực sự sẽ sử dụng một tổng đài rộng để làm cho một phiên bản khác
+
+66
+00:08:00,960 --> 00:08:06,400
+của các từ mảng để các từ ban đầu mảng vẫn nguyên vẹn, và sau đó chúng tôi đang đi
+
+67
+00:08:06,400 --> 00:08:15,720
+để trở lại các từ xáo trộn chấm tham gia ngoặc, và sau đó chỉ trích không gian, vì vậy đó là
+
+68
+00:08:15,720 --> 00:08:23,000
+sẽ thêm một khoảng trống giữa tất cả các từ của chúng tôi, và sau đó chúng tôi sẽ đi trước và nói rằng chúng tôi
+
+69
+00:08:23,000 --> 00:08:30,680
+Văn bản dài, chúng tôi đang sử dụng một cho phép bởi vì điều này có thể được thay đổi, tạo ra văn bản dài, và sau đó
+
+70
+00:08:30,680 --> 00:08:41,200
+Chúng ta sẽ ghi lại tin nhắn sau nhé.
+
+71
+00:08:41,200 --> 00:08:48,760
+Được rồi, bạn có thể thấy chúng ta có một chuỗi dài ở đây, nó không còn là một chuỗi nữa, được rồi, tuyệt vời,
+
+72
+00:08:48,760 --> 00:08:55,080
+Bây giờ điều tiếp theo chúng ta cần làm là chuyển nó vào thành phần container văn bản của chúng ta,
+
+73
+00:08:55,080 --> 00:09:04,480
+Vì vậy, chúng tôi sẽ làm điều này bằng cách thêm vào hằng số cho các yếu tố của chúng tôi ở đây, vì vậy hằng số văn bản
+
+74
+00:09:04,480 --> 00:09:15,280
+Công-ten-nơ, vốn C ở đó, bằng dấu chấm tài liệu nhận được yếu tố bằng ID, dấu ngoặc đơn
+
+75
+00:09:15,280 --> 00:09:30,640
+văn bản gạch ngang, và chúng tôi sẽ làm điều tương tự cho các yếu tố thời gian của chúng tôi, chúng tôi đang ở đó,
+
+76
+00:09:30,640 --> 00:09:58,640
+và thử lại nút bấm, và cuối cùng yếu tố điểm cuối cùng của chúng tôi, okay, và sau đó chúng tôi
+
+77
+00:09:58,640 --> 00:10:06,160
+Thay vì đăng nhập bàn điều khiển, chúng tôi sẽ nói rằng văn bản container
+
+78
+00:10:06,160 --> 00:10:15,360
+để có thể bằng văn bản dài, được không, vì vậy hãy đi trước và kiểm tra nó, được rồi, tốt,
+
+79
+00:10:15,360 --> 00:10:24,240
+chúng tôi có văn bản của chúng tôi trong hộp văn bản của chúng tôi, tuyệt, okay, vì vậy đó là nó cho suffling
+
+80
+00:10:24,240 --> 00:10:31,680
+Từ ngữ của chúng tôi và chuyển nó vào hộp văn bản của chúng tôi, trong tiếp theo chúng tôi sẽ bắt đầu tìm kiếm
+
+81
+00:10:31,680 --> 00:10:40,280
+ở chức năng thực sự kiểm tra những gì chúng tôi đang gõ và xem nếu chúng tôi đang gõ
+
+82
+00:10:40,280 --> 00:10:45,720
+nhân vật chính xác hay không, được rồi, tôi sẽ gặp anh trong đó, tạm biệt.
+
