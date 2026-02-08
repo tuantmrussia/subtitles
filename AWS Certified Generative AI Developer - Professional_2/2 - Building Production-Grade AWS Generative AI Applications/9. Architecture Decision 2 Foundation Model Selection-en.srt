@@ -1,0 +1,408 @@
+1
+00:00:00,000 --> 00:00:04,560
+ In the previous few lectures, we looked at our decision point one, how we can select the right
+
+2
+00:00:04,560 --> 00:00:06,640
+ AWD service.
+
+3
+00:00:06,640 --> 00:00:11,040
+ Now we come to the second decision point, how do we select the right foundation model for
+
+4
+00:00:11,040 --> 00:00:12,040
+ our use case.
+
+5
+00:00:12,040 --> 00:00:17,240
+ Now in the next few lectures, we are going to focus on how do we select the right foundation
+
+6
+00:00:17,240 --> 00:00:18,240
+ model.
+
+7
+00:00:18,240 --> 00:00:23,640
+ Now let's start with the factors that impact the choice of our foundation models.
+
+8
+00:00:23,640 --> 00:00:29,320
+ So the first thing we need to think about is the modality of our foundation model.
+
+9
+00:00:29,320 --> 00:00:34,040
+ So let's say your use case is focused more on text, like text summarization, content
+
+10
+00:00:34,040 --> 00:00:38,840
+ generation, then your foundation model should have modality as text.
+
+11
+00:00:38,840 --> 00:00:43,280
+ Now let's say your use case is focused on advertisement and as part of that, you need to
+
+12
+00:00:43,280 --> 00:00:46,480
+ create images, videos and so on.
+
+13
+00:00:46,480 --> 00:00:51,080
+ Then the modality of the foundation model you select should be image.
+
+14
+00:00:51,080 --> 00:00:55,560
+ Now there are certain scenarios like in our use case for manufacturing where we are going
+
+15
+00:00:55,560 --> 00:01:00,120
+ to send the images as well as text to our foundation model.
+
+16
+00:01:00,120 --> 00:01:05,840
+ Then it should support multimodal where it supports both text and image processing.
+
+17
+00:01:05,840 --> 00:01:10,720
+ And that's sometimes called as text vision in Amazon better terms.
+
+18
+00:01:10,720 --> 00:01:12,080
+ And then finally we have the embedding.
+
+19
+00:01:12,080 --> 00:01:16,560
+ So there are some foundation models that support the embedding modality.
+
+20
+00:01:16,560 --> 00:01:21,560
+ So what they do is let's say we have a text document or image, they would create a vector
+
+21
+00:01:21,560 --> 00:01:27,240
+ representation of that image or dot of the document or image and then store.
+
+22
+00:01:27,240 --> 00:01:30,760
+ So it's mainly used for search and retrieval process.
+
+23
+00:01:30,760 --> 00:01:36,040
+ So based on your use case, you need to select the foundation model with right modality.
+
+24
+00:01:36,040 --> 00:01:39,200
+ Next you should assess the task complexity of your use case.
+
+25
+00:01:39,200 --> 00:01:43,720
+ So whether it's a use case like summarization, which is much easier or there's a lot
+
+26
+00:01:43,720 --> 00:01:48,920
+ of reasoning involved in your use case to process the user request.
+
+27
+00:01:48,920 --> 00:01:52,960
+ And that to a large extent will decide what kind of foundation model will you use whether
+
+28
+00:01:52,960 --> 00:01:57,240
+ you will use a small language model or a large language model.
+
+29
+00:01:57,240 --> 00:02:02,480
+ So usually small language models are classified which have parameters up to 8 billion and large
+
+30
+00:02:02,480 --> 00:02:06,640
+ language models could have hundreds of billions of parameters.
+
+31
+00:02:06,640 --> 00:02:07,840
+ So next is the context window.
+
+32
+00:02:07,840 --> 00:02:14,480
+ So context window means what is the maximum amount of words that you can input at one point
+
+33
+00:02:14,480 --> 00:02:17,960
+ of time to your foundation model.
+
+34
+00:02:17,960 --> 00:02:23,720
+ So it varies between model to model and it can range anything from 8K input size token
+
+35
+00:02:23,720 --> 00:02:25,040
+ to 200K.
+
+36
+00:02:25,040 --> 00:02:27,640
+ So Cloud and Tropic supports 200K token.
+
+37
+00:02:27,640 --> 00:02:30,360
+ We know 1000 tokens is approximately 750 words.
+
+38
+00:02:30,360 --> 00:02:38,680
+ So 200K maximal token size would be about 150K words which you can send as input.
+
+39
+00:02:38,680 --> 00:02:42,800
+ Now there could be some scenarios, let's say you are generating content.
+
+40
+00:02:42,800 --> 00:02:46,760
+ So your input token size might be much smaller.
+
+41
+00:02:46,760 --> 00:02:50,920
+ But there could also be scenarios, let's say we are working in the legal department of
+
+42
+00:02:50,920 --> 00:02:56,960
+ an organization and you are and you want to summarize your contract document.
+
+43
+00:02:56,960 --> 00:03:01,200
+ So in that case the contract document size could be in hundreds of pages.
+
+44
+00:03:01,200 --> 00:03:05,120
+ In that scenario you might need a very, very large context window.
+
+45
+00:03:05,120 --> 00:03:10,200
+ So that's why it's important to understand what is the context window size for a large
+
+46
+00:03:10,200 --> 00:03:12,240
+ language model.
+
+47
+00:03:12,240 --> 00:03:17,800
+ Okay, next one is the guard rail and safety in most foundation models.
+
+48
+00:03:17,800 --> 00:03:22,720
+ There are some built in guard rail and additional capability around toxicity, content moderation.
+
+49
+00:03:22,720 --> 00:03:26,120
+ So let's say you have built a generic application using the foundation model.
+
+50
+00:03:26,120 --> 00:03:32,520
+ And now one of the end users pose a question like I want to know how I can kill someone.
+
+51
+00:03:32,520 --> 00:03:36,760
+ So you don't want your foundation model to answer those sort of questions.
+
+52
+00:03:36,760 --> 00:03:40,400
+ So most foundation owners have already have some form of guard rail.
+
+53
+00:03:40,400 --> 00:03:45,200
+ So you might want to analyze what kind of guard rail are available in built as part of
+
+54
+00:03:45,200 --> 00:03:46,360
+ the large language model.
+
+55
+00:03:46,360 --> 00:03:49,880
+ Though you can supplement it based on your organization guidelines as well through better
+
+56
+00:03:49,880 --> 00:03:55,440
+ guard rails and SageMaker custom guard rail, but you should also evaluate what are the
+
+57
+00:03:55,440 --> 00:03:58,960
+ kind of guard rail available to the large language model.
+
+58
+00:03:58,960 --> 00:04:02,840
+ Next we have the quality and accuracy of the output.
+
+59
+00:04:02,840 --> 00:04:09,040
+ So you can use the better console to evaluate foundation models from different model providers
+
+60
+00:04:09,040 --> 00:04:14,560
+ and see what is the kind of output it is generating for you.
+
+61
+00:04:14,560 --> 00:04:19,880
+ You can then you can also use the bedrock model output evaluation tool to automatically
+
+62
+00:04:19,880 --> 00:04:26,800
+ or through humans evaluate the output of different foundation model and see if the kind
+
+63
+00:04:26,800 --> 00:04:32,160
+ of response that you are getting fits based on your use case.
+
+64
+00:04:32,160 --> 00:04:35,560
+ Then you have cost predictability and token efficiency.
+
+65
+00:04:35,560 --> 00:04:42,000
+ You can evaluate the cost per thousand tokens for different model providers as well
+
+66
+00:04:42,000 --> 00:04:45,760
+ as different models from the same model provider.
+
+67
+00:04:45,760 --> 00:04:49,400
+ And this is important because let's say you are doing a pucie, so let's say you are sending
+
+68
+00:04:49,400 --> 00:04:54,120
+ a few 100 requests and and in bedrock each request could cost a few cents.
+
+69
+00:04:54,120 --> 00:04:55,760
+ So it might not be a lot of cost.
+
+70
+00:04:55,760 --> 00:05:00,200
+ But when you do that at a scale at a production grade scale where you are sending hundreds
+
+71
+00:05:00,200 --> 00:05:06,320
+ and thousands of requests over a period of year that there could be a enormous cost difference.
+
+72
+00:05:06,320 --> 00:05:12,400
+ So that's why you have to optimize your foundation model based on the cost per thousand
+
+73
+00:05:12,400 --> 00:05:13,400
+ token.
+
+74
+00:05:13,400 --> 00:05:18,080
+ Then you also need to look at regional availability and quotas.
+
+75
+00:05:18,080 --> 00:05:22,520
+ So lot of foundation models are not available in many different regions.
+
+76
+00:05:22,520 --> 00:05:27,800
+ You should evaluate whether that foundation model is available within your region.
+
+77
+00:05:27,800 --> 00:05:33,400
+ And then bedrock and also set some quotas for the foundation models on number of requests
+
+78
+00:05:33,400 --> 00:05:37,160
+ that you can make per minute in that region.
+
+79
+00:05:37,160 --> 00:05:43,240
+ So you should look at quotas and it meets the throughput requirements of your journey application
+
+80
+00:05:43,240 --> 00:05:47,200
+ using that foundation model.
+
+81
+00:05:47,200 --> 00:05:50,360
+ Next and something that is really really important is latency.
+
+82
+00:05:50,360 --> 00:05:54,880
+ So latency is really important from the end user experience perspective.
+
+83
+00:05:54,880 --> 00:06:00,080
+ Think about using chat GPT and you pose a question and gives your response in three minutes.
+
+84
+00:06:00,080 --> 00:06:03,160
+ So that user experience would not be great.
+
+85
+00:06:03,160 --> 00:06:08,160
+ So that's why from the end user experience latency optimization is critical.
+
+86
+00:06:08,160 --> 00:06:13,080
+ And there are a lot of foundation models which bedrock provides which are latency optimized
+
+87
+00:06:13,080 --> 00:06:18,080
+ inference model and you can evaluate whether you actually need those sort of models.
+
+88
+00:06:18,080 --> 00:06:23,960
+ And we're going to discuss latency optimize inference models later in the course.
+
+89
+00:06:23,960 --> 00:06:26,920
+ And then we have the proprietary versus open source.
+
+90
+00:06:26,920 --> 00:06:32,760
+ So you should always perform open source models compared to proprietary ones.
+
+91
+00:06:32,760 --> 00:06:35,200
+ So then finally we have the language support.
+
+92
+00:06:35,200 --> 00:06:38,400
+ So not all foundation models support all the languages.
+
+93
+00:06:38,400 --> 00:06:43,840
+ So you should go ahead and evaluate what are the languages supported by that particular
+
+94
+00:06:43,840 --> 00:06:47,640
+ foundation model based on your use case.
+
+95
+00:06:47,640 --> 00:06:54,480
+ And finally in summary select the smallest safest and most cost efficient model that meets
+
+96
+00:06:54,480 --> 00:07:00,040
+ your accuracy latency and governess requirements for your workload.
+
+97
+00:07:00,040 --> 00:07:01,040
+ Okay.
+
+98
+00:07:01,040 --> 00:07:04,960
+ So those are some of the factors you should think about when you are selecting the foundation
+
+99
+00:07:04,960 --> 00:07:07,560
+ model for your use case.
+
+100
+00:07:07,560 --> 00:07:08,560
+ That's pretty much from this lecture.
+
+101
+00:07:08,560 --> 00:07:09,560
+ I'll see you in the next lecture.
+
+102
+00:07:09,560 --> 00:07:09,880
+ Thank you.
+
