@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:05,120
+Bây giờ trong bài giảng này tôi sẽ cho các bạn xem một bản trình diễn của Amazon Bedrock Prom canging.
+
+2
+00:00:05,120 --> 00:00:09,360
+Vì vậy, những gì tôi đã làm là tôi đã viết một bộ phận phân loại chức năng Lambda nhanh chóng đau đớn.
+
+3
+00:00:09,360 --> 00:00:15,760
+Và nếu bạn có thể chỉ cần cho bạn thấy các mã ở đây, vì vậy những gì tôi đã làm là tôi đã tạo ra một số tĩnh
+
+4
+00:00:15,760 --> 00:00:23,040
+Tiền tố hoặc hệ thống nhắc và nó chỉ là thông tin chung giúp đỡ các mô hình nền tảng
+
+5
+00:00:23,040 --> 00:00:28,400
+Để có được một số bối cảnh. Vì vậy, điều này sẽ được tái sử dụng hoặc lưu trữ. Và rồi tôi nói,
+
+6
+00:00:28,400 --> 00:00:35,920
+Được rồi, điểm bộ nhớ tạm là mặc định kiểu. Và sau đó tôi có một số động người dùng nhắc nhở. Một lần nữa, tôi đặt
+
+7
+00:00:35,920 --> 00:00:42,160
+Rất nhiều là tĩnh. Bây giờ điều duy nhất sẽ thay đổi ở đây là chứng minh thư máy móc. Vì vậy, như là một
+
+8
+00:00:42,160 --> 00:00:48,400
+Thay đổi giá trị của ID máy, tôi sẽ yêu cầu nó tóm tắt. Vì vậy, sau đó chúng ta sẽ xem những gì là
+
+9
+00:00:48,400 --> 00:00:55,600
+Giảm số hiệu. Vì vậy, về cơ bản, vì đây là tĩnh, chúng ta sẽ thấy một số giảm
+
+10
+00:00:55,600 --> 00:01:01,760
+với số hiệu và cả số lượng tín hiệu. Đó là chức năng tôi đã viết.
+
+11
+00:01:01,760 --> 00:01:07,600
+Được rồi, bây giờ hãy xem. Nên tôi đã viết một bài kiểm tra đau bụng nhanh chóng. Vì vậy, hãy để tôi nhanh chóng hiển thị
+
+12
+00:01:07,600 --> 00:01:14,880
+anh. Vì vậy, bạn có thể thấy ở đây, đây là ID máy. Và bây giờ là 4522. Vì vậy, tôi sẽ chạy nó một lần.
+
+13
+00:01:14,880 --> 00:01:20,640
+Vì vậy, nó sẽ lưu trữ phần tĩnh của dấu nhắc. Và sau đó tôi sẽ thay đổi thẻ căn cước.
+
+14
+00:01:20,640 --> 00:01:26,880
+Và về cơ bản, nó sẽ thay đổi ID máy này, nhưng chúng tôi sẽ vẫn có thể sử dụng lại một số phần của
+
+15
+00:01:26,880 --> 00:01:34,400
+Đứng yên. Được rồi, bây giờ hãy để tôi đi trước và kêu gọi điều này. Để tôi thử xem.
+
+16
+00:01:34,400 --> 00:01:45,920
+Để tôi nhấn vào cái này. Được rồi, bây giờ bạn có thể thấy ở đây, về cơ bản độ trễ là 1, 3, 4, 5 phần nghìn giây.
+
+17
+00:01:45,920 --> 00:01:52,240
+Và tổng số thẻ tín dụng được dùng là chúng ta có biểu tượng đầu vào 143 và hiệu xuất là 350.
+
+18
+00:01:52,240 --> 00:01:58,160
+Vì vậy, hãy để tôi chỉ cần sao chép này và chúng ta sẽ xem sự thay đổi. Vì vậy, hãy để tôi chỉ dán nó ở đây.
+
+19
+00:01:58,160 --> 00:02:03,360
+Và bây giờ hãy để tôi quay lại với chức năng lambda của mình. Được rồi, bây giờ tôi sẽ chỉ để thay đổi máy
+
+20
+00:02:03,360 --> 00:02:11,280
+ID. Vì vậy, tôi sẽ chỉ nhấp chuột vào điều này. Và hãy nói rằng các ID máy là 99. Và sau đó tôi sẽ chỉ làm một tiết kiệm.
+
+21
+00:02:12,400 --> 00:02:16,160
+Được rồi, giờ cái này đã được lưu lại. Giờ để tôi thử lại lần nữa.
+
+22
+00:02:16,160 --> 00:02:28,800
+Được rồi, nó tiếp tục chạy. Được rồi, tôi đã chờ một vài giây và bây giờ nó đã tạo ra một phản hồi.
+
+23
+00:02:28,800 --> 00:02:34,560
+Vì vậy, bạn có thể thấy sự dễ chịu lần này là 1074 giây. Nếu chúng ta làm theo yêu cầu trước,
+
+24
+00:02:34,560 --> 00:02:40,720
+Sau đó sự khoan dung là 1345. Vậy là nó đã làm giảm tình trạng khó chịu. Vì vậy, bây giờ chúng tôi cũng có thể thấy
+
+25
+00:02:40,720 --> 00:02:48,800
+Bộ nhớ tạm đọc các hiệu nhập. Vậy là nó đã tái sử dụng 77 thẻ tín dụng. Rõ ràng đây là một lời nhắc nhở rất ngắn.
+
+26
+00:02:48,800 --> 00:02:54,320
+mà chúng tôi đã viết. Nhưng nếu bạn sẽ viết các dấu nhắc dài hơn và các tài liệu sẽ được
+
+27
+00:02:54,320 --> 00:03:00,320
+Lớn hơn nhiều, sẽ có rất nhiều tái sử dụng. Vì vậy, tôi chỉ muốn nhanh chóng cho bạn thấy
+
+28
+00:03:00,320 --> 00:03:05,680
+Làm thế nào bạn có thể sử dụng tắc mạch. Bây giờ bạn cũng có thể thấy khả năng này từ chính bàn điều khiển.
+
+29
+00:03:05,680 --> 00:03:10,560
+Vì vậy, nếu tôi chỉ cần đi đến sân chơi trò chuyện này và cho tôi chỉ cần chọn một mô hình, hãy để tôi nói không còn chuyên nghiệp.
+
+30
+00:03:10,560 --> 00:03:17,440
+Và nếu tôi chỉ cần di chuyển xuống đây, bạn sẽ có thể thấy nhanh chóng ngứa. Vì vậy, tôi có thể hiệu lực này và
+
+31
+00:03:17,440 --> 00:03:22,400
+Các dấu nhắc và câu trả lời mô hình của bạn tự động được lưu trong điểm kiểm tra bộ nhớ tạm. Nhưng khi
+
+32
+00:03:22,400 --> 00:03:26,480
+Bạn thử nó qua bảng điều khiển, đôi khi nó không hoạt động. Vì vậy, đó là lý do tại sao tôi đã cho bạn thấy nó
+
+33
+00:03:26,480 --> 00:03:30,640
+Về mặt sinh học. Được rồi, vậy là khá nhiều từ bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo.
+
+34
+00:03:30,640 --> 00:03:31,280
+Cảm ơn.
+
