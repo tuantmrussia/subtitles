@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:04,240
+ In this lecture, we're going to look at the 11th architectural decision point
+
+2
+00:00:04,240 --> 00:00:09,280
+ for our generative AI application. And that is model customization.
+
+3
+00:00:09,280 --> 00:00:17,040
+ Model adaptation approaches in Amazon bedrock. So model adaptation simply means how do you
+
+4
+00:00:17,040 --> 00:00:23,680
+ improve the output that you're generating from your foundation model based on the prompt that you have
+
+5
+00:00:23,680 --> 00:00:29,200
+ sent. So there are different ways in which you can do that. So the first approach is prompt
+
+6
+00:00:29,200 --> 00:00:34,480
+ engineering. And we've already discussed prompt engineering previously. So it's a low cost,
+
+7
+00:00:34,480 --> 00:00:41,840
+ low effort approach, but the results are average. Now if prompt engineering does not work for you,
+
+8
+00:00:41,840 --> 00:00:48,320
+ the next approach is retrieval augmented generation or right. So here, basically, you connect
+
+9
+00:00:48,320 --> 00:00:54,160
+ your large language model to your internal data source. So we're going to deep dive into
+
+10
+00:00:54,160 --> 00:01:00,720
+ RAG in the next section, but the results are much better for RAG compared to prompt engineering,
+
+11
+00:01:00,720 --> 00:01:08,400
+ but there is more cost. And it also takes much longer. Then we have fine tuning and continued
+
+12
+00:01:08,400 --> 00:01:15,520
+ pre-training, which are model customization approaches. Remember, these two are not model customization.
+
+13
+00:01:15,520 --> 00:01:22,240
+ So the results are much better, but it takes more cost and time. Now model customization in
+
+14
+00:01:22,240 --> 00:01:30,160
+ Amazon bedrock is done to improve a model's performance accuracy and relevance for specific
+
+15
+00:01:30,160 --> 00:01:37,120
+ proprietary business use cases and tasks. So what are the different model customization approaches?
+
+16
+00:01:37,120 --> 00:01:42,000
+ So first you have model distillation, then you have fine tuning, then you have continued
+
+17
+00:01:42,000 --> 00:01:47,760
+ pre-training, and then you have reinforcement fine tuning. So till a few weeks back, we had these
+
+18
+00:01:47,760 --> 00:01:53,280
+ first three approaches that were available on Amazon bedrock, but now what they are doing is
+
+19
+00:01:53,280 --> 00:01:58,720
+ they are moving this continued pre-training to SageMaker AI and they are introducing,
+
+20
+00:01:58,720 --> 00:02:05,200
+ it's still in preview reinforcement fine tuning. Now let's take a look at the customization
+
+21
+00:02:05,200 --> 00:02:09,920
+ approach architecture on how it actually works. So previously, we had seen a similar
+
+22
+00:02:09,920 --> 00:02:15,520
+ architecture for Amazon bedrock, but there is slight variation when you do the customization.
+
+23
+00:02:15,520 --> 00:02:20,640
+ So we had previously discussed for each account, there is going to be a base model which will be
+
+24
+00:02:20,640 --> 00:02:26,560
+ hosted in the S3 bucket. So when you make a request either programmatically or through the browser,
+
+25
+00:02:26,560 --> 00:02:32,400
+ it will go to Amazon bedrock service, and then it will be routed to this base model in the S3
+
+26
+00:02:32,400 --> 00:02:37,520
+ bucket and you get a response. But in case when you're doing the customization, there are more
+
+27
+00:02:37,520 --> 00:02:44,160
+ elements. So the first one is, so in your account, the customer account, you will create an S3 bucket
+
+28
+00:02:44,160 --> 00:02:50,320
+ and you will upload all your training data that you would want to use to customize your model.
+
+29
+00:02:50,320 --> 00:02:56,880
+ So either through programmatically or through the console, you create a training job in the
+
+30
+00:02:56,880 --> 00:03:02,720
+ Amazon bedrock service, and then Amazon bedrock service is going to route it where this training
+
+31
+00:03:02,720 --> 00:03:09,120
+ orchestration and create a SageMaker training job. So what this job will do is, it will take the
+
+32
+00:03:09,120 --> 00:03:17,200
+ data from your training data S3 bucket and then train this base model in S3 bucket and finally
+
+33
+00:03:17,200 --> 00:03:23,440
+ create a fine tune model that will be hosted in a separate S3 bucket. In this lecture,
+
+34
+00:03:23,440 --> 00:03:28,880
+ we want to take a look at the first model customization approach that is model distillation.
+
+35
+00:03:28,880 --> 00:03:35,440
+ So model distillation transfers knowledge from a large accurate teacher model to a smaller
+
+36
+00:03:35,440 --> 00:03:42,080
+ faster and cheaper student model. So what that means is in model distillation, there will be two
+
+37
+00:03:42,080 --> 00:03:48,400
+ models. One would be the teacher model, which is the larger, more capable model. So let's say in
+
+38
+00:03:48,400 --> 00:03:54,480
+ our case, it's Nova Pro and it could have hundreds and billions of parameters. Then we have a
+
+39
+00:03:54,480 --> 00:04:00,800
+ student model that is smaller and more efficient model. And let's say in our case, this is going to be
+
+40
+00:04:00,800 --> 00:04:06,320
+ Nova Light. So let's say in our use case, we are planning to use Nova Light because it has
+
+41
+00:04:06,320 --> 00:04:14,240
+ low latency and it is much cheaper to use than Nova Pro. Then what you do is you provide prompts,
+
+42
+00:04:14,240 --> 00:04:21,760
+ so you send prompts to this Nova Pro model and it will generate a response. Then use the prompt
+
+43
+00:04:21,760 --> 00:04:30,400
+ and response that you have got from this Nova Pro model and use that to train your Nova Light model.
+
+44
+00:04:31,280 --> 00:04:37,360
+ So in summary, you send a large number of prompts to this teacher model, it generated a response,
+
+45
+00:04:37,360 --> 00:04:44,880
+ then you use that prompt plus response that you got from the teacher model to train the student
+
+46
+00:04:44,880 --> 00:04:51,600
+ model. So what's the use case scenario for model distillation, achieving near large model accuracy
+
+47
+00:04:51,600 --> 00:04:58,080
+ at lower latency and cost. So when you train the student model based on the prompt and response
+
+48
+00:04:58,080 --> 00:05:04,000
+ that you have got from the teacher model, its accuracy would be nearly as good as the teacher model
+
+49
+00:05:04,000 --> 00:05:10,480
+ but the cost and latency is going to be much lower. Okay, so that's pretty much it from this
+
+50
+00:05:10,480 --> 00:05:12,000
+ lecture. I'll see you in the next lecture. Thank you.
+
