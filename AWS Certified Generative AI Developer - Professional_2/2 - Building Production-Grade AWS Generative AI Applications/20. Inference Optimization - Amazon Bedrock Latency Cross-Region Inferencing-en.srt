@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:04,560
+ In this lecture, we're going to look at the second lever for inference optimization,
+
+2
+00:00:04,560 --> 00:00:11,200
+ which is cross region inferencing. And this is really important. Cross region inference uses
+
+3
+00:00:11,200 --> 00:00:18,480
+ inference profiles to increase throughput and improve resilience by routing requests across
+
+4
+00:00:18,480 --> 00:00:25,280
+ multiple AWS regions during peak utilization burst. So at certain times,
+
+5
+00:00:25,280 --> 00:00:30,640
+ there could be some scenarios where there is not enough capacity within a particular region
+
+6
+00:00:30,640 --> 00:00:38,080
+ to service your request by the Amazon bedrock service. So in those scenarios, you can use cross
+
+7
+00:00:38,080 --> 00:00:45,200
+ region inference and your request would be routed to a different AWS region. So let's say you
+
+8
+00:00:45,200 --> 00:00:52,160
+ center request either through console SDK or API. This request will go to Amazon bedrock service
+
+9
+00:00:52,160 --> 00:00:58,560
+ and let's say you only want to use us east one. So your request will be sent to us east one,
+
+10
+00:00:58,560 --> 00:01:03,040
+ but if there is scenario where there is not enough capacity, you will experience
+
+11
+00:01:03,040 --> 00:01:08,960
+ throttling. Now, if you enable cross region inference, then Amazon bedrock is going to route
+
+12
+00:01:08,960 --> 00:01:15,520
+ that request to a different region, let's say us east two or some other region where there is
+
+13
+00:01:15,520 --> 00:01:21,760
+ sufficient capacity to service your request. So how does the model know that whether this needs
+
+14
+00:01:21,760 --> 00:01:29,760
+ to be routed to a single AWS region or you can do cross region inference. And that is through
+
+15
+00:01:29,760 --> 00:01:36,320
+ by defining the inference profile for your model. So let's take a look. So here you can see
+
+16
+00:01:36,320 --> 00:01:43,280
+ I have written this border three code to send an API request to Amazon bedrock, but here if you
+
+17
+00:01:43,280 --> 00:01:49,920
+ see the model ID, I have defined this as entropic dot cloud three haiku. When you want to use a
+
+18
+00:01:49,920 --> 00:01:57,920
+ global inference profile, then you start with global and then model ID. Now, as we discussed when
+
+19
+00:01:57,920 --> 00:02:05,840
+ we use global here, that means it can be routed to any AWS region across the globe, but now
+
+20
+00:02:05,840 --> 00:02:11,200
+ there could be some scenarios like in Europe, you have the GDPR regulation. So you might not want
+
+21
+00:02:11,200 --> 00:02:18,560
+ your data to go outside the European Union. In that case, AWS has something known as geographic
+
+22
+00:02:18,560 --> 00:02:25,040
+ cross region. Now, let's say your primary region is in US. So what you can do is you can define
+
+23
+00:02:25,040 --> 00:02:31,600
+ us dot the name of the model. So it's going to then only route to you can see here either Canada
+
+24
+00:02:31,600 --> 00:02:39,680
+ see a West US East US West. So only in AWS regions within US and Canada. Similarly, if you are
+
+25
+00:02:39,680 --> 00:02:45,680
+ in Europe, so then you can define with this EU. So if you define global, that means it can be routed
+
+26
+00:02:45,680 --> 00:02:53,600
+ to any region across the globe. But if you define the geographical region and then the model ID,
+
+27
+00:02:53,600 --> 00:03:01,040
+ it will be routed only within that geographic region. Now, a quick difference between geographic
+
+28
+00:03:01,040 --> 00:03:06,560
+ cross region inference and global cross region inference. So if you have some data residency
+
+29
+00:03:06,560 --> 00:03:11,920
+ requirements, then you can use this geographic cross region inference within US, UN,
+
+30
+00:03:11,920 --> 00:03:17,200
+ attack. But if you don't have any data residency requirement, you can use any AWS
+
+31
+00:03:17,200 --> 00:03:23,440
+ commercial region worldwide. So from the throughput perspective, AWS says geographic cross
+
+32
+00:03:23,440 --> 00:03:28,480
+ region inference, it is higher than the single region. And for global cross region inference,
+
+33
+00:03:28,480 --> 00:03:34,000
+ it's the highest. So choose global for maximum performance. Then from the cost perspective,
+
+34
+00:03:34,000 --> 00:03:40,560
+ it's standard pricing. If you use global cross region inference, it's going to be 10% saving.
+
+35
+00:03:40,560 --> 00:03:46,400
+ So choose global for cost optimization. And then in terms of the SCP requirement,
+
+36
+00:03:46,400 --> 00:03:52,080
+ so if you have service control policies within your organization, so you can define your service
+
+37
+00:03:52,080 --> 00:03:58,960
+ control policy and allow all destination regions in profile. And if you're using global cross
+
+38
+00:03:58,960 --> 00:04:05,840
+ region inference, then you can set AWS requested region to unspecified. So finally, AWS says
+
+39
+00:04:05,840 --> 00:04:12,000
+ for geographic cross region inference, if your organization has data residency regulations,
+
+40
+00:04:12,000 --> 00:04:16,160
+ then choose this one. So if you don't have any data residency requirements,
+
+41
+00:04:16,160 --> 00:04:22,320
+ and you are prioritizing for cost and performance, then go for global cross region inference.
+
+42
+00:04:22,320 --> 00:04:29,520
+ Now, let's take a look at the third inference optimization approach. And that is latency optimization
+
+43
+00:04:29,520 --> 00:04:37,440
+ strategies. So AWS says latency optimized inference for foundation models in Amazon bedrock,
+
+44
+00:04:37,440 --> 00:04:46,000
+ delivers faster response times and improved responsiveness for AI applications. So how do you do
+
+45
+00:04:46,000 --> 00:04:53,600
+ that? So AWS says there are some models which are very suited for low latency use cases balancing
+
+46
+00:04:53,600 --> 00:05:00,400
+ speed and quality. So those are Amazon Nova Pro. Then you have from entropic cloud 3.5
+
+47
+00:05:00,400 --> 00:05:08,640
+ high co model and meta llamas 3.1 4, 0, 5 billion and 70 billion models. So these three models
+
+48
+00:05:08,640 --> 00:05:15,200
+ are optimized for low latency. Finally, there is one more way in which you can optimize your
+
+49
+00:05:15,200 --> 00:05:22,640
+ latency. That is by setting the latency parameter to optimized while calling the Amazon
+
+50
+00:05:22,640 --> 00:05:28,800
+ bedrock runtime API. So here if you see I have pasted some go to three code where we are making
+
+51
+00:05:28,800 --> 00:05:34,560
+ an API request to the Amazon bedrock. So there is a configuration parameter called as performance
+
+52
+00:05:34,560 --> 00:05:41,600
+ config latency. And it has two options standard and optimize. So this is an optional
+
+53
+00:05:41,600 --> 00:05:46,640
+ configuration parameter. So if you don't provide any value, then it will take standard. But if you
+
+54
+00:05:46,640 --> 00:05:53,040
+ want to optimize your latency, then you provide this optimized value. Okay, so that is pretty much
+
+55
+00:05:53,040 --> 00:05:56,880
+ it from this lecture. I will see in the next lecture.
+
