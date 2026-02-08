@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:18,000
+Trong một trong những bài giảng trước đó, khi chúng tôi đang thảo luận về 15 quyết định kiến trúc quan trọng mà chúng tôi cần phải thực hiện để xây dựng một ứng dụng sản xuất sẵn sàng, quyết định đầu tiên và quan trọng nhất là, mà AWS làm dịch vụ chúng tôi nên sử dụng cho trường hợp sử dụng của chúng tôi.
+
+2
+00:00:18,000 --> 00:00:28,000
+Trong các bài giảng tiếp theo, chúng ta sẽ xem xét những lựa chọn nào có sẵn từ góc nhìn dịch vụ của AWS và những gì là lợi ích và tù nhân của mỗi dịch vụ.
+
+3
+00:00:28,000 --> 00:00:35,000
+Đầu tiên, hãy bắt đầu với dịch vụ sản xuất AWS quan trọng nhất, đó là nền móng Amazon.
+
+4
+00:00:35,000 --> 00:00:40,000
+Trong bài giảng này, chúng ta sẽ lặn sâu vào nền đá của Amazon.
+
+5
+00:00:40,000 --> 00:00:50,000
+Vì vậy, đá nền Amazon cung cấp cho các mô hình nền tảng cơ bản sẵn có từ Amazon và bên thứ ba các nhà cung cấp các mô hình bên có thể truy cập thông qua một hệ thống CN.
+
+6
+00:00:50,000 --> 00:00:57,000
+Vì vậy, ở đây tôi đã dán một biểu đồ của một số nhà cung cấp bên thứ ba có sẵn như một phần của nền móng Amazon.
+
+7
+00:00:57,000 --> 00:01:05,000
+Vì vậy, bạn có thể thấy ở đây chúng tôi có nhà cung cấp mô hình thứ ba gọi là AI 21 phòng thí nghiệm, và nó cung cấp cho một số các mô hình với tên Jamba.
+
+8
+00:01:05,000 --> 00:01:12,000
+Và ở đây nó mô tả những khả năng cốt lõi của các mô hình được cung cấp bởi Al 21 phòng thí nghiệm.
+
+9
+00:01:12,000 --> 00:01:17,000
+Vì vậy, nó nói lý luận hữu hiệu và phân tích nhanh cho cửa sổ văn cảnh dài.
+
+10
+00:01:17,000 --> 00:01:26,000
+Vì vậy, nếu bạn đang xây dựng một ứng dụng sáng tạo nơi bạn có cửa sổ ngữ cảnh dài, có nghĩa là bạn có tài liệu nhập vào mà đi vào hàng trăm trang.
+
+11
+00:01:26,000 --> 00:01:28,000
+Giả sử trong trường hợp hợp hợp hợp đồng hợp pháp.
+
+12
+00:01:28,000 --> 00:01:31,000
+Vì vậy, điều này là tốt cho cửa sổ ngữ cảnh dài.
+
+13
+00:01:31,000 --> 00:01:37,000
+Sau đó bạn có các mô hình từ Amazon, có tên Amazon, NOAA, NOAA pro, NOAA light v.v...
+
+14
+00:01:37,000 --> 00:01:43,000
+Vì vậy Amazon nói rằng đó là trí thông minh biên giới và ngành công nghiệp dẫn đầu thành tích giá cả, hình ảnh chất lượng cao và thế hệ video.
+
+15
+00:01:43,000 --> 00:01:47,000
+Amazon đang tập trung vào hiệu suất giá cả.
+
+16
+00:01:47,000 --> 00:01:53,000
+Sau đó, bạn có mô hình từ khoa nhân tạo, nó nói rằng suy nghĩ và mã hóa kéo dài bao gồm các kỹ năng sử dụng máy tính.
+
+17
+00:01:53,000 --> 00:01:59,000
+Vì vậy, nó cung cấp các mô hình khác nhau với tên đám mây, đám mây 3.5, 3.7, đám mây 4.5.
+
+18
+00:01:59,000 --> 00:02:03,000
+Vì thế nó tập trung vào suy nghĩ và lập trình mở rộng.
+
+19
+00:02:03,000 --> 00:02:08,000
+Và ở đây bạn có thể thấy một số mô hình khác và khả năng cốt lõi của chúng.
+
+20
+00:02:08,000 --> 00:02:16,000
+Đây không phải là một danh sách đầy đủ. Có rất nhiều nhà cung cấp bên thứ ba và chúng ta sẽ thấy rằng một khi chúng tôi đi đến bàn điều khiển.
+
+21
+00:02:16,000 --> 00:02:24,000
+Tóm lại, bạn có thể truy cập bất kỳ mô hình nào từ Amazon hoặc bên thứ ba mô hình cung cấp thông qua chỉ một hệ thống ADI.
+
+22
+00:02:24,000 --> 00:02:30,000
+Điều tốt ở Amazon là một dịch vụ không máy chủ được quản lý đầy đủ từ AWS.
+
+23
+00:02:30,000 --> 00:02:44,000
+Điều đó có nghĩa là đối với tất cả các mô hình có sẵn như một phần của nền đá Amazon, AWS sẽ chăm sóc cho việc quản lý mô hình giám sát, tăng cường, vá và tất cả những thứ khác liên quan đến cơ sở hạ tầng.
+
+24
+00:02:44,000 --> 00:02:51,000
+Vì vậy, tất cả những gì bạn cần làm là thực hiện một cuộc gọi trên nền tảng Amazon với đầu vào người dùng của bạn và bạn sẽ nhận được một hồi đáp.
+
+25
+00:02:51,000 --> 00:03:00,000
+Và điều quan trọng nhất là anh sẽ chỉ bị buộc tội vì số lượng các cuộc gọi của API. Vì vậy, nếu bạn không thực hiện bất kỳ cuộc gọi ADI bạn không phải là bất kỳ cáo buộc.
+
+26
+00:03:00,000 --> 00:03:08,000
+Bây giờ chúng ta hãy đi trước và hiểu làm thế nào đá nền Amazon hoạt động ở một mức độ cao và trong bài giảng tiếp theo sau đó chúng ta sẽ đi sâu vào kiến trúc.
+
+27
+00:03:08,000 --> 00:03:13,000
+Bạn có thể truy cập vào nền đá Amazon bằng ba cách. Vì vậy, bạn có thể làm điều đó thông qua bảng điều khiển AWS.
+
+28
+00:03:13,000 --> 00:03:23,000
+Bạn có thể làm điều đó thông qua một cRI hoặc bạn có thể làm điều đó thông qua hoặc bạn có thể làm nó một cách lập trình thông qua SDK. Vì vậy, hãy nói nếu bạn đang sử dụng Python sau đó bạn có thể sử dụng một cung đến ba SDK.
+
+29
+00:03:23,000 --> 00:03:28,000
+Bây giờ hãy nói rằng người dùng cuối cùng của chúng tôi có một câu hỏi ai là cầu thủ tennis giỏi nhất.
+
+30
+00:03:28,000 --> 00:03:37,000
+Vì vậy, những gì bạn sẽ làm là bạn sẽ thực hiện một cuộc gọi ADI đến dịch vụ nền móng Amazon. Vì vậy, ngoài các đầu vào người dùng, bạn sẽ thêm vào một số tham số cấu hình máy tính trên nền.
+
+31
+00:03:37,000 --> 00:03:47,000
+Vì vậy, nếu bạn có thể thấy ở đây điều đầu tiên bạn sẽ làm là bạn sẽ xác định các mô hình ID và chúng tôi đã thấy rất nhiều các nhà cung cấp mô hình khác nhau trong slide cuối cùng và mỗi người trong số họ đã có một số lượng lớn các mô hình.
+
+32
+00:03:47,000 --> 00:03:58,000
+Vì vậy, ở đây bạn sẽ cung cấp cho các mô hình ID và ở đây bạn có thể thấy chúng tôi đang nói về sâu sắc mô hình tổ chức bên thứ ba và bạn sử dụng vỗ tay ba cao mát mẻ do đó, đó là mô hình chúng tôi sẽ sử dụng.
+
+33
+00:03:58,000 --> 00:04:15,000
+Tiếp theo bạn cung cấp các nhắc nhở và đó là câu hỏi chúng tôi đã có ở đây là người chơi tennis tốt nhất và sau đó bạn thêm cung cấp một số tham số tăng trưởng như các tín hiệu tối đa, nhiệt độ và chúng tôi sẽ nói về họ chi tiết hơn nhiều trong các bài giảng tiếp theo.
+
+34
+00:04:15,000 --> 00:04:24,000
+Nhưng bây giờ chỉ cần nhớ rằng bạn phải vượt qua một tham số suy luận và điều này sẽ ảnh hưởng đến kết xuất bạn sẽ nhận được từ mô hình ngôn ngữ lớn. Được rồi.
+
+35
+00:04:24,000 --> 00:04:39,000
+Vì vậy, một khi bạn gửi dữ liệu đầu vào và cấu hình các tham số cho các dịch vụ nền móng Amazon sau đó dịch vụ nền móng Amazon này sẽ chuyển hướng yêu cầu đến các mô hình nền tảng hậu phương phụ thuộc vào các mô hình bạn đã cung cấp ở đây.
+
+36
+00:04:39,000 --> 00:04:50,000
+Trong trường hợp này chúng tôi cung cấp các đám mây thăm dò sâu sắc vì vậy nó sẽ gửi yêu cầu này để nội gián nhưng hãy nói nếu bạn muốn sử dụng một mô hình từ Google sau đó bạn có thể chỉ cung cấp các mô hình ID.
+
+37
+00:04:50,000 --> 00:04:56,000
+Vì vậy, bạn có thể thấy chúng tôi có mô hình này từ Google và nếu bạn chỉ cung cấp các mô hình ID cho điều này nó sẽ yêu cầu nó Google.
+
+38
+00:04:56,000 --> 00:05:15,000
+Bây giờ bạn có các mô hình từ Nova, bạn cũng có thể gửi yêu cầu đó đến loạt GPT bằng cách mở AI vì vậy tất cả các mô hình này được cung cấp như một phần của nền Amazon và tất cả những gì bạn phải làm là xác định những mô hình ID bạn muốn sử dụng và gửi dữ liệu đầu vào cùng với các tham số và bạn nên có thể nhận được một hồi đáp.
+
+39
+00:05:15,000 --> 00:05:18,920
+Được rồi, vậy là khá nhiều từ bài giảng này. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
