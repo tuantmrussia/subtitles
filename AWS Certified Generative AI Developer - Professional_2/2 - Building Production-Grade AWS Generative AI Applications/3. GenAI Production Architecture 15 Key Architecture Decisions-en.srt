@@ -1,0 +1,560 @@
+1
+00:00:00,000 --> 00:00:05,340
+ Now, before we move to the architectural decisions, please remember building any production
+
+2
+00:00:05,340 --> 00:00:13,280
+ grade genetic application is ultimately about balancing quality, latency and cost.
+
+3
+00:00:13,280 --> 00:00:19,880
+ So, this is also sometimes called as the Gen Ai Trilema, where your objective is to build
+
+4
+00:00:19,880 --> 00:00:24,760
+ the best quality application at lowest cost and low latency.
+
+5
+00:00:24,760 --> 00:00:30,120
+ Now, if we just think about the use case that we just discussed on building Gen Ai
+
+6
+00:00:30,120 --> 00:00:36,440
+ Power SME Assistant, which does the summarization for doing the summarization, we need
+
+7
+00:00:36,440 --> 00:00:39,880
+ a foundation model or a large language model.
+
+8
+00:00:39,880 --> 00:00:45,000
+ Now, just to help you correlate, if you have used chat GPT before and let us say you
+
+9
+00:00:45,000 --> 00:00:51,600
+ send it a task to summarise a long document, it will use a foundation model or a large
+
+10
+00:00:51,600 --> 00:00:53,800
+ language model behind the scene.
+
+11
+00:00:53,800 --> 00:01:00,560
+ So, you can see here chat GPT is an application, but it uses GPT 5.2 model for doing
+
+12
+00:01:00,560 --> 00:01:01,560
+ the task.
+
+13
+00:01:01,560 --> 00:01:07,640
+ Now, the question is in AWS, which is the right service that provides you access to those
+
+14
+00:01:07,640 --> 00:01:10,680
+ foundation models or large language models.
+
+15
+00:01:10,680 --> 00:01:17,520
+ So, that is your first decision, choice of AWS service that provides you Gen Ai capability.
+
+16
+00:01:17,520 --> 00:01:23,760
+ In AWS, there are two key services, one is Amazon Federal and it is the flagship AWS
+
+17
+00:01:23,760 --> 00:01:29,400
+ service for Gen Ai, but we also have the SageMaker Jump Start.
+
+18
+00:01:29,400 --> 00:01:33,400
+ And as we go along, we are going to deep dive into both Amazon Federal and SageMaker
+
+19
+00:01:33,400 --> 00:01:38,560
+ Jump Start, look at the factors where we select Amazon Federal or SageMaker Jump Start.
+
+20
+00:01:38,560 --> 00:01:43,600
+ Now, let us assume for a use case based on certain factors, you have selected Amazon
+
+21
+00:01:43,600 --> 00:01:44,600
+ Betterock.
+
+22
+00:01:44,600 --> 00:01:50,680
+ The next thing you have to do is select the right foundation model or the large language
+
+23
+00:01:50,680 --> 00:01:51,680
+ model.
+
+24
+00:01:51,680 --> 00:01:57,120
+ So, that is our second decision criteria, selection of the foundation model or the large
+
+25
+00:01:57,120 --> 00:01:58,120
+ language model.
+
+26
+00:01:58,120 --> 00:02:04,120
+ Now, we had selected Amazon Betterock, Amazon Betterock provides more than 100 different
+
+27
+00:02:04,120 --> 00:02:05,120
+ models.
+
+28
+00:02:05,120 --> 00:02:12,480
+ So, you will have models from Gemini, Cloud, Open Ai model from Amazon itself, Noa
+
+29
+00:02:12,480 --> 00:02:15,560
+ Pro and so on.
+
+30
+00:02:15,560 --> 00:02:18,200
+ So, you will need to think about what is your use case and what could be the right foundation
+
+31
+00:02:18,200 --> 00:02:19,200
+ model.
+
+32
+00:02:19,200 --> 00:02:21,000
+ So, we are going to look at all those considerations.
+
+33
+00:02:21,000 --> 00:02:27,240
+ Now, let us say we selected the AWS service, we selected the foundation model and now
+
+34
+00:02:27,240 --> 00:02:35,120
+ our end user, the SME sends the equipment images and issue logs to our foundation model
+
+35
+00:02:35,120 --> 00:02:37,240
+ to do the summarization.
+
+36
+00:02:37,240 --> 00:02:42,520
+ So, now even before this equipment data and logs etcetera go to this foundation model for
+
+37
+00:02:42,520 --> 00:02:51,560
+ summarization, for large organizations, safety, security, responsible Ai is of critical importance
+
+38
+00:02:51,560 --> 00:02:55,720
+ because they are subject to liability, repetition and so on.
+
+39
+00:02:55,720 --> 00:03:02,200
+ So, sometime there is a possibility that a rogue employee may send some toxic content,
+
+40
+00:03:02,200 --> 00:03:07,040
+ abuse you content to this foundation model or may ask, let us say question.
+
+41
+00:03:07,040 --> 00:03:13,400
+ How do I rob a bank and foundation model can respond to that answer, if there are not
+
+42
+00:03:13,400 --> 00:03:15,760
+ enough guardrails in place.
+
+43
+00:03:15,760 --> 00:03:21,880
+ So, that is why having guardrails which not only filters the user input going to the foundation
+
+44
+00:03:21,880 --> 00:03:29,720
+ model but also the response from the foundation model to build a safe responsible Ai application
+
+45
+00:03:29,720 --> 00:03:36,520
+ and that is where our third decision comes into play on how you can implement the guardrails
+
+46
+00:03:36,520 --> 00:03:41,680
+ safety and a responsible Ai principles and this is an extremely important topic not only
+
+47
+00:03:41,680 --> 00:03:47,640
+ from exam but also from building the real world production grade application.
+
+48
+00:03:47,640 --> 00:03:52,560
+ So, that is the third decision that you need to think about based on a use case what
+
+49
+00:03:52,560 --> 00:03:58,320
+ could be the right set of guardrails and responsible Ai practices that you would implement.
+
+50
+00:03:58,320 --> 00:04:03,240
+ Now, the next consideration you need to think about is the prompt engineering.
+
+51
+00:04:03,240 --> 00:04:07,320
+ So, earlier we discussed about quality cost and latency.
+
+52
+00:04:07,320 --> 00:04:12,640
+ So, how do we improve the quality of the response generated by the foundation model to the
+
+53
+00:04:12,640 --> 00:04:18,680
+ equipment SME questions without increasing the cost and that can be done through prompt
+
+54
+00:04:18,680 --> 00:04:19,680
+ engineering.
+
+55
+00:04:19,680 --> 00:04:24,800
+ So, what prompt engineering allows you to do is create some reusable prompt templates
+
+56
+00:04:24,800 --> 00:04:30,880
+ that can go along with the user input and in this case the equipment SME so that you
+
+57
+00:04:30,880 --> 00:04:33,200
+ get an optimal response.
+
+58
+00:04:33,200 --> 00:04:38,440
+ So here I just brought an example let us say the equipment SME sends these logs and then
+
+59
+00:04:38,440 --> 00:04:40,640
+ just say summarize in 10 lines.
+
+60
+00:04:40,640 --> 00:04:46,600
+ Then our system prompt what it can do is it can add some more context you can say you
+
+61
+00:04:46,600 --> 00:04:51,760
+ are a manufacturing maintenance expert here is an example take a look at this example
+
+62
+00:04:51,760 --> 00:04:57,920
+ and then summarize in 10 lines based on the new data and it will optimize the response
+
+63
+00:04:57,920 --> 00:05:01,960
+ for you without substantially increasing the cost.
+
+64
+00:05:01,960 --> 00:05:05,040
+ So, we are going to deep dive into this a little later.
+
+65
+00:05:05,040 --> 00:05:10,280
+ So, next is the inference optimization there are different service tiers in Amazon bedrock
+
+66
+00:05:10,280 --> 00:05:17,560
+ and based on your availability and cost needs you can select the right tier.
+
+67
+00:05:17,560 --> 00:05:22,720
+ Then you also have cross region inferencing if your application is super critical then
+
+68
+00:05:22,720 --> 00:05:26,480
+ you can choose cross region inferencing and we are going to discuss about all those things
+
+69
+00:05:26,480 --> 00:05:32,280
+ but inference optimization is also an important parameter from the exam perspective so
+
+70
+00:05:32,280 --> 00:05:39,880
+ you need to again you need to make those decisions to optimize for cost quality and latency.
+
+71
+00:05:39,880 --> 00:05:42,240
+ Next we are going to look at cost optimization.
+
+72
+00:05:42,240 --> 00:05:48,320
+ So how do you optimize the cost for your generative application and there are various techniques
+
+73
+00:05:48,320 --> 00:05:49,320
+ to do that.
+
+74
+00:05:49,320 --> 00:05:53,520
+ So you are prompt caching and there are some other techniques that we are going to discuss.
+
+75
+00:05:53,520 --> 00:05:59,320
+ So, now next important decision that you need to make is what service are you going to
+
+76
+00:05:59,320 --> 00:06:02,280
+ use for your generi orchestration layer.
+
+77
+00:06:02,280 --> 00:06:06,200
+ So, you have multiple options so you have a lambda function, you have step functions
+
+78
+00:06:06,200 --> 00:06:09,040
+ and you have ECS, EC2 and so on.
+
+79
+00:06:09,040 --> 00:06:12,920
+ So, why do we need this generi orchestration layer?
+
+80
+00:06:12,920 --> 00:06:18,560
+ Now think about all the things we said will go to the foundation model to generate a response.
+
+81
+00:06:18,560 --> 00:06:24,360
+ So, the first one was is equipment logs issue logs and then the equipment SME said summarize
+
+82
+00:06:24,360 --> 00:06:29,920
+ in 10 lines let us say then we added some guard rates which will block and it toxic content
+
+83
+00:06:29,920 --> 00:06:36,320
+ and so on then we also said ok add some system prompts and here we had said you are a
+
+84
+00:06:36,320 --> 00:06:38,920
+ manufacturing maintenance expert so and so on.
+
+85
+00:06:38,920 --> 00:06:45,440
+ Now we need to orchestrate all of these things before this input is actually sent to the
+
+86
+00:06:45,440 --> 00:06:51,120
+ foundation model and that is where our generi orchestration layer and most popular among them
+
+87
+00:06:51,120 --> 00:06:55,920
+ is lambda function here because it is a much simpler use case but if it is more complex
+
+88
+00:06:55,920 --> 00:06:58,040
+ then probably you are going to use step function.
+
+89
+00:06:58,040 --> 00:07:02,500
+ So, we are going to look at all of this in detail but I am just for now as I said I am
+
+90
+00:07:02,500 --> 00:07:04,480
+ just giving a mental model.
+
+91
+00:07:04,480 --> 00:07:09,040
+ Now the 8 decision we have to make is on the API layer where we have the API gateway and
+
+92
+00:07:09,040 --> 00:07:13,440
+ this is the most popular on the choice of API layer and we are going to deep dive into this
+
+93
+00:07:13,440 --> 00:07:18,520
+ then we have ELB and apps thing so now let us say we have built the generi way application
+
+94
+00:07:18,520 --> 00:07:22,760
+ and we have written a lambda function which sends the input to the foundation model but
+
+95
+00:07:22,760 --> 00:07:29,240
+ we have to think about how do we securely expose our services to this end user how do
+
+96
+00:07:29,240 --> 00:07:34,000
+ we authorize the end user how do we enable kotas how we do enable some form of throttling
+
+97
+00:07:34,000 --> 00:07:41,280
+ so that all that is taken care of through this API layer so if you want expose your back
+
+98
+00:07:41,280 --> 00:07:47,280
+ and services securely then you can do through this choice of API layer and the as I said
+
+99
+00:07:47,280 --> 00:07:50,960
+ most model API gateway and we are going to deep dive into that later.
+
+100
+00:07:50,960 --> 00:07:56,720
+ Okay next is the generi observability and monitoring so mainly you will do it through Amazon
+
+101
+00:07:56,720 --> 00:08:02,840
+ CloudWatch now let us say you want to monitor your cost latency errors all that can be
+
+102
+00:08:02,840 --> 00:08:08,800
+ done through Amazon CloudWatch and then you can set some alarms etc if they do not meet
+
+103
+00:08:08,800 --> 00:08:14,800
+ certain threshold so Amazon bedrock allows you to monitor the logs and metrics through
+
+104
+00:08:14,800 --> 00:08:21,120
+ direct integration with CloudWatch or you can also send those logs to S3 or both now the
+
+105
+00:08:21,120 --> 00:08:26,240
+ 10th decision is model evaluation so now let us say you have undertaken all these activities
+
+106
+00:08:26,240 --> 00:08:32,640
+ and you build a great generi way application but the end user equipment SME is not happy
+
+107
+00:08:32,640 --> 00:08:38,320
+ because it is not generating the desired results so that is why it is important to
+
+108
+00:08:38,320 --> 00:08:44,400
+ evaluate your models before you start building full-fledged application and that is done through
+
+109
+00:08:44,400 --> 00:08:49,760
+ model evaluation so Amazon bedrock provides your model evaluation capability which can be either
+
+110
+00:08:49,760 --> 00:08:55,520
+ done through humans or automated evaluation now if you want to do some custom evaluation that
+
+111
+00:08:55,520 --> 00:09:02,560
+ can be done through SageMaker AI so the 11 decision is on the model fine tuning again you have
+
+112
+00:09:02,560 --> 00:09:08,000
+ SageMaker AI and Amazon bedrock available for model fine tuning so there could be
+
+113
+00:09:08,000 --> 00:09:14,400
+ scenarios where let us say you build this generi way application and since the foundation model is
+
+114
+00:09:14,400 --> 00:09:20,480
+ is trained on generate internet data let us say it is not able to correctly interpret the
+
+115
+00:09:20,480 --> 00:09:27,440
+ wind turbine logs because it is domain heavy so in those scenarios you can customize your foundation
+
+116
+00:09:27,440 --> 00:09:34,800
+ model either on the domain or specific tasks and in this scenario the task is chat so both Amazon
+
+117
+00:09:34,800 --> 00:09:41,200
+ bedrock and SageMaker AI allow you for model fine tuning so next we have a very important topic
+
+118
+00:09:41,200 --> 00:09:46,560
+ which is on security and data protection so there are different AWS service like cognitive, VPC
+
+119
+00:09:46,560 --> 00:09:54,000
+ endpoint, KMS, Macy etc which allow you to secure your generi way services so here first one is the
+
+120
+00:09:54,000 --> 00:09:59,200
+ user authentication authorization that can be done through Amazon cognitive if you are in an
+
+121
+00:09:59,200 --> 00:10:05,680
+ enterprise settings then you can use NTRIID which was called as your AD earlier so you have to do
+
+122
+00:10:05,680 --> 00:10:12,160
+ some form of authentication authorization then the second key aspect especially relative generi
+
+123
+00:10:12,160 --> 00:10:19,920
+ AI is PI reduction so that you can either do through Macy there is comprehend there is Amazon
+
+124
+00:10:19,920 --> 00:10:26,320
+ recognition and obviously there is Amazon guardrails so we are going to deep dive into all of these
+
+125
+00:10:26,320 --> 00:10:33,280
+ services so you know in what scenario what kind of a service that you can use okay then we have
+
+126
+00:10:33,280 --> 00:10:37,760
+ enterprise data management now let's say you are customizing your foundation model so for that
+
+127
+00:10:37,760 --> 00:10:44,560
+ unit data let's say you are evaluating your foundation model again for that you will need to store
+
+128
+00:10:44,560 --> 00:10:50,800
+ data in an AWS service and that's where you need to look at this enterprise data management whether
+
+129
+00:10:50,800 --> 00:10:57,680
+ S3, FSX or any other relational or non-relational database then the 14 key responsible unit
+
+130
+00:10:57,680 --> 00:11:03,280
+ to think about is gen A apps and governance for this generi way application how do you create
+
+131
+00:11:03,280 --> 00:11:08,880
+ cloud formation template or CDK and then how do you deploy it through the pipeline how do you
+
+132
+00:11:08,880 --> 00:11:16,000
+ register your models and then finally we have 15 we have the orchestration since this is relatively
+
+133
+00:11:16,000 --> 00:11:20,720
+ simple application we are not going to look so much on the orchestration side but as we go
+
+134
+00:11:20,720 --> 00:11:26,400
+ to the other use cases on rag and agents etc we will look at orchestration so there are different
+
+135
+00:11:26,400 --> 00:11:31,360
+ ways in you can do complex orchestration either through some of the open source frameworks like
+
+136
+00:11:31,360 --> 00:11:38,800
+ langchail, lang graph, your bedrock agents and so on but for now I just given you a mental model
+
+137
+00:11:38,800 --> 00:11:44,640
+ of all the things you need to think about before building a production grid generi way applications
+
+138
+00:11:45,920 --> 00:11:51,120
+ and please remember if you're not understood some parts of it it's okay I'm just giving you a
+
+139
+00:11:51,120 --> 00:11:57,200
+ mental model we're going to detail out each of these topics in lot of detail as we go ahead
+
+140
+00:11:57,200 --> 00:12:01,840
+ okay so that's pretty much it from this lecture I'll see you in the next lecture thank you
+
