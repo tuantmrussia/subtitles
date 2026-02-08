@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:04,560
+Trong bài giảng này, chúng ta sẽ xem xét đòn bẩy thứ hai cho suy luận tối ưu hóa,
+
+2
+00:00:04,560 --> 00:00:11,200
+Đó là khu vực đối thoại. Và điều này thực sự quan trọng. Vượt qua vùng suy luận sử dụng
+
+3
+00:00:11,200 --> 00:00:18,480
+suy luận hồ sơ để tăng thông qua và tăng cường khả năng phục hồi qua yêu cầu định tuyến
+
+4
+00:00:18,480 --> 00:00:25,280
+Nhiều vùng AWS trong thời gian xảy ra vụ nổ cao điểm. Vì vậy, vào những lúc nhất định,
+
+5
+00:00:25,280 --> 00:00:30,640
+Có thể có một số kịch bản nơi có là không đủ khả năng trong một khu vực cụ thể
+
+6
+00:00:30,640 --> 00:00:38,080
+để phục vụ yêu cầu của bạn bởi dịch vụ nền móng Amazon. Vì vậy, trong những kịch bản này, bạn có thể sử dụng thập giá
+
+7
+00:00:38,080 --> 00:00:45,200
+Khu vực tham nhũng và yêu cầu của bạn sẽ được chuyển sang khu vực khác. Vì vậy, hãy nói rằng bạn
+
+8
+00:00:45,200 --> 00:00:52,160
+Yêu cầu trung tâm thông qua bàn điều khiển SDK hoặc ADI. Yêu cầu này sẽ được đi đến dịch vụ nền văn phòng Amazon
+
+9
+00:00:52,160 --> 00:00:58,560
+Và cứ cho là anh chỉ muốn dùng chúng tôi ở phía đông. Vì vậy yêu cầu của bạn sẽ được gửi cho chúng tôi đông một,
+
+10
+00:00:58,560 --> 00:01:03,040
+Nhưng nếu có trường hợp không đủ khả năng, bạn sẽ trải nghiệm
+
+11
+00:01:03,040 --> 00:01:08,960
+Thật kinh khủng. Bây giờ, nếu bạn cho phép vượt qua khu vực suy luận, sau đó Amazon nền đá sẽ đi đường
+
+12
+00:01:08,960 --> 00:01:15,520
+yêu cầu một khu vực khác, giả sử chúng tôi đông hai hoặc một số khu vực khác nơi có
+
+13
+00:01:15,520 --> 00:01:21,760
+Đủ khả năng để đáp ứng yêu cầu của anh. Vì vậy, làm thế nào để mô hình biết rằng cho dù điều này cần
+
+14
+00:01:21,760 --> 00:01:29,760
+để được chuyển đến một khu vực AWS hoặc bạn có thể thực hiện việc suy luận xuyên biên giới. Và đó là kết thúc
+
+15
+00:01:29,760 --> 00:01:36,320
+Bằng cách xác định hồ sơ suy luận cho mô hình của bạn. Hãy cùng xem. Vì vậy, ở đây bạn có thể thấy
+
+16
+00:01:36,320 --> 00:01:43,280
+Tôi đã viết đường biên giới thứ ba để gửi một yêu cầu về nền móng của Amazon, nhưng ở đây nếu bạn
+
+17
+00:01:43,280 --> 00:01:49,920
+Xem ID mô hình, tôi đã xác định điều này như là hình chữ nhật đám mây ba haiku. Khi bạn muốn sử dụng một
+
+18
+00:01:49,920 --> 00:01:57,920
+Hồ sơ suy luận toàn cầu, sau đó bạn bắt đầu với toàn cầu và sau đó mô hình ID. Bây giờ, như chúng ta đã bàn khi
+
+19
+00:01:57,920 --> 00:02:05,840
+Chúng tôi sử dụng toàn cầu ở đây, có nghĩa là nó có thể được định tuyến đến bất kỳ khu vực AWS trên toàn cầu, nhưng bây giờ
+
+20
+00:02:05,840 --> 00:02:11,200
+Có thể có một số kịch bản như ở Châu Âu, bạn có quy định GDPR. Vì vậy, bạn có thể không muốn
+
+21
+00:02:11,200 --> 00:02:18,560
+Dữ liệu của anh để ra ngoài Liên minh Châu Âu. Trong trường hợp đó, AWS có một thứ gọi là địa lý
+
+22
+00:02:18,560 --> 00:02:25,040
+Vượt qua khu vực. Bây giờ, giả sử khu vực chính của bạn là ở Mỹ. Vì vậy những gì bạn có thể làm là bạn có thể xác định
+
+23
+00:02:25,040 --> 00:02:31,600
+Chúng tôi chấm tên của mô hình. Vì vậy, nó sẽ chỉ sau đó đường để bạn có thể thấy ở đây hoặc Canada
+
+24
+00:02:31,600 --> 00:02:39,680
+Xin giới thiệu miền Tây Hoa Kỳ. Vậy chỉ ở khu vực AWS trong nước Mỹ và Canada. Tương tự như vậy, nếu bạn là
+
+25
+00:02:39,680 --> 00:02:45,680
+Ở châu Âu, sau đó bạn có thể xác định với EU này. Vì vậy, nếu bạn định nghĩa toàn cầu, có nghĩa là nó có thể được định tuyến
+
+26
+00:02:45,680 --> 00:02:53,600
+đến bất cứ vùng nào trên toàn cầu. Nhưng nếu bạn định nghĩa khu vực địa lý và nhận dạng mô hình,
+
+27
+00:02:53,600 --> 00:03:01,040
+Nó sẽ chỉ được định tuyến trong khu vực địa lý đó. Bây giờ, một sự khác biệt nhanh chóng giữa địa lý
+
+28
+00:03:01,040 --> 00:03:06,560
+Vượt qua những vùng suy thoái và những vùng xuyên biên giới toàn cầu. Vì vậy nếu bạn có một số dữ liệu cư trú
+
+29
+00:03:06,560 --> 00:03:11,920
+yêu cầu, sau đó bạn có thể sử dụng khu vực địa lý này suy luận trong nước Mỹ, LHQ,
+
+30
+00:03:11,920 --> 00:03:17,200
+tấn công. Nhưng nếu bạn không có bất kỳ yêu cầu dữ liệu cư trú, bạn có thể sử dụng bất kỳ AWS
+
+31
+00:03:17,200 --> 00:03:23,440
+khu vực thương mại trên toàn thế giới. Vì vậy, từ góc nhìn xuyên qua, AWS nói thập tự địa lý
+
+32
+00:03:23,440 --> 00:03:28,480
+Nó cao hơn một vùng. Và đối với khu vực thập tự giá toàn cầu,
+
+33
+00:03:28,480 --> 00:03:34,000
+Đó là cao nhất. Vì vậy, chọn toàn cầu cho hiệu suất tối đa. Sau đó từ góc nhìn chi phí,
+
+34
+00:03:34,000 --> 00:03:40,560
+Đó là giá cả tiêu chuẩn. Nếu bạn sử dụng các vùng xuyên lục địa toàn cầu, nó sẽ là 10% tiết kiệm.
+
+35
+00:03:40,560 --> 00:03:46,400
+Vì vậy, chọn toàn cầu để tối ưu hóa chi phí. Và sau đó theo yêu cầu của SCP,
+
+36
+00:03:46,400 --> 00:03:52,080
+Vì vậy nếu bạn có chính sách kiểm soát dịch vụ trong tổ chức của bạn, vì vậy bạn có thể xác định dịch vụ của bạn
+
+37
+00:03:52,080 --> 00:03:58,960
+Điều khiển chính sách và cho phép tất cả các vùng đích trong hồ sơ. Và nếu bạn đang sử dụng thập giá toàn cầu
+
+38
+00:03:58,960 --> 00:04:05,840
+là khu vực bị hạn chế, sau đó bạn có thể thiết lập khu vực AWS yêu cầu để không được xác định. Và cuối cùng, AWS nói
+
+39
+00:04:05,840 --> 00:04:12,000
+Nếu tổ chức của bạn có quy định cư trú,
+
+40
+00:04:12,000 --> 00:04:16,160
+thì chọn cái này. Vì vậy, nếu bạn không có bất kỳ yêu cầu dữ liệu cư trú,
+
+41
+00:04:16,160 --> 00:04:22,320
+Và bạn đang ưu tiên chi phí và hiệu quả, sau đó đi cho thập giá toàn cầu suy luận.
+
+42
+00:04:22,320 --> 00:04:29,520
+Bây giờ, hãy xem xét cách tiếp cận tối ưu hóa thứ ba. Và đó là sự tối ưu tối ưu
+
+43
+00:04:29,520 --> 00:04:37,440
+Chiến thuật. Vì vậy, AWS cho biết sự tối ưu tối ưu hóa mức độ cho mô hình nền móng ở nền móng Amazon,
+
+44
+00:04:37,440 --> 00:04:46,000
+cung cấp thời gian đáp ứng nhanh hơn và cải thiện đáp ứng cho ứng dụng AI. Anh khỏe không?
+
+45
+00:04:46,000 --> 00:04:53,600
+Cái đó? Vì vậy, AWS nói rằng có một số mô hình rất phù hợp cho các trường hợp sử dụng ít tiện ích cân bằng
+
+46
+00:04:53,600 --> 00:05:00,400
+Tốc độ và chất lượng. Đó là Amazon Nova Pro. Sau đó, bạn có từ đám mây quan trọng 3.5
+
+47
+00:05:00,400 --> 00:05:08,640
+mô hình chung cao và meta lạc đà 3.1 4, 0, 5 tỷ và 70 tỷ mô hình. Vì vậy, ba mô hình
+
+48
+00:05:08,640 --> 00:05:15,200
+Được tối ưu hóa cho tình trạng ít hoạt động. Cuối cùng, có một cách khác mà bạn có thể tối ưu hóa của bạn
+
+49
+00:05:15,200 --> 00:05:22,640
+Sự khoan dung. Đó là bằng cách thiết lập tham số độ phân giải tối ưu hóa trong khi gọi Amazon
+
+50
+00:05:22,640 --> 00:05:28,800
+l#224;m g#236; v#7853;y? Vì vậy ở đây nếu bạn thấy tôi đã dán một số đi đến ba mã nơi chúng tôi đang thực hiện
+
+51
+00:05:28,800 --> 00:05:34,560
+Một yêu cầu về nền móng Amazon. Vì vậy, có một tham số cấu hình được gọi là hiệu suất
+
+52
+00:05:34,560 --> 00:05:41,600
+Xác nhận. Và nó có hai lựa chọn tiêu chuẩn và tối ưu hóa. Vì vậy, đây là một tùy chọn
+
+53
+00:05:41,600 --> 00:05:46,640
+tham số cấu hình. Vì vậy, nếu bạn không cung cấp bất kỳ giá trị, sau đó nó sẽ mất tiêu chuẩn. Nhưng nếu bạn
+
+54
+00:05:46,640 --> 00:05:53,040
+muốn tối ưu hóa độ trễ của bạn, sau đó bạn cung cấp giá trị tối ưu này. Được rồi, đó là khá nhiều
+
+55
+00:05:53,040 --> 00:05:56,880
+từ bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo.
+
