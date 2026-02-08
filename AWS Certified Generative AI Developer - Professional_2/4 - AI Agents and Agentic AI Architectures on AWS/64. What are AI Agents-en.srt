@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:04,800
+ Now in this lecture, let's see what are the capabilities that AI agents bring to the table
+
+2
+00:00:04,800 --> 00:00:10,400
+ that help overcome some of the challenges we have seen with large language model based applications
+
+3
+00:00:10,400 --> 00:00:16,400
+ in the last lecture. So we have the same use case from last lecture. We have John who's planning
+
+4
+00:00:16,400 --> 00:00:22,320
+ a two-week scheme vacation. Now let's say we have built an agentic app and this request is sent
+
+5
+00:00:22,320 --> 00:00:29,840
+ to this agentic app or agents as it sometimes called. So before we get into how an agentic
+
+6
+00:00:29,840 --> 00:00:36,880
+ app or agent is going to solve this kind of a user query, you need to remember that agents
+
+7
+00:00:36,880 --> 00:00:44,160
+ are driven by large language model. So the primary brain or thinking capability that agents
+
+8
+00:00:44,160 --> 00:00:53,040
+ possess is powered by large language model. So now as I explain to you how the agentic app is going
+
+9
+00:00:53,040 --> 00:01:00,640
+ to take this user request and solve it, I'm also going to highlight the core capabilities of
+
+10
+00:01:00,640 --> 00:01:09,200
+ AI agents here. Now let's go and see how the agentic app is going to process the user request for
+
+11
+00:01:09,200 --> 00:01:15,760
+ vacation planning. So the first thing once it receives the request, it's going to do task decomposition
+
+12
+00:01:15,760 --> 00:01:23,360
+ and planning which means that it's going to break this complex task into subtasks. So those
+
+13
+00:01:23,360 --> 00:01:29,360
+ subtasks may be check my leave balance, research location for skiing, check whether report, book
+
+14
+00:01:29,360 --> 00:01:36,080
+ a flight, book a hotel. So that's the first core capability that an agentic app brings into
+
+15
+00:01:36,080 --> 00:01:44,880
+ play which is planning or dynamic task planning where it breaks a complex problem into smaller
+
+16
+00:01:44,880 --> 00:01:51,840
+ subtasks. And this is mainly done by the large language model that is driving the agent.
+
+17
+00:01:51,840 --> 00:01:59,440
+ Next the agent will be provided with certain set of tools based on its domain or the purpose for
+
+18
+00:01:59,440 --> 00:02:06,880
+ which it has been built. Now in our case, the domain of this agent is travel planning. So let's see
+
+19
+00:02:06,880 --> 00:02:14,400
+ some of the tools that it can possess. So the second core capability of the AI agents is the tools
+
+20
+00:02:14,400 --> 00:02:21,360
+ and actions that it possesses. So in our case, it could be retrieving the HR data using retrieval
+
+21
+00:02:21,360 --> 00:02:28,560
+ augmented generation solution that might have been integrated with agents. Next, it could search
+
+22
+00:02:28,560 --> 00:02:35,200
+ the web for skiing location. Maybe it will call and whether API where you pass the location
+
+23
+00:02:35,200 --> 00:02:40,640
+ and it will give you the weather data. It could call the hotel.com API and make a booking.
+
+24
+00:02:41,440 --> 00:02:47,360
+ Now you might assume how it's going to execute or what are the kind of tools that it possesses.
+
+25
+00:02:47,360 --> 00:02:53,280
+ So if you see from AWS perspective, what you can do is you can write some custom code in a
+
+26
+00:02:53,280 --> 00:02:59,280
+ lambda function that calls the weather API or that can do the hotel booking. So you can write
+
+27
+00:02:59,280 --> 00:03:07,120
+ any number of lambda functions and integrate that with an agent who will perform certain tasks.
+
+28
+00:03:07,120 --> 00:03:13,760
+ So that's the second core capability of AI agents, which is tools and actions that it
+
+29
+00:03:13,760 --> 00:03:20,240
+ possesses through which it can access any data via the APIs. Okay, now let's look at the third
+
+30
+00:03:20,240 --> 00:03:28,160
+ capability, which is memory for end user interaction. So remember that this agent can make dynamic
+
+31
+00:03:28,160 --> 00:03:34,560
+ decisions. Now let's say he gets two weeks vacation from 15 December to 1 January and he
+
+32
+00:03:34,560 --> 00:03:40,720
+ books the hotel. Now when he's doing the flight booking, he doesn't have any inexpensive flights.
+
+33
+00:03:40,720 --> 00:03:46,240
+ So maybe he needs to replan. So now this agent will go back to the user and say that no flights
+
+34
+00:03:46,240 --> 00:03:52,480
+ are available. Should I replan for first January to 15 January? And if that is so, then it's
+
+35
+00:03:52,480 --> 00:03:57,680
+ going to pass that information and then these tools will be executed again, where he will apply for
+
+36
+00:03:57,680 --> 00:04:03,280
+ a leave. Maybe call weather API and see what's the weather look like and the rebook the hotels.
+
+37
+00:04:04,320 --> 00:04:10,480
+ So there's going to be a lot of data that goes back and forth between the user and the agent.
+
+38
+00:04:10,480 --> 00:04:18,880
+ So all that would be rated in some form of data store, maybe a database in memory store or whatever
+
+39
+00:04:18,880 --> 00:04:23,680
+ service you may choose. And this can be both long term and short term memory and we'll discuss
+
+40
+00:04:23,680 --> 00:04:29,760
+ about the memory in a lot more detail in the subsequent lectures. So the third capability of the
+
+41
+00:04:29,760 --> 00:04:37,680
+ agent is memory where it can store the interaction with the user. So the fourth key capability of
+
+42
+00:04:37,680 --> 00:04:44,480
+ these agents is having some sort of guardrails to prevent toxicity, hallucination of the large
+
+43
+00:04:44,480 --> 00:04:52,320
+ language model that is driving the agent. So maybe the user sends some toxic input and these agents
+
+44
+00:04:52,320 --> 00:05:00,720
+ should be able to detect and block those user requests. So that's the fourth key capability that an
+
+45
+00:05:00,720 --> 00:05:07,280
+ agent should possess, having guardrails for toxicity, hallucination, PI reduction and so on.
+
+46
+00:05:07,280 --> 00:05:14,160
+ And then finally, we have the agent communication. So in this case, you can see we have a single
+
+47
+00:05:14,160 --> 00:05:21,760
+ travel agent that does all of these activities, but there could be scenarios when the user requests
+
+48
+00:05:21,760 --> 00:05:28,240
+ are much more complex. So in that case, you might have specialized agents. So you have one agent
+
+49
+00:05:28,240 --> 00:05:33,760
+ that does the hotel booking, the other agent that does the airline booking and then there will be
+
+50
+00:05:33,760 --> 00:05:43,120
+ some master or supervisor agent that can assign tasks to various agents. So managing multiple agents
+
+51
+00:05:43,120 --> 00:05:50,080
+ by a supervisor agent, managing routing communication between those agents is captured through this
+
+52
+00:05:50,080 --> 00:05:55,440
+ communication capability of AI agents. And we're going to discuss this in a lot more detail in
+
+53
+00:05:55,440 --> 00:06:01,520
+ the next few lectures. Now, if we can quickly summarize, there are five key characteristics of AI agents.
+
+54
+00:06:01,520 --> 00:06:09,360
+ The first one is the ability to do planning by task decomposition, then having memory that stores
+
+55
+00:06:09,360 --> 00:06:16,640
+ the user interaction between the agent and the user. Then you have the tools and actions that an
+
+56
+00:06:16,640 --> 00:06:21,040
+ AI agent can perform, you have the guard rails and then you have the communication.
+
+57
+00:06:21,040 --> 00:06:26,800
+ So before we wrap this lecture, let's quickly take a look at what agentic means and what is a
+
+58
+00:06:26,800 --> 00:06:34,480
+ formal definition of AI agents. So let's first understand what agentic in general means.
+
+59
+00:06:34,480 --> 00:06:41,520
+ It's a term that is used to describe people who are self organizing, proactive, self reflective
+
+60
+00:06:41,520 --> 00:06:48,640
+ and self regulating. And as you will see in future lectures, that is what AI agents are,
+
+61
+00:06:48,640 --> 00:06:54,000
+ they are self organizing, they are proactive and they are self regulating.
+
+62
+00:06:54,000 --> 00:07:03,360
+ Now, let's take a look at what is a formal definition of agentic AI. So NVIDIA describes agentic
+
+63
+00:07:03,360 --> 00:07:10,800
+ AI as sophisticated reasoning and iterative planning to autonomously solve complex multi-step
+
+64
+00:07:10,800 --> 00:07:17,840
+ problem. And as we had seen in the previous example, when we got the request from John on vacation
+
+65
+00:07:17,840 --> 00:07:26,560
+ planning, it involved multiple steps. And that's how the agent broke it down and then solved it.
+
+66
+00:07:26,560 --> 00:07:33,200
+ So there are four things you need to keep in mind when you are looking at agentic AI. First,
+
+67
+00:07:33,200 --> 00:07:40,480
+ it's going to be intelligent autonomous systems. So you don't need to give it explicit directions
+
+68
+00:07:40,480 --> 00:07:45,680
+ on how to solve a problem. So it's going to take a look at the problem, break it down
+
+69
+00:07:45,680 --> 00:07:53,920
+ and then solve it iteratively. So it is autonomous in nature. It can also do the plan, reason,
+
+70
+00:07:53,920 --> 00:08:00,080
+ and act. As we saw in the use case, it took the problem, broke it down into multiple tasks,
+
+71
+00:08:00,080 --> 00:08:08,080
+ and then did some action or executed some tools to get the right answer. It is able to access
+
+72
+00:08:08,080 --> 00:08:14,720
+ enterprise information and we saw how it is able to access the internal HR system to get data
+
+73
+00:08:14,720 --> 00:08:21,440
+ on the leaves. And then finally, it's able to use tools and we discussed about how we can integrate
+
+74
+00:08:21,440 --> 00:08:27,120
+ tools like lambda function within AI agents, which can call weather API, which can call
+
+75
+00:08:27,120 --> 00:08:33,520
+ if hotels.com, API and do some bookings and so on. Okay, so that's pretty much it from this lecture.
+
+76
+00:08:33,520 --> 00:08:39,360
+ I hope you liked this lecture. Thank you.
+
