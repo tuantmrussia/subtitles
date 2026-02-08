@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:04,920
+Được rồi, trong bài giảng này, chúng ta sẽ thảo luận về việc cân nhắc kiến trúc tiếp theo,
+
+2
+00:00:04,920 --> 00:00:11,760
+Đó là lựa chọn mô hình đường tạo phải, đường tạo văn bản đại diện véc tơ
+
+3
+00:00:11,760 --> 00:00:16,960
+của văn bản và hình ảnh chưa được cấu trúc như tài liệu, câu v.v...
+
+4
+00:00:16,960 --> 00:00:21,420
+Vì vậy, trước đó chúng tôi đã thảo luận, giả sử chúng tôi có tài liệu PDF, chúng tôi tạo ra đoạn, vượt qua
+
+5
+00:00:21,420 --> 00:00:27,040
+Nó thông qua mô hình nhúng và sau đó tạo ra các đường viền véc tơ kết xuất.
+
+6
+00:00:27,040 --> 00:00:33,240
+Và bạn có thể thấy ở đây chúng tôi có 1536 chiều không gian và chúng tôi đã lấy các phân tích Titan Amazon.
+
+7
+00:00:33,240 --> 00:00:37,440
+Vì vậy, bây giờ, làm thế nào để chúng ta chọn đúng mô hình nhúng?
+
+8
+00:00:37,440 --> 00:00:43,680
+Vì vậy, điều đầu tiên bạn cần xem xét là cho dù văn bản nhập của bạn chỉ là văn bản hoặc
+
+9
+00:00:43,680 --> 00:00:49,400
+là sự kết hợp của văn bản, hình ảnh và vân vân, bởi vì rất nhiều mô hình chỉ hỗ trợ văn bản,
+
+10
+00:00:49,400 --> 00:00:52,640
+một số khác hỗ trợ văn bản và hình ảnh cũng vậy.
+
+11
+00:00:52,640 --> 00:00:54,480
+Vì vậy, hãy xem xét một vài trong số họ.
+
+12
+00:00:54,480 --> 00:01:01,520
+Và ở đây bạn có một mô hình văn bản kiểu Titan Amazon, hỗ trợ chỉ bản phân phối văn bản.
+
+13
+00:01:01,520 --> 00:01:08,680
+Sau đó chúng tôi có một mô hình khác từ Amazon Titan đa mô hình bao gồm G1 và phương thức đầu vào của nó
+
+14
+00:01:08,680 --> 00:01:10,640
+là văn bản và hình ảnh.
+
+15
+00:01:10,640 --> 00:01:14,880
+Đầu tiên, bạn cần xem xét cho trường hợp sử dụng của bạn, phương pháp đầu vào là gì?
+
+16
+00:01:14,880 --> 00:01:16,680
+Tiếp theo là đầu ra.
+
+17
+00:01:16,680 --> 00:01:20,800
+Vì vậy, có nhiều chiều không gian khác nhau trong đó bạn có thể tạo ra kích thước đầu ra véc tơ.
+
+18
+00:01:20,800 --> 00:01:28,320
+Nó có thể là 257, 512, hoặc 1024 và nếu bạn có thể nhìn thấy ở đây cho văn bản Amazon Titan,
+
+19
+00:01:28,320 --> 00:01:33,520
+Nó có ba biến thể, 512, 257, và 1024.
+
+20
+00:01:33,520 --> 00:01:39,440
+Vì vậy cho trường hợp sử dụng của bạn, bạn cũng cần phải xem xét những gì là kích thước văn bản tối đa đầu vào
+
+21
+00:01:39,440 --> 00:01:43,880
+hoặc kích cỡ chữ và dựa trên đó, bạn có thể chọn mô hình nhúng.
+
+22
+00:01:43,880 --> 00:01:49,920
+Vì vậy, bạn có thể thấy cho các mô hình địa chỉ văn bản Titan, các tín hiệu nhập tối đa 8192 và tối đa đầu vào
+
+23
+00:01:49,920 --> 00:01:54,440
+Ký tự văn bản là 50.000.
+
+24
+00:01:54,440 --> 00:01:57,880
+Vì vậy, làm thế nào để bạn chọn đúng mô hình nhúng cho trường hợp sử dụng của bạn?
+
+25
+00:01:57,880 --> 00:02:01,720
+Vì vậy có một sự đánh đổi giữa chất lượng, chi phí, và độ mềm.
+
+26
+00:02:01,720 --> 00:02:07,840
+Vì vậy, nếu bạn chọn một đường viền chiều cao hơn và nếu bạn thấy ở đây, chúng tôi có 1024, 512,
+
+27
+00:02:07,840 --> 00:02:08,840
+và 257.
+
+28
+00:02:08,840 --> 00:02:13,320
+Vì vậy, nếu bạn chọn một cao hơn, có lẽ 1024, bạn có sự thu hồi tốt hơn, nhưng sẽ có
+
+29
+00:02:13,320 --> 00:02:15,880
+phải trả giá cao hơn.
+
+30
+00:02:15,880 --> 00:02:19,680
+Và rõ ràng nếu bạn chọn một đường viền không gian thấp hơn, nó sẽ nhanh hơn, rẻ hơn,
+
+31
+00:02:19,680 --> 00:02:22,040
+Nhưng sẽ có độ chính xác thấp hơn.
+
+32
+00:02:22,040 --> 00:02:27,000
+Sau đó bạn cũng nên phù hợp với ngôn ngữ và nhu cầu đa ngôn ngữ mà bạn có thể có cho
+
+33
+00:02:27,000 --> 00:02:28,160
+Một vụ lợi dụng.
+
+34
+00:02:28,160 --> 00:02:33,200
+Vì vậy mỗi mô hình nhúng hỗ trợ các ngôn ngữ khác nhau, vì vậy trong trường hợp này, Amazon Titan
+
+35
+00:02:33,200 --> 00:02:39,040
+văn bản, bạn có thể thấy nó hỗ trợ tiếng Anh và 100 ngoại ngữ, nhưng nó vẫn còn trong ô xem thử
+
+36
+00:02:39,040 --> 00:02:40,040
+Chế độ.
+
+37
+00:02:40,040 --> 00:02:44,160
+Vì vậy, bạn nên xem xét nhu cầu đa ngôn ngữ cho trường hợp sử dụng của bạn.
+
+38
+00:02:44,160 --> 00:02:48,800
+Và sau đó bạn cũng nên xem xét loại suy luận của bạn, cho dù bạn muốn một trên-demand hoặc
+
+39
+00:02:48,800 --> 00:02:49,960
+cung cấp thông tin.
+
+40
+00:02:49,960 --> 00:02:54,220
+Vì vậy, văn bản Amazon Titan hỗ trợ cả hai kịch bản.
+
+41
+00:02:54,220 --> 00:02:58,240
+Vì vậy, nếu tôi nhanh chóng chỉ cho bạn qua bảng điều khiển, vì vậy tôi đang trên nền tảng kiến thức nền tảng, bạn
+
+42
+00:02:58,240 --> 00:02:59,880
+Có thể thấy mô hình lót ở đây.
+
+43
+00:02:59,880 --> 00:03:05,000
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào mô hình đường viền, vì vậy tôi có thể nhìn thấy hai mô hình cung cấp với Amazon
+
+44
+00:03:05,000 --> 00:03:11,080
+Và ở đây có ba lựa chọn, Amazon, không có nhiều lớp da, lớp da Titan và Titan
+
+45
+00:03:11,080 --> 00:03:12,800
+Gửi tin nhắn.
+
+46
+00:03:12,800 --> 00:03:15,280
+Và sau đó bạn chỉ cần cung cấp một số chi tiết xung quanh ba mô hình.
+
+47
+00:03:15,280 --> 00:03:20,680
+Sau đó tôi cũng có thể chọn cohere, ở đây tôi đã nhúng tiếng Anh và nhúng đa ngôn ngữ.
+
+48
+00:03:20,680 --> 00:03:23,080
+Được rồi, vậy là khá nhiều từ bài giảng này.
+
+49
+00:03:23,080 --> 00:03:24,120
+Hẹn gặp lại ở bài giảng tiếp theo.
+
+50
+00:03:24,120 --> 00:03:24,320
+Cảm ơn.
+
