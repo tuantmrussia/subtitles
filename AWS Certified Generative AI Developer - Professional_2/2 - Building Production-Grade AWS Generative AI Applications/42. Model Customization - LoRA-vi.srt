@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:03,520
+Vì vậy, trong bài giảng này, chúng ta sẽ xem xét các phương pháp điều chỉnh tốt.
+
+2
+00:00:03,520 --> 00:00:08,880
+Vậy chúng ta sẽ xem xét phần này, nó được thực hiện như thế nào? Trước đây, chúng tôi đã cố gắng trả lời
+
+3
+00:00:08,880 --> 00:00:14,640
+Câu hỏi của những gì, những gì là kết quả mà chúng tôi sẽ tạo ra? Và ở đây, chúng ta sẽ nói chuyện
+
+4
+00:00:14,640 --> 00:00:19,520
+Về việc làm thế nào? Và từ góc nhìn kiểm tra, bạn chỉ cần
+
+5
+00:00:19,520 --> 00:00:26,240
+Ở cấp độ cao, hãy biết kỹ thuật thấp hơn là gì. Được rồi, bây giờ điều chỉnh tốt tiếp cận.
+
+6
+00:00:26,240 --> 00:00:32,000
+Vì vậy, có hai cách tiếp cận điều chỉnh tốt ở một mức độ rộng. Đầu tiên là điều chỉnh hoàn toàn tốt.
+
+7
+00:00:32,000 --> 00:00:38,800
+Vì vậy, chỉnh sửa đầy đủ cập nhật tất cả các tham số mô hình thông qua mỗi lớp chuyển hóa.
+
+8
+00:00:38,800 --> 00:00:43,680
+Bạn có thể thấy ở đây, bạn có mô hình tiền khoan và chỉnh sửa hoàn toàn tốt,
+
+9
+00:00:43,680 --> 00:00:47,280
+Anh sẽ cập nhật tất cả trọng lượng và tham số của mô hình.
+
+10
+00:00:47,280 --> 00:00:53,920
+Vì vậy, bạn nhận được kết quả tốt hơn, nhưng nó đòi hỏi rất cao tính toán và bộ nhớ lớn.
+
+11
+00:00:53,920 --> 00:01:00,720
+Đó là lý do nó được sử dụng trong rất ít trường hợp. Tiếp theo, chúng ta có một thứ gọi là
+
+12
+00:01:00,720 --> 00:01:08,480
+Tham số PEFT hiệu quả điều chỉnh tốt. Vì vậy, nó đóng băng mô hình cơ bản trọng lượng và tàu hỏa chỉ
+
+13
+00:01:08,480 --> 00:01:14,720
+một bộ tham số thêm nhỏ. Vì vậy, đây là một trong những cách tiếp cận từ tham số hiệu quả tốt
+
+14
+00:01:14,720 --> 00:01:23,360
+Điều chỉnh, nơi bạn đóng băng các mô hình trọng lượng cơ bản và bạn chỉ thêm một tập nhỏ các tham số thêm.
+
+15
+00:01:23,360 --> 00:01:30,240
+Vì vậy, điều này làm giảm chi phí đào tạo trong khi duy trì kiến thức tiền rèn luyện. Đó là
+
+16
+00:01:30,240 --> 00:01:37,200
+Tại sao nó lại phổ biến hơn. Vì vậy, trong tham số hiệu quả chỉnh sửa, có khác nhau
+
+17
+00:01:37,200 --> 00:01:44,400
+Bằng cách nào đó bạn có thể đạt được điều này. Vì vậy, một trong số đó là đầu đề thích nghi Laura nhanh chóng điều chỉnh và
+
+18
+00:01:44,400 --> 00:01:50,320
+Q Laura. Và từ góc nhìn kiểm tra, anh chỉ cần tập trung vào Laura. Vì vậy bây giờ chúng ta hãy đi trước và
+
+19
+00:01:50,320 --> 00:01:59,200
+Nhìn đi. Laura là gì? Laura cũng gọi đó là sự thích nghi cấp thấp hơn. Vì vậy AWS cung cấp
+
+20
+00:01:59,200 --> 00:02:05,840
+2 vụ quan trọng dùng Laura. Vậy nên sự thích nghi về lĩnh vực cho ứng dụng kinh doanh.
+
+21
+00:02:05,840 --> 00:02:12,560
+Vì vậy, nhà cung cấp y tế có thể sử dụng Laura để thích nghi một mô hình cơ bản với thuật ngữ y học và lâm sàng
+
+22
+00:02:12,560 --> 00:02:18,640
+Tiêu chuẩn tài liệu. Một lần nữa, trường hợp sử dụng của chúng tôi, giả sử chúng tôi đang xây dựng một ứng dụng tạo hóa
+
+23
+00:02:18,640 --> 00:02:26,640
+Đối với bác sĩ tóm tắt ghi chú và mô hình cơ bản của chúng tôi không làm việc tốt. Ở đó chúng ta có thể dùng
+
+24
+00:02:26,640 --> 00:02:34,880
+Laura cải thiện kiến thức lĩnh vực. Rồi bạn có nhiều ngôn ngữ thích nghi. Cứ cho là anh...
+
+25
+00:02:34,880 --> 00:02:41,600
+là một nền tảng điện tử toàn cầu có thể sử dụng Laura để thích nghi với mô hình dịch vụ khách hàng của họ
+
+26
+00:02:41,600 --> 00:02:48,000
+khác biệt với ngôn ngữ vùng và bối cảnh văn hóa. Đây là hai trường hợp sử dụng
+
+27
+00:02:48,000 --> 00:02:54,080
+rằng AWS tô sáng để thích nghi cấp thấp hơn. Vì vậy, chỉ cần từ góc nhìn kiểm tra, nhớ bạn là
+
+28
+00:02:54,080 --> 00:03:01,280
+sẽ sử dụng các ứng dụng bậc thấp hơn hoặc kỹ thuật Laura để điều chỉnh tốt vì nó cải thiện mô hình
+
+29
+00:03:01,280 --> 00:03:08,560
+Hiệu suất, nhưng giữ cho việc huấn luyện thấp và bảo tồn kiến thức đọc trước của mô hình.
+
+30
+00:03:08,560 --> 00:03:13,040
+Được rồi, vậy là khá nhiều từ bài giảng này. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
