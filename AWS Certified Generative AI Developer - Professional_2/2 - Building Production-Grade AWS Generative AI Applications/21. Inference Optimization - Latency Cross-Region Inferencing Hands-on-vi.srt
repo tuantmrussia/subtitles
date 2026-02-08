@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:04,480
+Được rồi, bây giờ trong bài giảng này, tôi sẽ cho các bạn thấy một bản thử nghiệm nhanh của suy luận tối ưu hóa.
+
+2
+00:00:04,480 --> 00:00:10,480
+Vì vậy, tôi sẽ cho bạn thấy làm thế nào bạn có thể sử dụng các khu vực thập phân hồ sơ và tối ưu hóa tối ưu.
+
+3
+00:00:10,480 --> 00:00:14,240
+Vì vậy, trước khi chúng tôi đi đến bảng điều khiển, chỉ muốn cho bạn thấy
+
+4
+00:00:14,240 --> 00:00:17,360
+Một số bơ ba mã Python mà tôi đã viết.
+
+5
+00:00:17,360 --> 00:00:21,600
+Vì vậy, thông qua đó tôi sẽ truy cập vào mô hình Nova Pro Amazon.
+
+6
+00:00:21,600 --> 00:00:26,000
+Vì vậy, ở đây tôi có một mô hình gọi điện nền, sau đó tôi xác định các mô hình ID.
+
+7
+00:00:26,640 --> 00:00:32,400
+Vì vậy, thay vì sử dụng Amazon Nova Pro, tôi thấy chúng tôi dot Amazon dot Nova Pro,
+
+8
+00:00:32,400 --> 00:00:38,240
+Nghĩa là tôi đang sử dụng hồ sơ phạm vi, nhưng nó không phải toàn cầu.
+
+9
+00:00:38,240 --> 00:00:42,000
+Nó được chỉ định đến vị trí địa lý Hoa Kỳ.
+
+10
+00:00:42,000 --> 00:00:48,000
+Tiếp theo, tôi chỉ cần đi qua nhắc nhở này, những gì là đá nền Amazon và cho tôi chỉ cần đi bên trái.
+
+11
+00:00:48,000 --> 00:00:52,240
+Sau đó tôi có một số tham số cấu hình suy luận ở đây, kích thước tối đa, nhiệt độ, vân vân.
+
+12
+00:00:53,520 --> 00:00:58,240
+Và sau đó nếu bạn chỉ nhìn thấy ở đây, tôi đã thêm các đường ray bảo vệ nhận diện.
+
+13
+00:00:58,240 --> 00:01:01,680
+Vì vậy, hãy nhớ, đây là từ một trong những bài giảng trước,
+
+14
+00:01:01,680 --> 00:01:04,960
+Nơi chúng tôi đã tạo ra lời khuyên bảo bảo bảo vệ đầu tư.
+
+15
+00:01:04,960 --> 00:01:09,600
+Nên tôi lấy cái thẻ căn cước bảo vệ và đặt nó ở đây.
+
+16
+00:01:09,600 --> 00:01:11,440
+Và sau đó chúng tôi cho phiên bản này là bản nháp.
+
+17
+00:01:11,440 --> 00:01:16,640
+Và bây giờ chúng ta hãy xem xét này cấu hình hiệu suất.
+
+18
+00:01:16,640 --> 00:01:19,920
+Giá trị tôi cung cấp ở đây được tối ưu hóa.
+
+19
+00:01:19,920 --> 00:01:25,520
+Trong bài giảng trước, chúng ta thấy có hai giá trị tối ưu hóa và tiêu chuẩn.
+
+20
+00:01:25,520 --> 00:01:28,000
+Bạn có thể thấy ở đây, tiêu chuẩn và tối ưu hóa.
+
+21
+00:01:28,000 --> 00:01:33,120
+Được rồi, bây giờ hãy để tôi sao chép đoạn mã này và sau đó tôi sẽ chỉ đến bảng điều khiển AWS.
+
+22
+00:01:33,120 --> 00:01:34,400
+Vậy là tôi đang ở trên bảng điều khiển AWS.
+
+23
+00:01:34,400 --> 00:01:38,400
+Vậy để tôi mở AWS lambda và đây là Labda.
+
+24
+00:01:38,400 --> 00:01:43,120
+Tôi đang ở khu vực phía Đông Mỹ, không phải Virginia.
+
+25
+00:01:43,120 --> 00:01:44,640
+Để tôi nhấn vào hàm tạo.
+
+26
+00:01:44,640 --> 00:01:47,840
+Và chúng ta phải đặt tên cho hàm cừu non.
+
+27
+00:01:48,480 --> 00:01:52,000
+Vì vậy, tôi sẽ chỉ cung cấp cho nó một cái tên chứng minh tối ưu hóa.
+
+28
+00:01:52,000 --> 00:01:57,760
+Vì vậy, chúng tôi sẽ chỉ cần chọn một python 3.14 và sau đó chúng tôi sẽ chỉ để lại tất cả mọi thứ như nó.
+
+29
+00:01:57,760 --> 00:01:58,880
+Chỉ cần nhấp vào chức năng tạo.
+
+30
+00:01:58,880 --> 00:02:01,600
+Được rồi, chúng ta sẽ làm vài thay đổi cấu hình.
+
+31
+00:02:01,600 --> 00:02:04,960
+Vì vậy, tôi chỉ cần nhấp chuột vào cấu hình này, nhấp chuột vào chỉnh sửa.
+
+32
+00:02:04,960 --> 00:02:06,880
+Chỉ cần tăng thời gian chờ.
+
+33
+00:02:06,880 --> 00:02:10,640
+Vì vậy tôi sẽ chỉ nói một phút và sau đó tôi sẽ chỉ tiết kiệm.
+
+34
+00:02:10,640 --> 00:02:16,480
+Bây giờ chúng ta phải cho phép chức năng của lambda này để nó có thể truy cập vào đá nền Amazon.
+
+35
+00:02:16,480 --> 00:02:18,240
+Vì vậy, tôi sẽ chỉ nhấp chuột vào sự cho phép này.
+
+36
+00:02:18,240 --> 00:02:20,400
+Hãy chỉ mở vai trò này trong một thẻ mới.
+
+37
+00:02:20,400 --> 00:02:26,080
+Vậy đây là vai diễn của chúng ta.
+
+38
+00:02:26,080 --> 00:02:28,720
+Vì vậy, tôi sẽ chỉ cần nhấp chuột vào sự cho phép bổ sung, gắn kết chính sách.
+
+39
+00:02:28,720 --> 00:02:31,600
+Vậy bây giờ hãy cho nó một quyền quản lý.
+
+40
+00:02:31,600 --> 00:02:35,120
+Và hãy để tôi nhấp chuột vào sự cho phép thêm.
+
+41
+00:02:35,120 --> 00:02:38,240
+Vậy đây không phải là điều nó nên làm trong môi trường sản xuất.
+
+42
+00:02:38,240 --> 00:02:40,400
+Nhưng với mục đích thử nghiệm này, tôi nghĩ không sao.
+
+43
+00:02:40,400 --> 00:02:42,080
+Nên tôi sẽ quay lại với chức năng Labda.
+
+44
+00:02:42,080 --> 00:02:43,680
+Nên tôi ở đây để làm món Labda.
+
+45
+00:02:43,680 --> 00:02:44,720
+Để tôi nhấn mã.
+
+46
+00:02:47,280 --> 00:02:49,600
+Được rồi, vậy chúng ta có một số mật mã nồi hơi.
+
+47
+00:02:49,600 --> 00:02:51,600
+Vì vậy, hãy để tôi chỉ dán các mã đã sao chép.
+
+48
+00:02:51,600 --> 00:02:54,720
+Và hãy để tôi nhấp chuột vào cuộc triển khai này.
+
+49
+00:02:54,720 --> 00:03:01,840
+Được rồi, nó hiển thị thành công triển khai chức năng.
+
+50
+00:03:01,840 --> 00:03:05,600
+Và bạn có thể thấy rằng chúng ta đã có các nhắc ở đây cứng mã hóa những gì là đá nền Amazon.
+
+51
+00:03:05,600 --> 00:03:10,560
+Được rồi, bây giờ hãy để tôi chỉ cần đi trước và nhấn vào bài kiểm tra và tạo ra sự kiện thử nghiệm mới.
+
+52
+00:03:10,560 --> 00:03:16,080
+Hãy để tôi chỉ cần nói bài kiểm tra 01 và sau đó tôi sẽ chỉ làm một tiết kiệm.
+
+53
+00:03:16,080 --> 00:03:22,000
+Được rồi, bây giờ để tôi đóng cái này lại và để tôi kiểm tra lại.
+
+54
+00:03:22,000 --> 00:03:25,440
+Vì vậy, chúng tôi có thể thấy nó tạo ra một số đầu ra.
+
+55
+00:03:25,440 --> 00:03:31,600
+Được rồi, nó tạo ra kết quả nếu tôi kéo nó lên.
+
+56
+00:03:31,600 --> 00:03:34,320
+Bạn có thể thấy ở đây nó tạo ra cơ thể.
+
+57
+00:03:34,320 --> 00:03:37,440
+Và sau đó nếu tôi chỉ cần đi đến các bản ghi chức năng ở đây.
+
+58
+00:03:39,200 --> 00:03:42,720
+Vì vậy, nếu chúng ta chỉ cần đi đến các bản ghi chức năng ở đây, đây là các bản ghi chức năng.
+
+59
+00:03:42,720 --> 00:03:48,240
+Vì vậy, bạn có thể thấy nó cung cấp một số chi tiết về ID yêu cầu và ngày.
+
+60
+00:03:48,240 --> 00:03:52,720
+Nó nói về độ dài ngữ cảnh và một số tham số khác.
+
+61
+00:03:52,720 --> 00:03:56,480
+Nhưng chúng ta sẽ chỉ nhìn vào hiệu suất cấu hình.
+
+62
+00:03:56,480 --> 00:04:02,560
+Và bạn có thể thấy nó được tối ưu hóa, mà chúng tôi đã cung cấp như một phần của yêu cầu.
+
+63
+00:04:02,560 --> 00:04:06,560
+Và nó cũng sẽ cho bạn thấy sự vô trách nhiệm.
+
+64
+00:04:06,560 --> 00:04:11,360
+Ba, một, một, ba. Vì vậy, nếu chúng tôi đã không cung cấp tham số này tối ưu hóa,
+
+65
+00:04:11,360 --> 00:04:16,400
+Có thể còn hơn thế. Được rồi, vậy là khá nhiều từ bài giảng này.
+
+66
+00:04:16,400 --> 00:04:20,720
+Vì vậy, tôi đã cho các bạn thấy hai điều làm thế nào bạn có thể tối ưu hóa hiệu suất làm việc.
+
+67
+00:04:20,720 --> 00:04:26,880
+Và điều thứ hai tôi đã cho các bạn thấy ở đây là làm thế nào bạn có thể sử dụng các khu vực thập tự trong việc tham khảo.
+
+68
+00:04:26,880 --> 00:04:30,160
+Và các bạn có thể thấy ở đây chúng tôi có cái này.mazon.nova.
+
+69
+00:04:30,160 --> 00:04:34,400
+Vì vậy, đây là trường hợp của các khu vực xuyên địa lý trong tham khảo.
+
+70
+00:04:34,400 --> 00:04:38,720
+Và nếu bạn muốn toàn cầu hóa, bạn có thể đặt toàn cầu thay vì chúng tôi.
+
+71
+00:04:38,720 --> 00:04:40,480
+Được rồi, vậy là khá nhiều từ bài giảng này.
+
+72
+00:04:40,480 --> 00:04:42,640
+Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
