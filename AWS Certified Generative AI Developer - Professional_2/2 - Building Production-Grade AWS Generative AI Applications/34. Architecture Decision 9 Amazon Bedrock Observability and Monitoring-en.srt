@@ -1,0 +1,260 @@
+1
+00:00:00,000 --> 00:00:05,800
+ In this lecture, we're going to look at the architectural decision point 9 which is observability
+
+2
+00:00:05,800 --> 00:00:07,960
+ and monitoring.
+
+3
+00:00:07,960 --> 00:00:13,680
+ In this lecture, we're going to look at bedrock observability and monitoring.
+
+4
+00:00:13,680 --> 00:00:20,560
+ So you can monitor all aspects of your GenAI application built on Amazon bedrock using Amazon
+
+5
+00:00:20,560 --> 00:00:21,560
+ CloudWatch.
+
+6
+00:00:21,560 --> 00:00:26,920
+ Now, the second way to monitor your GenAI application built on Amazon bedrock is through
+
+7
+00:00:26,920 --> 00:00:27,920
+ metrics.
+
+8
+00:00:27,920 --> 00:00:34,520
+ So monitor the GenAI app performance using CloudWatch near real-time metrics.
+
+9
+00:00:34,520 --> 00:00:39,960
+ So some of the common metrics that you may want to monitor is token count, input, and output
+
+10
+00:00:39,960 --> 00:00:48,720
+ to manage cost, latency of the response, and errors that can help improve customer experience.
+
+11
+00:00:48,720 --> 00:00:53,680
+ Then you can also set alarms that watch for certain thresholds and send notifications
+
+12
+00:00:53,680 --> 00:00:58,040
+ or take actions when the value exceeds those thresholds.
+
+13
+00:00:58,040 --> 00:01:03,160
+ So let's say you have a threshold where you want the model to generate the response within
+
+14
+00:01:03,160 --> 00:01:04,160
+ two seconds.
+
+15
+00:01:04,160 --> 00:01:08,680
+ So you can look at the latency of metrics and set a threshold of two seconds.
+
+16
+00:01:08,680 --> 00:01:13,480
+ So if there are any responses that take more than two seconds, then it can generate
+
+17
+00:01:13,480 --> 00:01:16,240
+ a alarm or take some downstream action.
+
+18
+00:01:16,240 --> 00:01:21,880
+ Okay, now let's go and take a look at some of the metrics available in CloudWatch for Amazon
+
+19
+00:01:21,880 --> 00:01:22,880
+ bedrock.
+
+20
+00:01:22,880 --> 00:01:24,880
+ So first you have the invocation.
+
+21
+00:01:24,880 --> 00:01:26,800
+ So the unit will be sample count.
+
+22
+00:01:26,800 --> 00:01:32,040
+ And here you can take a look at model invocation logging where you can collect invocation logs,
+
+23
+00:01:32,040 --> 00:01:38,360
+ model input, data basically prompt, output data for all the invocation.
+
+24
+00:01:38,360 --> 00:01:42,240
+ Then second we have the invocation latency, which is measured in milliseconds.
+
+25
+00:01:42,240 --> 00:01:44,720
+ And here you can track the latency of the invocation.
+
+26
+00:01:44,720 --> 00:01:49,160
+ So this is important as we discussed for customer experience, you can track the latency of
+
+27
+00:01:49,160 --> 00:01:50,160
+ the invocation.
+
+28
+00:01:50,160 --> 00:01:54,240
+ Then you can track the invocation client errors, invocation server errors, and you can
+
+29
+00:01:54,240 --> 00:01:56,280
+ get the sample count.
+
+30
+00:01:56,280 --> 00:02:02,320
+ Then you can look at invocation throttling again, number invocation that the system throttled.
+
+31
+00:02:02,320 --> 00:02:07,040
+ So if there is a lot of throttling, then you can look at cross region inferencing.
+
+32
+00:02:07,040 --> 00:02:08,800
+ Then you have the input token count.
+
+33
+00:02:08,800 --> 00:02:13,200
+ Again, this is important metrics if you want to track the cost.
+
+34
+00:02:13,200 --> 00:02:17,360
+ And for any production grid application, this is a really important metrics.
+
+35
+00:02:17,360 --> 00:02:22,660
+ Then your legacy model invocation, if you're using a legacy model, let's say you are using
+
+36
+00:02:22,660 --> 00:02:27,560
+ a legacy model from entropic or any other model product, then you can track that.
+
+37
+00:02:27,560 --> 00:02:32,480
+ Then you have the output token count and output image count.
+
+38
+00:02:32,480 --> 00:02:36,520
+ Again this can be used for cost tracking.
+
+39
+00:02:36,520 --> 00:02:39,400
+ Then you can finally also track the output image count.
+
+40
+00:02:39,400 --> 00:02:45,600
+ So if your model is generating images, then you can track this metric as well.
+
+41
+00:02:45,600 --> 00:02:49,800
+ And now you can also monitor Amazon bedrock guardrails using cloud watch metrics.
+
+42
+00:02:49,800 --> 00:02:55,880
+ So you can see your invocation number request to apply guardrails API operation.
+
+43
+00:02:55,880 --> 00:02:58,400
+ Invocation latency, so latency of the invocation.
+
+44
+00:02:58,400 --> 00:03:04,920
+ So if you're using guardrails, you can check if it is increasing the latency for your
+
+45
+00:03:04,920 --> 00:03:05,920
+ invocation.
+
+46
+00:03:05,920 --> 00:03:11,840
+ So there will be some latency from the model, but guardrails can also add on to that latency.
+
+47
+00:03:11,840 --> 00:03:16,200
+ So you can see here, there are different metrics that you can track using cloud watch metrics
+
+48
+00:03:16,200 --> 00:03:18,040
+ for guardrails.
+
+49
+00:03:18,040 --> 00:03:22,400
+ Now just to summarize, there are three different ways in which you can monitor your journey
+
+50
+00:03:22,400 --> 00:03:24,480
+ applications using cloud watch.
+
+51
+00:03:24,480 --> 00:03:25,640
+ So first is the metrics.
+
+52
+00:03:25,640 --> 00:03:28,320
+ So we've already looked at different cloud watch metrics.
+
+53
+00:03:28,320 --> 00:03:33,640
+ Then we have the logs, cloud watch logs, and we saw that there is full invocation logging,
+
+54
+00:03:33,640 --> 00:03:36,840
+ input prompt, output, and a lot of metadata.
+
+55
+00:03:36,840 --> 00:03:42,560
+ And then finally, you can also use log queries for creating a dashboard or getting custom
+
+56
+00:03:42,560 --> 00:03:43,560
+ insights.
+
+57
+00:03:43,560 --> 00:03:50,360
+ And this can be done using cloud watch log insights, so query and analyze logs, not metrics.
+
+58
+00:03:50,360 --> 00:03:52,520
+ So here's an example that I was trying out.
+
+59
+00:03:52,520 --> 00:03:57,600
+ So I sent some prompt to Amazon Nova Pro, and then it generated logs.
+
+60
+00:03:57,600 --> 00:04:02,560
+ And then I just wrote a query in this logs insight, you can see here, what I was trying
+
+61
+00:04:02,560 --> 00:04:07,840
+ to do is get a view of the input token count and the output token count.
+
+62
+00:04:07,840 --> 00:04:13,520
+ So I created this query, ran this query, and this is the summary that it generated.
+
+63
+00:04:13,520 --> 00:04:16,040
+ Okay, so that's pretty much it from this lecture.
+
+64
+00:04:16,040 --> 00:04:17,040
+ I'll see in the next lecture.
+
+65
+00:04:17,040 --> 00:04:17,200
+ Thank you.
+
