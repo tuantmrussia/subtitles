@@ -1,0 +1,632 @@
+1
+00:00:00,000 --> 00:00:07,760
+Được rồi, vì vậy bây giờ mà chúng tôi đã thành công tất cả của chúng tôi lý luận phân loại ra, tôi chỉ gõ
+
+2
+00:00:07,760 --> 00:00:14,520
+Các nhân vật ngẫu nhiên ở đây, và logic của chúng tôi phân loại ra, bạn sẽ thấy rằng thời gian của chúng tôi là
+
+3
+00:00:14,520 --> 00:00:16,880
+vẫn còn 60 giây.
+
+4
+00:00:16,880 --> 00:00:24,120
+Vì vậy, chúng ta cần phải thực hiện logic của chúng tôi liên quan đến thời gian, và chúng tôi cũng muốn tính toán từ của chúng tôi mỗi
+
+5
+00:00:24,120 --> 00:00:25,120
+phút
+
+6
+00:00:25,120 --> 00:00:30,560
+Được rồi, vậy hãy đi thẳng vào đoạn mã.
+
+7
+00:00:30,560 --> 00:00:38,280
+Được rồi, vì vậy tôi thực sự sẽ đi trước và có lẽ giảm thiểu điều này chỉ bây giờ, và chúng tôi
+
+8
+00:00:38,280 --> 00:00:44,080
+Chúng ta cần một vài biến số nữa.
+
+9
+00:00:44,080 --> 00:00:51,880
+Và chúng ta sẽ cần một thời gian còn lại, đó sẽ là một con số.
+
+10
+00:00:51,880 --> 00:00:56,540
+Vì vậy, thông thường đây sẽ là 60 giây, nhưng tôi sẽ chỉ làm cho nó sáu giây cho
+
+11
+00:00:56,540 --> 00:01:02,960
+Thử nghiệm của chúng tôi, và chúng tôi sẽ có một khoảng thời gian thời gian.
+
+12
+00:01:02,960 --> 00:01:10,040
+Vì vậy, chúng tôi sẽ sử dụng định khoảng thời gian, và chúng tôi sẽ chạy khoảng thời gian này mỗi một
+
+13
+00:01:10,040 --> 00:01:11,040
+thứ hai.
+
+14
+00:01:11,040 --> 00:01:14,360
+Vì vậy, nó sẽ đánh dấu từng giây một, nó sẽ chạy chức năng này,
+
+15
+00:01:14,360 --> 00:01:19,680
+sẽ tiếp tục kiểm tra, có bất kỳ thời gian còn lại, chúng tôi về cơ bản sẽ mang lại số này
+
+16
+00:01:19,680 --> 00:01:27,320
+giảm 60, 59, 58, và một khi nó trở về 0, chúng ta sẽ thực sự kết thúc
+
+17
+00:01:27,320 --> 00:01:28,320
+Kiểm tra.
+
+18
+00:01:28,320 --> 00:01:30,200
+Vì vậy, chúng tôi sẽ gọi một chức năng khác.
+
+19
+00:01:30,200 --> 00:01:35,760
+Được rồi, và chúng tôi cũng muốn biết liệu chúng tôi đã bắt đầu gõ hay chưa.
+
+20
+00:01:35,760 --> 00:01:40,800
+Vì vậy, như bạn sẽ nhận thấy, đồng hồ đếm ngược không thực sự bắt đầu trong phiên bản cuối cùng của chúng tôi cho đến khi chúng tôi bắt đầu
+
+21
+00:01:40,800 --> 00:01:42,280
+Đánh máy.
+
+22
+00:01:42,280 --> 00:01:50,040
+Vì vậy, chúng tôi sẽ có một cho phép gõ này bắt đầu, là tương đương với sai.
+
+23
+00:01:50,040 --> 00:01:56,280
+Được rồi, và tôi nghĩ đó là điều chúng ta cần.
+
+24
+00:01:56,280 --> 00:01:59,720
+Tất nhiên, bạn có thể làm cho điều này đếm xuống bất cứ điều gì bạn muốn, tôi chỉ sẽ giữ nó
+
+25
+00:01:59,720 --> 00:02:05,040
+Đơn giản và mất 60 giây để tính toán từng phút một.
+
+26
+00:02:05,040 --> 00:02:14,560
+Được rồi, từ đây, chúng tôi sẽ đi trước và dưới chức năng này, chúng tôi sẽ bình luận ra
+
+27
+00:02:14,560 --> 00:02:27,600
+một tựa đề để bắt đầu đếm ngược thời gian, và nó sẽ làm cho một chức năng gọi là khởi động thời gian,
+
+28
+00:02:27,600 --> 00:02:39,440
+và chúng tôi sẽ nói nếu chúng tôi đã không gõ, sau đó chúng tôi sẽ thiết lập này
+
+29
+00:02:39,440 --> 00:02:46,920
+Đánh máy bắt đầu boolean để được tương đương với sự thật.
+
+30
+00:02:46,920 --> 00:02:50,000
+Và sau đó bên trong này, chúng tôi sẽ thiết lập khoảng thời gian của chúng tôi.
+
+31
+00:02:50,000 --> 00:02:58,320
+Vì vậy thời gian khoảng thời gian sẽ bằng với đặt dấu ngoặc khoảng thời gian một lần nữa, do đó, điều này là
+
+32
+00:02:58,320 --> 00:03:04,640
+sẽ là một chức năng mũi tên cong khung bán kết.
+
+33
+00:03:04,640 --> 00:03:10,520
+Vì vậy, về cơ bản điều này sẽ kích hoạt khoảng thời gian định sẵn của chúng tôi, và điều này sẽ chạy mỗi
+
+34
+00:03:10,520 --> 00:03:11,520
+thứ hai.
+
+35
+00:03:11,520 --> 00:03:17,160
+Vì vậy, sau khi dấu ngoặc cong của chúng tôi ở cuối ở đây, chúng tôi sẽ đặt một dấu phẩy và sau đó đặt 1000 mili giây,
+
+36
+00:03:17,160 --> 00:03:23,400
+là tương đương với một giây, vì vậy mà có nghĩa là bất cứ điều gì bên trong khoảng thời gian thời gian này thiết lập
+
+37
+00:03:23,400 --> 00:03:27,720
+Thời gian sẽ thực hiện mỗi giây.
+
+38
+00:03:27,720 --> 00:03:33,620
+Vì vậy, thời gian của chúng tôi còn lại, chúng tôi sẽ giảm dần bởi một, vì vậy chúng tôi sẽ chỉ sử dụng trừ trừ
+
+39
+00:03:33,620 --> 00:03:41,280
+để giảm thời gian của chúng tôi còn lại, và sau đó chúng tôi muốn cũng cập nhật các yếu tố thời gian của chúng tôi.
+
+40
+00:03:41,280 --> 00:03:45,960
+Và chúng ta sẽ cập nhật bối cảnh văn bản, và điều này sẽ bằng, tôi sẽ
+
+41
+00:03:45,960 --> 00:03:55,720
+để sử dụng ve sau cho chuỗi mẫu, thời gian còn lại, và đồng đô la ký hiệu vuông, và
+
+42
+00:03:55,720 --> 00:04:00,800
+Chúng ta sẽ vượt qua thời gian còn lại của chúng ta, và sau đó chúng ta sẽ đặt s vào cuối cho giây.
+
+43
+00:04:00,800 --> 00:04:12,080
+Và sau đó nếu thời gian còn lại nhỏ hơn hoặc bằng 0, bạn sẽ thường chỉ là zero, nhưng
+
+44
+00:04:12,080 --> 00:04:18,800
+Chúng tôi sẽ đặt nó trong trường hợp khẩn cấp. Chúng ta sẽ dọn khoảng thời gian hẹn giờ.
+
+45
+00:04:18,800 --> 00:04:24,760
+Vì vậy, đây là lý do tại sao nó là quan trọng để đặt tên khoảng thời gian định sẵn của bạn để họ có thể được rõ ràng
+
+46
+00:04:24,760 --> 00:04:25,760
+hiệu quả.
+
+47
+00:04:25,760 --> 00:04:35,720
+Vì vậy, điều này sẽ kết thúc việc thực hiện này ở đây, và sau đó chúng tôi sẽ muốn kết thúc thử nghiệm của chúng tôi.
+
+48
+00:04:35,720 --> 00:04:43,760
+Và vì vậy chúng tôi sẽ chỉ cần tạo ra một đứng trong chức năng cho bây giờ, và kiểm tra, và chúng tôi muốn
+
+49
+00:04:43,760 --> 00:04:47,160
+để thể hiện điểm số cuối cùng.
+
+50
+00:04:47,160 --> 00:04:57,280
+Bây giờ, chúng tôi sẽ chỉ nói chức năng và kiểm tra, và chúng tôi sẽ chỉ làm một cảnh báo, kiểm tra
+
+51
+00:04:57,280 --> 00:04:59,320
+Kết thúc rồi.
+
+52
+00:04:59,320 --> 00:05:06,600
+Được rồi, vậy hãy thử xem chúng ta có gì ở đây.
+
+53
+00:05:06,600 --> 00:05:13,280
+Được rồi, tôi sẽ gõ một cái gì đó, và bạn sẽ thấy rằng, okay, nó không hiệu quả.
+
+54
+00:05:13,280 --> 00:05:15,360
+Và anh biết tại sao nó không hiệu quả không?
+
+55
+00:05:15,360 --> 00:05:19,920
+Đó là vì chúng tôi không gọi hàm đồng hồ hẹn giờ.
+
+56
+00:05:19,920 --> 00:05:24,840
+Đó là một điều rất quan trọng mà chúng ta cần phải làm.
+
+57
+00:05:24,840 --> 00:05:29,920
+Và đây là điều chúng tôi sẽ thực sự làm trong thính giả của chúng tôi.
+
+58
+00:05:29,920 --> 00:05:37,360
+Vì vậy, chúng tôi sẽ, như tôi đã đề cập ở trên, bắt đầu thời gian của chúng tôi khi chúng tôi nghe của chúng tôi phím đầu tiên của chúng tôi
+
+59
+00:05:37,360 --> 00:05:38,360
+Sự kiện xuống dốc.
+
+60
+00:05:38,360 --> 00:05:40,200
+Đó là lúc chúng ta bắt đầu tính giờ.
+
+61
+00:05:40,200 --> 00:05:44,840
+Được rồi, chúng ta có thể giảm thiểu điều đó một lần nữa, và hãy thử lại lần nữa.
+
+62
+00:05:44,840 --> 00:05:54,560
+Được rồi, bây giờ, nếu tôi gõ, bạn có thể thấy 5, 4, 3, 2, 1, và bài kiểm tra kết thúc.
+
+63
+00:05:54,560 --> 00:05:56,560
+Được rồi, chúng ta hết thời gian rồi.
+
+64
+00:05:56,560 --> 00:06:02,920
+OK, vậy chúng ta có thể thấy rằng khoảng thời gian của chúng tôi đang làm việc, và bạn có thể thấy rằng chúng tôi đã nhấn của chúng tôi
+
+65
+00:06:02,920 --> 00:06:05,520
+kết thúc chức năng thử nghiệm.
+
+66
+00:06:05,520 --> 00:06:09,760
+Giờ chúng ta cần nó để làm điều đúng đắn khi chúng ta kết thúc bài kiểm tra.
+
+67
+00:06:09,760 --> 00:06:19,360
+Vì vậy, hãy trở lại và thay vì cảnh báo ở đây, chúng tôi sẽ muốn chuyển đổi đồng hồ hẹn giờ của chúng tôi
+
+68
+00:06:19,360 --> 00:06:25,560
+Các yếu tố, văn bản, nội dung, bạn sẽ thấy rằng nó đã bị mắc kẹt tại thời điểm trái 1S, và họ chỉ cần
+
+69
+00:06:25,560 --> 00:06:27,240
+Kiểu như ở lại đó.
+
+70
+00:06:27,240 --> 00:06:31,280
+Thay vào đó, chúng ta sẽ dùng lại con bọ chét, tăng gấp đôi.
+
+71
+00:06:31,280 --> 00:06:35,520
+Được rồi, chúng ta sẽ thay đổi điều đó.
+
+72
+00:06:35,520 --> 00:06:49,320
+Và phần tử điểm cuối cùng của chúng tôi phần tử văn bản chấm sẽ là bằng với WPM cuối cùng.
+
+73
+00:06:49,320 --> 00:06:53,160
+Và sau đó chúng tôi sẽ để trống trong lúc này, chúng tôi sẽ cần phải tính toán mà.
+
+74
+00:06:53,160 --> 00:06:55,720
+Nhưng bây giờ, chúng ta sẽ bỏ trống chỗ đó.
+
+75
+00:06:55,720 --> 00:07:02,040
+Bảng
+
+76
+00:07:02,040 --> 00:07:08,880
+Và cách hiển thị kiểu nút một lần nữa sẽ bằng khối.
+
+77
+00:07:08,880 --> 00:07:11,720
+Vì vậy, chúng tôi muốn hiển thị các nút thử của chúng tôi một lần nữa.
+
+78
+00:07:11,720 --> 00:07:15,640
+Được rồi, hãy thử lại lần nữa.
+
+79
+00:07:15,640 --> 00:07:20,760
+Được rồi, và chúng tôi đang đếm ở đây.
+
+80
+00:07:20,760 --> 00:07:25,000
+Được rồi, chắc chắn là khá hơn rồi.
+
+81
+00:07:25,000 --> 00:07:28,680
+Chúng tôi có những lời cuối cùng trong một phút, nhưng chúng tôi vẫn chưa tính toán.
+
+82
+00:07:28,680 --> 00:07:29,960
+Và rồi chúng ta hết thời gian.
+
+83
+00:07:29,960 --> 00:07:34,040
+Và sau đó chúng tôi có nút thử lại, tất nhiên là không làm gì cả.
+
+84
+00:07:34,040 --> 00:07:38,360
+Nhưng điều này là đúng cho việc chúng ta muốn UI thay đổi như thế nào.
+
+85
+00:07:38,360 --> 00:07:43,760
+Được rồi, điều cuối cùng chúng ta cần làm là tính toán từ ngữ mỗi phút.
+
+86
+00:07:43,760 --> 00:07:46,240
+Và chúng ta sẽ đi qua con số đó.
+
+87
+00:07:46,240 --> 00:07:58,440
+OK, vì vậy hãy quay lại và ngay bên dưới chức năng thử nghiệm của chúng tôi, bình luận ra các từ tính
+
+88
+00:07:58,440 --> 00:08:04,640
+1 phút điều chỉnh lỗi.
+
+89
+00:08:04,640 --> 00:08:07,600
+Vì vậy, chúng tôi sẽ điều chỉnh cho lỗi.
+
+90
+00:08:07,600 --> 00:08:13,680
+Về cơ bản, cách tôi quyết định làm là cho mỗi lỗi lầm, bạn mất một từ mỗi phút.
+
+91
+00:08:13,680 --> 00:08:19,920
+Được rồi, vậy hàm số tính toán WPM.
+
+92
+00:08:19,920 --> 00:08:28,480
+Được rồi, và chúng ta sẽ tạo ra một hằng số được gọi là từ gõ.
+
+93
+00:08:28,480 --> 00:08:30,920
+Và điều này sẽ là tương đương với tổng loại của chúng tôi.
+
+94
+00:08:30,920 --> 00:08:35,760
+Vì vậy, hãy nhớ rằng chúng ta có một chuỗi dài của mỗi nhân vật mà chúng ta đã gõ.
+
+95
+00:08:35,760 --> 00:08:40,040
+Và chúng tôi sẽ sử dụng cắt tỉa để loại bỏ bất kỳ không gian nào.
+
+96
+00:08:40,040 --> 00:08:50,640
+Và sau đó chúng tôi sẽ tách ra và chúng tôi sẽ sử dụng slashlash s cộng.
+
+97
+00:08:50,640 --> 00:08:52,600
+Và rồi chém lần nữa.
+
+98
+00:08:52,600 --> 00:08:56,480
+Và đây là một tuyên bố reg x.
+
+99
+00:08:56,480 --> 00:09:01,720
+Và nó sẽ cho phép chúng ta tách ra trên mọi không gian.
+
+100
+00:09:01,720 --> 00:09:05,200
+Và sau đó chúng tôi muốn thực sự có được độ dài của điều đó.
+
+101
+00:09:05,200 --> 00:09:09,200
+Vì vậy, nó sẽ có một loạt các từ và chúng tôi muốn rằng chiều dài.
+
+102
+00:09:09,200 --> 00:09:15,240
+Vì vậy, đó sẽ hiển thị cho chúng tôi mỗi từ mà chúng tôi đã gõ sẽ thực sự truy cập bảng điều khiển để hiển thị
+
+103
+00:09:15,240 --> 00:09:17,320
+Nó sẽ trông thế nào.
+
+104
+00:09:17,320 --> 00:09:21,160
+Vì vậy, bảng điều khiển đăng nhập các từ của chúng tôi gõ.
+
+105
+00:09:21,160 --> 00:09:28,200
+Và sau đó chúng tôi cũng sẽ bàn giao tiếp đăng nhập điều này ở đây là tốt.
+
+106
+00:09:28,200 --> 00:09:29,520
+Cho họ thấy ý tôi đi.
+
+107
+00:09:29,520 --> 00:09:32,640
+Được rồi, hãy xem thử.
+
+108
+00:09:32,640 --> 00:09:37,240
+Được rồi, lần này tôi sẽ thử.
+
+109
+00:09:37,240 --> 00:09:43,680
+Được rồi, vậy là nó không hoạt động.
+
+110
+00:09:43,680 --> 00:09:45,200
+Một lần nữa, tôi không gọi như vậy.
+
+111
+00:09:45,200 --> 00:09:47,360
+Điều đó rất quan trọng.
+
+112
+00:09:47,360 --> 00:09:49,400
+Luôn luôn gọi cho chức năng của bạn khi bạn thực hiện chúng.
+
+113
+00:09:49,400 --> 00:09:55,360
+Vì vậy, tôi sẽ gọi điều này vào cuối năm thử nghiệm của chúng tôi.
+
+114
+00:09:55,360 --> 00:09:57,320
+Rất quan trọng để gọi cho chức năng của bạn.
+
+115
+00:09:57,320 --> 00:09:59,880
+Được rồi, thử lại lần nữa nào.
+
+116
+00:09:59,880 --> 00:10:03,400
+Được rồi, chúng tôi cũng muốn gõ vào bảng điều khiển.
+
+117
+00:10:03,400 --> 00:10:13,280
+Okay, okay, và bạn có thể thấy rằng nó là năm.
+
+118
+00:10:13,280 --> 00:10:17,240
+Và bạn sẽ thấy rằng chúng ta có năm từ mà tôi gõ theo một dãy.
+
+119
+00:10:17,240 --> 00:10:21,600
+Và nó được chia ra mỗi khi tôi thêm vào một không gian.
+
+120
+00:10:21,600 --> 00:10:22,640
+Vì vậy, đó là chính xác.
+
+121
+00:10:22,640 --> 00:10:26,760
+Tôi đánh 5 từ, không được phép, nhưng chỉ trong 6 giây.
+
+122
+00:10:26,760 --> 00:10:33,000
+Được rồi, hãy tiếp tục tính toán từ một phút ở đây.
+
+123
+00:10:33,000 --> 00:10:43,960
+Và từ đây, chúng tôi muốn có được cơ sở WPM của chúng tôi và điều này sẽ bằng với vòng toán học.
+
+124
+00:10:43,960 --> 00:10:53,240
+Vì vậy, chúng tôi muốn một số nguyên và chúng tôi sẽ sử dụng các từ gõ, chia cho 60.
+
+125
+00:10:53,240 --> 00:11:00,600
+Và sau đó nhân 60 để trở lại một phút.
+
+126
+00:11:00,600 --> 00:11:04,800
+Vậy trong trường hợp của chúng ta, bài kiểm tra cuối cùng sẽ là 60 giây.
+
+127
+00:11:04,800 --> 00:11:09,700
+Nhưng nếu bạn muốn thay đổi nó thành 30 hoặc trong trường hợp của chúng tôi, sáu giây, bạn sẽ thực sự
+
+128
+00:11:09,700 --> 00:11:11,880
+Đổi số này ở đây.
+
+129
+00:11:11,880 --> 00:11:16,040
+Vì vậy, hãy nói rằng tôi đã có từ gõ, chia cho sáu.
+
+130
+00:11:16,040 --> 00:11:21,240
+Điều này sẽ cho tôi một từ cơ sở chính xác trong một phút trong bài kiểm tra thứ sáu của tôi.
+
+131
+00:11:21,240 --> 00:11:29,680
+Được rồi, và từ đây, chúng ta sẽ có WPM điều chỉnh và điều này sẽ bằng
+
+132
+00:11:29,680 --> 00:11:41,660
+để toán tối đa và nó sẽ mất cơ sở WPM trừ các lỗi dấu phẩy 0.
+
+133
+00:11:41,660 --> 00:11:47,040
+Và lý do tại sao chúng tôi có điều này là hãy nói rằng từ cơ bản của chúng tôi cho một phút là năm, nhưng
+
+134
+00:11:47,040 --> 00:11:48,040
+Chúng tôi đã có 10 lỗi.
+
+135
+00:11:48,040 --> 00:11:52,760
+Chúng tôi muốn các từ được điều chỉnh tối thiểu trong một phút là 0.
+
+136
+00:11:52,760 --> 00:11:57,320
+Đó là lý do tại sao toán học tối đa sẽ lấy lớn hơn trong hai số này.
+
+137
+00:11:57,320 --> 00:12:03,960
+Và sau đó chúng tôi sẽ trả lời những từ được điều chỉnh mỗi phút, được chứ?
+
+138
+00:12:03,960 --> 00:12:08,760
+Và sau đó chúng tôi thực sự sẽ gọi điều này bên trong chuỗi mẫu của chúng tôi ở đây.
+
+139
+00:12:08,760 --> 00:12:15,160
+Vì vậy, làm đô la ký hiệu, thực sự gắn kết và tính toán WPM và khung.
+
+140
+00:12:15,160 --> 00:12:19,280
+Được rồi, chúng ta có thể gỡ nó xuống từ dưới.
+
+141
+00:12:19,280 --> 00:12:23,880
+Được rồi, hãy thử xem sao.
+
+142
+00:12:23,880 --> 00:12:34,360
+Được rồi, vậy tôi sẽ bắt đầu gõ, ồ, sống động, sống động, cặp đôi, tổ, được rồi.
+
+143
+00:12:34,360 --> 00:12:37,360
+Bạn có thể thấy tôi thực sự có 50.
+
+144
+00:12:37,360 --> 00:12:45,680
+Vì vậy, tôi chia cho sáu và sau đó tôi nhân với 60 để có được những gì nó sẽ được trong quá trình
+
+145
+00:12:45,680 --> 00:12:46,760
+trong một phút.
+
+146
+00:12:46,760 --> 00:12:53,200
+Vì vậy, tôi thực sự gõ các tương đương với 50 từ một phút trong sáu giây, đó là khá
+
+147
+00:12:53,200 --> 00:12:54,200
+Tốt.
+
+148
+00:12:54,200 --> 00:13:01,280
+Được rồi, vậy chúng ta đã thành công trong việc bắt đầu thời gian khi chúng ta kích hoạt người nghe sự kiện đầu tiên
+
+149
+00:13:01,280 --> 00:13:08,040
+Khi chúng ta gõ bất kỳ nhân vật nào và đồng hồ đếm ngược thành công.
+
+150
+00:13:08,040 --> 00:13:12,680
+Và khi chúng tôi đã đạt đến cuối của đếm ngược, chúng tôi đang thành công hiển thị kết thúc của chúng tôi
+
+151
+00:13:12,680 --> 00:13:18,080
+của việc kiểm tra UI và chúng tôi đang tính toán thành công từ ngữ của chúng tôi mỗi phút.
+
+152
+00:13:18,080 --> 00:13:23,160
+Được rồi, vì vậy trong tiếp theo, chúng tôi muốn thêm chức năng để thử lại của chúng tôi
+
+153
+00:13:23,160 --> 00:13:26,120
+Có khả năng khởi động lại bài kiểm tra.
+
+154
+00:13:26,120 --> 00:13:31,320
+Và chúng tôi cũng muốn chắc chắn rằng nếu người dùng đang trên một thiết bị di động, họ sẽ
+
+155
+00:13:31,320 --> 00:13:36,520
+Lấy tin nhắn để cho họ biết họ cần phải chạy nó trên máy tính.
+
+156
+00:13:36,520 --> 00:13:40,080
+Được rồi, vậy hãy giải quyết chuyện đó trong lần tới.
+
+157
+00:13:40,080 --> 00:13:41,080
+Hẹn gặp lại.
+
+158
+00:13:41,080 --> 00:13:42,080
+Tạm biệt.
+
