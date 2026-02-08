@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:05,920
+ Okay, now let's take a look at the third model customization approach called as continued pre-training.
+
+2
+00:00:05,920 --> 00:00:13,520
+ So process of further training a pre-trained language model to improve domain knowledge of the model.
+
+3
+00:00:13,520 --> 00:00:18,960
+ Now let's try and understand this through an example. Let's say we build a generative application
+
+4
+00:00:18,960 --> 00:00:24,960
+ which summarizes the physician nodes. Now when the foundation model does the summarization,
+
+5
+00:00:25,680 --> 00:00:32,960
+ maybe sometimes it's not able to understand a particular medical talk and due to which the summarization
+
+6
+00:00:32,960 --> 00:00:40,400
+ accuracy is not great. So for that scenario you can use continued pre-training and now let's
+
+7
+00:00:40,400 --> 00:00:48,080
+ understand how continued pre-training works. If you remember fine-tuning was labeled data but here
+
+8
+00:00:48,080 --> 00:00:55,120
+ you use unlabeled data which means that you just provided a raw text. So let's say here you have a
+
+9
+00:00:55,120 --> 00:01:00,000
+ transcript from a medical journal. So let's say you have a medical journal, you go ahead and
+
+10
+00:01:00,000 --> 00:01:06,800
+ use that to train your foundation model. So now what does unlabeled data mean? It means that you just
+
+11
+00:01:06,800 --> 00:01:13,120
+ provided raw data and example I have given here is let's say you have a medical journal and this is
+
+12
+00:01:13,120 --> 00:01:18,560
+ just something I made up from a medical journal. You can use that medical journal to train
+
+13
+00:01:18,560 --> 00:01:25,040
+ your foundation model. So how does it help the foundation model? It helps improve the domain
+
+14
+00:01:25,040 --> 00:01:31,040
+ knowledge of that foundation model through the terminology of that medical journal.
+
+15
+00:01:31,040 --> 00:01:39,360
+ Okay now let's take a look at how this will work. So you have your proprietary unlabeled data
+
+16
+00:01:39,360 --> 00:01:44,240
+ and as we discussed let's say medical journal which has a lot of content. So first you have
+
+17
+00:01:44,240 --> 00:01:51,040
+ your pre-trained LLM maybe Amazon NOAA Pro from Amazon bedrock or any other model that you want
+
+18
+00:01:51,040 --> 00:01:57,040
+ to pick from Amazon bedrock service and then in your case the use case is going to be medical
+
+19
+00:01:57,040 --> 00:02:03,440
+ summarization or physician note summarization. Then you take your proprietary data and that's
+
+20
+00:02:03,440 --> 00:02:08,640
+ unlabeled data and we already looked at the example let's say medical journal. So you create
+
+21
+00:02:08,640 --> 00:02:12,960
+ a training job in the Amazon bedrock and behind the scenes as we had seen in the architecture
+
+22
+00:02:12,960 --> 00:02:19,520
+ it creates a SageMaker job and trains this foundation model. So finally you will have the
+
+23
+00:02:20,160 --> 00:02:24,880
+ customized LLM and then you can send the prompt to this LLM and generate a completion.
+
+24
+00:02:24,880 --> 00:02:31,120
+ Now an example with continued pre-training you train a model with private data such as medical
+
+25
+00:02:31,120 --> 00:02:40,480
+ journals, documents that are not publicly available for training large language models and in summary
+
+26
+00:02:40,480 --> 00:02:47,120
+ it improves the domain knowledge of the model. So an example best for domain adaptation when
+
+27
+00:02:47,120 --> 00:02:52,320
+ label data is limited. Okay so that's pretty much it from this lecture I'll see in the next lecture
+
