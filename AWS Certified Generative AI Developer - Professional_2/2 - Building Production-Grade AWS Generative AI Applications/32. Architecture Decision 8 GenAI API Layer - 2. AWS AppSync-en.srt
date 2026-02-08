@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:04,800
+ In this lecture, we are going to look at the second option for the Gen AI API layer,
+
+2
+00:00:04,800 --> 00:00:06,720
+ which is AWS AppSync.
+
+3
+00:00:06,720 --> 00:00:09,920
+ So we need to know about this service at a high level.
+
+4
+00:00:09,920 --> 00:00:12,480
+ So let's go ahead and understand what this service does.
+
+5
+00:00:12,480 --> 00:00:20,400
+ So AWS AppSync is ideal for Gen AI chat and live dashboard applications.
+
+6
+00:00:20,400 --> 00:00:24,160
+ So in the previous lecture, we have learned about web socket API,
+
+7
+00:00:24,160 --> 00:00:29,920
+ which maintain a persistent connection and are great for Gen AI chat and live dashboard.
+
+8
+00:00:30,160 --> 00:00:35,920
+ So the use case scenarios for AWS AppSync are very similar to the web socket API.
+
+9
+00:00:35,920 --> 00:00:39,120
+ And the only key difference is that in web socket API,
+
+10
+00:00:39,120 --> 00:00:41,120
+ you have to manage the routes.
+
+11
+00:00:41,120 --> 00:00:43,760
+ Now what is a primary function?
+
+12
+00:00:43,760 --> 00:00:48,400
+ So AWS AppSync is a fully managed service for building GraphQL.
+
+13
+00:00:48,400 --> 00:00:49,600
+ So what is GraphQL?
+
+14
+00:00:49,600 --> 00:00:52,400
+ So GraphQL was developed by Facebook.
+
+15
+00:00:52,400 --> 00:00:59,120
+ It's a query language for APIs that allow clients to request exactly the data
+
+16
+00:00:59,120 --> 00:01:00,320
+ they require.
+
+17
+00:01:00,320 --> 00:01:03,280
+ So if we compare it to the REST API,
+
+18
+00:01:03,280 --> 00:01:08,480
+ if we are trying to retrieve the data using the REST API versus the GraphQL,
+
+19
+00:01:08,480 --> 00:01:15,440
+ it's going to give exact response based on the client query compared to the REST API,
+
+20
+00:01:15,440 --> 00:01:17,760
+ which may under fetch or over fetch.
+
+21
+00:01:17,760 --> 00:01:23,200
+ So with the GraphQL, you can retrieve data from multiple related data sources
+
+22
+00:01:23,200 --> 00:01:27,440
+ in one API call instead of making separate requests for each resource.
+
+23
+00:01:27,440 --> 00:01:31,440
+ Now let's say we have multiple data sources and user has posed a question
+
+24
+00:01:31,440 --> 00:01:34,880
+ where you need to fetch data from these different data sources.
+
+25
+00:01:34,880 --> 00:01:36,160
+ So if you use REST API,
+
+26
+00:01:36,160 --> 00:01:41,200
+ maybe you will have to make four API calls for each of the different data sources.
+
+27
+00:01:41,200 --> 00:01:44,320
+ Now so for a similar scenario, if you use GraphQL,
+
+28
+00:01:44,320 --> 00:01:50,080
+ then you will have to just make one request and GraphQL should be able to retrieve the data
+
+29
+00:01:50,080 --> 00:01:54,640
+ from these different data sources through just one API call.
+
+30
+00:01:55,840 --> 00:01:58,160
+ Okay, what's the API type protocol?
+
+31
+00:01:58,160 --> 00:02:03,040
+ So GraphQL over HTTP, HTTPS, and web sockets.
+
+32
+00:02:03,040 --> 00:02:09,120
+ Okay, now what are the additional core features for AWS AppSync?
+
+33
+00:02:09,120 --> 00:02:11,360
+ It provides a real-time subscription.
+
+34
+00:02:11,360 --> 00:02:15,680
+ So what that means is once the client has subscribed,
+
+35
+00:02:15,680 --> 00:02:20,880
+ then he's going to get auto push updates from the server side.
+
+36
+00:02:20,880 --> 00:02:23,120
+ So that's useful for live dashboard.
+
+37
+00:02:23,120 --> 00:02:26,640
+ So once you have subscribed to live dashboards,
+
+38
+00:02:26,640 --> 00:02:29,360
+ as there are changes, those changes are going to be
+
+39
+00:02:29,360 --> 00:02:32,720
+ pushed and visible to the client or the user.
+
+40
+00:02:32,720 --> 00:02:34,560
+ Then it also provides offline support.
+
+41
+00:02:34,560 --> 00:02:37,840
+ This is especially good for mobile or web.
+
+42
+00:02:37,840 --> 00:02:40,960
+ So if you don't have internet, then you can get offline support.
+
+43
+00:02:40,960 --> 00:02:45,600
+ So it integrates with Lambda for orchestration and bedrock for inference.
+
+44
+00:02:45,600 --> 00:02:48,320
+ Some of the key use cases we already discussed,
+
+45
+00:02:48,320 --> 00:02:51,840
+ chatbots dashboards requiring live updates.
+
+46
+00:02:51,840 --> 00:02:54,080
+ Now let's try and understand this through a use case.
+
+47
+00:02:54,080 --> 00:02:58,480
+ So let's say we have an end user who is accessing a JNA application
+
+48
+00:02:58,480 --> 00:03:02,240
+ using web or mobile device and he asks a question.
+
+49
+00:03:02,240 --> 00:03:05,440
+ And this is sometimes called as mutation,
+
+50
+00:03:05,440 --> 00:03:09,920
+ which you can think of like a state change or just simply a trigger.
+
+51
+00:03:09,920 --> 00:03:15,920
+ Now this AWS AppSync sends that request or prompt to AWS Lambda.
+
+52
+00:03:15,920 --> 00:03:18,880
+ And it's an asynchronous invocation.
+
+53
+00:03:18,880 --> 00:03:20,160
+ It's not synchronous.
+
+54
+00:03:20,160 --> 00:03:24,320
+ So it does not wait for response from Lambda.
+
+55
+00:03:24,320 --> 00:03:28,320
+ So once this request goes to AWS Lambda,
+
+56
+00:03:28,320 --> 00:03:31,520
+ then it is going to be sent to Amazon bedrock.
+
+57
+00:03:31,520 --> 00:03:36,800
+ And Amazon bedrock is going to stream the response in chunks.
+
+58
+00:03:36,800 --> 00:03:40,560
+ So as the response gets generated and is sent,
+
+59
+00:03:40,560 --> 00:03:46,080
+ this AWS Lambda function is going to send that answer to the AWS AppSync,
+
+60
+00:03:46,080 --> 00:03:50,880
+ which is going to send that response back to all the clients
+
+61
+00:03:50,880 --> 00:03:53,520
+ that have subscribed to this event.
+
+62
+00:03:53,520 --> 00:03:58,960
+ So there could be multiple clients or users who have subscribed to this live dashboard
+
+63
+00:03:58,960 --> 00:04:01,280
+ as the answer is getting generated.
+
+64
+00:04:01,280 --> 00:04:04,720
+ All the subscribers who have subscribed to this event
+
+65
+00:04:04,720 --> 00:04:06,560
+ are going to get the updates.
+
+66
+00:04:06,560 --> 00:04:09,680
+ Okay, so that's pretty much it from this lecture.
+
+67
+00:04:09,680 --> 00:04:10,640
+ I'll see in the next lecture.
+
+68
+00:04:10,640 --> 00:04:11,120
+ Thank you.
+
