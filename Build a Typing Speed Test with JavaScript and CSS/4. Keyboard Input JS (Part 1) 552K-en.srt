@@ -1,0 +1,628 @@
+1
+00:00:00,000 --> 00:00:06,000
+ Okay, so in this one, we are going to be listening for our keystrokes.
+
+2
+00:00:06,000 --> 00:00:10,000
+ To do this, we're going to add an event listener to our document,
+
+3
+00:00:10,000 --> 00:00:13,000
+ listening to the keydown event.
+
+4
+00:00:13,000 --> 00:00:20,000
+ We're going to be listening for if we are backspacing or if we're entering a character.
+
+5
+00:00:20,000 --> 00:00:25,000
+ We're going to need to add some variables to track what has been typed,
+
+6
+00:00:25,000 --> 00:00:29,000
+ what index we are at in our characters.
+
+7
+00:00:29,000 --> 00:00:36,000
+ We'll need to actually split our long text string into an array of single characters so that we can track that.
+
+8
+00:00:36,000 --> 00:00:47,000
+ We're also going to track errors and then eventually we'll also need to create a way to actually scroll our text once we get far enough in that we need to do that.
+
+9
+00:00:47,000 --> 00:00:52,000
+ So that we can actually see the remaining text and continue typing.
+
+10
+00:00:52,000 --> 00:00:56,000
+ Okay, so let's dive right in.
+
+11
+00:00:56,000 --> 00:01:03,000
+ So I'm going to go ahead and actually move the stuff up here to the top,
+
+12
+00:01:03,000 --> 00:01:09,000
+ just to put all of my variables in one place and my constants.
+
+13
+00:01:09,000 --> 00:01:20,000
+ Okay, so the first thing we need, we're going to need a let total typed and this is going to be a string
+
+14
+00:01:20,000 --> 00:01:31,000
+ and we are also going to need let current char times our character index equals zero.
+
+15
+00:01:31,000 --> 00:01:39,000
+ So again, we're going to split this long text into an array and we are concerned with where we are in that array.
+
+16
+00:01:39,000 --> 00:01:45,000
+ And we'll also want to track our errors, let errors equal zero for now,
+
+17
+00:01:45,000 --> 00:01:49,000
+ but this is going to eventually impact our words per minute.
+
+18
+00:01:49,000 --> 00:01:56,000
+ Okay, and from here what we're going to do, let's just make sure everything is still good.
+
+19
+00:01:56,000 --> 00:02:00,000
+ Okay, yep, everything is still good.
+
+20
+00:02:00,000 --> 00:02:14,000
+ We are going to comment out a title here for handle typing over the displayed text and scrolling.
+
+21
+00:02:14,000 --> 00:02:19,000
+ So you'll notice that I didn't have a separate input and then a box with just a bunch of text.
+
+22
+00:02:19,000 --> 00:02:26,000
+ I wanted to actually be able to type within the text container that's showing the text and just highlight the text.
+
+23
+00:02:26,000 --> 00:02:31,000
+ I just think that that looks a lot better and so that's why we're doing it this way.
+
+24
+00:02:31,000 --> 00:02:38,000
+ Okay, so document, add event listener, bracket, single quotes,
+
+25
+00:02:38,000 --> 00:02:44,000
+ key downs or listening to this key down event. So every time we press a key on our keyboard,
+
+26
+00:02:44,000 --> 00:02:54,000
+ this event is going to be triggered and we'll do bracket E for our event and then our arrow function,
+
+27
+00:02:54,000 --> 00:03:02,000
+ curly brackets, press enter, semicolon there and we're going to start with our backspace.
+
+28
+00:03:02,000 --> 00:03:08,000
+ So we're going to track if we're backspacing, we are going back in our character index.
+
+29
+00:03:08,000 --> 00:03:13,000
+ So we do need to track when we have a backspace key hit.
+
+30
+00:03:13,000 --> 00:03:23,000
+ So if E dot key equals three equal signs, so it exactly equals backspace,
+
+31
+00:03:23,000 --> 00:03:34,000
+ then if our total typed dot length is more than zero,
+
+32
+00:03:34,000 --> 00:03:39,000
+ so keep in mind if we are at the very beginning and we hit backspace,
+
+33
+00:03:39,000 --> 00:03:42,000
+ we don't really want anything to happen.
+
+34
+00:03:42,000 --> 00:03:48,000
+ And that's why we have this condition here, but if we're not at the very beginning,
+
+35
+00:03:48,000 --> 00:03:54,000
+ we want to actually lower our current character index.
+
+36
+00:03:54,000 --> 00:04:08,000
+ So current care index equals math dot max bracket current care index minus one or zero.
+
+37
+00:04:08,000 --> 00:04:15,000
+ So let's say that we're 10 characters in, we want to be able to go back one.
+
+38
+00:04:15,000 --> 00:04:21,000
+ So to nine or we want to go to zero, so whichever one is bigger.
+
+39
+00:04:21,000 --> 00:04:24,000
+ So for at 10, we're going to minus one and go to nine.
+
+40
+00:04:24,000 --> 00:04:27,000
+ If we're at the very beginning, it'll just be zero.
+
+41
+00:04:27,000 --> 00:04:30,000
+ So it'll just stay at the first position.
+
+42
+00:04:30,000 --> 00:04:41,000
+ And total typed is going to be equal to total typed dot slice zero minus one.
+
+43
+00:04:41,000 --> 00:04:50,000
+ So this is going to remove one character, so this is a long string of what we've typed.
+
+44
+00:04:50,000 --> 00:04:53,000
+ It's going to remove one character off of it.
+
+45
+00:04:53,000 --> 00:04:56,000
+ That is what our slice is doing here.
+
+46
+00:04:56,000 --> 00:05:10,000
+ So if we are not backspacing, else bracket, sorry, else if our E dot key,
+
+47
+00:05:10,000 --> 00:05:15,000
+ dot key, dot link is equal to one.
+
+48
+00:05:15,000 --> 00:05:19,000
+ So we only want to track single keys that are being entered.
+
+49
+00:05:19,000 --> 00:05:24,000
+ We don't want to track combinations of keys at once.
+
+50
+00:05:24,000 --> 00:05:38,000
+ And we also don't want to track if we're pressing our control key or our meta keys.
+
+51
+00:05:38,000 --> 00:05:43,000
+ We just want to track basically letters in this case.
+
+52
+00:05:43,000 --> 00:05:45,000
+ Okay.
+
+53
+00:05:45,000 --> 00:05:51,000
+ And in this case, our total typed is going to add.
+
+54
+00:05:51,000 --> 00:05:57,000
+ So plus equals is to add the value of that keystroke.
+
+55
+00:05:57,000 --> 00:06:03,000
+ So if I typed j, it would add j to the total typed string that we have.
+
+56
+00:06:03,000 --> 00:06:08,000
+ Now go ahead and just minimize these for now.
+
+57
+00:06:08,000 --> 00:06:11,000
+ So we just kind of see our values there a little bit.
+
+58
+00:06:11,000 --> 00:06:16,000
+ And then we're going to increment our current character index.
+
+59
+00:06:16,000 --> 00:06:17,000
+ Okay.
+
+60
+00:06:17,000 --> 00:06:24,000
+ So what we're going to do here is I'm going to add a few console logs so that we can better understand what's happening here.
+
+61
+00:06:24,000 --> 00:06:27,000
+ So we'll do E dot key.
+
+62
+00:06:27,000 --> 00:06:30,000
+ And we're going to log that.
+
+63
+00:06:30,000 --> 00:06:40,000
+ And then we're also going to log our total, total typed, total typed.
+
+64
+00:06:40,000 --> 00:06:47,000
+ And we're also going to log our current, our index, our current index.
+
+65
+00:06:47,000 --> 00:06:48,000
+ Okay.
+
+66
+00:06:48,000 --> 00:06:53,000
+ So let's actually see what is happening here.
+
+67
+00:06:53,000 --> 00:06:54,000
+ Okay.
+
+68
+00:06:54,000 --> 00:06:59,000
+ So I'm going to type the letter j.
+
+69
+00:06:59,000 --> 00:07:00,000
+ Okay.
+
+70
+00:07:00,000 --> 00:07:03,000
+ So we can see we have our event key is j.
+
+71
+00:07:03,000 --> 00:07:07,000
+ Our total typed is j and our current character index is one.
+
+72
+00:07:07,000 --> 00:07:15,000
+ So if I just type a bunch of other random letters, you can see that it's taking in one letter at a time.
+
+73
+00:07:15,000 --> 00:07:17,000
+ And it's adding them to our string here.
+
+74
+00:07:17,000 --> 00:07:20,000
+ And it is incrementing our index.
+
+75
+00:07:20,000 --> 00:07:22,000
+ So you can see it just keeps going up.
+
+76
+00:07:22,000 --> 00:07:28,000
+ And then if I were to hit backspace, you can see that the key is backspace.
+
+77
+00:07:28,000 --> 00:07:36,000
+ And the total typed, we actually removed the letter h at the end and our current index went down as well.
+
+78
+00:07:36,000 --> 00:07:42,000
+ So this is what is going to help us track where we are and what the total of what we've typed is.
+
+79
+00:07:42,000 --> 00:07:44,000
+ It's going to be one long string.
+
+80
+00:07:44,000 --> 00:07:46,000
+ Of course, it's going to have spaces in it as well.
+
+81
+00:07:46,000 --> 00:07:55,000
+ But I'm just showing you how the mechanism is going to work for tracking our backspace and our regular letters that we are entering.
+
+82
+00:07:55,000 --> 00:08:02,000
+ Okay, so let's move on from here.
+
+83
+00:08:02,000 --> 00:08:06,000
+ So I guess I'll leave that console log for now, but I'll remove it in a bit.
+
+84
+00:08:06,000 --> 00:08:13,000
+ Now from here, we want to create a constant for our text array.
+
+85
+00:08:13,000 --> 00:08:19,000
+ And this is going to be our long text that we generated up here.
+
+86
+00:08:19,000 --> 00:08:23,000
+ So it put our long array into one long string.
+
+87
+00:08:23,000 --> 00:08:27,000
+ And then we're going to go ahead and actually split it.
+
+88
+00:08:27,000 --> 00:08:31,000
+ And we're going to split every single character, even spaces.
+
+89
+00:08:31,000 --> 00:08:37,000
+ So it'll be one character per entry in our text array.
+
+90
+00:08:37,000 --> 00:08:41,000
+ So let's go ahead and, well, I guess we can console log.
+
+91
+00:08:41,000 --> 00:08:45,000
+ We'll join, I guess, I can't do it there because it's not going to show up.
+
+92
+00:08:45,000 --> 00:08:48,000
+ Let's do a separate console log.
+
+93
+00:08:48,000 --> 00:08:52,000
+ That wouldn't work because we haven't initiated text array yet.
+
+94
+00:08:52,000 --> 00:08:54,000
+ So you can't console log up here.
+
+95
+00:08:54,000 --> 00:08:57,000
+ But let's go ahead and try this now.
+
+96
+00:08:57,000 --> 00:09:01,000
+ So I can see I have to actually press a button.
+
+97
+00:09:01,000 --> 00:09:08,000
+ But now you can see we have a 1300 and 98 long array.
+
+98
+00:09:08,000 --> 00:09:16,000
+ And if I expand it, you can see that we have each single character including spaces in an array.
+
+99
+00:09:16,000 --> 00:09:23,000
+ And basically what we're doing with our total typed is we're going to match character for character.
+
+100
+00:09:23,000 --> 00:09:29,000
+ So if the first character is F and the first character here is N, I know that that's incorrect.
+
+101
+00:09:29,000 --> 00:09:32,000
+ We're doing a character for character comparison.
+
+102
+00:09:32,000 --> 00:09:39,000
+ And then we're going through our index in order to tell, okay, second character, did I type A?
+
+103
+00:09:39,000 --> 00:09:42,000
+ And then if it's A here, then that's correct.
+
+104
+00:09:42,000 --> 00:09:49,000
+ And then we can add our correct class or we can add our error class and increment our errors, etc.
+
+105
+00:09:49,000 --> 00:09:51,000
+ So that is how that's going to work.
+
+106
+00:09:51,000 --> 00:09:56,000
+ We're basically splitting total typed into checking character by character.
+
+107
+00:09:56,000 --> 00:10:04,000
+ And we're splitting our big string into a bunch of character items in an array.
+
+108
+00:10:04,000 --> 00:10:16,000
+ Okay, the next thing we're going to do is we're actually going to reset our text container.
+
+109
+00:10:16,000 --> 00:10:20,000
+ Intertext is going to be nothing.
+
+110
+00:10:20,000 --> 00:10:22,000
+ So we're going to reset it.
+
+111
+00:10:22,000 --> 00:10:26,000
+ And we're also going to reset our errors to be zero.
+
+112
+00:10:26,000 --> 00:10:33,000
+ The reason we have to put this in here as well is in case we actually are running the test once and then hitting the try again.
+
+113
+00:10:33,000 --> 00:10:36,000
+ So we're not actually reloading the page in that case.
+
+114
+00:10:36,000 --> 00:10:40,000
+ Even though we're setting it as zero there, we'll need to set it again.
+
+115
+00:10:40,000 --> 00:10:42,000
+ So I added it there.
+
+116
+00:10:42,000 --> 00:10:44,000
+ And then now we're going to need to loop through.
+
+117
+00:10:44,000 --> 00:10:51,000
+ So four, let i equals zero.
+
+118
+00:10:51,000 --> 00:10:54,000
+ So we're going to start at the index of zero.
+
+119
+00:10:54,000 --> 00:10:59,000
+ And our i is going to go until we get to the length of our text array,
+
+120
+00:10:59,000 --> 00:11:04,000
+ which it's probably never going to reach because it's almost 1400 characters.
+
+121
+00:11:04,000 --> 00:11:10,000
+ And I'm going to keep incrementing as long as we don't hit the limit, which again, I don't think we will.
+
+122
+00:11:10,000 --> 00:11:15,000
+ And from here, we're going to create a span.
+
+123
+00:11:15,000 --> 00:11:23,000
+ And this is going to be equal to document create element and single quotes spans.
+
+124
+00:11:23,000 --> 00:11:34,000
+ We're going to create a span. And if i is less than our total typed length.
+
+125
+00:11:34,000 --> 00:11:43,000
+ And keep in mind, we're starting at zero here, but our total typed length is starting at one in this case.
+
+126
+00:11:43,000 --> 00:11:50,000
+ So if you remember, if I press this, that length is one, it's not starting at zero.
+
+127
+00:11:50,000 --> 00:11:55,000
+ And you'll see we already reset everything here.
+
+128
+00:11:55,000 --> 00:12:03,000
+ Okay, so if i is less than our total type length, if our total typed,
+
+129
+00:12:03,000 --> 00:12:13,000
+ and we're going to use that index, is equal to our text array index.
+
+130
+00:12:13,000 --> 00:12:24,000
+ So they're both zero indexed. Then that span, we're going to add a class list.
+
+131
+00:12:24,000 --> 00:12:31,000
+ Single quotes of correct. So we're going to add that green styling.
+
+132
+00:12:31,000 --> 00:12:48,000
+ Else, span, class list, add error. And we're also going to increment our errors.
+
+133
+00:12:48,000 --> 00:12:58,000
+ Okay, and then for our span, we're actually going to add that text content.
+
+134
+00:12:58,000 --> 00:13:04,000
+ And we're going to add it.
+
+135
+00:13:04,000 --> 00:13:08,000
+ We're going to add that single character of that index from the text array.
+
+136
+00:13:08,000 --> 00:13:11,000
+ And that's going to be the text content for the span we've created.
+
+137
+00:13:11,000 --> 00:13:16,000
+ And we're going to add the class of correct or error. And it's going to make it red or green.
+
+138
+00:13:16,000 --> 00:13:22,000
+ And then we're going to append the child to our text container.
+
+139
+00:13:22,000 --> 00:13:25,000
+ And we're going to append that span.
+
+140
+00:13:25,000 --> 00:13:31,000
+ Okay, so let's go ahead and check that out.
+
+141
+00:13:31,000 --> 00:13:34,000
+ Okay, so we're going to go actually over to our elements here.
+
+142
+00:13:34,000 --> 00:13:40,000
+ So you see we have everything loaded. And if I type something, you can see that.
+
+143
+00:13:40,000 --> 00:13:46,000
+ Okay, if we open up our text container here, you see that we have a bunch of spans.
+
+144
+00:13:46,000 --> 00:13:50,000
+ And they are the individual characters. And you see I typed E correctly.
+
+145
+00:13:50,000 --> 00:13:55,000
+ And it has the class of correct. And you see that it's green.
+
+146
+00:13:55,000 --> 00:14:02,000
+ And if I type the next character is F and it's D, I have error.
+
+147
+00:14:02,000 --> 00:14:08,000
+ And then if I just keep going, see that I have a bunch of errors.
+
+148
+00:14:08,000 --> 00:14:11,000
+ Which it's doing what it's supposed to do.
+
+149
+00:14:11,000 --> 00:14:16,000
+ And you can see that we have our character index is moving up.
+
+150
+00:14:16,000 --> 00:14:22,000
+ This is our total type length. And you see all of our keys that we're entering here.
+
+151
+00:14:22,000 --> 00:14:26,000
+ You might have noticed something unusual though in our text container.
+
+152
+00:14:26,000 --> 00:14:30,000
+ We have lost all of our spaces.
+
+153
+00:14:30,000 --> 00:14:34,000
+ So we are going to need to fix that.
+
+154
+00:14:34,000 --> 00:14:37,000
+ But this video is getting a little bit long.
+
+155
+00:14:37,000 --> 00:14:39,000
+ So let's take a break here.
+
+156
+00:14:39,000 --> 00:14:45,000
+ And we'll finish up dealing with our spaces and our scrolling to the left in the next video.
+
+157
+00:14:45,000 --> 00:14:50,120
+ video. I'll see you then, bye for now.
+
