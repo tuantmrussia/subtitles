@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:05,280
+ In this lecture, I am going to give you a high level overview of Amazon Bedrock Knowledge
+
+2
+00:00:05,280 --> 00:00:12,480
+ Basins which is the core capability part of Amazon Bedrock where you can build a rack-based
+
+3
+00:00:12,480 --> 00:00:13,480
+ application.
+
+4
+00:00:13,480 --> 00:00:18,780
+ So, over this section, we are going to deep dive into each aspect of Amazon Bedrock
+
+5
+00:00:18,780 --> 00:00:25,200
+ Knowledge Basins but for now, I will just give you a high level overview to get started.
+
+6
+00:00:25,200 --> 00:00:30,920
+ So what is Amazon Bedrock Knowledge Basins? It is a fully managed rack capability in Amazon
+
+7
+00:00:30,920 --> 00:00:31,920
+ Bedrock.
+
+8
+00:00:31,920 --> 00:00:38,960
+ So what it means is AWS will take care of the hosting monitoring, scaling, patching and so on
+
+9
+00:00:38,960 --> 00:00:41,880
+ for this particular service.
+
+10
+00:00:41,880 --> 00:00:48,920
+ So, Amazon Bedrock Knowledge Basins gives foundation models and agents contextual information
+
+11
+00:00:48,920 --> 00:00:57,040
+ from companies' private data sources to deliver more relevant, accurate and customized responses.
+
+12
+00:00:57,040 --> 00:01:03,200
+ So, we already discussed earlier that RAG allows you to connect with your company's private
+
+13
+00:01:03,200 --> 00:01:08,360
+ data sources so that is what Bedrock Knowledge Basins does.
+
+14
+00:01:08,360 --> 00:01:14,600
+ But the good thing is AWS takes care of all the complexity related to building the
+
+15
+00:01:14,600 --> 00:01:19,800
+ RAG-based application, all you have to do is select the configuration from the options
+
+16
+00:01:19,800 --> 00:01:26,120
+ provided by Bedrock Knowledge Basins and then you should be easily able to build the RAG-based
+
+17
+00:01:26,120 --> 00:01:27,120
+ application.
+
+18
+00:01:27,120 --> 00:01:33,320
+ Now, previously, we looked at the 10 different architectural decisions that you need
+
+19
+00:01:33,320 --> 00:01:37,360
+ to make to build a RAG-based application.
+
+20
+00:01:37,360 --> 00:01:42,400
+ And in Bedrock Knowledge Basins, all those capabilities are available out of box.
+
+21
+00:01:42,400 --> 00:01:46,920
+ So, first, you can select your data source, it provides option for both structured and
+
+22
+00:01:46,920 --> 00:01:51,680
+ unstructured data, then you can select your chunking strategy, so there are different chunking
+
+23
+00:01:51,680 --> 00:01:56,920
+ strategies available in Amazon Bedrock Knowledge Basins, then you can select your embedding
+
+24
+00:01:56,920 --> 00:02:02,400
+ model, again, there are a lot of choices from Amazon, Cohear and so on, then you can select
+
+25
+00:02:02,400 --> 00:02:06,320
+ your vector database, there are a lot of different choices that are available based on
+
+26
+00:02:06,320 --> 00:02:10,800
+ your use case, you can choose a re-ranker model and then finally, you can also select
+
+27
+00:02:10,800 --> 00:02:16,720
+ the foundation model from Amazon Bedrock that might be relevant for your use case.
+
+28
+00:02:16,720 --> 00:02:22,160
+ So, you can select the different options and then your RAG application should be ready.
+
+29
+00:02:22,160 --> 00:02:27,400
+ So, we are going to deep dive into all of these 10 decision points as we go along in
+
+30
+00:02:27,400 --> 00:02:31,720
+ the course, so if it is not clear to you, that should be okay.
+
+31
+00:02:31,720 --> 00:02:36,640
+ So, this is very important and you should remember from the Amazon Bedrock Knowledge Basins
+
+32
+00:02:36,640 --> 00:02:44,200
+ perspective, there are two APIs available, the retrieve API and retrieve and generate API,
+
+33
+00:02:44,200 --> 00:02:50,700
+ so what retrieve API does is, it is a retrieval only, so it will perform vector search return
+
+34
+00:02:50,700 --> 00:02:57,720
+ retrieved chunks, so there is no LLM response generation and it is used when you want to search
+
+35
+00:02:57,720 --> 00:03:05,520
+ results only, so basically it targets from step 1 to step 4, so let us say if you invoke
+
+36
+00:03:05,520 --> 00:03:11,600
+ the retrieve API and you send this question, how many leaves in 2026, it is only going
+
+37
+00:03:11,600 --> 00:03:18,640
+ to respond with retrieved chunks, it is not going to give you a final answer.
+
+38
+00:03:18,640 --> 00:03:23,680
+ Then you have the retrieve and generate API, it retrieves relevant chunks and sends
+
+39
+00:03:23,680 --> 00:03:28,840
+ them to the foundation model to generate final answer, so this is full-write, so this
+
+40
+00:03:28,840 --> 00:03:35,200
+ covers from step 1 to step 5, so if you send let us say this as a prompt and invoke
+
+41
+00:03:35,200 --> 00:03:40,520
+ the retrieve and generate API, you will get a full-fledged answer, so you need to remember
+
+42
+00:03:40,520 --> 00:03:44,320
+ this from the exam perspective, okay, so that is pretty much it from this lecture, I will
+
+43
+00:03:44,320 --> 00:03:45,320
+ see in the next lecture, thank you.
+
