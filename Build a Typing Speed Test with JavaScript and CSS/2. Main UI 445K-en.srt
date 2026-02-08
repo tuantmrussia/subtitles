@@ -1,0 +1,464 @@
+1
+00:00:00,000 --> 00:00:08,300
+ Okay, and to start with, as usual, we're going to go into our code folder on our desktop
+
+2
+00:00:08,300 --> 00:00:16,760
+ here and we are going to copy our template and we're going to go ahead and paste the item.
+
+3
+00:00:16,760 --> 00:00:21,920
+ If you're not familiar with the template, it will be linked within the course.
+
+4
+00:00:21,920 --> 00:00:30,640
+ It is also available on my GitHub and we have just basic HTML, CSS, and JavaScript files
+
+5
+00:00:30,640 --> 00:00:32,440
+ inside of our template.
+
+6
+00:00:32,440 --> 00:00:39,680
+ Okay, so I'm going to rename this to be typing -test and I'm going to press enter.
+
+7
+00:00:39,680 --> 00:00:49,840
+ I can close this and I'm going to go ahead and open Visual Studio Code.
+
+8
+00:00:49,840 --> 00:00:57,760
+ And in our Explorer, we're going to open a folder and we're going to open our typing
+
+9
+00:00:57,760 --> 00:01:00,520
+ test folder.
+
+10
+00:01:00,520 --> 00:01:08,960
+ Okay, so we'll start with our index HTML, actually I'll open everything here and you'll
+
+11
+00:01:08,960 --> 00:01:11,160
+ see our script.js has nothing in it.
+
+12
+00:01:11,160 --> 00:01:17,240
+ Our style CSS has some very basic styling and then our index HTML here.
+
+13
+00:01:17,240 --> 00:01:19,680
+ We can actually remove a couple things.
+
+14
+00:01:19,680 --> 00:01:22,640
+ I'll actually maybe close that for now.
+
+15
+00:01:22,640 --> 00:01:26,120
+ We can remove this to grab a custom favicon.
+
+16
+00:01:26,120 --> 00:01:32,360
+ We do have a favicon as well included in our template and we'll maybe change our title
+
+17
+00:01:32,360 --> 00:01:39,320
+ here to be typing test and we're actually not using font awesome, so I'm going to go ahead
+
+18
+00:01:39,320 --> 00:01:40,800
+ and get rid of that out.
+
+19
+00:01:40,800 --> 00:01:50,960
+ Well, okay, and we can use our live server, which is a very handy Visual Studio Code extension
+
+20
+00:01:50,960 --> 00:01:56,240
+ and you'll see that we have our project here and we have typing test and we have our
+
+21
+00:01:56,240 --> 00:01:58,040
+ hello world.
+
+22
+00:01:58,040 --> 00:02:04,040
+ So let's go back and start making our UI here.
+
+23
+00:02:04,040 --> 00:02:09,440
+ So the goal of this video is to just make the main UI.
+
+24
+00:02:09,440 --> 00:02:19,560
+ So we're going to start out with an h1 and this is just going to say typing test and then
+
+25
+00:02:19,560 --> 00:02:28,840
+ from there we're going to create a div with an ID, so div hash text dash container and
+
+26
+00:02:28,840 --> 00:02:34,240
+ press tab and that's going to create our div with the ID text container.
+
+27
+00:02:34,240 --> 00:02:39,660
+ And then below that we're going to create another div with the ID of timer and this is
+
+28
+00:02:39,660 --> 00:02:41,160
+ going to be for our timer.
+
+29
+00:02:41,160 --> 00:02:49,280
+ I'm just going to write inside here time left 60 s, okay.
+
+30
+00:02:49,280 --> 00:02:57,160
+ And then we will have a div hash tag final dash score and this will be for our final
+
+31
+00:02:57,160 --> 00:03:04,800
+ score, of course, when we're done typing and then we'll also have a button and this will
+
+32
+00:03:04,800 --> 00:03:18,080
+ be of type button and this is going to have an ID of try dash again and this is going
+
+33
+00:03:18,080 --> 00:03:20,520
+ to be our try again button.
+
+34
+00:03:20,520 --> 00:03:24,400
+ So that is it for our HTML, very, very straightforward.
+
+35
+00:03:24,400 --> 00:03:28,600
+ So let's dive into our styling a bit.
+
+36
+00:03:28,600 --> 00:03:32,200
+ We can actually maybe check it out, it's not going to look like much.
+
+37
+00:03:32,200 --> 00:03:39,040
+ So we have a h1, we have a div with some text and then we have a try again button, okay.
+
+38
+00:03:39,040 --> 00:03:43,040
+ So let's make it look a little bit better than that.
+
+39
+00:03:43,040 --> 00:03:44,040
+ All right.
+
+40
+00:03:44,040 --> 00:03:50,840
+ So for our body, we are going to want to have a margin of zero, we'll say that it'll
+
+41
+00:03:50,840 --> 00:04:02,000
+ just be a height of 100, the h and then we're going to have a background of white smoke.
+
+42
+00:04:02,000 --> 00:04:07,080
+ Feel free to change up your background colors or any other type of creative background you
+
+43
+00:04:07,080 --> 00:04:08,080
+ would like.
+
+44
+00:04:08,080 --> 00:04:14,000
+ You could use a hero pattern background, video background, gradient background, there's lots
+
+45
+00:04:14,000 --> 00:04:19,960
+ of options, but I'm going to keep it very minimal and very simple.
+
+46
+00:04:19,960 --> 00:04:24,280
+ Next we want to make sure we have an overflow hidden.
+
+47
+00:04:24,280 --> 00:04:29,480
+ So we don't want to be able to scroll in any direction for our body.
+
+48
+00:04:29,480 --> 00:04:34,400
+ And then we're going to use flex box, so display flex.
+
+49
+00:04:34,400 --> 00:04:43,560
+ And we're going to do a flex direction of column so that everything is going top to bottom.
+
+50
+00:04:43,560 --> 00:04:50,880
+ Simplify content center and align items center to center things at both vertically and
+
+51
+00:04:50,880 --> 00:04:52,920
+ horizontal lead.
+
+52
+00:04:52,920 --> 00:04:59,280
+ And then lastly, our font family is going to be mono space.
+
+53
+00:04:59,280 --> 00:05:06,040
+ So mono space is important in this case because it means that every character is going
+
+54
+00:05:06,040 --> 00:05:08,800
+ to take up the same width.
+
+55
+00:05:08,800 --> 00:05:14,120
+ So that is going to be important later on and we'll get more into that when we get into
+
+56
+00:05:14,120 --> 00:05:15,800
+ the functionality.
+
+57
+00:05:15,800 --> 00:05:19,600
+ And then the font size, I'm going to make 1.5 REM.
+
+58
+00:05:19,600 --> 00:05:23,280
+ Okay, so let's go ahead and check that out.
+
+59
+00:05:23,280 --> 00:05:30,280
+ All right, so that already looks a lot better and it looks reasonably close to our final
+
+60
+00:05:30,280 --> 00:05:31,680
+ product here.
+
+61
+00:05:31,680 --> 00:05:34,120
+ We are going to need to style the button.
+
+62
+00:05:34,120 --> 00:05:38,040
+ And you can see that we do not actually see our text container yet.
+
+63
+00:05:38,040 --> 00:05:42,280
+ So let's go ahead and work on our text container.
+
+64
+00:05:42,280 --> 00:05:50,680
+ Okay, so we'll just target our hashtag #text-container.
+
+65
+00:05:50,680 --> 00:05:56,520
+ And inside of this, we'll start with a width of 800 pixels and we're going to give it
+
+66
+00:05:56,520 --> 00:06:05,720
+ a height auto and scroll down a bit and we're going to give it a margin, 20 pixels top
+
+67
+00:06:05,720 --> 00:06:09,960
+ and bottom and left and right auto.
+
+68
+00:06:09,960 --> 00:06:15,920
+ And we are going to give it a line height of to REM.
+
+69
+00:06:15,920 --> 00:06:23,560
+ We're going to give it a little bit of space, be under 1.5 REM and white space, no wrap.
+
+70
+00:06:23,560 --> 00:06:34,120
+ We're going to give it a background white, padding, 10 pixels all the way around, border
+
+71
+00:06:34,120 --> 00:06:42,780
+ dash radius of 5 pixels, overflow is also going to be hidden inside of this.
+
+72
+00:06:42,780 --> 00:06:48,000
+ And then we're going to use display flex, a line item center.
+
+73
+00:06:48,000 --> 00:06:55,520
+ We want to align everything vertically in our container and we're going to use a position
+
+74
+00:06:55,520 --> 00:07:04,040
+ relative and a cursor of none so that when we're typing, we're just focused on the
+
+75
+00:07:04,040 --> 00:07:05,720
+ typing.
+
+76
+00:07:05,720 --> 00:07:09,360
+ And you know what, let's actually put some text in here.
+
+77
+00:07:09,360 --> 00:07:15,680
+ This is our text, okay and let's go back and check that out.
+
+78
+00:07:15,680 --> 00:07:22,560
+ Okay, so again, looking good, if I hover into it, you'll see that my cursor is disappearing.
+
+79
+00:07:22,560 --> 00:07:31,440
+ That's going to help us focus a little bit better on our text here, okay, nice from there.
+
+80
+00:07:31,440 --> 00:07:37,060
+ Our timer text could be a little bit smaller and maybe we want more of a margin around
+
+81
+00:07:37,060 --> 00:07:38,060
+ there.
+
+82
+00:07:38,060 --> 00:07:45,560
+ So let's go ahead and address that timer.
+
+83
+00:07:45,560 --> 00:07:52,680
+ Let's give it a margin, 10 pixels all the way around and a font size of 1.2 REM.
+
+84
+00:07:52,680 --> 00:07:55,440
+ Okay, let's check that.
+
+85
+00:07:55,440 --> 00:07:57,600
+ Okay, that's looking better.
+
+86
+00:07:57,600 --> 00:07:59,520
+ Some nice spacing there.
+
+87
+00:07:59,520 --> 00:08:07,680
+ Now we're going to need to style our button here, so we'll just style our button element
+
+88
+00:08:07,680 --> 00:08:08,680
+ itself.
+
+89
+00:08:08,680 --> 00:08:15,320
+ We'll give that a padding, 10 pixels, give it a width of 150 pixels.
+
+90
+00:08:15,320 --> 00:08:18,040
+ We're going to give it a background color.
+
+91
+00:08:18,040 --> 00:08:21,800
+ Again, you can choose whatever color you would like.
+
+92
+00:08:21,800 --> 00:08:31,080
+ This is what I used in my version of the project, and we'll give it a color of white, border,
+
+93
+00:08:31,080 --> 00:08:36,920
+ radius, make it eight pixels, a little bit more rounded, border, none.
+
+94
+00:08:36,920 --> 00:08:42,720
+ So by default, buttons have an inset border that I don't think looks overly good, so I usually
+
+95
+00:08:42,720 --> 00:08:44,360
+ get rid of it.
+
+96
+00:08:44,360 --> 00:08:51,240
+ Curse our pointer, show the user that it can be clicked on, and we'll give it a margin
+
+97
+00:08:51,240 --> 00:08:59,960
+ top of 20 pixels, and again, we want a font size of 1.2 REM, so make the font size a little
+
+98
+00:08:59,960 --> 00:09:05,800
+ bit bigger than it is by default, and let's check that out.
+
+99
+00:09:05,800 --> 00:09:08,120
+ Okay, that's looking good.
+
+100
+00:09:08,120 --> 00:09:15,800
+ Next, we want a hover effect of some kind when we hover over our button, so button, pseudo
+
+101
+00:09:15,800 --> 00:09:22,880
+ class hover, and I'm going to use, again, my filter brightness trick, and I'll set the value
+
+102
+00:09:22,880 --> 00:09:27,160
+ to 1.2, so this will work no matter what your color is.
+
+103
+00:09:27,160 --> 00:09:33,640
+ You can see that it's just making everything get a little bit lighter, it's 20% brighter,
+
+104
+00:09:33,640 --> 00:09:37,600
+ I should say, and yeah, that's how I like to do it.
+
+105
+00:09:37,600 --> 00:09:43,120
+ It does work regardless of the color, unless your color is already very, very bright,
+
+106
+00:09:43,120 --> 00:09:48,960
+ like if you add a white background, it doesn't work as well, of course, okay, and then
+
+107
+00:09:48,960 --> 00:09:57,760
+ we need a green and red for our correct and incorrect letter colors, and that's pretty
+
+108
+00:09:57,760 --> 00:09:58,760
+ straightforward.
+
+109
+00:09:58,760 --> 00:10:04,960
+ We'll make a class called correct, and I'm just going to have the color be green, and
+
+110
+00:10:04,960 --> 00:10:10,680
+ then we'll make another class called error, and that color is going to be red.
+
+111
+00:10:10,680 --> 00:10:17,360
+ Okay, and then lastly, we do want to hide our button for now, it's going to pop up later
+
+112
+00:10:17,360 --> 00:10:20,560
+ on once we're actually done.
+
+113
+00:10:20,560 --> 00:10:29,560
+ Okay, and that is literally it for our UI, very minimalist, as I said, and the big part
+
+114
+00:10:29,560 --> 00:10:35,360
+ of this project is going to be the functionality, and we'll be tackling that in the next
+
+115
+00:10:35,360 --> 00:10:36,360
+ one.
+
+116
+00:10:36,360 --> 00:10:38,520
+ I'll see you then. Bye for now.
+
