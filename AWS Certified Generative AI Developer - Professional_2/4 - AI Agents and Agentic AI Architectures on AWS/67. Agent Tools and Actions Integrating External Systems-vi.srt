@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:04,720
+Bây giờ trong bài giảng trước chúng ta đã thảo luận về khả năng lên kế hoạch của các đặc vụ AI.
+
+2
+00:00:04,720 --> 00:00:09,360
+Trong bài giảng này, chúng tôi muốn đào sâu vào các công cụ và hành động.
+
+3
+00:00:09,360 --> 00:00:15,360
+Bây giờ phụ thuộc vào lĩnh vực của nhân viên, cho dù đó là một nhân viên bảo hiểm, nhân viên ngân hàng, du lịch
+
+4
+00:00:15,360 --> 00:00:20,960
+Đặc vụ, nó sẽ có nhiều công cụ khác nhau. Vì vậy nó có thể có một công cụ để truy cập cơ sở dữ liệu,
+
+5
+00:00:20,960 --> 00:00:26,800
+Có thể chia sẻ độc quyền, thông qua một giải pháp dựa trên giẻ rách, một thông dịch viên mật mã, cho dù là du lịch, đặt chỗ,
+
+6
+00:00:26,800 --> 00:00:32,800
+Và cứ thế. Trước đó chúng tôi đã thảo luận rằng các mô hình ngôn ngữ lớn không có quyền truy cập
+
+7
+00:00:32,800 --> 00:00:38,560
+Cho dù thông tin và sau đó chúng tôi thấy nó không thể đặt vé. Bây giờ đây là ngắn hạn mà công cụ
+
+8
+00:00:38,560 --> 00:00:46,560
+Gọi hoặc gọi chức năng thực hiện trong trường hợp của các đặc vụ AI. Vì vậy chức năng gọi hoặc công cụ gọi
+
+9
+00:00:46,560 --> 00:00:55,360
+Cho phép các đại lý kết nối và lấy dữ liệu từ dữ liệu và hệ thống bên ngoài và bên trong
+
+10
+00:00:55,360 --> 00:01:00,800
+để nâng cao khả năng của các đặc vụ. Và như chúng ta đã thảo luận, dựa trên lĩnh vực,
+
+11
+00:01:00,800 --> 00:01:07,280
+có thể có những công cụ khác nhau có thể được sử dụng bởi các đặc vụ. Vì vậy, hãy nói
+
+12
+00:01:07,280 --> 00:01:12,480
+Nó có thể cần kết nối với Google tìm kiếm. Vì vậy nó sẽ có một công cụ để truy cập vào Google tìm kiếm,
+
+13
+00:01:12,480 --> 00:01:18,960
+Khả năng, có thể là thời tiết, nếu nhân viên du lịch, có thể nó cần lấy một số dữ liệu từ tôi.
+
+14
+00:01:18,960 --> 00:01:25,520
+Cơ sở dữ liệu kHông. Vì vậy, nó có thể có một công cụ bằng cách sử dụng các giải pháp tăng cường, có lẽ bạn có một số
+
+15
+00:01:25,520 --> 00:01:30,960
+Tài liệu PDF trên sharePoint, mà bạn cần truy cập. Sau đó bạn có thể có một bộ giải mã
+
+16
+00:01:30,960 --> 00:01:37,920
+để chạy mã tự chọn. Vì vậy, nơi này được sử dụng là, giả sử bạn có một đại lý DevOps hoặc một nhà phát triển
+
+17
+00:01:37,920 --> 00:01:45,200
+Đặc vụ và có một số vấn đề trong ứng dụng và các đại lý có thể xác định vấn đề
+
+18
+00:01:45,200 --> 00:01:51,600
+làm cho ứng dụng thất bại. Vì vậy, những gì nó có thể làm là nó có thể tạo ra một số mã
+
+19
+00:01:51,600 --> 00:01:57,600
+sử dụng các mô hình ngôn ngữ lớn, mà sẽ sửa chữa vấn đề. Nhưng trước đó, nó có thể muốn chạy.
+
+20
+00:01:57,600 --> 00:02:04,960
+Đó là mật mã trong môi trường hộp cát. Vì vậy, đó là các thông dịch mã được cung cấp cho các đại lý
+
+21
+00:02:04,960 --> 00:02:10,160
+nơi nó có thể chạy các mã tùy chỉnh nơi nó có thể kiểm tra nó ra và sau đó áp dụng đó vá
+
+22
+00:02:10,160 --> 00:02:16,560
+để ứng dụng, mà là thất bại. Bây giờ chúng ta hãy hiểu các công cụ gọi hoặc chức năng gọi
+
+23
+00:02:16,560 --> 00:02:21,520
+Năng lực thông qua một ví dụ. Hãy lấy ví dụ về kế hoạch nghỉ hè và chúng ta có
+
+24
+00:02:21,520 --> 00:02:29,440
+Ứng dụng đặc vụ siêu nhỏ. Bây giờ chúng tôi biết để thực hiện yêu cầu này người dùng, các đại lý sẽ làm kế hoạch
+
+25
+00:02:29,440 --> 00:02:35,680
+và phân công việc và chia nó thành nhiệm vụ nhỏ hơn. Và bây giờ hãy nói điều đầu tiên
+
+26
+00:02:35,680 --> 00:02:42,960
+nó cần phải gọi cho dự báo thời tiết. Vì vậy, bạn có thể có công cụ đầu tiên. Nhưng làm thế nào để bạn
+
+27
+00:02:42,960 --> 00:02:49,920
+tạo ra công cụ đó? Vì vậy, hãy nói trong trường hợp của AWS, bạn có thể sử dụng một dịch vụ AWS Lambda nơi bạn
+
+28
+00:02:49,920 --> 00:02:57,360
+Viết mã tự chọn để gọi cho dự báo thời tiết API. Và sau đó bạn cho các đặc vụ biết rằng nếu có bất kỳ
+
+29
+00:02:57,360 --> 00:03:05,040
+truy vấn liên quan đến thời tiết, sau đó bạn có thể thực hiện công cụ này một. Tương tự, hãy nói rằng tiếp theo nó cần để
+
+30
+00:03:05,680 --> 00:03:11,520
+đặt phòng khách sạn. Vì vậy, một lần nữa, bạn viết một số mã tùy chỉnh trong AWS Lambda và có thể gọi nó công cụ
+
+31
+00:03:11,520 --> 00:03:19,680
+2 người và cho đặc vụ biết rằng mỗi khi có cuộc gọi đến khách sạn, bạn cần phải thực hiện
+
+32
+00:03:19,680 --> 00:03:27,040
+Công cụ này để sau đó có lẽ chúng tôi đã thảo luận về việc thực thi mã. Có thể đó là một đặc vụ phát triển hoặc một
+
+33
+00:03:27,040 --> 00:03:33,440
+Đặc vụ DevOps và nó tạo ra mã để kiểm tra. Vì vậy, nó có thể sử dụng công cụ ba,
+
+34
+00:03:33,440 --> 00:03:39,200
+Đó là một môi trường thực hiện mã được cung cấp bởi đặc vụ. Và tương tự, hãy nói nếu nó
+
+35
+00:03:39,200 --> 00:03:44,880
+Cần phải gọi hệ thống nhân sự, sau đó bạn có thể có công cụ bốn nơi bạn đã tích hợp tốt hơn
+
+36
+00:03:44,880 --> 00:03:50,240
+Cơ sở kiến thức với tác nhân và bạn đã cho các đại lý biết rằng nếu có bất kỳ câu hỏi liên quan
+
+37
+00:03:50,240 --> 00:03:58,720
+nó cần phải thực hiện công cụ 4. Bây giờ, hãy cố gắng và hiểu làm thế nào để các đại lý
+
+38
+00:03:58,720 --> 00:04:06,640
+biết phải gọi công cụ nào. Và một ví dụ mà tôi đang trình bày, chúng tôi đang cung cấp năng lượng cho các tác nhân sử dụng
+
+39
+00:04:06,640 --> 00:04:16,080
+Mô hình mây Sonnet từ khu vực bảo tồn. Vì vậy, những gì đám mây nói là nếu bạn muốn các tác nhân để thực hiện
+
+40
+00:04:16,080 --> 00:04:22,720
+một công cụ cụ cụ thể, bạn phải xác định các công cụ sẵn có cho tác nhân. Vì vậy, đây là một mẫu dấu nhắc
+
+41
+00:04:22,720 --> 00:04:32,640
+Trình biên tập và điều này cung cấp hướng dẫn cho tác nhân về những gì có sẵn cho nó và khi nó
+
+42
+00:04:32,640 --> 00:04:38,880
+nên thực hiện những công cụ đó. Vì vậy, ở đây bạn có thể thấy bạn xác định tên công cụ, hãy nói rằng chúng tôi xác định,
+
+43
+00:04:38,880 --> 00:04:43,840
+Được rồi, công cụ đầu tiên là khi bạn cần gọi cho dự báo thời tiết. Vì vậy, bạn xác định tên công cụ,
+
+44
+00:04:43,840 --> 00:04:51,440
+Thời tiết, sau đó những gì là các tham số sẽ được thông qua như một phần của yêu cầu người dùng.
+
+45
+00:04:51,440 --> 00:04:58,560
+Vì vậy, có lẽ nếu nó là một công cụ thời tiết API, sau đó người dùng sẽ vượt qua vị trí mà nó cần
+
+46
+00:04:58,560 --> 00:05:04,960
+Chi tiết thời tiết. Vì vậy, đây là cách bạn định nghĩa và nói với đại lý những công cụ có sẵn.
+
+47
+00:05:04,960 --> 00:05:12,720
+Vì vậy, một khi bạn đã làm điều đó, những gì sâu sắc nói rằng một khi bạn đã xác định mẫu nhắc
+
+48
+00:05:12,720 --> 00:05:18,960
+cho tác nhân và dựa trên mẫu nhắc này và đầu vào người dùng, nó sẽ tạo ra a
+
+49
+00:05:18,960 --> 00:05:27,200
+Hệ thống đặc biệt nhắc từ các công cụ xác định cấu hình công cụ và nhắc hệ thống xác định
+
+50
+00:05:27,200 --> 00:05:35,600
+mà nó sẽ nuôi cho mô hình ngôn ngữ lớn và sau đó nó sẽ có thể thực hiện những công cụ đó.
+
+51
+00:05:35,600 --> 00:05:42,240
+Và đây là một ví dụ khác từ tiểu sử. Vì vậy, bạn có thể thấy nó đang sử dụng đám mây 3.5
+
+52
+00:05:42,240 --> 00:05:49,040
+Mô hình sonnet và sau đó nó cung cấp các chi tiết, các công cụ bạn có thể sử dụng. Đây là câu nói
+
+53
+00:05:49,040 --> 00:05:55,840
+Tên của công cụ là nhận được thời tiết và mô tả là nhận được hiện tại thời tiết trong
+
+54
+00:05:55,840 --> 00:06:01,840
+Vị trí. Và sau đó nó nói, được rồi, người dùng sẽ cung cấp cho bạn vị trí và đó là một
+
+55
+00:06:01,840 --> 00:06:09,520
+Yêu cầu chiến trường. Và sau đó nó sẽ tạo ra một đầu ra mà nó sẽ vượt qua cho các tác nhân và
+
+56
+00:06:09,520 --> 00:06:15,840
+phụ thuộc vào bối cảnh câu hỏi của người dùng, nó có thể tổng hợp nó với các thông tin khác
+
+57
+00:06:15,840 --> 00:06:22,320
+từ các công cụ khác hoặc nó có thể gửi kết xuất đó về người dùng. Được rồi, đó là khá nhiều từ
+
+58
+00:06:22,320 --> 00:06:24,400
+bài giảng này. Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
