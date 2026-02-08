@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:11,000
+Được rồi, vậy chúng ta cần bắt đầu bằng cách giải quyết vấn đề, chúng ta đang mất tất cả không gian khi chúng ta có tất cả các khoảng trống ở đây.
+
+2
+00:00:11,000 --> 00:00:19,000
+Vì vậy, bạn có thể nhìn, ví dụ, khoảng cách này có một không gian, bạn có thể thực sự thấy rằng nó là zero bởi zero.
+
+3
+00:00:19,000 --> 00:00:27,000
+Nếu bạn nhìn lên đây, tôi không thể để con chuột ở đó cùng một lúc, nhưng nếu bạn nhìn lên đó, nó bằng không, nghĩa là nó không có chiều rộng.
+
+4
+00:00:27,000 --> 00:00:32,000
+Tôi thực sự có thể chỉ cho bạn ngay đây nếu bạn di chuyển xuống, zero bởi zero.
+
+5
+00:00:32,000 --> 00:00:45,000
+Vì vậy, tôi sẽ thách thức bạn cố gắng để tạm dừng video và xem nếu bạn có thể tìm ra làm thế nào để sửa chữa vấn đề này.
+
+6
+00:00:45,000 --> 00:00:50,000
+Được rồi, vì vậy nó có thể thực sự là một sửa chữa đơn giản hơn bạn có thể nghĩ.
+
+7
+00:00:50,000 --> 00:01:01,000
+Về cơ bản những gì chúng ta cần làm là thêm vào một chiều rộng tối thiểu và nó sẽ là 14 điểm ảnh.
+
+8
+00:01:01,000 --> 00:01:13,000
+Vì vậy, đây là lý do tại sao việc sử dụng một phông chữ đơn không gian rất quan trọng bởi vì tất cả các ký tự và tất cả các khoảng không nên có cùng chiều rộng.
+
+9
+00:01:13,000 --> 00:01:37,000
+Bạn thấy đấy, nếu tôi lướt qua đầu gối, bạn có thể thấy rằng nó rộng 14.45 điểm ảnh và mỗi chữ cái khác, ngay cả trong một chữ cái như tôi, mà có thể nhỏ hơn trong các phông chữ khác, là 14.45 điểm ảnh và do đó chúng tôi chỉ cần thêm một chiều rộng tối thiểu 14 điểm ảnh vào không gian của chúng tôi.
+
+10
+00:01:37,000 --> 00:01:44,000
+Được rồi, vậy chúng ta có thể đi vào hệ điều hành và thay đổi.
+
+11
+00:01:44,000 --> 00:01:56,000
+Vì vậy, tôi sẽ làm điều đó dưới nút của tôi lơ lửng ở đây và chúng tôi sẽ chỉ mục tiêu tất cả các khoảng trống và chúng tôi sẽ cung cấp cho họ một phút chiều rộng 14 điểm ảnh.
+
+12
+00:01:56,000 --> 00:02:00,000
+Được rồi, chúng ta quay lại và kiểm tra xem thế nào.
+
+13
+00:02:00,000 --> 00:02:02,000
+Nó đang hoạt động.
+
+14
+00:02:02,000 --> 00:02:03,000
+Tuyệt vời.
+
+15
+00:02:03,000 --> 00:02:15,000
+Được rồi, tiếp tục từ đây, bạn sẽ nhận thấy rằng nếu tôi tiếp tục gõ, rằng tôi có thể tiếp tục và văn bản không di chuyển.
+
+16
+00:02:15,000 --> 00:02:17,000
+Đó là một vấn đề.
+
+17
+00:02:17,000 --> 00:02:19,000
+Tôi không thấy đoạn còn lại.
+
+18
+00:02:19,000 --> 00:02:32,000
+Vì vậy, điều tiếp theo chúng ta cần làm là có thể di chuyển cái hộp của chúng ta, nhưng chúng ta cũng chỉ muốn cuộn cái hộp của chúng ta khi chúng ta tiến tới giữa, với tôi là khoảng 20 điểm ảnh.
+
+19
+00:02:32,000 --> 00:02:38,000
+Vì vậy, hãy xem xét làm thế nào chúng tôi có thể làm điều đó trong JavaScript của chúng tôi.
+
+20
+00:02:38,000 --> 00:02:45,000
+Chúng tôi cũng sẽ đi trước và tháo bản ghi bàn điều khiển ở đây.
+
+21
+00:02:45,000 --> 00:02:55,000
+Tôi nghĩ chúng ta có ý tưởng đằng sau và chúng ta sẽ đi xuống dưới này và chúng ta sẽ bình luận.
+
+22
+00:02:55,000 --> 00:03:04,000
+Đây là để cuộn thùng chỉ sau 20 kí tự.
+
+23
+00:03:04,000 --> 00:03:24,000
+Vì vậy, nếu tổng chiều dài chấm của chúng tôi là lớn hơn hoặc bằng 20 điểm ảnh, vì vậy bất cứ điều gì trên, xin lỗi, 20 ký tự, sau đó chúng tôi sẽ thiết lập một hằng số cho một số lượng cuộn.
+
+24
+00:03:24,000 --> 00:03:38,000
+Và điều này sẽ bằng tổng đánh máy của chúng tôi và chúng tôi sẽ đặt điều này trong khung, tổng số gõ chấm trừ 20 ngoặc.
+
+25
+00:03:38,000 --> 00:03:46,000
+Điều này có nghĩa là nếu chúng ta ở mức 100, chúng ta chỉ muốn cuộn 80 lần.
+
+26
+00:03:46,000 --> 00:03:48,000
+Chúng tôi không muốn cuộn 20 tờ đầu tiên.
+
+27
+00:03:48,000 --> 00:03:59,000
+Vì vậy, đó là lý do tại sao chúng tôi có tổng của chúng tôi loại chiều dài trừ đi 20 và sau đó từ đó, chúng tôi sẽ nhân với các dấu chấm và sau đó 14.
+
+28
+00:03:59,000 --> 00:04:09,000
+Vì vậy, điều đó có nghĩa là chúng tôi muốn thực sự cuộn 14 điểm ảnh lần bao nhiêu lần chúng tôi đã cuộn tại thời điểm này.
+
+29
+00:04:09,000 --> 00:04:21,000
+Được rồi, và sau đó hộp văn bản của chúng ta, chúng ta sẽ sử dụng tính chất cuộn bên trái và chúng ta sẽ thiết lập số lượng cuộn sách.
+
+30
+00:04:21,000 --> 00:04:25,000
+Được rồi, hãy đi kiểm tra xem sao.
+
+31
+00:04:25,000 --> 00:04:39,000
+Được rồi, tôi sẽ bắt đầu gõ và bạn có thể thấy rằng chúng tôi đang cuộn tuyệt vời, vì vậy tôi sẽ tiếp tục gõ ngẫu nhiên.
+
+32
+00:04:39,000 --> 00:04:45,000
+Được rồi, và bạn có thể thấy nó hoạt động hoàn hảo.
+
+33
+00:04:45,000 --> 00:04:53,000
+Được rồi, và hãy thực sự kiểm tra không gian phía sau của chúng tôi cũng để chắc chắn rằng nó là yeah, nó cuộn ngược và tất cả mọi thứ.
+
+34
+00:04:53,000 --> 00:04:58,000
+Vì vậy, chúng tôi có thể thực sự có thể thực hiện điều này trở lại từ đầu.
+
+35
+00:04:58,000 --> 00:05:02,000
+Vì thế không gian lưng hoạt động và cuộn sách hoạt động.
+
+36
+00:05:02,000 --> 00:05:04,000
+Okay, thật tuyệt.
+
+37
+00:05:04,000 --> 00:05:06,000
+Và cuối cùng điều này bắt kịp.
+
+38
+00:05:06,000 --> 00:05:07,000
+Được rồi, tuyệt.
+
+39
+00:05:07,000 --> 00:05:14,000
+Bạn sẽ thấy nó thậm chí loại bỏ đúng hoặc sai số ra khỏi tất cả những thứ này.
+
+40
+00:05:14,000 --> 00:05:19,000
+Được rồi, vậy điều đó cho phép bạn có cơ hội thứ hai nếu bạn mắc lỗi.
+
+41
+00:05:19,000 --> 00:05:25,000
+Nói về lỗi, chúng ta chỉ cần chắc chắn rằng chúng tôi đang đi để bàn giao tiếp bản ghi lỗi của chúng tôi và chỉ cần đảm bảo rằng đó là chính xác.
+
+42
+00:05:25,000 --> 00:05:33,000
+Điều đó sẽ rất quan trọng bởi vì chúng ta muốn có thể theo dõi chúng để ghi điểm.
+
+43
+00:05:33,000 --> 00:05:46,000
+Vì vậy, tôi sẽ chỉ để bàn giao tiếp bản ghi lỗi của tôi ở đây và chúng tôi sẽ đi trở lại vào bàn điều khiển của chúng tôi thời gian này và bạn sẽ thấy rằng tôi có rất nhiều lỗi.
+
+44
+00:05:46,000 --> 00:05:52,000
+Vì vậy, bạn có 22 lỗi, nhưng nếu tôi trở lại không gian, nó thực sự làm cho con số đó đi xuống.
+
+45
+00:05:52,000 --> 00:05:56,000
+Vì vậy nếu bạn bỏ lỡ một cái, bạn có thể quay ngược không gian để sửa chữa nó.
+
+46
+00:05:56,000 --> 00:06:00,000
+Được rồi.
+
+47
+00:06:00,000 --> 00:06:06,000
+Được rồi, vậy từ đó chúng ta sẽ tháo bản ghi điều khiển này.
+
+48
+00:06:06,000 --> 00:06:13,000
+Và chúng tôi gần như hoàn thành với chức năng này để xử lý tất cả các phím bấm.
+
+49
+00:06:13,000 --> 00:06:20,000
+Được rồi, bây giờ có thể bạn đã nhận thấy rằng chúng tôi không có một đồng hồ hẹn giờ làm việc.
+
+50
+00:06:20,000 --> 00:06:31,000
+Vì vậy, trong bài tiếp theo, chúng ta sẽ tập trung vào logic của chúng ta để bắt đầu thời gian của chúng ta và cũng như tính toán từ ngữ của chúng ta mỗi phút.
+
+51
+00:06:31,000 --> 00:06:33,000
+Được rồi, tôi sẽ gặp anh ở đó.
+
+52
+00:06:33,000 --> 00:06:34,000
+Tạm biệt.
+
