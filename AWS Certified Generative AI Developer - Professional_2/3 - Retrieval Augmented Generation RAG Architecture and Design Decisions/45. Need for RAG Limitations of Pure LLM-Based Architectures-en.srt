@@ -1,0 +1,192 @@
+1
+00:00:00,000 --> 00:00:05,280
+ This is going to be a quick lecture to understand what is the need for retrieval, augmented
+
+2
+00:00:05,280 --> 00:00:08,740
+ generation or RAG.
+
+3
+00:00:08,740 --> 00:00:14,120
+ So if you see the biggest challenge with the foundation model is lack of proprietary information
+
+4
+00:00:14,120 --> 00:00:16,680
+ or enterprise information.
+
+5
+00:00:16,680 --> 00:00:21,080
+ So we know that the foundation models are trained on generic internet data.
+
+6
+00:00:21,080 --> 00:00:27,320
+ So if you ask it a question that is highly customized to your organization or enterprise,
+
+7
+00:00:27,320 --> 00:00:29,760
+ it will not be able to answer.
+
+8
+00:00:29,760 --> 00:00:36,200
+ Second, so it does not have an up-to-date information post-training cut-off date.
+
+9
+00:00:36,200 --> 00:00:40,280
+ So if you see any base foundation model that is available on Amazon Betterock, it will
+
+10
+00:00:40,280 --> 00:00:42,280
+ have a training cut-off date.
+
+11
+00:00:42,280 --> 00:00:46,560
+ So maybe it has a training cut-off date of December 2024.
+
+12
+00:00:46,560 --> 00:00:51,280
+ So any information post that it will not be aware of.
+
+13
+00:00:51,280 --> 00:00:56,120
+ So those are the challenges that RAG-based system tries to overcome.
+
+14
+00:00:56,120 --> 00:01:02,340
+ So retrieval, augmented generation or RAG, equip foundation models with proprietary information
+
+15
+00:01:02,340 --> 00:01:06,400
+ by fetching the data from the company data sources.
+
+16
+00:01:06,400 --> 00:01:11,840
+ So it can also overcome the challenges of no up-to-date information post-training cut-off
+
+17
+00:01:11,840 --> 00:01:18,280
+ date through external sources such as documents and so on.
+
+18
+00:01:18,280 --> 00:01:22,360
+ Now let us going to understand this through an example.
+
+19
+00:01:22,360 --> 00:01:28,080
+ So let us say we are trying to build an e-learning chatbot which helps employees learn AI
+
+20
+00:01:28,080 --> 00:01:29,080
+ technologies.
+
+21
+00:01:29,080 --> 00:01:33,720
+ Now let us say we have built a generative AI application only using the foundation model.
+
+22
+00:01:33,720 --> 00:01:40,480
+ And employee now asks a question to the foundation model which says what is the RAG reference
+
+23
+00:01:40,480 --> 00:01:44,560
+ architecture in my XYZ organization?
+
+24
+00:01:44,560 --> 00:01:48,960
+ Now let us say this question goes to our generative AI application built on top of Amazon
+
+25
+00:01:48,960 --> 00:01:53,760
+ in bedrock so Amazon bedrock is going to route this question to one of the foundation models
+
+26
+00:01:53,760 --> 00:02:00,360
+ maybe let us say entroping in this case and entropic is going to return with the response.
+
+27
+00:02:00,360 --> 00:02:05,960
+ Unfortunately I do not have enough contextual information to answer this question because
+
+28
+00:02:05,960 --> 00:02:10,200
+ I do not know what is the RAG reference architecture for XYZ organization.
+
+29
+00:02:10,200 --> 00:02:15,600
+ So it is going to come back with a generic answer or it is going to say it does not have
+
+30
+00:02:15,600 --> 00:02:17,600
+ enough contextual information.
+
+31
+00:02:17,600 --> 00:02:21,120
+ So that is where RAG comes into play.
+
+32
+00:02:21,120 --> 00:02:25,560
+ Let us assume your data is in the share point where you have PDF documents related to
+
+33
+00:02:25,560 --> 00:02:29,360
+ Amazon bedrock EC2 and some of the other services.
+
+34
+00:02:29,360 --> 00:02:34,760
+ Now let us also assume you have organization Gen AI reference architecture repository where
+
+35
+00:02:34,760 --> 00:02:39,600
+ you store the reference architecture for all the architecture patterns.
+
+36
+00:02:39,600 --> 00:02:44,840
+ So now what we can do is the Gen AI application built on top of Amazon bedrock can integrate
+
+37
+00:02:44,840 --> 00:02:49,920
+ with these knowledge sources within the organization then you can use the intelligence
+
+38
+00:02:49,920 --> 00:02:57,160
+ of the foundation model but also integrate it with the enterprise data source to get
+
+39
+00:02:57,160 --> 00:03:03,800
+ the contextual information and it also solve the second problem of the cut off date because
+
+40
+00:03:03,800 --> 00:03:07,200
+ all these documents can have the latest information.
+
+41
+00:03:07,200 --> 00:03:11,000
+ So even if the foundation model does not have the latest information it can retrieve it
+
+42
+00:03:11,000 --> 00:03:15,440
+ from these documents or other external sources.
+
+43
+00:03:15,440 --> 00:03:17,080
+ So now what is the RAG?
+
+44
+00:03:17,080 --> 00:03:22,640
+ RAG is the process of optimizing the output of a large language model by supplementing
+
+45
+00:03:22,640 --> 00:03:29,480
+ the knowledge of a large language model with internal organization data source.
+
+46
+00:03:29,480 --> 00:03:32,080
+ Okay, so that is pretty much it from this lecture.
+
+47
+00:03:32,080 --> 00:03:33,080
+ I will see in the next lecture.
+
+48
+00:03:33,080 --> 00:03:33,280
+ Thank you.
+
