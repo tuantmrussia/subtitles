@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:03,760
+Trong bài giảng này, chúng tôi muốn tìm hiểu về kiến trúc Amazon Bedrock.
+
+2
+00:00:03,760 --> 00:00:07,120
+Vì vậy, nếu bạn xây dựng bất kỳ ứng dụng trên AWS,
+
+3
+00:00:07,120 --> 00:00:11,360
+Anh biết có hai cách để cung cấp dịch vụ AWS.
+
+4
+00:00:11,360 --> 00:00:14,680
+Một cách nằm trong tài khoản AWS của anh, trong VPC của anh,
+
+5
+00:00:14,680 --> 00:00:18,640
+Bạn có thể cung cấp dịch vụ như EC2 RDS.
+
+6
+00:00:18,640 --> 00:00:24,960
+Và sau đó là một cách tiếp cận khác nơi mà các dịch vụ như là AWS Lambda chức năng, cổng ADI,
+
+7
+00:00:24,960 --> 00:00:30,880
+Nó được triển khai trong tài khoản AWS trong AWS VPC.
+
+8
+00:00:30,880 --> 00:00:33,840
+Và Amazon Bedrock nằm ở hạng mục thứ hai.
+
+9
+00:00:33,840 --> 00:00:42,320
+Vì vậy, nếu bạn thấy ở đây, Amazon Bedrock được triển khai trong AWS Bedrock Service.
+
+10
+00:00:42,320 --> 00:00:44,560
+Đó là điều đầu tiên cần lưu ý.
+
+11
+00:00:44,560 --> 00:00:51,520
+Sau đó chúng tôi có tài khoản AWS thứ hai nơi chúng tôi có các mô hình giao dịch nhà cung cấp.
+
+12
+00:00:51,520 --> 00:00:54,640
+Và đây là AWS sở hữu và hoạt động.
+
+13
+00:00:54,640 --> 00:00:58,960
+Vì vậy, đây là nơi các mô hình từ các nhà cung cấp dịch vụ khác nhau được tổ chức.
+
+14
+00:00:58,960 --> 00:01:04,400
+Vì vậy, hãy nói rằng chúng ta có một mô hình chủ đề khác và các hiện vật của các mô hình cơ bản
+
+15
+00:01:04,400 --> 00:01:06,400
+sẽ được triển khai trong S3 xô.
+
+16
+00:01:06,400 --> 00:01:10,240
+Và sau đó chúng ta có môi trường thời gian chạy ở đây, mà sẽ làm cho các tham khảo.
+
+17
+00:01:10,240 --> 00:01:13,920
+Bây giờ, hãy đi trước và xem các yêu cầu được thực hiện như thế nào.
+
+18
+00:01:13,920 --> 00:01:19,680
+Trước đó chúng tôi đã thảo luận có ba cách để bạn có thể đưa ra một yêu cầu cho bedrock AWS
+
+19
+00:01:19,680 --> 00:01:24,640
+Dịch vụ. Một là qua SDK. Có thể bạn đang sử dụng AWS Lambda và nếu bạn đang sử dụng Python,
+
+20
+00:01:24,640 --> 00:01:27,040
+Có thể anh sẽ dùng giày ba chiếc SDK.
+
+21
+00:01:27,040 --> 00:01:30,720
+Sau đó thông qua trình duyệt, nếu bạn muốn truy cập nó thông qua bảng điều khiển,
+
+22
+00:01:30,720 --> 00:01:34,080
+Sau đó bạn có thể sử dụng trình duyệt và sau đó là AWS CLI.
+
+23
+00:01:34,080 --> 00:01:38,480
+Bây giờ, hãy nói rằng bạn đã thực hiện một yêu cầu API với đầu vào người dùng.
+
+24
+00:01:38,480 --> 00:01:41,920
+Yêu cầu đó sẽ đến cơ quan quản lý an ninh quốc gia,
+
+25
+00:01:41,920 --> 00:01:44,640
+Nó sẽ nằm trong tài khoản AWS Bedrock Service.
+
+26
+00:01:44,640 --> 00:01:48,480
+Và rồi nó sẽ được chuyển tới thời điểm suy luận này.
+
+27
+00:01:48,480 --> 00:01:54,240
+Và những gì chạy thời gian suy nghĩ này là nó được sử dụng để chuyển hướng đến các điểm kết thúc mô hình đúng
+
+28
+00:01:54,240 --> 00:01:59,360
+Dựa trên yêu cầu API. Vì vậy, trong yêu cầu của ARI, chúng tôi đã thảo luận trước đó,
+
+29
+00:01:59,360 --> 00:02:03,120
+Khi chúng tôi nhìn vào cấu trúc ADI, chúng tôi nói chúng tôi sẽ cung cấp ID mô hình,
+
+30
+00:02:03,120 --> 00:02:08,000
+Như ở đây chúng ta có một đám mây nhiệt đới. Vì vậy, thời gian chạy này suy luận sẽ giải thích
+
+31
+00:02:08,000 --> 00:02:15,120
+ID mô hình và sau đó nó sẽ đi đến các tài khoản mô hình sản phẩm đúng nơi
+
+32
+00:02:16,000 --> 00:02:19,200
+khi tham khảo ý kiến mô hình đặc biệt đó sẽ được thực hiện.
+
+33
+00:02:19,200 --> 00:02:27,120
+Vì vậy, bây giờ, nếu bạn chỉ cần truy cập nó từ bàn điều khiển, sau đó đôi khi nó cũng có thể lưu trữ nhắc nhở của bạn
+
+34
+00:02:27,120 --> 00:02:33,040
+lịch sử. Nhưng sẽ không có gì được lưu trữ trong dịch vụ AWS Bedrock này, nếu yêu cầu từ
+
+35
+00:02:33,040 --> 00:02:39,600
+AWS Lambda, nghĩa là SDK hay CLI. Vì vậy, lý do tại sao AWS có một kiến trúc như vậy
+
+36
+00:02:39,600 --> 00:02:45,200
+Đối với Amazon Bedrock Service là bởi vì rất nhiều khách hàng lo lắng rằng họ đang gửi
+
+37
+00:02:45,200 --> 00:02:51,280
+Các mô hình này được đăng ở AWS. Vậy,
+
+38
+00:02:51,280 --> 00:02:56,960
+Có thể có những trường hợp mà nhà cung cấp mô hình có thể đào tạo mô hình của mình trên dữ liệu khách hàng.
+
+39
+00:02:56,960 --> 00:03:04,000
+Vì vậy, đó là lý do tại sao điều này được tổ chức và hoạt động bởi tài khoản AWS để mà mô hình cung cấp
+
+40
+00:03:04,000 --> 00:03:11,120
+không huấn luyện mô hình của họ sử dụng dữ liệu khách hàng. Điều cuối cùng từ góc độ an ninh,
+
+41
+00:03:11,120 --> 00:03:15,920
+Có hai cách để bạn có thể gửi yêu cầu APA đến Dịch vụ Bedrock của Amazon.
+
+42
+00:03:15,920 --> 00:03:21,920
+Một là trên internet và thứ hai là thông qua giao diện VPC điểm kết thúc. Vậy,
+
+43
+00:03:21,920 --> 00:03:28,240
+Chúng tôi biết rằng khi chúng tôi gửi yêu cầu giao diện VPC của chúng tôi kết thúc điểm, họ được định tuyến riêng tư
+
+44
+00:03:28,240 --> 00:03:35,120
+Nơi mạng lưới tư nhân AWS gọi chúng tôi là liên kết cá nhân. Hầu hết khách hàng đều thích
+
+45
+00:03:35,120 --> 00:03:40,960
+Định tuyến dữ liệu trên kết thúc giao diện VPC so với internet và lý do là
+
+46
+00:03:40,960 --> 00:03:46,880
+Rõ ràng là có ít độ trễ khi bạn gửi dữ liệu hoặc liên kết cá nhân và thứ hai là
+
+47
+00:03:46,880 --> 00:03:52,880
+Nó an toàn hơn. Vì vậy, trong số các tài khoản AWS và nếu bạn có thể nhanh chóng hiển thị cho bạn giao diện VPC
+
+48
+00:03:52,880 --> 00:04:01,520
+Điểm cuối. Để tôi tìm VPC và tôi có VPC ở đây. Bây giờ, nếu tôi chỉ cần di chuyển xuống
+
+49
+00:04:01,520 --> 00:04:06,480
+Và bạn có thể thấy ở đây điểm kết thúc, tôi sẽ nhấp vào các điểm cuối, chỉ cần nhấn vào nút tạo
+
+50
+00:04:06,480 --> 00:04:11,200
+Và nếu tôi nói chọn dịch vụ AWS ở đây và nếu tôi chỉ cần tìm kiếm Bedrock,
+
+51
+00:04:11,200 --> 00:04:18,400
+Và bạn đang hiển thị tất cả các điểm kết thúc mà bạn có thể sử dụng để di chuyển dữ liệu hoặc liên kết cá nhân thông qua
+
+52
+00:04:18,400 --> 00:04:24,240
+Kết thúc giao diện VPC. Và bạn có thể thấy tên dịch vụ, chúng tôi có một điểm tĩnh tĩnh ở Amazon AWS
+
+53
+00:04:24,240 --> 00:04:30,160
+Mỹ Đông, một Bedrock, và sau đó bạn có một cho các đặc vụ, đặc vụ thời gian chạy, đặc vụ lõi, đặc vụ cổng ra vào,
+
+54
+00:04:30,160 --> 00:04:35,120
+Và cứ thế. Được rồi, vậy là khá nhiều từ bài giảng này. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
