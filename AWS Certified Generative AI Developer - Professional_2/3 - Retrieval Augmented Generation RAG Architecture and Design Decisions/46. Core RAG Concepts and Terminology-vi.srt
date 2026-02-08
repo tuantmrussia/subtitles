@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,680
+Trong phần này tôi sẽ cung cấp cho bạn một giới thiệu cơ bản của véc tơ, conbeds, cơ sở dữ liệu vector
+
+2
+00:00:05,680 --> 00:00:12,320
+và tìm kiếm. Vậy tại sao chúng ta cần véc tơ? Vì vậy, bây giờ hãy nói rằng tôi đi đến một trung tâm mua sắm và tôi mua
+
+3
+00:00:12,320 --> 00:00:18,000
+Vài cuốn sách và Apple. Bây giờ tôi phải biết cái giá của những cuốn sách này là gì. Đơn giản thôi.
+
+4
+00:00:18,000 --> 00:00:24,160
+vấn đề để giải quyết. Tôi có thể xây dựng một ứng dụng và sau đó có một cơ sở dữ liệu có quan hệ như hệ thần kinh học của tôi,
+
+5
+00:00:24,160 --> 00:00:29,600
+Nơi mà tôi lưu trữ giá của những cuốn sách và Apple và sau đó tôi chỉ vuông nó và tôi nhận được
+
+6
+00:00:29,600 --> 00:00:36,240
+Kết quả. Nhưng bây giờ chúng ta hãy giả sử rằng tôi đã xem Facebook và tôi thực sự thích chiếc đồng hồ này
+
+7
+00:00:36,240 --> 00:00:43,280
+Nhưng tôi muốn nó màu xanh. Vậy làm thế nào để tìm kiếm hình ảnh để tìm đồng hồ phù hợp?
+
+8
+00:00:43,280 --> 00:00:50,960
+Bây giờ một kịch bản khác là hãy nói rằng tôi xây dựng một ứng dụng học điện tử cho tổ chức của tôi và tôi có một PDF
+
+9
+00:00:50,960 --> 00:00:56,560
+trong hậu phương mà nói về những thực hành tốt nhất của việc xây dựng một ứng dụng dựa trên giẻ rách.
+
+10
+00:00:57,520 --> 00:01:03,600
+Bây giờ hãy nói rằng người học của tôi đưa ra một câu hỏi mà là chi phí hiệu quả nhất dữ liệu véc tơ
+
+11
+00:01:03,600 --> 00:01:10,000
+ở Amazon, trên nền đá. Bây giờ làm thế nào để ứng dụng tạo hóa của tôi thực sự
+
+12
+00:01:10,000 --> 00:01:15,760
+tìm kiếm PDF này để trả lời câu hỏi đó? Nó không thể tìm kiếm từ khóa nhưng nó phải làm
+
+13
+00:01:15,760 --> 00:01:21,200
+Tìm kiếm ngữ pháp. Vì vậy, tìm kiếm ngữ nghĩa là nó sẽ cố gắng và hiểu câu hỏi người dùng
+
+14
+00:01:21,200 --> 00:01:26,080
+và sau đó tạo ra câu trả lời. Vì vậy, để giải quyết những loại vấn đề, tìm kiếm hình ảnh,
+
+15
+00:01:26,080 --> 00:01:30,960
+Tìm kiếm dữ liệu chưa được cấu trúc chúng tôi sử dụng véc- tơ. Bây giờ chúng ta hãy cố gắng và hiểu như thế nào.
+
+16
+00:01:30,960 --> 00:01:37,520
+Vì vậy, điều đầu tiên là những gì là véc tơ? Vì vậy, véc tơ là đại diện toán học của các từ,
+
+17
+00:01:37,520 --> 00:01:44,720
+Câu văn và tài liệu. Vì vậy, véc tơ được đại diện bởi danh sách các số hoặc chuỗi số.
+
+18
+00:01:44,720 --> 00:01:50,800
+Được rồi, đây là rất nhiều từ hãy cố gắng và hiểu nó có nghĩa gì. Bây giờ nếu tôi muốn
+
+19
+00:01:50,800 --> 00:01:56,400
+đại diện cho từ táo này trong điều khoản véc tơ, vì vậy những gì tôi có thể nói là tôi có hai thuộc tính,
+
+20
+00:01:56,400 --> 00:02:02,000
+Tôi có thể nói nó là một trái cây nếu nó là có sau đó tôi nói một và chi phí của quả táo bốn đô la.
+
+21
+00:02:02,000 --> 00:02:09,200
+Bây giờ tôi có thể đại diện cho từ táo như một dấu phẩy bốn từ hai giá trị và sau đó tôi có thể vẽ nó
+
+22
+00:02:09,200 --> 00:02:15,280
+trên một đồ thị hai chiều. Vì vậy, tôi nói trên cách trục là nó là một trái cây một trong vì vậy nó ở đây
+
+23
+00:02:16,080 --> 00:02:22,560
+Sau đó trên chiều x tôi có chi phí nó là bốn Vì vậy, đây là cách tôi có thể đại diện cho từ táo trên a
+
+24
+00:02:22,560 --> 00:02:28,720
+Biểu đồ hai chiều. Sau đó, có lẽ tôi có từ chuối để tôi có thể nói rằng nó là một trái cây có một và sau đó
+
+25
+00:02:28,720 --> 00:02:34,800
+Chi phí là 2 đô la. Vì vậy, tôi đại diện nó trong hình thức véc tơ là một dấu phẩy hai và sau đó nếu tôi vẽ nó
+
+26
+00:02:34,800 --> 00:02:40,400
+trên biểu đồ là hai và vì vậy nó là một trái cây vì vậy nó là ở đây và sau đó là hai đô la do đó nó ở đây.
+
+27
+00:02:41,280 --> 00:02:47,040
+Vì vậy, bây giờ những gì chúng tôi đã làm là chúng tôi đã tạo ra đại diện véc tơ của những từ này trong hai
+
+28
+00:02:47,040 --> 00:02:55,520
+Kích thước nhưng trong thế giới thực bạn thực sự tạo ra biểu tượng này từ 512 đến 1024
+
+29
+00:02:55,520 --> 00:03:02,160
+Không gian. Vì vậy, về cơ bản ở đây chúng tôi chỉ có hai chiều nhưng trong thế giới thực chúng tôi có thể có 512
+
+30
+00:03:02,160 --> 00:03:09,520
+Các giây số để đại diện cho một câu văn hoặc thậm chí một tài liệu. Okay bây giờ để tiếp tục
+
+31
+00:03:09,520 --> 00:03:16,880
+Trong trường hợp sử dụng trước đó nơi người dùng của chúng tôi đã đặt ra một câu hỏi và chúng tôi có người dùng hướng dẫn của nền
+
+32
+00:03:16,880 --> 00:03:25,040
+Nghĩa là 500 trang. Vì vậy, chúng tôi có thể đại diện rằng là một vector là tốt nhưng đó không phải là
+
+33
+00:03:25,040 --> 00:03:29,840
+Sẽ cho chúng ta những kết quả tuyệt vời. Vì vậy, trong hầu hết kịch bản những gì bạn sẽ làm là bạn sẽ
+
+34
+00:03:29,840 --> 00:03:36,640
+Chia những dữ liệu đó hoặc đôi khi được gọi như là việc thu thập dữ liệu và bạn có thể làm điều đó dựa trên biểu tượng nhân vật
+
+35
+00:03:36,640 --> 00:03:41,920
+hay mật mã. Vì vậy, hãy thử và giả sử rằng chúng tôi sẽ làm điều đó theo tính cách. Vậy anh định làm gì?
+
+36
+00:03:41,920 --> 00:03:49,120
+là như vậy cho một tài liệu 500 trang bạn sẽ phá vỡ nó vào một trang mỗi và sau đó một trang mỗi
+
+37
+00:03:49,120 --> 00:03:54,160
+bạn sẽ đột nhập vào đoạn văn và sau đó bạn sẽ chia nó thành các nhân vật. Có thể
+
+38
+00:03:54,160 --> 00:04:00,560
+120 ký tự hoặc 200 ký tự. Vậy anh làm thế nào? Vì vậy, có rất nhiều cơ sở mã nguồn mở
+
+39
+00:04:00,560 --> 00:04:07,280
+giống như dây chuyền cung cấp thư viện để làm điều này chia. Vì vậy, một khi bạn thực hiện chia bạn vượt qua nó
+
+40
+00:04:07,280 --> 00:04:11,520
+thông qua một mô hình bọc lót. Vì vậy, bây giờ những gì là một mô hình mô phỏng? Chúng ta sẽ bàn về chuyện đó.
+
+41
+00:04:11,520 --> 00:04:20,560
+Bây giờ hãy nói rằng bạn chia các tài liệu thành 120 ký tự mỗi sau đó bạn sẽ chuyển nó thông qua các đường viền
+
+42
+00:04:20,560 --> 00:04:25,520
+Người mẫu. Vì vậy, có rất nhiều mô hình bọc khác nhau có sẵn trên nền đất Amazon. Vì vậy, bạn có từ
+
+43
+00:04:25,520 --> 00:04:32,400
+ngươi có từ Kohir. Vì vậy, một khi bạn vượt qua 120 ký tự mà bạn có
+
+44
+00:04:32,400 --> 00:04:39,600
+Chia ra thành một mô hình nhúng bạn sẽ tạo ra một cái gì đó được gọi là đường viền véc tơ. Và như tôi đã nói
+
+45
+00:04:39,600 --> 00:04:47,040
+Chúng ở giữa 512 đến 1024 chiều và ở đây bạn có thể thấy một ví dụ bạn đã vượt qua có thể
+
+46
+00:04:47,040 --> 00:04:53,600
+Chỉ cần một từ, tuyệt vời hoặc bạn cũng có thể vượt qua một câu, giá của một quả táo,
+
+47
+00:04:53,600 --> 00:04:59,280
+Có thể là toàn bộ tài liệu. Vì vậy, một khi bạn vượt qua nó thông qua các mô hình liên kết vì vậy bạn sẽ nhận được một đường viền véc tơ
+
+48
+00:04:59,280 --> 00:05:05,760
+và sẽ có 1024 chiều. Tiếp theo chúng tôi có các cửa hàng véc tơ. Vì vậy, bây giờ hãy nói rằng bạn đang tách ra
+
+49
+00:05:05,760 --> 00:05:11,120
+tài liệu thành nhiều đoạn mà bạn đã đưa nó qua một mô hình nhúng và bây giờ bạn có
+
+50
+00:05:11,120 --> 00:05:18,560
+Ở đây có các đường vector khác nhau, mỗi chiều 1024 chiều. Bây giờ bạn phải lưu trữ tất cả các
+
+51
+00:05:18,560 --> 00:05:23,920
+Mô- tơ nhúng ở đâu đó và đó là nơi mà cửa hàng véc- tơ hoạt động. Vậy AWS cung cấp nhiều
+
+52
+00:05:23,920 --> 00:05:29,680
+tuỳ chọn trên cửa hàng véc tơ hoặc véc tơ DB như AWS mở thông tìm kiếm và vân vân và chúng tôi đang đi
+
+53
+00:05:29,680 --> 00:05:36,480
+để thảo luận sau. Được rồi bây giờ một khi bạn đã lưu trữ tất cả các véc tơ liên kết vì vậy những gì là sử dụng
+
+54
+00:05:36,480 --> 00:05:43,040
+Bây giờ để coi. Vì vậy, bây giờ chúng ta hãy nói rằng chúng tôi có này véc tơ hình nón thông và bây giờ chúng tôi đã thông qua toàn bộ
+
+55
+00:05:43,040 --> 00:05:49,040
+tài liệu sau khi chia thành 120 ký tự. Vì vậy, có lẽ chúng ta có hàng trăm và hàng ngàn
+
+56
+00:05:49,040 --> 00:05:55,200
+Các nhúng véc- tơ và bây giờ chúng đã được cất giữ ở đây. Bây giờ những gì sẽ xảy ra là người dùng cuối
+
+57
+00:05:55,200 --> 00:06:01,360
+sẽ đưa ra một câu hỏi. Giả sử anh ta cho rằng véc tơ DB là chi phí hiệu quả nhất trong AWS.
+
+58
+00:06:01,360 --> 00:06:09,040
+Bây giờ những gì mô hình ngôn ngữ lớn của tôi cần để làm là nó cần phải đi trước và các mô hình véc tơ bên phải
+
+59
+00:06:09,040 --> 00:06:15,600
+đó là lưu trữ trong véc tơ DB này mà sẽ có câu trả lời ngữ cảnh bởi vì nhớ chúng tôi đang chia
+
+60
+00:06:15,600 --> 00:06:22,640
+tài liệu vào các trang, Paris và sau đó hai hoặc ba dòng dựa trên nơi 120 ký tự sẽ
+
+61
+00:06:22,640 --> 00:06:28,400
+Và rồi tất cả bọn họ tản ra đây. Vì vậy, nó sẽ tìm kiếm các đoạn liên quan
+
+62
+00:06:28,400 --> 00:06:33,920
+có thể trả lời câu hỏi này. Vậy nó làm thế nào? Vì vậy, một khi chúng tôi đã có câu hỏi người dùng Vì vậy, nó là đi
+
+63
+00:06:33,920 --> 00:06:39,680
+để vượt qua đó thông qua các mô hình bao gồm và trong trường hợp này chúng tôi đang chỉ sử dụng sông băng Amazon Titan
+
+64
+00:06:39,680 --> 00:06:45,680
+Người mẫu. Vì vậy, một khi nó đi qua các mô hình liên kết nó sẽ tạo ra một đường viền véc tơ và
+
+65
+00:06:45,680 --> 00:06:51,680
+Sau đó nó sẽ làm một cái gì đó được gọi là tìm kiếm tương tự. Vì vậy, về cơ bản nó sẽ kiểm tra cho một rất
+
+66
+00:06:51,680 --> 00:06:58,080
+Tương tự nhúng véc- tơ có thể trả lời câu hỏi người dùng. Vì vậy, một khi nó thực hiện tìm kiếm tương tự
+
+67
+00:06:58,080 --> 00:07:04,880
+Nó sẽ được thu thập bất cứ nơi nào từ 5 đến 20 đoạn dựa trên cách bạn kết nối với giải pháp
+
+68
+00:07:04,880 --> 00:07:10,480
+Và sau đó nó sẽ trả lại những mẫu ngôn ngữ lớn mà sẽ sau đó
+
+69
+00:07:10,480 --> 00:07:16,880
+tạo câu trả lời cho câu hỏi người dùng. Việc tìm kiếm tương tự xảy ra như thế nào? Thật giống nhau
+
+70
+00:07:16,880 --> 00:07:23,680
+Tìm kiếm được thực hiện thông qua hai thuật toán đôi khi được gọi là K gần nhất hàng xóm hoặc xấp xỉ
+
+71
+00:07:23,680 --> 00:07:31,440
+Hàng xóm gần nhất. Vì vậy KNN hoặc K gần nhất thuật toán hàng xóm là một thuật toán giám sát máy học tập thuật toán
+
+72
+00:07:31,440 --> 00:07:36,480
+mà có thể được sử dụng cho phân loại và hồi quy nhiệm vụ. Vì vậy, nếu bạn muốn biết
+
+73
+00:07:36,480 --> 00:07:42,480
+Hơn về KNN hoặc ANN cho tôi biết một email và tôi có thể thêm một bài giảng về cuối
+
+74
+00:07:42,480 --> 00:07:49,040
+của khóa học này. Bây giờ bạn không cần phải có được chi tiết về làm thế nào KN hoặc ANN thuật toán
+
+75
+00:07:49,040 --> 00:07:54,080
+Bởi vì nó được thực hiện phía sau các cảnh của AWS nhưng nếu bạn vẫn còn quan tâm gửi cho tôi một email
+
+76
+00:07:54,080 --> 00:08:00,480
+Tôi sẽ thêm một bài giảng giải thích việc tìm kiếm tương tự hoạt động như thế nào ở cuối khóa học.
+
+77
+00:08:00,480 --> 00:08:04,800
+Được rồi, bài giảng này tôi sẽ trình bày bài giảng tiếp theo. Cảm ơn.
+
