@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:02,720
+ In this lecture, we're going to look at the 8th architecture
+
+2
+00:00:02,720 --> 00:00:06,960
+ consideration that you need to think about when you're building
+
+3
+00:00:06,960 --> 00:00:09,800
+ production grade, rag application.
+
+4
+00:00:09,800 --> 00:00:14,080
+ And that is rag observability and monitoring.
+
+5
+00:00:14,080 --> 00:00:17,080
+ So in better of knowledge basis, there are two types of logging
+
+6
+00:00:17,080 --> 00:00:17,800
+ available.
+
+7
+00:00:17,800 --> 00:00:21,600
+ One is the ingestion logs, and the second is the resource logs,
+
+8
+00:00:21,600 --> 00:00:24,000
+ and both are published to CloudWatch.
+
+9
+00:00:24,000 --> 00:00:26,200
+ Now, let's take a look at the ingestion logs.
+
+10
+00:00:26,200 --> 00:00:30,600
+ And this focuses on, did we load the knowledge correctly?
+
+11
+00:00:30,600 --> 00:00:32,120
+ So the ingestion logs record.
+
+12
+00:00:32,120 --> 00:00:36,320
+ What happens when the data is added or updated in knowledge
+
+13
+00:00:36,320 --> 00:00:37,960
+ basis?
+
+14
+00:00:37,960 --> 00:00:39,440
+ So ingestion logs record.
+
+15
+00:00:39,440 --> 00:00:43,080
+ What happens when the data is added or updated in a knowledge
+
+16
+00:00:43,080 --> 00:00:44,600
+ base?
+
+17
+00:00:44,600 --> 00:00:48,080
+ Document ingestion start, completion, chunking operations,
+
+18
+00:00:48,080 --> 00:00:50,920
+ and embedding generation.
+
+19
+00:00:50,920 --> 00:00:52,800
+ In one of the previous lectures, we had discussed about the
+
+20
+00:00:52,800 --> 00:00:56,160
+ ingestion pipeline and the various steps in ingestion pipeline.
+
+21
+00:00:56,160 --> 00:01:00,440
+ Loading the data, then chunking the data, creating vector
+
+22
+00:01:00,440 --> 00:01:01,960
+ embeddings, and so on.
+
+23
+00:01:01,960 --> 00:01:06,600
+ So for each of these better knowledge basis, create certain jobs.
+
+24
+00:01:06,600 --> 00:01:10,600
+ And those jobs are monitored through this ingestion logging.
+
+25
+00:01:10,600 --> 00:01:13,640
+ You'll be able to see the logs for each of the steps in the
+
+26
+00:01:13,640 --> 00:01:15,920
+ ingestion pipeline.
+
+27
+00:01:15,920 --> 00:01:19,480
+ The next, we have the resource logging that is more focused on
+
+28
+00:01:19,480 --> 00:01:24,600
+ how is the knowledge basis being queried and used.
+
+29
+00:01:24,600 --> 00:01:28,920
+ So logs record runtime usage of the knowledge basis.
+
+30
+00:01:28,920 --> 00:01:31,960
+ So earlier, we had discussed about retrieve APA calls and retrieve
+
+31
+00:01:31,960 --> 00:01:34,200
+ and generate APA calls.
+
+32
+00:01:34,200 --> 00:01:36,160
+ So it can monitor both of them.
+
+33
+00:01:36,160 --> 00:01:39,600
+ Then it can also monitor some of the request metadata like
+
+34
+00:01:39,600 --> 00:01:44,920
+ time-staffed knowledge base ID that logs are being generated for.
+
+35
+00:01:44,920 --> 00:01:48,960
+ And then finally, it will also log the response status, whether
+
+36
+00:01:48,960 --> 00:01:53,280
+ to the user query, if the response had succeeded or failed.
+
