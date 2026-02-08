@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:04,640
+ Okay, now in this lecture, I'm going to do a quick hands on on inference parameters.
+
+2
+00:00:04,640 --> 00:00:06,640
+ So I'm on the Amazon bedrock service.
+
+3
+00:00:06,640 --> 00:00:11,200
+ So if we just go to this chat and text playground and just select a model here,
+
+4
+00:00:11,200 --> 00:00:15,840
+ maybe I'll select Amazon, Nova Pro on demand inference and do I apply.
+
+5
+00:00:15,840 --> 00:00:20,240
+ Okay, now on the left hand side, you can see all the inference parameters.
+
+6
+00:00:20,240 --> 00:00:23,680
+ So you have length, maximum output token size.
+
+7
+00:00:23,680 --> 00:00:28,000
+ So to control length, you can use this maximum output tokens.
+
+8
+00:00:28,000 --> 00:00:32,560
+ So here, you can see it varies between one to five thousand sixty three.
+
+9
+00:00:32,560 --> 00:00:35,680
+ But if you go and select some of the models from entropic,
+
+10
+00:00:35,680 --> 00:00:39,360
+ it has up to sixty four thousand max output token size.
+
+11
+00:00:39,360 --> 00:00:42,240
+ Then here, you can add stop sequence.
+
+12
+00:00:42,240 --> 00:00:48,080
+ So maybe I can just add a character and this is my stop sequence closing curly bracket.
+
+13
+00:00:48,080 --> 00:00:51,600
+ I can just do add and then you can add some more stop sequence.
+
+14
+00:00:51,600 --> 00:00:55,040
+ If you want, then you have the randomness and diversity
+
+15
+00:00:55,040 --> 00:00:59,840
+ where you can determine the temperature, which defines the creativity of the model.
+
+16
+00:00:59,840 --> 00:01:04,960
+ So if I just click here, influence the probability of selecting output with different
+
+17
+00:01:04,960 --> 00:01:09,440
+ likelihoods, choose the higher value if you want to generate more creative response.
+
+18
+00:01:09,440 --> 00:01:15,760
+ So here for this Amazon, Nova Pro model, the temperature values would be zero to one.
+
+19
+00:01:15,760 --> 00:01:19,280
+ But in some models, it can be between zero to five.
+
+20
+00:01:19,280 --> 00:01:22,640
+ So if I want a highly creative response, then I give one.
+
+21
+00:01:22,640 --> 00:01:25,920
+ If I want a very predictable response, I give it as zero.
+
+22
+00:01:25,920 --> 00:01:29,920
+ Then you have the top K and if you just click on this,
+
+23
+00:01:29,920 --> 00:01:33,280
+ limits the percentage of candidates to consider in generation.
+
+24
+00:01:33,280 --> 00:01:36,800
+ The model considers top P percent of the candidates.
+
+25
+00:01:36,800 --> 00:01:42,320
+ P percent of the candidates where P is the value you choose, choose the higher value
+
+26
+00:01:42,320 --> 00:01:44,800
+ to consider more candidates.
+
+27
+00:01:44,800 --> 00:01:49,200
+ And here again, you have the option to choose between 0.1 and 1.
+
+28
+00:01:49,200 --> 00:01:52,640
+ Okay, let me just set the response. So we have a highly predictive answer.
+
+29
+00:01:52,640 --> 00:01:56,640
+ So let me just move to zero and let me just pose a question.
+
+30
+00:01:56,640 --> 00:01:59,520
+ And let me just say who is the best football player in the world?
+
+31
+00:01:59,520 --> 00:02:01,040
+ And now if I just do a run.
+
+32
+00:02:01,040 --> 00:02:05,760
+ So it has given us a very predictable list.
+
+33
+00:02:05,760 --> 00:02:10,720
+ So Lionel Messi, Cristiano Ronaldo and some other names.
+
+34
+00:02:10,720 --> 00:02:16,880
+ So if you just see here, so it has given us number of input tokens, which was our question.
+
+35
+00:02:16,880 --> 00:02:21,040
+ So it was 11 input tokens, then output the output it has generated,
+
+36
+00:02:21,040 --> 00:02:25,040
+ which is 280 tokens, then it also shows us latency.
+
+37
+00:02:25,040 --> 00:02:31,680
+ So you can see her max output tokens are 5, 0, 6, 3, but it stopped at 282 tokens.
+
+38
+00:02:31,680 --> 00:02:38,400
+ So which means it has used its internal mechanism to stop the output response
+
+39
+00:02:38,400 --> 00:02:40,800
+ after a certain number of tokens.
+
+40
+00:02:40,800 --> 00:02:45,120
+ And that would most likely be based on its training data.
+
+41
+00:02:45,120 --> 00:02:48,160
+ Okay, so that's pretty much it from this lecture. I'll see you in the next lecture. Thank you.
+
