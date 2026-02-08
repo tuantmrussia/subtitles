@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:04,920
+ Okay, in this lecture, we're going to discuss about the next architecture consideration,
+
+2
+00:00:04,920 --> 00:00:11,760
+ which is selecting the right embedding model, text embeddings represent vector representation
+
+3
+00:00:11,760 --> 00:00:16,960
+ of unstructured text and images such as documents, sentences and so on.
+
+4
+00:00:16,960 --> 00:00:21,420
+ So earlier we already discussed, let's say we have PDF document, we create chunks, pass
+
+5
+00:00:21,420 --> 00:00:27,040
+ it through the embedding model and then it creates the output vector embeddings.
+
+6
+00:00:27,040 --> 00:00:33,240
+ And you can see here we have 1536 dimensions and we have taken the Amazon Titan Analytics.
+
+7
+00:00:33,240 --> 00:00:37,440
+ So now, how do we select the right embedding model?
+
+8
+00:00:37,440 --> 00:00:43,680
+ So the first thing you need to consider is whether your input text is only text or
+
+9
+00:00:43,680 --> 00:00:49,400
+ is it a combination of text, image and so on, because a lot of models only support text,
+
+10
+00:00:49,400 --> 00:00:52,640
+ some other support text and images as well.
+
+11
+00:00:52,640 --> 00:00:54,480
+ So let's take a look at couple of them.
+
+12
+00:00:54,480 --> 00:01:01,520
+ So here you have Amazon Titan text embedding V2 model, which supports only text embeddings.
+
+13
+00:01:01,520 --> 00:01:08,680
+ Then we have another model from Amazon Titan multimodal embeddings G1 and its input modalities
+
+14
+00:01:08,680 --> 00:01:10,640
+ are text and image.
+
+15
+00:01:10,640 --> 00:01:14,880
+ So first, you need to consider for your use case, what is the input modality?
+
+16
+00:01:14,880 --> 00:01:16,680
+ The next is the output.
+
+17
+00:01:16,680 --> 00:01:20,800
+ So there are various dimensions in which you can generate the output vector size.
+
+18
+00:01:20,800 --> 00:01:28,320
+ It can be 256, 512, or 1024 and if you can see here for Amazon Titan text embeddings,
+
+19
+00:01:28,320 --> 00:01:33,520
+ it comes in three variations, 512, 256, and 1024.
+
+20
+00:01:33,520 --> 00:01:39,440
+ So for your use case, you also need to consider what is the max input text token size
+
+21
+00:01:39,440 --> 00:01:43,880
+ or the text character size and based on that, you can select the embedding model.
+
+22
+00:01:43,880 --> 00:01:49,920
+ So you can see for the Titan text embedding model, max input text token 8192 and max input
+
+23
+00:01:49,920 --> 00:01:54,440
+ text characters is 50,000.
+
+24
+00:01:54,440 --> 00:01:57,880
+ So how do you select the right embedding model for your use case?
+
+25
+00:01:57,880 --> 00:02:01,720
+ So there's a trade-off between quality, cost, and latency.
+
+26
+00:02:01,720 --> 00:02:07,840
+ So if you select a higher dimensional embedding and if you see here, we have 1024, 512,
+
+27
+00:02:07,840 --> 00:02:08,840
+ and 256.
+
+28
+00:02:08,840 --> 00:02:13,320
+ So if you select a higher one, maybe 1024, you have better recall, but there is going to
+
+29
+00:02:13,320 --> 00:02:15,880
+ be higher cost.
+
+30
+00:02:15,880 --> 00:02:19,680
+ And obviously if you select a lower dimensional embedding, it's going to be faster, cheaper,
+
+31
+00:02:19,680 --> 00:02:22,040
+ but there's going to be lower accuracy.
+
+32
+00:02:22,040 --> 00:02:27,000
+ Then you should also match the language and multilingual needs that you might have for
+
+33
+00:02:27,000 --> 00:02:28,160
+ a use case.
+
+34
+00:02:28,160 --> 00:02:33,200
+ So each embedding model supports different languages, so in this case, for Amazon Titan
+
+35
+00:02:33,200 --> 00:02:39,040
+ text, you can see it supports English and 100 plus languages, but it's still in the preview
+
+36
+00:02:39,040 --> 00:02:40,040
+ mode.
+
+37
+00:02:40,040 --> 00:02:44,160
+ So you should review the multilingual needs for your use case.
+
+38
+00:02:44,160 --> 00:02:48,800
+ And then you should also consider your inference type, whether you want an on-demand or
+
+39
+00:02:48,800 --> 00:02:49,960
+ provision throughput.
+
+40
+00:02:49,960 --> 00:02:54,220
+ So Amazon Titan text supports both scenarios.
+
+41
+00:02:54,220 --> 00:02:58,240
+ So if I quickly show you through the console, so I'm on the bedrock knowledge base, you
+
+42
+00:02:58,240 --> 00:02:59,880
+ can see the embedding model here.
+
+43
+00:02:59,880 --> 00:03:05,000
+ So if I just click on the embedding model, so I can see two model providers with Amazon
+
+44
+00:03:05,000 --> 00:03:11,080
+ and here there are three options, Amazon, no multimodal embeddings, Titan embeddings and Titan
+
+45
+00:03:11,080 --> 00:03:12,800
+ text embeddings.
+
+46
+00:03:12,800 --> 00:03:15,280
+ And then you just provide some details around these three models.
+
+47
+00:03:15,280 --> 00:03:20,680
+ Then I can also select cohere, here I have embed English and embed multi-lingual.
+
+48
+00:03:20,680 --> 00:03:23,080
+ Okay, so that's pretty much it from this lecture.
+
+49
+00:03:23,080 --> 00:03:24,120
+ I'll see you in the next lecture.
+
+50
+00:03:24,120 --> 00:03:24,320
+ Thank you.
+
