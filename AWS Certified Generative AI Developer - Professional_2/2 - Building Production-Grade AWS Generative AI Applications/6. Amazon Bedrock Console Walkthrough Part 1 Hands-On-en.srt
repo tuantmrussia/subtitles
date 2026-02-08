@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:03,920
+ Now, in this lecture, we're going to do a console walkthrough of the MSN bedrock
+
+2
+00:00:03,920 --> 00:00:08,560
+ service so that you can understand at a high level what are all the capabilities that are
+
+3
+00:00:08,560 --> 00:00:13,760
+ available as part of the service. Now, let's head over to the AWS console. Now,
+
+4
+00:00:13,760 --> 00:00:16,960
+ I'm on the AWS console. Now, let me just search for Amazon bedrock.
+
+5
+00:00:16,960 --> 00:00:21,840
+ And you can see the Amazon bedrock service here. So, let me just click on this.
+
+6
+00:00:21,840 --> 00:00:27,040
+ So, now I'm on the Amazon bedrock service. So, you can see on the left hand side,
+
+7
+00:00:27,040 --> 00:00:32,640
+ all the capabilities that are offered as part of this service. So, we're going to deep dive
+
+8
+00:00:32,640 --> 00:00:38,320
+ into each of these aspects as we go along in the course. But for now, I'm just going to give
+
+9
+00:00:38,320 --> 00:00:44,080
+ a high level overview so that you get a mental model of all the capabilities that are available.
+
+10
+00:00:44,080 --> 00:00:48,160
+ So, if you don't understand some parts of it, that's okay, where anyway, we're going to deep dive
+
+11
+00:00:48,160 --> 00:00:54,240
+ into all of them in detail in the later sections. So, first we have the overview. So, here you can see
+
+12
+00:00:54,240 --> 00:01:00,640
+ model catalog and then you can see test, chat. So, it's basically a replica of what we have here.
+
+13
+00:01:00,640 --> 00:01:06,240
+ Next, we have the model catalog. So, it will provide you a list of all the models that are
+
+14
+00:01:06,240 --> 00:01:11,200
+ available from different model providers as for this bedrock service. So, you can see all the
+
+15
+00:01:11,200 --> 00:01:16,800
+ models that are here and if I just continue to scroll, you will see all the different models.
+
+16
+00:01:16,800 --> 00:01:21,840
+ So, the key thing you want to keep in mind is this model collection. So, some of the models
+
+17
+00:01:21,840 --> 00:01:26,480
+ are available as serverless and some are available as part of the bedrock marketplace. So, if I
+
+18
+00:01:26,480 --> 00:01:30,640
+ just click on the serverless, you can see cloud and then you will be able to see some models from
+
+19
+00:01:30,640 --> 00:01:36,320
+ meta, etc. So, all these models that are available as part of the serverless service, AWS will
+
+20
+00:01:36,320 --> 00:01:42,960
+ take care of the hosting of the model, scaling, monitoring, etc. And you just pay based on the number
+
+21
+00:01:42,960 --> 00:01:48,960
+ of EPA requests. So, there is no commitment. Now, it's just good to the models that are available
+
+22
+00:01:48,960 --> 00:01:52,880
+ as part of the bedrock marketplace and here is some of the models that are available.
+
+23
+00:01:52,880 --> 00:02:01,200
+ So, if we just click on this first one. So, with this writer met 70 b 32 k and what is its focus
+
+24
+00:02:01,200 --> 00:02:07,120
+ category, text duration, its available delivery method Amazon bedrock and Amazon SageMaker. So,
+
+25
+00:02:07,120 --> 00:02:12,240
+ it will provide you all the details, but the key thing to note here is when you are selecting a model
+
+26
+00:02:12,240 --> 00:02:18,240
+ from the marketplace deployment, you will be charged by the model provider, but you will also be
+
+27
+00:02:18,240 --> 00:02:23,760
+ charged a fixed cost. So, you can see here you have to provision this instance type which is going
+
+28
+00:02:23,760 --> 00:02:30,000
+ to charge you 57.1 dollars per hour. So, there is going to be infrastructure cost and then there is
+
+29
+00:02:30,000 --> 00:02:36,240
+ going to charge from the model provider which is this one in this case. So, that's something you should
+
+30
+00:02:36,240 --> 00:02:42,480
+ remember. So, next we have the APA keys. So, Amazon bedrock service allows you to generate short-term
+
+31
+00:02:42,480 --> 00:02:48,800
+ and long-term APA keys through which you can make APA request to the bedrock service
+
+32
+00:02:48,800 --> 00:02:54,000
+ programmatically. So, you can generate the short-term key which is valid for 12 hours and then
+
+33
+00:02:54,000 --> 00:02:59,040
+ you can also generate the long-term key. So, for long-term keys you can see here we strongly recommend
+
+34
+00:02:59,040 --> 00:03:04,480
+ using long-term keys only for exploratory purposes to avoid security risk and production.
+
+35
+00:03:04,480 --> 00:03:09,040
+ So, what it is strongly recommends is that if you are using in the production then you just go ahead
+
+36
+00:03:09,040 --> 00:03:15,520
+ and use the identity and access management with STS token rather than these short-term or long-term
+
+37
+00:03:15,520 --> 00:03:20,320
+ keys. But if you are just using as an exploratory purpose or let's say a building an agent
+
+38
+00:03:20,320 --> 00:03:28,080
+ application and using open source a framework which requires APA keys and then in that scenario you
+
+39
+00:03:28,080 --> 00:03:32,800
+ should use short-term and long-term keys. And how do you generate the keys? So, you can see here
+
+40
+00:03:32,800 --> 00:03:37,520
+ generate short-term keys. So, if you just click on this it will generate the APA key for me.
+
+41
+00:03:38,640 --> 00:03:43,120
+ Next we have the test. So, this is enabled. So, let's say you want to build a genetic application.
+
+42
+00:03:43,120 --> 00:03:48,480
+ But before you start building programmatically the application you may want to just test out your
+
+43
+00:03:48,480 --> 00:03:53,920
+ foundation models or if you're using an image model you can just test this out from the console
+
+44
+00:03:53,920 --> 00:03:58,800
+ and see if it is giving you the right response or if you want to compare different models. So,
+
+45
+00:03:58,800 --> 00:04:05,280
+ that's what this test capability can be used for. So, if you just click on this chat text. So,
+
+46
+00:04:05,280 --> 00:04:09,600
+ if you just click on select model it will show you all the model providers. So, maybe I'll
+
+47
+00:04:09,600 --> 00:04:14,320
+ select Amazon then I can select the right model that I want. So, I'll click on our pro apply.
+
+48
+00:04:14,320 --> 00:04:20,160
+ Then I can just paste some sample prompt and see if I get the requisite response. So, maybe I'll
+
+49
+00:04:20,160 --> 00:04:24,800
+ just say so maybe I'll just say what is Amazon bedrock and if I just do a run so it's going to give
+
+50
+00:04:24,800 --> 00:04:30,240
+ me a response. And then in this way I can just change the model and maybe have some other models
+
+51
+00:04:30,240 --> 00:04:36,560
+ and compare different models. So, now if I just go back to the bedrock service. Similarly,
+
+52
+00:04:36,560 --> 00:04:43,280
+ let's say you work in advertising and you need models that can generate images or videos for you.
+
+53
+00:04:43,280 --> 00:04:49,360
+ You can just test that out from here. Select the model here. So, right now it has modeled only
+
+54
+00:04:49,360 --> 00:04:54,080
+ from Amazon and these are the four models. So, if I just click on no one canvas apply then I can
+
+55
+00:04:54,080 --> 00:04:59,680
+ just put a prompt here and let you just put a simple prompt image of a dog. If I just run
+
+56
+00:05:00,800 --> 00:05:05,600
+ and now it has generated multiple images and then you can make some configuration changes here
+
+57
+00:05:05,600 --> 00:05:10,880
+ and you might see different results. So, in this way you can use different models here
+
+58
+00:05:10,880 --> 00:05:14,160
+ and compare before you actually start building the application.
+
+59
+00:05:14,160 --> 00:05:21,040
+ Next we have this watermark detection. So, what watermark detection does? It detects whether the
+
+60
+00:05:21,040 --> 00:05:27,360
+ image was generated by Titan image generator or Nova canvas model on bedrock. So, what you can do is
+
+61
+00:05:27,360 --> 00:05:32,800
+ let's say you want to determine if this is an AI generated image or this is an original image you
+
+62
+00:05:32,800 --> 00:05:39,120
+ can just you can just choose image maybe just upload the image and then just click on analyze.
+
+63
+00:05:39,120 --> 00:05:44,400
+ So, it can tell you whether the image and you can see here the results it says the watermark
+
+64
+00:05:44,400 --> 00:05:50,240
+ not detected. So, bedrock did not detect a watermark generated by bedrock model on this image.
+
+65
+00:05:51,680 --> 00:05:57,360
+ So, next you have the tokenizer. You can see here when you run inferences with foundation models you
+
+66
+00:05:57,360 --> 00:06:03,920
+ are charged on the number of tokens in your input and output. So, with the tokenizer you can
+
+67
+00:06:03,920 --> 00:06:10,160
+ estimate the number of tokens in your input and refine as necessary to account for your cost
+
+68
+00:06:10,160 --> 00:06:15,200
+ as well as token quotas. So, what I can do is I can select the model. So, let's say I choose
+
+69
+00:06:15,200 --> 00:06:21,840
+ anthropic and cloud and just to apply and then here I will put the input text that will typically
+
+70
+00:06:21,840 --> 00:06:27,440
+ be sent by my end user. Let's just say insert sample token and then I can just click on
+
+71
+00:06:27,440 --> 00:06:34,160
+ count token and you can see 17 tokens. So, it will help you understand how many tokens would be
+
+72
+00:06:34,160 --> 00:06:39,920
+ consumed and then you can go to the bedrock pricing table and determine what is the approximate cost
+
+73
+00:06:39,920 --> 00:06:45,920
+ and we are going to get in the costing a little later, but for now tokenizer helps you identify
+
+74
+00:06:45,920 --> 00:06:50,800
+ the number of tokens that will be consumed for your input and output. Now, before we continue,
+
+75
+00:06:50,800 --> 00:06:56,400
+ I just want to reiterate that I am just giving you a hell of an overview of all the capabilities
+
+76
+00:06:56,400 --> 00:07:01,920
+ within the Amazon bedrock service and if you have not understood some of those concepts it is
+
+77
+00:07:01,920 --> 00:07:07,600
+ okay. We are going to deep dive into all of these concepts in the later lectures in this course.
+
+78
+00:07:08,320 --> 00:07:14,080
+ So, next we have infer and we have cross region inference. So, cross region inference uses
+
+79
+00:07:14,080 --> 00:07:21,440
+ inference profile to increase throughput and improve resilience by routing your requests across
+
+80
+00:07:21,440 --> 00:07:28,080
+ multiple AWS regions during peak utilization burst. So, the scenario for using cross region
+
+81
+00:07:28,080 --> 00:07:33,760
+ inferences, let's say you built a highly critical generative AI application. So, there could be
+
+82
+00:07:33,760 --> 00:07:40,160
+ some very rare circumstances where your application may experience throttling. So, there is not enough
+
+83
+00:07:40,160 --> 00:07:44,640
+ capacity to service your request by the Amazon bedrock service in that particular region.
+
+84
+00:07:44,640 --> 00:07:51,120
+ So, in those scenarios, you can choose cross region inference and what bedrock service will do is
+
+85
+00:07:51,120 --> 00:07:56,320
+ if it does not have enough capacity, it is going to reroute that request to a different region.
+
+86
+00:07:56,320 --> 00:08:01,520
+ But you need to be careful on which scenarios you can use cross region inference so that it does
+
+87
+00:08:01,520 --> 00:08:08,000
+ not conflict with some of the geographic regulations like GDPR where you cannot send the data
+
+88
+00:08:08,000 --> 00:08:14,720
+ outside the European Union. Next we have the batch inference. So, batch inference,
+
+89
+00:08:14,720 --> 00:08:21,360
+ run model inference isynchronously in batches to efficiently process many requests at once.
+
+90
+00:08:21,360 --> 00:08:26,080
+ Now, let's say for an insurance company you built a generative AI application which processes
+
+91
+00:08:26,080 --> 00:08:31,920
+ lot of claim letters and you don't need to process those letters immediately. So, you can create a
+
+92
+00:08:31,920 --> 00:08:38,560
+ overnight batch of and you can run all of those claim letters as part of the batch job.
+
+93
+00:08:38,560 --> 00:08:44,960
+ So, what is the benefit? Batch inference speeds up inferences on large datasets and in some scenarios
+
+94
+00:08:44,960 --> 00:08:52,960
+ it can cost 50% less than on demand. And remember that on demand means that your request
+
+95
+00:08:52,960 --> 00:08:57,920
+ is processed real time and you pay based on the number for request you make.
+
+96
+00:08:57,920 --> 00:09:04,000
+ Okay, next we have the provision throughput. Again, project throughput allows you to have
+
+97
+00:09:04,000 --> 00:09:09,840
+ dedicated capacity to deploy your models. So, what it means is again, let's say you have a critical
+
+98
+00:09:09,840 --> 00:09:15,760
+ generative AI application and sometimes your request may fail or may experience latency.
+
+99
+00:09:15,760 --> 00:09:22,000
+ So, in that case you can go for provision throughput so that you can get some dedicated capacity.
+
+100
+00:09:22,000 --> 00:09:28,240
+ And here you can just purchase provision throughput. Okay, then we have custom model on
+
+101
+00:09:28,240 --> 00:09:33,680
+ demand so I'll get to this in a little bit but before that we have to understand what are custom
+
+102
+00:09:33,680 --> 00:09:40,800
+ models. Okay, next we have tune and first we have custom models. So, it says customize models
+
+103
+00:09:40,800 --> 00:09:46,560
+ using available customization process. So, now let's try and understand the use case scenario
+
+104
+00:09:46,560 --> 00:09:51,680
+ for this through an example. So, let's go to our example on physician notes where we have built
+
+105
+00:09:51,680 --> 00:09:56,960
+ a generative AI application that summarizes physician notes. Now, let's say we are using a
+
+106
+00:09:56,960 --> 00:10:04,480
+ base model from anthropic and since it's been trained on generic internet data it might not
+
+107
+00:10:04,480 --> 00:10:10,880
+ understand the medical terminology. So, in those scenarios you might have to customize your model
+
+108
+00:10:10,880 --> 00:10:17,040
+ for better accuracy. And there are multiple ways and you can customize your model so there can
+
+109
+00:10:17,040 --> 00:10:23,760
+ be distillation, supervised fine tuning, reinforcement fine tuning and continued pre-training.
+
+110
+00:10:23,760 --> 00:10:28,880
+ So, we're going to get into details of all of these but for now just remember there are multiple
+
+111
+00:10:28,880 --> 00:10:34,880
+ ways in which you can customize your base model and once you do that so it should be available here.
+
+112
+00:10:34,880 --> 00:10:40,640
+ And you can see here this is one of the models I tried to create in 2023 but for some reason I'm
+
+113
+00:10:40,640 --> 00:10:48,560
+ not able to delete this. Next we have the prompt router models. So, prompt routers route request
+
+114
+00:10:48,560 --> 00:10:54,400
+ between foundation models from the same family optimizing for response quality and cost.
+
+115
+00:10:54,400 --> 00:10:58,800
+ Now, let's say you build a chatbot using one of the foundation models and the kind of request
+
+116
+00:10:58,800 --> 00:11:04,640
+ you get from the users fall into two categories maybe something very simple maybe summarization
+
+117
+00:11:04,640 --> 00:11:10,560
+ and some tasks could be more complex which involved reasoning. Now, what you can do to optimize
+
+118
+00:11:10,560 --> 00:11:17,920
+ your cost and quality is use prompt routers. So, what prompt router would do is it will
+
+119
+00:11:17,920 --> 00:11:24,480
+ would automatically route request to different models within the same model provider in such a way
+
+120
+00:11:24,480 --> 00:11:29,680
+ that it optimizes for quality and cost. And we're going to see a demo of this later.
+
+121
+00:11:29,680 --> 00:11:35,680
+ Next we have the imported models. So, let's say you have built a model in Amazon SageMaker
+
+122
+00:11:35,680 --> 00:11:42,640
+ or any infrastructure outside AWS then what you can do is you can import that model using S3
+
+123
+00:11:42,640 --> 00:11:49,280
+ into Amazon bedrock and once you import you should be able to see all those models here.
+
+124
+00:11:49,280 --> 00:11:54,640
+ So, what basically AWS is trying to do is so from the governor's perspective you could have all
+
+125
+00:11:54,640 --> 00:12:01,360
+ your models within Amazon bedrock and visible through a single catalog. So, then we have the
+
+126
+00:12:01,360 --> 00:12:07,440
+ marketplace model deployment a list of deployed endpoints. So, if you remember when we are looking
+
+127
+00:12:07,440 --> 00:12:12,640
+ at the model catalog we could see two kind of model serverless and bedrock marketplace.
+
+128
+00:12:12,640 --> 00:12:19,040
+ So, all the models that you have provision using this bedrock marketplace will be visible here.
+
+129
+00:12:19,040 --> 00:12:24,320
+ Okay, that's pretty much it from this lecture. I'll see in the next lecture. Thank you.
+
