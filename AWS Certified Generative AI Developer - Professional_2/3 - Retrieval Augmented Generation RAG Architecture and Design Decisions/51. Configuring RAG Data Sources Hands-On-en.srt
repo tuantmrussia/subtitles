@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:04,240
+ Okay, now if we can just show you a quick hands-on from the better acknowledge base service.
+
+2
+00:00:04,240 --> 00:00:10,640
+ So I'm on the Amazon bedrock service and let me just go to the left and select for knowledge bases.
+
+3
+00:00:10,640 --> 00:00:16,240
+ And I'm on the knowledge base service. Now what I can do is I can just click on this create
+
+4
+00:00:16,240 --> 00:00:19,920
+ and you have the unstructured data and you have the structured data. So if I just click on this
+
+5
+00:00:19,920 --> 00:00:25,200
+ structured data store and you just need to provide the name. So we can just leave the name as it is.
+
+6
+00:00:25,200 --> 00:00:28,800
+ Then you have the knowledge base description. You can provide the description if you want.
+
+7
+00:00:28,800 --> 00:00:34,560
+ Then you have the query engine. The query engine reads metadata from your structured data source
+
+8
+00:00:34,560 --> 00:00:41,600
+ and generates the optimized SQL query. So it's going to basically read the metadata from Redshift
+
+9
+00:00:41,600 --> 00:00:48,560
+ cluster or blue data catalog. And then next you need to provide the I am permission. So either
+
+10
+00:00:48,560 --> 00:00:53,200
+ you can create a new service role or use an existing service role. So you're going to continue
+
+11
+00:00:53,200 --> 00:00:58,240
+ with the new service role and then I'll just click on next. So here again you can
+
+12
+00:00:58,240 --> 00:01:03,920
+ select the query engine connection details. So either you can use the Redshift serverless or you
+
+13
+00:01:03,920 --> 00:01:10,640
+ can use Redshift provision. Now hopefully I'm assuming that you know Redshift is a data warehouse
+
+14
+00:01:10,640 --> 00:01:16,960
+ solution from AWS. Now next we have to provide the authentication either I am role or you can use
+
+15
+00:01:16,960 --> 00:01:24,480
+ the secrets manager. Now here you have to provide the storage configuration where your actual
+
+16
+00:01:24,480 --> 00:01:30,880
+ data is stored. So either it can be Amazon Redshift database. So here you choose the database
+
+17
+00:01:30,880 --> 00:01:34,880
+ and then provide the database. So I don't have any database. It's pretty expensive to spin up
+
+18
+00:01:34,880 --> 00:01:39,120
+ a Redshift database. So I'm not going to do it. But the next option you have is to use the
+
+19
+00:01:39,120 --> 00:01:46,720
+ AWS default blue catalog. So if I just click on this you can provide the blue catalog table name.
+
+20
+00:01:46,720 --> 00:01:53,200
+ So we have the AWS blue service and under that we have this tables. So here you can see
+
+21
+00:01:53,200 --> 00:01:58,400
+ the name data. So that's the table name you can provide. So if I just go to the blue catalog
+
+22
+00:01:58,400 --> 00:02:04,080
+ service I don't have any tables right now but you can go to AWS blue and then here you create
+
+23
+00:02:04,080 --> 00:02:09,440
+ a table, add table and then you just give the name of that particular table. So once you
+
+24
+00:02:09,440 --> 00:02:14,800
+ provide the table name then you can just click on the next. So then the next step is just to review
+
+25
+00:02:14,800 --> 00:02:21,840
+ and create. So that's how you can connect knowledge based with structured data. Now if I just go back
+
+26
+00:02:21,840 --> 00:02:27,280
+ and if you look at the unstructured data. So here I can click on this unstructured data.
+
+27
+00:02:27,280 --> 00:02:33,120
+ Again you just give the name. You have the IM permission. You can either create a new service
+
+28
+00:02:33,120 --> 00:02:38,480
+ role or use an existing service role. Then if you look at some of the data source types.
+
+29
+00:02:38,480 --> 00:02:44,800
+ Let's say for our e-learning solution all our PDFs are stored in the S3 bucket. So you can choose
+
+30
+00:02:44,800 --> 00:02:51,360
+ that as the data source. So maybe for our e-learning solution I also want to continuously update
+
+31
+00:02:51,360 --> 00:02:57,680
+ and see what are the new services being launched by AWS. So I can click on this web crawler and
+
+32
+00:02:57,680 --> 00:03:04,880
+ if I just say next. So I can provide the source URLs for those AWS feeds. Then it can continuously
+
+33
+00:03:04,880 --> 00:03:10,960
+ run at certain scheduled times and retrieve that data. Then you have other sources. Let's say
+
+34
+00:03:10,960 --> 00:03:16,800
+ you have data in confluence. So you can connect to confluence. You can also connect to sales force,
+
+35
+00:03:16,800 --> 00:03:23,280
+ share point and you can also have some custom connector. So let me just connect to this confluence
+
+36
+00:03:23,280 --> 00:03:27,920
+ and show you how you can actually connect. Let me just click on next. Then I have to provide the
+
+37
+00:03:27,920 --> 00:03:36,000
+ confluence URL which I want the knowledge base to retrieve the data from. And finally under the
+
+38
+00:03:36,000 --> 00:03:41,920
+ unstructured data. So if you can just click on this Kendra Gen A index and then you can just give the
+
+39
+00:03:41,920 --> 00:03:49,280
+ name here and description and then I am permission. So either use an existing Kendra Gen A
+
+40
+00:03:49,280 --> 00:03:54,480
+ index or you can create a new Kendra Gen A index. And we're going to learn a little bit more about
+
+41
+00:03:54,480 --> 00:04:00,480
+ Kendra in the next few lectures when we look at the vector database. But for now just remember
+
+42
+00:04:00,480 --> 00:04:08,080
+ it was an independent NLP based enterprise search solution. But now it also has rack capabilities.
+
+43
+00:04:08,080 --> 00:04:11,040
+ Okay, so that's pretty much it from this lecture. I'll see you in the next lecture. Thank you.
+
