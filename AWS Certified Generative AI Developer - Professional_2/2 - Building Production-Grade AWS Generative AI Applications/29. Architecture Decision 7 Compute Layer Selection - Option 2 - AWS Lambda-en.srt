@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:03,600
+ In this lecture, we're going to focus on AWS Lambda.
+
+2
+00:00:03,600 --> 00:00:05,900
+ So if you look at the architecture for AWS,
+
+3
+00:00:05,900 --> 00:00:08,500
+ it's a completely serverless service.
+
+4
+00:00:08,500 --> 00:00:10,300
+ In the case of EC2 instance,
+
+5
+00:00:10,300 --> 00:00:14,000
+ we had seen some of these layers were managed by AWS
+
+6
+00:00:14,000 --> 00:00:17,000
+ and few of them were managed by the customer.
+
+7
+00:00:17,000 --> 00:00:20,000
+ But in case of the AWS Lambda,
+
+8
+00:00:20,000 --> 00:00:21,700
+ so if you see the physical layer,
+
+9
+00:00:21,700 --> 00:00:26,000
+ you have the host OS, hypervisor, execution environment,
+
+10
+00:00:26,000 --> 00:00:29,000
+ sandbox execution, Lambda runtime,
+
+11
+00:00:29,000 --> 00:00:31,000
+ everything is managed by AWS.
+
+12
+00:00:31,000 --> 00:00:35,000
+ And as a customer, the only thing you need is the Genia code,
+
+13
+00:00:35,000 --> 00:00:37,000
+ which you can either write in Python, Java,
+
+14
+00:00:37,000 --> 00:00:41,000
+ and supports most of the programming languages.
+
+15
+00:00:41,000 --> 00:00:43,000
+ So that's in terms of the architecture.
+
+16
+00:00:43,000 --> 00:00:47,000
+ If you look at the management, it's a fully managed AWS service.
+
+17
+00:00:47,000 --> 00:00:50,000
+ So AWS manages everything, including infrastructure,
+
+18
+00:00:50,000 --> 00:00:55,000
+ scaling, maintenance, you don't need to worry about anything.
+
+19
+00:00:55,000 --> 00:00:58,000
+ Now in terms of the pricing model for AWS Lambda,
+
+20
+00:00:58,000 --> 00:01:00,000
+ it's pay as you use.
+
+21
+00:01:00,000 --> 00:01:03,000
+ So every time you create a Lambda function,
+
+22
+00:01:03,000 --> 00:01:06,000
+ you have to allocate some memory,
+
+23
+00:01:06,000 --> 00:01:09,000
+ and then you'll be charged based on the memory allocated.
+
+24
+00:01:09,000 --> 00:01:12,000
+ The execution time, let's say your Lambda function,
+
+25
+00:01:12,000 --> 00:01:15,000
+ runs the Genia code and logic for five minutes.
+
+26
+00:01:15,000 --> 00:01:19,000
+ So you'll be charged for that five minute execution time.
+
+27
+00:01:19,000 --> 00:01:22,000
+ And number Lambda invocation.
+
+28
+00:01:22,000 --> 00:01:24,000
+ Now in terms of the execution limit,
+
+29
+00:01:24,000 --> 00:01:26,000
+ so this is important.
+
+30
+00:01:26,000 --> 00:01:32,000
+ Lambda has a maximum 15 minute execution time per invocation.
+
+31
+00:01:32,000 --> 00:01:34,000
+ If the execution time limit is more than 15 minutes,
+
+32
+00:01:34,000 --> 00:01:38,000
+ then you need to either take a look at ECS or EC2.
+
+33
+00:01:38,000 --> 00:01:40,000
+ Okay, in terms of the scaling,
+
+34
+00:01:40,000 --> 00:01:44,000
+ it's automatic and dynamic based on the request volume.
+
+35
+00:01:44,000 --> 00:01:48,000
+ So typically for each account in a region, it's about 1000,
+
+36
+00:01:48,000 --> 00:01:55,000
+ but it can be increased to tens and thousands if you send a request to AWS.
+
+37
+00:01:55,000 --> 00:01:58,000
+ Okay, now the important thing, the use cases.
+
+38
+00:01:58,000 --> 00:02:04,000
+ So the first one is you can write the orchestration logic for your Genia.
+
+39
+00:02:04,000 --> 00:02:06,000
+ Now let's try and understand this through an example.
+
+40
+00:02:06,000 --> 00:02:12,000
+ So this is the most common architectural pattern for AWS Genia applications.
+
+41
+00:02:12,000 --> 00:02:16,000
+ So you have the API gateway, Lambda, and Amazon bedrock.
+
+42
+00:02:16,000 --> 00:02:19,000
+ So the key things to remember about AWS Lambda,
+
+43
+00:02:19,000 --> 00:02:23,000
+ it's an event driven serverless compute service.
+
+44
+00:02:23,000 --> 00:02:28,000
+ So what event driven means that it's not going to run by itself.
+
+45
+00:02:28,000 --> 00:02:31,000
+ Unless there's a trigger, there's an event.
+
+46
+00:02:31,000 --> 00:02:35,000
+ It will not run and you'll not be charged for it.
+
+47
+00:02:35,000 --> 00:02:37,000
+ Okay, so what's an event?
+
+48
+00:02:37,000 --> 00:02:40,000
+ Let's say our user sends a prompt,
+
+49
+00:02:40,000 --> 00:02:42,000
+ summarize the winter by logs.
+
+50
+00:02:42,000 --> 00:02:44,000
+ So that's an event.
+
+51
+00:02:44,000 --> 00:02:48,000
+ Okay, so once he sends that request through the API gateway,
+
+52
+00:02:48,000 --> 00:02:50,000
+ it will go to AWS Lambda function.
+
+53
+00:02:50,000 --> 00:02:54,000
+ And here you can write your prompt orchestration logic.
+
+54
+00:02:54,000 --> 00:02:58,000
+ So maybe you'll use some prompt engineering techniques.
+
+55
+00:02:58,000 --> 00:03:01,000
+ Maybe you'd send the information related to the model,
+
+56
+00:03:01,000 --> 00:03:05,000
+ inference parameters, system prompts, and so on.
+
+57
+00:03:05,000 --> 00:03:07,000
+ And then it will be sent to Amazon bedrock,
+
+58
+00:03:07,000 --> 00:03:09,000
+ and then you'll get a response.
+
+59
+00:03:09,000 --> 00:03:10,000
+ So that's the first use case.
+
+60
+00:03:10,000 --> 00:03:13,000
+ The second one is on a rag apps.
+
+61
+00:03:13,000 --> 00:03:17,000
+ So AWS has a managed service called as bedrock knowledge bases,
+
+62
+00:03:17,000 --> 00:03:20,000
+ and we're going to deep dive into that.
+
+63
+00:03:20,000 --> 00:03:23,000
+ It's another important exam topic in the next section.
+
+64
+00:03:23,000 --> 00:03:26,000
+ So bedrock knowledge bases provides two APIs,
+
+65
+00:03:26,000 --> 00:03:29,000
+ retrieve and retrieve and generate API.
+
+66
+00:03:29,000 --> 00:03:33,000
+ So you can write the book of three code in your Lambda function
+
+67
+00:03:33,000 --> 00:03:36,000
+ to retrieve the data from a rag-based apps,
+
+68
+00:03:36,000 --> 00:03:38,000
+ especially bedrock knowledge bases.
+
+69
+00:03:38,000 --> 00:03:42,000
+ Okay, so we already discussed that it can be used to write
+
+70
+00:03:42,000 --> 00:03:45,000
+ orchestration logic for journey apps.
+
+71
+00:03:45,000 --> 00:03:49,000
+ Then it can be used for racks, retrieve and retrieve and generate API.
+
+72
+00:03:49,000 --> 00:03:55,000
+ And then it can also be used as a tool for Amazon bedrock agents.
+
+73
+00:03:55,000 --> 00:03:58,000
+ And we're going to discuss that in the section three,
+
+74
+00:03:58,000 --> 00:04:03,000
+ but just remember it can also be used for Amazon bedrock agents.
+
+75
+00:04:03,000 --> 00:04:08,000
+ Now let's take a look at couple of scenarios where you cannot use AWS Lambda.
+
+76
+00:04:08,000 --> 00:04:13,000
+ So first you cannot do foundation model hosting on AWS Lambda.
+
+77
+00:04:13,000 --> 00:04:17,000
+ Second, you cannot use it for long running tasks.
+
+78
+00:04:17,000 --> 00:04:20,000
+ Now the task execution is more than 50 minutes,
+
+79
+00:04:20,000 --> 00:04:23,000
+ then you cannot use AWS Lambda.
+
+80
+00:04:23,000 --> 00:04:25,000
+ Okay, so that's pretty much it from this lecture.
+
+81
+00:04:25,000 --> 00:04:27,000
+ I'll see in the next lecture. Thank you.
+
