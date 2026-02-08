@@ -1,0 +1,492 @@
+1
+00:00:00,000 --> 00:00:06,240
+Trong bài giảng trước, chúng tôi đã học về kế hoạch và khả năng lý luận của các đặc vụ AI.
+
+2
+00:00:06,240 --> 00:00:09,360
+Bây giờ, hãy đi và nhìn vào bản thử nghiệm.
+
+3
+00:00:09,360 --> 00:00:16,240
+Bây giờ, cho bản thử nghiệm này, tôi đã tạo ra một tác nhân AI siêu nhỏ và mọi thứ khác khá giống nhau.
+
+4
+00:00:16,240 --> 00:00:23,520
+Vậy, thay vì đi trượt tuyết, có lẽ Joe muốn làm nghề làm ở bãi biển 5 ngày.
+
+5
+00:00:23,520 --> 00:00:29,680
+Và từ góc nhìn của đặc vụ AI, tôi chỉ giữ lại hai chức năng.
+
+6
+00:00:29,680 --> 00:00:36,480
+Một, đặc vụ có thể gọi cho hệ thống nhân sự để kiểm tra số dư của nhân viên.
+
+7
+00:00:36,480 --> 00:00:43,200
+Và thứ hai, nó có thể đặt phòng khách sạn dựa trên yêu cầu người dùng.
+
+8
+00:00:43,200 --> 00:00:47,200
+Tôi đã đơn giản hóa nó một chút để dễ hiểu hơn.
+
+9
+00:00:47,200 --> 00:00:50,640
+Bây giờ, hãy xem xét những câu hỏi mà chúng ta sẽ hỏi.
+
+10
+00:00:50,640 --> 00:00:52,160
+Vì vậy, chúng tôi sẽ hỏi hai câu hỏi.
+
+11
+00:00:52,160 --> 00:01:00,480
+Đầu tiên, đặt phòng khách sạn cho tôi là 2525 và nếu tôi được nghỉ hơn 5 ngày,
+
+12
+00:01:00,480 --> 00:01:05,840
+rồi đặt phòng khách sạn với chi tiết sau.
+
+13
+00:01:05,840 --> 00:01:10,240
+Bây giờ, với câu hỏi này, bạn có thể thấy đặc vụ phải làm 3 việc.
+
+14
+00:01:10,240 --> 00:01:16,640
+Đầu tiên, nó phải đến hệ thống nhân sự và lấy lại những ngày nghỉ cho nhân viên này.
+
+15
+00:01:17,600 --> 00:01:23,760
+Sau đó, nó phải đưa ra quyết định cho dù cân bằng trái là ít hơn hoặc hơn năm ngày.
+
+16
+00:01:23,760 --> 00:01:28,960
+Nếu đã hơn năm ngày, thì nó phải được gọi đến chỗ đặt phòng khách sạn.
+
+17
+00:01:28,960 --> 00:01:31,040
+và đặt phòng khách sạn.
+
+18
+00:01:31,040 --> 00:01:35,760
+Nhưng nếu cân bằng trái là ít hơn năm ngày, sau đó nó phải trở lại và nói với người dùng
+
+19
+00:01:35,760 --> 00:01:41,520
+rằng nó không thể tiếp tục và đặt chỗ cho khách sạn bởi vì số dư phép còn chưa tới 5 ngày.
+
+20
+00:01:41,520 --> 00:01:43,280
+Bây giờ, chúng ta hãy đi trước và chạy truy vấn này.
+
+21
+00:01:44,080 --> 00:01:47,920
+Bây giờ, tôi đang ở trong một đặc vụ AI siêu nhỏ đã được xây dựng.
+
+22
+00:01:47,920 --> 00:01:51,120
+Vì vậy, tôi có một UI ở đây và tôi chỉ cần đặt câu hỏi này.
+
+23
+00:01:51,120 --> 00:01:58,720
+Bây giờ, trước khi tôi thực hiện câu hỏi này, hãy nhìn vào bảng cân đối kế toán để lại cho tôi
+
+24
+00:01:58,720 --> 00:02:07,360
+Một chi tiết về số dư cho nhân viên này đến 5125, và số dư là 4 ngày.
+
+25
+00:02:07,360 --> 00:02:12,960
+Vì vậy, khi tôi chạy truy vấn này, tôi nên nhận được một phản hồi từ các đại lý nói rằng nó không thể đặt một
+
+26
+00:02:12,960 --> 00:02:17,120
+Phòng khách sạn vì số dư không quá 5.
+
+27
+00:02:17,120 --> 00:02:19,280
+Để tôi thử xem.
+
+28
+00:02:19,280 --> 00:02:25,280
+Vì vậy, bây giờ nó đã trở lại với phản ứng không may cho cân bằng nghỉ phép của bạn là bốn ngày,
+
+29
+00:02:25,280 --> 00:02:30,640
+mà không đủ để đặt phòng trong năm đêm như yêu cầu.
+
+30
+00:02:30,640 --> 00:02:32,240
+Điều này đúng.
+
+31
+00:02:32,240 --> 00:02:37,360
+Bây giờ, chúng ta hãy đi trước và hỏi một câu hỏi khác nơi tôi nói đặt phòng khách sạn
+
+32
+00:02:37,360 --> 00:02:40,960
+Đối với nhân viên này nếu số dư là hơn ba ngày.
+
+33
+00:02:40,960 --> 00:02:44,480
+Và đó là sự thật, chúng ta có 4 ngày để giữ cân bằng như chúng ta vừa thấy.
+
+34
+00:02:44,480 --> 00:02:48,560
+Vì vậy, hãy để tôi chỉ cần sao chép này và bây giờ để tôi đi trước và chạy truy vấn này.
+
+35
+00:02:48,560 --> 00:02:49,680
+Hãy để tôi chạy.
+
+36
+00:02:49,680 --> 00:02:57,600
+Bây giờ, tôi đã nhận được phản hồi từ kết thúc nhận dạng trong 5 EC.
+
+37
+00:02:57,600 --> 00:02:59,040
+Đây là thẻ căn cước của tôi.
+
+38
+00:02:59,040 --> 00:03:04,560
+Đi kiểm tra phòng đặt phòng khách sạn xem có lối vào không.
+
+39
+00:03:04,560 --> 00:03:12,080
+Hãy để tôi làm một bản cập nhật và tôi có một ID đặt phòng ở đây kết thúc trong 5 EC.
+
+40
+00:03:12,080 --> 00:03:18,720
+Và chúng tôi có Jane Doe và số 9 nói 3 và đây là những chi tiết chúng tôi đã cung cấp.
+
+41
+00:03:18,720 --> 00:03:24,480
+Bây giờ, chúng ta hãy xem xét các dấu vết và kế hoạch khả năng của các đại lý AI thông qua đó
+
+42
+00:03:24,480 --> 00:03:26,800
+nó đã đi đến kết luận này.
+
+43
+00:03:26,800 --> 00:03:30,080
+Để tôi nhấn vào dấu vết.
+
+44
+00:03:30,080 --> 00:03:35,920
+Chúng ta có 3 dấu vết ở đây bước 1, bước 2 và bước 3.
+
+45
+00:03:35,920 --> 00:03:38,160
+Vì vậy, đầu tiên tôi sẽ chỉ cần nhấp chuột vào dấu vết bước một.
+
+46
+00:03:38,160 --> 00:03:42,720
+Vì vậy, trong bước thứ nhất chúng tôi có mô hình đầu vào khẩn cấp.
+
+47
+00:03:42,720 --> 00:03:49,040
+Vì vậy, những gì là đầu vào mà sẽ đến các mô hình ngôn ngữ lớn mà đang điều khiển các đại lý AI.
+
+48
+00:03:49,040 --> 00:03:54,480
+Và đây là một số tham số cấu hình cho LM sau đó.
+
+49
+00:03:54,480 --> 00:03:59,840
+Vì vậy, tiếp theo bạn có thể xem văn bản ở đây mà xác định những gì là dấu nhắc đi đến
+
+50
+00:03:59,840 --> 00:04:02,480
+Mô hình ngôn ngữ lớn điều khiển đặc vụ AI.
+
+51
+00:04:02,480 --> 00:04:07,760
+Bây giờ, hãy nhớ rằng mô hình ngôn ngữ lớn không có bất kỳ bối cảnh hoặc bộ nhớ về loại tác nhân
+
+52
+00:04:07,760 --> 00:04:11,440
+Bạn là ai hay bạn có trách nhiệm quan trọng nào.
+
+53
+00:04:11,440 --> 00:04:14,080
+Vì vậy, đó là bối cảnh chúng tôi cung cấp đầu tiên.
+
+54
+00:04:14,080 --> 00:04:18,880
+Vì vậy, chúng tôi đang nói rằng bạn là một đặc vụ có thể kiểm tra cân bằng trái dựa trên nhân viên ID
+
+55
+00:04:18,880 --> 00:04:21,120
+và đặt phòng khách sạn.
+
+56
+00:04:21,120 --> 00:04:26,880
+Sau đó, nếu bạn cuộn xuống, chúng tôi cung cấp cho nó một số hướng dẫn xung quanh những gì là công cụ
+
+57
+00:04:26,880 --> 00:04:33,200
+và API gọi cho etcetera mà bạn có thể thực hiện và chúng tôi sẽ thảo luận điều này trong bài giảng tiếp theo.
+
+58
+00:04:33,200 --> 00:04:37,840
+Cuối cùng, về phía cuối chúng tôi chỉ cung cấp cho người dùng đầu vào.
+
+59
+00:04:37,840 --> 00:04:39,760
+Những gì chúng ta có ở đây.
+
+60
+00:04:39,760 --> 00:04:45,440
+Chúng ta đang nói đến việc đặt phòng khách sạn với thẻ nhân viên.
+
+61
+00:04:45,440 --> 00:04:48,640
+3 rồi đặt phòng khách sạn với những chi tiết này.
+
+62
+00:04:48,640 --> 00:04:55,520
+Và sau đó dựa trên đầu vào người dùng này, LLM đi ra với một đầu ra.
+
+63
+00:04:55,520 --> 00:04:56,880
+Và đầu ra trông như thế nào?
+
+64
+00:04:56,880 --> 00:04:58,720
+Đây là phản ứng thô.
+
+65
+00:04:58,720 --> 00:05:05,040
+Nó nói, được rồi, để tôi kiểm tra số dư của anh trước và sau đó tiến hành đặt phòng khách sạn.
+
+66
+00:05:05,040 --> 00:05:08,560
+Và sau đó bạn có thẻ suy nghĩ để kiểm tra số dư của nhân viên.
+
+67
+00:05:08,560 --> 00:05:14,800
+Tôi cần gọi cho nhân viên để lại chức năng cân bằng với thẻ nhân viên.
+
+68
+00:05:14,800 --> 00:05:22,880
+Và sau đó một lần nữa suy nghĩ thẻ, hãy để tôi gọi điều này ADI đặc biệt để lại cân bằng với tham số nhân viên ID
+
+69
+00:05:23,920 --> 00:05:29,440
+Và sau đó nó đi ra với một lý do nói, được rồi, để kiểm tra số dư của nhân viên
+
+70
+00:05:29,440 --> 00:05:32,800
+Tôi cần gọi cho nhân viên để lại chức năng cân bằng.
+
+71
+00:05:32,800 --> 00:05:37,120
+Và sau đó nó đi trước và làm cho đó là cuộc gọi AI.
+
+72
+00:05:37,120 --> 00:05:41,680
+Vì vậy, đường giao nhau để lại cân bằng và nó cung cấp tất cả các tham số.
+
+73
+00:05:41,680 --> 00:05:46,400
+Và sau đó nó nhận được một quan sát và chúng tôi đã thảo luận.
+
+74
+00:05:46,400 --> 00:05:52,560
+Quan sát nghĩa là đầu ra từ một thực thể bên ngoài thành một đặc vụ.
+
+75
+00:05:52,560 --> 00:05:56,080
+Và trong trường hợp này, nó là sự cân bằng về mặt trái.
+
+76
+00:05:56,080 --> 00:05:58,880
+Đây là bảng cân bằng trái phép DynamoDB.
+
+77
+00:05:58,880 --> 00:06:00,880
+Và giờ nó đã có phản ứng.
+
+78
+00:06:00,880 --> 00:06:06,880
+Vì vậy, nó có số dư là cho nhân viên ID và tên là Rahul Thrysel và vân vân.
+
+79
+00:06:06,880 --> 00:06:08,960
+Bây giờ, hãy xem xét bước hai.
+
+80
+00:06:08,960 --> 00:06:13,840
+Vì vậy, nó đã thành công trong việc thực hiện một bước mà nó có được sự cân bằng của trái.
+
+81
+00:06:13,840 --> 00:06:17,280
+Vì vậy, trong cân bằng trái một lần nữa, nó sẽ gửi các đầu ra.
+
+82
+00:06:17,280 --> 00:06:22,720
+Nó có một số dư để lại cho các mô hình ngôn ngữ lớn đó là lái xe các đại lý và bạn
+
+83
+00:06:22,720 --> 00:06:24,320
+có mô hình nhập dấu ngoặc kép.
+
+84
+00:06:24,320 --> 00:06:26,400
+Vì vậy, nó vẫn khá giống nhau.
+
+85
+00:06:26,400 --> 00:06:32,480
+Nhưng điều duy nhất đã được phụ thuộc vào thời gian này là thông tin trước đó nó nhận được
+
+86
+00:06:32,480 --> 00:06:37,360
+trên những gì đã là cân bằng trái cho 2 5 12 0 5 từ bước trước.
+
+87
+00:06:37,360 --> 00:06:39,360
+Vì vậy, nó nói rằng số dư của tôi là 4.
+
+88
+00:06:39,360 --> 00:06:44,560
+Và sau đó chúng tôi có các mô hình đầu ra dấu.
+
+89
+00:06:44,560 --> 00:06:48,160
+Vì vậy, đây là kết quả tôi nhận được từ mô hình ngôn ngữ lớn.
+
+90
+00:06:48,160 --> 00:06:54,560
+Vì vậy, nó nói rằng suy nghĩ thẻ, nhân viên có 4 ngày để lại cân bằng mà là nhiều hơn yêu cầu
+
+91
+00:06:54,560 --> 00:07:00,000
+3 ngày bởi vì trong câu hỏi chúng tôi đã nói nếu số dư của tôi là hơn 3 ngày,
+
+92
+00:07:00,000 --> 00:07:01,840
+thì chỉ đặt phòng khách sạn.
+
+93
+00:07:01,840 --> 00:07:07,760
+Vì vậy, bây giờ chúng ta có thể thấy làm thế nào nó là suy nghĩ và chúng tôi đã không cung cấp bất kỳ lý luận xác định trước.
+
+94
+00:07:07,760 --> 00:07:10,400
+Vì vậy, đây là logic mà nó đang tự áp dụng.
+
+95
+00:07:11,520 --> 00:07:16,240
+Vì vậy, đây là khả năng lý luận của LLM mà nó đang áp dụng ở đây.
+
+96
+00:07:16,240 --> 00:07:22,000
+Tôi có thể tiếp tục đặt phòng khách sạn với chi tiết trước.
+
+97
+00:07:22,000 --> 00:07:27,040
+Và đây là những chi tiết mà chúng tôi đã cung cấp trong ngày kiểm tra và vân vân.
+
+98
+00:07:27,040 --> 00:07:32,960
+Và sau đó nó cho thấy lý do nhân viên có 4 ngày nghỉ và nó khá giống nhau
+
+99
+00:07:32,960 --> 00:07:34,000
+Không có mấy cái thẻ đó.
+
+100
+00:07:34,000 --> 00:07:39,680
+Và sau đó nó đi trước và gọi cho khách sạn đặt chỗ.
+
+101
+00:07:39,680 --> 00:07:44,800
+Vì vậy, cắt phòng khách sạn sách và sau đó nó nói rằng bạn biết công cụ mà nó sẽ sử dụng.
+
+102
+00:07:44,800 --> 00:07:49,200
+Nó sẽ sử dụng hàm lambda trong trường hợp này và nó cung cấp tất cả các tham số
+
+103
+00:07:49,200 --> 00:07:52,800
+Ví dụ như đăng ký, số chuyến bay, phòng khách v.v...
+
+104
+00:07:52,800 --> 00:07:54,640
+Và sau đó nó nhận được một quan sát.
+
+105
+00:07:54,640 --> 00:07:56,720
+Vì vậy, bây giờ chúng ta hãy đi trước và xem xét các dấu vết 3.
+
+106
+00:07:56,720 --> 00:08:02,880
+Và trong dấu vết 3 một lần nữa nó sẽ gửi một yêu cầu đến các mô hình.
+
+107
+00:08:02,880 --> 00:08:07,360
+Vì vậy, ở đây bạn thấy các mô hình đầu vào cầu khẩn và đây là dấu nhắc.
+
+108
+00:08:07,360 --> 00:08:10,560
+Vì vậy, nó khá tương tự nếu tôi chỉ cần di chuyển xuống đến cuối.
+
+109
+00:08:10,560 --> 00:08:15,840
+Vì vậy, nó cung cấp sự cân bằng về trái mà nó đã cung cấp trong cuộc gọi trước đó.
+
+110
+00:08:15,840 --> 00:08:21,120
+Nhưng sau đó nó cung cấp một số thông tin thêm nói rằng các chủ nhân 4 ngày để lại cân bằng
+
+111
+00:08:21,120 --> 00:08:22,560
+Mà là nhiều hơn một khá 3.
+
+112
+00:08:22,560 --> 00:08:28,480
+Sau đó nó cung cấp một số chi tiết xung quanh đó CN nó cần phải gọi để đặt lịch khách sạn,
+
+113
+00:08:28,480 --> 00:08:31,360
+Tên của vị khách đó là gì?
+
+114
+00:08:31,360 --> 00:08:35,920
+Và sau đó bạn nhận được các mô hình trong kêu gọi đầu ra.
+
+115
+00:08:35,920 --> 00:08:41,600
+Và đây là phản ứng thô nói rằng đặt phòng khách sạn của anh đã được xác nhận,
+
+116
+00:08:41,600 --> 00:08:49,360
+Sau các chi tiết trong ngày tháng và cứ thế, nó cung cấp chứng minh thư xác nhận đặt phòng.
+
+117
+00:08:49,360 --> 00:08:54,720
+Và sau đó bạn có quan sát cuối cùng nơi nó nói đặt phòng khách sạn của bạn được xác nhận
+
+118
+00:08:54,720 --> 00:08:57,600
+Và đây là những gì chúng ta có ở đây.
+
+119
+00:08:57,600 --> 00:09:02,880
+Hi vọng giờ mọi thứ đã rõ ràng làm thế nào để giải quyết vấn đề thành nhiều bước.
+
+120
+00:09:02,880 --> 00:09:09,920
+Và sau đó thực hiện mỗi bước và sau đó nó cũng có thể lập lại nếu cần thiết.
+
+121
+00:09:09,920 --> 00:09:12,480
+Được rồi đó là hầu hết nó từ bài giảng này.
+
+122
+00:09:12,480 --> 00:09:13,440
+Hẹn gặp lại ở bài giảng tiếp theo.
+
+123
+00:09:13,440 --> 00:09:13,680
+Cảm ơn.
+
