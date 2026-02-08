@@ -1,0 +1,820 @@
+1
+00:00:00,000 --> 00:00:07,680
+ Alrighty, so now that we have our local development environment set up, in this video,
+
+2
+00:00:07,680 --> 00:00:13,080
+ we're going to be looking at the basics of using Visual Studio Code while setting up
+
+3
+00:00:13,080 --> 00:00:15,760
+ a template project.
+
+4
+00:00:15,760 --> 00:00:19,560
+ So a template project is a great way to get started.
+
+5
+00:00:19,560 --> 00:00:26,640
+ It allows us to link our style sheet and our script file, as well as some other resources
+
+6
+00:00:26,640 --> 00:00:32,680
+ like font awesome icons and a favicon, things that we're most likely to need on every
+
+7
+00:00:32,680 --> 00:00:39,280
+ single project, and it allows us to then copy that template and paste it and then rename
+
+8
+00:00:39,280 --> 00:00:45,200
+ it, and then we're not starting from scratch every time we want to start a new project.
+
+9
+00:00:45,200 --> 00:00:48,880
+ Okay, so let's get started.
+
+10
+00:00:48,880 --> 00:00:54,600
+ You can see on the desktop that I have a code folder here, so we're going to click on that,
+
+11
+00:00:54,600 --> 00:00:58,840
+ and you'll notice that there's already an icon in this folder.
+
+12
+00:00:58,840 --> 00:01:03,680
+ We'll get to that in a few minutes, but first I'm going to right click and I'm going
+
+13
+00:01:03,680 --> 00:01:10,760
+ to create a new folder and I'm going to call it dash dash space and then template.
+
+14
+00:01:10,760 --> 00:01:16,400
+ So the reason I am naming it with two dashes at the start is so that if we are sorting
+
+15
+00:01:16,400 --> 00:01:20,800
+ this folder alphabetically, it is always going to be at the top.
+
+16
+00:01:20,800 --> 00:01:27,200
+ Okay, so we can close this now and we're going to open visual studio code, so I'm going
+
+17
+00:01:27,200 --> 00:01:33,120
+ to use command space bar and I'm going to type visual and you see it pops up here.
+
+18
+00:01:33,120 --> 00:01:37,200
+ It's actually still in our downloads folder, which is fine and we're going to click on
+
+19
+00:01:37,200 --> 00:01:41,040
+ it to open it and I'll make it full page.
+
+20
+00:01:41,040 --> 00:01:46,760
+ Okay, so we're going to land on this welcome page here and you can see it has some suggestions
+
+21
+00:01:46,760 --> 00:01:52,320
+ on how to start and I'm going to go ahead and click open and you can see that.
+
+22
+00:01:52,320 --> 00:01:56,800
+ This is already inside my code folder and I'm going to go ahead and I'm going to click
+
+23
+00:01:56,800 --> 00:02:01,600
+ on the dash dash template folder and then I'm going to click open.
+
+24
+00:02:01,600 --> 00:02:07,720
+ Okay, so now we're in our template and yes, we're going to allow it to access files
+
+25
+00:02:07,720 --> 00:02:13,800
+ on our desktop and yes, I'm going to check this always trust the authors, yes, I trust
+
+26
+00:02:13,800 --> 00:02:17,200
+ the author because the author is me.
+
+27
+00:02:17,200 --> 00:02:22,200
+ Okay, and you can see right here on the explorer that we're in our dash dash template
+
+28
+00:02:22,200 --> 00:02:26,920
+ folder and the first thing we're going to do, we can actually close this, we're going
+
+29
+00:02:26,920 --> 00:02:29,560
+ to create a few files here.
+
+30
+00:02:29,560 --> 00:02:34,360
+ So we're going to click on this icon here, we see when we hover over it says new file,
+
+31
+00:02:34,360 --> 00:02:41,000
+ we're going to click on that and we're going to start by creating our index dot HTML
+
+32
+00:02:41,000 --> 00:02:43,560
+ and you'll see that it opens that file there.
+
+33
+00:02:43,560 --> 00:02:50,520
+ Then we're going to create a style dot CSS, so this is going to be our CSS file and then
+
+34
+00:02:50,520 --> 00:02:57,480
+ we're also going to create a script dot JS file and this is our JavaScript file.
+
+35
+00:02:57,480 --> 00:03:01,200
+ Okay, and you can see it has all three open here.
+
+36
+00:03:01,200 --> 00:03:05,680
+ Now we're going to start with our index HTML file.
+
+37
+00:03:05,680 --> 00:03:12,000
+ So the very first thing we're going to do is we're going to set the doc type as HTML,
+
+38
+00:03:12,000 --> 00:03:17,040
+ which is good practice to do, we're going to use our bracket and you see that it actually
+
+39
+00:03:17,040 --> 00:03:21,720
+ is the very first suggestion, so we're going to go ahead and click on that and it does the
+
+40
+00:03:21,720 --> 00:03:22,720
+ rest for us.
+
+41
+00:03:22,720 --> 00:03:24,360
+ Okay, very handy.
+
+42
+00:03:24,360 --> 00:03:29,000
+ So that's one great thing about Visual Studio Code is right out of the box, it has a lot
+
+43
+00:03:29,000 --> 00:03:37,120
+ of cool auto complete stuff for us, similar to what exists as well on Code pen.
+
+44
+00:03:37,120 --> 00:03:43,920
+ So now we're going to need to create our HTML element, our head element and our body element.
+
+45
+00:03:43,920 --> 00:03:49,800
+ But we have a handy shortcut for this, we're just going to type doc DOC and you can see
+
+46
+00:03:49,800 --> 00:03:55,040
+ it's an Emmett abbreviation and then we can go ahead and press enter and you'll see that
+
+47
+00:03:55,040 --> 00:04:01,160
+ it creates our HTML element, it sets our languages English, it creates our head and our
+
+48
+00:04:01,160 --> 00:04:08,240
+ body and our closing tags and it also creates a few meta tags as well as a title for our
+
+49
+00:04:08,240 --> 00:04:09,240
+ page.
+
+50
+00:04:09,240 --> 00:04:12,880
+ Awesome, so that gives us a nice little head start there.
+
+51
+00:04:12,880 --> 00:04:18,600
+ The next thing we're going to do is we need to actually link our CSS file and our JavaScript
+
+52
+00:04:18,600 --> 00:04:25,040
+ file to our HTML file in order for them to actually work.
+
+53
+00:04:25,040 --> 00:04:30,440
+ So to do this, we're going to start with our style sheet and below our title here, we're
+
+54
+00:04:30,440 --> 00:04:36,840
+ going to type out link and then we're going to go ahead and press tab and by default,
+
+55
+00:04:36,840 --> 00:04:43,840
+ it's going to add the attribute of rel as style sheet here and our href, we're just going
+
+56
+00:04:43,840 --> 00:04:48,960
+ to go ahead and start typing style and you'll see that it comes up here and I can just
+
+57
+00:04:48,960 --> 00:04:54,480
+ go ahead and click on it and it'll finish the rest for me and that is our style CSS, we're
+
+58
+00:04:54,480 --> 00:04:58,680
+ just writing it like this because it's actually within the same folder.
+
+59
+00:04:58,680 --> 00:05:03,160
+ If it was in a different folder, we would need to use slightly different syntax but in
+
+60
+00:05:03,160 --> 00:05:05,920
+ this case, it's in the same folder.
+
+61
+00:05:05,920 --> 00:05:11,280
+ Next, we're going to add a link to our JavaScript file, we're actually going to do this
+
+62
+00:05:11,280 --> 00:05:17,040
+ inside of our body and we're going to use comments first, so we're going to use command
+
+63
+00:05:17,040 --> 00:05:24,720
+ question mark and then we're going to just type script or control question mark on windows
+
+64
+00:05:24,720 --> 00:05:31,120
+ and then we're going to type script and you see again, has some abbreviations for us
+
+65
+00:05:31,120 --> 00:05:36,280
+ and we can go ahead and type this script source and it adds the source attribute for
+
+66
+00:05:36,280 --> 00:05:37,280
+ us.
+
+67
+00:05:37,280 --> 00:05:40,800
+ Same thing, we're going to type SC and you can see it pops up here and I can actually
+
+68
+00:05:40,800 --> 00:05:46,120
+ just press enter to add our script.js link, okay.
+
+69
+00:05:46,120 --> 00:05:50,840
+ So we've linked our style sheet as well as our script file.
+
+70
+00:05:50,840 --> 00:05:52,000
+ Awesome.
+
+71
+00:05:52,000 --> 00:05:55,920
+ So next, we're going to want to do a few other things.
+
+72
+00:05:55,920 --> 00:06:01,720
+ First, we're going to be adding font awesome icons to our project.
+
+73
+00:06:01,720 --> 00:06:06,560
+ This is something that is very useful because you'll normally use things like social media
+
+74
+00:06:06,560 --> 00:06:12,700
+ icons on your portfolio or if it's a website you're creating for a business, it's very
+
+75
+00:06:12,700 --> 00:06:18,320
+ handy to have font awesome icons in your project, okay.
+
+76
+00:06:18,320 --> 00:06:23,080
+ So we're going to jump over to the browser to take a look at this.
+
+77
+00:06:23,080 --> 00:06:25,880
+ So again, I'm going to provide a link for this exact page.
+
+78
+00:06:25,880 --> 00:06:29,600
+ So this is going to be using font awesome version five.
+
+79
+00:06:29,600 --> 00:06:36,840
+ They are currently on version six, but I prefer using version five because it requires just
+
+80
+00:06:36,840 --> 00:06:44,240
+ a style sheet to work whereas the newer ones require a JS file and need to sign up for that.
+
+81
+00:06:44,240 --> 00:06:50,120
+ So to me, this implementation is a little bit simpler and you can see that if we scroll
+
+82
+00:06:50,120 --> 00:06:56,440
+ down here, I've also filtered on free and there's over 1500 free icons that you're
+
+83
+00:06:56,440 --> 00:07:02,800
+ able to use, have a lot of different examples here and it's perfect for social media icons.
+
+84
+00:07:02,800 --> 00:07:09,120
+ So for example, I have a GitHub icon here, okay, so we'll come back to this in a moment
+
+85
+00:07:09,120 --> 00:07:15,040
+ to access this with just the style sheet that is hosted externally.
+
+86
+00:07:15,040 --> 00:07:17,320
+ We're going to go to another website.
+
+87
+00:07:17,320 --> 00:07:21,600
+ This is a content delivery network, JS website.
+
+88
+00:07:21,600 --> 00:07:26,400
+ So that's what CDN stands for content delivery network and we're going to go ahead and
+
+89
+00:07:26,400 --> 00:07:33,000
+ click on, or we're going to actually copy this link here so you can use command C to copy
+
+90
+00:07:33,000 --> 00:07:34,000
+ this.
+
+91
+00:07:34,000 --> 00:07:40,160
+ Again, I will provide a link to this in the course as well.
+
+92
+00:07:40,160 --> 00:07:44,640
+ And we're going to jump back over to Visual Studio Code and we're going to add this style sheet
+
+93
+00:07:44,640 --> 00:07:51,320
+ actually above our style.css and we're going to do the same thing link, press tab, it's
+
+94
+00:07:51,320 --> 00:07:58,360
+ the style sheet again and we're going to do command V to paste it in here.
+
+95
+00:07:58,360 --> 00:08:03,720
+ You can see now that this is a bit long and it's actually stretched out our page here.
+
+96
+00:08:03,720 --> 00:08:12,160
+ So we can actually fix that by using alt and Z and that is going to word wrap.
+
+97
+00:08:12,160 --> 00:08:16,240
+ So you can see here that line seven and then we have a gap here.
+
+98
+00:08:16,240 --> 00:08:20,720
+ So it's technically one line, but now we can actually see the full line it actually is
+
+99
+00:08:20,720 --> 00:08:25,200
+ wrapping to the next line so that everything is visible.
+
+100
+00:08:25,200 --> 00:08:30,880
+ This is very helpful, especially when you have a paragraph that has a lot of text in it
+
+101
+00:08:30,880 --> 00:08:34,440
+ and then you'll be able to actually see the whole paragraph.
+
+102
+00:08:34,440 --> 00:08:41,400
+ Okay, so we're going to go back to our browser and actually before we do that we're going
+
+103
+00:08:41,400 --> 00:08:49,240
+ to go to our desktop and we're actually going to open up our code folder and we're going
+
+104
+00:08:49,240 --> 00:08:53,400
+ to open up our template folder and you can see that we actually have the three files
+
+105
+00:08:53,400 --> 00:08:57,320
+ here that we created and we're going to go ahead and we're actually going to open our
+
+106
+00:08:57,320 --> 00:09:02,880
+ index HTML file so that we can actually see the project that we're working on and you
+
+107
+00:09:02,880 --> 00:09:09,160
+ can see that it has the document title here but right now we're not actually seeing anything.
+
+108
+00:09:09,160 --> 00:09:13,960
+ So the reason I wanted to open this is because we want a test to make sure that our font
+
+109
+00:09:13,960 --> 00:09:19,440
+ awesome style sheet is working and to do that we're going to need to use an icon, try
+
+110
+00:09:19,440 --> 00:09:25,680
+ to use an icon and we're going to go with the GitHub icon and if we scroll down and we
+
+111
+00:09:25,680 --> 00:09:30,520
+ click you see that it's going to copy that code snippet and then we're going to go back
+
+112
+00:09:30,520 --> 00:09:35,480
+ to Visual Studio code and we're going to go ahead and we're just going to paste it in the
+
+113
+00:09:35,480 --> 00:09:36,880
+ body here.
+
+114
+00:09:36,880 --> 00:09:43,560
+ You can see that this is saving by default and that is actually because I have auto save
+
+115
+00:09:43,560 --> 00:09:50,200
+ enabled so this is an enabled by default but I have it enabled so every time I make a change
+
+116
+00:09:50,200 --> 00:09:55,200
+ it is automatically saving all of my files which is very handy.
+
+117
+00:09:55,200 --> 00:10:00,880
+ Okay, so we're going to go back to Edge and we're going to go to our project and if I refresh
+
+118
+00:10:00,880 --> 00:10:07,360
+ this you can see we have a very very small GitHub icon that's because we haven't added
+
+119
+00:10:07,360 --> 00:10:13,360
+ any styling to it but if I zoom in on the page you can see that yeah we have a GitHub
+
+120
+00:10:13,360 --> 00:10:21,500
+ icon here okay perfect so that means our fun awesome style sheet is working next we're
+
+121
+00:10:21,500 --> 00:10:28,120
+ going to look at favicons so what is a favicon so if you don't know what that is it is
+
+122
+00:10:28,120 --> 00:10:32,840
+ actually this little icon that you're seeing on the tab here so you see there's one
+
+123
+00:10:32,840 --> 00:10:38,600
+ for CSS tricks there's one for our CDN there's one for fun awesome but if you look at
+
+124
+00:10:38,600 --> 00:10:45,200
+ our project it just has this blank page here so in my opinion a favicon is always an
+
+125
+00:10:45,200 --> 00:10:50,680
+ important thing to add to her project as I do think it makes it look a lot more professional
+
+126
+00:10:50,680 --> 00:10:57,240
+ than if you just leave it blank so that's why I'm talking about it so early on so there's
+
+127
+00:10:57,240 --> 00:11:05,560
+ this great article here on CSS tricks dot com and it allows you to actually use an external
+
+128
+00:11:05,560 --> 00:11:11,680
+ link for a favicon so you don't even actually need to have a file so as a fair warning
+
+129
+00:11:11,680 --> 00:11:17,040
+ this might not work in the future it is using a feature of Google so essentially Google
+
+130
+00:11:17,040 --> 00:11:23,240
+ is indexing all of these favicons and this is what is allowing us to use them but it
+
+131
+00:11:23,240 --> 00:11:28,280
+ might not always work though it is working for now we're going to go ahead and we're
+
+132
+00:11:28,280 --> 00:11:36,200
+ going to copy this link here and we're going to go back to our code and we're going
+
+133
+00:11:36,200 --> 00:11:42,680
+ to go above this style sheet here I can actually also close this explore to have a little
+
+134
+00:11:42,680 --> 00:11:47,440
+ bit more space by just clicking on the icon there and I'm going to comment a title for
+
+135
+00:11:47,440 --> 00:11:59,120
+ this and this is going to be grab favicon from Google and I'm also going to add a little
+
+136
+00:11:59,120 --> 00:12:10,120
+ bit of a warning might be unsupported in the future okay and we're going to go ahead and
+
+137
+00:12:10,120 --> 00:12:14,840
+ we're going to add a link again so link and then we're going to press tab this time
+
+138
+00:12:14,840 --> 00:12:19,920
+ though it's actually not going to be a style sheet it's going to be an icon and we're
+
+139
+00:12:19,920 --> 00:12:25,640
+ also going to add a type to specify the type of icon it is and that's going to be equal
+
+140
+00:12:25,640 --> 00:12:31,480
+ to image slash PNG and then for a trap we're going to go ahead and paste that in there
+
+141
+00:12:31,480 --> 00:12:37,440
+ but instead of using CSS dash tricks I'm going to actually use my own website you can
+
+142
+00:12:37,440 --> 00:12:43,240
+ use any domain you like you could use code pen.io or whatever you like but I'm going
+
+143
+00:12:43,240 --> 00:12:51,180
+ to use my own website justinto.design okay and I'm going to actually pick a comment
+
+144
+00:12:51,180 --> 00:12:59,400
+ for this while I'm at it for an awesome version 5 okay and this is already saved automatically
+
+145
+00:12:59,400 --> 00:13:03,480
+ again that's one of the great features of Visual Studio code and we're going to go back
+
+146
+00:13:03,480 --> 00:13:09,680
+ to our browser and I'm going to go ahead and refresh the page and you can see that
+
+147
+00:13:09,680 --> 00:13:17,400
+ we have our icon here it's a little J that is my favicon okay cool so that is working
+
+148
+00:13:17,400 --> 00:13:23,000
+ so that's one way you can add a favicon to your template and what we're going to do
+
+149
+00:13:23,000 --> 00:13:29,680
+ though is actually add a file the file that you saw in the very beginning of this video
+
+150
+00:13:29,680 --> 00:13:35,320
+ so we're actually going to comment this out so that is one way to do it just by having
+
+151
+00:13:35,320 --> 00:13:41,800
+ this link and then grabbing a favicon but the other way is to just link to a local file
+
+152
+00:13:41,800 --> 00:13:46,800
+ and so that's what we're going to do here and we're going to comment out a title for
+
+153
+00:13:46,800 --> 00:13:55,000
+ this so this is going to be our zero to mastery favicon and we're going to have another
+
+154
+00:13:55,000 --> 00:14:06,620
+ link and again not a style sheet it's going to be an icon and again our type is going
+
+155
+00:14:06,620 --> 00:14:20,360
+ to be equal to image/png and then our ref so we actually have to copy this into our template
+
+156
+00:14:20,360 --> 00:14:27,720
+ folder so now it's inside of our folder and now we're going to have just type FA press
+
+157
+00:14:27,720 --> 00:14:32,240
+ enter and it does the rest for us and we're also going to change this title while we're
+
+158
+00:14:32,240 --> 00:14:40,960
+ added this title is going to be template okay and we're going to go back to our browser
+
+159
+00:14:40,960 --> 00:14:46,720
+ and we're going to refresh and you see we have our zero to mastery icon there okay
+
+160
+00:14:46,720 --> 00:14:52,120
+ very cool now there's a few more little things we're going to do here we're going to
+
+161
+00:14:52,120 --> 00:14:58,320
+ remove our font awesome we're going to talk about that more in the future but we're actually
+
+162
+00:14:58,320 --> 00:15:02,520
+ going to add some default styling so we're going to have a very small amount of default
+
+163
+00:15:02,520 --> 00:15:10,160
+ styling so we're going to target our HTML element so that's another way of targeting everything
+
+164
+00:15:10,160 --> 00:15:16,240
+ and we're going to use the box sizing and you can see it actually offers some suggestions
+
+165
+00:15:16,240 --> 00:15:20,160
+ again this is very handy and we actually want the first one border box so we're going
+
+166
+00:15:20,160 --> 00:15:29,320
+ to do that press enter and what this does is when you add padding or margin or a border
+
+167
+00:15:29,320 --> 00:15:35,360
+ to an element that has a width it actually adds the padding margin border on top of that
+
+168
+00:15:35,360 --> 00:15:39,760
+ and actually doubles it because usually you have it on both the left and the right or the
+
+169
+00:15:39,760 --> 00:15:43,880
+ top and the bottom so it's actually going to double whatever those values are add them
+
+170
+00:15:43,880 --> 00:15:51,880
+ all together and what this does is it essentially bypasses that in a way because it will
+
+171
+00:15:51,880 --> 00:15:59,880
+ actually decrease the total width of your element so let's say that your element was 100 pixels
+
+172
+00:15:59,880 --> 00:16:06,880
+ wide and you had a 10 pixel padding and a 10 pixel margin so it's going to add the left
+
+173
+00:16:06,880 --> 00:16:13,160
+ and right padding and then the left and right margin so 10 times 2 is 20 and then again
+
+174
+00:16:13,160 --> 00:16:20,040
+ is 20 because they're equal so that would be 140 would become your width instead of 100
+
+175
+00:16:20,040 --> 00:16:25,280
+ so when you have box sizing border box your width will actually stay at 100 and it will
+
+176
+00:16:25,280 --> 00:16:30,920
+ actually shrink the content of your element to compensate the good thing about this is
+
+177
+00:16:30,920 --> 00:16:35,880
+ that it actually prevents the horizontal scroll bar that you might have at the bottom
+
+178
+00:16:35,880 --> 00:16:41,200
+ of your page that to me doesn't look good it's nice to just have that nice vertical
+
+179
+00:16:41,200 --> 00:16:49,640
+ scroll bar okay and the next thing we're going to do is on our body element we're going
+
+180
+00:16:49,640 --> 00:16:56,640
+ to remove the margin that is on our body by default we're going to set it to zero on all
+
+181
+00:16:56,640 --> 00:17:02,920
+ four sides we're going to add margin when we need to on specific elements rather than
+
+182
+00:17:02,920 --> 00:17:08,640
+ having margin by default and then the last thing we're going to do is we're going to
+
+183
+00:17:08,640 --> 00:17:16,080
+ add a min height value of 100 VH V4 height so we want the minimum height of our project
+
+184
+00:17:16,080 --> 00:17:22,900
+ to always be the size of our browser window at minimum so I'm going to illustrate this
+
+185
+00:17:22,900 --> 00:17:27,560
+ by adding a background dash color and we're going to make it dodger blue you see it
+
+186
+00:17:27,560 --> 00:17:33,560
+ even as suggestions for named colors which is great and we're going to go back to our
+
+187
+00:17:33,560 --> 00:17:40,360
+ browser and I'm going to refresh and you see that everything is blue we have no vertical
+
+188
+00:17:40,360 --> 00:17:45,720
+ scroll bar and we have no horizontal scroll bar but it is taking up 100% of the height
+
+189
+00:17:45,720 --> 00:17:55,200
+ of the page with our VH 100 VH okay cool so that's basically it for our template we're
+
+190
+00:17:55,200 --> 00:18:01,160
+ going to go ahead and remove the background color want it to be as plain as possible but
+
+191
+00:18:01,160 --> 00:18:06,960
+ this is going to be a great starting point for our future projects one of the very quick
+
+192
+00:18:06,960 --> 00:18:11,600
+ thing I'm going to show you that is very useful that I use all the time is if you see
+
+193
+00:18:11,600 --> 00:18:18,240
+ here there's an icon that allows me to split the editor so when I click on that you can
+
+194
+00:18:18,240 --> 00:18:25,840
+ see that now I have two styles CSS files and this is very handy when you're doing mobile
+
+195
+00:18:25,840 --> 00:18:31,080
+ responsive styling so your media queries and your style sheet might actually be very long
+
+196
+00:18:31,080 --> 00:18:36,280
+ it might be several hundred lines long and you can have one side at the very bottom doing
+
+197
+00:18:36,280 --> 00:18:41,280
+ your media queries and you can have the other side up above that's looking at your
+
+198
+00:18:41,280 --> 00:18:46,400
+ main styling and seeing how you're going to need to alter that or you could also just
+
+199
+00:18:46,400 --> 00:18:52,480
+ have your HTML file along with your CSS file usually I would drag this so my CSS file is
+
+200
+00:18:52,480 --> 00:18:57,080
+ a little bit smaller but you can see that also because we're word wrapping we're still
+
+201
+00:18:57,080 --> 00:19:02,120
+ able to actually see everything in our HTML file including these longer links you can
+
+202
+00:19:02,120 --> 00:19:10,320
+ see that we have devil lines here okay so those are the very basics of visual studio
+
+203
+00:19:10,320 --> 00:19:16,400
+ code in the next one we're going to dive in to actually installing some extensions for
+
+204
+00:19:16,400 --> 00:19:23,720
+ visual studio code which is going to supercharge our productivity even further all right
+
+205
+00:19:23,720 --> 00:19:25,840
+ I'll see you in that one bye for now
+
