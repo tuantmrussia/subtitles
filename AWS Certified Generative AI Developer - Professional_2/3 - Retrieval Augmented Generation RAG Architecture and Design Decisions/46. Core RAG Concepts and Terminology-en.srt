@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,680
+ In this section I'm going to give you a basic introduction of vectors, embeddings, vector database
+
+2
+00:00:05,680 --> 00:00:12,320
+ and search. So why do we need vectors? So now let's say I go to a shopping mall and I purchase
+
+3
+00:00:12,320 --> 00:00:18,000
+ some books and Apple. Now I have to know what is the price of these books. So it's a simple
+
+4
+00:00:18,000 --> 00:00:24,160
+ problem to solve. I can build an application and then have a relational database like my SQL,
+
+5
+00:00:24,160 --> 00:00:29,600
+ where I store the price of these books and Apple and then I just square it and I get the
+
+6
+00:00:29,600 --> 00:00:36,240
+ results. But now let's assume that I was watching Instagram and I really like this watch
+
+7
+00:00:36,240 --> 00:00:43,280
+ but I want it in the blue color. So how do I do the image search to find the right watch?
+
+8
+00:00:43,280 --> 00:00:50,960
+ Now another scenario is let's say I build an e-learning app for my organization and I have a PDF
+
+9
+00:00:50,960 --> 00:00:56,560
+ in the backend which talks about the best practices of building a rag-based application.
+
+10
+00:00:57,520 --> 00:01:03,600
+ Now let's say my learner poses a question which is the most cost effective vector database
+
+11
+00:01:03,600 --> 00:01:10,000
+ in Amazon, bedrock. Now how does my generative application actually
+
+12
+00:01:10,000 --> 00:01:15,760
+ search this PDF to answer that question? It cannot do a keyword search but it has to do
+
+13
+00:01:15,760 --> 00:01:21,200
+ semantic search. So what semantic search means that it will try and understand the user question
+
+14
+00:01:21,200 --> 00:01:26,080
+ and then generate an answer. So to solve these kind of problems, image search,
+
+15
+00:01:26,080 --> 00:01:30,960
+ searching the unstructured data we use vectors. Now let's try and understand how.
+
+16
+00:01:30,960 --> 00:01:37,520
+ So the first thing is what are vectors? So vectors are mathematical representation of words,
+
+17
+00:01:37,520 --> 00:01:44,720
+ sentences and documents. So vectors are represented by list of numbers or sequence of numbers.
+
+18
+00:01:44,720 --> 00:01:50,800
+ Okay so this is a lot of words let's try and understand what it means. Now if I want to
+
+19
+00:01:50,800 --> 00:01:56,400
+ represent this word apple in vector terms, so what I can say is I can have two attributes,
+
+20
+00:01:56,400 --> 00:02:02,000
+ I can say is it a fruit if it's yes then I say one and what is the cost of this apple four dollars.
+
+21
+00:02:02,000 --> 00:02:09,200
+ Now I can represent the word apple as one comma four from these two values and then I can plot it
+
+22
+00:02:09,200 --> 00:02:15,280
+ on a two dimensional graph. So I say on the way axis is it a fruit one so it's here
+
+23
+00:02:16,080 --> 00:02:22,560
+ then on the x dimension I have cost it's four so this is how I can represent word apple on a
+
+24
+00:02:22,560 --> 00:02:28,720
+ two dimensional chart. Then maybe I have word banana so I can say is it a fruit yes one and then
+
+25
+00:02:28,720 --> 00:02:34,800
+ cost is two dollars. So I represent it in the vector form as one comma two and then if I plot it
+
+26
+00:02:34,800 --> 00:02:40,400
+ on the chart so two and so it's a fruit so it's here and then two dollars so it's here.
+
+27
+00:02:41,280 --> 00:02:47,040
+ So now what we have done is we have created the vector representation of these words in two
+
+28
+00:02:47,040 --> 00:02:55,520
+ dimensions but in the real world you actually create this representation in 512 to 1024
+
+29
+00:02:55,520 --> 00:03:02,160
+ dimension. So basically here we just have two dimension but in real world we can have 512
+
+30
+00:03:02,160 --> 00:03:09,520
+ seconds of numbers to represent maybe a word sentence or even a document. Okay now to continue
+
+31
+00:03:09,520 --> 00:03:16,880
+ on the previous use case where our user has posed a question and we have the user guide of bedrock
+
+32
+00:03:16,880 --> 00:03:25,040
+ which is let's say 500 pages. So we can represent that as one vector as well but that's not
+
+33
+00:03:25,040 --> 00:03:29,840
+ going to give us great results. So in most scenarios what you're going to do is you're going to
+
+34
+00:03:29,840 --> 00:03:36,640
+ split that data or sometimes called as data chunking and you can do that based on character token
+
+35
+00:03:36,640 --> 00:03:41,920
+ or code. So let's try and assume that we are going to do it by character. So what you're going to do
+
+36
+00:03:41,920 --> 00:03:49,120
+ is so for a 500 page document you're going to break it into one page each and then one page each
+
+37
+00:03:49,120 --> 00:03:54,160
+ you're going to break into paragraphs and then you're going to break it into characters. So maybe
+
+38
+00:03:54,160 --> 00:04:00,560
+ 120 characters or 200 characters. So how do you do that? So there are a lot of open source frameworks
+
+39
+00:04:00,560 --> 00:04:07,280
+ like line chain which provides libraries to do this split. So once you do the split you pass it
+
+40
+00:04:07,280 --> 00:04:11,520
+ through an embedding model. So now what is an embedding model? We'll discuss that.
+
+41
+00:04:11,520 --> 00:04:20,560
+ Now let's say you split the document into 120 characters each then you will pass it through embedding
+
+42
+00:04:20,560 --> 00:04:25,520
+ model. So there are a lot of different embedding models available in Amazon bedrock. So you have from
+
+43
+00:04:25,520 --> 00:04:32,400
+ Amazon Titan, you have from Kohir and so on. So once you pass these 120 characters that you have
+
+44
+00:04:32,400 --> 00:04:39,600
+ split through an embedding model you will create something known as vector embeddings. And as I said
+
+45
+00:04:39,600 --> 00:04:47,040
+ they are between 512 to 1024 dimensions and here you can see an example you had passed maybe
+
+46
+00:04:47,040 --> 00:04:53,600
+ just a single word, great or you can also pass a sentence, what is the price of an apple,
+
+47
+00:04:53,600 --> 00:04:59,280
+ maybe entire document. So once you pass it through the embedding model so you'll get a vector embedding
+
+48
+00:04:59,280 --> 00:05:05,760
+ and it will be of 1024 dimensions. Next we have the vector store. So now let's say you are split
+
+49
+00:05:05,760 --> 00:05:11,120
+ the document into multiple chunks you passed it through a embedding model and then now you have
+
+50
+00:05:11,120 --> 00:05:18,560
+ different vector embeddings here of 1024 dimensions each. Now you have to store all of these
+
+51
+00:05:18,560 --> 00:05:23,920
+ vector embeddings somewhere and that's where vector store comes into play. So AWS provides multiple
+
+52
+00:05:23,920 --> 00:05:29,680
+ options on the vector store or vector DB such as AWS open search pine cone and so on and we're going
+
+53
+00:05:29,680 --> 00:05:36,480
+ to discuss those later. Okay now once you have stored all these vector embeddings so what's the use
+
+54
+00:05:36,480 --> 00:05:43,040
+ now let's see. So now let's say we have this pine cone vector DB and now we have passed the entire
+
+55
+00:05:43,040 --> 00:05:49,040
+ document after splitting into 120 characters each. So maybe we have hundreds and thousands of
+
+56
+00:05:49,040 --> 00:05:55,200
+ vector embeddings and now they have been stored here. Now what's going to happen is the end user
+
+57
+00:05:55,200 --> 00:06:01,360
+ is going to pose a question. Let's say he poses which vector DB is most cost effective in AWS.
+
+58
+00:06:01,360 --> 00:06:09,040
+ Now what my large language model needs to do is it needs to go ahead and the right vector embedding
+
+59
+00:06:09,040 --> 00:06:15,600
+ that is stored in this vector DB which will have the contextual answer because remember we're split
+
+60
+00:06:15,600 --> 00:06:22,640
+ the document into pages, Paris and then two or three lines based on where 120 characters would
+
+61
+00:06:22,640 --> 00:06:28,400
+ and then all of them are scattered here. So it's going to search for the relevant chunk which
+
+62
+00:06:28,400 --> 00:06:33,920
+ can answer this question. So how does it do that? So once we have the user question so it's going
+
+63
+00:06:33,920 --> 00:06:39,680
+ to pass that through the embedding model and in this case we're just using Amazon Titan embedding
+
+64
+00:06:39,680 --> 00:06:45,680
+ model. So once it passes through the embedding model it's going to create a vector embedding and
+
+65
+00:06:45,680 --> 00:06:51,680
+ then it's going to do something known as similarity search. So basically it will check for a very
+
+66
+00:06:51,680 --> 00:06:58,080
+ similar vector embedding that can answer the user question. So once it does the similarity search
+
+67
+00:06:58,080 --> 00:07:04,880
+ it's going to retrieve anywhere between 5 to 20 chunks based on how you are connected to the solution
+
+68
+00:07:04,880 --> 00:07:10,480
+ and then it's going to return those chunks to the large language model which will then
+
+69
+00:07:10,480 --> 00:07:16,880
+ generate an answer for the user question. Now how does the similarity search happen? So similarity
+
+70
+00:07:16,880 --> 00:07:23,680
+ search is done through two algorithms sometimes known as K nearest neighbor algorithm or approximate
+
+71
+00:07:23,680 --> 00:07:31,440
+ nearest neighbor. So KNN or K nearest neighbor algorithm is a supervised machine learning algorithm
+
+72
+00:07:31,440 --> 00:07:36,480
+ that can be used for classification and regression tasks. So if you're interested in knowing
+
+73
+00:07:36,480 --> 00:07:42,480
+ more about KNN or ANN let me know send me an email and I can add one lecture towards the end
+
+74
+00:07:42,480 --> 00:07:49,040
+ of this course. Now you don't need to get into details of how the KNN or ANN algorithm works
+
+75
+00:07:49,040 --> 00:07:54,080
+ because it is done behind the scenes by AWS but if you are still interested send me an email
+
+76
+00:07:54,080 --> 00:08:00,480
+ I will add one lecture which explain how the similarity search works at the end of the course.
+
+77
+00:08:00,480 --> 00:08:04,800
+ Okay so that's pretty much it from this lecture I will send the next lecture. Thank you.
+
