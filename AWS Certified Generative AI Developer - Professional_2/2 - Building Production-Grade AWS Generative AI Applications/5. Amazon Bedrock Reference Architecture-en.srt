@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:03,760
+ In this lecture, we want to learn about Amazon Bedrock Architecture.
+
+2
+00:00:03,760 --> 00:00:07,120
+ So, if you build any application on AWS,
+
+3
+00:00:07,120 --> 00:00:11,360
+ you know there are two ways in which you can provision AWS services.
+
+4
+00:00:11,360 --> 00:00:14,680
+ One way is within your AWS account, within your VPC,
+
+5
+00:00:14,680 --> 00:00:18,640
+ you can provision services like EC2 RDS.
+
+6
+00:00:18,640 --> 00:00:24,960
+ And then there is another approach where services like AWS Lambda function, API Gateway,
+
+7
+00:00:24,960 --> 00:00:30,880
+ which are deployed in AWS service account within AWS VPC.
+
+8
+00:00:30,880 --> 00:00:33,840
+ And Amazon Bedrock falls in the second category.
+
+9
+00:00:33,840 --> 00:00:42,320
+ So, if you see here, Amazon Bedrock is deployed in the AWS Bedrock Service account.
+
+10
+00:00:42,320 --> 00:00:44,560
+ So, that's the first thing to note.
+
+11
+00:00:44,560 --> 00:00:51,520
+ Then we have the second AWS account where we have the model provider escrow account.
+
+12
+00:00:51,520 --> 00:00:54,640
+ And this is AWS owned and operated.
+
+13
+00:00:54,640 --> 00:00:58,960
+ So, this is where models from different service providers are hosted.
+
+14
+00:00:58,960 --> 00:01:04,400
+ So, let's say we have another topic model and the artifacts of those base model
+
+15
+00:01:04,400 --> 00:01:06,400
+ are going to be deployed in S3 bucket.
+
+16
+00:01:06,400 --> 00:01:10,240
+ And then we have the runtime environment here, which is going to do the inferencing.
+
+17
+00:01:10,240 --> 00:01:13,920
+ Now, let's go ahead and see how the requests are processed.
+
+18
+00:01:13,920 --> 00:01:19,680
+ Earlier we discussed there are three ways in which you can make a request to the AWS Bedrock
+
+19
+00:01:19,680 --> 00:01:24,640
+ Service. One is through the SDK. So, maybe you're using AWS Lambda and if you're using Python,
+
+20
+00:01:24,640 --> 00:01:27,040
+ probably you'll use boot of three SDK.
+
+21
+00:01:27,040 --> 00:01:30,720
+ Then through the browser, if you want to access it through the console,
+
+22
+00:01:30,720 --> 00:01:34,080
+ then you can use the browser and then AWS CLI.
+
+23
+00:01:34,080 --> 00:01:38,480
+ Now, let's say you have made an API request with the user input.
+
+24
+00:01:38,480 --> 00:01:41,920
+ That request is going to go to this AWS Bedrock Service,
+
+25
+00:01:41,920 --> 00:01:44,640
+ which will be within AWS Bedrock Service account.
+
+26
+00:01:44,640 --> 00:01:48,480
+ And then it will be routed to this runtime inference.
+
+27
+00:01:48,480 --> 00:01:54,240
+ And what this runtime inference does is it is used to redirect to the right model endpoint
+
+28
+00:01:54,240 --> 00:01:59,360
+ based on the API request. So, within the API request, we discussed earlier here,
+
+29
+00:01:59,360 --> 00:02:03,120
+ when we were looking at the API structure, we said we're going to provide the model ID,
+
+30
+00:02:03,120 --> 00:02:08,000
+ like here we have an anthropic cloud. So, this runtime inference is going to interpret
+
+31
+00:02:08,000 --> 00:02:15,120
+ the model ID and then it's going to route it to the right model product account where
+
+32
+00:02:16,000 --> 00:02:19,200
+ inferencing for that particular model would be done.
+
+33
+00:02:19,200 --> 00:02:27,120
+ So, now, if you're just accessing it from the console, then sometimes it can also store your prompt
+
+34
+00:02:27,120 --> 00:02:33,040
+ history. But nothing would be stored in this AWS Bedrock Service, if the requests are coming from
+
+35
+00:02:33,040 --> 00:02:39,600
+ AWS Lambda, which means the SDK or CLI. So, the reason why AWS has such an architecture
+
+36
+00:02:39,600 --> 00:02:45,200
+ for Amazon Bedrock Service is because a lot of customers are worried that they're sending
+
+37
+00:02:45,200 --> 00:02:51,280
+ their prompt and getting output from these models, which are posted in AWS. So,
+
+38
+00:02:51,280 --> 00:02:56,960
+ there could be scenarios where the model provider might train his model on the customer data.
+
+39
+00:02:56,960 --> 00:03:04,000
+ So, that's why this is hosted on and operated by AWS account so that model providers
+
+40
+00:03:04,000 --> 00:03:11,120
+ do not train their models using customer data. So, last thing from the security perspective,
+
+41
+00:03:11,120 --> 00:03:15,920
+ there are two ways in which you can send APA request to this Amazon Bedrock Service.
+
+42
+00:03:15,920 --> 00:03:21,920
+ One is over the internet and the second one is through the VPC interface endpoints. So,
+
+43
+00:03:21,920 --> 00:03:28,240
+ we know that when we send the request our VPC interface endpoints, they are routed privately
+
+44
+00:03:28,240 --> 00:03:35,120
+ where the AWS AWS private network called us private link. Now, most enterprise customers prefer
+
+45
+00:03:35,120 --> 00:03:40,960
+ routing the data over the VPC interface endpoints compared to the internet and the reason is
+
+46
+00:03:40,960 --> 00:03:46,880
+ obviously there is less latency when you send the data or the private link and the second is
+
+47
+00:03:46,880 --> 00:03:52,880
+ it is more secure. So, among the AWS account and if you can quickly show you the VPC interface
+
+48
+00:03:52,880 --> 00:04:01,520
+ endpoints. So, let me just search for VPC and I have the VPC here. Now, if I just scroll down
+
+49
+00:04:01,520 --> 00:04:06,480
+ and you can see here endpoints, I will click on the endpoints, just click on create endpoints
+
+50
+00:04:06,480 --> 00:04:11,200
+ and if I just say select AWS service here and if I just search for Bedrock,
+
+51
+00:04:11,200 --> 00:04:18,400
+ and you're showing all the endpoints that you can use to route the data or the private link through
+
+52
+00:04:18,400 --> 00:04:24,240
+ the VPC interface endpoints. And you can see service name, we have calm dot Amazon AWS
+
+53
+00:04:24,240 --> 00:04:30,160
+ US East, one Bedrock, and then you have one for agents, agent runtime, agent core, agent gateway,
+
+54
+00:04:30,160 --> 00:04:35,120
+ and so on. Okay, so that's pretty much it from this lecture. I'll see you in the next lecture. Thank you.
+
