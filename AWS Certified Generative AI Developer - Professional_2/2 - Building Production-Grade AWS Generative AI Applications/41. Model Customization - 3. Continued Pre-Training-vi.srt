@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:05,920
+Được rồi, bây giờ chúng ta hãy xem xét phương pháp tùy biến mô hình thứ ba được gọi là tiếp tục trước khi huấn luyện.
+
+2
+00:00:05,920 --> 00:00:13,520
+Vì vậy quá trình đào tạo thêm một mô hình ngôn ngữ được đào tạo để cải thiện kiến thức miền về mô hình.
+
+3
+00:00:13,520 --> 00:00:18,960
+Bây giờ hãy thử và hiểu điều này thông qua một ví dụ. Giả sử chúng ta xây dựng một ứng dụng tạo hóa
+
+4
+00:00:18,960 --> 00:00:24,960
+Nó tóm tắt các hạch của bác sĩ. Bây giờ khi các mô hình nền tảng làm tóm tắt,
+
+5
+00:00:25,680 --> 00:00:32,960
+Có lẽ đôi khi nó không thể hiểu một bài nói chuyện y học cụ thể và do đó tóm tắt
+
+6
+00:00:32,960 --> 00:00:40,400
+Độ chính xác không tốt lắm. Vì vậy, cho kịch bản đó bạn có thể sử dụng tiếp tục trước khi huấn luyện và bây giờ chúng ta hãy
+
+7
+00:00:40,400 --> 00:00:48,080
+Tôi hiểu làm thế nào để tiếp tục huấn luyện. Nếu bạn nhớ tốt-tuning đã được dán nhãn dữ liệu nhưng ở đây
+
+8
+00:00:48,080 --> 00:00:55,120
+Bạn sử dụng dữ liệu không nhãn có nghĩa là bạn chỉ cung cấp một văn bản thô. Vì vậy, hãy nói rằng ở đây bạn có một
+
+9
+00:00:55,120 --> 00:01:00,000
+Hồ sơ từ một tạp chí y tế. Vì vậy, hãy nói rằng bạn có một tạp chí y tế, bạn đi trước và
+
+10
+00:01:00,000 --> 00:01:06,800
+sử dụng nó để đào tạo mô hình cơ bản của bạn. Vì vậy, bây giờ dữ liệu không nhãn có nghĩa là gì? Nó có nghĩa là bạn chỉ cần
+
+11
+00:01:06,800 --> 00:01:13,120
+cung cấp dữ liệu thô và ví dụ tôi đã đưa ra ở đây là hãy nói rằng bạn có một tạp chí y tế và điều này là
+
+12
+00:01:13,120 --> 00:01:18,560
+Chỉ là một thứ tôi làm từ một cuốn nhật ký y tế. Bạn có thể sử dụng tạp chí y tế đó để đào tạo
+
+13
+00:01:18,560 --> 00:01:25,040
+Người mẫu nền tảng. Vậy nó giúp gì cho mô hình nền tảng? Nó giúp cải thiện lĩnh vực
+
+14
+00:01:25,040 --> 00:01:31,040
+Kiến thức về nền tảng đó thông qua thuật ngữ của tạp chí y khoa đó.
+
+15
+00:01:31,040 --> 00:01:39,360
+Được rồi, bây giờ hãy xem nó sẽ hoạt động như thế nào. Vì vậy, bạn có các dữ liệu độc quyền không có nhãn
+
+16
+00:01:39,360 --> 00:01:44,240
+Và như chúng ta đã thảo luận, hãy nói rằng tạp chí y khoa có rất nhiều nội dung. Vì vậy, đầu tiên bạn có
+
+17
+00:01:44,240 --> 00:01:51,040
+Trước khi đào tạo của bạn có thể Amazon NOAA Pro từ Amazon nền tảng hoặc bất kỳ mô hình khác bạn muốn
+
+18
+00:01:51,040 --> 00:01:57,040
+để chọn từ dịch vụ nền Amazon và sau đó trong trường hợp của bạn sử dụng trường hợp là có y học
+
+19
+00:01:57,040 --> 00:02:03,440
+Tóm tắt hoặc ghi chú bác sĩ tóm tắt. Sau đó bạn lấy dữ liệu sở hữu của bạn và đó là
+
+20
+00:02:03,440 --> 00:02:08,640
+Dữ liệu chưa được đánh dấu và chúng ta đã xem xét ví dụ hãy nói tạp chí y tế. Vì vậy bạn tạo ra
+
+21
+00:02:08,640 --> 00:02:12,960
+Một công việc huấn luyện trên nền đá Amazon và đằng sau những cảnh chúng tôi đã thấy trong kiến trúc
+
+22
+00:02:12,960 --> 00:02:19,520
+Nó tạo ra một công việc của SageMaker và đào tạo mô hình nền tảng này. Cuối cùng ngươi sẽ có
+
+23
+00:02:20,160 --> 00:02:24,880
+Tùy chỉnh LLM và sau đó bạn có thể gửi các dấu nhắc đến LLM này và tạo ra một hoàn thành.
+
+24
+00:02:24,880 --> 00:02:31,120
+Bây giờ một ví dụ với tiếp tục trước khi đào tạo bạn đào tạo một mô hình với dữ liệu cá nhân như y học
+
+25
+00:02:31,120 --> 00:02:40,480
+Nhật ký, tài liệu không công khai để huấn luyện mô hình ngôn ngữ lớn và tóm tắt
+
+26
+00:02:40,480 --> 00:02:47,120
+Nó cải thiện kiến thức miền của mô hình. Vì vậy, một ví dụ tốt nhất cho việc thích nghi miền khi
+
+27
+00:02:47,120 --> 00:02:52,320
+@ info/ rich Vâng vì vậy đó là khá nhiều nó từ bài giảng này tôi sẽ xem trong bài giảng tiếp theo
+
