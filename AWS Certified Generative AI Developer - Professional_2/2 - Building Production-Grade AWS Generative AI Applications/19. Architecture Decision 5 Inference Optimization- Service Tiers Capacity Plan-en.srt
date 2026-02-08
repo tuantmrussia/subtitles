@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:04,800
+ So, in this lecture, we want to look at the 5th architectural decision or consideration
+
+2
+00:00:04,800 --> 00:00:09,680
+ for building our January A application, which is inference optimization.
+
+3
+00:00:09,680 --> 00:00:13,840
+ So, now, there are three ways in which you can optimize inference.
+
+4
+00:00:13,840 --> 00:00:17,280
+ So, the first one is service tiers and capacity planning.
+
+5
+00:00:17,280 --> 00:00:18,720
+ Now, let's take a look.
+
+6
+00:00:18,720 --> 00:00:26,000
+ So, Amazon bedrock provides four service tiers for optimizing performance and cost.
+
+7
+00:00:26,000 --> 00:00:32,400
+ So, the first one is reserve tier and this is best for mission critical always on workloads.
+
+8
+00:00:32,400 --> 00:00:38,560
+ So, for this tier, reserve prioritize compute capacity for mission critical applications.
+
+9
+00:00:38,560 --> 00:00:44,800
+ This tier targets 99.5 uptime for model response.
+
+10
+00:00:44,800 --> 00:00:50,000
+ You need to reserve capacity for one month or three month duration.
+
+11
+00:00:51,360 --> 00:00:57,200
+ Then it provides flexibility to allocate different input and output tokens per minute,
+
+12
+00:00:57,200 --> 00:00:59,840
+ capacities to match requirements.
+
+13
+00:00:59,840 --> 00:01:03,520
+ So, if you have different input and output requirements for your workload,
+
+14
+00:01:03,520 --> 00:01:10,320
+ then there is flexibility to allocate different capacities for both input and output tokens.
+
+15
+00:01:10,320 --> 00:01:15,680
+ And you pay a fixed price per 1K token per minute and are built monthly.
+
+16
+00:01:16,320 --> 00:01:21,360
+ Now, how does the model actually know that this is a reserve tier request?
+
+17
+00:01:21,360 --> 00:01:25,280
+ So, you can see here on the right, I have just pasted the Boto 3 code,
+
+18
+00:01:25,280 --> 00:01:29,520
+ where you invoke the Amazon bedrock model with response stream.
+
+19
+00:01:29,520 --> 00:01:34,160
+ And here, there is a configuration parameter called as service tier.
+
+20
+00:01:34,160 --> 00:01:38,880
+ So, you can define either priority, default, flex and this is our result.
+
+21
+00:01:38,880 --> 00:01:44,160
+ So, when your application makes a request to the Amazon bedrock and you define this configuration
+
+22
+00:01:44,160 --> 00:01:50,320
+ parameter as service tier as reserve, then Amazon bedrock service would know that this request
+
+23
+00:01:50,320 --> 00:01:57,600
+ is part of the reserve tier. Next, we have the priority tier, which is best for latency sensitive,
+
+24
+00:01:57,600 --> 00:02:04,320
+ customer facing applications, but do not warrant 24 by 7 capacity reservation.
+
+25
+00:02:04,320 --> 00:02:12,480
+ So, it delivers the fastest response time for a price premium or standard on demand pricing.
+
+26
+00:02:12,480 --> 00:02:18,320
+ So, you can see here, standard is basically just default. So, if you don't define the service tier,
+
+27
+00:02:18,320 --> 00:02:22,960
+ then it will go to this default mode, which is nothing but standard pricing.
+
+28
+00:02:22,960 --> 00:02:29,680
+ So, if you define this service tier as priority, so you are charged a premium over default,
+
+29
+00:02:29,680 --> 00:02:35,680
+ but you get priority. Then set the service tier optional parameter to priority
+
+30
+00:02:35,680 --> 00:02:39,840
+ to avail request level prioritization. And we already discussed that.
+
+31
+00:02:39,840 --> 00:02:45,280
+ So, you set the service tier to priority. Then next, we have the standard tier,
+
+32
+00:02:45,280 --> 00:02:51,360
+ which is the default tier, this one and it is best for general production workloads.
+
+33
+00:02:51,360 --> 00:02:56,480
+ So, it provides consistent performance for everyday tasks, content generation,
+
+34
+00:02:56,480 --> 00:03:02,080
+ text analysis and so on, by default, all the inference requests are routed to the standard tier.
+
+35
+00:03:02,080 --> 00:03:07,440
+ So, if you don't define the service tier, then it is a default or standard tier.
+
+36
+00:03:07,440 --> 00:03:14,640
+ And then finally, we have the flex tier, which is best for cost optimized non-urgent workloads.
+
+37
+00:03:14,640 --> 00:03:22,800
+ So, this is the lowest cost inference option. It uses spare capacity with variable latency.
+
+38
+00:03:22,800 --> 00:03:27,600
+ So, if your workload is non-urgent and this is most common when you are using batch
+
+39
+00:03:27,600 --> 00:03:32,480
+ inferencing, then you can define the service tier as flex. So, that way you can reduce your
+
+40
+00:03:32,480 --> 00:03:38,960
+ inferencing cost. So, that is pretty much it from this lecture. I will see you in the next lecture.
+
