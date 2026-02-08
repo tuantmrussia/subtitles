@@ -1,0 +1,492 @@
+1
+00:00:00,000 --> 00:00:06,240
+ In the previous lecture, we learned about the planning and reasoning capability of AI agents.
+
+2
+00:00:06,240 --> 00:00:09,360
+ Now, let's go and take a look at the demo.
+
+3
+00:00:09,360 --> 00:00:16,240
+ Now, for this demo, I've created a micro-cool AI agent and everything else pretty much remains the same.
+
+4
+00:00:16,240 --> 00:00:23,520
+ So, just instead of going on a skiing trip, maybe Joe wants to go on a five-day beach vocation.
+
+5
+00:00:23,520 --> 00:00:29,680
+ And from the AI agent capability perspective, I have just kept two functionality.
+
+6
+00:00:29,680 --> 00:00:36,480
+ One, the agent can make a call to the HR system to check the leave balance of the employee.
+
+7
+00:00:36,480 --> 00:00:43,200
+ And second, it can book a hotel room based on the user request.
+
+8
+00:00:43,200 --> 00:00:47,200
+ So, I've just simplified it a little bit so that it's easier to understand.
+
+9
+00:00:47,200 --> 00:00:50,640
+ Now, let's take a look at the questions that we're going to ask.
+
+10
+00:00:50,640 --> 00:00:52,160
+ So, we're going to ask two questions.
+
+11
+00:00:52,160 --> 00:01:00,480
+ First one, book a hotel room for me employee ID is 2525 and if my leave balance is more than five days,
+
+12
+00:01:00,480 --> 00:01:05,840
+ then book the hotel with following details.
+
+13
+00:01:05,840 --> 00:01:10,240
+ Now, for this question, you can see agent has to do three things.
+
+14
+00:01:10,240 --> 00:01:16,640
+ First, it has to go to the HR system and retrieve the vacation days for this employee.
+
+15
+00:01:17,600 --> 00:01:23,760
+ Then it has to make the decision whether the leave balance is less than or more than five days.
+
+16
+00:01:23,760 --> 00:01:28,960
+ If it is more than five days, then it has to make an API call to the hotel booking site
+
+17
+00:01:28,960 --> 00:01:31,040
+ and book the hotel room.
+
+18
+00:01:31,040 --> 00:01:35,760
+ But if the leave balance is less than five days, then it has to come back and tell the user
+
+19
+00:01:35,760 --> 00:01:41,520
+ that it cannot go ahead and book the hotel because the leave balance is less than five days.
+
+20
+00:01:41,520 --> 00:01:43,280
+ Now, let's go ahead and run this query.
+
+21
+00:01:44,080 --> 00:01:47,920
+ Now, I'm on the micro cool AI agent that has been built.
+
+22
+00:01:47,920 --> 00:01:51,120
+ So, I have a UI here and let me just pose this question.
+
+23
+00:01:51,120 --> 00:01:58,720
+ Now, before I execute this query, let's take a look at the leave balance table which gives me
+
+24
+00:01:58,720 --> 00:02:07,360
+ a details about the leave balance for this employee to 5125 and the leave balance is only four days.
+
+25
+00:02:07,360 --> 00:02:12,960
+ So, when I run this query, I should get a response from the agent saying that it cannot book a
+
+26
+00:02:12,960 --> 00:02:17,120
+ hotel room because the leave balance is not more than five.
+
+27
+00:02:17,120 --> 00:02:19,280
+ So, let me just go ahead and run this.
+
+28
+00:02:19,280 --> 00:02:25,280
+ So, now it has come back with the response unfortunate to your leave balance is four days,
+
+29
+00:02:25,280 --> 00:02:30,640
+ which is not sufficient to book a room for five nights as requested.
+
+30
+00:02:30,640 --> 00:02:32,240
+ So, this is correct.
+
+31
+00:02:32,240 --> 00:02:37,360
+ Now, let's go ahead and ask another question where I say book a hotel room
+
+32
+00:02:37,360 --> 00:02:40,960
+ for this employee if the leave balance is more than three days.
+
+33
+00:02:40,960 --> 00:02:44,480
+ And which is true, we have four days leave balance as we just saw.
+
+34
+00:02:44,480 --> 00:02:48,560
+ So, let me just copy this and now let me go ahead and run this query.
+
+35
+00:02:48,560 --> 00:02:49,680
+ So, let me just do a run.
+
+36
+00:02:49,680 --> 00:02:57,600
+ Now, I have got a response with the booking ID ending in 5 EC.
+
+37
+00:02:57,600 --> 00:02:59,040
+ So, this is my booking ID.
+
+38
+00:02:59,040 --> 00:03:04,560
+ Let's go ahead and check the hotel booking room table and see if this entry is there.
+
+39
+00:03:04,560 --> 00:03:12,080
+ Let me just do a refresh and I have a booking ID here ending in 5 EC.
+
+40
+00:03:12,080 --> 00:03:18,720
+ And we have Jane Doe and number 9 says 3 and these were the details we had provided.
+
+41
+00:03:18,720 --> 00:03:24,480
+ Now, let's take a look at the traces and planning capability of the AI agent through which
+
+42
+00:03:24,480 --> 00:03:26,800
+ it reached this conclusion.
+
+43
+00:03:26,800 --> 00:03:30,080
+ So, let me just click on traces.
+
+44
+00:03:30,080 --> 00:03:35,920
+ So, we have three traces here step one, step two and step three.
+
+45
+00:03:35,920 --> 00:03:38,160
+ So, first I will just click on trace step one.
+
+46
+00:03:38,160 --> 00:03:42,720
+ So, in trace step one we have model invocation input.
+
+47
+00:03:42,720 --> 00:03:49,040
+ So, what is the input that is going to the large language model that is driving the AI agent.
+
+48
+00:03:49,040 --> 00:03:54,480
+ And here are some configuration parameters for the LLM then.
+
+49
+00:03:54,480 --> 00:03:59,840
+ So, next you can see the text here which determines what is the prompt that will go to the
+
+50
+00:03:59,840 --> 00:04:02,480
+ large language model driving the AI agent.
+
+51
+00:04:02,480 --> 00:04:07,760
+ Now, remember the large language model does not have any context or memory on what kind of agent
+
+52
+00:04:07,760 --> 00:04:11,440
+ you are or what are your key roles and responsibilities.
+
+53
+00:04:11,440 --> 00:04:14,080
+ So, that is the context we provide first.
+
+54
+00:04:14,080 --> 00:04:18,880
+ So, we are saying you are an agent that can check the leave balance based on employee ID
+
+55
+00:04:18,880 --> 00:04:21,120
+ and book a hotel room and so on.
+
+56
+00:04:21,120 --> 00:04:26,880
+ Then if you scroll down, we are providing it some more guidelines around what are the tools
+
+57
+00:04:26,880 --> 00:04:33,200
+ and API calls etcetera that you can make and we will discuss this in the next lecture.
+
+58
+00:04:33,200 --> 00:04:37,840
+ Finally, towards the end we are just providing the user input.
+
+59
+00:04:37,840 --> 00:04:39,760
+ So, what we have here.
+
+60
+00:04:39,760 --> 00:04:45,440
+ So, we are saying book a hotel room with employee ID this and if my leave balance is more than
+
+61
+00:04:45,440 --> 00:04:48,640
+ three then book a hotel room with these details.
+
+62
+00:04:48,640 --> 00:04:55,520
+ And then based on this user input, the LLM is coming out with an output.
+
+63
+00:04:55,520 --> 00:04:56,880
+ And what is the output look like?
+
+64
+00:04:56,880 --> 00:04:58,720
+ So, this is the raw response.
+
+65
+00:04:58,720 --> 00:05:05,040
+ It says, okay, let me check your leave balance first and then proceed with the hotel booking.
+
+66
+00:05:05,040 --> 00:05:08,560
+ And then you have the thinking tag to check the employee's leave balance.
+
+67
+00:05:08,560 --> 00:05:14,800
+ I need to call employee leave balance function with the provided employee ID.
+
+68
+00:05:14,800 --> 00:05:22,880
+ And then again thinking tag, let me call this particular API leave balance with parameters employee ID
+
+69
+00:05:23,920 --> 00:05:29,440
+ and then it's coming out with a rationale saying, okay, to check the employee's leave balance
+
+70
+00:05:29,440 --> 00:05:32,800
+ I need to call the employee leave balance function.
+
+71
+00:05:32,800 --> 00:05:37,120
+ And then it goes ahead and makes that API call.
+
+72
+00:05:37,120 --> 00:05:41,680
+ So, API path slash leave balance and it provides all these parameters.
+
+73
+00:05:41,680 --> 00:05:46,400
+ And then it gets an observation and we are discussed.
+
+74
+00:05:46,400 --> 00:05:52,560
+ Observation means an output from an external entity to an agent.
+
+75
+00:05:52,560 --> 00:05:56,080
+ And in this case, it is the leave balance API.
+
+76
+00:05:56,080 --> 00:05:58,880
+ It is the leave balance DynamoDB table.
+
+77
+00:05:58,880 --> 00:06:00,880
+ And now it has got a response.
+
+78
+00:06:00,880 --> 00:06:06,880
+ So, it has leave balance is for for employee ID and name is Rahul Thrysel and so on.
+
+79
+00:06:06,880 --> 00:06:08,960
+ Now, let's take a look at the step two.
+
+80
+00:06:08,960 --> 00:06:13,840
+ So, it successfully executed step one where it is where it has got the leave balance.
+
+81
+00:06:13,840 --> 00:06:17,280
+ So, in the leave balance again, it's going to send the output.
+
+82
+00:06:17,280 --> 00:06:22,720
+ It has got a leave balance to the large language model that is driving the agent and you
+
+83
+00:06:22,720 --> 00:06:24,320
+ have the model invocation input.
+
+84
+00:06:24,320 --> 00:06:26,400
+ So, it remains pretty much same.
+
+85
+00:06:26,400 --> 00:06:32,480
+ But the only thing that has been appended this time is the the previous information it got
+
+86
+00:06:32,480 --> 00:06:37,360
+ on what was the leave balance for 2 5 1 2 0 5 from the previous step.
+
+87
+00:06:37,360 --> 00:06:39,360
+ So, it's saying my leave balance is 4.
+
+88
+00:06:39,360 --> 00:06:44,560
+ And then we have the model invocation output.
+
+89
+00:06:44,560 --> 00:06:48,160
+ So, this is the output I get from the large language model.
+
+90
+00:06:48,160 --> 00:06:54,560
+ So, it says thinking tag, the employee has 4 days of leave balance which is more than required
+
+91
+00:06:54,560 --> 00:07:00,000
+ 3 days because in the query we had said if my leave balance is more than 3 days,
+
+92
+00:07:00,000 --> 00:07:01,840
+ then only book the hotel room.
+
+93
+00:07:01,840 --> 00:07:07,760
+ So, now we can see how it is thinking and we have not provided any predefined logic.
+
+94
+00:07:07,760 --> 00:07:10,400
+ So, this is the logic it's applying on its own.
+
+95
+00:07:11,520 --> 00:07:16,240
+ So, this is the reasoning capability of the LLM that it is applying here.
+
+96
+00:07:16,240 --> 00:07:22,000
+ So, I can proceed ahead with the booking hotel room with the previous details.
+
+97
+00:07:22,000 --> 00:07:27,040
+ And these are the details that we had provided on check-in date and so on.
+
+98
+00:07:27,040 --> 00:07:32,960
+ And then it shows the rationale the employee has 4 days of leave and it's pretty much the same
+
+99
+00:07:32,960 --> 00:07:34,000
+ without those tags.
+
+100
+00:07:34,000 --> 00:07:39,680
+ And then it goes ahead and calls the hotel booking API.
+
+101
+00:07:39,680 --> 00:07:44,800
+ So, slash book hotel room and then it says you know what tool it's going to use.
+
+102
+00:07:44,800 --> 00:07:49,200
+ It's going to use a lambda function in this case and it provides all the parameters
+
+103
+00:07:49,200 --> 00:07:52,800
+ such as check-in date, number of flights, guest room and so on.
+
+104
+00:07:52,800 --> 00:07:54,640
+ And then it gets an observation.
+
+105
+00:07:54,640 --> 00:07:56,720
+ So, now let's go ahead and look at the trace 3.
+
+106
+00:07:56,720 --> 00:08:02,880
+ And in the trace 3 again it will send a request to the model.
+
+107
+00:08:02,880 --> 00:08:07,360
+ So, here you see the model invocation input and here is the prompt.
+
+108
+00:08:07,360 --> 00:08:10,560
+ So, it's pretty similar if I just scroll down towards the end.
+
+109
+00:08:10,560 --> 00:08:15,840
+ So, it provides the leave balance which it had provided in the previous call as well.
+
+110
+00:08:15,840 --> 00:08:21,120
+ But then it provides some additional information saying that employers 4 days of leave balance
+
+111
+00:08:21,120 --> 00:08:22,560
+ which is more than a quite 3.
+
+112
+00:08:22,560 --> 00:08:28,480
+ Then it provides some details around which API it needs to call to book the hotel,
+
+113
+00:08:28,480 --> 00:08:31,360
+ what is the name of the guest and so on.
+
+114
+00:08:31,360 --> 00:08:35,920
+ And then you get the model invocation output.
+
+115
+00:08:35,920 --> 00:08:41,600
+ And here is the raw response which says your hotel booking is confirmed,
+
+116
+00:08:41,600 --> 00:08:49,360
+ following details check-in date and so on and it provides the booking confirmation ID.
+
+117
+00:08:49,360 --> 00:08:54,720
+ And then you have the final observation where it says your hotel booking is confirmed
+
+118
+00:08:54,720 --> 00:08:57,600
+ and this is what we have got here.
+
+119
+00:08:57,600 --> 00:09:02,880
+ Hopefully it's clear to you now how it breaks down the problem into multiple steps.
+
+120
+00:09:02,880 --> 00:09:09,920
+ And then executes each step and then it can also replan if required.
+
+121
+00:09:09,920 --> 00:09:12,480
+ Okay that's pretty much it from this lecture.
+
+122
+00:09:12,480 --> 00:09:13,440
+ I'll see you in the next lecture.
+
+123
+00:09:13,440 --> 00:09:13,680
+ Thank you.
+
