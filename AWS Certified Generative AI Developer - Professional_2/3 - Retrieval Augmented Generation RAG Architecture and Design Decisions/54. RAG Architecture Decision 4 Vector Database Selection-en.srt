@@ -1,0 +1,264 @@
+1
+00:00:00,000 --> 00:00:03,920
+ In this lecture, we're going to discuss another architectural decision or
+
+2
+00:00:03,920 --> 00:00:09,440
+ consideration while building our rack based application and that is the vector DB.
+
+3
+00:00:09,440 --> 00:00:13,920
+ Okay, before we look at all the options, a quick 20 second overview.
+
+4
+00:00:13,920 --> 00:00:18,000
+ So we've previously discussed, let's say we have this long PDF documents.
+
+5
+00:00:18,000 --> 00:00:22,160
+ So we're going to create multiple chunks, then we're going to pass it through the embedding model,
+
+6
+00:00:22,160 --> 00:00:27,360
+ create vector embeddings, and then we're going to store it in a vector store or a vector DB.
+
+7
+00:00:27,360 --> 00:00:32,080
+ Some of the popular ones from AWS are open search and Pine Code.
+
+8
+00:00:32,080 --> 00:00:38,480
+ Now let's go and review what are the vector DB options available with AWS and
+
+9
+00:00:38,480 --> 00:00:41,200
+ which one should we select for our use case.
+
+10
+00:00:41,200 --> 00:00:48,960
+ Okay, so the first one is the Amazon Aurora Postgres with PG vector plug-in extension.
+
+11
+00:00:48,960 --> 00:00:52,160
+ So we already know about Amazon Aurora Postgres.
+
+12
+00:00:52,160 --> 00:00:54,160
+ It's been there for quite a while.
+
+13
+00:00:54,160 --> 00:00:58,480
+ Now what they have done is they have added this PG vector plug-in or extension,
+
+14
+00:00:58,480 --> 00:01:02,560
+ so it can act as a relational database plus a vector database.
+
+15
+00:01:02,560 --> 00:01:06,160
+ So it's a relational database with vector rack.
+
+16
+00:01:06,160 --> 00:01:13,520
+ So it's highly cost effective for smaller deployments and what's the best use case for
+
+17
+00:01:13,520 --> 00:01:16,800
+ Amazon Aurora Postgres SQL with PG vector.
+
+18
+00:01:17,360 --> 00:01:24,240
+ It's best for applications needing both traditional SQL capabilities and vector capabilities.
+
+19
+00:01:24,240 --> 00:01:30,000
+ So when you need a hybrid SQL plus vector, then you use Amazon Aurora Postgres.
+
+20
+00:01:30,000 --> 00:01:34,720
+ Now the second option is Amazon Neptune Analytics.
+
+21
+00:01:34,720 --> 00:01:39,920
+ Okay, Neptune Analytics is a graph based vector search.
+
+22
+00:01:39,920 --> 00:01:43,840
+ So it's ideal for connected data use cases such as social media,
+
+23
+00:01:44,480 --> 00:01:49,120
+ think about Facebook, so you're connected to a friend who's connected to multiple friends.
+
+24
+00:01:49,120 --> 00:01:52,880
+ So you can see there is kind of a graph network that's there.
+
+25
+00:01:52,880 --> 00:01:56,640
+ So let's say I use case on social media or fraud analytics,
+
+26
+00:01:56,640 --> 00:02:02,720
+ where you have a lot of interconnected nodes, then Amazon Neptune Analytics is a good option.
+
+27
+00:02:02,720 --> 00:02:10,160
+ So use case for Neptune Analytics ideal for complex relationship based queries and knowledge
+
+28
+00:02:10,160 --> 00:02:14,400
+ graphs. So if you're looking for a vector store that can handle complex relationship
+
+29
+00:02:14,400 --> 00:02:18,320
+ based queries and knowledge graph like social media, fraud detection,
+
+30
+00:02:18,320 --> 00:02:21,200
+ then this is the right vector DB for you.
+
+31
+00:02:21,200 --> 00:02:27,520
+ Now next we have Amazon open search serverless, which is probably the most popular
+
+32
+00:02:27,520 --> 00:02:31,600
+ vector DB that is currently being used within AWS.
+
+33
+00:02:31,600 --> 00:02:34,960
+ So Amazon open search comes in two flavors.
+
+34
+00:02:34,960 --> 00:02:41,360
+ It's serverless where you pay only for what you use and then you also have the provision mode
+
+35
+00:02:41,360 --> 00:02:46,000
+ where you can provision OC use or open search compute units.
+
+36
+00:02:46,000 --> 00:02:51,920
+ Amazon open search is great for search and analytics.
+
+37
+00:02:51,920 --> 00:02:54,720
+ So let's say you have log analytics and monitoring.
+
+38
+00:02:54,720 --> 00:03:00,160
+ So take the example of cloud watch logs, so that's where you can use open search.
+
+39
+00:03:00,160 --> 00:03:05,120
+ Then it's also great for enterprise search e-commerce and product search.
+
+40
+00:03:05,120 --> 00:03:07,920
+ So these are some of the use cases for open search.
+
+41
+00:03:09,040 --> 00:03:14,000
+ Now it provides flexible search options, including traditional keyword search,
+
+42
+00:03:14,000 --> 00:03:18,320
+ vector search and hybrid search. So please remember this is important.
+
+43
+00:03:18,320 --> 00:03:23,920
+ So open search is focused on keyword search and vector search and hybrid approaches.
+
+44
+00:03:23,920 --> 00:03:30,400
+ So open search can store and search billions of high-dimensional vectors in millisecond using
+
+45
+00:03:30,400 --> 00:03:36,480
+ advanced algorithm. So if you want millisecond response, then you have to go with open search.
+
+46
+00:03:36,480 --> 00:03:39,440
+ So what's a good use case for Amazon open search serverless?
+
+47
+00:03:39,440 --> 00:03:45,280
+ So Amazon open search is strong in full tech search analytics and vector search with low latency
+
+48
+00:03:45,280 --> 00:03:51,840
+ response. So remember that open search is not only meant for vector search, but also for
+
+49
+00:03:51,840 --> 00:03:57,440
+ keyword search. So next we have the pine cone. So it's a purpose built vector database.
+
+50
+00:03:57,440 --> 00:04:03,040
+ So probably only vector database, which is just meant for storing vectors.
+
+51
+00:04:03,040 --> 00:04:09,120
+ Most of the others are hybrid. So it's optimized for high-performance similarity search.
+
+52
+00:04:09,120 --> 00:04:14,400
+ And what are the use cases? So if you need high-performance vector search and right,
+
+53
+00:04:14,400 --> 00:04:20,960
+ then pine cone is the service for you. Okay, then finally we have the Redis Enterprise Cloud.
+
+54
+00:04:20,960 --> 00:04:27,280
+ So it's an in-memory data platform with vector search support. So remember in the Redis Enterprise
+
+55
+00:04:27,280 --> 00:04:33,840
+ Cloud, we already know it's a in-memory database for cache. So in case of, so it stores the vector
+
+56
+00:04:33,840 --> 00:04:42,240
+ embedding in memory. So it combines the vector search and caching. And as we already discussed,
+
+57
+00:04:42,240 --> 00:04:48,160
+ it's in-memory vector search for rag workloads. Now what's the benefit of using Redis Enterprise
+
+58
+00:04:48,160 --> 00:04:54,560
+ Cloud? So it delivers ultra low latency real-time vector similarity search.
+
+59
+00:04:54,560 --> 00:05:01,120
+ And that's mainly because it is in-memory. So it's best suited for real-time journey applications
+
+60
+00:05:01,120 --> 00:05:08,880
+ requiring sub-millisecond to millisecond responses. Now remember, we had also set same for open search,
+
+61
+00:05:08,880 --> 00:05:17,280
+ but this is in-memory and open search is not an in-memory vector DB. Okay, now in summary based on
+
+62
+00:05:17,280 --> 00:05:23,360
+ your use case, how do you make the decision for the right vector DB? So you select open search,
+
+63
+00:05:23,360 --> 00:05:30,720
+ if your use case requires keyword search, analytics, and vectors. You select pine cone, if you need
+
+64
+00:05:30,720 --> 00:05:37,680
+ large-scale purpose built vector DB. You select Aurora PG vector, if you need relational database,
+
+65
+00:05:37,680 --> 00:05:45,200
+ plus vectors. And you select Redis, if you need fastest in-memory real-time vector DB. Okay,
+
+66
+00:05:45,200 --> 00:05:48,080
+ so that's pretty much it from this lecture. I'll see in the next lecture. Thank you.
+
