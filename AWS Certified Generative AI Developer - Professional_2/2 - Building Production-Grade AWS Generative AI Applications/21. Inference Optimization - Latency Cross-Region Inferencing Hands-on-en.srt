@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:04,480
+ Okay, now in this lecture, I'm going to show you a quick demo of inference optimization.
+
+2
+00:00:04,480 --> 00:00:10,480
+ So I'll show you how you can use the cross region inference profile and latency optimization.
+
+3
+00:00:10,480 --> 00:00:14,240
+ So before we go to the console, just want to show you
+
+4
+00:00:14,240 --> 00:00:17,360
+ some butter three Python code that I have written.
+
+5
+00:00:17,360 --> 00:00:21,600
+ So through which I'm going to access this Amazon Nova Pro model.
+
+6
+00:00:21,600 --> 00:00:26,000
+ So here I have this bedrock invoke model, then I'm defining the model ID.
+
+7
+00:00:26,640 --> 00:00:32,400
+ So rather than using Amazon Nova Pro, I'm seeing us dot Amazon dot Nova Pro,
+
+8
+00:00:32,400 --> 00:00:38,240
+ which means I'm using cross region inference profile, but it's not global.
+
+9
+00:00:38,240 --> 00:00:42,000
+ It's specified to the US geographic location.
+
+10
+00:00:42,000 --> 00:00:48,000
+ Next, I'm just passing this prompt, what is Amazon bedrock and let me just go to the left.
+
+11
+00:00:48,000 --> 00:00:52,240
+ Then I have some inference configuration parameters here, max token size, temperature, and so on.
+
+12
+00:00:53,520 --> 00:00:58,240
+ And then if you just see here, I have added the guard rail identifier.
+
+13
+00:00:58,240 --> 00:01:01,680
+ So remember, this is from one of the previous lectures,
+
+14
+00:01:01,680 --> 00:01:04,960
+ where we had created the investment advice guard rail.
+
+15
+00:01:04,960 --> 00:01:09,600
+ So I just took that guard rail ID value and put it here.
+
+16
+00:01:09,600 --> 00:01:11,440
+ And then we had this version as draft.
+
+17
+00:01:11,440 --> 00:01:16,640
+ And now let's look at this performance configuration latency.
+
+18
+00:01:16,640 --> 00:01:19,920
+ So the value I had provided here is optimized.
+
+19
+00:01:19,920 --> 00:01:25,520
+ In the previous lecture, we saw that there are two possible values optimized and standard.
+
+20
+00:01:25,520 --> 00:01:28,000
+ So you can see here, standard and optimized.
+
+21
+00:01:28,000 --> 00:01:33,120
+ Okay, now let me just copy this code and then I'll just go to the AWS console.
+
+22
+00:01:33,120 --> 00:01:34,400
+ So I'm on AWS console.
+
+23
+00:01:34,400 --> 00:01:38,400
+ So let me just open AWS lambda and here we have lambda.
+
+24
+00:01:38,400 --> 00:01:43,120
+ So I'm in the US East one region, not Virginia.
+
+25
+00:01:43,120 --> 00:01:44,640
+ So let me just click on create function.
+
+26
+00:01:44,640 --> 00:01:47,840
+ And we have to give a name of the lambda function.
+
+27
+00:01:48,480 --> 00:01:52,000
+ So I'll just give it a name demo inference optimization.
+
+28
+00:01:52,000 --> 00:01:57,760
+ So we'll just select the latest one python 3.14 and then we'll just leave everything as it is.
+
+29
+00:01:57,760 --> 00:01:58,880
+ Just click on create function.
+
+30
+00:01:58,880 --> 00:02:01,600
+ Okay, we'll just make a couple of configuration changes.
+
+31
+00:02:01,600 --> 00:02:04,960
+ So I'll just click on this configuration, click on edit.
+
+32
+00:02:04,960 --> 00:02:06,880
+ Just let just increase the timeout.
+
+33
+00:02:06,880 --> 00:02:10,640
+ So I'll just say one minute and then I'll just do save.
+
+34
+00:02:10,640 --> 00:02:16,480
+ Now we have to give this lambda function permission so that it can access Amazon bedrock.
+
+35
+00:02:16,480 --> 00:02:18,240
+ So I'll just click on this permission.
+
+36
+00:02:18,240 --> 00:02:20,400
+ Let's just open this role in a new tab.
+
+37
+00:02:20,400 --> 00:02:26,080
+ Okay, so this is our I am role.
+
+38
+00:02:26,080 --> 00:02:28,720
+ So I'll just click on add permission, attach policies.
+
+39
+00:02:28,720 --> 00:02:31,600
+ So let's just give it an admin access for now.
+
+40
+00:02:31,600 --> 00:02:35,120
+ And let me just click on add permission.
+
+41
+00:02:35,120 --> 00:02:38,240
+ So this is not what it should do in the production environment.
+
+42
+00:02:38,240 --> 00:02:40,400
+ But for this demo purpose, I think it's okay.
+
+43
+00:02:40,400 --> 00:02:42,080
+ So I'll just go back to the lambda function.
+
+44
+00:02:42,080 --> 00:02:43,680
+ So I'm here on the lambda function.
+
+45
+00:02:43,680 --> 00:02:44,720
+ Let me click on code.
+
+46
+00:02:47,280 --> 00:02:49,600
+ Okay, so we have some boilerplate code.
+
+47
+00:02:49,600 --> 00:02:51,600
+ So let me just paste the code had copied.
+
+48
+00:02:51,600 --> 00:02:54,720
+ And let me just click on this deploy.
+
+49
+00:02:54,720 --> 00:03:01,840
+ Okay, it's showing successfully deployed the function.
+
+50
+00:03:01,840 --> 00:03:05,600
+ And you can see we already have the prompt here hard coded what is Amazon bedrock.
+
+51
+00:03:05,600 --> 00:03:10,560
+ Okay, now let me just go ahead and click on test and create new test event.
+
+52
+00:03:10,560 --> 00:03:16,080
+ Let me just say test 01 and then I'll just do a save.
+
+53
+00:03:16,080 --> 00:03:22,000
+ Okay, now let me just close this and let me test again.
+
+54
+00:03:22,000 --> 00:03:25,440
+ So we can see it generated some output.
+
+55
+00:03:25,440 --> 00:03:31,600
+ Okay, so it generated the output if I just pull it up.
+
+56
+00:03:31,600 --> 00:03:34,320
+ So you can see here it generated the body.
+
+57
+00:03:34,320 --> 00:03:37,440
+ And then if I just go to the functional logs here.
+
+58
+00:03:39,200 --> 00:03:42,720
+ So if we just go to the functional logs here, these are the functional logs.
+
+59
+00:03:42,720 --> 00:03:48,240
+ So you can see it's providing some details around the request ID and date.
+
+60
+00:03:48,240 --> 00:03:52,720
+ There it's saying context length and some other parameters.
+
+61
+00:03:52,720 --> 00:03:56,480
+ But we'll just look at this performance configuration latency.
+
+62
+00:03:56,480 --> 00:04:02,560
+ And you can see it is optimized, which we had provided as part of a request.
+
+63
+00:04:02,560 --> 00:04:06,560
+ And it will also show you the invocation latency.
+
+64
+00:04:06,560 --> 00:04:11,360
+ So three, one, one, three. So if we had not provided this parameter optimized,
+
+65
+00:04:11,360 --> 00:04:16,400
+ maybe it would have been more. Okay, so that's pretty much it from this lecture.
+
+66
+00:04:16,400 --> 00:04:20,720
+ So I have shown you two things how you can optimize performance latency.
+
+67
+00:04:20,720 --> 00:04:26,880
+ And the second thing I have shown you here is how you can use the cross region inferencing.
+
+68
+00:04:26,880 --> 00:04:30,160
+ And you can see here we have this us.amazon.nova.
+
+69
+00:04:30,160 --> 00:04:34,400
+ So this is case of geographic cross region inferencing.
+
+70
+00:04:34,400 --> 00:04:38,720
+ And if you wanted global, you could have put global instead of the us.
+
+71
+00:04:38,720 --> 00:04:40,480
+ Okay, so that's pretty much it from this lecture.
+
+72
+00:04:40,480 --> 00:04:42,640
+ I'll see in the next lecture. Thank you.
+
