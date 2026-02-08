@@ -1,0 +1,632 @@
+1
+00:00:00,000 --> 00:00:07,760
+ Okay, so now that we successfully have all of our typing logic sorted out, I'm just typing
+
+2
+00:00:07,760 --> 00:00:14,520
+ random characters here, and our scrolling logic sorted out, you'll see that our timer is
+
+3
+00:00:14,520 --> 00:00:16,880
+ still at 60 seconds.
+
+4
+00:00:16,880 --> 00:00:24,120
+ So we need to implement our timer related logic, and we also want to calculate our words per
+
+5
+00:00:24,120 --> 00:00:25,120
+ minute.
+
+6
+00:00:25,120 --> 00:00:30,560
+ Okay, so let's go ahead and jump into the code.
+
+7
+00:00:30,560 --> 00:00:38,280
+ Okay, so I'm actually going to go ahead and maybe minimize this just for now, and we're
+
+8
+00:00:38,280 --> 00:00:44,080
+ going to go back up to the top here, and we're actually going to need a few more variables,
+
+9
+00:00:44,080 --> 00:00:51,880
+ and we're going to require a time left, which is going to be a number.
+
+10
+00:00:51,880 --> 00:00:56,540
+ So normally this would be 60 seconds, but I'm just going to make it six seconds for
+
+11
+00:00:56,540 --> 00:01:02,960
+ our testing, and we're going to have a timer interval.
+
+12
+00:01:02,960 --> 00:01:10,040
+ So we're going to use set interval, and we are going to run this interval every one
+
+13
+00:01:10,040 --> 00:01:11,040
+ second.
+
+14
+00:01:11,040 --> 00:01:14,360
+ So it's going to tick down one second at a time, it's going to run this function, it's
+
+15
+00:01:14,360 --> 00:01:19,680
+ going to keep checking, is there any time left, we're essentially going to bring this number
+
+16
+00:01:19,680 --> 00:01:27,320
+ down 60, 59, 58, and then once it gets to zero, then we are going to actually end our
+
+17
+00:01:27,320 --> 00:01:28,320
+ test.
+
+18
+00:01:28,320 --> 00:01:30,200
+ So we're going to call another function.
+
+19
+00:01:30,200 --> 00:01:35,760
+ Okay, and we also want to know whether or not we've started typing.
+
+20
+00:01:35,760 --> 00:01:40,800
+ So as you'll notice, the timer doesn't actually start in our final version until we start
+
+21
+00:01:40,800 --> 00:01:42,280
+ typing.
+
+22
+00:01:42,280 --> 00:01:50,040
+ So we're going to have a let for this typing started, is going to be equal to false.
+
+23
+00:01:50,040 --> 00:01:56,280
+ Okay, and I think that's it for our variables that we're going to need.
+
+24
+00:01:56,280 --> 00:01:59,720
+ Of course, you could make this count down whatever you want, I'm just going to keep it
+
+25
+00:01:59,720 --> 00:02:05,040
+ simple and make it 60 seconds to calculate our words per minute nicely.
+
+26
+00:02:05,040 --> 00:02:14,560
+ Okay, so from here, we are going to go ahead and below this function, we'll comment out
+
+27
+00:02:14,560 --> 00:02:27,600
+ a title for starting our count down timer, and it'll make a function called start timer,
+
+28
+00:02:27,600 --> 00:02:39,440
+ and we are going to say if we have not typing started yet, then we're going to set this
+
+29
+00:02:39,440 --> 00:02:46,920
+ typing started boolean to be equal to true.
+
+30
+00:02:46,920 --> 00:02:50,000
+ And then inside of this, we're going to set our interval.
+
+31
+00:02:50,000 --> 00:02:58,320
+ So timer interval is going to be equal to set interval bracket brackets again, so this is
+
+32
+00:02:58,320 --> 00:03:04,640
+ going to be an arrow function curly brackets semi colon.
+
+33
+00:03:04,640 --> 00:03:10,520
+ So basically this is going to trigger our set interval, and this is going to run every
+
+34
+00:03:10,520 --> 00:03:11,520
+ second.
+
+35
+00:03:11,520 --> 00:03:17,160
+ So after our curly bracket at the end here, we'll put a comma and then put 1000 milliseconds,
+
+36
+00:03:17,160 --> 00:03:23,400
+ which is equal to one second, so that means anything inside of this timer interval set
+
+37
+00:03:23,400 --> 00:03:27,720
+ interval is going to execute every one second.
+
+38
+00:03:27,720 --> 00:03:33,620
+ So our time left, we're going to decrement by one, so we're just going to use minus minus
+
+39
+00:03:33,620 --> 00:03:41,280
+ to decrement our time left, and then we want to also update our timer element.
+
+40
+00:03:41,280 --> 00:03:45,960
+ And we're going to update the text context, and this is going to be equal to, I'm going
+
+41
+00:03:45,960 --> 00:03:55,720
+ to use back ticks for a template string, time left, and dollar sign curly brackets, and
+
+42
+00:03:55,720 --> 00:04:00,800
+ we're going to pass in our time left, and then we'll put s at the end for seconds.
+
+43
+00:04:00,800 --> 00:04:12,080
+ And then if time left is less than or equal to zero, you'll usually just be zero, but
+
+44
+00:04:12,080 --> 00:04:18,800
+ we'll put that just in case. We're going to clear our interval of timer interval.
+
+45
+00:04:18,800 --> 00:04:24,760
+ So this is why it is important to name your set intervals so that they can be cleared
+
+46
+00:04:24,760 --> 00:04:25,760
+ effectively.
+
+47
+00:04:25,760 --> 00:04:35,720
+ So this is going to end this execution here, and then we're going to want to end our test.
+
+48
+00:04:35,720 --> 00:04:43,760
+ And so we'll just create a stand in function for this for now, and the test, and we want
+
+49
+00:04:43,760 --> 00:04:47,160
+ to display the final score.
+
+50
+00:04:47,160 --> 00:04:57,280
+ For now, we're just going to say function and test, and we'll just do an alert, test
+
+51
+00:04:57,280 --> 00:04:59,320
+ is over.
+
+52
+00:04:59,320 --> 00:05:06,600
+ Okay, so let's go ahead and test what we have here so far.
+
+53
+00:05:06,600 --> 00:05:13,280
+ Okay, so I'm going to type something, and you'll see that, okay, that didn't work.
+
+54
+00:05:13,280 --> 00:05:15,360
+ And you know why that didn't work?
+
+55
+00:05:15,360 --> 00:05:19,920
+ It's because we did not call our start timer function.
+
+56
+00:05:19,920 --> 00:05:24,840
+ So that is a very important thing that we need to do.
+
+57
+00:05:24,840 --> 00:05:29,920
+ And this is something we're actually going to do in our event listener.
+
+58
+00:05:29,920 --> 00:05:37,360
+ So we are going to, as I mentioned before, start our timer when we hear our first key
+
+59
+00:05:37,360 --> 00:05:38,360
+ down event.
+
+60
+00:05:38,360 --> 00:05:40,200
+ That's when we're going to start our timer.
+
+61
+00:05:40,200 --> 00:05:44,840
+ Okay, we can go ahead and minimize that again, and let's try that again.
+
+62
+00:05:44,840 --> 00:05:54,560
+ Okay, so now, if I type, you can see 5, 4, 3, 2, 1, and the test is over.
+
+63
+00:05:54,560 --> 00:05:56,560
+ Okay, so we're out of time.
+
+64
+00:05:56,560 --> 00:06:02,920
+ Okay, so we can see that our interval is working, and you can see that we have hit our
+
+65
+00:06:02,920 --> 00:06:05,520
+ end test function.
+
+66
+00:06:05,520 --> 00:06:09,760
+ Now we actually need it to do the right thing when we're ending our test.
+
+67
+00:06:09,760 --> 00:06:19,360
+ So let's go back and instead of an alert here, we are going to want to switch our timer
+
+68
+00:06:19,360 --> 00:06:25,560
+ element, text, content, you'll see that it was stuck at time left 1S, and they just
+
+69
+00:06:25,560 --> 00:06:27,240
+ kind of stayed there.
+
+70
+00:06:27,240 --> 00:06:31,280
+ And so instead, we'll use back ticks again, times up.
+
+71
+00:06:31,280 --> 00:06:35,520
+ Okay, so we're going to change that.
+
+72
+00:06:35,520 --> 00:06:49,320
+ And our final score element dot text content is going to be equal to final WPM.
+
+73
+00:06:49,320 --> 00:06:53,160
+ And then we'll leave that blank for now, we're going to need to calculate that.
+
+74
+00:06:53,160 --> 00:06:55,720
+ But for now, we'll leave that blank.
+
+75
+00:06:55,720 --> 00:07:02,040
+ Text container style dot display equals none.
+
+76
+00:07:02,040 --> 00:07:08,880
+ And our try again button style display is going to be equal to block.
+
+77
+00:07:08,880 --> 00:07:11,720
+ So we want to show our try again button.
+
+78
+00:07:11,720 --> 00:07:15,640
+ Okay, so let's try that again.
+
+79
+00:07:15,640 --> 00:07:20,760
+ Okay, and we're counting down here.
+
+80
+00:07:20,760 --> 00:07:25,000
+ Okay, so that's definitely looking better.
+
+81
+00:07:25,000 --> 00:07:28,680
+ We have our final words for a minute, but we haven't calculated it yet.
+
+82
+00:07:28,680 --> 00:07:29,960
+ And then we have our time's up.
+
+83
+00:07:29,960 --> 00:07:34,040
+ And then we have our try again button, which of course does not do anything yet.
+
+84
+00:07:34,040 --> 00:07:38,360
+ But this is right for how we want our UI to change.
+
+85
+00:07:38,360 --> 00:07:43,760
+ Okay, so the last thing we need to do is actually calculate our words per minute.
+
+86
+00:07:43,760 --> 00:07:46,240
+ And we're going to pass in that number there.
+
+87
+00:07:46,240 --> 00:07:58,440
+ Okay, so let's go back and right below our end test function, comment out calculate words
+
+88
+00:07:58,440 --> 00:08:04,640
+ per minute with error adjustment.
+
+89
+00:08:04,640 --> 00:08:07,600
+ So we are going to adjust for errors.
+
+90
+00:08:07,600 --> 00:08:13,680
+ Basically the way I decided to do it was for every one error, you lose a word per minute.
+
+91
+00:08:13,680 --> 00:08:19,920
+ Okay, so function calculate WPM.
+
+92
+00:08:19,920 --> 00:08:28,480
+ Okay, and we're going to create a constant called words typed.
+
+93
+00:08:28,480 --> 00:08:30,920
+ And this is going to be equal to our total type.
+
+94
+00:08:30,920 --> 00:08:35,760
+ So remember we have a long string of every character that we've typed.
+
+95
+00:08:35,760 --> 00:08:40,040
+ And we're going to use trim to remove any spaces.
+
+96
+00:08:40,040 --> 00:08:50,640
+ And then we're going to split and we're going to use slash backslash s plus.
+
+97
+00:08:50,640 --> 00:08:52,600
+ And then slash again.
+
+98
+00:08:52,600 --> 00:08:56,480
+ And this is a reg x statement.
+
+99
+00:08:56,480 --> 00:09:01,720
+ And it's going to allow us to split on every space.
+
+100
+00:09:01,720 --> 00:09:05,200
+ And then we want to actually get the length of that.
+
+101
+00:09:05,200 --> 00:09:09,200
+ So it's going to have an array of words and we want that length.
+
+102
+00:09:09,200 --> 00:09:15,240
+ So that is going to show us every word that we've typed will actually console log to show
+
+103
+00:09:15,240 --> 00:09:17,320
+ how that's going to look.
+
+104
+00:09:17,320 --> 00:09:21,160
+ So console log our words typed.
+
+105
+00:09:21,160 --> 00:09:28,200
+ And then we'll also console log this here as well.
+
+106
+00:09:28,200 --> 00:09:29,520
+ Show what I mean.
+
+107
+00:09:29,520 --> 00:09:32,640
+ Okay, let's check that out.
+
+108
+00:09:32,640 --> 00:09:37,240
+ Okay, so I'm going to actually try this time.
+
+109
+00:09:37,240 --> 00:09:43,680
+ Okay, so that didn't actually work.
+
+110
+00:09:43,680 --> 00:09:45,200
+ Again, I didn't call this.
+
+111
+00:09:45,200 --> 00:09:47,360
+ So that's important.
+
+112
+00:09:47,360 --> 00:09:49,400
+ Always call your functions when you make them.
+
+113
+00:09:49,400 --> 00:09:55,360
+ So I'm going to call this at the end of our end test year.
+
+114
+00:09:55,360 --> 00:09:57,320
+ Very important to call your functions.
+
+115
+00:09:57,320 --> 00:09:59,880
+ Okay, let's try that one more time.
+
+116
+00:09:59,880 --> 00:10:03,400
+ Okay, we also want to type in the console.
+
+117
+00:10:03,400 --> 00:10:13,280
+ Okay, okay, and you can see that it is five.
+
+118
+00:10:13,280 --> 00:10:17,240
+ And you'll see that we have five words that I typed in an array.
+
+119
+00:10:17,240 --> 00:10:21,600
+ And it's split every time that I added a space.
+
+120
+00:10:21,600 --> 00:10:22,640
+ So that is accurate.
+
+121
+00:10:22,640 --> 00:10:26,760
+ I typed five words, not permitted, but in six seconds.
+
+122
+00:10:26,760 --> 00:10:33,000
+ Okay, so let's go ahead and continue with our calculate words for a minute here.
+
+123
+00:10:33,000 --> 00:10:43,960
+ And from here, we want to get our base WPM and this is going to be equal to math round.
+
+124
+00:10:43,960 --> 00:10:53,240
+ So we want a whole number and we're going to use words typed, divided by 60.
+
+125
+00:10:53,240 --> 00:11:00,600
+ And then times 60 to get back to a minute.
+
+126
+00:11:00,600 --> 00:11:04,800
+ So in our case, the final test will be 60 seconds.
+
+127
+00:11:04,800 --> 00:11:09,700
+ But if you wanted to change it to be 30 or in our case, six seconds, you would actually
+
+128
+00:11:09,700 --> 00:11:11,880
+ change this number here.
+
+129
+00:11:11,880 --> 00:11:16,040
+ So let's say that I had words typed, divided by six.
+
+130
+00:11:16,040 --> 00:11:21,240
+ This should give me an accurate base words for a minute in my six second test.
+
+131
+00:11:21,240 --> 00:11:29,680
+ Okay, and from here, we're going to have our adjusted WPM and this is going to be equal
+
+132
+00:11:29,680 --> 00:11:41,660
+ to math max and it's going to take our base WPM minus errors comma zero.
+
+133
+00:11:41,660 --> 00:11:47,040
+ And the reason we have this is let's say that our base words for a minute was five, but
+
+134
+00:11:47,040 --> 00:11:48,040
+ we had 10 errors.
+
+135
+00:11:48,040 --> 00:11:52,760
+ We want the minimum adjusted words for a minute to be zero.
+
+136
+00:11:52,760 --> 00:11:57,320
+ That's why math max is going to take the bigger of these two numbers.
+
+137
+00:11:57,320 --> 00:12:03,960
+ And then we're going to return our adjusted words per minute, okay.
+
+138
+00:12:03,960 --> 00:12:08,760
+ And then we're actually going to call this inside of our template string here.
+
+139
+00:12:08,760 --> 00:12:15,160
+ So do dollar sign, really bracket and calculate WPM and bracket.
+
+140
+00:12:15,160 --> 00:12:19,280
+ Okay, and we can remove this from the bottom.
+
+141
+00:12:19,280 --> 00:12:23,880
+ Okay, so let's give that a try.
+
+142
+00:12:23,880 --> 00:12:34,360
+ All right, so I'll start typing, oh, vivid, oops, vivid, pair, nest, okay.
+
+143
+00:12:34,360 --> 00:12:37,360
+ So you can see that I actually got 50.
+
+144
+00:12:37,360 --> 00:12:45,680
+ So I divided by six and then I times that by 60 to get to what it would be over the course
+
+145
+00:12:45,680 --> 00:12:46,760
+ of a minute.
+
+146
+00:12:46,760 --> 00:12:53,200
+ So I actually typed the equivalent of 50 words a minute in six seconds, which is pretty
+
+147
+00:12:53,200 --> 00:12:54,200
+ good.
+
+148
+00:12:54,200 --> 00:13:01,280
+ Okay, so we have successfully started our timer when we trigger that first event listener
+
+149
+00:13:01,280 --> 00:13:08,040
+ when we type any character and our timer is successfully counting down.
+
+150
+00:13:08,040 --> 00:13:12,680
+ And when we've reached the end of that countdown, we're successfully showing our end
+
+151
+00:13:12,680 --> 00:13:18,080
+ of test UI and we're successfully calculating our words per minute.
+
+152
+00:13:18,080 --> 00:13:23,160
+ Okay, so in the next one, we want to add the functionality to our try again to be
+
+153
+00:13:23,160 --> 00:13:26,120
+ able to reset our test.
+
+154
+00:13:26,120 --> 00:13:31,320
+ And we also want to make sure that if users are on a mobile device, they are going to
+
+155
+00:13:31,320 --> 00:13:36,520
+ get a message to let them know that they need to run it on their computer.
+
+156
+00:13:36,520 --> 00:13:40,080
+ All right, so let's tackle that in the next one.
+
+157
+00:13:40,080 --> 00:13:41,080
+ I'll see you then.
+
+158
+00:13:41,080 --> 00:13:42,080
+ Bye for now.
+
