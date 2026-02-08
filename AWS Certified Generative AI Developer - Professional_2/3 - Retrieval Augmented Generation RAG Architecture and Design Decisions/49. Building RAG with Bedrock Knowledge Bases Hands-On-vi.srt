@@ -1,0 +1,1064 @@
+1
+00:00:00,000 --> 00:00:02,720
+Trong bài giảng này, tôi sẽ cho các bạn thấy một bản mẫu của Amazon
+
+2
+00:00:02,720 --> 00:00:04,560
+Căn cứ tri thức trên giường.
+
+3
+00:00:04,560 --> 00:00:06,760
+Vì vậy, chúng tôi sẽ xây dựng một ứng dụng học điện tử.
+
+4
+00:00:06,760 --> 00:00:09,360
+Và đây là kiến trúc mà chúng tôi đã thảo luận trước đó.
+
+5
+00:00:09,360 --> 00:00:12,360
+Chúng ta sẽ đi theo kiến trúc này.
+
+6
+00:00:12,360 --> 00:00:14,040
+Vì vậy, điều đầu tiên chúng tôi sẽ làm là chúng tôi
+
+7
+00:00:14,040 --> 00:00:15,960
+sẽ chọn nguồn dữ liệu.
+
+8
+00:00:15,960 --> 00:00:20,000
+Và trong trường hợp của chúng tôi, nguồn dữ liệu sẽ là S3 xô.
+
+9
+00:00:20,000 --> 00:00:21,520
+Từ góc nhìn dữ liệu, chúng tôi đang đi
+
+10
+00:00:21,520 --> 00:00:25,560
+để có một tài liệu PDF của hướng dẫn sử dụng của Amazon Bedrock,
+
+11
+00:00:25,560 --> 00:00:28,400
+Mà chúng tôi sẽ tải lên S3 xô.
+
+12
+00:00:28,400 --> 00:00:30,040
+Vậy đây sẽ là PDF của chúng ta.
+
+13
+00:00:30,040 --> 00:00:33,080
+Về cơ bản nó là hướng dẫn sử dụng của Amazon Bedrock.
+
+14
+00:00:33,080 --> 00:00:36,400
+Và nó có khoảng 200 trang.
+
+15
+00:00:36,400 --> 00:00:38,440
+Vì vậy, khi người dùng kết thúc thực hiện một truy vấn,
+
+16
+00:00:38,440 --> 00:00:40,240
+Căn cứ tri thức Amazon
+
+17
+00:00:40,240 --> 00:00:42,640
+tham chiếu tài liệu đặc biệt này
+
+18
+00:00:42,640 --> 00:00:46,760
+để lấy và tạo ra câu trả lời.
+
+19
+00:00:46,760 --> 00:00:48,800
+Giờ tôi đang ở bảng điều khiển AWS.
+
+20
+00:00:48,800 --> 00:00:51,880
+Hãy nhớ rằng, bạn không thể tạo ra một căn cứ tri thức Bedrock
+
+21
+00:00:51,880 --> 00:00:53,240
+thông qua người dùng gốc.
+
+22
+00:00:53,240 --> 00:00:56,080
+Bạn cần phải tạo ra một máy trợ tim.
+
+23
+00:00:56,080 --> 00:00:58,440
+Vì vậy, hãy để tôi chỉ cần tìm kiếm lm.
+
+24
+00:00:58,440 --> 00:01:00,960
+Và sau đó tôi sẽ chỉ cần click vào IM.
+
+25
+00:01:00,960 --> 00:01:03,040
+Và ở đây, chỉ cần nhấp chuột vào người dùng.
+
+26
+00:01:03,040 --> 00:01:04,880
+Và chỉ cần nhấp vào tạo ra người dùng.
+
+27
+00:01:04,880 --> 00:01:06,640
+Và sau đó bạn có thể chỉ cần cho nó bất kỳ tên.
+
+28
+00:01:06,640 --> 00:01:09,360
+Vì vậy, hãy để tôi chỉ nói rằng một trong những.
+
+29
+00:01:09,360 --> 00:01:11,680
+Và sau đó tôi sẽ chỉ nhấp chuột vào cái này.
+
+30
+00:01:11,680 --> 00:01:14,800
+Và tôi muốn tạo ra một người dùng IM.
+
+31
+00:01:14,800 --> 00:01:17,040
+Và bạn có thể tự động tạo ra mật khẩu.
+
+32
+00:01:17,040 --> 00:01:19,000
+Sau đó, hãy để tôi chỉ cần click vào tiếp theo.
+
+33
+00:01:19,000 --> 00:01:20,680
+Và ở đây, bạn phải làm cho phép.
+
+34
+00:01:20,680 --> 00:01:22,800
+Vì vậy, tôi có thể nói rằng gắn kết trực tiếp chính sách.
+
+35
+00:01:22,800 --> 00:01:25,160
+Tìm kiếm chính sách ở đây.
+
+36
+00:01:25,160 --> 00:01:27,280
+Và tôi sẽ chỉ nói quyền tiếp cận Adam.
+
+37
+00:01:27,280 --> 00:01:29,400
+Chỉ cần nhấp chuột vào tờ quảng cáo này.
+
+38
+00:01:29,400 --> 00:01:31,480
+Và sau đó chỉ cần nhấp chuột vào tiếp theo.
+
+39
+00:01:31,480 --> 00:01:34,600
+Và chỉ cần nhấp vào tạo ra người dùng.
+
+40
+00:01:34,600 --> 00:01:35,840
+Tôi sẽ chỉ sao chép cái này.
+
+41
+00:01:35,840 --> 00:01:38,320
+Có lẽ đi đến một cửa sổ ẩn danh mới
+
+42
+00:01:38,320 --> 00:01:40,000
+và chỉ cần mở nó từ đây.
+
+43
+00:01:40,000 --> 00:01:45,680
+Bây giờ tôi sẽ chỉ cần sao chép tên người dùng này.
+
+44
+00:01:45,680 --> 00:01:48,320
+Và sau đó chỉ cung cấp tên người dùng ở đây.
+
+45
+00:01:48,320 --> 00:01:50,480
+Vì vậy, tôi sẽ chỉ cần sao chép này mật khẩu.
+
+46
+00:01:50,480 --> 00:01:52,800
+Và để tôi cung cấp mật khẩu.
+
+47
+00:01:52,800 --> 00:01:55,000
+Và sau đó đăng ký.
+
+48
+00:01:55,000 --> 00:01:56,520
+Được rồi, bây giờ tôi đang ở trên bảng điều khiển AWS.
+
+49
+00:01:56,520 --> 00:01:57,800
+Vì vậy, điều đầu tiên chúng tôi phải làm là
+
+50
+00:01:57,800 --> 00:01:59,800
+Chúng ta phải tạo ra một cái xô S3, mà
+
+51
+00:01:59,800 --> 00:02:00,920
+sẽ là nguồn dữ liệu của chúng ta.
+
+52
+00:02:00,920 --> 00:02:03,040
+Để tôi nhấn vào đây.
+
+53
+00:02:03,040 --> 00:02:05,400
+Hãy chắc chắn là anh đang ở khu phía Đông.
+
+54
+00:02:05,400 --> 00:02:08,480
+Vậy tôi sẽ đến Bắc Virginia và Mỹ phía Đông.
+
+55
+00:02:08,480 --> 00:02:11,760
+OK, bây giờ tôi có này xô S3 một lần nữa ở đây là tốt.
+
+56
+00:02:11,760 --> 00:02:14,960
+Để tôi chuyển sang Bắc Virginia.
+
+57
+00:02:14,960 --> 00:02:17,200
+Bây giờ tôi đang ở vùng Bắc Virginia.
+
+58
+00:02:17,200 --> 00:02:19,640
+Để tôi nhấn vào cái xô sáng tạo này.
+
+59
+00:02:19,640 --> 00:02:21,760
+Và hãy đặt tên cho cái xô này.
+
+60
+00:02:21,760 --> 00:02:27,040
+Vì vậy tôi sẽ nói rằng để làm cho nó độc đáo.
+
+61
+00:02:27,040 --> 00:02:30,160
+Và sau đó tôi chỉ cần nói tạo ra xô.
+
+62
+00:02:30,160 --> 00:02:31,640
+Được rồi, bây giờ cái xô này đã được tạo ra.
+
+63
+00:02:31,640 --> 00:02:33,680
+Hãy để tôi chỉ cần nhấp chuột vào chi tiết xem.
+
+64
+00:02:33,680 --> 00:02:36,840
+Bây giờ bạn nghe bạn có thể tải lên tài liệu PDF của chúng tôi,
+
+65
+00:02:36,840 --> 00:02:40,080
+Trong trường hợp của chúng tôi hướng dẫn viên người dùng đá phiến đá.
+
+66
+00:02:40,080 --> 00:02:42,600
+Nhưng bạn có thể tải lên bất kỳ tài liệu mà bạn
+
+67
+00:02:42,600 --> 00:02:47,440
+muốn người dùng của chúng tôi tham khảo cho e học tập.
+
+68
+00:02:47,440 --> 00:02:50,360
+Vì vậy, tôi sẽ chỉ bỏ nó ở đây.
+
+69
+00:02:50,360 --> 00:02:55,960
+Và hãy để tôi chỉ cần nói tải lên OK.
+
+70
+00:02:55,960 --> 00:02:58,240
+Bây giờ tài liệu của chúng tôi đã được tải lên.
+
+71
+00:02:58,240 --> 00:02:59,800
+Vì vậy, hãy để tôi chỉ đóng này.
+
+72
+00:02:59,800 --> 00:03:01,760
+Và hãy để tôi quay lại bàn điều khiển.
+
+73
+00:03:01,760 --> 00:03:05,160
+Và bây giờ tôi sẽ chỉ cần tìm kiếm trên nền đá.
+
+74
+00:03:05,160 --> 00:03:08,680
+OK, tôi sẽ chỉ nhấp chuột vào đá nền Amazon.
+
+75
+00:03:08,680 --> 00:03:10,440
+Bây giờ tôi đang phục vụ ở Amazon.
+
+76
+00:03:10,440 --> 00:03:12,320
+Vì vậy, nếu bạn chỉ cần di chuyển xuống dưới tòa nhà,
+
+77
+00:03:12,320 --> 00:03:13,520
+Tôi có thể thấy được nền tảng kiến thức.
+
+78
+00:03:13,520 --> 00:03:15,640
+Để tôi nhấn vào đây.
+
+79
+00:03:15,640 --> 00:03:18,600
+Và tôi sẽ cuộn xuống và ở đây tôi có sáng tạo.
+
+80
+00:03:18,600 --> 00:03:20,080
+Tôi có thể nhấp chuột vào sáng tạo này.
+
+81
+00:03:20,080 --> 00:03:22,400
+Và bạn sẽ thấy chúng tôi có dữ liệu chưa cấu trúc,
+
+82
+00:03:22,400 --> 00:03:25,960
+Cơ sở kiến thức, cửa hàng véc tơ, Kendra, Gen A index.
+
+83
+00:03:25,960 --> 00:03:29,240
+Chúng tôi có dữ liệu cấu trúc, cửa hàng dữ liệu có cấu trúc.
+
+84
+00:03:29,240 --> 00:03:31,560
+Vì vậy kể từ khi chúng tôi có một tài liệu PDF, nó là
+
+85
+00:03:31,560 --> 00:03:33,160
+sẽ không có cấu trúc dữ liệu.
+
+86
+00:03:33,160 --> 00:03:35,440
+Và trong trường hợp của chúng tôi, hãy đi với kiến thức này
+
+87
+00:03:35,440 --> 00:03:36,840
+Căn cứ với cửa hàng véc tơ.
+
+88
+00:03:36,840 --> 00:03:39,440
+Vì vậy, chúng tôi sẽ xem xét tất cả những điều này ở phần sau.
+
+89
+00:03:39,440 --> 00:03:41,320
+Nhưng bây giờ, chúng ta hãy tiếp tục với kiến thức này.
+
+90
+00:03:41,320 --> 00:03:43,200
+Cơ sở cửa hàng véc tơ.
+
+91
+00:03:43,200 --> 00:03:45,480
+OK, bây giờ chúng ta phải cung cấp tên ở đây.
+
+92
+00:03:45,480 --> 00:03:47,120
+Có lẽ tôi sẽ chỉ đi với cùng tên
+
+93
+00:03:47,120 --> 00:03:49,200
+Mà chúng tôi đã đưa cho S3 xô,
+
+94
+00:03:49,200 --> 00:03:51,880
+Đó là mô hình nền KB01.
+
+95
+00:03:51,880 --> 00:03:54,880
+Và bạn có thể mô tả nếu bạn muốn.
+
+96
+00:03:54,880 --> 00:03:56,240
+Nhưng tôi sẽ để trống.
+
+97
+00:03:56,240 --> 00:03:57,760
+Tùy anh thôi.
+
+98
+00:03:57,760 --> 00:03:59,880
+Tiếp theo, chúng ta có các giấy phép IM.
+
+99
+00:03:59,880 --> 00:04:02,560
+Một số quyền hạn là cần thiết để truy cập các dịch vụ khác
+
+100
+00:04:02,560 --> 00:04:06,920
+hoặc thực hiện hành động để tạo tài nguyên này.
+
+101
+00:04:06,920 --> 00:04:10,480
+Để biết thêm thông tin, hãy xem vai trò của nền đá Amazon.
+
+102
+00:04:10,480 --> 00:04:13,120
+Vì vậy, chúng tôi sẽ để Amazon nền tảng tạo ra dịch vụ
+
+103
+00:04:13,120 --> 00:04:13,920
+phòng.
+
+104
+00:04:13,920 --> 00:04:16,680
+Dịch vụ nền Amazon có thể cần truy cập vào các dịch vụ khác
+
+105
+00:04:16,680 --> 00:04:20,520
+như S3 xô, có thể là cửa hàng véc tơ và vân vân.
+
+106
+00:04:20,520 --> 00:04:23,440
+Vì vậy chúng tôi sẽ để nó tạo ra phòng phục vụ.
+
+107
+00:04:23,440 --> 00:04:26,040
+Tiếp theo, chúng ta phải chọn nguồn dữ liệu.
+
+108
+00:04:26,040 --> 00:04:29,440
+Vì vậy, nếu bạn chỉ cần đi ở đây trong biểu đồ kiến trúc của chúng tôi,
+
+109
+00:04:29,440 --> 00:04:31,160
+Chúng ta phải tạo ra nguồn dữ liệu.
+
+110
+00:04:31,160 --> 00:04:33,400
+Và sau đó chúng tôi phải thêm dữ liệu.
+
+111
+00:04:33,400 --> 00:04:35,320
+Vì vậy, chúng tôi đã tạo ra S3 xô.
+
+112
+00:04:35,320 --> 00:04:40,120
+Và sau đó chúng tôi đã thêm các tài liệu PDF ở đây.
+
+113
+00:04:40,120 --> 00:04:41,680
+Ở đây, tôi có nhiều lựa chọn.
+
+114
+00:04:41,680 --> 00:04:44,160
+Tôi có thể chọn Amazon S3.
+
+115
+00:04:44,160 --> 00:04:46,320
+Có lẽ tôi có thể có một cái web thu thập.
+
+116
+00:04:46,320 --> 00:04:49,800
+Vì vậy, có lẽ người dùng học điện tử của chúng tôi muốn một số thông tin
+
+117
+00:04:49,800 --> 00:04:50,760
+từ internet.
+
+118
+00:04:50,760 --> 00:04:53,280
+Vì vậy, nền tảng kiến thức của chúng tôi có thể đi và thu thập một số dữ liệu
+
+119
+00:04:53,280 --> 00:04:55,160
+và sau đó trả lời câu hỏi.
+
+120
+00:04:55,160 --> 00:04:57,040
+Vì vậy, bạn cũng có thể có một nguồn dữ liệu tùy chỉnh.
+
+121
+00:04:57,040 --> 00:05:00,320
+Anh có thể có quyền hạn, lực lượng bán hàng, Chia sẻ.
+
+122
+00:05:00,320 --> 00:05:02,000
+Vì vậy, có nhiều lựa chọn.
+
+123
+00:05:02,000 --> 00:05:04,320
+Cho trường hợp của chúng tôi, chúng tôi sẽ chỉ đi với S3 xô.
+
+124
+00:05:04,320 --> 00:05:06,200
+Vì vậy, hãy để tôi chỉ cần nhấp vào S3 xô.
+
+125
+00:05:06,200 --> 00:05:07,520
+Sau đó bạn có thể thêm một số thẻ.
+
+126
+00:05:07,520 --> 00:05:11,680
+Nếu bạn muốn, sau đó bạn có thể thêm một số bản sao giao hàng,
+
+127
+00:05:11,680 --> 00:05:12,760
+nhật ký ứng dụng.
+
+128
+00:05:12,760 --> 00:05:13,640
+Đó là một sự lựa chọn.
+
+129
+00:05:13,640 --> 00:05:16,760
+Và chúng tôi sẽ xem xét điều này trong một số ít tiếp theo
+
+130
+00:05:16,760 --> 00:05:17,680
+Bài giảng.
+
+131
+00:05:17,680 --> 00:05:19,680
+Bây giờ, để tôi nhấn vào tiếp theo.
+
+132
+00:05:19,680 --> 00:05:22,280
+Và ở đây, bạn có thể thấy, chúng tôi có tên nguồn dữ liệu này.
+
+133
+00:05:22,280 --> 00:05:23,440
+Vì vậy, nó là tự động tạo ra.
+
+134
+00:05:23,440 --> 00:05:24,920
+Vì vậy, tôi sẽ để nó như vậy.
+
+135
+00:05:24,920 --> 00:05:26,360
+Sau đó là vị trí nguồn dữ liệu.
+
+136
+00:05:26,360 --> 00:05:29,760
+Vì vậy, này tài khoản AWS, yeah, nguồn dữ liệu S3 xô
+
+137
+00:05:29,760 --> 00:05:31,600
+nằm trong tài khoản này.
+
+138
+00:05:31,600 --> 00:05:35,200
+Bây giờ chúng ta phải cho kết nối của xô S3.
+
+139
+00:05:35,200 --> 00:05:36,920
+Tôi sẽ nhấp chuột vào duyệt.
+
+140
+00:05:36,920 --> 00:05:41,160
+Và tôi có thể tìm kiếm từ ngày tạo và ngày tạo.
+
+141
+00:05:41,160 --> 00:05:46,760
+Đây là cái xô nhỏ mà chúng tôi đã tạo ra.
+
+142
+00:05:46,760 --> 00:05:48,680
+Tôi sẽ nhấn vào đây.
+
+143
+00:05:48,680 --> 00:05:50,240
+Và tôi sẽ nói lựa chọn.
+
+144
+00:05:50,240 --> 00:05:55,480
+Vì vậy, tiếp theo, bạn cũng có thể thêm khách hàng quản lý KMS phím cho dữ liệu S3.
+
+145
+00:05:55,480 --> 00:05:57,840
+Vì vậy, nếu bạn muốn mã hóa dữ liệu tại phần còn lại,
+
+146
+00:05:57,840 --> 00:06:01,720
+sau đó bạn có thể sử dụng chìa khóa KMS cho điều đó.
+
+147
+00:06:01,720 --> 00:06:03,080
+Nên tôi sẽ không làm thế.
+
+148
+00:06:03,080 --> 00:06:04,560
+Hãy để tôi tiếp tục.
+
+149
+00:06:04,560 --> 00:06:08,320
+Vì vậy, tiếp theo là chiến lược phân tích.
+
+150
+00:06:08,320 --> 00:06:09,520
+Giờ chúng ta có 3 lựa chọn.
+
+151
+00:06:09,520 --> 00:06:12,000
+Chúng ta có máy phân tích mặc định của Amazon.
+
+152
+00:06:12,000 --> 00:06:15,400
+Bây giờ nếu dữ liệu trong nguồn dữ liệu của bạn giống như các tài liệu văn bản,
+
+153
+00:06:15,400 --> 00:06:20,400
+Từ, Push, HTML, sau đó bạn chọn chiến lược phân tích này.
+
+154
+00:06:20,400 --> 00:06:24,000
+Nhưng nếu bạn có, hãy nói hình ảnh, âm thanh và video,
+
+155
+00:06:24,000 --> 00:06:28,320
+Sau đó bạn chọn các nền đá Amazon tự động hóa dữ liệu như phân tích.
+
+156
+00:06:28,320 --> 00:06:31,880
+Và sau đó nếu bạn có PDFs, hình ảnh, và sau đó cũng có cấu trúc
+
+157
+00:06:31,880 --> 00:06:36,640
+bảng tài liệu và hình thức hoặc tài liệu phong phú thị giác,
+
+158
+00:06:36,640 --> 00:06:39,320
+Sau đó bạn chọn mô hình nền làm bộ phân tích.
+
+159
+00:06:39,320 --> 00:06:40,960
+Vì vậy, bây giờ chúng tôi đang thực hiện với bước một.
+
+160
+00:06:40,960 --> 00:06:45,320
+Bây giờ nếu bạn nhìn vào bước hai này, chúng tôi có chiến lược phân tích dữ liệu này.
+
+161
+00:06:45,320 --> 00:06:48,920
+Vì vậy, bây giờ nếu tôi quay trở lại đây, bạn có thể thấy chiến lược cắt giảm.
+
+162
+00:06:48,920 --> 00:06:53,520
+Vì vậy, việc tách các văn bản ra thành các đoạn nhỏ hơn trước khi nhúng.
+
+163
+00:06:53,520 --> 00:06:57,720
+Có nhiều cách và bạn có thể phá vỡ, ví dụ như trong trường hợp của chúng tôi,
+
+164
+00:06:57,720 --> 00:07:01,480
+Chúng tôi có 200 trang tài liệu nhỏ hơn.
+
+165
+00:07:01,480 --> 00:07:04,640
+Vì vậy, sau đó mô hình nhúng của chúng tôi có thể tạo ra các đường viền véc tơ.
+
+166
+00:07:04,640 --> 00:07:07,920
+Và chúng ta sẽ lặn sâu vào từng cái một sau đó.
+
+167
+00:07:07,920 --> 00:07:11,720
+Nhưng bây giờ, chỉ cần nhớ, có nhiều chiến lược để tách ra.
+
+168
+00:07:11,720 --> 00:07:14,760
+Vì vậy, chúng tôi sẽ chỉ đi với một mặc định.
+
+169
+00:07:14,760 --> 00:07:17,800
+OK, sau đó bạn cũng có chức năng chuyển đổi này.
+
+170
+00:07:17,800 --> 00:07:21,720
+Vì vậy, bây giờ chúng ta hãy nói rằng bạn cần phải áp dụng một số quy tắc biến đổi, vân vân.
+
+171
+00:07:21,720 --> 00:07:23,880
+Sau đó bạn có thể viết chức năng lambda.
+
+172
+00:07:23,880 --> 00:07:28,600
+Nó sẽ xử lý các tài liệu.
+
+173
+00:07:28,600 --> 00:07:32,040
+OK, bây giờ tôi sẽ nhấp chuột vào tiếp theo.
+
+174
+00:07:32,040 --> 00:07:36,920
+Bây giờ, nếu tôi đi đến kiến trúc, bạn có thể thấy bước thứ ba của chúng tôi là đường viền mô hình.
+
+175
+00:07:36,920 --> 00:07:38,720
+Vì vậy, chúng ta phải chọn mô hình đường viền.
+
+176
+00:07:38,720 --> 00:07:41,040
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào mô hình nhúng chọn,
+
+177
+00:07:41,040 --> 00:07:44,880
+Vì vậy, bạn có thể thấy chúng tôi có hai nhà cung cấp dịch vụ mô hình, Amazon và Coheer.
+
+178
+00:07:44,880 --> 00:07:48,120
+Vì vậy, hãy để tôi chỉ cần nhấp chuột vào Amazon và sau đó ở đây, bạn có thể chọn mô hình.
+
+179
+00:07:48,120 --> 00:07:51,160
+Vậy là bạn có Amazon, không có nhiều lớp da.
+
+180
+00:07:51,160 --> 00:07:55,480
+Vì vậy, đa thức có nghĩa là nó có thể xử lý cả văn bản và hình ảnh, vân vân.
+
+181
+00:07:55,480 --> 00:07:59,440
+Sau đó chúng ta có mô hình chụp Titan và mô hình cấu trúc văn bản Titan,
+
+182
+00:07:59,440 --> 00:08:01,320
+mà chỉ có thể xử lý văn bản.
+
+183
+00:08:01,320 --> 00:08:05,320
+Vì vậy, hãy để tôi chỉ cần chọn này văn bản Titan condings V2.
+
+184
+00:08:05,320 --> 00:08:08,120
+Và để tôi áp dụng.
+
+185
+00:08:08,120 --> 00:08:13,880
+OK, bây giờ nếu tôi quay lại kiến trúc hoặc bước thứ tư là chọn cơ sở dữ liệu vector.
+
+186
+00:08:13,880 --> 00:08:15,400
+Vì vậy, đó là những gì chúng tôi sẽ làm.
+
+187
+00:08:15,400 --> 00:08:17,560
+Và bạn có thể thấy kiểu cửa hàng véc tơ.
+
+188
+00:08:17,560 --> 00:08:23,320
+Vì vậy, có nhiều loại cửa hàng véc tơ mà Amazon đá nền cung cấp theo mặc định.
+
+189
+00:08:23,320 --> 00:08:25,320
+Vì vậy, bây giờ chúng tôi có các cửa hàng véc tơ ở đây.
+
+190
+00:08:25,320 --> 00:08:28,680
+Vì vậy ở đây bạn có hai lựa chọn, nhanh chóng tạo ra một cửa hàng véc tơ mới.
+
+191
+00:08:28,680 --> 00:08:31,120
+Vì vậy, nếu bạn đã có cửa hàng véc tơ, bạn có thể chọn điều này.
+
+192
+00:08:31,120 --> 00:08:34,840
+Nếu không, bạn có thể chọn nhanh việc tạo cửa hàng véc tơ mới.
+
+193
+00:08:34,840 --> 00:08:37,520
+Và nếu tôi nhấn vào đây, nó sẽ cho tôi vài lựa chọn.
+
+194
+00:08:37,520 --> 00:08:44,720
+Vì vậy, bạn có mở máy chủ tìm kiếm không có máy chủ, Amazon S3 véc tơ, Amazon Aurora Postgres, máy chủ hệ thống miễn phí.
+
+195
+00:08:44,720 --> 00:08:47,800
+Và sau đó chúng ta có các phân tích sao Hải Vương Amazon.
+
+196
+00:08:47,800 --> 00:08:55,760
+Vì vậy tôi sẽ chỉ chọn véc tơ S3 Amazon này bởi vì nó rẻ hơn nhiều so với các cửa hàng véc tơ khác.
+
+197
+00:08:55,760 --> 00:09:01,080
+Vì vậy, hãy nhớ, khi bạn tạo ra một kiến thức tốt hơn, đặc biệt là khi bạn chọn các cửa hàng véc tơ,
+
+198
+00:09:01,080 --> 00:09:08,320
+Hãy nói rằng nếu bạn chọn tìm kiếm mở, sẽ có một giờ nạp điện và lặp đi lặp lại mỗi giờ.
+
+199
+00:09:08,320 --> 00:09:12,960
+Vậy là khoảng 50 xu cho S3 véc tơ, nó sẽ nhỏ hơn nhiều.
+
+200
+00:09:12,960 --> 00:09:17,480
+Nhưng nếu bạn đang theo dõi, hãy chắc chắn rằng bạn xóa đi những kiến thức tốt hơn.
+
+201
+00:09:17,480 --> 00:09:22,880
+OK, bây giờ tôi chỉ cần nhấp vào véc tơ S3 Amazon, và sau đó tôi sẽ chỉ nhấp chuột vào tiếp theo.
+
+202
+00:09:22,880 --> 00:09:26,000
+Và sau đó bạn đang trên bản đánh giá này và tạo trang.
+
+203
+00:09:26,000 --> 00:09:31,280
+Và bây giờ tôi sẽ nói rằng tạo ra nền tảng kiến thức.
+
+204
+00:09:31,280 --> 00:09:34,440
+Vì vậy, nó sẽ mất một vài phút để tạo ra các cơ sở kiến thức.
+
+205
+00:09:34,440 --> 00:09:39,840
+Bạn có thể thấy nó đang trong quá trình tạo ra nền tảng kiến thức tốt hơn.
+
+206
+00:09:39,840 --> 00:09:44,240
+Vì vậy, tôi chỉ làm cho nó một vài phút và bạn có thể thấy các cơ sở kiến thức của chúng tôi đã được tạo ra bây giờ.
+
+207
+00:09:44,240 --> 00:09:47,080
+Bây giờ nếu bạn chỉ cần di chuyển xuống, bạn có thể thấy các nguồn dữ liệu ở đây.
+
+208
+00:09:47,080 --> 00:09:51,560
+Và nếu bạn thấy ở đây, đồng bộ cuối cùng, vì vậy không có đồng bộ đã được thực hiện,
+
+209
+00:09:51,560 --> 00:09:57,720
+Điều đó có nghĩa là không có sự kết nối véc tơ cho nguồn dữ liệu của chúng ta đã được tạo ra.
+
+210
+00:09:57,720 --> 00:10:02,520
+Vì vậy, những gì chúng ta cần làm là chỉ cần nhấp chuột vào nó và sau đó chỉ cần nhấp chuột vào đồng bộ.
+
+211
+00:10:02,520 --> 00:10:05,160
+Một lần nữa, nó sẽ mất vài phút để hoàn thành đồng bộ.
+
+212
+00:10:05,160 --> 00:10:08,680
+Vì vậy, chúng ta sẽ chỉ chờ đợi cho đến khi đồng bộ hoàn thành.
+
+213
+00:10:08,680 --> 00:10:14,640
+OK, bây giờ chúng tôi đồng bộ hoàn thành và nếu bạn chỉ thấy ở đây, nó cho thấy đồng bộ cuối cùng là ngay bây giờ.
+
+214
+00:10:14,640 --> 00:10:19,160
+Bây giờ nếu tôi chỉ cần nhấp vào nền tảng kiến thức kiểm tra này, hãy để tôi làm điều đó.
+
+215
+00:10:19,160 --> 00:10:22,600
+Và ở đây bạn có thể thấy một số cấu hình ở đây.
+
+216
+00:10:22,600 --> 00:10:27,160
+Đầu tiên là thu hồi và phản hồi thế hệ.
+
+217
+00:10:27,160 --> 00:10:31,040
+Hãy nhớ rằng, có hai hệ thống API cung cấp bởi nền tảng kiến thức tốt hơn.
+
+218
+00:10:31,040 --> 00:10:35,920
+Một cái được lấy lại chỉ sau đó chúng ta có thể lấy lại và đáp trả.
+
+219
+00:10:35,920 --> 00:10:41,360
+Vì vậy, lấy chỉ có nghĩa là nó chỉ sẽ lấy lại các liên kết véc tơ từ các cửa hàng véc tơ.
+
+220
+00:10:41,360 --> 00:10:44,000
+Nhưng nó sẽ không tạo ra câu trả lời.
+
+221
+00:10:44,000 --> 00:10:46,440
+Và rồi bạn có những thế hệ hồi hương và phản ứng,
+
+222
+00:10:46,440 --> 00:10:50,680
+Nghĩa là nó sẽ lấy lại các đường viền véc tơ.
+
+223
+00:10:50,680 --> 00:10:56,880
+Và sau đó nó cũng sẽ tạo ra các cơ sở kiến thức từ mô hình ngôn ngữ lớn mà chúng tôi sử dụng.
+
+224
+00:10:56,880 --> 00:11:01,880
+OK, vì vậy tôi sẽ chỉ chọn lấy chỉ bây giờ để tôi có thể hiển thị cho bạn.
+
+225
+00:11:01,880 --> 00:11:07,400
+OK, tôi sẽ đưa ra một câu hỏi ngay bây giờ và sau đó chúng ta sẽ xem xét các cấu hình khác một chút sau đó.
+
+226
+00:11:07,400 --> 00:11:09,640
+Vậy tôi sẽ nói cổ động Amazon là gì?
+
+227
+00:11:09,640 --> 00:11:12,640
+Và hãy để tôi đưa ra câu hỏi này.
+
+228
+00:11:12,640 --> 00:11:19,800
+Vì vậy, bạn có thể thấy nó đã thu thập chỉ các mảng từ cửa hàng véc tơ cho tài liệu PDF mà chúng tôi đã tải lên.
+
+229
+00:11:19,800 --> 00:11:22,360
+Nhưng nó không tạo ra câu trả lời.
+
+230
+00:11:22,360 --> 00:11:27,360
+Bây giờ nếu tôi chỉ cần hủy bỏ điều này và cho phép tôi chọn này tái thu hồi và trả lời thế hệ.
+
+231
+00:11:27,360 --> 00:11:30,560
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào đây, tôi phải chọn mô hình nền tảng.
+
+232
+00:11:30,560 --> 00:11:36,320
+Vì vậy, nếu tôi chỉ cần đi đến kiến trúc, bạn có thể thấy ở đây sáu bước đã chọn mô hình ngôn ngữ lớn.
+
+233
+00:11:36,320 --> 00:11:38,160
+Tôi có thể chọn một mô hình ở đây.
+
+234
+00:11:38,160 --> 00:11:44,360
+Hãy để tôi nói Amazon và để tôi nói không đến và chỉ để một lựa chọn bây giờ nếu tôi chỉ cần hỏi cùng một câu hỏi.
+
+235
+00:11:44,360 --> 00:11:48,640
+Hãy để tôi nhấn vào đây và bạn sẽ thấy nó sẽ cung cấp cho một câu trả lời đầy đủ.
+
+236
+00:11:48,640 --> 00:11:56,240
+Và bạn có thể thấy ở đây dựa trên kết quả thu được của nền móng Amazon là một dịch vụ quản lý đầy đủ tạo ra mô hình cơ bản.
+
+237
+00:11:56,240 --> 00:12:00,040
+Và sau đó nó cung cấp thêm một số chi tiết và đây là một số trích dẫn.
+
+238
+00:12:00,040 --> 00:12:05,920
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào bất kỳ của các trích dẫn, nó sẽ cho tôi thấy từ nơi nó nhận được câu trả lời này.
+
+239
+00:12:05,920 --> 00:12:10,160
+Và đây là hướng dẫn sử dụng nền đá Amazon mà chúng tôi đã tải lên.
+
+240
+00:12:10,160 --> 00:12:13,720
+Được rồi, bây giờ bạn có thể thấy ở đây có một lựa chọn khác được gọi là chi tiết.
+
+241
+00:12:13,720 --> 00:12:20,800
+Và nếu tôi chỉ cần nhấp vào những chi tiết này, bạn có thể thấy ở đây là những mảng khác nhau mà nó đã lấy được.
+
+242
+00:12:20,800 --> 00:12:27,600
+Vì vậy, bạn có một đoạn mã nguồn và sau đó chúng tôi có các nguồn hai, mã nguồn ba và vv.
+
+243
+00:12:27,600 --> 00:12:32,800
+Vì vậy, bây giờ nếu bạn thấy trong kiến trúc, những gì chúng tôi đã thảo luận trước đó là khi người dùng đưa ra câu hỏi này,
+
+244
+00:12:32,800 --> 00:12:40,720
+Nó sẽ đi qua mô hình tạo mẫu văn bản, rồi nó sẽ tìm kiếm tương tự và lấy lại các đoạn văn cảnh,
+
+245
+00:12:40,720 --> 00:12:46,560
+mà khớp trong cơ sở dữ liệu véc- tơ này tương ứng với câu hỏi cấu tạo của người dùng này.
+
+246
+00:12:46,560 --> 00:12:52,560
+Và đây là những đoạn mà bạn có thể thấy ở đây.
+
+247
+00:12:52,560 --> 00:12:55,760
+Ở đây bạn có thể thấy một số cấu hình chúng tôi có đường ray bảo vệ.
+
+248
+00:12:55,760 --> 00:13:00,320
+Và nếu bạn chỉ cần nhấn vào đây, bạn sẽ có thể thấy tất cả các đường ray bảo vệ mà bạn đã tạo ra.
+
+249
+00:13:00,320 --> 00:13:02,560
+Và nếu bạn muốn chọn một, bạn có thể làm điều đó.
+
+250
+00:13:02,560 --> 00:13:06,240
+Vì vậy, bảo vệ đường sắt phiên bản, sau đó bạn có mô hình xếp hạng lại.
+
+251
+00:13:06,240 --> 00:13:08,480
+Vì vậy, bạn có thể chọn bất kỳ mô hình xếp hạng lại.
+
+252
+00:13:08,480 --> 00:13:10,800
+Vì vậy, ngay bây giờ dường như chỉ hỗ trợ cohere.
+
+253
+00:13:10,800 --> 00:13:13,120
+Vì vậy, bạn có lớp 3.5.
+
+254
+00:13:13,120 --> 00:13:19,200
+Mô hình xếp hạng lại cho phép một mô hình xếp hạng lại để tái nhận dạng sự liên quan của việc thu thập
+
+255
+00:13:19,200 --> 00:13:23,920
+Các đoạn mã nguồn và ghi đè bảng xếp hạng cơ sở dữ liệu liên quan tới véc- tơ.
+
+256
+00:13:23,920 --> 00:13:26,640
+Vì vậy, bạn có thể thấy nó đã lấy được nhiều mẫu.
+
+257
+00:13:26,640 --> 00:13:32,000
+Vì vậy, khi chúng tôi sử dụng một mô hình xếp hạng lại, nó sẽ xếp hạng những đoạn này dựa trên sự liên quan.
+
+258
+00:13:32,000 --> 00:13:35,120
+Và chúng tôi sẽ thảo luận về xếp hạng lại một chút sau đó.
+
+259
+00:13:35,120 --> 00:13:40,000
+Và sau đó nếu tôi chỉ cần tiếp tục di chuyển xuống, vì vậy đây là một số cấu hình khác
+
+260
+00:13:40,000 --> 00:13:42,080
+Tham số liên quan đến thế hệ.
+
+261
+00:13:42,080 --> 00:13:45,120
+Giống như nếu bạn muốn đặt lại các tham số suy luận mô hình,
+
+262
+00:13:45,120 --> 00:13:49,280
+Các thế hệ nhanh chóng, nhanh chóng dàn dựng, và như vậy, bạn có thể làm điều đó.
+
+263
+00:13:49,280 --> 00:13:52,560
+Được rồi, vậy là khá nhiều từ phần thử nghiệm.
+
+264
+00:13:52,560 --> 00:13:53,840
+Hy vọng anh thích bản thử nghiệm.
+
+265
+00:13:53,840 --> 00:13:54,800
+Hẹn gặp lại ở bài giảng tiếp theo.
+
+266
+00:13:54,800 --> 00:13:55,200
+Cảm ơn.
+
