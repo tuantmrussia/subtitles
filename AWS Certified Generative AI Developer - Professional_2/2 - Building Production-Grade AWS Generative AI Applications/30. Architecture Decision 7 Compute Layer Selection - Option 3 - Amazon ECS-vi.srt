@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:05,000
+Bây giờ, chúng ta hãy xem xét lựa chọn thứ ba, đó là Amazon ECS trong AWS.
+
+2
+00:00:05,000 --> 00:00:10,200
+Có hai dịch vụ container chính, một là ECS, có hai biến thể,
+
+3
+00:00:10,200 --> 00:00:17,400
+Fargate, không có máy chủ, và sau đó là ECS trên EC2, nơi bạn cung cấp và dễ dàng để ví dụ.
+
+4
+00:00:17,400 --> 00:00:20,000
+Và đây là dịch vụ bản địa của AWS.
+
+5
+00:00:20,000 --> 00:00:24,200
+Và sau đó bạn cũng có EKS quản lý.
+
+6
+00:00:24,200 --> 00:00:29,800
+Nhưng kỳ thi chủ yếu tập trung vào hệ thống ECS Amazon bởi vì nó là một máy chủ bản địa AWS.
+
+7
+00:00:29,800 --> 00:00:35,800
+Bây giờ, xét về kiến trúc của Amazon ECS hoặc dịch vụ ngăn chặn đàn vi tính,
+
+8
+00:00:35,800 --> 00:00:41,800
+Vì vậy, nó là một dịch vụ xử lý đầy đủ, có thể mở rộng công-te-nơ.
+
+9
+00:00:41,800 --> 00:00:46,800
+Vì vậy bây giờ về quản lý, AWS Fargate là một dịch vụ không có máy chủ,
+
+10
+00:00:46,800 --> 00:00:50,800
+Vì vậy bạn không cần quản lý bất kỳ máy chủ nào.
+
+11
+00:00:50,800 --> 00:00:56,800
+Mọi thứ liên quan đến tăng trưởng, sẽ được kiểm tra bởi AWS.
+
+12
+00:00:56,800 --> 00:01:01,800
+Và sau đó bạn cũng có lựa chọn chạy ECS trong EC2 ví dụ,
+
+13
+00:01:01,800 --> 00:01:04,800
+Đó sẽ là một ví dụ khách hàng quản lý.
+
+14
+00:01:04,800 --> 00:01:09,800
+Bây giờ, xét về tỷ lệ, AWS Fargate có thể tự động tăng.
+
+15
+00:01:09,800 --> 00:01:16,800
+Và một lần chạy ở Amazon EC2, bạn có thể thiết lập một số thước đo cho phép nó có thể đo lường.
+
+16
+00:01:16,800 --> 00:01:24,800
+Bây giờ, điều quan trọng cần nhớ ở đây là các thùng chứa có thể có tỷ lệ nhanh hơn nhiều so với trường hợp EC2.
+
+17
+00:01:24,800 --> 00:01:29,800
+Bây giờ, về mô hình giá cả, một lần nữa, Fargate hoàn toàn không có máy chủ,
+
+18
+00:01:29,800 --> 00:01:32,800
+Vì vậy, nó chỉ dựa trên trả lương như bạn sử dụng.
+
+19
+00:01:32,800 --> 00:01:41,800
+Và khi bạn sử dụng nó, nó sẽ được dựa trên VCPU và bộ nhớ được sử dụng mỗi giây.
+
+20
+00:01:41,800 --> 00:01:50,800
+Trong trường hợp của EC2 ECS, nó sẽ được dựa trên các quy trình EC2 cho cụm ECS.
+
+21
+00:01:50,800 --> 00:01:54,800
+Được rồi, điều quan trọng là giới hạn thi hành án.
+
+22
+00:01:54,800 --> 00:01:58,800
+Nó thích hợp để suy luận dài dòng.
+
+23
+00:01:58,800 --> 00:02:06,800
+Và không có giới hạn nghiêm trọng nào so với chức năng AWS Lambda, là giới hạn 15 phút.
+
+24
+00:02:06,800 --> 00:02:11,800
+Vì vậy, đây là một sự phân biệt quan trọng trong kỳ thi để xác định dịch vụ nào cần sử dụng.
+
+25
+00:02:11,800 --> 00:02:14,800
+Nếu chưa đầy 15 phút, anh sẽ đi với AWS Lambda.
+
+26
+00:02:14,800 --> 00:02:18,800
+Nếu là hơn 15 phút, bạn có thể chọn ECS hoặc EC2.
+
+27
+00:02:18,800 --> 00:02:22,800
+Bây giờ, một số trường hợp sử dụng lõi cho ECS.
+
+28
+00:02:22,800 --> 00:02:24,800
+Đầu tiên là phong tục giao hưởng Genia.
+
+29
+00:02:24,800 --> 00:02:31,800
+Vì vậy, nếu bạn phải viết lập luận của mình, bạn có thể viết mã và chạy nó trên ECS.
+
+30
+00:02:31,800 --> 00:02:33,800
+Cái thứ hai là đường ống.
+
+31
+00:02:33,800 --> 00:02:35,800
+Tôi biết chúng ta chưa bàn về đường ống.
+
+32
+00:02:35,800 --> 00:02:41,800
+Và có nhiều bước khác nhau liên quan đến các đường ống trên giá treo, tách rời, cơ sở dữ liệu véc tơ, sự phục hồi và vân vân.
+
+33
+00:02:41,800 --> 00:02:46,800
+Và trong những trường hợp đó, và giả sử bạn đang sử dụng một số khung mã nguồn mở,
+
+34
+00:02:46,800 --> 00:02:49,800
+Như Lang Jane hay cơ sở dữ liệu mã nguồn mở.
+
+35
+00:02:49,800 --> 00:02:56,800
+Vì vậy, để thực hiện các bước, bạn cần phải viết một số mã và mã đó có thể chạy trên JCS.
+
+36
+00:02:56,800 --> 00:03:01,800
+Sau đó là kiến trúc vi mô và trong kỳ thi, nếu bạn nghe thấy bất cứ điều gì liên quan đến,
+
+37
+00:03:01,800 --> 00:03:05,800
+thì dịch vụ có khả năng nhất là ECS.
+
+38
+00:03:05,800 --> 00:03:13,800
+Nó cũng có thể được sử dụng cho việc tổ chức mô hình và chúng ta đã thấy trong EC2 ví dụ cách mà EC2 có thể được sử dụng để tổ chức mô hình.
+
+39
+00:03:13,800 --> 00:03:23,800
+ECS cũng cung cấp cho bạn tùy chọn để tổ chức mô hình nơi bạn có thể sử dụng các suy luận dựa trên GPU dựa trên ECS trên EC2.
+
+40
+00:03:23,800 --> 00:03:28,800
+Vì vậy, bạn có G5 và P4D etc có thể sử dụng.
+
+41
+00:03:28,800 --> 00:03:33,800
+Và cuối cùng, nó có thể được sử dụng cho bất kỳ công việc suy dinh dưỡng nào.
+
+42
+00:03:33,800 --> 00:03:36,800
+Được rồi, vậy là khá nhiều từ bài giảng này.
+
+43
+00:03:36,800 --> 00:03:37,800
+Tôi sẽ xem trong bài giảng tiếp theo.
+
+44
+00:03:37,800 --> 00:03:38,800
+Cảm ơn.
+
