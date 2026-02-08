@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:04,540
+Chào mừng trở lại.
+
+2
+00:00:04,540 --> 00:00:09,960
+Trong mô-đun này chúng tôi sẽ tạo ra một dự án kiểm tra đánh máy thú vị.
+
+3
+00:00:09,960 --> 00:00:16,720
+Bạn có thể thấy rằng chúng tôi có một UI rất tối thiểu ở đây và chúng tôi đang sử dụng một phông chữ đơn không gian tuyệt vời.
+
+4
+00:00:16,720 --> 00:00:20,840
+Bạn sẽ thấy tại sao đó là một khi chúng tôi đi sâu vào mã.
+
+5
+00:00:20,840 --> 00:00:24,960
+Và bạn có thể thấy ở dưới đây chúng ta có 60 giây trên đồng hồ.
+
+6
+00:00:24,960 --> 00:00:31,040
+Vì vậy, tôi sẽ đi trước và bắt đầu gõ và đó sẽ kích hoạt đếm ngược.
+
+7
+00:00:31,040 --> 00:00:36,240
+Vì vậy, bạn sẽ thấy nếu tôi gõ sai chữ cái nó là màu đỏ nếu tôi gõ chính xác chữ cái nó là màu xanh lá cây.
+
+8
+00:00:36,240 --> 00:00:43,480
+Tôi có thể quay ngược lại và thử lại và bạn sẽ thấy rằng cuối cùng một khi tôi nhận được 20 ký tự
+
+9
+00:00:43,480 --> 00:00:48,680
+Nó sẽ bắt đầu cuộn sang một bên để tiết lộ phần còn lại của từ.
+
+10
+00:00:48,680 --> 00:00:55,440
+Vì vậy, chúng ta có 300 từ tổng cộng vì vậy tôi sẽ nghĩ rằng hầu hết mọi người sẽ không có được 300 từ
+
+11
+00:00:55,440 --> 00:01:14,520
+trong 60 giây ở đây và tôi sẽ nhanh chóng vượt qua phần còn lại.
+
+12
+00:01:14,520 --> 00:01:21,160
+Các bạn có thể thấy rằng thời gian đã hết và từ cuối cùng của tôi là 37.
+
+13
+00:01:21,160 --> 00:01:27,360
+Vì vậy, điều này sẽ yếu tố trong bất kỳ lỗi nào tôi đã thực hiện và đó sẽ giảm điểm của tôi.
+
+14
+00:01:27,360 --> 00:01:34,280
+Và nếu tôi bấm nút và thử lại lần nữa, bạn sẽ thấy tôi có một bộ từ mới được xáo trộn.
+
+15
+00:01:34,280 --> 00:01:36,760
+Được rồi, rất tuyệt.
+
+16
+00:01:36,760 --> 00:01:44,400
+Và nếu chúng ta kiểm tra và đi đến xem di động của chúng ta và chúng ta cập nhật lại trang ở đây.
+
+17
+00:01:44,400 --> 00:01:49,440
+Bạn sẽ thấy rằng kiểm tra gõ này được thiết kế chỉ cho việc sử dụng môi trường.
+
+18
+00:01:49,440 --> 00:01:55,200
+Đó là bởi vì nó là một chút khó khăn để luôn luôn kích hoạt bàn phím ảo
+
+19
+00:01:55,200 --> 00:01:58,120
+Với cách chúng tôi xây dựng ứng dụng này.
+
+20
+00:01:58,120 --> 00:02:01,440
+Vì vậy, nó được thiết kế chỉ cho việc sử dụng máy tính.
+
+21
+00:02:01,440 --> 00:02:07,760
+Được rồi, chúng ta hãy đi sâu vào đoạn mã.
+
+22
+00:02:07,760 --> 00:02:11,200
+Ồ và một nốt nhanh trước khi bắt đầu.
+
+23
+00:02:11,200 --> 00:02:18,880
+Khóa học này thực sự là một phần của khóa học lớn hơn được gọi là dự án CNSS và JavaScript tiên tiến.
+
+24
+00:02:18,880 --> 00:02:25,120
+Nơi tôi hướng dẫn bạn từng bước một xây dựng năm dự án thực tế thực tế được thiết kế
+
+25
+00:02:25,120 --> 00:02:30,280
+để giúp bạn đạt được mức 10% cao nhất với tư cách là một nhà phát triển CN.
+
+26
+00:02:30,280 --> 00:02:36,600
+Vì vậy, bạn có thể thỉnh thoảng nghe nói đến một phần hoặc bài học từ khóa học đầy đủ
+
+27
+00:02:36,600 --> 00:02:39,080
+Nó không áp dụng đầy đủ ở đây.
+
+28
+00:02:39,080 --> 00:02:45,820
+Và đừng lo, mọi thứ anh cần cho khóa học này đều được bao gồm và giữ gìn bản thân.
+
+29
+00:02:45,820 --> 00:02:51,440
+Và nếu bạn thích thú với những gì bạn học được ở đây, tôi chắc chắn khuyên bạn nên kiểm tra toàn bộ cấp cao
+
+30
+00:02:51,440 --> 00:02:54,360
+Tiếp theo là khóa học về dự án CSS và JavaScript.
+
+31
+00:02:54,360 --> 00:03:01,040
+Đó là một cách tuyệt vời để nâng cao kỹ năng phía trước của bạn với kinh nghiệm thực tế.
+
+32
+00:03:01,040 --> 00:03:05,920
+Những dự án này cũng là điều hoàn hảo cho danh mục đầu tư phát triển của bạn.
+
+33
+00:03:05,920 --> 00:03:08,800
+Được rồi, hãy lặn xuống.
+
+34
+00:03:08,800 --> 00:03:11,380
+(Tiếng nhạc)
+
