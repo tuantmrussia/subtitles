@@ -1,0 +1,376 @@
+1
+00:00:00,000 --> 00:00:06,800
+Vì vậy, trong bài giảng này, chúng ta sẽ thảo luận làm thế nào các tham số về sự suy luận ảnh hưởng đến hành vi nền tảng của mô hình.
+
+2
+00:00:06,800 --> 00:00:10,600
+Nhưng những tham số suy luận là gì?
+
+3
+00:00:10,600 --> 00:00:15,000
+Vì vậy, trước khi chúng tôi đã thảo luận làm thế nào các nền đá Amazon làm việc?
+
+4
+00:00:15,000 --> 00:00:18,600
+Chúng ta đã nói người dùng đầu vào là ai là cầu thủ tennis giỏi nhất?
+
+5
+00:00:18,600 --> 00:00:26,200
+Và sau đó chúng tôi nói rằng chúng tôi sẽ thực hiện yêu cầu này API để nền tảng với một số tham số cấu hình nơi chúng tôi xác định ID mô hình.
+
+6
+00:00:26,500 --> 00:00:33,500
+Vì vậy, đây là mô hình ID mà yêu cầu được gửi đến sau đó chúng tôi gửi dấu nhắc, đó là đầu vào người dùng.
+
+7
+00:00:33,500 --> 00:00:38,100
+Và sau đó cùng với điều đó, chúng tôi cũng gửi một số tham số cấu hình.
+
+8
+00:00:38,100 --> 00:00:43,300
+Vì vậy, chúng tôi đã nói, được rồi, hiệu suất tối đa sẽ đến 512, nhiệt độ sẽ là 0.5.
+
+9
+00:00:43,300 --> 00:00:51,600
+Vì vậy, những tham số cấu hình mà bạn gửi cùng với dấu nhắc được gọi là tham số suy luận.
+
+10
+00:00:52,000 --> 00:01:01,500
+Vì vậy, có hai loại tham số suy luận rộng và bạn có thể thấy một số biến thể trong một vài mô hình, nhưng nói chung, đây là hai chính.
+
+11
+00:01:01,500 --> 00:01:16,600
+Vì vậy, điều đầu tiên là sự ngẫu nhiên và đa dạng và điều này điều khiển sự sáng tạo của phản ứng mà bạn sẽ nhận được từ các mô hình nền tảng và chúng tôi sẽ nhận được những gì chúng tôi có nghĩa là bằng sự sáng tạo của phản ứng một chút.
+
+12
+00:01:17,400 --> 00:01:25,300
+Nhưng từ góc nhìn ngẫu nhiên và đa dạng, có ba tính năng quan trọng mà bạn có thể điều khiển nhiệt độ, chìa khóa trên cùng và chìa khóa trên cùng.
+
+13
+00:01:25,300 --> 00:01:27,800
+Và cái thứ hai là chiều dài.
+
+14
+00:01:27,800 --> 00:01:34,100
+Vì vậy, độ dài của đầu ra được tạo ra bởi các mô hình nền tảng dựa trên dấu nhắc của bạn.
+
+15
+00:01:34,100 --> 00:01:42,300
+Vì vậy, có hai cách mà bạn có thể kiểm soát chiều dài của các phản ứng, một là các tín hiệu tối đa và giây chuỗi dừng.
+
+16
+00:01:42,300 --> 00:01:45,900
+Được rồi, bây giờ chúng ta hãy cố gắng và hiểu điều này chi tiết hơn thông qua một ví dụ.
+
+17
+00:01:46,100 --> 00:01:49,200
+Vậy tham số suy luận đầu tiên là sự ngẫu nhiên và đa dạng.
+
+18
+00:01:49,200 --> 00:02:00,800
+Vì vậy, hãy nói rằng các nhắc nhở chúng tôi sẽ gửi đến các mô hình nền tảng là tôi nghe các nhịp móng của và mô hình nền tảng của chúng tôi sẽ hoàn thành câu này.
+
+19
+00:02:00,800 --> 00:02:08,200
+Vì vậy, chúng ta biết rằng các mô hình nền tảng tạo ra một từ cùng một lúc để hoàn thành câu.
+
+20
+00:02:09,000 --> 00:02:18,100
+Bây giờ để hoàn thành từ tiếp theo trong mô hình nền tảng câu này có thể đưa ra hàng trăm từ có thể đi sau khi ra khỏi đây.
+
+21
+00:02:18,100 --> 00:02:23,300
+Trong trường hợp của chúng tôi, giả sử rằng nó đến với năm từ.
+
+22
+00:02:23,300 --> 00:02:29,100
+Vì vậy, đầu tiên nó đi lên với con ngựa và nó cung cấp cho nó một điểm xác suất của 0.4.
+
+23
+00:02:29,100 --> 00:02:33,200
+Sau đó nó nói giành chiến thắng và nó đưa ra một điểm xác suất của 0.2.
+
+24
+00:02:33,400 --> 00:02:40,500
+Có lẽ kỳ lân với 0.0 điểm và thay đổi khoảng cách, đó là 0.05.
+
+25
+00:02:40,500 --> 00:02:49,400
+Được rồi, bây giờ hãy xem qua nhiệt độ, trên cùng có thể, top P, làm thế nào chúng ta có thể điều khiển từ tiếp theo sẽ được tạo ra.
+
+26
+00:02:49,400 --> 00:02:54,900
+Vì vậy đối với nhiệt độ, các mô hình nền tảng khác nhau sẽ có một phạm vi khác nhau.
+
+27
+00:02:54,900 --> 00:02:58,400
+Có lẽ một số sẽ có 0 đến 5, một số có thể có 0 đến 1.
+
+28
+00:02:58,800 --> 00:03:03,400
+Vì vậy, cho trường hợp sử dụng của chúng tôi, hãy chỉ giả định các giá trị giữa 0 đến 1.
+
+29
+00:03:03,400 --> 00:03:11,600
+Được rồi, bây giờ nếu bạn có giá trị thấp, đó là gần bằng 0, sau đó mô hình có xu hướng chọn từ xác suất cao hơn.
+
+30
+00:03:11,600 --> 00:03:17,700
+Và nếu bạn thấy trong trường hợp này, sau đó từ với xác suất cao nhất là ngựa 0.4.
+
+31
+00:03:17,700 --> 00:03:21,300
+Và nó sẽ được đưa ra với con ngựa từ này.
+
+32
+00:03:21,300 --> 00:03:25,800
+Có nghĩa đó là một phản ứng có thể đoán trước được.
+
+33
+00:03:26,600 --> 00:03:34,900
+Vì vậy, bây giờ nếu bạn muốn thực sự sáng tạo, thì giá trị nhiệt độ chúng ta có thể có cho mô hình nền tảng của chúng ta là hãy nói một hoặc gần hơn với một.
+
+34
+00:03:34,900 --> 00:03:43,400
+Và khi chúng tôi cung cấp một giá trị cao hơn, nhiệt độ xa hơn từ 0, mô hình có thể chọn một từ xác suất thấp hơn.
+
+35
+00:03:43,400 --> 00:03:48,800
+Và trong trường hợp của chúng tôi, từ với xác suất thấp nhất là thay đổi khoảng cách.
+
+36
+00:03:48,800 --> 00:03:53,300
+Từ tiếp theo, nó sẽ đưa ra sự thay đổi về khoảng cách.
+
+37
+00:03:54,000 --> 00:03:59,400
+Vì vậy, tiếp theo chúng tôi có hàng đầu K và nó có thể có giá trị từ 1 đến 500 và nó có thể thay đổi từ mô hình này sang mô hình khác.
+
+38
+00:03:59,400 --> 00:04:01,600
+Vậy K sẽ làm gì?
+
+39
+00:04:01,600 --> 00:04:06,500
+Cắt bỏ nơi mô hình không còn chọn các từ.
+
+40
+00:04:06,500 --> 00:04:18,400
+Vì vậy, hãy nói trong trường hợp của chúng tôi, rõ ràng chúng tôi chỉ có năm từ ở đây, nhưng hãy nói rằng nếu chúng tôi đặt K là tương đương với 50, các mô hình chọn từ 50 trong số những từ có thể nhất.
+
+41
+00:04:19,200 --> 00:04:29,600
+Vì vậy, trong ví dụ của chúng tôi, hãy nói rằng nếu chúng tôi đặt giá trị của K bằng ba, vì vậy nó sẽ chỉ chọn ba từ trên cùng, ngựa, gió và kỳ lân.
+
+42
+00:04:29,600 --> 00:04:33,500
+Giả sử giá trị nhiệt độ của chúng ta bằng 1.
+
+43
+00:04:33,500 --> 00:04:41,200
+Bây giờ, chỉ có ba từ này được chọn, nên từ chúng ta có ở đây sẽ là kỳ lân và không thay đổi về khoảng cách.
+
+44
+00:04:41,200 --> 00:04:48,100
+Vì vậy, đó là cách bạn có thể sử dụng một sự kết hợp của nhiệt độ và top K để xác định phản ứng từ mô hình nền tảng.
+
+45
+00:04:49,000 --> 00:04:53,200
+Sau đó, chúng tôi có p hàng đầu và những giá trị này có thể thay đổi từ mô hình đến mô hình.
+
+46
+00:04:53,200 --> 00:04:55,400
+Vậy, K sẽ làm gì?
+
+47
+00:04:55,400 --> 00:04:59,100
+Nó có sự lựa chọn dựa trên tổng số xác suất.
+
+48
+00:04:59,100 --> 00:05:03,100
+Vì vậy, hãy nói trong ví dụ của chúng tôi, bạn có giá trị p hàng đầu là 0.6.
+
+49
+00:05:03,100 --> 00:05:07,200
+Vì vậy, những gì nó sẽ làm là nó sẽ thêm xác suất của hai từ đầu tiên.
+
+50
+00:05:07,200 --> 00:05:08,500
+Chúng ta có ngựa và gió.
+
+51
+00:05:08,500 --> 00:05:11,500
+Vì vậy, nó sẽ chỉ chọn hai từ này.
+
+52
+00:05:11,500 --> 00:05:16,400
+Và hãy nói rằng nếu bạn có giá trị thấp về nhiệt độ, sau đó nó sẽ chọn một lần nữa, ngựa, vì vậy không nên thay đổi nhiều.
+
+53
+00:05:16,700 --> 00:05:24,600
+Nhưng hãy nói rằng nếu bạn chọn một giá trị cao hơn, sau đó nó sẽ chọn từ này, gió và không thay đổi trong khoảng cách.
+
+54
+00:05:24,600 --> 00:05:34,200
+Vì vậy, đó là cách bạn có thể sử dụng một sự kết hợp của nhiệt độ, top K và top P để xác định phản ứng sáng tạo từ mô hình.
+
+55
+00:05:34,200 --> 00:05:38,600
+Bây giờ, hãy đi và hiểu tham số suy luận thứ hai, đó là chiều dài.
+
+56
+00:05:38,600 --> 00:05:44,600
+Bây giờ, chúng ta hãy xem, chúng tôi cung cấp một dấu nhắc cho các mô hình nền tảng nơi chúng tôi thấy bên phải một bài luận trên ngựa.
+
+57
+00:05:45,500 --> 00:05:47,000
+Vậy làm thế nào để mô hình nền tảng biết?
+
+58
+00:05:47,000 --> 00:05:51,900
+Có bao nhiêu từ cần tạo ra nếu chúng ta không cung cấp bất kỳ hướng dẫn nào?
+
+59
+00:05:51,900 --> 00:05:55,900
+Vì vậy, đó là nơi tham số suy luận đi vào click chuột.
+
+60
+00:05:55,900 --> 00:05:59,900
+Vì vậy, nó kiểm soát độ dài của các phản ứng tạo ra.
+
+61
+00:05:59,900 --> 00:06:05,800
+Vì thế, nó không chỉ giúp phản ứng ngắn gọn, mà còn giúp kiểm soát chi phí.
+
+62
+00:06:05,800 --> 00:06:12,400
+Chỉ cần nhớ số từ càng nhiều, số hiệu xuất càng nhiều, thì chi phí càng tăng.
+
+63
+00:06:13,000 --> 00:06:17,300
+Bây giờ độ dài của tham số có thể được điều khiển bởi chiều dài tối đa và dừng chuỗi.
+
+64
+00:06:17,300 --> 00:06:23,700
+Vì vậy, chiều dài tối đa xác định là số hiệu tối đa cần sử dụng trong phản ứng tạo ra.
+
+65
+00:06:23,700 --> 00:06:26,300
+Nên hãy nhớ, đó là số hiệu lớn nhất.
+
+66
+00:06:26,300 --> 00:06:33,700
+Nó cũng có thể tạo ra số từ hay biểu tượng nhỏ hơn, nhưng một khi bạn cung cấp độ dài tối đa, nó không thể đi xa hơn nữa.
+
+67
+00:06:33,700 --> 00:06:38,600
+Và nó có thể khác nhau giữa từ 1 đến 64,000 và nó thay đổi từ mô hình này sang mô hình khác.
+
+68
+00:06:38,800 --> 00:06:45,600
+Và 64,000 là tối đa, trong trường hợp của mô hình móng vuốt hồng ngoại.
+
+69
+00:06:45,600 --> 00:06:50,500
+Vì vậy, nếu bạn thấy ví dụ của chúng tôi trước đây, nơi chúng tôi đã gửi các yêu cầu API cho họ là trên nền đá.
+
+70
+00:06:50,500 --> 00:06:57,800
+Ở đây chúng tôi có những đặc tính tối đa này và chúng tôi đã nói 512 biểu tượng và
+
+71
+00:06:57,800 --> 00:07:01,200
+512 thẻ tín dụng khoảng 375 từ.
+
+72
+00:07:01,200 --> 00:07:06,800
+Vậy có nghĩa là một khi nó tạo ra một bài luận về ngựa, nó không thể có hơn 335 từ.
+
+73
+00:07:06,900 --> 00:07:08,600
+Nó có thể ít hơn, nhưng không hơn.
+
+74
+00:07:08,600 --> 00:07:12,700
+Bây giờ cái thứ hai là ngăn chặn những người thứ hai.
+
+75
+00:07:12,700 --> 00:07:18,900
+Vì vậy, bây giờ nó đã rõ ràng với chúng tôi rằng nó không thể tạo ra nhiều hơn bất kỳ giới hạn tượng trưng mà chúng tôi đã cung cấp.
+
+76
+00:07:18,900 --> 00:07:25,500
+Nhưng làm sao nó biết khi nào nên dừng lại và có ba cách để thực hiện nó.
+
+77
+00:07:25,500 --> 00:07:28,900
+Đầu tiên là mô hình dừng lại.
+
+78
+00:07:28,900 --> 00:07:36,800
+Dựa trên việc đào tạo mô hình, nó tự động quyết định độ dài phù hợp cho bài luận như thế này.
+
+79
+00:07:36,900 --> 00:07:44,200
+Vì vậy, đó là đầu tiên, thứ hai là hệ thống và lực, đó là khi bạn đang gửi các tham số suy luận đến mô hình.
+
+80
+00:07:44,200 --> 00:07:46,800
+Và ở đây bạn có thể thấy những biểu tượng tối đa.
+
+81
+00:07:46,800 --> 00:07:51,300
+Vì vậy, nếu bạn cung cấp độ dài tối đa, sau đó chúng tôi đã thảo luận nó sẽ không vượt qua đó.
+
+82
+00:07:51,300 --> 00:07:53,900
+Vì vậy, thứ ba là ngăn chặn các nhị.
+
+83
+00:07:53,900 --> 00:07:57,500
+Vì vậy, trong dừng lại, bạn có thể cung cấp một số từ khóa.
+
+84
+00:07:57,500 --> 00:08:03,800
+Vì vậy, bạn cung cấp cho này dấu ngoặc khép kín hoặc cung cấp một thẻ trả lời, như bạn có thể thấy trong trường hợp này.
+
+85
+00:08:04,600 --> 00:08:06,900
+Vì vậy, những gì là liên quan bây giờ chúng ta hãy xem xét một ví dụ.
+
+86
+00:08:06,900 --> 00:08:15,100
+Hãy nói rằng bây giờ bạn đã xây dựng một ứng dụng máy phát điện bảo hiểm nơi bạn nhận được đơn yêu cầu bạn trích xuất dữ liệu từ mẫu yêu cầu.
+
+87
+00:08:15,100 --> 00:08:21,300
+Sau đó bạn làm một số định dạng của những dữ liệu chiết xuất và sau đó bạn bền bỉ trong hệ thống hậu phương.
+
+88
+00:08:21,300 --> 00:08:23,300
+Có thể là RDS, DynamoDB và vân vân.
+
+89
+00:08:23,300 --> 00:08:32,700
+Bây giờ hãy nói rằng DynamoDB của chúng tôi chấp nhận các dữ liệu theo định dạng này như một đối tượng JSON nơi chúng tôi có tên đầu tiên John và họ như làm.
+
+90
+00:08:33,600 --> 00:08:45,100
+Vì vậy, những gì sẽ xảy ra là khi chúng tôi có các trạm dừng lại theo định dạng của dấu ngoặc, sau đó nó thực hiện một phù hợp và khi ông nhìn thấy trong phản ứng đóng dấu ngoặc.
+
+91
+00:08:45,100 --> 00:08:50,900
+Nó sẽ ngừng tạo ra bất kỳ vật lưu niệm nào khác và nó hữu dụng như thế nào.
+
+92
+00:08:50,900 --> 00:08:58,700
+Vì vậy, nếu nó tạo ra thêm bất kỳ vật kỷ niệm nào đăng mà cong khung, sau đó nó sẽ không phù hợp với hậu phương.
+
+93
+00:08:59,200 --> 00:09:03,700
+Vì vậy, đó là một trong những kịch bản mà trong đó bạn có thể sử dụng ngăn chặn seans.
+
+94
+00:09:03,700 --> 00:09:07,800
+Vâng, đó là khá nhiều từ bài giảng này như trong bài giảng tiếp theo.
+
