@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:02,160
+ Now this lecture going to look at another Amazon
+
+2
+00:00:02,160 --> 00:00:06,960
+ bedrock capability called as bedrock prompt management.
+
+3
+00:00:06,960 --> 00:00:09,300
+ Amazon bedrock prompt management
+
+4
+00:00:09,300 --> 00:00:12,480
+ simplifies the creation evaluation,
+
+5
+00:00:12,480 --> 00:00:15,440
+ versioning, and sharing of prompt
+
+6
+00:00:15,440 --> 00:00:20,120
+ to get better response from the foundation models.
+
+7
+00:00:20,120 --> 00:00:22,480
+ So in summary, Amazon bedrock prompt management
+
+8
+00:00:22,480 --> 00:00:27,040
+ allows you to create prompt templates, evaluate them,
+
+9
+00:00:27,040 --> 00:00:29,480
+ do the versioning, and then share
+
+10
+00:00:29,480 --> 00:00:33,040
+ those prompts across the organization.
+
+11
+00:00:33,040 --> 00:00:35,240
+ Now let's try and understand how you can use
+
+12
+00:00:35,240 --> 00:00:38,240
+ prompt template through an example.
+
+13
+00:00:38,240 --> 00:00:41,720
+ So this is our Gen A powered equipment SME assistant,
+
+14
+00:00:41,720 --> 00:00:43,920
+ where the winter bind field technician
+
+15
+00:00:43,920 --> 00:00:47,160
+ sends the incident report and images.
+
+16
+00:00:47,160 --> 00:00:50,640
+ And then we have the equipment SME at a global location
+
+17
+00:00:50,640 --> 00:00:53,840
+ who further sends this incident report and images
+
+18
+00:00:53,840 --> 00:00:56,360
+ and asks the foundation model to summarize
+
+19
+00:00:56,360 --> 00:00:58,600
+ the equipment logs.
+
+20
+00:00:58,600 --> 00:01:02,120
+ So let's assume that these are the log details
+
+21
+00:01:02,120 --> 00:01:05,640
+ and it has asked the foundation model to summarize.
+
+22
+00:01:05,640 --> 00:01:08,280
+ Now if we go back, what is our user prompt?
+
+23
+00:01:08,280 --> 00:01:11,520
+ Equipment log details and summarize.
+
+24
+00:01:11,520 --> 00:01:14,480
+ Now if we send these details to the foundation model,
+
+25
+00:01:14,480 --> 00:01:17,480
+ we know we're not going to get great results
+
+26
+00:01:17,480 --> 00:01:19,840
+ because we're not providing any context.
+
+27
+00:01:19,840 --> 00:01:23,200
+ So that's wherein the concept of system prompts
+
+28
+00:01:23,200 --> 00:01:24,600
+ come into play.
+
+29
+00:01:24,600 --> 00:01:27,240
+ So along with this user prompt, what we can send
+
+30
+00:01:27,240 --> 00:01:30,360
+ to the foundation model is, you are a wind turbine
+
+31
+00:01:30,360 --> 00:01:32,760
+ subject matter expert specializing
+
+32
+00:01:32,760 --> 00:01:36,760
+ in equipment analysis and log based troubleshooting.
+
+33
+00:01:36,760 --> 00:01:39,520
+ So it gives foundation model some context on the persona
+
+34
+00:01:39,520 --> 00:01:44,280
+ it needs to act as to respond to this user prompt.
+
+35
+00:01:44,280 --> 00:01:48,200
+ Then we can additionally say produce a concise one-page summary
+
+36
+00:01:48,200 --> 00:01:52,440
+ and highlight the key anomalies and failure patterns.
+
+37
+00:01:52,440 --> 00:01:55,680
+ So now we have the user prompt and we have the system prompt.
+
+38
+00:01:55,680 --> 00:01:58,000
+ So now together user prompt and system prompts,
+
+39
+00:01:58,000 --> 00:02:00,160
+ we're going to send to the Amazon bedrock.
+
+40
+00:02:00,160 --> 00:02:03,320
+ So it has the full context and the response
+
+41
+00:02:03,320 --> 00:02:07,000
+ that we might get here is going to be much better
+
+42
+00:02:07,000 --> 00:02:09,280
+ than just sending the user prompt.
+
+43
+00:02:09,280 --> 00:02:11,360
+ Now how does Amazon bedrock prompt management
+
+44
+00:02:11,360 --> 00:02:12,800
+ help in this scenario?
+
+45
+00:02:12,800 --> 00:02:15,200
+ So what you can do with the prompt managed capability
+
+46
+00:02:15,200 --> 00:02:18,360
+ is create these system prompts.
+
+47
+00:02:18,360 --> 00:02:21,240
+ So you create the system prompts in the prompt management
+
+48
+00:02:21,240 --> 00:02:24,000
+ then you evaluate them, you version them,
+
+49
+00:02:24,000 --> 00:02:26,880
+ then you can share these prompts across the organization.
+
+50
+00:02:26,880 --> 00:02:28,760
+ OK, that's pretty much it from this lecture.
+
+51
+00:02:28,760 --> 00:02:29,720
+ I'll see in the next lecture.
+
+52
+00:02:29,720 --> 00:02:31,200
+ Thank you.
+
