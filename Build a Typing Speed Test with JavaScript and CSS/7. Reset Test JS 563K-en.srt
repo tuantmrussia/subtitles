@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:05,880
+ Okay, so we're going to try to finish up the rest of our functionality here, including
+
+2
+00:00:05,880 --> 00:00:12,860
+ resetting our test and sending that message to users that are on a mobile device.
+
+3
+00:00:12,860 --> 00:00:17,960
+ Okay, so let's jump into the code.
+
+4
+00:00:17,960 --> 00:00:26,600
+ So at the bottom here, we're going to comment out a title, and this is going to be
+
+5
+00:00:26,600 --> 00:00:36,120
+ for reset the test, and we're going to create a function called reset test.
+
+6
+00:00:36,120 --> 00:00:41,600
+ And inside of this, there are a lot of things we're going to need to reset, actually.
+
+7
+00:00:41,600 --> 00:00:47,200
+ And if we minimize some of this here, well actually we're going to need to reference this.
+
+8
+00:00:47,200 --> 00:00:49,040
+ We don't need to reference that.
+
+9
+00:00:49,040 --> 00:00:53,800
+ We are going to need to clear our interval, of course, and we're going to need to reset
+
+10
+00:00:53,800 --> 00:00:57,840
+ our time left to be our original time left.
+
+11
+00:00:57,840 --> 00:01:04,600
+ In this case, I'm going to make it 60 seconds just to show that it is different, and we're
+
+12
+00:01:04,600 --> 00:01:07,760
+ going to need to regenerate our long text.
+
+13
+00:01:07,760 --> 00:01:13,480
+ We want to have a new order of text, a new set of text, and we need to reset all of these
+
+14
+00:01:13,480 --> 00:01:18,120
+ as well, and we need to reset this as well.
+
+15
+00:01:18,120 --> 00:01:21,960
+ So there's lots of this stuff that actually needs to be reset again.
+
+16
+00:01:21,960 --> 00:01:31,800
+ Okay, so let's start with clear interval, and we're going to clear our timer interval,
+
+17
+00:01:31,800 --> 00:01:39,120
+ and then from there our time left is going to be equal to 60, and we need to change everything
+
+18
+00:01:39,120 --> 00:01:42,640
+ that we had in our end test.
+
+19
+00:01:42,640 --> 00:01:48,760
+ You see that we change our timer element to be times up, but we want that to be what we
+
+20
+00:01:48,760 --> 00:01:52,760
+ actually have here.
+
+21
+00:01:52,760 --> 00:02:03,640
+ We're going to go ahead and copy that, and we'll paste that there.
+
+22
+00:02:03,640 --> 00:02:10,200
+ So our timer element text content is going to be the actual time left, and our final score
+
+23
+00:02:10,200 --> 00:02:17,440
+ element, final score element, dot text content is going to be equal to single quotes.
+
+24
+00:02:17,440 --> 00:02:29,320
+ We're going to reset that, and our text container style display is going to be block.
+
+25
+00:02:29,320 --> 00:02:31,800
+ We're going to show that again, so it's the opposite of this.
+
+26
+00:02:31,800 --> 00:02:37,520
+ We are hiding our text container, and then the opposite here we want to hide our try again
+
+27
+00:02:37,520 --> 00:02:45,680
+ button, so I'll just copy that actually, and we'll set that to be none.
+
+28
+00:02:45,680 --> 00:02:51,360
+ And then from there, our total typed is going to be back to an empty string.
+
+29
+00:02:51,360 --> 00:02:54,520
+ Our typing started is going to be false.
+
+30
+00:02:54,520 --> 00:02:58,160
+ Again, it's going to wait for us to actually type something.
+
+31
+00:02:58,160 --> 00:03:06,000
+ Our current care index is going to be zero, and we'll reset our errors as well to be zero.
+
+32
+00:03:06,000 --> 00:03:14,960
+ And even our text container dot scroll left value, we're going to set that back to zero.
+
+33
+00:03:14,960 --> 00:03:19,120
+ And our long text is going to be equal to generate long text.
+
+34
+00:03:19,120 --> 00:03:23,680
+ So this is going to regenerate that long string.
+
+35
+00:03:23,680 --> 00:03:29,360
+ And then from there, we actually might want to have an initialize function.
+
+36
+00:03:29,360 --> 00:03:32,160
+ So initialize the test.
+
+37
+00:03:32,160 --> 00:03:37,560
+ We're going to need this because this is going to actually check if we are a mobile user
+
+38
+00:03:37,560 --> 00:03:45,440
+ or not, and we're going to need to call this when we reset as well.
+
+39
+00:03:45,440 --> 00:03:56,720
+ And for now, we want our text container, inner text is going to be equal to long text.
+
+40
+00:03:56,720 --> 00:04:00,240
+ I'm using text content and inner text interchangeably.
+
+41
+00:04:00,240 --> 00:04:04,080
+ They are effectively the same thing in this case.
+
+42
+00:04:04,080 --> 00:04:14,080
+ And whenever we init, we actually want this to be taking it from the time left.
+
+43
+00:04:14,080 --> 00:04:21,720
+ So you'll notice when I have the time left at six by default, it was taking 60.
+
+44
+00:04:21,720 --> 00:04:27,240
+ So because that's what I have in the HTML, but if you do decide to change it to 30 seconds
+
+45
+00:04:27,240 --> 00:04:35,280
+ or whatever, then we want to actually set that value to be correct to the variable value.
+
+46
+00:04:35,280 --> 00:04:40,080
+ Okay, and that should be good for our init function for now.
+
+47
+00:04:40,080 --> 00:04:42,200
+ So we'll comment out a title.
+
+48
+00:04:42,200 --> 00:04:47,920
+ It's going to allow us start up to actually run that init function.
+
+49
+00:04:47,920 --> 00:04:52,520
+ And so let's just check this part here.
+
+50
+00:04:52,520 --> 00:04:57,480
+ You can see that that's working, it went to six seconds instead of starting at 60.
+
+51
+00:04:57,480 --> 00:05:04,960
+ And we can actually remove this now, because we are calling that in our init, okay.
+
+52
+00:05:04,960 --> 00:05:13,680
+ And now we're going to also add an event listener, try, again, button listener.
+
+53
+00:05:13,680 --> 00:05:21,640
+ And we'll do try, again, button, add event listener, bracket, single quotes, click, comma,
+
+54
+00:05:21,640 --> 00:05:23,960
+ and then reset test.
+
+55
+00:05:23,960 --> 00:05:27,720
+ Okay, so let's give that a try.
+
+56
+00:05:27,720 --> 00:05:38,520
+ All right, and we're going to click and start typing, okay, and you can see I had an
+
+57
+00:05:38,520 --> 00:05:41,960
+ error, so it actually brought down my score as well.
+
+58
+00:05:41,960 --> 00:05:48,200
+ And now if we click try again, you'll see my time left is now 60 seconds, okay, great.
+
+59
+00:05:48,200 --> 00:05:52,320
+ And we have a reset, we have totally different words here.
+
+60
+00:05:52,320 --> 00:05:57,880
+ Awesome, so our reset test is working and our init function is working.
+
+61
+00:05:57,880 --> 00:06:02,480
+ Lastly, we need to add our mobile message.
+
+62
+00:06:02,480 --> 00:06:09,520
+ So if we go back to our code here, let's comment out a title here for detect.
+
+63
+00:06:09,520 --> 00:06:20,480
+ If the device is mobile, so we're going to create a function is mobile device.
+
+64
+00:06:20,480 --> 00:06:23,840
+ And we're going to return a true or false.
+
+65
+00:06:23,840 --> 00:06:32,120
+ So slash, mobile, and then we have a backslash, alt character, I don't actually know
+
+66
+00:06:32,120 --> 00:06:37,920
+ what that's called, Android, it's kind of acting like an or in this case.
+
+67
+00:06:37,920 --> 00:06:52,040
+ And then we have another slash here, and then I test bracket, navigator, user agent, or
+
+68
+00:06:52,040 --> 00:07:03,320
+ is our window inner with less than 800 pixels, because you remember the width for our text
+
+69
+00:07:03,320 --> 00:07:08,800
+ container is 800 pixels, so we want to just make sure it's bigger than 800 pixels.
+
+70
+00:07:08,800 --> 00:07:11,760
+ So this is going to return true or false.
+
+71
+00:07:11,760 --> 00:07:24,000
+ And then make another function here, show message for mobile users, scroll down a bit, function,
+
+72
+00:07:24,000 --> 00:07:36,400
+ go mobile message, and this is going to alter our text container, text content, and it's
+
+73
+00:07:36,400 --> 00:07:51,000
+ going to be equal to this typing, test is designed for desktop use only, okay, and then
+
+74
+00:07:51,000 --> 00:07:57,180
+ on our init, we're going to want to use a condition here.
+
+75
+00:07:57,180 --> 00:08:09,640
+ So if is mobile device, then we want to show our mobile message, else want to just do
+
+76
+00:08:09,640 --> 00:08:15,120
+ our regular init, okay, so that is it for that.
+
+77
+00:08:15,120 --> 00:08:21,880
+ Let's go ahead and check it out, okay, so I'm going to go ahead and put this on the left
+
+78
+00:08:21,880 --> 00:08:31,600
+ side now, and we'll make it a mobile view, and make this a bit bigger, and fit to window,
+
+79
+00:08:31,600 --> 00:08:34,160
+ okay, and you can see that it's already working.
+
+80
+00:08:34,160 --> 00:08:40,320
+ This typing test is designed for desktop use only, okay, awesome.
+
+81
+00:08:40,320 --> 00:08:47,200
+ So that is working there, and if we take this off, and we refresh, you can see it's still
+
+82
+00:08:47,200 --> 00:08:54,580
+ less than 800 pixels, but if we make it, let's see, yeah, that's more than 800 I guess,
+
+83
+00:08:54,580 --> 00:09:02,600
+ yeah, you refresh that, we see that we still have an issue there, so let's go back into
+
+84
+00:09:02,600 --> 00:09:13,320
+ the code and take a look, okay, so here is the issue here, we have to actually call this
+
+85
+00:09:13,320 --> 00:09:20,040
+ as a function, so is mobile device, and we need our brackets there for that to be called
+
+86
+00:09:20,040 --> 00:09:27,840
+ as a function, okay, so you can see now it's already working again, okay, and lastly we're
+
+87
+00:09:27,840 --> 00:09:37,600
+ going to change our six seconds to be 60, so we're going to need to change it up here,
+
+88
+00:09:37,600 --> 00:09:41,840
+ and we're also going to need to change it in our calculate words for a minute, so remember
+
+89
+00:09:41,840 --> 00:09:46,840
+ you can change this to be 30 seconds if you want, but I'm going to go ahead and leave
+
+90
+00:09:46,840 --> 00:09:52,960
+ it at 60, but again, you can change this number, and you'll need to change this number,
+
+91
+00:09:52,960 --> 00:09:58,600
+ and you'll also need to change this number in the reset test, but you can change it to
+
+92
+00:09:58,600 --> 00:10:04,000
+ be however much time you want, you could also do 120 if you wanted to make it a two minute
+
+93
+00:10:04,000 --> 00:10:13,240
+ words for a minute test, it's totally up to you, okay, so that is it, we are done our functionality
+
+94
+00:10:13,240 --> 00:10:22,760
+ here, and it is working great, okay, so I hope you had fun with this project, I know
+
+95
+00:10:22,760 --> 00:10:29,080
+ that I had fun making it, if you want some more content, be sure to check out the rest
+
+96
+00:10:29,080 --> 00:10:37,160
+ of what I have created on the Zero to Mastery Academy, including my advanced CSS bootcamp,
+
+97
+00:10:37,160 --> 00:10:44,600
+ which goes into a lot of depth on how to design your projects so that they look professional.
+
+98
+00:10:44,600 --> 00:10:48,760
+ All right, I will see you next time, bye for now.
+
