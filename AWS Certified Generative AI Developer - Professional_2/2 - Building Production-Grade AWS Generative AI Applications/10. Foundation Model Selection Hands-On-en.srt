@@ -1,0 +1,416 @@
+1
+00:00:00,000 --> 00:00:04,920
+ Now in this lecture, I'm going to show you quickly through the console, all the attributes
+
+2
+00:00:04,920 --> 00:00:09,200
+ that we discussed on the foundation model selection strategy.
+
+3
+00:00:09,200 --> 00:00:11,260
+ So the first one is the modality.
+
+4
+00:00:11,260 --> 00:00:15,320
+ So if I just go to the little console, so I'm on the AWS bedrock service.
+
+5
+00:00:15,320 --> 00:00:18,720
+ And now let me just click on this model catalog.
+
+6
+00:00:18,720 --> 00:00:23,040
+ Let me just click on this serverless and let me just move to this to the left.
+
+7
+00:00:23,040 --> 00:00:27,600
+ And if I just click here, so here you'll be able to see the modality of all the foundation
+
+8
+00:00:27,600 --> 00:00:28,600
+ models.
+
+9
+00:00:28,600 --> 00:00:30,960
+ We have the foundation model name here.
+
+10
+00:00:30,960 --> 00:00:35,520
+ So we have plot and then we have anthropic, the provider name, and if I just continue to
+
+11
+00:00:35,520 --> 00:00:38,080
+ scroll right, you'll be able to see the modality.
+
+12
+00:00:38,080 --> 00:00:39,800
+ So you can see a text vision.
+
+13
+00:00:39,800 --> 00:00:43,120
+ So text vision is basically multimodal.
+
+14
+00:00:43,120 --> 00:00:45,760
+ Then you have some models which are text.
+
+15
+00:00:45,760 --> 00:00:51,080
+ And if I just go to the left, you'll be able to see here, plot 3.5, is just text, which means
+
+16
+00:00:51,080 --> 00:00:53,920
+ it will only accept text input.
+
+17
+00:00:53,920 --> 00:00:58,680
+ And this can accept both text and image input.
+
+18
+00:00:58,680 --> 00:01:03,600
+ And if I just continue to scroll down, you'll be able to see embedding here, speech, image
+
+19
+00:01:03,600 --> 00:01:05,240
+ and so on.
+
+20
+00:01:05,240 --> 00:01:09,120
+ Now if I just go to the next one, you'll be able to see the task complexity.
+
+21
+00:01:09,120 --> 00:01:15,160
+ So for the task complexity, what you can do is you can just read through the attributes
+
+22
+00:01:15,160 --> 00:01:19,600
+ of each model on what are the areas it focuses on.
+
+23
+00:01:19,600 --> 00:01:23,280
+ So here for this model, we have hybrid reasoning, extended thinking.
+
+24
+00:01:23,280 --> 00:01:26,680
+ And let me just click on this model and you'll be able to see more detail.
+
+25
+00:01:26,680 --> 00:01:33,160
+ So here you can see the next generation anthropic, most intelligent model, plot 4.5, is
+
+26
+00:01:33,160 --> 00:01:37,440
+ an industry leading across coding agents, computer use, enterprise workflows.
+
+27
+00:01:37,440 --> 00:01:39,880
+ And then it just talks about some of the use cases.
+
+28
+00:01:39,880 --> 00:01:43,600
+ So it's good for coding and then there are some other use cases.
+
+29
+00:01:43,600 --> 00:01:47,960
+ Then if I just continue to scroll down, so categories, these are the categories, it excels
+
+30
+00:01:47,960 --> 00:01:48,960
+ in.
+
+31
+00:01:48,960 --> 00:01:53,840
+ For each model, you'll be able to see the key use cases.
+
+32
+00:01:53,840 --> 00:01:55,480
+ Now there is second aspect to it.
+
+33
+00:01:55,480 --> 00:01:58,840
+ So let's take a look at these models from LAMA.
+
+34
+00:01:58,840 --> 00:02:02,280
+ So you'll be able to see a LAMA4 Maverick 17B instruct.
+
+35
+00:02:02,280 --> 00:02:05,920
+ So 17B means number of billion parameters it has.
+
+36
+00:02:05,920 --> 00:02:07,920
+ So it has 17 billion parameters.
+
+37
+00:02:07,920 --> 00:02:09,560
+ Then there could be other models.
+
+38
+00:02:09,560 --> 00:02:15,000
+ So you have LAMA 3.2, 11 billion and then there is one on 3 billion.
+
+39
+00:02:15,000 --> 00:02:18,840
+ So you and then there is one on 90 billion, 70 billion.
+
+40
+00:02:18,840 --> 00:02:23,760
+ So usually if there are more number of parameters than that means that particular model
+
+41
+00:02:23,760 --> 00:02:25,760
+ can handle more complex tasks.
+
+42
+00:02:25,760 --> 00:02:31,360
+ So for anthropic and open A, they don't actually publish the number of model parameters.
+
+43
+00:02:31,360 --> 00:02:33,760
+ It could be in billions and trillions.
+
+44
+00:02:33,760 --> 00:02:41,120
+ But in general, most of the foundation model would provide what is the number of model parameters.
+
+45
+00:02:41,120 --> 00:02:45,240
+ And as we discussed earlier, if it's less than 8 billion, it's a small language model,
+
+46
+00:02:45,240 --> 00:02:46,920
+ otherwise a large language model.
+
+47
+00:02:46,920 --> 00:02:52,040
+ So based on the number of model parameters and the key strengths highlighted here, you
+
+48
+00:02:52,040 --> 00:02:55,720
+ can make a decision on the right foundation model.
+
+49
+00:02:55,720 --> 00:02:59,800
+ Next if I just go to the context window, so you'll be able to see the context window
+
+50
+00:02:59,800 --> 00:03:01,440
+ for most models.
+
+51
+00:03:01,440 --> 00:03:03,280
+ So here is the max token.
+
+52
+00:03:03,280 --> 00:03:05,560
+ It's the maximum size of input it can take.
+
+53
+00:03:05,560 --> 00:03:08,520
+ So if I just scroll up, so these are all anthropic models.
+
+54
+00:03:08,520 --> 00:03:11,840
+ And if I just scroll on left, you can see these are all anthropic models.
+
+55
+00:03:11,840 --> 00:03:17,920
+ And they usually have, they have max token size or context window 200K can see all this.
+
+56
+00:03:17,920 --> 00:03:20,880
+ And then there are smaller ones as well, 8K.
+
+57
+00:03:20,880 --> 00:03:26,760
+ And if I just scroll down, they would mostly be for models from meta.
+
+58
+00:03:26,760 --> 00:03:29,120
+ So next we have guardrail and safety.
+
+59
+00:03:29,120 --> 00:03:33,800
+ And we already discussed earlier, so if I just go back, if I just go on the left-hand side,
+
+60
+00:03:33,800 --> 00:03:38,240
+ you can go here to chat and text playground select the model here.
+
+61
+00:03:38,240 --> 00:03:39,920
+ And then just apply.
+
+62
+00:03:39,920 --> 00:03:45,200
+ And then you can provide maybe toxic input and see if it is responding to the toxic
+
+63
+00:03:45,200 --> 00:03:46,200
+ input.
+
+64
+00:03:46,200 --> 00:03:49,360
+ So you'll have to try this out a little bit, okay.
+
+65
+00:03:49,360 --> 00:03:52,960
+ Then next we have quality and accuracy of output.
+
+66
+00:03:52,960 --> 00:03:57,440
+ Again, you'll have to try out the models based on your use case.
+
+67
+00:03:57,440 --> 00:04:02,440
+ And then what you can do is you can just go here assess evaluations.
+
+68
+00:04:02,440 --> 00:04:07,640
+ So you can use this bedrock evaluation service to evaluate the output of different models
+
+69
+00:04:07,640 --> 00:04:11,800
+ and then make the right choice.
+
+70
+00:04:11,800 --> 00:04:15,400
+ Next we have cost predictability and token efficiency.
+
+71
+00:04:15,400 --> 00:04:20,520
+ So now if I just go to the cost page and if I just go here, so I'm on the Amazon bedrock
+
+72
+00:04:20,520 --> 00:04:25,520
+ pricing page, here you can see the pricing for different foundation models.
+
+73
+00:04:25,520 --> 00:04:31,120
+ So here we have the meta llama and here it is the 70 billion parameter.
+
+74
+00:04:31,120 --> 00:04:35,600
+ So you can see the price per token is 0.0072.
+
+75
+00:04:35,600 --> 00:04:44,440
+ And if I just take another model, let's say this llama 3.2 11B and the price is much lower.
+
+76
+00:04:44,440 --> 00:04:51,600
+ So this llama 3.3 instruct 70B is almost 4.5 times the price of this 11 billion parameter
+
+77
+00:04:51,600 --> 00:04:52,600
+ model.
+
+78
+00:04:52,600 --> 00:04:57,160
+ And then if we just go up and select some other models, so let's say from anthropic and
+
+79
+00:04:57,160 --> 00:05:02,960
+ you can see here price per 1000 tokens, it's even more expensive.
+
+80
+00:05:02,960 --> 00:05:07,960
+ So based on the cost per API request, so you will have to see what is the right foundation
+
+81
+00:05:07,960 --> 00:05:09,920
+ model for your use case.
+
+82
+00:05:09,920 --> 00:05:13,440
+ Then you also have regional availability and quotas.
+
+83
+00:05:13,440 --> 00:05:18,400
+ So not all the foundation models are available across all AWS regions.
+
+84
+00:05:18,400 --> 00:05:22,120
+ Some of the models might not be available in particular regions.
+
+85
+00:05:22,120 --> 00:05:25,920
+ So you will have to evaluate whether that model is available in your region.
+
+86
+00:05:25,920 --> 00:05:31,240
+ Then you also have something known as quotas and we'll just get to that in a little bit.
+
+87
+00:05:31,240 --> 00:05:35,400
+ Let's see, I think we already discussed there are some latency optimize inference models,
+
+88
+00:05:35,400 --> 00:05:37,640
+ which we'll discuss a little later.
+
+89
+00:05:37,640 --> 00:05:40,400
+ Then the next thing I just want to show is the language support.
+
+90
+00:05:40,400 --> 00:05:46,240
+ So if I just go back to the console and if I just go to the model catalog here, let
+
+91
+00:05:46,240 --> 00:05:51,240
+ me just select several as and if I just click on this, you will be able to see for each
+
+92
+00:05:51,240 --> 00:05:56,800
+ of the models, which are the languages that they support.
+
+93
+00:05:56,800 --> 00:06:01,240
+ And then finally, I just want to show you one last thing on the quotas, go to the AWS
+
+94
+00:06:01,240 --> 00:06:08,180
+ service and just search for quotas and just click on the service quotas and here select
+
+95
+00:06:08,180 --> 00:06:17,720
+ bedrock, view quotas and here you can just search for let's say entropic or any model
+
+96
+00:06:17,720 --> 00:06:19,400
+ that you are planning to use.
+
+97
+00:06:19,400 --> 00:06:26,300
+ So here it shows cross region model inference for entropic cloud three haiku and applied
+
+98
+00:06:26,300 --> 00:06:31,280
+ a count level quota is 100 and AWS default quotas 2000.
+
+99
+00:06:31,280 --> 00:06:36,360
+ So in my personal account, it's much smaller number 100, but here it says that eight years
+
+100
+00:06:36,360 --> 00:06:42,980
+ default quota values 2000, which means you can make 2000 per request to this entropic
+
+101
+00:06:42,980 --> 00:06:44,720
+ three haiku model.
+
+102
+00:06:44,720 --> 00:06:51,000
+ So you'll have to determine for a use case whether it meets those quota levels or not.
+
+103
+00:06:51,000 --> 00:06:53,320
+ Okay, so that's pretty much it from this lecture.
+
+104
+00:06:53,320 --> 00:06:54,120
+ I'll see in the next lecture.
+
