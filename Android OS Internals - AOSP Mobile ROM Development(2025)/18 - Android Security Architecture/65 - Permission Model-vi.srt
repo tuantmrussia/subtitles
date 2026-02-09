@@ -1,0 +1,180 @@
+1
+00:00:09,880 --> 00:00:15,560
+Mô hình cho phép của steroid là một thành phần trung tâm của kiến trúc bảo mật của nó, điều khiển cách ứng dụng
+
+2
+00:00:15,600 --> 00:00:18,480
+Truy cập tài nguyên nhạy cảm và công cụ dữ liệu.
+
+3
+00:00:18,800 --> 00:00:25,120
+Đó là một hệ thống ngũ cốc tốt được thiết kế để bảo vệ sự riêng tư và an ninh thiết bị của người dùng bằng cách yêu cầu ứng dụng
+
+4
+00:00:25,120 --> 00:00:27,880
+Để tuyên bố rõ ràng quyền của họ.
+
+5
+00:00:28,200 --> 00:00:32,520
+Hiểu được mô hình cho phép này là thiết yếu cho cả hai nhà phát triển và người dùng.
+
+6
+00:00:32,960 --> 00:00:37,680
+Nền tảng của mô hình cho phép theo nguyên tắc ít đặc quyền nhất.
+
+7
+00:00:38,040 --> 00:00:43,120
+Ứng dụng chỉ được cho phép cần thiết để thực hiện các chức năng đã định, giảm thiểu
+
+8
+00:00:43,120 --> 00:00:46,120
+tổn thất tiềm tàng nếu một ứng dụng bị xâm nhập.
+
+9
+00:00:46,480 --> 00:00:52,040
+Điều này giúp ngăn chặn các ứng dụng nguy hiểm truy cập trái phép dữ liệu hoặc hệ thống nhạy cảm
+
+10
+00:00:52,040 --> 00:00:52,840
+Nguồn lực.
+
+11
+00:00:53,200 --> 00:00:57,600
+Trước khi gặp Andre sáu, các giấy phép kẹo dẻo đã được chấp thuận vào thời điểm cài đặt.
+
+12
+00:00:57,920 --> 00:01:03,640
+Người dùng được trình bày với danh sách quyền hạn, một ứng dụng yêu cầu, và phải chấp nhận chúng
+
+13
+00:01:03,640 --> 00:01:05,040
+tất cả để cài đặt ứng dụng.
+
+14
+00:01:05,320 --> 00:01:11,560
+Cách tiếp cận này thiếu hạt và độ trong suốt, như người dùng thường không hiểu các tác động
+
+15
+00:01:11,560 --> 00:01:13,520
+được cho phép.
+
+16
+00:01:13,960 --> 00:01:19,280
+Với sự mở đầu của thời gian chạy ở Andrene 6 viên kẹo dẻo, mô hình sự cho phép đã trải qua
+
+17
+00:01:19,320 --> 00:01:20,880
+Một sự thay đổi đáng kể.
+
+18
+00:01:21,280 --> 00:01:27,240
+Bây giờ, ứng dụng yêu cầu quyền truy cập vào lúc chạy khi họ thực sự cần truy cập một tài nguyên nhạy cảm.
+
+19
+00:01:27,600 --> 00:01:32,960
+Điều này cung cấp cho người dùng nhiều kiểm soát hơn những gì các ứng dụng có thể truy cập, và cho phép họ để làm cho thông tin thêm
+
+20
+00:01:32,960 --> 00:01:35,200
+quyết định cho phép.
+
+21
+00:01:35,600 --> 00:01:39,920
+Quyền hạn chạy giờ được nhóm lại thành nhóm dựa trên kiểu tài nguyên bảo vệ.
+
+22
+00:01:40,240 --> 00:01:45,640
+Ví dụ, nhóm cho phép địa điểm bao gồm quyền truy cập địa điểm của thiết bị.
+
+23
+00:01:45,960 --> 00:01:52,040
+Khi một ứng dụng yêu cầu sự cho phép từ một nhóm, người dùng được nhắc nên cho phép hoặc từ chối quyền truy cập.
+
+24
+00:01:52,400 --> 00:01:57,800
+Nếu người dùng cho phép, ứng dụng sẽ được phép truy cập bất kỳ tài nguyên nào được bảo vệ bởi nó.
+
+25
+00:01:57,800 --> 00:01:58,680
+Nhóm cho phép.
+
+26
+00:01:59,000 --> 00:02:04,400
+Các quyền tự chọn được xác định bởi các ứng dụng cá nhân để bảo vệ tài nguyên và dữ liệu của riêng họ.
+
+27
+00:02:05,080 --> 00:02:09,720
+Những quyền hạn này không phải là một phần của các quyền hạn máy tính chuẩn được đặt và cụ thể cho ứng dụng
+
+28
+00:02:09,720 --> 00:02:10,640
+Điều đó định nghĩa chúng.
+
+29
+00:02:11,040 --> 00:02:16,480
+Những ứng dụng khác có thể yêu cầu truy cập vào các quyền hạn tự chọn này để tương tác với xác định
+
+30
+00:02:16,520 --> 00:02:18,240
+nguồn lực của ứng dụng.
+
+31
+00:02:18,600 --> 00:02:24,320
+Quyền hạn tự chọn cung cấp một cách cho các ứng dụng để kiểm soát truy cập dữ liệu và chức năng của họ,
+
+32
+00:02:24,520 --> 00:02:28,110
+Cho phép họ giới hạn truy cập chỉ các ứng dụng tin cậy.
+
+33
+00:02:28,550 --> 00:02:33,350
+Mô hình cho phép người máy cũng ủng hộ khái niệm về quyền hạn đặc biệt.
+
+34
+00:02:33,750 --> 00:02:38,750
+Giấy phép chữ ký được cấp cho các ứng dụng được ký cùng chứng nhận đó.
+
+35
+00:02:39,070 --> 00:02:44,550
+Điều này cho phép các ứng dụng từ cùng phát triển để chia sẻ tài nguyên và dữ liệu mà không cần thiết rõ ràng
+
+36
+00:02:44,550 --> 00:02:45,550
+Người dùng đồng ý.
+
+37
+00:02:45,910 --> 00:02:51,630
+Các quyền hạn chữ ký thường được sử dụng bởi các ứng dụng hệ thống và các ứng dụng đáng tin cậy khác để truy cập
+
+38
+00:02:51,630 --> 00:02:53,390
+Nguồn lực nhạy cảm của hệ thống.
+
+39
+00:02:53,830 --> 00:02:57,750
+Nó cũng quan trọng để nhấn mạnh rằng mô hình cho phép là liên tục phát triển.
+
+40
+00:02:58,630 --> 00:03:04,870
+Google thường xuyên giới thiệu quyền hạn mới và cập nhật những quyền hạn hiện có để giải quyết vấn đề an ninh mới nổi
+
+41
+00:03:04,910 --> 00:03:07,230
+Mối đe dọa và sự riêng tư.
+
+42
+00:03:07,590 --> 00:03:13,630
+Ví dụ, steroid mười giới hạn mới về việc truy cập nền, thậm chí cho người dùng
+
+43
+00:03:13,630 --> 00:03:17,430
+kiểm soát các ứng dụng sử dụng dữ liệu vị trí của họ.
+
+44
+00:03:18,430 --> 00:03:23,550
+Trong tất cả, mô hình cho phép người máy là một khía cạnh quan trọng của hệ thống an ninh điều hành.
+
+45
+00:03:23,990 --> 00:03:29,550
+Nó điều khiển cách các ứng dụng yêu cầu truy cập dữ liệu, tài nguyên và chức năng.
+
