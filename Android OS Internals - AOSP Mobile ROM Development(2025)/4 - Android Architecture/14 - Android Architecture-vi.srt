@@ -1,0 +1,540 @@
+1
+00:00:00,640 --> 00:00:03,070
+Chúng ta hãy thảo luận về kiến trúc robot.
+
+2
+00:00:14,000 --> 00:00:20,030
+Kiến trúc hệ thống robot được chia thành năm lớp, như bạn có thể thấy trong biểu đồ này, từ
+
+3
+00:00:20,030 --> 00:00:21,110
+từ trên xuống dưới.
+
+4
+00:00:21,440 --> 00:00:28,490
+Đầu tiên là lớp ứng dụng, bao gồm các ứng dụng hệ thống và ứng dụng thông thường, và
+
+5
+00:00:28,490 --> 00:00:35,660
+sau đó đến lớp khung ứng dụng hoặc lớp khuôn khổ Java API, chứa tất cả các
+
+6
+00:00:35,660 --> 00:00:42,800
+Quản lý, quản lý hoạt động, quản lý địa điểm, quản lý gói, v.v... Và sau đó đến hệ thống
+
+7
+00:00:42,800 --> 00:00:48,170
+lớp thời gian chạy mà chứa một người bản địa C, C++ thư viện và thời gian chạy của người máy.
+
+8
+00:00:48,620 --> 00:00:54,650
+Và sau đó, các lớp trừu tượng phần cứng hoặc HAL, chứa các logic cần thiết cho
+
+9
+00:00:54,650 --> 00:01:02,480
+âm thanh, răng xanh, cảm biến máy ảnh, v.v... Và ở đáy chúng ta có lớp hạt nhân Linux, nhưng
+
+10
+00:01:02,490 --> 00:01:10,790
+Chúng tôi có các trình điều khiển cho âm thanh kết nối để hiển thị, iPad, Bluetooth, vv. và ở dưới cùng chúng tôi có
+
+11
+00:01:10,910 --> 00:01:12,200
+Quản lý nguồn điện.
+
+12
+00:01:12,560 --> 00:01:15,800
+Vậy đây là 5 lớp kiến trúc người máy.
+
+13
+00:01:16,400 --> 00:01:18,980
+Hãy đào sâu hơn vào từng thành phần này.
+
+14
+00:01:21,970 --> 00:01:29,380
+Trong lớp ứng dụng, cả hai đều được xây dựng trong ứng dụng và không có ứng dụng cấp hệ thống tồn tại, nhưng
+
+15
+00:01:29,380 --> 00:01:34,900
+Họ về cơ bản chịu trách nhiệm cho nhiều và tốt hơn kết nối với người dùng và họ thường được phát triển
+
+16
+00:01:34,900 --> 00:01:41,080
+Trong Java hoặc Kotlin và những ứng dụng này phần lớn được phát triển bởi các nhà phát triển ứng dụng.
+
+17
+00:01:41,560 --> 00:01:48,820
+Và cũng có các ứng dụng cổ phiếu xây dựng mà đến như một phần của một thực thể để xem xét những ứng dụng hệ thống
+
+18
+00:01:48,820 --> 00:01:51,780
+hoặc các ứng dụng cổ phiếu trong một phiên họp sau này.
+
+19
+00:01:53,410 --> 00:01:59,500
+Lớp làm việc trên khung ứng dụng cung cấp cho các nhà phát triển với các ADIs cần thiết để phát triển ứng dụng.
+
+20
+00:02:00,160 --> 00:02:05,170
+Lớp này được viết bằng Java và nó cũng có thể được gọi là khung Java.
+
+21
+00:02:05,380 --> 00:02:10,060
+Nhưng ngày nay có một số khuôn khổ được viết bằng tiếng Kotlin yêu cầu.
+
+22
+00:02:10,360 --> 00:02:17,470
+Chúng tôi thường phát triển các ứng dụng, tôi có nghĩa là các ứng dụng steroid mà có thể gọi là các APIs cung cấp
+
+23
+00:02:17,470 --> 00:02:18,730
+bởi lớp đặc biệt này.
+
+24
+00:02:21,510 --> 00:02:25,350
+Hãy nhìn vào các thành phần chính được cung cấp bởi lớp ứng dụng.
+
+25
+00:02:26,160 --> 00:02:28,830
+Đầu tiên chúng tôi có người quản lý hoạt động.
+
+26
+00:02:29,160 --> 00:02:35,280
+Vì vậy, người quản lý hoạt động chủ yếu chịu trách nhiệm quản lý vòng đời của mỗi ứng dụng.
+
+27
+00:02:35,760 --> 00:02:40,530
+Mỗi ứng dụng được xây dựng với các hoạt động hoặc mảnh vỡ khác nhau.
+
+28
+00:02:40,800 --> 00:02:48,600
+Vì vậy, đó là trách nhiệm của người quản lý hoạt động quản lý vòng đời của mỗi ứng dụng hoặc mỗi
+
+29
+00:02:48,600 --> 00:02:50,760
+hoạt động trong ứng dụng.
+
+30
+00:02:51,000 --> 00:02:52,710
+Tiếp theo là người quản lý địa điểm.
+
+31
+00:02:53,280 --> 00:02:59,010
+Bộ quản lý địa điểm cung cấp địa điểm và chức năng định vị là tài nguyên.
+
+32
+00:02:59,310 --> 00:03:04,860
+Ví dụ, bản đồ sẽ dùng bộ quản lý địa điểm để biết vị trí hiện tại của thiết bị.
+
+33
+00:03:05,100 --> 00:03:06,150
+Quản lý gói hàng.
+
+34
+00:03:06,540 --> 00:03:11,430
+Trình quản lý gói quản lý tất cả các ứng dụng được cài đặt vào hệ thống bước.
+
+35
+00:03:11,880 --> 00:03:18,720
+Nó cơ bản chịu trách nhiệm cho việc cài đặt và cài đặt và cho phép với các ứng dụng
+
+36
+00:03:18,720 --> 00:03:20,430
+đã được cài đặt vào hệ thống an ninh.
+
+37
+00:03:20,520 --> 00:03:21,750
+Bộ quản lý thông báo.
+
+38
+00:03:22,230 --> 00:03:27,870
+Bộ quản lý thông báo cho phép ứng dụng hiển thị thông tin nhắc tự động trong thanh trạng thái.
+
+39
+00:03:28,140 --> 00:03:34,650
+Ví dụ, khi bạn nhận được một email, ví dụ, trong ứng dụng Gmail, bạn nhận được một tin nhắn thêm vào
+
+40
+00:03:34,650 --> 00:03:40,170
+thông báo rằng bạn có một email được thực hiện thông qua bộ quản lý thông báo và sau đó đến
+
+41
+00:03:40,170 --> 00:03:41,400
+người quản lý tài nguyên.
+
+42
+00:03:41,610 --> 00:03:47,880
+Nó cung cấp nhiều nguồn tài nguyên khác nhau mà người dùng ứng dụng như là các chuỗi, hình ảnh địa phương hóa,
+
+43
+00:03:48,270 --> 00:03:51,180
+tập tin bố trí, tập tin màu, v.v...
+
+44
+00:03:51,420 --> 00:03:57,300
+Vì vậy, nếu bạn đến từ một nền tảng phát triển ứng dụng người máy, bạn chắc chắn biết các chuỗi địa phương hóa,
+
+45
+00:03:57,300 --> 00:04:00,750
+ảnh, tập tin ồn ào, tập tin màu sắc, kiểu mẫu để sử dụng.
+
+46
+00:04:01,170 --> 00:04:03,060
+Trong khi đang phát triển ứng dụng steroid.
+
+47
+00:04:03,150 --> 00:04:07,320
+Vì vậy, đó là trách nhiệm của người quản lý tài nguyên để duy trì nó.
+
+48
+00:04:07,560 --> 00:04:09,210
+Rồi đến người quản lý điện thoại.
+
+49
+00:04:09,390 --> 00:04:18,120
+Nó quản lý tất cả các chức năng của thiết bị di động như quản lý SIM và quản lý mạng, vân vân. Vậy
+
+50
+00:04:18,120 --> 00:04:24,270
+Tới trình quản lý cửa sổ, quản lý cửa sổ, tất cả các cửa sổ mở.
+
+51
+00:04:24,600 --> 00:04:28,620
+Mỗi hoạt động cơ bản được xây dựng với một cửa sổ.
+
+52
+00:04:28,800 --> 00:04:35,130
+Vì vậy, chúng tôi sẽ tìm hiểu chi tiết hơn về Windows trong một phiên họp sau này mà chúng tôi thảo luận về các cửa sổ
+
+53
+00:04:35,130 --> 00:04:36,060
+Hệ thống quản lý.
+
+54
+00:04:36,310 --> 00:04:42,720
+Và sau đó nhà cung cấp và sau đó nhà cung cấp cho phép dữ liệu để được chia sẻ giữa các ứng dụng khác nhau trong
+
+55
+00:04:42,720 --> 00:04:43,290
+hệ thống.
+
+56
+00:04:43,530 --> 00:04:44,370
+Xem hệ thống.
+
+57
+00:04:44,640 --> 00:04:50,370
+Hệ thống xem chịu trách nhiệm xây dựng các thành phần quan sát thiết yếu của một ứng dụng.
+
+58
+00:04:50,850 --> 00:04:54,690
+Vì vậy, về cơ bản nó chịu trách nhiệm cho việc thổi phồng bố trí của bạn.
+
+59
+00:04:55,020 --> 00:04:58,170
+Và những bố trí này có nhiều kiểu xem.
+
+60
+00:04:58,530 --> 00:05:04,680
+Vì vậy, hệ thống xem cơ bản là chịu trách nhiệm cho việc vẽ những quan điểm khác nhau trên màn hình.
+
+61
+00:05:05,160 --> 00:05:11,850
+Lớp thời gian chạy của thư viện hệ thống được chia thành hai phần thư viện C++ và thời gian chạy steroid
+
+62
+00:05:11,850 --> 00:05:12,390
+thư viện.
+
+63
+00:05:12,510 --> 00:05:14,440
+Hãy bàn riêng về họ.
+
+64
+00:05:14,460 --> 00:05:17,520
+Vì vậy, đầu tiên hãy xem xét thư viện C++.
+
+65
+00:05:17,790 --> 00:05:25,260
+@ info/ rich
+
+66
+00:05:25,260 --> 00:05:27,060
+thông qua khuôn khổ ứng dụng đó.
+
+67
+00:05:27,210 --> 00:05:34,170
+Vì vậy tất cả các dịch vụ mà chúng tôi sử dụng thông qua ứng dụng phụ thuộc vào thư viện C++ này.
+
+68
+00:05:34,560 --> 00:05:37,890
+Dưới đây là một số ví dụ của C++ thư viện.
+
+69
+00:05:38,170 --> 00:05:43,050
+Đầu tiên là OpenGL OpenGL cho các hệ thống nhúng.
+
+70
+00:05:43,260 --> 00:05:49,590
+Đây là một thư viện chức năng vẽ 3D được thiết kế đặc biệt cho các thiết bị nhúng.
+
+71
+00:05:49,860 --> 00:05:57,840
+Sau đó chúng tôi có Lipsey ellips, về cơ bản là thư viện chức năng hệ thống C được thừa kế từ BSD.
+
+72
+00:05:58,260 --> 00:06:01,320
+BSD viết tắt cho việc phân phối phần mềm Berkeley.
+
+73
+00:06:01,560 --> 00:06:05,790
+Và điều này được đặc biệt tùy chỉnh cho các thiết bị dựa trên Linux nhúng.
+
+74
+00:06:06,060 --> 00:06:08,040
+Và chúng ta có khuôn khổ truyền thông.
+
+75
+00:06:08,110 --> 00:06:15,870
+Vì vậy, điều này chứa các thư viện hỗ trợ ghi âm và phát lại của nhiều loại âm thanh thường được sử dụng và
+
+76
+00:06:15,870 --> 00:06:19,590
+Định dạng video như M.P. 3, MP 4, vv...
+
+77
+00:06:19,770 --> 00:06:21,630
+Và sau đó chúng ta có đèn sóc.
+
+78
+00:06:21,660 --> 00:06:24,630
+Đây là một cơ sở dữ liệu nhẹ, có quan hệ.
+
+79
+00:06:24,720 --> 00:06:28,950
+Điều này, một lần nữa, một giải pháp nhẹ được tạo ra cho thiết bị di động.
+
+80
+00:06:29,040 --> 00:06:33,750
+Và sau đó chúng tôi vẫn còn và vẫn còn là viết tắt của Thư viện đồ họa đơn giản.
+
+81
+00:06:33,960 --> 00:06:38,450
+Vậy đây là động cơ vẽ đồ họa 2 chiều ẩn cho Andie.
+
+82
+00:06:38,460 --> 00:06:42,450
+Và sau đó chúng tôi có SSL, đây là giao thức an ninh rất phổ biến.
+
+83
+00:06:42,750 --> 00:06:49,470
+Vì vậy, lớp ổ cắm khu vực là một giao thức bảo mật cung cấp an ninh và dữ liệu toàn vẹn cho mạng lưới
+
+84
+00:06:49,470 --> 00:06:50,280
+Liên lạc.
+
+85
+00:06:50,400 --> 00:06:52,260
+Và cuối cùng, chúng ta có loại miễn phí.
+
+86
+00:06:52,560 --> 00:06:56,130
+Điều này cơ bản là quản lý các loại phông chữ khác nhau.
+
+87
+00:06:56,580 --> 00:06:59,370
+Đây cơ bản là một động cơ phông chữ xách tay.
+
+88
+00:06:59,670 --> 00:07:04,920
+Nó cung cấp một giao diện thống nhất để truy cập nhiều định dạng tập tin phông chữ.
+
+89
+00:07:05,190 --> 00:07:12,510
+Đây là một số thư viện C++ lớn được tìm thấy trong bố trí thời gian chạy của hệ thống steroid.
+
+90
+00:07:12,780 --> 00:07:18,900
+Thư viện thời gian chạy được chia thành thư viện lõi và ATA đầu tiên viết tắt cho thời gian chạy của robot.
+
+91
+00:07:19,020 --> 00:07:20,670
+Thư viện mật mã cung cấp nhỏ.
+
+92
+00:07:20,700 --> 00:07:27,930
+Phần lớn các chức năng của thư viện vàng Java để các nhà phát triển có thể sử dụng ngôn ngữ Java để viết
+
+93
+00:07:27,930 --> 00:07:29,070
+Ứng dụng người máy.
+
+94
+00:07:29,130 --> 00:07:35,400
+Vì vậy, mục đích của thư viện mã là để cung cấp các chức năng thư viện ngôn ngữ Java.
+
+95
+00:07:35,850 --> 00:07:42,570
+Bây giờ, liên quan đến máy ảo Dalvik hoặc ADI, dalivik máy ảo có thể được so sánh với Java
+
+96
+00:07:42,570 --> 00:07:48,990
+Máy ảo, nhưng máy ảo Dalvik được đặc biệt tùy chỉnh cho thiết bị di động.
+
+97
+00:07:49,200 --> 00:07:56,910
+Nó cho phép nhiều trường hợp của máy ảo chạy trong bộ nhớ giới hạn cùng một lúc, và mỗi
+
+98
+00:07:56,910 --> 00:08:01,230
+Ứng dụng Dalvik được thực hiện như một quá trình Linux độc lập.
+
+99
+00:08:01,350 --> 00:08:09,390
+Vì chúng ta có quá trình riêng biệt, nó ngăn chặn tất cả các chương trình đóng lại khi máy ảo sụp đổ.
+
+100
+00:08:09,720 --> 00:08:12,750
+Vì vậy, đó là lợi thế chính kể từ khi chúng tôi có quá trình khác nhau.
+
+101
+00:08:12,990 --> 00:08:20,670
+Ngay cả khi máy ảo là máy ảo sụp đổ, sau đó nó sẽ ngăn chặn tất cả các ứng dụng hoặc các
+
+102
+00:08:20,670 --> 00:08:22,440
+chương trình đóng cửa.
+
+103
+00:08:22,800 --> 00:08:30,390
+Vì vậy, lý do tại sao Dalvik máy ảo được di cư đến RB là vì họ là để cung cấp một số lợi thế
+
+104
+00:08:30,390 --> 00:08:32,450
+So với đội hình Davik.
+
+105
+00:08:32,610 --> 00:08:39,420
+Vì vậy, theo Dalvik, byte mã cần phải được chuyển đổi thành mã máy bởi một chỉ trong thời gian biên dịch mỗi
+
+106
+00:08:39,420 --> 00:08:41,280
+thời gian ứng dụng được chạy.
+
+107
+00:08:41,580 --> 00:08:45,540
+Vì vậy, Dalvik về cơ bản sử dụng một chỉ trong trình biên dịch thời gian.
+
+108
+00:08:45,720 --> 00:08:50,400
+Vì vậy, mỗi khi ứng dụng chạy, nó phải chuyển mã thông tin.
+
+109
+00:08:50,520 --> 00:08:56,490
+Điều này sẽ làm chậm hiệu quả lập trình của ứng dụng bởi vì bất cứ khi nào ứng dụng bắt đầu
+
+110
+00:08:56,490 --> 00:09:00,510
+lên, nó phải được chuyển mã thông tin đầu tiên và sau đó chạy ứng dụng.
+
+111
+00:09:01,020 --> 00:09:05,040
+Điều này thực sự sẽ làm chậm tốc độ thực hiện của ứng dụng.
+
+112
+00:09:05,310 --> 00:09:08,940
+Với sự giới thiệu của RB sau hồ sơ của Andrene.
+
+113
+00:09:09,240 --> 00:09:16,170
+Mã của tất cả các ứng dụng sẽ được biên dịch sẵn trong mã sứ mệnh khi nó được cài đặt lần đầu tiên
+
+114
+00:09:16,170 --> 00:09:16,950
+trong thiết bị.
+
+115
+00:09:17,190 --> 00:09:20,670
+Điều này làm cho ứng dụng này trở thành ứng dụng đúng ở địa phương.
+
+116
+00:09:20,850 --> 00:09:27,540
+Bằng cách này, Arity làm ứng dụng này hoạt động nhanh hơn so với Dalvik.
+
+117
+00:09:28,750 --> 00:09:31,390
+Bây giờ hãy nhìn vào lớp trừu tượng phần cứng.
+
+118
+00:09:31,480 --> 00:09:37,300
+Lớp trừu tượng phần cứng là giao diện giữa hạt nhân hệ điều hành và phần cứng.
+
+119
+00:09:37,390 --> 00:09:43,150
+Mục đích của nó là để trừu tượng phần cứng để bảo vệ quyền sở hữu trí tuệ của phần cứng
+
+120
+00:09:43,150 --> 00:09:44,140
+Nhà sản xuất.
+
+121
+00:09:44,500 --> 00:09:51,970
+Nó giấu giao diện phần cứng, chi tiết của một nền tảng cụ thể và cung cấp một nền tảng phần cứng ảo
+
+122
+00:09:51,970 --> 00:09:56,240
+cho hệ điều hành để nó có phần cứng độc lập.
+
+123
+00:09:56,260 --> 00:09:59,620
+Nó có thể được cấy ghép trên nhiều nền tảng khác nhau.
+
+124
+00:09:59,800 --> 00:10:06,760
+Từ quan điểm của việc thử nghiệm phần mềm và phần cứng, cả phần mềm lẫn phần cứng đều có thể hoàn tất
+
+125
+00:10:06,760 --> 00:10:12,970
+Dựa trên lớp trừu tượng phần cứng, làm cho nó có thể thực hiện thử nghiệm phần mềm và phần cứng
+
+126
+00:10:12,970 --> 00:10:13,810
+song song.
+
+127
+00:10:14,050 --> 00:10:20,140
+Vì vậy, trong thuật ngữ thông thường, một vòng qua của lớp trừu tượng phần cứng là để kiểm soát phần cứng.
+
+128
+00:10:21,780 --> 00:10:26,760
+Nhưng hãy nhìn vào lớp hạt nhân Linux, lớp dưới cùng của robot.
+
+129
+00:10:26,850 --> 00:10:33,330
+Dịch vụ hệ sinh thái của người máy phụ thuộc vào hạt nhân Linux và một số trình điều khiển của người máy.
+
+130
+00:10:33,330 --> 00:10:40,500
+Ví dụ, chương trình thu âm, keypad, Bluetooth, USB, etc. đã được thêm vào cơ sở này.
+
+131
+00:10:40,770 --> 00:10:48,390
+Mô hình trình điều khiển và xếp đống giao thức mạng và mô hình trình điều khiển hệ thống Bảo vệ Hệ thống
+
+132
+00:10:48,600 --> 00:10:54,720
+Tùy thuộc vào hạt nhân Linux này, điều này làm cho robot được an toàn hơn và ổn định hơn.
+
+133
+00:10:55,020 --> 00:10:57,810
+Đó là về kiến trúc người máy.
+
+134
+00:10:58,110 --> 00:11:05,340
+Hiểu được cái máy tính này, kiến trúc steroid sẽ giúp bạn khi chúng tôi phân tích mã nguồn hệ thống
+
+135
+00:11:05,340 --> 00:11:06,900
+trong những hướng dẫn sau này.
+
