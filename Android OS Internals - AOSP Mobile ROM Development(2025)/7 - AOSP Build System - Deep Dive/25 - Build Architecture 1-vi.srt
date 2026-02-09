@@ -1,0 +1,152 @@
+1
+00:00:00,210 --> 00:00:04,410
+Trong phần này, chúng ta sẽ đi sâu hơn vào hệ thống xây dựng Aosp.
+
+2
+00:00:04,410 --> 00:00:11,100
+Vì vậy, trong giáo dục cuối cùng, nếu bạn nhớ, chúng tôi sử dụng ba lệnh về cơ bản để bắt đầu xây dựng,
+
+3
+00:00:11,100 --> 00:00:14,070
+Vì vậy, sẽ xem chính xác những gì đang xảy ra ở phía sau.
+
+4
+00:00:14,160 --> 00:00:18,150
+Đây là biểu đồ kiến trúc ở cấp độ cao của hệ thống xây dựng.
+
+5
+00:00:18,150 --> 00:00:24,630
+Ở đây chúng tôi có hệ thống xây dựng ở trung tâm và ở đây chúng tôi có một số hỗ trợ làm cho tập tin và trong
+
+6
+00:00:24,630 --> 00:00:26,670
+phía bên phải cơ bản là đầu ra.
+
+7
+00:00:27,030 --> 00:00:32,670
+Vì vậy, nếu bạn thấy hệ thống xây dựng, hệ thống xây dựng thực sự bắt đầu bằng cách tải một tập hợp cấu hình
+
+8
+00:00:32,670 --> 00:00:38,130
+Và điều đó được thực hiện thông qua quá trình thiết lập và lệnh phóng.
+
+9
+00:00:38,640 --> 00:00:41,070
+Đó là bước đầu tiên.
+
+10
+00:00:41,070 --> 00:00:47,270
+Vì vậy, bước đầu tiên là về cơ bản nó nạp một tập cấu hình và sau đó nó bắt đầu với chấm chính
+
+11
+00:00:47,730 --> 00:00:55,200
+Tập tin mà bạn có thể nhìn thấy trong thư mục lõi xây dựng thư mục cho đến nay, chỉ cần giữ trong tâm trí rằng
+
+12
+00:00:55,200 --> 00:01:02,100
+nó nạp đầu tiên vào cấu hình, sau đó nó bắt đầu thực hiện với chấm chính MK và chấm chính.
+
+13
+00:01:02,100 --> 00:01:05,160
+MK liên quan đến những tập tin này, về cơ bản.
+
+14
+00:01:05,160 --> 00:01:06,510
+Vì vậy, một trong những được cấu hình.
+
+15
+00:01:06,510 --> 00:01:10,920
+MK có nghĩa cơ bản là để có các biến.
+
+16
+00:01:10,920 --> 00:01:17,370
+Và sau đó chúng tôi có định nghĩa được lưu trữ trong K, mà có tập hợp các chức năng định nghĩa được sử dụng
+
+17
+00:01:17,370 --> 00:01:18,750
+băng qua tòa nhà.
+
+18
+00:01:18,750 --> 00:01:25,800
+Và thứ ba là Makefile, chịu trách nhiệm về việc xây dựng hình ảnh.
+
+19
+00:01:26,130 --> 00:01:29,670
+Và sau đó chúng tôi có những công cụ sạch mà là làm sạch xây dựng.
+
+20
+00:01:29,940 --> 00:01:34,620
+MK chịu trách nhiệm dọn dẹp tòa nhà sau khi thi hành án.
+
+21
+00:01:35,070 --> 00:01:40,080
+Nói ngắn gọn, hãy nhớ rằng robot đã xây dựng hệ thống như thế này.
+
+22
+00:01:40,080 --> 00:01:46,330
+Vì vậy, nó chỉ nạp các cấu hình và nó bắt đầu thực hiện cho các phím totem chính và nó chỉ thực hiện
+
+23
+00:01:46,330 --> 00:01:50,790
+tập hợp chức năng và quy tắc và sau đó dọn dẹp tòa nhà.
+
+24
+00:01:50,790 --> 00:01:54,420
+Vì vậy, ở phía bên tay trái bạn có thể thấy một tập hợp của Makefile.
+
+25
+00:01:54,420 --> 00:01:56,880
+Vì vậy, đây là về cơ bản để cấu hình sản phẩm của bạn.
+
+26
+00:01:56,880 --> 00:02:03,540
+Vì vậy, trong trường hợp bạn đang phát triển một bảng mới và các sản phẩm bảng mô tả để bản thân bảng
+
+27
+00:02:03,540 --> 00:02:10,500
+là một sản phẩm và cấu hình bảng sẽ đi vào đây trong bảng cấu hình m k k và mô tả sản phẩm
+
+28
+00:02:10,500 --> 00:02:12,740
+sẽ đi vào sản phẩm của người máy.
+
+29
+00:02:12,780 --> 00:02:18,600
+Và nếu bạn có một số mô-đun trong đó, như nếu bạn có một số ứng dụng hoặc một cái gì đó, một số mô-đun đó là
+
+30
+00:02:18,690 --> 00:02:21,780
+Có liên quan đến cái bảng này, rồi nó nằm dưới cái này.
+
+31
+00:02:21,780 --> 00:02:27,750
+Vì vậy các sản phẩm người máy nên có một mục nhập cho sản phẩm mới của bạn và bảng cấu hình sẽ chứa
+
+32
+00:02:27,760 --> 00:02:30,270
+các phần cứng liên quan đến cấu hình.
+
+33
+00:02:30,270 --> 00:02:37,770
+Và cuối cùng, mô-đun xây dựng các quy tắc không là gì ngoài các quy tắc về cách xây dựng mô-đun.
+
+34
+00:02:37,770 --> 00:02:40,890
+Và sau đó ở phía bên tay phải, bạn có thể thấy các kết quả xuất.
+
+35
+00:02:40,890 --> 00:02:47,490
+Vì vậy, đây là các đầu ra trung gian và sau đó ở đây các đầu ra thực tế, đó là thực sự các hình ảnh
+
+36
+00:02:47,490 --> 00:02:48,360
+hoặc SDK.
+
+37
+00:02:48,360 --> 00:02:52,740
+Đây là một tóm tắt rất nhanh về cấu trúc hệ thống xây dựng.
+
+38
+00:02:52,740 --> 00:02:55,710
+Tôi hy vọng anh học được gì đó từ chuyện này.
+
