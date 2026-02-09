@@ -1,0 +1,152 @@
+1
+00:00:09,960 --> 00:00:16,040
+Hệ thống kiến trúc an ninh người máy là một hệ thống đa chiều được thiết kế để bảo vệ dữ liệu và thiết bị của người dùng.
+
+2
+00:00:16,440 --> 00:00:21,240
+Tại nền tảng của nó là các tính năng an ninh cơ bản kết hợp trực tiếp vào hoạt động của steroid
+
+3
+00:00:21,240 --> 00:00:21,840
+Hệ thống.
+
+4
+00:00:22,160 --> 00:00:26,480
+Chúng ta hãy bắt đầu bằng cách liệt kê những thành phần quan trọng tạo nên xương sống của an ninh người máy.
+
+5
+00:00:26,840 --> 00:00:33,320
+Đầu tiên, chúng tôi có hộp cát ứng dụng, một cơ chế quan trọng để cấu hình mỗi ứng dụng
+
+6
+00:00:33,320 --> 00:00:35,600
+cho môi trường biệt lập của chính nó.
+
+7
+00:00:35,960 --> 00:00:41,800
+@ info/ rich
+
+8
+00:00:41,800 --> 00:00:43,600
+mà không được phép.
+
+9
+00:00:44,040 --> 00:00:51,360
+Hộp cát sử dụng nhận dạng người dùng Linux và nhận diện nhóm để tạo ra danh tính tiến trình riêng biệt,
+
+10
+00:00:51,360 --> 00:00:55,800
+Đảm bảo rằng mỗi ứng dụng sẽ chạy trong không gian dành riêng cho bộ nhớ.
+
+11
+00:00:56,240 --> 00:01:01,880
+Tiếp theo, chúng tôi gặp Mô hình Cho phép, một khuôn khổ tinh vi cung cấp cho các ứng dụng truy cập
+
+12
+00:01:01,880 --> 00:01:05,920
+để các tài nguyên nhạy cảm và dữ liệu dựa trên sự đồng ý rõ ràng của người dùng.
+
+13
+00:01:06,240 --> 00:01:11,190
+Hệ thống này phụ thuộc vào nguyên tắc ít đặc quyền nhất, nghĩa là ứng dụng chỉ được cung cấp
+
+14
+00:01:11,190 --> 00:01:15,070
+các quyền hạn tối thiểu cần thiết để thực hiện các chức năng đã định.
+
+15
+00:01:15,430 --> 00:01:20,870
+Mô hình cho phép người máy đã tiến hóa theo thời gian, với sự cho phép thời gian chạy giới thiệu cho người dùng
+
+16
+00:01:20,870 --> 00:01:23,710
+Điều khiển tốt hơn những gì các ứng dụng có thể truy cập.
+
+17
+00:01:24,110 --> 00:01:30,510
+Những quyền hạn này được cấp hoặc từ chối vào lúc chạy thay vì trong khi cài đặt, cung cấp tăng
+
+18
+00:01:30,510 --> 00:01:33,110
+Độ trong suốt và sự tự chủ của người dùng.
+
+19
+00:01:33,430 --> 00:01:39,830
+Một khía cạnh quan trọng khác là hệ thống điều khiển truy cập hệ thống bảo mật hoạt động
+
+20
+00:01:39,830 --> 00:01:40,990
+ở cấp hạt nhân.
+
+21
+00:01:41,310 --> 00:01:47,430
+Bảo mật Linux thực thi các chính sách nghiêm ngặt chi phối cách xử lý và ứng dụng tương tác
+
+22
+00:01:47,430 --> 00:01:53,310
+với các nguồn tài nguyên hệ thống, cung cấp thêm một lớp phòng thủ chống lại các hoạt động hiểm độc.
+
+23
+00:01:53,630 --> 00:02:00,470
+Nó bổ sung cho các ứng dụng hộp cát bằng cách cung cấp một mức độ kiểm soát hạt hơn về quyền truy cập.
+
+24
+00:02:00,790 --> 00:02:06,870
+Khởi động linh hoạt là một thành phần bảo mật quan trọng khác bảo vệ tính toàn vẹn của hệ thống steroid
+
+25
+00:02:06,870 --> 00:02:08,270
+trong quá trình khởi động.
+
+26
+00:02:08,670 --> 00:02:14,670
+Nó đảm bảo rằng chỉ có quyền mã hóa, như việc nạp giày và nhân hệ điều hành được thực hiện,
+
+27
+00:02:14,670 --> 00:02:17,990
+Ngăn chặn việc thực hiện phần mềm độc hại hoặc phá hoại.
+
+28
+00:02:18,350 --> 00:02:23,870
+Các chuỗi khởi động được kiểm tra sử dụng mã hóa ký hiệu để xác minh tính xác thực của mỗi thành phần,
+
+29
+00:02:24,070 --> 00:02:28,950
+Thiết lập một nguồn gốc lòng tin kéo dài từ phần cứng đến hệ điều hành.
+
+30
+00:02:29,310 --> 00:02:36,190
+Những thành phần cốt lõi này hoạt động cùng nhau để tạo ra một khuôn khổ an ninh mạnh mẽ để bảo vệ các thiết bị người máy
+
+31
+00:02:36,190 --> 00:02:38,230
+từ nhiều mối đe dọa khác nhau.
+
+32
+00:02:38,590 --> 00:02:43,350
+Khi chúng ta đào sâu hơn vào kiến trúc an ninh robot, chúng ta sẽ khám phá từng thành phần này
+
+33
+00:02:43,350 --> 00:02:48,310
+chi tiết hơn, xem xét vai trò cụ thể của họ và cách họ góp phần vào sự an toàn tổng thể
+
+34
+00:02:48,310 --> 00:02:49,070
+hệ thống.
+
+35
+00:02:49,350 --> 00:02:55,470
+Nhưng hiểu được những tính năng an ninh cơ bản này rất quan trọng đối với các nhà phát triển, các chuyên gia an ninh,
+
+36
+00:02:55,470 --> 00:03:00,110
+Và bất cứ ai quan tâm đến việc đảm bảo an ninh và sự riêng tư của thiết bị người máy của họ.
+
+37
+00:03:00,470 --> 00:03:07,870
+Vì vậy, bây giờ chúng ta hãy tiến lên phía trước, khám phá mỗi thành phần quan trọng cá nhân để nắm bắt một mức độ sâu của steroid
+
+38
+00:03:07,870 --> 00:03:09,310
+Kiến trúc an ninh.
+
