@@ -1,0 +1,400 @@
+1
+00:00:00,000 --> 00:00:03,840
+ in this lecture will take a look at two AWS services
+
+2
+00:00:03,840 --> 00:00:06,680
+ for compliance and audit.
+
+3
+00:00:06,680 --> 00:00:09,440
+ So the first one is called as AWS artifact
+
+4
+00:00:09,440 --> 00:00:12,540
+ and AWS artifact provides on demand access
+
+5
+00:00:12,540 --> 00:00:17,240
+ to AWS compliance documentation and AWS agreement.
+
+6
+00:00:17,240 --> 00:00:20,480
+ So you can think of AWS artifact as a portal
+
+7
+00:00:20,480 --> 00:00:23,960
+ where all the compliance documentation
+
+8
+00:00:23,960 --> 00:00:27,960
+ related to AWS services is stored.
+
+9
+00:00:27,960 --> 00:00:31,220
+ So you can download AWS security and compliance documents
+
+10
+00:00:31,220 --> 00:00:34,780
+ such as ISO certification, PC IDSS, SOC report
+
+11
+00:00:34,780 --> 00:00:37,280
+ through either the console, AWS console,
+
+12
+00:00:37,280 --> 00:00:40,720
+ or if you are being evaluated by an auditor,
+
+13
+00:00:40,720 --> 00:00:43,320
+ you can create an IM role for the auditor
+
+14
+00:00:43,320 --> 00:00:47,480
+ through which he can go to this AWS artifact service
+
+15
+00:00:47,480 --> 00:00:50,080
+ and review the documentation.
+
+16
+00:00:50,080 --> 00:00:51,840
+ Okay, now let me just quickly show you
+
+17
+00:00:51,840 --> 00:00:54,960
+ through the console, AWS artifacts.
+
+18
+00:00:54,960 --> 00:00:57,320
+ Okay, IM on the AWS console.
+
+19
+00:00:57,320 --> 00:00:59,940
+ So let me just search for AWS artifacts.
+
+20
+00:00:59,940 --> 00:01:06,000
+ So I'm on the AWS artifact service
+
+21
+00:01:06,000 --> 00:01:08,960
+ and you can see here agreement reports and notification.
+
+22
+00:01:08,960 --> 00:01:10,600
+ So we just click on report
+
+23
+00:01:10,600 --> 00:01:14,480
+ and let's say I'm trying to be compliant with PC IDSS.
+
+24
+00:01:14,480 --> 00:01:16,640
+ So I can just search for PCI
+
+25
+00:01:16,640 --> 00:01:21,680
+ and you will see all the compliance reports from AWS
+
+26
+00:01:21,680 --> 00:01:23,520
+ are within this service.
+
+27
+00:01:23,520 --> 00:01:27,680
+ So you can see your PCI 3DS attestation compliance
+
+28
+00:01:27,680 --> 00:01:31,640
+ and then you can just go ahead and download these if required.
+
+29
+00:01:31,640 --> 00:01:34,240
+ Okay, so I think this pretty straightforward.
+
+30
+00:01:34,240 --> 00:01:36,160
+ Now let's go and take a look at the second service,
+
+31
+00:01:36,160 --> 00:01:39,120
+ which is AWS audit manager.
+
+32
+00:01:39,120 --> 00:01:44,120
+ So AWS audit manager continuously audit your AWS usage
+
+33
+00:01:44,120 --> 00:01:47,760
+ to assess risk and compliance with regulations
+
+34
+00:01:47,760 --> 00:01:49,400
+ and industry standards.
+
+35
+00:01:49,400 --> 00:01:52,200
+ So what AWS audit manager would do is
+
+36
+00:01:52,200 --> 00:01:54,360
+ so it will look at all the AWS services
+
+37
+00:01:54,360 --> 00:01:56,280
+ that you are using within the account
+
+38
+00:01:56,280 --> 00:02:00,200
+ and then assess whether you are being compliant
+
+39
+00:02:00,200 --> 00:02:03,720
+ with the regulation in your industry.
+
+40
+00:02:03,720 --> 00:02:06,320
+ So it also provides some pre-built frameworks
+
+41
+00:02:06,320 --> 00:02:08,880
+ for well-known industry standards and regulations
+
+42
+00:02:08,880 --> 00:02:12,640
+ such as HIPAA, GDPR, PCI DSS and maps
+
+43
+00:02:12,640 --> 00:02:17,040
+ to customer AWS resources and SSS compliance.
+
+44
+00:02:17,040 --> 00:02:19,360
+ So now we can see the AWS audit manager
+
+45
+00:02:19,360 --> 00:02:22,880
+ is not just validating whether AWS services are compliant.
+
+46
+00:02:22,880 --> 00:02:25,120
+ It's looking at your usage of these services
+
+47
+00:02:25,120 --> 00:02:29,160
+ and whether they are compliant with the industry standard
+
+48
+00:02:29,160 --> 00:02:32,480
+ and regulations such as HIPAA, PCI DSS, et cetera.
+
+49
+00:02:32,480 --> 00:02:35,040
+ So how does it ensure you are compliant?
+
+50
+00:02:35,040 --> 00:02:37,760
+ It integrates and collects data
+
+51
+00:02:37,760 --> 00:02:41,320
+ from various AWS services such as cloud trail, security hub
+
+52
+00:02:41,320 --> 00:02:42,760
+ and others.
+
+53
+00:02:42,760 --> 00:02:45,720
+ And we'll take a look at cloud trail and some of these services
+
+54
+00:02:45,720 --> 00:02:47,360
+ but what it essentially does is
+
+55
+00:02:47,360 --> 00:02:51,960
+ it will take alerts from these different services
+
+56
+00:02:51,960 --> 00:02:54,320
+ and then map them to the pre-built frameworks
+
+57
+00:02:54,320 --> 00:02:58,600
+ for well-known industries and see if there's any deviation.
+
+58
+00:02:58,600 --> 00:03:01,520
+ And finally, AWS audit manager also assists
+
+59
+00:03:01,520 --> 00:03:05,600
+ in gathering and preparing evidence for audits.
+
+60
+00:03:05,600 --> 00:03:08,160
+ So rather than manually collecting evidence
+
+61
+00:03:08,160 --> 00:03:12,440
+ for your audits, it can help automate that process.
+
+62
+00:03:12,440 --> 00:03:15,200
+ Now let's just go to the console and just take a quick look.
+
+63
+00:03:15,200 --> 00:03:17,760
+ So let me just search for audit manager.
+
+64
+00:03:17,760 --> 00:03:21,280
+ And you can see AWS audit manager.
+
+65
+00:03:21,280 --> 00:03:26,080
+ Okay, now I am on the AWS audit manager.
+
+66
+00:03:26,080 --> 00:03:27,760
+ And now we can see on the left hand side,
+
+67
+00:03:27,760 --> 00:03:30,040
+ let me just click on assessments.
+
+68
+00:03:30,040 --> 00:03:32,120
+ And here you can see under assessments,
+
+69
+00:03:32,120 --> 00:03:36,880
+ access all your past and current assessments.
+
+70
+00:03:36,880 --> 00:03:39,760
+ You can select an assessment to review the evidence
+
+71
+00:03:39,760 --> 00:03:42,120
+ collected and generate assessment report.
+
+72
+00:03:42,120 --> 00:03:43,720
+ So we just click on create assessment
+
+73
+00:03:43,720 --> 00:03:46,920
+ and let me just give it a name demo.
+
+74
+00:03:46,920 --> 00:03:51,560
+ And then it shows where the final assessment should be sent.
+
+75
+00:03:51,560 --> 00:03:54,200
+ So you can provide a path for S3 bucket
+
+76
+00:03:54,200 --> 00:03:56,520
+ and then you have to select the framework.
+
+77
+00:03:56,520 --> 00:03:58,720
+ So you can see all the frameworks.
+
+78
+00:03:58,720 --> 00:04:01,000
+ Let me just click on this fedram
+
+79
+00:04:01,000 --> 00:04:02,960
+ and you can see here type standard
+
+80
+00:04:02,960 --> 00:04:07,960
+ and it has about 325 controls on which it evaluates your compliance.
+
+81
+00:04:07,960 --> 00:04:11,440
+ So let me just click on this.
+
+82
+00:04:11,440 --> 00:04:14,240
+ So on the left hand side, you can see access control
+
+83
+00:04:14,240 --> 00:04:17,800
+ that about 43 policies that you need to be compliant with.
+
+84
+00:04:17,800 --> 00:04:20,920
+ And on the right hand side, you can see the data sources.
+
+85
+00:04:20,920 --> 00:04:25,360
+ So if you want to be compliant with EC21,
+
+86
+00:04:25,360 --> 00:04:28,840
+ what the audit manager will do is it will gather data
+
+87
+00:04:28,840 --> 00:04:33,160
+ from AWS EPA calls your AWS cloud trail service,
+
+88
+00:04:33,160 --> 00:04:36,320
+ AWS config service, it'll be security hub service.
+
+89
+00:04:36,320 --> 00:04:40,440
+ And then map if you are being compliant.
+
+90
+00:04:40,440 --> 00:04:44,680
+ And in few cases like here being compliant with AC1,
+
+91
+00:04:44,680 --> 00:04:48,360
+ you have to gather the evidence manually.
+
+92
+00:04:48,360 --> 00:04:52,720
+ So hopefully it's clear to you how this audit manager works.
+
+93
+00:04:52,720 --> 00:04:54,960
+ So you can select the industry framework,
+
+94
+00:04:54,960 --> 00:04:58,040
+ then it is going to ingest the data from these different
+
+95
+00:04:58,040 --> 00:05:02,760
+ AWS services and then do the mapping and generate a report.
+
+96
+00:05:02,760 --> 00:05:05,120
+ So hopefully you are clear on the difference
+
+97
+00:05:05,120 --> 00:05:09,200
+ between AWS artifact and AWS audit manager
+
+98
+00:05:09,200 --> 00:05:14,120
+ because it's most likely going to be evaluated in the exam.
+
+99
+00:05:14,120 --> 00:05:15,520
+ I'll see you in the next lecture.
+
+100
+00:05:15,520 --> 00:05:16,360
+ Thank you.
+
