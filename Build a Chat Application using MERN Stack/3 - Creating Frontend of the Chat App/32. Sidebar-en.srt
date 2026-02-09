@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:05,220
+ okay guys for the sidebar part I have actually pasted all the starter template code
+
+2
+00:00:05,220 --> 00:00:10,440
+ inside of this style files beginner folder inside of these side bar.txt file so
+
+3
+00:00:10,440 --> 00:00:15,560
+ you can just copy from that and pasted it and start working from there okay so
+
+4
+00:00:15,560 --> 00:00:19,680
+ now what we are going to actually do is in the inside of the component folder we
+
+5
+00:00:19,680 --> 00:00:27,920
+ are going to just make one side bar.txt file sorry sidebar.jsx file okay and
+
+6
+00:00:27,920 --> 00:00:37,920
+ now take all that from the sidebar.txt control A control C and then inside of
+
+7
+00:00:37,920 --> 00:00:47,040
+ the bit in the components and inside the sidebar you can just paste it alright so
+
+8
+00:00:47,040 --> 00:00:51,760
+ now this is a basic structure now what we are actually going to do is okay so
+
+9
+00:00:51,760 --> 00:00:55,600
+ for this FA user circle we are going to import it from the react icons so
+
+10
+00:00:55,600 --> 00:01:11,600
+ import FA user circle from react - icons - FA so this was the missing part and
+
+11
+00:01:11,600 --> 00:01:16,880
+ after this let's do one thing since we are going to containerize all the chat so
+
+12
+00:01:16,880 --> 00:01:28,240
+ import chat store from the chat store since we are going to get all the
+
+13
+00:01:28,240 --> 00:01:34,640
+ users from there so after this let's destructure all the user so const users
+
+14
+00:01:34,640 --> 00:01:42,800
+ equal to chat store from the chat store we are going to get all the users that
+
+15
+00:01:42,800 --> 00:01:52,160
+ are presenting that then array now since we have got the users
+
+16
+00:01:52,160 --> 00:01:58,960
+ here we are going to map all the users okay so for that one go
+
+17
+00:01:58,960 --> 00:02:05,920
+ besides this contacts and after this contacts take the user so users
+
+18
+00:02:05,920 --> 00:02:12,320
+ dot map use a map function and inside of the map function you can just use
+
+19
+00:02:12,320 --> 00:02:20,800
+ pass one separate user okay so make a arrow function inside of the arrow
+
+20
+00:02:20,800 --> 00:02:29,120
+ function let's do one thing this copy this one and since we are going to
+
+21
+00:02:29,120 --> 00:02:35,120
+ render it for the button so besides the but button you can just
+
+22
+00:02:35,120 --> 00:02:42,640
+ paste it here okay so control is safe and for this one particular user
+
+23
+00:02:42,640 --> 00:02:49,200
+ we can do one thing like we need to map it right so
+
+24
+00:02:49,200 --> 00:02:54,880
+ so go to this image here so inside of the image source
+
+25
+00:02:54,880 --> 00:03:08,800
+ equals to user dot profile pic okay and for user dot profile pic and so
+
+26
+00:03:08,800 --> 00:03:18,720
+ for other things like user name also we can do the same similar thing okay
+
+27
+00:03:18,800 --> 00:03:26,080
+ so let's go to this span I've created a span and given some space here so
+
+28
+00:03:26,080 --> 00:03:32,080
+ user dot user name okay
+
+29
+00:03:32,080 --> 00:03:41,360
+ okay okay so after this one we can see the status
+
+30
+00:03:41,360 --> 00:03:57,200
+ that it would be online and one thing more like if the users
+
+31
+00:03:57,200 --> 00:04:03,680
+ for the users length so suppose if there's a zero length user so
+
+32
+00:04:03,680 --> 00:04:08,960
+ for that one also we need to add some conditions like users dot
+
+33
+00:04:08,960 --> 00:04:15,840
+ length equals to equals to zero like
+
+34
+00:04:15,840 --> 00:04:25,280
+ zero and and so it would be tip class name
+
+35
+00:04:25,280 --> 00:04:39,680
+ equals to text dash center text base content by 60 and
+
+36
+00:04:39,680 --> 00:04:56,800
+ adding why we can take at 10 okay so for this we can say that no contacts has been
+
+37
+00:04:56,800 --> 00:05:00,240
+ found so let's close our div here as well
+
+38
+00:05:01,040 --> 00:05:12,080
+ and we can say that no contacts found all right so
+
+39
+00:05:12,080 --> 00:05:18,480
+ after this one we can close this after this div we can close this
+
+40
+00:05:18,480 --> 00:05:24,400
+ so this is complete logic for this sidebar till now
+
+41
+00:05:26,080 --> 00:05:30,960
+ and make sure to import that in that home piece dot j6 okay
+
+42
+00:05:30,960 --> 00:05:39,040
+ and one more thing like you can go to this sidebar and
+
+43
+00:05:39,040 --> 00:05:48,240
+ like you want to get the users let that get users
+
+44
+00:05:49,520 --> 00:05:56,480
+ also from the chat store and use the use effect okay
+
+45
+00:05:56,480 --> 00:06:05,120
+ use effect in order to get that users get users
+
+46
+00:06:05,120 --> 00:06:08,640
+ so make sure to import that also so import
+
+47
+00:06:08,640 --> 00:06:13,520
+ import use effect
+
+48
+00:06:17,600 --> 00:06:21,040
+ from react okay so control as safe
+
+49
+00:06:21,040 --> 00:06:27,360
+ now we have a whole of this file so make sure to apply the changes correctly
+
+50
+00:06:27,360 --> 00:06:31,200
+ and also since we need to add that depends
+
+51
+00:06:31,200 --> 00:06:36,560
+ dependence here also so we can use this function right get users
+
+52
+00:06:36,560 --> 00:06:38,080
+ so control as and save
+
+53
+00:06:41,680 --> 00:06:49,120
+ and for the images part we have this alt equal to profile so it's equal to user dot profile pick
+
+54
+00:06:49,120 --> 00:07:00,000
+ and yeah that's it I feel that's correct so that's all the changes for this this file
+
+55
+00:07:00,000 --> 00:07:04,800
+ I will see you in the next video
+
