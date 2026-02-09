@@ -1,0 +1,348 @@
+1
+00:00:00,630 --> 00:00:06,780
+We must first understand the Android system source code directly structure to lay the foundation for
+
+2
+00:00:06,780 --> 00:00:07,950
+it must be learning.
+
+3
+00:00:08,250 --> 00:00:09,390
+So let's get started.
+
+4
+00:00:10,380 --> 00:00:10,720
+Wow.
+
+5
+00:00:11,290 --> 00:00:13,850
+Wow, wow, wow.
+
+6
+00:00:15,120 --> 00:00:21,810
+If you haven't downloaded the AOSP source code yet, you can you see us dot Android dot com to read
+
+7
+00:00:21,810 --> 00:00:25,690
+through the source code and follow along with this tutorial.
+
+8
+00:00:26,220 --> 00:00:28,740
+What if you want to download the RSP source code?
+
+9
+00:00:28,980 --> 00:00:32,910
+Please follow the instructions from AOSP download tutorials.
+
+10
+00:00:33,210 --> 00:00:40,620
+So the basic idea of this session is to give you a very high level overview of RSP folders.
+
+11
+00:00:40,770 --> 00:00:47,430
+So we'll will go through each folders one by one, and I will try to explain what each folders are meant
+
+12
+00:00:47,430 --> 00:00:47,820
+for.
+
+13
+00:00:47,940 --> 00:00:53,850
+So the first folder we have got is a team which stands for Android one time.
+
+14
+00:00:53,970 --> 00:01:00,120
+So this folder contains the modules related to Android runtime operating environment.
+
+15
+00:01:00,180 --> 00:01:08,790
+All the air related modules can be found here, including DEX compilers, JVM, Dalvik Meal, etc. How
+
+16
+00:01:08,790 --> 00:01:10,990
+open the MSP project in ingilizce.
+
+17
+00:01:11,100 --> 00:01:15,190
+So here you can find all the folders coming under the Areas Bee Project.
+
+18
+00:01:15,210 --> 00:01:19,220
+So the first one is our team, which stands for Android runtime.
+
+19
+00:01:19,230 --> 00:01:25,590
+So as we discussed, it contains all the dependent modules required for the Android runtime to function.
+
+20
+00:01:25,710 --> 00:01:29,580
+So here we can find the Dalvik medium and open duty game.
+
+21
+00:01:30,030 --> 00:01:35,910
+And similarly, there are a lot of other dependent modules which are necessary for Android runtime to
+
+22
+00:01:35,910 --> 00:01:36,390
+function.
+
+23
+00:01:36,420 --> 00:01:37,740
+So next is Bionic.
+
+24
+00:01:37,740 --> 00:01:45,930
+Bionic is Android Custom See Library, Mat Library and a dynamic link so you can find bionic here and
+
+25
+00:01:46,350 --> 00:01:47,040
+inside that.
+
+26
+00:01:47,040 --> 00:01:52,530
+You can find all the library and support of the modules for C and C++.
+
+27
+00:01:52,680 --> 00:01:58,120
+If you open the read me, you can read more information about different folders within bionics.
+
+28
+00:01:58,120 --> 00:02:04,560
+So, for example, this folder contains all the modules for the Mac library, and similarly, Lipsy
+
+29
+00:02:04,560 --> 00:02:12,990
+Lipsy contains all the C related modules, and the dynamic linker interface is available in Lib Bill
+
+30
+00:02:12,990 --> 00:02:17,760
+and the Lib Standard C++ is available in this particular folder.
+
+31
+00:02:17,880 --> 00:02:21,420
+The dynamic linker and the uni text can be found here.
+
+32
+00:02:21,480 --> 00:02:23,790
+The benchmarks can be found under this path.
+
+33
+00:02:23,880 --> 00:02:25,230
+Next, we have bootable.
+
+34
+00:02:25,350 --> 00:02:31,350
+The bootable folder consists of the boot related code, so it contains the bootloader OTA, over-the-air
+
+35
+00:02:31,350 --> 00:02:35,040
+update and some modules for the recovery mechanism.
+
+36
+00:02:35,070 --> 00:02:41,820
+So in in the we have the bootable folder here which we could find the bootloader and the recovery for
+
+37
+00:02:41,820 --> 00:02:41,920
+it.
+
+38
+00:02:41,940 --> 00:02:47,700
+Up next, we have the Build folder the Build a folder consists of to make files for the build system
+
+39
+00:02:47,700 --> 00:02:53,100
+so you can find the EMV setup up passage while here and some common shell scripts.
+
+40
+00:02:53,100 --> 00:02:57,120
+And also there are folders for the may soon build systems here.
+
+41
+00:02:57,120 --> 00:03:03,930
+So may and soon are the build systems used by Android, so these build systems are used to build the
+
+42
+00:03:03,940 --> 00:03:05,480
+entire AOSP project.
+
+43
+00:03:05,490 --> 00:03:08,250
+So in India, we have the Build a folder here.
+
+44
+00:03:08,310 --> 00:03:14,700
+So under the Build folder, we can find the source make and there are many other supporting modules
+
+45
+00:03:14,700 --> 00:03:18,190
+which are needed for the build system and add root.
+
+46
+00:03:18,240 --> 00:03:24,870
+You can find Ian Reset Abroad asset, so he and we set up data sets, east configuration enrollment,
+
+47
+00:03:24,900 --> 00:03:29,720
+set up configuration self script, which we run before we start using AOSP.
+
+48
+00:03:29,730 --> 00:03:34,030
+So if you open it up, you can see all the commands which are available within that.
+
+49
+00:03:34,050 --> 00:03:38,100
+So if you have already built your system, you are definitely using it.
+
+50
+00:03:38,190 --> 00:03:44,220
+When you first run in, we set up Dot S-H and then you give the launch command, which actually gives
+
+51
+00:03:44,220 --> 00:03:48,080
+you the launch menu where you select one boot variant.
+
+52
+00:03:48,240 --> 00:03:55,020
+And this shell script contains the logic for all the commands which you execute in the terminal.
+
+53
+00:03:55,290 --> 00:04:02,730
+For example, M M M M stands for making the top of the tree, so you can find all the descriptions here.
+
+54
+00:04:02,790 --> 00:04:03,810
+We will cover this.
+
+55
+00:04:03,870 --> 00:04:07,230
+Our Ian Lee set up in detail in a separate video.
+
+56
+00:04:07,290 --> 00:04:11,790
+Next, we have the CTD or compatibility definition document.
+
+57
+00:04:12,030 --> 00:04:17,040
+This folder consists of the documentation, so this documentation, you can also find it online.
+
+58
+00:04:17,070 --> 00:04:24,120
+These are instructions given by Google, which the OEM has to follow to be compatible with the latest
+
+59
+00:04:24,120 --> 00:04:28,800
+Android release so CBD can be found under a compatibility folder.
+
+60
+00:04:28,830 --> 00:04:34,500
+So under these, if you go there several record KDDI inside C, D D, there are multiple sections like
+
+61
+00:04:34,510 --> 00:04:40,080
+we have thirteen sections, so and each of these sections are dedicated to different, different topics.
+
+62
+00:04:40,110 --> 00:04:44,580
+For example, this one is dedicated to device types and within device types.
+
+63
+00:04:44,580 --> 00:04:48,900
+You can see different device types supported by Android.
+
+64
+00:04:49,090 --> 00:04:51,360
+So, for example, handheld device requirements.
+
+65
+00:04:51,480 --> 00:04:53,850
+This is specific to mobile devices.
+
+66
+00:04:54,180 --> 00:05:00,040
+The mobile forms and similarly, we have television, so this is specific to television.
+
+67
+00:05:00,810 --> 00:05:06,360
+This is applicable for all the OEMs who use this Android as the operating system for television.
+
+68
+00:05:06,510 --> 00:05:12,180
+Similarly, we have watch this is for the wired devices and we have automotive here.
+
+69
+00:05:12,270 --> 00:05:14,370
+This is for the Android Automotive build.
+
+70
+00:05:14,520 --> 00:05:18,960
+So with each of the new versions, there will be changes to this documentation.
+
+71
+00:05:19,170 --> 00:05:25,710
+Similarly, you can find for each topic here like this is software and then the application packaging,
+
+72
+00:05:25,710 --> 00:05:28,850
+multimedia, hardware, performance and power.
+
+73
+00:05:28,980 --> 00:05:33,960
+The next to me how courteous seedier stands for Android compatibility test suit.
+
+74
+00:05:34,350 --> 00:05:39,240
+So here you can find all the modules around the CTS tests on your device.
+
+75
+00:05:39,240 --> 00:05:46,730
+So insidious tests ensure that your implementation is compatible with this latest AOSP build.
+
+76
+00:05:46,800 --> 00:05:53,850
+So basically, Android seat is it will run a number of huge number of epics or programs, which will
+
+77
+00:05:53,850 --> 00:05:56,780
+check different, different implementation of your build.
+
+78
+00:05:56,790 --> 00:06:01,630
+So in case if one of the implementation fails, it will log that in the report.
+
+79
+00:06:01,650 --> 00:06:07,770
+So at the end of cities around, you will get a report mentioning whether it was successful or it was
+
+80
+00:06:07,860 --> 00:06:08,220
+failure.
+
+81
+00:06:08,550 --> 00:06:12,600
+So you can find the sweetest city tests under the cities folder.
+
+82
+00:06:12,660 --> 00:06:19,320
+So if you want to learn more about cities test and how to run those, how to start the cities test and
+
+83
+00:06:19,320 --> 00:06:21,970
+you can look at source code Android dot com.
+
+84
+00:06:21,990 --> 00:06:25,390
+So there you have detailed information on how to run that.
+
+85
+00:06:25,410 --> 00:06:29,220
+You can find all the Sidious modules under this particular folder.
+
+86
+00:06:30,130 --> 00:06:30,450
+Wow.
+
+87
+00:06:31,560 --> 00:06:33,170
+Wow, wow.
+
