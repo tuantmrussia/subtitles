@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,800
+Vì vậy, xin chào tất cả mọi người, trong video này, những gì chúng tôi sẽ làm là, chúng tôi sẽ làm việc với
+
+2
+00:00:05,800 --> 00:00:08,240
+Jason, chúng ta sẽ đi.
+
+3
+00:00:08,240 --> 00:00:11,760
+Vì vậy, những gì cơ bản xảy ra là giả sử, khi bạn đang khai thác một cụ thể
+
+4
+00:00:11,760 --> 00:00:12,920
+Trang web, okay.
+
+5
+00:00:12,920 --> 00:00:18,040
+Vì vậy, khi bạn nhấn vào bản ghi đó trong nút, bạn đăng nhập vào trang web.
+
+6
+00:00:18,040 --> 00:00:21,200
+Vì vậy, đăng nhập này có một phiên chạy, okay.
+
+7
+00:00:21,200 --> 00:00:24,920
+Vì vậy, khi bạn đang đăng nhập vào một trang nhất định, nó có một phiên họp.
+
+8
+00:00:24,920 --> 00:00:31,280
+Như sau bao nhiêu thời gian, điều này sẽ hết hạn, ví dụ như, nếu bạn đang đăng nhập
+
+9
+00:00:31,280 --> 00:00:33,360
+được chứ.
+
+10
+00:00:33,360 --> 00:00:39,320
+Vì vậy, đôi khi bạn đã nhìn thấy là như thế, như khi bạn đang truy cập một trang web cụ thể và
+
+11
+00:00:39,320 --> 00:00:43,160
+Khi bạn đăng nhập, nó sẽ hết hạn sau một khoảng thời gian cụ thể.
+
+12
+00:00:43,160 --> 00:00:47,960
+Vì vậy, đó là lý do tại sao chúng tôi sử dụng Jason, chúng tôi đang nói chuyện trong trường hợp đó, để thiết lập thời gian expiry, như sau
+
+13
+00:00:47,960 --> 00:00:55,000
+Bao nhiêu hoặc những gì là giới hạn trong đó khi chúng tôi cập nhật lại trang web, vật tượng trưng cụ thể,
+
+14
+00:00:55,000 --> 00:00:58,920
+Nó được chỉ định cho một người dùng đặc biệt, được rồi.
+
+15
+00:00:58,920 --> 00:01:01,280
+Đó là lý do chúng ta sử dụng Jason, chúng ta có vật kỷ niệm.
+
+16
+00:01:01,280 --> 00:01:09,600
+Vì vậy, nếu bạn lấy một định nghĩa cá nhân của nó, để tôi có thể tìm kiếm cho bạn, okay.
+
+17
+00:01:09,600 --> 00:01:14,040
+Giống như hãy sử dụng phi công phụ.
+
+18
+00:01:14,040 --> 00:01:20,600
+Vậy Jason trên mạng biểu tượng là gì?
+
+19
+00:01:20,600 --> 00:01:27,160
+Vì vậy, nó sẽ hiển thị một số kết quả, như Jason web bảng hiệu là an toàn, gọn gàng, cách để truyền
+
+20
+00:01:27,160 --> 00:01:31,640
+thông tin giữa hai nhóm, thường được dùng để xác thực và cho phép vào Mạng
+
+21
+00:01:31,640 --> 00:01:32,640
+ứng dụng.
+
+22
+00:01:32,640 --> 00:01:38,360
+Giống như nó có thành phần chính, nó có một trọng tải và nó có một chữ ký đảm bảo hiệu
+
+23
+00:01:38,360 --> 00:01:42,680
+Chưa được thay đổi với mã hóa và tải, sau đó ký với
+
+24
+00:01:42,680 --> 00:01:45,520
+Bí mật hay chìa khóa riêng.
+
+25
+00:01:45,520 --> 00:01:47,840
+Vậy JWT hoạt động thế nào?
+
+26
+00:01:47,840 --> 00:01:55,840
+Vì vậy, xác thực phần như bạn có thể thấy ở đây, như sau khi đăng nhập, máy chủ tạo ra một JWT
+
+27
+00:01:55,840 --> 00:01:58,840
+được chứ?
+
+28
+00:01:58,840 --> 00:02:02,440
+Sau đó, khách hàng sử dụng các cửa hàng khách hàng, thường trong kho bánh quy địa phương
+
+29
+00:02:02,440 --> 00:02:04,920
+Và gửi nó với mỗi yêu cầu.
+
+30
+00:02:04,920 --> 00:02:09,400
+Máy chủ kiểm tra chữ ký để xác nhận hiệu bài là hợp lệ và cho phép truy cập và rằng
+
+31
+00:02:09,400 --> 00:02:13,780
+là cách một số phiên chạy đăng nhập hoặc đăng xuất hoạt động.
+
+32
+00:02:13,780 --> 00:02:17,480
+Vì vậy, bạn có thể đọc nhiều hơn về điều này, vì vậy bạn có một ý tưởng tốt hơn.
+
+33
+00:02:17,480 --> 00:02:20,920
+Nên bây giờ tôi sẽ lập trình nó, được chứ?
+
+34
+00:02:20,920 --> 00:02:25,160
+Vì vậy, trong thư mục trực tiếp này, như bạn có thể thấy, tôi sẽ tạo một tập tin được gọi là
+
+35
+00:02:25,160 --> 00:02:26,800
+một vật kỷ niệm.
+
+36
+00:02:26,800 --> 00:02:31,840
+Hãy đặt tên cho nó là một vật kỷ niệm và sau vật kỷ niệm này. Js chúng ta sẽ nhập khẩu JWT.
+
+37
+00:02:31,840 --> 00:02:38,260
+Vậy là gói JWT từ thẻ Jason web.
+
+38
+00:02:38,260 --> 00:02:56,200
+Bây giờ hãy xuất khẩu nó, vì vậy xuất khẩu các biểu tượng con mồi, JNA, và bằng, chúng tôi có một ID người dùng và
+
+39
+00:02:56,200 --> 00:03:01,600
+Sau đó chúng tôi có trả lời RES và chúng tôi sẽ sử dụng điều này gọi là một chức năng và chúng tôi đang đi
+
+40
+00:03:01,600 --> 00:03:08,820
+để tuyên bố một biểu tượng bằng dấu chấm JWT.
+
+41
+00:03:08,820 --> 00:03:13,620
+Vì vậy, ở đây trong trường hợp này chúng tôi sẽ tạo ra một chữ ký số của nó, giống như bất cứ khi nào bạn
+
+42
+00:03:13,620 --> 00:03:18,080
+đăng nhập hoặc bất cứ khi nào chúng tôi từ chức trong một ứng dụng cụ thể chúng tôi sẽ chỉ định cho bạn
+
+43
+00:03:18,080 --> 00:03:22,540
+được rồi.
+
+44
+00:03:22,540 --> 00:03:27,540
+Vì vậy, nó có một thời gian đặc biệt, giống như nó có một H, giống như sau bao nhiêu thời gian nó là
+
+45
+00:03:27,540 --> 00:03:32,860
+Sẽ hết hạn, những gì là ID phiên chạy và tất cả những gì như tải và dữ liệu và tất cả những gì
+
+46
+00:03:32,860 --> 00:03:33,860
+đồ đạc.
+
+47
+00:03:33,860 --> 00:03:38,860
+Vì vậy, bạn có thể đọc nhiều hơn về nó, nhưng cơ bản tổng quát tôi đã cho bạn, như cao hơn V,
+
+48
+00:03:38,860 --> 00:03:41,860
+được rồi.
+
+49
+00:03:41,860 --> 00:03:48,860
+Vì vậy, người dùng ID và sau đó những gì chúng tôi sẽ làm là chúng tôi sẽ chỉ làm cho một cụ thể
+
+50
+00:03:48,860 --> 00:03:50,700
+Chìa khóa bí mật.
+
+51
+00:03:50,700 --> 00:03:59,340
+Vì vậy, chìa khóa bí mật chúng tôi có thể làm điều này trong một chấm trong một gói yếu, vì vậy những gì bạn có thể làm nó, như bí mật
+
+52
+00:03:59,340 --> 00:04:06,780
+Chìa khóa và chìa khóa bí mật sẽ là thứ gì đó xung quanh bất cứ thứ gì, bất cứ thứ gì bạn có thể làm cho nó.
+
+53
+00:04:06,780 --> 00:04:16,940
+Vì vậy, kiểm soát là và sau đó bây giờ đi vào bên trong của vật tượng trưng này.js và những gì chúng tôi có thể làm là quá trình.env.c.
+
+54
+00:04:16,940 --> 00:04:25,820
+Chìa khóa, vì vậy chúng tôi sẽ lấy chìa khóa bí mật từ chấm trong tập tin v và chúng tôi sẽ đi
+
+55
+00:04:25,820 --> 00:04:27,820
+để đặt nó thở ra.
+
+56
+00:04:27,820 --> 00:04:30,660
+Cho nên bất kể thời gian biểu này sẽ hết hạn.
+
+57
+00:04:30,660 --> 00:04:37,100
+Giả sử chúng ta đặt tên nó là 7 ngày, vì vậy nó sẽ hết hạn trong 7 ngày.
+
+58
+00:04:37,100 --> 00:04:42,940
+Vì vậy, bây giờ những gì chúng tôi có thể làm là chúng tôi sẽ có các phản ứng và chúng tôi sẽ thiết lập
+
+59
+00:04:42,940 --> 00:04:51,860
+Chìa khóa là JWT và chúng ta sẽ vượt qua dấu hiệu mà chúng ta đã tạo ra ở đây.
+
+60
+00:04:51,860 --> 00:05:03,300
+Vì vậy, phản ứng chấm cookie JWT và bây giờ chúng tôi sẽ thiết lập độ tuổi tối đa, do đó, tuổi cao nhất.
+
+61
+00:05:03,300 --> 00:05:09,780
+Vì vậy, tuổi tối đa sẽ là 7 ngày, okay, 7 đến 24 giờ, vì vậy họ là 24 giờ cụ thể
+
+62
+00:05:09,780 --> 00:05:19,860
+ngày, một ngày cụ thể, từ 24 đến 60, 60 phút trong một giờ, 60 giây và
+
+63
+00:05:19,860 --> 00:05:23,180
+sau đó chúng tôi sẽ chỉ định này là 1000 mili giây.
+
+64
+00:05:23,180 --> 00:05:29,100
+Vì vậy, bây giờ HTTP chỉ, vì vậy chúng tôi sẽ thông qua điều này là đúng.
+
+65
+00:05:29,100 --> 00:05:34,420
+Vì vậy, nếu trang web này là những gì theo giao thức HTTP, do đó, phù hợp với chúng tôi thiết lập này
+
+66
+00:05:34,420 --> 00:05:45,420
+như HTTP chỉ là đúng và cùng trang web, cùng trang web, cùng trang web và chúng tôi sẽ bổ nhiệm
+
+67
+00:05:45,420 --> 00:05:50,900
+Đây là một nghiêm ngặt, được rồi, vì vậy đây là một số giá trị, vì vậy cùng một trang web những gì nó thực sự làm
+
+68
+00:05:50,900 --> 00:06:01,060
+là nó là loại kiểm tra giống như thập giá kiểm tra, nói rằng cookie là trên giống như thập giá
+
+69
+00:06:01,060 --> 00:06:07,260
+Trang web, okay, như vậy chỉ và nó cũng tăng cường an ninh của một trang web cụ thể
+
+70
+00:06:07,260 --> 00:06:13,140
+cũng như nó kiểm tra các cuộc tấn công CRSAP, vì vậy bạn có thể đọc về bài báo này, bài báo này
+
+71
+00:06:13,140 --> 00:06:21,860
+Khi bạn vào trang web này, được rồi, vì vậy bây giờ kiểm soát S, vì vậy đây là thực hiện,
+
+72
+00:06:21,860 --> 00:06:25,940
+Vì vậy, tôi đã tìm kiếm bạn một điều, bạn giống như cùng một trang web, cùng trang web là một thuộc tính cookie
+
+73
+00:06:25,940 --> 00:06:30,780
+điều khiển nếu trình duyệt gửi cookie cùng với yêu cầu qua trang web, được chưa, và
+
+74
+00:06:30,780 --> 00:06:35,940
+Nó được giới thiệu để cải thiện an ninh và sự riêng tư bằng cách giảm rủi ro như yêu cầu qua mạng
+
+75
+00:06:35,940 --> 00:06:41,820
+Đối với các CSRF và theo dõi không mong muốn, vì vậy bạn có thể đọc ra là giống như nghiêm ngặt, lỏng lẻo và không có
+
+76
+00:06:41,820 --> 00:06:47,620
+Và tại sao nó được sử dụng, ví dụ để nâng cao sự riêng tư cho an ninh mặc định và
+
+77
+00:06:47,620 --> 00:06:51,700
+ngăn chặn các cuộc tấn công của CSRF, vì vậy bạn chỉ có thể đọc ở đây, okay.
+
