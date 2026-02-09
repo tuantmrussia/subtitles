@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,360
+Trong bài giảng này, chúng ta sẽ tập trung vào SageMaker Data Wrangler Amazon.
+
+2
+00:00:05,360 --> 00:00:11,520
+Vì vậy, dịch vụ này tập trung vào bộ sưu tập dữ liệu và xử lý dữ liệu trước.
+
+3
+00:00:11,520 --> 00:00:18,480
+Vì vậy, có bốn bước quan trọng mà bạn cần làm theo để hiệu lực xử lý dữ liệu thông qua
+
+4
+00:00:18,480 --> 00:00:21,680
+Dịch vụ dữ liệu Wrangler.
+
+5
+00:00:21,680 --> 00:00:29,000
+Đầu tiên là nhập dữ liệu vào Wrangler từ các dịch vụ như S3, Athena,
+
+6
+00:00:29,000 --> 00:00:35,660
+Và có 50 cộng với các nguồn thứ ba thông qua đó bạn có thể nhập dữ liệu vào dữ liệu
+
+7
+00:00:35,660 --> 00:00:36,660
+Wrangler.
+
+8
+00:00:36,660 --> 00:00:39,080
+Và bạn có thể thấy tất cả các dịch vụ mà nó hỗ trợ.
+
+9
+00:00:39,080 --> 00:00:44,960
+Bạn cũng có thể tải lên địa phương, có thể tải lên file CNV vào dữ liệu Wrangler.
+
+10
+00:00:44,960 --> 00:00:48,920
+Và bạn có thể thấy hình chụp từ dữ liệu Wrangler.
+
+11
+00:00:48,920 --> 00:00:55,480
+Vì vậy, ở đây tôi nhập một tập dữ liệu từ con tàu Titanic không béo.
+
+12
+00:00:55,480 --> 00:01:01,460
+Và bạn có thể thấy trong tập dữ liệu này, bạn có lớp học hành khách, sống sót một cho
+
+13
+00:01:01,460 --> 00:01:07,760
+Sống sót bằng gỗ, tên của tất cả hành khách, tuổi, vé,
+
+14
+00:01:07,760 --> 00:01:09,720
+và cứ thế.
+
+15
+00:01:09,720 --> 00:01:17,440
+Vì vậy, một khi bạn đã nhập dữ liệu này, tiếp theo là để hiểu chất lượng dữ liệu và sau đó tạo ra
+
+16
+00:01:17,440 --> 00:01:19,800
+thông tin thấu hiểu.
+
+17
+00:01:19,800 --> 00:01:24,240
+Và điều này cũng được gọi là phân tích dữ liệu thăm dò.
+
+18
+00:01:24,240 --> 00:01:28,400
+Và bạn nên nhớ điều này từ góc nhìn kiểm tra, có một cơ hội rất tốt rằng
+
+19
+00:01:28,400 --> 00:01:36,320
+Họ có thể hỏi dịch vụ AWS nào được sử dụng để phân tích dữ liệu.
+
+20
+00:01:36,320 --> 00:01:41,760
+Bây giờ chúng ta hãy cố gắng và hiểu rõ hơn những gì chúng ta làm là một phần của bước này.
+
+21
+00:01:41,760 --> 00:01:49,200
+Vì vậy, bây giờ bạn có thể nhìn thấy từ ảnh chụp màn hình, một khi chúng tôi đã nhập dữ liệu Titanic, bạn có thể
+
+22
+00:01:49,200 --> 00:01:53,840
+có một ô xem tổng kết bảng ở đây và ở đây là tất cả các điểm dữ liệu.
+
+23
+00:01:53,840 --> 00:01:56,240
+Và nó cho bạn thấy một cái nhìn tổng quát.
+
+24
+00:01:56,240 --> 00:02:03,720
+Nó sẽ cho bạn thấy lớp hành khách, khoảng 1309, còn sống sót, chúng tôi có khoảng 1309 hồ sơ.
+
+25
+00:02:03,720 --> 00:02:07,260
+Nhưng nếu bạn nhìn vào tuổi, bạn chỉ có 1, 0, 4, 6.
+
+26
+00:02:07,260 --> 00:02:12,200
+Bạn có thể tưởng tượng rằng có một số điểm dữ liệu bị thiếu.
+
+27
+00:02:12,200 --> 00:02:16,880
+Đó là cách bạn có thể hiểu chất lượng dữ liệu.
+
+28
+00:02:16,880 --> 00:02:20,920
+Tiếp theo là phân tích dữ liệu thăm dò.
+
+29
+00:02:20,920 --> 00:02:26,360
+Và ở đây bạn có thể thấy, bạn có thể tạo ra biểu đồ tần xuất và có những loại biểu đồ khác.
+
+30
+00:02:26,360 --> 00:02:30,080
+Bạn có thể sử dụng biểu đồ thanh, biểu đồ bánh và vân vân.
+
+31
+00:02:30,080 --> 00:02:36,440
+Và ở đây chúng tôi có trên trục X, chúng tôi có sáu và sau đó chúng tôi có màu bằng cách sống sót.
+
+32
+00:02:36,440 --> 00:02:41,480
+Vậy đối với nam và nữ, tỉ lệ phần trăm sống sót là bao nhiêu?
+
+33
+00:02:41,480 --> 00:02:47,560
+Vì vậy, đây là tỷ lệ phần trăm cho nam giới sống sót và đây là tỷ lệ phần trăm cho nữ giới.
+
+34
+00:02:47,560 --> 00:02:54,320
+Vì vậy, bạn có thể sử dụng các loại biểu đồ khác nhau để phân tích dữ liệu, đôi khi được gọi là thăm dò
+
+35
+00:02:54,320 --> 00:02:56,200
+Phân tích dữ liệu.
+
+36
+00:02:56,200 --> 00:03:02,080
+Vì vậy, một khi bạn đã hiểu chất lượng dữ liệu và tạo ra các thấu hiểu dữ liệu, bước thứ ba
+
+37
+00:03:02,080 --> 00:03:06,560
+là biến đổi dữ liệu hiệu quả hơn và phân tích.
+
+38
+00:03:06,560 --> 00:03:12,800
+Vì vậy, ở đây bạn có thể muốn thả một số cột, xử lý tốt hơn và hãy nói rằng, chúng tôi đang cố gắng
+
+39
+00:03:12,800 --> 00:03:15,800
+Để dự đoán loại hành khách nào còn sống.
+
+40
+00:03:15,800 --> 00:03:22,320
+Có lẽ bạn không cần một cột với địa chỉ của người dân như đó có thể không phải là một yếu tố
+
+41
+00:03:22,320 --> 00:03:24,280
+dù họ có sống sót hay không.
+
+42
+00:03:24,280 --> 00:03:29,600
+Vì vậy, những gì bạn có thể làm là bạn có thể sử dụng hoặc biến đổi tùy chỉnh hoặc một số biến đổi trước xây dựng
+
+43
+00:03:29,600 --> 00:03:34,520
+Để thả các cột hoặc xử lý hơn, xử lý dữ liệu bị mất.
+
+44
+00:03:34,520 --> 00:03:37,800
+Đó là những khả năng được cung cấp bởi bộ quản lý dữ liệu.
+
+45
+00:03:37,800 --> 00:03:43,440
+Vì vậy, bạn có thể thấy ở đây, vì vậy bạn có thể làm các biến đổi hoặc thông qua khả năng xây dựng trước
+
+46
+00:03:43,440 --> 00:03:46,440
+hay biến đổi tùy chỉnh.
+
+47
+00:03:46,440 --> 00:03:52,720
+Vì vậy, một khi bạn đã biến đổi dữ liệu, sau đó bạn có thể xuất dữ liệu hoặc đến S3 hoặc SageMaker
+
+48
+00:03:52,720 --> 00:03:59,880
+Cửa hàng tính năng và chúng ta sẽ thảo luận về SageMaker sản xuất tiếp theo hoặc bạn cũng có thể sử dụng SaageMaker
+
+49
+00:03:59,880 --> 00:04:01,200
+Đường ống.
+
+50
+00:04:01,200 --> 00:04:05,360
+Vì vậy, hy vọng rằng các hiền triết Amazon Sage Maker khả năng tranh cãi dữ liệu rõ ràng với bạn.
+
+51
+00:04:05,360 --> 00:04:07,200
+Hẹn gặp lại ở bài giảng kế tiếp, cảm ơn.
+
