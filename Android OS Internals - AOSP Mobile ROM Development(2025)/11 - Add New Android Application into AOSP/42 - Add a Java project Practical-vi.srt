@@ -1,0 +1,444 @@
+1
+00:00:04,990 --> 00:00:05,210
+Được rồi.
+
+2
+00:00:05,230 --> 00:00:07,480
+Hãy bắt đầu bằng việc tạo một dự án Java.
+
+3
+00:00:07,690 --> 00:00:09,820
+Chọn Java hoạt động tự động.
+
+4
+00:00:09,820 --> 00:00:11,200
+Chọn ngôn ngữ làm Java.
+
+5
+00:00:11,390 --> 00:00:11,500
+Được rồi.
+
+6
+00:00:11,590 --> 00:00:14,280
+Vì vậy, bây giờ chúng tôi đã có một dự án cơ bản Java sẵn sàng.
+
+7
+00:00:14,320 --> 00:00:17,340
+Hãy chuyển dự án này sang Aosp.
+
+8
+00:00:17,350 --> 00:00:20,680
+Dự án này là một dự án Helloworld đơn giản tại thời điểm này.
+
+9
+00:00:20,680 --> 00:00:23,020
+Vì vậy dự án này không có bất kỳ hoạt động nào tại thời điểm này.
+
+10
+00:00:23,020 --> 00:00:26,410
+Vì vậy, hãy thêm một hoạt động, một nhiệm vụ hoạt động rỗng.
+
+11
+00:00:26,410 --> 00:00:29,350
+Và đây chúng ta hãy thêm một cuốn sách văn bản.
+
+12
+00:00:29,380 --> 00:00:35,170
+Tên dự án Java đầu tiên của tôi.
+
+13
+00:00:35,170 --> 00:00:35,620
+Được rồi.
+
+14
+00:00:35,620 --> 00:00:39,880
+Vì vậy, bây giờ chúng tôi đã tạo ra một dự án ở phòng thu steroid.
+
+15
+00:00:39,880 --> 00:00:44,740
+Như các bạn đã biết, hệ thống xây dựng cho phát triển ứng dụng steroid là Gradle.
+
+16
+00:00:44,740 --> 00:00:50,920
+Vì vậy, bây giờ chúng ta cần di cư dự án này đến Aosp và vận chuyển nó như một phần của công trình Aosp.
+
+17
+00:00:50,920 --> 00:00:56,350
+Vì vậy, về cơ bản những gì chúng tôi cần làm là chúng tôi cần phải sao chép các thư mục tài nguyên, thư mục Java và danh sách.
+
+18
+00:00:56,350 --> 00:01:02,440
+Chúng ta cần bỏ qua tất cả các tập tin văn lệnh Gradle vì Aosp đang có một hệ thống xây dựng khác.
+
+19
+00:01:02,440 --> 00:01:03,820
+Vì vậy, hãy đi trước và làm điều đó.
+
+20
+00:01:03,820 --> 00:01:10,070
+Vậy về cơ bản chúng ta cần di chuyển dự án Gradle vào dạng này, như cấu trúc thư mục này, đúng không?
+
+21
+00:01:10,090 --> 00:01:15,100
+Cách dễ nhất là sao chép một trong các ứng dụng.
+
+22
+00:01:15,100 --> 00:01:18,520
+Như trong trường hợp này, tôi sẽ chỉ sao chép ứng dụng lịch, sao chép, dán nó ở đây.
+
+23
+00:01:18,520 --> 00:01:21,820
+Bây giờ tôi đã có lịch và hãy đi đến thư mục.
+
+24
+00:01:21,820 --> 00:01:24,470
+Thay tên cái này vào bộ nhớ của tôi.
+
+25
+00:01:24,520 --> 00:01:31,380
+Vì vậy, tôi sẽ gửi lại thư mục này cho Aosp Java của tôi mở này và bây giờ chúng tôi có thể loại bỏ các nguồn tập tin nhiều hơn
+
+26
+00:01:31,390 --> 00:01:32,280
+Vì vậy, loại bỏ kiểm tra.
+
+27
+00:01:32,440 --> 00:01:36,820
+Vậy nên về cơ bản chúng ta cần chuyển dự án steroid thành dạng này.
+
+28
+00:01:36,820 --> 00:01:38,110
+Khá đơn giản.
+
+29
+00:01:38,110 --> 00:01:45,670
+Chúng tôi chỉ cần sao chép thư mục gốc ở đây, thư mục nguồn ở đây và chỉ cần thay thế bản kê khai máy tính này
+
+30
+00:01:45,670 --> 00:01:49,120
+Ở đây và sau đó chỉnh sửa tập tin nhắn beep của Andrene.
+
+31
+00:01:49,330 --> 00:01:50,530
+Vì vậy, hãy làm điều đó.
+
+32
+00:01:50,530 --> 00:01:53,260
+Đầu tiên, hãy bắt chước nguồn gốc.
+
+33
+00:01:53,500 --> 00:02:00,310
+Vì vậy, tôi đã mở dự án phòng thu người máy ở bảng bên trái và thư mục mới mà chúng tôi tạo ra bên trong
+
+34
+00:02:00,310 --> 00:02:02,290
+Aosp ở bên phải.
+
+35
+00:02:02,500 --> 00:02:06,040
+Vì vậy, hãy sao chép các tập tin gốc đến Aosp.
+
+36
+00:02:06,040 --> 00:02:10,190
+Đây là dự án Gradle của chúng tôi, Dự án ứng dụng steroid.
+
+37
+00:02:10,190 --> 00:02:13,600
+Vì vậy, hãy đi vào thư mục gốc, Java chính.
+
+38
+00:02:13,600 --> 00:02:18,670
+Chúng ta cần sao chép thư mục chrome này vào thư mục gốc ở đây.
+
+39
+00:02:18,670 --> 00:02:20,440
+Vì vậy, click phải, chỉ cần sao chép.
+
+40
+00:02:20,440 --> 00:02:20,660
+Được rồi.
+
+41
+00:02:20,680 --> 00:02:23,350
+Vậy thư mục nguồn hiện đang ở đây.
+
+42
+00:02:23,350 --> 00:02:31,630
+Vì vậy, chúng tôi có hoạt động chính hoặc Java bên trong mô-đun Java của tôi bên trong Aosp.
+
+43
+00:02:31,630 --> 00:02:31,830
+Được rồi.
+
+44
+00:02:31,870 --> 00:02:34,390
+Vì vậy, bây giờ chúng ta hãy sao chép thư mục tài nguyên.
+
+45
+00:02:34,390 --> 00:02:37,330
+Vì vậy, thư mục này là xóa này.
+
+46
+00:02:38,240 --> 00:02:39,590
+Rõ.
+
+47
+00:02:39,620 --> 00:02:47,480
+Ở đây chúng tôi đã sao chép các thư mục tài nguyên và thư mục nguồn ở đây và bây giờ chúng tôi đã có ant BP dore mà
+
+48
+00:02:47,480 --> 00:02:53,060
+Cần phải được sửa đổi và chúng ta cũng cần phải sao chép danh sách biểu diễn người máy hoặc XML.
+
+49
+00:02:53,090 --> 00:02:54,860
+Vì vậy, hãy sao chép rằng.
+
+50
+00:02:54,920 --> 00:02:58,130
+Trước hết hãy xóa nó khỏi đây.
+
+51
+00:03:03,740 --> 00:03:04,250
+Bắt chước.
+
+52
+00:03:04,250 --> 00:03:09,500
+Vì vậy, chúng tôi đã sao chép các tài nguyên gốc XML 4.
+
+53
+00:03:09,500 --> 00:03:13,950
+Nên giờ chúng ta cần phải thay đổi tập tin về các dấu hiệu tiếng bíp của người máy.
+
+54
+00:03:13,950 --> 00:03:15,980
+Hãy chuyển sang mã phòng thu hình.
+
+55
+00:03:16,340 --> 00:03:20,540
+Đây là mô-đun mới được tạo ra.
+
+56
+00:03:20,750 --> 00:03:24,110
+Chúng tôi đã sao chép nguồn và tập tin nguồn.
+
+57
+00:03:24,110 --> 00:03:27,710
+Chúng tôi có dấu chấm chính ở đây và bảng kê khai robot.
+
+58
+00:03:27,710 --> 00:03:33,890
+Vì vậy, bây giờ chúng ta hãy thay đổi tập tin của bước làm cho BP để chúng ta có thể để gói hàng như nó đã có.
+
+59
+00:03:33,890 --> 00:03:41,980
+Thay đổi tên này ứng dụng steroid thành aosp Java của tôi và ở đây trong các nguồn chúng tôi có thể đề cập đến tiêu chuẩn
+
+60
+00:03:42,020 --> 00:03:42,530
+Java.
+
+61
+00:03:42,530 --> 00:03:47,570
+Vì vậy, khi chúng tôi thêm một dự án Kotlin chúng tôi cần đề cập đến bắt đầu tìm kiếm ở đây.
+
+62
+00:03:47,810 --> 00:03:51,980
+Vì vậy, dự án này chỉ có Java, vì vậy hãy giữ nó như nó là Java.
+
+63
+00:03:51,980 --> 00:03:58,310
+Và đây là phiên bản SDK, mục tiêu hiện tại của SDK phiên bản 2829.
+
+64
+00:03:58,310 --> 00:03:59,330
+Cứ giữ nguyên như vậy.
+
+65
+00:03:59,330 --> 00:04:03,830
+Bạn cũng có thể thay thế nó bằng thông tin từ Gradle trong dự án.
+
+66
+00:04:03,830 --> 00:04:08,870
+Nếu bạn đi đến Gradle xây dựng, bạn có thể chỉ cần thay thế nó với giá trị này là tốt.
+
+67
+00:04:09,140 --> 00:04:14,810
+Vì vậy, đối với trường hợp của chúng tôi, hãy giữ nó như nó và sau đó tối ưu hóa cho phép sai.
+
+68
+00:04:14,810 --> 00:04:16,320
+Đó là đồ miễn phí.
+
+69
+00:04:16,340 --> 00:04:20,270
+Cứ giữ nó như giả và chúng ta có thể loại bỏ thư viện này.
+
+70
+00:04:20,270 --> 00:04:21,800
+Chúng tôi không có phụ thuộc nào ở đó.
+
+71
+00:04:21,800 --> 00:04:23,480
+Đây là một phần quan trọng.
+
+72
+00:04:23,480 --> 00:04:31,760
+Vì vậy, về cơ bản những gì phụ thuộc của chúng tôi có trong các dự án gốc steroid mà phải đến
+
+73
+00:04:31,760 --> 00:04:33,920
+Nếu không thì tòa nhà sẽ hỏng.
+
+74
+00:04:33,920 --> 00:04:36,440
+Bạn có thể đến Gradle.
+
+75
+00:04:36,440 --> 00:04:39,110
+Vì vậy, trong Gradle chúng tôi có các phụ thuộc, phải không?
+
+76
+00:04:39,110 --> 00:04:41,800
+Vì vậy, về cơ bản chúng tôi phải sao chép tất cả các phụ thuộc ở đây.
+
+77
+00:04:42,170 --> 00:04:49,640
+Vì vậy, như chúng tôi có thể thấy, nó có phụ thuộc vào ứng dụng đồng bộ, sau đó chúng tôi có các thư viện vật liệu và sau đó
+
+78
+00:04:49,640 --> 00:04:51,860
+Bố trí ràng buộc và kiểm tra đơn vị.
+
+79
+00:04:51,860 --> 00:04:56,420
+Chúng ta sẽ không di chuyển thư mục kiểm tra vì vậy chúng ta có thể bỏ qua nó bây giờ.
+
+80
+00:04:56,420 --> 00:05:00,290
+Vậy chúng ta cần ít nhất ba quan hệ phụ thuộc này trong hồ sơ về steroid P.
+
+81
+00:05:00,440 --> 00:05:03,620
+Vì vậy, hãy thay thế điều này với ba phụ thuộc này.
+
+82
+00:05:03,620 --> 00:05:10,940
+Vì vậy chúng ta cần sự mở rộng của các phụ thuộc kéo dài thời gian để chống lại các phụ thuộc và các phụ thuộc vật chất.
+
+83
+00:05:10,940 --> 00:05:16,610
+Được rồi, chúng ta hãy đi trước và biên soạn trong trường hợp chúng tôi đang thiếu bất kỳ phụ thuộc nào khác, sau đó chúng tôi có thể
+
+84
+00:05:16,610 --> 00:05:17,210
+Thêm vào.
+
+85
+00:05:17,600 --> 00:05:18,950
+Vì vậy, điều này bây giờ được thực hiện.
+
+86
+00:05:19,220 --> 00:05:22,850
+Vì vậy, tôi nghĩ bây giờ chúng tôi gần như hoàn thành với tất cả các mô-đun.
+
+87
+00:05:23,180 --> 00:05:28,700
+Bây giờ chúng ta cần thêm dự án này vào các tập tin xây dựng chính.
+
+88
+00:05:28,700 --> 00:05:31,940
+Điều này tùy thuộc vào cách bạn đang làm.
+
+89
+00:05:31,940 --> 00:05:36,800
+Vì vậy, trong trường hợp này, tôi đang lên kế hoạch để thêm điều này vào tự động xây dựng.
+
+90
+00:05:36,800 --> 00:05:43,700
+Nên tôi cần thay đổi các gói sản phẩm của công ty chế tạo ô tô.
+
+91
+00:05:43,700 --> 00:05:44,600
+Vì vậy, hãy làm điều đó ngay bây giờ.
+
+92
+00:05:44,600 --> 00:05:50,960
+Vì vậy, đối với xây dựng ô tô hoặc sản phẩm ô tô xây dựng, bạn có thể thấy tất cả các gói sản phẩm thêm vào
+
+93
+00:05:50,960 --> 00:05:53,030
+Hồ sơ xe.
+
+94
+00:05:53,030 --> 00:05:58,970
+Các bạn có thể thấy hệ thống phóng tên lửa xe hơi, UI, máy truyền thông địa phương, mọi thứ ở đây.
+
+95
+00:05:58,970 --> 00:06:05,600
+Vì vậy, hãy thêm ứng dụng của chúng tôi là tốt ở đây, sao chép này, dán này và xin vui lòng ghi chú.
+
+96
+00:06:05,630 --> 00:06:08,600
+Chúng ta cần thêm tên mô-đun vào đây.
+
+97
+00:06:08,600 --> 00:06:13,970
+Điều đó có nghĩa là cái tên mà bạn đã đưa ra ở đây cho aosp Java của tôi dựa trên nó ở đây.
+
+98
+00:06:14,000 --> 00:06:16,490
+Để dành đi.
+
+99
+00:06:16,520 --> 00:06:22,760
+Nếu còn thiếu bất kỳ quan hệ phụ thuộc nào, chúng ta có thể thêm vào, vì đây là một dự án đơn giản, tất cả và
+
+100
+00:06:22,760 --> 00:06:26,000
+Chúng tôi chỉ có vài phụ thuộc, khá đơn giản.
+
+101
+00:06:26,000 --> 00:06:32,060
+Nhưng khi bạn có một dự án lớn với rất nhiều phụ thuộc, điều đó có thể trở nên hơi khó khăn.
+
+102
+00:06:32,060 --> 00:06:39,710
+Vì vậy, nhiệm vụ duy nhất là tìm các mô-đun phụ thuộc đúng và chỉ cần thêm nó dưới các lib tĩnh.
+
+103
+00:06:39,980 --> 00:06:43,760
+Bây giờ, tòa nhà đã thành công, vậy hãy chạy mô phỏng.
+
+104
+00:06:43,760 --> 00:06:50,390
+Nó bắt đầu với dữ liệu trắng để chúng tôi cho thấy rằng chúng tôi chỉ có ứng dụng nhà máy trong đó.
+
+105
+00:07:17,770 --> 00:07:18,390
+Được rồi.
+
+106
+00:07:21,750 --> 00:07:23,100
+Đây rồi.
+
+107
+00:07:23,130 --> 00:07:25,710
+Đây là ứng dụng của chúng tôi.
+
+108
+00:07:27,200 --> 00:07:32,360
+Và chọn dự án Java đầu tiên của tôi.
+
+109
+00:07:32,720 --> 00:07:40,280
+Quá trình này cũng tương tự với các dự án Kotlin, ngoại trừ việc chúng ta cần tạo ra một phần nhỏ
+
+110
+00:07:40,280 --> 00:07:47,180
+Thay đổi trong tập tin P steroid chỉ để bao gồm các tập tin chuẩn.
+
+111
+00:07:47,390 --> 00:07:51,650
+Chúng tôi sẽ thử dự án Kotlin ở phiên sau.
+
