@@ -1,0 +1,152 @@
+1
+00:00:01,150 --> 00:00:05,560
+Hãy xem xét chi tiết làm thế nào ông đã nhận được thực hiện trong buổi này.
+
+2
+00:00:05,590 --> 00:00:10,540
+Chúng tôi sẽ khám phá chuỗi các bước để kích hoạt cửa sổ bảo vệ chìa khóa.
+
+3
+00:00:16,570 --> 00:00:23,350
+Dưới đây là một sơ đồ chuỗi hiển thị chuỗi các bước để kích hoạt cửa sổ bảo mật phím
+
+4
+00:00:23,350 --> 00:00:30,640
+Đầu vào khóa bị chặn bởi bộ gửi kết nhập và được gửi cho trình quản lý cửa sổ nước ngoài, rồi lại
+
+5
+00:00:30,640 --> 00:00:38,170
+gửi cho dịch vụ bảo vệ và dịch vụ bảo vệ chìa khóa gọi hệ thống cũ sẵn sàng phương pháp trong hệ thống bảo vệ UIC
+
+6
+00:00:38,260 --> 00:00:45,370
+Xem lớp Trung Bảo Vì vậy, như có thể nhìn thấy từ biểu đồ chuỗi này, người dùng nâng cao vật lý của
+
+7
+00:00:45,370 --> 00:00:51,670
+Thiết bị steroid, do đó thiết bị steroid truyền một phím cộng sự kiện với dữ liệu nhập vào.
+
+8
+00:00:51,880 --> 00:00:59,860
+TIẾNG TÂM Bộ gửi một thông điệp để kích hoạt trình bảo vệ phím để cảnh báo trình quản lý cửa sổ, cộng với
+
+9
+00:01:00,010 --> 00:01:02,060
+lớp quản lý cửa sổ điện thoại.
+
+10
+00:01:02,080 --> 00:01:08,980
+Sau khi xử lý xong, gửi một thông điệp để kích hoạt, anh ta có dịch vụ bảo vệ cửa sổ.
+
+11
+00:01:09,100 --> 00:01:15,310
+Sau đó, dịch vụ bảo vệ then chốt gọi hệ thống cũ sẵn sàng phương pháp của Gegard xem người trung gian.
+
+12
+00:01:15,550 --> 00:01:21,130
+Và quá trình này xảy ra thông qua inder IPCA Binder trong quá trình giao tiếp.
+
+13
+00:01:21,160 --> 00:01:27,850
+Vì vậy, Binder IPC được sử dụng bởi vì các dịch vụ bảo vệ chìa khóa trong một quá trình hoàn toàn khác nhau, và
+
+14
+00:01:27,850 --> 00:01:33,250
+Hệ thống UI một lần nữa và một quá trình khác để giao tiếp với hai quá trình này.
+
+15
+00:01:33,280 --> 00:01:36,830
+Chúng ta cần IPC ràng buộc trong phiên này.
+
+16
+00:01:36,850 --> 00:01:41,140
+Chúng tôi đang tập trung vào hệ thống bảo vệ chìa khóa UI liên quan đến các mô-đun.
+
+17
+00:01:41,470 --> 00:01:46,030
+Bây giờ chúng ta hãy xem xét sâu hơn những gì đang xảy ra trong hệ thống UI.
+
+18
+00:01:46,060 --> 00:01:46,960
+Hắn có mô-đun.
+
+19
+00:01:47,470 --> 00:01:53,800
+Đây là một biểu đồ chuỗi hiển thị các lớp học và phương pháp tham gia trong việc hiển thị khóa thẻ bảo mật
+
+20
+00:01:53,800 --> 00:01:56,750
+cửa sổ tới người dùng, như có thể thấy.
+
+21
+00:01:56,920 --> 00:02:02,530
+Khóa xem trung gian là lớp gây ra tiến trình trong hệ thống UI.
+
+22
+00:02:02,560 --> 00:02:10,420
+Vì vậy, như chúng ta đã thấy trong biểu đồ thứ hai cuối cùng, người trung gian của Kiger xem cập nhật trạng thái từ phím
+
+23
+00:02:10,420 --> 00:02:12,680
+Bảo vệ Sahrawas thông qua Binder IPC.
+
+24
+00:02:12,700 --> 00:02:17,200
+Vì vậy bây giờ hãy xem những gì đang xảy ra trong các lớp UI hệ thống.
+
+25
+00:02:17,350 --> 00:02:24,220
+Vì vậy, một khi hệ thống UI có thể kiểm soát, hệ thống cũ sẵn sàng phương pháp gọi hệ thống xử lý sẵn sàng phương pháp
+
+26
+00:02:24,220 --> 00:02:30,580
+và hệ thống xử lý sẵn sàng phương pháp khóa khóa bảo vệ chìa khóa mới, mà lần lượt các cuộc gọi hiển thị luật và hiển thị
+
+27
+00:02:30,580 --> 00:02:32,020
+Bị khóa trong các cuộc gọi lượt.
+
+28
+00:02:32,110 --> 00:02:39,130
+Bộ quản lý hiển thị phương pháp, là một phần của thanh trạng thái trong bộ quản lý xem tối và trong bộ quản lý xem hợp pháp
+
+29
+00:02:39,160 --> 00:02:47,020
+Anh ta gọi Show Method và phương pháp chia sẻ theo lượt gọi Chopler hoặc Key Guard Method và trình bảo vệ màn trình diễn.
+
+30
+00:02:47,020 --> 00:02:54,250
+Phương pháp của Ortega sử dụng đối tượng bảo vệ đang được thiết lập, mà về cơ bản là một đối tượng của Gegard puver
+
+31
+00:02:54,250 --> 00:03:01,390
+Lớp học, và nó đi để chuẩn bị họ theo phương pháp đúng theo lượt sử dụng đối tượng xem bảo vệ trống và gọi
+
+32
+00:03:01,390 --> 00:03:07,490
+hiển thị phương pháp màn hình bảo mật chính bên trong Ggard Host View và máy chủ bảo vệ chìa khóa.
+
+33
+00:03:07,570 --> 00:03:14,830
+Cuối cùng, gọi cho hiển thị các phương pháp bảo mật chính, mà sau đó sử dụng an ninh quan trọng
+
+34
+00:03:14,830 --> 00:03:19,480
+Đối tượng hộp và phương pháp gọi hiển thị màn hình bảo mật chính.
+
+35
+00:03:19,510 --> 00:03:26,440
+Hộp bảo vệ chìa khóa sẽ hiển thị phương pháp bảo mật màn hình, và cuối cùng nó sẽ hiển thị bảo mật
+
+36
+00:03:26,440 --> 00:03:27,940
+hiển thị màn hình cho người dùng cuối.
+
+37
+00:03:28,030 --> 00:03:33,970
+Vì vậy, đây là một tóm tắt về chuỗi các phương pháp và các lớp học liên quan đến quá trình này.
+
+38
+00:03:34,270 --> 00:03:38,560
+Ở phần tiếp theo, chúng tôi sẽ tìm mã và tìm hiểu chi tiết.
+
