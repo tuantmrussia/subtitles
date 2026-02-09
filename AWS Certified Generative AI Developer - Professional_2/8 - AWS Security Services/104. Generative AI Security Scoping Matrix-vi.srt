@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:04,400
+Bây giờ trong bài giảng này, chúng ta sẽ thảo luận về một cái gì đó được biết đến với tên gọi là Hệ thống An ninh Sáng tạo (I Security scoping)
+
+2
+00:00:04,400 --> 00:00:09,200
+Ma trận. Trong bài kiểm tra, bạn có thể mong đợi ít nhất một câu hỏi từ chủ đề này.
+
+3
+00:00:09,200 --> 00:00:14,640
+Giả sử bạn là một tổ chức lớn và bạn đã quyết định xây dựng một sản phẩm
+
+4
+00:00:14,640 --> 00:00:20,720
+ứng dụng. Bây giờ có nhiều cách khác nhau mà bạn có thể xây dựng ứng dụng này. Có thể
+
+5
+00:00:20,720 --> 00:00:28,560
+sử dụng Amazon Q, Amazon Bedrock, SaageMaker, v.v... Và phụ thuộc vào cách tiếp cận bạn chọn
+
+6
+00:00:28,560 --> 00:00:34,720
+Để xây dựng ứng dụng, sẽ có những yêu cầu an ninh khác nhau. Và đây là những gì
+
+7
+00:00:34,720 --> 00:00:41,760
+Hệ thống an ninh quốc gia tập trung vào ma trận. Nó luôn gọi nó là một mô hình tinh thần để phân loại
+
+8
+00:00:41,760 --> 00:00:47,680
+sử dụng trường hợp trong phạm vi khác nhau. Vì vậy, như mỗi ma trận này, có năm phạm vi khác nhau.
+
+9
+00:00:47,680 --> 00:00:55,840
+Vậy phạm vi 1 là ứng dụng khách hàng. Và trong ứng dụng khách hàng, bạn đang sử dụng một công chúng
+
+10
+00:00:55,840 --> 00:01:02,560
+Dịch vụ AI phát triển. Một ví dụ về điều này có thể là Chad GPT, Amazon Party Rock, vân vân.
+
+11
+00:01:02,560 --> 00:01:10,240
+Sau đó bạn có kính hiển vi hai ứng dụng Enterprise sử dụng một ứng dụng hoặc SaaS với tính năng tạo ra AI.
+
+12
+00:01:10,240 --> 00:01:17,440
+Vì vậy, một ví dụ của điều này là Amazon Q. Và đây là cả hai, bạn không xây dựng bất cứ điều gì,
+
+13
+00:01:17,440 --> 00:01:25,440
+Bạn chỉ cần mua từ một tổ chức đảng thứ ba. Sau đó bạn có phạm vi ba nơi bạn đang sử dụng
+
+14
+00:01:25,440 --> 00:01:33,680
+Người mẫu được huấn luyện trước. Vì vậy, xây dựng ứng dụng của bạn trên một mô hình trinh tiết. Vì vậy, các mô hình nền tảng của rừng Amazon là một
+
+15
+00:01:33,680 --> 00:01:42,160
+Ví dụ về phạm vi ba loại ứng dụng. Sau đó bạn có phạm vi bốn nơi sử dụng các mô hình âm thanh tốt.
+
+16
+00:01:42,160 --> 00:01:48,080
+Vì vậy, bạn tìm thấy giai điệu một mô hình trên dữ liệu của bạn. Vì vậy, một ví dụ của điều này là, hãy nói rằng bạn tìm thấy giai điệu a
+
+17
+00:01:48,080 --> 00:01:53,840
+Mô hình nền ở Amazon Bedrock hoặc bạn đang sử dụng Amazon SaageMaker Jumpstart và bạn tìm thấy giai điệu a
+
+18
+00:01:53,840 --> 00:02:02,160
+Người mẫu. Sau đó bạn có phạm vi 5 nơi sử dụng mô hình tự đào tạo. Vì vậy, sử dụng Amazon SageMaker để đào tạo và
+
+19
+00:02:02,160 --> 00:02:10,000
+triển khai mô hình từ đầu. Và cả ba trường hợp này là những trường hợp xây dựng và hai trường hợp này đã được thực hiện.
+
+20
+00:02:10,000 --> 00:02:17,600
+Vì vậy, những gì này AI bảo mật ma trận scoping nói rằng cho mỗi phạm vi, bạn sẽ có khác nhau
+
+21
+00:02:17,600 --> 00:02:25,360
+kiểu quản lý và tuân thủ luật pháp và riêng tư, quản lý rủi ro, kiểm soát và kiên cường
+
+22
+00:02:25,360 --> 00:02:32,480
+yêu cầu. Bây giờ chúng ta hãy xem qua từng phạm vi. Vì vậy, phạm vi một là người tiêu dùng
+
+23
+00:02:32,480 --> 00:02:39,920
+ứng dụng. Trong tổ chức tiêu thụ các dịch vụ AI sinh sản cộng đồng thứ ba tại
+
+24
+00:02:39,920 --> 00:02:46,800
+Không có chi phí hoặc trả tiền suy nghĩ của chat GPT, đó là một bên thứ ba dịch vụ AI tạo ra và bạn là một trong hai
+
+25
+00:02:46,800 --> 00:02:53,600
+Trả một khoản phí tối thiểu hoặc là dùng nó miễn phí. Bạn không sở hữu hoặc xem dữ liệu đào tạo hoặc
+
+26
+00:02:53,600 --> 00:03:00,640
+Mô hình trong trường hợp này và bạn cũng không thể sửa đổi hoặc tăng cường nó. Vì vậy, nếu bạn đang sử dụng chat GPT,
+
+27
+00:03:00,640 --> 00:03:05,360
+bạn không thể thấy dữ liệu huấn luyện. Bạn không thể nhìn thấy các mô hình. Bạn không thể thay đổi hoặc gia tăng nó.
+
+28
+00:03:05,360 --> 00:03:13,760
+Anh chỉ cần gọi cho ADI. Vì vậy, bạn đưa ra một yêu cầu và bạn nhận được một phản ứng dựa trên các điều khoản của
+
+29
+00:03:13,760 --> 00:03:20,800
+Dịch vụ của nhà cung cấp. Vì vậy, một ví dụ về điều này là một nhân viên tương tác với điện thoại AI tạo ra
+
+30
+00:03:20,800 --> 00:03:28,000
+Ứng dụng nơi website công cộng để tạo ra ý tưởng cho chiến dịch tiếp thị sắp tới.
+
+31
+00:03:28,000 --> 00:03:34,000
+Được rồi. Bây giờ hãy nhìn vào các đặc điểm của phạm vi hai, đó là ứng dụng doanh nghiệp.
+
+32
+00:03:34,000 --> 00:03:41,760
+Vì vậy, bây giờ cho ứng dụng kinh doanh, bạn sử dụng một ứng dụng doanh nghiệp thứ ba đó là tạo ra AI
+
+33
+00:03:41,760 --> 00:03:48,480
+Những đặc điểm nhúng vào suy nghĩ về hàng đợi ở Amazon. Vì vậy, nó là ứng dụng kinh doanh bên thứ ba và nó đã được
+
+34
+00:03:48,480 --> 00:03:55,360
+có các tính năng AI tạo ra. Vì vậy, để sử dụng ứng dụng này, bạn thiết lập mối quan hệ kinh doanh
+
+35
+00:03:55,360 --> 00:04:02,400
+giữa tổ chức và nhà cung cấp. Vì vậy, nếu bạn muốn sử dụng các hàng đợi Amazon, bạn phải thiết lập
+
+36
+00:04:02,400 --> 00:04:08,800
+một mối quan hệ làm ăn với AWS. Vì vậy, những ứng dụng này sẽ có điều kiện và điều kiện là
+
+37
+00:04:08,800 --> 00:04:14,400
+nhắm vào khách hàng kinh doanh. Và chúng được thiết kế để bảo vệ thêm.
+
+38
+00:04:14,400 --> 00:04:20,400
+Và sau đó ví dụ về điều này là một bên doanh nghiệp thứ ba AI trợ lý như hàng đợi Amazon.
+
+39
+00:04:20,400 --> 00:04:28,640
+Sau đó bạn đã được đào tạo trước và ở đây các tổ chức xây dựng ứng dụng của nó bằng cách sử dụng một
+
+40
+00:04:28,640 --> 00:04:34,480
+đã tồn tại bên thứ ba tạo ra mô hình nền tảng AI. Và bạn trực tiếp kết hợp nó với
+
+41
+00:04:34,480 --> 00:04:41,440
+nạp vào giao diện lập trình ứng dụng hay APS. Ví dụ về điều này là Amazon
+
+42
+00:04:41,440 --> 00:04:47,520
+đá phiến nói rằng bạn muốn sử dụng một mô hình cơ bản từ nền móng Amazon. Vì vậy, bạn có thể thực hiện một yêu cầu cho những
+
+43
+00:04:47,520 --> 00:04:54,880
+Mô hình cơ bản trong ứng dụng của bạn. Và đây là một ví dụ mà bạn có thể xây dựng
+
+44
+00:04:54,880 --> 00:05:02,080
+Ứng dụng thô dựa trên miếng dùng đám mây nhân tạo. Được rồi. Sau đó, thứ tư là các giai điệu bậc tốt
+
+45
+00:05:02,720 --> 00:05:07,840
+nơi tổ chức tinh luyện một tổ chức thứ ba đã tồn tại tạo ra mô hình nền tảng AI bằng
+
+46
+00:05:07,840 --> 00:05:15,040
+điều chỉnh nó để cụ thể dữ liệu trong kinh doanh của bạn. Và một ví dụ về điều này là chúng tôi đã thảo luận
+
+47
+00:05:15,040 --> 00:05:20,400
+Sử dụng nền đá Amazon hoặc SageMaker và sau đó chỉnh tốt các mô hình. Ví dụ như
+
+48
+00:05:20,400 --> 00:05:26,320
+Giả sử bạn muốn tóm tắt hồ sơ bệnh nhân trong hồ sơ sức khỏe điện tử. ♪ Thì anh sẽ ♪
+
+49
+00:05:26,320 --> 00:05:35,280
+Điều chỉnh tốt mô hình để nó liên kết với thuật ngữ cụ thể miền. Sau đó bạn có tự rèn luyện
+
+50
+00:05:35,280 --> 00:05:43,360
+Mô hình nơi tổ chức xây dựng và đào tạo mô hình AI từ đầu sử dụng dữ liệu.
+
+51
+00:05:43,360 --> 00:05:51,040
+Bạn sở hữu dữ liệu cũng như mô hình. Vì vậy, một ví dụ về điều này có thể là mô hình cụ thể miền mà bạn
+
+52
+00:05:51,040 --> 00:05:58,160
+Xây dựng trên cối xay Amazon. Vì vậy, đây là một ví dụ quan trọng khi bạn đi từ phạm vi một đến năm
+
+53
+00:05:58,160 --> 00:06:07,680
+Nó đại diện cho sự gia tăng quyền sở hữu của cả mô hình AI hoặc ngôn ngữ lớn và của nó
+
+54
+00:06:07,680 --> 00:06:15,440
+dữ liệu liên quan. Hãy nghĩ về ví dụ này ở đây chúng tôi có chat GPT và ở đây chúng tôi có của riêng chúng tôi
+
+55
+00:06:15,440 --> 00:06:21,680
+Mô hình nền đã được đào tạo từ đầu. Vì vậy, khi chúng tôi đi từ phạm vi một đến phạm vi năm
+
+56
+00:06:21,680 --> 00:06:30,240
+quyền sở hữu cũng như dữ liệu sẽ tăng lên cho tổ chức. Đó là
+
+57
+00:06:30,240 --> 00:06:34,240
+một thứ mà anh nên nhớ. Được rồi. Đó là khá nhiều trong bài giảng này. Hẹn gặp lại.
+
+58
+00:06:34,240 --> 00:06:34,880
+diễn thuyết. Cảm ơn.
+
