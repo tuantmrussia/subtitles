@@ -1,0 +1,208 @@
+1
+00:00:00,160 --> 00:00:03,240
+So our next step is to install repo.
+
+2
+00:00:03,680 --> 00:00:07,040
+Repo is simply a wrapper on top of git.
+
+3
+00:00:07,480 --> 00:00:14,520
+This was created by Google to make the management of AOSp source code a little bit better.
+
+4
+00:00:14,880 --> 00:00:23,440
+So in case you don't know what git or repo is, just keep in mind that they are source code management
+
+5
+00:00:23,440 --> 00:00:24,120
+tools.
+
+6
+00:00:24,480 --> 00:00:31,120
+So these tools help us to manage the source code and track the changes of your project.
+
+7
+00:00:31,320 --> 00:00:31,840
+Okay.
+
+8
+00:00:32,120 --> 00:00:38,120
+So to download repo now let's head to source.android.com.
+
+9
+00:00:38,400 --> 00:00:42,800
+We need to basically execute these commands as we did earlier.
+
+10
+00:00:43,120 --> 00:00:49,480
+So this command will install repo from the official package available in the Linux distribution.
+
+11
+00:00:49,920 --> 00:00:57,480
+So in case if this doesn't work you can you could directly download repo using the curl command.
+
+12
+00:00:57,760 --> 00:00:58,280
+Okay.
+
+13
+00:00:58,560 --> 00:01:00,680
+So let's try this command first.
+
+14
+00:01:00,920 --> 00:01:02,720
+So this is pretty straightforward.
+
+15
+00:01:02,720 --> 00:01:03,720
+Let's paste it.
+
+16
+00:01:03,840 --> 00:01:05,720
+So now install repo.
+
+17
+00:01:05,840 --> 00:01:07,920
+So I have got a problem.
+
+18
+00:01:07,960 --> 00:01:09,750
+Unable to locate repo.
+
+19
+00:01:09,910 --> 00:01:13,030
+So now let's head back to SourceForge android.com.
+
+20
+00:01:13,350 --> 00:01:14,990
+Now let's try the second method.
+
+21
+00:01:15,190 --> 00:01:18,310
+So in this method we are just using the curl command.
+
+22
+00:01:18,550 --> 00:01:23,870
+So this basically downloads a repo um from tools from this server.
+
+23
+00:01:23,990 --> 00:01:24,470
+Okay.
+
+24
+00:01:24,790 --> 00:01:30,670
+So this curl command is basically to download something from an external server.
+
+25
+00:01:30,910 --> 00:01:32,670
+So let's execute this.
+
+26
+00:01:32,670 --> 00:01:35,230
+Now just copy this first line here.
+
+27
+00:01:35,350 --> 00:01:38,710
+So while installing repo I ran into a problem.
+
+28
+00:01:39,030 --> 00:01:42,750
+So I was not able to install repo by using this method.
+
+29
+00:01:42,950 --> 00:01:48,990
+The repo is not actually available in the repository for 20.0 4.2.
+
+30
+00:01:49,230 --> 00:01:50,510
+So version two.
+
+31
+00:01:50,550 --> 00:01:59,270
+Okay, so if you have an ubuntu version which is 18.0404 or prior to that, you will not have this problem.
+
+32
+00:01:59,270 --> 00:02:01,710
+So you should be able to install the repo.
+
+33
+00:02:01,990 --> 00:02:09,310
+But unfortunately in the latest ubuntu version you don't have a repo available in the ubuntu repositories.
+
+34
+00:02:09,550 --> 00:02:14,430
+So these these commands will not work for you if you have the latest ubuntu.
+
+35
+00:02:14,670 --> 00:02:14,950
+Okay.
+
+36
+00:02:14,990 --> 00:02:22,110
+So even in my case I was not even able to install the repo like this because I was receiving e issues
+
+37
+00:02:22,110 --> 00:02:26,470
+while trying to receive this particular key using GPG command.
+
+38
+00:02:26,830 --> 00:02:32,430
+Okay, so these two methods were actually not working for me, but I was able to find a different solution
+
+39
+00:02:32,430 --> 00:02:34,990
+for that, which is, uh, pretty simple.
+
+40
+00:02:35,070 --> 00:02:37,110
+I'll quickly show you that.
+
+41
+00:02:37,270 --> 00:02:38,790
+So here is the solution.
+
+42
+00:02:38,790 --> 00:02:43,790
+So first basically you need to simply pull repo to bin repo folder.
+
+43
+00:02:43,830 --> 00:02:44,350
+Okay.
+
+44
+00:02:44,630 --> 00:02:45,830
+Uh like this.
+
+45
+00:02:46,110 --> 00:02:49,430
+So if you run it for the first time it will download it.
+
+46
+00:02:49,430 --> 00:02:55,990
+And then after that just change the permission by using the mode command like this okay.
+
+47
+00:02:56,190 --> 00:03:04,110
+And then you can check um, the version and you should find the version if it is installed successfully.
+
+48
+00:03:04,230 --> 00:03:04,670
+Okay.
+
+49
+00:03:04,750 --> 00:03:08,430
+So in my case I have already installed 2.7 okay.
+
+50
+00:03:08,670 --> 00:03:11,910
+So this is applicable only in case if you have the latest ubuntu.
+
+51
+00:03:12,030 --> 00:03:17,510
+But if you have the older uh, older version of ubuntu, uh, whatever commands are mentioned in the
+
+52
+00:03:17,510 --> 00:03:20,670
+source.android.com should be fine.
+
