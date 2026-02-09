@@ -1,0 +1,856 @@
+1
+00:00:00,000 --> 00:00:05,440
+Trong bài giảng này, tôi sẽ đi qua bảng điều khiển của các đại lý nền móng Amazon.
+
+2
+00:00:05,440 --> 00:00:10,980
+Bạn có thể thấy được khả năng mà các đặc vụ trên nền đá cung cấp.
+
+3
+00:00:10,980 --> 00:00:13,680
+Bây giờ hãy đi tới bàn điều khiển.
+
+4
+00:00:13,680 --> 00:00:15,180
+Tôi đang ở trên bảng điều khiển AWS.
+
+5
+00:00:15,180 --> 00:00:22,620
+Hãy để tôi chỉ cần tìm kiếm các nền đá Amazon và ở đây tôi có các nền móng Amazon, okay.
+
+6
+00:00:22,620 --> 00:00:26,760
+Tôi sẽ đi bên tay trái và dưới các công cụ xây dựng, tôi có các đặc vụ.
+
+7
+00:00:26,760 --> 00:00:30,560
+Hãy để tôi nhấp chuột vào các đặc vụ và tôi đang trên trang chủ.
+
+8
+00:00:30,560 --> 00:00:34,880
+Bây giờ hãy để tôi chỉ cần đi trước và nhấp chuột vào tác nhân tạo này.
+
+9
+00:00:34,880 --> 00:00:39,000
+Và ở đây chúng ta phải cung cấp tên của tác nhân.
+
+10
+00:00:39,000 --> 00:00:42,800
+Vì vậy, hãy chỉ nói rằng chúng tôi đang tạo ra một đại lý đặt vé bay.
+
+11
+00:00:42,800 --> 00:00:46,440
+Sau đó, bạn có thể cung cấp một mô tả về những gì tác nhân này làm.
+
+12
+00:00:46,440 --> 00:00:50,320
+Đây là lựa chọn, nên cứ để nguyên như vậy.
+
+13
+00:00:50,320 --> 00:00:54,800
+Tiếp theo chúng ta có một điều quan trọng ở đây được gọi là hợp tác đa đặc vụ.
+
+14
+00:00:54,800 --> 00:00:59,240
+Trong một trong những bài giảng trước đó, chúng tôi sẽ tìm hiểu rằng chúng tôi có thể hoặc xây dựng một tác nhân hoặc
+
+15
+00:00:59,240 --> 00:01:04,380
+Nếu ứng dụng của chúng tôi là thực sự phức tạp, sau đó chúng tôi có thể có nhiều tác nhân kịch bản.
+
+16
+00:01:04,380 --> 00:01:10,240
+Vì vậy, bây giờ nếu chúng tôi chỉ cần nhấp vào điều này cho phép sự hợp tác đa tác và click vào tạo, bạn sẽ
+
+17
+00:01:10,240 --> 00:01:13,680
+có thể sử dụng các khuôn khổ đa tác nhân.
+
+18
+00:01:13,680 --> 00:01:16,760
+Và chúng tôi sẽ xây dựng trường hợp sử dụng này một chút sau đó.
+
+19
+00:01:16,760 --> 00:01:25,200
+Nhưng bây giờ, hãy để tôi tập trung vào một tác nhân duy nhất và để tôi nhấp chuột vào sáng tạo.
+
+20
+00:01:25,200 --> 00:01:30,040
+Được rồi, giờ thì đặc vụ bay này đã thành công.
+
+21
+00:01:30,040 --> 00:01:35,080
+Bây giờ chúng ta hãy xem xét một số các thuộc tính khác liên quan đến tác nhân này.
+
+22
+00:01:35,080 --> 00:01:39,360
+Vì vậy, đầu tiên chúng tôi có chi tiết đặc vụ, vì vậy đặc vụ tên, mà chúng tôi đã cung cấp.
+
+23
+00:01:39,360 --> 00:01:43,400
+Sau đó, bạn có đặc vụ mô tả, đó là tùy chọn.
+
+24
+00:01:43,400 --> 00:01:48,440
+Vì vậy, tiếp theo bạn có các đặc vụ vai trò, vì vậy bây giờ đại lý của chúng tôi sẽ cần phải tương tác với
+
+25
+00:01:48,440 --> 00:01:53,560
+Các dịch vụ AWS khác nhau, có thể là một chiếc xe bọc thép AWS dựa trên S3.
+
+26
+00:01:53,560 --> 00:02:01,080
+Vì vậy, tác nhân yêu cầu một vai trò IM, mà cho phép nó gọi những dịch vụ AWS khác nhau.
+
+27
+00:02:01,080 --> 00:02:03,680
+Vì vậy, anh cần một vai trò phục vụ.
+
+28
+00:02:03,680 --> 00:02:10,080
+Vì vậy, hoặc bạn có thể tạo ra một trong bạn thông qua dịch vụ m và sau đó nó sẽ được bật
+
+29
+00:02:10,080 --> 00:02:16,000
+Ở đây hoặc bạn có thể chỉ cần nói với các đại lý để tạo ra vai trò cho bạn.
+
+30
+00:02:16,000 --> 00:02:18,400
+Và đó là những gì chúng tôi sẽ làm.
+
+31
+00:02:18,400 --> 00:02:23,400
+Tiếp theo chúng tôi phải chọn một mô hình ngôn ngữ lớn mà sẽ lái các tác nhân.
+
+32
+00:02:23,400 --> 00:02:30,000
+Vì vậy, nếu chúng ta chỉ cần nhấp chuột vào mô hình chọn lựa này và nếu tôi chỉ thấy ở đây ở trên cùng, nếu tôi chỉ cần
+
+33
+00:02:30,000 --> 00:02:35,720
+Không kiểm tra cái này, bạn sẽ thấy nó hỗ trợ tất cả các mô hình chính.
+
+34
+00:02:35,720 --> 00:02:41,400
+Nhưng khi tôi chỉ bấm vào đây, tôi có thể thấy chỉ có hai, một là Amazon và đây là các mô hình
+
+35
+00:02:41,400 --> 00:02:45,600
+rằng nó hỗ trợ và sau đó bạn có nội bộ và đây là các mô hình nó hỗ trợ từ
+
+36
+00:02:45,600 --> 00:02:46,680
+Nội tâm.
+
+37
+00:02:46,680 --> 00:02:53,680
+Vì vậy, lý do là khi chúng tôi xây dựng các tác nhân, nó cần một số mẫu nhắc mặc định để hiệu lực
+
+38
+00:02:53,680 --> 00:02:56,560
+khả năng lý luận cho mô hình.
+
+39
+00:02:56,560 --> 00:03:02,120
+Và bây giờ, AWS chỉ có những mẫu mặc định cho hai nhà cung cấp mô hình này.
+
+40
+00:03:02,120 --> 00:03:07,520
+Nhưng nếu bạn muốn sử dụng, giả sử, Mistral, sau đó bạn phải viết của riêng bạn tùy chỉnh
+
+41
+00:03:07,520 --> 00:03:08,960
+Mẫu thời gian.
+
+42
+00:03:08,960 --> 00:03:12,840
+Vì vậy, đó là lý do tại sao chúng tôi sẽ chỉ đi với một trong hai.
+
+43
+00:03:12,840 --> 00:03:18,720
+Bây giờ chỉ cần nhớ rằng nếu bạn đang sử dụng các mô hình từ Amazon, sau đó ngay bây giờ nó không hỗ trợ
+
+44
+00:03:18,720 --> 00:03:21,440
+trí nhớ lâu dài.
+
+45
+00:03:21,440 --> 00:03:25,720
+Vì vậy, nếu bạn cần bộ nhớ dài hạn, sau đó bạn phải sử dụng một trong những mô hình từ nội bộ.
+
+46
+00:03:25,720 --> 00:03:31,320
+Nếu bạn không có quyền truy cập vào mô hình, chỉ cần nhấp vào yêu cầu này truy cập và bạn cũng có thể
+
+47
+00:03:31,320 --> 00:03:36,440
+Chỉ cần đi từ đây để mô hình truy cập và sau đó.
+
+48
+00:03:36,440 --> 00:03:44,480
+Vì vậy, bạn sẽ thấy một màn hình như thế này truy cập từ đây, chỉ cần nhấp chuột vào chỉnh sửa truy cập và
+
+49
+00:03:44,480 --> 00:03:50,160
+Sau đó chọn tất cả các mô hình bạn muốn truy cập, chỉ cần cuộn xuống, nhấp vào tiếp theo và sau đó
+
+50
+00:03:50,160 --> 00:03:53,560
+Làm một bài tập và bạn nên truy cập vào mô hình.
+
+51
+00:03:53,560 --> 00:03:59,360
+Nhưng hãy nhớ rằng việc truy cập vào tài khoản cá nhân là giới hạn.
+
+52
+00:03:59,360 --> 00:04:04,240
+Bạn có thể đối mặt với những thách thức trong việc tiếp cận một mô hình cụ thể hoặc số lượng yêu cầu
+
+53
+00:04:04,240 --> 00:04:06,440
+Bạn có thể tạo ra một giây.
+
+54
+00:04:06,440 --> 00:04:12,280
+Vì vậy, nếu bạn không cần bộ nhớ dài hạn, chỉ cần chọn một mô hình từ Amazon, có thể không
+
+55
+00:04:12,280 --> 00:04:15,000
+Tiếp cận, đó là thực sự tốt.
+
+56
+00:04:15,000 --> 00:04:20,560
+Được rồi, tiếp theo, bạn cần phải cung cấp hướng dẫn cho các đại lý và điều này là thực sự quan trọng
+
+57
+00:04:20,560 --> 00:04:23,320
+bởi vì nó xác định diện tích của tác nhân.
+
+58
+00:04:23,320 --> 00:04:28,440
+Vì vậy, nếu bạn là một nhân viên đặt vé máy bay, sau đó giả sử chúng tôi sẽ cung cấp cho một mô tả chi tiết.
+
+59
+00:04:28,440 --> 00:04:32,760
+Bạn là một nhân viên đặt vé máy bay và có thể làm theo những điều, trả lời các câu hỏi liên quan
+
+60
+00:04:32,760 --> 00:04:38,200
+để bay, truy vấn và trưng bày, có thể bay trong một ngày nhất định,
+
+61
+00:04:38,200 --> 00:04:39,560
+và vân vân.
+
+62
+00:04:39,560 --> 00:04:42,800
+Vì vậy, bạn cần phải có tính phỏng đoán càng tốt.
+
+63
+00:04:42,800 --> 00:04:48,040
+Và trong bài giảng tiếp theo, tôi sẽ cho bạn biết tại sao các hướng dẫn lại quan trọng như vậy.
+
+64
+00:04:48,040 --> 00:04:49,040
+Được rồi.
+
+65
+00:04:49,040 --> 00:04:52,280
+Tiếp theo, tôi sẽ chỉ nhấp chuột vào thiết lập thêm này.
+
+66
+00:04:52,280 --> 00:04:57,800
+Và tiếp theo, bạn có thể thấy trình thông dịch mã và thông dịch mã cho phép các đại lý quản lý các tác vụ
+
+67
+00:04:57,800 --> 00:05:03,720
+bao gồm viết, chạy, kiểm tra và tìm kiếm mã trong môi trường an toàn.
+
+68
+00:05:03,720 --> 00:05:10,360
+Vì vậy, nếu bạn chỉ cần click vào được, những gì nó sẽ làm là nó sẽ cung cấp một hộp cát bảo mật nơi
+
+69
+00:05:10,360 --> 00:05:16,800
+Đặc vụ, nếu cần sửa chữa một vấn đề, nó có thể đi trước và tạo ra mã, chạy mã đó
+
+70
+00:05:16,800 --> 00:05:20,200
+trong môi trường an toàn rồi áp dụng.
+
+71
+00:05:20,200 --> 00:05:22,440
+Tiếp theo bạn có đầu vào người dùng.
+
+72
+00:05:22,440 --> 00:05:27,560
+Bây giờ hãy nói rằng bạn là một đại lý vé máy bay và người dùng đã cung cấp cho bạn chi tiết về đặt chỗ
+
+73
+00:05:27,560 --> 00:05:31,720
+một chuyến bay từ New York tới Chicago vào một ngày đặc biệt.
+
+74
+00:05:31,720 --> 00:05:37,800
+Nhưng là một đặc vụ, bạn đã tìm thấy nhiều chuyến bay, một chuyến bay trực tiếp và rồi một chuyến bay,
+
+75
+00:05:37,800 --> 00:05:39,000
+Đó là một điểm dừng.
+
+76
+00:05:39,000 --> 00:05:43,280
+Và người sử dụng đã không cung cấp cho dù ông muốn một chuyến bay trực tiếp hoặc một chuyến bay dừng lại.
+
+77
+00:05:43,280 --> 00:05:48,240
+Vì vậy, trong trường hợp đó, nếu bạn cho phép điều này, sau đó các đại lý có thể đi trước và hỏi một làm rõ
+
+78
+00:05:48,240 --> 00:05:50,920
+câu hỏi cho người dùng cuối.
+
+79
+00:05:50,920 --> 00:05:55,680
+Và nếu bạn giữ cho nó vô hiệu hóa, sau đó nó sẽ chỉ cần thực hiện một giả định và tiếp tục tiến hành và xử lý
+
+80
+00:05:55,680 --> 00:05:57,920
+yêu cầu đó.
+
+81
+00:05:57,920 --> 00:05:59,640
+Tiếp theo là KMS.
+
+82
+00:05:59,640 --> 00:06:05,360
+Vì vậy, nếu bạn muốn mã hóa dữ liệu của bạn, bạn có thể sử dụng dịch vụ KMS.
+
+83
+00:06:05,360 --> 00:06:07,040
+Tiếp theo bạn có thời hạn phiên họp vô ích.
+
+84
+00:06:07,040 --> 00:06:09,720
+Đây chủ yếu là bộ nhớ ngắn hạn của tác nhân.
+
+85
+00:06:09,720 --> 00:06:15,600
+Vì vậy, bạn có thể xác định thời gian mà bạn cần để giữ cho phiên chạy hoạt động giữa
+
+86
+00:06:15,600 --> 00:06:18,600
+người dùng cuối cùng và đặc vụ.
+
+87
+00:06:18,600 --> 00:06:25,520
+Vì vậy, một khi nó đã đạt đến giới hạn của chúng ta hãy nói 600 giây thời hạn phiên chạy lười biếng và
+
+88
+00:06:25,520 --> 00:06:31,120
+không có sự tương tác giữa người dùng và tác nhân, sau đó nó sẽ kết thúc phiên chạy đó.
+
+89
+00:06:31,120 --> 00:06:35,800
+Nghĩa là anh sẽ mất trí nhớ ngắn hạn.
+
+90
+00:06:35,800 --> 00:06:37,240
+Tiếp theo là các nhóm hành động.
+
+91
+00:06:37,240 --> 00:06:44,160
+Vì vậy, bạn có thể nghĩ về các nhóm hành động như công cụ mà bạn có thể kết hợp với các đại lý nền tảng của bạn.
+
+92
+00:06:44,160 --> 00:06:50,160
+Vì vậy, cho ví dụ của chúng tôi, hãy nói cho một đại lý đặt sách bay, bạn có thể có một công cụ mà
+
+93
+00:06:50,160 --> 00:06:56,320
+lấy dữ liệu nhập từ cuối người dùng giống như đích nguồn ngày du lịch của người du lịch
+
+94
+00:06:56,320 --> 00:07:04,200
+Và sau đó lấy dữ liệu đó và thực hiện một cuộc gọi về cơ sở dữ liệu hãng hàng không để dành cho một chuyến bay
+
+95
+00:07:04,200 --> 00:07:06,760
+cho người dùng cuối cùng của chúng ta.
+
+96
+00:07:06,760 --> 00:07:14,280
+Vì vậy, bây giờ nếu tôi chỉ cần nhấp vào thêm và bạn phải cung cấp tên nhóm tương tác, mô tả.
+
+97
+00:07:14,280 --> 00:07:19,080
+Bây giờ khi bạn đang thêm một nhóm hành động mà tích hợp với các đại lý nền tảng, có
+
+98
+00:07:19,080 --> 00:07:21,120
+Có hai điều bạn cần ghi nhớ.
+
+99
+00:07:21,120 --> 00:07:25,600
+Trước tiên, bạn phải xác định kiểu hành động nhóm và sau đó là nhóm hành động.
+
+100
+00:07:25,600 --> 00:07:27,840
+Vì vậy, hãy để tôi lần đầu tiên nói về nhóm hành động trong kêu gọi.
+
+101
+00:07:27,840 --> 00:07:33,320
+Vì vậy, nó chỉ là chức năng lambda mà bạn sẽ viết logic của bạn trong đó sẽ làm cho rằng
+
+102
+00:07:33,320 --> 00:07:36,360
+Gọi đến cơ sở dữ liệu hãng hàng không.
+
+103
+00:07:36,360 --> 00:07:40,920
+Vì vậy, hoặc bạn có thể tạo ra một hàm lambda mới hoặc bạn có thể chọn một hàm lambda có sẵn
+
+104
+00:07:40,920 --> 00:07:44,720
+mà anh đã viết rồi.
+
+105
+00:07:44,720 --> 00:07:46,800
+Đó là nhóm hành động khẩn khoản.
+
+106
+00:07:46,800 --> 00:07:49,000
+Đầu tiên là kiểu hành động nhóm.
+
+107
+00:07:49,000 --> 00:07:55,840
+Bây giờ trước khi các đặc vụ thực hiện nhóm hành động này, nó cần hướng dẫn nhất định về những gì sẽ
+
+108
+00:07:55,840 --> 00:08:00,040
+là các tham số nhập sẽ được người dùng thông qua.
+
+109
+00:08:00,040 --> 00:08:05,360
+Trong trường hợp của chúng tôi, có thể là điểm đến nguồn, ngày du lịch và tên người dùng.
+
+110
+00:08:05,360 --> 00:08:10,760
+Vì vậy, chúng tôi phải xác định rằng ở đâu đó và những gì là phản ứng, có thể là một ID đặt chỗ.
+
+111
+00:08:10,760 --> 00:08:14,120
+Vì vậy, bạn xác định những thông số đầu vào và đầu ra.
+
+112
+00:08:14,120 --> 00:08:18,320
+Vậy là có đặc vụ và thi hành nhiệm vụ tốt hơn.
+
+113
+00:08:18,320 --> 00:08:20,920
+Và đây là những gì các kiểu hành động nhóm được sử dụng cho.
+
+114
+00:08:20,920 --> 00:08:26,480
+Vì vậy, khi bạn chọn định nghĩa với chi tiết chức năng, vì vậy bạn có thể chỉ cần đi xuống và ở đây bạn
+
+115
+00:08:26,480 --> 00:08:31,800
+Xem các tham số và ở đây bạn chỉ cần nhấn vào các tham số thêm và thêm các tham số như
+
+116
+00:08:31,800 --> 00:08:34,640
+Đầu vào của người dùng sẽ trông như thế nào.
+
+117
+00:08:34,640 --> 00:08:38,440
+Vậy tên điểm đến của khách du lịch và ngày tháng.
+
+118
+00:08:38,440 --> 00:08:40,080
+Vì vậy, bạn xác định những tham số đó.
+
+119
+00:08:40,080 --> 00:08:44,960
+Vì vậy, nó đơn giản hơn nhiều khi bạn sử dụng định nghĩa với chi tiết chức năng.
+
+120
+00:08:44,960 --> 00:08:48,400
+Tiếp theo, một lựa chọn khác mà bạn có là sử dụng giản đồ APA.
+
+121
+00:08:48,400 --> 00:08:53,240
+Vì vậy, khi tôi chỉ cần nhấp vào giản đồ APA này và bạn có hai lựa chọn, bạn có nhóm hành động
+
+122
+00:08:53,240 --> 00:08:54,240
+Đây.
+
+123
+00:08:54,240 --> 00:08:55,840
+Vì vậy, hãy chọn một giản đồ APA có sẵn.
+
+124
+00:08:55,840 --> 00:08:59,960
+Vì vậy, nếu bạn đã viết và nó có thể được viết đơn giản YML.
+
+125
+00:08:59,960 --> 00:09:05,560
+Vì vậy, bạn đã viết rằng và bạn tải nó lên S3 xô hoặc bạn có thể làm điều đó ở đâu
+
+126
+00:09:05,560 --> 00:09:06,720
+thẳng hàng với trình biên tập giản đồ.
+
+127
+00:09:06,720 --> 00:09:11,040
+Vì vậy, nếu tôi chỉ cần nhấp vào điều này và đây là những gì nó sẽ trông như thế.
+
+128
+00:09:11,040 --> 00:09:16,040
+Vì vậy, nó chỉ xác định những gì là các tham số đầu vào mà người dùng sẽ cung cấp.
+
+129
+00:09:16,040 --> 00:09:22,520
+Và những tham số đầu vào sau đó sẽ được sử dụng trong hàm lambda và sau đó
+
+130
+00:09:22,520 --> 00:09:24,320
+Hàm cừu sẽ gọi điện.
+
+131
+00:09:24,320 --> 00:09:28,120
+Bạn sẽ nhận được một phản hồi và rằng phản ứng sẽ được chuyển cho các đại lý.
+
+132
+00:09:28,120 --> 00:09:30,120
+Vì vậy, đó là tất cả các bạn xác định ở đây.
+
+133
+00:09:30,120 --> 00:09:32,600
+Và chúng ta sẽ tạo ra tất cả những điều này một cách chi tiết.
+
+134
+00:09:32,600 --> 00:09:35,000
+Vì vậy, nếu bạn đã không hiểu, nó là okay.
+
+135
+00:09:35,000 --> 00:09:40,320
+Tôi chỉ muốn đưa ra một cái nhìn tổng quát về cách thức hoạt động của chúng.
+
+136
+00:09:40,320 --> 00:09:41,320
+Được rồi.
+
+137
+00:09:41,320 --> 00:09:44,240
+Bây giờ chúng ta đã học về các nhóm hành động tiếp theo, chúng ta có trí nhớ.
+
+138
+00:09:44,240 --> 00:09:51,080
+Vì vậy, bộ nhớ này là một bộ nhớ dài hạn mà các đại lý đá phiến đá cho phép cho trường hợp sử dụng của bạn.
+
+139
+00:09:51,080 --> 00:09:56,240
+Vì vậy, theo mặc định, nó là vô hiệu, nhưng một khi bạn nhấn vào hiệu lực, nó sẽ cho bạn biết trong bao lâu
+
+140
+00:09:56,240 --> 00:09:58,840
+Bạn muốn lưu trữ bộ nhớ dài hạn đó.
+
+141
+00:09:58,840 --> 00:10:03,600
+Vì vậy, nó có thể ở bất cứ nơi nào giữa một đến 365 ngày và bạn cũng có thể xác định số phiên họp.
+
+142
+00:10:03,600 --> 00:10:09,320
+Vì vậy, thay vì kéo dài thời gian, bạn có thể xác định số phiên điều trị bạn muốn duy trì.
+
+143
+00:10:09,320 --> 00:10:10,960
+Và tiếp theo bạn có nền tảng kiến thức.
+
+144
+00:10:10,960 --> 00:10:16,440
+Vì vậy, bạn có thể nghĩ về buồn nôn một lần nữa như công cụ mà bạn có thể tích hợp với các đại lý nền tảng của bạn
+
+145
+00:10:16,440 --> 00:10:19,960
+Nó cung cấp cho bạn khả năng quản lý miếng giẻ.
+
+146
+00:10:19,960 --> 00:10:25,320
+Vì vậy, những gì bạn có thể làm là bạn có thể đi bên trái và bạn có thể thấy ở đây nền tảng kiến thức nền tảng.
+
+147
+00:10:25,320 --> 00:10:30,320
+Nếu tôi chỉ cần nhấn vào đó và ở đây bạn có thể tạo ra các nền tảng kiến thức của bạn.
+
+148
+00:10:30,320 --> 00:10:34,760
+Và một khi bạn đã tạo ra rằng cơ sở kiến thức, bạn có thể trở lại với các đại lý nền tảng và
+
+149
+00:10:34,760 --> 00:10:39,640
+Chỉ cần nhấn vào bổ sung và sau đó chọn các cơ sở kiến thức mà bạn đã tạo ra từ đây và
+
+150
+00:10:39,640 --> 00:10:41,760
+Nó sẽ được kết hợp với đặc vụ của anh.
+
+151
+00:10:41,760 --> 00:10:47,760
+Một lần nữa, chúng ta sẽ xây dựng nền tảng kiến thức và sự tích hợp khi chúng ta đến với các trường hợp sử dụng.
+
+152
+00:10:47,760 --> 00:10:49,560
+Nên đừng lo về chuyện này.
+
+153
+00:10:49,560 --> 00:10:51,440
+Vậy thì anh có chi tiết về đường sắt.
+
+154
+00:10:51,440 --> 00:10:55,200
+Nếu anh rẽ trái, anh sẽ có bảo vệ an toàn, bảo vệ chi tiết.
+
+155
+00:10:55,200 --> 00:11:00,000
+Nếu tôi chỉ cần nhấn vào cái này và ở đây chúng ta có đường ray bảo vệ.
+
+156
+00:11:00,000 --> 00:11:04,240
+Vì vậy, bạn có thể đi trước, tạo ra đường ray bảo vệ và một khi bạn đã tạo ra một đường ray bảo vệ.
+
+157
+00:11:04,240 --> 00:11:10,240
+Vì vậy, tôi có các đường sắt bảo vệ ở đây và nếu tôi chỉ cần nhấp chuột vào chỉnh sửa này và nếu tôi chỉ cần
+
+158
+00:11:10,240 --> 00:11:13,440
+chọn, bạn có thể chọn đường sắt bảo vệ mà bạn đã tạo.
+
+159
+00:11:13,440 --> 00:11:17,800
+Một lần nữa, chúng tôi sẽ tạo ra nó như một phần của trường hợp sử dụng của chúng tôi, nhưng tôi chỉ muốn cho bạn thấy
+
+160
+00:11:17,800 --> 00:11:21,440
+những gì là khả năng và làm thế nào bạn có thể kết hợp với các tác nhân.
+
+161
+00:11:21,440 --> 00:11:27,520
+Được rồi, tiếp theo chúng tôi có chiến lược dàn xếp, xác định cách các đặc vụ xử lý thông tin
+
+162
+00:11:27,520 --> 00:11:33,160
+và phối hợp trả lời theo mặc định, dàn nhạc được xác định bởi những dấu nhắc nâng cao có thể
+
+163
+00:11:33,160 --> 00:11:36,720
+bị đè nén hoặc tùy chỉnh cho trường hợp sử dụng tiên tiến.
+
+164
+00:11:36,720 --> 00:11:42,160
+Vì vậy, bạn có thể sử dụng các dấu nhắc dàn nhạc mặc định dựa trên mô hình ngôn ngữ lớn mà
+
+165
+00:11:42,160 --> 00:11:44,560
+Bạn đã chọn hoặc có thể tự viết.
+
+166
+00:11:44,560 --> 00:11:50,680
+Vì vậy, chúng tôi chỉ cần nhấp chuột vào chỉnh sửa này và bạn có thể thấy các mẫu dàn nhạc ở đây.
+
+167
+00:11:50,680 --> 00:11:56,640
+Vì vậy, bạn có thể thấy cho trước quá trình xử lý, dàn dựng, nền tảng kiến thức và sau đó bạn có thêm một
+
+168
+00:11:56,640 --> 00:12:02,040
+Sau khi xử lý và nếu bạn chỉ bấm vào dàn nhạc này, chúng tôi có dàn nhạc ghi đè
+
+169
+00:12:02,040 --> 00:12:03,400
+Mặc định mẫu.
+
+170
+00:12:03,400 --> 00:12:08,000
+Vì vậy, bạn có thể ghi đè và viết của riêng bạn, nhưng chúng tôi chỉ cần đi đến tiếp tục với mặc định
+
+171
+00:12:08,000 --> 00:12:12,080
+và ở đây nhắc trình soạn thảo mẫu.
+
+172
+00:12:12,080 --> 00:12:17,720
+Đây là một số hướng dẫn được gửi đến mô hình ngôn ngữ lớn cùng với
+
+173
+00:12:17,720 --> 00:12:21,600
+với truy vấn người dùng và nếu bạn thấy ở đây.
+
+174
+00:12:21,600 --> 00:12:28,360
+Vì vậy, nó đang nói với mô hình ngôn ngữ lớn về làm thế nào để xử lý đầu vào và ở đây bạn
+
+175
+00:12:28,360 --> 00:12:34,240
+Có thể thấy nó nói trong suy nghĩ đầu tiên trả lời câu hỏi sau, mục tiêu của người dùng là gì?
+
+176
+00:12:34,240 --> 00:12:36,360
+Thông tin nào vừa được cung cấp?
+
+177
+00:12:36,360 --> 00:12:42,880
+Kế hoạch hành động hay từng bước một là gì để thực hiện yêu cầu của người dùng?
+
+178
+00:12:42,880 --> 00:12:44,560
+Vậy điều này giúp ích thế nào?
+
+179
+00:12:44,560 --> 00:12:52,600
+Về cơ bản nó giúp ích trong chuỗi suy nghĩ, lý luận và hành động cho tác nhân.
+
+180
+00:12:52,600 --> 00:12:59,480
+Vì vậy, hãy nói rằng người dùng đã gửi một truy vấn, đặt vé máy bay cho tôi với chi tiết sau đây.
+
+181
+00:12:59,480 --> 00:13:04,840
+Vì vậy, những gì các mô hình ngôn ngữ lớn lái xe các tác nhân sẽ làm là nó sẽ phá vỡ
+
+182
+00:13:04,840 --> 00:13:08,200
+xuống rằng nhiệm vụ người dùng vào bảy bước.
+
+183
+00:13:08,200 --> 00:13:10,760
+Vậy mục tiêu của người dùng là đặt một chuyến bay là gì?
+
+184
+00:13:10,760 --> 00:13:12,760
+Có thông tin gì?
+
+185
+00:13:12,760 --> 00:13:16,800
+Vậy hắn cho tôi tên, ngày tháng, nguồn tin, điểm đến.
+
+186
+00:13:16,800 --> 00:13:18,160
+Kế hoạch hành động tốt nhất là gì?
+
+187
+00:13:18,160 --> 00:13:24,320
+Vì vậy, nó sẽ phá vỡ yêu cầu người dùng thành nhiều bước mà không thực hiện có lẽ thực hiện
+
+188
+00:13:24,320 --> 00:13:27,680
+một cuộc gọi tới cơ sở dữ liệu của hãng hàng không và vân vân.
+
+189
+00:13:27,680 --> 00:13:30,800
+Và đây là những gì một động tác dàn nhạc làm.
+
+190
+00:13:30,800 --> 00:13:33,240
+Tương tự như vậy, bạn có một cho cơ sở kiến thức.
+
+191
+00:13:33,240 --> 00:13:38,320
+Vì vậy, nếu có một yêu cầu liên quan đến các cơ sở kiến thức, làm thế nào sẽ được thực hiện
+
+192
+00:13:38,320 --> 00:13:45,680
+và sau đó bạn có sau quá trình xử lý, định nghĩa làm thế nào các tác nhân xác định cuối cùng
+
+193
+00:13:45,680 --> 00:13:47,240
+Trả lời đi.
+
+194
+00:13:47,240 --> 00:13:53,800
+Vì vậy, nếu chúng ta chỉ cần nhấp chuột vào hủy bỏ và sau đó cuối cùng chúng tôi có sự hợp tác đa tác.
+
+195
+00:13:53,800 --> 00:13:58,960
+Vì vậy, khi chúng tôi muốn có nhiều tác nhân như là một phần của một ứng dụng, sau đó bạn sẽ sử dụng này
+
+196
+00:13:58,960 --> 00:14:00,440
+Hợp tác nhiều đặc vụ.
+
+197
+00:14:00,440 --> 00:14:02,640
+Vì vậy, nếu chúng tôi chỉ cần nhấp chuột vào chỉnh sửa này.
+
+198
+00:14:02,640 --> 00:14:05,120
+Ở đây cho thấy tình trạng hợp tác.
+
+199
+00:14:05,120 --> 00:14:10,840
+Vì vậy, nếu tôi chỉ cần cho phép này đa tác nhân cộng tác, sau đó đầu tiên bạn xác định những gì đang xảy ra
+
+200
+00:14:10,840 --> 00:14:13,320
+làm đặc vụ giám sát.
+
+201
+00:14:13,320 --> 00:14:16,760
+Vì vậy, trong một kịch bản đa tác nhân, bạn sẽ có ít nhất ba đặc vụ.
+
+202
+00:14:16,760 --> 00:14:22,040
+Vì vậy, bạn sẽ có hai đặc vụ những người sẽ là đặc vụ đặc biệt hoặc trong những cách khác, họ được gọi là
+
+203
+00:14:22,040 --> 00:14:26,160
+Họ sẽ là nhân viên công tác.
+
+204
+00:14:26,160 --> 00:14:31,560
+Và sau đó bạn sẽ có một nhân viên giám sát, nhận yêu cầu từ người dùng cuối và
+
+205
+00:14:31,560 --> 00:14:38,960
+Sau đó xác định dựa trên các tiêu chuẩn nhất định, mà tác nhân nào nó có thể chuyển yêu cầu đó.
+
+206
+00:14:38,960 --> 00:14:42,280
+Và ở đây chúng tôi chọn nhân viên giám sát.
+
+207
+00:14:42,280 --> 00:14:47,200
+Và sau đó chúng tôi có các đặc vụ chuyên biệt hoặc các tác nhân cộng tác như họ gọi.
+
+208
+00:14:47,200 --> 00:14:52,040
+Vì vậy, bạn có thể chọn tác nhân cộng tác nào bạn muốn sử dụng.
+
+209
+00:14:52,040 --> 00:14:54,120
+Được rồi, đó là khá nhiều trong bài giảng này.
+
+210
+00:14:54,120 --> 00:15:00,760
+Tôi chỉ muốn cung cấp cho bạn một cái nhìn tổng quát cao về khả năng của các đại lý nền móng Amazon.
+
+211
+00:15:00,760 --> 00:15:05,280
+Nếu bạn không hiểu một số khía cạnh chi tiết, nó là okay nơi tôi sẽ đi
+
+212
+00:15:05,280 --> 00:15:11,280
+Lặp lại và chúng ta sẽ xây dựng tất cả những khả năng này khi chúng ta đi đến tay sử dụng
+
+213
+00:15:11,280 --> 00:15:12,280
+Vụ án.
+
+214
+00:15:12,280 --> 00:15:13,840
+Tôi sẽ xem trong bài giảng tiếp theo, cảm ơn.
+
