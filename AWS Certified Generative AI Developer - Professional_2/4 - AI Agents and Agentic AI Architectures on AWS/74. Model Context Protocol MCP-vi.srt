@@ -1,0 +1,456 @@
+1
+00:00:00,000 --> 00:00:04,960
+Trong bài giảng này, chúng tôi sẽ khám phá các giao thức ngữ cảnh mô hình hoặc MCP.
+
+2
+00:00:04,960 --> 00:00:11,120
+Vì vậy bây giờ chúng ta hãy bắt đầu với một cái gì đó cơ bản hơn, những gì là MCP và những gì là vấn đề mà nó đang cố gắng để
+
+3
+00:00:11,120 --> 00:00:19,520
+Giải quyết. Vì vậy, MCP đề cập đến giao thức ngữ cảnh mô hình và mô hình ở đây là mô hình ngôn ngữ lớn
+
+4
+00:00:19,520 --> 00:00:27,360
+mà bạn sử dụng để xây dựng ứng dụng AI của bạn. Văn cảnh ở đây nói đến việc xây dựng một quan chức cấp cao.
+
+5
+00:00:27,360 --> 00:00:34,560
+Ứng dụng chatbot và trả lời câu hỏi của nhân viên, nó cần truy cập vào một số doanh nghiệp quan chức.
+
+6
+00:00:34,560 --> 00:00:41,760
+dữ liệu hoặc dữ liệu bên thứ ba. Vì vậy, khi bạn lấy dữ liệu và cung cấp nó cho các mô hình ngôn ngữ lớn,
+
+7
+00:00:41,760 --> 00:00:48,400
+Bạn cung cấp cho nó một số bối cảnh. Và cuối cùng chúng tôi đã có các giao thức và chúng tôi biết giao thức có nghĩa là
+
+8
+00:00:48,400 --> 00:00:55,840
+Một số loại quy tắc cho phép bạn trao đổi dữ liệu giữa hai thiết bị. Và trong trường hợp này,
+
+9
+00:00:55,840 --> 00:01:01,360
+Chúng tôi đang trao đổi dữ liệu giữa các mô hình ngôn ngữ lớn hoặc mô hình và các nguồn dữ liệu khác nhau
+
+10
+00:01:01,360 --> 00:01:09,920
+Cho dù bên trong hay bên ngoài. Vì vậy, MCP là một giao thức mở mà chuẩn hóa cách ứng dụng cung cấp
+
+11
+00:01:09,920 --> 00:01:17,680
+Văn cảnh tới LMs. Vì vậy, tóm lại, bạn có LM và bạn có các nguồn dữ liệu và bạn cung cấp
+
+12
+00:01:17,680 --> 00:01:25,520
+dữ liệu vào LLM sử dụng một số giao thức. Vấn đề mà MCP đang cố gắng giải quyết là gì?
+
+13
+00:01:25,520 --> 00:01:34,240
+Đầu tiên, nó giải quyết M nhân với vấn đề hợp nhất tùy chọn N. Vì vậy, hãy nói rằng trong của bạn
+
+14
+00:01:34,240 --> 00:01:41,440
+Kinh doanh, bạn có ba ứng dụng khác nhau, AIAP 1, AIAP 2 và AIAP 3. Và mỗi cái
+
+15
+00:01:41,440 --> 00:01:48,560
+Ứng dụng cần truy cập dữ liệu từ 3 nguồn dữ liệu khác nhau trong doanh nghiệp. Một là cơ sở dữ liệu,
+
+16
+00:01:48,560 --> 00:01:56,080
+kho tài liệu và dịch vụ API. Vì vậy, những gì bạn sẽ làm là hãy nói trong trường hợp bạn đang sử dụng AWS,
+
+17
+00:01:56,080 --> 00:02:01,360
+Vì vậy, bạn sẽ viết vấn đề tích hợp tự chọn bằng cách sử dụng một hàm lambda nơi bạn sẽ viết
+
+18
+00:02:01,360 --> 00:02:09,520
+Một số mã riêng cho AIAP 1 để truy cập dữ liệu từ cơ sở dữ liệu này. Sau đó từ kho tài liệu,
+
+19
+00:02:09,520 --> 00:02:15,040
+Sau đó từ dịch vụ API, tương tự như vậy bạn sẽ làm cho ứng dụng đến nơi bạn sẽ truy cập cơ sở dữ liệu,
+
+20
+00:02:15,040 --> 00:02:22,160
+tài liệu repo và dịch vụ API tương tự cho ứng dụng 3. Vì vậy, bạn sẽ phải viết mã cho ba
+
+21
+00:02:22,160 --> 00:02:30,560
+Sự tích hợp, sau đó ba một tổng của chín tích hợp. Vì vậy, bây giờ nếu bạn sử dụng MCP, những gì xảy ra là
+
+22
+00:02:30,560 --> 00:02:37,920
+Bạn có thể kết nối tất cả các ứng dụng bạn có trong doanh nghiệp của bạn với khách hàng MCP này và sau đó này này MCP
+
+23
+00:02:37,920 --> 00:02:44,720
+Khách hàng kết nối một với máy chủ MCP này kết nối đến ba nguồn dữ liệu này. ♪ Thì anh sẽ ♪
+
+24
+00:02:44,720 --> 00:02:51,680
+có ba cộng ba, sáu thực hiện. Vì vậy, chúng tôi sẽ giảm số điểm tích hợp và chúng tôi sẽ
+
+25
+00:02:51,680 --> 00:02:57,840
+thảo luận trong một chút về những gì khách hàng và máy chủ này có nghĩa là và cách điều này thực sự hoạt động. Nhưng...
+
+26
+00:02:57,840 --> 00:03:05,120
+Bây giờ, hãy nhớ rằng số lượng sự tích hợp đã giảm. Tiếp theo, nó cũng chuẩn hóa làm thế nào
+
+27
+00:03:05,120 --> 00:03:12,000
+LM truy cập dữ liệu từ các nguồn dữ liệu khác nhau và chúng tôi sẽ thảo luận về điều này trong một chút.
+
+28
+00:03:12,000 --> 00:03:20,720
+Nhưng bây giờ, AWS cung cấp hơn 50 cộng với máy chủ MCP. Bây giờ hãy đi và cố gắng và hiểu
+
+29
+00:03:20,720 --> 00:03:28,240
+Làm thế nào mà MCP thực sự hoạt động thông qua một trường hợp sử dụng. Bây giờ hãy nói rằng chúng tôi đang cố gắng để xây dựng một khách sạn đặt chỗ
+
+30
+00:03:28,240 --> 00:03:37,200
+Ứng dụng AI sử dụng MCP. Bây giờ thông qua ví dụ này, chúng ta sẽ hiểu năm thành phần cốt lõi
+
+31
+00:03:37,200 --> 00:03:46,960
+của khách hàng MCP máy chủ MCP vận chuyển lớp và công cụ tài nguyên và đạo cụ. Vì vậy, hãy nói cho chúng tôi
+
+32
+00:03:46,960 --> 00:03:54,400
+Ứng dụng AI khách sạn, có hai nguồn dữ liệu chính. Một, chúng tôi có một tài liệu PDF
+
+33
+00:03:54,400 --> 00:04:00,640
+trong một cái xô S3, mà tất cả các tính năng phòng khách sạn, loại giường nó có, cho dù nó có TV
+
+34
+00:04:00,640 --> 00:04:08,640
+hay không. Và thứ hai, chúng tôi có một DynamoDB nơi chúng tôi đã lưu trữ tất cả các phòng khách sạn,
+
+35
+00:04:08,640 --> 00:04:15,760
+mà người dùng có thể truy vấn. Và sau đó chúng tôi có một số công cụ. Giả sử chúng ta có kiến thức nền tảng
+
+36
+00:04:15,760 --> 00:04:22,480
+Cơ sở. Chúng tôi biết kiến thức tốt hơn là một giải pháp có thể quản lý được từ AWS và chúng tôi đã tạo ra một ví dụ
+
+37
+00:04:22,480 --> 00:04:28,800
+nền tảng kiến thức nền tảng, đó là ID KB bằng 1, 2, 3. Và sau đó chúng tôi cũng đã viết
+
+38
+00:04:28,800 --> 00:04:36,880
+Một hàm lambda, có thể lấy lại dữ liệu từ bảng kiểm kê phòng khách sạn này.
+
+39
+00:04:36,880 --> 00:04:45,040
+Bây giờ chúng tôi có hai nguồn dữ liệu hậu phương và chúng tôi có hai công cụ. Bây giờ chúng ta có một người dùng
+
+40
+00:04:45,040 --> 00:04:53,520
+Joe và anh ta đặt câu hỏi cho khách sạn đặt đơn xin việc ở khách sạn yêu cầu tính năng phòng khách sạn,
+
+41
+00:04:53,520 --> 00:05:01,040
+Nó được lưu trữ trong PDF này trong S3 xô này. Bây giờ yêu cầu này từ người dùng sẽ đi
+
+42
+00:05:01,040 --> 00:05:09,680
+để một cái gì đó được gọi là máy và máy chủ về cơ bản chỉ là bất kỳ ứng dụng AI sử dụng một lớn
+
+43
+00:05:09,680 --> 00:05:17,200
+Mô hình ngôn ngữ. Và trong trường hợp này, nó có thể đơn giản là một chatbot thông qua mà người dùng kết thúc này
+
+44
+00:05:17,200 --> 00:05:26,320
+là tương tác với ứng dụng. Nhưng từ khi MCP được sử dụng rất nhiều bởi các đặc vụ AI,
+
+45
+00:05:26,320 --> 00:05:33,840
+Vì vậy, một số các chủ thể khác có thể đơn giản như mã VS, có thể là một chatbot như chúng ta đã thảo luận
+
+46
+00:05:33,840 --> 00:05:41,840
+hoặc bất kỳ ứng dụng AI nào. Một khi yêu cầu được gửi cho máy, nó sẽ chuyển hướng nó sang ngôn ngữ lớn
+
+47
+00:05:41,840 --> 00:05:48,720
+Mô hình và trong trường hợp của AWS, nó có thể đi đến các nền đá Amazon và sau đó bất kỳ mô hình bạn chọn,
+
+48
+00:05:48,720 --> 00:05:55,760
+không, chuyên nghiệp và vân vân. Bây giờ ở đây chủ yếu bạn sẽ sử dụng
+
+49
+00:05:55,760 --> 00:06:03,200
+Nói chuyện với API. Bây giờ, nếu bạn đã không sử dụng đá tảng nói chuyện với API, nó rất giống với mô hình điện khẩn
+
+50
+00:06:03,200 --> 00:06:10,560
+ARI, nhưng thêm vào đó nó cho phép bạn gửi các công cụ chi tiết đến mô hình ngôn ngữ lớn. Vậy nếu
+
+51
+00:06:10,560 --> 00:06:15,840
+Bạn thấy ở đây là giao tiếp trên mạng trong khi thực hiện yêu cầu, bạn xác định ID mô hình. Vì vậy, chúng tôi đang sử dụng
+
+52
+00:06:15,840 --> 00:06:22,720
+Nội dung ở đây, sau đó chúng tôi đang truyền thông điệp, mà về cơ bản là người dùng truy vấn. Và rồi chúng ta
+
+53
+00:06:22,720 --> 00:06:30,000
+cũng nói với các mô hình mà là các công cụ có sẵn cho mô hình này. Và ở đây bạn có thể xác định
+
+54
+00:06:30,000 --> 00:06:37,120
+cấu hình công cụ. Vì vậy, về cơ bản những gì chúng tôi đang làm ở đây là chúng tôi đang gửi dấu nhắc người dùng
+
+55
+00:06:37,120 --> 00:06:42,960
+Và cùng với đó, chúng tôi cũng gửi qua một mẫu nhắc, những gì là các tùy chọn công cụ
+
+56
+00:06:42,960 --> 00:06:51,520
+có thể sử dụng cho LM. Và trong trường hợp này, đây là những công cụ có sẵn cho
+
+57
+00:06:51,520 --> 00:06:58,960
+Để có được bối cảnh. Vì vậy, những gì nền tảng sẽ làm là, cùng với yêu cầu này người dùng và công cụ
+
+58
+00:06:58,960 --> 00:07:05,840
+dữ liệu cấu hình đã được gửi, nó sẽ yêu cầu sử dụng công cụ này mà chúng tôi có ở đây
+
+59
+00:07:05,840 --> 00:07:13,280
+nền tảng kiến thức nền tảng với KBID 123. Bây giờ yêu cầu này, mô hình ngôn ngữ lớn sẽ gửi đến
+
+60
+00:07:13,280 --> 00:07:20,800
+cái gì đó được biết đến như là khách hàng trong điều kiện MCP. Và nếu bạn có thể thấy ở đây, khách hàng, khách hàng được nhúng vào
+
+61
+00:07:20,800 --> 00:07:28,000
+chủ nhà này. Vì vậy, chúng tôi đã thảo luận chủ thể có thể là một chatbot hoặc nó có thể được ID như mã VS trong trường hợp
+
+62
+00:07:28,000 --> 00:07:35,360
+Mã hóa các đặc vụ Al. Và khách hàng này duy trì một trong một kết nối với máy chủ MCP. Và chúng ta sẽ đi
+
+63
+00:07:35,360 --> 00:07:41,920
+để nói về máy chủ MCP một chút. Những khách hàng này là ai? Vì vậy, bạn có thể đã nghe về
+
+64
+00:07:41,920 --> 00:07:50,800
+Khách hàng hay Amazon QCLI, và Claude Desktop. Đây là tất cả các khách hàng mà MCP hỗ trợ tại thời điểm này
+
+65
+00:07:50,800 --> 00:07:57,360
+thời gian. Và bạn có thể cài đặt tất cả các khách hàng này vào mã căn cước hoặc hệ thống VS. Và đó là lý do tôi viết
+
+66
+00:07:57,360 --> 00:08:05,200
+ở đây khách hàng này có thể được nhúng vào máy chủ. Và bạn cũng có thể có nhiều khách hàng trong
+
+67
+00:08:05,200 --> 00:08:12,640
+Cùng chủ nhà. Được rồi. Khái niệm tiếp theo mà chúng tôi có là máy chủ. Vì vậy chúng tôi có các máy chủ MCP. Và chúng tôi có,
+
+68
+00:08:12,640 --> 00:08:20,320
+Trong trường hợp này, máy chủ AWS MCP cho nền tảng kiến thức nền tảng nền tảng và máy chủ AWS Lambda MCP. Vậy thì
+
+69
+00:08:20,320 --> 00:08:28,800
+Máy chủ? Máy phục vụ là những chương trình nhỏ nhẹ phơi bày khả năng cụ thể theo dạng chuẩn hóa.
+
+70
+00:08:28,800 --> 00:08:38,000
+Những máy chủ MCP này là những chương trình nhẹ được xây dựng bởi AWS. Và trong hầu hết các trường hợp,
+
+71
+00:08:38,000 --> 00:08:46,080
+Các máy phục vụ MCP được xây dựng bởi các công cụ hoặc nhà cung cấp dịch vụ. Và một khi những máy chủ này được xây dựng,
+
+72
+00:08:46,080 --> 00:08:53,280
+Có hai cách trong đó bạn có thể triển khai các máy chủ AWS MCP hoặc bất kỳ dịch vụ khác cung cấp bởi
+
+73
+00:08:53,280 --> 00:09:00,000
+các nhà cung cấp dịch vụ công cụ khác nhau. Một trong những đôi khi được gọi là từ xa. Và nó gần đây hơn
+
+74
+00:09:00,000 --> 00:09:05,760
+Hiện tượng mà nó là một dịch vụ quản lý. Và hãy nói trong trường hợp AWS, nó sẽ được triển khai
+
+75
+00:09:05,760 --> 00:09:13,120
+đâu đó trong môi trường của AWS. Cái thứ hai và phổ biến nhất là hệ thống địa phương hoặc Docker
+
+76
+00:09:13,120 --> 00:09:21,360
+triển khai, nơi anh triển khai máy chủ trên máy tính xách tay. Và hầu hết các máy chủ
+
+77
+00:09:21,360 --> 00:09:28,960
+AWS có thể sử dụng tại địa phương trên hệ thống hoặc máy tính xách tay của bạn. Vì vậy, nếu bạn đi
+
+78
+00:09:28,960 --> 00:09:38,160
+Liên kết này, phòng thí nghiệm AWS bắt đầu, GitHub.io, bạn có thể thấy tất cả các máy chủ có sẵn từ AWS. Và
+
+79
+00:09:38,160 --> 00:09:44,560
+bạn có thể thấy trong các loại khác nhau. Vì vậy, bạn có máy chủ AWS MCP, máy chủ nền tảng kiến thức MCP,
+
+80
+00:09:44,560 --> 00:09:50,400
+Sau đó cho cơ sở hạ tầng, bạn có đội hình đám mây CDK, Terraform. Và với AML, bạn có Amazon
+
+81
+00:09:50,400 --> 00:09:55,840
+đá nền, kiến thức cơ bản, và sau đó bạn bỏ lỡ kinh doanh khối lập phương. Và sau đó trong dữ liệu phân tích
+
+82
+00:09:55,840 --> 00:10:02,000
+không gian, bạn có DynamoDB, ElAstic search, và tất cả những người khác. Vậy thì anh phải trả giá.
+
+83
+00:10:02,000 --> 00:10:08,400
+hoạt động, công cụ phát triển, và bạn có thể thấy có hơn 50 máy chủ cộng với. Và bạn có thể
+
+84
+00:10:08,400 --> 00:10:16,240
+Hãy kiểm tra từng loại từ đây, luồng công việc, tên và vân vân. Vì vậy, một khi ngôn ngữ lớn này
+
+85
+00:10:16,240 --> 00:10:22,720
+Yêu cầu mô hình, khách hàng đi và lấy dữ liệu ngữ cảnh từ các nguồn hậu phương,
+
+86
+00:10:22,720 --> 00:10:30,480
+sử dụng công cụ này, sử dụng kb id123, đó là cho này cơ sở kiến thức cụ thể, nó sẽ
+
+87
+00:10:30,480 --> 00:10:38,400
+dịch yêu cầu này sang định dạng giao thức MCP. Và chúng ta sẽ thảo luận về những gì là giao thức MCP
+
+88
+00:10:38,400 --> 00:10:45,760
+Định dạng một chút. Nên bây giờ khách hàng này yêu cầu máy chủ sử dụng JSON RPC. Và sau đó
+
+89
+00:10:45,760 --> 00:10:52,320
+Máy chủ MCP sẽ lấy dữ liệu từ hậu phương bằng những công cụ này. Và nó sẽ
+
+90
+00:10:52,320 --> 00:10:59,280
+Gửi trả lời cho khách hàng. Và khách hàng này sẽ gửi các công cụ, sử dụng, hoặc ngữ cảnh
+
+91
+00:10:59,280 --> 00:11:07,200
+dữ liệu vào LLM, và sau đó uLM cùng với bối cảnh đó. Và kiến thức nội tại của nó sẽ gửi
+
+92
+00:11:07,200 --> 00:11:12,560
+Phản hồi cuối cùng. Và trong trường hợp này, nó sẽ gửi một chi tiết căn phòng mà nó có
+
+93
+00:11:12,560 --> 00:11:19,120
+Đã lấy từ đây tới người dùng cuối cùng. Bây giờ chúng ta hãy chỉ cần hiểu một vài điều nhiều hơn
+
+94
+00:11:19,120 --> 00:11:24,640
+Đối với giao thức MCP này, làm thế nào điều này thực sự hoạt động. Bây giờ nếu bạn nhìn vào thành phần thứ tư,
+
+95
+00:11:24,640 --> 00:11:30,160
+Chúng tôi có lớp vận chuyển, nơi có sự liên lạc giữa khách hàng và máy chủ. Vậy anh
+
+96
+00:11:30,160 --> 00:11:36,480
+có thể thấy ở đây, khách hàng và máy chủ đang trao đổi thông tin. Và vì điều này, bạn cần phải nhớ rằng
+
+97
+00:11:36,480 --> 00:11:44,080
+2 thứ. Một, bạn có lớp dữ liệu. Và ở đây chúng tôi sử dụng JSON RPC. Vì vậy, chúng tôi sử dụng dữ liệu JSON
+
+98
+00:11:44,080 --> 00:11:50,320
+Định dạng để trao đổi dữ liệu. Và ở lớp vận chuyển, bạn có 2 lựa chọn. Một, chúng ta có
+
+99
+00:11:50,320 --> 00:11:58,240
+Kết xuất chuẩn được gọi là SDDI cho đến gần đây chúng tôi chỉ có tùy chọn này. Và điều này chủ yếu là
+
+100
+00:11:58,240 --> 00:12:05,440
+được sử dụng khi bạn triển khai máy chủ MCP trên hệ thống địa phương. Bây giờ cho các máy chủ quản lý từ xa,
+
+101
+00:12:05,440 --> 00:12:11,120
+Trong môi trường AWS, bạn sẽ sử dụng giao thức HTTP.
+
+102
+00:12:11,120 --> 00:12:17,680
+Và cuối cùng, chúng ta có các thành phần thứ năm, công cụ, tài nguyên và nhắc nhở. Bây giờ chúng ta hãy nhanh chóng
+
+103
+00:12:17,680 --> 00:12:25,280
+cố gắng hiểu ba người này là gì. Đầu tiên, chúng ta có các công cụ. Và đây là cơ bản
+
+104
+00:12:25,280 --> 00:12:32,240
+Không có gì ngoài chức năng mà LLM có thể gọi để lấy dữ liệu. Và đây là hai công cụ chúng tôi có
+
+105
+00:12:32,240 --> 00:12:39,920
+Trong trường hợp của chúng ta. Và từ góc nhìn giao thức MCP, nó là bắt buộc cho các máy chủ MCP
+
+106
+00:12:39,920 --> 00:12:48,960
+để chi tiết cho khách hàng những gì là tất cả các công cụ hoặc cơ bản gọi điện thoại có sẵn
+
+107
+00:12:48,960 --> 00:12:56,880
+với máy chủ này. Tiếp theo, chúng ta có tài nguyên và tài nguyên không là gì ngoài dữ liệu thực tế,
+
+108
+00:12:56,880 --> 00:13:05,760
+mà có thể nằm trong cơ sở dữ liệu hoặc trong hệ thống tập tin, mà có thể được sử dụng bởi các mô hình như ngữ cảnh. Vậy là
+
+109
+00:13:05,760 --> 00:13:13,200
+dữ liệu thực tế được thu thập bằng cách sử dụng các công cụ. Và cuối cùng, chúng ta có các dấu nhắc và dấu nhắc
+
+110
+00:13:13,200 --> 00:13:20,640
+là mẫu hướng dẫn cách mô hình tương tác với các công cụ. Vậy trong trường hợp này, nếu chúng ta nhìn vào
+
+111
+00:13:20,640 --> 00:13:27,760
+Ở đây, chúng tôi có một mẫu nhắc, bao gồm yêu cầu người dùng hoặc các dấu nhắc, sau đó xác định
+
+112
+00:13:27,760 --> 00:13:34,800
+mà mô hình ngôn ngữ lớn chúng tôi sẽ sử dụng. Và cuối cùng, cũng có những công cụ nào sẵn có
+
+113
+00:13:34,800 --> 00:13:41,440
+giống như những gì chúng tôi có ở đây để mô hình ngôn ngữ lớn để sử dụng. Vâng, vì vậy đó là khá nhiều từ này
+
+114
+00:13:41,440 --> 00:13:43,680
+diễn thuyết. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
