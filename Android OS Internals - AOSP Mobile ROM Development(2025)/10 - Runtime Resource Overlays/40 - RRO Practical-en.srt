@@ -1,444 +1,740 @@
 1
-00:00:00,000 --> 00:00:08,800
- We will come back, so in this section we are going to do a car UILIP practical session.
+00:00:01,290 --> 00:00:01,980
+Welcome back.
 
 2
-00:00:08,800 --> 00:00:16,800
- So what we are going to do is we are going to overlay the car settings app with n overlay
+00:00:02,250 --> 00:00:07,290
+So in this section, we are going to do a God leap practical session.
 
 3
-00:00:16,800 --> 00:00:19,600
- using car UILIP.
+00:00:08,460 --> 00:00:17,600
+So what we are going to do is we are going to overlay the God's Settings app with an overlay using Kahlua.
 
 4
-00:00:19,600 --> 00:00:24,320
- So let us go ahead.
+00:00:18,600 --> 00:00:20,430
+OK, so let's go ahead.
 
 5
-00:00:24,320 --> 00:00:28,200
- So I will just tell you exactly what I am planning to do.
+00:00:23,520 --> 00:00:23,910
+OK.
 
 6
-00:00:28,200 --> 00:00:36,120
- So I have the emulator open here and I have a terminal open here.
+00:00:23,970 --> 00:00:27,390
+So I'll just tell you exactly what I am planning to do.
 
 7
-00:00:36,120 --> 00:00:53,560
- So let me enable the resource overlay now, let me get a little bit bigger.
+00:00:27,930 --> 00:00:34,080
+So I have the emulator open here and I have a terminal option here.
 
 8
-00:00:53,560 --> 00:01:00,200
- So I have just enabled the overlay now and you can see the color background color and
+00:00:34,950 --> 00:00:35,310
+OK.
 
 9
-00:01:00,200 --> 00:01:03,320
- the title code changed, okay.
+00:00:35,760 --> 00:00:39,530
+So let me enable the resource overlay now.
 
 10
-00:01:03,320 --> 00:01:05,200
- Don't worry about the formatting.
+00:00:43,580 --> 00:00:44,050
+Because.
 
 11
-00:01:05,200 --> 00:01:10,680
- So this is just a demonstration, don't learn formatting from me.
+00:00:46,440 --> 00:00:46,950
+OK.
 
 12
-00:01:10,680 --> 00:01:11,880
- So I am very bad at that.
+00:00:53,300 --> 00:01:00,890
+So I had just enabled the overlay now, and you can see the color, background color and the title code
 
 13
-00:01:11,880 --> 00:01:19,600
- So I am just go ahead and make your own formatting and design it as best as you can.
+00:01:01,220 --> 00:01:01,730
+changed.
 
 14
-00:01:19,600 --> 00:01:23,200
- So this is the best I could do actually, okay.
+00:01:01,940 --> 00:01:02,240
+OK.
 
 15
-00:01:23,200 --> 00:01:34,960
- So here I have enabled it and now let us disable that back, okay I disabled it back.
+00:01:02,990 --> 00:01:04,820
+Don't worry about the formatting.
 
 16
-00:01:34,960 --> 00:01:42,600
- So this is the command, so command enable and disabled will show you that later.
+00:01:05,000 --> 00:01:07,040
+So this is just a demonstration.
 
 17
-00:01:42,600 --> 00:01:47,640
- So these are the two commands basically enabling and disabling, okay.
+00:01:07,880 --> 00:01:10,010
+Don't learn formatting from me.
 
 18
-00:01:47,640 --> 00:01:59,200
- So now, okay, so now I am back in my Visual Studio code and here, this is the simple
+00:01:10,370 --> 00:01:11,680
+So I am very bad at that.
 
 19
-00:01:59,200 --> 00:02:03,080
- RRO package which we, which I have just created, okay.
+00:01:11,690 --> 00:01:19,040
+So just go ahead and make your own formatting and design it as best as you can.
 
 20
-00:02:03,080 --> 00:02:08,760
- So it's a very simple package and here you could see it has only a resource folder with
+00:01:19,400 --> 00:01:21,380
+So this is the best I could do, actually.
 
 21
-00:02:08,760 --> 00:02:12,400
- colors and styles, okay.
+00:01:21,800 --> 00:01:22,310
+OK.
 
 22
-00:02:12,400 --> 00:02:20,400
- So inside the colors you have got these elements and inside the styles you have this.
+00:01:22,970 --> 00:01:23,570
+Just kidding.
 
 23
-00:02:20,400 --> 00:02:25,000
- So this is basically overlaying the title and this is basically overlaying the background
+00:01:23,600 --> 00:01:23,960
+OK.
 
 24
-00:02:25,000 --> 00:02:33,560
- color, triple color, scroll bar thumb and two action divided color, okay.
+00:01:24,380 --> 00:01:27,480
+So here I have enabled.
 
 25
-00:02:33,560 --> 00:02:40,760
- So these are the elements which actually exist in car UI lib, okay.
+00:01:27,890 --> 00:01:30,380
+And now let's disable that back.
 
 26
-00:02:40,760 --> 00:02:46,880
- And basically what we are doing here is we are overriding the car UI lib resources.
+00:01:32,960 --> 00:01:34,370
+OK and disable it back.
 
 27
-00:02:46,880 --> 00:02:53,720
- So only the apps which actually uses car UI lib will be affected by this overlays.
+00:01:34,730 --> 00:01:38,870
+So this the command the command.
 
 28
-00:02:53,720 --> 00:03:00,000
- So as we know car settings is actually using car UI lib and that's the reason the color
+00:01:38,870 --> 00:01:42,020
+Enable and disable virtual show you that later.
 
 29
-00:03:00,000 --> 00:03:05,560
- of the background color title everything gets changed when we enable this overlay, okay.
+00:01:42,410 --> 00:01:45,590
+So these are the two commands basically enabling and disabling.
 
 30
-00:03:05,560 --> 00:03:12,280
- So in order to prove that I will just quickly show you this element inside car UI lib.
+00:01:46,700 --> 00:01:48,320
+OK, so now.
 
 31
-00:03:12,280 --> 00:03:16,400
- So if you come up this is car UI lib and here you have the values and here you have the
+00:01:51,140 --> 00:02:00,860
+OK, so now I am back in my resourcefully accord, and here this is the simple RRO package which we
 
 32
-00:03:16,400 --> 00:03:21,120
- color this is the same file which we are actually overriding.
+00:02:00,860 --> 00:02:02,180
+which I have just created.
 
 33
-00:03:21,120 --> 00:03:25,160
- And just double click on this and if you search for it, so you can see it is actually
+00:02:02,330 --> 00:02:09,500
+OK, so it's a very simple package and here you could see it has only a resource folder with colors
 
 34
-00:03:25,160 --> 00:03:31,680
- set to black color which is actually the default one which we are seeing here, right.
+00:02:09,500 --> 00:02:10,460
+and styles.
 
 35
-00:03:31,680 --> 00:03:37,800
- So when we overlay it gets changed to the new color, this one, okay.
+00:02:11,390 --> 00:02:11,750
+OK.
 
 36
-00:03:37,800 --> 00:03:44,480
- So behind the scenes it's basically a small APK, simple RRO.APK which actually just
+00:02:12,200 --> 00:02:19,070
+So inside the colors, you have got these, uh, elements and inside the styles you have this.
 
 37
-00:03:44,480 --> 00:03:50,800
- overlays the resources during run time on top of the existing car settings app.
+00:02:20,210 --> 00:02:22,190
+So this is basically overlaying the title.
 
 38
-00:03:50,800 --> 00:03:57,000
- So in summary the logic or the overall architecture is quite simple.
+00:02:22,850 --> 00:02:31,130
+And this is basically overlaying the background color, the color, scroll a scroll bottom and do action
 
 39
-00:03:57,000 --> 00:04:07,920
- So basically it's just overlaying some resources during run time on top of the APK, okay.
+00:02:31,190 --> 00:02:32,060
+devoid of color.
 
 40
-00:04:07,920 --> 00:04:15,160
- So now we have the styles, so as I said it is just the car title, I'm just increasing
+00:02:32,210 --> 00:02:32,600
+OK.
 
 41
-00:04:15,160 --> 00:04:19,640
- it to 80SP and the color is this one, okay.
+00:02:33,260 --> 00:02:38,340
+So these are the elements which actually exist in Idlib.
 
 42
-00:04:19,640 --> 00:04:23,160
- So then let's have a look at the android.amk.
+00:02:39,350 --> 00:02:39,680
+OK.
 
 43
-00:04:23,160 --> 00:04:27,960
- This is again a very simple MK file, so you have these three new elements here.
+00:02:40,130 --> 00:02:45,680
+And basically what we are doing here is we are overriding the car Dua Lipa resources.
 
 44
-00:04:27,960 --> 00:04:37,080
- CarUI, RRO set name and this is the name of the RRO and then CarUI resource directory.
+00:02:46,670 --> 00:02:52,820
+So only the apps which actually uses got UI Lib will be affected by this overlays.
 
 45
-00:04:37,080 --> 00:04:41,960
- Let's set resource directory, it's pointing to this folder and then you have the target.
+00:02:53,420 --> 00:02:57,500
+So as we know, car settings is actually using a.
 
 46
-00:04:41,960 --> 00:04:46,280
- So target is actually the applications which you are targeting.
+00:02:58,220 --> 00:03:03,530
+And that's the reason the color of the background color title everything gets changed when we enable
 
 47
-00:04:46,280 --> 00:04:52,080
- So in my example I'm not only targeting settings app, but you can target a number of
+00:03:03,530 --> 00:03:04,460
+this overlay.
 
 48
-00:04:52,080 --> 00:04:53,360
- applications here.
+00:03:05,150 --> 00:03:06,950
+OK, so in order to prove that.
 
 49
-00:04:53,360 --> 00:05:03,720
- So you just need to add it over here, like in case if you want to focus dialer app, so
+00:03:07,220 --> 00:03:11,420
+Just quickly show you this element inside cardio.
 
 50
-00:05:03,720 --> 00:05:09,400
- you can just give it like this or any other app within the car you can just give it
+00:03:11,990 --> 00:03:16,810
+So if you come up, this is really bad here you have the wireless only here you have the color, the
 
 51
-00:05:09,400 --> 00:05:11,560
- over here, okay.
+00:03:16,830 --> 00:03:19,400
+same file, which we are actually all right.
 
 52
-00:05:11,560 --> 00:05:16,040
- So in for this example I'm just focusing settings app, okay.
+00:03:20,630 --> 00:03:22,310
+And just don't click on this.
 
 53
-00:05:16,040 --> 00:05:23,240
- But you can try it out with different apps later on, okay so that's about this one and
+00:03:22,310 --> 00:03:27,680
+And if you search for it so you can see it is actually set to black color, which is actually the default
 
 54
-00:05:23,240 --> 00:05:28,560
- it also includes this carUI generate RRO set, okay.
+00:03:28,520 --> 00:03:30,620
+one, which we are seeing here, right?
 
 55
-00:05:28,560 --> 00:05:32,200
- And then we have the android dot manifest dot XML file.
+00:03:31,490 --> 00:03:35,150
+So when we overlay, it gets changed to the new colour.
 
 56
-00:05:32,200 --> 00:05:37,160
- So this is again pretty straightforward, here you have the package name, the RRO package
+00:03:35,820 --> 00:03:36,920
+Uh, this one.
 
 57
-00:05:37,160 --> 00:05:43,640
- name will be taken dynamically when you compile it.
+00:03:37,340 --> 00:03:44,360
+OK, so behind the scenes, it's basically a small AP case in bilateral dot epic, which actually just
 
 58
-00:05:43,640 --> 00:05:48,400
- So you can just leave it as cities actually, so it will be replaced dynamically during
+00:03:44,360 --> 00:03:50,150
+overlays the resources during prime time on top of the existing car settings app.
 
 59
-00:05:48,400 --> 00:05:50,280
- the build time.
+00:03:50,480 --> 00:03:56,830
+So in summary, the logic or the overall architecture is quite simple.
 
 60
-00:05:50,280 --> 00:05:58,080
- And the target package as well will be dynamically over done during the build time, okay.
+00:03:56,840 --> 00:04:05,120
+So basically it's just overlaying some resources during that time around time onto what if we keep on
 
 61
-00:05:58,080 --> 00:06:02,960
- So just leave these two as it is and then you have the priority.
+00:04:05,120 --> 00:04:05,920
+top of the game?
 
 62
-00:06:02,960 --> 00:06:12,880
- So priority 10 means it's actually of, so to explain that, just imagine that you have
+00:04:05,990 --> 00:04:09,920
+OK, so now we have the Stynes.
 
 63
-00:06:12,880 --> 00:06:18,320
- multiple overlays, multiple static overlays, okay.
+00:04:09,920 --> 00:04:14,000
+So as say said it is just the car idle.
 
 64
-00:06:18,320 --> 00:06:25,520
- So when you have multiple static overlays, a higher number means you have a higher precedence,
+00:04:14,180 --> 00:04:17,810
+I'm just increasing it to eight DSP and the color is this one.
 
 65
-00:06:25,520 --> 00:06:31,200
- a lower number means you have a lower precedence, okay, as simple as that, okay.
+00:04:18,620 --> 00:04:22,630
+OK, so then let's have a look at that or not.
 
 66
-00:06:31,200 --> 00:06:33,120
- And then you have this static.
+00:04:22,650 --> 00:04:24,970
+And this is again a very simple, empty file.
 
 67
-00:06:33,120 --> 00:06:39,760
- So each static means you can create the overlay as static or not static.
+00:04:24,980 --> 00:04:27,050
+So you have these three new elements.
 
 68
-00:06:39,760 --> 00:06:44,040
- So in this case I am setting it to not static, okay.
+00:04:27,050 --> 00:04:36,500
+You got a UI, RRO set name and is the name of the RRO, and then it's got a UI resource territory.
 
 69
-00:06:44,040 --> 00:06:51,800
- So when you set an overlay to static, that means it is enabled by default and it's actually
+00:04:36,800 --> 00:04:41,390
+That's a resource that it it's pointing to this folder and then you have the target.
 
 70
-00:06:51,800 --> 00:06:55,600
- mutable, not mutable, okay.
+00:04:41,780 --> 00:04:45,890
+So targeting is actually the applications which you are targeting.
 
 71
-00:06:55,600 --> 00:07:00,200
- So that means you cannot actually change that during the front time.
+00:04:46,070 --> 00:04:52,790
+So in my example, I'm only targeting Settings app, but you can target and number of applications.
 
 72
-00:07:00,200 --> 00:07:03,760
- So it's actually, you cannot enable or disable that.
+00:04:52,790 --> 00:04:56,570
+Yeah, so you just need to add it over here.
 
 73
-00:07:03,760 --> 00:07:12,800
- So in this case I am setting it to false so that you can change that, okay dynamically, okay.
+00:04:58,010 --> 00:05:07,370
+Like in case if you want to focus dialer app so you can just give it like this, like this or any any
 
 74
-00:07:12,800 --> 00:07:20,040
- Yeah, okay, then what else so then that's done.
+00:05:07,370 --> 00:05:09,850
+other app within the car, or you can just give it over here.
 
 75
-00:07:20,040 --> 00:07:27,480
- So we covered all the files within the sample RRO package, okay now let's go ahead and
+00:05:10,820 --> 00:05:11,150
+OK.
 
 76
-00:07:27,480 --> 00:07:33,640
- compile our package, compile our RRO package and install it into the emulator, okay.
+00:05:11,330 --> 00:05:15,110
+So in for this example, I'm just focusing the Settings app.
 
 77
-00:07:33,640 --> 00:07:50,200
- So let's close our emulator first and let me check where I am at the moment, okay.
+00:05:16,070 --> 00:05:18,980
+OK, but you can try it out with different apps.
 
 78
-00:07:50,200 --> 00:07:59,240
- So I am inside the sample RRO package and so I am just building it now, okay.
+00:05:19,220 --> 00:05:19,760
+Let's run.
 
 79
-00:07:59,240 --> 00:08:29,200
- So let's build, okay, so now the build is successful and I have the,
+00:05:20,810 --> 00:05:22,490
+OK, so that's about this one.
 
 80
-00:08:29,200 --> 00:08:30,720
- APK over here.
+00:05:23,030 --> 00:05:26,690
+And it also includes these Scotty White Generator Arrow set.
 
 81
-00:08:30,720 --> 00:08:38,080
- So I got a failure earlier, so that was actually due to some unnecessary space within
+00:05:27,680 --> 00:05:28,010
+OK.
 
 82
-00:08:38,080 --> 00:08:40,360
- the MK file.
+00:05:28,310 --> 00:05:31,170
+And then we have the Android Manifest Court example.
 
 83
-00:08:40,360 --> 00:08:46,360
- So just make sure that you don't have any unnecessary space within the MK file, okay.
+00:05:31,170 --> 00:05:31,520
+Fine.
 
 84
-00:08:46,360 --> 00:08:51,120
- So now the APK is actually generated here.
+00:05:32,000 --> 00:05:34,930
+So this is again pretty straightforward.
 
 85
-00:08:51,120 --> 00:08:59,560
- So now let's copy this path, because I need to first open the emulator, okay then let's
+00:05:34,940 --> 00:05:36,350
+Here you have the package name.
 
 86
-00:08:59,560 --> 00:09:13,920
- start my emulator, okay maybe, yeah this will do, okay.
+00:05:36,350 --> 00:05:45,170
+The RRO package name will be taken dynamically when you compile it, so you can just leave it as cities,
 
 87
-00:09:13,920 --> 00:09:36,500
- And let me open a different window, yeah, so here I will just install, okay, I have some
+00:05:45,170 --> 00:05:45,530
+actually.
 
 88
-00:09:36,500 --> 00:09:49,800
- path issues here, so where am I, so I have some alias.alias defined here, so don't get confused
+00:05:45,530 --> 00:05:53,450
+So it will be replaced dynamically during the brief time and the target packages as well will be dynamically,
 
 89
-00:09:49,800 --> 00:09:56,540
- with that, okay, so I have now installed it, okay.
+00:05:54,080 --> 00:05:56,960
+um, overwritten and during the time.
 
 90
-00:09:56,540 --> 00:10:04,160
- So to make it very clear, actually I have some alias defined here, I have a set of alias
+00:05:57,020 --> 00:05:57,410
+OK.
 
 91
-00:10:04,160 --> 00:10:11,720
- here with which I can have shortcuts, so that's why I'm using shortcuts all the time.
+00:05:57,890 --> 00:06:02,720
+So just leave these to other cities and then you have the priority.
 
 92
-00:10:11,720 --> 00:10:23,440
- So now let's, now the APK is already installed, so now let's get into ADB shell and here
+00:06:02,720 --> 00:06:07,430
+So Priority 10 means it's actually off.
 
 93
-00:10:23,440 --> 00:10:51,840
- let's run overlay, see the overlay list, you saw current.
+00:06:08,690 --> 00:06:16,280
+So, so to explain that better and just imagine that you have multiple overlays, multiple static overlays.
 
 94
-00:10:51,840 --> 00:11:02,720
- So here our package was settings, so you can see here our overlay is there and at the moment
+00:06:16,970 --> 00:06:17,330
+OK.
 
 95
-00:11:02,720 --> 00:11:14,280
- it's actually disabled, so let's go and enable it, so to enable you have to, you have
+00:06:18,080 --> 00:06:25,820
+So when you have multiple static overlays, a higher number means you have a higher precedence and over
 
 96
-00:11:14,280 --> 00:11:25,960
- to give a command, overlay, enable user, current, and then the package name, so this package
+00:06:25,820 --> 00:06:27,740
+no means you have a lower precedence.
 
 97
-00:11:25,960 --> 00:11:34,280
- basically, so let's copy this, let's paste it over here, so I have now that enabled, so
+00:06:28,160 --> 00:06:28,460
+OK.
 
 98
-00:11:34,280 --> 00:11:45,400
- let's come back, so I can see right here, okay, so now let's, let me keep it like this,
+00:06:29,030 --> 00:06:29,840
+As simple as that?
 
 99
-00:11:45,400 --> 00:12:04,360
- if you want to disable, so if you want to disable, just disable it like this, let's go, okay.
+00:06:30,440 --> 00:06:30,770
+OK.
 
 100
-00:12:04,360 --> 00:12:13,400
- So I hope you understood something from this video, and so just to quickly summarize, so
+00:06:30,980 --> 00:06:32,330
+And then you have this static.
 
 101
-00:12:13,400 --> 00:12:20,840
- we created this small package where you have resources, you have colors, styles, and then
+00:06:32,870 --> 00:06:35,810
+So each static means you can set.
 
 102
-00:12:20,840 --> 00:12:30,680
- you have an android.mk, and an android manifest, so here you have just defined a small runtime
+00:06:35,810 --> 00:06:38,930
+You can create or less static or not static.
 
 103
-00:12:30,680 --> 00:12:37,120
- overlay, which is actually overlaying the car revival, and this, back, this will be enabled
+00:06:39,560 --> 00:06:42,530
+So in this case, I am setting it to not static.
 
 104
-00:12:37,120 --> 00:12:49,000
- only for the packages specified here, as well as the one which uses the car UI lib, so it's
+00:06:43,280 --> 00:06:43,670
+OK.
 
 105
-00:12:49,000 --> 00:12:55,520
- actually both, so you have to specify it here, there is a first row, so if you specify it
+00:06:43,850 --> 00:06:47,030
+So then you set an overlay to static.
 
 106
-00:12:55,520 --> 00:13:03,920
- here, it has to be using car UI lib, okay, so if you specify a package which is actually not
+00:06:47,120 --> 00:06:49,460
+That means that it is enabled by default.
 
 107
-00:13:03,920 --> 00:13:11,920
- using car UI lib, then this won't work, okay, so basically this is overlaying the resources
+00:06:50,520 --> 00:06:54,360
+And it's actually mute, not me.
 
 108
-00:13:11,920 --> 00:13:18,800
- from the car UI lib, okay, so I hope that makes sense, and I hope you learned something out of
+00:06:54,810 --> 00:06:59,820
+OK, so that means you cannot actually change that during front time.
 
 109
-00:13:18,800 --> 00:13:26,160
- it, and I have attached all these code with this lecture, please take it and make your own
+00:07:00,000 --> 00:07:02,580
+So it is actually you cannot enable or disable that.
 
 110
-00:13:26,160 --> 00:13:34,080
- modifications, make some better styling, and enable it, and in case, if you have any trouble
+00:07:03,510 --> 00:07:08,740
+So in this case, I'm sitting at two phones so that you can change that, OK?
 
 111
-00:13:34,080 --> 00:13:40,800
- in setting it up, please let me know, I can help, okay, that's it, thank you for your time.
+00:07:09,390 --> 00:07:10,050
+And dynamically.
+
+112
+00:07:11,190 --> 00:07:11,520
+OK.
+
+113
+00:07:13,080 --> 00:07:14,670
+Uh, yeah.
+
+114
+00:07:14,790 --> 00:07:16,800
+OK, then what else?
+
+115
+00:07:16,800 --> 00:07:18,480
+So then that's done.
+
+116
+00:07:19,360 --> 00:07:24,540
+Uh, so we covered all the files within the sample RRO package.
+
+117
+00:07:25,830 --> 00:07:32,460
+OK, now let's go ahead and compile our package, compile our RRO package and install it into the emulator.
+
+118
+00:07:32,790 --> 00:07:35,220
+OK, so let's.
+
+119
+00:07:38,190 --> 00:07:44,640
+Close over regulator first and let me check where I am at the moment.
+
+120
+00:07:49,720 --> 00:07:57,790
+Okay, so I am inside the same bilateral package, and so I am just building it now, um.
+
+121
+00:07:58,300 --> 00:08:00,190
+Okay, so let's build.
+
+122
+00:08:24,570 --> 00:08:30,150
+OK, so now the bill is successful and that I have the EPA over here.
+
+123
+00:08:30,480 --> 00:08:38,660
+So I got a failure earlier, so that was actually due to some, some unnecessary space within them gave
+
+124
+00:08:38,670 --> 00:08:38,940
+way.
+
+125
+00:08:40,140 --> 00:08:44,040
+So just make sure that you don't have any unnecessary space between them.
+
+126
+00:08:44,050 --> 00:08:44,580
+Okay, fine.
+
+127
+00:08:45,390 --> 00:08:49,470
+OK, so now they because actually generated here.
+
+128
+00:08:50,850 --> 00:08:56,970
+So now let's copy this part because I need to first open them later.
+
+129
+00:08:58,040 --> 00:08:58,140
+Yeah.
+
+130
+00:08:58,200 --> 00:09:02,430
+Then let's start my emulator.
+
+131
+00:09:05,410 --> 00:09:06,570
+Okay, maybe.
+
+132
+00:09:09,730 --> 00:09:16,870
+Yeah, this will do okay and let you open a different window.
+
+133
+00:09:18,690 --> 00:09:20,920
+Mm yeah.
+
+134
+00:09:22,030 --> 00:09:24,460
+So here I'm just in St...
+
+135
+00:09:35,080 --> 00:09:40,400
+OK, I have some bank issues, you know, so that I may.
+
+136
+00:09:43,780 --> 00:09:48,190
+Yeah, so I have some alias Ali alias defined here.
+
+137
+00:09:48,580 --> 00:09:50,200
+So don't get confused with that.
+
+138
+00:09:52,470 --> 00:09:54,240
+OK, so I have now installed it.
+
+139
+00:09:55,080 --> 00:09:55,440
+OK.
+
+140
+00:09:56,310 --> 00:10:02,740
+So to make it pretty clear, actually, I have some alias defined here.
+
+141
+00:10:02,760 --> 00:10:07,470
+I have a set of YASYA with which I can have shortcuts.
+
+142
+00:10:07,800 --> 00:10:10,260
+So that's why I'm using shortcuts all the time.
+
+143
+00:10:11,430 --> 00:10:14,070
+So now let's uh.
+
+144
+00:10:14,340 --> 00:10:15,960
+Now the speaker is already installed.
+
+145
+00:10:16,500 --> 00:10:17,720
+So now let's do.
+
+146
+00:10:17,730 --> 00:10:27,690
+Let's get into ADB Shell and here let's run the overlay.
+
+147
+00:10:41,070 --> 00:10:42,750
+Seem to be overly
+
+148
+00:10:45,330 --> 00:10:50,240
+lest you saw cotton.
+
+149
+00:10:51,570 --> 00:11:01,110
+So here are our package war settings, so you can see here are our overlays there.
+
+150
+00:11:01,650 --> 00:11:04,530
+And at the moment, it's actually disabled.
+
+151
+00:11:05,310 --> 00:11:06,960
+So let's go ahead and enable it.
+
+152
+00:11:07,380 --> 00:11:24,330
+So to enable, you have to um, you have to give a command overlay, enable you so calm and then the
+
+153
+00:11:24,330 --> 00:11:25,040
+package name.
+
+154
+00:11:25,050 --> 00:11:26,300
+So this package was hidden.
+
+155
+00:11:26,310 --> 00:11:30,660
+So this copy, this is pasted over here.
+
+156
+00:11:31,920 --> 00:11:34,050
+So I have no doubt enabled it.
+
+157
+00:11:34,050 --> 00:11:36,180
+So let's come back so I can see that here.
+
+158
+00:11:37,500 --> 00:11:37,860
+OK.
+
+159
+00:11:38,190 --> 00:11:42,000
+So now let's let me keep it like this.
+
+160
+00:11:45,190 --> 00:11:47,680
+So if you want to disable.
+
+161
+00:11:53,320 --> 00:11:56,560
+So if you want to disable just
+
+162
+00:11:59,200 --> 00:12:01,660
+disable it like this and it's gone.
+
+163
+00:12:03,310 --> 00:12:08,740
+OK, so I hope you understood something from this video.
+
+164
+00:12:09,820 --> 00:12:17,380
+And so just to quickly summarize, so we created this smart package where you have resources, you have
+
+165
+00:12:17,380 --> 00:12:24,660
+colors, styles and then you have an android or time game and an Android manifest.
+
+166
+00:12:25,480 --> 00:12:34,060
+So here you have just defined a small runtime overlay, which which is actually overlaying the audio
+
+167
+00:12:34,060 --> 00:12:36,220
+clip and this back.
+
+168
+00:12:36,220 --> 00:12:46,420
+This will be enabled only for the packages specified here, as well as the one which uses the Car UI
+
+169
+00:12:46,630 --> 00:12:47,040
+leap.
+
+170
+00:12:48,010 --> 00:12:49,600
+So it's actually both.
+
+171
+00:12:50,380 --> 00:12:53,020
+So you have to specify here that is, of course, true.
+
+172
+00:12:53,710 --> 00:12:57,790
+So if you specified it here, it has to be.
+
+173
+00:12:57,790 --> 00:12:59,230
+You seen Corey Wiley.
+
+174
+00:12:59,800 --> 00:13:00,110
+OK.
+
+175
+00:13:00,340 --> 00:13:06,340
+So if you specify a package which is actually not using Ailbhe, then this won't work.
+
+176
+00:13:06,940 --> 00:13:07,400
+OK.
+
+177
+00:13:08,530 --> 00:13:09,760
+Um, OK.
+
+178
+00:13:09,760 --> 00:13:12,550
+So basically, this is overlaying the resources from the car.
+
+179
+00:13:13,720 --> 00:13:13,990
+OK.
+
+180
+00:13:14,830 --> 00:13:19,000
+So I hope that makes sense, and I hope you learn something out of it.
+
+181
+00:13:19,240 --> 00:13:23,710
+And I have attached all these code with this letter.
+
+182
+00:13:24,040 --> 00:13:31,190
+Please take it and make your own modifications, make some better styling and enable it.
+
+183
+00:13:31,210 --> 00:13:37,120
+And in case if you have any trouble in setting it up, please let me know I can help.
+
+184
+00:13:38,110 --> 00:13:39,700
+Uh, okay, that's it.
+
+185
+00:13:39,850 --> 00:13:40,810
+Thank you for your time.
 
