@@ -1,0 +1,236 @@
+1
+00:00:04,990 --> 00:00:07,080
+So ETB devices.
+
+2
+00:00:07,090 --> 00:00:11,200
+This will show the list of devices attached to the machine.
+
+3
+00:00:11,530 --> 00:00:15,010
+So in this case I have only the emulator running here.
+
+4
+00:00:15,010 --> 00:00:21,430
+So if you have multiple emulators or multiple devices attached to your PC, it will be displayed here.
+
+5
+00:00:21,440 --> 00:00:29,140
+So if you want to restart ADB as a root, then you could use this command ADB root, so it's already
+
+6
+00:00:29,140 --> 00:00:30,160
+running as a root.
+
+7
+00:00:30,490 --> 00:00:34,600
+And then if you want to start the server, you can use this command.
+
+8
+00:00:34,600 --> 00:00:35,980
+So it's already running.
+
+9
+00:00:35,980 --> 00:00:37,030
+So let's stop it.
+
+10
+00:00:37,050 --> 00:00:39,190
+It stops our server.
+
+11
+00:00:39,190 --> 00:00:44,830
+So this will kill the server and now ADB devices, they are not running.
+
+12
+00:00:44,830 --> 00:00:46,660
+Now it's starting at this one.
+
+13
+00:00:46,660 --> 00:00:48,430
+So it has restarted it again.
+
+14
+00:00:48,790 --> 00:00:50,140
+So let's kill it once again.
+
+15
+00:00:50,140 --> 00:00:54,220
+So when you type ADB devices again, it's basically restarting it.
+
+16
+00:00:54,520 --> 00:01:01,810
+So the kill server is used to kill the ADB server and ADB start server is used to start it.
+
+17
+00:01:02,080 --> 00:01:03,670
+So now it has a starter.
+
+18
+00:01:04,090 --> 00:01:09,790
+Now if you want to reboot the emulator or the device, you could use ADB Reboot Command.
+
+19
+00:01:09,790 --> 00:01:14,110
+So this will reboot the emulator to take seconds.
+
+20
+00:01:15,730 --> 00:01:15,970
+Okay.
+
+21
+00:01:16,000 --> 00:01:18,340
+So now the emulator is restarting.
+
+22
+00:01:21,910 --> 00:01:23,910
+So now it is up and running.
+
+23
+00:01:23,920 --> 00:01:26,460
+Now ADB devices list.
+
+24
+00:01:26,470 --> 00:01:31,000
+This will show some more information about the product and the model.
+
+25
+00:01:31,000 --> 00:01:35,080
+So if you simply type device, it will show this information.
+
+26
+00:01:35,080 --> 00:01:38,500
+So if you put an L, you'll get all this information.
+
+27
+00:01:38,500 --> 00:01:45,070
+Then if you want to get into the shell, ADB shell, so this will get into the shell of this emulator.
+
+28
+00:01:45,370 --> 00:01:49,030
+And from here you could type it command, for example.
+
+29
+00:01:49,150 --> 00:01:53,710
+So this will give you the ID of the UID of the current user.
+
+30
+00:01:53,710 --> 00:01:59,080
+And if you want the superuser rights just type issue, then you become the super user.
+
+31
+00:01:59,080 --> 00:02:02,380
+And from here you can do many other operations from here.
+
+32
+00:02:02,380 --> 00:02:10,030
+For example, the SES command this okay so this will dump the system services details and once you dump
+
+33
+00:02:10,030 --> 00:02:14,980
+it then you can extract it out of the emulator for your analysis.
+
+34
+00:02:15,280 --> 00:02:21,670
+So similarly, there are a lot of other commands which you could run from the shell and to exit from
+
+35
+00:02:21,670 --> 00:02:23,560
+the shell you can just type exit.
+
+36
+00:02:23,980 --> 00:02:27,670
+And if you want to explore more, just try using the help.
+
+37
+00:02:27,670 --> 00:02:30,670
+So this will give you the list of commands supported.
+
+38
+00:02:32,010 --> 00:02:34,950
+So in this case, I have connected two devices.
+
+39
+00:02:34,950 --> 00:02:39,570
+So one is a mobile phone and another is this emulator.
+
+40
+00:02:39,930 --> 00:02:42,540
+So I have a device and an emulator connected.
+
+41
+00:02:42,540 --> 00:02:48,960
+So in this case, if you type ADB Shell, then it says that more than one device or emulator.
+
+42
+00:02:49,230 --> 00:02:52,320
+So how can you connect to the emulator now?
+
+43
+00:02:52,320 --> 00:02:58,290
+So if you want to connect to emulator, what you need to do is ADB shell, hyphen e shell.
+
+44
+00:02:58,440 --> 00:03:00,530
+So this will connect to the emulator.
+
+45
+00:03:00,550 --> 00:03:06,390
+It just need to pass hyphen e stands for emulator and if you need to connect to the device, you can
+
+46
+00:03:06,750 --> 00:03:08,880
+you can simply give the for device.
+
+47
+00:03:08,880 --> 00:03:13,020
+Then you kind of get connected to the phone or any other device which you have connected to.
+
+48
+00:03:13,320 --> 00:03:20,340
+And in case if you have multiple devices or multiple emulators, then how would I connect to the shell
+
+49
+00:03:20,340 --> 00:03:22,280
+or execute some other ADB command?
+
+50
+00:03:22,290 --> 00:03:27,240
+So in that case, you could use the serial number like here it would be devices.
+
+51
+00:03:27,240 --> 00:03:28,800
+So here you get the serial number.
+
+52
+00:03:28,800 --> 00:03:30,090
+So this is the serial number.
+
+53
+00:03:30,390 --> 00:03:38,520
+So you could say ADB, shell, iPhone SE and here you could simply copy and paste this serial number.
+
+54
+00:03:38,520 --> 00:03:43,200
+Then it will connect to the device so you can pass the serial number directly here.
+
+55
+00:03:43,200 --> 00:03:44,790
+Hyphen is the serial number.
+
+56
+00:03:45,490 --> 00:03:51,120
+If I need to connect to the emulator, then I could simply pass the serial number from here.
+
+57
+00:03:51,120 --> 00:03:52,380
+This is the serial number.
+
+58
+00:03:52,680 --> 00:03:54,720
+So now I'm connected to emulator.
+
+59
+00:03:54,720 --> 00:03:59,730
+So this is pretty handy when you work a lot with many devices.
+
