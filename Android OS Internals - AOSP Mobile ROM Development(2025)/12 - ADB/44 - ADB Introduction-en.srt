@@ -1,0 +1,144 @@
+1
+00:00:05,180 --> 00:00:13,100
+ADB or Android Debug Bridge is a command line tool that lets you communicate with an Android device.
+
+2
+00:00:13,100 --> 00:00:19,880
+So in fact, ADB is the most popular command line tool which we use when working with Android.
+
+3
+00:00:19,910 --> 00:00:26,780
+The ADB command facilitates a variety of device actions such as installing and debugging apps, and
+
+4
+00:00:26,780 --> 00:00:33,540
+it also provides access to a unique shell that you can use to run a variety of commands on a device.
+
+5
+00:00:33,560 --> 00:00:38,060
+It's a client server program that mainly includes three components.
+
+6
+00:00:38,060 --> 00:00:41,020
+So it has a client which sends the command.
+
+7
+00:00:41,030 --> 00:00:44,060
+The client runs on your development machine.
+
+8
+00:00:44,060 --> 00:00:51,680
+You can invoke a client from a command line terminal by issuing an ADB command, so you can invoke the
+
+9
+00:00:51,680 --> 00:00:54,930
+client by using this ADB command.
+
+10
+00:00:54,950 --> 00:01:01,580
+Once you have installed ADB in your machine and configured the path correctly for the command line terminal,
+
+11
+00:01:01,580 --> 00:01:04,130
+then you can use the ADB directly like this.
+
+12
+00:01:04,580 --> 00:01:08,210
+So the ADB command will be available in the terminal.
+
+13
+00:01:08,240 --> 00:01:11,660
+The second component is a daimon ADB.
+
+14
+00:01:12,110 --> 00:01:13,640
+So ADB daimon.
+
+15
+00:01:13,640 --> 00:01:16,190
+This runs commands on a device.
+
+16
+00:01:16,190 --> 00:01:20,330
+Daimon runs as a background process on each device.
+
+17
+00:01:20,420 --> 00:01:27,080
+For example, I have the emulator running here and in the command line I get into ADB Shell.
+
+18
+00:01:27,080 --> 00:01:31,310
+So I'm basically getting into the shell of this emulator.
+
+19
+00:01:31,550 --> 00:01:35,580
+And within the emulator I can run all the shell commands.
+
+20
+00:01:35,600 --> 00:01:41,450
+We can use the PS command to check whether the ADB is running in the emulator.
+
+21
+00:01:41,450 --> 00:01:48,590
+So you can just simply grep by ADB, the ADB layman, and then you can see that it's running or five
+
+22
+00:01:48,590 --> 00:01:48,970
+five.
+
+23
+00:01:48,980 --> 00:01:50,660
+That's the process ID.
+
+24
+00:01:50,690 --> 00:01:57,290
+The third component is a server which manages communication between the client and Daemon.
+
+25
+00:01:57,320 --> 00:02:02,060
+The server runs as a background process on your development mission.
+
+26
+00:02:02,090 --> 00:02:06,500
+ADB is included in the Android SDK Platform Tools package.
+
+27
+00:02:06,500 --> 00:02:13,850
+You can download this package with the SDK manager, which will install it under the SDK platform tools,
+
+28
+00:02:13,850 --> 00:02:16,700
+or you can even download it with aosp.
+
+29
+00:02:16,700 --> 00:02:22,670
+So if you have aosp already downloaded after building, it will be available under the out folder so
+
+30
+00:02:22,670 --> 00:02:29,930
+you can find ADB command or the ADB executable under Android SDK SDK platform tools.
+
+31
+00:02:29,930 --> 00:02:36,290
+So once you download the SDK, it's already there and you could just set this part in the command line
+
+32
+00:02:36,290 --> 00:02:39,170
+and then you can directly use ADB.
+
+33
+00:02:39,620 --> 00:02:48,110
+And in case if you have already downloaded the AOSP, then you have it under out host Linux x86 and
+
+34
+00:02:48,110 --> 00:02:51,830
+the build and then under Bing you get the ADB.
+
+35
+00:02:52,190 --> 00:02:54,440
+So you can use either of these.
+
+36
+00:02:54,440 --> 00:02:59,390
+If you have the SDK, you can use that or with Aosp, you can make use of this one.
+
