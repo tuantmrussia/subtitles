@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:02,120
+ Hello and welcome back.
+
+2
+00:00:02,120 --> 00:00:07,600
+ In the last lecture, we saw how MCB tools can be used to perform actions on internal
+
+3
+00:00:07,600 --> 00:00:10,080
+ applications and API.
+
+4
+00:00:10,080 --> 00:00:14,120
+ In this lecture, we will add a resource to our MCP server.
+
+5
+00:00:14,120 --> 00:00:21,280
+ MCP resource is a static data source that the MCP server can expose to the client and
+
+6
+00:00:21,280 --> 00:00:26,160
+ it can be used to provide additional context to the LLM model.
+
+7
+00:00:26,160 --> 00:00:31,280
+ A typical example for MCP resource is a databases schema.
+
+8
+00:00:31,280 --> 00:00:35,920
+ The MCP server can expose the databases schema as a resource.
+
+9
+00:00:35,920 --> 00:00:41,920
+ The user can load the databases schema because it's provided or exposed from the MCP server
+
+10
+00:00:41,920 --> 00:00:47,600
+ and then immediately the user is able to ask the model to write SQL queries based on
+
+11
+00:00:47,600 --> 00:00:50,240
+ the provided databases schema.
+
+12
+00:00:50,240 --> 00:00:56,080
+ At the code level, adding a resource to the MCP server is very simple and straightforward.
+
+13
+00:00:56,080 --> 00:00:59,280
+ It should look similar to adding an MCP tool.
+
+14
+00:00:59,280 --> 00:01:06,480
+ So we create a Python method and we add a decorator to indicate that this is an MCP resource.
+
+15
+00:01:06,480 --> 00:01:13,040
+ We define a resource URI to the decorator and this URI is used by the MCP client to access
+
+16
+00:01:13,040 --> 00:01:14,360
+ the resource.
+
+17
+00:01:14,360 --> 00:01:17,320
+ The implementation is literally straightforward.
+
+18
+00:01:17,320 --> 00:01:22,800
+ We just literally read a file or the resource that we want to expose and then we return
+
+19
+00:01:22,800 --> 00:01:27,080
+ that content or that file to the MCP client.
+
+20
+00:01:27,080 --> 00:01:32,680
+ So now we are back to cloud desktop and the available MCP resources can be found under
+
+21
+00:01:32,680 --> 00:01:37,960
+ the plus sign and then we add from Contentful MCP server and then I'm going to pick up
+
+22
+00:01:37,960 --> 00:01:39,760
+ the databases schema.
+
+23
+00:01:39,760 --> 00:01:45,160
+ Now at this point the MCP client has loaded the databases schema from the MCP server so
+
+24
+00:01:45,160 --> 00:01:50,560
+ we should be able to ask questions like can you explain the databases schema in shortest
+
+25
+00:01:50,560 --> 00:02:09,680
+ statement.
+
+26
+00:02:09,680 --> 00:02:14,360
+ And the model started to load and read the databases schema and try to break it down for
+
+27
+00:02:14,360 --> 00:02:15,360
+ me.
+
+28
+00:02:15,360 --> 00:02:19,000
+ Okay, I hope that this lecture has been informative for you and I will see you in the next
+
+29
+00:02:19,000 --> 00:02:20,000
+ one.
+
+30
+00:02:20,000 --> 00:02:30,000
+ [BLANK_AUDIO]
+
