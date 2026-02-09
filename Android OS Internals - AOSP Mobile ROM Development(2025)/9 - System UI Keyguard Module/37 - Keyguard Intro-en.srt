@@ -1,0 +1,116 @@
+1
+00:00:01,880 --> 00:00:08,750
+Égard, or the lockscreen here is the screen that the user sees when the power button is placed to unlock
+
+2
+00:00:08,750 --> 00:00:09,200
+the phone.
+
+3
+00:00:10,070 --> 00:00:16,070
+So in this case, the user has enabled their security and when the user presses the power button, the
+
+4
+00:00:16,070 --> 00:00:17,360
+screen is switched off.
+
+5
+00:00:17,630 --> 00:00:22,580
+So when the user pressed, the power button again shows this particular window.
+
+6
+00:00:22,910 --> 00:00:29,900
+And when the user swipes up, it shows this pattern and this pattern is actually implemented by the
+
+7
+00:00:29,900 --> 00:00:31,820
+key guard on the lock screen.
+
+8
+00:00:32,060 --> 00:00:37,160
+So now the user can give the button and it allows to log in.
+
+9
+00:00:37,340 --> 00:00:40,910
+So this security is actually implemented within the system.
+
+10
+00:00:40,910 --> 00:00:41,060
+Your.
+
+11
+00:00:41,780 --> 00:00:42,560
+He got murdered.
+
+12
+00:00:43,040 --> 00:00:48,080
+So let's look in detail how this is implemented and how the key card is loaded.
+
+13
+00:00:58,560 --> 00:01:00,570
+Let's have a look at the logs first.
+
+14
+00:01:00,780 --> 00:01:04,810
+So in them letter, I will power the emulator off.
+
+15
+00:01:05,130 --> 00:01:11,430
+So when I power off the emulator and see that the System UI key guard is handling that case, see the
+
+16
+00:01:11,430 --> 00:01:14,970
+key guard view mediator ease the class which handles that.
+
+17
+00:01:15,040 --> 00:01:16,200
+Now let's clear it off.
+
+18
+00:01:16,320 --> 00:01:22,740
+And then when I power on again backing a new mediator class which is coming under control, Android
+
+19
+00:01:22,980 --> 00:01:25,260
+System UI is handling it.
+
+20
+00:01:25,710 --> 00:01:27,220
+So now let me log in.
+
+21
+00:01:27,370 --> 00:01:32,130
+In this case, the user has set the pattern match as the security mechanism.
+
+22
+00:01:32,280 --> 00:01:33,750
+So let me log in now.
+
+23
+00:01:36,220 --> 00:01:40,540
+So I am now in the lounge, a screen that can be seen from the logs.
+
+24
+00:01:40,630 --> 00:01:47,260
+The keynote new mediator on the system looking at classes are responsible to handle this particular
+
+25
+00:01:47,260 --> 00:01:47,780
+use case.
+
+26
+00:01:47,800 --> 00:01:53,770
+And these he got glasses, which is responsible to show this pattern match screen, even if the user
+
+27
+00:01:53,770 --> 00:01:57,640
+has selected PIN code as the security mechanism.
+
+28
+00:01:57,790 --> 00:02:01,480
+And then it's again the same key guard versus which handles that.
+
+29
+00:02:01,690 --> 00:02:04,150
+So we will look deeper into that shortly.
+
