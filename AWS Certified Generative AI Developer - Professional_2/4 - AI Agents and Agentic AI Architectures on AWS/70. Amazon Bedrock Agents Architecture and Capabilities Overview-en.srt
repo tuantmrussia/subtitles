@@ -1,0 +1,600 @@
+1
+00:00:00,000 --> 00:00:05,480
+ In this section we are going to look at AWS Agiantic AI capabilities.
+
+2
+00:00:05,480 --> 00:00:11,840
+ So, one of the core services from AWS on Agiantic AI is Amazon Bedrock agents.
+
+3
+00:00:11,840 --> 00:00:16,120
+ Now, before we deep dive into what are Amazon Bedrock agents,
+
+4
+00:00:16,120 --> 00:00:20,360
+ let's take a look at a formal definition on Bedrock agents.
+
+5
+00:00:20,360 --> 00:00:26,080
+ So, AWS says Amazon Bedrock agents is a fully managed service.
+
+6
+00:00:26,080 --> 00:00:31,840
+ So, what that means is AWS will take care of hosting monitoring, scaling, patching,
+
+7
+00:00:31,840 --> 00:00:35,440
+ and all the other tasks related to agents.
+
+8
+00:00:35,440 --> 00:00:45,000
+ So, Amazon Bedrock agents enables generative AI applications to automate multi-step tasks
+
+9
+00:00:45,000 --> 00:00:50,720
+ by seamlessly connecting with company systems, APIs and data sources.
+
+10
+00:00:50,720 --> 00:00:57,360
+ And, if you look at what we had discussed in the previous section, we had talked about how agents
+
+11
+00:00:57,360 --> 00:01:05,280
+ can autonomously execute multi-step tasks by connecting with external data sources,
+
+12
+00:01:05,280 --> 00:01:08,640
+ internal data sources, through the tools.
+
+13
+00:01:08,640 --> 00:01:14,840
+ So, that's what AWS is highlighting on what Amazon Bedrock agents can do.
+
+14
+00:01:14,840 --> 00:01:20,040
+ Now, let's go and take a look at the core components of Amazon Bedrock agents.
+
+15
+00:01:20,040 --> 00:01:27,280
+ So, we have the agent, and then let's start with the most important planning and reasoning
+
+16
+00:01:27,280 --> 00:01:29,560
+ ability of the agents.
+
+17
+00:01:29,560 --> 00:01:37,160
+ So, Amazon Bedrock agent supports by default reasoning and action style of planning along
+
+18
+00:01:37,160 --> 00:01:39,560
+ with chain of thought reasoning.
+
+19
+00:01:39,560 --> 00:01:43,320
+ So, in the previous section, we had already discussed about chain of thought reasoning
+
+20
+00:01:43,320 --> 00:01:46,600
+ and reason and actual style of planning.
+
+21
+00:01:46,600 --> 00:01:51,240
+ So, if you're not gone through that lecture, please go through that lecture for basics in
+
+22
+00:01:51,240 --> 00:01:53,240
+ the previous section.
+
+23
+00:01:53,240 --> 00:01:59,160
+ Now, let me go ahead and deep dive a little more into how Amazon Bedrock agents actually
+
+24
+00:01:59,160 --> 00:02:03,640
+ implements reasoning and action style of planning.
+
+25
+00:02:03,640 --> 00:02:08,880
+ So, in one of the previous sections, we had looked at this use case when we were doing
+
+26
+00:02:08,880 --> 00:02:11,480
+ the AI agent planning demo.
+
+27
+00:02:11,480 --> 00:02:17,200
+ So, we said the user is going on a 5-day vacation and he sent this request to the microcool
+
+28
+00:02:17,200 --> 00:02:22,600
+ AI agent and then this microcool agent has two capabilities to check the leave balance of
+
+29
+00:02:22,600 --> 00:02:25,600
+ the employee and then book a hotel.
+
+30
+00:02:25,600 --> 00:02:31,440
+ And then we had posed this question where we said, okay, book a hotel room for me with
+
+31
+00:02:31,440 --> 00:02:37,400
+ employee ID this and if the leave balance is more than three days, then book a hotel.
+
+32
+00:02:37,400 --> 00:02:44,200
+ Now, if you remember, there were three key actions that the AI agent had to take.
+
+33
+00:02:44,200 --> 00:02:50,160
+ So, check my leave balance from my HR system table, then make a determination if the
+
+34
+00:02:50,160 --> 00:02:55,080
+ leave balance is less or more than three days and then third, if the leave balance is
+
+35
+00:02:55,080 --> 00:02:59,160
+ less than three days, then tell me that the hotel room cannot be booked and it's more
+
+36
+00:02:59,160 --> 00:03:02,040
+ than three days, then book the hotel room.
+
+37
+00:03:02,040 --> 00:03:08,840
+ Okay, with this example, now let's see, how this will be implemented in Amazon bedrock agents.
+
+38
+00:03:08,840 --> 00:03:13,240
+ So, here we are looking at the react orchestration style.
+
+39
+00:03:13,240 --> 00:03:18,400
+ So, sometimes it's called as react orchestration style or it can also be called as react
+
+40
+00:03:18,400 --> 00:03:19,400
+ prompting style.
+
+41
+00:03:19,400 --> 00:03:23,280
+ So, those are some of the keywords that we will often hear.
+
+42
+00:03:23,280 --> 00:03:27,880
+ Now we are the Amazon bedrock agents, so we have something known as orchestrator.
+
+43
+00:03:27,880 --> 00:03:34,280
+ So, you can think of orchestrator as some internal code that AWS has written for the purpose
+
+44
+00:03:34,280 --> 00:03:35,280
+ of orchestration.
+
+45
+00:03:35,280 --> 00:03:41,440
+ So, either you can use the default orchestrator that AWS has, but it also allows you to
+
+46
+00:03:41,440 --> 00:03:47,200
+ write the custom orchestrator in AWS Lambda function if required.
+
+47
+00:03:47,200 --> 00:03:52,040
+ Now, let's see what this orchestrator does and how does it interact with the large language
+
+48
+00:03:52,040 --> 00:03:54,640
+ model which is driving the agent.
+
+49
+00:03:54,640 --> 00:04:01,000
+ Okay, so the first thing this orchestrator will do is it will send the user request.
+
+50
+00:04:01,000 --> 00:04:05,800
+ So, as we saw in the previous example, the user wanted to book a hotel room based on the
+
+51
+00:04:05,800 --> 00:04:06,960
+ number of leaves.
+
+52
+00:04:06,960 --> 00:04:12,960
+ So, what this orchestrator will do is it will send the user request and all the tools
+
+53
+00:04:12,960 --> 00:04:13,960
+ it has.
+
+54
+00:04:13,960 --> 00:04:18,560
+ So, maybe it has a tool to check the leave balance from HR system, maybe it has a tool
+
+55
+00:04:18,560 --> 00:04:24,960
+ to check, whether maybe it has a tool which makes a booking reservation in a hotel.
+
+56
+00:04:24,960 --> 00:04:31,320
+ So, it will send the user request plus tools to this LLM that is driving the agent and
+
+57
+00:04:31,320 --> 00:04:37,080
+ then the LLM is going to analyze and then LLM is going to respond with what is the action
+
+58
+00:04:37,080 --> 00:04:39,200
+ that needs to be taken next.
+
+59
+00:04:39,200 --> 00:04:44,240
+ So, what will happen is like in our case, the first thing it's going to do is it's going
+
+60
+00:04:44,240 --> 00:04:50,080
+ to make a call to the HR backend system for leave balance.
+
+61
+00:04:50,080 --> 00:04:56,800
+ Now, let's say it has got the leave balance which says the your leave balance is 10 days.
+
+62
+00:04:56,800 --> 00:05:04,320
+ Next, this orchestrator is going to send the user request, the tools and the observation
+
+63
+00:05:04,320 --> 00:05:10,320
+ that it got from this step which is what is my leave balance.
+
+64
+00:05:10,320 --> 00:05:16,120
+ So, then it's going to say okay the leave balance of the employees is 10 days and then
+
+65
+00:05:16,120 --> 00:05:21,800
+ the LLM is going to provide it what is the next action it needs to take.
+
+66
+00:05:21,800 --> 00:05:25,960
+ And in this case, since the leave balance is more than 3 days, so it's going to tell it
+
+67
+00:05:25,960 --> 00:05:33,800
+ go ahead and make a call to the hotel booking API and book the hotel.
+
+68
+00:05:33,800 --> 00:05:39,360
+ And then the orchestrator does that and once it gets the observation from the hotel booking
+
+69
+00:05:39,360 --> 00:05:46,800
+ API, it's going to send this request, the tools it has and the previous and the new observation
+
+70
+00:05:46,800 --> 00:05:52,800
+ to the agent and then agent is going to come back with its recommendation.
+
+71
+00:05:52,800 --> 00:05:56,240
+ And in this case, it's going to be the final result.
+
+72
+00:05:56,240 --> 00:06:02,240
+ And as we had seen in the demo in the previous section that it will come back with the booking
+
+73
+00:06:02,240 --> 00:06:03,240
+ ID.
+
+74
+00:06:03,240 --> 00:06:10,360
+ So that is how the reasoning and action orchestration style works in Amazon bedrock agents.
+
+75
+00:06:10,360 --> 00:06:16,240
+ Now if you see the react, so it's sometimes called as orchestrator style or prompting style,
+
+76
+00:06:16,240 --> 00:06:23,240
+ it defines the plan and then modifies as we go but it is sequential in nature.
+
+77
+00:06:23,240 --> 00:06:28,200
+ So now hopefully you understood that though it is dynamic, so let's say in this section
+
+78
+00:06:28,200 --> 00:06:32,400
+ it had said leave days is only two, so it would have taken a different action.
+
+79
+00:06:32,400 --> 00:06:35,820
+ But if the leave number of leave days is more than three, then it will take a different
+
+80
+00:06:35,820 --> 00:06:36,820
+ action.
+
+81
+00:06:36,820 --> 00:06:43,040
+ So though it is dynamic in nature, but it is still sequential, okay.
+
+82
+00:06:43,040 --> 00:06:47,800
+ The second planning style that Amazon bedrock agent supports is custom.
+
+83
+00:06:47,800 --> 00:06:53,080
+ So what custom means is that you can write your own orchestration or prompting style.
+
+84
+00:06:53,080 --> 00:07:00,040
+ And one of the common ones is reasoning without observation or sometimes called as re-woo.
+
+85
+00:07:00,040 --> 00:07:03,400
+ And why would you want to use a different style of orchestration?
+
+86
+00:07:03,400 --> 00:07:09,080
+ And the reason is if you see the scenario that we had discussed previously, it was sequential
+
+87
+00:07:09,080 --> 00:07:10,080
+ in nature.
+
+88
+00:07:10,080 --> 00:07:15,880
+ So first the orchestrator send the request to the LLM agent, maybe if you are using something
+
+89
+00:07:15,880 --> 00:07:21,240
+ like cloud or a large language model, it will take three seconds maybe at least to do
+
+90
+00:07:21,240 --> 00:07:26,520
+ the processing then in the next step, it will again send this and there will be more processing
+
+91
+00:07:26,520 --> 00:07:28,280
+ and then again it is going to send.
+
+92
+00:07:28,280 --> 00:07:34,080
+ So it might be five to ten seconds before the user actually gets a response in complex processing
+
+93
+00:07:34,080 --> 00:07:35,400
+ scenarios.
+
+94
+00:07:35,400 --> 00:07:39,600
+ And if it is a chatbot, then the customer might not have a great user experience.
+
+95
+00:07:39,600 --> 00:07:45,120
+ So in some scenarios, you might just need to send the request once to the large language
+
+96
+00:07:45,120 --> 00:07:51,080
+ model and then it tells you steps and then you just go ahead and feedback that response
+
+97
+00:07:51,080 --> 00:07:52,520
+ to the end user.
+
+98
+00:07:52,520 --> 00:07:56,280
+ You don't need to do back and forth with the LLM.
+
+99
+00:07:56,280 --> 00:08:01,000
+ So one common example that it always provides for reasoning without observation is let's
+
+100
+00:08:01,000 --> 00:08:04,480
+ say you want to book dinner reservation.
+
+101
+00:08:04,480 --> 00:08:08,080
+ So the only two things you have to do is let's say you want to get a menu and you want
+
+102
+00:08:08,080 --> 00:08:10,920
+ to book a table for a particular date.
+
+103
+00:08:10,920 --> 00:08:17,280
+ So once you send the request to the agent, it's going to call the restaurant reservation,
+
+104
+00:08:17,280 --> 00:08:20,000
+ book the table for you and then send you the menu.
+
+105
+00:08:20,000 --> 00:08:26,920
+ So maybe it needs to send that request only once to the large language model to save on
+
+106
+00:08:26,920 --> 00:08:28,800
+ the response time.
+
+107
+00:08:28,800 --> 00:08:29,800
+ Okay.
+
+108
+00:08:29,800 --> 00:08:32,160
+ Now the second one is memory.
+
+109
+00:08:32,160 --> 00:08:37,760
+ So the bedrock agents are enabled with both long term memory and shorter memory and long
+
+110
+00:08:37,760 --> 00:08:44,760
+ term memory can be used to store the user conversation up to 365 days.
+
+111
+00:08:44,760 --> 00:08:50,200
+ So long term memory is managed by AWS and all you need to do is define whether it's true
+
+112
+00:08:50,200 --> 00:08:57,520
+ or false and it will store the long term conversation between the user and the agent.
+
+113
+00:08:57,520 --> 00:09:03,880
+ Next is the shorter memory again this is enabled by AWS by default all the interaction
+
+114
+00:09:03,880 --> 00:09:09,240
+ between the end user and the agent within that particular session are going to be stored
+
+115
+00:09:09,240 --> 00:09:16,000
+ and those user inputs are also going to be passed on to the tools that you might be using
+
+116
+00:09:16,000 --> 00:09:19,600
+ and are integrated with the agent.
+
+117
+00:09:19,600 --> 00:09:20,600
+ Okay.
+
+118
+00:09:20,600 --> 00:09:25,200
+ Next is the tools and action AWS provide three kind of tools.
+
+119
+00:09:25,200 --> 00:09:29,320
+ So the first one is the action group and this is critical.
+
+120
+00:09:29,320 --> 00:09:35,680
+ So here you can use a combination of AWS Lambda and open API schema.
+
+121
+00:09:35,680 --> 00:09:40,080
+ So once we build the use cases in the next few sections then you are going to be able
+
+122
+00:09:40,080 --> 00:09:47,600
+ to visualize how we can use these action groups to connect to external and internal data
+
+123
+00:09:47,600 --> 00:09:48,720
+ sources.
+
+124
+00:09:48,720 --> 00:09:53,520
+ And then you have the bedrock knowledge basis and we've already discussed the managed
+
+125
+00:09:53,520 --> 00:10:00,280
+ rag based solution from AWS and knowledge basis can be integrated with agents which allow
+
+126
+00:10:00,280 --> 00:10:06,800
+ the end user to access unstructured data in form of PDFs and so on.
+
+127
+00:10:06,800 --> 00:10:09,120
+ Then finally you have the code interpreter.
+
+128
+00:10:09,120 --> 00:10:14,160
+ So a common scenario would be, so let's say you have a docs agent and it's monitoring
+
+129
+00:10:14,160 --> 00:10:17,560
+ few applications within your environment.
+
+130
+00:10:17,560 --> 00:10:20,120
+ So now let's say there is an incident.
+
+131
+00:10:20,120 --> 00:10:25,040
+ So what this dev app agent can do is it can analyze what's the root cause of the agent
+
+132
+00:10:25,040 --> 00:10:31,860
+ using the LLM then generate the code and then it can test out that code in the code
+
+133
+00:10:31,860 --> 00:10:35,120
+ interpreter which is a local sandbox environment.
+
+134
+00:10:35,120 --> 00:10:38,400
+ And if it works there then it can implement that patch.
+
+135
+00:10:38,400 --> 00:10:42,720
+ So that is what code interpreter can be used for.
+
+136
+00:10:42,720 --> 00:10:44,360
+ So then you have the communication.
+
+137
+00:10:44,360 --> 00:10:50,200
+ So we have the single agent and it also supports multi agent orchestration.
+
+138
+00:10:50,200 --> 00:10:55,280
+ So sometimes the application that you might be building with agents might be really complicated
+
+139
+00:10:55,280 --> 00:11:01,880
+ and the agent could have large number of tools maybe tens and hundreds of tools.
+
+140
+00:11:01,880 --> 00:11:08,360
+ Then it might be difficult for a single agent to route the user request accurately.
+
+141
+00:11:08,360 --> 00:11:14,680
+ And in that scenario we can use multiple agents and then AWS provides you with a multi
+
+142
+00:11:14,680 --> 00:11:20,840
+ agent orchestration framework which helps you in routing to these multiple agents and
+
+143
+00:11:20,840 --> 00:11:26,300
+ also helping with the coordination and collaboration between these different agents.
+
+144
+00:11:26,300 --> 00:11:28,400
+ And then finally with the agent guardrails.
+
+145
+00:11:28,400 --> 00:11:34,440
+ So Amazon bedrock service already has a capability where you can build customized guardrails
+
+146
+00:11:34,440 --> 00:11:39,120
+ for hallucination detection or toxicity detection and control.
+
+147
+00:11:39,120 --> 00:11:46,400
+ So you can build the guardrails from the bedrock service and then integrated with the
+
+148
+00:11:46,400 --> 00:11:48,840
+ Amazon bedrock agents.
+
+149
+00:11:48,840 --> 00:11:54,120
+ Okay that's pretty much it from what are the core components of Amazon bedrock agents.
+
+150
+00:11:54,120 --> 00:11:55,520
+ I'll see you in the next lecture, thank you.
+
