@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:07,360
+ Now, let's go and discuss the second capability of Amazon SageMaker called us SageMaker feature store.
+
+2
+00:00:07,360 --> 00:00:13,200
+ So, before we discuss SageMaker feature store, let's take a quick look at what are features.
+
+3
+00:00:13,200 --> 00:00:17,520
+ Now, let's say we have a dataset where we are trying to predict whether the
+
+4
+00:00:17,520 --> 00:00:26,400
+ annual income of a individual is less than or more than $50,000 US dollars and we have all these
+
+5
+00:00:26,400 --> 00:00:34,800
+ attributes. So, we have the age, work class, final weight, education and so on. So, all of these
+
+6
+00:00:34,800 --> 00:00:43,520
+ are called as features which help in predicting whether the income would be more or less than $50,000.
+
+7
+00:00:43,520 --> 00:00:50,560
+ So, these are all features. So, with this knowledge, let's try and understand SageMaker feature store.
+
+8
+00:00:51,440 --> 00:00:58,960
+ Now, features store maps to the feature engineering phase within data processing.
+
+9
+00:00:58,960 --> 00:01:05,760
+ So, why do we need SageMaker feature store? Let's take an example of a insurance company where
+
+10
+00:01:05,760 --> 00:01:12,240
+ there are different teams working on different machine learning models. So, we have one team that's
+
+11
+00:01:12,240 --> 00:01:20,080
+ working on calculating the vehicle total loss and another team that's working on customer churn.
+
+12
+00:01:20,080 --> 00:01:25,680
+ Now, both these teams require data from similar data sources. Let's say,
+
+13
+00:01:25,680 --> 00:01:33,280
+ vehicle damage, images, claims whether customers, text interaction with the call center,
+
+14
+00:01:33,280 --> 00:01:41,520
+ telemetry data. Now, we might have some variation in the features that both of these teams are
+
+15
+00:01:41,520 --> 00:01:48,640
+ using, but the data sources are pretty similar. So, one way to do it is that both of these teams
+
+16
+00:01:48,640 --> 00:01:53,760
+ go ahead and extract this data, clean this data, transform this data, and then use it.
+
+17
+00:01:53,760 --> 00:02:02,480
+ The other way is that single team extracts all this data, cleanses this data, transform this data,
+
+18
+00:02:02,480 --> 00:02:10,720
+ and then stores it in something like SageMaker feature store. And then each of these teams can
+
+19
+00:02:11,440 --> 00:02:20,000
+ search this feature store and use the training data stored within SageMaker feature store.
+
+20
+00:02:20,000 --> 00:02:26,720
+ So, now, how does the SageMaker feature store work? So, you could have two kind of data sources.
+
+21
+00:02:26,720 --> 00:02:30,560
+ So, you could have streaming data sources through Amazon Kinesis,
+
+22
+00:02:30,560 --> 00:02:38,720
+ data stream, or you could have batch data sources from Amazon S3, Redshift, and so on.
+
+23
+00:02:39,920 --> 00:02:47,680
+ So, once we ingest the data, then we create a feature catalog, which can be searched and reused
+
+24
+00:02:47,680 --> 00:02:55,200
+ by different teams within the organization. So, you could either use it for real-time feature
+
+25
+00:02:55,200 --> 00:03:04,800
+ look of for inferencing, or you could also use it as an offline feature to train the models.
+
+26
+00:03:05,840 --> 00:03:10,880
+ Now, if we take a look at the formal definition of Amazon SageMaker feature store,
+
+27
+00:03:10,880 --> 00:03:18,640
+ so it's a fully managed purpose built repository to store, share, and manage features for machine
+
+28
+00:03:18,640 --> 00:03:25,360
+ learning models. Now, let's take a look at some of the capabilities of SageMaker feature store.
+
+29
+00:03:25,360 --> 00:03:32,480
+ So, the first one is, it can ingest data and do feature processing. So, we already saw that
+
+30
+00:03:32,480 --> 00:03:39,760
+ you can ingest the data either through streaming or batch data sources. And you could have streaming
+
+31
+00:03:39,760 --> 00:03:46,640
+ data like click stream, sensor data, application as service logs, or batch, such as S3, Redshift,
+
+32
+00:03:46,640 --> 00:03:53,200
+ data lake, and so on. So, once you ingest the data, then you can store the features,
+
+33
+00:03:53,200 --> 00:04:01,760
+ catalog them, search, and reuse. So, SageMaker feature store will tag and index the
+
+34
+00:04:01,760 --> 00:04:07,600
+ feature group so that they are easily discoverable. So, here you have a screenshot from the feature
+
+35
+00:04:07,600 --> 00:04:14,480
+ store. So, we have the feature catalog and feature group catalog. And here we have feature catalog,
+
+36
+00:04:14,480 --> 00:04:22,160
+ so feature name has gets customer ID, age. So, these are the different features that we have stored
+
+37
+00:04:22,160 --> 00:04:28,400
+ within the feature store. Now, what you can do is, you can group these features together.
+
+38
+00:04:29,360 --> 00:04:35,520
+ So, you have grouped all the similar features within a particular group. And you can see the feature
+
+39
+00:04:35,520 --> 00:04:42,880
+ group name here. And it can be either online or offline. So, online you would use for
+
+40
+00:04:42,880 --> 00:04:50,720
+ inferencing and offline, you will use for training the model. So, now you have ingested the data,
+
+41
+00:04:50,720 --> 00:04:58,400
+ stored the data. So, now the third capability it offers is that it can be both online and offline
+
+42
+00:04:58,400 --> 00:05:04,880
+ features. So, online features we already discussed are for real-time prediction and offline features
+
+43
+00:05:04,880 --> 00:05:13,520
+ are for model training. Now, for offline features, it uses by default AWS Glue data catalog that
+
+44
+00:05:13,520 --> 00:05:20,480
+ is automatically created. And once you have this data catalog, you can use Amazon Athena to carry
+
+45
+00:05:20,480 --> 00:05:28,800
+ the features. So, you can see here, we have data catalog, offline store and AWS data catalog is
+
+46
+00:05:28,800 --> 00:05:36,080
+ automatically created for your offline feature store. And you can write and execute SQL queries
+
+47
+00:05:36,080 --> 00:05:47,200
+ using Amazon Athena on an AWS Glue data catalog. So, AWS data catalog allows us to search
+
+48
+00:05:47,200 --> 00:05:53,840
+ for features based on metadata. Okay, that is pretty much it from this lecture. I hope
+
+49
+00:05:53,840 --> 00:05:59,280
+ at a high level it is clear to you the capabilities of the SageMaker feature store.
+
