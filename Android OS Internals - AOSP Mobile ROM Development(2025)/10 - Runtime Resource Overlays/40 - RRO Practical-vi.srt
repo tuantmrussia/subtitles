@@ -1,444 +1,740 @@
 1
-00:00:00,000 --> 00:00:08,800
-Chúng tôi sẽ quay lại, vì vậy trong phần này chúng tôi sẽ làm một buổi thực tế xe hơi UILIP.
+00:00:01,290 --> 00:00:01,980
+Chào mừng trở lại.
 
 2
-00:00:08,800 --> 00:00:16,800
-Vì vậy, những gì chúng tôi sẽ làm là chúng tôi sẽ bao phủ các thiết lập xe ứng dụng với n bao phủ
+00:00:02,250 --> 00:00:07,290
+Vì vậy, trong phần này, chúng tôi sẽ làm một Chúa bước qua giai đoạn thực tế.
 
 3
-00:00:16,800 --> 00:00:19,600
-dùng xe UILIP.
+00:00:08,460 --> 00:00:17,600
+Vì vậy, những gì chúng tôi sẽ làm là chúng tôi sẽ bao gồm các ứng dụng thiết lập của Thiên Chúa với một bao gồm bằng cách sử dụng Kohlua.
 
 4
-00:00:19,600 --> 00:00:24,320
-Vậy chúng ta hãy đi trước.
+00:00:18,600 --> 00:00:20,430
+OK, vậy hãy đi trước.
 
 5
-00:00:24,320 --> 00:00:28,200
-Vì vậy, tôi sẽ chỉ cho bạn biết chính xác những gì tôi đang lên kế hoạch để làm.
-
-6
-00:00:28,200 --> 00:00:36,120
-Tôi có bản giả lập mở ở đây và một thiết bị cuối đang mở ở đây.
-
-7
-00:00:36,120 --> 00:00:53,560
-Vì vậy, hãy để tôi cho phép các tài nguyên bao gồm bây giờ, để tôi có được một chút lớn hơn.
-
-8
-00:00:53,560 --> 00:01:00,200
-Vì vậy, tôi đã chỉ cần bật các phủ bây giờ và bạn có thể thấy màu nền màu và
-
-9
-00:01:00,200 --> 00:01:03,320
-Mã tiêu đề đã thay đổi.
-
-10
-00:01:03,320 --> 00:01:05,200
-Đừng lo về việc định dạng.
-
-11
-00:01:05,200 --> 00:01:10,680
-Vì vậy, đây chỉ là một cuộc biểu tình, không học định dạng từ tôi.
-
-12
-00:01:10,680 --> 00:01:11,880
-Vì vậy, tôi rất xấu về điều đó.
-
-13
-00:01:11,880 --> 00:01:19,600
-Vì vậy, tôi chỉ cần đi trước và làm cho định dạng của riêng bạn và thiết kế nó tốt nhất có thể.
-
-14
-00:01:19,600 --> 00:01:23,200
-Đây là điều tốt nhất tôi có thể làm, okay.
-
-15
-00:01:23,200 --> 00:01:34,960
-Vì vậy, ở đây tôi đã bật nó và bây giờ chúng ta hãy vô hiệu hóa nó trở lại, okay tôi đã vô hiệu hóa nó trở lại.
-
-16
-00:01:34,960 --> 00:01:42,600
-Vì vậy, đây là lệnh, do đó, lệnh bật và tắt sẽ cho bạn thấy rằng sau này.
-
-17
-00:01:42,600 --> 00:01:47,640
-Vì vậy, đây là hai mệnh lệnh về cơ bản cho phép và vô hiệu hóa, okay.
-
-18
-00:01:47,640 --> 00:01:59,200
-Vì vậy, bây giờ, được rồi, bây giờ tôi trở lại trong mã phòng thu trực quan của tôi và ở đây, đây là đơn giản
-
-19
-00:01:59,200 --> 00:02:03,080
-Gói RRO mà chúng ta, thứ mà tôi vừa tạo ra, okay.
-
-20
-00:02:03,080 --> 00:02:08,760
-Vì vậy nó là một gói rất đơn giản và ở đây bạn có thể thấy nó chỉ có một thư mục tài nguyên với
-
-21
-00:02:08,760 --> 00:02:12,400
-Màu sắc và kiểu dáng.
-
-22
-00:02:12,400 --> 00:02:20,400
-Vì vậy, bên trong các màu sắc bạn có các yếu tố và bên trong các kiểu dáng bạn có điều này.
-
-23
-00:02:20,400 --> 00:02:25,000
-Vì vậy, điều này về cơ bản phủ tiêu đề và điều này về cơ bản phủ nền
-
-24
-00:02:25,000 --> 00:02:33,560
-Màu, màu ba, ngón cái thanh cuộn và hai hành động được chia làm hai màu.
-
-25
-00:02:33,560 --> 00:02:40,760
-Đây là những yếu tố thực sự tồn tại trong ô tô UI lib, okay.
-
-26
-00:02:40,760 --> 00:02:46,880
-Và về cơ bản, những gì chúng tôi đang làm ở đây là chúng tôi đang vượt quá các nguồn lực của xe UI lib.
-
-27
-00:02:46,880 --> 00:02:53,720
-Vì vậy, chỉ có các ứng dụng thực sự sử dụng ebul xe sẽ bị ảnh hưởng bởi bao gồm này.
-
-28
-00:02:53,720 --> 00:03:00,000
-Vì vậy, như chúng tôi biết thiết lập ô tô thực sự sử dụng el lib xe và đó là lý do tại sao màu sắc
-
-29
-00:03:00,000 --> 00:03:05,560
-tất cả các tiêu đề màu nền sẽ được thay đổi khi chúng tôi bật khả năng này phủ, okay.
-
-30
-00:03:05,560 --> 00:03:12,280
-Vì vậy, để chứng minh rằng tôi sẽ chỉ nhanh chóng cho bạn thấy thành phần này bên trong xe UI lib.
-
-31
-00:03:12,280 --> 00:03:16,400
-Vì vậy, nếu bạn đi lên đây là ô tô UI lib và ở đây bạn có các giá trị và ở đây bạn có
-
-32
-00:03:16,400 --> 00:03:21,120
-màu đây là cùng một tập tin mà chúng tôi đang thực sự vượt trội.
-
-33
-00:03:21,120 --> 00:03:25,160
-Và chỉ cần nhấp đôi vào đây và nếu bạn tìm kiếm nó, bạn có thể thấy nó là thực sự
-
-34
-00:03:25,160 --> 00:03:31,680
-đặt thành màu đen thực sự là mặc định mà chúng tôi đang nhìn thấy ở đây, bên phải.
-
-35
-00:03:31,680 --> 00:03:37,800
-Vì vậy, khi chúng tôi phủ nó được thay đổi thành màu mới, này, okay.
-
-36
-00:03:37,800 --> 00:03:44,480
-Vì vậy, đằng sau các cảnh nó về cơ bản là một APK nhỏ, đơn giản RRO.APK mà thực sự chỉ cần
-
-37
-00:03:44,480 --> 00:03:50,800
-Bao gồm các nguồn lực trong thời gian chạy trên đầu ứng dụng thiết lập xe.
-
-38
-00:03:50,800 --> 00:03:57,000
-Tóm lại, sự logic hay cấu trúc tổng thể khá đơn giản.
-
-39
-00:03:57,000 --> 00:04:07,920
-Về cơ bản, nó chỉ bao phủ một số nguồn lực trong thời gian chạy trên đỉnh của APK, okay.
-
-40
-00:04:07,920 --> 00:04:15,160
-Vì vậy, bây giờ chúng tôi đã có các kiểu, vì vậy như tôi đã nói nó chỉ là tiêu đề xe, tôi chỉ tăng
-
-41
-00:04:15,160 --> 00:04:19,640
-Nó tới 80P và màu này, được rồi.
-
-42
-00:04:19,640 --> 00:04:23,160
-Vậy hãy cùng xem qua người máy.
-
-43
-00:04:23,160 --> 00:04:27,960
-Đây là một lần nữa một tập tin MK rất đơn giản, vì vậy bạn có ba nguyên tố mới ở đây.
-
-44
-00:04:27,960 --> 00:04:37,080
-Comment
-
-45
-00:04:37,080 --> 00:04:41,960
-Hãy đặt thư mục tài nguyên, nó chỉ tới thư mục này và sau đó bạn có mục tiêu.
-
-46
-00:04:41,960 --> 00:04:46,280
-Vì vậy, mục tiêu thực sự là các ứng dụng mà bạn đang mục tiêu.
-
-47
-00:04:46,280 --> 00:04:52,080
-Vì vậy, trong ví dụ của tôi tôi không chỉ mục tiêu ứng dụng thiết lập, nhưng bạn có thể nhắm đến một số
-
-48
-00:04:52,080 --> 00:04:53,360
-ứng dụng ở đây.
-
-49
-00:04:53,360 --> 00:05:03,720
-Vì vậy, bạn chỉ cần thêm nó ở đây, như trong trường hợp bạn muốn tập trung ứng dụng quay số, vì vậy
-
-50
-00:05:03,720 --> 00:05:09,400
-Bạn có thể chỉ cần cung cấp cho nó như thế này hoặc bất kỳ ứng dụng khác trong xe bạn có thể chỉ cần cung cấp cho nó
-
-51
-00:05:09,400 --> 00:05:11,560
-Đằng này.
-
-52
-00:05:11,560 --> 00:05:16,040
-Vì vậy, trong ví dụ này tôi chỉ tập trung ứng dụng thiết lập, okay.
-
-53
-00:05:16,040 --> 00:05:23,240
-Nhưng bạn có thể thử nó với các ứng dụng khác nhau sau đó trên, okay vì vậy đó là về điều này và
-
-54
-00:05:23,240 --> 00:05:28,560
-Nó cũng bao gồm cả chiếc xe này tạo ra thiết bị RRO.
-
-55
-00:05:28,560 --> 00:05:32,200
-Và sau đó chúng tôi có tập tin dấu chấm no XML.
-
-56
-00:05:32,200 --> 00:05:37,160
-Vì vậy, điều này một lần nữa khá đơn giản, ở đây bạn có tên gói, gói RRO
-
-57
-00:05:37,160 --> 00:05:43,640
-Tên sẽ được dùng một cách năng động khi soạn thảo nó.
-
-58
-00:05:43,640 --> 00:05:48,400
-Vì vậy, bạn có thể chỉ cần để lại nó như các thành phố thực sự, vì vậy nó sẽ được thay thế động lực trong suốt
-
-59
-00:05:48,400 --> 00:05:50,280
-Thời gian xây dựng.
-
-60
-00:05:50,280 --> 00:05:58,080
-Và gói mục tiêu cũng sẽ được thực hiện một cách năng động trong thời gian xây dựng.
-
-61
-00:05:58,080 --> 00:06:02,960
-Vì vậy, hãy để hai điều này như nó là và sau đó bạn có ưu tiên hàng đầu.
-
-62
-00:06:02,960 --> 00:06:12,880
-Vì vậy, ưu tiên 10 nghĩa là nó thực sự của, vì vậy để giải thích rằng, chỉ cần tưởng tượng rằng bạn có
-
-63
-00:06:12,880 --> 00:06:18,320
+00:00:23,520 --> 00:00:23,910
 Được rồi.
 
+6
+00:00:23,970 --> 00:00:27,390
+Vì vậy, tôi sẽ chỉ cho bạn biết chính xác những gì tôi đang lên kế hoạch để làm.
+
+7
+00:00:27,930 --> 00:00:34,080
+Vì vậy, tôi có các mô phỏng mở ở đây và tôi có một tùy chọn cuối ở đây.
+
+8
+00:00:34,950 --> 00:00:35,310
+Được rồi.
+
+9
+00:00:35,760 --> 00:00:39,530
+Vì vậy, hãy để tôi cho phép các tài nguyên bao gồm ngay bây giờ.
+
+10
+00:00:43,580 --> 00:00:44,050
+Bởi vì.
+
+11
+00:00:46,440 --> 00:00:46,950
+Được rồi.
+
+12
+00:00:53,300 --> 00:01:00,890
+Vì vậy, tôi đã chỉ cần bật các phủ, và bạn có thể nhìn thấy màu sắc, màu nền và mã tiêu đề
+
+13
+00:01:01,220 --> 00:01:01,730
+đã thay đổi.
+
+14
+00:01:01,940 --> 00:01:02,240
+Được rồi.
+
+15
+00:01:02,990 --> 00:01:04,820
+Đừng lo về việc định dạng.
+
+16
+00:01:05,000 --> 00:01:07,040
+Đây chỉ là một cuộc biểu tình.
+
+17
+00:01:07,880 --> 00:01:10,010
+Đừng học cách định dạng từ tôi.
+
+18
+00:01:10,370 --> 00:01:11,680
+Vì vậy, tôi rất xấu về điều đó.
+
+19
+00:01:11,690 --> 00:01:19,040
+Vì vậy, chỉ cần đi tiếp và làm cho định dạng của riêng bạn và thiết kế nó tốt nhất có thể.
+
+20
+00:01:19,400 --> 00:01:21,380
+Đây là điều tốt nhất tôi có thể làm.
+
+21
+00:01:21,800 --> 00:01:22,310
+Được rồi.
+
+22
+00:01:22,970 --> 00:01:23,570
+Đùa thôi.
+
+23
+00:01:23,600 --> 00:01:23,960
+Được rồi.
+
+24
+00:01:24,380 --> 00:01:27,480
+Vì vậy, ở đây tôi đã hiệu lực.
+
+25
+00:01:27,890 --> 00:01:30,380
+Và bây giờ hãy vô hiệu hóa nó.
+
+26
+00:01:32,960 --> 00:01:34,370
+OK và tắt nó đi.
+
+27
+00:01:34,730 --> 00:01:38,870
+Vậy đây là mệnh lệnh.
+
+28
+00:01:38,870 --> 00:01:42,020
+Bật và tắt hiển thị ảo sau đó.
+
+29
+00:01:42,410 --> 00:01:45,590
+Vì vậy, đây là hai lệnh về cơ bản cho phép và vô hiệu hóa.
+
+30
+00:01:46,700 --> 00:01:48,320
+OK, bây giờ.
+
+31
+00:01:51,140 --> 00:02:00,860
+OK, vì vậy bây giờ tôi trở lại trong sự cố gắng của tôi, và đây là gói RRO đơn giản mà chúng tôi
+
+32
+00:02:00,860 --> 00:02:02,180
+Tôi vừa tạo ra nó.
+
+33
+00:02:02,330 --> 00:02:09,500
+OK, vì vậy nó là một gói rất đơn giản và ở đây bạn có thể thấy nó chỉ có một thư mục tài nguyên với màu sắc
+
+34
+00:02:09,500 --> 00:02:10,460
+và kiểu dáng.
+
+35
+00:02:11,390 --> 00:02:11,750
+Được rồi.
+
+36
+00:02:12,200 --> 00:02:19,070
+Vậy bên trong các màu sắc, các bạn có, uh, các yếu tố và bên trong các kiểu dáng của bạn.
+
+37
+00:02:20,210 --> 00:02:22,190
+Vì vậy, điều này cơ bản phủ tiêu đề.
+
+38
+00:02:22,850 --> 00:02:31,130
+Và điều này cơ bản là phủ màu nền, màu sắc, cuộn một cuộn dưới cùng và làm hành động
+
+39
+00:02:31,190 --> 00:02:32,060
+Không có màu sắc.
+
+40
+00:02:32,210 --> 00:02:32,600
+Được rồi.
+
+41
+00:02:33,260 --> 00:02:38,340
+Đây là những yếu tố thực sự tồn tại trong Idlib.
+
+42
+00:02:39,350 --> 00:02:39,680
+Được rồi.
+
+43
+00:02:40,130 --> 00:02:45,680
+Và về cơ bản, những gì chúng tôi đang làm ở đây là chúng tôi đang chiếm ưu thế của xe Dua Lipa.
+
+44
+00:02:46,670 --> 00:02:52,820
+Vì vậy, chỉ có các ứng dụng thực sự sử dụng có UI Lib sẽ bị ảnh hưởng bởi bao gồm này.
+
+45
+00:02:53,420 --> 00:02:57,500
+Như chúng ta đã biết, thiết lập ô tô thực sự sử dụng a.
+
+46
+00:02:58,220 --> 00:03:03,530
+Và đó là lý do tại sao màu sắc của tiêu đề màu nền mọi thứ được thay đổi khi chúng tôi bật
+
+47
+00:03:03,530 --> 00:03:04,460
+vỏ bọc này.
+
+48
+00:03:05,150 --> 00:03:06,950
+OK, để chứng minh điều đó.
+
+49
+00:03:07,220 --> 00:03:11,420
+Chỉ cần nhanh chóng cho bạn thấy các yếu tố bên trong tim.
+
+50
+00:03:11,990 --> 00:03:16,810
+Vì vậy, nếu bạn đi lên, điều này thực sự tồi tệ ở đây bạn có không dây chỉ ở đây bạn có màu,
+
+51
+00:03:16,830 --> 00:03:19,400
+Cùng một hồ sơ, mà chúng tôi thực sự ổn.
+
+52
+00:03:20,630 --> 00:03:22,310
+Và đừng có click vào cái này.
+
+53
+00:03:22,310 --> 00:03:27,680
+Và nếu bạn tìm kiếm nó vì vậy bạn có thể thấy nó thực sự được thiết lập thành màu đen, đó là thực sự là mặc định
+
+54
+00:03:28,520 --> 00:03:30,620
+Một, mà chúng ta đang thấy ở đây, phải không?
+
+55
+00:03:31,490 --> 00:03:35,150
+Vì vậy, khi chúng tôi phủ, nó sẽ được thay đổi thành màu mới.
+
+56
+00:03:35,820 --> 00:03:36,920
+Cái này.
+
+57
+00:03:37,340 --> 00:03:44,360
+OK, đằng sau cảnh, về cơ bản nó là một trường hợp AP nhỏ trong tiểu sử hai bên, mà thực sự chỉ là
+
+58
+00:03:44,360 --> 00:03:50,150
+Bao gồm các tài nguyên trong thời gian nguyên tố trên đầu ứng dụng thiết lập xe.
+
+59
+00:03:50,480 --> 00:03:56,830
+Tóm lại, logic hay cấu trúc tổng thể khá đơn giản.
+
+60
+00:03:56,840 --> 00:04:05,120
+Vì vậy, về cơ bản nó chỉ là bao phủ một số tài nguyên trong thời gian xung quanh thời gian vào những gì nếu chúng tôi tiếp tục
+
+61
+00:04:05,120 --> 00:04:05,920
+đỉnh cao của trò chơi?
+
+62
+00:04:05,990 --> 00:04:09,920
+OK, giờ chúng ta có Stynes.
+
+63
+00:04:09,920 --> 00:04:14,000
+Vì vậy, như đã nói nó chỉ là xe không sử dụng.
+
 64
-00:06:18,320 --> 00:06:25,520
-Vì vậy, khi bạn có nhiều lớp phủ tĩnh, một số cao hơn có nghĩa là bạn có một ưu tiên cao hơn,
+00:04:14,180 --> 00:04:17,810
+Tôi chỉ cần tăng nó lên 8 DP và màu sắc là điều này.
 
 65
-00:06:25,520 --> 00:06:31,200
-Một số nhỏ hơn có nghĩa là bạn có một ưu tiên thấp hơn, được rồi, đơn giản như thế, okay.
+00:04:18,620 --> 00:04:22,630
+OK, vậy hãy xem xét điều đó hay không.
 
 66
-00:06:31,200 --> 00:06:33,120
-Và sau đó bạn có tĩnh này.
+00:04:22,650 --> 00:04:24,970
+Và đây lại là một tập tin rất đơn giản, rỗng.
 
 67
-00:06:33,120 --> 00:06:39,760
-Vì vậy, mỗi tĩnh nghĩa là bạn có thể tạo ra các lớp phủ như tĩnh hoặc không tĩnh.
+00:04:24,980 --> 00:04:27,050
+Vì vậy, bạn có ba nguyên tố mới.
 
 68
-00:06:39,760 --> 00:06:44,040
-Vì vậy, trong trường hợp này tôi đang thiết lập nó không tĩnh, okay.
+00:04:27,050 --> 00:04:36,500
+Bạn có một UI, tên thiết lập RRO và tên của RRO, và sau đó nó có một khu vực tài nguyên UI.
 
 69
-00:06:44,040 --> 00:06:51,800
-Vì vậy, khi bạn đặt một phủ để tĩnh, có nghĩa là nó được bật theo mặc định và nó là thực sự
+00:04:36,800 --> 00:04:41,390
+Đó là một tài nguyên mà nó chỉ vào thư mục này và sau đó bạn có mục tiêu.
 
 70
-00:06:51,800 --> 00:06:55,600
-Có thể biến đổi, chứ không phải biến đổi.
+00:04:41,780 --> 00:04:45,890
+Vì vậy, mục tiêu thực sự là các ứng dụng mà bạn đang nhắm đến.
 
 71
-00:06:55,600 --> 00:07:00,200
-Điều đó có nghĩa là bạn không thể thực sự thay đổi điều đó trong thời gian trước.
+00:04:46,070 --> 00:04:52,790
+Trong ví dụ của tôi, tôi chỉ nhắm vào ứng dụng Thiết lập, nhưng bạn có thể nhắm mục tiêu và số ứng dụng.
 
 72
-00:07:00,200 --> 00:07:03,760
-Vì vậy, nó là thực sự, bạn không thể kích hoạt hoặc vô hiệu hóa đó.
+00:04:52,790 --> 00:04:56,570
+Ừ, vậy anh chỉ cần thêm nó vào đây.
 
 73
-00:07:03,760 --> 00:07:12,800
-Vì vậy trong trường hợp này, tôi đang đặt nó sai để bạn có thể thay đổi nó, okay động lực, okay.
+00:04:58,010 --> 00:05:07,370
+Ví dụ như trong trường hợp nếu bạn muốn tiêu điểm ứng dụng quay số để bạn có thể chỉ cần cung cấp cho nó như thế này, như thế này hoặc bất kỳ
 
 74
-00:07:12,800 --> 00:07:20,040
-Được rồi, vậy thì còn gì nữa.
+00:05:07,370 --> 00:05:09,850
+Một ứng dụng khác trong xe, hoặc bạn chỉ cần đưa nó ở đây.
 
 75
-00:07:20,040 --> 00:07:27,480
-Vì vậy, chúng tôi đã bao gồm tất cả các tập tin trong gói mẫu RRO, được rồi bây giờ chúng ta hãy đi trước và
+00:05:10,820 --> 00:05:11,150
+Được rồi.
 
 76
-00:07:27,480 --> 00:07:33,640
-biên dịch gói của chúng tôi, biên dịch gói RRO của chúng tôi và cài đặt nó vào giả lập, okay.
+00:05:11,330 --> 00:05:15,110
+Ví dụ này, tôi chỉ tập trung vào ứng dụng Thiết lập.
 
 77
-00:07:33,640 --> 00:07:50,200
-Vì vậy, hãy đóng giả lập của chúng tôi đầu tiên và để tôi kiểm tra nơi tôi hiện tại, okay.
+00:05:16,070 --> 00:05:18,980
+OK, nhưng bạn có thể thử với các ứng dụng khác nhau.
 
 78
-00:07:50,200 --> 00:07:59,240
-Vì vậy tôi đang ở trong gói RRO mẫu và tôi chỉ đang chế tạo nó bây giờ, okay.
+00:05:19,220 --> 00:05:19,760
+Chạy thôi.
 
 79
-00:07:59,240 --> 00:08:29,200
-Vì vậy, hãy xây dựng, okay, vì vậy bây giờ xây dựng là thành công và tôi có,
+00:05:20,810 --> 00:05:22,490
+OK, đó là về điều này.
 
 80
-00:08:29,200 --> 00:08:30,720
-APK ở đây.
+00:05:23,030 --> 00:05:26,690
+Và nó cũng bao gồm cả bộ mũi tên tạo tên Scotty White.
 
 81
-00:08:30,720 --> 00:08:38,080
-Vì vậy, tôi đã có một thất bại trước đó, vì vậy đó đã thực sự là do một số không gian không cần thiết bên trong
+00:05:27,680 --> 00:05:28,010
+Được rồi.
 
 82
-00:08:38,080 --> 00:08:40,360
-Hồ sơ MK.
+00:05:28,310 --> 00:05:31,170
+Và sau đó chúng tôi có một ví dụ cho thấy Tòa án robot.
 
 83
-00:08:40,360 --> 00:08:46,360
-Nên chỉ cần đảm bảo là anh không có chỗ không cần thiết trong hồ sơ MK.
+00:05:31,170 --> 00:05:31,520
+Được thôi.
 
 84
-00:08:46,360 --> 00:08:51,120
-Vì vậy, bây giờ APK thực sự được tạo ra ở đây.
+00:05:32,000 --> 00:05:34,930
+Vì vậy, điều này một lần nữa khá đơn giản.
 
 85
-00:08:51,120 --> 00:08:59,560
-Vì vậy, bây giờ chúng ta hãy sao chép con đường này, bởi vì tôi cần phải mở đầu tiên giả lập, sau đó chúng ta hãy
+00:05:34,940 --> 00:05:36,350
+Ở đây bạn có tên gói.
 
 86
-00:08:59,560 --> 00:09:13,920
-Bắt đầu giả lập, được rồi, được rồi.
+00:05:36,350 --> 00:05:45,170
+Tên gói RRO sẽ được lấy một cách năng động khi soạn thảo nó, vì vậy bạn có thể bỏ nó lại thành phố,
 
 87
-00:09:13,920 --> 00:09:36,500
-Và hãy để tôi mở một cửa sổ khác, yeah, vì vậy ở đây tôi sẽ chỉ cài đặt, okay, tôi có một số
+00:05:45,170 --> 00:05:45,530
+Thật ra.
 
 88
-00:09:36,500 --> 00:09:49,800
-Vấn đề ở đây, tôi đang ở đâu, nên tôi có bí danh. Bí danh được định nghĩa ở đây, đừng nhầm lẫn.
+00:05:45,530 --> 00:05:53,450
+Vì vậy nó sẽ được thay thế một cách động lực trong thời gian ngắn và các gói mục tiêu cũng sẽ là động lực,
 
 89
-00:09:49,800 --> 00:09:56,540
-được chứ?
+00:05:54,080 --> 00:05:56,960
+Um, viết quá nhiều và trong thời gian đó.
 
 90
-00:09:56,540 --> 00:10:04,160
-Vì vậy, để làm cho nó rất rõ ràng, thực sự tôi có một số bí danh xác định ở đây, tôi có một tập hợp các bí danh
+00:05:57,020 --> 00:05:57,410
+Được rồi.
 
 91
-00:10:04,160 --> 00:10:11,720
-Ở đây tôi có thể có đường tắt, đó là lý do tại sao tôi luôn dùng đường tắt.
+00:05:57,890 --> 00:06:02,720
+Vì vậy, chỉ cần để lại những thành phố khác và sau đó bạn có ưu tiên hàng đầu.
 
 92
-00:10:11,720 --> 00:10:23,440
-Vì vậy, bây giờ chúng ta hãy, bây giờ các APK đã được cài đặt, vì vậy bây giờ chúng ta hãy vào vỏ ADB và ở đây
+00:06:02,720 --> 00:06:07,430
+Vì vậy, ưu tiên 10 nghĩa là nó thực sự tắt.
 
 93
-00:10:23,440 --> 00:10:51,840
-Hãy chạy bao phủ, xem danh sách phủ, bạn thấy dòng chảy.
+00:06:08,690 --> 00:06:16,280
+Vì vậy, để giải thích điều đó tốt hơn và chỉ cần tưởng tượng rằng bạn có nhiều lớp phủ, nhiều lớp phủ tĩnh.
 
 94
-00:10:51,840 --> 00:11:02,720
-Vì vậy, ở đây gói của chúng tôi là thiết lập, vì vậy bạn có thể thấy ở đây phủ của chúng tôi là có và tại thời điểm này
+00:06:16,970 --> 00:06:17,330
+Được rồi.
 
 95
-00:11:02,720 --> 00:11:14,280
-Nó thực sự bị tàn tật, vì vậy hãy đi và cho phép nó, vì vậy để cho phép bạn phải, bạn có
+00:06:18,080 --> 00:06:25,820
+Vì vậy, khi bạn có nhiều tĩnh phủ, một số cao hơn có nghĩa là bạn có một ưu tiên cao hơn và hơn
 
 96
-00:11:14,280 --> 00:11:25,960
-để cung cấp một lệnh, phủ, cho phép người dùng, hiện thời, và sau đó tên gói, vì vậy gói này
+00:06:25,820 --> 00:06:27,740
+Không có nghĩa là anh có ưu tiên thấp hơn.
 
 97
-00:11:25,960 --> 00:11:34,280
-Về cơ bản, chúng ta hãy sao chép nó, hãy dán nó trên đây, vì vậy tôi đã có bây giờ mà hiệu lực, vì vậy
+00:06:28,160 --> 00:06:28,460
+Được rồi.
 
 98
-00:11:34,280 --> 00:11:45,400
-Hãy quay lại, để tôi có thể thấy ở đây, bây giờ, hãy để tôi giữ nó như thế này,
+00:06:29,030 --> 00:06:29,840
+Đơn giản vậy sao?
 
 99
-00:11:45,400 --> 00:12:04,360
-Nếu bạn muốn vô hiệu hóa, vậy nếu bạn muốn vô hiệu hóa nó như thế này, hãy đi thôi.
+00:06:30,440 --> 00:06:30,770
+Được rồi.
 
 100
-00:12:04,360 --> 00:12:13,400
-Vì vậy, tôi hy vọng bạn hiểu một cái gì đó từ video này, và vì vậy chỉ để tóm tắt nhanh chóng, vì vậy
+00:06:30,980 --> 00:06:32,330
+Và sau đó bạn có tĩnh này.
 
 101
-00:12:13,400 --> 00:12:20,840
-Chúng tôi đã tạo ra gói nhỏ này nơi bạn có tài nguyên, bạn có màu sắc, kiểu dáng, và sau đó
+00:06:32,870 --> 00:06:35,810
+Vì vậy, mỗi tĩnh nghĩa là bạn có thể thiết lập.
 
 102
-00:12:20,840 --> 00:12:30,680
-Bạn có một người máy.mk, và một danh sách người máy, vì vậy ở đây bạn đã chỉ xác định một thời gian chạy nhỏ
+00:06:35,810 --> 00:06:38,930
+Bạn có thể tạo ra hoặc ít hơn trạng thái tĩnh hoặc không tĩnh.
 
 103
-00:12:30,680 --> 00:12:37,120
-Bao phủ, bao phủ chiếc xe, và điều này, trở lại, điều này sẽ được hiệu lực
+00:06:39,560 --> 00:06:42,530
+Vì vậy, trong trường hợp này, tôi thiết lập nó không tĩnh.
 
 104
-00:12:37,120 --> 00:12:49,000
-Chỉ cho các gói được chỉ định ở đây, cũng như một trong những sử dụng các lib xe, do đó, nó là
+00:06:43,280 --> 00:06:43,670
+Được rồi.
 
 105
-00:12:49,000 --> 00:12:55,520
-Thực sự cả hai, do đó, bạn phải xác định nó ở đây, có một hàng đầu tiên, vì vậy nếu bạn xác định nó
+00:06:43,850 --> 00:06:47,030
+Vì vậy, sau đó bạn thiết lập một bao phủ để tĩnh.
 
 106
-00:12:55,520 --> 00:13:03,920
-Ở đây, nó phải được sử dụng ô tô UI lib, okay, vì vậy nếu bạn xác định một gói thực sự không
+00:06:47,120 --> 00:06:49,460
+Có nghĩa là nó được bật theo mặc định.
 
 107
-00:13:03,920 --> 00:13:11,920
-sử dụng xe UI lib, sau đó điều này sẽ không hoạt động, okay, vì vậy về cơ bản điều này bao gồm các nguồn tài nguyên
+00:06:50,520 --> 00:06:54,360
+Và nó thực sự câm, không phải tôi.
 
 108
-00:13:11,920 --> 00:13:18,800
-Từ xe UI lib, okay, vì vậy tôi hy vọng điều đó có lý, và tôi hy vọng bạn đã học được điều gì đó từ
+00:06:54,810 --> 00:06:59,820
+OK, nghĩa là bạn không thể thực sự thay đổi điều đó trong thời gian trước.
 
 109
-00:13:18,800 --> 00:13:26,160
-Nó, và tôi đã gắn tất cả các mã với bài giảng này, xin vui lòng nhận nó và tự làm cho riêng của bạn
+00:07:00,000 --> 00:07:02,580
+Vì vậy, nó là thực sự bạn không thể kích hoạt hoặc vô hiệu hóa đó.
 
 110
-00:13:26,160 --> 00:13:34,080
-Thay đổi, làm cho một số tốt hơn styling, và cho phép nó, và trong trường hợp, bạn có bất kỳ rắc rối
+00:07:03,510 --> 00:07:08,740
+Vì vậy, trong trường hợp này, tôi đang ngồi ở hai điện thoại để bạn có thể thay đổi điều đó, OK?
 
 111
-00:13:34,080 --> 00:13:40,800
-trong việc sắp xếp, xin vui lòng cho tôi biết, tôi có thể giúp, okay, đó là nó, cảm ơn bạn cho thời gian của bạn.
+00:07:09,390 --> 00:07:10,050
+Và năng động.
+
+112
+00:07:11,190 --> 00:07:11,520
+Được rồi.
+
+113
+00:07:13,080 --> 00:07:14,670
+Ừ.
+
+114
+00:07:14,790 --> 00:07:16,800
+Rồi sao nữa?
+
+115
+00:07:16,800 --> 00:07:18,480
+Vậy là xong.
+
+116
+00:07:19,360 --> 00:07:24,540
+Chúng tôi đã kiểm tra tất cả hồ sơ trong gói RRO mẫu thử.
+
+117
+00:07:25,830 --> 00:07:32,460
+OK, bây giờ hãy đi trước và biên soạn gói của chúng tôi, biên dịch gói RRO của chúng tôi và cài đặt nó vào giả lập.
+
+118
+00:07:32,790 --> 00:07:35,220
+Được rồi.
+
+119
+00:07:38,190 --> 00:07:44,640
+Đóng trước và để tôi kiểm tra xem tôi đang ở đâu.
+
+120
+00:07:49,720 --> 00:07:57,790
+Được rồi, vậy tôi đang ở trong cùng một gói hàng hai bên, và giờ tôi chỉ đang xây dựng nó, um.
+
+121
+00:07:58,300 --> 00:08:00,190
+Được rồi, vậy hãy xây dựng.
+
+122
+00:08:24,570 --> 00:08:30,150
+OK, vì vậy bây giờ dự luật đã thành công và rằng tôi có EPA ở đây.
+
+123
+00:08:30,480 --> 00:08:38,660
+Vì vậy, tôi đã có một thất bại trước đó, do đó, đó đã thực sự là do một số, một số không gian không cần thiết trong họ cung cấp
+
+124
+00:08:38,670 --> 00:08:38,940
+Cách.
+
+125
+00:08:40,140 --> 00:08:44,040
+Nên chỉ cần đảm bảo rằng bạn không có bất kỳ khoảng trống không cần thiết giữa chúng.
+
+126
+00:08:44,050 --> 00:08:44,580
+Được rồi.
+
+127
+00:08:45,390 --> 00:08:49,470
+OK, vì vậy bây giờ họ bởi vì thực sự được tạo ra ở đây.
+
+128
+00:08:50,850 --> 00:08:56,970
+Vì vậy bây giờ chúng ta hãy sao chép phần này bởi vì tôi cần phải mở chúng đầu tiên sau đó.
+
+129
+00:08:58,040 --> 00:08:58,140
+Ừ.
+
+130
+00:08:58,200 --> 00:09:02,430
+Vậy hãy bắt đầu giả lập của tôi.
+
+131
+00:09:05,410 --> 00:09:06,570
+Được rồi, có thể.
+
+132
+00:09:09,730 --> 00:09:16,870
+Yeah, điều này sẽ làm tốt và cho bạn mở một cửa sổ khác.
+
+133
+00:09:18,690 --> 00:09:20,920
+Ừ.
+
+134
+00:09:22,030 --> 00:09:24,460
+Nên giờ tôi chỉ ở St...
+
+135
+00:09:35,080 --> 00:09:40,400
+OK, tôi có một số vấn đề ngân hàng, bạn biết đấy, để tôi có thể.
+
+136
+00:09:43,780 --> 00:09:48,190
+Tôi có biệt danh Ali ở đây.
+
+137
+00:09:48,580 --> 00:09:50,200
+Đừng nhầm lẫn với điều đó.
+
+138
+00:09:52,470 --> 00:09:54,240
+OK, tôi đã cài đặt nó.
+
+139
+00:09:55,080 --> 00:09:55,440
+Được rồi.
+
+140
+00:09:56,310 --> 00:10:02,740
+Vì vậy, để làm cho nó khá rõ ràng, thực sự, tôi có một số bí danh xác định ở đây.
+
+141
+00:10:02,760 --> 00:10:07,470
+Tôi có một bộ YASYA mà tôi có thể có đường tắt.
+
+142
+00:10:07,800 --> 00:10:10,260
+Đó là lý do tôi luôn dùng đường tắt.
+
+143
+00:10:11,430 --> 00:10:14,070
+Bây giờ hãy...
+
+144
+00:10:14,340 --> 00:10:15,960
+Bây giờ diễn giả đã được cài đặt.
+
+145
+00:10:16,500 --> 00:10:17,720
+Vì vậy bây giờ chúng ta hãy làm.
+
+146
+00:10:17,730 --> 00:10:27,690
+Chúng ta hãy vào ADB Shell và ở đây chúng ta hãy chạy các bao phủ.
+
+147
+00:10:41,070 --> 00:10:42,750
+Có vẻ hơi quá đáng.
+
+148
+00:10:45,330 --> 00:10:50,240
+E rằng cô đã thấy bông.
+
+149
+00:10:51,570 --> 00:11:01,110
+Vì vậy, đây là thiết lập chiến tranh gói hàng của chúng tôi, vì vậy bạn có thể thấy ở đây là bao gồm của chúng tôi có.
+
+150
+00:11:01,650 --> 00:11:04,530
+Và tại thời điểm này, nó thực sự bị vô hiệu hóa.
+
+151
+00:11:05,310 --> 00:11:06,960
+Vì vậy, hãy đi trước và cho phép nó.
+
+152
+00:11:07,380 --> 00:11:24,330
+Vì vậy, để hiệu lực, bạn phải um, bạn phải cung cấp cho một lệnh bao gồm, cho phép bạn rất bình tĩnh và sau đó
+
+153
+00:11:24,330 --> 00:11:25,040
+tên gói.
+
+154
+00:11:25,050 --> 00:11:26,300
+Vậy là gói hàng này được giấu đi.
+
+155
+00:11:26,310 --> 00:11:30,660
+Vậy bản copy này, nó được dán ở đây.
+
+156
+00:11:31,920 --> 00:11:34,050
+Vì vậy, tôi chắc chắn đã cho phép nó.
+
+157
+00:11:34,050 --> 00:11:36,180
+Hãy quay lại để tôi có thể thấy điều đó ở đây.
+
+158
+00:11:37,500 --> 00:11:37,860
+Được rồi.
+
+159
+00:11:38,190 --> 00:11:42,000
+Vì vậy, bây giờ hãy để tôi giữ nó như thế này.
+
+160
+00:11:45,190 --> 00:11:47,680
+Vì vậy, nếu bạn muốn vô hiệu hóa.
+
+161
+00:11:53,320 --> 00:11:56,560
+Vì vậy, nếu bạn muốn tắt chỉ
+
+162
+00:11:59,200 --> 00:12:01,660
+vô hiệu hóa nó như thế này và nó biến mất.
+
+163
+00:12:03,310 --> 00:12:08,740
+OK, tôi hy vọng bạn hiểu một điều từ video này.
+
+164
+00:12:09,820 --> 00:12:17,380
+Và vì vậy chỉ để tóm tắt nhanh chóng, vì vậy chúng tôi đã tạo ra gói thông minh này nơi bạn có tài nguyên, bạn có
+
+165
+00:12:17,380 --> 00:12:24,660
+Màu sắc, kiểu dáng và sau đó bạn có một robot hoặc trò chơi thời gian và một bản kê khai robot.
+
+166
+00:12:25,480 --> 00:12:34,060
+Vì vậy, ở đây bạn chỉ cần xác định một chạy thời gian nhỏ bao phủ, mà thực sự bao phủ âm thanh
+
+167
+00:12:34,060 --> 00:12:36,220
+Chụp và quay lại.
+
+168
+00:12:36,220 --> 00:12:46,420
+Tùy chọn này sẽ được hiệu lực chỉ cho các gói đã ghi rõ ở đây, cũng như cho những gói dùng UI
+
+169
+00:12:46,630 --> 00:12:47,040
+Nhảy.
+
+170
+00:12:48,010 --> 00:12:49,600
+Vậy là cả hai.
+
+171
+00:12:50,380 --> 00:12:53,020
+Vì vậy, bạn phải xác định ở đây là, tất nhiên, đúng.
+
+172
+00:12:53,710 --> 00:12:57,790
+Vì vậy, nếu bạn xác định nó ở đây, nó phải được.
+
+173
+00:12:57,790 --> 00:12:59,230
+Anh đã thấy Corey Wiley.
+
+174
+00:12:59,800 --> 00:13:00,110
+Được rồi.
+
+175
+00:13:00,340 --> 00:13:06,340
+Vì vậy, nếu bạn xác định một gói mà thực sự không sử dụng Ailbhe, sau đó điều này sẽ không hoạt động.
+
+176
+00:13:06,940 --> 00:13:07,400
+Được rồi.
+
+177
+00:13:08,530 --> 00:13:09,760
+Được rồi.
+
+178
+00:13:09,760 --> 00:13:12,550
+Vì vậy, về cơ bản, điều này bao phủ các nguồn tài nguyên từ chiếc xe.
+
+179
+00:13:13,720 --> 00:13:13,990
+Được rồi.
+
+180
+00:13:14,830 --> 00:13:19,000
+Vì vậy, tôi hy vọng điều đó có ý nghĩa, và tôi hy vọng bạn tìm hiểu một cái gì đó từ nó.
+
+181
+00:13:19,240 --> 00:13:23,710
+Và tôi đã gắn tất cả những đoạn mã này với lá thư này.
+
+182
+00:13:24,040 --> 00:13:31,190
+Hãy lấy nó và sửa đổi nó, làm cho nó hoạt động tốt hơn.
+
+183
+00:13:31,210 --> 00:13:37,120
+Và đề phòng trường hợp cô có vấn đề gì trong việc sắp xếp nó, hãy cho tôi biết tôi có thể giúp.
+
+184
+00:13:38,110 --> 00:13:39,700
+Được rồi.
+
+185
+00:13:39,850 --> 00:13:40,810
+Cảm ơn đã dành thời gian.
 
