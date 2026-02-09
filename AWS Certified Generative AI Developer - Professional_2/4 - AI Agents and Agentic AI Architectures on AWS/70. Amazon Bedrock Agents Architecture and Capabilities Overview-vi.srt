@@ -1,0 +1,600 @@
+1
+00:00:00,000 --> 00:00:05,480
+Trong phần này, chúng ta sẽ xem xét khả năng của AI.
+
+2
+00:00:05,480 --> 00:00:11,840
+Vì vậy, một trong những dịch vụ cốt lõi từ AWS trên AI là các đại lý Amazon Bedrock.
+
+3
+00:00:11,840 --> 00:00:16,120
+Bây giờ, trước khi chúng ta lặn sâu vào những gì là các đặc vụ Amazon Bedrock,
+
+4
+00:00:16,120 --> 00:00:20,360
+Hãy nhìn vào một định nghĩa chính thức trên các đại lý Bedrock.
+
+5
+00:00:20,360 --> 00:00:26,080
+AWS nói các đặc vụ Amazon Bedrock là một dịch vụ quản lý đầy đủ.
+
+6
+00:00:26,080 --> 00:00:31,840
+Vậy, điều đó có nghĩa là AWS sẽ lo việc giám sát, tăng cường, vá,
+
+7
+00:00:31,840 --> 00:00:35,440
+và tất cả những nhiệm vụ khác liên quan đến các đặc vụ.
+
+8
+00:00:35,440 --> 00:00:45,000
+Vì vậy, các đại lý của Amazon Bedrock cho phép ứng dụng sáng tạo AI để tự động hóa nhiệm vụ đa bước
+
+9
+00:00:45,000 --> 00:00:50,720
+Bằng cách kết nối chặt chẽ với hệ thống công ty, hệ thống ADI và nguồn dữ liệu.
+
+10
+00:00:50,720 --> 00:00:57,360
+Và, nếu bạn nhìn vào những gì chúng tôi đã thảo luận ở phần trước, chúng tôi đã nói về làm thế nào các đại lý
+
+11
+00:00:57,360 --> 00:01:05,280
+có thể tự động thực hiện công việc đa bước bằng cách kết nối với dữ liệu bên ngoài,
+
+12
+00:01:05,280 --> 00:01:08,640
+Nguồn dữ liệu nội bộ, thông qua các công cụ.
+
+13
+00:01:08,640 --> 00:01:14,840
+Vì vậy, đó là những gì AWS nhấn mạnh đến những gì các đặc vụ Amazon Bedrock có thể làm.
+
+14
+00:01:14,840 --> 00:01:20,040
+Bây giờ, chúng ta hãy xem xét các thành phần cốt lõi của các đặc vụ Amazon Bedrock.
+
+15
+00:01:20,040 --> 00:01:27,280
+Vì vậy, chúng tôi có tác nhân, và sau đó chúng ta hãy bắt đầu với các kế hoạch và lý luận quan trọng nhất
+
+16
+00:01:27,280 --> 00:01:29,560
+Khả năng của các đặc vụ.
+
+17
+00:01:29,560 --> 00:01:37,160
+Vì vậy, đại lý của Amazon Bedrock hỗ trợ bởi lý luận mặc định và hành động phong cách lên kế hoạch cùng
+
+18
+00:01:37,160 --> 00:01:39,560
+với hàng loạt suy nghĩ lý luận.
+
+19
+00:01:39,560 --> 00:01:43,320
+Vì vậy, trong phần trước, chúng tôi đã thảo luận về chuỗi suy nghĩ
+
+20
+00:01:43,320 --> 00:01:46,600
+và lý trí và cách lên kế hoạch.
+
+21
+00:01:46,600 --> 00:01:51,240
+Vì vậy, nếu bạn không đi qua bài giảng đó, xin vui lòng đi qua bài giảng đó cho cơ bản trong
+
+22
+00:01:51,240 --> 00:01:53,240
+phần trước.
+
+23
+00:01:53,240 --> 00:01:59,160
+Bây giờ, hãy để tôi đi trước và lặn sâu hơn một chút vào làm thế nào các nhân viên Amazon Bedrock
+
+24
+00:01:59,160 --> 00:02:03,640
+Thực hiện cách lập luận và hành động hoạch định.
+
+25
+00:02:03,640 --> 00:02:08,880
+Vì vậy, trong một trong những phần trước đó, chúng tôi đã xem xét trường hợp sử dụng này khi chúng tôi đang làm
+
+26
+00:02:08,880 --> 00:02:11,480
+Đặc vụ Al đang lên kế hoạch.
+
+27
+00:02:11,480 --> 00:02:17,200
+Vì vậy, chúng tôi đã nói rằng người sử dụng sẽ đi trong một kỳ nghỉ 5 ngày và ông đã gửi yêu cầu này đến vi thu nhỏ
+
+28
+00:02:17,200 --> 00:02:22,600
+Đặc vụ AI và sau đó tác nhân siêu nhỏ này có hai khả năng để kiểm tra cân bằng trái
+
+29
+00:02:22,600 --> 00:02:25,600
+nhân viên và đặt một khách sạn.
+
+30
+00:02:25,600 --> 00:02:31,440
+Và sau đó chúng tôi đã đặt câu hỏi nơi chúng tôi nói, được rồi, đặt phòng khách sạn cho tôi với
+
+31
+00:02:31,440 --> 00:02:37,400
+Thẻ nhân viên nhận dạng cái này và nếu số dư là hơn ba ngày, thì đặt một khách sạn.
+
+32
+00:02:37,400 --> 00:02:44,200
+Bây giờ, nếu bạn nhớ, có ba hành động quan trọng mà đặc vụ AI phải thực hiện.
+
+33
+00:02:44,200 --> 00:02:50,160
+Vì vậy, kiểm tra cân bằng của tôi từ bảng hệ thống nhân sự của tôi, sau đó thực hiện một quyết định nếu
+
+34
+00:02:50,160 --> 00:02:55,080
+để lại cân bằng nhỏ hơn hoặc hơn ba ngày và sau đó thứ ba, nếu để lại cân bằng là
+
+35
+00:02:55,080 --> 00:02:59,160
+Ít hơn ba ngày, sau đó cho tôi biết rằng phòng khách sạn không thể được đặt và nó là nhiều hơn
+
+36
+00:02:59,160 --> 00:03:02,040
+Hơn ba ngày, rồi đặt phòng khách sạn.
+
+37
+00:03:02,040 --> 00:03:08,840
+Được rồi, với ví dụ này, bây giờ hãy xem, làm thế nào điều này sẽ được thực hiện trong các đại lý nền Amazon.
+
+38
+00:03:08,840 --> 00:03:13,240
+Chúng ta đang xem xét phong cách dàn dựng phản ứng.
+
+39
+00:03:13,240 --> 00:03:18,400
+Vì vậy, đôi khi nó được gọi là cách dàn dựng phản ứng hoặc nó cũng có thể được gọi là phản ứng
+
+40
+00:03:18,400 --> 00:03:19,400
+Kiểu nhắc nhở.
+
+41
+00:03:19,400 --> 00:03:23,280
+Vì vậy, đó là một số từ khóa mà chúng tôi sẽ thường nghe.
+
+42
+00:03:23,280 --> 00:03:27,880
+Bây giờ chúng tôi là các đặc vụ Amazon trên nền đá, vì vậy chúng tôi có một cái gì đó được gọi là dàn nhạc.
+
+43
+00:03:27,880 --> 00:03:34,280
+Vì vậy, bạn có thể nghĩ về dàn nhạc như một số mã nội bộ mà AWS đã viết cho mục đích
+
+44
+00:03:34,280 --> 00:03:35,280
+của dàn nhạc.
+
+45
+00:03:35,280 --> 00:03:41,440
+Vì vậy, hoặc bạn có thể sử dụng dàn nhạc mặc định mà AWS có, nhưng nó cũng cho phép bạn
+
+46
+00:03:41,440 --> 00:03:47,200
+Nếu cần, hãy viết ra bộ dàn nhạc tùy chỉnh bằng chức năng AWS Lambda.
+
+47
+00:03:47,200 --> 00:03:52,040
+Bây giờ, hãy xem những gì dàn nhạc này làm và làm thế nào nó tương tác với ngôn ngữ lớn
+
+48
+00:03:52,040 --> 00:03:54,640
+Mô hình đang điều khiển đặc vụ.
+
+49
+00:03:54,640 --> 00:04:01,000
+Được rồi, vậy điều đầu tiên dàn nhạc này sẽ làm là gửi yêu cầu người dùng.
+
+50
+00:04:01,000 --> 00:04:05,800
+Như chúng ta đã thấy trong ví dụ trước, người dùng muốn đặt phòng khách sạn dựa trên
+
+51
+00:04:05,800 --> 00:04:06,960
+Số lá cây.
+
+52
+00:04:06,960 --> 00:04:12,960
+Vì vậy, những gì dàn nhạc này sẽ làm là nó sẽ gửi yêu cầu người dùng và tất cả các công cụ
+
+53
+00:04:12,960 --> 00:04:13,960
+Đúng vậy.
+
+54
+00:04:13,960 --> 00:04:18,560
+Vì vậy, có lẽ nó có một công cụ để kiểm tra cân bằng trái từ hệ thống HR, có thể nó có một công cụ
+
+55
+00:04:18,560 --> 00:04:24,960
+để kiểm tra, liệu nó có thể có một công cụ để đặt chỗ trong khách sạn không.
+
+56
+00:04:24,960 --> 00:04:31,320
+Vì vậy, nó sẽ gửi các yêu cầu người dùng cộng với công cụ để này LLM đang lái xe các đại lý và
+
+57
+00:04:31,320 --> 00:04:37,080
+sau đó LLM sẽ phân tích và sau đó LM sẽ trả lời với những gì là hành động
+
+58
+00:04:37,080 --> 00:04:39,200
+Nó cần được đưa đi tiếp theo.
+
+59
+00:04:39,200 --> 00:04:44,240
+Vì vậy, những gì sẽ xảy ra là giống như trong trường hợp của chúng tôi, điều đầu tiên nó sẽ làm là nó sẽ đi
+
+60
+00:04:44,240 --> 00:04:50,080
+để gọi cho hệ thống hậu phương của đám quan chức cấp cao để giữ thăng bằng.
+
+61
+00:04:50,080 --> 00:04:56,800
+Bây giờ, hãy nói rằng nó đã có cân bằng để lại mà nói rằng số dư của bạn là 10 ngày.
+
+62
+00:04:56,800 --> 00:05:04,320
+Tiếp theo, dàn nhạc này sẽ gửi yêu cầu, các công cụ và quan sát
+
+63
+00:05:04,320 --> 00:05:10,320
+Mà nó có được từ bước này đó là số dư của tôi.
+
+64
+00:05:10,320 --> 00:05:16,120
+Vì vậy, sau đó nó sẽ nói OK số dư của nhân viên là 10 ngày và sau đó
+
+65
+00:05:16,120 --> 00:05:21,800
+Nó sẽ cung cấp cho nó những gì nó cần làm tiếp theo.
+
+66
+00:05:21,800 --> 00:05:25,960
+Và trong trường hợp này, vì số dư là hơn 3 ngày, vì vậy nó sẽ nói với nó
+
+67
+00:05:25,960 --> 00:05:33,800
+Đi gọi điện đến khách sạn đặt phòng và đặt phòng khách sạn.
+
+68
+00:05:33,800 --> 00:05:39,360
+Và sau đó dàn nhạc làm điều đó và một khi nó nhận được quan sát từ đặt chỗ khách sạn
+
+69
+00:05:39,360 --> 00:05:46,800
+API, nó sẽ gửi yêu cầu này, các công cụ nó có và trước đó và quan sát mới
+
+70
+00:05:46,800 --> 00:05:52,800
+đặc vụ và đặc vụ sẽ quay lại với lời khuyên.
+
+71
+00:05:52,800 --> 00:05:56,240
+Và trong trường hợp này, nó sẽ là kết quả cuối cùng.
+
+72
+00:05:56,240 --> 00:06:02,240
+Và như chúng tôi đã thấy trong các bản thử nghiệm trong phần trước đó rằng nó sẽ trở lại với các đặt cược
+
+73
+00:06:02,240 --> 00:06:03,240
+ID.
+
+74
+00:06:03,240 --> 00:06:10,360
+Đó là cách mà cách lý luận và giao hưởng hành động hoạt động ở các đại lý nền móng Amazon.
+
+75
+00:06:10,360 --> 00:06:16,240
+Bây giờ nếu bạn thấy phản ứng, thỉnh thoảng nó được gọi là phong cách dàn nhạc hay phong cách thúc đẩy,
+
+76
+00:06:16,240 --> 00:06:23,240
+Nó định nghĩa kế hoạch và sau đó chỉnh sửa khi chúng ta đi, nhưng nó là sự đơn giản trong tự nhiên.
+
+77
+00:06:23,240 --> 00:06:28,200
+Vì vậy, bây giờ hy vọng bạn hiểu rằng mặc dù nó là năng động, vì vậy hãy nói trong phần này
+
+78
+00:06:28,200 --> 00:06:32,400
+Nó nói nghỉ phép chỉ có hai ngày, vì vậy nó sẽ có một hành động khác.
+
+79
+00:06:32,400 --> 00:06:35,820
+Nhưng nếu số ngày nghỉ phép là hơn ba, sau đó nó sẽ mất một khác nhau
+
+80
+00:06:35,820 --> 00:06:36,820
+diễn
+
+81
+00:06:36,820 --> 00:06:43,040
+Vì vậy, mặc dù nó là năng động trong tự nhiên, nhưng nó vẫn còn là ẩn số, okay.
+
+82
+00:06:43,040 --> 00:06:47,800
+Cách lập kế hoạch thứ hai mà đặc vụ Amazon ủng hộ là tùy chỉnh.
+
+83
+00:06:47,800 --> 00:06:53,080
+Vì vậy, tùy chỉnh có nghĩa là bạn có thể viết phong cách dàn nhạc của riêng mình hoặc thúc đẩy phong cách của mình.
+
+84
+00:06:53,080 --> 00:07:00,040
+Và một trong những lý luận phổ biến là lý luận mà không cần quan sát hoặc đôi khi được gọi là re-woo.
+
+85
+00:07:00,040 --> 00:07:03,400
+Và tại sao bạn muốn sử dụng một kiểu dàn nhạc khác?
+
+86
+00:07:03,400 --> 00:07:09,080
+Và lý do là nếu bạn thấy những kịch bản mà chúng tôi đã thảo luận trước đó, nó đã được thư giãn
+
+87
+00:07:09,080 --> 00:07:10,080
+trong tự nhiên.
+
+88
+00:07:10,080 --> 00:07:15,880
+Vì vậy, đầu tiên dàn nhạc gửi yêu cầu đến đặc vụ LM, có lẽ nếu bạn đang sử dụng một cái gì đó
+
+89
+00:07:15,880 --> 00:07:21,240
+Giống như đám mây hoặc một mô hình ngôn ngữ lớn, nó sẽ mất ba giây có thể ít nhất để làm
+
+90
+00:07:21,240 --> 00:07:26,520
+xử lý sau đó trong bước tiếp theo, nó sẽ một lần nữa gửi này và sẽ có nhiều xử lý
+
+91
+00:07:26,520 --> 00:07:28,280
+Và rồi một lần nữa nó sẽ gửi.
+
+92
+00:07:28,280 --> 00:07:34,080
+Vì vậy, nó có thể là năm đến mười giây trước khi người dùng thực sự nhận được một phản hồi trong xử lý phức tạp
+
+93
+00:07:34,080 --> 00:07:35,400
+Tình huống.
+
+94
+00:07:35,400 --> 00:07:39,600
+Và nếu đó là một robot chat, thì khách hàng có thể không có một kinh nghiệm người dùng tuyệt vời.
+
+95
+00:07:39,600 --> 00:07:45,120
+Vì vậy, trong một số kịch bản, bạn có thể chỉ cần gửi yêu cầu một lần cho ngôn ngữ lớn
+
+96
+00:07:45,120 --> 00:07:51,080
+Mô hình và sau đó nó cho bạn biết các bước và sau đó bạn chỉ cần đi trước và phản hồi rằng phản hồi
+
+97
+00:07:51,080 --> 00:07:52,520
+cho người dùng cuối cùng.
+
+98
+00:07:52,520 --> 00:07:56,280
+Anh không cần phải dùng nó liên tục.
+
+99
+00:07:56,280 --> 00:08:01,000
+Vì vậy, một ví dụ phổ biến mà nó luôn cung cấp cho lý luận mà không cần quan sát là hãy
+
+100
+00:08:01,000 --> 00:08:04,480
+Nói là anh muốn đặt phòng trước bữa tối.
+
+101
+00:08:04,480 --> 00:08:08,080
+Vì vậy, điều duy nhất bạn phải làm là nói rằng bạn muốn có một thực đơn và bạn muốn
+
+102
+00:08:08,080 --> 00:08:10,920
+để đặt bàn cho một ngày đặc biệt.
+
+103
+00:08:10,920 --> 00:08:17,280
+Vì vậy, một khi bạn gửi yêu cầu cho các đại lý, nó sẽ gọi là đặt phòng nhà hàng,
+
+104
+00:08:17,280 --> 00:08:20,000
+rồi gửi thực đơn.
+
+105
+00:08:20,000 --> 00:08:26,920
+Vì vậy, có lẽ nó cần phải gửi yêu cầu đó chỉ một lần để mô hình ngôn ngữ lớn để lưu vào
+
+106
+00:08:26,920 --> 00:08:28,800
+Thời gian trả lời.
+
+107
+00:08:28,800 --> 00:08:29,800
+Được rồi.
+
+108
+00:08:29,800 --> 00:08:32,160
+Bây giờ cái thứ hai là bộ nhớ.
+
+109
+00:08:32,160 --> 00:08:37,760
+Vì vậy, các đại lý nền tảng được kích hoạt với cả bộ nhớ dài hạn và ngắn hơn bộ nhớ và dài hơn
+
+110
+00:08:37,760 --> 00:08:44,760
+có thể sử dụng bộ nhớ từ xa để lưu giữ cuộc trò chuyện của người dùng lên đến 365 ngày.
+
+111
+00:08:44,760 --> 00:08:50,200
+Bộ nhớ dài hạn được quản lý bởi AWS và tất cả những gì bạn cần làm là xác định xem nó có đúng hay không
+
+112
+00:08:50,200 --> 00:08:57,520
+hoặc sai và nó sẽ lưu giữ cuộc trò chuyện lâu dài giữa người dùng và tác nhân.
+
+113
+00:08:57,520 --> 00:09:03,880
+Tiếp theo là bộ nhớ ngắn hơn một lần nữa này được hiệu lực bởi AWS theo mặc định tất cả các tương tác
+
+114
+00:09:03,880 --> 00:09:09,240
+giữa người dùng kết thúc và tác nhân trong phiên chạy đặc biệt đó sẽ được lưu trữ
+
+115
+00:09:09,240 --> 00:09:16,000
+Và những đầu vào người dùng cũng sẽ được chuyển sang các công cụ mà bạn có thể sử dụng
+
+116
+00:09:16,000 --> 00:09:19,600
+và kết hợp với đặc vụ.
+
+117
+00:09:19,600 --> 00:09:20,600
+Được rồi.
+
+118
+00:09:20,600 --> 00:09:25,200
+Tiếp theo là các công cụ và hành động AWS cung cấp ba loại công cụ.
+
+119
+00:09:25,200 --> 00:09:29,320
+Đầu tiên là nhóm hành động và điều này rất quan trọng.
+
+120
+00:09:29,320 --> 00:09:35,680
+Vì vậy, ở đây bạn có thể sử dụng một sự kết hợp của AWS Lambda và mở ADI.
+
+121
+00:09:35,680 --> 00:09:40,080
+Vì vậy, một khi chúng tôi xây dựng các trường hợp sử dụng trong các phần tiếp theo sau đó bạn sẽ có thể
+
+122
+00:09:40,080 --> 00:09:47,600
+để hình dung làm thế nào chúng tôi có thể sử dụng các nhóm hành động để kết nối với bên ngoài và bên trong dữ liệu
+
+123
+00:09:47,600 --> 00:09:48,720
+Nguồn tin.
+
+124
+00:09:48,720 --> 00:09:53,520
+Và sau đó bạn có nền tảng kiến thức nền tảng và chúng tôi đã thảo luận về quản lý
+
+125
+00:09:53,520 --> 00:10:00,280
+một giải pháp thô sơ từ AWS và kiến thức có thể được kết hợp với các tác nhân cho phép
+
+126
+00:10:00,280 --> 00:10:06,800
+người dùng cuối truy cập dữ liệu chưa cấu trúc dưới dạng PDFs và vân vân.
+
+127
+00:10:06,800 --> 00:10:09,120
+Cuối cùng anh cũng có đoạn mã.
+
+128
+00:10:09,120 --> 00:10:14,160
+Vì vậy, một kịch bản chung sẽ là, vì vậy hãy nói rằng bạn có một đại lý bác sĩ và nó là giám sát
+
+129
+00:10:14,160 --> 00:10:17,560
+Một vài ứng dụng trong môi trường.
+
+130
+00:10:17,560 --> 00:10:20,120
+Giả sử có một sự cố.
+
+131
+00:10:20,120 --> 00:10:25,040
+Vì vậy, những gì tác nhân ứng dụng dev này có thể làm là nó có thể phân tích những gì là nguyên nhân gốc của các đại lý
+
+132
+00:10:25,040 --> 00:10:31,860
+bằng cách sử dụng LM sau đó tạo ra các mã và sau đó nó có thể kiểm tra mà mã trong mã
+
+133
+00:10:31,860 --> 00:10:35,120
+Thông dịch là môi trường của hộp cát địa phương.
+
+134
+00:10:35,120 --> 00:10:38,400
+Và nếu nó hoạt động ở đó thì nó có thể thực hiện miếng vá đó.
+
+135
+00:10:38,400 --> 00:10:42,720
+Đó là những gì có thể sử dụng để giải mã.
+
+136
+00:10:42,720 --> 00:10:44,360
+Vậy là bạn có giao tiếp.
+
+137
+00:10:44,360 --> 00:10:50,200
+Vì vậy, chúng tôi có một tác nhân và nó cũng hỗ trợ dàn nhạc đa tác nhân.
+
+138
+00:10:50,200 --> 00:10:55,280
+Vì vậy, đôi khi ứng dụng mà bạn có thể xây dựng với tác nhân có thể thực sự phức tạp
+
+139
+00:10:55,280 --> 00:11:01,880
+Và đặc vụ có thể có nhiều công cụ có thể hàng chục và hàng trăm công cụ.
+
+140
+00:11:01,880 --> 00:11:08,360
+Vậy thì có thể sẽ khó cho một đặc vụ duy nhất đi theo đúng hướng yêu cầu của người dùng.
+
+141
+00:11:08,360 --> 00:11:14,680
+Và trong trường hợp đó chúng tôi có thể sử dụng nhiều tác nhân và sau đó AWS cung cấp cho bạn với một đa số
+
+142
+00:11:14,680 --> 00:11:20,840
+Khung dàn dựng đặc vụ giúp bạn định tuyến cho nhiều tác nhân và
+
+143
+00:11:20,840 --> 00:11:26,300
+cũng giúp phối hợp và hợp tác giữa các đặc vụ khác nhau.
+
+144
+00:11:26,300 --> 00:11:28,400
+Và cuối cùng là với thanh tra bảo vệ.
+
+145
+00:11:28,400 --> 00:11:34,440
+Vì vậy, dịch vụ nền của Amazon đã có một khả năng mà bạn có thể xây dựng các đường hầm bảo vệ tùy chỉnh
+
+146
+00:11:34,440 --> 00:11:39,120
+Để phát hiện ảo giác hoặc phát hiện độc tính và kiểm soát.
+
+147
+00:11:39,120 --> 00:11:46,400
+Vì vậy, bạn có thể xây dựng các rào chắn từ dịch vụ nền và sau đó kết hợp với
+
+148
+00:11:46,400 --> 00:11:48,840
+Đặc vụ Amazon.
+
+149
+00:11:48,840 --> 00:11:54,120
+Được rồi, đó là khá nhiều từ những thành phần cốt lõi của các tác nhân làm nền Amazon.
+
+150
+00:11:54,120 --> 00:11:55,520
+Hẹn gặp lại ở bài giảng kế tiếp, cảm ơn.
+
