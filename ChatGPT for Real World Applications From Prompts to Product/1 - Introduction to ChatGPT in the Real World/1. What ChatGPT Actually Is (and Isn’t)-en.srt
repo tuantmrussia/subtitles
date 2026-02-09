@@ -1,0 +1,376 @@
+1
+00:00:00,000 --> 00:00:07,520
+ Most people encounter chat GPT as a conversational interface, a clever chatbot that can answer questions,
+
+2
+00:00:07,520 --> 00:00:12,720
+ write text, or explain ideas fluently. But this surface-level experience
+
+3
+00:00:12,720 --> 00:00:18,320
+ hides how organizations actually use large language models in the real world. In professional
+
+4
+00:00:18,320 --> 00:00:24,720
+ environments, LLMs are not treated as toys or assistants. They are treated as system components,
+
+5
+00:00:24,720 --> 00:00:30,720
+ embedded inside workflows, connected to data sources, monitored for quality, and constrained by
+
+6
+00:00:30,720 --> 00:00:36,720
+ business rules. The real value of AI does not come from what a model says in isolation.
+
+7
+00:00:36,720 --> 00:00:42,080
+ It comes from how it is architected, integrated, and governed within a larger system.
+
+8
+00:00:42,080 --> 00:00:48,080
+ That is the gap this course exists to fill. Instead of focusing on prompt tricks or impressive
+
+9
+00:00:48,080 --> 00:00:53,920
+ demos, we focus on the engineering practices that turn language models into reliable,
+
+10
+00:00:53,920 --> 00:01:00,800
+ production-grade systems. You will move beyond surface-level usage and learn how professionals
+
+11
+00:01:00,800 --> 00:01:07,360
+ actually deploy AI to create measurable business value. This course is designed to shift your
+
+12
+00:01:07,360 --> 00:01:13,600
+ mindset, from experimenting with AI to building systems that organizations can trust,
+
+13
+00:01:13,600 --> 00:01:20,640
+ scale, and operate in production environments. Large language models are trained on massive
+
+14
+00:01:20,640 --> 00:01:28,000
+ collections of text, books, websites, code, and conversations. Through this training,
+
+15
+00:01:28,000 --> 00:01:34,080
+ they learn statistical patterns in how language tends to flow. However, a critical insight
+
+16
+00:01:34,080 --> 00:01:40,080
+ often misunderstood is that LLMs do not learn facts or truth. They learn patterns.
+
+17
+00:01:40,080 --> 00:01:46,960
+ At their core, LLMs perform one task, predicting the next most likely token in a sequence.
+
+18
+00:01:47,600 --> 00:01:54,160
+ A token might be a word or a fragment of a word. The model's job is purely predictive,
+
+19
+00:01:54,160 --> 00:02:00,800
+ given everything that came before, what should come next? This makes LLMs extremely powerful
+
+20
+00:02:00,800 --> 00:02:07,600
+ at language-based tasks like summarization, translation, and text generation. However, this
+
+21
+00:02:07,600 --> 00:02:16,000
+ strength comes with important limitations. Without access to external data, LLMs cannot verify facts,
+
+22
+00:02:16,000 --> 00:02:22,800
+ check real-time information, or guarantee accuracy. They also do not understand meaning
+
+23
+00:02:22,800 --> 00:02:29,200
+ in a human sense. They generate language by matching patterns with extraordinary sophistication.
+
+24
+00:02:29,200 --> 00:02:36,080
+ Understanding this distinction is essential before trusting models in business-critical workflows.
+
+25
+00:02:36,080 --> 00:02:43,520
+ When you use chat GPT, you are not directly interacting with a raw language model.
+
+26
+00:02:44,320 --> 00:02:49,520
+ Chat GPT is a carefully engineered product built on top of foundational models,
+
+27
+00:02:49,520 --> 00:02:55,520
+ such as GPT-4. This distinction is critical for anyone aiming to build production systems.
+
+28
+00:02:55,520 --> 00:03:01,280
+ Chat GPT includes instruction tuning, which helps the model follow user requests,
+
+29
+00:03:01,280 --> 00:03:07,040
+ format responses helpfully, and maintain conversational context across multiple turns.
+
+30
+00:03:07,040 --> 00:03:12,640
+ It also includes safety layers, guardrails that filter harmful content,
+
+31
+00:03:12,640 --> 00:03:19,200
+ enforce usage policies, and manage risk. These protections add latency and constraints,
+
+32
+00:03:19,200 --> 00:03:24,400
+ which are acceptable for consumer use, but limiting in system design. Additionally,
+
+33
+00:03:24,400 --> 00:03:31,360
+ chat GPT provides memory and user interface features that create a smooth experience for individuals.
+
+34
+00:03:31,360 --> 00:03:37,200
+ However, these same features restrict programmatic control and customization.
+
+35
+00:03:37,840 --> 00:03:43,200
+ The key insight is this, chat GPT is optimized for human conversation,
+
+36
+00:03:43,200 --> 00:03:48,320
+ not system integration. When building production workflows,
+
+37
+00:03:48,320 --> 00:03:55,280
+ developers rely on APIs, not consumer interfaces, to gain the control, observability,
+
+38
+00:03:55,280 --> 00:04:01,040
+ and predictability real systems require. To build effective AI systems,
+
+39
+00:04:01,040 --> 00:04:08,080
+ it is essential to understand the three layers of LLM access, base models, consumer products,
+
+40
+00:04:08,080 --> 00:04:14,000
+ and APIs. Each layer serves a different purpose and comes with different trade-offs.
+
+41
+00:04:14,000 --> 00:04:20,640
+ Base models offer raw intelligence without guardrails or formatting. They provide maximum
+
+42
+00:04:20,640 --> 00:04:25,440
+ flexibility, but require significant engineering expertise to use safely.
+
+43
+00:04:26,480 --> 00:04:31,920
+ Engineers choose base models when they need full behavioral control and are willing to implement
+
+44
+00:04:31,920 --> 00:04:35,360
+ their own safety, validation, and instruction layers.
+
+45
+00:04:35,360 --> 00:04:41,600
+ Chat GPT sits in the middle as a consumer product. It offers helpful defaults,
+
+46
+00:04:41,600 --> 00:04:47,840
+ conversational polish, and built-in safety. It is excellent for individual productivity and
+
+47
+00:04:47,840 --> 00:04:54,800
+ exploration, but it provides limited control over outputs, costs, and integrations. It is not
+
+48
+00:04:54,800 --> 00:05:00,240
+ designed for embedding into production systems, APIs represent the production layer.
+
+49
+00:05:00,240 --> 00:05:05,200
+ They provide full programmatic control, predictable costs,
+
+50
+00:05:05,200 --> 00:05:12,480
+ error handling, logging, and system integration. This is where real business applications are built.
+
+51
+00:05:12,480 --> 00:05:19,200
+ Before building production systems, it is just as important to understand what LLMs cannot do.
+
+52
+00:05:20,160 --> 00:05:27,440
+ Many failures stem from dangerous misconceptions. LLMs are not databases. They do not store or
+
+53
+00:05:27,440 --> 00:05:34,160
+ retrieve facts reliably, and they can generate information that never existed. They are not search
+
+54
+00:05:34,160 --> 00:05:40,560
+ engines. Without external tools, they cannot verify sources, access current information,
+
+55
+00:05:40,560 --> 00:05:46,880
+ or provide grounded citations. They are also not sources of truth. Their outputs are
+
+56
+00:05:46,880 --> 00:05:53,040
+ probabilistic and can be confidently wrong. Treating model responses as verified facts without
+
+57
+00:05:53,040 --> 00:06:00,160
+ validation leads to serious risk. LLMs are also not reasoning engines. While they can mimic
+
+58
+00:06:00,160 --> 00:06:05,520
+ reasoning patterns, they do not perform logical deduction in a strict sense, and they are not
+
+59
+00:06:05,520 --> 00:06:12,320
+ replacements for human experts. Judgment, accountability, and contextual understanding remain human
+
+60
+00:06:12,320 --> 00:06:20,880
+ responsibilities. What LLMs actually are is probabilistic text generators, extremely powerful ones,
+
+61
+00:06:20,880 --> 00:06:28,160
+ but still statistical systems that must be constrained, validated, and supervised in production,
+
+62
+00:06:28,160 --> 00:06:35,520
+ in demos and prototypes, clever prompting can feel magical. But when systems move into production,
+
+63
+00:06:35,520 --> 00:06:42,800
+ prompt only approaches quickly reveal critical weaknesses. First, prompts provide no accuracy
+
+64
+00:06:42,800 --> 00:06:49,920
+ guarantees. Models may generate responses that sound plausible, but are factually wrong or misaligned
+
+65
+00:06:49,920 --> 00:06:56,960
+ with business rules. Second, model behavior is non-deterministic. The same prompt can produce
+
+66
+00:06:56,960 --> 00:07:03,440
+ different outputs across executions. While this variability may be acceptable in creative tasks,
+
+67
+00:07:03,440 --> 00:07:10,160
+ it is unacceptable when consistency matters. Third, prompts alone provide no access to
+
+68
+00:07:10,160 --> 00:07:18,160
+ proprietary business data. Without integration into databases or APIs, the model operates in isolation.
+
+69
+00:07:18,160 --> 00:07:24,640
+ Prompt only systems also lack audit trails. There is no systematic way to explain decisions,
+
+70
+00:07:24,640 --> 00:07:31,680
+ debug failures, or validate outcomes. Finally, there are no accountability mechanisms. When outputs
+
+71
+00:07:31,680 --> 00:07:38,000
+ affect customers, compliance, or revenue, human oversight, and validation layers are essential.
+
+72
+00:07:38,000 --> 00:07:43,360
+ Prompting alone cannot meet these requirements. The difference between impressive demos
+
+73
+00:07:43,360 --> 00:07:50,640
+ and reliable systems is not the model. It is the engineering around it. Production grade LLM
+
+74
+00:07:50,640 --> 00:07:57,760
+ applications rely on structured workflows and external integrations. Structured inputs and outputs
+
+75
+00:07:57,760 --> 00:08:04,160
+ define schemas using formats like JSON, enabling validation, and predictable behavior.
+
+76
+00:08:04,160 --> 00:08:08,640
+ Tool integration allows models to interact with databases,
+
+77
+00:08:08,640 --> 00:08:15,440
+ APIs, and calculators instead of hallucinating results. Retrieval augment a generation
+
+78
+00:08:15,440 --> 00:08:21,840
+ grounds responses entrusted current data from knowledge bases. Evaluation and monitoring
+
+79
+00:08:21,840 --> 00:08:27,840
+ are also critical. Production systems track quality metrics, failure modes, costs,
+
+80
+00:08:27,840 --> 00:08:34,720
+ and latency over time. Finally, human and the loop validation ensures that high-stakes outputs
+
+81
+00:08:34,720 --> 00:08:42,480
+ are reviewed before impacting users or customers. These practices transform LLMs from conversational
+
+82
+00:08:42,480 --> 00:08:46,960
+ tools into reliable system components that businesses can depend on.
+
+83
+00:08:48,720 --> 00:08:55,040
+ Building prototypes and building production systems require fundamentally different mindsets,
+
+84
+00:08:55,040 --> 00:09:02,080
+ demos optimize for creativity and wow factor. Production systems optimize for reliability,
+
+85
+00:09:02,080 --> 00:09:09,120
+ cost efficiency, and risk management. Professional engineers prioritize consistent behavior
+
+86
+00:09:09,120 --> 00:09:16,000
+ over impressive one-off outputs. At scale, costs, latency, and failure modes become
+
+87
+00:09:16,000 --> 00:09:22,320
+ business constraints that shape architectural decisions. AI is treated as a system component,
+
+88
+00:09:22,320 --> 00:09:28,560
+ not a complete solution. Real value comes from how models are integrated into larger workflows.
+
+89
+00:09:28,560 --> 00:09:34,960
+ Prompting is only the starting point. Long-term success depends on architecture,
+
+90
+00:09:34,960 --> 00:09:41,520
+ tooling, monitoring, evaluation, and iterative improvement. As the slide concludes,
+
+91
+00:09:41,520 --> 00:09:46,640
+ demos may impress stakeholders, but systems must survive contact with reality.
+
+92
+00:09:46,640 --> 00:09:52,800
+ This course is designed to teach you how to build systems that survive and thrive in real
+
+93
+00:09:52,800 --> 00:09:58,480
+ production environments where reliability and measurable business impact are the true measures of
+
+94
+00:09:58,480 --> 00:09:59,120
+ success.
+
