@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:08,000
+ Okay so hello everyone in this video let's work with our fetching the response from the
+
+2
+00:00:08,000 --> 00:00:13,800
+ sign up for login pages. So first what I'm going to do is let's go inside of the source
+
+3
+00:00:13,800 --> 00:00:21,200
+ folder and let's make one library folder. Okay so with the LIB what we are going to do
+
+4
+00:00:21,200 --> 00:00:26,560
+ is like we are going to fish the response from our APIs right. So in that case we are going
+
+5
+00:00:26,560 --> 00:00:34,400
+ to make one file which is called as Axios.js right. In the access.js file just import
+
+6
+00:00:34,400 --> 00:00:47,000
+ Axios from Axios okay. So we are going to import Axios from Axios and then we are going
+
+7
+00:00:47,000 --> 00:01:02,440
+ to export Xio's instance okay equal to Axios.create and just go here and we have the base
+
+8
+00:01:02,440 --> 00:01:07,840
+ URL right. From the base URL we are going to just take the response so in our case it
+
+9
+00:01:07,840 --> 00:01:22,120
+ would be HTTP / local host and 5,000 / API. So from this base URL we are going to take the
+
+10
+00:01:22,120 --> 00:01:29,760
+ response and with credentials we are going to set this as true. So this would be the function
+
+11
+00:01:29,760 --> 00:01:36,720
+ okay. So now after this since we have to also make another like we have to manage the state
+
+12
+00:01:36,720 --> 00:01:42,240
+ of our application also right like for example when we are going to sign in to our one
+
+13
+00:01:42,240 --> 00:01:47,360
+ like sign up to our one particular as a one particular user. Then in that case we have
+
+14
+00:01:47,360 --> 00:01:52,160
+ to know like whether the user has particular user has logged in or not. So we are going
+
+15
+00:01:52,160 --> 00:01:56,960
+ to do that we are global state management. That's why we have installed the juice stand
+
+16
+00:01:56,960 --> 00:02:06,160
+ right. So go inside of the source folder and make one more file or one more folder to be
+
+17
+00:02:06,160 --> 00:02:17,520
+ precise which is called as auth. So now in the auth okay so maybe it's not auth rename it's
+
+18
+00:02:17,520 --> 00:02:28,600
+ store actually inside of the store let's make one file which is auth store.js we are going
+
+19
+00:02:28,600 --> 00:02:34,440
+ to implement juice stand in this one which is going to be for the global state management.
+
+20
+00:02:34,440 --> 00:02:48,760
+ So import we are going to just take this from the juice stand and now we are going to export
+
+21
+00:02:48,760 --> 00:03:04,200
+ const a function like auth store and we are going to create one. So set and then inside of it we
+
+22
+00:03:04,200 --> 00:03:11,240
+ have to know whether the logged in user whether the user has logged in or not. So for the first
+
+23
+00:03:11,240 --> 00:03:16,520
+ time it would be null okay. So initial state would be null because we don't know whether the user
+
+24
+00:03:16,520 --> 00:03:23,240
+ has logged in or not. That's why I have set this logged in log user to the null and then we are
+
+25
+00:03:23,240 --> 00:03:36,520
+ going to just take this sign up and sign up would be a sync and it is going to take up some data
+
+26
+00:03:36,520 --> 00:03:48,120
+ okay. So and inside of this we are simply implementing the try and cache block okay. So try and
+
+27
+00:03:48,120 --> 00:03:54,040
+ cache block hey one thing before connecting the like frontend and backend we needed to do one thing.
+
+28
+00:03:54,040 --> 00:04:04,920
+ So we need to actually get get that cost to implement. So the cost is actually one middle
+
+29
+00:04:04,920 --> 00:04:10,200
+ where which is going to connect the frontend with the back end. So we have to go for navigate
+
+30
+00:04:10,200 --> 00:04:14,200
+ to our back end folder and inside of the back end folder we are going to the source and we are
+
+31
+00:04:14,200 --> 00:04:21,320
+ going to check whether the course package is installed or not. So let's go here. So inside of this
+
+32
+00:04:21,320 --> 00:04:27,880
+ let's close the frontend folder and inside of this we will have this source and in this source
+
+33
+00:04:27,880 --> 00:04:34,760
+ let's see package.json let's see this okay. So the course is not implemented that's why it will
+
+34
+00:04:34,760 --> 00:04:44,120
+ cause some issue. So control C we will close the frontend we will quit the frontend server and now
+
+35
+00:04:44,120 --> 00:04:54,440
+ let's navigate to the back end site. So Siri double do double dash double dot sorry. Now CD back end
+
+36
+00:04:55,480 --> 00:05:02,600
+ so go to the back end folder. So we are back end folder now we are going to install one package
+
+37
+00:05:02,600 --> 00:05:12,680
+ which is called as course. Since we have to implement that one also right. So we have implemented
+
+38
+00:05:12,680 --> 00:05:18,120
+ like installed the course package. So as we can see the course is implemented sorry installed. So
+
+39
+00:05:18,120 --> 00:05:24,840
+ now go to the app.js inside of the app.js what we are going to do is since it's a middle where
+
+40
+00:05:24,840 --> 00:05:32,520
+ we are going to place it in that place only so app.use inside of the app.use we are going to
+
+41
+00:05:32,520 --> 00:05:41,800
+ just say that okay course. So for this course we are going to set the values for origin
+
+42
+00:05:41,800 --> 00:05:53,000
+ it is going to be our frontend website like our frontend so this URL. So it would be STTP
+
+43
+00:05:53,800 --> 00:06:06,520
+ double slash local host and then 5173 and then the credentials credentials
+
+44
+00:06:06,520 --> 00:06:18,920
+ credentials would be true. So that is the change which we are going to make as a middle where
+
+45
+00:06:18,920 --> 00:06:24,360
+ because it's important we are going to connect the frontend and the back end. So that's why
+
+46
+00:06:24,360 --> 00:06:31,960
+ so in the frontend let's go to the source and now let's go to this store and authstore.js
+
+47
+00:06:31,960 --> 00:06:39,960
+ after this this sign up right. So we have one this created and along with that we need to
+
+48
+00:06:42,280 --> 00:06:49,960
+ have this sign up. So sign up async data once again.
+
+49
+00:06:49,960 --> 00:07:05,560
+ So it would be like sign up and it would be async and then data
+
+50
+00:07:08,680 --> 00:07:12,680
+ the data would come and we will put that data in the try and catch block
+
+51
+00:07:12,680 --> 00:07:19,800
+ so that if any kind of error happens we are going to log it. So error wait a second.
+
+52
+00:07:21,960 --> 00:07:39,400
+ Let's remove this const res equals to a wait axios instance and for this axios instance we have set
+
+53
+00:07:39,400 --> 00:07:48,920
+ set logged in user so log to user to be whatever the response that comes from that side.
+
+54
+00:07:49,720 --> 00:08:01,320
+ So response dot data and also for the catch block we are going to just say that console dot log
+
+55
+00:08:01,320 --> 00:08:05,640
+ server error.
+
