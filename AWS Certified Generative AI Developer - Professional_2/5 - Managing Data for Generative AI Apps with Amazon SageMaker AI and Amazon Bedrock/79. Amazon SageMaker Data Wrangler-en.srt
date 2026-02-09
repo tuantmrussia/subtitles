@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,360
+ In this lecture, we're going to focus on Amazon SageMaker Data Wrangler.
+
+2
+00:00:05,360 --> 00:00:11,520
+ So this service focuses on data collection and data pre-processing.
+
+3
+00:00:11,520 --> 00:00:18,480
+ So there are four key steps that you need to follow to enable data processing through
+
+4
+00:00:18,480 --> 00:00:21,680
+ the data Wrangler service.
+
+5
+00:00:21,680 --> 00:00:29,000
+ So the first one is to import the data into data Wrangler from services such as S3, Athena,
+
+6
+00:00:29,000 --> 00:00:35,660
+ and there are 50 plus third-party sources through which you can import data into data
+
+7
+00:00:35,660 --> 00:00:36,660
+ Wrangler.
+
+8
+00:00:36,660 --> 00:00:39,080
+ And you can see all the services that it supports.
+
+9
+00:00:39,080 --> 00:00:44,960
+ You can also do a local upload, maybe an upload CSV file into data Wrangler.
+
+10
+00:00:44,960 --> 00:00:48,920
+ And you can see the screenshot here from data Wrangler.
+
+11
+00:00:48,920 --> 00:00:55,480
+ So here I just imported a data set from the ill-fated ship Titanic.
+
+12
+00:00:55,480 --> 00:01:01,460
+ And you can see in this data set, you have the passenger class, survived one for
+
+13
+00:01:01,460 --> 00:01:07,760
+ survived and zero for wooden survive, the names of all the passengers, age, ticket,
+
+14
+00:01:07,760 --> 00:01:09,720
+ fare and so on.
+
+15
+00:01:09,720 --> 00:01:17,440
+ So once you have imported this data, the next is to understand the data quality and then generate
+
+16
+00:01:17,440 --> 00:01:19,800
+ data insights.
+
+17
+00:01:19,800 --> 00:01:24,240
+ And this is also called as exploratory data analysis.
+
+18
+00:01:24,240 --> 00:01:28,400
+ And you should remember this from the exam perspective, there's a very good chance that
+
+19
+00:01:28,400 --> 00:01:36,320
+ they might ask about which AWS service is used for exploratory data analysis.
+
+20
+00:01:36,320 --> 00:01:41,760
+ Now let's try and understand better what we do as part of this step.
+
+21
+00:01:41,760 --> 00:01:49,200
+ So now you can see from the screenshot, once we have imported that Titanic data, you can
+
+22
+00:01:49,200 --> 00:01:53,840
+ have a table summary view here and here are all the data points.
+
+23
+00:01:53,840 --> 00:01:56,240
+ And it shows you a summary view.
+
+24
+00:01:56,240 --> 00:02:03,720
+ So it will show you the passenger class, it's about 1309, survived, we have about 1309 records.
+
+25
+00:02:03,720 --> 00:02:07,260
+ But if you look at the age, you have only one, zero, four, six.
+
+26
+00:02:07,260 --> 00:02:12,200
+ So you can imagine that there are some data points that are missing.
+
+27
+00:02:12,200 --> 00:02:16,880
+ So that's how you can understand the data quality.
+
+28
+00:02:16,880 --> 00:02:20,920
+ Then the next is exploratory data analysis.
+
+29
+00:02:20,920 --> 00:02:26,360
+ And here you can see, you can generate a histogram and there are other chart types.
+
+30
+00:02:26,360 --> 00:02:30,080
+ You can use bar chart, pie chart and so on.
+
+31
+00:02:30,080 --> 00:02:36,440
+ And here we have on the X axis, we have the six and then we have the color by survive.
+
+32
+00:02:36,440 --> 00:02:41,480
+ So for males and females, what was the percentage that survived?
+
+33
+00:02:41,480 --> 00:02:47,560
+ So this is the percentage for males that survived and this is the percentage for females.
+
+34
+00:02:47,560 --> 00:02:54,320
+ So you can use different chart types to analyze the data, also sometimes called as exploratory
+
+35
+00:02:54,320 --> 00:02:56,200
+ data analysis.
+
+36
+00:02:56,200 --> 00:03:02,080
+ So once you have understood the data quality and generated data insights, the third step
+
+37
+00:03:02,080 --> 00:03:06,560
+ is to transform data more efficiently and analyze.
+
+38
+00:03:06,560 --> 00:03:12,800
+ So here you might want to drop some columns, handle outliers and let's say, so we're trying
+
+39
+00:03:12,800 --> 00:03:15,800
+ to predict what kind of passenger survived.
+
+40
+00:03:15,800 --> 00:03:22,320
+ Maybe you don't need a column with address of the people as that might not be a factor
+
+41
+00:03:22,320 --> 00:03:24,280
+ in whether they survive or not.
+
+42
+00:03:24,280 --> 00:03:29,600
+ So what you can do is you can use either custom transformation or some prebuilt transformation
+
+43
+00:03:29,600 --> 00:03:34,520
+ to drop the column or handle outliers, handle missing data.
+
+44
+00:03:34,520 --> 00:03:37,800
+ So those are the capabilities that are provided by data handler.
+
+45
+00:03:37,800 --> 00:03:43,440
+ So you can see here, so you can do the transformation either through prebuilt capabilities
+
+46
+00:03:43,440 --> 00:03:46,440
+ or custom transformations.
+
+47
+00:03:46,440 --> 00:03:52,720
+ So once you have transformed the data, then you can export the data either to S3 or SageMaker
+
+48
+00:03:52,720 --> 00:03:59,880
+ feature store and we'll discuss about SageMaker feature store next or you can also use SageMaker
+
+49
+00:03:59,880 --> 00:04:01,200
+ pipelines.
+
+50
+00:04:01,200 --> 00:04:05,360
+ So hopefully the Amazon SageMaker data wrangler capabilities are clear to you.
+
+51
+00:04:05,360 --> 00:04:07,200
+ I'll see you in the next lecture, thank you.
+
