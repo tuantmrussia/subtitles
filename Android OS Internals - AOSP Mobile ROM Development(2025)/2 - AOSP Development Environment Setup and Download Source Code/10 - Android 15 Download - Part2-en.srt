@@ -1,0 +1,268 @@
+1
+00:00:04,520 --> 00:00:09,680
+This section walks us through initializing the repo client, which is basically the tool that manages
+
+2
+00:00:09,680 --> 00:00:12,360
+all the git repositories needed to build Android.
+
+3
+00:00:13,280 --> 00:00:17,560
+First step, we create a new working directory where all the source code will live.
+
+4
+00:00:18,440 --> 00:00:20,480
+Keep in mind this thing's huge.
+
+5
+00:00:20,480 --> 00:00:24,320
+It can take up over 300GB of space, so plan ahead.
+
+6
+00:00:25,240 --> 00:00:27,080
+Then we run repo init.
+
+7
+00:00:27,960 --> 00:00:29,760
+We are passing a few flags here.
+
+8
+00:00:30,600 --> 00:00:33,680
+Partial clone helps reduce the initial download size.
+
+9
+00:00:34,560 --> 00:00:35,000
+No use.
+
+10
+00:00:35,000 --> 00:00:41,240
+Superproject tells repo not to use the Superproject feature and b Android latest release means we want
+
+11
+00:00:41,240 --> 00:00:43,560
+the latest official Android release branch.
+
+12
+00:00:44,480 --> 00:00:49,840
+The U flag provides the URL for the manifest repo, which is like the blueprint of the source tree.
+
+13
+00:00:50,800 --> 00:00:56,080
+Once that's done, we should see a confirmation that repo has been initialized in the current directory.
+
+14
+00:01:02,730 --> 00:01:07,010
+Alright, now let's jump into the terminal and actually run these commands.
+
+15
+00:01:08,010 --> 00:01:12,490
+First I'll create the working directory with mkdir and CD into it.
+
+16
+00:01:23,650 --> 00:01:27,370
+Then I'll run the repo init command with all the required flags.
+
+17
+00:01:28,410 --> 00:01:31,490
+This part usually takes a minute or two to set everything up.
+
+18
+00:01:32,490 --> 00:01:36,450
+Once we get the message saying repo has been initialized, we are good to go.
+
+19
+00:01:45,170 --> 00:01:45,690
+Down.
+
+20
+00:01:47,250 --> 00:01:48,930
+Up down.
+
+21
+00:01:51,130 --> 00:01:52,330
+Up up up.
+
+22
+00:01:55,490 --> 00:01:56,330
+Up.
+
+23
+00:01:57,490 --> 00:01:57,970
+Repo.
+
+24
+00:01:58,010 --> 00:01:59,930
+Initialization is now complete.
+
+25
+00:02:04,770 --> 00:02:06,210
+Next up is repo sink.
+
+26
+00:02:07,210 --> 00:02:12,970
+The C flag makes sure we only pull the current branch, and J8 speeds things up by using eight parallel
+
+27
+00:02:12,970 --> 00:02:13,530
+threads.
+
+28
+00:02:14,490 --> 00:02:15,450
+Now heads up.
+
+29
+00:02:15,450 --> 00:02:20,690
+This sink can take over an hour depending on your internet speed and storage, so maybe go grab a coffee
+
+30
+00:02:20,730 --> 00:02:21,770
+while it's working.
+
+31
+00:02:22,810 --> 00:02:26,410
+Once it's done, we'll have the full Android source tree ready to build.
+
+32
+00:02:27,210 --> 00:02:28,170
+Let's do it!
+
+33
+00:03:05,940 --> 00:03:06,260
+Up.
+
+34
+00:03:09,860 --> 00:03:11,100
+Up up up.
+
+35
+00:03:14,220 --> 00:03:15,220
+Up up.
+
+36
+00:03:15,220 --> 00:03:15,500
+Up.
+
+37
+00:03:17,700 --> 00:03:18,460
+Up.
+
+38
+00:03:21,100 --> 00:03:22,900
+Up up up up.
+
+39
+00:03:24,340 --> 00:03:28,820
+During the repo sync, I encountered some issues caused by network instability.
+
+40
+00:03:29,740 --> 00:03:36,060
+To work around this, I had to sync the repo using a single process repo sync with J1.
+
+41
+00:04:07,780 --> 00:04:09,540
+The repo sync was successful.
+
+42
+00:04:10,540 --> 00:04:15,300
+As I mentioned earlier, I encountered a network latency issue during the process.
+
+43
+00:04:16,180 --> 00:04:21,580
+If you face a similar problem, try syncing the repo using a single process to avoid such issues.
+
+44
+00:04:22,580 --> 00:04:24,420
+Now let's launch the lunch menu.
+
+45
+00:04:28,220 --> 00:04:29,540
+We have one issue here.
+
+46
+00:04:30,460 --> 00:04:32,980
+This happens starting Android 14 builds.
+
+47
+00:04:33,900 --> 00:04:36,100
+The system fails to show the lunch menu.
+
+48
+00:04:37,100 --> 00:04:38,620
+There is a solution to this.
+
+49
+00:04:52,820 --> 00:04:56,670
+If you try using the lunch directly like this, it's not going to work.
+
+50
+00:04:57,710 --> 00:05:00,110
+I found this solution in XDA forums.
+
+51
+00:05:01,030 --> 00:05:06,630
+First, export the target underscore release variable by running export target underscore release equals
+
+52
+00:05:06,670 --> 00:05:07,470
+AP tour.
+
+53
+00:05:08,470 --> 00:05:12,590
+Next run the command build underscore build underscore underscore cache.
+
+54
+00:05:13,670 --> 00:05:16,870
+After this run launch and you will be able see the lunch menu.
+
+55
+00:05:24,550 --> 00:05:26,750
+Let's go ahead and build the emulator.
+
+56
+00:05:27,630 --> 00:05:30,070
+I am choosing automotive build in this case.
+
+57
+00:05:30,990 --> 00:05:34,150
+If you need phone build please select the build accordingly.
+
+58
+00:06:02,640 --> 00:06:03,000
+I.
+
+59
+00:08:48,410 --> 00:08:50,890
+The build was successful without any issues.
+
+60
+00:08:51,930 --> 00:08:54,250
+Sorry I missed to take video capture of it.
+
+61
+00:08:55,090 --> 00:08:56,850
+Now let's start the emulator.
+
+62
+00:08:57,730 --> 00:09:03,530
+The settings app is already open since I tried opening the emulator earlier before capturing this video.
+
+63
+00:09:04,490 --> 00:09:06,610
+In your case, you should see the launcher.
+
+64
+00:09:34,930 --> 00:09:35,610
+Thank you.
+
+65
+00:09:36,650 --> 00:09:38,090
+That's all for this video.
+
+66
+00:09:39,010 --> 00:09:43,690
+Please give it a try on your end and feel free to reach out if you run into any issues.
+
+67
+00:09:44,610 --> 00:09:46,410
+I hope this session was helpful.
+
