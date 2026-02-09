@@ -1,0 +1,312 @@
+1
+00:00:00,000 --> 00:00:05,920
+ Now in this lecture we want to look at three AWS services to assist with governance and regulation
+
+2
+00:00:05,920 --> 00:00:13,040
+ compliant. So we will discuss these services on a higher level. So the first one is AWS
+
+3
+00:00:13,040 --> 00:00:21,600
+ config. So AWS config, monitor and record config changes for AWS resources such as S3,
+
+4
+00:00:21,600 --> 00:00:29,680
+ EC2 and almost all AWS services within your account. So in simple terms what AWS
+
+5
+00:00:29,680 --> 00:00:36,000
+ config does is now let's say there's a security policy within your organization that none
+
+6
+00:00:36,000 --> 00:00:43,920
+ of the S3 buckets should have public access. And you create a new S3 bucket which has public
+
+7
+00:00:43,920 --> 00:00:50,480
+ access. So what AWS config is going to do is it's going to discover that S3 bucket as an inventory
+
+8
+00:00:50,480 --> 00:00:56,960
+ item and reviewed against the organization policies that you have set in the AWS config.
+
+9
+00:00:56,960 --> 00:01:03,760
+ And if it finds it non-compliant then it's going to send you a notification or take any
+
+10
+00:01:03,760 --> 00:01:11,760
+ remediation action that you might have set. So it will assess audit evaluate the configuration of
+
+11
+00:01:11,760 --> 00:01:21,040
+ resource with your organization policies and then take remediation. So in summary it looks at what
+
+12
+00:01:21,040 --> 00:01:27,200
+ has changed from the resource configuration perspective is that resource still compliant with
+
+13
+00:01:27,200 --> 00:01:34,320
+ organization policies. And it maintains the changelow and any remediation action that you might have
+
+14
+00:01:34,320 --> 00:01:39,040
+ set. Come on the AWS console. So let me just search for AWS config.
+
+15
+00:01:39,040 --> 00:01:48,640
+ Okay, now I'm on the AWS config. So if I just click on this dashboard you can see it's showing me
+
+16
+00:01:48,640 --> 00:01:54,560
+ the compliance status. So I don't have a lot of resources or the rules. That's why it's showing
+
+17
+00:01:54,560 --> 00:02:01,520
+ a zero compliant and zero non-compliant. But here is my resource inventory showing. So I have about
+
+18
+00:02:01,520 --> 00:02:09,440
+ 63 S3 buckets. And then I also have one config configuration recorder. Now if I go on the left
+
+19
+00:02:09,440 --> 00:02:15,760
+ hand side if I just click on these rules and let me just click on add rules. So here it's asking
+
+20
+00:02:15,760 --> 00:02:22,960
+ me select rule type. So you can either use add AWS managed rules or create your custom lambda
+
+21
+00:02:22,960 --> 00:02:30,400
+ rule create custom rules using God. So I'll just show you some AWS managed rules. So the first one
+
+22
+00:02:30,400 --> 00:02:37,200
+ here is access key is rotated. So it checks whether the active access keys are rotated. Then next one
+
+23
+00:02:37,200 --> 00:02:43,840
+ you have the account part of organization. So this rule checks whether AWS account is part of the
+
+24
+00:02:43,840 --> 00:02:52,000
+ AWS organization. So this how you can select the rules. And then I already showed you how it
+
+25
+00:02:52,000 --> 00:02:57,920
+ takes a look at the inventory. So if I just click on this inventory and you can see it's showing me
+
+26
+00:02:57,920 --> 00:03:04,880
+ all the resources that I have within this AWS account. And then what it will do is it will map
+
+27
+00:03:04,880 --> 00:03:14,080
+ against the rules that we have created and see if there is non compliance. Okay hope it's clear on what
+
+28
+00:03:14,080 --> 00:03:22,880
+ AWS config does. Now the next service AWS cloud trade. So cloud trade enables auditing security
+
+29
+00:03:22,880 --> 00:03:31,200
+ monitoring and operational troubleshooting by tracking user activity and API usage. So now let's try
+
+30
+00:03:31,200 --> 00:03:37,760
+ and understand this in a simple fashion. So what cloud trail monitors is if you're creating a new
+
+31
+00:03:37,760 --> 00:03:42,800
+ AWS service, let's say you're creating an easy to instance or you're deleting an easy to instance
+
+32
+00:03:42,800 --> 00:03:50,960
+ or you're creating a new S3 bucket deleting an S3 bucket. So it will track all the management events
+
+33
+00:03:50,960 --> 00:03:57,360
+ for all your AWS resources within your account. And that would mainly
+
+34
+00:03:58,080 --> 00:04:05,840
+ revolve around creating resources deleting resources and so on. Then cloud trail logs and
+
+35
+00:04:05,840 --> 00:04:13,760
+ it generates logs continuously monitors and retains account activity related to actions across your
+
+36
+00:04:13,760 --> 00:04:21,280
+ AWS infrastructure to enable compliance with regulations such as SOC, PCI and HIPAA. There might
+
+37
+00:04:21,280 --> 00:04:28,400
+ be some compliance standards which dictate who can delete particular resource or who can create a
+
+38
+00:04:28,400 --> 00:04:36,640
+ particular resource. So it helps enable compliance with those regulations. So in summary AWS cloud
+
+39
+00:04:36,640 --> 00:04:44,400
+ trail focuses on who made the change and what changes were made to AWS resources.
+
+40
+00:04:45,520 --> 00:04:52,080
+ Compared to if you look at AWS config, it looks at what has changed and is the resource still
+
+41
+00:04:52,080 --> 00:04:59,040
+ compliant. Okay finally let's take a look at cloud watch. Amazon cloud watch is an AWS monitoring
+
+42
+00:04:59,040 --> 00:05:07,680
+ service for cloud resources. Cloud watch is used to collect and track metrics collect and monitor
+
+43
+00:05:07,680 --> 00:05:16,960
+ log files set alarms and dashboard. So cloud watch basically does three key things. One, it will collect
+
+44
+00:05:16,960 --> 00:05:23,280
+ and track metrics related to AWS resources. Let's say you have created an EC2 instance which you
+
+45
+00:05:23,280 --> 00:05:30,000
+ are using as a web server. Now we can track a metric like CPU utilization of the EC2 instance.
+
+46
+00:05:30,000 --> 00:05:37,600
+ So it will collect and track that metric and if it goes beyond a threshold then it can
+
+47
+00:05:37,600 --> 00:05:44,880
+ either alert or do some remediation action like launching another EC2 instance. The second thing
+
+48
+00:05:44,880 --> 00:05:52,880
+ it does is it collects and monitors the log files. So all the logs that are generated by let's
+
+49
+00:05:52,880 --> 00:06:01,040
+ say AWS Lambda EC2 S3. It will collect and monitor those log files and then finally you can set
+
+50
+00:06:01,040 --> 00:06:10,480
+ alarms and also generate dashboard based on metrics and log files. Now from the exam
+
+51
+00:06:10,480 --> 00:06:14,000
+ perspective it's very important you should understand what's the key difference between AWS
+
+52
+00:06:14,000 --> 00:06:22,400
+ config, AWS cloud and cloud watch. Now let's assume the business has asked the IT team to create
+
+53
+00:06:22,400 --> 00:06:28,800
+ an application like Amazon has created a web application such as www.amazon.com.
+
+54
+00:06:29,760 --> 00:06:34,640
+ So the first thing that the developer will do is you will go to the AWS account and create
+
+55
+00:06:34,640 --> 00:06:42,480
+ an EC2 instance and Amazon S3. Now in this scenario cloud trail is going to come into play
+
+56
+00:06:42,480 --> 00:06:48,320
+ because it will record that someone created an EC2 instance, someone created an S3 bucket
+
+57
+00:06:48,320 --> 00:06:52,880
+ or someone deleted an EC2 instance, someone deleted an S3 bucket. So all the management
+
+58
+00:06:52,880 --> 00:07:01,200
+ activity would be tracked by cloud trail. Now let's say once we created this S3 bucket it did not
+
+59
+00:07:01,200 --> 00:07:09,280
+ have public internet access. So the user were not able to access the images in this S3 bucket.
+
+60
+00:07:09,280 --> 00:07:15,840
+ So they raised it as a defect with the developer and now developer has enabled public
+
+61
+00:07:15,840 --> 00:07:22,640
+ internet access on this S3 bucket. But let's say security team had a policy which says
+
+62
+00:07:22,640 --> 00:07:29,760
+ that if the S3 bucket is made public then it's a security compliance violation.
+
+63
+00:07:29,760 --> 00:07:34,720
+ So this is where AWS config comes into play. So you might have created a rule
+
+64
+00:07:34,720 --> 00:07:42,000
+ which said that if S3 bucket within your AWS account has a public internet access
+
+65
+00:07:42,000 --> 00:07:50,240
+ that should show that the particular S3 bucket is non-compliant. So this is where AWS
+
+66
+00:07:50,240 --> 00:07:57,040
+ config will come into play. It will evaluate all the AWS services against the rules that have
+
+67
+00:07:57,040 --> 00:08:03,280
+ been defined and in this case now this S3 bucket has become non-compliant. So it will be
+
+68
+00:08:03,280 --> 00:08:10,560
+ flagged by AWS config as non-compliant and then possibly take a remedial action.
+
+69
+00:08:10,560 --> 00:08:17,040
+ Finally we have the AWS cloud watch. Now let's say all the issues have been resolved and this
+
+70
+00:08:17,040 --> 00:08:22,880
+ web application is working great. Now the users have started accessing this application which is
+
+71
+00:08:22,880 --> 00:08:29,760
+ hosted on easy to instance and there has been a lot of load because the number of users has
+
+72
+00:08:29,760 --> 00:08:36,800
+ increased drastically. Now this web server is having performance issues. So in this case the
+
+73
+00:08:36,800 --> 00:08:43,600
+ AWS cloud watch comes into play. So it can track the CPU utilization and many other
+
+74
+00:08:43,600 --> 00:08:50,080
+ metrics for this easy to instance and if it reaches beyond a certain threshold then it can alert
+
+75
+00:08:50,080 --> 00:08:56,720
+ or take some remediation action by adding another easy to instance. Similarly all the logs
+
+76
+00:08:56,720 --> 00:09:02,720
+ generated let's say who access these easy to instance and many other details would be
+
+77
+00:09:02,720 --> 00:09:09,760
+ captured in the cloud watch logs. So hopefully now the difference between
+
+78
+00:09:09,760 --> 00:09:14,000
+ it was config cloud rail and cloud watch is clear to you, I will see in the next lecture.
+
