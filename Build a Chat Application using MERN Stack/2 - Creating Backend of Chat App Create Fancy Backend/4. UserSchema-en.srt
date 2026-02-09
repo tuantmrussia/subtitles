@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:04,580
+ okay so hello everyone in this video we are going to start with our basic
+
+2
+00:00:04,580 --> 00:00:09,820
+ structure of schema okay so like for the schema part what we actually going to
+
+3
+00:00:09,820 --> 00:00:17,700
+ make is like it's a kind of like skeleton of our chat app model okay so a chat
+
+4
+00:00:17,700 --> 00:00:22,820
+ app what it has it has username it has password it has some some fields okay so
+
+5
+00:00:22,820 --> 00:00:27,540
+ we are going to construct all that feel like email username password and all
+
+6
+00:00:27,540 --> 00:00:33,840
+ of those fields so it is going to present so first we are going to work with
+
+7
+00:00:33,840 --> 00:00:43,360
+ our user model okay so in the model folder go and make this user model.js okay
+
+8
+00:00:43,360 --> 00:00:49,360
+ so after this what we are going to do is we are going to use our Mongoose package
+
+9
+00:00:49,360 --> 00:00:55,680
+ okay so import Mongoose from Mongoose and now what we are going to do is like we are
+
+10
+00:00:55,680 --> 00:01:05,340
+ going to construct our schema so user schema equal to Mongoose dot schema I'm
+
+11
+00:01:05,340 --> 00:01:09,760
+ going to explain like why we are making this a schema don't worry so
+
+12
+00:01:09,760 --> 00:01:13,280
+ const use schema is called to Mongoose dot schema and after that we are going to
+
+13
+00:01:13,280 --> 00:01:18,380
+ just use this email field here so email and since our chat app will have
+
+14
+00:01:18,380 --> 00:01:27,220
+ this email field so in the login functionality as well we will have this like
+
+15
+00:01:27,220 --> 00:01:32,740
+ email we have to fill the email password and all confirm password field so
+
+16
+00:01:32,740 --> 00:01:39,020
+ all of these so it comes under the schema part okay so a required equals to
+
+17
+00:01:39,020 --> 00:01:45,820
+ true and the value of the email must be true so for all the distinct users
+
+18
+00:01:45,820 --> 00:01:52,580
+ will have different different user emails no two persons can have the
+
+19
+00:01:52,580 --> 00:01:57,620
+ same email okay so for the user name also we are going to select like this
+
+20
+00:01:57,620 --> 00:02:05,020
+ only so type a string the user name must be of type a string and then a
+
+21
+00:02:05,020 --> 00:02:10,060
+ required value will be true so since this would be required so we are going to
+
+22
+00:02:10,060 --> 00:02:16,540
+ mark this is true and now after this first in the like when we are logging to
+
+23
+00:02:16,540 --> 00:02:20,540
+ the chat application we will get this email field so we are going to fill the
+
+24
+00:02:20,540 --> 00:02:24,060
+ email field after that we are going to fill our user name then after that what
+
+25
+00:02:24,060 --> 00:02:29,820
+ will be the field so password field okay so password so the password will be
+
+26
+00:02:29,820 --> 00:02:40,060
+ of type a string only so string and then after this required would
+
+27
+00:02:40,060 --> 00:02:47,940
+ be true okay so required would be true and let's assume the minimum length for
+
+28
+00:02:47,940 --> 00:02:56,820
+ any password would be something like six we can take six I think six would be
+
+29
+00:02:56,820 --> 00:03:04,540
+ fine and then after that will have this one more like profile picture so
+
+30
+00:03:04,540 --> 00:03:15,700
+ profile picture of a person so profile pick so type is a string and then
+
+31
+00:03:15,700 --> 00:03:23,740
+ default value would be so let's suppose we are going to take some normal
+
+32
+00:03:23,740 --> 00:03:38,100
+ value like let's take this one okay so normal Dp display picture
+
+33
+00:03:38,100 --> 00:03:53,140
+ suppose okay so display picture for chat app okay so suppose we are going to
+
+34
+00:03:53,140 --> 00:04:02,340
+ take this one and copy link address and we are going to use this default image
+
+35
+00:04:02,340 --> 00:04:08,820
+ I'm going to change that okay so no issues and after this we will have this
+
+36
+00:04:08,820 --> 00:04:18,620
+ time stamps here which will be true so whatever the time a new profile was
+
+37
+00:04:18,620 --> 00:04:23,260
+ created at so for those kind of things we are going to use this is time stamps okay so
+
+38
+00:04:23,260 --> 00:04:29,300
+ created at updated at so for all of these we are going to just use that sorry
+
+39
+00:04:29,300 --> 00:04:39,220
+ not here actually here time stamps so it is going to take the time at which
+
+40
+00:04:39,220 --> 00:04:43,780
+ the things are created at so time stamps equal to true and what we are going to
+
+41
+00:04:43,780 --> 00:04:53,520
+ do is like export this one so export default this Mongo schema so export default
+
+42
+00:04:53,520 --> 00:05:07,420
+ Mongo's dot model and let's name this as a user okay so user so user schema
+
+43
+00:05:07,420 --> 00:05:14,860
+ okay so now we have worked on this user model so the next one would be
+
+44
+00:05:14,860 --> 00:05:18,940
+ working on some other model okay
+
