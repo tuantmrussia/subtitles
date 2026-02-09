@@ -1,0 +1,312 @@
+1
+00:00:00,000 --> 00:00:05,920
+Bây giờ trong bài giảng này chúng tôi muốn xem xét ba dịch vụ AWS để hỗ trợ với quản trị và quy định
+
+2
+00:00:05,920 --> 00:00:13,040
+Được đấy. Vì vậy chúng ta sẽ thảo luận về những dịch vụ này ở cấp độ cao hơn. Đầu tiên là AWS
+
+3
+00:00:13,040 --> 00:00:21,600
+Config. Vì vậy, AWS conchig, giám sát và thu âm thay đổi cho các tài nguyên AWS như S3,
+
+4
+00:00:21,600 --> 00:00:29,680
+EC2 và hầu hết dịch vụ AWS trong tài khoản của anh. Vì vậy, chỉ đơn giản là những gì AWS
+
+5
+00:00:29,680 --> 00:00:36,000
+Config làm là bây giờ hãy nói rằng có một chính sách an ninh trong tổ chức của bạn mà không có
+
+6
+00:00:36,000 --> 00:00:43,920
+trong S3 xô nên có quyền truy cập công cộng. Và bạn tạo ra một xô S3 mới có công chúng
+
+7
+00:00:43,920 --> 00:00:50,480
+Truy cập. Vì vậy, những gì AWS conbig sẽ làm là nó sẽ khám phá rằng S3 xô như một kho hàng
+
+8
+00:00:50,480 --> 00:00:56,960
+Vật dụng và đánh giá chống lại các chính sách tổ chức mà bạn đã đặt trong cấu trúc AWS.
+
+9
+00:00:56,960 --> 00:01:03,760
+Và nếu nó tìm thấy nó không phù hợp thì nó sẽ gửi cho bạn một thông báo hoặc lấy bất kỳ
+
+10
+00:01:03,760 --> 00:01:11,760
+Điều trị lại mà anh có thể đã làm. Vì vậy, nó sẽ đánh giá kiểm toán tính toán cấu hình của
+
+11
+00:01:11,760 --> 00:01:21,040
+Tài nguyên với chính sách tổ chức của bạn và sau đó phải sửa chữa lại. Tóm lại, nó nhìn vào cái gì
+
+12
+00:01:21,040 --> 00:01:27,200
+đã thay đổi từ quan điểm cấu hình tài nguyên là tài nguyên vẫn còn phù hợp với
+
+13
+00:01:27,200 --> 00:01:34,320
+Chính sách tổ chức. Và nó duy trì sự thay đổi chậm và bất kỳ hành động hồi phục nào mà bạn có thể có
+
+14
+00:01:34,320 --> 00:01:39,040
+Set. Đi nào. Vì vậy, hãy để tôi chỉ cần tìm kiếm AWS consig.
+
+15
+00:01:39,040 --> 00:01:48,640
+Được rồi, bây giờ tôi đang trên kênh AWS. Vì vậy, nếu tôi chỉ cần nhấp chuột vào bảng điều khiển này bạn có thể thấy nó đang hiển thị cho tôi
+
+16
+00:01:48,640 --> 00:01:54,560
+Tình trạng tuân thủ. Nên tôi không có nhiều nguồn lực hay luật lệ. Đó là lý do tại sao nó cho thấy
+
+17
+00:01:54,560 --> 00:02:01,520
+Một con số 0 và con số 0. Nhưng đây là kho tài nguyên của tôi. Vì vậy, tôi có về
+
+18
+00:02:01,520 --> 00:02:09,440
+63 thùng S3. Và sau đó tôi cũng có một máy thu âm cấu hình cấu hình cấu hình cấu hình cấu hình. Bây giờ nếu tôi đi bên trái
+
+19
+00:02:09,440 --> 00:02:15,760
+Bên tay nếu tôi chỉ cần nhấp vào những quy tắc này và cho phép tôi chỉ cần nhấp chuột vào thêm các quy tắc. Đây là câu hỏi
+
+20
+00:02:15,760 --> 00:02:22,960
+tôi chọn loại quy tắc. Vì vậy, bạn có thể sử dụng thêm AWS quản lý các quy tắc hoặc tạo ra cừu cừu tự chọn của bạn
+
+21
+00:02:22,960 --> 00:02:30,400
+Quy tắc tạo ra các quy tắc tùy chỉnh sử dụng Đức Chúa Trời. Vì vậy, tôi sẽ chỉ cho bạn một số nguyên tắc của AWS quản lý. Vì vậy, đầu tiên
+
+22
+00:02:30,400 --> 00:02:37,200
+Đây là khóa truy cập được xoay. Vì vậy, nó kiểm tra nếu các phím truy cập hoạt động được quay. Rồi tiếp theo
+
+23
+00:02:37,200 --> 00:02:43,840
+bạn có phần tài khoản của tổ chức. Vì vậy, quy tắc này kiểm tra nếu tài khoản AWS là một phần của các
+
+24
+00:02:43,840 --> 00:02:52,000
+Tổ chức AWS. Vì vậy, đây là cách bạn có thể chọn các quy tắc. Và sau đó tôi đã cho bạn thấy làm thế nào nó
+
+25
+00:02:52,000 --> 00:02:57,920
+Hãy xem hàng tồn kho. Vì vậy, nếu tôi chỉ cần nhấp vào hàng hóa này và bạn có thể thấy nó đang cho tôi thấy
+
+26
+00:02:57,920 --> 00:03:04,880
+Tất cả nguồn lực tôi có trong tài khoản AWS này. Và những gì nó sẽ làm là bản đồ
+
+27
+00:03:04,880 --> 00:03:14,080
+chống lại những quy tắc mà chúng ta đã tạo ra và xem có sự không tuân theo hay không. Được rồi, hy vọng nó rõ ràng về những gì
+
+28
+00:03:14,080 --> 00:03:22,880
+AWS conchig thì có. Giờ là dịch vụ giao dịch đám mây AWS tiếp theo. Vì vậy, buôn bán mây giúp kiểm toán an ninh
+
+29
+00:03:22,880 --> 00:03:31,200
+theo dõi hoạt động của người dùng và cách sử dụng ADI. Vì vậy bây giờ hãy thử
+
+30
+00:03:31,200 --> 00:03:37,760
+Và hiểu điều này một cách đơn giản. Vì vậy, những gì theo dõi đám mây là nếu bạn đang tạo ra một mới
+
+31
+00:03:37,760 --> 00:03:42,800
+Dịch vụ AWS, giả sử bạn đang tạo ra một ví dụ dễ dàng hoặc bạn đang xóa một dễ dàng để ví dụ
+
+32
+00:03:42,800 --> 00:03:50,960
+Hoặc bạn đang tạo ra một S3 xô S3 mới tẩy sạch một xô S3. Vì vậy nó sẽ theo dõi tất cả các sự kiện quản lý
+
+33
+00:03:50,960 --> 00:03:57,360
+Cho tất cả nguồn lực AWS trong tài khoản của anh. Và điều đó chủ yếu
+
+34
+00:03:58,080 --> 00:04:05,840
+xoay quanh việc tạo ra các nguồn tài nguyên bị mất đi, v.v... Sau đó, đường mòn đám mây và
+
+35
+00:04:05,840 --> 00:04:13,760
+Nó tạo ra bản ghi liên tục giám sát và giữ lại hoạt động tài khoản liên quan đến hành động của bạn
+
+36
+00:04:13,760 --> 00:04:21,280
+Cơ sở hạ tầng AWS cho phép tuân thủ các quy định như SOC, PCI và HIPAA. Có thể
+
+37
+00:04:21,280 --> 00:04:28,400
+là một số tiêu chuẩn mà quyết định ai có thể xóa bỏ tài nguyên đặc biệt hoặc ai có thể tạo ra a
+
+38
+00:04:28,400 --> 00:04:36,640
+Nguồn lực đặc biệt. Vì vậy, nó giúp cho việc tuân theo những quy định đó. Vậy để tóm tắt đám mây AWS
+
+39
+00:04:36,640 --> 00:04:44,400
+Đường mòn tập trung vào những người đã thay đổi và sự thay đổi tài nguyên của AWS.
+
+40
+00:04:45,520 --> 00:04:52,080
+So sánh với nếu bạn nhìn vào cấu trúc AWS, nó nhìn vào những gì đã thay đổi và là tài nguyên vẫn còn
+
+41
+00:04:52,080 --> 00:04:59,040
+Được đấy. Được rồi, cuối cùng cũng được xem qua màn mây. Giám sát đám mây Amazon là một giám sát AWS
+
+42
+00:04:59,040 --> 00:05:07,680
+phục vụ tài nguyên đám mây. Đồng hồ mây được dùng để thu thập và theo dõi số liệu thu thập và theo dõi
+
+43
+00:05:07,680 --> 00:05:16,960
+tập tin ghi lưu đặt báo động và bảng điều khiển. Vì vậy, việc quan sát đám mây về cơ bản làm ba điều quan trọng. Một, nó sẽ thu thập
+
+44
+00:05:16,960 --> 00:05:23,280
+và theo dõi các số liên quan đến các nguồn tài nguyên AWS. Giả sử bạn đã tạo ra một ví dụ EC2 mà bạn
+
+45
+00:05:23,280 --> 00:05:30,000
+đang sử dụng như một máy chủ web. Bây giờ chúng ta có thể theo dõi một thước đo như CPU điện tích của ví dụ EC2.
+
+46
+00:05:30,000 --> 00:05:37,600
+Vì vậy, nó sẽ thu thập và theo dõi rằng đo và nếu nó đi trên một ngưỡng sau đó nó có thể
+
+47
+00:05:37,600 --> 00:05:44,880
+Hoặc báo động hoặc làm một số hoạt động phục hồi như khởi động một ví dụ EC2. Điều thứ hai
+
+48
+00:05:44,880 --> 00:05:52,880
+Nó thu thập và giám sát các file nhật ký. Vì vậy, tất cả các bản ghi được tạo ra bởi chúng ta hãy
+
+49
+00:05:52,880 --> 00:06:01,040
+Nói AWS Lambda EC2 S3. Nó sẽ thu thập và theo dõi các tập tin nhật ký và sau đó bạn có thể thiết lập
+
+50
+00:06:01,040 --> 00:06:10,480
+Báo động và cũng tạo bảng điều khiển dựa trên đo và tập tin bản ghi. Bây giờ là bài thi
+
+51
+00:06:10,480 --> 00:06:14,000
+Quan điểm là rất quan trọng bạn nên hiểu những gì là điểm khác biệt quan trọng giữa AWS
+
+52
+00:06:14,000 --> 00:06:22,400
+Liên minh, đám mây AWS. Bây giờ hãy giả sử kinh doanh đã yêu cầu đội IT tạo ra
+
+53
+00:06:22,400 --> 00:06:28,800
+Một ứng dụng như Amazon đã tạo ra một ứng dụng web như www.mazon.com.
+
+54
+00:06:29,760 --> 00:06:34,640
+Vì vậy, điều đầu tiên mà nhà phát triển sẽ làm là bạn sẽ đi đến các tài khoản AWS và tạo
+
+55
+00:06:34,640 --> 00:06:42,480
+một ví dụ EC2 và Amazon S3. Bây giờ trong viễn cảnh đường mòn đám mây này sẽ đi vào chơi
+
+56
+00:06:42,480 --> 00:06:48,320
+Bởi vì nó sẽ ghi lại rằng ai đó đã tạo ra một ví dụ EC2, ai đó đã tạo ra một xô S3
+
+57
+00:06:48,320 --> 00:06:52,880
+hoặc ai đó đã xóa một ví dụ EC2, ai đó đã xóa một cái xô S3. Vì vậy, tất cả các quản lý
+
+58
+00:06:52,880 --> 00:07:01,200
+Hoạt động sẽ được theo dấu bởi đám mây. Bây giờ hãy nói rằng một khi chúng tôi tạo ra này S3 xô nó đã không
+
+59
+00:07:01,200 --> 00:07:09,280
+truy cập internet công cộng. Vì vậy, người dùng đã không thể truy cập các hình ảnh trong này S3 xô.
+
+60
+00:07:09,280 --> 00:07:15,840
+Vì vậy, họ nâng nó lên như một khiếm khuyết với nhà phát triển và bây giờ phát triển đã cho phép công chúng
+
+61
+00:07:15,840 --> 00:07:22,640
+Truy cập internet trên cái xô S3 này. Nhưng hãy nói rằng đội an ninh có một chính sách nói rằng
+
+62
+00:07:22,640 --> 00:07:29,760
+Nghĩa là nếu cái xô S3 được công khai thì đó là vi phạm an ninh.
+
+63
+00:07:29,760 --> 00:07:34,720
+Vì vậy, đây là nơi AWS consig đi vào chơi. Vì vậy, bạn có thể đã tạo ra một quy tắc
+
+64
+00:07:34,720 --> 00:07:42,000
+Nói rằng nếu S3 xô trong tài khoản AWS của bạn có một truy cập internet công cộng
+
+65
+00:07:42,000 --> 00:07:50,240
+Cái xô S3 đặc biệt không dùng được. Vậy đây là nơi AWS
+
+66
+00:07:50,240 --> 00:07:57,040
+Config sẽ tham gia. Nó sẽ đánh giá tất cả các dịch vụ AWS chống lại các quy tắc có
+
+67
+00:07:57,040 --> 00:08:03,280
+đã được định nghĩa và trong trường hợp này bây giờ xô S3 đã trở thành không phụ thuộc. ♪ Sẽ như vậy ♪
+
+68
+00:08:03,280 --> 00:08:10,560
+Được đánh dấu bởi AWS consig là phi lệ và sau đó có thể thực hiện một hành động điều trị.
+
+69
+00:08:10,560 --> 00:08:17,040
+Cuối cùng chúng ta cũng có đồng hồ quan sát của AWS. Bây giờ hãy nói rằng tất cả các vấn đề đã được giải quyết và điều này
+
+70
+00:08:17,040 --> 00:08:22,880
+Ứng dụng web đang hoạt động rất tốt. Bây giờ người dùng đã bắt đầu truy cập vào ứng dụng này đó là
+
+71
+00:08:22,880 --> 00:08:29,760
+hosted trên dễ dàng để ví dụ và đã có rất nhiều tải vì số người dùng đã
+
+72
+00:08:29,760 --> 00:08:36,800
+Sự gia tăng đáng kể. Bây giờ máy chủ web này đang có vấn đề về hiệu suất. Vậy trong trường hợp này
+
+73
+00:08:36,800 --> 00:08:43,600
+Đám mây AWS xuất hiện. Vì vậy, nó có thể theo dõi sự sử dụng CPU và nhiều khác
+
+74
+00:08:43,600 --> 00:08:50,080
+Số đo cho điều này dễ dàng để ví dụ và nếu nó đạt trên một ngưỡng nhất định sau đó nó có thể cảnh báo
+
+75
+00:08:50,080 --> 00:08:56,720
+hoặc thực hiện một số sửa chữa hành động bằng cách thêm một dễ dàng để ví dụ. Tương tự như vậy tất cả các bản ghi
+
+76
+00:08:56,720 --> 00:09:02,720
+tạo ra chúng ta hãy nói ai truy cập những dễ dàng để ví dụ và nhiều chi tiết khác sẽ được
+
+77
+00:09:02,720 --> 00:09:09,760
+Bị bắt trong các bản ghi chú của đám mây. Vì vậy, hy vọng bây giờ sự khác biệt giữa
+
+78
+00:09:09,760 --> 00:09:14,000
+Đó là đường ray đám mây và đồng hồ theo dõi là rõ ràng đối với bạn, tôi sẽ xem trong bài giảng tiếp theo.
+
