@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:10,320
+ Okay, so hello everyone in this video, we are going to work with our message model.js. Okay, so we are going to like we are making a chat app, right?
+
+2
+00:00:10,320 --> 00:00:16,160
+ So it is going to have some model for messaging like when we are going to text from person to person.
+
+3
+00:00:16,160 --> 00:00:22,120
+ So there's a user to user reference also and we are going to transmit the like text or image or whatever.
+
+4
+00:00:22,120 --> 00:00:29,520
+ So for that one, we are going to make one model. So for this, we are going to do the for the same process.
+
+5
+00:00:29,520 --> 00:00:41,120
+ So import mongoose from mongoose. Okay, so now what we are going to do is a const message schema.
+
+6
+00:00:41,120 --> 00:00:47,680
+ Okay, so message schema equal to same like as what we have done with this user model.js.
+
+7
+00:00:47,680 --> 00:00:57,080
+ Okay, so new mongoose dot schema, we are going to make a schema for the message and for that one, what will we have?
+
+8
+00:00:57,080 --> 00:01:05,920
+ We have the center ID. Okay, so for the sender ID. Let's take let's make this one as object type.
+
+9
+00:01:05,920 --> 00:01:24,360
+ So sender ID. So the sender ID would have the type. So the type would be mongoose mongoose dot schema dot types dot object ID.
+
+10
+00:01:24,360 --> 00:01:30,920
+ Okay, so this is actually referring to one user. So sender would be a user.
+
+11
+00:01:30,920 --> 00:01:35,400
+ That's why we are using this reference as user and the required would be true.
+
+12
+00:01:35,400 --> 00:01:40,560
+ Since in this model, there would be a sender and a receiver. So the required would be true.
+
+13
+00:01:40,560 --> 00:01:46,280
+ And after this, we are going to make another object. So for this one would be the receiver ID.
+
+14
+00:01:46,280 --> 00:02:01,080
+ Okay, so REC EIVR receiver ID. And same thing, the type would be let's copy paste these two.
+
+15
+00:02:01,080 --> 00:02:16,160
+ So type would be mongoose dot, same thing mongoose dot schema dot type dot object ID.
+
+16
+00:02:16,160 --> 00:02:21,200
+ In the reference would be the user. Then the required would be true as well.
+
+17
+00:02:21,200 --> 00:02:27,520
+ So required true since we also required the receiver, right?
+
+18
+00:02:27,520 --> 00:02:36,560
+ So the receiver and the user both can message each other with either text or image or both at the same time.
+
+19
+00:02:36,560 --> 00:02:44,080
+ So for that, I'm going to take this text object and this text object that type would be string.
+
+20
+00:02:44,080 --> 00:02:51,200
+ So it would be string type and similarly we can take another one that would be image.
+
+21
+00:02:51,200 --> 00:02:57,040
+ So image for this image, same thing we can assign. The type would be the type string.
+
+22
+00:02:57,040 --> 00:03:04,880
+ Save this and now the last thing which we need to do is we need to update the timestamps.
+
+23
+00:03:04,880 --> 00:03:16,560
+ So timestamps would be true, timestamps is true and now let's export default
+
+24
+00:03:16,560 --> 00:03:32,080
+ mongoose dot model and with this one, we will export this as message, comma message schema.
+
+25
+00:03:33,440 --> 00:03:36,400
+ So now we have exported this message schema.
+
+26
+00:03:36,400 --> 00:03:46,240
+ In the routes folder here, we are going to make this as message wait a second.
+
+27
+00:03:46,240 --> 00:03:54,320
+ So in the routes folder, let's create one file which is called as message routes.
+
+28
+00:03:54,320 --> 00:04:00,480
+ So we are also going to use the message routes right. So message routes.js and then import
+
+29
+00:04:01,840 --> 00:04:08,960
+ express from express as usual. So we are going to express import this express module and now
+
+30
+00:04:08,960 --> 00:04:16,160
+ what we are going to do is for this route, const route equal to express dot router.
+
+31
+00:04:16,160 --> 00:04:22,160
+ We are going to use express router to route to this, and this one also right. So now export
+
+32
+00:04:23,040 --> 00:04:34,880
+ default route, we are going to export default this route. So and now we are going to
+
+33
+00:04:34,880 --> 00:04:40,480
+ just in this app.js, we are going to just configure these message routes right.
+
+34
+00:04:40,480 --> 00:04:48,240
+ So what we are going to do is first we have to import this, so let's import import.
+
+35
+00:04:50,080 --> 00:05:02,960
+ Okay, so the not message, it's actually route from routes last message routes.js.
+
+36
+00:05:02,960 --> 00:05:07,600
+ So we have imported this now app.use.
+
+37
+00:05:11,120 --> 00:05:22,640
+ We are going to just take this. So it would be slash API slash message, it is going to the message
+
+38
+00:05:22,640 --> 00:05:26,720
+ and now message route. Okay.
+
+39
+00:05:26,720 --> 00:05:32,640
+ Well, let's save this.
+
+40
+00:05:34,480 --> 00:05:41,600
+ Oh, it's message route is not defined. Okay. So I think there's some issue. So we have imported
+
+41
+00:05:41,600 --> 00:05:46,800
+ this as route. We should import this as message message route.
+
+42
+00:05:46,800 --> 00:05:53,680
+ Okay, now it's running fine.
+
+43
+00:05:53,680 --> 00:06:02,960
+ Now in the next video, we are going to see how to configure all this for this as a controller.
+
