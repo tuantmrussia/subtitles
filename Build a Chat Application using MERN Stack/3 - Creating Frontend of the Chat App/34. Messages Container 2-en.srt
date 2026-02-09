@@ -1,0 +1,320 @@
+1
+00:00:00,000 --> 00:00:05,400
+ Okay, so hello everyone in this video, we are going to work with the other components, okay?
+
+2
+00:00:05,400 --> 00:00:11,200
+ So as you can see that I have pasted some of the code for the styling part, okay?
+
+3
+00:00:11,200 --> 00:00:16,880
+ So this message input, let's do one thing, copy all of this and I will create one text file
+
+4
+00:00:16,880 --> 00:00:18,520
+ in the stylesbiner.
+
+5
+00:00:18,520 --> 00:00:29,400
+ So text file with the name message input, message input to dot txt and control v, save this
+
+6
+00:00:29,400 --> 00:00:34,400
+ one and after this, for the messages part also I have created this one.
+
+7
+00:00:34,400 --> 00:00:41,440
+ So you can analyze that if you want, so I will just control c and create one more file here
+
+8
+00:00:41,440 --> 00:00:52,520
+ and that is message is dot txt, go there, just paste it, okay?
+
+9
+00:00:52,520 --> 00:00:57,800
+ So I have pasted all of this and now we have to work on the rendering logic, okay?
+
+10
+00:00:57,800 --> 00:01:01,640
+ So so where should we start?
+
+11
+00:01:01,640 --> 00:01:07,240
+ So we should start with the chat container part, we can add some styling in it, okay?
+
+12
+00:01:07,240 --> 00:01:19,400
+ So let's add some style inside of this class name equal to let's add flex and flex
+
+13
+00:01:19,400 --> 00:01:36,880
+ call and height should be full and PG base 100 shadow, large and for the mid-screens, the width
+
+14
+00:01:36,880 --> 00:01:43,520
+ will be auto, okay, control and save.
+
+15
+00:01:43,520 --> 00:01:48,240
+ So if we just go to the front and side, we can see the changes, okay, there's some rendering
+
+16
+00:01:48,240 --> 00:01:55,760
+ issue log in, okay, on MD major is not defined, okay?
+
+17
+00:01:55,760 --> 00:02:02,120
+ No, I choose, go here, we will check up on these, okay?
+
+18
+00:02:02,120 --> 00:02:06,040
+ So all of these errors, where it is coming, okay, okay?
+
+19
+00:02:06,040 --> 00:02:16,960
+ So I think it should be here in this MD major, so we can, what we can actually do is import
+
+20
+00:02:16,960 --> 00:02:19,440
+ the two images that I have just used here, okay?
+
+21
+00:02:19,440 --> 00:02:35,760
+ So from react icon, so import, let's do it quickly, MD image, MD image, from react dash icons,
+
+22
+00:02:35,760 --> 00:02:49,200
+ icon slash MD, and after this we are going to just import L use send horizontal, what
+
+23
+00:02:49,200 --> 00:03:06,920
+ horizontal, from react dash icons, slash L U. Now let's check on these, refresh days,
+
+24
+00:03:06,920 --> 00:03:16,880
+ it's quite slow in loading, so as we can see that here this input box is here and also
+
+25
+00:03:16,880 --> 00:03:22,600
+ this image, and along with this, there's some send button there, this cross icon, as you
+
+26
+00:03:22,600 --> 00:03:27,320
+ can see, and for the messages part, I've pasted this, so no need to worry about that,
+
+27
+00:03:27,320 --> 00:03:33,600
+ so you can find it here, message is dot the JSX, so actually the incoming message I have
+
+28
+00:03:33,600 --> 00:03:37,680
+ commented here, so you have class name, and hello, how are you?
+
+29
+00:03:37,680 --> 00:03:41,720
+ And after this, this is the outgoing message part, okay, so I am good, thanks, but that's
+
+30
+00:03:41,720 --> 00:03:45,800
+ what is getting displayed here, as you can see.
+
+31
+00:03:45,800 --> 00:03:52,600
+ So now after this, okay, we are actually missing some of the styling I guess, so what we should
+
+32
+00:03:52,600 --> 00:03:58,140
+ do is go to this chat container, and we have placed it one over the chat header messages
+
+33
+00:03:58,140 --> 00:04:03,320
+ and all, so what we can actually do is, we have already added a styles here div class
+
+34
+00:04:03,320 --> 00:04:14,320
+ name, so let's wrap everything inside a div, so div class name equals to suppose it would
+
+35
+00:04:14,320 --> 00:04:33,880
+ be flex, flex one, overflow, y, auto, okay, I think it should, the messages part should
+
+36
+00:04:33,880 --> 00:04:41,680
+ be inside of this one, so we will see the changes here, okay, so that would be fine, I
+
+37
+00:04:41,680 --> 00:04:49,600
+ guess, yeah, that's looking good only, now for the messages input, we can also give that,
+
+38
+00:04:49,600 --> 00:04:57,760
+ so let's make another div, and we can see that this is slightly towards the left side,
+
+39
+00:04:57,760 --> 00:05:13,520
+ we can change this to center, okay, so flex shrink one padding should be four, and background
+
+40
+00:05:13,520 --> 00:05:27,360
+ base 200, and take this and wrap this message input, so let's see what changes there,
+
+41
+00:05:27,360 --> 00:05:38,120
+ log in this one, I think this is a good part, like this is flex shrink one, we can add
+
+42
+00:05:38,120 --> 00:05:51,120
+ some margin to the left, like five, little more, it should be fine, I guess, okay, now it's
+
+43
+00:05:51,120 --> 00:06:02,320
+ looking good, now this thing is over, now actually what we can do is let's go to the home page
+
+44
+00:06:02,320 --> 00:06:10,280
+ and check the styling thing, chat container, okay, so here we have already added all the
+
+45
+00:06:10,280 --> 00:06:23,080
+ styles, right side bar is also included, div class name equal to this, that's fine, I guess, this should be fine.
+
+46
+00:06:23,080 --> 00:06:31,160
+ And now, okay, so now let's work with another component, like suppose if there's no chat is selected,
+
+47
+00:06:31,160 --> 00:06:51,160
+ in that case, we can make another JSX file, so no chat selected dot JSX dot JSX, okay, so const no chat
+
+48
+00:06:51,160 --> 00:07:16,760
+ selected equals to this component and return one div H1, here welcome, welcome to chat app, right,
+
+49
+00:07:16,760 --> 00:07:35,400
+ after this we can add one paragraph, like this is your, what we can add home page, where you can
+
+50
+00:07:35,400 --> 00:07:50,840
+ where you can start chatting with your friends, chatting with your friends, okay and then export
+
+51
+00:07:50,840 --> 00:08:06,480
+ default export default this section, no chat selected, then now after this we can also add styling
+
+52
+00:08:06,480 --> 00:08:18,200
+ for this one, so I guess div and then H1 now it's fine only, so let's modify the changes
+
+53
+00:08:18,200 --> 00:08:27,000
+ inside of our chat store dot JS, since we have the users now in our UI, for this part we can
+
+54
+00:08:27,000 --> 00:08:31,960
+ say that selected users, like if there are some selected users, we can set the value as null,
+
+55
+00:08:31,960 --> 00:08:47,000
+ okay, give comma, and after this in the home page, as we can see this styling is
+
+56
+00:08:48,200 --> 00:08:54,520
+ okay, right, there's no need to change the stylings, I guess, this is sidebar, this is chat
+
+57
+00:08:54,520 --> 00:09:02,840
+ container, I guess this one should be okay, and yeah, one thing, we need to import the chat store
+
+58
+00:09:02,840 --> 00:09:17,400
+ here, okay, and we need to just do one thing, like get the selected users,
+
+59
+00:09:18,360 --> 00:09:24,920
+ since we want to render all of that thing inside of our home page only, okay, so from the chat
+
+60
+00:09:24,920 --> 00:09:32,280
+ store we are getting the selected users, and for the selected users, we out to render it, right,
+
+61
+00:09:32,280 --> 00:09:39,480
+ so let's add some conditional statement here, like if selected user exist, then in that case,
+
+62
+00:09:39,480 --> 00:09:43,080
+ we are going to display the chat container, chat container component,
+
+63
+00:09:44,520 --> 00:09:51,160
+ otherwise we can say that whatever, like, yeah, no chat selected, okay,
+
+64
+00:09:51,160 --> 00:09:57,320
+ so this component we have already made, and so for that we are just from this hook,
+
+65
+00:09:57,320 --> 00:10:03,400
+ from the chat store, we are getting this selected user, and just rendering using this logic,
+
+66
+00:10:03,400 --> 00:10:08,840
+ like if the selected user is true, then in that case, we are just displaying the chat container,
+
+67
+00:10:08,840 --> 00:10:16,200
+ otherwise we are displaying that there's no chat selected, that's it, and what actually,
+
+68
+00:10:16,200 --> 00:10:21,320
+ now we can do is for the no chat selected, right, so we can go to this no chat selected,
+
+69
+00:10:21,320 --> 00:10:32,200
+ it's quite basic UI, so for this one, first wrap this inside of one open brace, open brackets,
+
+70
+00:10:32,200 --> 00:10:39,720
+ okay, and, okay, so we can import some few icons, like,
+
+71
+00:10:39,720 --> 00:10:49,640
+ a file message, square, I guess, square or circle, whatever, after this,
+
+72
+00:10:49,640 --> 00:11:00,520
+ we can display it to the top, like a file message, square, class name, we can add some tailwind
+
+73
+00:11:00,520 --> 00:11:11,160
+ styles here as well, so it would be text, text, 5 Excel, and after 5 Excel we can add text,
+
+74
+00:11:11,160 --> 00:11:27,000
+ I guess purple would be fine, purple, 600, and animation, some animation, bounce,
+
+75
+00:11:27,960 --> 00:11:39,000
+ then BG, gray, background, gray, 800, all right, padding should be two, and rounded, large,
+
+76
+00:11:39,000 --> 00:11:47,560
+ okay, so we can do that, let's see, how it's getting displayed, okay, so for this one,
+
+77
+00:11:47,560 --> 00:11:51,640
+ welcome to chat app, this is your homepage where you can start chatting with your friends, okay,
+
+78
+00:11:51,640 --> 00:12:01,400
+ but this is quite weird, I think there's some messing with the styling, so we can remove this,
+
+79
+00:12:01,400 --> 00:12:08,680
+ and we need to add some more styling here, okay, and we need to fix this styling part,
+
+80
+00:12:08,680 --> 00:12:14,760
+ this fit is getting quite longer, I will fix this one, and we'll meet you in the next video,
+
