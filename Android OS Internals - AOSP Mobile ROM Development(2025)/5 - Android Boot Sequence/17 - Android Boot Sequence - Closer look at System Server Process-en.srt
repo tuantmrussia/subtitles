@@ -1,0 +1,440 @@
+1
+00:00:04,600 --> 00:00:10,810
+In the previous sessions we covered the init process and zygote process.
+
+2
+00:00:12,270 --> 00:00:17,490
+We also looked at the code from their side or the systems are what process?
+
+3
+00:00:18,090 --> 00:00:23,700
+Let's start from there and see what exactly system server is doing.
+
+4
+00:00:27,650 --> 00:00:32,330
+So in the previous session we looked at the cigarette in the double, right?
+
+5
+00:00:33,020 --> 00:00:37,430
+So there we saw that the systems are where these systems are.
+
+6
+00:00:37,430 --> 00:00:39,850
+A process is created using port mechanism.
+
+7
+00:00:39,860 --> 00:00:42,830
+So it's down here support system server.
+
+8
+00:00:43,550 --> 00:00:50,930
+So inside port system server method, we could see that the command line is hardcoded and here we could
+
+9
+00:00:50,930 --> 00:00:53,060
+see these systems are working class.
+
+10
+00:00:53,510 --> 00:00:57,650
+It refers to the system server node and Java plus.
+
+11
+00:01:00,340 --> 00:01:01,990
+And using these arguments.
+
+12
+00:01:03,150 --> 00:01:03,660
+Here.
+
+13
+00:01:03,660 --> 00:01:06,450
+It's calling the food system.
+
+14
+00:01:06,630 --> 00:01:07,250
+So what?
+
+15
+00:01:08,560 --> 00:01:14,950
+So inside water since I was basically calling it day and night method called system server.
+
+16
+00:01:15,040 --> 00:01:17,080
+So this you can find within.
+
+17
+00:01:18,300 --> 00:01:19,740
+This CPB file.
+
+18
+00:01:21,280 --> 00:01:26,020
+So if you look at, you can see that it's the package name and the class name.
+
+19
+00:01:26,540 --> 00:01:30,970
+Haitham Dot Android dot internal door toys, not zygote.
+
+20
+00:01:31,770 --> 00:01:35,920
+So the scientists say God or Java, from which it is called there's this one.
+
+21
+00:01:37,920 --> 00:01:42,990
+So finally this method will come back to this system.
+
+22
+00:01:42,990 --> 00:01:45,990
+So all the systems are one main method.
+
+23
+00:01:46,830 --> 00:01:52,020
+And as you could see from the main method, it simply calls systems that were not run.
+
+24
+00:01:53,770 --> 00:01:57,580
+So within the run there are three main methods.
+
+25
+00:01:57,850 --> 00:02:05,890
+So the START Bootstrap Services method, the START Core Services method and START other services method.
+
+26
+00:02:06,070 --> 00:02:14,440
+The START Bootstrap Services method starts small, tying the all political services that are needed
+
+27
+00:02:14,440 --> 00:02:16,540
+to get this system off the ground.
+
+28
+00:02:16,810 --> 00:02:23,830
+These services have complex mutual dependencies, which is why it is initialized at one place.
+
+29
+00:02:24,250 --> 00:02:30,970
+So in case if you are planning to add a service that is very much interdependent on these bootstrap
+
+30
+00:02:30,970 --> 00:02:35,140
+services, then you could add within this method.
+
+31
+00:02:37,780 --> 00:02:45,310
+But if it is not dependent on any of these bootstrapped services, you should not add again, you should
+
+32
+00:02:45,310 --> 00:02:52,180
+consider adding it in these other mental start core services or start other services.
+
+33
+00:02:52,370 --> 00:02:57,430
+Okay, so mostly this will be the proper place if you decide with which you are going to add doesn't
+
+34
+00:02:57,430 --> 00:03:01,570
+have any dependency on these, then it's advisable.
+
+35
+00:03:01,630 --> 00:03:03,310
+You can add it in the start.
+
+36
+00:03:03,400 --> 00:03:04,510
+Other services method.
+
+37
+00:03:04,780 --> 00:03:05,050
+Okay.
+
+38
+00:03:05,620 --> 00:03:12,790
+So the START Bootstrap Services is responsible to start a set of services which are actually inter-related.
+
+39
+00:03:13,300 --> 00:03:18,160
+So here is a list of major services which are started by bootstrap services.
+
+40
+00:03:18,340 --> 00:03:25,330
+So here we have INSTALLER, which is basically a service class used when the system stores the APK and
+
+41
+00:03:25,330 --> 00:03:31,450
+then we have the activity manager service or Amazon, which is basically responsible for start up switching
+
+42
+00:03:31,450 --> 00:03:34,870
+and scheduling of these four major components of the system.
+
+43
+00:03:35,230 --> 00:03:39,430
+Then the power manager serves more power related calculations in the system.
+
+44
+00:03:39,670 --> 00:03:43,330
+Lights service for managing the back end leads.
+
+45
+00:03:43,870 --> 00:03:48,850
+Display Manager The Service for handling the display devices within the system.
+
+46
+00:03:49,690 --> 00:03:57,970
+User Manager Service, Multi User Mode Management, Sensor services, all basically to provide various
+
+47
+00:03:57,970 --> 00:03:59,650
+sensor services for the system.
+
+48
+00:03:59,740 --> 00:04:05,580
+And finally, the package manager service for installing uninstalling APIs.
+
+49
+00:04:06,400 --> 00:04:12,340
+So in this method, you can see it starts each of the services one by one, like the installer we started
+
+50
+00:04:12,340 --> 00:04:12,700
+here.
+
+51
+00:04:13,530 --> 00:04:17,830
+Our stats services started here and activity manager.
+
+52
+00:04:18,830 --> 00:04:24,170
+Our manager, thermal manager and many of the services have started here.
+
+53
+00:04:24,500 --> 00:04:26,720
+So you can also look at the trace logs.
+
+54
+00:04:26,960 --> 00:04:30,050
+You could see when it is started and when it is up and running.
+
+55
+00:04:31,120 --> 00:04:34,180
+So next we have start course services.
+
+56
+00:04:34,750 --> 00:04:42,250
+So the start or services method starts some essential services that are not dependent on the bootstrap
+
+57
+00:04:42,250 --> 00:04:42,730
+process.
+
+58
+00:04:43,600 --> 00:04:48,220
+So here is a list of main services within the core service.
+
+59
+00:04:48,490 --> 00:04:52,660
+So here we had the battery service which manages just the battery related services.
+
+60
+00:04:53,140 --> 00:04:54,910
+Usage stats service.
+
+61
+00:04:55,480 --> 00:05:00,610
+It collects how often users use each app and how often they are used.
+
+62
+00:05:01,030 --> 00:05:05,410
+Then web webview update service service related to webview a bit.
+
+63
+00:05:05,800 --> 00:05:07,990
+And then we have the typical service.
+
+64
+00:05:08,560 --> 00:05:12,560
+It's basically to handle the TPU and the TPU driver.
+
+65
+00:05:13,240 --> 00:05:14,680
+So we didn't start core services.
+
+66
+00:05:14,680 --> 00:05:15,920
+As we can see, it starts.
+
+67
+00:05:15,940 --> 00:05:20,890
+All these services they use each service, the view update service.
+
+68
+00:05:22,200 --> 00:05:28,500
+And here you can see if the device supports feature debut, then it starts it.
+
+69
+00:05:29,070 --> 00:05:32,910
+So similarly, there are many conditions across these methods.
+
+70
+00:05:33,330 --> 00:05:40,140
+So if the device supports a particular feature to start some services and the binder called start service
+
+71
+00:05:40,140 --> 00:05:44,910
+loop new persistent service and finally the debut service.
+
+72
+00:05:45,240 --> 00:05:53,130
+So next stop start other services start other services method starts a set of miscellaneous services.
+
+73
+00:05:53,850 --> 00:05:57,960
+So here is a list of major services started by start of the service method.
+
+74
+00:05:58,530 --> 00:06:03,450
+So the camera service, this handles the camera later steps, alarm manager service.
+
+75
+00:06:03,930 --> 00:06:08,290
+It's the global timer management service input management service.
+
+76
+00:06:08,310 --> 00:06:09,050
+So this is supported.
+
+77
+00:06:09,060 --> 00:06:10,920
+I mean, the input keyboard.
+
+78
+00:06:11,910 --> 00:06:16,020
+And then we have the window manager service, that is the window management.
+
+79
+00:06:16,690 --> 00:06:22,710
+The we are manager service, it's part of the we are more management services, Bluetooth service,
+
+80
+00:06:22,950 --> 00:06:29,280
+throughput management service, notification manager service and as the notifications of the system.
+
+81
+00:06:30,490 --> 00:06:38,590
+Device Storage monitor service, so is related to the SD card storage related management services and
+
+82
+00:06:38,590 --> 00:06:44,590
+the location manager service handles the location stuffs and audio service standards that all audio
+
+83
+00:06:44,590 --> 00:06:45,970
+related services.
+
+84
+00:06:46,270 --> 00:06:49,690
+So we look in detail on some of these services in the later sessions.
+
+85
+00:06:50,170 --> 00:06:53,690
+So there are a few more things which we need to note down here.
+
+86
+00:06:54,430 --> 00:07:02,350
+Like some of the services are only for some devices and so here you can see is only for s watch.
+
+87
+00:07:03,500 --> 00:07:04,130
+And then.
+
+88
+00:07:05,620 --> 00:07:07,300
+And I certainly have some condition.
+
+89
+00:07:07,420 --> 00:07:10,890
+So if it is disabled cameras, I will then do that.
+
+90
+00:07:10,900 --> 00:07:12,490
+No, disabled, then do that.
+
+91
+00:07:12,670 --> 00:07:17,860
+And similarly, there are some cases where it's only for automotive and there are some cases where it's
+
+92
+00:07:17,860 --> 00:07:19,720
+only for TV.
+
+93
+00:07:20,080 --> 00:07:21,460
+So this is only called.
+
+94
+00:07:22,580 --> 00:07:26,250
+So this case, we check if there is a featured wife.
+
+95
+00:07:26,600 --> 00:07:30,950
+Then early start the wife by and hear evidence they use B feature.
+
+96
+00:07:31,100 --> 00:07:39,260
+Then start the US B service server as a backup feature, then start that feature, then start the apogee
+
+97
+00:07:39,320 --> 00:07:39,830
+service.
+
+98
+00:07:40,310 --> 00:07:43,490
+So there are many conditions here, so not all time.
+
+99
+00:07:43,490 --> 00:07:45,590
+You set a started for all devices.
+
+100
+00:07:45,860 --> 00:07:51,980
+So based on the device and some configurations, it will ignore some of the services.
+
+101
+00:07:52,100 --> 00:07:59,450
+And if you come down at this, we can see that it says to activity manager service that the system is
+
+102
+00:07:59,630 --> 00:08:05,270
+ready and this tells the activity manager that it's okay to run the third party code.
+
+103
+00:08:05,810 --> 00:08:10,220
+So this is an example where it checks for feature automotive.
+
+104
+00:08:10,250 --> 00:08:15,320
+So these will get started only if the build is an automotive build.
+
+105
+00:08:18,080 --> 00:08:21,410
+And at this point, you basically start the system.
+
+106
+00:08:22,370 --> 00:08:24,920
+So this method is responsible for starting the system.
+
+107
+00:08:25,010 --> 00:08:29,000
+We will dig deeper into this in week out of the system.
+
+108
+00:08:29,180 --> 00:08:30,560
+You might start a process.
+
+109
+00:08:30,680 --> 00:08:32,700
+So this is basically the last service.
+
+110
+00:08:32,900 --> 00:08:35,780
+Within the start, other services method.
+
