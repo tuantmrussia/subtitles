@@ -1,0 +1,168 @@
+1
+00:00:09,880 --> 00:00:15,000
+Khởi động linh hoạt là một tính năng an ninh quan trọng ở steroid đảm bảo tính toàn vẹn của hệ thống trong suốt
+
+2
+00:00:15,000 --> 00:00:16,000
+quá trình khởi động.
+
+3
+00:00:16,400 --> 00:00:21,720
+Nó thiết lập chuỗi tin tưởng từ phần cứng đến hệ điều hành, ngăn chặn thực hiện
+
+4
+00:00:21,720 --> 00:00:27,240
+của những mật mã trái phép và bảo vệ chống lại những cuộc tấn công độc ác cố gắng phá hoại hệ thống
+
+5
+00:00:27,240 --> 00:00:28,080
+Sự chính trực.
+
+6
+00:00:28,520 --> 00:00:34,240
+Ở trung tâm của nó, kiểm tra khởi động phụ thuộc vào mật mã hóa để đảm bảo rằng mỗi giai đoạn của khởi động
+
+7
+00:00:34,240 --> 00:00:37,080
+Quá trình là thật và không bị xáo trộn.
+
+8
+00:00:37,360 --> 00:00:42,400
+Quá trình bắt đầu với phần cứng chủ yếu là neo tin tưởng, thường là chỉ đọc bộ nhớ chứa
+
+9
+00:00:42,400 --> 00:00:43,560
+nạp khởi động đầu tiên.
+
+10
+00:00:43,920 --> 00:00:49,480
+Bộ nạp khởi động này được ký số bởi nhà sản xuất thiết bị, và tính xác thực của nó có thể được kiểm tra
+
+11
+00:00:49,480 --> 00:00:52,200
+dùng phím công cộng nhúng vào phần cứng.
+
+12
+00:00:52,560 --> 00:00:58,560
+Khi thiết bị được bật lên, bộ nạp khởi động đầu tiên xác minh chữ ký của người nạp khởi động sân khấu tiếp theo,
+
+13
+00:00:58,560 --> 00:01:02,040
+Mà chịu trách nhiệm nạp hạt nhân hệ điều hành.
+
+14
+00:01:02,400 --> 00:01:07,500
+Nếu chữ ký là hợp lệ, bộ nạp khởi động tiếp tục tải và thực hiện hạt nhân.
+
+15
+00:01:07,860 --> 00:01:14,100
+Nếu việc thẩm tra chữ ký thất bại tại bất kỳ điểm nào, quá trình khởi động bị dừng lại, ngăn chặn thực hiện
+
+16
+00:01:14,100 --> 00:01:16,060
+có thể là mật mã độc hại.
+
+17
+00:01:16,460 --> 00:01:22,260
+Hạt nhân lần lượt, xác minh các chữ ký của phân vùng hệ thống chứa lõi hoạt động
+
+18
+00:01:22,260 --> 00:01:24,500
+tập tin hệ thống và ứng dụng.
+
+19
+00:01:24,900 --> 00:01:28,700
+Điều này đảm bảo rằng toàn bộ hệ thống không bị thay đổi hoặc bị hỏng.
+
+20
+00:01:29,020 --> 00:01:34,740
+Quá trình xác thực này tiếp tục trong suốt chuỗi khởi động, với mỗi thành phần xác nhận tính xác thực
+
+21
+00:01:34,740 --> 00:01:35,540
+của người tiếp theo.
+
+22
+00:01:35,900 --> 00:01:41,100
+Điều này tạo ra một chuỗi sự tin tưởng kéo dài từ phần cứng đến hệ điều hành, đảm bảo rằng
+
+23
+00:01:41,100 --> 00:01:43,380
+Chỉ có luật lệ được ủy quyền mới được thi hành.
+
+24
+00:01:43,700 --> 00:01:48,820
+Một trong những lợi ích chính của đôi giày đã được kiểm tra là khả năng bảo vệ nó khỏi những cuộc tấn công từ lùi.
+
+25
+00:01:49,220 --> 00:01:54,500
+Tấn công lại bao gồm việc phục hồi hệ thống thành phiên bản cũ và dễ bị tổn thương của hệ điều hành
+
+26
+00:01:54,660 --> 00:01:57,180
+để khai thác những thiếu sót về an ninh.
+
+27
+00:01:57,620 --> 00:02:03,220
+Khởi động linh hoạt ngăn chặn các cuộc tấn công quay ngược lại bằng cách yêu cầu mỗi phiên bản của hệ điều hành phải được mã hóa
+
+28
+00:02:03,220 --> 00:02:03,740
+Đã ký.
+
+29
+00:02:04,100 --> 00:02:08,820
+Thiết bị này duy trì hồ sơ của phiên bản cao nhất của hệ điều hành đã được kiểm tra,
+
+30
+00:02:08,820 --> 00:02:11,760
+và sẽ không khởi động bất cứ phiên bản nào cũ hơn phiên bản này.
+
+31
+00:02:12,200 --> 00:02:17,080
+Điều này ngăn cản những kẻ tấn công hạ cấp hệ thống xuống trạng thái dễ bị tổn thương.
+
+32
+00:02:17,320 --> 00:02:21,960
+Hơn nữa, khởi động được kiểm tra có thể phát hiện việc xâm nhập hệ thống.
+
+33
+00:02:22,320 --> 00:02:28,000
+Nếu một kẻ tấn công cố gắng thay đổi các phân vùng hệ thống, quá trình xác thực sẽ thất bại, ngăn chặn
+
+34
+00:02:28,000 --> 00:02:29,600
+Hệ thống khởi động.
+
+35
+00:02:29,960 --> 00:02:36,440
+Điều này đảm bảo rằng thiết bị luôn luôn chạy một phiên bản đúng và chưa được sửa đổi của hệ điều hành.
+
+36
+00:02:36,840 --> 00:02:37,680
+Tóm lại.
+
+37
+00:02:37,880 --> 00:02:43,120
+Khởi động linh hoạt đóng vai trò quan trọng trong việc bảo vệ sự toàn vẹn của hệ thống steroid, đảm bảo rằng
+
+38
+00:02:43,120 --> 00:02:48,600
+Chỉ có những mật mã được ủy quyền mới được thực hiện, ngăn chặn các cuộc tấn công sau lưng, và phát hiện việc xâm phạm hệ thống
+
+39
+00:02:48,600 --> 00:02:49,400
+Phân vùng.
+
+40
+00:02:49,720 --> 00:02:54,760
+Nó hình thành một phần cơ bản của kiến trúc an ninh của người máy, và là thiết yếu để duy trì
+
+41
+00:02:54,760 --> 00:02:57,800
+Sự an toàn và sự đáng tin cậy của các thiết bị robot.
+
+42
+00:02:58,200 --> 00:03:04,080
+Nó là một cơ chế tinh vi, nhưng với mục tiêu đơn giản là xác minh tính xác thực của mỗi thành phần.
+
