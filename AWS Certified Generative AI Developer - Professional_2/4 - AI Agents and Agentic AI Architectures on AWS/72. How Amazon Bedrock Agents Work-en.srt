@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:05,760
+ Now in this lecture, we're going to take a look at how Amazon bedrock agents work step by step.
+
+2
+00:00:05,760 --> 00:00:12,400
+ So first we have our end user John who is going to interact with our AI agent. Now let's take a
+
+3
+00:00:12,400 --> 00:00:19,280
+ look at what his query is. So he wants the agent to book a hotel if his leave balance is
+
+4
+00:00:19,280 --> 00:00:28,160
+ more than three days. So that's the user input. Now when you create an agent on the Amazon bedrock
+
+5
+00:00:28,160 --> 00:00:35,360
+ agent framework, it will by default provide you with a prompt store. So what does this prompt store
+
+6
+00:00:35,360 --> 00:00:41,920
+ contain? It will contain some default prompt templates and which will be customized based on
+
+7
+00:00:41,920 --> 00:00:47,200
+ the large language model that you'll select for your agent. So if you use anthropic, then it's
+
+8
+00:00:47,200 --> 00:00:52,160
+ going to have a different kind of a prompt template. If you use no one model from Amazon, then it's
+
+9
+00:00:52,160 --> 00:00:58,160
+ going to have a different default prompt template. But you can also create your own custom prompt
+
+10
+00:00:58,160 --> 00:01:05,280
+ template and store in this prompt store. Now, why do we have this prompt store? So before the final
+
+11
+00:01:05,280 --> 00:01:11,840
+ prompt goes to the large language model driving the agent, the user input is augmented with more
+
+12
+00:01:11,840 --> 00:01:19,360
+ details. So what are those details? First, we have the user input and this is our user input here.
+
+13
+00:01:20,000 --> 00:01:25,440
+ Now next, we have the instructions that we provide to the agent. So now let's say we are creating
+
+14
+00:01:25,440 --> 00:01:32,800
+ vacation planner agent and the job of that vacation planner agent is let's say if the user provides
+
+15
+00:01:32,800 --> 00:01:39,040
+ an input, then you should be able to book a hotel, you should be able to book a flight and so on.
+
+16
+00:01:39,040 --> 00:01:47,600
+ So you provide the agent some instructions on what is its domain. So those instructions are added
+
+17
+00:01:47,600 --> 00:01:53,200
+ along with the user input. Next, we tell the large language model driving the agent,
+
+18
+00:01:53,200 --> 00:01:59,520
+ what are all the tools available to the agent. So maybe you have access to airline APIs,
+
+19
+00:01:59,520 --> 00:02:05,680
+ maybe you have access to better knowledge base, maybe you have access to hotel APIs. So all the tools
+
+20
+00:02:05,680 --> 00:02:12,960
+ that agent has access to are provided as part of the prompt. And then we also provide details
+
+21
+00:02:12,960 --> 00:02:20,560
+ about the guardrails. So when we combine all of these, we get the final prompt. So once we have
+
+22
+00:02:20,560 --> 00:02:27,760
+ this final prompt, then there is further augmentation of this prompt. So what we have is also a session
+
+23
+00:02:27,760 --> 00:02:34,560
+ store that is enabled when we create an agent in the Amazon bedrock service. So what is this
+
+24
+00:02:34,560 --> 00:02:41,920
+ session store used for basically any previous interaction between the user and the agent at any
+
+25
+00:02:41,920 --> 00:02:48,320
+ point of time, it summarizes all those conversations and then stores in the session store.
+
+26
+00:02:48,320 --> 00:02:55,200
+ So when you have a new conversation, that is loaded as part of the prompt. So what would happen is
+
+27
+00:02:55,200 --> 00:03:03,520
+ this conversation history would be added to this final prompt. So once that is done,
+
+28
+00:03:03,520 --> 00:03:08,720
+ the prompt plus the conversation history would be sent to the large language model
+
+29
+00:03:08,720 --> 00:03:17,760
+ driving the agent. Next, this agent is going to do the task decomposition or task planning
+
+30
+00:03:17,760 --> 00:03:24,960
+ using reasoning and action style of planning. So let's say in our case, John wanted to book a
+
+31
+00:03:24,960 --> 00:03:30,960
+ hotel if the leave balance is more than three days. So then this LLM is going to break it into
+
+32
+00:03:30,960 --> 00:03:36,000
+ multiple tasks. Let's say it will say, okay, first check the leave balance, then if the leave balance
+
+33
+00:03:36,000 --> 00:03:42,480
+ is more than three days, then go ahead and book a hotel. So that's how it's going to break down
+
+34
+00:03:42,480 --> 00:03:50,160
+ the various tasks. Now once that is done, so it will use the tools that are integrated with this
+
+35
+00:03:50,160 --> 00:03:57,280
+ agent. So maybe to check the leave balance, it will make a call to the HR system and then get a
+
+36
+00:03:57,280 --> 00:04:04,320
+ response. And once it has that response, then response from the tool, also known as observation,
+
+37
+00:04:04,320 --> 00:04:10,160
+ is shared with the agent along with the original prompt. So once these details are shared with
+
+38
+00:04:10,160 --> 00:04:15,440
+ the agent, it will again do the task decomposition. Maybe this time it decides that we should
+
+39
+00:04:15,440 --> 00:04:21,760
+ go ahead and book a hotel room. So it will again execute these tools and the observation from
+
+40
+00:04:21,760 --> 00:04:27,680
+ these tools is then shared with the large language model driving the agent again. And this will
+
+41
+00:04:27,680 --> 00:04:33,760
+ continue in the loop until the agent determines that the user query has been sufficiently
+
+42
+00:04:33,760 --> 00:04:40,000
+ answered. And in that case, it's going to send the final answer to our end user saying that
+
+43
+00:04:40,000 --> 00:04:46,320
+ this is the response to your query. Now if I broadly summarize the agent execution steps,
+
+44
+00:04:46,320 --> 00:04:51,680
+ the first thing is user will provide an input or a question. And then this is going to be
+
+45
+00:04:51,680 --> 00:04:58,320
+ augmented with further details from the prompt store. Next, it's going to fetch the conversation
+
+46
+00:04:58,320 --> 00:05:04,720
+ history from the session store, then there are going to be some validations on the toxicity,
+
+47
+00:05:04,720 --> 00:05:10,160
+ auto domain questions and so on. And then finally, we will have the orchestration style
+
+48
+00:05:10,160 --> 00:05:17,680
+ prompting, which will do the planning tool execution and generate the final observation or
+
+49
+00:05:17,680 --> 00:05:23,520
+ answer, which will be sent back to the user. I hope this is clear to you now on how Amazon
+
+50
+00:05:23,520 --> 00:05:26,720
+ bedrock agents work. I'll see you in the next lecture. Thank you.
+
