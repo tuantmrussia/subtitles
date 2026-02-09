@@ -1,0 +1,416 @@
+1
+00:00:01,540 --> 00:00:05,440
+Let's look at Android Startup Init process.
+
+2
+00:00:09,900 --> 00:00:17,190
+When we talk about any process, we must first look at the steps of Android system, startup process.
+
+3
+00:00:17,430 --> 00:00:21,060
+So here is a timeline diagram of Android boot process.
+
+4
+00:00:21,300 --> 00:00:27,390
+So in this diagram, the first step is the power on our own and system startup.
+
+5
+00:00:27,690 --> 00:00:34,320
+When the power is pressed, the boot type code starts executing from a predefined place.
+
+6
+00:00:34,620 --> 00:00:37,380
+And this is basically hardcoded in the ROM.
+
+7
+00:00:37,890 --> 00:00:42,060
+This loads the bootloader into the RAM and its accuracy.
+
+8
+00:00:42,420 --> 00:00:49,980
+So whenever we press the power button in a mobile device, it start it executing from a predefined address
+
+9
+00:00:49,980 --> 00:00:51,810
+which is hardcoded in the role.
+
+10
+00:00:52,320 --> 00:00:58,050
+And this will load the bootloader into the RAM and it gives it the bootloader.
+
+11
+00:00:58,080 --> 00:01:03,120
+It's a small program which runs before the operating system starts running.
+
+12
+00:01:03,270 --> 00:01:06,610
+Its main function is to start the system OS.
+
+13
+00:01:06,720 --> 00:01:11,290
+So in our case, this bootloader will start the Linux kernel.
+
+14
+00:01:11,310 --> 00:01:14,400
+So as we know, Android is based on Linux kernel.
+
+15
+00:01:14,490 --> 00:01:18,360
+So the bootloader is basically responsible for starting the Linux kernel.
+
+16
+00:01:18,390 --> 00:01:25,260
+So once the Linux kernel starts, it sets the affected memory cache and it loads all the system drivers
+
+17
+00:01:25,260 --> 00:01:29,520
+like the audio medial Catholic's drivers, all sorts of drivers.
+
+18
+00:01:29,530 --> 00:01:35,520
+When the kernel finishes setting up the system looks for the unique dot RC file, so there is a file
+
+19
+00:01:35,670 --> 00:01:37,590
+configuration file you need to file.
+
+20
+00:01:37,890 --> 00:01:44,570
+So it will look for any files in the system files and then it starts the root process for the first
+
+21
+00:01:44,580 --> 00:01:47,880
+process in the system, which is called the unit process.
+
+22
+00:01:47,910 --> 00:01:51,930
+So in this session, we are going to dig deeper into the unit process.
+
+23
+00:01:52,030 --> 00:01:52,250
+Okay.
+
+24
+00:01:52,290 --> 00:01:58,290
+We'll see what role actions are being performed in this process and we'll have a code walkthrough and
+
+25
+00:01:58,290 --> 00:02:02,370
+see which files or which modules are responsible for this init process.
+
+26
+00:02:02,400 --> 00:02:07,380
+In the later tutorials we will cover zygote system, server system, UI and launcher.
+
+27
+00:02:10,830 --> 00:02:13,680
+The init process mainly does four things.
+
+28
+00:02:13,800 --> 00:02:18,040
+So the first step is to create the folders and mount the device.
+
+29
+00:02:18,060 --> 00:02:22,290
+So in the first step, it basically creates the file system of Android.
+
+30
+00:02:22,320 --> 00:02:25,940
+In the second step, it creates the is SELinux policies.
+
+31
+00:02:25,950 --> 00:02:32,310
+So in case if you don't know what a c linux's is, Linux stands for security enhanced Linux A C.
+
+32
+00:02:32,310 --> 00:02:36,900
+Linux is a set of rules to improve the security of your system.
+
+33
+00:02:37,020 --> 00:02:42,450
+So I have created a different tutorial for Linux, so you will learn about that later.
+
+34
+00:02:42,480 --> 00:02:46,310
+So in the third step it will initialize and start the property.
+
+35
+00:02:46,380 --> 00:02:46,680
+Are we?
+
+36
+00:02:46,680 --> 00:02:49,600
+So Android maintains a set of properties.
+
+37
+00:02:49,620 --> 00:02:53,480
+It is very similar to the registry entry in Windows.
+
+38
+00:02:53,490 --> 00:02:59,310
+So you might have seen the registry in Windows eight where we have a property and Android also does
+
+39
+00:02:59,310 --> 00:03:00,390
+something very similar.
+
+40
+00:03:00,420 --> 00:03:05,610
+So in Android it is a set of properties which has a key value where property name and the value and
+
+41
+00:03:05,610 --> 00:03:09,300
+this property and value are used in a lot of places in Android.
+
+42
+00:03:09,330 --> 00:03:13,950
+By using ADB, we can get the list of these properties and their values.
+
+43
+00:03:13,950 --> 00:03:15,170
+I'll show you how to do that.
+
+44
+00:03:15,180 --> 00:03:21,600
+Then in the fourth step you pass the you need to RC configuration file and start the zygote process.
+
+45
+00:03:21,600 --> 00:03:24,480
+So we look out of the zygote process in a separate tutorial.
+
+46
+00:03:24,490 --> 00:03:28,740
+So in this tutorial you'll see how the zygote process is getting started.
+
+47
+00:03:28,750 --> 00:03:34,620
+Let's look at the modules which implements the INI process and Android so you can find most of the init
+
+48
+00:03:34,620 --> 00:03:36,450
+modules within this folder.
+
+49
+00:03:36,520 --> 00:03:39,480
+It is within a speech system goal you need.
+
+50
+00:03:40,840 --> 00:03:43,470
+I have a bookmark for the most important modules.
+
+51
+00:03:43,480 --> 00:03:47,560
+So here we have the main dose CBP, which consists of a main method.
+
+52
+00:03:47,770 --> 00:03:51,850
+Within this method, we could find three methods which are pretty important.
+
+53
+00:03:51,850 --> 00:03:54,460
+So the first one is must stage main.
+
+54
+00:03:56,220 --> 00:04:02,880
+The Foster State's main method is mainly responsible for creating the directories and mounting the devices.
+
+55
+00:04:04,180 --> 00:04:09,790
+So we can see that it's mainly mounting the devices and creating the directories here.
+
+56
+00:04:10,240 --> 00:04:13,480
+Second, we have the setup and SELinux method.
+
+57
+00:04:13,750 --> 00:04:20,980
+So within setup, a select method basically loads all the is seal index related policies and it sets
+
+58
+00:04:20,980 --> 00:04:27,010
+the enforcement of AC Linux and it said AC Linux enforcement as well.
+
+59
+00:04:27,040 --> 00:04:31,090
+So you learn in detail about AC Linux in a later tutorial.
+
+60
+00:04:31,630 --> 00:04:38,350
+But for now, just keep in mind that Linux is a set of rules to enhance the security of your system.
+
+61
+00:04:38,890 --> 00:04:42,820
+The third method within mean is second stage main.
+
+62
+00:04:43,060 --> 00:04:45,290
+So the second stage main is implemented in.
+
+63
+00:04:45,570 --> 00:04:52,840
+You need not simply be within any dot, simply be the main method which we need to look at is property
+
+64
+00:04:52,840 --> 00:04:53,170
+in it.
+
+65
+00:04:53,710 --> 00:04:57,700
+So the property basically initializes the properties within the system.
+
+66
+00:04:57,970 --> 00:05:02,860
+So in Android there are a lot of properties which are initiated at the startup.
+
+67
+00:05:03,280 --> 00:05:07,300
+So it is very similar to the Windows Registry property value path.
+
+68
+00:05:07,510 --> 00:05:10,540
+I'll show you how we can see the properties.
+
+69
+00:05:10,600 --> 00:05:12,610
+Let me open up the emulator.
+
+70
+00:05:21,020 --> 00:05:28,940
+So to see the properties which are initialized in the emulator, we need to go to the shell and it broke.
+
+71
+00:05:29,330 --> 00:05:33,320
+So this lists all the properties which are set within the system.
+
+72
+00:05:33,740 --> 00:05:38,300
+These properties are used in many places, so for example, are not built out.
+
+73
+00:05:39,650 --> 00:05:42,070
+So this is the product name of these.
+
+74
+00:05:42,080 --> 00:05:43,790
+You can see these in the settings.
+
+75
+00:05:43,970 --> 00:05:47,480
+If you go to settings, you can see many of these properties are listed here.
+
+76
+00:05:47,870 --> 00:05:51,140
+Like, for example, if you go to about emulator device.
+
+77
+00:05:51,170 --> 00:05:52,910
+So here you can see the build number, right?
+
+78
+00:05:53,030 --> 00:05:56,840
+So the build number is built from these build properties.
+
+79
+00:05:56,980 --> 00:05:57,120
+Okay.
+
+80
+00:05:57,140 --> 00:05:59,540
+So it's basically a concatenation of all these.
+
+81
+00:05:59,970 --> 00:06:06,320
+Similarly, all these properties are used in many, many places within the within the OS while booting
+
+82
+00:06:06,320 --> 00:06:10,610
+up and also after booting up it's used for many purposes even.
+
+83
+00:06:10,610 --> 00:06:14,840
+You can have a runtime reserves overlay based on these properties.
+
+84
+00:06:14,870 --> 00:06:15,250
+Okay.
+
+85
+00:06:15,260 --> 00:06:21,980
+So the property in it basically loads all the properties and then we have the init say good note rc
+
+86
+00:06:21,980 --> 00:06:22,250
+file.
+
+87
+00:06:22,250 --> 00:06:29,150
+So the INI process basically reads this RC file and it starts the zygote process.
+
+88
+00:06:29,630 --> 00:06:35,660
+So we need dot RC is a configuration file with scripts written in an android init language.
+
+89
+00:06:35,690 --> 00:06:41,990
+So it mainly consists of five types of statements, like some action statements, commands, services,
+
+90
+00:06:42,410 --> 00:06:44,300
+options and imports.
+
+91
+00:06:44,690 --> 00:06:46,220
+So it's a very simple language.
+
+92
+00:06:46,430 --> 00:06:50,600
+So you can Google it to find more information about this init language.
+
+93
+00:06:50,690 --> 00:06:51,040
+Okay.
+
+94
+00:06:51,050 --> 00:06:59,030
+So this unique dot RC file is actually passed by the passado prototype within the init folder and it
+
+95
+00:06:59,030 --> 00:07:01,520
+will start the zygote process.
+
+96
+00:07:02,270 --> 00:07:08,660
+So if you want to debug something in this init process, then you can always have a look at the logcat
+
+97
+00:07:09,590 --> 00:07:10,370
+for this tag.
+
+98
+00:07:10,610 --> 00:07:11,630
+So you need.
+
+99
+00:07:12,840 --> 00:07:13,740
+So all the.
+
+100
+00:07:14,660 --> 00:07:20,980
+Activities done in the unit will be tagged with this any time so you can search for this and find the
+
+101
+00:07:20,990 --> 00:07:24,620
+different tasks performed during that unit process.
+
+102
+00:07:24,890 --> 00:07:25,220
+Okay.
+
+103
+00:07:25,610 --> 00:07:30,200
+So I hope you have got a high level view of what's happening in the unit process.
+
+104
+00:07:30,410 --> 00:07:30,860
+Thank you.
+
