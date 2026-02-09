@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,800
+ So, hello everyone, in this video, what we are going to do is, we are going to work with
+
+2
+00:00:05,800 --> 00:00:08,240
+ Jason, we are going to, okay.
+
+3
+00:00:08,240 --> 00:00:11,760
+ So what basically happens is that suppose for example, when you are logging a particular
+
+4
+00:00:11,760 --> 00:00:12,920
+ website, okay.
+
+5
+00:00:12,920 --> 00:00:18,040
+ So when you click that log in button, you log into the website.
+
+6
+00:00:18,040 --> 00:00:21,200
+ So this login has a session, okay.
+
+7
+00:00:21,200 --> 00:00:24,920
+ So when you are logging into a particular site, it has a session.
+
+8
+00:00:24,920 --> 00:00:31,280
+ Like after how much time, the thing is going to expire, like for example, if you are logging
+
+9
+00:00:31,280 --> 00:00:33,360
+ in a particular website, okay.
+
+10
+00:00:33,360 --> 00:00:39,320
+ So sometimes you have seen is like that, like when you are accessing a particular site and
+
+11
+00:00:39,320 --> 00:00:43,160
+ when you have logged in, it expires after a particular period of time.
+
+12
+00:00:43,160 --> 00:00:47,960
+ So that is why we use Jason, we are talking in that case, to set expiry time, like after
+
+13
+00:00:47,960 --> 00:00:55,000
+ how much or what is the limit at which when we refresh the website, the particular token,
+
+14
+00:00:55,000 --> 00:00:58,920
+ which is assigned to a particular user, gets expired, okay.
+
+15
+00:00:58,920 --> 00:01:01,280
+ So that is why we use Jason, we have token.
+
+16
+00:01:01,280 --> 00:01:09,600
+ So if you take a bookish definition of for it, so I can search it for you, okay.
+
+17
+00:01:09,600 --> 00:01:14,040
+ Like let's use copilot.
+
+18
+00:01:14,040 --> 00:01:20,600
+ So what is Jason web token?
+
+19
+00:01:20,600 --> 00:01:27,160
+ So it will display some results, like Jason web token is secure, compact, way to transmit
+
+20
+00:01:27,160 --> 00:01:31,640
+ information between two parties, often used for authentication and authorization in web
+
+21
+00:01:31,640 --> 00:01:32,640
+ applications.
+
+22
+00:01:32,640 --> 00:01:38,360
+ Like it has header component, it has a payload and it has a signature ensures the token
+
+23
+00:01:38,360 --> 00:01:42,680
+ hasn't been tampered with created by encoding the header and payload, then signing with
+
+24
+00:01:42,680 --> 00:01:45,520
+ the secret or a private key, okay.
+
+25
+00:01:45,520 --> 00:01:47,840
+ So how JWT works?
+
+26
+00:01:47,840 --> 00:01:55,840
+ So authentication part as you can see here, like after login, the server generates a JWT
+
+27
+00:01:55,840 --> 00:01:58,840
+ and sends it to the client, okay.
+
+28
+00:01:58,840 --> 00:02:02,440
+ Then client uses the client stores the token, often in the local storage of cookies
+
+29
+00:02:02,440 --> 00:02:04,920
+ and sends it with each request.
+
+30
+00:02:04,920 --> 00:02:09,400
+ The server checks the signature to confirm the token is valid and grants access and that
+
+31
+00:02:09,400 --> 00:02:13,780
+ is how some login or logout sessions work.
+
+32
+00:02:13,780 --> 00:02:17,480
+ So you can read more about this, so you get a better idea.
+
+33
+00:02:17,480 --> 00:02:20,920
+ So for now I'm going to just code it, alright.
+
+34
+00:02:20,920 --> 00:02:25,160
+ So in this live folder, as you can see, I'm going to create one file which is called as
+
+35
+00:02:25,160 --> 00:02:26,800
+ a token.
+
+36
+00:02:26,800 --> 00:02:31,840
+ Let's name is a token.js and after this token.js we are going to import our JWT.
+
+37
+00:02:31,840 --> 00:02:38,260
+ So JWT package from Jason web token.
+
+38
+00:02:38,260 --> 00:02:56,200
+ Now let's export it, so export const token, JNA, and equals to, we have a user ID and
+
+39
+00:02:56,200 --> 00:03:01,600
+ then we have RES response and we are going to use this called a function and we are going
+
+40
+00:03:01,600 --> 00:03:08,820
+ to just declare one const token equals to JWT dot sign.
+
+41
+00:03:08,820 --> 00:03:13,620
+ So here in this case we are going to create a digital signature of it, like whenever you
+
+42
+00:03:13,620 --> 00:03:18,080
+ log in or whenever we resign into a particular application we are going to assign you
+
+43
+00:03:18,080 --> 00:03:22,540
+ to some kind of a digital signature which is also called as token, okay.
+
+44
+00:03:22,540 --> 00:03:27,540
+ So it has a particular expiry time, like it has a H, like after how much time it is
+
+45
+00:03:27,540 --> 00:03:32,860
+ going to expire, what is the session ID and all that like payload and data and all that
+
+46
+00:03:32,860 --> 00:03:33,860
+ stuff.
+
+47
+00:03:33,860 --> 00:03:38,860
+ So you can read more about it, but basic overview I have given you, like high over V,
+
+48
+00:03:38,860 --> 00:03:41,860
+ high overview, okay.
+
+49
+00:03:41,860 --> 00:03:48,860
+ So user ID and then what we are going to do is we are going to just make one particular
+
+50
+00:03:48,860 --> 00:03:50,700
+ secret key, okay.
+
+51
+00:03:50,700 --> 00:03:59,340
+ So secret key we can make this in a dot in weak package, so what you can do it, like secret
+
+52
+00:03:59,340 --> 00:04:06,780
+ key and secret key would be something around whatever, whatever you can make of it.
+
+53
+00:04:06,780 --> 00:04:16,940
+ So control is and then now go inside of this token.js and what we can do is process.env.c
+
+54
+00:04:16,940 --> 00:04:25,820
+ key, so we are going to fetch that secret key from the dot in v file and we are going
+
+55
+00:04:25,820 --> 00:04:27,820
+ to set it expiration.
+
+56
+00:04:27,820 --> 00:04:30,660
+ So whatever the time this token is going to expire.
+
+57
+00:04:30,660 --> 00:04:37,100
+ So suppose we are going to name it as 7 days, so it is going to expire in the 7 days.
+
+58
+00:04:37,100 --> 00:04:42,940
+ So now what we can do is we are going to take the response and we are going to set the
+
+59
+00:04:42,940 --> 00:04:51,860
+ key as a JWT and we are going to pass this token which we have created here.
+
+60
+00:04:51,860 --> 00:05:03,300
+ So response dot cookie JWT token and now here we are going to set the max age, so max age.
+
+61
+00:05:03,300 --> 00:05:09,780
+ So max age would be the 7 days, okay, 7 into 24 hours, so they are 24 hours in particular
+
+62
+00:05:09,780 --> 00:05:19,860
+ day, one particular day, so 24 into 60 into 60, so 60 minutes for one hour, 60 second and
+
+63
+00:05:19,860 --> 00:05:23,180
+ then we are going to assign this as 1000 milliseconds.
+
+64
+00:05:23,180 --> 00:05:29,100
+ So now HTTP only, so we are going to pass this as true.
+
+65
+00:05:29,100 --> 00:05:34,420
+ So if this website is what follows the HTTP protocol, so accordingly we are setting this
+
+66
+00:05:34,420 --> 00:05:45,420
+ as HTTP only values are true and same site, same site, same site and we are going to assign
+
+67
+00:05:45,420 --> 00:05:50,900
+ this as a strict, okay, so these are some values, so the same site what it actually does
+
+68
+00:05:50,900 --> 00:06:01,060
+ is it is kind of checking the like cross verifying, say that cookie is across like cross
+
+69
+00:06:01,060 --> 00:06:07,260
+ sites, okay, so like that only and it also enhances the security of one particular website
+
+70
+00:06:07,260 --> 00:06:13,140
+ as it checks for the CRSAP attacks as well, so you can read about that article, this article
+
+71
+00:06:13,140 --> 00:06:21,860
+ when you go to this particular website, okay, so now control S, so this is the implementation,
+
+72
+00:06:21,860 --> 00:06:25,940
+ so I have searched you one thing, you are like same site, same site is a cookie attribute
+
+73
+00:06:25,940 --> 00:06:30,780
+ that controls whether a browser sends cookies along with cross site requests, okay, and
+
+74
+00:06:30,780 --> 00:06:35,940
+ it was introduced to improve the security and privacy by reducing risk like cross site requests
+
+75
+00:06:35,940 --> 00:06:41,820
+ for the CSRF and unwanted tracking, so you can read out is like strict, lax and none
+
+76
+00:06:41,820 --> 00:06:47,620
+ and why is it is used, like for example to enhance the privacy for default security and
+
+77
+00:06:47,620 --> 00:06:51,700
+ prevents CSRF attacks, so you can read here only, okay.
+
