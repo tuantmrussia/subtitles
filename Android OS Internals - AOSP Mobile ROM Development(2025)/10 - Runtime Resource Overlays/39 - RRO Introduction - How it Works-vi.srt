@@ -1,296 +1,320 @@
 1
-00:00:00,000 --> 00:00:07,340
-Chúng ta hãy thảo luận về việc phủ người máy, bọc hoặc RRO là một trong những kỹ thuật quan trọng nhất
+00:00:00,780 --> 00:00:08,490
+Chúng ta hãy thảo luận về robot của vận động viên bọc, hoặc RRO, là một trong những kỹ thuật quan trọng nhất để tùy chỉnh
 
 2
-00:00:07,340 --> 00:00:13,320
-để thay đổi người máy.
+00:00:08,490 --> 00:00:09,090
+Alpha.
 
 3
-00:00:13,320 --> 00:00:25,340
-Vậy chính xác thì một chiếc RRO được phủ lên là gì?
+00:00:10,490 --> 00:00:10,970
+Tôi là anh.
 
 4
-00:00:25,340 --> 00:00:32,660
-Trong những từ đơn giản, tài nguyên thời gian chạy được phủ hay RRO là một gói thay đổi tài nguyên
+00:00:21,090 --> 00:00:24,390
+Vậy chính xác thì ARL là gì?
 
 5
-00:00:32,660 --> 00:00:35,840
-giá trị của gói mục tiêu.
+00:00:25,140 --> 00:00:33,300
+Trong những từ đơn giản, một tài nguyên thời gian chạy được bao phủ, hoặc RRO, là một gói thay đổi các giá trị tài nguyên
 
 6
-00:00:35,840 --> 00:00:45,040
-Vì vậy, hiện tại, hãy tưởng tượng nó là một APK chỉ có các tập tin tài nguyên trong đó.
+00:00:33,300 --> 00:00:34,950
+của một gói mục tiêu.
 
 7
-00:00:45,040 --> 00:00:49,920
-Vì vậy, những gì có thể được bao phủ bởi kỹ thuật RRO?
+00:00:35,610 --> 00:00:42,150
+Bây giờ, hãy tưởng tượng nó là một trò chơi lịch sử với chỉ tập tin tài nguyên trong đó.
 
 8
-00:00:49,920 --> 00:00:56,980
-Vì vậy, RRO có thể bao gồm tất cả các tập tin tài nguyên như bố trí, dây, màu sắc và
+00:00:44,780 --> 00:00:48,740
+Vì vậy, những gì có thể được bao phủ bởi kỹ thuật RRO?
 
 9
-00:00:56,980 --> 00:00:59,520
-các tập tin tài nguyên XML khác.
+00:00:49,700 --> 00:00:58,220
+Vì vậy Ororo có thể bao gồm tất cả các tập tin tài nguyên như bố trí, màn hình, màu sắc và các khác tương tự
 
 10
-00:00:59,520 --> 00:01:03,440
-Nó cũng có thể bao gồm các bản vẽ và phông chữ.
+00:00:58,250 --> 00:00:58,880
+loại hồ sơ.
 
 11
-00:01:03,440 --> 00:01:09,160
-Vì vậy, bằng cách làm điều này, bạn có thể động lực thay đổi cái nhìn và cảm thấy của một ứng dụng hoặc
+00:00:59,360 --> 00:01:02,960
+Nó cũng có thể bao gồm các trình điều khiển và phông chữ.
 
 12
-00:01:09,160 --> 00:01:11,360
-Một thành phần UI hệ thống.
+00:01:03,260 --> 00:01:10,790
+Vì vậy, bằng cách làm điều này, bạn có thể động lực thay đổi vẻ ngoài và cảm nhận của một ứng dụng hoặc một thành phần UI hệ thống.
 
 13
-00:01:11,360 --> 00:01:17,080
-Vì vậy, trong ví dụ đơn giản này, bạn có thể thấy rằng một steroid màu xanh lá cây
+00:01:11,120 --> 00:01:18,350
+Vì vậy, trong ví dụ đơn giản này, bạn có thể thấy rằng một người máy màu xanh dương được thay đổi thành một người máy xanh lá bằng cách sử dụng
 
 14
-00:01:17,080 --> 00:01:19,760
-Người máy bằng cách sử dụng các tài nguyên bao gồm.
+00:01:18,350 --> 00:01:19,480
+tài nguyên bao gồm.
 
 15
-00:01:19,760 --> 00:01:23,400
-Nó có thể là thời gian chạy hoặc tĩnh phủ.
+00:01:19,550 --> 00:01:26,250
+Nó có thể là chạy thời gian hoặc tĩnh phủ những gì không thể được phủ bởi mũi tên.
 
 16
-00:01:23,400 --> 00:01:26,840
-Cái gì có thể được bọc bởi RRO?
+00:01:26,630 --> 00:01:29,170
+Vì vậy, bạn không thể bao gồm bất kỳ mã nguồn.
 
 17
-00:01:26,840 --> 00:01:33,880
-Vì vậy, bạn có thể bao gồm bất kỳ mã nguồn nào có nghĩa là các tập tin mã nguồn Java hoặc Kotlin và
+00:01:29,330 --> 00:01:34,670
+Điều đó có nghĩa là các tập tin mã nguồn Java hoặc Kotlin và sẽ bị che đậy.
 
 18
-00:01:33,880 --> 00:01:35,320
-Nó sẽ được bọc ngoài.
+00:01:35,090 --> 00:01:40,500
+Vì vậy, ví dụ, nếu bạn xem xét cấu trúc ứng dụng, bạn có thể bao phủ nước đi dưới
 
 19
-00:01:35,320 --> 00:01:40,000
-Vì vậy, ví dụ, nếu bạn xem xét một cấu trúc ứng dụng, bạn có thể bao gồm bất cứ điều gì đến
+00:01:40,760 --> 00:01:48,860
+Trường tài nguyên và nước chảy xuống dưới thư mục SIRC, đó là các lớp học tương tác Java mà không thể
 
 20
-00:01:40,000 --> 00:01:42,880
-dưới thư mục tài nguyên.
+00:01:48,860 --> 00:01:49,820
+sẽ bị bỏ qua.
 
 21
-00:01:42,880 --> 00:01:48,640
-Và bất cứ điều gì đến dưới họ, thư mục SC, đó là các lớp học Java và Kotlin, rằng
-
-22
-00:01:48,640 --> 00:01:54,120
-Không thể phủ lên.
-
-23
-00:01:54,120 --> 00:01:58,840
+00:01:53,860 --> 00:01:57,710
 Vì vậy, hãy có một cái nhìn gần hơn vào quá trình phủ RRO.
 
+22
+00:01:58,570 --> 00:02:06,220
+Vì vậy, biểu đồ này cho thấy một mức độ tổng quan cao về làm thế nào một ứng dụng được biên dịch, thực hiện và bị che đậy
+
+23
+00:02:06,220 --> 00:02:07,420
+bởi một mũi tên.
+
 24
-00:01:58,840 --> 00:02:05,280
-Vậy biểu đồ này chỉ ra rằng một ứng dụng được biên dịch như thế nào, thực hiện
+00:02:07,900 --> 00:02:16,690
+Phần trên cho thấy làm thế nào một ứng dụng người máy bình thường được chuyển hóa thành một sử thi người máy và thực hiện.
 
 25
-00:02:05,280 --> 00:02:08,120
-và được bọc bởi một RRO.
+00:02:16,990 --> 00:02:24,160
+Và phần dưới cho thấy làm thế nào một dự án RRO được chuyển đổi thành một RRO, một đèn hiệu và nhận được overmed
 
 26
-00:02:08,120 --> 00:02:15,840
-Phần trên cho thấy làm thế nào một ứng dụng người máy bình thường được chuyển đổi thành một kỹ thuật robot APK
+00:02:24,310 --> 00:02:25,600
+trong quá trình.
 
 27
-00:02:15,840 --> 00:02:17,200
-Và nó đã được thực hiện.
-
-28
-00:02:17,200 --> 00:02:23,560
-Và phần dưới cho thấy làm thế nào một dự án RRO được chuyển đổi thành một RRO APK và nhận được
-
-29
-00:02:23,560 --> 00:02:26,880
-Thay vào quá trình ứng dụng.
-
-30
-00:02:26,880 --> 00:02:34,360
+00:02:26,560 --> 00:02:33,700
 Vì vậy, trong trường hợp của một ứng dụng steroid bình thường, chúng tôi có chủ yếu các tập tin, phải không?
 
+28
+00:02:34,150 --> 00:02:41,230
+Vì vậy, các máy tính bảng hiển thị ví dụ chấm là một trong các tập tin mã nơi chúng tôi cấu hình rất nhiều điều cho
+
+29
+00:02:41,230 --> 00:02:42,040
+cái đơn đó.
+
+30
+00:02:42,160 --> 00:02:48,640
+Và sau đó chúng tôi có các hồ sơ Java và Kotlin nơi chúng tôi thích logic kinh doanh và các logic khác.
+
 31
-00:02:34,360 --> 00:02:41,240
-Vì vậy, antroManifer.xml là một trong những tập tin cốt lõi nơi chúng tôi cấu hình rất nhiều thứ cho
+00:02:48,850 --> 00:02:49,110
+Đúng không?
 
 32
-00:02:41,240 --> 00:02:42,400
-đơn xin việc.
+00:02:49,150 --> 00:02:56,380
+Và chúng tôi cũng có các tài nguyên thư mục nơi chúng tôi có tất cả các yếu tố UI như bố trí và khác
 
 33
-00:02:42,400 --> 00:02:48,320
-Và sau đó chúng tôi có các tập tin Java và Kotlin nơi chúng tôi đã cố gắng logic kinh doanh khác
+00:02:56,380 --> 00:03:04,500
+Hình ảnh hoặc khả năng vẽ để sử dụng sản phẩm hoặc thư mục tài nguyên là cái mà chúng ta đang thực sự phủ lên,
 
 34
-00:02:48,320 --> 00:02:49,480
-Lập luận đúng không?
+00:03:04,540 --> 00:03:04,810
+Đúng không?
 
 35
-00:02:49,480 --> 00:02:55,440
-Và chúng tôi cũng có các tài nguyên thư mục nơi chúng tôi có tất cả các yếu tố UI như các bố trí
+00:03:04,840 --> 00:03:09,610
+Vì vậy, khi dự án này được xây dựng, nó được chuyển hóa thành một kiệt tác.
 
 36
-00:02:55,440 --> 00:03:00,680
-và những hình ảnh khác hoặc những hình vẽ mà chúng tôi sử dụng cho dự án.
+00:03:10,030 --> 00:03:15,910
+Và nếu bạn mở ra bất kỳ sự khởi đầu nào, bạn có thể thấy rằng trong đó có sự trình bày của người máy hoặc văn bản
 
 37
-00:03:00,680 --> 00:03:05,080
-Thư mục tài nguyên là một trong những mà chúng tôi thực sự bị che đậy, phải không?
+00:03:15,920 --> 00:03:16,300
+ai đó.
 
 38
-00:03:05,080 --> 00:03:10,280
-Vì vậy, khi dự án này được xây dựng, nó được chuyển đổi thành một APK.
+00:03:16,450 --> 00:03:22,300
+Và sau đó chúng tôi đã có các tập tin văn bản gần nhất được biết đến, mà về cơ bản là các dạng biên dịch của Java và
 
 39
-00:03:10,280 --> 00:03:15,560
-Và nếu bạn mở một hệ thống APK, bạn có thể thấy rằng trong đó có a-rô-Manifer
+00:03:22,300 --> 00:03:23,110
+Tập tin Kotlin.
 
 40
-00:03:15,560 --> 00:03:20,720
-chấm XML và sau đó chúng tôi đã có các lớp học tập tin văn bản chấm, mà về cơ bản là các biên dịch
+00:03:23,380 --> 00:03:29,200
+Và sau đó chúng tôi đã có các nguồn tài nguyên, không thêm một tập tin C, mà về cơ bản là một dạng biên dịch của tài nguyên
 
 41
-00:03:20,720 --> 00:03:23,640
-dạng tập tin Java và Kotlin.
+00:03:29,200 --> 00:03:29,680
+sự thật.
 
 42
-00:03:23,640 --> 00:03:28,320
-Và sau đó chúng tôi có các tài nguyên chấm ARSC file, mà về cơ bản là một mẫu biên dịch
+00:03:29,920 --> 00:03:35,340
+Vì vậy trong suốt quá trình thực hiện, quá trình AI sẽ tận dụng các lớp học hoặc chỉ số và tài nguyên Apatoosaurus,
 
 43
-00:03:28,320 --> 00:03:30,120
-của các tập tin tài nguyên.
+00:03:35,350 --> 00:03:38,870
+không phải AEC, để chạy ứng dụng.
 
 44
-00:03:30,120 --> 00:03:34,920
-Vì vậy, trong quá trình thực hiện, ứng dụng sẽ làm cho sử dụng các điểm chấm và ứng dụng lớp học
-
-45
-00:03:34,920 --> 00:03:39,080
-Nguồn lực nhất ARSC để chạy ứng dụng.
-
-46
-00:03:39,080 --> 00:03:42,240
+00:03:38,890 --> 00:03:41,950
 Vậy đó là cách mà một ứng dụng người máy bình thường hoạt động.
 
+45
+00:03:42,070 --> 00:03:50,950
+Vì vậy, khi có một RRO trong phạm vi, sau đó chúng tôi làm thế nào RRO nguồn của AEC và RRO ID được lưu trữ trong
+
+46
+00:03:50,950 --> 00:03:51,520
+quá trình?
+
 47
-00:03:42,240 --> 00:03:50,400
-Vì vậy, khi có một RRO trong phạm vi, sau đó chúng tôi có tài nguyên RRO chấm ARSC và RRO ID
+00:03:51,850 --> 00:03:52,150
+Được rồi.
 
 48
-00:03:50,400 --> 00:03:52,600
-được chứ?
+00:03:52,390 --> 00:03:56,320
+Vì vậy, các nguồn tài nguyên RRO được lưu trữ tại một C là không có gì ngoài bao phủ.
 
 49
-00:03:52,600 --> 00:03:58,640
-Vì vậy, tài nguyên RRO chấm ARSC là không có gì ngoài các nguồn tài nguyên có thể bao gồm, có sẵn
+00:03:56,320 --> 00:04:03,430
+Kích hoạt tài nguyên, có sẵn trong lịch sử RRO và bản đồ RRO ID, không là gì ngoài một sự thay đổi
 
 50
-00:03:58,640 --> 00:04:05,880
-trong hệ thống RRO APK và bản đồ nhận diện RRO chỉ là một bảng, có một hoặc một bản đồ
+00:04:03,520 --> 00:04:07,450
+Nó có một hoặc một bản đồ các nguồn tài nguyên sẵn có.
 
 51
-00:04:05,880 --> 00:04:08,440
-được chứ?
+00:04:07,720 --> 00:04:10,600
+OK, bây giờ hãy xem qua phần RRO.
 
 52
-00:04:08,440 --> 00:04:11,320
-Bây giờ hãy xem qua khu RRO.
+00:04:11,140 --> 00:04:18,310
+Vì vậy, trong bình thường, dự án RRO sẽ chỉ bao gồm một bản kê khai của người máy hoặc ví dụ và các tập tin tài nguyên.
 
 53
-00:04:11,320 --> 00:04:19,040
-Vì vậy, một dự án RRO bình thường sẽ chỉ gồm có anoterManifer.xml và các tập tin tài nguyên.
+00:04:18,790 --> 00:04:26,020
+Vì vậy, khi hoàn thành hoặc xây dựng riêng quá trình, điều này sẽ được chuyển đổi thành một trò chơi RRO API và trong RRO
 
 54
-00:04:19,040 --> 00:04:25,280
-Vì vậy, trên thống kê hoặc trong quá trình xây dựng, điều này sẽ được chuyển đổi thành một RRO APK.
+00:04:26,020 --> 00:04:31,960
+Một trò chơi lịch sử, đó sẽ là vỏ não biểu diễn robot tương tự và các nguồn lực không thêm một file C.
 
 55
-00:04:25,280 --> 00:04:32,240
-Và trong hồ sơ RRO APK, sẽ có các hồ sơ về AnoterManifer.xml và các nguồn lực khác.
+00:04:32,020 --> 00:04:37,930
+Vì vậy, các nguồn tài nguyên lưu để thêm một tập tin C là không có gì ngoài một dạng biên dịch tập tin tài nguyên trong khi thực hiện
 
 56
-00:04:32,240 --> 00:04:37,200
-Vì vậy, các nguồn tài nguyên chấm ARSC không là gì ngoài các dạng của tập tin tài nguyên biên dịch.
+00:04:37,930 --> 00:04:38,440
+quá trình.
 
 57
-00:04:37,200 --> 00:04:42,640
-Trong quá trình thực hiện, tiến trình ứng dụng sẽ nhận được chấm đặc biệt này tài nguyên
+00:04:38,660 --> 00:04:45,220
+Quá trình AI sẽ lấy tài nguyên đặc biệt này cũng được lưu trữ tại một C, và nó sẽ xem xét RRO
 
 58
-00:04:42,640 --> 00:04:50,320
-ARSC và chúng tôi sẽ xem bản đồ ID RRO để có được một ID tài nguyên tương ứng cho hơn
+00:04:45,220 --> 00:04:51,350
+Bản đồ ID để có được tài nguyên tương ứng với ID để bao phủ nguồn.
 
 59
-00:04:50,320 --> 00:04:56,320
-Tùy chỉnh tài nguyên. Và trong thời gian chạy, nó về cơ bản sẽ bao phủ các điểm tài nguyên ứng dụng
+00:04:51,580 --> 00:04:58,630
+Và trong suốt thời gian chạy, nó sẽ cơ bản phủ các tài nguyên ứng dụng lưu trữ DRC với tài nguyên RRO
 
 60
-00:04:56,320 --> 00:05:04,080
-ARSC với tài nguyên RRO chấm ARSC. Vì vậy, xin lưu ý rằng chỉ có các tài nguyên cụ thể
+00:04:58,630 --> 00:05:04,930
+Ghi chú và C, vì vậy hãy chú ý rằng chỉ có các tài nguyên cụ thể sẽ được bao phủ.
 
 61
-00:05:04,080 --> 00:05:09,120
-sẽ được phủ kín. Vì vậy, ví dụ, nếu bạn đang bao gồm một bố trí XML, điều duy nhất mà
+00:05:04,960 --> 00:05:10,210
+Vì vậy, ví dụ, nếu bạn chỉ phủ một ví dụ bố trí, sau đó chỉ mà ví dụ cụ thể sẽ
 
 62
-00:05:09,120 --> 00:05:14,600
-XML đặc biệt sẽ được phủ. Phần còn lại của nguồn lực sẽ được sử dụng từ các ứng dụng
+00:05:10,210 --> 00:05:10,840
+Lấy tất cả.
 
 63
-00:05:14,600 --> 00:05:20,240
-chấm ARSC. Tóm lại, trong thời gian chạy, ứng dụng sẽ xem xét ID RRO
+00:05:10,990 --> 00:05:15,400
+Những nguồn tài nguyên còn lại sẽ được sử dụng từ cửa hàng Apple và bắt đầu từ một cảnh quay.
 
 64
-00:05:20,240 --> 00:05:28,080
-Bản đồ và nhận được quyền trên ID tài nguyên nhãn và bao phủ tài nguyên đó trên đầu ứng dụng
+00:05:15,610 --> 00:05:22,790
+Tóm lại, trong thời gian chạy, quá trình AI sẽ xem bản đồ nhận diện RRO và có được tất cả các quyền
 
 65
-00:05:28,080 --> 00:05:34,320
-Chấm tài nguyên ARSC. Đó là cách một quá trình bọc RRO hoạt động trên một cấp độ rất cao.
+00:05:22,790 --> 00:05:27,930
+nhãn cho xã hội và phủ tài nguyên đó lên đầu ứng dụng.
 
 66
-00:05:34,320 --> 00:05:42,800
-Hãy xem xét một ứng dụng thực tế của thế giới tĩnh và động RRO. Hãy xem một thí dụ
+00:05:27,970 --> 00:05:29,020
+Mã nguồn của chúng ta.
 
 67
-00:05:42,800 --> 00:05:49,840
-Những nhà sản xuất di động như Samsung, Motorola hoặc Nokia. Vì vậy, họ có thể sử dụng một tĩnh phủ cho
+00:05:29,470 --> 00:05:34,270
+Đó là cách một quá trình bọc RRO hoạt động trên nó rất cao.
 
 68
-00:05:49,840 --> 00:05:56,960
-Tạo ra những nhãn hiệu điện thoại di động khác nhau. Trong trường hợp này, bạn có thể thấy thương hiệu X và thương hiệu Y
+00:05:35,370 --> 00:05:40,120
+Vì vậy, hãy xem xét một ứng dụng thực tế thế giới của tĩnh và động RRO.
 
 69
-00:05:56,960 --> 00:06:05,440
-được tạo ra từ một ảnh hệ thống AP đơn giản. Tương tự như vậy, họ có thể sử dụng RRO năng động để tạo ra
+00:05:41,140 --> 00:05:48,970
+Hãy xem xét một ví dụ về các nhà sản xuất di động như Samsung, Motorola hoặc Nokia, vì vậy họ có thể sử dụng một tĩnh
 
 70
-00:06:05,440 --> 00:06:13,760
-Da khác nhau cho một hệ thống. Được rồi. Vì vậy, như bạn có thể thấy ở đây, trên đỉnh của thương hiệu X và Y, họ có thể
+00:05:48,970 --> 00:05:52,330
+phủ hoặc tạo ra những nhãn hiệu khác nhau của điện thoại di động.
 
 71
-00:06:13,760 --> 00:06:24,000
-Sử dụng động RRO và tạo ra làn da xanh và làn da đỏ. Vì vậy, đây là sự khác biệt giữa trạng thái tĩnh
+00:05:52,600 --> 00:06:00,820
+Vì vậy, trong trường hợp này, bạn có thể thấy Brand X và Brand Y được tạo ra từ một hình ảnh hệ thống AOSP.
 
 72
-00:06:24,000 --> 00:06:31,840
-và động cơ RROs. Name
+00:06:01,000 --> 00:06:08,530
+Tương tự như vậy, chúng có thể sử dụng những mũi tên năng động để tạo ra những lớp da khác nhau cho một hệ thống.
 
 73
-00:06:31,840 --> 00:06:40,400
-Vô hiệu sau. Trong khi các RRO năng động được kích hoạt vào thời gian chạy và nó có thể được lập trình theo chương trình
+00:06:08,690 --> 00:06:09,010
+Được rồi.
 
 74
-00:06:40,400 --> 00:06:51,920
-đã bật hay tắt ở giai đoạn sau.
+00:06:09,250 --> 00:06:17,080
+Vì vậy, như bạn có thể thấy ở đây, trên đầu của Brand X và Y, họ có thể sử dụng các mũi tên năng động và tạo ra một màu xanh dương
+
+75
+00:06:17,080 --> 00:06:19,510
+Da và da đẹp.
+
+76
+00:06:21,400 --> 00:06:25,660
+Vì vậy, đây là sự khác biệt giữa các mũi tên tĩnh và động.
+
+77
+00:06:25,780 --> 00:06:34,000
+Name
+
+78
+00:06:34,330 --> 00:06:42,580
+Name
+
+79
+00:06:42,790 --> 00:06:43,960
+Để sau đi.
+
+80
+00:06:45,000 --> 00:06:45,480
+Cảm ơn.
 
