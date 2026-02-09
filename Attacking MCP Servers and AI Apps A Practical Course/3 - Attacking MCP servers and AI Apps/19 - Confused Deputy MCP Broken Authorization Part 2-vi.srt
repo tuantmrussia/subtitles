@@ -1,0 +1,240 @@
+1
+00:00:00,000 --> 00:00:02,000
+Chào mừng trở lại.
+
+2
+00:00:02,000 --> 00:00:07,040
+Trong bài giảng này, chúng ta sẽ khám phá người phụ tá bối rối qua phòng thí nghiệm.
+
+3
+00:00:07,040 --> 00:00:08,340
+Đây là kịch bản.
+
+4
+00:00:08,340 --> 00:00:12,920
+Giả sử chúng tôi là người dùng A và chúng tôi tạo ra một bảng điều khiển truy cập.
+
+5
+00:00:12,920 --> 00:00:18,880
+Sử dụng hiệu bài truy cập này, người dùng A chỉ có thể và chỉ nên truy cập ID nhập đó là
+
+6
+00:00:18,880 --> 00:00:21,160
+được gọi là số 123.
+
+7
+00:00:21,160 --> 00:00:28,200
+Mục tiêu của chúng tôi là truy cập một mục tên là 456 mục nhập thuộc về người dùng B trong một mục khác
+
+8
+00:00:28,200 --> 00:00:29,440
+Tổ chức.
+
+9
+00:00:29,440 --> 00:00:37,360
+Nếu chúng ta đến jwt.io và giải mã một món quà, chúng ta có thể thấy sự cho phép, nếu chúng ta cuộn
+
+10
+00:00:37,360 --> 00:00:43,000
+xuống một chút trong hàng hóa, chúng tôi có thể thấy các quyền được đối xử với tổ chức này
+
+11
+00:00:43,000 --> 00:00:47,520
+ID nhưng cũng để nhận diện mục đó là 123 mục nhập.
+
+12
+00:00:47,520 --> 00:00:53,200
+Vì vậy, chúng tôi có thể đọc, viết, xóa, xuất bản này ID mục nhập cụ thể.
+
+13
+00:00:53,200 --> 00:00:58,320
+Và bằng cách này, bạn nên có quyền truy cập vật liệu này trong các nguồn tài nguyên của các trước đây
+
+14
+00:00:58,320 --> 00:00:59,320
+diễn thuyết.
+
+15
+00:00:59,320 --> 00:01:03,400
+Hãy quay lại biểu đồ và những gì chúng ta sẽ làm ngay bây giờ.
+
+16
+00:01:03,400 --> 00:01:09,240
+Vì vậy chúng tôi sẽ sử dụng biểu tượng truy cập này để chuyền nó vào đầu sau để xác minh giả định của chúng tôi.
+
+17
+00:01:09,240 --> 00:01:16,280
+Vì vậy, chúng tôi cần phải vượt qua các biểu tượng để đầu sau và đảm bảo nếu chúng tôi có thể có được ID truy cập 123
+
+18
+00:01:16,280 --> 00:01:20,880
+Và sau đó chúng tôi thử lại với ID số 456 và xem điều gì xảy ra.
+
+19
+00:01:20,880 --> 00:01:25,360
+Vì vậy, hãy để tôi mang lại cho các thiết bị cuối và đơn giản tôi sẽ chỉ sử dụng chăm sóc.
+
+20
+00:01:25,360 --> 00:01:31,760
+Vì vậy, chúng tôi vượt qua các biểu tượng truy cập trong đầu rào chắn cho phép và sau đó trong đường dẫn URL
+
+21
+00:01:31,760 --> 00:01:33,880
+Chúng tôi sẽ đưa thẻ ra vào.
+
+22
+00:01:33,880 --> 00:01:39,880
+Vì vậy, nếu tôi nhấn nhập chúng tôi có thể thấy rằng bằng cách sử dụng này biểu tượng truy cập, chúng tôi có thể có được nội dung của rằng
+
+23
+00:01:39,880 --> 00:01:46,600
+nhập, chúng tôi có thể lấy ví dụ cơ thể, ID, thẻ, tiêu đề, cập nhật và sau đó
+
+24
+00:01:46,600 --> 00:01:48,240
+cũng là thẻ căn cước.
+
+25
+00:01:48,240 --> 00:01:53,280
+Bây giờ chúng ta hãy xem những gì sẽ xảy ra nếu tôi lặp lại cùng một lệnh nhưng thay vì đi
+
+26
+00:01:53,280 --> 00:01:59,840
+Hãy để tôi quay lại và chỉnh sửa điều này để làm 456.
+
+27
+00:01:59,840 --> 00:02:02,640
+Hãy nhớ đây là cái mà chúng ta không nên tiếp cận.
+
+28
+00:02:02,640 --> 00:02:07,520
+Vì vậy, tôi sẽ nhấp chuột vào và sau đó chúng tôi có thể thấy rằng chúng tôi nhận được cấm và không được phép
+
+29
+00:02:07,520 --> 00:02:08,520
+Tin nhắn lỗi.
+
+30
+00:02:08,520 --> 00:02:14,160
+Bây giờ tại thời điểm này nếu bạn đang thực hiện một đánh giá an ninh, bạn có thể cố gắng để thay đổi JWT
+
+31
+00:02:14,160 --> 00:02:19,320
+và thay đổi phạm vi và sau đó có thể kiểm tra gấp đôi nếu đầu sau kiểm tra các dấu hiệu
+
+32
+00:02:19,320 --> 00:02:21,080
+Chữ ký đúng cách.
+
+33
+00:02:21,080 --> 00:02:26,560
+Bây giờ trong khi đây là một cách tiếp cận hợp lệ và không có gì sai với điều đó nhưng với nhận nuôi AI gần đây
+
+34
+00:02:26,560 --> 00:02:34,040
+Tôi muốn bạn suy nghĩ khác nhau nếu truy cập dữ liệu bị cấm sử dụng một truy cập trực tiếp ADI
+
+35
+00:02:34,040 --> 00:02:40,080
+Kiểm tra xem công ty đó hay mục tiêu đó có dịch vụ AI hay máy chủ MCP.
+
+36
+00:02:40,080 --> 00:02:43,800
+Nó có thể cho anh một con đường để tiếp cận nguồn tài nguyên cấm.
+
+37
+00:02:43,800 --> 00:02:51,080
+Hãy nhớ rằng trong trường hợp của chúng tôi mục tiêu là truy cập 456 mục nhập mà không làm xáo trộn các biểu tượng JWT
+
+38
+00:02:51,080 --> 00:02:55,800
+Bởi vì biểu tượng đã được kiểm tra đúng ở đầu sau đó.
+
+39
+00:02:55,800 --> 00:02:58,320
+Khám phá điều này khá đơn giản.
+
+40
+00:02:58,320 --> 00:03:04,000
+Như tôi đã nói trước đây là một sự dễ bị tổn thương logic kinh doanh và không thực sự cần đến kỹ thuật
+
+41
+00:03:04,000 --> 00:03:05,800
+Lợi dụng sự phát triển.
+
+42
+00:03:05,800 --> 00:03:12,560
+Vì vậy, những gì chúng tôi phải làm là đăng nhập như người dùng A vào máy chủ MCP mục tiêu và kiểm tra nếu họ
+
+43
+00:03:12,560 --> 00:03:18,280
+có công cụ MCP liên quan mà cho phép bạn truy cập nội dung hoặc mục nhập.
+
+44
+00:03:18,280 --> 00:03:23,000
+Sau đó cố gắng để thông qua một ID mục mà bạn không được phép truy cập.
+
+45
+00:03:23,000 --> 00:03:27,000
+Và trong trường hợp này chúng tôi sẽ thử với ID số 456.
+
+46
+00:03:27,000 --> 00:03:35,040
+Vì vậy, chúng tôi đi trước trở lại với máy chủ MCP của chúng tôi và sau đó có thể đi đến các công cụ, hãy danh sách các công cụ
+
+47
+00:03:35,040 --> 00:03:43,560
+Và sau đó đi đến các nhận được nội dung và sau đó vượt qua 456 mục nhập và sau đó chúng ta hãy xem những gì xảy ra.
+
+48
+00:03:43,560 --> 00:03:48,680
+Chúng tôi có thể thấy rằng máy chủ MCP nó sẽ nhận được nội dung của mục đó thành công.
+
+49
+00:03:48,680 --> 00:03:54,400
+Vì vậy, quay trở lại với biểu đồ và một lần nữa chỉ để reseng này lý do mà điều này đã xảy ra
+
+50
+00:03:54,400 --> 00:04:00,720
+ở vị trí đầu tiên nó là bởi vì máy chủ MCP đã sử dụng thẻ truy cập riêng của mình với rộng
+
+51
+00:04:00,720 --> 00:04:07,440
+Cho phép truy cập vào hậu phương API thay vì sử dụng thẻ truy cập của chính người dùng.
+
+52
+00:04:07,440 --> 00:04:15,120
+Một lần nữa nếu chúng tôi đi đến JWT.io nhưng lần này chúng tôi giải mã các biểu tượng truy cập JWT được chỉ định
+
+53
+00:04:15,120 --> 00:04:21,200
+Cho máy chủ MCP và chúng tôi di chuyển xuống một chút trong tải trọng chúng tôi có thể nhìn thấy một hoang dã
+
+54
+00:04:21,200 --> 00:04:26,000
+Có quyền truy cập bất cứ mục nhập nào và bất kỳ tổ chức nào.
+
+55
+00:04:26,000 --> 00:04:31,280
+Trong bài giảng tiếp theo bạn sẽ có một bài tập để hiểu các vector tấn công khác nơi
+
+56
+00:04:31,280 --> 00:04:38,120
+Có thể máy phục vụ MCP không có một bảng cho phép rộng nhưng thay vào đó các nhà phát triển quyết định
+
+57
+00:04:38,120 --> 00:04:44,160
+để tạo một điểm kết thúc nội bộ và sau đó làm cho máy chủ MCP sử dụng đó kết thúc nội bộ
+
+58
+00:04:44,160 --> 00:04:46,440
+truy cập bất cứ dữ liệu nào nó muốn.
+
+59
+00:04:46,440 --> 00:04:50,400
+Tôi hy vọng bài giảng này đã được bổ ích cho bạn và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
+60
+00:04:50,400 --> 00:04:51,400
+Cảm ơn đã theo dõi.
+
