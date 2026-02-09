@@ -1,0 +1,568 @@
+1
+00:00:00,850 --> 00:00:04,780
+Then Adler session, we analyzed the start of any process.
+
+2
+00:00:05,140 --> 00:00:08,740
+There were three main things in start up in process.
+
+3
+00:00:09,340 --> 00:00:12,810
+One of them was to create beside the process.
+
+4
+00:00:13,120 --> 00:00:13,390
+Right.
+
+5
+00:00:14,140 --> 00:00:19,120
+So what exactly is Sago process and what does it do?
+
+6
+00:00:19,630 --> 00:00:24,400
+In this session, we will cover Sago and its start up process.
+
+7
+00:00:25,180 --> 00:00:33,880
+We'll also walk through the code and see how Sago stacks up the system so well and also how it starts
+
+8
+00:00:33,880 --> 00:00:39,730
+a new process when activity management service requests to do so.
+
+9
+00:00:40,850 --> 00:00:47,600
+In a previous lecture, we discussed about the healing process, and we have seen how it starts the
+
+10
+00:00:47,870 --> 00:00:48,950
+zygote process.
+
+11
+00:00:49,550 --> 00:00:51,560
+We also walk product code, right?
+
+12
+00:00:52,250 --> 00:00:58,370
+So in this session we will start right from there and continue with the EGOT process.
+
+13
+00:00:59,300 --> 00:01:06,770
+We'll see how zygote starts the systems of up and wait for the request from activity management service
+
+14
+00:01:07,040 --> 00:01:10,790
+or aims to create a new process.
+
+15
+00:01:11,760 --> 00:01:18,930
+In Android, the Android runtime or the Dalvik virtual machine, the application process and the system
+
+16
+00:01:18,930 --> 00:01:25,200
+server process that runs the key pieces of system are all created by the zygote process.
+
+17
+00:01:25,530 --> 00:01:31,590
+It leads the application process and the system server a process using both mechanism.
+
+18
+00:01:32,220 --> 00:01:39,270
+So both mechanism means nothing but creates a new process by duplicating the existing process from which
+
+19
+00:01:39,330 --> 00:01:40,200
+it is called.
+
+20
+00:01:41,260 --> 00:01:49,180
+So since zygote process will create a virtual mission or Android runtime when it starts, the application
+
+21
+00:01:49,180 --> 00:01:56,650
+process and the system process created by this format can sum and automatically update a copy of the
+
+22
+00:01:56,650 --> 00:01:59,560
+Android runtime instance internally.
+
+23
+00:02:00,430 --> 00:02:08,380
+So let's look at the code and see how zygote starts up and how it calls the start system sidebar and
+
+24
+00:02:08,380 --> 00:02:13,180
+then how it waits for payments or activity management services.
+
+25
+00:02:15,550 --> 00:02:16,740
+So you need dirt.
+
+26
+00:02:17,230 --> 00:02:19,030
+Good 64 Odyssey.
+
+27
+00:02:19,060 --> 00:02:22,840
+So we had looked at this pilot in our previous session.
+
+28
+00:02:23,200 --> 00:02:27,370
+So this file is basically a configuration for zygote process.
+
+29
+00:02:27,820 --> 00:02:33,280
+As I said earlier in, it is a very simple language and there are some commands, some import statements.
+
+30
+00:02:33,940 --> 00:02:42,160
+So here you can see in this file it says to create a service named zygote with this process.
+
+31
+00:02:42,340 --> 00:02:46,270
+So this is the this is basically the program which it has to execute.
+
+32
+00:02:46,600 --> 00:02:49,150
+And then later, we are passing some parameters.
+
+33
+00:02:49,420 --> 00:02:54,360
+So here we have the start system, sort of a parameter, then zygote parameter then.
+
+34
+00:02:54,370 --> 00:02:55,630
+So we are sending some path.
+
+35
+00:02:56,170 --> 00:02:58,630
+The second line that is a statement classmate.
+
+36
+00:02:59,050 --> 00:03:05,900
+So this is that the name of this particular program or zygote is mean.
+
+37
+00:03:06,370 --> 00:03:12,610
+So the zygote or this service is referenced in the RC files with the name Mean.
+
+38
+00:03:13,060 --> 00:03:13,330
+Okay.
+
+39
+00:03:13,780 --> 00:03:21,430
+So in any programming language, there is one file called any dot RC, which is a kind of main function.
+
+40
+00:03:22,240 --> 00:03:23,560
+So here you can find that.
+
+41
+00:03:24,010 --> 00:03:26,140
+So this a big file.
+
+42
+00:03:26,710 --> 00:03:34,060
+So this is very similar to our main function within Java or C++ or C language.
+
+43
+00:03:34,060 --> 00:03:35,800
+You have we have this main function, right?
+
+44
+00:03:36,190 --> 00:03:38,380
+We get the go and start.
+
+45
+00:03:39,070 --> 00:03:40,440
+So this is very similar to that.
+
+46
+00:03:40,450 --> 00:03:44,800
+So in a dot, RC is the main file or main function which gets insignificant signature.
+
+47
+00:03:44,800 --> 00:03:51,850
+And this will do all the import and all the operations and it will also call these RC files internally.
+
+48
+00:03:52,840 --> 00:03:56,440
+So if you come down, you can see here that last start main.
+
+49
+00:03:56,500 --> 00:04:00,110
+So this is basically a command to start a class named as Main.
+
+50
+00:04:00,550 --> 00:04:03,730
+So this will basically start the cycle.
+
+51
+00:04:04,120 --> 00:04:04,340
+Okay.
+
+52
+00:04:04,600 --> 00:04:11,380
+So this will trigger the statement, will basically start this configuration or this process.
+
+53
+00:04:11,740 --> 00:04:12,100
+Okay.
+
+54
+00:04:12,310 --> 00:04:16,990
+So now this process will start at process 64, right?
+
+55
+00:04:17,410 --> 00:04:23,320
+So that our process 64 basically points to I mean, don't sleep.
+
+56
+00:04:23,740 --> 00:04:27,100
+So don't start executing from this main function.
+
+57
+00:04:27,370 --> 00:04:27,700
+Okay.
+
+58
+00:04:27,730 --> 00:04:33,760
+As you can see, the main function basically does a lot of initialization and it will also loop through
+
+59
+00:04:33,760 --> 00:04:37,540
+the argument which is passed in from here.
+
+60
+00:04:37,630 --> 00:04:43,510
+So these arguments basically loop through those arguments and it will set many variables.
+
+61
+00:04:43,930 --> 00:04:50,410
+So here you can see the START system server is initialize defaults first and then it checks.
+
+62
+00:04:50,410 --> 00:04:53,790
+If it has a parameter, then it sets its true.
+
+63
+00:04:54,070 --> 00:04:54,390
+True.
+
+64
+00:04:54,640 --> 00:05:02,440
+So this basically says to start the systems over or not and then it takes if it is true, then add this
+
+65
+00:05:02,440 --> 00:05:12,040
+argument and at the bottom if it is zygote, then start the runtime with this package name and pass
+
+66
+00:05:12,040 --> 00:05:12,980
+this argument.
+
+67
+00:05:13,000 --> 00:05:18,610
+So this is basically passing these arguments to this Java package.
+
+68
+00:05:18,940 --> 00:05:20,320
+So this is a Java package.
+
+69
+00:05:20,320 --> 00:05:21,950
+You can see this package name, right?
+
+70
+00:05:21,970 --> 00:05:23,740
+It seems to be a dollar package.
+
+71
+00:05:23,740 --> 00:05:25,330
+And it's it's a giant package.
+
+72
+00:05:26,380 --> 00:05:27,290
+We'll look at it soon.
+
+73
+00:05:27,620 --> 00:05:30,340
+So and it's basically parsing all these parameters.
+
+74
+00:05:30,820 --> 00:05:32,710
+And then what exactly is runtime?
+
+75
+00:05:32,710 --> 00:05:36,130
+So runtime then object all app runtime.
+
+76
+00:05:36,160 --> 00:05:40,480
+You can see the app runtime inherits from Android runtime.
+
+77
+00:05:40,660 --> 00:05:41,000
+Okay.
+
+78
+00:05:41,050 --> 00:05:46,330
+It's basically running the start function within android runtime.
+
+79
+00:05:46,660 --> 00:05:51,240
+This start function should be from android runtime.
+
+80
+00:05:51,790 --> 00:05:53,650
+Let's go to android runtime.
+
+81
+00:05:54,330 --> 00:05:54,700
+Yeah.
+
+82
+00:05:55,060 --> 00:05:56,590
+You can see the start function.
+
+83
+00:05:56,590 --> 00:05:56,860
+Right.
+
+84
+00:05:56,920 --> 00:06:00,520
+So this is the one which is going to get called to the.
+
+85
+00:06:00,520 --> 00:06:04,060
+So first one class name is nothing but.
+
+86
+00:06:05,220 --> 00:06:06,490
+The zygote in.
+
+87
+00:06:07,700 --> 00:06:07,960
+Plus.
+
+88
+00:06:08,380 --> 00:06:09,380
+Okay, this is the one.
+
+89
+00:06:10,190 --> 00:06:15,500
+So in the start process of Android runtime, you can see it takes in all these parameters.
+
+90
+00:06:15,500 --> 00:06:20,630
+It is passed from app mean and it does a lot of initialization here.
+
+91
+00:06:20,960 --> 00:06:24,050
+And when we come down we can see start VM.
+
+92
+00:06:24,060 --> 00:06:26,390
+So it starts the virtual machine.
+
+93
+00:06:26,810 --> 00:06:32,970
+So this basically starts the Java virtual machine and start, right?
+
+94
+00:06:33,500 --> 00:06:42,170
+This function is basically to register the DNI for the Android runtime or the dynamic virtual machine.
+
+95
+00:06:42,200 --> 00:06:48,470
+So this is basically registers the Android functions and this starts the virtual machine.
+
+96
+00:06:49,670 --> 00:06:55,670
+And then if you come down, you can see here it's trying to find the main function, but it's trying
+
+97
+00:06:55,670 --> 00:06:56,990
+to call the main function.
+
+98
+00:06:57,290 --> 00:07:01,100
+So this will eventually say good in it.
+
+99
+00:07:01,400 --> 00:07:01,790
+Plus.
+
+100
+00:07:02,030 --> 00:07:02,250
+Yeah.
+
+101
+00:07:02,480 --> 00:07:06,380
+So then the control goes to zygote in it, this one.
+
+102
+00:07:06,740 --> 00:07:10,830
+So from here it goes to the Java layer.
+
+103
+00:07:10,970 --> 00:07:16,730
+So this communication happens through tonight and once we are inside, good in it.
+
+104
+00:07:17,150 --> 00:07:18,710
+So let's start from the main.
+
+105
+00:07:18,890 --> 00:07:21,260
+So here, so the arguments are being passed.
+
+106
+00:07:21,320 --> 00:07:28,520
+So this is the same argument which comes from here and then you come down and see it does similar things,
+
+107
+00:07:28,520 --> 00:07:37,220
+like it goes to the arguments and it picks up the START system server and it configures the stock system.
+
+108
+00:07:37,220 --> 00:07:45,590
+So to to if you come further down here, you can see it's starting the system server by forking.
+
+109
+00:07:47,330 --> 00:07:52,430
+So here, if this value is true, it's true because we have passed that.
+
+110
+00:07:52,820 --> 00:07:56,180
+So then it's true and it supports the system.
+
+111
+00:07:56,180 --> 00:07:56,890
+So yeah.
+
+112
+00:07:57,770 --> 00:08:00,290
+So this is the point where we start the system.
+
+113
+00:08:00,290 --> 00:08:00,710
+So what?
+
+114
+00:08:00,960 --> 00:08:08,910
+And further, if you come down, we can see that it runs a select loop and if we go inside this.
+
+115
+00:08:09,650 --> 00:08:13,100
+So this is within good server, not Java.
+
+116
+00:08:13,580 --> 00:08:15,260
+So here we can see that.
+
+117
+00:08:15,260 --> 00:08:17,390
+Is it infinite loop?
+
+118
+00:08:17,420 --> 00:08:22,880
+So this loop will be always running and it basically waiting for some client request.
+
+119
+00:08:23,300 --> 00:08:32,150
+So this will basically wait for the activity manager service to like just to create a new child process.
+
+120
+00:08:32,450 --> 00:08:38,600
+So this infinite loop is basically responsible whenever a new application has to be started.
+
+121
+00:08:38,910 --> 00:08:41,720
+Activity Management Service will basically request.
+
+122
+00:08:42,080 --> 00:08:46,010
+The request will basically come here and it will start the process.
+
+123
+00:08:46,670 --> 00:08:47,030
+Okay.
+
+124
+00:08:47,270 --> 00:08:56,780
+So now we have seen how the system sort of starts up so from here and then finally how it gets into
+
+125
+00:08:56,780 --> 00:09:02,870
+a loop, an infinite loop and waits for a request.
+
+126
+00:09:03,320 --> 00:09:07,670
+So to summarize, the zygote process does the following steps.
+
+127
+00:09:07,940 --> 00:09:15,290
+So it creates an app runtime from here and calls the start method to start the zygote process.
+
+128
+00:09:15,830 --> 00:09:19,640
+And from here it creates the Dalvik virtual machine.
+
+129
+00:09:20,830 --> 00:09:28,220
+And it disturbs the DNA for the DBM and then it goes the zygote init process.
+
+130
+00:09:28,240 --> 00:09:32,480
+So from here the control goes through the Java world.
+
+131
+00:09:32,800 --> 00:09:34,840
+So the control comes to java init.
+
+132
+00:09:35,620 --> 00:09:35,920
+Yeah.
+
+133
+00:09:36,400 --> 00:09:38,590
+And this process is through DNA.
+
+134
+00:09:38,890 --> 00:09:41,380
+And then here does the same thing.
+
+135
+00:09:41,380 --> 00:09:46,240
+It goes through the arguments and initializes some of the variables.
+
+136
+00:09:46,660 --> 00:09:50,410
+And finally it talks or starts the system server.
+
+137
+00:09:50,980 --> 00:09:54,790
+And then here it gets into an infinite loop.
+
+138
+00:09:55,420 --> 00:10:01,870
+And this will wait for error for the request from Activity Management Service.
+
+139
+00:10:02,500 --> 00:10:05,050
+So that's all about as I got processed.
+
+140
+00:10:05,200 --> 00:10:12,070
+I hope you learn something out of this video, and if you like the video, please subscribe so that
+
+141
+00:10:12,070 --> 00:10:14,020
+I can continue creating videos.
+
+142
+00:10:14,530 --> 00:10:14,950
+Thank you.
+
