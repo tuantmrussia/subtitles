@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:03,600
+ Now in this section, we're going to focus on the data foundations for
+
+2
+00:00:03,600 --> 00:00:09,120
+ generative AI on AWS. So what is a need for data foundation?
+
+3
+00:00:09,120 --> 00:00:15,200
+ So data can be primarily used in two areas. First is the generative AI.
+
+4
+00:00:15,200 --> 00:00:20,800
+ So previously, if you remember, when we were discussing model customization on Amazon bedrock,
+
+5
+00:00:20,800 --> 00:00:25,680
+ we said there are three approaches, model distillation, fine tuning, and continued pre-training.
+
+6
+00:00:25,680 --> 00:00:29,680
+ Then we looked at the architecture and said, okay, this is the base model.
+
+7
+00:00:29,680 --> 00:00:35,200
+ And then we're going to use the training data that we have in the S3 bucket to train this model,
+
+8
+00:00:35,200 --> 00:00:41,120
+ and then we'll have a fine-tuned or customized model. But we did not discuss how we can extract
+
+9
+00:00:41,120 --> 00:00:48,000
+ the data from various data sources, cleanse, transform it, and then use it for model customization.
+
+10
+00:00:48,000 --> 00:00:55,200
+ To reach this stage where we have this training data, that's what we're going to discuss in these
+
+11
+00:00:55,200 --> 00:01:02,000
+ next few lectures. The second scenario is traditional machine learning, where you need
+
+12
+00:01:02,000 --> 00:01:07,760
+ data to train your machine learning models that you might have built for your use case.
+
+13
+00:01:07,760 --> 00:01:13,600
+ Now one of the key AWS services on the data side is Amazon SageMaker AI.
+
+14
+00:01:13,600 --> 00:01:18,000
+ So Amazon SageMaker is a fully managed machine learning service.
+
+15
+00:01:19,040 --> 00:01:26,160
+ It is used by data scientists and developers to build, train, and deploy machine learning models.
+
+16
+00:01:26,160 --> 00:01:31,440
+ Now SageMaker AI is essentially a collection of different services.
+
+17
+00:01:31,440 --> 00:01:37,600
+ So it works mainly in three areas. One is to generate example data, as you can see here.
+
+18
+00:01:37,600 --> 00:01:41,520
+ It can help you fetch the data, clean the data, prepare the data,
+
+19
+00:01:41,520 --> 00:01:48,800
+ and then you can also train a model on the service. You can evaluate the performance of the model
+
+20
+00:01:48,800 --> 00:01:55,360
+ and then finally, it can help you deploy the model to production and monitor it in the production
+
+21
+00:01:55,360 --> 00:02:02,800
+ environment. Now before we look at the capabilities of the SageMaker AI in the area of data,
+
+22
+00:02:02,800 --> 00:02:07,920
+ let's take a quick look at machine learning development life cycle. Now from the data processing
+
+23
+00:02:07,920 --> 00:02:13,520
+ side, the first thing you need to do is collect the data. So you need to identify the data sources,
+
+24
+00:02:13,520 --> 00:02:19,040
+ maybe they are outside the organization as a feed, maybe they are within your organization.
+
+25
+00:02:19,040 --> 00:02:24,640
+ They can be streaming data batch data. We need to get the data from data warehouse or a data lake.
+
+26
+00:02:24,640 --> 00:02:31,520
+ So once you have identified and ingested the data, second thing is the data preprocessing.
+
+27
+00:02:31,520 --> 00:02:38,160
+ So as part of data preprocessing, maybe you need to cleanse the data, remove inconsistencies,
+
+28
+00:02:38,160 --> 00:02:44,640
+ missing values, duplicates, maybe you need to partition the data and split data into maybe train,
+
+29
+00:02:44,640 --> 00:02:52,080
+ validate, and test. So once you are complete with data preprocessing, next is the feature engineering.
+
+30
+00:02:52,080 --> 00:02:57,920
+ So as part of the feature engineering, you select a subset of extracted features. Maybe we don't
+
+31
+00:02:57,920 --> 00:03:04,320
+ need the entire feature set. Maybe you only need to partially use the dataset for your use case
+
+32
+00:03:04,320 --> 00:03:10,240
+ or maybe you need to do some form of data transformation or you need to create some additional features.
+
+33
+00:03:10,240 --> 00:03:15,920
+ Now from the generic perspective, once you have this data, you can go ahead and customize your
+
+34
+00:03:15,920 --> 00:03:21,440
+ foundation model. But from the traditional machine learning perspective, once you have this data,
+
+35
+00:03:21,440 --> 00:03:28,480
+ then you're going to train your model, then also evaluate and tune the model based on the
+
+36
+00:03:28,480 --> 00:03:35,280
+ output it generates. And then finally, you will deploy the model and monitor the model in production.
+
+37
+00:03:35,280 --> 00:03:41,040
+ Now let's see how Amazon SageMaker capabilities map to the machine learning life cycle.
+
+38
+00:03:41,040 --> 00:03:48,480
+ So in the data processing phase, we have SageMaker data wrangler, which focuses on data collection
+
+39
+00:03:48,480 --> 00:03:54,480
+ and data preprocessing. So that's the first service we're going to learn in the next few lectures.
+
+40
+00:03:54,480 --> 00:03:59,840
+ Then we have SageMaker feature store, which focuses on the feature engineering part.
+
+41
+00:03:59,840 --> 00:04:04,960
+ Then we have the SageMaker clarify, which focuses on bias detection,
+
+42
+00:04:04,960 --> 00:04:09,840
+ explainability, and model evaluation. So this is the service we're going to discuss in the
+
+43
+00:04:09,840 --> 00:04:15,920
+ responsible AI section. Then we have the SageMaker model monitor, which focuses on
+
+44
+00:04:15,920 --> 00:04:20,880
+ the models that you already deployed and need to monitor in production.
+
+45
+00:04:21,840 --> 00:04:25,920
+ And then we're going to look at ML governor's capabilities, the SageMaker AI offers.
+
+46
+00:04:25,920 --> 00:04:31,200
+ We're going to look at role manager model cards and model dashboard. Again, we're going to discuss
+
+47
+00:04:31,200 --> 00:04:36,640
+ this, not in this section, but in the responsible AI section. And then finally, we have the SageMaker
+
+48
+00:04:36,640 --> 00:04:42,400
+ jumpstart, and we've already discussed this service in the first section. Okay, I'll see you in the next
+
+49
+00:04:42,400 --> 00:04:43,360
+ lecture. Thank you.
+
