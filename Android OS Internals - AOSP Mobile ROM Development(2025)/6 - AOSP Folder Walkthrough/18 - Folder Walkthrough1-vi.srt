@@ -1,0 +1,348 @@
+1
+00:00:00,630 --> 00:00:06,780
+Trước hết chúng ta phải hiểu được mã nguồn gốc hệ thống của steroid để đặt nền tảng cho
+
+2
+00:00:06,780 --> 00:00:07,950
+Chắc là nó đang học.
+
+3
+00:00:08,250 --> 00:00:09,390
+Hãy bắt đầu.
+
+4
+00:00:10,380 --> 00:00:10,720
+Wow.
+
+5
+00:00:11,290 --> 00:00:13,850
+Wow, wow, wow.
+
+6
+00:00:15,120 --> 00:00:21,810
+Nếu bạn chưa tải về mã nguồn AOSP, bạn có thể thấy chúng tôi dot Andie com để đọc
+
+7
+00:00:21,810 --> 00:00:25,690
+thông qua mã nguồn và làm theo hướng dẫn này.
+
+8
+00:00:26,220 --> 00:00:28,740
+Điều gì sẽ xảy ra nếu bạn muốn tải về mã nguồn RP?
+
+9
+00:00:28,980 --> 00:00:32,910
+Vui lòng làm theo hướng dẫn từ AOSP tải xuống các hướng dẫn.
+
+10
+00:00:33,210 --> 00:00:40,620
+Vì vậy, ý tưởng cơ bản của buổi nói chuyện này là để cung cấp cho bạn một tổng quan rất cao về thư mục RP.
+
+11
+00:00:40,770 --> 00:00:47,430
+Vì vậy, chúng tôi sẽ đi qua mỗi thư mục một lần, và tôi sẽ cố gắng giải thích những gì mỗi thư mục là có nghĩa
+
+12
+00:00:47,430 --> 00:00:47,820
+cho.
+
+13
+00:00:47,940 --> 00:00:53,850
+Vậy thư mục đầu tiên chúng ta có là một đội đại diện cho Ando một lần.
+
+14
+00:00:53,970 --> 00:01:00,120
+Thư mục này chứa các mô-đun liên quan đến môi trường hoạt động thời gian của robot.
+
+15
+00:01:00,180 --> 00:01:08,790
+Tất cả các mô-đun liên quan đến không khí có thể được tìm thấy ở đây, bao gồm các biên dịch DEX, JVM, Dalvik Ender, vv. Làm thế nào
+
+16
+00:01:08,790 --> 00:01:10,990
+Mở dự án MP ởgilizce.
+
+17
+00:01:11,100 --> 00:01:15,190
+Ở đây bạn có thể tìm thấy tất cả các thư mục nằm dưới Dự án Ong Khu vực.
+
+18
+00:01:15,210 --> 00:01:19,220
+Đầu tiên là đội của chúng tôi, đại diện cho thời gian chạy của robot.
+
+19
+00:01:19,230 --> 00:01:25,590
+Như chúng ta đã thảo luận, nó chứa tất cả các mô-đun phụ thuộc cần thiết cho thời gian chạy của robot để hoạt động.
+
+20
+00:01:25,710 --> 00:01:29,580
+Vì vậy, ở đây chúng tôi có thể tìm thấy các trung bình và nhiệm vụ mở.
+
+21
+00:01:30,030 --> 00:01:35,910
+Và tương tự như vậy, có rất nhiều mô-đun phụ thuộc khác là cần thiết cho thời gian chạy của steroid
+
+22
+00:01:35,910 --> 00:01:36,390
+chức năng.
+
+23
+00:01:36,420 --> 00:01:37,740
+Tiếp theo là Bionic.
+
+24
+00:01:37,740 --> 00:01:45,930
+Bionic là hãng hàng hải Andrene See Library, Mat Library và một liên kết sống động để bạn có thể tìm thấy ở đây và
+
+25
+00:01:46,350 --> 00:01:47,040
+trong đó.
+
+26
+00:01:47,040 --> 00:01:52,530
+Bạn có thể tìm tất cả các thư viện và hỗ trợ của mô- đun cho C và C++.
+
+27
+00:01:52,680 --> 00:01:58,120
+Nếu anh mở máy đọc cho tôi, anh có thể đọc thêm thông tin về các thư mục khác nhau trong bộ phận sinh học.
+
+28
+00:01:58,120 --> 00:02:04,560
+Vì vậy, ví dụ, thư mục này chứa tất cả các mô-đun cho thư viện Mac, và tương tự, Lipsy
+
+29
+00:02:04,560 --> 00:02:12,990
+Lipsy chứa tất cả các mô-đun liên quan đến C, và giao diện kết nối động sẵn sàng trong Lib Bill
+
+30
+00:02:12,990 --> 00:02:17,760
+cũng có sẵn trong thư mục đặc biệt này.
+
+31
+00:02:17,880 --> 00:02:21,420
+Ở đây có thể tìm thấy liên kết động và văn bản đơn vị.
+
+32
+00:02:21,480 --> 00:02:23,790
+Có thể tìm thấy dấu vết dưới con đường này.
+
+33
+00:02:23,880 --> 00:02:25,230
+Tiếp theo, chúng ta có thể khởi động.
+
+34
+00:02:25,350 --> 00:02:31,350
+Thư mục khởi động bao gồm các mã liên quan đến khởi động, do đó, nó chứa các khởi động nạp OTA, trên không
+
+35
+00:02:31,350 --> 00:02:35,040
+cập nhật và một số mô- đun cho cơ chế phục hồi.
+
+36
+00:02:35,070 --> 00:02:41,820
+Vì vậy, trong chúng tôi có các thư mục khởi động ở đây mà chúng tôi có thể tìm thấy các nạp giày và phục hồi cho
+
+37
+00:02:41,820 --> 00:02:41,920
+nó.
+
+38
+00:02:41,940 --> 00:02:47,700
+Tiếp theo, chúng tôi có các thư mục xây dựng một thư mục bao gồm để làm cho các tập tin cho hệ thống xây dựng
+
+39
+00:02:47,700 --> 00:02:53,100
+Vì vậy bạn có thể tìm thấy EMV thiết lập thông tin trong khi ở đây và một số hệ vỏ phổ biến.
+
+40
+00:02:53,100 --> 00:02:57,120
+Và cũng có thư mục để xây dựng hệ thống ở đây.
+
+41
+00:02:57,120 --> 00:03:03,930
+Vì vậy, có thể và sớm là các hệ thống xây dựng được sử dụng bởi steroid, vì vậy những hệ thống xây dựng được sử dụng để xây dựng
+
+42
+00:03:03,940 --> 00:03:05,480
+Toàn bộ dự án AOSP.
+
+43
+00:03:05,490 --> 00:03:08,250
+Ở Ấn Độ, chúng tôi có một thư mục ở đây.
+
+44
+00:03:08,310 --> 00:03:14,700
+Vì vậy, dưới thư mục xây dựng, chúng tôi có thể tìm thấy các nguồn làm và có rất nhiều mô-đun hỗ trợ khác
+
+45
+00:03:14,700 --> 00:03:18,190
+cần thiết cho hệ thống xây dựng và thêm rễ cây.
+
+46
+00:03:18,240 --> 00:03:24,870
+Bạn có thể tìm thấy Ian đặt lại tài sản ở Abroad, vì vậy ông và chúng tôi thiết lập bộ dữ liệu, cấu hình phía đông đăng ký,
+
+47
+00:03:24,900 --> 00:03:29,720
+thiết lập tự cấu hình, mà chúng tôi chạy trước khi bắt đầu sử dụng AOSP.
+
+48
+00:03:29,730 --> 00:03:34,030
+Vì vậy, nếu bạn mở nó ra, bạn có thể thấy tất cả các lệnh có sẵn trong đó.
+
+49
+00:03:34,050 --> 00:03:38,100
+Vì vậy, nếu bạn đã xây dựng hệ thống của bạn, bạn chắc chắn đang sử dụng nó.
+
+50
+00:03:38,190 --> 00:03:44,220
+Khi bạn chạy đầu tiên, chúng tôi thiết lập Dot S-H và sau đó bạn đưa ra lệnh phóng, mà thực sự cung cấp
+
+51
+00:03:44,220 --> 00:03:48,080
+trình đơn khởi chạy nơi bạn chọn một biến thể khởi động.
+
+52
+00:03:48,240 --> 00:03:55,020
+Và hệ vỏ này chứa logic cho tất cả các lệnh mà bạn thực hiện trong thiết bị cuối.
+
+53
+00:03:55,290 --> 00:04:02,730
+Ví dụ, M M M M M M M viết tắt cho việc tạo ra đỉnh của cây, vì vậy bạn có thể tìm thấy tất cả các mô tả ở đây.
+
+54
+00:04:02,790 --> 00:04:03,810
+Chúng tôi sẽ lo vụ này.
+
+55
+00:04:03,870 --> 00:04:07,230
+Ian Lee của chúng tôi đã thiết lập chi tiết trong một video riêng biệt.
+
+56
+00:04:07,290 --> 00:04:11,790
+Tiếp theo, chúng ta có tài liệu định nghĩa CTD hoặc tương thích.
+
+57
+00:04:12,030 --> 00:04:17,040
+Thư mục này bao gồm các tài liệu hướng dẫn, do đó, tài liệu này, bạn cũng có thể tìm thấy nó trực tuyến.
+
+58
+00:04:17,070 --> 00:04:24,120
+Đây là những hướng dẫn được đưa ra bởi Google, mà OEM phải theo để tương thích với những hướng dẫn mới nhất
+
+59
+00:04:24,120 --> 00:04:28,800
+Việc xuất khẩu steroid để có thể tìm thấy CBD dưới thư mục tương thích.
+
+60
+00:04:28,830 --> 00:04:34,500
+Vì vậy, dưới đây, nếu bạn đi có một số kỷ lục KDDI bên trong C, D D, có nhiều phần như
+
+61
+00:04:34,510 --> 00:04:40,080
+Chúng tôi có 13 phần, và mỗi phần đều dành riêng cho những chủ đề khác nhau.
+
+62
+00:04:40,110 --> 00:04:44,580
+Ví dụ, cái này dành cho các kiểu thiết bị và trong các loại thiết bị.
+
+63
+00:04:44,580 --> 00:04:48,900
+Bạn có thể thấy các loại thiết bị khác nhau được hỗ trợ bởi steroid.
+
+64
+00:04:49,090 --> 00:04:51,360
+Ví dụ như, yêu cầu thiết bị cầm tay.
+
+65
+00:04:51,480 --> 00:04:53,850
+Điều này là cụ thể đối với thiết bị di động.
+
+66
+00:04:54,180 --> 00:05:00,040
+Các hình thức di động và tương tự như vậy, chúng ta có truyền hình, vì vậy điều này đặc trưng cho truyền hình.
+
+67
+00:05:00,810 --> 00:05:06,360
+Điều này áp dụng cho tất cả các OEMs những người sử dụng robot này như là hệ điều hành truyền hình.
+
+68
+00:05:06,510 --> 00:05:12,180
+Tương tự như vậy, chúng tôi có quan sát điều này là cho các thiết bị nối và chúng tôi có xe hơi ở đây.
+
+69
+00:05:12,270 --> 00:05:14,370
+Cái này là cho công trình chế tạo ô tô steroid.
+
+70
+00:05:14,520 --> 00:05:18,960
+Với mỗi phiên bản mới, sẽ có thay đổi trong tài liệu này.
+
+71
+00:05:19,170 --> 00:05:25,710
+Tương tự như vậy, bạn có thể tìm cho mỗi chủ đề như thế này là phần mềm và sau đó các gói ứng dụng,
+
+72
+00:05:25,710 --> 00:05:28,850
+đa phương tiện, phần cứng, hiệu suất và năng lượng.
+
+73
+00:05:28,980 --> 00:05:33,960
+Bên cạnh tôi, tôi thấy bộ đồ thử nghiệm tương thích với steroid lịch sự hơn.
+
+74
+00:05:34,350 --> 00:05:39,240
+Ở đây bạn có thể tìm thấy tất cả các mô-đun xung quanh các thử nghiệm CTS trên thiết bị của bạn.
+
+75
+00:05:39,240 --> 00:05:46,730
+Vì vậy, các thử nghiệm ngầm đảm bảo rằng việc thực hiện của bạn là tương thích với xây dựng AOSP mới nhất.
+
+76
+00:05:46,800 --> 00:05:53,850
+Vì vậy, về cơ bản, vị trí của người máy là nó sẽ chạy một số lượng khổng lồ của các sử thi hoặc chương trình, mà sẽ
+
+77
+00:05:53,850 --> 00:05:56,780
+Kiểm tra khác nhau, thực hiện khác nhau cấu trúc của bạn.
+
+78
+00:05:56,790 --> 00:06:01,630
+Vì vậy, trong trường hợp nếu một trong các thực hiện thất bại, nó sẽ đăng nhập mà trong báo cáo.
+
+79
+00:06:01,650 --> 00:06:07,770
+Vì vậy, ở cuối thành phố xung quanh, bạn sẽ nhận được một báo cáo đề cập đến cho dù nó đã thành công hay nó đã được
+
+80
+00:06:07,860 --> 00:06:08,220
+Thất bại.
+
+81
+00:06:08,550 --> 00:06:12,600
+Vì vậy, bạn có thể tìm thấy các thử nghiệm thành phố ngọt ngào nhất dưới các thư mục thành phố.
+
+82
+00:06:12,660 --> 00:06:19,320
+Vì vậy, nếu bạn muốn tìm hiểu thêm về các thử nghiệm thành phố và làm thế nào để chạy chúng, làm thế nào để bắt đầu kiểm tra thành phố và
+
+83
+00:06:19,320 --> 00:06:21,970
+Anh có thể xem mã nguồn của Andie dot com.
+
+84
+00:06:21,990 --> 00:06:25,390
+Vậy là bạn có thông tin chi tiết về cách điều hành nó.
+
+85
+00:06:25,410 --> 00:06:29,220
+Bạn có thể tìm thấy tất cả các mô- đun Sidous dưới thư mục đặc biệt này.
+
+86
+00:06:30,130 --> 00:06:30,450
+Wow.
+
+87
+00:06:31,560 --> 00:06:33,170
+Wow, wow.
+
