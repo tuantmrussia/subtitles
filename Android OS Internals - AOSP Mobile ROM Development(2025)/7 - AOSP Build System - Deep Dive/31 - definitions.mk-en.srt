@@ -1,0 +1,60 @@
+1
+00:00:04,310 --> 00:00:11,170
+It is a makefile called definitions dot MK which resides in build make core folder.
+
+2
+00:00:11,180 --> 00:00:15,910
+So we can see that there is a lot of functions defined within the definitions totem.
+
+3
+00:00:16,220 --> 00:00:24,230
+You can consider this as a library for the make build system, so the methods defined within this definition
+
+4
+00:00:24,230 --> 00:00:29,030
+start MK are being used extensively by other make files.
+
+5
+00:00:29,480 --> 00:00:36,290
+For example, if you take all Java files under so this function will return all the Java files which
+
+6
+00:00:36,290 --> 00:00:38,090
+is coming under a particular path.
+
+7
+00:00:38,630 --> 00:00:42,440
+So this is used extensively across the Aosp.
+
+8
+00:00:42,470 --> 00:00:48,580
+You simply search for that in the Makefile and find that it's used extensively across the Makefile.
+
+9
+00:00:48,590 --> 00:00:54,650
+So similarly there are many other methods which are helpful for building and these are used in other
+
+10
+00:00:54,650 --> 00:00:57,380
+make files with the introduction of Android.
+
+11
+00:00:57,410 --> 00:00:58,290
+BP.
+
+12
+00:00:58,340 --> 00:01:05,480
+The number of places where these methods are used is decreased in the newer builds, but in the past
+
+13
+00:01:05,480 --> 00:01:11,900
+this was used extensively across all the Mac files when Android was using only make build system.
+
+14
+00:01:12,200 --> 00:01:18,530
+So in short, just keep in mind that a definition stored MK is the place where you can look for methods
+
+15
+00:01:18,530 --> 00:01:21,590
+which are used by the make build system.
+
