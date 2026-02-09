@@ -1,0 +1,540 @@
+1
+00:00:00,640 --> 00:00:03,070
+Let's discuss about Android architecture.
+
+2
+00:00:14,000 --> 00:00:20,030
+The Android system architecture is divided into five layers, as you can see in this diagram, from
+
+3
+00:00:20,030 --> 00:00:21,110
+top to bottom.
+
+4
+00:00:21,440 --> 00:00:28,490
+First comes the application layer, which contains the system apps and the normal application, and
+
+5
+00:00:28,490 --> 00:00:35,660
+then comes the application framework layer or the Java API framework layer, which contains all these
+
+6
+00:00:35,660 --> 00:00:42,800
+managers, activity managers, location manager, package managers, etc. And then comes the system
+
+7
+00:00:42,800 --> 00:00:48,170
+runtime layer which contains a Native C, C++ libraries and the Android runtime.
+
+8
+00:00:48,620 --> 00:00:54,650
+And after that, the hardware abstraction layer or the HAL, which contains the necessary logics for
+
+9
+00:00:54,650 --> 00:01:02,480
+audio, bluetooth, camera sensor, etc. And at the bottom most we have the Linux kernel layer, but
+
+10
+00:01:02,490 --> 00:01:10,790
+we have the drivers for audio bind to display, iPad, Bluetooth, etc. and at the bottom we have the
+
+11
+00:01:10,910 --> 00:01:12,200
+power management.
+
+12
+00:01:12,560 --> 00:01:15,800
+So these are the five layers of Android architecture.
+
+13
+00:01:16,400 --> 00:01:18,980
+Let's dig deeper into each of these components.
+
+14
+00:01:21,970 --> 00:01:29,380
+In the application layer, both built in applications and not system level applications exists, but
+
+15
+00:01:29,380 --> 00:01:34,900
+they are basically responsible for more and better connection with the users and they are usually developed
+
+16
+00:01:34,900 --> 00:01:41,080
+in Java or Kotlin and these apps are mostly developed by the application developers.
+
+17
+00:01:41,560 --> 00:01:48,820
+And also there are the building stock apps which comes as part of a being to look at these system apps
+
+18
+00:01:48,820 --> 00:01:51,780
+or the stock apps in a later session.
+
+19
+00:01:53,410 --> 00:01:59,500
+The Application Framework layer provides developers with the APIs needed to develop applications.
+
+20
+00:02:00,160 --> 00:02:05,170
+This layer is written in Java and it can be also called Java framework.
+
+21
+00:02:05,380 --> 00:02:10,060
+But nowadays there are some frameworks written in Kotlin ask for them.
+
+22
+00:02:10,360 --> 00:02:17,470
+We usually develop the applications, I mean the Android applications that can call the APIs provided
+
+23
+00:02:17,470 --> 00:02:18,730
+by this particular layer.
+
+24
+00:02:21,510 --> 00:02:25,350
+Let's look at the main components provided by the application layer.
+
+25
+00:02:26,160 --> 00:02:28,830
+So first we have the activity manager.
+
+26
+00:02:29,160 --> 00:02:35,280
+So activity manager is mainly responsible for managing the lifecycle of each application.
+
+27
+00:02:35,760 --> 00:02:40,530
+So each application is built with different activities or fragments.
+
+28
+00:02:40,800 --> 00:02:48,600
+So it is the responsibility of the activity manager to manage the lifecycle of each application or each
+
+29
+00:02:48,600 --> 00:02:50,760
+activity within the application.
+
+30
+00:02:51,000 --> 00:02:52,710
+Next is the location manager.
+
+31
+00:02:53,280 --> 00:02:59,010
+The location manager provides the geographic location and positioning functions are resource.
+
+32
+00:02:59,310 --> 00:03:04,860
+For example, the maps will be using the location manager to get the current location of the device.
+
+33
+00:03:05,100 --> 00:03:06,150
+Package Manager.
+
+34
+00:03:06,540 --> 00:03:11,430
+Package Manager manages all applications installed into Android system.
+
+35
+00:03:11,880 --> 00:03:18,720
+It's basically responsible for installing and installing and giving permissions with the applications
+
+36
+00:03:18,720 --> 00:03:20,430
+installed in the Android system.
+
+37
+00:03:20,520 --> 00:03:21,750
+Notification Manager.
+
+38
+00:03:22,230 --> 00:03:27,870
+Notification Manager allows the application to display custom prompt information in the status bar.
+
+39
+00:03:28,140 --> 00:03:34,650
+So for example, when you get an email, for example, in the Gmail app, you get a message added at
+
+40
+00:03:34,650 --> 00:03:40,170
+the notification that you have an email that is done through the notification manager and then comes
+
+41
+00:03:40,170 --> 00:03:41,400
+the resource manager.
+
+42
+00:03:41,610 --> 00:03:47,880
+It provides various non code resources that application user such as the localized to strings, pictures,
+
+43
+00:03:48,270 --> 00:03:51,180
+layout files, color files, etc...
+
+44
+00:03:51,420 --> 00:03:57,300
+So if you are from an Android application development background, you definitely know localized strings,
+
+45
+00:03:57,300 --> 00:04:00,750
+pictures, loud files, color files, exemplary to use.
+
+46
+00:04:01,170 --> 00:04:03,060
+While developing the Android application.
+
+47
+00:04:03,150 --> 00:04:07,320
+So it is the responsibility of the resource manager to maintain it.
+
+48
+00:04:07,560 --> 00:04:09,210
+Then comes the telephony manager.
+
+49
+00:04:09,390 --> 00:04:18,120
+It manages all mobile device functions like the SIM management and the network management, etc. Then
+
+50
+00:04:18,120 --> 00:04:24,270
+comes to window manager, window manager managers, all the open windows.
+
+51
+00:04:24,600 --> 00:04:28,620
+So each activity is basically built with a window.
+
+52
+00:04:28,800 --> 00:04:35,130
+So we will learn more in more detail about Windows in a later session that we discuss about the Windows
+
+53
+00:04:35,130 --> 00:04:36,060
+management system.
+
+54
+00:04:36,310 --> 00:04:42,720
+And then providers and then providers allow data to be shared between different applications within
+
+55
+00:04:42,720 --> 00:04:43,290
+the system.
+
+56
+00:04:43,530 --> 00:04:44,370
+View System.
+
+57
+00:04:44,640 --> 00:04:50,370
+View System is responsible for building the essential view components of an application.
+
+58
+00:04:50,850 --> 00:04:54,690
+So it's basically responsible for inflating your layouts.
+
+59
+00:04:55,020 --> 00:04:58,170
+And these layouts has multiple types of views.
+
+60
+00:04:58,530 --> 00:05:04,680
+So the view system is basically responsible for rendering these different views onto the screen.
+
+61
+00:05:05,160 --> 00:05:11,850
+The system runtime library layer is divided into two parts the C C++ library and the Android runtime
+
+62
+00:05:11,850 --> 00:05:12,390
+library.
+
+63
+00:05:12,510 --> 00:05:14,440
+Let's discuss about them separately.
+
+64
+00:05:14,460 --> 00:05:17,520
+So let's first look at the C C++ library.
+
+65
+00:05:17,790 --> 00:05:25,260
+The C C++ library can be used by different Android system components and provide developers service
+
+66
+00:05:25,260 --> 00:05:27,060
+through that application framework.
+
+67
+00:05:27,210 --> 00:05:34,170
+So all the services which we use through the application are dependent on this C C++ library.
+
+68
+00:05:34,560 --> 00:05:37,890
+Below are some examples of C C++ libraries.
+
+69
+00:05:38,170 --> 00:05:43,050
+So the first one is OpenGL ES OpenGL for embedded systems.
+
+70
+00:05:43,260 --> 00:05:49,590
+So this is basically a 3D drawing function library specifically designed for embedded devices.
+
+71
+00:05:49,860 --> 00:05:57,840
+Then we have the Lipsey ellipses, basically the standard C system function library inherited from BSD.
+
+72
+00:05:58,260 --> 00:06:01,320
+BSD stands for Berkeley Software Distribution.
+
+73
+00:06:01,560 --> 00:06:05,790
+And this is specially customized for embedded Linux based devices.
+
+74
+00:06:06,060 --> 00:06:08,040
+And then we have the media framework.
+
+75
+00:06:08,110 --> 00:06:15,870
+So this contains the library which supports recording and playback of various commonly used audio and
+
+76
+00:06:15,870 --> 00:06:19,590
+video formats like M.P. three, MP four, etc...
+
+77
+00:06:19,770 --> 00:06:21,630
+And then we have the squirrel light.
+
+78
+00:06:21,660 --> 00:06:24,630
+This is a lightweight, relational database engine.
+
+79
+00:06:24,720 --> 00:06:28,950
+This, again, a lightweight solution created for mobile devices.
+
+80
+00:06:29,040 --> 00:06:33,750
+And then we have is still and still stands for Simple Graphics Library.
+
+81
+00:06:33,960 --> 00:06:38,450
+So this is the underlying 2D graphics rendering engine for Android.
+
+82
+00:06:38,460 --> 00:06:42,450
+And then we have SSL, this very common security protocol.
+
+83
+00:06:42,750 --> 00:06:49,470
+So the sector socket layer is a security protocol that provides security and data integrity for network
+
+84
+00:06:49,470 --> 00:06:50,280
+communication.
+
+85
+00:06:50,400 --> 00:06:52,260
+And then finally, we have the free type.
+
+86
+00:06:52,560 --> 00:06:56,130
+This is basically to manage the different varieties of fonts.
+
+87
+00:06:56,580 --> 00:06:59,370
+So this is basically a portable font engine.
+
+88
+00:06:59,670 --> 00:07:04,920
+It provides a unified interface to access a variety of font file formats.
+
+89
+00:07:05,190 --> 00:07:12,510
+So these are some of the major C C++ libraries found in Android system runtime layout.
+
+90
+00:07:12,780 --> 00:07:18,900
+The runtime library is divided into core library and ATA early stands for Android runtime.
+
+91
+00:07:19,020 --> 00:07:20,670
+The code library provides small.
+
+92
+00:07:20,700 --> 00:07:27,930
+Most of the Java language gold library functions so that developers can use the Java language to write
+
+93
+00:07:27,930 --> 00:07:29,070
+Android applications.
+
+94
+00:07:29,130 --> 00:07:35,400
+So the purpose of code library is to simply provide Java language code library functions.
+
+95
+00:07:35,850 --> 00:07:42,570
+Now, regarding the Dalvik virtual machine or API, dalvik virtual machine can be compared with Java
+
+96
+00:07:42,570 --> 00:07:48,990
+virtual machine, but the Dalvik virtual machine is specifically customized for mobile devices.
+
+97
+00:07:49,200 --> 00:07:56,910
+It allows multiple instances of virtual machine to run in the limited memory simultaneously, and each
+
+98
+00:07:56,910 --> 00:08:01,230
+Dalvik application is executed as an independent Linux process.
+
+99
+00:08:01,350 --> 00:08:09,390
+So since we have separate process, it prevents all programs from closing when the virtual machine crashes.
+
+100
+00:08:09,720 --> 00:08:12,750
+So that is the main advantage since we have different process.
+
+101
+00:08:12,990 --> 00:08:20,670
+Even if the virtual machine is virtual machine crashes, then it will prevent from all the apps or the
+
+102
+00:08:20,670 --> 00:08:22,440
+programs from being closed.
+
+103
+00:08:22,800 --> 00:08:30,390
+So the reason why Dalvik virtual machine was migrated to RB is that they are to provide some advantages
+
+104
+00:08:30,390 --> 00:08:32,450
+compared to dalvik formation.
+
+105
+00:08:32,610 --> 00:08:39,420
+So under Dalvik, the bytecode needs to be converted into machine code by a just in time compiler every
+
+106
+00:08:39,420 --> 00:08:41,280
+time the application is run.
+
+107
+00:08:41,580 --> 00:08:45,540
+So Dalvik basically used a just in time compiler.
+
+108
+00:08:45,720 --> 00:08:50,400
+So whenever the application runs, it has to convert the code information code.
+
+109
+00:08:50,520 --> 00:08:56,490
+This will slow down the programming efficiency of the application because whenever the application starts
+
+110
+00:08:56,490 --> 00:09:00,510
+up, it has to be first converted information code and then run the app.
+
+111
+00:09:01,020 --> 00:09:05,040
+This will actually slow down the execution speed of the app.
+
+112
+00:09:05,310 --> 00:09:08,940
+With the introduction of RB after Android file.
+
+113
+00:09:09,240 --> 00:09:16,170
+The code of all the application will be pre compiled in the mission code when it is first installed
+
+114
+00:09:16,170 --> 00:09:16,950
+in the device.
+
+115
+00:09:17,190 --> 00:09:20,670
+This makes the application a true local application.
+
+116
+00:09:20,850 --> 00:09:27,540
+In this way, Arity makes the app execute faster compared to Dalvik.
+
+117
+00:09:28,750 --> 00:09:31,390
+Now let's look at the hardware abstraction layer.
+
+118
+00:09:31,480 --> 00:09:37,300
+The hardware abstraction layer is the interface between the operating system kernel and the hardware.
+
+119
+00:09:37,390 --> 00:09:43,150
+Its purpose is to abstract the hardware to protect the intellectual property rights of the hardware
+
+120
+00:09:43,150 --> 00:09:44,140
+manufacturers.
+
+121
+00:09:44,500 --> 00:09:51,970
+It hides the hardware interface, details of a specific platform and provides a virtual hardware platform
+
+122
+00:09:51,970 --> 00:09:56,240
+for the operating system so that it has hardware independence.
+
+123
+00:09:56,260 --> 00:09:59,620
+It can be transplanted on various platforms.
+
+124
+00:09:59,800 --> 00:10:06,760
+From the perspective of software and hardware testing, both software and hardware testing can be completed
+
+125
+00:10:06,760 --> 00:10:12,970
+based on the hardware abstraction layer, making it possible to perform software and hardware testing
+
+126
+00:10:12,970 --> 00:10:13,810
+in parallel.
+
+127
+00:10:14,050 --> 00:10:20,140
+So in layman's term, a bypass of hardware abstraction layer is to control the hardware.
+
+128
+00:10:21,780 --> 00:10:26,760
+But let's look at the Linux kernel layer, which is the bottom most layer in Android.
+
+129
+00:10:26,850 --> 00:10:33,330
+Android ecosystem services are dependent on the Linux kernel and some Android specific drivers.
+
+130
+00:10:33,330 --> 00:10:40,500
+For example, audio display, keypad, Bluetooth, USB, etc. have been added on this basis.
+
+131
+00:10:40,770 --> 00:10:48,390
+The Android System Security Memory Management Process Management Network Protocol Stack and driver model
+
+132
+00:10:48,600 --> 00:10:54,720
+depends on this Linux kernel, which makes Android in a way more secured and stable.
+
+133
+00:10:55,020 --> 00:10:57,810
+So that's about the Android architecture.
+
+134
+00:10:58,110 --> 00:11:05,340
+Understanding this bilayer, Android architecture will help you when we analyze the system source code
+
+135
+00:11:05,340 --> 00:11:06,900
+in the later tutorials.
+
