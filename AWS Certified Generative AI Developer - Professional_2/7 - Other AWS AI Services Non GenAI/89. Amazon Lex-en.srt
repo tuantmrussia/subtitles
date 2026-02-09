@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:08,640
+ In this lecture, we'll learn about an AWS AI service called as Amazon Lex, the AI Chatbot.
+
+2
+00:00:08,640 --> 00:00:15,360
+ Amazon Lex allows you to build and deploy conversational AI interfaces.
+
+3
+00:00:15,360 --> 00:00:24,720
+ So, what it means is that with Amazon Lex, you can build chatbots both for voice and text.
+
+4
+00:00:24,720 --> 00:00:29,520
+ Now, let's try and understand some of the use cases for Amazon Lex.
+
+5
+00:00:29,520 --> 00:00:36,640
+ So, with Amazon Lex, you can build self-service voice-assisted and chatbots.
+
+6
+00:00:36,640 --> 00:00:42,400
+ So, basically, you can build a chatbot which will support your call center.
+
+7
+00:00:42,400 --> 00:00:48,480
+ So, now, let's say, customer has some issue with your product and he wants to raise a complaint.
+
+8
+00:00:48,480 --> 00:00:54,720
+ So, he can do it through a chatbot built using the Amazon Lex.
+
+9
+00:00:54,720 --> 00:01:00,800
+ The next use case is, you can build an application or transaction bot.
+
+10
+00:01:00,800 --> 00:01:07,520
+ So, what this means is, you can build say an application that allows you to order a pizza,
+
+11
+00:01:07,520 --> 00:01:09,360
+ maybe book a hotel or a flight.
+
+12
+00:01:09,360 --> 00:01:14,720
+ Then third one is, you can build an enterprise productivity bot.
+
+13
+00:01:14,720 --> 00:01:22,000
+ So, you can build a chatbot which connects your enterprise data resources which allows your
+
+14
+00:01:22,000 --> 00:01:29,680
+ employees to query the data sources at get a response and then you have the device control bot
+
+15
+00:01:29,680 --> 00:01:36,960
+ which will allow you to use Amazon Lex to issue control commands to the connected device
+
+16
+00:01:36,960 --> 00:01:40,560
+ that you might have within your home or organization.
+
+17
+00:01:40,560 --> 00:01:44,240
+ So, these are some of the use cases for Amazon Lex.
+
+18
+00:01:44,240 --> 00:01:49,440
+ Now, there are some terminologies that you need to understand.
+
+19
+00:01:49,440 --> 00:01:54,400
+ Before, you can build a chatbot using Amazon Lex.
+
+20
+00:01:54,400 --> 00:01:55,920
+ Now, let's take an example.
+
+21
+00:01:55,920 --> 00:02:01,120
+ So, here is a chatbot that helps end users book a hotel.
+
+22
+00:02:01,120 --> 00:02:04,080
+ So, there are four or five key terms that you need to know.
+
+23
+00:02:04,080 --> 00:02:11,520
+ So, one is the intense, then you have utterances, slots, confirmation and fulfillment.
+
+24
+00:02:11,520 --> 00:02:15,520
+ Now, let's try and understand what each of them means.
+
+25
+00:02:15,520 --> 00:02:19,920
+ So, the first one is the intense.
+
+26
+00:02:19,920 --> 00:02:26,640
+ End user comes to this chatbot with some intent or some goal and in this case, because it's
+
+27
+00:02:26,640 --> 00:02:31,760
+ hotel booking app, he will come with intent to book a hotel.
+
+28
+00:02:31,760 --> 00:02:39,760
+ So, that's the intent and when the user comes with the intent, there would be some downstream
+
+29
+00:02:39,760 --> 00:02:43,520
+ action that would be taken by the bot, okay.
+
+30
+00:02:43,520 --> 00:02:44,800
+ So, that's intent.
+
+31
+00:02:44,800 --> 00:02:46,880
+ The next one is the utterance.
+
+32
+00:02:46,880 --> 00:02:55,280
+ It's the spoken or type phrase by the end user that will invoke your intent.
+
+33
+00:02:55,280 --> 00:03:00,240
+ Let's say the user says I would like to book a hotel.
+
+34
+00:03:00,240 --> 00:03:06,800
+ So, this is called as an utterance and what is the intent here to book a hotel.
+
+35
+00:03:07,840 --> 00:03:15,680
+ Now, the third one is slots. So, slots are input data required to fulfill the intent.
+
+36
+00:03:15,680 --> 00:03:22,560
+ My intent was to book a hotel and my utterance was I would like to book a hotel.
+
+37
+00:03:22,560 --> 00:03:29,840
+ Now, if I have to book a hotel, I need at least two details from the end user.
+
+38
+00:03:29,840 --> 00:03:38,400
+ One is which city I want to book the hotel and the second one is the date or dates if it's multiple
+
+39
+00:03:38,400 --> 00:03:44,640
+ days. So, once the user has uttered something like I would like to book a hotel with the intent
+
+40
+00:03:44,640 --> 00:03:53,360
+ to book a hotel, next he is presented with some questions called as slots on and in this case,
+
+41
+00:03:53,360 --> 00:04:03,200
+ which city and which date. So, once the user provides these details, the fourth one is called as
+
+42
+00:04:03,200 --> 00:04:08,000
+ confirmation and this is an example of confirmation. You are summarizing the inputs that he has
+
+43
+00:04:08,000 --> 00:04:13,520
+ provided you and in this case, you can see I will show you want to book a hotel in New York
+
+44
+00:04:13,520 --> 00:04:18,480
+ and he says yes. And then finally, we have our fifth term, which is fulfillment,
+
+45
+00:04:18,480 --> 00:04:24,560
+ which means that your order has been confirmed. And in this case, you can see here he says,
+
+46
+00:04:24,560 --> 00:04:31,520
+ thank you, the reservation went through successfully. So, what you can also do with Amazon Lexus,
+
+47
+00:04:31,520 --> 00:04:38,720
+ you can integrate it to a data source, maybe DynamoDB, RDS or any other data source via
+
+48
+00:04:38,720 --> 00:04:43,840
+ Lambda function. So, it integrates with the Lambda function. So, when the user provides these inputs,
+
+49
+00:04:43,840 --> 00:04:49,440
+ you can make a hotel booking and then get a confirmation number. Along with the thank you,
+
+50
+00:04:49,440 --> 00:04:56,640
+ you can provide the confirmation details here to the user, maybe booking IID or something on those
+
+51
+00:04:56,640 --> 00:05:01,760
+ lines. Now, let us go to the console and let me just show you a quick demo.
+
