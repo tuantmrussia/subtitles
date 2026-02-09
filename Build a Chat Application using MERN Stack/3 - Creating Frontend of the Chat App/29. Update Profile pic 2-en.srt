@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:05,940
+ So, hello everyone, in this section we are going to work with this profile, so in the styles
+
+2
+00:00:05,940 --> 00:00:10,780
+ beginner I have actually pasted all of the starter code, okay, so we don't have to waste
+
+3
+00:00:10,780 --> 00:00:16,000
+ time on this one, just copy it from here and paste it in your profile page, okay.
+
+4
+00:00:16,000 --> 00:00:22,040
+ So, this one it is already imported one FAQ camera icon from the React icons, and another
+
+5
+00:00:22,040 --> 00:00:25,760
+ thing is that since we are going to use the author store, so let's import that also,
+
+6
+00:00:25,760 --> 00:00:31,120
+ the author store from the double dot slash store slash author store, now what we are going
+
+7
+00:00:31,120 --> 00:00:37,240
+ to do is in this one, actually we are going to import the log user, so log user equals
+
+8
+00:00:37,240 --> 00:00:43,400
+ to author store, we are going to destructure it and get it from the author store, okay, so for
+
+9
+00:00:43,400 --> 00:00:50,440
+ this a log user we are going to get several things, like we are going to take the profile
+
+10
+00:00:50,440 --> 00:00:57,360
+ picture right, so in this profile picture what we are going to do is go down here and in
+
+11
+00:00:57,360 --> 00:01:06,800
+ this one, source image source equals to, we are going to set it as logged user dot profile
+
+12
+00:01:06,800 --> 00:01:14,600
+ pick profile, pick, okay, control and as safe, and there are several other things also,
+
+13
+00:01:14,600 --> 00:01:21,800
+ so I kept these fields as blank, okay, so like this is the user name and for this one
+
+14
+00:01:21,800 --> 00:01:26,720
+ it is actually email, okay, so we are going to set this also, so what we are going to
+
+15
+00:01:26,720 --> 00:01:37,120
+ do is here just take the data from the log user, so log user dot user name, okay, and for
+
+16
+00:01:37,120 --> 00:01:45,440
+ this one here we are going to take the email, so log user dot email, okay, control and
+
+17
+00:01:45,440 --> 00:01:52,680
+ as safe, and after this we also need to handle that on submit change right, so in this
+
+18
+00:01:52,680 --> 00:01:57,040
+ input as we can see that it is going to accept all kind of images, that is why we have
+
+19
+00:01:57,040 --> 00:02:02,000
+ kept several things like id equal to profile of the type equal to file class name equal
+
+20
+00:02:02,000 --> 00:02:07,600
+ to hidden and except equal to image slash star, so it is going to accept all the images,
+
+21
+00:02:07,600 --> 00:02:17,480
+ now on change, so on change equals to handle profile upload, so this will be going to be
+
+22
+00:02:17,480 --> 00:02:24,440
+ one submit function, okay, so once you click that button you will need to go through
+
+23
+00:02:24,440 --> 00:02:38,560
+ this function, so let us create this also, so const handle profile upload equals to take
+
+24
+00:02:38,560 --> 00:02:50,120
+ the ES event callback function, now instead of that const file equals to e dot target dot
+
+25
+00:02:50,120 --> 00:02:57,760
+ files, and we are going to get this from the 0th index, and let us declare one reader,
+
+26
+00:02:57,760 --> 00:03:12,440
+ so const reader equals to a new file reader, file reader, and after this reader dot read
+
+27
+00:03:12,440 --> 00:03:20,960
+ as data URL, okay, and we are going to take that file, whatever we get, okay, so control
+
+28
+00:03:20,960 --> 00:03:27,040
+ as it is going to save this thing, and we have changed everything right, let us review
+
+29
+00:03:27,040 --> 00:03:36,520
+ profile pick, okay, right, so and handle profile upload also, and use log user dot username
+
+30
+00:03:36,520 --> 00:03:44,640
+ log user dot email, okay, okay, right, now go inside this auth store, since we need to make
+
+31
+00:03:44,640 --> 00:03:51,320
+ that profile page function right, so we need to go to this auth store, and just add one
+
+32
+00:03:51,320 --> 00:03:59,160
+ comma here, and make the function, so update profile, update profile async, and we are going
+
+33
+00:03:59,160 --> 00:04:04,600
+ to take the data, and after that one callback function, and inside of this we are going to declare
+
+34
+00:04:04,600 --> 00:04:13,320
+ one response variable, so const res equals to, um, await whatever the data which is going
+
+35
+00:04:13,320 --> 00:04:20,640
+ to come through xcs instance, so extends instance dot post, so whenever the user is going
+
+36
+00:04:20,640 --> 00:04:36,040
+ to hit this route auth slash update dash profile, then we are going to set the log user
+
+37
+00:04:36,040 --> 00:04:42,840
+ to response dot data, so it is going to take the response, okay, and set it, and then
+
+38
+00:04:42,840 --> 00:04:50,880
+ after that we are going to take this toast, and send the success, and it is going to just
+
+39
+00:04:50,880 --> 00:05:03,940
+ say that profile, profile updated success fully, okay, I think this would be fine, so it
+
+40
+00:05:03,940 --> 00:05:12,680
+ is going to save this once again, there is some problem with the mouse, okay, cut this one,
+
+41
+00:05:12,680 --> 00:05:21,400
+ okay, so response dot data, okay, data is declared but the value is never used, why it is
+
+42
+00:05:21,400 --> 00:05:33,920
+ saying like that, I think some glitch, no issues once again, let me check it once again,
+
+43
+00:05:33,920 --> 00:05:43,040
+ so, I had made some mistake, foolish mistake, actually log user res dot data, and we had
+
+44
+00:05:43,040 --> 00:05:48,600
+ to send the data here, that I forgot, that is why it was showing some error, okay, so
+
+45
+00:05:48,600 --> 00:05:55,680
+ that is it, we have successfully sent the data also, now we can test those things, okay,
+
+46
+00:05:55,680 --> 00:06:01,720
+ but before that what we are actually going to do is, okay, one more error is showing, why
+
+47
+00:06:01,720 --> 00:06:09,920
+ it is showing here, update profile, no, we do not need this, so, remove this one, now save
+
+48
+00:06:09,920 --> 00:06:17,320
+ it, and now let us go to this profile page, now what we are going to do is, we take this
+
+49
+00:06:17,320 --> 00:06:27,440
+ reader, and we apply this on load, like, on load method, and async, after this async,
+
+50
+00:06:27,440 --> 00:06:39,520
+ we have a wait update profile, we are going to take that update profile, and then we are
+
+51
+00:06:39,520 --> 00:06:48,560
+ just going to take the profile pick from the reader, so reader dot result, let us save
+
+52
+00:06:48,560 --> 00:07:00,080
+ this one, so now I think it would be working fine, let us,
+
