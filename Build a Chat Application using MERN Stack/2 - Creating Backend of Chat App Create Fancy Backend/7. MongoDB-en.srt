@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:07,000
+ So, for the data-based connectivity, we can go to this website which is called as cloud.moodyb.com,
+
+2
+00:00:07,000 --> 00:00:18,000
+ so cloud.mongoDB.com. So, you will get the site. So, you can use that. So, I have already logged in.
+
+3
+00:00:18,000 --> 00:00:26,000
+ So, in your case, you might be getting some login options and all. So, I will tell you step-by-step how to build that.
+
+4
+00:00:26,000 --> 00:00:34,000
+ So, you can go to this website which is called as MongoDB.com. So, you can sign in from here.
+
+5
+00:00:34,000 --> 00:00:42,000
+ So, sign in and you can use your Google account here if you want. So, I have already logged into my account.
+
+6
+00:00:42,000 --> 00:00:55,000
+ So, I can use that. So, after this, you will get an option like organization. So, you just go and click this organization.
+
+7
+00:00:55,000 --> 00:01:11,000
+ So, now, you will get here all projects option. So, just click on this new project. So, in the new project, you can name your project as the chat application one.
+
+8
+00:01:11,000 --> 00:01:31,000
+ So, chat application and then wait. I am going to make this as chat app. So, now, next. So, project owner, create a project.
+
+9
+00:01:31,000 --> 00:01:37,000
+ So, it is going to take some time while creating a new cluster. So, it has created the new cluster.
+
+10
+00:01:37,000 --> 00:01:49,000
+ And you can see that in the left-hand side, we have these bunch of options which is database streaming data services and security. So, now, after this, you will see that there are some bunch of options.
+
+11
+00:01:49,000 --> 00:01:58,000
+ So, we can use this database access. Like, for example, here, as you can see here, that is security database and network access.
+
+12
+00:01:58,000 --> 00:02:17,000
+ So, you can access the database from here. So, first of all, click this on the left side and add a new database user. So, you can name yourself as for password and authentication and all.
+
+13
+00:02:17,000 --> 00:02:38,000
+ So, now, after this, we will add one particular user. There is some issue, built-in rule. So, built-in rule, we are going to select as read and write to any database.
+
+14
+00:02:38,000 --> 00:02:52,000
+ So, we have this one user which is admin and which is read, write any database. So, now, as we can see, we have IP access list. So, in the IP access list, you have to add current IP address.
+
+15
+00:02:52,000 --> 00:03:06,000
+ So, it is going to work here and we have these all bunch of options. So, you can just check this. So, now, we are going to connect this database with our project.
+
+16
+00:03:06,000 --> 00:03:15,000
+ So, in order to do that, first, what we need to do is build a cluster. So, build a cluster. So, deploy your cluster here.
+
+17
+00:03:15,000 --> 00:03:22,000
+ As you can see, this option, click this free option here. So, you can choose this region and create deployment.
+
+18
+00:03:22,000 --> 00:03:35,000
+ So, after creating a deployment, we will have this bunch of options. Like, how you are going to connect your application drivers, compass, shell and MongoDB for VS code and Atlas SQL.
+
+19
+00:03:35,000 --> 00:03:42,000
+ So, in any case, if you have this MongoDB compass application, which is installed in your local system, so you can use this.
+
+20
+00:03:42,000 --> 00:03:52,000
+ In my case, I am going to use this driver. So, now, we are going to just copy this one and we are done with it.
+
+21
+00:03:52,000 --> 00:04:05,000
+ And, as we can see here, so now, what we are going to do is we make our .env file. So, inside of the .env file, we are going to just store that one.
+
+22
+00:04:05,000 --> 00:04:15,000
+ So, inside of the back and folder, go to this source folder and make one .env file. So, .env.
+
+23
+00:04:15,000 --> 00:04:30,000
+ So, after this, what we are going to do is, just make this as MongoDB underscore URL or URI, we can have URL and just copy paste this one and control and S.
+
+24
+00:04:30,000 --> 00:04:42,000
+ So, we are going to store the connection string here. Inside of this MongoDB underscore URL. And, what we are going to do is, like, for the TV password, you are going to replace this from here.
+
+25
+00:04:42,000 --> 00:04:49,000
+ And, whatever the, like, test database you have, we are going to assign it under this question mark.
+
+26
+00:04:49,000 --> 00:04:58,000
+ Hit like this, okay. So, now, what we are going to do is, like, use this MongoDB underscore URL string in order to connect to our database.
+
+27
+00:04:58,000 --> 00:05:11,000
+ So, let's go to our app.js file and we are going to import this package which we have already installed, installed, like, import .env package, ok, .env from.
+
+28
+00:05:11,000 --> 00:05:37,000
+ And, we are going to just use that .env.config in order to use this package. So, we have configured this .env package and what we are going to do is, suppose we want to get that connection string, ok, from this .env file.
+
+29
+00:05:37,000 --> 00:06:01,000
+ So, we are going to just take this, ok, const pass equal to. So, we are going to take it like this, process .env dot, yeah, like, process .env dot MongoDB underscore URL.
+
+30
+00:06:01,000 --> 00:06:14,000
+ So, MongoDB underscore URL, ok. So, we are going to work on this one. So, .env as you can see that .env injecting in V0 from .env.
+
+31
+00:06:14,000 --> 00:06:28,000
+ So, now, what we are going to do is, like, we can use this pass, ok. So, in our case, we are going to just import the Mongo package and directly configure our connection from there, ok.
+
+32
+00:06:28,000 --> 00:06:42,000
+ So, import Mongo's from Mongo's, alright. So, now, let's remove this one and then Mongo's .connect.
+
+33
+00:06:42,000 --> 00:07:01,000
+ Mongo's .connect and we are going to use this process .env dot MongoDB underscore URL. And after that, we are going to change it with .env.
+
+34
+00:07:01,000 --> 00:07:13,000
+ So, we are going to use this promise. So, RES and then after that, a callback function and with this callback function, what we are going to log is console dot log.
+
+35
+00:07:13,000 --> 00:07:30,800
+ And we are going to write like this MongoDB connected, MongoDB connected and we are going to just take the response from the connection string.
+
+36
+00:07:30,800 --> 00:07:47,800
+ So, RES dot connection dot host, ok. And we are going to move this function App dot lesson. So, cut from here to control V here.
+
+37
+00:07:47,800 --> 00:07:58,800
+ So, let's paste this one. So, the application is crashing due to some reason. You are permitted to open your must be string or got undefined, ok. So, let me check this one.
+
+38
+00:07:58,800 --> 00:08:10,800
+ As you can see, the connection is fixed. So, basically the problem was with this .env file, ok. So, .env file must be inside of this backend, ok.
+
+39
+00:08:10,800 --> 00:08:22,800
+ So, I have accidentally made this inside of the source folder. So, please move this .env file into the backend folder. So, as you can see that MongoDB connection is created successfully.
+
+40
+00:08:22,800 --> 00:08:33,800
+ So, one more thing, go to this App dot Chase and for this port, part as you can see here. So, we have made this port, ok.
+
+41
+00:08:33,800 --> 00:08:43,800
+ So, let me check. So, we have defined this port as you can see here, but what you can do is define this port outside, ok.
+
+42
+00:08:43,800 --> 00:08:57,800
+ So, in the .env file, so go here and what you can do, define the port here port equal to 5000. And we are going to directly fetch this port.
+
+43
+00:08:57,800 --> 00:09:11,800
+ So, let me save this one. So, as we can see that will crash. This is because this port value is not getting fixed. So, we are going to just do that.
+
+44
+00:09:11,800 --> 00:09:32,800
+ So, const port value equal to process .env dot port, ok. So, control us. So, as we can see that it is continuously. So, in the next video we are going to work with our schemas, ok.
+
+45
+00:09:32,800 --> 00:09:33,800
+ So, thank you.
+
