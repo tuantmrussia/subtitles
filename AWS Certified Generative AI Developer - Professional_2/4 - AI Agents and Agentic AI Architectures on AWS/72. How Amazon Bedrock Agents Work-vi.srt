@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:05,760
+Bây giờ trong bài giảng này, chúng ta sẽ xem xét làm thế nào các nhân viên Amazon làm việc từng bước một.
+
+2
+00:00:05,760 --> 00:00:12,400
+Đầu tiên chúng ta có người dùng cuối cùng John người sẽ tương tác với đặc vụ AI của chúng ta. Bây giờ hãy lấy một
+
+3
+00:00:12,400 --> 00:00:19,280
+Hãy nhìn vào yêu cầu của anh ta. Vậy anh ta muốn đặc vụ đặt phòng khách sạn nếu anh ta rời đi.
+
+4
+00:00:19,280 --> 00:00:28,160
+hơn ba ngày. Vì vậy, đó là đầu vào người dùng. Bây giờ khi bạn tạo ra một tác nhân trên nền móng Amazon
+
+5
+00:00:28,160 --> 00:00:35,360
+Khung tác vụ, nó sẽ theo mặc định cung cấp cho bạn một cửa hàng nhắc. Vì vậy, những gì làm này lưu trữ nhắc nhở
+
+6
+00:00:35,360 --> 00:00:41,920
+chứa? Nó sẽ chứa một số mẫu dấu nhắc mặc định và sẽ được tùy chỉnh dựa trên
+
+7
+00:00:41,920 --> 00:00:47,200
+mô hình ngôn ngữ lớn mà bạn sẽ chọn cho đại diện của bạn. Vì vậy, nếu bạn sử dụng atropic, thì nó là
+
+8
+00:00:47,200 --> 00:00:52,160
+sẽ có một loại khác nhau của một mẫu nhắc. Nếu bạn không sử dụng bất kỳ mô hình nào từ Amazon, thì nó là
+
+9
+00:00:52,160 --> 00:00:58,160
+sẽ có một mẫu dấu nhắc mặc định khác. Nhưng bạn cũng có thể tạo ra nhắc nhở riêng của bạn
+
+10
+00:00:58,160 --> 00:01:05,280
+Mẫu và Lưu trữ trong cửa hàng nhắc này. Bây giờ, tại sao chúng ta lại có cửa hàng đồ cũ này? Vì vậy, trước khi kết thúc
+
+11
+00:01:05,280 --> 00:01:11,840
+Nhắc đi đến mô hình ngôn ngữ lớn điều khiển các đại lý, đầu vào người dùng được tăng cường với nhiều hơn
+
+12
+00:01:11,840 --> 00:01:19,360
+chi tiết. Vậy những chi tiết đó là gì? Đầu tiên, chúng tôi có các đầu vào người dùng và đây là đầu vào của chúng tôi ở đây.
+
+13
+00:01:20,000 --> 00:01:25,440
+Tiếp theo, chúng tôi có những chỉ dẫn mà chúng tôi cung cấp cho các đại lý. Vì vậy, bây giờ hãy nói rằng chúng tôi đang tạo ra
+
+14
+00:01:25,440 --> 00:01:32,800
+Công việc của nhân viên kế hoạch kỳ nghỉ là nếu người dùng cung cấp
+
+15
+00:01:32,800 --> 00:01:39,040
+một đầu vào, sau đó bạn có thể đặt một khách sạn, bạn có thể đặt một chuyến bay và vân vân.
+
+16
+00:01:39,040 --> 00:01:47,600
+Vì vậy, bạn cung cấp cho tác nhân một số hướng dẫn về lĩnh vực của nó. Vì vậy, những hướng dẫn này được thêm vào
+
+17
+00:01:47,600 --> 00:01:53,200
+cùng với dữ liệu nhập của người dùng. Tiếp theo, chúng tôi nói với các mô hình ngôn ngữ lớn lái xe các đại lý,
+
+18
+00:01:53,200 --> 00:01:59,520
+tất cả các công cụ có sẵn cho đặc vụ. Nên có thể bạn có quyền truy cập vào hãng hàng không APIs,
+
+19
+00:01:59,520 --> 00:02:05,680
+Có thể bạn có quyền truy cập vào cơ sở kiến thức tốt hơn, có thể bạn có quyền truy cập vào khách sạn APIs. Vì vậy, tất cả các công cụ
+
+20
+00:02:05,680 --> 00:02:12,960
+Đặc vụ đó được tiếp cận là một phần của dấu nhắc. Và sau đó chúng tôi cũng cung cấp chi tiết
+
+21
+00:02:12,960 --> 00:02:20,560
+Về việc canh gác. Vì vậy, khi chúng tôi kết hợp tất cả các, chúng tôi nhận được dấu nhắc cuối cùng. Vì vậy, một khi chúng tôi đã có
+
+22
+00:02:20,560 --> 00:02:27,760
+Nhắc cuối cùng này, sau đó có tăng cường của nhắc này. Vì vậy, những gì chúng tôi có là một phiên họp
+
+23
+00:02:27,760 --> 00:02:34,560
+cửa hàng có khả năng khi chúng tôi tạo ra một tác nhân trong dịch vụ nền Amazon. Vậy đây là gì?
+
+24
+00:02:34,560 --> 00:02:41,920
+Cửa hàng phiên chạy được dùng cho bất kỳ tương tác trước đó giữa người dùng và tác nhân tại bất kỳ
+
+25
+00:02:41,920 --> 00:02:48,320
+Thời gian trôi qua, nó tóm tắt tất cả những cuộc nói chuyện đó và rồi lưu trữ trong các cửa hàng.
+
+26
+00:02:48,320 --> 00:02:55,200
+Vì vậy, khi bạn có một cuộc trò chuyện mới, nó được nạp đạn như một phần của lời nhắc nhở. Vậy điều sẽ xảy ra là
+
+27
+00:02:55,200 --> 00:03:03,520
+Lịch sử cuộc trò chuyện này sẽ được thêm vào dấu chấm hết này. Nên một khi xong việc,
+
+28
+00:03:03,520 --> 00:03:08,720
+các dấu nhắc cộng với lịch sử cuộc trò chuyện sẽ được gửi đến mô hình ngôn ngữ lớn
+
+29
+00:03:08,720 --> 00:03:17,760
+điều khiển đặc vụ. Tiếp theo, tác nhân này sẽ làm công việc phân hủy hoặc kế hoạch nhiệm vụ
+
+30
+00:03:17,760 --> 00:03:24,960
+dùng cách lập luận và hành động để lên kế hoạch. Trong trường hợp của chúng ta, John muốn đặt một
+
+31
+00:03:24,960 --> 00:03:30,960
+Khách sạn nếu số dư là hơn ba ngày. Vì vậy, sau đó này LM sẽ phá vỡ nó vào
+
+32
+00:03:30,960 --> 00:03:36,000
+Nhiều việc. Hãy nói rằng nó sẽ nói, OK, đầu tiên kiểm tra cân bằng trái, sau đó nếu để lại cân bằng
+
+33
+00:03:36,000 --> 00:03:42,480
+Hơn ba ngày rồi, sau đó đặt một khách sạn. Vì vậy, đó là cách nó sẽ phá vỡ xuống
+
+34
+00:03:42,480 --> 00:03:50,160
+những nhiệm vụ khác nhau. Bây giờ một khi đã hoàn thành, vì vậy nó sẽ sử dụng các công cụ được tích hợp với điều này
+
+35
+00:03:50,160 --> 00:03:57,280
+Đặc vụ. Vì vậy, có lẽ để kiểm tra số dư, nó sẽ thực hiện một cuộc gọi đến hệ thống nhân sự và sau đó nhận được một
+
+36
+00:03:57,280 --> 00:04:04,320
+Trả lời đi. Và một khi nó đã có phản ứng đó, sau đó phản hồi từ các công cụ, cũng được biết đến là quan sát,
+
+37
+00:04:04,320 --> 00:04:10,160
+được chia sẻ với tác nhân cùng với dấu nhắc ban đầu. Vì vậy, một khi các chi tiết được chia sẻ với
+
+38
+00:04:10,160 --> 00:04:15,440
+Đặc vụ, nó sẽ lại làm nhiệm vụ phân hủy. Có lẽ lần này nó quyết định rằng chúng ta nên
+
+39
+00:04:15,440 --> 00:04:21,760
+Hãy đặt phòng khách sạn. Vì vậy, nó sẽ một lần nữa thực hiện những công cụ và quan sát từ
+
+40
+00:04:21,760 --> 00:04:27,680
+Những công cụ này sau đó được chia sẻ với các mô hình ngôn ngữ lớn điều khiển các tác nhân một lần nữa. Và điều này sẽ
+
+41
+00:04:27,680 --> 00:04:33,760
+Tiếp tục trong vòng lặp cho đến khi tác vụ quyết định rằng yêu cầu người dùng đã đủ
+
+42
+00:04:33,760 --> 00:04:40,000
+trả lời. Và trong trường hợp đó, nó sẽ gửi câu trả lời cuối cùng cho người dùng cuối cùng của chúng tôi nói rằng
+
+43
+00:04:40,000 --> 00:04:46,320
+Đây là câu trả lời cho yêu cầu của anh. Bây giờ nếu tôi tóm tắt các bước hành hình đặc vụ,
+
+44
+00:04:46,320 --> 00:04:51,680
+Điều đầu tiên là người dùng sẽ cung cấp một đầu vào hoặc một câu hỏi. Và điều này sẽ là
+
+45
+00:04:51,680 --> 00:04:58,320
+Tăng thêm chi tiết từ cửa hàng nhắc. Tiếp theo, nó sẽ thu hút cuộc trò chuyện
+
+46
+00:04:58,320 --> 00:05:04,720
+Lịch sử từ cửa hàng tạp hóa, sau đó sẽ có một số xác nhận về chất độc,
+
+47
+00:05:04,720 --> 00:05:10,160
+Các câu hỏi vùng tự động và vân vân. Và cuối cùng, chúng ta sẽ có phong cách dàn nhạc
+
+48
+00:05:10,160 --> 00:05:17,680
+nhắc nhở, sẽ thực hiện kế hoạch thực hiện và tạo ra quan sát cuối cùng hoặc
+
+49
+00:05:17,680 --> 00:05:23,520
+trả lời, mà sẽ được gửi lại cho người dùng. Tôi hy vọng điều này là rõ ràng cho bạn bây giờ về làm thế nào Amazon
+
+50
+00:05:23,520 --> 00:05:26,720
+Các đặc vụ làm việc trên nền đá. Hẹn gặp lại ở bài giảng tiếp theo. Cảm ơn.
+
