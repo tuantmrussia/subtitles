@@ -1,0 +1,528 @@
+1
+00:00:00,000 --> 00:00:05,200
+ AI systems fail in ways that are fundamentally different from traditional software,
+
+2
+00:00:05,200 --> 00:00:10,000
+ and understanding this difference is the starting point for production readiness.
+
+3
+00:00:10,000 --> 00:00:15,000
+ In conventional code, the same input always produces the same output.
+
+4
+00:00:15,000 --> 00:00:18,000
+ Large language models don't work that way.
+
+5
+00:00:18,000 --> 00:00:26,000
+ They are probabilistic by design, meaning identical prompts can produce different responses across executives.
+
+6
+00:00:26,000 --> 00:00:32,000
+ This unpredictability makes traditional testing approaches insufficient on their own.
+
+7
+00:00:32,000 --> 00:00:37,000
+ What makes AI failures especially dangerous is that they are often subtle.
+
+8
+00:00:37,000 --> 00:00:44,000
+ An output may look reasonable, grammatically correct, and even confident while still containing logical flaws,
+
+9
+00:00:44,000 --> 00:00:47,000
+ fabricated facts, or misaligned intent.
+
+10
+00:00:47,000 --> 00:00:51,000
+ These errors don't always trigger alerts or crashes.
+
+11
+00:00:51,000 --> 00:00:57,000
+ Instead, they quietly make their way into production, where the cost of failure increases dramatically.
+
+12
+00:00:57,000 --> 00:01:07,000
+ Most AI issues are discovered too late after deployment when real users interact with the system in unexpected ways.
+
+13
+00:01:07,000 --> 00:01:13,000
+ At that point, the impact includes loss of trust, operational risk, and business damage.
+
+14
+00:01:13,000 --> 00:01:21,000
+ The principle is simple, but critical. If you wouldn't ship untested code to production, you shouldn't ship untested AI.
+
+15
+00:01:21,000 --> 00:01:25,000
+ Reliability is engineered through testing, not assumed.
+
+16
+00:01:25,000 --> 00:01:32,000
+ One of the most important mindset shifts in AI engineering is recognizing that prompts are not just text.
+
+17
+00:01:32,000 --> 00:01:35,000
+ They are executable logic.
+
+18
+00:01:35,000 --> 00:01:41,000
+ A prompt defines how your system behaves, what constraints it follows, how it structures output,
+
+19
+00:01:41,000 --> 00:01:49,000
+ and how it applies business rules. In that sense, a prompt functions much like a piece of code with inputs and outputs.
+
+20
+00:01:49,000 --> 00:01:53,000
+ When you change a prompt, you are changing system behavior.
+
+21
+00:01:53,000 --> 00:01:59,000
+ Even small wording changes can break downstream integrations, violate expected formats,
+
+22
+00:01:59,000 --> 00:02:03,000
+ or subtly alter logic in ways that aren't immediately obvious.
+
+23
+00:02:03,000 --> 00:02:08,000
+ This is why prompts must be treated with the same rigor as traditional source code.
+
+24
+00:02:08,000 --> 00:02:11,000
+ Best practices apply here as well.
+
+25
+00:02:11,000 --> 00:02:18,000
+ Prompt should be stored in version control, reviewed before deployment, and tested against defined expectations.
+
+26
+00:02:18,000 --> 00:02:23,000
+ Changes should be tracked with clear intent, not casual experimentation.
+
+27
+00:02:23,000 --> 00:02:29,000
+ Expected inputs and outputs should be documented, so behavior is explicit, not assumed.
+
+28
+00:02:29,000 --> 00:02:36,000
+ The key mental model is this. Think of a prompt as a function with contracts.
+
+29
+00:02:36,000 --> 00:02:41,000
+ Those contracts must be tested, validated, and protected.
+
+30
+00:02:41,000 --> 00:02:46,000
+ This shift is foundational for building stable, production grade AI systems.
+
+31
+00:02:46,000 --> 00:02:54,000
+ AI testing requires a shift away from exact output validation toward behavior-based evaluation.
+
+32
+00:02:54,000 --> 00:02:59,000
+ In traditional software testing, we assert that a function returns a precise value.
+
+33
+00:02:59,000 --> 00:03:06,000
+ With AI systems, that approach breaks down because outputs can vary while still being correct.
+
+34
+00:03:06,000 --> 00:03:11,000
+ Instead, AI testing focuses on validating properties of responses.
+
+35
+00:03:11,000 --> 00:03:14,000
+ Does the output contain the required information?
+
+36
+00:03:14,000 --> 00:03:16,000
+ Does it follow the expected structure?
+
+37
+00:03:16,000 --> 00:03:20,000
+ Does it respect safety constraints and business rules?
+
+38
+00:03:20,000 --> 00:03:23,000
+ Most importantly, does it achieve the intended goal?
+
+39
+00:03:23,000 --> 00:03:32,000
+ There are three core dimensions to AI testing. First is intent validation, confirming that the system answers the right question in the right way.
+
+40
+00:03:32,000 --> 00:03:40,000
+ Second is boundary testing, understanding how the system behaves at limits, such as incomplete inputs or ambiguous requests.
+
+41
+00:03:40,000 --> 00:03:50,000
+ Third is failure behavior, ensuring that when something goes wrong, the system fails safely rather than hallucinating or misleading users.
+
+42
+00:03:50,000 --> 00:03:56,000
+ The key distinction is this, you are testing patterns, not exact strings.
+
+43
+00:03:56,000 --> 00:04:04,000
+ You validate behavior, structure, and constraints rather than matching text character by character.
+
+44
+00:04:04,000 --> 00:04:09,000
+ This shift enables meaningful testing for probabilistic systems.
+
+45
+00:04:09,000 --> 00:04:17,000
+ Unit-style testing for prompts adapts familiar software testing principles to non-deterministic systems.
+
+46
+00:04:17,000 --> 00:04:26,000
+ The idea is to test prompts in isolation using controlled inputs and validate the properties of the outputs rather than exact wording.
+
+47
+00:04:26,000 --> 00:04:33,000
+ Each unit test begins with a clearly defined input scenario and a set of acceptance criteria.
+
+48
+00:04:33,000 --> 00:04:37,000
+ These criteria describe what a valid output must look like.
+
+49
+00:04:37,000 --> 00:04:46,000
+ For example, the output might need to be valid JSON, contain required fields, respect length limits, or follow a specific tone.
+
+50
+00:04:46,000 --> 00:04:50,000
+ The test passes as long as these properties are satisfied.
+
+51
+00:04:50,000 --> 00:04:53,000
+ Validation focuses on structure and constraints.
+
+52
+00:04:53,000 --> 00:04:55,000
+ Is the output possible?
+
+53
+00:04:55,000 --> 00:04:58,000
+ Are required fields present and correctly typed?
+
+54
+00:04:58,000 --> 00:05:02,000
+ Is forbidden or sensitive content excluded?
+
+55
+00:05:02,000 --> 00:05:06,000
+ Does the response stay within acceptable verbosity and format boundaries?
+
+56
+00:05:06,000 --> 00:05:09,000
+ Consider a summarization prompt.
+
+57
+00:05:09,000 --> 00:05:21,000
+ Instead of asserting an exact summary, you validate that the summary falls within a word range, captures the main idea, avoids hallucinations, and maintains factual accuracy.
+
+58
+00:05:21,000 --> 00:05:28,000
+ This approach creates repeatable, reliable tests that work with variability rather than against it.
+
+59
+00:05:28,000 --> 00:05:35,000
+ Well-designed unit tests catch small issues long before they escalate into production failures.
+
+60
+00:05:35,000 --> 00:05:43,000
+ These early detections dramatically reduce debugging time and prevent downstream systems from breaking unexpectedly.
+
+61
+00:05:43,000 --> 00:05:47,000
+ One common category of failure is format violations.
+
+62
+00:05:47,000 --> 00:05:56,000
+ In valid JSON, malformed structures or inconsistent field naming can immediately break pipelines that rely on structured outputs.
+
+63
+00:05:56,000 --> 00:06:06,000
+ Missing required content is another frequent issue. Fields may be absent, empty, or partially populated, leading to silent data corruption.
+
+64
+00:06:06,000 --> 00:06:09,000
+ Unit tests also catch response quality problems.
+
+65
+00:06:09,000 --> 00:06:16,000
+ Outputs may become two verbose or two short, drift away from the intended topic or violate tone expectations.
+
+66
+00:06:16,000 --> 00:06:23,000
+ Overconfidence is particularly dangerous, where the model presents uncertain information as fact.
+
+67
+00:06:23,000 --> 00:06:27,000
+ Instruction drift is another critical issue.
+
+68
+00:06:27,000 --> 00:06:35,000
+ Over time, prompts may stop enforcing constraints as intended, especially after updates or refactors.
+
+69
+00:06:35,000 --> 00:06:40,000
+ Unit tests act as guardrails, ensuring behavior remains stable.
+
+70
+00:06:40,000 --> 00:06:47,000
+ Catching these problems early is exponentially cheaper than discovering them after users are already impacted.
+
+71
+00:06:47,000 --> 00:06:53,000
+ Regression testing protects AI systems from silent failures that occur after changes.
+
+72
+00:06:53,000 --> 00:07:00,000
+ Unlike traditional software, AI systems can regress even when no application code changes at all.
+
+73
+00:07:00,000 --> 00:07:06,000
+ The process begins by establishing a baseline, documented expectations of acceptable behavior.
+
+74
+00:07:06,000 --> 00:07:16,000
+ Whenever a change occurs, whether it's a propped update, model upgrade, or system refactor, the same test suite is rerun against the updated system.
+
+75
+00:07:16,000 --> 00:07:21,000
+ The results are then compared to the baseline to detect unintended shifts.
+
+76
+00:07:21,000 --> 00:07:26,000
+ This is especially important because model providers continuously update their systems.
+
+77
+00:07:26,000 --> 00:07:33,000
+ A new model version may change reasoning patterns, formatting behavior, or safety responses without warning.
+
+78
+00:07:33,000 --> 00:07:36,000
+ What worked yesterday may behave differently today.
+
+79
+00:07:36,000 --> 00:07:43,000
+ Regression testing ensures that improvements in one area don't silently degrade performance elsewhere.
+
+80
+00:07:43,000 --> 00:07:49,000
+ It gives teams confidence to evolve systems without fear of breaking production.
+
+81
+00:07:49,000 --> 00:07:57,000
+ Without regression testing, AI behavior changes become reactive firefighting instead of controlled engineering.
+
+82
+00:07:57,000 --> 00:08:04,000
+ AI regressions often come from changes that appear small but have system wide impact.
+
+83
+00:08:04,000 --> 00:08:09,000
+ Understanding these sources is key to building effective testing strategies.
+
+84
+00:08:09,000 --> 00:08:12,000
+ Model updates are a major factor.
+
+85
+00:08:12,000 --> 00:08:18,000
+ Provider side changes can alter behavior even when prompts and code remain unchanged.
+
+86
+00:08:18,000 --> 00:08:21,000
+ Prompt modifications are another common cause.
+
+87
+00:08:21,000 --> 00:08:27,000
+ Even a single word change can significantly affect output structure or reasoning.
+
+88
+00:08:27,000 --> 00:08:29,000
+ Context changes also matter.
+
+89
+00:08:29,000 --> 00:08:38,000
+ Adjustments to context window size, system instructions, or few shot examples can change what information the model sees and prioritizes.
+
+90
+00:08:38,000 --> 00:08:47,000
+ Integration updates such as API version changes or tool modifications can also alter behavior in unexpected ways.
+
+91
+00:08:47,000 --> 00:08:53,000
+ The critical lesson is that in AI systems there are no trivial changes.
+
+92
+00:08:53,000 --> 00:08:57,000
+ Every modification has the potential to create ripple effects.
+
+93
+00:08:57,000 --> 00:09:06,000
+ Comprehensive regression testing treats every change as potentially breaking and validates behavior before users experience the impact.
+
+94
+00:09:06,000 --> 00:09:14,000
+ Edge case testing is about preparing AI systems for real world behavior, not idealized inputs.
+
+95
+00:09:14,000 --> 00:09:16,000
+ Users don't follow scripts.
+
+96
+00:09:16,000 --> 00:09:22,000
+ They provide malformed data, ambiguous queries, and contradictory instructions.
+
+97
+00:09:22,000 --> 00:09:26,000
+ Testing edge cases means deliberately probing system boundaries.
+
+98
+00:09:26,000 --> 00:09:34,000
+ This includes extremely short inputs, extremely long inputs near token limits, ambiguous or vague requests,
+
+99
+00:09:34,000 --> 00:09:40,000
+ invalid or corrupted data, and conflicting instructions within a single prompt.
+
+100
+00:09:40,000 --> 00:09:45,000
+ Multilingual and mixed language inputs are also important in global systems.
+
+101
+00:09:45,000 --> 00:09:49,000
+ These scenarios reveal assumptions baked into prompts and logic.
+
+102
+00:09:49,000 --> 00:09:55,000
+ They expose brittleness that would otherwise go unnoticed until users encounter it.
+
+103
+00:09:55,000 --> 00:10:01,000
+ Edge cases often determine whether a system merely demos well or survives production use.
+
+104
+00:10:01,000 --> 00:10:07,000
+ By testing the unexpected, teams gain visibility into failure modes before they become incidents.
+
+105
+00:10:07,000 --> 00:10:10,000
+ Edge case testing doesn't eliminate failure.
+
+106
+00:10:10,000 --> 00:10:14,000
+ It makes failure predictable, manageable, and safe.
+
+107
+00:10:14,000 --> 00:10:23,000
+ Failure mode testing focuses on how an AI system behaves when things go wrong, which is inevitable in production environments.
+
+108
+00:10:23,000 --> 00:10:31,000
+ The goal is not to prevent all failures, but to ensure failures are safe, transparent, and trustworthy.
+
+109
+00:10:31,000 --> 00:10:37,000
+ Key scenarios include incomplete inputs where users provide partial information.
+
+110
+00:10:37,000 --> 00:10:42,000
+ The system should ask clarifying questions rather than make assumptions.
+
+111
+00:10:42,000 --> 00:10:45,000
+ Missing data scenarios are equally important.
+
+112
+00:10:45,000 --> 00:10:52,000
+ When required context is unavailable, the system must fail clearly instead of hallucinating answers.
+
+113
+00:10:52,000 --> 00:10:57,000
+ Unsafe for policy violating requests must be handled with graceful refusal.
+
+114
+00:10:57,000 --> 00:11:05,000
+ The system should decline politely, explain limitations clearly, and avoid generating harmful content.
+
+115
+00:11:05,000 --> 00:11:08,000
+ Overconfidence is another critical risk.
+
+116
+00:11:08,000 --> 00:11:12,000
+ AI should acknowledge uncertainty rather than fabricate certainty.
+
+117
+00:11:12,000 --> 00:11:21,000
+ Good failures are characterized by clear messaging, honest uncertainty, consistent behavior, and actionable guidance.
+
+118
+00:11:21,000 --> 00:11:29,000
+ Production reliability depends not on avoiding failure, but on controlling how failure occurs.
+
+119
+00:11:29,000 --> 00:11:35,000
+ Testing AI is not a one-time checklist, it is an ongoing discipline.
+
+120
+00:11:35,000 --> 00:11:40,000
+ Production systems evolve continuously, and testing must evolve with them.
+
+121
+00:11:40,000 --> 00:11:44,000
+ AI tests should be automated and integrated into CI pipelines.
+
+122
+00:11:44,000 --> 00:11:51,000
+ Every prompt change, model upgrade, or deployment should trigger validation.
+
+123
+00:11:51,000 --> 00:11:54,000
+ Failure should be tracked over time to identify patterns and systemic issues.
+
+124
+00:11:54,000 --> 00:11:59,000
+ Unexpected outputs should be logged and reviewed, often becoming new test cases.
+
+125
+00:11:59,000 --> 00:12:06,000
+ Test suites should be treated as living assets, updated as requirements change, and new edge cases are discovered.
+
+126
+00:12:06,000 --> 00:12:10,000
+ Most importantly, testing must happen before key milestones.
+
+127
+00:12:10,000 --> 00:12:14,000
+ Deployment, scaling, and monetization.
+
+128
+00:12:14,000 --> 00:12:17,000
+ Each step increases the cost of failure.
+
+129
+00:12:17,000 --> 00:12:19,000
+ The closing principle is simple.
+
+130
+00:12:19,000 --> 00:12:23,000
+ Reliable AI is engineered, not hoped for.
+
+131
+00:12:23,000 --> 00:12:27,000
+ Testing transforms probabilistic systems into predictable products.
+
+132
+00:12:27,000 --> 00:12:34,000
+ Teams that adopt this mindset build AI that users can trust in real-world production environments.
+
