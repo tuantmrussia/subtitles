@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:06,160
+ Now that we have gone through what is natural language processing, let's look at some of the AWS
+
+2
+00:00:06,160 --> 00:00:16,240
+ services in the area of NLP. So the first one is Amazon Poly. Amazon Poly turns text into
+
+3
+00:00:16,240 --> 00:00:23,520
+ life like speech using deep learning. So what it simply means is that you provided a text file
+
+4
+00:00:23,520 --> 00:00:29,760
+ and it's going to convert that into a audio file. Now let's see how that works. So you have the
+
+5
+00:00:29,760 --> 00:00:37,520
+ Amazon Poly service from AWS. So you feed it some input text. It can be either informed of some
+
+6
+00:00:37,520 --> 00:00:47,440
+ e-learning lectures or an online RSS feed from a blog or news. So you feed these files into Amazon
+
+7
+00:00:47,440 --> 00:00:53,520
+ Poly and it's going to convert it into speech. Okay now let's quickly take a look at some of the
+
+8
+00:00:53,520 --> 00:01:01,760
+ use cases for Poly. So the first one is e-learning. Say you have text-based notes or lectures and you
+
+9
+00:01:01,760 --> 00:01:09,360
+ want to give an option to students to either read through the notes or also listen to the notes.
+
+10
+00:01:09,360 --> 00:01:17,280
+ So that's where you can use Poly to convert text-based notes to audio notes. Second one is content
+
+11
+00:01:17,280 --> 00:01:25,040
+ creation. Say you have an RSS feed from some blog or as I said news. Then you can also provide
+
+12
+00:01:25,040 --> 00:01:33,200
+ the users an option to listen to that feed and not just read it. And then finally it can also be
+
+13
+00:01:33,200 --> 00:01:40,240
+ used in the call center or customer center. Now let's go ahead and check out Amazon Poly from the
+
+14
+00:01:40,240 --> 00:01:47,760
+ console. Now I'm on the AWS console so let me just search for Poly and you can see here Amazon
+
+15
+00:01:47,760 --> 00:01:53,920
+ Poly. So I'm on the home screen of Amazon Poly and you can see here turns text into
+
+16
+00:01:53,920 --> 00:02:02,400
+ lifelike speech using deep learning. So let me just click on try Poly and here it gives you various
+
+17
+00:02:02,400 --> 00:02:09,680
+ options. So do you want generative? So it produces the most expressive and adaptive speech using
+
+18
+00:02:09,680 --> 00:02:15,520
+ generative yet. Then the long form it produced the most natural sounding speech for longer content
+
+19
+00:02:15,520 --> 00:02:21,920
+ neural and standard. So you have the option of selecting one out of the four. So let me just select
+
+20
+00:02:21,920 --> 00:02:29,840
+ neural and next you have to provide the language of the text. So you can see it supports a large
+
+21
+00:02:29,840 --> 00:02:36,560
+ number of languages or the language that it supports are shown here. Then you need to select
+
+22
+00:02:36,560 --> 00:02:42,400
+ the voice. So it will be converted from text to voice. So whether you want a female voice,
+
+23
+00:02:42,400 --> 00:02:47,920
+ a male voice and there's some variation in these different names and you can you can try it out.
+
+24
+00:02:47,920 --> 00:02:55,920
+ So here now I have this in put text. Hi, my name is Ruth. I will read text. You type here.
+
+25
+00:02:55,920 --> 00:03:02,560
+ So I'll just change this text to something else. So I'll just say hi. Welcome to my
+
+26
+00:03:02,560 --> 00:03:09,200
+ Udemy course and then I can just click on listen. Hi, welcome to my Udemy course.
+
+27
+00:03:09,200 --> 00:03:18,160
+ Now if we can just go to this page from AWS on Amazon Poly and here you can see three different
+
+28
+00:03:18,160 --> 00:03:24,240
+ use cases on how you can use poly. So the first one is content creation and you have an RSS
+
+29
+00:03:24,240 --> 00:03:30,560
+ feed and news article is published on the RSS channel and when this new article is published,
+
+30
+00:03:30,560 --> 00:03:37,120
+ it triggers a Lambda function and then this AWS Lambda function retrieves this data from the
+
+31
+00:03:37,120 --> 00:03:47,200
+ feed sends it to the poly, poly transforms the text to speech and uploads the file in the S3 bucket.
+
+32
+00:03:47,200 --> 00:03:52,720
+ So that's one of the use case scenarios on how you can use poly with AWS Lambda and S3.
+
+33
+00:03:52,720 --> 00:03:59,440
+ The next one is the e-learning. So it's very similar. So you upload the new content or lesson
+
+34
+00:03:59,440 --> 00:04:07,360
+ that you have created and you send this data to poly. Poly will convert this text-based
+
+35
+00:04:07,360 --> 00:04:15,360
+ lectures to speech and upload it on the S3 bucket. Then you can use DynamoDB to index all the
+
+36
+00:04:15,360 --> 00:04:21,680
+ lectures with some metadata like what is the name of the lecture, what does it focus on and so on.
+
+37
+00:04:21,680 --> 00:04:29,280
+ And if you have global users, then you can additionally use Amazon CloudFront to access
+
+38
+00:04:29,840 --> 00:04:36,800
+ the files in the S3 bucket which will reduce the latency for global users.
+
+39
+00:04:36,800 --> 00:04:43,440
+ Okay, hopefully we'll clear with Amazon Poly now. I'll see you in the next lecture. Thank you.
+
