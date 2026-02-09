@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,920
+Một khi một vấn đề được xác định rõ ràng và phạm vi, bước tiếp theo là biến ý tưởng đó thành một thực tế
+
+2
+00:00:05,920 --> 00:00:12,800
+Hệ thống. Đây là nơi mà nhiều dự án thất bại, không phải vì mô hình là yếu, mà vì hệ thống
+
+3
+00:00:12,800 --> 00:00:20,240
+Xung quanh nó không được thiết kế kỹ lưỡng. Al không sống cô lập. Nó tồn tại bên trong luồng công việc,
+
+4
+00:00:20,240 --> 00:00:28,160
+APIs, giao diện người dùng, và quy tắc kinh doanh. Trước khi viết bất kỳ mật mã, bạn phải dịch trường hợp sử dụng
+
+5
+00:00:28,160 --> 00:00:34,640
+thành các thành phần cụ thể. Hãy quyết định AI chịu trách nhiệm về điều gì và điều gì nên giữ ấn định
+
+6
+00:00:34,640 --> 00:00:42,080
+logic. Xác định các kết nhập, kết xuất và giới hạn hệ thống sớm hơn. Điều này ngăn cản phạm vi leo thang và mỏng manh
+
+7
+00:00:42,080 --> 00:00:48,960
+Để sau đi. Bỏ qua bước này dẫn đến hệ thống brittle rất khó gỡ lỗi, không an toàn để quy mô,
+
+8
+00:00:48,960 --> 00:00:55,120
+và tốn kém để duy trì. Quyết định kiến trúc đã thực hiện ngay bây giờ tác động trực tiếp đến sự đáng tin cậy,
+
+9
+00:00:55,120 --> 00:01:03,120
+Bảo vệ, hiệu suất và chi phí. Thiết kế hệ thống tốt giúp việc thực hiện dễ dàng hơn. Thiết kế hệ thống sai
+
+10
+00:01:03,120 --> 00:01:09,920
+đảm bảo sẽ làm việc lại. Slide này sẽ tạo ra tư duy. Bạn không tạo ra một dấu nhắc. Bạn đang xây dựng một
+
+11
+00:01:09,920 --> 00:01:17,360
+Hệ thống. Mỗi hệ thống AI theo dõi một cấu trúc lớp, ngay cả khi nó không được vẽ rõ ràng.
+
+12
+00:01:17,360 --> 00:01:23,600
+Hiểu được những lớp này rất quan trọng để xây dựng một cái gì đó tồn tại được sử dụng.
+
+13
+00:01:23,600 --> 00:01:30,560
+Ở phía trên là giao diện người dùng hoặc lớp ADI, nơi yêu cầu nhập hệ thống. Bên dưới đó là
+
+14
+00:01:30,560 --> 00:01:36,400
+Lớp dàn nhạc, bao gồm việc định tuyến, quy tắc kinh doanh và phối hợp luồng công việc. Cái này
+
+15
+00:01:36,400 --> 00:01:43,520
+lớp quyết định khi nào gọi cho mô hình, khi nào gọi công cụ, và khi nào thì tăng lên. Name
+
+16
+00:01:43,520 --> 00:01:50,960
+lớp quản lý nhắc nhở xây dựng, mô hình trong việc cầu khẩn, nhắc lại và phân tích phản ứng. Bên dưới nó,
+
+17
+00:01:50,960 --> 00:01:57,680
+Nguồn dữ liệu ngồi, cửa hàng véc tơ, cơ sở dữ liệu, hệ thống bên ngoài cung cấp ngữ cảnh.
+
+18
+00:01:57,680 --> 00:02:04,880
+Cuối cùng, khả năng ăn uống vượt quá mọi thứ, đăng nhập, theo dõi, cảnh giác và kiểm soát an toàn.
+
+19
+00:02:04,880 --> 00:02:12,080
+Nếu không có sự cứng nhắc, thất bại sẽ không được chú ý. Xoá các lớp này tạo ra hệ thống
+
+20
+00:02:12,080 --> 00:02:19,280
+Dễ dàng hơn để lý luận, kiểm tra và tiến hóa. Kiến trúc này là cốt lõi của việc sản xuất AI.
+
+21
+00:02:19,280 --> 00:02:25,040
+trong hệ thống sản xuất. Nhắc nhở không phải là thí nghiệm. Chúng là tài sản kỹ thuật.
+
+22
+00:02:25,040 --> 00:02:30,160
+Điều trị những gợi ý tình cờ là một trong những cách nhanh nhất để phá vỡ sự đáng tin cậy.
+
+23
+00:02:30,160 --> 00:02:37,040
+Một động tác mạnh bắt đầu với một định nghĩa rõ ràng. Người mẫu phải biết đó là ai và đó là gì.
+
+24
+00:02:37,040 --> 00:02:44,640
+chịu trách nhiệm. Kế tiếp, định dạng đầu ra mong đợi phải rõ ràng. Cho dù đầu ra là JSON,
+
+25
+00:02:44,640 --> 00:02:48,800
+Đánh dấu, hoặc văn bản, mơ hồ dẫn đến thất bại xuôi dòng.
+
+26
+00:02:48,800 --> 00:02:55,840
+Điều khiển con cái quan trọng. Nên xác định giới hạn về sắc thái, chiều dài và hành vi.
+
+27
+00:02:55,840 --> 00:03:02,480
+Nhắc nhở cũng phải giải quyết mơ hồ. Người mẫu nên làm gì khi thiếu thông tin hoặc không rõ ràng?
+
+28
+00:03:02,480 --> 00:03:08,560
+Cuối cùng, các dấu nhắc phải được phiên bản. Lưu trữ chúng trong kiểm soát nguồn, xem xét các thay đổi,
+
+29
+00:03:08,560 --> 00:03:15,200
+và cho phép quay lại. Điều này cho phép kiểm tra, lặp lại và chịu trách nhiệm. Bài học quan trọng,
+
+30
+00:03:15,200 --> 00:03:21,360
+Các gợi ý là mật mã. Nếu bạn không sửa đổi các mã sản xuất nóng, bạn không nên nóng nóng chỉnh sửa sản xuất nhắc nhở.
+
+31
+00:03:21,360 --> 00:03:26,800
+Sự khác biệt giữa việc thử nghiệm nhắc nhở và việc sản xuất là cấu trúc.
+
+32
+00:03:26,800 --> 00:03:35,600
+Hệ thống đáng tin cậy đòi hỏi khả năng dự đoán. Hệ thống nhắc nhở xác định hành vi và hạn chế dai dẳng
+
+33
+00:03:35,600 --> 00:03:42,240
+mà áp dụng cho tất cả các tương tác. Các hướng dẫn dựa trên bước giải quyết các công việc phức tạp
+
+34
+00:03:42,240 --> 00:03:48,480
+thành các đường lý luận nối tiếp, giảm sự biến đổi và kết quả. Name
+
+35
+00:03:48,480 --> 00:03:53,360
+Ngay lập tức, bao gồm từ chối điều kiện và giới hạn an toàn.
+
+36
+00:03:53,360 --> 00:04:00,640
+Các giản đồ xuất, đặc biệt là JSON, cho phép các câu trả lời được phân tích và xác thực hóa chương trình
+
+37
+00:04:00,640 --> 00:04:07,440
+Thay vì mời khách. Cuối cùng, lập luận ngược lại rất quan trọng. Dấu nhắc nên xác định phải làm gì
+
+38
+00:04:07,440 --> 00:04:13,920
+khi sự tự tin bị hạn chế hoặc nhập không hợp lệ. Xoá lệnh từ chối và tăng cường
+
+39
+00:04:13,920 --> 00:04:20,560
+Ảo giác. Những lời nhắc nhở về sự sáng tạo có thể gây ấn tượng trong các cuộc thử nghiệm. Những động cơ được cấu tạo tồn tại trong sản xuất.
+
+40
+00:04:20,560 --> 00:04:28,480
+Cấu trúc không giới hạn khả năng. Nó cho phép sự đáng tin cậy. Mô hình ngôn ngữ lớn không biết về bạn
+
+41
+00:04:28,480 --> 00:04:34,560
+dữ liệu. Họ dựa vào sự huấn luyện tĩnh với kiến thức cắt giảm. Bất cứ khi nào sự chính xác quan trọng,
+
+42
+00:04:34,560 --> 00:04:40,720
+Trí nhớ không đủ. Thế hệ tái tạo là thiết yếu khi đối phó với động lực
+
+43
+00:04:40,720 --> 00:04:47,680
+thông tin, dữ liệu sở hữu, hoặc tuân thủ nội dung nhạy cảm. Chính sách, tài liệu,
+
+44
+00:04:47,680 --> 00:04:52,400
+Phải thu thập kiến thức nội bộ vào giờ truy vấn chứ không phải khách.
+
+45
+00:04:53,360 --> 00:05:00,160
+RAG cũng bắt buộc khi yêu cầu truy tố hay kiểm toán. Nếu ảo giác không thể chấp nhận được,
+
+46
+00:05:00,160 --> 00:05:06,400
+Không thể thương lượng được. Quy tắc quyết định rất đơn giản. Đừng tin vào trí nhớ của người mẫu.
+
+47
+00:05:06,400 --> 00:05:11,520
+Nếu thông tin thay đổi, thuộc về tổ chức của bạn, hoặc phải được kiểm chứng,
+
+48
+00:05:11,520 --> 00:05:17,360
+sử dụng phục hồi. slide này dạy về sự kiềm chế. RAG không phải là sự phức tạp tùy ý,
+
+49
+00:05:17,360 --> 00:05:24,320
+trách nhiệm kiến trúc. Hệ thống RAG đi theo chu kỳ sống có thể đoán trước được. Đầu tiên,
+
+50
+00:05:24,320 --> 00:05:30,160
+tài liệu đã được đọc và lấy vào các đoạn tối ưu hóa. Name
+
+51
+00:05:30,160 --> 00:05:36,960
+vào phần tạo và lưu trong cơ sở dữ liệu véc- tơ. Lúc truy vấn, câu hỏi của người dùng được nhúng
+
+52
+00:05:36,960 --> 00:05:42,800
+và khớp với nội dung có liên quan nhất. Các đoạn trích được đưa vào dấu nhắc
+
+53
+00:05:42,800 --> 00:05:49,280
+Như là ngữ cảnh, điều chỉnh phản ứng của mô hình. Mô hình sau đó tạo ra một câu trả lời neo cho những người
+
+54
+00:05:49,280 --> 00:05:56,240
+Những nguồn tin, thường là những câu trích dẫn. Mô hình không trả lời từ trí nhớ. Nó đã kết thúc.
+
+55
+00:05:56,240 --> 00:06:03,520
+cung cấp bằng chứng. Hiểu dòng chảy này giúp gỡ lỗi lỗi, chất lượng thu hồi tối ưu,
+
+56
+00:06:03,520 --> 00:06:11,760
+và kiểm soát ảo giác. Việc thu hồi là trên hết. Thế hệ thứ hai. Điều đó quan trọng.
+
+57
+00:06:11,760 --> 00:06:17,520
+Mô hình ngôn ngữ không nên làm mọi thứ. Họ giỏi lý luận và ngôn ngữ,
+
+58
+00:06:17,520 --> 00:06:23,840
+không phải nhiệm vụ chính xác. Toán học nên được xử lý bằng động cơ tính toán. Dữ liệu sống nên là
+
+59
+00:06:23,840 --> 00:06:31,520
+Được tìm thấy qua hệ điều hành. Cần phải thực hiện những câu hỏi được cấu trúc bằng cách sử dụng phương pháp xếp hạng, chứ không phải đoán ngôn ngữ tự nhiên.
+
+60
+00:06:31,520 --> 00:06:38,560
+Vai trò của họ là dàn nhạc. Nó quyết định công cụ nào để gọi và khi nào, nhưng nó không nên thay thế
+
+61
+00:06:38,560 --> 00:06:45,680
+Hệ thống xác định. Thiết kế này cải thiện đáng kể tính chính xác, giảm độ nhạy và thấp hơn
+
+62
+00:06:45,680 --> 00:06:54,000
+Chi phí. Nó cũng giúp chẩn đoán thất bại dễ dàng hơn. Hệ thống AI Robust là hệ thống lai, không chỉ mô hình
+
+63
+00:06:54,000 --> 00:07:01,840
+Giải pháp. Sự an toàn không phải là một đặc điểm mà bạn thêm vào sau này. Đó là một quyết định kiến trúc. Hợp lệ nhập
+
+64
+00:07:01,840 --> 00:07:07,520
+tiêm một cách nhanh chóng, yêu cầu hiểm độc, và đầu vào ngoài ống kính trước khi chúng đạt được mô hình.
+
+65
+00:07:08,160 --> 00:07:13,280
+Việc lọc ra màn hình cho nội dung có hại, sự vi phạm chính sách và thông tin rò rỉ.
+
+66
+00:07:13,280 --> 00:07:18,400
+Truy cập dựa trên vai trò đảm bảo rằng người dùng chỉ nhìn thấy những gì họ được phép thấy.
+
+67
+00:07:18,400 --> 00:07:22,720
+Người và vòng thời gian kiểm tra để xem xét những hành động có rủi ro cao.
+
+68
+00:07:22,720 --> 00:07:29,680
+Cuối cùng, không an toàn mặc định là vấn đề. Khi không chắc chắn, hệ thống nên từ chối thay vì
+
+69
+00:07:29,680 --> 00:07:38,240
+Ảo giác. An toàn là cơ sở hạ tầng, không phải là chính sách. Hệ thống AI sẽ thất bại. Lên kế hoạch cho thất bại là một
+
+70
+00:07:38,240 --> 00:07:43,760
+Dấu hiệu của sự trưởng thành. Những ngưỡng tự tin ngăn chặn những câu trả lời chất lượng thấp đến với người dùng.
+
+71
+00:07:43,760 --> 00:07:51,360
+Tôi không biết trả lời tốt hơn là tự tin sai sót. Gia tăng đường dẫn đến các trường hợp phức tạp đến
+
+72
+00:07:51,360 --> 00:07:58,800
+Con người. Những thất bại nên được ghi chép, giám sát, và xuất hiện nhanh chóng. Name
+
+73
+00:07:58,800 --> 00:08:05,680
+tin tưởng khi mọi chuyện xảy ra. Hệ thống bảo vệ không giả vờ hoàn hảo. Họ thất bại an toàn.
+
+74
+00:08:05,680 --> 00:08:13,040
+Rõ ràng, và có thể phục hồi. Trước khi thực hiện, dừng lại. Danh sách này là cổng sẵn sàng.
+
+75
+00:08:13,040 --> 00:08:17,920
+Bạn nên có một hệ thống kiến trúc hệ thống ghi chép, những gợi ý được phiên bản,
+
+76
+00:08:17,920 --> 00:08:24,800
+Ý định của RAG hoặc quyết định công cụ, điều khiển an toàn hoạt động, và rõ ràng xác định hành vi thất bại.
+
+77
+00:08:25,600 --> 00:08:31,440
+Khi những nền tảng này được đặt đúng chỗ, thực hiện trở thành hành hình, chứ không phải khám phá.
+
+78
+00:08:31,440 --> 00:08:38,240
+Kiến trúc thúc đẩy mọi thứ theo sau. Một hệ thống được thiết kế tốt dễ dàng hơn để xây dựng,
+
+79
+00:08:38,240 --> 00:08:41,200
+Dễ kiểm tra hơn, và khó phá vỡ hơn.
+
