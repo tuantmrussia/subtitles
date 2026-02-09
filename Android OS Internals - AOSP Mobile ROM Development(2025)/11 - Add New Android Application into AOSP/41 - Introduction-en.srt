@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:06,400
+ Adding an application into ASP build system is pretty straightforward.
+
+2
+00:00:06,400 --> 00:00:13,320
+ Let's have a look at the steps to add Java and Kotlin apps to the AOSP build system.
+
+3
+00:00:13,320 --> 00:00:15,960
+ There are two ways to add apps.
+
+4
+00:00:15,960 --> 00:00:22,400
+ One is to add the complete project with the source code into the AOSP build system.
+
+5
+00:00:22,400 --> 00:00:28,400
+ Second option is to add a compiled APK file, so that means you will create the project
+
+6
+00:00:28,400 --> 00:00:34,200
+ in a separate IDE, for example Android Studio, and you will build the project and make the
+
+7
+00:00:34,200 --> 00:00:39,160
+ APK and only move the APK into the AOSP folder.
+
+8
+00:00:39,160 --> 00:00:45,800
+ So in this session, we are going to look at point 1 and see how to add a complete Android
+
+9
+00:00:45,800 --> 00:00:48,800
+ project with source code into AOSP.
+
+10
+00:00:48,800 --> 00:00:55,840
+ The reason why we cannot simply copy the Android project directly into AOSP is due to the fact
+
+11
+00:00:55,840 --> 00:00:58,760
+ that both uses different build system.
+
+12
+00:00:58,760 --> 00:01:06,040
+ As we know, the Android application uses Gradle build system, and AOSP uses the soon build
+
+13
+00:01:06,040 --> 00:01:07,040
+ system.
+
+14
+00:01:07,040 --> 00:01:10,840
+ These two build systems are not compatible with each other.
+
+15
+00:01:10,840 --> 00:01:15,960
+ That's the reason we have to do some manual migration steps in between.
+
+16
+00:01:15,960 --> 00:01:20,840
+ So these are the steps to migrate an Android project into AOSP.
+
+17
+00:01:20,840 --> 00:01:24,720
+ So first step is to restructure the folders.
+
+18
+00:01:24,720 --> 00:01:31,320
+ That means we need to just extract the Java or Coding source folders and the resource folders
+
+19
+00:01:31,320 --> 00:01:33,120
+ from the Android project.
+
+20
+00:01:33,120 --> 00:01:37,960
+ And rest of the Gradle files are not necessary for AOSP.
+
+21
+00:01:37,960 --> 00:01:45,480
+ Second step, the same Android manifest dot XML can be copied into the AOSP folders.
+
+22
+00:01:45,480 --> 00:01:47,440
+ It doesn't need any changes.
+
+23
+00:01:47,440 --> 00:01:51,560
+ Third step is to write the soon build scripts.
+
+24
+00:01:51,560 --> 00:01:57,840
+ So we need to write the star dot BP file for the new project or the module we are going
+
+25
+00:01:57,840 --> 00:01:58,840
+ to add.
+
+26
+00:01:58,840 --> 00:02:04,640
+ Fourth step include the new module or the project in corresponding build scripts.
+
+27
+00:02:04,640 --> 00:02:11,600
+ In the next sessions, we will do a couple of practical sessions to add a Kotlin and Java
+
+28
+00:02:11,600 --> 00:02:14,000
+ project into AOSP.
+
+29
+00:02:14,000 --> 00:02:19,240
+ So I am using the Android automotive build in this case, but the overall steps which we
+
+30
+00:02:19,240 --> 00:02:24,440
+ are following in these sessions are similar for other builds as well.
+
+31
+00:02:24,440 --> 00:02:29,720
+ So in case if you have a phone built, please follow the similar steps and it should go
+
+32
+00:02:29,720 --> 00:02:30,120
+ fine.
+
