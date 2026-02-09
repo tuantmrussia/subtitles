@@ -1,0 +1,312 @@
+1
+00:00:00,000 --> 00:00:07,440
+Bây giờ chúng ta sẽ xem xét một dịch vụ an ninh AWS khác được gọi là AWS ID và AWS Quản lý Truy cập.
+
+2
+00:00:07,440 --> 00:00:19,920
+Tóm lại, nó được gọi là IM. Giờ, dịch vụ AWS IM kiểm soát an toàn truy cập tài nguyên AWS.
+
+3
+00:00:19,920 --> 00:00:26,640
+Khi chúng tôi nói về nguồn lực AWS, chúng tôi có nghĩa là bất kỳ máy chủ AWS nào như S3, EC2, DynamoDB, vân vân.
+
+4
+00:00:27,280 --> 00:00:34,400
+Bây giờ, dịch vụ điện tử tập trung vào hai lĩnh vực. Một, nó xác thực người dùng và đó có thể thông qua
+
+5
+00:00:34,400 --> 00:00:40,880
+Bàn giao tiếp AWS với tên người dùng, mật khẩu hoặc chương trình thông qua phím bí mật và phím truy cập.
+
+6
+00:00:40,880 --> 00:00:48,080
+Và điều thứ hai nó tập trung vào là sự cho phép. Cấp độ cho phép là gì?
+
+7
+00:00:48,080 --> 00:00:54,240
+người dùng xác thực đã? Nó có quyền truy cập tất cả các dịch vụ hay nó có quyền truy cập
+
+8
+00:00:54,240 --> 00:01:01,440
+để, ví dụ, chỉ một dịch vụ S3 xô? Bây giờ, trong AWS Im, có ba khái niệm quan trọng
+
+9
+00:01:01,440 --> 00:01:08,160
+mà anh cần biết. Một là AWS IM user and groups. Quy định của IM, chính sách IM, và giấy phép.
+
+10
+00:01:08,160 --> 00:01:17,120
+Bây giờ, chúng ta hãy xem xét những người dùng và nhóm IM. Vì vậy, M users được chỉ định cho người dùng lao động.
+
+11
+00:01:17,840 --> 00:01:26,560
+Người dùng được tạo ra cho những cá nhân cần truy cập vào dịch vụ AWS. Vì vậy, hãy nói ở đây,
+
+12
+00:01:26,560 --> 00:01:33,520
+IAM Rahul và IAM một quản lý máy chủ. Vì vậy, nếu tôi cần truy cập vào ví dụ EC2 này hoặc này S3 xô,
+
+13
+00:01:33,520 --> 00:01:39,920
+Chúng ta sẽ cần phải tạo ra một M sử dụng để truy cập vào các máy chủ này. Tiếp theo, giả sử chúng ta có
+
+14
+00:01:39,920 --> 00:01:46,720
+Joe là quản lý ngân sách. Vậy, hắn sẽ cần truy cập vào bảng thanh toán. Vì vậy, chúng tôi sẽ tạo ra
+
+15
+00:01:46,720 --> 00:01:52,320
+Một người dùng trong danh tính và dịch vụ quản lý truy cập cho Joe người sẽ truy cập vào
+
+16
+00:01:52,320 --> 00:02:00,240
+cho dịch vụ hóa đơn. Vì vậy, đó là những gì mM user được sử dụng cho. Vì vậy, một khi bạn đã tạo ra mM user,
+
+17
+00:02:00,240 --> 00:02:06,160
+Sau đó bạn sẽ cần phải gắn kết chính sách và chúng tôi sẽ có được những gì là chính sách. Nhưng hãy nghĩ về
+
+18
+00:02:06,160 --> 00:02:14,000
+Chính sách ở cấp độ cho phép. Vì vậy, cho dù Rahul chỉ cần truy cập đến EC2 thể S3 hoặc cả hai,
+
+19
+00:02:14,000 --> 00:02:22,160
+Nó sẽ cho phép nó. Sau đó, mM người dùng và nhóm đôi khi được gọi là
+
+20
+00:02:22,160 --> 00:02:28,720
+Là danh tính với giấy ủy nhiệm dài hạn và nghĩa là gì. Bây giờ, hãy nói IM Rahul,
+
+21
+00:02:28,720 --> 00:02:34,960
+Quản trị máy chủ. Vì vậy, tôi sẽ nhận được một tên người dùng và mật khẩu nếu tôi muốn truy cập tài khoản AWS.
+
+22
+00:02:34,960 --> 00:02:38,800
+Vì vậy, nó sẽ là một giấy chứng nhận dài hạn. Nó có thể ở đó hàng tuần, hàng tháng,
+
+23
+00:02:38,800 --> 00:02:44,720
+hoặc cho đến khi tôi tham gia dự án. Và như chúng ta sẽ thấy sau, cũng có một số tạm thời
+
+24
+00:02:44,720 --> 00:02:51,920
+Giấy ủy quyền an ninh. Nhưng người dùng và các nhóm IM cung cấp giấy phép dài hạn. Vì vậy, bây giờ chúng ta hãy
+
+25
+00:02:51,920 --> 00:02:58,320
+Hiểu ý nghĩa của nhóm. Bây giờ, trong tổ chức, bạn có thể có rất nhiều đội khác nhau
+
+26
+00:02:58,320 --> 00:03:05,680
+Thành viên sẽ đóng vai trưởng phòng máy chủ. Vì vậy, thay vì tạo ra nhiều người dùng và đưa cho họ
+
+27
+00:03:05,680 --> 00:03:11,360
+Các quyền tương tự, bạn có thể tạo một nhóm, có thể tạo một nhóm quản trị máy chủ,
+
+28
+00:03:11,360 --> 00:03:18,000
+và sau đó chỉ cần thêm người dùng vào nhóm đó. Vì vậy, hãy để tôi chỉ cho bạn một cách nhanh chóng. Tôi đang ở AWS.
+
+29
+00:03:18,000 --> 00:03:25,040
+bảng điều khiển. Hãy để tôi lướt sóng. Và tôi ở đây. Vì vậy, bây giờ, tôi trên danh tính và
+
+30
+00:03:25,040 --> 00:03:30,480
+Dịch vụ quản lý truy cập. Vì vậy, tôi có thể chỉ cần bên tay trái, chỉ cần nhấp chuột vào người dùng, tạo ra người dùng,
+
+31
+00:03:30,480 --> 00:03:40,320
+Để tôi nói thẳng ra là Rahu, nhấn mạnh về Adam. Vì vậy, tôi sẽ chỉ nhấp chuột vào tiếp theo. Được rồi, cái tên này đã
+
+32
+00:03:40,320 --> 00:03:45,360
+tồn tại. Vì vậy, hãy để tôi chỉ nói Rahu, nhấn mạnh admin 1, 2, 3. Tôi sẽ chỉ nhấp chuột vào tiếp theo.
+
+33
+00:03:45,360 --> 00:03:51,840
+Vậy thì tôi phải xin phép. Vì vậy, tôi có thể thêm người dùng vào nhóm hoặc sao chép quyền hạn
+
+34
+00:03:51,840 --> 00:03:56,880
+hoặc kết nối trực tiếp các chính sách. Vì vậy, tôi sẽ chỉ cần nhấp chuột vào chính sách gắn kết trực tiếp. Và bạn có thể thấy
+
+35
+00:03:56,880 --> 00:04:02,240
+Ở đây có rất nhiều chính sách được thiết kế trước. Bạn có thể thấy AWS quản lý.
+
+36
+00:04:02,240 --> 00:04:08,400
+Vì vậy, nếu tôi muốn có quyền truy cập Adam hoặc nếu tôi muốn truy cập vào một dịch vụ cụ thể. Vì vậy, nếu tôi chỉ cần nhấp chuột vào
+
+37
+00:04:08,400 --> 00:04:17,120
+Đây là quyền truy cập của Adam. Vì vậy, nó sẽ cho bạn thấy tất cả các quyền hạn được cung cấp cho chính sách này.
+
+38
+00:04:17,120 --> 00:04:22,000
+Và bạn có thể thấy nó có thể truy cập vào tất cả các dịch vụ và nó có quyền truy cập đầy đủ. Bạn có thể thấy nó truy cập
+
+39
+00:04:22,000 --> 00:04:28,000
+cấp độ. Để tôi quay lại. Được rồi, bây giờ hãy để tôi nói rằng tôi muốn cung cấp cho nó quảng cáo truy cập. Vậy,
+
+40
+00:04:28,000 --> 00:04:32,880
+Tôi sẽ chỉ nhấp chuột vào quyền truy cập quảng cáo này. Và sau đó tôi sẽ chỉ cần click chuột vào tiếp theo. Và sau đó tôi có thể nhấp chuột vào
+
+41
+00:04:32,880 --> 00:04:38,320
+trên tạo ra người dùng. Vì vậy, bạn có thể thấy nó đã tạo ra người dùng thành công. Vì vậy, tôi có thể chỉ cần click vào
+
+42
+00:04:38,320 --> 00:04:44,720
+xem người dùng. Và bạn có thể thấy tên người dùng Rahu, admin 1, 2, 3. Và sau đó bạn có thể thấy dưới
+
+43
+00:04:44,720 --> 00:04:49,440
+Chính sách cho phép, tôi đã cho phép nó truy cập hành chính. Vì vậy, tương tự bạn có thể nhấp chuột vào người dùng
+
+44
+00:04:49,440 --> 00:04:56,400
+nhóm, tôi có thể click vào nhóm. Và sau đó chỉ cần cho nó một tên nhóm ở đây. Và sau đó đính kèm
+
+45
+00:04:56,400 --> 00:05:02,880
+Chính sách như chúng ta đã làm cho người dùng. Và sau đó chỉ cần nhấp vào tạo nhóm người dùng. Và sau đó chúng ta có thể
+
+46
+00:05:02,880 --> 00:05:11,040
+Thêm người dùng vào nhóm người dùng này. Bây giờ, khái niệm tiếp theo trong IM là vai trò Im. Vì vậy, không giống như
+
+47
+00:05:11,040 --> 00:05:18,960
+Người dùng nơi bạn sẽ có chứng nhận truy cập bàn điều khiển hoặc chương trình truy cập
+
+48
+00:05:18,960 --> 00:05:28,000
+Các dịch vụ khác nhau, vai trò IM được giả sử bởi dịch vụ AWS hoặc một ứng dụng. Bây giờ, hãy để chúng tôi
+
+49
+00:05:28,000 --> 00:05:33,760
+Hiểu ý nghĩa của nó. Vì vậy, hãy nói rằng chúng tôi có này EC2 ví dụ. Và đây là ví dụ
+
+50
+00:05:33,760 --> 00:05:38,960
+Chúng tôi đã thảo luận trước đó, chúng tôi nói nó hoạt động như một máy chủ web và nó sẽ lấy hình ảnh
+
+51
+00:05:38,960 --> 00:05:48,400
+từ cái xô S3. Bây giờ, theo mặc định, không dịch vụ AWS nào có quyền truy cập dịch vụ khác. Và đó là
+
+52
+00:05:48,400 --> 00:05:55,920
+Quan trọng bởi vì chúng ta hãy nói nếu trường hợp EC2 này có quyền truy cập vào tất cả các xô S3 trong tài khoản của bạn,
+
+53
+00:05:55,920 --> 00:06:01,360
+thì trong một số thùng S3 bạn có thể đang lưu trữ thông tin bí mật. Vậy, ai đó
+
+54
+00:06:01,360 --> 00:06:08,160
+Hãy nói rằng Rahul người có quyền truy cập vào trường hợp EC2 này có thể đi và lấy dữ liệu từ S3 xô.
+
+55
+00:06:08,160 --> 00:06:15,760
+Vì vậy, đó là lý do tại sao mỗi khi bạn đang tạo ra một ứng dụng, bạn cần phải tạo ra một vai trò cho điều này
+
+56
+00:06:15,760 --> 00:06:24,160
+Trường hợp EC2 cho phép nó truy cập vào có thể là S3 xô hoặc nếu nó cần truy cập, có thể là một RDS
+
+57
+00:06:24,160 --> 00:06:33,280
+Cơ sở dữ liệu hay bất kỳ dịch vụ nào khác. Vì vậy, trong hầu hết các trường hợp, khi bạn muốn cung cấp cho truy cập vào một AWS
+
+58
+00:06:33,280 --> 00:06:41,360
+Dịch vụ như EC2, S3 và dịch vụ khác, sau đó nó được sử dụng một cái gì đó được gọi là vai trò Im.
+
+59
+00:06:42,000 --> 00:06:47,600
+Vì vậy, bạn tạo một vai trò m giống như người dùng và sau đó bạn đính kèm một tập hợp quyền hạn
+
+60
+00:06:47,600 --> 00:06:56,560
+Cho phép nó truy cập vào một dịch vụ AWS khác. Và điều này đôi khi được gọi là tạm thời
+
+61
+00:06:56,560 --> 00:07:04,720
+Thông tin bảo mật vì truy cập dịch vụ đó chỉ hợp lệ trong thời gian hạn chế,
+
+62
+00:07:04,720 --> 00:07:11,520
+Có lẽ là R hoặc vài giờ. Vì vậy, hy vọng nó là rõ ràng, tôi là người dùng và nhóm được sử dụng cho công việc
+
+63
+00:07:11,520 --> 00:07:19,440
+Đối với người dùng, vai trò IM được sử dụng cho dịch vụ và ứng dụng AWS. Nhưng xin hãy chú ý là rất hiếm.
+
+64
+00:07:19,440 --> 00:07:25,120
+Tình huống khi bạn cung cấp truy cập qua tài khoản, có nghĩa là bạn có 10
+
+65
+00:07:25,120 --> 00:07:32,720
+Tài khoản không có tổ chức và một trong những người sử dụng hoặc lao động có truy cập đến một cụ thể
+
+66
+00:07:32,720 --> 00:07:38,480
+tài khoản. Nhưng chúng ta hãy nói rằng ông cần truy cập các chi tiết hóa đơn của tài khoản thứ hai.
+
+67
+00:07:38,480 --> 00:07:45,920
+Trong trường hợp đó, bạn sẽ gắn một vai trò IM vào người dùng này nhưng đó là một kịch bản rất hiếm.
+
+68
+00:07:45,920 --> 00:07:51,280
+Trong hầu hết các trường hợp, bạn có thể giả định nếu nó là một cá nhân hoặc một con người, bạn có thể tạo ra một lm
+
+69
+00:07:51,280 --> 00:07:59,360
+Người dùng hay nhóm cho họ, nếu đó là một dịch vụ AWS hay một ứng dụng, thì bạn có thể tạo một
+
+70
+00:07:59,360 --> 00:08:08,720
+Vai trò của IM với ngoại lệ truy cập qua tài khoản, sau đó chúng tôi có sự cho phép và chính sách.
+
+71
+00:08:08,720 --> 00:08:16,560
+Vì vậy, quyền hạn xác định hành động nào được cho phép hoặc từ chối. Vì vậy, chúng ta hãy nói rằng có một
+
+72
+00:08:16,560 --> 00:08:22,000
+Dịch vụ AWS đang cố truy cập vào cái xô S3 này. Vì vậy, nó có thể có truy cập chỉ đọc,
+
+73
+00:08:22,000 --> 00:08:30,400
+tạo truy cập, xoá truy cập hoặc cả ba. Vì vậy, các quyền hạn xác định những gì hành động được cho phép hoặc
+
+74
+00:08:30,400 --> 00:08:39,120
+Không chấp nhận. Và sau đó chúng tôi có chính sách lm, nó về cơ bản là một tài liệu xác định quyền hạn
+
+75
+00:08:39,120 --> 00:08:47,040
+đó có thể được trao cho một vai trò IM hoặc Im user và nhóm. Vì vậy, những gì bạn về cơ bản làm là,
+
+76
+00:08:47,040 --> 00:08:55,680
+Một khi bạn tạo ra một trong hai IM người dùng, nhóm hoặc một vai trò, bạn gắn kết các chính sách vào vai trò m
+
+77
+00:08:55,680 --> 00:09:01,200
+hoặc lm nhóm và người dùng. Đó là khá nhiều từ bài giảng này. Tôi sẽ gặp lại bạn trong tiếp theo
+
+78
+00:09:01,200 --> 00:09:01,840
+diễn thuyết. Cảm ơn.
+
