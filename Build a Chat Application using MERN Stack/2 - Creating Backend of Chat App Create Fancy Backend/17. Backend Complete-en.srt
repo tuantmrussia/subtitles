@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:05,720
+ So, hello everyone, in this video, we are going to work with our get messages controller.
+
+2
+00:00:05,720 --> 00:00:07,360
+ So, let's start this.
+
+3
+00:00:07,360 --> 00:00:19,120
+ So, export, so export, const, send messages, send messages, again we are going to just give
+
+4
+00:00:19,120 --> 00:00:24,120
+ this as async and then request response as we have get earlier.
+
+5
+00:00:24,120 --> 00:00:30,000
+ And now after this, what we are actually going to do is, since the sender can, like send
+
+6
+00:00:30,000 --> 00:00:34,000
+ any format of, like text or image, so we are going to get that, okay.
+
+7
+00:00:34,000 --> 00:00:38,040
+ But before that, we are going to use this try and cache block, okay, declare this try
+
+8
+00:00:38,040 --> 00:00:43,280
+ and cache block and when this, this cache block, we will have this error, okay.
+
+9
+00:00:43,280 --> 00:00:48,320
+ So now inside of the, whatever the logic or the code, we are going to write inside of our
+
+10
+00:00:48,320 --> 00:00:53,560
+ try block and with the cache block, we are going to just cache the error, whatever it comes, okay.
+
+11
+00:00:53,560 --> 00:01:00,920
+ So the first thing would be, D structure, whatever the text or the image, which is going
+
+12
+00:01:00,920 --> 00:01:07,680
+ to come, so text comma image equal to request dot body from the body, we are parsing the
+
+13
+00:01:07,680 --> 00:01:13,040
+ text and image, D structuring the image and now, who has sent the image, so we are going
+
+14
+00:01:13,040 --> 00:01:19,760
+ to just declare one sender ID, sender ID and the sender ID, we are going to just get it
+
+15
+00:01:19,760 --> 00:01:24,520
+ from the request dot user dot underscore ID.
+
+16
+00:01:24,520 --> 00:01:31,000
+ And now, after the sender ID, we will have the receiver ID, see, receiver ID, we are going
+
+17
+00:01:31,000 --> 00:01:33,880
+ to get this receiver ID from the params, okay.
+
+18
+00:01:33,880 --> 00:01:38,000
+ So params dot underscore ID.
+
+19
+00:01:38,000 --> 00:01:46,140
+ Now, after this, let's declare one image URL, we are, we are going to store the image,
+
+20
+00:01:46,140 --> 00:01:49,640
+ whatever it is sent by the sender or the receiver.
+
+21
+00:01:49,640 --> 00:01:55,600
+ So if an image comes, okay, so if the image comes, in that case, we are going to just
+
+22
+00:01:55,600 --> 00:02:04,160
+ store this in the upload image variable and for this one, we are going to use the cloud
+
+23
+00:02:04,160 --> 00:02:05,160
+inary.
+
+24
+00:02:05,160 --> 00:02:13,560
+ So cloudinary dot uploader dot, sorry, uploader cloud nine dot uploader dot, we are going
+
+25
+00:02:13,560 --> 00:02:19,080
+ to use the upload function, so upload and then we are going to pass this image as here
+
+26
+00:02:19,080 --> 00:02:31,600
+ and now, for the image URL, we are going to just take that image from the upload image
+
+27
+00:02:31,600 --> 00:02:35,320
+ and store it inside it, so secure dot URL.
+
+28
+00:02:35,320 --> 00:02:38,720
+ So for this image part is done, now comes the part for the message.
+
+29
+00:02:38,720 --> 00:02:43,360
+ What will happen if the sender just sends the message, okay, in that case, we are going
+
+30
+00:02:43,360 --> 00:02:49,600
+ to destructure it like we're going to get all the message part, like whatever there is
+
+31
+00:02:49,600 --> 00:03:03,680
+ it in message, okay, so message, so const message equal to new messages and after this,
+
+32
+00:03:03,680 --> 00:03:09,520
+ we are going to take the sender ID, we are going to take the receiver ID and we are also
+
+33
+00:03:09,520 --> 00:03:17,400
+ going to take the, take the text as well as we are going to take any kind of image that
+
+34
+00:03:17,400 --> 00:03:24,760
+ has been thrown, so image URL from this image URL, we are going to take and pass this
+
+35
+00:03:24,760 --> 00:03:37,280
+ in the message, all right, so now we are going to just save this, so await, await, new
+
+36
+00:03:37,280 --> 00:03:44,720
+ message dot save, we are going to save this new message and after this, if the new message
+
+37
+00:03:44,720 --> 00:03:53,080
+ does so, new message, if this new message is existing, we are going to return the status,
+
+38
+00:03:53,080 --> 00:04:05,920
+ so response of data status 200, so 200, one, we are going to just send the JSON, JSON as
+
+39
+00:04:05,920 --> 00:04:12,080
+ new message, and inside the message, new message, we are going to just pass this as new
+
+40
+00:04:12,080 --> 00:04:19,280
+ message, okay, so now we have completed this, I think there's some kind of issue here,
+
+41
+00:04:19,280 --> 00:04:33,160
+ so in the JSON, just pass this as new message, okay, so the new message and now in the
+
+42
+00:04:33,160 --> 00:04:43,240
+ cache lock, what we are going to do is console.log console.log and if the error persist,
+
+43
+00:04:43,240 --> 00:04:53,920
+ so if the error exist, then in the send message would be error in send message controller,
+
+44
+00:04:53,920 --> 00:05:01,080
+ okay, and we are going to send the message out, so error dot message, right, and after
+
+45
+00:05:01,080 --> 00:05:08,640
+ this, we are going to throw an error using the status code of rys dot status dot 500 dot
+
+46
+00:05:08,640 --> 00:05:15,680
+ JSON, and instead of this, we will have this message put, and we will just say that it
+
+47
+00:05:15,680 --> 00:05:28,360
+ is a internal server error, alright, so now we have completed this send messages controller,
+
+48
+00:05:28,360 --> 00:05:32,640
+ what the send message is controller, let's go to this route part, okay, so there would
+
+49
+00:05:32,640 --> 00:05:46,720
+ be one route, so now route dot get, and then we are going to get this send messages, and
+
+50
+00:05:46,720 --> 00:05:54,080
+ with this we are also going to implement this check auth, so the send messages will also
+
+51
+00:05:54,080 --> 00:06:02,400
+ have one particular associated id, right, so id, then check auth, and then with this part
+
+52
+00:06:02,400 --> 00:06:09,840
+ we will have this as send messages, so control and save, which should be working fine,
+
+53
+00:06:09,840 --> 00:06:14,040
+ so now we have worked with the send messages, I am going to meet you in the next video.
+
