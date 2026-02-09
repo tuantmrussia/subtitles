@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:06,400
+Thêm một ứng dụng vào hệ thống xây dựng AP là khá đơn giản.
+
+2
+00:00:06,400 --> 00:00:13,320
+Hãy xem các bước để thêm Java và ứng dụng Kotlin vào hệ thống xây dựng AOSP.
+
+3
+00:00:13,320 --> 00:00:15,960
+Có hai cách để thêm vào ứng dụng.
+
+4
+00:00:15,960 --> 00:00:22,400
+Một là thêm toàn bộ dự án với mã nguồn vào hệ thống xây dựng AOSP.
+
+5
+00:00:22,400 --> 00:00:28,400
+Lựa chọn thứ hai là thêm vào một tập tin được biên dịch của APK, nghĩa là bạn sẽ tạo ra dự án
+
+6
+00:00:28,400 --> 00:00:34,200
+Trong một giao diện ID riêng biệt, ví dụ như phòng thu steroid, và bạn sẽ xây dựng dự án và làm cho
+
+7
+00:00:34,200 --> 00:00:39,160
+APK và chỉ di chuyển APK vào thư mục AOSP.
+
+8
+00:00:39,160 --> 00:00:45,800
+Vì vậy, trong phần này, chúng tôi sẽ xem xét điểm 1 và xem làm thế nào để thêm một người máy hoàn chỉnh
+
+9
+00:00:45,800 --> 00:00:48,800
+dự án mã nguồn vào AOSP.
+
+10
+00:00:48,800 --> 00:00:55,840
+Lý do tại sao chúng tôi không thể đơn giản là sao chép dự án steroid trực tiếp vào AOSP là do sự thật
+
+11
+00:00:55,840 --> 00:00:58,760
+đều sử dụng hệ thống xây dựng khác nhau.
+
+12
+00:00:58,760 --> 00:01:06,040
+Như chúng ta đã biết, ứng dụng steroid sử dụng hệ thống xây dựng Gradle, và AOSP sử dụng sớm xây dựng
+
+13
+00:01:06,040 --> 00:01:07,040
+Hệ thống.
+
+14
+00:01:07,040 --> 00:01:10,840
+Hai hệ thống xây dựng này không tương thích với nhau.
+
+15
+00:01:10,840 --> 00:01:15,960
+Đó là lý do chúng ta phải thực hiện vài bước di trú bằng tay ở giữa.
+
+16
+00:01:15,960 --> 00:01:20,840
+Đây là những bước để di chuyển một dự án Alpha vào AOSP.
+
+17
+00:01:20,840 --> 00:01:24,720
+Vì vậy, bước đầu tiên là xây dựng lại các thư mục.
+
+18
+00:01:24,720 --> 00:01:31,320
+Điều đó có nghĩa là chúng ta cần chỉ cần lấy các thư mục nguồn Java hoặc Coding nguồn và các thư mục tài nguyên
+
+19
+00:01:31,320 --> 00:01:33,120
+Từ dự án Alpha.
+
+20
+00:01:33,120 --> 00:01:37,960
+Và các tập tin khác của Gradle không cần thiết cho AOSP.
+
+21
+00:01:37,960 --> 00:01:45,480
+Bước thứ hai, cùng một danh sách các dấu chấm XML AOSP có thể được sao chép vào các thư mục AOSP.
+
+22
+00:01:45,480 --> 00:01:47,440
+Nó không cần thay đổi.
+
+23
+00:01:47,440 --> 00:01:51,560
+Bước thứ ba là viết những văn bản sắp được xây dựng.
+
+24
+00:01:51,560 --> 00:01:57,840
+Vì vậy, chúng tôi cần phải viết tập tin chấm BP ngôi sao cho dự án mới hoặc mô-đun chúng tôi đang đi
+
+25
+00:01:57,840 --> 00:01:58,840
+để thêm.
+
+26
+00:01:58,840 --> 00:02:04,640
+Bước thứ tư gồm có mô- đun mới hoặc dự án xây dựng văn lệnh tương ứng.
+
+27
+00:02:04,640 --> 00:02:11,600
+Trong các buổi học tiếp theo, chúng tôi sẽ thực hiện một vài buổi thực tế để thêm một Kotlin và Java
+
+28
+00:02:11,600 --> 00:02:14,000
+Dự án vào AOSP.
+
+29
+00:02:14,000 --> 00:02:19,240
+Vì vậy, tôi đang sử dụng các động cơ tự động của steroid trong trường hợp này, nhưng các bước tổng quát mà chúng tôi
+
+30
+00:02:19,240 --> 00:02:24,440
+đang theo dõi trong những buổi học này cũng tương tự như các công trình khác.
+
+31
+00:02:24,440 --> 00:02:29,720
+Vì vậy, trong trường hợp bạn có một điện thoại xây dựng, xin vui lòng theo các bước tương tự và nó nên đi
+
+32
+00:02:29,720 --> 00:02:30,120
+Được rồi.
+
