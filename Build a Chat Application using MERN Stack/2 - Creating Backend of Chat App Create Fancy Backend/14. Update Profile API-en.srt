@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:06,320
+ Okay, so hello everyone now as we have already done with this cloudinary.js setup now
+
+2
+00:00:06,320 --> 00:00:11,840
+ we are let's go to the order controller.js and complete the complete this update profile
+
+3
+00:00:11,840 --> 00:00:17,920
+ a pay so usually we are going to take the try and catch block okay so try block and then
+
+4
+00:00:17,920 --> 00:00:23,200
+ in catch we are going to catch there are so catch and then error and now inside the try block
+
+5
+00:00:23,200 --> 00:00:28,160
+ what will you do the first thing which we are going to do is to take the profile pick so profile
+
+6
+00:00:28,160 --> 00:00:36,240
+ pick profile pick equal to request dot body so from the request we are going to take the profile
+
+7
+00:00:36,240 --> 00:00:46,320
+ and now let's take the user ID so user ID equal to request dot a user dot underscore ID now what
+
+8
+00:00:46,320 --> 00:00:52,160
+ we are going to do we are going to check if this profile pick so if this profile pick doesn't exist
+
+9
+00:00:52,160 --> 00:00:59,920
+ so profile pick we are going to take and then we are going to return a status return res dot
+
+10
+00:00:59,920 --> 00:01:08,800
+ status and then we are going to return a response of 400 dot chase and that the message would be
+
+11
+00:01:08,800 --> 00:01:21,920
+ profile profile pick is required okay control and save now suppose if
+
+12
+00:01:21,920 --> 00:01:30,320
+ the pick is present then in that case what we are going to do so in that case we are going to
+
+13
+00:01:30,320 --> 00:01:40,960
+ take up the profile pick okay so const suppose upload image equals to await
+
+14
+00:01:43,280 --> 00:01:53,920
+ so we are going to take from clouding a result of it cloudinary dot upload a dot upload and
+
+15
+00:01:53,920 --> 00:02:07,840
+ profile pick profile pick and we are going to update the user okay so const updated user
+
+16
+00:02:09,680 --> 00:02:22,240
+ so await so user dot find by we are going to take a method find by and update so we are going
+
+17
+00:02:22,240 --> 00:02:26,880
+ to update the profile pick of the person okay so in that case what we are going to do is we are
+
+18
+00:02:26,880 --> 00:02:34,080
+ going to take the user ID okay and after that for the profile pick part we are going to
+
+19
+00:02:34,960 --> 00:02:40,880
+ just make new object and in this new object we are going to use the uploaded image so upload
+
+20
+00:02:40,880 --> 00:02:53,920
+ image then secure URL and we are going to just take one another object suppose if there's a new
+
+21
+00:02:53,920 --> 00:03:01,360
+ one so new equals to true and now we are going to return the status like suppose if we are
+
+22
+00:03:01,360 --> 00:03:08,800
+ successfully able to upload the profile picture so in that case RES dot status 200 dot
+
+23
+00:03:08,800 --> 00:03:19,600
+ JSON we are going to return the updated user okay similarly whatever we have done in the case
+
+24
+00:03:19,600 --> 00:03:25,440
+ of the cache we are going to cache there so we are going to return the status of 500
+
+25
+00:03:27,040 --> 00:03:37,040
+ and dot JSON we are going to return a message if we are not able to upload the profile picture
+
+26
+00:03:37,040 --> 00:03:49,360
+ like error in updating profile okay so error in updating the profile and comma the error would be
+
+27
+00:03:51,200 --> 00:04:02,960
+ error dot message okay so we have done with this update profile thing so in the next video
+
+28
+00:04:02,960 --> 00:04:04,640
+ we are going to do something else okay
+
