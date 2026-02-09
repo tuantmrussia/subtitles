@@ -1,0 +1,188 @@
+1
+00:00:00,410 --> 00:00:01,520
+Chào mừng trở lại.
+
+2
+00:00:01,520 --> 00:00:05,480
+Vì vậy, trong phần này chúng tôi sẽ thảo luận về thư viện chung, thêm vào.
+
+3
+00:00:06,140 --> 00:00:16,550
+Được rồi, về cơ bản mục đích của thư viện chia sẻ thêm là để chia sẻ một số thư viện
+
+4
+00:00:16,550 --> 00:00:23,360
+với thiết bị gắn vào, với nhà cung cấp của bạn hoặc với một đối tác bên ngoài.
+
+5
+00:00:24,020 --> 00:00:24,440
+Được rồi.
+
+6
+00:00:24,440 --> 00:00:31,220
+Vì vậy, trong trường hợp, ví dụ, trong một kịch bản thế giới thực, ví dụ, nếu bạn đang làm việc cho một OEM như
+
+7
+00:00:31,580 --> 00:00:39,980
+Samsung hay một công ty nào khác, có thể có rất nhiều nhà cung cấp, được rồi, những người có thể đang sản xuất
+
+8
+00:00:39,980 --> 00:00:43,070
+Một số phần mềm hoặc có thể một cái gì khác cho bạn.
+
+9
+00:00:43,130 --> 00:00:43,340
+Được rồi.
+
+10
+00:00:43,340 --> 00:00:49,790
+Vậy trong trường hợp bạn muốn cung cấp một lớp trừu tượng phần cứng cho đối tác hoặc công ty bên ngoài,
+
+11
+00:00:49,790 --> 00:00:56,720
+Sau đó, những gì bạn có thể làm là bạn có thể tạo ra một thư viện chia sẻ, thêm vào và nhúng hoặc gắn kết rằng trong của bạn
+
+12
+00:00:56,750 --> 00:00:59,690
+SDK và chuyển cho người bán.
+
+13
+00:00:59,690 --> 00:01:09,120
+Vì vậy, những gì bạn có thể làm chính xác là bạn có thể tổ chức thư viện chia sẻ của bạn, thêm vào một nơi nào đó ở một nơi nào đó
+
+14
+00:01:09,120 --> 00:01:16,740
+trong trang web và bạn là đối tác thực sự có thể sử dụng nó trong các trang web cập nhật.
+
+15
+00:01:17,010 --> 00:01:17,550
+Được rồi.
+
+16
+00:01:17,550 --> 00:01:20,160
+Vì vậy, chúng tôi sẽ cố gắng làm một thử nghiệm.
+
+17
+00:01:20,220 --> 00:01:27,810
+Chúng tôi sẽ chỉ cần đi qua các bước cần thiết để tạo ra một thư viện chia sẻ, thêm vào, và sau đó trong
+
+18
+00:01:27,810 --> 00:01:33,630
+Tiếp theo chúng tôi sẽ thực hiện một chương trình thực tế về thư viện chia sẻ.
+
+19
+00:01:33,630 --> 00:01:39,720
+Được rồi, đây là những bước cơ bản bạn cần làm để tạo ra một thư viện chia sẻ.
+
+20
+00:01:39,750 --> 00:01:40,140
+Được rồi.
+
+21
+00:01:40,140 --> 00:01:50,460
+Vì vậy, về cơ bản, uh, các bước đầu tiên là giống như bạn có thể tham khảo thiết bị mẫu đã có
+
+22
+00:01:50,460 --> 00:01:52,440
+được cung cấp bên trong Aosp.
+
+23
+00:01:52,590 --> 00:01:56,070
+Vì vậy, trong Aosp nếu bạn đi.
+
+24
+00:01:58,560 --> 00:02:01,610
+Thư mục thiết bị và có một thư mục được gọi là mẫu.
+
+25
+00:02:01,620 --> 00:02:06,690
+Vì vậy, bên trong mẫu có là một thêm vào thực hiện.
+
+26
+00:02:06,690 --> 00:02:12,210
+Vì vậy, cách dễ nhất để làm điều đó là, chỉ cần lấy một bản sao của điều này.
+
+27
+00:02:12,210 --> 00:02:20,450
+Đây cơ bản là thiết bị của bạn và sau đó bao gồm thư viện của bạn dưới các ứng dụng và chỉnh sửa chấm căn bản.
+
+28
+00:02:20,490 --> 00:02:22,340
+Không phải ở đây.
+
+29
+00:02:22,350 --> 00:02:34,680
+Vì vậy, người máy.mk và danh sách chấm trong tất cả các công cụ ở đây và ở đây trong các ứng dụng bạn có thể đặt
+
+30
+00:02:34,680 --> 00:02:42,510
+Thư viện của bạn và cập nhật cho các điểm A-quang.
+
+31
+00:02:42,810 --> 00:02:46,830
+Ví dụ như trong trường hợp này, nó nói là dấu chấm A-bốt bình thường.
+
+32
+00:02:46,900 --> 00:02:49,890
+MK Vì vậy, bạn về cơ bản cần phải cập nhật nó.
+
+33
+00:02:49,890 --> 00:02:54,570
+Vì vậy, chúng tôi sẽ có một xem xét rằng trong các hướng dẫn tiếp theo trong các buổi thực tế.
+
+34
+00:02:54,570 --> 00:03:00,460
+Vì vậy, cho bây giờ, chỉ cần nhớ rằng bạn có thể luôn luôn tham khảo thiết bị mẫu hoặc bạn có thể tạo ra nó trên
+
+35
+00:03:00,460 --> 00:03:01,870
+Của anh, được chứ?
+
+36
+00:03:02,680 --> 00:03:05,650
+Và sau đó xây dựng khá đơn giản.
+
+37
+00:03:05,650 --> 00:03:12,520
+Vì vậy, những gì bạn cần làm là thiết lập môi trường và sau đó chỉ cần làm và sản phẩm.
+
+38
+00:03:12,520 --> 00:03:18,910
+Vì vậy, đây là sản phẩm và thêm vào tên của bạn và sau đó hiphen SDK thêm vào.
+
+39
+00:03:19,270 --> 00:03:24,190
+Được rồi, đây là lệnh cần thực hiện để xây dựng một bổ sung.
+
+40
+00:03:24,610 --> 00:03:24,850
+Được rồi.
+
+41
+00:03:24,850 --> 00:03:30,520
+Vì vậy, một khi nó được xây dựng, một khi SDK được xây dựng, bạn sẽ có SDK thêm vào vị trí này.
+
+42
+00:03:30,520 --> 00:03:38,260
+Vì vậy, trong vị trí này, để làm cho nó sẵn sàng cho các nhà phát triển, hoặc bạn có thể chia sẻ nó trong của bạn
+
+43
+00:03:38,380 --> 00:03:47,170
+Internet địa phương hoặc có thể máy chủ địa phương, hoặc bạn có thể đưa nó lên trang web, trên một máy chủ web
+
+44
+00:03:47,170 --> 00:03:54,520
+và chia sẻ mối liên hệ với nhà phát triển để họ có thể thêm vào đó thêm vào trong studio của họ.
+
+45
+00:03:54,640 --> 00:04:00,600
+Vì vậy, tôi nghĩ cho phần lý thuyết, tôi nghĩ rằng đó là nó cho buổi này.
+
+46
+00:04:00,600 --> 00:04:06,570
+Vì vậy, chúng tôi sẽ xem xét một buổi thực tế trong các hướng dẫn tiếp theo.
+
+47
+00:04:06,570 --> 00:04:07,080
+Cảm ơn.
+
