@@ -1,0 +1,180 @@
+1
+00:00:09,880 --> 00:00:15,560
+Android's permission model is a central component of its security architecture, governing how applications
+
+2
+00:00:15,600 --> 00:00:18,480
+access sensitive resources and data tool.
+
+3
+00:00:18,800 --> 00:00:25,120
+It's a fine grained system designed to protect user privacy and device security by requiring applications
+
+4
+00:00:25,120 --> 00:00:27,880
+to explicitly declare the permissions they need.
+
+5
+00:00:28,200 --> 00:00:32,520
+Understanding this permission model is crucial for both developers and users.
+
+6
+00:00:32,960 --> 00:00:37,680
+The foundation of the Android permission model lies in the principle of least privilege.
+
+7
+00:00:38,040 --> 00:00:43,120
+Applications are only granted the permissions necessary to perform their intended functions, minimizing
+
+8
+00:00:43,120 --> 00:00:46,120
+the potential damage if an application is compromised.
+
+9
+00:00:46,480 --> 00:00:52,040
+This helps prevent malicious applications from gaining unauthorized access to sensitive data or system
+
+10
+00:00:52,040 --> 00:00:52,840
+resources.
+
+11
+00:00:53,200 --> 00:00:57,600
+Prior to Android six, marshmallow permissions were granted at install time.
+
+12
+00:00:57,920 --> 00:01:03,640
+Users were presented with a list of permissions, an application requested, and had to accept them
+
+13
+00:01:03,640 --> 00:01:05,040
+all to install the app.
+
+14
+00:01:05,320 --> 00:01:11,560
+This approach lacked granularity and transparency, as users often didn't understand the implications
+
+15
+00:01:11,560 --> 00:01:13,520
+of granting certain permissions.
+
+16
+00:01:13,960 --> 00:01:19,280
+With the introduction of runtime permissions in Android six marshmallow, the permission model underwent
+
+17
+00:01:19,320 --> 00:01:20,880
+a significant change.
+
+18
+00:01:21,280 --> 00:01:27,240
+Now, applications request permissions at runtime when they actually need to access a sensitive resource.
+
+19
+00:01:27,600 --> 00:01:32,960
+This gives users more control over what applications can access, and allows them to make more informed
+
+20
+00:01:32,960 --> 00:01:35,200
+decisions about granting permissions.
+
+21
+00:01:35,600 --> 00:01:39,920
+Runtime permissions are grouped into categories based on the type of resource they protect.
+
+22
+00:01:40,240 --> 00:01:45,640
+For example, the location permission group includes permissions related to accessing the device's location.
+
+23
+00:01:45,960 --> 00:01:52,040
+When an application requests a permission from a group, the user is prompted to grant or deny the permission.
+
+24
+00:01:52,400 --> 00:01:57,800
+If the user grants the permission, the application is allowed to access any resource protected by that
+
+25
+00:01:57,800 --> 00:01:58,680
+permission group.
+
+26
+00:01:59,000 --> 00:02:04,400
+Custom permissions are defined by individual applications to protect their own resources and data.
+
+27
+00:02:05,080 --> 00:02:09,720
+These permissions are not part of the standard Android permissions set and are specific to the application
+
+28
+00:02:09,720 --> 00:02:10,640
+that defines them.
+
+29
+00:02:11,040 --> 00:02:16,480
+Other applications can request access to these custom permissions in order to interact with the defining
+
+30
+00:02:16,520 --> 00:02:18,240
+application's resources.
+
+31
+00:02:18,600 --> 00:02:24,320
+Custom permissions provide a way for applications to control access to their data and functionality,
+
+32
+00:02:24,520 --> 00:02:28,110
+allowing them to limit access to only trusted applications.
+
+33
+00:02:28,550 --> 00:02:33,350
+The Android permission model also supports the concept of signature permissions.
+
+34
+00:02:33,750 --> 00:02:38,750
+Signature permissions are granted to applications that are signed with the same certificate.
+
+35
+00:02:39,070 --> 00:02:44,550
+This allows applications from the same developer to share resources and data without requiring explicit
+
+36
+00:02:44,550 --> 00:02:45,550
+user consent.
+
+37
+00:02:45,910 --> 00:02:51,630
+Signature permissions are often used by system applications and other trusted applications to access
+
+38
+00:02:51,630 --> 00:02:53,390
+sensitive system resources.
+
+39
+00:02:53,830 --> 00:02:57,750
+It's also important to highlight that the permission model is continuously evolving.
+
+40
+00:02:58,630 --> 00:03:04,870
+Google regularly introduces new permissions and updates the existing ones to address emerging security
+
+41
+00:03:04,910 --> 00:03:07,230
+threats and privacy concerns.
+
+42
+00:03:07,590 --> 00:03:13,630
+For example, Android ten introduced new restrictions on background location access, giving users even
+
+43
+00:03:13,630 --> 00:03:17,430
+more control over how applications use their location data.
+
+44
+00:03:18,430 --> 00:03:23,550
+All in all, the Android permission model is a crucial aspect of the operating system's security.
+
+45
+00:03:23,990 --> 00:03:29,550
+It controls how applications request access to data, resources, and functionalities.
+
