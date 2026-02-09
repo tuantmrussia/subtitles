@@ -1,0 +1,64 @@
+1
+00:00:00,990 --> 00:00:03,390
+Chúng ta hãy bàn về chất kết dính.
+
+2
+00:00:04,080 --> 00:00:08,790
+Binder là IPC trong quá trình giao tiếp của họ ở Ando.
+
+3
+00:00:09,240 --> 00:00:16,440
+Như các bạn có thể thấy trong biểu đồ kiến trúc này, chất kết dính là cầu nối giữa các ứng dụng và ứng dụng
+
+4
+00:00:16,440 --> 00:00:18,930
+Cơ sở và dịch vụ hệ thống.
+
+5
+00:00:19,980 --> 00:00:21,660
+Tại sao chúng ta cần dây trói?
+
+6
+00:00:22,800 --> 00:00:30,760
+Ứng dụng người máy và dịch vụ hệ thống hoạt động trong một quá trình riêng biệt cho an ninh, ổn định và quản lý bộ nhớ.
+
+7
+00:00:31,680 --> 00:00:33,390
+Nhưng họ cần chia sẻ dữ liệu.
+
+8
+00:00:33,750 --> 00:00:42,780
+Đó là lý do tại sao chúng tôi cần bounders bất kỳ ứng dụng để liên lạc với trợ lý hệ thống dịch vụ hoặc HAL có
+
+9
+00:00:42,780 --> 00:00:44,250
+để đi qua một cái chốt.
+
+10
+00:00:44,880 --> 00:00:50,190
+Tóm lại, Binder cho phép hai quá trình khác nhau để giao tiếp với nhau.
+
+11
+00:00:50,910 --> 00:00:58,800
+Đây là những tính năng chính của Binder IPC, một trình điều khiển nhân, để tạo điều kiện cho giao tiếp nội bộ.
+
+12
+00:00:59,160 --> 00:01:06,060
+Vì vậy về cơ bản Binder là một trình điều khiển nhân được thực hiện trong Linux để tạo điều kiện cho giao tiếp giữa các tiến trình.
+
+13
+00:01:06,780 --> 00:01:08,990
+Đó là RBC nhẹ.
+
+14
+00:01:09,120 --> 00:01:12,720
+Đó là phương pháp giao tiếp nhẹ nhàng, từ xa.
+
+15
+00:01:13,230 --> 00:01:17,190
+Mục đích của nó là một cây cột thẳng để xử lý yêu cầu.
+
+16
+00:01:17,940 --> 00:01:22,140
+Nó cho phép giao tiếp đồng bộ giữa các bộ xử lý.
+
