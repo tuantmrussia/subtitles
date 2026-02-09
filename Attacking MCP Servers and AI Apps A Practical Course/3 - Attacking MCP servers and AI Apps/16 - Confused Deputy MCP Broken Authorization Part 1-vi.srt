@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:02,200
+Chào mừng trở lại.
+
+2
+00:00:02,200 --> 00:00:06,920
+Hôm nay chúng ta sẽ xem xét một yếu tố logic kinh doanh mà không thể phát hiện bằng
+
+3
+00:00:06,920 --> 00:00:09,040
+một máy quét an ninh truyền thống.
+
+4
+00:00:09,040 --> 00:00:14,200
+Sự dễ bị tổn thương được gọi là Đội phó bối rối và nó luôn nằm dưới hạng mục 10
+
+5
+00:00:14,200 --> 00:00:16,360
+của một giấy phép bị hỏng.
+
+6
+00:00:16,360 --> 00:00:23,280
+Theo ý kiến của tôi bất kỳ công ty cung cấp từ xa máy chủ MCP có thể đã nhầm lẫn sự ra mắt nếu
+
+7
+00:00:23,280 --> 00:00:29,040
+Họ cho máy chủ MCP của họ truy cập rộng vào một dịch vụ hậu cần.
+
+8
+00:00:29,040 --> 00:00:34,120
+Trước khi chúng tôi đi sâu vào chi tiết và phòng thí nghiệm, tôi muốn chia sẻ với các bạn một sự cố thế giới thực
+
+9
+00:00:34,120 --> 00:00:41,520
+Chuyện xảy ra ở MCP từ xa với một giấy phép bị hỏng xảy ra với Asana năm 2025.
+
+10
+00:00:41,520 --> 00:00:45,280
+Tôi muốn đọc vài dòng từ Sans in Newsletter.
+
+11
+00:00:45,280 --> 00:00:50,560
+Asana đã cố định một tổn thương trong việc thực hiện giao thức ngữ cảnh mô hình nhân tạo
+
+12
+00:00:50,560 --> 00:00:56,960
+Giao thức tích hợp thông minh mà có thể đã được khai thác để xem dữ liệu thuộc về
+
+13
+00:00:56,960 --> 00:00:59,400
+cho các tổ chức khác.
+
+14
+00:00:59,400 --> 00:01:04,760
+Trong khi không có báo cáo kỹ thuật về sự cố này, chúng tôi có thể đọc từ những người
+
+15
+00:01:04,760 --> 00:01:10,480
+dòng hoặc chúng tôi có thể nhận được từ những dòng rằng nguyên nhân gốc là một quyền truy cập bị hỏng
+
+16
+00:01:10,480 --> 00:01:12,600
+Máy chủ MCP từ xa.
+
+17
+00:01:12,600 --> 00:01:19,440
+Trong các dịch vụ đa phần cho phép người dùng A truy cập dữ liệu của người dùng B trong một tổ chức khác,
+
+18
+00:01:19,440 --> 00:01:20,440
+Thật là thảm họa.
+
+19
+00:01:20,440 --> 00:01:25,680
+Hãy cố gắng hiểu tại sao điều này lại có thể xảy ra.
+
+20
+00:01:25,680 --> 00:01:31,560
+Vì vậy, khi các nhà phát triển muốn giới thiệu một máy chủ MCP tích hợp từ xa với cuối cùng của họ
+
+21
+00:01:31,560 --> 00:01:37,720
+họ đã có bất cứ nơi nào để tiếp cận dịch vụ của họ bởi khách hàng.
+
+22
+00:01:37,720 --> 00:01:42,840
+Hãy giả sử rằng những AI có một kiểm tra hợp lệ, một cái gì đó như hợp lệ
+
+23
+00:01:42,840 --> 00:01:47,840
+Cho phép, phạm vi hiệu quả, thực thi điều khiển truy cập...
+
+24
+00:01:47,840 --> 00:01:53,800
+Vì vậy, tất cả mọi thứ có thể được an toàn từ góc nhìn của CN được phục vụ bởi hậu phương.
+
+25
+00:01:53,800 --> 00:01:59,560
+Tuy nhiên, bây giờ họ muốn giới thiệu các khả năng AI trên nền tảng của họ để phục vụ tốt hơn
+
+26
+00:01:59,560 --> 00:02:02,440
+Khách hàng và trở nên cạnh tranh hơn.
+
+27
+00:02:02,440 --> 00:02:08,160
+Các máy chủ mCP trong trường hợp này là sẽ là cầu giữa các khách hàng mô hình AI và
+
+28
+00:02:08,160 --> 00:02:11,400
+dữ liệu sống trong dịch vụ hậu cần.
+
+29
+00:02:11,400 --> 00:02:12,680
+Đây là vấn đề.
+
+30
+00:02:12,680 --> 00:02:18,280
+Máy chủ MCP sẽ chấp nhận yêu cầu từ tất cả khách hàng và mọi người dùng.
+
+31
+00:02:18,280 --> 00:02:23,520
+Và bằng cách nào đó nó cần một cách để truy cập dữ liệu thay mặt cho những người dùng đó.
+
+32
+00:02:23,520 --> 00:02:25,920
+Để thực hiện các yêu cầu.
+
+33
+00:02:25,920 --> 00:02:32,480
+Vì vậy, làm thế nào máy chủ MCP đảm bảo rằng người dùng A chỉ có thể truy cập dữ liệu thuộc về một người dùng A
+
+34
+00:02:32,480 --> 00:02:35,200
+Và không phải tôi thuộc về một người dùng B?
+
+35
+00:02:35,200 --> 00:02:41,120
+Để giải quyết vấn đề này, các nhà phát triển thường chọn một trong hai cách tiếp cận.
+
+36
+00:02:41,120 --> 00:02:46,800
+Lựa chọn một, họ đã cung cấp cho trình phục vụ MCP mình một tín hiệu truy cập với quyền hạn rộng và
+
+37
+00:02:46,800 --> 00:02:53,880
+Máy phục vụ MCP có thể sử dụng thẻ truy cập của nó để truy cập bất kỳ dữ liệu nào bằng công chúng hiện có
+
+38
+00:02:53,880 --> 00:02:58,240
+Các điểm dừng được cung cấp bởi dịch vụ hậu cần.
+
+39
+00:02:58,240 --> 00:03:05,200
+Lựa chọn B, họ có thể xây dựng một điểm kết thúc nội bộ dành riêng mà máy chủ MCP có thể sử dụng lại
+
+40
+00:03:05,200 --> 00:03:07,800
+truy cập dữ liệu của bất kỳ người dùng nào.
+
+41
+00:03:07,800 --> 00:03:13,560
+Cả hai phương pháp đều không hoàn toàn chính xác bởi vì họ hoàn toàn lờ đi rủi ro của một ai đó
+
+42
+00:03:13,560 --> 00:03:19,200
+Đang sử dụng máy chủ MCP để truy cập dữ liệu của những người dùng khác.
+
+43
+00:03:19,200 --> 00:03:26,360
+Nói cách khác, nếu người dùng A yêu cầu trình phục vụ MCP lấy dữ liệu của người dùng B, sau đó là máy chủ MCP
+
+44
+00:03:26,360 --> 00:03:30,560
+Về mặt kỹ thuật, nó có thể làm điều đó bởi vì nó có một truy cập rộng.
+
+45
+00:03:30,560 --> 00:03:35,800
+Theo ý tôi, việc thực hiện an ninh sẽ thay vì tái thiết giấy phép,
+
+46
+00:03:35,800 --> 00:03:42,160
+Xác thực logic trong máy phục vụ MCP hoặc cung cấp cho truy cập rộng máy chủ MCP với điều này
+
+47
+00:03:42,160 --> 00:03:44,800
+Huy hiệu cho phép rộng rãi.
+
+48
+00:03:44,800 --> 00:03:50,760
+Các nhà phát triển nên xây dựng MCP để yêu cầu người sử dụng để vượt qua tín hiệu truy cập của chính mình
+
+49
+00:03:50,760 --> 00:03:57,520
+MCP đầu tiên và sau đó MCP sẽ sử dụng các biểu tượng truy cập của người sử dụng để các giao diện kết nối truy cập cho giao diện điều khiển ADI thay thế
+
+50
+00:03:57,520 --> 00:04:03,920
+đang sử dụng một biểu tượng truy cập rộng được tạo ra cho chính máy phục vụ MCP.
+
+51
+00:04:03,920 --> 00:04:08,360
+Và bằng cách đó, bạn có thể tái sử dụng xác nhận quyền hạn mà bạn đã có
+
+52
+00:04:08,360 --> 00:04:10,440
+ở cấp độ phục vụ hậu cần.
+
+53
+00:04:10,440 --> 00:04:14,520
+Trong bài giảng tiếp theo, chúng ta sẽ thấy sự dễ bị tổn thương này trong hành động, vì vậy tôi hy vọng rằng bài giảng này
+
+54
+00:04:14,520 --> 00:04:17,600
+đã được cung cấp thông tin cho bạn và tôi sẽ nhìn thấy bạn trong ngày tiếp theo.
+
+55
+00:04:17,600 --> 00:04:18,600
+Cảm ơn đã theo dõi.
+
