@@ -1,0 +1,400 @@
+1
+00:00:01,100 --> 00:00:08,540
+Phân tích mã nguồn hệ thống UI trong phần này sẽ xem xét cách khởi động UI hệ thống
+
+2
+00:00:08,540 --> 00:00:13,970
+Và tất cả các mô-đun lớp đều chịu trách nhiệm cho hệ thống bỏ phiếu UI.
+
+3
+00:00:14,000 --> 00:00:14,900
+Hãy bắt đầu.
+
+4
+00:00:21,830 --> 00:00:23,960
+Vì vậy, đầu tiên hãy mở ra giả lập.
+
+5
+00:00:26,520 --> 00:00:28,860
+Và để nhìn vào gia đình cửa sổ.
+
+6
+00:00:36,100 --> 00:00:41,160
+OK, vậy là máy giả lập đã lên, và ở đây bạn có thể thấy các bản ghi khóa.
+
+7
+00:00:41,380 --> 00:00:43,930
+Và ở đây tôi đã lọc với hệ thống UI.
+
+8
+00:00:43,990 --> 00:00:46,690
+Đây là chỉ để cho bạn thấy những ổ khóa này.
+
+9
+00:00:46,990 --> 00:00:53,410
+Từ những ổ khóa này, chúng ta có thể thấy rằng hệ thống UI bắt đầu từ hệ thống.
+
+10
+00:00:53,410 --> 00:01:00,130
+Vì vậy, OK, ở đây bạn có thể thấy hệ thống, thời gian của chúng tôi bắt đầu hệ thống UI và mất chín phần nghìn giây
+
+11
+00:01:00,550 --> 00:01:01,750
+Chỉ để kích hoạt hệ thống này.
+
+12
+00:01:02,080 --> 00:01:03,300
+Nó được kích hoạt.
+
+13
+00:01:03,310 --> 00:01:04,720
+Nó đang đi vào cái gói đó.
+
+14
+00:01:04,720 --> 00:01:06,880
+Vậy hoặc là Andreo mang theo hệ thống UI.
+
+15
+00:01:06,970 --> 00:01:11,950
+Và bạn có thể thấy ở đây rằng ứng dụng UI hệ thống được xây dựng cho hệ thống.
+
+16
+00:01:11,950 --> 00:01:18,480
+Ứng dụng UI được tạo ra và sau đó có một số thời gian ở đây nơi bạn có thể thấy tiêm phụ thuộc
+
+17
+00:01:18,610 --> 00:01:19,520
+1 phần nghìn giây.
+
+18
+00:01:19,540 --> 00:01:25,570
+Vì vậy, ở đây, về cơ bản, hệ thống UI sử dụng D'Agata để tiêm một số phụ thuộc.
+
+19
+00:01:25,590 --> 00:01:27,490
+Vì vậy, ở đây nó về cơ bản là làm điều đó.
+
+20
+00:01:27,490 --> 00:01:33,370
+Và sau đó, nó bắt đầu tất cả các mô hình khác nhau của hệ thống.
+
+21
+00:01:33,370 --> 00:01:40,990
+Bạn thích thanh trạng thái khối lượng của mô-đun UI gần đây của máy chơi UI Ringtone của chúng tôi bàn phím UI.
+
+22
+00:01:41,890 --> 00:01:45,370
+Và cuối cùng, nó hoàn thành trong 860 phần nghìn giây.
+
+23
+00:01:45,370 --> 00:01:51,670
+Vì vậy, vào thời điểm này, hệ thống UI đã hoàn toàn lên và chúng tôi đã có tất cả các mô-đun UI tương tự.
+
+24
+00:01:51,820 --> 00:01:54,610
+Và đây là cách mà nó hoạt động ở mức rất cao.
+
+25
+00:01:54,850 --> 00:02:01,600
+Vì vậy, bây giờ chúng ta hãy nhận được vào các mã và xem làm thế nào nó là thực sự kích hoạt và lớp học nào chịu trách nhiệm
+
+26
+00:02:01,600 --> 00:02:02,830
+Cho những gì chi tiết.
+
+27
+00:02:03,370 --> 00:02:09,110
+Vì vậy, bây giờ chúng ta hãy xem xét các mã, làm thế nào thêm đánh dấu hoặc các điểm thực hiện quan trọng.
+
+28
+00:02:09,130 --> 00:02:14,500
+Như chúng ta đã bàn, hệ thống UI là tiêu chuẩn từ máy chủ hệ thống.
+
+29
+00:02:14,590 --> 00:02:19,690
+Vì vậy trong hệ thống máy chủ, nó là một chức năng gọi là bắt đầu các dịch vụ khác.
+
+30
+00:02:20,410 --> 00:02:25,750
+Đây là chức năng bắt đầu rất nhiều dịch vụ khác.
+
+31
+00:02:26,050 --> 00:02:32,980
+Máy chủ hệ thống là một trong những phần quan trọng nhất của steroid, và máy chủ hệ thống về cơ bản chịu trách nhiệm
+
+32
+00:02:33,070 --> 00:02:39,370
+Hệ thống quản lý hoạt động, quản lý cửa sổ
+
+33
+00:02:39,370 --> 00:02:41,410
+Hệ thống và rất nhiều dịch vụ khác.
+
+34
+00:02:41,560 --> 00:02:47,980
+Vì vậy, hệ thống UI bắt đầu từ những dịch vụ khác, và nó bắt đầu tại thời điểm này.
+
+35
+00:02:48,700 --> 00:02:51,700
+Vì vậy, có một chức năng khác được gọi là hệ thống bắt đầu.
+
+36
+00:02:51,700 --> 00:02:54,190
+Anh muốn cái này tới đó.
+
+37
+00:02:54,280 --> 00:02:56,620
+Vì vậy, chức năng này là khá quan trọng.
+
+38
+00:02:56,680 --> 00:03:05,170
+Những gì nó làm là nó là một và nó là quản lý bên trong và sau đó nó sử dụng các dịch vụ hệ thống nhận được UI
+
+39
+00:03:05,170 --> 00:03:06,990
+Chức năng thành phần trong đó.
+
+40
+00:03:07,000 --> 00:03:09,950
+Vì vậy, nếu bạn đến đó, về cơ bản nó là một lớp học trừu tượng.
+
+41
+00:03:09,970 --> 00:03:13,540
+Nó được xác định trong người quản lý gói hàng, ông Jarba.
+
+42
+00:03:13,600 --> 00:03:19,430
+Và trong đó, bạn có thể thấy rằng nó có được thành phần dịch vụ UI hệ thống từ cuộc xung đột mùa hè tiếp theo của tôi,
+
+43
+00:03:19,430 --> 00:03:23,520
+nhưng không là gì ngoài một hệ thống cấu hình thành phần UI.
+
+44
+00:03:23,590 --> 00:03:25,540
+Đó là cái ở đây.
+
+45
+00:03:25,880 --> 00:03:31,450
+Bạn có thể thấy rằng nó đang chỉ vào OMED hoặc AD hoặc AD hoặc hệ thống mà bạn muốn dịch vụ.
+
+46
+00:03:31,780 --> 00:03:33,850
+Chúng tôi bắt đầu từ máy chủ hệ thống.
+
+47
+00:03:33,850 --> 00:03:40,240
+Vì vậy, hệ thống máy chủ đang có các dịch vụ chứng khoán khác, đó là thực sự chịu trách nhiệm cho việc gọi chứng khoán
+
+48
+00:03:40,250 --> 00:03:41,220
+Hệ thống UI.
+
+49
+00:03:41,230 --> 00:03:44,410
+Và nếu anh không khởi động hệ thống của anh, tại sao chúng tôi lại có mục đích.
+
+50
+00:03:44,530 --> 00:03:50,380
+Vì vậy, ở đây bạn có thể thấy nó tạo ra một mục đích, sử dụng thành phần cụ thể này từ gói và nó là
+
+51
+00:03:50,380 --> 00:03:51,070
+một dịch vụ.
+
+52
+00:03:51,070 --> 00:03:57,990
+Và sau đó nó bắt đầu dịch vụ, như người dùng với trình thông dịch này cũng nói với trình quản lý Windows.
+
+53
+00:03:58,000 --> 00:04:00,010
+Thêm một hệ thống UI.
+
+54
+00:04:00,010 --> 00:04:05,080
+Bạn bắt đầu bằng cách gọi các chức năng cụ thể, hoặc nó thông báo cho các dịch vụ quản lý cửa sổ.
+
+55
+00:04:05,080 --> 00:04:07,120
+Thêm UI vào hệ thống, bạn khởi động nó.
+
+56
+00:04:07,360 --> 00:04:13,870
+Tóm lại, hệ thống bắt đầu UI cơ bản tạo ra một công cụ để quản lý gói và từ bộ quản lý gói.
+
+57
+00:04:13,900 --> 00:04:21,010
+Nó có thành phần dịch vụ UI hệ thống, không là gì ngoài hệ thống lớp dịch vụ UI.
+
+58
+00:04:21,100 --> 00:04:25,480
+Và với cái indent này, nó tạo ra lớp dịch vụ hệ thống.
+
+59
+00:04:25,600 --> 00:04:31,180
+Đồng thời, nó cũng thông báo cho trình quản lý cửa sổ biết rằng hệ thống UI bạn bắt đầu mà về cơ bản là chức năng
+
+60
+00:04:31,180 --> 00:04:32,860
+Của start System UI.
+
+61
+00:04:32,920 --> 00:04:36,460
+Vì vậy, bây giờ hãy đi để hệ thống bạn phục vụ màu trắng.
+
+62
+00:04:36,730 --> 00:04:43,330
+Vì vậy trong dịch vụ UI hệ thống, nó cơ bản mở rộng dịch vụ và nó có một số kiến trúc sư ở đây và
+
+63
+00:04:43,330 --> 00:04:49,600
+trong việc tạo ra dòng đầu tiên, mà bạn có thể thấy ở đây, thực sự, ví dụ, ứng dụng kích thích
+
+64
+00:04:49,600 --> 00:04:54,220
+Lớp học gây ra chức năng đặc biệt này, đó là điều quan trọng nhất mà chúng ta cần xem xét.
+
+65
+00:04:54,340 --> 00:04:58,070
+Nó cũng làm một số thứ khác ở đây, và đây là thứ quan trọng nhất đối với chúng ta.
+
+66
+00:04:58,090 --> 00:04:59,230
+Vậy hãy đến đó.
+
+67
+00:04:59,410 --> 00:05:07,270
+Ở đây bạn có thể thấy rằng nó có được hệ thống bạn các thành phần dịch vụ màu trắng và các thành phần dịch vụ UI hệ thống.
+
+68
+00:05:07,300 --> 00:05:13,030
+Nó nhận được từ các cấu hình cấu hình cấu hình cấu hình hệ thống cấu hình thành phần dịch vụ UI.
+
+69
+00:05:13,180 --> 00:05:19,880
+Vì vậy, hãy đi vào bên trong mà được gọi là hệ thống sửa chữa thành phần dịch vụ UI trong hệ thống
+
+70
+00:05:19,880 --> 00:05:25,090
+Bạn có thể thấy rằng nó có tất cả các thành phần UI hệ thống được định nghĩa.
+
+71
+00:05:25,110 --> 00:05:30,220
+Về cơ bản, chúng tôi biết tất cả những thứ này và chúng tôi bắt đầu chúng từng cái một.
+
+72
+00:05:30,370 --> 00:05:33,610
+Hãy xem làm thế nào hệ thống đang bắt đầu mỗi của mô hình này.
+
+73
+00:05:33,850 --> 00:05:35,680
+Phải, và điều đó cho chúng ta biết điều đó.
+
+74
+00:05:35,860 --> 00:05:36,310
+Được rồi.
+
+75
+00:05:38,840 --> 00:05:41,220
+Ở đây bạn có thể thấy cái tên.
+
+76
+00:05:41,240 --> 00:05:47,870
+Và với tên này, tên này được thực sự thông qua để bắt đầu dịch vụ nếu cần thiết và bắt đầu dịch vụ
+
+77
+00:05:47,870 --> 00:05:48,650
+nếu cần thiết.
+
+78
+00:05:48,770 --> 00:05:57,100
+Bạn đi xuống dưới và thấy rằng có một hoặc thực sự vòng qua tất cả các dịch vụ
+
+79
+00:05:57,110 --> 00:05:58,970
+hay bất kỳ dịch vụ nào tương tự.
+
+80
+00:05:59,000 --> 00:06:02,010
+Nó trải qua từng bước một.
+
+81
+00:06:02,150 --> 00:06:05,000
+Vì vậy, ở đây bạn có thể thấy trên giày hoàn toàn.
+
+82
+00:06:05,000 --> 00:06:07,580
+Nó cũng được gọi trên giày hoàn tất.
+
+83
+00:06:07,580 --> 00:06:12,170
+Tự khởi động của nó hoàn thành chỉ là một chức năng từ hệ thống mới hoặc.
+
+84
+00:06:12,830 --> 00:06:20,420
+Các lớp UI hoặc Java thực sự được thừa hưởng bởi hầu hết các thành phần và mở rộng bởi đa số
+
+85
+00:06:20,420 --> 00:06:22,040
+của những thành phần này.
+
+86
+00:06:22,070 --> 00:06:26,720
+Tóm lại, điều xảy ra là hệ thống bắt đầu tiến trình từ hệ thống.
+
+87
+00:06:26,720 --> 00:06:33,340
+Vì vậy hệ thống Tiwa ghi điểm hệ thống bắt đầu UI từ hệ thống và hệ thống sao UI.
+
+88
+00:06:33,380 --> 00:06:41,200
+Nó thực sự chọn thành phần và tạo ra một mục đích và bắt đầu dịch vụ UI hệ thống.
+
+89
+00:06:41,200 --> 00:06:44,030
+Vậy dịch vụ UI hệ thống và trong hệ thống UI.
+
+90
+00:06:44,030 --> 00:06:47,520
+Khởi động lại tất cả ứng dụng UI hệ thống.
+
+91
+00:06:47,540 --> 00:06:52,890
+Và tất nhiên, chức năng đặc biệt này bắt đầu rõ ràng nếu cần thiết và trong dịch vụ bắt đầu cần thiết
+
+92
+00:06:52,910 --> 00:06:58,430
+nó hoặc bắt đầu dịch vụ, nếu cần, hoạt động như là chức năng bình thường, mà thực sự vòng lặp thông qua tất cả
+
+93
+00:06:58,430 --> 00:07:03,430
+tất cả những gói khác nhau này và bắt đầu chúng từng cái một.
+
+94
+00:07:03,440 --> 00:07:07,460
+Và đó chính xác là những gì chúng ta đang thấy trong những khúc gỗ này.
+
+95
+00:07:07,730 --> 00:07:10,790
+Đó chính xác là những gì chúng ta đang thấy trong khu nhà khối này.
+
+96
+00:07:11,210 --> 00:07:14,780
+Bạn có thể thấy rằng nó đang bắt đầu mỗi dịch vụ này.
+
+97
+00:07:14,780 --> 00:07:19,580
+Từng người một, nó sẽ là cùng một chuỗi như được định nghĩa.
+
+98
+00:07:19,640 --> 00:07:26,660
+Yeah, nên bắt đầu kênh thông báo, kênh thông báo đầu tiên và sau đó chìa khóa ngay lập tức
+
+99
+00:07:26,930 --> 00:07:34,490
+Chìa khóa người trung gian Gavi và sau đó các lý do tại sao âm lượng UI gần đây là thanh và vv.
+
+100
+00:07:34,520 --> 00:07:36,830
+Trong bưu điện, các bạn hãy trình diễn.
+
