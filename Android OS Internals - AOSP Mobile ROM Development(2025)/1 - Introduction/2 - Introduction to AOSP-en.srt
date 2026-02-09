@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:11,400
+ Android is an open source operating system which is widely used in mobile devices.
+
+2
+00:00:11,400 --> 00:00:17,680
+ It is also used in automotive devices, elevations, via devices, etc.
+
+3
+00:00:17,680 --> 00:00:23,160
+ It has also a corresponding open source project which is led by Google.
+
+4
+00:00:23,160 --> 00:00:28,520
+ On the right side you can see a high level architecture diagram of AOSP.
+
+5
+00:00:28,520 --> 00:00:35,400
+ So as you can see, Android has multiple layers, but the bottom we can find Linux kernel.
+
+6
+00:00:35,400 --> 00:00:39,280
+ So Android is built on top of Linux kernel.
+
+7
+00:00:39,280 --> 00:00:43,800
+ And above that there is the hull which is the hardware abstraction layer.
+
+8
+00:00:43,800 --> 00:00:48,800
+ And above that we have the Android runtime or the Dalvik virtual machine.
+
+9
+00:00:48,800 --> 00:00:54,920
+ At the same level we have the native libraries which are mostly returning C and C++.
+
+10
+00:00:54,920 --> 00:00:59,600
+ On top we have the Android framework which is returning Java.
+
+11
+00:00:59,600 --> 00:01:02,960
+ And at the top most we have the apps.
+
+12
+00:01:02,960 --> 00:01:07,320
+ So as an normal Android user will be mostly interacting with the apps.
+
+13
+00:01:07,320 --> 00:01:13,080
+ And the Android framework and the native libraries are basically a mediator between the apps
+
+14
+00:01:13,080 --> 00:01:15,880
+ and the hull or the next kernel.
+
+15
+00:01:15,880 --> 00:01:20,520
+ So we will discuss in detail about each of these layers in a later section.
+
+16
+00:01:20,520 --> 00:01:25,040
+ Next I would like to introduce you to source.android.com.
+
+17
+00:01:25,040 --> 00:01:29,560
+ So as an AOSP platform developer you should definitely look at this website.
+
+18
+00:01:29,560 --> 00:01:32,400
+ You get a lot of information about AOSP.
+
+19
+00:01:32,400 --> 00:01:35,400
+ You can find the English version here, socialtandro.com.
+
+20
+00:01:35,400 --> 00:01:38,040
+ And if you need a Chinese version you could use this one.
+
+21
+00:01:38,040 --> 00:01:41,320
+ There is also a link to the code provided by Google.
+
+22
+00:01:41,320 --> 00:01:46,480
+ So if you click on this you will take you to the code and here you can see the branch.
+
+23
+00:01:46,480 --> 00:01:47,480
+ It is the master now.
+
+24
+00:01:47,480 --> 00:01:52,480
+ So if you want to quickly reference refer the code of AOSP then you can use this link.
+
+25
+00:01:52,480 --> 00:01:54,480
+ CS.android.com.
+
+26
+00:01:54,480 --> 00:01:57,800
+ And here you can search for whatever modules you want.
+
+27
+00:01:57,800 --> 00:02:02,440
+ And similar to an editor you can use this but only for reading purpose.
+
+28
+00:02:02,440 --> 00:02:08,640
+ Search for system UI here then you can see the module and system UI related classes here.
+
+29
+00:02:08,640 --> 00:02:10,880
+ And here you have the options to change the branch.
+
+30
+00:02:10,880 --> 00:02:14,880
+ So if you are looking for some other branch you can of course use that branches here.
+
+31
+00:02:14,880 --> 00:02:19,240
+ And if you are looking for some commits that also you can see here.
+
+32
+00:02:19,240 --> 00:02:24,320
+ In source.android.com you can find a lot of information about AOSP.
+
+33
+00:02:24,320 --> 00:02:30,880
+ Under the docs you can see different documentations for getting started, security, core topics,
+
+34
+00:02:30,880 --> 00:02:34,760
+ compatibility, Android devices, reference.
+
+35
+00:02:34,760 --> 00:02:39,400
+ Under getting started there is the required information about how to download and build
+
+36
+00:02:39,400 --> 00:02:42,480
+ an AOSP project.
+
+37
+00:02:42,480 --> 00:02:47,840
+ Under you can find information about the platform structure, development environment setup,
+
+38
+00:02:47,840 --> 00:02:53,920
+ downloading and building the source, customizations and some information on how to contribute
+
+39
+00:02:53,920 --> 00:02:58,360
+ to Android open source project.
+
+40
+00:02:58,360 --> 00:03:04,200
+ Under security you can get an overview of Android security at different levels like in an
+
+41
+00:03:04,200 --> 00:03:09,720
+ Android application or even in the kernel level.
+
+42
+00:03:09,720 --> 00:03:17,000
+ It also details the security features provided by Android like SC Linux, key store, encryption,
+
+43
+00:03:17,000 --> 00:03:21,040
+ authentication and app signing.
+
+44
+00:03:21,040 --> 00:03:27,360
+ There is information on how to perform security test on your AOSP build and some best practices
+
+45
+00:03:27,360 --> 00:03:29,880
+ for security.
+
+46
+00:03:29,880 --> 00:03:34,960
+ Under core topics you can find a lot of information on different building blocks of Android.
+
+47
+00:03:34,960 --> 00:03:40,400
+ There is detailed explanation about the architecture and many essential modules in Android
+
+48
+00:03:40,400 --> 00:03:44,640
+ like audio, camera, media, etc.
+
+49
+00:03:44,640 --> 00:03:50,640
+ Under compatibility you can find the compatibility definition document and compatibility test
+
+50
+00:03:50,640 --> 00:03:53,960
+ your related information.
+
+51
+00:03:53,960 --> 00:03:58,160
+ These are important if you plan to build a pure Android device.
+
+52
+00:03:58,160 --> 00:04:03,840
+ If you want to keep Android logo on your device you should pass these CTS tests or
+
+53
+00:04:03,840 --> 00:04:07,160
+ compatibility test suit tests.
+
+54
+00:04:07,160 --> 00:04:12,520
+ You run the CTS test for your AOSP build and send it to Google for approval.
+
+55
+00:04:12,520 --> 00:04:14,960
+ But this is not mandatory.
+
+56
+00:04:14,960 --> 00:04:20,840
+ If you are simply building a device that does not need Android logo then this is optional.
+
+57
+00:04:20,840 --> 00:04:26,680
+ These test are quality gates to ensure that your build meets a basic quality standards
+
+58
+00:04:26,680 --> 00:04:28,680
+ set by Google.
+
+59
+00:04:28,680 --> 00:04:35,920
+ After Android devices we can find information specific to automotive, enterprise and TV.
+
+60
+00:04:35,920 --> 00:04:40,640
+ And finally there is a reference section under which you find more information about the
+
+61
+00:04:40,640 --> 00:04:48,960
+ hull, hardware abstraction layer, HIDL, hull interface definition language and trade federation
+
+62
+00:04:48,960 --> 00:04:58,840
+ which is basically a testing framework for continuous testing.
+
