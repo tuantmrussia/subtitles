@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,920
+ Once a problem is clearly defined and scoped, the next step is turning that idea into a real
+
+2
+00:00:05,920 --> 00:00:12,800
+ system. This is where many projects fail, not because the model is weak, but because the system
+
+3
+00:00:12,800 --> 00:00:20,240
+ around it is poorly designed. AI does not live in isolation. It exists inside workflows,
+
+4
+00:00:20,240 --> 00:00:28,160
+ APIs, user interfaces, and business rules. Before writing any code, you must translate the use case
+
+5
+00:00:28,160 --> 00:00:34,640
+ into concrete components. Decide what the AI is responsible for and what should remain deterministic
+
+6
+00:00:34,640 --> 00:00:42,080
+ logic. Identify inputs, outputs, and system boundaries early. This prevents scope creep and fragile
+
+7
+00:00:42,080 --> 00:00:48,960
+ designs later. Skipping this step leads to brittle systems that are hard to debug, unsafe to scale,
+
+8
+00:00:48,960 --> 00:00:55,120
+ and expensive to maintain. Architecture decisions made now directly impact reliability,
+
+9
+00:00:55,120 --> 00:01:03,120
+ security, performance, and cost. Good system design makes implementation easier. Bad system design
+
+10
+00:01:03,120 --> 00:01:09,920
+ guarantees rework. This slide sets the mindset. You are not building a prompt. You are building a
+
+11
+00:01:09,920 --> 00:01:17,360
+ system. Every production AI system follows a layered architecture, even if it's not drawn explicitly.
+
+12
+00:01:17,360 --> 00:01:23,600
+ Understanding these layers is critical for building something that survives real usage.
+
+13
+00:01:23,600 --> 00:01:30,560
+ At the top is the user interface or API layer, where requests enter the system. Below that is
+
+14
+00:01:30,560 --> 00:01:36,400
+ the orchestration layer, which handles routing, business rules, and workflow coordination. This
+
+15
+00:01:36,400 --> 00:01:43,520
+ layer decides when to call the model, when to call tools, and when to escalate. The LLM interaction
+
+16
+00:01:43,520 --> 00:01:50,960
+ layer manages prompt construction, model invocation, retries, and response parsing. Beneath it,
+
+17
+00:01:50,960 --> 00:01:57,680
+ sit data sources, vector stores, databases, APIs, and external systems that provide context.
+
+18
+00:01:57,680 --> 00:02:04,880
+ Finally, observability spans everything, logging, monitoring, alerts, and safety controls.
+
+19
+00:02:04,880 --> 00:02:12,080
+ Without observability, failures go unnoticed. Clear separation of these layers makes systems
+
+20
+00:02:12,080 --> 00:02:19,280
+ easier to reason about, test, and evolve. This architecture is the backbone of production grade AI
+
+21
+00:02:19,280 --> 00:02:25,040
+ in production systems. Prompts are not experiments. They are engineering assets.
+
+22
+00:02:25,040 --> 00:02:30,160
+ Treating prompts casually is one of the fastest ways to break reliability.
+
+23
+00:02:30,160 --> 00:02:37,040
+ A strong prompt begins with a clear role definition. The model must know who it is and what it is
+
+24
+00:02:37,040 --> 00:02:44,640
+ responsible for. Next, the expected output format must be explicit. Whether the output is JSON,
+
+25
+00:02:44,640 --> 00:02:48,800
+ markdown, or text, ambiguity leads to downstream failures.
+
+26
+00:02:48,800 --> 00:02:55,840
+ Constraints matter. Tone, length, and behavior boundaries should be defined upfront.
+
+27
+00:02:55,840 --> 00:03:02,480
+ Prompts must also address ambiguity. What should the model do when information is missing or unclear?
+
+28
+00:03:02,480 --> 00:03:08,560
+ Finally, prompts must be versioned. Store them in source control, review changes,
+
+29
+00:03:08,560 --> 00:03:15,200
+ and enable rollback. This allows testing, iteration, and accountability. The key lesson,
+
+30
+00:03:15,200 --> 00:03:21,360
+ prompts are code. If you wouldn't hot edit production code, you shouldn't hot edit production prompts.
+
+31
+00:03:21,360 --> 00:03:26,800
+ The difference between experimental prompts and production prompts is structure.
+
+32
+00:03:26,800 --> 00:03:35,600
+ Reliable systems demand predictability. System prompts define persistent behavior and constraints
+
+33
+00:03:35,600 --> 00:03:42,240
+ that apply across all interactions. Step-based instructions break complex tasks
+
+34
+00:03:42,240 --> 00:03:48,480
+ into sequential reasoning paths, reducing variance and outputs. Guard rails must be embedded
+
+35
+00:03:48,480 --> 00:03:53,360
+ directly into the prompt, including refusal conditions and safety constraints.
+
+36
+00:03:53,360 --> 00:04:00,640
+ Output schemas, especially JSON, allow responses to be parsed and validated programmatically
+
+37
+00:04:00,640 --> 00:04:07,440
+ instead of guest. Finally, fallback logic is critical. The prompt should specify what to do
+
+38
+00:04:07,440 --> 00:04:13,920
+ when confidence is low or inputs are invalid. Clear refusal and escalation instructions prevent
+
+39
+00:04:13,920 --> 00:04:20,560
+ hallucination. Creative prompts may impress in demos. Structured prompts survive in production.
+
+40
+00:04:20,560 --> 00:04:28,480
+ Structure doesn't limit capability. It enables reliability. Large language models do not know your
+
+41
+00:04:28,480 --> 00:04:34,560
+ data. They rely on static training with knowledge cutoffs. Whenever accuracy matters,
+
+42
+00:04:34,560 --> 00:04:40,720
+ memory is not enough. Retrieval augmented generation is essential when dealing with dynamic
+
+43
+00:04:40,720 --> 00:04:47,680
+ information, proprietary data, or compliance sensitive content. Policies, documentation,
+
+44
+00:04:47,680 --> 00:04:52,400
+ pricing, and internal knowledge must be retrieved at query time, not guest.
+
+45
+00:04:53,360 --> 00:05:00,160
+ RAG is also mandatory when citations or audit trails are required. If hallucinations are unacceptable,
+
+46
+00:05:00,160 --> 00:05:06,400
+ retrieval is non-negotiable. The decision rule is simple. Don't trust the model's memory.
+
+47
+00:05:06,400 --> 00:05:11,520
+ If the information changes, belongs to your organization, or must be verifiable,
+
+48
+00:05:11,520 --> 00:05:17,360
+ use retrieval. This slide teaches restraint. RAG isn't optional complexity,
+
+49
+00:05:17,360 --> 00:05:24,320
+ its architectural responsibility. RAG systems follow a predictable life cycle. First,
+
+50
+00:05:24,320 --> 00:05:30,160
+ documents are ingested and chunked into retrieval optimized segments. These chunks are converted
+
+51
+00:05:30,160 --> 00:05:36,960
+ into embeddings and stored in a vector database. At query time, the user's question is embedded
+
+52
+00:05:36,960 --> 00:05:42,800
+ and matched against the most relevant content. Retripped passages are injected into the prompt
+
+53
+00:05:42,800 --> 00:05:49,280
+ as context, grounding the model's response. The model then generates an answer anchored to those
+
+54
+00:05:49,280 --> 00:05:56,240
+ sources, often with citations. The model is not answering from memory. It is reasoning over
+
+55
+00:05:56,240 --> 00:06:03,520
+ provided evidence. Understanding this flow helps debug failures, optimize retrieval quality,
+
+56
+00:06:03,520 --> 00:06:11,760
+ and control hallucinations. Retrieval comes first. Generation comes second. That order matters.
+
+57
+00:06:11,760 --> 00:06:17,520
+ Language models should not do everything. They are excellent at reasoning and language,
+
+58
+00:06:17,520 --> 00:06:23,840
+ not precision tasks. Maths should be handled by computation engines. Live data should be
+
+59
+00:06:23,840 --> 00:06:31,520
+ fetched via APIs. Structured queries should be executed using SQL, not natural language guessing.
+
+60
+00:06:31,520 --> 00:06:38,560
+ The LLMs role is orchestration. It decides which tool to call and when, but it should not replace
+
+61
+00:06:38,560 --> 00:06:45,680
+ deterministic systems. This design dramatically improves accuracy, reduces latency, and lowers
+
+62
+00:06:45,680 --> 00:06:54,000
+ cost. It also makes failures easier to diagnose. Robust AI systems are hybrid systems, not model-only
+
+63
+00:06:54,000 --> 00:07:01,840
+ solutions. Safety is not a feature you add later. It is an architectural decision. Input validation
+
+64
+00:07:01,840 --> 00:07:07,520
+ filters prompt injection, malicious requests, and out-of-scope inputs before they reach the model.
+
+65
+00:07:08,160 --> 00:07:13,280
+ Output filtering screens for harmful content, policy violations, and data leakage.
+
+66
+00:07:13,280 --> 00:07:18,400
+ Role-based access ensures users only see what they are allowed to see.
+
+67
+00:07:18,400 --> 00:07:22,720
+ Human and loop checkpoints enforce review for high-risk actions.
+
+68
+00:07:22,720 --> 00:07:29,680
+ Finally, fail-safe defaults matter. When uncertain, systems should refuse rather than
+
+69
+00:07:29,680 --> 00:07:38,240
+ hallucinate. Safety is infrastructure, not policy text. AI systems will fail. Planning for failure is a
+
+70
+00:07:38,240 --> 00:07:43,760
+ sign of maturity. Confidence thresholds prevent low-quality answers from reaching users.
+
+71
+00:07:43,760 --> 00:07:51,360
+ I don't know responses are better than confident errors. Escalation paths route complex cases to
+
+72
+00:07:51,360 --> 00:07:58,800
+ humans. Failures should be logged, monitored, and surfaced quickly. User visible error handling builds
+
+73
+00:07:58,800 --> 00:08:05,680
+ trust when things go wrong. Resilience systems don't pretend to be perfect. They fail safely,
+
+74
+00:08:05,680 --> 00:08:13,040
+ visibly, and recoverably. Before implementation, pause. This checklist is your readiness gate.
+
+75
+00:08:13,040 --> 00:08:17,920
+ You should have a documented system architecture, versioned prompts,
+
+76
+00:08:17,920 --> 00:08:24,800
+ intentional RAG or tool decisions, active safety controls, and clearly defined failure behavior.
+
+77
+00:08:25,600 --> 00:08:31,440
+ When these foundations are in place, implementation becomes execution, not discovery.
+
+78
+00:08:31,440 --> 00:08:38,240
+ Architecture drives everything that follows. A well-designed system is easier to build,
+
+79
+00:08:38,240 --> 00:08:41,200
+ easier to test, and harder to break.
+
