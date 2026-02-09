@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:02,320
+ Hello and welcome back.
+
+2
+00:00:02,320 --> 00:00:07,680
+ In this quick demo, I want to map the things we covered in the previous lecture to a real
+
+3
+00:00:07,680 --> 00:00:09,400
+ world example.
+
+4
+00:00:09,400 --> 00:00:13,560
+ To be specific, the problem that the MCP is trying to solve.
+
+5
+00:00:13,560 --> 00:00:18,920
+ Here I have a closed desktop installed, and if I ask the model to summarize a document
+
+6
+00:00:18,920 --> 00:00:25,400
+ for me that is saved on my Google Drive in one paragraph, and then it translate that document
+
+7
+00:00:25,400 --> 00:00:29,200
+ into German, let's give that a quick try.
+
+8
+00:00:29,200 --> 00:00:34,120
+ Now obviously this is not going to work, it says I do not have access to Google Drive
+
+9
+00:00:34,120 --> 00:00:39,760
+ or other internal tools to search for the document in your Google Drive.
+
+10
+00:00:39,760 --> 00:00:46,640
+ So without an MCP server, I have to log in into my Google Drive account, find that document,
+
+11
+00:00:46,640 --> 00:00:52,440
+ copy the content of that document, paste it into this chat, and then write the prompt.
+
+12
+00:00:52,440 --> 00:00:57,040
+ Having an MCP server is going to do all of this work for me.
+
+13
+00:00:57,040 --> 00:01:01,760
+ I have already authorized my cloud to access my Google Drive.
+
+14
+00:01:01,760 --> 00:01:07,960
+ So at this point all what I have to do is to enable Google Drive MCP server integration.
+
+15
+00:01:07,960 --> 00:01:13,560
+ So I'm going in here and then just enable Drive Search.
+
+16
+00:01:13,560 --> 00:01:20,040
+ Now if I just copy paste the same prompt and then try it one more time and let's see what's
+
+17
+00:01:20,040 --> 00:01:21,400
+ going to happen.
+
+18
+00:01:21,400 --> 00:01:25,600
+ So it looks like the model was able to find that document.
+
+19
+00:01:25,600 --> 00:01:30,440
+ And right now it's writing a summary in one paragraph and then we can immediately see
+
+20
+00:01:30,440 --> 00:01:32,320
+ the German translation.
+
+21
+00:01:32,320 --> 00:01:37,840
+ So to quickly summarize what happened behind the scene, cloud was able to invoke or call
+
+22
+00:01:37,840 --> 00:01:44,640
+ an MCP server on Google Drive and it was authorized to access my file.
+
+23
+00:01:44,640 --> 00:01:50,040
+ And then the MCP server was able to read that file, get the content, send it back to
+
+24
+00:01:50,040 --> 00:01:56,600
+ the cloud and then at this point, since the cloud was able to access the content of that
+
+25
+00:01:56,600 --> 00:02:01,200
+ document, it was able to summarize it and translate that for me.
+
+26
+00:02:01,200 --> 00:02:05,680
+ I hope that this quick demo has been informative for you and help you to map the theory
+
+27
+00:02:05,680 --> 00:02:07,480
+ to a real example.
+
+28
+00:02:07,480 --> 00:02:10,080
+ Thanks for watching and I will see you in the next lecture.
+
