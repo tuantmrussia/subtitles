@@ -1,0 +1,672 @@
+1
+00:00:00,270 --> 00:00:03,330
+So in this section, we'll have a look at boot animation.
+
+2
+00:00:03,810 --> 00:00:06,630
+So you might have already seen this boot animation.
+
+3
+00:00:06,630 --> 00:00:12,960
+It's basically the splash screen when you start the emulator or when you start to a mobile device.
+
+4
+00:00:12,960 --> 00:00:15,510
+So we'll see how we can change that in this section.
+
+5
+00:00:15,660 --> 00:00:21,300
+Changing the boot animation is quite straightforward and it's not that complicated.
+
+6
+00:00:21,510 --> 00:00:28,290
+So if you have a look at areas B, I am opening one sample boot animation file.
+
+7
+00:00:28,470 --> 00:00:35,970
+So if you go onto the car product boot animations, so this is the one or the automotive build against
+
+8
+00:00:35,970 --> 00:00:40,800
+automotive build the boot animation is under this particular car product boot animation.
+
+9
+00:00:40,800 --> 00:00:46,770
+So under the boot animation there is a zip file which contains different folders and within that it
+
+10
+00:00:46,770 --> 00:00:47,970
+has got this animation.
+
+11
+00:00:48,000 --> 00:00:52,350
+So this is the animation which you would have noticed while loading the emulator.
+
+12
+00:00:52,350 --> 00:00:55,020
+You see it has got a set of Benji files.
+
+13
+00:00:55,020 --> 00:00:59,370
+It is actually displayed sequentially to show this animation.
+
+14
+00:00:59,370 --> 00:01:07,260
+So the boot animation is simply a zip file with all the PND files and it has also got a description
+
+15
+00:01:07,420 --> 00:01:09,510
+text which we have deployed.
+
+16
+00:01:09,570 --> 00:01:11,580
+So it has some information.
+
+17
+00:01:11,580 --> 00:01:14,400
+I will explain to you later what exactly these.
+
+18
+00:01:14,700 --> 00:01:21,600
+So in summary, mood animation is just a zip file with a set of BND files.
+
+19
+00:01:21,600 --> 00:01:23,010
+So this is the default one.
+
+20
+00:01:23,100 --> 00:01:26,730
+So here if you go, you can see this is a small animation.
+
+21
+00:01:26,730 --> 00:01:29,820
+So this is how the animation is working there.
+
+22
+00:01:29,910 --> 00:01:33,150
+And finally there is an Android display, right?
+
+23
+00:01:33,270 --> 00:01:35,790
+This is the one where you see the android.
+
+24
+00:01:35,970 --> 00:01:36,780
+These are the patterns.
+
+25
+00:01:36,840 --> 00:01:41,610
+So they I do not have seven being defined to show this and they're stuck.
+
+26
+00:01:41,610 --> 00:01:45,450
+So changing the boot animation will trigger the following steps.
+
+27
+00:01:45,450 --> 00:01:48,600
+So first you need to create a folder structure with the sequence file.
+
+28
+00:01:48,630 --> 00:01:55,890
+So this is a folder and it has got part zero, part one and how many parts you have and then you how
+
+29
+00:01:55,890 --> 00:01:58,010
+you should have their description or text.
+
+30
+00:01:58,200 --> 00:02:04,710
+So you have the folder called Boot Animation A32 and it contains all these part folders.
+
+31
+00:02:04,710 --> 00:02:10,590
+And if within the part folders it has got to be in defines and then under that you have the description
+
+32
+00:02:10,590 --> 00:02:10,980
+text.
+
+33
+00:02:11,070 --> 00:02:12,960
+Okay, so this is the folder structure.
+
+34
+00:02:13,080 --> 00:02:17,970
+So if you want to create your own boot animation, you have to foster creative folder.
+
+35
+00:02:18,360 --> 00:02:24,270
+And inside the folder you should have the part folders like part zero one, two, three, four, five.
+
+36
+00:02:24,330 --> 00:02:24,770
+Okay.
+
+37
+00:02:24,780 --> 00:02:30,450
+And based on the number of pages you have, based on how big is your animation, then you should have
+
+38
+00:02:30,450 --> 00:02:32,160
+one description or text.
+
+39
+00:02:32,160 --> 00:02:36,250
+The assistant packs teach you some information rules.
+
+40
+00:02:36,270 --> 00:02:38,070
+Have a look at that and then our next slide.
+
+41
+00:02:38,070 --> 00:02:38,370
+Okay.
+
+42
+00:02:38,820 --> 00:02:41,470
+So, so this is the content of DSC.
+
+43
+00:02:42,360 --> 00:02:47,910
+So DSC duty actually contains this is an example content of the file.
+
+44
+00:02:47,940 --> 00:02:55,380
+So in this case, I have three folders, part 012 and the first line, first line is actually the solution.
+
+45
+00:02:55,380 --> 00:03:01,140
+So this is the horizontal resolution that is a with 832 and 520, the vertical resolution.
+
+46
+00:03:01,320 --> 00:03:04,590
+And then you have got the frame rate, which is actually 30.
+
+47
+00:03:04,590 --> 00:03:11,790
+And in the second line, the first digit starts with C and then you have got the number of looked.
+
+48
+00:03:11,790 --> 00:03:14,690
+So this explains how many times it has to be loop.
+
+49
+00:03:14,700 --> 00:03:21,150
+Think how many times this files has to be displayed and then this is the seconds post time in seconds.
+
+50
+00:03:21,150 --> 00:03:22,890
+So this is the post time, 30 seconds.
+
+51
+00:03:22,890 --> 00:03:23,250
+Okay.
+
+52
+00:03:23,340 --> 00:03:27,840
+And then you have go for the name, which is part serial.
+
+53
+00:03:27,840 --> 00:03:36,180
+And then here we have again the next line which has got one loop, zero post second and then part one.
+
+54
+00:03:36,300 --> 00:03:40,530
+And then this is the third line serial c00 part two.
+
+55
+00:03:40,590 --> 00:03:46,350
+So if you have three folders, then you will have fine lines over here and it will be like part zero
+
+56
+00:03:46,350 --> 00:03:47,460
+one, two, three.
+
+57
+00:03:47,460 --> 00:03:49,560
+So it's quite straightforward and simple.
+
+58
+00:03:49,560 --> 00:03:55,590
+And once you have prepared this file, just compress the folder and then keep it in any of the path
+
+59
+00:03:55,680 --> 00:04:01,180
+within is B and then you have to edit the route and keep.
+
+60
+00:04:01,200 --> 00:04:07,170
+So the Condor M came in the sights in the same folder here under the car you can see the cartoon name
+
+61
+00:04:07,360 --> 00:04:14,190
+over here we have the line which actually copies boot animation to system image.
+
+62
+00:04:14,310 --> 00:04:19,230
+You have to edit that and just add this and then build and wait for me to complete.
+
+63
+00:04:19,230 --> 00:04:22,320
+And then and then the animation stuff is ready.
+
+64
+00:04:22,530 --> 00:04:27,060
+So in the next section, so we'll go ahead and implement our on board animation.
+
+65
+00:04:27,330 --> 00:04:31,800
+So this is a practical section where we are going to implement a boot animation.
+
+66
+00:04:32,160 --> 00:04:33,450
+So let's play this one.
+
+67
+00:04:33,450 --> 00:04:33,870
+Exactly.
+
+68
+00:04:33,870 --> 00:04:35,100
+I'm going to do so.
+
+69
+00:04:35,100 --> 00:04:41,370
+I am planning to change my bootloader as a famous domino theory in intro.
+
+70
+00:04:41,430 --> 00:04:43,170
+I hope you have seen this for sure.
+
+71
+00:04:43,530 --> 00:04:47,040
+So this is what exactly I am planning to make.
+
+72
+00:04:47,370 --> 00:04:53,370
+Okay, so this line for this MGM angel, that's what I'm going to show.
+
+73
+00:04:53,820 --> 00:04:59,080
+Okay, so what I have done is I have taken this video and split it into different, different sprint
+
+74
+00:04:59,100 --> 00:04:59,730
+frames.
+
+75
+00:05:00,260 --> 00:05:00,770
+Okay.
+
+76
+00:05:01,220 --> 00:05:03,830
+So I have this here now.
+
+77
+00:05:04,220 --> 00:05:08,660
+So I have split the video into different, different DNG files, basically.
+
+78
+00:05:08,990 --> 00:05:11,360
+So you can do this online if you want.
+
+79
+00:05:11,750 --> 00:05:18,260
+Like you can just search for split to you split video into frames.
+
+80
+00:05:19,070 --> 00:05:22,670
+Then you get some online online links as well.
+
+81
+00:05:22,680 --> 00:05:25,970
+So you can either do it online or download some software to do that.
+
+82
+00:05:26,420 --> 00:05:27,200
+So check it out.
+
+83
+00:05:27,380 --> 00:05:28,760
+So that's quite easy.
+
+84
+00:05:29,060 --> 00:05:33,920
+So I have done that already and I have kept it in this folder.
+
+85
+00:05:34,280 --> 00:05:39,680
+So I hope you remember in previous theory sections, I explain to you what exactly is the folder structure
+
+86
+00:05:39,680 --> 00:05:41,390
+of the boot animations.
+
+87
+00:05:41,750 --> 00:05:44,510
+So this is my boot animation boot folder.
+
+88
+00:05:44,510 --> 00:05:50,720
+And inside that you have the part, serial part, one part to that party.
+
+89
+00:05:50,990 --> 00:05:52,970
+So mine is a small intro.
+
+90
+00:05:53,090 --> 00:05:58,880
+So I have just taken only the lion part or the cartoon afterwards.
+
+91
+00:05:58,970 --> 00:06:01,540
+So it's only 59 being device.
+
+92
+00:06:01,580 --> 00:06:09,040
+While if you check the original one from Google, that has got a lot of being G.
+
+93
+00:06:09,050 --> 00:06:10,640
+So if you want, you can make a big one.
+
+94
+00:06:11,030 --> 00:06:14,990
+So for this example, I had taken a very small one.
+
+95
+00:06:15,410 --> 00:06:15,650
+Okay.
+
+96
+00:06:15,770 --> 00:06:22,580
+So once this is done and once you have created the folder structure, you have to edit this description,
+
+97
+00:06:23,120 --> 00:06:23,750
+etc...
+
+98
+00:06:24,680 --> 00:06:28,890
+So here you need to give the resolution of your image.
+
+99
+00:06:29,000 --> 00:06:34,040
+And that is Mike 86, 44, 80, and the frame rate is 30.
+
+100
+00:06:34,520 --> 00:06:34,910
+Okay.
+
+101
+00:06:34,910 --> 00:06:42,230
+And it has got four folders basically is part zero, which has just a blank file.
+
+102
+00:06:43,040 --> 00:06:51,950
+So let's use here as well, maybe be and it is against okay, here you have the three folders where
+
+103
+00:06:51,950 --> 00:06:52,760
+we have the attack.
+
+104
+00:06:53,300 --> 00:06:54,940
+So let's save this.
+
+105
+00:06:54,950 --> 00:06:55,400
+Okay?
+
+106
+00:06:55,640 --> 00:06:56,660
+Save it.
+
+107
+00:06:56,780 --> 00:07:03,000
+And now we need to actually skip this content and create a creative zip file, basically.
+
+108
+00:07:03,020 --> 00:07:03,350
+Okay.
+
+109
+00:07:03,470 --> 00:07:08,810
+For skipping it, you should use this document that if you don't use a storm method, it may not work,
+
+110
+00:07:08,810 --> 00:07:09,170
+actually.
+
+111
+00:07:09,170 --> 00:07:14,840
+Because in my case, I was initially trying to just right click and compress.
+
+112
+00:07:14,840 --> 00:07:16,550
+So this will not work.
+
+113
+00:07:16,670 --> 00:07:22,700
+Why do you need to do is basically just open this up in the command prompt.
+
+114
+00:07:23,030 --> 00:07:26,600
+So I am already in this folder, Martin, in this folder.
+
+115
+00:07:26,810 --> 00:07:32,750
+So what I need to do is I need to slip it and give a store method, basically.
+
+116
+00:07:32,960 --> 00:07:34,280
+So this is the storm right there.
+
+117
+00:07:34,370 --> 00:07:40,490
+And then give them the zip file name, then give all the contents of the flap.
+
+118
+00:07:40,610 --> 00:07:42,590
+So this is the command, which basically you need to do.
+
+119
+00:07:42,770 --> 00:07:47,300
+So the most important part is that you need to use the store method.
+
+120
+00:07:47,480 --> 00:07:51,620
+The storm method in this case is store and this is the zip command.
+
+121
+00:07:51,620 --> 00:07:55,280
+So in case if you don't have zip, just go ahead and install zip.
+
+122
+00:07:56,000 --> 00:07:57,480
+You know, just zip it like this.
+
+123
+00:07:57,570 --> 00:07:57,760
+Okay.
+
+124
+00:07:57,770 --> 00:07:59,090
+So I'm just going to zip it.
+
+125
+00:07:59,960 --> 00:08:01,040
+So it's done.
+
+126
+00:08:01,250 --> 00:08:02,180
+The shipping is done.
+
+127
+00:08:02,930 --> 00:08:04,900
+So now I have got the boot up.
+
+128
+00:08:04,910 --> 00:08:05,480
+Super.
+
+129
+00:08:05,750 --> 00:08:10,160
+Just turn it and put it over here.
+
+130
+00:08:10,700 --> 00:08:11,690
+So this is the one.
+
+131
+00:08:12,380 --> 00:08:13,790
+So I have the following here.
+
+132
+00:08:14,240 --> 00:08:20,170
+So now come back to the initiative code where we have the boot animation, and here you need to rename.
+
+133
+00:08:20,780 --> 00:08:24,770
+In my case, I did it already, so that's why it's moved to C.
+
+134
+00:08:25,100 --> 00:08:31,370
+Otherwise it would be boot animation 832 which is the default one will be coming here.
+
+135
+00:08:31,580 --> 00:08:40,160
+Just rename it to boot or slip in the product copy files and then save it and then come back to the
+
+136
+00:08:40,160 --> 00:08:42,010
+areas, be up.
+
+137
+00:08:42,290 --> 00:08:45,110
+So and then just go ahead and build it.
+
+138
+00:08:45,480 --> 00:08:45,740
+Yeah.
+
+139
+00:08:45,740 --> 00:08:49,790
+So you don't need to find that the code or empty is modifying and it's regenerating.
+
+140
+00:08:49,790 --> 00:08:54,620
+So it may take maybe 2 minutes or something to build because I have already built it.
+
+141
+00:08:55,280 --> 00:08:57,530
+So let's wait for some time.
+
+142
+00:08:57,860 --> 00:08:58,450
+Meanwhile.
+
+143
+00:08:58,450 --> 00:09:06,290
+And so the most important thing you need to keep in mind is this part of constructing the folder structure
+
+144
+00:09:06,350 --> 00:09:13,230
+is make sure you have named all the folders correctly and then in the description, just make sure you
+
+145
+00:09:13,230 --> 00:09:18,110
+have given the for the names correctly, which both should match correctly.
+
+146
+00:09:18,440 --> 00:09:22,380
+Otherwise you will get into unnecessary delays in implementation.
+
+147
+00:09:22,910 --> 00:09:23,000
+Okay.
+
+148
+00:09:23,090 --> 00:09:29,240
+Because I had only one issue when I tried implementing these, I had got only one issue and that was
+
+149
+00:09:29,480 --> 00:09:31,490
+due to this C stored method.
+
+150
+00:09:32,120 --> 00:09:32,390
+Okay.
+
+151
+00:09:32,540 --> 00:09:39,230
+So if you use a proper stored method, then you know and follow these steps, then it is quite simple
+
+152
+00:09:39,230 --> 00:09:40,100
+and straightforward.
+
+153
+00:09:40,460 --> 00:09:44,310
+Okay, so let's see whether this is already done.
+
+154
+00:09:44,340 --> 00:09:51,590
+Now it's 98% age, so maybe in a couple of minutes should be done.
+
+155
+00:09:53,920 --> 00:09:54,220
+Yeah.
+
+156
+00:09:54,250 --> 00:09:55,090
+So it's done.
+
+157
+00:09:55,240 --> 00:09:57,800
+So I took 2 minutes in my case.
+
+158
+00:09:57,820 --> 00:10:01,420
+So depending upon your PC, it may take longer or shorter.
+
+159
+00:10:01,640 --> 00:10:03,700
+Okay, so let me immolate this.
+
+160
+00:10:03,850 --> 00:10:11,090
+So I have just used no snap snapshot load so that we can see the loading.
+
+161
+00:10:11,110 --> 00:10:17,620
+I'm doing a callable basically here because if you run an emulator once and you try running it, it
+
+162
+00:10:17,680 --> 00:10:19,690
+will just boot from the snapshot.
+
+163
+00:10:19,960 --> 00:10:25,630
+So it's better to always cold boot in this case because you want to see the bootloader, so just run
+
+164
+00:10:25,630 --> 00:10:25,810
+it.
+
+165
+00:10:26,110 --> 00:10:28,870
+So it is called boot requested by the user.
+
+166
+00:10:29,350 --> 00:10:29,980
+Let's wait.
+
+167
+00:10:30,310 --> 00:10:31,970
+Okay, so we have it here.
+
+168
+00:10:32,380 --> 00:10:33,820
+So this is our bootloader.
+
