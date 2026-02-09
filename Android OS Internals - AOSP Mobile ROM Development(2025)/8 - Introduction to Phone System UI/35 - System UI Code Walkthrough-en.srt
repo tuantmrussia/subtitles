@@ -1,0 +1,400 @@
+1
+00:00:01,100 --> 00:00:08,540
+System UI booting source code analysis in this section will have a look at how the system UI is booted
+
+2
+00:00:08,540 --> 00:00:13,970
+and which all classes modules are responsible for voting systems UI.
+
+3
+00:00:14,000 --> 00:00:14,900
+So let's get started.
+
+4
+00:00:21,830 --> 00:00:23,960
+So let's first open up the emulator.
+
+5
+00:00:26,520 --> 00:00:28,860
+And to look at window family.
+
+6
+00:00:36,100 --> 00:00:41,160
+OK, so the emulator is now up, and here you can see the lock logs.
+
+7
+00:00:41,380 --> 00:00:43,930
+And here I have filtered with system UI.
+
+8
+00:00:43,990 --> 00:00:46,690
+So this is just to show you these locks.
+
+9
+00:00:46,990 --> 00:00:53,410
+So from these locks, we can make out that system UI start is happening from the system.
+
+10
+00:00:53,410 --> 00:01:00,130
+So, OK, so here you can see systems, our timing starting the system UI and took nine milliseconds
+
+11
+00:01:00,550 --> 00:01:01,750
+just to trigger this system.
+
+12
+00:01:02,080 --> 00:01:03,300
+So this is triggered.
+
+13
+00:01:03,310 --> 00:01:04,720
+It's getting into that package.
+
+14
+00:01:04,720 --> 00:01:06,880
+So or Android brought system UI.
+
+15
+00:01:06,970 --> 00:01:11,950
+And then you could see here that the system UI application is constructed for the system.
+
+16
+00:01:11,950 --> 00:01:18,480
+UI application is created and then there are some timing here where you can see dependency injection
+
+17
+00:01:18,610 --> 00:01:19,520
+one milliseconds.
+
+18
+00:01:19,540 --> 00:01:25,570
+So here, basically, system UI uses D'Agata to do some dependency injection.
+
+19
+00:01:25,590 --> 00:01:27,490
+So here it's basically doing that.
+
+20
+00:01:27,490 --> 00:01:33,370
+And then later on, it's initializing all these different, different models of system.
+
+21
+00:01:33,370 --> 00:01:40,990
+You like the other recent module volume UI status bar our UI Ringtone Player Keyboard UI.
+
+22
+00:01:41,890 --> 00:01:45,370
+And finally, it completed in 860 milliseconds.
+
+23
+00:01:45,370 --> 00:01:51,670
+So by this time, the system UI is completely up and we got all these same UI modules.
+
+24
+00:01:51,820 --> 00:01:54,610
+So this how on a very high level, it works.
+
+25
+00:01:54,850 --> 00:02:01,600
+So now let's get into the code and see how it is actually triggering and which classes are responsible
+
+26
+00:02:01,600 --> 00:02:02,830
+for what in detail.
+
+27
+00:02:03,370 --> 00:02:09,110
+So let's now look at the code, how added bookmarks or important execution points.
+
+28
+00:02:09,130 --> 00:02:14,500
+So as we discussed earlier, the system UI is standard from system server.
+
+29
+00:02:14,590 --> 00:02:19,690
+So within the system server, it is a function called start other services.
+
+30
+00:02:20,410 --> 00:02:25,750
+So this is basically the function which start a lot of other services.
+
+31
+00:02:26,050 --> 00:02:32,980
+System Server is one of the most important parts of Android, and System Server is basically responsible
+
+32
+00:02:33,070 --> 00:02:39,370
+for starting a lot of services, including system UI, activity management system, window management
+
+33
+00:02:39,370 --> 00:02:41,410
+system and many, many other services.
+
+34
+00:02:41,560 --> 00:02:47,980
+So System UI is getting started from start other services, and it's started at this point.
+
+35
+00:02:48,700 --> 00:02:51,700
+So there is another function called start system.
+
+36
+00:02:51,700 --> 00:02:54,190
+You want this one to go there.
+
+37
+00:02:54,280 --> 00:02:56,620
+So this function is pretty important.
+
+38
+00:02:56,680 --> 00:03:05,170
+What it does is it's a and it's the it's manager internal and then it uses the Get System UI service
+
+39
+00:03:05,170 --> 00:03:06,990
+component function within that.
+
+40
+00:03:07,000 --> 00:03:09,950
+So if you go there, it's basically an abstract class.
+
+41
+00:03:09,970 --> 00:03:13,540
+It's defined within the package manager, Mr. Jarba.
+
+42
+00:03:13,600 --> 00:03:19,430
+And within that, you can see that it gets the system UI service component from my next summer conflict,
+
+43
+00:03:19,430 --> 00:03:23,520
+but is nothing but this one config system UI service component.
+
+44
+00:03:23,590 --> 00:03:25,540
+So that's the one here.
+
+45
+00:03:25,880 --> 00:03:31,450
+You can see that it's pointing to the OMED or Android or system you want service.
+
+46
+00:03:31,780 --> 00:03:33,850
+So we started from the system server.
+
+47
+00:03:33,850 --> 00:03:40,240
+So System Server is having the stock other services, which is actually responsible for calling stock
+
+48
+00:03:40,250 --> 00:03:41,220
+system UI.
+
+49
+00:03:41,230 --> 00:03:44,410
+And if you didn't start system you, why we it's an intent.
+
+50
+00:03:44,530 --> 00:03:50,380
+So here you can see it creates an intent, uses this particular component from the package and it's
+
+51
+00:03:50,380 --> 00:03:51,070
+a service.
+
+52
+00:03:51,070 --> 00:03:57,990
+And then it starts the service, as the user with this interpreter also tells Windows Manager.
+
+53
+00:03:58,000 --> 00:04:00,010
+Add a system UI.
+
+54
+00:04:00,010 --> 00:04:05,080
+You started by calling these particular functions, or it informs the window manager service.
+
+55
+00:04:05,080 --> 00:04:07,120
+Add the system UI, you start it.
+
+56
+00:04:07,360 --> 00:04:13,870
+So in short, the Start System UI basically creates a handle to package manager and from package manager.
+
+57
+00:04:13,900 --> 00:04:21,010
+It gets the system UI service component, which is nothing but system UI service class.
+
+58
+00:04:21,100 --> 00:04:25,480
+And with this indent, it cause the system UI service class.
+
+59
+00:04:25,600 --> 00:04:31,180
+Also, it informs the window manager that the system UI you started that is basically the functionality
+
+60
+00:04:31,180 --> 00:04:32,860
+of Start System UI.
+
+61
+00:04:32,920 --> 00:04:36,460
+So now let's go to system you white service.
+
+62
+00:04:36,730 --> 00:04:43,330
+So within System UI service, it basically extends the service and it has some constructor here and
+
+63
+00:04:43,330 --> 00:04:49,600
+in the on create the first line, which you can see here, actually, for instance, the stimuli application
+
+64
+00:04:49,600 --> 00:04:54,220
+class caused this particular function, which is the most important thing which we need to look at.
+
+65
+00:04:54,340 --> 00:04:58,070
+It also does some other stuffs here, and this is the most important for us.
+
+66
+00:04:58,090 --> 00:04:59,230
+So let's go there.
+
+67
+00:04:59,410 --> 00:05:07,270
+Here you can see that it gets the system you white service components and the system UI service components.
+
+68
+00:05:07,300 --> 00:05:13,030
+It picks up from these configurations config system UI service components.
+
+69
+00:05:13,180 --> 00:05:19,880
+So let's go inside that so-called fix system UI service components within this system UI service component
+
+70
+00:05:19,880 --> 00:05:25,090
+that you can see that it has all the system UI components defined.
+
+71
+00:05:25,110 --> 00:05:30,220
+Basically, we knew all these items and we start them one by one.
+
+72
+00:05:30,370 --> 00:05:33,610
+Let's see how the system is starting each of this model.
+
+73
+00:05:33,850 --> 00:05:35,680
+Yeah, and which actually gives us that.
+
+74
+00:05:35,860 --> 00:05:36,310
+All right.
+
+75
+00:05:38,840 --> 00:05:41,220
+So here you can see that gets the names.
+
+76
+00:05:41,240 --> 00:05:47,870
+And with this name, this name is actually passed to start service if needed and within start services
+
+77
+00:05:47,870 --> 00:05:48,650
+if needed.
+
+78
+00:05:48,770 --> 00:05:57,100
+You come to the bottom here and see that there is one or which actually loops through all those services
+
+79
+00:05:57,110 --> 00:05:58,970
+or any similar services dot length.
+
+80
+00:05:59,000 --> 00:06:02,010
+It goes through one by one starts.
+
+81
+00:06:02,150 --> 00:06:05,000
+So here you can see on boot completely.
+
+82
+00:06:05,000 --> 00:06:07,580
+It's also calling on boot complete.
+
+83
+00:06:07,580 --> 00:06:12,170
+Its own boot completed is nothing but a function from the system new wide or.
+
+84
+00:06:12,830 --> 00:06:20,420
+The system UI or Java classes are actually inherited by most of the components and extended by most
+
+85
+00:06:20,420 --> 00:06:22,040
+of these components.
+
+86
+00:06:22,070 --> 00:06:26,720
+So in short, what happens is that the system starts process from the system.
+
+87
+00:06:26,720 --> 00:06:33,340
+So the system's Tiwa scores the start system UI from the system and the star system UI.
+
+88
+00:06:33,380 --> 00:06:41,200
+It actually picks the component and creates an intent and starts the system UI service.
+
+89
+00:06:41,200 --> 00:06:44,030
+So System UI service and within the system UI.
+
+90
+00:06:44,030 --> 00:06:47,520
+So reset all system UI application.
+
+91
+00:06:47,540 --> 00:06:52,890
+And of course, this particular function starts obviously if needed and within the start service needed
+
+92
+00:06:52,910 --> 00:06:58,430
+it or start services, if needed, functioned as normal function, which actually loops through all
+
+93
+00:06:58,430 --> 00:07:03,430
+these all these different packages and starts them one by one.
+
+94
+00:07:03,440 --> 00:07:07,460
+And that's exactly what we are seeing in these logs.
+
+95
+00:07:07,730 --> 00:07:10,790
+So that's exactly what we are seeing in this block.
+
+96
+00:07:11,210 --> 00:07:14,780
+So here you can see that it's starting each of these services.
+
+97
+00:07:14,780 --> 00:07:19,580
+One by one, it will be the same the same sequence as defined.
+
+98
+00:07:19,640 --> 00:07:26,660
+Yeah, should be starting the notification channel, first notification channel and then the key immediate
+
+99
+00:07:26,930 --> 00:07:34,490
+key Gavi mediator and then the reasons the recents volume UI that is bar and so on.
+
+100
+00:07:34,520 --> 00:07:36,830
+In the post, you show.
+
