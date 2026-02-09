@@ -1,0 +1,424 @@
+1
+00:00:00,000 --> 00:00:06,000
+slide này giới thiệu toàn bộ kiến trúc thế hệ tái tạo tăng cường từ đầu đến cuối.
+
+2
+00:00:06,000 --> 00:00:13,520
+Một hệ thống RAG không phải là một cuộc gọi mô hình đơn giản. Đó là một đường ống biến đổi dữ liệu kinh doanh thô
+
+3
+00:00:13,520 --> 00:00:20,320
+vào hệ thống AI trả lời. Như biểu đồ nơi trang 1 cho thấy, hệ thống bắt đầu với nguồn
+
+4
+00:00:20,320 --> 00:00:27,920
+Các hệ thống như tài liệu, cơ sở dữ liệu, và ADIs. Những nguồn này được nuôi dưỡng bằng nuốt và xử lý trước
+
+5
+00:00:27,920 --> 00:00:33,920
+Những giai đoạn mà dữ liệu được làm sạch và bình thường hóa. Tiếp theo, tài liệu được lấy ra và làm giàu
+
+6
+00:00:33,920 --> 00:00:40,320
+với siêu dữ liệu, sau đó chuyển đổi thành cấu trúc, đại diện số thu từ ngữ
+
+7
+00:00:40,320 --> 00:00:45,840
+Nghĩa là. Những đường viền này được cất giữ trong cơ sở dữ liệu véc- tơ tối ưu hoá để tìm kiếm tương tự.
+
+8
+00:00:45,840 --> 00:00:51,440
+Vào thời điểm truy vấn, câu hỏi của người dùng được nhúng, so sánh với véc tơ được lưu trữ,
+
+9
+00:00:51,440 --> 00:00:57,200
+Và những phần liên quan nhất được lấy đi. Chỉ sau đó làm cho các mô hình máy phát điện ngôn ngữ đáp ứng
+
+10
+00:00:57,200 --> 00:01:03,920
+Dựa vào những bằng chứng đã lấy lại, hơn là trí nhớ. Hiểu rõ dòng chảy này rất quan trọng.
+
+11
+00:01:03,920 --> 00:01:12,240
+Mỗi giai đoạn ảnh hưởng đến sự chính xác, tính khoan dung và lòng tin cậy. Chúng ta có thể cử động hoặc không thể sửa chữa
+
+12
+00:01:12,240 --> 00:01:19,280
+Để sau đi. RAG hoạt động vì mọi thành phần đều được thiết kế để hỗ trợ đáng tin cậy,
+
+13
+00:01:19,280 --> 00:01:25,200
+Thế hệ dựa trên bằng chứng. Nhiễm trùng tài liệu là điểm nhập của hệ thống RAG.
+
+14
+00:01:25,200 --> 00:01:30,800
+Đây là nơi mà kiến thức kinh doanh thô được thu thập và chuẩn bị cho quá trình xử lý xuôi dòng.
+
+15
+00:01:30,800 --> 00:01:37,840
+Như được đề cập nơi trang 3, ăn uống phải có nhiều dạng khác nhau. PDFs,
+
+16
+00:01:37,840 --> 00:01:45,680
+Tài liệu văn bản, trang HTML, tập tin đánh dấu, cơ sở dữ liệu, và ADI. Trong hệ thống sản xuất,
+
+17
+00:01:45,680 --> 00:01:52,080
+Ăn uống không chỉ là một lần. Nó phải xử lý cả hai mẻ nuốt chửng nội dung lịch sử
+
+18
+00:01:52,080 --> 00:01:58,640
+và tiếp tục nuốt chửng dữ liệu mới được tạo ra hoặc cập nhật. Cũng quan trọng là kiểm soát phiên bản.
+
+19
+00:01:58,640 --> 00:02:05,440
+Tài liệu thay đổi, chính sách được sửa đổi, và nội dung lỗi thời phải được gỡ bỏ hoặc thay thế.
+
+20
+00:02:05,440 --> 00:02:11,680
+Một lớp hấp thụ mạnh mẽ theo dõi tài liệu dòng dõi, tem thời gian, và siêu dữ liệu nguồn,
+
+21
+00:02:11,680 --> 00:02:15,680
+Nên hệ thống luôn biết phiên bản nào của tài liệu có thẩm quyền.
+
+22
+00:02:15,680 --> 00:02:22,880
+Không có điều này, các hệ thống RAG nhanh chóng trôi ra khỏi sự đồng bộ với thực tế. Hãy nghĩ về sự nuốt chửng như là
+
+23
+00:02:22,880 --> 00:02:31,040
+Nền tảng của sự tin tưởng. Nếu thông tin không đúng hoặc lỗi thời thâm nhập vào hệ thống, không có lượng thông minh
+
+24
+00:02:31,040 --> 00:02:38,080
+Việc thúc đẩy hoặc lấy lại logic có thể sửa chữa kết quả. Ăn uống sạch sẽ, sạch sẽ là lần đầu tiên
+
+25
+00:02:38,080 --> 00:02:45,440
+Yêu cầu sản xuất RAG cấp cao. Tài liệu kinh doanh thô hiếm khi được tính sẵn sàng.
+
+26
+00:02:45,440 --> 00:02:52,240
+Trang bốn nêu bật một lẽ thật quan trọng. Dữ liệu nhiễu trực tiếp làm giảm chất lượng thu hồi
+
+27
+00:02:52,240 --> 00:02:59,680
+và diễn xuất mô hình. Đầu đề, chân trang, thực đơn định vị, không nhận dạng và các phần đã nhân đôi
+
+28
+00:02:59,680 --> 00:03:06,800
+Thêm khối lượng mà không thêm ý nghĩa. Name
+
+29
+00:03:06,800 --> 00:03:12,800
+trong khi duy trì cấu trúc ngữ nghĩa. Văn bản được thông thường hóa, vấn đề mã hóa cố định,
+
+30
+00:03:12,800 --> 00:03:19,520
+không gian trống được chuẩn hóa, và định dạng được nhất quán qua các nguồn. Lặp lại tài liệu và
+
+31
+00:03:19,520 --> 00:03:25,440
+Các phần được xác định và gỡ bỏ nhiều lần để ngăn ngừa sự nhầm lẫn và lãng phí kho tàng.
+
+32
+00:03:25,440 --> 00:03:32,960
+Cũng quan trọng là bảo tồn cấu trúc. Tiêu đề, danh sách và bảng cung cấp điều thiết yếu
+
+33
+00:03:32,960 --> 00:03:39,600
+Văn cảnh cải thiện việc tách và thu hồi. Cấu trúc tách rời có thể đơn giản xử lý,
+
+34
+00:03:39,600 --> 00:03:46,080
+Nhưng nó làm tổn hại sự hiểu biết ngữ pháp. Giai đoạn này quyết định nền tảng kiến thức của bạn sạch như thế nào.
+
+35
+00:03:46,080 --> 00:03:52,800
+Dữ liệu sạch sẽ dẫn đến câu trả lời chính xác. Đang bỏ qua tiến trình sẵn là một trong những điều phổ biến nhất
+
+36
+00:03:52,800 --> 00:03:59,360
+Nguyên nhân gây ra hiệu suất RAG nghèo trong hệ thống thực tế. Trong sản xuất, chất lượng dữ liệu không phải là tùy chọn.
+
+37
+00:03:59,360 --> 00:04:05,840
+Đây là một đòi hỏi chính đáng. Mô hình ngôn ngữ hoạt động trong các cửa sổ ngữ cảnh cố định,
+
+38
+00:04:05,840 --> 00:04:12,320
+như hình nơi trang 5. Ngay cả các mô hình tiên tiến cũng không thể xử lý toàn bộ tài liệu kinh doanh
+
+39
+00:04:12,320 --> 00:04:19,520
+trong một yêu cầu duy nhất. Sách hướng dẫn kỹ thuật, chính sách pháp lý và nội bộ thường vượt quá những trang này
+
+40
+00:04:19,520 --> 00:04:26,160
+giới hạn theo thứ tự độ lớn. Việc tránh né giải quyết vấn đề này bằng cách phá vỡ những tài liệu lớn
+
+41
+00:04:26,160 --> 00:04:31,600
+thành những đơn vị nhỏ hơn, liên kết ngữ pháp. Mỗi miếng ghép sẽ trở thành độc lập.
+
+42
+00:04:31,600 --> 00:04:37,360
+Một phần kiến thức phù hợp với ngữ cảnh của mô hình. Name
+
+43
+00:04:37,360 --> 00:04:43,360
+hệ thống hoạt động với kích cỡ tài liệu không giới hạn trong khi duy trì sự liên quan. Mà không có tranh cãi,
+
+44
+00:04:43,360 --> 00:04:50,240
+Hầu hết dữ liệu doanh nghiệp sẽ không thể sử dụng bởi LLMs. Với sự kiểm soát tội nghiệp, việc thu hồi trở nên ồn ào
+
+45
+00:04:50,240 --> 00:04:56,640
+và không đầy đủ. Do đó, đào thoát không chỉ là một bước tiến trước. Đó là kiến trúc cốt lõi.
+
+46
+00:04:56,640 --> 00:05:03,120
+Quyết định. Mục tiêu là bảo tồn ý nghĩa trong khi có thể phục hồi hiệu quả. Sau này
+
+47
+00:05:03,120 --> 00:05:09,360
+Các đường cong bước, tìm kiếm véc- tơ, và thế hệ phụ thuộc vào tài liệu được tách ra tốt đến mức nào.
+
+48
+00:05:09,360 --> 00:05:14,320
+Trang 6 cho thấy một số chiến lược cắt giảm, mỗi phương pháp đánh đổi khác nhau.
+
+49
+00:05:15,280 --> 00:05:21,040
+Sửa cỡ tách rời theo hiệu số hay số ký tự. Rất đơn giản để thực hiện,
+
+50
+00:05:21,040 --> 00:05:26,960
+nhưng thường phá vỡ ranh giới ngữ pháp. Kết nối chặt chẽ với tài liệu tự nhiên
+
+51
+00:05:26,960 --> 00:05:33,280
+cấu trúc, chẳng hạn như đoạn hoặc các đoạn, bảo tồn ý nghĩa, nhưng tạo ra kích cỡ bit biến.
+
+52
+00:05:33,280 --> 00:05:40,080
+Đoạn cửa sổ bị trượt giới thiệu sự chồng chéo giữa các đoạn để giảm sự mất mát ngữ cảnh tại ranh giới
+
+53
+00:05:40,080 --> 00:05:45,920
+với chi phí cho sự gia tăng lưu trữ và tính toán. Chuỗi phân cấp tạo nhiều cấp
+
+54
+00:05:45,920 --> 00:05:51,760
+Từ tóm tắt cho đến các phần chi tiết, cho phép khóa học để tìm thấy tái thiết, nhưng thêm vào kiến trúc
+
+55
+00:05:51,760 --> 00:05:58,480
+phức tạp. Không có chiến lược tốt nhất nào trên toàn cầu. Cách tiếp cận đúng tùy thuộc vào kiểu tài liệu,
+
+56
+00:05:58,480 --> 00:06:04,560
+Truy vấn mô hình, và hạn chế hiệu suất. Tài liệu kỹ thuật có thể được lợi ích nhờ ngữ pháp
+
+57
+00:06:04,560 --> 00:06:11,920
+hay là phân cấp. Trong khi những ghi chú hoạt động ngắn có thể hiệu quả với kích thước sửa chữa. Đang sản xuất
+
+58
+00:06:11,920 --> 00:06:18,400
+Các hệ thống, nên được xử lý như một thành phần có cá ngừ. Các nhóm thường thử nghiệm nhiều
+
+59
+00:06:18,400 --> 00:06:26,000
+Những chiến lược trước khi đạt đến một phương pháp cân bằng giữa sự liên quan, tính khoan dung và chi phí. Kích cỡ Chunk là một trong số
+
+60
+00:06:26,000 --> 00:06:34,080
+là thiết kế siêu chuẩn quan trọng nhất trong hệ thống RAG như chi tiết nơi trang 7. Những mảng nhỏ hơn
+
+61
+00:06:34,080 --> 00:06:41,280
+Thường từ 200 đến 400 viên kim cương cho ta độ chính xác cao hơn và giảm bớt những bối cảnh không liên quan, nhưng chúng mạo hiểm.
+
+62
+00:06:41,280 --> 00:06:49,360
+Phân mảnh ý nghĩa và cần nhiều cuộc gọi khác nữa. Số lượng lớn hơn 800 đến 1500 bảo tồn
+
+63
+00:06:49,360 --> 00:06:56,080
+bối cảnh và làm việc tốt cho nội dung phức tạp kết nối, nhưng họ có thể giới thiệu tiếng ồn
+
+64
+00:06:56,080 --> 00:07:02,640
+Và tiêu thụ nhiều hơn của bối cảnh cửa sổ của mô hình. Phần lớn hệ thống sản xuất ổn định giữa 300
+
+65
+00:07:02,640 --> 00:07:10,480
+và 1000 vật kỷ niệm, với 512 vật kỷ niệm là điểm khởi đầu chung. Tuy nhiên, kích thước tối ưu phụ thuộc
+
+66
+00:07:10,480 --> 00:07:17,520
+rất nhiều về vụ án sử dụng. Không có đường tắt ở đây. Thử thách là điều thiết yếu. Chọn kích cỡ mẫu
+
+67
+00:07:17,520 --> 00:07:23,600
+là một hành động cân bằng giữa chính xác và bối cảnh. Lựa chọn sai dẫn đến một trong hai không đầy đủ
+
+68
+00:07:23,600 --> 00:07:29,920
+Câu trả lời hoặc gợi ý. Quyền này được cải thiện đáng kể cả hai
+
+69
+00:07:29,920 --> 00:07:36,960
+và hiệu quả của hệ thống. Nghề nhúng là nền tảng toán học của RAG. Như được giải thích nơi trang 8,
+
+70
+00:07:36,960 --> 00:07:43,120
+chúng chuyển đổi văn bản con người có thể đọc thành véc tơ số cao chiều cao thu được ngữ nghĩa
+
+71
+00:07:43,120 --> 00:07:48,400
+Nghĩa là. Văn bản với ý nghĩa tương tự tạo ra véc tơ chỉ theo hướng tương tự,
+
+72
+00:07:48,400 --> 00:07:55,920
+Ngay cả khi từ ngữ khác nhau. Tùy chọn này cho phép tìm kiếm ngữ nghĩa. Name
+
+73
+00:07:55,920 --> 00:08:02,560
+trùng khớp. Chẳng hạn, bảo trì xe cộ và sửa chữa xe có thể tương đương với việc sử dụng xe khác nhau
+
+74
+00:08:02,560 --> 00:08:08,560
+ngôn ngữ. Các mô hình tách rời hiện đại được đào tạo trên tập đoàn to lớn để hiểu được sắc thái
+
+75
+00:08:08,560 --> 00:08:14,960
+Mối quan hệ giữa các khái niệm. Trong hệ thống RAG, việc kết nối cho phép lớp thu hồi tìm
+
+76
+00:08:14,960 --> 00:08:21,280
+Các mảng khái niệm liên quan thay vì phụ thuộc vào việc tìm kiếm từ khoá brittle. Mà không cần đắp chăn,
+
+77
+00:08:21,280 --> 00:08:27,360
+RAG sẽ sụp đổ trong việc tìm kiếm truyền thống. Với sự tái thiết, sự phục hồi trở thành dựa trên ý nghĩa,
+
+78
+00:08:27,360 --> 00:08:34,560
+Cho phép nền tảng chính xác và lời giải thích tự nhiên. Cơ sở dữ liệu véc tơ, ở trang 9,
+
+79
+00:08:34,560 --> 00:08:39,600
+là những hệ thống chuyên biệt được thiết kế để lưu trữ và tìm kiếm các đường viền chiều cao hiệu quả.
+
+80
+00:08:39,600 --> 00:08:47,200
+Khác với cơ sở dữ liệu quan hệ tối ưu hoá cho các khớp chính xác, cơ sở dữ liệu véc tơ xuất sắc ở xấp xỉ
+
+81
+00:08:47,200 --> 00:08:52,880
+gần nhất là tìm kiếm trên hàng triệu hoặc hàng tỉ véc - tơ. Họ dùng thuật toán chỉ mục
+
+82
+00:08:52,880 --> 00:09:01,200
+Chẳng hạn như HNSW hoặc IVF để cung cấp tiểu phân tích. Siêu dữ liệu
+
+83
+00:09:01,200 --> 00:09:06,240
+tìm kiếm để kết hợp với những hạn chế như ngày tháng, kiểu nguồn, hoặc quyền truy cập.
+
+84
+00:09:06,240 --> 00:09:13,280
+Phóng theo chiều ngang cho phép doanh nghiệp triển khai. Cơ sở dữ liệu véc tơ phổ biến bao gồm
+
+85
+00:09:13,280 --> 00:09:21,200
+Hình nón thông, re-viate, phông chữ lớn, triệuvis, và PG vector cho Postgres QL. Mỗi cái đều có đánh đổi.
+
+86
+00:09:21,200 --> 00:09:27,200
+Hiệu suất, chi phí và sự phức tạp hoạt động. Chọn đúng cửa hàng véc- tơ là một cấp hệ thống
+
+87
+00:09:27,200 --> 00:09:34,720
+Quyết định. Nó tác động trực tiếp đến sự hiệu quả, khả năng xác suất và khả năng duy trì. Trong sản xuất hệ thống RAG,
+
+88
+00:09:34,720 --> 00:09:40,240
+co sở dữ liệu véc tơ cũng quan trọng như chính mô hình ngôn ngữ. Lúc truy vấn,
+
+89
+00:09:40,240 --> 00:09:46,560
+Thu hồi là nơi mọi thứ đến cùng nhau. Câu hỏi của người dùng được chuyển đổi thành một tập hợp
+
+90
+00:09:46,560 --> 00:09:52,400
+và so sánh với véc- tơ đã lưu. Hệ thống thu thập các mẫu giống nhau nhất,
+
+91
+00:09:52,400 --> 00:09:58,960
+Tùy chọn được lọc bởi siêu dữ liệu như ngày tháng hay nguồn. Những mảnh ghép này là sau đó
+
+92
+00:09:58,960 --> 00:10:04,720
+Được tiêm vào động tác gửi đến mô hình ngôn ngữ. Điều này đảm bảo các mô hình lý do trên
+
+93
+00:10:04,720 --> 00:10:12,000
+Bằng chứng hơn là trí nhớ. Chất lượng đệ quy định chất lượng câu trả lời. Nếu đoạn không thích hợp
+
+94
+00:10:12,000 --> 00:10:17,920
+nhận được, phản ứng trở nên ồn ào. Nếu thiếu những đoạn chính, câu trả lời sẽ không đầy đủ.
+
+95
+00:10:17,920 --> 00:10:25,840
+Đó là lý do tại sao việc chỉnh sửa, lựa chọn top-K, lọc và xếp hạng là một phần cốt lõi của RAG tối ưu hóa.
+
+96
+00:10:25,840 --> 00:10:32,320
+Thu hồi là người gác cổng giữa kiến thức và thế hệ. Tóm tắt nơi trang 10
+
+97
+00:10:32,320 --> 00:10:39,040
+Kết nối toàn bộ kiến trúc RAG lại với nhau. Một hệ thống được thiết kế tốt biến đổi doanh nghiệp không có cấu trúc
+
+98
+00:10:39,040 --> 00:10:46,880
+Sự hiểu biết trở thành câu trả lời có tính ngữ cảnh đáng tin cậy. Mỗi giai đoạn, ăn uống, ăn uống, ngủ,
+
+99
+00:10:46,880 --> 00:10:53,200
+Kho lưu trữ, phục hồi và thế hệ đóng một vai trò đặc biệt. Dùng chất lượng bảo đảm
+
+100
+00:10:53,200 --> 00:10:59,680
+nhập chính xác. Suy luận thông minh có ý nghĩa. Việc nhúng cho phép khớp ngữ pháp.
+
+101
+00:10:59,680 --> 00:11:04,480
+Tìm kiếm động cơ để lấy bằng chứng. Mô hình ngôn ngữ tổng hợp các câu trả lời dựa trên nền tảng.
+
+102
+00:11:04,480 --> 00:11:11,120
+Khi bất kỳ thành phần nào yếu, toàn bộ hệ thống sẽ bị ảnh hưởng. Khi tất cả các thành phần được liên kết,
+
+103
+00:11:11,120 --> 00:11:15,520
+Hệ thống RAG quy mô cho các yêu cầu kinh doanh trong khi duy trì sự đáng tin cậy.
+
+104
+00:11:15,520 --> 00:11:22,640
+RAG không chỉ là một mô hình kỹ thuật. Đó là một chiến lược đáng tin cậy. Nó cho phép các tổ chức
+
+105
+00:11:22,640 --> 00:11:27,680
+triển khai hệ thống AI để nâng cao quyết định của con người thay vì phá hoại nó.
+
+106
+00:11:28,400 --> 00:11:33,200
+Kiến trúc này biến AI từ một bản thử nghiệm thành cơ sở hạ tầng đáng tin cậy.
+
