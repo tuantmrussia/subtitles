@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:02,140
+ Now, let's go to the console and take a quick look.
+
+2
+00:00:02,140 --> 00:00:03,900
+ So I'm on AWS console.
+
+3
+00:00:03,900 --> 00:00:07,780
+ So let me just search for Compray.
+
+4
+00:00:07,780 --> 00:00:10,740
+ So here is Amazon Compray.
+
+5
+00:00:10,740 --> 00:00:13,280
+ So now I'm on the homepage of Amazon Compray.
+
+6
+00:00:13,280 --> 00:00:16,460
+ And you can see here Amazon Compray and Natural Language,
+
+7
+00:00:16,460 --> 00:00:18,860
+ Processing, and Text Analysis.
+
+8
+00:00:18,860 --> 00:00:21,300
+ So if I just click on Launch, and you can see
+
+9
+00:00:21,300 --> 00:00:22,700
+ there are two types here.
+
+10
+00:00:22,700 --> 00:00:24,860
+ One is the real-time analysis.
+
+11
+00:00:24,860 --> 00:00:27,380
+ And another is the analysis of the job.
+
+12
+00:00:27,380 --> 00:00:30,300
+ And it's very similar to what we had seen earlier
+
+13
+00:00:30,300 --> 00:00:31,540
+ with translate.
+
+14
+00:00:31,540 --> 00:00:36,140
+ So you can create the job name, and then do the analysis type,
+
+15
+00:00:36,140 --> 00:00:39,420
+ whether you want to do entity recognition, key phrases,
+
+16
+00:00:39,420 --> 00:00:42,860
+ PI identification, sentiment analysis, and so on.
+
+17
+00:00:42,860 --> 00:00:45,780
+ You can provide the job name, let me just say demo.
+
+18
+00:00:45,780 --> 00:00:49,220
+ And then you can choose whether you want to do entity recognition,
+
+19
+00:00:49,220 --> 00:00:53,220
+ key phrases, identifying the PI data, sentiment analysis,
+
+20
+00:00:53,220 --> 00:00:54,100
+ and so on.
+
+21
+00:00:54,100 --> 00:00:57,300
+ So let me just click on PI.
+
+22
+00:00:57,300 --> 00:00:59,460
+ And then you have to choose the language.
+
+23
+00:00:59,460 --> 00:01:01,580
+ So maybe it supports two right now.
+
+24
+00:01:01,580 --> 00:01:04,780
+ I think English and Spanish, so you can choose English.
+
+25
+00:01:04,780 --> 00:01:06,900
+ So here, you can see in the output mode,
+
+26
+00:01:06,900 --> 00:01:08,820
+ it can either do an offset.
+
+27
+00:01:08,820 --> 00:01:11,540
+ The job output provides character offset
+
+28
+00:01:11,540 --> 00:01:15,140
+ that locate each PI entity in the input text.
+
+29
+00:01:15,140 --> 00:01:20,340
+ So it can identify the PI entity, or it can do reduction.
+
+30
+00:01:20,340 --> 00:01:22,340
+ So you provide the input data here.
+
+31
+00:01:22,340 --> 00:01:25,780
+ So you applaud the document in an S3 location
+
+32
+00:01:25,780 --> 00:01:28,260
+ and provide that S3 location here.
+
+33
+00:01:28,260 --> 00:01:31,140
+ You suggest what is the file format.
+
+34
+00:01:31,140 --> 00:01:35,140
+ And then you suggest the location of the output data.
+
+35
+00:01:35,140 --> 00:01:37,300
+ Again, it's the S3 bucket.
+
+36
+00:01:37,300 --> 00:01:40,900
+ So you create an S3 bucket and provide the location
+
+37
+00:01:40,900 --> 00:01:43,380
+ for output data.
+
+38
+00:01:43,380 --> 00:01:46,980
+ So that's the scenario where you want to do the batch analysis.
+
+39
+00:01:46,980 --> 00:01:49,300
+ But you can also do real time analysis.
+
+40
+00:01:49,300 --> 00:01:53,220
+ So if I just go here and if I do built in--
+
+41
+00:01:53,220 --> 00:01:56,260
+ so this is some sample data, they have provided here--
+
+42
+00:01:56,260 --> 00:02:00,340
+ you can also do a custom and provide your own input.
+
+43
+00:02:00,340 --> 00:02:02,340
+ So let me just build, do, built in.
+
+44
+00:02:02,340 --> 00:02:05,460
+ And let me ask it to analyze this data
+
+45
+00:02:05,460 --> 00:02:08,740
+ that they have already provided.
+
+46
+00:02:08,740 --> 00:02:11,700
+ So now below, you can see the results.
+
+47
+00:02:11,700 --> 00:02:14,180
+ So based on this input data, you can see it
+
+48
+00:02:14,180 --> 00:02:15,900
+ has created various entities.
+
+49
+00:02:15,900 --> 00:02:18,540
+ It has analyzed this text, and it's showing here.
+
+50
+00:02:18,540 --> 00:02:20,580
+ So it's the name of the person.
+
+51
+00:02:20,580 --> 00:02:24,420
+ And again, John is the name of person, organization,
+
+52
+00:02:24,420 --> 00:02:27,420
+ name of the organization, phone number,
+
+53
+00:02:27,420 --> 00:02:30,780
+ and some other things that it has identified from here.
+
+54
+00:02:30,780 --> 00:02:34,700
+ So if I go to key phrases, then it's identifying the key phrases.
+
+55
+00:02:34,700 --> 00:02:37,380
+ So here, it's identifying the key phrases.
+
+56
+00:02:37,380 --> 00:02:42,300
+ Then language, you can see it's saying that 0.99 confidence
+
+57
+00:02:42,300 --> 00:02:46,620
+ that it's English, then if I look at the PI data,
+
+58
+00:02:46,620 --> 00:02:50,740
+ so you can either do offset or do a label.
+
+59
+00:02:50,740 --> 00:02:54,500
+ And here, it's showing that the PI data that they have
+
+60
+00:02:54,500 --> 00:02:57,500
+ is name, email, bank, account number, and so on.
+
+61
+00:02:57,500 --> 00:02:59,580
+ Then it does sentiment analysis.
+
+62
+00:02:59,580 --> 00:03:01,900
+ So you can see it's given some score for sentiment.
+
+63
+00:03:01,900 --> 00:03:07,980
+ So neutral is 0.14, positive is 0.13, negative 0,
+
+64
+00:03:07,980 --> 00:03:11,020
+ and mixed is 0.7.
+
+65
+00:03:11,020 --> 00:03:13,300
+ And then you have targeted sentiment.
+
+66
+00:03:13,300 --> 00:03:16,340
+ So what is the sentiment for the person, the organization,
+
+67
+00:03:16,340 --> 00:03:19,740
+ and it seems mostly all is neutral.
+
+68
+00:03:19,740 --> 00:03:22,220
+ And then finally, you have the syntax.
+
+69
+00:03:22,220 --> 00:03:24,500
+ OK, that's pretty much it from this lecture.
+
+70
+00:03:24,500 --> 00:03:26,420
+ So hopefully, you have got a high level understanding
+
+71
+00:03:26,420 --> 00:03:28,980
+ of how Amazon Comprehend works.
+
+72
+00:03:28,980 --> 00:03:30,060
+ I'll see you in the next lecture.
+
+73
+00:03:30,060 --> 00:03:31,540
+ Thank you.
+
