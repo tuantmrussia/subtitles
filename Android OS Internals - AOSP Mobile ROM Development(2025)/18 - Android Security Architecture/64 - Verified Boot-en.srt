@@ -1,0 +1,168 @@
+1
+00:00:09,880 --> 00:00:15,000
+Verified boot is a critical security feature in Android that ensures the integrity of the system during
+
+2
+00:00:15,000 --> 00:00:16,000
+the boot process.
+
+3
+00:00:16,400 --> 00:00:21,720
+It establishes a chain of trust from the hardware to the operating system, preventing the execution
+
+4
+00:00:21,720 --> 00:00:27,240
+of unauthorized code and protecting against malicious attacks that attempt to compromise the system's
+
+5
+00:00:27,240 --> 00:00:28,080
+integrity.
+
+6
+00:00:28,520 --> 00:00:34,240
+At its core, verified boot relies on cryptographic verification to ensure that each stage of the boot
+
+7
+00:00:34,240 --> 00:00:37,080
+process is genuine and has not been tampered with.
+
+8
+00:00:37,360 --> 00:00:42,400
+The process begins with a hardware rooted trust anchor, typically a read only memory containing the
+
+9
+00:00:42,400 --> 00:00:43,560
+initial bootloader.
+
+10
+00:00:43,920 --> 00:00:49,480
+This bootloader is digitally signed by the device manufacturer, and its authenticity can be verified
+
+11
+00:00:49,480 --> 00:00:52,200
+using a public key embedded in the hardware.
+
+12
+00:00:52,560 --> 00:00:58,560
+When the device is powered on, the initial boot loader verifies the signature of the next stage bootloader,
+
+13
+00:00:58,560 --> 00:01:02,040
+which is responsible for loading the operating system kernel.
+
+14
+00:01:02,400 --> 00:01:07,500
+If the signature is valid, the bootloader proceeds to load and execute the kernel.
+
+15
+00:01:07,860 --> 00:01:14,100
+If the signature verification fails at any point, the boot process is halted, preventing the execution
+
+16
+00:01:14,100 --> 00:01:16,060
+of potentially malicious code.
+
+17
+00:01:16,460 --> 00:01:22,260
+The kernel in turn, verifies the signatures of the system partitions which contain the core operating
+
+18
+00:01:22,260 --> 00:01:24,500
+system files and applications.
+
+19
+00:01:24,900 --> 00:01:28,700
+This ensures that the entire system has not been modified or corrupted.
+
+20
+00:01:29,020 --> 00:01:34,740
+This verification process continues throughout the boot chain, with each component verifying the authenticity
+
+21
+00:01:34,740 --> 00:01:35,540
+of the next.
+
+22
+00:01:35,900 --> 00:01:41,100
+This creates a chain of trust that extends from the hardware to the operating system, ensuring that
+
+23
+00:01:41,100 --> 00:01:43,380
+only authorized code is executed.
+
+24
+00:01:43,700 --> 00:01:48,820
+One of the key benefits of verified boot is its ability to protect against rollback attacks.
+
+25
+00:01:49,220 --> 00:01:54,500
+Rollback attacks involve reverting the system to an earlier, vulnerable version of the operating system
+
+26
+00:01:54,660 --> 00:01:57,180
+in order to exploit known security flaws.
+
+27
+00:01:57,620 --> 00:02:03,220
+Verified boot prevents rollback attacks by requiring each version of the operating system to be cryptographically
+
+28
+00:02:03,220 --> 00:02:03,740
+signed.
+
+29
+00:02:04,100 --> 00:02:08,820
+The device maintains a record of the highest version of the operating system that has been verified,
+
+30
+00:02:08,820 --> 00:02:11,760
+and will refuse to boot any version that is older than this.
+
+31
+00:02:12,200 --> 00:02:17,080
+This effectively prevents attackers from downgrading the system to a vulnerable state.
+
+32
+00:02:17,320 --> 00:02:21,960
+Furthermore, verified boot can detect tampering with the system partitions.
+
+33
+00:02:22,320 --> 00:02:28,000
+If an attacker attempts to modify the system partitions, the verification process will fail, preventing
+
+34
+00:02:28,000 --> 00:02:29,600
+the system from booting.
+
+35
+00:02:29,960 --> 00:02:36,440
+This ensures that the device is always running a genuine and unmodified version of the operating system.
+
+36
+00:02:36,840 --> 00:02:37,680
+In summary.
+
+37
+00:02:37,880 --> 00:02:43,120
+Verified boot plays a vital role in safeguarding the integrity of the Android system, ensuring that
+
+38
+00:02:43,120 --> 00:02:48,600
+only authorized code is executed, preventing rollback attacks, and detecting tampering with system
+
+39
+00:02:48,600 --> 00:02:49,400
+partitions.
+
+40
+00:02:49,720 --> 00:02:54,760
+It forms a fundamental part of the Android security architecture, and is essential for maintaining
+
+41
+00:02:54,760 --> 00:02:57,800
+the security and trustworthiness of Android devices.
+
+42
+00:02:58,200 --> 00:03:04,080
+It's a sophisticated mechanism, but with simple aim of verifying the authenticity of each component.
+
