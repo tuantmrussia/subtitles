@@ -1,0 +1,260 @@
+1
+00:00:00,720 --> 00:00:01,480
+Hey there.
+
+2
+00:00:02,360 --> 00:00:06,840
+In this video I'll show you how to download and build Android 15 from source.
+
+3
+00:00:07,680 --> 00:00:13,880
+We'll go through three main steps setting up your environment, downloading the AOSp code, and finally
+
+4
+00:00:13,880 --> 00:00:14,680
+building it.
+
+5
+00:00:15,480 --> 00:00:19,680
+If you've never done this before, don't worry, I'll walk you through each part.
+
+6
+00:00:20,560 --> 00:00:21,880
+Let's jump right in.
+
+7
+00:00:23,040 --> 00:00:28,000
+Before we get started, let's make sure your system can actually handle building Android 15.
+
+8
+00:00:28,920 --> 00:00:31,760
+Here's what you'll need as per the Google official website.
+
+9
+00:00:32,640 --> 00:00:36,480
+First, make sure you're using a 64 bit x86 machine.
+
+10
+00:00:37,400 --> 00:00:41,400
+Older 32 bit systems just won't cut it for newer Android versions.
+
+11
+00:00:41,400 --> 00:00:44,440
+Those only work for Android 2.3 and earlier.
+
+12
+00:00:45,280 --> 00:00:46,840
+Next up storage.
+
+13
+00:00:47,720 --> 00:00:50,680
+You'll need at least 400GB of free space.
+
+14
+00:00:51,640 --> 00:00:59,000
+That breaks down to about 250GB to download the source code, and another 150GB for building it.
+
+15
+00:00:59,920 --> 00:01:02,820
+And if you are using a full mirror of the AOSp repos.
+
+16
+00:01:02,860 --> 00:01:06,260
+You'll need even more room now for Ram.
+
+17
+00:01:06,260 --> 00:01:08,580
+You'll want at least 64GB.
+
+18
+00:01:09,580 --> 00:01:12,860
+Yeah, it's a lot, but Android is a massive project.
+
+19
+00:01:13,660 --> 00:01:19,940
+For reference, Google builds Android on 72 core machines with 64 gigs of Ram, and that takes around
+
+20
+00:01:19,940 --> 00:01:20,860
+40 minutes.
+
+21
+00:01:21,660 --> 00:01:26,220
+If you're on something like a six core system with the same amount of Ram, you are looking at around
+
+22
+00:01:26,220 --> 00:01:27,900
+six hours for a full build.
+
+23
+00:01:28,860 --> 00:01:32,180
+So yeah, you'll want a pretty solid machine to make this smooth.
+
+24
+00:01:33,100 --> 00:01:38,180
+Don't worry, you can still live with a decent machine with 16 cores and 32GB Ram.
+
+25
+00:01:39,180 --> 00:01:42,020
+Let's look into the operating system requirements.
+
+26
+00:01:42,940 --> 00:01:49,100
+To build Android 15, your machine needs to be running a 64 bit Linux distribution that includes GNU
+
+27
+00:01:49,220 --> 00:01:51,940
+C library version 2.17 or higher.
+
+28
+00:01:52,780 --> 00:01:59,660
+If you are building Android 11 or newer like we are, you'll also need to be on ubuntu 18.04 or later.
+
+29
+00:02:00,500 --> 00:02:05,710
+That version has all the right tools and package support out of the box, so it's a solid choice.
+
+30
+00:02:06,590 --> 00:02:12,670
+Important note macOS is no longer supported for Android development as of June 2021.
+
+31
+00:02:13,510 --> 00:02:18,830
+If you are on a mac, you'll either need to setup a Linux environment in a VM or switch to a native
+
+32
+00:02:18,830 --> 00:02:19,830
+Linux machine.
+
+33
+00:02:20,790 --> 00:02:25,990
+Once you've got the right OS in place, you are ready to install the required packages and start setting
+
+34
+00:02:25,990 --> 00:02:27,510
+up your build environment.
+
+35
+00:02:33,230 --> 00:02:37,230
+Now we are going to install the required packages you'll need to build Android.
+
+36
+00:02:38,150 --> 00:02:42,470
+Go ahead and copy the command you see on screen from official Android documentation.
+
+37
+00:02:42,470 --> 00:02:44,230
+Source android.com.
+
+38
+00:02:45,230 --> 00:02:49,830
+Alright, now we are going to install the packages needed to build Android 15.
+
+39
+00:02:50,750 --> 00:02:56,910
+Make sure you are on ubuntu 18.04 or later, then open up your terminal and run this command.
+
+40
+00:02:56,950 --> 00:03:02,190
+This will install a bunch of tools we need including git, which is super important for downloading
+
+41
+00:03:02,190 --> 00:03:09,370
+the AOSp source code later on in my setup, it's already installed so it will not additionally install
+
+42
+00:03:09,370 --> 00:03:10,290
+any packages.
+
+43
+00:03:16,250 --> 00:03:20,330
+This section tells us what software needs to be installed to work with AOSp.
+
+44
+00:03:20,650 --> 00:03:24,890
+That's open JDK make python3 and something called repo.
+
+45
+00:03:25,810 --> 00:03:29,450
+Now for the latest Android versions, including 15.
+
+46
+00:03:29,650 --> 00:03:34,730
+These first three tools open JDK make and python3 prebuild.
+
+47
+00:03:34,730 --> 00:03:37,050
+So we don't need to install them separately.
+
+48
+00:03:37,970 --> 00:03:41,970
+What we do need is repo and that's what we are going to install next.
+
+49
+00:03:44,530 --> 00:03:45,130
+Okay.
+
+50
+00:03:45,290 --> 00:03:48,050
+Now let's switch to the terminal and run the commands.
+
+51
+00:03:48,970 --> 00:03:51,450
+First we'll update our package info.
+
+52
+00:03:52,330 --> 00:03:53,770
+Copy and paste this.
+
+53
+00:03:54,730 --> 00:03:56,250
+Give it a moment to finish.
+
+54
+00:03:57,250 --> 00:04:00,610
+Once that's done, go ahead and install the repo launcher.
+
+55
+00:04:20,500 --> 00:04:24,820
+This command installs the repo tool that we'll use to sync the Android source code.
+
+56
+00:04:25,740 --> 00:04:28,660
+If this works without any errors, you are good to go.
+
+57
+00:04:29,900 --> 00:04:33,900
+If for some reason that didn't work, you can also install repo manually.
+
+58
+00:04:34,740 --> 00:04:36,060
+Here's how to do it.
+
+59
+00:04:37,060 --> 00:04:42,580
+This downloads the repo launcher, checks the GPG key, and installs it to your root bin directory.
+
+60
+00:04:43,620 --> 00:04:44,540
+Last step.
+
+61
+00:04:44,540 --> 00:04:46,620
+Let's make sure it installed correctly.
+
+62
+00:04:49,300 --> 00:04:54,620
+You should see something like repo launcher version 2.17 or higher.
+
+63
+00:04:55,580 --> 00:04:56,540
+And that's it.
+
+64
+00:04:57,380 --> 00:05:02,100
+You now have repo installed and ready to use for downloading the Android 15 source code.
+
+65
+00:05:03,580 --> 00:05:07,420
+In the next session we will download the Android 15 source code.
+
