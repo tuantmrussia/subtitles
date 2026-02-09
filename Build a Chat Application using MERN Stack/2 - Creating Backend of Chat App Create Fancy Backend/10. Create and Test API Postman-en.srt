@@ -1,0 +1,468 @@
+1
+00:00:00,000 --> 00:00:07,520
+ So, hello everyone welcome back to this video, so now we are going to implement this token
+
+2
+00:00:07,520 --> 00:00:12,240
+ generator function here inside of our auth controller.js, okay.
+
+3
+00:00:12,240 --> 00:00:17,160
+ So as we have already know that we have already has the password and we are using this declaration
+
+4
+00:00:17,160 --> 00:00:22,280
+ as const new user equal to we are creating a new user with the user name email and the password
+
+5
+00:00:22,280 --> 00:00:24,840
+ which we are getting from the request.body, okay.
+
+6
+00:00:24,840 --> 00:00:29,160
+ So now we have also saved the user, so await new user dot save.
+
+7
+00:00:29,160 --> 00:00:33,520
+ So now what we are going to do is like suppose if the new user exists, so we are going
+
+8
+00:00:33,520 --> 00:00:37,640
+ to write the logic as like if the new user is existing.
+
+9
+00:00:37,640 --> 00:00:42,240
+ Then in that case what we are going to do is, in that case we are going to use that token
+
+10
+00:00:42,240 --> 00:00:45,840
+ generation function and so we have imported it here.
+
+11
+00:00:45,840 --> 00:00:56,920
+ So we will have two IDs, two arguments, so a new user dot underscore ID and then a desert response
+
+12
+00:00:56,920 --> 00:01:03,920
+ and after this what we are going to parse is that rs dot JSON response and instead of JSON
+
+13
+00:01:03,920 --> 00:01:09,200
+ response we are going to just pass this new user, okay.
+
+14
+00:01:09,200 --> 00:01:13,640
+ So we are going to pass that detail here and now what we are going to do is we are going
+
+15
+00:01:13,640 --> 00:01:14,640
+ to cache the error.
+
+16
+00:01:14,640 --> 00:01:19,880
+ So inside of this cache block, so we are going to write as console dot log if some error
+
+17
+00:01:19,880 --> 00:01:29,360
+ is found, so error in sign up, so error in sign up and we are going to just pass the error
+
+18
+00:01:29,360 --> 00:01:34,680
+ message, so error dot message, alright.
+
+19
+00:01:34,680 --> 00:01:43,480
+ Now we are going to just say that st status code of 500, so 500 dot JSON, so let us pass
+
+20
+00:01:43,480 --> 00:01:54,200
+ the message in JSON format, so message internal server error, okay.
+
+21
+00:01:54,200 --> 00:02:01,320
+ So now we have done it, so now what we will do is, so this is kind of a POST request
+
+22
+00:02:01,320 --> 00:02:02,320
+ right.
+
+23
+00:02:02,320 --> 00:02:09,720
+ When we hit the button we will be having this POST request, so let us go to this app.js.
+
+24
+00:02:09,720 --> 00:02:16,760
+ I think this one is on controller token.js, user model.js routes, okay.
+
+25
+00:02:16,760 --> 00:02:19,040
+ So this is not a get request, this is a POST request, okay.
+
+26
+00:02:19,040 --> 00:02:25,520
+ So we are going to just change from get to POST request, okay.
+
+27
+00:02:25,520 --> 00:02:31,560
+ So now what we will do is, let us go back to the app.js file and we are going to implement
+
+28
+00:02:31,560 --> 00:02:35,720
+ some middle out functionalities there also.
+
+29
+00:02:35,720 --> 00:02:39,600
+ So what will you do is actually this POST method, okay.
+
+30
+00:02:39,600 --> 00:02:47,320
+ So now after this, since we are passing the data right, so in the passing the data we are
+
+31
+00:02:47,320 --> 00:02:52,760
+ going to use one thing, like one middleware, so instead of the app.js file we are going
+
+32
+00:02:52,760 --> 00:02:57,040
+ to just implement app.use, express.json, okay.
+
+33
+00:02:57,040 --> 00:03:03,600
+ So express.json, so the data is coming in the JSON format, that is why.
+
+34
+00:03:03,600 --> 00:03:08,440
+ And also one thing, go to this auth route.js, so this is also not a get request, it is
+
+35
+00:03:08,440 --> 00:03:10,080
+ a POST request, okay.
+
+36
+00:03:10,080 --> 00:03:11,720
+ So POST request.
+
+37
+00:03:11,720 --> 00:03:14,600
+ So now we are going to test these routes, okay.
+
+38
+00:03:14,600 --> 00:03:18,480
+ So whether they are working or not, so for that we are going to use one tool, which is
+
+39
+00:03:18,480 --> 00:03:21,480
+ an API testing tool, which is called as Postman, okay.
+
+40
+00:03:21,480 --> 00:03:28,360
+ So Postman, so we can open this Postman in order to test our routes.
+
+41
+00:03:28,360 --> 00:03:35,560
+ So let it open after something, I am going to just configure that, it takes a quite a while.
+
+42
+00:03:35,560 --> 00:03:36,760
+ So now append that.
+
+43
+00:03:36,760 --> 00:03:42,160
+ So as you can see that this is the interface of Postman, so what you can actually do is
+
+44
+00:03:42,160 --> 00:03:45,680
+ like go to this workspace here and you can create your newer space.
+
+45
+00:03:45,680 --> 00:03:48,280
+ So if you create newer space it will appear like this.
+
+46
+00:03:48,280 --> 00:03:54,480
+ And now what will we actually be doing, don't save this, like you can go here and create
+
+47
+00:03:54,480 --> 00:03:55,640
+ a one new collection.
+
+48
+00:03:55,640 --> 00:04:00,040
+ So if you click on this create new collection, you can just name this one, okay.
+
+49
+00:04:00,040 --> 00:04:05,640
+ So I have named this as new collection, so we can rename it, we are working authentication
+
+50
+00:04:05,640 --> 00:04:10,200
+ right, like authenticating users to sign in and sign up.
+
+51
+00:04:10,200 --> 00:04:12,680
+ So like that kind of functionality we are going to implement.
+
+52
+00:04:12,680 --> 00:04:16,200
+ So what we are going to do is that we are going to create a new request, okay.
+
+53
+00:04:16,200 --> 00:04:25,360
+ So remove this, okay, remove this one and also here this, if it is present.
+
+54
+00:04:25,360 --> 00:04:28,880
+ So now this is a, let's assign is a post request, okay.
+
+55
+00:04:28,880 --> 00:04:35,280
+ So we are going to just use the data like for the backend, which site we are using.
+
+56
+00:04:35,280 --> 00:04:38,280
+ So we are using the local host 5000, right.
+
+57
+00:04:38,280 --> 00:04:46,280
+ So localhost 5000 and API and then what we are going to do, or slash sign up, we are
+
+58
+00:04:46,280 --> 00:04:48,920
+ going to test the route for the sign up, okay.
+
+59
+00:04:48,920 --> 00:04:54,960
+ So once you do this take here, like click here and assign this a post request.
+
+60
+00:04:54,960 --> 00:04:59,480
+ And now after this what you are going to do is go here in the like JSON and you are going
+
+61
+00:04:59,480 --> 00:05:03,200
+ to pass this in the JSON format, okay.
+
+62
+00:05:03,200 --> 00:05:07,640
+ So you can click here JSON and these double braces will appear.
+
+63
+00:05:07,640 --> 00:05:10,280
+ Instead of that, what are the fields you are going to pass?
+
+64
+00:05:10,280 --> 00:05:13,080
+ So username, right username.
+
+65
+00:05:13,080 --> 00:05:21,560
+ So suppose you are passing as Chantano1 and suppose the email.
+
+66
+00:05:21,560 --> 00:05:26,320
+ So the email would be suppose I am going to take my email.
+
+67
+00:05:26,320 --> 00:05:30,680
+ So like this.
+
+68
+00:05:30,680 --> 00:05:37,400
+ You know how it's coming, we have already made those fields right username, email and passwords.
+
+69
+00:05:37,400 --> 00:05:39,960
+ And now we are just testing that route, particular route.
+
+70
+00:05:39,960 --> 00:05:44,200
+ So we are going to pass the data, I told you, right, that we are going to pass the data.
+
+71
+00:05:44,200 --> 00:05:49,000
+ The user is going to pass the data from the backend, like his username, email and the
+
+72
+00:05:49,000 --> 00:05:51,680
+ password so that it gets a story in the database.
+
+73
+00:05:51,680 --> 00:05:57,280
+ And that's how we are testing it via this tool, which is postman tool, okay.
+
+74
+00:05:57,280 --> 00:05:58,280
+ So how it's working?
+
+75
+00:05:58,280 --> 00:06:00,560
+ And that is a part of API testing.
+
+76
+00:06:00,560 --> 00:06:09,560
+ So now suppose the password will be passed word one, two, three.
+
+77
+00:06:09,560 --> 00:06:13,040
+ So six letters at least it should be right.
+
+78
+00:06:13,040 --> 00:06:22,120
+ So now if you just hit on this, so is some connection request, we will look in it, okay.
+
+79
+00:06:22,120 --> 00:06:27,400
+ So I found out this, actually what is happening here is that I haven't started the backend,
+
+80
+00:06:27,400 --> 00:06:28,400
+ okay.
+
+81
+00:06:28,400 --> 00:06:35,000
+ So let's go to this folder, like in the terminal, you go and then go to this CD into
+
+82
+00:06:35,000 --> 00:06:41,120
+ the backend folder, CD backend and then NPM start using the script NPM start script.
+
+83
+00:06:41,120 --> 00:06:43,400
+ So it is going to start the backend application.
+
+84
+00:06:43,400 --> 00:06:48,760
+ And now once it has started the backend application, as you can see, here's some error.
+
+85
+00:06:48,760 --> 00:06:51,400
+ And why it is actually coming, I will tell you why?
+
+86
+00:06:51,400 --> 00:06:54,640
+ Because when you're logging into the MongoDB database, okay.
+
+87
+00:06:54,640 --> 00:07:01,840
+ So you should have, you have to make that whitelist the IP address again and again.
+
+88
+00:07:01,840 --> 00:07:04,880
+ So it's got some kind of a common error that happens.
+
+89
+00:07:04,880 --> 00:07:10,200
+ So please make sure you log in it, like logging into the MongoDB database and
+
+90
+00:07:10,200 --> 00:07:17,120
+ you just whitelist to the address or allow access from anywhere from like IP address 0.0.0,
+
+91
+00:07:17,120 --> 00:07:22,680
+ like that option would be coming inside there, okay.
+
+92
+00:07:22,680 --> 00:07:27,400
+ So like as you can see here, so add IP address, current IP address is not added,
+
+93
+00:07:27,400 --> 00:07:30,000
+ you will not be able to connect to database from this address.
+
+94
+00:07:30,000 --> 00:07:34,200
+ So add this and now your current IP is working successfully.
+
+95
+00:07:34,200 --> 00:07:41,600
+ So this is, so now if you just control S, save again, it will start again.
+
+96
+00:07:41,600 --> 00:07:46,520
+ And you can see that MongoDB is connected successfully and service running on port 5000.
+
+97
+00:07:46,520 --> 00:07:52,280
+ So here is some catch and here is something that you might need to debug.
+
+98
+00:07:52,280 --> 00:07:59,000
+ So I told you beforehand, so you guys don't need to panic and find the solutions in the stack overflow.
+
+99
+00:07:59,000 --> 00:08:02,280
+ So now go in this tool.
+
+100
+00:08:02,280 --> 00:08:07,920
+ Now as you can see in that post request has been passed in the JSON format and here in the curly braces.
+
+101
+00:08:07,920 --> 00:08:09,480
+ Use the name email and password.
+
+102
+00:08:09,480 --> 00:08:15,200
+ We're going to send this, it is taking some time.
+
+103
+00:08:21,600 --> 00:08:26,640
+ Okay, so some small small bugs happens like we are going to miss some type one all.
+
+104
+00:08:26,640 --> 00:08:28,720
+ So I try to test it, so it's working correctly.
+
+105
+00:08:28,720 --> 00:08:37,680
+ So the problem was that in app.js I miss this braces, okay, open braces.
+
+106
+00:08:37,680 --> 00:08:40,480
+ So just add this one and it will be working fine.
+
+107
+00:08:40,480 --> 00:08:47,920
+ So now go here and when you send this, so you can see that our email username password.
+
+108
+00:08:47,920 --> 00:08:54,000
+ And as you can see, why BigRip.js was used, you know, why like this, this is a way, extremely
+
+109
+00:08:54,000 --> 00:08:59,240
+ big string format of random combination of some characters and special characters.
+
+110
+00:08:59,240 --> 00:09:02,000
+ So as you can see, that's why we had used BigRip.js.
+
+111
+00:09:02,000 --> 00:09:07,840
+ If we haven't used BigRip.js earlier and then in that case, it would be invisible.
+
+112
+00:09:07,840 --> 00:09:12,240
+ So as you can see here, like profile pick email username, whatever it is, it's present
+
+113
+00:09:12,240 --> 00:09:16,240
+ at timestamps as I've already told you, like I had created an updated it.
+
+114
+00:09:16,240 --> 00:09:19,360
+ So that is the work of timestamps, okay.
+
+115
+00:09:19,360 --> 00:09:25,120
+ So I hope you understand everything about this, like how to test a particular API and
+
+116
+00:09:25,120 --> 00:09:28,120
+ how to implement just an update can and all.
+
+117
+00:09:28,120 --> 00:09:29,400
+ So see you in the next video.
+
