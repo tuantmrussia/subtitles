@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Data</title>
+    <style>
+        /* --- Base Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; padding: 30px; color: #333; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 20px; font-size: 1.8em; }
+        
+        /* --- Score Board Style --- */
+        .score-board {
+            display: flex; justify-content: space-around; background: white;
+            padding: 15px; margin-bottom: 25px; border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e1e4e8;
+        }
+        .score-item { text-align: center; }
+        .score-val { font-size: 1.5em; font-weight: bold; display: block; }
+        .score-lbl { font-size: 0.85em; color: #7f8c8d; text-transform: uppercase; font-weight: 600; }
+        
+        .c-purple { color: #8e44ad; }
+        .c-green { color: #27ae60; }
+        .c-red { color: #e74c3c; }
+        .c-grey { color: #7f8c8d; }
+
+        .btn-reset-container { text-align: center; margin-bottom: 30px; }
+        .btn-reset { 
+            background-color: #34495e; color: white; border: none; padding: 8px 16px; 
+            border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; 
+            transition: 0.2s; 
+        }
+        .btn-reset:hover { background-color: #2c3e50; }
+
+        /* --- Question Card --- */
+        .question-card { 
+            background: white; padding: 25px; margin-bottom: 25px; 
+            border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #e1e4e8; 
+        }
+
+        .q-header { font-weight: 700; color: #7f8c8d; margin-bottom: 15px; font-size: 0.9em; text-transform: uppercase; }
+        .q-body { font-size: 1.2em; margin-bottom: 20px; color: #2c3e50; font-weight: 500; }
+        
+        /* Images */
+        .question-card img, .feedback-text img, .overall-explanation img {
+            max-width: 100% !important; height: auto !important; display: block;
+            margin: 15px auto; border-radius: 6px; cursor: zoom-in;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .q-answers { list-style: none; padding: 0; }
+        
+        /* --- Option Styles --- */
+        .option { 
+            padding: 15px 20px; border: 2px solid #e1e4e8; margin-bottom: 12px; border-radius: 8px; 
+            cursor: pointer; transition: all 0.2s ease; background: white; 
+            display: flex; flex-direction: column;
+        }
+        
+        .option-content { display: flex; align-items: flex-start; gap: 15px; width: 100%; }
+
+        .option:hover:not(.answered) { border-color: #bdc3c7; background-color: #f8f9fa; }
+        .option.selected:not(.answered) { border-color: #34495e; background-color: #edf2f7; }
+        
+        /* Icons */
+        .chk { 
+            font-size: 1.1em; flex-shrink: 0; width: 24px; height: 24px; 
+            display: flex; align-items: center; justify-content: center; 
+            border: 2px solid #bdc3c7; background: white; margin-top: 2px;
+        }
+        .chk.radio { border-radius: 50%; }
+        .chk.checkbox { border-radius: 4px; }
+        
+        .option.selected .chk { border-color: #2c3e50; background: #2c3e50; }
+        .option.selected .chk::after { content: ''; display: block; width: 10px; height: 10px; background: white; border-radius: 50%; }
+
+        /* --- Feedback Section --- */
+        .feedback-text {
+            margin-top: 15px; padding: 12px 15px; font-size: 0.95em;
+            border-left: 4px solid; background-color: rgba(255,255,255,0.5);
+            border-radius: 0 4px 4px 0; animation: fadeIn 0.3s ease;
+            display: none;
+        }
+        .feedback-text:empty { display: none !important; }
+
+        /* --- Overall Explanation Section --- */
+        .overall-explanation {
+            display: none; margin-top: 25px; padding: 20px;
+            background-color: #f0f7ff; border: 1px solid #cce5ff;
+            border-radius: 8px; color: #333; animation: fadeIn 0.5s ease;
+            overflow-wrap: break-word; 
+        }
+        .overall-explanation h4 {
+            margin: 0 0 10px 0; color: #0056b3; font-size: 1em;
+            text-transform: uppercase; font-weight: 700;
+        }
+
+        /* --- States After Submit --- */
+        .option.user-wrong { border-color: #e74c3c; background-color: #fdecea; cursor: default; }
+        .option.user-wrong .chk { border-color: #e74c3c; background: #e74c3c; }
+        .option.user-wrong .chk::after { content: '✕'; color: white; background: none; font-size: 16px; font-weight: bold; width: auto; height: auto; }
+        .option.user-wrong .feedback-text { display: block; border-color: #c0392b; color: #c0392b; background-color: rgba(231, 76, 60, 0.1); }
+
+        .option.show-correct { border-color: #27ae60; background-color: #e8f8f5; cursor: default; }
+        .option.show-correct .chk { border-color: #27ae60; background: #27ae60; }
+        .option.show-correct .chk::after { content: '✓'; color: white; background: none; font-size: 16px; font-weight: bold; width: auto; height: auto; }
+        .option.show-correct .feedback-text { display: block; border-color: #27ae60; color: #1e8449; background-color: rgba(39, 174, 96, 0.1); font-weight: 500; }
+
+        .btn-submit-container { margin-top: 20px; }
+        .btn-submit { background-color: #2980b9; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 15px; font-weight: bold; }
+        .btn-submit:hover { background-color: #2471a3; }
+        .btn-submit:disabled { opacity: 0.7; cursor: default; }
+
+        /* Modal Zoom */
+        .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 90vh; }
+        .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz - Data</h1>
+        
+        <div class="score-board">
+            <div class="score-item">
+                <span class="score-val c-purple" id="val-score">0%</span>
+                <span class="score-lbl">Score</span>
+            </div>
+            <div class="score-item">
+                <span class="score-val c-green" id="val-correct">0</span>
+                <span class="score-lbl">Correct</span>
+            </div>
+            <div class="score-item">
+                <span class="score-val c-red" id="val-wrong">0</span>
+                <span class="score-lbl">Wrong</span>
+            </div>
+            <div class="score-item">
+                <span class="score-val c-grey" id="val-remain">0</span>
+                <span class="score-lbl">Remaining</span>
+            </div>
+        </div>
+
+        <div class="btn-reset-container">
+            <button class="btn-reset" onclick="resetQuiz()">Reset Quiz</button>
+        </div>
+        <div id="questions-container"></div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        const quizData = {"quiz_title":"Quiz - Data","questions":[{"_class":"assessment","id":144928697,"assessment_type":"multiple-choice","created":"2026-01-23T13:16:44Z","prompt":{"question":"<p>A data science team is preparing a large dataset for fine-tuning a language model. They need to clean text data, remove PII, normalize formats, and create training and validation splits, all with minimal coding.</p><p>Which tool BEST meets these requirements?</p>","relatedLectureIds":"","feedbacks":["","<p>Amazon SageMaker Data Wrangler provides hundreds of built-in data transformations, a visual no-code/low-code interface, PII detection and redaction, and direct export to ML training workflows. This makes it ideal for preparing GenAI datasets quickly and at scale.</p>","",""],"answers":["<p>Write custom PySpark scripts on Amazon EMR</p>","<p>Use Amazon SageMaker Data Wrangler with built-in transformations and a visual interface </p>","<p>Use Amazon Athena SQL queries to transform the data</p>","<p>Manually process the data in Excel before uploading to Amazon S3</p>"]},"correct_response":["b"],"updated":"2026-01-23T13:16:44Z","section":""},{"_class":"assessment","id":144928771,"assessment_type":"multiple-choice","created":"2026-01-23T13:18:46Z","prompt":{"question":"<p>A company building a RAG application needs to store and retrieve user preference features in real-time to personalize responses. Features must be available with single-digit millisecond latency and also accessible for batch model training.</p><p>Which solution meets these requirements?</p>","relatedLectureIds":["53810655"],"feedbacks":["","<p>Feature Store provides: 1. Online Store: Low-latency (single-digit ms) feature retrieval for inference 2. Offline Store: S3-based storage for batch training Automatic sync between both stores</p>","",""],"answers":["<p>Store features in Amazon S3 and query with Athena</p>","<p>Use Amazon SageMaker Feature Store with both Online and Offline stores enabled</p>","<p>Use Amazon DynamoDB for real-time and replicate to S3 manually for training</p>","<p>Store all features in Amazon RDS PostgreSQL</p>"]},"correct_response":["b"],"updated":"2026-01-25T07:31:01Z","section":""},{"_class":"assessment","id":144928775,"assessment_type":"multiple-choice","created":"2026-01-23T13:20:01Z","prompt":{"question":"<p>A legal firm needs to analyze thousands of complex contracts each month, including multi-page PDFs with tables, scanned signatures, and varying structures. The system must extract key terms and obligations, understand semantic relationships across clauses and pages, and output structured data for a RAG-based search application while minimizing custom model development.</p><p>Which approach <strong>BEST</strong> meets these requirements?</p>","relatedLectureIds":"","feedbacks":["","","<p>Amazon Bedrock Data Automation natively processes complex, multimodal contract documents and understands semantic relationships across clauses and pages. Custom blueprints define contract-specific schemas without model training, and the service outputs structured JSON directly usable by RAG pipelines with minimal operational overhead.</p>",""],"answers":["<p>Use Amazon Textract and Amazon Comprehend for text extraction and entity detection</p>","<p>Use Amazon Textract for OCR, then process with custom Bedrock prompts and manual output structuring</p>","<p>Use Amazon Bedrock Data Automation with custom blueprints to extract semantically rich structured data</p>","<p>Use Amazon Kendra to index contracts and rely on built-in ML for extraction</p>"]},"correct_response":["c"],"updated":"2026-01-23T13:20:01Z","section":""}]};
+        let answeredQuestions = new Set();
+
+        function smartLinkify(text) {
+            if (!text) return "";
+            const regex = /((?:href|src)=["'])(https?:\/\/[^"']+)["']|(https?:\/\/[^\s<>"']+)/g;
+            let processed = text.replace(regex, (match, prefix, quotedUrl, rawUrl) => {
+                if (prefix) return match; 
+                if (rawUrl) return '<a href="' + rawUrl + '" target="_blank">' + rawUrl + '</a>';
+                return match;
+            });
+            return processed.replace(/\n/g, '<br>');
+        }
+
+        function init() {
+            const container = document.getElementById('questions-container');
+            quizData.questions.forEach((q, index) => {
+                container.appendChild(createQuestionCard(q, index + 1));
+            });
+            setupImageZoom();
+            updateStats(); // Init stats
+        }
+
+        // --- Stats Logic ---
+        function updateStats() {
+            const total = quizData.questions.length;
+            let correct = 0;
+            let wrong = 0;
+            
+            document.querySelectorAll('.question-card.answered').forEach(card => {
+                // Check if user selected the correct option
+                const hasWrong = card.querySelector('.option.user-wrong');
+                if (hasWrong) {
+                    wrong++;
+                } else {
+                    correct++;
+                }
+            });
+
+            const answered = answeredQuestions.size;
+            const remaining = total - answered;
+            const score = answered > 0 ? Math.round((correct / total) * 100) : 0;
+
+            document.getElementById('val-score').innerText = score + '%';
+            document.getElementById('val-correct').innerText = correct;
+            document.getElementById('val-wrong').innerText = wrong;
+            document.getElementById('val-remain').innerText = remaining;
+        }
+
+        function createQuestionCard(qData, qNum) {
+            const card = document.createElement('div');
+            card.className = 'question-card';
+            card.dataset.id = qData.id;
+
+            const prompt = qData.prompt || {};
+            const answers = prompt.answers || [];
+            const correctResponses = qData.correct_response || [];
+            const feedbacks = qData.feedbacks || prompt.feedbacks || [];
+            
+            let overallExplanation = prompt.explanation || "";
+            overallExplanation = smartLinkify(overallExplanation);
+
+            const isMulti = correctResponses.length > 1;
+            card.dataset.correct = JSON.stringify(correctResponses);
+            card.dataset.isMulti = isMulti;
+
+            let optionsHTML = '';
+            answers.forEach((ans, idx) => {
+                const letter = String.fromCharCode(97 + idx); 
+                let ansText = typeof ans === 'string' ? ans : (ans.body || ans.content || '');
+                let contentFeedback = feedbacks[idx] || "";
+                contentFeedback = smartLinkify(contentFeedback);
+                const feedbackHtml = contentFeedback ? '<div class="feedback-text">' + contentFeedback + '</div>' : '';
+
+                optionsHTML += `
+                    <li class="option" data-idx="${idx}" data-letter="${letter}" onclick="selectOption(this)">
+                        <div class="option-content">
+                            <span class="chk ${isMulti ? 'checkbox' : 'radio'}"></span>
+                            <div style="flex:1">${ansText}</div>
+                        </div>
+                        ${feedbackHtml}
+                    </li>`;
+            });
+
+            const qText = prompt.question || prompt.text || '';
+
+            card.innerHTML = `
+                <div class="q-header">Question ${qNum}</div>
+                <div class="q-body">${qText}</div>
+                <ul class="q-answers">${optionsHTML}</ul>
+                <div class="btn-submit-container">
+                    <button class="btn-submit" onclick="submitAnswer(this)">Answer</button>
+                </div>
+                <div class="overall-explanation">
+                    <h4>Overall Explanation</h4>
+                    <div>${overallExplanation}</div>
+                </div>
+            `;
+            return card;
+        }
+
+        function selectOption(el) {
+            const card = el.closest('.question-card');
+            if (card.classList.contains('answered')) return;
+            const isMulti = card.dataset.isMulti === 'true';
+            if (isMulti) {
+                el.classList.toggle('selected');
+            } else {
+                card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+                el.classList.add('selected');
+            }
+        }
+
+        function submitAnswer(btn) {
+            const card = btn.closest('.question-card');
+            if (card.classList.contains('answered')) return;
+
+            const selectedOpts = card.querySelectorAll('.option.selected');
+            if (selectedOpts.length === 0) return;
+
+            card.classList.add('answered');
+            answeredQuestions.add(card.dataset.id);
+            const correctArr = JSON.parse(card.dataset.correct);
+            btn.disabled = true;
+
+            card.querySelectorAll('.option').forEach(opt => {
+                const letter = opt.dataset.letter;
+                const isCorrect = correctArr.includes(letter);
+                const isSelected = opt.classList.contains('selected');
+                
+                if (isCorrect) {
+                    opt.classList.add('show-correct'); 
+                } else if (isSelected) {
+                    opt.classList.add('user-wrong');
+                }
+            });
+
+            const explanationDiv = card.querySelector('.overall-explanation div');
+            if (explanationDiv && explanationDiv.innerHTML.trim() !== '') {
+                card.querySelector('.overall-explanation').style.display = 'block';
+            }
+            setupImageZoom();
+            updateStats(); // Update Score Board
+        }
+
+        function resetQuiz() {
+            // [MODIFIED] Disabled confirmation dialog
+            // if(!confirm('Reset all answers?')) return; 
+
+            answeredQuestions.clear();
+            document.querySelectorAll('.question-card').forEach(c => {
+                c.classList.remove('answered');
+                c.querySelectorAll('.option').forEach(o => {
+                    o.classList.remove('selected', 'user-wrong', 'show-correct');
+                });
+                c.querySelector('.btn-submit').disabled = false;
+                const exp = c.querySelector('.overall-explanation');
+                if(exp) exp.style.display = 'none';
+            });
+            updateStats();
+            window.scrollTo({top:0, behavior:'smooth'});
+        }
+
+        function setupImageZoom() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("img01");
+            document.querySelectorAll('img').forEach(img => {
+                if(img.closest('#imageModal')) return;
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            });
+        }
+        function closeModal() { document.getElementById("imageModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target == document.getElementById("imageModal")) closeModal(); }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
