@@ -1,0 +1,908 @@
+1
+00:00:00,000 --> 00:00:03,800
+ AI systems dramatically amplify security risk
+
+2
+00:00:03,800 --> 00:00:07,080
+ because they operate at scale and speed.
+
+3
+00:00:07,080 --> 00:00:10,600
+ An exposed API key or weak access control
+
+4
+00:00:10,600 --> 00:00:12,600
+ doesn't lead to a small incident.
+
+5
+00:00:12,600 --> 00:00:16,280
+ It leads to instant system-wide misuse.
+
+6
+00:00:16,280 --> 00:00:20,320
+ Attackers can consume resources, extract sensitive data,
+
+7
+00:00:20,320 --> 00:00:23,640
+ or run up massive cloud bills in minutes.
+
+8
+00:00:23,640 --> 00:00:26,900
+ Unlike traditional apps, AI failures propagate
+
+9
+00:00:26,900 --> 00:00:29,360
+ immediately across infrastructure.
+
+10
+00:00:29,360 --> 00:00:32,720
+ The impact of weak security shows up in three places.
+
+11
+00:00:32,720 --> 00:00:35,200
+ First, data privacy.
+
+12
+00:00:35,200 --> 00:00:39,360
+ AI systems often process proprietary or personal information
+
+13
+00:00:39,360 --> 00:00:43,480
+ and breaches can expose that data through prompts and outputs.
+
+14
+00:00:43,480 --> 00:00:46,080
+ Second, system availability.
+
+15
+00:00:46,080 --> 00:00:50,200
+ Unauthorized usage can exhaust rate limits or compute capacity,
+
+16
+00:00:50,200 --> 00:00:53,040
+ degrading service for legitimate users.
+
+17
+00:00:53,040 --> 00:00:55,520
+ Third, financial damage.
+
+18
+00:00:55,520 --> 00:00:59,040
+ AI abuse translates directly into cost explosions.
+
+19
+00:00:59,040 --> 00:01:01,920
+ Security cannot be retrofitted.
+
+20
+00:01:01,920 --> 00:01:05,560
+ Adding controls after deployment is slow, reactive,
+
+21
+00:01:05,560 --> 00:01:07,080
+ and expensive.
+
+22
+00:01:07,080 --> 00:01:10,080
+ AI systems fail fast and fail expensively
+
+23
+00:01:10,080 --> 00:01:12,400
+ when security is an afterthought.
+
+24
+00:01:12,400 --> 00:01:15,760
+ That's why security must be architected from day one,
+
+25
+00:01:15,760 --> 00:01:18,720
+ just like scalability and reliability.
+
+26
+00:01:18,720 --> 00:01:22,400
+ In production AI, strong security is an optional.
+
+27
+00:01:22,400 --> 00:01:24,560
+ It's foundational to survival.
+
+28
+00:01:24,560 --> 00:01:29,680
+ Effective security starts with understanding what you're defending against.
+
+29
+00:01:29,680 --> 00:01:34,320
+ You cannot secure an AI system without first threat modeling it.
+
+30
+00:01:34,320 --> 00:01:37,280
+ AI APIs face attack vectors that differ
+
+31
+00:01:37,280 --> 00:01:41,680
+ from traditional applications and require specialized defenses.
+
+32
+00:01:41,680 --> 00:01:45,400
+ One major threat is stolen API keys.
+
+33
+00:01:45,400 --> 00:01:49,000
+ Once compromised, attackers gain unrestricted access
+
+34
+00:01:49,000 --> 00:01:50,400
+ to your system.
+
+35
+00:01:50,400 --> 00:01:52,800
+ Another is unauthorized access,
+
+36
+00:01:52,800 --> 00:01:57,240
+ where authentication or authorization is bypassed entirely.
+
+37
+00:01:57,240 --> 00:02:00,200
+ Prompt injection attacks are unique to AI,
+
+38
+00:02:00,200 --> 00:02:02,800
+ malicious inputs manipulate model behavior
+
+39
+00:02:02,800 --> 00:02:05,640
+ to ignore safeguards or leak data.
+
+40
+00:02:05,640 --> 00:02:08,400
+ Cost abuse is another serious risk.
+
+41
+00:02:08,400 --> 00:02:11,080
+ Attackers may intentionally flood your API
+
+42
+00:02:11,080 --> 00:02:13,240
+ to exhaust compute budgets.
+
+43
+00:02:13,240 --> 00:02:16,040
+ Finally, data exfiltration can occur
+
+44
+00:02:16,040 --> 00:02:18,760
+ when prompts are crafted to extract sensitive
+
+45
+00:02:18,760 --> 00:02:23,240
+ or proprietary information from models or connected data sources.
+
+46
+00:02:23,240 --> 00:02:26,880
+ Each of these threats exploits a different weakness,
+
+47
+00:02:26,880 --> 00:02:30,640
+ which means no single control is sufficient.
+
+48
+00:02:30,640 --> 00:02:35,080
+ Threat modeling forces teams to identify likely attack paths
+
+49
+00:02:35,080 --> 00:02:37,880
+ and design layered defenses.
+
+50
+00:02:37,880 --> 00:02:41,160
+ Security without threat modeling is guesswork
+
+51
+00:02:41,160 --> 00:02:43,760
+ and guesswork fails in production.
+
+52
+00:02:43,760 --> 00:02:46,800
+ API keys are not just secrets.
+
+53
+00:02:46,800 --> 00:02:49,320
+ They are digital identities.
+
+54
+00:02:49,320 --> 00:02:53,080
+ Every key represents a specific entity in your system
+
+55
+00:02:53,080 --> 00:02:56,120
+ such as an application, back end service,
+
+56
+00:02:56,120 --> 00:02:58,240
+ or individual user.
+
+57
+00:02:58,240 --> 00:03:00,640
+ Because of that, keys must be managed
+
+58
+00:03:00,640 --> 00:03:03,640
+ with the same rigor as user credentials.
+
+59
+00:03:03,640 --> 00:03:05,920
+ There are three non-negotiable properties
+
+60
+00:03:05,920 --> 00:03:08,640
+ of proper API key management.
+
+61
+00:03:08,640 --> 00:03:11,360
+ First, keys must be unique.
+
+62
+00:03:11,360 --> 00:03:13,840
+ Shared keys eliminate accountability
+
+63
+00:03:13,840 --> 00:03:16,440
+ and make incident response impossible.
+
+64
+00:03:16,440 --> 00:03:19,400
+ Second, keys must be traceable.
+
+65
+00:03:19,400 --> 00:03:22,360
+ You should always know who or what use the key,
+
+66
+00:03:22,360 --> 00:03:24,880
+ when and for what purpose.
+
+67
+00:03:24,880 --> 00:03:27,760
+ Third, keys must be revocable.
+
+68
+00:03:27,760 --> 00:03:29,800
+ If compromise is suspected,
+
+69
+00:03:29,800 --> 00:03:32,160
+ access must be cut immediately.
+
+70
+00:03:32,160 --> 00:03:36,680
+ A single shared key is a guaranteed incident waiting to happen.
+
+71
+00:03:36,680 --> 00:03:39,880
+ The moment multiple systems or users share a key,
+
+72
+00:03:39,880 --> 00:03:44,080
+ attribution breaks down and containment becomes impossible.
+
+73
+00:03:44,080 --> 00:03:47,360
+ Proper key separation, application keys,
+
+74
+00:03:47,360 --> 00:03:51,400
+ service keys, and user keys is foundational.
+
+75
+00:03:51,400 --> 00:03:53,720
+ If you can't revoke access cleanly,
+
+76
+00:03:53,720 --> 00:03:55,680
+ you don't control your system.
+
+77
+00:03:55,680 --> 00:03:59,520
+ Client-side environments are inherently untrusted.
+
+78
+00:03:59,520 --> 00:04:02,880
+ If a browser or mobile app can see an API key,
+
+79
+00:04:02,880 --> 00:04:06,000
+ assume that key is already compromised.
+
+80
+00:04:06,000 --> 00:04:08,680
+ That's why API keys must never be embedded
+
+81
+00:04:08,680 --> 00:04:11,840
+ in front end code or client's applications.
+
+82
+00:04:11,840 --> 00:04:15,240
+ Keys should be stored in dedicated secret management systems,
+
+83
+00:04:15,240 --> 00:04:18,960
+ such as AWS Secrets Manager, Azure Key Vault,
+
+84
+00:04:18,960 --> 00:04:20,880
+ or HashiCord Vault.
+
+85
+00:04:20,880 --> 00:04:23,400
+ These systems provide encryption at rest,
+
+86
+00:04:23,400 --> 00:04:26,760
+ fine-grained access control, and audit logging.
+
+87
+00:04:26,760 --> 00:04:28,560
+ For runtime configuration,
+
+88
+00:04:28,560 --> 00:04:30,600
+ environment variables should be used,
+
+89
+00:04:30,600 --> 00:04:33,160
+ but never committed to source control.
+
+90
+00:04:33,160 --> 00:04:35,880
+ Environment separation is critical.
+
+91
+00:04:35,880 --> 00:04:38,200
+ Development, staging, and production
+
+92
+00:04:38,200 --> 00:04:40,440
+ must each have their own keys.
+
+93
+00:04:40,440 --> 00:04:43,200
+ This limits blast radius and prevents accidental
+
+94
+00:04:43,200 --> 00:04:45,480
+ cross environment access.
+
+95
+00:04:45,480 --> 00:04:48,240
+ Regular rotation is also essential.
+
+96
+00:04:48,240 --> 00:04:50,560
+ Keys should be rotated on a schedule
+
+97
+00:04:50,560 --> 00:04:53,320
+ and immediately upon suspected compromise.
+
+98
+00:04:53,320 --> 00:04:57,160
+ Finally, log every key usage event.
+
+99
+00:04:57,160 --> 00:05:00,200
+ During an incident, logs are often the only way
+
+100
+00:05:00,200 --> 00:05:02,280
+ to understand what happened.
+
+101
+00:05:02,280 --> 00:05:04,640
+ Secure storage isn't optional.
+
+102
+00:05:04,640 --> 00:05:07,280
+ It's the baseline for production AI.
+
+103
+00:05:07,280 --> 00:05:09,240
+ The principle of least privilege
+
+104
+00:05:09,240 --> 00:05:12,920
+ is your strongest defense when keys are compromised.
+
+105
+00:05:12,920 --> 00:05:15,840
+ Every API key should have only the permissions
+
+106
+00:05:15,840 --> 00:05:18,720
+ it absolutely needs, nothing more.
+
+107
+00:05:18,720 --> 00:05:21,840
+ Keys can be scoped across multiple dimensions
+
+108
+00:05:21,840 --> 00:05:25,760
+ and point access limits which APIs a key can call.
+
+109
+00:05:25,760 --> 00:05:29,280
+ Feature flags control what functionality is available.
+
+110
+00:05:29,280 --> 00:05:32,720
+ Model permissions restrict which models can be queried.
+
+111
+00:05:32,720 --> 00:05:34,880
+ Data boundaries define which data sets
+
+112
+00:05:34,880 --> 00:05:37,800
+ or retrieval sources are accessible.
+
+113
+00:05:37,800 --> 00:05:40,560
+ Protective limits matter just as much.
+
+114
+00:05:40,560 --> 00:05:43,720
+ Rate limits cap how frequently a key can be used.
+
+115
+00:05:43,720 --> 00:05:45,880
+ Usage quotas limit total consumption
+
+116
+00:05:45,880 --> 00:05:47,560
+ over a billing period.
+
+117
+00:05:47,560 --> 00:05:51,480
+ Exploration dates automatically deactivate stale keys.
+
+118
+00:05:51,480 --> 00:05:54,160
+ Cost caps prevent runaway spending.
+
+119
+00:05:54,160 --> 00:05:57,520
+ When a key is compromised and eventually one will be,
+
+120
+00:05:57,520 --> 00:06:00,680
+ these controls drastically reduce damage.
+
+121
+00:06:00,680 --> 00:06:03,480
+ Scope reduction turns catastrophic incidents
+
+122
+00:06:03,480 --> 00:06:05,200
+ into contained events.
+
+123
+00:06:05,200 --> 00:06:07,920
+ In production AI, limiting blast radius
+
+124
+00:06:07,920 --> 00:06:11,200
+ is often more important than perfect prevention.
+
+125
+00:06:11,200 --> 00:06:14,880
+ Not all users should have the same access.
+
+126
+00:06:14,880 --> 00:06:18,200
+ Role-based access control provides a structured way
+
+127
+00:06:18,200 --> 00:06:23,080
+ to manage permissions based on responsibility and trust level.
+
+128
+00:06:23,080 --> 00:06:26,880
+ Start by defining clear roles such as user,
+
+129
+00:06:26,880 --> 00:06:29,840
+ analyst, admin, and system.
+
+130
+00:06:29,840 --> 00:06:34,200
+ Each role reflects a different level of capability and risk.
+
+131
+00:06:34,200 --> 00:06:38,760
+ Access is then controlled across features, data, and models.
+
+132
+00:06:38,760 --> 00:06:41,760
+ Some users may only run basic queries
+
+133
+00:06:41,760 --> 00:06:46,160
+ while others can access advanced tools or sensitive data sets.
+
+134
+00:06:46,160 --> 00:06:49,600
+ All authorization must be enforced server-side.
+
+135
+00:06:49,600 --> 00:06:51,880
+ Front-end checks are cosmetic.
+
+136
+00:06:51,880 --> 00:06:54,360
+ They do not provide real security.
+
+137
+00:06:54,360 --> 00:06:57,000
+ The back-end must validate every request
+
+138
+00:06:57,000 --> 00:06:59,040
+ against role permissions.
+
+139
+00:06:59,040 --> 00:07:02,640
+ Our BAC reduces risk by ensuring users only
+
+140
+00:07:02,640 --> 00:07:04,800
+ see what they are allowed to see.
+
+141
+00:07:04,800 --> 00:07:07,680
+ It also simplifies audits and compliance
+
+142
+00:07:07,680 --> 00:07:10,480
+ by making access rules explicit.
+
+143
+00:07:10,480 --> 00:07:13,200
+ In production AI, authorization logic
+
+144
+00:07:13,200 --> 00:07:15,800
+ belongs in the back-end, always.
+
+145
+00:07:15,800 --> 00:07:20,040
+ AI introduces unique authorization challenges.
+
+146
+00:07:20,040 --> 00:07:23,880
+ Outputs themselves can expose sensitive information
+
+147
+00:07:23,880 --> 00:07:28,120
+ and advanced capabilities can be expensive or dangerous
+
+148
+00:07:28,120 --> 00:07:29,840
+ if misused.
+
+149
+00:07:29,840 --> 00:07:32,760
+ Some users should never access models connected
+
+150
+00:07:32,760 --> 00:07:36,080
+ to proprietary or confidential data.
+
+151
+00:07:36,080 --> 00:07:39,200
+ Others may be allowed to query, but only receive
+
+152
+00:07:39,200 --> 00:07:41,160
+ redacted outputs.
+
+153
+00:07:41,160 --> 00:07:44,960
+ Advanced tools like function calling or code execution
+
+154
+00:07:44,960 --> 00:07:48,040
+ should be gated by role and trust level.
+
+155
+00:07:48,040 --> 00:07:50,520
+ Model access also matters.
+
+156
+00:07:50,520 --> 00:07:53,440
+ High capability or high cost models
+
+157
+00:07:53,440 --> 00:07:56,360
+ should be restricted to authorized users.
+
+158
+00:07:56,360 --> 00:07:59,480
+ Different roles may have access to different tiers
+
+159
+00:07:59,480 --> 00:08:02,120
+ based on sensitivity and budget.
+
+160
+00:08:02,120 --> 00:08:05,840
+ Output masking is often overlooked, but critical.
+
+161
+00:08:05,840 --> 00:08:08,400
+ Two users may ask the same question
+
+162
+00:08:08,400 --> 00:08:12,040
+ and receive different responses based on their role.
+
+163
+00:08:12,040 --> 00:08:14,040
+ Every authorization decision should
+
+164
+00:08:14,040 --> 00:08:16,200
+ be logged for auditability.
+
+165
+00:08:16,200 --> 00:08:17,920
+ The key insight is this.
+
+166
+00:08:17,920 --> 00:08:21,480
+ Security isn't just about who can call the API.
+
+167
+00:08:21,480 --> 00:08:25,200
+ It's about what they can extract from your AI system.
+
+168
+00:08:25,200 --> 00:08:30,280
+ You should assume bad actors are actively probing your AI systems.
+
+169
+00:08:30,280 --> 00:08:33,520
+ Abuse prevention requires multiple defensive layers
+
+170
+00:08:33,520 --> 00:08:35,080
+ working together.
+
+171
+00:08:35,080 --> 00:08:37,680
+ Rate limiting prevents request flooding.
+
+172
+00:08:37,680 --> 00:08:41,520
+ Usage quotas cap total consumption, anomaly detection
+
+173
+00:08:41,520 --> 00:08:44,880
+ identifies unusual patterns, such as sudden spikes
+
+174
+00:08:44,880 --> 00:08:48,320
+ or off-hours activity, content filtering screens
+
+175
+00:08:48,320 --> 00:08:52,040
+ prompts for injection attempts or policy violations,
+
+176
+00:08:52,040 --> 00:08:55,920
+ adaptive throttling, automatically slows or blocks suspicious
+
+177
+00:08:55,920 --> 00:08:57,240
+ behavior.
+
+178
+00:08:57,240 --> 00:09:00,400
+ Common abuse scenarios include automated scraping
+
+179
+00:09:00,400 --> 00:09:04,040
+ where bots extract data or model knowledge at scale,
+
+180
+00:09:04,040 --> 00:09:07,840
+ prompt flooding overwhelm systems with high volume requests,
+
+181
+00:09:07,840 --> 00:09:09,880
+ cost exhaustion attacks intentionally
+
+182
+00:09:09,880 --> 00:09:12,160
+ target infrastructure budgets.
+
+183
+00:09:12,160 --> 00:09:15,160
+ No single control stops all abuse.
+
+184
+00:09:15,160 --> 00:09:17,200
+ Defense in depth is the goal.
+
+185
+00:09:17,200 --> 00:09:20,120
+ When prevention fails, detection and response
+
+186
+00:09:20,120 --> 00:09:22,240
+ must kick in immediately.
+
+187
+00:09:22,240 --> 00:09:25,080
+ Abuse prevention isn't about trusting users.
+
+188
+00:09:25,080 --> 00:09:27,040
+ It's about designing for reality.
+
+189
+00:09:27,040 --> 00:09:30,760
+ Detection without response is security theater.
+
+190
+00:09:30,760 --> 00:09:33,600
+ Monitoring systems must trigger immediate action
+
+191
+00:09:33,600 --> 00:09:35,600
+ when abuse is detected.
+
+192
+00:09:35,600 --> 00:09:38,600
+ Key indicators include sudden usage spikes,
+
+193
+00:09:38,600 --> 00:09:42,520
+ repeated authentication failures, unusual prompt patterns,
+
+194
+00:09:42,520 --> 00:09:46,640
+ geographic anomalies, and activity outside normal hours.
+
+195
+00:09:46,640 --> 00:09:50,560
+ When these signals appear, responses must be automated.
+
+196
+00:09:50,560 --> 00:09:53,700
+ Typical responses include alerting security teams,
+
+197
+00:09:53,700 --> 00:09:56,880
+ revoking compromised keys, throttling traffic,
+
+198
+00:09:56,880 --> 00:09:59,200
+ or applying temporary bans.
+
+199
+00:09:59,200 --> 00:10:03,400
+ All actions must be logged for forensic analysis and compliance.
+
+200
+00:10:03,400 --> 00:10:06,160
+ Clear escalation paths are essential.
+
+201
+00:10:06,160 --> 00:10:09,000
+ Teams must define when automation is sufficient
+
+202
+00:10:09,000 --> 00:10:11,640
+ and when human intervention is required.
+
+203
+00:10:11,640 --> 00:10:14,280
+ Incident response should be practiced regularly
+
+204
+00:10:14,280 --> 00:10:16,520
+ because the middle of an attack is not the time
+
+205
+00:10:16,520 --> 00:10:18,480
+ to debug alluring rules.
+
+206
+00:10:18,480 --> 00:10:21,480
+ Fast containment beats perfect prevention.
+
+207
+00:10:21,480 --> 00:10:26,160
+ The goal is to minimize damage and restore control quickly.
+
+208
+00:10:26,160 --> 00:10:29,240
+ Security is not a one-time setup.
+
+209
+00:10:29,240 --> 00:10:31,360
+ It's an ongoing discipline.
+
+210
+00:10:31,360 --> 00:10:34,880
+ Production AI systems must be designed with the assumption
+
+211
+00:10:34,880 --> 00:10:37,880
+ that compromise will eventually occur.
+
+212
+00:10:37,880 --> 00:10:42,440
+ API keys should be treated like passwords, rotated regularly,
+
+213
+00:10:42,440 --> 00:10:45,000
+ never shared, and revoked immediately
+
+214
+00:10:45,000 --> 00:10:47,680
+ when suspicious activity is detected.
+
+215
+00:10:47,680 --> 00:10:50,240
+ Our back must be enforced everywhere,
+
+216
+00:10:50,240 --> 00:10:54,640
+ from APIs to databases to model access layers.
+
+217
+00:10:54,640 --> 00:10:57,560
+ Systems should be designed assuming breach.
+
+218
+00:10:57,560 --> 00:11:01,760
+ Detection, containment, and recovery must be built in,
+
+219
+00:11:01,760 --> 00:11:03,240
+ not improvised.
+
+220
+00:11:03,240 --> 00:11:05,800
+ Access reviews should happen regularly,
+
+221
+00:11:05,800 --> 00:11:09,200
+ removing stale keys and unused roles.
+
+222
+00:11:09,200 --> 00:11:12,840
+ Finally, teams must practice incident response.
+
+223
+00:11:12,840 --> 00:11:16,400
+ Drills reveal weaknesses before attackers do.
+
+224
+00:11:16,400 --> 00:11:17,920
+ The truth is simple.
+
+225
+00:11:17,920 --> 00:11:21,840
+ A secure AI system isn't one that never gets attacked.
+
+226
+00:11:21,840 --> 00:11:24,040
+ It's one that detects threats quickly,
+
+227
+00:11:24,040 --> 00:11:26,560
+ limits damage, and recovers cleanly.
+
