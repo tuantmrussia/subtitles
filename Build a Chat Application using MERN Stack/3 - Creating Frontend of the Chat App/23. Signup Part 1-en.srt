@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:04,880
+ So, hello everyone, in this video we are going to work with our signup page.
+
+2
+00:00:04,880 --> 00:00:08,800
+ So, in the previous video there was some error I guess, okay.
+
+3
+00:00:08,800 --> 00:00:12,480
+ So it was in authorstore.js actually.
+
+4
+00:00:12,480 --> 00:00:17,360
+ I was thinking of toast.error, that is why it was showing error, but since I am using
+
+5
+00:00:17,360 --> 00:00:22,720
+ error.message, so this error should be used like this error.message, okay.
+
+6
+00:00:22,720 --> 00:00:28,960
+ So fix this and after this we are going to work with this signup.txt, okay.
+
+7
+00:00:28,960 --> 00:00:33,200
+ So at the beginner files for all the styles, I have just written here, okay.
+
+8
+00:00:33,200 --> 00:00:38,640
+ And if you are going to just preview it, so you will see like this, the signup page,
+
+9
+00:00:38,640 --> 00:00:42,000
+ and if you click on the login page, you will get this login page, okay.
+
+10
+00:00:42,000 --> 00:00:48,320
+ So it is consistent, it has a linear gradient, I have fixed everything.
+
+11
+00:00:48,320 --> 00:00:53,200
+ So now, we are going to work with this signup page, right.
+
+12
+00:00:53,200 --> 00:00:59,200
+ So let's go to this signup page, so it would be in the front end folder only.
+
+13
+00:00:59,200 --> 00:01:01,760
+ So front end we have this signup page.
+
+14
+00:01:01,760 --> 00:01:07,760
+ And the first thing which we are going to do is, we are going to import one hook from react,
+
+15
+00:01:07,760 --> 00:01:18,800
+ which is import use a state, use state from react, okay.
+
+16
+00:01:18,800 --> 00:01:21,200
+ So we have imported this, use state from react.
+
+17
+00:01:21,200 --> 00:01:24,880
+ And now we are going to define this bunch of variables here.
+
+18
+00:01:24,880 --> 00:01:28,560
+ And along with that, we are also going to set those values.
+
+19
+00:01:28,560 --> 00:01:40,960
+ So const, so it would be username, comma set username, username set username equal to
+
+20
+00:01:41,680 --> 00:01:50,720
+ use a state, so it would be use a state, and then we are going to get this and now const, again,
+
+21
+00:01:50,720 --> 00:02:00,720
+ email comma set email, okay, email comma set email equals to use state.
+
+22
+00:02:01,520 --> 00:02:14,000
+ You state, we are going to assign this a blank value as of now, now const, pass word and set
+
+23
+00:02:14,000 --> 00:02:23,440
+ password equal to use a state, and then assign this as blank values, okay.
+
+24
+00:02:23,440 --> 00:02:28,320
+ So first initial values would be like blank only, right.
+
+25
+00:02:28,320 --> 00:02:34,480
+ And since now we are, what we have to do, we have to change the values like whenever
+
+26
+00:02:34,480 --> 00:02:39,360
+ the values if you see, okay.
+
+27
+00:02:39,360 --> 00:02:45,200
+ So we are going to change the values, so we have this label class name username,
+
+28
+00:02:45,200 --> 00:02:49,840
+ and whenever the input would be like we have type equal to text, right.
+
+29
+00:02:49,840 --> 00:02:54,240
+ So now in this one, we will have value, okay.
+
+30
+00:02:54,240 --> 00:02:59,600
+ So value would be the username, okay.
+
+31
+00:02:59,600 --> 00:03:06,320
+ So value would be the username in case of username, and if you are changing the thing,
+
+32
+00:03:06,320 --> 00:03:15,280
+ like on change equals to, if you are making any change in this input field, then in that case,
+
+33
+00:03:15,280 --> 00:03:24,960
+ the set user name would be called and it will have e.target.value, okay.
+
+34
+00:03:24,960 --> 00:03:31,040
+ So now after this, this is done.
+
+35
+00:03:31,040 --> 00:03:41,680
+ So now we are going to do the same thing for this class name for email address.
+
+36
+00:03:44,240 --> 00:03:53,440
+ So now what we are going to do is like for this one, we have value equal to username,
+
+37
+00:03:53,440 --> 00:03:59,040
+ on change equal to e.target.value, copy both of these values and paste it here.
+
+38
+00:03:59,040 --> 00:04:07,760
+ So here the value would be, so the value would be email,
+
+39
+00:04:10,800 --> 00:04:19,680
+ value is email, and set email, okay.
+
+40
+00:04:19,680 --> 00:04:27,200
+ And after this, we have this password and set password, so the same thing would be here.
+
+41
+00:04:27,200 --> 00:04:41,360
+ So paste this, so the type would be password, value equal to password,
+
+42
+00:04:45,920 --> 00:05:03,600
+ password, and on change e.set password, so let us go to this website, see we can make the change,
+
+43
+00:05:04,960 --> 00:05:17,440
+ so as more codes, anything and the password. So this is happening with the help of the user state,
+
+44
+00:05:17,440 --> 00:05:22,560
+ okay. So user state is going to set all this, like whenever we are making a dynamic change,
+
+45
+00:05:22,560 --> 00:05:27,120
+ we are making a change in this input field. So the set, the states are going to accept all the
+
+46
+00:05:27,120 --> 00:05:34,640
+ value and through this, it is going to change like the value is password, and this set password
+
+47
+00:05:34,640 --> 00:05:39,600
+ is setting the password, like e.target.value, so whenever the event is going to happen,
+
+48
+00:05:39,600 --> 00:05:45,600
+ like event is what, typing in the input field, okay. So in that case, it is going to accept the value,
+
+49
+00:05:45,600 --> 00:05:51,760
+ and it is going to call this set password function, and whenever you type the like keys,
+
+50
+00:05:51,760 --> 00:05:57,840
+ so it is going to change, so that's why it is on change equal to e set password, so
+
+51
+00:05:57,840 --> 00:06:09,120
+ this e is actually event, so event.target.value. So one more thing, like there is one more function
+
+52
+00:06:09,120 --> 00:06:17,200
+ const handle submit, so we are also going to submit the form right to submit equals to e,
+
+53
+00:06:17,840 --> 00:06:29,440
+ and then we are going to use this function prevent default. So make sure to,
+
+54
+00:06:29,440 --> 00:06:38,400
+ like whenever you are submitting a form, it should not like re render it, okay. So here you can see
+
+55
+00:06:38,400 --> 00:06:45,520
+ the form here, so the form, and we are going to use the function here, so on submit,
+
+56
+00:06:46,960 --> 00:06:59,760
+ on submit equals to, we are going to just assign this handle submit here, okay. So control is safe,
+
+57
+00:06:59,760 --> 00:07:07,440
+ so this is all for this video, we are going to see with another one in the next video.
+
