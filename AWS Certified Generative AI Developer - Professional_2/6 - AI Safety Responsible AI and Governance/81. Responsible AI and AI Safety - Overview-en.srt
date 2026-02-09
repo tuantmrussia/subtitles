@@ -1,0 +1,440 @@
+1
+00:00:00,000 --> 00:00:04,960
+ In this section, we're going to learn about what is a responsible artificial intelligence
+
+2
+00:00:04,960 --> 00:00:12,000
+ or AI, and we're also going to learn about various tools and services that AWS provides
+
+3
+00:00:12,000 --> 00:00:18,000
+ in this area. Now, let's start off with what's a formal definition of responsible AI.
+
+4
+00:00:18,000 --> 00:00:26,160
+ So you can think of responsible AI as a set of principles that help guide the design,
+
+5
+00:00:26,160 --> 00:00:36,480
+ development, deployment, and use of AI systems in a safe, trustworthy, and ethical way, and this
+
+6
+00:00:36,480 --> 00:00:43,200
+ is critical here. So if I have to summarize this, what it essentially means is that you define
+
+7
+00:00:43,200 --> 00:00:51,440
+ a set of guiding principles that help you design, build, and use AI applications in a safe,
+
+8
+00:00:51,440 --> 00:00:58,320
+ trustworthy, and ethical way. Now, let's go ahead and take a look what these set of principles
+
+9
+00:00:58,320 --> 00:01:07,280
+ are. AWS has defined eight key guiding principles within the spectrum of responsible AI.
+
+10
+00:01:07,280 --> 00:01:13,760
+ So you can see all these eight principles that have been listed here. So what we'll do is we'll
+
+11
+00:01:13,760 --> 00:01:21,840
+ go into each of these guiding principles, then take a real example of how and where they're used.
+
+12
+00:01:21,840 --> 00:01:28,320
+ And then in the next lecture, we're going to look at some of the tools that AWS provides in
+
+13
+00:01:28,320 --> 00:01:34,640
+ this space. So let's start with the first one, which is velocity and robustness.
+
+14
+00:01:34,640 --> 00:01:40,880
+ So one of the biggest challenges while building applications on large language models
+
+15
+00:01:41,600 --> 00:01:50,800
+ is, how do you control hallucinations? And what hallucination essentially means is when large language
+
+16
+00:01:50,800 --> 00:01:59,840
+ models generate factually incorrect or fabricated response. So hallucination control is one of the
+
+17
+00:01:59,840 --> 00:02:08,080
+ critical challenges in building responsible AI applications. So now let's take a real-world example.
+
+18
+00:02:08,080 --> 00:02:16,160
+ Here is an article from CNN. You can see here Google recently launched a new AI chatbot tool
+
+19
+00:02:16,160 --> 00:02:23,680
+ called as bird and bird is a large language model. And this chatbot was released
+
+20
+00:02:23,680 --> 00:02:32,080
+ to the public in a highly televised live event. And during the event, one of the questions that
+
+21
+00:02:32,080 --> 00:02:41,120
+ was posed to Baud was what new discoveries from James Webb Space Telescope can I tell my nine year
+
+22
+00:02:41,120 --> 00:02:50,880
+ old. And the response of the Baud was JWST took the very first pictures of a planet outside of
+
+23
+00:02:50,880 --> 00:02:58,880
+ our own solar system. But according to NASA, the first images were actually taken by European
+
+24
+00:02:58,880 --> 00:03:08,000
+ Southern Observatory, very large telescope nearly two decades ago in 2004. So now here you can see
+
+25
+00:03:08,000 --> 00:03:16,480
+ how this Baud large language model has generated factually incorrect response. So basically it has
+
+26
+00:03:16,480 --> 00:03:23,520
+ hallucinated. And what were the consequences of this? The prices of alphabet, which is the parent
+
+27
+00:03:23,520 --> 00:03:33,840
+ company of Google, lost 7.7% wiping $100 billion of its market value. Okay now with this example,
+
+28
+00:03:33,840 --> 00:03:42,880
+ what is velocity and robustness focus on? So velocity and robustness focuses on achieving
+
+29
+00:03:42,880 --> 00:03:52,400
+ correct outputs even with the unexpected or adversarial inputs or prompts. So that's the focus
+
+30
+00:03:52,400 --> 00:04:00,800
+ of this first guiding principle. The second key responsible AI guiding principle is safety.
+
+31
+00:04:00,800 --> 00:04:06,880
+ So earlier we learned about hallucination. The second key challenge while building
+
+32
+00:04:06,880 --> 00:04:13,600
+ applications with large language models is toxicity control. So what is toxicity mean?
+
+33
+00:04:13,600 --> 00:04:20,560
+ It means generation of content that is offensive, discriminatory or half.
+
+34
+00:04:21,280 --> 00:04:27,760
+ So let's take a look at an example. So I went to this toxic degeneration dot ln a dot on.
+
+35
+00:04:27,760 --> 00:04:34,960
+ And through this UI, it shows how various large language models can generate toxic content.
+
+36
+00:04:34,960 --> 00:04:41,280
+ So in this case, I just took GPT2 and here is the prompt and the prompt is because men are
+
+37
+00:04:41,280 --> 00:04:48,800
+ reasonable. And then I allowed it to do the completion of this sentence. And you can also select
+
+38
+00:04:48,800 --> 00:04:55,120
+ the toxicity matrix, work safe toxic or where it toxic. And you can see the response it has
+
+39
+00:04:55,120 --> 00:05:01,440
+ generated. So it says women are unreasonable. I cannot believe that they can judge the body I give
+
+40
+00:05:01,440 --> 00:05:07,360
+ birth. So this is only toxic level. If I select where it toxic, it's going to generate highly
+
+41
+00:05:07,360 --> 00:05:15,760
+ offensive and discriminatory content. So now this is where the second guiding principle from
+
+42
+00:05:15,760 --> 00:05:24,240
+ responsible AI comes into picture. So safety focuses on how to prevent harmful system output
+
+43
+00:05:24,240 --> 00:05:31,440
+ and misuse from the AI systems. Now let's take a look at the third principle which is
+
+44
+00:05:31,440 --> 00:05:39,040
+ privacy and security. Sometimes there is a possibility that the model may leak private or
+
+45
+00:05:39,040 --> 00:05:46,560
+ confidential data from the data that it has been trained on. And this could include PI data such
+
+46
+00:05:46,560 --> 00:05:52,720
+ as your name, address, phone numbers and so on. Now let's take a look at an example. So here's
+
+47
+00:05:52,720 --> 00:06:02,640
+ an example to this GPT2 large language model. We provide a prefix East status book status book and
+
+48
+00:06:02,640 --> 00:06:10,080
+ the response it gave was it identified this person Peter and it provided its name, phone number,
+
+49
+00:06:10,080 --> 00:06:20,560
+ email address and so on. And this was the data it had been trained on. So that's one aspect to it.
+
+50
+00:06:20,560 --> 00:06:27,680
+ The other aspect is on the copyright infringement. So you might have heard about the ongoing case
+
+51
+00:06:27,680 --> 00:06:34,560
+ between open AI, which is the parent company that made CHAD GPT and the GPT series. And the
+
+52
+00:06:34,560 --> 00:06:44,320
+ actress Scarlett Johnson. So what open AI did was it copied the voice of Scarlett Johnson from one of
+
+53
+00:06:44,320 --> 00:06:51,440
+ its famous movies, the Sky, without taking the prior permission. So obviously this is a complex
+
+54
+00:06:51,440 --> 00:06:59,920
+ topic in the sense that say our foundation model generates a new poem or text or book or a certain
+
+55
+00:06:59,920 --> 00:07:06,640
+ video. So who owns the copyright for the content that has been generated by the foundation model?
+
+56
+00:07:06,640 --> 00:07:13,120
+ Is it the company that built the foundation model or say it's been trained on as in this case
+
+57
+00:07:13,120 --> 00:07:20,080
+ Scarlett Johnson's voice. So does the artist own the copyright for the content generated by the
+
+58
+00:07:20,080 --> 00:07:26,240
+ large language model or the company that built the foundation model. So all of these are still
+
+59
+00:07:26,240 --> 00:07:32,480
+ areas of ongoing research. Okay. Now what does this guiding principle privacy and security focus on?
+
+60
+00:07:32,480 --> 00:07:42,560
+ It focus on appropriately obtaining, using and protecting data and models. Okay. Now let's take a look
+
+61
+00:07:42,560 --> 00:07:49,040
+ at the fourth principle, which is explainability. Let's now try and understand this through an example.
+
+62
+00:07:49,040 --> 00:07:56,240
+ Let's say you applied for a credit card application and it was rejected, but you believe based
+
+63
+00:07:56,240 --> 00:08:02,480
+ on your income status and other parameters that issued have been approved. So a lot of times the
+
+64
+00:08:02,480 --> 00:08:08,560
+ and consumer might feel that the AI models considered for such applications like credit card
+
+65
+00:08:08,560 --> 00:08:15,920
+ application, et cetera are considered as black boxes because we cannot understand what are the
+
+66
+00:08:15,920 --> 00:08:22,480
+ basis for accepting or rejecting our loan or credit card application. So what you would
+
+67
+00:08:22,480 --> 00:08:30,800
+ ideally want is a transparent loan and credit card approval process, which can explain clearly
+
+68
+00:08:30,800 --> 00:08:39,440
+ to the and customer why his credit card or loan application was rejected. Now this is the focus
+
+69
+00:08:39,440 --> 00:08:47,280
+ for the fourth guiding principle explainability, which aims at implementing techniques to ensure
+
+70
+00:08:47,280 --> 00:08:54,320
+ decisions can be traced and explained. So ideally what you would do in this scenario is you would
+
+71
+00:08:54,320 --> 00:09:05,200
+ clearly lay out all the factors that will impact the approval or rejection of say a credit
+
+72
+00:09:05,200 --> 00:09:11,040
+ card application. And then say you have 10 different factors out of those 10, you can identify
+
+73
+00:09:11,040 --> 00:09:19,760
+ say three or four key factors that have a much higher influence on your approval or rejection.
+
+74
+00:09:19,760 --> 00:09:27,440
+ So we'll take a look at some of the tools later, which AWS provides for explainability,
+
+75
+00:09:27,440 --> 00:09:34,720
+ but for now you just need to know that this principle focuses on explaining the decisions of
+
+76
+00:09:35,200 --> 00:09:44,720
+ AI models. Now the fifth principle focuses on fairness or how do we ensure that there is no bias
+
+77
+00:09:44,720 --> 00:09:52,080
+ in the decisions made by AI systems or the content generated by the AI systems. Now let's try
+
+78
+00:09:52,080 --> 00:09:57,120
+ and understand this through an example. Let's say I pose a question to the large language model
+
+79
+00:09:57,120 --> 00:10:05,280
+ and ask it to tell me about famous musicians. Now if our foundation model has no bias,
+
+80
+00:10:05,280 --> 00:10:12,480
+ then it should generate a response that is diverse. It should include different gender,
+
+81
+00:10:12,480 --> 00:10:19,680
+ skin colors, region and so on. It should not just include the names or images of people
+
+82
+00:10:19,680 --> 00:10:27,600
+ with same gender identity or skin tone. So this is what the fairness principle focuses on.
+
+83
+00:10:27,600 --> 00:10:37,680
+ It ensures that there is diversity within an AI response and each of the different groups,
+
+84
+00:10:37,680 --> 00:10:46,480
+ whether gender, region and so on are equally represented in the response of the foundation models.
+
+85
+00:10:47,040 --> 00:10:53,760
+ So sixth principle is transparency and this principle focuses on communicating
+
+86
+00:10:53,760 --> 00:11:00,640
+ every possible information on how the model was trained, build, deployed and so on,
+
+87
+00:11:00,640 --> 00:11:09,040
+ so that stakeholders can make informed choices about the use of AI system. Additionally,
+
+88
+00:11:09,040 --> 00:11:15,040
+ it can also answer questions around if there are any known biases, ethical considerations,
+
+89
+00:11:15,040 --> 00:11:20,560
+ whether it meets the regulatory standards of that region or not.
+
+90
+00:11:20,560 --> 00:11:28,640
+ Now let's look at the seventh principle which is controllability and this principle focuses on
+
+91
+00:11:28,640 --> 00:11:38,640
+ mechanisms to monitor and steer AI behavior. So you can define various mechanism through which
+
+92
+00:11:38,640 --> 00:11:45,360
+ you can monitor your AI systems and this could include data-coloured tree monitoring while
+
+93
+00:11:45,360 --> 00:11:51,760
+ you are training the model or the input prompts that you are sending to the model once it's been
+
+94
+00:11:51,760 --> 00:11:59,840
+ deployed in the production. Then you can also look at the model performance post deployment
+
+95
+00:11:59,840 --> 00:12:06,880
+ and we'll look at various tools that AWS provides to monitor and steer the AI behavior.
+
+96
+00:12:07,520 --> 00:12:14,080
+ Then finally, last but not the least, we have the governance principle and it simply
+
+97
+00:12:14,080 --> 00:12:21,840
+ looks at incorporating best practices into the AI supply chain and what that means is
+
+98
+00:12:21,840 --> 00:12:27,840
+ whether you are a foundation model provider or you are deploying the foundational model
+
+99
+00:12:27,840 --> 00:12:35,440
+ provided by third party. Across the ecosystem, we are looking at incorporating the current best
+
+100
+00:12:35,440 --> 00:12:42,880
+ practices. Okay, hopefully now all these eight principles are clear to you but before we end this
+
+101
+00:12:42,880 --> 00:12:49,120
+ lecture, I just wanted to show you a quick chart on what are some of the core enterprise concerns
+
+102
+00:12:49,120 --> 00:12:56,480
+ and this is based on an AWS Commission IDC survey. Now if you can see here, AI ML business risks,
+
+103
+00:12:56,480 --> 00:13:02,000
+ so top of the list is data privacy and we discussed about this earlier. Then you have the bias,
+
+104
+00:13:02,640 --> 00:13:10,240
+ black box from the decision-making perspective, non-compliance with the regulatory standards and safety.
+
+105
+00:13:10,240 --> 00:13:16,000
+ And finally, let's take a look at a chart. What are the potential negative business impacts?
+
+106
+00:13:16,000 --> 00:13:23,440
+ And it could possibly be damage to brand reputation as we saw in case of the example of opening AI
+
+107
+00:13:23,440 --> 00:13:31,200
+ versus Scarlett Johnson, reduced public trust, revenue loss as we saw in the use case of
+
+108
+00:13:31,200 --> 00:13:38,240
+ board from Google regulatory backlash, customer privacy loss and hidden costs.
+
+109
+00:13:38,240 --> 00:13:42,480
+ So that's pretty much it from this lecture. In the next lecture, we're going to look at various
+
+110
+00:13:42,480 --> 00:13:49,120
+ AWS tools and services that focus on responsible AI. I hope you liked the lecture. Thank you.
+
