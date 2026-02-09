@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:04,400
+ Now in this lecture, we're going to discuss something known as Generative AI Security Scoping
+
+2
+00:00:04,400 --> 00:00:09,200
+ Matrix. Now in the exam, you can expect at least one question from this topic.
+
+3
+00:00:09,200 --> 00:00:14,640
+ Let's say you are a large organization and you have decided to build a generative
+
+4
+00:00:14,640 --> 00:00:20,720
+ application. Now there are various ways in which you can build this application. Maybe you can
+
+5
+00:00:20,720 --> 00:00:28,560
+ use Amazon Q, Amazon Bedrock, SageMaker, and so on. And depending on which approach you select
+
+6
+00:00:28,560 --> 00:00:34,720
+ to build the application, there would be different security requirements. And this is what
+
+7
+00:00:34,720 --> 00:00:41,760
+ Generative AI Security Scoping Matrix focuses on. It always calls it a mental model to classify
+
+8
+00:00:41,760 --> 00:00:47,680
+ use cases into various scope. So as per this matrix, there are five different scope.
+
+9
+00:00:47,680 --> 00:00:55,840
+ So scope one is the Customer app. And in Customer app, you are using a public
+
+10
+00:00:55,840 --> 00:01:02,560
+ generative AI service. So an example of this could be Chad GPT, Amazon Party Rock, and so on.
+
+11
+00:01:02,560 --> 00:01:10,240
+ Then you have scope two Enterprise app using an app or SaaS with generative AI features.
+
+12
+00:01:10,240 --> 00:01:17,440
+ So an example of this is Amazon Q. And these are both by, you don't build anything,
+
+13
+00:01:17,440 --> 00:01:25,440
+ you just buy from a third party organization. Then you have scope three where you are using
+
+14
+00:01:25,440 --> 00:01:33,680
+ pre-trained models. So building your app on a virgin model. So Amazon Bedrock based models are an
+
+15
+00:01:33,680 --> 00:01:42,160
+ example of scope three type of applications. Then you have scope four where using fine tune models.
+
+16
+00:01:42,160 --> 00:01:48,080
+ So you find tune a model on your data. So an example of this is, let's say you find tune a
+
+17
+00:01:48,080 --> 00:01:53,840
+ based model in Amazon Bedrock or you are using Amazon SageMaker Jumpstart and you find tune a
+
+18
+00:01:53,840 --> 00:02:02,160
+ model. Then you have scope five where using self-trained model. So use Amazon SageMaker to train and
+
+19
+00:02:02,160 --> 00:02:10,000
+ deploy a model from scratch. And all these three are cases of build and these two were by.
+
+20
+00:02:10,000 --> 00:02:17,600
+ So what this AI security scoping matrix says is that for each scope, you will have different
+
+21
+00:02:17,600 --> 00:02:25,360
+ kind of governance and compliance, legal and privacy, risk management, control and resilience
+
+22
+00:02:25,360 --> 00:02:32,480
+ requirements. So now let's briefly take a look at each of the scope. So the scope one is consumer
+
+23
+00:02:32,480 --> 00:02:39,920
+ app. In the consumer organization consumes public third party generative AI services either at
+
+24
+00:02:39,920 --> 00:02:46,800
+ no cost or paid think of chat GPT, which is a third party generative AI service and you are either
+
+25
+00:02:46,800 --> 00:02:53,600
+ paying a minimal fee or you are using it for free. You don't own or see the training data or
+
+26
+00:02:53,600 --> 00:03:00,640
+ the model in this case and neither can you modify or augment it. So if you are using chat GPT,
+
+27
+00:03:00,640 --> 00:03:05,360
+ you cannot see the training data. You cannot see the model. You cannot modify or augment it.
+
+28
+00:03:05,360 --> 00:03:13,760
+ You just invoke the API. So you make a request and you get a response based on terms of the
+
+29
+00:03:13,760 --> 00:03:20,800
+ service of the provider. So an example of this is an employee interacts with generative AI chat
+
+30
+00:03:20,800 --> 00:03:28,000
+ app where public website to generate ideas for let's say upcoming marketing campaign.
+
+31
+00:03:28,000 --> 00:03:34,000
+ Okay. Now let's look at the characteristics of scope two, which is the enterprise app.
+
+32
+00:03:34,000 --> 00:03:41,760
+ So now for enterprise app, you use a third party enterprise application that is generative AI
+
+33
+00:03:41,760 --> 00:03:48,480
+ features embedded think about Amazon queue. So it's a third party enterprise app and it already
+
+34
+00:03:48,480 --> 00:03:55,360
+ has generative AI features embedded. So to use this app, you establish business relationship
+
+35
+00:03:55,360 --> 00:04:02,400
+ between the organization and the vendor. So if you want to use Amazon queue, you have to establish
+
+36
+00:04:02,400 --> 00:04:08,800
+ a business relationship with the AWS. So these apps will have terms and conditions that are
+
+37
+00:04:08,800 --> 00:04:14,400
+ aimed at enterprise customers. And these are designed to offer additional protections.
+
+38
+00:04:14,400 --> 00:04:20,400
+ And then example of this is a third party enterprise AI assistant like Amazon queue.
+
+39
+00:04:20,400 --> 00:04:28,640
+ Then you have pre trained models and here organizations build its application using an
+
+40
+00:04:28,640 --> 00:04:34,480
+ existing third party generative AI foundation model. And you directly integrate it with your
+
+41
+00:04:34,480 --> 00:04:41,440
+ workload through an application programming interface or APS. So an example of this is Amazon
+
+42
+00:04:41,440 --> 00:04:47,520
+ bedrock say you want to use a base model from Amazon bedrock. So you can make a request to these
+
+43
+00:04:47,520 --> 00:04:54,880
+ base models from your application. And here it's a talk about an example where you can build a
+
+44
+00:04:54,880 --> 00:05:02,080
+ rag based application using anthropic cloud. Okay. Then the fourth one is the fine tune model
+
+45
+00:05:02,720 --> 00:05:07,840
+ where organization refines an existing third party generative AI foundation model by
+
+46
+00:05:07,840 --> 00:05:15,040
+ fine tuning it to data specific to your business. And an example of this is we already discussed
+
+47
+00:05:15,040 --> 00:05:20,400
+ use Amazon bedrock or SageMaker and then fine tune the model. An example of this would be
+
+48
+00:05:20,400 --> 00:05:26,320
+ let's say you want to summarize patient records in the electronic health record. So you will
+
+49
+00:05:26,320 --> 00:05:35,280
+ fine tune the model so that it aligns with the domain specific terminology. Then you have self-trained
+
+50
+00:05:35,280 --> 00:05:43,360
+ models where organization builds and trains its own generative AI model from scratch using its data.
+
+51
+00:05:43,360 --> 00:05:51,040
+ You own the data as well as the model. So an example of this may be domain specific model that you
+
+52
+00:05:51,040 --> 00:05:58,160
+ build on Amazon SageMaker. So here is an important example as you go from scope one to five
+
+53
+00:05:58,160 --> 00:06:07,680
+ it represents an increasing ownership for both your AI model or large language model and its
+
+54
+00:06:07,680 --> 00:06:15,440
+ associated data. Think about this example here we have the chat GPT and here we have our own
+
+55
+00:06:15,440 --> 00:06:21,680
+ foundation model which has been trained from scratch. So as we go from scope one to scope five
+
+56
+00:06:21,680 --> 00:06:30,240
+ the ownership of the model as well as data will increase for the organization. So that's
+
+57
+00:06:30,240 --> 00:06:34,240
+ something you should remember. Okay. That's pretty much it from this lecture. I'll see you in the next
+
+58
+00:06:34,240 --> 00:06:34,880
+ lecture. Thank you.
+
