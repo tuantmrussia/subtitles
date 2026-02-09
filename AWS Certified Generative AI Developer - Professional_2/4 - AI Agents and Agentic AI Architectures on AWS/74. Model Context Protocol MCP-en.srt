@@ -1,0 +1,456 @@
+1
+00:00:00,000 --> 00:00:04,960
+ In this lecture, we're going to explore model context protocol or MCP.
+
+2
+00:00:04,960 --> 00:00:11,120
+ So now let's start with something more basic, what is MCP and what is the problem it is trying to
+
+3
+00:00:11,120 --> 00:00:19,520
+ solve. So MCP refers to model context protocol and model here is the large language model
+
+4
+00:00:19,520 --> 00:00:27,360
+ that you use to build your AI application. Context here refers to let's say you build an HR
+
+5
+00:00:27,360 --> 00:00:34,560
+ chatbot application and to answer the employee query, it needs access to certain enterprise HR
+
+6
+00:00:34,560 --> 00:00:41,760
+ data or third-party data. So when you retrieve the data and provide it to the large language model,
+
+7
+00:00:41,760 --> 00:00:48,400
+ you provide it some context. And then finally we have the protocol and we know protocol means
+
+8
+00:00:48,400 --> 00:00:55,840
+ certain sort of rules which allow you to exchange data between two devices. And in this case,
+
+9
+00:00:55,840 --> 00:01:01,360
+ we are exchanging data between the large language model or the model and different data sources
+
+10
+00:01:01,360 --> 00:01:09,920
+ whether internal or external. So MCP is an open protocol that standardizes how applications provide
+
+11
+00:01:09,920 --> 00:01:17,680
+ context to LLMs. So in summary, you have the LLM and you have the data sources and you provide
+
+12
+00:01:17,680 --> 00:01:25,520
+ data to the LLM using some protocol. Now what is the problem that MCP is trying to solve?
+
+13
+00:01:25,520 --> 00:01:34,240
+ So first, it solves the M multiplied by N custom integration problem. So let's say within your
+
+14
+00:01:34,240 --> 00:01:41,440
+ enterprise, you have three different applications, AIAP 1, AIAP 2 and AIAP 3. And each of these
+
+15
+00:01:41,440 --> 00:01:48,560
+ apps needs data access from three different data sources within the enterprise. One is the database,
+
+16
+00:01:48,560 --> 00:01:56,080
+ document repository and API service. So what you will do is let's say in case of if you're using AWS,
+
+17
+00:01:56,080 --> 00:02:01,360
+ so you're going to write custom integration problem using a lambda function where you will write
+
+18
+00:02:01,360 --> 00:02:09,520
+ some custom code for AIAP 1 to access data from this database. Then from document repository,
+
+19
+00:02:09,520 --> 00:02:15,040
+ then from API service, similarly you will do for app to where you will access the database,
+
+20
+00:02:15,040 --> 00:02:22,160
+ document repo and API service, similarly for app 3. So you will have to write code for these three
+
+21
+00:02:22,160 --> 00:02:30,560
+ integrations, then these three a total of nine integrations. So now if you use MCP, what happens is
+
+22
+00:02:30,560 --> 00:02:37,920
+ you can connect all the apps you have within your enterprise to this MCP client and then this MCP
+
+23
+00:02:37,920 --> 00:02:44,720
+ client connects one to one with this MCP server which connects to these three data sources. So you will
+
+24
+00:02:44,720 --> 00:02:51,680
+ have three plus three, six implementations. So we'll reduce the number of integration points and we'll
+
+25
+00:02:51,680 --> 00:02:57,840
+ discuss in a little bit what this client and server means and how this actually works. But just
+
+26
+00:02:57,840 --> 00:03:05,120
+ for now, remember that the number of integrations have been reduced. Next, it also standardizes how
+
+27
+00:03:05,120 --> 00:03:12,000
+ LLM access data from different data sources and we're going to discuss about this in a little bit.
+
+28
+00:03:12,000 --> 00:03:20,720
+ But right now, AWS offers more than 50 plus MCP servers. Now let's go and try and understand
+
+29
+00:03:20,720 --> 00:03:28,240
+ how MCP actually works through a use case. Now let's say we are trying to build a hotel booking
+
+30
+00:03:28,240 --> 00:03:37,200
+ AI application using MCP. Now through this example, we're going to understand five core components
+
+31
+00:03:37,200 --> 00:03:46,960
+ of MCP host client MCP server transport layer and tools resources and props. So let's say for our
+
+32
+00:03:46,960 --> 00:03:54,400
+ hotel booking AI application, there are two main backend data sources. One, we have a PDF document
+
+33
+00:03:54,400 --> 00:04:00,640
+ in an S3 bucket, which is all the hotel room features, what kind of bed it has, whether it has a TV
+
+34
+00:04:00,640 --> 00:04:08,640
+ or not and so on. And second, we have a DynamoDB where we have stored all the hotel room inventory,
+
+35
+00:04:08,640 --> 00:04:15,760
+ which an end user can query. And then we have some tools. Let's say we have bedrock knowledge
+
+36
+00:04:15,760 --> 00:04:22,480
+ basis. We know better knowledge is a managed rack solution from AWS and we've created one instance
+
+37
+00:04:22,480 --> 00:04:28,800
+ of bedrock knowledge base, which is KB ID is equal to one, two, three. And then we have also written
+
+38
+00:04:28,800 --> 00:04:36,880
+ a lambda function, which is able to retrieve the data from this hotel room inventory table.
+
+39
+00:04:36,880 --> 00:04:45,040
+ Now we have these two backend data sources and we have two tools. Now let's say we have a user
+
+40
+00:04:45,040 --> 00:04:53,520
+ Joe and he poses a question to this hotel booking AI application asking for hotel room features,
+
+41
+00:04:53,520 --> 00:05:01,040
+ which are stored in this PDF in this S3 bucket. Now this request from the user is going to go
+
+42
+00:05:01,040 --> 00:05:09,680
+ to something known as host and host is basically just any AI application that uses a large
+
+43
+00:05:09,680 --> 00:05:17,200
+ language model. And in this use case, it could simply be a chatbot through which this end user
+
+44
+00:05:17,200 --> 00:05:26,320
+ is interacting with the application. But since MCP is being used a lot by the coding AI agents,
+
+45
+00:05:26,320 --> 00:05:33,840
+ so some of the other hosts could be simply like VS code, maybe a chatbot as we discussed
+
+46
+00:05:33,840 --> 00:05:41,840
+ or any AI app. Once the request is sent to the host, it will redirect it to the large language
+
+47
+00:05:41,840 --> 00:05:48,720
+ model and in case of AWS, it might go to Amazon bedrock and then whichever model that you select,
+
+48
+00:05:48,720 --> 00:05:55,760
+ whether it's cloud or Titan, no, pro and so on. Now here mostly you're going to use
+
+49
+00:05:55,760 --> 00:06:03,200
+ converse API. Now if you have not used bedrock converse API, it's very similar to the invoke model
+
+50
+00:06:03,200 --> 00:06:10,560
+ API, but additionally it allows you to send the tools details to the large language model. So if
+
+51
+00:06:10,560 --> 00:06:15,840
+ you see here the converse API while making the request, you define the model ID. So we are using
+
+52
+00:06:15,840 --> 00:06:22,720
+ entropic here, then we are passing the message, which is basically the user query. And then we are
+
+53
+00:06:22,720 --> 00:06:30,000
+ also telling the model which are the tools available for this model. And here you can define the
+
+54
+00:06:30,000 --> 00:06:37,120
+ tool configuration. So essentially what we are doing here is we're sending the user prompt
+
+55
+00:06:37,120 --> 00:06:42,960
+ and along with that, we are also sending through a prompt template, what are the tool options
+
+56
+00:06:42,960 --> 00:06:51,520
+ available for the LLM to use. And in this case, these are the tools that are available for
+
+57
+00:06:51,520 --> 00:06:58,960
+ LLM to get context. So what bedrock is going to do is, along with this user request and the tool
+
+58
+00:06:58,960 --> 00:07:05,840
+ configuration data that has been sent, it will request to use this tool that we have here
+
+59
+00:07:05,840 --> 00:07:13,280
+ bedrock knowledge basis with KBID 123. Now this request, the large language model would send to
+
+60
+00:07:13,280 --> 00:07:20,800
+ something known as client in MCP terms. And if you can see here, client, client is embedded in
+
+61
+00:07:20,800 --> 00:07:28,000
+ this host. So we discussed host could be a chatbot or it could be ID like VS code in case of
+
+62
+00:07:28,000 --> 00:07:35,360
+ coding AI agents. And this client maintains one to one connection with MCP server. And we're going
+
+63
+00:07:35,360 --> 00:07:41,920
+ to talk about MCP server in a bit. Now what are these clients? So you might have heard about
+
+64
+00:07:41,920 --> 00:07:50,800
+ client or Amazon QCLI, Windsor, Claude desktop. These are all the clients that MCP supports at this point
+
+65
+00:07:50,800 --> 00:07:57,360
+ of time. And you can install all of these clients in your ID or VS code. And that's why I've written
+
+66
+00:07:57,360 --> 00:08:05,200
+ here that this client can be embedded in the host. And you can also have multiple clients in the
+
+67
+00:08:05,200 --> 00:08:12,640
+ same host. Okay. Next concept that we have is servers. So we have the MCP servers. And we have,
+
+68
+00:08:12,640 --> 00:08:20,320
+ in this case, AWS MCP server for bedrock knowledge basis and AWS Lambda MCP servers. So what are
+
+69
+00:08:20,320 --> 00:08:28,800
+ servers? Servers are lightweight programs that expose specific capabilities in a standardized format.
+
+70
+00:08:28,800 --> 00:08:38,000
+ So these MCP servers are lightweight programs that have been built by AWS. And in most scenarios,
+
+71
+00:08:38,000 --> 00:08:46,080
+ the MCP servers are built by the tool or service providers. And once these servers are built,
+
+72
+00:08:46,080 --> 00:08:53,280
+ there are two ways in which you can deploy these AWS MCP servers or any other service provided by
+
+73
+00:08:53,280 --> 00:09:00,000
+ different tool service providers. One is sometimes known as a remote. And it's a more recent
+
+74
+00:09:00,000 --> 00:09:05,760
+ phenomenon where it's a managed service. And let's say in AWS case, it will be deployed
+
+75
+00:09:05,760 --> 00:09:13,120
+ somewhere in the AWS environment. The second and most common one is local system or Docker
+
+76
+00:09:13,120 --> 00:09:21,360
+ deployment, where you deploy the server on your laptop itself. And most of the servers
+
+77
+00:09:21,360 --> 00:09:28,960
+ available by AWS are available to be deployed locally on your system or laptop. So if you go to
+
+78
+00:09:28,960 --> 00:09:38,160
+ this link, AWS lab start, GitHub.io, you can see all the servers that are available from AWS. And
+
+79
+00:09:38,160 --> 00:09:44,560
+ you can see in different categories. So you have AWS MCP server, knowledge base MCP server,
+
+80
+00:09:44,560 --> 00:09:50,400
+ then for infrastructure, you have CDK cloud formation, Terraform. And for AML, you have Amazon
+
+81
+00:09:50,400 --> 00:09:55,840
+ bedrock, knowledge bases, and then you have missing cube business. And then in the data analytics
+
+82
+00:09:55,840 --> 00:10:02,000
+ space, you have for DynamoDB, Elasticsearch, and whole bunch of others. Then you have a cost
+
+83
+00:10:02,000 --> 00:10:08,400
+ operations, developer tools, and you can see there are more than 50 plus servers. And you can
+
+84
+00:10:08,400 --> 00:10:16,240
+ search each of them from here from category, workflows, name, and so on. So once this large language
+
+85
+00:10:16,240 --> 00:10:22,720
+ model requests, the client to go and retrieve contextual data from these backend sources,
+
+86
+00:10:22,720 --> 00:10:30,480
+ using this tool, use kb_id123, which is for this particular knowledge base, it's going to
+
+87
+00:10:30,480 --> 00:10:38,400
+ translate this request into an MCP protocol format. And we'll discuss about what is MCP protocol
+
+88
+00:10:38,400 --> 00:10:45,760
+ format in a bit. So now this client makes a request to the server using JSON RPC. And then this
+
+89
+00:10:45,760 --> 00:10:52,320
+ MCP server is going to retrieve the data from the backend using these tools. And it's going to
+
+90
+00:10:52,320 --> 00:10:59,280
+ send a response back to the client. And this client is going to send the tool, use, or contextual
+
+91
+00:10:59,280 --> 00:11:07,200
+ data to the LLM, and then LLM along with that context. And its intrinsic knowledge is going to send
+
+92
+00:11:07,200 --> 00:11:12,560
+ a final response back. And in this case, it's going to send a room detail that it has
+
+93
+00:11:12,560 --> 00:11:19,120
+ retrieved from here to the end user. Now let's just understand a couple of things more
+
+94
+00:11:19,120 --> 00:11:24,640
+ for this MCP protocol, how this actually works. Now if you look at the fourth component,
+
+95
+00:11:24,640 --> 00:11:30,160
+ we have the transport layer, where there's a communication between the client and server. So you
+
+96
+00:11:30,160 --> 00:11:36,480
+ can see here, the client and server are exchanging information. And for this, you need to keep in mind
+
+97
+00:11:36,480 --> 00:11:44,080
+ two things. One, so you have the data layer. And here we use the JSON RPC. So we use the JSON data
+
+98
+00:11:44,080 --> 00:11:50,320
+ format to exchange data. And then at the transport layer, you have two options. One, we have the
+
+99
+00:11:50,320 --> 00:11:58,240
+ standard input output called as SDDI until very recently we only had this option. And this is mainly
+
+100
+00:11:58,240 --> 00:12:05,440
+ used when you're deploying the MCP server on your local system. Now for the remote managed servers,
+
+101
+00:12:05,440 --> 00:12:11,120
+ which are deployed, let's say within an AWS environment, you will use the HTTP protocol.
+
+102
+00:12:11,120 --> 00:12:17,680
+ And then finally, we have the fifth component, tools, resources and prompts. Now let's quickly
+
+103
+00:12:17,680 --> 00:12:25,280
+ try to understand what these three stand for. So first, we have the tools. And these are basically
+
+104
+00:12:25,280 --> 00:12:32,240
+ nothing but functions that LLMs can call to retrieve data. And these are the two tools we had
+
+105
+00:12:32,240 --> 00:12:39,920
+ in our case. And from the MCP protocol perspective, it's mandatory for these MCP servers
+
+106
+00:12:39,920 --> 00:12:48,960
+ to detail out to the client what are all the tools or basically API calls that are available
+
+107
+00:12:48,960 --> 00:12:56,880
+ with this server. Next, we have the resources and resources are nothing but actual data,
+
+108
+00:12:56,880 --> 00:13:05,760
+ which might be in a database or in file system, which can be used by the model as context. So it's
+
+109
+00:13:05,760 --> 00:13:13,200
+ the actual data that is retrieved using the tools. And then finally, we have the prompts and prompts
+
+110
+00:13:13,200 --> 00:13:20,640
+ are template that guide how models interact with the tools. So in this scenario, if we look at
+
+111
+00:13:20,640 --> 00:13:27,760
+ here, we have a prompt template, which includes the user request or the prompt, then defines
+
+112
+00:13:27,760 --> 00:13:34,800
+ which large language model we're going to use. And finally, also what are the tools available
+
+113
+00:13:34,800 --> 00:13:41,440
+ like what we had here for large language model to use. Okay, so that's pretty much it from this
+
+114
+00:13:41,440 --> 00:13:43,680
+ lecture. I'll see you in the next lecture. Thank you.
+
