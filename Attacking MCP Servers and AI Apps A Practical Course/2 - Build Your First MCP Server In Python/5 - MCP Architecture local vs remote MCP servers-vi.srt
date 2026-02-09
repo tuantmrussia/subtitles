@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:07,000
+Chào mừng trở lại. Trong bài giảng trước, chúng ta đã nói về vấn đề MCP là gì và tại sao chúng ta cần.
+
+2
+00:00:07,000 --> 00:00:18,000
+Trong bài giảng này, chúng ta sẽ nhìn dưới mui xe để hiểu kiến trúc MCP, làm thế nào các mảnh ghép khớp với nhau và làm thế nào các dữ liệu lưu thông thực sự xảy ra phía sau các cảnh.
+
+3
+00:00:18,000 --> 00:00:28,000
+Hiểu kiến trúc này là thiết yếu để tìm kiếm và xác định điểm yếu an ninh mà chúng tôi sẽ khám phá trong các bài giảng sau này.
+
+4
+00:00:28,000 --> 00:00:36,000
+MCP sử dụng một cấu trúc máy chủ khách hàng và cách tốt nhất để hiểu điều đó là suy nghĩ giống như một duyệt web.
+
+5
+00:00:36,000 --> 00:00:46,000
+Vì vậy về cơ bản bạn sẽ có một người dùng mà đặt đằng sau một trình duyệt web và trình duyệt web là khách hàng kết nối người dùng đó với một máy chủ web.
+
+6
+00:00:46,000 --> 00:00:53,000
+Và máy chủ web đó thực sự lấy dữ liệu từ cơ sở dữ liệu hoặc internet hoặc bất cứ điều gì.
+
+7
+00:00:53,000 --> 00:01:01,000
+Một khi máy phục vụ web có dữ liệu nó gửi lại cho trình duyệt web hiển thị hoặc hiển thị nó cho người dùng.
+
+8
+00:01:01,000 --> 00:01:15,000
+Nhưng thay vì có một người sử dụng một trình duyệt chúng tôi có một mô hình AI sử dụng một trình khách MCP để duyệt dữ liệu từ ứng dụng bên ngoài và
+
+9
+00:01:15,000 --> 00:01:36,000
+ARI sử dụng máy chủ MCP. Ở MCP, chúng tôi có ba thành phần chính. Đầu tiên chúng tôi có mô hình AI cần truy cập dữ liệu của bạn mà về cơ bản sống từ xa trong ứng dụng từ xa hoặc ADI như Google Drive, Slack hoặc cơ sở dữ liệu hoặc YouTube hài lòng bất cứ điều gì.
+
+10
+00:01:36,000 --> 00:01:50,000
+Và mô hình AI sử dụng một khách hàng MCP và một lần nữa nghĩ về khách hàng MCP giống như trình duyệt web. Vì vậy, trình khách MCP là trình duyệt web AI kết nối đến một máy chủ MCP.
+
+11
+00:01:50,000 --> 00:02:12,000
+Và giống như trình duyệt web của bạn có thể mở nhiều trang web khác nhau. Cũng như một khách hàng MCP duy nhất có thể kết nối với một hay nhiều máy chủ MCP cùng một lúc. Ứng dụng khách mCP quản lý tất cả các kết nối và chuyển yêu cầu từ mô hình AI tới máy chủ đúng.
+
+12
+00:02:12,000 --> 00:02:29,000
+Máy chủ MCP là cầu nối giữa nơi dữ liệu sống và khách hàng MCP. Vì vậy, nó đã nhận được yêu cầu từ ứng dụng khách MCP và sau đó nó sẽ dịch yêu cầu này sang một yêu cầu bên ngoài và các ứng dụng.
+
+13
+00:02:29,000 --> 00:02:52,000
+Máy phục vụ MCP xử lý tất cả các chi tiết như quyền truy cập API, hiệu trưởng, giới hạn tuyệt vời, quản lý và định dạng dữ liệu cho các dịch vụ từ xa. Nó có thể lấy dữ liệu và gửi về cho khách hàng MCP nhưng nó cũng có khả năng cập nhật dữ liệu về các dịch vụ từ xa.
+
+14
+00:02:52,000 --> 00:03:12,000
+Tôi có thể để ý rằng tôi đã nói khách hàng MCP nhưng ở đây tôi đã viết chủ nhà MCP. Bây giờ một số ứng dụng máy tính AI giống như một ứng dụng bàn làm việc Claude. Nó đã đi kèm với một khách hàng MCP được xây dựng trong ra khỏi hộp và nếu đây là trường hợp họ thường gọi là máy MCP.
+
+15
+00:03:12,000 --> 00:03:24,000
+Điều đó tiết kiệm cho bạn một tấn công việc bởi vì nếu không bạn sẽ cần phải xây dựng cho riêng mình một khách hàng MCP kết nối với máy chủ MCP và cũng kết nối với mô hình AI.
+
+16
+00:03:24,000 --> 00:03:53,000
+Bây giờ vào bên trong để sử dụng một máy MCP giống như một máy tính bàn làm việc Claude mà đi kèm với khách hàng MCP ra khỏi hộp như chúng tôi đã nói. Nó có giới hạn đặc biệt để kết nối bạn với một máy chủ MCP từ xa. Trong khóa học này chúng tôi sẽ làm cả hai. Chúng tôi sẽ sử dụng một màn hình nền Claude như là máy phục vụ MCP của chúng tôi nhưng chúng tôi cũng sẽ có cơ hội để thấy một trình khách MCP tự chọn được thực hiện bằng Python và nó sẽ cho phép chúng tôi kết nối đến một máy chủ MCP từ xa.
+
+17
+00:03:53,000 --> 00:04:18,000
+Được rồi, chúng ta hãy nói một chút về việc thực hiện chi tiết cho máy chủ MCP. Các máy chủ MCP có thể chạy vào hai vị trí khác nhau. MCP địa phương chạy trực tiếp vào máy của bạn. Nghĩa là bạn có mã nguồn của máy phục vụ MCP sau đó bạn có thể cài đặt các quan hệ phụ thuộc phần mềm của nó và sau đó bạn có thể khởi động máy chủ MCP trên máy tính của bạn.
+
+18
+00:04:18,000 --> 00:04:37,000
+Giống như bất kỳ mã lệnh nào khác trong máy của anh. Khi bạn kết nối màn hình nền Claude tới máy chủ MCP cục bộ, máy tính Claude khởi chạy trình phục vụ MCP như là một tiến trình SAP. Giống như cách bạn chạy bất kỳ văn lệnh Python nào từ dòng lệnh, bạn nói Python và sau đó bạn đi qua tên của tập tin Python.
+
+19
+00:04:37,000 --> 00:04:47,000
+Bây giờ các kênh liên lạc giữa máy tính Claude và máy chủ MCP địa phương thường thông qua đầu vào chuẩn.
+
+20
+00:04:47,000 --> 00:04:56,000
+Bạn cũng có thể truyền dữ liệu đến máy chủ của MCP địa phương bằng cách sử dụng biến môi trường như biểu tượng ADI chẳng hạn.
+
+21
+00:04:56,000 --> 00:05:18,000
+Mặt khác, máy chủ ở xa là máy chủ trên mạng nên nó chạy ở đâu đó trên máy chủ đâu đó trên internet. Phương pháp kết nối trong trường hợp này giữa trình khách MCP và trình phục vụ MCP là thông qua HTTP luồng và cung cấp một điểm HTTP duy nhất cho mọi liên lạc.
+
+22
+00:05:18,000 --> 00:05:32,000
+Các máy chủ MCP từ xa rất mạnh mẽ vì chúng có thể được chia sẻ giữa các đội, người dùng và khách hàng. Nó có thể tự động quy mô và tích hợp với dịch vụ đám mây nhưng chúng cũng có thể tạo ra một dịch vụ tấn công mới.
+
+23
+00:05:32,000 --> 00:05:47,000
+Nếu ai đó phá hỏng máy chủ MCP từ xa của bạn, sau đó họ có thể có khả năng truy cập vào tất cả các hệ thống kết nối nhưng cũng có tất cả các dữ liệu thuộc về người dùng khác đang sử dụng cùng một máy chủ MCP từ xa.
+
+24
+00:05:47,000 --> 00:05:55,000
+Tôi biết có rất nhiều thông tin cần tiêu hóa ở đây. Tôi đảm bảo với các bạn rằng tôi sẽ làm cho nó rất đơn giản và thẳng thắn.
+
+25
+00:05:55,000 --> 00:06:08,000
+Tất cả các lý thuyết mà chúng tôi đã nói đến trong bài giảng này, nó sẽ có ý nghĩa trong bài giảng tiếp theo khi chúng tôi xây dựng máy chủ MCP địa phương đầu tiên của chúng tôi bằng Python và kết nối nó với ứng dụng bàn làm việc Claude.
+
+26
+00:06:08,000 --> 00:06:21,000
+Máy phục vụ MCP của chúng tôi sẽ kết nối chúng tôi đến hệ thống quản lý API thỏa mãn và nếu bạn không biết hài lòng nó là một hệ thống quản lý nội dung mà sẽ cho phép bạn tiếp tục và quản lý nội dung trang web của bạn.
+
+27
+00:06:21,000 --> 00:06:33,000
+Lý do tôi chọn hài lòng bởi vì tôi muốn cho bạn xem một ví dụ thực tế về trường hợp kinh doanh sử dụng và cũng bởi vì hài lòng cung cấp cho bạn một liên kết miễn phí mà bạn có thể nhanh chóng thiết lập và chơi với.
+
+28
+00:06:33,000 --> 00:06:39,000
+Tôi hy vọng bài giảng này đã được bổ ích cho bạn và tôi sẽ gặp lại bạn trong bài giảng tiếp theo. Cảm ơn đã theo dõi.
+
