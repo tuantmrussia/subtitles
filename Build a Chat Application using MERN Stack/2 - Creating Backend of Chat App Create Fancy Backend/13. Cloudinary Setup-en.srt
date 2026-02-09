@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:04,760
+ So, hello everyone, in the previous video, I have made something like in the export const
+
+2
+00:00:04,760 --> 00:00:06,280
+ logout function.
+
+3
+00:00:06,280 --> 00:00:11,480
+ You have to add this line of code, like console.log error in the logout and you also have
+
+4
+00:00:11,480 --> 00:00:13,920
+ to pass this response as status code, okay.
+
+5
+00:00:13,920 --> 00:00:18,160
+ So, add these two lines of code and now in this video we are going to work with this update
+
+6
+00:00:18,160 --> 00:00:20,040
+ profile controller, okay.
+
+7
+00:00:20,040 --> 00:00:24,600
+ So, but for this we are going to use some service which is known as Cloudinary, but also
+
+8
+00:00:24,600 --> 00:00:28,760
+ before that you need to pass the data, okay.
+
+9
+00:00:28,760 --> 00:00:32,960
+ So you need to use one metadata which is called as the cookie parser.
+
+10
+00:00:32,960 --> 00:00:35,240
+ So in the app.js what do you do?
+
+11
+00:00:35,240 --> 00:00:50,720
+ Just go there and import cookie parser from cookie parser, okay.
+
+12
+00:00:50,720 --> 00:00:55,480
+ So import cookie parser from cookie parser and now what we are going to do is we are going to
+
+13
+00:00:55,480 --> 00:01:03,400
+ just use this middleware, so app.use cookie parser, all right.
+
+14
+00:01:03,400 --> 00:01:09,240
+ Make sure to add these two lines of code because we need to parse the data which is coming
+
+15
+00:01:09,240 --> 00:01:10,960
+ from the back and side, okay.
+
+16
+00:01:10,960 --> 00:01:17,880
+ So control s and now we are going to just go to the, go to this Cloudinary website.
+
+17
+00:01:17,880 --> 00:01:23,520
+ So I will just go and let you know, okay.
+
+18
+00:01:23,520 --> 00:01:37,280
+ Okay, so let's go to the Cloudinary website, Cloudinary, so we are going to sign up, sign up
+
+19
+00:01:37,280 --> 00:01:38,280
+ for free.
+
+20
+00:01:38,280 --> 00:01:47,520
+ I am going to use my account, so you should also use your account, okay.
+
+21
+00:01:47,520 --> 00:02:03,200
+ It is, so as you can see this is the interface, so what you are going to do is like you
+
+22
+00:02:03,200 --> 00:02:10,400
+ are going to copy this cloud name and now in the dot en we file you are going to just store
+
+23
+00:02:10,400 --> 00:02:19,640
+ this one, okay, so you can store this like cloud slash key, cloudinary key, cloudinary
+
+24
+00:02:19,640 --> 00:02:27,080
+ underscore key equals to this one, control save and now we need to go to the setting section,
+
+25
+00:02:27,080 --> 00:02:32,840
+ so as we can see that here and now you can go to this API like this setting here as you
+
+26
+00:02:32,840 --> 00:02:38,160
+ can see and if you can key is, sorry, if you can go to this setting and there will be
+
+27
+00:02:38,160 --> 00:02:44,760
+ API keys, so I have already created an active API key, so I can copy that one, so I can
+
+28
+00:02:44,760 --> 00:02:51,600
+ take this and just copy that and paste it inside of the dot en we, okay.
+
+29
+00:02:51,600 --> 00:02:58,080
+ So we can name this as key or whatever, I will just rename it after a few moments but for
+
+30
+00:02:58,080 --> 00:03:04,520
+ the time being I am just going to store this as control, as and control we, so after this
+
+31
+00:03:04,520 --> 00:03:09,960
+ one, so it would be better if we just name all of these three values as something better,
+
+32
+00:03:09,960 --> 00:03:23,440
+ okay, so how about this one, so wait, cloudinary underscore cloud underscore name equals
+
+33
+00:03:23,440 --> 00:03:30,920
+ to and let's go here and now we are going to just copy this one, okay, so where was the
+
+34
+00:03:30,920 --> 00:03:42,560
+ cloud name, wait a second, so cloud name, so I am going to copy this and paste this,
+
+35
+00:03:42,560 --> 00:03:55,920
+ control as and now for API key, so cloudinary, cloudinary underscore API underscore key equals
+
+36
+00:03:55,920 --> 00:04:06,160
+ to and now let's go back to this setting section, okay, so settings, so now we have
+
+37
+00:04:06,160 --> 00:04:15,600
+ this default API key, okay, so API key, the cloudinary API key control plus V and for the
+
+38
+00:04:15,600 --> 00:04:33,360
+ secret key, also we are going to name one, so cloudinary, cloudinary secret underscore
+
+39
+00:04:33,360 --> 00:04:45,120
+ key equals to control, I think both are same how, one second, that's API key and that's
+
+40
+00:04:45,120 --> 00:04:55,860
+ API secret key should be same only, okay, okay, that requires a confirmation code, okay,
+
+41
+00:04:55,860 --> 00:05:03,920
+ let's approve this one, okay, I have made this one, okay, right, so now let's copy this
+
+42
+00:05:03,920 --> 00:05:15,200
+ API key, okay, so API key, let's paste like this and the second thing is here, you can
+
+43
+00:05:15,200 --> 00:05:26,380
+ copy this one and secret key can be pasted here, control as, now again go back and we have
+
+44
+00:05:26,380 --> 00:05:40,060
+ this, yeah, control as safe, so now we have successfully set up this one, so in the next
+
+45
+00:05:40,060 --> 00:05:45,940
+ video I'm going to tell you how to configure all the like routes in the cloudinary.
+
