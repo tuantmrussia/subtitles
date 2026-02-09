@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:08,000
+Chào mừng trở lại. Trong một bài giảng trước đây chúng tôi đã thấy làm thế nào cung cấp cho trình phục vụ MCP một truy cập rộng đến một dịch vụ back-end
+
+2
+00:00:08,000 --> 00:00:15,000
+có thể dẫn đến một sự mất giấy phép và cụ thể cho một cuộc tấn công nhiệm vụ.
+
+3
+00:00:15,000 --> 00:00:22,000
+Hôm nay chúng ta sẽ khám phá một điểm dễ bị tổn thương khác trong ứng dụng AI được gọi là mũi tiêm nhanh.
+
+4
+00:00:22,000 --> 00:00:27,000
+Chúng tôi sẽ sử dụng ứng dụng chatbot khách hàng để chứng minh cuộc tấn công này.
+
+5
+00:00:27,000 --> 00:00:35,000
+Máy chat được điều khiển bởi AI và nó được cho là để giúp khách hàng với những vấn đề liên quan đến mệnh lệnh của họ.
+
+6
+00:00:35,000 --> 00:00:41,000
+Để đơn giản, tôi đã tạo ứng dụng chatbot như một ứng dụng dòng lệnh.
+
+7
+00:00:41,000 --> 00:00:46,000
+Trong thế giới thực, hỗ trợ chatbot thường là một ứng dụng dựa trên web.
+
+8
+00:00:46,000 --> 00:00:56,000
+Cũng để giữ cho mọi thứ đơn giản trong mã nguồn ứng dụng chatbot tôi tim mã hoá ID khách hàng mặc định là khách hàng số một.
+
+9
+00:00:56,000 --> 00:01:04,000
+Đây là vì sự đơn giản. Trong thế giới thực một lần nữa danh tính khách hàng được nhận diện qua cơ chế xác thực.
+
+10
+00:01:04,000 --> 00:01:12,000
+Toàn bộ ý tưởng ở đây là tập trung vào cuộc tấn công nhanh chóng và tránh sự phức tạp với việc thực hiện xác thực.
+
+11
+00:01:12,000 --> 00:01:20,000
+Hãy đi theo dòng dữ liệu một chút. Vì vậy, robot chat nhận câu hỏi của khách hàng và sau đó nó chuyển chúng vào một mẫu thời gian.
+
+12
+00:01:20,000 --> 00:01:26,000
+Sau đó nó gửi dấu nhắc tới một mô hình AI được tổ chức ở phòng thu LM.
+
+13
+00:01:26,000 --> 00:01:34,000
+Chúng tôi đang sử dụng phòng thu LM ở đây để đơn giản hóa và các công ty thực tế có thể sử dụng các mô hình AI hạng thương mại.
+
+14
+00:01:34,000 --> 00:01:43,000
+Các nhắc chính nó hướng dẫn các mô hình AI để tạo ra một yêu cầu đáp ứng nhanh dựa trên đầu vào khách hàng hoặc câu hỏi khách hàng.
+
+15
+00:01:43,000 --> 00:01:51,000
+Yêu cầu đáp ứng nhanh được cho là truy vấn cơ sở dữ liệu cuối để lấy thông tin về yêu cầu của khách hàng.
+
+16
+00:01:51,000 --> 00:02:01,000
+Vì vậy, một khi chatbot nhận được các yêu cầu hệ thống MIME từ mô hình AI nó vượt qua yêu cầu hệ điều hành này cho một công cụ máy chủ MCP gọi là cơ sở dữ liệu tìm kiếm.
+
+17
+00:02:01,000 --> 00:02:06,000
+Cơ sở dữ liệu tìm kiếm sẽ thực hiện yêu cầu đáp ứng cơ sở dữ liệu back-end.
+
+18
+00:02:06,000 --> 00:02:18,000
+Và một khi chúng tôi đã có phản ứng từ cơ sở dữ liệu nó đã được chuyển một lần nữa đến mô hình AI để tạo ra một phản ứng thân thiện con người mà được cho là để giúp khách hàng với vấn đề của họ.
+
+19
+00:02:18,000 --> 00:02:28,000
+Bây giờ hãy chú ý ở đây rằng câu hỏi đáp ứng tự nó đã được tạo ra bởi mô hình AI dựa trên một dấu nhắc chứa dữ liệu nhập của khách hàng.
+
+20
+00:02:28,000 --> 00:02:36,000
+Và giống như bất kỳ sự tổn thương an ninh nào được xây dựng trên đầu vào người dùng có thể dẫn đến vấn đề an ninh.
+
+21
+00:02:36,000 --> 00:02:41,000
+Hãy nhìn vào đoạn mã để tạo ra dấu nhắc từ đầu vào người dùng.
+
+22
+00:02:41,000 --> 00:02:48,000
+Nếu bạn mở các chatbot lên tập tin văn lệnh và di chuyển để tạo ra đường dẫn mặc định ở đây.
+
+23
+00:02:48,000 --> 00:02:52,000
+Chúng tôi có thể thấy các mẫu dấu nhắc được xác định theo phương pháp này.
+
+24
+00:02:52,000 --> 00:02:58,000
+Dấu nhắc hướng dẫn mô hình AI để giúp tạo ra một tuyên bố sau khi kết thúc.
+
+25
+00:02:58,000 --> 00:03:05,000
+Nó chỉ yêu cầu lời tuyên bố đáp trả bằng RLS mà không có lời giải thích, văn bản hay bình luận.
+
+26
+00:03:05,000 --> 00:03:10,000
+Chúng tôi cũng có thể thấy rằng nó đã mã hóa danh tính người dùng để là khách hàng một.
+
+27
+00:03:10,000 --> 00:03:12,000
+Và đây là phần tôi đã nói trước đó.
+
+28
+00:03:12,000 --> 00:03:20,000
+Vì mục đích biểu diễn, chúng tôi rất khó để lập trình danh tính khách hàng trong một tập hợp xây dựng bạn biết như sự xác thực logic.
+
+29
+00:03:20,000 --> 00:03:27,000
+Trong thế giới thực, danh tính khách hàng nên đến từ phiên chạy xác thực như cookie hay vật chứng ủy quyền.
+
+30
+00:03:27,000 --> 00:03:36,000
+Chúng ta cũng có thể thấy rằng dấu nhắc cung cấp cho cơ sở dữ liệu giản đồ cho mô hình AI để nó có thể biết những bảng và cột nào tồn tại.
+
+31
+00:03:36,000 --> 00:03:40,000
+Cuối cùng, nhắc phụ truy vấn người dùng ở đây.
+
+32
+00:03:40,000 --> 00:03:43,000
+Hãy xem con robot này hành động và chơi với nó một chút.
+
+33
+00:03:43,000 --> 00:03:51,000
+Vì vậy, tôi có của tôi soạn thảo Docker và chạy mà sẽ bắt đầu trình phục vụ MCP cũng như cơ sở dữ liệu Postgres.
+
+34
+00:03:51,000 --> 00:03:58,000
+Tôi cũng có phòng thu LM chạy trên cổng 1, 2, 3, 4 và tất cả những gì tôi cần làm là bắt đầu chương trình chatbot.
+
+35
+00:03:58,000 --> 00:04:02,000
+Và ngay khi tôi làm thế, chúng ta sẽ thấy vài khúc gỗ trong phòng thu LM.
+
+36
+00:04:02,000 --> 00:04:12,000
+Vì vậy, hãy để tôi đi trước và bắt đầu điều này và để xác minh chúng tôi nên nhìn thấy một số bản ghi trong phòng thu LM và điều này nên được dưới hóa đơn nhà phát triển.
+
+37
+00:04:12,000 --> 00:04:17,000
+Vì vậy, robot chat bắt đầu với các phương trình mẫu mà một khách hàng có thể hỏi.
+
+38
+00:04:17,000 --> 00:04:24,000
+Tôi sẽ sao chép và dán một trong những câu hỏi đó, vì vậy hãy đi với câu thứ hai để cho tôi thấy tất cả các mệnh lệnh chờ đợi của tôi.
+
+39
+00:04:24,000 --> 00:04:35,000
+Và chúng ta có thể thấy rằng tôi thêm vào một số ghi chép động từ để xem các sinh vật lưỡng tính tạo ra các tương tác với LM studio với MCP trong thời gian thực.
+
+40
+00:04:35,000 --> 00:04:42,000
+Nhân tiện, chúng ta cũng nên xem một số bản ghi thời gian thực trên phòng thu LM và điều đó xảy ra dưới thanh nhà phát triển.
+
+41
+00:04:42,000 --> 00:04:44,000
+Được rồi, quay lại với robot chat.
+
+42
+00:04:44,000 --> 00:04:51,000
+Chúng tôi có thể thấy nó đầu tiên kết nối với phòng thu UM và sau đó phòng thu LM tạo ra câu hỏi ULM.
+
+43
+00:04:51,000 --> 00:05:02,000
+Chúng ta có thể thấy nó nói rằng hãy chọn tất cả mọi thứ từ thứ tự ổn định nơi mà ID của khách hàng là cái mà chúng tôi cứng mã hóa và một bộ lọc nói rằng vị trí đặt hàng đang chờ,
+
+44
+00:05:02,000 --> 00:05:05,000
+Nó giống như một câu hỏi đáp ngắn gọn.
+
+45
+00:05:05,000 --> 00:05:11,000
+Sau đó, robot chat của chúng tôi đã thông qua đó đến máy chủ MCP để thực hiện hệ điều hành đường dẫn này.
+
+46
+00:05:11,000 --> 00:05:19,000
+Nó lấy kết quả thô từ cơ sở dữ liệu và sau đó chuyển chúng vào phòng thu LM để định dạng.
+
+47
+00:05:19,000 --> 00:05:25,000
+Để lập bản đồ này thực sự nhanh chóng trở lại biểu đồ của chúng tôi, chatbot đã lấy khách hàng hoặc truy vấn người dùng,
+
+48
+00:05:25,000 --> 00:05:32,000
+Đã thay thế nó vào một mẫu nhắc và sau đó chuyển nó đến phòng thu ULM để tạo ra các yêu cầu MIME.
+
+49
+00:05:32,000 --> 00:05:40,000
+Một khi chúng tôi đã có truy vấn hệ thống định vị, robot chat đã thông qua đó đến máy chủ MCP để thực hiện điều đó trong DB và sau đó phản hồi.
+
+50
+00:05:40,000 --> 00:05:49,000
+Một lần nữa, nó đã thông qua nó LM Studio để có một kết xuất có định dạng và sau đó đầu ra được gửi trở lại cho người dùng hoặc khách hàng.
+
+51
+00:05:49,000 --> 00:05:53,000
+Tại thời điểm này, robot chat đang hoạt động như mong đợi.
+
+52
+00:05:53,000 --> 00:05:59,000
+Và tôi không muốn làm cho video này quá lâu, vì vậy tôi sẽ để lại cho bạn để khám phá các chức năng chatbot xa hơn.
+
+53
+00:05:59,000 --> 00:06:03,000
+Và xem nếu bạn có thể truy cập dữ liệu mà bạn không được phép truy cập.
+
+54
+00:06:03,000 --> 00:06:10,000
+Trong bài giảng tiếp theo, chúng tôi sẽ tiêm các nhắc để truy cập dữ liệu thuộc về một người dùng khác hoặc khách hàng khác.
+
+55
+00:06:10,000 --> 00:06:15,000
+Nhưng chúng ta cũng sẽ thảo luận về cách giảm thiểu các lỗ tiêm nhanh.
+
+56
+00:06:15,000 --> 00:06:20,000
+Tôi hy vọng bài giảng này đã được bổ ích cho bạn và tôi hy vọng sẽ gặp lại bạn trong bài giảng tiếp theo.
+
+57
+00:06:20,000 --> 00:06:21,000
+Cảm ơn đã theo dõi.
+
