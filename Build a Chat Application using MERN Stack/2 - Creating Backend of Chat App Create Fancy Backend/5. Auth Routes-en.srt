@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:07,000
+ So, hello everyone, in this video, we are going to just start with our this app.js file.
+
+2
+00:00:07,000 --> 00:00:14,000
+ So, we are going to make a orth route file in which we are going to route to different,
+
+3
+00:00:14,000 --> 00:00:21,000
+ like we are going to make routes for different different routes like for login, for sign up and sign in like that.
+
+4
+00:00:21,000 --> 00:00:29,000
+ So, before that we are going to just make, we have to make a new folder and since we are working on a MVC structure like model view controller.
+
+5
+00:00:29,000 --> 00:00:36,000
+ So, every route has been like all the routes which we are going to make has several kind of functions.
+
+6
+00:00:36,000 --> 00:00:43,000
+ So, those are going to be segregated into different folders and that is why we use a MVC structure.
+
+7
+00:00:43,000 --> 00:00:48,000
+ That is M for model view for view and super controllers controllers are nothing but functions.
+
+8
+00:00:48,000 --> 00:01:04,000
+ So, now let us do make the folder. So, controllers and we are going to make models.
+
+9
+00:01:04,000 --> 00:01:17,000
+ I am a right model or models model, model controller and then after that we are going to just make one LIB folder.
+
+10
+00:01:17,000 --> 00:01:22,000
+ And then let us make one for the routes as well.
+
+11
+00:01:22,000 --> 00:01:25,000
+ So, we have make for the routes.
+
+12
+00:01:25,000 --> 00:01:34,000
+ So, inside of the routes let us go here and just make one file which is called the orthroughts.js.
+
+13
+00:01:34,000 --> 00:01:46,000
+ So, inside of this let us import our express package. So, import express from express.
+
+14
+00:01:46,000 --> 00:01:55,000
+ And now since we are going to use this also const route equal to express dot router.
+
+15
+00:01:55,000 --> 00:02:05,000
+ We are going to use the express router and express router and we are going to store that inside of our this route variable.
+
+16
+00:02:05,000 --> 00:02:17,000
+ So, let us make one route. So, route dot post. So, we are going to just use this route dot post.
+
+17
+00:02:17,000 --> 00:02:30,000
+ We are assigning this post request and suppose it goes to the sign up and for this we are going to just use request response.
+
+18
+00:02:30,000 --> 00:02:44,000
+ And inside of our this brackets and now we are going to just send a response like rus dot send rus dot send sign up each.
+
+19
+00:02:44,000 --> 00:02:58,000
+ For example, we are going to take this and now similarly route dot post suppose we have this one for like we can get this is one for login.
+
+20
+00:02:58,000 --> 00:03:21,000
+ So, last login request response and we are going to return something like let us send this sample one sample response like login login successful.
+
+21
+00:03:21,000 --> 00:03:39,000
+ Similarly, there would be one post request which belongs to the logout. So, slash logout and let us send the response as request response.
+
+22
+00:03:39,000 --> 00:04:04,000
+ Let us call back function and inside of this rus dot send logout. Let us default export this one. So, export default route.
+
+23
+00:04:04,000 --> 00:04:14,000
+ So, what we are going to do is like we have default export this route and we can use this inside of our app.js.
+
+24
+00:04:14,000 --> 00:04:39,000
+ So, import what we can say route from or routes. So, let us add gs here. So, do not for way to like add this dot gs here, otherwise it will throw some kind of error.
+
+25
+00:04:39,000 --> 00:04:47,000
+ Now, we have bought it successfully. Now, we are going to just use this middle where which is called as app dot use.
+
+26
+00:04:47,000 --> 00:04:58,000
+ And with this app dot use what we are going to do is we are going to define some common route where we will navigate and with this navigation we will have the auth route.
+
+27
+00:04:58,000 --> 00:05:16,000
+ And for this one we are going to use the route. So, now it will successfully like navigate. So, we have we are going to make a few changes.
+
+28
+00:05:16,000 --> 00:05:29,000
+ So, like for example, slash ap slash auth and it is going to take from this route and it is going to map it.
+
+29
+00:05:29,000 --> 00:05:38,000
+ The naming convention what I have actually did is like change this route to auth route. So, we are going to import it from the auth route.
+
+30
+00:05:38,000 --> 00:05:52,000
+ So, if you control plus click here we are going to get this one file. So, this auth route dot.js and we are making this slash sign up slash login and slash logout as routes.
+
+31
+00:05:52,000 --> 00:06:02,000
+ And we have imported it there in the app dot.js file. So, that we can use with this middle where like app dot use slash ap slash or this is going to be the common pathway.
+
+32
+00:06:02,000 --> 00:06:18,000
+ And after that it is going to use these routes to navigate to a particular URL. So, now let us run this one. So, we can get here. So, this is showing some kind of cannot get.
+
+33
+00:06:18,000 --> 00:06:42,000
+ So, I think there is some issue with it actually this post request we need to set this to get. So, now we will try it like for different routes we have slash sign up slash log in slash logout.
+
+34
+00:06:42,000 --> 00:07:02,000
+ So, we are sending different responses. So, let us try this. So, this is login successful. Now, let us try for this sign up. So, sign up. So, sign up pitch and now let us try for this logout as well.
+
+35
+00:07:02,000 --> 00:07:31,000
+ So, slash logout. So, as you can see this slash ap slash outs slash logout. So, you can see a light ap slash auth. So, this middle where app dot use it takes the common puzzle like slash ap slash auth and from this auth route we are going to just take another one like slash sign up slash login.
+
+36
+00:07:31,000 --> 00:07:50,000
+ And slash logout. So, it is going to import this routes from this auth route.js and we are going to use this middle where and we are constructing a create like a common path and just we are just changing the this slash logout to slash sign up and slash whatever.
+
+37
+00:07:50,000 --> 00:08:01,000
+ So, it is going to display this different response as per the routes which we have configured. So, that is it in video. We are going to see in the next video.
+
