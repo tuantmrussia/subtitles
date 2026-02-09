@@ -1,0 +1,136 @@
+1
+00:00:00,420 --> 00:00:05,900
+So the first step in building Aosp is to execute the EMV setup dot as such.
+
+2
+00:00:05,910 --> 00:00:09,990
+So this command is executed using the Linux source command.
+
+3
+00:00:09,990 --> 00:00:17,130
+So to execute the N.V. setup, we use this command source build slash EMV setup.
+
+4
+00:00:18,240 --> 00:00:25,560
+So basically we are trying to execute the EMV setup DOT as a shell script which resides within build
+
+5
+00:00:25,560 --> 00:00:26,070
+folder.
+
+6
+00:00:26,070 --> 00:00:32,530
+And the source command is basically a built in shell command that reads and executes the file candidate
+
+7
+00:00:32,550 --> 00:00:34,340
+in the current shell.
+
+8
+00:00:34,350 --> 00:00:41,280
+So in this case, the source command will read the EMV setup dot search line by line and it will get
+
+9
+00:00:41,280 --> 00:00:41,970
+executed.
+
+10
+00:00:41,970 --> 00:00:45,480
+So you can also replace source with simply a dot.
+
+11
+00:00:45,630 --> 00:00:50,970
+The dot works as a kind of alias to the source command, so let's do this.
+
+12
+00:00:51,300 --> 00:00:55,800
+So once this command is executed, we get access to a lot of other commands.
+
+13
+00:00:55,890 --> 00:01:00,530
+The full list of available commands can be seen by running X.
+
+14
+00:01:00,540 --> 00:01:02,180
+Mm hmm.
+
+15
+00:01:02,190 --> 00:01:04,590
+Displays all the commands which are available for us.
+
+16
+00:01:04,590 --> 00:01:07,980
+Now, let's look at the most common commands from this list.
+
+17
+00:01:07,980 --> 00:01:12,360
+So as the first step, it is necessary to load the lunch script.
+
+18
+00:01:12,480 --> 00:01:14,250
+The lunch command, this command.
+
+19
+00:01:14,250 --> 00:01:16,980
+The lunch command shows you the lunch menu.
+
+20
+00:01:16,980 --> 00:01:17,400
+Yes.
+
+21
+00:01:17,400 --> 00:01:21,990
+You can compare this to the lunch menu, which is served in a restaurant.
+
+22
+00:01:22,230 --> 00:01:28,530
+So this lunch command serves you with the build variants available for Aosp.
+
+23
+00:01:28,530 --> 00:01:33,470
+So you can just simply type lunch and now it will show you the lunch menu.
+
+24
+00:01:33,480 --> 00:01:34,950
+So here is our lunch menu.
+
+25
+00:01:34,980 --> 00:01:41,670
+We have 73 flavors, so each of the builder up are for different purpose.
+
+26
+00:01:41,670 --> 00:01:45,840
+So as you can see, each of the build flavor has different keywords.
+
+27
+00:01:45,840 --> 00:01:53,460
+So here you can see these four arm architecture CPUs and there is EMG stands for Engineering Build and
+
+28
+00:01:53,460 --> 00:01:55,290
+here arm 64 bit.
+
+29
+00:01:55,320 --> 00:02:04,890
+Similarly you can see x 86 the Intel and AMD processors 36 and you can see borne out all of these are
+
+30
+00:02:04,890 --> 00:02:06,630
+for different types of devices.
+
+31
+00:02:06,630 --> 00:02:08,100
+And here we could see high key.
+
+32
+00:02:08,130 --> 00:02:15,630
+High key is the development board which we normally use, which we commonly use for Aosp similarly big
+
+33
+00:02:15,780 --> 00:02:16,140
+board.
+
+34
+00:02:16,140 --> 00:02:22,620
+So there are different boards build flavors and the one with C of these are for the cuttlefish.
+
