@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:05,960
+ So, in the last video we have set up the wheat ok. So, now it is running on the localhost
+
+2
+00:00:05,960 --> 00:00:14,240
+ 5.1.73. So, let us navigate to this website. So, as we can see that in this one wheat
+
+3
+00:00:14,240 --> 00:00:21,360
+ plus react. So, you can click on this counter. So, it is using the use state hook ok. So,
+
+4
+00:00:21,360 --> 00:00:26,200
+ we can go to this website as well. So, for now we are going to just follow up on
+
+5
+00:00:26,200 --> 00:00:33,020
+ it ok. Now, after this we are going to this change change to the backend directory ok.
+
+6
+00:00:33,020 --> 00:00:38,480
+ So, control C. So, CD dot dot. So, in order to go one level back and now we are going to
+
+7
+00:00:38,480 --> 00:00:44,280
+ change the directory to backend. So, we are going to just initialize NPM. So, NPM in
+
+8
+00:00:44,280 --> 00:00:53,520
+ it dash y ok. So, it is a default setup for NPM. So, after this node package manager initial
+
+9
+00:00:53,520 --> 00:01:02,640
+ setup we are going to install a bunch of packages ok. So, NPM install express. After this
+
+10
+00:01:02,640 --> 00:01:10,280
+ we are going to just use Mongoose also because we are going to use the Mongoose database
+
+11
+00:01:10,280 --> 00:01:19,360
+ and dot ENV. Dot ENV we are going to use for like as a middleware ok and JSON web token
+
+12
+00:01:19,360 --> 00:01:28,040
+ to create sign in and sign on functionality ok. So, JSON web token and after this we are
+
+13
+00:01:28,040 --> 00:01:33,720
+ going to just to use the decrypt.js in order to hash the passwords during the sign in
+
+14
+00:01:33,720 --> 00:01:39,640
+ and login and after that we are going to use this cookie parser. So, we all know it is
+
+15
+00:01:39,640 --> 00:01:45,960
+ a middleware and after this we are going to use this cloud memory package for uploading
+
+16
+00:01:45,960 --> 00:01:53,120
+ the images. So, let us install this. So, it is going to install all of these packages.
+
+17
+00:01:53,120 --> 00:02:00,400
+ So, meanwhile we are going to just check this package.json. So, it is going to install
+
+18
+00:02:00,400 --> 00:02:07,240
+ everything. So, the type is the common JS ok. So, minimize this one. So, as you can see
+
+19
+00:02:07,240 --> 00:02:13,360
+ that all of these dependencies has been installed like bkrip.js cloud nary cookie parser
+
+20
+00:02:13,360 --> 00:02:18,480
+ and dot ENV expression JSON web token and Mongoose ok. So, all of these have been installed
+
+21
+00:02:18,480 --> 00:02:24,080
+ so, we are going to use all of this right. So, let us go and sort of our backend folder
+
+22
+00:02:24,080 --> 00:02:29,720
+ and we are going to just create our first server.js file and we are going to just write
+
+23
+00:02:29,720 --> 00:02:40,840
+ some like sample API routes ok. So, what we are going to do here is like since we are going
+
+24
+00:02:40,840 --> 00:02:47,460
+ to use this common JS syntax as default. So, we are going to change this as type of module
+
+25
+00:02:47,460 --> 00:02:54,000
+ because for this one it is quite easy to use and now after this we are going to just go
+
+26
+00:02:54,000 --> 00:02:57,720
+ inside of this backend folder and we are going to create one source folder. So, with
+
+27
+00:02:57,720 --> 00:03:03,360
+ the name SRC and inside of this Rc we are going to just create one file which is called
+
+28
+00:03:03,360 --> 00:03:09,960
+ as app.js. So, this is the server file which we are going to just create ok.
+
+29
+00:03:09,960 --> 00:03:19,200
+ So, for this we are going to import the express so import express from express ok. So, control
+
+30
+00:03:19,200 --> 00:03:28,780
+ us and we are going to just initialize our express app. So, const app equal to express.
+
+31
+00:03:28,780 --> 00:03:36,400
+ So, after this we are going to just create a few sample routes ok. So, creating this sample
+
+32
+00:03:36,400 --> 00:03:44,520
+ routes is quite easy. So, first we are going to just use this app.listen. So, app.listen
+
+33
+00:03:44,520 --> 00:03:49,960
+ and inside of the app.listen we are going to just define this the port which we are going
+
+34
+00:03:49,960 --> 00:03:56,600
+ to use to listen to all of the activities like display all the activities. So, it is going
+
+35
+00:03:56,600 --> 00:04:04,040
+ to just listen on this local port and display the results like display all of the activities
+
+36
+00:04:04,040 --> 00:04:13,040
+ which are going on ok. So, now let us a console log something ok. For example, for example,
+
+37
+00:04:13,040 --> 00:04:31,240
+ console.log console.log server is running on port server is running on port 5000. So, we can
+
+38
+00:04:31,240 --> 00:04:39,320
+ do like this go here and we are going to define our port like this ok 5000. We can also
+
+39
+00:04:39,320 --> 00:04:53,320
+ use one variable declaration like const const port equal to 5000 and we can use this port
+
+40
+00:04:53,320 --> 00:05:03,880
+ variable instead. So, like that ok. We can change like this so const port equal to 5000
+
+41
+00:05:03,880 --> 00:05:10,000
+ and this port value can be used here inside of this app.listen and same for the console.log
+
+42
+00:05:10,000 --> 00:05:15,640
+ part we can replace this port here as well. So, now in order to run our backend application
+
+43
+00:05:15,640 --> 00:05:22,520
+ ok. So, in order to run this app.js file what we can do is go inside of this package.listen
+
+44
+00:05:22,520 --> 00:05:29,720
+ and I have one package is called as node 1. So, you can globally install node 1 by going
+
+45
+00:05:29,720 --> 00:05:34,960
+ inside of this terminal by quitting all the servers and then just navigate to the back
+
+46
+00:05:34,960 --> 00:05:43,240
+ and folder and just type the NPM I NPM install node 1. So, if you use the dash g there
+
+47
+00:05:43,240 --> 00:05:49,400
+ so, it is going to install globally. You can check this out on Google ok. So, for here
+
+48
+00:05:49,400 --> 00:05:54,920
+ we have removed everything from here and for the testing part. So, what I am going to
+
+49
+00:05:54,920 --> 00:06:06,800
+ do is node 1 src/app.js ok. So, I have saved here. So, now what I will do like here as
+
+50
+00:06:06,800 --> 00:06:16,200
+ you can see that backend folder ok. So, NPM. So, we can name this as start actually
+
+51
+00:06:16,200 --> 00:06:25,600
+ so, it would be better. So, NPM start ok. So, let us start this one. So, actually this
+
+52
+00:06:25,600 --> 00:06:31,560
+ is not required as an internal external command. So, I think we need to install here. So,
+
+53
+00:06:31,560 --> 00:06:46,080
+ NPM install node 1 / g sorry dash g yes. So, we have installed this node 1 package
+
+54
+00:06:46,080 --> 00:06:56,560
+ like globally. So, NPM I node 1 dash g. So, let us start now. So, NPM start. So, if we can
+
+55
+00:06:56,560 --> 00:07:02,800
+ see that node 1 has started and the server is running on the port 5000. So, now it is running
+
+56
+00:07:02,800 --> 00:07:05,480
+ actually. So, yeah that is it.
+
