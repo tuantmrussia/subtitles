@@ -1,0 +1,272 @@
+1
+00:00:01,350 --> 00:00:03,930
+Bạn nhìn thấy là một phần thiết yếu của hệ thống UI.
+
+2
+00:00:04,260 --> 00:00:11,820
+Nó chủ yếu chịu trách nhiệm mở và đóng các mô-đun chức năng của mỗi hệ thống, như Wi-Fi,
+
+3
+00:00:12,090 --> 00:00:14,850
+Bluetooth, đèn pin, vân vân...
+
+4
+00:00:15,850 --> 00:00:19,710
+Wow, wow, wow, wow.
+
+5
+00:00:21,130 --> 00:00:25,480
+Trước khi chúng ta bắt đầu nhìn vào tòa án, để tôi cho anh thấy Duke ngồi im lặng.
+
+6
+00:00:25,660 --> 00:00:30,130
+Trong điện thoại, khi chúng ta kéo từ trên xuống dưới, bạn có thể thấy những cửa sổ nhỏ này, phải không?
+
+7
+00:00:30,520 --> 00:00:35,440
+Và mỗi kiểu này thực sự chịu trách nhiệm cho một số thiết lập hệ thống.
+
+8
+00:00:35,560 --> 00:00:39,410
+Ví dụ, nếu tôi cần bật đèn pin, tôi sẽ nhấn nút này.
+
+9
+00:00:39,430 --> 00:00:43,780
+Tương tự như vậy, là không làm phiền hệ thống sẽ được thử nghiệm.
+
+10
+00:00:43,870 --> 00:00:49,570
+Và tương tự như vậy, chế độ máy bay và nhiều tính năng khác loại giống như vô tuyến kết nối tới tab tiếp theo, nơi
+
+11
+00:00:49,570 --> 00:00:52,910
+bạn có những lựa chọn khác như địa điểm, pin bảo vệ.
+
+12
+00:00:52,950 --> 00:00:56,590
+Vì vậy, cửa sổ thiết lập kiểu mới này cơ bản có hai chức năng.
+
+13
+00:00:56,620 --> 00:01:01,500
+Một là hiển thị tất cả các kiểu dáng, và lựa chọn thứ hai là tùy chỉnh lần này.
+
+14
+00:01:01,530 --> 00:01:06,520
+Khi bạn bấm vào cái nút đó, nó đi qua 80 trang và bạn có thể tùy chỉnh, phóng đại,
+
+15
+00:01:06,520 --> 00:01:07,630
+Cần phải mang internet đến.
+
+16
+00:01:09,110 --> 00:01:12,180
+Cái cửa sổ nhỏ, tôi có thể mang nó tới đây như thế này.
+
+17
+00:01:12,210 --> 00:01:18,660
+Và nếu tôi cần đặt internet ở tất cả, tôi có thể sắp xếp nó như thế này ở đây nếu tôi quay lại và mở
+
+18
+00:01:18,960 --> 00:01:19,750
+thiết lập lại.
+
+19
+00:01:19,770 --> 00:01:22,830
+Tôi có internet, tôi sẽ mở cửa sổ để thức dậy.
+
+20
+00:01:22,860 --> 00:01:25,800
+Tóm lại, thiết lập của Anh có một tính năng.
+
+21
+00:01:25,800 --> 00:01:32,010
+Chức năng đầu tiên là tải hoặc những thiết lập hệ thống này và hiển thị cho người dùng như thế này, và nó cũng
+
+22
+00:01:32,010 --> 00:01:35,340
+cung cấp một tùy chọn để tùy chỉnh điều đó bằng cách nhấn vào sửa đổi này.
+
+23
+00:01:35,460 --> 00:01:41,820
+Bây giờ, chúng ta hãy đào sâu hơn vào các mã và xem những mô-đun thực sự chịu trách nhiệm để khởi tạo mỗi
+
+24
+00:01:41,820 --> 00:01:42,520
+của những thiết lập này.
+
+25
+00:01:42,540 --> 00:01:46,950
+Tất cả các mô- đun liên quan đến Nhanh có thể được tìm thấy dưới hệ thống UI.
+
+26
+00:01:47,550 --> 00:01:50,940
+Gói bảo mật Hoa Kỳ viết tắt cho Thiết lập Nhanh.
+
+27
+00:01:50,970 --> 00:01:57,270
+Vâng là điện thoại ngắn cho Thiết lập, vì vậy tôi chỉ giới thiệu một số lớp học quan trọng nhất mà bạn
+
+28
+00:01:57,270 --> 00:02:01,500
+nên biết khi làm việc với Thiết lập Ấn Độ, nhưng cái đầu tiên là bảng điều khiển Mỹ.
+
+29
+00:02:01,620 --> 00:02:08,400
+Name Bảng là khung xem đại diện bảng điều khiển thiết lập nhanh chóng, vì vậy ô xem này thực sự chịu trách nhiệm
+
+30
+00:02:08,400 --> 00:02:10,760
+Vì đã trình diễn, tôi sẽ làm.
+
+31
+00:02:11,040 --> 00:02:20,310
+Vì vậy, để làm cho nó rõ ràng hơn, khung cảnh này là toàn cảnh thực sự được thực hiện với tấm kính khách này.
+
+32
+00:02:20,610 --> 00:02:24,960
+Như chúng ta thấy ở đây, bảng điều khiển Hoa Kỳ mở rộng một bố trí tuyến tính.
+
+33
+00:02:25,320 --> 00:02:33,410
+Một lớp học quan trọng khác của Mỹ máy Q Style thực sự chịu trách nhiệm cho việc tạo ra phi công.
+
+34
+00:02:33,690 --> 00:02:40,650
+Vì vậy, ở đây chúng tôi có thể thấy các chức năng tạo gạch, mà thực sự chịu trách nhiệm cho việc tạo ra những người trong
+
+35
+00:02:40,650 --> 00:02:41,430
+Ủy ban Hoa Kỳ.
+
+36
+00:02:41,520 --> 00:02:47,760
+Chúng tôi nhìn vào lớp học này một chút gần hơn khi chúng tôi nhìn vào quá trình tải băng.
+
+37
+00:02:48,080 --> 00:02:52,910
+Đây là một lớp học trừu tượng.
+
+38
+00:02:52,920 --> 00:02:57,490
+Một lần nữa, tìm thấy nó dưới ô này và trở thành một gói cho môi trường thiết bị kiểu dáng thiết bị.
+
+39
+00:02:57,570 --> 00:03:03,310
+Vì vậy, đây về cơ bản là một lớp học trừu tượng được thực hiện hoặc mở rộng bởi tất cả các mảnh.
+
+40
+00:03:03,330 --> 00:03:07,620
+Vì vậy, nếu chúng tôi đến với những mảnh này mỗi năm, chúng tôi có thể thấy tất cả các mảnh.
+
+41
+00:03:07,620 --> 00:03:13,190
+Vì vậy, trong gói đẹp này, sẽ có một lớp học cho mỗi viên gạch như mẫu internet.
+
+42
+00:03:13,200 --> 00:03:15,690
+Vì vậy, đối với internet, sẽ có một gạch ở đây.
+
+43
+00:03:15,720 --> 00:03:16,530
+gạch Internet.
+
+44
+00:03:16,680 --> 00:03:21,180
+Cái này và một cái khác nữa chế độ máy bay và xem chế độ máy bay gạch ở đây.
+
+45
+00:03:21,180 --> 00:03:22,440
+Bảng báo động ở đây.
+
+46
+00:03:22,860 --> 00:03:23,370
+Cái này hả?
+
+47
+00:03:23,670 --> 00:03:29,460
+Vì vậy, cho mỗi của những mảnh này, sẽ có một tương ứng kính ở đây, có chứa các thực hiện
+
+48
+00:03:29,460 --> 00:03:32,510
+Sự logic của thời gian này và mỗi của các thủy tinh.
+
+49
+00:03:32,520 --> 00:03:35,640
+Họ mở chế độ máy bay, gạch hay tháp.
+
+50
+00:03:35,670 --> 00:03:41,160
+Sau đó chúng ta có thể thấy rằng nó mở rộng phong cách Thụy Sĩ đối với Cuba và Bill.
+
+51
+00:03:41,250 --> 00:03:47,610
+Ông về cơ bản là một kính trừu tượng, có tất cả các phương pháp trừu tượng cần thiết để thực hiện một cụ thể
+
+52
+00:03:47,610 --> 00:03:47,910
+Thời gian.
+
+53
+00:03:48,070 --> 00:03:55,290
+Chúng tôi có thể thấy tất cả các lớp ô vuông mở rộng phong cách dao găm và xây dựng thủy tinh, nhưng có rất nhiều gói khác
+
+54
+00:03:55,290 --> 00:04:00,450
+cũng như trong mô-đun Mỹ để một gói như hướng dẫn sơ đồ tùy chỉnh của bạn.
+
+55
+00:04:00,480 --> 00:04:06,270
+Vậy gói tùy biến chứa hai lớp cho các nhà chủ mưu xem, như chúng ta đã thấy trước đó.
+
+56
+00:04:06,330 --> 00:04:11,880
+Có một lựa chọn để tùy chỉnh các miếng đá để có thể tìm thấy ở đây và sau đó là con dao găm.
+
+57
+00:04:12,090 --> 00:04:17,370
+Con dao chứa sự thực hiện phụ thuộc dao găm, thực hiện việc thực hiện phụ thuộc cho điều này
+
+58
+00:04:17,370 --> 00:04:20,940
+Mô-đun cụ thể, và sau đó có một cái gì đó liên quan đến bên ngoài.
+
+59
+00:04:20,950 --> 00:04:27,360
+Vì vậy, những thứ này có chứa một số bộ quản lý dịch vụ gạch, bộ quản lý vòng đời hai, v.v... và các logo bánh răng Lobins
+
+60
+00:04:27,420 --> 00:04:28,760
+và cái quay số và hóa đơn.
+
+61
+00:04:28,780 --> 00:04:34,260
+Như chúng ta đã thấy, nó là lớp học trừu tượng mà được thực sự mở rộng bởi tất cả các thời gian, và các mảnh
+
+62
+00:04:34,260 --> 00:04:37,160
+chứa một gói đẹp, chứa tất cả các miếng.
+
+63
+00:04:37,170 --> 00:04:42,630
+Vì vậy đối với mỗi ô vuông, sẽ có một lớp học tương ứng mở rộng viện tâm thần CPU.
+
+64
+00:04:42,980 --> 00:04:45,170
+Sau đó cuối cùng, có một số gói cho điều đó.
+
+65
+00:04:45,270 --> 00:04:49,270
+Đây là thứ để xử lý việc phát hiện cử chỉ.
+
+66
+00:04:49,380 --> 00:04:55,920
+Đó là một tổng quan ngắn gọn về các mô-đun được tìm thấy trong gói Thiết lập.
+
+67
+00:04:56,470 --> 00:04:56,940
+Wow.
+
+68
+00:04:58,200 --> 00:05:00,010
+Wow, wow.
+
