@@ -1,0 +1,408 @@
+1
+00:00:00,000 --> 00:00:05,040
+ Now let's see how bedrock agent core solves some of the challenges that we discussed previously.
+
+2
+00:00:05,040 --> 00:00:11,600
+ We already discussed how the developer has written the agent aka application using
+
+3
+00:00:11,600 --> 00:00:17,680
+ grieve AI on his local. Now the first thing he needs to do is, now he needs to deploy this
+
+4
+00:00:17,680 --> 00:00:25,120
+ code on something known as agent core runtime. Now we can think of agent core runtime as an AWS
+
+5
+00:00:25,120 --> 00:00:31,600
+ lambda for AI agents. So if you've used AWS lambda before, now you know that you can bring
+
+6
+00:00:31,600 --> 00:00:38,320
+ your application code in any programming language and then deployed on AWS lambda and the underlying
+
+7
+00:00:38,320 --> 00:00:44,480
+ infrastructure, the virtual machine, the micro VM or virtual machine would be managed by AWS.
+
+8
+00:00:44,480 --> 00:00:51,600
+ So you can think of agent core runtime as very similar to AWS lambda for AI agents.
+
+9
+00:00:52,400 --> 00:00:58,400
+ So now how do you deploy your agent code on this agent core runtime? To your existing code,
+
+10
+00:00:58,400 --> 00:01:05,120
+ you add something known as agent core runtime decorator. So it's just a Python decorator and you can
+
+11
+00:01:05,120 --> 00:01:11,440
+ see this is the application that we're going to build later and here I have in this crew.py file
+
+12
+00:01:11,440 --> 00:01:17,440
+ and I have just added this decorator function and here we have this agent invocation and if you
+
+13
+00:01:17,440 --> 00:01:23,600
+ see in the AWS lambda function, similarly we have the lambda handler function. So all you have to do
+
+14
+00:01:23,600 --> 00:01:29,840
+ is add this decorator code and then you can deploy it on the agent core runtime and it will run
+
+15
+00:01:29,840 --> 00:01:35,840
+ as a container. Okay. So now the good thing with agent core runtime is you can use any
+
+16
+00:01:35,840 --> 00:01:42,160
+ agent API framework, whether it's line graph, crew a strands, all are supported by agent core
+
+17
+00:01:42,160 --> 00:01:49,360
+ runtime and you can also have any large language model, whether it's from open AI, Gemini or Amazon
+
+18
+00:01:49,360 --> 00:01:56,080
+ better. It will support all the elements and all the agentic frameworks. So what happens when you
+
+19
+00:01:56,080 --> 00:02:02,960
+ deploy your agent decay code on the agent core runtime, it provides you with two endpoints.
+
+20
+00:02:02,960 --> 00:02:09,920
+ So it converts it into an HTTP server and then provides you two endpoints. So it provides you an
+
+21
+00:02:09,920 --> 00:02:16,960
+ invocation endpoint with post method and then it also provides you a ping endpoint for health checks.
+
+22
+00:02:16,960 --> 00:02:22,640
+ So which essentially means that your end users can provide their inputs through this post endpoint
+
+23
+00:02:22,640 --> 00:02:29,200
+ and they will go to get a response. So that's the first core capability which is agent core
+
+24
+00:02:29,200 --> 00:02:33,760
+ runtime and we're going to deep dive into this a little later but for now it's just a high level
+
+25
+00:02:33,760 --> 00:02:39,920
+ core. Okay. Now let's take a look at the second core capability of bedrock agent core.
+
+26
+00:02:39,920 --> 00:02:45,920
+ Now once our agent decay code is hosted on the agent core runtime and we have the endpoints,
+
+27
+00:02:45,920 --> 00:02:51,520
+ now we can have our end user and maybe we can make a request as you can see here planner,
+
+28
+00:02:51,520 --> 00:02:57,520
+ itinerary for the London trip. So you can make that request to this endpoint and then our agent
+
+29
+00:02:57,520 --> 00:03:02,480
+ will be able to process that. But before we can send this request, we need to look at the
+
+30
+00:03:02,480 --> 00:03:09,920
+ authentication and authorization of this user. We need to make sure that this end user has
+
+31
+00:03:09,920 --> 00:03:16,720
+ the right permissions to access this agent decay application and for that bedrock agent core provides
+
+32
+00:03:16,720 --> 00:03:24,080
+ another capability called as agent core identity and it works at two levels. Inbound and outbound.
+
+33
+00:03:24,080 --> 00:03:30,720
+ So what inbound does is it validates whether the person is actually the person who is claiming
+
+34
+00:03:30,720 --> 00:03:37,760
+ to be and what are these authorization levels. So basically it looks at the authentication
+
+35
+00:03:37,760 --> 00:03:45,760
+ and the authorization between the end user and the agentic AI application and for that it supports
+
+36
+00:03:45,760 --> 00:03:52,720
+ any identity provider such as Amazon cognitive, entirety, octa and so on. So now let's say
+
+37
+00:03:52,720 --> 00:03:59,600
+ our user has authenticated himself using Amazon cognitive and that the bearer token that cognitive
+
+38
+00:03:59,600 --> 00:04:06,240
+ has generated is sent to the agent core, identity it does some validation and then if approved
+
+39
+00:04:06,240 --> 00:04:12,400
+ it's able to send the request to this endpoint and access this agent decay application. So now
+
+40
+00:04:12,400 --> 00:04:17,840
+ there are no more nuances when we go to the agent core identity service later we will be able to
+
+41
+00:04:17,840 --> 00:04:24,240
+ understand that. Now the second component is the outbound and we will get to that in a little bit.
+
+42
+00:04:25,200 --> 00:04:32,080
+ Now the third core capability of the agent core runtime is agent core memory. So it's a managed
+
+43
+00:04:32,080 --> 00:04:38,480
+ service which provides memory at two levels. One is the short term memory so that is within
+
+44
+00:04:38,480 --> 00:04:44,160
+ the session duration. So let's say our end user is interacting with applications and so you
+
+45
+00:04:44,160 --> 00:04:50,560
+ interacts for 10 odd minutes, ask five 10 questions and then logs off. So as soon as the end user logs
+
+46
+00:04:50,560 --> 00:04:56,080
+ off this short term memory will end but you have the option to keep the short term memory between
+
+47
+00:04:56,080 --> 00:05:02,640
+ I think seven to 365 days but essentially it is only active during the duration of the session.
+
+48
+00:05:02,640 --> 00:05:09,120
+ Next we have the long term memory and it provides multiple strategies so what you can do is
+
+49
+00:05:09,120 --> 00:05:14,880
+ any interaction that you have today you can summarize that and store and next time you have
+
+50
+00:05:14,880 --> 00:05:20,960
+ a having that conversation and it will use that summarized memory in the conversation. Then it
+
+51
+00:05:20,960 --> 00:05:25,440
+ also provides semantic memory. So what semantic memory means is it will retain all the factual
+
+52
+00:05:25,440 --> 00:05:31,040
+ information. Let's say you asked it about the address of a particular restaurant it will be
+
+53
+00:05:31,040 --> 00:05:36,160
+ able to store that and then finally you have the user preferences. So let's say you prefer beaches
+
+54
+00:05:36,160 --> 00:05:42,400
+ and next time you are looking for a dream destination it will give you more options related to
+
+55
+00:05:42,400 --> 00:05:48,640
+ beaches. So you can select the long term memory strategy whether you want summarization, semantic or
+
+56
+00:05:48,640 --> 00:05:54,480
+ user preferences. So next time you log in based on your strategy it's going to provide you the
+
+57
+00:05:54,480 --> 00:06:01,280
+ contextual input. The next capability that we have is the agent core observability. It monitors
+
+58
+00:06:01,280 --> 00:06:08,000
+ the agent performance in production and it does that through plot watch logs, matrix and now they
+
+59
+00:06:08,000 --> 00:06:14,560
+ have provided another capability called as Gen AI observability which looks at the session trace
+
+60
+00:06:14,560 --> 00:06:20,320
+ and span and we're going to deep dive into it a little later. So if we can show you quickly so I
+
+61
+00:06:20,320 --> 00:06:27,040
+ am on the plot watch logs and here we have a new tab called as Gen AI observability which provide
+
+62
+00:06:27,040 --> 00:06:35,760
+ a lot more details on agent matrix such as traces errors throttles and so on. Now finally we have
+
+63
+00:06:35,760 --> 00:06:43,440
+ the agent core gateway agent core browser and agent core interpreter. These capabilities are focused on
+
+64
+00:06:43,440 --> 00:06:50,080
+ how your agent can access various tools in a standardized format. Now let's try and understand
+
+65
+00:06:50,080 --> 00:06:56,960
+ in more detail what these three services do. Now let's say our end user has finalized the London
+
+66
+00:06:56,960 --> 00:07:02,080
+ as its dream destination and it wants to know what are the various travel packages that are offered
+
+67
+00:07:02,080 --> 00:07:09,120
+ by this travel agency and for that this agent need to invoke an AWS Lambda tool which
+
+68
+00:07:09,120 --> 00:07:15,760
+ retrieve some PDFs that are stored in the company S3 bucket or let's just assume that it needs
+
+69
+00:07:15,760 --> 00:07:22,240
+ some details related to particular hotels which it can go ahead and fetch from SharePoint
+
+70
+00:07:22,240 --> 00:07:27,040
+ and for that again you will have to write some tool which can access the data from SharePoint
+
+71
+00:07:27,040 --> 00:07:33,520
+ and then provide it back to the agent. Now for these scenarios agent core gateway can help in
+
+72
+00:07:33,520 --> 00:07:40,560
+ three ways. First it integrates with this agent core identity and here we can now look at this
+
+73
+00:07:40,560 --> 00:07:48,240
+ outbound aspect. So what the outbound agent core identity does is it validates whether this tool
+
+74
+00:07:48,240 --> 00:07:56,080
+ and this user actually has the permission to access those backend resources that are being retrieved
+
+75
+00:07:56,080 --> 00:08:02,400
+ through these tools. So let's say if our travel package details are in a PDF in the S3 bucket
+
+76
+00:08:02,400 --> 00:08:09,440
+ then does this user and this agent have does have the right permission to access those files.
+
+77
+00:08:09,440 --> 00:08:15,440
+ Maybe if it's in the SharePoint more if it's more Microsoft based then does it have the right
+
+78
+00:08:15,440 --> 00:08:21,840
+ API key to access that data. So it supports various permission level if it's an AWS service
+
+79
+00:08:21,840 --> 00:08:27,200
+ then this agent needs the right. I am role if it's a Microsoft based solution then maybe you get
+
+80
+00:08:27,200 --> 00:08:34,000
+ the enter ID token and that can be validated by this agent core gateway before it has access to
+
+81
+00:08:34,000 --> 00:08:39,840
+ this SharePoint resource. So we'll get into details on how this actually works when we move to the
+
+82
+00:08:39,840 --> 00:08:45,120
+ agent core section. So that's the first thing that agent core gateway does. The second thing
+
+83
+00:08:45,120 --> 00:08:51,040
+ it helps is in discovery. Now let's say we have multiple agents here and let's say we have two dozen
+
+84
+00:08:51,040 --> 00:08:57,360
+ tools. Now there's a request that has come from the user for access to a particular resource like
+
+85
+00:08:57,360 --> 00:09:02,240
+ we're talking about the PDF in the S3 bucket. So what this agent core gateway will do is
+
+86
+00:09:02,240 --> 00:09:07,840
+ out of those half a dozen tools that it will have based on the user query and it will automatically
+
+87
+00:09:07,840 --> 00:09:16,080
+ do the tool discovery and then invoke the right tool. And then finally it also helps with MCP
+
+88
+00:09:16,080 --> 00:09:22,560
+ modifying all the tools that you have as part of this agentic application. And if you don't know
+
+89
+00:09:22,560 --> 00:09:28,000
+ what is MCP MCP refers to the model context protocol which is released by anthropic. So if you
+
+90
+00:09:28,000 --> 00:09:34,800
+ don't know about what is MCP. I have added a refresher section towards the end of this course.
+
+91
+00:09:34,800 --> 00:09:39,280
+ Please go ahead and take a look at that. Then we have the agent core browser. It works in a similar
+
+92
+00:09:39,280 --> 00:09:44,800
+ fashion. Now let's say our end user likes our itinerary and it wants the address of a particular
+
+93
+00:09:44,800 --> 00:09:51,600
+ location. So in that case what this agent can do is it can go and invoke this agent core browser
+
+94
+00:09:51,600 --> 00:09:57,040
+ like humans do and it's going to retrieve the address of that particular location and provide it
+
+95
+00:09:57,040 --> 00:10:02,720
+ back to the end user. And then finally we have the agent core interpreter maybe not relevant to this
+
+96
+00:10:02,720 --> 00:10:07,040
+ use case. Now instead of this let's say you're building an application support agent which tries to
+
+97
+00:10:07,040 --> 00:10:13,120
+ fix application code issues in the production. So in that scenario now let's say it has found and
+
+98
+00:10:13,120 --> 00:10:19,840
+ fixed a bug and it wants to test out before applying that patch to the application. That's where
+
+99
+00:10:19,840 --> 00:10:24,480
+ this agent core interpreter comes in handy. So you'll get a sandbox environment where you can
+
+100
+00:10:24,480 --> 00:10:30,400
+ execute and test your code and if it works okay then you can go and finally apply the patch in the
+
+101
+00:10:30,400 --> 00:10:36,720
+ production. Okay so those are some of the key bedrock agent capabilities. I hope you like this lecture
+
+102
+00:10:36,720 --> 00:10:38,720
+ Thank you.
+
