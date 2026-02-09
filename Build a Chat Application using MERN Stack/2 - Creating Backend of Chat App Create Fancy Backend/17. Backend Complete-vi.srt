@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:05,720
+Xin chào tất cả mọi người, trong video này, chúng tôi sẽ làm việc với bộ điều khiển tin nhắn.
+
+2
+00:00:05,720 --> 00:00:07,360
+Bắt đầu nào.
+
+3
+00:00:07,360 --> 00:00:19,120
+Vì vậy, xuất khẩu, xuất khẩu, táo bón, gửi tin nhắn, gửi tin nhắn, một lần nữa chúng tôi sẽ chỉ cung cấp
+
+4
+00:00:19,120 --> 00:00:24,120
+Đây là một đặc quyền và sau đó yêu cầu phản ứng như chúng tôi đã nhận được sớm hơn.
+
+5
+00:00:24,120 --> 00:00:30,000
+Và bây giờ sau điều này, những gì chúng tôi thực sự sẽ làm là, kể từ khi người gửi có thể, như gửi
+
+6
+00:00:30,000 --> 00:00:34,000
+Bất kỳ định dạng nào, như văn bản hay hình ảnh, chúng ta sẽ hiểu được điều đó, okay.
+
+7
+00:00:34,000 --> 00:00:38,040
+Nhưng trước đó, chúng tôi sẽ sử dụng này cố gắng và lưu tạm khối, okay, tuyên bố này thử
+
+8
+00:00:38,040 --> 00:00:43,280
+và chặn bộ nhớ tạm và khi này, khối bộ nhớ tạm này, chúng ta sẽ có lỗi này, được chứ?
+
+9
+00:00:43,280 --> 00:00:48,320
+Vì vậy, bây giờ bên trong của, bất cứ điều gì logic hoặc mã, chúng tôi sẽ viết bên trong của chúng tôi
+
+10
+00:00:48,320 --> 00:00:53,560
+Hãy thử chặn lại và với khối bộ nhớ tạm, chúng ta sẽ chỉ cất giữ lỗi, bất cứ điều gì xảy ra, được chứ?
+
+11
+00:00:53,560 --> 00:01:00,920
+Vì vậy, điều đầu tiên là, cấu trúc D, bất cứ điều gì văn bản hoặc hình ảnh, đó là đi
+
+12
+00:01:00,920 --> 00:01:07,680
+để đến, vì vậy văn bản dấu phẩy hình ảnh bằng để yêu cầu chấm cơ thể từ cơ thể, chúng tôi đang phân loại
+
+13
+00:01:07,680 --> 00:01:13,040
+văn bản và hình ảnh, Xây dựng hình ảnh và bây giờ, người đã gửi hình ảnh, vì vậy chúng tôi đang đi
+
+14
+00:01:13,040 --> 00:01:19,760
+Chỉ cần xác nhận một người gửi, nhận dạng người gửi và ID người gửi, chúng tôi sẽ chỉ nhận được nó
+
+15
+00:01:19,760 --> 00:01:24,520
+từ dấu chấm hỏi người dùng nhấn mạnh ID.
+
+16
+00:01:24,520 --> 00:01:31,000
+Và bây giờ, sau khi nhận diện người gửi, chúng tôi sẽ có ID nhận tín hiệu nhận tín hiệu, chúng tôi sẽ đi
+
+17
+00:01:31,000 --> 00:01:33,880
+để lấy thẻ nhận dạng từ nhân vật chính.
+
+18
+00:01:33,880 --> 00:01:38,000
+Vậy là nhân vật chính nhấn mạnh căn cước.
+
+19
+00:01:38,000 --> 00:01:46,140
+Bây giờ, sau này, hãy tuyên bố một địa chỉ URL hình ảnh, chúng tôi đang, chúng tôi sẽ lưu trữ hình ảnh,
+
+20
+00:01:46,140 --> 00:01:49,640
+Bất cứ thứ gì được gửi bởi người gửi hoặc người nhận.
+
+21
+00:01:49,640 --> 00:01:55,600
+Vì vậy, nếu một hình ảnh đến, okay, nếu hình ảnh đến, trong trường hợp đó, chúng ta sẽ chỉ
+
+22
+00:01:55,600 --> 00:02:04,160
+lưu vào biến ảnh tải lên và cho điều này, chúng tôi sẽ sử dụng đám mây
+
+23
+00:02:04,160 --> 00:02:05,160
+inary.
+
+24
+00:02:05,160 --> 00:02:13,560
+Vì vậy, chấm đám mây tải lên chấm, xin lỗi, tải lên đám mây 9 chấm tải lên chấm, chúng tôi đang đi
+
+25
+00:02:13,560 --> 00:02:19,080
+để sử dụng chức năng tải lên, vì vậy tải lên và sau đó chúng tôi sẽ vượt qua hình ảnh này như ở đây
+
+26
+00:02:19,080 --> 00:02:31,600
+Và bây giờ, cho địa chỉ URL hình ảnh, chúng tôi sẽ chỉ lấy hình ảnh đó từ hình ảnh tải lên
+
+27
+00:02:31,600 --> 00:02:35,320
+và lưu trữ nó bên trong, vì vậy bảo mật chấm URL.
+
+28
+00:02:35,320 --> 00:02:38,720
+Vì vậy, đối với phần hình ảnh này được thực hiện, bây giờ đến phần cho thông điệp.
+
+29
+00:02:38,720 --> 00:02:43,360
+Điều gì sẽ xảy ra nếu người gửi chỉ cần gửi thông điệp, okay, trong trường hợp đó, chúng tôi sẽ đi
+
+30
+00:02:43,360 --> 00:02:49,600
+để tháo gỡ nó như chúng ta sẽ nhận được tất cả các phần thông điệp, như bất cứ điều gì có
+
+31
+00:02:49,600 --> 00:03:03,680
+nó trong tin nhắn, được rồi, vậy nên tin nhắn mật mã bằng tin nhắn mới và sau đó,
+
+32
+00:03:03,680 --> 00:03:09,520
+Chúng tôi sẽ lấy ID người gửi, chúng tôi sẽ nhận ID nhận và chúng tôi cũng có
+
+33
+00:03:09,520 --> 00:03:17,400
+sẽ lấy các văn bản cũng như chúng tôi sẽ có bất kỳ loại hình ảnh mà
+
+34
+00:03:17,400 --> 00:03:24,760
+đã được ném, vì vậy hình ảnh URL từ hình ảnh này URL, chúng tôi sẽ lấy và vượt qua này
+
+35
+00:03:24,760 --> 00:03:37,280
+trong thông điệp, được rồi, vậy bây giờ chúng ta sẽ lưu điều này, vì vậy chờ đợi, chờ đợi, mới
+
+36
+00:03:37,280 --> 00:03:44,720
+Thông điệp không lưu, chúng tôi sẽ lưu tin nhắn mới này và sau đó, nếu thông điệp mới
+
+37
+00:03:44,720 --> 00:03:53,080
+làm như vậy, thông điệp mới, nếu thông điệp mới này tồn tại, chúng tôi sẽ trả lại tình trạng,
+
+38
+00:03:53,080 --> 00:04:05,920
+Vì vậy, phản ứng dữ liệu trạng thái 200, 200, một, chúng tôi sẽ chỉ gửi JSON, JSON như
+
+39
+00:04:05,920 --> 00:04:12,080
+Thông điệp mới, và bên trong thông điệp mới, chúng ta sẽ chuyển tải thông điệp này như là một thông điệp mới
+
+40
+00:04:12,080 --> 00:04:19,280
+Tin nhắn, được rồi, vậy bây giờ chúng ta đã hoàn thành, tôi nghĩ có vấn đề ở đây,
+
+41
+00:04:19,280 --> 00:04:33,160
+Vì vậy, trong JSON, chỉ cần chuyển thông điệp mới, được rồi, vì vậy mới thông điệp và bây giờ trong
+
+42
+00:04:33,160 --> 00:04:43,240
+ổ nhớ tạm, điều chúng ta sẽ làm là điều khiển.log.log.log và nếu lỗi vẫn tiếp tục,
+
+43
+00:04:43,240 --> 00:04:53,920
+Vì vậy, nếu lỗi tồn tại, sau đó trong gửi thông điệp sẽ là lỗi trong gửi bộ điều khiển thông điệp,
+
+44
+00:04:53,920 --> 00:05:01,080
+OK, và chúng tôi sẽ gửi thông điệp ra, do đó, lỗi do đó, đúng, và sau
+
+45
+00:05:01,080 --> 00:05:08,640
+đây, chúng tôi sẽ ném một lỗi bằng cách sử dụng mã trạng thái của dấu chấm 500 chấm
+
+46
+00:05:08,640 --> 00:05:15,680
+JSON, và thay vì điều này, chúng tôi sẽ có thông điệp này đặt, và chúng tôi sẽ chỉ nói rằng nó
+
+47
+00:05:15,680 --> 00:05:28,360
+là lỗi máy chủ nội bộ, được rồi, vì vậy bây giờ chúng tôi đã hoàn thành bộ điều khiển gửi tin nhắn này,
+
+48
+00:05:28,360 --> 00:05:32,640
+Những gì gửi thông điệp là điều khiển, hãy đi đến phần này, okay, vì vậy có sẽ
+
+49
+00:05:32,640 --> 00:05:46,720
+là một tuyến đường, vì vậy bây giờ tuyến đường có được, và sau đó chúng tôi sẽ nhận được tin nhắn này, và
+
+50
+00:05:46,720 --> 00:05:54,080
+Với điều này chúng tôi cũng sẽ thực hiện này ath, do đó, các thông điệp gửi sẽ cũng
+
+51
+00:05:54,080 --> 00:06:02,400
+có một liên quan đặc biệt id, phải, vì vậy id, sau đó kiểm tra ath, và sau đó với phần này
+
+52
+00:06:02,400 --> 00:06:09,840
+chúng ta sẽ có nó như là gửi tin nhắn, nên kiểm soát và lưu lại, nó sẽ hoạt động tốt,
+
+53
+00:06:09,840 --> 00:06:14,040
+Vì vậy bây giờ chúng tôi đã làm việc với các tin nhắn gửi, tôi sẽ gặp bạn trong video tiếp theo.
+
