@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:17,000
+ Now in this lecture, I'm going to show you a hands-on demo of how you can install an AWS CloudFormation MCP server on Amazon QCLI client, and then build the CloudFormation templates using the CloudFormation MCP server.
+
+2
+00:00:17,000 --> 00:00:29,000
+ Now this is the architecture we're going to build and execute, and this is going to take a lot of time, so what I have done is I've already installed the QCLI client, so I'm just going to show you how to install the MCP CloudFormation server.
+
+3
+00:00:29,000 --> 00:00:38,000
+ And then I'm going to show you how to build CloudFormation templates for common AWS services through natural language commands.
+
+4
+00:00:38,000 --> 00:00:49,000
+ Now if you're interested in building the solution hands-on step-by-step, then you can take a look at my this particular Udemy course, which has already been taken by more than 6,000 learners.
+
+5
+00:00:49,000 --> 00:01:07,000
+ Now to save time, what I have done is I've already installed Amazon QCLI, so I'm going to show you how you can install the MCP CloudFormation server once you installed Amazon QCLI as the client, so you get an overview of how actually MCP server works.
+
+6
+00:01:07,000 --> 00:01:34,000
+ Okay, now let's go ahead and install the MCP servers, so if you just go to this link or what you can do is, so just go to Google and search for AWS MCP servers, and you'll see whole bunch of links, just click on this welcome to AWS MCP server, and they might change the URL, so just look around and see what's the right URL, because they're constantly updating these servers and web pages, etc.
+
+7
+00:01:34,000 --> 00:01:51,000
+ Okay, now you have the AWS MCP servers, so we can just take a look at a couple of them, maybe we'll look at the CloudFormation server, so let me just go under infrastructure deployment and just click here, and you can see AWS CloudFormation MCP server.
+
+8
+00:01:51,000 --> 00:02:20,000
+ So if I just click on this, so it will give all the details, a little AWS CloudFormation MCP server, so these are features resource creation resource reading, and several others, these are some of the prerequisites, how you need to install it with VS Code cursor, and this is the configuration file, and then finally these are the tools that are available as part of this server, so we're discussed about the tool capability that the MCP server,
+
+9
+00:02:20,000 --> 00:02:39,000
+ the MCP server, so you can create resources, maybe S3 bucket lambda, you can get details but related to particular resource, so get the configuration of an easy to instance, you can update resources, delete, list, and whole bunch of other things, and we're going to try out some of these, okay.
+
+10
+00:02:39,000 --> 00:02:58,000
+ Now let me just go back to my VS Code, and you can see I have just written some steps on what we need to do, so first we need to install, let's say we are installing the CloudFormation server, so install the MCP CloudFormation server, then what I've done is I've taken this link, and just pasted it here.
+
+11
+00:02:58,000 --> 00:03:21,000
+ So first we'll install the AWS CloudFormation server, second we're going to configure the AWS CloudFormation server with our Amazon Q CLI by creating this configuration file that we just saw here, so if I just scroll up, this is the configuration file that we need to set up, and just remember here AWS profile,
+
+12
+00:03:21,000 --> 00:03:50,000
+ it will be the CLI profiling that you have set, and when most of the cases, if you don't set, it's going to be default, once you have provided the IM roll to the CLI, okay, and then finally the third thing you need to do is, you also need to make sure your AWS CLI is configured with the right IM roll, and all this installation we're going to do by providing natural language commands to our Q CLI, so let me just first copy this.
+
+13
+00:03:50,000 --> 00:04:16,000
+ And let me just make it full screen, okay, so I'm going to say install AWS CloudFormation server, and I will give you this URL, so even if you don't give this URL, it should be okay, it will take a little bit of time to install this, but if you just give the URL, it might just be easier, so I'll just say enter.
+
+14
+00:04:16,000 --> 00:04:45,000
+ So you can see here, it's using the tool execute bash, and it's saying it wants to clone this particular URL, so if I say t, which means trust, it's going to run all the commands that are required to execute this, if I just say why, then it will just run only this particular command, okay, so let me just say yes for now, and it's cloning this particular MCP server, so it's asking me for the user name,
+
+15
+00:04:45,000 --> 00:05:14,000
+ but I don't have the user name for this, so maybe I'll just say enter, and you can say authentication failed, and it will just figure out another way to clone this repository, so I'll just say maybe trust this time, okay, so it's reading this directory, and so you can see it's running whole bunch of commands by itself.
+
+16
+00:05:14,000 --> 00:05:43,000
+ So I think it's installing the boot of three, now it has ran some other commands, so it's installing this Ppex is installed, and it's saying, okay, now let me install the cloud formation MCP server, and it's installed this AWS lab CFN MCP server, and then it's doing some other things, so you can see, excellent, I need to create the MCP configuration.
+
+17
+00:05:43,000 --> 00:06:12,000
+ MCP configuration file now, so what it has done is, so if you can just push this a little down, and so it has completed this install AWS cloud watch MCP server, now it has to configure our Amazon QCLI with the cloud watch MCP server, and for that it needs to define this MCP configuration file, so in my case, it's just showing that it's already created this MCP configuration file,
+
+18
+00:06:12,000 --> 00:06:41,000
+ so in your case, when you brought the prompt, maybe it does not, because every time it takes a different approach, so make sure that you provide this prompt, if it has not configured this MCP configuration file, so make sure all the three tasks are completed by QCLI, so let me just go back now, and let's see where it has reached, so I think now it's saying, it wants to configure this Amazon QMCP JSON, so this is basically the configuration file,
+
+19
+00:06:41,000 --> 00:07:10,000
+ so if you just go here, so you'll see, this is this particular file, it's talking about, where we configure QCLI with the MCP server, so it will have something very similar, except this my profile, so here it should be default, or any other profile that you have set, so if I just scroll down, and you can see here AWS profile is default, which is what I have here for my CLI, okay, so now it's saying create the MCP configuration file
+
+20
+00:07:10,000 --> 00:07:39,000
+ with this cloud formation server, so I'm going to say trust, so it's just reading this configuration file, so it's saying the AWS credentials and regions are properly configured, now let's test the MCP server, okay, so it's saying server started successfully,
+
+21
+00:07:39,000 --> 00:08:08,000
+ test cloud formation MCP server execution server started successfully, so here it's saying that AWS cloud formation MCP server has been successfully installed and configured, and then it's giving details of what all has been configured, so it's saying this package AWS CFN MCP server version 1.0.6 has been installed, and so global command, then it has created a configuration file at this path,
+
+22
+00:08:08,000 --> 00:08:35,000
+ and it is using AWS profile default, and then we have set the region as well, so what are the features available as part of this cloud formation MCP server, and it's giving some details next restart your QCLI to load the MCP configuration, and then you can ask some questions, so let me just reload this QCLI, and let me just say slash quit.
+
+23
+00:08:38,000 --> 00:09:07,000
+ And now I can say queue chat, and it's, you can see it's loading the MCP server, okay, now let's go ahead and ask it some questions, now our MCP servers ready, so I have written some questions here, so we had earlier seen some other tools that are available as part of this MCP server, and if I just scroll down, you can see here, create resources, get resources, update resources, so we're going to try some of them,
+
+24
+00:09:07,000 --> 00:09:35,000
+ and it has also given some sample question that you can ask, okay, so I have just written some of my own, so let's create an S3 bucket with versioning and encryption enabled, and the bucket name is Rahul MCP test server, and I just given some random name, because the S3 bucket needs to be globally unique, okay, so I'll go back and I'll just paste this question, and I'll say enter.
+
+25
+00:09:35,000 --> 00:09:57,000
+ So it's saying I will create an S3 bucket with this name, and then it's saying, okay, this is the configuration, it's going to create, so you can see we have the CloudFormation template that it has created in JSON, and this is the bucket name that we had given, and it wants me to execute this, so I'll say yes.
+
+26
+00:09:57,000 --> 00:10:07,000
+ So it's saying the S3 bucket creation is in progress, let me check the status and confirm successfully, and let me say yes.
+
+27
+00:10:07,000 --> 00:10:36,000
+ So perfect, your S3 bucket, Rahul MCP test server has been successfully created with following features, so now I'm on the AWS console, let me just search for S3, and let's see if our S3 bucket has been created, so now I'm on the S3 bucket, and if I just search by creation date, you can see our Rahul MCP test server, 009, 009 has been created through this particular comma.
+
+28
+00:10:36,000 --> 00:11:03,000
+ So this is the one which we have created. Now let's go ahead and ask it something more meaningful, we'll say create a YAML template for AWS CloudFormation stack with rest AWS API get a lambda S3, and then we're going to ask it to deploy this template, so let me just copy this question, and this will be part of the create template tool cell, okay, so I will just say maybe clear.
+
+29
+00:11:06,000 --> 00:11:26,000
+ Okay, so I think this is not working, but okay, so it's saying the terminal has been cleared, now let me just paste this question, so I said create YAML template for CloudFormation with server stack rest AWS API gateway lambda and S3, so let me just do a enter.
+
+30
+00:11:26,000 --> 00:11:52,000
+ So I will create a comprehensive YAML CloudFormation template for server stack with API gateway lambda and S3, so it's going to take a few minutes. Now it has created this CloudFormation template and if I just scroll up, it's a pretty long one, okay, here it is, and this is the path for this template,
+
+31
+00:11:52,000 --> 00:12:07,000
+ where it has stored this template and if we just scroll down and it's saying create a comprehensive template for server stack with API gateway lambda and S3, so maybe I'll just say yes.
+
+32
+00:12:07,000 --> 00:12:23,000
+ So I've created a comprehensive CloudFormation YAML template for the server stack, here is what the template includes, so it includes an S3 bucket with these configurations S3 even notification trigger lambda public S3 block for security
+
+33
+00:12:23,000 --> 00:12:44,000
+ for API lambda, it handles API request with the endpoints, so these three endpoints are there and then S3 processor lambda and there are and I am and it's also created the API gateway with the rest API gateway, I am security, and then there are some other features that it has created cloud was log groups and so on.
+
+34
+00:12:44,000 --> 00:12:57,000
+ I want to deploy this stack API endpoints, this template is production ready with the proper security confusion error handling, so let me just go ahead and ask it to deploy.
+
+35
+00:12:57,000 --> 00:13:10,000
+ So I've just posed this question deploy this template with stack name AWS MCP server on AWS CloudFormation.
+
+36
+00:13:10,000 --> 00:13:26,000
+ Now we'll see that it's going to deploy this stack on AWS CloudFormation service, so it's asking me if I can just deploy this and I will say yes.
+
+37
+00:13:26,000 --> 00:13:43,000
+ So I think it has found an error error, okay validation error when calling the create stack operation, so it has a circular dependency and I think it's going to fix the template by itself based on the error that it has seen.
+
+38
+00:13:43,000 --> 00:14:04,000
+ Now in the meantime, let's go to the cloudFormation service and let's see what's going on there, so from here, I will just search cloudFormation and cloudFormation is here, so if I can just do a refresh, okay, right now it has not deployed the stack, so let's see what's going on.
+
+39
+00:14:04,000 --> 00:14:16,000
+ Okay, so it's asking me that the fix circular dependency and I will just say, cross this time.
+
+40
+00:14:16,000 --> 00:14:21,000
+ So let me just say trust again.
+
+41
+00:14:21,000 --> 00:14:37,000
+ So you see now let me try deploying the fixed template, so it's fixed that template and it's going to try and deploy again, so it's now deploying serverless stack with MCP server.
+
+42
+00:14:37,000 --> 00:14:43,000
+ Okay, so it's saying deployment status stack name AWS MCP server creating progress.
+
+43
+00:14:43,000 --> 00:14:49,000
+ Now let's go ahead and take a look at it from the cloudFormation service perspective if I can just do a refresh here.
+
+44
+00:14:49,000 --> 00:14:55,000
+ Okay, now we can see it's deploying this AWS MCP server and creating progress.
+
+45
+00:14:55,000 --> 00:15:04,000
+ So if I just click on this, let me just move this a little left and let's say events.
+
+46
+00:15:04,000 --> 00:15:07,000
+ Okay, so I think something has failed.
+
+47
+00:15:07,000 --> 00:15:12,000
+ So it's saying API gateway in the whole commission property validation failed.
+
+48
+00:15:12,000 --> 00:15:17,000
+ Now what it's going to do is it's going to fix this issue by itself.
+
+49
+00:15:17,000 --> 00:15:23,000
+ So if I just go here, so it's saying the deployment is in progress.
+
+50
+00:15:23,000 --> 00:15:30,000
+ It's saying the stack is still in progress, let me just do a trust.
+
+51
+00:15:30,000 --> 00:15:36,000
+ Soon it will realize that the stack has failed, it's again going to fix the stack and then deploy.
+
+52
+00:15:36,000 --> 00:15:40,000
+ So now you can see I see the stack is rollback.
+
+53
+00:15:40,000 --> 00:15:46,000
+ Let me check what went wrong by looking at the stack events.
+
+54
+00:15:46,000 --> 00:15:53,000
+ So it's figured out what's the issue and now it's going to try and deploy it again.
+
+55
+00:15:53,000 --> 00:15:58,000
+ So it's saying let me create the corrected template if I just go back here.
+
+56
+00:15:58,000 --> 00:16:06,000
+ Let's see what's going on here.
+
+57
+00:16:06,000 --> 00:16:11,000
+ Now it's saying that it can see what is the root cause and it's figured out the root cause.
+
+58
+00:16:11,000 --> 00:16:17,000
+ So it's saying let me wait for the rollback to complete and then deploy the fixed template.
+
+59
+00:16:17,000 --> 00:16:27,000
+ So now it's saying great the rollback is complete and then it's going to delete the field stack and then deploy a new one.
+
+60
+00:16:27,000 --> 00:16:33,000
+ So if you see from the console, the delete for this AWS MCP server is now done.
+
+61
+00:16:33,000 --> 00:16:38,000
+ Now it's going to deploy a new stack.
+
+62
+00:16:38,000 --> 00:16:46,000
+ So we did about five minutes and finally the QCLI was able to create the cloud formation template and also deploy it.
+
+63
+00:16:46,000 --> 00:16:54,000
+ So you can see here is showing us AWS MCP server create complete and if you can just refresh it, you can see.
+
+64
+00:16:54,000 --> 00:17:01,000
+ It has created this particular template and if I just go to the resources, you can see all the resources that it has created.
+
+65
+00:17:01,000 --> 00:17:13,000
+ So you can see here on the right, it has created the Lambda function log group, API gate where resource method, I am roll, S3 bucket and so on.
+
+66
+00:17:13,000 --> 00:17:25,000
+ So that's how you can create an AWS MCP cloud formation server using MZQ CLI as the client and VS code as the host.
+
+67
+00:17:25,000 --> 00:17:34,000
+ Okay, now before we end this lecture, please make sure you delete this stack, although this is serverless, but it's always better to delete your resources.
+
+68
+00:17:34,000 --> 00:17:41,000
+ So I will just select this stack AWS MCP server, just click on this delete and just to delete.
+
+69
+00:17:41,000 --> 00:17:51,000
+ It's possible that some other resources may not get deleted like S3 bucket, then you can just go to the S3 service and delete it from there.
+
+70
+00:17:51,000 --> 00:17:58,000
+ So showing delete in progress and I think most of the services it has already deleted here.
+
+71
+00:17:58,000 --> 00:18:02,000
+ Okay, so that's pretty much it from this lecture, I'll see you in the next lecture, thank you.
+
