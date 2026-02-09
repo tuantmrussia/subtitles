@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:06,960
+ Now, let's go ahead and check out a quick demo of IMer rules and I am permissions and policies.
+
+2
+00:00:06,960 --> 00:00:10,240
+ So, there's a possibility that it can be tested in the exam.
+
+3
+00:00:10,240 --> 00:00:16,960
+ And what I want to show you is, what is the kind of IMer rule permissions and policies?
+
+4
+00:00:16,960 --> 00:00:23,680
+ We need to attach to different AWS services so that they can access Amazon bedrock.
+
+5
+00:00:23,680 --> 00:00:28,240
+ And in this use case, what I'm going to show you is, so we'll have a user,
+
+6
+00:00:28,240 --> 00:00:33,600
+ so we'll pass a prompt or a user input where this AWS EPA gateway, which will go as an event
+
+7
+00:00:33,600 --> 00:00:38,640
+ to this lambda function. And then this lambda function is going to query the Amazon bedrock
+
+8
+00:00:38,640 --> 00:00:42,080
+ and the underlying foundation model, which is go here in this use case.
+
+9
+00:00:42,080 --> 00:00:49,280
+ So, I will show you what is the right IM role and policy we need to attach to this lambda
+
+10
+00:00:49,280 --> 00:00:55,440
+ function so that it can access the Amazon bedrock service. So, I'm going to show you only this portion
+
+11
+00:00:55,440 --> 00:01:02,240
+ of the demo lambda function and how it will invoke the Amazon bedrock service.
+
+12
+00:01:02,240 --> 00:01:06,320
+ So, I'm on the AWS console now and for the purpose of this demo,
+
+13
+00:01:06,320 --> 00:01:11,440
+ I've already written a lambda function that is going to query Amazon bedrock service
+
+14
+00:01:11,440 --> 00:01:17,200
+ and specifically this coherent command light model. Now, what I have done is, if I just go to
+
+15
+00:01:17,200 --> 00:01:25,120
+ configuration and you can see attached a random role called a CDK role, which does not have the
+
+16
+00:01:25,120 --> 00:01:30,640
+ permission to access the Amazon bedrock service. So, if I just go back to this code
+
+17
+00:01:30,640 --> 00:01:36,160
+ and I will just show you the test event. So, here I have the test event and we say
+
+18
+00:01:36,160 --> 00:01:43,120
+ where is London and now, once I send this query to the Amazon bedrock service, it should be able
+
+19
+00:01:43,120 --> 00:01:50,160
+ to give me an answer if it has the right permission. Let me just go back to the code and let me
+
+20
+00:01:50,160 --> 00:02:01,920
+ just try it out. Let me just click on test and you can see it is given an error, access denied
+
+21
+00:02:01,920 --> 00:02:08,480
+ exception when calling invoke model operation. So, which means it does not have the right, I am
+
+22
+00:02:08,480 --> 00:02:15,440
+ policy because it cannot invoke the model. Now, can do this, I can go back to the I am service.
+
+23
+00:02:15,440 --> 00:02:20,880
+ So, I am on the I am identity service. Now, if I just go to these roles, click on the role
+
+24
+00:02:20,880 --> 00:02:27,200
+ and I can just say create a role. Now, you can see it is asking me which is the AWS service
+
+25
+00:02:27,200 --> 00:02:32,880
+ to which you want to attach this role. So, is it an AWS service, is it an AWS account,
+
+26
+00:02:32,880 --> 00:02:38,640
+ web identity, custom trust policy and so on. So, what I will do is here is I will select the
+
+27
+00:02:38,640 --> 00:02:45,600
+ service. So, in our case, it is going to be the AWS Lambda function as you can see here. So,
+
+28
+00:02:45,600 --> 00:02:53,840
+ I will click on next. Now, I have to attach a permission policy to this particular Lambda function
+
+29
+00:02:53,840 --> 00:03:01,440
+ and this permission policy is basically which AWS service it needs access to and in our case,
+
+30
+00:03:01,440 --> 00:03:09,120
+ it is going to be Amazon bedrock. So, what I will do is I will just search for bedrock. So,
+
+31
+00:03:09,120 --> 00:03:14,320
+ you can see I have lot created lot of custom policies and if we just filter here. So, it can be
+
+32
+00:03:14,320 --> 00:03:19,840
+ either AWS standard policies so AWS manage or it can be a customer managed. So, I have created
+
+33
+00:03:19,840 --> 00:03:25,840
+ lot of custom I am role but I will just select AWS managed for this use case and you can see here.
+
+34
+00:03:25,840 --> 00:03:31,040
+ So, you have if we can just push it on to the right. So, if Amazon bedrock full access, Amazon
+
+35
+00:03:31,040 --> 00:03:39,440
+ bedrock read only and if I just click on this policy, so you can see I have a JSON file which talks
+
+36
+00:03:39,440 --> 00:03:47,040
+ about what is the kind of permission that this particular policy provides. So, I will just click here
+
+37
+00:03:47,040 --> 00:03:53,200
+ and just click on this Amazon bedrock full access, just click on next and let us give it a name.
+
+38
+00:03:53,200 --> 00:04:06,240
+ Let us say demo I am Udemy. So, then I will just click on create role. So, you can see
+
+39
+00:04:06,240 --> 00:04:12,480
+ role demo I am Udemy has been created. So, if I just go back here and now if I just click on
+
+40
+00:04:12,480 --> 00:04:20,960
+ configuration and here is the role name. So, if I just went edit and if I just scroll down. So,
+
+41
+00:04:20,960 --> 00:04:26,720
+ here you can see existing role. So, I will replace it with what we had created and which is
+
+42
+00:04:26,720 --> 00:04:36,960
+ demo I am Udemy. So, I will just say demo I am Udemy and here is the role. So, I will just click on
+
+43
+00:04:36,960 --> 00:04:50,880
+ save. Okay, now if I just go back to the code and if I just click on test, now it should work because
+
+44
+00:04:50,880 --> 00:04:56,960
+ we have provided the lambda function right I am role to be able to access the Amazon
+
+45
+00:04:56,960 --> 00:05:00,880
+ bedrock service. Now, you can see it is giving me a response let me just increase the size.
+
+46
+00:05:02,720 --> 00:05:08,880
+ Okay, so we can see here now we got a response. London, England is the south eastern region of
+
+47
+00:05:08,880 --> 00:05:16,800
+ UK and if you see what was our question where is London. Okay, so if I just go back to the I am
+
+48
+00:05:16,800 --> 00:05:20,800
+ role for a couple of minutes. So, you can see here we already discussed about user groups,
+
+49
+00:05:20,800 --> 00:05:28,240
+ users, roles and then we also have the policies. And as we discussed a policies and object in AWS
+
+50
+00:05:28,240 --> 00:05:33,760
+ that defines permissions. So, there could be an AWS managed job function like admin, billing,
+
+51
+00:05:33,760 --> 00:05:39,920
+ admin and so on and there could be any AWS managed policies like what we just saw on bedrock,
+
+52
+00:05:39,920 --> 00:05:47,760
+ S3 and so on. And then it could also be customer managed so you can write your own policies.
+
+53
+00:05:47,760 --> 00:05:51,760
+ Okay, so that is pretty much it from this lecture. I hope it was useful. Thank you.
+
