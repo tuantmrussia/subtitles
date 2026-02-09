@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:05,000
+ So I am on the AWS console and let me just search for recognition.
+
+2
+00:00:05,000 --> 00:00:07,200
+ So here we have Amazon recognition.
+
+3
+00:00:07,200 --> 00:00:10,000
+ And now I'm on the homepage of Amazon recognition.
+
+4
+00:00:10,000 --> 00:00:15,000
+ You can see on the left there are all the demos that provided
+
+5
+00:00:15,000 --> 00:00:19,000
+ which given inside on the capabilities of Amazon recognition.
+
+6
+00:00:19,000 --> 00:00:21,000
+ So we have the label detection here.
+
+7
+00:00:21,000 --> 00:00:24,000
+ If you just click on this and then you can just select an image
+
+8
+00:00:24,000 --> 00:00:27,000
+ either you can upload your own image or you can choose a sample image.
+
+9
+00:00:27,000 --> 00:00:32,000
+ So if I just click on this and you can see it will detect all the
+
+10
+00:00:32,000 --> 00:00:36,000
+ labels from the predefined labels that that they have.
+
+11
+00:00:36,000 --> 00:00:39,000
+ So it's showing us architecture with 100% confidence,
+
+12
+00:00:39,000 --> 00:00:43,000
+ building, city, cityscape, urban and so on.
+
+13
+00:00:43,000 --> 00:00:47,000
+ And you can see some of the predefined list of labels that they have.
+
+14
+00:00:47,000 --> 00:00:50,000
+ And you can just download the full list if you're interested.
+
+15
+00:00:50,000 --> 00:00:53,000
+ Or you can also create some custom labels.
+
+16
+00:00:53,000 --> 00:00:56,000
+ So that's on the label detection.
+
+17
+00:00:56,000 --> 00:00:59,000
+ Next, it can also help to define the image properties.
+
+18
+00:00:59,000 --> 00:01:03,000
+ So if you select an image here or you upload your own image,
+
+19
+00:01:03,000 --> 00:01:07,000
+ then it can show you some of the image properties related to dominant colors,
+
+20
+00:01:07,000 --> 00:01:10,000
+ bright and sharpness and so on.
+
+21
+00:01:10,000 --> 00:01:13,000
+ Then third one we have is image moderation.
+
+22
+00:01:13,000 --> 00:01:15,000
+ And we already discussed about it.
+
+23
+00:01:15,000 --> 00:01:21,000
+ So if I just select an image here and then based on certain predefined labels,
+
+24
+00:01:21,000 --> 00:01:27,000
+ it can determine whether the content is inappropriate or not.
+
+25
+00:01:27,000 --> 00:01:32,000
+ Then it can do facial analysis and determine whether the person is smiling or
+
+26
+00:01:32,000 --> 00:01:35,000
+ not, what is the age and and so on.
+
+27
+00:01:35,000 --> 00:01:37,000
+ And you can upload your image as well.
+
+28
+00:01:37,000 --> 00:01:43,000
+ And the next you have is face comparison and it can compare faces to see how
+
+29
+00:01:43,000 --> 00:01:47,000
+ closely they are mashed based on similarity percentage.
+
+30
+00:01:47,000 --> 00:01:55,000
+ So you can see you have a indigenous here and there's a 99.9% match on the images.
+
+31
+00:01:55,000 --> 00:01:58,000
+ Then it can also do other things like celebrity recognition.
+
+32
+00:01:58,000 --> 00:02:02,000
+ So from the images it can recognize who is the celebrity.
+
+33
+00:02:02,000 --> 00:02:06,000
+ So if I now look at from the perspective of videos.
+
+34
+00:02:06,000 --> 00:02:09,000
+ So now if I just click on stored video analysis,
+
+35
+00:02:09,000 --> 00:02:14,000
+ you can see it can create various labels that it finds.
+
+36
+00:02:14,000 --> 00:02:19,000
+ So you can see the adults clothing and it can create these tags.
+
+37
+00:02:19,000 --> 00:02:22,000
+ And then file you have the streaming video event.
+
+38
+00:02:22,000 --> 00:02:27,000
+ And here in the streaming video event machine learning based,
+
+39
+00:02:27,000 --> 00:02:31,000
+ real time analysis of live videos to detect labels such as people,
+
+40
+00:02:31,000 --> 00:02:32,000
+ pets and packages.
+
+41
+00:02:32,000 --> 00:02:36,000
+ And if it detects some undesired activity,
+
+42
+00:02:36,000 --> 00:02:40,000
+ then it can also send a notification in real time.
+
+43
+00:02:40,000 --> 00:02:45,000
+ Okay, now let's just take a look at one of the real world use cases from AWS
+
+44
+00:02:45,000 --> 00:02:48,000
+ on how they're using Amazon recognition.
+
+45
+00:02:48,000 --> 00:02:54,000
+ So this is intelligent search media assets with Amazon recognition and Amazon
+
+46
+00:02:54,000 --> 00:02:55,000
+ elastic search.
+
+47
+00:02:55,000 --> 00:03:01,000
+ So this is about tagging and searching of media assets in industries like
+
+48
+00:03:01,000 --> 00:03:04,000
+ median entertainment, manufacturing, education, etc.
+
+49
+00:03:04,000 --> 00:03:09,000
+ So what they are doing is in a store or a manufacturing unit,
+
+50
+00:03:09,000 --> 00:03:14,000
+ they take pictures and videos of all the assets they can find
+
+51
+00:03:14,000 --> 00:03:18,000
+ and they just upload it in this S3 bucket.
+
+52
+00:03:18,000 --> 00:03:22,000
+ So once the image is uploaded, it generates an event notification,
+
+53
+00:03:22,000 --> 00:03:25,000
+ which goes to this Amazon Q service.
+
+54
+00:03:25,000 --> 00:03:31,000
+ So once this message is in the SQS service and this lambda function is in work,
+
+55
+00:03:31,000 --> 00:03:35,000
+ it makes an API call to this Amazon recognition.
+
+56
+00:03:35,000 --> 00:03:40,000
+ And Amazon recognition then tags that image with some predefined labels.
+
+57
+00:03:40,000 --> 00:03:43,000
+ So let's say they uploaded this image.
+
+58
+00:03:43,000 --> 00:03:47,000
+ What Amazon recognition will do is it will apply some labels
+
+59
+00:03:47,000 --> 00:03:50,000
+ based on the predefined labels that it's been trained on.
+
+60
+00:03:50,000 --> 00:03:56,000
+ So maybe it will say, okay, this is apparel with 98.7% confidence.
+
+61
+00:03:56,000 --> 00:03:59,000
+ It's a t-shirt, there's a person, there are some pills, etc.
+
+62
+00:03:59,000 --> 00:04:02,000
+ So then all these tags would be stored.
+
+63
+00:04:02,000 --> 00:04:07,000
+ Now the end user can search all the images that have been uploaded
+
+64
+00:04:07,000 --> 00:04:12,000
+ in this S3 bucket through the Amazon elastic search.
+
+65
+00:04:12,000 --> 00:04:17,000
+ So if there was a tag t-shirt assigned by Amazon recognition to this image,
+
+66
+00:04:17,000 --> 00:04:20,000
+ when the user puts a search query on t-shirt,
+
+67
+00:04:20,000 --> 00:04:24,000
+ then it's going to be able to retrieve this image.
+
+68
+00:04:24,000 --> 00:04:29,000
+ So attach the link to this use case in the property in case you want to read through.
+
+69
+00:04:29,000 --> 00:04:32,000
+ So that's pretty much it from this lecture.
+
+70
+00:04:32,000 --> 00:04:34,000
+ I'll see in the next lecture, thank you.
+
