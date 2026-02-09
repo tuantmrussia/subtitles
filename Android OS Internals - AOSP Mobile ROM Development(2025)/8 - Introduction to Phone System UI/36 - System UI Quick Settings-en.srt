@@ -1,0 +1,272 @@
+1
+00:00:01,350 --> 00:00:03,930
+You sightings is an essential part of System UI.
+
+2
+00:00:04,260 --> 00:00:11,820
+It's mainly responsible for opening and closing of the functional modules of each system, such as Wi-Fi,
+
+3
+00:00:12,090 --> 00:00:14,850
+Bluetooth, flashlight, etc...
+
+4
+00:00:15,850 --> 00:00:19,710
+Wow, wow, wow, wow.
+
+5
+00:00:21,130 --> 00:00:25,480
+Before we start looking at the court, let me quickly show you Duke sitting silent.
+
+6
+00:00:25,660 --> 00:00:30,130
+So in the phone, when we drag from top to bottom, you can see these tiny windows, right?
+
+7
+00:00:30,520 --> 00:00:35,440
+And each of these styles are actually responsible for some of the system settings.
+
+8
+00:00:35,560 --> 00:00:39,410
+For example, if I need to switch on the flashlight, I click on this right.
+
+9
+00:00:39,430 --> 00:00:43,780
+Similarly, being the do not disturb the system will going to be being demoed.
+
+10
+00:00:43,870 --> 00:00:49,570
+And similarly, airplane mode and many other features sort of like the Bluetooth to the next tab, where
+
+11
+00:00:49,570 --> 00:00:52,910
+you have other options like location, battery saver.
+
+12
+00:00:52,950 --> 00:00:56,590
+So this new setting style window has basically two functionalities.
+
+13
+00:00:56,620 --> 00:01:01,500
+One is to display all these styles, and the second option is to customize this time.
+
+14
+00:01:01,530 --> 00:01:06,520
+When you click on that button, it goes through an 80 page and you can actually customize, exemplify,
+
+15
+00:01:06,520 --> 00:01:07,630
+need to bring internet.
+
+16
+00:01:09,110 --> 00:01:12,180
+The little window, I could bring it here like this.
+
+17
+00:01:12,210 --> 00:01:18,660
+And if I need to put internet at all, I can rearrange it like this here if I come back and open the
+
+18
+00:01:18,960 --> 00:01:19,750
+settings again.
+
+19
+00:01:19,770 --> 00:01:22,830
+I have the internet I'll window available for waking up.
+
+20
+00:01:22,860 --> 00:01:25,800
+So in summary, the UK's settings has a features.
+
+21
+00:01:25,800 --> 00:01:32,010
+The first feature is the load or these system settings and display to the user like this, and it also
+
+22
+00:01:32,010 --> 00:01:35,340
+provides an option to customize that by clicking on this edit.
+
+23
+00:01:35,460 --> 00:01:41,820
+Now, let's dig deeper into the code and see which modules are actually responsible to initialize each
+
+24
+00:01:41,820 --> 00:01:42,520
+of these settings.
+
+25
+00:01:42,540 --> 00:01:46,950
+All the Quick Settings related modules can be found under System UI.
+
+26
+00:01:47,550 --> 00:01:50,940
+US Package Secure stands for Quick Settings.
+
+27
+00:01:50,970 --> 00:01:57,270
+Yes is the short phone for Settings, so I only introduce some of the most important classes that you
+
+28
+00:01:57,270 --> 00:02:01,500
+should know when working with Click Settings, but the first one is US Panel.
+
+29
+00:02:01,620 --> 00:02:08,400
+UAC Panel is the view that represents the quick setting tile panel, so this view is actually responsible
+
+30
+00:02:08,400 --> 00:02:10,760
+for showing I'll do the them.
+
+31
+00:02:11,040 --> 00:02:20,310
+So to make it more clear, this view is entire view is actually implemented with this guest panel glass.
+
+32
+00:02:20,610 --> 00:02:24,960
+As we can see here, the US panel extends a linear layout.
+
+33
+00:02:25,320 --> 00:02:33,410
+Another important classes US style host, the Q Style host is actually responsible for creating pilots.
+
+34
+00:02:33,690 --> 00:02:40,650
+So here we can see the create tile function, which actually is responsible for creating the guys in
+
+35
+00:02:40,650 --> 00:02:41,430
+the US panel.
+
+36
+00:02:41,520 --> 00:02:47,760
+We look at this class a little bit closer when we look at the loading process of ice.
+
+37
+00:02:48,080 --> 00:02:52,910
+Another important classes style AM bill, so this is an abstract class.
+
+38
+00:02:52,920 --> 00:02:57,490
+Again, find it under this tile and be a package for gear style ambient.
+
+39
+00:02:57,570 --> 00:03:03,310
+So this is basically an abstract class which is implemented or extended by all the tiles.
+
+40
+00:03:03,330 --> 00:03:07,620
+So if we come to these tiles each year, we can see all the tiles.
+
+41
+00:03:07,620 --> 00:03:13,190
+So in this nice package, there will be a class for each of these tile like sample internet.
+
+42
+00:03:13,200 --> 00:03:15,690
+So for internet, there will be a tile here.
+
+43
+00:03:15,720 --> 00:03:16,530
+Internet tile.
+
+44
+00:03:16,680 --> 00:03:21,180
+This one and for another one airplane mode and see the airplane mode tile here.
+
+45
+00:03:21,180 --> 00:03:22,440
+Alarm tile is here.
+
+46
+00:03:22,860 --> 00:03:23,370
+Is this one?
+
+47
+00:03:23,670 --> 00:03:29,460
+So for each of these tile, there will be a corresponding glass here, which contains the implementation
+
+48
+00:03:29,460 --> 00:03:32,510
+logic of this time and each of these glass.
+
+49
+00:03:32,520 --> 00:03:35,640
+They open this airplane mode, tile or tower.
+
+50
+00:03:35,670 --> 00:03:41,160
+Then we can see that it extends Swiss style ambient to the Cuban and bill.
+
+51
+00:03:41,250 --> 00:03:47,610
+He's basically an abstract glass, which has all the required abstract methods to implement a particular
+
+52
+00:03:47,610 --> 00:03:47,910
+time.
+
+53
+00:03:48,070 --> 00:03:55,290
+We can see all the tile classes extend skewer style and build glass, but there are many other packages
+
+54
+00:03:55,290 --> 00:04:00,450
+as well within the US module to a package like guide your customized diagram.
+
+55
+00:04:00,480 --> 00:04:06,270
+So the Customize package contains two classes for the masterminds view, as we have seen earlier.
+
+56
+00:04:06,330 --> 00:04:11,880
+There is an option to customize the tiles so those implementation can be found here and then the dagger.
+
+57
+00:04:12,090 --> 00:04:17,370
+Dagger contains the dagger dependency implementation, dependency injection implementation for this
+
+58
+00:04:17,370 --> 00:04:20,940
+particular module, and then there are something related to external.
+
+59
+00:04:20,950 --> 00:04:27,360
+So these contain some tiles service manager, bi lifecycle manager, etc. and the Logging Gears logo
+
+60
+00:04:27,420 --> 00:04:28,760
+and the dialer and bill.
+
+61
+00:04:28,780 --> 00:04:34,260
+As we have seen, it's the abstract class which is actually extended by all the times, and the tiles
+
+62
+00:04:34,260 --> 00:04:37,160
+contains a nice package, contains all the tiles.
+
+63
+00:04:37,170 --> 00:04:42,630
+So for each of the tile, there will be a corresponding class which extends the CPU asylum.
+
+64
+00:04:42,980 --> 00:04:45,170
+Then finally, there is some package for that.
+
+65
+00:04:45,270 --> 00:04:49,270
+So this is something to handle the gesture detection like.
+
+66
+00:04:49,380 --> 00:04:55,920
+So that was a quick overview of the modules which are found in the Settings package.
+
+67
+00:04:56,470 --> 00:04:56,940
+Wow.
+
+68
+00:04:58,200 --> 00:05:00,010
+Wow, wow.
+
