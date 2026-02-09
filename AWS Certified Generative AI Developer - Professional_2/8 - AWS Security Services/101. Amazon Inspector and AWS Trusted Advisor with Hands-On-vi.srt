@@ -1,0 +1,484 @@
+1
+00:00:00,000 --> 00:00:03,920
+Trong bài giảng này, chúng ta sẽ xem xét một vài dịch vụ AWS
+
+2
+00:00:03,920 --> 00:00:08,360
+trong lĩnh vực an ninh, quản lý và tuân thủ.
+
+3
+00:00:08,360 --> 00:00:11,520
+Đầu tiên là thanh tra Amazon.
+
+4
+00:00:11,520 --> 00:00:14,120
+Vì vậy, thanh tra Amazon tự động
+
+5
+00:00:14,120 --> 00:00:19,160
+Khám phá số lượng tính toán như Amazon EC2, ví dụ,
+
+6
+00:00:19,160 --> 00:00:24,560
+Vật chứa hình ảnh trong ECR và trong chức năng CAD và Lambda.
+
+7
+00:00:27,040 --> 00:00:30,520
+Thanh tra Amazon làm nghề gì?
+
+8
+00:00:30,520 --> 00:00:34,560
+Nó quét các điểm yếu phần mềm
+
+9
+00:00:34,560 --> 00:00:38,920
+và tiếp xúc với mạng lưới không hạn chế.
+
+10
+00:00:38,920 --> 00:00:41,600
+Trong kỳ thi, con cần nhớ hai điều
+
+11
+00:00:41,600 --> 00:00:42,960
+về thanh tra Amazon.
+
+12
+00:00:42,960 --> 00:00:46,280
+Một, nó là cho tính toán tải công việc.
+
+13
+00:00:46,280 --> 00:00:49,800
+Thứ hai, nó quét các điểm yếu phần mềm
+
+14
+00:00:49,800 --> 00:00:54,280
+và tiếp xúc với mạng lưới không hạn chế.
+
+15
+00:00:54,280 --> 00:00:57,160
+OK, để tôi chỉ cho bạn qua bảng điều khiển một cách nhanh chóng.
+
+16
+00:00:57,160 --> 00:00:59,920
+Nên nếu tôi đi tìm thanh tra.
+
+17
+00:00:59,920 --> 00:01:08,600
+Vì vậy, ngay bây giờ, bạn có thể thấy tôi không có khả năng thanh tra Amazon.
+
+18
+00:01:08,600 --> 00:01:13,440
+Chúng ta cần kích hoạt thanh tra để nó hoạt động.
+
+19
+00:01:13,440 --> 00:01:14,960
+Và sẽ có một số tính phí cho nó.
+
+20
+00:01:14,960 --> 00:01:16,520
+Nên tôi sẽ không kích hoạt thanh tra.
+
+21
+00:01:16,520 --> 00:01:18,520
+Nhưng bạn có thể thấy ở đây thanh tra Amazon
+
+22
+00:01:18,520 --> 00:01:20,520
+là một bộ quản lý tổn thương tự động
+
+23
+00:01:20,520 --> 00:01:24,520
+dịch vụ thường xuyên quét các tải công việc cho các khả năng vulnera
+
+24
+00:01:24,520 --> 00:01:27,840
+và tiếp xúc với mạng lưới không hạn chế.
+
+25
+00:01:27,840 --> 00:01:30,000
+Vì vậy, nếu bạn kích hoạt thanh tra, thì nó là
+
+26
+00:01:30,000 --> 00:01:33,520
+sẽ quét tất cả các tải tính toán của bạn
+
+27
+00:01:33,520 --> 00:01:37,440
+và sau đó tạo ra một báo cáo cho bạn.
+
+28
+00:01:37,440 --> 00:01:40,800
+Bây giờ, hãy nhìn vào dịch vụ thứ hai,
+
+29
+00:01:40,800 --> 00:01:44,240
+Đó là cố vấn đáng tin cậy của AWS.
+
+30
+00:01:44,240 --> 00:01:48,120
+Vì vậy, cố vấn uy tín AWS liên tục
+
+31
+00:01:48,120 --> 00:01:53,760
+đánh giá môi trường AWS của bạn sử dụng các thực hành tốt nhất
+
+32
+00:01:53,760 --> 00:01:57,040
+theo nhiều loại.
+
+33
+00:01:57,040 --> 00:01:59,640
+Vì vậy, những loại là tối ưu hóa chi phí
+
+34
+00:01:59,640 --> 00:02:01,240
+và bảo vệ.
+
+35
+00:02:01,240 --> 00:02:05,080
+Sau đó, bạn có sức chịu đựng, năng suất, sự xuất sắc.
+
+36
+00:02:05,080 --> 00:02:07,240
+Sau đó bạn có một thực sự quan trọng, mà
+
+37
+00:02:07,240 --> 00:02:09,480
+được gọi là giới hạn dịch vụ.
+
+38
+00:02:09,480 --> 00:02:12,400
+Vì vậy, những gì AWS cố vấn đáng tin cậy làm là nó
+
+39
+00:02:12,400 --> 00:02:17,240
+sẽ xem xét làm thế nào bạn đang sử dụng tất cả các dịch vụ AWS
+
+40
+00:02:17,240 --> 00:02:22,600
+trong tài khoản của bạn trên sáu loại khác nhau
+
+41
+00:02:22,600 --> 00:02:26,880
+và so sánh chúng với các thực hành tốt nhất của AWS.
+
+42
+00:02:26,880 --> 00:02:31,160
+Và sau đó nó sẽ đề nghị hành động để sửa chữa
+
+43
+00:02:31,160 --> 00:02:34,440
+Bất cứ sai sót nào từ những thực hành tốt nhất.
+
+44
+00:02:34,440 --> 00:02:37,880
+Bây giờ, hãy nhìn vào tất cả sáu loại khác nhau
+
+45
+00:02:37,880 --> 00:02:38,880
+từ bàn điều khiển.
+
+46
+00:02:38,880 --> 00:02:40,520
+Tôi đang ở trên bảng điều khiển AWS.
+
+47
+00:02:40,520 --> 00:02:42,800
+Hãy để tôi tìm kiếm cố vấn đáng tin cậy.
+
+48
+00:02:45,840 --> 00:02:48,560
+Bên trái, bạn có thể thấy những lời khuyên.
+
+49
+00:02:48,560 --> 00:02:50,560
+Và đây là sáu loại.
+
+50
+00:02:50,560 --> 00:02:53,000
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào chi phí tối ưu hóa.
+
+51
+00:02:53,000 --> 00:02:57,640
+Vì vậy, ở đây nó xác định những gì nó có nghĩa bằng cách tối ưu hóa chi phí.
+
+52
+00:02:57,640 --> 00:03:00,240
+Chọn một tên kiểm tra để xem khuyến nghị
+
+53
+00:03:00,240 --> 00:03:04,240
+Để tiết kiệm tiền cho tài khoản AWS.
+
+54
+00:03:04,240 --> 00:03:08,080
+Vì vậy, bây giờ là những thực hành tốt nhất
+
+55
+00:03:08,080 --> 00:03:13,000
+rằng nó sẽ kiểm tra tài nguyên mà bạn đang sử dụng
+
+56
+00:03:13,000 --> 00:03:15,280
+và xem nó có được tối ưu hóa không.
+
+57
+00:03:15,280 --> 00:03:18,480
+Trong trường hợp của tôi, tôi không có kho chứa ECR.
+
+58
+00:03:18,480 --> 00:03:21,120
+Nếu tôi đã cấu hình một, sau đó nó sẽ kiểm tra
+
+59
+00:03:21,120 --> 00:03:26,120
+Cho dù tôi có kho lưu trữ của Amazon ECR mà không có một vòng đời
+
+60
+00:03:26,120 --> 00:03:29,640
+Chính sách, sau đó nó sẽ kiểm tra xem tài khoản AWS là một phần
+
+61
+00:03:29,640 --> 00:03:34,640
+của AWS tổ chức hay không, cho dù tập EBS của tôi
+
+62
+00:03:34,640 --> 00:03:36,640
+là quá phóng đại.
+
+63
+00:03:36,640 --> 00:03:40,200
+Vì vậy, nếu họ là quá phóng đại, nó sẽ đề nghị
+
+64
+00:03:40,200 --> 00:03:43,120
+để giảm kích cỡ của âm lượng EBS.
+
+65
+00:03:43,120 --> 00:03:44,840
+Điều thứ hai là màn trình diễn.
+
+66
+00:03:44,840 --> 00:03:47,760
+Và ở đây nó sẽ đề nghị làm thế nào để cải thiện hiệu suất
+
+67
+00:03:47,760 --> 00:03:49,480
+của AWS.
+
+68
+00:03:49,480 --> 00:03:52,480
+Nó sẽ kiểm tra nếu Amazon DynamoDB tự động co dãn
+
+69
+00:03:52,480 --> 00:03:53,720
+Đã có hiệu lực.
+
+70
+00:03:53,720 --> 00:03:57,000
+Nó sẽ kiểm tra hệ thống EBS Amazon.
+
+71
+00:03:57,000 --> 00:03:59,240
+Vì vậy, nó sẽ xem xét tất cả các dịch vụ AWS
+
+72
+00:03:59,240 --> 00:04:02,920
+Mà tôi có cung cấp và so sánh nó với các thực hành tốt nhất
+
+73
+00:04:02,920 --> 00:04:04,680
+Rồi cho tôi vài lời khuyên.
+
+74
+00:04:04,680 --> 00:04:08,400
+Vì vậy, tôi không có bất kỳ dịch vụ nào hiện nay.
+
+75
+00:04:08,400 --> 00:04:11,000
+Vì vậy, đó là lý do tại sao nó đang giảm dần các khu vực.
+
+76
+00:04:11,000 --> 00:04:13,200
+Nhưng đây là thứ sẽ kiểm tra.
+
+77
+00:04:13,200 --> 00:04:15,840
+Vì vậy, tương tự cho an ninh, nó sẽ cung cấp cho tôi đề nghị
+
+78
+00:04:15,840 --> 00:04:19,400
+về cách cải thiện tư thế an ninh cho cơ sở hạ tầng của tôi.
+
+79
+00:04:19,400 --> 00:04:23,280
+Nó sẽ kiểm tra nếu có bất kỳ hình ảnh công cộng Amazon,
+
+80
+00:04:23,280 --> 00:04:27,080
+Hình ảnh công cộng Amazon, rõ ràng bạn không nên có
+
+81
+00:04:27,080 --> 00:04:30,280
+Hình ảnh công cộng của cơ sở dữ liệu của bạn.
+
+82
+00:04:30,280 --> 00:04:32,160
+Sau đó nó sẽ xem xét lỗi khoan dung
+
+83
+00:04:32,160 --> 00:04:36,040
+Và ở đây nó sẽ gợi ý cách tăng sự sẵn có của họ
+
+84
+00:04:36,040 --> 00:04:39,440
+Và phục vụ dư thừa.
+
+85
+00:04:39,440 --> 00:04:42,680
+Vì vậy, nó sẽ xem xét Amazon DynamoDB
+
+86
+00:04:42,680 --> 00:04:46,440
+Điểm phục hồi thời gian, cụm đỏ Amazon,
+
+87
+00:04:46,440 --> 00:04:49,560
+Ảnh tự động và nhiều thứ khác.
+
+88
+00:04:49,560 --> 00:04:52,400
+Vậy thì chúng ta có giới hạn dịch vụ.
+
+89
+00:04:52,400 --> 00:04:56,040
+Tôi nghĩ rằng đây là trường hợp sử dụng quan trọng nhất
+
+90
+00:04:56,040 --> 00:05:01,040
+cho cố vấn đáng tin cậy nơi nó sẽ đưa ra cảnh báo
+
+91
+00:05:01,040 --> 00:05:05,640
+Nếu dịch vụ nào đạt 80% chỉ tiêu dịch vụ.
+
+92
+00:05:05,640 --> 00:05:09,440
+Vì vậy, nó có nghĩa là như thế nào nếu bạn thấy cho mỗi dịch vụ AWS,
+
+93
+00:05:09,440 --> 00:05:13,120
+Hãy lấy ví dụ hàm doanh thu trong hầu hết tài khoản
+
+94
+00:05:13,120 --> 00:05:18,120
+và các vùng, bạn có giới hạn của khoảng 1000 lần cầu khẩn.
+
+95
+00:05:18,120 --> 00:05:23,200
+Và nếu lệnh truy tố đạt hơn 1000,
+
+96
+00:05:23,200 --> 00:05:25,320
+Sau đó sẽ có throtling.
+
+97
+00:05:25,320 --> 00:05:27,000
+Vì vậy, nếu bạn đang chờ đợi rằng những lời thỉnh cầu
+
+98
+00:05:27,000 --> 00:05:29,000
+sẽ có hơn 1000 người.
+
+99
+00:05:29,000 --> 00:05:32,800
+Vì vậy, những gì bạn có thể làm là bạn có thể đi đến chỉ tiêu dịch vụ liên kết này
+
+100
+00:05:32,800 --> 00:05:36,120
+hoặc nâng vé đến trung tâm hỗ trợ AWS,
+
+101
+00:05:36,120 --> 00:05:40,080
+nơi bạn có thể yêu cầu thêm những lời cầu xin.
+
+102
+00:05:40,080 --> 00:05:43,080
+Vì vậy, những gì AWS làm là cho hàm lambda
+
+103
+00:05:43,080 --> 00:05:46,480
+Và giới hạn chỉ tiêu là 1000.
+
+104
+00:05:46,480 --> 00:05:49,200
+Vậy khi bạn đạt tới 80% của giới hạn,
+
+105
+00:05:49,200 --> 00:05:51,600
+Nó sẽ báo động vàng.
+
+106
+00:05:51,600 --> 00:05:55,560
+Nếu bạn đạt 100% nó sẽ gửi cho bạn một báo động đỏ.
+
+107
+00:05:55,560 --> 00:05:59,520
+Được rồi, cuối cùng thì anh cũng có được sự xuất sắc.
+
+108
+00:05:59,520 --> 00:06:03,480
+Nơi nó giúp bạn cải thiện hoạt động sẵn sàng
+
+109
+00:06:03,480 --> 00:06:05,400
+về nguồn lực của anh.
+
+110
+00:06:06,160 --> 00:06:09,240
+Và đây là một số trong những điều từ góc nhìn hoạt động
+
+111
+00:06:09,240 --> 00:06:12,840
+rằng nó sẽ đánh giá chống lại thực hành tốt nhất của AWS.
+
+112
+00:06:12,840 --> 00:06:17,360
+Vì vậy Amazon, VPC không có nhật ký lưu thông và nhiều thứ khác.
+
+113
+00:06:17,360 --> 00:06:18,640
+Từ góc nhìn kiểm tra,
+
+114
+00:06:18,640 --> 00:06:21,080
+Điều bạn cần nhớ là có một dịch vụ gọi là
+
+115
+00:06:21,080 --> 00:06:26,080
+Là cố vấn tin cậy, sẽ đánh giá tất cả các nguồn lực
+
+116
+00:06:26,080 --> 00:06:30,200
+Trong tài khoản AWS của bạn và bản đồ chúng
+
+117
+00:06:30,200 --> 00:06:35,080
+cho những thực hành tốt nhất của AWS dọc theo sáu lĩnh vực khác nhau này.
+
+118
+00:06:35,080 --> 00:06:37,520
+Và nếu có sự lệch hướng,
+
+119
+00:06:37,520 --> 00:06:41,960
+thì tốt hơn nên giới thiệu và cảnh báo bạn.
+
+120
+00:06:41,960 --> 00:06:44,680
+Được rồi, đó là khá nhiều trong bài giảng này.
+
+121
+00:06:44,680 --> 00:06:46,120
+Tôi sẽ xem trong bài giảng tiếp theo. Cảm ơn.
+
