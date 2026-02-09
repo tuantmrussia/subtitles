@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:08,840
+ So I am on the AWS console, so let me just search for Lex and I am on the Lex home page.
+
+2
+00:00:08,840 --> 00:00:15,480
+ So it says Amazon Lex a conversation AI for self-service bots and let me just click
+
+3
+00:00:15,480 --> 00:00:21,480
+ on this create bot and you can see here there are different ways of creating a bot.
+
+4
+00:00:21,480 --> 00:00:27,720
+ So you can create a descriptive bot builder with generative AI and then you create a blind
+
+5
+00:00:27,720 --> 00:00:34,840
+ bot, it creates a basic bot with no pre-configured language intents and slot types.
+
+6
+00:00:34,840 --> 00:00:39,520
+ Also choose start with an example and example bot has pre-configured languages intents and
+
+7
+00:00:39,520 --> 00:00:40,760
+ slot types.
+
+8
+00:00:40,760 --> 00:00:45,400
+ So it comes with an example which can help you expedite in building the bot.
+
+9
+00:00:45,400 --> 00:00:51,480
+ Okay, then you have start with transcripts automatically generates intents from the conversation
+
+10
+00:00:51,480 --> 00:00:52,480
+ transcripts.
+
+11
+00:00:52,480 --> 00:00:57,840
+ Okay, now what I will do is I will create a bot with Lex and Gen AI.
+
+12
+00:00:57,840 --> 00:01:01,120
+ Now let's say you want to build a bot for flight booking.
+
+13
+00:01:01,120 --> 00:01:09,000
+ So maybe I'll save flight booking and description, it's an optional so I'll leave it as it is.
+
+14
+00:01:09,000 --> 00:01:14,760
+ I will allow Amazon Lex to create the I have role that is relevant for me.
+
+15
+00:01:14,760 --> 00:01:20,480
+ Children online privacy protection, I'll just say no, which is demo and then I will just
+
+16
+00:01:20,480 --> 00:01:22,960
+ click on next.
+
+17
+00:01:22,960 --> 00:01:27,800
+ I have to choose a language so I can just leave it as English US.
+
+18
+00:01:27,800 --> 00:01:35,720
+ Then we can also have voice based chat and it basically converts the text to speech.
+
+19
+00:01:35,720 --> 00:01:40,640
+ So I just need to provide whether I want a male voice or a female voice and I will leave
+
+20
+00:01:40,640 --> 00:01:43,000
+ it as Daniel.
+
+21
+00:01:43,000 --> 00:01:48,400
+ So once I've selected the voice then what I have to do is I can use the Gen AI and it
+
+22
+00:01:48,400 --> 00:01:57,480
+ uses a foundation model called as Cloud from entropic to generate this bot for me.
+
+23
+00:01:57,480 --> 00:01:59,360
+ So let me just give a description.
+
+24
+00:01:59,360 --> 00:02:06,560
+ So what I said is I want to build a flight booking bot which allows to book flights with
+
+25
+00:02:06,560 --> 00:02:11,240
+ date, source and destination location.
+
+26
+00:02:11,240 --> 00:02:19,520
+ So you can see here we have the flight booking bot which is the intent and then we have
+
+27
+00:02:19,520 --> 00:02:25,880
+ date, source and destination location which are the slots.
+
+28
+00:02:25,880 --> 00:02:35,640
+ Now with this description I will allow the Gen AI model cloud V2 to build a bot using Lex
+
+29
+00:02:35,640 --> 00:02:36,640
+ for me.
+
+30
+00:02:36,640 --> 00:02:38,520
+ So I'll say it done.
+
+31
+00:02:38,520 --> 00:02:47,560
+ So you can see it is still building the bot for me, generate bot local for English US.
+
+32
+00:02:47,560 --> 00:02:52,760
+ So I just waited a few minutes and now you can see it's generating bot local for English
+
+33
+00:02:52,760 --> 00:02:58,560
+ US succeeded so I can do a review and see what has been built.
+
+34
+00:02:58,560 --> 00:03:04,120
+ And here you can see that it is created generated intents.
+
+35
+00:03:04,120 --> 00:03:10,360
+ So if I just click on this and you can see for sample utterances and if you remember
+
+36
+00:03:10,360 --> 00:03:16,800
+ we said utterances were were the input provided by the user to accomplish a goal and
+
+37
+00:03:16,800 --> 00:03:18,600
+ the goal is to book a flight.
+
+38
+00:03:18,600 --> 00:03:23,440
+ So if he says book a flight, book a flight from source to destination, book me a flight.
+
+39
+00:03:23,440 --> 00:03:28,760
+ So these are all the utterances that the user can either speak or type.
+
+40
+00:03:28,760 --> 00:03:32,440
+ And then you have the slots, we need four inputs from the user.
+
+41
+00:03:32,440 --> 00:03:37,960
+ So departure date return date destination and source if I have to book a flight.
+
+42
+00:03:37,960 --> 00:03:46,040
+ So I will say add to selection and then I will just confirm intents and slot types adding
+
+43
+00:03:46,040 --> 00:03:48,160
+ generated resources.
+
+44
+00:03:48,160 --> 00:03:55,080
+ So now if I just go here book a flight and you can see here we have the sample utterances
+
+45
+00:03:55,080 --> 00:03:57,080
+ and then we have the slots.
+
+46
+00:03:57,080 --> 00:04:02,840
+ So return date departure date source and destination which we need to book a flight.
+
+47
+00:04:02,840 --> 00:04:05,080
+ Then we have the confirmation.
+
+48
+00:04:05,080 --> 00:04:11,320
+ So once the user provides these details, then we can play back the input that user has
+
+49
+00:04:11,320 --> 00:04:19,160
+ provided and ask him do you want to book a flight from New York to Chicago on 25th and
+
+50
+00:04:19,160 --> 00:04:22,880
+ then return on 26th or something like that.
+
+51
+00:04:22,880 --> 00:04:27,800
+ So under the confirmation, I can just click here and then I can just say maybe the same
+
+52
+00:04:27,800 --> 00:04:33,560
+ thing is saying can I go ahead with the request and then we have the fulfilment which means
+
+53
+00:04:33,560 --> 00:04:36,320
+ that your booking is confirmed.
+
+54
+00:04:36,320 --> 00:04:42,640
+ So if I just click on active and on successful fulfilment and I will just type it, maybe
+
+55
+00:04:42,640 --> 00:04:48,240
+ I will say your booking is confirmed, thank you and then you can also provide values in
+
+56
+00:04:48,240 --> 00:04:54,520
+ case of failure something went wrong etc. so I will just do save intent.
+
+57
+00:04:54,520 --> 00:05:00,480
+ Now this is complete what I can do is I will just click on build and then we will just
+
+58
+00:05:00,480 --> 00:05:01,880
+ test it out.
+
+59
+00:05:01,880 --> 00:05:06,800
+ So I just waited a few minutes and now it is saying successfully built English language
+
+60
+00:05:06,800 --> 00:05:08,400
+ in bought flight booking.
+
+61
+00:05:08,400 --> 00:05:19,000
+ So I can just click on test now and let me just say book a flight.
+
+62
+00:05:19,000 --> 00:05:22,200
+ So it is asking me for the departure dates.
+
+63
+00:05:22,200 --> 00:05:31,760
+ So let me just say 30th December 2025 and then it is asking me for a return date.
+
+64
+00:05:31,760 --> 00:05:43,900
+ So I will say 15 January 2026 and it is asking me to provide the source.
+
+65
+00:05:43,900 --> 00:05:55,440
+ So I will say Chicago and then it is asking for destination maybe New York.
+
+66
+00:05:55,440 --> 00:06:02,560
+ So it is asking me for the confirmation can I go ahead with request and let me just say yes
+
+67
+00:06:02,560 --> 00:06:07,560
+ and now it is saying intent book flight is fulfil.
+
+68
+00:06:07,560 --> 00:06:15,720
+ Now if we integrate this chatbot built using legs with a backend data source maybe using
+
+69
+00:06:15,720 --> 00:06:23,480
+ AWS Lambda function then it can take all this input that we have provided and make a entry
+
+70
+00:06:23,480 --> 00:06:29,000
+ in the database and get a booking confirmation number.
+
+71
+00:06:29,000 --> 00:06:34,040
+ So that is how you can build chatbots using Amazon legs.
+
+72
+00:06:34,040 --> 00:06:35,040
+ Hope this was useful.
+
+73
+00:06:35,040 --> 00:06:36,040
+ I will see you in the next lecture.
+
