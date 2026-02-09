@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:05,720
+ So, hello everyone in this video, we are going to just write some functions related to
+
+2
+00:00:05,720 --> 00:00:07,720
+ validating credentials, okay.
+
+3
+00:00:07,720 --> 00:00:15,640
+ So for that first which we are going to do is import toast is from react host.
+
+4
+00:00:15,640 --> 00:00:22,560
+ So react host, we are going to just import this toast package from react host and I have
+
+5
+00:00:22,560 --> 00:00:26,160
+ copied one function for this variegate credential.
+
+6
+00:00:26,160 --> 00:00:31,780
+ So I am just going to paste here and I am going to explain why it is used like for this
+
+7
+00:00:31,780 --> 00:00:36,560
+ const validate credentials if user name is not present, okay.
+
+8
+00:00:36,560 --> 00:00:42,560
+ In that case we are just returning that toast.error like from this toast package full
+
+9
+00:00:42,560 --> 00:00:43,560
+ name is required.
+
+10
+00:00:43,560 --> 00:00:48,680
+ Similarly for email we are going to return as toast.error email is required and for this
+
+11
+00:00:48,680 --> 00:00:56,000
+ email we have a particular format like suppose asmocodes at the rate of gmail.com, okay.
+
+12
+00:00:56,000 --> 00:01:01,800
+ So for that purpose I have just pasted this pattern here in order to test whether the email
+
+13
+00:01:01,800 --> 00:01:07,120
+ format is correct or not and same thing for the password like if the password is not present
+
+14
+00:01:07,120 --> 00:01:11,080
+ then we are going to just return the toast.error password is required.
+
+15
+00:01:11,080 --> 00:01:15,480
+ Similarly if the password is not length is smaller than 6 in that case we are just returning
+
+16
+00:01:15,480 --> 00:01:18,880
+ the toast.error password must be at least 6 characters long.
+
+17
+00:01:18,880 --> 00:01:23,040
+ So we are just going to use this validate credentials function.
+
+18
+00:01:23,040 --> 00:01:37,120
+ So what we are actually going to do is suppose like for example we have to copy this one
+
+19
+00:01:37,120 --> 00:01:39,560
+ and paste it here.
+
+20
+00:01:39,560 --> 00:01:48,160
+ There is a lot of sound that is coming from outside that is why I have to cut the video.
+
+21
+00:01:48,160 --> 00:01:53,200
+ So now after this we are just going to just use this function okay.
+
+22
+00:01:53,200 --> 00:02:01,960
+ So validate credentials copy this one and we are going to just use it here and we are going
+
+23
+00:02:01,960 --> 00:02:05,000
+ to write also the conditions we can directly use it like this okay.
+
+24
+00:02:05,000 --> 00:02:13,800
+ So if the validate credentials function is returning true like it is returning true then
+
+25
+00:02:13,800 --> 00:02:20,400
+ in that case we are just going to take this that sign of function.
+
+26
+00:02:20,400 --> 00:02:30,520
+ So let us do one thing here what we actually can do is we can just take our sign of function
+
+27
+00:02:30,520 --> 00:02:42,320
+ from the author store so const let's destructure it so sign of equals to author store.
+
+28
+00:02:42,320 --> 00:02:47,920
+ So we are just going to take up this sign of function we are going to just re destructure
+
+29
+00:02:47,920 --> 00:02:58,240
+ it from this author store and we are just going to return this sign up and with that we
+
+30
+00:02:58,240 --> 00:03:07,600
+ are going to take whatever there is it in like username and email and password okay.
+
+31
+00:03:07,600 --> 00:03:17,000
+ So control let's save so we can just import it I think it is not defined so import author
+
+32
+00:03:17,000 --> 00:03:27,920
+ store from dash okay where is the author store actually I think it is in the okay store
+
+33
+00:03:27,920 --> 00:03:36,920
+ folder so wait a second so dot dot slash store slash author store.
+
+34
+00:03:36,920 --> 00:03:43,240
+ So we can save it now we can test this one so what we actually going to do that in the
+
+35
+00:03:43,240 --> 00:03:56,280
+ terminal let's go to the front end folder CD front end and NPM run dev let's start this
+
+36
+00:03:56,280 --> 00:04:13,800
+ one so it's going to start up so let's navigate to this site.
+
+37
+00:04:13,800 --> 00:04:43,440
+ Let's go to the I guess it was sign up is right so we have this so what we can do is
+
+38
+00:04:43,440 --> 00:04:56,480
+ SMO underscore okay asthma courts and we'll have this asthma courts at the rate of gmail.com
+
+39
+00:04:56,480 --> 00:05:02,720
+ and we are just going to take whatever the password is for instance I'm going to use my
+
+40
+00:05:02,720 --> 00:05:12,200
+ password here and let's hit the sign up okay sign up is failed please try again I think
+
+41
+00:05:12,200 --> 00:05:17,160
+ there's some issue with like we haven't started the backend but as you can see that this
+
+42
+00:05:17,160 --> 00:05:24,600
+ toast package is working right so there's a error connection issue with local host 5000
+
+43
+00:05:24,600 --> 00:05:30,360
+ so that means that it is not working like the backend is not running up but as you can
+
+44
+00:05:30,360 --> 00:05:36,960
+ see we will just when you just run the backend it will automatically so the success page okay
+
+45
+00:05:36,960 --> 00:05:39,640
+ So, you can try on this, we will meet in the next video.
+
