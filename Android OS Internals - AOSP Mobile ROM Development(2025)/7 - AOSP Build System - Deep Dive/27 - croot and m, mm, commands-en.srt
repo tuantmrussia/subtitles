@@ -1,0 +1,212 @@
+1
+00:00:05,000 --> 00:00:07,140
+So the next command is sea route.
+
+2
+00:00:07,160 --> 00:00:11,390
+So sea route helps us to change the directory to the top of the tree.
+
+3
+00:00:11,400 --> 00:00:18,920
+So for example, so at the moment I'm in a speed l folder I, I'm navigating to build the folder.
+
+4
+00:00:18,950 --> 00:00:21,110
+Let's get into blueprint folder.
+
+5
+00:00:21,200 --> 00:00:23,420
+So now I'm within the blueprint folder.
+
+6
+00:00:23,420 --> 00:00:29,480
+So if I need to come back to the route folder so you can simply type C route, then check you are in
+
+7
+00:00:29,480 --> 00:00:30,590
+the road folder.
+
+8
+00:00:30,590 --> 00:00:34,730
+So C route simply helps you to change the directory to the top of the tree.
+
+9
+00:00:34,730 --> 00:00:37,130
+So next we have the M commands.
+
+10
+00:00:37,130 --> 00:00:39,830
+So M commands are basically to build aosp.
+
+11
+00:00:39,830 --> 00:00:42,140
+So we have different variants of RM commands.
+
+12
+00:00:42,140 --> 00:00:45,950
+So simply giving M will make from top of the tree.
+
+13
+00:00:45,950 --> 00:00:52,550
+So we'll be using this to build the complete aosp so you can simply go ahead and type m hyphen.
+
+14
+00:00:52,550 --> 00:00:58,880
+This parameter is optional, but you can specify the number of logical codes to be used while building
+
+15
+00:00:58,880 --> 00:01:05,420
+aosp so you can pass hyphen J and the number of course you want to use for the build.
+
+16
+00:01:05,420 --> 00:01:08,060
+And this will just simply start the build.
+
+17
+00:01:08,270 --> 00:01:09,440
+So I'm just cancelling it.
+
+18
+00:01:09,770 --> 00:01:12,380
+So RM will make from the top of the tree.
+
+19
+00:01:12,380 --> 00:01:14,900
+So let's look at hm mm mm hm.
+
+20
+00:01:14,900 --> 00:01:15,290
+Mm.
+
+21
+00:01:15,290 --> 00:01:19,450
+Triple and m a and triple m a.
+
+22
+00:01:19,460 --> 00:01:26,750
+So the M command basically builds and installs all the modules in the current directory and their dependencies.
+
+23
+00:01:27,170 --> 00:01:31,580
+So as an example, so I am now in the apps folder.
+
+24
+00:01:31,580 --> 00:01:36,620
+So inside apps folder, I'm getting into one of the app, for example, launcher three.
+
+25
+00:01:36,830 --> 00:01:44,300
+So from here if I use MM command, it is going to build the launcher three module alone so it will compile
+
+26
+00:01:44,300 --> 00:01:46,430
+all the dependencies of launcher three.
+
+27
+00:01:46,550 --> 00:01:51,800
+So now it's going to only compile launcher three, not the complete build.
+
+28
+00:01:51,800 --> 00:01:59,810
+So please note that a mum command will not install the APK into the image files, so it will only build
+
+29
+00:01:59,810 --> 00:02:02,030
+or compile the current module.
+
+30
+00:02:02,030 --> 00:02:07,730
+So this is useful when you make a modification to your project and you want to make sure there is no
+
+31
+00:02:07,730 --> 00:02:14,000
+compilation issue or anything, but in case if you want to install it into the image, then you have
+
+32
+00:02:14,000 --> 00:02:21,320
+to use the use either the ADB command to install the APK from the intermediate directory or you could
+
+33
+00:02:21,620 --> 00:02:23,060
+run the hm command.
+
+34
+00:02:23,060 --> 00:02:25,520
+So the hm command will change the images.
+
+35
+00:02:25,520 --> 00:02:28,610
+So m command will not change the images.
+
+36
+00:02:28,910 --> 00:02:31,700
+And then we have the triple m command.
+
+37
+00:02:31,700 --> 00:02:35,960
+So in case of triple m, you need to parse the module names.
+
+38
+00:02:35,960 --> 00:02:45,260
+So let me come back now am in apps folder and from here I'm running and I'm passing launcher two and
+
+39
+00:02:45,260 --> 00:02:46,670
+maybe calendar app.
+
+40
+00:02:46,670 --> 00:02:52,250
+So I'm passing, I'm passing two modules into triple m command, sorry launcher three.
+
+41
+00:02:52,250 --> 00:02:57,500
+So now it will compel two modules, the launcher three and the calendar module.
+
+42
+00:02:57,500 --> 00:03:01,580
+And again here please note that it won't change the image.
+
+43
+00:03:01,580 --> 00:03:07,520
+So this is helpful when you want to compile a set of modules which you have changed and to make sure
+
+44
+00:03:07,520 --> 00:03:09,890
+that nothing is breaking the build.
+
+45
+00:03:10,280 --> 00:03:12,230
+So I have compiled the modules recently.
+
+46
+00:03:12,230 --> 00:03:13,970
+That's why it has nothing to do here.
+
+47
+00:03:14,270 --> 00:03:17,300
+So now we have M let's come back here.
+
+48
+00:03:17,300 --> 00:03:23,060
+So the M command, it compiles the entire thing and it will build the images.
+
+49
+00:03:23,420 --> 00:03:30,860
+M compiles only the current directory, so please note it won't install the APK on its own.
+
+50
+00:03:30,860 --> 00:03:35,510
+If you want to install the pick it to the current emulator, then you need to do it using the ADB command.
+
+51
+00:03:35,510 --> 00:03:41,270
+Or you can rerun the M command to build the images for you and then we have triple M.
+
+52
+00:03:41,270 --> 00:03:46,760
+This will build and install all the modules in the supplied directory, send their dependencies and
+
+53
+00:03:46,760 --> 00:03:52,310
+then we have m a and a, it's same as M and triple.
+
