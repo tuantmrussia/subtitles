@@ -1,296 +1,320 @@
 1
-00:00:00,000 --> 00:00:07,340
- Let's discuss Android overlays, overlays or RRO are one of the most essential techniques
+00:00:00,780 --> 00:00:08,490
+Let's discuss Android of athletes overlays, or RRO, are one of the most essential techniques for customizing
 
 2
-00:00:07,340 --> 00:00:13,320
- for customizing Android.
+00:00:08,490 --> 00:00:09,090
+Android.
 
 3
-00:00:13,320 --> 00:00:25,340
- So what exactly is an overlay or RRO?
+00:00:10,490 --> 00:00:10,970
+I you.
 
 4
-00:00:25,340 --> 00:00:32,660
- In simple words, a runtime resource overlay or RRO is a package that changes the resource
+00:00:21,090 --> 00:00:24,390
+So what exactly is an overlay or ARRL?
 
 5
-00:00:32,660 --> 00:00:35,840
- values of a target package.
+00:00:25,140 --> 00:00:33,300
+In simple words, a runtime resource overlay, or RRO, is a package that changes the resource values
 
 6
-00:00:35,840 --> 00:00:45,040
- So for now, just imagine it as an APK with only resource files in it.
+00:00:33,300 --> 00:00:34,950
+of a target package.
 
 7
-00:00:45,040 --> 00:00:49,920
- So what can be overlaid by using the RRO technique?
+00:00:35,610 --> 00:00:42,150
+So for now, just imagine it as an epic game with only resource files in it.
 
 8
-00:00:49,920 --> 00:00:56,980
- So RRO can technically overlay all the resource files like layouts, strings, colors, and
+00:00:44,780 --> 00:00:48,740
+So what can be overlaid by using the RRO technique?
 
 9
-00:00:56,980 --> 00:00:59,520
- other XML resource files.
+00:00:49,700 --> 00:00:58,220
+So Ororo can technically overlay all the resource files like layouts, screens, colors and other similar
 
 10
-00:00:59,520 --> 00:01:03,440
- It can also overlay drawables and fonts.
+00:00:58,250 --> 00:00:58,880
+sorts files.
 
 11
-00:01:03,440 --> 00:01:09,160
- So by doing this, you could dynamically change the look and feel of an application or
+00:00:59,360 --> 00:01:02,960
+It can also overlay drivers and fonts.
 
 12
-00:01:09,160 --> 00:01:11,360
- a system UI component.
+00:01:03,260 --> 00:01:10,790
+So by doing this, you could dynamically change the look and feel of an application or a system UI component.
 
 13
-00:01:11,360 --> 00:01:17,080
- So in this simple example, you could see that a blue Android is changed into a green
+00:01:11,120 --> 00:01:18,350
+So in this simple example, you could see that a blue android is changed into a green android by using
 
 14
-00:01:17,080 --> 00:01:19,760
- Android by using the resource overlays.
+00:01:18,350 --> 00:01:19,480
+the resource overlays.
 
 15
-00:01:19,760 --> 00:01:23,400
- It could be either runtime or static overlays.
+00:01:19,550 --> 00:01:26,250
+It could be either runtime or static overlays what cannot be overlaid by arrows.
 
 16
-00:01:23,400 --> 00:01:26,840
- What can it be overlaid by RRO?
+00:01:26,630 --> 00:01:29,170
+So you cannot overlay any source code.
 
 17
-00:01:26,840 --> 00:01:33,880
- So you can overlay any source code that means the Java or Kotlin source code files and
+00:01:29,330 --> 00:01:34,670
+That means the Java or Kotlin source code files and would be overlaid.
 
 18
-00:01:33,880 --> 00:01:35,320
- it would be overlaid.
+00:01:35,090 --> 00:01:40,500
+So, for example, if you consider the application structure, you can overlay water coming under the
 
 19
-00:01:35,320 --> 00:01:40,000
- So for example, if you consider an application structure, you can overlay whatever coming
+00:01:40,760 --> 00:01:48,860
+resource field and water coming under the SIRC folder, which is the Java and codling classes that cannot
 
 20
-00:01:40,000 --> 00:01:42,880
- under the resource folder.
+00:01:48,860 --> 00:01:49,820
+be overlooked.
 
 21
-00:01:42,880 --> 00:01:48,640
- And whatever coming under them, SRC folder, which is the Java and Kotlin classes, that
+00:01:53,860 --> 00:01:57,710
+So let's have a closer look at the RRO overlay process.
 
 22
-00:01:48,640 --> 00:01:54,120
- cannot be overlaid.
+00:01:58,570 --> 00:02:06,220
+So this diagram shows a high level overview of how an application is compiled, executed and overlaid
 
 23
-00:01:54,120 --> 00:01:58,840
- So let's have a closer look at the RRO overlay process.
+00:02:06,220 --> 00:02:07,420
+by an arrow.
 
 24
-00:01:58,840 --> 00:02:05,280
- So this diagram shows a high level overview of how an application is compiled, executed
+00:02:07,900 --> 00:02:16,690
+So that top section shows how a normal Android application is converted into an Android epic and executed.
 
 25
-00:02:05,280 --> 00:02:08,120
- and overlaid by an RRO.
+00:02:16,990 --> 00:02:24,160
+And the bottom part shows how an RRO project gets converted into an RRO, a beacon and gets overlaid
 
 26
-00:02:08,120 --> 00:02:15,840
- So the top section shows how a normal Android application is converted into an Android APK
+00:02:24,310 --> 00:02:25,600
+into the process.
 
 27
-00:02:15,840 --> 00:02:17,200
- and it's executed.
+00:02:26,560 --> 00:02:33,700
+So in case of a normal Android application, we have mainly these files, right?
 
 28
-00:02:17,200 --> 00:02:23,560
- And the bottom part shows how an RRO project gets converted into an RRO APK and gets
+00:02:34,150 --> 00:02:41,230
+So the Android Manifest Dot example is one of the code files where we configure a lot of things for
 
 29
-00:02:23,560 --> 00:02:26,880
- overlaid into the app process.
+00:02:41,230 --> 00:02:42,040
+that application.
 
 30
-00:02:26,880 --> 00:02:34,360
- So in case of a normal Android application, we have mainly these files, right?
+00:02:42,160 --> 00:02:48,640
+And then we have the Java and Kotlin files where we like the business logic and other logic.
 
 31
-00:02:34,360 --> 00:02:41,240
- So the AndroidManifer.xml is one of the core files where we configure a lot of things for
+00:02:48,850 --> 00:02:49,110
+Right?
 
 32
-00:02:41,240 --> 00:02:42,400
- the application.
+00:02:49,150 --> 00:02:56,380
+And also, we have the resources folder where we have all the UI elements like the layout and other
 
 33
-00:02:42,400 --> 00:02:48,320
- And then we have the Java and Kotlin files where we tried the business logic and other
+00:02:56,380 --> 00:03:04,500
+images or drawing ability to use product or the resource folder is the one which we are actually overlaying,
 
 34
-00:02:48,320 --> 00:02:49,480
- logics, right?
+00:03:04,540 --> 00:03:04,810
+right?
 
 35
-00:02:49,480 --> 00:02:55,440
- And also we have the resources folder where we have all the UI elements like the layouts
+00:03:04,840 --> 00:03:09,610
+So when this project is built, it gets converted into an epic.
 
 36
-00:02:55,440 --> 00:03:00,680
- and other images or drawables which we use for the project.
+00:03:10,030 --> 00:03:15,910
+And if you open up any beginning, you can see that within that there is the Android Manifest or text
 
 37
-00:03:00,680 --> 00:03:05,080
- The resource folder is the one which we are actually overlaid, right?
+00:03:15,920 --> 00:03:16,300
+someone.
 
 38
-00:03:05,080 --> 00:03:10,280
- So when this project is built, it gets converted into an APK.
+00:03:16,450 --> 00:03:22,300
+And then we have got the closest known text file, which is basically the compiled form of Java and
 
 39
-00:03:10,280 --> 00:03:15,560
- And if you open up an APK, you can see that within that there is the AndroidManifer
+00:03:22,300 --> 00:03:23,110
+Kotlin files.
 
 40
-00:03:15,560 --> 00:03:20,720
- dot XML and then we have got the classes dot text file, which is basically the compiled
+00:03:23,380 --> 00:03:29,200
+And then we have got the resources, not add a C file, which is basically a compiled form of the resource
 
 41
-00:03:20,720 --> 00:03:23,640
- form of Java and Kotlin files.
+00:03:29,200 --> 00:03:29,680
+facts.
 
 42
-00:03:23,640 --> 00:03:28,320
- And then we have got the resources dot ARSC file, which is basically a compiled form
+00:03:29,920 --> 00:03:35,340
+So during the execution, the AI process will make use of the classes or index and Apatosaurus Resources,
 
 43
-00:03:28,320 --> 00:03:30,120
- of the resource files.
+00:03:35,350 --> 00:03:38,870
+not ADC, to run the application.
 
 44
-00:03:30,120 --> 00:03:34,920
- So during the execution, the app process will make use of the classes dot decks and app
+00:03:38,890 --> 00:03:41,950
+So that's how a normal Android application runs.
 
 45
-00:03:34,920 --> 00:03:39,080
- resources dot ARSC to run the application.
+00:03:42,070 --> 00:03:50,950
+So when there is a RRO in scope, then we how RRO the source of stored ADC and RRO ID map as well within
 
 46
-00:03:39,080 --> 00:03:42,240
- So that's how a normal Android application runs.
+00:03:50,950 --> 00:03:51,520
+the process?
 
 47
-00:03:42,240 --> 00:03:50,400
- So when there is a RRO in scope, then we have RRO resources dot ARSC and RRO ID map as
+00:03:51,850 --> 00:03:52,150
+OK.
 
 48
-00:03:50,400 --> 00:03:52,600
- well within the process, okay?
+00:03:52,390 --> 00:03:56,320
+So RRO resources stored at a C is nothing but the overlay.
 
 49
-00:03:52,600 --> 00:03:58,640
- So RRO resources dot ARSC is nothing but the overlayable resources, which is available
+00:03:56,320 --> 00:04:03,430
+Enable Resources, which is available within the RRO epic and the RRO IED map, is nothing but a tamper
 
 50
-00:03:58,640 --> 00:04:05,880
- within the RRO APK and the RRO ID map is nothing but a table, which has a one or one mapping
+00:04:03,520 --> 00:04:07,450
+which has a one or one mapping the available resources.
 
 51
-00:04:05,880 --> 00:04:08,440
- the over label resources, okay?
+00:04:07,720 --> 00:04:10,600
+OK, so now let's have a look at the RRO section.
 
 52
-00:04:08,440 --> 00:04:11,320
- So now let's have a look at the RRO section.
+00:04:11,140 --> 00:04:18,310
+So in normal, RRO Project will consist of only an Android manifest or example and the resource files.
 
 53
-00:04:11,320 --> 00:04:19,040
- So a normal RRO project will consist of only an AndroidManifer.xml and the resource files.
+00:04:18,790 --> 00:04:26,020
+So on completion or own build process, this will get converted into an RRO API game and in the RRO
 
 54
-00:04:19,040 --> 00:04:25,280
- So on compilation or on build process, this will get converted into an RRO APK.
+00:04:26,020 --> 00:04:31,960
+epic game, that'll be the Android Manifest cortex similar and the resources don't add a C file.
 
 55
-00:04:25,280 --> 00:04:32,240
- And in the RRO APK, there will be the AndroidManifer.xml and the resources dot ARSC file.
+00:04:32,020 --> 00:04:37,930
+So the resources store to add a C file is nothing but a compiler form of resources file during the execution
 
 56
-00:04:32,240 --> 00:04:37,200
- So the resources dot ARSC file is nothing but the compiled form of resources file.
+00:04:37,930 --> 00:04:38,440
+process.
 
 57
-00:04:37,200 --> 00:04:42,640
- During the execution process, the app process will pick up this particular resources dot
+00:04:38,660 --> 00:04:45,220
+The AI process will pick up this particular resources also stored at a C, and it will look at the RRO
 
 58
-00:04:42,640 --> 00:04:50,320
- ARSC and we'll look at the RRO ID map to get a corresponding resource ID for the over
+00:04:45,220 --> 00:04:51,350
+IED map to get the corresponding resource IED for the overlay the source.
 
 59
-00:04:50,320 --> 00:04:56,320
- label resource. And during the runtime, it will basically overlay the app resources dot
+00:04:51,580 --> 00:04:58,630
+And during the runtime, it will basically overlay the App Resources Store DRC with the RRO Resource
 
 60
-00:04:56,320 --> 00:05:04,080
- ARSC with the RRO resource dot ARSC. So please note that only the particular resource
+00:04:58,630 --> 00:05:04,930
+Note and a C, so please note that only the particular resource will get overlaid.
 
 61
-00:05:04,080 --> 00:05:09,120
- will get overlayed. So for example, if you are only overlaying a layout XML, the only that
+00:05:04,960 --> 00:05:10,210
+So for example, if you are only overlaying a layout example, then only that particular example will
 
 62
-00:05:09,120 --> 00:05:14,600
- particular XML will get overlayed. The rest of the resources will be used from app resources
+00:05:10,210 --> 00:05:10,840
+get all.
 
 63
-00:05:14,600 --> 00:05:20,240
- dot ARSC. So in short, during the runtime, the app process will look at the RRO ID
+00:05:10,990 --> 00:05:15,400
+The rest of the resources will be used from Apple stores and start at a scene.
 
 64
-00:05:20,240 --> 00:05:28,080
- map and gets the right over label resource ID and overlay that resource on top of the app
+00:05:15,610 --> 00:05:22,790
+So in short, during the runtime, the AI process will look at the RRO ID map and gets the right all
 
 65
-00:05:28,080 --> 00:05:34,320
- resource dot ARSC. So that's how an RRO overlay process worked on a very high level.
+00:05:22,790 --> 00:05:27,930
+the label to society and overlay that resource on top of the app.
 
 66
-00:05:34,320 --> 00:05:42,800
- Let's consider a real world application of static and dynamic RROs. Consider an example of
+00:05:27,970 --> 00:05:29,020
+The source code at us.
 
 67
-00:05:42,800 --> 00:05:49,840
- mobile manufacturers like Samsung, Motorola or Nokia. So they could use a static overlay for
+00:05:29,470 --> 00:05:34,270
+So that's how an RRO overlay process worked on it very high level.
 
 68
-00:05:49,840 --> 00:05:56,960
- creating different brands of mobile phones. So in this case, you can see brand X and brand Y
+00:05:35,370 --> 00:05:40,120
+So let's consider a real world application of static and dynamic RRO.
 
 69
-00:05:56,960 --> 00:06:05,440
- are created from a single ASP system image. So similarly, they could use dynamic RROs to create
+00:05:41,140 --> 00:05:48,970
+Consider an example of mobile manufacturers like Samsung, Motorola or Nokia, so they could use a static
 
 70
-00:06:05,440 --> 00:06:13,760
- different skins for a system. Okay. So as you could see here, on top of brand X and Y, they could
+00:05:48,970 --> 00:05:52,330
+overlay or creating different brands of mobile phones.
 
 71
-00:06:13,760 --> 00:06:24,000
- use dynamic RROs and create a blue skin and a red skin. So here is the difference between static
+00:05:52,600 --> 00:06:00,820
+So in this case, you can see Brand X and Brand Y are created from a single AOSP system image.
 
 72
-00:06:24,000 --> 00:06:31,840
- and dynamic RROs. The static RROs are applied at the build time and cannot be deactivated or
+00:06:01,000 --> 00:06:08,530
+So similarly, they could use dynamic arrows to create different skins for a system.
 
 73
-00:06:31,840 --> 00:06:40,400
- disabled later. Whereas dynamic RROs are enabled at runtime and it can be programmatically
+00:06:08,690 --> 00:06:09,010
+OK.
 
 74
-00:06:40,400 --> 00:06:51,920
- enabled or disabled at a later stage.
+00:06:09,250 --> 00:06:17,080
+So as you could see here, on top of Brand X and Y, they could use dynamic arrows and create a blue
+
+75
+00:06:17,080 --> 00:06:19,510
+skin and a nice skin.
+
+76
+00:06:21,400 --> 00:06:25,660
+So here is the difference between static and dynamic arrows.
+
+77
+00:06:25,780 --> 00:06:34,000
+The static arrows are applied at the build time and cannot be deactivated or disabled later, whereas
+
+78
+00:06:34,330 --> 00:06:42,580
+dynamic arrow arrows are enabled at runtime and it can be programmatically enabled or disabled at a
+
+79
+00:06:42,790 --> 00:06:43,960
+later stage.
+
+80
+00:06:45,000 --> 00:06:45,480
+Thank you.
 
