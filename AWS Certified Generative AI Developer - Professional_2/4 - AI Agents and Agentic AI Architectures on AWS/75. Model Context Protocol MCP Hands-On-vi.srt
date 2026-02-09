@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:17,000
+Bây giờ trong bài giảng này, tôi sẽ cho các bạn xem một bản tóm tắt về làm thế nào bạn có thể cài đặt một máy chủ AWS CloudFormation MCP trên Amazon QCLI, và sau đó xây dựng các mẫu của Đám mây bằng máy chủ MCP.
+
+2
+00:00:17,000 --> 00:00:29,000
+Bây giờ đây là kiến trúc chúng tôi sẽ xây dựng và thực hiện, và điều này sẽ mất rất nhiều thời gian, vì vậy những gì tôi đã làm là tôi đã cài đặt các khách hàng QCLI, do đó, tôi sẽ chỉ cho bạn làm thế nào để cài đặt máy chủ xử lý đám mây.
+
+3
+00:00:29,000 --> 00:00:38,000
+Và sau đó tôi sẽ chỉ cho các bạn làm thế nào để xây dựng các mẫu mây cho các dịch vụ AWS thông qua các lệnh ngôn ngữ tự nhiên.
+
+4
+00:00:38,000 --> 00:00:49,000
+Bây giờ nếu bạn quan tâm đến việc xây dựng các giải pháp từng bước một, sau đó bạn có thể xem xét khóa học cụ thể của tôi, mà đã được thực hiện bởi hơn 6.000 học viên.
+
+5
+00:00:49,000 --> 00:01:07,000
+Bây giờ để tiết kiệm thời gian, những gì tôi đã làm là tôi đã cài đặt Amazon QCLI, do đó, tôi sẽ chỉ cho bạn làm thế nào bạn có thể cài đặt máy chủ MCP CloudFormation một khi bạn đã cài đặt Amazon QCLI như là khách hàng, vì vậy bạn sẽ có được một tổng quan về cách thức thực sự máy phục vụ MCP hoạt động.
+
+6
+00:01:07,000 --> 00:01:34,000
+Được rồi, bây giờ chúng ta hãy đi tới Google và tìm kiếm các máy chủ MCP, và bạn sẽ thấy toàn bộ các liên kết, chỉ cần nhấn vào đây để truy cập vào máy chủ AWS MCP, và họ có thể thay đổi URL, chỉ cần nhìn xung quanh và xem địa chỉ URL là gì, bởi vì họ đang liên tục cập nhật các máy chủ và trang web, v.v.
+
+7
+00:01:34,000 --> 00:01:51,000
+Được rồi, bây giờ bạn có các máy chủ AWS MCP, vì vậy chúng ta có thể xem qua một vài trong số đó, có lẽ chúng ta sẽ xem máy chủ của tổ chức đám mây, vì vậy hãy để tôi chỉ cần đi dưới sự triển khai cơ sở hạ tầng và chỉ cần nhấp chuột vào đây, và bạn có thể thấy máy chủ AWS CloudFormation MCP.
+
+8
+00:01:51,000 --> 00:02:20,000
+Vì vậy, nếu tôi chỉ cần nhấp chuột vào đây, nó sẽ cung cấp cho tất cả các chi tiết, một ít AWS CloudFormation MCP máy chủ, vì vậy đây là những tính năng tạo tài nguyên đọc, và một số khác, đây là một số điều kiện tiên quyết, làm thế nào bạn cần phải cài đặt nó với mã nguồn dữ liệu cấu hình, và đây là tập tin cấu hình, và cuối cùng đây là những công cụ có sẵn như một phần của máy chủ này, vì vậy chúng tôi đang thảo luận về khả năng mà máy chủ MP,
+
+9
+00:02:20,000 --> 00:02:39,000
+Máy chủ MCP, vì vậy bạn có thể tạo ra các nguồn tài nguyên, có thể là S3 xô subda, bạn có thể nhận được chi tiết nhưng liên quan đến tài nguyên cụ thể, vì vậy hãy có được cấu hình của một dễ dàng để ví dụ, bạn có thể cập nhật tài nguyên, xóa, danh sách, và tất cả các thứ khác, và chúng tôi sẽ thử ra một số trong số này, okay.
+
+10
+00:02:39,000 --> 00:02:58,000
+Bây giờ hãy để tôi quay trở lại với mã VS của tôi, và bạn có thể thấy tôi đã viết một số bước trên những gì chúng tôi cần phải làm, vì vậy đầu tiên chúng tôi cần cài đặt, hãy nói rằng chúng tôi đang cài đặt máy chủ của tổ hợp đám mây, vì vậy cài đặt máy chủ MCP CloudFormation, sau đó những gì tôi đã làm là tôi đã lấy liên kết này, và chỉ cần dán nó ở đây.
+
+11
+00:02:58,000 --> 00:03:21,000
+Vì vậy, đầu tiên chúng tôi sẽ cài đặt máy chủ định vị AWS, thứ hai chúng tôi sẽ cấu hình trình phục vụ AWS CloudFormation với Q CLI Amazon của chúng tôi bằng cách tạo tập tin cấu hình mà chúng tôi vừa thấy ở đây, vì vậy nếu tôi chỉ cần di chuyển lên, đây là tập tin cấu hình mà chúng tôi cần thiết lập, và chỉ cần nhớ ở đây là hồ sơ AWS,
+
+12
+00:03:21,000 --> 00:03:50,000
+Nó sẽ là phân tích cLI mà bạn đã thiết lập, và khi hầu hết các trường hợp, nếu bạn không thiết lập, nó sẽ được mặc định, một khi bạn đã cung cấp lm roll để CLI, okay, và sau đó cuối cùng điều thứ ba bạn cần phải làm là, bạn cũng cần phải chắc chắn rằng AWS CLI được cấu hình với lM cuộn, và tất cả các cài đặt này chúng tôi sẽ làm bằng cách cung cấp các lệnh tự nhiên cho QLI của chúng tôi, vì vậy hãy để tôi chỉ cần sao chép điều này đầu tiên.
+
+13
+00:03:50,000 --> 00:04:16,000
+Và hãy để tôi chỉ làm cho nó đầy đủ màn hình, okay, vì vậy tôi sẽ nói cài đặt AWS CloudFormation server, và tôi sẽ cung cấp cho bạn địa chỉ URL này, vì vậy ngay cả khi bạn không đưa địa chỉ URL này, nó nên okay, nó sẽ mất một chút thời gian để cài đặt này, nhưng nếu bạn chỉ cần cung cấp các URL, nó có thể dễ dàng hơn, vì vậy tôi sẽ chỉ cần nói.
+
+14
+00:04:16,000 --> 00:04:45,000
+Vì vậy, bạn có thể thấy ở đây, nó đang sử dụng các lệnh được yêu cầu thực hiện đập công cụ, và nó nói rằng nó muốn nhân bản địa chỉ URL này cụ thể, vì vậy nếu tôi nói t, có nghĩa là tin tưởng, nó sẽ chạy tất cả các lệnh được yêu cầu để thực hiện điều này, nếu tôi chỉ nói lý do tại sao, sau đó nó sẽ chỉ chạy lệnh này cụ thể, okay, vì vậy, hãy để tôi chỉ cần nói có cho bây giờ, và nó nhân rộng này máy chủ MCP cụ thể, vì vậy nó đang yêu cầu tôi cho người dùng tên,
+
+15
+00:04:45,000 --> 00:05:14,000
+nhưng tôi không có tên người dùng cho điều này, vì vậy có lẽ tôi sẽ chỉ nói nhập, và bạn có thể nói xác thực thất bại, và nó sẽ chỉ tìm ra một cách khác để nhân bản kho này, vì vậy tôi sẽ chỉ nói có thể tin tưởng thời gian này, được rồi, vì vậy nó đọc thư mục này, và do đó, bạn có thể thấy nó đang chạy một loạt các lệnh.
+
+16
+00:05:14,000 --> 00:05:43,000
+Vì vậy, tôi nghĩ rằng nó đang cài đặt khởi động của ba, bây giờ nó đã chạy một số lệnh khác, vì vậy nó đang cài đặt Ppex này được cài đặt, và nó nói rằng, được rồi, bây giờ cho tôi cài đặt máy chủ hình đám mây MCP, và nó đã cài đặt này phòng thí nghiệm AWS CP, và sau đó nó đang làm một số điều khác, vì vậy bạn có thể thấy, tuyệt vời, tôi cần tạo ra cấu hình MCP.
+
+17
+00:05:43,000 --> 00:06:12,000
+Bây giờ, tập tin cấu hình MCP, vì vậy những gì nó đã làm là, vì vậy nếu bạn có thể chỉ cần đẩy điều này xuống một chút, và vì vậy nó đã hoàn thành cài đặt này cài đặt AWS xem máy chủ MCP, bây giờ nó phải cấu hình Amazon của chúng tôi với máy chủ đám mây, và để nó cần xác định tập tin cấu hình MCP này, trong trường hợp của tôi, nó chỉ hiển thị rằng nó đã được tạo ra tập tin cấu hình MCP này,
+
+18
+00:06:12,000 --> 00:06:41,000
+Vì vậy, trong trường hợp của bạn, khi bạn mang theo dấu nhắc, có thể không, bởi vì mỗi lần nó mất một cách tiếp cận khác nhau, vì vậy hãy chắc chắn rằng bạn cung cấp điều này dấu nhắc, nếu nó đã không cấu hình tập tin cấu hình MCP này, vì vậy hãy chắc chắn rằng tất cả ba công việc được hoàn thành bởi QCLI, vì vậy hãy để tôi chỉ cần quay trở lại bây giờ, và hãy xem nơi nó đã đạt, vì vậy tôi nghĩ rằng nó đang muốn cấu hình này QMPSON Amazon, vì vậy về cơ bản đây là tập tin cấu hình,
+
+19
+00:06:41,000 --> 00:07:10,000
+Vì vậy, nếu bạn chỉ cần đi ở đây, do đó, bạn sẽ thấy, đây là tập tin cụ thể, nó đang nói về, nơi chúng tôi cấu hình QCLI với máy chủ MCP, vì vậy nó sẽ có một cái gì đó rất tương tự, ngoại trừ hồ sơ này của tôi, ở đây nó nên được mặc định, hoặc bất kỳ hồ sơ khác mà bạn đã đặt, vì vậy nếu tôi chỉ cần di chuyển xuống, và bạn có thể thấy ở đây hồ sơ AWS là mặc định, đó là những gì tôi có ở đây cho cL của tôi, okay, bây giờ nó đang nói tạo tập tin cấu hình MC
+
+20
+00:07:10,000 --> 00:07:39,000
+Với trình phục vụ hình mây này, tôi sẽ nói sự tin tưởng, vì vậy nó chỉ đọc tập tin cấu hình này, vì vậy nó nói rằng các giấy ủy nhiệm AWS được cấu hình đúng, bây giờ chúng ta hãy kiểm tra máy chủ MCP, được rồi, vì vậy nó nói rằng máy chủ đã bắt đầu thành công,
+
+21
+00:07:39,000 --> 00:08:08,000
+Trình phục vụ thực hiện khả năng tạo đám mây MCP đã được khởi động thành công, vì vậy ở đây nó nói rằng trình phục vụ đám mây AWS đã được cài đặt và cấu hình thành thành công, và sau đó nó cung cấp chi tiết về những gì tất cả đã được cấu hình, vì vậy nó nói rằng gói AWS CFNMP phiên bản 1.6 đã được cài đặt, và như vậy lệnh toàn cầu, sau đó nó đã tạo ra một tập tin cấu hình ở đường này,
+
+22
+00:08:08,000 --> 00:08:35,000
+Và nó đang sử dụng hồ sơ AWS mặc định, và sau đó chúng tôi cũng đã thiết lập khu vực, vì vậy những gì là các tính năng có sẵn như một phần của trình phục vụ đám mây MCP này, và nó cung cấp cho một số chi tiết tiếp theo khởi động lại của bạn để tải cấu hình MCP, và sau đó bạn có thể hỏi một số câu hỏi, vì vậy hãy để tôi tải lại trình phục vụ cho giao diện tập đoàn QCLI này, và để tôi chỉ cần nói giảm thiểu.
+
+23
+00:08:38,000 --> 00:09:07,000
+Và bây giờ tôi có thể nói chuyện xếp hàng, và nó là, bạn có thể thấy nó đang tải các máy chủ MCP, okay, bây giờ chúng ta hãy đi về phía trước và hỏi nó một số câu hỏi, bây giờ máy chủ MCP của chúng tôi đã sẵn sàng, vì vậy tôi đã viết một số câu hỏi ở đây, vì vậy chúng tôi đã thấy trước đó một số công cụ khác có sẵn như một phần của trình phục vụ MCP này, và nếu tôi chỉ cần di chuyển xuống, bạn có thể thấy ở đây, tạo tài nguyên, cập nhật tài nguyên, vì vậy chúng tôi sẽ cố gắng một số,
+
+24
+00:09:07,000 --> 00:09:35,000
+Và nó cũng đưa ra một số câu hỏi mẫu mà bạn có thể hỏi, được rồi, vì vậy tôi đã viết một số câu hỏi của riêng tôi, vì vậy hãy tạo ra một xô S3 với phiên bản và mã hóa, và tên xô là Rahul MCP máy chủ kiểm tra, và tôi chỉ cần đưa ra một số tên ngẫu nhiên, bởi vì xô S3 cần phải được độc nhất toàn cầu, được rồi, vì vậy tôi sẽ quay lại và tôi sẽ dán câu hỏi này, và tôi sẽ nói nhập.
+
+25
+00:09:35,000 --> 00:09:57,000
+Vì vậy, nó nói rằng tôi sẽ tạo ra một xô S3 với tên này, và sau đó nó nói, OK, đây là cấu hình, nó sẽ tạo ra, vì vậy bạn có thể thấy chúng tôi có mẫu đám mây mà nó đã tạo ra ở JSON, và đây là tên xô mà chúng tôi đã đưa ra, và nó muốn tôi thực hiện điều này, vì vậy tôi sẽ nói có.
+
+26
+00:09:57,000 --> 00:10:07,000
+Vì vậy, nó nói rằng sự tạo ra xô S3 đang được thực hiện, để tôi kiểm tra tình trạng và xác nhận thành công, và để tôi nói có.
+
+27
+00:10:07,000 --> 00:10:36,000
+Vì vậy, hoàn hảo, xô S3 của bạn, Rahul MCP máy chủ đã được tạo ra thành công với các tính năng sau đây, vì vậy bây giờ tôi đang trên bảng điều khiển AWS, hãy để tôi chỉ cần tìm kiếm S3 của chúng tôi, và hãy xem nếu xô S3 của chúng tôi đã được tạo ra, vì vậy bây giờ tôi trên xô S3, và nếu tôi chỉ cần tìm kiếm theo ngày tạo, bạn có thể thấy máy chủ thử nghiệm Rhul MCP của chúng tôi, 009 đã được tạo ra thông qua dấu phẩy này.
+
+28
+00:10:36,000 --> 00:11:03,000
+Đây là cái chúng ta đã tạo ra. Bây giờ chúng ta hãy đi trước và hỏi nó một cái gì đó có ý nghĩa hơn, chúng ta sẽ nói rằng tạo ra một mẫu YAML cho AWS CloudFormation chồng với phần còn lại AWS API nhận được một lambda S3, và sau đó chúng tôi sẽ yêu cầu nó để triển khai mẫu này, vì vậy hãy để tôi chỉ cần sao chép câu hỏi này, và điều này sẽ là một phần của các công cụ mẫu, được rồi, tôi sẽ chỉ nói có thể rõ ràng.
+
+29
+00:11:06,000 --> 00:11:26,000
+Được rồi, tôi nghĩ nó không hiệu quả, nhưng được rồi, vậy nên nó nói rằng thiết bị cuối đã được dọn dẹp, bây giờ hãy để tôi dán câu hỏi này, vì vậy tôi nói tạo ra YML mẫu cho CloudFormation với máy chủ xếp phần còn lại AWS AWI cổng Lambda và S3, vì vậy hãy để tôi chỉ cần nhập.
+
+30
+00:11:26,000 --> 00:11:52,000
+Vì vậy, tôi sẽ tạo ra một mẫu toàn diện YAML CloudFormation cho máy chủ xếp chồng với cổng ADI lambda và S3, vì vậy nó sẽ mất một vài phút. Bây giờ nó đã tạo ra mô hình định hình đám mây này và nếu tôi chỉ cần di chuyển lên, nó là một khá dài, được rồi, nó ở đây, và đây là con đường cho mẫu này,
+
+31
+00:11:52,000 --> 00:12:07,000
+Nơi nó đã lưu mẫu này và nếu chúng ta chỉ cần di chuyển xuống và nó nói rằng tạo ra một mẫu toàn diện cho các chồng máy chủ với cổng ADI lambda và S3, vì vậy có lẽ tôi sẽ chỉ nói có.
+
+32
+00:12:07,000 --> 00:12:23,000
+Vì vậy, tôi đã tạo ra một mẫu đám mây toàn diện cho chồng máy chủ, đây là những gì mẫu bao gồm, do đó, nó bao gồm một xô S3 với cấu hình S3 thậm chí thông báo kích hoạt mubda công cộng S3 khối bảo mật
+
+33
+00:12:23,000 --> 00:12:44,000
+Vì vậy, ba điểm cuối này có ở đó và sau đó S3 bộ xử lý lambda và tôi đang và nó cũng tạo ra cánh cổng ADI với cánh cổng API còn lại, tôi là bảo vệ, và sau đó có một số tính năng khác mà nó đã tạo ra là các nhóm bản ghi và vân vân.
+
+34
+00:12:44,000 --> 00:12:57,000
+Tôi muốn triển khai các điểm kết thúc của nhóm này, mẫu này đã sẵn sàng với lỗi chính xác về an ninh, vì vậy hãy để tôi đi trước và yêu cầu nó triển khai.
+
+35
+00:12:57,000 --> 00:13:10,000
+Vì vậy, tôi vừa đặt ra câu hỏi này triển khai mẫu này với tên chồng là AWS MCP trên AWS CloudFormation.
+
+36
+00:13:10,000 --> 00:13:26,000
+Bây giờ chúng ta sẽ thấy rằng nó sẽ triển khai chồng này trên dịch vụ dự trữ đám mây AWS, vì vậy nó hỏi tôi nếu tôi có thể triển khai điều này và tôi sẽ nói đồng ý.
+
+37
+00:13:26,000 --> 00:13:43,000
+Vì vậy, tôi nghĩ rằng nó đã tìm thấy một lỗi, okay hợp lệ hóa lỗi khi gọi các tạo ra thao tác chồng, vì vậy nó có một vòng phụ thuộc và tôi nghĩ rằng nó sẽ sửa chữa các mẫu của riêng nó dựa trên các lỗi mà nó đã nhìn thấy.
+
+38
+00:13:43,000 --> 00:14:04,000
+Bây giờ trong lúc này, hãy đi đến dịch vụ tìm kiếm đám mây và hãy xem những gì đang xảy ra ở đó, do đó, từ đây, tôi sẽ chỉ tìm kiếm đám mây và ánh sáng đám mây ở đây, vì vậy nếu tôi có thể chỉ cần làm lại, được rồi, ngay bây giờ nó đã không triển khai chồng, vì vậy hãy xem những gì đang xảy ra.
+
+39
+00:14:04,000 --> 00:14:16,000
+Được rồi, vậy nó đang yêu cầu tôi sửa chữa sự phụ thuộc vòng tròn và tôi sẽ chỉ nói, vượt qua thời gian này.
+
+40
+00:14:16,000 --> 00:14:21,000
+Vì vậy, hãy để tôi chỉ nói tin tưởng một lần nữa.
+
+41
+00:14:21,000 --> 00:14:37,000
+Vì vậy, bạn thấy bây giờ hãy để tôi thử triển khai các mẫu cố định, vì vậy nó đã cố định mẫu đó và nó sẽ cố gắng và triển khai một lần nữa, vì vậy bây giờ nó đang triển khai chồng không máy chủ với máy chủ MCP.
+
+42
+00:14:37,000 --> 00:14:43,000
+Được rồi, vậy nó nói là đặt tên chồng trạng thái là AWS MCP tạo ra tiến trình.
+
+43
+00:14:43,000 --> 00:14:49,000
+Bây giờ chúng ta hãy đi trước và xem xét nó từ tầm nhìn của dịch vụ tìm kiếm đám mây nếu tôi có thể làm một bản cập nhật ở đây.
+
+44
+00:14:49,000 --> 00:14:55,000
+Được rồi, bây giờ chúng ta có thể thấy nó đang triển khai máy chủ AWS MCP và tạo ra sự tiến bộ.
+
+45
+00:14:55,000 --> 00:15:04,000
+Vì vậy, nếu tôi chỉ cần nhấp vào điều này, hãy để tôi chỉ cần di chuyển điều này một chút bên trái và hãy nói rằng các sự kiện.
+
+46
+00:15:04,000 --> 00:15:07,000
+Được rồi, tôi nghĩ có gì đó không ổn.
+
+47
+00:15:07,000 --> 00:15:12,000
+Vì vậy, nó nói rằng cửa ra vào CN trong toàn bộ ủy quyền hợp pháp bất động sản thất bại.
+
+48
+00:15:12,000 --> 00:15:17,000
+Bây giờ những gì nó sẽ làm là nó sẽ tự sửa chữa vấn đề này.
+
+49
+00:15:17,000 --> 00:15:23,000
+Vì vậy, nếu tôi chỉ cần đi ở đây, nó nói rằng triển khai đang được tiến hành.
+
+50
+00:15:23,000 --> 00:15:30,000
+Nó nói rằng chồng chất vẫn đang trong quá trình, hãy để tôi tin tưởng.
+
+51
+00:15:30,000 --> 00:15:36,000
+Chẳng bao lâu nó sẽ nhận ra rằng chồng đã thất bại, nó sẽ lại sửa chữa chồng và sau đó triển khai.
+
+52
+00:15:36,000 --> 00:15:40,000
+Bây giờ các bạn có thể thấy là chồng đang quay lại.
+
+53
+00:15:40,000 --> 00:15:46,000
+Hãy để tôi kiểm tra những gì đã xảy ra sai bằng cách nhìn vào các sự kiện chồng chất.
+
+54
+00:15:46,000 --> 00:15:53,000
+Vì vậy, nó đã tìm ra vấn đề là gì và bây giờ nó sẽ cố gắng và triển khai nó một lần nữa.
+
+55
+00:15:53,000 --> 00:15:58,000
+Vì vậy, nó nói rằng hãy để tôi tạo ra các mẫu được chỉnh sửa nếu tôi chỉ cần quay trở lại đây.
+
+56
+00:15:58,000 --> 00:16:06,000
+Để xem chuyện gì đang xảy ra.
+
+57
+00:16:06,000 --> 00:16:11,000
+Bây giờ nó nói rằng nó có thể thấy được nguyên nhân gốc là gì và nó đã tìm ra nguyên nhân gốc.
+
+58
+00:16:11,000 --> 00:16:17,000
+Vì vậy, nó nói rằng hãy để tôi chờ đợi cho cuộn trở lại để hoàn thành và sau đó triển khai mẫu cố định.
+
+59
+00:16:17,000 --> 00:16:27,000
+Vì vậy bây giờ nó nói rằng sự quay ngược tuyệt vời đã hoàn thành và sau đó nó sẽ xóa các chồng sân và sau đó triển khai một mới.
+
+60
+00:16:27,000 --> 00:16:33,000
+Vì vậy, nếu bạn thấy từ bảng điều khiển, xóa cho máy chủ AWS MCP này bây giờ được thực hiện.
+
+61
+00:16:33,000 --> 00:16:38,000
+Bây giờ nó sẽ triển khai một chồng mới.
+
+62
+00:16:38,000 --> 00:16:46,000
+Vì vậy, chúng tôi đã thực hiện khoảng năm phút và cuối cùng giải thích về QCLI đã có thể tạo ra các mẫu hình đám mây và cũng triển khai nó.
+
+63
+00:16:46,000 --> 00:16:54,000
+Vì vậy, bạn có thể thấy ở đây là hiển thị cho chúng tôi máy chủ AWS MCP tạo hoàn thành và nếu bạn có thể chỉ cần làm lại nó, bạn có thể thấy.
+
+64
+00:16:54,000 --> 00:17:01,000
+Nó đã tạo ra mẫu đặc biệt này và nếu tôi đi đến các nguồn tài nguyên, bạn có thể thấy tất cả các nguồn tài nguyên mà nó đã tạo ra.
+
+65
+00:17:01,000 --> 00:17:13,000
+Vì vậy, bạn có thể thấy ở đây bên phải, nó đã tạo ra nhóm bản ghi hàm Lambda, cổng ADI nơi phương pháp tài nguyên, tôi cuộn, S3 xô và vân vân.
+
+66
+00:17:13,000 --> 00:17:25,000
+Vì vậy, đó là cách bạn có thể tạo một máy chủ hình đám mây AWS MCP bằng cách sử dụng MZQ CLI như khách hàng và mã VS là máy chủ.
+
+67
+00:17:25,000 --> 00:17:34,000
+Được rồi, bây giờ trước khi chúng tôi kết thúc bài giảng này, xin hãy chắc chắn rằng bạn xóa chồng này, mặc dù đây là không có máy chủ, nhưng sẽ luôn tốt hơn để xóa bỏ tài nguyên của bạn.
+
+68
+00:17:34,000 --> 00:17:41,000
+Vì vậy, tôi sẽ chỉ cần chọn chồng AWS MCP này, chỉ cần nhấn vào này xóa và chỉ để xoá.
+
+69
+00:17:41,000 --> 00:17:51,000
+Có khả năng một số nguồn tài nguyên khác có thể không bị xóa như S3 xô, sau đó bạn có thể chỉ cần đi đến dịch vụ S3 và xóa nó từ đó.
+
+70
+00:17:51,000 --> 00:17:58,000
+Vì vậy, hiển thị xóa trong quá trình và tôi nghĩ rằng hầu hết các dịch vụ nó đã xóa ở đây.
+
+71
+00:17:58,000 --> 00:18:02,000
+Được rồi, đó là khá nhiều từ bài giảng này, tôi sẽ gặp lại bạn trong bài giảng tiếp theo, cảm ơn bạn.
+
