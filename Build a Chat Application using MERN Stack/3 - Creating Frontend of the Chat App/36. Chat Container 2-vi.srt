@@ -1,0 +1,404 @@
+1
+00:00:00,000 --> 00:00:05,440
+Xin chào mọi người, trong video này chúng tôi sẽ làm việc với cửa hàng chat. file js, chúng tôi
+
+2
+00:00:05,440 --> 00:00:07,280
+Cần phải chỉnh sửa một số chức năng.
+
+3
+00:00:07,280 --> 00:00:10,060
+Vì vậy, hãy bắt đầu với nhận tin nhắn, okay.
+
+4
+00:00:10,060 --> 00:00:17,880
+Vì vậy, nhận được tin nhắn và một định nghĩa là một chức năng đặc biệt và nó là một cuộc gọi trở lại.
+
+5
+00:00:17,880 --> 00:00:25,000
+Vì vậy, hãy làm điều này một và chúng ta cần phải đưa ra một dấu phẩy để nó không gây ra bất kỳ loại
+
+6
+00:00:25,000 --> 00:00:26,000
+vấn đề lỗi.
+
+7
+00:00:26,000 --> 00:00:30,280
+Vì vậy, sau đó, chúng tôi sẽ gõ tất cả mọi thứ bên trong thử và bắt nhật ký,
+
+8
+00:00:30,280 --> 00:00:35,600
+thử và bắt và nếu một số lỗi xảy ra sau đó chúng tôi sẽ bàn giao tiếp bản ghi lỗi đó.
+
+9
+00:00:35,600 --> 00:00:40,640
+Bây giờ, những gì chúng tôi đang thực sự sẽ làm là chúng tôi sẽ nhấn một điểm API và chúng tôi đang
+
+10
+00:00:40,640 --> 00:00:42,360
+sẽ nhận được một phản hồi, bên phải.
+
+11
+00:00:42,360 --> 00:00:47,280
+Vì vậy, đối với điều này, vì vậy chờ đợi các trường hợp truy cập, các trường hợp truy cập được nhận.
+
+12
+00:00:47,280 --> 00:00:51,400
+Vì vậy, chúng ta sẽ nhận được một phản hồi từ tin nhắn.
+
+13
+00:00:51,400 --> 00:01:00,560
+Vì vậy, thông điệp cắt giảm người dùng, tôi thấy bây giờ chúng tôi sẽ thiết lập tất cả mọi thứ như thiết lập
+
+14
+00:01:00,560 --> 00:01:05,800
+Người dùng cho dữ liệu phản ứng chấm, bất cứ dữ liệu nào đến từ câu trả lời, chúng tôi là
+
+15
+00:01:05,800 --> 00:01:11,520
+Chúng tôi sẽ đưa nó cho người dùng và chúng tôi sẽ hiển thị bằng cách sử dụng các dấu chấm bánh mì thành công.
+
+16
+00:01:11,520 --> 00:01:21,120
+Vì vậy, bánh mì nướng thành công, chúng tôi sẽ hiển thị mà người dùng lấy thành công, okay.
+
+17
+00:01:21,120 --> 00:01:27,760
+Và cho khối bộ nhớ tạm, chúng tôi có lỗi này và vì vậy cho điều này, hãy làm một cái gì đó.
+
+18
+00:01:27,760 --> 00:01:33,200
+Vì vậy, để làm điều đó, chúng ta cần tạo ra một tập tin, được chứ?
+
+19
+00:01:33,200 --> 00:01:43,160
+Vì vậy, thông điệp là, hãy làm cho điều này một mảng trống và sau đó, trong khối bộ nhớ tạm, chúng ta đang
+
+20
+00:01:43,160 --> 00:01:47,840
+sẽ viết bất cứ lỗi nào có thể đến.
+
+21
+00:01:47,840 --> 00:02:03,020
+Vì vậy, bánh mì nướng bánh mỳ chấm thành công, bánh mì nướng lỗi thực sự, lỗi không thể lấy bất cứ điều gì
+
+22
+00:02:03,020 --> 00:02:04,020
+Tin nhắn.
+
+23
+00:02:04,020 --> 00:02:09,120
+Vì vậy, không thể lấy tin nhắn, okay.
+
+24
+00:02:09,120 --> 00:02:19,480
+Vì nó đang hiển thị một số lỗi, do đó, trong trường hợp đó, chỉ cần đi xuống lỗi bản ghi bàn điều khiển, bên phải.
+
+25
+00:02:19,480 --> 00:02:26,160
+Vì vậy, bây giờ điều này được thực hiện, bây giờ sau khi điều này, những gì chúng tôi sẽ làm là, hãy làm cho nhau
+
+26
+00:02:26,160 --> 00:02:29,040
+chức năng đó là gửi tin nhắn.
+
+27
+00:02:29,040 --> 00:02:34,840
+Vì vậy, sau khi gửi tin nhắn này, chúng tôi sẽ nhận được thông điệp, chúng tôi sẽ cũng gửi
+
+28
+00:02:34,840 --> 00:02:37,640
+Thông điệp trong cuộc trò chuyện của chúng ta, đó là lý do tại sao chúng ta sẽ làm ra cái này.
+
+29
+00:02:37,640 --> 00:02:46,720
+Và bây giờ các phương pháp tương tự, chúng tôi sẽ làm theo những gì một này táo bạo chọn người dùng, bất cứ điều gì
+
+30
+00:02:46,720 --> 00:02:49,640
+người dùng đã chọn là, chúng tôi sẽ nhận được rằng.
+
+31
+00:02:49,640 --> 00:02:58,080
+Vì vậy, được rồi, chúng ta hãy làm một số, hãy thêm một số cố gắng và bộ nhớ tạm, vì vậy hãy cố gắng và lưu trữ bất cứ điều gì
+
+32
+00:02:58,080 --> 00:03:11,840
+lỗi đến, do đó, bàn giao tiếp lỗi dị ứng chấm và bánh mì nướng chấm lỗi.
+
+33
+00:03:11,840 --> 00:03:14,400
+Vì vậy, được chọn người dùng, okay.
+
+34
+00:03:14,400 --> 00:03:25,280
+Vì vậy, hãy có một phản ứng, được rồi, vì vậy một lần nữa, hãy làm một điều.
+
+35
+00:03:25,280 --> 00:03:28,000
+Và việc thử nghiệm, chúng ta sẽ có phản ứng.
+
+36
+00:03:28,000 --> 00:03:40,580
+Vì vậy, res bằng một x x dấu chấm, x của bạn dấu chấm, chúng tôi sẽ nhấn yêu cầu này
+
+37
+00:03:40,580 --> 00:03:48,240
+Và chúng ta sẽ đi theo con đường nào, ít thông điệp hơn, một điều tôi nghĩ, được rồi,
+
+38
+00:03:48,240 --> 00:04:07,680
+Rằng tôi đã làm một cái gì đó sai, tin nhắn, ít gửi, gửi thông điệp và sau đó
+
+39
+00:04:07,680 --> 00:04:15,280
+Cho một người dùng đặc biệt đã được chọn, được rồi.
+
+40
+00:04:15,280 --> 00:04:20,120
+Vì vậy, chúng tôi đã làm điều đó và sau đó, bất cứ điều gì thông điệp sẽ đến, chúng tôi sẽ đi
+
+41
+00:04:20,120 --> 00:04:32,640
+để điền nó vào bên trong các mảng, okay, vì vậy các thông điệp mảng, vì vậy thông điệp là chấm chấm chấm.
+
+42
+00:04:32,640 --> 00:04:37,840
+Bạn biết tại sao ba chấm tôi đã sử dụng thực sự đúng, vì vậy bất cứ điều gì dữ liệu đó là
+
+43
+00:04:37,840 --> 00:04:44,720
+đã có và bất cứ điều gì dữ liệu đến từ các phản ứng, chúng tôi sẽ chỉ
+
+44
+00:04:44,720 --> 00:04:53,320
+Nói lý do tại sao đang hiển thị điều này, okay, vì vậy bất cứ điều gì dữ liệu đến và bất cứ điều gì dữ liệu mà
+
+45
+00:04:53,320 --> 00:05:00,000
+là từ câu trả lời, chúng tôi sẽ thiết lập điều đó, okay, đó là lý do tại sao chúng tôi đang làm điều này.
+
+46
+00:05:00,000 --> 00:05:11,080
+Vì vậy, sau đó, chúng tôi đã làm một cái gì đó sai, không, để tôi kiểm tra một lần, yeah một tin nhắn nên
+
+47
+00:05:11,080 --> 00:05:28,400
+là ở đây, được rồi, vì vậy bánh mì nướng thông điệp thành công được gửi thành công, okay, lưu nó và sau này
+
+48
+00:05:28,400 --> 00:05:39,800
+vì điều đó cũng vậy, không gởi được thông điệp, không gởi đi được,
+
+49
+00:05:39,800 --> 00:05:48,000
+Nhưng tại sao thử nghiệm này lại chỉ ra một số lỗi phân tích, bất cứ điều gì tôi đã làm sai, okay,
+
+50
+00:05:48,000 --> 00:06:01,960
+Đối với điều này, nó sẽ nhận được, vì vậy thông điệp này là điều này nên đúng, tôi đoán, nhưng
+
+51
+00:06:01,960 --> 00:06:11,480
+Tại sao nó cho thấy như vậy, hãy để tôi kiểm tra tin nhắn là đúng chỉ và ba chấm tin nhắn
+
+52
+00:06:11,480 --> 00:06:24,760
+Dấu phẩy trả lời thông điệp không được xác định, thông điệp không được xác định, được rồi, vì vậy ở đây thực sự
+
+53
+00:06:24,760 --> 00:06:34,200
+dữ liệu bất kể dữ liệu đến và cho rằng chúng tôi đang lựa chọn người dùng và táo bón
+
+54
+00:06:34,200 --> 00:06:46,120
+Phản ứng tương đương với chờ đợi các trường hợp truy cập nhận được, nó là đúng chỉ đúng, nhưng tại sao nó là
+
+55
+00:06:46,120 --> 00:06:56,440
+Được rồi, bài báo nên ở đây, okay, như tôi đã làm với lỗi này, nhưng nó vẫn cho thấy
+
+56
+00:06:56,440 --> 00:07:03,960
+Một số lỗi, tại sao, được rồi, kiểm soát này và như thấy, có một số loại nếu tôi đoán đó là
+
+57
+00:07:03,960 --> 00:07:11,640
+Tại sao nó không được hiển thị, tôi đã chỉ cần thông qua nó ở đây, các kiện hàng bao gồm ở đây và
+
+58
+00:07:11,640 --> 00:07:14,120
+Phần còn lại vẫn như cũ.
+
+59
+00:07:14,120 --> 00:07:20,520
+Vì vậy, sau đó những gì chúng tôi thực sự sẽ làm trong các cửa hàng chat, có một phương pháp thiết lập,
+
+60
+00:07:20,520 --> 00:07:24,760
+Được rồi, vì vậy nó thực sự nhận được từ các mongo, điều này không nên xảy ra thực sự nó là từ
+
+61
+00:07:24,760 --> 00:07:36,520
+nước quả và duy nhất, nên sắp xếp và nhận được, tôi nghĩ rằng nó sẽ tốt và sau này, hãy để tôi nghĩ rằng
+
+62
+00:07:36,520 --> 00:07:46,040
+Những gì chúng ta sẽ làm, okay, vì vậy chúng ta cần phải có được rằng, như chúng ta cần sử dụng hiệu ứng sử dụng
+
+63
+00:07:46,040 --> 00:07:56,760
+để có thể tải thông điệp vào thời điểm diễn tả, nên hãy nhận tin nhắn,
+
+64
+00:07:56,760 --> 00:08:04,360
+OK, và chúng tôi cũng nên thông qua các mảng phụ thuộc để nhận được tin nhắn mà nên giống nhau duy nhất,
+
+65
+00:08:04,920 --> 00:08:14,840
+Vì vậy, dấu ngoặc, nhận tin nhắn, được rồi, bên trong này, tôi nghĩ rằng nó sẽ ổn thôi,
+
+66
+00:08:14,840 --> 00:08:24,200
+Lỗi phân tích, có một số lỗi phân tách, byte, lỗi đọc, nhập khẩu nhận tin nhắn, okay,
+
+67
+00:08:25,560 --> 00:08:35,560
+Nó chỉ đúng, byte, nhận tin nhắn,
+
+68
+00:08:35,560 --> 00:08:45,960
+Các bạn đây rồi, sai lầm ngớ ngẩn, nó không nên ở đây, các bạn, nó nên ở trong những thông điệp,
+
+69
+00:08:46,680 --> 00:08:56,840
+chấm j6, chúng ta cần phải vẽ ở đó, bên phải, sử dụng tốt, vì vậy sử dụng hiệu ứng,
+
+70
+00:08:56,840 --> 00:09:12,280
+Và bây giờ ở đây nhận được tin nhắn, vì vậy chúng ta cần phải nhận được rằng, và ở đây cũng hãy thông qua điều này, vì vậy
+
+71
+00:09:13,240 --> 00:09:26,040
+nhận được tin nhắn, nhập khẩu hiệu ứng từ phản ứng, vì vậy bất cứ điều gì tin nhắn, như thế này nhận được tin nhắn,
+
+72
+00:09:26,040 --> 00:09:32,040
+Chúng tôi đang thông qua điều này trong hiệu ứng sử dụng của phản ứng, vì vậy nó sẽ nạp trước hoặc trình bày tại thời điểm
+
+73
+00:09:32,040 --> 00:09:38,680
+là ứng dụng tải, phải, vì vậy đó là những gì chúng tôi đang thực sự làm ở đây, và cho các thông điệp,
+
+74
+00:09:38,680 --> 00:09:45,480
+Hãy đi đến thông điệp đầu vào, vì vậy chúng ta cần thiết lập các bang ở đây, vì vậy chúng tôi sẽ làm một điều, nhập khẩu,
+
+75
+00:09:45,480 --> 00:09:56,760
+Nhập khẩu sử dụng tình trạng, do đó, sử dụng trạng thái từ phản ứng, và sau đó, hãy sử dụng điều này liên kết bang để
+
+76
+00:09:56,760 --> 00:10:06,440
+thiết lập một số giá trị, do đó táo bón, hãy nhận được các thông điệp, vì vậy gửi thông điệp chức năng, chúng tôi sẽ nhận được
+
+77
+00:10:06,440 --> 00:10:14,440
+Nó từ cửa hàng chat, và chúng tôi sẽ dùng nó ở đây trong một số nút, được rồi, vì vậy chat store,
+
+78
+00:10:14,440 --> 00:10:25,560
+Name
+
+79
+00:10:25,560 --> 00:10:37,240
+Sau đó, hãy sử dụng một số văn bản bất cứ điều gì văn bản và thiết lập phương pháp văn bản, và nhà nước, sau đó,
+
+80
+00:10:37,240 --> 00:10:42,680
+Giả sử có một số hình ảnh mà chúng tôi muốn gửi, vì vậy cho rằng một hình ảnh và đặt hình ảnh,
+
+81
+00:10:42,680 --> 00:10:53,320
+đặt ảnh, và vì vậy chúng tôi cũng sử dụng tình trạng người dùng, vì vậy cho tất cả các giá trị chúng tôi sẽ vượt qua
+
+82
+00:10:53,320 --> 00:11:03,720
+Nó bật, vì vậy trong các nút như bạn có thể thấy tôi đã để lại một số không gian đã có, vì vậy, vào nhấp chuột, cho khi nhấp chuột
+
+83
+00:11:03,720 --> 00:11:20,120
+phương pháp chúng tôi sẽ thông qua nó ở đây đầu vào tập tin, nhập tập tin, trọng tài, okay, chấm hiện tại, bất cứ điều gì các
+
+84
+00:11:20,120 --> 00:11:30,840
+Tập tin hiện thời là, sau đó nhấn, tôi nghĩ điều này là đúng, nó là một chức năng gọi lại, tập tin
+
+85
+00:11:30,840 --> 00:11:42,120
+Đầu vào, trọng tài, dòng điện chấm, nó nói rằng nó thực sự không được xác định, tại sao, một cách để thứ hai
+
+86
+00:11:42,120 --> 00:11:49,880
+Nơi, okay guys thực sự tôi quên nhập mật mã này, okay, vì vậy chúng tôi nhập người dùng này
+
+87
+00:11:49,880 --> 00:11:55,400
+code, và chúng tôi cũng không xác định nó, đầu vào tập tin, trọng tài bằng người dùng của null, okay, vì vậy đó là lý do tại sao
+
+88
+00:11:55,400 --> 00:12:02,440
+Nó đã xảy ra, vì vậy bây giờ sau này, tôi nghĩ rằng video này là đủ dài, nhưng hãy để tôi làm một điều nữa,
+
+89
+00:12:02,440 --> 00:12:08,520
+để gửi tin nhắn và đặt văn bản và hình ảnh, chúng tôi cũng sẽ làm điều đó, okay,
+
+90
+00:12:09,080 --> 00:12:15,640
+Vì vậy cho tham khảo, chúng tôi có thể xem điều này như, chờ đợi một giây, tham khảo chúng tôi có thể xem xét này như
+
+91
+00:12:15,640 --> 00:12:29,240
+Nhập tập tin, nhập tập tin, trọng tài, và thay đổi bằng,
+
+92
+00:12:32,840 --> 00:12:40,520
+Chúng tôi sẽ làm cho những chức năng này ngay lập tức, vì vậy xử lý hình ảnh và bất cứ điều gì, vì vậy sau này,
+
+93
+00:12:40,520 --> 00:12:51,560
+Những gì chúng tôi có thể thực sự làm là, chúng tôi có thể mất tất cả các giá trị cho điều này, như giá trị tương đương với văn bản,
+
+94
+00:12:53,160 --> 00:13:02,760
+Phải, vì vậy chúng tôi đã thực hiện rằng trên, giá trị bằng văn bản, và thay đổi bằng E,
+
+95
+00:13:02,760 --> 00:13:15,720
+đặt văn bản, và E chấm giá trị chấm, vì vậy bất cứ khi nào nó sẽ thay đổi, sự thay đổi sẽ được phản ánh
+
+96
+00:13:15,720 --> 00:13:27,240
+trong đầu vào, bất cứ thứ gì có, vì vậy sau đó chúng tôi có thể thay đổi điều này, vì vậy đặt văn bản được thay đổi,
+
+97
+00:13:27,240 --> 00:13:31,560
+Phải, vì vậy chúng tôi có thể thay đổi cho nút, vì vậy tôi đã cung cấp cho một số không gian ở đây, vì vậy để
+
+98
+00:13:31,560 --> 00:13:41,320
+Thêm một số tập tin, giống như thêm một số thay đổi ở đây, vì vậy cho nút khi nhấn chúng tôi sẽ thực hiện một
+
+99
+00:13:42,520 --> 00:13:48,920
+Xử lý gửi tin nhắn, xử lý gửi thông điệp, chúng tôi sẽ tạo ra rằng một chức năng cũng,
+
+100
+00:13:48,920 --> 00:13:56,600
+OK, vậy giới hạn của video là, nó khá mở rộng và chỉ 15 phút thôi,
+
+101
+00:13:56,600 --> 00:13:59,320
+Vì vậy, chúng ta sẽ xem trong video tiếp theo, OK,
+
