@@ -1,0 +1,568 @@
+1
+00:00:00,850 --> 00:00:04,780
+Sau đó, chúng tôi phân tích sự khởi đầu của bất kỳ quá trình nào.
+
+2
+00:00:05,140 --> 00:00:08,740
+Có ba điều chính trong quá trình bắt đầu.
+
+3
+00:00:09,340 --> 00:00:12,810
+Một trong số đó là tạo ra bên cạnh quá trình.
+
+4
+00:00:13,120 --> 00:00:13,390
+Phải.
+
+5
+00:00:14,140 --> 00:00:19,120
+Vậy chính xác quy trình Sago là gì và nó làm gì?
+
+6
+00:00:19,630 --> 00:00:24,400
+Trong giai đoạn này, chúng ta sẽ bảo vệ Sago và bắt đầu quá trình.
+
+7
+00:00:25,180 --> 00:00:33,880
+Chúng tôi cũng sẽ đi qua các mã và xem làm thế nào Sago chồng lên hệ thống rất tốt và cũng làm thế nào nó bắt đầu
+
+8
+00:00:33,880 --> 00:00:39,730
+một quá trình mới khi dịch vụ quản lý hoạt động yêu cầu làm như vậy.
+
+9
+00:00:40,850 --> 00:00:47,600
+Trong một bài giảng trước, chúng ta đã thảo luận về quá trình chữa lành, và chúng ta đã thấy nó bắt đầu như thế nào
+
+10
+00:00:47,870 --> 00:00:48,950
+Quá trình lười biếng.
+
+11
+00:00:49,550 --> 00:00:51,560
+Chúng tôi cũng đi bộ mã sản phẩm, phải không?
+
+12
+00:00:52,250 --> 00:00:58,370
+Vì vậy, trong buổi này chúng tôi sẽ bắt đầu ngay từ đó và tiếp tục với quá trình EGOT.
+
+13
+00:00:59,300 --> 00:01:06,770
+Chúng ta sẽ xem làm thế nào szygote bắt đầu các hệ thống lên và chờ đợi cho yêu cầu từ dịch vụ quản lý hoạt động
+
+14
+00:01:07,040 --> 00:01:10,790
+hoặc là mục tiêu tạo ra một quá trình mới.
+
+15
+00:01:11,760 --> 00:01:18,930
+Trong An- rô-bốt, thời gian chạy steroid hoặc máy ảo Dalvik, quá trình ứng dụng và hệ thống
+
+16
+00:01:18,930 --> 00:01:25,200
+quá trình máy phục vụ chạy các mảnh khóa của hệ thống được tạo ra bởi tiến trình lười biếng.
+
+17
+00:01:25,530 --> 00:01:31,590
+Nó dẫn dắt quá trình ứng dụng và máy chủ hệ thống một quá trình sử dụng cả hai cơ chế.
+
+18
+00:01:32,220 --> 00:01:39,270
+Vì vậy cả hai cơ chế có nghĩa là không có gì nhưng tạo ra một quá trình mới bằng cách phức tạp hóa quá trình tồn tại từ đó
+
+19
+00:01:39,330 --> 00:01:40,200
+Nó được gọi là.
+
+20
+00:01:41,260 --> 00:01:49,180
+Vì vậy, kể từ khi lười biếng quá trình sẽ tạo ra một nhiệm vụ ảo hoặc điều hành robot thời gian khi nó bắt đầu, ứng dụng
+
+21
+00:01:49,180 --> 00:01:56,650
+Quá trình và quá trình hệ thống được tạo ra bởi định dạng này có thể tổng và tự động cập nhật một bản sao của các
+
+22
+00:01:56,650 --> 00:01:59,560
+Người máy chạy thời gian bên trong.
+
+23
+00:02:00,430 --> 00:02:08,380
+Vì vậy, hãy nhìn vào các mã và xem làm thế nào szygte bắt đầu lên và làm thế nào nó gọi là các nút mở đầu hệ thống và
+
+24
+00:02:08,380 --> 00:02:13,180
+Sau đó, làm thế nào nó chờ đợi cho thanh toán hoặc dịch vụ quản lý hoạt động.
+
+25
+00:02:15,550 --> 00:02:16,740
+Vậy là anh cần đất.
+
+26
+00:02:17,230 --> 00:02:19,030
+- 64 độ.
+
+27
+00:02:19,060 --> 00:02:22,840
+Vì vậy, chúng tôi đã nhìn vào phi công này trong buổi trước.
+
+28
+00:02:23,200 --> 00:02:27,370
+Vì vậy, tập tin này về cơ bản là một cấu hình cho quá trình lười biếng.
+
+29
+00:02:27,820 --> 00:02:33,280
+Như tôi đã nói, nó là một ngôn ngữ rất đơn giản và có một số lệnh, một số tuyên bố nhập khẩu.
+
+30
+00:02:33,940 --> 00:02:42,160
+Vì vậy, ở đây bạn có thể thấy trong tập tin này, nó nói để tạo ra một dịch vụ tên là lười biếng với quá trình này.
+
+31
+00:02:42,340 --> 00:02:46,270
+Đây là chương trình mà nó phải thực hiện.
+
+32
+00:02:46,600 --> 00:02:49,150
+Và sau đó, chúng tôi đang thông qua một số tham số.
+
+33
+00:02:49,420 --> 00:02:54,360
+Vì vậy, ở đây chúng tôi có hệ thống bắt đầu, loại một tham số, sau đó lười biếng tham số sau đó.
+
+34
+00:02:54,370 --> 00:02:55,630
+Nên chúng tôi sẽ gửi vài con đường.
+
+35
+00:02:56,170 --> 00:02:58,630
+Câu thứ hai là bạn học.
+
+36
+00:02:59,050 --> 00:03:05,900
+Vì vậy, đây là tên của chương trình đặc biệt này hoặc lười biếng là có nghĩa.
+
+37
+00:03:06,370 --> 00:03:12,610
+Vì vậy, các zygote hoặc dịch vụ này được tham chiếu trong các tập tin RC với tên trung bình.
+
+38
+00:03:13,060 --> 00:03:13,330
+Được rồi.
+
+39
+00:03:13,780 --> 00:03:21,430
+Vì vậy, trong bất kỳ ngôn ngữ lập trình, có một tập tin được gọi là bất kỳ chấm RC, đó là một loại chức năng chính.
+
+40
+00:03:22,240 --> 00:03:23,560
+Và ở đây bạn có thể thấy điều đó.
+
+41
+00:03:24,010 --> 00:03:26,140
+Đây là một tập tin lớn.
+
+42
+00:03:26,710 --> 00:03:34,060
+Vì vậy, điều này là rất giống với chức năng chính của chúng tôi trong Java hoặc C++ hoặc C ngôn ngữ.
+
+43
+00:03:34,060 --> 00:03:35,800
+Bạn có chức năng chính, phải không?
+
+44
+00:03:36,190 --> 00:03:38,380
+Chúng ta có thể bắt đầu.
+
+45
+00:03:39,070 --> 00:03:40,440
+Điều này rất tương tự.
+
+46
+00:03:40,450 --> 00:03:44,800
+Vì vậy, trong một chấm, RC là tập tin chính hoặc chức năng chính mà nhận được chữ ký không quan trọng.
+
+47
+00:03:44,800 --> 00:03:51,850
+Và điều này sẽ thực hiện tất cả các nhập khẩu và tất cả các hoạt động và nó cũng sẽ gọi các tập tin RC nội bộ.
+
+48
+00:03:52,840 --> 00:03:56,440
+Vì vậy, nếu bạn đi xuống, bạn có thể thấy ở đây rằng khởi đầu chính.
+
+49
+00:03:56,500 --> 00:04:00,110
+Vì vậy, đây là một mệnh lệnh về cơ bản để bắt đầu một lớp tên là Main.
+
+50
+00:04:00,550 --> 00:04:03,730
+Vì vậy, điều này về cơ bản sẽ bắt đầu chu trình.
+
+51
+00:04:04,120 --> 00:04:04,340
+Được rồi.
+
+52
+00:04:04,600 --> 00:04:11,380
+Vì vậy, điều này sẽ gây ra tuyên bố, về cơ bản sẽ bắt đầu cấu hình này hoặc quá trình này.
+
+53
+00:04:11,740 --> 00:04:12,100
+Được rồi.
+
+54
+00:04:12,310 --> 00:04:16,990
+Vậy quá trình này sẽ bắt đầu ở tiến trình 64, đúng không?
+
+55
+00:04:17,410 --> 00:04:23,320
+Vì vậy quá trình 64 của chúng tôi về cơ bản chỉ ra rằng, không ngủ.
+
+56
+00:04:23,740 --> 00:04:27,100
+Vì vậy, đừng bắt đầu thực hiện từ chức năng chính này.
+
+57
+00:04:27,370 --> 00:04:27,700
+Được rồi.
+
+58
+00:04:27,730 --> 00:04:33,760
+Như bạn có thể thấy, các chức năng chính về cơ bản làm rất nhiều ban đầu hóa và nó cũng sẽ vòng qua
+
+59
+00:04:33,760 --> 00:04:37,540
+Cuộc tranh luận được thông qua từ đây.
+
+60
+00:04:37,630 --> 00:04:43,510
+Vì vậy, những lập luận về cơ bản lặp lại thông qua những lập luận và nó sẽ đặt nhiều biến số.
+
+61
+00:04:43,930 --> 00:04:50,410
+Vì vậy, ở đây bạn có thể thấy các máy chủ hệ thống bắt đầu là bắt đầu mặc định trước và sau đó nó kiểm tra.
+
+62
+00:04:50,410 --> 00:04:53,790
+Nếu nó có một tham số, sau đó nó đặt nó đúng.
+
+63
+00:04:54,070 --> 00:04:54,390
+Đúng.
+
+64
+00:04:54,640 --> 00:05:02,440
+Vì vậy, điều này về cơ bản nói để bắt đầu các hệ thống trên hoặc không và sau đó nó mất nếu nó là đúng, sau đó thêm điều này
+
+65
+00:05:02,440 --> 00:05:12,040
+lập luận và ở dưới cùng nếu nó làzygte, sau đó bắt đầu chạy thời gian với tên gói này và vượt qua
+
+66
+00:05:12,040 --> 00:05:12,980
+tranh luận này.
+
+67
+00:05:13,000 --> 00:05:18,610
+Vì vậy, điều này về cơ bản là đi qua các đối số cho gói Java này.
+
+68
+00:05:18,940 --> 00:05:20,320
+Đây là một gói Java.
+
+69
+00:05:20,320 --> 00:05:21,950
+Bạn có thể thấy tên gói này, phải không?
+
+70
+00:05:21,970 --> 00:05:23,740
+Có vẻ là một gói đô la.
+
+71
+00:05:23,740 --> 00:05:25,330
+Và đó là một gói khổng lồ.
+
+72
+00:05:26,380 --> 00:05:27,290
+Chúng ta sẽ xem nó sớm thôi.
+
+73
+00:05:27,620 --> 00:05:30,340
+Vì vậy, và nó cơ bản phân tích tất cả các tham số.
+
+74
+00:05:30,820 --> 00:05:32,710
+Vậy chính xác thời gian chạy là gì?
+
+75
+00:05:32,710 --> 00:05:36,130
+Vì vậy, chạy thời gian sau đó phản đối tất cả các ứng dụng chạy thời gian.
+
+76
+00:05:36,160 --> 00:05:40,480
+Bạn có thể thấy ứng dụng thời gian chạy thừa kế từ thời gian chạy của robot.
+
+77
+00:05:40,660 --> 00:05:41,000
+Được rồi.
+
+78
+00:05:41,050 --> 00:05:46,330
+Về cơ bản nó đang hoạt động trong thời gian máy móc hoạt động.
+
+79
+00:05:46,660 --> 00:05:51,240
+Chức năng bắt đầu từ thời gian chạy của robot.
+
+80
+00:05:51,790 --> 00:05:53,650
+Đến giờ chạy robot.
+
+81
+00:05:54,330 --> 00:05:54,700
+Ừ.
+
+82
+00:05:55,060 --> 00:05:56,590
+Bạn có thể thấy hàm khởi động.
+
+83
+00:05:56,590 --> 00:05:56,860
+Phải.
+
+84
+00:05:56,920 --> 00:06:00,520
+Vì vậy, đây là một trong những sẽ được gọi đến.
+
+85
+00:06:00,520 --> 00:06:04,060
+Vì vậy, một tên lớp đầu tiên là không có gì nhưng.
+
+86
+00:06:05,220 --> 00:06:06,490
+Món thịt nướng.
+
+87
+00:06:07,700 --> 00:06:07,960
+Thêm nữa.
+
+88
+00:06:08,380 --> 00:06:09,380
+Được rồi, đây là cái này.
+
+89
+00:06:10,190 --> 00:06:15,500
+Vì vậy, trong quá trình bắt đầu thời gian chạy của người máy, bạn có thể thấy nó sử dụng tất cả các tham số này.
+
+90
+00:06:15,500 --> 00:06:20,630
+Nó được truyền từ các ứng dụng có ý nghĩa và nó thực hiện rất nhiều khởi đầu ở đây.
+
+91
+00:06:20,960 --> 00:06:24,050
+Và khi chúng ta xuống chúng ta có thể thấy khởi động VM.
+
+92
+00:06:24,060 --> 00:06:26,390
+Nó bắt đầu một cỗ máy ảo.
+
+93
+00:06:26,810 --> 00:06:32,970
+Vì vậy, điều này về cơ bản bắt đầu máy ảo Java và bắt đầu, phải không?
+
+94
+00:06:33,500 --> 00:06:42,170
+Chức năng này về cơ bản là đăng ký DNN cho thời gian chạy của steroid hoặc máy ảo năng động.
+
+95
+00:06:42,200 --> 00:06:48,470
+Vì vậy, điều này về cơ bản là đăng ký các chức năng người máy và điều này bắt đầu máy ảo.
+
+96
+00:06:49,670 --> 00:06:55,670
+Và sau đó nếu bạn đi xuống, bạn có thể thấy ở đây nó đang cố gắng để tìm các chức năng chính, nhưng nó đang cố gắng
+
+97
+00:06:55,670 --> 00:06:56,990
+để gọi hàm chính.
+
+98
+00:06:57,290 --> 00:07:01,100
+Vì vậy, điều này cuối cùng sẽ nói tốt trong nó.
+
+99
+00:07:01,400 --> 00:07:01,790
+Thêm nữa.
+
+100
+00:07:02,030 --> 00:07:02,250
+Ừ.
+
+101
+00:07:02,480 --> 00:07:06,380
+Vì vậy, sau đó kiểm soát đi sygote trong nó, điều này.
+
+102
+00:07:06,740 --> 00:07:10,830
+Vì vậy, từ đây nó đi đến lớp Java.
+
+103
+00:07:10,970 --> 00:07:16,730
+Vậy nên sự liên lạc này diễn ra đêm nay và một khi chúng ta đã vào trong, tốt trong đó.
+
+104
+00:07:17,150 --> 00:07:18,710
+Vì vậy, hãy bắt đầu từ chính.
+
+105
+00:07:18,890 --> 00:07:21,260
+Vì vậy ở đây, các lập luận đang được thông qua.
+
+106
+00:07:21,320 --> 00:07:28,520
+Vì vậy, đây là cùng một lập luận đến từ đây và sau đó bạn đi xuống và thấy nó làm những điều tương tự,
+
+107
+00:07:28,520 --> 00:07:37,220
+giống như nó đi vào các đối số và nó nhận được các máy chủ hệ thống bắt đầu và nó cấu hình hệ thống cổ phiếu.
+
+108
+00:07:37,220 --> 00:07:45,590
+Vì vậy, để nếu bạn đi xa hơn xuống ở đây, bạn có thể thấy nó đang bắt đầu máy chủ hệ thống bằng cách quay.
+
+109
+00:07:47,330 --> 00:07:52,430
+Vì vậy, ở đây, nếu giá trị này là đúng, nó là đúng bởi vì chúng tôi đã vượt qua đó.
+
+110
+00:07:52,820 --> 00:07:56,180
+Vì vậy, nó là sự thật và nó hỗ trợ hệ thống.
+
+111
+00:07:56,180 --> 00:07:56,890
+Đúng vậy.
+
+112
+00:07:57,770 --> 00:08:00,290
+Vì vậy, đây là điểm mà chúng tôi bắt đầu hệ thống.
+
+113
+00:08:00,290 --> 00:08:00,710
+Thì sao?
+
+114
+00:08:00,960 --> 00:08:08,910
+Và xa hơn nữa, nếu bạn đi xuống, chúng ta có thể thấy rằng nó chạy một vòng lựa chọn và nếu chúng ta đi vào trong này.
+
+115
+00:08:09,650 --> 00:08:13,100
+Vì vậy, đây là trong máy chủ tốt, không phải Java.
+
+116
+00:08:13,580 --> 00:08:15,260
+Ở đây chúng ta có thể thấy điều đó.
+
+117
+00:08:15,260 --> 00:08:17,390
+Có phải là vòng lặp vô tận không?
+
+118
+00:08:17,420 --> 00:08:22,880
+Vì vậy vòng thời gian này sẽ luôn luôn chạy và nó cơ bản là chờ đợi cho một số yêu cầu khách hàng.
+
+119
+00:08:23,300 --> 00:08:32,150
+Vì vậy, điều này về cơ bản sẽ chờ đợi các dịch vụ quản lý hoạt động chỉ để tạo ra một quá trình trẻ em mới.
+
+120
+00:08:32,450 --> 00:08:38,600
+Vì vậy vòng lặp vô hạn này về cơ bản là chịu trách nhiệm khi một ứng dụng mới bắt đầu.
+
+121
+00:08:38,910 --> 00:08:41,720
+Cơ quan Quản lý Hoạt động sẽ yêu cầu.
+
+122
+00:08:42,080 --> 00:08:46,010
+Yêu cầu sẽ đến đây và nó sẽ bắt đầu quá trình.
+
+123
+00:08:46,670 --> 00:08:47,030
+Được rồi.
+
+124
+00:08:47,270 --> 00:08:56,780
+Vì vậy, bây giờ chúng ta đã thấy làm thế nào hệ thống loại bắt đầu như vậy từ đây và sau đó cuối cùng làm thế nào nó đi vào
+
+125
+00:08:56,780 --> 00:09:02,870
+một vòng lặp, một vòng lặp vô hạn và chờ đợi một yêu cầu.
+
+126
+00:09:03,320 --> 00:09:07,670
+Tóm lại, quá trình lười biếng thực hiện các bước sau đây.
+
+127
+00:09:07,940 --> 00:09:15,290
+Vì vậy, nó tạo ra một ứng dụng chạy thời gian từ đây và gọi phương pháp bắt đầu để bắt đầu quá trình mơ hồ.
+
+128
+00:09:15,830 --> 00:09:19,640
+Và từ đây nó tạo ra máy ảo Dalvik.
+
+129
+00:09:20,830 --> 00:09:28,220
+Và nó làm nhiễu DNA của DBM và sau đó nó đi vào quá trình lười biếng.
+
+130
+00:09:28,240 --> 00:09:32,480
+Từ đây, sự kiểm soát đi qua thế giới Java.
+
+131
+00:09:32,800 --> 00:09:34,840
+Vì vậy, sự kiểm soát đi vào trong nó.
+
+132
+00:09:35,620 --> 00:09:35,920
+Ừ.
+
+133
+00:09:36,400 --> 00:09:38,590
+Và quá trình này là thông qua DNA.
+
+134
+00:09:38,890 --> 00:09:41,380
+Và sau đó ở đây làm điều tương tự.
+
+135
+00:09:41,380 --> 00:09:46,240
+Nó đi qua các lập luận và khởi tạo một số biến số.
+
+136
+00:09:46,660 --> 00:09:50,410
+Và cuối cùng nó nói hoặc khởi động máy chủ hệ thống.
+
+137
+00:09:50,980 --> 00:09:54,790
+Và đây là một vòng lặp vô tận.
+
+138
+00:09:55,420 --> 00:10:01,870
+Và điều này sẽ đợi lỗi cho yêu cầu từ Dịch vụ Quản lý Hoạt động.
+
+139
+00:10:02,500 --> 00:10:05,050
+Đó là tất cả những gì tôi đã làm.
+
+140
+00:10:05,200 --> 00:10:12,070
+Tôi hy vọng bạn tìm hiểu một cái gì đó từ video này, và nếu bạn thích video, xin vui lòng đăng ký để mà
+
+141
+00:10:12,070 --> 00:10:14,020
+Tôi có thể tiếp tục tạo video.
+
+142
+00:10:14,530 --> 00:10:14,950
+Cảm ơn.
+
