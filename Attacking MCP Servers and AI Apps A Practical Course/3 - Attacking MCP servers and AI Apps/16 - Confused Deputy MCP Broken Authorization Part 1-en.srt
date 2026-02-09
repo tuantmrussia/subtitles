@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:02,200
+ Hello and welcome back.
+
+2
+00:00:02,200 --> 00:00:06,920
+ Today we are going to look at a business logic vulnerability that cannot be detected by
+
+3
+00:00:06,920 --> 00:00:09,040
+ a traditional security scanners.
+
+4
+00:00:09,040 --> 00:00:14,200
+ The vulnerability is called Confused Deputy and it falls under the always top 10 category
+
+5
+00:00:14,200 --> 00:00:16,360
+ of a broken authorization.
+
+6
+00:00:16,360 --> 00:00:23,280
+ In my opinion any company offers remote MCP server might have confused debutability if
+
+7
+00:00:23,280 --> 00:00:29,040
+ they give their MCP server a broad access to a back-end services.
+
+8
+00:00:29,040 --> 00:00:34,120
+ Before we dive into details and the lab, I want to share with you a real-world incident
+
+9
+00:00:34,120 --> 00:00:41,520
+ that happened in remote MCP with a broken authorization happened to Asana in 2025.
+
+10
+00:00:41,520 --> 00:00:45,280
+ I want to read a couple of lines from Sans in Newsletter.
+
+11
+00:00:45,280 --> 00:00:50,560
+ Asana has fixed a vulnerability in their implementation of model context protocol artificial
+
+12
+00:00:50,560 --> 00:00:56,960
+ intelligence integration protocol that could have been exploited to see data belonging
+
+13
+00:00:56,960 --> 00:00:59,400
+ to other organizations.
+
+14
+00:00:59,400 --> 00:01:04,760
+ While there is no technical write-up published about this incident, we can read from those
+
+15
+00:01:04,760 --> 00:01:10,480
+ lines or we can get from those lines that the root cause was a broken authorization in
+
+16
+00:01:10,480 --> 00:01:12,600
+ the remote MCP server.
+
+17
+00:01:12,600 --> 00:01:19,440
+ In multi-tenant services allowing user A to access data of user B in another organizations,
+
+18
+00:01:19,440 --> 00:01:20,440
+ this is catastrophic.
+
+19
+00:01:20,440 --> 00:01:25,680
+ Let's try to understand why could this happen in the first place.
+
+20
+00:01:25,680 --> 00:01:31,560
+ So when the developers want to introduce an integrate remote MCP server with their back-end
+
+21
+00:01:31,560 --> 00:01:37,720
+ services, they already have API's any place to access their services by customers.
+
+22
+00:01:37,720 --> 00:01:42,840
+ Let's assume those API's have a proper authorization checks, something like validating
+
+23
+00:01:42,840 --> 00:01:47,840
+ authorization token, the token scope, enforcing access control etc.
+
+24
+00:01:47,840 --> 00:01:53,800
+ So everything could be secure from the API perspective that is served by the back-end.
+
+25
+00:01:53,800 --> 00:01:59,560
+ However, now they want to introduce AI capabilities to their platform to better serve their
+
+26
+00:01:59,560 --> 00:02:02,440
+ customers and become more competitive.
+
+27
+00:02:02,440 --> 00:02:08,160
+ The MCP server in this case is going to be the bridge between the customers AI model and
+
+28
+00:02:08,160 --> 00:02:11,400
+ the data that lives in the back-end services.
+
+29
+00:02:11,400 --> 00:02:12,680
+ So here's the problem.
+
+30
+00:02:12,680 --> 00:02:18,280
+ The MCP server will accept requests from all customers and all users.
+
+31
+00:02:18,280 --> 00:02:23,520
+ And somehow it needs a way to access the data on behalf of those users.
+
+32
+00:02:23,520 --> 00:02:25,920
+ In order to process the requests.
+
+33
+00:02:25,920 --> 00:02:32,480
+ So how can the MCP server ensure that user A can only access data belonging to a user A
+
+34
+00:02:32,480 --> 00:02:35,200
+ and not that I belong to a user B?
+
+35
+00:02:35,200 --> 00:02:41,120
+ So to solve this problem, developers usually take one of those two approaches.
+
+36
+00:02:41,120 --> 00:02:46,800
+ Option one, they gave the MCP server itself an access token with wide permissions and
+
+37
+00:02:46,800 --> 00:02:53,880
+ the MCP server can use it's own access token to access any data using the existing public
+
+38
+00:02:53,880 --> 00:02:58,240
+ API endpoints provided by the back-end services.
+
+39
+00:02:58,240 --> 00:03:05,200
+ Option B, they could build a dedicated internal endpoint that the MCP server can use again
+
+40
+00:03:05,200 --> 00:03:07,800
+ to access any user's data.
+
+41
+00:03:07,800 --> 00:03:13,560
+ Both approaches are fundamentally flawed because they completely ignore the risk of someone
+
+42
+00:03:13,560 --> 00:03:19,200
+ abusing the MCP server itself to access data of other users.
+
+43
+00:03:19,200 --> 00:03:26,360
+ In other words, if user A asks the MCP server to get data of user B, then the MCP server
+
+44
+00:03:26,360 --> 00:03:30,560
+ can technically do that because it has a broad access.
+
+45
+00:03:30,560 --> 00:03:35,800
+ In my opinion, the secure implementation would be instead of rebuilding the authorization,
+
+46
+00:03:35,800 --> 00:03:42,160
+ verification logic in the MCP server or giving the MCP server broad access with this
+
+47
+00:03:42,160 --> 00:03:44,800
+ wide permission access token.
+
+48
+00:03:44,800 --> 00:03:50,760
+ Developers should build the MCP to require the user to pass its own access token to the
+
+49
+00:03:50,760 --> 00:03:57,520
+ MCP first and then the MCP would use the user's access token to the back-end API instead
+
+50
+00:03:57,520 --> 00:04:03,920
+ of using a wide permission access token created for the MCP server itself.
+
+51
+00:04:03,920 --> 00:04:08,360
+ And by doing so, you could reuse the authorization verification that you already have
+
+52
+00:04:08,360 --> 00:04:10,440
+ at the back-end services level.
+
+53
+00:04:10,440 --> 00:04:14,520
+ In the next lecture, we will see this vulnerability in action, so I hope that this lecture
+
+54
+00:04:14,520 --> 00:04:17,600
+ has been informative for you and I will see you in the next one.
+
+55
+00:04:17,600 --> 00:04:18,600
+ Thanks for watching.
+
