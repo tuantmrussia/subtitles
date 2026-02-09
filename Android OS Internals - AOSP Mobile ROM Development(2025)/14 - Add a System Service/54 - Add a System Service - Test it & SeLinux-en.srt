@@ -1,0 +1,376 @@
+1
+00:00:00,540 --> 00:00:01,170
+Welcome back.
+
+2
+00:00:01,410 --> 00:00:04,440
+So in the previous tutorial, we successfully built the services.
+
+3
+00:00:04,810 --> 00:00:09,850
+Okay, so in this section we will see whether our service is really running or not.
+
+4
+00:00:09,870 --> 00:00:16,290
+So it all sounds simple successfully, but now let's see whether it's actually runs or not.
+
+5
+00:00:16,620 --> 00:00:24,150
+Okay, so I'm just a first time emulator, ADB Shell, I'm getting in Verity, Michelle and I'm listing
+
+6
+00:00:24,150 --> 00:00:26,040
+the services which are actually running now.
+
+7
+00:00:26,490 --> 00:00:27,330
+Let it come.
+
+8
+00:00:27,540 --> 00:00:31,310
+So I have got all the services which is actually currently running.
+
+9
+00:00:31,320 --> 00:00:34,110
+So we have 169 services actually.
+
+10
+00:00:35,250 --> 00:00:37,880
+So so ourselves is not running at the moment.
+
+11
+00:00:37,890 --> 00:00:38,250
+Okay.
+
+12
+00:00:38,250 --> 00:00:39,750
+So we need to understand why.
+
+13
+00:00:40,260 --> 00:00:41,370
+Let's just do one thing.
+
+14
+00:00:41,370 --> 00:00:48,000
+So we will first see the logcat, whether it's actually what happened, actually why it didn't triggered.
+
+15
+00:00:48,570 --> 00:00:53,850
+So what I'm going to do is I will just be low.
+
+16
+00:00:55,320 --> 00:00:56,940
+Got to.
+
+17
+00:00:58,420 --> 00:00:58,810
+No.
+
+18
+00:00:58,920 --> 00:01:00,230
+God, no.
+
+19
+00:01:01,660 --> 00:01:06,130
+This is my look at file, which is created just now.
+
+20
+00:01:07,600 --> 00:01:14,860
+Okay, so if I go down and search Android, it is not a good idea to use the name as always.
+
+21
+00:01:15,130 --> 00:01:22,150
+So his name as Android as you can use a different name so that it's easy to go through the locate because
+
+22
+00:01:22,330 --> 00:01:28,270
+the logcat there will be hundreds of places where you have the Android editor nowadays, so it will
+
+23
+00:01:28,270 --> 00:01:29,500
+be hard for you to search.
+
+24
+00:01:29,920 --> 00:01:36,400
+So I would suggest you to just change, replace the android with some other name and then use the scripts.
+
+25
+00:01:37,000 --> 00:01:40,690
+So what happened now is the permission is denied.
+
+26
+00:01:40,900 --> 00:01:46,630
+So you can see here is Linux, ABC denied add for service.
+
+27
+00:01:46,660 --> 00:01:47,980
+So this is our service name.
+
+28
+00:01:49,850 --> 00:01:51,280
+And this is the IED.
+
+29
+00:01:51,770 --> 00:01:55,340
+And here you have some information.
+
+30
+00:01:55,460 --> 00:01:55,760
+Okay.
+
+31
+00:01:56,030 --> 00:02:01,610
+So here you're going to see that our service this is a service name service is actually blocked.
+
+32
+00:02:03,530 --> 00:02:04,700
+Android service failed.
+
+33
+00:02:05,660 --> 00:02:06,020
+Okay.
+
+34
+00:02:06,440 --> 00:02:08,930
+So we know now that it has failed.
+
+35
+00:02:09,470 --> 00:02:12,020
+And the reason for that is actually Linux.
+
+36
+00:02:13,920 --> 00:02:14,250
+Okay.
+
+37
+00:02:14,250 --> 00:02:19,080
+So we can see here that it has failed due to SELinux policies.
+
+38
+00:02:19,500 --> 00:02:21,960
+Okay, so what exactly say SELinux policy?
+
+39
+00:02:21,960 --> 00:02:29,640
+So itself is another big topic, actually, we need to understand before we build any Android device.
+
+40
+00:02:29,880 --> 00:02:30,180
+Okay.
+
+41
+00:02:30,480 --> 00:02:34,170
+So for now, just keep in mind it is actually a set of policies.
+
+42
+00:02:34,950 --> 00:02:43,620
+So basically all objects in Android has a label in it and each label has some permissions.
+
+43
+00:02:44,640 --> 00:02:46,680
+And that is done through a C policies.
+
+44
+00:02:46,800 --> 00:02:55,410
+So basically when we create a service, we need to explicitly say that this service has the right to
+
+45
+00:02:55,650 --> 00:03:00,330
+get added to the to the process or whatever.
+
+46
+00:03:01,200 --> 00:03:08,190
+So there is different, different domains and each label should have different, different access to
+
+47
+00:03:08,190 --> 00:03:08,770
+the domains.
+
+48
+00:03:08,790 --> 00:03:09,030
+Okay.
+
+49
+00:03:09,040 --> 00:03:11,760
+So that enhances the security of Android.
+
+50
+00:03:12,450 --> 00:03:12,750
+Okay.
+
+51
+00:03:12,960 --> 00:03:14,730
+So for now, just keep that in mind.
+
+52
+00:03:14,790 --> 00:03:17,550
+And okay, so there is an alternate do as well.
+
+53
+00:03:17,760 --> 00:03:20,460
+So you can actually disable assailant's policies.
+
+54
+00:03:20,460 --> 00:03:26,070
+Like if there is two modes, there is permissive mode and then enforcement mode.
+
+55
+00:03:26,280 --> 00:03:30,390
+So again, now by default, Android is in enforcement mode.
+
+56
+00:03:30,600 --> 00:03:32,100
+So you can change it diplomacy mode.
+
+57
+00:03:32,110 --> 00:03:34,410
+But we are not going to do that now.
+
+58
+00:03:34,620 --> 00:03:38,790
+What we do is we just try to fix this problem.
+
+59
+00:03:39,270 --> 00:03:39,570
+Okay.
+
+60
+00:03:39,690 --> 00:03:43,170
+So in order to fix this, what you need to do is you just need to.
+
+61
+00:03:44,190 --> 00:03:47,940
+I this this line, the first lines or not?
+
+62
+00:03:50,730 --> 00:03:52,140
+And this over here.
+
+63
+00:03:54,870 --> 00:03:56,130
+So this is obvious name.
+
+64
+00:04:00,000 --> 00:04:05,940
+And this is actually the domain activity.
+
+65
+00:04:05,950 --> 00:04:07,770
+So it's okay to just save it.
+
+66
+00:04:09,210 --> 00:04:10,440
+Close our emulator.
+
+67
+00:04:11,160 --> 00:04:12,900
+Build it again.
+
+68
+00:04:17,580 --> 00:04:17,910
+Okay.
+
+69
+00:04:17,910 --> 00:04:19,650
+So now the build is completed.
+
+70
+00:04:19,650 --> 00:04:22,290
+So let's pull your screen.
+
+71
+00:04:23,040 --> 00:04:25,620
+Okay, then let's run it to once again.
+
+72
+00:04:28,260 --> 00:04:29,550
+Get around them later.
+
+73
+00:04:29,610 --> 00:04:32,300
+Okay, let's earn it.
+
+74
+00:04:34,080 --> 00:04:34,410
+We can.
+
+75
+00:04:34,470 --> 00:04:35,670
+All snapshots, sir.
+
+76
+00:04:38,400 --> 00:04:40,090
+No shock.
+
+77
+00:04:40,830 --> 00:04:42,450
+So I'm just putting them later.
+
+78
+00:04:43,800 --> 00:04:52,590
+Okay let me do this says temporarily let me around 30 below ask for apparently so it's not yet up.
+
+79
+00:04:54,150 --> 00:04:54,720
+Well, I think.
+
+80
+00:04:58,550 --> 00:04:59,480
+So it's starting.
+
+81
+00:05:02,540 --> 00:05:02,960
+Okay.
+
+82
+00:05:02,960 --> 00:05:07,430
+So let's do thing let's first check whether our service is running or not.
+
+83
+00:05:08,390 --> 00:05:09,950
+And then we will take a look at.
+
+84
+00:05:11,110 --> 00:05:12,070
+So here you go.
+
+85
+00:05:12,250 --> 00:05:13,240
+This is our service.
+
+86
+00:05:13,240 --> 00:05:15,340
+So our service is actually running.
+
+87
+00:05:15,790 --> 00:05:17,380
+So this is the service name.
+
+88
+00:05:17,770 --> 00:05:21,910
+Here you can see this is the service name and this is our stub.
+
+89
+00:05:22,930 --> 00:05:24,220
+Which we created earlier.
+
+90
+00:05:24,580 --> 00:05:27,730
+So now our services are running and it's up.
+
+91
+00:05:28,880 --> 00:05:34,130
+And if you take the logcat, you can see that it's a policy issue.
+
+92
+00:05:34,130 --> 00:05:37,250
+Error, which we had earlier is now banished.
+
+93
+00:05:37,700 --> 00:05:38,030
+Okay.
+
+94
+00:05:38,310 --> 00:05:45,470
+So so that was a cucumber demo on how to create a system service in Android.
+
