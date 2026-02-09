@@ -1,0 +1,240 @@
+1
+00:00:00,000 --> 00:00:02,000
+ Hello and welcome back.
+
+2
+00:00:02,000 --> 00:00:07,040
+ In this lecture we will explore the confused deputy through a hands-on lab.
+
+3
+00:00:07,040 --> 00:00:08,340
+ So here is the scenario.
+
+4
+00:00:08,340 --> 00:00:12,920
+ Assume we are user A and we created an access token.
+
+5
+00:00:12,920 --> 00:00:18,880
+ Using this access token, the user A can only and should only access entry ID that is
+
+6
+00:00:18,880 --> 00:00:21,160
+ called 123 entry.
+
+7
+00:00:21,160 --> 00:00:28,200
+ Our goal is to access an entry name called 456 entry which belongs to user B in another
+
+8
+00:00:28,200 --> 00:00:29,440
+ organization.
+
+9
+00:00:29,440 --> 00:00:37,360
+ If we go to jwt.io and decode the user A token, we can see in the permission, if we scroll
+
+10
+00:00:37,360 --> 00:00:43,000
+ down a little bit in the payload, we can see the permissions are scoped to this organization
+
+11
+00:00:43,000 --> 00:00:47,520
+ ID but also to entry ID which is 123 entry.
+
+12
+00:00:47,520 --> 00:00:53,200
+ So we can read, write, delete, publish this specific entry ID.
+
+13
+00:00:53,200 --> 00:00:58,320
+ And by the way you should have access to this access token in the resources of the previous
+
+14
+00:00:58,320 --> 00:00:59,320
+ lecture.
+
+15
+00:00:59,320 --> 00:01:03,400
+ Let's go back to the diagram and what we are going to do right now.
+
+16
+00:01:03,400 --> 00:01:09,240
+ So we will use this access token to pass it to the back end to verify our assumption.
+
+17
+00:01:09,240 --> 00:01:16,280
+ So we need to pass the token to the back end and ensure if we can get the entry ID 123
+
+18
+00:01:16,280 --> 00:01:20,880
+ and then we try again with entry ID 456 and see what happens.
+
+19
+00:01:20,880 --> 00:01:25,360
+ So let me bring the terminal and for simplicity I am going to just use care.
+
+20
+00:01:25,360 --> 00:01:31,760
+ So we pass the access token in the authorization barrier header and then in the URL path
+
+21
+00:01:31,760 --> 00:01:33,880
+ we pass the entry ID.
+
+22
+00:01:33,880 --> 00:01:39,880
+ So if I hit enter we can see that using this access token, we can get the content of that
+
+23
+00:01:39,880 --> 00:01:46,600
+ entry, we can get for example the body, the ID, the tags, title, updated that and then
+
+24
+00:01:46,600 --> 00:01:48,240
+ also the entry ID.
+
+25
+00:01:48,240 --> 00:01:53,280
+ Now let's see what's going to happen if I repeat the same command but instead of going
+
+26
+00:01:53,280 --> 00:01:59,840
+ against entry ID 123 let me go back and then edit this to do 456.
+
+27
+00:01:59,840 --> 00:02:02,640
+ Remember this is the one that we shouldn't have access to.
+
+28
+00:02:02,640 --> 00:02:07,520
+ So I'm going to click enter and then we can see that we got forbidden and not permitted
+
+29
+00:02:07,520 --> 00:02:08,520
+ error message.
+
+30
+00:02:08,520 --> 00:02:14,160
+ Now at this point if you are doing a security assessment, you might try to tamper the JWT
+
+31
+00:02:14,160 --> 00:02:19,320
+ token and change the scope and then maybe double check if the back end verifies the token
+
+32
+00:02:19,320 --> 00:02:21,080
+ signature properly.
+
+33
+00:02:21,080 --> 00:02:26,560
+ Now while this is a valid approach and nothing wrong with that but with the recent AI adoption
+
+34
+00:02:26,560 --> 00:02:34,040
+ I want you to think differently if accessing the data is forbidden using a direct API access
+
+35
+00:02:34,040 --> 00:02:40,080
+ check if that company or that target has AI service or MCP server.
+
+36
+00:02:40,080 --> 00:02:43,800
+ It might give you a path to access the forbidden resources.
+
+37
+00:02:43,800 --> 00:02:51,080
+ Remember in our case the goal is to access the 456 entry without tampering the JWT token
+
+38
+00:02:51,080 --> 00:02:55,800
+ because the token is verified properly in the back end API.
+
+39
+00:02:55,800 --> 00:02:58,320
+ Exploiting this is a little bit straightforward.
+
+40
+00:02:58,320 --> 00:03:04,000
+ As I said before this is a business logic vulnerability and does not really require technical
+
+41
+00:03:04,000 --> 00:03:05,800
+ exploit development.
+
+42
+00:03:05,800 --> 00:03:12,560
+ So what we have to do is to log in as user A into the target MCP server and check if they
+
+43
+00:03:12,560 --> 00:03:18,280
+ have related MCP tool that allows you to access content or entries.
+
+44
+00:03:18,280 --> 00:03:23,000
+ Then try to pass an entry ID that you are not authorized to access.
+
+45
+00:03:23,000 --> 00:03:27,000
+ And in this case we're going to try with entry ID 456.
+
+46
+00:03:27,000 --> 00:03:35,040
+ So we go ahead back to our MCP server and then maybe go to the tools, let's list the tools
+
+47
+00:03:35,040 --> 00:03:43,560
+ and then go to the get content and then pass 456 entry and then let's see what happens.
+
+48
+00:03:43,560 --> 00:03:48,680
+ We can see that the MCP server it will get the content of that entry successfully.
+
+49
+00:03:48,680 --> 00:03:54,400
+ So going back to the diagram and again just to resurface this the reason that this happened
+
+50
+00:03:54,400 --> 00:04:00,720
+ in the first place it's because the MCP server has used its own access token with wide
+
+51
+00:04:00,720 --> 00:04:07,440
+ permission to access the backend API instead of using the users own access token.
+
+52
+00:04:07,440 --> 00:04:15,120
+ Again if we go to JWT.io but this time we decode the JWT access token that is assigned
+
+53
+00:04:15,120 --> 00:04:21,200
+ for the MCP server and we scroll down a little bit in the payload we can see a wild
+
+54
+00:04:21,200 --> 00:04:26,000
+ card permissions to access any entry and on any organization.
+
+55
+00:04:26,000 --> 00:04:31,280
+ In the next lecture you will have an exercise to understand the other attack vector where
+
+56
+00:04:31,280 --> 00:04:38,120
+ the MCP server might not have a wide permission access token but instead developers decided
+
+57
+00:04:38,120 --> 00:04:44,160
+ to create an internal endpoint and then make the MCP server use that internal endpoint
+
+58
+00:04:44,160 --> 00:04:46,440
+ to access any data that it wants.
+
+59
+00:04:46,440 --> 00:04:50,400
+ I hope that this lecture has been informative for you and I will see you in the next one.
+
+60
+00:04:50,400 --> 00:04:51,400
+ Thanks for watching.
+
