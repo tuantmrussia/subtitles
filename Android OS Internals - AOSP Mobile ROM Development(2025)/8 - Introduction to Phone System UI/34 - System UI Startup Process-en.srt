@@ -1,0 +1,188 @@
+1
+00:00:01,900 --> 00:00:03,320
+Let's discuss about the system.
+
+2
+00:00:03,410 --> 00:00:04,840
+We start to process.
+
+3
+00:00:04,870 --> 00:00:09,840
+So in this section, we will go through some of the classes which are responsible for the system UI
+
+4
+00:00:09,850 --> 00:00:10,330
+start up.
+
+5
+00:00:20,680 --> 00:00:25,330
+So here is a high level overview of how the system UI is started.
+
+6
+00:00:25,370 --> 00:00:31,660
+OK, so as you can see here, the single process starts the systems of the systems tower internet star
+
+7
+00:00:31,960 --> 00:00:36,150
+system UI and the System UI finally initialize this whole system UI components.
+
+8
+00:00:36,160 --> 00:00:38,840
+So this is how the system usually starts.
+
+9
+00:00:38,860 --> 00:00:44,590
+If you haven't heard about Tiger, it's one of the process which starts during the Android bulldozers,
+
+10
+00:00:44,600 --> 00:00:49,870
+so it's one of the first Android process to get started and all the rest of the processes it started
+
+11
+00:00:49,870 --> 00:00:50,620
+from the side.
+
+12
+00:00:50,980 --> 00:00:57,040
+And the system server is one of the most important process which side got started and the systems are
+
+13
+00:00:57,040 --> 00:00:59,170
+always responsible for a lot of other things.
+
+14
+00:00:59,240 --> 00:01:04,990
+Systems are also stouts all the services within Android, and it is also responsible for starting the
+
+15
+00:01:04,990 --> 00:01:05,740
+system UI.
+
+16
+00:01:05,740 --> 00:01:06,950
+So on a very high level.
+
+17
+00:01:06,980 --> 00:01:07,980
+So this is the process.
+
+18
+00:01:07,990 --> 00:01:10,660
+So the cycle is started by kernel.
+
+19
+00:01:10,690 --> 00:01:17,560
+The cycle starts system server and system server is responsible for starting all the services, including
+
+20
+00:01:17,560 --> 00:01:18,730
+system UI app.
+
+21
+00:01:18,760 --> 00:01:24,700
+And finally, the system UI actually initialize us all the system UI components like navigation, bar
+
+22
+00:01:24,700 --> 00:01:27,440
+status, bar closed and all other advanced.
+
+23
+00:01:30,630 --> 00:01:36,930
+Now, let's dig a little bit deeper into that, so here is a sequence, a diagram of how the system
+
+24
+00:01:36,930 --> 00:01:37,980
+you get started.
+
+25
+00:01:38,040 --> 00:01:42,690
+So as you can see here, we have airman's, which is nothing but activity management service.
+
+26
+00:01:42,700 --> 00:01:48,660
+And then we have the system server, which is responsible for starting lot of services, including system,
+
+27
+00:01:48,660 --> 00:01:49,380
+UI app.
+
+28
+00:01:49,380 --> 00:01:54,810
+And then we have the system UI application here, which is basically a class and the system UI service.
+
+29
+00:01:54,840 --> 00:01:55,920
+This is again a class.
+
+30
+00:01:55,920 --> 00:01:58,890
+We will have a look at this class and then the system UI itself.
+
+31
+00:01:58,890 --> 00:02:03,770
+So the first step is that the system server receives signal from the spigot.
+
+32
+00:02:03,780 --> 00:02:06,960
+So this diagram shows the process starting from systems.
+
+33
+00:02:07,230 --> 00:02:12,830
+OK, so once the system Sava got the signal from Saigal because this particular function started, the
+
+34
+00:02:12,850 --> 00:02:19,170
+service assigned the start of the services enter core start system UI function, and this started singing
+
+35
+00:02:19,180 --> 00:02:25,800
+a function will create an instance of the system UI application and the all clear of this class is triggered.
+
+36
+00:02:25,800 --> 00:02:28,530
+The system UI application extends to application.
+
+37
+00:02:28,530 --> 00:02:35,550
+The method will have a look at these classes in the next section, but for now, keep in mind that system
+
+38
+00:02:35,550 --> 00:02:41,520
+UI application extends that application class, and it has an own create function, which gets triggered
+
+39
+00:02:41,610 --> 00:02:42,720
+when it is instantiate.
+
+40
+00:02:42,750 --> 00:02:47,280
+And after this on Create the Activity Management Service receives this trigger.
+
+41
+00:02:47,280 --> 00:02:53,300
+It calls the start service function, and it calls Subsystem UI service and the system UI calls the
+
+42
+00:02:53,310 --> 00:02:54,050
+on grid.
+
+43
+00:02:54,060 --> 00:03:02,730
+It has an own create function which gets executed, and this will start service if needed from the system
+
+44
+00:03:02,730 --> 00:03:08,940
+UI application and then run system UI application bolster start method, which finally triggers the
+
+45
+00:03:08,940 --> 00:03:09,570
+system UI.
+
+46
+00:03:09,600 --> 00:03:13,950
+So this is the overall sequence diagram of how that works.
+
+47
+00:03:15,210 --> 00:03:22,860
+So now let's do a cold walk through soil and visit all these classes and see how that works.
+
