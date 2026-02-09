@@ -1,0 +1,72 @@
+1
+00:00:00,420 --> 00:00:04,890
+Binder là cơ chế liên lạc trong quá trình được sử dụng ở steroid.
+
+2
+00:00:05,250 --> 00:00:13,110
+Hãy tưởng tượng rằng hai người, Sam và John, đến từ những nơi khác nhau trên thế giới và không biết một điểm chung
+
+3
+00:00:13,110 --> 00:00:13,620
+ngôn ngữ.
+
+4
+00:00:13,950 --> 00:00:17,820
+Họ không thể hiểu được thông điệp được truyền đi giữa họ.
+
+5
+00:00:18,180 --> 00:00:25,080
+Trong trường hợp này, Sara, dịch giả chuyên nghiệp, giúp họ giao tiếp trong thế giới của người máy.
+
+6
+00:00:25,350 --> 00:00:33,150
+Binder IPC thực hiện một công việc tương tự bằng cách dịch các thông điệp qua các quá trình khác nhau trong hệ thống.
+
+7
+00:00:34,210 --> 00:00:42,010
+APC hoặc liên lạc cá nhân cho phép quá trình steroid để giao tiếp và chia sẻ dịch vụ với mỗi người
+
+8
+00:00:42,010 --> 00:00:42,280
+khác.
+
+9
+00:00:42,610 --> 00:00:52,120
+APC của steroid được gọi là tổ chức các quá trình APC trong Andie cách biệt không gian địa chỉ và quá trình
+
+10
+00:00:52,120 --> 00:00:55,240
+không thể truy cập trực tiếp dưới bộ nhớ tiến trình đó.
+
+11
+00:00:55,570 --> 00:00:57,760
+Nó được gọi là sự cô lập trong quá trình.
+
+12
+00:00:58,090 --> 00:01:03,640
+Quá trình cô lập sẽ tốt cho sự an toàn và ổn định của hệ điều hành.
+
+13
+00:01:03,880 --> 00:01:10,390
+Tuy nhiên, giả sử một quá trình muốn cung cấp một số dịch vụ hữu ích cho các tiến trình khác.
+
+14
+00:01:10,630 --> 00:01:18,130
+Trong trường hợp đó, nó cần phải cung cấp một số cơ chế cho phép các quá trình khác phát hiện và tương tác
+
+15
+00:01:18,220 --> 00:01:19,750
+với những dịch vụ đó.
+
+16
+00:01:20,050 --> 00:01:28,750
+Cơ chế đó được gọi là APC hoặc tiến trình truyền thông nội bộ kết nối, APC, Easter in the
+
+17
+00:01:28,750 --> 00:01:30,760
+Cơ chế quá trình ở steroid.
+
+18
+00:01:31,060 --> 00:01:34,870
+Và nó là nền tảng của kiến trúc robot.
+
