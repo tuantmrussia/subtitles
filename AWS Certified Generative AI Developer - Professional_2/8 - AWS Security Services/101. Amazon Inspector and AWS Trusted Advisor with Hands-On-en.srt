@@ -1,0 +1,484 @@
+1
+00:00:00,000 --> 00:00:03,920
+ In this lecture, we're going to look at a few more AWS services
+
+2
+00:00:03,920 --> 00:00:08,360
+ in the area of security, governance, and compliance.
+
+3
+00:00:08,360 --> 00:00:11,520
+ So the first one is Amazon Inspector.
+
+4
+00:00:11,520 --> 00:00:14,120
+ So Amazon Inspector automatically
+
+5
+00:00:14,120 --> 00:00:19,160
+ discovers compute workload, such as Amazon EC2, instances,
+
+6
+00:00:19,160 --> 00:00:24,560
+ container images in ECR and within CACD and Lambda function.
+
+7
+00:00:27,040 --> 00:00:30,520
+ Now, what does the Amazon Inspector do?
+
+8
+00:00:30,520 --> 00:00:34,560
+ It scans for software vulnerabilities
+
+9
+00:00:34,560 --> 00:00:38,920
+ and unintended network exposure.
+
+10
+00:00:38,920 --> 00:00:41,600
+ In the exam, you need to keep in mind two things
+
+11
+00:00:41,600 --> 00:00:42,960
+ about Amazon Inspector.
+
+12
+00:00:42,960 --> 00:00:46,280
+ One, it is for compute workloads.
+
+13
+00:00:46,280 --> 00:00:49,800
+ Second, it scans for software vulnerabilities
+
+14
+00:00:49,800 --> 00:00:54,280
+ and unintended network exposure.
+
+15
+00:00:54,280 --> 00:00:57,160
+ OK, just let me just show you through the console quick.
+
+16
+00:00:57,160 --> 00:00:59,920
+ So if I just go and search for Inspector.
+
+17
+00:00:59,920 --> 00:01:08,600
+ So right now, you can see I am not enabled Amazon Inspector.
+
+18
+00:01:08,600 --> 00:01:13,440
+ So we need to activate the Inspector in order for it to work.
+
+19
+00:01:13,440 --> 00:01:14,960
+ And there's going to be some charge for it.
+
+20
+00:01:14,960 --> 00:01:16,520
+ So I'm not going to activate Inspector.
+
+21
+00:01:16,520 --> 00:01:18,520
+ But you can see here Amazon Inspector
+
+22
+00:01:18,520 --> 00:01:20,520
+ is an automated vulnerability management
+
+23
+00:01:20,520 --> 00:01:24,520
+ service that consistently scans workloads for vulnerabilities
+
+24
+00:01:24,520 --> 00:01:27,840
+ and unintended network exposure.
+
+25
+00:01:27,840 --> 00:01:30,000
+ So if you activate Inspector, then it's
+
+26
+00:01:30,000 --> 00:01:33,520
+ going to scan all your compute workloads
+
+27
+00:01:33,520 --> 00:01:37,440
+ and then generate a report for you.
+
+28
+00:01:37,440 --> 00:01:40,800
+ Now, let's take a look at the second service,
+
+29
+00:01:40,800 --> 00:01:44,240
+ which is AWS trusted advisor.
+
+30
+00:01:44,240 --> 00:01:48,120
+ So AWS trusted advisor continuously
+
+31
+00:01:48,120 --> 00:01:53,760
+ evaluates your AWS environment using best practices
+
+32
+00:01:53,760 --> 00:01:57,040
+ along multiple categories.
+
+33
+00:01:57,040 --> 00:01:59,640
+ So those categories are cost optimization
+
+34
+00:01:59,640 --> 00:02:01,240
+ and security.
+
+35
+00:02:01,240 --> 00:02:05,080
+ Then you have resilience, performance, operational excellence.
+
+36
+00:02:05,080 --> 00:02:07,240
+ Then you have another really important one, which
+
+37
+00:02:07,240 --> 00:02:09,480
+ is called as service limits.
+
+38
+00:02:09,480 --> 00:02:12,400
+ So what AWS trusted advisor does is it
+
+39
+00:02:12,400 --> 00:02:17,240
+ will review how you are using all the AWS services
+
+40
+00:02:17,240 --> 00:02:22,600
+ within your account across these six different categories
+
+41
+00:02:22,600 --> 00:02:26,880
+ and then compare them with the AWS best practices.
+
+42
+00:02:26,880 --> 00:02:31,160
+ And then it would recommend actions to remediate
+
+43
+00:02:31,160 --> 00:02:34,440
+ any deviations from best practices.
+
+44
+00:02:34,440 --> 00:02:37,880
+ Now, let's take a look at all these six different categories
+
+45
+00:02:37,880 --> 00:02:38,880
+ from the console.
+
+46
+00:02:38,880 --> 00:02:40,520
+ So I am on the AWS console.
+
+47
+00:02:40,520 --> 00:02:42,800
+ Let me just search for trusted advisor.
+
+48
+00:02:45,840 --> 00:02:48,560
+ Now on the left, you can see recommendations.
+
+49
+00:02:48,560 --> 00:02:50,560
+ And here are the six categories.
+
+50
+00:02:50,560 --> 00:02:53,000
+ So if I just click on cost optimization.
+
+51
+00:02:53,000 --> 00:02:57,640
+ So here it defines what it means by cost optimization.
+
+52
+00:02:57,640 --> 00:03:00,240
+ Choose a check name to see recommendations
+
+53
+00:03:00,240 --> 00:03:04,240
+ for a ways to help save money for your AWS account.
+
+54
+00:03:04,240 --> 00:03:08,080
+ So now these are the various best practices
+
+55
+00:03:08,080 --> 00:03:13,000
+ that it would check the resource that you are using
+
+56
+00:03:13,000 --> 00:03:15,280
+ and see if it is cost optimized.
+
+57
+00:03:15,280 --> 00:03:18,480
+ So in my case, I don't have an ECR repository.
+
+58
+00:03:18,480 --> 00:03:21,120
+ If I had configured one, then it would check
+
+59
+00:03:21,120 --> 00:03:26,120
+ whether I have Amazon ECR repository without a life cycle
+
+60
+00:03:26,120 --> 00:03:29,640
+ policy, then it will check whether the AWS account is part
+
+61
+00:03:29,640 --> 00:03:34,640
+ of AWS organization or not, whether my EBS volumes
+
+62
+00:03:34,640 --> 00:03:36,640
+ are overprovision.
+
+63
+00:03:36,640 --> 00:03:40,200
+ So if they are overprovision, it would recommend
+
+64
+00:03:40,200 --> 00:03:43,120
+ to reduce the size of the EBS volume.
+
+65
+00:03:43,120 --> 00:03:44,840
+ The second one is the performance.
+
+66
+00:03:44,840 --> 00:03:47,760
+ And here it will recommend how to improve the performance
+
+67
+00:03:47,760 --> 00:03:49,480
+ of AWS services.
+
+68
+00:03:49,480 --> 00:03:52,480
+ It will check if Amazon DynamoDB auto scaling
+
+69
+00:03:52,480 --> 00:03:53,720
+ has been enabled.
+
+70
+00:03:53,720 --> 00:03:57,000
+ It will check Amazon EBS is underprovision.
+
+71
+00:03:57,000 --> 00:03:59,240
+ So it will look at all the AWS services
+
+72
+00:03:59,240 --> 00:04:02,920
+ that I have provision and compare it with the best practices
+
+73
+00:04:02,920 --> 00:04:04,680
+ and then give me some recommendations.
+
+74
+00:04:04,680 --> 00:04:08,400
+ So I don't have any of these services provision right now.
+
+75
+00:04:08,400 --> 00:04:11,000
+ So that's why it's graying out these areas.
+
+76
+00:04:11,000 --> 00:04:13,200
+ But this is what is gonna check this.
+
+77
+00:04:13,200 --> 00:04:15,840
+ So similarly for security, it will give me suggestions
+
+78
+00:04:15,840 --> 00:04:19,400
+ on how to improve the security posture for my infrastructure.
+
+79
+00:04:19,400 --> 00:04:23,280
+ It will check if there are any Amazon EBS public snapshots,
+
+80
+00:04:23,280 --> 00:04:27,080
+ Amazon RDS public snapshots, obviously you should not have
+
+81
+00:04:27,080 --> 00:04:30,280
+ public snapshots of your database.
+
+82
+00:04:30,280 --> 00:04:32,160
+ Then it will look at fault tolerance
+
+83
+00:04:32,160 --> 00:04:36,040
+ and here it will suggest ways to increase their availability
+
+84
+00:04:36,040 --> 00:04:39,440
+ and redundancy of my services.
+
+85
+00:04:39,440 --> 00:04:42,680
+ So it will take a look at Amazon DynamoDB
+
+86
+00:04:42,680 --> 00:04:46,440
+ point in time recovery, Amazon Redshift cluster,
+
+87
+00:04:46,440 --> 00:04:49,560
+ automated snapshots and a lot of other things.
+
+88
+00:04:49,560 --> 00:04:52,400
+ Then we have the service limits.
+
+89
+00:04:52,400 --> 00:04:56,040
+ I think this is the most important use case
+
+90
+00:04:56,040 --> 00:05:01,040
+ for trusted advisor where it would give an alert
+
+91
+00:05:01,040 --> 00:05:05,640
+ if any of the services reach 80% of the service quota.
+
+92
+00:05:05,640 --> 00:05:09,440
+ So what it means is like if you see for each AWS service,
+
+93
+00:05:09,440 --> 00:05:13,120
+ let's take the example of revenue function in most accounts
+
+94
+00:05:13,120 --> 00:05:18,120
+ and regions, you have the limit of about 1000 invocations.
+
+95
+00:05:18,120 --> 00:05:23,200
+ And if the invocations hit more than 1000,
+
+96
+00:05:23,200 --> 00:05:25,320
+ then there's going to be throttling.
+
+97
+00:05:25,320 --> 00:05:27,000
+ So if you're expecting that the invocations
+
+98
+00:05:27,000 --> 00:05:29,000
+ are going to be more than 1000.
+
+99
+00:05:29,000 --> 00:05:32,800
+ So what you can do is you can go to this link service quota
+
+100
+00:05:32,800 --> 00:05:36,120
+ or raise a ticket for AWS support center,
+
+101
+00:05:36,120 --> 00:05:40,080
+ where you can request for additional invocations.
+
+102
+00:05:40,080 --> 00:05:43,080
+ So what AWS does is let's say for lambda function
+
+103
+00:05:43,080 --> 00:05:46,480
+ and let's say the quota limit is 1000.
+
+104
+00:05:46,480 --> 00:05:49,200
+ So when you reach 80% of the limit,
+
+105
+00:05:49,200 --> 00:05:51,600
+ it will send you an yellow alert.
+
+106
+00:05:51,600 --> 00:05:55,560
+ If you reach 100% then it will send you a red alert.
+
+107
+00:05:55,560 --> 00:05:59,520
+ Okay, then finally you have the operational excellence
+
+108
+00:05:59,520 --> 00:06:03,480
+ where it helps you improve the operational readiness
+
+109
+00:06:03,480 --> 00:06:05,400
+ of your resources.
+
+110
+00:06:06,160 --> 00:06:09,240
+ And these are some of the things from operational perspective
+
+111
+00:06:09,240 --> 00:06:12,840
+ that it will evaluate against the AWS best practice.
+
+112
+00:06:12,840 --> 00:06:17,360
+ So Amazon, VPC without flow logs and many others.
+
+113
+00:06:17,360 --> 00:06:18,640
+ So from the exam perspective,
+
+114
+00:06:18,640 --> 00:06:21,080
+ what you need to remember is that there is a service called
+
+115
+00:06:21,080 --> 00:06:26,080
+ as trusted advisor, which will evaluate all the resources
+
+116
+00:06:26,080 --> 00:06:30,200
+ within your AWS account and map them
+
+117
+00:06:30,200 --> 00:06:35,080
+ to the AWS best practices along these six different areas.
+
+118
+00:06:35,080 --> 00:06:37,520
+ And if there is a deviation,
+
+119
+00:06:37,520 --> 00:06:41,960
+ then it is good to provide recommendations and alert you.
+
+120
+00:06:41,960 --> 00:06:44,680
+ Okay, that's pretty much it from this lecture.
+
+121
+00:06:44,680 --> 00:06:46,120
+ I'll see in the next lecture. Thank you.
+
