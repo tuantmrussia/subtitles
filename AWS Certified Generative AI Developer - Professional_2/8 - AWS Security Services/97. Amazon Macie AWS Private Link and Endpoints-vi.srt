@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:05,680
+Trong bài giảng này, chúng ta sẽ tìm hiểu về dịch vụ AWS để bảo vệ hệ thống AI.
+
+2
+00:00:05,680 --> 00:00:10,080
+Chúng ta sẽ bắt đầu với Amazon Macy và AWS.
+
+3
+00:00:10,080 --> 00:00:17,680
+Vì vậy Amazon Macy là một dịch vụ an ninh mà sử dụng máy học tập và mô hình phù hợp
+
+4
+00:00:17,680 --> 00:00:22,640
+khám phá và bảo vệ dữ liệu nhạy cảm của bạn.
+
+5
+00:00:23,200 --> 00:00:30,320
+Dữ liệu nhạy cảm đó có thể bao gồm thông tin nhận dạng cá nhân, dữ liệu PI,
+
+6
+00:00:30,320 --> 00:00:36,880
+Chẳng hạn như tên, địa chỉ, chi tiết thẻ tín dụng và nhiều đặc tính khác.
+
+7
+00:00:36,880 --> 00:00:46,400
+Bây giờ, hãy nhớ từ góc nhìn kiểm tra, Amazon Macy chỉ làm việc các dữ liệu nhạy cảm mà bạn
+
+8
+00:00:46,400 --> 00:00:53,120
+trong một cái xô S3. Vì vậy nó sẽ quét qua xô S3 và xác định
+
+9
+00:00:53,120 --> 00:01:00,320
+Bất kỳ thông tin PI nào. Và nếu nó tìm thấy bất kỳ thông tin PI, sau đó nó sẽ gửi một thông báo
+
+10
+00:01:00,320 --> 00:01:06,160
+để sự kiện cầu. Và cầu sự kiện, bạn có thể nghĩ về một xe buýt sự kiện mà sẽ nhận được thông báo
+
+11
+00:01:06,160 --> 00:01:12,080
+từ các dịch vụ như Amazon Macy và các dịch vụ AWS khác. Và nó sẽ kêu gọi một số dòng chảy
+
+12
+00:01:12,080 --> 00:01:18,560
+Dịch vụ AWS như hoạt động AWS Lambda. Và hãy nói rằng nó tìm thấy một số thông tin PI trong xô S3.
+
+13
+00:01:18,560 --> 00:01:26,320
+Nó sẽ gọi chức năng Lambda, mà có thể xóa hoặc chỉnh sửa dữ liệu đó. Và nó cũng có thể
+
+14
+00:01:26,320 --> 00:01:32,880
+Gửi những phát hiện này đến trung tâm an ninh. Nó chỉ là một dịch vụ tổng hợp an ninh.
+
+15
+00:01:32,880 --> 00:01:39,600
+Và từ góc nhìn kiểm tra, hãy nhớ rằng, nếu nó nói về S3 xô, thông tin PI,
+
+16
+00:01:39,600 --> 00:01:47,040
+thì dịch vụ sẽ được sử dụng sẽ là Amazon Macy. Được rồi, tiếp theo, chúng ta có phòng riêng.
+
+17
+00:01:47,040 --> 00:01:55,600
+Liên kết và liên lạc cá nhân của AWS cung cấp sự kết nối cá nhân mà không phơi bày đường dẫn đến nơi công cộng
+
+18
+00:01:55,600 --> 00:02:01,440
+Internet. Và lợi ích của điều đó là gì? Vì vậy, nếu mạng truyền thông sử dụng liên kết cá nhân,
+
+19
+00:02:01,440 --> 00:02:06,880
+Nó không đi qua mạng lưới công cộng của chúng ta, làm giảm nguy cơ đe dọa bên ngoài,
+
+20
+00:02:07,600 --> 00:02:16,480
+Như là tấn công bằng vũ lực và DDOS. Tóm lại, nếu bạn muốn giảm các mối đe dọa an ninh
+
+21
+00:02:16,480 --> 00:02:23,840
+Thay vì đi qua internet công cộng, bạn có thể sử dụng liên kết riêng của AWS, đó là một mạng cá nhân
+
+22
+00:02:23,840 --> 00:02:31,920
+từ AWS. Bây giờ chúng ta hãy hiểu trong trường hợp nào bạn có thể gửi giao thông qua liên kết cá nhân.
+
+23
+00:02:31,920 --> 00:02:39,920
+Đầu tiên là giữa các dịch vụ AWS khác nhau giữa các đám mây ảo khác nhau
+
+24
+00:02:39,920 --> 00:02:49,200
+trong các tài khoản AWS khác nhau. Và cuối cùng, giữa mạng lưới chuẩn đoán và dịch vụ AWS,
+
+25
+00:02:49,200 --> 00:02:55,120
+Chúng tôi cũng sẽ sử dụng AWS trực tiếp, đúng, trong trường hợp đó. Được rồi, bây giờ chúng ta hãy hiểu ba
+
+26
+00:02:55,120 --> 00:03:02,480
+Tình huống chi tiết hơn. Bây giờ hãy nói rằng bạn đang chạy một ứng dụng web và bạn có một web
+
+27
+00:03:02,480 --> 00:03:09,360
+Máy chủ được đặt trong trường hợp EC2. Hãy nói rằng đó là www.mazon.com. Và sau đó bạn cũng có một số
+
+28
+00:03:09,360 --> 00:03:15,200
+Hình ảnh được tải lên xô ở Amazon S3. Và bạn có thể thấy một vài hình ảnh ở đây.
+
+29
+00:03:15,200 --> 00:03:23,440
+Vì vậy, bây giờ hãy nói rằng chúng tôi có một người dùng kinh doanh người đang cố gắng truy cập vào máy chủ web www.amazon.com.
+
+30
+00:03:23,440 --> 00:03:30,320
+Và bây giờ nó yêu cầu trình phục vụ web yêu cầu hình ảnh của một con voi.
+
+31
+00:03:30,320 --> 00:03:36,560
+Và chúng ta biết rằng con voi này được lưu trữ trong xô S3. Vì vậy, bây giờ này EC2 thể hiện sẽ làm cho
+
+32
+00:03:36,560 --> 00:03:42,640
+một yêu cầu với chiếc xô Amazon S3 để lấy con voi này. Vì vậy, nó có hai lựa chọn hoặc nó có thể đi qua
+
+33
+00:03:42,640 --> 00:03:51,360
+Internet công cộng hoặc nó có thể xem qua liên kết cá nhân của AWS. Và đây là kịch bản. Bây giờ bạn có thể
+
+34
+00:03:51,360 --> 00:03:59,600
+Chỉ cần nói rằng cả hai trường hợp EC2 và S3 xô nằm trong đám mây AWS. Vậy tại sao chúng ta cần một
+
+35
+00:03:59,600 --> 00:04:06,560
+Liên kết cá nhân hay internet công cộng? Xin lưu ý rằng một số dịch vụ như EC2 thể hiện,
+
+36
+00:04:06,560 --> 00:04:15,040
+Cơ sở dữ liệu RDS được cung cấp trong khách hàng VPC, nhưng một số dịch vụ khác như DynamoDB,
+
+37
+00:04:15,040 --> 00:04:23,680
+Giám sát đám mây ở Amazon S3, vân vân, chúng được tổ chức tại AWS VPC và tài khoản.
+
+38
+00:04:23,680 --> 00:04:30,960
+Vì vậy, đó là lý do tại sao bạn hoặc cần một internet công cộng hoặc một liên kết cá nhân AWS để truy cập này
+
+39
+00:04:30,960 --> 00:04:37,040
+phục vụ. Được rồi, bây giờ chúng ta hãy xem xét tất cả ba kịch bản dịch vụ AWS và
+
+40
+00:04:37,040 --> 00:04:43,280
+Trên mạng. Đây là một biểu đồ từ AWS mô tả điều này. Giả sử chúng ta có EC2
+
+41
+00:04:43,280 --> 00:04:50,800
+Ví dụ trong một khách hàng VPC trong VPC của bạn và trong tài khoản của bạn. Và rồi như tôi đã nói,
+
+42
+00:04:50,800 --> 00:05:00,480
+Có các dịch vụ từ AWS được tổ chức trong tài khoản AWS và VPC. Vì vậy, bạn có một đám mây đồng hồ
+
+43
+00:05:00,480 --> 00:05:08,400
+Cánh cổng ARI lambda S3 chứa trong tài khoản AWS và VPC. Bây giờ nếu EC2 này muốn truy cập
+
+44
+00:05:08,400 --> 00:05:15,440
+Bất kỳ dịch vụ nào, sau đó nó phải đi qua các liên kết cá nhân hoặc internet công cộng. Sau đó tương tự như vậy,
+
+45
+00:05:15,440 --> 00:05:22,800
+Hãy nói rằng một kịch bản khác nơi bạn đang truy cập một số dữ liệu từ một tổ chức khác đó là của bạn
+
+46
+00:05:22,800 --> 00:05:29,040
+Cộng sự tổ chức và họ có một ví dụ EC2 trong tài khoản AWS và VPC của họ và bạn có của bạn
+
+47
+00:05:29,040 --> 00:05:36,720
+Trường hợp EC2 trong tài khoản và VPC. Vì vậy, làm thế nào bạn có thể truy cập chúng hoặc thông qua internet công cộng
+
+48
+00:05:36,720 --> 00:05:44,560
+hoặc thông qua các liên kết riêng của AWS và đó là kết nối đang hiển thị. Bây giờ kịch bản thứ ba chúng tôi
+
+49
+00:05:44,560 --> 00:05:52,720
+Đã thảo luận về nơi mà ai đó từ dự báo trên muốn truy cập Hãy nói này S3 xô và nó cũng có
+
+50
+00:05:52,720 --> 00:05:59,520
+Có một tài khoản AWS và đây là VPC từ tài khoản AWS. Vì vậy, làm thế nào mà giao thông sẽ
+
+51
+00:05:59,520 --> 00:06:05,360
+Các tuyến đường là từ trung tâm dữ liệu trên được chuẩn đoán nó sẽ sử dụng AWS trực tiếp kết nối và AWS trực tiếp
+
+52
+00:06:05,360 --> 00:06:13,200
+Kết nối bạn có thể nghĩ đến một cáp mạng dành riêng để kết nối trung tâm dữ liệu của bạn với một tài khoản AWS.
+
+53
+00:06:13,200 --> 00:06:19,200
+Nó sẽ đi đến nơi nó trực tiếp kết nối đến tài khoản của bạn và sau đó từ tài khoản AWS của bạn nó sẽ được
+
+54
+00:06:19,200 --> 00:06:25,040
+Được chỉ định bởi một đường dẫn riêng đến S3. Bây giờ từ một ví dụ có một cặp quan trọng
+
+55
+00:06:25,040 --> 00:06:31,440
+Những thứ bạn cần biết là lối ra và điểm kết thúc giao diện. Vậy điểm kết thúc là gì?
+
+56
+00:06:31,440 --> 00:06:39,360
+Vậy điểm kết nối chỉ là một địa chỉ IP mà bạn tạo trong tài khoản AWS và VPC.
+
+57
+00:06:39,360 --> 00:06:45,840
+Sau đó, hãy nói rằng trường hợp EC2 này muốn truy cập dữ liệu trong Amazon S3 xô. Vì vậy, nó sẽ
+
+58
+00:06:45,840 --> 00:06:52,240
+lộ trình tất cả các giao thông đến địa chỉ IP này được gọi là cổng kết thúc điểm và sau đó từ cổng kết thúc điểm
+
+59
+00:06:52,240 --> 00:07:00,400
+Giao thông được chuyển tới Amazon S3 bằng đường liên kết cá nhân AWS này. Điểm kết thúc giao diện tương tự
+
+60
+00:07:00,400 --> 00:07:05,680
+Làm điều tương tự. Vì vậy, bạn sẽ chỉ có một địa chỉ IP và giao thông này có thể được chuyển hướng đến điều này
+
+61
+00:07:05,680 --> 00:07:13,040
+Địa chỉ IP và sau đó thông qua AWS liên kết riêng nó sẽ định tuyến yêu cầu đó. Vì vậy hãy nhớ rằng trong khi
+
+62
+00:07:13,040 --> 00:07:17,760
+Nó là liên kết cá nhân nhưng bạn không thể sử dụng nó trực tiếp. Vì vậy, bạn sẽ có
+
+63
+00:07:17,760 --> 00:07:23,680
+để tạo hoặc một điểm cổng kết thúc hoặc một điểm kết nối giao diện và sau đó đi qua
+
+64
+00:07:23,680 --> 00:07:30,160
+Liên kết AWS. Và những gì là sự khác biệt giữa cổng kết thúc điểm và kết thúc giao diện điểm và chúng tôi
+
+65
+00:07:30,160 --> 00:07:38,880
+thảo luận trong bài giảng này có rất nhiều dịch vụ AWS được tổ chức trong một VPC quản lý
+
+66
+00:07:38,880 --> 00:07:45,280
+Và tài khoản như S3, Lambda, APA, Cloud Watch v.v... Bây giờ nếu bạn muốn truy cập
+
+67
+00:07:46,000 --> 00:07:55,120
+Hơn AWS liên kết tư nhân Amazon S3 hoặc DynamoDB sau đó bạn sử dụng các điểm kết nối cửa ra vào nhưng nếu bạn muốn sử dụng
+
+68
+00:07:55,120 --> 00:08:02,000
+Bất kỳ dịch vụ nào khác ngoài S3 và DynamoDB sau đó bạn sử dụng điểm kết thúc giao diện.
+
+69
+00:08:02,000 --> 00:08:10,320
+Vì vậy, hy vọng nó là rõ ràng chỉ cần nhớ một điều cuối cùng mà chúng ta hãy nói rằng chúng ta có EC2 hoặc RDS là một
+
+70
+00:08:10,320 --> 00:08:18,720
+Cơ sở dữ liệu từ AWS. Đó là một số dịch vụ được triển khai trong VPC của riêng anh. Vậy là không
+
+71
+00:08:18,720 --> 00:08:26,320
+Cần liên kết riêng của AWS hoặc giao diện hoặc cổng cuối. Điều này chỉ cần thiết cho dịch vụ mà
+
+72
+00:08:26,320 --> 00:08:32,880
+được tổ chức tại AWS VPC và tài khoản. Okay đó là khá nhiều nó trong bài giảng này tôi sẽ
+
+73
+00:08:32,880 --> 00:08:35,920
+trong bài giảng tiếp theo. Cảm ơn.
+
