@@ -1,0 +1,336 @@
+1
+00:00:00,610 --> 00:00:01,120
+Còn sớm mà.
+
+2
+00:00:01,120 --> 00:00:04,420
+Tiếp theo là một cơ chế an ninh của mac được sử dụng ở steroid.
+
+3
+00:00:04,420 --> 00:00:07,840
+Vậy là MAC đại diện cho điều khiển truy cập bắt buộc.
+
+4
+00:00:07,840 --> 00:00:14,120
+Để hiểu rõ Linux, chúng ta cần biết Mac và RAC là gì.
+
+5
+00:00:14,140 --> 00:00:20,680
+Vì vậy, MAC đại diện cho điều khiển truy cập bắt buộc và CNC đại diện cho kiểm soát truy cập thông tin.
+
+6
+00:00:20,710 --> 00:00:26,200
+Mac và DAC là hai trong những mô hình điều khiển phổ biến nhất đang được sử dụng.
+
+7
+00:00:26,230 --> 00:00:31,450
+Điểm khác biệt chính giữa chúng là cách chúng cung cấp quyền truy cập vào người dùng.
+
+8
+00:00:31,450 --> 00:00:39,940
+Vì vậy, trong bắt buộc quyền điều khiển truy cập hoặc MAC, hệ thống quyết định những đối tượng nào có thể truy cập dữ liệu cụ thể
+
+9
+00:00:39,940 --> 00:00:43,630
+Đối tượng ở phòng điều khiển bí mật.
+
+10
+00:00:43,660 --> 00:00:50,800
+Chủ sở hữu của đối tượng, chủ sở hữu của đối tượng xác định đối tượng nào có thể truy cập đối tượng đó.
+
+11
+00:00:50,800 --> 00:00:52,660
+Đây là trường hợp điển hình.
+
+12
+00:00:52,690 --> 00:00:57,850
+Trong Linux, AC Linux là một cơ chế an ninh mac để làm cho nó rất đơn giản.
+
+13
+00:00:57,880 --> 00:01:00,500
+Hãy cố gắng hiểu điều này với một ví dụ.
+
+14
+00:01:00,520 --> 00:01:06,250
+Hãy tưởng tượng bạn sở hữu một ngôi nhà nông trại và bạn có bò, thỏ và gà.
+
+15
+00:01:06,280 --> 00:01:10,790
+Mỗi con vật trong trang trại nên ăn thức ăn cụ thể.
+
+16
+00:01:10,810 --> 00:01:14,860
+Không con nào trong số những loài động vật hay chim này dám ăn thức ăn của nhau.
+
+17
+00:01:14,890 --> 00:01:19,690
+Hãy tưởng tượng rằng bạn có một robot người sẽ chăm sóc trang trại này.
+
+18
+00:01:19,720 --> 00:01:27,580
+Người máy sẽ chăm sóc động vật và đảm bảo rằng chúng ăn đúng thức ăn dựa trên sự hướng dẫn của bạn.
+
+19
+00:01:27,580 --> 00:01:31,180
+Vì vậy, bạn phải hướng dẫn robot với một số quy tắc.
+
+20
+00:01:31,210 --> 00:01:34,790
+Bạn cần phải nói, một con bò chỉ nên ăn cỏ.
+
+21
+00:01:34,810 --> 00:01:37,210
+Thỏ chỉ nên ăn cà rốt.
+
+22
+00:01:37,240 --> 00:01:40,500
+Gà chỉ nên ăn thịt gà.
+
+23
+00:01:40,510 --> 00:01:45,340
+Vì vậy, khi bạn viết những quy tắc này trong ngớ ngẩn, bạn sẽ viết một cái gì đó như thế này.
+
+24
+00:01:45,610 --> 00:01:46,930
+Cho phép bò.
+
+25
+00:01:46,930 --> 00:01:48,440
+Cỏ và thức ăn.
+
+26
+00:01:48,460 --> 00:01:48,910
+Ăn đi.
+
+27
+00:01:48,910 --> 00:01:50,260
+Cho phép thỏ.
+
+28
+00:01:50,290 --> 00:01:51,130
+Cà rốt.
+
+29
+00:01:51,130 --> 00:01:52,220
+Gọi và ăn.
+
+30
+00:01:52,240 --> 00:01:52,690
+Ăn đi.
+
+31
+00:01:52,690 --> 00:01:53,230
+Cho phép.
+
+32
+00:01:53,230 --> 00:01:53,920
+Gà.
+
+33
+00:01:53,920 --> 00:01:54,730
+Hạt.
+
+34
+00:01:54,730 --> 00:01:55,210
+Đại tá.
+
+35
+00:01:55,210 --> 00:01:55,840
+Thức ăn.
+
+36
+00:01:55,870 --> 00:01:56,290
+Ăn đi.
+
+37
+00:01:56,290 --> 00:02:00,040
+Đây là một quy tắc chính sách điển hình của SELinux, như chúng ta có thể thấy.
+
+38
+00:02:00,070 --> 00:02:03,330
+Một quy tắc chính sách được chọn đi kèm theo dạng này.
+
+39
+00:02:03,340 --> 00:02:06,070
+Đầu tiên là từ khoá cho phép.
+
+40
+00:02:06,100 --> 00:02:07,810
+Thứ hai là nguồn gốc.
+
+41
+00:02:07,810 --> 00:02:10,870
+Đây là chủ đề của quy tắc.
+
+42
+00:02:10,870 --> 00:02:12,370
+Đây là chủ đề cơ bản.
+
+43
+00:02:12,370 --> 00:02:15,530
+Trong ví dụ đầu tiên, chủ đề là bò.
+
+44
+00:02:15,550 --> 00:02:15,940
+Đúng không?
+
+45
+00:02:15,940 --> 00:02:22,660
+Vì vậy, đây là người về cơ bản là yêu cầu truy cập và sau đó đến hình mẫu của các đối tượng.
+
+46
+00:02:22,900 --> 00:02:25,570
+Yêu cầu truy cập là gì?
+
+47
+00:02:25,570 --> 00:02:29,710
+Trong ví dụ đầu tiên, bò yêu cầu cỏ.
+
+48
+00:02:29,710 --> 00:02:33,040
+Vậy con bò đang yêu cầu tiếp cận cỏ.
+
+49
+00:02:33,040 --> 00:02:38,170
+Và phần thứ ba là lớp học, loại vật thể được truy cập.
+
+50
+00:02:38,170 --> 00:02:43,060
+Trong ví dụ của chúng ta, đó là thức ăn, và cuối cùng là sự cho phép.
+
+51
+00:02:43,060 --> 00:02:48,420
+Trong ví dụ của chúng ta, con bò đang yêu cầu được ăn thức ăn, đúng không?
+
+52
+00:02:48,430 --> 00:02:51,480
+Đây là quy tắc chính sách điển hình của SC.
+
+53
+00:02:51,490 --> 00:02:59,800
+Được rồi, bây giờ chúng ta hãy nhìn vào các đối tượng và đối tượng trong Ando để chúng ta có thể thay thế bò, thỏ và gà
+
+54
+00:02:59,800 --> 00:03:08,140
+Với các bộ xử lý hoặc các loại xử lý ở A-bốt, và chúng ta có thể thay thế cỏ được thêm vào và ngũ cốc với các tập tin,
+
+55
+00:03:08,140 --> 00:03:11,680
+ổ cắm, các bộ xử lý khác, v.v... trong A-bốt.
+
+56
+00:03:11,680 --> 00:03:15,010
+Vì vậy, một ví dụ thế giới thực sẽ trông như thế này.
+
+57
+00:03:15,010 --> 00:03:24,400
+Cho phép tập tin dữ liệu của ứng dụng không đáng tin cậy đọc bên phải và hạt nhân sẽ xem xét những quy tắc này và
+
+58
+00:03:24,400 --> 00:03:27,160
+Hãy đảm bảo rằng những đối tượng theo dõi nó.
+
+59
+00:03:27,160 --> 00:03:37,390
+Vì vậy, trong này một quy tắc chính sách mà chúng tôi đã thấy nơi cho phép không đáng tin cậy ứng dụng truy cập vào tập tin dữ liệu ứng dụng Vì vậy,
+
+60
+00:03:37,390 --> 00:03:39,370
+Nó có thể đọc hoặc viết.
+
+61
+00:03:39,370 --> 00:03:45,520
+Vì vậy, tất cả các ứng dụng không đáng tin cậy có thể đọc hoặc viết tập tin dữ liệu ứng dụng.
+
+62
+00:03:45,520 --> 00:03:54,340
+Vì vậy, các tập tin kết thúc với starter D là các tập tin chính sách SC Linux nguồn nơi chúng tôi viết các quy tắc SELinux.
+
+63
+00:03:54,340 --> 00:04:01,790
+Vì vậy, trong ví dụ App Store, chúng tôi có thể tìm thấy một quy tắc nói cho phép các tập tin thuộc miền ứng dụng thực hiện hal
+
+64
+00:04:01,810 --> 00:04:05,560
+Các lớp đọc sự cho phép và cũng là một sự cho phép tốt không xu hướng.
+
+65
+00:04:05,800 --> 00:04:12,190
+Vì vậy, trong trường hợp này chúng tôi đang cho phép quá trình đi kèm theo các ứng dụng miền truy cập để đặc biệt này
+
+66
+00:04:12,190 --> 00:04:15,960
+Tập tin đọc và thực hiện không có quyền chuyển đổi.
+
+67
+00:04:15,970 --> 00:04:18,310
+Tương tự, bạn có thể tìm thấy nhiều tập tin khác.
+
+68
+00:04:18,310 --> 00:04:21,550
+Tập tin ở đây chúng tôi tuyên bố một số loại.
+
+69
+00:04:21,550 --> 00:04:23,710
+Chúng tôi xem các loại trong một buổi sau đó.
+
+70
+00:04:23,710 --> 00:04:28,510
+Vì vậy, ở đây trong bối cảnh 30, bạn có thể tìm thấy nhiều quy tắc khác.
+
+71
+00:04:28,510 --> 00:04:34,540
+Vì vậy, tất cả các quy tắc cơ bản sẽ được dưới các tập tin với phần mở rộng tiêu chuẩn.
+
+72
+00:04:34,540 --> 00:04:38,680
+Có nhiều tập tin khác, các tập tin hỗ trợ cho các quy tắc này.
+
+73
+00:04:38,680 --> 00:04:43,630
+Ví dụ như, Jen FS nhấn mạnh ngữ cảnh và bối cảnh tập tin nhấn mạnh.
+
+74
+00:04:43,630 --> 00:04:51,190
+Những tập tin này cơ bản định nghĩa tên, lớp học hoặc miền của các nguồn tài nguyên khác nhau trong hệ thống.
+
+75
+00:04:51,190 --> 00:04:54,910
+Chúng tôi sẽ xem xét những chi tiết này trong những hướng dẫn sau.
+
+76
+00:04:54,910 --> 00:04:59,800
+Bây giờ, hãy nhớ rằng tập tin khởi động D bao gồm tất cả các dữ liệu.
+
+77
+00:05:00,060 --> 00:05:06,930
+Xem các quy tắc tiếp theo và bạn có thể tìm thấy tất cả các chính sách AC của một phần cứng hoặc một bảng điều khiển.
+
+78
+00:05:06,930 --> 00:05:13,890
+Dưới đường dẫn này, dưới thư mục thiết bị, bạn sẽ có tên nhà sản xuất như Amlogic, Google,
+
+79
+00:05:13,890 --> 00:05:16,580
+Tuyến tính hoặc MediaTek Dboard.
+
+80
+00:05:16,590 --> 00:05:22,110
+Vì vậy, nếu chúng ta lấy Leonardo làm ví dụ, chúng ta đi vào bên trong rằng bạn có thể thấy các thiết bị khác nhau, Rồng
+
+81
+00:05:22,110 --> 00:05:28,830
+bảng điều khiển, bàn phím AI và dưới tên bảng điều khiển hay tên thiết bị, bạn có thể tìm một thư mục có tên
+
+82
+00:05:28,830 --> 00:05:29,880
+Chính sách Z.
+
+83
+00:05:29,970 --> 00:05:37,920
+Ở đây chúng tôi có chính sách AC ở đây và theo chính sách AC sẽ có tất cả các tập tin đầu tiên e nơi chúng tôi xác định
+
+84
+00:05:37,920 --> 00:05:45,030
+Các chính sách AC và các tập tin hỗ trợ của nó nơi chúng tôi tuyên bố thêm các loại miền.
+
