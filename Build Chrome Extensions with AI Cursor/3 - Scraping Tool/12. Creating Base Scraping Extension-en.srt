@@ -1,0 +1,372 @@
+1
+00:00:00,000 --> 00:00:03,760
+ I will tell you now about Scrapers.
+
+2
+00:00:03,760 --> 00:00:09,020
+ Because for Scrapers we may use our input, our user passed a list of your addresses and
+
+3
+00:00:09,020 --> 00:00:13,700
+ a process is for fire or rancid content script to collect links from the current page.
+
+4
+00:00:13,700 --> 00:00:19,320
+ Obviously we need to validate your rows, remove duplicates and normalize or add authentication
+
+5
+00:00:19,320 --> 00:00:22,280
+ tokens, especially for proxies.
+
+6
+00:00:22,280 --> 00:00:26,560
+ And yeah, we can schedule the loans in a pool with configurable concurrency like free to
+
+7
+00:00:26,560 --> 00:00:29,040
+ 6 concurrent loans.
+
+8
+00:00:29,040 --> 00:00:34,580
+ And there is an example, there is an upscraper, it's extractor for Bing.
+
+9
+00:00:34,580 --> 00:00:39,360
+ So we see it from here, it's like an extension for local planning, how we can use it.
+
+10
+00:00:39,360 --> 00:00:43,640
+ And even if you create this kind of app, it's very popular to sell it on an innovator
+
+11
+00:00:43,640 --> 00:00:44,640
+ market.
+
+12
+00:00:44,640 --> 00:00:50,520
+ So AL, all website images grabber, Chrome extensions, only $60 to sell it to sales.
+
+13
+00:00:50,520 --> 00:00:55,280
+ Just dial a scraper and extractor Chrome extension for the seven sales.
+
+14
+00:00:55,280 --> 00:01:00,400
+ So if you're just extract some numbers, phone numbers by the end, Google Maps, business
+
+15
+00:01:00,400 --> 00:01:05,200
+ the scraper from codecracker extension is 164 sales.
+
+16
+00:01:05,200 --> 00:01:06,200
+ Great.
+
+17
+00:01:06,200 --> 00:01:07,240
+ And this is a scraper.
+
+18
+00:01:07,240 --> 00:01:08,240
+ I love it.
+
+19
+00:01:08,240 --> 00:01:15,080
+ Well, my favorite extensions, as you can see, it's for now turn on but it can obviously
+
+20
+00:01:15,080 --> 00:01:20,880
+ use the extension for it, let me see the population, OK?
+
+21
+00:01:20,880 --> 00:01:22,880
+ And OK.
+
+22
+00:01:22,880 --> 00:01:26,520
+ So I will create a new folder and I will try to make a scraper.
+
+23
+00:01:26,520 --> 00:01:31,320
+ I really love simple machine model, we see some extension here, but unfortunately it's
+
+24
+00:01:31,320 --> 00:01:33,280
+ no longer a problem.
+
+25
+00:01:33,280 --> 00:01:36,560
+ So in order to do that, I would actually recreate it.
+
+26
+00:01:36,560 --> 00:01:46,840
+ So the first I will create a new folder, I will go to Chrome extension, open, download,
+
+27
+00:01:46,840 --> 00:02:01,760
+ now go to a cursor, open folder is the known all and first I'll pass the address, so
+
+28
+00:02:01,760 --> 00:02:08,360
+ we'll just copy it and I can ask some questions, but I will switch to agent's mode.
+
+29
+00:02:08,360 --> 00:02:23,520
+ Let's shoot, I need to implement build, this is my own extension, OK, now we need to wait
+
+30
+00:02:23,520 --> 00:02:39,320
+ until it's made and then after that we'll be able to see it.
+
+31
+00:02:39,320 --> 00:02:44,640
+ So I have some development steps, and I create manifest, so the background, background service
+
+32
+00:02:44,640 --> 00:02:48,300
+ for a careful normal management, build pop-up in life or is in direction, implement a
+
+33
+00:02:48,300 --> 00:02:55,200
+ counter script, full ink extraction, we have filtering, folder and some download queue
+
+34
+00:02:55,200 --> 00:02:59,560
+ and management, an options page for starting a bit, nice, we can as well add some integration
+
+35
+00:02:59,560 --> 00:03:04,360
+ with cloud storage, especially when we want to synchronize everything or all the naming
+
+36
+00:03:04,360 --> 00:03:10,120
+ grows like prefixes or suffixes or zero-peded counters, I will just make before this for
+
+37
+00:03:10,120 --> 00:03:18,880
+ it, if I always do it, and there is some ethical and legal reminder, we cannot use this
+
+38
+00:03:18,880 --> 00:03:25,360
+ extension like to bypass some paywalls, DRM, authentication, multiple sites, anyway that harms
+
+39
+00:03:25,360 --> 00:03:32,080
+ availability, because you'll just act like a DDoS behavior, describe like private, personal,
+
+40
+00:03:32,080 --> 00:03:38,440
+ data without any concerns, so you can always follow side terms of service and rabbits
+
+41
+00:03:38,440 --> 00:03:42,840
+ when it's appropriate, so first if you obviously create a product structure, it will start
+
+42
+00:03:42,840 --> 00:03:48,920
+ with manifest JSON, background service worker, and then make pop-up, so we see core hierarchy
+
+43
+00:03:48,920 --> 00:03:53,400
+ that will be content, so this is the content script for ink extraction, there are some
+
+44
+00:03:53,400 --> 00:03:58,360
+ options for a page because obviously not every website, like the same way, but you try
+
+45
+00:03:58,360 --> 00:04:03,040
+ to detect, so we have some utilities like picky extraction, filter engine, name mask folder,
+
+46
+00:04:03,040 --> 00:04:09,840
+ and some assets, and I think it's great, but I can build it, but after that I will just
+
+47
+00:04:09,840 --> 00:04:13,400
+ remove the extension, because for now I don't want to use an icons, and there is obviously
+
+48
+00:04:13,400 --> 00:04:19,000
+ the commentation that will be added to show us how we can test it out in our own web browser.
+
+49
+00:04:33,040 --> 00:05:02,040
+ We see the old DDoS are complete, so we can use the code "C" to create a new code, and we can do it.
+
+50
+00:05:02,040 --> 00:05:08,600
+ The old DDoS are complete, well it's within our content, more than 2,000 lines, so I will
+
+51
+00:05:08,600 --> 00:05:16,400
+ try them now in the edges, this is the hierarchy we see, it created like all of the DDoS files,
+
+52
+00:05:16,400 --> 00:05:20,960
+ and first I will just let some figure that I don't know properly, I need to add icons,
+
+53
+00:05:20,960 --> 00:05:34,520
+ so please make a workaround, so I want to use someone to use icons for my purpose, so this
+
+54
+00:05:34,520 --> 00:05:39,920
+ is how it can make, please make a workaround, so I want to use icons for my purpose to test
+
+55
+00:05:39,920 --> 00:05:55,040
+ out in the browser, it should be working now, so we go back to my extension tab, and now
+
+56
+00:05:55,040 --> 00:05:59,700
+ we just load and pack from the scratch, don't know at all, it's now working, so the first
+
+57
+00:05:59,700 --> 00:06:03,920
+ thing I'm going to do, I will just spin that extension, and when it's pinned we see some
+
+58
+00:06:03,920 --> 00:06:10,980
+ of the actually patterns, flip or file, so we can try to extract all of the links, folders,
+
+59
+00:06:10,980 --> 00:06:18,540
+ and so I will just open for example some of the page, I can open new tab, I can go to
+
+60
+00:06:18,540 --> 00:06:26,520
+ the toest story you remember, and now if I go to this I can try to, okay this is zero links,
+
+61
+00:06:26,520 --> 00:06:41,760
+ maybe and we'll just close it first, you see your patterns, okay we can possibly to even use
+
+62
+00:06:41,760 --> 00:06:47,700
+ the file, as if impossible to add some extension like a folder, here we can adjust our
+
+63
+00:06:47,700 --> 00:06:54,280
+ down settings and file categories, but the problem is that it doesn't want to, I will use
+
+64
+00:06:54,280 --> 00:07:07,920
+ Wikipedia, and when I go to this direction, you should have like largest population by
+
+65
+00:07:07,920 --> 00:07:18,360
+ country, now we see India, and China, and here I, my like links found are not visible,
+
+66
+00:07:18,360 --> 00:07:28,540
+ so we can just try to make, okay, so it doesn't detect automatically, I want to detect
+
+67
+00:07:28,540 --> 00:07:41,200
+ automatically tables, like in Wikipedia, and extract to excel spreadsheet, it'll be a new
+
+68
+00:07:41,200 --> 00:07:49,200
+ task for a new agent, so this way we can prevent for many more risk of hallucinations,
+
+69
+00:07:49,200 --> 00:07:54,440
+ file is now fixed, because there was a problem an issue, I'll try to reload it, I'll press
+
+70
+00:07:54,440 --> 00:07:59,360
+ loud and pack the game, and go to my extension, there are still some errors, maybe I'll
+
+71
+00:07:59,360 --> 00:08:05,040
+ clear all first, and then load again, and when I have my extension, okay, I'm refreshing,
+
+72
+00:08:05,040 --> 00:08:15,980
+ it seems to be working, I'll go to Wikipedia now, and now when I go here, see there's
+
+73
+00:08:15,980 --> 00:08:33,600
+ like a, could not establish connection, error extracting tables, I will take it, and
+
+74
+00:08:33,600 --> 00:08:48,200
+ okay, I will just use the data, because it's contextual, and try to ask about it, so now
+
+75
+00:08:48,200 --> 00:08:53,340
+ it's investigation, the connection error, again, can't the script communication issue,
+
+76
+00:08:53,340 --> 00:08:58,260
+ so it will try to look for a send message, first if the can't the script isn't ready,
+
+77
+00:08:58,260 --> 00:09:02,880
+ so you improve the error handling, and make the folder queues, the improve extraction
+
+78
+00:09:02,880 --> 00:09:08,440
+ logic, okay, that's interesting now, we can try extracting tables again, it says try the
+
+79
+00:09:08,440 --> 00:09:12,640
+ normal method first, the first method is error handling, it just the null storage connection
+
+80
+00:09:12,640 --> 00:09:16,360
+ when the script isn't ready, and there's even more flow feedback, and we can even make
+
+81
+00:09:16,360 --> 00:09:21,000
+ the nine extraction functions, so now we just open the game, but first you want to reload
+
+82
+00:09:21,000 --> 00:09:27,000
+ the extension, and yeah, actually this one is always popping up, I can always try to make
+
+83
+00:09:27,000 --> 00:09:33,760
+ it, so now I'm in the word expression, now there is still found 19 tables, alright, now
+
+84
+00:09:33,760 --> 00:09:40,160
+ we see 19 tables, it generated some of the context for that, that's great, and obviously
+
+85
+00:09:40,160 --> 00:09:44,160
+ you can extract data this way, you don't mind, they're probably extracted not everything,
+
+86
+00:09:44,160 --> 00:09:50,880
+ but we can adjust it and add some more functionality for it, because when I go to the word
+
+87
+00:09:50,880 --> 00:09:58,400
+ population, you see tables found, you can export all of the hands, it will go with some
+
+88
+00:09:58,400 --> 00:10:05,880
+ years, okay, so I think this one is not working like we supposed to, but maybe table one
+
+89
+00:10:05,880 --> 00:10:15,480
+ or columns, like this is estimates, we have to find an idea, this is like used to mostly
+
+90
+00:10:15,480 --> 00:10:21,200
+ pop away countries, and I think this one would work the best, so how we use it, and now
+
+91
+00:10:21,200 --> 00:10:28,400
+ if I press it, I see the 10 most populated by the area obviously because the Singapore Bangladesh
+
+92
+00:10:28,400 --> 00:10:33,560
+ implies time, we see that city, and this way we can easily extract information by building
+
+93
+00:10:33,560 --> 00:10:34,600
+ our own scraper.
+
