@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:04,760
+ Customer support teams today are under unprecedented pressure.
+
+2
+00:00:04,760 --> 00:00:06,580
+ Ticket volumes continue to grow
+
+3
+00:00:06,580 --> 00:00:10,520
+ while customer expectations for fast, accurate responses
+
+4
+00:00:10,520 --> 00:00:12,280
+ are higher than ever.
+
+5
+00:00:12,280 --> 00:00:16,400
+ Agents are expected to resolve increasingly complex issues,
+
+6
+00:00:16,400 --> 00:00:19,080
+ often while navigating long ticket histories
+
+7
+00:00:19,080 --> 00:00:21,200
+ and fragmented information.
+
+8
+00:00:21,200 --> 00:00:24,120
+ This combination leads to long resolution times,
+
+9
+00:00:24,120 --> 00:00:27,880
+ frustrated customers, and exhaust and support staff.
+
+10
+00:00:27,880 --> 00:00:30,160
+ A major challenge is repetition.
+
+11
+00:00:30,160 --> 00:00:32,720
+ Many tickets involve similar questions.
+
+12
+00:00:32,720 --> 00:00:36,760
+ Yet agents must read entire threads, reconstruct context,
+
+13
+00:00:36,760 --> 00:00:39,840
+ and manually craft responses each time.
+
+14
+00:00:39,840 --> 00:00:42,920
+ Over time, this repetitive cognitive load
+
+15
+00:00:42,920 --> 00:00:46,120
+ leads to burnout and inconsistency.
+
+16
+00:00:46,120 --> 00:00:48,040
+ Different agents may respond differently
+
+17
+00:00:48,040 --> 00:00:51,000
+ to the same issue, eroding brand trust.
+
+18
+00:00:51,000 --> 00:00:55,440
+ The goal of this case study is not to replace human agents,
+
+19
+00:00:55,440 --> 00:00:57,200
+ but to support them.
+
+20
+00:00:57,200 --> 00:00:59,080
+ The objective was clear.
+
+21
+00:00:59,080 --> 00:01:03,560
+ Use AI to reduce cognitive overhead, speed up understanding,
+
+22
+00:01:03,560 --> 00:01:08,560
+ and improve consistency while keeping humans firmly in control.
+
+23
+00:01:08,560 --> 00:01:11,880
+ This framing shaped every architectural and product
+
+24
+00:01:11,880 --> 00:01:13,680
+ decision that followed.
+
+25
+00:01:13,680 --> 00:01:17,640
+ One of the most important decisions in this project
+
+26
+00:01:17,640 --> 00:01:21,480
+ was choosing a copilot model instead of a fully autonomous
+
+27
+00:01:21,480 --> 00:01:23,040
+ chatbot.
+
+28
+00:01:23,040 --> 00:01:25,480
+ While automation can seem appealing,
+
+29
+00:01:25,480 --> 00:01:30,120
+ customer support involves nuance, emotion, and judgment
+
+30
+00:01:30,120 --> 00:01:33,480
+ that AI alone cannot reliably handle.
+
+31
+00:01:33,480 --> 00:01:36,680
+ In a copilot setup, AI assists agents
+
+32
+00:01:36,680 --> 00:01:38,880
+ rather than acting independently.
+
+33
+00:01:38,880 --> 00:01:42,200
+ The system analyzes tickets, suggests summaries,
+
+34
+00:01:42,200 --> 00:01:44,000
+ and drafts responses.
+
+35
+00:01:44,000 --> 00:01:47,920
+ But the final decision always belongs to a human.
+
+36
+00:01:47,920 --> 00:01:50,160
+ This approach reduces mental load
+
+37
+00:01:50,160 --> 00:01:52,600
+ without removing accountability.
+
+38
+00:01:52,600 --> 00:01:55,760
+ Keeping humans in control mitigates risk,
+
+39
+00:01:55,760 --> 00:01:58,920
+ fully automated systems struggle with edge cases,
+
+40
+00:01:58,920 --> 00:02:02,840
+ emotionally charged customers, and sensitive topics.
+
+41
+00:02:02,840 --> 00:02:06,440
+ A copilot avoids these pitfalls by positioning AI
+
+42
+00:02:06,440 --> 00:02:08,920
+ as a support tool, not a replacement.
+
+43
+00:02:08,920 --> 00:02:12,760
+ This decision also had a cultural impact.
+
+44
+00:02:12,760 --> 00:02:15,400
+ Agents were more willing to adopt the system
+
+45
+00:02:15,400 --> 00:02:17,760
+ because it didn't threaten their role.
+
+46
+00:02:17,760 --> 00:02:22,840
+ Trust grew because AI behavior was transparent and predictable.
+
+47
+00:02:22,840 --> 00:02:25,160
+ In practice, the copilot model
+
+48
+00:02:25,160 --> 00:02:29,560
+ maximized the strengths of both AI and human intelligence,
+
+49
+00:02:29,560 --> 00:02:33,680
+ speed and consistency from AI, judgment, and empathy
+
+50
+00:02:33,680 --> 00:02:34,640
+ from people.
+
+51
+00:02:34,640 --> 00:02:36,840
+ The system architecture was intentionally
+
+52
+00:02:36,840 --> 00:02:39,080
+ simple and safety first.
+
+53
+00:02:39,080 --> 00:02:42,040
+ The core design principle was non-negotiable.
+
+54
+00:02:42,040 --> 00:02:45,480
+ AI never communicates directly with customers.
+
+55
+00:02:45,480 --> 00:02:48,640
+ Every AI output passes through a human agent
+
+56
+00:02:48,640 --> 00:02:50,880
+ before reaching the user.
+
+57
+00:02:50,880 --> 00:02:53,960
+ The architecture begins with the existing ticketing system,
+
+58
+00:02:53,960 --> 00:02:57,240
+ such as Zendesk or Jira Service Desk.
+
+59
+00:02:57,240 --> 00:03:00,760
+ Ticket data flows into a secure backend API,
+
+60
+00:03:00,760 --> 00:03:05,480
+ which handles authentication, validation, and orchestration.
+
+61
+00:03:05,480 --> 00:03:07,640
+ This backend sends relevant context
+
+62
+00:03:07,640 --> 00:03:10,080
+ to the language model for processing.
+
+63
+00:03:10,080 --> 00:03:13,200
+ The LLM generates summaries or draft responses
+
+64
+00:03:13,200 --> 00:03:16,320
+ using both ticket history and a curated knowledge base
+
+65
+00:03:16,320 --> 00:03:20,280
+ of FAQs, documentation, and approved templates.
+
+66
+00:03:20,280 --> 00:03:23,320
+ The output is then returned to the agent interface
+
+67
+00:03:23,320 --> 00:03:25,920
+ where it is clearly marked as a suggestion.
+
+68
+00:03:25,920 --> 00:03:31,000
+ Agents review, edit, and approve content before sending it.
+
+69
+00:03:31,000 --> 00:03:34,400
+ This human in the loop design preserves safety,
+
+70
+00:03:34,400 --> 00:03:37,120
+ accountability, and trust.
+
+71
+00:03:37,120 --> 00:03:40,160
+ The architecture demonstrates a key lesson.
+
+72
+00:03:40,160 --> 00:03:45,960
+ Reliable AI systems are built around humans, not instead of them.
+
+73
+00:03:45,960 --> 00:03:50,360
+ The first high impact use case was ticket summarization.
+
+74
+00:03:50,360 --> 00:03:54,000
+ Support tickets often contain long, fragmented threads
+
+75
+00:03:54,000 --> 00:03:58,680
+ with multiple agents, customer replies, and partial resolutions.
+
+76
+00:03:58,680 --> 00:04:00,440
+ Reading and understanding this history
+
+77
+00:04:00,440 --> 00:04:03,000
+ can take several minutes per ticket.
+
+78
+00:04:03,000 --> 00:04:06,720
+ The AI co-pilot automatically generates concise summaries
+
+79
+00:04:06,720 --> 00:04:09,080
+ that extract what matters most.
+
+80
+00:04:09,080 --> 00:04:13,040
+ Each summary identifies the core issue, the customer's intent,
+
+81
+00:04:13,040 --> 00:04:17,840
+ prior actions taken, and any signals of urgency or sentiment.
+
+82
+00:04:17,840 --> 00:04:21,280
+ This allows agents to understand the situation in seconds
+
+83
+00:04:21,280 --> 00:04:22,880
+ rather than minutes.
+
+84
+00:04:22,880 --> 00:04:26,120
+ Importantly, the system does not invent facts.
+
+85
+00:04:26,120 --> 00:04:30,040
+ It summarizes existing content and highlights uncertainty
+
+86
+00:04:30,040 --> 00:04:32,240
+ when information is incomplete.
+
+87
+00:04:32,240 --> 00:04:34,760
+ Sentiment indicators help agents quickly assess
+
+88
+00:04:34,760 --> 00:04:39,040
+ emotional context, which is critical for customer experience.
+
+89
+00:04:39,040 --> 00:04:43,160
+ The result was a dramatic reduction in handle time
+
+90
+00:04:43,160 --> 00:04:45,240
+ and improved comprehension.
+
+91
+00:04:45,240 --> 00:04:50,480
+ Agents reported feeling more confident and less mentally fatigued.
+
+92
+00:04:50,480 --> 00:04:55,080
+ This use case demonstrated that AI delivers the most value
+
+93
+00:04:55,080 --> 00:04:59,040
+ when it accelerates understanding, not decision-making.
+
+94
+00:04:59,040 --> 00:05:02,080
+ One of the key learnings from this project
+
+95
+00:05:02,080 --> 00:05:05,400
+ was that format matters as much as content.
+
+96
+00:05:05,400 --> 00:05:08,360
+ Early experiments with paragraph style summaries
+
+97
+00:05:08,360 --> 00:05:10,960
+ were less effective than expected.
+
+98
+00:05:10,960 --> 00:05:16,160
+ Agents still had to scan and interpret text, which slowed them down.
+
+99
+00:05:16,160 --> 00:05:18,840
+ The solution was structured bullet-based summaries
+
+100
+00:05:18,840 --> 00:05:20,680
+ with fixed sections.
+
+101
+00:05:20,680 --> 00:05:23,360
+ Every summary followed the same layout--
+
+102
+00:05:23,360 --> 00:05:27,120
+ problem statement, customer context, current status,
+
+103
+00:05:27,120 --> 00:05:28,960
+ and next steps.
+
+104
+00:05:28,960 --> 00:05:31,680
+ This consistency allowed agents to immediately
+
+105
+00:05:31,680 --> 00:05:35,040
+ know where to look for specific information.
+
+106
+00:05:35,040 --> 00:05:38,480
+ Bullet points reduced unnecessary words and highlighted
+
+107
+00:05:38,480 --> 00:05:43,040
+ critical details, reading time dropped by more than half.
+
+108
+00:05:43,040 --> 00:05:46,640
+ Uncertainty flags were added to mark ambiguous or incomplete
+
+109
+00:05:46,640 --> 00:05:51,440
+ information, prompting agents to verify rather than assume.
+
+110
+00:05:51,440 --> 00:05:53,040
+ The lesson was clear--
+
+111
+00:05:53,040 --> 00:05:56,360
+ structured output prevents misunderstandings.
+
+112
+00:05:56,360 --> 00:06:01,000
+ In operational environments, predictability beats creativity.
+
+113
+00:06:01,000 --> 00:06:05,040
+ By standardizing format, the AI became easier to trust
+
+114
+00:06:05,040 --> 00:06:08,200
+ and faster to use.
+
+115
+00:06:08,200 --> 00:06:11,160
+ Once agents could understand tickets faster,
+
+116
+00:06:11,160 --> 00:06:14,080
+ the next bottleneck was response writing,
+
+117
+00:06:14,080 --> 00:06:18,840
+ crafting clear, polite, and accurate replies takes time,
+
+118
+00:06:18,840 --> 00:06:21,880
+ especially when agents must reference documentation
+
+119
+00:06:21,880 --> 00:06:23,960
+ and maintain brand tone.
+
+120
+00:06:23,960 --> 00:06:26,360
+ The copilot generates draft responses
+
+121
+00:06:26,360 --> 00:06:30,240
+ based on ticket context and the internal knowledge base.
+
+122
+00:06:30,240 --> 00:06:34,080
+ It analyzes customer history, pulls relevant information,
+
+123
+00:06:34,080 --> 00:06:37,880
+ and produces a response aligned with brand guidelines.
+
+124
+00:06:37,880 --> 00:06:40,120
+ Personalization tokens ensure the draft
+
+125
+00:06:40,120 --> 00:06:43,280
+ feels customer-specific, not generic.
+
+126
+00:06:43,280 --> 00:06:47,320
+ Crucially, the AI never sends responses automatically.
+
+127
+00:06:47,320 --> 00:06:51,040
+ Agents review, edit, and approve every draft.
+
+128
+00:06:51,040 --> 00:06:53,520
+ This preserves quality and accountability
+
+129
+00:06:53,520 --> 00:06:56,160
+ while still saving significant time.
+
+130
+00:06:56,160 --> 00:07:01,040
+ The golden rule was simple-- AI suggests humans approve.
+
+131
+00:07:01,040 --> 00:07:03,840
+ This balance increased speed and consistency
+
+132
+00:07:03,840 --> 00:07:06,240
+ without sacrificing trust.
+
+133
+00:07:06,240 --> 00:07:09,760
+ Agents reported that even when they heavily edited drafts,
+
+134
+00:07:09,760 --> 00:07:11,880
+ starting from a structured suggestion
+
+135
+00:07:11,880 --> 00:07:14,480
+ was far faster than writing from scratch.
+
+136
+00:07:14,480 --> 00:07:18,080
+ Response generation introduces real risk.
+
+137
+00:07:18,080 --> 00:07:22,680
+ Without guardrails, AI can sound overconfident, off-brand,
+
+138
+00:07:22,680 --> 00:07:24,800
+ or factually incorrect.
+
+139
+00:07:24,800 --> 00:07:28,160
+ To address this, multiple layers of quality control
+
+140
+00:07:28,160 --> 00:07:29,760
+ were implemented.
+
+141
+00:07:29,760 --> 00:07:33,960
+ Tone constraints enforced brand voice, empathy markers,
+
+142
+00:07:33,960 --> 00:07:35,880
+ and formality levels.
+
+143
+00:07:35,880 --> 00:07:38,080
+ Length boundaries prevented responses
+
+144
+00:07:38,080 --> 00:07:41,360
+ from being too short or overly verbose.
+
+145
+00:07:41,360 --> 00:07:43,640
+ Forbidden phrase lists blocked language
+
+146
+00:07:43,640 --> 00:07:47,000
+ that could create legal or reputational risk.
+
+147
+00:07:47,000 --> 00:07:50,360
+ Compliance checks flagged responses involving legal,
+
+148
+00:07:50,360 --> 00:07:54,200
+ billing, or regulated topics for additional review.
+
+149
+00:07:54,200 --> 00:07:57,040
+ Confidence calibrations scored each output
+
+150
+00:07:57,040 --> 00:07:59,560
+ and suppressed low confidence suggestions
+
+151
+00:07:59,560 --> 00:08:02,920
+ instead of showing potentially incorrect information.
+
+152
+00:08:02,920 --> 00:08:05,320
+ These controls ensured that agents only
+
+153
+00:08:05,320 --> 00:08:08,240
+ saw a high quality, safe drafts.
+
+154
+00:08:08,240 --> 00:08:11,440
+ The key insight was that preventing bad suggestions
+
+155
+00:08:11,440 --> 00:08:14,760
+ is more important than generating many suggestions.
+
+156
+00:08:14,760 --> 00:08:17,920
+ Trust is built by consistency, not volume.
+
+157
+00:08:17,920 --> 00:08:21,120
+ The most important feature of the co-pilot
+
+158
+00:08:21,120 --> 00:08:22,920
+ wasn't what it could do.
+
+159
+00:08:22,920 --> 00:08:25,520
+ It was knowing when to stop.
+
+160
+00:08:25,520 --> 00:08:29,120
+ Escalation logic determined when AI assistance
+
+161
+00:08:29,120 --> 00:08:32,240
+ was inappropriate or insufficient.
+
+162
+00:08:32,240 --> 00:08:36,320
+ If the model's confidence was low, the system flagged the ticket
+
+163
+00:08:36,320 --> 00:08:38,640
+ instead of generating a draft.
+
+164
+00:08:38,640 --> 00:08:41,560
+ Sentiment analysis detected high frustration
+
+165
+00:08:41,560 --> 00:08:44,640
+ or emotional distress and routed those cases
+
+166
+00:08:44,640 --> 00:08:46,760
+ to experienced agents.
+
+167
+00:08:46,760 --> 00:08:50,680
+ Sensitive topics, such as legal issues, billing disputes,
+
+168
+00:08:50,680 --> 00:08:54,960
+ or account security bypassed AI suggestions entirely.
+
+169
+00:08:54,960 --> 00:08:57,480
+ Escalation reasons were clearly visible
+
+170
+00:08:57,480 --> 00:09:01,480
+ in the agent interface and logged for later analysis.
+
+171
+00:09:01,480 --> 00:09:05,680
+ Crucially, risky tickets were never auto-resolved.
+
+172
+00:09:05,680 --> 00:09:08,360
+ This reinforced a critical mindset.
+
+173
+00:09:08,360 --> 00:09:11,560
+ Escalation is a feature, not a failure.
+
+174
+00:09:11,560 --> 00:09:14,680
+ By deferring to human expertise at the right moments,
+
+175
+00:09:14,680 --> 00:09:18,200
+ the system became more trustworthy and effective.
+
+176
+00:09:18,200 --> 00:09:22,120
+ After six months of deployment, the results were compelling.
+
+177
+00:09:22,120 --> 00:09:25,560
+ Average handle time dropped by 34%,
+
+178
+00:09:25,560 --> 00:09:27,920
+ allowing agents to resolve more tickets
+
+179
+00:09:27,920 --> 00:09:30,200
+ without sacrificing quality.
+
+180
+00:09:30,200 --> 00:09:33,760
+ First response times improved by 58%,
+
+181
+00:09:33,760 --> 00:09:37,480
+ with many customers receiving replies in under two minutes.
+
+182
+00:09:37,480 --> 00:09:40,320
+ Agent satisfaction reached 89%,
+
+183
+00:09:40,320 --> 00:09:43,720
+ a critical indicator of long-term sustainability.
+
+184
+00:09:43,720 --> 00:09:46,960
+ Brand consistency improved by nearly 50%,
+
+185
+00:09:46,960 --> 00:09:50,440
+ as responses aligned more closely with guidelines.
+
+186
+00:09:50,440 --> 00:09:54,440
+ However, the most important insight wasn't numerical.
+
+187
+00:09:54,440 --> 00:09:57,600
+ Agent adoption mattered more than model choice.
+
+188
+00:09:57,600 --> 00:10:01,920
+ Teams that involved agents early explained limitations clearly
+
+189
+00:10:01,920 --> 00:10:06,160
+ and iterated based on feedback saw the strongest results.
+
+190
+00:10:06,160 --> 00:10:08,400
+ Metrics validated the approach,
+
+191
+00:10:08,400 --> 00:10:11,560
+ but trust and usability determined success.
+
+192
+00:10:11,560 --> 00:10:15,760
+ This case study produced several hard-earned lessons.
+
+193
+00:10:15,760 --> 00:10:20,760
+ First, co-pilots consistently outperformed full automation.
+
+194
+00:10:20,760 --> 00:10:24,440
+ Human oversight proved essential for quality, safety,
+
+195
+00:10:24,440 --> 00:10:25,840
+ and trust.
+
+196
+00:10:25,840 --> 00:10:28,920
+ Second, structure beat creativity.
+
+197
+00:10:28,920 --> 00:10:32,920
+ Consistent formats were more valuable than eloquent prose.
+
+198
+00:10:32,920 --> 00:10:36,480
+ Third, escalation rules defined success,
+
+199
+00:10:36,480 --> 00:10:41,280
+ knowing when to defer to humans prevented costly mistakes.
+
+200
+00:10:41,280 --> 00:10:45,640
+ Transparency about AI limitations increased adoption.
+
+201
+00:10:45,640 --> 00:10:47,600
+ Agents trusted the system more
+
+202
+00:10:47,600 --> 00:10:50,960
+ when they understood what it could and could not do.
+
+203
+00:10:50,960 --> 00:10:53,920
+ Regular iteration with agents was critical.
+
+204
+00:10:53,920 --> 00:10:57,320
+ Weekly feedback sessions led to meaningful improvements
+
+205
+00:10:57,320 --> 00:11:00,560
+ that no offline evaluation could reveal.
+
+206
+00:11:00,560 --> 00:11:04,280
+ Ultimately, the project confirmed the simple truth.
+
+207
+00:11:04,280 --> 00:11:08,840
+ The best AI co-pilots make humans better, not irrelevant.
+
+208
+00:11:08,840 --> 00:11:11,520
+ Success came not from replacing agents,
+
+209
+00:11:11,520 --> 00:11:13,740
+ but from amplifying their capabilities
+
+210
+00:11:13,740 --> 00:11:15,180
+ in a way they could trust.
+
