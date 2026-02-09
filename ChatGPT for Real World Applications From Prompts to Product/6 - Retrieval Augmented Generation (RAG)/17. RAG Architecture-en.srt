@@ -1,0 +1,424 @@
+1
+00:00:00,000 --> 00:00:06,000
+ This slide introduces the full retrieval augmented generation architecture from end to end.
+
+2
+00:00:06,000 --> 00:00:13,520
+ A RAG system is not a single model call. It is a pipeline that transforms raw enterprise data
+
+3
+00:00:13,520 --> 00:00:20,320
+ into grounded AI responses. As shown in the diagram on page one, the system begins with source
+
+4
+00:00:20,320 --> 00:00:27,920
+ systems such as documents, databases, and APIs. These sources feed into ingestion and pre-processing
+
+5
+00:00:27,920 --> 00:00:33,920
+ stages where data is cleaned and normalized. Next, documents are chunked and enriched
+
+6
+00:00:33,920 --> 00:00:40,320
+ with metadata, then converted into embeddings, numerical representations that capture semantic
+
+7
+00:00:40,320 --> 00:00:45,840
+ meaning. These embeddings are stored in a vector database optimized for similarity search.
+
+8
+00:00:45,840 --> 00:00:51,440
+ At query time, the user's question is embedded, compared against stored vectors,
+
+9
+00:00:51,440 --> 00:00:57,200
+ and the most relevant chunks are retrieved. Only then does the language model generator response
+
+10
+00:00:57,200 --> 00:01:03,920
+ grounded in retrieved evidence, rather than memory. Understanding this full flow is critical.
+
+11
+00:01:03,920 --> 00:01:12,240
+ Each stage affects accuracy, latency, and trust. We can gesture or poor chunking cannot be fixed
+
+12
+00:01:12,240 --> 00:01:19,280
+ later. RAG works because every component is deliberately designed to support reliable,
+
+13
+00:01:19,280 --> 00:01:25,200
+ evidence-based generation. Document ingestion is the entry point of a RAG system.
+
+14
+00:01:25,200 --> 00:01:30,800
+ This is where raw enterprise knowledge is collected and prepared for downstream processing.
+
+15
+00:01:30,800 --> 00:01:37,840
+ As outlined on page three, ingestion must support a wide variety of formats. PDFs,
+
+16
+00:01:37,840 --> 00:01:45,680
+ Word documents, HTML pages, Markdown files, databases, and APIs. In production systems,
+
+17
+00:01:45,680 --> 00:01:52,080
+ ingestion is not a one-time task. It must handle both batch ingestion of historical content
+
+18
+00:01:52,080 --> 00:01:58,640
+ and continuous ingestion of newly created or updated data. Equally important is version control.
+
+19
+00:01:58,640 --> 00:02:05,440
+ Documents change, policies are revised, and outdated content must be removed or replaced.
+
+20
+00:02:05,440 --> 00:02:11,680
+ A robust ingestion layer tracks document lineage, time stamps, and source metadata,
+
+21
+00:02:11,680 --> 00:02:15,680
+ so the system always knows which version of a document is authoritative.
+
+22
+00:02:15,680 --> 00:02:22,880
+ Without this, RAG systems quickly drift out of sync with reality. Think of ingestion as the
+
+23
+00:02:22,880 --> 00:02:31,040
+ foundation of trust. If incorrect or outdated information enters the system, no amount of clever
+
+24
+00:02:31,040 --> 00:02:38,080
+ prompting or retrieval logic can fix the result. Clean, well-managed ingestion is the first
+
+25
+00:02:38,080 --> 00:02:45,440
+ requirement for production grade RAG. Raw enterprise documents are rarely AI-ready.
+
+26
+00:02:45,440 --> 00:02:52,240
+ Page four highlights a critical truth. Noisey data directly degrades retrieval quality
+
+27
+00:02:52,240 --> 00:02:59,680
+ and model performance. Headers, footers, navigation menus, disclaimers, and duplicated sections
+
+28
+00:02:59,680 --> 00:03:06,800
+ add volume without adding meaning. Effective pre-processing removes this boilerplate
+
+29
+00:03:06,800 --> 00:03:12,800
+ while preserving semantic structure. Text is normalized, encoding issues fixed,
+
+30
+00:03:12,800 --> 00:03:19,520
+ white space standardized, and formatting made consistent across sources. Duplicate documents and
+
+31
+00:03:19,520 --> 00:03:25,440
+ repeated sections are identified and removed to prevent retrieval confusion and wasted storage.
+
+32
+00:03:25,440 --> 00:03:32,960
+ Equally important is preserving structure. Section headers, lists, and tables provide essential
+
+33
+00:03:32,960 --> 00:03:39,600
+ context that improves chunking and retrieval. Stripping structure may simplify processing,
+
+34
+00:03:39,600 --> 00:03:46,080
+ but it harms semantic understanding. This stage determines how clean your knowledge base is.
+
+35
+00:03:46,080 --> 00:03:52,800
+ Clean data in leads to accurate answers out. Skipping pre-processing is one of the most common
+
+36
+00:03:52,800 --> 00:03:59,360
+ causes of poor RAG performance in real systems. In production, data quality is not optional.
+
+37
+00:03:59,360 --> 00:04:05,840
+ It is a core reliability requirement. Language models operate within fixed context windows,
+
+38
+00:04:05,840 --> 00:04:12,320
+ as illustrated on page five. Even advanced models cannot process entire enterprise documents
+
+39
+00:04:12,320 --> 00:04:19,520
+ in a single request. Technical manuals, legal policies, and internal wikis often exceed these
+
+40
+00:04:19,520 --> 00:04:26,160
+ limits by orders of magnitude. Shunking solves this constraint by breaking large documents
+
+41
+00:04:26,160 --> 00:04:31,600
+ into smaller, semantically coherent units. Each chunk becomes an independently
+
+42
+00:04:31,600 --> 00:04:37,360
+ retrievable piece of knowledge that fits within the model's context window. This allows RAG
+
+43
+00:04:37,360 --> 00:04:43,360
+ systems to work with unlimited document sizes while maintaining relevance. Without chunking,
+
+44
+00:04:43,360 --> 00:04:50,240
+ most enterprise data would be unusable by LLMs. With poor chunking, retrieval becomes noisy
+
+45
+00:04:50,240 --> 00:04:56,640
+ and incomplete. Shunking is therefore not just a pre-processing step. It is a core architectural
+
+46
+00:04:56,640 --> 00:05:03,120
+ decision. The goal is to preserve meaning while enabling efficient retrieval. Every subsequent
+
+47
+00:05:03,120 --> 00:05:09,360
+ step embeddings, vector search, and generation depends on how well documents are chunked.
+
+48
+00:05:09,360 --> 00:05:14,320
+ Page six outlines several chunking strategies, each with distinct trade-offs.
+
+49
+00:05:15,280 --> 00:05:21,040
+ Fix size chunking splits text by token or character count. It is simple to implement,
+
+50
+00:05:21,040 --> 00:05:26,960
+ but often breaks semantic boundaries. Semantic chunking aligns chunks with natural document
+
+51
+00:05:26,960 --> 00:05:33,280
+ structure, such as paragraphs or sections, preserving meaning, but producing variable chunk sizes.
+
+52
+00:05:33,280 --> 00:05:40,080
+ Sliding window chunking introduces overlap between chunks to reduce context loss at boundaries
+
+53
+00:05:40,080 --> 00:05:45,920
+ at the cost of increased storage and compute. Hierarchical chunking creates multiple levels
+
+54
+00:05:45,920 --> 00:05:51,760
+ from summaries to detailed sections, enabling course to find retrieval, but adding architectural
+
+55
+00:05:51,760 --> 00:05:58,480
+ complexity. There is no universal best strategy. The right approach depends on document type,
+
+56
+00:05:58,480 --> 00:06:04,560
+ query patterns, and performance constraints. Technical documentation may benefit from semantic
+
+57
+00:06:04,560 --> 00:06:11,920
+ or hierarchical chunking. While short operational notes may work well with fix sizes. In production
+
+58
+00:06:11,920 --> 00:06:18,400
+ systems, chunking should be treated as a tunable component. Teams often experiment with multiple
+
+59
+00:06:18,400 --> 00:06:26,000
+ strategies before settling on one that balances relevance, latency, and cost. Chunk size is one of
+
+60
+00:06:26,000 --> 00:06:34,080
+ the most important hyperparameters in RAG system design as detailed on page seven. Smaller chunks
+
+61
+00:06:34,080 --> 00:06:41,280
+ typically 200 to 400 tokens offer higher precision and reduce irrelevant context, but they risk
+
+62
+00:06:41,280 --> 00:06:49,360
+ fragmenting meaning and require more retrieval calls. Larger chunks 800 to 1500 tokens preserve
+
+63
+00:06:49,360 --> 00:06:56,080
+ more context and work well for complex interconnected content, but they may introduce noise
+
+64
+00:06:56,080 --> 00:07:02,640
+ and consume more of the model's context window. Most production systems settle between 300
+
+65
+00:07:02,640 --> 00:07:10,480
+ and 1000 tokens, with 512 tokens being a common starting point. However, optimal size depends
+
+66
+00:07:10,480 --> 00:07:17,520
+ heavily on use case. There is no shortcut here. Testing is essential. Choosing chunk size
+
+67
+00:07:17,520 --> 00:07:23,600
+ is a balancing act between precision and context. The wrong choice leads to either incomplete
+
+68
+00:07:23,600 --> 00:07:29,920
+ answers or bloated prompts. Getting this right significantly improves both answer quality
+
+69
+00:07:29,920 --> 00:07:36,960
+ and system efficiency. Embeddings are the mathematical foundation of RAG. As explained on page eight,
+
+70
+00:07:36,960 --> 00:07:43,120
+ they convert human readable text into high dimensional numerical vectors that capture semantic
+
+71
+00:07:43,120 --> 00:07:48,400
+ meaning. Text with similar meaning produce vectors that point in similar directions,
+
+72
+00:07:48,400 --> 00:07:55,920
+ even if the wording differs. This enables semantic search. Queries no longer need exact keyword
+
+73
+00:07:55,920 --> 00:08:02,560
+ matches. For example, vehicle maintenance and car repair can be matched despite using different
+
+74
+00:08:02,560 --> 00:08:08,560
+ language. Modern embedding models are trained on massive corpora to understand nuanced
+
+75
+00:08:08,560 --> 00:08:14,960
+ relationships between concepts. In a RAG system, embeddings allow the retrieval layer to find
+
+76
+00:08:14,960 --> 00:08:21,280
+ conceptually relevant chunks rather than relying on brittle keyword search. Without embeddings,
+
+77
+00:08:21,280 --> 00:08:27,360
+ RAG would collapse into traditional search. With embeddings, retrieval becomes meaning-based,
+
+78
+00:08:27,360 --> 00:08:34,560
+ enabling accurate grounding and natural explanations. Vector databases, shown on page nine,
+
+79
+00:08:34,560 --> 00:08:39,600
+ are specialized systems designed to store and search high dimensional embeddings efficiently.
+
+80
+00:08:39,600 --> 00:08:47,200
+ Unlike relational databases optimized for exact matches, vector databases excel at approximate
+
+81
+00:08:47,200 --> 00:08:52,880
+ nearest neighbor search across millions or billions of vectors. They use indexing algorithms
+
+82
+00:08:52,880 --> 00:09:01,200
+ such as HNSW or IVF to deliver sub-millisecond retrieval. Metadata filtering allows semantic
+
+83
+00:09:01,200 --> 00:09:06,240
+ search to be combined with constraints like date, source type, or access permissions.
+
+84
+00:09:06,240 --> 00:09:13,280
+ Horizontal scaling enables enterprise scale deployments. Popular vector databases include
+
+85
+00:09:13,280 --> 00:09:21,200
+ pine cone, re-viate, huge font, milvis, and PG vector for Postgres QL. Each has trade-offs in
+
+86
+00:09:21,200 --> 00:09:27,200
+ performance, cost, and operational complexity. Choosing the right vector store is a system-level
+
+87
+00:09:27,200 --> 00:09:34,720
+ decision. It directly impacts latency, scalability, and maintainability. In production RAG systems,
+
+88
+00:09:34,720 --> 00:09:40,240
+ the vector database is just as critical as the language model itself. At query time,
+
+89
+00:09:40,240 --> 00:09:46,560
+ retrieval is where everything comes together. The user's question is converted into an embedding
+
+90
+00:09:46,560 --> 00:09:52,400
+ and compared against stored vectors. The system retrieves the top-K most similar chunks,
+
+91
+00:09:52,400 --> 00:09:58,960
+ optionally filtered by metadata such as date or source. These retrieved chunks are then
+
+92
+00:09:58,960 --> 00:10:04,720
+ injected into the prompt sent to the language model. This ensures the model reasons over
+
+93
+00:10:04,720 --> 00:10:12,000
+ evidence rather than memory. Retrieval quality determines answer quality. If irrelevant chunks are
+
+94
+00:10:12,000 --> 00:10:17,920
+ retrieved, responses become noisy. If key chunks are missed, answers become incomplete.
+
+95
+00:10:17,920 --> 00:10:25,840
+ That's why retrieval tuning, top-K selection, filters, and ranking is a core part of RAG optimization.
+
+96
+00:10:25,840 --> 00:10:32,320
+ Retrieval is the gatekeeper between knowledge and generation. The summary on page 10
+
+97
+00:10:32,320 --> 00:10:39,040
+ ties the entire RAG architecture together. A well-designed system transforms unstructured enterprise
+
+98
+00:10:39,040 --> 00:10:46,880
+ knowledge into reliable contextual AI responses. Each stage, ingestion, chunking, embeddings,
+
+99
+00:10:46,880 --> 00:10:53,200
+ vector storage, retrieval, and generation plays a distinct role. Quality ingestion ensures
+
+100
+00:10:53,200 --> 00:10:59,680
+ accurate inputs. Smart chunking preserves meaning. Embedding enables semantic matching.
+
+101
+00:10:59,680 --> 00:11:04,480
+ Vector search retrieves evidence. The language model synthesizes grounded answers.
+
+102
+00:11:04,480 --> 00:11:11,120
+ When any component is weak, the entire system suffers. When all components are aligned,
+
+103
+00:11:11,120 --> 00:11:15,520
+ RAG systems scale to enterprise requirements while maintaining trustworthiness.
+
+104
+00:11:15,520 --> 00:11:22,640
+ RAG is not just a technical pattern. It is a reliability strategy. It allows organizations to
+
+105
+00:11:22,640 --> 00:11:27,680
+ deploy AI systems that augment human decision-making instead of undermining it.
+
+106
+00:11:28,400 --> 00:11:33,200
+ This architecture is what turns AI from a demo into dependable infrastructure.
+
