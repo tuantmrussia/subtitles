@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:06,080
+ And welcome back. In this lecture, we will integrate our MCP server with the cloud desktop.
+
+2
+00:00:06,080 --> 00:00:12,320
+ All the steps that I'm going to say are documented in this guide. So please go through it in a step-by-step.
+
+3
+00:00:12,320 --> 00:00:18,960
+ So the way to tell the cloud desktop about our MCP server is usually through a configuration file.
+
+4
+00:00:18,960 --> 00:00:25,840
+ This configuration file is located in Mac OS under library application support/cloud.
+
+5
+00:00:25,840 --> 00:00:30,880
+ And the file name itself for the configuration file. It's called the cloud under score
+
+6
+00:00:30,880 --> 00:00:37,840
+ desktop under score config.json. In this JSON configuration, we tell the cloud about the location
+
+7
+00:00:37,840 --> 00:00:42,960
+ of Python interpreter. And as we said in this guide, if you don't know the location of that,
+
+8
+00:00:42,960 --> 00:00:49,200
+ you can simply find it by typing which Python internal. Next, we tell the cloud desktop the
+
+9
+00:00:49,200 --> 00:00:55,520
+ location of the MCP server code. You should have the clone the MCP server code in a previous lecture.
+
+10
+00:00:55,840 --> 00:01:01,200
+ And notice that this needs to be the full path of the file. Finally, we set two environment
+
+11
+00:01:01,200 --> 00:01:07,520
+ variable, your contentful access token as well as your space ID. Now, after having your JSON
+
+12
+00:01:07,520 --> 00:01:13,360
+ file ready with your data, you need to quit, load up and reopen it for the configuration to take
+
+13
+00:01:13,360 --> 00:01:19,520
+ effect. So let me start my app. If you see connection errors on the top right of the screen,
+
+14
+00:01:19,520 --> 00:01:24,400
+ do not panic. We would have a whole trouble-shooting lecture coming up next.
+
+15
+00:01:24,400 --> 00:01:30,800
+ Now, if we click on search and tools over here, we should see our contentful MCP server,
+
+16
+00:01:30,800 --> 00:01:37,360
+ as well as the two exposed MCP tools over here. Okay, let's give it a try. And here in the prompt,
+
+17
+00:01:37,360 --> 00:01:44,720
+ I'm going to ask, list all my contentful entries, put them in a basic table with a markdown format.
+
+18
+00:01:44,720 --> 00:01:51,520
+ Let me hit enter. And as we said, the AI uses doc string to decide which tool to call. Now,
+
+19
+00:01:51,520 --> 00:01:57,040
+ you can see it asks me for a permission to invoke a tool from third party integration. I'm going to
+
+20
+00:01:57,040 --> 00:01:58,160
+ click on allow once.
+
+21
+00:02:16,880 --> 00:02:23,120
+ And we can see the model successfully listed the entries and put them in a table as I requested.
+
+22
+00:02:23,120 --> 00:02:30,240
+ Now, let's test our second MCP tool. And I want to get the data from this entry ID. So in the prompt,
+
+23
+00:02:30,240 --> 00:02:35,280
+ I'm going to ask, can you give me the data of this entry ID? And then summarize it for me.
+
+24
+00:02:41,200 --> 00:02:47,040
+ And as we can see, cloud desktop right now, or the MCP client embedded inside the cloud cloud
+
+25
+00:02:47,040 --> 00:02:54,560
+ desktop, it wants to invoke my second MCP server tool. And it asked me for permission to do so.
+
+26
+00:02:54,560 --> 00:03:00,880
+ So I'm going to click again on allow once. And in the meantime, please remember what I mentioned
+
+27
+00:03:00,880 --> 00:03:07,360
+ earlier about attack vector. Every user input is a potential secure theorist. We will deep dive
+
+28
+00:03:07,360 --> 00:03:13,120
+ into those risk in section two. But for now, try to enjoy the fact that we have successfully
+
+29
+00:03:13,120 --> 00:03:19,440
+ connected an AI to your external system through MCP server. I'm going to see you in the next
+
+30
+00:03:19,440 --> 00:03:25,840
+ lecture, where we add MCP resources. I hope that this lecture has been informative for you.
+
+31
+00:03:25,840 --> 00:03:28,480
+ And I will see you in the next one. Thanks for watching.
+
