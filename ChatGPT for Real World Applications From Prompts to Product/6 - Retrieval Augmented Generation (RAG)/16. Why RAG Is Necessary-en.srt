@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:05,760
+ Large language models are powerful, but they operate within a fundamental constraint.
+
+2
+00:00:05,760 --> 00:00:09,920
+ They generate responses based on patterns learned during training,
+
+3
+00:00:09,920 --> 00:00:13,280
+ not by querying live systems or verifying facts.
+
+4
+00:00:13,280 --> 00:00:18,560
+ This means that while their answers often sound confident and well-structured,
+
+5
+00:00:18,560 --> 00:00:22,880
+ they may be outdated, incomplete, or entirely fabricated,
+
+6
+00:00:22,880 --> 00:00:25,680
+ when asked about information beyond their training data.
+
+7
+00:00:26,640 --> 00:00:30,240
+ In business environments, this limitation becomes dangerous.
+
+8
+00:00:30,240 --> 00:00:33,840
+ Organizations rely on constantly changing data.
+
+9
+00:00:33,840 --> 00:00:39,040
+ Policies evolve, products update, customers generate new records,
+
+10
+00:00:39,040 --> 00:00:41,120
+ and systems log real-time events.
+
+11
+00:00:41,120 --> 00:00:45,440
+ A model that cannot see this data is forced to guess.
+
+12
+00:00:45,440 --> 00:00:50,080
+ This is why LLMs alone are not enough for production systems.
+
+13
+00:00:50,080 --> 00:00:52,960
+ They excel at language, not truth verification.
+
+14
+00:00:53,600 --> 00:00:57,920
+ Retrieval augmented generation or rag addresses this gap
+
+15
+00:00:57,920 --> 00:01:01,600
+ by grounding AI responses in actual up-to-date data
+
+16
+00:01:01,600 --> 00:01:02,960
+ retrieve that query time.
+
+17
+00:01:02,960 --> 00:01:08,000
+ Instead of guessing, the model reasons over evidence provided by your systems.
+
+18
+00:01:08,000 --> 00:01:13,200
+ This shift, from language generation to evidence-based generation,
+
+19
+00:01:13,200 --> 00:01:16,240
+ is what makes AI usable in real businesses.
+
+20
+00:01:16,240 --> 00:01:20,080
+ Every LLM has a fixed knowledge cutoff,
+
+21
+00:01:20,080 --> 00:01:23,120
+ a point in time after which it stops learning.
+
+22
+00:01:23,120 --> 00:01:27,520
+ Anything that happens after that date is invisible to the model.
+
+23
+00:01:27,520 --> 00:01:30,960
+ New policies, updated documentation,
+
+24
+00:01:30,960 --> 00:01:36,720
+ regulatory changes, or internal decisions simply do not exist from the model's perspective.
+
+25
+00:01:36,720 --> 00:01:41,120
+ When users ask questions about post-cut-off information,
+
+26
+00:01:41,120 --> 00:01:43,200
+ the model doesn't say "I don't know."
+
+27
+00:01:43,200 --> 00:01:47,360
+ Instead, it predicts what a plausible answer might look like.
+
+28
+00:01:47,920 --> 00:01:51,200
+ This behavior creates a dangerous illusion of accuracy.
+
+29
+00:01:51,200 --> 00:01:56,960
+ Rag directly solves this problem by injecting current information at runtime.
+
+30
+00:01:56,960 --> 00:02:00,240
+ Instead of relying on frozen training data,
+
+31
+00:02:00,240 --> 00:02:04,160
+ the system retrieves relevant documents from your live knowledge sources
+
+32
+00:02:04,160 --> 00:02:05,840
+ and supplies them as context.
+
+33
+00:02:05,840 --> 00:02:12,000
+ The model then generates answers grounded in what your organization actually knows today,
+
+34
+00:02:12,000 --> 00:02:14,720
+ not what the internet looked like months or years ago.
+
+35
+00:02:15,440 --> 00:02:20,160
+ This makes Rag essential for any system that must reflect current reality
+
+36
+00:02:20,160 --> 00:02:22,080
+ rather than historical snapshots.
+
+37
+00:02:22,080 --> 00:02:28,000
+ A common misconception is that fine-tuning a model will solve the knowledge problem.
+
+38
+00:02:28,000 --> 00:02:32,080
+ In reality, fine-tuning introduces new challenges.
+
+39
+00:02:32,080 --> 00:02:36,480
+ It is expensive, slow, and operationally complex.
+
+40
+00:02:36,480 --> 00:02:40,640
+ Updating a fine-tuned model can take weeks or months,
+
+41
+00:02:40,640 --> 00:02:44,480
+ making it unsuitable for fast-changing business environments.
+
+42
+00:02:45,440 --> 00:02:49,200
+ More importantly, fine-tuning does not eliminate hallucinations.
+
+43
+00:02:49,200 --> 00:02:54,640
+ Even a fine-tuned model will fabricate answers when information is missing.
+
+44
+00:02:54,640 --> 00:02:59,520
+ You're still relying on internalized patterns rather than verifying sources.
+
+45
+00:02:59,520 --> 00:03:02,800
+ Rag offers a better architectural approach.
+
+46
+00:03:02,800 --> 00:03:08,640
+ Knowledge stays external to the model and can be updated instantly without retraining.
+
+47
+00:03:08,640 --> 00:03:12,960
+ Documents can be added, removed, or corrected in real time.
+
+48
+00:03:13,600 --> 00:03:17,280
+ Every response can be traced back to the exact sources used,
+
+49
+00:03:17,280 --> 00:03:19,520
+ improving transparency and trust.
+
+50
+00:03:19,520 --> 00:03:23,920
+ In production systems, Rag is not a workaround.
+
+51
+00:03:23,920 --> 00:03:25,440
+ It's the correct design choice.
+
+52
+00:03:25,440 --> 00:03:30,000
+ It separates intelligence from knowledge, enabling scalable,
+
+53
+00:03:30,000 --> 00:03:32,800
+ maintainable, and auditable AI systems.
+
+54
+00:03:32,800 --> 00:03:36,160
+ Pollucinations are not bugs.
+
+55
+00:03:36,160 --> 00:03:39,760
+ They are a direct consequence of how language models work.
+
+56
+00:03:40,480 --> 00:03:45,280
+ LLMs are trained to predict the most likely next token, not to verify truth.
+
+57
+00:03:45,280 --> 00:03:50,240
+ When they encounter uncertainty, they fill the gap with confident sounding guesses.
+
+58
+00:03:50,240 --> 00:03:54,400
+ This becomes especially dangerous in high-stakes domains.
+
+59
+00:03:54,400 --> 00:03:59,120
+ In legal systems, hallucinated case law can lead to malpractice.
+
+60
+00:03:59,120 --> 00:04:03,840
+ In healthcare, fabricated drug interactions can put lives at risk.
+
+61
+00:04:03,840 --> 00:04:09,280
+ In finance, invented compliance rules can result in regulatory violations.
+
+62
+00:04:10,000 --> 00:04:15,280
+ Rag dramatically reduces hallucination risk by grounding responses in retrieved evidence.
+
+63
+00:04:15,280 --> 00:04:19,040
+ The model is no longer inventing answers from memory.
+
+64
+00:04:19,040 --> 00:04:22,720
+ It is reasoning over real documents supplied at query time.
+
+65
+00:04:22,720 --> 00:04:28,480
+ This shifts the model's role from creative generator to contextual explainer.
+
+66
+00:04:28,480 --> 00:04:32,000
+ By forcing the model to rely on external evidence,
+
+67
+00:04:32,000 --> 00:04:36,160
+ Rag enables verification, citation, and human oversight.
+
+68
+00:04:36,800 --> 00:04:41,520
+ This is why Rag is a safety mechanism, not just an accuracy enhancement.
+
+69
+00:04:41,520 --> 00:04:48,880
+ Traditional LLMs operate on static knowledge, snapshots of the world captured during training.
+
+70
+00:04:48,880 --> 00:04:55,440
+ This includes historical web data, archive documentation, and frozen data sets.
+
+71
+00:04:55,440 --> 00:05:02,240
+ While useful for general reasoning, static knowledge quickly becomes outdated in real organizations.
+
+72
+00:05:02,960 --> 00:05:08,080
+ Businesses operate on living data, databases update continuously,
+
+73
+00:05:08,080 --> 00:05:15,280
+ APIs reflect real-time states, internal documents evolve daily, customer interactions generate
+
+74
+00:05:15,280 --> 00:05:22,160
+ constant new signals. This dynamic data is where business value lives, and where AI must operate
+
+75
+00:05:22,160 --> 00:05:28,560
+ accurately. Rag bridges this gap by connecting language models to dynamic data sources.
+
+76
+00:05:29,200 --> 00:05:33,680
+ Instead of relying on stale knowledge, the model retrieves the most relevant,
+
+77
+00:05:33,680 --> 00:05:36,480
+ current information at the moment a question is asked.
+
+78
+00:05:36,480 --> 00:05:42,320
+ This ensures that responses reflect what is true now, not what was true during training.
+
+79
+00:05:42,320 --> 00:05:47,040
+ Without Rag, AI systems remain disconnected from reality.
+
+80
+00:05:47,040 --> 00:05:53,520
+ With Rag, they become operationally useful. At a technical level, Rag follows a simple,
+
+81
+00:05:53,520 --> 00:06:00,240
+ but powerful workflow. First, the system retrieves relevant documents from your knowledge sources
+
+82
+00:06:00,240 --> 00:06:04,880
+ based on the user's query. These sources might include databases,
+
+83
+00:06:04,880 --> 00:06:12,240
+ document stores, wikis, or APIs. Next, the retrieved content is injected into the prompt
+
+84
+00:06:12,240 --> 00:06:20,320
+ as context. This step grounds the model with concrete evidence. Finally, the model generates a response
+
+85
+00:06:20,320 --> 00:06:26,960
+ based on that evidence, not on its internal memory. The critical insight is that your data
+
+86
+00:06:26,960 --> 00:06:32,880
+ remains external to the model. It lives in searchable systems that can be updated independently.
+
+87
+00:06:32,880 --> 00:06:40,080
+ At query time, only the most relevant information is provided, keeping prompt sufficient and
+
+88
+00:06:40,080 --> 00:06:46,800
+ responses accurate. This architecture improves traceability, since every answer can be linked
+
+89
+00:06:46,800 --> 00:06:53,680
+ back to specific source documents. It also simplifies governance, auditing, and compliance.
+
+90
+00:06:53,680 --> 00:06:59,280
+ Key requirements for production AI systems, traditional search systems,
+
+91
+00:06:59,280 --> 00:07:05,360
+ return lists of documents. They leave the hard work, reading, synthesizing, and reasoning
+
+92
+00:07:05,360 --> 00:07:12,960
+ to humans. Rag goes much further. Rag retrieves documents, understands their content,
+
+93
+00:07:12,960 --> 00:07:18,880
+ synthesizes insights across multiple sources, and explains results in natural language.
+
+94
+00:07:18,880 --> 00:07:26,240
+ This transforms static documentation into interactive expertise. Instead of asking,
+
+95
+00:07:26,240 --> 00:07:32,720
+ where is this information? Users can ask, what does this mean? Or how does this apply to my
+
+96
+00:07:32,720 --> 00:07:40,160
+ situation? The system doesn't just point, it explains. This capability enables conversational
+
+97
+00:07:40,160 --> 00:07:46,240
+ access to complex knowledge bases, turning AI into a reasoning layer on top of your data.
+
+98
+00:07:46,240 --> 00:07:52,720
+ That's why Rag is not just better search. It's a fundamentally different way of interacting with
+
+99
+00:07:52,720 --> 00:07:59,520
+ information. Rag becomes essential in enterprise scenarios where accuracy and traceability matter.
+
+100
+00:07:59,520 --> 00:08:06,640
+ Internal knowledge bases benefit by turning fragmented documentation into a single conversational
+
+101
+00:08:06,640 --> 00:08:13,520
+ interface. Customer support systems rely on Rag to provide accurate, up-to-date answers,
+
+102
+00:08:13,520 --> 00:08:19,920
+ grounded in official documentation, and ticket history. In compliance and policy systems,
+
+103
+00:08:19,920 --> 00:08:26,800
+ Rag ensures responses are always sourced from current, approved documents. Product documentation
+
+104
+00:08:26,800 --> 00:08:34,720
+ assistance use Rag to navigate complex APIs and technical guides. Analytics platforms use Rag
+
+105
+00:08:34,720 --> 00:08:41,200
+ to explain live metrics and trends tied directly to data pipelines. In all these cases,
+
+106
+00:08:41,200 --> 00:08:48,080
+ the common requirement is trust. Stakeholders need confidence that AI responses reflect reality.
+
+107
+00:08:48,080 --> 00:08:56,080
+ Rag provides that foundation by tying every answer back to real sources, not using Rag,
+
+108
+00:08:56,080 --> 00:09:02,320
+ introduces serious risks. Systems provide outdated answers that no longer reflect reality.
+
+109
+00:09:02,880 --> 00:09:09,280
+ Silent hallucinations slip through undetected, spreading misinformation. Trust erodes quickly
+
+110
+00:09:09,280 --> 00:09:15,760
+ once users realize the AI is unreliable. Teams are then forced into manual verification,
+
+111
+00:09:15,760 --> 00:09:21,520
+ negating productivity gains. Eventually, business units stop using the system altogether.
+
+112
+00:09:21,520 --> 00:09:28,560
+ AI initiatives fail, not because the technology is weak, but because it wasn't grounded correctly.
+
+113
+00:09:29,200 --> 00:09:33,520
+ RAG prevents these failures by ensuring answers are current,
+
+114
+00:09:33,520 --> 00:09:38,720
+ verifiable, and traceable. In production, the cost of not using Rag
+
+115
+00:09:38,720 --> 00:09:46,240
+ is far higher than the cost of implementing it. Rag should be treated as foundational infrastructure,
+
+116
+00:09:46,240 --> 00:09:53,200
+ not an optional enhancement. It establishes a clean separation between knowledge and intelligence,
+
+117
+00:09:53,760 --> 00:10:00,960
+ making systems safer, easier to update, and more auditable. With Rag, knowledge updates happen
+
+118
+00:10:00,960 --> 00:10:07,920
+ instantly without retraining. Responses are grounded in verifiable sources. Compliance teams can
+
+119
+00:10:07,920 --> 00:10:15,280
+ audit outputs. Engineers can debug failures. Stakeholders can trust results. As you move from
+
+120
+00:10:15,280 --> 00:10:22,240
+ demos to production, Rag is what allows AI systems to scale responsibly. It's the architectural
+
+121
+00:10:22,240 --> 00:10:28,400
+ pattern that turns impressive prototypes into business critical systems. In modern enterprise
+
+122
+00:10:28,400 --> 00:10:35,200
+ AI, Rag is not a nice to have. It is the minimum standard for trustworthy AI.
+
