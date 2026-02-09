@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:06,640
+ In this module I'll tell you about Chrome for developers, so we can navigate here and we see some
+
+2
+00:00:06,640 --> 00:00:12,560
+ interesting documentation. First, how to be the first extension. We can see all of the tutorials,
+
+3
+00:00:12,560 --> 00:00:18,400
+ how they are built, HTML, CSS and JavaScript, what are the extension, what they can do.
+
+4
+00:00:18,400 --> 00:00:23,360
+ This is like a main component, so the manifest which is the most important, the extension
+
+5
+00:00:23,360 --> 00:00:28,000
+ manifest is only required for the manifest big name manifest JSON. It also has to block
+
+6
+00:00:28,000 --> 00:00:33,120
+ it in the root directory. We have content scripts, so it runs JavaScript in the context of web
+
+7
+00:00:33,120 --> 00:00:40,000
+ page, service worker that runs in the background and handles some browser events. So for example,
+
+8
+00:00:40,000 --> 00:00:47,280
+ if you want to check the website, how is it built, basically opening a new website, it will
+
+9
+00:00:47,280 --> 00:00:54,560
+ run the event that will detect it. You have a toolbar action, so if I have here, I have four buttons
+
+10
+00:00:54,560 --> 00:01:00,080
+ that will extract it, a site panel, it's possible to have a site panel on the right or again
+
+11
+00:01:00,080 --> 00:01:05,840
+ from the pop-up, and we can even intercept block or modify a network request. This is mostly for
+
+12
+00:01:05,840 --> 00:01:13,840
+ extension related to cybersecurity. All right, so this is how we can publish, in this case I would
+
+13
+00:01:13,840 --> 00:01:19,200
+ tell how we can publish, so create a Chrome extension and publish in a Chrome web store to gain
+
+14
+00:01:19,200 --> 00:01:26,320
+ an access to developer, Chrome dashboard. You have to apply for a license, and the license
+
+15
+00:01:26,320 --> 00:01:32,000
+ cost five USD, which is not much. This is the initial fee, and then you have access to all of the
+
+16
+00:01:32,000 --> 00:01:38,320
+ Chrome web store. These are the tutorials, so this is the first tutorial. You can create like a
+
+17
+00:01:38,320 --> 00:01:44,320
+ manifest JSON, put an action. So we can, yeah, we can do it. For example, I have an empty file
+
+18
+00:01:44,320 --> 00:01:50,880
+ Chrome extension, and what I'm going to do, I'll just copy manifest JSON, and then I'll just
+
+19
+00:01:50,880 --> 00:01:57,760
+ open a new new file, and now I'll just make it like a JSON, and then I can open it in node, but for
+
+20
+00:01:57,760 --> 00:02:07,360
+ example, and one is in node, but I can basically copy the all the links. So now I copied here,
+
+21
+00:02:07,360 --> 00:02:13,200
+ this is name Hello extension, I will say "Curse", this is the name of it, this is the description,
+
+22
+00:02:13,200 --> 00:02:19,200
+ if you have extensions, we have to clip this pattern, we have a description right here,
+
+23
+00:02:19,200 --> 00:02:25,680
+ and this is the ID, especially the Chrome web store, and this is the inspect service worker.
+
+24
+00:02:25,680 --> 00:02:30,640
+ So some of the extension doesn't have that. For example, this has because you obviously try to
+
+25
+00:02:30,640 --> 00:02:36,000
+ detect how the website is built, and then return some information like extensive, it doesn't
+
+26
+00:02:36,000 --> 00:02:43,680
+ hit because it just turns off to run on all of the extensions, and here we have a default icon,
+
+27
+00:02:43,680 --> 00:02:53,680
+ have extension PNG, and there is a default pop-up HTML. So, and now we can run an icon to the
+
+28
+00:02:53,680 --> 00:03:00,160
+ directory, you can even remove it, but we'll just create a HTML file, and now when I copy here,
+
+29
+00:03:02,240 --> 00:03:10,560
+ I can operate this, and what I made to do, I can just copy this, and then go here and save.
+
+30
+00:03:10,560 --> 00:03:17,920
+ So, we can remove that icon for a second, because we will not need it, and when it's already finished,
+
+31
+00:03:17,920 --> 00:03:24,560
+ I can and try to add it. So first, you have to turn on developer mode, if you don't have it,
+
+32
+00:03:24,560 --> 00:03:30,960
+ you just basically turn on, and then the options load and pack, pack extension or update will be
+
+33
+00:03:30,960 --> 00:03:36,000
+ available here, if you slot and packed, then to go to extension that you would like to use like
+
+34
+00:03:36,000 --> 00:03:45,760
+ current extension. Okay, and we, I removed the line, but I still forgot to remove obviously that.
+
+35
+00:03:45,760 --> 00:03:52,880
+ Camera, and now, I will try retry, and as you can see, it's already here, curves,
+
+36
+00:03:53,760 --> 00:04:01,600
+ and base level extension, and now we can pin it up, then when I pin it and press it,
+
+37
+00:04:01,600 --> 00:04:07,440
+ we see hello extensions. So obviously now, if I make, because I have a mistake,
+
+38
+00:04:07,440 --> 00:04:12,560
+ I change the curves, and I will just change my new extension,
+
+39
+00:04:12,560 --> 00:04:20,640
+ and the version will be two that do, and I will change here,
+
+40
+00:04:24,080 --> 00:04:36,400
+ hello word. If it's already done, I can save them both, and while I'm here, I just press refresh,
+
+41
+00:04:36,400 --> 00:04:43,360
+ and you change, we see the version, we see the description, we see the ID, just like the version
+
+42
+00:04:43,360 --> 00:04:48,400
+ here, and when I press it now, it says hello word. All right, this was our first script,
+
+43
+00:04:49,280 --> 00:04:55,840
+ but we can actually add some pop up styles. So now I'll adjust it for our purpose,
+
+44
+00:04:55,840 --> 00:05:01,280
+ before we dive into a cursor, for now, I'm just telling like the basics. So if I want to make
+
+45
+00:05:01,280 --> 00:05:08,240
+ like another or toggle dark model, just to imagine how we can turn it on, so I can just
+
+46
+00:05:08,240 --> 00:05:21,120
+ toggle, I will leave version as one, and we can even send maybe permissions. So the permissions,
+
+47
+00:05:21,120 --> 00:05:32,960
+ usually, we can save permission, and for permissions, we will use scripting,
+
+48
+00:05:37,920 --> 00:05:45,200
+ active tab. For now, it will be just for a test, and I can save it, and now we can create
+
+49
+00:05:45,200 --> 00:05:51,280
+ some of the information, so we will need a JavaScript file. This way, we can obviously fire some
+
+50
+00:05:51,280 --> 00:05:58,000
+ JavaScript, because we'll use the JavaScript inside the HTML. So we say we have a whole icon,
+
+51
+00:05:58,000 --> 00:06:02,560
+ hello word. For now, we can actually remove it, because I don't want anybody,
+
+52
+00:06:03,840 --> 00:06:09,920
+ I'll just use the script. In order to use the script, we use the button, and we can use ID,
+
+53
+00:06:09,920 --> 00:06:22,080
+ and show the ID, and close it, double dark mode, and high button. And after that,
+
+54
+00:06:24,000 --> 00:06:36,000
+ search up. So we'll just fire the script from Java, just launch JavaScript file, and first,
+
+55
+00:06:36,000 --> 00:06:43,840
+ we have to close our JavaScript with this here, and that's pretty neat. So now we have to create
+
+56
+00:06:43,840 --> 00:06:48,560
+ a file with that name and extension. So JavaScript file, I will go back to the folder,
+
+57
+00:06:49,280 --> 00:06:56,000
+ I will open a new file, I will just open up to the script, and now I can open it here.
+
+58
+00:06:56,000 --> 00:07:03,440
+ For now, I'm using just notepad, but you show the dive into cursor. So I created a simple file,
+
+59
+00:07:03,440 --> 00:07:09,040
+ and for this type, we can actually try to get like how we can interact with JavaScript.
+
+60
+00:07:10,080 --> 00:07:18,640
+ And let's go. I'll open now a Chrome extension. We say open folder, and we use the open folder,
+
+61
+00:07:18,640 --> 00:07:24,640
+ Chrome extension, and load. After it's loaded, we see our files that I have created, and we can
+
+62
+00:07:24,640 --> 00:07:31,680
+ even change it now from here. So now we can just ask agent, maybe I will just switch to agent,
+
+63
+00:07:31,680 --> 00:07:40,640
+ I will use the composer one, and I can open a new agent and ask, for example, first. I want to
+
+64
+00:07:40,640 --> 00:07:53,680
+ add our files in pop-up.js file, and then obviously, I will just ask pressing control comma,
+
+65
+00:07:53,680 --> 00:07:59,200
+ I can switch between those models. So there is a plan, agent engine will continue doing some stuff,
+
+66
+00:07:59,200 --> 00:08:05,280
+ plan it to just plan, and then we click the button to build the bullet point. But first,
+
+67
+00:08:05,280 --> 00:08:10,160
+ I would like to ask. So they ask, we will not implement any code. First, it will review.
+
+68
+00:08:10,160 --> 00:08:17,920
+ So now we see some implementations, and we can apply all, by pressing apply all,
+
+69
+00:08:17,920 --> 00:08:24,720
+ it will just change some of it. And now, if I go to manifest JSON, we see the changes. So here,
+
+70
+00:08:26,240 --> 00:08:30,800
+ it actually added a storage, change a lot of it, I just can keep it, and the pop-up is like
+
+71
+00:08:30,800 --> 00:08:38,480
+ entirely code that was built. Okay, but I will remove it for now. And now we'll write just how we
+
+72
+00:08:38,480 --> 00:08:45,600
+ can use it so far. So we specified in the manifest JSON, how HTML, that can't toggle and buddy.
+
+73
+00:08:45,600 --> 00:08:51,360
+ So don't write it. I'll show you how we can use it. If you don't know, I will just get a document
+
+74
+00:08:51,360 --> 00:08:57,280
+ which is the website, and basically it already detects just by pressing. And then,
+
+75
+00:08:57,280 --> 00:09:04,240
+ I tried to look for a script and apparently that's true, and I pressed tap automatically,
+
+76
+00:09:04,240 --> 00:09:12,000
+ it just fill up by first two or three letters. And now, I just save it. And then when I go back to
+
+77
+00:09:12,000 --> 00:09:21,600
+ my Chrome, I will reload. And now, I'll just press it. Go here. We see you have a toggle dark mode.
+
+78
+00:09:21,600 --> 00:09:28,080
+ It's pretty simple. I can create a daily code pop-up, show like random motivational code.
+
+79
+00:09:28,080 --> 00:09:33,120
+ So I can go back. And we'll use now without using agent like previously, because I just
+
+80
+00:09:33,120 --> 00:09:38,480
+ remove it, but as you can see, it just automatically populates. So I can open a manifest JSON file,
+
+81
+00:09:38,480 --> 00:09:43,040
+ which is used like a free file from now. But obviously, this project is a little larger.
+
+82
+00:09:43,040 --> 00:09:53,200
+ So I will change the name will be called. The description can be daily quarter,
+
+83
+00:09:53,200 --> 00:10:00,080
+ like this code of the day, I pressed tap. And now, we don't need to actually need permission.
+
+84
+00:10:00,080 --> 00:10:04,320
+ So I'll just remove it. Production will be pop-up edge to the amount that we will show it.
+
+85
+00:10:04,320 --> 00:10:13,520
+ And now, and I will save it. I will go to, this is like a pop-up, hello, HTML. Okay. And here,
+
+86
+00:10:13,520 --> 00:10:19,600
+ we have like some script mode. And now we just change it for now. I will use like a quote,
+
+87
+00:10:19,600 --> 00:10:29,840
+ the P file. So I would say ID, quote, B, and script pop-up address, exactly. And then when I go to
+
+88
+00:10:29,840 --> 00:10:36,320
+ pop-up, I will just try to put some like a quote. So I have to store it in some sort of the variable.
+
+89
+00:10:36,320 --> 00:10:44,160
+ So this would be a cause, because we did not change. And this time, you have to specify
+
+90
+00:10:44,160 --> 00:10:49,440
+ it's pretty ridiculous, but actually it's specified even some prompts on now I see it.
+
+91
+00:10:49,440 --> 00:10:54,480
+ And then when I close it and use semicolon, but now I want to display it. So just get again,
+
+92
+00:10:54,480 --> 00:11:03,920
+ document, get a lamb by the D, and get a lamb by the but I would just use maybe not text context.
+
+93
+00:11:03,920 --> 00:11:14,800
+ Sometimes actually we have to know in our text quotes, my friend, so it's using like a random
+
+94
+00:11:14,800 --> 00:11:22,640
+ quote. So if I like add something like a bug quote, and I will save it.
+
+95
+00:11:24,880 --> 00:11:29,760
+ Now it's just written in the variable, it would just get like a cause. This is the pointer
+
+96
+00:11:29,760 --> 00:11:35,680
+ reference to the calls link, because you just put a random so it has to know the number of
+
+97
+00:11:35,680 --> 00:11:42,960
+ the variable elements here. And now if I refresh it again, go to the extension, press it's
+
+98
+00:11:42,960 --> 00:11:46,320
+ called on the day, and when I press it, okay, we see it.
+
