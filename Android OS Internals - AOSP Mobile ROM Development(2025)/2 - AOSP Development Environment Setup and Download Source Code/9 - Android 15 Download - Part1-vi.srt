@@ -1,0 +1,260 @@
+1
+00:00:00,720 --> 00:00:01,480
+Xin chào.
+
+2
+00:00:02,360 --> 00:00:06,840
+Trong video này, tôi sẽ chỉ cho bạn làm thế nào để tải xuống và xây dựng Ando 15 từ nguồn.
+
+3
+00:00:07,680 --> 00:00:13,880
+Chúng tôi sẽ đi qua ba bước chính thiết lập môi trường của bạn, tải về mã AOSp, và cuối cùng
+
+4
+00:00:13,880 --> 00:00:14,680
+Xây dựng nó.
+
+5
+00:00:15,480 --> 00:00:19,680
+Nếu anh chưa từng làm việc này trước đây, đừng lo, tôi sẽ hướng dẫn anh từng phần một.
+
+6
+00:00:20,560 --> 00:00:21,880
+Hãy nhảy ngay vào.
+
+7
+00:00:23,040 --> 00:00:28,000
+Trước khi bắt đầu, hãy chắc chắn rằng hệ thống của bạn có thể thực sự xử lý việc xây dựng steroid 15.
+
+8
+00:00:28,920 --> 00:00:31,760
+Đây là những gì bạn cần như trên trang web chính thức của Google.
+
+9
+00:00:32,640 --> 00:00:36,480
+Đầu tiên, hãy chắc chắn rằng bạn đang sử dụng một máy 64 bit x86.
+
+10
+00:00:37,400 --> 00:00:41,400
+Già hơn 32 bit hệ thống sẽ không cắt giảm nó cho phiên bản steroid mới hơn.
+
+11
+00:00:41,400 --> 00:00:44,440
+Những thứ đó chỉ làm việc cho Andrene 2.3 và sớm hơn.
+
+12
+00:00:45,280 --> 00:00:46,840
+Tiếp theo là kho.
+
+13
+00:00:47,720 --> 00:00:50,680
+Anh sẽ cần ít nhất 400GB không gian miễn phí.
+
+14
+00:00:51,640 --> 00:00:59,000
+Nó giảm xuống khoảng 250GB để tải mã nguồn, và 150GB khác để xây dựng nó.
+
+15
+00:00:59,920 --> 00:01:02,820
+Và nếu bạn đang sử dụng một tấm gương đầy đủ của reOSp.
+
+16
+00:01:02,860 --> 00:01:06,260
+Bây giờ anh cần thêm chỗ cho Ram.
+
+17
+00:01:06,260 --> 00:01:08,580
+Anh sẽ muốn ít nhất 64GB.
+
+18
+00:01:09,580 --> 00:01:12,860
+Phải, nhiều lắm, nhưng thiêu hủy bước tiếp theo.
+
+19
+00:01:13,660 --> 00:01:19,940
+Theo tài liệu tham khảo, Google xây dựng robot trên 72 máy cốt lõi với 64 GB của Ram, và nó đi vòng
+
+20
+00:01:19,940 --> 00:01:20,860
+40 phút.
+
+21
+00:01:21,660 --> 00:01:26,220
+Nếu bạn đang ở trên một cái gì đó giống như một hệ thống sáu lõi với cùng một lượng Ram, bạn đang nhìn xung quanh
+
+22
+00:01:26,220 --> 00:01:27,900
+6 tiếng cho một tòa nhà đầy đủ.
+
+23
+00:01:28,860 --> 00:01:32,180
+Vì vậy, yeah, bạn sẽ muốn một máy móc khá chắc chắn để làm cho điều này mịn.
+
+24
+00:01:33,100 --> 00:01:38,180
+Đừng lo, anh vẫn có thể sống với một cái máy tử tế với 16 lõi và 32GB Ram.
+
+25
+00:01:39,180 --> 00:01:42,020
+Hãy xem xét yêu cầu của hệ điều hành.
+
+26
+00:01:42,940 --> 00:01:49,100
+Để xây dựng amero 15, máy của bạn cần phải chạy một bản phân phối Linux 64 bit bao gồm GNU
+
+27
+00:01:49,220 --> 00:01:51,940
+Thư viện C phiên bản 2.17 hoặc cao hơn.
+
+28
+00:01:52,780 --> 00:01:59,660
+Nếu bạn đang xây dựng Andrene 11 hoặc mới hơn như chúng tôi, bạn cũng cần phải có mặt trên utu 18.04 hoặc sau này.
+
+29
+00:02:00,500 --> 00:02:05,710
+Phiên bản đó có tất cả các công cụ và hỗ trợ gói ra khỏi hộp, vì vậy đó là một lựa chọn vững chắc.
+
+30
+00:02:06,590 --> 00:02:12,670
+Ghi chú quan trọng là macOS không còn được hỗ trợ cho sự phát triển của người máy vào tháng 6 năm 2021.
+
+31
+00:02:13,510 --> 00:02:18,830
+Nếu bạn đang trên một mac, bạn sẽ cần thiết lập một môi trường Linux trong một VM hoặc chuyển sang một người bản địa
+
+32
+00:02:18,830 --> 00:02:19,830
+Máy Linux.
+
+33
+00:02:20,790 --> 00:02:25,990
+Một khi bạn đã có hệ điều hành đúng chỗ, bạn sẵn sàng cài đặt các gói cần thiết và bắt đầu thiết lập
+
+34
+00:02:25,990 --> 00:02:27,510
+nâng cao môi trường xây dựng của bạn.
+
+35
+00:02:33,230 --> 00:02:37,230
+Bây giờ chúng tôi sẽ cài đặt những gói cần thiết mà bạn sẽ cần để xây dựng người máy.
+
+36
+00:02:38,150 --> 00:02:42,470
+Tiếp tục sao chép lệnh mà bạn thấy trên màn hình từ tài liệu hướng dẫn chính thức của người máy.
+
+37
+00:02:42,470 --> 00:02:44,230
+Máy chủ.com.
+
+38
+00:02:45,230 --> 00:02:49,830
+Được rồi, bây giờ chúng ta sẽ cài đặt các gói cần thiết để xây dựng bước 15.
+
+39
+00:02:50,750 --> 00:02:56,910
+Hãy chắc chắn rằng bạn đang ở Ubuntu 18.04 hoặc sau đó, mở thiết bị cuối và chạy lệnh này.
+
+40
+00:02:56,950 --> 00:03:02,190
+Điều này sẽ cài đặt một bó các công cụ chúng tôi cần bao gồm git, mà là siêu quan trọng để tải về
+
+41
+00:03:02,190 --> 00:03:09,370
+Mã nguồn AOSp sau này trên thiết lập của tôi, nó đã được cài đặt vì vậy nó sẽ không thêm cài đặt
+
+42
+00:03:09,370 --> 00:03:10,290
+Bất kỳ gói hàng nào.
+
+43
+00:03:16,250 --> 00:03:20,330
+Phần này cho chúng ta biết phần mềm nào cần được cài đặt để hoạt động với AOSp.
+
+44
+00:03:20,650 --> 00:03:24,890
+Đó là mở JDK làm python3 và một thứ gọi là repo.
+
+45
+00:03:25,810 --> 00:03:29,450
+Bây giờ là phiên bản tối tân nhất của steroid, trong đó có 15.
+
+46
+00:03:29,650 --> 00:03:34,730
+Ba công cụ đầu tiên mở JDK làm và python3 tiền xây dựng.
+
+47
+00:03:34,730 --> 00:03:37,050
+Vì vậy, chúng ta không cần phải lắp đặt chúng riêng biệt.
+
+48
+00:03:37,970 --> 00:03:41,970
+Những gì chúng tôi cần là tái thiết và đó là những gì chúng tôi sẽ cài đặt tiếp theo.
+
+49
+00:03:44,530 --> 00:03:45,130
+Được rồi.
+
+50
+00:03:45,290 --> 00:03:48,050
+Bây giờ hãy chuyển sang thiết bị cuối và chạy lệnh.
+
+51
+00:03:48,970 --> 00:03:51,450
+Trước hết chúng tôi sẽ cập nhật thông tin gói hàng.
+
+52
+00:03:52,330 --> 00:03:53,770
+Sao chép và dán cái này.
+
+53
+00:03:54,730 --> 00:03:56,250
+Chờ một chút để kết thúc.
+
+54
+00:03:57,250 --> 00:04:00,610
+Khi xong việc, hãy cài đặt bệ phóng.
+
+55
+00:04:20,500 --> 00:04:24,820
+Lệnh này cài đặt công cụ tái sử dụng mà chúng tôi sẽ sử dụng để đồng bộ hoá mã nguồn steroid.
+
+56
+00:04:25,740 --> 00:04:28,660
+Nếu điều này làm việc mà không có bất kỳ lỗi, bạn là tốt để đi.
+
+57
+00:04:29,900 --> 00:04:33,900
+Nếu vì một số lý do mà không hiệu quả, bạn cũng có thể cài đặt lại bằng tay.
+
+58
+00:04:34,740 --> 00:04:36,060
+Đây là cách làm.
+
+59
+00:04:37,060 --> 00:04:42,580
+@ info/ rich
+
+60
+00:04:43,620 --> 00:04:44,540
+Bước cuối cùng.
+
+61
+00:04:44,540 --> 00:04:46,620
+Hãy chắc chắn rằng nó được cài đúng.
+
+62
+00:04:49,300 --> 00:04:54,620
+Anh nên thấy thứ gì đó giống như tái nạp đạn phiên bản 2.17 hoặc cao hơn.
+
+63
+00:04:55,580 --> 00:04:56,540
+Và chỉ thế thôi.
+
+64
+00:04:57,380 --> 00:05:02,100
+Bây giờ anh đã cài đặt lại và sẵn sàng sử dụng để tải về mã số 15 của robot.
+
+65
+00:05:03,580 --> 00:05:07,420
+Trong phiên tiếp theo, chúng ta sẽ tải mã nguồn của robot 15.
+
