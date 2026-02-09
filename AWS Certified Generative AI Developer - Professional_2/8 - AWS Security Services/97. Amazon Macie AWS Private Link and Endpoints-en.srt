@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:05,680
+ In this lecture, we're going to learn about AWS services to secure AI systems.
+
+2
+00:00:05,680 --> 00:00:10,080
+ So we'll start with Amazon Macy and AWS private link.
+
+3
+00:00:10,080 --> 00:00:17,680
+ So Amazon Macy is a security service that uses machine learning and pattern matching
+
+4
+00:00:17,680 --> 00:00:22,640
+ to discover and protect your sensitive data.
+
+5
+00:00:23,200 --> 00:00:30,320
+ That sensitive data can include personally identifiable information, PI data,
+
+6
+00:00:30,320 --> 00:00:36,880
+ such as the name of the person, address, credit card details, and many other attributes.
+
+7
+00:00:36,880 --> 00:00:46,400
+ Now, remember from the exam perspective, Amazon Macy only works the sensitive data that you
+
+8
+00:00:46,400 --> 00:00:53,120
+ have within an S3 bucket. So it will scan through the S3 bucket and identify
+
+9
+00:00:53,120 --> 00:01:00,320
+ any PI information. And if it finds any PI information, then it's going to send a notification
+
+10
+00:01:00,320 --> 00:01:06,160
+ to event bridge. And event bridge, you can think of an event bus which will get notifications
+
+11
+00:01:06,160 --> 00:01:12,080
+ from services such as Amazon Macy and other AWS services. And it's going to invoke some downstream
+
+12
+00:01:12,080 --> 00:01:18,560
+ AWS services such as AWS Lambda function. And let's say it's find some PI information in the S3 bucket.
+
+13
+00:01:18,560 --> 00:01:26,320
+ It will invoke the Lambda function, which can then delete or redact that data. And it can also
+
+14
+00:01:26,320 --> 00:01:32,880
+ send these findings to security hub. It's just an security aggregation service.
+
+15
+00:01:32,880 --> 00:01:39,600
+ And from the exam perspective, just remember, if it's talking about S3 bucket, PI information,
+
+16
+00:01:39,600 --> 00:01:47,040
+ then the service that is going to be used will be Amazon Macy. Okay, next, we have AWS private
+
+17
+00:01:47,040 --> 00:01:55,600
+ link and AWS private link provides private connectivity without exposing your traffic to public
+
+18
+00:01:55,600 --> 00:02:01,440
+ internet. And what are the benefits of that? So if the network traffic uses private link,
+
+19
+00:02:01,440 --> 00:02:06,880
+ it doesn't travel our public internet, which reduces the risk of external threats,
+
+20
+00:02:07,600 --> 00:02:16,480
+ such as brute force and DDOS attacks. So in summary, if you want to reduce the security threats
+
+21
+00:02:16,480 --> 00:02:23,840
+ rather than going over the public internet, you can use AWS private link, which is a private network
+
+22
+00:02:23,840 --> 00:02:31,920
+ from AWS. Now let's understand in which scenarios you can send traffic over the private link.
+
+23
+00:02:31,920 --> 00:02:39,920
+ So the first one is between different AWS services between different virtual private clouds
+
+24
+00:02:39,920 --> 00:02:49,200
+ in different AWS accounts. And then finally, between on-premise network and AWS services,
+
+25
+00:02:49,200 --> 00:02:55,120
+ we'll also use AWS direct, correct, in that scenario. Okay, now let's understand these three
+
+26
+00:02:55,120 --> 00:03:02,480
+ scenarios in more detail. Now let's say you are running a web application and you have a web
+
+27
+00:03:02,480 --> 00:03:09,360
+ server that's hosted on EC2 instance. Let's say it's www.amazon.com. And then you also have some
+
+28
+00:03:09,360 --> 00:03:15,200
+ images which are uploaded on the Amazon S3 bucket. And you can see some of the images here.
+
+29
+00:03:15,200 --> 00:03:23,440
+ So now let's say we have a business user who's trying to access this web server www.amazon.com.
+
+30
+00:03:23,440 --> 00:03:30,320
+ And now it makes a request to this web server asking for the photograph of an elephant.
+
+31
+00:03:30,320 --> 00:03:36,560
+ And we know that this elephant is stored in the S3 bucket. So now this EC2 instance will make
+
+32
+00:03:36,560 --> 00:03:42,640
+ a request to Amazon S3 bucket to fetch this elephant. So it has two options either it can go over
+
+33
+00:03:42,640 --> 00:03:51,360
+ the public internet or it can go over AWS private link. And this is the scenario. Now you might
+
+34
+00:03:51,360 --> 00:03:59,600
+ just say that both EC2 instance and S3 bucket are within AWS cloud. So why do we need an
+
+35
+00:03:59,600 --> 00:04:06,560
+ AWS private link or public internet? Please note that some of the services like EC2 instance,
+
+36
+00:04:06,560 --> 00:04:15,040
+ RDS database are hosted within the customer VPC, but some of the other services like DynamoDB,
+
+37
+00:04:15,040 --> 00:04:23,680
+ Amazon S3 cloud watch, et cetera, they are hosted in AWS managed VPC and account.
+
+38
+00:04:23,680 --> 00:04:30,960
+ So that's the reason why you either need an public internet or an AWS private link to access these
+
+39
+00:04:30,960 --> 00:04:37,040
+ services. Okay, now let's take a look at all these three scenarios AWS services VPCs and
+
+40
+00:04:37,040 --> 00:04:43,280
+ on-premise networks. So here's a chart from AWS which described this. Let's say we have an EC2
+
+41
+00:04:43,280 --> 00:04:50,800
+ instance in a customer VPC that is in your VPC and within your account. And then as I said,
+
+42
+00:04:50,800 --> 00:05:00,480
+ there are services from AWS which are hosted in AWS account and VPC. So you have a cloud watch
+
+43
+00:05:00,480 --> 00:05:08,400
+ API gateway lambda S3 bucket that are hosted in AWS account and VPC. Now if this EC2 wants to access
+
+44
+00:05:08,400 --> 00:05:15,440
+ any of these services, then it has to go over the private link or public internet. Then similarly,
+
+45
+00:05:15,440 --> 00:05:22,800
+ let's say another scenario where you are accessing some data from another organization which is your
+
+46
+00:05:22,800 --> 00:05:29,040
+ partner organization and they have an EC2 instance in their AWS account and VPC and you have your
+
+47
+00:05:29,040 --> 00:05:36,720
+ EC2 instance in your account and VPC. So how you can access them is either through public internet
+
+48
+00:05:36,720 --> 00:05:44,560
+ or through the AWS private link and that's the connectivity is showing. Now the third scenario we
+
+49
+00:05:44,560 --> 00:05:52,720
+ had discussed where somebody from the on-premise wants to access let's say this S3 bucket and it also
+
+50
+00:05:52,720 --> 00:05:59,520
+ has an AWS account and here is the VPC from the AWS account. So how that traffic would be
+
+51
+00:05:59,520 --> 00:06:05,360
+ routed is from the on-premise data center it will use AWS direct connect and AWS direct
+
+52
+00:06:05,360 --> 00:06:13,200
+ connect you can think of a dedicated network cable to connect your data center to a AWS account.
+
+53
+00:06:13,200 --> 00:06:19,200
+ It will go where it will direct connect to your account and then from your AWS account it will be
+
+54
+00:06:19,200 --> 00:06:25,040
+ routed by a private link to S3. Now from an example perspective there are a couple of important
+
+55
+00:06:25,040 --> 00:06:31,440
+ things you need to know which is gateway endpoint and interface endpoint. So what's a gateway endpoint?
+
+56
+00:06:31,440 --> 00:06:39,360
+ So gateway endpoint is just an IP address that you create within your AWS account and VPC.
+
+57
+00:06:39,360 --> 00:06:45,840
+ Then let's say this EC2 instance wants to access data in Amazon S3 bucket. So it is going to
+
+58
+00:06:45,840 --> 00:06:52,240
+ route all the traffic to this IP address called as gateway endpoint and then from gateway endpoint
+
+59
+00:06:52,240 --> 00:07:00,400
+ the traffic be routed to Amazon S3 using this AWS private link. Similarly interface endpoint
+
+60
+00:07:00,400 --> 00:07:05,680
+ does the same thing. So you will just have an IP address and this traffic could be routed to this
+
+61
+00:07:05,680 --> 00:07:13,040
+ IP address and then via AWS private link it will route that request. So remember that while
+
+62
+00:07:13,040 --> 00:07:17,760
+ as it was private link is a private connectivity but you cannot use it directly. So you will have
+
+63
+00:07:17,760 --> 00:07:23,680
+ to create either a gateway endpoint or an interface endpoint and then route the traffic via
+
+64
+00:07:23,680 --> 00:07:30,160
+ AWS private link. And what's the difference between gateway endpoint and interface endpoint and as we
+
+65
+00:07:30,160 --> 00:07:38,880
+ discussed in this lecture there are a lot of AWS services that are hosted in an AWS managed VPC
+
+66
+00:07:38,880 --> 00:07:45,280
+ and account like S3, Lambda, APA gateway, CloudWatch and so on. Now if you want to access
+
+67
+00:07:46,000 --> 00:07:55,120
+ over AWS private link Amazon S3 or DynamoDB then you use gateway endpoints but if you want to use
+
+68
+00:07:55,120 --> 00:08:02,000
+ any other service other than S3 and DynamoDB then you use interface endpoints.
+
+69
+00:08:02,000 --> 00:08:10,320
+ So hopefully it's clear just remember one last thing that let's say we have EC2 or RDS which is a
+
+70
+00:08:10,320 --> 00:08:18,720
+ database from AWS. Those are some of the services that are deployed within your own VPC. So you don't
+
+71
+00:08:18,720 --> 00:08:26,320
+ need the AWS private link or interface or gateway endpoint. This only required for services that
+
+72
+00:08:26,320 --> 00:08:32,880
+ are hosted in the AWS VPC and account. Okay that's pretty much it from this lecture I'll
+
+73
+00:08:32,880 --> 00:08:35,920
+ in the next lecture. Thank you.
+
