@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:04,400
+Trước khi chúng tôi bắt đầu đưa tay vào phần tiếp theo, trong phần này chúng tôi sẽ xem xét
+
+2
+00:00:04,400 --> 00:00:09,520
+Một vài khái niệm cơ bản liên quan đến đặc vụ lõi và Kiến trúc Amazon.
+
+3
+00:00:09,520 --> 00:00:15,440
+Đầu tiên chúng ta hãy thử và hiểu những gì là Amazon Bedrock Đặc vụ lõi và những gì là vấn đề nó là
+
+4
+00:00:15,440 --> 00:00:21,360
+đang cố giải quyết. Một trong những thử thách lớn nhất mà công ty đang đối mặt liên quan đến
+
+5
+00:00:21,360 --> 00:00:29,040
+Đặc vụ Al là làm thế nào để bạn di chuyển các ứng dụng AI đặc vụ từ mặt PEC để sản xuất sẵn sàng
+
+6
+00:00:29,040 --> 00:00:34,640
+Giải pháp kinh doanh và đó là vấn đề mà đặc vụ lõi Bedrock đang cố gắng giải quyết.
+
+7
+00:00:34,640 --> 00:00:41,680
+Giờ làm thế nào để dịch vụ lõi Amazon giải quyết vấn đề này bằng cách cung cấp cho bạn một bộ
+
+8
+00:00:41,680 --> 00:00:48,720
+Khả năng có thể giúp bạn chuyển đổi từ PEC được xây dựng trên AI đặc vụ sẵn sàng sản xuất
+
+9
+00:00:48,720 --> 00:00:54,400
+Hệ thống. Bây giờ chúng ta hãy đi trước và hiểu chi tiết hơn những khả năng này là gì.
+
+10
+00:00:54,400 --> 00:00:59,680
+Giờ thay vì giải thích khả năng của nhân viên lõi bánh quy để tôi giải thích trực tiếp
+
+11
+00:00:59,680 --> 00:01:05,920
+thông qua một kịch bản kinh doanh để nó có nhiều ngữ cảnh hơn. Bây giờ hãy nói đây là của chúng tôi
+
+12
+00:01:05,920 --> 00:01:13,440
+kinh doanh sử dụng trường hợp có một công ty du lịch ước mơ và nó muốn xây dựng và kiểm tra một
+
+13
+00:01:13,440 --> 00:01:21,200
+Ứng dụng AI đặc vụ trên trang web của họ nơi người dùng dự định kỳ nghỉ trong mơ có thể vào trang web của họ
+
+14
+00:01:21,200 --> 00:01:27,840
+và sau đó có một lộ trình đến nơi trong mơ. Bây giờ dựa trên kinh nghiệm xây dựng nhiều hơn
+
+15
+00:01:27,840 --> 00:01:33,040
+Hơn một tá ứng dụng trong vài năm qua về sáng tạo và đặc vụ Al hãy để tôi chỉ cho bạn
+
+16
+00:01:33,040 --> 00:01:38,880
+Tình huống này thường xảy ra như thế nào trong một doanh nghiệp. Vì vậy, bạn sẽ đi đến đội IT của bạn và có thể
+
+17
+00:01:38,880 --> 00:01:44,320
+có một nhà phát triển ứng dụng sẽ bắt đầu xây dựng ứng dụng này thông qua một trong những ý tưởng của chúng tôi
+
+18
+00:01:44,320 --> 00:01:49,760
+Nói trong trường hợp này là mã studio hình ảnh và đây là ứng dụng tương tự chúng tôi sẽ xây dựng sau này.
+
+19
+00:01:49,760 --> 00:01:54,080
+Bây giờ nhà phát triển ứng dụng này sẽ bắt đầu xây dựng ứng dụng và có thể ông sẽ sử dụng
+
+20
+00:01:54,080 --> 00:02:00,560
+Một trong những khuôn khổ mã nguồn mở, có thể là phi hành đoàn AI, Lang chuỗi, đồ thị Lang hoặc AWS thử nghiệm và trong này
+
+21
+00:02:00,560 --> 00:02:06,720
+Hãy giả sử nhà phát triển ứng dụng của chúng tôi sử dụng nhóm AI khung và sau đó ông xây dựng một vài
+
+22
+00:02:06,720 --> 00:02:13,200
+Các đặc vụ, có thể là một nhân viên nghiên cứu du lịch sẽ đi và nghiên cứu internet dựa trên giấc mơ
+
+23
+00:02:13,200 --> 00:02:17,920
+Nhà cung cấp đích, hãy nói London vì vậy nó sẽ đi và tìm kiếm internet bằng công cụ này
+
+24
+00:02:17,920 --> 00:02:23,280
+riêng ra cung cấp cho kết xuất trở lại cho các đại lý nghiên cứu du lịch mà sẽ vượt qua nó trên tóm tắt
+
+25
+00:02:23,280 --> 00:02:28,480
+Tác nhân tóm tắt tất cả nội dung và chỉ cung cấp cho một đầu ra cuối cùng đó là các điểm quan trọng để
+
+26
+00:02:28,480 --> 00:02:34,640
+Hãy viếng thăm Luân Đôn để biết những nơi nào có thực phẩm lịch sử. Bây giờ một khi của ông
+
+27
+00:02:34,640 --> 00:02:41,200
+Ứng dụng được xây dựng ông sẽ chạy nó trên máy cục bộ có thể sử dụng một luồng điện UI ông sẽ hiển thị một bản thử nghiệm
+
+28
+00:02:41,200 --> 00:02:46,640
+để người sử dụng kinh doanh và người dùng kinh doanh hãy nói hey lên kế hoạch cho một chuyến đi London
+
+29
+00:02:46,640 --> 00:02:52,400
+Và nó được xem qua ứng dụng trò chơi này và anh ta có lịch trình. Vì vậy, chỉ để cho bạn thấy điều này
+
+30
+00:02:52,400 --> 00:02:57,120
+là một ứng dụng rõ ràng mà chúng tôi sẽ xây dựng và giả sử bạn là người phát triển do đó bạn đã
+
+31
+00:02:57,120 --> 00:03:03,520
+Viết đoạn mã này sau đó bạn đã máy chủ ứng dụng này trong converlet trong trình duyệt của bạn sau đó bạn chỉ cần
+
+32
+00:03:03,520 --> 00:03:09,120
+Hãy đi và hiển thị các bản tóm tắt của PC của bạn Vì vậy, bạn chỉ cần cung cấp cho bạn đích đến mơ của bạn và nó cung cấp cho bạn
+
+33
+00:03:09,120 --> 00:03:16,080
+Kế hoạch nghỉ hè trong mơ. Bây giờ chúng ta hãy đi và giả định rằng các ứng dụng kinh doanh lớn hơn và họ muốn
+
+34
+00:03:16,080 --> 00:03:21,760
+để di chuyển đến sản xuất nơi hàng trăm và hàng ngàn người dùng sẽ truy cập vào ứng dụng này.
+
+35
+00:03:21,760 --> 00:03:27,520
+Bây giờ trong bài giảng tiếp theo chúng ta sẽ khám phá những khả năng khác nhau của nhân tố nền tảng
+
+36
+00:03:27,520 --> 00:03:33,440
+có thể giúp nhân viên AI ứng dụng bằng chứng của khái niệm sản xuất. Được rồi.
+
+37
+00:03:33,440 --> 00:03:35,440
+Từ bài giảng này, tôi sẽ gặp lại bạn trong bài giảng tiếp theo. Cảm ơn.
+
