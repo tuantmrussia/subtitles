@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:06,960
+Trong bước đầu tiên đó, chúng ta sẽ xây dựng một phần mềm trung gian, được chứ?
+
+2
+00:00:06,960 --> 00:00:14,880
+Ok, vậy điều chúng ta có thể làm thực sự là, chúng ta có thể quay trở lại và thư mục và chúng ta có thể tạo ra
+
+3
+00:00:14,880 --> 00:00:22,800
+với, như chúng ta có thể tạo ra một phần mềm và thư mục giữa này, vì vậy nó sẽ kết nối
+
+4
+00:00:22,800 --> 00:00:24,720
+phía trước và phía sau.
+
+5
+00:00:24,720 --> 00:00:29,280
+Ví dụ như cho rằng mục đích cơ bản chúng tôi sử dụng phần mềm giữa, nhưng trong trường hợp này chúng tôi sẽ chỉ sử dụng
+
+6
+00:00:29,280 --> 00:00:38,320
+Chúng tôi sẽ làm cho hồ sơ trung gian này.
+
+7
+00:00:38,320 --> 00:00:43,440
+Vì vậy, bây giờ, bên trong của điều này, những gì chúng tôi thực sự có thể làm là nhập JWT, okay.
+
+8
+00:00:43,440 --> 00:01:07,440
+Vì vậy nhập JWT từ JSON, bảng hiệu web và làm một điều, nhập khẩu người dùng từ dot.lasmodel/user mô hình.js
+
+9
+00:01:07,440 --> 00:01:17,880
+và xuất khẩu tù nhân, chúng ta sẽ tạo ra một chức năng, được gọi là "gấu" kiểm tra.
+
+10
+00:01:17,880 --> 00:01:27,320
+Vì vậy, kiểm tra auth và tương tự, chúng tôi sẽ chỉ định điều này như là một đồng bộ một yêu cầu và phản ứng và
+
+11
+00:01:27,320 --> 00:01:41,880
+Tiếp theo, điều này là sai, vì vậy trả lời và tiếp theo, okay.
+
+12
+00:01:41,880 --> 00:01:47,560
+Vì vậy bây giờ, một lần nữa cùng một khái niệm mà chúng tôi sẽ sử dụng, như cố gắng và lưu trữ các khối hoặc cố gắng
+
+13
+00:01:47,560 --> 00:01:59,720
+và bộ nhớ tạm, đây sẽ là lỗi. Vì vậy, chúng tôi sẽ xác minh rằng về người dùng,
+
+14
+00:01:59,720 --> 00:02:04,400
+Được rồi. Vậy người dùng nào hiện diện. Vì vậy, đầu tiên chúng tôi sẽ làm này phần mềm giữa, tôi đi
+
+15
+00:02:04,400 --> 00:02:14,840
+Để giải thích UI, chúng tôi đang làm phần mềm trung gian này, vì vậy hãy kiên nhẫn với tôi. Vì vậy, bằng yêu cầu chấm cookie,
+
+16
+00:02:14,840 --> 00:02:23,280
+Vì vậy, chúng tôi sẽ nhận được giá trị của JWT từ các cookie và sau đó, chúng tôi chỉ
+
+17
+00:02:23,280 --> 00:02:32,960
+Tôi sẽ kiểm tra xem có dấu hiệu gì không. Vậy là không có dấu hiệu hay dấu hiệu nào không tồn tại.
+
+18
+00:02:32,960 --> 00:02:48,240
+Trong trường hợp đó, chúng tôi sẽ trả lại hồ sơ. Trạng thái 400.json không hợp lệ,
+
+19
+00:02:48,240 --> 00:03:00,320
+Được rồi. Vì vậy, các biểu tượng là không hợp lệ và bây giờ sau này, okay, loại của tôi đoán, vì vậy sau khi
+
+20
+00:03:00,320 --> 00:03:08,040
+chúng tôi sẽ thực hiện một điều kiện khác như chúng tôi đang đi
+
+21
+00:03:08,040 --> 00:03:18,040
+được chứ? Vì vậy, giải mã táo bón bằng JWT để xác minh, xác nhận, chúng tôi đang đi
+
+22
+00:03:18,040 --> 00:03:22,720
+để kiểm tra xem vật thể tồn tại hay không và sau đó nếu vật này tồn tại, chúng ta sẽ đi
+
+23
+00:03:22,720 --> 00:03:30,680
+Để xác minh vật tượng trưng, chúng tôi là chìa khóa bí mật mà chúng tôi đã thực hiện, vì vậy quá trình dot nv chấm c đúng
+
+24
+00:03:30,680 --> 00:03:41,160
+Chìa khóa, okay. Chìa khóa bí mật. Vì vậy, sau đó, nếu giá trị được giải mã này không tồn tại, chúng tôi sẽ đi
+
+25
+00:03:41,160 --> 00:03:47,240
+để kiểm tra ở đây cũng giống như giá trị được giải mã này không tồn tại. Trong trường hợp đó, chúng tôi sẽ đi
+
+26
+00:03:47,240 --> 00:04:06,600
+để trả lại trạng thái, vì vậy trả lại trạng thái như 401 chấm JSON và thông điệp không hợp lệ
+
+27
+00:04:06,600 --> 00:04:14,680
+dấu hiệu không hợp lệ. Vì vậy, về cơ bản lý do tại sao chúng tôi đang làm điều này là, chúng tôi phải xác minh các biểu tượng
+
+28
+00:04:14,680 --> 00:04:20,120
+được chứ. Nếu đây không phải là một vật tượng trưng hợp lệ,
+
+29
+00:04:20,120 --> 00:04:26,360
+thì chúng ta không thể thay đổi hồ sơ được. Vì vậy, đó là lý do tại sao, như thể chúng tôi không thể tạo ra một thay đổi trong của chúng tôi
+
+30
+00:04:26,360 --> 00:04:31,720
+hồ sơ, nếu nó không được phép sử dụng. Đó là lý do tại sao chúng tôi đang làm cho này athware giữa,
+
+31
+00:04:31,720 --> 00:04:46,400
+Được rồi. Vì vậy, ở đây cost chờ người dùng tìm bằng ID, vì vậy tìm bằng ID và vì vậy chúng tôi sẽ sử dụng
+
+32
+00:04:46,400 --> 00:04:53,960
+đó là giá trị được giải mã, vì vậy giải mã giá trị người dùng chấm ID và chúng tôi sẽ chọn trường
+
+33
+00:04:53,960 --> 00:05:08,040
+của mật khẩu. Vì vậy, chấm chọn và sau đó mật khẩu và sau này, một lần nữa, chúng tôi sẽ kiểm tra
+
+34
+00:05:08,040 --> 00:05:14,920
+Người dùng này có tồn tại hay không. Vì vậy, nếu người dùng này không tồn tại, như chúng tôi đã có
+
+35
+00:05:14,920 --> 00:05:29,040
+thực hiện trong video trước. Vì vậy, tái lập trạng thái chấm, xin lỗi, như chấm chấm 40 chấm JSON và chúng tôi đang đi
+
+36
+00:05:29,040 --> 00:05:46,520
+không tìm thấy người dùng. Vì vậy, người dùng thông điệp không tìm thấy, okay. Vì vậy, bây giờ chúng tôi đi
+
+37
+00:05:46,520 --> 00:05:59,640
+để một lần nữa có được rằng người dùng từ người dùng và chúng tôi sẽ thực hiện điều này tiếp theo, okay. Vì vậy tiếp theo
+
+38
+00:05:59,640 --> 00:06:05,760
+chức năng. Vì vậy, nó sẽ tự động đi qua để các chức năng tiếp theo. Đó là lý do nó được sử dụng.
+
+39
+00:06:05,760 --> 00:06:11,400
+Vậy xuất khẩu táo bón đi. Vì vậy, chúng tôi sẽ lấy các biểu tượng từ JWT, chúng tôi sẽ đi
+
+40
+00:06:11,400 --> 00:06:15,440
+để xác minh dấu hiệu rằng nếu vật này tồn tại hay không tồn tại,
+
+41
+00:06:15,440 --> 00:06:20,920
+Sau đó chúng tôi sẽ thông qua tình trạng này như rest status 400 chấm JSON, đó là tín hiệu không hợp lệ,
+
+42
+00:06:20,920 --> 00:06:25,480
+Được rồi. Nếu không, nếu vật đó tồn tại, chúng ta sẽ mang vật đó vào bên trong
+
+43
+00:06:25,480 --> 00:06:30,600
+Giá trị được giải mã và chúng tôi sẽ kiểm tra xem giá trị đã giải mã này tồn tại hay không.
+
+44
+00:06:30,600 --> 00:06:34,640
+Nếu điều này không tồn tại, sau đó một lần nữa, chúng tôi sẽ vượt qua thông điệp là không hợp lệ
+
+45
+00:06:34,640 --> 00:06:40,920
+phải không? Vì vậy, điều này không đến từ một người dùng xác nhận. Sau đó, nếu người dùng tồn tại
+
+46
+00:06:40,920 --> 00:06:47,320
+Trong trường hợp này, vì vậy chúng tôi sẽ lưu lại giá trị của người dùng bằng cách giải mã ID người dùng.
+
+47
+00:06:47,320 --> 00:06:53,760
+Giải mã ID người dùng chấm và chúng tôi sẽ chọn trường làm mật khẩu. Và nếu điều đó cụ thể
+
+48
+00:06:53,760 --> 00:06:57,800
+Không tìm thấy người dùng, một lần nữa, chúng tôi sẽ thêm kiểm tra ở đây. Sau đó trong trường hợp đó, chúng tôi là
+
+49
+00:06:57,800 --> 00:07:03,120
+sẽ nói rằng không tìm thấy người dùng. Nếu không, chúng tôi sẽ lấy giá trị của người dùng
+
+50
+00:07:03,120 --> 00:07:07,920
+từ yêu cầu, do đó yêu cầu chấm người dùng tương đương với người dùng và các chức năng tiếp theo sẽ
+
+51
+00:07:07,920 --> 00:07:14,840
+Gọi hàm tiếp theo ở phần mềm giữa. Vì vậy, một lần nữa, trong điều này, những gì chúng tôi sẽ làm
+
+52
+00:07:14,840 --> 00:07:20,800
+Giống như trong khối bộ nhớ tạm cũng, đơn giản chỉ đơn giản là chúng tôi sẽ thông qua các lỗi, bất cứ điều gì nó đến
+
+53
+00:07:20,800 --> 00:07:34,240
+để an ủi chấm LG mà một số loại lỗi đang đến. Vì vậy, lỗi trong kiểm tra phần mềm giữa.
+
+54
+00:07:34,240 --> 00:07:42,400
+Vì vậy, để có tính xác thực của một người dùng cụ thể, cho dù nó tồn tại hay không hoặc cho dù điều này
+
+55
+00:07:42,400 --> 00:07:46,480
+là một người dùng đã xác nhận, nó đang đến, thông điệp đến từ người dùng đã xác nhận.
+
+56
+00:07:46,480 --> 00:07:49,080
+Chúng ta đang sử dụng cái này hay cái khác ở đây.
+
