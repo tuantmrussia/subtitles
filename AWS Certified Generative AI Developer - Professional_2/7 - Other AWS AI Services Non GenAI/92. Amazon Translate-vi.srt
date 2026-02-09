@@ -1,0 +1,88 @@
+1
+00:00:00,000 --> 00:00:07,200
+Trong bài giảng này, chúng ta sẽ tìm hiểu về dịch vụ AIAWS trong lĩnh vực ngôn ngữ tự nhiên
+
+2
+00:00:07,200 --> 00:00:16,080
+xử lý được gọi là Amazon Dịch. Vì vậy, Amazon Dịch là một bản dịch ngôn ngữ AWS
+
+3
+00:00:16,080 --> 00:00:24,080
+Dịch vụ này cho phép dịch ngôn ngữ qua 75 ngôn ngữ khác nhau. Và bạn có thể thấy
+
+4
+00:00:24,080 --> 00:00:31,360
+trên trang chủ của Amazon Translation, đây là 75 ngôn ngữ khác nhau. Nó hỗ trợ từ
+
+5
+00:00:31,360 --> 00:00:39,200
+quan điểm dịch thuật. Vì vậy, bây giờ chúng ta hãy xem làm thế nào điều này hoạt động. Nó cho phép dịch ngôn ngữ
+
+6
+00:00:39,200 --> 00:00:46,400
+Thời gian thực. Hãy nói rằng bạn có văn bản trong tiếng Anh hoặc nó cũng cho phép dịch hàng loạt nơi bạn
+
+7
+00:00:46,400 --> 00:00:53,440
+có thể tải tài liệu lên một xô S3. Và rồi nó chạy qua Amazon Dịch. Và nó có
+
+8
+00:00:53,440 --> 00:01:00,800
+bản dịch bằng ngôn ngữ mà bạn đã chọn. Vậy những khả năng khác nhau của
+
+9
+00:01:00,800 --> 00:01:06,960
+Dịch Amazon? Nó cho phép bạn dịch tài liệu. Bây giờ hãy nói rằng bạn đang bán
+
+10
+00:01:06,960 --> 00:01:14,640
+một sản phẩm cho khán giả toàn cầu và bạn đang nhận được ý kiến phản hồi hoặc mệnh lệnh trong một ngôn ngữ
+
+11
+00:01:14,640 --> 00:01:22,560
+mà bạn không thể phát hiện ra như một ngôn ngữ nguồn. Vì vậy nó cho phép ngôn ngữ mã nguồn tự động
+
+12
+00:01:22,560 --> 00:01:30,880
+Phát hiện. Vậy nó cũng có thể che giấu những lời báng bổ. Và như chúng ta đã bàn, nó cho phép thời gian thực và
+
+13
+00:01:30,880 --> 00:01:39,840
+xử lý hàng loạt. Vậy trường hợp sử dụng cho dịch Amazon là gì? Vì vậy, đầu tiên là dịch người dùng
+
+14
+00:01:39,840 --> 00:01:47,440
+tạo ra nội dung từ nguồn dữ liệu nuôi dưỡng, mạng xã hội v.v... Vì vậy, nếu bạn sử dụng Facebook và bạn xác định
+
+15
+00:01:47,440 --> 00:01:54,240
+Tôi thích nói tiếng Anh hơn và giả sử có ai đó đăng bình luận về bài viết của anh bằng tiếng Đức.
+
+16
+00:01:54,240 --> 00:02:01,360
+Sau đó bạn sẽ thấy một phụ đề nhỏ ở đó cho phép bạn dịch bình luận đó từ Đức
+
+17
+00:02:01,360 --> 00:02:07,600
+là ngôn ngữ bạn thích nhất. Sau đó nó cũng có thể dịch thời gian thực của chat, email,
+
+18
+00:02:07,600 --> 00:02:12,640
+Giúp với. Bây giờ hãy nói rằng bạn có một đại diện nói tiếng Anh. Và ở phía bên kia,
+
+19
+00:02:13,280 --> 00:02:21,120
+khách hàng đang gõ nội dung Tây Ban Nha, sau đó đại lý có thể sử dụng Amazon Dịch để hiểu
+
+20
+00:02:21,120 --> 00:02:27,520
+rồi trả lời. Và cuối cùng, nó cũng cho phép bạn làm
+
+21
+00:02:27,520 --> 00:02:34,080
+Phân tích tình cảm đối với sản phẩm của bạn và xác định xem phản hồi tổng thể trên sản phẩm
+
+22
+00:02:34,080 --> 00:02:40,720
+là trung lập, tích cực hoặc tiêu cực. Bây giờ hãy tới bàn điều khiển và xem qua một chút.
+
