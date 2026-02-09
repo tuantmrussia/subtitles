@@ -1,0 +1,152 @@
+1
+00:00:00,210 --> 00:00:04,410
+In this section, we will go deeper into Aosp build system.
+
+2
+00:00:04,410 --> 00:00:11,100
+So in the last tutorial, if you remember, we use the three commands basically to start the build,
+
+3
+00:00:11,100 --> 00:00:14,070
+so will see what exactly is happening in the background.
+
+4
+00:00:14,160 --> 00:00:18,150
+This is a high level overview architecture diagram of the build system.
+
+5
+00:00:18,150 --> 00:00:24,630
+Here we have the build system in the center and here we have some of the supporting make files and in
+
+6
+00:00:24,630 --> 00:00:26,670
+the right side is basically the outputs.
+
+7
+00:00:27,030 --> 00:00:32,670
+So if you see the build system, the build system actually starts by loading a set of configuration
+
+8
+00:00:32,670 --> 00:00:38,130
+and that is done through the setup process and the launch commands.
+
+9
+00:00:38,640 --> 00:00:41,070
+So that is the first step basically.
+
+10
+00:00:41,070 --> 00:00:47,270
+So the first step is basically it loads a set of configurations and then it starts with the main dot
+
+11
+00:00:47,730 --> 00:00:55,200
+file which you can see in the core folder build core folder so far for now, just keep in mind that
+
+12
+00:00:55,200 --> 00:01:02,100
+it first loads the configuration, then it starts the execution with the main dot MK and the main dot.
+
+13
+00:01:02,100 --> 00:01:05,160
+MK in reference to these files, basically.
+
+14
+00:01:05,160 --> 00:01:06,510
+So one is configured.
+
+15
+00:01:06,510 --> 00:01:10,920
+MK which is basically meant to have the configuration variables.
+
+16
+00:01:10,920 --> 00:01:17,370
+And then we have the definition stored in K, which has the set of function definitions which is used
+
+17
+00:01:17,370 --> 00:01:18,750
+across the build.
+
+18
+00:01:18,750 --> 00:01:25,800
+And the third one is Makefile, which is actually responsible for building the images.
+
+19
+00:01:26,130 --> 00:01:29,670
+And then we have the clean tools that is Clean Build.
+
+20
+00:01:29,940 --> 00:01:34,620
+MK which is responsible for cleaning up the build after the execution.
+
+21
+00:01:35,070 --> 00:01:40,080
+So in short, just keep in mind that Android built the system like this.
+
+22
+00:01:40,080 --> 00:01:46,330
+So it just loads the configuration and it starts execution for the main totem key and it just executes
+
+23
+00:01:46,330 --> 00:01:50,790
+the set of functions and rules and then finally cleans up the build.
+
+24
+00:01:50,790 --> 00:01:54,420
+So in the left hand side you can see a set of Makefile.
+
+25
+00:01:54,420 --> 00:01:56,880
+So these are basically to configure your product.
+
+26
+00:01:56,880 --> 00:02:03,540
+So in case if you are developing a new board and the board product description so that the board itself
+
+27
+00:02:03,540 --> 00:02:10,500
+is a product and the board configuration will go here in the board config m k and the product descriptions
+
+28
+00:02:10,500 --> 00:02:12,740
+will go into Android products dot MK.
+
+29
+00:02:12,780 --> 00:02:18,600
+And if you have some modules in it, like if you have some apps or something, some modules which is
+
+30
+00:02:18,690 --> 00:02:21,780
+related to this board, then that comes under this part.
+
+31
+00:02:21,780 --> 00:02:27,750
+So the Android products should have an entry for your new product and the board config will contain
+
+32
+00:02:27,760 --> 00:02:30,270
+the hardware related configuration.
+
+33
+00:02:30,270 --> 00:02:37,770
+And then finally, the module build rules is nothing but the rules about how the module has to be built.
+
+34
+00:02:37,770 --> 00:02:40,890
+And then in the right hand side you can see the outputs basically.
+
+35
+00:02:40,890 --> 00:02:47,490
+So these are the intermediate outputs and then here the actual outputs, which is actually the images
+
+36
+00:02:47,490 --> 00:02:48,360
+or SDK.
+
+37
+00:02:48,360 --> 00:02:52,740
+So this was a very quick summary about the build system architecture.
+
+38
+00:02:52,740 --> 00:02:55,710
+I hope you learned something from this.
+
