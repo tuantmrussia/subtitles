@@ -1,0 +1,152 @@
+1
+00:00:01,150 --> 00:00:05,560
+Let's look in detail how he got is implemented in this session.
+
+2
+00:00:05,590 --> 00:00:10,540
+We will explore the sequence of steps to activate the key guard security window.
+
+3
+00:00:16,570 --> 00:00:23,350
+Here's a sequence diagram that shows the sequence of steps to activate the key security window the physical
+
+4
+00:00:23,350 --> 00:00:30,640
+key input is intercepted by the input dispatcher and is sent to foreign window manager, which in turn
+
+5
+00:00:30,640 --> 00:00:38,170
+sends to guard service and the key guard service calls the old system ready method in system UIC Guard
+
+6
+00:00:38,260 --> 00:00:45,370
+View Mediator Class So as can be seen from this sequence diagram, the user raises the physicality of
+
+7
+00:00:45,370 --> 00:00:51,670
+the Android device, so the Android device propagates a key plus event to its input.
+
+8
+00:00:51,880 --> 00:00:59,860
+DISPATCHER The input dispatcher sends a message to activate the key guard to warn Window Manager, plus
+
+9
+00:01:00,010 --> 00:01:02,060
+the phone window manager class.
+
+10
+00:01:02,080 --> 00:01:08,980
+After doing some processing sends a message to activate, he got security window rookie guard service.
+
+11
+00:01:09,100 --> 00:01:15,310
+Then the key guard service calls the old system ready method of Gegard View mediator.
+
+12
+00:01:15,550 --> 00:01:21,130
+And this process happens through Binder IPCA Binder in the process communication.
+
+13
+00:01:21,160 --> 00:01:27,850
+So the Binder IPC is used because the key guard service is in a completely different process, and the
+
+14
+00:01:27,850 --> 00:01:33,250
+system UI is again and another process to communicate with these two processes.
+
+15
+00:01:33,280 --> 00:01:36,830
+We need binding IPC in this session.
+
+16
+00:01:36,850 --> 00:01:41,140
+We are focusing on the key guard system UI related modules.
+
+17
+00:01:41,470 --> 00:01:46,030
+Now let us look deeper into what's happening within the system UI.
+
+18
+00:01:46,060 --> 00:01:46,960
+He got modules.
+
+19
+00:01:47,470 --> 00:01:53,800
+Here's a sequence diagram that shows the classes and methods involved in displaying key keycard security
+
+20
+00:01:53,800 --> 00:01:56,750
+window to the user, as can be seen.
+
+21
+00:01:56,920 --> 00:02:02,530
+The keycard view mediator is the class that triggers the process within System UI.
+
+22
+00:02:02,560 --> 00:02:10,420
+So as we saw in the last second diagram, the Kiger View mediator gets the status update from the key
+
+23
+00:02:10,420 --> 00:02:12,680
+guard Sahrawis through Binder IPC.
+
+24
+00:02:12,700 --> 00:02:17,200
+So now let's see what's happening within the system UI classes.
+
+25
+00:02:17,350 --> 00:02:24,220
+So once the system UI gets to control, the old system ready method calls the handle system ready method
+
+26
+00:02:24,220 --> 00:02:30,580
+and the handle system ready method course new key guard lock, which in turn calls show law and show
+
+27
+00:02:30,580 --> 00:02:32,020
+locked in turn calls.
+
+28
+00:02:32,110 --> 00:02:39,130
+Handler Show Method, which is part of Status Bar in Dark View Manager and within legal view manager
+
+29
+00:02:39,160 --> 00:02:47,020
+he calls Show Method and the SHA method in turn calls Cho Bouncer or Key Guard Method and the show bouncer.
+
+30
+00:02:47,020 --> 00:02:54,250
+Ortega's method uses the bouncer object inbound setup, which is basically an object of Gegard Bouncer
+
+31
+00:02:54,250 --> 00:03:01,390
+class, and it goes to prepare them at the proper method in turn uses empty guard view object and calls
+
+32
+00:03:01,390 --> 00:03:07,490
+show primary security screen method within Gegard Host View and the key guard host view.
+
+33
+00:03:07,570 --> 00:03:14,830
+Finally, calls the show primary security screen method, which in turn uses the key guard security
+
+34
+00:03:14,830 --> 00:03:19,480
+container object and calls method show primary security screen.
+
+35
+00:03:19,510 --> 00:03:26,440
+The key guard security container goes to show security screen method, and it finally displays the security
+
+36
+00:03:26,440 --> 00:03:27,940
+screen to the end user.
+
+37
+00:03:28,030 --> 00:03:33,970
+So this was a short overview about the sequence of methods and the classes involved in this process.
+
+38
+00:03:34,270 --> 00:03:38,560
+In the next section, we will look into the code and dig this in detail.
+
