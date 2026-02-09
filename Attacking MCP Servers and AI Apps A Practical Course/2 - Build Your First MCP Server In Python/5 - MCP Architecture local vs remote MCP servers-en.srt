@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Hello and welcome back. In the previous lecture we talked about what MCP is and why we needed.
+
+2
+00:00:07,000 --> 00:00:18,000
+ In this lecture we will look under the hood to understand the MCP architecture, how the pieces fit together and how the data flows actually happens behind the scenes.
+
+3
+00:00:18,000 --> 00:00:28,000
+ Understanding this architecture is crucial for finding and identifying security vulnerabilities which we will explore in the later lectures.
+
+4
+00:00:28,000 --> 00:00:36,000
+ MCP uses a client server architecture and the best way to understand that is to think just like a browsing a website.
+
+5
+00:00:36,000 --> 00:00:46,000
+ So basically you would have a user that sets behind a web browser and the web browser is the client that connects that user to a web server.
+
+6
+00:00:46,000 --> 00:00:53,000
+ And that web server actually fetches the data from a database or internet APIs or whatever.
+
+7
+00:00:53,000 --> 00:01:01,000
+ Once the web server have the data it sends this back to the web browser which display or show that to the user.
+
+8
+00:01:01,000 --> 00:01:15,000
+ MCP works in a similar way but instead of having a human using a browser we have an AI model that uses an MCP client to browse the data from external application and
+
+9
+00:01:15,000 --> 00:01:36,000
+ API using an MCP server. In MCP we have a three main component. First we have the AI model that needs to access your data which basically lives remotely in remote application or API like Google Drive, Slack or database or Contentful YouTube whatever.
+
+10
+00:01:36,000 --> 00:01:50,000
+ And the AI model uses an MCP client and again think of the MCP client similar to the web browser. So the MCP client is the AI web browser that connects to an MCP server.
+
+11
+00:01:50,000 --> 00:02:12,000
+ And just like your web browser can have multiple tabs open to a different websites. Also a single MCP client can connect to one or more MCP server simultaneously. The MCP client manages all of these connections and route the request from the AI model to the right server.
+
+12
+00:02:12,000 --> 00:02:29,000
+ MCP server is the bridge between where the data lives and the MCP client. So it received the request from the MCP client and then it will translate this request into an API request to the external services and applications.
+
+13
+00:02:29,000 --> 00:02:52,000
+ The MCP server handles all the details like API authorization, header token, great limit, error handling and data formatting to those remote services. It can fetch the data and send it back to the MCP client but it can also have the capability to update the data on those remote services.
+
+14
+00:02:52,000 --> 00:03:12,000
+ I might have noticed that I said MCP client but here I wrote MCP host. Now some AI desktop application like a Claude desktop application. It already comes with an MCP client built in out of the box and if this is the case they usually called MCP host.
+
+15
+00:03:12,000 --> 00:03:24,000
+ That saves you a ton of work because otherwise you would need to build your own MCP client which connects to the MCP server and also connect to the AI model.
+
+16
+00:03:24,000 --> 00:03:53,000
+ Now inside for using an MCP host like a Claude desktop which comes with MCP client out of the box as we said. It has limitation specifically to connect you to a remote MCP servers. In this course we will do both. We will use a Claude desktop as our MCP host but also we will have the chance to see a custom MCP client that is implemented in Python and it will allow us to connect to an remote MCP server.
+
+17
+00:03:53,000 --> 00:04:18,000
+ Okay let's talk a little bit about implementation details for MCP servers. MCP servers can run into two flavors local MCP or remote MCP. A local MCP runs directly onto your machine. Meaning you have the source code of the MCP server then you can install its software dependencies and then you can start the MCP server on your machine.
+
+18
+00:04:18,000 --> 00:04:37,000
+ Just like any other code on your machine. When you connect the Claude desktop to a local MCP server, Claude desktop starts the MCP server as a SAP process. Just like the way you start any Python script from the command line, you say Python and then you pass the name of the Python file.
+
+19
+00:04:37,000 --> 00:04:47,000
+ Now the communication channels between the Claude desktop and the local MCP server is typically through standard input output.
+
+20
+00:04:47,000 --> 00:04:56,000
+ You could also pass data to the local MCP server using environment variable like API tokens for example.
+
+21
+00:04:56,000 --> 00:05:18,000
+ On the other hand, remote MCP server are hosted on the internet so it runs somewhere on a server somewhere on the internet. The connection method in this case between the MCP client and the MCP server is via streamable HTTP and that provides a single HTTP point for all of the communications.
+
+22
+00:05:18,000 --> 00:05:32,000
+ Remote MCP servers are powerful because they can be shared between teams, users and customers. It can scale automatically and integrate with the cloud services but they can also create a new attack services.
+
+23
+00:05:32,000 --> 00:05:47,000
+ If someone compromises your remote MCP server, then they can potentially have access to all connected systems but also all the data that belong to other users who are using the same remote MCP server.
+
+24
+00:05:47,000 --> 00:05:55,000
+ I get that there is a lot of information to digest here. I will assure you that I will make it very simple and straightforward.
+
+25
+00:05:55,000 --> 00:06:08,000
+ All the theory that we have covered in this lecture, it will make sense in the next lecture when we build our first local MCP server in Python and connect that with the Claude desktop application.
+
+26
+00:06:08,000 --> 00:06:21,000
+ Our local MCP server will connect us to contentful management API and if you don't know contentful it's a content management system that will allow you to host and manage your website content.
+
+27
+00:06:21,000 --> 00:06:33,000
+ The reason I chose contentful because I wanted to show you a real world example on business use case and also because contentful offers you a free tier that you can quickly set up and play with.
+
+28
+00:06:33,000 --> 00:06:39,000
+ I hope that this lecture has been informative for you and I will see you in the next one. Thanks for watching.
+
