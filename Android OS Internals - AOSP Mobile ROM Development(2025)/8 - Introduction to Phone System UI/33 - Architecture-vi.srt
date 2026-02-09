@@ -1,0 +1,344 @@
+1
+00:00:03,320 --> 00:00:06,120
+Hãy bàn về hệ thống kiến trúc UI.
+
+2
+00:00:06,540 --> 00:00:12,350
+Vì vậy, trong phần này, chúng tôi sẽ xem xét một số các lớp học hệ thống quan trọng nhất.
+
+3
+00:00:12,900 --> 00:00:17,190
+Và sau đó, chúng ta sẽ có một đoạn mã đi qua lớp học này.
+
+4
+00:00:33,790 --> 00:00:41,290
+Vâng, như chúng ta có thể thấy, các thành phần UI hệ thống chia sẻ một số đặc điểm chung như, ví dụ,
+
+5
+00:00:41,590 --> 00:00:49,300
+thanh trạng thái, thanh điều hướng, UI Hồi giáo, nâng cao UI, thêm nữa, tất cả các thành phần này, làm thế nào những đặc tính này
+
+6
+00:00:49,300 --> 00:00:49,990
+Điểm chung.
+
+7
+00:00:50,380 --> 00:00:52,210
+Vậy nó phải được khởi tạo.
+
+8
+00:00:52,240 --> 00:00:59,980
+Vì vậy, sự khởi đầu phải được xử lý cho tất cả các thành phần và sau đó nó phải thay đổi, theo
+
+9
+00:00:59,980 --> 00:01:02,650
+cho tình trạng của hệ thống.
+
+10
+00:01:02,950 --> 00:01:07,930
+Vì vậy, bất cứ khi nào kết thúc của thuật ngữ và luôn luôn thay đổi, nó phải phản ứng.
+
+11
+00:01:07,960 --> 00:01:12,580
+Ví dụ, sạc pin thấp hơn nó phải hiển thị trong thông báo, đúng không?
+
+12
+00:01:12,810 --> 00:01:16,090
+Cái đó là nó phải đổ những khối đá.
+
+13
+00:01:16,240 --> 00:01:20,830
+Vì vậy, điều này về cơ bản là hỗ trợ các nhà phát triển gỡ lỗi các thành phần.
+
+14
+00:01:20,980 --> 00:01:26,500
+Và sau đó khi hệ thống bắt đầu, đó nên là một logic tương ứng, mà phải được thực hiện cho
+
+15
+00:01:26,500 --> 00:01:27,670
+tất cả những thành phần này.
+
+16
+00:01:27,970 --> 00:01:31,960
+Ví dụ, khi hệ thống được khởi động, nó phải hiển thị thanh trạng thái.
+
+17
+00:01:31,990 --> 00:01:35,670
+Tương tự thế, nó cũng cho thấy thanh dẫn đường.
+
+18
+00:01:35,680 --> 00:01:38,290
+Vì vậy, những logic phổ biến phải được thực hiện.
+
+19
+00:01:39,380 --> 00:01:46,220
+Vâng, từ khi tất cả các thành phần UI hệ thống chia sẻ những hành vi chung, vì vậy đó là một lớp học trừu tượng
+
+20
+00:01:46,250 --> 00:01:50,450
+Trên hệ thống UI, được mở rộng bởi tất cả các thành phần này.
+
+21
+00:01:50,480 --> 00:01:55,010
+Vì vậy, bạn sẽ có một xem xét tất cả các câu trả lời khi chúng tôi đi qua tòa án.
+
+22
+00:01:55,640 --> 00:02:02,960
+Vì vậy, cho bây giờ, chỉ cần hiểu rằng có một hệ thống UI trừu tượng lớp học, được mở rộng bởi tất cả
+
+23
+00:02:02,960 --> 00:02:05,270
+Các thành phần UI hệ thống.
+
+24
+00:02:05,690 --> 00:02:12,830
+Vì vậy, có một vài ngoại lệ ít thành phần UI hệ thống, không mở rộng hệ thống UI, nhưng hầu hết
+
+25
+00:02:12,830 --> 00:02:13,670
+Đúng vậy.
+
+26
+00:02:14,270 --> 00:02:16,260
+Hãy chuyển sang trí thông minh.
+
+27
+00:02:17,360 --> 00:02:24,260
+Nó chỉ là làm thế nào thông minh ở đây với dự án UI hệ thống mở để chúng tôi có thể tìm thấy các lớp hệ thống UI dưới
+
+28
+00:02:24,410 --> 00:02:26,850
+Gói UI hệ thống ở đây.
+
+29
+00:02:27,370 --> 00:02:27,650
+Ừ.
+
+30
+00:02:27,890 --> 00:02:30,710
+Như các bạn thấy, hệ thống UI là một lớp học trừu tượng.
+
+31
+00:02:31,040 --> 00:02:34,510
+Nó có một số phương pháp quan trọng được định nghĩa trong đó.
+
+32
+00:02:35,030 --> 00:02:37,940
+Đầu tiên là phương pháp cổ phiếu.
+
+33
+00:02:38,560 --> 00:02:40,370
+Như bạn có thể thấy, đó là một phương pháp trừu tượng.
+
+34
+00:02:40,400 --> 00:02:44,710
+Vì vậy, điều này phải được thực hiện trong lớp ngầm.
+
+35
+00:02:44,780 --> 00:02:50,780
+Vì vậy, ví dụ, ma UI, mà mở rộng lớp UI hệ thống, nên thực sự thực hiện
+
+36
+00:02:50,780 --> 00:02:52,700
+Hợp lý để dừng lại.
+
+37
+00:02:53,450 --> 00:02:54,950
+Vì vậy, chúng ta sẽ xem xét một số ví dụ sau đó.
+
+38
+00:02:55,010 --> 00:02:58,430
+Tương tự như vậy, chúng ta có sự thay đổi cấu hình của riêng mình.
+
+39
+00:02:58,520 --> 00:03:01,460
+Đây là phương pháp gọi ngược.
+
+40
+00:03:01,640 --> 00:03:05,060
+Vì vậy, phương pháp này phải phản ứng với một số thay đổi cấu hình.
+
+41
+00:03:05,120 --> 00:03:08,600
+Điều này về cơ bản là xử lý bất kỳ thay đổi hệ thống.
+
+42
+00:03:08,750 --> 00:03:15,470
+Ví dụ, khi sạc pin giảm, nó phải hiển thị một máy để có thể được cấu hình
+
+43
+00:03:15,470 --> 00:03:16,970
+Có thể được định nghĩa ở đây.
+
+44
+00:03:17,000 --> 00:03:24,410
+Vì vậy, bạn có thể thêm một số logic ở đây để hiển thị một cảnh báo hoặc một số cơ chế khác để cho người dùng biết rằng
+
+45
+00:03:24,780 --> 00:03:27,020
+Hoặc là đã đi xuống và sau đó là bãi rác.
+
+46
+00:03:27,140 --> 00:03:29,580
+Về cơ bản, đây là mục đích khai thác gỗ.
+
+47
+00:03:29,600 --> 00:03:36,890
+Vì vậy, ở đây bạn có thể đổ các bản ghi từ hệ thống, và bản ghi này sẽ được sử dụng bởi các nhà phát triển sử dụng ADB
+
+48
+00:03:36,890 --> 00:03:38,900
+Để xem hệ thống UI ra sao.
+
+49
+00:03:38,930 --> 00:03:43,580
+Ví dụ, nếu họ tìm thấy gì đó không ổn với thanh điều hướng trên thanh trạng thái và nếu họ
+
+50
+00:03:43,580 --> 00:03:51,440
+Muốn tìm hiểu xem chính xác chuyện gì xảy ra với hệ thống, sau đó họ có thể bỏ những bản ghi này vào ADB và
+
+51
+00:03:51,440 --> 00:03:52,850
+thì họ có thể làm được.
+
+52
+00:03:52,900 --> 00:03:55,570
+Vì vậy, điều này về cơ bản là hỗ trợ việc gỡ lỗi.
+
+53
+00:03:55,580 --> 00:04:01,810
+Và sau đó chúng tôi có khởi động riêng của chúng tôi hoàn thành này gọi lại biểu tượng, và điều này về cơ bản để xử lý
+
+54
+00:04:01,820 --> 00:04:03,920
+Ngay cả khi hội đồng quản trị đã hoàn thành.
+
+55
+00:04:04,040 --> 00:04:09,830
+Bất kỳ tầng lớp phụ nào mở rộng hệ thống UI phải chăm sóc những phương pháp này.
+
+56
+00:04:10,130 --> 00:04:13,970
+Vì vậy, hãy có một cái nhìn vào một số điểm cộng mà nó đứng.
+
+57
+00:04:14,090 --> 00:04:16,400
+Hệ thống UI, hệ thống phân phối kinh doanh.
+
+58
+00:04:17,610 --> 00:04:18,090
+Tìm đi.
+
+59
+00:04:21,300 --> 00:04:22,670
+Mở rộng.
+
+60
+00:04:24,750 --> 00:04:26,130
+Hệ thống, phải không?
+
+61
+00:04:27,320 --> 00:04:27,550
+Anh.
+
+62
+00:04:29,490 --> 00:04:30,600
+Của anh đây.
+
+63
+00:04:36,400 --> 00:04:43,390
+Chúng ta có thể thấy tất cả các lớp học ở đây, như khối lượng UI, các tuyên bố xanh lá cây, dịch vụ,
+
+64
+00:04:43,450 --> 00:04:46,760
+Hành động hệ thống, phóng đại cửa sổ.
+
+65
+00:04:46,780 --> 00:04:53,080
+Tất cả những điều này thực sự là một phần của hệ thống UI trong UI nướng và kênh thông báo thông tin của chúng tôi UI.
+
+66
+00:04:53,110 --> 00:04:57,430
+Có rất nhiều lớp học thực sự mở rộng hệ thống UI.
+
+67
+00:04:57,460 --> 00:05:01,260
+Hãy mở ra một tập UI và xem nó được thực hiện như thế nào.
+
+68
+00:05:01,540 --> 00:05:03,360
+Vì vậy nó đang mở rộng hệ thống UI.
+
+69
+00:05:03,370 --> 00:05:07,930
+Nó đã thực hiện phương pháp bắt đầu, một phương pháp trừu tượng.
+
+70
+00:05:07,960 --> 00:05:15,430
+Và ở đây nó đã xác định logic cho điều đó và trên sự thay đổi cấu hình, nó đã thực hiện những
+
+71
+00:05:15,430 --> 00:05:19,690
+Những thứ đặc biệt và cũng vì đã vứt bỏ luật pháp như đã viết ở tòa án này.
+
+72
+00:05:20,140 --> 00:05:25,330
+Vì vậy, có lẽ chúng ta có thể xem qua một số điều khoản khác, vì vậy hãy mở ra hầu hết UI.
+
+73
+00:05:25,330 --> 00:05:26,590
+Đó nên là một điều đơn giản.
+
+74
+00:05:26,610 --> 00:05:28,210
+Vì vậy, trong phương pháp bắt đầu.
+
+75
+00:05:28,420 --> 00:05:33,480
+Nó đã xác định logic này ở đây các chức năng để đưa ra một danh sách ngắn và giấu hai điều.
+
+76
+00:05:33,490 --> 00:05:39,970
+Nó không cần phản ứng với bất kỳ trạng thái nào mà nó chưa thực hiện các phương pháp khác.
+
+77
+00:05:40,210 --> 00:05:40,510
+Được rồi.
+
+78
+00:05:42,090 --> 00:05:43,190
+Hãy đi dự tiệc, được chứ?
+
+79
+00:05:45,220 --> 00:05:48,650
+Vì vậy, cơ thể có thể kích thích rất nhiều, nó cũng thực hiện lệnh tội lỗi.
+
+80
+00:05:49,210 --> 00:05:54,400
+OK, vì vậy, hãy xem, phương pháp cổ phiếu được xác định ở đây.
+
+81
+00:05:58,150 --> 00:06:01,090
+Và sự thay đổi cấu hình được định nghĩa ở đây.
+
+82
+00:06:03,130 --> 00:06:10,750
+Và sau đó nó có một số logic tùy chỉnh khác để tìm thấy mức pin và tất cả những thứ khác đó là
+
+83
+00:06:10,750 --> 00:06:16,030
+Cần thiết để thực hiện lý do tại sao nó là tuyệt vời và nên có một phương pháp tương đồng.
+
+84
+00:06:19,760 --> 00:06:29,240
+Vì vậy, nó cũng in tất cả những điều này ra đầu ra để các nhà phát triển có thể đảm bảo tất cả các hệ thống UI
+
+85
+00:06:29,270 --> 00:06:35,690
+Thành phần có chung một số hành vi tương tự, và vì lý do đó, chúng ta có một hệ thống cũ loại trừu tượng
+
+86
+00:06:35,690 --> 00:06:41,270
+UI và đây là một số UI được mở rộng bởi hầu hết các thành phần UI hệ thống.
+
