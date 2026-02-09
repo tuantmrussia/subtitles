@@ -1,0 +1,264 @@
+1
+00:00:00,000 --> 00:00:03,440
+ Now let's go down and discuss SageMaker Pipelines.
+
+2
+00:00:03,440 --> 00:00:09,200
+ So from the exam perspective we need to learn SageMaker Pipelines at a very high level.
+
+3
+00:00:09,200 --> 00:00:15,440
+ So SageMaker Pipelines allows you to create, automate and manage
+
+4
+00:00:15,440 --> 00:00:19,440
+ end-to-end machine learning workflows at a scale.
+
+5
+00:00:19,440 --> 00:00:26,160
+ So this includes data prep stage model training and deployment as well.
+
+6
+00:00:27,120 --> 00:00:35,680
+ Now a pipeline is defined using a series of steps and each representing a specific task.
+
+7
+00:00:35,680 --> 00:00:38,000
+ And you can see in the diagram here.
+
+8
+00:00:38,000 --> 00:00:43,600
+ So you have series of steps and each step will execute some task.
+
+9
+00:00:43,600 --> 00:00:51,600
+ And SageMaker Pipelines supports various steps including processing step which is for
+
+10
+00:00:51,600 --> 00:00:56,640
+ data processing and feature engineering training steps to train your model using
+
+11
+00:00:56,640 --> 00:00:59,680
+ different algorithms and hyperparameters.
+
+12
+00:00:59,680 --> 00:01:05,440
+ Then you have the tuning step for hyperparameter tuning model evaluation step to assess the
+
+13
+00:01:05,440 --> 00:01:12,720
+ performance your train models model registration step to register model in the SageMaker model
+
+14
+00:01:12,720 --> 00:01:16,000
+ registry for version control and deployment.
+
+15
+00:01:16,000 --> 00:01:22,640
+ So from the exam perspective you need to remember that SageMaker Pipelines is used to
+
+16
+00:01:22,640 --> 00:01:28,720
+ create, automate and manage end-to-end machine learning workflow at scale.
+
+17
+00:01:28,720 --> 00:01:38,240
+ And the pipeline is defined by a series of steps and each step can accomplish a specific task.
+
+18
+00:01:38,240 --> 00:01:40,720
+ And then at a high level you should know what are the steps.
+
+19
+00:01:40,720 --> 00:01:43,520
+ Now if I go to this link that has been highlighted here.
+
+20
+00:01:43,520 --> 00:01:48,880
+ So you can see these are the steps in the Amazon SageMaker pipeline.
+
+21
+00:01:48,880 --> 00:01:54,320
+ So you have the execute code, training, tuning, auto ML model and so on.
+
+22
+00:01:54,320 --> 00:01:57,920
+ Okay, that's pretty much it from SageMaker Pipelines.
+
+23
+00:01:57,920 --> 00:02:05,040
+ Now let's take a look at SageMaker ground truth, reinforcement learning from human feedback.
+
+24
+00:02:05,040 --> 00:02:08,480
+ Okay, now what does SageMaker ground truth do?
+
+25
+00:02:08,480 --> 00:02:16,800
+ So you can apply human feedback across machine learning life cycle to create or evaluate
+
+26
+00:02:16,800 --> 00:02:18,960
+ high quality models.
+
+27
+00:02:18,960 --> 00:02:23,680
+ So now how can SageMaker ground truth be used?
+
+28
+00:02:23,680 --> 00:02:27,920
+ So it can be used across the life cycle of machine learning.
+
+29
+00:02:27,920 --> 00:02:34,240
+ So it can be used across data processing phase where you will have a human or a person
+
+30
+00:02:34,240 --> 00:02:41,840
+ who can generate the data for you or annotate so that we can create data to train the model.
+
+31
+00:02:42,480 --> 00:02:49,280
+ Then it can also be used during the model evaluation phase where a human can
+
+32
+00:02:49,280 --> 00:02:54,240
+ compare and select the right foundation model for you.
+
+33
+00:02:54,240 --> 00:02:58,720
+ And then in the third phase on model prediction,
+
+34
+00:02:58,720 --> 00:03:03,920
+ it can do the model review customization and evaluation.
+
+35
+00:03:03,920 --> 00:03:11,120
+ So essentially SageMaker ground truth uses a human element or a person
+
+36
+00:03:11,520 --> 00:03:14,560
+ across all the phases of machine learning.
+
+37
+00:03:14,560 --> 00:03:22,240
+ So another question is how do you get these humans or people to work on your project?
+
+38
+00:03:22,240 --> 00:03:23,680
+ So you can do it in three ways.
+
+39
+00:03:23,680 --> 00:03:28,880
+ It can be either through cell service, which means you get your own employees.
+
+40
+00:03:28,880 --> 00:03:31,680
+ Second, you can use Amazon Mechanical Turk.
+
+41
+00:03:31,680 --> 00:03:35,040
+ So Amazon Mechanical Turk is a crowd sourcing solution.
+
+42
+00:03:35,040 --> 00:03:40,560
+ So the third way is you can request AWS to help you with people who can
+
+43
+00:03:41,280 --> 00:03:44,080
+ execute these tasks for you.
+
+44
+00:03:44,080 --> 00:03:52,400
+ So just an example, reinforcement learning from human feedback or RL hf is a machine learning
+
+45
+00:03:52,400 --> 00:03:58,400
+ technique that uses human feedback to optimize machine learning models to
+
+46
+00:03:58,400 --> 00:04:01,120
+ self learn more efficiently.
+
+47
+00:04:01,120 --> 00:04:06,640
+ So if you see RL hf, then just think about SageMaker ground truth.
+
+48
+00:04:06,640 --> 00:04:12,000
+ So let me just show you a quick visual of how SageMaker ground truth works from this
+
+49
+00:04:12,000 --> 00:04:12,960
+ URL.
+
+50
+00:04:12,960 --> 00:04:17,280
+ And now you can see I am on the SageMaker ground truth homepage.
+
+51
+00:04:17,280 --> 00:04:21,520
+ And we are trying to train a text to image model.
+
+52
+00:04:21,520 --> 00:04:28,160
+ And for that, we need to create high quality labeling data to train the model.
+
+53
+00:04:28,160 --> 00:04:34,080
+ So now we can see in this image, we are trying to train text to image model so that they can
+
+54
+00:04:34,080 --> 00:04:40,800
+ create accurate and creative images aligned with your intent.
+
+55
+00:04:40,800 --> 00:04:45,600
+ And for that, we need humans who are going to caption the images
+
+56
+00:04:45,600 --> 00:04:48,800
+ that have been shown in this screen.
+
+57
+00:04:48,800 --> 00:04:54,080
+ So how this will work is so an image will be shown like you can see here a cat and a dog.
+
+58
+00:04:54,080 --> 00:05:01,120
+ And then a human would label you can see her ping and he will label it as an object
+
+59
+00:05:01,120 --> 00:05:06,160
+ and then provide some description. Similarly for the dog and you can see it is in blue.
+
+60
+00:05:06,160 --> 00:05:10,800
+ And then it's going to describe the relation between these two objects.
+
+61
+00:05:10,800 --> 00:05:15,440
+ It also needs to provide details on the image settings or description of the image setting,
+
+62
+00:05:15,440 --> 00:05:20,320
+ background and environment and also provide a caption for the image.
+
+63
+00:05:20,320 --> 00:05:26,960
+ And all the data we create here would be used to train the model.
+
+64
+00:05:26,960 --> 00:05:29,600
+ So that's pretty much it from SageMaker ground truth.
+
+65
+00:05:29,600 --> 00:05:33,840
+ And from the exam perspective, you need to remember that there will be a human
+
+66
+00:05:33,840 --> 00:05:40,240
+ who will perform some task across the machine learning life cycle.
+
