@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:06,960
+Bây giờ, chúng ta hãy đi trước và kiểm tra một bản thử nghiệm nhanh của Imer quy tắc và tôi là sự cho phép và chính sách.
+
+2
+00:00:06,960 --> 00:00:10,240
+Có khả năng nó có thể được kiểm tra trong kỳ thi.
+
+3
+00:00:10,240 --> 00:00:16,960
+Và những gì tôi muốn cho bạn thấy là, những loại quy tắc Imer cho phép và chính sách?
+
+4
+00:00:16,960 --> 00:00:23,680
+Chúng ta cần gắn vào dịch vụ AWS khác nhau để họ có thể truy cập vào nền móng Amazon.
+
+5
+00:00:23,680 --> 00:00:28,240
+Và trong trường hợp sử dụng này, những gì tôi sẽ cho bạn thấy là, vì vậy chúng tôi sẽ có một người dùng,
+
+6
+00:00:28,240 --> 00:00:33,600
+Vì vậy, chúng tôi sẽ vượt qua một nhắc nhở hoặc một đầu vào người dùng nơi cổng AWS EPA này, mà sẽ đi như một sự kiện
+
+7
+00:00:33,600 --> 00:00:38,640
+đến chức năng lambda này. Và sau đó chức năng lambda này sẽ truy vấn các nền đá Amazon
+
+8
+00:00:38,640 --> 00:00:42,080
+Và mô hình cơ bản, đi vào đây trong trường hợp sử dụng này.
+
+9
+00:00:42,080 --> 00:00:49,280
+Vì vậy, tôi sẽ cho bạn thấy những quyền nhiệm vụ và chính sách mM là gì chúng tôi cần để gắn kết này lambda
+
+10
+00:00:49,280 --> 00:00:55,440
+chức năng để nó có thể truy cập dịch vụ nền móng Amazon. Vì vậy, tôi sẽ cho bạn thấy chỉ phần này
+
+11
+00:00:55,440 --> 00:01:02,240
+về hoạt động thử nghiệm lambda và cách nó sẽ gọi dịch vụ nền móng Amazon.
+
+12
+00:01:02,240 --> 00:01:06,320
+Tôi đang ở trên bảng điều khiển AWS và với mục đích của bản thử nghiệm này,
+
+13
+00:01:06,320 --> 00:01:11,440
+Tôi đã viết một hàm lambda mà sẽ truy vấn dịch vụ nền Amazon
+
+14
+00:01:11,440 --> 00:01:17,200
+và cụ thể là mô hình lệnh ánh sáng này. Bây giờ, những gì tôi đã làm là, nếu tôi chỉ cần đi
+
+15
+00:01:17,200 --> 00:01:25,120
+cấu hình và bạn có thể thấy kèm theo một vai trò ngẫu nhiên được gọi là vai trò CDK, mà không có
+
+16
+00:01:25,120 --> 00:01:30,640
+Cho phép truy cập dịch vụ nền móng Amazon. Vì vậy, nếu tôi chỉ cần quay trở lại với mã này
+
+17
+00:01:30,640 --> 00:01:36,160
+Và tôi sẽ chỉ cho bạn thấy sự kiện thử nghiệm. Vì vậy, ở đây tôi có sự kiện thử nghiệm và chúng tôi nói
+
+18
+00:01:36,160 --> 00:01:43,120
+Nơi là London và bây giờ, một khi tôi gửi truy vấn này đến dịch vụ nền móng Amazon, nó sẽ có thể
+
+19
+00:01:43,120 --> 00:01:50,160
+để cho tôi câu trả lời nếu có sự cho phép thích hợp. Hãy để tôi quay lại mật mã và để tôi
+
+20
+00:01:50,160 --> 00:02:01,920
+Cứ thử đi. Hãy để tôi chỉ cần nhấp chuột vào thử nghiệm và bạn có thể thấy nó được đưa ra một lỗi, truy cập bị từ chối
+
+21
+00:02:01,920 --> 00:02:08,480
+ngoại lệ khi gọi cho mô hình hoạt động. Nghĩa là nó không có quyền, tôi là
+
+22
+00:02:08,480 --> 00:02:15,440
+Chính sách vì nó không thể gợi lại mô hình. Bây giờ, làm được rồi, tôi có thể quay lại dịch vụ của tôi.
+
+23
+00:02:15,440 --> 00:02:20,880
+Vì vậy, tôi làm trong dịch vụ nhân dạng. Bây giờ, nếu tôi chỉ cần đi đến những vai trò, click vào vai
+
+24
+00:02:20,880 --> 00:02:27,200
+Và tôi có thể nói là tạo ra một vai diễn. Bây giờ, bạn có thể thấy nó là hỏi tôi nào là dịch vụ AWS
+
+25
+00:02:27,200 --> 00:02:32,880
+mà anh muốn đính kèm vai này. Vì vậy, nó là một dịch vụ AWS, là một tài khoản AWS,
+
+26
+00:02:32,880 --> 00:02:38,640
+Nhân dạng web, chính sách tin tưởng tùy chỉnh và vân vân. Vì vậy, những gì tôi sẽ làm ở đây là tôi sẽ chọn
+
+27
+00:02:38,640 --> 00:02:45,600
+Phục vụ. Vì vậy, trong trường hợp của chúng tôi, nó sẽ là chức năng AWS Lambda như bạn có thể thấy ở đây. Vậy,
+
+28
+00:02:45,600 --> 00:02:53,840
+Tôi sẽ click vào tiếp theo. Bây giờ, tôi phải đưa ra một chính sách cho phép chức năng đặc biệt này Lambda
+
+29
+00:02:53,840 --> 00:03:01,440
+Và chính sách cho phép này về cơ bản là dịch vụ AWS mà nó cần truy cập vào và trong trường hợp của chúng tôi,
+
+30
+00:03:01,440 --> 00:03:09,120
+Nó sẽ là đá phiến Amazon. Vì vậy, những gì tôi sẽ làm là tôi sẽ chỉ tìm kiếm nền đất. Vậy,
+
+31
+00:03:09,120 --> 00:03:14,320
+Bạn có thể thấy tôi đã tạo ra rất nhiều chính sách tùy chỉnh và nếu chúng ta chỉ cần lọc ở đây. Vì vậy, nó có thể là
+
+32
+00:03:14,320 --> 00:03:19,840
+Hoặc là chính sách tiêu chuẩn AWS để AWS quản lý hoặc có thể là một khách hàng quản lý. Vì vậy, tôi đã tạo ra
+
+33
+00:03:19,840 --> 00:03:25,840
+Rất nhiều tùy chỉnh tôi đóng vai trò nhưng tôi sẽ chỉ chọn AWS quản lý cho trường hợp sử dụng này và bạn có thể thấy ở đây.
+
+34
+00:03:25,840 --> 00:03:31,040
+Vì vậy, bạn có nếu chúng tôi có thể chỉ cần đẩy nó bên phải. Vì vậy, nếu các nền đá Amazon được truy cập đầy đủ, Amazon
+
+35
+00:03:31,040 --> 00:03:39,440
+nền tảng chỉ đọc và nếu tôi chỉ bấm vào chính sách này, để bạn có thể thấy tôi có một tập tin JSON nói
+
+36
+00:03:39,440 --> 00:03:47,040
+về loại sự cho phép mà chính sách này cung cấp. Vì vậy, tôi sẽ chỉ cần click vào đây
+
+37
+00:03:47,040 --> 00:03:53,200
+và chỉ cần nhấp vào nền đá Amazon này, chỉ cần nhấp vào tiếp theo và cho nó một cái tên.
+
+38
+00:03:53,200 --> 00:04:06,240
+Hãy nói rằng tôi là Udemy. Vì vậy, sau đó tôi sẽ chỉ nhấp chuột vào tạo ra vai trò. Vì vậy, bạn có thể thấy
+
+39
+00:04:06,240 --> 00:04:12,480
+Chứng minh tôi là Udemy đã được tạo ra. Vì vậy, nếu tôi chỉ cần quay trở lại đây và bây giờ nếu tôi chỉ cần click vào
+
+40
+00:04:12,480 --> 00:04:20,960
+cấu hình và đây là tên vai trò. Vì vậy, nếu tôi chỉ cần đi chỉnh sửa và nếu tôi chỉ cần di chuyển xuống. Vậy,
+
+41
+00:04:20,960 --> 00:04:26,720
+Ở đây bạn có thể thấy vai trò hiện có. Vì vậy, tôi sẽ thay thế nó bằng những gì chúng tôi đã tạo ra và đó là
+
+42
+00:04:26,720 --> 00:04:36,960
+Tôi là Udemy. Vì vậy, tôi sẽ chỉ nói rằng tôi là Udemy và đây là vai trò. Vì vậy, tôi sẽ chỉ cần click vào
+
+43
+00:04:36,960 --> 00:04:50,880
+Cứu. Được rồi, bây giờ nếu tôi quay lại mã và nếu tôi chỉ cần nhấp vào thử nghiệm, bây giờ nó nên làm việc bởi vì
+
+44
+00:04:50,880 --> 00:04:56,960
+Chúng tôi đã cung cấp chức năng lambda đúng vai trò của tôi để có thể truy cập Amazon
+
+45
+00:04:56,960 --> 00:05:00,880
+dịch vụ làm nền. Bây giờ, bạn có thể thấy nó đang cho tôi một phản ứng để tôi chỉ cần tăng kích thước.
+
+46
+00:05:02,720 --> 00:05:08,880
+Được rồi, bây giờ chúng ta có thể thấy ở đây chúng ta có một phản hồi. London, Anh là miền đông nam của
+
+47
+00:05:08,880 --> 00:05:16,800
+Anh Quốc và nếu các bạn thấy câu hỏi của chúng tôi là London ở đâu. Được rồi, vậy nếu tôi quay lại con đường cũ
+
+48
+00:05:16,800 --> 00:05:20,800
+đóng vai trò trong vài phút. Vì vậy, bạn có thể thấy ở đây chúng tôi đã thảo luận về nhóm người dùng,
+
+49
+00:05:20,800 --> 00:05:28,240
+Người dùng, vai trò và sau đó chúng tôi cũng có chính sách. Và như chúng tôi đã thảo luận một chính sách và đối tượng trong AWS
+
+50
+00:05:28,240 --> 00:05:33,760
+Điều đó xác định quyền hạn. Vì vậy, có thể có một AWS quản lý chức năng công việc như Adam, hóa đơn,
+
+51
+00:05:33,760 --> 00:05:39,920
+Adam và vân vân và có thể có bất kỳ chính sách quản lý AWS nào giống như những gì chúng ta vừa thấy trên nền nhà,
+
+52
+00:05:39,920 --> 00:05:47,760
+S3 và vân vân. Và sau đó nó cũng có thể là khách hàng quản lý để bạn có thể viết chính sách của riêng bạn.
+
+53
+00:05:47,760 --> 00:05:51,760
+Được rồi, đó là khá nhiều từ bài giảng này. Tôi hy vọng nó có ích. Cảm ơn.
+
