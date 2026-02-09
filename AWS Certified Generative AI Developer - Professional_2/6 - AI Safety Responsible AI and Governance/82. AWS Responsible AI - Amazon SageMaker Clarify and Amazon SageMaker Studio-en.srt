@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,600
+ In the previous lecture, we learnt about foundation model evaluation on better and then we
+
+2
+00:00:05,600 --> 00:00:10,480
+ looked at the guard rails in Amazon better. Now in this lecture, we are going to focus on
+
+3
+00:00:10,480 --> 00:00:18,480
+ Amazon SageMaker clarify which focuses on bias detection and explainability.
+
+4
+00:00:18,480 --> 00:00:23,600
+ Okay, now let's try and understand this in more detail. Okay, before we get into how
+
+5
+00:00:24,160 --> 00:00:32,240
+ SageMaker clarified detects bias and explainability. Let's see the phases where potential bias
+
+6
+00:00:32,240 --> 00:00:38,400
+ could creep in. Now let's say we have a model and this is trained on the training data.
+
+7
+00:00:38,400 --> 00:00:44,960
+ Now the training data itself has bias data and then the outcome that is going to be generated
+
+8
+00:00:44,960 --> 00:00:53,040
+ by the model is going to be biased. Then the second one is if the model itself is biased,
+
+9
+00:00:53,040 --> 00:01:00,880
+ then the outcome it's going to generate will be biased. Now let's see in the real life cycle
+
+10
+00:01:00,880 --> 00:01:07,280
+ where SageMaker clarify has a role to play. So the first one is the pre-training data bias as we
+
+11
+00:01:07,280 --> 00:01:16,800
+ just discussed and here the SageMaker clarify can detect and major bias in the raw data before it is
+
+12
+00:01:16,800 --> 00:01:24,000
+ used to train a model. Now the second phase where there could be biases post-training data bias
+
+13
+00:01:24,000 --> 00:01:32,960
+ and model bias. So clarify can detect and major bias emanating from data or model and this is
+
+14
+00:01:32,960 --> 00:01:38,400
+ during the phase when the model has already been deployed. And then we have the third phase where
+
+15
+00:01:38,400 --> 00:01:46,320
+ the model has already been deployed and clarify can help with model explainability. So what does
+
+16
+00:01:46,320 --> 00:01:54,880
+ that mean? So what it can do is it can predict why a model generated a negative outcome.
+
+17
+00:01:54,880 --> 00:02:02,080
+ Now let's say the Java model is to approve or reject a credit card application. So if it
+
+18
+00:02:02,080 --> 00:02:09,680
+ rejects a credit card application that is called as a negative outcome. So clarify can help explain
+
+19
+00:02:09,680 --> 00:02:18,800
+ why the model predicted a negative outcome. It can also explain how the model makes a prediction.
+
+20
+00:02:18,800 --> 00:02:25,840
+ And then finally it can also define which features have the largest influence on the behavior of
+
+21
+00:02:25,840 --> 00:02:32,080
+ the model. Now let's try and understand this through an example. Now this is a data I have taken
+
+22
+00:02:32,080 --> 00:02:40,240
+ from AWS. Here the objective of the model is to predict whether the individual income is more than
+
+23
+00:02:40,240 --> 00:02:48,400
+ $50,000 or less than $50,000 per year. Now what we're going to do is we're going to feed all these
+
+24
+00:02:48,400 --> 00:02:55,600
+ data points to a model such as age, work, class, education, marriage status, occupation,
+
+25
+00:02:56,400 --> 00:03:04,080
+ relationship, ethnic group, gender, hours per week that it works, the country it works in,
+
+26
+00:03:04,080 --> 00:03:10,160
+ and then based on all these data points the model can predict whether the income of the individual
+
+27
+00:03:10,160 --> 00:03:19,040
+ be less than $50,000 or more than $50,000. So now these are all the features we have in our data.
+
+28
+00:03:19,040 --> 00:03:27,840
+ And let's assume that we want to determine whether there is any bias based on the gender.
+
+29
+00:03:27,840 --> 00:03:35,120
+ So here we have the gender and male and female. Now the dataset that AWS had is much
+
+30
+00:03:35,120 --> 00:03:41,360
+ larger but I have just included five records here. And if I take a look at the five records you can
+
+31
+00:03:41,360 --> 00:03:51,200
+ see the out of the five the four records have gender as male and only one record has gender as female.
+
+32
+00:03:51,200 --> 00:03:58,080
+ Now if this is the training data that we use to train the model you can imagine how the accuracy
+
+33
+00:03:58,080 --> 00:04:06,720
+ of the model would be when it is trying to determine for the gender female if the income is less
+
+34
+00:04:06,720 --> 00:04:14,080
+ than or more than $50,000. Because the number of records for female are so low it is very unlikely
+
+35
+00:04:14,080 --> 00:04:21,760
+ that model prediction would be as good as it is for males. So now this is an output generated
+
+36
+00:04:21,760 --> 00:04:29,120
+ based on the larger dataset that AWS has. And in the training dataset you can see the number
+
+37
+00:04:29,120 --> 00:04:39,760
+ of records are heavily biased 67.6% for men and 32.4% for women. So if I calculate the CI or class
+
+38
+00:04:39,760 --> 00:04:49,600
+ imbalance so it's this minus this which is 0.352. This is how you can define which features you want
+
+39
+00:04:49,600 --> 00:04:57,680
+ to review for bias in the raw data. Now let's take a look. Now let's look at the second aspect
+
+40
+00:04:57,680 --> 00:05:04,880
+ on model bias okay. So we'll take the same dataset and you can see and you can see here on
+
+41
+00:05:04,880 --> 00:05:12,960
+ the left you have the positive outcomes as 13.7% and negative outcomes as 86.3. Now the positive
+
+42
+00:05:12,960 --> 00:05:20,720
+ outcome is if it predicted the individual income is more than $50,000 and it predicted 13.7 could have
+
+43
+00:05:20,720 --> 00:05:27,440
+ more than $50,000 and negative is if it is less than $50,000. Now let's take a look at the same
+
+44
+00:05:27,440 --> 00:05:36,160
+ for women. So you can see the positive outcome is only for 4.5% and negative is for 95.5%.
+
+45
+00:05:36,160 --> 00:05:44,560
+ So you can use a matrix called as DPPL which is also called as difference in positive proportion
+
+46
+00:05:44,560 --> 00:05:54,320
+ in labels. Difference you can see here is if you have this as 0.137 and this is 4.5. So 0.045
+
+47
+00:05:54,320 --> 00:06:01,840
+ and this is the value in bias we get. Now let's look at the third aspect which is model
+
+48
+00:06:01,840 --> 00:06:10,000
+ explainability using clarifying. So you can see here clarify helps explain the model
+
+49
+00:06:10,000 --> 00:06:17,280
+ prediction. So it can identify which are the features that contribute most to the model prediction.
+
+50
+00:06:17,280 --> 00:06:26,480
+ So let's say it could be maybe country, occupation, work class. So it will define which are those
+
+51
+00:06:26,480 --> 00:06:34,960
+ factors that contribute most to the model prediction. And it can also help you determine if a particular
+
+52
+00:06:34,960 --> 00:06:43,920
+ model input has more influence than expected on the overall model behavior. So here is a screenshot
+
+53
+00:06:43,920 --> 00:06:49,600
+ from clarifying you can see and it identifies which are the features that are contributing
+
+54
+00:06:49,600 --> 00:06:59,280
+ most towards the model prediction. And this can go a great way in removing the perception
+
+55
+00:06:59,280 --> 00:07:08,560
+ that AI models are black boxes. We'll look at Amazon clarifying. Now let's go and look at
+
+56
+00:07:08,560 --> 00:07:17,360
+ Amazon SageMaker model monitor which focuses on controllability, data and model performance.
+
+57
+00:07:17,360 --> 00:07:24,560
+ And this works in the phase of deploy and monitor after the AI system has been deployed in
+
+58
+00:07:24,560 --> 00:07:32,880
+ production. Now SageMaker focused on bias and explainability. And this focuses on data quality
+
+59
+00:07:32,880 --> 00:07:39,600
+ or the input data that that goes to the model in the production environment. Then it also looks at
+
+60
+00:07:39,600 --> 00:07:47,280
+ model quality while it's deployed in production. Now let's take a look at the same example
+
+61
+00:07:47,280 --> 00:07:53,680
+ that we looked at previously. So we are basically providing this as an input to the model and then
+
+62
+00:07:53,680 --> 00:08:01,360
+ it predicts whether the income is more or less than $50,000. Now let's say this is the dataset that
+
+63
+00:08:01,360 --> 00:08:09,520
+ we had used for the model while training. Now let's say in production lot of the values related to
+
+64
+00:08:09,520 --> 00:08:17,920
+ the occupation are coming as null value. So we are not getting any details on these. Similarly maybe
+
+65
+00:08:17,920 --> 00:08:25,440
+ the details related to the country we're getting lot of null values. Now let's say these two
+
+66
+00:08:25,440 --> 00:08:32,640
+ factors had maximum influence on predicting the individual income. But if you're getting a lot of
+
+67
+00:08:32,640 --> 00:08:40,560
+ these as null values then the quality of data that goes as an input to the model is poor and
+
+68
+00:08:40,560 --> 00:08:47,520
+ this the prediction would not be that great. So this is what the Amazon SageMaker model
+
+69
+00:08:47,520 --> 00:08:56,400
+ monitor focuses on data quality. So it monitors the statistical properties against the ground-to-data
+
+70
+00:08:56,400 --> 00:09:03,600
+ which could be our training data and it evaluates if there are any missing columns, null values
+
+71
+00:09:03,600 --> 00:09:12,000
+ compared to what the model was trained on. The second thing it focuses on is model performance.
+
+72
+00:09:12,000 --> 00:09:19,040
+ So you can define the parameters where you want to evaluate the model performance such as accuracy
+
+73
+00:09:19,040 --> 00:09:27,200
+ precision in the production environment. And we had already earlier discussed about the model
+
+74
+00:09:27,200 --> 00:09:33,360
+ evaluation while using the Amazon bedrock model evaluator. SageMaker also provides a service
+
+75
+00:09:33,920 --> 00:09:41,760
+ where it allows you to evaluate the model performance based on the metrics that you set. Okay,
+
+76
+00:09:41,760 --> 00:09:45,520
+ that's pretty much it from this lecture. I hope you like this lecture. I'll see you in the next
+
+77
+00:09:45,520 --> 00:09:45,920
+ lecture.
+
