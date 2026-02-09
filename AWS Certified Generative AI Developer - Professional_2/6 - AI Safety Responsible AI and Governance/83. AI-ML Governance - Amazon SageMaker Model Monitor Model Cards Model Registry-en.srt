@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:06,960
+ Now let's look at the next capability of Amazon SageMaker and this is in the deploy and monitor
+
+2
+00:00:06,960 --> 00:00:14,240
+ phase. So it's called as SageMaker model monitor. Now again we're going to discuss this in
+
+3
+00:00:14,240 --> 00:00:20,720
+ lot more detail in the responsible AI section. So I'm just going to give you a 30 second overview
+
+4
+00:00:20,720 --> 00:00:29,200
+ of what SageMaker model monitor does. It is used in the production environment and it monitors
+
+5
+00:00:29,200 --> 00:00:38,480
+ the data quality that is being used for inferencing. So if there is a deterioration in the
+
+6
+00:00:38,480 --> 00:00:47,280
+ data quality that is being used in the production environment for inferencing compared to
+
+7
+00:00:47,280 --> 00:00:54,080
+ what was used during the training phase. So let's say if there are any missing columns, null values
+
+8
+00:00:54,080 --> 00:01:03,120
+ compared to the training phase, then it's going to monitor and alert. Next it also monitors
+
+9
+00:01:03,120 --> 00:01:11,360
+ the model performance based on certain metrics that you might have set. And when the performance
+
+10
+00:01:11,360 --> 00:01:20,240
+ goes below that threshold, it is going to alert and you may require to retrain the model.
+
+11
+00:01:20,240 --> 00:01:26,240
+ So we're going to discuss this in a lot more detail as I said in the responsible AI section.
+
+12
+00:01:26,240 --> 00:01:33,680
+ Next we have the machine learning governance tools such as role manager, model cards and model
+
+13
+00:01:33,680 --> 00:01:39,280
+ dashboard. So again we're going to discuss this as part of the responsible AI section,
+
+14
+00:01:39,280 --> 00:01:45,200
+ but let me just give you a high level 30 second overview. So Amazon SageMaker provides governance
+
+15
+00:01:45,200 --> 00:01:52,640
+ tools to implement machine learning responsibly. So as part of the governance tools, you have the
+
+16
+00:01:52,640 --> 00:02:02,400
+ Amazon SageMaker role manager, which allows admin to create, I am roles for some pre-configured
+
+17
+00:02:02,400 --> 00:02:11,200
+ role personas such as data scientist, data engineer and ML ops engineer. Then we also have
+
+18
+00:02:11,200 --> 00:02:18,240
+ SageMaker model cards, which allow you to capture retrieve and share model information. So you
+
+19
+00:02:18,240 --> 00:02:24,800
+ can capture all the details related to the model like problem type, algorithm used,
+
+20
+00:02:24,800 --> 00:02:33,520
+ name of the model and so on through model cards. And then finally, the third thing within
+
+21
+00:02:33,520 --> 00:02:39,120
+ machine learning governance is model dashboard. So all the details that you capture through the
+
+22
+00:02:39,120 --> 00:02:47,360
+ model cards are visible through this model dashboard. And then finally, we have the SageMaker
+
+23
+00:02:47,360 --> 00:02:54,080
+ jumpstart and we discussed the Amazon SageMaker jumpstart previously where we said it's a fully
+
+24
+00:02:54,080 --> 00:03:00,640
+ managed service that allows access to different models in the area, foundation models, computer
+
+25
+00:03:00,640 --> 00:03:08,560
+ vision models, NLP. Okay, so these are the seven most important capabilities from SageMaker
+
+26
+00:03:08,560 --> 00:03:16,800
+ that you must know. And these have been explicitly called out in the exam guide. So I have put more
+
+27
+00:03:16,800 --> 00:03:21,200
+ emphasis on them. Now, there are a few more capabilities that you should know at a high level
+
+28
+00:03:21,200 --> 00:03:28,160
+ and I will discuss those. Now, let's go and discuss about SageMaker model registry. And this
+
+29
+00:03:28,160 --> 00:03:33,280
+ is in the deploy and monitor phase. So previously, when we were looking at machine learning
+
+30
+00:03:33,280 --> 00:03:41,520
+ development life cycle, we said that model registry can be used to fetch artifacts to run the
+
+31
+00:03:41,520 --> 00:03:48,880
+ model. And this is where SageMaker model registry comes into play. So now let's go and take a look
+
+32
+00:03:48,880 --> 00:03:56,000
+ at some of the key features for SageMaker model registry. So the first one is model versioning.
+
+33
+00:03:56,000 --> 00:04:03,120
+ So it can be used to track and manage different versions of the model. So you can see here in
+
+34
+00:04:03,120 --> 00:04:08,560
+ the screenshot. So we have the model registry and we have the version three of the model. So you
+
+35
+00:04:08,560 --> 00:04:17,280
+ can track all the versions of the model. Next, it is used for metadata management. So you can store
+
+36
+00:04:17,280 --> 00:04:25,440
+ extensive metadata for each model, including training data, hyperparameters, and evaluation
+
+37
+00:04:25,440 --> 00:04:31,600
+ metrics in the SageMaker model registry. So you can see here in the screenshot. So we have the model
+
+38
+00:04:31,600 --> 00:04:38,640
+ registry and name of the model is mlops demo. And then you have the model version. And then you
+
+39
+00:04:38,640 --> 00:04:46,720
+ have some metadata related to this model. So you have the model group, ECR, location, and so on.
+
+40
+00:04:46,720 --> 00:04:56,480
+ Next, it also manages the approval status of the model. So you can see here the status for this
+
+41
+00:04:56,480 --> 00:05:04,240
+ particular model mlops demo is pending. So once you register the model with the model registry,
+
+42
+00:05:04,240 --> 00:05:08,720
+ it needs to be approved before it can be deployed in the production environment.
+
+43
+00:05:08,720 --> 00:05:14,960
+ And then finally post the approval, you can deploy the model to production. So that's at a high
+
+44
+00:05:14,960 --> 00:05:19,280
+ level SageMaker model registry and its key features.
+
