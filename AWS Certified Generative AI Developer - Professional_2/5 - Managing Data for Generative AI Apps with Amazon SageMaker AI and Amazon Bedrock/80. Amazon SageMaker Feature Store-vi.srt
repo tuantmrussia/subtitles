@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:07,360
+Bây giờ, hãy đi thảo luận về khả năng thứ hai của SageMaker Amazon gọi chúng tôi là cửa hàng SageMaker.
+
+2
+00:00:07,360 --> 00:00:13,200
+Vì vậy, trước khi chúng ta thảo luận về cửa hàng Sage Maker, hãy xem qua những gì là tính năng.
+
+3
+00:00:13,200 --> 00:00:17,520
+Bây giờ, hãy nói rằng chúng tôi có một bộ dữ liệu nơi chúng tôi đang cố gắng để dự đoán liệu
+
+4
+00:00:17,520 --> 00:00:26,400
+Thu nhập hàng năm của một cá nhân là ít hơn hoặc hơn 50.000 đô la Mỹ và chúng tôi có tất cả các
+
+5
+00:00:26,400 --> 00:00:34,800
+Thuộc tính. Vì vậy, chúng ta có tuổi, lớp học lao động, trọng lượng cuối cùng, giáo dục và vân vân. Vì vậy, tất cả các
+
+6
+00:00:34,800 --> 00:00:43,520
+được gọi là đặc điểm giúp dự đoán thu nhập sẽ nhiều hay ít hơn 50.000 đô la.
+
+7
+00:00:43,520 --> 00:00:50,560
+Vì vậy, đây là tất cả các tính năng. Vì vậy, với kiến thức này, chúng ta hãy cố gắng và hiểu đặc điểm SageMaker.
+
+8
+00:00:51,440 --> 00:00:58,960
+Các tính năng lưu trữ bản đồ vào giai đoạn kỹ thuật trong quá trình xử lý dữ liệu.
+
+9
+00:00:58,960 --> 00:01:05,760
+Vậy, tại sao chúng ta cần cửa hàng SageMaker? Hãy lấy một ví dụ về một công ty bảo hiểm ở đó
+
+10
+00:01:05,760 --> 00:01:12,240
+Có các đội khác nhau làm việc trên các mô hình học máy khác nhau. Vì vậy, chúng tôi có một đội là
+
+11
+00:01:12,240 --> 00:01:20,080
+làm việc trên tính toán mất toàn bộ phương tiện và một đội khác đang làm việc cho khách hàng.
+
+12
+00:01:20,080 --> 00:01:25,680
+Cả hai đội này đều cần dữ liệu từ các nguồn dữ liệu tương tự. Hãy nói,
+
+13
+00:01:25,680 --> 00:01:33,280
+Xe hư hại, hình ảnh, cho dù khách hàng, tương tác văn bản với trung tâm cuộc gọi,
+
+14
+00:01:33,280 --> 00:01:41,520
+Dữ liệu. Bây giờ, chúng ta có thể có một số biến thể trong các tính năng mà cả hai đội là
+
+15
+00:01:41,520 --> 00:01:48,640
+sử dụng, nhưng các nguồn dữ liệu khá giống nhau. Một cách để làm điều đó là cả hai đội
+
+16
+00:01:48,640 --> 00:01:53,760
+Tiếp tục lấy dữ liệu này, làm sạch dữ liệu này, biến đổi dữ liệu này, và sau đó sử dụng nó.
+
+17
+00:01:53,760 --> 00:02:02,480
+Một cách khác là một đội đơn lẻ trích xuất tất cả dữ liệu này, làm sạch dữ liệu này, biến đổi dữ liệu này,
+
+18
+00:02:02,480 --> 00:02:10,720
+Và sau đó cất nó vào một cửa hàng như SageMaker. Và sau đó mỗi đội có thể
+
+19
+00:02:11,440 --> 00:02:20,000
+Tìm kiếm cửa hàng tính năng này và sử dụng dữ liệu huấn luyện được cất giữ bên trong Cửa hàng Tính năng SageMaker.
+
+20
+00:02:20,000 --> 00:02:26,720
+Vậy, bây giờ, làm thế nào cửa hàng của Sage Maker hoạt động? Bạn có thể có hai loại dữ liệu.
+
+21
+00:02:26,720 --> 00:02:30,560
+Bạn có thể có dữ liệu truyền qua Amazon Kinesis,
+
+22
+00:02:30,560 --> 00:02:38,720
+luồng dữ liệu, hoặc bạn có thể có dữ liệu hàng loạt từ Amazon S3, Red change, vân vân.
+
+23
+00:02:39,920 --> 00:02:47,680
+Vì vậy, một khi chúng tôi nuốt dữ liệu, sau đó chúng tôi tạo ra một danh mục tính năng, mà có thể được tìm kiếm và sử dụng lại
+
+24
+00:02:47,680 --> 00:02:55,200
+bởi những đội khác nhau trong tổ chức. Vì vậy, bạn có thể sử dụng nó cho tính năng thời gian thực
+
+25
+00:02:55,200 --> 00:03:04,800
+Xem xét cho tham khảo ý kiến, hoặc bạn cũng có thể sử dụng nó như một tính năng ngoại tuyến để đào tạo các mô hình.
+
+26
+00:03:05,840 --> 00:03:10,880
+Bây giờ, nếu chúng ta nhìn vào định nghĩa chính thức của cửa hàng sản xuất đồ thị Amazon,
+
+27
+00:03:10,880 --> 00:03:18,640
+Vì vậy, nó là một quản lý đầy đủ mục đích xây dựng kho lưu trữ, chia sẻ, và quản lý tính năng cho máy tính
+
+28
+00:03:18,640 --> 00:03:25,360
+Mô hình học tập. Bây giờ, hãy xem xét một số khả năng của cửa hàng SageMaker.
+
+29
+00:03:25,360 --> 00:03:32,480
+Đầu tiên là, nó có thể hấp thu dữ liệu và xử lý tính năng. Vì vậy, chúng tôi đã thấy rằng
+
+30
+00:03:32,480 --> 00:03:39,760
+Bạn có thể nuốt chửng dữ liệu thông qua truyền tải hoặc hàng loạt dữ liệu. Và bạn có thể có truyền
+
+31
+00:03:39,760 --> 00:03:46,640
+dữ liệu như click luồng, dữ liệu cảm biến, ứng dụng như bản ghi dịch vụ, hay mẻ, như S3, Red change,
+
+32
+00:03:46,640 --> 00:03:53,200
+Hồ dữ liệu, vân vân. Vì vậy, một khi bạn đọc dữ liệu, sau đó bạn có thể lưu trữ các tính năng,
+
+33
+00:03:53,200 --> 00:04:01,760
+Phân loại, tìm kiếm và tái sử dụng. Vì vậy, cửa hàng đặc trưng SageMaker sẽ thẻ và chỉ mục
+
+34
+00:04:01,760 --> 00:04:07,600
+đặc điểm nhóm để dễ bị phát hiện. Vì vậy, ở đây bạn có một hình chụp màn hình từ tính năng
+
+35
+00:04:07,600 --> 00:04:14,480
+cửa hàng. Chúng tôi có danh mục danh mục và danh mục nhóm. Và ở đây chúng tôi có danh mục đặc biệt,
+
+36
+00:04:14,480 --> 00:04:22,160
+Vì vậy, đặc điểm tên đã nhận được ID khách hàng, tuổi. Vì vậy, đây là những tính năng khác nhau mà chúng tôi đã lưu trữ
+
+37
+00:04:22,160 --> 00:04:28,400
+trong cửa hàng. Bây giờ, những gì bạn có thể làm là tập hợp những tính năng này lại với nhau.
+
+38
+00:04:29,360 --> 00:04:35,520
+Vì vậy, bạn đã nhóm tất cả các tính năng tương tự trong một nhóm cụ thể. Và bạn có thể thấy các tính năng
+
+39
+00:04:35,520 --> 00:04:42,880
+Tên nhóm ở đây. Và nó có thể lên mạng hoặc ngắt kết nối. Vì vậy, trên mạng bạn sẽ sử dụng cho
+
+40
+00:04:42,880 --> 00:04:50,720
+Khi tham khảo và ngắt kết nối, bạn sẽ sử dụng để đào tạo mô hình. Vì vậy, bây giờ bạn đã nuốt chửng dữ liệu,
+
+41
+00:04:50,720 --> 00:04:58,400
+Lưu trữ dữ liệu. Vì vậy, bây giờ khả năng thứ ba nó cung cấp là nó có thể được cả trực tuyến lẫn ngoại tuyến
+
+42
+00:04:58,400 --> 00:05:04,880
+tính năng. Vì vậy, các tính năng trực tuyến chúng tôi đã thảo luận là cho dự đoán thời gian thực và tính năng ngoại tuyến
+
+43
+00:05:04,880 --> 00:05:13,520
+là để đào tạo mô hình. Bây giờ, cho tính năng ngoại tuyến, nó sử dụng theo danh mục dữ liệu AWS Glue mặc định
+
+44
+00:05:13,520 --> 00:05:20,480
+được tạo ra tự động. Và một khi bạn có danh mục dữ liệu này, bạn có thể sử dụng Amazon Athena để thực hiện
+
+45
+00:05:20,480 --> 00:05:28,800
+các đặc điểm. Vì vậy, bạn có thể thấy ở đây, chúng tôi có danh mục dữ liệu, cửa hàng ngoại tuyến và danh mục dữ liệu AWS
+
+46
+00:05:28,800 --> 00:05:36,080
+tự động được tạo cho cửa hàng tính năng ngoại tuyến của bạn. Và bạn có thể ghi và thực hiện các truy vấn MIME
+
+47
+00:05:36,080 --> 00:05:47,200
+sử dụng Athena Amazon trên danh mục dữ liệu AWS Glue. Danh mục dữ liệu AWS cho phép chúng tôi tìm kiếm
+
+48
+00:05:47,200 --> 00:05:53,840
+cho các tính năng dựa trên siêu dữ liệu. Được rồi, đó là khá nhiều từ bài giảng này. Hy vọng
+
+49
+00:05:53,840 --> 00:05:59,280
+Ở cấp độ cao, bạn thấy rõ khả năng của cửa hàng SageMaker.
+
