@@ -1,0 +1,64 @@
+1
+00:00:00,990 --> 00:00:03,390
+Let's discuss about binders.
+
+2
+00:00:04,080 --> 00:00:08,790
+Binder is the IPC in their process communication mechanism in Android.
+
+3
+00:00:09,240 --> 00:00:16,440
+As you can see from this architecture diagram, binder is the bridge between applications or application
+
+4
+00:00:16,440 --> 00:00:18,930
+framework and the system service.
+
+5
+00:00:19,980 --> 00:00:21,660
+Why do we need binders?
+
+6
+00:00:22,800 --> 00:00:30,760
+Android apps and system services run in a separate process for security, stability and memory management.
+
+7
+00:00:31,680 --> 00:00:33,390
+But they need to share the data.
+
+8
+00:00:33,750 --> 00:00:42,780
+That's why we need binders any app in order to communicate with assistant system service or HAL has
+
+9
+00:00:42,780 --> 00:00:44,250
+to go through a binder.
+
+10
+00:00:44,880 --> 00:00:50,190
+So in short, Binder allows two different processes to communicate with each other.
+
+11
+00:00:50,910 --> 00:00:58,800
+These are the major features of Binder IPC, a kernel driver, to facilitate internal process communication.
+
+12
+00:00:59,160 --> 00:01:06,060
+So basically Binder is a kernel driver which is implemented in Linux to facilitate inter process communication.
+
+13
+00:01:06,780 --> 00:01:08,990
+It's a lightweight RBC.
+
+14
+00:01:09,120 --> 00:01:12,720
+It's a lightweight, remote procedure communication.
+
+15
+00:01:13,230 --> 00:01:17,190
+Its purpose a straight pole for processing request.
+
+16
+00:01:17,940 --> 00:01:22,140
+It allows synchronous communication between the processors.
+
