@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:06,480
+ So, hello everyone in this video, we are going to start with the chat store file.
+
+2
+00:00:06,480 --> 00:00:10,720
+ So in this one, as you can see that in the front end, wait a second, let me close this
+
+3
+00:00:10,720 --> 00:00:11,720
+ back end.
+
+4
+00:00:11,720 --> 00:00:13,200
+ So it looks good.
+
+5
+00:00:13,200 --> 00:00:16,560
+ So in this store, as you can see, that authstore.js file is present.
+
+6
+00:00:16,560 --> 00:00:24,640
+ So for the chat, cut there, we are out to make one chatstore.js.
+
+7
+00:00:24,640 --> 00:00:28,520
+ After this, we are going to use the dewstand right for this one also.
+
+8
+00:00:28,520 --> 00:00:34,120
+ So import create from dewstand.
+
+9
+00:00:34,120 --> 00:00:38,600
+ After this, we are going to import the toast from the React Autost.
+
+10
+00:00:38,600 --> 00:00:47,160
+ So import those from React Autost.
+
+11
+00:00:47,160 --> 00:00:52,320
+ After this, we are going to just use the XUS instance.
+
+12
+00:00:52,320 --> 00:00:55,800
+ This is from the live XUS.
+
+13
+00:00:55,800 --> 00:01:00,920
+ So after this, we are going to export a function.
+
+14
+00:01:00,920 --> 00:01:11,880
+ So export Chats store equals to create, and we are going to use the set.
+
+15
+00:01:11,880 --> 00:01:19,760
+ So let's use one callback.
+
+16
+00:01:19,760 --> 00:01:24,840
+ And now inside of this, we will make one user's array, which is empty.
+
+17
+00:01:24,840 --> 00:01:30,240
+ And after this, we are going to use this get users.
+
+18
+00:01:30,240 --> 00:01:32,280
+ It would be a function, it will call back function.
+
+19
+00:01:32,280 --> 00:01:38,520
+ So after this, let's wrap this thing up in the try and catch block.
+
+20
+00:01:38,520 --> 00:01:46,720
+ So try and catch, so try and catch, for if some error arises, so we are going to catch it
+
+21
+00:01:46,720 --> 00:01:51,680
+ in this block.
+
+22
+00:01:51,680 --> 00:01:56,720
+ So now after this, in a try, we are going to hit the end point, const r is equal to
+
+23
+00:01:56,720 --> 00:02:11,600
+ await XUS instance dot get, and after this slash message is user.
+
+24
+00:02:11,600 --> 00:02:16,680
+ So I believe, and one more thing if I remember that in this XUS instance, this is
+
+25
+00:02:16,680 --> 00:02:22,200
+ wrong, but this route actually in the messages in the backend, I have done it for the post
+
+26
+00:02:22,200 --> 00:02:25,080
+ I guess if I remember correctly.
+
+27
+00:02:25,080 --> 00:02:29,840
+ So in the backend, let's go to this message controller, not message controller, actually
+
+28
+00:02:29,840 --> 00:02:31,240
+ message routes.
+
+29
+00:02:31,240 --> 00:02:33,040
+ Yeah, that's one problem.
+
+30
+00:02:33,040 --> 00:02:37,040
+ So put this here as get, okay.
+
+31
+00:02:37,040 --> 00:02:42,600
+ Now after this, let's go back again with that.
+
+32
+00:02:42,600 --> 00:02:46,240
+ So try, we are getting the response.
+
+33
+00:02:46,240 --> 00:02:47,240
+ Set this one.
+
+34
+00:02:47,240 --> 00:02:54,280
+ So set users, response dot data, okay.
+
+35
+00:02:54,280 --> 00:03:01,400
+ So after this, we are going to just say toast dot success, and inside of this, we are just
+
+36
+00:03:01,400 --> 00:03:09,920
+ going to say that users, fetched successfully, success fully, okay.
+
+37
+00:03:09,920 --> 00:03:12,080
+ And in the cache block, same thing.
+
+38
+00:03:12,080 --> 00:03:17,240
+ So if some errorizes in that case, we are going to use the error message from the toast.
+
+39
+00:03:17,240 --> 00:03:28,680
+ That is to start error failed to fetch users, okay.
+
+40
+00:03:28,680 --> 00:03:32,440
+ There's some problem.
+
+41
+00:03:32,440 --> 00:03:41,880
+ I guess there should not be one problem, but why it's showing like this, okay.
+
+42
+00:03:41,880 --> 00:03:42,880
+ That's fine.
+
+43
+00:03:42,880 --> 00:03:50,920
+ Control has saved and for this one, console dot log, we can use the error itself, so error.
+
+44
+00:03:50,920 --> 00:03:52,560
+ So all the errors are gone.
+
+45
+00:03:52,560 --> 00:03:57,120
+ So we have made this chat store dot JS file, okay.
+
+46
+00:03:57,120 --> 00:04:01,360
+ And now after this, what we are actually going to do?
+
+47
+00:04:01,360 --> 00:04:05,160
+ So let me think, yeah.
+
+48
+00:04:05,160 --> 00:04:08,760
+ So I have this sideboard dot TXT file, okay.
+
+49
+00:04:08,760 --> 00:04:17,040
+ So this text file, we are going to use like this JSX, we are going to use a control C, and
+
+50
+00:04:17,040 --> 00:04:22,560
+ we can paste this inside of the, let's create one file in the component, okay.
+
+51
+00:04:22,560 --> 00:04:35,240
+ So components side bar dot, so side bar, side bar dot JSX, and let's control paste it
+
+52
+00:04:35,240 --> 00:04:37,040
+ here, okay.
+
+53
+00:04:37,040 --> 00:04:39,320
+ So this side bar component had some problems, okay.
+
+54
+00:04:39,320 --> 00:04:41,600
+ So I'm going to fix it all.
+
+55
+00:04:41,600 --> 00:04:51,840
+ So for the starter files, you can actually use this, no issues, so, okay.
+
+56
+00:04:51,840 --> 00:04:58,680
+ So for this one, go inside of the homepage and since there is nothing, so let's import
+
+57
+00:04:58,680 --> 00:05:08,360
+ this one, so side bar control as it's imported saved.
+
+58
+00:05:08,360 --> 00:05:10,960
+ So we imported this, so I will check up on this side bar, okay.
+
+59
+00:05:10,960 --> 00:05:15,520
+ I will fix it and we will continue to work on this side bar in the next video, thanks.
+
