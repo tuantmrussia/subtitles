@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:05,760
+Mô hình ngôn ngữ lớn rất mạnh, nhưng chúng hoạt động trong một sự ràng buộc cơ bản.
+
+2
+00:00:05,760 --> 00:00:09,920
+Họ tạo ra câu trả lời dựa trên mô hình học trong quá trình huấn luyện,
+
+3
+00:00:09,920 --> 00:00:13,280
+Không phải bằng cách truy vấn hệ thống trực tiếp hoặc xác minh sự thật.
+
+4
+00:00:13,280 --> 00:00:18,560
+Điều này có nghĩa là trong khi câu trả lời của họ thường nghe tự tin và có cấu trúc tốt,
+
+5
+00:00:18,560 --> 00:00:22,880
+Chúng có thể lỗi thời, không đầy đủ, hoặc hoàn toàn bịa đặt,
+
+6
+00:00:22,880 --> 00:00:25,680
+Khi được hỏi về thông tin vượt quá các dữ liệu đào tạo của họ.
+
+7
+00:00:26,640 --> 00:00:30,240
+Trong môi trường kinh doanh, hạn chế này trở nên nguy hiểm.
+
+8
+00:00:30,240 --> 00:00:33,840
+Các tổ chức phụ thuộc vào việc thay đổi dữ liệu liên tục.
+
+9
+00:00:33,840 --> 00:00:39,040
+Chính sách phát triển, cập nhật sản phẩm, khách hàng tạo ra hồ sơ mới,
+
+10
+00:00:39,040 --> 00:00:41,120
+và hệ thống đăng nhập các sự kiện thời gian thực.
+
+11
+00:00:41,120 --> 00:00:45,440
+Một mô hình mà không thể nhìn thấy dữ liệu này buộc phải đoán.
+
+12
+00:00:45,440 --> 00:00:50,080
+Đó là lý do tại sao chỉ riêng LMs không đủ cho hệ thống sản xuất.
+
+13
+00:00:50,080 --> 00:00:52,960
+Họ xuất sắc về ngôn ngữ, chứ không phải về sự xác minh của lẽ thật.
+
+14
+00:00:53,600 --> 00:00:57,920
+Mở rộng thế hệ hoặc địa chỉ miếng giẻ này
+
+15
+00:00:57,920 --> 00:01:01,600
+bằng cách nền tảng hoá câu trả lời AI trong dữ liệu hiện tại
+
+16
+00:01:01,600 --> 00:01:02,960
+lấy lại thời gian truy vấn.
+
+17
+00:01:02,960 --> 00:01:08,000
+Thay vì đoán, các lý do mô hình trên bằng chứng được cung cấp bởi hệ thống của bạn.
+
+18
+00:01:08,000 --> 00:01:13,200
+Sự chuyển đổi này, từ thế hệ ngôn ngữ sang thế hệ dựa trên bằng chứng,
+
+19
+00:01:13,200 --> 00:01:16,240
+là điều khiến AI có thể sử dụng trong các doanh nghiệp thực sự.
+
+20
+00:01:16,240 --> 00:01:20,080
+Mỗi LM có một kiến thức cố định cắt giảm,
+
+21
+00:01:20,080 --> 00:01:23,120
+Một thời điểm sau đó nó sẽ ngừng học.
+
+22
+00:01:23,120 --> 00:01:27,520
+Bất cứ điều gì xảy ra sau ngày đó là vô hình đối với người mẫu.
+
+23
+00:01:27,520 --> 00:01:30,960
+Chính sách mới, tài liệu cập nhật,
+
+24
+00:01:30,960 --> 00:01:36,720
+Các thay đổi điều chỉnh, hoặc quyết định nội bộ đơn giản là không tồn tại theo quan điểm của mô hình.
+
+25
+00:01:36,720 --> 00:01:41,120
+Khi người dùng hỏi về thông tin sau khi cắt bỏ,
+
+26
+00:01:41,120 --> 00:01:43,200
+Người mẫu không nói "Tôi không biết."
+
+27
+00:01:43,200 --> 00:01:47,360
+Thay vì thế, nó dự đoán một câu trả lời hợp lý sẽ như thế nào.
+
+28
+00:01:47,920 --> 00:01:51,200
+Hành vi này tạo ra một ảo tưởng nguy hiểm về độ chính xác.
+
+29
+00:01:51,200 --> 00:01:56,960
+Rag trực tiếp giải quyết vấn đề này bằng cách tiêm thông tin hiện tại vào thời điểm chạy.
+
+30
+00:01:56,960 --> 00:02:00,240
+Thay vì dựa vào dữ liệu huấn luyện đông lạnh,
+
+31
+00:02:00,240 --> 00:02:04,160
+Hệ thống lấy các tài liệu liên quan từ nguồn kiến thức trực tiếp của bạn
+
+32
+00:02:04,160 --> 00:02:05,840
+Và cung cấp cho họ như bối cảnh.
+
+33
+00:02:05,840 --> 00:02:12,000
+Mô hình sau đó tạo ra câu trả lời dựa trên những gì mà tổ chức của bạn thực sự biết ngày hôm nay,
+
+34
+00:02:12,000 --> 00:02:14,720
+Không giống như internet nhiều tháng trước.
+
+35
+00:02:15,440 --> 00:02:20,160
+Điều này làm cho quá cần thiết cho bất kỳ hệ thống nào phản ánh hiện thực
+
+36
+00:02:20,160 --> 00:02:22,080
+thay vì chụp ảnh lịch sử.
+
+37
+00:02:22,080 --> 00:02:28,000
+Một quan niệm sai lầm phổ biến là một mô hình tinh chỉnh sẽ giải quyết vấn đề tri thức.
+
+38
+00:02:28,000 --> 00:02:32,080
+Trong thực tế, tinh chỉnh đưa ra những thách thức mới.
+
+39
+00:02:32,080 --> 00:02:36,480
+Nó đắt tiền, chậm chạp và phức tạp về hoạt động.
+
+40
+00:02:36,480 --> 00:02:40,640
+Cập nhật một mô hình tốt có thể mất nhiều tuần hoặc nhiều tháng,
+
+41
+00:02:40,640 --> 00:02:44,480
+khiến nó không phù hợp với môi trường kinh doanh thay đổi nhanh chóng.
+
+42
+00:02:45,440 --> 00:02:49,200
+Quan trọng hơn, tinh chỉnh không loại trừ ảo giác.
+
+43
+00:02:49,200 --> 00:02:54,640
+Ngay cả một mô hình tinh chỉnh cũng sẽ tạo ra câu trả lời khi thiếu thông tin.
+
+44
+00:02:54,640 --> 00:02:59,520
+Anh vẫn còn phụ thuộc vào mô hình nội bộ hơn là kiểm tra nguồn tin.
+
+45
+00:02:59,520 --> 00:03:02,800
+Rộng đưa ra một cách tiếp cận kiến trúc tốt hơn.
+
+46
+00:03:02,800 --> 00:03:08,640
+Kiến thức nằm bên ngoài mô hình và có thể được cập nhật ngay lập tức mà không cần rèn luyện lại.
+
+47
+00:03:08,640 --> 00:03:12,960
+Tài liệu có thể được thêm vào, loại bỏ hoặc sửa đổi trong thời gian thực.
+
+48
+00:03:13,600 --> 00:03:17,280
+Mọi phản hồi đều có thể được truy ra từ nguồn chính xác được dùng,
+
+49
+00:03:17,280 --> 00:03:19,520
+cải thiện sự minh bạch và lòng tin.
+
+50
+00:03:19,520 --> 00:03:23,920
+Trong hệ thống sản xuất, Rag không phải là một cách hiệu quả.
+
+51
+00:03:23,920 --> 00:03:25,440
+Đó là sự lựa chọn thiết kế đúng đắn.
+
+52
+00:03:25,440 --> 00:03:30,000
+Nó phân biệt được trí thông minh và tri thức, khả năng sinh sôi,
+
+53
+00:03:30,000 --> 00:03:32,800
+Hệ thống AI có thể duy trì và kiểm toán.
+
+54
+00:03:32,800 --> 00:03:36,160
+Ảo giác không phải bọ.
+
+55
+00:03:36,160 --> 00:03:39,760
+Chúng là một hệ quả trực tiếp của cách mô hình ngôn ngữ hoạt động.
+
+56
+00:03:40,480 --> 00:03:45,280
+Người ta được huấn luyện để dự đoán vật thể kế tiếp, chứ không phải để xác minh sự thật.
+
+57
+00:03:45,280 --> 00:03:50,240
+Khi đối mặt với sự không chắc chắn, họ lấp đầy khoảng trống với những phỏng đoán tự tin.
+
+58
+00:03:50,240 --> 00:03:54,400
+Điều này trở nên đặc biệt nguy hiểm trong các lĩnh vực cao.
+
+59
+00:03:54,400 --> 00:03:59,120
+Trong hệ thống pháp luật, luật bị ảo giác có thể dẫn đến việc phạm pháp.
+
+60
+00:03:59,120 --> 00:04:03,840
+Trong chăm sóc sức khỏe, sự tương tác với thuốc có thể gây nguy hiểm đến tính mạng.
+
+61
+00:04:03,840 --> 00:04:09,280
+Trong tài chính, phát minh ra luật lệ tuân thủ có thể dẫn đến việc vi phạm quy định.
+
+62
+00:04:10,000 --> 00:04:15,280
+Quá trình này làm giảm đáng kể nguy cơ mắc ảo giác bằng cách điều chỉnh phản ứng bằng chứng.
+
+63
+00:04:15,280 --> 00:04:19,040
+Mô hình không còn phát minh ra câu trả lời từ trí nhớ.
+
+64
+00:04:19,040 --> 00:04:22,720
+Đó là lý luận về các tài liệu thật được cung cấp vào thời điểm truy vấn.
+
+65
+00:04:22,720 --> 00:04:28,480
+Điều này thay đổi vai trò của mô hình từ máy phát điện sáng tạo đến người giải thích ngữ cảnh.
+
+66
+00:04:28,480 --> 00:04:32,000
+Bằng cách ép người mẫu phải dựa vào bằng chứng bên ngoài,
+
+67
+00:04:32,000 --> 00:04:36,160
+Sự quá khích giúp xác minh, trích dẫn và giám sát của con người.
+
+68
+00:04:36,800 --> 00:04:41,520
+Đó là lý do tại sao Rag là một cơ chế an toàn, không chỉ là một sự tăng cường chính xác.
+
+69
+00:04:41,520 --> 00:04:48,880
+Các nhà khoa học truyền thống hoạt động trên kiến thức tĩnh, ảnh chụp thế giới được chụp trong quá trình huấn luyện.
+
+70
+00:04:48,880 --> 00:04:55,440
+Điều này bao gồm dữ liệu lịch sử web, tài liệu lưu trữ và bộ dữ liệu đông lạnh.
+
+71
+00:04:55,440 --> 00:05:02,240
+Trong khi hữu ích cho lý luận tổng quát, sự hiểu biết tĩnh nhanh chóng trở nên lỗi thời trong các tổ chức có thật.
+
+72
+00:05:02,960 --> 00:05:08,080
+Các doanh nghiệp hoạt động trên dữ liệu sống, cơ sở dữ liệu cập nhật liên tục,
+
+73
+00:05:08,080 --> 00:05:15,280
+ADIs phản ánh trạng thái thời gian thực, các tài liệu nội bộ tiến hóa hàng ngày, tương tác khách hàng tạo ra
+
+74
+00:05:15,280 --> 00:05:22,160
+Tín hiệu mới liên tục. Dữ liệu năng động này là nơi giá trị kinh doanh cuộc sống, và nơi AI phải hoạt động
+
+75
+00:05:22,160 --> 00:05:28,560
+Chính xác. Quá trình kết nối khoảng cách này bằng cách kết nối các mô hình ngôn ngữ với các nguồn dữ liệu năng động.
+
+76
+00:05:29,200 --> 00:05:33,680
+Thay vì dựa vào kiến thức cũ, mô hình lấy được những thứ liên quan nhất,
+
+77
+00:05:33,680 --> 00:05:36,480
+Thông tin hiện thời hiện thời được hỏi.
+
+78
+00:05:36,480 --> 00:05:42,320
+Điều này đảm bảo rằng phản ứng phản ánh sự thật ngay bây giờ, chứ không phải sự thật trong quá trình huấn luyện.
+
+79
+00:05:42,320 --> 00:05:47,040
+Không có Rag, hệ thống AI không còn hoạt động với thực tế.
+
+80
+00:05:47,040 --> 00:05:53,520
+Với Rag, chúng trở nên hữu dụng. Ở mức độ kỹ thuật, Rag theo một cách đơn giản,
+
+81
+00:05:53,520 --> 00:06:00,240
+nhưng công việc thì mạnh mẽ. Đầu tiên, hệ thống lấy các tài liệu liên quan từ nguồn kiến thức của bạn
+
+82
+00:06:00,240 --> 00:06:04,880
+dựa vào yêu cầu của người dùng. Những nguồn này có thể bao gồm các cơ sở dữ liệu,
+
+83
+00:06:04,880 --> 00:06:12,240
+Cửa hàng tài liệu, thư tín, hay ADI. Tiếp theo, nội dung lấy được sẽ được đưa vào dấu nhắc
+
+84
+00:06:12,240 --> 00:06:20,320
+như bối cảnh. Bước này làm nền cho mô hình với bằng chứng cụ thể. Cuối cùng, mô hình tạo ra một phản hồi
+
+85
+00:06:20,320 --> 00:06:26,960
+Dựa trên bằng chứng đó, không phải vào trí nhớ bên trong. Quan trọng là dữ liệu của bạn
+
+86
+00:06:26,960 --> 00:06:32,880
+Vẫn ở bên ngoài người mẫu. Nó sống trong những hệ thống tìm kiếm có thể được cập nhật độc lập.
+
+87
+00:06:32,880 --> 00:06:40,080
+Vào thời điểm truy vấn, chỉ có những thông tin có liên quan nhất được cung cấp, giữ nhắc đủ và
+
+88
+00:06:40,080 --> 00:06:46,800
+Trả lời chính xác. Kiến trúc này cải thiện khả năng theo dõi, vì mọi câu trả lời đều có thể liên kết
+
+89
+00:06:46,800 --> 00:06:53,680
+quay lại các tài liệu cụ thể. Nó cũng đơn giản hóa việc quản lý, kiểm toán và tuân theo.
+
+90
+00:06:53,680 --> 00:06:59,280
+Những yêu cầu cần thiết để sản xuất hệ thống AI, hệ thống tìm kiếm truyền thống,
+
+91
+00:06:59,280 --> 00:07:05,360
+trả lại danh sách tài liệu. Họ để công việc, đọc sách, tổng hợp và lý luận
+
+92
+00:07:05,360 --> 00:07:12,960
+với con người. Sự thái quá còn đi xa hơn nữa. Rapid lấy lại tài liệu, hiểu được nội dung của chúng,
+
+93
+00:07:12,960 --> 00:07:18,880
+Tổng hợp thông qua nhiều nguồn khác nhau, và giải thích kết quả của ngôn ngữ tự nhiên.
+
+94
+00:07:18,880 --> 00:07:26,240
+Điều này biến các tài liệu tĩnh thành chuyên gia tương tác. Thay vì hỏi,
+
+95
+00:07:26,240 --> 00:07:32,720
+Thông tin này ở đâu? Người dùng có thể hỏi, điều này có nghĩa là gì? Hay điều này áp dụng thế nào với tôi
+
+96
+00:07:32,720 --> 00:07:40,160
+Tình hình? Hệ thống không chỉ chỉ chỉ, nó giải thích. Khả năng này cho phép trò chuyện.
+
+97
+00:07:40,160 --> 00:07:46,240
+Truy cập vào các cơ sở kiến thức phức tạp, biến AI thành một lớp lý luận trên đầu dữ liệu của bạn.
+
+98
+00:07:46,240 --> 00:07:52,720
+Đó là lý do Rag không chỉ là tìm kiếm tốt hơn. Đó là một cách khác cơ bản để tương tác với
+
+99
+00:07:52,720 --> 00:07:59,520
+Thông tin. Sự quá khích trở nên cần thiết trong các kịch bản doanh nghiệp nơi sự chính xác và tính xác thực quan trọng.
+
+100
+00:07:59,520 --> 00:08:06,640
+Cơ sở kiến thức nội bộ được lợi ích nhờ chuyển tài liệu từng mảnh thành một cuộc đối thoại
+
+101
+00:08:06,640 --> 00:08:13,520
+Giao diện. Hệ thống hỗ trợ khách hàng dựa trên Rag để cung cấp câu trả lời chính xác, cập nhật,
+
+102
+00:08:13,520 --> 00:08:19,920
+Dựa vào tài liệu chính thức, và lịch sử vé. Trong hệ thống tuân thủ và chính sách,
+
+103
+00:08:19,920 --> 00:08:26,800
+Rag bảo đảm phản ứng luôn luôn bắt nguồn từ các tài liệu hiện tại, được chấp thuận. Tài liệu về sản phẩm
+
+104
+00:08:26,800 --> 00:08:34,720
+Trợ giúp sử dụng Rag để định vị các hệ thống ADI phức tạp và hướng dẫn kỹ thuật. Nền tảng phân tích sử dụng Rag
+
+105
+00:08:34,720 --> 00:08:41,200
+để giải thích về số liệu trực tiếp và xu hướng gắn trực tiếp vào các đường ống dữ liệu. Trong tất cả những trường hợp này,
+
+106
+00:08:41,200 --> 00:08:48,080
+yêu cầu phổ biến là sự tin cậy. Những người giữ trẻ cần sự tin tưởng để đáp ứng AI phản ánh thực tế.
+
+107
+00:08:48,080 --> 00:08:56,080
+Rapid cung cấp nền tảng đó bằng cách buộc mọi câu trả lời lại cho nguồn thực sự, không dùng Rag,
+
+108
+00:08:56,080 --> 00:09:02,320
+đưa ra những rủi ro nghiêm trọng. Các hệ thống cung cấp những câu trả lời lỗi thời mà không còn phản ánh thực tế nữa.
+
+109
+00:09:02,880 --> 00:09:09,280
+Ảo giác thầm lặng trôi qua mà không bị phát hiện, lan truyền thông tin sai lệch. Lòng tin bị xói mòn nhanh chóng
+
+110
+00:09:09,280 --> 00:09:15,760
+Một khi người dùng nhận ra AI không đáng tin cậy. Sau đó, các đội được đưa vào việc xác nhận bằng tay,
+
+111
+00:09:15,760 --> 00:09:21,520
+Suy giảm năng suất đạt được. Cuối cùng, các đơn vị kinh doanh ngừng sử dụng toàn bộ hệ thống.
+
+112
+00:09:21,520 --> 00:09:28,560
+Các sáng kiến của AI thất bại, không phải vì công nghệ yếu, mà vì nó không được xây dựng chính xác.
+
+113
+00:09:29,200 --> 00:09:33,520
+RAG ngăn chặn những thất bại này bằng cách đảm bảo câu trả lời là hiện tại,
+
+114
+00:09:33,520 --> 00:09:38,720
+Có thể kiểm chứng, và theo dõi. Trong sản xuất, cái giá của việc không sử dụng Rag
+
+115
+00:09:38,720 --> 00:09:46,240
+là cao hơn nhiều so với chi phí thực hiện nó. Rag nên được đối xử như một cơ sở hạ tầng nền tảng,
+
+116
+00:09:46,240 --> 00:09:53,200
+Không phải là một sự tăng cường tùy chọn. Nó thiết lập sự khác biệt rõ ràng giữa kiến thức và trí thông minh,
+
+117
+00:09:53,760 --> 00:10:00,960
+Làm cho hệ thống an toàn hơn, dễ cập nhật và kiểm toán hơn. Với thái cực, kiến thức cập nhật sẽ xảy ra
+
+118
+00:10:00,960 --> 00:10:07,920
+Ngay lập tức mà không cần huấn luyện lại. Phản ứng được dựa trên những nguồn có thể kiểm chứng được. Đội hỗ trợ có thể
+
+119
+00:10:07,920 --> 00:10:15,280
+Kiểm toán kết quả. Các kỹ sư có thể gỡ lỗi. Kẻ bắt cóc có thể tin tưởng kết quả. Khi bạn di chuyển từ
+
+120
+00:10:15,280 --> 00:10:22,240
+Ra Im là thứ cho phép hệ thống AI có trách nhiệm. Đó là kiến trúc.
+
+121
+00:10:22,240 --> 00:10:28,400
+Mô hình biến nguyên mẫu ấn tượng thành hệ thống quan trọng kinh doanh. Trong kinh doanh hiện đại
+
+122
+00:10:28,400 --> 00:10:35,200
+Al, Ragu không phải là một người tốt. Đó là tiêu chuẩn tối thiểu cho AI đáng tin cậy.
+
