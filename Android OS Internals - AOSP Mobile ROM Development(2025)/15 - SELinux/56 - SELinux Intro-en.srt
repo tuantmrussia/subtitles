@@ -1,0 +1,224 @@
+1
+00:00:00,910 --> 00:00:01,660
+Welcome back.
+
+2
+00:00:01,990 --> 00:00:04,030
+Let's discuss about ethylene x.
+
+3
+00:00:05,810 --> 00:00:07,790
+SC Linux is a labelling system.
+
+4
+00:00:08,060 --> 00:00:09,620
+Every process has a label.
+
+5
+00:00:09,830 --> 00:00:13,280
+Every file directory object in the operating system has a label.
+
+6
+00:00:13,580 --> 00:00:19,160
+Even network ports, devices and potentially hostnames have levels assigned to them.
+
+7
+00:00:19,550 --> 00:00:24,380
+We write rules to control the access of processed payments to an object label like a file.
+
+8
+00:00:24,770 --> 00:00:26,210
+We call this a policy.
+
+9
+00:00:26,720 --> 00:00:29,030
+The kernel enforces these rules.
+
+10
+00:00:29,300 --> 00:00:37,160
+Sometimes this enforcement is called mandatory access control as part of the Android security model.
+
+11
+00:00:37,340 --> 00:00:44,030
+Android uses security enhanced Linux to enforce mandatory access control over all processes, even processes
+
+12
+00:00:44,030 --> 00:00:47,480
+running with root or superuser privileges.
+
+13
+00:00:48,680 --> 00:00:51,590
+Linux operates on the principle of default denial.
+
+14
+00:00:51,890 --> 00:00:55,190
+That means anything not explicitly allowed is denied.
+
+15
+00:00:55,490 --> 00:00:58,130
+It's in the next can operate in two global modes.
+
+16
+00:00:58,880 --> 00:01:04,490
+One Burmese mode in which permission denials are locked but are not enforced.
+
+17
+00:01:05,300 --> 00:01:10,280
+Enforcing mode in which permission denials are both locked and enforced.
+
+18
+00:01:11,270 --> 00:01:17,780
+Android includes a selinux in enforcing mode and a corresponding security policy that works by default
+
+19
+00:01:17,780 --> 00:01:20,630
+across areas in enforcing mode.
+
+20
+00:01:20,870 --> 00:01:27,230
+Disallowed actions are prevented and all attempted violations are logged by the kernel to the message
+
+21
+00:01:27,240 --> 00:01:28,130
+or look at.
+
+22
+00:01:29,290 --> 00:01:33,010
+So now let's discuss about labels, roles and domains.
+
+23
+00:01:33,990 --> 00:01:37,680
+NCLEX Linux depends upon labels to match actions and policies.
+
+24
+00:01:38,520 --> 00:01:42,750
+Labels determine what is allowed sockets, files and processes.
+
+25
+00:01:42,750 --> 00:01:49,770
+All have labels in easy Linux SC Linux decisions are based on labels assigned to these objects and the
+
+26
+00:01:49,770 --> 00:01:51,900
+policy defining how they interact.
+
+27
+00:01:52,590 --> 00:01:55,680
+The policy rules comes in the following form.
+
+28
+00:01:56,690 --> 00:02:01,580
+For example, allow domain types, classes and permissions where.
+
+29
+00:02:03,060 --> 00:02:10,440
+A domain is a label for the process or set of process, also called a domain type as it is just a type
+
+30
+00:02:10,440 --> 00:02:11,340
+for a process.
+
+31
+00:02:12,320 --> 00:02:12,710
+Type.
+
+32
+00:02:12,980 --> 00:02:14,600
+A type is a label for the object.
+
+33
+00:02:14,600 --> 00:02:18,470
+For example, a socket or set of objects a class.
+
+34
+00:02:18,710 --> 00:02:22,310
+This is a kind of optical assembly file or a socket being accessed.
+
+35
+00:02:23,680 --> 00:02:29,380
+Now permissions, the permission could be like read or write or one of them in order to make it more
+
+36
+00:02:29,380 --> 00:02:29,770
+clear.
+
+37
+00:02:29,920 --> 00:02:34,900
+Let's imagine a system where we define types on objects like cats and dogs.
+
+38
+00:02:35,230 --> 00:02:37,210
+A cat and dog are processed types.
+
+39
+00:02:37,900 --> 00:02:42,520
+We have a class of objects that they want to interact, which we call food.
+
+40
+00:02:43,540 --> 00:02:49,810
+And I want to add types to food that food and as a policy item.
+
+41
+00:02:49,960 --> 00:02:57,160
+I would say that a dog has permission to eat dog chow food and a cat has permission to eat that child
+
+42
+00:02:57,160 --> 00:02:57,400
+food.
+
+43
+00:02:58,180 --> 00:03:00,940
+Initially, next we would write this policy as.
+
+44
+00:03:01,720 --> 00:03:04,600
+I know that Cat Chow would eat.
+
+45
+00:03:05,950 --> 00:03:06,790
+Hello, Doc.
+
+46
+00:03:06,900 --> 00:03:08,470
+Doc Joe would eat.
+
+47
+00:03:09,280 --> 00:03:17,680
+So here the first keyboard, which is Allo is actually the operation and the dog is actually the high
+
+48
+00:03:18,280 --> 00:03:28,240
+label type dog domain and dog chow is actually the object and food is actually the class and it is actually
+
+49
+00:03:28,240 --> 00:03:29,200
+the operation.
+
+50
+00:03:29,680 --> 00:03:33,070
+So basically we are allowing the dog to eat nocturnal.
+
+51
+00:03:34,500 --> 00:03:40,320
+With these rules, the colonel would allow the cat process to eat food labelled cattle and a dog to
+
+52
+00:03:40,320 --> 00:03:41,880
+eat food labelled dog chow.
+
+53
+00:03:42,770 --> 00:03:46,160
+But in any select system, everything is denied by default.
+
+54
+00:03:46,460 --> 00:03:51,350
+This means that if the default process tries to eat the catchall, the kernel would prevent it.
+
+55
+00:03:52,560 --> 00:03:56,310
+So now all we will do some hands on silliness.
+
+56
+00:03:56,310 --> 00:03:58,620
+And I think after that it would be more for you.
+
