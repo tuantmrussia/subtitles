@@ -1,0 +1,184 @@
+1
+00:00:00,000 --> 00:00:29,000
+ So hello everyone in this video we are going to work with our message controller okay since we have configured the routes now what we are going to do is we are going to configure the message message controller so message controller dot js now inside is file what we are going to do is just import the users okay since I'm going to explain the logic what is going to happen here so import user from dash dash slash model.
+
+2
+00:00:31,000 --> 00:00:55,000
+ slash user model dot js okay so we have imported the user and now we are going to export this function so export const contacts inside equal to let's name this as side bar equal to async.
+
+3
+00:00:57,000 --> 00:01:26,000
+ so we are going to take all the contacts which are present on the side of the chat app okay so all the since we are going to talk with them through our chat app so for this message controller what we are going to do is first as usual we are going to take one try and then other cash block so catching the errors if it happens so error and now and this drive lock we are going to take all the users which are present on the side bar which we are going to talk with.
+
+4
+00:01:27,000 --> 00:01:55,000
+ accept the logged in user okay so logged user ID equals to request dot user dot underscore ID so we are going to take this logged in user and accept this user we want the list of all the users that are present in the chat app side now bar so for all the users so users dot.
+
+5
+00:01:56,000 --> 00:02:21,000
+ we are going to take this fine function and through the IDs so underscore ID and let's take this as logged in except logged in user except logged in user we are going to just.
+
+6
+00:02:22,000 --> 00:02:30,000
+ take all the users that are present okay so we are going to validate this we are the password okay.
+
+7
+00:02:33,000 --> 00:03:00,000
+ So, if user so if the users are present then in that case we are going to just return the status as 200 dot Jason we're going to use return all the users and we are going to just take the help of this code are your status 200 that means it's okay.
+
+8
+00:03:01,000 --> 00:03:10,000
+ So, it will be done and okay status so then whatever the error will have will we are going to console log it okay so.
+
+9
+00:03:10,000 --> 00:03:29,000
+ error error in contact contacts in side bar and we are going to throw the error through error dot message.
+
+10
+00:03:30,000 --> 00:03:38,000
+ And then let's return the status as 500 dot Jason.
+
+11
+00:03:40,000 --> 00:04:06,000
+ The message would be internal server error so internal server error okay so we have configured all of these message controller so as we can see here we have exported this context contacts contacts inside by that means all the users that present in the sidebar except the login user except the login user.
+
+12
+00:04:07,000 --> 00:04:27,000
+ So except the login user we are just identifying the login user without like with the identity okay so with this log user ID we are going to check whether this log is user we are getting it except these logged user ID means.
+
+13
+00:04:28,000 --> 00:04:38,000
+ log ID we are going to take all the users that are present and we are going to return the response otherwise we are throwing out the error in the catch block.
+
+14
+00:04:38,000 --> 00:04:51,000
+ So, as we have configured this is so now let's go to this message route dot j so message route dot j's and since it's a post request right so.
+
+15
+00:04:52,000 --> 00:05:02,000
+ We are going to just take this is route dot post post method and it is going to navigate to the user section okay so slash users API point.
+
+16
+00:05:02,000 --> 00:05:12,000
+ So check cot we are going to take this middle as middleware as well and then cot contacts in the sidebar we are going to import this as well and we are going to just use this.
+
+17
+00:05:12,000 --> 00:05:23,000
+ And now inside of the app dot j's we are going to just configure things like like in this API message message routes so we are also going to pass all of those values right.
+
+18
+00:05:24,000 --> 00:05:43,000
+ But before that what we are going to do is you are going to make this other controller okay so inside of the controller let's go to this message controller and since we have made this as export.
+
+19
+00:05:43,000 --> 00:06:01,000
+ We are going to make one controller so export const this would be named as the get message get messages since there's going to exchange of messages between the two users so we are going to make this function so again the same thing const.
+
+20
+00:06:02,000 --> 00:06:26,000
+ The receiver ID so we are going to take the receiver ID from the request params okay so request params dot underscore ID and then we are also going to take the sender ID equals to request dot user dot underscore ID.
+
+21
+00:06:26,000 --> 00:06:34,000
+ Okay this some issue.
+
+22
+00:06:34,000 --> 00:06:42,000
+ This column.
+
+23
+00:06:42,000 --> 00:06:47,000
+ Okay so no issue the fix that issue okay so try.
+
+24
+00:06:47,000 --> 00:07:07,000
+ So const if taken the receiver ID we have also taken the sender side so we are going to take the messages okay so messages equal to messages messages dot find and inside of this we are going to.
+
+25
+00:07:07,000 --> 00:07:11,000
+ For the messages okay so for the messages.
+
+26
+00:07:11,000 --> 00:07:23,000
+ We are taking an object type okay so inside of this array we are going to destructure all of the things like for the sender ID for a one particular sender ID.
+
+27
+00:07:23,000 --> 00:07:32,000
+ For one particular sender ID we are going to assign this a sender ID and for this receiver ID.
+
+28
+00:07:32,000 --> 00:07:42,000
+ Let's receive a ID let's do this receive ID.
+
+29
+00:07:42,000 --> 00:07:45,000
+ So now.
+
+30
+00:07:45,000 --> 00:07:52,000
+ We have destructure date and now.
+
+31
+00:07:52,000 --> 00:07:57,000
+ For the sender part again we are going to do the same thing as receiver ID.
+
+32
+00:07:57,000 --> 00:08:14,000
+ And for this receiver ID would be the sender ID so vice versa since we are going to like the messages will would be between two people right so there would be continuous transmissions for messages so this messages dot find.
+
+33
+00:08:14,000 --> 00:08:30,000
+ And after this we are going to return the status code of 200 dot Jason and then would be messages.
+
+34
+00:08:30,000 --> 00:08:48,000
+ So whatever the message would be it would be a return okay so I return R yes dot status sorry for this part.
+
+35
+00:08:48,000 --> 00:08:55,000
+ One second I guess there's some problem.
+
+36
+00:08:55,000 --> 00:09:04,000
+ Take this as catch block.
+
+37
+00:09:04,000 --> 00:09:21,000
+ Fixed again this issue this some problems that are coming on constant basis so we are going to throw the error okay error in get messages controller.
+
+38
+00:09:21,000 --> 00:09:46,000
+ And it would be error dot message all right so R yes dot status 400 dot Jason it is going to return in the Jason format like if the message has a invalid user ID so invalid user ID for mat.
+
+39
+00:09:46,000 --> 00:09:50,000
+ So let's save this one so it would be working fine.
+
+40
+00:09:50,000 --> 00:09:54,000
+ So we have updated this odd controller so.
+
+41
+00:09:54,000 --> 00:10:00,000
+ In the next video we are going to configure some more things okay.
+
+42
+00:10:00,000 --> 00:10:11,000
+ So and yeah one thing more in this we have forgotten to update the routes okay so where it's the route.
+
+43
+00:10:11,000 --> 00:10:33,000
+ One second so all throughout message out so if I've forgotten that we have to make a get request okay so route dot get and then if this goes to the user like get messages API point and we get one particular ID okay.
+
+44
+00:10:33,000 --> 00:10:42,000
+ So one particular ID so for this one we are going to implement a check out the middleware as well as the get messages.
+
+45
+00:10:42,000 --> 00:10:45,000
+ This get messages thing right.
+
+46
+00:10:45,000 --> 00:10:55,000
+ So we're going to save this and it is going to work fine so now we are again we are going to make one post request and we are going to configure the things for send messages in the next video thanks.
+
