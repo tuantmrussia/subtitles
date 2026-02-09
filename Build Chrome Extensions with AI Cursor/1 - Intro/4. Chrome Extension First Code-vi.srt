@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:06,640
+Trong mô-đun này tôi sẽ cho bạn biết về Chrome cho các nhà phát triển, vì vậy chúng tôi có thể di chuyển ở đây và chúng tôi thấy một số
+
+2
+00:00:06,640 --> 00:00:12,560
+Tài liệu thú vị. Đầu tiên, làm thế nào để là mở rộng đầu tiên. Chúng ta có thể thấy tất cả các hướng dẫn,
+
+3
+00:00:12,560 --> 00:00:18,400
+Cách chúng được xây dựng, HTML, CN và JavaScript, những gì là phần mở rộng, những gì chúng có thể làm.
+
+4
+00:00:18,400 --> 00:00:23,360
+Điều này giống như một thành phần chính, do đó, bản liệt kê mà là quan trọng nhất, phần mở rộng
+
+5
+00:00:23,360 --> 00:00:28,000
+Danh sách chỉ được yêu cầu để liệt kê tên JSON. Nó cũng phải ngăn chặn
+
+6
+00:00:28,000 --> 00:00:33,120
+trong thư mục gốc. Chúng tôi có các tập lệnh nội dung, vì vậy nó chạy JavaScript trong ngữ cảnh của web
+
+7
+00:00:33,120 --> 00:00:40,000
+trang, nhân viên dịch vụ chạy trong nền và quản lý một số sự kiện duyệt. Ví dụ như,
+
+8
+00:00:40,000 --> 00:00:47,280
+Nếu bạn muốn kiểm tra trang web, làm thế nào nó được xây dựng, về cơ bản là mở một trang web mới, nó sẽ
+
+9
+00:00:47,280 --> 00:00:54,560
+Điều hành sự kiện sẽ phát hiện ra nó. Bạn có một hành động thanh công cụ, vì vậy nếu tôi có ở đây, tôi có bốn nút
+
+10
+00:00:54,560 --> 00:01:00,080
+mà sẽ trích xuất nó, một bảng điều khiển trang web, nó có thể có một bảng điều khiển trang web bên phải hoặc một lần nữa
+
+11
+00:01:00,080 --> 00:01:05,840
+và chúng ta có thể ngăn chặn hoặc thay đổi yêu cầu mạng. Cái này chủ yếu là cho
+
+12
+00:01:05,840 --> 00:01:13,840
+Có liên quan đến an ninh mạng. Được rồi, đây là cách chúng tôi có thể xuất bản, trong trường hợp này tôi sẽ
+
+13
+00:01:13,840 --> 00:01:19,200
+Nói cách chúng tôi có thể xuất bản, vì vậy tạo ra một mở rộng CNrome và xuất bản trong một cửa hàng web Chrome để có được
+
+14
+00:01:19,200 --> 00:01:26,320
+Một quyền truy cập vào nhà phát triển, bảng điều khiển Chrome. Anh phải nộp đơn xin giấy phép, và giấy phép lái xe.
+
+15
+00:01:26,320 --> 00:01:32,000
+Giá 5 đô, không nhiều lắm. Đây là phí ban đầu, và sau đó bạn có quyền truy cập tất cả các
+
+16
+00:01:32,000 --> 00:01:38,320
+Cửa hàng web Chrome. Đây là những hướng dẫn, đây là hướng dẫn đầu tiên. Bạn có thể tạo ra
+
+17
+00:01:38,320 --> 00:01:44,320
+Danh sách JSON, hành động đi. Chúng ta có thể làm được. Ví dụ, tôi có một tập tin rỗng
+
+18
+00:01:44,320 --> 00:01:50,880
+Chrome mở rộng, và những gì tôi sẽ làm, tôi sẽ chỉ sao chép JSON, và sau đó tôi sẽ chỉ
+
+19
+00:01:50,880 --> 00:01:57,760
+Mở một tập tin mới, và bây giờ tôi sẽ làm cho nó giống như một JSON, và sau đó tôi có thể mở nó trong nút, nhưng cho
+
+20
+00:01:57,760 --> 00:02:07,360
+Ví dụ, một là nút, nhưng về cơ bản tôi có thể sao chép tất cả các liên kết. Vì vậy bây giờ tôi đã sao chép ở đây,
+
+21
+00:02:07,360 --> 00:02:13,200
+Đây là tên A lô mở rộng, tôi sẽ nói "Đáng nguyền rủa", đây là tên của nó, đây là mô tả,
+
+22
+00:02:13,200 --> 00:02:19,200
+Nếu bạn có phần mở rộng, chúng tôi phải ghi lại mô hình này, chúng tôi có mô tả ngay đây,
+
+23
+00:02:19,200 --> 00:02:25,680
+Và đây là căn cước, đặc biệt là cửa hàng web Chrome, và đây là nhân viên kiểm tra.
+
+24
+00:02:25,680 --> 00:02:30,640
+Vì vậy, một số phần mở rộng không có điều đó. Ví dụ, điều này có bởi vì bạn rõ ràng cố gắng để
+
+25
+00:02:30,640 --> 00:02:36,000
+Phát hiện trang web được xây dựng như thế nào, và sau đó trả lại một số thông tin như mở rộng, nó không
+
+26
+00:02:36,000 --> 00:02:43,680
+hit bởi vì nó chỉ tắt để chạy trên tất cả các phần mở rộng, và ở đây chúng tôi có một biểu tượng mặc định,
+
+27
+00:02:43,680 --> 00:02:53,680
+có phần mở rộng PNG, và có một HTML bật lên mặc định. Vì vậy, và bây giờ chúng tôi có thể chạy một biểu tượng đến
+
+28
+00:02:53,680 --> 00:03:00,160
+Thư mục, bạn thậm chí có thể gỡ bỏ nó, nhưng chúng tôi sẽ chỉ tạo một tập tin HTML, và bây giờ khi tôi sao chép ở đây,
+
+29
+00:03:02,240 --> 00:03:10,560
+Tôi có thể vận hành nó, và những gì tôi làm để làm, tôi có thể sao chép nó, và sau đó đến đây để tiết kiệm.
+
+30
+00:03:10,560 --> 00:03:17,920
+Vì vậy, chúng ta có thể loại bỏ biểu tượng đó trong một giây, bởi vì chúng ta sẽ không cần nó, và khi nó đã hoàn thành,
+
+31
+00:03:17,920 --> 00:03:24,560
+Tôi có thể thêm vào. Đầu tiên, bạn phải bật chế độ phát triển, nếu bạn không có nó,
+
+32
+00:03:24,560 --> 00:03:30,960
+về cơ bản bạn chỉ cần bật lên, và sau đó các tùy chọn nạp và gói, gói mở rộng hoặc cập nhật sẽ được
+
+33
+00:03:30,960 --> 00:03:36,000
+có sẵn ở đây, nếu bạn rãnh và đóng gói, sau đó để đi đến phần mở rộng mà bạn muốn sử dụng
+
+34
+00:03:36,000 --> 00:03:45,760
+Phần mở rộng hiện tại. Được rồi, và chúng ta, tôi đã bỏ đường dây, nhưng tôi vẫn quên xóa nó đi.
+
+35
+00:03:45,760 --> 00:03:52,880
+Máy quay, và bây giờ, tôi sẽ thử lại, và như các bạn thấy, nó đã ở đây, các đường cong,
+
+36
+00:03:53,760 --> 00:04:01,600
+Và phần mở rộng cơ sở, và bây giờ chúng ta có thể gắn nó lên, sau đó khi tôi gắn nó vào và nhấn nó,
+
+37
+00:04:01,600 --> 00:04:07,440
+chúng tôi thấy phần mở rộng. Vì vậy, rõ ràng bây giờ, nếu tôi làm, bởi vì tôi có một sai lầm,
+
+38
+00:04:07,440 --> 00:04:12,560
+Tôi thay đổi đường cong, và tôi sẽ chỉ thay đổi phần mở rộng mới của tôi,
+
+39
+00:04:12,560 --> 00:04:20,640
+Và phiên bản sẽ là hai thứ như vậy, và tôi sẽ thay đổi ở đây,
+
+40
+00:04:24,080 --> 00:04:36,400
+Xin chào. Nếu nó đã được thực hiện, tôi có thể cứu cả hai, và trong khi ở đây, tôi chỉ cần nhấn nút cập nhật,
+
+41
+00:04:36,400 --> 00:04:43,360
+Và bạn thay đổi, chúng tôi thấy phiên bản, chúng tôi thấy mô tả, chúng tôi thấy ID, giống như phiên bản
+
+42
+00:04:43,360 --> 00:04:48,400
+Ở đây, và khi tôi ấn nó bây giờ, nó gửi lời chào. Được rồi, đây là kịch bản đầu tiên,
+
+43
+00:04:49,280 --> 00:04:55,840
+nhưng chúng ta thực sự có thể thêm vào một số phong cách phổ biến. Vì vậy bây giờ tôi sẽ điều chỉnh nó cho mục đích của chúng tôi,
+
+44
+00:04:55,840 --> 00:05:01,280
+Trước khi chúng ta lao vào con trỏ, trong lúc này, tôi chỉ nói như những điều cơ bản. Vì vậy, nếu tôi muốn thực hiện
+
+45
+00:05:01,280 --> 00:05:08,240
+Giống như một mô hình tối khác, chỉ để tưởng tượng làm thế nào chúng tôi có thể bật nó, vì vậy tôi có thể chỉ
+
+46
+00:05:08,240 --> 00:05:21,120
+bật thử, tôi sẽ để phiên bản một, và chúng ta thậm chí có thể gửi quyền hạn. Vì vậy, các quyền hạn,
+
+47
+00:05:21,120 --> 00:05:32,960
+thông thường, chúng ta có thể tiết kiệm sự cho phép, và cho sự cho phép, chúng ta sẽ sử dụng kịch bản,
+
+48
+00:05:37,920 --> 00:05:45,200
+tab hoạt động. Bây giờ, nó sẽ chỉ là để thử nghiệm, và tôi có thể cứu nó, và bây giờ chúng tôi có thể tạo ra
+
+49
+00:05:45,200 --> 00:05:51,280
+Một vài thông tin, vì vậy chúng ta sẽ cần một tập tin JavaScript. Bằng cách này, chúng ta có thể bắn một số
+
+50
+00:05:51,280 --> 00:05:58,000
+JavaScript, vì chúng ta sẽ dùng JavaScript bên trong HTML. Vì vậy, chúng tôi nói rằng chúng tôi có một biểu tượng toàn bộ,
+
+51
+00:05:58,000 --> 00:06:02,560
+Xin chào. Bây giờ, chúng ta có thể loại bỏ nó, bởi vì tôi không muốn bất cứ ai,
+
+52
+00:06:03,840 --> 00:06:09,920
+Tôi sẽ dùng kịch bản. Để sử dụng kịch bản, chúng tôi dùng cái nút, và chúng tôi có thể dùng ID,
+
+53
+00:06:09,920 --> 00:06:22,080
+và cho xem chứng minh thư, và đóng lại, chế độ tối gấp đôi, và nút cao. Và sau đó,
+
+54
+00:06:24,000 --> 00:06:36,000
+Tìm kiếm lên. Vì vậy, chúng tôi sẽ chỉ cần thực hiện kịch bản từ Java, chỉ cần khởi chạy tập tin JavaScript, và đầu tiên,
+
+55
+00:06:36,000 --> 00:06:43,840
+Chúng ta phải đóng JavaScript bằng cái này, và nó khá gọn gàng. Vì vậy, bây giờ chúng ta phải tạo ra
+
+56
+00:06:43,840 --> 00:06:48,560
+một tập tin có tên và phần mở rộng. Vậy tập tin JavaScript, tôi sẽ quay lại thư mục,
+
+57
+00:06:49,280 --> 00:06:56,000
+Tôi sẽ mở một tập tin mới, tôi sẽ mở nó ra, và bây giờ tôi có thể mở nó ở đây.
+
+58
+00:06:56,000 --> 00:07:03,440
+Lúc này, tôi đang sử dụng chỉ ghi chú, nhưng bạn hiển thị lặn vào con trỏ. Nên tôi đã tạo ra một hồ sơ đơn giản,
+
+59
+00:07:03,440 --> 00:07:09,040
+Và với loại này, chúng tôi có thể thực sự cố gắng để có được như thế nào chúng tôi có thể tương tác với JavaScript.
+
+60
+00:07:10,080 --> 00:07:18,640
+Và đi thôi. Bây giờ tôi sẽ mở một cửa mở. Chúng tôi nói thư mục mở, và sử dụng thư mục mở,
+
+61
+00:07:18,640 --> 00:07:24,640
+Mở rộng và nạp đạn. Sau khi tải xong, chúng tôi thấy những tài liệu tôi đã tạo ra, và chúng tôi có thể
+
+62
+00:07:24,640 --> 00:07:31,680
+thậm chí thay đổi nó từ bây giờ. Giờ chúng ta có thể hỏi đặc vụ, có lẽ tôi sẽ chuyển sang đặc vụ,
+
+63
+00:07:31,680 --> 00:07:40,640
+Tôi sẽ sử dụng một nhà soạn nhạc, và tôi có thể mở ra một tác nhân mới và hỏi, ví dụ, trước tiên. Tôi muốn
+
+64
+00:07:40,640 --> 00:07:53,680
+Thêm tập tin của chúng tôi vào tập tin pop-up.js, và sau đó rõ ràng, tôi sẽ chỉ yêu cầu bấm dấu phẩy điều khiển,
+
+65
+00:07:53,680 --> 00:07:59,200
+Tôi có thể chuyển qua các mô hình đó. Vì vậy, có một kế hoạch, động cơ đặc vụ sẽ tiếp tục làm một số việc,
+
+66
+00:07:59,200 --> 00:08:05,280
+lên kế hoạch chỉ để lên kế hoạch, và sau đó chúng tôi nhấn nút để xây dựng điểm đạn. Nhưng trước hết,
+
+67
+00:08:05,280 --> 00:08:10,160
+Tôi muốn hỏi. Vì vậy, họ hỏi, chúng tôi sẽ không thực hiện bất kỳ mã lệnh. Đầu tiên, nó sẽ xem xét lại.
+
+68
+00:08:10,160 --> 00:08:17,920
+Vì vậy, bây giờ chúng tôi thấy một số thực hiện, và chúng tôi có thể áp dụng tất cả, bằng cách nhấn ứng dụng tất cả,
+
+69
+00:08:17,920 --> 00:08:24,720
+Nó sẽ thay đổi một phần của nó. Và bây giờ, nếu tôi đi để trình bày JSON, chúng tôi thấy các thay đổi. Đây,
+
+70
+00:08:26,240 --> 00:08:30,800
+Nó thực sự được thêm vào một kho lưu trữ, thay đổi rất nhiều của nó, tôi có thể giữ nó, và bật lên như thể
+
+71
+00:08:30,800 --> 00:08:38,480
+Hoàn toàn là mật mã được xây dựng. Được rồi, nhưng bây giờ tôi sẽ tháo nó ra. Và bây giờ chúng tôi sẽ viết chỉ làm thế nào chúng tôi
+
+72
+00:08:38,480 --> 00:08:45,600
+Có thể sử dụng đến giờ. Vì vậy chúng tôi đã xác định trong bản kê khai JSON, làm thế nào HTML, mà không thể bật lên và Buddy.
+
+73
+00:08:45,600 --> 00:08:51,360
+Nên đừng viết nó. Tôi sẽ chỉ anh cách sử dụng nó. Nếu anh không biết, tôi sẽ lấy một tài liệu.
+
+74
+00:08:51,360 --> 00:08:57,280
+Đó là trang web, và về cơ bản nó đã phát hiện chỉ bằng cách nhấn nút. Và rồi,
+
+75
+00:08:57,280 --> 00:09:04,240
+Tôi đã cố gắng tìm một kịch bản và rõ ràng đó là sự thật, và tôi nhấn vòi tự động,
+
+76
+00:09:04,240 --> 00:09:12,000
+Chỉ cần điền vào 2 hoặc 3 chữ cái đầu. Và bây giờ, tôi chỉ cần lưu nó lại. Và rồi khi tôi quay lại
+
+77
+00:09:12,000 --> 00:09:21,600
+Chrome của tôi, tôi sẽ nạp đạn. Và bây giờ, tôi sẽ nhấn nó. Lại đây. Chúng tôi thấy anh có chế độ chống lại chế độ tối.
+
+78
+00:09:21,600 --> 00:09:28,080
+Khá đơn giản. Tôi có thể tạo ra một mã xuất hiện hàng ngày, cho thấy như mã động cơ ngẫu nhiên.
+
+79
+00:09:28,080 --> 00:09:33,120
+Để tôi có thể quay lại. Và chúng tôi sẽ sử dụng bây giờ mà không sử dụng tác nhân như trước đây, bởi vì tôi chỉ
+
+80
+00:09:33,120 --> 00:09:38,480
+loại bỏ nó, nhưng như bạn có thể thấy, nó chỉ tự động xảy ra. Để tôi có thể mở một hồ sơ của JSON,
+
+81
+00:09:38,480 --> 00:09:43,040
+Nó được sử dụng như một tập tin miễn phí từ bây giờ. Nhưng rõ ràng, dự án này lớn hơn một chút.
+
+82
+00:09:43,040 --> 00:09:53,200
+Nên tôi sẽ thay đổi cái tên. Mô tả có thể là quý hàng ngày,
+
+83
+00:09:53,200 --> 00:10:00,080
+Tôi nhấn nút như thế này trong ngày. Và bây giờ, chúng ta thực sự không cần sự cho phép.
+
+84
+00:10:00,080 --> 00:10:04,320
+Nên tôi sẽ bỏ nó đi. Sản xuất sẽ là lợi thế lớn với số lượng mà chúng tôi sẽ hiển thị nó.
+
+85
+00:10:04,320 --> 00:10:13,520
+Và bây giờ, và tôi sẽ cứu nó. Tôi sẽ đi, cái này giống như một sự xuất hiện, xin chào, HTML. Được rồi. Và đây,
+
+86
+00:10:13,520 --> 00:10:19,600
+Chúng tôi có một số chế độ văn bản. Và bây giờ chúng ta chỉ cần thay đổi nó. Tôi sẽ dùng như một câu trích dẫn,
+
+87
+00:10:19,600 --> 00:10:29,840
+tập tin P. Vì vậy, tôi sẽ nói ID, trích dẫn, B, và các địa chỉ xuất hiện trên kịch bản, chính xác. Và rồi khi tôi đến
+
+88
+00:10:29,840 --> 00:10:36,320
+bật lên, tôi sẽ cố gắng đặt một số giống như một trích dẫn. Vì vậy, tôi phải lưu trữ nó trong một số biến.
+
+89
+00:10:36,320 --> 00:10:44,160
+Đây sẽ là một nguyên nhân, bởi vì chúng ta không thay đổi. Và lần này, bạn phải xác định
+
+90
+00:10:44,160 --> 00:10:49,440
+Nó khá lố bịch, nhưng thực tế nó đã được xác định ngay cả một số nhắc nhở trên bây giờ tôi thấy nó.
+
+91
+00:10:49,440 --> 00:10:54,480
+Và sau đó khi tôi đóng nó lại và sử dụng semicolon, nhưng bây giờ tôi muốn hiển thị nó. Vì vậy, chỉ cần làm một lần nữa,
+
+92
+00:10:54,480 --> 00:11:03,920
+tài liệu, lấy một con cừu bên cạnh D, và mua một con cừu bên cạnh nhưng tôi sẽ chỉ sử dụng có thể không phải là văn bản.
+
+93
+00:11:03,920 --> 00:11:14,800
+Đôi khi chúng tôi phải biết trong văn bản trích dẫn, bạn của tôi, vì vậy nó sử dụng như một ngẫu nhiên
+
+94
+00:11:14,800 --> 00:11:22,640
+trích dẫn. Vì vậy, nếu tôi muốn thêm một cái gì đó giống như một trích dẫn lỗi, và tôi sẽ lưu nó.
+
+95
+00:11:24,880 --> 00:11:29,760
+Bây giờ nó chỉ được viết trong biến số, nó sẽ chỉ nhận được như một nguyên nhân. Đây là bút chì.
+
+96
+00:11:29,760 --> 00:11:35,680
+tham khảo liên kết các cuộc gọi, bởi vì bạn chỉ cần đặt một ngẫu nhiên do đó, nó đã biết số lượng
+
+97
+00:11:35,680 --> 00:11:42,960
+các yếu tố biến ở đây. Và bây giờ nếu tôi làm lại nó một lần nữa, đi đến phần mở rộng, nhấn nó
+
+98
+00:11:42,960 --> 00:11:46,320
+gọi đến vào ngày, và khi tôi nhấn nó, chúng tôi thấy nó.
+
