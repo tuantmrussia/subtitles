@@ -1,0 +1,224 @@
+1
+00:00:00,910 --> 00:00:01,660
+Chào mừng trở lại.
+
+2
+00:00:01,990 --> 00:00:04,030
+Chúng ta hãy thảo luận vềethlen X.
+
+3
+00:00:05,810 --> 00:00:07,790
+SC Linux là một hệ thống nhãn.
+
+4
+00:00:08,060 --> 00:00:09,620
+Mỗi quá trình đều có nhãn hiệu.
+
+5
+00:00:09,830 --> 00:00:13,280
+Mỗi đối tượng thư mục tập tin trong hệ điều hành đều có nhãn.
+
+6
+00:00:13,580 --> 00:00:19,160
+Ngay cả cổng mạng, thiết bị và tên máy tiềm năng cũng có cấp độ được chỉ định.
+
+7
+00:00:19,550 --> 00:00:24,380
+Chúng tôi viết quy tắc để kiểm soát truy cập của các khoản thanh toán xử lý đến một nhãn đối tượng như một tập tin.
+
+8
+00:00:24,770 --> 00:00:26,210
+Chúng tôi gọi đây là chính sách.
+
+9
+00:00:26,720 --> 00:00:29,030
+Hạt nhân thực thi những quy tắc này.
+
+10
+00:00:29,300 --> 00:00:37,160
+Đôi khi cơ quan thực thi này được gọi là kiểm soát bắt buộc như một phần của mô hình an ninh người máy.
+
+11
+00:00:37,340 --> 00:00:44,030
+steroid sử dụng an ninh tăng cường Linux để áp dụng quyền kiểm soát bắt buộc trên tất cả các quá trình, thậm chí quá trình
+
+12
+00:00:44,030 --> 00:00:47,480
+chạy với quyền người chủ hoặc siêu người dùng.
+
+13
+00:00:48,680 --> 00:00:51,590
+Linux hoạt động trên nguyên tắc phủ nhận mặc định.
+
+14
+00:00:51,890 --> 00:00:55,190
+Điều đó có nghĩa là bất cứ điều gì không được phép rõ ràng đều bị từ chối.
+
+15
+00:00:55,490 --> 00:00:58,130
+Nó ở chế độ tiếp theo có thể hoạt động trong hai chế độ toàn cầu.
+
+16
+00:00:58,880 --> 00:01:04,490
+Một chế độ Miến Điện mà trong đó sự từ chối không cho phép bị khóa chặt nhưng không được thi hành.
+
+17
+00:01:05,300 --> 00:01:10,280
+Chế độ củng cố quyền từ chối cả hai đều bị khóa và ép buộc.
+
+18
+00:01:11,270 --> 00:01:17,780
+Alpha bao gồm một selinux trong chế độ thực thi và một chính sách bảo mật tương ứng hoạt động theo mặc định
+
+19
+00:01:17,780 --> 00:01:20,630
+Qua các khu vực trong chế độ thực thi.
+
+20
+00:01:20,870 --> 00:01:27,230
+Các hành động không được phép được ngăn chặn và tất cả các cố gắng vi phạm được ghi lại bởi hạt nhân đến thông điệp
+
+21
+00:01:27,240 --> 00:01:28,130
+Hoặc nhìn vào.
+
+22
+00:01:29,290 --> 00:01:33,010
+Vì vậy bây giờ chúng ta hãy thảo luận về nhãn, vai trò và miền.
+
+23
+00:01:33,990 --> 00:01:37,680
+NCLEX Linux phụ thuộc vào nhãn hiệu phù hợp với hành động và chính sách.
+
+24
+00:01:38,520 --> 00:01:42,750
+Nhãn xác định những gì được cho phép lỗ hổng, tập tin và tiến trình.
+
+25
+00:01:42,750 --> 00:01:49,770
+Tất cả đều có nhãn trong các quyết định Linux SC Linux dễ dàng dựa trên nhãn được gán cho các đối tượng và các
+
+26
+00:01:49,770 --> 00:01:51,900
+Chính sách định nghĩa cách chúng tương tác.
+
+27
+00:01:52,590 --> 00:01:55,680
+Các quy tắc chính sách đi kèm theo đây.
+
+28
+00:01:56,690 --> 00:02:01,580
+Ví dụ, cho phép các loại miền, lớp học và quyền hạn ở đâu.
+
+29
+00:02:03,060 --> 00:02:10,440
+Một miền là một nhãn cho quá trình hoặc tập quy trình, cũng được gọi là kiểu miền vì nó chỉ là một loại
+
+30
+00:02:10,440 --> 00:02:11,340
+cho một quá trình.
+
+31
+00:02:12,320 --> 00:02:12,710
+Kiểu.
+
+32
+00:02:12,980 --> 00:02:14,600
+Một loại là nhãn cho đối tượng.
+
+33
+00:02:14,600 --> 00:02:18,470
+Ví dụ, một ổ cắm hoặc bộ đồ vật một lớp học.
+
+34
+00:02:18,710 --> 00:02:22,310
+Đây là một kiểu tập tin cấu hình quang học hoặc ổ cắm đang được truy cập.
+
+35
+00:02:23,680 --> 00:02:29,380
+Bây giờ quyền hạn, sự cho phép có thể giống như đọc, viết hoặc một trong số họ để làm cho nó nhiều hơn
+
+36
+00:02:29,380 --> 00:02:29,770
+Trống.
+
+37
+00:02:29,920 --> 00:02:34,900
+Hãy tưởng tượng một hệ thống mà chúng ta định nghĩa các loại trên vật thể như mèo và chó.
+
+38
+00:02:35,230 --> 00:02:37,210
+Một con mèo và một con chó là kiểu người xử lý.
+
+39
+00:02:37,900 --> 00:02:42,520
+Chúng tôi có một lớp đồ vật mà họ muốn tương tác, mà chúng tôi gọi là thực phẩm.
+
+40
+00:02:43,540 --> 00:02:49,810
+Và tôi muốn thêm các loại thức ăn vào thực phẩm đó và như một món đồ chính sách.
+
+41
+00:02:49,960 --> 00:02:57,160
+Tôi sẽ nói rằng một con chó có quyền ăn thức ăn cho chó và một con mèo được phép ăn đứa bé đó
+
+42
+00:02:57,160 --> 00:02:57,400
+Thức ăn.
+
+43
+00:02:58,180 --> 00:03:00,940
+Ban đầu, sau đó chúng tôi sẽ viết chính sách này như.
+
+44
+00:03:01,720 --> 00:03:04,600
+Tôi biết Cat Chow sẽ ăn.
+
+45
+00:03:05,950 --> 00:03:06,790
+Chào bác sĩ.
+
+46
+00:03:06,900 --> 00:03:08,470
+Bác sĩ Joe sẽ ăn.
+
+47
+00:03:09,280 --> 00:03:17,680
+Vì vậy ở đây bàn phím đầu tiên, đó là Alo thực sự là hoạt động và con chó thực sự là cao
+
+48
+00:03:18,280 --> 00:03:28,240
+Đánh dấu kiểu chó miền và thức ăn cho chó thực sự là đối tượng và thực phẩm thực sự là lớp học và nó thực sự là
+
+49
+00:03:28,240 --> 00:03:29,200
+Chiến dịch.
+
+50
+00:03:29,680 --> 00:03:33,070
+Vì vậy, về cơ bản chúng tôi đang cho phép con chó ăn đêm.
+
+51
+00:03:34,500 --> 00:03:40,320
+Với những quy tắc này, ông đại tá sẽ cho phép quá trình mèo ăn gia súc đóng nhãn và chó
+
+52
+00:03:40,320 --> 00:03:41,880
+ăn thức ăn nhãn chó.
+
+53
+00:03:42,770 --> 00:03:46,160
+Nhưng trong bất kỳ hệ thống chọn nào, mọi thứ đều bị từ chối theo mặc định.
+
+54
+00:03:46,460 --> 00:03:51,350
+Điều này có nghĩa là nếu quá trình mặc định cố gắng ăn tất cả, hạt nhân sẽ ngăn chặn nó.
+
+55
+00:03:52,560 --> 00:03:56,310
+Vì vậy bây giờ tất cả chúng tôi sẽ làm một số bàn tay về sự ngớ ngẩn.
+
+56
+00:03:56,310 --> 00:03:58,620
+Và tôi nghĩ sau đó sẽ có nhiều hơn cho bạn.
+
