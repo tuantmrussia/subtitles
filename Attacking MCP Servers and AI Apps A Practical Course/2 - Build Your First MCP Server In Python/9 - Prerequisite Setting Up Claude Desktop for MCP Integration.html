@@ -1,0 +1,14 @@
+<p>Hi everyone! </p><p>Before we can connect our MCP server to Claude Desktop, we need to configure a few things. </p><p>This setup tells Claude where to find your Python installation and how to connect to your MCP server. </p><p>Let's go through each step to make sure you're ready.</p><p><br></p><h4>1. Locate Your Python Installation</h4><p>- Open your terminal or command prompt </p><p>- Run: <strong>which python</strong> (macOS/Linux) or <strong>where python</strong> (Windows) </p><p>- Copy the full path, you'll need this for Claude app config file.</p><p><br></p><h4>2. Create the Configuration Directory</h4><p><strong><br>For macOS </strong></p><p>- Navigate to: <strong>~/Library/Application Support/Claude</strong></p><p>- Create this folder if it doesn't exist </p><p><br></p><p><strong>For Windows </strong></p><p>- Navigate to: <strong>%APPDATA%\Claude </strong></p><p>- Create this folder if it doesn't exist </p><p><br></p><p><strong>For Linux</strong></p><p>- Navigate to: <strong>~/.config/Claude</strong> </p><p>- Create this folder if it doesn't exist<br></p><h4>3. Create the Configuration File</h4><p>- In the directory from Step 3, create a file named: <strong>claude_desktop_config.json</strong> - Add the following configuration: </p><pre class="prettyprint linenums">{
+    "mcpServers": {
+      "contentful": {
+        "command": "[YOUR_PYTHON_PATH]",
+        "args": [
+          "[FULL_PATH_TO]/contentful_mcp.py"
+        ],
+        "env": {
+            "CONTENTFUL_CMA_TOKEN": "YOUR_TOKEN_HERE",
+            "CONTENTFUL_SPACE_ID": "YOUR_SPACE_ID_HERE"
+        }
+      }
+    }
+}</pre><p><br></p><ol><li><p>Replace <code>[YOUR_PYTHON_PATH]</code> with the path from Step 2</p></li><li><p>Replace <code>[FULL_PATH_TO]/contentful_mcp.py</code> with the full path to your MCP server file</p></li><li><p>Add your Contentful Management API token</p></li><li><p>Add your Contentful Space ID</p></li></ol><p><br></p><h4>4. Close and Re-open Claude Desktop</h4><p>- Close your Claude app completely (not just minimize) </p><p>- Re-open Claude Desktop </p><p>- This is needed for the local MCP config to take effect </p><p>- Check Settings → Developer to verify your MCP server appears.</p>
