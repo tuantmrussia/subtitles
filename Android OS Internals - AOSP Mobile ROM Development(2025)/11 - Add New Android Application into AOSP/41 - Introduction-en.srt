@@ -1,128 +1,116 @@
 1
-00:00:00,000 --> 00:00:06,400
- Adding an application into ASP build system is pretty straightforward.
+00:00:01,950 --> 00:00:06,210
+Adding an application into Aosp build system is pretty straightforward.
 
 2
-00:00:06,400 --> 00:00:13,320
- Let's have a look at the steps to add Java and Kotlin apps to the AOSP build system.
+00:00:06,210 --> 00:00:13,110
+Let's have a look at the steps to add Java and Kotlin apps to the Aosp build system.
 
 3
-00:00:13,320 --> 00:00:15,960
- There are two ways to add apps.
+00:00:13,110 --> 00:00:15,590
+There are two ways to add apps.
 
 4
-00:00:15,960 --> 00:00:22,400
- One is to add the complete project with the source code into the AOSP build system.
+00:00:15,600 --> 00:00:21,990
+One is to add the complete project with the source code into the Aosp build system.
 
 5
-00:00:22,400 --> 00:00:28,400
- Second option is to add a compiled APK file, so that means you will create the project
+00:00:21,990 --> 00:00:29,220
+The second option is to add a compiled APK file, so that means you will create the project in a separate
 
 6
-00:00:28,400 --> 00:00:34,200
- in a separate IDE, for example Android Studio, and you will build the project and make the
+00:00:29,220 --> 00:00:29,850
+IDE.
 
 7
-00:00:34,200 --> 00:00:39,160
- APK and only move the APK into the AOSP folder.
+00:00:29,880 --> 00:00:37,020
+For example, Android studio and you will build the project and make the APK and only move the APK into
 
 8
-00:00:39,160 --> 00:00:45,800
- So in this session, we are going to look at point 1 and see how to add a complete Android
+00:00:37,020 --> 00:00:38,740
+the Aosp folder.
 
 9
-00:00:45,800 --> 00:00:48,800
- project with source code into AOSP.
+00:00:38,760 --> 00:00:46,860
+So in this session we are going to look at point one and see how to add a complete Android project with
 
 10
-00:00:48,800 --> 00:00:55,840
- The reason why we cannot simply copy the Android project directly into AOSP is due to the fact
+00:00:46,860 --> 00:00:48,540
+source code into aosp.
 
 11
-00:00:55,840 --> 00:00:58,760
- that both uses different build system.
+00:00:48,570 --> 00:00:56,040
+The reason why we cannot simply copy the Android project directly into Aosp is due to the fact that
 
 12
-00:00:58,760 --> 00:01:06,040
- As we know, the Android application uses Gradle build system, and AOSP uses the soon build
+00:00:56,040 --> 00:00:58,520
+both uses different build system.
 
 13
-00:01:06,040 --> 00:01:07,040
- system.
+00:00:58,530 --> 00:01:06,480
+As we know, the Android application uses gradle build system and Aosp uses the song build system.
 
 14
-00:01:07,040 --> 00:01:10,840
- These two build systems are not compatible with each other.
+00:01:06,480 --> 00:01:10,510
+These two build systems are not compatible with each other.
 
 15
-00:01:10,840 --> 00:01:15,960
- That's the reason we have to do some manual migration steps in between.
+00:01:10,530 --> 00:01:15,660
+That's the reason we have to do some manual migration steps in between.
 
 16
-00:01:15,960 --> 00:01:20,840
- So these are the steps to migrate an Android project into AOSP.
+00:01:15,660 --> 00:01:20,620
+So these are the steps to migrate an Android project into Aosp.
 
 17
-00:01:20,840 --> 00:01:24,720
- So first step is to restructure the folders.
+00:01:20,640 --> 00:01:24,400
+So first step is to restructure the folders.
 
 18
-00:01:24,720 --> 00:01:31,320
- That means we need to just extract the Java or Coding source folders and the resource folders
+00:01:24,420 --> 00:01:31,740
+That means we need to just extract the Java or Kotlin source folders and the resource folders from the
 
 19
-00:01:31,320 --> 00:01:33,120
- from the Android project.
+00:01:31,740 --> 00:01:37,500
+Android project and rest of the Gradle files are not necessary for aosp.
 
 20
-00:01:33,120 --> 00:01:37,960
- And rest of the Gradle files are not necessary for AOSP.
+00:01:37,530 --> 00:01:45,240
+Second step the same android manifest dot xml can be copied into the Aosp folders.
 
 21
-00:01:37,960 --> 00:01:45,480
- Second step, the same Android manifest dot XML can be copied into the AOSP folders.
+00:01:45,240 --> 00:01:47,190
+It doesn't need any changes.
 
 22
-00:01:45,480 --> 00:01:47,440
- It doesn't need any changes.
+00:01:47,220 --> 00:01:51,270
+Third step is to write the song build scripts.
 
 23
-00:01:47,440 --> 00:01:51,560
- Third step is to write the soon build scripts.
+00:01:51,270 --> 00:01:58,390
+So we need to write the standard BP file for the new project or the module we are going to add.
 
 24
-00:01:51,560 --> 00:01:57,840
- So we need to write the star dot BP file for the new project or the module we are going
+00:01:58,410 --> 00:02:04,380
+First step include the new module or the project in corresponding build scripts.
 
 25
-00:01:57,840 --> 00:01:58,840
- to add.
+00:02:04,380 --> 00:02:12,960
+In the next sessions, we will do a couple of practical sessions to add a Kotlin and Java project into
 
 26
-00:01:58,840 --> 00:02:04,640
- Fourth step include the new module or the project in corresponding build scripts.
+00:02:12,990 --> 00:02:13,660
+Aosp.
 
 27
-00:02:04,640 --> 00:02:11,600
- In the next sessions, we will do a couple of practical sessions to add a Kotlin and Java
+00:02:13,680 --> 00:02:19,860
+So I am using the Android automotive build in this case, but the overall steps which we are following
 
 28
-00:02:11,600 --> 00:02:14,000
- project into AOSP.
+00:02:19,860 --> 00:02:24,240
+in these sessions are similar for other builds as well.
 
 29
-00:02:14,000 --> 00:02:19,240
- So I am using the Android automotive build in this case, but the overall steps which we
-
-30
-00:02:19,240 --> 00:02:24,440
- are following in these sessions are similar for other builds as well.
-
-31
-00:02:24,440 --> 00:02:29,720
- So in case if you have a phone built, please follow the similar steps and it should go
-
-32
-00:02:29,720 --> 00:02:30,120
- fine.
+00:02:24,240 --> 00:02:30,240
+So in case if you have a foreign build, please follow the similar steps and it should go fine.
 
