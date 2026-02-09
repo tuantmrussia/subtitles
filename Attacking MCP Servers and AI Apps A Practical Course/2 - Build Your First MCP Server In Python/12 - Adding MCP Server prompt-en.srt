@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:07,400
+ Hi and welcome back. In this lecture we will add a prompt to our MCP server. A prompt
+
+2
+00:00:07,400 --> 00:00:13,800
+ is a reusable template that can help the user in a repetitive task. For example, if the
+
+3
+00:00:13,800 --> 00:00:19,600
+ user is frequently asking the model to list the contentful entries and then translate them
+
+4
+00:00:19,600 --> 00:00:26,200
+ into certain languages, then the MCP server can provide a prompt resource to help the user
+
+5
+00:00:26,200 --> 00:00:34,000
+ with that repetitive task. Adding a prompt to the MCP server is very simple and very similar
+
+6
+00:00:34,000 --> 00:00:40,200
+ to adding an MCP resource. We create a Python method and decorate this method with
+
+7
+00:00:40,200 --> 00:00:47,200
+ MCP prompt and then we define the name of the prompt I call it Hill Translation. Then we simply
+
+8
+00:00:47,200 --> 00:00:53,000
+ return the actual text or prompt to the user. Notice here we defined a variable called
+
+9
+00:00:53,000 --> 00:00:59,600
+ language and this is the user input. So the user is required to provide a language and then
+
+10
+00:00:59,600 --> 00:01:06,120
+ the provided input or the user input will be used to replace the placeholder in the prompt
+
+11
+00:01:06,120 --> 00:01:12,200
+ text. Okay, let's see this in action. Right now I'm in the desktop application and then
+
+12
+00:01:12,200 --> 00:01:20,000
+ I'm going to go to the plus sign and click on the add translation prompt. Now it asks
+
+13
+00:01:20,000 --> 00:01:27,000
+ me to provide the language and here I will just say, I don't know, like maybe German.
+
+14
+00:01:27,000 --> 00:01:32,960
+ If we click on the translation to text, now we can see the full prompt. So at this point
+
+15
+00:01:32,960 --> 00:01:38,680
+ if I would just go ahead and click on enter, it's going to fetch the entries from contentful
+
+16
+00:01:38,680 --> 00:01:45,800
+ space and then translate them into German. And let me allow this and while that happens,
+
+17
+00:01:45,800 --> 00:01:50,960
+ please remember that as we said before, whenever you see a user input, you should always
+
+18
+00:01:50,960 --> 00:01:57,000
+ think of an attack vector. So try to think what can go wrong here. We will cover many
+
+19
+00:01:57,000 --> 00:02:02,040
+ attacks in section two of this course. So I hope that this lecture has been informative
+
+20
+00:02:02,040 --> 00:02:05,560
+ for you and I will see you in the next one. Thanks for watching.
+
