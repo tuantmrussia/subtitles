@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:10,000
+Chào mừng trở lại. Trong bài giảng này, chúng tôi sẽ chơi với máy chủ MCP đơn giản của chúng tôi và tất cả các lý thuyết chúng tôi đã nói trong bài giảng trước sẽ làm cho ý nghĩa bây giờ.
+
+2
+00:00:10,000 --> 00:00:14,000
+Hãy xem từng bước từng bước một.
+
+3
+00:00:14,000 --> 00:00:21,000
+Antropic, công ty hàng đầu phía sau MCP, có một Python SDK tên là MCP.
+
+4
+00:00:21,000 --> 00:00:26,000
+Thư viện này sẽ cho phép bạn khởi chạy một trình phục vụ MCP trong vòng vài phút.
+
+5
+00:00:26,000 --> 00:00:35,000
+Nếu bạn đã cài đặt các quan hệ phụ thuộc từ yêu cầu.txt trong khi đó bạn có thể đi và bạn nên có gói MCP đã cài đặt.
+
+6
+00:00:35,000 --> 00:00:39,000
+Chúng tôi bắt đầu bằng cách xác định một lớp gọi là máy chủ MCP thỏa đáng.
+
+7
+00:00:39,000 --> 00:00:45,000
+Sau đó, chúng tôi ngay lập tức đưa ra lớp học MCP nhanh được cung cấp bởi gói MCP.
+
+8
+00:00:45,000 --> 00:00:54,000
+Chúng tôi đặt tên máy chủ MCP của chúng tôi là máy chủ MCP thỏa đáng và chúng tôi tuyên bố một số biến số để truy cập thỏa đáng Token và không gian ID.
+
+9
+00:00:54,000 --> 00:01:00,000
+Chúng tôi cũng xác định các URL cơ bản được sử dụng cho dịch vụ API thỏa đáng.
+
+10
+00:01:00,000 --> 00:01:06,000
+Chúng tôi mong đợi người dùng sẽ vượt qua sự truy cập thỏa đáng Token và ID không gian như biến môi trường.
+
+11
+00:01:06,000 --> 00:01:12,000
+Nếu chúng ta di chuyển xuống một chút theo phương pháp Run, chúng ta cố gắng đọc chúng từ biến môi trường.
+
+12
+00:01:12,000 --> 00:01:19,000
+Và chúng tôi kiểm tra nếu dấu hiệu và không gian đã được thiết lập, nếu không, sau đó chúng tôi gửi lại một thông điệp lỗi.
+
+13
+00:01:19,000 --> 00:01:29,000
+Sau đó, cuối cùng, chúng tôi gọi phương pháp chạy mà là khởi động máy chủ MCP và chúng tôi thiết lập chế độ vận chuyển là đầu ra chuẩn.
+
+14
+00:01:29,000 --> 00:01:38,000
+Hãy nhớ rằng, chúng ta đã nói trước đó khi chúng ta kết nối đĩa Vân Đầu với máy chủ MCP địa phương, sau đó kênh liên lạc là đầu vào chuẩn.
+
+15
+00:01:38,000 --> 00:01:44,000
+Và vì đây là một máy chủ MCP cục bộ, chúng tôi định nghĩa giao thông là đầu vào chuẩn.
+
+16
+00:01:44,000 --> 00:01:50,000
+Bây giờ tại thời điểm này chúng tôi có mã tối thiểu cần thiết để bắt đầu một máy chủ MCP cục bộ.
+
+17
+00:01:50,000 --> 00:01:55,000
+Bây giờ chúng ta cần thiết lập các công cụ mà máy chủ MCP sẽ phơi bày cho khách hàng MCP.
+
+18
+00:01:55,000 --> 00:02:04,000
+Công cụ trình phục vụ MCP cơ bản chỉ là một chức năng Python mà trình khách MCP có thể gọi để thực hiện các nhiệm vụ cụ thể.
+
+19
+00:02:04,000 --> 00:02:11,000
+Ví dụ, máy chủ MCP của chúng tôi sẽ cung cấp hai công cụ hoặc hai phương pháp nếu bạn muốn gọi chúng.
+
+20
+00:02:11,000 --> 00:02:18,000
+Nó sẽ cung cấp ít mục thỏa mãn hơn và công cụ này, nó sẽ liệt kê tất cả các mục trong không gian hài lòng.
+
+21
+00:02:18,000 --> 00:02:27,000
+Và nó cũng sẽ cung cấp cho có được thỏa mãn mục nhập và công cụ này sẽ nhận được một mục nhập cụ thể bằng cách cung cấp một thẻ căn cước.
+
+22
+00:02:27,000 --> 00:02:34,000
+Khách hàng MCP có thể truy cập và nó cũng có thể thực hiện những phương pháp này hoặc những công cụ này.
+
+23
+00:02:34,000 --> 00:02:38,000
+Nếu người dùng yêu cầu công việc này yêu cầu họ.
+
+24
+00:02:38,000 --> 00:02:44,000
+Giao thức làm cho nó xảy ra phía sau hiện trường được gọi là JSON RPC.
+
+25
+00:02:44,000 --> 00:02:57,000
+JSON RPC là một thủ tục từ xa được gọi là giao thức MCP đã được áp dụng để cho phép ứng dụng khách MCP gọi các chức năng trên máy chủ MCP.
+
+26
+00:02:57,000 --> 00:03:09,000
+Sử dụng các giao thức RPC cho việc liên lạc giữa khách hàng MCP và trình phục vụ MCP là một khá mạnh mẽ và ít phức tạp hơn xây dựng ví dụ REST API.
+
+27
+00:03:09,000 --> 00:03:17,000
+Với RPC, bạn chỉ cần một điểm kết thúc HTTP cho tất cả các chức năng mà bạn muốn phơi bày và thực hiện.
+
+28
+00:03:17,000 --> 00:03:20,000
+Lúc đó tôi đang bị truy cập vào tài khoản thỏa đáng của mình.
+
+29
+00:03:20,000 --> 00:03:26,000
+Máy chủ MCP của chúng tôi có thể liệt kê tất cả các mục mà bạn có thể thấy dưới không gian này.
+
+30
+00:03:26,000 --> 00:03:31,000
+Nhưng nó cũng có thể có được một mục nhập cụ thể bởi ID của nó.
+
+31
+00:03:31,000 --> 00:03:39,000
+Vì vậy, nếu chúng tôi thông qua các ID mục mà bạn có thể nhìn thấy trong URL của chúng tôi MCP nên có thể lấy tất cả các dữ liệu dưới mục nhập đó.
+
+32
+00:03:39,000 --> 00:03:43,000
+Bây giờ nếu chúng ta quay lại căn cứ mật mã tôi muốn nói ra một vài điều.
+
+33
+00:03:43,000 --> 00:03:52,000
+Thông báo đầu tiên rằng chúng tôi sử dụng công cụ MCP như một thiết kế để xác định rằng chức năng này là thực sự một công cụ MCP.
+
+34
+00:03:52,000 --> 00:04:03,000
+Người trang trí này đến từ thư viện MCP nhanh và nó thực hiện tất cả các nâng nặng phía sau cảnh để phơi bày rằng chức năng này là một công cụ mà khách hàng MCP có thể gọi.
+
+35
+00:04:03,000 --> 00:04:21,000
+Ghi chú thứ hai của tôi chúng tôi cần phải xác định chuỗi tài liệu theo chức năng và điều này là rất quan trọng bởi vì mô tả mà chúng tôi định nghĩa ở đây nó sẽ được sử dụng bởi mô hình AI để quyết định công cụ nào từ máy phục vụ MCP để gọi hoặc thực hiện để phù hợp với yêu cầu người dùng.
+
+36
+00:04:21,000 --> 00:04:27,000
+Và cuộc gọi cuối cùng của tôi thông báo rằng chức năng này thực sự có thể đưa một đầu vào như một đối số.
+
+37
+00:04:27,000 --> 00:04:32,000
+Trong trường hợp này, người dùng nhập thực sự là ID mục nhập.
+
+38
+00:04:32,000 --> 00:04:39,000
+Và như bạn đã biết trong an ninh bất cứ khi nào bạn nhìn thấy một đầu vào người dùng ngay lập tức bạn nên bắt đầu nghĩ về một người chiến thắng.
+
+39
+00:04:39,000 --> 00:04:47,000
+Tôi không muốn đi trước bản thân mình nhưng cho dù bạn là một kỹ sư an ninh thâm nhập vào thử nghiệm lỗi.
+
+40
+00:04:47,000 --> 00:04:51,000
+Tôi muốn nghĩ về những người chiến thắng ở đây.
+
+41
+00:04:51,000 --> 00:04:58,000
+Chúng ta sẽ bàn về vấn đề này sau trong khóa học, nhưng bắt đầu nghĩ về điều có thể sai ngay từ đầu luôn là tốt.
+
+42
+00:04:58,000 --> 00:05:09,000
+Chúng tôi đã nói trước đó rằng máy phục vụ MCP chăm sóc tất cả các chi tiết như đi qua đầu hiệu lực, lỗi giới hạn lớn quản lý và định dạng dữ liệu.
+
+43
+00:05:09,000 --> 00:05:17,000
+Vì vậy, như bạn có thể thấy dưới sự thực hiện của mỗi công cụ, chúng tôi đơn giản chỉ cần thực hiện một yêu cầu HTTP để các hệ thống API thỏa đáng.
+
+44
+00:05:17,000 --> 00:05:25,000
+Chúng tôi đã vượt qua các biểu tượng và chúng tôi trả lời JSON cho khách hàng MCP trong trường hợp các mục nhập đã được thu hồi thành công.
+
+45
+00:05:25,000 --> 00:05:28,000
+Nếu không chúng tôi chỉ cần trả lại lỗi với một thông điệp lỗi.
+
+46
+00:05:28,000 --> 00:05:42,000
+Được rồi trước khi chúng ta hoàn thành bài giảng này hãy nhanh chóng tóm tắt lại và cố gắng hình dung lưu lượng dữ liệu từ đầu.
+
+47
+00:05:42,000 --> 00:05:48,000
+Khi một người dùng yêu cầu mô hình liệt kê tất cả các mục nhập hài lòng các mô hình AI sẽ kiểm tra nếu có một máy phục vụ MCP tích hợp mà có thể xử lý yêu cầu này sau đó nó tìm thấy máy phục vụ MCP thỏa đáng.
+
+48
+00:05:48,000 --> 00:05:57,000
+Sau đó sử dụng các tài liệu hướng dẫn công cụ như chúng tôi đã nói nó sẽ quyết định gọi danh sách các mục nhập thỏa đáng.
+
+49
+00:05:57,000 --> 00:06:03,000
+Sau đó, sử dụng trình khách MCP nó sẽ gửi một yêu cầu HTTP tới máy chủ MCP.
+
+50
+00:06:03,000 --> 00:06:12,000
+Trọng tải của yêu cầu HTTP này nó sẽ chứa tên của công cụ mà chúng tôi muốn gọi cũng như bất kỳ đầu vào đã cung cấp.
+
+51
+00:06:12,000 --> 00:06:31,000
+Bây giờ, khi máy phục vụ MCP nhận được yêu cầu này, nó sẽ thực hiện danh sách các mục nhập thỏa đáng mà làm cho một yêu cầu API thỏa đáng để độ hài lòng API và sau đó nó sẽ còn lại phản hồi cho khách hàng MCP mà sẽ vượt qua phản hồi cho mô hình AI.
+
+52
+00:06:31,000 --> 00:06:44,000
+Trong bài giảng tiếp theo, chúng tôi sẽ tích hợp máy chủ MCP ở địa phương với đầu đĩa đám mây và bạn sẽ thấy dòng chảy này trong hành động. Được rồi, các bạn, tôi hy vọng bài giảng này đã được cung cấp thông tin cho các bạn và tôi muốn gặp các bạn trong bài giảng tiếp theo.
+
+53
+00:06:44,000 --> 00:06:45,000
+Cảm ơn đã theo dõi.
+
