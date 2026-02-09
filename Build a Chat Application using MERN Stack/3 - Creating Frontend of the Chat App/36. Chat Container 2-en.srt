@@ -1,0 +1,404 @@
+1
+00:00:00,000 --> 00:00:05,440
+ So, hello everyone, in this video we are going to work with our chat store.js file, we
+
+2
+00:00:05,440 --> 00:00:07,280
+ need to make and modify some functions, okay.
+
+3
+00:00:07,280 --> 00:00:10,060
+ So, let's start with the get messages, okay.
+
+4
+00:00:10,060 --> 00:00:17,880
+ So, get messages and async is async function and it is a callback.
+
+5
+00:00:17,880 --> 00:00:25,000
+ So, let's do this one and we need to give one comma so that it doesn't cause any kind
+
+6
+00:00:25,000 --> 00:00:26,000
+ of error issue.
+
+7
+00:00:26,000 --> 00:00:30,280
+ So, now after this, we are going to type everything inside of the try and catch logs,
+
+8
+00:00:30,280 --> 00:00:35,600
+ try and catch and if some error occurs then we are going to console log that error.
+
+9
+00:00:35,600 --> 00:00:40,640
+ Now, what we are actually going to do is we are going to hit a API point and we are
+
+10
+00:00:40,640 --> 00:00:42,360
+ going to get one response, right.
+
+11
+00:00:42,360 --> 00:00:47,280
+ So, for this one, so await access instance, access instance dot get.
+
+12
+00:00:47,280 --> 00:00:51,400
+ So, we are going to get one response from messages.
+
+13
+00:00:51,400 --> 00:01:00,560
+ So, message slash users, okay, I find now we are going to set everything like set the
+
+14
+00:01:00,560 --> 00:01:05,800
+ users for the response dot data, whatever data which is coming from the response, we are
+
+15
+00:01:05,800 --> 00:01:11,520
+ going to pass it to the users and we are going to display using the toast dot success.
+
+16
+00:01:11,520 --> 00:01:21,120
+ So, toast dot success, we are going to display that to users fetched successfully, okay.
+
+17
+00:01:21,120 --> 00:01:27,760
+ And for the cache block, we have this error and so for this one, let's do something.
+
+18
+00:01:27,760 --> 00:01:33,200
+ So, for that one thing, we need to make one messages array, okay.
+
+19
+00:01:33,200 --> 00:01:43,160
+ So message is, let's make this one empty array and after this, in the cache block, we are
+
+20
+00:01:43,160 --> 00:01:47,840
+ going to write whatever the error that may come.
+
+21
+00:01:47,840 --> 00:02:03,020
+ So toast dot toast dot success, toast dot error actually, error failed to fetch whatever
+
+22
+00:02:03,020 --> 00:02:04,020
+ the message.
+
+23
+00:02:04,020 --> 00:02:09,120
+ So failed to fetch messages, okay.
+
+24
+00:02:09,120 --> 00:02:19,480
+ Since it is showing some error, so in that case, just go down console dot log error, right.
+
+25
+00:02:19,480 --> 00:02:26,160
+ So now this one is done, now after this, what we are going to do is, let's make one another
+
+26
+00:02:26,160 --> 00:02:29,040
+ function which is send messages.
+
+27
+00:02:29,040 --> 00:02:34,840
+ So after this send messages, we are going to get the message, we are going to also send
+
+28
+00:02:34,840 --> 00:02:37,640
+ the message in our chat up, that's why we are going to make this one.
+
+29
+00:02:37,640 --> 00:02:46,720
+ And now similar methods, we are going to follow what this one const selected user, whatever
+
+30
+00:02:46,720 --> 00:02:49,640
+ the selected user is, we are going to get that.
+
+31
+00:02:49,640 --> 00:02:58,080
+ So, okay, let's do some, let's add some try and cache block, so try and cache whatever
+
+32
+00:02:58,080 --> 00:03:11,840
+ the error comes, so console dot allergy error and toast dot error.
+
+33
+00:03:11,840 --> 00:03:14,400
+ So selected users, okay.
+
+34
+00:03:14,400 --> 00:03:25,280
+ So let's take one response, okay, so once again, let's do one thing.
+
+35
+00:03:25,280 --> 00:03:28,000
+ And the try block, we are going to get the response.
+
+36
+00:03:28,000 --> 00:03:40,580
+ So res equals to a wait x your dot, x your instance dot post, we are going to hit this request
+
+37
+00:03:40,580 --> 00:03:48,240
+ and which path we are going to hit, that would be less messages, a one thing I think, okay,
+
+38
+00:03:48,240 --> 00:04:07,680
+ that one I have did something wrong, messages, less send message, send message and then
+
+39
+00:04:07,680 --> 00:04:15,280
+ for one particular user selected user dot underscore ID, okay.
+
+40
+00:04:15,280 --> 00:04:20,120
+ So we have done that and after this, whatever the message is going to come, we are going
+
+41
+00:04:20,120 --> 00:04:32,640
+ to fill it inside of the array, okay, so messages array, so message is dot dot dot.
+
+42
+00:04:32,640 --> 00:04:37,840
+ You know why these three dots I have used actually right, so whatever the data that is
+
+43
+00:04:37,840 --> 00:04:44,720
+ already there and whatever the data that comes from the response, we are going to just
+
+44
+00:04:44,720 --> 00:04:53,320
+ say why is showing this, okay, so whatever the data that comes and whatever the data which
+
+45
+00:04:53,320 --> 00:05:00,000
+ is coming from the response, we are going to set that, okay, that's why we are doing this.
+
+46
+00:05:00,000 --> 00:05:11,080
+ So after this, we have done something wrong, no, let me check once, yeah one message should
+
+47
+00:05:11,080 --> 00:05:28,400
+ be here, okay, so toast dot success message sent successfully, okay, save it and after this
+
+48
+00:05:28,400 --> 00:05:39,800
+ for that thing also, message failed to send, message failed to sent, whatever the error,
+
+49
+00:05:39,800 --> 00:05:48,000
+ but why this try block is showing some parsing error, anything I have done wrong, okay,
+
+50
+00:05:48,000 --> 00:06:01,960
+ for this one, it will do get, so this message is this should be correct I guess, but
+
+51
+00:06:01,960 --> 00:06:11,480
+ why it's showing like that, let me check messages is correct only and triple dots messages
+
+52
+00:06:11,480 --> 00:06:24,760
+ comma response data messages is not defined, messages is not defined, okay, so here actually
+
+53
+00:06:24,760 --> 00:06:34,200
+ the data whatever the data which comes and for that we are selecting the users and const
+
+54
+00:06:34,200 --> 00:06:46,120
+ response equal to await access instance dot get, it's correct only right, but why it's
+
+55
+00:06:46,120 --> 00:06:56,440
+ okay, so post should be here, okay, as I've done with this error, but still it's showing
+
+56
+00:06:56,440 --> 00:07:03,960
+ some error, why, okay, this control and as see, there's some type of if I guess that's
+
+57
+00:07:03,960 --> 00:07:11,640
+ why it was not showing, I have just passed it here, the payload included here and the
+
+58
+00:07:11,640 --> 00:07:14,120
+ rest of the thing remains the same.
+
+59
+00:07:14,120 --> 00:07:20,520
+ So now after this what we are actually going to do in the chat store, there's a set method,
+
+60
+00:07:20,520 --> 00:07:24,760
+ okay, so it's actually getting from the mongos, this should not happen actually it's from
+
+61
+00:07:24,760 --> 00:07:36,520
+ the juice and only, so set and get, I think that should be fine and after this, let me think
+
+62
+00:07:36,520 --> 00:07:46,040
+ what we are going to do, okay, so we need to get that, like we need to use the use effect
+
+63
+00:07:46,040 --> 00:07:56,760
+ to write, so in order to get messages to be loaded at the time of rendering, so get messages,
+
+64
+00:07:56,760 --> 00:08:04,360
+ okay, and we should also pass the dependency array for get messages that should be the same only,
+
+65
+00:08:04,920 --> 00:08:14,840
+ so brackets, get messages, okay, inside of this, I think it should be fine,
+
+66
+00:08:14,840 --> 00:08:24,200
+ parsing error, there's some parsing error, bytes, parsing error, import get messages, okay,
+
+67
+00:08:25,560 --> 00:08:35,560
+ it's done correct only, bytes, get messages,
+
+68
+00:08:35,560 --> 00:08:45,960
+ there you are, oh, silly mistake, it should not be here, guys, actually it should be in the messages,
+
+69
+00:08:46,680 --> 00:08:56,840
+ dot j6, we need to render there, right, nice use, so use effect,
+
+70
+00:08:56,840 --> 00:09:12,280
+ and now here get messages, so we need to get that, and here also let's pass this, so
+
+71
+00:09:13,240 --> 00:09:26,040
+ get messages, import use effect from react, so whatever the messages, like for this get messages,
+
+72
+00:09:26,040 --> 00:09:32,040
+ we are passing this in the use effect of react, so it's going to preload or render at the time
+
+73
+00:09:32,040 --> 00:09:38,680
+ of application loading, right, so that's what we are actually doing here, and for the messages,
+
+74
+00:09:38,680 --> 00:09:45,480
+ let's go to the message input, so we need to set the states here, so we'll do one thing, import,
+
+75
+00:09:45,480 --> 00:09:56,760
+ import use state, so use state from react, and after this, let's use this use state hook in order to
+
+76
+00:09:56,760 --> 00:10:06,440
+ set some values, so const, let's get the messages, so send message function, we are going to get
+
+77
+00:10:06,440 --> 00:10:14,440
+ it from the chat store, and we are going to use it here in some button, okay, so chat store input,
+
+78
+00:10:14,440 --> 00:10:25,560
+ chat store from chat store, and this send message is going to import it from the chat store, and
+
+79
+00:10:25,560 --> 00:10:37,240
+ after this, let's use some text whatever the text and set text method, and use state, after this,
+
+80
+00:10:37,240 --> 00:10:42,680
+ suppose there's some image which we want to send, so for that one image and set image,
+
+81
+00:10:42,680 --> 00:10:53,320
+ set image, and for that also we use the user state, so for all these values we are going to pass
+
+82
+00:10:53,320 --> 00:11:03,720
+ it on, so in the button as you can see I have left some space already, so on click, for on click
+
+83
+00:11:03,720 --> 00:11:20,120
+ method we are going to pass it here file input, file input, ref, okay, dot current, whatever the
+
+84
+00:11:20,120 --> 00:11:30,840
+ current file is, then click, I think this should be correct right, it is a callback function, file
+
+85
+00:11:30,840 --> 00:11:42,120
+ input, ref, dot current, it's saying that it is actually not defined, why, one way to second
+
+86
+00:11:42,120 --> 00:11:49,880
+ place, okay guys actually I forgot to import this user of code, okay, so we imported this user of
+
+87
+00:11:49,880 --> 00:11:55,400
+ code, and also we didn't define it, file input, ref equal to user of null, okay, so that's why
+
+88
+00:11:55,400 --> 00:12:02,440
+ it was happening, so now after this, I think this video is long enough, but let me do one thing more,
+
+89
+00:12:02,440 --> 00:12:08,520
+ for send messages and set text and images also we are going to do that also, okay, right,
+
+90
+00:12:09,080 --> 00:12:15,640
+ so for reference we can take this as, wait a second, reference we can take this as
+
+91
+00:12:15,640 --> 00:12:29,240
+ file input, file input, ref, and on change equals to,
+
+92
+00:12:32,840 --> 00:12:40,520
+ we are going to make these functions right away, so handle image and whatever, so after this,
+
+93
+00:12:40,520 --> 00:12:51,560
+ what we can actually do is, we can take all the values for this, like value equal to text,
+
+94
+00:12:53,160 --> 00:13:02,760
+ right, so we have made that above, so value equal to text, and on change equals to E,
+
+95
+00:13:02,760 --> 00:13:15,720
+ set text, and E dot target dot value, so whenever it's going to change, the change will be reflected
+
+96
+00:13:15,720 --> 00:13:27,240
+ in the input, whatever it is there, so after this we can change this for, so set text is changed,
+
+97
+00:13:27,240 --> 00:13:31,560
+ right, so we can change for the button also, so I've given some space here, so in order to
+
+98
+00:13:31,560 --> 00:13:41,320
+ add some files, like add some changes here, so for button on click we are going to make one
+
+99
+00:13:42,520 --> 00:13:48,920
+ handle send message, handle send message, we are going to create that one function also,
+
+100
+00:13:48,920 --> 00:13:56,600
+ okay, so the video limit is like, it's quite extending and it's of 15 minutes only,
+
+101
+00:13:56,600 --> 00:13:59,320
+ so we are going to see in the next video, okay,
+
