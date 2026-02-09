@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:06,960
+ In that very first step, we are going to first construct a middleware, okay.
+
+2
+00:00:06,960 --> 00:00:14,880
+ Okay, so what we can do actually is, we can go to this back and folder and we can create
+
+3
+00:00:14,880 --> 00:00:22,800
+ with, like we can create this one middleware and folder, so it is going to connect the
+
+4
+00:00:22,800 --> 00:00:24,720
+ front end and the back end.
+
+5
+00:00:24,720 --> 00:00:29,280
+ Like for that basic purpose we used middleware, but in this case we are going to just use
+
+6
+00:00:29,280 --> 00:00:38,320
+ this auth middleware.js, we are going to make this auth middleware.js file, okay.
+
+7
+00:00:38,320 --> 00:00:43,440
+ So now, inside of this, what we can actually do is import JWT, okay.
+
+8
+00:00:43,440 --> 00:01:07,440
+ So import JWT from JSON, web token and do one thing, import user from dot.slasmodel/user model.js
+
+9
+00:01:07,440 --> 00:01:17,880
+ and export cons, we are going to make a one function, which is called as check auth, okay.
+
+10
+00:01:17,880 --> 00:01:27,320
+ So check auth and same, we are going to assign this as a sync a request and the response and
+
+11
+00:01:27,320 --> 00:01:41,880
+ then the next one, this is actually wrong, so response and next, okay.
+
+12
+00:01:41,880 --> 00:01:47,560
+ So now, again the same concept which we will be using, like try and cache blocks or try
+
+13
+00:01:47,560 --> 00:01:59,720
+ and cache, here it would be error, okay. So we are going to verify that about the user,
+
+14
+00:01:59,720 --> 00:02:04,400
+ okay. So which user is present. So first we are going to make this middleware, I am going
+
+15
+00:02:04,400 --> 00:02:14,840
+ to explain UI, we are making this middleware, so bear with me. So equal to request dot cookie,
+
+16
+00:02:14,840 --> 00:02:23,280
+ so we are going to get the value of the JWT from the cookies and after this, we are just
+
+17
+00:02:23,280 --> 00:02:32,960
+ going to check if there is no token, okay. So there is no token or the token doesn't exist.
+
+18
+00:02:32,960 --> 00:02:48,240
+ In that case, we are going to just return the RES. status of 400.json token is invalid,
+
+19
+00:02:48,240 --> 00:03:00,320
+ okay. So the token is invalid and now after this, okay, this type of I guess, so after
+
+20
+00:03:00,320 --> 00:03:08,040
+ this since token is required, we are going to implement another conditions like we are going
+
+21
+00:03:08,040 --> 00:03:18,040
+ to just use this decode, okay. So const decode equal to JWT dot verify, verify, we are going
+
+22
+00:03:18,040 --> 00:03:22,720
+ to verify whether the token exists or not and after that if this token exists, we are going
+
+23
+00:03:22,720 --> 00:03:30,680
+ to verify the token, we are the secret key that we have already made, so process dot nv dot c correct
+
+24
+00:03:30,680 --> 00:03:41,160
+ key, okay. Secret key. So after this, if this decoded value doesn't exist, we are going
+
+25
+00:03:41,160 --> 00:03:47,240
+ to check here also like whether this decoded value doesn't exist. In that case, we are going
+
+26
+00:03:47,240 --> 00:04:06,600
+ to return the status, so return the status as 401 dot JSON and message unauthorized invalid
+
+27
+00:04:06,600 --> 00:04:14,680
+ token, invalid token. So basically why we are making this is, we have to verify the token
+
+28
+00:04:14,680 --> 00:04:20,120
+ like whether it is coming from an existing user or not, okay. If this is not a valid token,
+
+29
+00:04:20,120 --> 00:04:26,360
+ then we cannot change our profile, right. So that's why, like we cannot make a change in our
+
+30
+00:04:26,360 --> 00:04:31,720
+ profile, if it's not a authorized user. That's why we are making this a auth middleware,
+
+31
+00:04:31,720 --> 00:04:46,400
+ okay. So here const await user dot find by ID, so find by ID and so we are going to use
+
+32
+00:04:46,400 --> 00:04:53,960
+ that decoded value, so decoded value user dot ID and we are going to select the field
+
+33
+00:04:53,960 --> 00:05:08,040
+ of password. So dot select and then password and after this, again, we are going to check
+
+34
+00:05:08,040 --> 00:05:14,920
+ whether if this user is existing or not. So if this user doesn't exist, like we have already
+
+35
+00:05:14,920 --> 00:05:29,040
+ done in the previous video. So res dot status, sorry, as dot status, 404 dot JSON and we are going
+
+36
+00:05:29,040 --> 00:05:46,520
+ to just pass that that user is not found. So message user not found, okay. So now we are going
+
+37
+00:05:46,520 --> 00:05:59,640
+ to again get that user from the user and we are going to implement this next, okay. So next
+
+38
+00:05:59,640 --> 00:06:05,760
+ function. So it's automatically going to pass to the next function. So that is why it is used.
+
+39
+00:06:05,760 --> 00:06:11,400
+ So export const check out. So we are going to take the token from the JWT, we are going
+
+40
+00:06:11,400 --> 00:06:15,440
+ to verify the token with that if this token exists or not, if this token doesn't exist,
+
+41
+00:06:15,440 --> 00:06:20,920
+ then we are going to pass this status as res dot status 400 dot JSON, that token is invalid,
+
+42
+00:06:20,920 --> 00:06:25,480
+ okay. Otherwise, if the token exists, then we are going to take that token inside of our
+
+43
+00:06:25,480 --> 00:06:30,600
+ decoded value and we are going to check whether this decoded value exists or not.
+
+44
+00:06:30,600 --> 00:06:34,640
+ If this doesn't exist, then again, we are going to pass the message as unauthorized invalid
+
+45
+00:06:34,640 --> 00:06:40,920
+ token. So this is not coming from a verified user. Then after that, if the user exists
+
+46
+00:06:40,920 --> 00:06:47,320
+ in this case, so we are going to store the value of the user by decoded user ID.
+
+47
+00:06:47,320 --> 00:06:53,760
+ So decode dot user ID and we are going to select the field as password. And if that particular
+
+48
+00:06:53,760 --> 00:06:57,800
+ user is not found, again, we are going to add check here. Then in that case also, we are
+
+49
+00:06:57,800 --> 00:07:03,120
+ going to say that user is not found. Otherwise, we are going to take the user's value
+
+50
+00:07:03,120 --> 00:07:07,920
+ from the request, so request dot user equal to user and the next function is going to
+
+51
+00:07:07,920 --> 00:07:14,840
+ call the next function in the middleware. So again, in this one, what we are going to do
+
+52
+00:07:14,840 --> 00:07:20,800
+ like in the cache block also, simply we are going to pass the error, whatever it comes
+
+53
+00:07:20,800 --> 00:07:34,240
+ to console dot LOG that some kind of error is coming. So error in checkout middleware.
+
+54
+00:07:34,240 --> 00:07:42,400
+ So to have the authenticity of a particular user, whether it exists or not or whether this
+
+55
+00:07:42,400 --> 00:07:46,480
+ is a verified user or not, it is coming, the message is coming from the verified user.
+
+56
+00:07:46,480 --> 00:07:49,080
+ We are using this or the middleware dot here, okay.
+
