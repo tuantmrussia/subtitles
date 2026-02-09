@@ -1,0 +1,408 @@
+1
+00:00:00,000 --> 00:00:05,040
+Bây giờ chúng ta hãy xem làm thế nào các tác nhân đá phiến giải quyết một số thách thức mà chúng ta đã thảo luận trước đây.
+
+2
+00:00:05,040 --> 00:00:11,600
+Chúng tôi đã thảo luận làm thế nào nhà phát triển đã viết ứng dụng aka
+
+3
+00:00:11,600 --> 00:00:17,680
+Hãy đau buồn với Al ở địa phương. Bây giờ điều đầu tiên ông cần làm là, bây giờ ông cần để triển khai này
+
+4
+00:00:17,680 --> 00:00:25,120
+Mã trên một thứ gọi là thời gian chạy của đặc vụ. Bây giờ chúng ta có thể nghĩ về nhân viên thời gian chạy như một AWS
+
+5
+00:00:25,120 --> 00:00:31,600
+lambda cho đặc vụ Al. Vì vậy, nếu bạn đã sử dụng AWS lambda trước, bây giờ bạn biết rằng bạn có thể mang lại
+
+6
+00:00:31,600 --> 00:00:38,320
+Mã ứng dụng của bạn trong bất kỳ ngôn ngữ lập trình và sau đó triển khai trên AWS lambda và ẩn
+
+7
+00:00:38,320 --> 00:00:44,480
+Cơ sở hạ tầng, máy ảo, vi VM hay máy ảo sẽ được quản lý bởi AWS.
+
+8
+00:00:44,480 --> 00:00:51,600
+Vì vậy, bạn có thể nghĩ về đặc vụ lõi thời gian chạy rất giống với AWS lambda cho các đặc vụ Al.
+
+9
+00:00:52,400 --> 00:00:58,400
+Vậy giờ làm thế nào để anh triển khai mã đặc vụ của mình trong thời gian hoạt động này? Theo mã đã có,
+
+10
+00:00:58,400 --> 00:01:05,120
+Bạn thêm một cái gì đó được gọi là nhân viên thời gian chạy đặc vụ. Nó chỉ là một thiết kế Python và bạn có thể
+
+11
+00:01:05,120 --> 00:01:11,440
+Đây là ứng dụng mà chúng tôi sẽ xây dựng sau này và ở đây tôi có trong tập tin này.py
+
+12
+00:01:11,440 --> 00:01:17,440
+Và tôi đã chỉ cần thêm này chức năng trang trí và ở đây chúng tôi có tác nhân này trong kêu gọi và nếu bạn
+
+13
+00:01:17,440 --> 00:01:23,600
+Tương tự, chúng ta có chức năng quản lý lambda. Vì vậy, tất cả những gì bạn phải làm
+
+14
+00:01:23,600 --> 00:01:29,840
+là thêm đoạn mã trang trí này và sau đó bạn có thể triển khai nó vào thời gian chạy đặc vụ và nó sẽ chạy
+
+15
+00:01:29,840 --> 00:01:35,840
+như một container. Được rồi. Vì vậy, bây giờ điều tốt với nhân viên thời gian chạy là bạn có thể sử dụng bất kỳ
+
+16
+00:01:35,840 --> 00:01:42,160
+khuôn khổ đại diện ADI, cho dù đó là đồ thị đường, nhóm một chuỗi, tất cả được hỗ trợ bởi nhân viên lõi
+
+17
+00:01:42,160 --> 00:01:49,360
+Chạy thời gian và bạn cũng có thể có bất kỳ mô hình ngôn ngữ lớn, cho dù nó là từ mở AI, Song Tử hay Amazon
+
+18
+00:01:49,360 --> 00:01:56,080
+Tốt hơn rồi. Nó sẽ hỗ trợ tất cả các yếu tố và tất cả các khuôn khổ tác nhân. Vậy điều gì xảy ra khi bạn
+
+19
+00:01:56,080 --> 00:02:02,960
+triển khai mã phân rã đặc vụ của anh ở trung tâm điều hành thời gian, nó cung cấp cho anh 2 điểm cuối.
+
+20
+00:02:02,960 --> 00:02:09,920
+Vì vậy, nó chuyển nó thành một máy chủ HTTP và sau đó cung cấp cho bạn hai điểm cuối. Vì vậy nó cung cấp cho bạn một
+
+21
+00:02:09,920 --> 00:02:16,960
+ở điểm cuối cùng với phương pháp bưu điện và sau đó nó cũng cung cấp cho bạn một điểm kết thúc cho kiểm tra sức khỏe.
+
+22
+00:02:16,960 --> 00:02:22,640
+Vì vậy, về cơ bản có nghĩa là người dùng cuối cùng của bạn có thể cung cấp dữ liệu của họ thông qua điểm bưu điện này
+
+23
+00:02:22,640 --> 00:02:29,200
+Và họ sẽ có phản hồi. Vì vậy, đó là khả năng lõi đầu tiên đó là nhân viên lõi
+
+24
+00:02:29,200 --> 00:02:33,760
+Thời gian chạy và chúng tôi đang đi sâu vào điều này một chút sau đó nhưng bây giờ nó là một cấp cao
+
+25
+00:02:33,760 --> 00:02:39,920
+Trung tâm. Được rồi. Bây giờ chúng ta hãy xem xét khả năng lõi thứ hai của nhân viên nền đá.
+
+26
+00:02:39,920 --> 00:02:45,920
+Bây giờ một khi mật mã phân rã đặc vụ của chúng ta được lưu giữ ở trung tâm thời gian chạy và chúng ta có điểm kết thúc,
+
+27
+00:02:45,920 --> 00:02:51,520
+Bây giờ chúng ta có thể có người dùng cuối cùng và có lẽ chúng ta có thể đưa ra một yêu cầu như các bạn thấy ở đây,
+
+28
+00:02:51,520 --> 00:02:57,520
+Lên lịch đi London. Vì vậy, bạn có thể đưa ra yêu cầu này điểm kết thúc và sau đó đại diện của chúng tôi
+
+29
+00:02:57,520 --> 00:03:02,480
+sẽ có thể xử lý được. Nhưng trước khi chúng tôi có thể gửi yêu cầu này, chúng tôi cần xem xét các
+
+30
+00:03:02,480 --> 00:03:09,920
+Xác thực và cho phép người dùng này. Chúng ta cần đảm bảo rằng người dùng kết thúc này đã
+
+31
+00:03:09,920 --> 00:03:16,720
+quyền truy cập ứng dụng phân rã đại lý này và cho rằng đại lý nền tảng cung cấp
+
+32
+00:03:16,720 --> 00:03:24,080
+Một khả năng khác được gọi là đặc vụ lõi và nó hoạt động ở hai cấp độ. Vào trong và ra ngoài.
+
+33
+00:03:24,080 --> 00:03:30,720
+Vì vậy, những gì đến được là nó xác nhận cho dù người thực sự là người đang tuyên bố
+
+34
+00:03:30,720 --> 00:03:37,760
+để trở thành và những cấp độ cho phép. Vì vậy, về cơ bản nó nhìn vào xác thực
+
+35
+00:03:37,760 --> 00:03:45,760
+và quyền hạn giữa người dùng kết thúc và ứng dụng AI đặc vụ và cho rằng nó hỗ trợ
+
+36
+00:03:45,760 --> 00:03:52,720
+Bất cứ nhà cung cấp danh tính nào như nhận thức Amazon, toàn bộ, octa, vân vân. Vì vậy, bây giờ hãy nói
+
+37
+00:03:52,720 --> 00:03:59,600
+Người sử dụng của chúng tôi đã xác nhận mình sử dụng nhận thức Amazon và rằng người mang kỷ vật đó nhận thức
+
+38
+00:03:59,600 --> 00:04:06,240
+đã tạo ra được gửi đến lõi tác nhân, ID nó làm một số hợp lệ và sau đó nếu chấp nhận
+
+39
+00:04:06,240 --> 00:04:12,400
+nó có khả năng gửi yêu cầu đến điểm cuối này và truy cập vào ứng dụng phân rã đại lý này. Bây giờ
+
+40
+00:04:12,400 --> 00:04:17,840
+Không còn sắc thái nào khi chúng ta đi đến dịch vụ nhân dạng đặc vụ lõi sau này chúng ta sẽ có thể
+
+41
+00:04:17,840 --> 00:04:24,240
+hiểu điều đó. Bây giờ thành phần thứ hai là biên giới và chúng tôi sẽ nhận được rằng trong một chút.
+
+42
+00:04:25,200 --> 00:04:32,080
+Khả năng thứ ba của nhân viên thời gian chạy là bộ nhớ lõi đặc vụ. Vì vậy, nó là một quản lý
+
+43
+00:04:32,080 --> 00:04:38,480
+Dịch vụ cung cấp trí nhớ ở hai cấp độ. Một là bộ nhớ ngắn hạn để đó là bên trong
+
+44
+00:04:38,480 --> 00:04:44,160
+khoảng thời gian. Vì vậy, hãy nói rằng người dùng của chúng tôi kết thúc là tương tác với các ứng dụng và do đó, bạn
+
+45
+00:04:44,160 --> 00:04:50,560
+tương tác trong 10 phút lẻ, hỏi 5 câu hỏi và sau đó ra ngoài. Vì vậy, ngay sau khi người dùng kết thúc bản ghi
+
+46
+00:04:50,560 --> 00:04:56,080
+tắt bộ nhớ ngắn hạn này sẽ kết thúc nhưng bạn có tùy chọn giữ bộ nhớ ngắn hạn giữa
+
+47
+00:04:56,080 --> 00:05:02,640
+Tôi nghĩ 7 đến 365 ngày nhưng về cơ bản nó chỉ hoạt động trong suốt quá trình điều trị.
+
+48
+00:05:02,640 --> 00:05:09,120
+Tiếp theo chúng tôi có bộ nhớ dài hạn và nó cung cấp nhiều chiến lược để bạn có thể làm gì
+
+49
+00:05:09,120 --> 00:05:14,880
+Bất kỳ tương tác nào mà bạn có ngày hôm nay bạn có thể tóm tắt nó và lưu trữ và thời gian tiếp theo bạn có
+
+50
+00:05:14,880 --> 00:05:20,960
+có cuộc trò chuyện đó và nó sẽ dùng trí nhớ tóm tắt đó trong cuộc nói chuyện. Vậy thì...
+
+51
+00:05:20,960 --> 00:05:25,440
+cũng cung cấp bộ nhớ ngữ nghĩa. Vì vậy, những gì bộ nhớ ngữ nghĩa là nó sẽ giữ lại tất cả các thực tế
+
+52
+00:05:25,440 --> 00:05:31,040
+Thông tin. Cứ cho là anh đã hỏi về địa chỉ của một nhà hàng nào đó.
+
+53
+00:05:31,040 --> 00:05:36,160
+có khả năng lưu trữ nó và sau đó cuối cùng bạn có các ưu tiên người dùng. Giả sử bạn thích bãi biển
+
+54
+00:05:36,160 --> 00:05:42,400
+Và lần tới khi bạn đang tìm một điểm đến giấc mơ nó sẽ cho bạn nhiều lựa chọn liên quan đến
+
+55
+00:05:42,400 --> 00:05:48,640
+Bãi biển. Vì vậy, bạn có thể chọn chiến lược bộ nhớ dài hạn cho dù bạn muốn tóm tắt, ngữ nghĩa hoặc
+
+56
+00:05:48,640 --> 00:05:54,480
+yêu cầu người dùng. Vì vậy, lần tới bạn đăng nhập vào dựa trên chiến lược của bạn nó sẽ cung cấp cho bạn
+
+57
+00:05:54,480 --> 00:06:01,280
+Đầu vào ngữ cảnh. Khả năng tiếp theo chúng ta có là khả năng đếm ngược của đặc vụ. Nó giám sát
+
+58
+00:06:01,280 --> 00:06:08,000
+các đặc vụ trình diễn trong sản xuất và nó làm thông qua vẽ đồ thị bản ghi, ma trận và bây giờ họ
+
+59
+00:06:08,000 --> 00:06:14,560
+đã cung cấp một khả năng khác được gọi là Gen Al observence mà nhìn vào vết của phiên chạy
+
+60
+00:06:14,560 --> 00:06:20,320
+Chúng ta sẽ lặn sâu vào đó sau. Vì vậy, nếu chúng tôi có thể cho bạn thấy nhanh chóng vì vậy tôi
+
+61
+00:06:20,320 --> 00:06:27,040
+Tôi trên các bản ghi xem đồ thị và ở đây chúng tôi có một tab mới được gọi là Gen Al overvable mà cung cấp
+
+62
+00:06:27,040 --> 00:06:35,760
+rất nhiều chi tiết về tác nhân ma trận như dấu vết của trục trặc và vân vân. Bây giờ cuối cùng chúng ta đã có
+
+63
+00:06:35,760 --> 00:06:43,440
+Đặc vụ cổng lõi duyệt và thông dịch lõi đặc vụ. Những khả năng này tập trung vào
+
+64
+00:06:43,440 --> 00:06:50,080
+Làm thế nào đặc vụ của bạn có thể truy cập nhiều công cụ khác nhau theo một định dạng chuẩn hóa. Bây giờ hãy thử và hiểu
+
+65
+00:06:50,080 --> 00:06:56,960
+chi tiết hơn những gì ba dịch vụ này làm. Bây giờ hãy nói rằng người dùng cuối cùng của chúng tôi đã kết thúc London
+
+66
+00:06:56,960 --> 00:07:02,080
+Khi đến nơi trong mơ và muốn biết những gói du lịch được cung cấp là gì
+
+67
+00:07:02,080 --> 00:07:09,120
+bởi cơ quan du lịch này và cho rằng đại lý này cần để kêu gọi một công cụ AWS Lambda mà
+
+68
+00:07:09,120 --> 00:07:15,760
+Thu thập một số PDF được lưu trữ trong công ty S3 xô hoặc giả sử nó cần
+
+69
+00:07:15,760 --> 00:07:22,240
+Một số chi tiết liên quan đến các khách sạn cụ thể mà nó có thể đi trước và lấy từ sharePoint
+
+70
+00:07:22,240 --> 00:07:27,040
+Và cho rằng một lần nữa bạn sẽ phải viết một số công cụ mà có thể truy cập dữ liệu từ sharePoint
+
+71
+00:07:27,040 --> 00:07:33,520
+rồi đưa lại cho đặc vụ. Bây giờ cho các kịch bản đặc vụ lõi cổng có thể giúp đỡ trong
+
+72
+00:07:33,520 --> 00:07:40,560
+Ba cách. Đầu tiên nó tích hợp với đặc vụ lõi này và ở đây chúng ta có thể xem xét điều này
+
+73
+00:07:40,560 --> 00:07:48,240
+khía cạnh bị giới hạn. Vì vậy, những gì các đặc vụ trung tâm danh tính là nó xác thực cho dù công cụ này
+
+74
+00:07:48,240 --> 00:07:56,080
+Và người dùng này thực sự có quyền truy cập các nguồn tài nguyên hậu phương đang được thu hồi
+
+75
+00:07:56,080 --> 00:08:02,400
+thông qua những dụng cụ này. Vì vậy, hãy nói nếu các gói thông tin du lịch của chúng tôi là trong một PDF trong xô S3
+
+76
+00:08:02,400 --> 00:08:09,440
+Sau đó, người dùng này và tác nhân này có quyền truy cập những tập tin đó.
+
+77
+00:08:09,440 --> 00:08:15,440
+Có lẽ nếu nó là trong sharePoint nhiều hơn nếu nó là nhiều Microsoft dựa trên sau đó nó có quyền
+
+78
+00:08:15,440 --> 00:08:21,840
+Chìa khóa API để truy cập dữ liệu đó. Vì vậy, nó hỗ trợ mức độ cho phép khác nhau nếu nó là một dịch vụ AWS
+
+79
+00:08:21,840 --> 00:08:27,200
+Vậy thì đặc vụ này cần quyền. Tôi đóng vai trò nếu đó là một giải pháp dựa trên Microsoft sau đó có thể bạn nhận được
+
+80
+00:08:27,200 --> 00:08:34,000
+huy hiệu ID nhập và đó có thể được xác nhận bởi đặc vụ lõi này trước khi nó có quyền truy cập
+
+81
+00:08:34,000 --> 00:08:39,840
+Tài nguyên chia sẻ này. Vì vậy, chúng tôi sẽ nhận được vào chi tiết về cách điều này thực sự hoạt động khi chúng tôi di chuyển đến
+
+82
+00:08:39,840 --> 00:08:45,120
+Phần đặc vụ lõi. Vì vậy, đó là điều đầu tiên mà đặc vụ lõi cổng làm. Điều thứ hai
+
+83
+00:08:45,120 --> 00:08:51,040
+Nó giúp ta khám phá. Bây giờ hãy nói rằng chúng tôi có nhiều tác nhân ở đây và hãy nói rằng chúng tôi có hai tá
+
+84
+00:08:51,040 --> 00:08:57,360
+công cụ. Bây giờ có một yêu cầu đến từ người dùng để truy cập vào một tài nguyên cụ thể như
+
+85
+00:08:57,360 --> 00:09:02,240
+Chúng ta đang nói về PDF trong xô S3. Vì vậy, những gì tác nhân cổng chính sẽ làm là
+
+86
+00:09:02,240 --> 00:09:07,840
+trong số đó nửa tá công cụ mà nó sẽ có dựa trên người dùng truy vấn và nó sẽ tự động
+
+87
+00:09:07,840 --> 00:09:16,080
+làm công cụ khám phá và sau đó gọi đúng công cụ. Và cuối cùng nó cũng giúp đỡ với MCP
+
+88
+00:09:16,080 --> 00:09:22,560
+Thay đổi tất cả các công cụ mà bạn có như là một phần của ứng dụng đặc biệt này. Và nếu bạn không biết
+
+89
+00:09:22,560 --> 00:09:28,000
+MCP MCP là gì? Vậy nếu anh...
+
+90
+00:09:28,000 --> 00:09:34,800
+Không biết MCP là gì. Tôi đã thêm một phần bổ sung vào cuối khóa học này.
+
+91
+00:09:34,800 --> 00:09:39,280
+Làm ơn đi xem đi. Sau đó chúng tôi có trình duyệt lõi đặc vụ. Nó hoạt động tương tự
+
+92
+00:09:39,280 --> 00:09:44,800
+Thời trang. Bây giờ hãy nói rằng người dùng cuối của chúng tôi thích của chúng tôi lịch trình và nó muốn địa chỉ của một cụ thể
+
+93
+00:09:44,800 --> 00:09:51,600
+Vị trí. Vì vậy, trong trường hợp đó những gì tác nhân này có thể làm là nó có thể đi và gọi cho trình duyệt lõi tác nhân này
+
+94
+00:09:51,600 --> 00:09:57,040
+Như con người làm và nó sẽ lấy lại địa chỉ của địa chỉ đó và cung cấp cho nó
+
+95
+00:09:57,040 --> 00:10:02,720
+trở lại người dùng cuối. Và sau đó cuối cùng chúng tôi có các thông dịch lõi đặc vụ có lẽ không liên quan đến điều này
+
+96
+00:10:02,720 --> 00:10:07,040
+sử dụng va li. Bây giờ thay vì điều này hãy nói rằng bạn đang xây dựng một đại lý hỗ trợ ứng dụng mà cố gắng để
+
+97
+00:10:07,040 --> 00:10:13,120
+Chỉnh sửa các vấn đề mã hóa trong sản xuất. Vì vậy, trong trường hợp đó bây giờ chúng ta hãy nói rằng nó đã tìm thấy và
+
+98
+00:10:13,120 --> 00:10:19,840
+chữa lỗi và nó muốn thử ra trước khi áp dụng miếng vá đó vào ứng dụng. Đó là nơi
+
+99
+00:10:19,840 --> 00:10:24,480
+Người phiên dịch chính này rất hữu ích. Vì vậy, bạn sẽ có một môi trường hộp cát nơi bạn có thể
+
+100
+00:10:24,480 --> 00:10:30,400
+Thực hiện và kiểm tra mã của bạn và nếu nó hoạt động tốt sau đó bạn có thể đi và cuối cùng áp dụng các bảng vá trong các
+
+101
+00:10:30,400 --> 00:10:36,720
+sản xuất. Đó là một số khả năng đặc vụ quan trọng. Tôi hy vọng bạn thích bài giảng này
+
+102
+00:10:36,720 --> 00:10:38,720
+Cảm ơn.
+
