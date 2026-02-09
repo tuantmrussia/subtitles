@@ -1,0 +1,444 @@
+1
+00:00:04,990 --> 00:00:05,210
+Okay.
+
+2
+00:00:05,230 --> 00:00:07,480
+Let's start by creating a Java project.
+
+3
+00:00:07,690 --> 00:00:09,820
+Select Automotive Activity Java.
+
+4
+00:00:09,820 --> 00:00:11,200
+Select Language as Java.
+
+5
+00:00:11,390 --> 00:00:11,500
+Okay.
+
+6
+00:00:11,590 --> 00:00:14,280
+So now we have a basic Java project ready.
+
+7
+00:00:14,320 --> 00:00:17,340
+Let's now move this project to Aosp.
+
+8
+00:00:17,350 --> 00:00:20,680
+So this project is a simple Helloworld project at the moment.
+
+9
+00:00:20,680 --> 00:00:23,020
+So this project doesn't have any activities at the moment.
+
+10
+00:00:23,020 --> 00:00:26,410
+So let's add one activity, an empty activity task.
+
+11
+00:00:26,410 --> 00:00:29,350
+And here let's add a text book.
+
+12
+00:00:29,380 --> 00:00:35,170
+Name this as my Aosp Java project first aosp Java project.
+
+13
+00:00:35,170 --> 00:00:35,620
+Okay.
+
+14
+00:00:35,620 --> 00:00:39,880
+So now we have created a project in Android studio.
+
+15
+00:00:39,880 --> 00:00:44,740
+So as you already know, the build system for Android app development is Gradle.
+
+16
+00:00:44,740 --> 00:00:50,920
+So now we need to migrate this project to Aosp and ship it as part of the Aosp build.
+
+17
+00:00:50,920 --> 00:00:56,350
+So basically what we need to do is we need to copy the resource folder, Java folder and the manifest.
+
+18
+00:00:56,350 --> 00:01:02,440
+We need to ignore all the Gradle script files because Aosp is having a different build system.
+
+19
+00:01:02,440 --> 00:01:03,820
+So let's go ahead and do that.
+
+20
+00:01:03,820 --> 00:01:10,070
+So we need to basically migrate the Gradle project into this format, like this folder structure, right?
+
+21
+00:01:10,090 --> 00:01:15,100
+So the easiest way to do that is just copy one of the app.
+
+22
+00:01:15,100 --> 00:01:18,520
+Like in this case, I'll just copy the calendar app, copy, paste it here.
+
+23
+00:01:18,520 --> 00:01:21,820
+I have calendar copy now and let's go folder.
+
+24
+00:01:21,820 --> 00:01:24,470
+Rename this to my aosp char.
+
+25
+00:01:24,520 --> 00:01:31,380
+So I'm renaming the folder to my Aosp Java open this and now we could remove file sources source more
+
+26
+00:01:31,390 --> 00:01:32,280
+so removing the test.
+
+27
+00:01:32,440 --> 00:01:36,820
+So so basically we need to convert the Android project into this format.
+
+28
+00:01:36,820 --> 00:01:38,110
+It's pretty straightforward.
+
+29
+00:01:38,110 --> 00:01:45,670
+We just need to copy the source folder here, the source folder here and just replace this android manifest
+
+30
+00:01:45,670 --> 00:01:49,120
+here and then edit the Android dot beep file.
+
+31
+00:01:49,330 --> 00:01:50,530
+So let's do that.
+
+32
+00:01:50,530 --> 00:01:53,260
+So first thing, let's copy the source.
+
+33
+00:01:53,500 --> 00:02:00,310
+So I have opened the Android studio project in the left panel and the new folder which we created within
+
+34
+00:02:00,310 --> 00:02:02,290
+Aosp in the right panel.
+
+35
+00:02:02,500 --> 00:02:06,040
+So let's copy the source files to Aosp.
+
+36
+00:02:06,040 --> 00:02:10,190
+So this is our Gradle project, the Android Application Project.
+
+37
+00:02:10,190 --> 00:02:13,600
+So let's go into the source folder, main Java.
+
+38
+00:02:13,600 --> 00:02:18,670
+So we need to basically copy this chrome folder to the source folder here.
+
+39
+00:02:18,670 --> 00:02:20,440
+So right click, just copy.
+
+40
+00:02:20,440 --> 00:02:20,660
+Okay.
+
+41
+00:02:20,680 --> 00:02:23,350
+So the source folder is now here.
+
+42
+00:02:23,350 --> 00:02:31,630
+So we have the main activity or Java inside the my aosp Java module within within Aosp.
+
+43
+00:02:31,630 --> 00:02:31,830
+Okay.
+
+44
+00:02:31,870 --> 00:02:34,390
+So now let's copy the resource folder.
+
+45
+00:02:34,390 --> 00:02:37,330
+So this folder are delete this.
+
+46
+00:02:38,240 --> 00:02:39,590
+Copy this.
+
+47
+00:02:39,620 --> 00:02:47,480
+Here we have copied the resource folder and source folder here and now we have Android dot BP which
+
+48
+00:02:47,480 --> 00:02:53,060
+needs to be modified and we also need to copy the Android manifest or XML.
+
+49
+00:02:53,090 --> 00:02:54,860
+So let's copy that.
+
+50
+00:02:54,920 --> 00:02:58,130
+Let's first delete it from here.
+
+51
+00:03:03,740 --> 00:03:04,250
+Copied.
+
+52
+00:03:04,250 --> 00:03:09,500
+So we have copied the Android manifest XML source folder resource four.
+
+53
+00:03:09,500 --> 00:03:13,950
+So now we need to modify the Android dot beep file.
+
+54
+00:03:13,950 --> 00:03:15,980
+So let's switch to Visual Studio code.
+
+55
+00:03:16,340 --> 00:03:20,540
+So this is the so this is the newly created module.
+
+56
+00:03:20,750 --> 00:03:24,110
+We already copied the source and the source file.
+
+57
+00:03:24,110 --> 00:03:27,710
+We have main dot activity here and Android manifest.
+
+58
+00:03:27,710 --> 00:03:33,890
+So okay, so now let's modify Android dot BP file so we can leave the package as it is.
+
+59
+00:03:33,890 --> 00:03:41,980
+Change this name Android app to my aosp java and here in the sources we could just mention standard
+
+60
+00:03:42,020 --> 00:03:42,530
+Java.
+
+61
+00:03:42,530 --> 00:03:47,570
+So when we add a Kotlin project we need to mention start locating here.
+
+62
+00:03:47,810 --> 00:03:51,980
+So this project only has Java, so let's keep it as it is Java.
+
+63
+00:03:51,980 --> 00:03:58,310
+And then this is the resource folder SDK version, current target SDK version 2829.
+
+64
+00:03:58,310 --> 00:03:59,330
+Let's keep it as it is.
+
+65
+00:03:59,330 --> 00:04:03,830
+So you can also replace this with the information from Gradle in the project.
+
+66
+00:04:03,830 --> 00:04:08,870
+If you go to the build Gradle, you can just replace it with this value as well.
+
+67
+00:04:09,140 --> 00:04:14,810
+So for our case, let's keep it as it is and then optimize enabled false.
+
+68
+00:04:14,810 --> 00:04:16,320
+That's free object.
+
+69
+00:04:16,340 --> 00:04:20,270
+Just keep it as false and we can remove this library.
+
+70
+00:04:20,270 --> 00:04:21,800
+We don't have any dependency there.
+
+71
+00:04:21,800 --> 00:04:23,480
+So this is one important part.
+
+72
+00:04:23,480 --> 00:04:31,760
+So basically what our dependencies which are there in the original Android project that has to come
+
+73
+00:04:31,760 --> 00:04:33,920
+here, otherwise the build will fail.
+
+74
+00:04:33,920 --> 00:04:36,440
+So what you could do is go to Gradle.
+
+75
+00:04:36,440 --> 00:04:39,110
+So within Gradle we have these dependencies, right?
+
+76
+00:04:39,110 --> 00:04:41,800
+So basically we have to copy all these dependencies there.
+
+77
+00:04:42,170 --> 00:04:49,640
+So as we could see, it has the dependency on app compat, then we have the material libraries and then
+
+78
+00:04:49,640 --> 00:04:51,860
+the constraint layout and the unit test.
+
+79
+00:04:51,860 --> 00:04:56,420
+We are not moving the test folder so we can just ignore this for now.
+
+80
+00:04:56,420 --> 00:05:00,290
+So we need at least these three dependencies in the Android P file.
+
+81
+00:05:00,440 --> 00:05:03,620
+So let's replace this with these three dependencies.
+
+82
+00:05:03,620 --> 00:05:10,940
+So we need the lifecycle extension dependencies that combat dependencies and the material dependencies.
+
+83
+00:05:10,940 --> 00:05:16,610
+Okay, let's go ahead and compile in case if we are missing any further dependencies, then we could
+
+84
+00:05:16,610 --> 00:05:17,210
+add it.
+
+85
+00:05:17,600 --> 00:05:18,950
+So this is now done.
+
+86
+00:05:19,220 --> 00:05:22,850
+So I think now we are almost done with all the modules.
+
+87
+00:05:23,180 --> 00:05:28,700
+Now we need to add this project into the main build files.
+
+88
+00:05:28,700 --> 00:05:31,940
+That is, it depends on what build you are performing.
+
+89
+00:05:31,940 --> 00:05:36,800
+So in this case, I'm planning to add this to the automotive build.
+
+90
+00:05:36,800 --> 00:05:43,700
+So I need to basically modify the product packages of the automotive build Makefile.
+
+91
+00:05:43,700 --> 00:05:44,600
+So let's do that now.
+
+92
+00:05:44,600 --> 00:05:50,960
+So for the automotive build or the car product build, you can see all the product packages added under
+
+93
+00:05:50,960 --> 00:05:53,030
+the car dot file.
+
+94
+00:05:53,030 --> 00:05:58,970
+So you can see the car dialer car launcher system, UI, local media player, everything here.
+
+95
+00:05:58,970 --> 00:06:05,600
+So let's add our app as well here, copy this, paste this and please make a note.
+
+96
+00:06:05,630 --> 00:06:08,600
+We need to add the module name here.
+
+97
+00:06:08,600 --> 00:06:13,970
+So that means the name which you have given here to my aosp java based it here.
+
+98
+00:06:14,000 --> 00:06:16,490
+Save it now let's build it.
+
+99
+00:06:16,520 --> 00:06:22,760
+If there is any dependencies missing, then we could add, since this is a simple project, we all and
+
+100
+00:06:22,760 --> 00:06:26,000
+we only have a couple of dependencies, it's pretty straightforward.
+
+101
+00:06:26,000 --> 00:06:32,060
+But when you have a big project with lots of dependencies, that could become a little bit tricky.
+
+102
+00:06:32,060 --> 00:06:39,710
+So the only task is to find the right dependent modules and just add it under the static libs.
+
+103
+00:06:39,980 --> 00:06:43,760
+Now the build is successful, so let's run the emulator.
+
+104
+00:06:43,760 --> 00:06:50,390
+It started with the white data so that we show that we only have the factory apps in it.
+
+105
+00:07:17,770 --> 00:07:18,390
+Okay.
+
+106
+00:07:21,750 --> 00:07:23,100
+So here we go.
+
+107
+00:07:23,130 --> 00:07:25,710
+This is our app, my aosp java.
+
+108
+00:07:27,200 --> 00:07:32,360
+And chose the next my first Aosp Java project.
+
+109
+00:07:32,720 --> 00:07:40,280
+So the process is almost similar for the Kotlin projects as well, except that we need to make a minor
+
+110
+00:07:40,280 --> 00:07:47,180
+modification in the Android P file just to include the standard files.
+
+111
+00:07:47,390 --> 00:07:51,650
+We'll try out a Kotlin project in the later session.
+
