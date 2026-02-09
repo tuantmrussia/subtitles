@@ -1,0 +1,856 @@
+1
+00:00:00,000 --> 00:00:05,440
+ In this lecture, I'm going to do a console walkthrough of Amazon bedrock agents so that
+
+2
+00:00:05,440 --> 00:00:10,980
+ you can visually see what are the capabilities that the bedrock agents offer.
+
+3
+00:00:10,980 --> 00:00:13,680
+ Now let's go ahead and head over to the console.
+
+4
+00:00:13,680 --> 00:00:15,180
+ So I'm on the AWS console.
+
+5
+00:00:15,180 --> 00:00:22,620
+ Let me just search for Amazon bedrock and here I have Amazon bedrock, okay.
+
+6
+00:00:22,620 --> 00:00:26,760
+ I'm going to go on the left hand side and under the builder tools, I have agents.
+
+7
+00:00:26,760 --> 00:00:30,560
+ Let me just click on agents and I'm on the agents homepage.
+
+8
+00:00:30,560 --> 00:00:34,880
+ Now let me just go ahead and click on this create agent.
+
+9
+00:00:34,880 --> 00:00:39,000
+ And here we have to provide the name of the agent.
+
+10
+00:00:39,000 --> 00:00:42,800
+ So let's just say we're creating a flight booking agent.
+
+11
+00:00:42,800 --> 00:00:46,440
+ Then you can provide a description of what this agent does.
+
+12
+00:00:46,440 --> 00:00:50,320
+ This is optional, so we'll just leave it as it is.
+
+13
+00:00:50,320 --> 00:00:54,800
+ Next we have an important thing here called as multi agent collaboration.
+
+14
+00:00:54,800 --> 00:00:59,240
+ In one of the previous lectures, we'll learn that we can either build a single agent or
+
+15
+00:00:59,240 --> 00:01:04,380
+ if our application is really complex, then we can have multi agent scenario.
+
+16
+00:01:04,380 --> 00:01:10,240
+ So now if we just click on this enable multi agent collaboration and click on create, you'll
+
+17
+00:01:10,240 --> 00:01:13,680
+ be able to use the multi agent framework.
+
+18
+00:01:13,680 --> 00:01:16,760
+ And we're going to build this use case a little later.
+
+19
+00:01:16,760 --> 00:01:25,200
+ But for now, let me just focus on single agent and let me just click on create.
+
+20
+00:01:25,200 --> 00:01:30,040
+ Okay, now this agent flight booking agent was successfully created.
+
+21
+00:01:30,040 --> 00:01:35,080
+ Now let's just go through some of the other attributes related to this agent.
+
+22
+00:01:35,080 --> 00:01:39,360
+ So first we have agent details, so agent name, which we've already provided.
+
+23
+00:01:39,360 --> 00:01:43,400
+ Then you have the agent description, which is optional.
+
+24
+00:01:43,400 --> 00:01:48,440
+ So next you have the agent resource role, so now our agent will need to interact with
+
+25
+00:01:48,440 --> 00:01:53,560
+ different AWS services, maybe an AWS Lambda knowledge basis S3 bucket.
+
+26
+00:01:53,560 --> 00:02:01,080
+ So the agent requires an IM role, which enables it to call these different AWS services.
+
+27
+00:02:01,080 --> 00:02:03,680
+ For that, you need a service role.
+
+28
+00:02:03,680 --> 00:02:10,080
+ So either you can create one by yourself through the IM service and then it will be enabled
+
+29
+00:02:10,080 --> 00:02:16,000
+ here or you can just tell the agent to create the role for you.
+
+30
+00:02:16,000 --> 00:02:18,400
+ And that's what we're going to do.
+
+31
+00:02:18,400 --> 00:02:23,400
+ Next we have to select a large language model that is going to drive the agent.
+
+32
+00:02:23,400 --> 00:02:30,000
+ So if we just click on this select model and if I just see here on the top, if I just
+
+33
+00:02:30,000 --> 00:02:35,720
+ uncheck this, you'll see it supports all the major models.
+
+34
+00:02:35,720 --> 00:02:41,400
+ But when I just click on this, I can see only two, one is the Amazon and here are the models
+
+35
+00:02:41,400 --> 00:02:45,600
+ that it supports and then you have the entropic and these are the model it supports from
+
+36
+00:02:45,600 --> 00:02:46,680
+ entropic.
+
+37
+00:02:46,680 --> 00:02:53,680
+ So the reason is that when we build agents, it needs some default prompt templates to enable
+
+38
+00:02:53,680 --> 00:02:56,560
+ the reasoning capability for the model.
+
+39
+00:02:56,560 --> 00:03:02,120
+ And for now, AWS has these default templates only for these two model providers.
+
+40
+00:03:02,120 --> 00:03:07,520
+ But if you want to use, let's say, Mistral, then you have to write your own customized
+
+41
+00:03:07,520 --> 00:03:08,960
+ prompt template.
+
+42
+00:03:08,960 --> 00:03:12,840
+ So that's why we'll just go with one of these two.
+
+43
+00:03:12,840 --> 00:03:18,720
+ Now just remember if you're using the models from Amazon, then right now it does not support
+
+44
+00:03:18,720 --> 00:03:21,440
+ the long term memory.
+
+45
+00:03:21,440 --> 00:03:25,720
+ So if you need long term memory, then you have to use one of the models from entropic.
+
+46
+00:03:25,720 --> 00:03:31,320
+ If you don't have access to models, just click on this request access and you can also
+
+47
+00:03:31,320 --> 00:03:36,440
+ just go from here to model access and then.
+
+48
+00:03:36,440 --> 00:03:44,480
+ So you'll see a screen like this model access from here, just click on modify access and
+
+49
+00:03:44,480 --> 00:03:50,160
+ then select all the models you want access to, just scroll down, click on next and then
+
+50
+00:03:50,160 --> 00:03:53,560
+ do a submit and you should have access to models.
+
+51
+00:03:53,560 --> 00:03:59,360
+ But just remember entropic is limiting access to personal accounts.
+
+52
+00:03:59,360 --> 00:04:04,240
+ You might face challenges in terms of getting access to a particular model or number of requests
+
+53
+00:04:04,240 --> 00:04:06,440
+ you can make per second.
+
+54
+00:04:06,440 --> 00:04:12,280
+ So if you don't need the long term memory, just select one model from Amazon, maybe no
+
+55
+00:04:12,280 --> 00:04:15,000
+ approach, that's that's really good.
+
+56
+00:04:15,000 --> 00:04:20,560
+ Okay, then next, you need to provide instructions for the agent and this is really important
+
+57
+00:04:20,560 --> 00:04:23,320
+ because it defines the domain of the agent.
+
+58
+00:04:23,320 --> 00:04:28,440
+ So if you're a flight booking agent, then let's say we're going to give a detailed description.
+
+59
+00:04:28,440 --> 00:04:32,760
+ You are an airline booking agent and can do following things, answer queries related
+
+60
+00:04:32,760 --> 00:04:38,200
+ to flight availability, query and display, flight availability for a particular date,
+
+61
+00:04:38,200 --> 00:04:39,560
+ book of flight and so on.
+
+62
+00:04:39,560 --> 00:04:42,800
+ So you need to be as descriptive as possible.
+
+63
+00:04:42,800 --> 00:04:48,040
+ And in the next lecture, I'll tell you why the instructions are so important.
+
+64
+00:04:48,040 --> 00:04:49,040
+ Okay.
+
+65
+00:04:49,040 --> 00:04:52,280
+ Next, I'll just click on this additional settings.
+
+66
+00:04:52,280 --> 00:04:57,800
+ And next, you can see code interpreter and code interpreter enables agents to handle tasks
+
+67
+00:04:57,800 --> 00:05:03,720
+ that involve writing, running, testing and troubleshooting code in a secure environment.
+
+68
+00:05:03,720 --> 00:05:10,360
+ So if you just click enabled, what it will do is it will provide a secure sandbox where
+
+69
+00:05:10,360 --> 00:05:16,800
+ the agent, if it needs to fix an issue, it can go ahead and generate code, run that code
+
+70
+00:05:16,800 --> 00:05:20,200
+ in the secure environment and then apply.
+
+71
+00:05:20,200 --> 00:05:22,440
+ Next you have the user input.
+
+72
+00:05:22,440 --> 00:05:27,560
+ Now let's say you're a flight booking agent and the user has given you details on booking
+
+73
+00:05:27,560 --> 00:05:31,720
+ a flight from New York to Chicago on a particular date.
+
+74
+00:05:31,720 --> 00:05:37,800
+ But as an agent, you found multiple flights, one that's a direct flight and then one flight,
+
+75
+00:05:37,800 --> 00:05:39,000
+ which is one stop.
+
+76
+00:05:39,000 --> 00:05:43,280
+ And the user has not provided whether he wants a direct flight or one stop flight.
+
+77
+00:05:43,280 --> 00:05:48,240
+ So in that case, if you enable this, then the agent can go ahead and ask a clarifying
+
+78
+00:05:48,240 --> 00:05:50,920
+ question to the end user.
+
+79
+00:05:50,920 --> 00:05:55,680
+ And if you keep it disabled, then it will just make an assumption and go ahead and process
+
+80
+00:05:55,680 --> 00:05:57,920
+ that request.
+
+81
+00:05:57,920 --> 00:05:59,640
+ Next you have the KMS.
+
+82
+00:05:59,640 --> 00:06:05,360
+ So if you want to encrypt your data, you can use the KMS service.
+
+83
+00:06:05,360 --> 00:06:07,040
+ Next you have the idle session timeout.
+
+84
+00:06:07,040 --> 00:06:09,720
+ So this is mainly the short term memory of the agent.
+
+85
+00:06:09,720 --> 00:06:15,600
+ So you can determine the duration for which you need to keep the session active between
+
+86
+00:06:15,600 --> 00:06:18,600
+ the end user and the agent.
+
+87
+00:06:18,600 --> 00:06:25,520
+ So once it has reached that limit of let's say 600 seconds idle session timeout and
+
+88
+00:06:25,520 --> 00:06:31,120
+ there is no interaction between the user and the agent, then it's going to close that session.
+
+89
+00:06:31,120 --> 00:06:35,800
+ So that means you'll lose the short term memory.
+
+90
+00:06:35,800 --> 00:06:37,240
+ And next we have the action groups.
+
+91
+00:06:37,240 --> 00:06:44,160
+ So you can think of action groups as tools that you can integrate with your bedrock agents.
+
+92
+00:06:44,160 --> 00:06:50,160
+ So for our example, let's say for a flight booking agent, you might have a tool which
+
+93
+00:06:50,160 --> 00:06:56,320
+ takes the input from the end user like source destination date of travel name of the traveler
+
+94
+00:06:56,320 --> 00:07:04,200
+ and then takes that data and makes an API call to the airline database to reserve a flight
+
+95
+00:07:04,200 --> 00:07:06,760
+ for our end user.
+
+96
+00:07:06,760 --> 00:07:14,280
+ So now if I just click on add and you have to provide the interaction group name, the description.
+
+97
+00:07:14,280 --> 00:07:19,080
+ Now when you are adding an action group that integrates with the bedrock agent, there are
+
+98
+00:07:19,080 --> 00:07:21,120
+ two things you need to keep in mind.
+
+99
+00:07:21,120 --> 00:07:25,600
+ First you have to define the action group type and then action group invocation.
+
+100
+00:07:25,600 --> 00:07:27,840
+ So let me first talk about action group invocation.
+
+101
+00:07:27,840 --> 00:07:33,320
+ So it's just the lambda function that you would write your logic in which will make that
+
+102
+00:07:33,320 --> 00:07:36,360
+ API call to the airline database.
+
+103
+00:07:36,360 --> 00:07:40,920
+ So either you can create a new lambda function or you can select an existing lambda function
+
+104
+00:07:40,920 --> 00:07:44,720
+ that you might have already written.
+
+105
+00:07:44,720 --> 00:07:46,800
+ So that's the action group invocation.
+
+106
+00:07:46,800 --> 00:07:49,000
+ The first is the action group type.
+
+107
+00:07:49,000 --> 00:07:55,840
+ Now before the agent executes this action group, it needs certain guidance on what will
+
+108
+00:07:55,840 --> 00:08:00,040
+ be the input parameters that will be passed by the user.
+
+109
+00:08:00,040 --> 00:08:05,360
+ So in our case, maybe source destination, date of travel and name of the user.
+
+110
+00:08:05,360 --> 00:08:10,760
+ So we have to define that somewhere and what is the response, maybe a booking ID.
+
+111
+00:08:10,760 --> 00:08:14,120
+ So you define those input and output parameters.
+
+112
+00:08:14,120 --> 00:08:18,320
+ So there are agent and execute the task better.
+
+113
+00:08:18,320 --> 00:08:20,920
+ And this is what action group type is used for.
+
+114
+00:08:20,920 --> 00:08:26,480
+ So when you select define with function details, so you can just go down and here you
+
+115
+00:08:26,480 --> 00:08:31,800
+ see the parameters and here you just click on add parameters and add the parameters like
+
+116
+00:08:31,800 --> 00:08:34,640
+ what is the user input going to look like.
+
+117
+00:08:34,640 --> 00:08:38,440
+ So source destination name of the traveler and date.
+
+118
+00:08:38,440 --> 00:08:40,080
+ So you define those parameters.
+
+119
+00:08:40,080 --> 00:08:44,960
+ So it's much simpler when you use define with functionality detail.
+
+120
+00:08:44,960 --> 00:08:48,400
+ Next, the other option that you have is use the APA schema.
+
+121
+00:08:48,400 --> 00:08:53,240
+ So when I just click on this APA schema and you have two options, you have action group schema
+
+122
+00:08:53,240 --> 00:08:54,240
+ here.
+
+123
+00:08:54,240 --> 00:08:55,840
+ So select an existing APA schema.
+
+124
+00:08:55,840 --> 00:08:59,960
+ So if you already written and it can be written simple YAML.
+
+125
+00:08:59,960 --> 00:09:05,560
+ So you already written that and you upload it on the S3 bucket or you can do it where
+
+126
+00:09:05,560 --> 00:09:06,720
+ inline schema editor.
+
+127
+00:09:06,720 --> 00:09:11,040
+ So if I just click on this and this is what it's going to look like.
+
+128
+00:09:11,040 --> 00:09:16,040
+ So it simply defines what are the input parameters that the user is going to provide.
+
+129
+00:09:16,040 --> 00:09:22,520
+ And those input parameters then would be utilized within the lambda function and then the
+
+130
+00:09:22,520 --> 00:09:24,320
+ lambda function is going to make a call.
+
+131
+00:09:24,320 --> 00:09:28,120
+ You're going to get a response and that response is going to be passed to the agent.
+
+132
+00:09:28,120 --> 00:09:30,120
+ So that's all you define here.
+
+133
+00:09:30,120 --> 00:09:32,600
+ And we're going to create all this in lot of detail.
+
+134
+00:09:32,600 --> 00:09:35,000
+ So if you haven't understood, it's okay.
+
+135
+00:09:35,000 --> 00:09:40,320
+ I'm just trying to give a high level overview on how these things work.
+
+136
+00:09:40,320 --> 00:09:41,320
+ Okay.
+
+137
+00:09:41,320 --> 00:09:44,240
+ Now that we have learned about action groups next, we have the memory.
+
+138
+00:09:44,240 --> 00:09:51,080
+ So this memory is a long term memory that bedrock agents enables for your use case.
+
+139
+00:09:51,080 --> 00:09:56,240
+ So by default, it's disabled, but once you click on enable, it will tell you for how long
+
+140
+00:09:56,240 --> 00:09:58,840
+ you want to store that long term memory.
+
+141
+00:09:58,840 --> 00:10:03,600
+ So it can be anywhere between one to 365 days and you can also define number of session.
+
+142
+00:10:03,600 --> 00:10:09,320
+ So maybe instead of the duration, you can define the number of sessions you want to maintain.
+
+143
+00:10:09,320 --> 00:10:10,960
+ And next you have the knowledge bases.
+
+144
+00:10:10,960 --> 00:10:16,440
+ So you can think of nauseous again as tools that you can integrate with your bedrock agents
+
+145
+00:10:16,440 --> 00:10:19,960
+ which provide you manage rag based capability.
+
+146
+00:10:19,960 --> 00:10:25,320
+ So what you can do is you can go on your left and you can see here bedrock knowledge bases.
+
+147
+00:10:25,320 --> 00:10:30,320
+ If I just click on that and here you can create your knowledge bases.
+
+148
+00:10:30,320 --> 00:10:34,760
+ And once you have created that knowledge bases, you can go back to the bedrock agent and
+
+149
+00:10:34,760 --> 00:10:39,640
+ just click on add and then select the knowledge bases that you have created from here and
+
+150
+00:10:39,640 --> 00:10:41,760
+ it will be integrated with your agent.
+
+151
+00:10:41,760 --> 00:10:47,760
+ Again, we are going to build the knowledge bases and integrate when we come to our use cases.
+
+152
+00:10:47,760 --> 00:10:49,560
+ So don't worry about this.
+
+153
+00:10:49,560 --> 00:10:51,440
+ Then you have guard rail details.
+
+154
+00:10:51,440 --> 00:10:55,200
+ If you go on the left, you have safe guards, guard rail details.
+
+155
+00:10:55,200 --> 00:11:00,000
+ If I just click on this and here we have guard rails.
+
+156
+00:11:00,000 --> 00:11:04,240
+ So you can go ahead, create guard rails and once you have created a guard rail.
+
+157
+00:11:04,240 --> 00:11:10,240
+ So I have these guard rails here and if I just click and click on this edit and if I just
+
+158
+00:11:10,240 --> 00:11:13,440
+ select, you can select the guard rails that you have created.
+
+159
+00:11:13,440 --> 00:11:17,800
+ Again, we are going to create this as part of our use case, but I just wanted to show you
+
+160
+00:11:17,800 --> 00:11:21,440
+ what are the capabilities and how you can integrate with the agents.
+
+161
+00:11:21,440 --> 00:11:27,520
+ Okay, next we have the orchestration strategy, specify how the agent processes information
+
+162
+00:11:27,520 --> 00:11:33,160
+ and coordinates a response by default, orchestration is defined by advanced prompts that can
+
+163
+00:11:33,160 --> 00:11:36,720
+ be overridden or customized for advanced use case.
+
+164
+00:11:36,720 --> 00:11:42,160
+ So you can either use default orchestration prompts based on the large language model that
+
+165
+00:11:42,160 --> 00:11:44,560
+ you have selected or you can write your own.
+
+166
+00:11:44,560 --> 00:11:50,680
+ So we just click on this edit and you can see these orchestration templates here.
+
+167
+00:11:50,680 --> 00:11:56,640
+ So you can see for pre-processing, orchestration, knowledge base and then you have one more
+
+168
+00:11:56,640 --> 00:12:02,040
+ post-processing and if you just click on this orchestration, we have the override orchestration
+
+169
+00:12:02,040 --> 00:12:03,400
+ template defaults.
+
+170
+00:12:03,400 --> 00:12:08,000
+ So you can override and write your own, but we just go to the continue with the default
+
+171
+00:12:08,000 --> 00:12:12,080
+ ones and here prompt template editor.
+
+172
+00:12:12,080 --> 00:12:17,720
+ So these are some of the instructions that are sent to the large language model along
+
+173
+00:12:17,720 --> 00:12:21,600
+ with the user query and if you see here.
+
+174
+00:12:21,600 --> 00:12:28,360
+ So it's telling the large language model on how to process the user input and here you
+
+175
+00:12:28,360 --> 00:12:34,240
+ can see it says in the thought first answer the following question, what is the user's goal?
+
+176
+00:12:34,240 --> 00:12:36,360
+ What information has just been provided?
+
+177
+00:12:36,360 --> 00:12:42,880
+ What is the best action plan or step by step action to fulfill the user's request?
+
+178
+00:12:42,880 --> 00:12:44,560
+ So how does this help?
+
+179
+00:12:44,560 --> 00:12:52,600
+ It basically helps in chain of thought and reasoning and action planning step for the agent.
+
+180
+00:12:52,600 --> 00:12:59,480
+ So let's say the user has sent a query, book up flight for me with following detail.
+
+181
+00:12:59,480 --> 00:13:04,840
+ So what the large language model driving the agent is going to do is it's going to break
+
+182
+00:13:04,840 --> 00:13:08,200
+ down that user tasks into these seven steps.
+
+183
+00:13:08,200 --> 00:13:10,760
+ So what's the user goal to book a flight?
+
+184
+00:13:10,760 --> 00:13:12,760
+ What information has been provided?
+
+185
+00:13:12,760 --> 00:13:16,800
+ So he's providing me the name, date, source, destination.
+
+186
+00:13:16,800 --> 00:13:18,160
+ What is the best action plan?
+
+187
+00:13:18,160 --> 00:13:24,320
+ So it will break down that user request into multiple steps that didn't take maybe make
+
+188
+00:13:24,320 --> 00:13:27,680
+ a call to the airline booking database and so on.
+
+189
+00:13:27,680 --> 00:13:30,800
+ So this is what an orchestration prompt does.
+
+190
+00:13:30,800 --> 00:13:33,240
+ Similarly, you have one for the knowledge base.
+
+191
+00:13:33,240 --> 00:13:38,320
+ So if there is a request related to the knowledge basis, how that is going to be executed
+
+192
+00:13:38,320 --> 00:13:45,680
+ and then you have the post processing, which defines how the agent determined the final
+
+193
+00:13:45,680 --> 00:13:47,240
+ response.
+
+194
+00:13:47,240 --> 00:13:53,800
+ So if we just click on cancel and then finally we have the multi agent collaboration.
+
+195
+00:13:53,800 --> 00:13:58,960
+ So when we want to have multiple agents as part of a application, then you will use this
+
+196
+00:13:58,960 --> 00:14:00,440
+ multi agent collaboration.
+
+197
+00:14:00,440 --> 00:14:02,640
+ So if we just click on this edit.
+
+198
+00:14:02,640 --> 00:14:05,120
+ So here it shows collaboration status.
+
+199
+00:14:05,120 --> 00:14:10,840
+ So if I just enable this multi agent collaboration, then first you define what is going
+
+200
+00:14:10,840 --> 00:14:13,320
+ to be a supervisor agent.
+
+201
+00:14:13,320 --> 00:14:16,760
+ So in a multi agent scenario, you'll at least have three agents.
+
+202
+00:14:16,760 --> 00:14:22,040
+ So you'll have two agents who will be specialized agents or in other terms, they are called
+
+203
+00:14:22,040 --> 00:14:26,160
+ as collaborator agents, they will be the worker agents.
+
+204
+00:14:26,160 --> 00:14:31,560
+ And then you will have a supervisor agent, which takes the request from the end user and
+
+205
+00:14:31,560 --> 00:14:38,960
+ then determines based on certain criteria, which agent it can forward that request to.
+
+206
+00:14:38,960 --> 00:14:42,280
+ And here we select the supervisor agent.
+
+207
+00:14:42,280 --> 00:14:47,200
+ And then we have the specialized agent or collaborator agents as they are called.
+
+208
+00:14:47,200 --> 00:14:52,040
+ So you can select which collaborator agent you want to use.
+
+209
+00:14:52,040 --> 00:14:54,120
+ Okay, that's pretty much it from this lecture.
+
+210
+00:14:54,120 --> 00:15:00,760
+ I just wanted to give you a high level overview of the capabilities of the Amazon bedrock agents.
+
+211
+00:15:00,760 --> 00:15:05,280
+ If you're not understood some of the aspects in detail, it's okay where I'm going to
+
+212
+00:15:05,280 --> 00:15:11,280
+ reiterate and we're going to build all these capabilities when we go to the hands on use
+
+213
+00:15:11,280 --> 00:15:12,280
+ cases.
+
+214
+00:15:12,280 --> 00:15:13,840
+ I'll see in the next lecture, thank you.
+
