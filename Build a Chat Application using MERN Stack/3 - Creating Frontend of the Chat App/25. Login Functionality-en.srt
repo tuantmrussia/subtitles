@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:05,400
+ Okay, so hello everyone and this video we are going to work with our login functionality, okay?
+
+2
+00:00:05,400 --> 00:00:08,500
+ So I basically prepared one login page, okay?
+
+3
+00:00:08,500 --> 00:00:16,400
+ So this is one of the starter files which you can copy from the styles files beginner folder and I've pasted this login paste
+
+4
+00:00:16,400 --> 00:00:17,600
+ and I have bar and sign up, okay?
+
+5
+00:00:17,600 --> 00:00:26,000
+ So you can just copy all of these and paste it in your local and start working on this one, but before that I want to tell you one thing like
+
+6
+00:00:27,000 --> 00:00:37,200
+ when I was just debugging the application like this orthostore.js and all I just found one thing that I in the dot-in-v
+
+7
+00:00:37,200 --> 00:00:43,200
+ in the wait one second in the backend I have missed this secret key, okay?
+
+8
+00:00:43,200 --> 00:00:47,800
+ So please define the secret key otherwise your application might fail to start.
+
+9
+00:00:47,800 --> 00:00:56,200
+ So this is one thing and now let's start with this orthostore.js since we have defined this sign up functionality here
+
+10
+00:00:56,200 --> 00:01:00,200
+ so we are going to do the same thing with our login, okay?
+
+11
+00:01:00,200 --> 00:01:11,000
+ So comma and just do this login and since this is an async function and it's going to take the data with it which will be
+
+12
+00:01:11,000 --> 00:01:15,200
+ let's take this inside of the try and catch block.
+
+13
+00:01:15,200 --> 00:01:25,600
+ So try and catch just like a wolf and in the catch we are going to just take the errors whatever the comes and
+
+14
+00:01:27,200 --> 00:01:30,800
+ we are going to pass it through our toast, but for that
+
+15
+00:01:30,800 --> 00:01:37,200
+ let's define this cons are yes equal to and await
+
+16
+00:01:37,200 --> 00:01:42,200
+ X your instance and it is going to navigate
+
+17
+00:01:42,200 --> 00:01:47,200
+ since it's a post request you are going to use the dot post and now
+
+18
+00:01:47,200 --> 00:02:00,200
+ slash orth slash log in and after this it will be the data, okay? So after this we are going to set the value like
+
+19
+00:02:00,200 --> 00:02:06,200
+ log user to the response dot data
+
+20
+00:02:06,200 --> 00:02:17,000
+ and if it happens to be then in that case toast dot success we are going to pass the message that the log in
+
+21
+00:02:17,000 --> 00:02:21,000
+ is successful since the above conditions turned out to be true.
+
+22
+00:02:21,000 --> 00:02:36,000
+ So login is successful, okay and otherwise if there's some kind of error then toast dot error and
+
+23
+00:02:36,000 --> 00:02:46,000
+ in this we are going to just pass the message as the login is failed, login is failed, okay?
+
+24
+00:02:46,000 --> 00:02:58,000
+ and set the log 10 user to null set log user and it will be null, okay?
+
+25
+00:02:58,000 --> 00:03:08,000
+ So control is saved so I think there's some error with this one right this error is defined but it is never used.
+
+26
+00:03:08,000 --> 00:03:18,000
+ So let's do one thing so console dot log error, okay? That would be fine.
+
+27
+00:03:18,000 --> 00:03:28,000
+ So as we have written this login now let's go to this login page and I've already copied pasted this one so you can get it from this
+
+28
+00:03:28,000 --> 00:03:38,000
+ of a styles file beginner, okay? So the same thing is here and now we are going to do the same thing as we have done with the login page, okay?
+
+29
+00:03:38,000 --> 00:03:42,000
+ So we are just going to use the state.
+
+30
+00:03:42,000 --> 00:04:04,000
+ So import use state from react, okay? So we are going to use this hook from react and let's expand this function and we are going to write the values.
+
+31
+00:04:04,000 --> 00:04:19,000
+ So it would be const email comma set email equal to use a state, alright? You state and the value would be empty first for now.
+
+32
+00:04:19,000 --> 00:04:44,000
+ Now again const after email it will be password. So password comma set password equal to use state again the value will be null here also.
+
+33
+00:04:44,000 --> 00:04:52,000
+ And after this what we are actually going to do since these values are not used we have to use it somewhere in this label.
+
+34
+00:04:52,000 --> 00:05:18,000
+ So in that case we are going to check the input values, okay? So this is email, okay? So required is true, okay? Value equal to email, okay? And on change the same thing on change equals to go here.
+
+35
+00:05:18,000 --> 00:05:35,000
+ And since it is an event so set email and e.target.value, okay? So when you are going to change the then the email will be also will be changing like in the input.
+
+36
+00:05:35,000 --> 00:06:04,000
+ Now similarly we are going to do that with the password as well so after this value equals to password, okay? And then if the password changes in the input field then in that case we are going to take that and set password is going to e.target.value, okay?
+
+37
+00:06:04,000 --> 00:06:16,000
+ So we are done with this and now let's do another thing like we have to make one like we have to take the login also right.
+
+38
+00:06:16,000 --> 00:06:41,000
+ From the auth store we are going to take the login so let's destructure it so login equals to auth store and from the auth store we are going to take it and one thing we have forgot to define that handle submit function so handle submit equals to call back function.
+
+39
+00:06:41,000 --> 00:06:52,000
+ After this we are just going to say that e.prevent default because we don't want everything to refresh, okay?
+
+40
+00:06:52,000 --> 00:07:03,000
+ So this will be an async function async we have defined as async and just pass e here so e.prevent default and now login.
+
+41
+00:07:03,000 --> 00:07:15,000
+ So from the login we are going to take e.mail and password and so we have taken this and we are going to pass this right.
+
+42
+00:07:15,000 --> 00:07:41,000
+ e.mail, set e.mail and set password password and set password and this handles a bit so in the form let's go to the form where is the form so form on submit equals to whenever we are submitting the form then in that case we are going to call this handle submit.
+
+43
+00:07:41,000 --> 00:07:47,000
+ Handle submit function so it is going to handle the login functionality okay.
+
+44
+00:07:47,000 --> 00:07:55,000
+ So one thing let's test this one out but before that we can see that there is some issue with the back end.
+
+45
+00:07:55,000 --> 00:08:02,000
+ So let me check one thing like whether this MongoDB site is opened.
+
+46
+00:08:02,000 --> 00:08:13,000
+ Okay okay let me sign this up okay.
+
+47
+00:08:13,000 --> 00:08:29,000
+ Whenever you are working with your database okay so there will be some errors in your MongoDB connection sometimes so that is current type we have does not add it you have to add this current type we have this white list this okay so that it doesn't cause any issue.
+
+48
+00:08:29,000 --> 00:08:41,000
+ Now then you start with your running the back end so NPN run tab.
+
+49
+00:08:41,000 --> 00:08:51,000
+ Okay sorry NPM start actually so clear the terminal and NPM start.
+
+50
+00:08:51,000 --> 00:08:58,000
+ It's going to start and it's going to get connected to your MongoDB so MongoDB connected and also we are running our front end.
+
+51
+00:08:58,000 --> 00:09:09,000
+ So everything is fine so let's go to the local host 5173 and now let's go to the login.
+
+52
+00:09:09,000 --> 00:09:16,000
+ So in the login let's do one thing.
+
+53
+00:09:16,000 --> 00:09:32,000
+ We can browse our collections from here in order to check whether okay I've already had one this maybe we can do one thing later second I will just check it.
+
+54
+00:09:32,000 --> 00:09:41,000
+ It's connecting to cluster let's see in the chat app in the users we have four users.
+
+55
+00:09:41,000 --> 00:09:50,000
+ So user name in this email let's copy this email okay.
+
+56
+00:09:50,000 --> 00:10:01,000
+ If I'm not wrong whatever the password I've set otherwise we can create new one using the sign up okay.
+
+57
+00:10:01,000 --> 00:10:13,000
+ All the passwords I set are actually same only.
+
+58
+00:10:13,000 --> 00:10:31,000
+ Okay guys let me set up whatever this error is I will fix them and come back soon.
+
+59
+00:10:31,000 --> 00:10:42,000
+ Okay guys actually there was no issue we have run the back end okay so and after this what actually there was issue is in as you go into this
+
+60
+00:10:42,000 --> 00:10:56,000
+ wait a second login page dot j6 here in the handle submit I have just included that function function type so just remove those braces so handle submit.
+
+61
+00:10:56,000 --> 00:11:11,000
+ So now if you go here into that I have created one email address since I've forgotten the password of the old one okay so email address and the password if you click on this login so you can see that login is successful.
+
+62
+00:11:11,000 --> 00:11:17,000
+ So that's how you do it okay so I will see you in the next session.
+
