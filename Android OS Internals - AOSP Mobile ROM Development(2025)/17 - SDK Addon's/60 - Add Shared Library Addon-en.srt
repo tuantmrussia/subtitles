@@ -1,0 +1,188 @@
+1
+00:00:00,410 --> 00:00:01,520
+Hello and welcome back.
+
+2
+00:00:01,520 --> 00:00:05,480
+So in this section we will discuss about the shared library, add on.
+
+3
+00:00:06,140 --> 00:00:16,550
+Okay, So basically the purpose of shared library add on is to, uh, to share some of the libraries
+
+4
+00:00:16,550 --> 00:00:23,360
+with your embedded device to, to your vendor or maybe to an external partner.
+
+5
+00:00:24,020 --> 00:00:24,440
+Okay.
+
+6
+00:00:24,440 --> 00:00:31,220
+So in case, for example, in a real world scenario, for example, if you are working for an OEM like
+
+7
+00:00:31,580 --> 00:00:39,980
+Samsung or some other company, then there might be a lot of vendors, okay, who might be producing
+
+8
+00:00:39,980 --> 00:00:43,070
+some softwares or maybe something else for you.
+
+9
+00:00:43,130 --> 00:00:43,340
+Okay.
+
+10
+00:00:43,340 --> 00:00:49,790
+So in case if you want to provide a hardware abstraction layer to your partner or an external company,
+
+11
+00:00:49,790 --> 00:00:56,720
+then what you can do is you can create a shared library, add on and embed or attach that within your
+
+12
+00:00:56,750 --> 00:00:59,690
+SDK and pass it on to the vendor.
+
+13
+00:00:59,690 --> 00:01:09,120
+So what you can do exactly is that you can host your shared library, add on somewhere in the somewhere
+
+14
+00:01:09,120 --> 00:01:16,740
+in the web and you are your partner actually can just use it in the update sites.
+
+15
+00:01:17,010 --> 00:01:17,550
+Okay.
+
+16
+00:01:17,550 --> 00:01:20,160
+So we will try to do a demo.
+
+17
+00:01:20,220 --> 00:01:27,810
+We'll just first go through the steps required to create a shared library, add on, and then in the
+
+18
+00:01:27,810 --> 00:01:33,630
+next tutorial we will do, uh, a practical session on shared library add on.
+
+19
+00:01:33,630 --> 00:01:39,720
+Okay, so, so these are the steps basically you need to follow to create a shared library.
+
+20
+00:01:39,750 --> 00:01:40,140
+Okay.
+
+21
+00:01:40,140 --> 00:01:50,460
+So basically, uh, the, so the first step is like you can refer to the sample device which is already
+
+22
+00:01:50,460 --> 00:01:52,440
+provided within Aosp.
+
+23
+00:01:52,590 --> 00:01:56,070
+So in Aosp if you go to.
+
+24
+00:01:58,560 --> 00:02:01,610
+Device folder and there is a folder called sample.
+
+25
+00:02:01,620 --> 00:02:06,690
+So inside the sample there is an add on implementation.
+
+26
+00:02:06,690 --> 00:02:12,210
+So the easiest way of doing it is like, just take a copy of this.
+
+27
+00:02:12,210 --> 00:02:20,450
+So this is basically your device and then include your library under the apps and edit the Android dot.
+
+28
+00:02:20,490 --> 00:02:22,340
+MK Not here.
+
+29
+00:02:22,350 --> 00:02:34,680
+So android.mk and manifest dot in all those stuffs here and also here within the apps you might be putting
+
+30
+00:02:34,680 --> 00:02:42,510
+your library and just update the update the Android dot.
+
+31
+00:02:42,810 --> 00:02:46,830
+So for example in this case, so it says the normal Android dot.
+
+32
+00:02:46,900 --> 00:02:49,890
+MK So you basically need to update that.
+
+33
+00:02:49,890 --> 00:02:54,570
+So we'll have a look at that in the next tutorial in the practical session.
+
+34
+00:02:54,570 --> 00:03:00,460
+So for now, just keep in mind that you can always refer to the sample device or you can create it on
+
+35
+00:03:00,460 --> 00:03:01,870
+your own, Okay?
+
+36
+00:03:02,680 --> 00:03:05,650
+And then building is quite straightforward.
+
+37
+00:03:05,650 --> 00:03:12,520
+So what you need to do is set up environment setup and then just make and the product.
+
+38
+00:03:12,520 --> 00:03:18,910
+So this is the product and your add on name and then hyphen SDK add on.
+
+39
+00:03:19,270 --> 00:03:24,190
+Okay, so this is the command which you need to execute to build an add on.
+
+40
+00:03:24,610 --> 00:03:24,850
+Okay.
+
+41
+00:03:24,850 --> 00:03:30,520
+So once that is built, once the SDK is built, you will get the SDK add on at this location.
+
+42
+00:03:30,520 --> 00:03:38,260
+So in this location, so to make it available for the developers, either you can share it within your
+
+43
+00:03:38,380 --> 00:03:47,170
+local internet or maybe local web server, or maybe you can put it on the on a Web site, on a web server
+
+44
+00:03:47,170 --> 00:03:54,520
+and share the link to your developer so that they can add include the add on in their Android studio.
+
+45
+00:03:54,640 --> 00:04:00,600
+So, uh, so I think for theory part, I think that's it for this session.
+
+46
+00:04:00,600 --> 00:04:06,570
+So we will look into a practical session in the next tutorial.
+
+47
+00:04:06,570 --> 00:04:07,080
+Thank you.
+
