@@ -1,0 +1,336 @@
+1
+00:00:00,610 --> 00:00:01,120
+It's early.
+
+2
+00:00:01,120 --> 00:00:04,420
+Next is a mac security mechanism used in Android.
+
+3
+00:00:04,420 --> 00:00:07,840
+So MAC stands for mandatory access control.
+
+4
+00:00:07,840 --> 00:00:14,120
+So to understand Linux well, we need to know what Mac and DAC are.
+
+5
+00:00:14,140 --> 00:00:20,680
+So MAC stands for mandatory access control and DAC stands for Discretionary Access Control.
+
+6
+00:00:20,710 --> 00:00:26,200
+Mac and DAC are two of the most popular access control models in use.
+
+7
+00:00:26,230 --> 00:00:31,450
+The main difference between them is in how they provide access to the users.
+
+8
+00:00:31,450 --> 00:00:39,940
+So in mandatory access control or MAC, the system determines which subjects can access specific data
+
+9
+00:00:39,940 --> 00:00:43,630
+objects in discretionary access control or DAC.
+
+10
+00:00:43,660 --> 00:00:50,800
+The owner of the object, the owner of the object specifies which subjects can access the object.
+
+11
+00:00:50,800 --> 00:00:52,660
+So this is typical case.
+
+12
+00:00:52,690 --> 00:00:57,850
+In Linux, AC Linux is a mac security mechanism to make it very simple.
+
+13
+00:00:57,880 --> 00:01:00,500
+Let's try to understand this with an example.
+
+14
+00:01:00,520 --> 00:01:06,250
+Imagine that you own a farm house and you have cows, rabbits and chickens.
+
+15
+00:01:06,280 --> 00:01:10,790
+Each animal in the farmhouse should eat specific food.
+
+16
+00:01:10,810 --> 00:01:14,860
+None of these animals or birds would not eat each other's food.
+
+17
+00:01:14,890 --> 00:01:19,690
+Let's imagine that you have a robot who will take care of this farmhouse.
+
+18
+00:01:19,720 --> 00:01:27,580
+The robot will look after the animals and make sure that they eat the right food based on your instruction.
+
+19
+00:01:27,580 --> 00:01:31,180
+So you have to instruct the robot with some rules.
+
+20
+00:01:31,210 --> 00:01:34,790
+So you need to say, a cow should only eat grass.
+
+21
+00:01:34,810 --> 00:01:37,210
+Rabbit should only eat carrots.
+
+22
+00:01:37,240 --> 00:01:40,500
+Chicken should only eat chicken food.
+
+23
+00:01:40,510 --> 00:01:45,340
+So when you write these rules in silliness, you will write something like this.
+
+24
+00:01:45,610 --> 00:01:46,930
+Allow cows.
+
+25
+00:01:46,930 --> 00:01:48,440
+Grass and food.
+
+26
+00:01:48,460 --> 00:01:48,910
+Eat.
+
+27
+00:01:48,910 --> 00:01:50,260
+Allow rabbit.
+
+28
+00:01:50,290 --> 00:01:51,130
+Carrot.
+
+29
+00:01:51,130 --> 00:01:52,220
+Call and food.
+
+30
+00:01:52,240 --> 00:01:52,690
+Eat.
+
+31
+00:01:52,690 --> 00:01:53,230
+Allow.
+
+32
+00:01:53,230 --> 00:01:53,920
+Chicken.
+
+33
+00:01:53,920 --> 00:01:54,730
+Grains.
+
+34
+00:01:54,730 --> 00:01:55,210
+Colon.
+
+35
+00:01:55,210 --> 00:01:55,840
+Food.
+
+36
+00:01:55,870 --> 00:01:56,290
+Eat.
+
+37
+00:01:56,290 --> 00:02:00,040
+So this is a typical SELinux policy rule, as we can see.
+
+38
+00:02:00,070 --> 00:02:03,330
+A select policy rule comes in this form.
+
+39
+00:02:03,340 --> 00:02:06,070
+The first one is the keyword which says Allow.
+
+40
+00:02:06,100 --> 00:02:07,810
+Second one is the source.
+
+41
+00:02:07,810 --> 00:02:10,870
+So this is the type of the subject of the rule.
+
+42
+00:02:10,870 --> 00:02:12,370
+So this is basically the subject.
+
+43
+00:02:12,370 --> 00:02:15,530
+In our first example, the subject is cow.
+
+44
+00:02:15,550 --> 00:02:15,940
+Right?
+
+45
+00:02:15,940 --> 00:02:22,660
+So this is basically who is requesting the access and then comes the archetype of the object.
+
+46
+00:02:22,900 --> 00:02:25,570
+What is the access requested?
+
+47
+00:02:25,570 --> 00:02:29,710
+So in the first example, cow is requesting grass.
+
+48
+00:02:29,710 --> 00:02:33,040
+So the cow is requesting access to the grass.
+
+49
+00:02:33,040 --> 00:02:38,170
+And the third part is the class, the kind of object being accessed.
+
+50
+00:02:38,170 --> 00:02:43,060
+So in our example it is the food, and then the last one is the permissions.
+
+51
+00:02:43,060 --> 00:02:48,420
+So in our example, the cow is requesting the permission to eat the food, right?
+
+52
+00:02:48,430 --> 00:02:51,480
+So this is a typical SC policy rule.
+
+53
+00:02:51,490 --> 00:02:59,800
+Okay, now let's look at the subjects and objects in Android so we can replace cows, rabbits and chickens
+
+54
+00:02:59,800 --> 00:03:08,140
+with processors or process types in Android, and we can replace grass added and grains with files,
+
+55
+00:03:08,140 --> 00:03:11,680
+socket, other processors, etc. in Android.
+
+56
+00:03:11,680 --> 00:03:15,010
+So a real world example will look something like this.
+
+57
+00:03:15,010 --> 00:03:24,400
+Allow untrusted app app data file colon file read right and the kernel will look at these rules and
+
+58
+00:03:24,400 --> 00:03:27,160
+make sure that the subjects follows it.
+
+59
+00:03:27,160 --> 00:03:37,390
+So in this a policy rule which we have seen where allowing untrusted apps access to apps data file so
+
+60
+00:03:37,390 --> 00:03:39,370
+it can read or write.
+
+61
+00:03:39,370 --> 00:03:45,520
+So all untrusted apps could read or write app data file.
+
+62
+00:03:45,520 --> 00:03:54,340
+So files that end with starter D are the SC Linux policy source files where we write the SELinux rules.
+
+63
+00:03:54,340 --> 00:04:01,790
+So in this example App Store, we can find one rule it says Allow app domain mine process hal file file
+
+64
+00:04:01,810 --> 00:04:05,560
+class read permission and also it's a good no trends permission.
+
+65
+00:04:05,800 --> 00:04:12,190
+So in this case we are allowing the process which comes under the app domain access to this particular
+
+66
+00:04:12,190 --> 00:04:15,960
+file that read and execute not trans permissions.
+
+67
+00:04:15,970 --> 00:04:18,310
+Similarly, you can find many other files.
+
+68
+00:04:18,310 --> 00:04:21,550
+So file here we are declaring some types.
+
+69
+00:04:21,550 --> 00:04:23,710
+We look at types in a later session.
+
+70
+00:04:23,710 --> 00:04:28,510
+So here in context 30, you can find many other rules.
+
+71
+00:04:28,510 --> 00:04:34,540
+So all the rules will be basically under the files with standard extension.
+
+72
+00:04:34,540 --> 00:04:38,680
+There are many other files, other supporting files for these rules.
+
+73
+00:04:38,680 --> 00:04:43,630
+So for example, Jen FS underscore context and file underscore context.
+
+74
+00:04:43,630 --> 00:04:51,190
+These files basically defines the names or classes or domains of different resources within the system.
+
+75
+00:04:51,190 --> 00:04:54,910
+We'll have a look at these in detail in the later tutorials.
+
+76
+00:04:54,910 --> 00:04:59,800
+For now, just keep in mind that starter D files consist of all the.
+
+77
+00:05:00,060 --> 00:05:06,930
+See the next rules and you can find all the AC policies of a particular hardware or a board.
+
+78
+00:05:06,930 --> 00:05:13,890
+Under this path, under the device folder, you will get the manufacturer name like Amlogic, Google,
+
+79
+00:05:13,890 --> 00:05:16,580
+Linear or MediaTek D Board.
+
+80
+00:05:16,590 --> 00:05:22,110
+So if we take Leonardo as an example, we come inside that you can see different devices, the Dragon
+
+81
+00:05:22,110 --> 00:05:28,830
+board, AI keyboard and under the board name or the device name, you can find a folder with the name
+
+82
+00:05:28,830 --> 00:05:29,880
+Z Policy.
+
+83
+00:05:29,970 --> 00:05:37,920
+Here we have the AC policy here and under the AC policy will have all the start e files where we define
+
+84
+00:05:37,920 --> 00:05:45,030
+the AC policies and its supporting files where we declare the domain types extra.
+
