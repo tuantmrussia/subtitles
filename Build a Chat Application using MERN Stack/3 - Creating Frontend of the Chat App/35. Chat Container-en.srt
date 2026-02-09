@@ -1,0 +1,608 @@
+1
+00:00:00,000 --> 00:00:06,860
+ Okay, so hello everyone in the last video, but I've actually done is in the home page as you can see is chat container
+
+2
+00:00:06,860 --> 00:00:10,940
+ component was ended twice because I've written it twice. That's why and
+
+3
+00:00:10,940 --> 00:00:15,260
+ That's that is in and also our back in is actually failing because we haven't
+
+4
+00:00:15,260 --> 00:00:24,400
+ Like the this a MongoDB network error, so I will fix it soon, but okay, so I will just fix it and I will come back
+
+5
+00:00:25,560 --> 00:00:30,200
+ Okay, guys now the MongoDB is working and one thing is
+
+6
+00:00:30,200 --> 00:00:36,160
+ Wait a second so here in the cluster. There's a setting called current IP address, okay
+
+7
+00:00:36,160 --> 00:00:41,320
+ So whenever some MongoDB error network arises, so you need to whitelist the IP address
+
+8
+00:00:41,320 --> 00:00:49,640
+ There would be some option that would be given. Okay. That's why I am trying to switch to you like sometimes the back end is running into an error because of these issues
+
+9
+00:00:49,640 --> 00:00:51,480
+ so now
+
+10
+00:00:51,480 --> 00:00:57,440
+ We have done with this. So let's just start with another component, so before that
+
+11
+00:00:57,440 --> 00:01:02,480
+ Let's go to our web apps who it would be here in the front and side
+
+12
+00:01:02,480 --> 00:01:06,620
+ So as we can see there's lots of errors that have been here on the right side
+
+13
+00:01:06,620 --> 00:01:13,000
+ Let's go to and log in there as you can see the user face access fully and all the list users have been on the left side
+
+14
+00:01:13,000 --> 00:01:17,800
+ So let's style this no chat selected component first because looking quite odd
+
+15
+00:01:17,800 --> 00:01:19,800
+ so
+
+16
+00:01:19,800 --> 00:01:25,800
+ Let's go let's close this back in folder. Let's go to the no chat selected and for this
+
+17
+00:01:25,800 --> 00:01:31,880
+ That this thing would be in order to get things in center. You know the concept of Flexbox right
+
+18
+00:01:31,880 --> 00:01:35,040
+ so you can apply flex flex
+
+19
+00:01:35,040 --> 00:01:38,360
+ Yeah flex call and
+
+20
+00:01:38,360 --> 00:01:41,640
+ Justify center in order to bring the
+
+21
+00:01:41,640 --> 00:01:44,760
+ components to center and
+
+22
+00:01:46,360 --> 00:01:52,200
+ What else we can do item center item center and then height should be full
+
+23
+00:01:52,200 --> 00:01:55,400
+ Controllers, let's take a look at it
+
+24
+00:01:55,400 --> 00:02:00,200
+ So we'll come to chat up this your homepage where you can start chatting with your friends. Okay, that one is fine and
+
+25
+00:02:00,200 --> 00:02:06,440
+ What we can actually do in order to make it more look clear, so we can do
+
+26
+00:02:06,440 --> 00:02:12,600
+ We can wrap everything around the dip so take this dip and
+
+27
+00:02:14,200 --> 00:02:21,080
+ Wrap it around this h1 and p. So now let's make one another class name here
+
+28
+00:02:21,080 --> 00:02:24,280
+ so this also flex flex call and
+
+29
+00:02:24,280 --> 00:02:31,080
+ Justify center in order to bring the contents to center just t file
+
+30
+00:02:31,080 --> 00:02:36,680
+ Center and text should be white
+
+31
+00:02:36,680 --> 00:02:41,080
+ For these items and a padding while let's take it around
+
+32
+00:02:41,480 --> 00:02:44,360
+ five and items should be center
+
+33
+00:02:44,360 --> 00:02:47,640
+ So let's see this
+
+34
+00:02:47,640 --> 00:02:50,360
+ It's good only and
+
+35
+00:02:50,360 --> 00:02:57,160
+ For this day we have actually done for the h1 and p also have to do some styling. So let's increase the text
+
+36
+00:02:57,160 --> 00:03:02,600
+ Length okay, so text side should be 3x cell
+
+37
+00:03:02,600 --> 00:03:05,400
+ good now after this
+
+38
+00:03:05,400 --> 00:03:10,840
+ Text should be white which is already white. We don't need to change it and
+
+39
+00:03:11,080 --> 00:03:15,160
+ Then margin bottom. There's some margin. We should apply so it would be for
+
+40
+00:03:15,160 --> 00:03:17,960
+ That's looking good and now
+
+41
+00:03:17,960 --> 00:03:22,760
+ For this padding class. Let's also apply some styling. So class name and now
+
+42
+00:03:22,760 --> 00:03:27,640
+ In this one text should be gray. I guess it should be good
+
+43
+00:03:27,640 --> 00:03:30,440
+ 400 and margin bottom would be four
+
+44
+00:03:30,440 --> 00:03:33,240
+ Okay, let's look at this
+
+45
+00:03:33,240 --> 00:03:36,200
+ Okay, this one is very good now after this
+
+46
+00:03:36,920 --> 00:03:42,440
+ Since we have already styled this no chat selected component. There's one thing which we would like to do
+
+47
+00:03:42,440 --> 00:03:45,480
+ in the sidebar you go first
+
+48
+00:03:45,480 --> 00:03:49,720
+ Let's go to this sidebar and we are going to
+
+49
+00:03:49,720 --> 00:03:56,280
+ Take the selected users and we are going to take the set set selected users as well. So for this one
+
+50
+00:03:56,280 --> 00:04:01,640
+ Selected user selected
+
+51
+00:04:03,400 --> 00:04:07,960
+ Use a from the chat store. Okay
+
+52
+00:04:07,960 --> 00:04:13,240
+ So after this what we are actually going to do
+
+53
+00:04:13,240 --> 00:04:17,160
+ One thing is here like for the users. We are actually mapping right
+
+54
+00:04:17,160 --> 00:04:22,760
+ So we can see this for the users mapping. We don't have like for the button part
+
+55
+00:04:22,760 --> 00:04:26,680
+ We need to actually do something so for that we are going to use a key value and
+
+56
+00:04:26,680 --> 00:04:31,400
+ With this one user dot underscore ID
+
+57
+00:04:32,920 --> 00:04:34,440
+ So
+
+58
+00:04:34,440 --> 00:04:38,280
+ Actually, we are going to do for this like online and
+
+59
+00:04:38,280 --> 00:04:44,920
+ For that one so if we click on that one it should display some results here. That's why we actually we are doing for that
+
+60
+00:04:44,920 --> 00:04:48,040
+ You will understand that
+
+61
+00:04:48,040 --> 00:04:51,960
+ Let me first do something for it. So
+
+62
+00:04:51,960 --> 00:04:56,520
+ This one is actually never used and we need to make for it
+
+63
+00:04:56,520 --> 00:05:01,720
+ So after this for the button part we are going to use some
+
+64
+00:05:03,480 --> 00:05:08,440
+ Okay, so let's apply that on click method here as well. So on click
+
+65
+00:05:08,440 --> 00:05:12,280
+ And with the on click
+
+66
+00:05:12,280 --> 00:05:14,440
+ Set selected users
+
+67
+00:05:14,440 --> 00:05:17,080
+ We are going to work on that also
+
+68
+00:05:17,080 --> 00:05:19,160
+ selected user
+
+69
+00:05:19,160 --> 00:05:22,040
+ And in this one you pass the user
+
+70
+00:05:22,040 --> 00:05:23,240
+ Okay
+
+71
+00:05:23,240 --> 00:05:28,440
+ So on selected user it should be a callback function. So call back function and now
+
+72
+00:05:28,440 --> 00:05:31,800
+ Let's work on that. So
+
+73
+00:05:32,040 --> 00:05:34,440
+ This is also going to get a input from there. Okay
+
+74
+00:05:34,440 --> 00:05:37,560
+ So set
+
+75
+00:05:37,560 --> 00:05:39,640
+ Selected user
+
+76
+00:05:39,640 --> 00:05:41,880
+ Now let's work on this set selected user. Okay
+
+77
+00:05:41,880 --> 00:05:44,840
+ So let's go here and this
+
+78
+00:05:44,840 --> 00:05:52,600
+ Chat store. I think I've already worked on that. Okay. Nice set selected user user
+
+79
+00:05:52,600 --> 00:05:55,240
+ And it's
+
+80
+00:05:55,240 --> 00:06:00,120
+ Going to take one user and it is going to set using the use time methods. Okay, so that is one
+
+81
+00:06:00,760 --> 00:06:02,760
+ Please type this one line of code
+
+82
+00:06:02,760 --> 00:06:04,520
+ And
+
+83
+00:06:04,520 --> 00:06:09,160
+ After this what we are going to actually we do is let's go to the sidebar again and
+
+84
+00:06:09,160 --> 00:06:14,920
+ Okay, this selected user. I don't think we are going to use that. So we can actually remove
+
+85
+00:06:14,920 --> 00:06:23,560
+ So this one should be fine and after this let's go here and on click
+
+86
+00:06:23,560 --> 00:06:27,320
+ We have already done that for set selected user and for the user part
+
+87
+00:06:28,440 --> 00:06:36,120
+ So now all the work that has been left is for that is chat header. Okay, so we are going to just import the chat store
+
+88
+00:06:36,120 --> 00:06:41,800
+ From the chat store and let's take all the users from there. So const
+
+89
+00:06:41,800 --> 00:06:46,760
+ Selected user whatever the selected user we have selected user
+
+90
+00:06:46,760 --> 00:06:52,360
+ Equals to chat store. Okay, so in the chat store. Let's
+
+91
+00:06:53,640 --> 00:07:00,600
+ We have taken the selected users and we are going to replace this user name and also for this online status
+
+92
+00:07:00,600 --> 00:07:02,600
+ But first let's
+
+93
+00:07:02,600 --> 00:07:05,080
+ Take this source
+
+94
+00:07:05,080 --> 00:07:06,840
+ image so
+
+95
+00:07:06,840 --> 00:07:08,840
+ selected
+
+96
+00:07:08,840 --> 00:07:11,240
+ Selected user
+
+97
+00:07:11,240 --> 00:07:13,640
+ dot profile pic
+
+98
+00:07:13,640 --> 00:07:18,200
+ Selected user or profile pic. I could be fine and after this
+
+99
+00:07:18,200 --> 00:07:22,040
+ For this user name also
+
+100
+00:07:22,600 --> 00:07:25,960
+ Selected user dot user name
+
+101
+00:07:25,960 --> 00:07:29,000
+ Okay, and
+
+102
+00:07:29,000 --> 00:07:32,520
+ After this this online status. We can fix it later
+
+103
+00:07:32,520 --> 00:07:42,280
+ And I think this should be good and for the messages part also we need to do the same thing for the go into this message. It is dot a GSX and
+
+104
+00:07:42,280 --> 00:07:46,360
+ Import
+
+105
+00:07:46,360 --> 00:07:48,200
+ Chat store okay chat store
+
+106
+00:07:51,080 --> 00:07:53,080
+ From
+
+107
+00:07:53,080 --> 00:07:55,800
+ dot dot slash store
+
+108
+00:07:55,800 --> 00:08:00,840
+ Last chat store. Okay, this is good and
+
+109
+00:08:00,840 --> 00:08:04,360
+ After this um
+
+110
+00:08:04,360 --> 00:08:06,360
+ Since we are doing the same thing so
+
+111
+00:08:06,360 --> 00:08:08,680
+ selected users
+
+112
+00:08:08,680 --> 00:08:10,680
+ Selected user equal to
+
+113
+00:08:10,680 --> 00:08:12,840
+ And chat store
+
+114
+00:08:12,840 --> 00:08:18,040
+ From the chat store. We are getting the selected users and for the selected users
+
+115
+00:08:18,040 --> 00:08:22,680
+ We are going to do the same thing like what this source here. Let's remove this one and
+
+116
+00:08:22,680 --> 00:08:29,640
+ Let's apply some curly braces and inside of that selected users dot profile picture
+
+117
+00:08:29,640 --> 00:08:35,640
+ Whatever they have currently it will be like blank because for all the users we haven't done anything
+
+118
+00:08:35,640 --> 00:08:40,520
+ Okay
+
+119
+00:08:40,520 --> 00:08:43,080
+ So
+
+120
+00:08:43,080 --> 00:08:51,400
+ Wait a second and after this we are going to take one log user. Okay, so log user that would be also be present there from the chat store
+
+121
+00:08:51,400 --> 00:08:53,720
+ So get the chat store and
+
+122
+00:08:53,720 --> 00:09:00,840
+ This log user where it should be used in the outgoing right so go to their sample image remove this one and
+
+123
+00:09:00,840 --> 00:09:03,720
+ Use the curly braces and after this
+
+124
+00:09:03,720 --> 00:09:10,040
+ We can do that select not selected user logged user dot profile pic
+
+125
+00:09:12,600 --> 00:09:14,600
+ Profile pic control safe
+
+126
+00:09:14,600 --> 00:09:16,920
+ Let's go to our app
+
+127
+00:09:16,920 --> 00:09:20,440
+ Log out. Let's take another
+
+128
+00:09:20,440 --> 00:09:23,400
+ Okay, let's do one thing sign up
+
+129
+00:09:23,400 --> 00:09:30,920
+ John Doe
+
+130
+00:09:30,920 --> 00:09:32,920
+ at the rate. Okay, John Doe
+
+131
+00:09:32,920 --> 00:09:35,560
+ Okay
+
+132
+00:09:35,560 --> 00:09:40,520
+ John Doe at the rate of gmail.com
+
+133
+00:09:41,320 --> 00:09:43,320
+ Okay
+
+134
+00:09:43,320 --> 00:09:45,320
+ Set some password
+
+135
+00:09:45,320 --> 00:09:50,840
+ Sign up
+
+136
+00:09:50,840 --> 00:09:53,320
+ So as we can see here that in the
+
+137
+00:09:53,320 --> 00:09:57,800
+ Online section. Let's present. I think we are running to some error
+
+138
+00:09:57,800 --> 00:10:04,440
+ Let's debug this one. So inspect go to the console. I guess type or account read properties of a device profile pic
+
+139
+00:10:04,440 --> 00:10:07,080
+ Act messages dot j632
+
+140
+00:10:07,080 --> 00:10:10,680
+ Messages dot j6 let's go to this one
+
+141
+00:10:11,720 --> 00:10:14,760
+ And we have done something wrong. I guess
+
+142
+00:10:14,760 --> 00:10:18,600
+ logged user, right
+
+143
+00:10:18,600 --> 00:10:20,920
+ Then why it's showing some
+
+144
+00:10:20,920 --> 00:10:27,080
+ Issue okay, that's because it should be odds to actually
+
+145
+00:10:27,080 --> 00:10:30,600
+ Right
+
+146
+00:10:30,600 --> 00:10:33,160
+ That
+
+147
+00:10:33,160 --> 00:10:35,160
+ Now as you can see that
+
+148
+00:10:35,560 --> 00:10:41,240
+ Faggots IQ emulator at the right of so if you click this we can see that the state is showing online and that's
+
+149
+00:10:41,240 --> 00:10:43,000
+ You can
+
+150
+00:10:43,000 --> 00:10:45,000
+ Stive some messages, but it's not going to work now
+
+151
+00:10:45,000 --> 00:10:50,680
+ Okay, now so this one is enough for the video. I guess you understood everything
+
+152
+00:10:50,680 --> 00:10:53,320
+ We'll meet in the next video
+
