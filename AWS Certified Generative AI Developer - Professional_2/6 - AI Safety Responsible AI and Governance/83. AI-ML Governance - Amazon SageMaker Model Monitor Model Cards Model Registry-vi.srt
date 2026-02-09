@@ -1,0 +1,176 @@
+1
+00:00:00,000 --> 00:00:06,960
+Bây giờ chúng ta hãy xem xét khả năng tiếp theo của nhà tạo ra Amazon SageMaker và đây là trong triển khai và giám sát
+
+2
+00:00:06,960 --> 00:00:14,240
+Giai đoạn. Nó được gọi là máy theo dõi mô hình SageMaker. Bây giờ chúng tôi sẽ thảo luận về điều này trong
+
+3
+00:00:14,240 --> 00:00:20,720
+Chi tiết hơn rất nhiều trong khu vực AI có trách nhiệm. Vì vậy, tôi sẽ chỉ cung cấp cho bạn một tổng quát 30 giây
+
+4
+00:00:20,720 --> 00:00:29,200
+Về những gì Sage Maker làm. Nó được sử dụng trong môi trường sản xuất và nó giám sát
+
+5
+00:00:29,200 --> 00:00:38,480
+chất lượng dữ liệu đang được sử dụng để tham khảo. Vì vậy, nếu có sự suy thoái trong
+
+6
+00:00:38,480 --> 00:00:47,280
+chất lượng dữ liệu đang được sử dụng trong môi trường sản xuất để tham khảo so với
+
+7
+00:00:47,280 --> 00:00:54,080
+đã được sử dụng trong thời gian huấn luyện. Vì vậy, hãy nói rằng nếu có bất kỳ cột còn thiếu, giá trị vô giá trị
+
+8
+00:00:54,080 --> 00:01:03,120
+so với giai đoạn huấn luyện, nó sẽ giám sát và cảnh báo. Tiếp theo nó cũng là giám sát
+
+9
+00:01:03,120 --> 00:01:11,360
+hiệu suất mô hình dựa trên số lượng đo mà bạn có thể đã thiết lập. Và khi màn trình diễn
+
+10
+00:01:11,360 --> 00:01:20,240
+đi bên dưới ngưỡng đó, nó sẽ cảnh báo và bạn có thể cần phải đào tạo lại mô hình.
+
+11
+00:01:20,240 --> 00:01:26,240
+Chúng ta sẽ thảo luận chi tiết hơn về vấn đề này như tôi đã nói trong mục AI có trách nhiệm.
+
+12
+00:01:26,240 --> 00:01:33,680
+Tiếp theo chúng tôi có máy học công cụ quản lý như quản lý vai trò, thẻ mô hình và mô hình
+
+13
+00:01:33,680 --> 00:01:39,280
+Bảng điều khiển. Vì vậy, một lần nữa chúng tôi sẽ thảo luận điều này như một phần của mục AI có trách nhiệm,
+
+14
+00:01:39,280 --> 00:01:45,200
+Nhưng hãy để tôi cho bạn một mức độ cao 30 giây tổng quát. Vì vậy, Amazon Sager cung cấp quản lý
+
+15
+00:01:45,200 --> 00:01:52,640
+Công cụ để thực hiện máy học có trách nhiệm. Vì vậy, như một phần của các công cụ quản trị, bạn có
+
+16
+00:01:52,640 --> 00:02:02,400
+Quản lý vai trò của người tạo ra nhạc Amazon, cho phép Adam tạo ra, tôi đóng vai trò cho một số người đã được cấu hình trước
+
+17
+00:02:02,400 --> 00:02:11,200
+Nhân vật như nhà khoa học dữ liệu, kỹ sư dữ liệu và kỹ sư của ML. Sau đó chúng tôi cũng có
+
+18
+00:02:11,200 --> 00:02:18,240
+Thẻ mẫu của SageMaker, cho phép bạn thu thập và chia sẻ thông tin về mô hình. Vậy anh
+
+19
+00:02:18,240 --> 00:02:24,800
+có thể ghi lại tất cả các chi tiết liên quan đến mô hình như kiểu vấn đề, thuật toán sử dụng,
+
+20
+00:02:24,800 --> 00:02:33,520
+Tên của mô hình và vân vân thông qua các mô hình bài. Và cuối cùng, điều thứ ba bên trong
+
+21
+00:02:33,520 --> 00:02:39,120
+Máy học quản lý là mô hình bảng điều khiển. Vì vậy, tất cả các chi tiết mà bạn ghi lại thông qua các
+
+22
+00:02:39,120 --> 00:02:47,360
+Thẻ mô hình được nhìn thấy qua bảng điều khiển mô hình này. Và cuối cùng, chúng ta có SageMaker
+
+23
+00:02:47,360 --> 00:02:54,080
+Bắt đầu nhảy và chúng tôi thảo luận về sự khởi đầu nhảy vọt ở Amazon Sage Maker trước đó chúng tôi đã nói nó là hoàn chỉnh
+
+24
+00:02:54,080 --> 00:03:00,640
+Quản lý dịch vụ cho phép truy cập vào các mô hình khác nhau trong khu vực, mô hình nền tảng, máy tính
+
+25
+00:03:00,640 --> 00:03:08,560
+Mô hình tầm nhìn, NLP. Được rồi, vậy đây là bảy khả năng quan trọng nhất từ SageMaker
+
+26
+00:03:08,560 --> 00:03:16,800
+mà anh phải biết. Và chúng được gọi rõ ràng trong hướng dẫn thi. Vì vậy, tôi đã đặt thêm
+
+27
+00:03:16,800 --> 00:03:21,200
+Hãy nhấn mạnh vào. Bây giờ, có một vài khả năng mà bạn nên biết ở cấp độ cao
+
+28
+00:03:21,200 --> 00:03:28,160
+và tôi sẽ bàn về nó. Bây giờ, chúng ta hãy thảo luận về mô hình SageMaker. Và đây
+
+29
+00:03:28,160 --> 00:03:33,280
+đang trong giai đoạn triển khai và theo dõi. Vì vậy, trước đây, khi chúng tôi đã nhìn vào máy học
+
+30
+00:03:33,280 --> 00:03:41,520
+phát triển chu trình cuộc sống, chúng tôi nói rằng mô hình đăng nhập có thể được sử dụng để lấy đồ tạo tác để chạy
+
+31
+00:03:41,520 --> 00:03:48,880
+Người mẫu. Và đây là nơi Sage Maker đăng ký. Vì vậy bây giờ chúng ta hãy đi và xem xét
+
+32
+00:03:48,880 --> 00:03:56,000
+tại một số đặc điểm quan trọng của mô hình SageMaker. Đầu tiên là phiên bản mô hình.
+
+33
+00:03:56,000 --> 00:04:03,120
+Vì vậy nó có thể được sử dụng để theo dõi và quản lý các phiên bản khác nhau của mô hình. Bạn có thể thấy ở đây
+
+34
+00:04:03,120 --> 00:04:08,560
+ảnh chụp màn hình. Vì vậy, chúng tôi có các mô hình đăng nhập và chúng tôi có phiên bản ba của mô hình. Vậy anh
+
+35
+00:04:08,560 --> 00:04:17,280
+có thể theo dõi tất cả các phiên bản của mô hình. Tiếp theo, nó được dùng cho việc quản lý siêu dữ liệu. Để bạn có thể lưu trữ
+
+36
+00:04:17,280 --> 00:04:25,440
+Siêu dữ liệu cho mỗi mô hình, bao gồm dữ liệu đào tạo, siêu chuẩn, và đánh giá
+
+37
+00:04:25,440 --> 00:04:31,600
+Máy đo trong danh sách người mẫu của SageMaker. Bạn có thể thấy ở đây trong ảnh chụp màn hình. Vì vậy, chúng tôi có các mô hình
+
+38
+00:04:31,600 --> 00:04:38,640
+Đăng ký và tên của mô hình này là thử nghiệm mlops. Và bạn có phiên bản mô hình. Và sau đó bạn
+
+39
+00:04:38,640 --> 00:04:46,720
+có một số siêu dữ liệu liên quan đến mô hình này. Bạn có nhóm mô hình, ECR, vị trí, và vân vân.
+
+40
+00:04:46,720 --> 00:04:56,480
+Tiếp theo, nó cũng quản lý trạng thái chấp thuận của mô hình. Vì vậy, bạn có thể thấy ở đây tình trạng cho điều này
+
+41
+00:04:56,480 --> 00:05:04,240
+Bản thử nghiệm gen đặc biệt đang chờ. Vì vậy, một khi bạn đăng ký mô hình với đăng ký mô hình,
+
+42
+00:05:04,240 --> 00:05:08,720
+Nó cần được chấp nhận trước khi được triển khai trong môi trường sản xuất.
+
+43
+00:05:08,720 --> 00:05:14,960
+Và cuối cùng, bạn có thể triển khai mô hình để sản xuất. Vì vậy, đó là ở một cao
+
+44
+00:05:14,960 --> 00:05:19,280
+Trình độ Sage Maker và tính năng quan trọng của nó.
+
