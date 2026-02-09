@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:03,600
+Bây giờ trong phần này, chúng tôi sẽ tập trung vào các cơ sở dữ liệu cho
+
+2
+00:00:03,600 --> 00:00:09,120
+Hệ thống AI trên AWS. Vậy nhu cầu về quỹ dữ liệu là gì?
+
+3
+00:00:09,120 --> 00:00:15,200
+Vì vậy dữ liệu có thể được sử dụng chủ yếu trong hai lĩnh vực. Đầu tiên là AI sáng tạo.
+
+4
+00:00:15,200 --> 00:00:20,800
+Vì vậy, trước đây, nếu bạn nhớ, khi chúng tôi đang thảo luận về tùy biến mô hình trên nền móng Amazon,
+
+5
+00:00:20,800 --> 00:00:25,680
+Chúng tôi nói có ba cách tiếp cận, cách chưng cất, điều chỉnh tốt, và tiếp tục luyện tập.
+
+6
+00:00:25,680 --> 00:00:29,680
+Sau đó chúng tôi nhìn vào kiến trúc và nói, được rồi, đây là mô hình cơ bản.
+
+7
+00:00:29,680 --> 00:00:35,200
+Và sau đó chúng tôi sẽ sử dụng các dữ liệu đào tạo mà chúng tôi có trong S3 xô để đào tạo mô hình này,
+
+8
+00:00:35,200 --> 00:00:41,120
+Và sau đó chúng tôi sẽ có một mô hình tinh chỉnh hoặc tùy chỉnh. Nhưng chúng tôi đã không thảo luận làm thế nào chúng tôi có thể khai thác
+
+9
+00:00:41,120 --> 00:00:48,000
+dữ liệu từ các nguồn dữ liệu khác nhau, làm sạch, biến đổi nó, và sau đó sử dụng nó cho tùy biến mô hình.
+
+10
+00:00:48,000 --> 00:00:55,200
+Để đạt đến giai đoạn này nơi chúng tôi có dữ liệu đào tạo này, đó là những gì chúng tôi sẽ thảo luận trong những
+
+11
+00:00:55,200 --> 00:01:02,000
+Vài bài giảng tiếp theo. Trường hợp thứ hai là máy học truyền thống, nơi bạn cần
+
+12
+00:01:02,000 --> 00:01:07,760
+dữ liệu để đào tạo mô hình máy học của bạn mà bạn có thể đã xây dựng cho trường hợp sử dụng của bạn.
+
+13
+00:01:07,760 --> 00:01:13,600
+Bây giờ một trong những dịch vụ AWS quan trọng ở phía dữ liệu là Amazon SageMaker Al.
+
+14
+00:01:13,600 --> 00:01:18,000
+Vì vậy, Amazon SageMaker là một quản lý máy dịch vụ học tập đầy đủ.
+
+15
+00:01:19,040 --> 00:01:26,160
+Nó được sử dụng bởi các nhà khoa học dữ liệu và các nhà phát triển để xây dựng, đào tạo, và triển khai máy học mô hình.
+
+16
+00:01:26,160 --> 00:01:31,440
+Bây giờ SageMaker Al là một tập hợp các dịch vụ khác nhau.
+
+17
+00:01:31,440 --> 00:01:37,600
+Nó hoạt động chủ yếu ở 3 lĩnh vực. Một là để tạo ra dữ liệu ví dụ, như bạn có thể thấy ở đây.
+
+18
+00:01:37,600 --> 00:01:41,520
+Nó có thể giúp bạn lấy dữ liệu, làm sạch dữ liệu, chuẩn bị dữ liệu,
+
+19
+00:01:41,520 --> 00:01:48,800
+Và sau đó bạn cũng có thể đào tạo mô hình về dịch vụ. Bạn có thể đánh giá hiệu suất của mô hình
+
+20
+00:01:48,800 --> 00:01:55,360
+Và cuối cùng, nó có thể giúp bạn triển khai mô hình sản xuất và giám sát nó trong sản xuất
+
+21
+00:01:55,360 --> 00:02:02,800
+môi trường. Bây giờ trước khi chúng ta nhìn vào khả năng của SageMaker Al trong lĩnh vực dữ liệu,
+
+22
+00:02:02,800 --> 00:02:07,920
+Hãy xem xét một cách nhanh chóng máy học phát triển chu kỳ phát triển cuộc sống. Bây giờ từ quá trình xử lý dữ liệu
+
+23
+00:02:07,920 --> 00:02:13,520
+Mặt, điều đầu tiên bạn cần làm là thu thập dữ liệu. Vậy bạn cần xác định nguồn dữ liệu,
+
+24
+00:02:13,520 --> 00:02:19,040
+Có thể họ đang ở bên ngoài tổ chức làm nguồn cấp dữ liệu, có thể họ đang ở trong tổ chức của anh.
+
+25
+00:02:19,040 --> 00:02:24,640
+Chúng có thể truyền dữ liệu. Chúng ta cần lấy dữ liệu từ kho dữ liệu hoặc hồ dữ liệu.
+
+26
+00:02:24,640 --> 00:02:31,520
+Vì vậy, một khi bạn đã xác định và nuốt chửng dữ liệu, điều thứ hai là quá trình xử lý dữ liệu.
+
+27
+00:02:31,520 --> 00:02:38,160
+Vì vậy, như một phần của việc xử lý dữ liệu, có lẽ bạn cần làm sạch dữ liệu, loại bỏ những mâu thuẫn,
+
+28
+00:02:38,160 --> 00:02:44,640
+mất tích giá trị, nhân bản, có lẽ bạn cần phân chia dữ liệu và chia dữ liệu thành có thể đào tạo,
+
+29
+00:02:44,640 --> 00:02:52,080
+Xác nhận, và kiểm tra. Vì vậy, một khi bạn đã hoàn thành với việc xử lý dữ liệu, tiếp theo là kỹ thuật.
+
+30
+00:02:52,080 --> 00:02:57,920
+Vì vậy, như một phần của kỹ thuật, bạn chọn một tập con các tính năng chiết xuất. Có thể không
+
+31
+00:02:57,920 --> 00:03:04,320
+cần toàn bộ chi tiết. Có lẽ bạn chỉ cần một phần bộ dữ liệu cho trường hợp sử dụng của bạn
+
+32
+00:03:04,320 --> 00:03:10,240
+Hoặc có thể bạn cần làm một số dạng chuyển đổi dữ liệu hoặc bạn cần phải tạo ra một số tính năng bổ sung.
+
+33
+00:03:10,240 --> 00:03:15,920
+Bây giờ từ quan điểm chung, một khi bạn có dữ liệu này, bạn có thể đi trước và tùy chỉnh của bạn
+
+34
+00:03:15,920 --> 00:03:21,440
+Mô hình nền tảng. Nhưng từ các máy học quan điểm truyền thống, một khi bạn có dữ liệu này,
+
+35
+00:03:21,440 --> 00:03:28,480
+Sau đó bạn sẽ đào tạo mô hình của bạn, sau đó cũng đánh giá và chỉnh mô hình dựa trên
+
+36
+00:03:28,480 --> 00:03:35,280
+xuất ra nó tạo ra. Và cuối cùng, bạn sẽ triển khai mô hình và theo dõi mô hình sản xuất.
+
+37
+00:03:35,280 --> 00:03:41,040
+Bây giờ chúng ta hãy xem làm thế nào Amazon SageMaker khả năng bản đồ máy học chu kỳ sống.
+
+38
+00:03:41,040 --> 00:03:48,480
+Vì vậy, trong giai đoạn xử lý dữ liệu, chúng tôi có SaageMaker dữ liệu tranh luận, tập trung vào bộ sưu tập dữ liệu
+
+39
+00:03:48,480 --> 00:03:54,480
+và dữ liệu trước khi xử lý. Vì vậy, đó là dịch vụ đầu tiên chúng tôi sẽ học trong những bài giảng tiếp theo.
+
+40
+00:03:54,480 --> 00:03:59,840
+Sau đó chúng tôi có cửa hàng SageMaker, tập trung vào phần kỹ thuật.
+
+41
+00:03:59,840 --> 00:04:04,960
+Sau đó chúng tôi có SageMaker làm rõ, tập trung vào việc phát hiện thành kiến,
+
+42
+00:04:04,960 --> 00:04:09,840
+Khả năng giải thích, và đánh giá mô hình. Vì vậy, đây là dịch vụ chúng tôi sẽ thảo luận trong
+
+43
+00:04:09,840 --> 00:04:15,920
+Bộ phận AI chịu trách nhiệm. Sau đó chúng tôi có các mô hình SageMaker, mà tập trung vào
+
+44
+00:04:15,920 --> 00:04:20,880
+các mô hình mà bạn đã triển khai và cần phải giám sát sản xuất.
+
+45
+00:04:21,840 --> 00:04:25,920
+Và sau đó chúng ta sẽ xem xét khả năng của Thống đốc ML, đề nghị của SageMaker Al.
+
+46
+00:04:25,920 --> 00:04:31,200
+Chúng tôi sẽ xem xét các thẻ giám đốc vai trò và bảng điều khiển mô hình. Một lần nữa, chúng ta sẽ thảo luận
+
+47
+00:04:31,200 --> 00:04:36,640
+Cái này, không phải ở khu vực này, mà ở khu vực AI có trách nhiệm. Và cuối cùng, chúng ta có SageMaker
+
+48
+00:04:36,640 --> 00:04:42,400
+và chúng ta đã thảo luận về dịch vụ này ở khu vực đầu tiên. Được rồi, tôi sẽ gặp bạn trong tiếp theo
+
+49
+00:04:42,400 --> 00:04:43,360
+diễn thuyết. Cảm ơn.
+
