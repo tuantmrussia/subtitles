@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:07,880
+ So, hello everyone, in this video we are going to work with our components, okay.
+
+2
+00:00:07,880 --> 00:00:11,320
+ So now, before this we are going to install some few packages.
+
+3
+00:00:11,320 --> 00:00:21,080
+ So go into their front and folder and now NPMI React route DOM, we are going to install these
+
+4
+00:00:21,080 --> 00:00:24,600
+ packages in order to work with it.
+
+5
+00:00:24,600 --> 00:00:33,720
+ So hot toast React hot toast and axios for fetching the APIs response and choose stand
+
+6
+00:00:33,720 --> 00:00:39,760
+ for state management, this one React Auto DOM, I guess all you have known for routing
+
+7
+00:00:39,760 --> 00:00:45,200
+ to different pages, this React hot toast is for like sending when you send and receive
+
+8
+00:00:45,200 --> 00:00:50,000
+ messages, we will have this notification write pop up kind of notification which is
+
+9
+00:00:50,000 --> 00:00:52,840
+ which comes in a green or red format.
+
+10
+00:00:52,840 --> 00:01:03,300
+ So for this, so let's install all of this, so now it's getting installed, one more thing
+
+11
+00:01:03,300 --> 00:01:15,680
+ is that we don't need this app.css, okay, so delete this one, okay.
+
+12
+00:01:15,680 --> 00:01:26,560
+ Now what we are going to do is, first let's go to the main.jsx file, okay, higher you can see
+
+13
+00:01:26,560 --> 00:01:40,240
+ the stick mode, now what we are going to do is import, wait, sorry for the noise, import
+
+14
+00:01:40,240 --> 00:01:52,960
+ browser router from React router DOM, okay and go inside this stick mode and we are going
+
+15
+00:01:52,960 --> 00:02:12,480
+ to wrap our app component with this browser router, so browser router, so remove all of this,
+
+16
+00:02:12,480 --> 00:02:26,800
+ close this one, okay, sorry for this actually, okay, now we have saved it, now since we
+
+17
+00:02:26,800 --> 00:02:34,000
+ need different kind of components, right, so go inside the source folder and make one component
+
+18
+00:02:34,000 --> 00:02:40,360
+ folder, so components inside the components, what we are going to do is suppose the first
+
+19
+00:02:40,360 --> 00:02:54,120
+ component, it would be the navbar, right, so navbar, so navbar.jsx, right, so now let's
+
+20
+00:02:54,120 --> 00:03:08,400
+ go inside and make one function navbar equals to, and now return some different component
+
+21
+00:03:08,400 --> 00:03:17,160
+ from the navbar function, so return dev, for example we are going to just say this like
+
+22
+00:03:17,160 --> 00:03:27,800
+ this, okay, so navbar, and now we are going to export default navbar, so control and
+
+23
+00:03:27,800 --> 00:03:34,000
+ S, and for this one what we are going to do is go inside the app.jsx, okay, inside app.jsx
+
+24
+00:03:34,000 --> 00:03:39,720
+ we are going to just import our navbar component, so let's import navbar from components
+
+25
+00:03:39,720 --> 00:03:48,000
+ last navbar, and then what we are going to do is since we are going to use, like route
+
+26
+00:03:48,000 --> 00:03:54,200
+ to different pages, like it would be sign a page login page to file page or home page,
+
+27
+00:03:54,200 --> 00:04:00,440
+ so for this one here we are going to apply our react router down package, we are going
+
+28
+00:04:00,440 --> 00:04:11,280
+ to use our react router down package, so import route, routes from react router down, okay,
+
+29
+00:04:11,280 --> 00:04:17,640
+ control S, save, and now remove this return statement here, after it removing this return
+
+30
+00:04:17,640 --> 00:04:30,240
+ statement, let's for now just return the dev, and after dev, let's take our navbar
+
+31
+00:04:30,240 --> 00:04:40,400
+ component, okay, and after this we are just going to use the routes, and then inside
+
+32
+00:04:40,400 --> 00:04:45,840
+ route, which is a single closing component, so route path equal to suppose we are going
+
+33
+00:04:45,840 --> 00:04:51,320
+ to the home page of our website, so in that case we are going to use just a slash and
+
+34
+00:04:51,320 --> 00:05:01,960
+ equals to suppose for now we have this home page, okay, so home page, so after this
+
+35
+00:05:01,960 --> 00:05:13,760
+ close this one, similarly it would be like control C, control V, paste for different
+
+36
+00:05:13,760 --> 00:05:30,520
+ things like sign a page, we have home page, and then we have this sign up page, then
+
+37
+00:05:30,520 --> 00:05:44,600
+ after that it would be home page sign up page, login page, login page, then after this login
+
+38
+00:05:44,600 --> 00:05:55,840
+ page we would be having profile page, okay, so profile page slash profile, and the element
+
+39
+00:05:55,840 --> 00:06:11,400
+ would be one second profile page, profile page, so all of this we had made, so for all
+
+40
+00:06:11,400 --> 00:06:15,160
+ this home page sign up page, login page, and a profile page in the component, so folder
+
+41
+00:06:15,160 --> 00:06:22,960
+ we are going to make this one by one, so like this navbar kind of only, so let's go and
+
+42
+00:06:22,960 --> 00:06:46,280
+ make this, so it would be home page dot j6, const home page equals to like this export
+
+43
+00:06:46,280 --> 00:07:05,220
+ home page, export default home page, export default home page, okay, and return some component
+
+44
+00:07:05,220 --> 00:07:19,080
+ which is called as div, and suppose we are going to return this h1 for now, and it is home
+
+45
+00:07:19,080 --> 00:07:27,080
+ page, okay, so navbar is done, home page is done, now inside of the ambedo or j6 we have,
+
+46
+00:07:27,080 --> 00:07:32,880
+ sorry, app dot j6 we have sign up page, login page, and profile page, so for all of this we
+
+47
+00:07:32,880 --> 00:07:43,320
+ are going to make this, and also we are forgetting here sign up, and login, and then here
+
+48
+00:07:43,320 --> 00:07:59,200
+ profile, so control as save, let's make for this one, so sign up, so go here, and paste
+
+49
+00:07:59,200 --> 00:08:16,920
+ this, and dot j6, okay, so const, sign up page equals to, and we are going to return a
+
+50
+00:08:16,920 --> 00:08:29,480
+ div with the same thing, so h1 sign up page, I am going to copy paste this in order to save
+
+51
+00:08:29,480 --> 00:08:44,680
+ of the time, okay, so export default sign up page, so copy all of this we are going to make
+
+52
+00:08:44,680 --> 00:08:53,400
+ another component which is called as login, so wrap dot j6 login, control c, and inside
+
+53
+00:08:53,400 --> 00:09:02,160
+ of the components we will have one more file, login page dot j6, go inside the sign
+
+54
+00:09:02,160 --> 00:09:25,560
+ up, control c, login page, control v, this name, this has login, wait, once again, okay,
+
+55
+00:09:25,560 --> 00:09:30,760
+ so I have made all of the pages, so const login page equal to login page, and as you can
+
+56
+00:09:30,760 --> 00:09:36,440
+ see this, and for the profile page also I have made this one component, for sign up page
+
+57
+00:09:36,440 --> 00:09:41,800
+ also I have made this one component, okay, so you can copy of all of these, and in the
+
+58
+00:09:41,800 --> 00:09:47,640
+ app dot j6 I have imported all of these files, like import homepage from the components
+
+59
+00:09:47,640 --> 00:09:54,440
+ slash homepage login page, sign up page, and profile page, and I have used all of them, sorry,
+
+60
+00:09:54,440 --> 00:09:58,800
+ so I have used all of them here, like if this navigates to the homepage, then in that case
+
+61
+00:09:58,800 --> 00:10:04,800
+ homepage would be shown, in case like there is a sign up, like you navigate to the sign
+
+62
+00:10:04,800 --> 00:10:09,640
+ up page, then the sign up page element will be shown, and for the login and profile we are
+
+63
+00:10:09,640 --> 00:10:15,400
+ showing all of the respective component, okay, so that is it, and one thing I would like
+
+64
+00:10:15,400 --> 00:10:20,720
+ to do is, like since this component, like we are putting everything inside of the components
+
+65
+00:10:20,720 --> 00:10:27,760
+ folder, right, but in my case what I will do is, I will make pages folder inside of the
+
+66
+00:10:27,760 --> 00:10:32,600
+ pages folder, I have shipped all of these sign up page profile page, and now I am thinking
+
+67
+00:10:32,600 --> 00:10:34,520
+ to do this, because it would be good only.
+
