@@ -1,0 +1,188 @@
+1
+00:00:01,900 --> 00:00:03,320
+Hãy bàn về hệ thống.
+
+2
+00:00:03,410 --> 00:00:04,840
+Chúng ta bắt đầu xử lý.
+
+3
+00:00:04,870 --> 00:00:09,840
+Vì vậy, trong phần này, chúng tôi sẽ đi qua một số lớp học chịu trách nhiệm cho hệ thống UI
+
+4
+00:00:09,850 --> 00:00:10,330
+Bắt đầu đi.
+
+5
+00:00:20,680 --> 00:00:25,330
+Đây là một tổng quan cao về cách hệ thống UI được khởi động.
+
+6
+00:00:25,370 --> 00:00:31,660
+OK, như bạn thấy ở đây, quá trình đơn bắt đầu hệ thống của các ngôi sao mạng
+
+7
+00:00:31,960 --> 00:00:36,150
+Hệ thống UI và hệ thống UI cuối cùng đã khởi tạo thành phần UI toàn bộ hệ thống này.
+
+8
+00:00:36,160 --> 00:00:38,840
+Đây là cách hệ thống thường bắt đầu.
+
+9
+00:00:38,860 --> 00:00:44,590
+Nếu bạn chưa nghe về Tiger, thì đó là một trong những quá trình bắt đầu trong thời kỳ máy ủi steroid,
+
+10
+00:00:44,600 --> 00:00:49,870
+Vì vậy nó là một trong những quá trình đầu tiên của steroid để bắt đầu và tất cả phần còn lại của quá trình nó bắt đầu
+
+11
+00:00:49,870 --> 00:00:50,620
+từ bên cạnh.
+
+12
+00:00:50,980 --> 00:00:57,040
+Và máy chủ hệ thống là một trong những quá trình quan trọng nhất mà bên đã bắt đầu và hệ thống là
+
+13
+00:00:57,040 --> 00:00:59,170
+luôn chịu trách nhiệm cho rất nhiều thứ khác.
+
+14
+00:00:59,240 --> 00:01:04,990
+Hệ thống cũng là bolds tất cả các dịch vụ bên trong steroid, và nó cũng chịu trách nhiệm cho việc bắt đầu
+
+15
+00:01:04,990 --> 00:01:05,740
+Hệ thống UI.
+
+16
+00:01:05,740 --> 00:01:06,950
+Vì vậy, ở mức độ rất cao.
+
+17
+00:01:06,980 --> 00:01:07,980
+Đây là quá trình.
+
+18
+00:01:07,990 --> 00:01:10,660
+Vậy chu trình bắt đầu từ hạt nhân.
+
+19
+00:01:10,690 --> 00:01:17,560
+Chu kỳ bắt đầu máy phục vụ hệ thống và máy chủ hệ thống chịu trách nhiệm khởi động tất cả các dịch vụ, bao gồm
+
+20
+00:01:17,560 --> 00:01:18,730
+Ứng dụng UI hệ thống.
+
+21
+00:01:18,760 --> 00:01:24,700
+Và cuối cùng, hệ thống UI thực sự khởi tạo tất cả các thành phần UI hệ thống như định hướng, thanh
+
+22
+00:01:24,700 --> 00:01:27,440
+Trạng thái, quán bar đóng cửa và tất cả những thứ khác.
+
+23
+00:01:30,630 --> 00:01:36,930
+Bây giờ, chúng ta hãy đào sâu hơn một chút vào đó, vì vậy đây là một chuỗi, một sơ đồ của làm thế nào hệ thống
+
+24
+00:01:36,930 --> 00:01:37,980
+Bắt đầu đi.
+
+25
+00:01:38,040 --> 00:01:42,690
+Như các bạn thấy ở đây, chúng tôi có dịch vụ điều hành phi công, không là gì ngoài dịch vụ quản lý hoạt động.
+
+26
+00:01:42,700 --> 00:01:48,660
+Và sau đó chúng tôi có các máy chủ hệ thống, chịu trách nhiệm khởi động nhiều dịch vụ, bao gồm hệ thống,
+
+27
+00:01:48,660 --> 00:01:49,380
+Ứng dụng UI.
+
+28
+00:01:49,380 --> 00:01:54,810
+Và sau đó chúng tôi có ứng dụng UI hệ thống ở đây, về cơ bản là một lớp học và dịch vụ UI hệ thống.
+
+29
+00:01:54,840 --> 00:01:55,920
+Lại là lớp học.
+
+30
+00:01:55,920 --> 00:01:58,890
+Chúng tôi sẽ có một cái nhìn vào lớp học này và sau đó hệ thống UI bản thân.
+
+31
+00:01:58,890 --> 00:02:03,770
+Vì vậy, bước đầu tiên là máy chủ hệ thống nhận tín hiệu từ spigot.
+
+32
+00:02:03,780 --> 00:02:06,960
+Vậy biểu đồ này cho thấy quá trình bắt đầu từ hệ thống.
+
+33
+00:02:07,230 --> 00:02:12,830
+OK, vì vậy một khi hệ thống Sava nhận được tín hiệu từ Saigal bởi vì chức năng đặc biệt này bắt đầu,
+
+34
+00:02:12,850 --> 00:02:19,170
+Dịch vụ được giao nhiệm vụ bắt đầu dịch vụ nhập lõi bắt đầu chức năng UI, và điều này bắt đầu hát
+
+35
+00:02:19,180 --> 00:02:25,800
+Một hàm sẽ tạo ra một ví dụ về ứng dụng UI hệ thống và tất cả rõ ràng của lớp học này được kích hoạt.
+
+36
+00:02:25,800 --> 00:02:28,530
+Ứng dụng UI mở rộng cho ứng dụng.
+
+37
+00:02:28,530 --> 00:02:35,550
+Phương pháp sẽ có một cái nhìn vào các lớp học ở phần tiếp theo, nhưng bây giờ, hãy nhớ rằng hệ thống
+
+38
+00:02:35,550 --> 00:02:41,520
+Ứng dụng UI mở rộng lớp học ứng dụng đó, và nó có chức năng tạo ra riêng, được kích hoạt
+
+39
+00:02:41,610 --> 00:02:42,720
+khi nó tức thì.
+
+40
+00:02:42,750 --> 00:02:47,280
+Và sau đó, tạo ra dịch vụ Quản lý Hoạt động nhận được kích hoạt này.
+
+41
+00:02:47,280 --> 00:02:53,300
+Nó gọi cho chức năng khởi động dịch vụ, và nó gọi là dịch vụ UI hệ thống phụ và hệ thống UI gọi
+
+42
+00:02:53,310 --> 00:02:54,050
+trên mạng lưới.
+
+43
+00:02:54,060 --> 00:03:02,730
+Nó có chức năng tạo ra riêng để được thực hiện, và điều này sẽ bắt đầu dịch vụ nếu cần thiết từ hệ thống
+
+44
+00:03:02,730 --> 00:03:08,940
+Ứng dụng UI và sau đó chạy chương trình nâng cấp hệ thống UI bắt đầu phương pháp, cuối cùng kích hoạt
+
+45
+00:03:08,940 --> 00:03:09,570
+Hệ thống UI.
+
+46
+00:03:09,600 --> 00:03:13,950
+Đây là biểu đồ trình tự tổng thể về cách hoạt động.
+
+47
+00:03:15,210 --> 00:03:22,860
+Bây giờ chúng ta hãy đi bộ qua đất lạnh và tham quan tất cả các lớp học và xem nó hoạt động như thế nào.
+
