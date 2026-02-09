@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:06,080
+Và chào mừng trở lại. Trong bài giảng này, chúng tôi sẽ tích hợp máy chủ MCP của chúng tôi với màn hình đám mây.
+
+2
+00:00:06,080 --> 00:00:12,320
+Tất cả các bước mà tôi sẽ nói đều được ghi lại trong hướng dẫn viên này. Vậy nên hãy đi từng bước một.
+
+3
+00:00:12,320 --> 00:00:18,960
+Vì vậy, cách để nói với màn hình đám mây về trình phục vụ MCP của chúng tôi thường thông qua một tập tin cấu hình.
+
+4
+00:00:18,960 --> 00:00:25,840
+Tập tin cấu hình này được định vị trong hệ điều hành Mac dưới sự hỗ trợ của thư viện/ đám mây.
+
+5
+00:00:25,840 --> 00:00:30,880
+Và tên tập tin cho tập tin cấu hình. Nó được gọi là đám mây được ghi điểm
+
+6
+00:00:30,880 --> 00:00:37,840
+Màn hình nền đang bị ghi đè.json. Trong cấu hình JSON này, chúng tôi nói cho đám mây về vị trí
+
+7
+00:00:37,840 --> 00:00:42,960
+của bộ dịch Python. Và như chúng ta đã nói trong hướng dẫn viên này, nếu bạn không biết vị trí của nó,
+
+8
+00:00:42,960 --> 00:00:49,200
+đơn giản là bạn có thể tìm thấy nó bằng cách gõ cái nào bên trong Python. Tiếp theo, chúng tôi nói với các màn hình làm việc đám mây
+
+9
+00:00:49,200 --> 00:00:55,520
+Vị trí của máy chủ MCP. Anh nên có mã máy chủ MCP trong bài giảng trước.
+
+10
+00:00:55,840 --> 00:01:01,200
+Và chú ý rằng điều này cần phải là con đường đầy đủ của tập tin. Cuối cùng, chúng tôi đặt hai môi trường
+
+11
+00:01:01,200 --> 00:01:07,520
+biến, biểu tượng truy cập nội dung cũng như ID không gian. Bây giờ, sau khi có JSON của bạn
+
+12
+00:01:07,520 --> 00:01:13,360
+Tập tin sẵn sàng với dữ liệu của bạn, bạn cần phải thoát, tải lên và mở lại nó cho cấu hình để lấy
+
+13
+00:01:13,360 --> 00:01:19,520
+hiệu ứng. Để tôi bắt đầu ứng dụng. Nếu bạn thấy lỗi kết nối trên góc phải trên cùng của màn hình,
+
+14
+00:01:19,520 --> 00:01:24,400
+Đừng hoảng sợ. Tiếp theo chúng ta sẽ có một bài giảng về bắn súng.
+
+15
+00:01:24,400 --> 00:01:30,800
+Bây giờ, nếu chúng ta nhấp chuột vào tìm kiếm và công cụ ở đây, chúng ta sẽ thấy máy chủ MCP đầy đủ của chúng ta,
+
+16
+00:01:30,800 --> 00:01:37,360
+cũng như hai công cụ MCP đã được phơi bày ở đây. Được rồi, thử xem sao. Và ở đây trong lời nhắc nhở,
+
+17
+00:01:37,360 --> 00:01:44,720
+Tôi sẽ hỏi, liệt kê tất cả các mục nhập đầy đủ của tôi, đặt chúng vào một bảng cơ bản với một định dạng đánh dấu xuống.
+
+18
+00:01:44,720 --> 00:01:51,520
+Hãy để tôi nhấn vào. Và như chúng tôi đã nói, AI sử dụng dây bác sĩ để quyết định công cụ để gọi. Bây giờ,
+
+19
+00:01:51,520 --> 00:01:57,040
+Bạn có thể thấy nó yêu cầu tôi cho phép để kêu gọi một công cụ từ sự hợp nhất bên thứ ba. Tôi sẽ đi
+
+20
+00:01:57,040 --> 00:01:58,160
+Nhấn vào cho phép một lần.
+
+21
+00:02:16,880 --> 00:02:23,120
+Và chúng tôi có thể thấy các mô hình thành công liệt kê các mục và đặt chúng trên một bảng như tôi yêu cầu.
+
+22
+00:02:23,120 --> 00:02:30,240
+Bây giờ, hãy thử nghiệm công cụ MCP thứ hai. Và tôi muốn lấy dữ liệu từ căn cước này. Vì vậy, trong lời nhắc nhở,
+
+23
+00:02:30,240 --> 00:02:35,280
+Tôi sẽ hỏi, bạn có thể cung cấp cho tôi dữ liệu của ID nhập này? Và tóm tắt lại cho tôi.
+
+24
+00:02:41,200 --> 00:02:47,040
+Và như chúng tôi có thể thấy, màn hình làm việc đám mây ngay bây giờ, hoặc khách hàng MCP nhúng bên trong đám mây
+
+25
+00:02:47,040 --> 00:02:54,560
+Màn hình nền, nó muốn gọi công cụ máy chủ MCP thứ hai của tôi. Và nó yêu cầu tôi cho phép làm điều đó.
+
+26
+00:02:54,560 --> 00:03:00,880
+Vì vậy, tôi sẽ nhấp chuột một lần nữa vào cho phép. Và trong khi chờ đợi, hãy nhớ những gì tôi đã đề cập
+
+27
+00:03:00,880 --> 00:03:07,360
+trước đó về tấn công vector. Mỗi đầu vào của người dùng là một lý luận viên tiềm năng bảo đảm an toàn. Chúng ta sẽ lặn sâu.
+
+28
+00:03:07,360 --> 00:03:13,120
+vào những rủi ro ở khu vực hai. Nhưng bây giờ, hãy cố gắng tận hưởng sự thật là chúng ta đã thành công
+
+29
+00:03:13,120 --> 00:03:19,440
+Kết nối một AI tới hệ thống bên ngoài của bạn thông qua máy chủ MCP. Tôi sẽ gặp bạn trong tiếp theo
+
+30
+00:03:19,440 --> 00:03:25,840
+Bài giảng, nơi chúng tôi thêm các nguồn tài nguyên MCP. Tôi hy vọng bài giảng này có ích cho bạn.
+
+31
+00:03:25,840 --> 00:03:28,480
+Và tôi sẽ gặp lại anh trong lần tới. Cảm ơn đã theo dõi.
+
