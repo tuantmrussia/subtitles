@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,600
+Trong bài giảng trước, chúng ta học về đánh giá cơ bản về tốt hơn và sau đó chúng ta
+
+2
+00:00:05,600 --> 00:00:10,480
+nhìn vào đường ray bảo vệ ở Amazon tốt hơn. Trong bài giảng này, chúng ta sẽ tập trung vào
+
+3
+00:00:10,480 --> 00:00:18,480
+Nhà sáng tạo học Amazon làm rõ tập trung vào việc phát hiện thiên vị và giải thích được.
+
+4
+00:00:18,480 --> 00:00:23,600
+Được rồi, bây giờ chúng ta hãy cố gắng và hiểu điều này chi tiết hơn. Được rồi, trước khi chúng ta vào
+
+5
+00:00:24,160 --> 00:00:32,240
+SageMaker phát hiện thành kiến và khả năng giải thích. Hãy xem các giai đoạn mà tiềm năng thiên vị
+
+6
+00:00:32,240 --> 00:00:38,400
+có thể lẻn vào. Bây giờ chúng ta có một mô hình và điều này được đào tạo về dữ liệu đào tạo.
+
+7
+00:00:38,400 --> 00:00:44,960
+Bây giờ các dữ liệu đào tạo bản thân có thành kiến dữ liệu và sau đó kết quả mà sẽ được tạo ra
+
+8
+00:00:44,960 --> 00:00:53,040
+bởi mô hình sẽ được định kiến. Và cái thứ hai là nếu bản thân mô hình có thành kiến,
+
+9
+00:00:53,040 --> 00:01:00,880
+thì kết quả nó sẽ tạo ra sẽ được định kiến. Bây giờ hãy xem trong vòng đời thực
+
+10
+00:01:00,880 --> 00:01:07,280
+Nơi SageMaker rõ ràng có vai trò. Vì vậy, điều đầu tiên là định kiến dữ liệu trước khi đào tạo như chúng tôi
+
+11
+00:01:07,280 --> 00:01:16,800
+Chỉ cần thảo luận và ở đây SageMaker làm rõ có thể phát hiện và thành kiến lớn trong dữ liệu thô trước khi nó là
+
+12
+00:01:16,800 --> 00:01:24,000
+đã từng huấn luyện người mẫu. Bây giờ giai đoạn thứ hai nơi có thể có thành kiến sau khi đào tạo dữ liệu thành kiến
+
+13
+00:01:24,000 --> 00:01:32,960
+và thành kiến kiểu mẫu. Vì vậy, làm rõ có thể phát hiện và thành kiến lớn phát sinh từ dữ liệu hoặc mô hình và đây là
+
+14
+00:01:32,960 --> 00:01:38,400
+trong giai đoạn mà mô hình đã được triển khai. Và sau đó chúng tôi có giai đoạn thứ ba mà
+
+15
+00:01:38,400 --> 00:01:46,320
+Mô hình đã được triển khai và làm rõ có thể giúp giải thích mô hình. Vì vậy, những gì làm
+
+16
+00:01:46,320 --> 00:01:54,880
+Nghĩa là? Vì vậy, những gì nó có thể làm là nó có thể dự đoán tại sao một mô hình tạo ra một kết quả tiêu cực.
+
+17
+00:01:54,880 --> 00:02:02,080
+Bây giờ hãy nói rằng mô hình Java là để chấp thuận hoặc từ chối một ứng dụng thẻ tín dụng. Vì vậy, nếu nó
+
+18
+00:02:02,080 --> 00:02:09,680
+từ chối một ứng dụng thẻ tín dụng được gọi là kết quả tiêu cực. Vì vậy, làm rõ có thể giúp giải thích
+
+19
+00:02:09,680 --> 00:02:18,800
+Tại sao mô hình dự đoán một kết quả tiêu cực. Nó cũng có thể giải thích làm thế nào mô hình làm cho một dự đoán.
+
+20
+00:02:18,800 --> 00:02:25,840
+Và cuối cùng nó cũng có thể xác định những tính năng nào có ảnh hưởng lớn nhất trên hành vi của
+
+21
+00:02:25,840 --> 00:02:32,080
+Người mẫu. Bây giờ hãy thử và hiểu điều này thông qua một ví dụ. Bây giờ đây là một dữ liệu tôi đã lấy
+
+22
+00:02:32,080 --> 00:02:40,240
+từ AWS. Ở đây, mục tiêu của mô hình là dự đoán thu nhập cá nhân có nhiều hơn
+
+23
+00:02:40,240 --> 00:02:48,400
+50.000 hoặc ít hơn 50.000 đô mỗi năm. Bây giờ những gì chúng tôi sẽ làm là chúng tôi sẽ nuôi tất cả những
+
+24
+00:02:48,400 --> 00:02:55,600
+dữ liệu chỉ ra một mô hình như tuổi tác, công việc, lớp học, giáo dục, tình trạng hôn nhân, nghề nghiệp,
+
+25
+00:02:56,400 --> 00:03:04,080
+mối quan hệ, chủng tộc, giới tính, giờ mỗi tuần mà nó hoạt động, đất nước mà nó hoạt động,
+
+26
+00:03:04,080 --> 00:03:10,160
+và sau đó dựa trên tất cả các điểm dữ liệu mô hình có thể dự đoán liệu thu nhập của cá nhân
+
+27
+00:03:10,160 --> 00:03:19,040
+Ít hơn 50.000 hoặc hơn 50.000 đô. Vì vậy, bây giờ đây là tất cả các tính năng chúng tôi có trong dữ liệu của chúng tôi.
+
+28
+00:03:19,040 --> 00:03:27,840
+Và giả sử rằng chúng ta muốn xác định xem có thành kiến nào dựa trên giới tính không.
+
+29
+00:03:27,840 --> 00:03:35,120
+Ở đây chúng ta có giới tính, nam và nữ. Bây giờ bộ dữ liệu mà AWS có là nhiều
+
+30
+00:03:35,120 --> 00:03:41,360
+lớn hơn nhưng tôi chỉ có 5 hồ sơ ở đây. Và nếu tôi nhìn vào năm đĩa mà bạn có thể
+
+31
+00:03:41,360 --> 00:03:51,200
+Trong số năm bản ghi chép có giới tính như nam và chỉ một bản ghi có giới tính như nữ.
+
+32
+00:03:51,200 --> 00:03:58,080
+Bây giờ nếu đây là các dữ liệu đào tạo mà chúng tôi sử dụng để đào tạo các mô hình bạn có thể tưởng tượng làm thế nào chính xác
+
+33
+00:03:58,080 --> 00:04:06,720
+mô hình sẽ là khi nó cố gắng xác định cho phụ nữ giới tính nếu thu nhập ít hơn
+
+34
+00:04:06,720 --> 00:04:14,080
+Hơn hoặc hơn 50.000 đô. Bởi vì số lượng hồ sơ cho phụ nữ là rất thấp, rất khó có thể
+
+35
+00:04:14,080 --> 00:04:21,760
+dự đoán đó cũng sẽ tốt như cho nam giới. Vì vậy, bây giờ đây là một sản xuất ra
+
+36
+00:04:21,760 --> 00:04:29,120
+dựa trên bộ dữ liệu lớn hơn mà AWS có. Và trong bộ dữ liệu đào tạo bạn có thể thấy số
+
+37
+00:04:29,120 --> 00:04:39,760
+Hồ sơ được định kiến rất nhiều 67.6% cho nam giới và 32.4% cho phụ nữ. Vì vậy, nếu tôi tính toán AI hoặc class
+
+38
+00:04:39,760 --> 00:04:49,600
+mất cân bằng vì vậy nó là này trừ đi này là 0.352. Đây là cách bạn có thể xác định những tính năng nào bạn muốn
+
+39
+00:04:49,600 --> 00:04:57,680
+để xem xét thành kiến trong dữ liệu thô. Bây giờ hãy xem qua. Bây giờ hãy nhìn vào khía cạnh thứ hai
+
+40
+00:04:57,680 --> 00:05:04,880
+được rồi. Vì vậy, chúng tôi sẽ lấy cùng một bộ dữ liệu và bạn có thể thấy và bạn có thể thấy ở đây
+
+41
+00:05:04,880 --> 00:05:12,960
+Trái bạn có kết quả dương là 13.7% và kết quả tiêu cực là 86.3. Bây giờ các tích cực
+
+42
+00:05:12,960 --> 00:05:20,720
+Kết quả là nếu dự đoán thu nhập cá nhân là hơn 50.000 đô la và dự đoán 13.7 có thể có
+
+43
+00:05:20,720 --> 00:05:27,440
+Hơn 50.000 đô và âm tính là nếu nó nhỏ hơn 50.000 đô. Bây giờ chúng ta hãy nhìn vào cùng một
+
+44
+00:05:27,440 --> 00:05:36,160
+cho phụ nữ. Vì vậy, bạn có thể thấy kết quả tích cực chỉ cho 4,5% và tiêu cực là cho 95.5%.
+
+45
+00:05:36,160 --> 00:05:44,560
+Vì vậy, bạn có thể sử dụng một ma trận được gọi là DPPL cũng được gọi là sự khác biệt trong tỷ lệ tích cực
+
+46
+00:05:44,560 --> 00:05:54,320
+bằng nhãn hiệu. Sự khác biệt mà bạn có thể thấy ở đây là nếu bạn có điều này như là 1.9937 và đây là 4.5. Vậy 0.045
+
+47
+00:05:54,320 --> 00:06:01,840
+Và đây là giá trị trong thành kiến mà chúng ta có được. Bây giờ hãy nhìn vào khía cạnh thứ ba đó là mô hình
+
+48
+00:06:01,840 --> 00:06:10,000
+Giải thích khả năng sử dụng làm rõ. Vì vậy, bạn có thể thấy ở đây làm rõ giúp giải thích các mô hình
+
+49
+00:06:10,000 --> 00:06:17,280
+tiên đoán. Vì vậy, nó có thể xác định những đặc điểm nào đóng góp nhiều nhất cho dự đoán mô hình.
+
+50
+00:06:17,280 --> 00:06:26,480
+Giả sử đó có thể là đất nước, nghề nghiệp, lớp học lao động. Vì vậy, nó sẽ xác định những người là
+
+51
+00:06:26,480 --> 00:06:34,960
+Những yếu tố góp phần lớn vào dự đoán mô hình. Và nó cũng có thể giúp bạn xác định nếu một cụ thể
+
+52
+00:06:34,960 --> 00:06:43,920
+Đầu vào mô hình có ảnh hưởng nhiều hơn là mong đợi về hành vi mô hình tổng thể. Đây là hình chụp màn hình
+
+53
+00:06:43,920 --> 00:06:49,600
+từ làm rõ bạn có thể thấy và nó xác định những đặc điểm nào đang đóng góp
+
+54
+00:06:49,600 --> 00:06:59,280
+Hầu hết hướng tới dự đoán mô hình. Và điều này có thể đi một cách tuyệt vời trong loại bỏ nhận thức
+
+55
+00:06:59,280 --> 00:07:08,560
+Mô hình AI là hộp đen. Chúng ta sẽ nhìn vào Amazon làm rõ. Bây giờ hãy đi và nhìn vào
+
+56
+00:07:08,560 --> 00:07:17,360
+Trình theo dõi mô hình SageMaker Amazon tập trung vào khả năng kiểm soát, dữ liệu và hiệu suất mô hình.
+
+57
+00:07:17,360 --> 00:07:24,560
+Và điều này hoạt động trong giai đoạn triển khai và theo dõi sau khi hệ thống AI đã được triển khai
+
+58
+00:07:24,560 --> 00:07:32,880
+sản xuất. Bây giờ SageMaker tập trung vào thành kiến và khả năng giải thích. Điều này tập trung vào chất lượng dữ liệu
+
+59
+00:07:32,880 --> 00:07:39,600
+hay dữ liệu nhập vào mô hình trong môi trường sản xuất. Sau đó nó cũng nhìn vào
+
+60
+00:07:39,600 --> 00:07:47,280
+Chất lượng mô hình khi nó được triển khai trong sản xuất. Bây giờ chúng ta hãy xem xét cùng một ví dụ
+
+61
+00:07:47,280 --> 00:07:53,680
+mà chúng ta đã xem qua. Vì vậy, chúng tôi về cơ bản cung cấp điều này như một đầu vào cho các mô hình và sau đó
+
+62
+00:07:53,680 --> 00:08:01,360
+Nó dự đoán thu nhập nhiều hay ít hơn 50.000 đô. Bây giờ hãy nói rằng đây là bộ dữ liệu mà
+
+63
+00:08:01,360 --> 00:08:09,520
+Chúng tôi đã sử dụng để luyện tập. Bây giờ hãy nói trong sản xuất rất nhiều giá trị liên quan đến
+
+64
+00:08:09,520 --> 00:08:17,920
+Công việc đang trở nên vô giá trị. Vì vậy, chúng tôi không nhận được bất kỳ chi tiết về những điều này. Tương tự như vậy có thể
+
+65
+00:08:17,920 --> 00:08:25,440
+những chi tiết liên quan đến đất nước chúng ta nhận được rất nhiều giá trị vô giá trị. Bây giờ hãy nói rằng hai
+
+66
+00:08:25,440 --> 00:08:32,640
+Các yếu tố ảnh hưởng tối đa đến việc dự đoán thu nhập cá nhân. Nhưng nếu bạn nhận được rất nhiều
+
+67
+00:08:32,640 --> 00:08:40,560
+Đây là giá trị vô giá trị sau đó chất lượng dữ liệu đi như một đầu vào các mô hình là nghèo và
+
+68
+00:08:40,560 --> 00:08:47,520
+đây là dự đoán sẽ không lớn như vậy. Vì vậy, đây là những gì các mô hình SageMaker Amazon
+
+69
+00:08:47,520 --> 00:08:56,400
+Theo dõi tập trung vào chất lượng dữ liệu. Vì vậy, nó giám sát các tính chất thống kê chống lại mặt đất-tota
+
+70
+00:08:56,400 --> 00:09:03,600
+Đó có thể là dữ liệu đào tạo của chúng tôi và nó đánh giá nếu có bất kỳ cột còn thiếu, vô giá trị
+
+71
+00:09:03,600 --> 00:09:12,000
+so với những gì các mô hình được đào tạo trên. Điều thứ hai nó tập trung vào là hiệu suất mô hình.
+
+72
+00:09:12,000 --> 00:09:19,040
+Vì vậy, bạn có thể xác định các tham số nơi bạn muốn đánh giá các hiệu suất mô hình như độ chính xác
+
+73
+00:09:19,040 --> 00:09:27,200
+chính xác trong môi trường sản xuất. Và chúng tôi đã thảo luận về mô hình
+
+74
+00:09:27,200 --> 00:09:33,360
+Đánh giá trong khi sử dụng máy đánh giá trên nền Amazon. SageMaker cũng cung cấp dịch vụ
+
+75
+00:09:33,920 --> 00:09:41,760
+nơi nó cho phép bạn đánh giá hiệu suất mô hình dựa trên thước đo mà bạn thiết lập. Được rồi.
+
+76
+00:09:41,760 --> 00:09:45,520
+Đó là khá nhiều trong bài giảng này. Tôi hy vọng bạn thích bài giảng này. Hẹn gặp lại.
+
+77
+00:09:45,520 --> 00:09:45,920
+diễn thuyết.
+
