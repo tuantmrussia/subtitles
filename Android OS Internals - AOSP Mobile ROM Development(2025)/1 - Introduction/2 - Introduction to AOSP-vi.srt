@@ -1,248 +1,260 @@
 1
-00:00:00,000 --> 00:00:11,400
-Robot là một hệ điều hành mã nguồn mở được sử dụng rộng rãi trong các thiết bị di động.
+00:00:00,180 --> 00:00:03,900
+Wow, wow, wow.
 
 2
-00:00:11,400 --> 00:00:17,680
-Nó cũng được dùng trong thiết bị xe hơi, độ cao, thông qua thiết bị, vân vân.
+00:00:06,100 --> 00:00:12,610
+steroid là một hệ thống điều hành mã nguồn mở, được sử dụng rộng rãi trong các thiết bị di động, nhưng nó cũng được sử dụng
 
 3
-00:00:17,680 --> 00:00:23,160
-Nó cũng có một dự án mã nguồn mở tương ứng được điều khiển bởi Google.
+00:00:12,610 --> 00:00:21,070
+sử dụng trong thiết bị xe hơi, độ cao qua thiết bị, v.v... Nó cũng có một dự án mã nguồn mở tương ứng,
 
 4
-00:00:23,160 --> 00:00:28,520
-Bên phải bạn có thể thấy một biểu đồ kiến trúc cấp cao của AOSP.
+00:00:21,130 --> 00:00:23,950
+Nó được dẫn dắt bởi Google ở phía bên phải.
 
 5
-00:00:28,520 --> 00:00:35,400
-Như các bạn có thể thấy, robot có nhiều lớp, nhưng chúng ta có thể tìm thấy hạt nhân Linux.
+00:00:24,220 --> 00:00:27,880
+Bạn có thể thấy một biểu đồ kiến trúc cấp cao của khu vực.
 
 6
-00:00:35,400 --> 00:00:39,280
-Vậy là người máy được xây dựng trên đầu nhân Linux.
+00:00:28,300 --> 00:00:33,040
+Như bạn có thể thấy, robot có nhiều lớp ở phía dưới.
 
 7
-00:00:39,280 --> 00:00:43,800
-Và trên đó là lớp vỏ là lớp trừu tượng phần cứng.
+00:00:33,190 --> 00:00:38,800
+Chúng ta có thể tìm thấy hạt nhân Linux, vì vậy khiếp sợ do đó người máy được xây dựng trên đầu hạt nhân Linux.
 
 8
-00:00:43,800 --> 00:00:48,800
-Và trên đó chúng ta có thời gian chạy của người máy người máy hay máy ảo Dalvik.
+00:00:39,010 --> 00:00:45,250
+Và về điều đó có vỏ, đó là lớp trừu tượng phần cứng và Ebo mà chúng ta có
 
 9
-00:00:48,800 --> 00:00:54,920
-Cùng cấp độ với chúng tôi có các thư viện bản địa mà hầu hết đang trở về C và C++.
+00:00:45,250 --> 00:00:48,790
+Thời gian chạy của người máy hay máy ảo Dalvik.
 
 10
-00:00:54,920 --> 00:00:59,600
-Trên cùng, chúng tôi có khuôn khổ người máy đang trả lại Java.
+00:00:49,090 --> 00:00:55,510
+Cùng cấp độ, chúng tôi có các thư viện bản địa, mà chủ yếu được viết bằng C và C++, và trên cùng
 
 11
-00:00:59,600 --> 00:01:02,960
-Và trên hết chúng tôi có ứng dụng.
+00:00:55,660 --> 00:01:02,590
+Chúng tôi có khuôn khổ của người máy, được viết bằng Java và ở phía trên cùng chúng tôi có các ứng dụng.
 
 12
-00:01:02,960 --> 00:01:07,320
-Vì vậy, như một người dùng steroid bình thường sẽ chủ yếu tương tác với các ứng dụng.
+00:01:02,740 --> 00:01:08,890
+Vì vậy, như một người dùng steroid bình thường sẽ chủ yếu tương tác với các ứng dụng và khuôn khổ steroid, và
 
 13
-00:01:07,320 --> 00:01:13,080
-Và khuôn khổ người máy và thư viện bản địa là một người trung gian giữa các ứng dụng
+00:01:08,890 --> 00:01:15,220
+các thư viện bản địa là một người trung gian giữa các ứng dụng và thân tàu hoặc tiếp theo.
 
 14
-00:01:13,080 --> 00:01:15,880
-Thân tàu hoặc hạt nhân tiếp theo.
+00:01:15,670 --> 00:01:19,990
+Vì vậy, chúng ta sẽ thảo luận chi tiết về mỗi lớp này trong một phần sau.
 
 15
-00:01:15,880 --> 00:01:20,520
-Vì vậy, chúng ta sẽ thảo luận chi tiết về mỗi lớp này ở một phần sau.
+00:01:20,170 --> 00:01:24,730
+Tiếp theo, tôi muốn giới thiệu với các bạn mã nguồn dot com ant.
 
 16
-00:01:20,520 --> 00:01:25,040
-Tiếp theo tôi muốn giới thiệu với các bạn nguồn gốc. anroid.com.
+00:01:24,820 --> 00:01:26,920
+Vậy Asana là nhà phát triển.
 
 17
-00:01:25,040 --> 00:01:29,560
-Vì vậy, với tư cách là một nhà phát triển nền tảng AOSP, bạn chắc chắn nên nhìn vào trang web này.
+00:01:27,040 --> 00:01:29,350
+Anh nên xem trang web này.
 
 18
-00:01:29,560 --> 00:01:32,400
-Bạn có rất nhiều thông tin về AOSP.
+00:01:29,440 --> 00:01:31,930
+Bạn có rất nhiều thông tin về khu vực.
 
 19
-00:01:32,400 --> 00:01:35,400
-Bạn có thể tìm thấy phiên bản tiếng Anh ở đây, xã hội.com.
+00:01:32,230 --> 00:01:33,850
+Bạn có thể tìm thấy phiên bản tiếng Anh ở đây.
 
 20
-00:01:35,400 --> 00:01:38,040
-Và nếu bạn cần một phiên bản Trung Quốc bạn có thể sử dụng nó.
+00:01:33,850 --> 00:01:38,080
+Vì vậy, một giao thức nhất định, nếu bạn cần bất kỳ sự phục tùng, bạn có thể sử dụng này.
 
 21
-00:01:38,040 --> 00:01:41,320
+00:01:38,170 --> 00:01:41,020
 Cũng có một liên kết đến mã được cung cấp bởi Google.
 
 22
-00:01:41,320 --> 00:01:46,480
-Nếu bạn nhấn vào cái này, bạn sẽ đưa bạn đến đoạn mã và ở đây bạn có thể thấy chi nhánh.
+00:01:41,080 --> 00:01:46,240
+Nếu bạn bấm vào, cái này sẽ đưa bạn đến đoạn mã và ở đây bạn có thể thấy chi nhánh.
 
 23
-00:01:46,480 --> 00:01:47,480
+00:01:46,270 --> 00:01:47,560
 Bây giờ nó là chủ nhân.
 
 24
-00:01:47,480 --> 00:01:52,480
-Vì vậy, nếu bạn muốn nhanh chóng tham khảo mã của AOSP sau đó bạn có thể sử dụng liên kết này.
+00:01:47,600 --> 00:01:52,590
+Vì vậy, nếu bạn muốn nhanh chóng tham khảo hơn các mã vùng là, sau đó bạn có thể sử dụng liên kết này.
 
 25
-00:01:52,480 --> 00:01:54,480
-CS.anero.com.
+00:01:52,600 --> 00:01:53,810
+Đưa chúng tôi đến căn hộ Andren.
 
 26
-00:01:54,480 --> 00:01:57,800
-Và ở đây bạn có thể tìm bất cứ mô-đun nào bạn muốn.
+00:01:54,250 --> 00:01:59,770
+Và ở đây bạn có thể tìm bất cứ mô-đun nào bạn muốn và tương tự như một trình soạn thảo.
 
 27
-00:01:57,800 --> 00:02:02,440
-Và tương tự như một biên tập bạn có thể sử dụng điều này nhưng chỉ để đọc mục đích.
+00:01:59,890 --> 00:02:02,200
+Bạn có thể sử dụng chúng, nhưng chỉ để đọc mục đích.
 
 28
-00:02:02,440 --> 00:02:08,640
-Tìm kiếm hệ thống UI ở đây sau đó bạn có thể thấy các mô-đun và hệ thống tương quan lớp UI ở đây.
+00:02:02,380 --> 00:02:03,250
+Tìm kiếm hệ thống.
 
 29
-00:02:08,640 --> 00:02:10,880
-Và ở đây bạn có những lựa chọn để thay đổi chi nhánh.
+00:02:03,250 --> 00:02:06,940
+Bạn đang ở đây, sau đó bạn có thể thấy các mô-đun và hệ thống.
 
 30
-00:02:10,880 --> 00:02:14,880
-Vì vậy, nếu bạn đang tìm kiếm một số chi nhánh khác bạn có thể sử dụng các chi nhánh ở đây.
+00:02:06,940 --> 00:02:08,860
+Các bạn là những lớp học liên quan ở đây và ở đây.
 
 31
-00:02:14,880 --> 00:02:19,240
-Và nếu bạn đang tìm kiếm một số cam kết mà bạn có thể thấy ở đây.
+00:02:08,860 --> 00:02:10,680
+Anh có quyền thay đổi chi nhánh.
 
 32
-00:02:19,240 --> 00:02:24,320
-Nguồn gốc. a radio.com bạn có thể tìm thấy rất nhiều thông tin về AOSP.
+00:02:10,690 --> 00:02:14,650
+Vì vậy, nếu bạn đang tìm kiếm một số chi nhánh khác, tất nhiên, bạn có thể, là chi nhánh ở đây.
 
 33
-00:02:24,320 --> 00:02:30,880
-Dưới các bác sĩ, bạn có thể thấy các tài liệu khác nhau để bắt đầu, an ninh, các chủ đề cốt lõi,
+00:02:14,680 --> 00:02:20,620
+Và nếu bạn đang tìm kiếm một số cam kết mà bạn cũng có thể thấy ở đây trong mã nguồn Andie dot com,
 
 34
-00:02:30,880 --> 00:02:34,760
-Sự tương thích, thiết bị người máy, tham khảo.
+00:02:20,920 --> 00:02:24,940
+Bạn có thể tìm thấy rất nhiều thông tin về khu vực dưới bến tàu.
 
 35
-00:02:34,760 --> 00:02:39,400
-Dưới khi bắt đầu có là những thông tin cần thiết về cách tải về và xây dựng
+00:02:25,240 --> 00:02:27,940
+Bạn có thể thấy các tài liệu khác nhau để bắt đầu.
 
 36
-00:02:39,400 --> 00:02:42,480
-Một dự án AOSP.
+00:02:28,240 --> 00:02:36,130
+Các chủ đề cốt lõi an ninh, các thiết bị tương thích, các thiết bị steroid, ưu tiên cho việc bắt đầu Có
 
 37
-00:02:42,480 --> 00:02:47,840
-Bên dưới bạn có thể tìm thông tin về cấu trúc nền tảng, thiết lập môi trường phát triển,
+00:02:36,130 --> 00:02:40,420
+Thông tin rất tốt về cách tải về và xây dựng một dự án mới.
 
 38
-00:02:47,840 --> 00:02:53,920
-Tải và xây dựng nguồn, tùy chỉnh và một số thông tin về cách đóng góp
+00:02:42,160 --> 00:02:48,370
+Ở đây, bạn có thể tìm thông tin về cấu trúc nền tảng, phát triển, môi trường, thiết lập, tải về
 
 39
-00:02:53,920 --> 00:02:58,360
-cho dự án mã nguồn mở của steroid.
+00:02:48,370 --> 00:02:55,300
+và xây dựng các tùy biến nguồn, và một số thông tin về làm thế nào để đóng góp để mở hệ thống máy tính để
 
 40
-00:02:58,360 --> 00:03:04,200
-Dưới sự bảo mật bạn có thể có được một tổng quan của an ninh người máy ở mức độ khác nhau như trong một
+00:02:55,300 --> 00:02:55,690
+dự án.
 
 41
-00:03:04,200 --> 00:03:09,720
-Ứng dụng steroid hoặc thậm chí ở cấp hạt nhân.
+00:02:58,110 --> 00:03:04,590
+Dưới sự bảo vệ, bạn có thể có một tổng quan về an ninh người máy ở mức độ khác nhau, như ở người máy.
 
 42
-00:03:09,720 --> 00:03:17,000
-Nó cũng chi tiết các tính năng bảo mật được cung cấp bởi Autobot như SC Linux, cửa hàng chính, mã hóa,
+00:03:04,590 --> 00:03:07,440
+hoặc ngay cả ở Canon 11.
 
 43
-00:03:17,000 --> 00:03:21,040
-Xác thực và ký ứng dụng.
+00:03:09,490 --> 00:03:17,770
+Nó cũng chi tiết các tính năng bảo mật được cung cấp bởi steroid như biển, Linux, mã hóa Keystone, xác thực
 
 44
-00:03:21,040 --> 00:03:27,360
-Name
+00:03:17,890 --> 00:03:18,820
+và ứng dụng ký.
 
 45
-00:03:27,360 --> 00:03:29,880
-Vì an ninh.
+00:03:20,780 --> 00:03:27,380
+Có thông tin về cách thực hiện kiểm tra an ninh trên đường bay của bạn, được xây dựng và một số thực hành tốt nhất
 
 46
-00:03:29,880 --> 00:03:34,960
-Dưới các chủ đề cốt lõi, bạn có thể tìm thấy rất nhiều thông tin về các khối xây dựng khác nhau của steroid.
+00:03:27,380 --> 00:03:30,650
+để đảm bảo an ninh dưới những đề tài của tòa án.
 
 47
-00:03:34,960 --> 00:03:40,400
-Có những lời giải thích chi tiết về kiến trúc và rất nhiều mô-đun quan trọng trong A-bốt
+00:03:30,890 --> 00:03:34,610
+Bạn có thể tìm thấy rất nhiều thông tin trên các khối khác nhau xây dựng của steroid.
 
 48
-00:03:40,400 --> 00:03:44,640
-Như âm thanh, máy ảnh, truyền thông, vân vân.
+00:03:35,720 --> 00:03:41,120
+Đó là một lời giải thích chi tiết về kiến trúc và rất nhiều mô-đun quan trọng trong robot như âm thanh,
 
 49
-00:03:44,640 --> 00:03:50,640
-Dưới sự tương thích, bạn có thể tìm thấy tài liệu định nghĩa tương thích và kiểm tra tương thích
+00:03:41,120 --> 00:03:42,860
+Máy quay, truyền thông, vân vân...
 
 50
-00:03:50,640 --> 00:03:53,960
-thông tin liên quan.
+00:03:44,330 --> 00:03:51,110
+Dưới sự tương thích, bạn có thể tìm thấy tài liệu định nghĩa tương thích và kiểm tra tương thích liên quan
 
 51
-00:03:53,960 --> 00:03:58,160
-Những thứ này rất quan trọng nếu bạn định chế tạo một thiết bị người máy thuần túy.
+00:03:51,110 --> 00:03:51,800
+Thông tin.
 
 52
-00:03:58,160 --> 00:04:03,840
-Nếu bạn muốn giữ biểu tượng steroid trên thiết bị của bạn, bạn nên vượt qua các thử nghiệm CTS hoặc
+00:03:53,720 --> 00:03:57,590
+Những thứ này rất quan trọng nếu bạn định chế tạo một thiết bị người máy thuần túy.
 
 53
-00:04:03,840 --> 00:04:07,160
-Kiểm tra bộ đồ thử nghiệm tương thích.
+00:03:57,980 --> 00:04:04,610
+Nếu bạn muốn giữ người máy địa phương trên thiết bị của bạn, bạn nên vượt qua những bài kiểm tra chỗ ngồi hoặc sự tương thích
 
 54
-00:04:07,160 --> 00:04:12,520
-Bạn chạy kiểm tra CTS cho công trình AOSP của bạn và gửi nó đến Google để được chấp thuận.
+00:04:04,610 --> 00:04:06,130
+Kiểm tra ống nghiệm.
 
 55
-00:04:12,520 --> 00:04:14,960
-Nhưng đây không phải là bắt buộc.
+00:04:06,920 --> 00:04:11,900
+Bạn kiểm tra tòa nhà AOSP và gửi nó đến Google để được chấp thuận.
 
 56
-00:04:14,960 --> 00:04:20,840
-Nếu bạn đang đơn giản là chế tạo một thiết bị không cần logo A-rô-bốt thì nó là tùy chọn.
+00:04:12,260 --> 00:04:14,120
+Nhưng đây không phải là bắt buộc.
 
 57
-00:04:20,840 --> 00:04:26,680
-Những thử thách này là những cổng chất lượng để đảm bảo rằng công trình xây dựng của bạn đáp ứng một tiêu chuẩn cơ bản về chất lượng
+00:04:14,750 --> 00:04:19,820
+Nếu bạn chỉ đơn giản là đang chế tạo một thiết bị không cần logo Alpha, thì đây là lựa chọn.
 
 58
-00:04:26,680 --> 00:04:28,680
-Được thiết lập bởi Google.
+00:04:20,480 --> 00:04:27,680
+Những thử nghiệm này là những cổng chất lượng để đảm bảo rằng công trình xây dựng của bạn đáp ứng một tiêu chuẩn chất lượng cơ bản do Google thiết lập
 
 59
-00:04:28,680 --> 00:04:35,920
-Sau những thiết bị người máy chúng ta có thể tìm thấy thông tin cụ thể về xe hơi, doanh nghiệp và TV.
+00:04:28,370 --> 00:04:29,750
+dưới các thiết bị người máy.
 
 60
-00:04:35,920 --> 00:04:40,640
-Và cuối cùng là một phần tham chiếu mà bạn tìm thấy thêm thông tin về các
+00:04:30,170 --> 00:04:35,450
+Chúng ta có thể tìm thông tin cụ thể về xe hơi, doanh nghiệp và truyền hình.
 
 61
-00:04:40,640 --> 00:04:48,960
-thân tàu, lớp trừu tượng phần cứng, HIDL, định nghĩa giao diện vỏ xác định ngôn ngữ và giao dịch
+00:04:35,630 --> 00:04:41,810
+Và cuối cùng, có một phần tham khảo mà bạn tìm thấy thêm thông tin về phần cứng Hull
 
 62
-00:04:48,960 --> 00:04:58,840
-Về cơ bản là một khuôn khổ thử nghiệm liên tục.
+00:04:41,810 --> 00:04:49,220
+Lớp trừu tượng, giao diện thân tàu, định nghĩa, ngôn ngữ và giao dịch, đó là
+
+63
+00:04:49,220 --> 00:04:52,760
+Cơ bản là một khuôn khổ thử nghiệm liên tục.
+
+64
+00:04:54,080 --> 00:04:54,460
+Wow.
+
+65
+00:04:55,700 --> 00:04:57,600
+Wow, wow.
 
