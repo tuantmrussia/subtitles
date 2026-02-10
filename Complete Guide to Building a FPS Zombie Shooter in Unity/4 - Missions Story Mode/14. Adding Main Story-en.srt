@@ -1,0 +1,524 @@
+1
+00:00:00,000 --> 00:00:06,400
+ Hello guys and welcome back. So now in this video what we're going to do is do all of the coding
+
+2
+00:00:06,400 --> 00:00:15,680
+ right. So the first script which we will be making is for the objective manager or right.
+
+3
+00:00:15,680 --> 00:00:25,680
+ So I'm just going to name this as objective manager. All right. Then the next script will be
+
+4
+00:00:26,880 --> 00:00:41,680
+ objective trader. Then after this the final script will be the zombie spawner. Right now
+
+5
+00:00:41,680 --> 00:00:49,840
+ let's open this up and visual studio code or whatever texture you are using. So I'm going to open
+
+6
+00:00:49,840 --> 00:00:56,640
+ both of the objective scripts and then the zombie spawner right. Now from the objective manager
+
+7
+00:00:56,640 --> 00:01:02,720
+ we will start. So let me first of all delete the start and update method and then on the top.
+
+8
+00:01:02,720 --> 00:01:07,760
+ I'm going to add these two packages. The first one is for the UI and the second one is
+
+9
+00:01:07,760 --> 00:01:15,760
+ system dot collections. All right. And then right at the top in square baggels type system dot
+
+10
+00:01:15,760 --> 00:01:25,600
+ serializable and then right down below I'm going to create a class by the name of objective
+
+11
+00:01:25,600 --> 00:01:32,400
+ all right. And then in this objective class what we're going to do is we're going to create a
+
+12
+00:01:32,400 --> 00:01:41,920
+ public string by the name of objective name. And then reference to a command check
+
+13
+00:01:43,840 --> 00:01:54,080
+ which will be the objective reader. All right. After this we're going to create a public
+
+14
+00:01:54,080 --> 00:02:01,680
+ objective type array and name it as objectives. All right then we need a reference to the text
+
+15
+00:02:01,680 --> 00:02:09,920
+ and the text will be the objective name text. All right. So just name this as objective name
+
+16
+00:02:10,720 --> 00:02:22,480
+ text. Okay. Then it will public came object and this will be to our objective UI.
+
+17
+00:02:22,480 --> 00:02:29,680
+ Okay. Or you can say the objective panel. Then we will create an integer by the name of current
+
+18
+00:02:29,680 --> 00:02:35,600
+ objective index. It will be zero and this will keep track of which objective is currently
+
+19
+00:02:36,560 --> 00:02:43,120
+ active. Okay. And also we want to save that in the
+
+20
+00:02:43,120 --> 00:02:50,320
+ directory that whatever objective is completed and if the player died then of course when we
+
+21
+00:02:50,320 --> 00:02:57,440
+ respawn the player or you can see when we restart the game we want the current objective to be
+
+22
+00:02:57,440 --> 00:03:03,120
+ the last one which we save. All right. So in order to save the objective we will create a
+
+23
+00:03:03,840 --> 00:03:11,520
+ private const spring name it as save underscore key and that will be equals to current objective.
+
+24
+00:03:11,520 --> 00:03:19,520
+ All right. Then create a bull. Name this as is showing
+
+25
+00:03:19,520 --> 00:03:32,400
+ text and set it default. I mean by default set it to false so that we don't show the objective
+
+26
+00:03:32,400 --> 00:03:39,440
+ text by default or it. Then create a private coroutine name it has show
+
+27
+00:03:39,440 --> 00:03:48,800
+ that's it. Now let's make a method in which when we press the type key we want to show the
+
+28
+00:03:48,800 --> 00:03:55,360
+ objective. Okay. The current objective whatever the current objective is. So in order to do that
+
+29
+00:03:55,360 --> 00:04:03,680
+ let's create an enumerator type method. Name this as show objective for seconds. This will take
+
+30
+00:04:03,680 --> 00:04:12,400
+ a float as a parameter and name it as time then. In here we will show the objective but let's
+
+31
+00:04:12,400 --> 00:04:19,440
+ first fall make one more method which is by the name of a date objective UI. This will take
+
+32
+00:04:19,440 --> 00:04:25,840
+ bool as a parameter by name of hide instance. Okay. In this we will first fall check that if the
+
+33
+00:04:25,840 --> 00:04:34,160
+ current objective index is less than the objective dot length. All right. What is if condition
+
+34
+00:04:34,160 --> 00:04:42,560
+ means if that there are still objective left then what we want to do. We want to show name
+
+35
+00:04:42,560 --> 00:04:49,120
+ of that current objective. Okay. So in order to show the name we make the objective name dot text
+
+36
+00:04:49,120 --> 00:04:55,600
+ equals to the objectives then we take the current objective index and then we take its name.
+
+37
+00:04:55,600 --> 00:05:06,640
+ All right. Else in the else we show or you can say we otherwise display that all objectives are
+
+38
+00:05:06,640 --> 00:05:14,720
+ done. Okay. So that's why I've typed right here all objectives complete. All right then right here
+
+39
+00:05:14,720 --> 00:05:25,520
+ if we want UI hidden instantly okay. So if the hide instance is true it means to hide the objective
+
+40
+00:05:25,520 --> 00:05:31,360
+ text we hide it and if it is false then it means to show it. So then right here we select true in
+
+41
+00:05:31,360 --> 00:05:38,960
+ order to show the objective UI okay. Now if we get back our tail in which we show the objective
+
+42
+00:05:38,960 --> 00:05:46,000
+ for a few seconds in here we will first of all show the UI panel by calling the update update
+
+43
+00:05:46,000 --> 00:05:53,200
+ objective UI method and pass false to it then we will certainly showing text to true what this
+
+44
+00:05:53,200 --> 00:06:00,800
+ will do is mark text as visible. Then right here we need to wait for the current second so
+
+45
+00:06:00,800 --> 00:06:08,320
+ the given second is time and time will come from this parameter to this so if it is 3 or 4 or 5
+
+46
+00:06:08,320 --> 00:06:17,840
+ right and then right here in this line we hide the UI after time expires and then we mark text as
+
+47
+00:06:17,840 --> 00:06:28,000
+ hidden right there. Okay. So this was for showing the objective UI now in order to show the objective
+
+48
+00:06:28,000 --> 00:06:33,680
+ UI using the tab button right here above the show objective for second method we will create
+
+49
+00:06:33,680 --> 00:06:41,040
+ this update method in which we say that if the tab button is pressed and we check if quarantine
+
+50
+00:06:41,040 --> 00:06:48,720
+ is already running if it is running we will stop it and then right here we start quarantine that
+
+51
+00:06:48,720 --> 00:06:55,920
+ shows objective UI for five seconds. So now this five seconds will pass to this and it will show
+
+52
+00:06:55,920 --> 00:07:01,440
+ the objective text for five seconds and then it will disable it. All right.
+
+53
+00:07:01,440 --> 00:07:08,640
+ Now when an objective is completed and we want to update the text and also the objective
+
+54
+00:07:08,640 --> 00:07:16,720
+ okay in order to do that and also we want to save that as well so whatever objectives
+
+55
+00:07:16,720 --> 00:07:23,280
+ completed we want to save it so if the player dies then that objective still mark as completed.
+
+56
+00:07:23,280 --> 00:07:30,880
+ So now to do that let's scroll down and write at the end make a method by the name of update
+
+57
+00:07:30,880 --> 00:07:39,680
+ objective triggers in which okay in this method right here we activate only the trigger of the
+
+58
+00:07:39,680 --> 00:07:48,080
+ current objective okay so first of all right here in this for each loop what we do is we disable
+
+59
+00:07:48,080 --> 00:07:54,320
+ all triggers first okay when the game start we disable all of them then we only enable
+
+60
+00:07:54,320 --> 00:08:02,400
+ trigger of the current objective okay so for example if none of the objective is true
+
+61
+00:08:02,400 --> 00:08:07,520
+ then we first of all disable all of the triggers then enable only the first objective
+
+62
+00:08:07,520 --> 00:08:13,120
+ triggers all right now if the first objective is done of course we want to save that so in order
+
+63
+00:08:13,120 --> 00:08:22,080
+ to save that what we're going to do is appear right after the show objective for second
+
+64
+00:08:22,080 --> 00:08:30,000
+ we will create one more method by name of complete objective this will be called when an object
+
+65
+00:08:30,000 --> 00:08:36,720
+ is complete and in this first of all we move to the next objective all right whenever an object
+
+66
+00:08:36,720 --> 00:08:43,840
+ is object is computed we'll move to the next one then right here we save the progress in player
+
+67
+00:08:43,840 --> 00:08:50,560
+ prefs okay in player prefs we save the current objective index we save it player prep.save
+
+68
+00:08:50,560 --> 00:08:57,600
+ then right here we update UI but we hide it okay and then right here we switch trigger for
+
+69
+00:08:57,600 --> 00:09:05,040
+ the next objective all right now for example if the player dies then of course when the new
+
+70
+00:09:05,040 --> 00:09:11,760
+ game starts we want to load the data back again okay we want to load the data but if there is
+
+71
+00:09:11,760 --> 00:09:18,800
+ doesn't exist any data then we start the game from the beginning okay so make a load progress
+
+72
+00:09:18,800 --> 00:09:28,160
+ method which right here we defaulted to 0 if there is no save data available okay if save data
+
+73
+00:09:28,160 --> 00:09:35,360
+ is available then we load that else we just simply start the game from the beginning
+
+74
+00:09:35,360 --> 00:09:43,600
+ okay this is all what we are doing in the objective manager script okay now at the top right
+
+75
+00:09:43,600 --> 00:09:52,240
+ here let's add a start method and in the start method let's call the load progress first of all
+
+76
+00:09:54,480 --> 00:10:08,240
+ then the update objective UI to which we will pass through and then the update objective triggers
+
+77
+00:10:08,240 --> 00:10:18,800
+ that is it now let's move to the objective trigger in this script we will attach the script
+
+78
+00:10:18,800 --> 00:10:24,480
+ to our trader so whenever the player collards will it it will either complete the objective
+
+79
+00:10:24,480 --> 00:10:31,920
+ all right or complete the whole game I mean it will it will be basically use for completing
+
+80
+00:10:31,920 --> 00:10:38,720
+ each of the objective okay and it will also give track of which objective triggered this is
+
+81
+00:10:38,720 --> 00:10:45,680
+ okay so in order to do all of that stuff first of all we need a reference to the objective
+
+82
+00:10:45,680 --> 00:10:51,840
+ trigger script I mean the objective manager script and I'm going to name this as manager
+
+83
+00:10:51,840 --> 00:11:01,280
+ then let's create a on trigger enter method right here in which we will check that
+
+84
+00:11:01,280 --> 00:11:09,760
+ if whatever that is triggered with this objective trigger came objective it's tag is not player
+
+85
+00:11:09,760 --> 00:11:15,440
+ then we simply return and don't do anything but if it is the player then we want to complete
+
+86
+00:11:15,440 --> 00:11:22,560
+ the objectives we will call the objective manager script right here which we name as just manager
+
+87
+00:11:22,560 --> 00:11:30,960
+ so manager and then we will call the complete objective right there and then what we're going to do
+
+88
+00:11:30,960 --> 00:11:38,720
+ is we're going to disable this objective trigger so that it doesn't do anything else then so
+
+89
+00:11:39,680 --> 00:11:45,360
+ just type came object or directive for us now the last thing which we need to add in the objective
+
+90
+00:11:45,360 --> 00:11:50,960
+ manager is for example for now we will be testing these objectives to see if it works or not
+
+91
+00:11:50,960 --> 00:11:57,040
+ and it will store the data in the player prefs okay but now we need to make one more method
+
+92
+00:11:57,040 --> 00:12:04,560
+ in which we delete this player prefs data okay because once the game is all completed with
+
+93
+00:12:04,560 --> 00:12:10,080
+ the whole story or you can see the whole objective then of course we want this testing data which
+
+94
+00:12:10,080 --> 00:12:16,880
+ is safe to be deleted okay so for that purpose right here at the bottom let's make one more
+
+95
+00:12:16,880 --> 00:12:26,160
+ method by the name of reset objectives in this first of all we use the delete key of the player
+
+96
+00:12:26,160 --> 00:12:36,720
+ prefs which will remove only the save objectives okay then we will save that and then we set the
+
+97
+00:12:36,720 --> 00:12:44,880
+ current objective index to zero we hide the UI immediately and then we enable trigger for first
+
+98
+00:12:44,880 --> 00:12:52,960
+ objective right and then we just for testing we show that objective progress reset now using a key
+
+99
+00:12:52,960 --> 00:13:00,480
+ we will be resetting the objectives so for that right here in the update right after this
+
+100
+00:13:00,480 --> 00:13:05,920
+ if condition we will add one more if condition which we say that if the peak is pressed we will
+
+101
+00:13:05,920 --> 00:13:14,000
+ reset the objectives all right now save this get back right here and let's click on the environment
+
+102
+00:13:14,000 --> 00:13:23,040
+ to actually let's click on player related and on the inside the player related we have the game
+
+103
+00:13:23,040 --> 00:13:29,120
+ manager to the game manager drag and drop the objective manager script and now in here we will
+
+104
+00:13:29,120 --> 00:13:36,400
+ be adding the objectives but first of all let's assign these values so for the objective UI we
+
+105
+00:13:36,400 --> 00:13:43,440
+ will try and drop that and then for the objective name text we will try and drop that now our first
+
+106
+00:13:43,440 --> 00:13:49,600
+ objective will allow let's set up the story let me change to a 3D mode and let's double click on
+
+107
+00:13:49,600 --> 00:13:57,360
+ our character right there okay so our first objective will be to find this spester and then we
+
+108
+00:13:57,360 --> 00:14:03,360
+ will add its own wizard hearing by using the pistol the player will kill their zombies okay so
+
+109
+00:14:03,360 --> 00:14:11,840
+ the first objective will be to guide the player to find the spester right here okay so if you click
+
+110
+00:14:11,840 --> 00:14:18,160
+ on this game manager right here click on plus sign open this up okay in the objective name
+
+111
+00:14:18,160 --> 00:14:24,640
+ should be the same as we type right here so I'm just gonna copy that click on game manager and
+
+112
+00:14:24,640 --> 00:14:31,440
+ then paste it right here okay so this will be our first objective which is find something for protection
+
+113
+00:14:31,440 --> 00:14:39,600
+ from zombies and now when we find something for protection from zombies we for example if we find
+
+114
+00:14:39,600 --> 00:14:46,400
+ this pistol then we will pass this objective okay so that's why now we need to add this objective
+
+115
+00:14:46,400 --> 00:14:52,240
+ trigger by using which this objective will be completed okay so what I'm gonna do right here is
+
+116
+00:14:52,240 --> 00:14:58,880
+ I'm gonna select this spester and for this spester I'm gonna create a empty game object
+
+117
+00:14:58,880 --> 00:15:06,320
+ okay and then move this game object outside now this object is in the same spot as that
+
+118
+00:15:07,120 --> 00:15:17,280
+ okay let's change its rotation and then to this there are box collider okay there it is so now
+
+119
+00:15:17,280 --> 00:15:23,760
+ in the player collides with this game make sure it is a stringer and also to this object the
+
+120
+00:15:23,760 --> 00:15:33,760
+ objective trigger is added and for the manager drag and drop the manager script which is attached
+
+121
+00:15:33,760 --> 00:15:39,200
+ to the game manager okay make sure it is a stringer and this is added and now in the player
+
+122
+00:15:39,200 --> 00:15:44,800
+ collides with this box collider okay then the player will find this pistol right here and the
+
+123
+00:15:44,800 --> 00:15:50,320
+ objective will be completed because now the player has something for protection from these zombies
+
+124
+00:15:50,320 --> 00:15:56,720
+ okay so I'm just gonna name this as oh one or objective one
+
+125
+00:16:00,160 --> 00:16:07,520
+ all right we now need to move and create one more objective okay so now the player has
+
+126
+00:16:07,520 --> 00:16:14,080
+ pistol shoot all these zombies right here move forward for example right here
+
+127
+00:16:14,080 --> 00:16:25,760
+ there will be a few zombies now right here as well we're gonna add one more rifle right here okay
+
+128
+00:16:27,280 --> 00:16:39,280
+ actually let's now undo it here the player will get inside this house let me select it and let's
+
+129
+00:16:39,280 --> 00:16:48,320
+ rotate it like that so let's do is fully open okay and in here somewhere we will add the second
+
+130
+00:16:48,320 --> 00:16:53,520
+ objective but I think the video is a bit lengthy so we're just gonna end this video right here
+
+131
+00:16:53,520 --> 00:16:55,200
+ and continue from the next one.
+
