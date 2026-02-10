@@ -1,0 +1,336 @@
+1
+00:00:00,080 --> 00:00:07,200
+So our game is slowly developing, and in the previous lesson we looked at how kicking could take place
+
+2
+00:00:07,200 --> 00:00:13,080
+with the goalie turtle and the ball turtle, and how we could adjust the angle so that it was random
+
+3
+00:00:13,120 --> 00:00:14,920
+so it would make it a little bit more exciting.
+
+4
+00:00:15,200 --> 00:00:19,000
+And so the goalie could go up and down in that sort of position and try and save those balls.
+
+5
+00:00:19,000 --> 00:00:24,680
+But now what we need to do is we need to obviously have a function that allows us to to move the goalie
+
+6
+00:00:24,960 --> 00:00:26,000
+up and down.
+
+7
+00:00:26,160 --> 00:00:30,560
+And so essentially we're going to need two functions because we're going to need a function that's going
+
+8
+00:00:30,600 --> 00:00:31,520
+to move the goalie up.
+
+9
+00:00:31,760 --> 00:00:35,760
+And then we're going to need another function that's going to move the goalie down.
+
+10
+00:00:36,000 --> 00:00:40,880
+And that's going to be responding to the up and down arrows on our keyboard.
+
+11
+00:00:40,880 --> 00:00:45,400
+And then also ultimately we're also going to want to call our kick function as well.
+
+12
+00:00:45,400 --> 00:00:49,120
+So we'll have a look at that in this lesson on how to create those functions.
+
+13
+00:00:49,120 --> 00:00:55,920
+So our first function we need to define in order to teach our goalie how to save is this goalie app
+
+14
+00:00:55,960 --> 00:00:56,520
+function.
+
+15
+00:00:56,520 --> 00:00:59,000
+So again it's just a simple diff.
+
+16
+00:00:59,000 --> 00:01:01,400
+And we've called our function goalie app.
+
+17
+00:01:02,120 --> 00:01:11,130
+So in order to get our goalie to go up we want it to face north which was this nine degree angle.
+
+18
+00:01:11,410 --> 00:01:18,410
+So I've set the goalie to go north, and I want the goalie to just move forward by five pixels, which
+
+19
+00:01:18,410 --> 00:01:19,170
+is pretty small.
+
+20
+00:01:19,170 --> 00:01:22,850
+But you'll understand why when I get to this part down here.
+
+21
+00:01:22,850 --> 00:01:25,370
+So for now, goalie up.
+
+22
+00:01:25,370 --> 00:01:31,090
+All it does is it points out turtle to go upwards and it moves it forward by five.
+
+23
+00:01:31,290 --> 00:01:35,530
+Then this function over here is pretty much the opposite of the goalie up.
+
+24
+00:01:35,570 --> 00:01:37,690
+It's making the goalie go down.
+
+25
+00:01:37,970 --> 00:01:43,370
+So what we're doing is we are setting the heading or setting the direction of the goalie downwards or
+
+26
+00:01:43,410 --> 00:01:45,530
+south, which is 270 degrees.
+
+27
+00:01:45,530 --> 00:01:49,410
+And we are again moving the goalie forward by five.
+
+28
+00:01:49,450 --> 00:01:53,010
+But this forward now will be going downwards.
+
+29
+00:01:53,050 --> 00:01:58,130
+You're going to be a very good Boy scout or girl guard or whatever it is after this, but you should
+
+30
+00:01:58,130 --> 00:01:59,290
+know all your directions.
+
+31
+00:02:00,050 --> 00:02:00,530
+Okay?
+
+32
+00:02:00,570 --> 00:02:05,690
+But now none of this really does anything without the function ever being called.
+
+33
+00:02:05,690 --> 00:02:11,410
+So like we said earlier, this function didn't actually do anything because we never called it the way
+
+34
+00:02:11,410 --> 00:02:18,290
+we want to call these functions in our game is actually a special way or a way we have not done before.
+
+35
+00:02:18,810 --> 00:02:25,580
+What we want to do is we want the screen to wait for a key to be pressed.
+
+36
+00:02:25,580 --> 00:02:30,060
+So the screen variable has this method called on key press.
+
+37
+00:02:30,060 --> 00:02:36,340
+And what basically happens here, the screen variable over here which we defined at the top which is
+
+38
+00:02:36,340 --> 00:02:42,100
+a turtle screen has a function that we can use on it called on key press.
+
+39
+00:02:42,340 --> 00:02:46,060
+Now what this function does for us is it takes two parameters.
+
+40
+00:02:46,060 --> 00:02:52,300
+And that is a function as the first parameter and a key on our keyboard as a second parameter.
+
+41
+00:02:52,420 --> 00:02:59,260
+And what it does is it takes whatever function you want and it binds it to a key on the keyboard.
+
+42
+00:02:59,580 --> 00:03:06,900
+For example, here we have taken the up key and we've told it whenever the up key is pressed call call
+
+43
+00:03:06,900 --> 00:03:08,620
+this function called go up.
+
+44
+00:03:08,780 --> 00:03:15,100
+So every time I click the up key when our game is running, it is going to call this function and do
+
+45
+00:03:15,100 --> 00:03:15,900
+what is inside.
+
+46
+00:03:15,900 --> 00:03:20,980
+So basically change it to north and move it forward five spaces.
+
+47
+00:03:21,260 --> 00:03:26,020
+So that's why I only had to move it forward by five because instead of moving it a huge distance, I
+
+48
+00:03:26,020 --> 00:03:27,140
+rather want to make it.
+
+49
+00:03:27,180 --> 00:03:32,280
+If the key is being pressed, then keep on moving it up those five spaces.
+
+50
+00:03:33,080 --> 00:03:39,360
+We then have again the same thing, but obviously this is just doing go down with the down key.
+
+51
+00:03:39,360 --> 00:03:42,400
+So the down key calls this function go down.
+
+52
+00:03:43,400 --> 00:03:48,160
+And then for the kicking because we want the ball obviously to move forward and be kicked.
+
+53
+00:03:48,200 --> 00:03:51,080
+I've chosen just to use the k key on the keyboard.
+
+54
+00:03:51,360 --> 00:03:53,240
+So I mean you can make it anything.
+
+55
+00:03:53,240 --> 00:03:56,960
+You can make it the J, you can make it the L whatever you want.
+
+56
+00:03:57,000 --> 00:04:01,720
+But we've told it when key is pressed, call the kick function.
+
+57
+00:04:01,880 --> 00:04:09,720
+Now if you have these on key press and key methods where you are using the keyboard and you want the
+
+58
+00:04:09,720 --> 00:04:15,520
+program to wait for a key to be pressed, then we need this other function down here called screen Dot.
+
+59
+00:04:15,520 --> 00:04:16,200
+Listen.
+
+60
+00:04:16,200 --> 00:04:21,560
+And basically what this does is it just the program will constantly wait for a key to be pressed.
+
+61
+00:04:21,560 --> 00:04:26,000
+And if a key is pressed then it realizes it and it will run this function.
+
+62
+00:04:26,000 --> 00:04:33,120
+So without this, our program is not going to bother listening for any keys and it will most likely
+
+63
+00:04:33,320 --> 00:04:34,240
+crash.
+
+64
+00:04:34,800 --> 00:04:37,960
+And then another thing you should always have is your in your program.
+
+65
+00:04:37,960 --> 00:04:39,290
+Is this line over here.
+
+66
+00:04:39,290 --> 00:04:45,330
+And this line is basically just always in the last line of your program, and it needs it for it to
+
+67
+00:04:45,490 --> 00:04:46,170
+run.
+
+68
+00:04:51,130 --> 00:04:53,730
+I'm pressing the K keyboard now on the screen.
+
+69
+00:04:53,730 --> 00:04:56,730
+And as you can see our ball has moved forward.
+
+70
+00:04:56,730 --> 00:04:59,050
+So I missed it that time.
+
+71
+00:04:59,330 --> 00:05:04,930
+Uh, and then our other thing that we defined in our program was obviously moving the turtle up and
+
+72
+00:05:04,930 --> 00:05:05,090
+down.
+
+73
+00:05:05,090 --> 00:05:07,450
+So if I click the down key, it does that.
+
+74
+00:05:07,690 --> 00:05:10,690
+If I click the up key it is going to do that.
+
+75
+00:05:11,210 --> 00:05:18,170
+So basically all we have is we can kick with the K and we can move the turtle up and down to try and
+
+76
+00:05:18,210 --> 00:05:20,690
+save the ball with the up and down keys.
+
+77
+00:05:20,890 --> 00:05:23,770
+So you can keep on doing this as many times as you would like.
+
+78
+00:05:24,570 --> 00:05:25,930
+This looks like a fun game.
+
+79
+00:05:25,930 --> 00:05:28,050
+This is going to be a best seller, definitely.
+
+80
+00:05:28,050 --> 00:05:31,170
+I'm sure you will all make a whole lot of money with this game.
+
+81
+00:05:31,370 --> 00:05:34,130
+But yeah, and once you're done, you click exit.
+
+82
+00:05:34,130 --> 00:05:37,330
+And yeah, we've got the beginnings of a game working.
+
+83
+00:05:37,570 --> 00:05:43,570
+All that's really left to do now is make it look a little bit pretty, add a field and doing that we'll
+
+84
+00:05:43,570 --> 00:05:48,930
+show you how to use loops in it and all kinds of exciting things.
+
