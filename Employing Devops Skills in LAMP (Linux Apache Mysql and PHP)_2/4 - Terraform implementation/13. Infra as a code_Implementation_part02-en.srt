@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:14,080
+ to open this time variables and we will fill it with these descriptions. For example, this
+
+2
+00:00:14,080 --> 00:00:27,360
+ is a root password and it's types of course string, create sensitive and this is my SQL okay
+
+3
+00:00:27,360 --> 00:00:34,800
+ and this default is set to WordPress, WordPress, so we change the database then the last time
+
+4
+00:00:34,800 --> 00:00:42,080
+ I recall it, we called it my app, now it is called WordPress and for my SQL user we
+
+5
+00:00:42,960 --> 00:00:49,840
+ instead of my SQL user we set it to WP user or WordPress user, right,
+
+6
+00:00:49,840 --> 00:01:06,240
+ and here we need to of course set this as well.
+
+7
+00:01:13,920 --> 00:01:23,920
+ okay so we define the password of my SQL user password to be like this
+
+8
+00:01:23,920 --> 00:01:32,160
+ okay so we have initialized, we set the variables for database and user and
+
+9
+00:01:32,160 --> 00:01:41,120
+ initialize my SQL password and my root password that's right it okay and validate that it is
+
+10
+00:01:41,120 --> 00:01:55,200
+ a successful okay cool so now we should set the final part here
+
+11
+00:01:55,200 --> 00:02:06,400
+ we will set to it makes outputs to go from the output we need to open output of TF
+
+12
+00:02:07,520 --> 00:02:14,640
+ so the WordPress re-direction will occur when we type HTTP local host the output value and go to
+
+13
+00:02:14,640 --> 00:02:28,000
+ the container of my SQL that dot name or my SQL container okay we need to open the this time
+
+14
+00:02:28,000 --> 00:02:43,280
+ we'll open the outputs.tf and we set it to WordPress URL to this value and this is a container
+
+15
+00:02:43,280 --> 00:02:54,080
+ to redirect the connection with it with the database and let's see our let's see everything now
+
+16
+00:02:54,080 --> 00:03:07,280
+ and just to make sure that everything is okay we will now we are ready to
+
+17
+00:03:07,280 --> 00:03:18,800
+ deploy the Terraform but we need first to let's initialize it for Terraform initialize to initialize it
+
+18
+00:03:25,040 --> 00:03:36,800
+ okay but we are back now the code now the Terraform has been successfully initialized
+
+19
+00:03:36,800 --> 00:03:48,560
+ so if we can go here okay we can directly apply the Terraform and later we can verify
+
+20
+00:03:48,560 --> 00:03:55,120
+ the three stages of the Terraform because there is initial phase plan phase to show you what
+
+21
+00:03:55,120 --> 00:04:02,480
+ exactly will happen when you click on Terraform plan and finally it's execution so the two things
+
+22
+00:04:02,480 --> 00:04:08,640
+ that we didn't of course fill is the root password and the root password and the root password
+
+23
+00:04:08,640 --> 00:04:15,600
+ and the user password okay for the user SQL and the root so the Terraform when I click on
+
+24
+00:04:15,600 --> 00:04:24,080
+ Terraform apply it will just just ask me for these two value to fill so let's try it
+
+25
+00:04:24,080 --> 00:04:33,600
+ okay for the user for example let me set a member and you need to remember the password that you
+
+26
+00:04:33,600 --> 00:04:56,240
+ set for the database user and for the root okay and it will ask you that four that is four changes
+
+27
+00:04:56,240 --> 00:05:07,600
+ to be added or for four changes to be added for the MySQL container and for the Apache and nothing
+
+28
+00:05:07,600 --> 00:05:15,200
+ to destroy or change so we just confirm by yes and wait for the doctors to be created
+
+29
+00:05:18,560 --> 00:05:26,320
+ okay success should be successfully created if I click now on Docker
+
+30
+00:05:26,320 --> 00:05:42,240
+ that spsa sorry Docker s - a I can see now that we have two new doctors create
+
+31
+00:05:43,520 --> 00:05:53,920
+ this is this is currently running to called WP Apache and WP MySQL and
+
+32
+00:05:53,920 --> 00:06:03,360
+ the other two are exited of course and this is the two new containers or doctors created
+
+33
+00:06:03,360 --> 00:06:09,120
+ automatically by the Terraform so our Terraform now is working so
+
+34
+00:06:11,600 --> 00:06:19,840
+ before you can test for the local host access you need to do a very important task first
+
+35
+00:06:19,840 --> 00:06:29,600
+ you need to check for the old file okay
+
+36
+00:06:29,600 --> 00:06:39,680
+ this is old configuration file because it is changed so you need to open the WP if you recall
+
+37
+00:06:39,680 --> 00:06:46,720
+ this file from the previous episode or tutorial you can see that the database name it is the
+
+38
+00:06:46,720 --> 00:06:55,360
+ old one so we need to change it to according to the changes that you have done so for example here
+
+39
+00:06:56,400 --> 00:07:10,640
+ you will set it to database is called WordPress so we need to set it to WordPress this is a default
+
+40
+00:07:10,640 --> 00:07:29,520
+ name and the user WP user and of course passwords is changed actually I have typed is
+
+41
+00:07:29,520 --> 00:07:37,520
+ a very very simple password you need of course to use a complex password in the real-life
+
+42
+00:07:37,520 --> 00:07:51,600
+ environment I use my SQL simply underscore words okay and it is the same variable if you can
+
+43
+00:07:51,600 --> 00:08:00,080
+ recall from the main.tf I used the same naming convention that use in the main file which is not
+
+44
+00:08:00,080 --> 00:08:11,840
+ secure to do in real-life of course and this is changed to WP-my SQL so we need to do these changes
+
+45
+00:08:11,840 --> 00:08:22,800
+ okay before you can test so this is the configuration file you need to make sure it is
+
+46
+00:08:23,360 --> 00:08:32,640
+ okay and before you can test the local host you need to inspect the WordPress and Apache
+
+47
+00:08:32,640 --> 00:08:39,360
+ to make sure WordPress and MySQL to make sure that there are both on the same network so if you
+
+48
+00:08:39,360 --> 00:08:49,040
+ can issue this comment inspect WPMI SQL - grab 820 networks this comment will bring you WP
+
+49
+00:08:49,040 --> 00:08:59,040
+ underscore network okay and you can see that WordPress - MySQL it is in the WP underscore network
+
+50
+00:08:59,040 --> 00:09:10,160
+ and it got these address often and if I click on this or try to check with I don't know the
+
+51
+00:09:10,160 --> 00:09:25,520
+ other name let's check WP - Apache so if I can check with WP - Apache I can see that it is having
+
+52
+00:09:25,520 --> 00:09:31,760
+ this the another address and the same network so we are cool in term of connection to the network
+
+53
+00:09:31,760 --> 00:09:41,280
+ and in term of connection with the and with this configuration of the W WordPress configuration file
+
+54
+00:09:41,280 --> 00:09:50,720
+ so you are ready now to type local host and see the direction to the WordPress for installation
+
+55
+00:09:54,960 --> 00:10:04,960
+ okay it guides me to the WordPress installation and I will click on continue let's name it
+
+56
+00:10:04,960 --> 00:10:30,240
+ WordPress site here and let's make it for example
+
+57
+00:10:30,240 --> 00:10:46,000
+ for we at 123 confirm week password and let's click on install to install it
+
+58
+00:11:00,240 --> 00:11:17,040
+ okay we have updated the password and let's log in with admin street okay finally we can log
+
+59
+00:11:17,040 --> 00:11:26,960
+ in with the admin to the WordPress okay so moving here to the next part we want to apply the
+
+60
+00:11:26,960 --> 00:11:44,160
+ terraform changes in a controlled environment so here we want to first create the the terraform new
+
+61
+00:11:44,160 --> 00:11:54,960
+ device because we want to separate execution of the terraform in a separate or isolated environment
+
+62
+00:11:54,960 --> 00:12:07,760
+ so we type this and we'd switch to to it we create a new workspace and switch to it
+
+63
+00:12:07,760 --> 00:12:18,240
+ okay and now we can use a current workspace which are working on to execute our
+
+64
+00:12:18,880 --> 00:12:26,560
+ comments and everything okay we are on device so we are on a separate or isolated part of our
+
+65
+00:12:26,560 --> 00:12:37,840
+ environments okay cool so any changes now we would not affect the production environments okay
+
+66
+00:12:37,840 --> 00:12:48,240
+ if I want to to make the script for example here I can create the deploy I can modify
+
+67
+00:12:48,880 --> 00:12:58,560
+ the deploy script okay and if you can recall it it is let me go here
+
+68
+00:12:58,560 --> 00:13:13,120
+ it is on our directory of github this one sorry I forgot m
+
+69
+00:13:19,680 --> 00:13:27,440
+ let me clear this is the script if I can go to scripts
+
+70
+00:13:27,440 --> 00:13:34,480
+ we can use the deploy let's open the deploy
+
+71
+00:13:34,480 --> 00:13:44,160
+ okay this is the deployment script that we have already created
+
+72
+00:13:46,080 --> 00:13:56,320
+ in the previous tutorial so we can modify it okay so that we can select work this workspace
+
+73
+00:13:56,320 --> 00:14:04,400
+ okay to just work from it okay and we do everything that we want to do like initialization so
+
+74
+00:14:04,400 --> 00:14:12,080
+ anyone that turned this script will not need even to type terraform initialize it will initialize
+
+75
+00:14:12,080 --> 00:14:19,520
+ to the plan okay and with set will output so we'll show you the output of the plan and
+
+76
+00:14:19,520 --> 00:14:30,640
+ also it will show to you that in JSON format the terraform plan is generated and after that
+
+77
+00:14:30,640 --> 00:14:44,720
+ it can not approve it or apply the change so you can simply paste it here
+
