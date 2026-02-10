@@ -1,0 +1,340 @@
+1
+00:00:00,170 --> 00:00:02,840
+Okay, so our player sprites looking really good.
+
+2
+00:00:02,840 --> 00:00:06,320
+So I think it's time to move on to our tree and foliage sprite.
+
+3
+00:00:06,350 --> 00:00:12,290
+Now this process is also going to be quite similar to our car obstacle sprite from our previous game.
+
+4
+00:00:12,290 --> 00:00:15,320
+So we can take that knowledge and implement that here.
+
+5
+00:00:15,320 --> 00:00:20,300
+And that's what programming is all about, using what you've learned and applying it in different scenarios
+
+6
+00:00:20,300 --> 00:00:22,100
+to solve different problems.
+
+7
+00:00:22,400 --> 00:00:26,240
+The first thing, let's click this button here so we can see our sprite again.
+
+8
+00:00:26,720 --> 00:00:29,840
+Now we could go ahead and build all this code from scratch.
+
+9
+00:00:29,840 --> 00:00:32,300
+But I want to show you something cool.
+
+10
+00:00:32,540 --> 00:00:37,310
+If you look down at the bottom of your screen, you will see that there is this button that says backpack.
+
+11
+00:00:37,400 --> 00:00:41,000
+And if you click it, you'll see it opens up this window at the bottom.
+
+12
+00:00:41,000 --> 00:00:47,030
+And basically what this is, is a place where you can store scripts and reuse them in other places.
+
+13
+00:00:47,030 --> 00:00:51,590
+Because remember how I said earlier how creating reusable code is so important?
+
+14
+00:00:51,620 --> 00:00:53,750
+Well, here you're going to see why.
+
+15
+00:00:54,440 --> 00:01:01,250
+So if we move back over to our traffic race again and then to our car sprite, what we can do is open
+
+16
+00:01:01,250 --> 00:01:06,620
+up our backpack and looking at the script here that controls the cloned cars, making them glide to
+
+17
+00:01:06,620 --> 00:01:07,790
+the bottom of the screen.
+
+18
+00:01:07,790 --> 00:01:13,790
+What we can do is drag the script over here into our backpack, and as we also need the script that
+
+19
+00:01:13,790 --> 00:01:16,070
+creates the clones, we can grab that too.
+
+20
+00:01:16,070 --> 00:01:21,020
+But before we do so, first remove this block from the weight statement, then drag it in.
+
+21
+00:01:21,020 --> 00:01:22,970
+Now we can put this block back.
+
+22
+00:01:23,240 --> 00:01:26,840
+This way we don't have all this code that we don't need in our backpack.
+
+23
+00:01:27,470 --> 00:01:32,780
+Now moving back to our ski game, you might just need to close and reopen the backpack to refresh it.
+
+24
+00:01:32,780 --> 00:01:33,650
+And there it is.
+
+25
+00:01:34,650 --> 00:01:40,110
+Now all we need to do is drag it on in and we can do the same for the script.
+
+26
+00:01:40,700 --> 00:01:41,840
+And there you go.
+
+27
+00:01:42,830 --> 00:01:47,480
+You will see here that brings with it variables, which is movement and speed.
+
+28
+00:01:47,480 --> 00:01:51,530
+And you can actually keep that as we will use them in this game.
+
+29
+00:01:52,470 --> 00:02:00,000
+And before we edit the script, let's shed some light on another key programming principle compartmentalization.
+
+30
+00:02:00,030 --> 00:02:03,120
+Yes, I know it sounds like a big word, but it's an important one.
+
+31
+00:02:03,120 --> 00:02:08,490
+So let's try to understand what this means with a real world visualization.
+
+32
+00:02:08,640 --> 00:02:12,570
+Imagine your game as a large, bustling, busy city.
+
+33
+00:02:12,600 --> 00:02:16,950
+Now, in a city, you wouldn't just jumble up the homes and the offices and the industries and the parks
+
+34
+00:02:16,950 --> 00:02:18,240
+all in one space, would you?
+
+35
+00:02:18,510 --> 00:02:21,900
+Instead, you would zone them into districts or compartments.
+
+36
+00:02:21,900 --> 00:02:25,950
+You'd have residential zones and industrial zones and business zones and parks, etc...
+
+37
+00:02:26,280 --> 00:02:30,030
+This is the essence of compartmentalization and coding.
+
+38
+00:02:30,030 --> 00:02:36,930
+By segmenting our code into distinct sections or compartments, each dedicated to a specific function
+
+39
+00:02:36,930 --> 00:02:37,710
+or task.
+
+40
+00:02:37,710 --> 00:02:40,980
+And by doing this, we achieve two major benefits.
+
+41
+00:02:41,010 --> 00:02:46,680
+First, our code becomes much more organized and manageable, just as city officials would only need
+
+42
+00:02:46,680 --> 00:02:52,200
+to review and manage a specific district for any changes, developers can focus on individual compartments
+
+43
+00:02:52,200 --> 00:02:55,710
+of code without getting all overwhelmed by the entirety of the code.
+
+44
+00:02:55,710 --> 00:03:01,620
+And secondly, this approach greatly helps in creating reusable code.
+
+45
+00:03:01,650 --> 00:03:06,750
+Now, when code sections are compartmentalized effectively, they can often be picked up and placed
+
+46
+00:03:06,750 --> 00:03:07,800
+into another project.
+
+47
+00:03:08,340 --> 00:03:10,380
+But maybe just some minimal adjustments.
+
+48
+00:03:10,380 --> 00:03:14,490
+Just like we reused the obstacle code from our traffic racer game.
+
+49
+00:03:14,850 --> 00:03:19,890
+And on this point, I want to show you how we could do the same for our Traffic Racer game to give it
+
+50
+00:03:19,890 --> 00:03:20,940
+a quick upgrade.
+
+51
+00:03:21,510 --> 00:03:28,800
+So if we go to our main player sprite, open up our backpack and then drag this script into it, we
+
+52
+00:03:28,800 --> 00:03:35,340
+can then move back to our Traffic Racer game, refresh the backpack, and then drag this script into
+
+53
+00:03:35,340 --> 00:03:36,990
+our main car sprite.
+
+54
+00:03:36,990 --> 00:03:41,160
+And then we can remove all these change X blocks from the script like so.
+
+55
+00:03:41,490 --> 00:03:46,770
+Now it will change X by our movement direction, just like with our ski game and hitting play.
+
+56
+00:03:47,190 --> 00:03:48,420
+Well, that's somewhat works.
+
+57
+00:03:48,420 --> 00:03:50,580
+The only problem is our car direction looks a bit weird.
+
+58
+00:03:50,580 --> 00:03:57,330
+So to fix it we can also just insert these movement direction variables into our point direction.
+
+59
+00:03:57,720 --> 00:03:59,790
+So this way our car faces the way it's turning.
+
+60
+00:03:59,790 --> 00:04:01,560
+So clicking play once more.
+
+61
+00:04:01,890 --> 00:04:03,000
+Well that's a lot better.
+
+62
+00:04:03,000 --> 00:04:06,450
+And it adds a whole new element to our game.
+
+63
+00:04:06,450 --> 00:04:07,470
+And it was so quick.
+
+64
+00:04:07,470 --> 00:04:11,040
+That's the power of reusable code and compartmentalization.
+
+65
+00:04:11,710 --> 00:04:16,390
+But with all that said, let's move back to our skiing game and also to our tree sprite.
+
+66
+00:04:16,420 --> 00:04:22,870
+So now all we need to do is edit the script a bit so it works better for this game, just like we did
+
+67
+00:04:22,870 --> 00:04:24,100
+with the traffic game.
+
+68
+00:04:24,490 --> 00:04:31,630
+So we can change switch costumes to pick between 1 and 11 and that's how many costumes we have.
+
+69
+00:04:31,660 --> 00:04:38,200
+Then we can remove all this as we no longer have lanes to worry about, but we can just put in a pick
+
+70
+00:04:38,200 --> 00:04:44,560
+random for our X input and have it between -220 and 220.
+
+71
+00:04:44,620 --> 00:04:51,370
+And then we can remove this movement speed variable from the code and just set it to minus nine.
+
+72
+00:04:51,580 --> 00:04:54,880
+And then we can set the size to 50 as that's our current size.
+
+73
+00:04:54,880 --> 00:04:59,020
+And finally we can remove the if condition that makes the car vroom sound.
+
+74
+00:04:59,500 --> 00:05:00,790
+So giving that a go.
+
+75
+00:05:01,450 --> 00:05:06,040
+And as you can see, our trees come down nicely and it's starting to feel a bit more like skiing.
+
+76
+00:05:06,040 --> 00:05:11,500
+However, there is one problem which you may have noticed is that the stone sprite seems to get stuck
+
+77
+00:05:11,500 --> 00:05:12,460
+on the bottom of the screen.
+
+78
+00:05:12,730 --> 00:05:19,510
+Well, we can fix this by going into the costume editor using the selection tool and clicking on our
+
+79
+00:05:19,510 --> 00:05:22,210
+rock, and then dragging it higher up.
+
+80
+00:05:22,540 --> 00:05:27,610
+Now you'll notice that it should stop getting stuck, but if yours is still getting stuck, just move
+
+81
+00:05:27,610 --> 00:05:28,660
+it up a bit higher.
+
+82
+00:05:29,020 --> 00:05:32,920
+And the same for any other sprites that are getting stuck, just keep moving them higher until they
+
+83
+00:05:32,920 --> 00:05:34,030
+stop getting stuck.
+
+84
+00:05:34,030 --> 00:05:35,260
+But there you have it.
+
+85
+00:05:35,260 --> 00:05:40,330
+We are skiing down some fresh slopes here, looking like an absolute natural you are.
+
