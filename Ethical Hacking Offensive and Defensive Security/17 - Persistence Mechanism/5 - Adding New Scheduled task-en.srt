@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:10,320
+ Hey guys, welcome to another video, so in previous video we have seen how to add WMIC for
+
+2
+00:00:10,320 --> 00:00:16,440
+ persistence, the Windows management instrumentation, we have used that and we have created
+
+3
+00:00:16,440 --> 00:00:23,240
+ a persistence mechanism, so in this video we will be seeing scheduled tasks, so I already
+
+4
+00:00:23,240 --> 00:00:27,640
+ mentioned there is a spike kind of persistence, the fourth one will be scheduled tasks and
+
+5
+00:00:27,640 --> 00:00:35,840
+ fifth one will be a services, so I have just mentioned in my note pad, so how to add
+
+6
+00:00:35,840 --> 00:00:41,380
+ a scheduled task on the remote computers, because most of the malware like credential
+
+7
+00:00:41,380 --> 00:00:47,200
+ stealers and enforce stealers, it will be using the scheduled task folders of persistence
+
+8
+00:00:47,200 --> 00:00:54,040
+ one, so this is the simple command, you can add a persistence, so the same malware which
+
+9
+00:00:54,040 --> 00:01:05,280
+ we are going to use, the one thing I have removed the filter consumer everything which
+
+10
+00:01:05,280 --> 00:01:14,320
+ we have created, so now you can't able to find out the filter name like MIT and there
+
+11
+00:01:14,320 --> 00:01:19,900
+ is no consumer, there is no consumer will be there, so here you can see only the
+
+12
+00:01:19,900 --> 00:01:27,680
+ call, call kicks a consumer only there, so we will be also I have removed the startup
+
+13
+00:01:27,680 --> 00:01:33,560
+ folder, so here you can find there is nothing person under the startup folder and let
+
+14
+00:01:33,560 --> 00:01:43,560
+ me execute this command, so this is the path which we have created our malware and let
+
+15
+00:01:43,560 --> 00:01:57,640
+ me open the session, so the port will be, the port will be 8, 7, 6, 9 I feel, let me check
+
+16
+00:01:57,640 --> 00:02:05,560
+ yeah 8, 7, 6, 9, this is the thing which we have created our persistence mal.exe, let
+
+17
+00:02:05,560 --> 00:02:18,460
+ me run the listener and so now the TCP listener has been activated and let me initialize
+
+18
+00:02:18,460 --> 00:02:26,460
+ this command, scheduled task last create, so this is the command to verify whether the scheduled
+
+19
+00:02:26,460 --> 00:02:36,020
+ task has been added, slash, we are going to create a new task and the task name and task
+
+20
+00:02:36,020 --> 00:02:43,300
+ action, so what action we need to be executed and SC, so here you can use the specific
+
+21
+00:02:43,300 --> 00:02:49,060
+ timing on date which on date it needs to be executed or which time it needs to execute,
+
+22
+00:02:49,060 --> 00:02:55,620
+ so I just mentioned it is an on log on, so when we boot our machine, so our scheduled
+
+23
+00:02:55,620 --> 00:03:02,260
+ task will be automatically get executed by Windows, let me add this, so I already mentioned,
+
+24
+00:03:02,260 --> 00:03:09,660
+ so if you need to add any commands, any persistence, so you must be administrator privilege,
+
+25
+00:03:09,660 --> 00:03:16,180
+ so we have seen a previous session, the privilege escalation, let me add this task, so
+
+26
+00:03:16,180 --> 00:03:21,860
+ now the scheduled task has been successfully created, so if you are running this command
+
+27
+00:03:21,860 --> 00:03:30,700
+ in normal user command Chrome we will be getting a error like access denied, and here
+
+28
+00:03:30,700 --> 00:03:37,620
+ you can find the scheduled task has been added successfully in the administrator console,
+
+29
+00:03:37,620 --> 00:03:42,340
+ in the administrator command Chrome, and let me verify the scheduled task, whether it was
+
+30
+00:03:42,340 --> 00:03:56,460
+ still present on the, whether it was created properly, let me check that, so here you can
+
+31
+00:03:56,460 --> 00:03:57,560
+ find the meta-
+
+32
+00:03:57,560 --> 00:04:05,000
+ operator task name that has been successfully created and status was ready to run, and
+
+33
+00:04:05,000 --> 00:04:10,600
+ we will be, the next command will be the scheduled task delete if you need to delete
+
+34
+00:04:10,600 --> 00:04:17,760
+ this specific task, you can use the command to delete that task, okay, so I already started
+
+35
+00:04:17,760 --> 00:04:23,560
+ my listener, let me restart my Windows machine, and I will check whether it was executing
+
+36
+00:04:23,560 --> 00:04:35,100
+ or not, so we will wait for a few minutes, let my Windows will be back to form, so let
+
+37
+00:04:35,100 --> 00:04:54,600
+ me, let's see, so now the Windows machine has been started, so let me give a password,
+
+38
+00:04:54,600 --> 00:05:02,340
+ okay, so now here you can see, so before it gets started, my scheduled task has been loaded
+
+39
+00:05:02,340 --> 00:05:09,460
+ up, and I'll be executing a connection from the target machine, so here you can find, and
+
+40
+00:05:09,460 --> 00:05:15,180
+ my machine also has been started, okay, this is the, one of a really good way to add a
+
+41
+00:05:15,180 --> 00:05:28,480
+ persistence mechanism in Windows machine, okay, so I can use shell, and let me, okay, let
+
+42
+00:05:28,480 --> 00:05:38,940
+ me check who am I slash all, so here you can find our privilege will be a high mandatory
+
+43
+00:05:38,940 --> 00:05:47,060
+ level, but when we adding it in a, WMI, we'll be getting a system mandatory level of privilege,
+
+44
+00:05:47,060 --> 00:05:53,400
+ so here we'll easily got a high mandatory level, okay, so this is the way you can add a
+
+45
+00:05:53,400 --> 00:06:00,320
+ persistence mechanism in Windows machine, so based on a scheduled task, okay, so let's
+
+46
+00:06:00,320 --> 00:06:28,260
+ excite, exit this window, and so here you can see a command to delete a scheduled task, we'll
+
+47
+00:06:28,260 --> 00:06:34,060
+ ask in delete or successfully, so let me re verify whether we have a task with the same
+
+48
+00:06:34,060 --> 00:06:45,300
+ name or not, let me check that, so the system cannot find a specified file that task has
+
+49
+00:06:45,300 --> 00:06:51,120
+ been successfully removed, so this turn off away, you can easily create a scheduled task and
+
+50
+00:06:51,120 --> 00:06:59,860
+ you can exploit an animation, okay, so thanks guys for watching this, and I hope you have
+
+51
+00:06:59,860 --> 00:07:03,980
+ a clear understanding about the scheduled task, we will hop off and we will see you guys
+
+52
+00:07:03,980 --> 00:07:05,620
+ in the next video, thank you, bye bye.
+
