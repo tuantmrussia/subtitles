@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:06,800
+ Hey guys, welcome to the session of credential dunking.
+
+2
+00:00:06,800 --> 00:00:14,920
+ In first point, I have pulled all the necessary files in the for our course in my GitHub
+
+3
+00:00:14,920 --> 00:00:15,920
+ repo.
+
+4
+00:00:15,920 --> 00:00:24,760
+ So you can find it from here and so let's talk about the LSS.
+
+5
+00:00:24,760 --> 00:00:30,720
+ So many of them know what is an LSS and somebody don't know what's what's about the process
+
+6
+00:00:30,720 --> 00:00:31,720
+ came.
+
+7
+00:00:31,720 --> 00:00:34,680
+ So let me open my task manager.
+
+8
+00:00:34,680 --> 00:00:44,000
+ So if you are running the Windows machine, definitely you have a process called LSS, local
+
+9
+00:00:44,000 --> 00:00:46,600
+ security authority process.
+
+10
+00:00:46,600 --> 00:00:59,240
+ Okay, so what the process is about why this process is most sense to process for EDR
+
+11
+00:00:59,240 --> 00:01:02,120
+ as well as the antivirus programs.
+
+12
+00:01:02,120 --> 00:01:03,120
+ So let me do one thing.
+
+13
+00:01:03,120 --> 00:01:06,080
+ Let me try to dump LSS here.
+
+14
+00:01:06,080 --> 00:01:11,320
+ So suddenly my bit different random error software, it's clearly to the process, terminal
+
+15
+00:01:11,320 --> 00:01:17,560
+ entered the process and it's closed my task manager, right?
+
+16
+00:01:17,560 --> 00:01:23,360
+ Yeah, anyway, so we know the LSS is one of the sensitive process.
+
+17
+00:01:23,360 --> 00:01:30,280
+ So we try to do something in LSS, so definitely we'll be get, you know, detector.
+
+18
+00:01:30,280 --> 00:01:39,320
+ Okay, so I was unable to open task manager because my A, we take a control for that process.
+
+19
+00:01:39,320 --> 00:01:40,320
+ Okay.
+
+20
+00:01:40,320 --> 00:02:00,800
+ So let me open this in a VM machine, let me quickly go to the task manager.
+
+21
+00:02:00,800 --> 00:02:08,280
+ So let me explain what is an LSS was, okay, so when you open the machine and when you put
+
+22
+00:02:08,280 --> 00:02:15,280
+ the username and passwords, when you're booting up the machine.
+
+23
+00:02:15,280 --> 00:02:23,000
+ So this both of the credentials, excuse the name and passwords was taken by the LSS process,
+
+24
+00:02:23,000 --> 00:02:24,000
+ okay.
+
+25
+00:02:24,000 --> 00:02:29,480
+ Basically the LSS will be taking your username and passwords and it will be verifying your
+
+26
+00:02:29,480 --> 00:02:38,240
+ credentials into the registry database, so whether the credentials is right or wrong, okay.
+
+27
+00:02:38,240 --> 00:02:46,160
+ So let me go for more time, so when you, when you log in to the machine, when you put
+
+28
+00:02:46,160 --> 00:02:53,640
+ your credentials, username and password, your Windows operating system and the LSS process,
+
+29
+00:02:53,640 --> 00:03:00,000
+ LSS process will be taking your username and password and it will be verifying, verifying
+
+30
+00:03:00,000 --> 00:03:05,920
+ from the certain credential, credential or registries and it will be verifying whether this
+
+31
+00:03:05,920 --> 00:03:09,440
+ username and passwords was correct or not, okay.
+
+32
+00:03:09,440 --> 00:03:14,080
+ Basically that was a functionality of an LSS process, it will be taking your username and
+
+33
+00:03:14,080 --> 00:03:18,920
+ password and it will be verifying that whether the username and passwords is right or wrong,
+
+34
+00:03:18,920 --> 00:03:19,920
+ okay.
+
+35
+00:03:19,920 --> 00:03:27,880
+ So from that we can understand one thing, they LSS contain, so the LSS process contain,
+
+36
+00:03:27,880 --> 00:03:34,320
+ so the LSS process contain our credentials, right, because it will be taking our credentials
+
+37
+00:03:34,320 --> 00:03:39,400
+ when we try to log in, so the LSS contain our credentials, okay.
+
+38
+00:03:39,400 --> 00:03:44,760
+ When you try to dump this LSS, this LSS, we know it contains the credentials, okay.
+
+39
+00:03:44,760 --> 00:03:51,600
+ This process will be holding our credentials, when you try to dump an LSS, this LSS contain
+
+40
+00:03:51,600 --> 00:03:57,720
+ all the username and passwords, so what are the things or what are the users, what are
+
+41
+00:03:57,720 --> 00:04:02,000
+ the passwords and each and everything, which will be holding my LSS, okay.
+
+42
+00:04:02,000 --> 00:04:06,880
+ So if you dump LSS, you can easily get Windows credentials, so whatever credentials you
+
+43
+00:04:06,880 --> 00:04:09,120
+ have, okay.
+
+44
+00:04:09,120 --> 00:04:16,280
+ So because of that, it's one of the most sensitive process coming up into the Windows mission,
+
+45
+00:04:16,280 --> 00:04:22,560
+ so because this process holding all the credentials, okay, like username and passwords, DPA
+
+46
+00:04:22,560 --> 00:04:32,560
+ keys, many, many, many more, okay.
+
+47
+00:04:32,560 --> 00:04:36,600
+ So because of this kind of sensitivity, the antivirus software and the EDR programs, it will
+
+48
+00:04:36,600 --> 00:04:44,280
+ be continuously monitoring the LSS process, if any of them access, if any of the remote
+
+49
+00:04:44,280 --> 00:04:50,080
+ process access to this LSS, it will be creating and it will be terminating that and it
+
+50
+00:04:50,080 --> 00:04:55,540
+ will be creating an alert, so we understand when I try to dump the LSS, so suddenly my
+
+51
+00:04:55,540 --> 00:05:02,600
+ bit differenter, Terminator this task manager right, so I was unable to open task manager
+
+52
+00:05:02,600 --> 00:05:08,440
+ for a few minutes, so because of the sensitivity, my antivirus software and the EDR platform
+
+53
+00:05:08,440 --> 00:05:13,560
+ will be monitoring this LSS, whether any of the process access to the LSS, you will be
+
+54
+00:05:13,560 --> 00:05:20,560
+ automatically getting an alert on the EDRs and antivirus software as well as it will be
+
+55
+00:05:20,560 --> 00:05:27,480
+ terminating the remote process which access to the LSS, okay.
+
+56
+00:05:27,480 --> 00:05:37,440
+ So we will be dumping LSS using various techniques in this topic, like we are not only focusing
+
+57
+00:05:37,440 --> 00:05:43,480
+ on the LSS, we will be focusing on the SAM and system hives in the registries, okay.
+
+58
+00:05:43,480 --> 00:05:52,280
+ So that also has a clamshells like an LSS, so we will be learning different kind of LSS
+
+59
+00:05:52,280 --> 00:05:57,880
+ term that will be used for you followed by your threat actors when coming up to an incident
+
+60
+00:05:57,880 --> 00:06:04,320
+ or an attack, so we will see that in upcoming videos, see you guys, bye bye.
+
+61
+00:06:07,440 --> 00:06:16,460
+ [BLANK_AUDIO]
+
