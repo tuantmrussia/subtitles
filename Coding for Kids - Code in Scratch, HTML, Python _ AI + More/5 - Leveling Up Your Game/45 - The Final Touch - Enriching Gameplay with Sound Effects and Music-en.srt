@@ -1,0 +1,200 @@
+1
+00:00:00,140 --> 00:00:01,940
+Well, this is it.
+
+2
+00:00:01,940 --> 00:00:05,030
+It's time to finish this thing off.
+
+3
+00:00:05,420 --> 00:00:10,580
+So to finish off this game, we're going to add in a few more sound effects and then add some background
+
+4
+00:00:10,580 --> 00:00:11,180
+music.
+
+5
+00:00:11,630 --> 00:00:16,670
+So let's start with the easiest because I mean who doesn't like doing the easiest stuff first.
+
+6
+00:00:17,580 --> 00:00:21,240
+But we want to add some nice background sound to our project.
+
+7
+00:00:21,630 --> 00:00:27,750
+So clicking on our backdrop sprite, we can add in a when flag clicked and a forever loop.
+
+8
+00:00:28,350 --> 00:00:36,090
+Then moving to the sounds tab and hovering over this button, we can then select Upload Sound.
+
+9
+00:00:36,270 --> 00:00:41,430
+And here we can select a background sound from our Music and Sound Effects folder.
+
+10
+00:00:41,430 --> 00:00:45,570
+For this game we can use Funk Casino.
+
+11
+00:00:46,850 --> 00:00:53,750
+Then moving back to our code, we can drag in the play sound until done, block and select func casino
+
+12
+00:00:53,750 --> 00:00:55,370
+or whatever sound you uploaded.
+
+13
+00:00:57,010 --> 00:00:58,360
+And hitting play.
+
+14
+00:00:58,750 --> 00:01:00,610
+Notice how much better that is.
+
+15
+00:01:00,760 --> 00:01:06,550
+And also notice how our sound effect for our car works a lot better and actually sounds quite good.
+
+16
+00:01:08,080 --> 00:01:13,840
+So with that done, let's move to our next sound effect, which is our car skidding sound effect.
+
+17
+00:01:14,580 --> 00:01:20,400
+And here, basically what we want to happen is have our car make a skidding sound when we hit into an
+
+18
+00:01:20,400 --> 00:01:21,180
+obstacle.
+
+19
+00:01:22,210 --> 00:01:27,280
+So moving over to our player sprite, we can add in this sound.
+
+20
+00:01:27,770 --> 00:01:33,080
+So clicking on the sounds tab and choosing a sound, we can then search for skid.
+
+21
+00:01:33,950 --> 00:01:35,120
+Which is this one here.
+
+22
+00:01:35,210 --> 00:01:39,020
+So selecting it and moving back to our code.
+
+23
+00:01:39,500 --> 00:01:44,390
+Now what we want is for our car to play this skidding sound when it touches an obstacle.
+
+24
+00:01:44,900 --> 00:01:50,510
+So if you look at the script here, this is basically the script that senses if our car is touching
+
+25
+00:01:50,510 --> 00:01:51,380
+an obstacle.
+
+26
+00:01:51,740 --> 00:01:58,370
+So all we need to do is add in this play skid sound to the start of each of these if checks.
+
+27
+00:01:58,910 --> 00:02:05,030
+So adding one to each, we can then hit play when hitting an obstacle.
+
+28
+00:02:05,750 --> 00:02:07,340
+And yeah, that's not quite right.
+
+29
+00:02:09,140 --> 00:02:14,660
+But basically what is happening is our play Skid sound is interfering with our other code.
+
+30
+00:02:14,660 --> 00:02:21,380
+Because if you look at the script, it plays the skid sound until it is done before it moves to the
+
+31
+00:02:21,380 --> 00:02:23,150
+next blocks of code.
+
+32
+00:02:23,480 --> 00:02:30,590
+So to fix this, all we need to do is remove all these play skid sounds until done blocks and replace
+
+33
+00:02:30,590 --> 00:02:33,440
+them with this start sound skid.
+
+34
+00:02:34,110 --> 00:02:36,300
+And with that, we can hit play again.
+
+35
+00:02:37,110 --> 00:02:38,250
+It is an obstacle.
+
+36
+00:02:38,820 --> 00:02:39,810
+And there you have it.
+
+37
+00:02:39,840 --> 00:02:41,370
+That's much better.
+
+38
+00:02:42,210 --> 00:02:47,790
+Now, before we wrap up this lesson, there is just one more thing, and that is changing the pitch
+
+39
+00:02:47,790 --> 00:02:54,300
+of our obstacle course so that as these cars pass by at a faster speed, it sounds faster to.
+
+40
+00:02:54,890 --> 00:03:02,870
+So moving over to our obstacle course sprite, all we need to do is grab a when flag clicked, then
+
+41
+00:03:02,870 --> 00:03:09,890
+this set pitch block and set the pitch to zero, which is basically setting it to default when the game
+
+42
+00:03:09,890 --> 00:03:10,520
+starts.
+
+43
+00:03:11,410 --> 00:03:17,830
+Then grab a forever loop, and then we can put this change pitch effect by block inside our loop.
+
+44
+00:03:18,580 --> 00:03:25,540
+And finally, to make sure the pitch doesn't instantly go extremely high, we can add a weight block
+
+45
+00:03:25,540 --> 00:03:29,260
+and change it to, let's say, 10s.
+
+46
+00:03:30,290 --> 00:03:34,700
+And I'll let you test that out for yourself, because we've reached the end of our lesson and the end
+
+47
+00:03:34,700 --> 00:03:37,160
+of our section, and we've completed this game.
+
+48
+00:03:37,160 --> 00:03:39,830
+Really, really great work on getting this far.
+
+49
+00:03:39,830 --> 00:03:41,750
+You have certainly accomplished a lot.
+
+50
+00:03:41,750 --> 00:03:46,670
+So give yourself a good pat on the back because you really do deserve it.
+
