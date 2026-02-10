@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:06,000
+Chào các bạn, chào mừng các bạn đến với mục 3 cho sự hướng dẫn này.
+
+2
+00:00:06,000 --> 00:00:10,000
+Ở đây, phần này thực sự rất đơn giản.
+
+3
+00:00:10,000 --> 00:00:18,000
+Chúng tôi chỉ xác minh, và chúng tôi gần như sẽ không làm bất kỳ cấu hình mới.
+
+4
+00:00:18,000 --> 00:00:26,000
+Vì vậy nhiệm vụ đầu tiên là đảm bảo rằng PHP và Apache bên trong container đang chạy phiên bản mới nhất.
+
+5
+00:00:26,000 --> 00:00:34,000
+Đầu tiên, chúng ta cần đăng nhập vào container.
+
+6
+00:00:34,000 --> 00:00:42,000
+Okay, và sau đó để kiểm tra phiên bản PHP mới nhất, chúng tôi chỉ cần gõ PHP-P.
+
+7
+00:00:42,000 --> 00:00:53,000
+Được rồi, rất đơn giản. Như bạn thấy ở đây, nó là phiên bản 8.5.0, là phiên bản ổn định mới nhất.
+
+8
+00:00:53,000 --> 00:01:06,000
+Được rồi, và điều tương tự cũng áp dụng cho người Apache, nhưng chúng tôi sẽ gõ Apache vào CTL.
+
+9
+00:01:06,000 --> 00:01:21,000
+Apache gọi CTL-V. Được rồi, nó sẽ cho chúng ta thấy rằng chúng ta cũng có máy chủ Apache phiên bản 2.4.65 mới nhất.
+
+10
+00:01:21,000 --> 00:01:29,000
+Vì vậy, chúng tôi đã thực hiện những thay đổi mà chúng tôi đã có phiên bản Apache và PHP mới nhất.
+
+11
+00:01:29,000 --> 00:01:35,000
+Đối với mình, bình luận hơi dài.
+
+12
+00:01:35,000 --> 00:01:39,000
+Chúng ta có 2 phương pháp.
+
+13
+00:01:39,000 --> 00:02:01,000
+Phương pháp này sẽ nhập đơn giản, chúng tôi sẽ không gõ Docker-PHP, nhưng tất nhiên là MyQL, và chúng tôi sẽ thực hiện bình luận của MyQLS, nhưng chúng tôi sẽ gõ vấn đề, có nghĩa là chúng tôi sẽ đăng nhập với người chủ.
+
+14
+00:02:01,000 --> 00:02:11,000
+Và sau đó chúng ta cần phải gạch ngang E và chọn phiên bản, để ghi chú được mở rộng để chọn phiên bản.
+
+15
+00:02:11,000 --> 00:02:18,000
+Được rồi, xin lỗi, có một lỗi đánh máy lỗi.
+
+16
+00:02:18,000 --> 00:02:23,000
+Có lỗi đánh máy ở đây. Được rồi, tôi xin lỗi, bỏ lỡ đoạn trích dẫn.
+
+17
+00:02:23,000 --> 00:02:28,000
+Điều này là rất quan trọng để thiết lập hai trích dẫn.
+
+18
+00:02:28,000 --> 00:02:40,000
+Được rồi, và tất nhiên chúng ta cần ra khỏi Docker trước tiên để thực hiện ý kiến này từ chính vật chủ.
+
+19
+00:02:40,000 --> 00:02:47,000
+Vì vậy, chúng tôi sẽ nhập không phải mật khẩu người dùng, mà là mật khẩu gốc.
+
+20
+00:02:47,000 --> 00:03:04,000
+Vậy, chúng ta cần nhớ điều đó.
+
+21
+00:03:04,000 --> 00:03:21,000
+Được rồi, anh cần phải giữ mật khẩu.
+
+22
+00:03:21,000 --> 00:03:25,000
+Nếu bạn gõ đúng, bạn sẽ bị từ chối truy cập.
+
+23
+00:03:25,000 --> 00:03:37,000
+Vì vậy, đó là lý do tại sao lần đầu tiên tôi nhận được truy cập bị từ chối, nhưng khi tôi nhập nó lần thứ hai, nó cho thấy tôi nhận được phiên bản 9.50.
+
+24
+00:03:37,000 --> 00:03:40,000
+Vì vậy, đây là khó khăn thực hiện cho nó.
+
+25
+00:03:40,000 --> 00:03:45,000
+Nếu bạn muốn thực hiện đơn giản hơn, bạn có thể gõ bình luận này.
+
+26
+00:03:45,000 --> 00:03:55,000
+Được rồi, Docker, thoát ra, gạch ngang E, của tôi, nhưng bạn sẽ chọn phiên bản đường gạch ngang của tôi.
+
+27
+00:03:55,000 --> 00:03:58,000
+Được rồi, hãy cẩn thận khi đánh đúng.
+
+28
+00:03:58,000 --> 00:04:02,000
+Bạn cần phải gõ đường dẫn mặc định của tôi.
+
+29
+00:04:02,000 --> 00:04:09,000
+Bởi vì nếu bạn gõ đường dẫn D của tôi, nó sẽ gây ra nhiều vấn đề và bạn không thực hiện thành công.
+
+30
+00:04:09,000 --> 00:04:18,000
+Được rồi, như các bạn thấy ở đây, nó cho chúng ta thấy rằng chúng ta có MySQL, cũng 9.50.
+
+31
+00:04:18,000 --> 00:04:24,000
+Được rồi, chúng tôi đã hoàn thành phần này và chúng tôi đã hoàn thành phần 3.
+
+32
+00:04:24,000 --> 00:04:27,000
+Mục 3 rất, rất dễ.
+
+33
+00:04:27,000 --> 00:04:29,000
+Đây.
+
