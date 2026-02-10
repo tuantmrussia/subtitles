@@ -1,0 +1,360 @@
+1
+00:00:00,110 --> 00:00:00,710
+Right.
+
+2
+00:00:00,710 --> 00:00:05,360
+So far we have just changed the spawn speed to a variable for our obstacle car.
+
+3
+00:00:05,360 --> 00:00:11,360
+But as you know, our trees and foliage also have the same spawn in effect, so let's do the same for
+
+4
+00:00:11,360 --> 00:00:11,810
+them.
+
+5
+00:00:12,350 --> 00:00:18,800
+So moving over to this sprite, you can see that it is set to 0.6 to 0.3.
+
+6
+00:00:18,800 --> 00:00:22,550
+So our spawn speed is currently 0.6.
+
+7
+00:00:22,550 --> 00:00:25,880
+And we can simply drag this variable into here.
+
+8
+00:00:26,500 --> 00:00:30,010
+Then 0.3 is half of 0.6.
+
+9
+00:00:30,010 --> 00:00:33,580
+Instead of timesing it by two, like with our car.
+
+10
+00:00:33,610 --> 00:00:35,350
+We can divide it by two.
+
+11
+00:00:35,890 --> 00:00:41,590
+So grabbing this divide from the operators, sticking in our variable and typing in two.
+
+12
+00:00:43,180 --> 00:00:45,400
+And quickly hitting play once again.
+
+13
+00:00:46,000 --> 00:00:49,780
+Nothing new happens yet, but as you can see, it works.
+
+14
+00:00:50,020 --> 00:00:56,710
+So now that our spawning speed has been switched from hard coded values to variables, the next thing
+
+15
+00:00:56,710 --> 00:00:59,380
+we need to change is our movement speed.
+
+16
+00:01:00,040 --> 00:01:04,600
+Now in our code we have three different sprites that move down.
+
+17
+00:01:04,600 --> 00:01:09,280
+We have our obstacle sprite, our tree sprite, and our road lane sprite.
+
+18
+00:01:10,400 --> 00:01:13,580
+So firstly with our road sprite.
+
+19
+00:01:13,580 --> 00:01:18,890
+As you can see, our movement is determined by this change y by negative ten value.
+
+20
+00:01:19,520 --> 00:01:24,440
+So let's simply grab our movement speed variable, drag it into here.
+
+21
+00:01:24,770 --> 00:01:30,170
+Then let's quickly set our movement speed variable to minus ten and double click.
+
+22
+00:01:30,680 --> 00:01:34,670
+Then if we hit play, as you can see that works perfectly.
+
+23
+00:01:35,510 --> 00:01:36,140
+Next.
+
+24
+00:01:36,140 --> 00:01:39,020
+Moving over to our tree and foliage sprite.
+
+25
+00:01:39,580 --> 00:01:44,800
+Here you can see we also have movements set to a hard coded minus ten value.
+
+26
+00:01:45,070 --> 00:01:49,960
+So quite simply we can just replace this hard coded value with this variable.
+
+27
+00:01:50,080 --> 00:01:51,610
+And that's it.
+
+28
+00:01:52,570 --> 00:01:56,320
+So finally we can move over to our obstacle car.
+
+29
+00:01:56,860 --> 00:02:02,740
+Here, as you can see, we set this value to minus five instead of minus ten.
+
+30
+00:02:02,860 --> 00:02:09,520
+And we did this because we wanted our car to move just a bit slower than our road, which gave it the
+
+31
+00:02:09,520 --> 00:02:11,800
+illusion that it's moving forward.
+
+32
+00:02:11,950 --> 00:02:16,930
+So once again, we can swap out the static value with our movement speed variable.
+
+33
+00:02:16,930 --> 00:02:24,070
+But to make sure that it moves at a slower speed than our road and trees, we can grab a plus operator,
+
+34
+00:02:24,460 --> 00:02:27,790
+stick it in here and enter in five.
+
+35
+00:02:27,970 --> 00:02:33,100
+And since minus ten plus five equals minus five, we get back to the same value we had before.
+
+36
+00:02:34,190 --> 00:02:38,720
+So finally clicking play, we can test out if everything is working.
+
+37
+00:02:39,350 --> 00:02:42,800
+And yep, our game is running as it was before.
+
+38
+00:02:42,800 --> 00:02:47,510
+However, our code is now super robust and adaptable.
+
+39
+00:02:47,600 --> 00:02:51,170
+So time to move on to the fun part.
+
+40
+00:02:52,380 --> 00:02:59,040
+So we put in a lot of work restructuring our code, but our game basically plays the same as how we
+
+41
+00:02:59,040 --> 00:02:59,520
+had it.
+
+42
+00:02:59,520 --> 00:03:05,190
+So let's look at how we can make use of this new and improved code by adding levels to our game.
+
+43
+00:03:05,940 --> 00:03:10,050
+But before we change anything, let's first create a new sprite.
+
+44
+00:03:10,440 --> 00:03:15,510
+Now it really doesn't matter which sprite you select here, and you will see why in a second.
+
+45
+00:03:15,540 --> 00:03:20,100
+But after you have selected the sprite, we can also go into the costume editor.
+
+46
+00:03:20,400 --> 00:03:27,540
+Select the entire object and hit backspace and you probably really confused now.
+
+47
+00:03:28,250 --> 00:03:33,920
+But basically what we're going to do is use the sprite to set all our variables in our game.
+
+48
+00:03:33,950 --> 00:03:40,340
+Now, why this is nice is because we have one space where all our variables are set, and this makes
+
+49
+00:03:40,340 --> 00:03:44,300
+it easy to change values, upgrade, and make changes to our game.
+
+50
+00:03:44,300 --> 00:03:46,160
+And also it keeps us super organized.
+
+51
+00:03:46,190 --> 00:03:48,230
+Plus, who doesn't like to be organized?
+
+52
+00:03:48,230 --> 00:03:50,240
+Well, at least when it comes to programming.
+
+53
+00:03:50,240 --> 00:03:56,330
+So first things first, let's add in our most crucial block when start clicked.
+
+54
+00:03:57,270 --> 00:04:04,200
+Then moving down to our variables, let's drag in two of these set variable value blocks and how we
+
+55
+00:04:04,200 --> 00:04:07,050
+can set spawn speed and movement speed.
+
+56
+00:04:07,740 --> 00:04:11,010
+And what we want to do is just set it to the current value.
+
+57
+00:04:11,040 --> 00:04:14,280
+We have that now to ensure our game always starts at the speed.
+
+58
+00:04:14,280 --> 00:04:18,120
+So that's 0.6 and minus ten.
+
+59
+00:04:19,170 --> 00:04:25,500
+Now to increase the difficulty, all you need to do is grab a forever loop, a wait block, and then
+
+60
+00:04:25,500 --> 00:04:28,050
+two of these change variable by blocks.
+
+61
+00:04:28,770 --> 00:04:32,220
+So with that we can set our wait to eight seconds.
+
+62
+00:04:32,400 --> 00:04:37,590
+Then we can set this block to change spawn speed and the other to change movement speed.
+
+63
+00:04:39,230 --> 00:04:44,270
+So for our spawn speed variable, it is currently set to 0.6.
+
+64
+00:04:44,270 --> 00:04:47,510
+So we only want to make small adjustments here.
+
+65
+00:04:47,510 --> 00:04:54,380
+So what I'll do is change the spawn speed by -0.02.
+
+66
+00:04:54,950 --> 00:04:58,400
+This way our cars will slowly start spawning and faster.
+
+67
+00:04:58,850 --> 00:05:03,470
+Then for our movement speed we can change this value by minus one.
+
+68
+00:05:04,130 --> 00:05:07,730
+Now, before we hit play, let's quickly understand what is going on here.
+
+69
+00:05:08,120 --> 00:05:12,620
+So firstly our game is set to its initial level one speed.
+
+70
+00:05:12,620 --> 00:05:18,410
+Then every eight seconds we slowly decrease the amount of time it takes for our cars to spawn in.
+
+71
+00:05:18,410 --> 00:05:25,790
+And we also decrease our movement speed by minus one, which gets our cars and the obstacles to appear
+
+72
+00:05:25,790 --> 00:05:29,180
+like they are moving faster and faster as the game progresses.
+
+73
+00:05:30,090 --> 00:05:30,780
+Now.
+
+74
+00:05:30,780 --> 00:05:36,540
+This time, if we play the game, you will notice that every eight seconds these values decrease and
+
+75
+00:05:36,540 --> 00:05:38,760
+our game starts to get faster and faster.
+
+76
+00:05:39,970 --> 00:05:44,290
+Now, before we wrap up this lesson, let's quickly add a score element to this game.
+
+77
+00:05:44,350 --> 00:05:46,480
+You know, for bragging rights of course.
+
+78
+00:05:46,840 --> 00:05:53,620
+And to do this, all we need to do is create a new variable which we can call score.
+
+79
+00:05:54,690 --> 00:05:59,250
+Next we can add a set score to zero like we see with these variables.
+
+80
+00:05:59,250 --> 00:05:59,580
+Click the.
+
+81
+00:05:59,930 --> 00:06:06,740
+And finally, every eight seconds we can go ahead and change the score by, let's say, 43, because,
+
+82
+00:06:06,740 --> 00:06:09,530
+I mean, who doesn't like a large score to motivate them?
+
+83
+00:06:10,120 --> 00:06:16,180
+And before this move play, let's quickly slide these other variables bad and then move our score to
+
+84
+00:06:16,180 --> 00:06:17,770
+great to the top much more.
+
+85
+00:06:17,770 --> 00:06:22,690
+And also we it will just double click on it displays as one very large number.
+
+86
+00:06:23,480 --> 00:06:30,890
+Well, with all that done, we now have increasing difficulty, a score, and most importantly, super
+
+87
+00:06:30,890 --> 00:06:36,710
+robust code that allows us to adjust values in all our spaces easily.
+
+88
+00:06:36,710 --> 00:06:43,130
+So now for the absolute most important part, go and keep on playing the game until you reach a high
+
+89
+00:06:43,130 --> 00:06:45,590
+enough score that you can brag about.
+
+90
+00:06:45,590 --> 00:06:48,470
+So well done, you are really doing great!
+
