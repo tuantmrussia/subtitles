@@ -1,0 +1,244 @@
+1
+00:00:00,110 --> 00:00:05,480
+So, as you know, when we hit into a tree, they just can't disappear, which is really not what we
+
+2
+00:00:05,480 --> 00:00:05,900
+want.
+
+3
+00:00:05,930 --> 00:00:09,620
+Instead, we want the trees to slowly grind to a halt.
+
+4
+00:00:10,010 --> 00:00:15,770
+Now, if you look at the script we have here, basically when we touch the tree sprite, we just stop
+
+5
+00:00:15,770 --> 00:00:19,640
+all and this stops all code and it's causing a lot of problems.
+
+6
+00:00:19,640 --> 00:00:21,860
+And this is not just with our trees.
+
+7
+00:00:21,860 --> 00:00:25,580
+Disappearing is when we stop all our entire game stops.
+
+8
+00:00:25,610 --> 00:00:31,490
+So this means that we can't add in any restart button, as this button wouldn't work if the code is
+
+9
+00:00:31,490 --> 00:00:32,540
+all stopped.
+
+10
+00:00:33,580 --> 00:00:35,770
+So how do we fix this?
+
+11
+00:00:35,800 --> 00:00:41,170
+Now, this is where I'm going to introduce you to a new block we haven't yet used, which is this broadcast
+
+12
+00:00:41,170 --> 00:00:42,460
+message code here.
+
+13
+00:00:43,200 --> 00:00:46,860
+So as you can see, it's very similar to when flag clicked button.
+
+14
+00:00:46,860 --> 00:00:52,890
+But the key difference is that the script doesn't wait for a when flag click, but instead waits for
+
+15
+00:00:52,890 --> 00:00:55,410
+a specific message to be broadcast.
+
+16
+00:00:56,480 --> 00:01:01,850
+For instance, consider a game where a player's sprite encounters a treasure chest.
+
+17
+00:01:02,300 --> 00:01:08,990
+This event can broadcast a message found treasure, which in turn triggers a script that listens for
+
+18
+00:01:08,990 --> 00:01:15,200
+found treasure and plays an animation of the chest opening sound effect echoing and the creak of the
+
+19
+00:01:15,200 --> 00:01:18,770
+lid and the score updating to include the new found treasures.
+
+20
+00:01:18,770 --> 00:01:21,110
+And it all happens simultaneously.
+
+21
+00:01:21,620 --> 00:01:22,730
+But that's not all.
+
+22
+00:01:22,970 --> 00:01:27,440
+The broadcast feature is not just about triggering multiple actions at once.
+
+23
+00:01:27,440 --> 00:01:31,400
+It's about enhancing control and coordination of your project.
+
+24
+00:01:31,550 --> 00:01:39,320
+It allows you to create complex, interactive and responsive projects without the clutter of overly
+
+25
+00:01:39,320 --> 00:01:44,720
+complicated code and and using tons of variables that constantly check if a condition is true or not.
+
+26
+00:01:44,750 --> 00:01:50,600
+It's sort of like having a conductor leading an orchestra, ensuring each instrument, or in our case,
+
+27
+00:01:50,600 --> 00:01:56,480
+each sprite, plays at the right time to create a beautiful and harmonious experience.
+
+28
+00:01:56,900 --> 00:01:57,470
+Right?
+
+29
+00:01:57,770 --> 00:02:03,140
+With all that said, let's see how we can improve our code with this broadcast feature.
+
+30
+00:02:03,590 --> 00:02:10,760
+So looking at our code here, instead of stopping all, what I'll do is swap it for this broadcast message
+
+31
+00:02:10,760 --> 00:02:15,110
+and then click New message and call it player crashed.
+
+32
+00:02:16,050 --> 00:02:18,870
+Now just broadcasting the message player crashed.
+
+33
+00:02:18,870 --> 00:02:20,190
+Won't do anything.
+
+34
+00:02:20,190 --> 00:02:24,000
+We need to now create code that listens for this broadcast.
+
+35
+00:02:24,660 --> 00:02:27,660
+And to do this we can move into our tree sprite.
+
+36
+00:02:27,660 --> 00:02:29,010
+And here we can grab this.
+
+37
+00:02:29,010 --> 00:02:30,840
+When I receive message.
+
+38
+00:02:31,050 --> 00:02:35,370
+And the message we are looking for is player crashed.
+
+39
+00:02:35,610 --> 00:02:39,390
+So when we receive this message, we want our trees to come to a halt.
+
+40
+00:02:40,110 --> 00:02:46,290
+Now the first problem we have is how our trees have a hard coded movement speed at the moment of minus
+
+41
+00:02:46,290 --> 00:02:48,660
+nine, which doesn't give us much control.
+
+42
+00:02:48,690 --> 00:02:50,250
+So let's fix this.
+
+43
+00:02:50,250 --> 00:02:56,670
+And quite simply, we can swap out this minus nine for this movement speed variable that we have already
+
+44
+00:02:56,670 --> 00:02:57,780
+in our project.
+
+45
+00:02:58,620 --> 00:03:04,980
+Then moving over to our variable sprite, we can drag in this block and set our movement speed variable
+
+46
+00:03:04,980 --> 00:03:07,950
+to minus nine at the start of the game.
+
+47
+00:03:08,520 --> 00:03:13,140
+So now that that is done, we can move back over to our tree sprite.
+
+48
+00:03:13,140 --> 00:03:20,640
+And now when we receive the message player crashed, we can change our movement speed by 0.5.
+
+49
+00:03:20,760 --> 00:03:26,670
+And we can use this repeat until block to ensure our trees are at a complete stop.
+
+50
+00:03:27,180 --> 00:03:35,040
+So we can say repeat until grab this equals block and say movement speed equals zero just like that.
+
+51
+00:03:36,470 --> 00:03:43,820
+Now, if we give it a test and hit into a tree, you will see that our trees now come to a stop, although
+
+52
+00:03:43,820 --> 00:03:51,110
+it's still a bit too fast, so we can just add in weight and change it to 0.1 and give it another try.
+
+53
+00:03:51,380 --> 00:03:52,580
+And there you have it.
+
+54
+00:03:52,580 --> 00:03:57,290
+Now there's just one problem, and that is how our trees keep spawning in.
+
+55
+00:03:57,890 --> 00:04:03,890
+And to solve this, all we need to do is grab this, stop all block and change it to stop other scripts
+
+56
+00:04:03,890 --> 00:04:04,850
+in the sprite.
+
+57
+00:04:05,390 --> 00:04:11,870
+Then you can just place that right at the end of our script and giving that one more try heading into
+
+58
+00:04:11,870 --> 00:04:12,680
+a tree.
+
+59
+00:04:12,920 --> 00:04:18,470
+Well, as you can see, our tree is slowly come to a stop, which makes it look like our player is slowing
+
+60
+00:04:18,470 --> 00:04:19,040
+down.
+
+61
+00:04:19,070 --> 00:04:20,480
+Perfecto.
+
