@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:13,080
+Được rồi, bây giờ chúng tôi đã đặt con đường của nhà cho người dùng, okay, mà có
+
+2
+00:00:13,080 --> 00:00:18,680
+ltde biểu tượng, dữ liệu gạch gạch ngang của MyLS, chúng tôi đã tạo thư mục như chúng tôi đã làm với các
+
+3
+00:00:18,680 --> 00:00:25,920
+container trước đây và bây giờ chúng tôi sẽ cung cấp cho nó truy cập nhưng hãy chắc chắn rằng thời gian này nó là rất
+
+4
+00:00:25,920 --> 00:00:33,760
+chỉ ra rằng cần đưa ra đường dẫn để truy cập lại cho người dùng sở hữu có nghĩa là bạn cần thiết lập
+
+5
+00:00:33,760 --> 00:00:43,280
+Nó đến 777 ít nhất là nếu bạn đang dàn xếp hoặc không có bất kỳ môi trường sản xuất nào cho việc tìm kiếm của mình.
+
+6
+00:00:43,280 --> 00:00:55,840
+Công cụ hộp dữ liệu, được rồi, và bây giờ hãy chạy container, chúng ta cần chạy hình ảnh cơ sở dữ liệu nhưng
+
+7
+00:00:55,840 --> 00:01:07,920
+với cổng xuất bản của cổng mặc định 3, 3, 3, 6, vậy hãy chạy container này, okay,
+
+8
+00:01:07,920 --> 00:01:17,680
+Vì vậy, chúng tôi gõ Docker chạy và chúng tôi đặt tên nó dấu gạch ngang của tôi và đây là một cổng xuất bản của 3, 3, 3.
+
+9
+00:01:17,680 --> 00:01:25,520
+3, 3, 0, 6 và chúng tôi sẽ gắn kết nó, chúng tôi sẽ gắn nó vào tập tin này dữ liệu gạch dưới,
+
+10
+00:01:25,520 --> 00:01:34,560
+OK, và đây là một ổ đĩa bản đồ của Z, okay, tương đương với thư viện Ivar và chúng tôi thiết lập
+
+11
+00:01:34,560 --> 00:01:41,920
+Mật khẩu, đây là mật khẩu và đặt cơ sở dữ liệu ứng dụng của tôi và người dùng định dạng; mà đặt tên nó là người dùng của tôi
+
+12
+00:01:41,920 --> 00:01:50,560
+Và đây là mật khẩu cho người dùng của tôi và chúng tôi sử dụng dấu chấm lmmix mới nhất để kéo xuống từ Docker
+
+13
+00:01:50,560 --> 00:02:00,480
+Căn cứ vào ảnh tối ưu mới nhất, được rồi, nó nên tìm kiếm từ căn cứ Docker vì nó sẽ không tìm thấy
+
+14
+00:02:00,480 --> 00:02:07,520
+nó sẽ kéo nó xuống, vì vậy nó có thể mất một thời gian, tôi sẽ tạm dừng video cho đến khi tải về
+
+15
+00:02:07,520 --> 00:02:24,080
+và các hoạt động kéo đã hoàn thành, được rồi, bây giờ lưng của chúng tôi là một công-te-nơ của cột MySQL mới nhất là
+
+16
+00:02:24,080 --> 00:02:35,440
+tải về thành công và kéo xuống, vì vậy nếu chúng ta nghe những gì chúng ta làm tiếp theo, đầu tiên chúng ta hãy xác minh rằng chúng ta
+
+17
+00:02:35,440 --> 00:02:50,160
+Có hai bác sĩ, chúng tôi có MySQL, được rồi, và nó sẽ tăng trong 39 giây và chúng tôi có PHP Apache mà
+
+18
+00:02:50,160 --> 00:02:58,560
+là chạy trong 18 phút và đây là công cụ thử nghiệm nó được thoát ra và chúng tôi chạy nó từ ba ngày
+
+19
+00:02:58,560 --> 00:03:08,880
+nếu bạn muốn chạy cái cột này một lần nữa, được rồi, nếu đường MySQL có vấn đề,
+
+20
+00:03:08,880 --> 00:03:17,360
+Nếu bạn nhìn thấy nó xuống, nó sẽ mất ít hơn một phút, nếu bạn là trên một phút sau đó
+
+21
+00:03:17,360 --> 00:03:24,640
+Mọi thứ đều ổn, mọi thứ bây giờ đều ổn với MyQL và bạn có thể tiếp tục với bước tiếp theo,
+
+22
+00:03:25,840 --> 00:03:32,720
+Vì vậy, hãy liên kết tất cả các container với nhau trong một mạng lưới, vì vậy chúng tôi sẽ sử dụng lệnh này
+
+23
+00:03:32,720 --> 00:03:42,640
+Mạng docker để tạo ra một mạng nhỏ LAN hoặc mạng LAN địa phương, vì vậy chúng tôi sẽ sử dụng, chúng tôi sẽ gõ
+
+24
+00:03:42,640 --> 00:03:52,800
+Mạng docker tạo mạng gạch ngang của tôi, được rồi, đây là mạng của chúng tôi và hãy kết nối cả hai
+
+25
+00:03:52,800 --> 00:04:00,800
+tạo ra đường phố docker, vì vậy docker mạng lưới chúng tôi sẽ sử dụng thời gian này kết nối thay vì
+
+26
+00:04:00,800 --> 00:04:09,280
+tạo ra và mạng lưới của tôi đó là tên của mạng lưới của chúng tôi, PHP gạch ngang của tôi, Apache đây là đầu tiên của chúng tôi
+
+27
+00:04:09,280 --> 00:04:20,880
+container và chúng tôi sẽ sử dụng cùng một lệnh nhưng chúng tôi sẽ cần, chúng tôi sẽ liên kết dấu gạch ngang của tôi, OK, đây là của chúng tôi
+
+28
+00:04:20,880 --> 00:04:37,200
+Con vịt thứ hai, được rồi và khi chúng ta chạy chúng ta nên xem bây giờ nếu tôi muốn tăng gấp đôi kiểm tra cả hai
+
+29
+00:04:37,200 --> 00:04:44,480
+Hộp chứa cùng một mạng, chúng tôi sẽ gõ mạng lệnh docker, thanh tra mạng của tôi
+
+30
+00:04:45,440 --> 00:04:52,800
+Và hãy kiểm tra gấp đôi nếu chúng ta có cả hai container trong mạng lưới này, đây là tên của
+
+31
+00:04:52,800 --> 00:05:03,120
+Mạng lưới của tôi, đây là ID của container này và đây là mặt nạ mạng bên trong máy ảo của tôi
+
+32
+00:05:03,120 --> 00:05:11,920
+mà cần máy tính này để kết nối đến internet và đây là cửa ra mạng, địa chỉ IP mạng của
+
+33
+00:05:11,920 --> 00:05:21,600
+Cửa ra lưới, được rồi, vậy chúng ta nên có phạm vi 182.0.2 tiếp tục cho cổng ra, vì vậy chúng ta nên
+
+34
+00:05:21,600 --> 00:05:31,600
+có .2 và .3, .2, .2 được dành cho PHP Apache của tôi, nó đi từ đây đến đây, từ xuống trên,
+
+35
+00:05:31,600 --> 00:05:38,400
+Vì vậy, đây là địa chỉ IP đầu tiên, đó là các container IP cho PHP Apache của tôi và đây là
+
+36
+00:05:38,400 --> 00:05:47,360
+.03 và đây là mã nhận diện hộp của tôi, vì vậy cả hai đều có thể thấy đang có
+
+37
+00:05:47,360 --> 00:05:57,840
+Chính xác IP trong cùng IP mạng cục bộ mà chúng tôi đã thiết lập trên máy ảo của chúng tôi và cả hai
+
+38
+00:05:57,840 --> 00:06:08,080
+Những thùng chứa này nằm trên các thùng chứa mạng của tôi mà chúng tôi đã tạo ra ở phía trên, được rồi, rất là
+
+39
+00:06:08,080 --> 00:06:16,080
+Vì vậy, bây giờ điều cuối cùng phải làm ở đây là chúng tôi muốn kết nối từ hộp PHP của chúng tôi bằng cách sử dụng
+
+40
+00:06:16,080 --> 00:06:27,920
+Tên hộp công-te-nơ, tôi muốn kết nối đầu tiên với container PHP của tôi, vì vậy hãy xóa nó và kết nối với
+
+41
+00:06:27,920 --> 00:06:40,080
+Hãy kết nối với container PHP của chúng tôi Apache và từ đó chúng tôi cần phải cập nhật bởi vì
+
+42
+00:06:40,080 --> 00:06:46,960
+Đây là hộp thư của Debian đang chạy trên Linux Debian, vì vậy không còn sử dụng
+
+43
+00:06:46,960 --> 00:06:58,000
+NF mà chúng tôi đã sử dụng trong Linux của chúng tôi, chúng tôi sẽ sử dụng công cụ APT để cập nhật này container và chúng tôi cài đặt
+
+44
+00:06:58,000 --> 00:07:06,560
+Ứng dụng khách thư điện tử vì chúng tôi muốn kết nối đến cơ sở dữ liệu của tôi từ máy chủ web này hoặc người Apache này
+
+45
+00:07:06,560 --> 00:07:25,280
+container, vậy chúng ta hãy cập nhật gói và đến cài đặt ứng dụng kháchMyLS, okay, nó là
+
+46
+00:07:25,280 --> 00:07:36,880
+thao tác hai phút và bây giờ chúng tôi trở lại một lần nữa, chúng tôi cài đặt những lần IP tiện ích, bạn
+
+47
+00:07:36,880 --> 00:07:43,680
+Bởi vì bạn muốn sử dụng từ các thực thể IP nói, chúng tôi muốn đầu tiên ghim các thùng chứa,
+
+48
+00:07:43,680 --> 00:07:52,800
+Tôi sẽ nghĩ là hộp xếp gạch của tôi từ người Apache, nên tôi sẽ làm gì ở đây sau khi lắp đặt
+
+49
+00:07:52,800 --> 00:08:07,680
+Màu hồng, tôi sẽ gõ màu hồng gạch ngang hoặc màu hồng dấu gạch ngang của tôi, màu hồng gạch ngang của tôi đường cong và như bạn có thể thấy
+
+50
+00:08:07,680 --> 00:08:14,400
+Ở đây từ các thông báo thanh tra Docker, lệnh trước của mạng thanh tra, nó được giải quyết
+
+51
+00:08:14,400 --> 00:08:25,440
+để 18.0.3, do đó, độ phân giải mạng hoạt động, tôi gõ điều khiển C để phá vỡ thao tác và bây giờ chúng tôi sẽ
+
+52
+00:08:25,440 --> 00:08:32,000
+Chỉ cần làm cho một kết nối bằng cách sử dụng tưởng tượng để làm mà chúng tôi đã cài đặt, gạch ngang thực sự chúng tôi kết nối với
+
+53
+00:08:32,000 --> 00:08:39,440
+máy của tôi gạch dưới của tôi và chúng tôi sử dụng người dùng của tôi gạch gạch dưới p và chúng tôi bỏ qua xác thực SSL, chúng tôi cần phải
+
+54
+00:08:39,440 --> 00:08:46,000
+Gõ nó như thế này hoặc bạn sẽ nhận được một lỗi và đây là tên của cơ sở dữ liệu của chúng tôi mà được gọi
+
+55
+00:08:46,000 --> 00:09:01,440
+Ứng dụng của tôi, vì vậy hãy kết nối nó và chúng tôi sẽ gõ mật khẩu của chúng tôi, okay và như bạn có thể thấy ở đây
+
+56
+00:09:01,440 --> 00:09:07,280
+chúng tôi đã kết nối với hệ thống định vị của tôi, vì vậy cả hai màu hồng đều hoạt động và tất nhiên kết nối với tôi
+
+57
+00:09:07,280 --> 00:09:17,120
+Cơ sở dữ liệu nghiệm nghiệm, tôi hy vọng bài học này làm sáng tỏ các thùng chứa và làm thế nào chúng ta có thể tạo ra nó và
+
+58
+00:09:17,120 --> 00:09:24,720
+đặt chúng vào cùng một mạng lưới và làm thế nào chúng tôi có thể tương tác với một container khác hoặc kết nối
+
+59
+00:09:24,720 --> 00:09:38,960
+Từ công-te-nơ này đến thùng khác, tôi hy vọng bài học này sẽ có ích cho các bạn và sẽ gặp lại các bạn trong buổi tiếp theo, tạm biệt.
+
