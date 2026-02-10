@@ -1,0 +1,356 @@
+1
+00:00:00,000 --> 00:00:07,560
+ Yeah, let's discuss the program in this session.
+
+2
+00:00:07,560 --> 00:00:13,560
+ Okay, so I'll give you each and everything how I designed this code and what the code will
+
+3
+00:00:13,560 --> 00:00:14,560
+ be doing.
+
+4
+00:00:14,560 --> 00:00:25,040
+ So this are the library functions we just used for the unpuking a process, and you can
+
+5
+00:00:25,040 --> 00:00:28,880
+ see the payroll here.
+
+6
+00:00:28,880 --> 00:00:32,960
+ So this is nothing but it will be previously I just designed with it will be opening
+
+7
+00:00:32,960 --> 00:00:39,200
+ your message box and it will throw something, but now I just developed a shell code that
+
+8
+00:00:39,200 --> 00:00:47,020
+ will be opening a calculator dot exe on the machine.
+
+9
+00:00:47,020 --> 00:00:58,040
+ So this is the shell code so you can you can develop a shell code from mls of venom or
+
+10
+00:00:58,040 --> 00:01:00,640
+ you can use other tool, other kind of tools.
+
+11
+00:01:00,640 --> 00:01:06,360
+ So whatever shell code you are giving here, so this will be considered a payload, so
+
+12
+00:01:06,360 --> 00:01:11,280
+ I just given the calc.exe you can develop a malicious shell code or something, and you
+
+13
+00:01:11,280 --> 00:01:13,800
+ can test it in your test environment, okay.
+
+14
+00:01:13,800 --> 00:01:23,000
+ So this is the VR giving more stronger powerful method to evade the antivirus software
+
+15
+00:01:23,000 --> 00:01:24,000
+ scenario platform.
+
+16
+00:01:24,000 --> 00:01:30,620
+ So I involved the AES encryption advanced encryption standard, the bit was two physics
+
+17
+00:01:30,620 --> 00:01:31,620
+ bit.
+
+18
+00:01:31,620 --> 00:01:38,920
+ So this is the key of AES algorithm that this will be used to decrypt the payload for
+
+19
+00:01:38,920 --> 00:01:40,980
+ which we have encrypted here, okay.
+
+20
+00:01:40,980 --> 00:01:50,960
+ So the EDRs and AV, if the EDRs and AV scanning this shell code, so it will not understand
+
+21
+00:01:50,960 --> 00:01:57,180
+ what was hiding inside the shell, so that's the problem here, okay.
+
+22
+00:01:57,180 --> 00:02:04,300
+ So we can easily evade the antivirus software and EDRs by these techniques.
+
+23
+00:02:04,300 --> 00:02:05,820
+ So the next one.
+
+24
+00:02:05,820 --> 00:02:11,540
+ So here you can find the bull AES decrypt up, so this is the entire code, this will be responsible
+
+25
+00:02:11,540 --> 00:02:17,140
+ for decrypting the encrypted shell code in there, okay.
+
+26
+00:02:17,140 --> 00:02:21,620
+ So let's jump on to my calling machine and let me show you some interesting thing.
+
+27
+00:02:21,620 --> 00:02:35,100
+ I'll be giving you a few of the program, like AES encrypt.py, calc.bin and this programs, okay.
+
+28
+00:02:35,100 --> 00:02:51,220
+ So you can execute the Python AES and calc.bin, so if you develop any kind of malicious
+
+29
+00:02:51,220 --> 00:02:55,960
+ shell code, you can give it here instead of calc.bin, I have given the calc.bin, but if
+
+30
+00:02:55,960 --> 00:03:03,060
+ you are developing a mal.bin, some kind of malicious shell code, you can give it here, okay.
+
+31
+00:03:03,060 --> 00:03:07,660
+ So once you execute this, it will give you the key, okay.
+
+32
+00:03:07,660 --> 00:03:16,860
+ So this is where we just given the AES, a advance instant based encryption, okay.
+
+33
+00:03:16,860 --> 00:03:23,660
+ So this is the payload and calc.bin, okay, so nothing else, I just copy, paste the code
+
+34
+00:03:23,660 --> 00:03:25,700
+ here, the payload and the key.
+
+35
+00:03:25,700 --> 00:03:30,380
+ So this is responsible for decrypting the shell code, okay.
+
+36
+00:03:30,380 --> 00:03:40,620
+ So the next line we can see, find a process idea, we are targeting the notepad.exe process,
+
+37
+00:03:40,620 --> 00:03:51,120
+ so we have create tool help, 32 snapshot to identify the notepad process, okay.
+
+38
+00:03:51,120 --> 00:04:01,500
+ So that's the entire thing here, just finding out the notepad.exe process idea, okay.
+
+39
+00:04:01,500 --> 00:04:12,880
+ So the next one, we are going to unhook, we are developed a function for, perform unhooking
+
+40
+00:04:12,880 --> 00:04:14,040
+ off.
+
+41
+00:04:14,040 --> 00:04:19,420
+ So this is the heart of the program, it will be doing the unhooking, the current entity
+
+42
+00:04:19,420 --> 00:04:26,880
+ library, and it will replace the new entity library into the memory, okay.
+
+43
+00:04:26,880 --> 00:04:33,520
+ So this is entirely, it will be going to do, here you can see create file w, entity l path,
+
+44
+00:04:33,520 --> 00:04:41,180
+ this line will load a fresh entity library and it will map the entity library into the file,
+
+45
+00:04:41,180 --> 00:04:42,980
+ okay.
+
+46
+00:04:42,980 --> 00:04:51,880
+ And so this all lines are related to mapping and if we get some kind of error, so it will
+
+47
+00:04:51,880 --> 00:04:55,880
+ report the error to us.
+
+48
+00:04:55,880 --> 00:05:05,740
+ So once we get everything done, once we get unhooked, the entity library and hooked the,
+
+49
+00:05:05,740 --> 00:05:12,780
+ and once we unhook the entity library, and once we load the fresh entity library from
+
+50
+00:05:12,780 --> 00:05:21,720
+ the disk, we are going to inject our shell code into the process notepad.exe.
+
+51
+00:05:21,720 --> 00:05:25,520
+ So this is the line, it will be going to do inject the period into the target process.
+
+52
+00:05:25,520 --> 00:05:30,640
+ Our target process will be the notepad, we target him, if he needs to target any other
+
+53
+00:05:30,640 --> 00:05:35,380
+ process, you can design based on that, you can modify your program based on that, okay.
+
+54
+00:05:35,380 --> 00:05:43,940
+ So this all are the main functions, we are going to call our, we are going to call our
+
+55
+00:05:43,940 --> 00:05:46,800
+ specific functions individually.
+
+56
+00:05:46,800 --> 00:05:52,940
+ So once the program gets executed, this main function will be called, and this line will
+
+57
+00:05:52,940 --> 00:05:55,220
+ be get print, okay.
+
+58
+00:05:55,220 --> 00:06:02,600
+ And this line will perform the, the first will be are going to perform the unhooking, unhooking
+
+59
+00:06:02,600 --> 00:06:09,920
+ the load at the entity library from the memory and we are loading a new entity, the fresh
+
+60
+00:06:09,920 --> 00:06:12,540
+ copy of the entity library from the disk.
+
+61
+00:06:12,540 --> 00:06:18,460
+ So once we done that, we are going to find a process ID and we are injecting our payload,
+
+62
+00:06:18,460 --> 00:06:22,320
+ decrypting our payload and we are injecting into that.
+
+63
+00:06:22,320 --> 00:06:34,320
+ So I hope this program will be a little bit tricky and this, if you need to modify a bit
+
+64
+00:06:34,320 --> 00:06:39,980
+ in the code, so this will be easy, you need to just modify the shell code so you can do
+
+65
+00:06:39,980 --> 00:06:45,560
+ your own code here, I will be giving every resource or I am using and even the compiler
+
+66
+00:06:45,560 --> 00:06:47,280
+ things or I am using, okay.
+
+67
+00:06:47,280 --> 00:06:57,200
+ So let me go to the windows and let me execute this one.
+
+68
+00:06:57,200 --> 00:07:03,900
+ So once I started executing, so it was saying, e derivation get perform, attempting to unhook
+
+69
+00:07:03,900 --> 00:07:12,840
+ the deal and it found text.txt session and it hooked, it unhooked the entity library
+
+70
+00:07:12,840 --> 00:07:21,000
+ completely, so the activity has been successful and so once we, this machine has a McAfee
+
+71
+00:07:21,000 --> 00:07:26,860
+ and here is software, so now you can see the calculator has been opened, so here you can
+
+72
+00:07:26,860 --> 00:07:33,400
+ find a notepad with the bid and payload decrypts successfully and obtained a new handle
+
+73
+00:07:33,400 --> 00:07:39,840
+ to the process, the notepad and allocated memory inside the process notepad and it is
+
+74
+00:07:39,840 --> 00:07:46,080
+ injected a shell code into that, okay and it created, and it executed a create remote
+
+75
+00:07:46,080 --> 00:07:54,120
+ thread of function and now the calculator program has been opened and we are ed to play.
+
+76
+00:07:54,120 --> 00:08:01,400
+ So let me go to the system in former and we can find out the notepad.
+
+77
+00:08:09,840 --> 00:08:39,800
+ So this will be the fresh copy of entity library that was loaded in the system.
+
+78
+00:08:39,800 --> 00:08:54,160
+ So I hope you have a clear understanding about what was happening in the process of loading
+
+79
+00:08:54,160 --> 00:08:59,280
+ the entity library, fresh copy of entity library.
+
+80
+00:08:59,280 --> 00:09:02,840
+ So this is one of the advanced techniques again and again I am seeing, so don't misuse
+
+81
+00:09:02,840 --> 00:09:09,040
+ this program, so this is completely designed for the educational purpose.
+
+82
+00:09:09,040 --> 00:09:13,560
+ And so use this for a interesting environment and if you are doing any kind of testing
+
+83
+00:09:13,560 --> 00:09:17,760
+ or detection engineering related activities.
+
+84
+00:09:17,760 --> 00:09:25,680
+ So I think we are good with this part and the next section we are going to see some kind
+
+85
+00:09:25,680 --> 00:09:34,080
+ of registry modifications, killing defenders and a few other topics, okay.
+
+86
+00:09:34,080 --> 00:09:41,280
+ So let's hop off from here and we will connect you in the next video and every resource
+
+87
+00:09:41,280 --> 00:09:46,640
+ you can find it in the above link that was attached in the video.
+
+88
+00:09:46,640 --> 00:09:48,640
+ You can use every program, okay.
+
+89
+00:09:48,640 --> 00:09:50,200
+ So yeah, see you next moment.
+
