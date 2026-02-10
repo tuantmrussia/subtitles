@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:12,960
+ So, let us discuss about the KPA hooking the methods we have that was the one another
+
+2
+00:00:12,960 --> 00:00:20,840
+ we are going to see the detour, KPA hooking in this video ok.
+
+3
+00:00:20,840 --> 00:00:28,600
+ So, this is one of this is one of really a good example and a good method to bypass
+
+4
+00:00:28,600 --> 00:00:36,760
+ situations and even the EDRs and antivir software will be also using this APA is to do some
+
+5
+00:00:36,760 --> 00:00:38,640
+ task in the machine.
+
+6
+00:00:38,640 --> 00:00:41,960
+ Let me explain what is a detour first ok.
+
+7
+00:00:41,960 --> 00:00:49,400
+ So, detour is one of our technique that was introduced by the Microsoft.
+
+8
+00:00:49,400 --> 00:00:58,480
+ So, this is specially designed for intercepting the functions called and redirecting
+
+9
+00:00:58,480 --> 00:01:01,880
+ it to the custom functions ok.
+
+10
+00:01:01,880 --> 00:01:10,720
+ So, basically let us say an example of let me give a small example here there is a source
+
+11
+00:01:10,720 --> 00:01:17,360
+ function and let us think about you know think about your applications your application
+
+12
+00:01:17,360 --> 00:01:24,400
+ is going to save a file by calling the save file of APA function.
+
+13
+00:01:24,400 --> 00:01:31,400
+ So, once the source function the source function is this the source function needs
+
+14
+00:01:31,400 --> 00:01:32,600
+ to save some file ok.
+
+15
+00:01:32,600 --> 00:01:40,200
+ So, the source function was calling a save file of function and it was executed by the
+
+16
+00:01:40,200 --> 00:01:41,400
+ target function ok.
+
+17
+00:01:41,400 --> 00:01:49,840
+ So, once the save file has been once the file has been saved this was redirected to the
+
+18
+00:01:49,840 --> 00:01:54,760
+ source function again ok let us take an example you are downloading something from Google
+
+19
+00:01:54,760 --> 00:01:57,360
+ Chrome or some browser application.
+
+20
+00:01:57,360 --> 00:02:02,280
+ So, your browser application called save file that is a source function and the target
+
+21
+00:02:02,280 --> 00:02:10,280
+ function will be it was saved a file it was executed the save file of and saved a file
+
+22
+00:02:10,280 --> 00:02:12,080
+ in the hot hot days.
+
+23
+00:02:12,080 --> 00:02:17,800
+ So, once the file gets saved successfully it was redirecting again to the source function
+
+24
+00:02:17,800 --> 00:02:24,240
+ ok again to the source function what needs to be what needs to execute another other
+
+25
+00:02:24,240 --> 00:02:25,240
+ ok.
+
+26
+00:02:25,240 --> 00:02:28,240
+ So, this is invocation without interception.
+
+27
+00:02:28,240 --> 00:02:35,400
+ So, this is something like a functions file right we are calling a function save file
+
+28
+00:02:35,400 --> 00:02:40,560
+ of and we are doing something and we are again returning to the source function ok.
+
+29
+00:02:40,560 --> 00:02:48,900
+ So, let us take about the detour function, so let us draw in the image so let us consider
+
+30
+00:02:48,900 --> 00:02:49,900
+ a detour.
+
+31
+00:02:49,900 --> 00:02:55,160
+ So, there is a source function and we have a target here.
+
+32
+00:02:55,160 --> 00:03:02,120
+ So, what we are doing so once the program once the once the source function called the
+
+33
+00:03:02,120 --> 00:03:03,120
+ target function.
+
+34
+00:03:03,120 --> 00:03:10,520
+ So, we are saying we are giving some special instructions, special instruction to the target
+
+35
+00:03:10,520 --> 00:03:19,760
+ function like do not execute the target function now so move to the detour ok, just jump
+
+36
+00:03:19,760 --> 00:03:28,880
+ to the detour function and execute the custom code, execute the code the detour and then
+
+37
+00:03:28,880 --> 00:03:30,800
+ move to the target function ok.
+
+38
+00:03:30,800 --> 00:03:33,800
+ So, let me give an example.
+
+39
+00:03:33,800 --> 00:03:42,920
+ So, here we designed a code so here you can see a simple C++ program here and I just
+
+40
+00:03:42,920 --> 00:03:48,160
+ given implemented a detour function so here you can see detour transaction begin off.
+
+41
+00:03:48,160 --> 00:03:50,600
+ So, what we are doing here ok.
+
+42
+00:03:50,600 --> 00:03:57,360
+ So, once the program executing the main function so the next thing will be attached the
+
+43
+00:03:57,360 --> 00:03:58,360
+ detour ok.
+
+44
+00:03:58,360 --> 00:04:05,000
+ So, once the function source function gets called this was redirected to the main function
+
+45
+00:04:05,000 --> 00:04:08,560
+ charge once it was redirected to the detour function ok.
+
+46
+00:04:08,560 --> 00:04:16,440
+ So, now we are telling the telling our program so what custom code present under the detour
+
+47
+00:04:16,440 --> 00:04:17,440
+ function.
+
+48
+00:04:17,440 --> 00:04:26,880
+ So, what detour was saying so executes that, executes that and redirected and redirect towards
+
+49
+00:04:26,880 --> 00:04:29,120
+ the trampoline function ok.
+
+50
+00:04:29,120 --> 00:04:36,600
+ So, we are temporarily skipping the target functions to execute instead of target functions
+
+51
+00:04:36,600 --> 00:04:39,920
+ our program executes the detour of functions.
+
+52
+00:04:39,920 --> 00:04:48,980
+ So, once the detour functions executed so our target memory address ok our target function
+
+53
+00:04:48,980 --> 00:04:53,520
+ memory address will be saved under the trampoline function and once the detour functions
+
+54
+00:04:53,520 --> 00:05:00,800
+ executes it is redirected to the trampoline functions and trampoline function has our memory
+
+55
+00:05:00,800 --> 00:05:06,800
+ address of a target function and it redirected to the total function and executes that ok.
+
+56
+00:05:06,800 --> 00:05:15,680
+ So, basically in our code what we are doing so we are just use the detour transaction
+
+57
+00:05:15,680 --> 00:05:21,640
+ begin off detour function and we have attached the function real message and my message
+
+58
+00:05:21,640 --> 00:05:23,860
+ box ok.
+
+59
+00:05:23,860 --> 00:05:35,860
+ So, this will be redirected towards the hook function my message box W of and it will execute
+
+60
+00:05:35,860 --> 00:05:37,720
+ this custom hook to function ok.
+
+61
+00:05:37,720 --> 00:05:47,040
+ We given the detour attach of the my message box of function ok and we are saved the real
+
+62
+00:05:47,040 --> 00:05:56,360
+ message in the trampoline function and we executing the hook function the contact of the
+
+63
+00:05:56,360 --> 00:06:05,160
+ hook function and so once the custom hook function gets executes it redirect towards the original
+
+64
+00:06:05,160 --> 00:06:06,160
+ function ok.
+
+65
+00:06:06,160 --> 00:06:08,800
+ Let me explain this code in a brief ok.
+
+66
+00:06:08,800 --> 00:06:16,160
+ So, let me will start from the beginning of the code how the code has been in design let
+
+67
+00:06:16,160 --> 00:06:18,960
+ me tell you some interesting factor.
+
+68
+00:06:18,960 --> 00:06:25,200
+ So, now we have the first line this is the library thing so let us keep that ok.
+
+69
+00:06:25,200 --> 00:06:31,800
+ We are declare a pointer for a real message box W ok this is the real message message
+
+70
+00:06:31,800 --> 00:06:35,960
+ box hello world this is the normal thing ok.
+
+71
+00:06:35,960 --> 00:06:45,360
+ This is the one this needs to be print once we execute the programming our machine ok.
+
+72
+00:06:45,360 --> 00:06:52,480
+ But you can you can understand what it will do when one one see executes the program ok.
+
+73
+00:06:52,480 --> 00:07:00,360
+ Let us go to the program so this is the real message W of function pointer and we just
+
+74
+00:07:00,360 --> 00:07:10,120
+ saved the memory address of message box W into the pointer L message box W ok.
+
+75
+00:07:10,120 --> 00:07:22,320
+ So, in this line we are just we are just taking a photocopy copy of message box W memory
+
+76
+00:07:22,320 --> 00:07:30,880
+ address and we are sending it into the real message box W to use it later ok.
+
+77
+00:07:30,880 --> 00:07:39,240
+ So, this line is called a trampoline function I already I said so this trampoline function
+
+78
+00:07:39,240 --> 00:07:42,440
+ has the target function memory address.
+
+79
+00:07:42,440 --> 00:07:49,280
+ So, once the custom function once the custom detour function has been execute executed so
+
+80
+00:07:49,280 --> 00:07:53,920
+ after the next up will be it will be moving towards the trampoline function so the trampoline
+
+81
+00:07:53,920 --> 00:07:59,120
+ function contains the memory address of a target function so then it will be executing
+
+82
+00:07:59,120 --> 00:08:00,920
+ the core right.
+
+83
+00:08:00,920 --> 00:08:07,560
+ So, let us move to the program to the next line and to be how few of the custom detour
+
+84
+00:08:07,560 --> 00:08:17,720
+ function so here you can find the detour function in the message box W of or it may have
+
+85
+00:08:17,720 --> 00:08:32,280
+ some water yep so my message box W of function so in in in my message box W of function
+
+86
+00:08:32,280 --> 00:08:41,160
+ so I have I have written some of some of the messages like who can message W called original
+
+87
+00:08:41,160 --> 00:08:46,800
+ text this message was intercepted by the data so we execute the program and we can understand
+
+88
+00:08:46,800 --> 00:08:48,720
+ what what will happen here ok.
+
+89
+00:08:48,720 --> 00:08:54,880
+ So, this is the beginning of the detour so we are just programming this is like I just
+
+90
+00:08:54,880 --> 00:09:03,160
+ said a special function we are giving a giving to our program right we are redirecting our
+
+91
+00:09:03,160 --> 00:09:12,560
+ source function to the detour function right so that say we have called inside the detour
+
+92
+00:09:12,560 --> 00:09:19,640
+ function in the int main of we just redirect to the detour function so this is the
+
+93
+00:09:19,640 --> 00:09:31,880
+ beginning of the detour and and so this is the message we need to print this is the
+
+94
+00:09:31,880 --> 00:09:38,600
+ word and message ok we need to print it so generally but let us see how our program is
+
+95
+00:09:38,600 --> 00:09:53,420
+ going to execute this one ok. Let us see I have a program and here let me execute the
+
+96
+00:09:53,420 --> 00:10:00,920
+ code.exe and here you can see how my how my program executed ok. So, so once I W picked
+
+97
+00:10:00,920 --> 00:10:05,600
+ on the application so here you can see the detour example the message was intercepted by
+
+98
+00:10:05,600 --> 00:10:15,400
+ the detours so this get this get executed right. So, who can message us ok right and
+
+99
+00:10:15,400 --> 00:10:26,800
+ the who ok right here you can find it just printed a who can message and so after so
+
+100
+00:10:26,800 --> 00:10:34,600
+ this will be executed first then what it will do it will execute the detour example
+
+101
+00:10:34,600 --> 00:10:41,520
+ this small console. So, once the console get executed after that the original text will
+
+102
+00:10:41,520 --> 00:10:50,240
+ be get printed ok we are just we are just tampering the function and we are executing
+
+103
+00:10:50,240 --> 00:10:55,560
+ our custom code we are hiding our custom code and basically we are hiding our custom code
+
+104
+00:10:55,560 --> 00:11:04,640
+ and we are executing ok. So, now this is called as the API hooking we are hook the message
+
+105
+00:11:04,640 --> 00:11:11,320
+ box W API and instead of executing message box W functions we are executing the detour
+
+106
+00:11:11,320 --> 00:11:19,040
+ my message box W of function and we are printing the output ok.
+
+107
+00:11:19,040 --> 00:11:28,680
+ So, this will be this is called as the detour function. So, you have an you have an
+
+108
+00:11:28,680 --> 00:11:34,520
+ question. So, why Microsoft introduced a detour function ok. Let us see an example I already
+
+109
+00:11:34,520 --> 00:11:42,200
+ said some of the programmers who left the organization and that program needs to get
+
+110
+00:11:42,200 --> 00:11:50,920
+ some update like that the application only have a only have a capability to save a file
+
+111
+00:11:50,920 --> 00:11:57,680
+ but the developer left in between from the company. So, now the code was not visible
+
+112
+00:11:57,680 --> 00:12:07,200
+ to everyone. So, the application application. So, now there is a different developer
+
+113
+00:12:07,200 --> 00:12:15,600
+ for working and he needs to and she needs to update some kind of features like deleting
+
+114
+00:12:15,600 --> 00:12:23,880
+ the contents modifying the contents. So, at that time you can use the detour functions
+
+115
+00:12:23,880 --> 00:12:31,120
+ and you can put the APIs and you can execute the program right. So, this is this is why
+
+116
+00:12:31,120 --> 00:12:40,600
+ Microsoft introduced for a rename purpose ok. The areas and antivirus software simply are
+
+117
+00:12:40,600 --> 00:12:47,720
+ so using this or detour set a functions to remove the threat files from the machines ok.
+
+118
+00:12:47,720 --> 00:12:55,720
+ So, in the cybersecurity threat type of perspective inside the custom group to functions
+
+119
+00:12:55,720 --> 00:13:03,040
+ we are hiding our malicious code or hiding our malicious EA executables inside the custom
+
+120
+00:13:03,040 --> 00:13:13,020
+ group functions and we are executing that ok. So, this is this one of the way we can
+
+121
+00:13:13,020 --> 00:13:22,920
+ easily hide the antivirus software and EDR programs before by using the API hooking ok.
+
+122
+00:13:22,920 --> 00:13:30,480
+ So, instead of calling original message box W of API functions we implemented the detour
+
+123
+00:13:30,480 --> 00:13:38,280
+ and we have called the called the my message box W one of the custom hook functions and
+
+124
+00:13:38,280 --> 00:13:46,480
+ we are we executed our code right. So, this method has been implemented in lot of
+
+125
+00:13:46,480 --> 00:13:55,080
+ malware like we will key lovers 2 monitor the keyboard strokes, spyware, Trojan was etcetera
+
+126
+00:13:55,080 --> 00:14:05,600
+ sorry, fibers and few kind of malware. So, this is one of powerful method to bypass the
+
+127
+00:14:05,600 --> 00:14:14,160
+ EDR technique ok. This is a simple example when you can do do a more by extending this
+
+128
+00:14:14,160 --> 00:14:22,080
+ program so, you people have better idea and so, once you complete the course you can develop
+
+129
+00:14:22,080 --> 00:14:28,480
+ develop a new malware study by using the hooking technique.
+
+130
+00:14:28,480 --> 00:14:34,680
+ So, I hope you have enjoyed this video and you have a clear understanding about what is
+
+131
+00:14:34,680 --> 00:14:45,760
+ the detour and how detour API hooking will work. So, we can hop off from this video and
+
+132
+00:14:45,760 --> 00:14:52,560
+ we will connect guys in the next video see you have a sorry and one more thing. So, once
+
+133
+00:14:52,560 --> 00:15:01,040
+ we execute the detour things we need to we need to do the detas exceed the detas we have
+
+134
+00:15:01,040 --> 00:15:09,880
+ attached the custom hook functions as well as the original message memory address. So, once
+
+135
+00:15:09,880 --> 00:15:17,720
+ everything has been done we need to detas the hook before exit ok. So, thank you for
+
+136
+00:15:17,720 --> 00:15:32,640
+ watching this video, we will see you guys in the next video bye bye.
+
