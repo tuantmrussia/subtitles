@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:07,800
+Vì vậy, nó đảm bảo rằng phiên bản WordPress là mới nhất, đây là biến số được thiết lập, được chứ?
+
+2
+00:00:07,800 --> 00:00:12,800
+Và trước khi kịch bản được chạy, điều cuối cùng ở đây là kịch bản của khách hàng để chạy.
+
+3
+00:00:12,800 --> 00:00:16,600
+Vì vậy, trước khi bạn chạy nó, bạn cần phải chắc chắn rằng ứng dụng của bạn đã được cập nhật,
+
+4
+00:00:16,600 --> 00:00:25,200
+và đảm bảo rằng anh cài đặt các tiện ích WGetafuities với khách hàng của SSH.
+
+5
+00:00:25,200 --> 00:00:29,800
+Vì vậy, ở đây, sau khi bạn làm điều đó, bạn có thể bắt đầu xây dựng.
+
+6
+00:00:29,800 --> 00:00:35,600
+Được rồi, đây là sự khởi đầu, được xây dựng, được chứ?
+
+7
+00:00:35,600 --> 00:00:44,400
+Xây dựng chỉ cần tải về WordPress, và đây cũng là những bước mà chúng tôi đã làm trước đó để tải về,
+
+8
+00:00:44,400 --> 00:00:55,200
+Unzips WordPres, okay, và cũng gỡ bỏ bất kỳ thư mục nào, nó trống, sao chép hoặc di chuyển tập tin, được chứ?
+
+9
+00:00:55,200 --> 00:01:05,200
+Và đây là tòa nhà, nó chỉ tự động hóa những gì chúng ta đã làm, nó được thực hiện trong đường ống, trong đường ống tự động.
+
+10
+00:01:05,200 --> 00:01:13,200
+Được rồi, đây là việc sửa chữa xây dựng, và sau khi xây dựng hoàn tất, các hiện vật ở đây đóng một vai trò quan trọng
+
+11
+00:01:13,200 --> 00:01:21,200
+Để nó được sao chép vào hiệu suất triển khai, sau khi nó được sao chép từ công trình xây dựng đến năng suất triển khai,
+
+12
+00:01:21,200 --> 00:01:25,600
+Sau 30 giây, 30 phút, xin lỗi, nó đã bị xóa.
+
+13
+00:01:25,600 --> 00:01:32,600
+Vì vậy, bạn có thể làm điều này khi bạn đang trong sản xuất trực tiếp, nếu bạn làm bất kỳ thay đổi nào với mã của bạn, với trang web của bạn,
+
+14
+00:01:32,600 --> 00:01:40,200
+Người dùng sẽ không nhận thấy bất cứ điều gì bởi vì nó được thay đổi tự động để triển khai sản phẩm.
+
+15
+00:01:40,200 --> 00:01:48,200
+Và điều tương tự cũng áp dụng ở đây nếu bạn đang ở trong một môi trường được dàn dựng, tôi muốn không triển khai trực tiếp,
+
+16
+00:01:48,200 --> 00:01:56,200
+được chứ?
+
+17
+00:01:56,200 --> 00:02:05,200
+Vì vậy, ở đây, đây là bước cuối cùng, vì vậy hệ thống triển khai mà chúng tôi đã giải thích ở đây, nó sẽ được sử dụng như bạn có thể thấy ở đây,
+
+18
+00:02:05,200 --> 00:02:16,200
+Đây là kịch bản triển khai.sh, và nó sẽ chỉ ép buộc cho mục đích an ninh chỉ triển khai từ chi nhánh chính,
+
+19
+00:02:16,200 --> 00:02:23,200
+được chứ?
+
+20
+00:02:23,200 --> 00:02:47,200
+Vì vậy, chúng ta hãy đi từng mảnh, được rồi, và lưu lại nó.
+
+21
+00:02:47,200 --> 00:02:53,200
+Được rồi, hoàn hảo.
+
+22
+00:02:53,200 --> 00:03:05,200
+Được rồi, vì vậy chúng ta đang rất gần đến vạch đích, chúng ta cần chuẩn bị máy chủ ảo ALMA của chúng ta cho việc triển khai phòng thí nghiệm Git.
+
+23
+00:03:05,200 --> 00:03:19,200
+Vì vậy, đối với phòng thí nghiệm Git, vì nó sẽ không, chúng tôi không muốn làm cho bất kỳ việc thực hiện phức tạp,
+
+24
+00:03:19,200 --> 00:03:31,200
+Chúng tôi sẽ thực hiện khóa phòng thí nghiệm Git địa phương, không phải từ trang web phòng thí nghiệm Git, hoặc không phải từ bên ngoài bởi vì chúng tôi sẽ làm,
+
+25
+00:03:31,200 --> 00:03:47,200
+Chúng ta cần truy cập SSH và lưới để nó chỉ vào máy chủ của chúng ta và nó sẽ được yêu cầu như một cấu hình phức tạp hoặc nhiều, được chứ?
+
+26
+00:03:47,200 --> 00:03:58,200
+Vì vậy, chúng tôi sẽ chỉ thực hiện hoặc chạy thử nghiệm Git bên trong máy ảo của chúng tôi chính là vận động viên chạy Git, được chứ?
+
+27
+00:03:58,200 --> 00:04:07,200
+Vì vậy, chúng ta cần phải làm ba việc, chúng ta cần truy cập SSH, và tôi sẽ chỉ cho bạn làm thế nào để kiểm tra Git SSH truy cập từ các thí nghiệm chạy Git,
+
+28
+00:04:07,200 --> 00:04:17,200
+Đó là chủ nhà địa phương của chúng tôi, và chúng tôi cần sự cho phép, được rồi, cho các thí nghiệm Git, tất nhiên, để chạy Docker,
+
+29
+00:04:17,200 --> 00:04:27,200
+Bởi vì trong các tập lệnh triển khai, nó sẽ cần phải khôi phục lại Docker, vì vậy cho Git phòng thí nghiệm cần phải có quyền truy cập Docker, được chứ?
+
+30
+00:04:27,200 --> 00:04:36,200
+Và chúng ta cần một cách an toàn để triển khai tập tin lên www, được chứ?
+
+31
+00:04:36,200 --> 00:04:49,200
+Vì vậy, ở đây, đầu tiên, cách an toàn là, tất nhiên, bằng cách sử dụng SSH truy cập, được chứ? Đó là lý do chúng ta làm tất cả những bước này, được chứ?
+
+32
+00:04:49,200 --> 00:05:07,200
+Vì vậy, ở đây, đó là tạo ra chìa khóa, chìa khóa triển khai, vì vậy bởi vì ở đây chúng tôi là Git chạy thí nghiệm, chúng tôi sẽ triển khai hoặc tạo ra chìa khóa ở đây, được chứ?
+
+33
+00:05:07,200 --> 00:05:21,200
+Vì vậy, khi bất kỳ thay đổi nào được thực hiện, nó sẽ cần phải được thực hiện bằng cách sử dụng truy cập SSH này từ Git runner ở đây trên máy chủ của chúng tôi.
+
+34
+00:05:21,200 --> 00:05:35,200
+Vì vậy, hãy tạo ra chìa khóa.
+
+35
+00:05:35,200 --> 00:05:50,200
+Được rồi, chúng tôi không nhập bất kỳ cụm từ nào trong quá khứ, chúng tôi chỉ muốn một chứng nhận RSA đơn giản, và chúng tôi đã tạo ra chìa khóa của chúng tôi.
+
+36
+00:05:50,200 --> 00:06:00,200
+Vì vậy, ở đây, chúng tôi có chìa khóa riêng tư và chìa khóa công cộng, bởi vì nó là một RSA, nó là đối xứng, vì vậy công cộng và tư nhân, chúng tôi cần, nó không phải đối xứng,
+
+37
+00:06:00,200 --> 00:06:19,200
+Nó không phải là chìa khóa mà bạn gia tăng, bạn mã hóa với kết nối, bạn sẽ giải mã nó với, bạn sẽ cần phải có cả hai chìa khóa công cộng, tư nhân và công cộng để mã hóa và giải mã giao tiếp hoặc kết nối.
+
+38
+00:06:19,200 --> 00:06:40,200
+Vì vậy, ở đây, chúng tôi muốn cho phép máy ảo để SSH tự nó như tôi đã nói với bạn, vì vậy chúng tôi cần bắt, làm phổ biến để sao chép tất cả các phòng thí nghiệm Git triển khai.
+
+39
+00:06:40,200 --> 00:06:48,200
+Vì vậy, đây là chìa khóa công cộng, chúng tôi sẽ sao chép nó vào danh sách các phím có thẩm quyền.
+
+40
+00:06:48,200 --> 00:07:09,200
+Được rồi, hãy làm điều này để cho phép hệ thống Git của chúng tôi, đây là SSH, rẽ trái, dòng chảy lên, chúng tôi đặt nó ở đây, và hãy thay đổi sự cho phép của,
+
+41
+00:07:09,200 --> 00:07:25,200
+được rồi, cho người dùng Adam.
+
+42
+00:07:25,200 --> 00:07:45,200
+Được rồi, vậy chúng ta đã sao chép chìa khóa có thẩm quyền và đưa cho người sở hữu cho chiếc chìa khóa này, được rồi.
+
+43
+00:07:45,200 --> 00:07:58,200
+Bây giờ, chúng ta có thể tự kiểm tra SSH, được chứ, để đảm bảo an toàn, vì kết nối được mã hóa và tôi có thể SSH cho riêng mình.
+
+44
+00:07:58,200 --> 00:08:18,200
+Bằng cách đưa ra bình luận này, đầu tiên bạn nên hỏi tôi rằng chìa khóa này, bạn chắc chắn hoặc chỉ là một tin nhắn xác nhận như bạn thấy ở đây, đây là chìa khóa mà chúng tôi đã sử dụng, và nó được ước tính nếu tôi muốn tiếp tục, tôi nhấn vào có.
+
+45
+00:08:18,200 --> 00:08:30,200
+Được rồi, và bây giờ tôi đang ở trên, tôi có chìa khóa SSH với chính mình hoặc với phòng thí nghiệm Git, okay.
+
+46
+00:08:30,200 --> 00:08:41,200
+Nếu tôi muốn gõ bất kỳ, chúng ta hãy thoát khỏi nó, okay, và như bạn thấy ở đây, tôi phải đăng xuất và kết nối, okay.
+
+47
+00:08:41,200 --> 00:08:51,200
+Vì vậy, tôi là bây giờ, nếu tôi muốn làm bất kỳ sửa đổi với các nhà chạy thử Git, tôi có thể làm điều đó với SSH và tất cả mọi thứ là okay.
+
+48
+00:08:51,200 --> 00:09:00,200
+Vì vậy, ở đây nếu tôi muốn cho phép người chạy thử nghiệm Git sử dụng phím SSH, okay.
+
+49
+00:09:00,200 --> 00:09:22,200
+Vì vậy, những gì tôi làm bây giờ mà tôi chỉ cần làm chìa khóa SSH, nhưng vẫn là người chạy thử phòng thí nghiệm Git không có khả năng sử dụng chìa khóa này, tôi chỉ cần bật chìa khóa công cộng và tư nhân, nhưng nó không được bật cho người chạy thử nghiệm Git để sử dụng chìa khóa này.
+
+50
+00:09:22,200 --> 00:09:40,200
+Vì vậy, trước hết, như là kho lưu trữ chính thức, Git, bởi vì tôi không có vận động viên chạy Git, tôi cần, như kho hàng trước khi tôi cài đặt người chạy thử nghiệm Git vào hệ thống của tôi.
+
+51
+00:09:52,200 --> 00:10:04,200
+Được rồi, tôi sẽ tạm dừng video cho đến khi nó được cài đặt.
+
+52
+00:10:04,200 --> 00:10:28,200
+Được rồi, bây giờ tôi đã cài đặt kho lưu trữ, kho chứa Git, hãy cài đặt người chạy.
+
+53
+00:10:28,200 --> 00:10:36,200
+Được rồi, bây giờ tôi quay lại với bạn, tôi chỉ cần tạm dừng video bởi vì thiết lập thực sự mất một thời gian.
+
+54
+00:10:36,200 --> 00:10:47,200
+Bây giờ sau khi chúng tôi đã cài đặt, chúng tôi đã cài đặt Git Runner của chúng tôi, okay.
+
+55
+00:10:47,200 --> 00:11:12,200
+Đây là phiên bản 18.6.6.6 và đây cũng là hệ điều hành Linux và kiến trúc của bộ xử lý và tất cả các chi tiết của nó.
+
+56
+00:11:12,200 --> 00:11:37,200
+Hoàn hảo, vì vậy bây giờ hãy chắc chắn rằng nó đã được kích hoạt và bắt đầu trước khi chúng tôi có thể kiểm tra tình trạng của nó.
+
+57
+00:11:37,200 --> 00:11:47,200
+Được rồi, xem nào, tình trạng của nó nên được thể hiện là hoạt động hay chạy, okay, hoàn hảo.
+
+58
+00:11:47,200 --> 00:12:02,200
+Vì vậy, bây giờ chúng ta cần đưa chìa khóa SSH mà chúng ta có ở đây cho công chúng và riêng tư.
+
+59
+00:12:02,200 --> 00:12:13,200
+Trước hết chúng ta cần phải làm một thư mục cho người chạy thử phòng thí nghiệm Git và gọi cho SSH trong đó chúng ta sẽ sao chép các phím SSH vào nó.
+
+60
+00:12:13,200 --> 00:12:18,200
+Vì vậy, chúng ta hãy tạo một thư mục cho khóa SSH.
+
+61
+00:12:18,200 --> 00:12:34,200
+Vì vậy, đầu tiên chúng tôi tạo ra chìa khóa SSH này để được áp dụng sau này cho trình chạy thử nghiệm Git. Vì vậy, chúng tôi đã tạo ra nó và hãy nghe bản sao, chúng tôi sẽ sao chép phòng thí nghiệm Git triển khai và lấy quán rượu.
+
+62
+00:12:34,200 --> 00:12:41,200
+Được rồi, và tất cả sẽ được sao chép vào cùng một thư mục của Git lab Runner. SSH.
+
+63
+00:12:41,200 --> 00:12:47,200
+Vì vậy, hãy bắt đầu ở đây bằng chìa khóa riêng của chúng tôi.
+
+64
+00:12:47,200 --> 00:13:00,200
+Và sau đó chúng ta sẽ sao chép chìa khóa công cộng.
+
+65
+00:13:00,200 --> 00:13:15,200
+Được rồi, hãy sửa chữa sự cho phép để chắc chắn rằng người chạy thử nghiệm Git ở đây, đây là các ứng dụng mà chúng tôi có quyền truy cập đến SSH này để nó là chủ sở hữu.
+
+66
+00:13:15,200 --> 00:13:30,200
+Được rồi, và người chủ ở đây sẽ có quyền đọc chìa khóa riêng tư, được rồi, và sẽ đọc ngay cho công chúng biết.
+
+67
+00:13:30,200 --> 00:13:43,200
+Nó sẽ được đặt cho người dùng và nhóm vì chìa khóa công cộng là chìa khóa để được chia sẻ với người khác, nhưng chìa khóa riêng tất nhiên sẽ không được chia sẻ với bất kỳ người dùng nào khác ngoài người sở hữu.
+
+68
+00:13:43,200 --> 00:13:53,200
+Được rồi, vậy hãy sao chép hai cái này.
+
+69
+00:13:53,200 --> 00:14:10,200
+Và bây giờ chúng ta hãy thêm, có được người chạy thử nghiệm, cho chạy thử nghiệm đến Docker bởi vì nó sẽ cần phải có sự cho phép để loại bỏ hoặc khởi động lại Docker.
+
+70
+00:14:10,200 --> 00:14:14,200
+Vì vậy, hãy thêm nó.
+
+71
+00:14:14,200 --> 00:14:20,200
+Sửa đổi người dùng, Docker, gọi phòng thí nghiệm.
+
+72
+00:14:20,200 --> 00:14:48,200
+Và sau đó chúng ta hãy bắt đầu cả dịch vụ Docker và Git chạy thử nghiệm.
+
+73
+00:14:48,200 --> 00:14:49,200
+Được rồi.
+
