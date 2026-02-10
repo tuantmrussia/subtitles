@@ -1,0 +1,320 @@
+1
+00:00:00,380 --> 00:00:02,960
+Okay, then let's make the score work.
+
+2
+00:00:03,410 --> 00:00:10,070
+And just to test it out, if we play our game and click the script over here a bunch of times, as you
+
+3
+00:00:10,070 --> 00:00:12,710
+can see, our score starts to increase.
+
+4
+00:00:13,040 --> 00:00:17,600
+Although there are a few problems that need fixing because it is clearly too big.
+
+5
+00:00:18,440 --> 00:00:24,050
+And if you are anything like me, you would have probably assumed we can easily change this by lowering
+
+6
+00:00:24,050 --> 00:00:25,970
+the set size number.
+
+7
+00:00:26,240 --> 00:00:27,650
+But clearly this is not the case.
+
+8
+00:00:27,650 --> 00:00:32,870
+But to save you the trouble of trying to figure out what is going on here, the size is actually set
+
+9
+00:00:32,870 --> 00:00:34,490
+by this number over here.
+
+10
+00:00:34,520 --> 00:00:39,140
+So what we can do is just lowering this number to say ten.
+
+11
+00:00:40,340 --> 00:00:43,280
+And if we hit the script you can see that it works.
+
+12
+00:00:43,430 --> 00:00:47,150
+Although it's still kind of appears gigantic for a second.
+
+13
+00:00:47,150 --> 00:00:52,550
+And this time it's because of this set size option down here.
+
+14
+00:00:53,090 --> 00:00:58,820
+So if we set it to a lower value like 15 and give the game another play.
+
+15
+00:00:59,150 --> 00:01:03,470
+So clicking on the script a bunch of times, you can see it looks much better.
+
+16
+00:01:03,470 --> 00:01:08,540
+Although when we pass the number ten, our numbers appear too close together.
+
+17
+00:01:09,370 --> 00:01:14,140
+Now, sometimes the best way to fix a problem like this is just keep changing numbers until it works.
+
+18
+00:01:14,140 --> 00:01:16,480
+It's the brute force method.
+
+19
+00:01:16,540 --> 00:01:24,190
+But to speed the time, in this case, the number we need to change is the one here, and we can change
+
+20
+00:01:24,190 --> 00:01:25,870
+this number to 0.4.
+
+21
+00:01:26,290 --> 00:01:31,900
+So giving that another go when we reach ten as you can see that looks better.
+
+22
+00:01:32,170 --> 00:01:36,130
+So play around with these numbers over here to get a more dramatic or less dramatic effect.
+
+23
+00:01:36,130 --> 00:01:38,800
+Basically whatever you think looks best.
+
+24
+00:01:38,800 --> 00:01:41,080
+But I'll leave it like that for now.
+
+25
+00:01:41,110 --> 00:01:46,510
+So now that we have the score working well and looking nice, let's implement it into our game.
+
+26
+00:01:47,110 --> 00:01:52,330
+And in our previous games we would just have it wait a certain amount of time and then increase the
+
+27
+00:01:52,330 --> 00:01:52,690
+score.
+
+28
+00:01:52,690 --> 00:01:55,060
+But I want something more interesting than that.
+
+29
+00:01:55,300 --> 00:02:00,730
+What I want is for each time we pass a tree obstacle for the score to increase.
+
+30
+00:02:01,060 --> 00:02:06,400
+So as you know, if we play the game and click the script, the score counts up.
+
+31
+00:02:06,580 --> 00:02:10,150
+And as you can see, this is a broadcast message.
+
+32
+00:02:10,150 --> 00:02:15,040
+So all we need to do is broadcast player score and it should go up.
+
+33
+00:02:15,650 --> 00:02:22,370
+So moving over to our tree sprite, all we need to do is go over to this broadcast message code and
+
+34
+00:02:22,370 --> 00:02:27,260
+drag it into this script here, just right before we delete the clone.
+
+35
+00:02:28,010 --> 00:02:31,970
+Then we can just change it so that it broadcasts the message player score.
+
+36
+00:02:32,510 --> 00:02:33,680
+And let's give that a go.
+
+37
+00:02:34,370 --> 00:02:38,990
+And as you can see, each time we pass a tree sprite, our score goes up.
+
+38
+00:02:38,990 --> 00:02:41,210
+It has a nice little animation.
+
+39
+00:02:41,210 --> 00:02:42,470
+It's almost too easy.
+
+40
+00:02:43,360 --> 00:02:45,490
+And look how much it transforms a game.
+
+41
+00:02:46,070 --> 00:02:52,970
+But one thing you may have noticed if you tried to beat the game, and that is it's still quite easy.
+
+42
+00:02:52,970 --> 00:02:55,670
+You can pretty much go on endlessly.
+
+43
+00:02:55,910 --> 00:02:56,660
+Right?
+
+44
+00:02:56,660 --> 00:02:58,220
+Let's fix that.
+
+45
+00:02:58,890 --> 00:03:05,370
+Moving over to our variable sprite, you will see that we have this disgraceful code over here.
+
+46
+00:03:05,610 --> 00:03:09,480
+As you should know, this isn't good code as we repeat ourselves.
+
+47
+00:03:09,480 --> 00:03:13,500
+So let's get rid of all this code and do something better.
+
+48
+00:03:14,040 --> 00:03:19,170
+Moving over to the variables group, we can create a new variable called level.
+
+49
+00:03:20,590 --> 00:03:23,440
+Now we can use this to control the difficulty of our game.
+
+50
+00:03:23,440 --> 00:03:28,930
+So grabbing a when start a forever and and if.
+
+51
+00:03:29,020 --> 00:03:30,550
+Here's what we're going to do.
+
+52
+00:03:30,880 --> 00:03:36,040
+Firstly at the start of our script we're going to set our level variable to one.
+
+53
+00:03:36,670 --> 00:03:44,320
+Then we're going to grab a less than operator and our level variable and stick it in here.
+
+54
+00:03:44,560 --> 00:03:51,730
+So basically what we want to do is check that the level is less than ten, as we don't want our game
+
+55
+00:03:51,730 --> 00:03:52,510
+to be too hard.
+
+56
+00:03:52,510 --> 00:03:55,240
+So level ten will be max.
+
+57
+00:03:55,330 --> 00:04:01,960
+Then we can grab a weight, stick it in here and set it to 15.
+
+58
+00:04:01,960 --> 00:04:06,130
+So every 15 seconds we want our level to increase by one.
+
+59
+00:04:06,130 --> 00:04:08,920
+So we'll just change level by one.
+
+60
+00:04:10,430 --> 00:04:16,880
+Now, every 15 seconds our level will increase by one and it will stop increasing when it reaches ten.
+
+61
+00:04:17,540 --> 00:04:24,500
+The only problem is, well, this doesn't really do anything because it's our spawn speed and speed
+
+62
+00:04:24,500 --> 00:04:26,480
+that change our difficulty.
+
+63
+00:04:26,480 --> 00:04:32,540
+So to increase the actual difficulty of the game, I'm going to use the broadcast function.
+
+64
+00:04:32,540 --> 00:04:38,720
+So moving over we can drag this in and then click New Message.
+
+65
+00:04:38,720 --> 00:04:47,450
+I'll call this one Level Up so we can now drag the when I receive block and change it to Level Up.
+
+66
+00:04:47,940 --> 00:04:50,970
+And then what we want to do is lower the spawn speed.
+
+67
+00:04:51,670 --> 00:05:00,550
+So we can drag a change variable block, set it to spawn rate and set it to -0.1.
+
+68
+00:05:01,150 --> 00:05:08,110
+So quickly looking at our code every 15 seconds, our game levels up which broadcasts this message which
+
+69
+00:05:08,140 --> 00:05:09,730
+increases our spawn speed.
+
+70
+00:05:09,760 --> 00:05:12,160
+So we could get an idea of the levels.
+
+71
+00:05:12,160 --> 00:05:14,860
+I will change this to just one second and hit play.
+
+72
+00:05:15,670 --> 00:05:22,300
+And as you can see that it quickly increases in difficulty until eventually we reach our max level.
+
+73
+00:05:22,300 --> 00:05:24,550
+And as you can see, a lot of trees spawn in.
+
+74
+00:05:24,550 --> 00:05:29,590
+And if this seems too hard, you can easily change it by changing this value here.
+
+75
+00:05:30,510 --> 00:05:36,240
+And also, let's say you wanted an insane mode where you increase the speed as well.
+
+76
+00:05:36,240 --> 00:05:39,840
+We could just go to our variables, drag this.
+
+77
+00:05:40,780 --> 00:05:46,390
+And change movement speed by minus one and giving that another go.
+
+78
+00:05:46,690 --> 00:05:50,200
+As you can see, our game definitely gets insane.
+
+79
+00:05:50,200 --> 00:05:55,870
+But anyways, I'll leave it to you to fiddle around to get it perfect because our game, rather our
+
+80
+00:05:55,870 --> 00:05:58,450
+masterpiece, is almost done.
+
