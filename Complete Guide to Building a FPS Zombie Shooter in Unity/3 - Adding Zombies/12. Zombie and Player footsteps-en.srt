@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:05,060
+ Hello guys and welcome back, so now in this video we are going to add footsteps to our
+
+2
+00:00:05,060 --> 00:00:10,640
+ zombies and to our player character right, because right now we don't have any footsteps
+
+3
+00:00:10,640 --> 00:00:16,500
+ or game fields that are a little bit empty, alright so in order to add footsteps, first
+
+4
+00:00:16,500 --> 00:00:21,240
+ of all if you check the player for the player the footsteps are already setup as you can
+
+5
+00:00:21,240 --> 00:00:26,480
+ see in this stone, if the player is walking on any stones it will play these are used
+
+6
+00:00:26,480 --> 00:00:34,480
+ and same for grass tiles and untag, alright but the footsteps audio clips are not assigned
+
+7
+00:00:34,480 --> 00:00:39,640
+ for the zombies so if you check any zombie audio clips as you can see they are empty, so
+
+8
+00:00:39,640 --> 00:00:44,960
+ now we need to fix this, in order to do that of course we can't add all of the audio
+
+9
+00:00:44,960 --> 00:00:50,400
+ for each of this, because it will take a lot of time, so what we are going to do instead
+
+10
+00:00:50,400 --> 00:00:56,360
+ is click on the first person character copy the footsteps from here, so click on copy
+
+11
+00:00:56,360 --> 00:01:03,440
+ component and then select all of the zombies and to all of them right here, click three
+
+12
+00:01:03,440 --> 00:01:08,680
+ dots on the footstep and click on paste component values, when you do that now in all
+
+13
+00:01:08,680 --> 00:01:14,640
+ of them the clips are right there, now select the first zombie for the zombie, the left
+
+14
+00:01:14,640 --> 00:01:20,280
+ and right foot is assigned of the player, of course we don't want that we want the zombie
+
+15
+00:01:20,280 --> 00:01:26,160
+ footsteps to be assigned right here okay, so in order to assign it you will have to open
+
+16
+00:01:26,160 --> 00:01:36,320
+ this up left foot, okay let's actually double click on this, alright so left foot right there
+
+17
+00:01:36,320 --> 00:01:42,840
+ alright so we need to add this left foot, so click on zombie and drop this left foot right
+
+18
+00:01:42,840 --> 00:01:51,200
+ there and then you can do the same for the right foot, alright let's do it for the next
+
+19
+00:01:51,200 --> 00:02:01,840
+ zombie which is this one, so open this up, so here is the left foot and then the right
+
+20
+00:02:01,840 --> 00:02:11,320
+ foot, here it is, right you can go ahead and do this for all of the other zombies, so once
+
+21
+00:02:11,320 --> 00:02:17,200
+ you do it for all of these zombies now it will not play any footsteps sound first, we have
+
+22
+00:02:17,200 --> 00:02:23,600
+ to do few changes, okay the first one is we want the cross, how do you to play whenever
+
+23
+00:02:23,600 --> 00:02:30,560
+ we are walking on this terrain world, so if you click on this terrain okay this is the terrain
+
+24
+00:02:30,560 --> 00:02:37,120
+ right here make sure that you change its layer to default, alright and make sure that you
+
+25
+00:02:37,120 --> 00:02:43,440
+ tag this as cross, okay because there are cross everywhere on the terrain, so we will be
+
+26
+00:02:43,440 --> 00:02:50,840
+ playing the cross footsteps sound on this and then for example let me change the mood
+
+27
+00:02:50,840 --> 00:02:58,640
+ so that we can see the buildings, alright so for example if the clear is walking on this
+
+28
+00:02:58,640 --> 00:03:09,120
+ let me select it, okay change this layer to default and for the tag make sure that you select
+
+29
+00:03:09,120 --> 00:03:17,280
+ tiles, alright and you can do the same for this cabin as well right here, okay this one
+
+30
+00:03:17,280 --> 00:03:27,200
+ select it, make sure it is set to default and then tag will be tiles, alright and then
+
+31
+00:03:27,200 --> 00:03:35,320
+ you can do the same right here as well, actually we can just leave this on default and then
+
+32
+00:03:35,320 --> 00:03:44,320
+ okay let us select tiles on this bridge as well, okay the same right here as well default
+
+33
+00:03:44,320 --> 00:03:51,880
+ and then tiles, alright so you can go ahead and search the whole environment and add these
+
+34
+00:03:51,880 --> 00:04:01,640
+ footsteps in all of them, okay in different places make sure that you tag them correctly
+
+35
+00:04:01,640 --> 00:04:07,560
+ so that specific footsteps sound are played there now if you go ahead and start the game
+
+36
+00:04:07,560 --> 00:04:18,360
+ alright these are the zombie footsteps sound we didn't change it to 3d that's why we are
+
+37
+00:04:18,360 --> 00:04:25,640
+ able to hear it right here but if you walk we can hear the footsteps sound okay let's
+
+38
+00:04:25,640 --> 00:04:37,320
+ select all of these zombies, go inside audio source, make sure that you make this 3d and make the
+
+39
+00:04:37,320 --> 00:04:53,800
+ mix distance as we just say 60, alright now let's play it again, alright now with the game start let's walk
+
+40
+00:04:53,800 --> 00:05:00,920
+ okay the footsteps sound is playing now let's test this
+
+41
+00:05:03,880 --> 00:05:09,800
+ where it is playing the footsteps sounds right here as well and on the cross as well as you can see
+
+42
+00:05:09,800 --> 00:05:18,040
+ now it's test the zombies so if you walk closer to the zombies right there they are going inside
+
+43
+00:05:18,040 --> 00:05:30,840
+ the water, okay here it is as you can see the zombie footsteps sound is playing, okay so it's working
+
+44
+00:05:30,840 --> 00:05:38,200
+ perfectly fine we just have to decrease the player footsteps sound because it is too loud let me
+
+45
+00:05:38,200 --> 00:05:45,800
+ actually play the game and we can test it in real time okay here we are let's make this 3d
+
+46
+00:05:45,800 --> 00:05:55,480
+ alright when we make it 3d now let's click on volume
+
+47
+00:06:01,800 --> 00:06:21,000
+ I think 0.4 is a good value for this, yep now let's test the zombie
+
+48
+00:06:24,840 --> 00:06:39,160
+ there it is okay so the footsteps sound is playing perfectly fine, alright so you can then select
+
+49
+00:06:39,160 --> 00:06:47,240
+ the player, make it 3d, make the volume 0.5 and that will be it
+
