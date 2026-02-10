@@ -1,0 +1,340 @@
+1
+00:00:00,140 --> 00:00:02,510
+Well, our game is coming together quite nicely.
+
+2
+00:00:02,540 --> 00:00:07,730
+Now we need to do is introduce the objective to the game, which obviously is to try and catch this
+
+3
+00:00:07,730 --> 00:00:08,540
+ladybug.
+
+4
+00:00:08,540 --> 00:00:12,260
+Because right now, if we touch the ladybug, nothing really happens.
+
+5
+00:00:12,750 --> 00:00:18,540
+But what we want to happen is to have the ladybug vanish and have our dragonfly say yum, and maybe
+
+6
+00:00:18,540 --> 00:00:22,140
+play a pop sound like it's been eaten.
+
+7
+00:00:22,740 --> 00:00:25,230
+So let's start off with our dragonfly.
+
+8
+00:00:25,350 --> 00:00:31,560
+I want you to try and get it to say yum or whatever you like, but get it to say something when it touches
+
+9
+00:00:31,560 --> 00:00:32,760
+the ladybug.
+
+10
+00:00:33,270 --> 00:00:33,840
+See if you can do that.
+
+11
+00:00:33,840 --> 00:00:34,500
+Pause this video.
+
+12
+00:00:34,500 --> 00:00:35,190
+Give it a go.
+
+13
+00:00:35,190 --> 00:00:39,810
+Can you get the dragonfly to say something when it touches the ladybug?
+
+14
+00:00:41,390 --> 00:00:42,590
+Let's think about this.
+
+15
+00:00:42,950 --> 00:00:46,820
+We'll need a sensing block to sense that the sprite is touching another.
+
+16
+00:00:46,820 --> 00:00:48,920
+And we can use this one here.
+
+17
+00:00:49,670 --> 00:00:55,190
+Now clicking on here, we can change the touching sense from mouse pointer to ladybug two.
+
+18
+00:00:55,220 --> 00:01:00,890
+Then, just like with our arrow clicks, we are going to need an if conditional block and a forever
+
+19
+00:01:00,890 --> 00:01:01,280
+loop.
+
+20
+00:01:02,210 --> 00:01:05,720
+Then we need to say hello for two seconds.
+
+21
+00:01:05,720 --> 00:01:10,130
+Block to get it to say what we want when it touches the ladybug.
+
+22
+00:01:10,610 --> 00:01:15,680
+Oh, and there's also one more thing we need this play sound pop block.
+
+23
+00:01:16,100 --> 00:01:22,910
+So just like before, we can organize our script so that it forever checks if it is touching the ladybug,
+
+24
+00:01:22,910 --> 00:01:27,740
+and if so, we will have it say yum and then play the pop sound.
+
+25
+00:01:30,080 --> 00:01:30,350
+Now.
+
+26
+00:01:30,350 --> 00:01:34,010
+If we play it now, you will see when we now touch the ladybug.
+
+27
+00:01:34,400 --> 00:01:36,350
+If I can touch it.
+
+28
+00:01:36,830 --> 00:01:37,760
+Oh, there we go.
+
+29
+00:01:38,420 --> 00:01:41,120
+It says yum and plays the pop sound.
+
+30
+00:01:41,570 --> 00:01:47,960
+Now one thing I can do to improve this is to play the pop sound first, then say yum for two seconds.
+
+31
+00:01:48,200 --> 00:01:50,450
+Uh, this just makes it more seamless.
+
+32
+00:01:51,470 --> 00:01:52,670
+Okay, cool.
+
+33
+00:01:52,670 --> 00:01:54,230
+So our game is almost there.
+
+34
+00:01:54,320 --> 00:02:01,250
+And before we move on to program the ladybug, I just want to point something out because you might
+
+35
+00:02:01,250 --> 00:02:04,940
+be wondering why we have two separate scripts here.
+
+36
+00:02:04,970 --> 00:02:08,150
+Like, why don't we just put this piece of code inside here?
+
+37
+00:02:08,150 --> 00:02:09,830
+So we just have one script?
+
+38
+00:02:09,980 --> 00:02:11,840
+Well, if you were wondering that.
+
+39
+00:02:11,840 --> 00:02:12,560
+Good wondering.
+
+40
+00:02:12,560 --> 00:02:13,280
+Good question.
+
+41
+00:02:13,280 --> 00:02:14,420
+Well, let's try it.
+
+42
+00:02:15,020 --> 00:02:22,430
+So adding it in and now clicking play you will see that now when we touch the ladybug if I can touch
+
+43
+00:02:22,430 --> 00:02:23,150
+it.
+
+44
+00:02:23,330 --> 00:02:24,380
+There you go.
+
+45
+00:02:24,470 --> 00:02:27,950
+But notice how suddenly I can no longer control the dragonfly.
+
+46
+00:02:27,950 --> 00:02:29,720
+It just like freezes.
+
+47
+00:02:30,020 --> 00:02:31,040
+Why is this?
+
+48
+00:02:31,980 --> 00:02:35,670
+Well, if we look at our script logically, taking the code out again.
+
+49
+00:02:36,000 --> 00:02:42,120
+Look, this is all a loop, so we are constantly checking if any of these conditions are true and if
+
+50
+00:02:42,120 --> 00:02:43,200
+one of them is true.
+
+51
+00:02:43,200 --> 00:02:45,720
+Like we click the down arrow, it goes down.
+
+52
+00:02:45,720 --> 00:02:49,260
+But remember how I said code runs from the top down?
+
+53
+00:02:49,470 --> 00:02:50,940
+Well, that is happening here.
+
+54
+00:02:51,030 --> 00:02:55,530
+So when we click start it's going to check if the right arrow has been pressed.
+
+55
+00:02:55,530 --> 00:02:59,550
+Then it's going to check if the left arrow is being pressed, then the up then the down.
+
+56
+00:02:59,550 --> 00:03:03,990
+So it's not really checking all these conditions at the same time.
+
+57
+00:03:03,990 --> 00:03:05,970
+It's going from the top down.
+
+58
+00:03:05,970 --> 00:03:10,380
+But because it happened so fast, it seems like it's checking it all at the same time.
+
+59
+00:03:10,380 --> 00:03:18,120
+However, if I were to add a wait one second like to this, check for the down arrow.
+
+60
+00:03:18,420 --> 00:03:23,490
+Notice how our other arrows work perfectly, but as soon as it checks for the down arrow, all the other
+
+61
+00:03:23,490 --> 00:03:24,510
+arrows freeze up.
+
+62
+00:03:25,370 --> 00:03:29,000
+And this is because it's running the code from the top down.
+
+63
+00:03:29,000 --> 00:03:31,700
+And when it gets to this code, it needs to wait for a second.
+
+64
+00:03:31,700 --> 00:03:35,600
+And it can only continue the loop once the second is over.
+
+65
+00:03:37,030 --> 00:03:41,170
+So basically that is why this code has the same problem.
+
+66
+00:03:41,170 --> 00:03:48,160
+Because there is this say yum for two seconds and it will only continue looping the code once it is
+
+67
+00:03:48,160 --> 00:03:49,960
+finished executing the script.
+
+68
+00:03:50,290 --> 00:03:55,270
+So that is one of the reasons we use another script, so we can have multiple things running at the
+
+69
+00:03:55,270 --> 00:03:57,010
+same time without any issue.
+
+70
+00:03:57,490 --> 00:04:02,470
+Now I could take out this, say yum for two seconds and add it back into the loop.
+
+71
+00:04:02,470 --> 00:04:06,580
+Look, if we play it again, you'll see it works and it doesn't freeze.
+
+72
+00:04:06,850 --> 00:04:13,630
+But even if you just wanted our sprite to play a sound, you should still use a separate script for
+
+73
+00:04:13,630 --> 00:04:14,170
+this.
+
+74
+00:04:14,170 --> 00:04:20,020
+Basically, having separate scripts is just so much better for keeping things organized.
+
+75
+00:04:20,050 --> 00:04:26,110
+You see, when you make really big programs, really big gains, things can get quite confusing.
+
+76
+00:04:26,110 --> 00:04:32,200
+And if you have just one ultra mega long script, you might not know what's going on.
+
+77
+00:04:32,200 --> 00:04:38,470
+So what we suggest is that each script you have should do just one thing.
+
+78
+00:04:38,470 --> 00:04:41,470
+Remember that each script should just do one thing.
+
+79
+00:04:41,470 --> 00:04:43,480
+This script controls the arrow keys.
+
+80
+00:04:43,480 --> 00:04:48,430
+This one checks if we're touching the ladybug, and if you are well organized like this from the start,
+
+81
+00:04:48,430 --> 00:04:55,030
+you'll be really thankful in the future when you make some fun and really complex games.
+
+82
+00:04:55,030 --> 00:05:00,850
+So with that, there's just one more thing to code for our game to be complete, and that is getting
+
+83
+00:05:00,850 --> 00:05:04,930
+the ladybug to disappear when it touches the dragonfly.
+
+84
+00:05:05,650 --> 00:05:08,920
+Try to give this challenge a shot and see if you can do it on your own.
+
+85
+00:05:09,160 --> 00:05:13,360
+Otherwise, I'll see you in the next lesson and show you how it can be done.
+
