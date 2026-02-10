@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:08,960
+Đây là ứng dụng Dockerize.net của chúng tôi. Khi chúng tôi nhấn nút chạy trên phòng thu trực quan, trong khi
+
+2
+00:00:08,960 --> 00:00:15,920
+Chọn là khung container, Dockerfile, Phòng thu trực quan đang xây dựng ảnh của
+
+3
+00:00:15,920 --> 00:00:24,520
+ứng dụng và chạy một container với ảnh này. Hãy để chúng tôi chạy ứng dụng này trên hiển thị studio bằng
+
+4
+00:00:24,520 --> 00:00:54,480
+Ấn nút chạy. Bạn có thể thấy các container được tạo ra và
+
+5
+00:00:54,480 --> 00:01:04,320
+bây giờ ứng dụng có sẵn trên trình duyệt. Ở đây mọi thứ được thực hiện bởi
+
+6
+00:01:04,320 --> 00:01:12,840
+Phòng thu trực quan và bạn đã nhận thấy chúng tôi đã không chạy ngay cả một Docker
+
+7
+00:01:12,840 --> 00:01:30,080
+Chỉ huy một mình. Kiểm tra bàn làm việc Docker. Ở đây bạn có thể thấy hình ảnh của
+
+8
+00:01:30,080 --> 00:01:37,880
+Ứng dụng mạng. Tên ảnh là ứng dụng Docker đầu tiên trong chữ cái nhỏ. Tên hộp
+
+9
+00:01:37,880 --> 00:01:45,080
+là ứng dụng Docker đầu tiên trong chữ viết hoa. Bây giờ chúng ta sẽ làm mỗi cái
+
+10
+00:01:45,080 --> 00:01:52,280
+Công việc bằng tay mà không cần sự giúp đỡ của phòng thu trực quan. Chúng tôi sẽ xây dựng
+
+11
+00:01:52,280 --> 00:01:57,320
+ảnh của Docker xây dựng lệnh và sau đó sẽ chạy một container cho điều này
+
+12
+00:01:57,320 --> 00:02:04,720
+ảnh bởi lệnh bỏ đi Docker. Nhấn vào tên dự án đầu tiên trên
+
+13
+00:02:04,720 --> 00:02:17,400
+Nhà thám hiểm giải quyết và chọn mở trong nhà thám hiểm tập tin. Đây là vị trí của
+
+14
+00:02:17,400 --> 00:02:23,040
+ứng dụng. Bạn có thể thấy có một tập tin Docker. Bây giờ nhấn vào khoảng trống và
+
+15
+00:02:23,040 --> 00:02:30,040
+chọn mở trong tùy chọn thiết bị cuối. Cái này sẽ mở cửa sổ PowerShell. Anh có thể
+
+16
+00:02:30,040 --> 00:02:36,640
+cũng làm điều tương tự trên cửa sổ nhắc lệnh. Bây giờ chúng tôi gần nhìn thấy
+
+17
+00:02:36,640 --> 00:02:49,320
+Phòng thu. Chuyển sang màn hình nền Docker và xoá ảnh của ứng dụng này. Chúng ta sẽ là
+
+18
+00:02:49,320 --> 00:03:06,520
+Xây dựng ảnh bằng lệnh Docker. Name
+
+19
+00:03:06,520 --> 00:03:18,520
+không gian xây dựng dấu gạch lát T cung cấp tên của ảnh này bất cứ điều gì. Tôi chọn fda mà
+
+20
+00:03:18,520 --> 00:03:32,520
+là ứng dụng Docker đầu tiên. Sau đó gõ dấu gạch ngang f có nghĩa là từ và thử Docker
+
+21
+00:03:32,520 --> 00:03:44,520
+Tập tin cung cấp một khoảng trống và gõ chấm chấm xác định vị trí của Docker
+
+22
+00:03:44,520 --> 00:03:50,400
+Tập tin đó là thư mục chúng tôi đang ở trong. Đây là thư mục hiện thời
+
+23
+00:03:50,400 --> 00:04:07,800
+phải nhập vào để xây dựng ảnh này. Đợi một phút để xây dựng ảnh này.
+
+24
+00:04:20,400 --> 00:04:43,200
+Bạn có thể thấy hình ảnh được xây dựng và chúng tôi có thể tìm ra tên của hình ảnh trên
+
+25
+00:04:43,200 --> 00:04:56,120
+Màn hình nền Docker. Bây giờ chúng tôi tạo một container bằng kiểu lệnh Docker chạy
+
+26
+00:04:56,120 --> 00:05:24,120
+Không gian Docker chạy không gian gạch chéo tên. Sau đó cho một không gian và sau đó viết tên của thùng. Bạn có thể chọn bất kỳ tên nào. Tôi viết Fdac bằng chữ viết hoa. Điều này có nghĩa là hộp ứng dụng Docker đầu tiên.
+
+27
+00:05:26,120 --> 00:05:40,120
+Sau đó cung cấp cho không gian gạch gạch mà đặt các cổng máy bản đồ đến cổng container. Cảng Ma có thể là bất cứ thứ gì trên máy của bạn như
+
+28
+00:05:40,120 --> 00:06:08,120
+đặt T56000 etc. Cổng container được cung cấp trên tập tin Docker đang mở trên bảng thông tin nút.
+
+29
+00:06:08,120 --> 00:06:37,120
+Sau đó gõ ruột già và sau đó loại 80 đó là cổng trên container. Vì vậy, điều này có nghĩa là chúng tôi sẽ mở chủ thể địa phương
+
+30
+00:06:37,120 --> 00:06:49,120
+5001 trên trình duyệt của chúng tôi sau đó yêu cầu được lập bản đồ đến container 80 cổng và sau đó chúng tôi sẽ truy cập của chúng tôi
+
+31
+00:06:49,120 --> 00:07:00,120
+Ứng dụng gõ xong trên trình duyệt. Sau đó cho một không gian và sau đó gõ fda đó là tên của hình ảnh. Bây giờ nhấn Enter
+
+32
+00:07:00,120 --> 00:07:13,120
+Docker sẽ tạo ra các container và bạn có thể thấy các container được tạo ra và có một thông điệp bây giờ
+
+33
+00:07:13,120 --> 00:07:26,120
+nghe ở Đại lộ http 80 80. Trên bàn làm việc Docker là một hình ảnh và đây là container của ảnh mà chúng tôi đã tạo. Bây giờ chúng tôi có thể mở ứng dụng
+
+34
+00:07:26,120 --> 00:07:50,120
+trên trình duyệt Chrome. Trên thanh địa chỉ gõ máy cục bộ đại tràng 5001 và nhấn Enter. Đây là ứng dụng và nó đang mở chính xác
+
+35
+00:07:50,120 --> 00:07:59,120
+trên trình duyệt và mọi thứ đều hoạt động đúng cách. Chúc mừng. Đó là một thành tựu vĩ đại cho tất cả chúng ta.
+
+36
+00:07:59,120 --> 00:08:16,120
+Phần này và đã đánh bại thành công ứng dụng Dotnet. Trong trường hợp bạn đang đối mặt với bất kỳ vấn đề sau đó tua lại bài giảng này và cố gắng tìm hiểu những điều bạn đã không làm đúng. Bạn cũng có thể nhận
+
+37
+00:08:16,120 --> 00:08:35,120
+bằng cách gõ các thông điệp lỗi mà bạn có thể nhận được. Bây giờ trên PowerShell bạn có thể tắt ứng dụng này bằng cách bấm Ctrl+C.
+
+38
+00:08:35,120 --> 00:08:51,120
+Cập nhật cho trình duyệt và ứng dụng sẽ không mở vì các container không chạy các container đang ở trạng thái thoát.
+
+39
+00:08:51,120 --> 00:09:11,120
+Trên hệ thống định vị điện tử, bạn sẽ không thấy bất kỳ vật chứa nào, vì nó chỉ hiển thị các vật chứa đang chạy. Hộp công cụ chạy ảnh ứng dụng dotnet hiện đang thoát.
+
+40
+00:09:11,120 --> 00:09:31,120
+Vì vậy, nó không hiển thị. Bây giờ gõ dấu gạch gạch ngang tất cả các lá cờ. Đây sẽ hiển thị mọi container trên máy chủ docker. Đây là ID thùng chứa và hình ảnh nó đang giữ.
+
+41
+00:09:31,120 --> 00:09:53,120
+Chúng tôi có thể thấy nhật ký trên một container bằng lệnh của Docker. Bằng cách này chúng ta có thể gỡ lỗi nếu có thứ gì đó không hoạt động tốt trong container. Gõ nhật ký docker theo sau là mã nhận diện container hay tên container. Và đây là các bản ghi của container.
+
+42
+00:10:01,120 --> 00:10:30,120
+Chúng tôi cũng có thể chạy một phiên xe buýt Linux trong container. Lệnh là docker exe gạch ngang nó tượng trưng cho tương tác sau đó gạch chéo xem gốc mà đang làm.
+
+43
+00:10:30,120 --> 00:10:49,120
+Đó là người dùng gốc trong Linux sau đó dán ID container. Tiếp theo là đập và nhấn Enter. Ở đây chúng tôi nhận được lỗi mà nói rằng các container không chạy.
+
+44
+00:10:49,120 --> 00:11:16,120
+Hãy chạy công-ten-nơ trên bàn làm việc docker. Bây giờ khóc một lần nữa thành công lần này. Bây giờ chúng tôi đang ở bên trong container với tiếng bass mở.
+
+45
+00:11:16,120 --> 00:11:44,120
+Ở đây chúng ta có thể gõ lệnh Linux như lncd dot etc.
+
+46
+00:11:44,120 --> 00:11:51,120
+Cuối cùng chúng ta có thể thoát khỏi phiên chơi bass bằng lệnh thoát ra.
+
+47
+00:11:51,120 --> 00:12:11,120
+Trước khi chúng tôi kết thúc bài giảng này được thảo luận về chế độ tách ra docker chế độ riêng biệt được chỉ định bằng dấu gạch gạch gạch lát cho phép hộp chứa chạy trong nền mà không chiếm dấu nhắc câu lệnh.
+
+48
+00:12:11,120 --> 00:12:24,120
+Chúng ta có thể thấy rằng nếu chúng ta tạo ra một container các nhắc lệnh hoặc PowerShell hoặc thiết bị cuối đang bận rộn và chúng ta không thể làm gì cả.
+
+49
+00:12:24,120 --> 00:12:45,120
+Chúng ta có thể sử dụng chế độ tách biệt khi chạy bất kỳ container nào để giải quyết vấn đề này. Trước hết hãy xoá container.
+
+50
+00:12:45,120 --> 00:13:06,120
+Bây giờ chúng tôi chạy cùng một docker đi vào và lần này thêm các dấu gạch lát sau tên container. Bây giờ các bạn có thể thấy công-te-nơ đang chạy và PowerShell thì không bị chiếm.
+
+51
+00:13:06,120 --> 00:13:16,120
+Chúng ta có thể chạy lệnh DIR để xem nó có hiển thị tất cả các thư mục không.
+
