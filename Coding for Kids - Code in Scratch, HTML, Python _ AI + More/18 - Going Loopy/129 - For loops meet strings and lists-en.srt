@@ -1,0 +1,572 @@
+1
+00:00:00,160 --> 00:00:06,440
+So we're looking at loops and we've been looking at the for loop with a range and a range of numbers.
+
+2
+00:00:06,440 --> 00:00:08,160
+And they're potentially very powerful.
+
+3
+00:00:08,160 --> 00:00:12,840
+We're going to see later when we get to the game that you're going to be building that this is a very
+
+4
+00:00:12,840 --> 00:00:15,200
+important part of programming.
+
+5
+00:00:15,480 --> 00:00:21,160
+We now want to have a look at how we can use for loops, and we can use them with lists as well.
+
+6
+00:00:21,160 --> 00:00:23,280
+So it doesn't have to just work with with numbers.
+
+7
+00:00:23,280 --> 00:00:24,600
+It can actually work with text.
+
+8
+00:00:24,600 --> 00:00:29,760
+And we've touched on this earlier, but now we want to bring in the for loop and lists together and
+
+9
+00:00:29,760 --> 00:00:31,760
+show you what exciting things you can do.
+
+10
+00:00:32,800 --> 00:00:37,000
+Okay I'm going to delete this and we are going to create a list.
+
+11
+00:00:37,800 --> 00:00:42,240
+So let's create a list of let's say our favorite food.
+
+12
+00:00:42,240 --> 00:00:43,960
+So I'm just going to call this list food.
+
+13
+00:00:43,960 --> 00:00:49,560
+And hopefully you all remember how to create a list food okay.
+
+14
+00:00:49,600 --> 00:00:52,120
+And now we can put a couple of items in here.
+
+15
+00:00:52,120 --> 00:00:54,320
+So let's say I like.
+
+16
+00:00:56,480 --> 00:00:58,240
+Let's start with an unhealthy one.
+
+17
+00:00:59,600 --> 00:01:00,680
+Chocolate.
+
+18
+00:01:00,680 --> 00:01:04,250
+And then let's be unhealthy.
+
+19
+00:01:04,250 --> 00:01:07,530
+In this one we can go ham burgers.
+
+20
+00:01:09,810 --> 00:01:12,770
+What more delicious food can I think of?
+
+21
+00:01:13,130 --> 00:01:13,930
+Fries.
+
+22
+00:01:14,890 --> 00:01:18,090
+Okay, we'll put one healthy one just to keep my dad happy.
+
+23
+00:01:18,130 --> 00:01:19,290
+Carrots.
+
+24
+00:01:19,690 --> 00:01:20,450
+Delicious.
+
+25
+00:01:20,490 --> 00:01:21,850
+I do like carrots, though.
+
+26
+00:01:22,050 --> 00:01:25,130
+And maybe let's go with a drink.
+
+27
+00:01:25,530 --> 00:01:26,930
+One more drink water.
+
+28
+00:01:26,970 --> 00:01:28,250
+Let's just go with water.
+
+29
+00:01:28,730 --> 00:01:29,970
+Always taste tasty.
+
+30
+00:01:30,930 --> 00:01:37,850
+Okay, so here's a list of food that I like and what we what we're just going to do in this example
+
+31
+00:01:37,850 --> 00:01:39,890
+is we just want to loop through it.
+
+32
+00:01:39,890 --> 00:01:46,530
+So remember before we had a list and every time we wanted to print a element in this list like chocolate,
+
+33
+00:01:46,730 --> 00:01:52,930
+we had to go write a print statement and we had to say the name of the list.
+
+34
+00:01:52,930 --> 00:01:59,490
+And then we had to have these square brackets which get the index and give it the index of the element
+
+35
+00:01:59,490 --> 00:02:00,250
+we want to print.
+
+36
+00:02:00,250 --> 00:02:05,940
+So if we wanted to print the first element chocolate We had to put in this print statement and then
+
+37
+00:02:05,980 --> 00:02:07,020
+say the name of the list.
+
+38
+00:02:07,020 --> 00:02:12,980
+With the index we want to print in these square brackets, and running it would give us chocolate and
+
+39
+00:02:12,980 --> 00:02:15,260
+then say, now I wanted to print hamburgers as well.
+
+40
+00:02:15,260 --> 00:02:20,500
+I'd have to have a whole new statement with again the same thing, print food, and then just have the
+
+41
+00:02:20,500 --> 00:02:24,260
+number one and then again print food number two.
+
+42
+00:02:24,660 --> 00:02:28,380
+So if you actually think about it already, you can think before.
+
+43
+00:02:28,420 --> 00:02:35,300
+In our last lecture we looked at how that number, that variable R went one up each time the loop went
+
+44
+00:02:35,300 --> 00:02:35,780
+around.
+
+45
+00:02:36,100 --> 00:02:40,500
+So maybe we could perhaps use that to print a list.
+
+46
+00:02:41,220 --> 00:02:46,180
+So what we're going to do again is we're going to say four and we're going to use a variable.
+
+47
+00:02:46,220 --> 00:02:47,700
+Now this number R can be anything.
+
+48
+00:02:47,700 --> 00:02:50,580
+So let me actually call it something else.
+
+49
+00:02:50,860 --> 00:02:55,580
+Uh let's just say my food just to show you that this thing here doesn't have to be R.
+
+50
+00:02:55,580 --> 00:02:56,540
+It's just a variable.
+
+51
+00:02:56,580 --> 00:02:58,180
+It can be anything.
+
+52
+00:02:58,180 --> 00:03:00,220
+It can and it can hold anything.
+
+53
+00:03:00,660 --> 00:03:03,340
+So for my food in.
+
+54
+00:03:04,790 --> 00:03:05,470
+food.
+
+55
+00:03:05,510 --> 00:03:10,270
+Now that might look a little bit strange, but because we don't have that range or anything like that.
+
+56
+00:03:10,270 --> 00:03:17,230
+But Python is actually quite clever here, so it already knows that food over here is one, two three,
+
+57
+00:03:17,230 --> 00:03:22,110
+four five elements long and it starts at zero, then 123, four.
+
+58
+00:03:22,230 --> 00:03:23,230
+So Python already knows that.
+
+59
+00:03:23,230 --> 00:03:27,390
+So we don't have to tell Python how big this list is.
+
+60
+00:03:27,390 --> 00:03:28,310
+It already knows.
+
+61
+00:03:28,310 --> 00:03:36,750
+So we just have to say for my variable in our list food print that element print element in the list.
+
+62
+00:03:36,750 --> 00:03:38,110
+So we want it to print all of it.
+
+63
+00:03:38,110 --> 00:03:38,550
+So.
+
+64
+00:03:42,070 --> 00:03:42,870
+Print.
+
+65
+00:03:45,070 --> 00:03:45,670
+Food.
+
+66
+00:03:45,790 --> 00:03:52,470
+And again you'll notice none of these have inverted commas around them because they are variables.
+
+67
+00:03:52,670 --> 00:03:53,910
+They are not strings.
+
+68
+00:03:53,910 --> 00:03:57,950
+Over here they hold a string one of these strings but they are variable.
+
+69
+00:03:57,950 --> 00:03:59,190
+So no inverted commas.
+
+70
+00:03:59,550 --> 00:04:04,270
+So for a variable in food, print that variable.
+
+71
+00:04:04,410 --> 00:04:05,970
+and what this list is now going to do.
+
+72
+00:04:06,330 --> 00:04:07,410
+Let's run it and see.
+
+73
+00:04:09,690 --> 00:04:10,050
+Okay.
+
+74
+00:04:10,090 --> 00:04:16,450
+So all it's done is the first time this list runs, my food becomes chocolate.
+
+75
+00:04:16,610 --> 00:04:20,330
+Then the next time the loop runs, my food becomes hamburger.
+
+76
+00:04:20,370 --> 00:04:22,850
+Then the next time becomes fries and so on.
+
+77
+00:04:22,850 --> 00:04:29,570
+So all it's doing, just like before in our for loop with numbers, it's going one up every time it
+
+78
+00:04:29,570 --> 00:04:30,130
+runs.
+
+79
+00:04:30,330 --> 00:04:37,850
+So yeah, this is just an easier way of iterating through a list instead of writing the same statement
+
+80
+00:04:37,850 --> 00:04:39,010
+over and over again.
+
+81
+00:04:39,050 --> 00:04:41,490
+So this area just used a nice word there iterating.
+
+82
+00:04:41,970 --> 00:04:44,170
+That's again this is a common well it's not a common.
+
+83
+00:04:44,170 --> 00:04:48,570
+It's an English word we use means looping around, but it's the phrase that's normally used when we
+
+84
+00:04:48,610 --> 00:04:49,610
+are referring to loops.
+
+85
+00:04:49,610 --> 00:04:51,410
+We refer to them as iterations.
+
+86
+00:04:51,770 --> 00:04:54,410
+Again, it will just make you seem a whole lot cleverer.
+
+87
+00:04:54,570 --> 00:04:57,450
+And also note that how much shorter this code is.
+
+88
+00:04:57,610 --> 00:05:02,330
+If we had to write this out and we had to use print, we would have to have had five print commands.
+
+89
+00:05:02,330 --> 00:05:07,420
+So you can see how the use of these loops is making our code a lot more efficient.
+
+90
+00:05:07,460 --> 00:05:10,020
+Now imagine you make this exponentially bigger.
+
+91
+00:05:10,220 --> 00:05:14,340
+You have 100, 1000, 50,000 elements in a list.
+
+92
+00:05:14,380 --> 00:05:16,940
+Obviously, it's just not possible to write code like that.
+
+93
+00:05:16,980 --> 00:05:20,540
+But using the loops, we can achieve all sorts of amazing things.
+
+94
+00:05:20,860 --> 00:05:24,740
+Okay, so I'm just going to give you one more example but not using a list.
+
+95
+00:05:24,780 --> 00:05:26,580
+Now we are going to use a string.
+
+96
+00:05:26,700 --> 00:05:28,060
+Let's say we have a string.
+
+97
+00:05:28,100 --> 00:05:30,740
+And what a variable holding a string.
+
+98
+00:05:31,180 --> 00:05:34,700
+Um let's just go with name.
+
+99
+00:05:34,820 --> 00:05:41,620
+And this variable is going to be storing my name as a string.
+
+100
+00:05:42,860 --> 00:05:44,460
+Okay, Sarah.
+
+101
+00:05:44,660 --> 00:05:44,860
+Okay.
+
+102
+00:05:44,860 --> 00:05:48,540
+So let's just store my name Sarah in a string variable.
+
+103
+00:05:48,740 --> 00:05:51,020
+And now I want to loop through this.
+
+104
+00:05:51,060 --> 00:05:52,860
+You might be like why would you want to do this?
+
+105
+00:05:52,900 --> 00:05:57,620
+At the moment I'm just showing you how you can loop through a string, but it does.
+
+106
+00:05:58,060 --> 00:06:01,140
+Obviously, it does become very helpful later on.
+
+107
+00:06:01,180 --> 00:06:08,430
+I'm going to write exactly what I wrote here, but now Instead of going through this list, I want to
+
+108
+00:06:08,470 --> 00:06:10,630
+go through my name.
+
+109
+00:06:10,630 --> 00:06:13,350
+And again, this could be ah, well, let's just call it ah.
+
+110
+00:06:13,390 --> 00:06:18,150
+It's shorter for ah in name.
+
+111
+00:06:20,310 --> 00:06:24,070
+And again print that variable print.
+
+112
+00:06:24,350 --> 00:06:25,710
+Ah okay.
+
+113
+00:06:25,750 --> 00:06:31,470
+So let's actually well let's comment this out for now because we don't want to see what this does.
+
+114
+00:06:31,470 --> 00:06:32,470
+We already know what it does.
+
+115
+00:06:32,510 --> 00:06:35,630
+And if you remember how to comment this is just a quick little point here.
+
+116
+00:06:35,630 --> 00:06:37,310
+We did talk about comments earlier.
+
+117
+00:06:37,510 --> 00:06:39,070
+Um, but this is a great little trick.
+
+118
+00:06:39,070 --> 00:06:44,990
+Sometimes when you want a piece of code to not be executed for whatever reason, like we're showing
+
+119
+00:06:44,990 --> 00:06:49,590
+you here, just put the comment, some of the hashtag in front of things, and all of a sudden, uh,
+
+120
+00:06:49,590 --> 00:06:51,070
+Python will ignore that code.
+
+121
+00:06:51,070 --> 00:06:56,510
+So it's a great way to also, when you're trying to debug code, you're not sure where the problem is.
+
+122
+00:06:56,630 --> 00:07:00,110
+You start to cut down what's actually being run.
+
+123
+00:07:00,110 --> 00:07:02,750
+So you can just focus on where you think the problem is.
+
+124
+00:07:02,870 --> 00:07:05,950
+And so you just use comments and you can easily obviously remove them.
+
+125
+00:07:05,950 --> 00:07:07,800
+And then the code will be activated again.
+
+126
+00:07:07,840 --> 00:07:08,080
+Yeah.
+
+127
+00:07:08,080 --> 00:07:13,600
+So this definitely is a good way of just focusing on what you want to be focused on.
+
+128
+00:07:13,640 --> 00:07:14,000
+Okay.
+
+129
+00:07:14,040 --> 00:07:15,960
+So what are loops done here.
+
+130
+00:07:16,160 --> 00:07:19,000
+Basically exactly the same as what happened in the list.
+
+131
+00:07:19,360 --> 00:07:24,560
+What it's done is the first time the loop ran, the R became the S.
+
+132
+00:07:24,600 --> 00:07:26,440
+The next time it ran, it moved to being the A.
+
+133
+00:07:26,440 --> 00:07:33,360
+And every time it moved one up, one up, one up until we got to the end of the name and the loop stops.
+
+134
+00:07:33,480 --> 00:07:36,760
+So it's printed, Sara, with each letter on a new line.
+
+135
+00:07:36,760 --> 00:07:37,000
+Because.
+
+136
+00:07:37,040 --> 00:07:41,680
+Because each letter is a new letter in our string.
+
+137
+00:07:41,720 --> 00:07:45,000
+Well, and each letter becomes the variable r.
+
+138
+00:07:45,240 --> 00:07:48,000
+So that's just basically on how to loop through a string.
+
+139
+00:07:48,120 --> 00:07:51,640
+The first one we showed over here was how to loop through a list.
+
+140
+00:07:51,880 --> 00:07:57,080
+And the one in our previous example was how to loop with numbers.
+
+141
+00:07:57,400 --> 00:07:59,720
+So for now, this is all you need to know.
+
+142
+00:07:59,760 --> 00:08:05,760
+We will get into more complicated examples, but in our next lecture we are going to be looking at a
+
+143
+00:08:05,760 --> 00:08:08,680
+different type of loop called a while loop.
+
