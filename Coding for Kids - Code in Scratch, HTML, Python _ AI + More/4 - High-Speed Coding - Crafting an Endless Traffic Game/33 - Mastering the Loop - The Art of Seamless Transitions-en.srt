@@ -1,0 +1,240 @@
+1
+00:00:00,170 --> 00:00:01,640
+Okay, so this is it.
+
+2
+00:00:01,640 --> 00:00:04,730
+Let the illusion begin.
+
+3
+00:00:05,450 --> 00:00:10,790
+Well before programming, let's look at what we want to happen as this will help us understand what
+
+4
+00:00:10,790 --> 00:00:11,840
+we need to code.
+
+5
+00:00:12,140 --> 00:00:17,660
+So dragging our road sprite, we wanted to come down like this, making it look like we're driving forward.
+
+6
+00:00:17,690 --> 00:00:23,420
+Then when it reaches the end, we want it to go back to the start, but do so perfectly so it looks
+
+7
+00:00:23,420 --> 00:00:24,740
+like nothing happened.
+
+8
+00:00:25,640 --> 00:00:35,630
+Well, to start off, let's just grab a when starts a forever and a change Y by ten we can quickly hit
+
+9
+00:00:35,630 --> 00:00:35,960
+play.
+
+10
+00:00:35,960 --> 00:00:39,140
+And yeah, that's the wrong way.
+
+11
+00:00:39,140 --> 00:00:42,110
+So let's make it a minus ten.
+
+12
+00:00:42,830 --> 00:00:45,230
+And well, that's pretty much what we want.
+
+13
+00:00:45,620 --> 00:00:50,990
+So now all we need to do is have the road go back up before it gets too low down.
+
+14
+00:00:51,820 --> 00:00:54,130
+So for this, all we need to do is.
+
+15
+00:00:54,130 --> 00:00:57,220
+Well, I'm not going to tell you just yet.
+
+16
+00:00:57,220 --> 00:01:03,970
+How about pausing the video and try and figure out how to make this perfect loop yourself so that the
+
+17
+00:01:03,970 --> 00:01:04,990
+road goes back up?
+
+18
+00:01:04,990 --> 00:01:06,760
+Come on, pause and give it a thought.
+
+19
+00:01:08,290 --> 00:01:09,310
+Well, let's have a look.
+
+20
+00:01:10,090 --> 00:01:12,400
+Firstly, we're going to need an if condition.
+
+21
+00:01:12,850 --> 00:01:16,390
+And what we want to check is the y position of our sprite.
+
+22
+00:01:17,050 --> 00:01:21,280
+Here we need to check if the y position is less than say -160.
+
+23
+00:01:21,280 --> 00:01:26,230
+So we can use this operator to see if y is less than -160.
+
+24
+00:01:26,590 --> 00:01:30,010
+Remember to check which way the arrow is pointing.
+
+25
+00:01:30,010 --> 00:01:33,820
+This way is less than, and this way is more than.
+
+26
+00:01:34,330 --> 00:01:38,080
+To help you remember this, just pay attention to the size at the start.
+
+27
+00:01:38,440 --> 00:01:44,980
+Here it is going from a size that is less than where it starts, and here is going from a size that
+
+28
+00:01:44,980 --> 00:01:53,590
+is greater than okay, now that you know that we can move our block inside our if and then inside our
+
+29
+00:01:53,590 --> 00:01:54,850
+forever loop.
+
+30
+00:01:55,680 --> 00:01:58,110
+Now all we need to do is change the position back.
+
+31
+00:01:58,110 --> 00:02:03,000
+So we just use a goto block set X to zero.
+
+32
+00:02:03,910 --> 00:02:05,290
+And for why?
+
+33
+00:02:05,290 --> 00:02:08,410
+To start off, we can just set it to 160.
+
+34
+00:02:09,040 --> 00:02:16,360
+Now clicking play, you can see this kind of works, but as you can also see, the loop is very off.
+
+35
+00:02:16,360 --> 00:02:20,050
+So this is where we need a bit of trial and error to get it perfect.
+
+36
+00:02:21,330 --> 00:02:26,040
+Now, the easiest way to get this is by grabbing to go to blocks.
+
+37
+00:02:26,370 --> 00:02:29,610
+The first we can set to -160.
+
+38
+00:02:29,760 --> 00:02:33,150
+As this is where we change it back.
+
+39
+00:02:33,510 --> 00:02:37,350
+And the next we can set to 160 which is this block.
+
+40
+00:02:38,160 --> 00:02:42,030
+Now first click on the first one, then our next one.
+
+41
+00:02:42,940 --> 00:02:46,000
+Well, you can see that the position is just a bit off.
+
+42
+00:02:46,000 --> 00:02:50,650
+So what needs to happen is we need to decrease our y a bit.
+
+43
+00:02:51,360 --> 00:02:53,640
+That's better, but still a bit off.
+
+44
+00:02:53,640 --> 00:02:55,290
+So again, a bit more.
+
+45
+00:02:56,000 --> 00:02:57,410
+And that looks better.
+
+46
+00:02:57,440 --> 00:03:01,550
+So as you can see, it's just a bit of trial and error.
+
+47
+00:03:02,280 --> 00:03:07,020
+And now, although our loop is good, you can see our costume isn't quite perfectly aligned.
+
+48
+00:03:07,020 --> 00:03:11,820
+So we can go back into the editor and try to make some micro adjustments.
+
+49
+00:03:11,940 --> 00:03:17,760
+And again, here you just need to keep fiddling until you get something that looks good.
+
+50
+00:03:19,620 --> 00:03:23,340
+Well, with that, we could change our Y values to this new one here.
+
+51
+00:03:23,970 --> 00:03:26,100
+And when we kick play once more.
+
+52
+00:03:26,550 --> 00:03:28,890
+Yeah, I think the results speak for themselves.
+
+53
+00:03:29,840 --> 00:03:38,690
+Also, although it looks good if we change from -160 to -150 and play the loop again, you'll see it
+
+54
+00:03:38,690 --> 00:03:41,120
+works out a bit better.
+
+55
+00:03:41,120 --> 00:03:45,770
+That, my friends, is what we call a proper illusion.
+
+56
+00:03:45,890 --> 00:03:51,800
+Obviously you can endlessly fiddle around to get it even more seamless, but for now that's looking
+
+57
+00:03:51,800 --> 00:03:52,550
+good.
+
+58
+00:03:52,550 --> 00:03:58,550
+And I know this has been a little bit of a tedious process, but trust me when I say this is a very
+
+59
+00:03:58,550 --> 00:04:00,470
+good skill to have.
+
+60
+00:04:00,470 --> 00:04:05,630
+And now we can start looking at coding the other sprites.
+
