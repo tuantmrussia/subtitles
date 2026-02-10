@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,300
+ Hosting ASP.NET Core App in a Docker container.
+
+2
+00:00:05,300 --> 00:00:14,400
+ It's time we are all waiting for to host an ASP.NET Core App in a Docker container.
+
+3
+00:00:14,400 --> 00:00:21,300
+ This is an important topic, so make sure you concentrate on what I am doing.
+
+4
+00:00:21,300 --> 00:00:27,600
+ Also, you should do this side-by-side on your PC with me.
+
+5
+00:00:27,600 --> 00:00:37,800
+ This way, you will learn it more quickly, open Visual Studio.
+
+6
+00:00:37,800 --> 00:00:41,000
+ Click create a new project.
+
+7
+00:00:41,000 --> 00:00:49,600
+ Next, select deed ASP.NET Core Web App model view controller template.
+
+8
+00:00:49,600 --> 00:00:57,100
+ Name the project something like First Docker App.
+
+9
+00:00:57,100 --> 00:01:02,200
+ Then choose the location on your PC where you want to save this app.
+
+10
+00:01:02,200 --> 00:01:09,400
+ There is a checkbox that says place solution and project in the same directory.
+
+11
+00:01:09,400 --> 00:01:12,100
+ You need to check this option.
+
+12
+00:01:12,100 --> 00:01:20,900
+ This is very necessary because Docker needs to find the .NET App files on the saved location.
+
+13
+00:01:20,900 --> 00:01:29,200
+ If you uncheck this option, then Docker will not be able to find the .NET App files
+
+14
+00:01:29,200 --> 00:01:32,600
+ and it will fail to create a container.
+
+15
+00:01:32,600 --> 00:01:36,600
+ Click next.
+
+16
+00:01:36,600 --> 00:01:39,600
+ Here, select the framework.
+
+17
+00:01:39,600 --> 00:01:42,800
+ I am selecting latest .NET 10.
+
+18
+00:01:42,800 --> 00:01:47,800
+ Here, see the checkbox saying enable container support.
+
+19
+00:01:47,800 --> 00:01:54,800
+ You can check this option if you want to host the app from the Docker container from the beginning.
+
+20
+00:01:54,800 --> 00:02:03,200
+ You can also enable container support, which is Docker after the app is created.
+
+21
+00:02:03,200 --> 00:02:12,800
+ I will keep this option unchecked because I want to show how you can add Docker container support to apps
+
+22
+00:02:12,800 --> 00:02:15,800
+ that are already functioning.
+
+23
+00:02:15,800 --> 00:02:19,400
+ This will help you to learn Docker in greater depth.
+
+24
+00:02:19,400 --> 00:02:21,700
+ Now click the create button.
+
+25
+00:02:21,700 --> 00:02:25,300
+ This will create the .NET App.
+
+26
+00:02:25,300 --> 00:02:35,500
+ The app is created.
+
+27
+00:02:35,500 --> 00:02:37,800
+ Let us run it.
+
+28
+00:02:45,800 --> 00:03:00,300
+ It is just a basic app containing only two pages, home and privacy.
+
+29
+00:03:00,300 --> 00:03:04,800
+ Close the browser and the console window.
+
+30
+00:03:04,800 --> 00:03:11,800
+ In the Docker desktop, you can see I have no images and no containers right now.
+
+31
+00:03:15,800 --> 00:03:25,800
+ Now, on Visual Studio, let's add Docker container support.
+
+32
+00:03:25,800 --> 00:03:32,800
+ So, right click on the project name, select add menu option.
+
+33
+00:03:32,800 --> 00:03:37,800
+ Then you will see the option saying container support.
+
+34
+00:03:37,800 --> 00:03:43,800
+ Click on this option, which will add Docker container support to the .NET App.
+
+35
+00:03:46,800 --> 00:03:51,800
+ In new window opens where you can select container options.
+
+36
+00:03:51,800 --> 00:03:56,800
+ On the container OS, select line X container build type.
+
+37
+00:03:56,800 --> 00:03:59,800
+ Let it remain Docker file.
+
+38
+00:03:59,800 --> 00:04:02,800
+ Container image distro.
+
+39
+00:04:02,800 --> 00:04:08,800
+ You can select the line X version like Ubuntu, Debian, Alpine, etc.
+
+40
+00:04:08,800 --> 00:04:11,800
+ Let it also remain default.
+
+41
+00:04:11,800 --> 00:04:16,800
+ For container build context, let it remain as it is.
+
+42
+00:04:16,800 --> 00:04:19,800
+ Next, click the ok button.
+
+43
+00:04:19,800 --> 00:04:23,800
+ Visual Studio has added Docker support to the app.
+
+44
+00:04:23,800 --> 00:04:27,800
+ And Docker file is created for this app.
+
+45
+00:04:27,800 --> 00:04:30,800
+ Notice on the left bottom corner.
+
+46
+00:04:30,800 --> 00:04:34,800
+ Visual Studio is now performing some task.
+
+47
+00:04:34,800 --> 00:04:39,800
+ It is actually creating the Docker image of this app.
+
+48
+00:04:39,800 --> 00:04:45,800
+ And also creating a line X based Docker container that will host this app's image.
+
+49
+00:04:45,800 --> 00:04:49,800
+ Now, the task is completed.
+
+50
+00:04:49,800 --> 00:04:57,800
+ If you open Docker desktop, you will now see two images created on the Docker server.
+
+51
+00:04:57,800 --> 00:05:00,800
+ The first one is tsp.net.
+
+52
+00:05:00,800 --> 00:05:06,800
+ 10.0 image which is downloaded from Azure container registry.
+
+53
+00:05:06,800 --> 00:05:11,800
+ This registry is also known as Microsoft container registry.
+
+54
+00:05:11,800 --> 00:05:14,800
+ Shortform MCR.
+
+55
+00:05:14,800 --> 00:05:18,800
+ Second image is the apps image which Docker has created.
+
+56
+00:05:18,800 --> 00:05:22,800
+ The image name is kept same as the apps name.
+
+57
+00:05:22,800 --> 00:05:28,800
+ Now go to the container section where you will find a new container.
+
+58
+00:05:28,800 --> 00:05:31,800
+ Having the name first Docker app.
+
+59
+00:05:31,800 --> 00:05:37,800
+ This container is actually hosting our.net apps image.
+
+60
+00:05:37,800 --> 00:05:42,800
+ Visual Studio has lots of inbuilt Docker features.
+
+61
+00:05:42,800 --> 00:05:46,800
+ And I should explain them to you now.
+
+62
+00:05:46,800 --> 00:05:51,800
+ On the output window select container tools.
+
+63
+00:06:01,800 --> 00:06:07,800
+ Here you will see the different task which Docker has performed.
+
+64
+00:06:07,800 --> 00:06:23,800
+ Like pulling.net 10.0 image from MCR starting containers, creating image layers and setting the whole image of the.net app.
+
+65
+00:06:31,800 --> 00:06:47,800
+ Finally, there is a Docker run command which is creating the Docker container for running the.net apps image.
+
+66
+00:06:47,800 --> 00:07:05,800
+ On visual studio me know you will also find a new container Docker file option which will enable you to start the Docker container from visual studio itself.
+
+67
+00:07:05,800 --> 00:07:08,800
+ Click this option to run the app.
+
+68
+00:07:17,800 --> 00:07:44,800
+ Visual Studio opens the container window showing the container and image of this app.
+
+69
+00:07:44,800 --> 00:07:55,800
+ Congratulations you can now see the app is hosted from a Docker container and it's working correctly.
+
+70
+00:07:55,800 --> 00:08:01,800
+ Also, you will see environment variables.
+
+71
+00:08:01,800 --> 00:08:20,800
+ Ports, volumes, logs, etc.
+
+72
+00:08:20,800 --> 00:08:41,800
+ Actually, it has switched all the details from Docker desktop.
+
+73
+00:08:41,800 --> 00:08:54,800
+ Now open Docker desktop then click the container name.
+
+74
+00:08:54,800 --> 00:09:14,800
+ You will see the logs, files, stats and other informations which you already saw on visual studio.
+
+75
+00:09:14,800 --> 00:09:28,800
+ On the exe tab you can run line X commands like ls which list all the files and folders inside the container.
+
+76
+00:09:28,800 --> 00:09:35,800
+ Also find the ports of the host machine and container ports.
+
+77
+00:09:35,800 --> 00:09:48,800
+ These ports are actually listed on the Docker file.
+
