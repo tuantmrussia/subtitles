@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:08,960
+ This is our Dockerize.net app. When we click the run button on Visual Studio, while
+
+2
+00:00:08,960 --> 00:00:15,920
+ selection is container bracket, Dockerfile, the Visual Studio is building the image of
+
+3
+00:00:15,920 --> 00:00:24,520
+ the app and running a container with this image. Let us run this app on Visual Studio by
+
+4
+00:00:24,520 --> 00:00:54,480
+ clicking the run button. You can see the container is created and
+
+5
+00:00:54,480 --> 00:01:04,320
+ now the app is available on the browser. Here everything is done by
+
+6
+00:01:04,320 --> 00:01:12,840
+ Visual Studio itself and you have noticed we did not run even a single Docker
+
+7
+00:01:12,840 --> 00:01:30,080
+ command by ourselves. Check Docker desktop. Here you can see the image of the
+
+8
+00:01:30,080 --> 00:01:37,880
+ .net app. The image name is first Docker app in small letters. The container name
+
+9
+00:01:37,880 --> 00:01:45,080
+ is first Docker app in capital letters. Now we are going to do each of these
+
+10
+00:01:45,080 --> 00:01:52,280
+ tasks manually without taking the help of Visual Studio. We will be building
+
+11
+00:01:52,280 --> 00:01:57,320
+ the image by Docker build command and then will run a container for this
+
+12
+00:01:57,320 --> 00:02:04,720
+ image by Docker junk command. First right click on project name on
+
+13
+00:02:04,720 --> 00:02:17,400
+ solution explorer and select open in file explorer. This is the location of the
+
+14
+00:02:17,400 --> 00:02:23,040
+ app. You can see there is a Docker file. Now right click on the empty space and
+
+15
+00:02:23,040 --> 00:02:30,040
+ select open in terminal option. This will open the PowerShell window. You can
+
+16
+00:02:30,040 --> 00:02:36,640
+ also do the same thing on command prompt window. Now we close visual
+
+17
+00:02:36,640 --> 00:02:49,320
+ studio. Move to Docker desktop and delete the image of the app. We will be
+
+18
+00:02:49,320 --> 00:03:06,520
+ building the image manually with Docker commands. Now on PowerShell type Docker
+
+19
+00:03:06,520 --> 00:03:18,520
+ space build space dash T give name of this image anything. I choose fda which
+
+20
+00:03:18,520 --> 00:03:32,520
+ stands for first Docker app. Then type dash f which means from and try Docker
+
+21
+00:03:32,520 --> 00:03:44,520
+ file then give a space and type dot the dot specifies the location of Docker
+
+22
+00:03:44,520 --> 00:03:50,400
+ file which is the directory we are currently in. This is the current directory
+
+23
+00:03:50,400 --> 00:04:07,800
+ right plus enter to build this image wait for one minute to build this image
+
+24
+00:04:20,400 --> 00:04:43,200
+ you can see the image is built and we can find out the name of the image on
+
+25
+00:04:43,200 --> 00:04:56,120
+ Docker desktop. Now we create a container by Docker run command type
+
+26
+00:04:56,120 --> 00:05:24,120
+ Docker space run space dash dash name. After that give a space and then write the name of the container. You can choose any name. I write Fdac in capital letters. This will mean first Docker app container.
+
+27
+00:05:26,120 --> 00:05:40,120
+ Then give space dash p which sets the host port mapping to container port. Ghost port can be anything on your machine like
+
+28
+00:05:40,120 --> 00:06:08,120
+ put T56000 etc. The container port is given on the Docker file open Docker file on node pad.
+
+29
+00:06:08,120 --> 00:06:37,120
+ Then type colon and after that type 80 80 which is the port on the container. So this means we will open local host colon
+
+30
+00:06:37,120 --> 00:06:49,120
+ 5001 on our browser then the request is mapped to the container 80 80 port and then we will access our
+
+31
+00:06:49,120 --> 00:07:00,120
+ Dockerized app on the browser. After that give a space and then type fda which is the name of the image. Now press enter
+
+32
+00:07:00,120 --> 00:07:13,120
+ Docker will create the container and you can see the container is created and there is a message now
+
+33
+00:07:13,120 --> 00:07:26,120
+ listening on http colon 80 80. On Docker desktop DL is an image and this is the container of the image which we have created. We can now open the app
+
+34
+00:07:26,120 --> 00:07:50,120
+ on Chrome browser. On the address bar type local host colon 5001 and press enter. This is the app and it's opening correctly
+
+35
+00:07:50,120 --> 00:07:59,120
+ on the browser and everything is working properly. Congratulations. It is a great achievement for all of us who have done
+
+36
+00:07:59,120 --> 00:08:16,120
+ this part and have successfully dockerized the dotnet app. In case you are facing any problem then rewind this lecture and try to find out the things which you have not done correctly. You can also take
+
+37
+00:08:16,120 --> 00:08:35,120
+ by typing the error messages which you may be getting. Now on PowerShell you can shut down this app by pressing Ctrl+C.
+
+38
+00:08:35,120 --> 00:08:51,120
+ Refresh the browser and the app is not opening because the container is not running the container is now in exited state.
+
+39
+00:08:51,120 --> 00:09:11,120
+ On PowerShell type dockerts and press enter you will not see any containers since it only shows the running containers. The container running the dotnet apps image is currently in exited state.
+
+40
+00:09:11,120 --> 00:09:31,120
+ So it is not showing. Now type dockerts followed by dash dash all flag. This will show every container on the docker server. This is the containers ID and the image it is holding.
+
+41
+00:09:31,120 --> 00:09:53,120
+ We can see the logs on a container by docker logs command. This way we can debug if anything is not working properly in the container. Type docker logs followed by the container ID or container name. And here are the logs of the container.
+
+42
+00:10:01,120 --> 00:10:30,120
+ We can also run a Linux bus session in the container. Command is docker exe dash it stands for interactive then dash view root which is doing.
+
+43
+00:10:30,120 --> 00:10:49,120
+ Which is the root user in Linux then paste the container ID. Followed by bash and press enter. Here we get error that says the container is not running.
+
+44
+00:10:49,120 --> 00:11:16,120
+ Let's run the container on the docker desktop. Now cry again successful this time. We are now inside the container with the bass session open.
+
+45
+00:11:16,120 --> 00:11:44,120
+ Here we can type Linux commands like lscd dot dot etc.
+
+46
+00:11:44,120 --> 00:11:51,120
+ In the end we can exit from the bass session by exit command.
+
+47
+00:11:51,120 --> 00:12:11,120
+ Before we end this lecture that is discussed the docker detached mode docker detached mode specified by dash deflag allows container to run in the background without occupying the command prompt.
+
+48
+00:12:11,120 --> 00:12:24,120
+ We can see if we create a container the command prompt or the PowerShell or terminal is occupied and we can't do anything.
+
+49
+00:12:24,120 --> 00:12:45,120
+ We can use the detached mode when running any container to solve this problem. First delete the container.
+
+50
+00:12:45,120 --> 00:13:06,120
+ Now we run the same docker come on and this time add the dash deflag after the container name. Now you can see the container is running and the PowerShell is unoccupied.
+
+51
+00:13:06,120 --> 00:13:16,120
+ We can run the DIR command and see if it is showing all the directories.
+
