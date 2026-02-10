@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:13,100
+ So, the next topic, we are going to see else as tongue using the process working.
+
+2
+00:00:13,100 --> 00:00:20,460
+ So, we are going to use one of the external tool that has been already in a GitHub repo.
+
+3
+00:00:20,460 --> 00:00:27,760
+ It is a, it was developed from offensive Panda. The name of the tool was like shadow dumpers.
+
+4
+00:00:27,760 --> 00:00:31,860
+ So, you need to download this and you need to compile this program.
+
+5
+00:00:31,860 --> 00:00:35,960
+ So, after compilation, you will be getting a shadowdumper.exe.
+
+6
+00:00:35,960 --> 00:00:44,560
+ So, there is, yeah, there is a huge step to compile this program.
+
+7
+00:00:44,560 --> 00:00:49,360
+ So, if you did some Google, it will be easy to compile.
+
+8
+00:00:49,360 --> 00:00:55,160
+ And I am not teaching how to compile that program in a evo way, ok.
+
+9
+00:00:55,160 --> 00:00:59,760
+ Let me explain the shadow dumper technique basically, ok.
+
+10
+00:00:59,760 --> 00:01:06,760
+ So, I already said, else as one of sensitive process, the EDRs and anti-verse software,
+
+11
+00:01:06,760 --> 00:01:10,160
+ we will be looking into the else as process.
+
+12
+00:01:10,160 --> 00:01:16,560
+ So, when you try to access the else as, so, automatically the anti-verse program,
+
+13
+00:01:16,560 --> 00:01:24,560
+ our EDRs, it will be catching you and it will be terminating you from accessing right.
+
+14
+00:01:24,560 --> 00:01:28,760
+ So, there is a method to bypass that, ok.
+
+15
+00:01:28,760 --> 00:01:38,860
+ So, if you, if you able to clone the else as, ok, using some kind of APA function RTL clone,
+
+16
+00:01:38,860 --> 00:01:42,860
+ like this one, RTL create process reflection APA, ok.
+
+17
+00:01:42,860 --> 00:01:52,660
+ So, if you can able to clone the else as, ok and if, so after cloning another else as,
+
+18
+00:01:52,660 --> 00:01:56,260
+ you can, you can access the cloned else as, ok.
+
+19
+00:01:56,260 --> 00:02:01,960
+ So, let us take an example, there is an else as was running and another else as has been cloned.
+
+20
+00:02:01,960 --> 00:02:07,960
+ So, you were not accessing the initial else as the sensitive process, which was looking
+
+21
+00:02:07,960 --> 00:02:16,160
+ by EDRs and AVs, so rather than you are accessing your, your dumping a cloned else as,
+
+22
+00:02:16,160 --> 00:02:17,160
+ ok.
+
+23
+00:02:17,160 --> 00:02:22,160
+ So, basically there is a two else as now and you are, you are dumping the cloned else
+
+24
+00:02:22,160 --> 00:02:26,560
+ as and you will be getting a crunch else from the else as, ok.
+
+25
+00:02:26,560 --> 00:02:29,960
+ So, this will be done easily.
+
+26
+00:02:29,960 --> 00:02:36,560
+ So, shadow number is an advanced tool to dump, to work with an else as, ok.
+
+27
+00:02:36,560 --> 00:02:40,560
+ So, very, very, very good tools for penetration testing environment.
+
+28
+00:02:40,560 --> 00:02:57,360
+ Let me show you how to do that, let me go to my shadow dumper program, which I have already
+
+29
+00:02:57,360 --> 00:03:27,320
+ compiled, here it is, you can see the tool here.
+
+30
+00:03:27,320 --> 00:03:56,520
+ So, let me copy this path, let me open a CMD, give me some stick, ok, let me open
+
+31
+00:03:56,520 --> 00:04:05,320
+ the command prompt and let me go to the path D5, ah.
+
+32
+00:04:05,320 --> 00:04:13,000
+ So, when I execute the shadow dumper, it was asking a few of the options.
+
+33
+00:04:13,000 --> 00:04:20,920
+ So, this is the process working technique, we are going to use a process working the option
+
+34
+00:04:20,920 --> 00:04:21,920
+ number 5.
+
+35
+00:04:21,920 --> 00:04:29,280
+ So, I already said, the process working is like a cloning process and after the cloning
+
+36
+00:04:29,280 --> 00:04:31,680
+ you are dumping a clone the process, ok.
+
+37
+00:04:31,680 --> 00:04:34,720
+ So, let me proceed with 5.
+
+38
+00:04:34,720 --> 00:04:43,560
+ So, now, got a handle of mirrored else as, so already the else as get mirrored and we got
+
+39
+00:04:43,560 --> 00:05:07,400
+ a handle, let you some time action to dump an else as, so dump file will be saved under
+
+40
+00:05:07,400 --> 00:05:28,520
+ the C public directory, the user's public till the dump was happening, that wait for some
+
+41
+00:05:28,520 --> 00:05:29,520
+ time.
+
+42
+00:05:29,520 --> 00:05:42,020
+ So, now, you can see we have the dump has been created and it was saved inside the public
+
+43
+00:05:42,020 --> 00:05:43,020
+ directory.
+
+44
+00:05:43,020 --> 00:05:47,820
+ So, you can see the file creation time 2020 and you can see the size of the file is
+
+45
+00:05:47,820 --> 00:05:58,320
+ like 55 megabytes of data, so you can verify the date here, it is up to 20 and it is 55
+
+46
+00:05:58,320 --> 00:06:03,640
+ megabytes of data has been here and it was in a raw file format, right.
+
+47
+00:06:03,640 --> 00:06:12,380
+ So, no, don't worry about the different file extension that has been saved but our, but
+
+48
+00:06:12,380 --> 00:06:21,080
+ our target is like dumping else as without any kind of detections or any kind of, yeah,
+
+49
+00:06:21,080 --> 00:06:25,040
+ any kind of detection from the antivirus or edir platform.
+
+50
+00:06:25,040 --> 00:06:31,860
+ So, now we got successfully dumped and dumped an else as from you by using the process
+
+51
+00:06:31,860 --> 00:06:37,880
+ forking technique and you can see finally the cloned else as process has been terminated
+
+52
+00:06:37,880 --> 00:06:44,240
+ automatically by this tool, that's where I said the shadow dump version of very, very
+
+53
+00:06:44,240 --> 00:06:49,200
+ helpful tool to dump else as without any kind of detections, okay.
+
+54
+00:06:49,200 --> 00:06:55,000
+ So, I hope we, you have a clear understanding about the process forking, the process
+
+55
+00:06:55,000 --> 00:07:04,080
+ forking is basically we are using the RTL create reflection, sorry, create process reflection
+
+56
+00:07:04,080 --> 00:07:09,760
+ API and we are cloning another one of them process and after cloning that process and
+
+57
+00:07:09,760 --> 00:07:19,240
+ we are dumping that clone the process, okay, that's the thing we are using, okay.
+
+58
+00:07:19,240 --> 00:07:29,760
+ Yes, that's all about the video, let's hop off and we'll meet you in our next video guys,
+
+59
+00:07:29,760 --> 00:07:30,360
+ thank you, bye.
+
