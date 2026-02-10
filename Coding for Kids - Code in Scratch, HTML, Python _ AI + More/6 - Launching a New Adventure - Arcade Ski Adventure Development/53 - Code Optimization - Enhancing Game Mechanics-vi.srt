@@ -1,0 +1,352 @@
+1
+00:00:00,080 --> 00:00:02,360
+Trò chơi của chúng tôi bắt đầu hình thành.
+
+2
+00:00:02,360 --> 00:00:08,750
+Nhưng trước khi chúng ta tiến lên phía trước và khi chúng ta tiếp tục phát triển, chúng ta cần phải đảm bảo rằng mã của chúng ta luôn luôn mạnh mẽ và
+
+3
+00:00:08,750 --> 00:00:09,590
+Không có vấn đề gì.
+
+4
+00:00:09,590 --> 00:00:14,930
+Và đôi khi bạn sẽ chỉ thấy những sai lầm này khi chúng ảnh hưởng đến trò chơi của bạn theo một cách nào đó.
+
+5
+00:00:14,930 --> 00:00:19,310
+Nhưng bạn càng lập trình, bạn sẽ càng hiểu làm thế nào để giữ cho mã của bạn trong sạch.
+
+6
+00:00:20,270 --> 00:00:24,890
+Nhưng điều đó có nghĩa là, hãy nhìn vào mã của chúng tôi và xem chúng tôi có thể cải thiện nó ở đâu.
+
+7
+00:00:25,340 --> 00:00:31,820
+Vì vậy, đầu tiên nhìn vào cây của chúng tôi ở đây chúng tôi có này cứng mã chờ đợi một giây và đó quyết định
+
+8
+00:00:31,820 --> 00:00:34,370
+tỷ lệ cây cối sinh sản nhanh như thế nào.
+
+9
+00:00:34,370 --> 00:00:40,850
+Và nếu bạn nhớ từ trước, có giá trị cứng không phải luôn luôn là một ý tưởng tốt, đặc biệt nếu
+
+10
+00:00:40,850 --> 00:00:44,390
+chúng tôi muốn sửa đổi và nâng cấp trò chơi trong tương lai.
+
+11
+00:00:44,720 --> 00:00:49,160
+Vì vậy, thay vì có giá trị mã cứng này, hãy tạo ra một biến cho nó.
+
+12
+00:00:49,960 --> 00:00:52,810
+Vì vậy, hãy chỉ gọi biến này là một tỷ lệ sinh sản.
+
+13
+00:00:53,420 --> 00:00:56,960
+Và chúng ta có thể chuyển nó vào phần đầu vào chờ đợi một giây.
+
+14
+00:00:57,410 --> 00:01:01,820
+Bây giờ, khi tỷ lệ sinh sản của chúng ta là 0.
+
+15
+00:01:02,150 --> 00:01:09,470
+Nhưng trước khi chúng ta đặt biến này thành một giá trị khác như trước đây, hãy tạo ra một spite gọi là biến
+
+16
+00:01:09,470 --> 00:01:12,200
+mà chúng ta có thể sử dụng để kiểm soát tất cả các biến số toàn cầu của chúng ta.
+
+17
+00:01:12,200 --> 00:01:15,590
+Vì vậy, tôi sẽ chỉ chọn ngẫu nhiên một spite như trái banh này.
+
+18
+00:01:16,320 --> 00:01:20,610
+Thay tên nó thành biến số và chỉ cần xoá tất cả các trang phục của nó.
+
+19
+00:01:21,300 --> 00:01:28,410
+Được rồi, bây giờ chúng tôi có thể mang lại cho một khi bắt đầu click chuột, và sau đó chúng tôi có thể thiết lập biến tỷ lệ sản sinh của chúng tôi một
+
+20
+00:01:28,800 --> 00:01:30,000
+Như vậy.
+
+21
+00:01:30,560 --> 00:01:33,320
+Và nếu chúng ta đánh bóng, bạn sẽ thấy nó hiệu quả.
+
+22
+00:01:33,800 --> 00:01:36,590
+Vì vậy, hãy xem nơi nào khác chúng ta có thể cải thiện.
+
+23
+00:01:36,920 --> 00:01:42,860
+Vì vậy, nhìn vào các cầu thủ chính của chúng tôi spite, bạn sẽ thấy rằng chúng tôi không bao giờ đặt giá trị của hướng di chuyển của chúng tôi
+
+24
+00:01:42,860 --> 00:01:44,090
+lúc bắt đầu trò chơi.
+
+25
+00:01:44,090 --> 00:01:50,420
+Vì vậy, về cơ bản bạn sẽ thấy rằng nếu chúng tôi trượt sang trái, sau đó dừng trò chơi và sau đó bắt đầu trò chơi, của chúng tôi
+
+26
+00:01:50,420 --> 00:01:52,190
+Người chơi vẫn đang trượt tuyết bên trái.
+
+27
+00:01:52,740 --> 00:01:57,900
+Vì vậy, chúng tôi có thể sửa chữa điều này một cách nhanh chóng bằng cách di chuyển trở lại của chúng tôi biến sợi và thiết lập hướng di chuyển của chúng tôi
+
+28
+00:01:57,900 --> 00:01:58,590
+đến số không.
+
+29
+00:01:58,920 --> 00:01:59,130
+Ừ.
+
+30
+00:01:59,160 --> 00:01:59,820
+Cố định.
+
+31
+00:02:00,860 --> 00:02:08,090
+Bây giờ, điều tiếp theo bạn có thể nhận thấy là làm thế nào cầu thủ của chúng tôi có thể di chuyển với tốc độ điên rồ trái và
+
+32
+00:02:08,090 --> 00:02:10,100
+Phải, nếu chúng ta chịu đựng đủ lâu.
+
+33
+00:02:10,620 --> 00:02:14,040
+Chúng ta cần một cách để hạn chế vận động tối đa.
+
+34
+00:02:14,570 --> 00:02:21,560
+Vì vậy, nếu chúng tôi đi đến cầu thủ spite, bạn sẽ thấy mã này ở đây rằng nếu chúng tôi click trái hoặc phải, chúng tôi chỉ cần
+
+35
+00:02:21,560 --> 00:02:24,950
+liên tục thay đổi hướng di chuyển 1 hoặc -1.
+
+36
+00:02:25,340 --> 00:02:27,140
+Vì vậy, chúng ta cần đặt giới hạn cho điều này.
+
+37
+00:02:27,470 --> 00:02:30,410
+Đây là một thử thách nhỏ đối với bạn.
+
+38
+00:02:30,620 --> 00:02:37,130
+Dừng video lại và cố gắng xem liệu bạn có thể ngăn hướng chuyển động này trở nên quá cao.
+
+39
+00:02:37,160 --> 00:02:37,520
+Phải.
+
+40
+00:02:37,520 --> 00:02:39,740
+Dừng lại ngay và xem liệu anh có thể tìm ra không.
+
+41
+00:02:40,960 --> 00:02:42,550
+Vậy anh nói đúng không?
+
+42
+00:02:42,910 --> 00:02:45,580
+Hãy xem cách nó có thể được thực hiện.
+
+43
+00:02:45,580 --> 00:02:48,910
+Và hãy nhớ rằng, trong chương trình, thường có rất nhiều cách để làm điều gì đó.
+
+44
+00:02:48,910 --> 00:02:54,160
+Vì vậy, nếu bạn quản lý để giải quyết vấn đề này nhưng giải pháp của bạn không giống với tôi, đó không phải là
+
+45
+00:02:54,160 --> 00:02:54,760
+một vấn đề.
+
+46
+00:02:54,790 --> 00:03:01,300
+Tuy nhiên, bí quyết là tìm ra giải pháp đơn giản nhưng mạnh nhất cho các vấn đề.
+
+47
+00:03:01,720 --> 00:03:09,670
+Vì vậy, ở đây chúng tôi nói nếu mũi tên trái nhấp chuột, tôi sẽ thêm một nếu điều kiện mà sẽ kiểm tra
+
+48
+00:03:09,670 --> 00:03:12,880
+Đảm bảo giá trị không quá cao trước khi tăng lên.
+
+49
+00:03:13,390 --> 00:03:16,480
+Chúng tôi cũng có thể thêm một nếu điều kiện để sai lầm.
+
+50
+00:03:17,820 --> 00:03:25,110
+Vì vậy, những gì chúng tôi muốn kiểm tra là nếu hướng di chuyển là lớn hơn 18, mà chúng tôi sẽ có được
+
+51
+00:03:25,110 --> 00:03:26,190
+Tốc độ tối đa.
+
+52
+00:03:26,190 --> 00:03:31,140
+Và tất nhiên -18 sẽ là tốc độ tối đa của chúng tôi và hướng khác.
+
+53
+00:03:31,290 --> 00:03:35,250
+Và kiểm tra hướng di chuyển có ít hơn -18 không.
+
+54
+00:03:35,250 --> 00:03:36,930
+Chỉ vậy thôi.
+
+55
+00:03:37,170 --> 00:03:38,670
+Và nếu chúng ta chơi trò này.
+
+56
+00:03:39,300 --> 00:03:41,250
+Điều đó không hoàn toàn đúng.
+
+57
+00:03:41,250 --> 00:03:42,870
+Và ở đây chúng ta có một vấn đề đơn giản.
+
+58
+00:03:42,870 --> 00:03:48,990
+Về cơ bản, chúng tôi chỉ cho phép người chơi sử dụng hướng mũi tên nếu họ đang di chuyển ở nhiều hơn
+
+59
+00:03:48,990 --> 00:03:50,550
+18 hay ít hơn 18.
+
+60
+00:03:51,060 --> 00:03:58,410
+Và chúng tôi muốn nó ngược lại với điều này, chắc chắn người chơi không thể đi nhanh hơn 18 hoặc -18.
+
+61
+00:03:58,410 --> 00:04:05,640
+Vì vậy, đơn giản là tất cả những gì chúng ta cần làm là đi đến những nhà điều hành, nắm lấy nút thắt này và gắn chúng vào mỗi trong số này
+
+62
+00:04:05,640 --> 00:04:06,510
+nếu điều kiện.
+
+63
+00:04:08,770 --> 00:04:09,610
+Như thế.
+
+64
+00:04:10,060 --> 00:04:11,650
+Bây giờ thử lại lần nữa.
+
+65
+00:04:11,980 --> 00:04:13,960
+Được rồi, tốt hơn nhiều rồi.
+
+66
+00:04:14,800 --> 00:04:21,310
+Và bây giờ, trước khi chúng tôi đóng cửa trò chơi này, hãy nhanh chóng thêm một số chức năng để cây của chúng tôi sinh sản
+
+67
+00:04:21,310 --> 00:04:22,720
+Với tốc độ ngày càng tăng.
+
+68
+00:04:23,490 --> 00:04:29,760
+Và để làm điều này, chúng tôi sẽ sử dụng một giải pháp nhanh chóng và bẩn, đó là tất cả những gì chúng tôi đã cố gắng
+
+69
+00:04:29,760 --> 00:04:31,260
+trong bài học này.
+
+70
+00:04:31,260 --> 00:04:34,710
+Nhưng cái này sẽ giúp anh thấy mật mã xấu trông như thế nào.
+
+71
+00:04:34,710 --> 00:04:39,480
+Và chúng tôi cũng sẽ xem xét một giải pháp tốt hơn nhiều trong một bài học trong tương lai.
+
+72
+00:04:39,990 --> 00:04:45,630
+Vì vậy, di chuyển sang các biến của chúng tôi ở đây, hãy lấy một Onstart.
+
+73
+00:04:46,340 --> 00:04:54,350
+Và tất cả những gì chúng tôi sẽ làm là bắt lấy một chờ đợi và sau đó lấy một biến cố và thay đổi đầu vào của nó để sinh sản
+
+74
+00:04:54,350 --> 00:04:57,860
+và sau đó thay đổi sự chờ đợi thành 15 giây.
+
+75
+00:04:57,890 --> 00:04:59,300
+Giờ đến phần bẩn thỉu.
+
+76
+00:04:59,420 --> 00:05:08,090
+Tóm lấy khu này, đánh bản sao, nắm lấy nó lần nữa ngay từ đầu, và lặp lại lần nữa và một lần nữa.
+
+77
+00:05:08,710 --> 00:05:16,570
+Bây giờ chúng ta sẽ từ từ giảm tỷ lệ sinh sản, và chúng ta sẽ làm điều này cho đến khi chúng ta nhận được 0.3 bắt đầu
+
+78
+00:05:16,570 --> 00:05:17,410
+từ một người.
+
+79
+00:05:17,500 --> 00:05:18,400
+Chỉ vậy thôi.
+
+80
+00:05:19,650 --> 00:05:23,070
+Vì vậy, bạn có thể thấy rằng nhanh chóng và dễ dàng.
+
+81
+00:05:23,520 --> 00:05:27,840
+Nhưng như các bạn đã biết, đây chắc chắn không phải là một mật mã khô.
+
+82
+00:05:27,840 --> 00:05:29,400
+Và chúng tôi lặp lại chính mình.
+
+83
+00:05:29,400 --> 00:05:33,810
+Và đoạn mã này rất khó để nâng cấp và duy trì như các bạn đã biết.
+
+84
+00:05:33,810 --> 00:05:36,480
+Vì vậy, chúng ta sẽ xem xét một giải pháp tốt hơn rất sớm.
+
+85
+00:05:36,480 --> 00:05:39,630
+Nhưng bây giờ, nếu chúng ta thử.
+
+86
+00:05:40,110 --> 00:05:40,410
+Mm.
+
+87
+00:05:40,620 --> 00:05:47,250
+Bạn sẽ nhận thấy cứ mỗi 15 giây, tỉ lệ sinh sản của chúng ta giảm dần và cây cối bắt đầu mọc nhanh hơn.
+
+88
+00:05:47,280 --> 00:05:48,180
+Tuyệt.
+
