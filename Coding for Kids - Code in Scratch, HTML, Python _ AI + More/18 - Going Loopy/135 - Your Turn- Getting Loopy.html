@@ -1,0 +1,7 @@
+<p>Bonus Question:</p><p>Instead of printing the packing items, as you did in question 3, store each item the user inputs into a list. Once the user has input all their items, and typed done, the full list should be printed.</p><p>Hint1: Start by creating an empty list to which all the packing items will be added. This is done by eg- packingList = []</p><p>Hint2: In order to add items to the empty list instead of printing them type this statement (in replace of the print statement): packingList.append(input("Type in an item for your packing list")). This will add another item to the end of packingList.</p><pre class="prettyprint linenums">packingList = []
+myItem = ""&nbsp; &nbsp;&nbsp;
+while myItem != "done":
+&nbsp; &nbsp; myItem = input("Type in an item for your packing list: ")
+&nbsp; &nbsp; packingList.append(myItem)
+print(packingList)
+# See if you can think of another way to write this so "done" is not added to the list.</pre>
