@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:07,100
+Chào các bạn và chào mừng đến với buổi học đầu tiên. Trong hướng dẫn này chúng tôi sẽ tập trung vào cài đặt
+
+2
+00:00:07,100 --> 00:00:13,560
+của ALMA, hệ điều hành Linux, trong đó chúng tôi sẽ cài đặt cơ sở dữ liệu, chúng tôi sẽ điều trị
+
+3
+00:00:13,560 --> 00:00:22,840
+Nó là một máy phục vụ web, máy phục vụ lmSQL và chúng tôi cũng sẽ cài đặt Docker và thực hiện Terraform
+
+4
+00:00:22,840 --> 00:00:32,120
+và những dụng cụ khác của DevOps. Vì vậy, điều đầu tiên ở đây để xem xét là đặc điểm
+
+5
+00:00:32,120 --> 00:00:38,120
+cho máy ảo. Ở đây cho ví dụ nếu bạn có thể thấy bạn có một máy tính mà
+
+6
+00:00:38,120 --> 00:00:46,560
+Nó được gọi là "atefer". Tốc độ này là hệ thống truy cập X, cần thiết hoặc khuyến khích
+
+7
+00:00:46,560 --> 00:00:59,940
+có bốn tỉ phú bộ nhớ, hai bộ xử lý và 60 đĩa cứng SSD. Vậy
+
+8
+00:00:59,940 --> 00:01:11,900
+Ở đây chúng tôi sẽ cài đặt, chúng tôi cần phải xác định đầu tiên một máy ảo mới và thời gian này chúng tôi cần
+
+9
+00:01:11,900 --> 00:01:23,280
+để chọn, okay là isofile, chúng tôi đã tải xuống isofile của ALMA Linux, ALMA Linux
+
+10
+00:01:23,280 --> 00:01:33,540
+Chúng tôi sẽ cài đặt Docker trên nó, chúng tôi sẽ thực hiện một số phòng thí nghiệm sau đó liên quan đến Docker MyQL
+
+11
+00:01:33,540 --> 00:01:43,360
+và chúng tôi sử dụng các chiến dịch dev khác trên nó, vì vậy chúng tôi cần đầu tiên để chọn nó, okay và tất nhiên VM
+
+12
+00:01:43,360 --> 00:01:49,840
+nơi không thể phát hiện hệ điều hành nào trong ảnh đĩa này, nên hệ thống Linux này
+
+13
+00:01:49,840 --> 00:01:58,760
+là rất giống với thực tế Linux đỏ mũ, okay đâu là Linux Red hat, nó là Red Hat
+
+14
+00:01:58,760 --> 00:02:05,400
+Enterprise phiên bản 9, nó rất giống với nó, nó thực sự là người kế nhiệm nó, vì vậy
+
+15
+00:02:05,400 --> 00:02:17,380
+Chúng ta sẽ chọn nó đầu tiên, được rồi và hãy để tôi đổi tên các máy ảo, ví dụ
+
+16
+00:02:17,380 --> 00:02:33,100
+Đây là Linux ALMA, và hãy chọn kho lưu trữ, chúng ta có kho bên ngoài, vì vậy chúng ta cần phải đặt
+
+17
+00:02:33,100 --> 00:02:47,120
+Nó ở đây và làm cho nó ví dụ, làm cho một thư mục mới và chúng tôi gọi nó ALMA Linux, okay
+
+18
+00:02:47,120 --> 00:02:59,120
+bằng cách nó là phiên bản mà nó có thể sau đó sau khi phân hủy các trung tâm hoạt động
+
+19
+00:02:59,120 --> 00:03:08,320
+Hệ thống, vì vậy chúng tôi sử dụng nó, okay đây là lưu trữ, okay và click vào tiếp theo và ở đây chúng tôi sẽ thiết lập
+
+20
+00:03:08,320 --> 00:03:14,660
+khuyến nghị nơi Mạng cứng như sau, chúng tôi sẽ lưu trữ nó như một đơn
+
+21
+00:03:14,660 --> 00:03:23,400
+Tập tin và chúng tôi sẽ đặt nó thành 100 GB, okay và hãy nghe phần cứng tùy chỉnh, chúng tôi sẽ
+
+22
+00:03:23,400 --> 00:03:29,920
+thiết lập nó thực sự để đặc điểm đề nghị có nghĩa là ở đây bộ nhớ, chúng tôi sẽ thực hiện
+
+23
+00:03:29,920 --> 00:03:41,080
+Nó là một cái vừa phải, không quá cao, không quá thấp, nên chúng tôi đặt nó vào kích thước này, ví dụ như,
+
+24
+00:03:41,080 --> 00:03:53,560
+Vì vậy, nó là khoảng tám Gigabyte, chúng tôi vẫn sẽ sử dụng hai bộ xử lý lõi, OK chúng tôi có hai bộ xử lý,
+
+25
+00:03:53,560 --> 00:04:01,360
+Số nhân, chúng tôi sẽ sử dụng hai, okay và số lượng lõi cho xử lý nó là một và
+
+26
+00:04:01,360 --> 00:04:09,480
+Ở đây chúng tôi sẽ sử dụng cầu, okay vì vậy cây cầu này sẽ được sử dụng như một kết nối, để của chúng tôi
+
+27
+00:04:09,480 --> 00:04:18,720
+Cây cầu và máy móc sẽ được kết nối đến mạng Wi-Fi của chúng tôi ở đây, okay và chúng tôi đã chọn
+
+28
+00:04:18,720 --> 00:04:25,880
+dung lượng ổ cứng, vì vậy chúng tôi thiết lập tất cả các chi tiết đã đề nghị, okay vì vậy chúng tôi sẽ đóng
+
+29
+00:04:25,880 --> 00:04:40,020
+nó, okay và bây giờ chúng ta hãy năng lượng máy ảo này để bắt đầu cài đặt cho các liên kết ALMA,
+
+30
+00:04:40,020 --> 00:04:54,960
+Được rồi, chúng tôi cài đặt các liên kết ALMA, thực sự chúng tôi có đây là phiên bản 9.7 mới nhất, okay,
+
+31
+00:04:54,960 --> 00:05:16,300
+9.6 không làm việc nữa vì vậy chúng tôi cài đặt 9.7, okay vì vậy bây giờ chúng tôi sẽ bắt đầu đồ họa
+
+32
+00:05:16,300 --> 00:05:25,040
+cài đặt giao diện người dùng, chúng tôi sẽ chọn ngôn ngữ cài đặt là tiếng Anh, okay, tiếp tục
+
+33
+00:05:25,040 --> 00:05:44,840
+okay đây là thiết lập mặc định, okay tự động phân vùng được phát hiện, okay đây là một ngôn ngữ
+
+34
+00:05:44,840 --> 00:05:56,920
+hỗ trợ bàn phím, okay vì vậy chúng tôi cần ở đây để làm cho hai hành động mật khẩu chủ vì vậy hãy đầu tiên
+
+35
+00:05:56,920 --> 00:06:25,960
+Đặt mật khẩu gốc
+
+36
+00:06:25,960 --> 00:06:34,440
+OK ở đây chúng tôi đã đặt mật khẩu gốc, vì vậy hãy tạo người dùng chuẩn Ví dụ tên tôi
+
+37
+00:06:34,440 --> 00:06:52,480
+Tôi không còn nữa, chúng ta hãy gõ tên đầy đủ, okay do đó, tên người dùng ở đây là M không còn cho ví dụ và
+
+38
+00:06:52,480 --> 00:07:15,980
+Hãy đặt mật khẩu cho sở thú, bây giờ hãy phân chia hệ thống, okay chúng tôi cài đặt các
+
+39
+00:07:15,980 --> 00:07:45,920
+Hệ điều hành trên ổ cứng này, bạn đưa nó, okay bây giờ chúng tôi có
+
+40
+00:07:45,920 --> 00:07:52,760
+đặt hệ thống của chúng tôi cần được cài đặt, chúng tôi đã đặt sẵn đĩa cứng bây giờ là mật khẩu chủ
+
+41
+00:07:52,760 --> 00:08:08,380
+Mật khẩu người dùng, okay và bây giờ chúng tôi đã sẵn sàng để đi, hãy bắt đầu cài đặt, okay bây giờ chúng tôi
+
+42
+00:08:08,380 --> 00:08:17,540
+đã hoàn thành cài đặt, vì vậy hãy khởi động lại hệ thống bây giờ, hãy tiếp tục video
+
+43
+00:08:17,540 --> 00:08:26,380
+cài đặt mất tối đa 20 phút và sau đó khi bạn khởi động lại nó
+
+44
+00:08:26,380 --> 00:08:37,020
+Hệ thống nên hoạt động, okay bây giờ chúng tôi đã cài đặt hệ thống hãy đăng nhập với các
+
+45
+00:08:37,020 --> 00:08:53,860
+số người dùng, okay như bạn thấy bây giờ hệ thống đã được cài đặt với
+
+46
+00:08:53,860 --> 00:09:01,860
+Bộ gen hoặc được cài đặt bằng phiên bản màn hình nền thực sự tôi đã cài đặt
+
+47
+00:09:01,860 --> 00:09:09,720
+Name
+
+48
+00:09:09,720 --> 00:09:17,220
+cũng là công cụ giao diện đồ hoạ, ví dụ ở đây nếu tôi muốn thay đổi
+
+49
+00:09:17,220 --> 00:09:30,900
+Kết nối đã kết nối, được rồi, chúng ta hãy đi đến kết nối, thiết lập kết nối, OK và ở đây tôi
+
+50
+00:09:30,900 --> 00:09:38,520
+muốn chỉ để đặt địa chỉ IP, nó được thiết lập tự động, với phạm vi này là của chúng tôi
+
+51
+00:09:38,520 --> 00:09:48,660
+Phạm vi Wi-Fi 123 và 168 100 và nó đã từ DHCP địa chỉ mặc định của
+
+52
+00:09:48,660 --> 00:09:56,800
+14 và đây là máy chủ DNS của chúng tôi và đây là đường đi mặc định của chúng tôi, vì vậy ở đây cho
+
+53
+00:09:56,800 --> 00:10:06,840
+Ví dụ nếu tôi nói tôi muốn kiểm tra những gì là mạng nội bộ hoặc cho Wi-Fi của chúng tôi chúng tôi hãy
+
+54
+00:10:06,840 --> 00:10:14,700
+sử dụng IP địa chỉ để đảm bảo ở đây từ các chi tiết chúng tôi có thể thấy nó là từ
+
+55
+00:10:14,700 --> 00:10:24,160
+Cùng phạm vi, vì vậy bây giờ hãy làm cho địa chỉ IP tĩnh, okay chúng ta hãy đi đến phiên bản IP
+
+56
+00:10:24,160 --> 00:10:40,500
+4 chúng tôi không thiết lập nó để tự động nữa, hãy đặt nó là hướng dẫn ở đây 192.68.100, hãy đặt nó đến 20
+
+57
+00:10:40,500 --> 00:10:54,620
+Ví dụ, bây giờ hãy thiết lập mặt nạ subnet 255 257 0, được rồi và hãy thiết lập
+
+58
+00:10:54,620 --> 00:11:04,740
+các cổng để kết nối đến internet, okay và cho DNS chúng tôi sẽ không lấy
+
+59
+00:11:04,740 --> 00:11:13,220
+Địa chỉ tương tự ở đây cho r đem, như bạn có thể thấy ở đây nó đã địa chỉ IP của
+
+60
+00:11:13,220 --> 00:11:30,620
+Bộ định tuyến là 192.168.101 chúng tôi sẽ thiết lập nó là DNS là 888 đó là một Google DNS
+
+61
+00:11:30,620 --> 00:11:43,220
+Địa chỉ IP máy chủ, vậy hãy đặt nó thành hướng dẫn sử dụng, hãy đặt nó vào hướng dẫn và đặt nó ở đây 888, và
+
+62
+00:11:43,220 --> 00:11:54,080
+Hãy áp dụng nó, okay để được áp dụng chúng tôi cần chỉ cần tắt kết nối và
+
+63
+00:11:54,080 --> 00:12:02,300
+hiệu lực nó, và nếu bạn có thể thấy ở đây bạn có thể thấy rằng nó mất địa chỉ IP, đây là tĩnh của chúng tôi
+
+64
+00:12:02,300 --> 00:12:13,060
+Địa chỉ IP, được rồi và đây là DNS toàn cầu của chúng tôi, đây là đường dẫn mặc định ở đây, được rồi bây giờ
+
+65
+00:12:13,060 --> 00:12:19,700
+chúng tôi đã hoàn thành bước đầu tiên, okay với cài đặt chúng tôi đã cài đặt của chúng tôi
+
+66
+00:12:19,700 --> 00:12:29,420
+Malinics, chúng tôi đã cấu hình địa chỉ IP tĩnh trong các phiên chạy tiếp theo của phần 1, chúng tôi
+
+67
+00:12:29,420 --> 00:12:37,860
+sẽ cấu hình mà chúng tôi biết cách thay đổi tên máy và tạo một vài cấu hình cơ bản
+
+68
+00:12:37,860 --> 00:12:44,900
+cho tường lửa và chúng tôi đã cài đặt một số bản cập nhật hệ thống và cài đặt các docker nhưng lần này
+
+69
+00:12:44,900 --> 00:12:53,020
+chúng tôi sẽ không sử dụng giao diện đồ họa người dùng, bây giờ chúng tôi sẽ sử dụng bình luận hoặc dòng chú thích,
+
+70
+00:12:53,020 --> 00:12:54,720
+Cảm ơn.
+
