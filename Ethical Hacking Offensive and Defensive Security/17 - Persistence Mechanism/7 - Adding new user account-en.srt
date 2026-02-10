@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:08,720
+ Welcome to the another video for section, so we are in a persistent section, this is
+
+2
+00:00:08,720 --> 00:00:14,040
+ another side of persistence, so I just teach how to add the registry runkeys,
+
+3
+00:00:14,040 --> 00:00:19,200
+ start off orders, services and schedule tasks, but if you see really a
+
+4
+00:00:19,200 --> 00:00:25,840
+ persistence mechanism for a threat actor, so if you refer in my turn, so there
+
+5
+00:00:25,840 --> 00:00:33,000
+ will be a persistence called create account, okay, so the creating and
+
+6
+00:00:33,000 --> 00:00:38,080
+ modify the system process services or a second secondary one, schedule task,
+
+7
+00:00:38,080 --> 00:00:47,360
+ job, okay, so if you see in my turn techniques and a tactic under a
+
+8
+00:00:47,360 --> 00:00:54,520
+ persistent tactic, there is a technique called create account, okay, so what is
+
+9
+00:00:54,520 --> 00:01:00,840
+ create account and why the threat actor need to create a account, okay, so the
+
+10
+00:01:00,840 --> 00:01:06,200
+ threat actors, the adversaries, they need to maintain their access rights
+
+11
+00:01:06,200 --> 00:01:12,740
+ inside the environment, okay, so when we are adding the schedule task, start
+
+12
+00:01:12,740 --> 00:01:18,880
+ off orders, when we are adding our malicious executable in schedule task or start
+
+13
+00:01:18,880 --> 00:01:27,540
+ off orders, it will execute whenever the user restarting the machine,
+
+14
+00:01:27,540 --> 00:01:33,780
+ right, it will execute whenever the users or a system are
+
+15
+00:01:33,780 --> 00:01:42,820
+ administrator or anyone who restarted or turn on the machine, okay, but if you see now
+
+16
+00:01:42,820 --> 00:01:49,740
+ our administrators account was compromised, right, so we have injected a
+
+17
+00:01:49,740 --> 00:01:56,220
+ process, we did a process injection and we did some activities, right, in
+
+18
+00:01:56,220 --> 00:02:02,540
+ administrator level, okay, so I did not, till now I did not teach how to elevate
+
+19
+00:02:02,540 --> 00:02:08,180
+ the privilege from normal user to the administrator level, you will see in the
+
+20
+00:02:08,180 --> 00:02:12,460
+ privilege escalation section, that was one of the very interesting section, you
+
+21
+00:02:12,460 --> 00:02:15,940
+ will learn a lot of things about the privilege escalation, for your
+
+22
+00:02:15,940 --> 00:02:21,020
+ understanding, I directly jump on to the different savation, once the initial
+
+23
+00:02:21,020 --> 00:02:29,100
+ access was completed, I executed an administrator privilege, right, then I did
+
+24
+00:02:29,100 --> 00:02:35,700
+ for your understanding these things, okay, if you see the create account, the
+
+25
+00:02:35,700 --> 00:02:43,180
+ administrator, sorry, the adversaries or the threat actors will need to maintain
+
+26
+00:02:43,180 --> 00:02:50,300
+ their access, okay, so if they, for example, we compromise the administrator
+
+27
+00:02:50,300 --> 00:02:58,220
+ credentials, if I am a security engineer for that company, what if I disabled the
+
+28
+00:02:58,220 --> 00:03:04,780
+ administrator account or anything, so you will not get enough access, right, so
+
+29
+00:03:04,780 --> 00:03:09,500
+ that's an one of the important things where you need, you need to, you will access
+
+30
+00:03:09,500 --> 00:03:16,140
+ need to be persistent, okay, so that we are creating account, okay, so if you
+
+31
+00:03:16,140 --> 00:03:22,740
+ refer the mitre to maintain access to the victim systems, okay, so this why we
+
+32
+00:03:22,740 --> 00:03:31,260
+ need to, we are going to create a new account in my Windows machine, so you
+
+33
+00:03:31,260 --> 00:03:35,500
+ will not be see, which I'm creating the user which I'm creating in another
+
+34
+00:03:35,500 --> 00:03:41,580
+ section, okay, because I'm going to remove this user, now I am creating, okay, so
+
+35
+00:03:41,580 --> 00:03:54,780
+ let's move to the machine and let me create a new persistence, okay, create
+
+36
+00:03:54,780 --> 00:04:01,900
+ an account, okay, so how to do that, okay, there's a login called the net.exe,
+
+37
+00:04:01,900 --> 00:04:09,980
+ the threat actor will use the net.exe to create a new user, okay, so the command
+
+38
+00:04:09,980 --> 00:04:16,700
+ is so simple, let me zoom in, so that you can easily see, net user net is a
+
+39
+00:04:16,700 --> 00:04:24,860
+ login net.exe, used to do a lot of things like discovery, enumerations, adding
+
+40
+00:04:24,860 --> 00:04:29,980
+ users, adding user to the account manipulation send all, we can do a lot of
+
+41
+00:04:29,980 --> 00:04:37,340
+ things using the net.exe, we are using net.exe to add a new user to maintain
+
+42
+00:04:37,340 --> 00:04:45,020
+ our persistence, okay, in target environment, let add a new user name called the
+
+43
+00:04:45,020 --> 00:04:50,780
+ attacker, so I'm sorry, we will not find this attacker in other sections, I will
+
+44
+00:04:50,780 --> 00:04:58,500
+ totally remove this user from the machines once our experiment get
+
+45
+00:04:58,500 --> 00:05:04,940
+ completed, okay, so I'm adding the net user attacker, attacker is the user name,
+
+46
+00:05:04,940 --> 00:05:14,540
+ and I need to give the password for the attacker, I'm giving the password as the
+
+47
+00:05:14,540 --> 00:05:21,440
+ A, B, C, D, 1, 2, 3, okay, so this is my password, A, B, C, D, 1, 2, 3,
+
+48
+00:05:21,440 --> 00:05:30,820
+ add, and you can use flash, this is a flag you need to do, okay, so basically we are
+
+49
+00:05:30,820 --> 00:05:35,260
+ using net command and we are adding a new user, the user name called the attacker
+
+50
+00:05:35,260 --> 00:05:41,220
+ and the password is A, B, C, D, 1, 2, 3, and slash add, okay, this command will
+
+51
+00:05:41,220 --> 00:05:50,980
+ add a new user, okay, so let, so the command was successfully completed, so the
+
+52
+00:05:50,980 --> 00:05:57,820
+ new user get added, okay, so now the new users get added, okay, threat
+
+53
+00:05:57,820 --> 00:06:05,300
+ actors use this command to add a new user into the remote machines, okay, into
+
+54
+00:06:05,300 --> 00:06:10,940
+ the target machines, okay, so in this video we have just created the account in
+
+55
+00:06:10,940 --> 00:06:18,060
+ next video, we will try to add this user to the administrator group, okay, so
+
+56
+00:06:18,060 --> 00:06:24,660
+ let's conclude this video, we will meet you in the next video, thank you for
+
+57
+00:06:24,660 --> 00:06:34,660
+ [BLANK_AUDIO]
+
