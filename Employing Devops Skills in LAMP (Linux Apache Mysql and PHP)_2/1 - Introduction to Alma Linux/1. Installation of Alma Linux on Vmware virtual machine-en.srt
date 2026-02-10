@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:07,100
+ Hi folks and welcome to our first tutorial. In this tutorial we will focus on the installation
+
+2
+00:00:07,100 --> 00:00:13,560
+ of ALMA, Linux Operating System, in which later we will install database, we will treat
+
+3
+00:00:13,560 --> 00:00:22,840
+ it as a web server, MySQL server and also we will install Docker and implement Terraform
+
+4
+00:00:22,840 --> 00:00:32,120
+ and other DevOps tools on it. So the first thing here to consider is specification
+
+5
+00:00:32,120 --> 00:00:38,120
+ for the virtual machine. Here for example if you can see you have another machine which
+
+6
+00:00:38,120 --> 00:00:46,560
+ is called asterisk. This asterisk is an APBX system, it is required or recommended to
+
+7
+00:00:46,560 --> 00:00:59,940
+ have four gigabits of memory, two processor and 60 hard disk SSD hard disk speeds. So
+
+8
+00:00:59,940 --> 00:01:11,900
+ here we will install, we need to specify first a new virtual machine and this time we need
+
+9
+00:01:11,900 --> 00:01:23,280
+ to select, okay is isofile, we have already downloaded isofile of ALMA Linux, this ALMA Linux
+
+10
+00:01:23,280 --> 00:01:33,540
+ we will install Docker on it, we will implement some labs later related to Docker MySQL
+
+11
+00:01:33,540 --> 00:01:43,360
+ and we use other dev ops on it, so we need first to select it, okay and of course the VM
+
+12
+00:01:43,360 --> 00:01:49,840
+ where couldn't detect which operating system in this disk image, so this Linux system
+
+13
+00:01:49,840 --> 00:01:58,760
+ is very similar to actually the Linux Red Hat, okay where is the Linux Red Hat, it is Red Hat
+
+14
+00:01:58,760 --> 00:02:05,400
+ Enterprise version 9, it is very similar to it, it is actually the successor of it, so
+
+15
+00:02:05,400 --> 00:02:17,380
+ we will select it first, okay and let me let's rename the virtual machines, for example
+
+16
+00:02:17,380 --> 00:02:33,100
+ here Linux ALMA, okay and let's select storage, we have external storage, so we need to put
+
+17
+00:02:33,100 --> 00:02:47,120
+ it on here and make it for example, make a new folder and we call it ALMA Linux, okay
+
+18
+00:02:47,120 --> 00:02:59,120
+ by the way it is version that it can later after the decommissioning of the centers operating
+
+19
+00:02:59,120 --> 00:03:08,320
+ system, so we use it, okay this is storage, okay and click on next and here we will set
+
+20
+00:03:08,320 --> 00:03:14,660
+ the recommendation for the hard disk sites as following, we will store it as a single
+
+21
+00:03:14,660 --> 00:03:23,400
+ file and we will set it to 100 gigabytes, okay and let's hear customized hardware, we will
+
+22
+00:03:23,400 --> 00:03:29,920
+ set it actually to the recommended specification which means here the memory, we will make
+
+23
+00:03:29,920 --> 00:03:41,080
+ it a moderate one, not too high, not too low, so we set it to this size for example, okay,
+
+24
+00:03:41,080 --> 00:03:53,560
+ so it is about eight gigabytes, we will still use two processor core, okay we have two processor,
+
+25
+00:03:53,560 --> 00:04:01,360
+ number of cores, we will use two, okay and number of cores for processor it is one and
+
+26
+00:04:01,360 --> 00:04:09,480
+ here we will use bridge, okay so this bridge will be used as a connection, so that our
+
+27
+00:04:09,480 --> 00:04:18,720
+ bridge and machines will be bridged to our Wi-Fi network here, okay and we selected already
+
+28
+00:04:18,720 --> 00:04:25,880
+ the hard disk space, so we set all the recommended specifications, okay so we will now close
+
+29
+00:04:25,880 --> 00:04:40,020
+ it, okay and let's now power this virtual machine to start installation for the ALMA links,
+
+30
+00:04:40,020 --> 00:04:54,960
+ okay we install ALMA links, actually we have this is the latest version 9.7, okay,
+
+31
+00:04:54,960 --> 00:05:16,300
+ 9.6 is not working no more so we install 9.7, okay so now we will start the graphical
+
+32
+00:05:16,300 --> 00:05:25,040
+ user interface installation, we will select installation language to be English, okay, continue
+
+33
+00:05:25,040 --> 00:05:44,840
+ okay this is the default setting, okay automatic partitioning is detected, okay this is a language
+
+34
+00:05:44,840 --> 00:05:56,920
+ support keyboard, okay so we need here to make two action the root password so let's first
+
+35
+00:05:56,920 --> 00:06:25,960
+ make the root password
+
+36
+00:06:25,960 --> 00:06:34,440
+ okay here we have set the root password, so let's create standard user for example my name
+
+37
+00:06:34,440 --> 00:06:52,480
+ I'm not no more, let's type full name, okay so user name here is M no more for example and
+
+38
+00:06:52,480 --> 00:07:15,980
+ let's set the password for zoos, let's now partition the system, okay we install the
+
+39
+00:07:15,980 --> 00:07:45,920
+ operating system on this hard disk flung, you give it, okay now we have
+
+40
+00:07:45,920 --> 00:07:52,760
+ set our system to be installed, we have set already the hard disk now the root password
+
+41
+00:07:52,760 --> 00:08:08,380
+ user password, okay and now we are ready to go, let's begin installation, okay now we
+
+42
+00:08:08,380 --> 00:08:17,540
+ have finished the installation, so let's reboot the system now, let's resume the video
+
+43
+00:08:17,540 --> 00:08:26,380
+ the installation took about maximum of 20 minutes and after that when you restart it the
+
+44
+00:08:26,380 --> 00:08:37,020
+ system should be working, okay now we have installed the system let's log in with the
+
+45
+00:08:37,020 --> 00:08:53,860
+ user number number, okay as as you can see now the system is installed with the
+
+46
+00:08:53,860 --> 00:09:01,860
+ genome or installed using the desktop version actually I have installed the
+
+47
+00:09:01,860 --> 00:09:09,720
+ desktop version so that I can not just use terminals or run comments but I can use
+
+48
+00:09:09,720 --> 00:09:17,220
+ also graphical user interface tool, so for example here if I want to change the
+
+49
+00:09:17,220 --> 00:09:30,900
+ wired connectivity, okay let's go to wired connection, wired settings, okay and here I
+
+50
+00:09:30,900 --> 00:09:38,520
+ want just to set IP addresses, it is set automatic, with the range this is our
+
+51
+00:09:38,520 --> 00:09:48,660
+ Wi-Fi range 122 and 168 100 and it took from the DHCP the default address of
+
+52
+00:09:48,660 --> 00:09:56,800
+ 14 and this is our DNS server and this is our default route, so here for
+
+53
+00:09:56,800 --> 00:10:06,840
+ example if I say I want to check what is internal network or for our Wi-Fi let's
+
+54
+00:10:06,840 --> 00:10:14,700
+ use IP address to make sure here from the details we can see it is from the
+
+55
+00:10:14,700 --> 00:10:24,160
+ same range, so let's now make the IP address static, okay let's go to IP version
+
+56
+00:10:24,160 --> 00:10:40,500
+ 4 we not set it to be automatic no more, let's set it to be manual here 192.68.100, let's set it to 20
+
+57
+00:10:40,500 --> 00:10:54,620
+ for example let's set let's now set the subnet mask 255 255 255 0, okay and let's set
+
+58
+00:10:54,620 --> 00:11:04,740
+ the gateway to connect to the internet, okay and for the DNS we will not take the
+
+59
+00:11:04,740 --> 00:11:13,220
+ same address here for the router, as you can see here it took the IP address of the
+
+60
+00:11:13,220 --> 00:11:30,620
+ router which is 192.168.101 we'll set it to be the DNS to be 888 which is a Google DNS
+
+61
+00:11:30,620 --> 00:11:43,220
+ server IP address, so let's set it to manual, let's set it to manual and put it here 888, okay and
+
+62
+00:11:43,220 --> 00:11:54,080
+ let's apply it, okay to be applied we need to just disable the connection and
+
+63
+00:11:54,080 --> 00:12:02,300
+ enable it, and if you can see here you can see that it took IP address, this is our static
+
+64
+00:12:02,300 --> 00:12:13,060
+ IP address, okay and this is our global DNS, this is the default route here, okay so now
+
+65
+00:12:13,060 --> 00:12:19,700
+ we have finished the first step, okay with the installation we have installed our
+
+66
+00:12:19,700 --> 00:12:29,420
+ malinics, we have configured static IP addresses in the upcoming session of section 1, we
+
+67
+00:12:29,420 --> 00:12:37,860
+ will configure which we know how to change host name and make some basic configuration
+
+68
+00:12:37,860 --> 00:12:44,900
+ for the firewall and we installed some system updates and installed the docker but this time
+
+69
+00:12:44,900 --> 00:12:53,020
+ we will use not the graphic user interface, now we will use comment or comment line,
+
+70
+00:12:53,020 --> 00:12:54,720
+ so stay tuned, thank you.
+
