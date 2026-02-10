@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:06,860
+Bây giờ chúng ta sẽ chạy lệnh Docker và hiểu cách chúng hoạt động.
+
+2
+00:00:06,860 --> 00:00:16,300
+Đầu tiên trong số các lệnh mở nhắc cửa sổ và đảm bảo màn hình của Docker đang chạy.
+
+3
+00:00:16,300 --> 00:00:21,380
+Kiểm tra trên thanh tác vụ xem nó có chạy không.
+
+4
+00:00:30,000 --> 00:00:59,780
+Bây giờ trên dấu nhắc câu lệnh cũng được gọi là CMD type Docker space ps và nhập.
+
+5
+00:00:59,780 --> 00:01:07,500
+Cái này sẽ hiển thị tất cả các thùng chứa đang chạy trên máy tính cục bộ.
+
+6
+00:01:07,500 --> 00:01:14,840
+Ngay lúc này không có ai cả và vì vậy nó không cho thấy bất kỳ ai trong số họ.
+
+7
+00:01:14,840 --> 00:01:21,080
+Bạn cũng có thể kiểm tra các thùng chứa từ ứng dụng máy tính Docker.
+
+8
+00:01:21,080 --> 00:01:27,640
+Nhấn vào thanh hộp bên trái để xem tất cả các thùng.
+
+9
+00:01:27,640 --> 00:01:35,840
+Hiện tại không có bàn làm việc Docker cũng không hiển thị hộp chứa.
+
+10
+00:01:35,840 --> 00:01:44,960
+Hãy tạo ra một container chứa bạn muốn hệ điều hành Linux.
+
+11
+00:01:44,960 --> 00:01:50,960
+Tôi có một câu hỏi cho anh, chúng ta sẽ lấy nó ở đâu?
+
+12
+00:01:50,960 --> 00:01:58,140
+Anh muốn dùng hệ điều hành từ khi anh muốn lên trang web, phải không?
+
+13
+00:01:58,140 --> 00:02:01,020
+Hoàn toàn sai.
+
+14
+00:02:01,020 --> 00:02:09,780
+Chúng tôi sẽ phải đưa bạn đến với hình ảnh của hệ điều hành hệ thống này và chúng tôi có thể tải về từ trang web Docker Hub.
+
+15
+00:02:09,780 --> 00:02:12,700
+Open Docker Hub trên trình duyệt của bạn.
+
+16
+00:02:20,960 --> 00:02:32,100
+Sau đó tìm cho bạn chơi chữ hai.
+
+17
+00:02:32,100 --> 00:02:39,540
+Kết quả đầu tiên của bạn chơi chữ hai hiển thị văn bản, hình ảnh chính thức Docker là một trong những bạn có
+
+18
+00:02:39,540 --> 00:02:41,620
+để click.
+
+19
+00:02:41,620 --> 00:02:48,660
+Trên phần bên phải bạn sẽ thấy lệnh kéo Docker, chỉ cần sao chép nó và dán nó trên của bạn
+
+20
+00:02:48,660 --> 00:02:56,580
+Cửa sổ hệ thống định tuyến
+
+21
+00:02:56,580 --> 00:03:01,380
+Bạn có biết làm thế nào để dán trên dấu nhắc câu lệnh?
+
+22
+00:03:01,380 --> 00:03:08,780
+Bạn chỉ cần nhấn nút chuột và nó sẽ dán văn bản đã sao chép.
+
+23
+00:03:08,780 --> 00:03:18,620
+Vì vậy, mệnh lệnh sẽ tải các bạn chữ viết tắt từ căn cứ Docker đến máy địa phương của bạn.
+
+24
+00:03:18,620 --> 00:03:29,540
+Chỉ cần chờ một hai phút và bây giờ bạn chơi chữ hai hình ảnh được tải xuống máy địa phương của chúng tôi.
+
+25
+00:03:29,540 --> 00:03:45,580
+Xác nhận điều này trên bàn làm việc Docker bằng cách nhắp vào phần ảnh để tìm ảnh đang chơi chữ.
+
+26
+00:03:45,580 --> 00:03:56,180
+Bây giờ trên lệnh của hình ảnh docker và bấm phím gõ vào đây sẽ hiển thị tất cả các ảnh có mặt
+
+27
+00:03:56,180 --> 00:03:59,500
+Trên máy chủ Docker.
+
+28
+00:03:59,500 --> 00:04:06,060
+Nó cho thấy bạn chơi chữ hai hình ảnh, các thẻ hình ảnh.
+
+29
+00:04:06,060 --> 00:04:15,340
+Bản sao lệnh kéo Docker để tải về hai hình ảnh trên máy tính của chúng tôi.
+
+30
+00:04:15,340 --> 00:04:27,260
+Thông báo sau khi tên ảnh có là ruột kết kiên quyết gạch chéo 20 25 11 30 điều này là
+
+31
+00:04:27,260 --> 00:04:37,820
+thẻ ảnh là nhãn để nhận diện phiên bản riêng của nó docker trong
+
+32
+00:04:37,820 --> 00:04:46,500
+một kho hàng trên bạn chơi chữ hai trang nhấp chuột vào phần văn bản.
+
+33
+00:04:46,500 --> 00:04:54,660
+Có nhiều phiên bản khác nhau của bạn chơi chữ hai hình ảnh được phân biệt bởi các thẻ khác nhau.
+
+34
+00:04:54,660 --> 00:05:00,060
+Một là kiên quyết một khác là ma quỷ.
+
+35
+00:05:00,060 --> 00:05:10,940
+Hãy sao chép nó trên cửa sổ chỉ thị của ruột kết.
+
+36
+00:05:10,940 --> 00:05:21,260
+Sau đó nhấn vào để kéo hình ảnh này ma quỷ thẻ của bạn chơi chữ hai nó đã tải về bây giờ kiểm tra
+
+37
+00:05:21,260 --> 00:05:34,060
+nó trên bàn làm việc Docker, chúng tôi có thể thấy nó ở đó bây giờ chúng tôi thay đổi thẻ để mới nhất và nhấn nhập
+
+38
+00:05:34,060 --> 00:05:44,260
+Ảnh thẻ mới nhất của bạn chơi chữ hai được tải về hình ảnh thẻ mới nhất gần đây nhất
+
+39
+00:05:44,260 --> 00:05:53,460
+Đẩy phiên bản của ảnh trong mỗi tích cực nó có nghĩa là nó là phiên bản mới nhất của bạn
+
+40
+00:05:53,460 --> 00:06:03,060
+đánh dấu ô này thì cũng là thẻ mới nhất trong ảnh Docker chỉ tới thẻ mặc định được gán cho nó.
+
+41
+00:06:03,060 --> 00:06:10,860
+đến một ảnh nếu không có thẻ đã xác định được cung cấp cho nó Hãy cho chúng tôi bây giờ hãy chạy bạn chơi chữ thường hai ảnh
+
+42
+00:06:10,860 --> 00:06:22,620
+từ container Docker câu lệnh dùng bộ chạy Docker
+
+43
+00:06:22,620 --> 00:06:38,940
+nhập kiểu cửa sổ cmt docker không gian chạy bằng dấu gạch gạch lát và sau đó xác định tên hộp.
+
+44
+00:06:38,940 --> 00:06:51,300
+Tôi đặt tên các container bạn thấy sau khi loại gạch gạch ngang thẻ IT nói với Docker
+
+45
+00:06:51,300 --> 00:07:00,660
+khởi chạy một phiên chạy tương tác giữa hai container cung cấp một khoảng trống sau đó
+
+46
+00:07:00,660 --> 00:07:15,180
+Nhập hình ảnh với thẻ của nó mà bạn co giật hai ruột kết kiên quyết gạch ngang 20 25 11 30 chúng tôi có thể sao chép
+
+47
+00:07:15,180 --> 00:07:29,540
+thẻ này từ bàn làm việc Docker cũng cung cấp một không gian sau đó gõ smash bin smash và
+
+48
+00:07:29,540 --> 00:07:39,620
+Bấm vào đây.
+
+49
+00:07:39,620 --> 00:07:57,720
+bên trong phiên chạy tốt nhất chúng tôi có thể kiểm tra hộp trong bàn làm việc Docker
+
+50
+00:07:57,720 --> 00:08:07,420
+trong các phiên chạy tốt nhất chúng tôi có thể nhập dòng lệnh tiếp theo như là ls cho thấy tất cả các
+
+51
+00:08:07,420 --> 00:08:17,580
+Thư mục bên trong bạn chơi chữ.
+
+52
+00:08:17,580 --> 00:08:27,740
+tên người dùng hiện thời bị gỡ bỏ kiểu thoát tiếp theo và bấm nút nhập vào sẽ
+
+53
+00:08:27,740 --> 00:08:38,740
+thoát khỏi phiên chạy tốt nhất kiểm tra màn hình Docker ngay bây giờ và bạn sẽ tìm thấy các container là
+
+54
+00:08:38,740 --> 00:08:50,580
+Thoát ra bây giờ tốt hơn nên gỡ bỏ container này và giải phóng một vài khoảng trống để gõ không gian Docker
+
+55
+00:08:50,580 --> 00:09:00,880
+Name
+
+56
+00:09:00,880 --> 00:09:11,900
+Từ máy tính của chúng tôi xác nhận điều này trên màn hình nền Docker mà cho thấy các container thực sự được xóa
+
+57
+00:09:11,900 --> 00:09:22,500
+Trước khi chúng tôi kết thúc bài giảng này một điều nữa cần phải được nói trên bàn làm việc Docker xóa
+
+58
+00:09:22,500 --> 00:09:41,900
+Tất cả các ảnh hiện thời trên tcmt một lần nữa chạy cùng một lệnh Docker mà chúng tôi trước đây chạy
+
+59
+00:09:52,500 --> 00:10:13,580
+Bây giờ thời gian này chúng tôi không có các công cụ chơi chữ của bạn hình ảnh trên máy của chúng tôi vì vậy nó cung cấp
+
+60
+00:10:13,580 --> 00:10:25,180
+Thông điệp T không thể tìm thấy ảnh sau đó nó bắt đầu tải xuống từ đăng nhập trung tâm Docker
+
+61
+00:10:25,180 --> 00:10:34,780
+ảnh được tải về và container được tạo và trong tình trạng đang chạy xác nhận điều này
+
+62
+00:10:34,780 --> 00:10:51,380
+trên bàn làm việc Docker cũng
+
