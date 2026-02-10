@@ -1,0 +1,328 @@
+1
+00:00:00,110 --> 00:00:04,490
+So the next thing we want to do in our game creation is make it competitive.
+
+2
+00:00:04,490 --> 00:00:10,130
+Because while it's fun to ski down a mountain, if we can't boast about our high score, then we have
+
+3
+00:00:10,130 --> 00:00:10,790
+a problem.
+
+4
+00:00:11,400 --> 00:00:15,510
+So in this lesson we are going to add a scoring system to our game.
+
+5
+00:00:16,530 --> 00:00:19,140
+Now you might be thinking, oh, I know how to do this.
+
+6
+00:00:19,140 --> 00:00:24,150
+I'll just create a variable called score and stick it at the top of the screen and I'm done.
+
+7
+00:00:24,180 --> 00:00:28,020
+Yes, that's good thinking and that would work.
+
+8
+00:00:28,020 --> 00:00:34,080
+But we've put lots of good work into this game and it's graphics, and we don't want it to be let down
+
+9
+00:00:34,080 --> 00:00:36,840
+with a basic looking variable that counts our score.
+
+10
+00:00:36,870 --> 00:00:39,360
+We need something exciting.
+
+11
+00:00:39,420 --> 00:00:47,370
+So we could start designing a cool score sprite that looks super nice and also creates some nice animations
+
+12
+00:00:47,370 --> 00:00:47,850
+and all.
+
+13
+00:00:48,690 --> 00:00:52,440
+But no, that's not what we will do.
+
+14
+00:00:52,710 --> 00:00:53,850
+Grab a pen.
+
+15
+00:00:54,730 --> 00:00:56,290
+Or type this somewhere.
+
+16
+00:00:56,290 --> 00:01:02,920
+I want you to write this down because it's very important and it will save you countless hours of time.
+
+17
+00:01:02,920 --> 00:01:03,670
+Are you ready?
+
+18
+00:01:04,650 --> 00:01:06,480
+Don't try.
+
+19
+00:01:06,480 --> 00:01:08,910
+Reinvent the wheel.
+
+20
+00:01:09,660 --> 00:01:11,700
+And he said again, don't try.
+
+21
+00:01:11,700 --> 00:01:12,960
+Reinvent the wheel.
+
+22
+00:01:12,960 --> 00:01:14,700
+Now pin that somewhere you won't forget it.
+
+23
+00:01:14,700 --> 00:01:16,770
+Don't reinvent the wheel.
+
+24
+00:01:16,770 --> 00:01:23,280
+This basically means if something has already been done and someone has spent endless hours working
+
+25
+00:01:23,280 --> 00:01:25,140
+on it, don't reinvent it.
+
+26
+00:01:25,140 --> 00:01:32,280
+So what I'm saying is, while of course we could create this score sprite ourselves, what is even better
+
+27
+00:01:32,280 --> 00:01:35,370
+is if we could just use someone else's score sprite.
+
+28
+00:01:35,370 --> 00:01:40,860
+It's faster and it lets us apply our brain and our time to other parts of our programming.
+
+29
+00:01:41,520 --> 00:01:49,590
+In fact, this is what programming is all about reusing both your own code and open source code when
+
+30
+00:01:49,590 --> 00:01:50,670
+it is available.
+
+31
+00:01:51,520 --> 00:01:58,480
+Now, in the context of scratch, let's say you play someone's game and you think, hey, I really like
+
+32
+00:01:58,480 --> 00:02:01,150
+how they have that nice transition animation.
+
+33
+00:02:01,420 --> 00:02:04,720
+Or like the early example with the smooth movement engine.
+
+34
+00:02:04,720 --> 00:02:10,900
+Instead of trying to create your own smooth movement, you can use theirs in your own project.
+
+35
+00:02:10,990 --> 00:02:16,330
+Scratch allows you to do this, and the good thing with scratch is that it automatically gives other
+
+36
+00:02:16,330 --> 00:02:19,270
+people credit when you use their code in your project.
+
+37
+00:02:19,270 --> 00:02:21,430
+So let's do this for our own project.
+
+38
+00:02:21,960 --> 00:02:25,920
+Here you can see I found a nice soccer minigame.
+
+39
+00:02:26,130 --> 00:02:30,300
+And while the game is a little rough around the edges, it's still in beta after all.
+
+40
+00:02:30,420 --> 00:02:34,440
+You will notice that the score animation is really nice.
+
+41
+00:02:34,920 --> 00:02:37,920
+So how can we use this for our project?
+
+42
+00:02:38,220 --> 00:02:42,570
+Well, the first thing we need to do is click this see inside button.
+
+43
+00:02:42,570 --> 00:02:46,710
+And as you can see there is the score sprite we are looking for.
+
+44
+00:02:47,330 --> 00:02:53,330
+So just to make sure that you're on the same page as me, I want you to open up this project.
+
+45
+00:02:53,330 --> 00:02:57,380
+And you can do so by clicking on the link that is under the lesson.
+
+46
+00:02:58,110 --> 00:03:01,080
+Or you can just manually enter in this link.
+
+47
+00:03:02,570 --> 00:03:04,130
+If he still can't find it.
+
+48
+00:03:05,160 --> 00:03:09,210
+All you need to do is click file and load from your computer.
+
+49
+00:03:09,210 --> 00:03:14,550
+And under completed projects you will see this one called Soccer Mini Game.
+
+50
+00:03:15,180 --> 00:03:19,500
+So with the project open now, all we need to do is copy over the sprite.
+
+51
+00:03:19,680 --> 00:03:25,530
+And to do this, all you have to do is right click the sprite and then select export.
+
+52
+00:03:26,580 --> 00:03:26,850
+Here.
+
+53
+00:03:26,850 --> 00:03:28,110
+You can save it to whatever you like.
+
+54
+00:03:28,110 --> 00:03:29,790
+Just remember where you save it.
+
+55
+00:03:29,790 --> 00:03:32,010
+I will just choose downloads.
+
+56
+00:03:32,560 --> 00:03:36,940
+So now moving back to our ski game here, we can hover over this.
+
+57
+00:03:36,940 --> 00:03:40,990
+Choose a sprite and then click the upload sprite.
+
+58
+00:03:41,530 --> 00:03:45,940
+Now here you can see we have our score sprite which we can select.
+
+59
+00:03:46,420 --> 00:03:48,640
+So hitting open there you have it.
+
+60
+00:03:48,940 --> 00:03:52,270
+Our score sprite is now in our game and ready to use.
+
+61
+00:03:52,270 --> 00:03:54,820
+And think of all the time we've saved.
+
+62
+00:03:55,490 --> 00:04:01,160
+And with all that saved time, let's give the sprite a bit of customization so it better suits our game.
+
+63
+00:04:01,670 --> 00:04:07,430
+So moving into the costume editor, I'm going to delete all of these costumes and then click the upload
+
+64
+00:04:07,430 --> 00:04:08,060
+button.
+
+65
+00:04:08,600 --> 00:04:14,090
+Then moving over to the score folder you can see we have these nicer looking numbers.
+
+66
+00:04:14,360 --> 00:04:16,550
+So we can just select the first one.
+
+67
+00:04:16,550 --> 00:04:19,790
+Then hold down shift and click the last one.
+
+68
+00:04:19,790 --> 00:04:21,500
+And doing this will select all of them.
+
+69
+00:04:22,040 --> 00:04:23,900
+So now we can click open.
+
+70
+00:04:24,470 --> 00:04:25,310
+And there you have it.
+
+71
+00:04:25,310 --> 00:04:28,190
+Our new scoring design is imported.
+
+72
+00:04:28,520 --> 00:04:30,800
+So with that let's have a look at the code.
+
+73
+00:04:31,250 --> 00:04:34,280
+And as you can see this code is utilizing functions.
+
+74
+00:04:34,850 --> 00:04:39,380
+But let's quickly run through it so we have some idea of what's going on.
+
+75
+00:04:40,510 --> 00:04:45,010
+So when starters clicked, they are setting the score to zero.
+
+76
+00:04:45,400 --> 00:04:49,570
+Then they seem to have a loop, making sure the score doesn't go into the negatives.
+
+77
+00:04:50,640 --> 00:04:55,650
+Then over here they are running the setup function, which does a bunch of things like setting size
+
+78
+00:04:55,650 --> 00:04:58,110
+and costume and also creating a clone.
+
+79
+00:04:58,110 --> 00:05:01,530
+And then this clone calls another function and so on.
+
+80
+00:05:01,890 --> 00:05:03,750
+But for now we will leave it at that.
+
+81
+00:05:03,750 --> 00:05:08,070
+You're more than welcome to analyze this code for yourself, which I'm sure you can figure out with
+
+82
+00:05:08,070 --> 00:05:09,480
+all your already know.
+
