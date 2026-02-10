@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:13,520
+ So here we want to open up some ports like for example ports for HTTP/HTP access as we have
+
+2
+00:00:13,520 --> 00:00:23,600
+ said before and let's open also the port for MySQL and for FTP or FTP access, okay.
+
+3
+00:00:23,600 --> 00:00:29,680
+ As shown here this is the common port that we have explained that it is needed to be
+
+4
+00:00:29,680 --> 00:00:40,160
+ enabled. So if you can see here simply if we type sudo firewall cmd list dash all we want
+
+5
+00:00:40,160 --> 00:00:47,360
+ to see all of the available ports or open port on this server, okay. By default the firewall
+
+6
+00:00:47,360 --> 00:00:56,480
+ closes everything so I can't access this server by SSH. I can't copy any files by using FTP.
+
+7
+00:00:56,480 --> 00:01:05,120
+ There is no services or no ports or protocols open. So what we'll do here is that we'll open some ports
+
+8
+00:01:05,120 --> 00:01:13,680
+ and protocols so that I need to have specific access from these files. This is as a basic firewall
+
+9
+00:01:13,680 --> 00:01:21,040
+ configuration. We'll not do advanced configuration like allowing some specific IP addresses. We'll
+
+10
+00:01:21,040 --> 00:01:32,480
+ just open the basic ports. So if we here want to open the port for example for this will be
+
+11
+00:01:32,480 --> 00:01:42,160
+ for the SSH secure port 22 it is TCP, okay. So we'll just type the same comment for all the
+
+12
+00:01:42,160 --> 00:01:48,960
+ STMD but we'll open it as a permanent so that it's not dynamic. It will be after the server is
+
+13
+00:01:48,960 --> 00:02:00,320
+ restarted and we use dash dash add dash port 22 TCP. As the same can be done for HTTP if I have an
+
+14
+00:02:00,320 --> 00:02:09,440
+ alternate, if I have any conflicting service that uses port 80 I can use alternate HTTP which is
+
+15
+00:02:09,440 --> 00:02:20,080
+ 8080 okay but for me I don't have any conflicting ports so I will open these ports. Okay I mean here
+
+16
+00:02:20,080 --> 00:02:26,240
+ for the firewall I need to open the basic ports some software or some web server I might need to
+
+17
+00:02:26,240 --> 00:02:36,160
+ configure using the alternate port like 8080 and also here I will open the full full 3 for HTTP SSL
+
+18
+00:02:36,160 --> 00:02:48,720
+ secure access and let's open now the 3306 if I recall this is the ports for the SQL
+
+19
+00:02:48,720 --> 00:03:05,200
+ 3306 okay and last one here is FTP port 21. So if I'm going to leave the port now should list
+
+20
+00:03:06,560 --> 00:03:12,640
+ that we have but between not least anything before because we forgot to do some
+
+21
+00:03:12,640 --> 00:03:18,400
+ important thing in the Linux world every step that you do you need to make a reload as
+
+22
+00:03:18,400 --> 00:03:27,200
+ either you are managing any kind of server like web server that the server void or PBX server
+
+23
+00:03:27,200 --> 00:03:40,160
+ you need just to reload the server so that's reload the firewall
+
+24
+00:03:55,280 --> 00:04:02,240
+ okay you need just to type dash dash not one dash because it is case sensitive and if I can see
+
+25
+00:04:02,240 --> 00:04:11,680
+ now we can see that the server is now the port sorry that we have here now is 2288 pull 43
+
+26
+00:04:11,680 --> 00:04:23,920
+ 3306 and 2021. Suppose now for any security reason I want just to disable the uploading for the
+
+27
+00:04:23,920 --> 00:04:32,640
+ file okay if I am doubting about any suspicious activity for example I don't want anyone to upload
+
+28
+00:04:32,640 --> 00:04:43,040
+ for now any files so I can remove temporary the ports 21 okay so if I want to remove the ports
+
+29
+00:04:46,640 --> 00:04:54,880
+ I will remove it by typing the same comment cmd-perment but instead of add we'll just type remove
+
+30
+00:04:54,880 --> 00:05:06,320
+ and we'll type the port number of 21 TCP okay and of course don't forget to reload and then
+
+31
+00:05:06,320 --> 00:05:15,920
+ if we can see here we can see now that 22 only is the port okay and 84 443 and 3306
+
+32
+00:05:16,640 --> 00:05:23,920
+ actually for the 22 it is very common to be enabled because it provides secure shell access
+
+33
+00:05:23,920 --> 00:05:30,640
+ and because if you are managing any server any server in the graphical user interface it is not
+
+34
+00:05:30,640 --> 00:05:39,200
+ very good or strong so the first server can be managed by using a common line interface especially
+
+35
+00:05:39,200 --> 00:05:46,160
+ if you have any issue in logging or troubleshoot or taking logs for example by using graphical
+
+36
+00:05:46,160 --> 00:05:57,600
+ user interface so it is very important to enable supports 22 okay so here let's update the system
+
+37
+00:05:57,600 --> 00:06:09,760
+ okay let's type these comments okay and we will type these comments and after the system is updated
+
+38
+00:06:10,400 --> 00:06:16,400
+ I will restart it and come back to you okay it will take some time so I will pause the video and come back to you
+
+39
+00:06:16,400 --> 00:06:33,360
+ okay now so the updates are successfully installed and now we will proceed with our next task of
+
+40
+00:06:33,360 --> 00:06:40,880
+ installation of Docker before we use Docker's or containerization in our system we need
+
+41
+00:06:40,880 --> 00:06:48,000
+ first to remove any conflicting packages because some packages might cause problem when we install
+
+42
+00:06:48,000 --> 00:06:56,480
+ Docker so we'll uninstall these packets these package with its dependencies so here these are the
+
+43
+00:06:56,480 --> 00:07:10,480
+ packets of man build the and scope you let's remove them okay it will confirm the removal
+
+44
+00:07:10,480 --> 00:07:25,280
+ and we install the yam utilities because the yam utilities it is needed to add the Docker repository
+
+45
+00:07:26,480 --> 00:07:42,960
+ okay so let's install the yam details and confirm the installation
+
+46
+00:07:45,840 --> 00:07:59,120
+ okay it is complete so here let's add Docker repository by by issuing this comma this is the
+
+47
+00:07:59,120 --> 00:08:06,320
+ repository or Docker hub which contains all the Docker image that we will use in our system like
+
+48
+00:08:06,320 --> 00:08:18,400
+ APHP Apache MySQL it is so let's install it by using the yam configuration manager
+
+49
+00:08:18,400 --> 00:08:26,400
+ it will take some time okay it's added so without so sorry it didn't take any time
+
+50
+00:08:26,400 --> 00:08:34,320
+ let's now install the Docker engines Docker engine actually is the client server applications
+
+51
+00:08:34,320 --> 00:08:41,120
+ that we'll pull down the image that we can use it several times by using several tagging in
+
+52
+00:08:41,120 --> 00:08:47,680
+ different containers so let's download it install it
+
+53
+00:08:47,680 --> 00:08:59,760
+ okay it will just first download it and then later it will install it about 10 packages
+
+54
+00:08:59,760 --> 00:09:05,760
+ may it might take maximum of five minutes so I will pause the video and come back to you
+
+55
+00:09:05,760 --> 00:09:18,480
+ okay so the Docker engine now is successfully installed so we will start it it is the same
+
+56
+00:09:18,480 --> 00:09:28,080
+ it is idea is pretty similar to the hypervisor in which we manage but we will not manage
+
+57
+00:09:28,080 --> 00:09:36,000
+ your machine is a container inside our operating system so is the Docker is the main source
+
+58
+00:09:36,000 --> 00:09:43,360
+ in which when we started we would continue create just the containers for different images
+
+59
+00:09:43,360 --> 00:09:50,960
+ serving different purposes for web service SQL service etc and you can just start and stop it
+
+60
+00:09:51,760 --> 00:09:58,000
+ as huge show so let's first we need to issue the soon to comment start the Docker
+
+61
+00:09:58,000 --> 00:10:11,120
+ okay and let's enable it
+
+62
+00:10:11,120 --> 00:10:20,320
+ okay the Docker now is enabled
+
+63
+00:10:22,560 --> 00:10:31,520
+ okay if we can view its status it shows that the Docker service is active android cool
+
+64
+00:10:31,520 --> 00:10:41,200
+ so now I'm moving to the last part of this video we will need because the Docker every time
+
+65
+00:10:41,200 --> 00:10:48,880
+ we don't want to issue sudo to execute any Docker command so we'll add the current user
+
+66
+00:10:48,880 --> 00:10:56,720
+ which is m number by issuing this comment it is the same idea by adding the user to the
+
+67
+00:10:56,720 --> 00:11:05,680
+ server but we'll type sudo user modification - easy to add it to the group to add it to the group of
+
+68
+00:11:05,680 --> 00:11:17,760
+ Docker okay so the user can use the Docker without being without every time asking
+
+69
+00:11:18,400 --> 00:11:25,920
+ as a sudo comment because the users will be added to the Docker group so let's add the user
+
+70
+00:11:25,920 --> 00:11:33,440
+ and for this comment to be effective here on right now we need to type new group Docker okay
+
+71
+00:11:33,440 --> 00:11:43,920
+ and it will run but only in this terminal I mean here if this terminal is closed the user's
+
+72
+00:11:43,920 --> 00:11:51,120
+ privilege boom is not available no more you need to to do the sudo again for the changes
+
+73
+00:11:51,120 --> 00:11:57,360
+ to be permanent the users m number needs or I need to sign out and sign in again
+
+74
+00:11:57,360 --> 00:12:04,320
+ so for now if I want to run any comment for example let's run Docker
+
+75
+00:12:06,160 --> 00:12:16,320
+ hello words okay it is a ready Docker it is not fine locally so it tried to pull it from
+
+76
+00:12:16,320 --> 00:12:22,960
+ the Docker hub okay and you can see here that hello from Docker and this message shows
+
+77
+00:12:22,960 --> 00:12:30,000
+ that installations appears to be working correct if I want to issue any Docker command like
+
+78
+00:12:30,000 --> 00:12:36,720
+ Docker ps-8 to see all of the doctors that I have I have only one container this is the
+
+79
+00:12:36,720 --> 00:12:43,840
+ idea of the container this is the image of a lower okay it is run or created 16 seconds ago
+
+80
+00:12:43,840 --> 00:12:50,480
+ and it is run with exit because it is just for testing purposes is not a real content okay
+
+81
+00:12:52,160 --> 00:13:01,440
+ so I hope that this session is clear to you and of course if you want to ask me about
+
+82
+00:13:01,440 --> 00:13:09,920
+ if any doubts or questions please don't hesitate to ask me thank you
+
