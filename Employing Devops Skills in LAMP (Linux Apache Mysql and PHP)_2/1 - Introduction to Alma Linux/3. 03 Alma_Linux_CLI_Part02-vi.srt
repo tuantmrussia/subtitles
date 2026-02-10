@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:13,520
+Vì vậy, ở đây chúng tôi muốn mở một số cổng như là cổng cho HTTP/HP truy cập như chúng tôi đã có
+
+2
+00:00:13,520 --> 00:00:23,600
+được rồi.
+
+3
+00:00:23,600 --> 00:00:29,680
+Như đã trình bày ở đây là cảng chung mà chúng tôi đã giải thích rằng nó là cần thiết để được
+
+4
+00:00:29,680 --> 00:00:40,160
+đã bật. Vì vậy, nếu bạn có thể thấy ở đây đơn giản là nếu chúng tôi gõ tường lửa sudo đường gạch ngang danh sách tất cả những gì chúng tôi muốn
+
+5
+00:00:40,160 --> 00:00:47,360
+được rồi. Mặc định là tường lửa
+
+6
+00:00:47,360 --> 00:00:56,480
+Đóng mọi thứ để tôi không thể truy cập máy chủ này bằng SSH. Tôi không thể sao chép bất kỳ tập tin nào bằng FTP.
+
+7
+00:00:56,480 --> 00:01:05,120
+Không có dịch vụ hay không có cảng hay giao thức mở. Vì vậy, những gì chúng tôi sẽ làm ở đây là chúng tôi sẽ mở một số cảng
+
+8
+00:01:05,120 --> 00:01:13,680
+và các giao thức để tôi có thể truy cập cụ thể từ những tập tin này. Đây là bức tường lửa cơ bản
+
+9
+00:01:13,680 --> 00:01:21,040
+cấu hình. Chúng tôi sẽ không làm các cấu hình tiên tiến như cho phép một số địa chỉ IP cụ thể. Chúng ta sẽ
+
+10
+00:01:21,040 --> 00:01:32,480
+Chỉ cần mở các cảng cơ bản. Vì vậy, nếu chúng tôi ở đây muốn mở cổng cho ví dụ cho điều này sẽ là
+
+11
+00:01:32,480 --> 00:01:42,160
+Cổng SSH số 22 là cổng TCP. Vì vậy, chúng tôi sẽ chỉ gõ cùng một bình luận cho tất cả các
+
+12
+00:01:42,160 --> 00:01:48,960
+STMD nhưng chúng ta sẽ mở nó ra để nó không hoạt động. Nó sẽ được sau khi máy chủ là
+
+13
+00:01:48,960 --> 00:02:00,320
+Khởi động lại và chúng tôi sử dụng gạch gạch gạch gạch lát thêm cổng 22 TCP. Cũng có thể làm tương tự cho HTTP nếu tôi có một
+
+14
+00:02:00,320 --> 00:02:09,440
+Thay thế, nếu tôi có bất kỳ dịch vụ mâu thuẫn sử dụng cổng 80 tôi có thể sử dụng HTTP thay thế là
+
+15
+00:02:09,440 --> 00:02:20,080
+8080 được, nhưng với tôi, tôi không có cảng nào mâu thuẫn nên tôi sẽ mở những cảng này. Được rồi, ý tôi là ở đây.
+
+16
+00:02:20,080 --> 00:02:26,240
+Đối với tường lửa, tôi cần phải mở cổng cơ bản một số phần mềm hoặc một số máy chủ web tôi có thể cần phải
+
+17
+00:02:26,240 --> 00:02:36,160
+Cấu hình bằng cổng xen kẽ như 8080 và ở đây tôi sẽ mở đầy đủ 3 cho SSL HTTP
+
+18
+00:02:36,160 --> 00:02:48,720
+Truy cập bảo mật và chúng ta hãy mở bây giờ 3306 nếu tôi nhớ đây là các cảng cho locky
+
+19
+00:02:48,720 --> 00:03:05,200
+Đây là cổng FTP 21. Vì vậy, nếu tôi sẽ rời cảng bây giờ nên danh sách
+
+20
+00:03:06,560 --> 00:03:12,640
+Mà chúng tôi có nhưng giữa không ít nhất bất cứ điều gì trước đây bởi vì chúng tôi quên để làm một số
+
+21
+00:03:12,640 --> 00:03:18,400
+Điều quan trọng trong thế giới Linux mỗi bước mà bạn làm bạn cần phải tải lại như
+
+22
+00:03:18,400 --> 00:03:27,200
+Hoặc là bạn đang quản lý bất kỳ loại máy chủ như máy phục vụ mạng mà máy chủ không có hay máy chủ PBX
+
+23
+00:03:27,200 --> 00:03:40,160
+Bạn cần phải tải lại máy chủ để có thể nạp lại tường lửa
+
+24
+00:03:55,280 --> 00:04:02,240
+Okay bạn cần chỉ cần gõ gạch ngang không một gạch ngang bởi vì nó là trường hợp nhạy cảm và nếu tôi có thể thấy
+
+25
+00:04:02,240 --> 00:04:11,680
+Bây giờ chúng ta có thể thấy rằng máy chủ bây giờ là cổng xin lỗi mà chúng tôi có ở đây bây giờ là 2288 kéo 43
+
+26
+00:04:11,680 --> 00:04:23,920
+3306 và 2021. Giả sử bây giờ cho bất kỳ lý do an ninh tôi muốn chỉ tắt tải lên cho
+
+27
+00:04:23,920 --> 00:04:32,640
+Tập tin okay nếu tôi đang nghi ngờ bất kỳ hoạt động khả nghi Ví dụ, tôi không muốn bất cứ ai tải lên
+
+28
+00:04:32,640 --> 00:04:43,040
+cho bây giờ bất kỳ tập tin để tôi có thể gỡ bỏ các cổng tạm thời 21 okay vì vậy nếu tôi muốn gỡ bỏ các cổng
+
+29
+00:04:46,640 --> 00:04:54,880
+Tôi sẽ loại bỏ nó bằng cách gõ cùng một bình luận cmd-pement nhưng thay vì thêm chúng tôi sẽ chỉ gõ loại bỏ
+
+30
+00:04:54,880 --> 00:05:06,320
+Và chúng tôi sẽ gõ số cổng của 21 TCP okay và tất nhiên đừng quên nạp lại và sau đó
+
+31
+00:05:06,320 --> 00:05:15,920
+Nếu chúng ta thấy ở đây chúng ta có thể thấy bây giờ chỉ có 22 là cảng okay và 843 và 3306
+
+32
+00:05:16,640 --> 00:05:23,920
+Thực sự cho 22 nó là rất phổ biến để được kích hoạt bởi vì nó cung cấp an toàn truy cập vỏ sò
+
+33
+00:05:23,920 --> 00:05:30,640
+và bởi vì nếu bạn đang quản lý bất kỳ máy chủ nào trong giao diện người dùng đồ họa, nó không phải là
+
+34
+00:05:30,640 --> 00:05:39,200
+rất tốt hoặc mạnh vì vậy máy phục vụ đầu tiên có thể được quản lý bằng cách sử dụng một giao diện dòng chung đặc biệt
+
+35
+00:05:39,200 --> 00:05:46,160
+Nếu bạn có vấn đề về đăng nhập hay gặp vấn đề bắn hoặc lấy bản ghi ví dụ bằng cách sử dụng đồ họa
+
+36
+00:05:46,160 --> 00:05:57,600
+Giao diện người dùng vì vậy nó là rất quan trọng để hiệu lực hỗ trợ 22 OK Vì vậy ở đây hãy cập nhật hệ thống
+
+37
+00:05:57,600 --> 00:06:09,760
+okay hãy gõ những bình luận này okay và chúng tôi sẽ gõ những bình luận này và sau khi hệ thống được cập nhật
+
+38
+00:06:10,400 --> 00:06:16,400
+Tôi sẽ khởi động lại nó và trở lại với bạn okay nó sẽ mất một thời gian vì vậy tôi sẽ tạm dừng video và trở lại với bạn
+
+39
+00:06:16,400 --> 00:06:33,360
+okay bây giờ vì vậy các bản cập nhật được cài đặt thành công và bây giờ chúng tôi sẽ tiếp tục nhiệm vụ tiếp theo của chúng tôi
+
+40
+00:06:33,360 --> 00:06:40,880
+cài đặt Docker trước khi sử dụng của Docker hoặc công cụ hóa trong hệ thống của chúng tôi chúng tôi cần
+
+41
+00:06:40,880 --> 00:06:48,000
+trước tiên để gỡ bỏ bất kỳ gói mâu thuẫn vì một số gói có thể gây ra vấn đề khi chúng ta cài đặt
+
+42
+00:06:48,000 --> 00:06:56,480
+Docker vì vậy chúng tôi sẽ gỡ bỏ gói những gói này với quan hệ phụ thuộc của nó vì vậy đây là những
+
+43
+00:06:56,480 --> 00:07:10,480
+gói người xây dựng và phạm vi bạn hãy loại bỏ chúng okay nó sẽ xác nhận gỡ bỏ
+
+44
+00:07:10,480 --> 00:07:25,280
+và chúng tôi cài đặt các tiện ích khoai lang bởi vì các tiện ích khoai lang nó là cần thiết để thêm kho Docker
+
+45
+00:07:26,480 --> 00:07:42,960
+okay vì vậy hãy cài đặt các chi tiết khoai lang và xác nhận cài đặt
+
+46
+00:07:45,840 --> 00:07:59,120
+okay nó là hoàn thành vì vậy ở đây hãy thêm kho Docker bằng cách phát hành dấu phẩy này đây là
+
+47
+00:07:59,120 --> 00:08:06,320
+Kho hoặc Trung tâm Docker chứa tất cả các ảnh Docker mà chúng tôi sẽ sử dụng trong hệ thống của chúng tôi như
+
+48
+00:08:06,320 --> 00:08:18,400
+Trình quản lý cấu hình khoai lang cho người Apache.
+
+49
+00:08:18,400 --> 00:08:26,400
+Nó sẽ mất một thời gian okay nó được thêm vào vì vậy mà không có rất xin lỗi nó đã không mất bất kỳ thời gian
+
+50
+00:08:26,400 --> 00:08:34,320
+Bây giờ chúng ta hãy cài đặt động cơ Docker thực sự là ứng dụng máy chủ khách hàng
+
+51
+00:08:34,320 --> 00:08:41,120
+mà chúng tôi sẽ kéo xuống hình ảnh mà chúng tôi có thể sử dụng nó nhiều lần bằng cách sử dụng đánh dấu trong
+
+52
+00:08:41,120 --> 00:08:47,680
+Các thùng chứa khác nhau vì vậy hãy tải về nó cài đặt
+
+53
+00:08:47,680 --> 00:08:59,760
+okay nó sẽ chỉ cần tải về đầu tiên và sau đó nó sẽ cài đặt nó khoảng 10 gói
+
+54
+00:08:59,760 --> 00:09:05,760
+Có thể nó có tối đa 5 phút vì vậy tôi sẽ tạm dừng video và trở lại với bạn
+
+55
+00:09:05,760 --> 00:09:18,480
+okay vì vậy động cơ Docker bây giờ được cài đặt thành công vì vậy chúng tôi sẽ bắt đầu nó là giống nhau
+
+56
+00:09:18,480 --> 00:09:28,080
+Nó là ý tưởng khá giống với siêu tư tưởng trong đó chúng tôi quản lý nhưng chúng tôi sẽ không quản lý
+
+57
+00:09:28,080 --> 00:09:36,000
+Cỗ máy của bạn là một container bên trong hệ điều hành của chúng tôi Vì vậy, là Docker là nguồn chính
+
+58
+00:09:36,000 --> 00:09:43,360
+Trong đó khi chúng tôi bắt đầu chúng tôi sẽ tiếp tục tạo ra chỉ các thùng chứa cho các hình ảnh khác nhau
+
+59
+00:09:43,360 --> 00:09:50,960
+Phục vụ các mục đích khác nhau cho dịch vụ tLS Dịch vụ web vv và bạn có thể chỉ cần bắt đầu và dừng nó
+
+60
+00:09:51,760 --> 00:09:58,000
+là chương trình lớn vì vậy đầu tiên chúng ta cần phải công bố sớm bình luận để bắt đầu Docker
+
+61
+00:09:58,000 --> 00:10:11,120
+Được rồi, chúng ta hãy bật nó
+
+62
+00:10:11,120 --> 00:10:20,320
+okay Docker bây giờ được bật
+
+63
+00:10:22,560 --> 00:10:31,520
+OK nếu chúng tôi có thể xem trạng thái của nó nó cho thấy rằng dịch vụ Docker là hoạt động máy tính lạnh
+
+64
+00:10:31,520 --> 00:10:41,200
+Vì vậy bây giờ tôi đang di chuyển đến phần cuối cùng của video này chúng tôi sẽ cần bởi vì Docker mỗi lần
+
+65
+00:10:41,200 --> 00:10:48,880
+chúng tôi không muốn phát hành sudo để thực hiện bất kỳ lệnh Docker vì vậy chúng tôi sẽ thêm người dùng hiện thời
+
+66
+00:10:48,880 --> 00:10:56,720
+Đó là số m bằng cách đưa ra bình luận này nó là cùng một ý tưởng bằng cách thêm người dùng
+
+67
+00:10:56,720 --> 00:11:05,680
+máy phục vụ nhưng chúng tôi sẽ gõ sự sửa đổi người dùng sudo - dễ dàng thêm nó vào nhóm để thêm nó vào nhóm của
+
+68
+00:11:05,680 --> 00:11:17,760
+Docker okay để người dùng có thể sử dụng Docker mà không cần mỗi lần yêu cầu
+
+69
+00:11:18,400 --> 00:11:25,920
+như một bình luận sudo vì người dùng sẽ được thêm vào nhóm Docker vì vậy hãy thêm người dùng
+
+70
+00:11:25,920 --> 00:11:33,440
+Và để chú thích này có hiệu quả ở đây ngay bây giờ chúng tôi cần phải gõ nhóm Docker okay
+
+71
+00:11:33,440 --> 00:11:43,920
+và nó sẽ chạy nhưng chỉ trong thiết bị cuối này tôi có nghĩa là ở đây nếu thiết bị cuối này đóng cửa người dùng
+
+72
+00:11:43,920 --> 00:11:51,120
+Name
+
+73
+00:11:51,120 --> 00:11:57,360
+Để là vĩnh viễn số m người dùng cần hoặc tôi cần phải ký ra và đăng nhập một lần nữa
+
+74
+00:11:57,360 --> 00:12:04,320
+Vì vậy cho bây giờ nếu tôi muốn chạy bất kỳ bình luận Ví dụ hãy chạy Docker
+
+75
+00:12:06,160 --> 00:12:16,320
+Xin chào.
+
+76
+00:12:16,320 --> 00:12:22,960
+Trung tâm Docker okay và bạn có thể thấy ở đây là lời chào từ Docker và thông điệp này hiển thị
+
+77
+00:12:22,960 --> 00:12:30,000
+mà cài đặt có vẻ là làm việc đúng nếu tôi muốn cung cấp bất kỳ lệnh Docker như
+
+78
+00:12:30,000 --> 00:12:36,720
+Docker ps-8 để gặp tất cả các bác sĩ mà tôi có tôi chỉ có một container đây là
+
+79
+00:12:36,720 --> 00:12:43,840
+ý tưởng của các container đây là hình ảnh của một thấp hơn okay nó được chạy hoặc tạo ra 16 giây trước
+
+80
+00:12:43,840 --> 00:12:50,480
+và nó chạy với lối thoát bởi vì nó là chỉ cho mục đích thử nghiệm không phải là một nội dung thực sự okay
+
+81
+00:12:52,160 --> 00:13:01,440
+Vì vậy, tôi hy vọng rằng buổi nói chuyện này là rõ ràng với bạn và tất nhiên nếu bạn muốn hỏi tôi về
+
+82
+00:13:01,440 --> 00:13:09,920
+Nếu có nghi ngờ hay thắc mắc gì xin đừng ngại hỏi tôi cám ơn.
+
