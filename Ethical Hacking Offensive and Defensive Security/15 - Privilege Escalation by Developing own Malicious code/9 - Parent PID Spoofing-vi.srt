@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:04,360
+Chào mừng đến với buổi học mới.
+
+2
+00:00:04,360 --> 00:00:11,360
+Trong video này chúng tôi sẽ học đánh lừa TTID.
+
+3
+00:00:11,360 --> 00:00:17,760
+Nhiều người trong số họ biết đó là một giai đoạn của quá trình.
+
+4
+00:00:17,760 --> 00:00:28,360
+Vì vậy, điều này có thể được sử dụng để tránh phát hiện cũng như nó sẽ được sử dụng cho và một số khác
+
+5
+00:00:28,360 --> 00:00:37,800
+Chiến thuật, có thể là một sự leo thang đặc quyền, thao túng tín hiệu truy cập bằng cách đánh lừa TTID.
+
+6
+00:00:37,800 --> 00:00:44,760
+Vì vậy, chúng ta cần phải hiểu cái gì là một cái hố đầu tiên okay, cái gì là một PID, quá trình nhận dạng PID.
+
+7
+00:00:44,760 --> 00:00:53,940
+Vì vậy, khi bạn bắt đầu một tiến trình mới trong Windows hoặc bất kỳ Linux hoặc Mac Oxy hoặc bất kỳ hệ điều hành nào,
+
+8
+00:00:53,940 --> 00:00:58,920
+Hệ điều hành Windows của bạn sẽ khóa nó, riêng biệt, độc đáo cho bạn.
+
+9
+00:00:58,920 --> 00:01:06,960
+Vì vậy, hãy lấy một ví dụ, tôi có một Chrome mở, bạn có thể thấy PID của một Chrome okay.
+
+10
+00:01:06,960 --> 00:01:13,560
+Vì vậy, nó là một 5-3, 7-2 như là một tiến trình mã hóa biểu đồ.
+
+11
+00:01:13,560 --> 00:01:20,440
+Như tôi đã nói khi bạn bắt đầu một tiến trình mới, nếu tôi bắt đầu một tiến trình mới như một cuốn sổ tay.exe hoặc bất kỳ
+
+12
+00:01:20,440 --> 00:01:31,800
+Calc.exe khác hoặc bất cứ điều gì, vì vậy tôi sẽ nhận được một ID độc đáo cho một Notepad.exe, 7-8-5-6.
+
+13
+00:01:31,800 --> 00:01:37,600
+Điều này sẽ được phân phát bởi hệ điều hành Windows của bạn, bạn không cần phải làm gì khác
+
+14
+00:01:37,600 --> 00:01:38,600
+Mọi thứ ổn.
+
+15
+00:01:38,600 --> 00:01:47,200
+Vì vậy, hãy để tôi xem các kịch bản, những gì là một PPID, vì vậy những gì là một cha mẹ ID okay.
+
+16
+00:01:47,200 --> 00:01:58,840
+Bây giờ hãy lấy một ví dụ về Explorer.ex, vì vậy Explorer. exe là cha mẹ của sự an toàn
+
+17
+00:01:58,840 --> 00:02:02,160
+Thuốc xịt sức khỏe, khay đựng đồ và 1 ổ đĩa.
+
+18
+00:02:02,160 --> 00:02:15,360
+Vì vậy, nếu tôi mở bất kỳ quá trình nào từ Windows Explorer, vì vậy mà sẽ đi dưới cha mẹ
+
+19
+00:02:15,360 --> 00:02:23,080
+của Explorer.ex okay, vì vậy đó là kịch bản riêng biệt, vì vậy bạn có thể nói okay.
+
+20
+00:02:23,080 --> 00:02:30,140
+Vì vậy, quá trình bạn đang mở ra từ, vì vậy nếu tôi mở bất kỳ quá trình nào từ, nếu tôi mở
+
+21
+00:02:30,140 --> 00:02:39,920
+CMD từ đây, vì vậy Explorer sẽ là cha mẹ, Explorer sẽ là cha mẹ cho lệnh.ex
+
+22
+00:02:39,920 --> 00:02:40,920
+Được rồi.
+
+23
+00:02:40,920 --> 00:02:45,820
+Vì vậy, đây là cách chúng tôi đã làm việc hệ điều hành Windows sẽ hoạt động tốt.
+
+24
+00:02:45,820 --> 00:02:57,880
+Nếu tôi mở sổ ghi chú từ dấu nhắc câu lệnh, nếu tôi mở sổ ghi chú từ dấu nhắc câu lệnh.
+
+25
+00:02:57,880 --> 00:03:06,160
+Vì vậy, bây giờ bạn có thể nhìn thấy cha mẹ sẽ là CMD.exe và đứa trẻ sẽ được ghi chép.ex.
+
+26
+00:03:06,160 --> 00:03:17,240
+Cha mẹ sẽ là cha mẹ, con cái và nếu tôi thấy cha mẹ của một CMD.ex, sau đó
+
+27
+00:03:17,240 --> 00:03:19,080
+Nó sẽ đến chỗ Min Explorer ngay.
+
+28
+00:03:19,080 --> 00:03:26,220
+Vì vậy, nếu tôi, tôi mở CND từ Explorer, vì vậy Explorer là cha mẹ của C, lệnh nhắc
+
+29
+00:03:26,220 --> 00:03:33,320
+và Notepad và nhắc lệnh sẽ là cha của Notepad.exe, nếu tôi mở bất kỳ khác
+
+30
+00:03:33,320 --> 00:03:40,280
+Quá trình, bất kỳ điều gì từ một ghi chú.exe, sau đó nó sẽ là một trẻ em từ, trẻ em cho một Notepad.exe
+
+31
+00:03:40,280 --> 00:03:41,280
+Phải.
+
+32
+00:03:41,280 --> 00:03:44,680
+Vì vậy nó sẽ được mở rộng okay.
+
+33
+00:03:44,680 --> 00:03:47,400
+Vì vậy, hãy thảo luận về PPTID lừa dối okay.
+
+34
+00:03:47,400 --> 00:03:55,520
+Bây giờ chúng ta biết những gì là cha mẹ, chúng tôi làm okay, cha mẹ PPTID là một cha mẹ, crossID đánh lừa.
+
+35
+00:03:55,520 --> 00:04:00,760
+Vì vậy, tại sao chúng tôi cần một quá trình ID phụ huynh ở đây giả mạo.
+
+36
+00:04:00,760 --> 00:04:10,040
+Vì vậy, nếu tôi, tôi là một nhà phân tích đe dọa làm việc trong một công ty, nếu chúng ta hãy nghĩ về nhà phân tích mối đe dọa
+
+37
+00:04:10,040 --> 00:04:12,920
+hoặc EDR hoặc bất kỳ nền tảng chống virus nào.
+
+38
+00:04:12,920 --> 00:04:25,120
+Vì vậy, nếu tôi cố gắng, nếu bất kỳ, về cơ bản phân tích mối đe dọa sẽ điều tra các mối đe dọa
+
+39
+00:04:25,120 --> 00:04:27,080
+Dựa trên quá trình thì được.
+
+40
+00:04:27,080 --> 00:04:35,900
+Vì vậy quá trình nào gây ra rằng nếu tôi mở một số tập tin, nếu tôi mở một số dữ liệu độc hại từ CND
+
+41
+00:04:35,900 --> 00:04:36,900
+Được rồi.
+
+42
+00:04:36,900 --> 00:04:44,320
+Vì vậy, bây giờ phân tích mối đe dọa đã biết, do đó quá trình độc hại này đã được sinh ra từ CND
+
+43
+00:04:44,320 --> 00:04:48,640
+lệnh là cha mẹ.
+
+44
+00:04:48,640 --> 00:04:53,720
+Hãy nghĩ về một điều mới.
+
+45
+00:04:53,720 --> 00:05:03,560
+Vì vậy, nếu bất kỳ dịch vụ khác như LSS.exe, hãy nghĩ về LSS.exe bạn mở
+
+46
+00:05:03,560 --> 00:05:06,480
+bất kỳ chương trình độc ác nào.
+
+47
+00:05:06,480 --> 00:05:11,200
+Bây giờ các nhà phân tích đe dọa, họ sẽ suy nghĩ những gì xảy ra trên máy tính bởi vì
+
+48
+00:05:11,200 --> 00:05:16,880
+Đã có quá trình, chương trình độc hại đã bắt đầu bởi quá trình đúng đắn.
+
+49
+00:05:16,880 --> 00:05:22,600
+Chắc chắn rằng các CND cũng là một hợp pháp nhưng chúng tôi có thể làm một số nghi ngờ hoạt động, chúng tôi có thể
+
+50
+00:05:22,600 --> 00:05:28,440
+Thực hiện một số lệnh khả nghi bằng cách sử dụng CND và chúng tôi có thể thực hiện một số chương trình sử dụng
+
+51
+00:05:28,440 --> 00:05:30,000
+CMD bên phải.
+
+52
+00:05:30,000 --> 00:05:34,920
+Chắc chắn các diễn viên đe dọa có thể làm điều đó nhưng nếu bạn nghĩ về LSS.exe
+
+53
+00:05:34,920 --> 00:05:42,440
+hoặc một MSS.exe hoặc bất kỳ loại tiến trình hợp pháp, vì vậy bây giờ các nhà phân tích đe dọa sẽ suy nghĩ
+
+54
+00:05:42,440 --> 00:05:47,840
+những gì xảy ra trên máy tính cũng như cùng một kịch bản sẽ đi cho một EDR hoặc
+
+55
+00:05:47,840 --> 00:05:49,720
+Kế hoạch chống virus vẫn ổn.
+
+56
+00:05:49,720 --> 00:05:54,160
+Chương trình chống virus và EDR sẽ suy nghĩ, có một số quy tắc.
+
+57
+00:05:54,160 --> 00:06:01,680
+Nếu một cái gì đó sinh ra từ, nếu một số, hãy lấy một ví dụ, có một từ. Được rồi.
+
+58
+00:06:01,680 --> 00:06:05,960
+Có một tài liệu từ, nếu một tài liệu từ được.
+
+59
+00:06:05,960 --> 00:06:12,720
+Vì vậy, nếu một cái gì đó thực hiện, nếu một số lệnh PowerShell đã được thực hiện từ tài liệu,
+
+60
+00:06:12,720 --> 00:06:20,480
+Vì vậy, bây giờ các phân tích mối đe dọa, nó có thể là một số vĩ mô dựa trên những điều đã xảy ra
+
+61
+00:06:20,480 --> 00:06:21,480
+Phải.
+
+62
+00:06:21,480 --> 00:06:29,960
+Một số tài liệu dựa trên vĩ mô đến từ Outlook hoặc đến từ bất kỳ nền tảng khác và người dùng
+
+63
+00:06:29,960 --> 00:06:35,440
+Mở nó ra và lệnh PowerShell sẽ bị xử tử, đó sẽ là một kịch bản đúng.
+
+64
+00:06:35,440 --> 00:06:44,960
+Vì vậy, hãy nghĩ rằng nếu một số quá trình khác như các dịch vụ bảo mật hoặc động cơ MSMP.ex,
+
+65
+00:06:44,960 --> 00:06:50,880
+Nếu một số đăng nhập khác hoặc một số tiến trình khác chạy bên trong một cửa sổ, nếu nó mở khác
+
+66
+00:06:50,880 --> 00:06:58,880
+Chương trình nguy hiểm, bây giờ hệ thống EDR chúng ta có thể dễ dàng thoát khỏi chương trình.
+
+67
+00:06:58,880 --> 00:07:04,760
+Vì vậy dựa trên việc phát hiện hành vi của EDR, vì vậy nếu một cái gì đó sinh ra từ, nếu một cái gì đó
+
+68
+00:07:04,760 --> 00:07:12,320
+sẽ được thực hiện từ các con tàu.exe, bảng tính hoặc bất kỳ từ tài liệu,
+
+69
+00:07:12,320 --> 00:07:19,760
+EDR sẽ thống trị từ của bạn hoặc Pusher và nó sẽ kích hoạt một quyền cảnh báo.
+
+70
+00:07:19,760 --> 00:07:23,320
+Vì vậy, đó là một phát hiện hành vi okay.
+
+71
+00:07:23,320 --> 00:07:30,160
+Vì vậy, cũng nếu một cái gì đó sinh ra từ MSHTA.ex, MSHTA thực hiện PowerShell của chúng tôi, vì vậy bây giờ chúng tôi sẽ
+
+72
+00:07:30,160 --> 00:07:37,120
+là nhận được một vụ án và EER sẽ thống trị quá trình đó để đúng.
+
+73
+00:07:37,120 --> 00:07:45,100
+Vì vậy tôi đã nói nếu một cái gì đó sinh ra từ một số khác đăng nhập như MSMP, ENG. Comment
+
+74
+00:07:45,100 --> 00:07:53,080
+Thực hiện độc ác, vì vậy bây giờ EDR không biết làm thế nào để phát hiện các, bởi vì nó hoàn toàn
+
+75
+00:07:53,080 --> 00:08:01,000
+một phát hiện hành vi đúng, vì vậy chúng tôi đang bỏ các Ls và chúng tôi sẽ nhận được a, chúng tôi sẽ
+
+76
+00:08:01,000 --> 00:08:06,560
+là nhận được một cảnh báo đó là, đó là hoàn toàn một hành vi phát hiện đúng.
+
+77
+00:08:06,560 --> 00:08:14,320
+Vì vậy, trong trường hợp của chúng tôi, chúng tôi cần thực hiện một số chương trình nguy hiểm, nhưng chúng tôi cần phải tránh
+
+78
+00:08:14,320 --> 00:08:24,200
+Kháng virus và EDR, để bạn có thể theo dõi quá trình xác định ID của phụ huynh, okay.
+
+79
+00:08:24,200 --> 00:08:29,240
+Tôi đã phát triển một chương trình, nó sẽ ngồi dưới kho của tôi, giả mạo mã nguồn tin,
+
+80
+00:08:29,240 --> 00:08:37,000
+bạn có thể, trong này bạn có thể tìm thấy thực hiện được cũng như chương trình C++, cũng có thể thấy
+
+81
+00:08:37,000 --> 00:08:42,560
+Tương tự như trong việc sử dụng thẻ tín dụng, ProConstaser1.exe, bạn có thể tải về,
+
+82
+00:08:42,560 --> 00:08:51,200
+Được rồi. Tôi sẽ cho, hoặc là buổi biểu diễn lại trong khóa học.
+
+83
+00:08:51,200 --> 00:09:04,840
+Vì vậy, chúng ta hãy đi vào các chương trình, TPID đánh lừa, và tôi sẽ mở các nhắc lệnh.
+
+84
+00:09:04,840 --> 00:09:22,600
+Hãy để tôi chuyển hướng sang, bây giờ bạn có thể thấy, chúng tôi đã chuyển hướng đến thư mục đánh lừa TPID và
+
+85
+00:09:22,600 --> 00:09:33,200
+Chúng tôi có thể thực hiện chương trình, vì vậy bây giờ chúng tôi chỉ yêu cầu cho một số tham số như, vì vậy mà
+
+86
+00:09:33,200 --> 00:09:41,120
+Lệnh bảo vệ DD để thực hiện và DD lá chắn đó, những gì cha mẹ quá trình ID chúng ta cần để đánh lừa,
+
+87
+00:09:41,120 --> 00:09:51,040
+Vì vậy, hãy để tôi đi đến tiến trình hacker của tôi và tôi sẽ chọn một số, một trong quá trình.
+
+88
+00:09:51,040 --> 00:10:04,920
+Vì vậy, hãy để tôi chọn, hãy để tôi chọn các Chrome ở đây, 5372 đã xuất hiện, để tôi chọn
+
+89
+00:10:04,920 --> 00:10:05,920
+được rồi.
+
+90
+00:10:05,920 --> 00:10:25,600
+Vì vậy, tôi sẽ mở, Cal, máy tính, bằng cách đánh lừa quá trình như 5372, mà thuộc về
+
+91
+00:10:25,600 --> 00:10:33,600
+để tôi thử đánh lừa nó. Tôi đã không thể
+
+92
+00:10:33,600 --> 00:10:48,000
+Để làm điều đó, hãy để tôi truy cập vào bạn, tôi đã không thể nhận ra rằng nguồn cấp dữ liệu Chrome là 5372.
+
+93
+00:10:48,000 --> 00:10:55,200
+Hãy để tôi thực hiện điều này đầu tiên, vì vậy bây giờ bạn có thể thấy có một máy tính đã được mở, bên phải,
+
+94
+00:10:55,200 --> 00:11:03,320
+Máy tính đã được mở, vì vậy nếu bạn nhận thấy sự thay đổi phút chốc ở Chrome, hãy để tôi,
+
+95
+00:11:03,320 --> 00:11:10,320
+Hãy để tôi đóng nó lại và để tôi thực hiện điều khiển từ xa, vì vậy bây giờ bạn có thể, xin vui lòng hết sức bạn có thể
+
+96
+00:11:10,320 --> 00:11:20,560
+Thấy không, một số thay đổi phút trong máy tính, ngay bây giờ, vì vậy làm thế nào để chúng ta biết
+
+97
+00:11:20,560 --> 00:11:30,800
+Chrome đã tạo ra máy tính.exe, được rồi, để tôi, để tôi đi đến ID sự kiện, okay, chúng tôi
+
+98
+00:11:30,800 --> 00:11:42,280
+có thể kiểm tra ID sự kiện, để tôi đi đến các, để tôi cung cấp cho bạn một ý tưởng làm thế nào để phát hiện
+
+99
+00:11:42,280 --> 00:12:02,920
+Cha mẹ, nó đang đánh lừa, hãy để tôi đi đến các bản ghi đầu tiên, hệ thống 32, vì vậy bạn có thể tìm thấy ở đây
+
+100
+00:12:02,920 --> 00:12:12,160
+Các bản ghi và kết nối, vì vậy ở đây chúng tôi có một tập hợp các bản ghi, chúng tôi cần phải, có một riêng biệt
+
+101
+00:12:12,160 --> 00:12:17,640
+Để điều tra, để tôi cho anh xem, để tôi đi xem, nếu anh không thể quên
+
+102
+00:12:17,640 --> 00:12:27,720
+Một hệ thống trên, bạn có thể dễ dàng điều tra rằng, hãy đi đến Microsoft và Windows, ở đây
+
+103
+00:12:27,720 --> 00:12:40,600
+Bạn có thể tìm thấy bộ đồ, ở đây chúng ta có một hệ thống, để tôi đi đến hệ thống trên các bản ghi,
+
+104
+00:12:40,600 --> 00:12:49,040
+Vì vậy, dù sao, hệ thống trên ID sự kiện, một trong những quá trình tạo ra ID sự kiện, vì vậy nếu bạn cần để điều tra
+
+105
+00:12:49,040 --> 00:13:14,400
+Cha mẹ, đó là đánh lừa tấn công, hãy để tôi chuyển hướng đến ID sự kiện, một, ở đây chúng tôi có thể thấy
+
+106
+00:13:14,400 --> 00:13:21,400
+ứng dụng máy tính đã được mở ra, và đưa nó vào đã bị chấm dứt, chẵn
+
+107
+00:13:21,400 --> 00:13:30,840
+ID 5 sẽ là sự kiện chấm dứt, vì vậy ở đây bạn có thể thấy máy tính đã được mở
+
+108
+00:13:30,840 --> 00:13:38,640
+Quá trình tạo ra, quá trình tạo ra sự kiện đã ở đó, vì vậy bây giờ, bạn có thể
+
+109
+00:13:38,640 --> 00:13:48,920
+Thấy không, có một, một, một sự kiện khác ID, Chrome.ex, và Chrome.ex sinh sản
+
+110
+00:13:48,920 --> 00:13:53,480
+Máy tính.ex, đây là cha mẹ, dòng lệnh phụ huynh, Chrome,
+
+111
+00:13:53,480 --> 00:14:04,000
+Được rồi, Chrome đã mở calc.exe ở đây, để, chúng tôi đã sử dụng chương trình, Tpid, và
+
+112
+00:14:04,000 --> 00:14:09,960
+quá trình đã bị chấm dứt, nó chạy, và nó đã bị chấm dứt, và máy tính
+
+113
+00:14:09,960 --> 00:14:18,880
+đang chạy, vì vậy bây giờ bạn có thể dễ dàng đánh lừa P hoặc EDR, phát hiện hành vi dựa trên hành vi,
+
+114
+00:14:18,880 --> 00:14:24,720
+Và bạn có thể, bạn có thể đánh lừa cha mẹ, và bạn có thể thuê chương trình đó, okay, đây là một rất
+
+115
+00:14:24,720 --> 00:14:31,760
+hiệu quả để vượt qua EDRs và các chương trình kháng virus từ một phát hiện hành vi, okay,
+
+116
+00:14:31,760 --> 00:14:37,100
+Vì vậy, đó là tất cả về video, hy vọng bạn đã tận hưởng này PPAD giả mạo, vì vậy mọi công cụ
+
+117
+00:14:37,100 --> 00:14:46,820
+hãy nói về đoạn video này.
+
+118
+00:14:46,820 --> 00:14:51,000
+Chúng ta sẽ tiếp tục thảo luận trong video tiếp theo, hẹn gặp lại, tạm biệt.
+
