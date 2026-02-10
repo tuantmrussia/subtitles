@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:04,360
+ Hey guys welcome to the new learning.
+
+2
+00:00:04,360 --> 00:00:11,360
+ In this video we are going to learn TTID spoofing.
+
+3
+00:00:11,360 --> 00:00:17,760
+ Many of them know what is a period of process.
+
+4
+00:00:17,760 --> 00:00:28,360
+ So this can be used for evade the detection as well as it will be used for and some other
+
+5
+00:00:28,360 --> 00:00:37,800
+ tactics, maybe a privileged escalation, access token manipulation with TTID spoofing.
+
+6
+00:00:37,800 --> 00:00:44,760
+ So we need to understand what is a pit first okay, what is a PID, PID's process identifier.
+
+7
+00:00:44,760 --> 00:00:53,940
+ So when you start a new process in Windows or any Linux or Mac OS or any operating system,
+
+8
+00:00:53,940 --> 00:00:58,920
+ your Windows operating system will lock it, separate, unique PID for you okay.
+
+9
+00:00:58,920 --> 00:01:06,960
+ So let's take an example, I have a Chrome open, you can see the PID of a Chrome okay.
+
+10
+00:01:06,960 --> 00:01:13,560
+ So it's a 5-3, 7-2 as a PID process identifier.
+
+11
+00:01:13,560 --> 00:01:20,440
+ As I said when you start a new process, if I start a new process like a Notepad.exe or any
+
+12
+00:01:20,440 --> 00:01:31,800
+ other Calc.exe or anything, so I will be getting a unique PID for a Notepad.exe, 7-8-5-6.
+
+13
+00:01:31,800 --> 00:01:37,600
+ This will be allocated by your Windows operating system, you don't need to do any other
+
+14
+00:01:37,600 --> 00:01:38,600
+ things okay.
+
+15
+00:01:38,600 --> 00:01:47,200
+ So let me view the scenario, what is a PPID, so what is a parent PID okay.
+
+16
+00:01:47,200 --> 00:01:58,840
+ So now let's take an example of Explorer.exe, so Explorer.exe is a parent of security
+
+17
+00:01:58,840 --> 00:02:02,160
+ health spray, the box tray and one drive.
+
+18
+00:02:02,160 --> 00:02:15,360
+ So if I open any process from Windows Explorer, so that will be coming under the parent
+
+19
+00:02:15,360 --> 00:02:23,080
+ of Explorer.exe okay, so that's the separate scenario, so you can say okay.
+
+20
+00:02:23,080 --> 00:02:30,140
+ So what process you are opening from, so if I open any process from the, if I open the
+
+21
+00:02:30,140 --> 00:02:39,920
+ CMD from here, so the Explorer will be the parent, the Explorer will be a parent for command.exe
+
+22
+00:02:39,920 --> 00:02:40,920
+ okay.
+
+23
+00:02:40,920 --> 00:02:45,820
+ So this is how we were Windows operating system will work okay.
+
+24
+00:02:45,820 --> 00:02:57,880
+ If I open a Notepad from the command prompt, if I open the Notepad from the command prompt.
+
+25
+00:02:57,880 --> 00:03:06,160
+ So now you can see the parent will be the CMD.exe and the child will be the Notepad.exe.
+
+26
+00:03:06,160 --> 00:03:17,240
+ The parent will be the parent, child parent and if I see the parent of a CMD.exe, then
+
+27
+00:03:17,240 --> 00:03:19,080
+ it will be going to min Explorer right.
+
+28
+00:03:19,080 --> 00:03:26,220
+ So if I, I open the CMD from Explorer, so Explorer is the parent of the C, command prompt
+
+29
+00:03:26,220 --> 00:03:33,320
+ and Notepad and command prompt will be the parent of Notepad.exe, if I open any other
+
+30
+00:03:33,320 --> 00:03:40,280
+ process, any things from a Notepad.exe, then it will be a child from, child for a Notepad.exe
+
+31
+00:03:40,280 --> 00:03:41,280
+ right.
+
+32
+00:03:41,280 --> 00:03:44,680
+ So it will be extended okay.
+
+33
+00:03:44,680 --> 00:03:47,400
+ So let's discuss about the PPTID spoofing okay.
+
+34
+00:03:47,400 --> 00:03:55,520
+ Now we know what is a parent, we do okay, parent PPTID is a parent, crossID spoofing.
+
+35
+00:03:55,520 --> 00:04:00,760
+ So why we need a parent process ID spoofing here.
+
+36
+00:04:00,760 --> 00:04:10,040
+ So if I, I was a threat analyst working in a company, if let's think about the threat analyst
+
+37
+00:04:10,040 --> 00:04:12,920
+ or EDR or any antivirus platforms.
+
+38
+00:04:12,920 --> 00:04:25,120
+ So if I try to, if any, basically the threat analyst will be investigating the threats
+
+39
+00:04:25,120 --> 00:04:27,080
+ based on the process okay.
+
+40
+00:04:27,080 --> 00:04:35,900
+ So which process trigger that if I open some file, if I open some malicious file from CMD
+
+41
+00:04:35,900 --> 00:04:36,900
+ okay.
+
+42
+00:04:36,900 --> 00:04:44,320
+ So now the threat analyst know, so this malicious process has been spawned from the CMD
+
+43
+00:04:44,320 --> 00:04:48,640
+ command prompt right, the command prompt was a parent okay.
+
+44
+00:04:48,640 --> 00:04:53,720
+ So let's think, let's think about, let's think about on a new thing.
+
+45
+00:04:53,720 --> 00:05:03,560
+ So if any of the other services like LSS.exe, let's think about the LSS.exe you opened
+
+46
+00:05:03,560 --> 00:05:06,480
+ any of a malicious program.
+
+47
+00:05:06,480 --> 00:05:11,200
+ Now the threat analyst, they will be thinking what happening on the machine because the
+
+48
+00:05:11,200 --> 00:05:16,880
+ process has been, the malicious program has been started by the legitimate process right.
+
+49
+00:05:16,880 --> 00:05:22,600
+ Absolutely the CMD is also a legitimate but we can do some suspicious activities, we can
+
+50
+00:05:22,600 --> 00:05:28,440
+ execute some suspicious commands using the CMD and we can execute some program using
+
+51
+00:05:28,440 --> 00:05:30,000
+ the CMD right.
+
+52
+00:05:30,000 --> 00:05:34,920
+ Absolutely the threat actors can able to do that but if you think about the LSS.exe
+
+53
+00:05:34,920 --> 00:05:42,440
+ or a MSS.exe or any kind of legitimate process, so now the threat analyst will be thinking
+
+54
+00:05:42,440 --> 00:05:47,840
+ what happening on the machine as well as the same scenario will be going for an EDR or
+
+55
+00:05:47,840 --> 00:05:49,720
+ the antivirus program okay.
+
+56
+00:05:49,720 --> 00:05:54,160
+ The antivirus program and EDR will be thinking, there is a some set of rules.
+
+57
+00:05:54,160 --> 00:06:01,680
+ If something spawned from the, if some, let's take an example, there is a word.exe okay.
+
+58
+00:06:01,680 --> 00:06:05,960
+ There is a word document, if a word document okay.
+
+59
+00:06:05,960 --> 00:06:12,720
+ So if something executed, if some PowerShell command has been executed from the word document,
+
+60
+00:06:12,720 --> 00:06:20,480
+ so now the threat analyst thing, it could be some macro based things has been happened
+
+61
+00:06:20,480 --> 00:06:21,480
+ right.
+
+62
+00:06:21,480 --> 00:06:29,960
+ Some macro based document coming from Outlook or coming from any other platform and the user
+
+63
+00:06:29,960 --> 00:06:35,440
+ opened that and PowerShell commands get executed that will be a scenario right.
+
+64
+00:06:35,440 --> 00:06:44,960
+ So let's think if some other process like security fields service or MSMP engine.exe,
+
+65
+00:06:44,960 --> 00:06:50,880
+ if some other logins or some other process running inside a windows, if it's open any other
+
+66
+00:06:50,880 --> 00:06:58,880
+ malicious program, now the EDR we can easily evade the program right.
+
+67
+00:06:58,880 --> 00:07:04,760
+ So based on the behavior detection of an EDR, so if something spawned from the, if something
+
+68
+00:07:04,760 --> 00:07:12,320
+ gets executed from the Excel.exe, Excel sheet or spreadsheet or any word document, the
+
+69
+00:07:12,320 --> 00:07:19,760
+ EDR will be dominating your word or Excel and it will be triggering an alert right.
+
+70
+00:07:19,760 --> 00:07:23,320
+ So it's a behavior based detection okay.
+
+71
+00:07:23,320 --> 00:07:30,160
+ So also if something spawned from the MSHTA.exe, MSHTA execute our PowerShell, so now we will
+
+72
+00:07:30,160 --> 00:07:37,120
+ be getting a case and the EDR will be dominating that process to right.
+
+73
+00:07:37,120 --> 00:07:45,100
+ So I already said if something spawned from some other login like MSMP, ENG.exe triggered
+
+74
+00:07:45,100 --> 00:07:53,080
+ malicious executable, so now EDR does not know how to detect the, because it completely
+
+75
+00:07:53,080 --> 00:08:01,000
+ a behavior based detection right, so we are dumping the Ls and we'll be getting a, we'll
+
+76
+00:08:01,000 --> 00:08:06,560
+ be getting an alert that's, that's completely a behavior based detection right.
+
+77
+00:08:06,560 --> 00:08:14,320
+ So in our scenario, we need to execute some malicious program, but we need to evade the
+
+78
+00:08:14,320 --> 00:08:24,200
+ antivirus and EDR, so you can follow the parent process ID spoofing attack, okay.
+
+79
+00:08:24,200 --> 00:08:29,240
+ I already have developed a program, it will be sitting under my repository, TPID spoofing,
+
+80
+00:08:29,240 --> 00:08:37,000
+ you can, in this you can find the executable as well as the C++ program, also you can see
+
+81
+00:08:37,000 --> 00:08:42,560
+ the same in the access token manipulation, ProConstealer1.exe, you can download that,
+
+82
+00:08:42,560 --> 00:08:51,200
+ you can use that, okay. I'll be giving the, or the GitHub repo in the course, okay.
+
+83
+00:08:51,200 --> 00:09:04,840
+ So let's go to the programs, TPID spoofing, and I'll be opening the command prompt.
+
+84
+00:09:04,840 --> 00:09:22,600
+ Let me redirect to, now you can see, we have redirected to the TPID spoofing directory and
+
+85
+00:09:22,600 --> 00:09:33,200
+ we can execute the program, so now we're just asking for a few parameters like, so that
+
+86
+00:09:33,200 --> 00:09:41,120
+ shield DD command to execute and that shield DD, what parent process ID we need to spoof,
+
+87
+00:09:41,120 --> 00:09:51,040
+ so let me go to my process hacker and I will be selecting few, one of the process.
+
+88
+00:09:51,040 --> 00:10:04,920
+ So let me select, let me select the Chrome here, 5372 that was appeared, let me select
+
+89
+00:10:04,920 --> 00:10:05,920
+ this, okay.
+
+90
+00:10:05,920 --> 00:10:25,600
+ So I'll be opening, Cal, calculator, by spoofing the process like 5372, that belongs
+
+91
+00:10:25,600 --> 00:10:33,600
+ to the Chrome, that belongs to the Chrome feed, let me try to spoof it, okay. I was unable
+
+92
+00:10:33,600 --> 00:10:48,000
+ to do the, let me click on you, I was unable to find that the Chrome feed was of 5372.
+
+93
+00:10:48,000 --> 00:10:55,200
+ Let me execute this first, so now you can see there is a calculator has been open, right,
+
+94
+00:10:55,200 --> 00:11:03,320
+ the calculator has been open, so if you notice the minute change at the Chrome, let me,
+
+95
+00:11:03,320 --> 00:11:10,320
+ let me close this and let me execute the command remote, so now you can, please as you can
+
+96
+00:11:10,320 --> 00:11:20,560
+ see, some minute changes in the Chrome, the calculator, right, so now how do we know the
+
+97
+00:11:20,560 --> 00:11:30,800
+ Chrome spawned the calculator.exe, okay, so let me, let me go to the event ID, okay, we
+
+98
+00:11:30,800 --> 00:11:42,280
+ can check the event ID's, let me go to the, let me give you an idea how to detect the
+
+99
+00:11:42,280 --> 00:12:02,920
+ parent, it's spoofing, let me go to the logs first, the system 32, so here you can find
+
+100
+00:12:02,920 --> 00:12:12,160
+ the connectivity and logs, so here we have a set of logs, we need to, there's a separate
+
+101
+00:12:12,160 --> 00:12:17,640
+ logs to investigate, let me show you that, let me go to, if you, if you can't forget
+
+102
+00:12:17,640 --> 00:12:27,720
+ a system on, you can easily investigate that, let's go to the Microsoft and Windows, here
+
+103
+00:12:27,720 --> 00:12:40,600
+ you can find set of things, here we have a system on, let me go to the system on logs,
+
+104
+00:12:40,600 --> 00:12:49,040
+ so anyway, system on event ID, one also process creation event ID, so if you need to investigate
+
+105
+00:12:49,040 --> 00:13:14,400
+ the parent, it's spoofing attack, let me redirect to the event ID, one, here we can see
+
+106
+00:13:14,400 --> 00:13:21,400
+ the calculator application has been opened, and hand it to has been terminated, the even
+
+107
+00:13:21,400 --> 00:13:30,840
+ ID 5 will be the termination events, so here you can see the calculator has been opened
+
+108
+00:13:30,840 --> 00:13:38,640
+ right, the process create, the process create event has been there, so now, now you can
+
+109
+00:13:38,640 --> 00:13:48,920
+ see there is a, there's a, one more event ID, the Chrome.exe, and the Chrome.exe spawned
+
+110
+00:13:48,920 --> 00:13:53,480
+ the calculator.exe, this is the parent, parent, right, the parent command line, the Chrome,
+
+111
+00:13:53,480 --> 00:14:04,000
+ okay, the Chrome opened the calc.exe here, so that, we have used the program, Tpid, and
+
+112
+00:14:04,000 --> 00:14:09,960
+ the process has been terminated, it ran, and it has been terminated, and the calculator
+
+113
+00:14:09,960 --> 00:14:18,880
+ has been running, right, so now you can easily spoof P or EDR, the behavior based detection,
+
+114
+00:14:18,880 --> 00:14:24,720
+ and you can, you can spoof the parent, and you can rent that program, okay, this is a very
+
+115
+00:14:24,720 --> 00:14:31,760
+ efficient to bypass EDRs and antivirus programs from a behavior based detection, okay,
+
+116
+00:14:31,760 --> 00:14:37,100
+ so that's all about the video, hope you have enjoyed this PPAD spoofing, so every tool
+
+117
+00:14:37,100 --> 00:14:46,820
+ still be under my repo, you can check that, okay, okay, let's talk about this video and
+
+118
+00:14:46,820 --> 00:14:51,000
+ we'll continue our discussion in the next video, see you guys, bye bye.
+
