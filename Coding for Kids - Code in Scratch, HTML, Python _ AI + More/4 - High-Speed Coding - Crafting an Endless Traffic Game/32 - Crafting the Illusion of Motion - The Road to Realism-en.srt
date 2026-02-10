@@ -1,0 +1,220 @@
+1
+00:00:00,080 --> 00:00:05,990
+So now that everything is in order, we can move to the next stage, which is building up the mechanics
+
+2
+00:00:05,990 --> 00:00:06,530
+of the game.
+
+3
+00:00:06,890 --> 00:00:13,100
+Now normally we would start with our main player sprite because after all, it is our main player.
+
+4
+00:00:13,130 --> 00:00:21,230
+However, before this there is something even more important which is our road because it makes it actually
+
+5
+00:00:21,230 --> 00:00:22,520
+look like we're driving.
+
+6
+00:00:23,030 --> 00:00:27,260
+Now you may be wondering how do we make it look like our car is moving forward?
+
+7
+00:00:27,910 --> 00:00:32,560
+Well, this is where the art of illusion comes in.
+
+8
+00:00:32,830 --> 00:00:38,680
+You see, in our game, we want to give the player a sense of continuous motion, as if they're driving
+
+9
+00:00:38,680 --> 00:00:40,240
+down an endless road.
+
+10
+00:00:41,170 --> 00:00:46,690
+To achieve this, we need to pay close attention to the alignment of our road lines and also other visual
+
+11
+00:00:46,690 --> 00:00:47,380
+elements.
+
+12
+00:00:47,410 --> 00:00:49,870
+It's sort of like a magician's trick.
+
+13
+00:00:49,870 --> 00:00:56,560
+If we do it just right, we can create an illusion that feels real and seamless to the plan.
+
+14
+00:00:56,950 --> 00:01:01,840
+Now imagine you're watching a well executed magic trick.
+
+15
+00:01:01,870 --> 00:01:09,160
+Your eyes are glued to the magician's hands as they effortlessly create the illusion of reality.
+
+16
+00:01:09,870 --> 00:01:11,760
+That's what we want to do with our game.
+
+17
+00:01:11,760 --> 00:01:18,510
+We want our players to be so captivated by the seamless loop that they don't notice the trick behind
+
+18
+00:01:18,510 --> 00:01:18,960
+it.
+
+19
+00:01:20,050 --> 00:01:26,170
+And to create this illusion of motion, we'll be using stretched backgrounds and clever manipulation
+
+20
+00:01:26,170 --> 00:01:28,000
+of the x and Y positions.
+
+21
+00:01:28,630 --> 00:01:34,510
+The key here is to ensure that our road lines and other elements aligned perfectly, so the loop appears
+
+22
+00:01:34,510 --> 00:01:36,400
+smooth and continuous.
+
+23
+00:01:37,140 --> 00:01:40,620
+But why is this precision so important, you may ask?
+
+24
+00:01:40,950 --> 00:01:47,370
+Well, the slightest misalignment can break the illusion, making the game feel less immersive and enjoyable.
+
+25
+00:01:47,400 --> 00:01:54,210
+Remember, our goal is to captivate the player and make them feel like they are truly driving down an
+
+26
+00:01:54,210 --> 00:01:55,380
+endless road.
+
+27
+00:01:56,580 --> 00:01:59,220
+And this part might get quite tricky.
+
+28
+00:01:59,220 --> 00:02:04,500
+So if you find this stage too challenging, remember you can always download the full project asset
+
+29
+00:02:04,500 --> 00:02:06,420
+with the completed sprites.
+
+30
+00:02:06,420 --> 00:02:13,110
+However, the stage will definitely increase your skill in costume design and game development.
+
+31
+00:02:14,030 --> 00:02:14,690
+Right.
+
+32
+00:02:15,050 --> 00:02:17,480
+Let's get this endless loop underway.
+
+33
+00:02:18,360 --> 00:02:26,160
+So if we go to our road sprite and then costumes, you can see we have, well, just these lines.
+
+34
+00:02:26,340 --> 00:02:29,730
+And right now our road lines are the exact size of our screen.
+
+35
+00:02:29,730 --> 00:02:34,380
+So if they were to come down even the slightest bit, the illusion would be broken.
+
+36
+00:02:35,840 --> 00:02:39,920
+So what we want is to extend the road past these borders here.
+
+37
+00:02:40,750 --> 00:02:44,380
+If you try to do this now, you will see it just vanishes into the abyss.
+
+38
+00:02:45,020 --> 00:02:50,930
+So the first thing we need to do is convert it into a vector, which now, as you can see, gives us
+
+39
+00:02:50,930 --> 00:02:54,770
+a load more options, including bringing the image off the screen.
+
+40
+00:02:55,410 --> 00:02:59,280
+So to extend this image, what we can do is bring it down.
+
+41
+00:02:59,280 --> 00:03:03,090
+And remember we can use the arrow keys just so we have more control.
+
+42
+00:03:03,090 --> 00:03:08,100
+And also if you hold shift while clicking you can see it moves a lot further.
+
+43
+00:03:09,100 --> 00:03:09,700
+Anyway.
+
+44
+00:03:09,850 --> 00:03:10,690
+Right here.
+
+45
+00:03:10,690 --> 00:03:12,520
+Looks about good.
+
+46
+00:03:12,910 --> 00:03:15,190
+So now we can copy this and then paste it.
+
+47
+00:03:15,190 --> 00:03:20,740
+And before moving it up we can make sure it is exactly aligned horizontally.
+
+48
+00:03:20,770 --> 00:03:24,520
+Now again using the arrow keys we can bring it up.
+
+49
+00:03:25,180 --> 00:03:28,150
+Now the final step is to make sure these gaps are the same.
+
+50
+00:03:28,150 --> 00:03:35,080
+So here just carefully look at the road as you slowly move it up to make sure these two gaps are the
+
+51
+00:03:35,080 --> 00:03:35,740
+same.
+
+52
+00:03:36,220 --> 00:03:37,510
+And that looks pretty good.
+
+53
+00:03:37,690 --> 00:03:41,920
+Again, this might take a bit of trial and error to get it perfect.
+
+54
+00:03:42,710 --> 00:03:44,300
+But with that, our costume is ready.
+
+55
+00:03:44,330 --> 00:03:50,780
+We can now move to the exciting part animating it, which we'll do in the next lesson.
+
