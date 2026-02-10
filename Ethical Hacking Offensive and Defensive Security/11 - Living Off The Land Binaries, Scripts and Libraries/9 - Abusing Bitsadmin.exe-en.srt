@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:10,520
+ . So, let us come to the another video what is bit serving dot exe and what is the purpose
+
+2
+00:00:10,520 --> 00:00:15,760
+ of the bit serving dot exe and how threat actor will abuse this bit serving dot exe for a
+
+3
+00:00:15,760 --> 00:00:20,480
+ malicious purpose ok. So, what I am what are the things I am discussing in this video you
+
+4
+00:00:20,480 --> 00:00:26,600
+ can see that in the active incidents if the threat actor belongs with the bit serving
+
+5
+00:00:26,600 --> 00:00:33,560
+ service ok. So, it will very helpful when you are investigating that type of case.
+
+6
+00:00:33,560 --> 00:00:39,000
+ So, let us talk about what it is bit serving ok. So, bit serving is nothing but background
+
+7
+00:00:39,000 --> 00:00:45,440
+ intelligent transfer service this is one of the service which was introduced by Microsoft
+
+8
+00:00:45,440 --> 00:00:51,680
+ in Windows XP operating system and it was used to download or uploading a large files
+
+9
+00:00:51,680 --> 00:01:00,320
+ of large files or a large data from the internet ok. Basically in overall view so this
+
+10
+00:01:00,320 --> 00:01:05,720
+ was used by the Windows update to update your operating system ok. So, this is the overall
+
+11
+00:01:05,720 --> 00:01:10,800
+ view of bit serving let us take it simple I am not going depth in theory ok it was kind
+
+12
+00:01:10,800 --> 00:01:17,560
+ of boring. So, my motive is to explain all the things in a practical way ok.
+
+13
+00:01:17,560 --> 00:01:24,640
+ So, we need to understand overall brief of bit serving why bit serving was used by the malicious
+
+14
+00:01:24,640 --> 00:01:30,900
+ threat actor by the threat actor to to a malicious things ok. So, let us take your Windows
+
+15
+00:01:30,900 --> 00:01:37,960
+ update your Windows update will update at the particular time. So, that all the things
+
+16
+00:01:37,960 --> 00:01:43,720
+ are responsible for the bit serving ok background real intelligent transfer service it will
+
+17
+00:01:43,720 --> 00:01:47,720
+ take the responsibility for your Windows update as well as your you want if you want to
+
+18
+00:01:47,720 --> 00:01:55,080
+ update any other drivers or a third or a third party application can also use the bit
+
+19
+00:01:55,080 --> 00:02:01,320
+ serving to download or upload a data or they can use for an update ok.
+
+20
+00:02:01,320 --> 00:02:08,000
+ So, let us take an let us come with the let us come with the how threat actor will abuse
+
+21
+00:02:08,000 --> 00:02:15,040
+ these bit serving to for a malicious purpose ok. So, in order of understanding so, the
+
+22
+00:02:15,040 --> 00:02:18,920
+ bit serving used to to download or upload data right. So, the the same way the threat
+
+23
+00:02:18,920 --> 00:02:26,000
+ actor can a can able to use this service to download or upload a large files of data
+
+24
+00:02:26,000 --> 00:02:31,240
+ to the internet or from the internet right ok. So, these are the commands I will explain
+
+25
+00:02:31,240 --> 00:02:38,240
+ this commands in a practical ok. Let us come with the mitre tactics it came with you it
+
+26
+00:02:38,240 --> 00:02:44,600
+ has a differentiation tactics ok. So, way it came in a different situation let us think
+
+27
+00:02:44,600 --> 00:02:50,800
+ about that ok. For example, your target organization added firewall tools there is some
+
+28
+00:02:50,800 --> 00:02:56,960
+ restriction like the threat party application can not able to upload a data upload or download
+
+29
+00:02:56,960 --> 00:03:03,120
+ a data from the from or to the internet. So, that time your malicious executable can
+
+30
+00:03:03,120 --> 00:03:08,440
+ table to do that right your your malicious executable can table to download or upload anything
+
+31
+00:03:08,440 --> 00:03:14,760
+ from the internet or from the server right. So, that time you can use this bits admin
+
+32
+00:03:14,760 --> 00:03:20,660
+ to bypass that restriction ok. So, because bits admin is clearly a Windows internal
+
+33
+00:03:20,660 --> 00:03:25,880
+ tool right. So, it is a it is a Windows internal tool. So, absolutely your firewall or
+
+34
+00:03:25,880 --> 00:03:32,520
+ your antivirus or your EDS solution will allow that allow that thing allow the bits admin
+
+35
+00:03:32,520 --> 00:03:40,760
+ job to do the do the responsible thing right right. So, for that it came with the
+
+36
+00:03:40,760 --> 00:03:45,840
+ claims under the different aviation tactics also it came in a position. So, let us think
+
+37
+00:03:45,840 --> 00:03:50,880
+ about your Windows update. So, when you are giving your Windows update later so, it will
+
+38
+00:03:50,880 --> 00:03:55,480
+ ask for a time right. So, if you are giving a 2 o'clock it will wait till 2 o'clock and
+
+39
+00:03:55,480 --> 00:04:01,960
+ it will start an update at 2 o'clock ok. So, this will create. So, the bits admin will
+
+40
+00:04:01,960 --> 00:04:09,840
+ create a scheduled time for a Windows update with a with a job name called update or any
+
+41
+00:04:09,840 --> 00:04:18,240
+ random names ok. And it will start a update at short player 2 o'clock ok. So, this is the
+
+42
+00:04:18,240 --> 00:04:23,120
+ background intelligent transfer service will take a responsibility for all the all the
+
+43
+00:04:23,120 --> 00:04:30,340
+ things ok the persistence and the creating a scheduled time and a scheduled job and everything
+
+44
+00:04:30,340 --> 00:04:40,520
+ ok. So, let us comes with come with the practical ok. So, I will let us open a Windows
+
+45
+00:04:40,520 --> 00:04:51,200
+ official. I will use the bits it is let us create a job we need to create some job ok create
+
+46
+00:04:51,200 --> 00:05:02,320
+ I will create a job name of course, let us see it for some time ok. We have created a job
+
+47
+00:05:02,320 --> 00:05:13,160
+ with this name and let us search it. Let us add a file sorry I just use an acceptable
+
+48
+00:05:13,160 --> 00:05:23,160
+ bits admin slash add file and you need to give the name for the job basically we are
+
+49
+00:05:23,160 --> 00:05:33,640
+ downloading one of the malicious file from the Internet this is the file mimic ads. So,
+
+50
+00:05:33,640 --> 00:05:40,040
+ add a file parameter with the course name course that was the job name and I am going
+
+51
+00:05:40,040 --> 00:05:55,480
+ to save this in users slash user, and I will name it as a bits job.exe ok.
+
+52
+00:05:55,480 --> 00:06:01,160
+ So, let us go to the directory and we will see what happening inside the picture directory
+
+53
+00:06:01,160 --> 00:06:09,920
+ when I am executing this command. So, let me it for some time it will create a bits job ok
+
+54
+00:06:09,920 --> 00:06:15,600
+ yep. So, now you can see there is some TMP temporary file was added into the picture
+
+55
+00:06:15,600 --> 00:06:23,840
+ directory with the BIT EFT dot TMP ok the temporary file was added. Now, we have created
+
+56
+00:06:23,840 --> 00:06:31,960
+ and added the file added the job file successfully. So, let discuss about some routine
+
+57
+00:06:31,960 --> 00:06:37,220
+ things ok. So, how we can investigate this how we can investigate if the threat actor created
+
+58
+00:06:37,220 --> 00:06:46,700
+ any bits or bits that means job ok. Let us use this command bits admin list list verbose.
+
+59
+00:06:46,700 --> 00:06:52,880
+ So, verbose will give additional information like creation time and modification time
+
+60
+00:06:52,880 --> 00:07:02,360
+ what was the job and what was the job and all ok. So, here you can see the GUID and display
+
+61
+00:07:02,360 --> 00:07:09,840
+ this was the job, job name the course and we have created. And now we are the download
+
+62
+00:07:09,840 --> 00:07:17,600
+ download state status was suspended and one of us this was the owner and the bits admin
+
+63
+00:07:17,600 --> 00:07:23,180
+ was created at this time and the modification time ok. And the job file ok see this was
+
+64
+00:07:23,180 --> 00:07:29,880
+ the job ok. Absolutely this was a malicious file mimicad.exe. So, now if you are a threat
+
+65
+00:07:29,880 --> 00:07:36,800
+ analyst you can understand ok this was the malicious file malicious executable malicious
+
+66
+00:07:36,800 --> 00:07:42,680
+ URL that was added by the threat actor into the bits admin job ok. So, you can clearly
+
+67
+00:07:42,680 --> 00:07:49,600
+ go and delete that job ok. So, by that you can stop the threat actor from that point ok.
+
+68
+00:07:49,600 --> 00:07:57,920
+ So, this is how you can able to investigate the bits admin ok listed on job yeah it listed
+
+69
+00:07:57,920 --> 00:08:04,400
+ on one job there is only one job a scheduled. So, let us come up with your routine
+
+70
+00:08:04,400 --> 00:08:12,760
+ and bits admin slash let us download this mimicad.exe into our machine. I already told
+
+71
+00:08:12,760 --> 00:08:18,440
+ bits admin is used to upload our download data. So, now we are thinking as a threat
+
+72
+00:08:18,440 --> 00:08:24,840
+ actor we are downloading a malicious file from the internet using the bits admin ok bits
+
+73
+00:08:24,840 --> 00:08:35,080
+ admin ok just we resume the job resume COU or AC ok. Now, the job was resume you can
+
+74
+00:08:35,080 --> 00:08:55,000
+ see the command job resume let us download this bits admin slash download course on second
+
+75
+00:08:55,000 --> 00:09:04,320
+ ok ok ok sorry the parameter will be complete ok ok I just you know it is admin slash
+
+76
+00:09:04,320 --> 00:09:21,000
+ complete the job name was course ok see the job completed and our mimicad.exe file
+
+77
+00:09:21,000 --> 00:09:31,440
+ was created under the directory pictures because we gave the picture directory to download
+
+78
+00:09:31,440 --> 00:09:37,080
+ the bits admin. So, you here you can see the directory which we have here ok with the
+
+79
+00:09:37,080 --> 00:09:43,040
+ name bits a bits job ok. So, this is how the threat actor will abuse the bits admin
+
+80
+00:09:43,040 --> 00:09:51,280
+ to to deploy their ransomware or else to download download the second stage of payload
+
+81
+00:09:51,280 --> 00:09:59,320
+ from the internet or they can they can use for they can use for a ransomware deployment
+
+82
+00:09:59,320 --> 00:10:02,760
+ or else ok. So, let us take an example of a ransomware
+
+83
+00:10:02,760 --> 00:10:07,880
+ deployment in this bits admin. So, the threat actor will host the ransomware
+
+84
+00:10:07,880 --> 00:10:14,440
+ executable in one of the network service like file server or SMB server they will
+
+85
+00:10:14,440 --> 00:10:22,320
+ transfer that ransomware executable across the state using the bits admin ok. So, the main
+
+86
+00:10:22,320 --> 00:10:27,840
+ focus of the bits admin was it will it will evade the defense ok it will easily evade
+
+87
+00:10:27,840 --> 00:10:32,560
+ the defense your EDR solution or your firewall or your antivirus software will own care
+
+88
+00:10:32,560 --> 00:10:37,400
+ about what happening in the bits admin ok. That is why the threat actor using the bits
+
+89
+00:10:37,400 --> 00:10:44,960
+ admin to to the to do your malicious malicious stuff inside the machine ok.
+
+90
+00:10:44,960 --> 00:10:51,560
+ So, hope you enjoyed this video I have I have shown everything in a practical way and how
+
+91
+00:10:51,560 --> 00:10:55,480
+ how you need to investigate and all ok hope you enjoyed the video we will see in the
+
+92
+00:10:55,480 --> 00:10:58,840
+ next video. Thank you.
+
