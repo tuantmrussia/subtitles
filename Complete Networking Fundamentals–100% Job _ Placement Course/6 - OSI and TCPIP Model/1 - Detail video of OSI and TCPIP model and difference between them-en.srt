@@ -1,0 +1,1452 @@
+1
+00:00:00,000 --> 00:00:13,260
+ Welcome back in this next new session in which we talk about two models OSI model and TCP
+
+2
+00:00:13,260 --> 00:00:20,640
+ IP model. So, yeah. So, this will be a little bit long video. So, if you want to take
+
+3
+00:00:20,640 --> 00:00:32,000
+ a, if you want to go to washroom, you can just sit for seven minutes. Open your mind
+
+4
+00:00:32,000 --> 00:00:39,880
+ and just look into that, that what I am going to say, just memorize it, just visualize
+
+5
+00:00:39,880 --> 00:00:47,120
+ that, how things are going to work and don't take any tension. If you go through
+
+6
+00:00:47,120 --> 00:00:54,480
+ my video in months, I am sure, sure, sure, sure that if any interviewer asks you any question
+
+7
+00:00:54,480 --> 00:01:02,760
+ related to OSI model or TCP/IP model, you can give that answer instantly, okay. You can
+
+8
+00:01:02,760 --> 00:01:09,800
+ how again you can re-watch this video as well. But yeah, it will be good if you note it
+
+9
+00:01:09,800 --> 00:01:14,040
+ down in your notebook, important things at first, at first time.
+
+10
+00:01:14,040 --> 00:01:25,340
+ Let's start my video network layers, a definition of OSI and TCP IP model, so yeah, okay.
+
+11
+00:01:25,340 --> 00:01:31,280
+ First start with OSI model, because OSI model is the one that will help you to understand
+
+12
+00:01:31,280 --> 00:01:37,320
+ how things in networking work and understanding the OSI model are found in a second. Open
+
+13
+00:01:37,320 --> 00:01:46,040
+ system interconnection, OSI stand for open system interconnection, okay. Model describes
+
+14
+00:01:46,040 --> 00:01:53,160
+ seven layers that computer system use to communicate over a network. It was the first
+
+15
+00:01:53,160 --> 00:01:58,880
+ standard model for network communication, right. Doctor by all major computer and telecommunication
+
+16
+00:01:58,880 --> 00:02:10,040
+ companies in the least 1980s and officially standard by ISO in 1984. While modern internet
+
+17
+00:02:10,040 --> 00:02:16,960
+ communication primarily relies on the simple TCP/IP model, the OSI seven layer model remains
+
+18
+00:02:16,960 --> 00:02:23,120
+ invaluable. It helped visualize and communicate how network operate, aiding in the isolation
+
+19
+00:02:23,120 --> 00:02:30,760
+ and troubleshooting of network problem. Open, in OSI, signified its known property
+
+20
+00:02:30,760 --> 00:02:37,320
+ nature, prompting interoperability, the seven layer architecture collaboratively transmit
+
+21
+00:02:37,320 --> 00:02:47,440
+ data across cloud, okay. Next, this is how OSI model look like. Application layer, presentation
+
+22
+00:02:47,440 --> 00:02:52,280
+ layer, session layer, transport layer, network layer, data layer, physical layer. Now, here
+
+23
+00:02:52,280 --> 00:02:58,880
+ is the sender. This sends information, it goes from application to physical, then it
+
+24
+00:02:58,880 --> 00:03:06,960
+ leads to receiver side, it receives from below, in physical layer, then it will go to application
+
+25
+00:03:06,960 --> 00:03:13,880
+ layer. This is how work. First three is software layer, okay. Application layer, less
+
+26
+00:03:13,880 --> 00:03:21,560
+ like we have any application, we have browser. We have any information, we have any software.
+
+27
+00:03:21,560 --> 00:03:26,360
+ So, this is which we are seeing, which is we are seeing is called frontend, from which
+
+28
+00:03:26,360 --> 00:03:33,440
+ we can interact. There is a website in which there is a button we can interact by clicking
+
+29
+00:03:33,440 --> 00:03:41,960
+ on that. We have a menu section, we have a box, we have catalog section, we have dashboard,
+
+30
+00:03:41,960 --> 00:03:46,000
+ we have a lot of things in our software. So, we have application layer, which is visible
+
+31
+00:03:46,000 --> 00:03:53,960
+ to us. A presentation layer is the one, that is the part of software layer, this is how
+
+32
+00:03:53,960 --> 00:04:01,260
+ it pleads present to us. Session is how it communicating in a network, transport layer,
+
+33
+00:04:01,260 --> 00:04:07,920
+ it is a heart of OSI model and why it is called, we will discuss in this video, hardware
+
+34
+00:04:07,920 --> 00:04:13,440
+ layer, network layer, data layer and physical layer. Same goes for data layer, now move
+
+35
+00:04:13,440 --> 00:04:19,840
+ it with the application graph. Application layer sits at the very top of the OSM model,
+
+36
+00:04:19,840 --> 00:04:25,080
+ implemented directly by network applications. It is interface for and uses software like
+
+37
+00:04:25,080 --> 00:04:29,560
+ web browser and email tool is provided protocol that enables software, send receive and
+
+38
+00:04:29,560 --> 00:04:34,920
+ present meaningful data to user. So, it is just like a frontend of a website, which we
+
+39
+00:04:34,920 --> 00:04:41,320
+ can see data from back end and visualizing, visualize it. Now common protocol include
+
+40
+00:04:41,320 --> 00:04:50,040
+ STTP is there, STP is there, STP is there, STP is there, STP is there and DNS is there.
+
+41
+00:04:50,040 --> 00:04:56,440
+ Now, post office protocol, file transfer protocol, hypertext transfer protocol, simple
+
+42
+00:04:56,440 --> 00:05:03,200
+ middle transfer protocol and DNS, you have to tell me, what is DNS? It is so common that
+
+43
+00:05:03,200 --> 00:05:09,960
+ is always accessed in interview. Now, this layer also act as a windows for application
+
+44
+00:05:09,960 --> 00:05:17,120
+ service to access their network and display received information. Example include web browser
+
+45
+00:05:17,120 --> 00:05:22,040
+ Skype and instant machine client, it is sometimes referred as the text drop layer, because
+
+46
+00:05:22,040 --> 00:05:27,480
+ you visible in the end side. Application layer is the topmost layer of the STP model,
+
+47
+00:05:27,480 --> 00:05:33,840
+ here it acts as a behalf of sender and work within a network actually on behalf of that.
+
+48
+00:05:33,840 --> 00:05:39,080
+ Application layer is the most, topmost layer in the representing the group of application
+
+49
+00:05:39,080 --> 00:05:43,880
+ data around user to interact with the network, yes. This is what you can see and use
+
+50
+00:05:43,880 --> 00:05:50,520
+ every day. So now you know application layer, you completely, you can explain it very well
+
+51
+00:05:50,520 --> 00:05:57,160
+ that. Sir, if you interact with a server, whatever I am viewing in my laptop right now,
+
+52
+00:05:57,160 --> 00:06:03,400
+ my desktop right now is on application layer. The thing I am visualizing, the, the
+
+53
+00:06:03,400 --> 00:06:09,480
+ highway I can interact with my software, this is our application, this is called application
+
+54
+00:06:09,480 --> 00:06:14,480
+ layer. This will get exclusive for sharing it with the data that need to be transferred
+
+55
+00:06:14,480 --> 00:06:19,440
+ and requesting connection to network services, okay. And we, you have to tell the protocol
+
+56
+00:06:19,440 --> 00:06:26,680
+ is this, some protocol, just whichever. Now, you have to tell me the full format DNS,
+
+57
+00:06:26,680 --> 00:06:36,080
+ okay, just comment down. Okay, move ahead. Now, move to layer 6 and 5, this is present
+
+58
+00:06:36,080 --> 00:06:43,000
+ layer is presentation layer, this layer presentation layer, prepare data for application
+
+59
+00:06:43,000 --> 00:06:48,440
+ layer, okay. So it's just like a cook, presentation layer is like a cook who prepare data
+
+60
+00:06:48,440 --> 00:06:53,360
+ for the application layer defining how device should include encrypting compressed data
+
+61
+00:06:53,360 --> 00:06:59,840
+ for correct reception, okay. So what it, perform, it's encode, encrypt and compressed
+
+62
+00:06:59,840 --> 00:07:05,200
+ data. Remember, three things you do, it takes data from the application layer and format
+
+63
+00:07:05,200 --> 00:07:11,280
+ it to the transmission over sensor layer. So it takes data from application layer, as
+
+64
+00:07:11,280 --> 00:07:18,160
+ we see in this diagram, we have to move back, it takes data from the application layer,
+
+65
+00:07:18,160 --> 00:07:22,800
+ now goes to presentation layer, presentation, take data from the application layer and
+
+66
+00:07:22,800 --> 00:07:31,460
+ depend on that, it encode, compress, encrypt data and transfer it to session layer.
+
+67
+00:07:31,460 --> 00:07:39,440
+ Often called as translation layer, so presentation layer is also known as translation
+
+68
+00:07:39,440 --> 00:07:45,120
+ layer, these noted down, it extracted and manipulate data into required format for network
+
+69
+00:07:45,120 --> 00:07:52,320
+ transmission, so it will change data format as well depend on the required matter, now session
+
+70
+00:07:52,320 --> 00:07:57,880
+ layer, session layer create manage and terminates communication channel, so there is a lot
+
+71
+00:07:57,880 --> 00:08:03,320
+ of sessions which are communicating we wrote system, we will have to, now it will be
+
+72
+00:08:03,320 --> 00:08:08,800
+ decided which should be go on and which should be cut down right now, it is responsible
+
+73
+00:08:08,800 --> 00:08:13,600
+ for opening and closing this session when communication ends, okay. So if you make a
+
+74
+00:08:13,600 --> 00:08:18,720
+ recast, you recast get completed, so this session layer is the one that will decide that
+
+75
+00:08:18,720 --> 00:08:24,920
+ yeah, right now I can communicate, I can end this communication, this layer also established
+
+76
+00:08:24,920 --> 00:08:29,800
+ checkpoint during data transfer, long device to transume from the last checkpoint if interpreted
+
+77
+00:08:29,800 --> 00:08:35,000
+ in so connection establishment, so maintenance authentication and security, now
+
+78
+00:08:35,000 --> 00:08:43,720
+ it is FDM, file transfer access and management, mail service, direct service, these are
+
+79
+00:08:43,720 --> 00:08:50,760
+ some services, let us go more on a presentation as session layer, key functions present
+
+80
+00:08:50,760 --> 00:08:59,800
+ release, as we go through it, it will encrypt, encode, compress, encrypt, transfer data
+
+81
+00:08:59,800 --> 00:09:06,800
+ into cipher from plain text, how secure transmission and back to plain text upon reception
+
+82
+00:09:06,800 --> 00:09:11,720
+ side, using a key compression to visit the number of bits, transmitted optimizing
+
+83
+00:09:11,720 --> 00:09:15,560
+ network efficiency, if you if you're sending a large number of bits, then there is
+
+84
+00:09:15,560 --> 00:09:21,160
+ it will be a higher chances to, there is a collision in an network that you lower some
+
+85
+00:09:21,160 --> 00:09:28,080
+ data, but in a small number of bits with a, then there will be higher chances of availability
+
+86
+00:09:28,080 --> 00:09:33,620
+ in a network, trustless economic data former such as what is called, it is called a
+
+87
+00:09:33,620 --> 00:09:41,680
+ ski, remember to EBC, DIC format and vice versa, ensuring capabilities between different
+
+88
+00:09:41,680 --> 00:09:47,160
+ system, so somewhere, the social layer, but will do as you know, it will the one that
+
+89
+00:09:47,160 --> 00:09:52,800
+ maintain the communication, it will does one that will decide, you have to keep communicating
+
+90
+00:09:52,800 --> 00:09:59,600
+ or not, at that point to data stream, along for identification and efficient risk, synchronization
+
+91
+00:09:59,600 --> 00:10:04,920
+ to prevent data loss, download controller, manage communication between two system, support
+
+92
+00:10:04,920 --> 00:10:09,960
+ half-tift-lucks or full-depth, half-deflexments, one way communicating, like we have a phone
+
+93
+00:10:09,960 --> 00:10:16,800
+ in a, in 90s that, in which at a time only single person can talk, either you can talk
+
+94
+00:10:16,800 --> 00:10:23,960
+ to me or like, there is a walkie-talkie, I hope you know, there is a walkie-talkie that
+
+95
+00:10:23,960 --> 00:10:32,680
+ is used in a government that, at a time, there is a one person can talk, then another
+
+96
+00:10:32,680 --> 00:10:38,320
+ person, in as well as it is used in a military, that then other person, this phone, then
+
+97
+00:10:38,320 --> 00:10:44,240
+ I have to say it is half-duplex, however the, our cell phone is the one that is full-duplex,
+
+98
+00:10:44,240 --> 00:10:49,680
+ my friend is talking to me, and talking to me, and at the same time, I can say and stop
+
+99
+00:10:49,680 --> 00:10:57,120
+ him, by saying that, let me first hear, first hear me, so there is a, this is how, let
+
+100
+00:10:57,120 --> 00:11:07,080
+ me, go to this left, a transport left, so as you see, as you see previously, so it is also
+
+101
+00:11:07,080 --> 00:11:12,480
+ known as the heart of first-hand model, why we will discuss transport, take data from the
+
+102
+00:11:12,480 --> 00:11:17,720
+ threshold left, and break it into segments, now it will break, that your data into a
+
+103
+00:11:17,720 --> 00:11:21,600
+ segment, one that transmitting it, it is a disposal for assembling the segment on the receiving
+
+104
+00:11:21,600 --> 00:11:22,600
+ it, ok.
+
+105
+00:11:22,600 --> 00:11:27,080
+ So, now, in a centre side, it will break the data in a former receiver side, it will join,
+
+106
+00:11:27,080 --> 00:11:32,240
+ it will re-assemble that data, turning it back into usable data first, yeah, and this
+
+107
+00:11:32,240 --> 00:11:39,680
+ only a perform pressure function, flow control, ok, it will adjust that depend on the speed,
+
+108
+00:11:39,680 --> 00:11:45,600
+ depend on the speed of your wired or wireless network, it will, one, who manage the speed,
+
+109
+00:11:45,600 --> 00:11:49,200
+ ok, adjust stationary rate to manage the receiving device, can access speed and preventing
+
+110
+00:11:49,200 --> 00:11:55,280
+ overview, error control, check if data was received incorrectly, and to question retransmission,
+
+111
+00:11:55,280 --> 00:12:05,080
+ if necessary, yes, so every time they make a frames, there is a, what I am going to say
+
+112
+00:12:05,080 --> 00:12:11,920
+ is like, if you want a deep, if you like this course, ok, this comment down that you want
+
+113
+00:12:11,920 --> 00:12:20,880
+ a deep course on this, I can tell you each and every fragment, like every fragment what
+
+114
+00:12:20,880 --> 00:12:30,520
+ it contains, ok, in more linear, linear way, that each packet contain how many bits
+
+115
+00:12:30,520 --> 00:12:37,160
+ of data, and how it is going to transfer from there to there, from source to receiver
+
+116
+00:12:37,160 --> 00:12:43,680
+ set, so if you want and if you like this course first give a thumbs up bit, I do not know
+
+117
+00:12:43,680 --> 00:12:50,280
+ what you have to be, just give a like, or a serid, your brothers from another mother,
+
+118
+00:12:50,280 --> 00:12:57,760
+ comment down that you want a deep course on this, believe me, I am going to put a very
+
+119
+00:12:57,760 --> 00:13:03,960
+ detailed course, if you go through that course, no one can stop you from anything, like
+
+120
+00:13:03,960 --> 00:13:10,680
+ you are the pro, you are the pro, in a network, ok, if you go through that course, but
+
+121
+00:13:10,680 --> 00:13:18,120
+ for that, I want your love, your support, so if I get a lot of comments in this course
+
+122
+00:13:18,120 --> 00:13:23,840
+ that definitely, definitely, I am going to make it, ok, let us back here, flow control
+
+123
+00:13:23,840 --> 00:13:30,640
+ is like the serid told, it have to maintain that according to the speed, according to the
+
+124
+00:13:30,640 --> 00:13:34,960
+ bandwidth, we have to maintain the flow, the error control is the one that it will check
+
+125
+00:13:34,960 --> 00:13:42,520
+ after making a fragment, it will mark it as 1, 2, 3, 4, 5, now, if receiver set, I did
+
+126
+00:13:42,520 --> 00:13:50,320
+ not receive a packet of 4 number, then it will send a packet for once again, ok, so this
+
+127
+00:13:50,320 --> 00:13:53,680
+ is how a flow control is maintained, it provides service to the application, I would
+
+128
+00:13:53,680 --> 00:13:58,840
+ say services from network layer data within the transport layer is referred to as segment,
+
+129
+00:13:58,840 --> 00:14:04,160
+ its family role is to end to end delivery of the complete message, including acknowledgement
+
+130
+00:14:04,160 --> 00:14:11,120
+ of successful transmission, entry transmission if error occurs, transfer layer function,
+
+131
+00:14:11,120 --> 00:14:18,200
+ segmentation and resumpling, as we call as we say segmentation and resumpling, fragment
+
+132
+00:14:18,200 --> 00:14:24,240
+ then resumble them, service point addressing, transport layer header, groups or service
+
+133
+00:14:24,240 --> 00:14:27,640
+ point address, to ensure the message, you would have to correct process or application
+
+134
+00:14:27,640 --> 00:14:32,960
+ of the resumpling, as I said, they marked as 1, 2, 3, 4, 5, so depend on that, you from
+
+135
+00:14:32,960 --> 00:14:37,920
+ a receiver set, it will check and make sure that, yeah, I had received all the packets,
+
+136
+00:14:37,920 --> 00:14:46,840
+ you send me, this is how it works, transfer level level level level, oh wait, transfer
+
+137
+00:14:46,840 --> 00:14:51,040
+ level or services, connection node enter service here, so it is always a connection
+
+138
+00:14:51,040 --> 00:14:57,080
+ or the enter services, if you want to go, ok, so here, transfer layer service to add
+
+139
+00:14:57,080 --> 00:15:03,600
+ two ways to communicate, either TCP or UDP, I hope you know, in previous section we
+
+140
+00:15:03,600 --> 00:15:10,400
+ talk about this, so it's either a TCP or other CUDP, TCP is more connection oriented
+
+141
+00:15:10,400 --> 00:15:17,520
+ and it will give a security of that data will reach two destination, while in connection
+
+142
+00:15:17,520 --> 00:15:26,360
+ less, it is not that connection less, as I said, it is not that make sure, make sure that
+
+143
+00:15:26,360 --> 00:15:30,760
+ data will reach other destination, however the speed of a connection layer service, which
+
+144
+00:15:30,760 --> 00:15:38,200
+ is a UDP is more, but in TCP, which is connection oriented is less, so everything is their
+
+145
+00:15:38,200 --> 00:15:42,720
+ own advantage and disadvantage, depending on your services, depending on your requirement
+
+146
+00:15:42,720 --> 00:15:50,080
+ you have to go with that, what's called a hold of a sign, due to its critical role in
+
+147
+00:15:50,080 --> 00:15:55,680
+ end-to-end communication reliability, ok, so we communicate as a UDP or other TCP, so
+
+148
+00:15:55,680 --> 00:16:01,800
+ basically we are connecting with a transport here, ok, now you can use less, if my system
+
+149
+00:16:01,800 --> 00:16:11,720
+ is connected to anything, any device, it's through as TCP or UDP, ok, so now you know
+
+150
+00:16:11,720 --> 00:16:17,880
+ that TCP or UDP is in a transport layer, so that's why it's called hurt of for the same
+
+151
+00:16:17,880 --> 00:16:25,080
+ model, unbelievable, huh, so now you had to understand that by its quote and just remember
+
+152
+00:16:25,080 --> 00:16:30,960
+ what it do, what is functionality, because a lot of interface asks you about transport
+
+153
+00:16:30,960 --> 00:16:39,160
+ layer, because it's important, let's move there, not only here, so you are a network guy,
+
+154
+00:16:39,160 --> 00:16:44,360
+ you have to understand it for a layer, network layer has two primary functions breaking
+
+155
+00:16:44,360 --> 00:16:48,960
+ segments into network packets and reassembling them and re-rocketing packets by discovering
+
+156
+00:16:48,960 --> 00:16:54,080
+ the optimal path across a physical network, we to use network address operators to
+
+157
+00:16:54,080 --> 00:17:02,600
+ route packet to the destination, now you know, that what it's role and what it do, this
+
+158
+00:17:02,600 --> 00:17:07,640
+ layer handle data transmission between host location and the development of it also manage
+
+159
+00:17:07,640 --> 00:17:14,720
+ package routing, how it will do, sorry packet routing, how it will do, by the use of IP
+
+160
+00:17:14,720 --> 00:17:22,560
+ and by the use of shortest path, there will be a algorithm of discusural rhythm, I think,
+
+161
+00:17:22,560 --> 00:17:30,400
+ which will decide the shortest path in the network, okay, now it will choose the routing
+
+162
+00:17:30,400 --> 00:17:36,840
+ of shortest path, and most of us know path of orbit routes, the sender is our both, receiver
+
+163
+00:17:36,840 --> 00:17:42,120
+ IPDS are placed in the header, so if when you network layer is the one that transport,
+
+164
+00:17:42,120 --> 00:17:51,600
+ the fragment from transport layer to below, it will add the source IPDS destination IPDS
+
+165
+00:17:51,600 --> 00:17:56,800
+ and then the end tell that from this route you have to go, okay, so these are the information
+
+166
+00:17:56,800 --> 00:18:04,760
+ it is given there, now in data link layer, it received the data and this calls for a step
+
+167
+00:18:04,760 --> 00:18:08,440
+ you see and confirm any connection between two physical character nodes on network, it
+
+168
+00:18:08,440 --> 00:18:12,920
+ will break packet into frames, now it will break the packets into frames and send them
+
+169
+00:18:12,920 --> 00:18:17,200
+ from source to destination, it may, it's meant function is stored error free data transfer
+
+170
+00:18:17,200 --> 00:18:22,000
+ but even the nodes, what a physical layer, when a packet arrives the data link layer ensure
+
+171
+00:18:22,000 --> 00:18:27,640
+ it transmission to the correct host using its MAC address, yeah, the DLL data link layer
+
+172
+00:18:27,640 --> 00:18:33,280
+ consists of two sub layers, logical link layer, MDXs, control, now MAC, it is the one that
+
+173
+00:18:33,280 --> 00:18:40,160
+ is always a parameter test, of any system, however you can change it, you have to do a lot
+
+174
+00:18:40,160 --> 00:18:48,800
+ of unethical things, which will not affect the system, but it will break the MAC address
+
+175
+00:18:48,800 --> 00:18:55,720
+ for system and make your system very until as well, so logical link control identify network
+
+176
+00:18:55,720 --> 00:19:01,120
+ protocol perform errors checking and synchronize frames, remember what it will do, MAC address
+
+177
+00:19:01,120 --> 00:19:06,240
+ use MAC address to connect to device and defines permission for data transmission reception,
+
+178
+00:19:06,240 --> 00:19:13,160
+ device framing, organize raw pit stream into frames by touching special bit pattern to
+
+179
+00:19:13,160 --> 00:19:19,120
+ peg any and the making being meaningful to the receiver, you know receiver will have a lot
+
+180
+00:19:19,120 --> 00:19:25,960
+ of information as the data pass from top layer to bottom, a packet have a lot of information
+
+181
+00:19:25,960 --> 00:19:33,160
+ from IP address to MAC address to frame number from how it should be organized, everything
+
+182
+00:19:33,160 --> 00:19:41,720
+ ok, so in the next video, in the next course, we will be a deep network course, if you
+
+183
+00:19:41,720 --> 00:19:48,480
+ saw your love to me, I will make in which I will tell you which frame which byte contain
+
+184
+00:19:48,480 --> 00:19:55,760
+ which data and which address, so in a very little manner, no data link data for data
+
+185
+00:19:55,760 --> 00:19:59,680
+ link layer functions, physical addressing is there error control is there access control
+
+186
+00:19:59,680 --> 00:20:04,480
+ is a flow control is a we know flow control, we know error control, what is X or global
+
+187
+00:20:04,480 --> 00:20:11,960
+ multiple device, say a single channel, ok, the MAC sub layer minus channel access preventing
+
+188
+00:20:11,960 --> 00:20:17,720
+ collision in certain phases, this is critical serial metal media network like ethernet,
+
+189
+00:20:17,720 --> 00:20:23,380
+ this is how it works, physical address is also known as MAC address, no last one is physical
+
+190
+00:20:23,380 --> 00:20:28,200
+ layer, the first layer of course, I model handle the physical electrical specter from
+
+191
+00:20:28,200 --> 00:20:34,480
+ communication into the transmission, deception overload database 0 and 1, remember the
+
+192
+00:20:34,480 --> 00:20:41,480
+ first video of course, machine communicate either in a 0 or other no file, in a binary
+
+193
+00:20:41,480 --> 00:20:47,560
+ way, so here we back to a binary format over a transmitted search as a copper wire, fiber
+
+194
+00:20:47,560 --> 00:20:51,420
+ optics over a channel, so this is the form the foundation of one we should either go
+
+195
+00:20:51,420 --> 00:20:55,760
+ to the web, so either the wired network, rather wireless network, one from one device show
+
+196
+00:20:55,760 --> 00:21:03,280
+ another device, it will go, so it will, so our data in a bits, now it will convert into
+
+197
+00:21:03,280 --> 00:21:10,040
+ electronic, ok, in a electronic frames, you know electronic that it will pass through
+
+198
+00:21:10,040 --> 00:21:16,440
+ as a current, as a electricity, it will pass through a wire or wireless medium, right,
+
+199
+00:21:16,440 --> 00:21:24,560
+ we have two magnetic waves, so it will pass from that channel going from my system to
+
+200
+00:21:24,560 --> 00:21:31,440
+ access point to access switch to distance switch to courses to firewall now goes out
+
+201
+00:21:31,440 --> 00:21:38,360
+ to my company, to my corporate office, now hey it is going to be Google DNS, ok, so this
+
+202
+00:21:38,360 --> 00:21:44,080
+ is how it works, service that physical layer provide maintaining the rate of data flow,
+
+203
+00:21:44,080 --> 00:21:48,800
+ synchronization bits, very important, controlling bit rate processing physical signal
+
+204
+00:21:48,800 --> 00:21:55,560
+ and direct, taking data transfer, deciding network topology, forwarding a record a lot
+
+205
+00:21:55,560 --> 00:22:00,720
+ of things that you will do, so what will be the advantage, so this is only layer in which
+
+206
+00:22:00,720 --> 00:22:08,320
+ I add advantage and disadvantage, because many interview want you to know basic, this course
+
+207
+00:22:08,320 --> 00:22:14,120
+ is for a corporate employees as well as the one that who is preparing for the job, so
+
+208
+00:22:14,120 --> 00:22:20,340
+ I add the important thing as well, because as a fresher, I know you don't know much
+
+209
+00:22:20,340 --> 00:22:28,440
+ on network, but I want you to know basic, so I will always ask you, tell me the advantage
+
+210
+00:22:28,440 --> 00:22:34,080
+ of physical layer, disadvantage of physical layer, either either either tell me the what
+
+211
+00:22:34,080 --> 00:22:41,160
+ is physical layer, ok, so advantages, standard digestion, ensure interpret between different
+
+212
+00:22:41,160 --> 00:22:46,180
+ devices and manufacturing, foundation provided essential hardware and connected data, all
+
+213
+00:22:46,180 --> 00:22:50,200
+ higher network layer really upon the function, versus relative work across various media
+
+214
+00:22:50,200 --> 00:22:54,840
+ type include copper wire fiber optics wireless radio waves, high speed motor physical media
+
+215
+00:22:54,840 --> 00:23:01,080
+ or support very high speed long-distance data transmission, bit synchronization, manage
+
+216
+00:23:01,080 --> 00:23:05,560
+ the timing, data it, ensure accurate data transfer between secondary server, disadvantage,
+
+217
+00:23:05,560 --> 00:23:10,960
+ no error correction, it does not detect the effects added in data transfer, it simply
+
+218
+00:23:10,960 --> 00:23:16,640
+ transmit robots, so simply robots 01, physical one would be suspectable to damage from
+
+219
+00:23:16,640 --> 00:23:21,280
+ an on-factor, physical tempering or competitive way, it can be a wire cut, it can be
+
+220
+00:23:21,280 --> 00:23:25,840
+ any device issue, it can be anything, single degradation prone to issue like noise interface
+
+221
+00:23:25,840 --> 00:23:29,920
+ I have to listen, yeah if you have access point and there is a laptop and there is a wall
+
+222
+00:23:29,920 --> 00:23:35,360
+ between that or there is a thick glass, the gate between them or wall between them, then
+
+223
+00:23:35,360 --> 00:23:40,600
+ it will affect, signal degradation, degradation is there, no data intelligence, yes
+
+224
+00:23:40,600 --> 00:23:46,200
+ from it differently, because it will transfer, there it will not check, there is no intelligence
+
+225
+00:23:46,200 --> 00:23:53,200
+ there, circuit test is always there, no, we talk about data link theory basically, get
+
+226
+00:23:53,200 --> 00:24:00,040
+ into more of that, data link layer always a packet at this layer referred as a frame,
+
+227
+00:24:00,040 --> 00:24:07,040
+ double, we did a make up in our transport layer, we make a, no, not in the transport layer,
+
+228
+00:24:07,040 --> 00:24:12,160
+ there is a referred as a frame, device like switches and bracelet operated at a data link,
+
+229
+00:24:12,160 --> 00:24:20,380
+ it is always always occurs, it is 3, write it down, which network device work on data
+
+230
+00:24:20,380 --> 00:24:27,360
+ link layer, which network device work on network layer, so this is always stuck, switch
+
+231
+00:24:27,360 --> 00:24:33,320
+ and braces operated at a data link layer, functionality is primarily handled by NIC, network
+
+232
+00:24:33,320 --> 00:24:38,400
+ interface card, we talked about in previous video and host machine device drivers, okay,
+
+233
+00:24:38,400 --> 00:24:44,000
+ physical data sensor, okay this is all about the road transmission and the physical connection
+
+234
+00:24:44,000 --> 00:24:49,200
+ or wireless cable connection, it is bit synchronisation, bit rate control is the important
+
+235
+00:24:49,200 --> 00:24:55,240
+ factor here, now key physical effect devices, hubby, peter, modem, network cables are used
+
+236
+00:24:55,240 --> 00:25:03,200
+ in this layer, okay this layer, home of the data in network layer are known as a low, low
+
+237
+00:25:03,200 --> 00:25:07,080
+ lower layer or hardware layer, as we talked in the graph, physical deploys is a space
+
+238
+00:25:07,080 --> 00:25:11,960
+ for network arrangement, yes bus, star, mass topologies, transmission modes, defenseless
+
+239
+00:25:11,960 --> 00:25:17,080
+ data type, either a simple or higher data place, we talked about this as well, no advantage
+
+240
+00:25:17,080 --> 00:25:24,920
+ of OSI model, everything is in a very layered and format wired way, stick it, layered approach,
+
+241
+00:25:24,920 --> 00:25:28,240
+ the wired network connection to seven days in layer, simplifying, and extending a triple
+
+242
+00:25:28,240 --> 00:25:33,800
+ sort of complex system, each layer has specified and fixed functionalities, standardisation,
+
+243
+00:25:33,800 --> 00:25:37,560
+ promote, standardised network communication as each layer adheres to different protocols
+
+244
+00:25:37,560 --> 00:25:43,880
+ firsting, interpretally between different vendor products, easy diagnose, we know that what
+
+245
+00:25:43,880 --> 00:25:49,120
+ which layer perform, which functionalities, so we can easily diagnose according to it, first
+
+246
+00:25:49,120 --> 00:25:52,640
+ in network problem, diagnose problem, engineer to assert, issue, respect, load, instrument,
+
+247
+00:25:52,640 --> 00:25:57,080
+ turbo-soding, operating and reducing time, improves capability, allow for independent
+
+248
+00:25:57,080 --> 00:26:00,960
+ updates and improvement within each layer without affecting other supporting technology
+
+249
+00:26:00,960 --> 00:26:10,120
+ advancement and features, it's capabilities at best thing in this model, no, TCP, IP model,
+
+250
+00:26:10,120 --> 00:26:17,880
+ the back well of the internet, OSI is a vertical framework, so it is just to understand
+
+251
+00:26:17,880 --> 00:26:25,840
+ how, packet, how frames, how everything is working in a network, but the practical protocol
+
+252
+00:26:25,840 --> 00:26:33,640
+ suite that is actually is used for a communication, in a global network is TCP/IP model,
+
+253
+00:26:33,640 --> 00:26:40,820
+ no, as you can see there is a TCP/OS/IP, what is a TCP and what is IP, TCP's Stanford
+
+254
+00:26:40,820 --> 00:26:47,280
+ Transmissive Control Protocol, instead accurate and reliable delivery of data, it manage connection
+
+255
+00:26:47,280 --> 00:26:53,360
+ statement, data segmentation, flow control and error checking, what it do, connection
+
+256
+00:26:53,360 --> 00:26:59,400
+ stress placement, data segmentation, flow control and error checking, parenting data
+
+257
+00:26:59,400 --> 00:27:10,080
+ arrive completely and in order, what is IP, internal protocol, handle the logical addressing
+
+258
+00:27:10,080 --> 00:27:14,680
+ and routing of a data, packet across network, it is responsible for finding the correct
+
+259
+00:27:14,680 --> 00:27:21,680
+ destination address, every system have a internet, internet, have a in a locally written
+
+260
+00:27:21,680 --> 00:27:27,840
+ network, in your corporate, have IP address, so everyone have different IP address, so
+
+261
+00:27:27,840 --> 00:27:35,960
+ it will decide that where it is and how I have present routing, path, I have to choose,
+
+262
+00:27:35,960 --> 00:27:40,720
+ together TCP and I perform the TCP/IP protocol suite enable end-to-end connectivity and data
+
+263
+00:27:40,720 --> 00:27:48,640
+ transfer across diverse network, so TCP for connection and data transfers through IP.
+
+264
+00:27:48,640 --> 00:27:57,360
+ Now, in TCP, UDP, user data protocol, offers a connectionless faster data for data transmission
+
+265
+00:27:57,360 --> 00:28:04,980
+ where it will be scheduled, how TCP is inherited, clicker and IP does for its IP transmission
+
+266
+00:28:04,980 --> 00:28:10,640
+ of operation, for its operation, so this is how a TCP/IP model works, there is a network
+
+267
+00:28:10,640 --> 00:28:16,760
+ of access layer, internet layer, transfer layer and application layer.
+
+268
+00:28:16,760 --> 00:28:22,480
+ Layer of TCP, network access layer, combine the OSI, physical and data layer, so
+
+269
+00:28:22,480 --> 00:28:27,760
+ we combine the bottom two of OSM model and make a network access layer, handle physical
+
+270
+00:28:27,760 --> 00:28:33,000
+ infrastructure and technical aspect like converting digital data into transmit all signals.
+
+271
+00:28:33,000 --> 00:28:40,320
+ Then, there is an internet layer and logos to the OSI network layer, manage logical addressing,
+
+272
+00:28:40,320 --> 00:28:44,880
+ IP does the routing and ensuring data reaches each transmission across the internet, transfer
+
+273
+00:28:44,880 --> 00:28:49,960
+ layer, hardware size and hardware size IP model, gets one into the OSI transfer layer
+
+274
+00:28:49,960 --> 00:28:53,720
+ for a reliable data transfer segmentation assembly and error fake communication between
+
+275
+00:28:53,720 --> 00:28:54,720
+ application.
+
+276
+00:28:54,720 --> 00:28:59,400
+ Yes, it is application layer at the top most of the same layer.
+
+277
+00:28:59,400 --> 00:29:05,680
+ In comparison though, we say session, presentation application layer, three things, okay.
+
+278
+00:29:05,680 --> 00:29:10,240
+ Entire directly with the end user application enabling service like web browsing, we will
+
+279
+00:29:10,240 --> 00:29:17,320
+ see a diagram as well, let's move more into a network, share layer and entire layer.
+
+280
+00:29:17,320 --> 00:29:22,920
+ So this layer sometimes refers to as a detected layer in the TCP/IP context, manage the physical
+
+281
+00:29:22,920 --> 00:29:26,360
+ spectrum for the converter communication over the internet, the physical ethernet cable
+
+282
+00:29:26,360 --> 00:29:32,320
+ survival network, network interface current and device devices, device drivers, this is possible
+
+283
+00:29:32,320 --> 00:29:38,080
+ for technical conversation conversion of a digital data into transfer symbols, we have
+
+284
+00:29:38,080 --> 00:29:43,680
+ you have digital data and you have to transfer to a transmitter signals, so you can send
+
+285
+00:29:43,680 --> 00:29:48,480
+ it through a wire or wireless media, making the network possible.
+
+286
+00:29:48,480 --> 00:29:56,200
+ Just see how network is so unbelievable things that you can't imagine these things happening
+
+287
+00:29:56,200 --> 00:29:58,440
+ like this, okay.
+
+288
+00:29:58,440 --> 00:30:05,160
+ So let us in your 90s, you are sitting and someone telling you this thing, this is how
+
+289
+00:30:05,160 --> 00:30:11,960
+ a data will transfer, this is how everything will work or flow in an air.
+
+290
+00:30:11,960 --> 00:30:18,160
+ You can say that, how is it possible if I can't see the data, how it will transform your
+
+291
+00:30:18,160 --> 00:30:24,480
+ system to another system, it's kind of impossible, you will think, definitely I will
+
+292
+00:30:24,480 --> 00:30:30,960
+ do the same, but it's working, it's also known as the network layer, it's primarily
+
+293
+00:30:30,960 --> 00:30:36,400
+ used to control the flow and routing of traffic, important mode in down control the flow
+
+294
+00:30:36,400 --> 00:30:41,720
+ and routing of traffic, ensuring data is significantly and accurately across and interconnected
+
+295
+00:30:41,720 --> 00:30:43,520
+ network.
+
+296
+00:30:43,520 --> 00:30:47,520
+ It's also responsible for assembling fragment data packets at the decision, where hydrophic
+
+297
+00:30:47,520 --> 00:30:51,520
+ might certainly increase transmission time, this layer prioritize accuracy minimizing the
+
+298
+00:30:51,520 --> 00:30:55,720
+ user's data correction, it defines the protocol for logical data transmission over the
+
+299
+00:30:55,720 --> 00:30:56,880
+ entire network.
+
+300
+00:30:56,880 --> 00:31:00,360
+ Now, what is the key protocol of internet here?
+
+301
+00:31:00,360 --> 00:31:05,960
+ We have internet protocol, IP, I say MP, internet protocol message protocol, and AFP,
+
+302
+00:31:05,960 --> 00:31:08,000
+ address visitors from protocol.
+
+303
+00:31:08,000 --> 00:31:12,080
+ So these are the key protocols of the internet layer, IP.
+
+304
+00:31:12,080 --> 00:31:16,080
+ The fundamental protocol for delivering the packet for source to destination was its
+
+305
+00:31:16,080 --> 00:31:21,800
+ inspect IP addresses in packet head to head by the current path, IP has to primary
+
+306
+00:31:21,800 --> 00:31:27,280
+ was an IPv4 IPv6, we will talk about this in a leaderboard is IPv4 is a most well used
+
+307
+00:31:27,280 --> 00:31:35,320
+ right now, but it's a limited, so we are not in a future we develop new with IPv6 in
+
+308
+00:31:35,320 --> 00:31:41,720
+ every device, but right now we have IPv4 in my system, in my computer, at the same time
+
+309
+00:31:41,720 --> 00:31:48,440
+ I can see IPv6 in my mobile as well, but how would we in operate, we right now working
+
+310
+00:31:48,440 --> 00:31:54,360
+ in an IPv4 always, it isn't a, it is the imitation of IPv4 offering of the state expanded
+
+311
+00:31:54,360 --> 00:31:59,120
+ the space to accommodate the cooling number of internet connected device, did not control
+
+312
+00:31:59,120 --> 00:32:04,640
+ message protocol, encapsulate with data, IP data, ground, I simply is a vital network
+
+313
+00:32:04,640 --> 00:32:08,240
+ technology to get power host with information about network problems such as industrial
+
+314
+00:32:08,240 --> 00:32:12,400
+ destination of packet timeout tools like ping and test out how they will be on the
+
+315
+00:32:12,400 --> 00:32:20,440
+ simple, yes, I simply so I don't know you do it or not, when you do a ping to go in, he
+
+316
+00:32:20,440 --> 00:32:26,560
+ don't data data, or four, two, two, two, two, so there is a four dot two, two, two,
+
+317
+00:32:26,560 --> 00:32:33,800
+ three part away, so it will use SMP protocol, now area, area, P video, critical function
+
+318
+00:32:33,800 --> 00:32:38,000
+ is a map and a appeal address logical address to physical address.
+
+319
+00:32:38,000 --> 00:32:42,640
+ Okay, so do you have a, you get a IP address when you connect to a network and there is
+
+320
+00:32:42,640 --> 00:32:48,880
+ a MAC address in your system, so it will the one that will map both to each other on
+
+321
+00:32:48,880 --> 00:32:53,040
+ a local network, someone a attainable IP packet to a hilly to order to address so it
+
+322
+00:32:53,040 --> 00:32:57,240
+ have a repeatable, yeah, so you have a repeatable, now on the
+
+323
+00:32:57,240 --> 00:33:01,560
+ basis of that it will decide that, okay, so this system is present here and I have to
+
+324
+00:33:01,560 --> 00:33:08,360
+ send it to him, so this is how routing is going, this is how packet is moved to your
+
+325
+00:33:08,360 --> 00:33:14,960
+ system, not instead of going to your friend's system, so this is how work, this enable IP
+
+326
+00:33:14,960 --> 00:33:20,000
+ packet to correlate to the target device, and I see, if we end up with a cloud not able
+
+327
+00:33:20,000 --> 00:33:27,120
+ a repeat type in good, proxy, rp, and radius rp, so this is a in a transport rate, as
+
+328
+00:33:27,120 --> 00:33:34,960
+ a, there's a TCP and UDP, I meet a just a little bit more in a detail, you can pause
+
+329
+00:33:34,960 --> 00:33:40,920
+ a video, you have to read once like, you have a major 4 to 5 difference that you have
+
+330
+00:33:40,920 --> 00:33:46,960
+ to remember, that's it, and why it is used and where in which application which is used,
+
+331
+00:33:46,960 --> 00:33:54,640
+ that's just, I'm going to move it, here it is, application there of TCP model having
+
+332
+00:33:54,640 --> 00:33:59,040
+ application presented in a social layer of the same model, transport rate or heard is always
+
+333
+00:33:59,040 --> 00:34:04,900
+ heard, other in both layer, and in network layer is converted into an internet layer, network
+
+334
+00:34:04,900 --> 00:34:12,720
+ in a social sphere is consists of data layer physically, let's move ahead, so yeah, the
+
+335
+00:34:12,720 --> 00:34:20,600
+ understand KCP, the internet foundation, here, the transmission control protocol, what
+
+336
+00:34:20,600 --> 00:34:24,840
+ right people to call, internet protocol, model is the fundamental support for the communication
+
+337
+00:34:24,840 --> 00:34:28,120
+ protocol used for the internet, similar component, where it ticket, how data is formed,
+
+338
+00:34:28,120 --> 00:34:31,600
+ at this transmitter, router ratio, the model insert, reliability, and to it communication
+
+339
+00:34:31,600 --> 00:34:35,080
+ by wagging it on return to management packet, transmitting them across the network and
+
+340
+00:34:35,080 --> 00:34:43,240
+ assembly, there's data station, this is the whole definition that you have to tell, whenever
+
+341
+00:34:43,240 --> 00:34:49,640
+ they ask, tell me the TCP IP model, or define what is TCP IP model, this is a proper
+
+342
+00:34:49,640 --> 00:34:56,280
+ definition, that's why I, in this course you have seen that sometime, I repeat many things,
+
+343
+00:34:56,280 --> 00:35:03,960
+ because I want you to remember that this is how I have to tell, if you're going to define
+
+344
+00:35:03,960 --> 00:35:12,840
+ TCP IP model in this definition, amazing, amazing, as an interview, as let us, I went over
+
+345
+00:35:12,840 --> 00:35:19,840
+ the anima, I'm someone giving me this, as an answer, I'm going to select him per 100%.
+
+346
+00:35:19,840 --> 00:35:31,240
+ Let's move ahead, a quick comparison between those, TCP, transmission control protocol,
+
+347
+00:35:31,240 --> 00:35:37,360
+ remember the full form, OSA, open system, interconnection, layer consolidation, combine
+
+348
+00:35:37,360 --> 00:35:43,680
+ session layer parallelization within the application layer, maintain separation, representation,
+
+349
+00:35:43,680 --> 00:35:48,400
+ follow our connection list, horizontal approach in a design, follow our vertical, hierarchical
+
+350
+00:35:48,400 --> 00:35:53,440
+ approach, packet delivery center does not enable the guarantee packet delivery of the transformer,
+
+351
+00:35:53,440 --> 00:35:57,560
+ it translates as a shock for a shock packet delivery, protocol, flexibility, protocol are
+
+352
+00:35:57,560 --> 00:36:02,800
+ entirely integrated and not easily replaceable, protocol are well defined and can be more easily
+
+353
+00:36:02,800 --> 00:36:06,760
+ shocked as a technology works, connection interfaces only provide connection less services
+
+354
+00:36:06,760 --> 00:36:10,720
+ to it, transport it, provide both connection layer, as connect your data, success within
+
+355
+00:36:10,720 --> 00:36:15,720
+ a dog layer, so you have to understand the difference between the TCP model, which is
+
+356
+00:36:15,720 --> 00:36:27,080
+ a product for network present and that's it for now, thank you very much, whatever you
+
+357
+00:36:27,080 --> 00:36:34,760
+ have go through this course, whatever you go through, this actually video, video is completed,
+
+358
+00:36:34,760 --> 00:36:40,500
+ write it down, write it down, whatever you have in your mind, it may be around, it may be
+
+359
+00:36:40,500 --> 00:36:48,160
+ direct, you have to decide it later, but for now make a TCP IP, TCP architecture, make
+
+360
+00:36:48,160 --> 00:36:56,680
+ a OSA architecture, tell by own what is which layer, which layer perform, but how a data
+
+361
+00:36:56,680 --> 00:37:02,200
+ is communicating, how your system is communicating, visualise everything, okay, visualise
+
+362
+00:37:02,200 --> 00:37:03,200
+ everything.
+
+363
+00:37:03,200 --> 00:37:08,240
+ Thank you very much, we will meet in our next video, bye bye.
+
