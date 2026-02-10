@@ -1,0 +1,332 @@
+1
+00:00:00,000 --> 00:00:09,120
+ Hello all and welcome to our second tutorial. In this tutorial as we can recall from the
+
+2
+00:00:09,120 --> 00:00:19,120
+ previous one we have installed Docker and now we will play with it to install web server
+
+3
+00:00:19,120 --> 00:00:26,840
+ and SQL server and then we will connect the SQL and web server together. So the first
+
+4
+00:00:26,840 --> 00:00:36,840
+ step here we will pull a Docker image that has both Apache and latest PHP on it. So first
+
+5
+00:00:36,840 --> 00:00:43,520
+ before we can pull the Docker let's create a permanent directory the permanent directory
+
+6
+00:00:43,520 --> 00:00:52,360
+ we create by makedier-p which means permanent and tilde which means home direction
+
+7
+00:00:52,360 --> 00:01:00,040
+ and www folder which will contain the default websites for the Apache web server and then
+
+8
+00:01:00,040 --> 00:01:09,880
+ we will make change modification to give it the right to have read/write executes for users
+
+9
+00:01:09,880 --> 00:01:17,480
+ and the same for groups and for other only read and execute and it should work without any issue
+
+10
+00:01:17,480 --> 00:01:27,960
+ because in the web server 775 permission is enough okay to this we give it to this directory
+
+11
+00:01:27,960 --> 00:01:37,720
+ and then we will have you know some contents to be displayed and when just for testing purposes
+
+12
+00:01:37,720 --> 00:01:44,600
+ and we'll put it this information for of PHP information function into info.php
+
+13
+00:01:44,600 --> 00:01:53,160
+ just for testing the functionality for the web server. So first here let's create a directory
+
+14
+00:01:53,160 --> 00:02:09,800
+ okay and of course when we try to change the writes should be asked me to do it with the sudo
+
+15
+00:02:09,800 --> 00:02:18,440
+ okay didn't ask me that's good because I didn't make a huge change for 777 that's good
+
+16
+00:02:18,440 --> 00:02:28,120
+ and now let's put the information of PHP information function into the www folder
+
+17
+00:02:30,840 --> 00:02:43,960
+ okay so for so good we now proceed with running the server image and we'll publish it with using
+
+18
+00:02:43,960 --> 00:02:56,280
+ both both ports of 80 and 443 so first we'll not run a just run a docker okay we'll run a docker
+
+19
+00:02:56,280 --> 00:03:04,600
+ but that it is named PHP Apache to include latest version of PHP and Apache and to specify
+
+20
+00:03:04,600 --> 00:03:15,400
+ P4 ports P8080 and P4043 start and end all the ports and we'll mount it to a writeable volume
+
+21
+00:03:15,400 --> 00:03:27,320
+ okay say you will mount it to www for www html and to with the map drive z okay and do we choose the
+
+22
+00:03:27,320 --> 00:03:35,400
+ PHP 88.5 with Apache server so let's first run this docker
+
+23
+00:03:35,400 --> 00:03:45,240
+ we should run it directly without using sudo because we have added the users as you can recall
+
+24
+00:03:45,240 --> 00:03:58,920
+ from the previous recording we add users m number to the docker group
+
+25
+00:03:58,920 --> 00:04:06,440
+ okay there is something with permission
+
+26
+00:04:15,320 --> 00:04:23,880
+ I remember that we have done the permission but anyway it's not a problem
+
+27
+00:04:23,880 --> 00:04:31,320
+ we can run the docker we just do if we face the problem like this that's not an issue
+
+28
+00:04:31,320 --> 00:04:43,560
+ okay now we have waited or pause the video till the docker is put and now we can see that
+
+29
+00:04:43,560 --> 00:04:54,440
+ this is the ID for the container and it is downloaded with the version of PHP 8.5 okay so far so good so
+
+30
+00:04:54,440 --> 00:05:07,240
+ for now we can test with HTTP access for the local host so let's try it let's open for example here
+
+31
+00:05:08,280 --> 00:05:14,840
+ let's open local host with the firefox
+
+32
+00:05:14,840 --> 00:05:26,360
+ okay as you can see here it is successfully it can successfully run with a local host
+
+33
+00:05:26,360 --> 00:05:36,680
+ and info.hp display everything okay but if you can see now if we can press HTTPS
+
+34
+00:05:37,480 --> 00:05:48,600
+ like here if we add s it should not working okay and it's a secure connection failed okay
+
+35
+00:05:48,600 --> 00:06:00,680
+ why this happens because simply we didn't create yet the SSL certificates or self-science certificates
+
+36
+00:06:00,680 --> 00:06:09,240
+ and we should create it before we can enable the SSL module and create a default SSL website
+
+37
+00:06:09,240 --> 00:06:22,280
+ so let's do this to enable the SSL to work correctly okay we need first to connect to the docker
+
+38
+00:06:23,880 --> 00:06:32,440
+ we have already created the docker let's go back to our terminal for example here if we type docker
+
+39
+00:06:32,440 --> 00:06:35,320
+ ps
+
+40
+00:06:35,320 --> 00:06:48,200
+ okay if you can see here we have two docker
+
+41
+00:06:50,040 --> 00:06:57,800
+ we have the one this is the latest one 8.5 and we have the hello word that we have run
+
+42
+00:06:57,800 --> 00:07:06,600
+ that we ran in the previous record okay it's about one day and this we run it it's running only
+
+43
+00:07:06,600 --> 00:07:16,200
+ in three minutes and it is existed but now this PHP it is running without any issue okay that's cool
+
+44
+00:07:17,480 --> 00:07:31,880
+ so let's try to enter this to execute some comments in the my-php Apache so we need to type the
+
+45
+00:07:31,880 --> 00:07:49,000
+ comment like that okay docker executes - it and we need to empty tweets bash and now we need to first
+
+46
+00:07:49,000 --> 00:07:56,600
+ enable SSL module and we need to take care to follow these steps because you need first to enable
+
+47
+00:07:56,600 --> 00:08:04,360
+ SSL module and then create the certificates before you can enable the sites if you for example
+
+48
+00:08:04,360 --> 00:08:12,520
+ enable SSL certificates and then create SSL and try to refresh the Apache web server or restart
+
+49
+00:08:12,520 --> 00:08:19,080
+ it before creating the certificate it will cause the problem and maybe your container will crash
+
+50
+00:08:19,080 --> 00:08:27,400
+ so you need to be careful when applying this in the same sequence or so first let's execute
+
+51
+00:08:27,400 --> 00:08:33,640
+ these comments to enable SSL module on the one hour Apache web server
+
+52
+00:08:33,640 --> 00:08:43,160
+ okay we will not activate it now we'll activate it later we'll make a graceful restart later
+
+53
+00:08:43,160 --> 00:08:52,920
+ after creating the certificates and enabling the SSL sites let's create the self-sign certificates
+
+54
+00:08:52,920 --> 00:09:02,120
+ okay this will be valid for one year this is RSA encryption key
+
+55
+00:09:02,120 --> 00:09:10,200
+ okay this will be the key which will be should be transformed into dot CRT file and this is the subject
+
+56
+00:09:11,480 --> 00:09:23,080
+ subject name okay or canonical name will be local so we have now this is the hash our hash certificates
+
+57
+00:09:23,080 --> 00:09:27,960
+ and now let's enable the SSL sites
+
+58
+00:09:35,880 --> 00:09:48,760
+ okay so now I see I think we are good okay to proceed with enabling the websites or before
+
+59
+00:09:48,760 --> 00:10:01,320
+ we can test the websites or we make any restarts okay we need first to before we do a graceful
+
+60
+00:10:01,320 --> 00:10:12,680
+ restart to the Apache we need to execute these comments okay what is this set comment this set
+
+61
+00:10:12,680 --> 00:10:22,680
+ comment avoids issue because of having some SSL certificates it is the default ones that it is used
+
+62
+00:10:22,680 --> 00:10:36,440
+ by Apache you need to replace them okay with instead of being grand with PM to be CRT okay
+
+63
+00:10:36,440 --> 00:10:47,160
+ this comment will execute will transform it to be Apache dot CRT okay for and this snail key
+
+64
+00:10:47,160 --> 00:10:53,560
+ okay will be replaced with Apache dot key so you need to have both certificate Apache dot CRT and Apache
+
+65
+00:10:53,560 --> 00:11:04,040
+ dot key okay this is very important to run okay so let's go here we are already in our
+
+66
+00:11:06,840 --> 00:11:21,080
+ in the correct prompts so you need to execute this comments okay perfect now we are ready to
+
+67
+00:11:21,080 --> 00:11:31,560
+ restart the Docker let's restart it it starts my PHP Apache we'll do a graceful restart
+
+68
+00:11:37,240 --> 00:11:48,120
+ okay this is normal warning because we have already this is the net IP address inside of my
+
+69
+00:11:48,120 --> 00:11:57,480
+ VMware which will be assigned to the container and this is just a warning message that you should
+
+70
+00:11:57,480 --> 00:12:08,280
+ use a fully qualified domain not the IP address okay so now if we can if we want to try HTTPS
+
+71
+00:12:08,280 --> 00:12:18,120
+ it should now work without it as you can see now it's just give you warning but if you can click
+
+72
+00:12:18,120 --> 00:12:28,840
+ on advance accept the risk and voila it is working without any issue so now we have finished
+
+73
+00:12:28,840 --> 00:12:39,960
+ the task of running the web server and we have published the 80 port and access the it by using
+
+74
+00:12:39,960 --> 00:12:51,720
+ our PHP dot info and also we access the SSL which also HTTPS to display the small testing page of
+
+75
+00:12:51,720 --> 00:13:02,520
+ PHP okay let's move to the other part here we'll pull the Docker image I will use the option
+
+76
+00:13:02,520 --> 00:13:11,480
+ A I will use my SQL I will pull the Docker image with my SQL not Maria database okay this this one
+
+77
+00:13:11,480 --> 00:13:23,960
+ so as we we have done in the previous steps we'll do the same but we will just make a very critical
+
+78
+00:13:23,960 --> 00:13:31,400
+ change for the permission we created directory to point to my SQL data but for the change mode
+
+79
+00:13:31,400 --> 00:13:41,640
+ it will be 777 not 775 if you set it 775 the database will run I was continuing to run
+
+80
+00:13:41,640 --> 00:13:48,360
+ but it will stop maybe after few seconds five seconds for example because you need to have
+
+81
+00:13:48,360 --> 00:13:55,000
+ food permission for users groups and ask you to have full permission okay so you need to take
+
+82
+00:13:55,000 --> 00:14:02,120
+ care for that part so let's create here my SQL data
+
+83
+00:14:02,120 --> 00:14:12,520
+ let's clear this
+
