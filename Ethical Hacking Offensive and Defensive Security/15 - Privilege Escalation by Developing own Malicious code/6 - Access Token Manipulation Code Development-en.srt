@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:08,720
+ I saw let us dive into the program which I have P A third I will be giving this program
+
+2
+00:00:08,720 --> 00:00:13,560
+ in a resource section as well as I will be giving the command how to compile this program
+
+3
+00:00:13,560 --> 00:00:14,560
+ ok.
+
+4
+00:00:14,560 --> 00:00:23,960
+ And you can convert it to exeef let me start explaining the program and here you can find
+
+5
+00:00:23,960 --> 00:00:37,120
+ we have use several APA functions, Windows Start, H, I and Protebo Stream and Strings it is
+
+6
+00:00:37,120 --> 00:00:45,240
+ like a library functions and next we have did a bool set privilege we have used a APA
+
+7
+00:00:45,240 --> 00:00:47,520
+ function set privilege.
+
+8
+00:00:47,520 --> 00:00:56,000
+ So, basically this function enables a specific privilege for the current process ok.
+
+9
+00:00:56,000 --> 00:01:02,240
+ So, anyway we are going to execute this program in CMD.exe ok.
+
+10
+00:01:02,240 --> 00:01:12,320
+ So, it enable the specified which privilege it needs to steal a token ok.
+
+11
+00:01:12,320 --> 00:01:26,440
+ And it will be it will be enabling the SCD bug name the privilege that one ok.
+
+12
+00:01:26,440 --> 00:01:32,440
+ So, this three lines is used to enable the privilege for a current process.
+
+13
+00:01:32,440 --> 00:01:38,120
+ So, what privilege we need to access the token ok to steal the token.
+
+14
+00:01:38,120 --> 00:01:44,720
+ So, this all the program is due to retrieve the value area of the privilege we need to
+
+15
+00:01:44,720 --> 00:01:45,720
+ check that.
+
+16
+00:01:45,720 --> 00:01:53,760
+ So, which privilege we have are so are we able to steal the token or not ok that is basically
+
+17
+00:01:53,760 --> 00:02:00,880
+ and so it is the function to open up specified the process token.
+
+18
+00:02:00,880 --> 00:02:09,040
+ So, let us dive on to the yeah basically this complete line will be setting the privilege
+
+19
+00:02:09,040 --> 00:02:10,360
+ for a current process.
+
+20
+00:02:10,360 --> 00:02:17,760
+ So, what are the things we need to what are the things we need to set to privilege set
+
+21
+00:02:17,760 --> 00:02:20,320
+ to do a access token manipulation of that ok.
+
+22
+00:02:20,320 --> 00:02:27,400
+ So, the next one we have this is the important function let us remember this ok.
+
+23
+00:02:27,400 --> 00:02:36,320
+ We have a handle we are doing a handle to get a token ok it is a function to get access
+
+24
+00:02:36,320 --> 00:02:41,260
+ token from a target process ok anyway we are going to steal a token from another process
+
+25
+00:02:41,260 --> 00:02:42,260
+ ok.
+
+26
+00:02:42,260 --> 00:02:52,680
+ So, this functionality are doing that it will be stealing the token from a from the another
+
+27
+00:02:52,680 --> 00:02:53,680
+ process ok.
+
+28
+00:02:53,680 --> 00:03:04,120
+ So, basically we have used this get token with the open process of process query limited
+
+29
+00:03:04,120 --> 00:03:05,120
+ information ok.
+
+30
+00:03:05,120 --> 00:03:13,480
+ So, this is a very important line we are going to detect this token manipulation attack
+
+31
+00:03:13,480 --> 00:03:20,320
+ in the next video you can see the similar function ok the similar parameter in the next
+
+32
+00:03:20,320 --> 00:03:29,800
+ video also we have used several things like token handle we are going to handle that token
+
+33
+00:03:29,800 --> 00:03:33,400
+ and we are going to use that right in the elevator process.
+
+34
+00:03:33,400 --> 00:03:38,760
+ So, the next line we are going to create a new process with the store and token ok.
+
+35
+00:03:38,760 --> 00:03:45,660
+ So, basically this is the entire command and it will be opening the it will be elevating
+
+36
+00:03:45,660 --> 00:03:46,660
+ the process CMD.txt.
+
+37
+00:03:46,660 --> 00:03:53,200
+ So, you can do any sort of executable if you have a malware.txt you can do a malware here
+
+38
+00:03:53,200 --> 00:03:54,200
+ ok.
+
+39
+00:03:54,200 --> 00:04:00,680
+ So, the entire program is very simple we are going to set all the enable all the privilege
+
+40
+00:04:00,680 --> 00:04:07,240
+ for a current process to steal the access token from the remote process from the target
+
+41
+00:04:07,240 --> 00:04:08,560
+ process.
+
+42
+00:04:08,560 --> 00:04:15,160
+ The next one we are doing a handle to get the access token from the target process which
+
+43
+00:04:15,160 --> 00:04:24,480
+ process we are going to steal and finally we are using the stored token and we are creating
+
+44
+00:04:24,480 --> 00:04:27,880
+ a new CMD.txt from that ok.
+
+45
+00:04:27,880 --> 00:04:40,360
+ So, let me open my VM and I have already compiled this program it will be sitting in a
+
+46
+00:04:40,360 --> 00:04:47,440
+ directory. So, I am going to use the token stealer 1, so here I can see a same program.
+
+47
+00:04:47,440 --> 00:04:52,200
+ So, I will be giving the command how to compile this CPP file.
+
+48
+00:04:52,200 --> 00:05:06,360
+ So, you can use the x64 or x64 native tool the visual studio based tools to compile this
+
+49
+00:05:06,360 --> 00:05:11,720
+ CPP file and you will be getting a exe from that.
+
+50
+00:05:11,720 --> 00:05:18,400
+ So, let me open so I already said we need to run this program as an administrator mode
+
+51
+00:05:18,400 --> 00:05:23,880
+ because we need to set some privilege right.
+
+52
+00:05:23,880 --> 00:05:27,520
+ You can see the code we need to enable some privilege for that to enabling that privilege
+
+53
+00:05:27,520 --> 00:05:39,600
+ you need to administer the level access control ok.
+
+54
+00:05:39,600 --> 00:05:52,640
+ Let me open up power shell better, process, so I am going to steal the win log on token
+
+55
+00:05:52,640 --> 00:05:53,640
+ ok.
+
+56
+00:05:53,640 --> 00:06:04,600
+ So, it was running as a bit of 776 let me open my ok.
+
+57
+00:06:04,600 --> 00:06:20,600
+ Let me redirect into the directory first and I will be using the token stealer 1.txt.
+
+58
+00:06:20,600 --> 00:06:26,880
+ So, if I execute that it was asking for a bit which bid I need to from which bid I need
+
+59
+00:06:26,880 --> 00:06:27,880
+ to steal the token.
+
+60
+00:06:27,880 --> 00:06:38,580
+ So, I will be using the bid of win log on process 776 ok in between let me open a process
+
+61
+00:06:38,580 --> 00:06:52,980
+ hacker ok my machine was shutting down let wait for a few time yeah let us receive that
+
+62
+00:06:52,980 --> 00:06:55,020
+ my machine has been restarted.
+
+63
+00:06:55,020 --> 00:07:04,600
+ So, my program will be open stealer and it was asking for a bit I am going to use the
+
+64
+00:07:04,600 --> 00:07:12,540
+ bit of win log on process 772 in between let me open a process hacker to form my understanding
+
+65
+00:07:12,540 --> 00:07:30,300
+ where is the win log on ok here you can find a win log on 772 let me execute this 772 and
+
+66
+00:07:30,300 --> 00:07:44,500
+ now you can see it has found another process CMD.exe right so let me go to the process
+
+67
+00:07:44,500 --> 00:08:05,380
+ hacker now you can see CMD so this CMD will be running as a win log on process privilege
+
+68
+00:08:05,380 --> 00:08:11,660
+ ok the higher privilege so basically this is running as a very higher privilege ok.
+
+69
+00:08:11,660 --> 00:08:23,700
+ So, the token has been not listed or anything be read enough but if I execute so here
+
+70
+00:08:23,700 --> 00:08:34,620
+ you can see a command problem with a system mandatory level but if you see here so where
+
+71
+00:08:34,620 --> 00:08:45,380
+ I execute or the program so this only have a high mandatory level of privilege but this
+
+72
+00:08:45,380 --> 00:08:53,080
+ has a system mandatory level so we have successfully performed a access token manipulation
+
+73
+00:08:53,080 --> 00:09:05,400
+ attack so this is how you need to execute that ok so I have all the privileges to do anything
+
+74
+00:09:05,400 --> 00:09:11,900
+ in a Windows ok so that is all about the video how in the next video we are going to
+
+75
+00:09:11,900 --> 00:09:17,320
+ see how we can detect this attack ok so let us stop off and we will see you in the next
+
+76
+00:09:17,320 --> 00:09:18,400
+ video guys thank you.
+
