@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:05,840
+ Okay, so now from this video onwards, we will start adding missions or you can say objectives
+
+2
+00:00:05,840 --> 00:00:12,440
+ to work in which we will tell the player or you can say handy player to go find a gun
+
+3
+00:00:12,440 --> 00:00:17,640
+ and when the player is going to find a gun, we will then add a few zombies there or
+
+4
+00:00:17,640 --> 00:00:22,480
+ you can say spawn zombies there so that there are difficulty in order to complete each
+
+5
+00:00:22,480 --> 00:00:29,960
+ objective all right or you can say we want to make a storyline all right so this
+
+6
+00:00:29,960 --> 00:00:35,640
+ can go hardcore into your own liking if you want whatever story for your game but
+
+7
+00:00:35,640 --> 00:00:40,440
+ if you want to make the sex story as mine then you can follow me stem by step
+
+8
+00:00:40,440 --> 00:00:45,720
+ right the first thing which we're going to do is in the zombies folder let's
+
+9
+00:00:45,720 --> 00:00:51,560
+ create a new folder now by the name of prefabs right because right now we
+
+10
+00:00:51,560 --> 00:00:56,680
+ will be making a prefab of each of their zombie and we will be spawning them
+
+11
+00:00:56,680 --> 00:01:02,480
+ all right they will not be available in the environment like this because if
+
+12
+00:01:02,480 --> 00:01:06,200
+ there are ten of zombies already in the environment the game will become
+
+13
+00:01:06,200 --> 00:01:11,120
+ really laggy all right so that's why I make prefab of all of these zombies
+
+14
+00:01:11,120 --> 00:01:16,840
+ because everything is set up and then deleted all right now we have this
+
+15
+00:01:16,840 --> 00:01:23,240
+ prefabs right there these are the main FBX files all right then after this
+
+16
+00:01:23,240 --> 00:01:28,640
+ let's go ahead and create a folder by the name of scripts all right now in
+
+17
+00:01:28,640 --> 00:01:33,920
+ the scripts we will be making some scripts but first of all in order to show
+
+18
+00:01:33,920 --> 00:01:41,920
+ the UI for the missions or objective we need to make some UI all right we have
+
+19
+00:01:41,920 --> 00:01:48,960
+ this UI right here so if you open the player related user interface then
+
+20
+00:01:48,960 --> 00:01:54,800
+ user and here as you can see we have this message panel and then these are the
+
+21
+00:01:54,800 --> 00:02:00,240
+ own screen warnings okay so just disable the message panel or you can
+
+22
+00:02:00,240 --> 00:02:08,280
+ actually leave it as enabled if you want okay but we don't have any message so
+
+23
+00:02:08,280 --> 00:02:16,720
+ that's why I've told you to disable them okay so I'm just gonna disable it
+
+24
+00:02:16,720 --> 00:02:25,520
+ then what I'm gonna do is in UI I'm gonna create a canvas let's name this as
+
+25
+00:02:25,520 --> 00:02:36,800
+ objectives canvas all right in this objective canvas we will go ahead and
+
+26
+00:02:36,800 --> 00:02:42,880
+ create a UI panel okay there is the panel right there let's make it black and
+
+27
+00:02:42,880 --> 00:02:50,320
+ then make sure to select this right transform hold down the control button in order
+
+28
+00:02:50,320 --> 00:02:55,480
+ to move it to the middle and these options are also now valuable let's make the
+
+29
+00:02:55,480 --> 00:03:08,760
+ width sound 100 and the height to be 90 and then let's move to the top center right there
+
+30
+00:03:08,760 --> 00:03:13,560
+ all right and what we're gonna do is we're gonna move it over down now let's
+
+31
+00:03:13,560 --> 00:03:25,000
+ decrease the height to 60 and the width should be let's just say 400 or white no we
+
+32
+00:03:25,000 --> 00:03:33,680
+ can name this as objective UI and then inside the objective UI let's go ahead
+
+33
+00:03:33,680 --> 00:03:43,040
+ and add a legacy text all right the text color should be white and text should be
+
+34
+00:03:43,040 --> 00:03:52,040
+ bold let's stretch it on all sides then move it to the middle like that and if
+
+35
+00:03:52,040 --> 00:03:57,200
+ you want to see the UI change to to remove directly on this objective canvas
+
+36
+00:03:57,200 --> 00:04:10,000
+ and here it is all right now what we can do is let's just say find something
+
+37
+00:04:10,000 --> 00:04:21,120
+ or protection zombies where this will be the first hand or you can say the
+
+38
+00:04:21,120 --> 00:04:28,760
+ first objective for the player this is just a dummy text you can type whatever
+
+39
+00:04:28,760 --> 00:04:38,720
+ you want let's make it 20 so that we are able to see it and of course there can
+
+40
+00:04:38,720 --> 00:04:44,680
+ be different types of sizes for different types of pieces okay I mean
+
+41
+00:04:44,680 --> 00:04:49,920
+ the screen sizes so in order to make this UI work on all of them you will
+
+42
+00:04:49,920 --> 00:04:55,440
+ have to change this from constant pixel size to scale with skin size and when
+
+43
+00:04:55,440 --> 00:05:03,480
+ you do that as you can see it has now become really bigger so you can decrease
+
+44
+00:05:03,480 --> 00:05:15,760
+ it size but I think I like this one so I'm just gonna do a bit of changes I think
+
+45
+00:05:15,760 --> 00:05:21,620
+ the I but I think I'm just gonna leave this as it is okay and disable this
+
+46
+00:05:21,620 --> 00:05:27,000
+ so objective UI and leave the objective canvas as it is just make sure to
+
+47
+00:05:27,000 --> 00:05:34,360
+ change this from text to objective name all right now once we do that in the
+
+48
+00:05:34,360 --> 00:05:42,160
+ next video now we're gonna add some coding in which we will show the objective
+
+49
+00:05:42,160 --> 00:05:47,440
+ and when the objective is completed we will move to the next one all right
+
+50
+00:05:47,440 --> 00:05:52,080
+ and when all of the objectives have completed we just gonna say that all
+
+51
+00:05:52,080 --> 00:05:56,920
+ objective completed and then the mission will be passed or you can see the
+
+52
+00:05:56,920 --> 00:06:02,000
+ mission will be successful something like that case so this turns you guys in
+
+53
+00:06:02,000 --> 00:06:04,480
+ the next one
+
