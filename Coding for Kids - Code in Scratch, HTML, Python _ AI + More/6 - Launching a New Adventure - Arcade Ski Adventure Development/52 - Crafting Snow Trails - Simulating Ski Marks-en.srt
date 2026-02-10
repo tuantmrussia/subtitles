@@ -1,0 +1,204 @@
+1
+00:00:00,200 --> 00:00:03,230
+It's time to make our skiing game look like a skiing game.
+
+2
+00:00:03,230 --> 00:00:07,340
+And the easiest way to do that is by adding a snow trail to our main character.
+
+3
+00:00:07,370 --> 00:00:12,410
+So in this lesson, we're going to look at how we can convert these small little squares into a snow
+
+4
+00:00:12,410 --> 00:00:13,610
+trail effect.
+
+5
+00:00:13,730 --> 00:00:18,260
+So first things first, let's move over to one of our snow pixel sprites.
+
+6
+00:00:18,680 --> 00:00:20,720
+Now let's think about what needs to happen.
+
+7
+00:00:20,750 --> 00:00:25,610
+Basically, we want this gray block to go to our left ski.
+
+8
+00:00:25,610 --> 00:00:30,830
+Then when it is at the base of our ski, we want it to glide down.
+
+9
+00:00:30,830 --> 00:00:36,140
+And obviously this wouldn't really work if we just had one as we wouldn't really have a trail.
+
+10
+00:00:36,140 --> 00:00:39,980
+So just like before, we can take advantage of cloning to create this effect.
+
+11
+00:00:40,590 --> 00:00:47,520
+And to save us some time, let's go to our tree sprite and then drag this script here that creates clones
+
+12
+00:00:47,520 --> 00:00:49,110
+into our pixel sprite.
+
+13
+00:00:49,530 --> 00:00:53,520
+Now for the next part, we can drag in the when I start as a clone block.
+
+14
+00:00:54,200 --> 00:01:00,710
+And now what we want is for this pixel to go to our left ski so we can first show it as it's currently
+
+15
+00:01:00,710 --> 00:01:06,620
+hidden, and then we can go to our motions group and drag in this go to block.
+
+16
+00:01:07,660 --> 00:01:09,550
+And then select our player sprite.
+
+17
+00:01:10,430 --> 00:01:15,080
+Then what we want to happen is for our pixel to start moving down, to make it look like we are moving
+
+18
+00:01:15,080 --> 00:01:15,800
+forward.
+
+19
+00:01:15,860 --> 00:01:24,290
+Now, an easy way to do this is to grab a repeat block and then stick a change Y by block inside.
+
+20
+00:01:24,770 --> 00:01:27,110
+Here we can change Y by minus five.
+
+21
+00:01:27,320 --> 00:01:29,480
+And finally we can delete the clone.
+
+22
+00:01:29,930 --> 00:01:31,310
+So giving that a test.
+
+23
+00:01:31,670 --> 00:01:34,430
+Well as you can see it's somewhat works.
+
+24
+00:01:34,430 --> 00:01:38,120
+But because we have a weight block here it's not spawning in fast enough.
+
+25
+00:01:38,120 --> 00:01:42,710
+So simply we can remove this block and give that another go.
+
+26
+00:01:42,920 --> 00:01:45,830
+And well that pretty works quite well.
+
+27
+00:01:46,100 --> 00:01:51,350
+I think you will see that our pixel does spawn into the middle of our character and as you know, we
+
+28
+00:01:51,350 --> 00:01:52,850
+want it to follow our sky.
+
+29
+00:01:52,880 --> 00:01:57,080
+So time for a quick mini challenge.
+
+30
+00:01:57,320 --> 00:02:04,760
+Pause the video now and try to see if you can get our snow pixel to follow the ski instead of the middle
+
+31
+00:02:04,760 --> 00:02:05,840
+of our sprite.
+
+32
+00:02:06,230 --> 00:02:08,210
+Pause the video and give that a go.
+
+33
+00:02:09,920 --> 00:02:14,870
+Well, hopefully you didn't try to overcomplicate this challenge because the solution is actually quite
+
+34
+00:02:14,870 --> 00:02:16,460
+easy here.
+
+35
+00:02:16,490 --> 00:02:23,300
+All you need to do is grab a change x by add it below our go to block, and just keep fiddling with
+
+36
+00:02:23,300 --> 00:02:27,110
+this number until you get something that perfectly aligns to our scheme.
+
+37
+00:02:27,110 --> 00:02:27,950
+Like this.
+
+38
+00:02:28,590 --> 00:02:35,040
+And now to get the other ski working, we can just drag both of these scripts over to our sprite other
+
+39
+00:02:35,040 --> 00:02:43,020
+sprite here, like so, and then just adding this change x by until it matches with our other ski like
+
+40
+00:02:43,020 --> 00:02:43,740
+so.
+
+41
+00:02:44,040 --> 00:02:50,190
+And one problem you may also be facing is your snow pixel spawning in front of your ski character.
+
+42
+00:02:50,460 --> 00:02:58,020
+And here you you have to do is go over to the looks tab, set this block to go back layer and just click
+
+43
+00:02:58,020 --> 00:02:58,410
+it.
+
+44
+00:02:58,410 --> 00:03:01,350
+And you don't even need to bring it in.
+
+45
+00:03:01,800 --> 00:03:06,240
+And there you have it with the most basic sprite and really simple code.
+
+46
+00:03:06,240 --> 00:03:08,730
+Look at how much better that makes the game.
+
+47
+00:03:08,760 --> 00:03:13,380
+It now looks like we're actually skiing, and we have a trail that follows behind us.
+
+48
+00:03:14,010 --> 00:03:15,270
+And that's all for this lesson.
+
+49
+00:03:15,270 --> 00:03:22,770
+But before I go, I leave you with a quote from a famous programmer, which is a fool admires complexity,
+
+50
+00:03:23,040 --> 00:03:26,190
+a genius admires simplicity.
+
+51
+00:03:26,190 --> 00:03:30,810
+So remember, often the most simple code is the best code.
+
