@@ -1,0 +1,400 @@
+1
+00:00:00,110 --> 00:00:04,040
+Well, it's time to get this show on the road, quite literally.
+
+2
+00:00:04,520 --> 00:00:10,580
+At this stage, we have this illusion of motion, like how our car's driving along a highway and we
+
+3
+00:00:10,580 --> 00:00:13,370
+have the ability to control our car by turning it left or right.
+
+4
+00:00:13,370 --> 00:00:17,390
+But now we need to focus on getting our obstacle cars on the road.
+
+5
+00:00:17,450 --> 00:00:21,680
+These are the cars that we're going to be weaving in between as we play through our game.
+
+6
+00:00:22,280 --> 00:00:28,580
+As you can see, at this stage we only have one car sprite, but soon you will see how from it we can
+
+7
+00:00:28,580 --> 00:00:30,890
+create an endless amount of cars.
+
+8
+00:00:31,380 --> 00:00:36,150
+And again, before we just start coding, let's think about what it needs to do.
+
+9
+00:00:36,150 --> 00:00:39,660
+And then we can consider how we will achieve this with code.
+
+10
+00:00:40,470 --> 00:00:46,860
+So to further the illusion of motion and to add an obstacle that we must avoid, we want this car to
+
+11
+00:00:46,860 --> 00:00:49,800
+look like it is driving at a slower speed than our car.
+
+12
+00:00:50,280 --> 00:00:57,240
+So it would be coming slowly down a lane like this, and then we would need to dodge it by turning left
+
+13
+00:00:57,240 --> 00:00:57,810
+or right.
+
+14
+00:00:58,330 --> 00:01:02,770
+So let's try to tackle the first problem moving over to our car sprite.
+
+15
+00:01:02,800 --> 00:01:10,540
+We can first attach a forever block onto this current script, and simply all we will do is have the
+
+16
+00:01:10,540 --> 00:01:15,670
+car slowly move down the screen by changing the Y by a negative value of, say, five.
+
+17
+00:01:16,390 --> 00:01:17,170
+Then hitting play.
+
+18
+00:01:17,770 --> 00:01:20,830
+Well, that looks perfect because it's coming down the road.
+
+19
+00:01:21,370 --> 00:01:28,840
+It still looks like it's moving forward because it's moving back slower than the road is moving back.
+
+20
+00:01:29,540 --> 00:01:35,390
+But now that we have this call moving, you can see it just stops when it gets to the end of the screen.
+
+21
+00:01:35,840 --> 00:01:37,730
+And this works perfectly well.
+
+22
+00:01:37,730 --> 00:01:42,290
+Perfect if all we want is one obstacle in our game, which isn't the goal here.
+
+23
+00:01:42,290 --> 00:01:46,730
+So instead we need the car to go back to the start of our screen when it reaches the bottom.
+
+24
+00:01:47,520 --> 00:01:52,140
+And well, to do this we need to add some sort of condition check.
+
+25
+00:01:52,790 --> 00:02:00,290
+But if you move over to our motion group, if you remember, we have this Y position and we can use
+
+26
+00:02:00,290 --> 00:02:05,600
+this to check what the y position is of our sprite, which means we can check to see if our sprite has
+
+27
+00:02:05,600 --> 00:02:10,370
+reached the end of the screen, and if it has, we can make it go back to the top.
+
+28
+00:02:11,430 --> 00:02:14,790
+So firstly, what we need is an if statement.
+
+29
+00:02:14,790 --> 00:02:21,060
+And you will notice here that you can't put this y position block in the if statement.
+
+30
+00:02:21,540 --> 00:02:26,310
+And well for obvious reasons it's like if y position then do something.
+
+31
+00:02:26,310 --> 00:02:28,080
+Well that doesn't make sense.
+
+32
+00:02:28,080 --> 00:02:32,610
+What we need to do is check the y position is lower than a certain value.
+
+33
+00:02:33,060 --> 00:02:39,810
+And just like with our road lines, we can do this by grabbing this green block from the operators group.
+
+34
+00:02:40,470 --> 00:02:44,310
+This is what checks if a value is greater than or less than another.
+
+35
+00:02:44,310 --> 00:02:48,180
+Remember to pay attention to the size at the start.
+
+36
+00:02:48,630 --> 00:02:55,170
+Here it's going from a size that is less than where it starts, and here it's going from a size that
+
+37
+00:02:55,170 --> 00:02:56,370
+is greater than.
+
+38
+00:02:57,020 --> 00:03:03,050
+So we want to check if y is less than -210, which is basically the bottom of the screen.
+
+39
+00:03:03,700 --> 00:03:08,230
+Now, if this condition is true, we want our car to go back to the top of the screen.
+
+40
+00:03:08,230 --> 00:03:16,540
+So all we need to do is bring in a go to block and set the Y value to 210, which is basically the top
+
+41
+00:03:16,540 --> 00:03:18,550
+of the screen, and hit play.
+
+42
+00:03:19,480 --> 00:03:19,630
+What?
+
+43
+00:03:19,630 --> 00:03:25,690
+As you can see, our car drives down and when it reaches the bottom, it goes back to the top.
+
+44
+00:03:25,690 --> 00:03:26,620
+It's nice.
+
+45
+00:03:26,890 --> 00:03:28,660
+So that's looking pretty good.
+
+46
+00:03:29,380 --> 00:03:31,990
+But there's still one more thing we need to address.
+
+47
+00:03:31,990 --> 00:03:33,250
+And that's our car.
+
+48
+00:03:33,400 --> 00:03:40,690
+Well, it keeps coming down the same lane, which would make the game pretty easy, because all you
+
+49
+00:03:40,690 --> 00:03:43,690
+would need to do is drive in any of the other lanes and we would win.
+
+50
+00:03:43,870 --> 00:03:46,300
+And we don't want cheap wins here.
+
+51
+00:03:46,750 --> 00:03:52,750
+So what we need is for the car to somehow randomly switch between each of these lanes every time it
+
+52
+00:03:52,750 --> 00:03:53,830
+goes back to the top.
+
+53
+00:03:54,830 --> 00:04:00,530
+Now, this is a little bit more tricky than you might think, but let's start with what we know.
+
+54
+00:04:01,100 --> 00:04:08,420
+So we know that this will have something to do with the x value, as right now we set it to zero each
+
+55
+00:04:08,420 --> 00:04:09,830
+time it goes to the top.
+
+56
+00:04:10,160 --> 00:04:12,110
+So we need to change that.
+
+57
+00:04:12,720 --> 00:04:16,530
+We also know that as something to do with picking a random number.
+
+58
+00:04:17,120 --> 00:04:23,030
+So to start off with, let's just bring the pick random into the go to x.
+
+59
+00:04:24,020 --> 00:04:29,480
+Now we can see what the upper and lower limits will be by dragging our car to the first lane.
+
+60
+00:04:30,050 --> 00:04:34,100
+Yeah, you can see it is at -145.
+
+61
+00:04:34,610 --> 00:04:36,680
+And the last line is well.
+
+62
+00:04:36,680 --> 00:04:38,090
+145.
+
+63
+00:04:38,580 --> 00:04:45,240
+So we can have X be set to a random number from -145 to 145.
+
+64
+00:04:45,240 --> 00:04:51,060
+And if we hit play, you can see that each time our car reaches the end.
+
+65
+00:04:52,090 --> 00:04:58,270
+It switches lanes, which is good, but the problem is that sometimes it goes in between our lanes,
+
+66
+00:04:58,270 --> 00:04:59,620
+which isn't good.
+
+67
+00:05:00,310 --> 00:05:02,620
+And this is where it gets a little tricky.
+
+68
+00:05:02,620 --> 00:05:05,020
+So we need to change the way we approach this.
+
+69
+00:05:05,740 --> 00:05:11,560
+So instead of setting the number between -145 and 145, we need to do a bit of math.
+
+70
+00:05:11,560 --> 00:05:11,920
+Yeah.
+
+71
+00:05:11,950 --> 00:05:12,520
+Fun, right?
+
+72
+00:05:12,520 --> 00:05:12,700
+Huh.
+
+73
+00:05:13,420 --> 00:05:19,360
+So what we need is a plus block and a times block, and you'll see why.
+
+74
+00:05:20,030 --> 00:05:25,100
+So our X position of our car can be a minimum of -145.
+
+75
+00:05:25,580 --> 00:05:28,850
+So we can enter that into our first plus input.
+
+76
+00:05:29,350 --> 00:05:30,790
+Now there are five.
+
+77
+00:05:31,590 --> 00:05:35,820
+Different possible lanes that our car can be in at any moment.
+
+78
+00:05:36,370 --> 00:05:39,820
+So what we need to do is work out the space between the lanes.
+
+79
+00:05:39,820 --> 00:05:42,490
+So our first lane is -145.
+
+80
+00:05:42,700 --> 00:05:46,840
+If we move it to the second lane it's at -70.
+
+81
+00:05:46,870 --> 00:05:49,510
+Now one 4570.
+
+82
+00:05:49,540 --> 00:05:50,920
+It gives you 75.
+
+83
+00:05:50,920 --> 00:05:52,570
+But we can just say around 75.
+
+84
+00:05:53,140 --> 00:05:56,590
+So 75 is the distance between the lanes.
+
+85
+00:05:56,770 --> 00:06:03,130
+So if we move this times block into the plus block we can enter 75.
+
+86
+00:06:03,130 --> 00:06:07,480
+And as there are five lanes we can again use pick randomly.
+
+87
+00:06:07,480 --> 00:06:11,590
+And here we can set it to zero and four.
+
+88
+00:06:12,100 --> 00:06:14,290
+And yeah zero seems weird.
+
+89
+00:06:14,680 --> 00:06:15,820
+Why not 1 to 5.
+
+90
+00:06:15,820 --> 00:06:21,010
+And this is because well -145 is our first lane and anything times zero.
+
+91
+00:06:21,010 --> 00:06:25,510
+So if the random number is zero our car will be in our first lane.
+
+92
+00:06:25,510 --> 00:06:30,280
+And I know this might be a bit confusing, but as you work more with these types of blocks, the better
+
+93
+00:06:30,280 --> 00:06:31,330
+you understand it.
+
+94
+00:06:31,510 --> 00:06:32,350
+But enough said.
+
+95
+00:06:32,470 --> 00:06:34,480
+Let's see this in action.
+
+96
+00:06:35,990 --> 00:06:40,850
+Well, that looks almost perfect, but we can adjust it just a smidge to get even better.
+
+97
+00:06:41,240 --> 00:06:43,640
+As you can see, the last line is a bit far.
+
+98
+00:06:43,760 --> 00:06:48,620
+So let's just change this to be 74 because it's all about trial and error.
+
+99
+00:06:48,950 --> 00:06:51,530
+But yeah, that looks really good.
+
+100
+00:06:51,530 --> 00:06:57,530
+So now just sit back, relax and enjoy your creation because it's only going to get better.
+
