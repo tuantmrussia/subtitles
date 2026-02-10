@@ -1,0 +1,296 @@
+1
+00:00:00,200 --> 00:00:06,350
+Okay, now we are in the final stages of this, and before we add in a crash detection, let's try to
+
+2
+00:00:06,350 --> 00:00:11,300
+get the scenery to move so our game can feel more immersive.
+
+3
+00:00:11,930 --> 00:00:19,130
+So what we want to happen is for this tree sprite to come down the side of the road as we start driving,
+
+4
+00:00:19,190 --> 00:00:21,260
+to make it feel like we are passing scenery.
+
+5
+00:00:21,680 --> 00:00:25,310
+And this code will be very similar to our code for our obstacle sprite.
+
+6
+00:00:25,310 --> 00:00:28,280
+So let's just copy it over and see what happens.
+
+7
+00:00:29,660 --> 00:00:32,420
+Moving over, we can just drag these blocks here.
+
+8
+00:00:33,630 --> 00:00:35,070
+And when you click play.
+
+9
+00:00:35,460 --> 00:00:38,190
+Well, yeah, I think that's to be expected.
+
+10
+00:00:38,700 --> 00:00:41,700
+Our trees just kind of act like cars.
+
+11
+00:00:41,700 --> 00:00:46,080
+And as silly as this is, with a few modifications, we can get this to work for us.
+
+12
+00:00:46,080 --> 00:00:49,050
+So obviously we don't want our trees in the middle of the road.
+
+13
+00:00:49,050 --> 00:00:53,220
+And we can fix this by taking out this block inside the go to block.
+
+14
+00:00:53,640 --> 00:00:57,570
+And here we can then add in a pick random.
+
+15
+00:00:58,150 --> 00:01:06,130
+And because we want it on the side of the road, we can have it pick a number between -250 and -200.
+
+16
+00:01:06,670 --> 00:01:09,880
+And I think we can also keep the size here the same as it looks.
+
+17
+00:01:09,880 --> 00:01:10,600
+All right.
+
+18
+00:01:11,020 --> 00:01:12,400
+Hitting play again.
+
+19
+00:01:12,550 --> 00:01:12,910
+Yeah.
+
+20
+00:01:12,910 --> 00:01:14,290
+Look at how much better that is.
+
+21
+00:01:14,500 --> 00:01:18,580
+The only thing now is that our trees are moving at a different speed to our road.
+
+22
+00:01:18,970 --> 00:01:24,700
+So if we move back to our road sprite, you can see we have the speed set to minus ten.
+
+23
+00:01:24,730 --> 00:01:27,220
+So let's do the same for our trees.
+
+24
+00:01:28,970 --> 00:01:29,810
+Hitting play again.
+
+25
+00:01:29,840 --> 00:01:31,400
+That's definitely better.
+
+26
+00:01:31,580 --> 00:01:37,220
+Although one small problem we have here is the trees are stacking up at the bottom of the screen, but
+
+27
+00:01:37,220 --> 00:01:40,730
+we can easily fix this by changing this.
+
+28
+00:01:40,730 --> 00:01:46,250
+If we check here to let's change it to let's say -200.
+
+29
+00:01:46,340 --> 00:01:55,250
+And also let's increase the spawning speed a bit by adjusting this pick random from 0.6 to 1.2, 0.62,
+
+30
+00:01:55,250 --> 00:01:56,420
+0.3.
+
+31
+00:01:57,020 --> 00:02:00,980
+And well that fixes that and our tree spawn more quickly.
+
+32
+00:02:01,520 --> 00:02:02,330
+Well good job.
+
+33
+00:02:02,390 --> 00:02:05,030
+But there's still a problem and I'm sure you can see.
+
+34
+00:02:05,820 --> 00:02:09,210
+Which is that we only have trees on the one side of the road.
+
+35
+00:02:09,980 --> 00:02:12,920
+And we could just duplicate the sprite, which would work.
+
+36
+00:02:12,920 --> 00:02:18,680
+But as you know, it's always good to keep your code dry.
+
+37
+00:02:18,860 --> 00:02:22,700
+As in don't repeat yourself.
+
+38
+00:02:22,790 --> 00:02:25,340
+So let's think of a smarter solution.
+
+39
+00:02:26,090 --> 00:02:36,410
+Right now, when our trees start as a clone, it goes to a random position between -250 and -200.
+
+40
+00:02:36,920 --> 00:02:42,950
+But we also want 202 50 as an option because this is the right side of the screen.
+
+41
+00:02:43,500 --> 00:02:45,570
+So first things first, let's duplicate this.
+
+42
+00:02:45,570 --> 00:02:49,620
+Pick random and then change its values to 202 50.
+
+43
+00:02:50,800 --> 00:02:57,640
+Okay, now that we've done that, how can we have it that sometimes it chooses this pick random while
+
+44
+00:02:57,640 --> 00:03:00,370
+other times it chooses this pick random.
+
+45
+00:03:01,300 --> 00:03:05,020
+Well, pause the video and try to see if you can figure this one out on your own.
+
+46
+00:03:05,380 --> 00:03:09,340
+Well, no, it's not as easy as you might think, but I bet you're up to it.
+
+47
+00:03:11,070 --> 00:03:15,090
+Okay, so as always, there are different ways we could get this to work.
+
+48
+00:03:15,090 --> 00:03:18,750
+But I'm going to show you how we can use variables to solve this.
+
+49
+00:03:19,440 --> 00:03:25,650
+So what we can do is create a variable called sides.
+
+50
+00:03:26,240 --> 00:03:29,630
+Then we can add this code block to the start of our.
+
+51
+00:03:29,630 --> 00:03:31,550
+When I start as a clone script.
+
+52
+00:03:32,000 --> 00:03:36,080
+Then make sure you change this to set sides input.
+
+53
+00:03:36,320 --> 00:03:39,260
+And after that bring in a pick random.
+
+54
+00:03:39,260 --> 00:03:42,860
+And here we will set it to be just 1 or 2.
+
+55
+00:03:44,000 --> 00:03:51,890
+Okay, now we can grab and if then conditional we can grab this equals to operator.
+
+56
+00:03:51,890 --> 00:03:54,710
+And finally the sides variable.
+
+57
+00:03:55,340 --> 00:03:55,970
+So.
+
+58
+00:03:56,580 --> 00:03:59,580
+What we want to do is have it like this.
+
+59
+00:03:59,580 --> 00:04:04,020
+If size equals one, then do whatever is in here.
+
+60
+00:04:04,350 --> 00:04:10,080
+Or if size is not one, which is two, then do whatever is in here.
+
+61
+00:04:11,510 --> 00:04:15,320
+So we can drag this go to block inside this first condition.
+
+62
+00:04:15,840 --> 00:04:19,830
+Then we can do is duplicate it and switch out this.
+
+63
+00:04:19,830 --> 00:04:22,140
+Pick random for this one here.
+
+64
+00:04:22,750 --> 00:04:24,850
+Then finally connect all these blocks together.
+
+65
+00:04:25,720 --> 00:04:27,790
+Well, let's run through this quickly.
+
+66
+00:04:28,620 --> 00:04:34,410
+When we start as a clone, we have a variable called sides, which we'll set to be either 1 or 2, which
+
+67
+00:04:34,440 --> 00:04:35,940
+indicates left or right.
+
+68
+00:04:35,970 --> 00:04:43,740
+Then if size equals one, the trees will spawn on the one side, and if size equals two, they'll spawn
+
+69
+00:04:43,740 --> 00:04:44,310
+the other side.
+
+70
+00:04:44,730 --> 00:04:46,470
+Okay, so hitting play.
+
+71
+00:04:47,330 --> 00:04:48,440
+Well, there you have it.
+
+72
+00:04:48,470 --> 00:04:51,800
+We have three spawning on both sides and it looks good.
+
+73
+00:04:51,830 --> 00:04:53,330
+I think we're almost there.
+
+74
+00:04:53,330 --> 00:04:59,390
+Just a bit of collision detection and our game will pretty much be done.
+
