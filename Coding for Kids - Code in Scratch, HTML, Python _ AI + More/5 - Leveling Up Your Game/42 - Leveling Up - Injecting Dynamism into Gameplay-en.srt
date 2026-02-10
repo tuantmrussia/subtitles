@@ -1,0 +1,312 @@
+1
+00:00:00,110 --> 00:00:05,960
+Well, you've come so far and built a really great game and it's almost ready for publishing.
+
+2
+00:00:05,990 --> 00:00:10,010
+However, one issue we have is the static ness of our game.
+
+3
+00:00:10,010 --> 00:00:11,720
+Like there are no levels.
+
+4
+00:00:11,720 --> 00:00:16,490
+With increasing difficulty, our car moves at the same speed.
+
+5
+00:00:16,640 --> 00:00:24,410
+Our obstacles cars also spawn at the same speed and all this leaves us with a pretty bland game.
+
+6
+00:00:24,830 --> 00:00:27,590
+So how can we fix this?
+
+7
+00:00:27,590 --> 00:00:29,870
+How can we make our game more entertaining?
+
+8
+00:00:29,870 --> 00:00:31,220
+By increasing the difficulty?
+
+9
+00:00:31,960 --> 00:00:38,620
+Well, we know that one way to increase the difficulty would be by increasing the rate at which obstacle
+
+10
+00:00:38,620 --> 00:00:42,520
+courses spawn, or even better, by making them move down faster.
+
+11
+00:00:43,000 --> 00:00:45,130
+So moving to our obstacle course.
+
+12
+00:00:45,130 --> 00:00:45,730
+Right.
+
+13
+00:00:45,730 --> 00:00:52,270
+Let's see the two areas that control how fast our obstacle car moves and how fast it spawns into the
+
+14
+00:00:52,270 --> 00:00:52,780
+game.
+
+15
+00:00:53,420 --> 00:01:00,740
+Firstly, as you can see, our obstacle car weights 0.6 to 1.2 seconds before it creates a clone and
+
+16
+00:01:00,740 --> 00:01:01,610
+spawns in.
+
+17
+00:01:02,190 --> 00:01:05,820
+So this is the one part of code we would need to adjust.
+
+18
+00:01:06,530 --> 00:01:11,450
+Then looking at this script, you can see that the car constantly changes y.
+
+19
+00:01:11,480 --> 00:01:12,920
+By minus five.
+
+20
+00:01:12,920 --> 00:01:15,170
+So this is its movement speed.
+
+21
+00:01:15,170 --> 00:01:18,380
+And the other part we would also need to adjust.
+
+22
+00:01:19,610 --> 00:01:24,860
+So now that we have identified the two parts of the code that control the speed and spawn rate of the
+
+23
+00:01:24,860 --> 00:01:30,170
+sprite, how can we make it that it keeps getting harder as the game progresses?
+
+24
+00:01:30,830 --> 00:01:39,050
+Well, we could just keep duplicating this code and duplicating it and duplicating it and duplicating
+
+25
+00:01:39,050 --> 00:01:39,410
+it.
+
+26
+00:01:40,830 --> 00:01:48,510
+And then, for instance, change this to 0.5 and 1.1 and just keep making the spawn time shorter and
+
+27
+00:01:48,510 --> 00:01:49,170
+shorter.
+
+28
+00:01:49,800 --> 00:01:56,670
+But I think you know that that's not the way to go because as you remember, dry code is important.
+
+29
+00:01:56,670 --> 00:01:59,820
+Meaning don't repeat yourself.
+
+30
+00:02:00,360 --> 00:02:04,140
+And we're certainly repeating, repeating, repeating ourselves here.
+
+31
+00:02:05,150 --> 00:02:11,720
+So instead, just like with the other game we created, we can use variables to control our game speed.
+
+32
+00:02:11,990 --> 00:02:17,960
+But before we go ahead and change, this is important that you understand just how important variables
+
+33
+00:02:17,960 --> 00:02:19,220
+are in programming.
+
+34
+00:02:19,900 --> 00:02:20,650
+Now.
+
+35
+00:02:20,650 --> 00:02:26,320
+Often it's tempting to just enter in a value such as this change y by minus five.
+
+36
+00:02:26,620 --> 00:02:31,150
+In programming, this is what is called hard coded values.
+
+37
+00:02:31,180 --> 00:02:35,410
+Now, while this is okay to do, sometimes there are a bunch of disadvantages too.
+
+38
+00:02:35,440 --> 00:02:37,810
+So let's just take a moment to consider some of them.
+
+39
+00:02:38,640 --> 00:02:42,330
+Firstly, lack of flexibility.
+
+40
+00:02:42,870 --> 00:02:47,850
+Imagine you've built a game with ten levels, all with hard coded difficulties.
+
+41
+00:02:48,410 --> 00:02:53,330
+If you want to change the difficulty rate, like how quickly the game gets difficult, you would have
+
+42
+00:02:53,330 --> 00:02:55,880
+to adjust each level individually.
+
+43
+00:02:55,910 --> 00:02:58,760
+Now that's not a very efficient way, right?
+
+44
+00:02:59,420 --> 00:03:02,450
+Secondly, updates and expansions.
+
+45
+00:03:02,960 --> 00:03:08,180
+Let's say your game becomes popular and you decide to release an updated version or expansion.
+
+46
+00:03:08,450 --> 00:03:14,600
+If everything's hard coded, making consistent changes becomes a very tedious task.
+
+47
+00:03:14,600 --> 00:03:20,240
+Just like with our game, we would need to change the increased speed value for our trees and our road.
+
+48
+00:03:20,810 --> 00:03:23,930
+And lastly, consistency issues.
+
+49
+00:03:23,930 --> 00:03:28,010
+One of the main problems you will face is consistency.
+
+50
+00:03:28,040 --> 00:03:35,150
+Meaning if we have a small change we want to make in our game, we would need to find every value that
+
+51
+00:03:35,150 --> 00:03:36,770
+is affected by this change.
+
+52
+00:03:36,770 --> 00:03:40,700
+And if our game is large, this task becomes nearly impossible.
+
+53
+00:03:41,120 --> 00:03:47,780
+So that all said, we can make our code a lot better by using variables instead of hard coded values
+
+54
+00:03:47,780 --> 00:03:49,010
+wherever possible.
+
+55
+00:03:49,640 --> 00:03:56,330
+Then what we can do is have one space where we adjust all the variables, and this way our game is easy
+
+56
+00:03:56,330 --> 00:03:58,100
+to manage and upgrade.
+
+57
+00:03:59,210 --> 00:04:02,240
+So moving over to our variables.
+
+58
+00:04:02,360 --> 00:04:09,650
+Think about what variables we need to create to make our game more adaptable and scalable.
+
+59
+00:04:10,390 --> 00:04:16,060
+Well, the two things we want to control are our spawn speed and our movement speed.
+
+60
+00:04:16,360 --> 00:04:17,770
+So let's create this.
+
+61
+00:04:17,800 --> 00:04:24,700
+So firstly hitting make variable we can call this first one spawn speed.
+
+62
+00:04:25,460 --> 00:04:26,630
+Hit create.
+
+63
+00:04:26,780 --> 00:04:30,800
+And once again we can call this next one Movement speed.
+
+64
+00:04:31,520 --> 00:04:33,620
+And make sure it's a global variable.
+
+65
+00:04:33,650 --> 00:04:36,170
+By ensuring this button is selected.
+
+66
+00:04:37,320 --> 00:04:38,910
+So let's do this.
+
+67
+00:04:39,420 --> 00:04:41,610
+Now firstly, let's change our spawn speed.
+
+68
+00:04:41,640 --> 00:04:46,950
+Right now it is this hardcoded value of 0.6 and 1.2.
+
+69
+00:04:47,660 --> 00:04:52,160
+So instead of 0.6, let's drag in the spawn speed variable.
+
+70
+00:04:53,170 --> 00:05:02,140
+Then, as 0.6 is double the size of 1.2, we can set the second input to spawn speed multiplied by two.
+
+71
+00:05:03,030 --> 00:05:08,340
+Okay, so right now our cars won't move as our spawn speed is set to zero.
+
+72
+00:05:08,880 --> 00:05:15,120
+But to test this out, let's quickly set it to 0.6 by simply selecting it here.
+
+73
+00:05:15,240 --> 00:05:18,780
+Entering in 0.6 and double click.
+
+74
+00:05:19,350 --> 00:05:23,040
+And as you can see it has changed now hitting play.
+
+75
+00:05:24,140 --> 00:05:25,250
+There you have it.
+
+76
+00:05:25,370 --> 00:05:28,070
+I mean, nothing has changed, but it soon will.
+
+77
+00:05:28,070 --> 00:05:34,070
+So get ready because in the next lesson, we are going to totally upgrade this game and make it truly
+
+78
+00:05:34,070 --> 00:05:35,060
+adaptable.
+
