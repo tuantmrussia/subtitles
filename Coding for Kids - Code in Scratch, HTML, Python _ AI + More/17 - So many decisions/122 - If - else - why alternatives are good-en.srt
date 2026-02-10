@@ -1,0 +1,436 @@
+1
+00:00:00,120 --> 00:00:06,160
+We're looking at the if statement, and we've seen how we can use multiple if statements to make evaluations.
+
+2
+00:00:06,800 --> 00:00:11,120
+But just looking at this, there's something suspiciously not 100% right here.
+
+3
+00:00:11,160 --> 00:00:15,120
+We mentioned that in our country the driving age is 18.
+
+4
+00:00:15,160 --> 00:00:19,080
+Now this is where there's the necessity for logic in your programming.
+
+5
+00:00:19,280 --> 00:00:23,000
+If you look at those two conditions we've got if age is less than or equal to 18, print.
+
+6
+00:00:23,000 --> 00:00:24,520
+Sorry, not old enough to drive.
+
+7
+00:00:24,560 --> 00:00:27,800
+And then if age is greater than 18 yes, you can drive.
+
+8
+00:00:28,320 --> 00:00:33,160
+Can you spot what is the problem if the official driving age in our country is 18?
+
+9
+00:00:33,680 --> 00:00:35,320
+Sarah, what's the problem?
+
+10
+00:00:35,360 --> 00:00:38,360
+Hopefully you did manage to spot it, but basically.
+
+11
+00:00:38,400 --> 00:00:40,560
+So everything runs perfectly fine.
+
+12
+00:00:40,560 --> 00:00:44,920
+But like my dad mentioned earlier, this is actually just a logical error.
+
+13
+00:00:45,480 --> 00:00:48,280
+So what we actually wanted is we wanted.
+
+14
+00:00:48,280 --> 00:00:51,400
+If my age is less than 18, we can't drive.
+
+15
+00:00:51,440 --> 00:00:53,400
+But if you are 18, you can.
+
+16
+00:00:53,440 --> 00:00:58,280
+So this should then become if my age is greater than or equal to 18.
+
+17
+00:00:58,320 --> 00:01:00,880
+So these logic errors are often trickier to find.
+
+18
+00:01:01,040 --> 00:01:06,270
+We've showed you if you mess up with the syntax of something, it's going to spot it.
+
+19
+00:01:06,270 --> 00:01:11,390
+So let's say for example we we forgot to put in the inverted commas there.
+
+20
+00:01:11,550 --> 00:01:12,510
+We run it.
+
+21
+00:01:12,510 --> 00:01:16,390
+And immediately we can see at the bottom here syntax error.
+
+22
+00:01:16,390 --> 00:01:17,870
+And it's telling you things are wrong.
+
+23
+00:01:17,990 --> 00:01:20,350
+Computers can help you with those sort of things.
+
+24
+00:01:20,710 --> 00:01:22,590
+The trick is getting your logic right.
+
+25
+00:01:22,590 --> 00:01:23,470
+And that's very important.
+
+26
+00:01:23,470 --> 00:01:27,630
+That's what's exciting about learning to program is you need to be logical.
+
+27
+00:01:27,750 --> 00:01:28,950
+And so you need to think about it.
+
+28
+00:01:28,950 --> 00:01:33,390
+And we'll look at later in debugging how you can try and solve some of these problems because they're
+
+29
+00:01:33,390 --> 00:01:34,710
+not always that easy to spot.
+
+30
+00:01:34,710 --> 00:01:36,030
+But that's part of the fun.
+
+31
+00:01:36,390 --> 00:01:42,990
+Okay, so now that we've fixed that logical error, let's just make this program a little bit more generic
+
+32
+00:01:42,990 --> 00:01:43,630
+generic.
+
+33
+00:01:43,630 --> 00:01:46,190
+So the thing about programming is you want to try.
+
+34
+00:01:46,190 --> 00:01:52,230
+And the reason we use variables and things like that is so our programs can always be reusable.
+
+35
+00:01:52,230 --> 00:01:55,390
+And we don't have to rewrite the same code over and over again.
+
+36
+00:01:55,630 --> 00:02:01,030
+So now instead of as you might have noticed here, we've written, if age is less than 18 here, and
+
+37
+00:02:01,030 --> 00:02:03,590
+then we wrote if age is greater than or equal to 18.
+
+38
+00:02:03,630 --> 00:02:04,110
+Yeah.
+
+39
+00:02:04,150 --> 00:02:09,190
+So instead of typing it out there twice and giving the chances that we might somehow mess this up.
+
+40
+00:02:09,230 --> 00:02:12,150
+If I had now said 19, then again, my logic is wrong.
+
+41
+00:02:12,230 --> 00:02:19,070
+So instead of doing that, let's rather create a variable that stores the driving age limit.
+
+42
+00:02:19,790 --> 00:02:25,990
+And what's good about this is that now we can use this variable and we only have to make a change in
+
+43
+00:02:25,990 --> 00:02:27,070
+one place.
+
+44
+00:02:27,590 --> 00:02:30,710
+So we're going to set the driving age limit here to 18.
+
+45
+00:02:30,710 --> 00:02:36,310
+So instead of now putting the number 18 here we're going to put in the variable.
+
+46
+00:02:36,870 --> 00:02:43,350
+So this is much more efficient use of coding because now we have one variable which is age limit.
+
+47
+00:02:43,350 --> 00:02:45,030
+And we can use it multiple times.
+
+48
+00:02:45,670 --> 00:02:47,070
+And so yes you can drive.
+
+49
+00:02:47,110 --> 00:02:49,270
+Now we can change that age limit in one place.
+
+50
+00:02:49,270 --> 00:02:53,390
+So maybe your age limit is 21 or whatever it might be in your country.
+
+51
+00:02:53,630 --> 00:02:57,790
+And we can very quickly run the same program and see whether it works.
+
+52
+00:02:57,790 --> 00:02:59,350
+So here the age is 15.
+
+53
+00:02:59,390 --> 00:02:59,790
+Run it.
+
+54
+00:02:59,830 --> 00:03:00,150
+Yes.
+
+55
+00:03:00,190 --> 00:03:00,390
+Okay.
+
+56
+00:03:00,430 --> 00:03:02,270
+If you're 19, you certainly can drive.
+
+57
+00:03:02,510 --> 00:03:03,070
+Okay.
+
+58
+00:03:03,510 --> 00:03:08,430
+So that's basically also just showing you that you can compare two variables.
+
+59
+00:03:08,430 --> 00:03:13,260
+The second um party does not have to be a number.
+
+60
+00:03:13,260 --> 00:03:14,660
+It can be a variable.
+
+61
+00:03:15,020 --> 00:03:20,220
+And later we'll also look at other things or other data types that can be as well.
+
+62
+00:03:20,580 --> 00:03:25,500
+But for now we are going to look at else statements.
+
+63
+00:03:25,500 --> 00:03:32,700
+So before I mentioned that it's not really a good idea to write a whole lot of if statements like this
+
+64
+00:03:32,700 --> 00:03:34,380
+because there's a better way of doing it.
+
+65
+00:03:34,620 --> 00:03:39,700
+Okay, so the reason why we want to use an else statement, which is here we'll have a look at in a
+
+66
+00:03:39,700 --> 00:03:45,060
+moment, is the way that programs execute is from the top to the bottom of it already explained.
+
+67
+00:03:45,220 --> 00:03:46,940
+And they're going to do every single line.
+
+68
+00:03:46,940 --> 00:03:50,300
+The only place it's going to do a skip is if a condition is not true.
+
+69
+00:03:50,340 --> 00:03:56,300
+For example, here, if my age is less than age limit and that condition is not true, it will skip
+
+70
+00:03:56,300 --> 00:03:59,300
+that piece of code or those two lines and then jump to the next one.
+
+71
+00:03:59,300 --> 00:04:04,660
+Now, if you've got multiple if statements like we've got here on line three, line six, etc., your
+
+72
+00:04:04,660 --> 00:04:06,060
+program has to go through all of that.
+
+73
+00:04:06,060 --> 00:04:11,300
+It might not seem like a big deal, but as you get bigger and bigger programs, that slows it down.
+
+74
+00:04:11,300 --> 00:04:15,540
+And if you're trying to maybe write a game or write something that needs better performance.
+
+75
+00:04:15,740 --> 00:04:16,580
+All of that counts.
+
+76
+00:04:16,580 --> 00:04:18,940
+So it's very inefficient way of coding.
+
+77
+00:04:18,940 --> 00:04:25,740
+What we actually want is if this condition is true, it must do that and then ignore the other parts
+
+78
+00:04:25,740 --> 00:04:28,100
+of the condition, which is called the else part.
+
+79
+00:04:28,140 --> 00:04:34,020
+Alternatively, if this condition is not true, ignore that and then run the true part.
+
+80
+00:04:34,060 --> 00:04:35,500
+And so that's what an else does.
+
+81
+00:04:35,540 --> 00:04:38,860
+So rather than what we've got here in F has to be evaluated.
+
+82
+00:04:38,900 --> 00:04:40,220
+Then evaluate another f.
+
+83
+00:04:40,420 --> 00:04:45,980
+We're going to change this to an if and an else and will only evaluate one portion of this thereby making
+
+84
+00:04:45,980 --> 00:04:46,900
+it more efficient.
+
+85
+00:04:47,820 --> 00:04:50,860
+So let's give an example of an else statement.
+
+86
+00:04:51,340 --> 00:04:54,700
+Else statements are actually very, very simple to use.
+
+87
+00:04:54,740 --> 00:04:59,060
+All you need to know is how to tap that.
+
+88
+00:04:59,060 --> 00:05:00,180
+And that's a null statement.
+
+89
+00:05:00,180 --> 00:05:01,340
+It doesn't have any condition.
+
+90
+00:05:01,340 --> 00:05:08,540
+Because basically what else means is if everything above this else statement is false, then print this.
+
+91
+00:05:08,740 --> 00:05:13,820
+So it's only condition is that all the if statements above it were false.
+
+92
+00:05:14,140 --> 00:05:20,770
+So now what we wanted to do is first check if the age was less than the age limit.
+
+93
+00:05:21,050 --> 00:05:26,290
+Else if the age is not less than the age limit, then obviously the person must be able to drive.
+
+94
+00:05:26,330 --> 00:05:29,370
+So let's just print that statement again.
+
+95
+00:05:30,410 --> 00:05:31,290
+Print.
+
+96
+00:05:33,090 --> 00:05:37,050
+Okay, so this will do exactly what we had before.
+
+97
+00:05:37,850 --> 00:05:41,690
+And it is seen okay 19 is age.
+
+98
+00:05:41,690 --> 00:05:45,210
+The age limit is 15 is 19 days and 15.
+
+99
+00:05:45,210 --> 00:05:45,770
+No.
+
+100
+00:05:45,770 --> 00:05:49,570
+So then it goes straight to the else and prints this over here.
+
+101
+00:05:49,570 --> 00:05:58,810
+And again if I change this to less than the driving age limit, it's checked that and said oh yes that's
+
+102
+00:05:58,810 --> 00:05:59,050
+true.
+
+103
+00:05:59,050 --> 00:06:00,290
+And it's printed that.
+
+104
+00:06:00,290 --> 00:06:05,690
+But what's been efficient now is you can't see this, but it hasn't actually even looked at this part
+
+105
+00:06:05,730 --> 00:06:06,090
+here.
+
+106
+00:06:06,290 --> 00:06:12,050
+So while we're not seeing it or the performance gains here, this is how you must code.
+
+107
+00:06:12,090 --> 00:06:13,330
+It is much more effective.
+
+108
+00:06:13,330 --> 00:06:15,090
+And we're trying to teach you good habits up front.
+
+109
+00:06:15,090 --> 00:06:20,570
+So don't use multiple if statements if it's possible for you to use an else statement.
+
