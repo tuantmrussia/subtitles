@@ -1,0 +1,628 @@
+1
+00:00:00,000 --> 00:00:08,320
+ Hey guys, welcome back. In this video, we will see the dynamic link libraries. Basically,
+
+2
+00:00:08,320 --> 00:00:14,000
+ we will call it as a DRL files, and this DRL file will be used by the attack post to
+
+3
+00:00:14,000 --> 00:00:21,960
+ deliver their malware successfully into the update system, into the Windows machines, which
+
+4
+00:00:21,960 --> 00:00:29,320
+ are running all the dark, okay. Let's take an example of DRL first. Then we will go
+
+5
+00:00:29,320 --> 00:00:41,080
+ for an API's. So, in a previous video, you see there is a cross executable file, EXE file.
+
+6
+00:00:41,080 --> 00:00:48,560
+ So, you can see the magic value 45A and M is it. So, the DRL file, it's like a library
+
+7
+00:00:48,560 --> 00:00:56,440
+ file, okay. Basically, we will say this file as a PE file, only not a CR any other programming
+
+8
+00:00:56,440 --> 00:01:02,960
+ file. We will call it this as a PE file only, but this kind of DRL has an important export
+
+9
+00:01:02,960 --> 00:01:10,600
+ function. So, let you let take an example of you are going to develop one of browser
+
+10
+00:01:10,600 --> 00:01:16,000
+ application and the browser application needs to communicate with the internet, right.
+
+11
+00:01:16,000 --> 00:01:23,480
+ So, you need to face loss, loss, you need to face more challenges when you are developing
+
+12
+00:01:23,480 --> 00:01:30,680
+ that code, right. So, because you have to implement a lot of protocols and functions to
+
+13
+00:01:30,680 --> 00:01:37,720
+ use that, okay. But what Microsoft did, Microsoft created the custom DRLs and they placed
+
+14
+00:01:37,720 --> 00:01:47,640
+ in the OS system folders like Windows system that you do. So, you need to use the DRL,
+
+15
+00:01:47,640 --> 00:01:53,680
+ okay. So, this is a simple way, they already created a DRL for you, already created every
+
+16
+00:01:53,680 --> 00:02:01,520
+ functions every code for you. So, you need to use that DRL and functions and you can
+
+17
+00:02:01,520 --> 00:02:06,320
+ develop a simple browser application, okay. So, if there is a, if you need to develop
+
+18
+00:02:06,320 --> 00:02:11,640
+ a browser application with a thousand lines of code. So, if Microsoft has that custom
+
+19
+00:02:11,640 --> 00:02:17,480
+ DRLs that has been already placed on the Windows 32, so your code will be reduced to
+
+20
+00:02:17,480 --> 00:02:23,160
+ 300 or 400 lines, okay. So, the Microsoft already contains all the codes and function,
+
+21
+00:02:23,160 --> 00:02:29,880
+ you need to use that code in your program, that's all, okay. So, that's called a dynamic
+
+22
+00:02:29,880 --> 00:02:36,600
+ link library files, that's a library files, we are using that library files for our application
+
+23
+00:02:36,600 --> 00:02:42,440
+ for several functionalities, okay. So, let me give a few examples, there is a kernel 32.0
+
+24
+00:02:42,440 --> 00:02:51,080
+ DRL, that has been under the system 32 folder. So, this DRL has a function to read a memory,
+
+25
+00:02:51,080 --> 00:02:58,840
+ write a memory and creating a space in the memory and every APA function, APA functions,
+
+26
+00:02:58,840 --> 00:03:07,800
+ we have, okay. So, the next we have a AD, the APA 32.0 DRL. So, if you want to encrypt
+
+27
+00:03:07,800 --> 00:03:13,400
+ any data in your machine, so this DRL will be there, so if you want to develop a software
+
+28
+00:03:13,400 --> 00:03:19,120
+ applications like that needs to encrypt your data manually, you can use this DRL, you don't
+
+29
+00:03:19,120 --> 00:03:25,000
+ need to manually code everything, you can use this DRL and you can use the DRL functions
+
+30
+00:03:25,000 --> 00:03:30,360
+ and you can code it, okay. And if you need to develop a dose application, you have a URL
+
+31
+00:03:30,360 --> 00:03:35,160
+ on, so you have a URL on DRL will help you to downloading the files, uploading the files,
+
+32
+00:03:35,160 --> 00:03:41,800
+ web compressions, working with URLs, every, every, every, everything, okay. So, you don't need to do
+
+33
+00:03:41,800 --> 00:03:48,200
+ much but Microsoft created everything and you have to use that program and you can develop
+
+34
+00:03:48,200 --> 00:03:55,880
+ your own application, so that will be easy. So, every, every, system programmers needs to understand,
+
+35
+00:03:55,880 --> 00:04:00,440
+ they have a idea about this kind of DRL's present in the Microsoft, okay.
+
+36
+00:04:00,440 --> 00:04:13,480
+ So, let's take a simple example of DRL first, let's, let's get on to the Windows machine and we'll
+
+37
+00:04:15,400 --> 00:04:32,920
+ go for a Windows. Let's find the system 34, and here you can see a lot of files, there is a lot
+
+38
+00:04:32,920 --> 00:04:51,480
+ of DRL will be placed here, let me search for kernel, so you can see there is a kernel 30 to
+
+39
+00:04:51,480 --> 00:05:01,560
+ DRL lost here, we already discussed, right. So, let we will pull this DRL into the T loader, let me
+
+40
+00:05:01,560 --> 00:05:15,560
+ create another, let me load another explorer and we will load our DRL inside our DDR and we will
+
+41
+00:05:15,560 --> 00:05:25,000
+ see how the DRL will be for the format of the DRL's and all, okay. Let's take, let's load the kernel
+
+42
+00:05:25,640 --> 00:05:51,080
+ this DRL, kernel 30 to DRL, let's place the DRL into our DDR. So, today you have seen the
+
+43
+00:05:51,080 --> 00:05:57,560
+ similar kind of data in the exe file, you can see the same data with the emissive format, I already
+
+44
+00:05:57,560 --> 00:06:06,200
+ said the DRL is also an executable file, so it will be in the emissive and the magic numbers will
+
+45
+00:06:06,200 --> 00:06:13,400
+ be 4D and 5A of that and we have another headers and the empty header as you can see it's
+
+46
+00:06:13,400 --> 00:06:19,720
+ pointing to the PE portable executable format and we have seen a text section, resource section,
+
+47
+00:06:19,720 --> 00:06:27,400
+ what are the things we have basically, okay. So, let's go through the import and export functions,
+
+48
+00:06:27,400 --> 00:06:41,480
+ present in the DRL's, we can see a lot of functions here and a lot of exports and import
+
+49
+00:06:41,480 --> 00:06:52,920
+ functions from here, okay. So, this all are the functions which will be used for several things,
+
+50
+00:06:52,920 --> 00:07:00,040
+ so you can see create a job object, create something, something create process, we need to use this
+
+51
+00:07:00,040 --> 00:07:13,720
+ scalar when you need to create a process, create remote thread of, so we'll go for more interesting,
+
+52
+00:07:13,720 --> 00:07:30,920
+ alphabet and we will see something of nothing in the V,
+
+53
+00:07:43,960 --> 00:07:52,680
+ let's take an example, don't go for a V, let's take an example of another functions like
+
+54
+00:07:52,680 --> 00:08:03,560
+ create object or create a remote thread of, so there's a create remote thread, let's let's
+
+55
+00:08:03,560 --> 00:08:20,600
+ research something about the create remote thread, we'll go for a booger and let's go into the
+
+56
+00:08:20,600 --> 00:08:31,560
+ malati.io, so if this is the repository, this contain a lot of a lot of functions, present under
+
+57
+00:08:31,560 --> 00:08:41,160
+ the DRL, okay, it's basically we can say it's an APA functions, so it give a information about the
+
+58
+00:08:41,160 --> 00:08:47,880
+ APA function, okay, so let's take a real example here, you can see a create remote thread of
+
+59
+00:08:47,880 --> 00:08:56,120
+ function will be there, so in the same way you can see the injection, so here you can see the create
+
+60
+00:08:56,120 --> 00:09:02,200
+ remote thread, so the create remote thread will be used to create a thread, rinse in a virtual
+
+61
+00:09:02,200 --> 00:09:10,440
+ address space of an another process, so we can learn more about this create remote thread
+
+62
+00:09:10,440 --> 00:09:17,480
+ of in the upcoming sessions, so there's a lot of lot of lot of lot of APAs that will be used
+
+63
+00:09:17,480 --> 00:09:27,080
+ for a malware development, so you can see everything from each and everything from here, so let's go
+
+64
+00:09:27,080 --> 00:09:35,800
+ for a virtual a lock, so this APA function which I have searched, this will be used to allocate some
+
+65
+00:09:35,800 --> 00:09:43,480
+ memory for a process, okay, whenever you double click on any of the application, though the
+
+66
+00:09:43,480 --> 00:09:51,160
+ application will be load inside the memory, right, so you need to allocate some memory, allocate
+
+67
+00:09:51,160 --> 00:09:56,360
+ some space in the memory, right, so you'll be using the virtual a lock of function, so the kernel
+
+68
+00:09:56,360 --> 00:10:03,800
+ 32 will be loaded, this library will be loaded, this library contains this functions, so this
+
+69
+00:10:03,800 --> 00:10:11,000
+ function will be used for allocating some space inside the memory, CPU or hot is whatever you can
+
+70
+00:10:11,000 --> 00:10:17,240
+ say, or RAM, okay, so after all allocating allocation only, you can load the load your process inside
+
+71
+00:10:17,240 --> 00:10:22,360
+ the memory, right, so that's all our explanations of the virtual, I just searched this
+
+72
+00:10:22,360 --> 00:10:31,560
+ virtual a key example, nothing there, I was just checking this virtual a lock here, so function
+
+73
+00:10:31,560 --> 00:10:42,600
+ whether we can, in the statements, let's go to the import function, so import section there we have
+
+74
+00:10:42,600 --> 00:10:49,560
+ nothing much, but in a export section only we have a lot of things, okay, so export section is like
+
+75
+00:10:49,560 --> 00:10:58,200
+ we are, so if any of the applications need to use our functions, like create a remote thread of,
+
+76
+00:10:58,200 --> 00:11:02,200
+ they can able to use that we can export that functions to the applications, okay, so import
+
+77
+00:11:02,200 --> 00:11:08,360
+ is like we are importing something from some of the application and we are using that for further
+
+78
+00:11:08,360 --> 00:11:20,200
+ features and further stuff, okay, doing some other things, yeah, yeah, here you can see there is a
+
+79
+00:11:20,200 --> 00:11:28,120
+ virtual a lock, virtual a lock, virtual a lock and virtual a lock, the X of present under here, right,
+
+80
+00:11:28,120 --> 00:11:37,000
+ so this is the overall explanation for what the DL will be contained and again I'm saying that
+
+81
+00:11:37,000 --> 00:11:43,400
+ text section contain all the codeings which needs to be executed, so let's develop our
+
+82
+00:11:44,520 --> 00:11:51,320
+ own DLR land we will see how to develop our own DLR, let's load our columnation,
+
+83
+00:11:51,320 --> 00:12:02,360
+ so this is the very simple example of developing a developing your own DLR, so one more thing you
+
+84
+00:12:02,360 --> 00:12:10,040
+ need to understand the DLR files or so if you want to execute the DLR files, so you can't able
+
+85
+00:12:10,040 --> 00:12:16,840
+ to execute the DLR file, let me click on any of the DLR's like q5, qT5 is it, so it will not load, okay,
+
+86
+00:12:16,840 --> 00:12:21,880
+ it will not load basically, it will not execute, we can't able to execute this DLR blindly,
+
+87
+00:12:21,880 --> 00:12:33,000
+ so when you are loading the PEBR, okay, so let's see here I am loading the PEBR, so this PEBR will
+
+88
+00:12:33,000 --> 00:12:41,560
+ use the qT5 it just dot DLR, so this PEBR will use the code present inside the qT5 it just dot DLR
+
+89
+00:12:41,560 --> 00:12:46,760
+ and it will load the applications, okay, we can't blindly execute the DLR files by double
+
+90
+00:12:46,760 --> 00:12:52,760
+ click on the Windows machine, okay, but we have an several other ways, the malware
+
+91
+00:12:52,760 --> 00:12:57,160
+ threat tactics will be used, other ways to execute the DLR, I will be discussing that in the
+
+92
+00:12:57,160 --> 00:13:03,560
+ in this video only, okay, so if I place this DLR in, if I cut and paste this DLR in some
+
+93
+00:13:03,560 --> 00:13:12,440
+ other folders like q5, it's your turn, now if I try to load the PEBR, my PEBR will not be load
+
+94
+00:13:12,440 --> 00:13:19,800
+ or because it was saying some DLRR will be missed, right, so I just placed it into the
+
+95
+00:13:20,760 --> 00:13:30,680
+ pictures session, so let me replace that, come here to here, so now my application will be
+
+96
+00:13:30,680 --> 00:13:35,640
+ normally get built, now load it, okay, so this is the way the Windows application will
+
+97
+00:13:35,640 --> 00:13:39,880
+ use the DLR for further purpose, okay, if you want to develop any other programs,
+
+98
+00:13:39,880 --> 00:13:44,600
+ any other application for Windows, you need to use the DLR for that, so absolutely we are also
+
+99
+00:13:44,600 --> 00:13:50,680
+ using the DLR, for our malware development, okay, so let's play with
+
+100
+00:13:50,680 --> 00:13:56,840
+ our own DLR, we have, we have a, we learned everything about the DLR, okay, this is a simple
+
+101
+00:13:56,840 --> 00:14:03,400
+ program which we have developed, and this is the entry point of the DLR, run message
+
+102
+00:14:03,400 --> 00:14:09,800
+ box DXC, instead of message box you can say, say it will display just a hello world, okay,
+
+103
+00:14:09,800 --> 00:14:19,640
+ so you can develop a DLR in several ways, but I just developed the DLR with the entry point,
+
+104
+00:14:19,640 --> 00:14:24,440
+ so this is the entry point for the DLR, so if you need to execute the DLR, you need to call
+
+105
+00:14:24,440 --> 00:14:31,560
+ the entry point of the function like any APA functions, so this is the APA function, so I already
+
+106
+00:14:31,560 --> 00:14:38,280
+ said, so if your application needs to communicate or any, or allocating any virtual space
+
+107
+00:14:38,280 --> 00:14:44,360
+ instead of memory, you need to use several APA functions like virtual EX, this is like that,
+
+108
+00:14:44,360 --> 00:14:49,800
+ this is the function of the entry point, we will say this is the entry point after DLR, so if you
+
+109
+00:14:49,800 --> 00:14:53,960
+ need to execute this DLR, you need to call the entry point, manually, so that the attack
+
+110
+00:14:53,960 --> 00:15:01,240
+ this will do like that, I will explain that in the same video, so let this, it will just
+
+111
+00:15:01,240 --> 00:15:06,440
+ display the hello from DLR, okay, just it will not return any much things, so it will be,
+
+112
+00:15:07,160 --> 00:15:18,760
+ under the, it will be, the files are under the videos, but we will do one thing, we will save
+
+113
+00:15:18,760 --> 00:15:30,200
+ this file in some other directory like music, but to reduce our confusion, CPP, hello,
+
+114
+00:15:33,720 --> 00:15:43,080
+ let me rename this as a fellow test dot, CPP, let's save up program in the music folder,
+
+115
+00:15:43,080 --> 00:15:52,120
+ let's go to the music and we'll open a terminal here, else we'll go for videos,
+
+116
+00:15:52,120 --> 00:16:03,480
+ and let's see, redirect to the music folder, so now you can see the CPP file
+
+117
+00:16:03,480 --> 00:16:11,480
+ was present under the folder, let's compile this, so you can use the, this compiler to compile
+
+118
+00:16:11,480 --> 00:16:19,960
+ the DLR files, so our DLR will be this, the, online, this DLR file which I hosted before,
+
+119
+00:16:19,960 --> 00:16:25,640
+ though, don't worry about that, okay, so hello test, our DLR file will be the hello test, right,
+
+120
+00:16:25,640 --> 00:16:34,440
+ test dot CPP, and we need to save the DLR, so hello test dot DLR, so let's execute this now,
+
+121
+00:16:34,440 --> 00:16:40,440
+ you can see our DLR was executed, compile, sorry, compile, so now you can see the hello
+
+122
+00:16:40,440 --> 00:16:46,520
+ test dot DLR was present here, let me go to the Windows machine and we will,
+
+123
+00:16:47,800 --> 00:16:59,160
+ or give me a second, let me, yeah, so better, let me will copy this DLR into the server folder,
+
+124
+00:16:59,160 --> 00:17:16,840
+ give me some time, I was unable to open the folders from here, so I just will copy from here,
+
+125
+00:17:17,400 --> 00:17:26,680
+ by the command itself, our WWW, HTML, name it as a, hello test dot,
+
+126
+00:17:26,680 --> 00:17:37,960
+ let me run with a, you dummy, yeah, Udemy course, hello test dot DLL,
+
+127
+00:17:37,960 --> 00:17:46,040
+ so I think now the hello test dot DLL will be copied there, let me go through the Windows machine,
+
+128
+00:17:46,760 --> 00:17:55,640
+ and we will, and we will see that, my IP address will go nine to 12 once, say dot 18 dot
+
+129
+00:17:55,640 --> 00:18:04,360
+ 3 slash, you dummy course, our DLR was there, hello test dot DLL, let's download this file,
+
+130
+00:18:04,360 --> 00:18:14,520
+ it is file, so now our DLR hello test dot DLL will be placed in the download folder, let's
+
+131
+00:18:14,520 --> 00:18:21,800
+ load up here, and we will investigate this DLL, little bit one does, and everything about the DLL,
+
+132
+00:18:21,800 --> 00:18:28,200
+ well, I already said DLL, we have a entry find, right, it has a several functions,
+
+133
+00:18:28,200 --> 00:18:37,880
+ so let's load DPE and load a DLC how creator, let's go to, uh,
+
+134
+00:18:40,200 --> 00:18:47,960
+ import table or export exports, when I can see the run message box, there is only one functions,
+
+135
+00:18:47,960 --> 00:19:03,400
+ name run message box, of their, and uh, this the strings, okay, after DLL, I already said the
+
+136
+00:19:03,400 --> 00:19:11,400
+ test, uh, session contain the code, hello from DLL, everything was there, which we have developed,
+
+137
+00:19:11,400 --> 00:19:22,360
+ let's, uh, let's execute this DLL, well, I already mentioned, if you want to execute a DLL,
+
+138
+00:19:22,360 --> 00:19:29,000
+ you need a executable file, right, some exe file need to call the DLR need to,
+
+139
+00:19:29,000 --> 00:19:35,240
+ but the title will do it in a different way, they have a different approach, so we already know,
+
+140
+00:19:35,240 --> 00:19:44,360
+ there is a entry point of the DL, uh, so the entry point of the DLL was a run message box, we
+
+141
+00:19:44,360 --> 00:19:56,680
+ are discussed that program, we discussed that program previously, right, so we can use one of the
+
+142
+00:19:56,680 --> 00:20:06,680
+ tools that was involved in, uh, windows called, uh, run DL32.exe, so the run DL32.exe basically
+
+143
+00:20:06,680 --> 00:20:19,880
+ has features, functionalities to execute a DL, uh, file, okay, so let's call the run DL30 to dot exe,
+
+144
+00:20:20,520 --> 00:20:27,320
+ so you can see there's no errors get popped up, let me execute this fellow test,
+
+145
+00:20:27,320 --> 00:20:36,760
+ dot DLL, so I already said if you want to execute a DLL using the run DL30 to dot exe,
+
+146
+00:20:36,760 --> 00:20:44,680
+ you need to know the, you need to know the entry point from the DLR, right, if, uh, we know the
+
+147
+00:20:44,680 --> 00:20:50,920
+ entry point will be the run message box here, but threat tactics will do the same, they will
+
+148
+00:20:50,920 --> 00:20:57,560
+ develop a DLL and they are developing a DLL, so they, uh, so they have a entry point of the DL,
+
+149
+00:20:57,560 --> 00:21:03,240
+ so they will execute the DLR with an entry point, okay, so our entry point is a run message box,
+
+150
+00:21:03,240 --> 00:21:13,320
+ I'm doing the same run message box, so this is the way the threat tactics will execute the DLL,
+
+151
+00:21:14,440 --> 00:21:21,400
+ uh, in a suspicious way inside the target host, okay, so now you can see, so our hello from DLL,
+
+152
+00:21:21,400 --> 00:21:28,520
+ so which we have written that has been called, okay, so threat tactics plays a malicious code
+
+153
+00:21:28,520 --> 00:21:37,320
+ instead of hello from DLL and they will execute the DLL by using the process run DL32.exe, okay,
+
+154
+00:21:38,200 --> 00:21:44,040
+ so this is the, uh, overall explanation of the DLL, we have already cost 21 minutes,
+
+155
+00:21:44,040 --> 00:21:49,880
+ so we will see you guys in the next section, sorry, next video,
+
+156
+00:21:49,880 --> 00:21:55,400
+ bye, so we have completed the DLL, uh, things, I hope you have cleared about that,
+
+157
+00:21:55,400 --> 00:21:57,400
+ yeah, see you, bye,
+
