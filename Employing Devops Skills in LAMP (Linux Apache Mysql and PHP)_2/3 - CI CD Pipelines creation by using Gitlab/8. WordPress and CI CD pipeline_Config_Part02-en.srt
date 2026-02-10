@@ -1,0 +1,320 @@
+1
+00:00:00,000 --> 00:00:09,360
+ a database name my app username my user and database users my and capital you capital
+
+2
+00:00:09,360 --> 00:00:22,800
+ p capital my user pass one two three my user pass one two three okay so we now
+
+3
+00:00:22,800 --> 00:00:42,000
+ okay to say this is our database name and database user and password and
+
+4
+00:00:42,000 --> 00:00:53,760
+ so here if you want to fix the permission it is also very important we
+
+5
+00:00:53,760 --> 00:00:59,000
+ need to do that this step but since we are in a production environment or we do
+
+6
+00:00:59,000 --> 00:01:05,360
+ only local local it's local development or for our for a sake of our
+
+7
+00:01:05,360 --> 00:01:15,680
+ tutorial we will give read write execute for users groups and others okay so
+
+8
+00:01:15,680 --> 00:01:26,360
+ that the WordPress content is this is easiest way so that our Apache PHP
+
+9
+00:01:26,360 --> 00:01:35,080
+ service in the container can execute the files that resize in Wp dash
+
+10
+00:01:35,080 --> 00:01:41,720
+ content so we need to type these commands
+
+11
+00:01:41,720 --> 00:01:55,600
+ okay and this is an importance very important step actually before we install
+
+12
+00:01:55,600 --> 00:02:04,360
+ the WordPress from the local host we need to make sure that the connection that
+
+13
+00:02:04,360 --> 00:02:11,960
+ Apache container we use to connect to my SQL container we need to have
+
+14
+00:02:11,960 --> 00:02:20,920
+ some SQL extensions which is the POD and another one which is called my SQL
+
+15
+00:02:20,920 --> 00:02:32,120
+ I and both of them unfortunately is not we will not find it in our downloaded
+
+16
+00:02:32,120 --> 00:02:40,040
+ image from the Docker Hub so to override to overcome this issue we need
+
+17
+00:02:40,040 --> 00:02:50,680
+ first to call this of this version of DevOps HP Apache and just to prove to
+
+18
+00:02:50,680 --> 00:02:58,720
+ prove my point if we want to validate let's go to the Docker let's go to this
+
+19
+00:02:58,720 --> 00:03:10,760
+ one and if I want to check if I have SQL I and PDO my SQL also GD
+
+20
+00:03:10,760 --> 00:03:17,560
+ especially first two are very important my SQL I and PDO my SQL if I want to
+
+21
+00:03:17,560 --> 00:03:26,920
+ find them here the comment didn't return anything and when you don't have SQL
+
+22
+00:03:26,920 --> 00:03:32,280
+ extension you will get an error and we will not be able to install the WordPress
+
+23
+00:03:32,280 --> 00:03:41,240
+ so you need to solve that by downloading a newer image and the newer image you
+
+24
+00:03:41,240 --> 00:03:48,080
+ will stop the old one and remove it and then you will run the used version
+
+25
+00:03:48,080 --> 00:04:02,240
+ after you download it so let's download it let's go out from the Docker let's
+
+26
+00:04:02,240 --> 00:04:11,000
+ download it okay I have paused the video tell the Docker is downloaded and
+
+27
+00:04:11,000 --> 00:04:22,160
+ pulled and now we have pulled from the Docker Hub the web DevOps Apache 8.2
+
+28
+00:04:22,160 --> 00:04:37,160
+ okay this is very good so now if we just want to make my SQL extension
+
+29
+00:04:37,160 --> 00:04:49,160
+ working we need to first stock my Apache my PHP - Apache okay and then we will
+
+30
+00:04:49,160 --> 00:05:06,680
+ remove okay now we will run again the my - PHP - Apache but about this time
+
+31
+00:05:06,680 --> 00:05:13,800
+ we will do everything the same the same networking that is shared with my
+
+32
+00:05:13,800 --> 00:05:24,120
+ SQL and same ports of HTTP and HTTPS and the same mounting volume and we will
+
+33
+00:05:24,120 --> 00:05:33,360
+ mounting to the destination of home and no more www will be mapped to - app and this
+
+34
+00:05:33,360 --> 00:05:49,000
+ time we will use web that ops image okay so let's do it okay perfect and now
+
+35
+00:05:49,000 --> 00:05:59,560
+ just verification for the extension my SQL or SK all SQL I extensions are
+
+36
+00:05:59,560 --> 00:06:11,440
+ okay to verify it will enter to the Docker again okay and then we will type
+
+37
+00:06:11,440 --> 00:06:25,200
+ the grep comment again if well now we have the GD my SQL ID O my zip then we
+
+38
+00:06:25,200 --> 00:06:49,800
+ are and just to make sure that everything is okay if you want I actually don't
+
+39
+00:06:49,800 --> 00:06:56,600
+ recall the comment if you want to make sure that everything is okay you can type
+
+40
+00:06:56,600 --> 00:07:08,080
+ the comment of Docker ps - e just to view all of the container but when the one
+
+41
+00:07:08,080 --> 00:07:18,680
+ that might call the problem was my SQL and if you want to make sure that if you
+
+42
+00:07:18,680 --> 00:07:24,560
+ have any problem when your database is stuck or anything you need to reduce a
+
+43
+00:07:24,560 --> 00:07:32,720
+ previous recording to see how we can use the container to see if my SQL is
+
+44
+00:07:32,720 --> 00:07:40,040
+ container may stop for any reason so that you need to be aware that maybe it's
+
+45
+00:07:40,040 --> 00:07:50,120
+ mapped to not mapped to the bar lived directory maybe either it is run with
+
+46
+00:07:50,120 --> 00:07:57,280
+ some syntax error okay to skip certificate or something okay that's it but when
+
+47
+00:07:57,280 --> 00:08:04,040
+ you run it and the PHP - Apache you will not have any any kind of these
+
+48
+00:08:04,040 --> 00:08:17,800
+ problem to check no worries about this kind of problem so here let's go now we
+
+49
+00:08:17,800 --> 00:08:26,240
+ are ready to install the WordPress which should be okay to install the WordPress
+
+50
+00:08:26,240 --> 00:08:34,640
+ so to install the WordPress we just go to our browser
+
+51
+00:08:56,240 --> 00:09:20,680
+ okay HTTP local rows okay it's gave me error database installed the
+
+52
+00:09:20,680 --> 00:09:24,800
+ database connection I need to review the configuration file and then I will
+
+53
+00:09:24,800 --> 00:09:32,240
+ come back to you okay I have found here important points that I have missed
+
+54
+00:09:32,240 --> 00:09:42,400
+ actually that we defined the database users and password but we forgot to define
+
+55
+00:09:42,400 --> 00:09:53,240
+ my -my SQL before we forgot to define the host -my SQL which in which the Apache
+
+56
+00:09:53,240 --> 00:10:04,040
+ will connect to okay so we need to save the changes okay so here the database
+
+57
+00:10:04,040 --> 00:10:14,040
+ name I have my user and we have the database host so we are okay now and for the
+
+58
+00:10:14,040 --> 00:10:19,040
+ comment for the Docker I have remembered the Docker PS -A but the thing here
+
+59
+00:10:19,040 --> 00:10:24,720
+ that you need to take care not to run it inside a Docker I should run it
+
+60
+00:10:24,720 --> 00:10:40,880
+ inside the host itself so here if we connect day now we will install the WordPress
+
+61
+00:10:40,880 --> 00:10:53,080
+ we select English and here let's type sites default or let's type it for
+
+62
+00:10:53,080 --> 00:11:11,840
+ press sites username admin for example and that's type the password
+
+63
+00:11:11,840 --> 00:11:20,280
+ we will not just for the sake of tutorial we are not in the lab we are just in
+
+64
+00:11:20,280 --> 00:11:24,800
+ that environment so we confirm the use of week password but of course in a
+
+65
+00:11:24,800 --> 00:11:30,200
+ production environment you need to set your password to be complex in more
+
+66
+00:11:30,200 --> 00:11:39,400
+ context than than that we might avoid using repetitive letters use symbols
+
+67
+00:11:39,400 --> 00:11:52,240
+ and length of 12 characters at least so here we have set password and user
+
+68
+00:11:52,240 --> 00:12:07,000
+ so we can type here email okay and let's install the WordPress that saves
+
+69
+00:12:07,000 --> 00:12:18,760
+ the passwords okay the WordPress has now successful being installed so let's
+
+70
+00:12:18,760 --> 00:12:34,000
+ log into it okay and this is WordPress which is the framework in which for
+
+71
+00:12:34,000 --> 00:12:40,200
+ example our designers can use it to design posts to media or any web pages so
+
+72
+00:12:40,200 --> 00:12:55,920
+ it's now okay and install it so great now okay we will once the WordPress is
+
+73
+00:12:55,920 --> 00:13:00,920
+ installed of course we need to if you remember the git we know we need to use the
+
+74
+00:13:00,920 --> 00:13:12,640
+ git comment commit now so we are here in our directory we need to type git add
+
+75
+00:13:12,640 --> 00:13:31,320
+ again and if we can see git status we should see here that all of these files
+
+76
+00:13:31,320 --> 00:13:35,720
+ there is the modifications because we install the WordPress all of these files
+
+77
+00:13:35,720 --> 00:13:45,920
+ are not committed yet so we need to commit them let's type the comment
+
+78
+00:13:45,920 --> 00:14:00,980
+ again okay now if I show this the status now it is shown that nothing to
+
+79
+00:14:00,980 --> 00:14:05,680
+ commit and if I try to commit it you also will give me that nothing to commit
+
+80
+00:14:05,680 --> 00:14:08,920
+ everything is committed
+
