@@ -1,0 +1,144 @@
+1
+00:00:00,110 --> 00:00:01,760
+Now it's time for the important part.
+
+2
+00:00:01,790 --> 00:00:03,590
+The crash animation.
+
+3
+00:00:03,590 --> 00:00:08,360
+Because if our crash doesn't look like a really epic, our players won't understand why the trees are
+
+4
+00:00:08,360 --> 00:00:09,410
+to be avoided.
+
+5
+00:00:09,440 --> 00:00:14,240
+So let's have a look at how we can enhance this game with a nice animation.
+
+6
+00:00:15,010 --> 00:00:15,880
+Let's get to it.
+
+7
+00:00:15,910 --> 00:00:21,910
+So moving over to our player sprite, we can add in this when I receive player crashed broadcast.
+
+8
+00:00:21,910 --> 00:00:28,240
+So basically what we want to happen is for our player sprite to have a spin out effect when they touch
+
+9
+00:00:28,240 --> 00:00:29,050
+a tree.
+
+10
+00:00:29,260 --> 00:00:34,990
+And quite simply, all we need to do is go to the motions group and bring in this turn effect.
+
+11
+00:00:35,020 --> 00:00:40,030
+Then we can just repeat this say five times and giving this a go.
+
+12
+00:00:40,300 --> 00:00:42,340
+Skipping along until we hit a tree.
+
+13
+00:00:42,970 --> 00:00:45,160
+Ah well, that didn't quite work.
+
+14
+00:00:45,250 --> 00:00:47,860
+As you can see, it tries to turn, but it just turns back.
+
+15
+00:00:47,860 --> 00:00:51,040
+And also, even after we crashed, we can still ski left and right.
+
+16
+00:00:51,040 --> 00:00:53,470
+So let's see if we can fix that.
+
+17
+00:00:54,430 --> 00:01:00,430
+Well, if you look closely, you will see that the problem is caused by this script here.
+
+18
+00:01:00,730 --> 00:01:03,580
+And to fix this problem is quite simple.
+
+19
+00:01:03,580 --> 00:01:09,250
+Basically, just like we did with the tree sprite, what we need to do is stop the other scripts.
+
+20
+00:01:09,250 --> 00:01:14,680
+So grabbing a stop, all we can change it to stop other scripts in the sprite.
+
+21
+00:01:14,680 --> 00:01:19,600
+And this time, instead of putting it at the end of the script, we can add it to the start of the script.
+
+22
+00:01:20,470 --> 00:01:24,910
+So again, giving that a play, you will see how much better that works.
+
+23
+00:01:24,910 --> 00:01:30,130
+Now we have a pretty nice animation that works when we crash, but I still think we can do better.
+
+24
+00:01:30,910 --> 00:01:37,690
+So if you look down at our script, you can see that we turn by 15 degrees, which is fine and all,
+
+25
+00:01:37,690 --> 00:01:39,730
+but it does not look exactly smooth.
+
+26
+00:01:39,730 --> 00:01:42,880
+So I'm going to do something a little sneaky here.
+
+27
+00:01:42,880 --> 00:01:47,620
+And instead of 15 I'm going to turn by movement speed.
+
+28
+00:01:48,220 --> 00:01:53,650
+Yes, I know this seems weird, but as you will see, it works when we give this a play.
+
+29
+00:01:54,310 --> 00:01:56,590
+Notice how much better that animation is.
+
+30
+00:01:57,110 --> 00:02:03,710
+Now, the final thing to improve this even more is replace this repeat five times with a repeat until
+
+31
+00:02:03,740 --> 00:02:04,370
+block.
+
+32
+00:02:04,670 --> 00:02:11,510
+Now, just like we did with our other script, we can repeat until movement speed equals zero.
+
+33
+00:02:11,540 --> 00:02:17,510
+So just grab this equals block and this variable and set this to zero like that.
+
+34
+00:02:17,540 --> 00:02:21,020
+So giving that another go crashing into another tree.
+
+35
+00:02:22,610 --> 00:02:24,830
+Well, I think the results speak for themselves.
+
+36
+00:02:24,950 --> 00:02:28,280
+Net looks like a remarkable crash.
+
