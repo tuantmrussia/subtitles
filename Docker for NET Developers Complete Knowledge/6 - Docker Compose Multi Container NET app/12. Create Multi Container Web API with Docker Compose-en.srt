@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:05,580
+ Multicontainer ASP.NET Core App with Docker Compose.
+
+2
+00:00:05,580 --> 00:00:09,000
+ Let us see the lecture highlights.
+
+3
+00:00:09,000 --> 00:00:13,400
+ What we will cover in this lecture are given below.
+
+4
+00:00:13,400 --> 00:00:19,900
+ We will create a multi-project ASP.NET Core App which has two projects in it.
+
+5
+00:00:19,900 --> 00:00:23,400
+ We will host the whole app from Docker Compose.
+
+6
+00:00:23,400 --> 00:00:28,640
+ There will be two containers each hosting a .NET project of the app.
+
+7
+00:00:28,640 --> 00:00:33,940
+ These projects will also communicate with one another with Docker networking.
+
+8
+00:00:33,940 --> 00:00:37,940
+ We will then add an SSL certificate to the app.
+
+9
+00:00:37,940 --> 00:00:42,340
+ And finally, we will run the whole app with Docker Compose command.
+
+10
+00:00:42,340 --> 00:00:47,340
+ Let us now create the multi-project ASP.NET Core App.
+
+11
+00:00:47,340 --> 00:00:57,840
+ Head on to Visual Studio and create a new project.
+
+12
+00:00:57,840 --> 00:01:04,440
+ Select the template ASP.NET Core web app, razor pages.
+
+13
+00:01:04,440 --> 00:01:12,340
+ Then click Next, name the project multi-app.
+
+14
+00:01:12,340 --> 00:01:15,640
+ And select its location on the drive.
+
+15
+00:01:15,640 --> 00:01:23,440
+ Now make sure to uncheck the option called "Place solution" and project in the same directory.
+
+16
+00:01:23,440 --> 00:01:29,240
+ This is necessary for Docker Compose to get the app files.
+
+17
+00:01:29,240 --> 00:01:35,840
+ Click Next to reach the next screen where there is an option to enable containers of code.
+
+18
+00:01:35,840 --> 00:01:37,440
+ Keep it unchecked.
+
+19
+00:01:37,440 --> 00:01:40,840
+ We will be doing this part later on.
+
+20
+00:01:40,840 --> 00:01:44,040
+ Click the create button to create this project.
+
+21
+00:01:53,440 --> 00:01:58,440
+ We now add another project to the app.
+
+22
+00:01:58,440 --> 00:02:06,940
+ Right-click the solution name and select add, then select new project.
+
+23
+00:02:06,940 --> 00:02:17,940
+ In the template select ASP.NET Core web API and click Next.
+
+24
+00:02:17,940 --> 00:02:26,540
+ Give the project name multi-app. Then click Next.
+
+25
+00:02:26,540 --> 00:02:33,140
+ In the screen uncheck the option to configure for HTTPS.
+
+26
+00:02:33,140 --> 00:02:38,040
+ Because we don't need HTTPS connection for the web API.
+
+27
+00:02:38,040 --> 00:02:44,240
+ The reason being this project will run from a Docker container and the other project,
+
+28
+00:02:44,240 --> 00:02:49,740
+ which will also be running from Docker container will call this web API project.
+
+29
+00:02:49,740 --> 00:02:58,740
+ And so there is no need for HTTPS protocol during the calling since HTTP protocol will do all the necessary things.
+
+30
+00:02:58,740 --> 00:03:02,740
+ Keep enable container support option unchecked.
+
+31
+00:03:02,740 --> 00:03:06,740
+ Click the create button to create this project.
+
+32
+00:03:06,740 --> 00:03:14,240
+ Now you can see the app has two projects in it, multi-API and multi-app.
+
+33
+00:03:14,240 --> 00:03:17,240
+ Now add API functionalities.
+
+34
+00:03:17,240 --> 00:03:33,240
+ So right-click the multi-API project and add a new class called joke.cs.
+
+35
+00:03:33,240 --> 00:03:40,740
+ To this class add three properties of type string, name text and category.
+
+36
+00:03:40,740 --> 00:03:47,240
+ Note that I am just copying and pasting the codes to make the process faster.
+
+37
+00:03:47,240 --> 00:03:57,240
+ Don't worry about these codes as you can download the full source code from the lecture itself.
+
+38
+00:03:57,240 --> 00:04:11,740
+ Next to the controller folder, add a new controller called joke controller.
+
+39
+00:04:11,740 --> 00:04:29,740
+ Here we will add a get method and joke repository function.
+
+40
+00:04:29,740 --> 00:04:36,740
+ This is the API method which will provide a random joke from the repository.
+
+41
+00:04:36,740 --> 00:04:45,740
+ The joke will be provided in JSON format and here it is the repository that contains 10 jokes.
+
+42
+00:04:45,740 --> 00:04:48,240
+ Let us run this API.
+
+43
+00:04:48,240 --> 00:04:54,240
+ So right-click its name and select set as startup project.
+
+44
+00:04:54,240 --> 00:04:58,240
+ Then press the run button on Visual Studio.
+
+45
+00:05:06,740 --> 00:05:19,740
+ The project has started copying its URL and opening the browser.
+
+46
+00:05:19,740 --> 00:05:26,240
+ We have to add the API endpoint to the URL which is api/joke.
+
+47
+00:05:26,240 --> 00:05:31,740
+ This is the joke in JSON given by the web API.
+
+48
+00:05:31,740 --> 00:05:39,740
+ Refresh the browser and you will see a random joke every time.
+
+49
+00:05:39,740 --> 00:05:47,240
+ We now add codes to the multi app project which is in razor pages type.
+
+50
+00:05:47,240 --> 00:05:55,740
+ Inside the pages folder, there is an index.cshtml.cs file.
+
+51
+00:05:55,740 --> 00:06:01,740
+ Here on the on get method, I am calling the web API.
+
+52
+00:06:01,740 --> 00:06:08,240
+ You can download the source codes of the app and you will find all these codes.
+
+53
+00:06:08,240 --> 00:06:18,240
+ The HTTP class object is used to call the web API and the web API returns the joke in JSON format.
+
+54
+00:06:18,240 --> 00:06:32,240
+ The j object is an object of newtons of dot JSON package. Add the newtons of dot JSON package to your multi app project from new get package manager.
+
+55
+00:06:48,240 --> 00:06:58,240
+ You can then use this j object type.
+
+56
+00:06:58,240 --> 00:07:08,240
+ The joke name text and category is fetched from the JSON and sent to the index.cshtml view file.
+
+57
+00:07:08,240 --> 00:07:14,240
+ We use view data object to send this to the view file.
+
+58
+00:07:14,240 --> 00:07:24,240
+ Here see the web API which is called. You have to change this URL to your api projects. You are there.
+
+59
+00:07:24,240 --> 00:07:33,240
+ Find this URL by right clicking the multi api project. Then select properties.
+
+60
+00:07:33,240 --> 00:07:41,240
+ Here click the debug section on the left. Then click on the open debug launch profile.
+
+61
+00:07:41,240 --> 00:07:54,240
+ You are scroll to the bottom to find the app URL. You have to copy this URL and paste it on the index.cshtml.cs file.
+
+62
+00:07:54,240 --> 00:08:07,240
+ In my case only the ports need to change rest all the same. So I am changing the ports and now the URL is changed as I wanted.
+
+63
+00:08:07,240 --> 00:08:16,240
+ We move to index.cshtml.cs file which displays the joke in HTML table.
+
+64
+00:08:16,240 --> 00:08:23,240
+ This is the code for it. Let's now run the whole app. That is both the two projects.
+
+65
+00:08:23,240 --> 00:08:28,240
+ So right click on the solution name. Then select properties.
+
+66
+00:08:28,240 --> 00:08:38,240
+ Here on the dialog select multiple starter projects. Set the action for each project to start and click the ok button.
+
+67
+00:08:38,240 --> 00:08:57,240
+ Now on visual studio click the start button which will run the app.
+
+68
+00:08:57,240 --> 00:09:04,240
+ See both these projects are running. You can see the jokes are displayed on the browser.
+
+69
+00:09:04,240 --> 00:09:16,240
+ Refresh the browser and the new joke is displayed to you.
+
+70
+00:09:16,240 --> 00:09:27,240
+ Now it's time to host the app. That is it's both the projects or Docker containers. We will use Docker Compose to do this job.
+
+71
+00:09:27,240 --> 00:09:37,240
+ What is Docker Compose? Docker Compose is a tool for defining and running multi container Docker applications.
+
+72
+00:09:37,240 --> 00:09:48,240
+ It uses the yaml file named as Docker-compose.yml or Compose.yml.
+
+73
+00:09:48,240 --> 00:09:55,240
+ It configures the entire apps services, networks, volumes with a single command.
+
+74
+00:09:55,240 --> 00:10:04,240
+ So we write all the configurations on this yaml file and then use Docker Compose commands to host them.
+
+75
+00:10:04,240 --> 00:10:15,240
+ See this image which shows the app and its components which are databases, web app, APIs, cache, etc.
+
+76
+00:10:15,240 --> 00:10:25,240
+ which will be hosted on separate Docker containers. All these containers will be created and managed by Docker Compose.
+
+77
+00:10:25,240 --> 00:10:39,240
+ In our app there are two projects multi app and multi API. Therefore Docker Compose will host them from two containers, one each for each of these projects.
+
+78
+00:10:39,240 --> 00:11:00,240
+ Here is the app. We start with the multi app project. Right click on it and select add then select container Compose support option. We call earlier we selected the second option which is container support for Docker.
+
+79
+00:11:00,240 --> 00:11:14,240
+ But remember for Docker Compose we have to select container Compose support. On the container scaffolding option page keep everything default and click the OK button.
+
+80
+00:11:14,240 --> 00:11:22,240
+ Now see a new project is added for the Docker Compose.
+
+81
+00:11:22,240 --> 00:11:31,240
+ It's asking me to start the Docker desktop so I click the yes button. This is the new project added to the solution.
+
+82
+00:11:31,240 --> 00:11:45,240
+ Also on visual studio see the run option where Docker Compose project is automatically selected.
+
+83
+00:11:45,240 --> 00:12:06,240
+ My Docker desktop has started. It is now building the image for the multi app project.
+
+84
+00:12:06,240 --> 00:12:20,240
+ This is the Docker dash Compose dot YML file which contains all the configurations. There is the services which represents the container that will be created.
+
+85
+00:12:20,240 --> 00:12:32,240
+ The container name is given as multi app which you can change as you wish. Then we have the image name which is specified as multi app.
+
+86
+00:12:32,240 --> 00:12:45,240
+ You can change the image name as you wish. After that there is the build section defined which defined the part to the directory containing the Docker file.
+
+87
+00:12:45,240 --> 00:13:01,240
+ The dot represents that it is relative to the location of the Docker dash Compose dot YML file. Then there's a multi app slash Docker file which represents the location of the Docker file.
+
+88
+00:13:02,240 --> 00:13:10,240
+ The Docker file is also created for the project.
+
+89
+00:13:10,240 --> 00:13:20,240
+ Right click the project name and select open in file explorer. This is the project folder.
+
+90
+00:13:20,240 --> 00:13:33,240
+ Go up and on the route you will find the Docker Compose dot YML file.
+
+91
+00:13:33,240 --> 00:13:45,240
+ Click the arrow in front of the Docker dash Compose dot YML file. You will see another file called Docker dash Compose dot override dot YML.
+
+92
+00:13:45,240 --> 00:13:53,240
+ This file contains some more configurations and extend the Docker dash Compose dot YML file.
+
+93
+00:13:53,240 --> 00:14:02,240
+ These are the environment variables defined. Then these are the ports defined and then these are the volumes.
+
+94
+00:14:02,240 --> 00:14:17,240
+ Docker will ultimately merge both these Docker dash Compose dot YML and Docker dash Compose dot override dot YML files configurations into one when creating a container.
+
+95
+00:14:17,240 --> 00:14:37,240
+ Let's do the same for the second project which is multi app. Right click on its name and select add container Compose support on the container scaffolding options dialogue window. Keep everything as it is and click the OK button.
+
+96
+00:14:37,240 --> 00:15:02,240
+ Now open Docker dash Compose dot YML file. We will see another service is added which is for multi API project. Here it is given its image name as multi API and location of the Docker file is given which is inside the multi API folder.
+
+97
+00:15:02,240 --> 00:15:07,240
+ This is the Docker file of the project.
+
+98
+00:15:07,240 --> 00:15:19,240
+ Then open the Docker dash Compose dot override dot YML file and you will see a new services added for the project with environment variables and ports added to them.
+
+99
+00:15:19,240 --> 00:15:34,240
+ Before we run this app we have to change the web API URL. The web API URL is given on the HTTP get method inside the index dot CSSTML dot CS file.
+
+100
+00:15:34,240 --> 00:15:40,240
+ This is the URL and since the web API is now running from a Docker container.
+
+101
+00:15:40,240 --> 00:16:09,240
+ Therefore we have to reference it by its service name as defined in the Docker dash Compose dot YML file. Change this URL to HTTP colon slash slash multi API multi API is the service name and then colon 80 80 which is the port of the container as given on the Docker file after that slash API slash joke.
+
+102
+00:16:09,240 --> 00:16:24,240
+ So this is the whole new URL of the web API. Let me show the Docker dash Compose dot YML file. This is the service name of the web API which we are using in the URL.
+
+103
+00:16:24,240 --> 00:16:43,240
+ Then this is the Docker file of the web API project and you can see 80 80 is the container port. Now we run the app from Visual Studio.
+
+104
+00:16:54,240 --> 00:17:20,240
+ You can see the app is opening correctly.
+
+105
+00:17:24,240 --> 00:17:38,240
+ Let's see the Docker desktop.
+
+106
+00:17:38,240 --> 00:17:50,240
+ Here is the container created by the Docker Compose. Open it to see the two containers for the projects. These are the two images of the two projects.
+
+107
+00:17:50,240 --> 00:17:59,240
+ Now go to the images section on the left and you will find the multi API and multi app images of the two projects.
+
+108
+00:17:59,240 --> 00:18:14,240
+ We will now run the app directly from Docker Compose commands instead of using Visual Studio. Let me stop the app.
+
+109
+00:18:14,240 --> 00:18:29,240
+ On the Docker dash Compose dot YML file we have to add some configurations. I will just copy and paste them but do not worry you will find them in the source code of the app.
+
+110
+00:18:29,240 --> 00:18:54,240
+ Here we have added two sections, ports and environments. On the ports we define the host port and the container port. Host port is given 9000. You can change it if you want. Then colon after that Docker container port which is 80 80 and this is given inside the Docker file.
+
+111
+00:18:54,240 --> 00:19:08,240
+ So this means we will type local host colon 9000 on the browser to access the app. Then we gave environment details to the app inside the environment section.
+
+112
+00:19:08,240 --> 00:19:29,240
+ The first variable is ASP net code underscore environment equal to development. Since it is on the development machine so we gave development value to the environment variable. The other values can be staging and production based on staging and production state of the app.
+
+113
+00:19:29,240 --> 00:19:57,240
+ The other environment variable is ASP net code underscore URLS equals HTTP colon slash slash plus colon 80 80. This specifies the URL of the dot net app which is running from 80 80 container port. We can now close the Visual Studio as it is not needed anymore.
+
+114
+00:19:57,240 --> 00:20:05,240
+ Let's see Docker desktop.
+
+115
+00:20:05,240 --> 00:20:31,240
+ There are no images of the projects. Not any container is present. This is because on closing visual studio the visual studio has removed all the apps and container images automatically to free up the space now from the directory of Docker dash compose dot YML file. We run Docker compose commands.
+
+116
+00:20:31,240 --> 00:20:53,240
+ So open the PowerShell window. The first command we will run will be the build command that will build the two images for the two projects. The command is Docker dash compose build.
+
+117
+00:20:53,240 --> 00:21:10,240
+ The images are built now. Let's confirm the images on the Docker desktop. Yes, the images are present and created the then run to containers for these two images.
+
+118
+00:21:10,240 --> 00:21:35,240
+ The command is Docker dash compose up. The two containers are created now. You can see on the logs messages that the containers are now running. Let's open the app in the browser.
+
+119
+00:21:35,240 --> 00:21:43,240
+ The address of the app will be local host colon 9000.
+
+120
+00:21:43,240 --> 00:22:04,240
+ And there it is the dot net app is running from the Docker container now on Docker check the containers. Yes, there are two containers and these are dear images which they are running on PowerShell press control plus C to stop the containers.
+
+121
+00:22:04,240 --> 00:22:22,240
+ We will now move to creation of the SSL certificate. So we go inside the multi app directory and here we create a new folder called HTTPS.
+
+122
+00:22:22,240 --> 00:22:45,240
+ In this folder we will create an SSL certificate and use it on the app inside the HTTPS folder open a PowerShell window. Now we will run dot net dev dash search command. Let's first clean all the previous developer certificates present on our machine.
+
+123
+00:22:45,240 --> 00:22:52,240
+ The command is dot net dev dash search.
+
+124
+00:22:52,240 --> 00:23:14,240
+ HTTPS dash dash clean press enter except any prompts. All previous certificates are removed from our machine. Now we will create a new SSL certificate. The command is dot net dev dash search.
+
+125
+00:23:14,240 --> 00:23:43,240
+ HTTPS dash e p a sp net app dot p effects. This is the certificate name then type dash p and give password which is my pass 123 the certificate name and the password can be anything after that dash dash dash dash.
+
+126
+00:23:43,240 --> 00:23:54,240
+ Which is for trusting this certificate except the prompt and look the SSL certificate is created.
+
+127
+00:23:54,240 --> 00:24:04,240
+ We will now use this certificate on the app. So open the project on visual studio once again.
+
+128
+00:24:13,240 --> 00:24:30,240
+ And then open the docker dash compose dot yml file. Here we add the configurations for the SSL certificate.
+
+129
+00:24:30,240 --> 00:24:46,240
+ First we add a new port which is 9001 colon 8081.
+
+130
+00:24:46,240 --> 00:24:59,240
+ Here 9001 is the host port which can be anything which you like and 8081 is the another port on the container which you can find this 8081.
+
+131
+00:24:59,240 --> 00:25:12,240
+ This 8081 port given on the docker file. So now we have two ports 9001 and 9000 and these ports are for the host machine.
+
+132
+00:25:12,240 --> 00:25:28,240
+ And they are mapped with 8080 and 8081 ports on the container. Next we add a new HTTPS URL of the app which will be targeting the 8081 port on the container.
+
+133
+00:25:28,240 --> 00:25:43,240
+ So write semicolon HTTPS colon slash slash plus colon 8081.
+
+134
+00:25:43,240 --> 00:26:02,240
+ Now we will add a few more environment variables which are as follows.
+
+135
+00:26:02,240 --> 00:26:18,240
+ The first is ASP net core underscore HTTPS underscore port equal to 8081. We have specified the HTTPS port to be 8081 on the container.
+
+136
+00:26:18,240 --> 00:26:44,240
+ Then we give the SSL certificate password which is ASP net core underscore cluster underscore certificate underscore underscore default underscore underscore password equal to my pass 123 recall this was the SSL certificate password when we created the certificate.
+
+137
+00:26:44,240 --> 00:27:04,240
+ We will give the SSL path with ASP net core underscore cluster underscore underscore certificate underscore underscore default underscore underscore path equal to slash HTTPS slash ASP net app dot pfx.
+
+138
+00:27:04,240 --> 00:27:11,240
+ This is the part of the SSL certificate inside the HTTPS folder which is inside the container.
+
+139
+00:27:11,240 --> 00:27:29,240
+ Make sure to check these settings again since these have to be correct else container will fail to run finally we mount the certificate from the host part to the container part using docker volumes.
+
+140
+00:27:29,240 --> 00:27:58,240
+ So add docker volume section in the compose file this is the volume section the first is the location of SSL on the host which is inside the multi app slash HTTPS folder then we give the SSL name after that colon and here give the part of the directory inside the container which is holding the SSL certificate.
+
+141
+00:27:58,240 --> 00:28:16,240
+ This is slash HTTPS slash ASP net app dot pfx colon RO all the configurations are applied now and we can close the visual studio.
+
+142
+00:28:16,240 --> 00:28:42,240
+ So refresh the browser the container is stopped because visual studio has closed all the containers the app is therefore not opening let's rerun the docker compose commands.
+
+143
+00:28:42,240 --> 00:29:05,240
+ First command is docker dash compose build to build the images.
+
+144
+00:29:05,240 --> 00:29:18,240
+ The second command is docker dash compose up.
+
+145
+00:29:18,240 --> 00:29:38,240
+ The containers are up and running test app on the browser the URL this time is HTTPS colon slash slash local host colon nine thousand one.
+
+146
+00:29:38,240 --> 00:30:07,240
+ Nine thousand one is the HTTPS port which we defined on the docker dash compose dot YML file to you recall this and here is the app opening from the HTTPS URL and the SSL is applied you can check the SSL certificate it's valid so congratulations to all of us we have success.
+
+147
+00:30:07,240 --> 00:30:15,240
+ We have successfully hosted our multi container dot net app from talk up compose.
+
