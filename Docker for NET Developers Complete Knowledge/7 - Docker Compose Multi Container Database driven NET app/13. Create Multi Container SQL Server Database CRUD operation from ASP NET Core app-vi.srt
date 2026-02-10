@@ -1,0 +1,500 @@
+1
+00:00:00,000 --> 00:00:08,000
+Trong bài giảng này, chúng tôi sẽ thực hiện các hoạt động đám mây trong AP.NET Ứng dụng lõi với máy chủ MIME
+
+2
+00:00:08,000 --> 00:00:09,000
+là cơ sở dữ liệu.
+
+3
+00:00:09,000 --> 00:00:18,600
+Cả hai ứng dụng hệ thống AP.NET và máy chủ đáp ứng đều chạy từ hai hộp riêng biệt Docker.
+
+4
+00:00:18,600 --> 00:00:25,000
+Đây là cấu trúc của toàn bộ ứng dụng sẽ được tạo ra bởi chúng ta.
+
+5
+00:00:25,000 --> 00:00:32,600
+Đây là ứng dụng AP.NET CNT và nó sẽ chạy từ một container Docker và kể từ đó
+
+6
+00:00:32,600 --> 00:00:39,160
+Nó sẽ là một cơ sở dữ liệu được điều khiển, vì vậy nó sẽ được kết nối với cơ sở dữ liệu máy phục vụ hệ thống hệ thốngy và
+
+7
+00:00:39,160 --> 00:00:43,800
+mặc định Cơ sở dữ liệu máy phục vụ cũng sẽ chạy từ công cụ Docker.
+
+8
+00:00:43,800 --> 00:00:51,200
+Vì vậy, sẽ có hai hộp riêng biệt mỗi cho ứng dụng và máy chủ lock và ứng dụng
+
+9
+00:00:51,200 --> 00:00:54,600
+sẽ thực hiện hoạt động đám mây trên cơ sở dữ liệu.
+
+10
+00:00:54,600 --> 00:01:00,880
+Những hoạt động đám mây như bạn biết đang tạo, đọc, cập nhật và xóa các hoạt động.
+
+11
+00:01:00,880 --> 00:01:01,880
+Hãy bắt đầu.
+
+12
+00:01:01,880 --> 00:01:10,400
+Đầu tiên, tôi muốn hiển thị đường dẫn tới máy chủ đáp ứng nhanh chạy trên một container Docker.
+
+13
+00:01:10,400 --> 00:01:19,000
+Trên Google, bạn nên gõ trình phục vụ XL và Docker.
+
+14
+00:01:19,000 --> 00:01:25,600
+Sau đó bạn sẽ tìm thấy trang web Microsoft learn.
+
+15
+00:01:25,600 --> 00:01:32,280
+Bạn sẽ tìm thấy trang web Microsoft learn và Docker Run containers cho trình phục vụ hối lộ trực tuyến
+
+16
+00:01:32,280 --> 00:01:33,280
+Tiếp theo.
+
+17
+00:01:33,280 --> 00:01:40,080
+Liên kết này trên liên kết này, có các lệnh mà bạn phải chạy.
+
+18
+00:01:40,080 --> 00:01:44,160
+Bạn có thể chạy lệnh đầy đủ của máy phục vụ MIME.
+
+19
+00:01:44,160 --> 00:01:53,520
+Đây là lệnh sẽ tải xuống máy phục vụ mặc định 2025 ảnh trong môi trường cục bộ
+
+20
+00:01:53,520 --> 00:02:02,960
+hoặc máy tính cục bộ và để chạy hộp này với ảnh trình phục vụ mặc định 2025, bạn sẽ sao chép ảnh này
+
+21
+00:02:02,960 --> 00:02:12,000
+Toàn bộ lệnh của Docker Run và bạn thay đổi hệ thống MSSQL này thành mật khẩu riêng của bạn
+
+22
+00:02:12,000 --> 00:02:19,600
+mà bạn muốn giữ mật khẩu mạnh mẽ và bạn nên theo trình phục vụ MIME
+
+23
+00:02:19,600 --> 00:02:25,800
+chính sách mật khẩu mặc định mà nói mật khẩu nên có chữ cái đầu và
+
+24
+00:02:25,800 --> 00:02:30,920
+Vì vậy, nhiều chữ cái nhỏ hơn nhiều ít nó nên được truy vấn thư vv.
+
+25
+00:02:30,920 --> 00:02:39,000
+Vì vậy, bạn nên giữ một mật khẩu mạnh sau đó hãy để tôi chỉ cho bạn làm thế nào để chạy sao chép lệnh này
+
+26
+00:02:39,000 --> 00:02:53,740
+và mở nhắc lệnh và ở đây bạn dán lệnh này và như bạn thấy nó là Docker
+
+27
+00:02:53,740 --> 00:03:03,580
+Chạy lệnh và gạch ngang là cờ môi trường làm cho bạn chấp nhận chính sách của đường cong này
+
+28
+00:03:03,580 --> 00:03:10,120
+Máy phục vụ sau đó một biến môi trường khác mà nói rằng xơ rải rác nhấn mạnh kiểu S
+
+29
+00:03:10,120 --> 00:03:16,840
+Làm nổi bật mật khẩu và sau đó bạn cung cấp mật khẩu riêng của bạn một mật khẩu mạnh như
+
+30
+00:03:16,840 --> 00:03:27,680
+cái này và sau đó với dấu gạch gạch ngang P bạn xác định các cổng của họ sơ đồ 1, 4, 4, 0 là D.
+
+31
+00:03:27,680 --> 00:03:34,840
+Bạn là cổng máy chủ và sau đó sau đó 1, 4, 4, 3 là cổng container máy chủ 2, 1.
+
+32
+00:03:34,840 --> 00:03:42,380
+4, 0 bạn có thể giữ cổng chủ bất cứ cổng nào bạn thích tôi đã giữ 1, 4, 4, 0 và
+
+33
+00:03:42,380 --> 00:03:51,020
+sau đó với gạch gạch gạch lát tên bạn xác định tên hộp chứa của máy phục vụ MIME nó có thể là bất cứ điều gì
+
+34
+00:03:51,020 --> 00:04:00,740
+Sau đó với H lá cờ một lần nữa bạn giữ như vậy bất cứ điều gì tên thùng hàng bạn cũng giữ như vậy
+
+35
+00:04:00,740 --> 00:04:08,860
+Điều này ở đây và sau đó với gạch ngang D là nó có nghĩa là chế độ tách biệt sau đó đây là Microsoft
+
+36
+00:04:08,860 --> 00:04:20,440
+Lưu trữ ảnh của máy phục vụ mặc định 2005 đây là toàn bộ lệnh và sau đó bạn bấm
+
+37
+00:04:20,440 --> 00:04:29,340
+nhập nó không tìm thấy ảnh nên nó không tìm thấy ảnh của máy phục vụ MIME 2025
+
+38
+00:04:29,340 --> 00:04:38,220
+Trên máy tính của tôi tại địa phương vì vậy nó đang kéo từ công-te-nơ Microsoft và vì nó là xung quanh
+
+39
+00:04:38,220 --> 00:04:48,740
+550 MB nên bạn sẽ phải đợi từ 5 phút để hoàn thành nó.
+
+40
+00:04:48,740 --> 00:05:02,820
+Hãy cho chúng tôi xem các màn hình làm việc Docker và đây là ảnh của trình phục vụ MIME được tải về và
+
+41
+00:05:02,820 --> 00:05:11,620
+Trên hộp thư chung, bạn sẽ tìm thấy hộp thư chung cho máy phục vụ MIME tên mà máy phục vụ hệ thống của tôi đang chạy
+
+42
+00:05:11,620 --> 00:05:22,700
+Và nó chứa ảnh máy chủ mặc định 2025 và các cổng là 1, 4, 0 ruột 1.
+
+43
+00:05:22,700 --> 00:05:34,220
+Cổng V3 ở đây 1, 4, 0 là cổng chủ và 1, 4, 3, 3 là cổng bên trong container
+
+44
+00:05:34,220 --> 00:05:41,540
+Chúng tôi bây giờ kết nối với cơ sở dữ liệu thông qua phòng thu trực quan trên phòng thu trực quan kiểm tra tầm nhìn
+
+45
+00:05:41,540 --> 00:05:51,860
+trình đơn sau đó chọn nhà phát triển đối tượng máy phục vụ MIME thông qua đó chúng tôi sẽ kết nối với máy chủ hệ thống phụ thuộc
+
+46
+00:05:51,860 --> 00:05:59,620
+như D cộng biểu tượng cho phép duyệt qua sau đó
+
+47
+00:05:59,620 --> 00:06:08,820
+khi tính chất kết nối D thêm chi tiết MIME cho tên MIME thêm dấu phẩy máy cục bộ 1, 4, 4, 4
+
+48
+00:06:08,820 --> 00:06:19,660
+0, 4, 4, 0 là mặc định trên máy mà chúng tôi thêm vào cờ ngang P để xác thực
+
+49
+00:06:19,660 --> 00:06:28,260
+chọn mặc định Tên người dùng xác thực máy phục vụ nên được viết bằng mật khẩu chữ hoa.
+
+50
+00:06:28,260 --> 00:06:46,860
+nên là một trong những mà chúng tôi sử dụng trong khi chạy container
+
+51
+00:06:46,860 --> 00:06:56,300
+Với tùy chọn này, ghi nhớ tên cơ sở dữ liệu mật khẩu giữ mặc định trong mật mã bắt buộc
+
+52
+00:06:56,300 --> 00:07:03,580
+và nhanh chứng nhận máy phục vụ tin tưởng đảm bảo rằng bạn kiểm tra tùy chọn này ngay bây giờ hãy nhắp vào kết nối
+
+53
+00:07:03,580 --> 00:07:10,740
+Nút chúng tôi bây giờ được kết nối đến cơ sở dữ liệu bên trong khu vực cơ sở dữ liệu chúng tôi không có cơ sở dữ liệu
+
+54
+00:07:10,740 --> 00:07:21,580
+Ngay bây giờ chúng tôi sẽ tạo cơ sở dữ liệu của chúng tôi ngay bây giờ chúng tôi di chuyển đến cơ sở dữ liệu sp.net lõimbc
+
+55
+00:07:21,580 --> 00:07:29,500
+ứng dụng được điều khiển ở đây nó là bạn có thể tải ứng dụng này từ bài giảng này bản thân để tôi giải thích
+
+56
+00:07:29,500 --> 00:07:38,100
+Nhanh chóng làm thế nào ứng dụng này hoạt động đây là một ứng dụng điện ảnh nơi các chi tiết phim ảnh có thể được lưu trữ
+
+57
+00:07:38,100 --> 00:07:46,820
+trong cơ sở dữ liệu chứa các thao tác tín dụng cho phép người dùng tạo cập nhật đọc và xoá
+
+58
+00:07:46,820 --> 00:07:54,060
+Bản ghi phim sẽ được lưu trên cơ sở dữ liệu chạy từ một container docker
+
+59
+00:07:54,060 --> 00:08:01,700
+Hãy xem bộ điều khiển chính nơi chúng tôi đã tạo ra phương pháp hành động mà làm sáng tạo
+
+60
+00:08:01,700 --> 00:08:11,780
+phim ảnh trong cơ sở dữ liệu hoạt động chỉ mục nơi mà phim ảnh được đọc từ cơ sở dữ liệu
+
+61
+00:08:11,780 --> 00:08:18,500
+phương pháp hành động ngày tháng làm tăng cường các đĩa phim trên cơ sở dữ liệu cuối cùng
+
+62
+00:08:18,500 --> 00:08:25,380
+Đây là phương pháp hành động xoá bỏ phim từ cơ sở dữ liệu.
+
+63
+00:08:25,380 --> 00:08:33,980
+Lớp phim nơi có 3 đặc tính được xác định chúng là tên và diễn viên
+
+64
+00:08:33,980 --> 00:08:43,400
+Đây là các tập tin xem dao cạo, chỉ mục tập tin mà hiển thị tất cả các phim trong một
+
+65
+00:08:43,400 --> 00:08:52,380
+Bảng HTML tập tin tạo.cshml chứa biến dạng qua đó phim mới được chèn vào
+
+66
+00:08:52,380 --> 00:09:01,740
+mới nhất có cập nhật cơ sở dữ liệu. Tập tin xem ảnh cạo râu cshtml nơi nâng cấp phim
+
+67
+00:09:01,740 --> 00:09:11,500
+được thực hiện tập tin bối cảnh phim ảnh.cs đóng vai trò như một bối cảnh DB cho toàn bộ ứng dụng này cơ sở dữ liệu
+
+68
+00:09:11,500 --> 00:09:18,020
+Chuỗi kết nối được cất giữ trong tập tin thiết lập ứng dụng.json nằm trên gốc của
+
+69
+00:09:18,020 --> 00:09:29,020
+Ứng dụng chúng ta hãy hiểu chuỗi kết nối nên là dLS máy chủ mà
+
+70
+00:09:29,020 --> 00:09:38,220
+là máy địa phương phẩy 1440 gọi lại 1440 là cổng chủ chúng tôi thêm vào lệnh docker chạy
+
+71
+00:09:49,020 --> 00:09:55,620
+Danh mục ban đầu là tên cơ sở dữ liệu mà có thể là bất cứ điều gì bạn chọn tôi đã đặt tên
+
+72
+00:09:55,620 --> 00:10:05,540
+Cơ sở dữ liệu của tôi là bộ phim sử dụng id nên là s trong chữ cái vốn và mật khẩu nên được
+
+73
+00:10:05,540 --> 00:10:20,260
+sử dụng tương tự khi chạy công cụ chứa docker bảo mật máy chủ đã đến lúc chúng tôi chạy các thực thể
+
+74
+00:10:20,260 --> 00:10:34,900
+Name
+
+75
+00:10:34,900 --> 00:10:48,340
+Để chạy là di cư đột ngột theo sau là di cư tôi đặt tên di cư của tôi là di cư
+
+76
+00:10:48,340 --> 00:11:12,980
+Bạn có thể đặt tên cho nó bất cứ điều gì bây giờ di trú được tạo ra với một thư mục di trú trên ứng dụng
+
+77
+00:11:12,980 --> 00:11:19,700
+thư mục di trú chứa các tập tin di trú được dùng để thực hiện việc di cư
+
+78
+00:11:19,700 --> 00:11:30,740
+trong cơ sở dữ liệu kế tiếp, chúng tôi chạy lệnh cập nhật cơ sở dữ liệu gạch lát. Lệnh này áp dụng cho việc giải tán
+
+79
+00:11:30,740 --> 00:11:58,180
+Và vì vậy, các cơ sở dữ liệu được tạo OK làm lại Hãy cập nhật lại cơ sở dữ liệu d
+
+80
+00:12:01,740 --> 00:12:20,420
+Và bạn có thể thấy cơ sở dữ liệu được tạo ra nó có một bảng gọi là bộ phim mở bảng này bởi
+
+81
+00:12:20,420 --> 00:12:28,660
+Ngay bây giờ chúng tôi sẽ thêm vào
+
+82
+00:12:28,660 --> 00:12:36,660
+Phim với ứng dụng chỉ trong chốc lát hãy chạy ứng dụng
+
+83
+00:12:51,860 --> 00:12:58,660
+Đây là ứng dụng chúng ta hãy tạo một bộ phim cho tên thêm lớp cửa sổ
+
+84
+00:13:03,780 --> 00:13:23,780
+và các diễn viên James t từ và màu xám cuốn phim được tạo ra họ cũng là cập nhật và xóa
+
+85
+00:13:23,780 --> 00:13:34,980
+Nút cạnh tên phim hãy tạo ra một bộ phim khác có thể mở rộng ba diễn viên
+
+86
+00:13:34,980 --> 00:13:54,580
+Sylvesster vẫn còn và trên tất cả các điểm trong agar tôi nghĩ rằng chính tả là một sai lầm Vì vậy, hãy cập nhật
+
+87
+00:13:54,580 --> 00:14:15,700
+và bạn có thể thấy ngày tháng đã được thực hiện bằng cách nhắp vào nút xoá bộ phim này để xoá bỏ cơ sở dữ liệu
+
+88
+00:14:19,940 --> 00:14:33,540
+Bây giờ làm lại bảng bạn có thể thấy chỉ có một bộ phim vì chúng tôi đã xóa bộ phim thứ hai
+
+89
+00:14:33,540 --> 00:14:40,500
+Và tất cả mọi thứ đang làm việc đúng bây giờ chúng tôi sẽ thêm các container soạn thảo hỗ trợ cho ứng dụng
+
+90
+00:14:42,020 --> 00:14:50,740
+Nhấn vào nút Bỏ chọn tên rồi chọn thêm vào hỗ trợ soạn thảo công cụ ngay bây giờ trên container
+
+91
+00:14:50,740 --> 00:14:58,580
+Comment
+
+92
+00:14:58,580 --> 00:15:07,220
+hỗ trợ được thêm vào ứng dụng với tập tin docker cùng với dự án docker gạch chéo mở
+
+93
+00:15:07,220 --> 00:15:14,980
+Docker gạch gạch gạch gạch ngang tập tin « yml » ở đây bạn sẽ thấy ứng dụng được thêm vào như là một dịch vụ chúng tôi sẽ bây giờ
+
+94
+00:15:14,980 --> 00:15:23,540
+Thêm dịch vụ máy phục vụ MIME vào tập tin docker gạch gạch chéo này.
+
+95
+00:15:23,540 --> 00:15:30,340
+Tất cả các mã cần thiết ở đây nhưng đừng lo lắng tất cả các mã này sẽ có thể tải về
+
+96
+00:15:30,340 --> 00:15:43,380
+Từ bản thân bài giảng vì vậy điều này là giải mã chúng tôi đặt tên dịch vụ đường truyền dữ liệu của nó có thể là bất cứ điều gì
+
+97
+00:15:43,380 --> 00:15:52,980
+Đây là máy phục vụ đáp ứng 2025 ảnh môi trường được thêm vào mà cơ bản đặt mật khẩu MIME
+
+98
+00:15:52,980 --> 00:16:01,300
+là mật khẩu mạnh và ngoại trừ chính sách la-la, các cổng khác với cái chúng ta đã sử dụng trước đó
+
+99
+00:16:01,300 --> 00:16:07,220
+Tôi đang sử dụng một cổng khác nhau thời gian này kể từ khi này thể hiện của máy chủ MIME sẽ khác nhau
+
+100
+00:16:07,220 --> 00:16:15,460
+từ một trong những chúng tôi sử dụng trước khi máy phục vụ hệ thống này chạy từ một container khác tôi đang sử dụng cổng
+
+101
+00:16:15,460 --> 00:16:24,660
+1450 cho máy chủ và 1433 là cổng container máy chủ mặc định luôn luôn chúng tôi cũng thêm cổng
+
+102
+00:16:24,660 --> 00:16:31,620
+Bản đồ cho ứng dụng mạng chấm tham nhũng để chúng tôi có thể truy cập ứng dụng trên trình duyệt mà không cần các
+
+103
+00:16:31,620 --> 00:16:40,500
+trợ giúp của studio hình ảnh thêm điều này dưới đây mã bất hòa là tương tự mà chúng tôi sử dụng trước đó trong trước đó
+
+104
+00:16:40,500 --> 00:16:48,260
+Ghi chú bài giảng rằng chúng tôi đã sử dụng các cổng chủ 9 1000 hai thời gian này trên thiết lập ứng dụng chấm
+
+105
+00:16:48,260 --> 00:17:00,900
+Tập tin JSON thay đổi dấu phẩy máy cục bộ hay số không thành dữ liệu MIME, đó là tên của dịch vụ máy phục vụ hệ thống thấp
+
+106
+00:17:03,940 --> 00:17:11,140
+Bây giờ chúng tôi chạy lệnh docker soạn thảo để xây dựng và chạy toàn bộ ứng dụng từ thư mục của các
+
+107
+00:17:11,140 --> 00:17:18,420
+docker gạch gạch gạch ngang tập tin « yml » bạn phải chạy hai lệnh đầu tiên là docker gạch ngang
+
+108
+00:17:18,420 --> 00:17:34,900
+Soạn thảo xây dựng này sẽ xây dựng các ảnh Hãy xem màn hình docker đây là ảnh của ứng dụng
+
+109
+00:17:36,100 --> 00:17:50,420
+và máy chủ mặc định bây giờ chạy docker gạch gạch ngang soạn thảo để chạy hai thùng thực hiện
+
+110
+00:17:50,420 --> 00:17:57,700
+Bây giờ trên bàn làm việc docker bạn có thể thấy hai thùng này
+
+111
+00:18:03,860 --> 00:18:13,860
+Bây giờ chúng ta sẽ phải chạy các cuộc di cư vì vậy đầu tiên mở các tập tin thiết lập ứng dụng chấm JSON ở đây thay đổi
+
+112
+00:18:13,860 --> 00:18:29,860
+Nguồn dữ liệu này cho máy cục bộ dấu phẩy 1450 Đây là địa chỉ của máy phục vụ MIME mà chúng tôi có
+
+113
+00:18:30,420 --> 00:18:40,580
+Mới bắt đầu trong một container docker và bây giờ nhấn vào ứng dụng hiện thời docker và chọn
+
+114
+00:18:40,580 --> 00:18:52,260
+đặt như dự án khởi động và trên bàn điều khiển quản lý gói chúng tôi sẽ viết các lệnh cho di trú
+
+115
+00:18:52,980 --> 00:19:05,540
+Vì vậy, đầu tiên xóa trước di trú này thư mục và bây giờ gõ thêm tên di trú dấu gạch gạch lát
+
+116
+00:19:05,540 --> 00:19:14,260
+Tôi đã giữ tên di cư như di cư một trong những bạn có thể thay đổi nó dựa trên sự lựa chọn của bạn
+
+117
+00:19:14,260 --> 00:19:25,140
+là cập nhật cơ sở dữ liệu gạch lát này sẽ áp dụng cho việc di trú được thực hiện.
+
+118
+00:19:25,140 --> 00:19:33,060
+bây giờ chúng tôi thay đổi thiết lập ứng dụng thành những cái trước khi kết nối chuỗi thay đổi dữ liệu MIME
+
+119
+00:19:44,980 --> 00:19:54,900
+thiết lập dự án soạn thảo docker gạch lát là dự án khởi động
+
+120
+00:19:54,900 --> 00:20:05,380
+Máy phục vụ nghiệm và các hộp mạng dotnet đang chạy nên chúng tôi không cần phải làm gì
+
+121
+00:20:05,380 --> 00:20:11,940
+Công cụ nhập dữ liệu
+
+122
+00:20:12,740 --> 00:20:20,580
+Vì vậy, chúng tôi chỉ cần phải mở ứng dụng trên trình duyệt địa chỉ là địa chỉ máy địa phương đại kê 9002
+
+123
+00:20:20,580 --> 00:20:25,220
+Và ở đây ứng dụng đang làm việc từ công cụ docker
+
+124
+00:20:25,220 --> 00:20:34,260
+Chúc mừng bạn đã thành công khi tạo tác vụ soạn thảo docker này để tổ chức một mạng Dotnet
+
+125
+00:20:34,980 --> 00:20:45,780
+Ứng dụng dựa trên DB từ hộp docker
+
