@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:08,560
+ We've seen Cloud Core perform really well on data analysis but what about creative use cases, content creation.
+
+2
+00:00:08,560 --> 00:00:12,400
+ That's what we're going to cover in this video.
+
+3
+00:00:12,400 --> 00:00:19,200
+ I have my article pipeline and I am using notion as my writing software.
+
+4
+00:00:19,200 --> 00:00:29,880
+ Now this notion software needs to be talking to Cloud Core to be able to write articles, content and everything.
+
+5
+00:00:29,880 --> 00:00:44,120
+ Within my notion application, in order to provide Cloud the access to notion, I'm going to use something called as model context protocol, MCP.
+
+6
+00:00:44,120 --> 00:00:49,640
+ Now what is MCP? MCP stands for model context protocol.
+
+7
+00:00:49,640 --> 00:01:08,600
+ It is an open standardized way for AI applications like chatty bitty, cloud, AI, cloud code to establish a secure connection and communicate with external data sources, tools, applications, services.
+
+8
+00:01:08,600 --> 00:01:19,280
+ In our case, we want to talk to an external application which is called notion and this MCP works in two ways.
+
+9
+00:01:19,280 --> 00:01:32,480
+ You can set up MCP servers by locally running code which is a little technical or we can use tools like Zapier that provide these MCP servers.
+
+10
+00:01:32,480 --> 00:01:44,560
+ We can very quickly set up our MCP server, they allow us to integrate a lot of tools like Gmail, Google calendars, tribe, you name it.
+
+11
+00:01:44,560 --> 00:01:52,000
+ And they also provide an MCP server for notion and that's what we're going to use in this lesson.
+
+12
+00:01:52,000 --> 00:02:06,640
+ I'm going to be using Zapier MCP for this exact purpose, you can go to MCP dot Zapier dot com and here I'm just creating a remote notion MCP server.
+
+13
+00:02:06,640 --> 00:02:19,360
+ I'll provide it the access to my notion, give it access to my databases, my pages so that it can fetch all the items, right articles within my database and then come out.
+
+14
+00:02:19,360 --> 00:02:30,320
+ To create a new MCP server, you can just click on plus new MCP server, you can select a client, in this case, our client is cloud code, you can give it any name and done.
+
+15
+00:02:30,320 --> 00:02:47,920
+ You would have your cloud code MCP server live in the left panel, great. After that, you'd have to add tools, you will search for notion, click on notion, you will select all the tools, once you select all the tools, you'll click on add tools.
+
+16
+00:02:47,920 --> 00:03:00,400
+ Now, notion is going to ask you to give it access to the right pages, right your entire notion database and you can further select what all pages, what all databases you want to give it access to.
+
+17
+00:03:00,400 --> 00:03:11,520
+ In my case, I have given an access to a team space, which is called agent device and this database, which is article pipeline, so you have the control here.
+
+18
+00:03:11,520 --> 00:03:30,720
+ Once you add tools, notion with 24 tools access to all the pages databases that you have provided, it will be able to fetch the article titles that I have within my to do section and it will be able to write the articles as well.
+
+19
+00:03:30,720 --> 00:04:00,320
+ Once you go to connect, Zapier is going to give you the copy command, once you have copied, you'll come to your terminal and you'll paste that command, cloud MCP add Zapier, I already have run this command, so this is going to give me MCP server Zapier already exist, in order to check what all MCP servers you have added, you can simply do cloud MCP list.
+
+20
+00:04:00,320 --> 00:04:08,080
+ Hit enter, it's going to check what all MCP servers are already installed, I already have the Zapier.
+
+21
+00:04:08,080 --> 00:04:16,480
+ Now Zapier is going to provide access to notion to cloud code, so that they can talk.
+
+22
+00:04:16,480 --> 00:04:26,240
+ Now another thing is, whenever I'm writing an article, I would have to write a detailed prompt of what I want to do and there would be a longer process.
+
+23
+00:04:26,240 --> 00:04:31,680
+ I would have to conduct some research, find facts and then write my article.
+
+24
+00:04:31,680 --> 00:04:43,120
+ For that, in order to do this, for every single topic, it would become very cumbersome, very time consuming, cloud code provides something called as custom commands.
+
+25
+00:04:43,120 --> 00:05:00,640
+ I can just write slash, and then the command, here, there we are not in cloud, so I'll just open up cloud quickly to show you some pre-built custom pics, these are called slash commands.
+
+26
+00:05:00,640 --> 00:05:13,920
+ So, these are all the commands that cloud code provides, we have add directory agents, clear, compact, these are like a bunch of commands that you can use.
+
+27
+00:05:13,920 --> 00:05:22,560
+ Further, you can create your own commands, these are basically prompts that you can access with just two words.
+
+28
+00:05:22,560 --> 00:05:30,240
+ In order to create your own commands, we're going to go into Visual Studio Code, the IDE.
+
+29
+00:05:30,240 --> 00:05:37,520
+ In order to get Visual Studio Code, just go to their website, this is a code editor.
+
+30
+00:05:37,520 --> 00:05:44,560
+ You'll download it for Windows or Mac OS, depending upon which operating system you're using.
+
+31
+00:05:44,560 --> 00:05:53,840
+ Open up Visual Studio Code, and from here, you're going to open, click on open, and you're going to open the root folder.
+
+32
+00:05:53,840 --> 00:06:14,720
+ For me, Hershoth is the root directory, and cloud code is also installed within this directory. I'll open up, and you can see I have dot-plot, these are all, so directories which are prefixed with dot, these are all the hidden files, and then I have the files over here.
+
+33
+00:06:14,720 --> 00:06:25,440
+ So, open up dot-plot, this is where all of the configuration files for cloud code are stored. Within dot-plot, I'm going to create a new folder first.
+
+34
+00:06:25,440 --> 00:06:36,720
+ So, right click, new folder, I will call it commands, hit enter, within commands, I'm going to create a new file.
+
+35
+00:06:36,720 --> 00:06:55,600
+ And this file, I'm going to call, this is the name of my command. Right article dot-md, so every custom command that you are going to create is going to be a markdown formatted file, which has this extension dot-md.
+
+36
+00:06:55,600 --> 00:07:13,760
+ If you want to create more commands, you can continue to add files. So, let's say if you want a command for YouTube script dot-md. So, this is another command that you have created. And within this file, you can see I have YouTube script, right article.
+
+37
+00:07:13,760 --> 00:07:24,880
+ Here you are going to add your prompt. Now, in my case, the prompt is something like this, for right article.
+
+38
+00:07:24,880 --> 00:07:37,760
+ I provide the entire context. So, you are an expert researcher and clear communicator. Your task is to automatically research and write articles. So, step zero, fresh articles from notion.
+
+39
+00:07:37,760 --> 00:07:54,160
+ So, it's good to fetch all the articles that are currently not completed. This has got this not started status. Access it in the to-do pipeline status is going to be not started.
+
+40
+00:07:54,160 --> 00:08:19,360
+ That's it. And this is going to like write conductor web research, then produce a concise structure and then it is going to write the article. Finally, I'll say, once the article is written, update notion status to done. That's it. I'll just save this file.
+
+41
+00:08:19,360 --> 00:08:28,560
+ And now, when I go, I'll just restart plot code. So, control C and then plot again.
+
+42
+00:08:28,560 --> 00:08:41,520
+ And now, if I'll write slash, you can see write article. This command is our own custom command. So,
+
+43
+00:08:41,520 --> 00:09:11,120
+ if I hit write article. So, write article is running now. Write article is going to fetch all of these to-do articles for us. So, you can see Zapier notion. It has already started talking to notion via Zapier MCP server. So, now you can see it has fetched all of these. So, it's running simultaneously. It is fetching content from these three block posts.
+
+44
+00:09:11,120 --> 00:09:40,960
+ As doing the research for plot code hacks, this is the first one. We've got the structure, as you can see, it is now writing the full articles for plot code hacks. It's going to write it first here and then it is going to transfer everything into notion. So, now, it is trying to write this into notion. There we go. So, you have plot code hacks. And if you see, we've got the status done.
+
+45
+00:09:41,120 --> 00:09:50,000
+ Now, it's going to replicate the same process for the other two articles. Great. So, plot code, if you have,
+
+46
+00:09:50,000 --> 00:09:58,880
+ let's say, 10 articles in your to-do, you can just run this command and plot code would run for a few minutes,
+
+47
+00:09:58,880 --> 00:10:07,280
+ maybe half an hour or so, and we'll get all your 10, 15, 20 articles ready to go. That's how powerful this thing is.
+
