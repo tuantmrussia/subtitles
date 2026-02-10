@@ -1,0 +1,212 @@
+1
+00:00:00,080 --> 00:00:04,280
+Now's the time to put your amazing programming skills to the test.
+
+2
+00:00:04,280 --> 00:00:07,310
+And this is your mini challenge.
+
+3
+00:00:07,850 --> 00:00:13,190
+So if you remember from our earlier lesson, we discussed a three step process we could use when developing
+
+4
+00:00:13,190 --> 00:00:19,820
+games, which were firstly setting up the basic structure which is importing our sprites, understanding
+
+5
+00:00:19,820 --> 00:00:23,060
+what the sprite should do and overall how our game should work.
+
+6
+00:00:23,060 --> 00:00:28,490
+Second, developing the gameplay mechanics, which is basically all our code that gives our games its
+
+7
+00:00:28,490 --> 00:00:34,130
+functionality, like obstacle cars moving down the road or our player car moving left or right.
+
+8
+00:00:34,130 --> 00:00:36,710
+Then thirdly, polishing the game.
+
+9
+00:00:36,710 --> 00:00:39,410
+And this is a step we are pretty much in now.
+
+10
+00:00:39,410 --> 00:00:44,990
+We're at the point where our game is looking great, but we just need to give it that extra touch.
+
+11
+00:00:45,500 --> 00:00:50,480
+And one way we can do that is by adding in music and sound effects.
+
+12
+00:00:50,930 --> 00:00:54,020
+So this is your challenge.
+
+13
+00:00:55,000 --> 00:00:58,720
+I want you to figure out a way to add a sound.
+
+14
+00:00:58,720 --> 00:01:03,550
+When an obstacle car passes our player car at a close distance.
+
+15
+00:01:03,550 --> 00:01:09,760
+So just like if you were on a road and you hear a car speeding by, it would make that sound as it passes
+
+16
+00:01:09,760 --> 00:01:10,210
+by.
+
+17
+00:01:10,570 --> 00:01:13,180
+So I want you to do the same for this game.
+
+18
+00:01:13,720 --> 00:01:21,790
+Two tips I will give you is that the sound you should use is called Car Vroom, and you are going to
+
+19
+00:01:21,790 --> 00:01:24,250
+need to use code within the sensing group.
+
+20
+00:01:24,250 --> 00:01:30,130
+So with that, pause the video and try to see if you can add the sound effect to your game.
+
+21
+00:01:31,980 --> 00:01:33,690
+Okay, well, how did that go?
+
+22
+00:01:33,870 --> 00:01:37,440
+Because it might not be as simple as you first thought.
+
+23
+00:01:38,300 --> 00:01:40,160
+Well, let's do the step.
+
+24
+00:01:40,370 --> 00:01:46,010
+So the first thing we're going to do is select our obstacle course sprite, as this will be the sprite
+
+25
+00:01:46,010 --> 00:01:47,450
+making the sound.
+
+26
+00:01:48,140 --> 00:01:52,940
+Then we're going to click on the sound tab and choose the sound that I mentioned.
+
+27
+00:01:52,940 --> 00:01:53,270
+Car.
+
+28
+00:01:53,270 --> 00:01:53,960
+Vroom.
+
+29
+00:01:55,380 --> 00:01:58,680
+Now with that added to our sprite, we can get to work.
+
+30
+00:01:59,190 --> 00:02:05,490
+So we want this clone to interact with our cast sprite and make it play the sound when it gets close,
+
+31
+00:02:05,490 --> 00:02:12,240
+so we can utilize this forever loop found in our when I start as a clone script.
+
+32
+00:02:13,620 --> 00:02:14,160
+Here.
+
+33
+00:02:14,160 --> 00:02:21,150
+What we need is to check if our clone sprite comes within a certain distance of our car sprite, so
+
+34
+00:02:21,150 --> 00:02:27,690
+we can move over to the sensing tab and grab this block that is called distance two.
+
+35
+00:02:28,200 --> 00:02:33,120
+Here we can change the input from the mouse pointer to our player car.
+
+36
+00:02:33,800 --> 00:02:37,040
+And then what we need is less than operators.
+
+37
+00:02:37,040 --> 00:02:38,960
+So we can grab one of these.
+
+38
+00:02:39,480 --> 00:02:48,660
+And just like you see the code here, when our Y is less than -210, our clone deletes itself.
+
+39
+00:02:48,660 --> 00:02:54,810
+So instead of that, we can check if the distance of our player car is less than 90, and if it is,
+
+40
+00:02:54,810 --> 00:02:56,430
+we can have it play the sound.
+
+41
+00:02:56,930 --> 00:03:05,330
+So all we need to do is grab an if conditional and then this start sound code, then stick it all together.
+
+42
+00:03:05,750 --> 00:03:09,590
+And finally drag this whole block inside our forever loop.
+
+43
+00:03:10,580 --> 00:03:12,740
+Now hitting play, as you can see.
+
+44
+00:03:13,280 --> 00:03:15,890
+When we pass by, I call real close.
+
+45
+00:03:15,980 --> 00:03:17,540
+It now makes a sound.
+
+46
+00:03:17,660 --> 00:03:22,070
+And yes, you'll notice that it kind of sounds like it's glitching out a bit.
+
+47
+00:03:22,070 --> 00:03:28,070
+And this is basically because our code keeps playing the sound continuously until our car is out of
+
+48
+00:03:28,070 --> 00:03:28,520
+reach.
+
+49
+00:03:28,550 --> 00:03:33,590
+But don't worry about that right now, as when we add in our background music, soon it'll all come
+
+50
+00:03:33,590 --> 00:03:34,190
+together.
+
+51
+00:03:34,310 --> 00:03:35,690
+Well that's it.
+
+52
+00:03:35,990 --> 00:03:41,660
+With that, our obstacle car has a cool sound effect, so give it a try if you didn't manage it.
+
+53
+00:03:41,660 --> 00:03:47,330
+Because in the next lesson, we're going to add some final touches that will complete our game.
+
