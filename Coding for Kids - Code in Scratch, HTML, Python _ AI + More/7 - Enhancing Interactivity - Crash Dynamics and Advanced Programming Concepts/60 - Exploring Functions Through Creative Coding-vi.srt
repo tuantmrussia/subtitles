@@ -1,0 +1,476 @@
+1
+00:00:00,290 --> 00:00:04,070
+Vì vậy, chúng ta đã nói rất nhiều về chức năng và đã thấy một vài ví dụ.
+
+2
+00:00:04,580 --> 00:00:07,790
+Nhưng như các bạn đã biết, việc học thực sự xảy ra khi làm.
+
+3
+00:00:07,970 --> 00:00:11,390
+Vì vậy, trong bài học này chúng tôi sẽ tạo ra một số chức năng của riêng chúng tôi.
+
+4
+00:00:11,540 --> 00:00:16,040
+Để làm được điều này, chúng tôi sẽ quay trở lại những điều cơ bản bằng cách tạo ra một dự án mới.
+
+5
+00:00:16,490 --> 00:00:19,130
+Tôi không nghĩ tôi phải giải thích cho cô cách làm việc đó.
+
+6
+00:00:19,970 --> 00:00:25,430
+Vì vậy, với dự án mới của chúng tôi được tạo ra, như các bạn có thể thấy, chúng tôi đã chuẩn bị sẵn sàng cho hành động.
+
+7
+00:00:25,550 --> 00:00:32,840
+Bây giờ cho dự án này chúng tôi sẽ làm một cái gì đó một chút khác biệt và không chỉ với chức năng.
+
+8
+00:00:32,840 --> 00:00:36,290
+Chúng ta sẽ làm cho con mèo của chúng ta vẽ bằng bút.
+
+9
+00:00:36,290 --> 00:00:40,010
+Và tôi biết nó khá là đột phá.
+
+10
+00:00:40,740 --> 00:00:46,260
+Vì vậy, trước khi chúng tôi nhận được vào chức năng, bạn có thể tự hỏi làm thế nào để sử dụng cây bút này mà bạn đang nói đến?
+
+11
+00:00:46,680 --> 00:00:50,730
+Nếu bạn nhìn vào phía dưới, bạn sẽ thấy cái nút nhỏ này.
+
+12
+00:00:51,030 --> 00:00:56,250
+Bây giờ, nếu bạn click vào nó, bạn sẽ thấy nó mang lại một loạt các phần mở rộng khác nhau mà bạn có thể thêm vào
+
+13
+00:00:56,250 --> 00:01:03,360
+Dự án của bạn, như âm nhạc và máy ảnh, vân vân và rất nhiều dự án khác nhau sử dụng phần cứng bên ngoài.
+
+14
+00:01:03,900 --> 00:01:06,990
+Dù sao thì, điều chúng tôi quan tâm là phần mở rộng ngăn kéo này.
+
+15
+00:01:06,990 --> 00:01:08,280
+Vậy ấn vào nó đi.
+
+16
+00:01:08,370 --> 00:01:14,610
+Như bạn có thể thấy nó thêm vào nhóm mã này dự án của chúng tôi và tất cả các mã khóa khác nhau mà
+
+17
+00:01:14,610 --> 00:01:16,110
+là cho cây bút.
+
+18
+00:01:16,740 --> 00:01:19,530
+Bây giờ dự án của chúng tôi sẽ khá đơn giản.
+
+19
+00:01:19,680 --> 00:01:24,810
+Con mèo sẽ hỏi chúng ta phải vẽ bao nhiêu vòng tròn và sau đó vẽ chúng.
+
+20
+00:01:25,260 --> 00:01:30,810
+Vì vậy, để làm điều này, chúng tôi có thể lấy một khi cờ nhấp và sau đó chuyển đến nhóm cảm biến.
+
+21
+00:01:30,810 --> 00:01:33,030
+Đem khu yêu cầu này xuống.
+
+22
+00:01:33,150 --> 00:01:36,810
+Ở đây chúng ta chỉ có thể nói bao nhiêu vòng tròn tôi sẽ vẽ?
+
+23
+00:01:37,990 --> 00:01:42,370
+Vì vậy, nếu chúng tôi click vào trò chơi, con mèo của chúng tôi hỏi nó nên vẽ bao nhiêu vòng tròn.
+
+24
+00:01:42,670 --> 00:01:44,470
+Chúng ta có thể nhập vào một con số.
+
+25
+00:01:44,470 --> 00:01:46,780
+Và tất nhiên, không có gì xảy ra.
+
+26
+00:01:47,550 --> 00:01:52,050
+Vì vậy, bây giờ những gì chúng tôi sẽ làm là tạo ra một chức năng vẽ vòng tròn.
+
+27
+00:01:52,050 --> 00:01:59,730
+Vì vậy, di chuyển xuống khối của tôi ở đây bạn có thể thấy chúng tôi có thể nhấn vào đây để tạo ra một khối mới.
+
+28
+00:02:00,060 --> 00:02:05,010
+Vì vậy, đây là nơi chúng tôi có thể tên của chúng tôi chức năng tôi sẽ chỉ gọi nó một vòng tròn vẽ.
+
+29
+00:02:05,010 --> 00:02:05,430
+Sau đó.
+
+30
+00:02:05,430 --> 00:02:10,560
+Còn nhớ tôi đã nói với bạn rằng một số chức năng có thể có đầu vào trong khi một số không?
+
+31
+00:02:10,590 --> 00:02:16,830
+Vâng, cho chức năng vẽ vòng tròn của chúng tôi chúng tôi có thể chỉ có nó mà chúng tôi gọi nó.
+
+32
+00:02:16,830 --> 00:02:19,770
+Nó chỉ vẽ một vòng tròn duy nhất và thế thôi.
+
+33
+00:02:19,770 --> 00:02:25,020
+Hoặc chúng ta có thể có nó chấp nhận một đầu vào mà chúng ta có thể chọn bao nhiêu vòng tròn chúng ta muốn vẽ.
+
+34
+00:02:25,020 --> 00:02:30,480
+Cũng giống như với ví dụ của đồ chơi làm ra máy, nơi chúng tôi có thể quyết định nếu chúng tôi muốn màu xanh hoặc đỏ hoặc
+
+35
+00:02:30,480 --> 00:02:31,950
+Xe màu gì cũng được.
+
+36
+00:02:31,950 --> 00:02:37,560
+Trong trường hợp này, chúng tôi có thể quyết định cho các hàm để chấp nhận một đầu vào, mà sẽ thay đổi đầu ra mà
+
+37
+00:02:37,560 --> 00:02:38,610
+hàm số tạo ra.
+
+38
+00:02:38,610 --> 00:02:44,400
+Vì vậy, để làm điều này, tất cả những gì chúng tôi cần làm là nhấp vào này, thêm vào một đầu vào như vậy.
+
+39
+00:02:44,700 --> 00:02:48,030
+Và như các bạn có thể thấy ở trên cùng, chúng ta có một đầu vào.
+
+40
+00:02:48,030 --> 00:02:53,490
+Vì vậy, tôi sẽ đổi tên nó thành số vòng tròn và sau đó nhấn OK.
+
+41
+00:02:53,850 --> 00:02:57,690
+Như các bạn thấy, chúng ta có khối này ngay đây.
+
+42
+00:02:57,690 --> 00:03:00,300
+Và đây là nơi chúng tôi định nghĩa chức năng của chúng tôi.
+
+43
+00:03:00,540 --> 00:03:06,750
+Vì vậy, điều này về cơ bản giống như chúng tôi đang xây dựng máy cho nó những gì nó cần để làm khi nó được gọi.
+
+44
+00:03:07,310 --> 00:03:12,290
+Vì vậy, những gì chúng tôi muốn máy tính của chúng tôi, hoặc đúng hơn chức năng của chúng tôi để làm là vẽ vòng tròn.
+
+45
+00:03:12,290 --> 00:03:14,810
+Vì vậy, để vẽ một vòng tròn khá đơn giản.
+
+46
+00:03:14,810 --> 00:03:20,480
+Tất cả những gì cô cần làm là đặt bút xuống, sau đó chuyển động và di chuyển 10 bước.
+
+47
+00:03:20,480 --> 00:03:23,780
+Sau đó rẽ 15 độ và lặp lại điều này.
+
+48
+00:03:24,600 --> 00:03:25,800
+30 lần như thế.
+
+49
+00:03:25,800 --> 00:03:30,960
+Vì vậy, nếu bạn chỉ cần nhấp vào chức năng này bạn sẽ thấy con mèo của chúng tôi vẽ một vòng tròn.
+
+50
+00:03:31,320 --> 00:03:32,640
+Điều đó thật tuyệt.
+
+51
+00:03:32,640 --> 00:03:34,830
+Nhưng làm thế nào để chúng tôi sử dụng này chức năng sau đó.
+
+52
+00:03:35,670 --> 00:03:41,340
+Vâng, ở đây chúng tôi hỏi người dùng bao nhiêu vòng tròn tôi sẽ vẽ để sử dụng chức năng này?
+
+53
+00:03:41,340 --> 00:03:47,790
+Tất cả những gì chúng ta cần làm là nắm lấy khối này vẽ vòng tròn bên dưới mà gọi là chức năng của chúng tôi.
+
+54
+00:03:47,790 --> 00:03:50,820
+Và nếu chúng ta nhấn và nhấn nút này.
+
+55
+00:03:51,150 --> 00:03:53,160
+Như các bạn thấy, con mèo của chúng ta vẽ một vòng tròn.
+
+56
+00:03:53,580 --> 00:03:57,990
+Nhưng tất nhiên là có vấn đề với việc là con mèo của chúng ta chỉ vẽ một vòng tròn.
+
+57
+00:03:57,990 --> 00:04:02,640
+Vì vậy, đây là nơi chúng tôi cần để nói các chức năng bao nhiêu vòng tròn nó phải vẽ.
+
+58
+00:04:02,640 --> 00:04:09,300
+Vì vậy, thay vì rời khỏi chỗ trống này, chúng tôi có thể đi đến nhóm cảm nhận của chúng tôi và nắm lấy khối câu trả lời và sử dụng
+
+59
+00:04:09,300 --> 00:04:10,470
+Nó là một đầu vào.
+
+60
+00:04:10,970 --> 00:04:18,380
+Vì vậy, về cơ bản những gì này đang làm là gọi cho chức năng vẽ vòng tròn của chúng tôi với đầu vào vào từ
+
+61
+00:04:18,380 --> 00:04:19,100
+người dùng.
+
+62
+00:04:20,020 --> 00:04:24,880
+Tuy nhiên, điều này vẫn sẽ không làm bất cứ điều gì bởi vì nếu bạn nhìn vào chức năng của chúng tôi, chúng tôi không bao giờ nói với máy tính
+
+63
+00:04:24,880 --> 00:04:28,540
+phải làm gì với đầu vào nó khi nó được gọi.
+
+64
+00:04:29,170 --> 00:04:34,210
+Vì vậy, những gì chúng tôi cần làm là lấy một khối lặp lại và đặt tất cả những điều này bên trong.
+
+65
+00:04:34,480 --> 00:04:40,270
+Và thay vì nhập vào một giá trị, chúng ta có thể lấy số vòng tròn này và đặt nó vào bên trong.
+
+66
+00:04:41,120 --> 00:04:45,110
+Bây giờ chúng ta hãy nhìn vào các bước văn bản của chúng tôi để chúng tôi có thể hiểu rõ hơn.
+
+67
+00:04:45,980 --> 00:04:48,350
+Arquette hỏi phải vẽ bao nhiêu vòng tròn.
+
+68
+00:04:48,380 --> 00:04:50,210
+Giả sử chúng ta vào vòng tròn năm vòng.
+
+69
+00:04:50,240 --> 00:04:53,990
+Sau đó chúng tôi gọi vòng tròn của chúng tôi chức năng vẽ với số năm là đầu vào.
+
+70
+00:04:54,620 --> 00:04:57,710
+Những gì chức năng này làm là đặt bút xuống.
+
+71
+00:04:57,710 --> 00:05:02,660
+Và sau đó chúng tôi có khối lặp lại này với đầu vào là số vòng tròn.
+
+72
+00:05:02,660 --> 00:05:08,300
+Và kể từ khi chúng tôi đã nhập năm, như đầu vào cho chức năng của chúng tôi sẽ lặp lại tất cả các mã này năm lần
+
+73
+00:05:08,570 --> 00:05:13,070
+Và mã là chuyển động này và quay nó về cơ bản tạo ra vòng tròn.
+
+74
+00:05:13,310 --> 00:05:17,270
+Vì vậy, nhìn thấy điều này trong hành động ở đây, con mèo của chúng tôi hỏi bao nhiêu vòng tròn chúng tôi muốn.
+
+75
+00:05:17,270 --> 00:05:18,710
+Hãy nói ba.
+
+76
+00:05:18,710 --> 00:05:22,250
+Và như bạn có thể thấy con mèo của chúng tôi vẽ ba vòng tròn như thế.
+
+77
+00:05:22,910 --> 00:05:28,520
+Vấn đề duy nhất chúng ta có là chúng ta không thể nhìn thấy tất cả chúng trong cùng một khu vực.
+
+78
+00:05:29,000 --> 00:05:30,650
+Vì vậy, hãy nâng cấp chức năng này một chút.
+
+79
+00:05:31,520 --> 00:05:32,150
+Thirsty.
+
+80
+00:05:32,300 --> 00:05:35,510
+Chúng ta sẽ dựng chốt lên để nó không vẽ ở khắp mọi nơi.
+
+81
+00:05:35,510 --> 00:05:38,420
+Sau đó chúng tôi sẽ cho con mèo của chúng tôi đi đến một vị trí ngẫu nhiên.
+
+82
+00:05:38,690 --> 00:05:41,060
+Sau đó chúng ta có thể bỏ cây bút xuống.
+
+83
+00:05:41,060 --> 00:05:44,390
+Và cuối cùng chúng ta có thể thay đổi màu bút bằng mười.
+
+84
+00:05:45,270 --> 00:05:48,900
+Và nó cũng chỉ xóa tất cả khi chúng ta bắt đầu.
+
+85
+00:05:48,900 --> 00:05:56,220
+Vì vậy, cho điều này một đi Hãy nhập cho và cũng không hoàn toàn đúng tôi đã làm điều tương tự.
+
+86
+00:05:56,340 --> 00:06:00,930
+Và vấn đề của chúng tôi là tất cả các mã này nên được bên trong của chúng tôi lặp lại.
+
+87
+00:06:01,020 --> 00:06:06,000
+Vì vậy, di chuyển nó bên trong như vậy và cho nó một lần nữa.
+
+88
+00:06:06,420 --> 00:06:07,200
+Bao nhiêu vòng tròn.
+
+89
+00:06:07,200 --> 00:06:08,490
+Hãy nói bảy.
+
+90
+00:06:08,730 --> 00:06:15,630
+Và chậm rãi nhưng chắc chắn, như bạn thấy, con mèo của chúng tôi vẽ bảy vòng tròn và nó cũng vẽ mỗi vòng tròn một
+
+91
+00:06:15,630 --> 00:06:16,440
+Màu khác nhau.
+
+92
+00:06:16,960 --> 00:06:22,450
+Bây giờ hãy nhớ làm thế nào tôi nói chức năng là rất hữu ích bởi vì chúng tôi có thể chỉ cần viết các mã một lần và sử dụng nó trên
+
+93
+00:06:22,450 --> 00:06:23,410
+Hết lần này đến lần khác.
+
+94
+00:06:23,710 --> 00:06:29,170
+Vâng, nếu bạn nhìn vào mã này, trong khi chức năng là rất hữu ích vì nó làm cho mã của chúng tôi rất dễ dàng để
+
+95
+00:06:29,170 --> 00:06:34,600
+Hiểu và quản lý, như chúng ta có thể thấy rõ những gì đang xảy ra, chúng ta đang hỏi một câu hỏi và sau đó chúng ta
+
+96
+00:06:34,600 --> 00:06:40,360
+đang vẽ một số vòng tròn nhất định, nhưng chúng tôi không thực sự sử dụng chức năng này để lợi thế
+
+97
+00:06:40,360 --> 00:06:43,120
+bởi vì, chúng tôi chỉ gọi nó một lần.
+
+98
+00:06:43,650 --> 00:06:48,990
+Vì vậy, hãy nói trong chương trình của chúng tôi, chúng tôi muốn con mèo của chúng tôi để vẽ một vòng tròn nếu chúng tôi click vào nó bởi vì chúng tôi đã
+
+99
+00:06:48,990 --> 00:06:51,120
+Chức năng này, cũng đơn giản thôi.
+
+100
+00:06:51,840 --> 00:06:55,230
+Chúng ta có thể lấy cái này khi cái vòi được bấm vào.
+
+101
+00:06:55,590 --> 00:06:59,310
+Sau đó chúng ta có thể chỉ cần nói vẽ vòng tròn và nhập một.
+
+102
+00:06:59,980 --> 00:07:01,270
+Giờ hãy nhấp chuột vào.
+
+103
+00:07:01,270 --> 00:07:02,200
+Bao nhiêu vòng tròn?
+
+104
+00:07:02,200 --> 00:07:03,430
+Hãy nói hai.
+
+105
+00:07:03,970 --> 00:07:04,390
+Được rồi.
+
+106
+00:07:04,390 --> 00:07:05,440
+Sau đó thì xong.
+
+107
+00:07:05,560 --> 00:07:09,280
+Bây giờ nếu chúng ta click vào con mèo, nó sẽ vẽ một vòng tròn.
+
+108
+00:07:09,310 --> 00:07:10,180
+Tuyệt.
+
+109
+00:07:10,330 --> 00:07:12,970
+Và cũng hãy nói rằng chúng tôi muốn làm cho vòng tròn của chúng tôi nhỏ hơn.
+
+110
+00:07:12,970 --> 00:07:18,310
+Vì một số lý do chúng ta có thể đi vào chức năng của chúng tôi, thay đổi chuyển để nói năm bước.
+
+111
+00:07:18,370 --> 00:07:23,020
+Bây giờ click vào trò chơi trong một nó vẽ một vòng tròn nhỏ hơn.
+
+112
+00:07:23,500 --> 00:07:26,830
+Nhưng nếu chúng ta click vào con mèo, nó cũng vẽ vòng tròn nhỏ hơn.
+
+113
+00:07:26,830 --> 00:07:33,010
+Vì vậy, như bạn có thể thấy, sử dụng chức năng này đảm bảo mã của chúng tôi là phù hợp và nó là dễ dàng để quản lý và dễ dàng
+
+114
+00:07:33,010 --> 00:07:33,970
+sử dụng.
+
+115
+00:07:34,000 --> 00:07:36,070
+Đó là sức mạnh của chức năng.
+
+116
+00:07:36,070 --> 00:07:43,150
+Nhưng trước khi tôi kết thúc, nếu bạn muốn có niềm vui với điều này, giữ xuống số ca trong khi bạn nhấp cờ và
+
+117
+00:07:43,150 --> 00:07:46,630
+Bạn sẽ thấy nó đi vào trạng thái tăng tốc.
+
+118
+00:07:46,630 --> 00:07:55,000
+Và sau đó nếu chúng ta nhập vào một giá trị điên rồ như 100.000, con mèo của chúng ta sẽ trở nên hoàn toàn điên rồ khi vẽ vòng tròn.
+
+119
+00:07:55,000 --> 00:07:58,240
+Vì vậy, hãy có một số nghệ thuật thú vị với điều đó.
+
