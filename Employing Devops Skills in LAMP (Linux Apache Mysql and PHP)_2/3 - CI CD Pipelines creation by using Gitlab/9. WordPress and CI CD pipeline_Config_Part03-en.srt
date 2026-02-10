@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:21,160
+ Okay, so now let's do the last test on section 4, which is creating CI and CI and CD pipeline.
+
+2
+00:00:21,160 --> 00:00:32,240
+ Okay, for continuous integration, continuous development, type, line using the getLab CR, okay.
+
+3
+00:00:32,240 --> 00:00:43,840
+ The idea here that we want to prove a code from a repository, of course, that we repository that we have here, by using the get tool.
+
+4
+00:00:43,840 --> 00:00:54,440
+ I just want to use, for example, that is CI tool, like Jenkins, but for this tutorial, we use getLab, okay.
+
+5
+00:00:54,440 --> 00:01:04,640
+ Just to pull the code from repositories, okay, and download the WordPress to the new directory of installation.
+
+6
+00:01:04,640 --> 00:01:16,800
+ So, this is a pipeline to automate the two stages that we have for the lifecycle of any code, which is the deploy and build.
+
+7
+00:01:16,800 --> 00:01:18,800
+ It will go from top down.
+
+8
+00:01:18,800 --> 00:01:24,960
+ So, let's do this implementation together.
+
+9
+00:01:24,960 --> 00:01:32,040
+ So, of course here you need to make sure that you have a getLab accounts, okay.
+
+10
+00:01:32,040 --> 00:01:35,600
+ I have an account, and I will log in to it.
+
+11
+00:02:02,040 --> 00:02:19,760
+ Okay, I am on getlab.com, I will log in.
+
+12
+00:02:19,760 --> 00:02:31,080
+ This is my user, m_more, 87, and I have the password, I will sign in.
+
+13
+00:02:31,080 --> 00:02:47,160
+ Okay, and I have created a project, okay, which is called, this is a group for the project, m_more, 87, dash group, and this is the name of the project.
+
+14
+00:02:47,160 --> 00:02:53,720
+ It is the same username, but for the group, dash group, for the project, dash project.
+
+15
+00:02:53,720 --> 00:03:13,760
+ So, if I want here to see my link, for example, okay, this is the existing repository for me, okay.
+
+16
+00:03:13,760 --> 00:03:21,360
+ So, this is my URL for it, that I will use.
+
+17
+00:03:21,360 --> 00:03:29,880
+ So, first let's copy or clone, I have already created a new project, it's very simple.
+
+18
+00:03:29,880 --> 00:03:38,320
+ When you have an account on getlab, you can create a new project, and I give it the name of m_more, dash project.
+
+19
+00:03:38,320 --> 00:03:41,320
+ You can give it any name that you wish, okay.
+
+20
+00:03:41,320 --> 00:04:00,440
+ And set is a bit to be public, and create it, okay. Now let's copy or clone this repository to the links, how I can copy this repository by using the get comment that I have, okay.
+
+21
+00:04:00,440 --> 00:04:30,280
+ Here is a get comment that we have used before. So, here I will type, this is my link, I will type CD, clone, okay, I will clone it, and after I clone it, I want to make sure that all of the project directory, it will make directory called m_more, I want to change directory.
+
+22
+00:04:30,280 --> 00:04:37,640
+ Automatically, so that I can view what is created inside that directory.
+
+23
+00:04:37,640 --> 00:05:07,480
+ So, let's do this, I need to type username, and of course password, okay, I need to make sure that
+
+24
+00:05:07,480 --> 00:05:19,880
+ I type username password correctly, then I will come back to you because there is a problem with authentication.
+
+25
+00:05:19,880 --> 00:05:49,640
+ Okay, I need to type the comment again, okay, the problem here, that I type
+
+26
+00:05:49,640 --> 00:06:19,480
+ it wrong, it's m_ no more, 87, that's the username most not right, okay, so now I have switched it automatically to this project, this is the repository, I have copied the repository,
+
+27
+00:06:19,480 --> 00:06:33,720
+ from the getlab to my device, okay, if I can type this -LA, I can view that here it contains the dot,
+
+28
+00:06:33,720 --> 00:06:43,480
+ it's hidden file and ready, because it is empty new projects, this is the hidden file inside it, okay.
+
+29
+00:06:43,480 --> 00:07:00,480
+ So, I have copy the repository, this is the first thing to do, now if we can use folder structure in any repository, okay, I need to set the scripts,
+
+30
+00:07:00,480 --> 00:07:14,480
+ define this is the scripts containing the deployment, okay, and this is the ML file which contains instructions for the two stages of the deploy and build.
+
+31
+00:07:14,480 --> 00:07:27,480
+ Okay, so I need first to make sure to set the environment to prepare it to download all the words press bytes, and then later if these succeeds, I will enter the build.
+
+32
+00:07:27,480 --> 00:07:32,480
+ And when I enter the build, I need to execute the scripts here.
+
+33
+00:07:32,480 --> 00:07:46,480
+ And of course, this is the word press file, which is wp-content directory, that will after I click on the automation scripts executed,
+
+34
+00:07:46,480 --> 00:07:56,480
+ it will modify this word press content, so the first thing here, I need to create the folder structure for my file, that's why I copied it,
+
+35
+00:07:56,480 --> 00:08:00,480
+ so that I can manage it from my Alma Linux server.
+
+36
+00:08:00,480 --> 00:08:15,480
+ So, the first thing here, I need to create the directories, okay, including the files, this is the ML file and this is the SH, this is our two directories and this is our two file,
+
+37
+00:08:15,480 --> 00:08:30,480
+ file of getlab-ci and the scripts, so let's do it.
+
+38
+00:08:30,480 --> 00:08:42,480
+ Okay, here we have directories and file, okay, and if I go through
+
+39
+00:08:42,480 --> 00:08:52,480
+ scripts, I should see the scripts in, or this is the configuration in this.
+
+40
+00:08:52,480 --> 00:09:09,480
+ Okay, also if I go to scripts, sorry, if I go to scripts,
+
+41
+00:09:09,480 --> 00:09:14,480
+ I can see the deploy-to SH that I have also created.
+
+42
+00:09:14,480 --> 00:09:25,480
+ Okay, cool, sorry, I closed it by mistake.
+
+43
+00:09:25,480 --> 00:09:40,480
+ So, let's enter directory again.
+
+44
+00:09:40,480 --> 00:09:48,480
+ Okay, so let's proceed with our next step.
+
+45
+00:09:48,480 --> 00:09:56,480
+ Do two things here, we create the deploy-script, okay, this is the last phase or the first phase,
+
+46
+00:09:56,480 --> 00:10:05,480
+ and then we create the ML files, the ML files include everything, the deployment and the build.
+
+47
+00:10:05,480 --> 00:10:34,480
+ Okay, so first let's start with the deploy-script, okay, let's edit the deploy-to SH.
+
+48
+00:10:34,480 --> 00:10:39,480
+ So, here let's prepare that file.
+
+49
+00:10:39,480 --> 00:10:47,480
+ It is a bash file, okay, so we set first as I have told you, it will go from top down,
+
+50
+00:10:47,480 --> 00:10:52,480
+ so for the deployment first, before I build, I need to set the variables.
+
+51
+00:10:52,480 --> 00:11:00,480
+ This is the service that I will use, sorry, it is user, no more, and it is a SQL server,
+
+52
+00:11:00,480 --> 00:11:08,480
+ or database server also here, so we will use this server, and because it is the web and back end,
+
+53
+00:11:08,480 --> 00:11:19,480
+ or a SQL server, and the deployment directory is set to home and the mobile and the build directory here is called build.
+
+54
+00:11:19,480 --> 00:11:24,480
+ This is a directory that I will switch on to it after the deployment finishes.
+
+55
+00:11:24,480 --> 00:11:38,480
+ Okay, and after that it should echo the deployment to the server, and I will should start to deploy all copy all of the files to the server.
+
+56
+00:11:38,480 --> 00:11:44,480
+ So the first step is setting the variables and copy the file to the server,
+
+57
+00:11:44,480 --> 00:11:50,480
+ and of course it will make sure that all the data files would also be deleted from the directory.
+
+58
+00:11:50,480 --> 00:11:57,480
+ It will synchronize or copy only the files that are not deleted or exist on the directory.
+
+59
+00:11:57,480 --> 00:12:06,480
+ And also it will do fix the permission so that as we have done before,
+
+60
+00:12:06,480 --> 00:12:17,480
+ we need to check the permission for inside the container itself so that it can write for the WordPress on the WordPress file,
+
+61
+00:12:17,480 --> 00:12:24,480
+ and after that it will start Docker content, and the deployment is completed.
+
+62
+00:12:24,480 --> 00:12:31,480
+ Okay, this is an automation script, so let's copy all of this.
+
+63
+00:12:31,480 --> 00:12:53,480
+ Okay, and save.
+
+64
+00:12:53,480 --> 00:12:56,480
+ Okay, cool.
+
+65
+00:12:56,480 --> 00:13:06,480
+ Now we just make it executable by typing change modification plus X scripts just to make these scripts executable.
+
+66
+00:13:06,480 --> 00:13:21,480
+ All runable.
+
+67
+00:13:21,480 --> 00:13:32,480
+ Okay, we need to set these comments from outside, because it invokes scripts deploy.
+
+68
+00:13:32,480 --> 00:13:35,480
+ Scripts deploy.sh.
+
+69
+00:13:35,480 --> 00:13:42,480
+ Okay, now we move to the next steps, step five.
+
+70
+00:13:42,480 --> 00:13:44,480
+ Let's create now the GitLab.
+
+71
+00:13:44,480 --> 00:13:50,480
+ This is GitLab or CI pipeline containing the YAML configuration.
+
+72
+00:13:50,480 --> 00:14:00,480
+ So here let's open by our beautiful nano tools.
+
+73
+00:14:00,480 --> 00:14:09,480
+ Let's open this file.
+
+74
+00:14:09,480 --> 00:14:21,480
+ And here it is a little bit lengthy because it contains actually two stages, as I have told you, sorry, it contains first the build,
+
+75
+00:14:21,480 --> 00:14:28,480
+ then the deploy is the last thing to do, and the build is the first thing to adjust the diversity.
+
+76
+00:14:28,480 --> 00:14:32,480
+ So, the stage is here is to build, to build, then deploy.
+
