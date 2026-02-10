@@ -1,0 +1,236 @@
+1
+00:00:00,350 --> 00:00:06,260
+Well, now that we have the basic game mechanics working for both of the sprites, it's time to make
+
+2
+00:00:06,260 --> 00:00:11,150
+it all work together by checking if the ball is touching the player's head and then bouncing back if
+
+3
+00:00:11,150 --> 00:00:11,660
+it does.
+
+4
+00:00:12,230 --> 00:00:19,040
+But before I go ahead and sort out this, there are two things I want to fix with the player.
+
+5
+00:00:19,640 --> 00:00:26,150
+The first is getting the player to appear further down so that we have more space, and the second is
+
+6
+00:00:26,150 --> 00:00:28,760
+switching to a more appropriate costume.
+
+7
+00:00:28,940 --> 00:00:31,190
+I bet you can figure out how to do both of these.
+
+8
+00:00:31,220 --> 00:00:35,150
+Come on, let's pause the video and figure it out.
+
+9
+00:00:36,540 --> 00:00:41,460
+The first thing is to click on our player sprite so we can get it to appear lower down.
+
+10
+00:00:41,490 --> 00:00:48,030
+Now I could just drag it like this, but this isn't ideal because if I move it again by accident, the
+
+11
+00:00:48,030 --> 00:00:50,010
+whole thing won't work properly.
+
+12
+00:00:50,460 --> 00:00:58,470
+So instead what I'll do is bring in this go to block and change the X to zero, and let's make the Y
+
+13
+00:00:58,470 --> 00:01:00,000
+- 90.
+
+14
+00:01:01,320 --> 00:01:02,640
+That actually looks perfect.
+
+15
+00:01:02,640 --> 00:01:04,920
+So let's add this to the start of our script.
+
+16
+00:01:04,920 --> 00:01:08,640
+So now every time our script will start in the correct position.
+
+17
+00:01:09,120 --> 00:01:15,240
+Then lastly, to get our character looking correct in this game, we can go into the costumes and change
+
+18
+00:01:15,240 --> 00:01:19,860
+it to this one Ben see which works much better.
+
+19
+00:01:21,030 --> 00:01:25,380
+Now we need to get the ball to respond to our main character.
+
+20
+00:01:25,650 --> 00:01:27,480
+So click on the ball sprite.
+
+21
+00:01:28,240 --> 00:01:29,800
+Now let's think about it.
+
+22
+00:01:29,890 --> 00:01:35,020
+Basically, what we want to happen is to have the ball bounce off the player's head.
+
+23
+00:01:35,620 --> 00:01:42,100
+What specific instructions or code do we need to write in order to achieve this?
+
+24
+00:01:42,610 --> 00:01:49,540
+Well, this problem also has to do with sensing as we are sensing if the ball is touching our player.
+
+25
+00:01:49,960 --> 00:01:55,480
+So we know we are going to have our basic code blocks for this which are listed.
+
+26
+00:01:55,480 --> 00:02:02,050
+Before I remind you, the basic code blocks the when start the forever and the if.
+
+27
+00:02:03,990 --> 00:02:07,950
+And just like our dragonfly, we're going to need this touching code.
+
+28
+00:02:08,160 --> 00:02:10,440
+And here we can change it to sense if it's touching.
+
+29
+00:02:10,440 --> 00:02:11,160
+Ben.
+
+30
+00:02:12,340 --> 00:02:13,210
+Okay, cool.
+
+31
+00:02:13,390 --> 00:02:16,000
+So we now know if the ball is touching Ben.
+
+32
+00:02:16,960 --> 00:02:21,790
+Now what can we do to get it to bounce if it touches Ben?
+
+33
+00:02:22,730 --> 00:02:27,920
+You'll notice that there is unfortunately no bounce if touching the main character block, which would
+
+34
+00:02:27,920 --> 00:02:28,730
+be really cool.
+
+35
+00:02:28,730 --> 00:02:34,100
+But remember, with code there is never going to be a single block that does this.
+
+36
+00:02:34,100 --> 00:02:38,780
+It's all about combining code and building scripts to achieve this.
+
+37
+00:02:38,780 --> 00:02:42,560
+And this is really the great thing which you'll see in future lessons.
+
+38
+00:02:42,560 --> 00:02:48,320
+This is programming, and what you can do is you can save these scripts and use them in different programs.
+
+39
+00:02:48,590 --> 00:02:52,910
+So maybe in a different program, we need a script that bounces off another sprite.
+
+40
+00:02:53,150 --> 00:02:56,810
+And once we create the script, we can reuse it forever.
+
+41
+00:02:56,810 --> 00:02:59,300
+And this is an important concept in coding.
+
+42
+00:02:59,300 --> 00:03:02,540
+It's called reusable code and it saves a lot of time.
+
+43
+00:03:04,230 --> 00:03:05,640
+But getting back on topic.
+
+44
+00:03:05,820 --> 00:03:08,490
+Let's move to the motions group.
+
+45
+00:03:08,970 --> 00:03:13,110
+Now remember how we are using this move code block.
+
+46
+00:03:13,110 --> 00:03:18,600
+And what is special about this is how the direction the ball moves is dependent on the direction it's
+
+47
+00:03:18,600 --> 00:03:19,380
+facing.
+
+48
+00:03:19,620 --> 00:03:24,960
+So simply to get our ball to bounce up, all we need to do is face it in an upwards direction.
+
+49
+00:03:25,560 --> 00:03:30,210
+And to do this, all we need to do is bring in this point in the direction block.
+
+50
+00:03:31,100 --> 00:03:35,600
+But right now you can see it is trying to point 90 degrees, which is to the right.
+
+51
+00:03:36,070 --> 00:03:40,690
+But if we click on this note, what brings up this little arrow thing?
+
+52
+00:03:40,690 --> 00:03:40,990
+Not going?
+
+53
+00:03:41,430 --> 00:03:47,400
+So for our code, we want the ball to go up so we can face the arrow up, which is zero degrees.
+
+54
+00:03:48,020 --> 00:03:52,940
+Now, if we play our code, you'll see that when we touch the ball, it bounces up.
+
+55
+00:03:52,940 --> 00:03:53,930
+Perfect.
+
+56
+00:03:55,050 --> 00:04:00,930
+Although as you can see, it's kind of just goes up and down and up and down, which is making it a
+
+57
+00:04:00,930 --> 00:04:02,430
+very easy game.
+
+58
+00:04:02,430 --> 00:04:08,520
+But in the next lesson, we'll see how we can make this game a bit more challenging and a lot more fun
+
+59
+00:04:08,520 --> 00:04:10,230
+with randomness.
+
