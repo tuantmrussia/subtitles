@@ -1,0 +1,448 @@
+1
+00:00:00,000 --> 00:00:08,000
+ In days lecture we will understand Docker volumes and how to use them in Dockerize.net apps.
+
+2
+00:00:08,000 --> 00:00:12,800
+ Volumes are persistent data stores for containers.
+
+3
+00:00:12,800 --> 00:00:20,640
+ Here you can keep your data so that it remains safe even if the container crashes.
+
+4
+00:00:20,640 --> 00:00:27,520
+ Volumes are stored within the directory of the Docker host which is our PC
+
+5
+00:00:28,240 --> 00:00:36,560
+ and so when we mount a volume into a container this directory is what's mounted into the container.
+
+6
+00:00:36,560 --> 00:00:44,080
+ The picture explains Docker volumes. Here is the container which is referencing a Docker volume.
+
+7
+00:00:44,080 --> 00:00:51,840
+ This volume contains important files for the apps and is stored outside the container on the
+
+8
+00:00:52,480 --> 00:01:00,480
+ local PC where Docker desktop is installed. So this means the app files are safe even if the container
+
+9
+00:01:00,480 --> 00:01:08,720
+ crashes. Let us understand the concept of Docker volume but the help of an ASP.net core website.
+
+10
+00:01:08,720 --> 00:01:12,960
+ This is my website and let me run it.
+
+11
+00:01:22,480 --> 00:01:39,120
+ The purpose of this website is to collect people's name and email addresses who visits this website.
+
+12
+00:01:39,120 --> 00:01:46,320
+ People are shown a very attractive message saying you are the lucky chosen one for an iPhone
+
+13
+00:01:46,320 --> 00:01:54,560
+ gift. Submit your name and email to get iPhone delivered to you. Think about you visit this website
+
+14
+00:01:54,560 --> 00:02:02,320
+ and submit your details then your details are safe on the website. The safe details are seen
+
+15
+00:02:02,320 --> 00:02:08,320
+ at the user page. Let me submit a couple more entries on this website.
+
+16
+00:02:08,320 --> 00:02:12,560
+ You can see every details are safe.
+
+17
+00:02:16,320 --> 00:02:18,320
+ [no audio]
+
+18
+00:02:46,320 --> 00:02:48,320
+ [no audio]
+
+19
+00:03:17,120 --> 00:03:19,120
+ [no audio]
+
+20
+00:03:19,120 --> 00:03:27,040
+ Let us understand a little bit about the coding part. The index action inside the home
+
+21
+00:03:27,040 --> 00:03:36,240
+ controller saves the user details in a text file. Here directly called emails is created
+
+22
+00:03:36,240 --> 00:03:47,040
+ then a text file called user data.txt is created inside the emails folder and we save the username
+
+23
+00:03:47,040 --> 00:03:56,080
+ and emails of the persons per line in comma separated manner. These details of users are saved
+
+24
+00:03:56,080 --> 00:04:06,880
+ in a text file inside emails folder. The file name is userdata.txt. You can see the text file
+
+25
+00:04:06,880 --> 00:04:15,520
+ saved data here. Each user data is saved per line in comma separated manner. The index view file
+
+26
+00:04:15,520 --> 00:04:23,280
+ contains the form where user can submit his or her details. You can see the code here.
+
+27
+00:04:26,960 --> 00:04:28,960
+ [no audio]
+
+28
+00:04:28,960 --> 00:04:35,520
+ Moving to the user action method in the home controller which reads the user data from
+
+29
+00:04:35,520 --> 00:04:44,160
+ the text file and shows them in HTML table format. This is the code doing this task. The user view
+
+30
+00:04:44,160 --> 00:04:51,200
+ code contains an HTML form where we show all the submitted data of the users. Now we will
+
+31
+00:04:51,200 --> 00:05:00,240
+ dockerize this ASP.NET Core website. First we delete the emails folder since all user entries
+
+32
+00:05:00,240 --> 00:05:07,440
+ will be created again. Next we add Docker support to this website by right-clicking the project
+
+33
+00:05:07,440 --> 00:05:16,720
+ name and selecting add, then select Docker support option. In the container scaffolding window,
+
+34
+00:05:16,720 --> 00:05:25,360
+ keep all the default details and click the OK button. Now open websites folder in file explorer.
+
+35
+00:05:25,360 --> 00:05:39,920
+ We can now close Visual Studio and then open docker desktop where you can see Visual Studio has
+
+36
+00:05:39,920 --> 00:05:48,800
+ created the websites image by the name of lucky winner. Delete this image since we will build a
+
+37
+00:05:48,800 --> 00:05:58,960
+ new image through docker commands. So this is the websites folder and here is the docker file.
+
+38
+00:05:59,680 --> 00:06:09,920
+ Now we open the PowerShell on this location. We now run docker build command type docker space build
+
+39
+00:06:09,920 --> 00:06:20,720
+ space -t then specify the name of the image which can be anything of your choice. I am naming
+
+40
+00:06:20,720 --> 00:06:31,440
+ it lucky winner colon v1 then space -f space docker file space dot.
+
+41
+00:06:31,440 --> 00:06:48,880
+ This is the whole command. Then press enter you can see image is building and let's wait for a few
+
+42
+00:06:48,880 --> 00:06:56,640
+ seconds to complete.
+
+43
+00:07:13,680 --> 00:07:20,560
+ OK it's now build successfully. On docker desktop you can see this image.
+
+44
+00:07:20,560 --> 00:07:38,640
+ We now run a container for this image. The command is docker run. So type docker space run space -name
+
+45
+00:07:40,240 --> 00:07:52,080
+ space specify the name of the container. I am naming it lucky winner then type -p flag and give the
+
+46
+00:07:52,080 --> 00:07:59,520
+ port mappings 5,000 to for host port and 8080 for the container port.
+
+47
+00:08:11,040 --> 00:08:17,520
+ Then specify the image name which is lucky winner colon v1.
+
+48
+00:08:25,440 --> 00:08:41,760
+ See this is the whole command. Now press enter. Okay the container is created now and we can see
+
+49
+00:08:41,760 --> 00:08:52,320
+ the message listening on local host colon 8080. We can now open the website on the Chrome browser.
+
+50
+00:08:53,200 --> 00:09:02,320
+ So type local host colon 5,002 which is the host port then press enter. See here is the website
+
+51
+00:09:02,320 --> 00:09:09,040
+ opening and this time the website is opening from the docker container. We can now add some people
+
+52
+00:09:09,040 --> 00:09:19,520
+ details to this website like before. You can see they are saving correctly on the website.
+
+53
+00:09:20,560 --> 00:09:27,920
+ No bad this time they are saving on the container.
+
+54
+00:09:47,040 --> 00:09:54,560
+ Open docker desktop you can see the image and the container of the website. Let us analyze the
+
+55
+00:09:54,560 --> 00:10:06,080
+ data of the users that is saved in the container. Open a new PowerShell tab. Here type docker
+
+56
+00:10:06,080 --> 00:10:18,240
+ ps command and this will show the containers running the website. This is the container ID. Now type
+
+57
+00:10:18,240 --> 00:10:42,240
+ docker exec dash it dash u root then container id then dash and then press enter. This is the
+
+58
+00:10:42,240 --> 00:10:51,600
+ bass session inside the Linux container. Here type ls command to see all the directories and files.
+
+59
+00:10:51,600 --> 00:11:05,280
+ This is the emails directory which is storing the user details. Let us enter inside this directory with
+
+60
+00:11:05,280 --> 00:11:16,720
+ cd emails command then type ls command to see all the files inside this directory. Here is the user
+
+61
+00:11:16,720 --> 00:11:27,760
+ data dot txt file. We can open this file with the cat command of Linux. Type cat user data dot txt
+
+62
+00:11:28,560 --> 00:11:36,160
+ and here you can see the user details. These are the same which the website is showing.
+
+63
+00:11:36,160 --> 00:11:47,520
+ Everything is working properly but problems can come any time. Suppose due to an outrage this
+
+64
+00:11:47,520 --> 00:11:58,800
+ container crashes then we have to spin a new container for our dotnet apps image. Let's create this scenario.
+
+65
+00:11:58,800 --> 00:12:06,800
+ We first stop the container by docker stop lucky winner command.
+
+66
+00:12:14,800 --> 00:12:21,200
+ Then remove this container by docker rm lucky winner command.
+
+67
+00:12:21,200 --> 00:12:42,080
+ After this we spin a new container by the same docker run command which we ran earlier.
+
+68
+00:12:43,840 --> 00:12:52,880
+ Now on the website refresh it you can see there is no data because the data is lost.
+
+69
+00:12:52,880 --> 00:13:01,760
+ Probably the emails folder containing them is also lost. We can check this by running
+
+70
+00:13:01,760 --> 00:13:18,240
+ the best session as we did earlier.
+
+71
+00:13:27,040 --> 00:13:35,600
+ We are now inside the container and we run ls command shows there is no emails folder.
+
+72
+00:13:35,600 --> 00:13:44,560
+ So this confirms that we have lost our data. Therefore remember whenever container crashes
+
+73
+00:13:44,560 --> 00:13:54,240
+ the data is also lost. Now we will understand how to prevent this data loss when the container
+
+74
+00:13:54,240 --> 00:14:03,200
+ is crashed. The solution is obviously docker volumes. We will use docker volumes to create
+
+75
+00:14:03,200 --> 00:14:15,840
+ a persistent data stored. We will create a directory on our local pc on drive d and this will serve
+
+76
+00:14:15,840 --> 00:14:25,360
+ as a volume. The directory is what's mounted on the container. Now we will stop and remove the
+
+77
+00:14:25,360 --> 00:14:36,560
+ running container and will recreate this container. So first run docker ps command to get the container
+
+78
+00:14:36,560 --> 00:14:49,760
+ id then stop the container using docker stop then container id and finally remove this container
+
+79
+00:14:49,760 --> 00:15:01,760
+ from the docker desktop by docker rm container id command. Let's create a new container with volumes
+
+80
+00:15:01,760 --> 00:15:15,040
+ mounted to it. The command is docker run -p to give the port mappings here type 5000 to colon 8080
+
+81
+00:15:15,040 --> 00:15:26,720
+ then type -v flag which stands for volumes. Here we first give the absolute part of the directory
+
+82
+00:15:26,720 --> 00:15:40,480
+ on the local machine that will serve as the volumes. This part is d colon / emails. You can choose
+
+83
+00:15:40,480 --> 00:15:50,320
+ any part of your choice. After that type colon and here we have to give the part on the container
+
+84
+00:15:50,320 --> 00:16:01,120
+ where this directory will be mounted. This part is / apps / emails folder. Recall the website
+
+85
+00:16:01,120 --> 00:16:10,320
+ was saving the user's data inside the emails folder. Right then type the image name which is
+
+86
+00:16:11,360 --> 00:16:23,600
+ lucky winner colon b1. I would also like you to show my pc's d drive. Here you can see there is no
+
+87
+00:16:23,600 --> 00:16:33,680
+ emails folder right now. When I press enter you can see the emails folder is created on the d drive.
+
+88
+00:16:35,920 --> 00:16:44,960
+ Now the container is running with volumes mounted on it. Let's create some user increase
+
+89
+00:16:44,960 --> 00:16:49,040
+ and test the persistence of the data.
+
+90
+00:17:05,920 --> 00:17:25,520
+ You can see all data is saved.
+
+91
+00:17:32,880 --> 00:17:39,440
+ We again do the same thing. Stop the container then remove it.
+
+92
+00:17:39,440 --> 00:17:54,880
+ You can think about this that the container is crashed. Now we have to spin a new container for
+
+93
+00:17:54,880 --> 00:18:08,320
+ our website's image. Again we run the same command, docker, run, -p,
+
+94
+00:18:10,160 --> 00:18:38,400
+ -5,02 colon 8080 -v,d colon / emails colon / apps / emails lucky winner colon v1.
+
+95
+00:18:40,800 --> 00:18:48,880
+ Before I press enter I want to show that the emails folder on the d drive contains the user
+
+96
+00:18:48,880 --> 00:18:58,400
+ data.txt file which is saving the user details. Okay and let's press enter to run the command.
+
+97
+00:19:05,040 --> 00:19:13,040
+ See fresh d browser and you can see the data has persisted. Congratulations we have implemented
+
+98
+00:19:13,040 --> 00:19:24,160
+ docker volumes in our esp.net code website. We now go inside the container. So in docker desktop click
+
+99
+00:19:24,160 --> 00:19:35,840
+ the container's name then on exe tab run ls command then go inside the emails directory with cd emails
+
+100
+00:19:35,840 --> 00:19:47,520
+ command and then with ls command again to cd user data.txt file. Let's make a directory xyz with
+
+101
+00:19:47,520 --> 00:20:04,080
+ mkdir xyz command. Look the directory is created. If we check the emails folder on d drive you
+
+102
+00:20:04,080 --> 00:20:13,520
+ can see the xyz directory is created. Now let's make a new text file and name it abc
+
+103
+00:20:17,760 --> 00:20:26,480
+ here we see a text cats are good friends of man
+
+104
+00:20:26,480 --> 00:20:42,960
+ We now check this file inside the container type ls and here you can see abc.txt file
+
+105
+00:20:44,800 --> 00:20:53,920
+ To open this file we use the cat command of line x type cat abc.txt
+
+106
+00:20:53,920 --> 00:21:04,960
+ So here you see the same text cats are good friends of man. I hope with this you are able to
+
+107
+00:21:04,960 --> 00:21:13,920
+ understand how docker volumes work. Before we end this lecture let's discuss primary uses of docker
+
+108
+00:21:13,920 --> 00:21:25,840
+ volumes. First is the data persistence of files that contain some important data. Second is database
+
+109
+00:21:25,840 --> 00:21:34,480
+ management. We can store database files so they will be saved outside the container and this way
+
+110
+00:21:34,480 --> 00:21:44,240
+ database data is saved in case of container crashes. Third is data sharing between multiple
+
+111
+00:21:44,240 --> 00:21:52,320
+ containers. This is helpful in microservices architecture. You can now download the source code
+
+112
+00:21:52,320 --> 00:22:08,240
+ of dsp.net.co website and run all these steps I've done in this lecture.
+
