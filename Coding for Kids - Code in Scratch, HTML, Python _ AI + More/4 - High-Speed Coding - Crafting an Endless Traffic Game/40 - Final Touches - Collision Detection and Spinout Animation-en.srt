@@ -1,0 +1,304 @@
+1
+00:00:00,200 --> 00:00:01,520
+Well, this is it.
+
+2
+00:00:01,550 --> 00:00:07,670
+It's time we make this game by adding in some collision detection to detect if we crash into a car or
+
+3
+00:00:07,670 --> 00:00:08,960
+hit the sides of the road.
+
+4
+00:00:09,230 --> 00:00:15,950
+We will also be adding in a cool spin out animation to give it a more dynamic and dramatic effect.
+
+5
+00:00:16,070 --> 00:00:20,390
+But first, let's add in a dead simple crash detection.
+
+6
+00:00:20,870 --> 00:00:27,950
+So, moving to our main car sprite, we will grab the standard when flag clicked, then forever, then
+
+7
+00:00:27,950 --> 00:00:34,520
+F, and here we can add in this touching block and change it to detect obstacle cars.
+
+8
+00:00:35,120 --> 00:00:38,480
+And finally, if it does, we will have it stop all.
+
+9
+00:00:39,720 --> 00:00:41,280
+Well, that's simple enough.
+
+10
+00:00:41,280 --> 00:00:43,110
+Let's give this a go and see how it runs.
+
+11
+00:00:43,740 --> 00:00:46,410
+So, moving along the lines.
+
+12
+00:00:47,020 --> 00:00:48,340
+All is dandy.
+
+13
+00:00:49,060 --> 00:00:52,270
+And then if we say crash into this car here.
+
+14
+00:00:52,660 --> 00:00:54,310
+Well, there you have it.
+
+15
+00:00:54,310 --> 00:00:55,360
+Not bad.
+
+16
+00:00:56,070 --> 00:01:02,460
+So while we're at it, let's also check to see if our car is touching the edge of either land.
+
+17
+00:01:03,030 --> 00:01:10,200
+And we can simply do this by grabbing another two if checks a greater than operator and a less than
+
+18
+00:01:10,200 --> 00:01:10,830
+operator.
+
+19
+00:01:12,120 --> 00:01:17,910
+Then up in the motions group, we can use this exposition block which is the current x position of our
+
+20
+00:01:17,910 --> 00:01:18,510
+sprite.
+
+21
+00:01:19,200 --> 00:01:21,150
+So bringing that into both.
+
+22
+00:01:21,210 --> 00:01:27,960
+And finally, we can check if our cause X position is greater than or less than -185.
+
+23
+00:01:28,530 --> 00:01:31,170
+So adding a stop or into both of them.
+
+24
+00:01:32,600 --> 00:01:38,600
+And before we play, let's quickly see what we have going on here.
+
+25
+00:01:38,600 --> 00:01:45,020
+Basically, if our car is touching the obstacle car, we stop all and if our cars X position is past
+
+26
+00:01:45,020 --> 00:01:50,150
+195 or -185, which is past the edge, we stop all.
+
+27
+00:01:50,150 --> 00:01:51,890
+Okay, let's give this a try.
+
+28
+00:01:52,910 --> 00:01:56,660
+So as you can see, if we try to leave the road.
+
+29
+00:01:56,840 --> 00:01:58,670
+Well, our game ends.
+
+30
+00:01:58,670 --> 00:01:59,990
+That's what we like to see.
+
+31
+00:02:00,050 --> 00:02:06,020
+Now for the final touch, let's add our spin out crash animation.
+
+32
+00:02:06,560 --> 00:02:12,470
+So what we want is for our car to basically have a little animation where if we touch an obstacle or
+
+33
+00:02:12,470 --> 00:02:14,780
+if we go off the road, our car should spin.
+
+34
+00:02:15,200 --> 00:02:22,850
+I think the best place to start with this is in the motions group, because here we have this turn block
+
+35
+00:02:22,850 --> 00:02:25,550
+and if we click it here you can see our car turns.
+
+36
+00:02:25,550 --> 00:02:27,830
+And that's pretty much what we want.
+
+37
+00:02:27,950 --> 00:02:29,600
+So we can bring this block.
+
+38
+00:02:29,600 --> 00:02:34,730
+And then because we want it to turn a few times to make it look like it's spinning, we can grab our
+
+39
+00:02:34,730 --> 00:02:35,750
+repeat block.
+
+40
+00:02:36,260 --> 00:02:41,090
+So if we put this in here and you can see how our car looks like, it's spinning.
+
+41
+00:02:41,450 --> 00:02:42,680
+Okay, cool.
+
+42
+00:02:42,680 --> 00:02:46,190
+So now all we need to do is duplicate this block two times.
+
+43
+00:02:48,280 --> 00:02:51,580
+And then add it to each of our conditional checks.
+
+44
+00:02:53,060 --> 00:02:57,740
+And well, if we look at our script, if any of these conditions are true, like if if it touches an
+
+45
+00:02:57,740 --> 00:03:01,910
+obstacle car, it should first turn ten times and then stop.
+
+46
+00:03:01,910 --> 00:03:03,620
+So let's give that a go.
+
+47
+00:03:04,190 --> 00:03:06,680
+So driving down our road all is good.
+
+48
+00:03:06,680 --> 00:03:11,240
+And then if we hit a car, well that's not what we wanted.
+
+49
+00:03:11,330 --> 00:03:15,440
+It just turned for like a split second and faced back to the front.
+
+50
+00:03:15,980 --> 00:03:21,020
+But if you look at the code carefully, that makes sense because, well, this code is actually working
+
+51
+00:03:21,020 --> 00:03:27,320
+fine, but this code is interfering with it because this bit of script here is constantly getting our
+
+52
+00:03:27,320 --> 00:03:30,440
+car to point straight if we are not turning.
+
+53
+00:03:30,440 --> 00:03:32,270
+So this messes up our animation.
+
+54
+00:03:32,930 --> 00:03:38,930
+Now, one way we could fix this is simply dragging in this entire block of code inside this forever
+
+55
+00:03:38,930 --> 00:03:39,470
+loop.
+
+56
+00:03:39,710 --> 00:03:44,840
+And this way, these two scripts won't conflict with each other as if one of these conditions are true.
+
+57
+00:03:45,170 --> 00:03:49,850
+Like if we hit a car, the code won't move to the next bit of the script until it's finished, meaning
+
+58
+00:03:49,850 --> 00:03:53,000
+it will first play our animation and then stop all.
+
+59
+00:03:53,120 --> 00:03:56,090
+So giving this a go, you can see it works.
+
+60
+00:03:56,450 --> 00:04:02,840
+But this isn't exactly a clean solution as now we have two different types of scripts merging into one,
+
+61
+00:04:02,840 --> 00:04:06,590
+which can make it hard to understand and edit your code as you move forward.
+
+62
+00:04:07,290 --> 00:04:15,480
+So hitting command Z or the undo or control Z, what we can do instead is grab another one of these
+
+63
+00:04:15,480 --> 00:04:22,080
+stop blocks, but change it to stop other scripts in the sprite, then duplicate it twice.
+
+64
+00:04:22,780 --> 00:04:26,170
+And finally add it to the start of each of these conditional checks.
+
+65
+00:04:26,680 --> 00:04:32,860
+So if you look at our code now, if we touch anything, we will stop any other scripts in the sprite
+
+66
+00:04:32,860 --> 00:04:34,300
+running like this one here.
+
+67
+00:04:34,720 --> 00:04:38,260
+Then we will play the animation and then stop all.
+
+68
+00:04:38,350 --> 00:04:44,350
+And before we give it a go, let's just change this turn by to something less than like eight.
+
+69
+00:04:46,010 --> 00:04:47,450
+Finally giving this a go.
+
+70
+00:04:47,450 --> 00:04:51,440
+Driving down all is well then hitting into a car.
+
+71
+00:04:52,040 --> 00:04:53,030
+Well, there you have it.
+
+72
+00:04:53,540 --> 00:04:54,920
+Outstanding work.
+
+73
+00:04:54,920 --> 00:04:59,900
+This is very much a playable game and you should be proud to have got this far.
+
+74
+00:04:59,930 --> 00:05:02,930
+So sit back, relax and enjoy your accomplishment.
+
+75
+00:05:02,930 --> 00:05:09,230
+Because in the next section, we'll be looking at how we can transform this game with levels, dynamic
+
+76
+00:05:09,230 --> 00:05:13,910
+variables, sound effects, music, and a whole lot more.
+
