@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:06,000
+ So here we have already with everything.
+
+2
+00:00:06,000 --> 00:00:13,740
+ These are the registry keys if you can able to add your malicious executable under this
+
+3
+00:00:13,740 --> 00:00:17,520
+ key, you can able to achieve the persistence.
+
+4
+00:00:17,520 --> 00:00:23,840
+ So this is the way using register TXC, you can add a persistence or we might see in
+
+5
+00:00:23,840 --> 00:00:33,040
+ a log in session, so don't let me show that a red editor, you can if you move to the
+
+6
+00:00:33,040 --> 00:00:43,740
+ registry editor, you can easily get the key, so the key will be, if you want to execute
+
+7
+00:00:43,740 --> 00:00:49,680
+ your malware for a current user, you can use this key, or if you want to execute the
+
+8
+00:00:49,680 --> 00:00:56,480
+ malware across all the users who are logged into the machine, so you can go to this
+
+9
+00:00:56,480 --> 00:00:57,480
+ kind of key.
+
+10
+00:00:57,480 --> 00:01:05,080
+ Basically, most of the threat actors will be targeting this key, you can add whatever
+
+11
+00:01:05,080 --> 00:01:14,000
+ you want, so that's your own mechanism, so in this video, I'll be adding the malicious
+
+12
+00:01:14,000 --> 00:01:27,040
+ of executable that was created by the MS of Venom to this registry, okay, to this registry
+
+13
+00:01:27,040 --> 00:01:41,720
+ and the software Microsoft Windows current version, let me move back to the registry key.
+
+14
+00:01:41,720 --> 00:01:58,000
+ The current version, somewhere Microsoft Windows, here's a current version, you can see,
+
+15
+00:01:58,000 --> 00:02:06,160
+ and here you can see the executable already, run once and run, there is already there
+
+16
+00:02:06,160 --> 00:02:15,360
+ are two keys, won't drive and MS Edge app launch, so my won't drive must might be running,
+
+17
+00:02:15,360 --> 00:02:24,940
+ so if I started my machine, won't drive it automatically executed only once I started
+
+18
+00:02:24,940 --> 00:02:36,640
+ my machine, okay, so let's add our executable in this key, okay, so to add your registry
+
+19
+00:02:36,640 --> 00:02:44,020
+ key, you can use this command, let me take this, and I need to modify this command, so
+
+20
+00:02:44,020 --> 00:02:49,760
+ remember, you can able to add four systems in an administrator mode only, that's why we
+
+21
+00:02:49,760 --> 00:02:56,660
+ have seen the privilege escalation in a previous video, for in a previous session, so let
+
+22
+00:02:56,660 --> 00:03:10,740
+ me add a calc one time, okay, so let me refresh, so here you can see the calculator
+
+23
+00:03:10,740 --> 00:03:18,780
+ get automatically harder, let me delete this, okay, if you want to delete the key, you
+
+24
+00:03:18,780 --> 00:03:42,340
+ can just, you can just, you can instead of, instead of add you can do reds, de, dl, very
+
+25
+00:03:42,340 --> 00:03:55,300
+ close, very close, and I have pressed delete, delete the registry key, very positive chance
+
+26
+00:03:55,300 --> 00:04:12,260
+ I'll be giving us, okay, I have missed the option, slash your, let's see if there is any
+
+27
+00:04:12,260 --> 00:04:19,900
+ mistakes, error, call, close systems, it wasn't able to find a specific registry key or
+
+28
+00:04:19,900 --> 00:04:38,620
+ value, this is the one which I have already executed, let me check it with this one, it's
+
+29
+00:04:38,620 --> 00:04:47,060
+ okay, now the operation get successful, okay, c, we have done a small mistake, drs, s, t,
+
+30
+00:04:47,060 --> 00:04:55,100
+ any, not the key, the key or s, s, s, s, t and c, the key name, so that's why, let me
+
+31
+00:04:55,100 --> 00:05:01,220
+ stay happens, so now we can find the registry key has been automatically get removed, let
+
+32
+00:05:01,220 --> 00:05:16,380
+ me go to, let me edit, here, so my malware was sitting under the key, you first, let's
+
+33
+00:05:16,380 --> 00:05:37,980
+ see, this is my, this is my registry key, and you need to mention slash yes, let me change
+
+34
+00:05:37,980 --> 00:05:49,980
+ the key name, then we execute now, the operation has been completed successfully, let
+
+35
+00:05:49,980 --> 00:05:59,100
+ me, go to the key, so you can see the key, it was pointing to the, a persistent mal.exe,
+
+36
+00:05:59,100 --> 00:06:05,660
+ let me restart my mission now, I'll restart my mission now, and we'll see what will happen,
+
+37
+00:06:05,660 --> 00:06:16,020
+ before that I'll be starting my reverse connection listener, okay, the TTV listener has been
+
+38
+00:06:16,020 --> 00:06:36,140
+ initiated, let's restart that, wait for a few more minutes, once the window is back.
+
+39
+00:06:36,140 --> 00:07:00,020
+ Wait for something, everything needs to be get loaded, once the window is done on,
+
+40
+00:07:00,020 --> 00:07:29,860
+ okay, if you see, here it was asking, whether we need to execute, okay, let's see, okay,
+
+41
+00:07:29,860 --> 00:07:40,980
+ you can execute this persistent smell.exe, if we're giving our run here, so I'll be getting,
+
+42
+00:07:40,980 --> 00:07:47,380
+ I'll be getting a reverse connection, okay, so probably instead of adding, instead of adding
+
+43
+00:07:47,380 --> 00:07:57,300
+ the executable here, you can able to push the PowerShell scripts, okay, to execute, okay,
+
+44
+00:07:57,300 --> 00:08:04,980
+ and that will also be happening, that will also happen on the incidents, so instead of
+
+45
+00:08:04,980 --> 00:08:11,940
+ exe, you can push the PowerShell scripts to the run here registries, and I'll be getting
+
+46
+00:08:11,940 --> 00:08:18,420
+ a reverse connection, so here, I didn't get a reverse connection, let me re verify that,
+
+47
+00:08:18,420 --> 00:08:42,260
+ so either I just, even anything wrong, let me check, 967, okay, see, I did a mistake,
+
+48
+00:08:42,260 --> 00:08:56,260
+ you can see the port has been drawn, so that's a mistake, I did, let me change, 896, okay,
+
+49
+00:08:56,260 --> 00:09:17,380
+ 8769, now it will be getting executed, okay, yeah, now, I got a reverse connection,
+
+50
+00:09:17,380 --> 00:09:23,620
+ so if I restart my machine, so the malware will be getting automatically executed, so the mistake
+
+51
+00:09:23,620 --> 00:09:31,300
+ we have done is, we did a wrong port, we have created a malware known port, and we listened
+
+52
+00:09:31,300 --> 00:09:37,460
+ our malware and another port, that's the problem, so let's swap off and I'll again, I'll be
+
+53
+00:09:37,460 --> 00:09:42,820
+ restarting the machine in the next video, so to prove it will be happening, the reverse
+
+54
+00:09:42,820 --> 00:09:46,020
+ connection will be happening, okay, let's swap off from this video and we'll continue our
+
+55
+00:09:46,020 --> 00:09:50,180
+ in discussion now. Next video see you guys bye-bye.
+
