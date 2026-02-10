@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:07,800
+ So, it makes sure that the WordPress version it is latest, this is variable to be set, okay?
+
+2
+00:00:07,800 --> 00:00:12,800
+ And before the script is run, the last thing here is the script of the client to run.
+
+3
+00:00:12,800 --> 00:00:16,600
+ So, before you run it, you need to make sure that your application is updated,
+
+4
+00:00:16,600 --> 00:00:25,200
+ and you make sure that you install the WGetatilities with the SSH client.
+
+5
+00:00:25,200 --> 00:00:29,800
+ So, here, after you do that, you can start the build.
+
+6
+00:00:29,800 --> 00:00:35,600
+ Okay, so this is initialization, built, okay?
+
+7
+00:00:35,600 --> 00:00:44,400
+ The build just downloads WordPress, and this is the same steps that we have done before to download,
+
+8
+00:00:44,400 --> 00:00:55,200
+ unzips WordPress, okay, and also remove any folders, it is empty, copy or move the files, okay?
+
+9
+00:00:55,200 --> 00:01:05,200
+ And this is the build, it just automates what we have done already, it is done in the pipeline, in automated pipeline.
+
+10
+00:01:05,200 --> 00:01:13,200
+ Okay, this is the build fix, and after the build is complete, the artifacts here play an important role
+
+11
+00:01:13,200 --> 00:01:21,200
+ to so that it's copied to the deploy productivity, after it is copied from the build to the deploy productivity,
+
+12
+00:01:21,200 --> 00:01:25,600
+ after 30 seconds, 30 minutes, sorry, it is delete.
+
+13
+00:01:25,600 --> 00:01:32,600
+ So, you can do this when you are in live production, if you do any changes to your code, to your websites,
+
+14
+00:01:32,600 --> 00:01:40,200
+ the users will not notice anything because it is changed automatically to the deploy production.
+
+15
+00:01:40,200 --> 00:01:48,200
+ And also, the same thing apply here if you are in a staged environment, I want to not deploy it directly,
+
+16
+00:01:48,200 --> 00:01:56,200
+ you can deploy it to staging, to the back staging first, okay?
+
+17
+00:01:56,200 --> 00:02:05,200
+ So here, this is the last step, so the deployment script that we have explained here, it will be used as you can see here,
+
+18
+00:02:05,200 --> 00:02:16,200
+ this is the script deploy.sh, and it will only force that for security purposes to deploy only from the main branch,
+
+19
+00:02:16,200 --> 00:02:23,200
+ which we specified using the Git comment before, okay?
+
+20
+00:02:23,200 --> 00:02:47,200
+ So, let's go pieces, okay, and save it.
+
+21
+00:02:47,200 --> 00:02:53,200
+ Okay, perfect.
+
+22
+00:02:53,200 --> 00:03:05,200
+ Okay, so we are very close to the finished line, we need now to prepare our ALMA server virtual machines for the Git lab deploy.
+
+23
+00:03:05,200 --> 00:03:19,200
+ So, for the Git lab deployment, since it will not, we don't want to make any the implementation complicated,
+
+24
+00:03:19,200 --> 00:03:31,200
+ we will implement the lock of the Git lab local runner, not from the Git lab website itself, or not from outside because we will do,
+
+25
+00:03:31,200 --> 00:03:47,200
+ we need to SSH access and netting so that it points to our server and it will be required as a complex or many configurations, okay?
+
+26
+00:03:47,200 --> 00:03:58,200
+ So, we will just implement or run the Git lab runner inside our virtual machines itself to be the Git lab runner, okay?
+
+27
+00:03:58,200 --> 00:04:07,200
+ So, we need to do three things, we need SSH access, and I will show you how to test Git SSH access from the Git lab runner,
+
+28
+00:04:07,200 --> 00:04:17,200
+ which is our local host, and we need the permission, okay, for the Git lab runner, of course, to run the Docker,
+
+29
+00:04:17,200 --> 00:04:27,200
+ because in the deployment scripts, it will need to restore the Docker, so to Git lab runner need to have access to Docker, okay?
+
+30
+00:04:27,200 --> 00:04:36,200
+ And we need a secure way of to deploy files to www, okay?
+
+31
+00:04:36,200 --> 00:04:49,200
+ So, here, first, the secure way is, of course, by using SSH access, okay? That's why we are doing all of these steps, okay?
+
+32
+00:04:49,200 --> 00:05:07,200
+ So, here, that's generate the key, the deployment key, so because here we are the Git lab runner, we will deploy or generate the key here, okay?
+
+33
+00:05:07,200 --> 00:05:21,200
+ So, that when any changes is done, it will need to be done by using this SSH access from the Git runner here on our host.
+
+34
+00:05:21,200 --> 00:05:35,200
+ So, let's generate the key.
+
+35
+00:05:35,200 --> 00:05:50,200
+ Okay, we didn't enter any past phrase, we just want a simple RSA certificate, and we have generated our key.
+
+36
+00:05:50,200 --> 00:06:00,200
+ So, here, we have private key and public key, because it is an RSA, it is asymmetric, so public and private, we need to, it's not symmetric,
+
+37
+00:06:00,200 --> 00:06:19,200
+ it's not the same key that you increment with, you encrypt with the connection, you will decrypt it with, you will need to have both public, private key and public key for encryption and decryption of the communication or connection.
+
+38
+00:06:19,200 --> 00:06:40,200
+ So, here, we want to allow the virtual machine to SSH into itself as I have told you, so we need to catch, do the catch common to copy all of the Git lab deployed.
+
+39
+00:06:40,200 --> 00:06:48,200
+ So, this is the public key, we will copy it to list of authorized key.
+
+40
+00:06:48,200 --> 00:07:09,200
+ Okay, so, let's do this to authorize this Git our system, this is SSH, get left, the flow it up, we put it here, and let's change the permission of,
+
+41
+00:07:09,200 --> 00:07:25,200
+ of it to be read and write, okay, for the admin user.
+
+42
+00:07:25,200 --> 00:07:45,200
+ Okay, so we have copied authorized key and give read and write for the owner for this authorized key, okay.
+
+43
+00:07:45,200 --> 00:07:58,200
+ Now, we can test SSH to myself, okay, to make sure that the secure, as the connection is encrypted and I can SSH to myself.
+
+44
+00:07:58,200 --> 00:08:18,200
+ By issuing this comment, you should first ask me that this key, are you sure or just a confirmation message as you can see here, this is the key that we have used, and it's estimated if I want to continue, I click on yes.
+
+45
+00:08:18,200 --> 00:08:30,200
+ Okay, and now I am on, I have an SSH key with myself or with the Git lab run, okay.
+
+46
+00:08:30,200 --> 00:08:41,200
+ If I want to type any, let's exit it, okay, and as you can see here, I have to log out and connection close, okay.
+
+47
+00:08:41,200 --> 00:08:51,200
+ So, I am now, if I want to do any modification with the Git lab runner, I can do it with SSH and everything is okay.
+
+48
+00:08:51,200 --> 00:09:00,200
+ So, here if I want to allow the Git lab runner to use SSH key, okay.
+
+49
+00:09:00,200 --> 00:09:22,200
+ So, what I do now that I just do the SSH key, but still the Git lab runner is not enabled to use this key, I just enabled public and private key, but it is not enabled for the Git lab runner to use this key.
+
+50
+00:09:22,200 --> 00:09:40,200
+ So, let's first, as official, Git lab repository, because I don't have the Git lab runner, I need to, as the repository before I install the Git lab runner on my system.
+
+51
+00:09:52,200 --> 00:10:04,200
+ Okay, I will pause the video till it is installed.
+
+52
+00:10:04,200 --> 00:10:28,200
+ Okay, now I have installed repository, Git lab repository, let's now install the runner.
+
+53
+00:10:28,200 --> 00:10:36,200
+ Okay, I am now back to you, I have just paused the video because the installation took some time actually.
+
+54
+00:10:36,200 --> 00:10:47,200
+ Now after we have installed, we have installed our Git runner, okay.
+
+55
+00:10:47,200 --> 00:11:12,200
+ So, here let's verify its version, okay, this is version 18.6.6 and this is also the operating system Linux and architecture of the processor and all of the details of it.
+
+56
+00:11:12,200 --> 00:11:37,200
+ Perfect, so now let's make sure that it is enabled and started before we can check its status.
+
+57
+00:11:37,200 --> 00:11:47,200
+ Okay, let's see, its status should be showing as active or running, okay, perfect.
+
+58
+00:11:47,200 --> 00:12:02,200
+ So, now we need to give the SSH keys that we have here for the public and private.
+
+59
+00:12:02,200 --> 00:12:13,200
+ We need to just first make a directory for the Git lab runner and called SSH in which we will copy the SSH keys into it.
+
+60
+00:12:13,200 --> 00:12:18,200
+ So, let's create a directory for SSH key.
+
+61
+00:12:18,200 --> 00:12:34,200
+ So, first we generated this SSH key to be applied later to the Git lab runner. So, we have created it and let's hear copy, we will copy the Git lab deploy and get lab pub.
+
+62
+00:12:34,200 --> 00:12:41,200
+ Okay, and all of it will be copied to the same directory of Git lab runner. SSH.
+
+63
+00:12:41,200 --> 00:12:47,200
+ So, let's start here by our private key.
+
+64
+00:12:47,200 --> 00:13:00,200
+ And then we will copy the public key.
+
+65
+00:13:00,200 --> 00:13:15,200
+ Okay, let's fix the permission to make sure that the Git lab runner here, this is applications that we have access to this SSH to it be the owner.
+
+66
+00:13:15,200 --> 00:13:30,200
+ Okay, and the owner here will have the read right to the private key, okay, and will have read right to the private key and for the public.
+
+67
+00:13:30,200 --> 00:13:43,200
+ It will be set for users and group because the public key is so key to be shared with others, but the private key of course will not be shared with any other users other than the owner.
+
+68
+00:13:43,200 --> 00:13:53,200
+ Okay, so let's copy these two.
+
+69
+00:13:53,200 --> 00:14:10,200
+ And now let's add, get runner, get lab runner to the Docker because it will need to have permission to remove or restart Docker.
+
+70
+00:14:10,200 --> 00:14:14,200
+ So, let's add it.
+
+71
+00:14:14,200 --> 00:14:20,200
+ User modification, Docker, get lab runner.
+
+72
+00:14:20,200 --> 00:14:48,200
+ And then let's start both the Docker and the Git lab runner service.
+
+73
+00:14:48,200 --> 00:14:49,200
+ Okay.
+
