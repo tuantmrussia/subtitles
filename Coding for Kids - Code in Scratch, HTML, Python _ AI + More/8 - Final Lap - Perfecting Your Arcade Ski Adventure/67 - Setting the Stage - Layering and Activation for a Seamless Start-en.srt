@@ -1,0 +1,496 @@
+1
+00:00:00,170 --> 00:00:02,330
+Well, all our new sprites are in order.
+
+2
+00:00:02,330 --> 00:00:05,390
+They are just waiting for us to bring them to life.
+
+3
+00:00:05,900 --> 00:00:09,860
+Now, the first thing we need to do is get the layering right.
+
+4
+00:00:09,890 --> 00:00:16,220
+The only problem is, scratch only lets you set a sprite to go to the back or front, or go backwards
+
+5
+00:00:16,220 --> 00:00:17,660
+or forwards a layer.
+
+6
+00:00:17,690 --> 00:00:20,990
+There isn't an option to have it go to a specific layer.
+
+7
+00:00:21,740 --> 00:00:27,110
+Currently, what we have been doing is having our sprites go to the front and then go back.
+
+8
+00:00:27,140 --> 00:00:32,900
+However, while this trick works, if you have 3 or 4 sprites, it causes problems when you have more
+
+9
+00:00:32,900 --> 00:00:33,470
+than that.
+
+10
+00:00:34,040 --> 00:00:40,490
+So to set a sprite to a specific layer, what you need to do is first have the sprite go to the back,
+
+11
+00:00:40,490 --> 00:00:42,020
+then bring it forward.
+
+12
+00:00:42,020 --> 00:00:45,620
+However, many layers are needed and this is the opposite of how we had it.
+
+13
+00:00:46,850 --> 00:00:51,140
+So if you look at it, this bottom tree line will be at the highest layer.
+
+14
+00:00:51,500 --> 00:00:54,740
+So we will bring it forward a six layers.
+
+15
+00:00:55,480 --> 00:01:00,520
+Then the button will be a layer lower so we can bring it forward five layers.
+
+16
+00:01:01,320 --> 00:01:05,250
+Then the next set of trees, we will bring forward four layers.
+
+17
+00:01:06,030 --> 00:01:12,120
+So what that means is that our obstacle tree sprite needs to come forward three layers.
+
+18
+00:01:12,990 --> 00:01:15,690
+Then our player sprite two layers.
+
+19
+00:01:16,050 --> 00:01:17,910
+And finally our snow pixel.
+
+20
+00:01:17,910 --> 00:01:19,020
+Just one layer.
+
+21
+00:01:19,650 --> 00:01:25,380
+So starting off with the snow sprite, we can go in and change this to go to back.
+
+22
+00:01:25,380 --> 00:01:31,710
+And then go forward a one layer and do the same for the other sprite, just like that.
+
+23
+00:01:32,640 --> 00:01:37,350
+Then our player we can say go to back and then go forward two layers.
+
+24
+00:01:38,070 --> 00:01:44,430
+Our trees also changed to back and we can bring in a go forward and change it to three layers.
+
+25
+00:01:44,730 --> 00:01:46,110
+Oh, and also I almost forgot.
+
+26
+00:01:46,110 --> 00:01:48,840
+We also need to set the layer of our score sprite.
+
+27
+00:01:48,840 --> 00:01:55,200
+So let's drag this script over to it and we can have this go forward four layers just like that.
+
+28
+00:01:56,370 --> 00:02:01,380
+Now to make our lives easier, we can just drag this code script into each of these new sprites we added.
+
+29
+00:02:01,380 --> 00:02:03,420
+Just like that.
+
+30
+00:02:04,020 --> 00:02:08,700
+Then, moving over to our first set of trees, we can have it go forward five layers.
+
+31
+00:02:09,390 --> 00:02:10,740
+Now for our start button.
+
+32
+00:02:10,740 --> 00:02:13,620
+We want it to go forward six layers.
+
+33
+00:02:13,890 --> 00:02:15,570
+And finally our bottom tree line.
+
+34
+00:02:15,570 --> 00:02:18,240
+We can have it move forward seven layers.
+
+35
+00:02:18,840 --> 00:02:20,460
+Okay, so that looks pretty good.
+
+36
+00:02:20,700 --> 00:02:24,900
+Now we need to make it actually work because you will notice if you click the play button.
+
+37
+00:02:24,900 --> 00:02:29,610
+Well we have a weird merge of our game happening in our start screen.
+
+38
+00:02:29,970 --> 00:02:34,110
+So our first priority is getting the start sorted out.
+
+39
+00:02:34,200 --> 00:02:40,350
+And basically what we want is for our game to start when we click this button, meaning this start screen
+
+40
+00:02:40,350 --> 00:02:45,090
+and trees should hide and our player and obstacles should appear.
+
+41
+00:02:46,020 --> 00:02:53,130
+Now instead of using an if mouse down and touching sprite like we've done before, we can use this block
+
+42
+00:02:53,130 --> 00:02:55,680
+here when the sprite is clicked.
+
+43
+00:02:56,840 --> 00:03:03,110
+Now, when we do click the button, we want to broadcast a message and the message we want is startgame.
+
+44
+00:03:03,650 --> 00:03:09,080
+So dragging this block when the sprite is clicked over, then the broadcast message.
+
+45
+00:03:09,110 --> 00:03:12,620
+We can create a new message called Start Game.
+
+46
+00:03:13,370 --> 00:03:16,910
+Now with that done, let's ensure our other sprites respond.
+
+47
+00:03:17,390 --> 00:03:23,660
+Firstly, with our background we can disconnect this music from the on flag clicked and rather have
+
+48
+00:03:23,660 --> 00:03:27,680
+it play with the broadcast message when I receive start game.
+
+49
+00:03:28,550 --> 00:03:33,800
+This way our ambient sound is always playing, but our music only starts when the game actually starts,
+
+50
+00:03:33,800 --> 00:03:34,340
+right?
+
+51
+00:03:34,340 --> 00:03:36,200
+I have a mini challenge for you.
+
+52
+00:03:36,200 --> 00:03:36,890
+Are you ready?
+
+53
+00:03:37,600 --> 00:03:46,450
+What we want to happen is for our animation that rotates between these two backgrounds to play when
+
+54
+00:03:46,450 --> 00:03:53,050
+we click the flag, and then when we click the start button, we want to stop the animation and switch
+
+55
+00:03:53,050 --> 00:03:55,300
+to the blank backdrop.
+
+56
+00:03:55,870 --> 00:03:56,980
+Can you make it work?
+
+57
+00:03:57,730 --> 00:03:58,360
+Here's a tip.
+
+58
+00:03:58,360 --> 00:04:01,300
+Ideally, you should use functions to create this.
+
+59
+00:04:01,300 --> 00:04:04,090
+So pause the video and give this a go.
+
+60
+00:04:05,530 --> 00:04:06,460
+How did you go?
+
+61
+00:04:07,000 --> 00:04:09,520
+This 1st May be a bit harder than you thought.
+
+62
+00:04:09,520 --> 00:04:10,060
+So well done.
+
+63
+00:04:10,060 --> 00:04:11,230
+If you did get it right.
+
+64
+00:04:11,230 --> 00:04:14,350
+The first things first, we need to create a function.
+
+65
+00:04:14,590 --> 00:04:17,380
+We will call this background animation.
+
+66
+00:04:17,500 --> 00:04:19,750
+And here we need to add an input.
+
+67
+00:04:19,750 --> 00:04:23,740
+And we can call this game start and hit okay.
+
+68
+00:04:24,760 --> 00:04:27,400
+So now we need to define this function.
+
+69
+00:04:27,640 --> 00:04:34,270
+So bringing in this classic forever and this if else block then grabbing an equals operator.
+
+70
+00:04:34,270 --> 00:04:38,050
+And here we can check if game start equals true.
+
+71
+00:04:38,230 --> 00:04:41,440
+Now if it is we want to switch to our first backdrop.
+
+72
+00:04:41,920 --> 00:04:45,760
+But if it is not we want our animation to play.
+
+73
+00:04:46,000 --> 00:04:54,580
+So to do this we can grab two switch backdrops and then stick a wait in between and then a wait at the
+
+74
+00:04:54,580 --> 00:04:55,090
+end.
+
+75
+00:04:55,960 --> 00:04:59,560
+Also change it to start screen one and two.
+
+76
+00:04:59,800 --> 00:05:01,750
+Then all we need to do is grab another.
+
+77
+00:05:01,750 --> 00:05:09,550
+When flag clicked, bring in this block to call our function and then set the input to false, and then
+
+78
+00:05:09,550 --> 00:05:10,480
+we can drag another.
+
+79
+00:05:10,480 --> 00:05:14,740
+When I receive block like so, set it to start game.
+
+80
+00:05:15,660 --> 00:05:19,140
+Then bring in this function call and set it to true.
+
+81
+00:05:20,340 --> 00:05:27,720
+But now I've just realized that this doesn't really make sense, because calling background animation
+
+82
+00:05:27,720 --> 00:05:31,590
+with false starts the animation while calling it with true ends it.
+
+83
+00:05:32,190 --> 00:05:35,130
+But we'll ignore that oversight for now.
+
+84
+00:05:35,640 --> 00:05:37,440
+So clicking play.
+
+85
+00:05:37,650 --> 00:05:43,350
+As you can see, our animation works and clicking start it goes away and our music starts.
+
+86
+00:05:43,890 --> 00:05:47,790
+Now with that all done, let's move on to our tree sprite.
+
+87
+00:05:48,150 --> 00:05:50,400
+This one will be a little bit easier.
+
+88
+00:05:50,910 --> 00:05:54,450
+So firstly dragging in a when flag clicked.
+
+89
+00:05:54,570 --> 00:05:56,490
+Here we can just show the sprite.
+
+90
+00:05:57,450 --> 00:06:03,690
+Then dragging in the when I receive block and setting it to start game, we can hide the sprite.
+
+91
+00:06:04,200 --> 00:06:07,200
+So lastly, we need to create an animation.
+
+92
+00:06:07,200 --> 00:06:14,430
+Now for this we can just grab a forever loop and a repeat loop inside the repeat loop.
+
+93
+00:06:15,440 --> 00:06:20,570
+We could have a change X by five and then weight 0.5 seconds.
+
+94
+00:06:20,780 --> 00:06:25,910
+Then we can just duplicate this, and this time set it to minus five.
+
+95
+00:06:25,910 --> 00:06:32,990
+And lastly, at the start of our script, let's set the x position to zero and set the y to its current
+
+96
+00:06:32,990 --> 00:06:33,890
+position.
+
+97
+00:06:33,920 --> 00:06:36,590
+Now for our other tree sprite.
+
+98
+00:06:36,590 --> 00:06:42,500
+Because it's the same, we can just drag both these scripts into it like this.
+
+99
+00:06:43,490 --> 00:06:47,300
+The only thing we do need to do is change the y position.
+
+100
+00:06:47,300 --> 00:06:50,540
+So here we can just set it to its current position.
+
+101
+00:06:51,020 --> 00:06:52,190
+So clicking play.
+
+102
+00:06:52,310 --> 00:06:56,120
+As you can see we have a nice animation with the trees clicking start.
+
+103
+00:06:56,450 --> 00:06:58,310
+Well they disappear.
+
+104
+00:06:58,730 --> 00:07:03,170
+Now clearly there is a problem that our sprite and trees are still running.
+
+105
+00:07:03,170 --> 00:07:04,880
+So let's address that.
+
+106
+00:07:05,600 --> 00:07:13,040
+Firstly moving to our player sprite, we can just drag in a hide onto this when flag clicked and then
+
+107
+00:07:13,040 --> 00:07:14,090
+drag in a.
+
+108
+00:07:14,120 --> 00:07:21,320
+When I receive, set it to start game and then drag in a show block.
+
+109
+00:07:22,490 --> 00:07:26,810
+And now we can just drag this when our receive block into our tree sprite.
+
+110
+00:07:27,080 --> 00:07:30,950
+Our snow pixel sprite and our score sprite.
+
+111
+00:07:31,670 --> 00:07:33,650
+Then first moving to our tree sprite.
+
+112
+00:07:33,650 --> 00:07:41,510
+Here we can drag the script onto our when our receive start game and stick it onto the when flag clicked.
+
+113
+00:07:42,140 --> 00:07:43,820
+Then moving to our snow pixel.
+
+114
+00:07:43,820 --> 00:07:46,430
+We can do the exact same thing here.
+
+115
+00:07:46,970 --> 00:07:51,590
+So switching that around and moving the hide just like that.
+
+116
+00:07:52,820 --> 00:07:58,730
+And with the second snow sprite, we can also do the same switch and move.
+
+117
+00:07:59,090 --> 00:08:06,350
+And lastly, with our score here, we can just drag this setup function call script over to our when
+
+118
+00:08:06,350 --> 00:08:09,080
+I receive start game like so.
+
+119
+00:08:09,320 --> 00:08:13,580
+And lastly, you can drag in a hide onto the when flag clicked.
+
+120
+00:08:13,940 --> 00:08:15,290
+So clicking play.
+
+121
+00:08:15,350 --> 00:08:18,080
+As you can see that looks pretty good.
+
+122
+00:08:18,080 --> 00:08:22,400
+And when we click start well there are a few problems.
+
+123
+00:08:22,400 --> 00:08:27,950
+Anyways, we'll deal with all of this in the next lesson where we'll finish off this game, but I encourage
+
+124
+00:08:27,950 --> 00:08:32,990
+you to give it a go and try to see if you can fix these final small issues on your own.
+
