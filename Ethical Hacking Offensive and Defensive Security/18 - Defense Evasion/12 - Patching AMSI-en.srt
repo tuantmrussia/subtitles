@@ -1,0 +1,576 @@
+1
+00:00:00,000 --> 00:00:07,100
+ So, let us welcome to the another video and in this video, we are going to discuss one
+
+2
+00:00:07,100 --> 00:00:15,100
+ of the important security mechanism that was commonly used in Windows operating system.
+
+3
+00:00:15,100 --> 00:00:20,400
+ Its name does as a anti-malware scan interface, AMSI, so many of them here about the
+
+4
+00:00:20,400 --> 00:00:29,200
+ aim of AMSI, so AMSI is basically anti-malware scan interface, so this was a security
+
+5
+00:00:29,200 --> 00:00:38,700
+ mechanism that was introduced by Windows operating system and it was this, it was mostly
+
+6
+00:00:38,700 --> 00:00:45,700
+ used by the PowerShell, command prompt and many more, to detect a malicious script, okay.
+
+7
+00:00:45,700 --> 00:00:53,800
+ So whenever, for example, whenever you try to load any malicious script from the PowerShell.exe,
+
+8
+00:00:53,800 --> 00:01:00,600
+ so the AMSI will be the first one, it will detect that PowerShell script, malicious
+
+9
+00:01:00,600 --> 00:01:03,500
+ PowerShell script and it will terminate that process, okay.
+
+10
+00:01:03,500 --> 00:01:11,900
+ So this is the main features of AMSI, so this is one of the very powerful different
+
+11
+00:01:11,900 --> 00:01:15,400
+ mechanism that was introduced by Windows, okay.
+
+12
+00:01:15,400 --> 00:01:22,000
+ So this different mechanism will mainly focus on file as malware, so the file as malware
+
+13
+00:01:22,000 --> 00:01:29,700
+ will be like, there is no files.ts or not that file, the file as malware will be like
+
+14
+00:01:29,700 --> 00:01:36,500
+ the base 64 encoder command, it will directly run into the PowerShell.exe and it will inject
+
+15
+00:01:36,500 --> 00:01:38,200
+ something into the memory, okay.
+
+16
+00:01:38,200 --> 00:01:46,900
+ That was the, that was the, we are calling that as a file as malware, okay.
+
+17
+00:01:46,900 --> 00:01:53,400
+ So let's, let's discuss some of the topic like someone will be thinking like, I have a
+
+18
+00:01:53,400 --> 00:01:58,000
+ bit different array, why I need AMSI to my protection, okay.
+
+19
+00:01:58,000 --> 00:02:08,200
+ So let's think about your bit different antivirus only have the static signatures, hashes,
+
+20
+00:02:08,200 --> 00:02:09,200
+ okay.
+
+21
+00:02:09,200 --> 00:02:16,840
+ The malicious hash files, so it will only scan, scan the, scan your file by using the signature
+
+22
+00:02:16,840 --> 00:02:17,840
+ hash files, right.
+
+23
+00:02:17,840 --> 00:02:25,800
+ So it will detect only the malicious hash, which it will be matched into our files, right.
+
+24
+00:02:25,800 --> 00:02:30,760
+ So for example, if you are downloading mimicats.exe file, if the mimicat.exe hash was
+
+25
+00:02:30,760 --> 00:02:37,960
+ present in the bit different signature, it will detect that, it will detect the hash,
+
+26
+00:02:37,960 --> 00:02:47,080
+ let me get file, right.
+
+27
+00:02:47,080 --> 00:02:55,300
+ So let's come to the example of file as malware, if you are loading any, any script, which
+
+28
+00:02:55,300 --> 00:03:02,720
+ was file, file us into directly into the PowerShell.exe, so that time your AV engine does
+
+29
+00:03:02,720 --> 00:03:07,240
+ not have an idea to how to detect that and what is it, right.
+
+30
+00:03:07,240 --> 00:03:12,720
+ So in that time the AMSI or the anti-malware scan interface will come to play, okay.
+
+31
+00:03:12,720 --> 00:03:18,520
+ So let's, I will explain that in practical, so let's, anyone have a doubt what is a file
+
+32
+00:03:18,520 --> 00:03:27,480
+ as malware, so let I will give some example of what is a file as malware, okay.
+
+33
+00:03:27,480 --> 00:03:38,120
+ So let, I will open a PowerShell in the administrator mode and I'm giving a parameter called
+
+34
+00:03:38,120 --> 00:03:47,160
+ a function and I'm giving the variable, you know, let I will give my name and I will type
+
+35
+00:03:47,160 --> 00:04:00,220
+ the right host, I will later explain what it will, what it will do, okay.
+
+36
+00:04:00,220 --> 00:04:29,840
+ So now my, okay, so, give me some time, let's load this.
+
+37
+00:04:29,840 --> 00:04:59,620
+ Okay, it's saying the missing name after the argument, okay, it was detected, let try to
+
+38
+00:04:59,620 --> 00:05:09,220
+ the PowerShell.exe, so it has to be loaded, let I will open the PowerShell, the administrator
+
+39
+00:05:09,220 --> 00:05:25,100
+ mode, let's, let's try now, you can see TIO and, okay, now we get green, right.
+
+40
+00:05:25,100 --> 00:05:33,760
+ So now my function parameter was there, that I will give, in work, H, A, Y, and I'm writing
+
+41
+00:05:33,760 --> 00:05:49,940
+ a script, write host and bypass, A, B, let I will close this script.
+
+42
+00:05:49,940 --> 00:06:00,100
+ So now if I give the in work, H, A, Y, so it loaded, what I return inside the function,
+
+43
+00:06:00,100 --> 00:06:02,220
+ right, write host function, right.
+
+44
+00:06:02,220 --> 00:06:07,020
+ So this is the file as malware, so you can load your malicious script, malicious basically
+
+45
+00:06:07,020 --> 00:06:14,140
+ 4 or obfuscated script inside the write host or other function and you can directly load
+
+46
+00:06:14,140 --> 00:06:19,340
+ that into the memory, okay, this is the very simple example, what is file as malware, so
+
+47
+00:06:19,340 --> 00:06:26,820
+ you can script, you can use the PowerShell script and you can develop your own malicious
+
+48
+00:06:26,820 --> 00:06:31,660
+ script and you can load into the target machine, so it will directly load, the script will
+
+49
+00:06:31,660 --> 00:06:38,020
+ directly load into the memory and it was not detected by most of the A, B engines as well
+
+50
+00:06:38,020 --> 00:06:44,420
+ as the EDR, okay, for some time your EDR will also fail to detect this kind of malicious
+
+51
+00:06:44,420 --> 00:06:54,820
+ script that was directly injected from the PowerShell, okay, so let's talk something with
+
+52
+00:06:54,820 --> 00:07:03,060
+ the AMSI by pass, so how can I will do the AMSI by pass, okay, so let's see what happening
+
+53
+00:07:03,060 --> 00:07:13,820
+ in the PowerShell first, let I will open my process explorer, so I already explained the
+
+54
+00:07:13,820 --> 00:07:22,180
+ AMSI engine will mostly concentrate on PowerShell.exe to detect a file as malware, okay,
+
+55
+00:07:22,180 --> 00:07:29,420
+ so let I will load the PowerShell into my process explorer and I will see what actually
+
+56
+00:07:29,420 --> 00:07:36,380
+ happening in the PowerShell, so how my AMSI engine will know, how my Windows Defender
+
+57
+00:07:36,380 --> 00:07:45,340
+ engine will know the script was malicious, how it will know, okay, let's load this, let's
+
+58
+00:07:45,340 --> 00:07:57,020
+ wait for the dealers getting loaded, let's open up PowerShell, another PowerShell, let's
+
+59
+00:07:57,020 --> 00:08:12,960
+ see, okay, so now you can see the PowerShell.exe and most of the dealers get loaded, so
+
+60
+00:08:12,960 --> 00:08:19,940
+ you can see two dealers that was used for a different mechanism, so here you can see the
+
+61
+00:08:19,940 --> 00:08:34,300
+ different, uh, bit different security, right, so why my bit different dealer was inside my
+
+62
+00:08:34,300 --> 00:08:35,860
+ PowerShell.exe, let's think about it, okay, so for example, if your antivirus need to monitor
+
+63
+00:08:35,860 --> 00:08:42,940
+ the PowerShell.exe, if your antivirus need to monitor the behavior of the PowerShell.exe,
+
+64
+00:08:42,940 --> 00:08:50,420
+ your antivirus need to inject a code into the PowerShell.exe, okay, your antivirus need
+
+65
+00:08:50,420 --> 00:08:57,740
+ to inject a code or a dealer into your PowerShell.exe to monitor what happening inside the
+
+66
+00:08:57,740 --> 00:09:04,820
+ PowerShell.exe, if it did not load a dealer dealer or a code into the PowerShell.exe,
+
+67
+00:09:04,820 --> 00:09:12,020
+ your antivirus do not know what happening inside the PowerShell.exe, okay, so let's take
+
+68
+00:09:12,020 --> 00:09:18,740
+ a real example, so in your opposite home, let's take an example of opposite home, so there
+
+69
+00:09:18,740 --> 00:09:26,300
+ is a big fight going inside your opposite home, okay, so you are waiting outside the home,
+
+70
+00:09:26,300 --> 00:09:31,020
+ you don't know what happening inside the, what happening inside that home, right, so if you go
+
+71
+00:09:31,020 --> 00:09:36,580
+ into the system, go into that home, you can understand what was the actual problem, okay,
+
+72
+00:09:36,580 --> 00:09:42,620
+ that there was an example here, okay, your antivirus or Windows Defender need to monitor
+
+73
+00:09:42,620 --> 00:09:49,540
+ the PowerShell.exe, it need to inject a code or a dealer file into your PowerShell and it
+
+74
+00:09:49,540 --> 00:09:56,660
+ will monitor what happening inside the PowerShell.exe, okay, so if it monitor, so your
+
+75
+00:09:56,660 --> 00:10:03,220
+ for example, if the bit different or dealer monitors any suspicious activity that was
+
+76
+00:10:03,220 --> 00:10:09,420
+ running inside the PowerShell, it will terminate that process, okay, this is how your EDR,
+
+77
+00:10:09,420 --> 00:10:15,820
+ AV engines and other defense mechanism will work whenever a threat occurred, okay, so
+
+78
+00:10:15,820 --> 00:10:20,980
+ let's take an example of a process injection, so you are injecting some code into your target
+
+79
+00:10:20,980 --> 00:10:26,140
+ process, your target process behavior has been changed, right, so your target process
+
+80
+00:10:26,140 --> 00:10:32,180
+ will act like a malware, it will give command and control to the threat attack, okay,
+
+81
+00:10:32,180 --> 00:10:42,100
+ in that time your AMSI or your defense mechanism, such as AV, it will detect suspicious
+
+82
+00:10:42,100 --> 00:10:47,660
+ behavior and it will terminate the process, okay, so this is the actual explanation of
+
+83
+00:10:47,660 --> 00:10:55,980
+ how your EDR and AV engines will work, so here you can see the AMSI.dll was loaded
+
+84
+00:10:55,980 --> 00:11:05,340
+ inside the PowerShell.exe, so my AMSI.dll will monitor the PowerShell.exe whatever happens,
+
+85
+00:11:05,340 --> 00:11:12,300
+ whatever malicious activity happens, it will terminate that process, okay, so this is the actual
+
+86
+00:11:12,300 --> 00:11:20,300
+ behavior of the defense mechanisms like Windows Defender and Antiverse Engine, okay, so
+
+87
+00:11:20,300 --> 00:11:27,740
+ let's load some malicious script into the PowerShell, let I will load directly load an
+
+88
+00:11:27,740 --> 00:11:50,540
+ invoke multicat, okay, invoke MMI, sorry, so if I give, so you can now see suspicious activity
+
+89
+00:11:50,540 --> 00:11:57,540
+ where blocked, so my Antiverse system is also active, as well as my AMSI is also
+
+90
+00:11:57,540 --> 00:12:03,520
+ active, both are combined with each other and it was detecting it as a threat, right,
+
+91
+00:12:03,520 --> 00:12:10,020
+ so whenever I tried to load the invoke MMI cat's module inside the PowerShell, my command
+
+92
+00:12:10,020 --> 00:12:17,260
+ get detected as a malware and it was blocked by your Antiverse software, so in this scenario
+
+93
+00:12:17,260 --> 00:12:22,300
+ my Windows Defender, as well as my bit differenter, both are collaborating with each
+
+94
+00:12:22,300 --> 00:12:28,620
+ other and it was detecting a threat, right, so this is the common example of how your
+
+95
+00:12:28,620 --> 00:12:35,460
+ Antiverse software or your AMSI was detecting the malicious script, okay, so how I will
+
+96
+00:12:35,460 --> 00:12:44,100
+ bypass this, did you think about what I need to do whenever I come to the defense
+
+97
+00:12:44,100 --> 00:12:52,620
+ activation mechanism, how I will bypass this script, okay, so let's go to some more example,
+
+98
+00:12:52,620 --> 00:13:00,980
+ when you inject, when you pass any, when you pass the any base 64 or obfuscated script
+
+99
+00:13:00,980 --> 00:13:09,220
+ inside the PowerShell, your PowerShell will try, your defense mechanism will tries to de-uff
+
+100
+00:13:09,220 --> 00:13:15,980
+ a gate or decode that PowerShell script and it will search for the common string that
+
+101
+00:13:15,980 --> 00:13:23,020
+ was used by the malware and it will detect that as a malicious, okay, so we know if I
+
+102
+00:13:23,020 --> 00:13:30,300
+ passed the invoke MMI cat that was absolutely a malicious thing, your defense mechanism
+
+103
+00:13:30,300 --> 00:13:35,380
+ captured the string, invoke MMI cat string and detect some malicious content, so see detection
+
+104
+00:13:35,380 --> 00:13:42,480
+ does a malicious content, so this is the malicious content, right, so how we can bypass,
+
+105
+00:13:42,480 --> 00:13:47,900
+ let's, okay, many of them know what is MMI cat, so MMI cat is one of the post exploitation
+
+106
+00:13:47,900 --> 00:13:53,140
+ module, like the meta-spitable framework, let's think about the meta-spitable framework,
+
+107
+00:13:53,140 --> 00:14:01,140
+ so we can, we can use the MMI cat for many type of attacks like credential access, dumping
+
+108
+00:14:01,140 --> 00:14:07,780
+ hashes, Kerbro slated attacks, pasta hash attacks, active directory based attacks, and
+
+109
+00:14:07,780 --> 00:14:13,340
+ we, we can do a lot of things with MMI cat, we will see that in our team operations, so
+
+110
+00:14:13,340 --> 00:14:19,460
+ let's come to our discussion, so how, I, how I will bypass this, okay, let I will do one
+
+111
+00:14:19,460 --> 00:14:27,220
+ thing, okay, my, I know my, a, b engine and different, different, Windows Defender engine
+
+112
+00:14:27,220 --> 00:14:31,780
+ will detect, this is some malicious content, let I will split that content, okay, let I will
+
+113
+00:14:31,780 --> 00:14:43,220
+ go to, let I will do one thing, I n, plus, I will split that content, I will give, okay,
+
+114
+00:14:43,220 --> 00:15:12,380
+ b or, plus, k e, plus, dash, plus, m, i, plus.
+
+115
+00:15:12,380 --> 00:15:30,020
+ m, i, plus, k, a, plus, t, z, okay, so now I split out all the things, right, in
+
+116
+00:15:30,020 --> 00:15:37,300
+ b, o, k, a, plus, dash, and m, i, m, i, m, k, a, t, z, now I will load, so let's see
+
+117
+00:15:37,300 --> 00:15:46,660
+ what will happen, so see, my script get executed, right, my in-mode MMI cat script get executed,
+
+118
+00:15:46,660 --> 00:15:55,620
+ this is how you need to bypass the, a, m, i engine using the, using the splitting strings
+
+119
+00:15:55,620 --> 00:16:01,180
+ mechanism, okay, you can split the strings and you can execute that, okay, I will give
+
+120
+00:16:01,180 --> 00:16:08,900
+ some other example to bypass the different Windows Defender AMSA engine, so you can split
+
+121
+00:16:08,900 --> 00:16:16,580
+ your code and you can use the basics for, with your basics for encoder, as well as you
+
+122
+00:16:16,580 --> 00:16:23,100
+ can obfuscate the string, okay, obfuscate, split the string, do the basics for encoding
+
+123
+00:16:23,100 --> 00:16:30,900
+ and obfuscate that, obfuscate that code, okay, so now inject that code inside your PowerShell
+
+124
+00:16:30,900 --> 00:16:40,140
+ I am damn sure your PowerShell or AMSA engine will not detect that script, okay, so in our
+
+125
+00:16:40,140 --> 00:16:45,960
+ example I just, I did not do any encoding or any encryption or any obfuscation, I just
+
+126
+00:16:45,960 --> 00:16:53,940
+ split out the string, I can bypass my AV engine as well as my AMSA engine, right, so this
+
+127
+00:16:53,940 --> 00:16:59,260
+ is the way you, you can think about when you are coming to bypassing the AMSA and the
+
+128
+00:16:59,260 --> 00:17:06,420
+ malware scanning interface or the antivirus engines, okay, so I will use other examples also,
+
+129
+00:17:06,420 --> 00:17:12,420
+ but I will hardly prefer, you can, you can use the hot code strings like, you can encrypt
+
+130
+00:17:12,420 --> 00:17:19,660
+ encoder do that mechanism to bypass the engines, but we have other mechanism also, you
+
+131
+00:17:19,660 --> 00:17:26,820
+ can terminate the Windows Defender or you can go for some third party tools like, here
+
+132
+00:17:26,820 --> 00:17:33,220
+ you can see the invoke AMSA bypass.ps1, you can directly load this PowerShell script into
+
+133
+00:17:33,220 --> 00:17:41,600
+ the, into the PowerShell console and your PowerShell, it will do some memory patching and
+
+134
+00:17:41,600 --> 00:17:51,700
+ it will do some, it will load a load, a memory buffer and mainly it will load, it will pass
+
+135
+00:17:51,700 --> 00:17:56,980
+ the AMSA, okay, so bypassing the AMSA, you can easily bypass the AMSA, but I would not
+
+136
+00:17:56,980 --> 00:18:03,700
+ prefer this kind of things, but because your EDRs are very easy, AV engine already have
+
+137
+00:18:03,700 --> 00:18:13,380
+ this hash inside the static signature, so I will hardly prefer, you can, you can go for,
+
+138
+00:18:13,380 --> 00:18:19,800
+ you can go for a obfuscation encoding encryption and splitting the strings, okay, so this
+
+139
+00:18:19,800 --> 00:18:27,860
+ method I will give you to follow whenever you come to the AV, AV or AMSA bypass, okay,
+
+140
+00:18:27,860 --> 00:18:33,180
+ so I hope you, you will understand all about the AMSA engine, how it was working, what
+
+141
+00:18:33,180 --> 00:18:38,140
+ was the difference, a difference mechanism it was follows and how to evade that difference
+
+142
+00:18:38,140 --> 00:18:46,660
+ mechanism to bypass the, bypass the AV engine as well as the AMSA to inject your
+
+143
+00:18:46,660 --> 00:18:52,900
+ malicious script, so hope you understand and you have a clear understand about this video
+
+144
+00:18:52,900 --> 00:18:56,700
+ and we will see you in the next video, bye bye, thank you.
+
