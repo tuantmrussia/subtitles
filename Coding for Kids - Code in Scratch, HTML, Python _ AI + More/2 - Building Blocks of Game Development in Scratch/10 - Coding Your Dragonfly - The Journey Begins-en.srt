@@ -1,0 +1,532 @@
+1
+00:00:00,230 --> 00:00:06,140
+Okay, it's time to get coding underway, and I think the best place to start is with our dragonfly
+
+2
+00:00:06,140 --> 00:00:08,810
+sprite as it's the main character, after all.
+
+3
+00:00:08,810 --> 00:00:14,150
+And also before we do anything, let's get rid of this cat that is on the screen as we don't need it
+
+4
+00:00:14,150 --> 00:00:15,290
+for all this project.
+
+5
+00:00:15,290 --> 00:00:21,350
+So to do this, we can either simply click this delete button next to the sprite, or maybe you've created
+
+6
+00:00:21,350 --> 00:00:26,300
+some cool code for it already, so you could just hide the sprite instead, and you can bring it back
+
+7
+00:00:26,300 --> 00:00:28,100
+any time by clicking show.
+
+8
+00:00:28,730 --> 00:00:34,100
+But first things first, make sure that you have this sprite selected to ensure that you're coding the
+
+9
+00:00:34,100 --> 00:00:35,030
+right thing.
+
+10
+00:00:35,550 --> 00:00:40,170
+And with that, okay, it's time to create your first script again, this sprite.
+
+11
+00:00:40,170 --> 00:00:40,470
+Very.
+
+12
+00:00:40,470 --> 00:00:41,760
+So let's think about this.
+
+13
+00:00:41,760 --> 00:00:47,580
+Uh, in our game to do care, we want to be able to control this dragon and make it grow some up and
+
+14
+00:00:47,580 --> 00:00:50,190
+down, large and right, using our keys.
+
+15
+00:00:50,190 --> 00:00:52,530
+So can we do that able them?
+
+16
+00:00:53,120 --> 00:00:57,380
+So this is where you need to think like a computer and think logically.
+
+17
+00:00:57,940 --> 00:01:04,480
+What are all the instructions that the computer needs in order to move with the arrow keys?
+
+18
+00:01:05,650 --> 00:01:08,560
+If you're up to the challenge, pause the video now and give this a go.
+
+19
+00:01:08,590 --> 00:01:13,930
+Try to see if you can write the script that allows the sprite to move with the arrow keys.
+
+20
+00:01:14,380 --> 00:01:16,330
+But if you have no clue, don't worry.
+
+21
+00:01:16,330 --> 00:01:19,600
+I just want you to pause and give it a moment to think about it.
+
+22
+00:01:21,320 --> 00:01:24,740
+Well, let's take a look at how we solve this with code.
+
+23
+00:01:25,750 --> 00:01:32,620
+First things first, we'll start with the when flag clicked block, as this will start our script automatically
+
+24
+00:01:32,620 --> 00:01:34,210
+when we click the flag.
+
+25
+00:01:34,630 --> 00:01:40,420
+Okay, now we know our dragonfly needs to move around the screen, so we know we're going to need one
+
+26
+00:01:40,420 --> 00:01:42,310
+of these blocks in the motion group.
+
+27
+00:01:42,890 --> 00:01:49,310
+You might be thinking we should use this move ten steps code block as we used it to get our cat to walk
+
+28
+00:01:49,310 --> 00:01:50,270
+across the screen.
+
+29
+00:01:50,360 --> 00:01:56,600
+And yes, while we could use it to get the dragonfly to go right ten steps and left by minus ten steps,
+
+30
+00:01:56,600 --> 00:01:57,830
+there is a problem.
+
+31
+00:01:58,160 --> 00:02:01,310
+We can't get the dragonfly to go up and down with this.
+
+32
+00:02:01,340 --> 00:02:07,580
+So instead of using this move block, there is something much better that you should be always using
+
+33
+00:02:07,580 --> 00:02:08,420
+instead.
+
+34
+00:02:08,420 --> 00:02:10,010
+And that is this.
+
+35
+00:02:10,010 --> 00:02:14,810
+Change x by and change y by blocks.
+
+36
+00:02:14,900 --> 00:02:21,890
+Now remember how we said that our stage is seen as a grid, and our sprite can be at any point on this
+
+37
+00:02:21,890 --> 00:02:29,180
+grid from -240 x to plus 240 y from -180 y to plus 180 y.
+
+38
+00:02:29,210 --> 00:02:35,360
+So if we change our x position by a positive number, we essentially are moving our sprite to the right
+
+39
+00:02:35,360 --> 00:02:36,200
+of the screen.
+
+40
+00:02:36,200 --> 00:02:40,910
+And if it's a negative number, we are moving it to the left side of the screen.
+
+41
+00:02:40,910 --> 00:02:42,860
+And the same goes for changing y.
+
+42
+00:02:42,860 --> 00:02:48,590
+If we change y by a positive number, we're moving our sprite up, and if we change it by a negative
+
+43
+00:02:48,590 --> 00:02:51,110
+number, we are moving our sprite down the screen.
+
+44
+00:02:52,160 --> 00:02:58,910
+So now that we know all this, we can grab two of each change x and change y.
+
+45
+00:02:59,450 --> 00:03:03,500
+Now because remember for each we need one of them as a negative.
+
+46
+00:03:03,980 --> 00:03:08,510
+Now if you click on each of these blocks you can see how it moves our sprite around the screen which
+
+47
+00:03:08,510 --> 00:03:09,830
+is exactly what we want.
+
+48
+00:03:10,470 --> 00:03:14,430
+Now all we need is a way to control this with our keys instead of clicking.
+
+49
+00:03:15,240 --> 00:03:21,810
+So if you remember in our earlier lesson, we can do this with the sensing group of code.
+
+50
+00:03:21,810 --> 00:03:26,910
+And here you'll see there is this block for checking if a key is pressed, which is exactly what we
+
+51
+00:03:26,910 --> 00:03:27,480
+need.
+
+52
+00:03:28,090 --> 00:03:35,410
+If we bring this out, you can see that we can swap the space for, well, pretty much any key we like.
+
+53
+00:03:35,410 --> 00:03:39,220
+So let's change it to right arrow pressed.
+
+54
+00:03:40,170 --> 00:03:44,100
+So this is all fine, but we need to connect this.
+
+55
+00:03:44,460 --> 00:03:48,810
+And to do this calls for perhaps one of the most important blocks ever.
+
+56
+00:03:49,050 --> 00:03:50,940
+And it is found under control.
+
+57
+00:03:50,940 --> 00:03:53,370
+And it is the if then block.
+
+58
+00:03:53,370 --> 00:03:58,410
+Now remember how I said how often you will make decisions if a certain condition is true, like it's
+
+59
+00:03:58,410 --> 00:04:00,780
+raining outside, you will wear a raincoat.
+
+60
+00:04:00,780 --> 00:04:04,470
+The same concept is very important in programming.
+
+61
+00:04:04,470 --> 00:04:07,560
+Here we want to check if a certain key is pressed.
+
+62
+00:04:07,560 --> 00:04:12,660
+Then something should happen like obviously moving in a certain direction.
+
+63
+00:04:13,980 --> 00:04:17,880
+And I also want you to notice something very important about these blocks that you have been working
+
+64
+00:04:17,880 --> 00:04:18,300
+with.
+
+65
+00:04:18,920 --> 00:04:25,430
+Which is the different shapes, kind of like Lego pieces, and they fit together in specific ways.
+
+66
+00:04:25,640 --> 00:04:32,390
+Now, these shapes are designed to help you easily understand which blocks can connect to each other,
+
+67
+00:04:32,390 --> 00:04:34,760
+just like how certain Lego pieces can fit together.
+
+68
+00:04:34,790 --> 00:04:40,370
+The shapes prevent you from connecting blocks that shouldn't be joined, which is helpful to avoid mistakes
+
+69
+00:04:40,370 --> 00:04:42,800
+and keep your code working smoothly.
+
+70
+00:04:44,450 --> 00:04:50,180
+In the world of text based coding, it's crucial to make sure your code is organized and free of errors,
+
+71
+00:04:50,180 --> 00:04:54,410
+and basically it'll be structured quite similarly to your scratch code.
+
+72
+00:04:54,650 --> 00:05:00,440
+By having different block shapes and scratch, the platform guides you to create well structured and
+
+73
+00:05:00,440 --> 00:05:05,690
+functional code, which is similar to how Lego pieces come together to form a stable structure.
+
+74
+00:05:06,180 --> 00:05:11,340
+For example, you'll find that some blocks have a notch on the top and a bump on the bottom.
+
+75
+00:05:12,620 --> 00:05:15,140
+These blocks are designed to stack on top of each other.
+
+76
+00:05:15,770 --> 00:05:22,670
+Other blocks have a special C shape, which means they can wrap around other blocks like this if statement
+
+77
+00:05:22,670 --> 00:05:23,990
+or forever loop.
+
+78
+00:05:24,570 --> 00:05:27,930
+This helps create loops or controls the flow of your code.
+
+79
+00:05:28,440 --> 00:05:32,820
+Anyhow, with all that cleared, let's connect up this code.
+
+80
+00:05:33,150 --> 00:05:37,770
+So if the right arrow is pressed, we want to change x by a positive number.
+
+81
+00:05:37,770 --> 00:05:46,650
+So we can put that in here and then add on when flag clicked block to the top completing our script.
+
+82
+00:05:46,740 --> 00:05:47,220
+Right.
+
+83
+00:05:47,220 --> 00:05:47,790
+Let's see.
+
+84
+00:05:47,970 --> 00:05:51,630
+So clicking play and then clicking our right button.
+
+85
+00:05:52,430 --> 00:05:54,110
+Oh, that's not good.
+
+86
+00:05:54,470 --> 00:05:56,600
+As you can see, nothing at all happened.
+
+87
+00:05:56,780 --> 00:05:59,210
+And we know we have our if statement.
+
+88
+00:05:59,210 --> 00:06:01,190
+We are checking if the key is pressed.
+
+89
+00:06:01,190 --> 00:06:02,150
+So what's missing?
+
+90
+00:06:03,160 --> 00:06:05,380
+Well, do you have any ideas as to what's going wrong?
+
+91
+00:06:06,940 --> 00:06:13,480
+Basically, it's only checking once and just how when we wanted our cat to follow our mouse pointer,
+
+92
+00:06:13,480 --> 00:06:16,510
+checking once is just not enough.
+
+93
+00:06:16,690 --> 00:06:19,990
+We need the code to continuously check if the right arrow is pressed.
+
+94
+00:06:19,990 --> 00:06:26,020
+So to fix this, all we need to do is put all this code in a forever loop.
+
+95
+00:06:26,640 --> 00:06:30,060
+Now it's constantly checking to see if this condition is true.
+
+96
+00:06:30,060 --> 00:06:35,760
+So if we hit play again, notice how if we click the right arrow now it moves.
+
+97
+00:06:36,000 --> 00:06:36,780
+Great.
+
+98
+00:06:37,050 --> 00:06:40,740
+So now all we need to do is the same for the other keys.
+
+99
+00:06:42,300 --> 00:06:45,300
+Now I'm going to give you a really handy tip here.
+
+100
+00:06:45,300 --> 00:06:51,990
+So instead of going back to our code palette and finding the if block and this key press block, what
+
+101
+00:06:51,990 --> 00:06:58,410
+we can do instead is just right click the block of code you want and click duplicate.
+
+102
+00:06:58,410 --> 00:06:59,970
+Now you can see we have two.
+
+103
+00:06:59,970 --> 00:07:04,770
+And we can duplicate both of these blocks by clicking right at the top and duplicating again.
+
+104
+00:07:04,770 --> 00:07:08,040
+So now we have four which is all we need.
+
+105
+00:07:09,050 --> 00:07:13,340
+The next thing to do now is change the key pressed input.
+
+106
+00:07:13,370 --> 00:07:15,770
+So here we will do the left arrow.
+
+107
+00:07:16,650 --> 00:07:19,620
+Up arrow and down arrow.
+
+108
+00:07:20,660 --> 00:07:21,620
+But we're not done yet.
+
+109
+00:07:21,650 --> 00:07:23,360
+We now need to change what happens.
+
+110
+00:07:23,360 --> 00:07:27,530
+So if the left arrow is clicked, we need X to be negative.
+
+111
+00:07:28,230 --> 00:07:33,600
+Then if the up arrow is clicked, we need to change y and this time by a positive number.
+
+112
+00:07:34,300 --> 00:07:39,190
+And lastly, for the down arrow, we must change y by a negative number.
+
+113
+00:07:39,930 --> 00:07:42,630
+And if we play now, there you have it.
+
+114
+00:07:43,020 --> 00:07:45,240
+We can officially control our character.
+
+115
+00:07:45,240 --> 00:07:49,140
+And you are well on your way to becoming a game developer.
+
+116
+00:07:50,010 --> 00:07:52,590
+There are just two things I want to do now.
+
+117
+00:07:52,620 --> 00:07:54,030
+Now the first is quite easy.
+
+118
+00:07:54,240 --> 00:07:57,840
+Firstly, I just want to make this dragonfly not move so fast.
+
+119
+00:07:58,200 --> 00:08:00,840
+And simply all I need to do is reduce these numbers.
+
+120
+00:08:00,840 --> 00:08:05,640
+So I'll just halve it and change it to five and minus five.
+
+121
+00:08:05,640 --> 00:08:08,430
+So now you'll see our character is easy to control.
+
+122
+00:08:09,330 --> 00:08:14,790
+Okay, so the next thing is I want to get the ladybug to randomly glide around the screen.
+
+123
+00:08:15,150 --> 00:08:18,720
+So take a moment to try to see if you can do that yourself.
+
+124
+00:08:18,720 --> 00:08:24,360
+How can we get the ladybird to randomly move around the screen?
+
+125
+00:08:25,610 --> 00:08:28,430
+Well, this is actually very simple.
+
+126
+00:08:29,080 --> 00:08:30,820
+As we did this with our cat sprite.
+
+127
+00:08:30,820 --> 00:08:36,520
+If you remember, all we need to do is bring in when start clicked a forever loop and then glide one
+
+128
+00:08:36,520 --> 00:08:39,520
+second to a random position.
+
+129
+00:08:40,260 --> 00:08:41,850
+And now if you click play again.
+
+130
+00:08:42,600 --> 00:08:44,670
+You can see our game is really getting there.
+
+131
+00:08:44,700 --> 00:08:47,970
+A ladybug is moving around and we're able to control our dragonfly.
+
+132
+00:08:48,000 --> 00:08:50,220
+Great job on getting to this point.
+
+133
+00:08:50,400 --> 00:08:52,770
+We have certainly come a long way.
+
