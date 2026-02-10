@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:11,600
+ Hey guys, welcome to the another video, so we are in the advanced level, previous video
+
+2
+00:00:11,600 --> 00:00:19,720
+ we have seen the EDR bypass and antivirus bypass through a hooking mechanism, and in this
+
+3
+00:00:19,720 --> 00:00:29,040
+ video we are going to touch the uncrooking method and we will be discussing about the program
+
+4
+00:00:29,040 --> 00:00:34,680
+ and how this will be going to happen, and what was happening in the back and reach and
+
+5
+00:00:34,680 --> 00:00:45,160
+ everything we can discuss here, I will give you each and every program, every programs
+
+6
+00:00:45,160 --> 00:00:56,880
+ which I have used, compilers, commands, the AES encryption based program, the shellcode I will be
+
+7
+00:00:56,880 --> 00:01:02,760
+ giving everything to you in the GitHub repository, so you can utilize that and you can use it
+
+8
+00:01:02,760 --> 00:01:12,240
+ for your test environment, but before moving on to the discussion I will be giving you
+
+9
+00:01:12,240 --> 00:01:18,160
+ one, I will be telling you one thing, so this course is completed design for legal and ethical
+
+10
+00:01:18,160 --> 00:01:27,640
+ hacking purpose, the programs we discussed in our course, it was completely belongs
+
+11
+00:01:27,640 --> 00:01:33,720
+ to the exploitation, and advanced exploitation in Viron Monday, even the same program
+
+12
+00:01:33,720 --> 00:01:41,320
+ was used by the protectors to do some kind of malicious task in the environment, so you
+
+13
+00:01:41,320 --> 00:01:48,920
+ need to be very care about this kind of applications and this kind of tools which we are
+
+14
+00:01:48,920 --> 00:01:55,960
+ using in the real world, okay, so again I am saying this course is completely designed
+
+15
+00:01:55,960 --> 00:02:01,680
+ for only an educational purpose, not in terms to design for any kind of exploitation in
+
+16
+00:02:01,680 --> 00:02:08,680
+ the around the globe, okay, so if you need to test this code you can run it in your environment
+
+17
+00:02:08,680 --> 00:02:20,640
+ if you do not use it in the global corporate environment or any other machine, okay, so
+
+18
+00:02:20,640 --> 00:02:25,960
+ let us jump on to the unhooking method, so we know what is of hooking, how we will be
+
+19
+00:02:25,960 --> 00:02:33,320
+ hooking, we discussed about the detors and how it going to happen, I already said EDR will
+
+20
+00:02:33,320 --> 00:02:43,820
+ be also hooking the same method, so what we discussed in the previous video, so if you
+
+21
+00:02:43,820 --> 00:02:52,200
+ need to bypass the hooking mechanism from the EDR, the way we can do the time we can
+
+22
+00:02:52,200 --> 00:02:58,840
+ say it is called as an unhooking, okay, EDR hook their deal into the process, so what we
+
+23
+00:02:58,840 --> 00:03:05,840
+ are going to do, we are going to unhook the DLL from the process, let me show you an
+
+24
+00:03:05,840 --> 00:03:25,840
+ example of the process, example from the process explorer, to the task host like yesterday's
+
+25
+00:03:25,840 --> 00:03:39,840
+ then we can, okay, I will be able to do that, I will be able to do that, I will be able to
+
+26
+00:03:39,840 --> 00:04:04,440
+ do that, and we can see, so let us see any kind of process, whether that was hook by our
+
+27
+00:04:04,440 --> 00:04:11,840
+ anti-virus software, here you can see the task host.exe hooked by the b-defender anti-virus
+
+28
+00:04:11,840 --> 00:04:21,560
+ software, so it was also of the method from the anti-virus software, and EDR will hook
+
+29
+00:04:21,560 --> 00:04:27,760
+ their own DLL into the process, okay, so basically the EDR will be targeting the NDDL,
+
+30
+00:04:27,760 --> 00:04:33,840
+ so if anything, any call has been happened, any function call has been happened from the
+
+31
+00:04:33,840 --> 00:04:44,000
+ NDDL process NDDL library function, it will be, the EDR will be start hooking the, hooking
+
+32
+00:04:44,000 --> 00:04:53,000
+ the NDDL API calls, okay, so in the previous video we have discussed with a lot of examples
+
+33
+00:04:53,000 --> 00:04:59,840
+ like how the EDR will be hook, when the EDR will be hook, the process, so in this video
+
+34
+00:04:59,840 --> 00:05:06,240
+ we can see how we can un-hook that, okay, how we can un-hook that, so I already said EDR
+
+35
+00:05:06,240 --> 00:05:14,200
+ will be targeting the NDDL application, so NDDL based library function, so if the, if the
+
+36
+00:05:14,200 --> 00:05:20,080
+ application loads NDDL library, and it was calling some NDDL functions like right file
+
+37
+00:05:20,080 --> 00:05:29,680
+ of NDDL file of, it will be start hooking the API function, right, so we know the only,
+
+38
+00:05:29,680 --> 00:05:40,200
+ so EDR targeting NDDL libraries, and it was hooking the EDR based program, okay, so our
+
+39
+00:05:40,200 --> 00:05:50,000
+ assumption is, so what if, what if we un-hooked the NDDL library from the process, did you
+
+40
+00:05:50,000 --> 00:05:58,960
+ get that point, so what if I un-hooked the NDDL, I just removed the NDDL library from my
+
+41
+00:05:58,960 --> 00:06:08,760
+ process, okay, so now EDR unable to hook my process again, right, so EDR doesn't know
+
+42
+00:06:08,760 --> 00:06:17,840
+ how to hook, because there is no NDDL library was there, okay, so let me go into depth,
+
+43
+00:06:17,840 --> 00:06:24,480
+ okay, so if you remove, if you remove the NDDL library from the process, your application
+
+44
+00:06:24,480 --> 00:06:34,200
+ will get failed, because your application mandatory needs NDDL libraries to do some task,
+
+45
+00:06:34,200 --> 00:06:41,960
+ okay, so every process has a NDDL library, here you can see NDDL library was there, so
+
+46
+00:06:41,960 --> 00:06:50,760
+ if I remove this NDDL library from this application, so this application will get failed,
+
+47
+00:06:50,760 --> 00:06:57,820
+ and my system will get stuck, okay, so the application needs a NDDL library, so what we
+
+48
+00:06:57,820 --> 00:07:10,760
+ can do, okay, so the thing we can do, we can un-hook the NDDL library, and we can load
+
+49
+00:07:10,760 --> 00:07:20,760
+ the fresh NDDL library from the disk, okay, so we can un-hook the current NDDL library, okay,
+
+50
+00:07:20,760 --> 00:07:26,940
+ DLL library file, and we can load another NDDL library from the disk, a fresh copy of NDDL
+
+51
+00:07:26,940 --> 00:07:32,760
+ library from the disk, okay, so now the EDR doesn't know what's happening in the background,
+
+52
+00:07:32,760 --> 00:07:40,160
+ because the EDRs will only hook once the application gets initiated the NDDL library, once
+
+53
+00:07:40,160 --> 00:07:46,380
+ the application was started and it was initiating the NDDL library, it was loading
+
+54
+00:07:46,380 --> 00:07:55,960
+ an NDDL library, at that point the EDR will hook their DLLs or their code into the process,
+
+55
+00:07:55,960 --> 00:08:07,360
+ so now we are removing the hook NDDL library and we loading the fresh copy of NDDL library
+
+56
+00:08:07,360 --> 00:08:14,440
+ from the disk, so now EDR doesn't know, so what's happening, the EDR, you're thinking like
+
+57
+00:08:14,440 --> 00:08:21,040
+ I hooked the NDDL that was there and nothing happening inside the process, but the EDDL
+
+58
+00:08:21,040 --> 00:08:28,400
+ doesn't know, we will be replacing the NDDL library with the fresh copy, okay, so that
+
+59
+00:08:28,400 --> 00:08:37,940
+ is called as the fresh copy NDDL library API unhooking, so in this video I just explained
+
+60
+00:08:37,940 --> 00:08:42,440
+ the theory what will be happening in the backend, so the next video we will be discussing
+
+61
+00:08:42,440 --> 00:08:48,960
+ about the program and how this will going to happen, so this is one of an advanced techniques,
+
+62
+00:08:48,960 --> 00:08:56,040
+ so this will be many might feel this could be a difficult technique, difficult to understand,
+
+63
+00:08:56,040 --> 00:09:05,600
+ but if you have any questions just reach out to me in the question and answer session,
+
+64
+00:09:05,600 --> 00:09:14,960
+ and I'll answer the questions in 24, I'll try to answer the question in 24 hours of time,
+
+65
+00:09:14,960 --> 00:09:23,320
+ yeah, so that will be the overall explanation of what we are going to do, okay, so every
+
+66
+00:09:23,320 --> 00:09:29,640
+ program, every compiler commands, I'll be giving in the GitHub repo, so don't worry about
+
+67
+00:09:29,640 --> 00:09:35,040
+ that, we'll be getting each and everything which what I'm going to use, okay, so let's hop
+
+68
+00:09:35,040 --> 00:09:40,840
+ off from here and we'll discuss the program and execution section in the next video, thank
+
+69
+00:09:40,840 --> 00:09:41,360
+ you, bye-bye.
+
