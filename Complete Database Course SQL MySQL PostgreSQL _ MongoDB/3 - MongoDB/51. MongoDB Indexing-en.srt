@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:06,640
+ Hello programmer, welcome back to today's another tutorial topic. So today here is the MongoDB indexing
+
+2
+00:00:06,640 --> 00:00:13,040
+ using for the MongoDB shell, okay. So in this tutorial I can explore for how to improve query
+
+3
+00:00:13,040 --> 00:00:21,040
+ performance by creating index on the MongoDB collections, okay. So now perfectly ensure the
+
+4
+00:00:21,040 --> 00:00:28,400
+ connected MongoDB instance appropriate database. So now I can just here perfectly connect this
+
+5
+00:00:28,400 --> 00:00:35,760
+ MongoDB shell, my database instead, okay. So now I can go for here. Now create for the first
+
+6
+00:00:35,760 --> 00:00:43,440
+ example. So here first define for the single field image, okay. So now just go here and first of all,
+
+7
+00:00:43,440 --> 00:00:50,000
+ I can just save my database for students inside first of all, I can just use the TV and now
+
+8
+00:00:50,000 --> 00:00:57,920
+ inside for the collections name for the students and dot here use for create. So define
+
+9
+00:00:58,480 --> 00:01:03,920
+ perfectly, this third one is the pre index scale. Now here first of all create dependencies
+
+10
+00:01:03,920 --> 00:01:12,640
+ and also the curly brackets. So use the name and one, okay. So here this index for
+
+11
+00:01:12,640 --> 00:01:19,360
+ commonly square the single field image of the name field, the collections. So now here completely
+
+12
+00:01:19,360 --> 00:01:27,600
+ done and press the enter and you can see here this underscore for the one, this acknowledgement,
+
+13
+00:01:28,400 --> 00:01:37,440
+ this expression, the single field index, okay. Next step here I can create for the compound index,
+
+14
+00:01:37,440 --> 00:01:43,840
+ okay. So here I can just create. So first of all here we can type for the DB dot,
+
+15
+00:01:43,840 --> 00:01:55,760
+ use for here the collections name, suppose like students dot, use for here perfectly just now
+
+16
+00:01:55,760 --> 00:02:03,120
+ this on creating the index, okay. So now create for the parenthesis and also the curly brackets.
+
+17
+00:02:03,120 --> 00:02:11,040
+ So here first of all, I'll create for the first column, the age is one, okay. And also here
+
+18
+00:02:11,040 --> 00:02:20,720
+ define for the city. So city is created the decrement one, okay. So this comment. So now created
+
+19
+00:02:20,720 --> 00:02:28,000
+ the compound index on the s and the city field in the collections, okay. Now just execute this
+
+20
+00:02:28,000 --> 00:02:36,720
+ comment and you can see the comment is one and the city increment on, okay. So the acknowledgement
+
+21
+00:02:36,720 --> 00:02:44,640
+ is working and creation of the compound index, okay. And the next system here also used for
+
+22
+00:02:44,640 --> 00:02:52,560
+ another topic for here, creating the unique index, okay. So now just trying. So first of all,
+
+23
+00:02:52,560 --> 00:03:02,640
+ here I can type for the DB dot here I can type the, so now just here I can check in this one.
+
+24
+00:03:02,640 --> 00:03:09,120
+ So here I can choose to do, okay. So also here I can use for the create index, okay.
+
+25
+00:03:10,400 --> 00:03:18,320
+ And now in this inside, first I will create here, here I can create the parenthesis and also create
+
+26
+00:03:18,320 --> 00:03:28,400
+ the curly brackets. And in this inside define for completely, email is one, okay. And next,
+
+27
+00:03:28,400 --> 00:03:34,880
+ the prepare for another curly bracket and type for the unit function, okay. So
+
+28
+00:03:36,000 --> 00:03:45,600
+ UN IQ, okay. The perfectly explained for the unique and this the true statement, okay.
+
+29
+00:03:45,600 --> 00:03:55,680
+ So this is the common unique index only email in to my here the field in the collections,
+
+30
+00:03:55,680 --> 00:04:04,320
+ okay. So now just I can execute this and you can see the ID for here the email entered.
+
+31
+00:04:06,160 --> 00:04:11,360
+ You can see, so you can see here these
+
+32
+00:04:11,360 --> 00:04:20,640
+ first one is this, the Johan, the example,
+
+33
+00:04:20,640 --> 00:04:25,600
+ the block and you can see the several results about here.
+
+34
+00:04:25,600 --> 00:04:31,840
+ I can use the synchronous not done, okay. So now I can go for another topic,
+
+35
+00:04:31,840 --> 00:04:38,400
+ just create here and use for the text index. Okay. So now first of all here I can define for the
+
+36
+00:04:38,400 --> 00:04:48,880
+ DE, the students for the collections name and here create for this is the create for the index
+
+37
+00:04:48,880 --> 00:04:54,080
+ and here I can create for the parenthesis and also create the curly brackets instead I can create
+
+38
+00:04:54,080 --> 00:05:00,960
+ for the description, okay. So now it is perfectly described this description, okay.
+
+39
+00:05:02,080 --> 00:05:08,800
+ So the description now that I can create for the double quotation and
+
+40
+00:05:08,800 --> 00:05:15,600
+ in front I can just type the text columns, okay. So you can see here perfectly created this
+
+41
+00:05:15,600 --> 00:05:21,120
+ command and now I can just execute now and you can see this is completely created this called
+
+42
+00:05:21,120 --> 00:05:29,120
+ the MongoDB acknowledgement index successfully threshold for here, okay. So I hope you perfectly
+
+43
+00:05:29,120 --> 00:05:35,680
+ understand and you can see I have perfectly using now, so I can just find all the index document.
+
+44
+00:05:35,680 --> 00:05:45,200
+ So defined point here the DB dot the students dot user the find function, okay.
+
+45
+00:05:45,200 --> 00:05:52,880
+ And you can see here the old data and here you can see perfectly. So here I can perfectly work
+
+46
+00:05:52,880 --> 00:05:58,160
+ with statement and you can perfectly use for the index operation, okay. So thank you for watching
+
+47
+00:05:58,160 --> 00:05:59,160
+ and happy coding.
+
