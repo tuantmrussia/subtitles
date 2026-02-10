@@ -1,0 +1,1452 @@
+1
+00:00:00,000 --> 00:00:13,260
+Chào mừng trở lại với buổi học mới tiếp theo mà chúng tôi nói về hai mô hình hệ điều hành và TCP
+
+2
+00:00:13,260 --> 00:00:20,640
+Mô hình IP. Vậy nên, yeah. Đây sẽ là một đoạn video hơi dài. Vì vậy, nếu bạn muốn mất
+
+3
+00:00:20,640 --> 00:00:32,000
+a, nếu bạn muốn đi vệ sinh, bạn có thể ngồi trong 7 phút. Mở rộng tâm trí
+
+4
+00:00:32,000 --> 00:00:39,880
+và chỉ cần nhìn vào đó, những gì tôi sẽ nói, chỉ cần ghi nhớ nó, chỉ cần hình dung
+
+5
+00:00:39,880 --> 00:00:47,120
+mọi thứ sẽ diễn ra như thế nào và đừng căng thẳng. Nếu bạn đi qua
+
+6
+00:00:47,120 --> 00:00:54,480
+Video của tôi trong nhiều tháng, tôi chắc chắn, chắc chắn, chắc chắn, rằng nếu bất kỳ người phỏng vấn hỏi bạn bất kỳ câu hỏi
+
+7
+00:00:54,480 --> 00:01:02,760
+Có liên quan đến mô hình hệ điều hành hay TCP/IP, bạn có thể trả lời ngay lập tức, okay. Anh có thể
+
+8
+00:01:02,760 --> 00:01:09,800
+Làm thế nào một lần nữa bạn có thể xem lại video này là tốt. Nhưng vâng, sẽ rất tốt nếu bạn lưu ý nó
+
+9
+00:01:09,800 --> 00:01:14,040
+những điều quan trọng đầu tiên, lần đầu tiên.
+
+10
+00:01:14,040 --> 00:01:25,340
+Hãy bắt đầu với các lớp mạng video của tôi, một định nghĩa của hệ điều hành và mô hình IP.
+
+11
+00:01:25,340 --> 00:01:31,280
+Bắt đầu với mô hình hệ điều hành, bởi vì mô hình hệ điều hành là thứ sẽ giúp bạn hiểu
+
+12
+00:01:31,280 --> 00:01:37,320
+Làm thế nào mọi thứ trong mạng lưới hoạt động và hiểu được mô hình hệ điều hành được tìm thấy trong một giây. Mở
+
+13
+00:01:37,320 --> 00:01:46,040
+Hệ thống kết nối, hệ thống kết nối mở, được chứ? Mô hình
+
+14
+00:01:46,040 --> 00:01:53,160
+Bảy lớp mà hệ thống máy tính dùng để giao tiếp qua mạng lưới. Đó là lần đầu tiên
+
+15
+00:01:53,160 --> 00:01:58,880
+Mô hình thông thường cho việc giao tiếp qua mạng. Tiến sĩ bởi tất cả các máy tính lớn và viễn thông
+
+16
+00:01:58,880 --> 00:02:10,040
+Các công ty trong ít nhất những năm 1980 và chính thức theo tiêu chuẩn ISO vào năm 1984. Trong khi internet hiện đại
+
+17
+00:02:10,040 --> 00:02:16,960
+Thông tin liên lạc chủ yếu phụ thuộc vào mô hình TCP/IP đơn giản, mô hình hệ điều hành bảy lớp vẫn còn
+
+18
+00:02:16,960 --> 00:02:23,120
+Vô giá. Nó giúp hình dung và truyền đạt cách mạng lưới hoạt động, giúp cô lập
+
+19
+00:02:23,120 --> 00:02:30,760
+và có vấn đề với mạng. Mở, trong hệ điều hành, tượng trưng cho tài sản đã biết của nó
+
+20
+00:02:30,760 --> 00:02:37,320
+Thiên nhiên, thúc đẩy khả năng tương tác, kiến trúc bảy lớp hợp tác truyền tải
+
+21
+00:02:37,320 --> 00:02:47,440
+được rồi. Tiếp theo, đây là cách mô hình hệ điều hành trông như thế này. Lớp ứng dụng, trình bày
+
+22
+00:02:47,440 --> 00:02:52,280
+lớp, lớp phiên chạy, lớp vận chuyển, lớp mạng, lớp dữ liệu, lớp vật lý. Nè, nè.
+
+23
+00:02:52,280 --> 00:02:58,880
+là người gửi. Điều này gửi thông tin, nó đi từ ứng dụng sang vật lý, sau đó nó
+
+24
+00:02:58,880 --> 00:03:06,960
+dẫn đến bên nhận, nó nhận được từ bên dưới, trong lớp vật lý, sau đó nó sẽ đi đến ứng dụng
+
+25
+00:03:06,960 --> 00:03:13,880
+lớp. Đây là cách làm việc. 3 là lớp phần mềm. Lớp ứng dụng, ít hơn
+
+26
+00:03:13,880 --> 00:03:21,560
+chúng ta có trình duyệt. Chúng tôi có bất kỳ thông tin, chúng tôi có bất kỳ phần mềm.
+
+27
+00:03:21,560 --> 00:03:26,360
+Vì vậy, đây là những gì chúng tôi đang nhìn thấy, đó là chúng tôi đang nhìn thấy được gọi là giao diện điều khiển, từ đó
+
+28
+00:03:26,360 --> 00:03:33,440
+chúng ta có thể tương tác. Có một trang web trong đó có một nút chúng ta có thể tương tác bằng cách nhấn nút
+
+29
+00:03:33,440 --> 00:03:41,960
+Trên đó. Chúng tôi có một phần thực đơn, chúng tôi có một hộp, chúng tôi có mục liệt kê, chúng tôi có bảng điều khiển,
+
+30
+00:03:41,960 --> 00:03:46,000
+chúng tôi có rất nhiều thứ trong phần mềm của chúng tôi. Vì vậy, chúng tôi có lớp ứng dụng, mà được nhìn thấy
+
+31
+00:03:46,000 --> 00:03:53,960
+vì chúng ta. Lớp trình bày là một, đó là một phần của lớp phần mềm, đây là làm thế nào
+
+32
+00:03:53,960 --> 00:04:01,260
+Nó cầu xin chúng ta. Phiên chạy là cách nó giao tiếp trong mạng lưới, lớp vận chuyển,
+
+33
+00:04:01,260 --> 00:04:07,920
+Nó là một trung tâm của mô hình hệ điều hành và tại sao nó được gọi, chúng tôi sẽ thảo luận trong video này, phần cứng
+
+34
+00:04:07,920 --> 00:04:13,440
+lớp, lớp mạng, lớp dữ liệu và lớp vật lý. Lớp dữ liệu cũng vậy, bây giờ di chuyển
+
+35
+00:04:13,440 --> 00:04:19,840
+với đồ thị ứng dụng. Lớp ứng dụng nằm ở đỉnh của mô hình hệ điều hành,
+
+36
+00:04:19,840 --> 00:04:25,080
+Thực hiện trực tiếp bởi ứng dụng mạng. Nó là giao diện cho và sử dụng phần mềm như
+
+37
+00:04:25,080 --> 00:04:29,560
+Trình duyệt web và công cụ email được cung cấp giao thức hỗ trợ phần mềm, gửi nhận và
+
+38
+00:04:29,560 --> 00:04:34,920
+trình bày dữ liệu có ý nghĩa cho người dùng. Vì vậy, nó giống như một giao diện điều khiển của một trang web, mà chúng tôi
+
+39
+00:04:34,920 --> 00:04:41,320
+Có thể thấy dữ liệu từ đầu sau và hình ảnh hóa, hình dung nó. Bây giờ giao thức phổ biến bao gồm
+
+40
+00:04:41,320 --> 00:04:50,040
+S.S.S.S.S.S.S.V. đang ở đó, S.S.S.S.P. đang ở đó, và DNS ở đó.
+
+41
+00:04:50,040 --> 00:04:56,440
+Bây giờ, các giao thức bưu điện, giao thức chuyển tập tin, giao thức siêu văn bản, đơn giản
+
+42
+00:04:56,440 --> 00:05:03,200
+Giao thức chuyển giao giữa và DNS, anh phải nói cho tôi, DNS là gì? Nó quá phổ biến mà
+
+43
+00:05:03,200 --> 00:05:09,960
+luôn được truy cập trong phỏng vấn. Bây giờ, lớp này cũng hoạt động như một cửa sổ cho ứng dụng
+
+44
+00:05:09,960 --> 00:05:17,120
+Dịch vụ để truy cập vào mạng và hiển thị thông tin đã nhận. Ví dụ bao gồm trình duyệt web
+
+45
+00:05:17,120 --> 00:05:22,040
+Trình khách Skype và máy tính ngay lập tức, đôi khi được gọi là lớp văn bản thả, bởi vì
+
+46
+00:05:22,040 --> 00:05:27,480
+bạn nhìn thấy ở phía cuối. Lớp ứng dụng là lớp trên cùng của mô hình SPP,
+
+47
+00:05:27,480 --> 00:05:33,840
+Ở đây nó hoạt động như là một thay mặt cho người gửi và làm việc trong một mạng lưới thực sự thay mặt cho điều đó.
+
+48
+00:05:33,840 --> 00:05:39,080
+Lớp ứng dụng là lớp cao nhất, trên cùng trong nhóm ứng dụng
+
+49
+00:05:39,080 --> 00:05:43,880
+dữ liệu xung quanh người dùng để tương tác với mạng, đúng vậy. Đây là những gì bạn có thể thấy và sử dụng
+
+50
+00:05:43,880 --> 00:05:50,520
+Mỗi ngày. Vì vậy, bây giờ bạn đã biết lớp ứng dụng, bạn hoàn toàn có thể giải thích nó rất tốt
+
+51
+00:05:50,520 --> 00:05:57,160
+cái đó. Thưa ngài, nếu ngài tương tác với máy chủ, dù tôi đang xem gì trong laptop của tôi,
+
+52
+00:05:57,160 --> 00:06:03,400
+Máy tính của tôi bây giờ là trên lớp ứng dụng. Điều mà tôi đang hình dung,
+
+53
+00:06:03,400 --> 00:06:09,480
+Đường cao tốc tôi có thể tương tác với phần mềm của tôi, đây là ứng dụng của chúng tôi, đây gọi là ứng dụng
+
+54
+00:06:09,480 --> 00:06:14,480
+lớp. Điều này sẽ nhận được độc quyền để chia sẻ nó với các dữ liệu cần phải được chuyển
+
+55
+00:06:14,480 --> 00:06:19,440
+được chứ? Và chúng tôi, bạn phải nói với các giao thức
+
+56
+00:06:19,440 --> 00:06:26,680
+Đây là một vài thủ tục, bất cứ điều gì. Bây giờ, anh phải cho tôi biết định dạng đầy đủ của DNS,
+
+57
+00:06:26,680 --> 00:06:36,080
+Được rồi, bình luận lại đi. Được rồi, tiến lên. Bây giờ, chuyển sang lớp 6 và 5, đây là hiện tại
+
+58
+00:06:36,080 --> 00:06:43,000
+Lớp là trình bày lớp này, lớp trình bày này, chuẩn bị dữ liệu cho ứng dụng
+
+59
+00:06:43,000 --> 00:06:48,440
+lớp, okay. Vì vậy, nó giống như một đầu bếp, lớp trình bày giống như một đầu bếp người chuẩn bị dữ liệu
+
+60
+00:06:48,440 --> 00:06:53,360
+cho lớp ứng dụng xác định cách thiết bị bao gồm mã hóa dữ liệu nén
+
+61
+00:06:53,360 --> 00:06:59,840
+được chứ? Vì vậy, những gì nó, thực hiện, nó là mã hóa, mã hóa và nén
+
+62
+00:06:59,840 --> 00:07:05,200
+dữ liệu. Hãy nhớ rằng, ba điều bạn làm, nó lấy dữ liệu từ lớp và định dạng ứng dụng
+
+63
+00:07:05,200 --> 00:07:11,280
+Nó được truyền qua lớp cảm biến. Vì vậy nó lấy dữ liệu từ lớp ứng dụng, như
+
+64
+00:07:11,280 --> 00:07:18,160
+Chúng ta thấy trong biểu đồ này, chúng ta phải lùi lại, lấy dữ liệu từ lớp ứng dụng,
+
+65
+00:07:18,160 --> 00:07:22,800
+Bây giờ đi đến lớp trình bày, trình bày, lấy dữ liệu từ lớp ứng dụng và
+
+66
+00:07:22,800 --> 00:07:31,460
+phụ thuộc vào đó, nó mã hóa, nén, mã hóa dữ liệu và chuyển nó vào lớp phiên chạy.
+
+67
+00:07:31,460 --> 00:07:39,440
+Thường được gọi là lớp dịch, vì thế lớp trình bày cũng được gọi là dịch thuật
+
+68
+00:07:39,440 --> 00:07:45,120
+lớp, những ghi chú này xuống, nó chiết xuất và xử lý dữ liệu thành dạng cần thiết cho mạng
+
+69
+00:07:45,120 --> 00:07:52,320
+truyền tải, vì vậy nó sẽ thay đổi định dạng dữ liệu cũng phụ thuộc vào vấn đề bắt buộc, bây giờ phiên chạy
+
+70
+00:07:52,320 --> 00:07:57,880
+lớp học, lớp phiên chạy tạo ra quản lý và chấm dứt kênh liên lạc, vì vậy có rất nhiều
+
+71
+00:07:57,880 --> 00:08:03,320
+các phiên họp mà chúng tôi đã viết hệ thống, chúng tôi sẽ phải, bây giờ nó sẽ
+
+72
+00:08:03,320 --> 00:08:08,800
+Quyết định nên tiếp tục và nên được cắt giảm ngay bây giờ, nó là trách nhiệm
+
+73
+00:08:08,800 --> 00:08:13,600
+được chứ? Vì vậy, nếu bạn làm cho một
+
+74
+00:08:13,600 --> 00:08:18,720
+Recast, bạn recast được hoàn thành, vì vậy lớp phiên chạy này là một trong những mà sẽ quyết định rằng
+
+75
+00:08:18,720 --> 00:08:24,920
+Vâng, ngay bây giờ tôi có thể giao tiếp, tôi có thể kết thúc giao tiếp này, lớp này cũng đã được thiết lập.
+
+76
+00:08:24,920 --> 00:08:29,800
+Kiểm tra trong khi truyền dữ liệu, thiết bị dài đến chuyển từ điểm kiểm tra cuối cùng nếu giải thích
+
+77
+00:08:29,800 --> 00:08:35,000
+vì vậy bảo trì xác thực và an ninh, bây giờ
+
+78
+00:08:35,000 --> 00:08:43,720
+Nó là FDM, chuyển tập tin truy cập và quản lý, dịch vụ thư, dịch vụ trực tiếp, đây là
+
+79
+00:08:43,720 --> 00:08:50,760
+Một số dịch vụ, chúng ta hãy đi nhiều hơn vào một bài thuyết trình như lớp phiên chạy, các chức năng quan trọng hiện diện
+
+80
+00:08:50,760 --> 00:08:59,800
+Khi chúng tôi đi qua nó, nó sẽ mã hóa, mã hóa, nén, mã hóa, chuyển dữ liệu
+
+81
+00:08:59,800 --> 00:09:06,800
+vào mật mã từ văn bản đơn giản, làm thế nào an toàn truyền tải và trở lại văn bản đơn giản khi tiếp nhận
+
+82
+00:09:06,800 --> 00:09:11,720
+Bên, sử dụng một nén phím để thăm số bit, được truyền tối ưu
+
+83
+00:09:11,720 --> 00:09:15,560
+Hiệu suất mạng lưới, nếu bạn đang gửi một số lượng lớn bit, thì có
+
+84
+00:09:15,560 --> 00:09:21,160
+nó sẽ là một cơ hội cao hơn để, có một va chạm trong một mạng lưới mà bạn hạ thấp một số
+
+85
+00:09:21,160 --> 00:09:28,080
+dữ liệu, nhưng trong một số bit nhỏ với a, sau đó sẽ có cơ hội cao hơn để có sẵn
+
+86
+00:09:28,080 --> 00:09:33,620
+trong một mạng lưới, dữ liệu kinh tế không đáng tin cậy cũ như những gì được gọi là, nó được gọi là một
+
+87
+00:09:33,620 --> 00:09:41,680
+trượt tuyết, nhớ đến EBC, định dạng DIC và ngược lại, đảm bảo khả năng giữa khác nhau
+
+88
+00:09:41,680 --> 00:09:47,160
+Hệ thống, ở đâu đó, tầng lớp xã hội, nhưng sẽ làm như bạn biết, nó sẽ là thứ mà
+
+89
+00:09:47,160 --> 00:09:52,800
+duy trì sự giao tiếp, nó sẽ giúp bạn quyết định, bạn phải tiếp tục trò chuyện
+
+90
+00:09:52,800 --> 00:09:59,600
+hay không, tại thời điểm đó để dòng dữ liệu, cùng với nhận dạng và hiệu quả rủi ro, đồng bộ hoá
+
+91
+00:09:59,600 --> 00:10:04,920
+Để ngăn chặn mất dữ liệu, điều khiển tải xuống, quản lý giao tiếp giữa hai hệ thống, hỗ trợ
+
+92
+00:10:04,920 --> 00:10:09,960
+Một nửa số may mắn hay nửa số khác, nửa số khác, một cách giao tiếp, như chúng ta có điện thoại
+
+93
+00:10:09,960 --> 00:10:16,800
+trong một, trong những năm 90, trong đó tại một thời điểm chỉ một người có thể nói chuyện, hoặc bạn có thể nói chuyện
+
+94
+00:10:16,800 --> 00:10:23,960
+Đối với tôi có một bộ đàm, tôi hy vọng bạn biết, có một bộ đàm rằng
+
+95
+00:10:23,960 --> 00:10:32,680
+được sử dụng trong một chính phủ mà, tại một thời điểm, có một người có thể nói chuyện, sau đó khác
+
+96
+00:10:32,680 --> 00:10:38,320
+Một người, cũng như nó được sử dụng trong quân đội, sau đó người khác, điện thoại này, sau đó
+
+97
+00:10:38,320 --> 00:10:44,240
+Tôi phải nói rằng đó là một nửa sự phức tạp, tuy nhiên, điện thoại di động của chúng tôi là một trong những hoàn toàn phức tạp,
+
+98
+00:10:44,240 --> 00:10:49,680
+Bạn tôi đang nói chuyện với tôi, và nói chuyện với tôi, và đồng thời, tôi có thể nói và dừng lại
+
+99
+00:10:49,680 --> 00:10:57,120
+Người đó nói rằng: Hãy nghe ta trước đã, hãy nghe ta trước đã; vì vậy, nầy là thể nào, hãy làm như vậy!
+
+100
+00:10:57,120 --> 00:11:07,080
+Tôi, sang bên trái này, một phương tiện vận chuyển trái, như bạn thấy, như bạn thấy trước đây, vì vậy nó cũng là
+
+101
+00:11:07,080 --> 00:11:12,480
+được biết đến là trung tâm của mô hình tay đầu tiên, tại sao chúng tôi sẽ thảo luận về vận chuyển, lấy dữ liệu từ
+
+102
+00:11:12,480 --> 00:11:17,720
+ngưỡng trái, và phá vỡ nó thành phân đoạn, bây giờ nó sẽ phá vỡ, dữ liệu của bạn vào một
+
+103
+00:11:17,720 --> 00:11:21,600
+phân đoạn, một trong những truyền nó, nó là một xử lý để lắp ráp các đoạn trên nhận
+
+104
+00:11:21,600 --> 00:11:22,600
+được rồi.
+
+105
+00:11:22,600 --> 00:11:27,080
+Vì vậy, bây giờ, trong một trung tâm bên, nó sẽ phá vỡ các dữ liệu trong một phía cũ nhận, nó sẽ tham gia,
+
+106
+00:11:27,080 --> 00:11:32,240
+nó sẽ lắp lại dữ liệu đó, biến nó trở lại dữ liệu có thể sử dụng trước, yeah, và điều này
+
+107
+00:11:32,240 --> 00:11:39,680
+Chỉ là chức năng áp suất, kiểm soát dòng chảy, OK, nó sẽ điều chỉnh dựa trên tốc độ,
+
+108
+00:11:39,680 --> 00:11:45,600
+phụ thuộc vào tốc độ của mạng lưới hay mạng không dây, nó sẽ, một trong những người kiểm soát tốc độ,
+
+109
+00:11:45,600 --> 00:11:49,200
+OK, tốc độ điều chỉnh tĩnh để quản lý các thiết bị nhận, có thể truy cập tốc độ và ngăn chặn
+
+110
+00:11:49,200 --> 00:11:55,280
+Tổng quát, kiểm soát lỗi, kiểm tra liệu dữ liệu đã được nhận không đúng, và để hỏi lại,
+
+111
+00:11:55,280 --> 00:12:05,080
+Nếu cần thiết, có, vì vậy mỗi khi họ làm một khung, có một, những gì tôi sẽ nói
+
+112
+00:12:05,080 --> 00:12:11,920
+Giống như, nếu bạn muốn một sâu, nếu bạn thích khóa học này, OK, bình luận này xuống mà bạn muốn
+
+113
+00:12:11,920 --> 00:12:20,880
+Một khóa học sâu về điều này, tôi có thể nói với bạn mỗi và mỗi mảnh, giống như mỗi mảnh vỡ những gì
+
+114
+00:12:20,880 --> 00:12:30,520
+Nó chứa, OK, theo cách tuyến tính, tuyến tính hơn, mỗi gói chứa bao nhiêu bit
+
+115
+00:12:30,520 --> 00:12:37,160
+của dữ liệu, và làm thế nào để chuyển từ đó sang đó, từ nguồn đến bộ nhận
+
+116
+00:12:37,160 --> 00:12:43,680
+thiết lập, vì vậy nếu bạn muốn và nếu bạn thích khóa học này đầu tiên đưa ra một ngón cái lên một chút, tôi không biết
+
+117
+00:12:43,680 --> 00:12:50,280
+anh em với người mẹ khác,
+
+118
+00:12:50,280 --> 00:12:57,760
+bình luận rằng bạn muốn một khóa học sâu về điều này, tin tôi đi, tôi sẽ đặt một rất
+
+119
+00:12:57,760 --> 00:13:03,960
+Khóa học chi tiết, nếu bạn đi qua khóa học đó, không ai có thể ngăn cản bạn từ bất cứ điều gì, như
+
+120
+00:13:03,960 --> 00:13:10,680
+Bạn là chuyên gia, bạn là chuyên gia, trong một mạng lưới, OK, nếu bạn đi qua khóa học đó, nhưng
+
+121
+00:13:10,680 --> 00:13:18,120
+Vì vậy, tôi muốn tình yêu của bạn, sự ủng hộ của bạn, vì vậy nếu tôi nhận được rất nhiều bình luận trong khóa học này
+
+122
+00:13:18,120 --> 00:13:23,840
+chắc chắn, tôi sẽ làm được, OK, hãy để chúng tôi trở lại đây, kiểm soát dòng chảy
+
+123
+00:13:23,840 --> 00:13:30,640
+Giống như serid nói, nó phải duy trì rằng theo tốc độ, theo
+
+124
+00:13:30,640 --> 00:13:34,960
+băng thông, chúng ta phải duy trì dòng chảy, kiểm soát lỗi là một mà nó sẽ kiểm tra
+
+125
+00:13:34,960 --> 00:13:42,520
+Sau khi làm một mảnh vỡ, nó sẽ đánh dấu nó là 1, 2, 3, 4, 5, bây giờ, nếu người nhận thiết lập, tôi đã làm
+
+126
+00:13:42,520 --> 00:13:50,320
+Không nhận được một gói 4 số, sau đó nó sẽ gửi một gói một lần nữa, OK, do đó, điều này
+
+127
+00:13:50,320 --> 00:13:53,680
+là cách kiểm soát dòng chảy được duy trì, nó cung cấp dịch vụ cho ứng dụng, tôi sẽ
+
+128
+00:13:53,680 --> 00:13:58,840
+Nói dịch vụ từ lớp dữ liệu mạng trong lớp vận chuyển được gọi là phân đoạn,
+
+129
+00:13:58,840 --> 00:14:04,160
+vai trò của gia đình là chấm dứt việc truyền tải toàn bộ thông điệp, bao gồm việc công nhận
+
+130
+00:14:04,160 --> 00:14:11,120
+chức năng truyền lớp,
+
+131
+00:14:11,120 --> 00:14:18,200
+Phân đoạn và tổng hợp lại, như chúng tôi gọi khi chúng tôi nói phân đoạn và reppling, mảnh
+
+132
+00:14:18,200 --> 00:14:24,240
+sau đó tái sử dụng chúng, dịch vụ điểm giải quyết, vận chuyển lớp đầu, nhóm hoặc dịch vụ
+
+133
+00:14:24,240 --> 00:14:27,640
+Địa chỉ điểm, để đảm bảo thông điệp, bạn sẽ phải sửa chữa quá trình hoặc ứng dụng
+
+134
+00:14:27,640 --> 00:14:32,960
+của việc tổng hợp, như tôi đã nói, họ đánh dấu là 1, 2, 3, 4, 5, vì vậy phụ thuộc vào đó, bạn từ
+
+135
+00:14:32,960 --> 00:14:37,920
+Một bộ nhận tín hiệu, nó sẽ kiểm tra và chắc chắn rằng, yeah, tôi đã nhận tất cả các gói tin,
+
+136
+00:14:37,920 --> 00:14:46,840
+Bạn gửi cho tôi, đây là cách nó hoạt động, chuyển cấp cấp cấp, oh chờ đợi, chuyển đổi
+
+137
+00:14:46,840 --> 00:14:51,040
+cấp độ hoặc dịch vụ, kết nối nút nhập vào dịch vụ ở đây, vì vậy nó luôn luôn là một kết nối
+
+138
+00:14:51,040 --> 00:14:57,080
+hoặc dịch vụ nhập, nếu bạn muốn đi, OK, vì vậy ở đây, dịch vụ chuyển lớp để thêm
+
+139
+00:14:57,080 --> 00:15:03,600
+2 cách để giao tiếp, hoặc TCP hoặc UDP, tôi hy vọng bạn biết, ở phần trước chúng tôi
+
+140
+00:15:03,600 --> 00:15:10,400
+Nói về điều này, do đó, nó là một hoặc là một TCP hoặc khác CNP, TCP là hướng kết nối hơn
+
+141
+00:15:10,400 --> 00:15:17,520
+Và nó sẽ cung cấp một bảo mật của dữ liệu đó sẽ đạt được hai đích, trong khi kết nối
+
+142
+00:15:17,520 --> 00:15:26,360
+Ít hơn, nó không phải là kết nối ít hơn, như tôi đã nói, nó không phải là chắc chắn, đảm bảo rằng
+
+143
+00:15:26,360 --> 00:15:30,760
+dữ liệu sẽ đến đích khác, tuy nhiên tốc độ của một dịch vụ lớp kết nối, mà
+
+144
+00:15:30,760 --> 00:15:38,200
+là UDP nhiều hơn, nhưng trong TCP, đó là định hướng kết nối ít hơn, vì vậy tất cả mọi thứ là của họ
+
+145
+00:15:38,200 --> 00:15:42,720
+lợi thế và bất lợi, tùy thuộc vào dịch vụ của bạn, tùy thuộc vào yêu cầu của bạn
+
+146
+00:15:42,720 --> 00:15:50,080
+Bạn phải đi với điều đó, cái được gọi là một dấu hiệu, do vai trò quan trọng của nó trong
+
+147
+00:15:50,080 --> 00:15:55,680
+Kết thúc để kết thúc sự tin tưởng giao tiếp, OK, vì vậy chúng tôi giao tiếp như là UDP hoặc khác TCP, vì vậy
+
+148
+00:15:55,680 --> 00:16:01,800
+Về cơ bản, chúng tôi đang kết nối với một phương tiện vận chuyển ở đây, OK, bây giờ bạn có thể sử dụng ít hơn, nếu hệ thống của tôi
+
+149
+00:16:01,800 --> 00:16:11,720
+được kết nối với bất cứ thứ gì, bất kỳ thiết bị nào, nó được thông qua như TCP hay UDP, OK, vì vậy bây giờ bạn biết
+
+150
+00:16:11,720 --> 00:16:17,880
+Đó là lý do tại sao nó được gọi là tổn thương của cùng một
+
+151
+00:16:17,880 --> 00:16:25,080
+Mô hình, không thể tin được, vậy bây giờ bạn phải hiểu điều đó bằng cách trích dẫn và chỉ cần nhớ
+
+152
+00:16:25,080 --> 00:16:30,960
+Nó làm gì, chức năng là gì, bởi vì rất nhiều giao diện hỏi bạn về vận chuyển
+
+153
+00:16:30,960 --> 00:16:39,160
+lớp học, bởi vì nó quan trọng, chúng ta hãy di chuyển ở đó, không chỉ ở đây, vì vậy bạn là một guy mạng lưới,
+
+154
+00:16:39,160 --> 00:16:44,360
+Bạn phải hiểu nó cho một lớp, lớp mạng có hai chức năng chính phá vỡ
+
+155
+00:16:44,360 --> 00:16:48,960
+phân đoạn thành gói mạng và lắp lại chúng và chuyển gói lại bằng cách khám phá
+
+156
+00:16:48,960 --> 00:16:54,080
+con đường tối ưu qua mạng vật lý, chúng tôi sử dụng địa chỉ mạng để
+
+157
+00:16:54,080 --> 00:17:02,600
+Các tuyến đường đến điểm đến, bây giờ bạn biết, đó là những gì nó đóng vai trò và những gì nó làm, điều này
+
+158
+00:17:02,600 --> 00:17:07,640
+lớp xử lý truyền dữ liệu giữa vị trí máy và sự phát triển của nó cũng quản lý
+
+159
+00:17:07,640 --> 00:17:14,720
+Phân loại gói, làm thế nào nó sẽ làm, xin lỗi gói định tuyến, làm thế nào nó sẽ làm, bằng cách sử dụng IP
+
+160
+00:17:14,720 --> 00:17:22,560
+Và bằng cách sử dụng đường ngắn nhất, sẽ có một thuật toán của nhịp tim, tôi nghĩ,
+
+161
+00:17:22,560 --> 00:17:30,400
+mà sẽ quyết định đường dẫn ngắn nhất trong mạng, okay, bây giờ nó sẽ chọn định tuyến
+
+162
+00:17:30,400 --> 00:17:36,840
+con đường ngắn nhất, và hầu hết chúng ta biết con đường quỹ đạo, người gửi là cả hai chúng ta, người nhận
+
+163
+00:17:36,840 --> 00:17:42,120
+IPDS được đặt vào đầu trang, vì vậy nếu bạn mạng lớp là người vận chuyển,
+
+164
+00:17:42,120 --> 00:17:51,600
+mảnh từ lớp vận chuyển sang dưới, nó sẽ thêm địa chỉ IPD nguồn
+
+165
+00:17:51,600 --> 00:17:56,800
+và sau đó kết thúc nói rằng từ con đường này bạn phải đi, okay, vì vậy đây là những thông tin
+
+166
+00:17:56,800 --> 00:18:04,760
+Nó được đưa ra ở đây, bây giờ trong lớp dữ liệu liên kết, nó nhận dữ liệu và điều này kêu gọi cho một bước
+
+167
+00:18:04,760 --> 00:18:08,440
+Bạn thấy và xác nhận bất kỳ kết nối giữa hai nút vật lý nhân vật trên mạng, nó
+
+168
+00:18:08,440 --> 00:18:12,920
+sẽ phá vỡ gói thành khung, bây giờ nó sẽ phá vỡ gói thành khung và gửi chúng
+
+169
+00:18:12,920 --> 00:18:17,200
+từ nguồn đến đích, nó có thể, nó có nghĩa là chức năng được lưu trữ lỗi miễn phí truyền dữ liệu
+
+170
+00:18:17,200 --> 00:18:22,000
+Nhưng ngay cả các nút, những gì một lớp vật lý, khi một gói đến các lớp dữ liệu bảo đảm
+
+171
+00:18:22,000 --> 00:18:27,640
+nó truyền tới đúng máy sử dụng địa chỉ MAC của nó, yeah, lớp liên kết dữ liệu DL
+
+172
+00:18:27,640 --> 00:18:33,280
+bao gồm hai lớp phụ, lớp liên kết logic, MDXs, kiểm soát, bây giờ MAC, nó là một trong đó
+
+173
+00:18:33,280 --> 00:18:40,160
+là một thử nghiệm tham số, của bất kỳ hệ thống, tuy nhiên bạn có thể thay đổi nó, bạn phải làm rất nhiều
+
+174
+00:18:40,160 --> 00:18:48,800
+của những điều phi đạo đức, mà sẽ không ảnh hưởng đến hệ thống, nhưng nó sẽ phá vỡ địa chỉ MAC
+
+175
+00:18:48,800 --> 00:18:55,720
+cho hệ thống và làm cho hệ thống của bạn là rất cho đến khi, do đó, điều khiển kết nối hợp lý để xác định mạng
+
+176
+00:18:55,720 --> 00:19:01,120
+Giao thức thực hiện lỗi kiểm tra và đồng bộ khung, nhớ những gì nó sẽ làm, địa chỉ MAC
+
+177
+00:19:01,120 --> 00:19:06,240
+sử dụng địa chỉ MAC để kết nối với thiết bị và xác định quyền tiếp nhận dữ liệu,
+
+178
+00:19:06,240 --> 00:19:13,160
+khung thiết bị, tổ chức dữ liệu thô luồng thành khung bằng cách chạm vào mẫu bit đặc biệt để
+
+179
+00:19:13,160 --> 00:19:19,120
+Giả sử bất kỳ và làm cho làm cho ý nghĩa đối với người nhận, bạn biết nhận sẽ có rất nhiều
+
+180
+00:19:19,120 --> 00:19:25,960
+thông tin như là dữ liệu đi qua từ lớp trên xuống dưới, một gói có rất nhiều thông tin
+
+181
+00:19:25,960 --> 00:19:33,160
+Từ địa chỉ IP đến địa chỉ MAC để khung số từ cách nó nên được tổ chức, tất cả mọi thứ
+
+182
+00:19:33,160 --> 00:19:41,720
+OK, vì vậy trong video tiếp theo, trong khóa học tiếp theo, chúng tôi sẽ là một khóa học mạng sâu, nếu bạn
+
+183
+00:19:41,720 --> 00:19:48,480
+đã thấy tình yêu của bạn với tôi, tôi sẽ làm trong đó tôi sẽ cho bạn biết những khung nào chứa
+
+184
+00:19:48,480 --> 00:19:55,760
+dữ liệu đó và địa chỉ nào, nên theo một cách rất nhỏ, không có dữ liệu liên kết cho dữ liệu
+
+185
+00:19:55,760 --> 00:19:59,680
+Kết nối chức năng lớp, địa chỉ vật lý là có lỗi kiểm soát là có truy cập điều khiển
+
+186
+00:19:59,680 --> 00:20:04,480
+là một kiểm soát dòng chảy là một chúng ta biết kiểm soát dòng chảy, chúng ta biết kiểm soát lỗi, những gì là X hoặc toàn cầu
+
+187
+00:20:04,480 --> 00:20:11,960
+Nhiều thiết bị, ví dụ một kênh duy nhất, OK, lớp dưới lớp MAC trừ việc ngăn chặn truy cập kênh
+
+188
+00:20:11,960 --> 00:20:17,720
+va chạm trong một số giai đoạn, đây là mạng lưới truyền thông kim loại quan trọng như ethernet,
+
+189
+00:20:17,720 --> 00:20:23,380
+Đây là cách nó hoạt động, địa chỉ vật lý cũng được gọi là địa chỉ MAC, không có cuối cùng là vật lý
+
+190
+00:20:23,380 --> 00:20:28,200
+lớp đầu tiên của tất nhiên, tôi mô hình xử lý các quang phổ điện vật lý từ
+
+191
+00:20:28,200 --> 00:20:34,480
+Thông tin liên lạc vào đoạn truyền, cơ sở dữ liệu quá tải 0 và 1, hãy nhớ
+
+192
+00:20:34,480 --> 00:20:41,480
+video đầu tiên tất nhiên, máy giao tiếp trong một 0 hoặc khác không có tập tin, trong một nhị phân
+
+193
+00:20:41,480 --> 00:20:47,560
+Cách đây, chúng tôi quay trở lại định dạng nhị phân qua một cuộc tìm kiếm truyền tải như một dây đồng, sợi
+
+194
+00:20:47,560 --> 00:20:51,420
+Thị giác trên một kênh, do đó, đây là hình thức nền tảng của một chúng tôi nên đi
+
+195
+00:20:51,420 --> 00:20:55,760
+đến mạng, do đó, hoặc mạng nối, mạng không dây, một từ một thiết bị hiển thị
+
+196
+00:20:55,760 --> 00:21:03,280
+Một thiết bị khác, nó sẽ đi, vì vậy nó sẽ, vì vậy dữ liệu của chúng tôi trong một bit, bây giờ nó sẽ chuyển đổi thành
+
+197
+00:21:03,280 --> 00:21:10,040
+điện tử, OK, trong một khung điện tử, bạn biết điện tử mà nó sẽ đi qua
+
+198
+00:21:10,040 --> 00:21:16,440
+Như một dòng điện, nó sẽ đi qua một dây điện hoặc dây không dây,
+
+199
+00:21:16,440 --> 00:21:24,560
+Chúng tôi có hai sóng từ, vì vậy nó sẽ đi từ kênh đó đi từ hệ thống của tôi đến
+
+200
+00:21:24,560 --> 00:21:31,440
+Điểm truy cập để truy cập đến công tắc khoảng cách chuyển sang khóa học tường lửa bây giờ đi ra ngoài
+
+201
+00:21:31,440 --> 00:21:38,360
+với công ty của tôi, với văn phòng công ty của tôi, bây giờ nó sẽ là Google DNS, OK, vậy cái này
+
+202
+00:21:38,360 --> 00:21:44,080
+là cách nó hoạt động, dịch vụ mà lớp vật lý cung cấp tốc độ duy trì dòng chảy dữ liệu,
+
+203
+00:21:44,080 --> 00:21:48,800
+Đồng bộ hoá bit, rất quan trọng, kiểm soát tốc độ bit xử lý tín hiệu vật lý
+
+204
+00:21:48,800 --> 00:21:55,560
+và trực tiếp, lấy dữ liệu chuyển giao, quyết định hệ thống địa chất mạng, chuyển tải một hồ sơ rất nhiều
+
+205
+00:21:55,560 --> 00:22:00,720
+Những điều bạn sẽ làm, vì vậy những gì sẽ là lợi thế, vì vậy đây là chỉ lớp trong đó
+
+206
+00:22:00,720 --> 00:22:08,320
+Tôi thêm vào lợi thế và bất lợi, bởi vì nhiều cuộc phỏng vấn muốn bạn biết cơ bản, khóa học này
+
+207
+00:22:08,320 --> 00:22:14,120
+là cho nhân viên công ty cũng như người đang chuẩn bị cho công việc, vì vậy
+
+208
+00:22:14,120 --> 00:22:20,340
+Tôi thêm điều quan trọng nữa, bởi vì là một sinh viên mới, tôi biết bạn không biết nhiều
+
+209
+00:22:20,340 --> 00:22:28,440
+Trên mạng, nhưng tôi muốn bạn biết cơ bản, vì vậy tôi sẽ luôn hỏi bạn, cho tôi biết các lợi thế
+
+210
+00:22:28,440 --> 00:22:34,080
+của lớp vật lý, bất lợi của lớp vật lý, hoặc cho tôi biết những gì
+
+211
+00:22:34,080 --> 00:22:41,160
+là lớp vật lý, OK, vì vậy lợi thế, tiêu hóa tiêu chuẩn, đảm bảo sự giải thích giữa các khác nhau
+
+212
+00:22:41,160 --> 00:22:46,180
+Thiết bị và sản xuất, nền tảng cung cấp phần cứng cần thiết và dữ liệu kết nối, tất cả
+
+213
+00:22:46,180 --> 00:22:50,200
+Lớp mạng cao hơn thực sự khi chức năng, so với tương đối làm việc trên nhiều phương tiện khác nhau
+
+214
+00:22:50,200 --> 00:22:54,840
+Loại bao gồm dây cáp đồng sợi quang không dây sóng vô tuyến, vận động cơ vận động tốc cao
+
+215
+00:22:54,840 --> 00:23:01,080
+hoặc hỗ trợ tốc độ truyền tải dữ liệu đường dài, đồng bộ hóa bit, quản lý
+
+216
+00:23:01,080 --> 00:23:05,560
+thời gian, dữ liệu nó, đảm bảo chuyển dữ liệu chính xác giữa máy chủ thứ hai, bất lợi,
+
+217
+00:23:05,560 --> 00:23:10,960
+không có lỗi sửa chữa, nó không phát hiện các hiệu ứng thêm trong chuyển dữ liệu, nó đơn giản
+
+218
+00:23:10,960 --> 00:23:16,640
+rô bốt truyền tín hiệu, nên đơn giản là robot 01, vật lý 1 có thể gây ra tổn thương từ
+
+219
+00:23:16,640 --> 00:23:21,280
+nó có thể là một vết cắt dây, nó có thể là
+
+220
+00:23:21,280 --> 00:23:25,840
+Bất kỳ vấn đề thiết bị nào, nó có thể là bất cứ điều gì, thoái hóa đơn có xu hướng phát ra như giao diện nhiễu
+
+221
+00:23:25,840 --> 00:23:29,920
+Tôi phải lắng nghe, nếu bạn có các điểm truy cập và có một laptop và có một bức tường
+
+222
+00:23:29,920 --> 00:23:35,360
+giữa cái đó và cái kính dày, cái cổng giữa chúng hay là bức tường giữa chúng,
+
+223
+00:23:35,360 --> 00:23:40,600
+Nó sẽ ảnh hưởng, sự thoái hóa tín hiệu, suy thoái ở đó, không có dữ liệu, vâng
+
+224
+00:23:40,600 --> 00:23:46,200
+nó sẽ không kiểm tra, không có trí thông minh
+
+225
+00:23:46,200 --> 00:23:53,200
+Ở đó, kiểm tra mạch điện luôn ở đó, không, chúng ta nói về lý thuyết kết nối dữ liệu về cơ bản,
+
+226
+00:23:53,200 --> 00:24:00,040
+thêm vào đó, lớp dữ liệu liên kết luôn luôn là một gói tại lớp được gọi là một khung hình,
+
+227
+00:24:00,040 --> 00:24:07,040
+gấp đôi, chúng tôi đã làm một trang điểm trong lớp vận chuyển của chúng tôi, chúng tôi làm một, không, không phải trong lớp vận chuyển,
+
+228
+00:24:07,040 --> 00:24:12,160
+Có một được gọi là khung hình, thiết bị như công tắc và vòng tay hoạt động tại một liên kết dữ liệu,
+
+229
+00:24:12,160 --> 00:24:20,380
+nó luôn luôn xảy ra, nó là 3, viết nó xuống, mà thiết bị mạng làm việc trên dữ liệu
+
+230
+00:24:20,380 --> 00:24:27,360
+Lớp liên kết, mà thiết bị mạng hoạt động trên lớp mạng, vì vậy điều này luôn luôn bị mắc kẹt, chuyển đổi
+
+231
+00:24:27,360 --> 00:24:33,320
+và các thanh nâng đỡ hoạt động tại một lớp dữ liệu liên kết, chức năng chủ yếu được xử lý bởi NIC, mạng
+
+232
+00:24:33,320 --> 00:24:38,400
+Thẻ giao diện, chúng ta đã nói về trong video trước đó và máy chủ máy điều khiển, okay,
+
+233
+00:24:38,400 --> 00:24:44,000
+Cảm biến dữ liệu vật lý, okay tất cả là về truyền tải đường và kết nối vật lý
+
+234
+00:24:44,000 --> 00:24:49,200
+hoặc kết nối cáp không dây, nó là đồng bộ bit, kiểm soát tốc độ bit là quan trọng
+
+235
+00:24:49,200 --> 00:24:55,240
+Yếu tố ở đây, bây giờ chìa khóa thiết bị hiệu ứng vật lý, chồng, Peter, bộ điều giải, cáp mạng được dùng
+
+236
+00:24:55,240 --> 00:25:03,200
+Trong lớp này, được rồi lớp này, nhà của dữ liệu trong lớp mạng được gọi là thấp, thấp
+
+237
+00:25:03,200 --> 00:25:07,080
+Lớp thấp hơn hoặc lớp phần cứng, như chúng ta đã nói trong đồ thị, triển khai vật lý là một không gian
+
+238
+00:25:07,080 --> 00:25:11,960
+để sắp xếp mạng, có xe buýt, ngôi sao, hàng loạt hệ sinh thái, chế độ truyền tin, không thể tự vệ
+
+239
+00:25:11,960 --> 00:25:17,080
+Loại dữ liệu, hoặc một vị trí dữ liệu đơn giản hoặc cao hơn, chúng ta đã nói về điều này là tốt, không có lợi thế
+
+240
+00:25:17,080 --> 00:25:24,920
+của mô hình hệ điều hành, tất cả mọi thứ là theo một cách rất phân loại và định dạng được kết nối, gắn nó, lớp tiếp cận,
+
+241
+00:25:24,920 --> 00:25:28,240
+mạng nối liền đến bảy ngày trong lớp học, đơn giản hóa và mở rộng ba
+
+242
+00:25:28,240 --> 00:25:33,800
+Một kiểu hệ thống phức tạp, mỗi lớp đã xác định và cố định chức năng, tiêu chuẩn hóa,
+
+243
+00:25:33,800 --> 00:25:37,560
+cổ vũ, tiêu chuẩn giao tiếp mạng khi mỗi lớp tuân theo các giao thức khác nhau
+
+244
+00:25:37,560 --> 00:25:43,880
+Đầu tiên, giải thích một cách dễ dàng giữa các sản phẩm bán khác nhau, chẩn đoán dễ dàng, chúng ta biết rằng những gì
+
+245
+00:25:43,880 --> 00:25:49,120
+Lớp nào thực hiện chức năng, để chúng ta có thể dễ dàng chẩn đoán theo nó, đầu tiên
+
+246
+00:25:49,120 --> 00:25:52,640
+trong vấn đề mạng lưới, vấn đề chẩn đoán, kĩ sư để khẳng định, vấn đề, sự tôn trọng, tải trọng, công cụ,
+
+247
+00:25:52,640 --> 00:25:57,080
+Gia tốc, hoạt động và giảm thời gian, cải thiện khả năng, cho phép độc lập
+
+248
+00:25:57,080 --> 00:26:00,960
+Cập nhật và cải tiến trong mỗi lớp mà không ảnh hưởng đến các công nghệ hỗ trợ khác
+
+249
+00:26:00,960 --> 00:26:10,120
+Tiến bộ và tính năng, nó có khả năng tốt nhất trong mô hình này, không, TCP, mô hình IP,
+
+250
+00:26:10,120 --> 00:26:17,880
+Phía sau của internet là một khuôn khổ thẳng đứng, vì vậy nó chỉ để hiểu
+
+251
+00:26:17,880 --> 00:26:25,840
+Làm thế nào, gói, làm thế nào khung, làm thế nào tất cả mọi thứ hoạt động trong một mạng lưới, nhưng các giao thức thực tế
+
+252
+00:26:25,840 --> 00:26:33,640
+dãy phòng mà thực sự được sử dụng cho một giao tiếp, trong một mạng lưới toàn cầu là TCP/IP,
+
+253
+00:26:33,640 --> 00:26:40,820
+Không, như bạn có thể thấy có một TCP/OS/P, những gì là một TCP và những gì là IP, TCP của Stanford
+
+254
+00:26:40,820 --> 00:26:47,280
+Giao thức điều khiển dịch chuyển, thay vào đó chính xác và đáng tin cậy truyền dữ liệu, nó quản lý kết nối
+
+255
+00:26:47,280 --> 00:26:53,360
+tuyên bố, phân đoạn dữ liệu, điều khiển lưu lượng và kiểm tra lỗi, những gì nó làm, kết nối
+
+256
+00:26:53,360 --> 00:26:59,400
+Đặt chỗ stress, phân đoạn dữ liệu, kiểm soát dòng chảy và kiểm tra lỗi, dữ liệu làm cha mẹ
+
+257
+00:26:59,400 --> 00:27:10,080
+Đến hoàn toàn và theo thứ tự, IP là gì, giao thức nội bộ, xử lý các địa chỉ hợp lý
+
+258
+00:27:10,080 --> 00:27:14,680
+và định tuyến dữ liệu, gói qua mạng, nó chịu trách nhiệm cho việc tìm ra chính xác
+
+259
+00:27:14,680 --> 00:27:21,680
+Địa chỉ đích, mỗi hệ thống có một internet, Internet, có một trong một địa chỉ viết địa phương
+
+260
+00:27:21,680 --> 00:27:27,840
+Mạng lưới, trong công ty của bạn, có địa chỉ IP, vì vậy mọi người có địa chỉ IP khác nhau, vì vậy
+
+261
+00:27:27,840 --> 00:27:35,960
+Nó sẽ quyết định nó ở đâu và làm thế nào tôi có hiện tại định tuyến, con đường, tôi phải chọn,
+
+262
+00:27:35,960 --> 00:27:40,720
+TCP và tôi thực hiện các giao thức TCP/IP cho phép kết nối kết nối và dữ liệu
+
+263
+00:27:40,720 --> 00:27:48,640
+Chuyển qua mạng đa dạng, nên TCP cho kết nối và truyền dữ liệu qua IP.
+
+264
+00:27:48,640 --> 00:27:57,360
+Bây giờ, trong TCP, UDP, giao thức dữ liệu người dùng, cung cấp một dữ liệu không kết nối nhanh hơn cho truyền dữ liệu
+
+265
+00:27:57,360 --> 00:28:04,980
+Nơi nó sẽ được lên lịch, làm thế nào TCP được thừa kế, clicker và IP làm cho truyền tải IP của nó
+
+266
+00:28:04,980 --> 00:28:10,640
+của hoạt động, cho hoạt động của nó, vì vậy đây là cách một mô hình TCP/IP hoạt động, có một mạng
+
+267
+00:28:10,640 --> 00:28:16,760
+Lớp truy cập, lớp internet, lớp truyền tải và lớp ứng dụng.
+
+268
+00:28:16,760 --> 00:28:22,480
+Lớp TCP, lớp truy cập mạng, kết hợp lớp hệ điều hành, vật lý và dữ liệu, vì vậy
+
+269
+00:28:22,480 --> 00:28:27,760
+Chúng tôi kết hợp hai dưới cùng của mô hình hệ điều hành và làm cho một lớp truy cập mạng, xử lý vật lý
+
+270
+00:28:27,760 --> 00:28:33,000
+Cơ sở hạ tầng và khía cạnh kỹ thuật như chuyển đổi dữ liệu kỹ thuật số thành truyền tín hiệu.
+
+271
+00:28:33,000 --> 00:28:40,320
+Sau đó, có một lớp internet và logos đến lớp mạng hệ điều hành, quản lý cách giải quyết hợp lý,
+
+272
+00:28:40,320 --> 00:28:44,880
+IP làm định tuyến và bảo đảm dữ liệu đến mỗi truyền qua internet, truyền
+
+273
+00:28:44,880 --> 00:28:49,960
+Lớp, kích cỡ phần cứng và mô hình IP phần cứng, nhận được một vào lớp chuyển đổi hệ điều hành hệ điều hành
+
+274
+00:28:49,960 --> 00:28:53,720
+cho một đoạn truyền dữ liệu đáng tin cậy và sai giao tiếp giả giữa
+
+275
+00:28:53,720 --> 00:28:54,720
+ứng dụng.
+
+276
+00:28:54,720 --> 00:28:59,400
+Vâng, nó là lớp ứng dụng ở trên cùng lớp.
+
+277
+00:28:59,400 --> 00:29:05,680
+Trong khi so sánh, chúng ta nói về buổi học, lớp ứng dụng, ba điều, okay.
+
+278
+00:29:05,680 --> 00:29:10,240
+Toàn bộ trực tiếp với ứng dụng người dùng kết thúc cho phép dịch vụ như duyệt web, chúng tôi sẽ
+
+279
+00:29:10,240 --> 00:29:17,320
+Xem một biểu đồ, chúng ta hãy di chuyển nhiều hơn vào một mạng lưới, chia sẻ lớp và toàn bộ lớp.
+
+280
+00:29:17,320 --> 00:29:22,920
+Vì vậy lớp này đôi khi được gọi là một lớp phát hiện trong bối cảnh TCP/IP, quản lý vật lý
+
+281
+00:29:22,920 --> 00:29:26,360
+quang phổ cho giao tiếp chuyển đổi trên internet, dây cáp ethernet vật lý
+
+282
+00:29:26,360 --> 00:29:32,320
+Mạng sống sót, giao diện mạng và thiết bị thiết bị, trình điều khiển thiết bị, điều này là có thể
+
+283
+00:29:32,320 --> 00:29:38,080
+để chuyển đổi các dữ liệu kỹ thuật số thành biểu tượng chuyển đổi, chúng tôi có
+
+284
+00:29:38,080 --> 00:29:43,680
+Bạn có dữ liệu kỹ thuật số và bạn phải chuyển sang một tín hiệu phát, để bạn có thể gửi
+
+285
+00:29:43,680 --> 00:29:48,480
+nó thông qua một đường dây hay mạng không dây, làm cho mạng lưới có thể.
+
+286
+00:29:48,480 --> 00:29:56,200
+Chỉ cần nhìn thấy làm thế nào mạng lưới là như vậy khó tin điều mà bạn không thể tưởng tượng những điều xảy ra
+
+287
+00:29:56,200 --> 00:29:58,440
+như thế này, okay.
+
+288
+00:29:58,440 --> 00:30:05,160
+Vì vậy, hãy để chúng tôi trong những năm 90, bạn đang ngồi và ai đó nói với bạn điều này, đây là làm thế nào
+
+289
+00:30:05,160 --> 00:30:11,960
+Một dữ liệu sẽ được truyền đi, đây là cách mọi thứ hoạt động hoặc truyền tải trong không khí.
+
+290
+00:30:11,960 --> 00:30:18,160
+Bạn có thể nói rằng, làm thế nào nó có thể nếu tôi không thể nhìn thấy dữ liệu, làm thế nào nó sẽ biến đổi của bạn
+
+291
+00:30:18,160 --> 00:30:24,480
+Hệ thống đến hệ thống khác, nó là loại không thể, bạn sẽ nghĩ, chắc chắn tôi sẽ
+
+292
+00:30:24,480 --> 00:30:30,960
+Làm tương tự, nhưng nó hoạt động, nó còn được biết đến như là lớp mạng, chủ yếu là
+
+293
+00:30:30,960 --> 00:30:36,400
+sử dụng để kiểm soát dòng chảy và định tuyến giao thông, chế độ quan trọng trong xuống kiểm soát dòng chảy
+
+294
+00:30:36,400 --> 00:30:41,720
+và định tuyến giao thông, đảm bảo dữ liệu đáng kể và chính xác xuyên suốt và liên kết
+
+295
+00:30:41,720 --> 00:30:43,520
+mạng.
+
+296
+00:30:43,520 --> 00:30:47,520
+Nó cũng chịu trách nhiệm thu thập các gói dữ liệu rời rạc tại quyết định, nơi hydrophic
+
+297
+00:30:47,520 --> 00:30:51,520
+có thể chắc chắn tăng thời gian truyền tải, lớp này ưu tiên chính xác giảm thiểu
+
+298
+00:30:51,520 --> 00:30:55,720
+Sửa chữa dữ liệu của người dùng, nó định nghĩa giao thức truyền dữ liệu logic qua
+
+299
+00:30:55,720 --> 00:30:56,880
+Toàn bộ mạng lưới.
+
+300
+00:30:56,880 --> 00:31:00,360
+Bây giờ, những gì là chính thức quan trọng của internet ở đây?
+
+301
+00:31:00,360 --> 00:31:05,960
+Chúng tôi có giao thức internet, IP, tôi nói MP, giao thức thông điệp internet, và AFC,
+
+302
+00:31:05,960 --> 00:31:08,000
+địa chỉ khách từ giao thức.
+
+303
+00:31:08,000 --> 00:31:12,080
+Đây là các giao thức quan trọng của lớp internet, IP.
+
+304
+00:31:12,080 --> 00:31:16,080
+Giao thức cơ bản để chuyển gói tài liệu đến đích là của nó
+
+305
+00:31:16,080 --> 00:31:21,800
+thanh tra địa chỉ IP trong gói đầu đến đầu theo đường dẫn hiện tại, IP phải là chính
+
+306
+00:31:21,800 --> 00:31:27,280
+Là một IPv4 IPv6, chúng tôi sẽ nói về điều này trong một bảng dẫn đầu là IPv4 là một sử dụng tốt nhất
+
+307
+00:31:27,280 --> 00:31:35,320
+Ngay bây giờ, nhưng nó là một giới hạn, vì vậy chúng tôi không trong một tương lai chúng tôi phát triển mới với IPv6 trong
+
+308
+00:31:35,320 --> 00:31:41,720
+Mọi thiết bị, nhưng ngay bây giờ chúng tôi có IPv4 trong hệ thống của tôi, trong máy tính của tôi, cùng một lúc
+
+309
+00:31:41,720 --> 00:31:48,440
+Tôi có thể thấy IPv6 trong di động của tôi, nhưng làm thế nào chúng tôi sẽ hoạt động, chúng tôi ngay bây giờ làm việc
+
+310
+00:31:48,440 --> 00:31:54,360
+Trong một IPv4 luôn luôn, nó không phải là, nó là mô phỏng đề nghị IPv4 của nhà nước mở rộng
+
+311
+00:31:54,360 --> 00:31:59,120
+không gian để chứa số làm mát thiết bị kết nối internet, không điều khiển
+
+312
+00:31:59,120 --> 00:32:04,640
+Giao thức thông điệp, tóm tắt dữ liệu, dữ liệu IP, mặt đất, tôi đơn giản là một mạng lưới quan trọng
+
+313
+00:32:04,640 --> 00:32:08,240
+Công nghệ để có máy điện với thông tin về các vấn đề mạng như công nghiệp
+
+314
+00:32:08,240 --> 00:32:12,400
+Điểm đến của các công cụ thời hạn như ping và kiểm tra làm thế nào họ sẽ được trên
+
+315
+00:32:12,400 --> 00:32:20,440
+Đơn giản, phải, tôi chỉ đơn giản là không biết anh có làm hay không, khi anh làm một tín hiệu để vào, anh ta
+
+316
+00:32:20,440 --> 00:32:26,560
+Không có dữ liệu, hoặc bốn, hai, hai, hai, vì vậy có một bốn dấu chấm hai, hai, hai,
+
+317
+00:32:26,560 --> 00:32:33,800
+3 phần, vì vậy nó sẽ sử dụng giao thức SMP, bây giờ khu vực, khu vực, P video, chức năng quan trọng
+
+318
+00:32:33,800 --> 00:32:38,000
+là một bản đồ và một địa chỉ có sức thu hút hợp lý đến địa chỉ vật lý.
+
+319
+00:32:38,000 --> 00:32:42,640
+Được rồi, vậy bạn có một, bạn có một địa chỉ IP khi bạn kết nối đến một mạng và có
+
+320
+00:32:42,640 --> 00:32:48,880
+một địa chỉ MAC trong hệ thống của bạn, vì vậy nó sẽ là một mà sẽ bản đồ cả hai với nhau trên
+
+321
+00:32:48,880 --> 00:32:53,040
+Một mạng nội bộ, một người nào đó một gói IP có thể duy trì được đến một ngọn đồi để địa chỉ vì vậy nó
+
+322
+00:32:53,040 --> 00:32:57,240
+Có một lặp lại, yeah, vì vậy bạn có thể lặp lại, bây giờ trên
+
+323
+00:32:57,240 --> 00:33:01,560
+Dựa trên đó nó sẽ quyết định rằng, okay, vì vậy hệ thống này là hiện tại ở đây và tôi phải
+
+324
+00:33:01,560 --> 00:33:08,360
+Gửi nó cho anh ta, do đó, đây là cách định tuyến đang xảy ra, đây là cách gói được di chuyển đến của bạn
+
+325
+00:33:08,360 --> 00:33:14,960
+Hệ thống, thay vì đi đến hệ thống của bạn bạn của bạn, vì vậy đây là cách làm việc, điều này bật IP
+
+326
+00:33:14,960 --> 00:33:20,000
+Gói để tương quan với thiết bị mục tiêu, và tôi thấy, nếu chúng tôi kết thúc với một đám mây không thể
+
+327
+00:33:20,000 --> 00:33:27,120
+một kiểu lặp lại trong tốt, ủy nhiệm, rp, và bán kính rp, vì vậy đây là một trong một tốc độ vận chuyển, như
+
+328
+00:33:27,120 --> 00:33:34,960
+Một, có một TCP và UDP, tôi gặp một chút chi tiết hơn, bạn có thể tạm dừng
+
+329
+00:33:34,960 --> 00:33:40,920
+một video, bạn phải đọc một lần như, bạn có một sự khác biệt lớn 4 đến 5 mà bạn có
+
+330
+00:33:40,920 --> 00:33:46,960
+Để nhớ, đó là nó, và tại sao nó được sử dụng và nơi mà ứng dụng được sử dụng,
+
+331
+00:33:46,960 --> 00:33:54,640
+Đó là chỉ, tôi sẽ di chuyển nó, ở đây nó là, ứng dụng có mô hình TCP có
+
+332
+00:33:54,640 --> 00:33:59,040
+ứng dụng được trình bày trong một lớp xã hội của cùng một mô hình, tỷ lệ giao thông hoặc nghe được luôn luôn
+
+333
+00:33:59,040 --> 00:34:04,900
+nghe thấy, khác trong cả hai lớp, và trong lớp mạng được chuyển đổi thành một lớp internet, mạng
+
+334
+00:34:04,900 --> 00:34:12,720
+Trong một lĩnh vực xã hội bao gồm lớp dữ liệu vật lý, hãy tiến lên phía trước, vì vậy yeah,
+
+335
+00:34:12,720 --> 00:34:20,600
+Hãy hiểu KCP, quỹ internet, ở đây, các giao thức điều khiển truyền tải, những gì
+
+336
+00:34:20,600 --> 00:34:24,840
+đúng người để gọi, giao thức internet, mô hình là hỗ trợ cơ bản cho giao tiếp
+
+337
+00:34:24,840 --> 00:34:28,120
+Giao thức được sử dụng cho internet, các thành phần tương tự, nơi nó vé, cách dữ liệu được hình thành,
+
+338
+00:34:28,120 --> 00:34:31,600
+tại máy phát này, tỷ lệ định tuyến, mô hình chèn, đáng tin cậy, và cho nó giao tiếp
+
+339
+00:34:31,600 --> 00:34:35,080
+Bằng cách viết nó khi trở về gói quản lý, truyền chúng qua mạng và
+
+340
+00:34:35,080 --> 00:34:43,240
+lắp ráp, có trạm dữ liệu, đây là toàn bộ định nghĩa mà bạn phải nói, bất cứ khi nào
+
+341
+00:34:43,240 --> 00:34:49,640
+Họ hỏi, cho tôi biết các mô hình IP TCP, hoặc xác định những gì là mô hình IP TCP, đây là một đúng
+
+342
+00:34:49,640 --> 00:34:56,280
+Định nghĩa, đó là lý do tại sao tôi, trong khóa học này bạn đã nhìn thấy rằng một thời gian, tôi lặp lại rất nhiều điều,
+
+343
+00:34:56,280 --> 00:35:03,960
+Bởi vì tôi muốn bạn nhớ rằng đây là cách tôi phải nói, nếu bạn sẽ định nghĩa
+
+344
+00:35:03,960 --> 00:35:12,840
+Mô hình IP trong định nghĩa này, tuyệt vời, đáng kinh ngạc, như một cuộc phỏng vấn, như chúng ta hãy xem, tôi đã đi qua
+
+345
+00:35:12,840 --> 00:35:19,840
+tôi là người đưa ra câu trả lời, tôi sẽ chọn anh ta trên 100%.
+
+346
+00:35:19,840 --> 00:35:31,240
+Hãy tiến lên phía trước, so sánh nhanh giữa chúng, TCP, giao thức kiểm soát truyền thông,
+
+347
+00:35:31,240 --> 00:35:37,360
+Hãy nhớ hình thức đầy đủ, OSA, mở hệ thống, kết nối, kết nối lớp, kết hợp
+
+348
+00:35:37,360 --> 00:35:43,680
+Lớp phiên chạy song song trong lớp ứng dụng, duy trì tách biệt, đại diện,
+
+349
+00:35:43,680 --> 00:35:48,400
+Theo danh sách kết nối của chúng tôi, cách tiếp cận ngang trong một thiết kế, theo dọc, phân cấp của chúng tôi
+
+350
+00:35:48,400 --> 00:35:53,440
+Tiếp cận, trung tâm vận chuyển gói hàng không cho phép việc phân phối gói bảo đảm của máy biến áp,
+
+351
+00:35:53,440 --> 00:35:57,560
+Nó dịch như một cú sốc cho một gói gây sốc, giao thức, linh hoạt, giao thức
+
+352
+00:35:57,560 --> 00:36:02,800
+Hoàn toàn hợp nhất và không thể thay thế dễ dàng, giao thức được xác định đúng và có thể dễ dàng hơn
+
+353
+00:36:02,800 --> 00:36:06,760
+sốc như một công nghệ hoạt động, giao diện kết nối chỉ cung cấp ít kết nối dịch vụ
+
+354
+00:36:06,760 --> 00:36:10,720
+vận chuyển nó, cung cấp cả hai lớp kết nối, như kết nối dữ liệu của bạn, thành công trong
+
+355
+00:36:10,720 --> 00:36:15,720
+Một lớp chó, vì vậy bạn phải hiểu sự khác biệt giữa mô hình TCP, đó là
+
+356
+00:36:15,720 --> 00:36:27,080
+một sản phẩm cho mạng hiện tại và đó là nó cho bây giờ, cảm ơn rất nhiều, bất cứ điều gì bạn
+
+357
+00:36:27,080 --> 00:36:34,760
+đã đi qua khóa học này, bất cứ điều gì bạn đi qua, video thực sự này, video được hoàn thành,
+
+358
+00:36:34,760 --> 00:36:40,500
+Viết ra, ghi ra, viết ra, bất cứ điều gì bạn có trong tâm trí, nó có thể ở xung quanh, nó có thể được
+
+359
+00:36:40,500 --> 00:36:48,160
+trực tiếp, bạn phải quyết định nó sau này, nhưng bây giờ hãy làm một IP TCP, kiến trúc TCP, thực hiện
+
+360
+00:36:48,160 --> 00:36:56,680
+Một kiến trúc OSA, tự nói lớp nào, lớp nào thực hiện, nhưng dữ liệu như thế nào
+
+361
+00:36:56,680 --> 00:37:02,200
+Là giao tiếp, làm thế nào hệ thống của bạn giao tiếp, hình ảnh hóa tất cả mọi thứ, được rồi, hình ảnh hóa
+
+362
+00:37:02,200 --> 00:37:03,200
+mọi thứ.
+
+363
+00:37:03,200 --> 00:37:08,240
+Cảm ơn rất nhiều, chúng ta sẽ gặp nhau trong video tiếp theo, tạm biệt.
+
