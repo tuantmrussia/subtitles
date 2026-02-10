@@ -1,0 +1,356 @@
+1
+00:00:00,170 --> 00:00:05,240
+It's time to make our skiing character look more like the actual skiing and less like their driving,
+
+2
+00:00:05,240 --> 00:00:09,320
+because right now our character just moves left and right, sort of similar to our car.
+
+3
+00:00:10,390 --> 00:00:16,240
+However, what we want is it for to be able to almost glide as if you were in the snow?
+
+4
+00:00:16,240 --> 00:00:21,670
+Meaning if we move to the left and then let go of our arrow keys, it should keep sliding for a bit,
+
+5
+00:00:21,670 --> 00:00:24,190
+whereas at the moment our character just stops.
+
+6
+00:00:24,460 --> 00:00:29,350
+So how can we achieve this more dynamic and smooth turning motion?
+
+7
+00:00:29,770 --> 00:00:33,040
+And at first there may seem like there is no obvious answer here.
+
+8
+00:00:33,040 --> 00:00:38,830
+You may be thinking to use this glide block here, but you can only glide to a specific position and
+
+9
+00:00:38,830 --> 00:00:42,040
+can't just change your position with a gliding motion.
+
+10
+00:00:42,760 --> 00:00:49,780
+However, programming is all about problem solving using the tools we have, and one of those tools
+
+11
+00:00:49,780 --> 00:00:51,100
+are variables.
+
+12
+00:00:51,100 --> 00:00:55,120
+And here there are a lot of things that variables can do.
+
+13
+00:00:55,120 --> 00:00:59,140
+So let's see how we can use them to our advantage.
+
+14
+00:00:59,740 --> 00:01:04,090
+So let's create a variable and we will call it movement direction.
+
+15
+00:01:04,690 --> 00:01:12,820
+Now moving back to our script here, let's remove this change x by in the if statement and drag one
+
+16
+00:01:12,820 --> 00:01:14,920
+of them into the forever loop.
+
+17
+00:01:15,520 --> 00:01:17,770
+I know this seems strange, but bear with me.
+
+18
+00:01:17,860 --> 00:01:21,970
+Then drag this movement direction into the change x by.
+
+19
+00:01:22,830 --> 00:01:22,980
+Now.
+
+20
+00:01:22,980 --> 00:01:28,350
+Finally, if the right arrow is clicked, I want to change the movement direction by one.
+
+21
+00:01:28,710 --> 00:01:33,180
+And if the left arrow is clicked, I want to change the movement direction by minus one.
+
+22
+00:01:34,110 --> 00:01:38,970
+And I hope this is starting to make sense to you now, because basically what is happening in the script
+
+23
+00:01:38,970 --> 00:01:45,030
+is our character is always moving in the direction of this variable, and the value of this variable
+
+24
+00:01:45,030 --> 00:01:49,140
+is determined by the if we click the left or the right arrow.
+
+25
+00:01:49,170 --> 00:01:50,640
+So let's give this a test.
+
+26
+00:01:52,120 --> 00:01:58,750
+So as you can see, when we click to the left or right before our movement direction table goes up down,
+
+27
+00:01:59,350 --> 00:01:59,500
+down.
+
+28
+00:01:59,560 --> 00:02:02,680
+So as you can see out, this movement is a smoother.
+
+29
+00:02:02,680 --> 00:02:04,990
+And I'm doing a lot more like active two.
+
+30
+00:02:05,630 --> 00:02:12,860
+However, there's a problem you might notice, and that's if we let go of our keys after turning, our
+
+31
+00:02:12,860 --> 00:02:17,150
+player just keeps drifting off into the direction it was going, which is definitely not ideal.
+
+32
+00:02:18,390 --> 00:02:24,270
+So to fix this, we need a way for our variables to automatically return to zero.
+
+33
+00:02:24,300 --> 00:02:31,740
+And you may be thinking, ah, I will just stick this inside of our else block and well testing that
+
+34
+00:02:31,740 --> 00:02:32,460
+you'll see.
+
+35
+00:02:33,310 --> 00:02:35,290
+If we ski to the left and let go.
+
+36
+00:02:35,770 --> 00:02:37,000
+Well, that's a bit harsh.
+
+37
+00:02:37,150 --> 00:02:41,560
+Also, you'll notice that if we ski to the right, it almost goes in slow motion.
+
+38
+00:02:41,680 --> 00:02:45,580
+And well, that is just because our if script is badly set up.
+
+39
+00:02:45,580 --> 00:02:53,440
+Because if you look at it, we have an if else statement and an if statement below it, which is never
+
+40
+00:02:53,440 --> 00:02:58,690
+something you should do as the else should always be the last in the conditional check.
+
+41
+00:02:58,720 --> 00:03:00,820
+So let's fix this mistake now.
+
+42
+00:03:01,510 --> 00:03:09,010
+And to fix this, all we need to do is grab another if else block, then stick this code inside.
+
+43
+00:03:09,130 --> 00:03:15,760
+Get rid of the if statement and then finally put all this code inside our if else.
+
+44
+00:03:16,320 --> 00:03:20,820
+So now if you look at it, you can see that our else is the final condition.
+
+45
+00:03:21,240 --> 00:03:27,990
+And if we play, it doesn't go in slow motion, although we still have the same harsh stopping problem.
+
+46
+00:03:28,260 --> 00:03:31,620
+But before we fix that, let's quickly fix this other script.
+
+47
+00:03:31,620 --> 00:03:33,960
+As you can see, we made the same mistake here.
+
+48
+00:03:34,600 --> 00:03:38,860
+Much I think, and much I feel clean code folders is.
+
+49
+00:03:39,810 --> 00:03:45,510
+So now let's fix the last problem of our character just stopping when we let go.
+
+50
+00:03:46,030 --> 00:03:51,190
+So the first thing we can do is get rid of this set movement direction to zero.
+
+51
+00:03:51,190 --> 00:03:57,310
+And here we need a way for it to slowly bring our variable back to zero.
+
+52
+00:03:57,610 --> 00:04:03,850
+And the best way to do this is by using our old friend mathematics, but thankfully not the hard type.
+
+53
+00:04:04,760 --> 00:04:08,540
+So we're going to need some more if checks.
+
+54
+00:04:08,540 --> 00:04:14,600
+So let's first grab one more of these if else blocks and one if block.
+
+55
+00:04:15,170 --> 00:04:21,650
+We will put the first one inside here and the second one inside this one okay.
+
+56
+00:04:21,650 --> 00:04:28,580
+So for this first if then block, we basically want to check if our movement direction is already zero.
+
+57
+00:04:28,580 --> 00:04:32,390
+And if it is we don't want to do anything more.
+
+58
+00:04:32,570 --> 00:04:39,290
+So to do this we're going to grab a few blocks here which are the two movement direction variables and
+
+59
+00:04:39,290 --> 00:04:40,070
+greater than.
+
+60
+00:04:41,100 --> 00:04:47,040
+Elicit an and an or block so we can connect all these all together.
+
+61
+00:04:47,870 --> 00:04:48,920
+Just like that.
+
+62
+00:04:49,590 --> 00:04:56,460
+And here we want to check if our movement direction is greater than 0.1 and less than -0.1.
+
+63
+00:04:56,790 --> 00:05:02,430
+And what this is doing is basically checking our movement direction is not equal to zero.
+
+64
+00:05:02,430 --> 00:05:06,060
+So we can put this in our first if condition.
+
+65
+00:05:06,940 --> 00:05:08,140
+And now to the next one.
+
+66
+00:05:08,140 --> 00:05:15,070
+So simply we can just duplicate this here, stick it inside our if statement and set it to zero.
+
+67
+00:05:15,790 --> 00:05:21,700
+So basically now if movement direction is less than zero, we want to change movement by a positive
+
+68
+00:05:21,700 --> 00:05:23,740
+number to slowly bring it back.
+
+69
+00:05:23,740 --> 00:05:26,080
+So let's say 0.2.
+
+70
+00:05:26,820 --> 00:05:32,670
+And then finally, in this else statement, we can change movement direction by -0.2.
+
+71
+00:05:33,320 --> 00:05:38,990
+And yet this may all seem a bit confusing, but if you look at it as a whole, it's not so confusing.
+
+72
+00:05:38,990 --> 00:05:41,900
+So go through it from the top.
+
+73
+00:05:41,930 --> 00:05:46,400
+Basically, we are first detecting if our sprite is moving.
+
+74
+00:05:46,910 --> 00:05:50,000
+If it is, then we want to slow it down.
+
+75
+00:05:50,000 --> 00:05:54,890
+So if it is moving to the left we slow it down by increasing this number.
+
+76
+00:05:54,920 --> 00:05:59,660
+Otherwise, if it is moving to the right we decrease this number.
+
+77
+00:05:59,660 --> 00:06:01,010
+So that's pretty much it.
+
+78
+00:06:01,010 --> 00:06:02,720
+So let's give it a go.
+
+79
+00:06:03,550 --> 00:06:05,320
+Skiing left and right is working.
+
+80
+00:06:05,320 --> 00:06:07,630
+Well, then, letting go of our keys.
+
+81
+00:06:08,170 --> 00:06:11,620
+As you can see, our player slowly comes to a stop.
+
+82
+00:06:11,620 --> 00:06:12,610
+Perfect.
+
+83
+00:06:12,940 --> 00:06:17,320
+So now we can hide our movement direction variables as it's all working.
+
+84
+00:06:18,360 --> 00:06:22,560
+That's the end of this lesson, and I know it might have been a confusing one.
+
+85
+00:06:22,560 --> 00:06:28,470
+So what I want you to do now is just really take a good look at the script to better understand it.
+
+86
+00:06:28,470 --> 00:06:32,130
+Also play around with it, change a few values and see what happens.
+
+87
+00:06:32,130 --> 00:06:34,950
+Because this is what learning is all about.
+
+88
+00:06:34,950 --> 00:06:40,530
+You can always press the magic button, command Z or control Z to undo what you did.
+
+89
+00:06:40,530 --> 00:06:46,080
+So play undo, play undo until you have it figured out.
+
