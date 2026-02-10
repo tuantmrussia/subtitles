@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:09,480
+ Welcome to another video, in this video we will try to decode this code which we have
+
+2
+00:00:09,480 --> 00:00:18,280
+ actually created by the Cobalt Strike, so when you are attempting any interviews, any
+
+3
+00:00:18,280 --> 00:00:24,000
+ product based companies or any service based companies like MNCs, they will be giving this
+
+4
+00:00:24,000 --> 00:00:36,360
+ kind of encoder and encrypted code to you, and they will ask you to decode this, so that
+
+5
+00:00:36,360 --> 00:00:43,380
+ was the one of the round, they will be contacting, so maximum they will be using the Cobalt
+
+6
+00:00:43,380 --> 00:00:51,520
+ Strike based encoder payloads, so your job is to decode this, so here you can find the text
+
+7
+00:00:51,520 --> 00:01:01,520
+ has been heavily encrypted, sorry encoder, so it was mentioned encoder command, so this is also
+
+8
+00:01:01,520 --> 00:01:07,680
+ a part of a malware analysis, so when you are in a security research team or any lab
+
+9
+00:01:07,680 --> 00:01:15,440
+ team in any of organization, server security based organization, so there will be a separate
+
+10
+00:01:15,440 --> 00:01:21,800
+ lab safety working, so they will be finding all the malware and they will be blocking the hash
+
+11
+00:01:21,800 --> 00:01:31,000
+ in their antivirus products, so let us see try to decode this, so here we can see the code,
+
+12
+00:01:31,000 --> 00:01:46,160
+ so let us copy the code, so I am using one of the website called cyber chief, let me load
+
+13
+00:01:46,160 --> 00:02:00,400
+ the cyber chief, I will do one thing, let me start the Visual Studio too, let me open a new
+
+14
+00:02:00,400 --> 00:02:14,160
+ text file, so this is the, this is the, this 64 code which we have, it is very big, so
+
+15
+00:02:14,160 --> 00:02:32,440
+ let me will go our first up, so here you can find the a equal to equal to, so we will equal
+
+16
+00:02:32,440 --> 00:02:40,800
+ that, so if any of the strings if, if you notify the equal to symbol, then it will be
+
+17
+00:02:40,800 --> 00:02:49,280
+ 64, just implement the from day 64 function, so now you can see some weird text format
+
+18
+00:02:49,280 --> 00:02:56,000
+ null null null, you need to remove the null bytes, remove the null bytes, so now you can
+
+19
+00:02:56,000 --> 00:03:03,400
+ find the memory stream and from base explore something something has been written, we will
+
+20
+00:03:03,400 --> 00:03:33,280
+ copy this and we will paste it in a, sorry, we will use a, yeah, we will use this,
+
+21
+00:03:33,280 --> 00:04:01,720
+ so now you can find another code, so from base explore, so we can understand it is a base
+
+22
+00:04:01,720 --> 00:04:09,600
+ 64 code which has been encoder and in the end of the line, they mentioned its input output
+
+23
+00:04:09,600 --> 00:04:16,160
+ compression, so compression model will be a gun safe, here you can find g6 stream, so
+
+24
+00:04:16,160 --> 00:04:39,920
+ what we will do, we will take this code, so here you can find, let me take our null bytes,
+
+25
+00:04:39,920 --> 00:04:48,440
+ so we know one thing, this was encoder by a base explore, so we used base 64, so and
+
+26
+00:04:48,440 --> 00:04:59,200
+ it was obfuscator, they used the g6 compression, so d will search for a g6, g6, so here you
+
+27
+00:04:59,200 --> 00:05:04,520
+ can find our two things, g6 and a gun safe, so g6 is still in compressing data using
+
+28
+00:05:04,520 --> 00:05:11,200
+ the defator algorithm, g6 header and gun safe telling decompresses the data which has been
+
+29
+00:05:11,200 --> 00:05:17,400
+ compressed using the defator algorithm, so we know it actually compressed, so we need
+
+30
+00:05:17,400 --> 00:05:24,240
+ decompressed that, so let us take this and here you can find some coding, let will copy
+
+31
+00:05:24,240 --> 00:05:53,960
+ this, so let us see, so this code which was
+
+32
+00:05:53,960 --> 00:06:03,880
+ encrypted, so encoder with the base explore, so no problem, and here you can find a few things,
+
+33
+00:06:03,880 --> 00:06:13,120
+ the xr, b xr 35, so xr is an encryption method, so if you want to know about xr, just
+
+34
+00:06:13,120 --> 00:06:25,840
+ google, and we will see, so here you can find xr is an encryption method, so the payload
+
+35
+00:06:25,840 --> 00:06:33,320
+ has been encrypted, and if there is an encryption we need a key to decrypt, anyway, so
+
+36
+00:06:33,320 --> 00:06:46,120
+ you can see the key, b xr 35, 35 is the key anyway, so b will take the, let us see more
+
+37
+00:06:46,120 --> 00:06:56,560
+ the gun safe, so now the base 64 has been removed, let us decode this, so xr and you need
+
+38
+00:06:56,560 --> 00:07:01,560
+ to give the key, so we know the key is 35, and it was in the hex form, and let me change
+
+39
+00:07:01,560 --> 00:07:08,120
+ it to decimal, so now you can find a few things, so you can see the user agent is a Mozilla
+
+40
+00:07:08,120 --> 00:07:15,600
+ compatibility Windows NT, 5.1, and you can see the protector IP, so that is our IP, the
+
+41
+00:07:15,600 --> 00:07:21,520
+ cobalt sake IP which we have created, 18.27 here, so now you can confirm, so this payload
+
+42
+00:07:21,520 --> 00:07:32,280
+ was connecting to the 18.27 and the user agent is this one, so we know this was connecting
+
+43
+00:07:32,280 --> 00:07:41,960
+ to the, once the payload has been executed, the base 64, I mean this code, I mean once
+
+44
+00:07:41,960 --> 00:07:48,160
+ the evil.html has been executed on the machine, so it will execute and it will connect
+
+45
+00:07:48,160 --> 00:07:54,680
+ to this IP okay, so as a part of our commendations you can block this IP in a firewall
+
+46
+00:07:54,680 --> 00:08:03,160
+ or anything, so that will stop the attacks, that will stop the reverse connections okay,
+
+47
+00:08:03,160 --> 00:08:09,920
+ so these are the things you can investigate when there is a encoder or an encrypted command
+
+48
+00:08:09,920 --> 00:08:15,160
+ which was given okay, so this is the CT from, they will be asking if you are attending
+
+49
+00:08:15,160 --> 00:08:22,400
+ any new team-based entities okay, so we will hop off this video and we will discuss
+
+50
+00:08:22,400 --> 00:08:26,640
+ our next task, things in our next video okay, see you guys bye bye.
+
