@@ -1,0 +1,352 @@
+1
+00:00:00,080 --> 00:00:02,360
+So our game is really starting to take shape.
+
+2
+00:00:02,360 --> 00:00:08,750
+But before we move forward and as we keep developing, we need to ensure our code is always robust and
+
+3
+00:00:08,750 --> 00:00:09,590
+free of problems.
+
+4
+00:00:09,590 --> 00:00:14,930
+And sometimes you will only find these mistakes when they impact your game in some way.
+
+5
+00:00:14,930 --> 00:00:19,310
+But the more you program, the more you will understand how to keep your code clean.
+
+6
+00:00:20,270 --> 00:00:24,890
+But that said, let's take a look at our code and see where we can improve it.
+
+7
+00:00:25,340 --> 00:00:31,820
+So firstly looking at our tree sprite here we have this hard coded wait one second and that determines
+
+8
+00:00:31,820 --> 00:00:34,370
+the rate of how quickly our trees spawn in.
+
+9
+00:00:34,370 --> 00:00:40,850
+And if you remember from earlier, having hard coded values isn't always a good idea, especially if
+
+10
+00:00:40,850 --> 00:00:44,390
+we want to modify and upgrade our game in the future.
+
+11
+00:00:44,720 --> 00:00:49,160
+So instead of having this hard coded value, let's create a variable for it instead.
+
+12
+00:00:49,960 --> 00:00:52,810
+So let's just call this variable a spawn rate.
+
+13
+00:00:53,420 --> 00:00:56,960
+And we can move it into the wait one second input.
+
+14
+00:00:57,410 --> 00:01:01,820
+Now, as our spawn rate is set to zero, trees are just going to flood in.
+
+15
+00:01:02,150 --> 00:01:09,470
+But before we set this variable to a different value like before, let's create a sprite called variables
+
+16
+00:01:09,470 --> 00:01:12,200
+that we can use to control all our global variables.
+
+17
+00:01:12,200 --> 00:01:15,590
+So I'll just select a random sprite like this ball.
+
+18
+00:01:16,320 --> 00:01:20,610
+Rename it to variables and just delete all of its costumes.
+
+19
+00:01:21,300 --> 00:01:28,410
+Okay, now we can bring in a when start clicked, and then we can set our spawn rate variable to one
+
+20
+00:01:28,800 --> 00:01:30,000
+like so.
+
+21
+00:01:30,560 --> 00:01:33,320
+And if we hit play, you'll see it works.
+
+22
+00:01:33,800 --> 00:01:36,590
+So let's have a look to see where else we can improve.
+
+23
+00:01:36,920 --> 00:01:42,860
+So looking at our main player sprite, you will see that we never set the value of our movement direction
+
+24
+00:01:42,860 --> 00:01:44,090
+at the start of the game.
+
+25
+00:01:44,090 --> 00:01:50,420
+So basically you'll see that if we ski to the left, then stop the game and then start the game, our
+
+26
+00:01:50,420 --> 00:01:52,190
+player is still skiing to the left.
+
+27
+00:01:52,740 --> 00:01:57,900
+So we can fix this quickly by moving back to our variable sprite and setting our movement direction
+
+28
+00:01:57,900 --> 00:01:58,590
+to zero.
+
+29
+00:01:58,920 --> 00:01:59,130
+Yeah.
+
+30
+00:01:59,160 --> 00:01:59,820
+Fixed.
+
+31
+00:02:00,860 --> 00:02:08,090
+Now, the next thing you may have noticed is how our player sprite can move at crazy speeds left and
+
+32
+00:02:08,090 --> 00:02:10,100
+right, if we hold down for long enough.
+
+33
+00:02:10,620 --> 00:02:14,040
+So we need a way to limit the maximum movement speed.
+
+34
+00:02:14,570 --> 00:02:21,560
+So if we go to our player sprite, you will see this code here that if we click left or right, we just
+
+35
+00:02:21,560 --> 00:02:24,950
+constantly change movement direction by 1 or -1.
+
+36
+00:02:25,340 --> 00:02:27,140
+So we need to put a limit on this.
+
+37
+00:02:27,470 --> 00:02:30,410
+So here is a mini challenge for you.
+
+38
+00:02:30,620 --> 00:02:37,130
+Pause the video and try to see if you can stop this movement direction from getting too high.
+
+39
+00:02:37,160 --> 00:02:37,520
+Right.
+
+40
+00:02:37,520 --> 00:02:39,740
+Pause it now and see if you can figure that out.
+
+41
+00:02:40,960 --> 00:02:42,550
+So did you get it right?
+
+42
+00:02:42,910 --> 00:02:45,580
+Well, let's have a look how it could be done.
+
+43
+00:02:45,580 --> 00:02:48,910
+And remember, in programming, there are often a bunch of ways to do something.
+
+44
+00:02:48,910 --> 00:02:54,160
+So if you manage to solve this problem but your solution doesn't look the same as mine, that's not
+
+45
+00:02:54,160 --> 00:02:54,760
+an issue.
+
+46
+00:02:54,790 --> 00:03:01,300
+The key, however, is to have and find the simplest but most robust solution to problems.
+
+47
+00:03:01,720 --> 00:03:09,670
+So here where we say if left arrow clicked, I'm going to add another if condition that will check to
+
+48
+00:03:09,670 --> 00:03:12,880
+make sure that the value isn't too high before increasing it.
+
+49
+00:03:13,390 --> 00:03:16,480
+We can also add an if condition to the right error.
+
+50
+00:03:17,820 --> 00:03:25,110
+So now what we want to check is if the movement direction is greater than 18, which we will have be
+
+51
+00:03:25,110 --> 00:03:26,190
+our max speed.
+
+52
+00:03:26,190 --> 00:03:31,140
+And of course -18 will be our max speed and the other direction.
+
+53
+00:03:31,290 --> 00:03:35,250
+And check if the movement direction is less than -18.
+
+54
+00:03:35,250 --> 00:03:36,930
+Just like that.
+
+55
+00:03:37,170 --> 00:03:38,670
+And if we give this a play.
+
+56
+00:03:39,300 --> 00:03:41,250
+Well, that's not quite right.
+
+57
+00:03:41,250 --> 00:03:42,870
+And here we have a simple problem.
+
+58
+00:03:42,870 --> 00:03:48,990
+Basically, we are only allowing the player to use the arrows direction if they are moving at more than
+
+59
+00:03:48,990 --> 00:03:50,550
+18 or less than 18.
+
+60
+00:03:51,060 --> 00:03:58,410
+And we want it to be the opposite of this, ensuring players can't go faster than 18 or -18.
+
+61
+00:03:58,410 --> 00:04:05,640
+So simply all we need to do is go to the operators, grab this knot and stick them on each of these
+
+62
+00:04:05,640 --> 00:04:06,510
+if conditions.
+
+63
+00:04:08,770 --> 00:04:09,610
+Like that.
+
+64
+00:04:10,060 --> 00:04:11,650
+Now testing the game again.
+
+65
+00:04:11,980 --> 00:04:13,960
+All right, that works a lot better.
+
+66
+00:04:14,800 --> 00:04:21,310
+And now, before we close off this game, let's quickly add some functionality so that our trees spawn
+
+67
+00:04:21,310 --> 00:04:22,720
+at an increasing speed.
+
+68
+00:04:23,490 --> 00:04:29,760
+And to do this, we're going to use a quick and dirty solution, which is everything we have been trying
+
+69
+00:04:29,760 --> 00:04:31,260
+to fix in this lesson.
+
+70
+00:04:31,260 --> 00:04:34,710
+But this will help you see what bad code looks like.
+
+71
+00:04:34,710 --> 00:04:39,480
+And also we'll look at a much nicer solution in a future lesson.
+
+72
+00:04:39,990 --> 00:04:45,630
+So moving over to our variable sprite here, let's grab another Onstart.
+
+73
+00:04:46,340 --> 00:04:54,350
+And all we're going to do is grab a wait and then grab a set variable and change its input to spawn
+
+74
+00:04:54,350 --> 00:04:57,860
+rate, and then change the wait to 15 seconds.
+
+75
+00:04:57,890 --> 00:04:59,300
+Now for the dirty part.
+
+76
+00:04:59,420 --> 00:05:08,090
+Grab this block, hit duplicate, grab it again from the start, and duplicate it again and once more.
+
+77
+00:05:08,710 --> 00:05:16,570
+Now we're going to slowly lower the spawn rate, and we'll do this all the way until we get to 0.3 starting
+
+78
+00:05:16,570 --> 00:05:17,410
+from one.
+
+79
+00:05:17,500 --> 00:05:18,400
+Just like that.
+
+80
+00:05:19,650 --> 00:05:23,070
+So you can see that was quick and easy.
+
+81
+00:05:23,520 --> 00:05:27,840
+But as you are well aware, this is definitely not a dry code.
+
+82
+00:05:27,840 --> 00:05:29,400
+And we do repeat ourselves.
+
+83
+00:05:29,400 --> 00:05:33,810
+And this code is very cumbersome and it's hard to upgrade and maintain as you know.
+
+84
+00:05:33,810 --> 00:05:36,480
+So we'll look at a much better solution soon.
+
+85
+00:05:36,480 --> 00:05:39,630
+But for now, if we give this game a go.
+
+86
+00:05:40,110 --> 00:05:40,410
+Mm.
+
+87
+00:05:40,620 --> 00:05:47,250
+You'll notice that every 15 seconds our spawn rate slowly decreases and our trees start coming in faster.
+
+88
+00:05:47,280 --> 00:05:48,180
+Nice.
+
