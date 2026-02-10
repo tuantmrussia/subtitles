@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:22,600
+ It can just simply set it here and replace if you wish to replace this old one, okay.
+
+2
+00:00:22,600 --> 00:00:51,800
+ You can just skip this.
+
+3
+00:00:51,800 --> 00:01:00,500
+ And do the automation of the Terraform from here.
+
+4
+00:01:00,500 --> 00:01:22,700
+ And not only that, but you can also, if we go here to its open, get left, but demo file.
+
+5
+00:01:22,700 --> 00:01:24,400
+ You can increase the stages.
+
+6
+00:01:24,400 --> 00:01:31,200
+ For example here, you have built a deploy and the Terraform works on the infrastructure.
+
+7
+00:01:31,200 --> 00:01:46,200
+ You can add infra, structure, okay, or infra, simply infra.
+
+8
+00:01:46,200 --> 00:01:52,500
+ And so that you can extend your code, your code to apply the Terraform.
+
+9
+00:01:52,500 --> 00:01:57,960
+ You can add this so that any changes that you meet from the Terraform is only controlled
+
+10
+00:01:57,960 --> 00:02:05,500
+ from any controlled environment from 13 by using the shell as a tag, okay.
+
+11
+00:02:05,500 --> 00:02:19,700
+ So you can add this to your code at the end to do a full automation for the Terraform.
+
+12
+00:02:19,700 --> 00:02:29,400
+ Okay, so now we move to our last part of the test, which we will test or make some modification
+
+13
+00:02:29,400 --> 00:02:38,600
+ to the Terraform configuration and see when we create or when we plan the change and apply it.
+
+14
+00:02:38,600 --> 00:02:41,800
+ How the Terraform will handle the change.
+
+15
+00:02:41,800 --> 00:02:50,800
+ So for example here, we make just the minor change to change the WordPress MySQL container.
+
+16
+00:02:50,800 --> 00:03:00,800
+ Instead of doing this change for MySQL containers, because some containers may have some specific
+
+17
+00:03:00,800 --> 00:03:06,900
+ mounting to the volume, maybe lead to significant errors.
+
+18
+00:03:06,900 --> 00:03:14,300
+ So we don't want to make this upgrade because this might cause a problem.
+
+19
+00:03:14,300 --> 00:03:23,900
+ So what update we do, we'll just change or modify, we'll use the same web, the ops image.
+
+20
+00:03:23,900 --> 00:03:34,400
+ But instead of Apache PHP dash Apache 8.2, we'll use PHP dash Apache 8.1, okay.
+
+21
+00:03:34,400 --> 00:03:40,700
+ We'll just do a minor downgrade, but we'll still use the web dev ops because we want,
+
+22
+00:03:40,700 --> 00:03:46,800
+ we don't want any issue to occur with SQL extension when the PHP is connecting with
+
+23
+00:03:46,800 --> 00:03:54,600
+ MySQL for the WordPress, for the connection to the WordPress database.
+
+24
+00:03:54,600 --> 00:03:57,900
+ Okay, so the change actually is very simple.
+
+25
+00:03:57,900 --> 00:04:06,900
+ So what you need to do, we are already in the Terraform more depressed, let's edit the main file, okay.
+
+26
+00:04:06,900 --> 00:04:15,900
+ We'll skip the Docker volume of MySQL, let's go to the Docker for the WordPress, okay.
+
+27
+00:04:15,900 --> 00:04:29,900
+ And we'll use the image of 8.1, instead of 8.0, and just this is our change we'll update it and exit.
+
+28
+00:04:29,900 --> 00:04:38,400
+ Okay, let's check updates.
+
+29
+00:04:38,400 --> 00:04:43,900
+ Okay, the changes are done to Apache 8.0, and here is the thing.
+
+30
+00:04:43,900 --> 00:04:52,900
+ If you have already pulled this image, so the Terraform will automatically use 8.0.
+
+31
+00:04:52,900 --> 00:04:58,900
+ If you didn't pull this image from the Docker hub, it will, as the Terraform will do,
+
+32
+00:04:58,900 --> 00:05:03,900
+ we manage the container to do that instead of you type manually Docker pool image.
+
+33
+00:05:03,900 --> 00:05:07,900
+ Okay, that's one of the things that I want to add to.
+
+34
+00:05:07,900 --> 00:05:16,900
+ Since we have already, I have already downloaded in the background 8.1, the Terraform will just use 8.1,
+
+35
+00:05:16,900 --> 00:05:23,900
+ instead of 8.2, that without any downloading or pulling all the image from the Docker hub.
+
+36
+00:05:23,900 --> 00:05:46,900
+ So, to do that, so we now, let's do the Terraform plan, let's enter the database password.
+
+37
+00:05:46,900 --> 00:05:53,900
+ Okay, so we didn't do anything, just the plan of one addition.
+
+38
+00:05:53,900 --> 00:06:04,900
+ If I want to check what will be added, if I can go here from the image, this is the one in red we'd be replaced,
+
+39
+00:06:04,900 --> 00:06:10,900
+ forces the replacement of this change to be 8.1, instead of 8.2.
+
+40
+00:06:10,900 --> 00:06:17,900
+ So, let's do the change, it is very simple just to go there and watch it, but if you have many comments,
+
+41
+00:06:17,900 --> 00:06:29,900
+ of course, you need to search for some option to like dash outputs, or dash output in the format to use,
+
+42
+00:06:29,900 --> 00:06:53,900
+ there's actual change that will occur. So, let's now apply the Terraform.
+
+43
+00:06:53,900 --> 00:06:58,900
+ Okay, we'll confirm the change.
+
+44
+00:06:58,900 --> 00:07:03,900
+ Please destroy the current Docker of HP and create another one.
+
+45
+00:07:03,900 --> 00:07:09,900
+ So, let's use the Docker created.
+
+46
+00:07:09,900 --> 00:07:16,900
+ Okay, we have already, now we have 8.1, this one for the WP dash Apache,
+
+47
+00:07:16,900 --> 00:07:23,900
+ it uses now 8.1 instead of 8.2, okay, cool.
+
+48
+00:07:23,900 --> 00:07:29,900
+ And for MySQL, we have already didn't make any change, it is the same settings.
+
+49
+00:07:29,900 --> 00:07:35,900
+ So, moving to our next part, after we do the modification,
+
+50
+00:07:35,900 --> 00:07:40,900
+ if you want to run any automated test to make sure that you can connect to the database,
+
+51
+00:07:40,900 --> 00:07:47,900
+ you can use the kernel command instead of going to the simple testing of going to the browser
+
+52
+00:07:47,900 --> 00:07:54,900
+ and type http local host, if you can type /i, okay,
+
+53
+00:07:54,900 --> 00:08:00,900
+ you can see that it is, it reply, if it replied with found,
+
+54
+00:08:00,900 --> 00:08:05,900
+ or there is no internal errors, then it will interact you to the WordPress.
+
+55
+00:08:05,900 --> 00:08:13,900
+ So, it is found, okay, if you didn't install the WordPress yet, it should reply with, okay.
+
+56
+00:08:13,900 --> 00:08:20,900
+ So, now, okay, let's now go to the second test.
+
+57
+00:08:20,900 --> 00:08:27,900
+ If I want to check the connectivity with MySQL database, I can issue this comment.
+
+58
+00:08:27,900 --> 00:08:34,900
+ Okay, Docker, /it/ but I will type the WP dash MySQL,
+
+59
+00:08:34,900 --> 00:08:38,900
+ and I will use MySQL, okay.
+
+60
+00:08:38,900 --> 00:08:44,900
+ And I should use the WordPress users, which is stored in the WordPress file,
+
+61
+00:08:44,900 --> 00:08:50,900
+ /p/e, okay, to show the database.
+
+62
+00:08:50,900 --> 00:08:57,900
+ Let me type the password, but for the database users not to root.
+
+63
+00:09:05,900 --> 00:09:11,900
+ Okay, it shows to me now that this is the database command that I have,
+
+64
+00:09:11,900 --> 00:09:14,900
+ which is named WordPress.
+
+65
+00:09:14,900 --> 00:09:19,900
+ Okay, that's the verification that I connect to the database to view it.
+
+66
+00:09:19,900 --> 00:09:26,900
+ Okay, so these are two automated tests here that we can done from the shell.
+
+67
+00:09:26,900 --> 00:09:37,900
+ And the last task here that I want to, let's destroy the Terraform, it should destroy all of the two doctors for MySQL and Apache,
+
+68
+00:09:37,900 --> 00:09:43,900
+ and we remove any Docker assignment or any Docker network assigned to them,
+
+69
+00:09:43,900 --> 00:09:51,900
+ so it will get it about not to, but for resources, so that you can initialize or clear your environment.
+
+70
+00:09:51,900 --> 00:09:58,900
+ So, if I can do this, let's enter the password.
+
+71
+00:09:58,900 --> 00:10:20,900
+ Yes, to come, yes, let's confirm the destroy all of the destruction for all of the resources.
+
+72
+00:10:20,900 --> 00:10:24,900
+ As I've told you, for resources are destroyed.
+
+73
+00:10:24,900 --> 00:10:29,900
+ Let's clear it, and now let's view the Docker.
+
+74
+00:10:29,900 --> 00:10:36,900
+ We can see that we have already the test Docker of hello, and the old one that we have already existed,
+
+75
+00:10:36,900 --> 00:10:39,900
+ which is MySQL and web dev ops.
+
+76
+00:10:39,900 --> 00:10:44,900
+ Okay, but this is the old names of all doctors.
+
+77
+00:10:44,900 --> 00:10:55,900
+ So, this is a quick demonstration for the Terraform, I know the Terraform may be as hard as lesson in that we have explained the dev ops,
+
+78
+00:10:55,900 --> 00:11:01,900
+ but I hope that I have cleared everything in it as much as I can.
+
+79
+00:11:01,900 --> 00:11:13,900
+ I hope this lesson is beneficial to you, and I hope to see you in any upcoming lesson or any upcoming topics either in void dev ops or any other topics that
+
+80
+00:11:13,900 --> 00:11:18,900
+ we can discuss what is needed courses or topic.
+
+81
+00:11:18,900 --> 00:11:32,900
+ You can just, if you want to contact me, you can contact me via WhatsApp, YouTube, to check what are the courses that most of the people want me to explain.
+
+82
+00:11:32,900 --> 00:11:34,900
+ Thank you.
+
