@@ -1,0 +1,400 @@
+1
+00:00:00,260 --> 00:00:01,370
+Algorithm.
+
+2
+00:00:01,850 --> 00:00:03,410
+I'm sure you've heard that word before.
+
+3
+00:00:03,410 --> 00:00:06,140
+It's used all over and it's so important in programming.
+
+4
+00:00:06,140 --> 00:00:09,740
+But what exactly is an algorithm and what does it do?
+
+5
+00:00:09,980 --> 00:00:13,040
+So in this lesson we're going to uncover some more of these mysteries.
+
+6
+00:00:13,040 --> 00:00:17,210
+And we'll also implement a simple algorithm in our game.
+
+7
+00:00:17,660 --> 00:00:21,140
+So first things first what is an algorithm.
+
+8
+00:00:21,590 --> 00:00:27,800
+Well imagine you're following a specific recipe to bake a cake or playing a new game that has a set
+
+9
+00:00:27,800 --> 00:00:29,000
+of rules to follow.
+
+10
+00:00:29,300 --> 00:00:31,160
+That's kind of what an algorithm is.
+
+11
+00:00:31,160 --> 00:00:36,530
+It's like a recipe or a set of rules that computers follow to do something cool.
+
+12
+00:00:36,950 --> 00:00:40,190
+So that said, how do computers use algorithms?
+
+13
+00:00:40,550 --> 00:00:47,090
+Well, you know, when you type something into Google and get a list of web pages, that's an algorithm
+
+14
+00:00:47,090 --> 00:00:50,030
+helping find those pages for you?
+
+15
+00:00:50,030 --> 00:00:56,270
+Or have you ever noticed how a website can show you items in order of price, from lowest to highest?
+
+16
+00:00:56,270 --> 00:00:57,950
+That's an algorithm tool.
+
+17
+00:00:58,340 --> 00:01:05,090
+Or in video games, algorithms can help control what the other characters do and decide the outcome
+
+18
+00:01:05,090 --> 00:01:06,230
+of certain actions.
+
+19
+00:01:06,410 --> 00:01:10,130
+They're used almost everywhere, from YouTube to Netflix to TikTok to Amazon.
+
+20
+00:01:11,150 --> 00:01:17,390
+So now that you have some kind of idea on what algorithms are, let's discuss the algorithm we are going
+
+21
+00:01:17,390 --> 00:01:19,370
+to build in our game.
+
+22
+00:01:20,200 --> 00:01:26,890
+We're going to have an algorithm in our game called the Safe Path algorithm, and it plays a crucial
+
+23
+00:01:26,890 --> 00:01:30,190
+role in making the game both challenging and playable.
+
+24
+00:01:30,220 --> 00:01:31,240
+So how does it work?
+
+25
+00:01:31,780 --> 00:01:35,500
+We start with a rectangle sprite positioned at the top of the screen.
+
+26
+00:01:36,070 --> 00:01:40,510
+Then the rectangle moves slowly to the left or right across the screen.
+
+27
+00:01:41,070 --> 00:01:47,940
+And as the rectangle moves, it prevents trees from appearing in its current position, and this action
+
+28
+00:01:47,940 --> 00:01:50,250
+creates a safe path for the player.
+
+29
+00:01:51,120 --> 00:01:54,720
+So that said, why is it considered an algorithm?
+
+30
+00:01:55,110 --> 00:01:56,460
+Well, there are three reasons.
+
+31
+00:01:56,460 --> 00:01:58,260
+Sequential steps.
+
+32
+00:01:58,260 --> 00:02:04,350
+The algorithm involves specific steps executed in order positioning the rectangle, its movement, and
+
+33
+00:02:04,350 --> 00:02:05,250
+the blocking tree.
+
+34
+00:02:05,880 --> 00:02:12,450
+Secondly, decision making the random movement of the rectangle requires decision making processes and
+
+35
+00:02:12,450 --> 00:02:15,690
+determining which direction to move at any given moment.
+
+36
+00:02:15,900 --> 00:02:18,030
+And thirdly, problem solving.
+
+37
+00:02:18,150 --> 00:02:24,840
+The main issue here is to preventing the player from being trapped by trees, and the safe path algorithm
+
+38
+00:02:24,840 --> 00:02:27,630
+addresses this by always clearing a path.
+
+39
+00:02:28,300 --> 00:02:34,930
+So basically, the safe path algorithm ensures there is always an open route for the player to move,
+
+40
+00:02:34,930 --> 00:02:38,920
+avoiding an unplayable situation, which wouldn't really be fair in our game.
+
+41
+00:02:39,310 --> 00:02:44,170
+The player can continue moving forward, navigating through the obstacles, making the gameplay experience
+
+42
+00:02:44,170 --> 00:02:45,910
+both fair and engaging.
+
+43
+00:02:45,940 --> 00:02:49,210
+Now, in the essence, the algorithm balances the game.
+
+44
+00:02:49,210 --> 00:02:54,280
+It ensures that it's challenging on the one side, yet it's also obviously possible to navigate, so
+
+45
+00:02:54,280 --> 00:02:57,700
+this enriches and enhances the whole playing experience.
+
+46
+00:02:58,400 --> 00:03:03,980
+Now, while I will be building this, I'm going to go at a very fast pace as we won't be using this
+
+47
+00:03:03,980 --> 00:03:05,300
+in our game as we continue.
+
+48
+00:03:05,300 --> 00:03:09,620
+This lesson is more to help you understand an important programming concept.
+
+49
+00:03:09,620 --> 00:03:15,050
+However, you can still use it if you'd like to change the dynamics of your game a bit, you can still
+
+50
+00:03:15,050 --> 00:03:15,800
+apply this.
+
+51
+00:03:16,310 --> 00:03:21,860
+Okay, so first things first, we need our rectangle sprite and the sprite is simple enough.
+
+52
+00:03:21,860 --> 00:03:23,660
+We can just hit paint button.
+
+53
+00:03:23,660 --> 00:03:26,270
+Then in the editor we can just select this tool.
+
+54
+00:03:26,270 --> 00:03:29,960
+And then just draw a simple rectangle like so.
+
+55
+00:03:30,470 --> 00:03:33,860
+We can adjust the size a bit so it looks something like this.
+
+56
+00:03:34,520 --> 00:03:42,770
+Then going into the code all we have to do is grab a win, start a forever a glide and a pick random
+
+57
+00:03:42,770 --> 00:03:45,530
+which we will stick under the X input.
+
+58
+00:03:46,360 --> 00:03:53,470
+And we'll change the pick random to -220 to 220, and we can set Y to 180.
+
+59
+00:03:54,330 --> 00:03:59,760
+Now, if we play, you will see we have this box that goes from one side of the screen to the other.
+
+60
+00:04:00,450 --> 00:04:06,840
+So now that we have the movement, we need one more thing, which is to report the position.
+
+61
+00:04:06,840 --> 00:04:12,570
+And we do this to make sure that the other sprites can know what position our rectangle sprite in is
+
+62
+00:04:12,570 --> 00:04:13,920
+at all times.
+
+63
+00:04:13,980 --> 00:04:21,660
+So all we need to do is duplicate the script, remove the glide, and move over to our other variables
+
+64
+00:04:22,050 --> 00:04:25,830
+and create a new one which we will call Safe Path.
+
+65
+00:04:26,620 --> 00:04:29,980
+Now we can grab this set into our forever loop.
+
+66
+00:04:30,550 --> 00:04:33,010
+Change it to save path.
+
+67
+00:04:33,010 --> 00:04:36,370
+And we're going to set our safe path to our X position.
+
+68
+00:04:36,610 --> 00:04:38,200
+So now our sprite moves.
+
+69
+00:04:38,200 --> 00:04:42,100
+It constantly sets this variable to its current position.
+
+70
+00:04:43,170 --> 00:04:48,660
+Now remember how I said an algorithm is kind of like baking a cake, or playing a game where you need
+
+71
+00:04:48,660 --> 00:04:50,610
+to follow instructions or rules.
+
+72
+00:04:50,700 --> 00:04:53,520
+So this is our instructions or rules.
+
+73
+00:04:53,520 --> 00:04:58,470
+So our trees aren't allowed to spawn in the location of our algorithm sprite.
+
+74
+00:04:59,080 --> 00:05:03,880
+So now all we need to do is make sure that the tree sprites follow these rules.
+
+75
+00:05:04,680 --> 00:05:06,630
+So moving over to the sprite.
+
+76
+00:05:07,050 --> 00:05:13,080
+If you look at the script here, as you can see, our trees are just going to a random X position.
+
+77
+00:05:13,080 --> 00:05:20,070
+So to fix this we are going to grab a repeat until block and insert it right over here.
+
+78
+00:05:20,870 --> 00:05:27,170
+Then we can duplicate this bit here and put this go to block inside our repeat until.
+
+79
+00:05:27,710 --> 00:05:34,490
+So finally what we want is to keep changing our X position until we are not in the path of our rectangle.
+
+80
+00:05:35,090 --> 00:05:43,100
+So to do this, we're going to need a few blocks which are a greater than, a lesser than and a or a
+
+81
+00:05:43,100 --> 00:05:46,910
+plus a minus two of our safe path variables.
+
+82
+00:05:46,910 --> 00:05:50,780
+And finally our two of our X positions.
+
+83
+00:05:51,390 --> 00:05:55,050
+And how we want to connect is just like this.
+
+84
+00:05:56,550 --> 00:06:01,500
+Yeah, I know this may have been a bit confusing, but let's run through the code so our trees spawn
+
+85
+00:06:01,500 --> 00:06:03,300
+in a random x position.
+
+86
+00:06:03,540 --> 00:06:06,000
+Then we have this part.
+
+87
+00:06:06,000 --> 00:06:12,450
+So if our tree's current x position is within 100 pixels to the left of our safe path, then it needs
+
+88
+00:06:12,450 --> 00:06:13,440
+to try again.
+
+89
+00:06:13,440 --> 00:06:18,540
+Or if our trees are 100 pixels to the right, it also has to try again.
+
+90
+00:06:18,780 --> 00:06:22,110
+And if they are not in the path of the sprite, it will continue.
+
+91
+00:06:22,350 --> 00:06:25,050
+So you see this in action.
+
+92
+00:06:25,050 --> 00:06:31,680
+We can quickly go to our variable sprite, disconnect this over here and change our spawn rate to zero.
+
+93
+00:06:32,340 --> 00:06:34,710
+Then under our safe path sprite we can hide it.
+
+94
+00:06:35,070 --> 00:06:36,600
+Now clicking play.
+
+95
+00:06:37,230 --> 00:06:43,170
+There you can see a bunch of trees spawning, yet we still have a safe path to follow.
+
+96
+00:06:43,200 --> 00:06:45,630
+So yeah, that's algorithms in a nutshell.
+
+97
+00:06:45,630 --> 00:06:50,190
+I know this lesson was pretty fast paced, so don't worry if you weren't able to follow along because
+
+98
+00:06:50,190 --> 00:06:55,050
+as I said, this lesson is more to give you a simple understanding of an important concept.
+
+99
+00:06:55,050 --> 00:06:58,320
+But for a game, we won't be using this algorithm as we continue.
+
+100
+00:06:58,320 --> 00:07:01,500
+But if you'd like to use it, you are more than welcome.
+
