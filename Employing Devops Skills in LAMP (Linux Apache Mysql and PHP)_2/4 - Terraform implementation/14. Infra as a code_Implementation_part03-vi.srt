@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:22,600
+Nó chỉ đơn giản là đặt nó ở đây và thay thế nếu bạn muốn thay thế cái cũ này, okay.
+
+2
+00:00:22,600 --> 00:00:51,800
+Anh có thể bỏ qua chuyện này.
+
+3
+00:00:51,800 --> 00:01:00,500
+Và tự động hóa của Terraform từ đây.
+
+4
+00:01:00,500 --> 00:01:22,700
+Và không chỉ thế, mà bạn còn có thể, nếu chúng ta đến đây để mở nó, nhận được bên trái, nhưng tập tin thử nghiệm.
+
+5
+00:01:22,700 --> 00:01:24,400
+Bạn có thể tăng tốc độ.
+
+6
+00:01:24,400 --> 00:01:31,200
+Ví dụ như ở đây, bạn đã xây dựng một cuộc triển khai và Terraform hoạt động trên cơ sở hạ tầng.
+
+7
+00:01:31,200 --> 00:01:46,200
+Bạn có thể thêm vào trong, cấu trúc, okay, hoặc infra, đơn giản là infra.
+
+8
+00:01:46,200 --> 00:01:52,500
+Và để anh có thể mở rộng mật mã, mã của anh để áp dụng Terraform.
+
+9
+00:01:52,500 --> 00:01:57,960
+Bạn có thể thêm điều này để bất kỳ thay đổi mà bạn đáp ứng từ Terraform chỉ được kiểm soát
+
+10
+00:01:57,960 --> 00:02:05,500
+từ bất kỳ môi trường được kiểm soát từ 13 bằng cách sử dụng vỏ bọc như một cái thẻ.
+
+11
+00:02:05,500 --> 00:02:19,700
+Vì vậy, bạn có thể thêm điều này vào mã của bạn ở cuối để thực hiện một tự động hóa đầy đủ cho Terraform.
+
+12
+00:02:19,700 --> 00:02:29,400
+Được rồi, bây giờ chúng ta chuyển sang phần cuối của bài kiểm tra, mà chúng ta sẽ kiểm tra hoặc sửa đổi
+
+13
+00:02:29,400 --> 00:02:38,600
+để cấu hình Terraform và xem khi chúng tôi tạo ra hoặc khi chúng tôi lên kế hoạch thay đổi và áp dụng nó.
+
+14
+00:02:38,600 --> 00:02:41,800
+Cách mà Terraform sẽ xử lý sự thay đổi.
+
+15
+00:02:41,800 --> 00:02:50,800
+Ví dụ như ở đây, chúng tôi tạo ra một sự thay đổi nhỏ để thay đổi công-ten-nơ WordPress Mymix.
+
+16
+00:02:50,800 --> 00:03:00,800
+Thay vì làm điều này thay đổi cho hộp MySQL, bởi vì một số hộp có thể có một số cụ thể
+
+17
+00:03:00,800 --> 00:03:06,900
+Tăng lên khối lượng, có thể dẫn đến những sai lầm đáng kể.
+
+18
+00:03:06,900 --> 00:03:14,300
+Vì vậy chúng tôi không muốn nâng cấp vì điều này có thể gây ra một vấn đề.
+
+19
+00:03:14,300 --> 00:03:23,900
+Vì vậy, những gì chúng tôi cập nhật, chúng tôi sẽ chỉ thay đổi hoặc sửa đổi, chúng tôi sẽ sử dụng cùng một trang web, hình ảnh chiến dịch.
+
+20
+00:03:23,900 --> 00:03:34,400
+Nhưng thay vì Apache PHP gạch ngang Apache 8.2, chúng ta sẽ dùng PHP HP HOP HEN HENN Apache 8.1, được rồi.
+
+21
+00:03:34,400 --> 00:03:40,700
+Chúng tôi sẽ chỉ cần thực hiện một nhỏ hạ cấp, nhưng chúng tôi sẽ vẫn sử dụng các web dev hoạt động bởi vì chúng tôi muốn,
+
+22
+00:03:40,700 --> 00:03:46,800
+Chúng tôi không muốn bất kỳ vấn đề nào xảy ra với mở rộng xLS khi PHP kết nối với
+
+23
+00:03:46,800 --> 00:03:54,600
+MyQL cho cơ sở dữ liệu WordPres, cho kết nối đến cơ sở dữ liệu WordPress.
+
+24
+00:03:54,600 --> 00:03:57,900
+Được rồi, sự thay đổi thực sự rất đơn giản.
+
+25
+00:03:57,900 --> 00:04:06,900
+Vì vậy, những gì bạn cần làm, chúng tôi đã ở Terraform nhiều hơn trầm cảm, hãy chỉnh sửa tập tin chính, okay.
+
+26
+00:04:06,900 --> 00:04:15,900
+Chúng ta sẽ bỏ qua âm lượng Docker của MyQL, hãy tới Docker cho WordPres, được chứ?
+
+27
+00:04:15,900 --> 00:04:29,900
+Và chúng tôi sẽ sử dụng hình ảnh của 8.1, thay vì 8.0, và chỉ đây là thay đổi của chúng tôi chúng tôi sẽ cập nhật và thoát ra.
+
+28
+00:04:29,900 --> 00:04:38,400
+Được rồi, hãy kiểm tra cập nhật.
+
+29
+00:04:38,400 --> 00:04:43,900
+Được rồi, các thay đổi đã được thực hiện với Apache 8.0, và đây là vấn đề.
+
+30
+00:04:43,900 --> 00:04:52,900
+Nếu bạn đã kéo ảnh này, vì vậy các Terraform sẽ tự động sử dụng 8.0.
+
+31
+00:04:52,900 --> 00:04:58,900
+Nếu bạn không lấy hình này từ trung tâm Docker, nó sẽ, như Terraform sẽ làm,
+
+32
+00:04:58,900 --> 00:05:03,900
+Chúng tôi quản lý các container để làm điều đó thay vì bạn gõ hình ảnh hồ bơi Docker bằng tay.
+
+33
+00:05:03,900 --> 00:05:07,900
+Được rồi, đó là một trong những điều tôi muốn thêm vào.
+
+34
+00:05:07,900 --> 00:05:16,900
+Kể từ khi chúng tôi đã có, tôi đã tải về trong nền 8.1, Terraform sẽ chỉ sử dụng 8.1,
+
+35
+00:05:16,900 --> 00:05:23,900
+thay vì là 8.2, mà không cần tải về hay lấy tất cả hình ảnh từ trung tâm Docker.
+
+36
+00:05:23,900 --> 00:05:46,900
+Vì vậy, để làm điều đó, chúng tôi bây giờ, hãy làm kế hoạch Terraform, hãy nhập mật khẩu cơ sở dữ liệu.
+
+37
+00:05:46,900 --> 00:05:53,900
+Được rồi, vậy là chúng ta không làm gì cả, chỉ có một kế hoạch bổ sung.
+
+38
+00:05:53,900 --> 00:06:04,900
+Nếu tôi muốn kiểm tra những gì sẽ được thêm vào, nếu tôi có thể đi ở đây từ hình ảnh, đây là một trong màu đỏ chúng tôi sẽ được thay thế,
+
+39
+00:06:04,900 --> 00:06:10,900
+buộc thay thế sự thay đổi này bằng 8.1, thay vì 8.2.
+
+40
+00:06:10,900 --> 00:06:17,900
+Vì vậy, chúng ta hãy thay đổi, nó là rất đơn giản chỉ cần đi đến đó và xem nó, nhưng nếu bạn có rất nhiều bình luận,
+
+41
+00:06:17,900 --> 00:06:29,900
+tất nhiên, bạn cần phải tìm kiếm một số tùy chọn để giống như kết xuất gạch ngang, hoặc gạch ngang kết xuất theo định dạng cần sử dụng,
+
+42
+00:06:29,900 --> 00:06:53,900
+Có những thay đổi thực sự sẽ xảy ra. Vì vậy, bây giờ hãy áp dụng Terraform.
+
+43
+00:06:53,900 --> 00:06:58,900
+Được rồi, chúng ta sẽ xác nhận sự thay đổi.
+
+44
+00:06:58,900 --> 00:07:03,900
+Hãy phá hủy Docker hiện tại của HP và tạo ra một cái khác.
+
+45
+00:07:03,900 --> 00:07:09,900
+Vì vậy, hãy sử dụng Docker tạo ra.
+
+46
+00:07:09,900 --> 00:07:16,900
+Được rồi, chúng ta đã có 8.1, cái này cho người Apache,
+
+47
+00:07:16,900 --> 00:07:23,900
+Nó được sử dụng bây giờ 8,1 thay vì 8.2, okay, okay.
+
+48
+00:07:23,900 --> 00:07:29,900
+Và đối với MyQL, chúng tôi đã không thực hiện bất kỳ thay đổi, đó là cùng một thiết lập.
+
+49
+00:07:29,900 --> 00:07:35,900
+Chuyển sang phần tiếp theo, sau khi sửa đổi,
+
+50
+00:07:35,900 --> 00:07:40,900
+Nếu bạn muốn chạy bất kỳ kiểm tra tự động để chắc chắn rằng bạn có thể kết nối với cơ sở dữ liệu,
+
+51
+00:07:40,900 --> 00:07:47,900
+bạn có thể sử dụng lệnh hạt nhân thay vì đi đến các thử nghiệm đơn giản của đi đến trình duyệt
+
+52
+00:07:47,900 --> 00:07:54,900
+và gõ máy http cục bộ, nếu bạn có thể gõ /i, okay,
+
+53
+00:07:54,900 --> 00:08:00,900
+Bạn có thể thấy rằng nó, nó trả lời, nếu nó trả lời với tìm thấy,
+
+54
+00:08:00,900 --> 00:08:05,900
+hoặc không có lỗi nội bộ, sau đó nó sẽ tương tác bạn với WordPress.
+
+55
+00:08:05,900 --> 00:08:13,900
+Vì vậy, nó được tìm thấy, okay, nếu bạn đã không cài đặt WordPress được nêu ra, nó nên trả lời với, okay.
+
+56
+00:08:13,900 --> 00:08:20,900
+Vì vậy, bây giờ, được rồi, bây giờ hãy đi đến bài kiểm tra thứ hai.
+
+57
+00:08:20,900 --> 00:08:27,900
+Nếu tôi muốn kiểm tra kết nối với cơ sở dữ liệu của mình, tôi có thể đưa ra bình luận này.
+
+58
+00:08:27,900 --> 00:08:34,900
+Được rồi, Docker, / it / nhưng tôi sẽ gõ WP dấu gạch lát,
+
+59
+00:08:34,900 --> 00:08:38,900
+được chứ?
+
+60
+00:08:38,900 --> 00:08:44,900
+Và tôi nên sử dụng WordPress users, được lưu trong tập tin WordPress,
+
+61
+00:08:44,900 --> 00:08:50,900
+Cho xem cơ sở dữ liệu.
+
+62
+00:08:50,900 --> 00:08:57,900
+Hãy để tôi gõ mật khẩu, nhưng cho người dùng cơ sở dữ liệu không phải là root
+
+63
+00:09:05,900 --> 00:09:11,900
+Được rồi, nó cho tôi thấy rằng đây là lệnh cơ sở dữ liệu mà tôi có,
+
+64
+00:09:11,900 --> 00:09:14,900
+Tên là WordPress.
+
+65
+00:09:14,900 --> 00:09:19,900
+Được rồi, đó là sự xác nhận mà tôi kết nối đến cơ sở dữ liệu để xem nó.
+
+66
+00:09:19,900 --> 00:09:26,900
+Được rồi, đây là 2 bài kiểm tra tự động mà chúng ta có thể thực hiện từ vỏ sò.
+
+67
+00:09:26,900 --> 00:09:37,900
+Và nhiệm vụ cuối cùng mà tôi muốn phá hủy Terraform, nó sẽ tiêu diệt tất cả hai bác sĩ cho MySQL và Apache,
+
+68
+00:09:37,900 --> 00:09:43,900
+và chúng tôi loại bỏ bất kỳ nhiệm vụ Docker hoặc bất kỳ mạng Docker được chỉ định cho họ,
+
+69
+00:09:43,900 --> 00:09:51,900
+Vì vậy, nó sẽ nhận được nó về không phải để, mà cho tài nguyên, để bạn có thể khởi tạo hoặc làm sạch môi trường của bạn.
+
+70
+00:09:51,900 --> 00:09:58,900
+Vì vậy, nếu tôi có thể làm điều này, hãy nhập mật khẩu.
+
+71
+00:09:58,900 --> 00:10:20,900
+Phải, để tới, phải, hãy xác nhận sự hủy diệt toàn bộ tài nguyên.
+
+72
+00:10:20,900 --> 00:10:24,900
+Như tôi đã nói, vì nguồn lực đã bị tiêu diệt.
+
+73
+00:10:24,900 --> 00:10:29,900
+Hãy dọn dẹp nó, và bây giờ hãy xem Docker.
+
+74
+00:10:29,900 --> 00:10:36,900
+Chúng ta có thể thấy rằng chúng ta đã có bài kiểm tra Docker của sự chào hỏi, và cái cũ mà chúng ta đã có,
+
+75
+00:10:36,900 --> 00:10:39,900
+Đó là MyQL và web dev hoạt động.
+
+76
+00:10:39,900 --> 00:10:44,900
+Được rồi, nhưng đây là tên cũ của tất cả các bác sĩ.
+
+77
+00:10:44,900 --> 00:10:55,900
+Vì vậy, đây là một cuộc biểu tình nhanh chóng cho Terraform, tôi biết Terraform có thể là khó khăn như bài học trong đó chúng tôi đã giải thích các chiến dịch dev,
+
+78
+00:10:55,900 --> 00:11:01,900
+Nhưng tôi hy vọng rằng tôi đã dọn sạch mọi thứ trong đó càng nhiều càng tốt.
+
+79
+00:11:01,900 --> 00:11:13,900
+Tôi hy vọng bài học này mang lại lợi ích cho bạn, và tôi hy vọng sẽ nhìn thấy bạn trong bất kỳ bài học sắp tới hoặc bất kỳ chủ đề sắp tới hoặc trong khoảng trống devs hoặc bất kỳ chủ đề khác mà
+
+80
+00:11:13,900 --> 00:11:18,900
+chúng ta có thể thảo luận về những khóa học hoặc đề tài cần thiết.
+
+81
+00:11:18,900 --> 00:11:32,900
+Bạn có thể, nếu bạn muốn liên lạc với tôi, bạn có thể liên lạc với tôi thông qua Whats App, YouTube, để kiểm tra những gì là các khóa học mà hầu hết mọi người muốn tôi giải thích.
+
+82
+00:11:32,900 --> 00:11:34,900
+Cảm ơn.
+
