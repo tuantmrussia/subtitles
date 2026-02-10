@@ -1,0 +1,248 @@
+1
+00:00:00,080 --> 00:00:00,590
+Right?
+
+2
+00:00:00,590 --> 00:00:06,680
+So we have all our sprites in order, and we're ready to start working on our gameplay mechanics.
+
+3
+00:00:06,980 --> 00:00:10,700
+And to start off with, let's get our player sprite working.
+
+4
+00:00:11,000 --> 00:00:17,630
+Now, just so we can focus on one thing, let's quickly hide these other sprites by just clicking this
+
+5
+00:00:17,630 --> 00:00:20,780
+icon here, and we can do the same for this.
+
+6
+00:00:21,640 --> 00:00:22,600
+And there we go.
+
+7
+00:00:22,630 --> 00:00:29,710
+Now let's move our main player sprite down the screen somewhere near -1 to 5.
+
+8
+00:00:30,260 --> 00:00:31,190
+There we go.
+
+9
+00:00:31,640 --> 00:00:37,790
+So we have our player sprite to be able to move from left to right on the screen.
+
+10
+00:00:37,790 --> 00:00:42,680
+And thankfully we know pretty well how to do this because of our last project.
+
+11
+00:00:42,680 --> 00:00:43,400
+You remember.
+
+12
+00:00:44,150 --> 00:00:47,930
+So let's just bring in the basic blocks once again.
+
+13
+00:00:47,930 --> 00:00:53,600
+The when start forever and if and also the if else block.
+
+14
+00:00:54,080 --> 00:01:00,500
+So to get our player to move left or right, we can grab two of these key pressed code blocks and change
+
+15
+00:01:00,500 --> 00:01:03,830
+it to left and the other to right.
+
+16
+00:01:04,430 --> 00:01:11,180
+Then we can put them into each of these if inputs and structure it just like we did before.
+
+17
+00:01:12,270 --> 00:01:17,310
+Now then variable, we add in our and change x by all and point our player.
+
+18
+00:01:17,310 --> 00:01:18,480
+Let's duplicate it.
+
+19
+00:01:18,480 --> 00:01:19,950
+So here it feels.
+
+20
+00:01:19,950 --> 00:01:23,520
+Basically I'm skiing this so we can have two separate scripts.
+
+21
+00:01:23,520 --> 00:01:27,930
+One that controls our pointing direction and the other that controls our movement.
+
+22
+00:01:28,850 --> 00:01:34,610
+Doing this keeps our code a lot more organized by ensuring each script we have doesn't try to do too
+
+23
+00:01:34,610 --> 00:01:35,390
+many things.
+
+24
+00:01:35,420 --> 00:01:42,020
+This is called Componentization in programming, and it's a very important concept as it also makes
+
+25
+00:01:42,020 --> 00:01:49,700
+our code more reusable as we can create scripts that do one certain thing well, and then we can use
+
+26
+00:01:49,700 --> 00:01:56,960
+the script in different projects compared to if we were just to have one long entangled script that
+
+27
+00:01:56,960 --> 00:02:02,840
+was specific only to one project, like we click, we could use the hyphen script somewhere else.
+
+28
+00:02:03,050 --> 00:02:08,600
+But if it had the point direct variable with the movement instead, it would be we can just difficult
+
+29
+00:02:08,600 --> 00:02:09,320
+to use in it.
+
+30
+00:02:09,320 --> 00:02:10,430
+So other code.
+
+31
+00:02:11,130 --> 00:02:14,760
+So guys, let's start with Liz and her movement script and stuff.
+
+32
+00:02:14,760 --> 00:02:22,680
+So if Rive clicked Willow change X by two you know and of some if left arrow key I see we can listen
+
+33
+00:02:22,800 --> 00:02:26,880
+x by in yeah ten often and clicking it's less.
+
+34
+00:02:26,880 --> 00:02:28,320
+As you can see it works.
+
+35
+00:02:28,320 --> 00:02:30,090
+And yeah just a bit rough.
+
+36
+00:02:30,210 --> 00:02:31,560
+Fine actually I'll be improving this soon.
+
+37
+00:02:31,560 --> 00:02:33,450
+Apex make it look more golden.
+
+38
+00:02:33,450 --> 00:02:35,940
+But for now just you'll roll with this gets out.
+
+39
+00:02:36,770 --> 00:02:40,310
+So let's get out direction animation working now.
+
+40
+00:02:40,730 --> 00:02:47,720
+Basically, like we did before, if right arrow clicked, we can add in this point direction and point
+
+41
+00:02:47,720 --> 00:02:50,330
+to the right and the left arrow clicked.
+
+42
+00:02:50,330 --> 00:02:53,780
+We can point to the left just like that.
+
+43
+00:02:54,200 --> 00:02:55,310
+So let's try that out.
+
+44
+00:02:56,300 --> 00:02:58,490
+Okay, that's not right.
+
+45
+00:02:58,550 --> 00:03:04,880
+And if you remember from before, because our sprite's costume position is not facing right, we have
+
+46
+00:03:04,880 --> 00:03:05,840
+this problem.
+
+47
+00:03:05,840 --> 00:03:11,180
+Now instead of changing the costume direction in the editor like we did before, let's look at another
+
+48
+00:03:11,180 --> 00:03:11,840
+solution.
+
+49
+00:03:12,410 --> 00:03:23,900
+Here we can just set point right to 105 and point left to 75 and forward to 90 degrees and clicking
+
+50
+00:03:23,900 --> 00:03:24,560
+play.
+
+51
+00:03:24,680 --> 00:03:29,750
+You see, this works, although it might be better practice to change it like we did before.
+
+52
+00:03:29,750 --> 00:03:32,870
+But as I say, if it ain't broke, don't fix it.
+
+53
+00:03:33,440 --> 00:03:40,040
+So with that done, all we need to do is switch the costume like this is ever good enough.
+
+54
+00:03:40,040 --> 00:03:43,460
+So if we click that arrow, we can see a guy in costume to right?
+
+55
+00:03:43,880 --> 00:03:49,970
+And the, uh, to the fourth condition last, the left to right costume.
+
+56
+00:03:50,060 --> 00:03:50,450
+Any of those.
+
+57
+00:03:50,750 --> 00:03:52,220
+Just like that is easy.
+
+58
+00:03:52,370 --> 00:03:55,370
+So nothing play park as you can see it.
+
+59
+00:03:55,460 --> 00:03:57,080
+Or a lot better of it.
+
+60
+00:03:57,080 --> 00:03:57,860
+I encourage you to play.
+
+61
+00:03:57,950 --> 00:04:01,940
+He's like code so that you can maybe tweak it them even better.
+
+62
+00:04:02,120 --> 00:04:05,450
+So because we're only getting started.
+
