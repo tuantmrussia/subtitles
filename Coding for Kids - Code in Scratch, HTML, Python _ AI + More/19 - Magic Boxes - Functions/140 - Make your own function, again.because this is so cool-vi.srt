@@ -1,0 +1,524 @@
+1
+00:00:00,200 --> 00:00:06,280
+Trong bài học trước, chúng tôi nhìn vào điều này và làm thế nào để tạo ra chức năng riêng của chúng tôi mà sẽ lập phương một số
+
+2
+00:00:06,280 --> 00:00:07,000
+Vì chúng ta.
+
+3
+00:00:07,400 --> 00:00:14,240
+Nhưng trong bài học này, tôi muốn cho bạn thấy nhiều hơn một ví dụ thú vị, mà hy vọng bạn có thể
+
+4
+00:00:14,240 --> 00:00:17,280
+Xem làm thế nào các chức năng thực sự có thể khá hữu ích.
+
+5
+00:00:17,840 --> 00:00:24,760
+Để làm được điều này, chúng ta cần một danh sách những ngày trong tuần, bởi vì tôi muốn chơi xung quanh
+
+6
+00:00:24,760 --> 00:00:29,960
+Một chút với danh sách này và tạo ra các chức năng khác nhau mà làm những điều khác nhau với danh sách.
+
+7
+00:00:30,440 --> 00:00:35,880
+Được rồi, vậy hãy nhớ rằng danh sách là những loại dữ liệu đặc biệt.
+
+8
+00:00:35,880 --> 00:00:37,640
+Chúng tôi đã xem xét điều này trong bài học trước.
+
+9
+00:00:37,880 --> 00:00:42,120
+Nếu anh không chắc làm thế nào để liệt kê, hãy quay lại và xem qua bài học của chúng tôi về danh sách.
+
+10
+00:00:42,920 --> 00:00:46,120
+Ở đây chúng tôi có một danh sách với tất cả các ngày trong tuần.
+
+11
+00:00:46,160 --> 00:00:54,040
+Hãy để tôi thực sự gọi điều này là một cái gì đó như ngày trong tuần, vì vậy nó làm cho ý nghĩa hơn.
+
+12
+00:00:54,040 --> 00:00:55,240
+Không chỉ là một danh sách.
+
+13
+00:00:55,240 --> 00:00:56,680
+Đó là danh sách ngày.
+
+14
+00:00:57,160 --> 00:01:00,100
+Được rồi, bây giờ chúng ta sẽ tạo ra một chức năng.
+
+15
+00:01:00,820 --> 00:01:07,100
+Vì vậy, các chức năng đầu tiên tôi muốn xác định là một chức năng mà có lẽ có thể cho chúng tôi biết nếu ngày hiện tại của
+
+16
+00:01:07,100 --> 00:01:08,300
+tuần này là cuối tuần.
+
+17
+00:01:08,340 --> 00:01:09,860
+Có lẽ anh cần cái này.
+
+18
+00:01:09,860 --> 00:01:14,020
+Nếu anh đang làm việc với ai đó thì người ta được trả bao nhiêu cho thứ gì đó.
+
+19
+00:01:14,020 --> 00:01:15,740
+Có lẽ cuối tuần lại khác.
+
+20
+00:01:15,900 --> 00:01:24,180
+Hoặc có thể bạn muốn viết một chương trình cho bạn biết ngày nào cửa hàng sẽ mở.
+
+21
+00:01:24,220 --> 00:01:26,340
+Có lẽ thời gian của họ thay đổi dựa trên những ngày trong tuần.
+
+22
+00:01:26,340 --> 00:01:31,660
+Vì vậy, về cơ bản, ý tôi là, bạn có thể nghĩ về những cách khác nhau bạn có thể sử dụng điều này, nhưng chúng tôi chỉ muốn biết
+
+23
+00:01:31,780 --> 00:01:37,420
+Chúng tôi muốn một chương trình có thể cho chúng tôi biết ngay bây giờ là một cuối tuần hay không.
+
+24
+00:01:37,540 --> 00:01:43,580
+Vì vậy, chúng tôi sẽ xác định chức năng này và tôi sẽ gọi nó là chức năng là cuối tuần.
+
+25
+00:01:44,180 --> 00:01:47,940
+Vì vậy, nó gần như là một câu hỏi khi bạn gọi nó là bạn đang nói là vào cuối tuần.
+
+26
+00:01:47,940 --> 00:01:50,940
+Và nó sẽ cho chúng ta biết đúng hay sai.
+
+27
+00:01:51,460 --> 00:01:58,040
+Và cho chức năng này chúng tôi cần phải có một tham số chuỗi nơi người dùng sẽ gõ trong bất cứ ngày nào của
+
+28
+00:01:58,040 --> 00:01:58,760
+là tuần này.
+
+29
+00:02:00,280 --> 00:02:02,480
+Vì vậy, hãy chỉ cần kết thúc nó ngày.
+
+30
+00:02:02,480 --> 00:02:03,000
+Có thể.
+
+31
+00:02:06,200 --> 00:02:12,840
+Được rồi, bây giờ cách chúng tôi sẽ làm điều này là loại giống như những gì chúng tôi đã làm trong một số các ví dụ khác của chúng tôi.
+
+32
+00:02:12,840 --> 00:02:20,120
+Về cơ bản, khi chúng tôi muốn nói nếu ngày là tương đương với thứ bảy hoặc ngày là tương đương với chủ nhật, sau đó
+
+33
+00:02:20,120 --> 00:02:23,360
+Chúng tôi muốn trả lại giá trị của sự thật.
+
+34
+00:02:23,680 --> 00:02:25,680
+Và nếu không, chúng tôi muốn trả lại sự giả dối.
+
+35
+00:02:25,680 --> 00:02:27,320
+Vì vậy, hãy thử và làm điều đó.
+
+36
+00:02:27,880 --> 00:02:35,320
+Vì vậy, nếu ngày là tương đương với và nhớ chính tả phải được chính xác như nhau.
+
+37
+00:02:35,360 --> 00:02:43,240
+Nếu tôi đánh vần điều này khác nhau với cách tôi spelt nó ở đây, sau đó nó sẽ không nhìn thấy chúng như nhau hoặc
+
+38
+00:02:43,920 --> 00:02:48,520
+Vì vậy, chúng tôi muốn viết một Or bởi vì ngày không phải là bằng với thứ bảy và chủ nhật.
+
+39
+00:02:48,520 --> 00:02:54,680
+Hôm nay là thứ bảy hoặc chủ nhật hoặc ngày là tương đương với chủ nhật.
+
+40
+00:02:55,640 --> 00:02:59,460
+Sau đó chúng tôi muốn trả lại giá trị của sự thật.
+
+41
+00:03:00,540 --> 00:03:03,700
+Nói cách khác, có, đây là một ngày cuối tuần.
+
+42
+00:03:05,620 --> 00:03:11,580
+Nếu không chúng ta sẽ trả lại sai.
+
+43
+00:03:11,860 --> 00:03:15,060
+Về cơ bản không phải cuối tuần nữa.
+
+44
+00:03:15,060 --> 00:03:16,780
+Đó là điều chúng tôi thực sự muốn.
+
+45
+00:03:16,860 --> 00:03:18,740
+Đúng nếu không phải.
+
+46
+00:03:19,020 --> 00:03:21,580
+Bây giờ chúng ta hãy gọi chức năng này.
+
+47
+00:03:22,180 --> 00:03:27,340
+Vì vậy để gọi nó, chúng tôi cần biết tên của nó là cuối tuần.
+
+48
+00:03:27,540 --> 00:03:30,660
+Và cùng một tham số.
+
+49
+00:03:30,780 --> 00:03:38,060
+Chúng ta sẽ bắt đầu bằng việc đưa ra một giá trị hoặc một ngày của sự lựa chọn.
+
+50
+00:03:38,060 --> 00:03:41,420
+Vì vậy, hãy để nó vào thứ tư.
+
+51
+00:03:46,780 --> 00:03:47,660
+Tôi không in nó.
+
+52
+00:03:47,660 --> 00:03:50,980
+Vì vậy, một lần nữa không có gì xảy ra nếu bạn không in chức năng của bạn.
+
+53
+00:03:52,580 --> 00:03:54,140
+Không có gì xảy ra đâu.
+
+54
+00:03:54,240 --> 00:03:56,640
+Nhưng chúng tôi không thấy có chuyện gì xảy ra.
+
+55
+00:03:57,040 --> 00:03:59,840
+Nhưng ngay khi bạn in nó, bạn có thể thấy chính xác những gì nó đã làm.
+
+56
+00:04:00,080 --> 00:04:07,800
+Nó trả lại giá trị sai bởi vì thứ tư không phải là một tuần.
+
+57
+00:04:07,800 --> 00:04:12,080
+Vì vậy, hãy cho nó một trong đó là Chủ nhật và đó sẽ trở lại thực tế.
+
+58
+00:04:12,280 --> 00:04:18,760
+Nhưng hãy nhớ làm thế nào tôi nói bạn không thực sự muốn viết chương trình như thế này mà dễ bị con người
+
+59
+00:04:18,760 --> 00:04:19,000
+Lỗi?
+
+60
+00:04:19,000 --> 00:04:25,640
+Bởi vì ngay khi tôi đánh vần sai, nó cho tôi biết ngay cả khi tôi nghĩ rằng tôi viết vào chủ nhật hoặc không, đó không phải là
+
+61
+00:04:25,640 --> 00:04:26,520
+một ngày trong tuần.
+
+62
+00:04:26,600 --> 00:04:29,520
+Vì vậy, chỉ để làm cho nó mạnh mẽ hơn một chút.
+
+63
+00:04:29,840 --> 00:04:34,880
+Vì vậy, chỉ để làm cho nó mạnh mẽ hơn một chút, tôi đã tạo ra danh sách này mà chúng tôi có thể sử dụng.
+
+64
+00:04:34,880 --> 00:04:40,640
+Và tôi cũng là điều này đặt rất nhiều các yếu tố khác của bạn mà bạn đã học được ở các phần khác vào
+
+65
+00:04:40,640 --> 00:04:44,480
+Một, hy vọng nhắc nhở bạn về tất cả những gì bạn đã học được.
+
+66
+00:04:44,800 --> 00:05:01,210
+Vì vậy hãy gọi Days of Week và hỏi nó nếu chỉ số thứ tư trong danh sách là cuối tuần
+
+67
+00:05:01,250 --> 00:05:01,770
+ngày.
+
+68
+00:05:02,370 --> 00:05:10,010
+Vì vậy, hãy nhớ chỉ số thứ tư trong danh sách thứ hai là số không, vì vậy 01234 thứ sáu là không.
+
+69
+00:05:10,010 --> 00:05:14,850
+Nhưng nếu chúng ta đi năm, nó sẽ cho chúng ta sự thật.
+
+70
+00:05:14,890 --> 00:05:19,330
+Okay, vậy đây là ngày phân của tuần 5.
+
+71
+00:05:19,370 --> 00:05:22,970
+Nói cách khác, đó là phân tích thứ bảy vào chức năng này ở đây.
+
+72
+00:05:23,010 --> 00:05:25,450
+Ngày sau đó trở thành thứ bảy và nó đã biến mất.
+
+73
+00:05:25,770 --> 00:05:27,050
+Là ngày bằng thứ Bảy.
+
+74
+00:05:27,090 --> 00:05:28,610
+Phải, nó đang trở lại.
+
+75
+00:05:28,770 --> 00:05:31,410
+Vì vậy, đó là những gì chức năng này đang làm.
+
+76
+00:05:31,570 --> 00:05:39,930
+Một điều thú vị về chức năng mà trở lại đúng hoặc sai giá trị là chúng tôi có thể thực sự sử dụng chúng với
+
+77
+00:05:39,970 --> 00:05:45,610
+nếu lời tuyên bố, giống như một tuyên bố xác định điều gì đó là đúng, sau đó một cái gì đó xảy ra.
+
+78
+00:05:45,610 --> 00:05:50,450
+Và nếu nó không phải, một cái gì đó khác xảy ra, chúng tôi có thể thực sự sử dụng những giá trị đúng và sai cho điều đó.
+
+79
+00:05:50,810 --> 00:05:55,830
+Vì vậy, tôi sẽ thay đổi tuyên bố in này thành một tuyên bố nếu.
+
+80
+00:05:55,830 --> 00:05:57,110
+Vậy điều chúng tôi muốn hỏi.
+
+81
+00:05:58,430 --> 00:06:05,910
+Vì vậy, những gì chúng tôi muốn làm là chúng tôi muốn nói nếu là cuối tuần chúng tôi có thể nói bằng đúng sự thật.
+
+82
+00:06:05,910 --> 00:06:13,150
+Nhưng hãy nhớ như chúng ta đã nói trước đó nó chỉ nói là cuối tuần hoặc chỉ cần nói điều này là điều tương tự
+
+83
+00:06:13,150 --> 00:06:15,590
+như nói nếu nó bằng thật.
+
+84
+00:06:15,990 --> 00:06:20,630
+Vì vậy, nếu đó là sự thật thì chúng tôi muốn in một cái gì đó.
+
+85
+00:06:20,630 --> 00:06:40,790
+Vì vậy, hãy chỉ nói yep đây là cuối tuần và nếu nó không phải nếu nó là giả in vẫn làm việc.
+
+86
+00:06:41,350 --> 00:06:43,670
+Vẫn làm việc ngày.
+
+87
+00:06:43,950 --> 00:06:45,870
+Vì vậy, đây là tuyên bố của chúng tôi.
+
+88
+00:06:45,870 --> 00:06:51,290
+Vì vậy, bây giờ khi tôi chạy nó được tìm thấy ngày của chỉ số tuần năm, đó là thứ bảy.
+
+89
+00:06:51,330 --> 00:06:55,490
+Nó đã đi vào chức năng này với dữ liệu thứ bảy và nó đã trở lại đúng.
+
+90
+00:06:55,730 --> 00:07:00,010
+Điều đó có nghĩa là toàn bộ biểu thức này trở thành sự thật.
+
+91
+00:07:00,050 --> 00:07:02,050
+Vì vậy, nếu đó là sự thật, in ra.
+
+92
+00:07:02,250 --> 00:07:02,810
+Yippee!
+
+93
+00:07:02,850 --> 00:07:03,690
+Cuối tuần rồi.
+
+94
+00:07:03,690 --> 00:07:04,850
+Vì vậy, đó là những gì nó in.
+
+95
+00:07:05,250 --> 00:07:09,170
+Vậy bây giờ hãy đổi nó thành cái mà chúng ta biết không phải là cuối tuần.
+
+96
+00:07:09,170 --> 00:07:12,810
+Vì vậy, hãy chỉ cần đi với số không mà chúng tôi biết nên là thứ hai.
+
+97
+00:07:14,210 --> 00:07:18,170
+Và nếu chúng ta chạy cái đó, ồ không, nó vẫn là ngày làm việc.
+
+98
+00:07:18,490 --> 00:07:21,210
+Và nó hoàn toàn ngược lại.
+
+99
+00:07:21,210 --> 00:07:21,930
+Nó tới rồi.
+
+100
+00:07:21,930 --> 00:07:23,050
+Vậy là thứ hai.
+
+101
+00:07:23,530 --> 00:07:24,330
+Hôm nay là thứ 7 à?
+
+102
+00:07:24,330 --> 00:07:24,730
+Chủ nhật.
+
+103
+00:07:24,770 --> 00:07:25,330
+Không.
+
+104
+00:07:25,330 --> 00:07:26,850
+Vậy thì trả lại đi.
+
+105
+00:07:26,850 --> 00:07:27,570
+Rồi nó tới.
+
+106
+00:07:27,570 --> 00:07:28,010
+Đây.
+
+107
+00:07:28,450 --> 00:07:30,570
+Cuối tuần có thật không?
+
+108
+00:07:30,610 --> 00:07:30,930
+Không.
+
+109
+00:07:30,930 --> 00:07:31,650
+Không phải.
+
+110
+00:07:31,690 --> 00:07:33,130
+Chúng ta nhận được sai từ đó.
+
+111
+00:07:33,130 --> 00:07:37,970
+Vì vậy, chúng tôi đang đến đây và in này.
+
+112
+00:07:38,570 --> 00:07:42,690
+Rõ ràng là anh không cần chúng ta phải có danh sách ở đây.
+
+113
+00:07:42,690 --> 00:07:46,130
+Chúng ta có thể gõ thẳng vào nếu thế.
+
+114
+00:07:46,450 --> 00:07:50,470
+Điều đó có vẻ đơn giản hơn với một số bạn hoặc dễ hiểu hơn.
+
+115
+00:07:50,470 --> 00:07:53,630
+Và một lần nữa, đó sẽ cho chúng ta giá trị này ở đây.
+
+116
+00:07:53,990 --> 00:07:55,590
+Vâng, đó chỉ là một chức năng nhanh chóng.
+
+117
+00:07:55,590 --> 00:08:02,550
+Làm thế nào bạn có thể thấy rằng bạn có thể sử dụng các giá trị trả về đúng và sai và nó trở nên khá hữu ích.
+
+118
+00:08:02,550 --> 00:08:06,270
+Và rõ ràng tôi có thể sử dụng chức năng này bao nhiêu lần tôi muốn.
+
+119
+00:08:06,310 --> 00:08:13,310
+Có lẽ sau này tôi muốn có một tuyên bố rằng in một cái gì đó khác dựa trên nếu đó là một cuối tuần
+
+120
+00:08:13,310 --> 00:08:13,590
+hay không.
+
+121
+00:08:13,590 --> 00:08:19,150
+Và bạn có thể tiếp tục sử dụng chức năng này bao nhiêu lần bạn muốn trong suốt chương trình của bạn.
+
+122
+00:08:19,190 --> 00:08:20,550
+Vì vậy, đó là những gì là quan trọng với chức năng.
+
+123
+00:08:20,550 --> 00:08:25,390
+Và khi bạn đang lập trình, một trong những điều bạn muốn học là bạn có thể tạo ra những khối tái sử dụng từ
+
+124
+00:08:25,390 --> 00:08:25,990
+Có gì không?
+
+125
+00:08:26,230 --> 00:08:30,430
+Và bạn càng nhanh chóng tạo ra những khối có thể tái sử dụng, thì lập trình của bạn sẽ càng tốt hơn.
+
+126
+00:08:30,550 --> 00:08:35,150
+Bởi vì khi bạn biết rằng khối có thể tái sử dụng đó đang hoạt động, bạn không bao giờ phải lo lắng về nó một lần nữa.
+
+127
+00:08:35,190 --> 00:08:36,590
+Nó sẽ luôn thành công.
+
+128
+00:08:36,710 --> 00:08:39,150
+Và đó là lý do tại sao các chức năng rất mạnh mẽ.
+
+129
+00:08:39,150 --> 00:08:40,750
+Nên hãy vui vẻ, chơi với họ.
+
+130
+00:08:40,750 --> 00:08:42,470
+Bạn có thể thấy chúng thực sự rất mạnh.
+
+131
+00:08:42,670 --> 00:08:47,630
+Tất cả kiến thức của bạn, tất cả sự khôn ngoan của bạn bây giờ đến với nhau và chức năng là bước thú vị tiếp theo.
+
