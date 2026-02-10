@@ -1,0 +1,396 @@
+1
+00:00:00,120 --> 00:00:05,560
+We're busy making this very exciting soccer scoring game, and we have got the basics of our two little
+
+2
+00:00:05,600 --> 00:00:08,840
+turtles and the outline of our field in place.
+
+3
+00:00:09,200 --> 00:00:12,400
+Now, what we want to do is we want to start kicking the ball.
+
+4
+00:00:12,560 --> 00:00:18,120
+Now what we're going to have a look at in this next section is defining the kick function for kicking
+
+5
+00:00:18,120 --> 00:00:18,640
+the ball.
+
+6
+00:00:18,680 --> 00:00:20,040
+But it's not going to do anything.
+
+7
+00:00:20,040 --> 00:00:24,520
+Remember we talked about this earlier that what functions do is they perform something.
+
+8
+00:00:24,560 --> 00:00:28,360
+They're a black box that is doing something that is returning a value.
+
+9
+00:00:28,360 --> 00:00:32,920
+So at the moment this function as we're creating it says the box now is not going to do something.
+
+10
+00:00:32,920 --> 00:00:36,240
+It's going to do something later when we use the kick function.
+
+11
+00:00:36,240 --> 00:00:38,600
+So we're going to work through what the kick function is doing.
+
+12
+00:00:38,640 --> 00:00:42,440
+We won't see anything happening on the screen yet, but you will see something happening later when
+
+13
+00:00:42,440 --> 00:00:44,000
+we need to start kicking that ball.
+
+14
+00:00:44,000 --> 00:00:51,880
+You can see here we have defined kick, and before I mentioned that some functions do not need parameters
+
+15
+00:00:51,880 --> 00:00:57,200
+and this is one of them because I don't need to pass anything to the function, I just want it to do
+
+16
+00:00:57,200 --> 00:00:58,800
+something inside.
+
+17
+00:00:58,800 --> 00:01:03,000
+So we have defined this function called kick okay.
+
+18
+00:01:03,040 --> 00:01:09,200
+So what we ultimately want this function to do is we want the ball to move towards the goal, but of
+
+19
+00:01:09,200 --> 00:01:11,800
+course we don't want the ball moving to the same place every time.
+
+20
+00:01:11,800 --> 00:01:13,160
+We want it to be random.
+
+21
+00:01:13,160 --> 00:01:16,120
+We don't want the goalie to know where the ball is going to go.
+
+22
+00:01:16,360 --> 00:01:20,680
+So in order to do that, we need a little bit more complex things.
+
+23
+00:01:20,680 --> 00:01:25,880
+But we have looked at all of this and you should easily understand it.
+
+24
+00:01:26,280 --> 00:01:28,840
+The first thing we do over here is set the heading.
+
+25
+00:01:28,840 --> 00:01:30,680
+So we've set the heading to 180.
+
+26
+00:01:30,720 --> 00:01:38,360
+And if you remember from above, 180 is west because we want the ball to go west towards our goals.
+
+27
+00:01:38,960 --> 00:01:47,320
+We then have this variable here called angle, which we want to store a random integer between and including
+
+28
+00:01:47,360 --> 00:01:49,040
+zero and 27.
+
+29
+00:01:49,400 --> 00:01:55,680
+So after a few trials, I figured out that this was the exact size of the goals, and I didn't want
+
+30
+00:01:55,680 --> 00:02:00,000
+the ball to go further than the goals or below the goals.
+
+31
+00:02:00,000 --> 00:02:01,080
+But you could change this.
+
+32
+00:02:01,080 --> 00:02:04,920
+So say I decided I actually wanted to make this 50.
+
+33
+00:02:04,960 --> 00:02:12,080
+Basically all that's going to do is now your ball can go even further towards the top of the screen
+
+34
+00:02:12,080 --> 00:02:15,040
+and even lower towards the bottom of the screen.
+
+35
+00:02:15,360 --> 00:02:17,040
+So changing that.
+
+36
+00:02:17,080 --> 00:02:21,960
+Well, try and change it and see what happens, and you'll see how the ball can reach further parts.
+
+37
+00:02:21,960 --> 00:02:24,560
+But for now we're just going to keep it at 27.
+
+38
+00:02:24,560 --> 00:02:28,600
+But we want it to be a random angle between these numbers.
+
+39
+00:02:29,080 --> 00:02:32,280
+Our next variable we have here is direction.
+
+40
+00:02:32,280 --> 00:02:34,080
+And again we want a random number.
+
+41
+00:02:34,080 --> 00:02:38,040
+And we want that random number to be either 0 or 1.
+
+42
+00:02:38,240 --> 00:02:41,240
+And you'll see where we use this below here.
+
+43
+00:02:41,840 --> 00:02:47,960
+So this direction variable, what we want it to actually do is we've put it inside an if statement.
+
+44
+00:02:48,240 --> 00:02:57,440
+So if direction is zero, if that was chosen as the random number, we want the ball to go left by that
+
+45
+00:02:57,440 --> 00:02:58,560
+random angle.
+
+46
+00:02:59,040 --> 00:03:05,200
+So if you think about it, what's happening is let's say the random number here for direction was zero.
+
+47
+00:03:05,520 --> 00:03:07,640
+The random angle was ten.
+
+48
+00:03:07,960 --> 00:03:16,400
+This ball dot left function is going to turn the ball left by ten degrees, which was our angle over
+
+49
+00:03:16,400 --> 00:03:16,800
+here.
+
+50
+00:03:17,000 --> 00:03:18,320
+So that's what this will do.
+
+51
+00:03:18,360 --> 00:03:20,800
+Else if the direction isn't zero.
+
+52
+00:03:20,800 --> 00:03:28,560
+So in other words, if it is one, then we want the ball to turn right by that random angle which we
+
+53
+00:03:29,080 --> 00:03:33,480
+will which randomly was ten degrees for this example.
+
+54
+00:03:33,840 --> 00:03:40,360
+So you'll see when the program runs, the ball is constantly moving in a random position.
+
+55
+00:03:40,400 --> 00:03:46,800
+Now if we didn't have the left and right, then what would happen is every time the program runs and
+
+56
+00:03:46,800 --> 00:03:52,400
+a random angle is chosen, the ball is always just going to go up because it's always just going to
+
+57
+00:03:52,400 --> 00:03:54,000
+turn right, right, right.
+
+58
+00:03:54,360 --> 00:03:55,200
+But we don't want that.
+
+59
+00:03:55,200 --> 00:03:57,320
+We want it to go left as well.
+
+60
+00:03:57,320 --> 00:04:00,240
+So we need it to go either way left and right.
+
+61
+00:04:00,960 --> 00:04:01,440
+Okay.
+
+62
+00:04:01,640 --> 00:04:07,240
+So the next line we have here is just moving the ball forward towards the goal.
+
+63
+00:04:07,440 --> 00:04:12,360
+So I've also worked out that the optimal number for that is 320 pixels.
+
+64
+00:04:12,600 --> 00:04:18,320
+But we could change that to further just means the ball's going to end up further down here on the screen.
+
+65
+00:04:19,560 --> 00:04:22,240
+Let me actually run it so you can see.
+
+66
+00:04:22,280 --> 00:04:22,840
+Positioning.
+
+67
+00:04:22,840 --> 00:04:25,000
+Remember it's not going to change for last time.
+
+68
+00:04:25,000 --> 00:04:27,520
+But what I've done is I want to win.
+
+69
+00:04:27,520 --> 00:04:28,280
+This ball is kicked.
+
+70
+00:04:28,280 --> 00:04:32,600
+I want it to end up somewhere along here where our goals will be.
+
+71
+00:04:32,760 --> 00:04:37,680
+If we made this more, let's say 350, the ball's going to end up more down here.
+
+72
+00:04:38,760 --> 00:04:39,360
+Okay.
+
+73
+00:04:39,680 --> 00:04:43,840
+We then have this if statement over here.
+
+74
+00:04:43,840 --> 00:04:50,280
+And what this does is we basically want to know if the goalie has saved the ball or not.
+
+75
+00:04:51,080 --> 00:04:56,800
+So you might just think, well, maybe you would think surely if the position of the ball is in the
+
+76
+00:04:56,800 --> 00:05:00,160
+same position as the goalie, then the ball has been saved.
+
+77
+00:05:00,480 --> 00:05:06,440
+The reason I haven't said that if the goalie position is equal to the position of the ball, then the
+
+78
+00:05:06,440 --> 00:05:12,480
+ball is saved is because for the position of the goalie and for the position of the ball to be in the
+
+79
+00:05:12,480 --> 00:05:15,080
+exact same place is very unlikely.
+
+80
+00:05:15,080 --> 00:05:16,720
+Because think about it, it's a huge screen.
+
+81
+00:05:16,720 --> 00:05:23,720
+It could easily be off by one pixel and it might look like it's saved, but in fact it's not exactly
+
+82
+00:05:23,720 --> 00:05:24,120
+there.
+
+83
+00:05:24,320 --> 00:05:31,080
+So instead of saying that, we've rather said that if the distance between the goalie and the ball is
+
+84
+00:05:31,120 --> 00:05:34,160
+less than 35, then it is a save.
+
+85
+00:05:34,480 --> 00:05:36,000
+Else it is a goal.
+
+86
+00:05:36,000 --> 00:05:37,000
+So you could also change this.
+
+87
+00:05:37,000 --> 00:05:43,400
+If I made this bigger, say 100, then the goalie can be even further away for the from the ball for
+
+88
+00:05:43,400 --> 00:05:44,440
+it to be a save.
+
+89
+00:05:44,560 --> 00:05:50,040
+But I've kind of worked out that 35 is a good number for this.
+
+90
+00:05:50,880 --> 00:05:51,200
+Okay.
+
+91
+00:05:51,240 --> 00:05:55,720
+Then down here we just are halving the total over here.
+
+92
+00:05:55,720 --> 00:06:02,160
+Because what I want to happen is I want the ball to go back to the center of the screen over here once
+
+93
+00:06:02,160 --> 00:06:08,080
+it's been kicked, but I don't want the user or the player to see the ball traveling back here.
+
+94
+00:06:08,080 --> 00:06:12,400
+So I've hidden this turtle and it has just gone back to the center.
+
+95
+00:06:12,400 --> 00:06:16,800
+And once it is back at the center, it is reshown.
+
+96
+00:06:17,120 --> 00:06:22,080
+And basically this statement over here brings it back to the middle of the screen.
+
+97
+00:06:22,240 --> 00:06:24,320
+So yeah, that's basically what this function is doing.
+
+98
+00:06:24,320 --> 00:06:26,520
+We're going to run it for you later.
+
+99
+00:06:26,520 --> 00:06:30,920
+So you can see exactly how all of these different components come into play.
+
