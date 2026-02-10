@@ -1,0 +1,336 @@
+1
+00:00:00,140 --> 00:00:06,020
+Well, a game is coming together quite nicely, but I think you can see the clear problem here, which
+
+2
+00:00:06,020 --> 00:00:10,160
+is that, well, if we miss the header it just keeps on going.
+
+3
+00:00:10,160 --> 00:00:13,040
+And this makes for some rather easy gameplay.
+
+4
+00:00:13,040 --> 00:00:14,870
+There's just no real challenge.
+
+5
+00:00:15,320 --> 00:00:21,530
+So in this lesson we will be looking at how we can end our game when we miss the header.
+
+6
+00:00:22,610 --> 00:00:28,010
+If you move over to the control group, you may have noticed the special block over here with the word
+
+7
+00:00:28,010 --> 00:00:29,060
+stop all.
+
+8
+00:00:29,420 --> 00:00:32,990
+And I think there is no explanation required for what this does.
+
+9
+00:00:32,990 --> 00:00:36,020
+As I'm sure you can guess, this block stops all.
+
+10
+00:00:36,230 --> 00:00:42,380
+For example, if I play the script and then click this block, notice how the game comes to a halt.
+
+11
+00:00:42,890 --> 00:00:45,200
+So the block is clearly doing its job.
+
+12
+00:00:45,200 --> 00:00:48,290
+It is stopping all the scripts in all the sprites.
+
+13
+00:00:49,140 --> 00:00:53,700
+But just like the other blocks, we can change what it does by clicking here.
+
+14
+00:00:54,490 --> 00:00:58,270
+So instead of stopping or we could just stop this script.
+
+15
+00:00:58,630 --> 00:01:05,080
+So basically whatever script we put this block into, it'll stop that script when the script reaches
+
+16
+00:01:05,080 --> 00:01:06,160
+this code block.
+
+17
+00:01:06,770 --> 00:01:12,530
+Alternatively, we can also stop other scripts in the sprite and as the name states, every other script
+
+18
+00:01:12,530 --> 00:01:15,110
+in the sprite except for this one will stop.
+
+19
+00:01:16,620 --> 00:01:20,340
+There is one other important aspect I want you to look at.
+
+20
+00:01:20,520 --> 00:01:26,070
+But basically notice how right now this is just like a normal code block.
+
+21
+00:01:26,490 --> 00:01:35,640
+However, if I change it to stop this script or all see how the code block changes and there is no indent
+
+22
+00:01:35,640 --> 00:01:36,390
+at the bottom.
+
+23
+00:01:37,230 --> 00:01:42,870
+So basically this means there can be no code under this block.
+
+24
+00:01:42,900 --> 00:01:44,160
+You'll see if we try.
+
+25
+00:01:44,790 --> 00:01:46,470
+It just doesn't connect.
+
+26
+00:01:47,140 --> 00:01:49,570
+And if you think about it, it makes perfect sense.
+
+27
+00:01:49,570 --> 00:01:56,080
+Because if we stop all or stop the script, the code under it would never run anyway.
+
+28
+00:01:56,080 --> 00:02:00,640
+So it doesn't make sense to be able to add any code underneath it.
+
+29
+00:02:01,810 --> 00:02:07,660
+Well, now that you understand how the stop block works, I'm going to give you quite a tricky challenge.
+
+30
+00:02:07,660 --> 00:02:08,710
+I think you're up to it.
+
+31
+00:02:09,280 --> 00:02:16,000
+So I want you to, in a moment, to pause the video and to see if you can get the game to stop when
+
+32
+00:02:16,000 --> 00:02:17,920
+the ball touches the ground.
+
+33
+00:02:17,950 --> 00:02:25,990
+Now, remember, this is going to require a lot of logical thinking or thinking outside the box, but
+
+34
+00:02:25,990 --> 00:02:26,890
+give it a shot.
+
+35
+00:02:26,920 --> 00:02:34,600
+Can you get the game to pause to stop when the ball touches the ground?
+
+36
+00:02:34,630 --> 00:02:37,240
+Write, pause, think and try.
+
+37
+00:02:37,630 --> 00:02:41,110
+Well, if you actually managed to get this working, that is amazing.
+
+38
+00:02:41,110 --> 00:02:46,810
+But even if you didn't, that's also great because this is where the learning happens in trying to figure
+
+39
+00:02:46,810 --> 00:02:47,770
+things out.
+
+40
+00:02:47,770 --> 00:02:50,470
+This is where you really have lots of fun.
+
+41
+00:02:50,470 --> 00:02:52,660
+So let's see how it could be done.
+
+42
+00:02:52,810 --> 00:02:56,770
+Let's look at two different ways we can get this done.
+
+43
+00:02:57,300 --> 00:03:04,590
+First things first, we're going to need one of our when start forever and if combo packs.
+
+44
+00:03:05,140 --> 00:03:08,950
+So I'll just duplicate this one and just get rid of the code inside.
+
+45
+00:03:09,190 --> 00:03:14,380
+And then I will duplicate it again because we are covering two methods.
+
+46
+00:03:15,170 --> 00:03:20,840
+Now, the first method we're going to think about a bit is quite, quite a bit out of the box.
+
+47
+00:03:21,050 --> 00:03:24,110
+I don't know if you came up with this one, but if you did, that's great.
+
+48
+00:03:24,110 --> 00:03:26,060
+And we're going to go down to the sensing group.
+
+49
+00:03:26,900 --> 00:03:29,660
+Look at this option touching color.
+
+50
+00:03:30,200 --> 00:03:31,490
+So that's cool.
+
+51
+00:03:31,580 --> 00:03:35,990
+We can check if our sprite is touching a specific color.
+
+52
+00:03:36,410 --> 00:03:36,650
+Hmm.
+
+53
+00:03:36,680 --> 00:03:37,640
+Interesting.
+
+54
+00:03:37,820 --> 00:03:41,120
+The only problem is what color do we check for?
+
+55
+00:03:41,120 --> 00:03:44,330
+Because the bottom is all pretty much the same color.
+
+56
+00:03:45,020 --> 00:03:46,760
+Well let's change that.
+
+57
+00:03:46,880 --> 00:03:51,800
+So clicking on our backdrop and then going to this editor, notice how there are a bunch of tools that
+
+58
+00:03:51,800 --> 00:03:53,240
+you can use to customize it.
+
+59
+00:03:53,630 --> 00:03:56,270
+But all we need is a specific color at the bottom.
+
+60
+00:03:57,140 --> 00:03:59,990
+So to do this, I can just use this tool.
+
+61
+00:04:00,550 --> 00:04:05,980
+Choose a unique color and draw a line at the bottom.
+
+62
+00:04:06,640 --> 00:04:07,720
+And there you have it.
+
+63
+00:04:07,990 --> 00:04:12,160
+Now I can change the touching to this color by using the color picker.
+
+64
+00:04:14,190 --> 00:04:16,920
+And finally add in my stop all.
+
+65
+00:04:17,550 --> 00:04:22,290
+Now when we play the game and then when we miss.
+
+66
+00:04:23,340 --> 00:04:24,510
+Our game stops.
+
+67
+00:04:24,510 --> 00:04:25,500
+It's great.
+
+68
+00:04:26,260 --> 00:04:29,800
+That works, and that was a creative way of solving this problem.
+
+69
+00:04:30,070 --> 00:04:33,490
+But before I move on, I'm going to show you another method.
+
+70
+00:04:33,820 --> 00:04:35,290
+But it'll be quick.
+
+71
+00:04:35,890 --> 00:04:42,400
+So as you can see here, I have already assembled the script and if we play the game, you'll see it
+
+72
+00:04:42,400 --> 00:04:45,850
+works just the same and doesn't even need the touching color.
+
+73
+00:04:46,920 --> 00:04:54,210
+Looking at the script, you can see that it checks if the y position of the ball is less than -150,
+
+74
+00:04:54,210 --> 00:04:56,250
+which basically means it's touching the ground.
+
+75
+00:04:56,250 --> 00:04:59,940
+And if it is, well, it stops too easy.
+
+76
+00:04:59,940 --> 00:05:01,830
+So both of these methods would work.
+
+77
+00:05:01,830 --> 00:05:04,680
+And sometimes we need creative ways to do things.
+
+78
+00:05:04,680 --> 00:05:09,210
+But if we think even more we might find a way that is even easier.
+
+79
+00:05:09,210 --> 00:05:11,880
+So always keep thinking.
+
+80
+00:05:12,180 --> 00:05:13,380
+And that's basically it.
+
+81
+00:05:13,380 --> 00:05:19,890
+Your game is ready to play, and the upcoming lessons will be making it a lot more fun with score and
+
+82
+00:05:19,890 --> 00:05:20,580
+levels.
+
+83
+00:05:20,580 --> 00:05:24,690
+But for now, just appreciate how far you have come with this game that you've built.
+
+84
+00:05:24,690 --> 00:05:26,220
+Play it for a bit and have some fun.
+
