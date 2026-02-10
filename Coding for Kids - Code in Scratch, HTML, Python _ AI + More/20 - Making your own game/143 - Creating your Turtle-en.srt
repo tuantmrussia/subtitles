@@ -1,0 +1,292 @@
+1
+00:00:00,280 --> 00:00:07,720
+In our previous lecture on loops, we briefly introduced you to Python graphics, which is known as
+
+2
+00:00:07,760 --> 00:00:09,040
+Turtle graphics.
+
+3
+00:00:09,280 --> 00:00:14,400
+So now our game we are going to be making is using turtle graphics.
+
+4
+00:00:14,960 --> 00:00:21,600
+So let's get into this and see how we create this game before.
+
+5
+00:00:21,640 --> 00:00:28,280
+I've already told you that we have modules and if we need a user module we have to import it.
+
+6
+00:00:29,080 --> 00:00:32,080
+You can see this first statement over here on line one.
+
+7
+00:00:32,120 --> 00:00:33,680
+I'm importing turtle.
+
+8
+00:00:33,680 --> 00:00:38,640
+So in order to use turtle graphics your first line has to be import turtle.
+
+9
+00:00:38,800 --> 00:00:43,480
+If we don't do that then we cannot use any of the methods you can see below.
+
+10
+00:00:44,040 --> 00:00:50,160
+Okay then these lines here are basically just setting up our screen when we run the program.
+
+11
+00:00:50,160 --> 00:00:51,720
+Let me just run it quickly.
+
+12
+00:00:51,720 --> 00:00:59,280
+You can see the screen is created and this screen is of size 1000 pixels by 600.
+
+13
+00:00:59,640 --> 00:01:04,640
+And this next variable here is just a screen variable.
+
+14
+00:01:05,000 --> 00:01:09,040
+It's just the variable that you use whenever you want to do anything to do with the screen.
+
+15
+00:01:09,040 --> 00:01:10,310
+But you need to have this.
+
+16
+00:01:10,350 --> 00:01:10,750
+Yeah.
+
+17
+00:01:10,750 --> 00:01:12,830
+So as soon as you start you out.
+
+18
+00:01:13,150 --> 00:01:16,430
+So as soon as you start your coding, tap in these two lines.
+
+19
+00:01:16,430 --> 00:01:18,870
+And without this line nothing is going to work.
+
+20
+00:01:18,910 --> 00:01:19,230
+Okay.
+
+21
+00:01:19,270 --> 00:01:23,310
+Now let's get into creating our turtles.
+
+22
+00:01:23,910 --> 00:01:26,270
+For this game to work, we need two turtles.
+
+23
+00:01:26,270 --> 00:01:28,790
+We need the goalie and we need the ball.
+
+24
+00:01:29,350 --> 00:01:33,270
+This line over here, line number six creates our goalie.
+
+25
+00:01:33,430 --> 00:01:36,470
+So what we're doing here is we've created a variable called goalie.
+
+26
+00:01:36,470 --> 00:01:41,790
+And we have assigned it to this function over here, which is basically like what you've seen before.
+
+27
+00:01:42,030 --> 00:01:43,070
+It's the turtle class.
+
+28
+00:01:43,070 --> 00:01:51,310
+So we have to say turtle and then dot turtle, which is actually a method in the turtle class called
+
+29
+00:01:51,350 --> 00:01:51,950
+turtle.
+
+30
+00:01:52,150 --> 00:01:56,110
+And this method over here creates a new turtle object.
+
+31
+00:01:56,110 --> 00:02:00,110
+So we've created this object here for the goalie one turtle for the goalie.
+
+32
+00:02:00,110 --> 00:02:07,270
+And then below it we have created another turtle object for the ball using this turtle function found
+
+33
+00:02:07,270 --> 00:02:08,990
+in the turtle class.
+
+34
+00:02:09,630 --> 00:02:10,190
+Okay.
+
+35
+00:02:10,270 --> 00:02:13,070
+So that would create our two different turtle objects.
+
+36
+00:02:13,430 --> 00:02:20,670
+Now for this game to work, we need these objects to be in a specific position, and we also want to
+
+37
+00:02:20,670 --> 00:02:24,270
+make them a bit more interesting and maybe make them look a certain way.
+
+38
+00:02:24,390 --> 00:02:27,710
+And yeah, just to make them a little bit more exciting.
+
+39
+00:02:28,670 --> 00:02:30,590
+So let's start off with the ball.
+
+40
+00:02:31,030 --> 00:02:35,670
+This first line here is basically just lifting the turtle pan.
+
+41
+00:02:35,710 --> 00:02:40,990
+So if you remember in our example we showed you in the loop, it was almost like a drawing that we were
+
+42
+00:02:40,990 --> 00:02:41,270
+doing.
+
+43
+00:02:41,270 --> 00:02:44,230
+And there was this pan that was drawing around and around the screen.
+
+44
+00:02:44,230 --> 00:02:47,910
+But we don't want that line when the turtle moves around.
+
+45
+00:02:47,910 --> 00:02:52,390
+So we want to lift the pen up so you can actually try in your own code.
+
+46
+00:02:52,390 --> 00:02:54,590
+This code has been posted below.
+
+47
+00:02:54,830 --> 00:03:02,190
+So tap out the code or copy and paste it, but rather try tapping it and comment this out and see what
+
+48
+00:03:02,190 --> 00:03:05,350
+happens if it has been commented out.
+
+49
+00:03:05,550 --> 00:03:06,790
+Okay, so we've lifted up the pan.
+
+50
+00:03:06,790 --> 00:03:09,670
+Then we want our ball to be in the shape of a circle.
+
+51
+00:03:09,990 --> 00:03:11,510
+We want the size to be two.
+
+52
+00:03:11,630 --> 00:03:13,510
+I mean, you can change this to whatever you want.
+
+53
+00:03:13,510 --> 00:03:16,030
+Maybe you want a giant ball or tiny ball.
+
+54
+00:03:16,470 --> 00:03:17,350
+Play around with it.
+
+55
+00:03:17,390 --> 00:03:21,150
+We've made the color white and we've made the ball speed of one.
+
+56
+00:03:21,350 --> 00:03:25,750
+Now, one is actually the slowest speed a turtle can move up.
+
+57
+00:03:25,750 --> 00:03:30,780
+Um, if you go high up all the way up to ten, ten becomes the fastest.
+
+58
+00:03:31,300 --> 00:03:35,340
+Then this function here called ball dot set heading.
+
+59
+00:03:36,060 --> 00:03:40,180
+This is setting the ball to face West.
+
+60
+00:03:40,180 --> 00:03:42,900
+And that's because our ball is going west towards the goalie.
+
+61
+00:03:42,940 --> 00:03:43,180
+Okay.
+
+62
+00:03:43,220 --> 00:03:47,940
+So that is just some of the things that we want our ball to do and what we want our ball to look like.
+
+63
+00:03:48,140 --> 00:03:53,220
+And basically the same down here for the goalie, it is the exact same thing that's happening up here,
+
+64
+00:03:53,260 --> 00:03:59,380
+except we have made the shape a turtle, changed the speed, we've made the goalie face upwards, and
+
+65
+00:03:59,380 --> 00:04:08,060
+we have told the goalie to go to position -300 as the x axis and zero as the y axis on the screen.
+
+66
+00:04:08,380 --> 00:04:12,500
+So think about the screen as a x y plane.
+
+67
+00:04:12,740 --> 00:04:16,860
+And basically you will have to play around with these numbers to get the perfect position.
+
+68
+00:04:16,860 --> 00:04:22,820
+But you can see here this is -300 and it is on zero for the y.
+
+69
+00:04:23,020 --> 00:04:25,540
+So basically these are our little turtles we've made.
+
+70
+00:04:25,580 --> 00:04:27,220
+There is our ball.
+
+71
+00:04:27,420 --> 00:04:28,660
+There is our goalie.
+
+72
+00:04:28,780 --> 00:04:33,860
+And yeah after this you've made your first two turtles and play around a bit and see what happens if
+
+73
+00:04:33,900 --> 00:04:35,340
+you change some code around.
+
