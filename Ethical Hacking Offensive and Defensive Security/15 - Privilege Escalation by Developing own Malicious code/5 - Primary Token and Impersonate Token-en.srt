@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:12,240
+ Hey guys, welcome to another video, this very short video, it will be like two to three minutes.
+
+2
+00:00:12,240 --> 00:00:17,920
+ So in this video, we are going to discuss about the two kind of access tokens, so we already
+
+3
+00:00:17,920 --> 00:00:24,560
+ said it's a primary and important nation token, so there's a difference between both
+
+4
+00:00:24,560 --> 00:00:32,880
+ of this, we all know what is a process and what is a thread, so the process is a container
+
+5
+00:00:32,880 --> 00:00:39,200
+ and a thread is a execution object of a program, let me open up CMD here, so if you open a CMD,
+
+6
+00:00:39,200 --> 00:00:46,640
+ I already said the windows of the register will allocate access token for me and I can use this access
+
+7
+00:00:46,640 --> 00:00:57,520
+ token anywhere, so if I need to search any resource or if I need to go to another location or
+
+8
+00:00:57,520 --> 00:01:02,160
+ if I need to load any other executable from the CMD, I can use the same access token,
+
+9
+00:01:02,160 --> 00:01:08,240
+ so there's a token of access token on a primary and on another one is a impulse nation,
+
+10
+00:01:08,240 --> 00:01:14,720
+ the primary access token will be used by the process, okay, so if I open a CMD.exe,
+
+11
+00:01:14,720 --> 00:01:25,280
+ there will be a primary access token, it will be used by the process and we all know this,
+
+12
+00:01:25,280 --> 00:01:35,600
+ let me open up the machine and let me open a CMD here, I have a process hacker, so I can
+
+13
+00:01:36,720 --> 00:01:46,560
+ explain it better, so here is a normal user access token will be there, if I open up process hacker,
+
+14
+00:01:46,560 --> 00:01:55,440
+ let me go to the CMD and this entire CMD process has a primary access token, the primary
+
+15
+00:01:55,440 --> 00:02:00,640
+ access token is basically used to buy the process, so another one is an impulse nation access token
+
+16
+00:02:00,640 --> 00:02:06,960
+ that was used to buy the threat, okay, so I had said the threat distribution object of the program,
+
+17
+00:02:06,960 --> 00:02:14,400
+ the process contain more than one threat or no more than a threat, so a threat will be using
+
+18
+00:02:14,400 --> 00:02:20,000
+ a impulse nation token, so where this threat getting the impulse nation token, okay,
+
+19
+00:02:20,000 --> 00:02:27,520
+ it's a simple one, the threat will be getting the impulse nation token from primary token,
+
+20
+00:02:27,520 --> 00:02:36,400
+ okay, so let's say the CMD.exe needs to access one file from the directory, so it will be using
+
+21
+00:02:36,400 --> 00:02:46,880
+ the access token, the primary access token, so whether this user has a privilege to access
+
+22
+00:02:47,520 --> 00:02:57,200
+ that file inside the directory, so this process will be using the primary token, so also we have
+
+23
+00:02:57,200 --> 00:03:03,280
+ an set of threat, okay, so here you can see there's only one threat was running,
+
+24
+00:03:03,280 --> 00:03:09,760
+ but some other process will be running multiple threats more than 50, 60 threats, so at that time,
+
+25
+00:03:09,760 --> 00:03:14,720
+ if a threat, if any of the threat needs to access any resource or any files inside the
+
+26
+00:03:16,720 --> 00:03:22,640
+ inside any of the directory in windows, so now the threats, the threat will be
+
+27
+00:03:22,640 --> 00:03:27,680
+ impersonating a primary token from the process and it will be using
+
+28
+00:03:27,680 --> 00:03:33,040
+ temporarily to access that resource, okay, the impulse nation token or
+
+29
+00:03:33,040 --> 00:03:40,480
+ temporarily given by the primary token, so the process will be giving your
+
+30
+00:03:40,480 --> 00:03:47,520
+ temp access token to the threat, that's called as an impulse nation token, it will be taking a primary
+
+31
+00:03:47,520 --> 00:03:52,320
+ token, as an impersonate mode, and it will be using to access the files and resource inside the
+
+32
+00:03:52,320 --> 00:04:00,480
+ windows operating system, so in the overall scenario, the process will be using the primary access
+
+33
+00:04:00,480 --> 00:04:05,680
+ token, the threat will be using the impulse nation access token, the impulse nation access token will
+
+34
+00:04:05,680 --> 00:04:11,040
+ be coming from the primary access token, so that's why we are saying impulse nation, impulse
+
+35
+00:04:11,040 --> 00:04:18,880
+ native primary access token, it's called the same post nation, so both of the tokens will be used
+
+36
+00:04:18,880 --> 00:04:26,000
+ to access resource or do anything or open any files or allocate system, a certain privilege for
+
+37
+00:04:26,000 --> 00:04:32,320
+ incident machine, okay, so that's all about the video, in the next video we'll be developing the
+
+38
+00:04:32,320 --> 00:04:39,200
+ code and we'll be doing a access token manipulation attack, yeah, this is how both and we'll see you
+
+39
+00:04:39,200 --> 00:04:42,320
+ guys in the next video, bye bye.
+
