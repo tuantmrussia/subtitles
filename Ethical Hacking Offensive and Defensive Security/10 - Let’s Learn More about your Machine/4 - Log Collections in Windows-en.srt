@@ -1,0 +1,380 @@
+1
+00:00:00,000 --> 00:00:09,040
+ Hey guys, welcome to another video, this is the last and final video position, basically
+
+2
+00:00:09,040 --> 00:00:14,560
+ we are going to learn the log collectors, the log collection, so what are the logs we will
+
+3
+00:00:14,560 --> 00:00:20,800
+ be getting collected from the Windows machine, so you people will be, if you have fresher
+
+4
+00:00:20,800 --> 00:00:26,320
+ and cyber security, so you people will be thinking like how they are investigating the,
+
+5
+00:00:26,320 --> 00:00:32,400
+ how they are doing the forensics and how they are investigating the machines, so we will learn
+
+6
+00:00:32,400 --> 00:00:38,720
+ one by one, so how they are going to investigate each and everything when what happened in
+
+7
+00:00:38,720 --> 00:00:50,160
+ federal machine, okay, so if you see a log concept basically, log is like whenever you will log
+
+8
+00:00:50,160 --> 00:00:55,520
+ in into the machines or whenever do you some operations, even you are executing some commands
+
+9
+00:00:55,520 --> 00:01:01,040
+ through the PowerShell, so everything will be get log, everything will be recorded and it will
+
+10
+00:01:01,040 --> 00:01:09,840
+ be stored in one of the, one of the folders, the folder name will be, let me show that folder,
+
+11
+00:01:09,840 --> 00:01:21,920
+ it will be under the Windows system 32, you have to search for a vulnerability and here you can
+
+12
+00:01:21,920 --> 00:01:29,840
+ find the logs, so inside the logs you can see, there is lot of files, right, so each file will
+
+13
+00:01:29,840 --> 00:01:34,960
+ hold saying each information, so now you can see the kernel base, it will store the kernel
+
+14
+00:01:34,960 --> 00:01:41,360
+ based errors and all, it will be basically used for a digest, like if you want to troubleshoot
+
+15
+00:01:41,360 --> 00:01:46,560
+ anything, you are using this logs to troubleshooting and you are using this logs to see what
+
+16
+00:01:46,560 --> 00:01:52,480
+ happened actually in the machine, so you can see there is a PowerShell.exe, whenever any
+
+17
+00:01:52,480 --> 00:01:59,280
+ script barracks you put in the PowerShell, this will be recorded in the PowerShell EVTX, this file
+
+18
+00:01:59,280 --> 00:02:06,640
+ has an extension, if you check the extension of the file, it will be in the EVTX, even logs,
+
+19
+00:02:06,640 --> 00:02:13,680
+ okay, so EVTX, even log, the extension name of an even log, so whenever you are logging into the
+
+20
+00:02:13,680 --> 00:02:20,320
+ machine or whenever doing the logging of or any, any, any such activities, not only the login,
+
+21
+00:02:20,320 --> 00:02:26,320
+ everything okay basically, or any progress creation or any, for this creation, any schedule task
+
+22
+00:02:26,320 --> 00:02:31,040
+ or anything, resist remoteification, everything will be get logged inside the Windows machine,
+
+23
+00:02:31,040 --> 00:02:36,560
+ so you can see the application logs, so the application error logs and everything will be recorded
+
+24
+00:02:36,560 --> 00:02:43,520
+ here, okay, so not only the Windows machine, Linux machine also have a separate log for that,
+
+25
+00:02:44,000 --> 00:02:49,600
+ to handle the error, like it will be show, what other things happening inside the machine,
+
+26
+00:02:49,600 --> 00:02:57,680
+ okay, so this is the things we are going to use for our foreign 16 investigation,
+
+27
+00:02:57,680 --> 00:03:04,240
+ or this is the event logs, we will be investigating when we are doing your threat analysis,
+
+28
+00:03:04,240 --> 00:03:10,160
+ okay, so basically this will give you the evidence, you will prove what happened actually inside
+
+29
+00:03:10,160 --> 00:03:19,760
+ the machine, okay, so let us, let us start exploring that in a practical area, so let us see,
+
+30
+00:03:19,760 --> 00:03:27,440
+ there is a security dot EVTX, let us open the security dot EVTX, so when you double click on the
+
+31
+00:03:27,440 --> 00:03:39,040
+ machine, it will be get loaded, okay, so here you can, so whenever you enter it to the event we
+
+32
+00:03:39,040 --> 00:03:45,600
+ very can find the Windows logs, so now you can see the security logs, so this will give you the
+
+33
+00:03:45,600 --> 00:03:50,400
+ evidence full logged into the machine and when logged into the machine, so there is a set of
+
+34
+00:03:50,400 --> 00:03:57,440
+ even tidies like 464, so 464 will be like a as successful log on, so whenever you will be putting
+
+35
+00:03:57,440 --> 00:04:04,960
+ the usernames and passwords and correct, okay, usernames and passwords, it will be get logged
+
+36
+00:04:04,960 --> 00:04:10,800
+ into the machine, okay, so now the 464 even tidies will be logged, even tidies you see the 464
+
+37
+00:04:10,800 --> 00:04:17,520
+ even tidies, you can see the, an account was successfully logged into the, logged into the machine,
+
+38
+00:04:17,520 --> 00:04:26,960
+ okay, so let us stick that, let us stick that thing, let us go to the 464, so log on you can see log on
+
+39
+00:04:26,960 --> 00:04:44,240
+ even from here, let us filter our log with the 464, so now you can find a few things like 464,
+
+40
+00:04:44,240 --> 00:04:53,200
+ 464, so now you can see the date and time for when he was logged in and when he was logged in
+
+41
+00:04:53,200 --> 00:05:00,400
+ and all, but now you can see more information here in a general, so who logged in when logged in,
+
+42
+00:05:00,400 --> 00:05:12,800
+ so each and everything that will be recorded right, so we will learn the windows live events in
+
+43
+00:05:12,800 --> 00:05:20,400
+ upcoming session, but we will see the logs, we will, logs will be using for our forms basically,
+
+44
+00:05:20,400 --> 00:05:32,720
+ okay, so we are of, so this will be used for upcoming session, so that I am covering this
+
+45
+00:05:32,720 --> 00:05:40,480
+ in the, in this session, okay, I am covering this video in this session, okay, so basically we have
+
+46
+00:05:40,480 --> 00:05:47,440
+ every each and every proof here, so I already noticed if you see even tidies like 464, it will be a
+
+47
+00:05:47,440 --> 00:05:51,840
+ successful log on, and a condor surface will log in to the machine, there is a log in even tidy
+
+48
+00:05:51,840 --> 00:06:08,240
+ called the 465, so if, so if you go for a 464, if you go for a, let me go for my approximation
+
+49
+00:06:08,240 --> 00:06:23,680
+ and we will, I will just show you the 465 system 32, let's run the wind, windvt, logs, and scroll
+
+50
+00:06:23,680 --> 00:06:35,040
+ down, now you can find the security dot dvt here, let's filter it with the 465, so 465 is basically,
+
+51
+00:06:38,880 --> 00:06:48,640
+ yeah, 465 is basically a failed log in evens, okay, 465, let's filter that out, the 465, so now
+
+52
+00:06:48,640 --> 00:07:02,240
+ 465, so now you can see there is a 465, so account log down has been failed, right, so
+
+53
+00:07:03,200 --> 00:07:10,320
+ this account name, maybe I had given the wrong username and password, so it has been failed, okay,
+
+54
+00:07:10,320 --> 00:07:16,480
+ so apart from that we need to understand one more thing, there is a, there is a more logging
+
+55
+00:07:16,480 --> 00:07:25,520
+ mechanism that we will call it as a systemon, so systemon provides a very good, very good overview
+
+56
+00:07:25,520 --> 00:07:33,520
+ about the log, what happened and what was the shaft, the process executed and what was the parent
+
+57
+00:07:33,520 --> 00:07:41,280
+ process, parent ID, parent process ID, it will give you more detail, let me try and investigate
+
+58
+00:07:41,280 --> 00:07:47,520
+ the logs, okay, so systemon is very helpful for when you are doing such practice, like
+
+59
+00:07:47,520 --> 00:07:55,040
+ domestic funds, domestic investigations are doing your attaining operations, okay, so it will be easy to
+
+60
+00:07:55,040 --> 00:08:02,160
+ download and install, just download the systemon and we need to, let's, after downloading the systemon,
+
+61
+00:08:02,160 --> 00:08:12,800
+ just go to the extract the systemon and go to the systemon folder, so the only important
+
+62
+00:08:12,800 --> 00:08:19,200
+ information is then you are opening the command prompt, you need to run a sub, you need to run
+
+63
+00:08:19,200 --> 00:08:27,280
+ as an administrator, so after that you have to, you have to, yeah, you have to redirect to the
+
+64
+00:08:27,280 --> 00:08:34,480
+ systemon process, okay, systemon directory, so after redirecting to the systemon directory,
+
+65
+00:08:35,120 --> 00:08:42,160
+ you have to be execute, you have to execute this systemon a sub to log dash i command, okay, so
+
+66
+00:08:42,160 --> 00:08:50,800
+ it will be automatically get installed in your machine, okay, so let's see, so let's see what
+
+67
+00:08:50,800 --> 00:08:56,240
+ other things we can do with the systemon, so let's go to the even log explorer, so after
+
+68
+00:08:56,240 --> 00:09:05,680
+ even starting the systemon, you can find your systemon logs in the event we were just open the
+
+69
+00:09:05,680 --> 00:09:11,840
+ event we were from here, and let's go to the windows logs, sorry, let's go to the application
+
+70
+00:09:11,840 --> 00:09:18,240
+ service log, so you can do like this and go to the Microsoft and windows, so scroll down a bit,
+
+71
+00:09:18,240 --> 00:09:28,160
+ you can find the systemon in s alphabet, okay, so now you can see, you know you can see there's a
+
+72
+00:09:28,160 --> 00:09:34,080
+ lot of systemon logs, like it will be giving the process creator and process terminators or process
+
+73
+00:09:34,080 --> 00:09:40,400
+ creation even just like one process termination even just like five, so let's install something,
+
+74
+00:09:40,400 --> 00:09:51,680
+ let's install something, so let's install the ad is to start the exe, let me open the ad is to start
+
+75
+00:09:51,680 --> 00:10:05,280
+ exe and okay, let's keep that, it was not running, okay, let's run the haj, yeah, let's run the haj
+
+76
+00:10:05,280 --> 00:10:14,400
+ kk, sckk, then how the CMD has been open, go to the systemon log and just do refresh,
+
+77
+00:10:14,400 --> 00:10:25,040
+ let's see whether our command has been logged into the, in the in the log in the systemon log,
+
+78
+00:10:35,280 --> 00:10:45,840
+ so now now you can find the hack.exe, which we have installed it was a process creator,
+
+79
+00:10:45,840 --> 00:10:50,320
+ process creator, process creation, even that it will be one and the explanation will be process
+
+80
+00:10:50,320 --> 00:10:56,640
+ created, so this is the parent image, the parent will be then explorer because I have
+
+81
+00:10:57,440 --> 00:11:05,040
+ wft installed this haj, sckk from the explorer.exe, so this is a file explorer, so the user who
+
+82
+00:11:05,040 --> 00:11:11,840
+ executed was a user, so I am the user of the machine and the folder, that's it, I'll download
+
+83
+00:11:11,840 --> 00:11:22,000
+ this hash of the file, let's take the hash of the file and it's too copy-casting, let's see
+
+84
+00:11:22,000 --> 00:11:33,280
+ whether it will be working, or it will work or not, so now we can find the hash value was not matched,
+
+85
+00:11:33,280 --> 00:11:41,280
+ where it will be, step by step detections of the antivirus programs, so it will use everything in a
+
+86
+00:11:41,280 --> 00:11:48,320
+ detail like hash values and parent process parent image and everything, so in this course most of
+
+87
+00:11:48,320 --> 00:11:54,720
+ the time, we are using CSPAN, so if you people need to install CSPAN, just go ahead and install
+
+88
+00:11:54,720 --> 00:12:00,880
+ CSPAN, so just you need to download that and you have to redirect to the directory by using the
+
+89
+00:12:00,880 --> 00:12:06,720
+ administrator command prompt, just right click on the and open the administrator and you use this
+
+90
+00:12:06,720 --> 00:12:10,640
+ CSPAN as a tool, I develop automatically execute everything in your machine, okay,
+
+91
+00:12:11,680 --> 00:12:18,880
+ so that's about this video and I hope you have a clear understanding about the logs operations
+
+92
+00:12:18,880 --> 00:12:25,360
+ everything will be logged, so because in this course we are mostly when we are doing such kind of
+
+93
+00:12:25,360 --> 00:12:34,480
+ attacks we are going to investigate this at the same time, so I am using this logs for my investigation,
+
+94
+00:12:34,480 --> 00:12:41,920
+ so this video be very useful when you are dealing with that, yeah guys let's sub of this video and
+
+95
+00:12:41,920 --> 00:12:46,000
+ we will continue our discussion in the next section, thank you.
+
