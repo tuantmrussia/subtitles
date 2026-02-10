@@ -1,0 +1,436 @@
+1
+00:00:00,000 --> 00:00:05,960
+ So now we are going to add the zombie spawner. As you know that we already have the script
+
+2
+00:00:05,960 --> 00:00:10,040
+ so you can go ahead and open this up. Right here we are going to remove the start and
+
+3
+00:00:10,040 --> 00:00:16,760
+ update method and then to top we are going to add these variables. So the first is a header
+
+4
+00:00:16,760 --> 00:00:23,780
+ and in this we make a reference to all of the zombie prefabs then to the spawn points
+
+5
+00:00:23,780 --> 00:00:29,440
+ where the zombie will be spawned and then this is a reference to how many zombies will
+
+6
+00:00:29,440 --> 00:00:37,440
+ be spawned and then this is for spawning only once. Like for example in some places if
+
+7
+00:00:37,440 --> 00:00:44,160
+ you want to spawn zombies twice then you can do that and where you just only have to
+
+8
+00:00:44,160 --> 00:00:50,280
+ spawn zombies once you insert this to two and then this is the spawn which will keep
+
+9
+00:00:50,280 --> 00:00:55,520
+ drive if they are spawned or not. Okay so right down below make a method by the name
+
+10
+00:00:55,520 --> 00:01:03,480
+ of spawn zombies in which first of all right here we check that if prefabs and point
+
+11
+00:01:03,480 --> 00:01:15,360
+ exist okay and if it doesn't exist okay so if it is equal to 0 then we show this that
+
+12
+00:01:15,360 --> 00:01:22,520
+ spawner missing prefabs or spawn points and then we will run but if it exist then right
+
+13
+00:01:22,520 --> 00:01:31,960
+ here we spawn zombies based on come set in the inspector okay for example by default it
+
+14
+00:01:31,960 --> 00:01:39,920
+ is 5 it can be 2 or 3 or how many zombies you want to spawn then right here we randomly pick
+
+15
+00:01:39,920 --> 00:01:47,680
+ a zombie type and then right here we pick a random spawn point and then we create or you
+
+16
+00:01:47,680 --> 00:01:53,400
+ can see instantiate the zombie in the scene at the spawn point position and rotation all
+
+17
+00:01:53,400 --> 00:02:02,000
+ right now when we want to spawn zombies we want when the player hit a collider somewhere
+
+18
+00:02:02,000 --> 00:02:07,920
+ then in front of the player we will spawn that zombies okay so for that right here at
+
+19
+00:02:07,920 --> 00:02:13,600
+ the top make a one trigger enter method in which we first of all check if whatever enter
+
+20
+00:02:13,600 --> 00:02:22,780
+ is not player we return and also if it is spawn once then we also want to return and then
+
+21
+00:02:22,780 --> 00:02:33,280
+ after that we just simply spawn the zombies and then we mark spawning as done so it doesn't
+
+22
+00:02:33,280 --> 00:02:39,960
+ happen again all right this is all for the zombie spawner now let me show you how you can
+
+23
+00:02:39,960 --> 00:02:47,320
+ start this up in the game right here as you know that we have this objective also when
+
+24
+00:02:47,320 --> 00:02:55,320
+ the player picks the come from there and the player if the player walks in the forward direction
+
+25
+00:02:55,320 --> 00:03:02,480
+ then we want to now spawn these zombies okay so we will spawn zombies right here at
+
+26
+00:03:02,480 --> 00:03:19,320
+ different okay so let me actually make a 3d cube here it is okay let's move it right
+
+27
+00:03:19,320 --> 00:03:34,760
+ here and then begin resize this like this and then we are there and there okay to say
+
+28
+00:03:34,760 --> 00:03:45,400
+ but let's smash render actually enable it move down okay we need to move this up actually
+
+29
+00:03:45,400 --> 00:03:53,880
+ like this that's it okay let's move it up that's okay now let's just say with that make
+
+30
+00:03:53,880 --> 00:04:05,320
+ the trigger as is triggered and also change it's clear to trigger okay and you can do the
+
+31
+00:04:05,320 --> 00:04:13,120
+ same for the other triggers as well change it's clear to trigger so this cube one will
+
+32
+00:04:13,120 --> 00:04:25,120
+ be our zombie failure one all right to this dragon drop the zombie spawner script down
+
+33
+00:04:25,120 --> 00:04:31,880
+ the zombie spawner script we need to wear the zombies so click on GameObject zombies pre-fabs
+
+34
+00:04:31,880 --> 00:04:38,840
+ here they are let's lock that and select all of the zombies try and drop it in there now
+
+35
+00:04:38,840 --> 00:04:45,640
+ unlock it okay so let's zombie trigger one there it is we need to now add the spawn points
+
+36
+00:04:45,640 --> 00:04:59,280
+ so the spawn points should be in here okay so first spawn point will be right here so I'm
+
+37
+00:04:59,280 --> 00:05:11,800
+ gonna add a 3D cube this will be our first spawn point so name it as one and duplicate
+
+38
+00:05:11,800 --> 00:05:23,680
+ it this will be our second okay in the first zombie we're gonna add just two zombies
+
+39
+00:05:23,680 --> 00:05:32,680
+ okay right here that's it now name this as two and make sure to track both of these inside
+
+40
+00:05:32,680 --> 00:05:37,680
+ the zombie trigger and then try and drop this zombie trigger one inside objective point
+
+41
+00:05:37,680 --> 00:05:46,680
+ okay and select zombie trigger one try and drop the first spawn point then the second and
+
+42
+00:05:46,680 --> 00:05:53,680
+ the number of zombies to spawn will be two and this will be just happen once all right
+
+43
+00:05:53,680 --> 00:06:11,280
+ now select these two and disable the mesh actually you can remove the box color and the
+
+44
+00:06:11,280 --> 00:06:21,280
+ mesh on these spawn points all right now let's play the game as you know that in the
+
+45
+00:06:21,280 --> 00:06:26,960
+ previous video our first objective was already completed so if you play the game again as
+
+46
+00:06:26,960 --> 00:06:32,320
+ you can see it has already completed so I press the paper done it will research the progress
+
+47
+00:06:32,320 --> 00:06:36,680
+ now as you can see it shows find something for production and as you can see the objective
+
+48
+00:06:36,680 --> 00:06:44,680
+ one is active so I'm just gonna restart the game again right because right now we
+
+49
+00:06:44,680 --> 00:06:49,680
+ doesn't have any menu but by which we reset the progress and restart the game so I'm
+
+50
+00:06:49,680 --> 00:06:56,680
+ just gonna do it when we okay now first objective is find something for protection right
+
+51
+00:06:56,680 --> 00:07:05,160
+ so now as soon as we get trigger inside the zombie trigger now as you can see in the
+
+52
+00:07:05,160 --> 00:07:12,560
+ arcade two zombies are added to the him as you can see right there okay whoops that was
+
+53
+00:07:12,560 --> 00:07:20,760
+ just a punch we will be leading this point sound don't worry now if we pick the pistol
+
+54
+00:07:20,760 --> 00:07:28,960
+ and let's move outside over there is the first zombie running two wizards kill the zombie
+
+55
+00:07:28,960 --> 00:07:44,480
+ all right fine UNP the next zombies right here walking there it is okay the second zombie
+
+56
+00:07:44,480 --> 00:07:57,640
+ all right so the objective and everything is working perfectly fine okay
+
+57
+00:07:57,640 --> 00:08:04,920
+ now in this way you can add different type of zombies for each of the objective
+
+58
+00:08:04,920 --> 00:08:11,680
+ okay I'm gonna go ahead and do it for the second and third objective as well so our second
+
+59
+00:08:11,680 --> 00:08:22,440
+ objective is right here so we're gonna add zombies then right there okay so what I'm
+
+60
+00:08:22,440 --> 00:08:29,960
+ gonna do now is try to zombies two triggers so I'm thrilled he made a cube okay here it
+
+61
+00:08:29,960 --> 00:08:49,780
+ is made 2020 actually seven or nine would be good then 20 actually let's make it 50 since
+
+62
+00:08:49,780 --> 00:08:59,320
+ this is a trigger so change it to trigger and then this will be triggered as well all right
+
+63
+00:08:59,320 --> 00:09:10,480
+ so now disable that and what we need to be zombie trigger so this will be zombie trigger
+
+64
+00:09:10,480 --> 00:09:22,780
+ two and this air the zombie spawner now for zombies you're gonna grab and drop these zombies
+
+65
+00:09:22,780 --> 00:09:31,980
+ in there for these point points we will create points now so the points will be right
+
+66
+00:09:31,980 --> 00:09:44,380
+ here okay so first only will be spawn right here at a cube there it is this will be your
+
+67
+00:09:44,380 --> 00:09:54,140
+ first point let's duplicate it since now we have UNP we can add more zombies so second
+
+68
+00:09:54,140 --> 00:10:16,480
+ where spawn point third four fifth six and then seven right here okay one ten two three
+
+69
+00:10:16,480 --> 00:10:29,100
+ oh five six and seven all right these are the spawn points right over inside the zombie
+
+70
+00:10:29,100 --> 00:10:36,400
+ trigger to lock it select all of these spawn points right drop it in there number of zombies
+
+71
+00:10:36,400 --> 00:10:46,160
+ spawn will be seven or let's just make it nine all right and you can add the zombie trigger
+
+72
+00:10:46,160 --> 00:10:55,400
+ to inside the objective two okay now and for the third one we will not be spawning in
+
+73
+00:10:55,400 --> 00:11:01,800
+ a zombie since it is right there closer but for the first one we can add more zombies I
+
+74
+00:11:01,800 --> 00:11:09,400
+ think two are really low number so I'm just gonna go ahead and add one zombie
+
+75
+00:11:09,400 --> 00:11:25,520
+ right here okay so let's add a 3 cube in here and then one right there then one right
+
+76
+00:11:25,520 --> 00:11:39,840
+ there in one there okay so one two then this will be three then four five and six okay
+
+77
+00:11:39,840 --> 00:11:49,920
+ from all of them disable the mesh render actually you can remove these things from there
+
+78
+00:11:49,920 --> 00:11:57,120
+ try and drop it in zombie trigger one select zombie trigger one in here lock it and try
+
+79
+00:11:57,120 --> 00:12:04,880
+ and drop the other spawn points increase the number of zombies to seven okay that is it
+
+80
+00:12:04,880 --> 00:12:16,520
+ check the objective two spawn points it has the box color and everything so I'm just
+
+81
+00:12:16,520 --> 00:12:27,960
+ gonna remove it from there as well that is it okay if we play the game since our first
+
+82
+00:12:27,960 --> 00:12:33,920
+ objective was completed when the game start as you can see our first objective is completed
+
+83
+00:12:33,920 --> 00:12:40,800
+ now the second one is available but let's reset it okay and let's restart the game and
+
+84
+00:12:40,800 --> 00:12:58,640
+ see if the zombie appears now or not all right let's walk okay the zombie appears right
+
+85
+00:12:58,640 --> 00:13:14,080
+ there as you saw in the distance let's pick the pistol and let's try shooting them all
+
+86
+00:13:14,080 --> 00:13:27,280
+ now it looks good let's reload and let's move forward and check that other area as well
+
+87
+00:13:27,280 --> 00:13:53,440
+ okay there's the second zombie all it looks really scary to be honest
+
+88
+00:13:57,280 --> 00:14:27,040
+ okay there's some piece right there okay so
+
+89
+00:14:27,040 --> 00:14:33,160
+ if you notice all of these zombies are spawning perfectly fine okay now more zombies
+
+90
+00:14:33,160 --> 00:14:40,760
+ are spawned in front of us but now the second objective is to find you MP
+
+91
+00:14:40,760 --> 00:15:00,140
+ quite this building doesn't have colored us so we need to add colored us here okay here is the second
+
+92
+00:15:00,140 --> 00:15:06,640
+ now we have two rifles the first one in the pistol then we have the UMP
+
+93
+00:15:06,640 --> 00:15:35,720
+ key there are these zombies are here where did I kill all of them?
+
+94
+00:15:35,720 --> 00:16:00,200
+ all right so now as you can see it looks really good now okay all of these zombies are
+
+95
+00:16:00,200 --> 00:16:06,920
+ still inside the game as you can see their bodies doesn't get removed so don't worry we will
+
+96
+00:16:06,920 --> 00:16:16,240
+ be adding something for that okay but as you can see now our second objective wasn't done
+
+97
+00:16:16,240 --> 00:16:21,960
+ because I told you there were no clearly in the household you were unable to touch that
+
+98
+00:16:21,960 --> 00:16:30,680
+ colored okay now we have a third objective right here which will not be completed because the second one was not
+
+99
+00:16:30,680 --> 00:16:37,280
+ all right so let's go ahead and fix that it's this building right here if you select it
+
+100
+00:16:37,280 --> 00:16:56,600
+ okay it's this whole building I think the floor left the floor don't have any
+
+101
+00:16:56,600 --> 00:17:09,600
+ let's add color on this rock so I'm gonna add a mesh color over there and mesh
+
+102
+00:17:09,600 --> 00:17:20,520
+ color is already added here let's select these okay mesh color is added and also make sure
+
+103
+00:17:20,520 --> 00:17:28,800
+ that you move them to default as well so that it plays the footsteps sound right here as
+
+104
+00:17:28,800 --> 00:17:42,520
+ well default then here as well if we select the inside floor okay box color was added let's
+
+105
+00:17:42,520 --> 00:18:02,680
+ set it to default set this one to default as well in it mesh color than this floor and right
+
+106
+00:18:02,680 --> 00:18:08,120
+ here we have this punch to which a box color is added that's why our objective wasn't
+
+107
+00:18:08,120 --> 00:18:26,240
+ completed so I'm gonna remove that and add a mesh color to it okay change that to default
+
+108
+00:18:26,240 --> 00:18:43,400
+ change this to default as well that's it and let me also select this second objective is this
+
+109
+00:18:43,400 --> 00:18:59,000
+ one we're hearing increase it's color word now this will work perfectly fine
+
