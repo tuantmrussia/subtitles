@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:05,480
+ Welcome to the another video, we are going to see another one, uh,
+
+2
+00:00:05,480 --> 00:00:10,000
+ technique and persistence. It's not a degree. It's a procedure.
+
+3
+00:00:10,000 --> 00:00:15,000
+ The account manipulations in previous video, we have successfully created the
+
+4
+00:00:15,000 --> 00:00:20,000
+ account and the tactical T 1136. And, uh,
+
+5
+00:00:20,000 --> 00:00:25,320
+ if you, if you come to the account manipulations, uh,
+
+6
+00:00:25,360 --> 00:00:30,720
+ you can find the tactical T 1098. And, uh, it's in, um,
+
+7
+00:00:30,720 --> 00:00:38,520
+ mitre under the persistence. So the previous video,
+
+8
+00:00:38,520 --> 00:00:43,600
+ we created an account, right? We have created an account, uh,
+
+9
+00:00:43,600 --> 00:00:47,520
+ but we did not set enough privilege, right? So whether the account is
+
+10
+00:00:47,520 --> 00:00:52,400
+ related to the admin privilege or any other privileges, right? So we are
+
+11
+00:00:52,400 --> 00:00:58,720
+ adding the user account, uh, to the, uh, administrator group, okay?
+
+12
+00:00:58,720 --> 00:01:06,280
+ So to list out the, uh, so now you can see my, uh,
+
+13
+00:01:06,280 --> 00:01:15,360
+ now you can see my, uh, who am I all, uh, now I am a user and I am, uh,
+
+14
+00:01:15,360 --> 00:01:20,600
+ I'm in a high mandatory level. So high integrity level. So if you
+
+15
+00:01:20,600 --> 00:01:27,600
+ give net user here, it will list all the user just now we added a user
+
+16
+00:01:27,600 --> 00:01:37,120
+ called, uh, attacker that was added, right? So let's add this attacker to
+
+17
+00:01:37,120 --> 00:01:44,240
+ the administrator group. The attacker will add the, uh, user name to the
+
+18
+00:01:44,240 --> 00:01:49,320
+ several group. There are, there are domain administrator group. So we are
+
+19
+00:01:49,320 --> 00:01:55,320
+ not covering, uh, uh, active directory in this core. So I'm skipping that
+
+20
+00:01:55,320 --> 00:02:00,120
+ domain administrator group domain, adding the user to the domain admin group.
+
+21
+00:02:00,120 --> 00:02:05,600
+ But we will see how to add the user to the administrator group, how
+
+22
+00:02:05,600 --> 00:02:10,960
+ the attacker will add the user to the administrator group, okay? So if you
+
+23
+00:02:10,960 --> 00:02:15,880
+ see the command, so the same, uh, we are abusing the net.exe to add the
+
+24
+00:02:15,880 --> 00:02:22,320
+ user to the, uh, administrator group, okay? So don't need to give the net, uh,
+
+25
+00:02:22,320 --> 00:02:29,680
+ exe net.exe. Let's go to the, uh, if you do find my slash, so I'm a member
+
+26
+00:02:29,680 --> 00:02:34,400
+ of, uh, administrator group and so local account. So let's see, it's a local
+
+27
+00:02:34,400 --> 00:02:42,280
+ group, right? So administrator is a local group of, uh, a machine. And, uh,
+
+28
+00:02:44,760 --> 00:02:50,680
+ and if, which, uh, group you need to add, okay? So if you see here, it's an
+
+29
+00:02:50,680 --> 00:02:57,320
+ administrator group, we need to add the user to the, uh, administrator group.
+
+30
+00:02:57,320 --> 00:03:04,560
+ So let's add to the administrators and, uh, which user name we added, uh, we
+
+31
+00:03:04,560 --> 00:03:12,040
+ added the attacker, right? Attack, uh, it's my user name. Let's add it to the
+
+32
+00:03:12,040 --> 00:03:23,840
+ admin admin group, okay? Maybe I missed to the GROUP or OUP, right? Let's
+
+33
+00:03:23,840 --> 00:03:33,680
+ test this group and the username is attacker and we need to add. That's all,
+
+34
+00:03:33,680 --> 00:03:41,600
+ okay? So net, the similar, uh, local group, uh, which group you need to add,
+
+35
+00:03:41,640 --> 00:03:46,640
+ the administrators group and the username slash shared. So you can,
+
+36
+00:03:46,640 --> 00:03:53,880
+ now you can see the command was, uh, completed successfully, all right? So
+
+37
+00:03:53,880 --> 00:03:59,280
+ now it's added to the, uh, administrator group, the attacker was now, uh,
+
+38
+00:03:59,280 --> 00:04:10,520
+ the attacker privilege was now an administrator, uh, okay. So this how the
+
+39
+00:04:10,520 --> 00:04:17,120
+ threat actor will add the, uh, user to the administrator group, okay? This, uh,
+
+40
+00:04:17,120 --> 00:04:22,320
+ this is called as the, uh, account account manipulation, probably we are
+
+41
+00:04:22,320 --> 00:04:28,160
+ giving the, uh, permission, uh, the administrator group, right? Permission
+
+42
+00:04:28,160 --> 00:04:34,160
+ groups, uh, for, uh, account, right? So here you can find a command, specific
+
+43
+00:04:34,160 --> 00:04:40,280
+ group, uh, right, account, uh, specific group with the net local group. So the
+
+44
+00:04:40,280 --> 00:04:45,080
+ attacker will use the command to, uh, add the user to the admin group or any
+
+45
+00:04:45,080 --> 00:04:49,280
+ other group, okay? So if you need to add the user to the domain group, so it's,
+
+46
+00:04:49,280 --> 00:04:53,360
+ it's a very easy thing. You can give the group. So you can specify the group if,
+
+47
+00:04:53,360 --> 00:04:57,320
+ if, if it's a domain administrator group, you need to find the group first.
+
+48
+00:04:57,320 --> 00:05:05,280
+ So if it's a domain, uh, div, I, I, and domain, uh, admin group, so you can
+
+49
+00:05:05,280 --> 00:05:14,480
+ go ahead and add the domain admin, and, uh, you can give the user name, slash
+
+50
+00:05:14,480 --> 00:05:19,600
+ add, okay? So you can give it like that to add it to the domain admin group,
+
+51
+00:05:19,600 --> 00:05:25,680
+ okay? So this command was not, uh, see this, this command can only used
+
+52
+00:05:25,680 --> 00:05:30,160
+ only a Windows domain controller. So we, we did not have a, uh, domain
+
+53
+00:05:30,160 --> 00:05:36,880
+ controller, uh, eddy, so active directory. So in this course, we are, we are
+
+54
+00:05:36,880 --> 00:05:40,040
+ just covering the Windows side. So we, we, we did not cover the active
+
+55
+00:05:40,040 --> 00:05:43,920
+ directory attacks and all. Maybe next to course, we can see the active directory
+
+56
+00:05:43,920 --> 00:05:51,720
+ attacks. Um, so you, you can, uh, see the net, uh, group. So we need to
+
+57
+00:05:51,720 --> 00:05:56,400
+ specify the group name, you need to add and attacker, uh, the username and just,
+
+58
+00:05:56,400 --> 00:06:01,560
+ it easiest command, right? So this is how the protector will, uh, uh, the
+
+59
+00:06:01,560 --> 00:06:07,720
+ persistence, uh, username and password, uh, for our target environment, okay?
+
+60
+00:06:07,720 --> 00:06:12,560
+ So this is another level of persistence, so adding the shield to us startup
+
+61
+00:06:12,560 --> 00:06:16,840
+ services. That is one set of persistence, and this is another side of
+
+62
+00:06:16,840 --> 00:06:21,160
+ persistence. So attacker need to, uh, maintain their post, maintain their
+
+63
+00:06:21,160 --> 00:06:26,000
+ access to the victim machine. So they will do it like this, okay? So that's
+
+64
+00:06:26,000 --> 00:06:29,880
+ That's all about the video, we will meet you in the next video, thank you for watching.
+
