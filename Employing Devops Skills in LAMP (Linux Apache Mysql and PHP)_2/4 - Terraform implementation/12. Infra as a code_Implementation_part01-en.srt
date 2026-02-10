@@ -1,0 +1,388 @@
+1
+00:00:00,000 --> 00:00:08,960
+ Hello all and welcome to our last section here for the dev ops tutorials.
+
+2
+00:00:08,960 --> 00:00:21,000
+ So in the last section here we will implement the infrastructure as a code or Terraform.
+
+3
+00:00:21,000 --> 00:00:26,800
+ So the objective here to automate the provisioning of Docker based WordPress, which means
+
+4
+00:00:26,800 --> 00:00:35,800
+ I won't just to run the Terraform instead of typing all the commands to start and enable
+
+5
+00:00:35,800 --> 00:00:39,400
+ the Docker and creation on the Docker.
+
+6
+00:00:39,400 --> 00:00:45,600
+ I would use the Terraform as infrastructure as a code to automate that process.
+
+7
+00:00:45,600 --> 00:00:51,520
+ So first let install it with install it, there is several methods, but we will install it using
+
+8
+00:00:51,520 --> 00:00:56,520
+ the hashicorp, which is the official repository.
+
+9
+00:00:56,520 --> 00:01:03,520
+ So let's, we have already the young configuration manager, so let's download it.
+
+10
+00:01:03,520 --> 00:01:18,200
+ This is our last session in which we have enabled the GitHub runner, which is internal
+
+11
+00:01:18,200 --> 00:01:21,040
+ on our system or virtual machine.
+
+12
+00:01:21,040 --> 00:01:31,960
+ So let's now, let's now download or adding the repositories, we have added the repositories
+
+13
+00:01:31,960 --> 00:01:38,960
+ of hashicorp and now we will install simply the Terraform.
+
+14
+00:01:38,960 --> 00:01:59,720
+ Okay, I will pause the video because it will take some time for the install and download
+
+15
+00:01:59,720 --> 00:02:05,160
+ an installation of Terraform and once it's finished, I will return back to you.
+
+16
+00:02:05,160 --> 00:02:12,160
+ Okay, great, we have installed now the Terraform and no need for the validation for the
+
+17
+00:02:12,160 --> 00:02:18,400
+ version as it is installed with the version 1.14, great.
+
+18
+00:02:18,400 --> 00:02:31,840
+ So now let's proceed with our task first.
+
+19
+00:02:31,840 --> 00:02:36,320
+ First we create Terraform configurations for the following task.
+
+20
+00:02:36,320 --> 00:02:41,600
+ We want the Docker network container communication case, so we will automate the creation
+
+21
+00:02:41,600 --> 00:02:46,640
+ of the Docker along with the networking connectivity between them.
+
+22
+00:02:46,640 --> 00:02:54,040
+ We use the MySQL, not Maria database as a storage, okay, for the MySQL container and
+
+23
+00:02:54,040 --> 00:03:00,840
+ we use a patch HP container with mounting or mounted volume for WordPress and we sure
+
+24
+00:03:00,840 --> 00:03:07,240
+ that containers of course are on the same network and I will show you finally how to
+
+25
+00:03:07,240 --> 00:03:15,200
+ validate or integrate the Terraform by using CI CD tools and finally after we initialize
+
+26
+00:03:15,200 --> 00:03:21,200
+ and apply the Terraform configuration, I will show you how we can verify the WordPress
+
+27
+00:03:21,200 --> 00:03:30,380
+ by connecting to the HTTP access local host and verify access to the database.
+
+28
+00:03:30,380 --> 00:03:41,360
+ So the first step here, let's make a directory which we call Terraform or press, okay.
+
+29
+00:03:41,360 --> 00:03:48,360
+ This will be in our home directory as usual that in our lab, so as we have done for
+
+30
+00:03:48,360 --> 00:03:57,040
+ the GitLab for example, my in the home direction, I can see my GitLab directory and also
+
+31
+00:03:57,040 --> 00:04:11,160
+ here we can find the Terraform and let's switch to, okay, CD tilde and we are now on
+
+32
+00:04:11,160 --> 00:04:12,780
+ the Terraform WordPress.
+
+33
+00:04:12,780 --> 00:04:21,120
+ So we create the Terraform has three things to be created, okay, this is the file structure
+
+34
+00:04:21,120 --> 00:04:27,160
+ or the core structure of the Terraform, you need to create the main file variables and
+
+35
+00:04:27,160 --> 00:04:34,480
+ output file, okay, so let's create all of these three files and I will explain to you
+
+36
+00:04:34,480 --> 00:04:44,400
+ in details what, why we need these files, okay, they are created, let's verify, okay,
+
+37
+00:04:44,400 --> 00:04:48,440
+ this is the main outputs and variables.
+
+38
+00:04:48,440 --> 00:04:57,560
+ So here let's create the first file, the first file to create is the Terraform, okay,
+
+39
+00:04:57,560 --> 00:05:04,520
+ so for example here, this is the first part, we will create the Terraform and the Docker
+
+40
+00:05:04,520 --> 00:05:11,440
+ which will be down the Terraform which actually the Terraform will manage or automate everything,
+
+41
+00:05:11,440 --> 00:05:26,440
+ so let's first edit the main.df file, okay, and this file is something like the main file
+
+42
+00:05:27,560 --> 00:05:37,560
+ function, okay, the main functions are configured or are written here, okay, so we have
+
+43
+00:05:37,560 --> 00:05:44,280
+ providers that require providers for the Terraform, we have Docker and this is the source
+
+44
+00:05:44,280 --> 00:05:50,840
+ for the Docker and this is the version of Docker that we are using and the Terraform
+
+45
+00:05:50,840 --> 00:05:57,480
+ when he wants to manage the Docker, he will use the provider Docker, okay, so this
+
+46
+00:05:57,480 --> 00:06:05,800
+ is the provider Docker and this is Docker network, we have the resource called Docker network
+
+47
+00:06:05,800 --> 00:06:17,080
+ and called WP underscore network in which we will connect the MySQL and my PHP Apache
+
+48
+00:06:17,080 --> 00:06:23,480
+ containers to it and this is the name of our network, WP underscore network, this is the Docker
+
+49
+00:06:23,480 --> 00:06:37,080
+ networks, okay, and here we go down, let's now create start with the database, okay, we will create
+
+50
+00:06:37,080 --> 00:06:58,680
+ Docker volume first, okay, course not here, we need to create it here, okay, this is our volume,
+
+51
+00:06:58,680 --> 00:07:09,320
+ MySQL data, okay, this is the name of it MySQL underscore data, this is the storage for MySQL,
+
+52
+00:07:09,320 --> 00:07:19,000
+ okay, this is the name of it, okay, and let's create the container itself, resource called Docker
+
+53
+00:07:19,000 --> 00:07:24,760
+ container because created the mounted volume, we need to create the container, container is named
+
+54
+00:07:24,760 --> 00:07:33,080
+ MySQL, okay, and we'll define here the image that we want to use and we'd use here a different
+
+55
+00:07:33,080 --> 00:07:40,200
+ name for example, word press, word press dash MySQL and this is our image MySQL, it is the same
+
+56
+00:07:40,200 --> 00:07:47,960
+ one that we have used and also here we use the mixer restart as always to restart the container
+
+57
+00:07:47,960 --> 00:07:54,680
+ when needed and we would set some environment variables and here is the thing, let me put
+
+58
+00:07:54,680 --> 00:08:08,760
+ here first comments, okay, here if you can see we have we had explained already your image name
+
+59
+00:08:08,760 --> 00:08:15,960
+ restart and the environment here is only pointing to some variables, so here the link between
+
+60
+00:08:15,960 --> 00:08:21,960
+ the two files, we have the main file and the variable file will contain values for this, for
+
+61
+00:08:21,960 --> 00:08:29,400
+ example, there is a field for the password, MySQL database, MySQL user and user password,
+
+62
+00:08:29,400 --> 00:08:34,840
+ all of these environment variables are just initiated in the main file and we'll be defined
+
+63
+00:08:34,840 --> 00:08:46,280
+ later in the variable.tf file, so we have created initials or initialized variables and here's a
+
+64
+00:08:46,280 --> 00:08:59,000
+ volume, we'll create a volume, okay, create a volume name, docker volume, lock MySQL.name, okay,
+
+65
+00:08:59,000 --> 00:09:04,600
+ and we need to specify the container path for the database to work correctly, you need to set the
+
+66
+00:09:04,600 --> 00:09:14,920
+ path for to be valid MySQL, so the volume, okay, docker volume.mySQL.name for our MySQL data, okay,
+
+67
+00:09:15,480 --> 00:09:24,920
+ we'll be stored in this path exactly, and network advance of course do not forget this before we
+
+68
+00:09:24,920 --> 00:09:33,880
+ close this SQL container, don't forget to type the network advance because network advance as you
+
+69
+00:09:33,880 --> 00:09:41,240
+ if you can recall this is the docker network, we will be a member of docker network,
+
+70
+00:09:41,800 --> 00:09:48,840
+ WP network botany, so this is our docker network that we have created earlier here,
+
+71
+00:09:48,840 --> 00:10:00,280
+ docker or WP underscore network, it is WP here underscore network, okay, and we close the brackets
+
+72
+00:10:00,280 --> 00:10:09,560
+ because we want to close the brackets that we have created for MySQL, this one, this is the closure
+
+73
+00:10:09,560 --> 00:10:24,280
+ for this brackets, okay, and we'll repeat the same step, we'll still on the main file but we need to
+
+74
+00:10:24,280 --> 00:10:33,320
+ create, we'll use of course the same rich feature the PHP Apache image, we'll repeat the same steps
+
+75
+00:10:33,320 --> 00:10:41,000
+ for Apache and PHP and WordPress container, so this you need to make sure that this still exists
+
+76
+00:10:41,000 --> 00:10:51,160
+ still exists on our system, so we are cool, and now we need to create, okay, this time we need to
+
+77
+00:10:51,160 --> 00:11:06,360
+ create a PHP Apache container, so here we have created the container, we named it WP dash Apache,
+
+78
+00:11:06,360 --> 00:11:15,160
+ and this is image that it is using, and it is, it starts at always, and this is the internal
+
+79
+00:11:15,160 --> 00:11:21,000
+ and external port set to 8080, and we can set to any port set to be wish of course,
+
+80
+00:11:21,000 --> 00:11:31,400
+ and the volume will be set to home of home mmm, mmm, more www of course, and the container path
+
+81
+00:11:31,400 --> 00:11:39,880
+ will be treated as an application, so we need to define volume as we have did with the SQL,
+
+82
+00:11:41,560 --> 00:11:55,560
+ and here, after that we need to define the variable for the web document root, we set to app,
+
+83
+00:11:55,560 --> 00:12:00,760
+ for this we need to be identified for all the files that we have for our website, for example,
+
+84
+00:12:00,760 --> 00:12:10,360
+ and the PHP memory limit we set to not make any exhaustive use of memory, we set it to 500 and 12
+
+85
+00:12:10,360 --> 00:12:24,120
+ megabytes, this is just to boost hardware performance, nothing more, okay, and the last step here that
+
+86
+00:12:24,120 --> 00:12:34,120
+ we need of course set the network advance to the member of the same network adapter of SQL,
+
+87
+00:12:35,800 --> 00:12:42,600
+ okay, the same comment, and here don't forget to make this because it depends on the container
+
+88
+00:12:42,600 --> 00:12:51,080
+ of MySQL, because there will be a backend connectivity between Apache web server and MySQL,
+
+89
+00:12:51,080 --> 00:13:02,360
+ so it should depend on it, and we should define that line as well, okay, so after we set this,
+
+90
+00:13:02,360 --> 00:13:10,760
+ these brackets of course you will see that this is closed by this, of course you need to have
+
+91
+00:13:10,760 --> 00:13:17,960
+ special type of a different facility, t2 is opening and closure of packet, but if you can trace it,
+
+92
+00:13:17,960 --> 00:13:25,960
+ it is very easy, you can see that it is the closure of the container of PHP this time,
+
+93
+00:13:28,360 --> 00:13:34,920
+ or Apache web server this time, okay, so we need to save it, control O,
+
+94
+00:13:34,920 --> 00:13:46,680
+ and if we open it again, you can see that it is successfully edited or filled with the data that we want,
+
+95
+00:13:46,680 --> 00:13:58,200
+ okay, so let's move now to the second part, which is the variables, we'll edit now the variable,
+
+96
+00:13:58,200 --> 00:14:07,960
+ okay, so here we need to set as I've told you MySQL, password, MySQL database, MySQL user,
+
+97
+00:14:07,960 --> 00:14:11,960
+ okay, so we need,
+
