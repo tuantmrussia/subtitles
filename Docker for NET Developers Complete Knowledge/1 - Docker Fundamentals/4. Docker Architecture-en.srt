@@ -1,0 +1,480 @@
+1
+00:00:00,000 --> 00:00:02,000
+ Docker architecture.
+
+2
+00:00:02,000 --> 00:00:05,380
+ Docker architecture is client server type.
+
+3
+00:00:05,380 --> 00:00:09,080
+ There are just two things which is Docker client,
+
+4
+00:00:09,080 --> 00:00:13,560
+ also known as Docker CLI and Docker server.
+
+5
+00:00:13,560 --> 00:00:16,640
+ This Docker server is also known by another name
+
+6
+00:00:16,640 --> 00:00:19,720
+ as Docker demon or Docker.
+
+7
+00:00:19,720 --> 00:00:22,280
+ So coming to the next,
+
+8
+00:00:22,280 --> 00:00:26,120
+ we see this whole architecture of Docker.
+
+9
+00:00:26,120 --> 00:00:31,120
+ This is the client and this is the Docker demon or Docker server.
+
+10
+00:00:31,120 --> 00:00:36,440
+ So the Docker client will send these commands
+
+11
+00:00:36,440 --> 00:00:41,440
+ to these Docker demon and the Docker demon will execute
+
+12
+00:00:41,440 --> 00:00:42,320
+ these commands.
+
+13
+00:00:42,320 --> 00:00:46,400
+ We run this commands from the command prompt of windows
+
+14
+00:00:46,400 --> 00:00:49,440
+ or the terminal of Linux.
+
+15
+00:00:49,440 --> 00:00:51,440
+ Once these commands are run,
+
+16
+00:00:51,440 --> 00:00:56,600
+ the client will take these commands to the Docker demon
+
+17
+00:00:56,600 --> 00:01:00,560
+ and the Docker demon will execute these commands.
+
+18
+00:01:00,560 --> 00:01:04,280
+ These commands can be creating images, containers,
+
+19
+00:01:04,280 --> 00:01:07,320
+ and doing other things like Docker,
+
+20
+00:01:07,320 --> 00:01:10,800
+ pull commands, Docker, build, Docker run,
+
+21
+00:01:10,800 --> 00:01:12,880
+ are different types of commands.
+
+22
+00:01:12,880 --> 00:01:16,080
+ We will understand more about commands,
+
+23
+00:01:16,080 --> 00:01:19,800
+ the containers images later on.
+
+24
+00:01:19,800 --> 00:01:22,520
+ Now we will understand Docker image.
+
+25
+00:01:22,520 --> 00:01:26,000
+ A Docker image is a template for running containers.
+
+26
+00:01:26,000 --> 00:01:31,000
+ For example, Microsoft.net is provided as a Docker image.
+
+27
+00:01:31,000 --> 00:01:36,200
+ Similarly, Microsoft SQL server is also provided
+
+28
+00:01:36,200 --> 00:01:38,400
+ as a Docker image.
+
+29
+00:01:38,400 --> 00:01:42,480
+ Our Docker images could be engine X, web server,
+
+30
+00:01:42,480 --> 00:01:47,120
+ post-grads SQL, red days, PHP and Python,
+
+31
+00:01:47,120 --> 00:01:51,280
+ etcetera, etcetera. We can create a Docker image
+
+32
+00:01:51,280 --> 00:01:55,520
+ for our app on.net, version 10,
+
+33
+00:01:55,520 --> 00:02:00,520
+ based on newborn to OS along with engine X, web server.
+
+34
+00:02:00,520 --> 00:02:05,520
+ We can create another image of our app on version.net 9.0,
+
+35
+00:02:05,520 --> 00:02:13,960
+ which is based on Windows OS along with engine X, web server.
+
+36
+00:02:13,960 --> 00:02:16,280
+ So these can be two images.
+
+37
+00:02:16,280 --> 00:02:21,040
+ Similarly, dear could be many more images of our app.
+
+38
+00:02:21,040 --> 00:02:25,280
+ So let us understand how images are built.
+
+39
+00:02:25,280 --> 00:02:29,800
+ So images are built on layers.
+
+40
+00:02:29,800 --> 00:02:33,960
+ And there are many layers in an image.
+
+41
+00:02:33,960 --> 00:02:37,480
+ For example, there is a base OS image,
+
+42
+00:02:37,480 --> 00:02:42,480
+ which could be a Linux or a Windows or Mac OS.
+
+43
+00:02:43,120 --> 00:02:48,120
+ And then there could be another layer of runtime,
+
+44
+00:02:48,120 --> 00:02:53,440
+ which could be.net runtime, version.net 10,
+
+45
+00:02:53,440 --> 00:02:57,960
+ or runtime.net 9, etcetera.
+
+46
+00:02:57,960 --> 00:03:02,680
+ There could be dependencies, which our app needs.
+
+47
+00:03:02,680 --> 00:03:07,680
+ These could be JSON.net package or the entity framework,
+
+48
+00:03:07,680 --> 00:03:12,680
+ code package, etcetera, etcetera.
+
+49
+00:03:12,680 --> 00:03:16,840
+ And application code is our.net app,
+
+50
+00:03:16,840 --> 00:03:20,880
+ which we have built and configuration files
+
+51
+00:03:20,880 --> 00:03:25,480
+ could be the another image layer
+
+52
+00:03:25,480 --> 00:03:28,800
+ for the configuration files of our app.
+
+53
+00:03:28,800 --> 00:03:32,240
+ Images are very lightweight and very fast
+
+54
+00:03:32,240 --> 00:03:35,800
+ because they are built on layers.
+
+55
+00:03:35,800 --> 00:03:38,400
+ When we do some changes on them,
+
+56
+00:03:38,400 --> 00:03:42,520
+ then only the layers that have changed are be rebuilt,
+
+57
+00:03:42,520 --> 00:03:44,400
+ rest remains the same.
+
+58
+00:03:44,400 --> 00:03:47,840
+ This makes the image lightweight and very fast.
+
+59
+00:03:47,840 --> 00:03:49,360
+ To build an image,
+
+60
+00:03:49,360 --> 00:03:51,960
+ we will need to have a Docker file,
+
+61
+00:03:51,960 --> 00:03:53,880
+ which is a text file,
+
+62
+00:03:53,880 --> 00:03:58,520
+ providing all the instructions needed for the image to build.
+
+63
+00:03:58,520 --> 00:04:03,520
+ Let us see the Docker file of a.net version 10 app.
+
+64
+00:04:03,520 --> 00:04:06,920
+ So this is the Docker file.
+
+65
+00:04:06,920 --> 00:04:11,200
+ Each instruction here will create a layer.
+
+66
+00:04:11,200 --> 00:04:16,200
+ For example, this instruction from mcr.microsoft.com,
+
+67
+00:04:16,200 --> 00:04:19,200
+ etcetera will create a layer.
+
+68
+00:04:19,200 --> 00:04:21,680
+ Another instruction is this one.
+
+69
+00:04:21,680 --> 00:04:24,200
+ This will also create a layer.
+
+70
+00:04:24,200 --> 00:04:27,200
+ And this third will also create a layer.
+
+71
+00:04:27,200 --> 00:04:31,200
+ Similarly, the fourth one will also create a layer.
+
+72
+00:04:31,200 --> 00:04:34,760
+ Docker file will also refer to external files
+
+73
+00:04:34,760 --> 00:04:37,680
+ and libraries needed for the app to run.
+
+74
+00:04:37,680 --> 00:04:42,680
+ For example, it is referring to SDK version 10 of.net
+
+75
+00:04:42,680 --> 00:04:47,240
+ and ASP.net version 10.
+
+76
+00:04:47,240 --> 00:04:52,240
+ It can also refer to other dependencies like newtons of JSON
+
+77
+00:04:52,240 --> 00:04:58,640
+ or entity framework or needed for the app to run,
+
+78
+00:04:58,640 --> 00:05:01,600
+ all will be listed on this Docker file.
+
+79
+00:05:01,600 --> 00:05:03,920
+ So when the image was built,
+
+80
+00:05:03,920 --> 00:05:06,560
+ it will download these dependencies
+
+81
+00:05:06,560 --> 00:05:10,600
+ so that the app can run Docker container.
+
+82
+00:05:10,600 --> 00:05:15,240
+ A Docker container is an object that runs the images.
+
+83
+00:05:15,240 --> 00:05:17,320
+ For example, these are the images
+
+84
+00:05:17,320 --> 00:05:21,440
+ and Docker container will be needed to run them.
+
+85
+00:05:21,440 --> 00:05:25,200
+ A Docker container could be running.net image.
+
+86
+00:05:25,200 --> 00:05:29,520
+ Another Docker container could be running MS SQL Server image.
+
+87
+00:05:29,520 --> 00:05:33,880
+ Another Docker container could be running engine X image,
+
+88
+00:05:33,880 --> 00:05:37,160
+ Redis image, etcetera, etcetera.
+
+89
+00:05:37,160 --> 00:05:40,960
+ We have Docker commands for creating containers,
+
+90
+00:05:40,960 --> 00:05:44,920
+ running containers, deleting containers and so on.
+
+91
+00:05:44,920 --> 00:05:47,200
+ Docker registries.
+
+92
+00:05:47,200 --> 00:05:50,360
+ Registries store Docker images online
+
+93
+00:05:50,360 --> 00:05:53,240
+ so that people can download these Docker images
+
+94
+00:05:53,240 --> 00:05:57,840
+ of software's ARMD's registries.net image
+
+95
+00:05:57,840 --> 00:06:01,800
+ and MS SQL image, engine X image, etcetera,
+
+96
+00:06:01,800 --> 00:06:05,360
+ all kept on Docker registries.
+
+97
+00:06:05,360 --> 00:06:08,760
+ Example of these registries are Docker hub
+
+98
+00:06:08,760 --> 00:06:11,560
+ and Azure container registry.
+
+99
+00:06:11,560 --> 00:06:14,800
+ On Google type Docker hub
+
+100
+00:06:14,800 --> 00:06:21,560
+ and click on the search result.
+
+101
+00:06:21,560 --> 00:06:26,080
+ Here we can search microsoft.
+
+102
+00:06:28,880 --> 00:06:33,880
+ These are the Microsoft images of different products.
+
+103
+00:06:33,880 --> 00:06:40,080
+ You will find MS SQL Server image here.
+
+104
+00:06:40,080 --> 00:06:44,960
+ Then here are other images,
+
+105
+00:06:44,960 --> 00:06:49,960
+ including the dot net image needed for our dot net app to build.
+
+106
+00:06:49,960 --> 00:06:56,640
+ So you can also create an account here
+
+107
+00:06:56,640 --> 00:07:01,640
+ and you can save your app images on Docker Hub.
+
+108
+00:07:01,640 --> 00:07:05,800
+ Other than that,
+
+109
+00:07:05,800 --> 00:07:10,800
+ you can also search for is your container registry.
+
+110
+00:07:10,800 --> 00:07:22,920
+ You can create account on Azure to use these container registry.
+
+111
+00:07:25,760 --> 00:07:28,840
+ We can understand the whole process from this image.
+
+112
+00:07:28,840 --> 00:07:33,840
+ Programmer a creates a dot net image for his app
+
+113
+00:07:33,840 --> 00:07:37,840
+ and pushes this image to Docker hub registry.
+
+114
+00:07:37,840 --> 00:07:41,360
+ Programmer B now wants to download this image
+
+115
+00:07:41,360 --> 00:07:43,640
+ from this Docker hub registry
+
+116
+00:07:43,640 --> 00:07:46,800
+ and she can easily download the image
+
+117
+00:07:46,800 --> 00:07:51,560
+ and the image reaches her own local laptop
+
+118
+00:07:51,560 --> 00:07:55,000
+ and she can create a container of this image
+
+119
+00:07:55,000 --> 00:07:57,840
+ and run the dot net app
+
+120
+00:07:57,840 --> 00:08:01,000
+ which is produced by Programmer A.
+
