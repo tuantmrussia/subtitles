@@ -1,0 +1,548 @@
+1
+00:00:00,120 --> 00:00:05,480
+We're looking at loops we've looked at for loops we've looked at while loops.
+
+2
+00:00:05,480 --> 00:00:10,960
+But we want to illustrate the difference between a four and a while, because they can appear to be
+
+3
+00:00:10,960 --> 00:00:11,520
+the same.
+
+4
+00:00:11,520 --> 00:00:18,200
+As we said, a for loop goes from one number to another number in a range, and it's predefined and
+
+5
+00:00:18,200 --> 00:00:22,880
+preset, whereas a while loop can look like it's doing the same thing, it's going to continue until
+
+6
+00:00:22,880 --> 00:00:24,160
+a certain condition is true.
+
+7
+00:00:24,160 --> 00:00:26,280
+So it can emulate a for loop.
+
+8
+00:00:26,640 --> 00:00:31,160
+But it is also very useful because you can use it to make a loop.
+
+9
+00:00:31,160 --> 00:00:35,520
+Continue until something happens when you don't know how long it's going to take.
+
+10
+00:00:35,520 --> 00:00:37,880
+So it's not going to be a set number of iterations.
+
+11
+00:00:37,880 --> 00:00:43,320
+It could be anything from zero, one to or 1000 iterations until some condition is true.
+
+12
+00:00:43,360 --> 00:00:44,400
+So we'll see that happen.
+
+13
+00:00:44,400 --> 00:00:45,640
+In this example.
+
+14
+00:00:45,840 --> 00:00:52,520
+What we are going to be looking at in this example is, is going to be a list of what is in your makeup
+
+15
+00:00:52,520 --> 00:00:52,960
+bag.
+
+16
+00:00:53,080 --> 00:00:55,120
+Now this could vary from person to person.
+
+17
+00:00:55,120 --> 00:00:59,800
+So this program is going to do is it's going to ask the user what is in your makeup bag.
+
+18
+00:01:00,040 --> 00:01:05,890
+Then the user is going to type it in okay I have some mascara and then click enter.
+
+19
+00:01:05,890 --> 00:01:09,010
+And again it's going to ask you again what is in your makeup bag.
+
+20
+00:01:09,010 --> 00:01:15,250
+And the user is going to keep on typing in what is in their makeup bag until they have nothing left.
+
+21
+00:01:15,570 --> 00:01:20,570
+And obviously it depends, you know, because my makeup bag has got like nothing in it, whereas someone
+
+22
+00:01:20,570 --> 00:01:23,210
+else's makeup bag may have a whole lot more items in it.
+
+23
+00:01:23,210 --> 00:01:27,410
+So that's why this is a great example of using the while loop, because we actually don't know how many
+
+24
+00:01:27,410 --> 00:01:29,170
+items are in your makeup bag.
+
+25
+00:01:29,210 --> 00:01:33,090
+It's up to you until a certain condition is found to be true, in which case we're going to use the
+
+26
+00:01:33,090 --> 00:01:36,690
+word done to indicate that I'm done with what's in the makeup bag.
+
+27
+00:01:36,810 --> 00:01:38,650
+So let's see how that is going to look.
+
+28
+00:01:38,650 --> 00:01:43,130
+So we're going to write our while we're going to use the variable r while R.
+
+29
+00:01:43,130 --> 00:01:45,690
+And we want to say is not equal to.
+
+30
+00:01:46,210 --> 00:01:47,690
+If you remember that's how we write.
+
+31
+00:01:47,690 --> 00:01:53,210
+Not equal to the word done or a string called done.
+
+32
+00:01:53,530 --> 00:01:53,770
+Okay.
+
+33
+00:01:53,810 --> 00:01:57,930
+Like we said before, this is going to keep on going until the user types in done.
+
+34
+00:01:57,930 --> 00:02:00,010
+And we're going to show you how that works.
+
+35
+00:02:00,170 --> 00:02:07,430
+So remember again we have to define this variable R or the or or the program is going to not know what
+
+36
+00:02:07,430 --> 00:02:08,270
+we're talking about.
+
+37
+00:02:08,470 --> 00:02:14,830
+So in this case R is actually a string and specifically R is an empty string.
+
+38
+00:02:14,830 --> 00:02:19,710
+So this is what I've typed here is just an empty string, which is basically a quotation with nothing
+
+39
+00:02:19,710 --> 00:02:21,750
+in the middle and a quotation mark.
+
+40
+00:02:21,750 --> 00:02:23,310
+So that is empty string.
+
+41
+00:02:23,350 --> 00:02:26,510
+You've set this variable to equal to that empty string.
+
+42
+00:02:26,510 --> 00:02:32,670
+And we want this loop to keep on going until I is equal to done.
+
+43
+00:02:32,710 --> 00:02:36,350
+Or in other words, while I is not equal to done.
+
+44
+00:02:36,630 --> 00:02:37,430
+So what did we say.
+
+45
+00:02:37,430 --> 00:02:39,590
+We wanted to ask the user.
+
+46
+00:02:39,630 --> 00:02:42,710
+Well we want to ask them what is in your makeup bag.
+
+47
+00:02:43,390 --> 00:02:45,630
+So hopefully you also remember how to do input.
+
+48
+00:02:47,110 --> 00:02:58,870
+We're going to put input and ask the user that question what is in your makeup bag.
+
+49
+00:02:59,750 --> 00:03:03,790
+And now also we are going to have to store this input somewhere.
+
+50
+00:03:03,790 --> 00:03:07,470
+So what this input actually is this input becomes R.
+
+51
+00:03:07,750 --> 00:03:14,320
+So each time the loop runs and the users asked this question and they type something in over here.
+
+52
+00:03:14,560 --> 00:03:18,160
+Whatever they type is going to be stored in R.
+
+53
+00:03:18,360 --> 00:03:21,560
+So for now we are just going to then print R.
+
+54
+00:03:21,560 --> 00:03:23,880
+So you can see exactly how this works.
+
+55
+00:03:24,640 --> 00:03:25,200
+Okay.
+
+56
+00:03:25,240 --> 00:03:31,160
+And you'll notice I don't have one of those conditions that I had last time where iterated or changed
+
+57
+00:03:31,160 --> 00:03:32,200
+this variable.
+
+58
+00:03:32,200 --> 00:03:37,080
+And that's because I'm not saying wow R is greater than done, which doesn't actually make any sense
+
+59
+00:03:37,080 --> 00:03:37,520
+at all.
+
+60
+00:03:37,560 --> 00:03:43,680
+I'm just saying keep on going until R is equal to done, or while R is not equal to done.
+
+61
+00:03:43,720 --> 00:03:45,880
+So let's run this.
+
+62
+00:03:46,280 --> 00:03:46,680
+Okay.
+
+63
+00:03:46,800 --> 00:03:50,920
+So let's start what is in my makeup bag let's say mascara.
+
+64
+00:03:51,200 --> 00:03:51,760
+Enter.
+
+65
+00:03:51,800 --> 00:03:52,120
+Okay.
+
+66
+00:03:52,160 --> 00:03:54,520
+So you see here it says mascara.
+
+67
+00:03:54,520 --> 00:03:57,680
+That's because over here I said print whatever R is.
+
+68
+00:03:57,680 --> 00:03:59,680
+So in this first one R is mascara.
+
+69
+00:03:59,680 --> 00:04:01,000
+But now it's still asking me.
+
+70
+00:04:01,040 --> 00:04:06,200
+You can notice I is a string so it's replacing it each time.
+
+71
+00:04:06,200 --> 00:04:07,680
+It's not going to keep mascara.
+
+72
+00:04:07,680 --> 00:04:12,160
+So Sarah now types the next item that's in her makeup bag of lipstick.
+
+73
+00:04:12,400 --> 00:04:14,410
+As it prints it, it's going to say lipstick.
+
+74
+00:04:14,410 --> 00:04:19,370
+It's not going to say mascara and lipstick because I is a variable can only hold one value.
+
+75
+00:04:19,370 --> 00:04:20,570
+This is not a list.
+
+76
+00:04:20,570 --> 00:04:22,490
+It's a simple string variable.
+
+77
+00:04:22,490 --> 00:04:26,210
+And so it's being replaced each time she enters a new item and it's printing it out.
+
+78
+00:04:27,250 --> 00:04:29,370
+So eyeshadow is also now added to the list.
+
+79
+00:04:29,370 --> 00:04:34,770
+And so as you can see this is going to continue going around and around allowing her to enter the long
+
+80
+00:04:34,770 --> 00:04:37,290
+list of items that are in that makeup bag.
+
+81
+00:04:37,410 --> 00:04:42,170
+And for some of you I said this could go on for weeks and months as you enter all sorts of things.
+
+82
+00:04:42,210 --> 00:04:45,850
+Well, you know what these things are, but there we go until finally you are exhausted.
+
+83
+00:04:45,850 --> 00:04:47,250
+And so what do we do now?
+
+84
+00:04:47,290 --> 00:04:48,290
+Okay, so I'm done.
+
+85
+00:04:48,290 --> 00:04:48,650
+That's all.
+
+86
+00:04:48,650 --> 00:04:50,970
+That's that's all that's in my makeup bag.
+
+87
+00:04:50,970 --> 00:04:54,250
+And I'm going to tap done.
+
+88
+00:04:54,450 --> 00:04:55,970
+And it's done.
+
+89
+00:04:55,970 --> 00:04:58,410
+So you'll see I'm no longer getting the question.
+
+90
+00:04:58,730 --> 00:05:04,610
+It's now seen okay over here as soon as I tap done or over here as soon as I tap done.
+
+91
+00:05:05,010 --> 00:05:06,130
+That became the variable.
+
+92
+00:05:06,170 --> 00:05:07,730
+Ah it came around the loop.
+
+93
+00:05:08,210 --> 00:05:11,130
+Is this variable I equal to done.
+
+94
+00:05:11,170 --> 00:05:12,010
+Yes it is.
+
+95
+00:05:12,010 --> 00:05:15,090
+So it said is ah not equal to.
+
+96
+00:05:15,290 --> 00:05:18,140
+And they said oh no, actually is equal to Dan.
+
+97
+00:05:18,180 --> 00:05:20,260
+So it jumped out of the loop.
+
+98
+00:05:20,620 --> 00:05:26,540
+So the second we tap done here, the loop ended and we we didn't have an infinite loop.
+
+99
+00:05:26,580 --> 00:05:31,460
+Obviously I could have carried on tapping and stuff over here forever without tapping done.
+
+100
+00:05:31,460 --> 00:05:33,460
+And it would be almost an infinite loop.
+
+101
+00:05:33,460 --> 00:05:38,460
+But I think eventually everyone would get a bit tired and you'll have to eventually tap that done.
+
+102
+00:05:38,460 --> 00:05:42,380
+So you can keep on doing this and keep on tapping things for as long as you want.
+
+103
+00:05:42,740 --> 00:05:46,900
+And as long as you don't tap done, it's going to keep on asking you that question.
+
+104
+00:05:46,900 --> 00:05:51,460
+So you see, this is a great example of where the while loop is very powerful and it's different to
+
+105
+00:05:51,460 --> 00:05:53,420
+our for loop, and it's used all the time.
+
+106
+00:05:53,460 --> 00:05:57,780
+I mean, you often prompted to answer things and it says tap exit when you're complete.
+
+107
+00:05:57,780 --> 00:05:59,180
+That's exactly what is happening.
+
+108
+00:05:59,180 --> 00:06:02,100
+The code behind that is basically a while loop.
+
+109
+00:06:02,100 --> 00:06:04,460
+So those are while loops, very powerful.
+
+110
+00:06:04,460 --> 00:06:08,540
+When you are not sure exactly of how many times you need to iterate.
+
+111
+00:06:08,540 --> 00:06:09,700
+Just one more thing.
+
+112
+00:06:09,980 --> 00:06:12,380
+If you remember, strings are very finicky.
+
+113
+00:06:12,380 --> 00:06:14,020
+So if I actually tap done.
+
+114
+00:06:14,020 --> 00:06:19,060
+But let's say I put a capital D, it wouldn't see it as being the same as that done over here.
+
+115
+00:06:19,120 --> 00:06:23,520
+So you have to tap exactly what is there for it to finish.
+
+116
+00:06:23,520 --> 00:06:25,800
+So let me actually show you that.
+
+117
+00:06:27,240 --> 00:06:27,360
+Okay.
+
+118
+00:06:27,360 --> 00:06:30,560
+I'm just going to have a very small makeup bag this time.
+
+119
+00:06:31,160 --> 00:06:33,520
+Let's just say I have mascara.
+
+120
+00:06:34,040 --> 00:06:37,560
+Let's say I have some bronzer.
+
+121
+00:06:37,960 --> 00:06:38,440
+Okay.
+
+122
+00:06:38,480 --> 00:06:39,400
+And now I'm done.
+
+123
+00:06:39,400 --> 00:06:43,160
+So let's say I want to be grammatically correct and put a capital there.
+
+124
+00:06:43,480 --> 00:06:48,000
+You'll see it's said, oh no, that's done in your makeup bag basically.
+
+125
+00:06:48,200 --> 00:06:48,440
+Okay.
+
+126
+00:06:48,480 --> 00:06:50,560
+So as soon as it sees this done here it goes.
+
+127
+00:06:50,560 --> 00:06:51,000
+Okay.
+
+128
+00:06:51,080 --> 00:06:52,000
+Now we are done.
+
+129
+00:06:52,000 --> 00:06:54,880
+And it again takes us out of that loop.
+
+130
+00:06:55,480 --> 00:06:58,520
+So that was while loops with a bit more interesting example.
+
+131
+00:06:58,520 --> 00:07:03,080
+We will keep on building on to all of these things and showing you more and more complex examples and
+
+132
+00:07:03,080 --> 00:07:05,360
+more interesting and exciting examples.
+
+133
+00:07:05,640 --> 00:07:07,640
+But for now, that is what you need to know.
+
+134
+00:07:07,680 --> 00:07:10,280
+Obviously, change the change the question.
+
+135
+00:07:10,280 --> 00:07:15,480
+Try it with different stuff, try it with numbers, and then change this over here to being a number,
+
+136
+00:07:15,880 --> 00:07:18,200
+a number data type instead of a string.
+
+137
+00:07:18,200 --> 00:07:23,000
+But just play around and we'll see you in the next lesson.
+
