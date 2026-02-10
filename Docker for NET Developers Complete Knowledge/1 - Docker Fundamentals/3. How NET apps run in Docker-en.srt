@@ -1,0 +1,260 @@
+1
+00:00:00,000 --> 00:00:05,960
+ Let us now understand how .NET apps are run in Docker.
+
+2
+00:00:05,960 --> 00:00:10,060
+ First a Docker container is created.
+
+3
+00:00:10,060 --> 00:00:18,900
+ Next we install an operating system like Windows, Linux, or Mac OS in this container.
+
+4
+00:00:18,900 --> 00:00:26,140
+ Then in this OS we install .NET runtime or SDK.
+
+5
+00:00:26,140 --> 00:00:29,620
+ Next we install a web server like
+
+6
+00:00:29,620 --> 00:00:34,520
+ Apache, Engine X, etc.
+
+7
+00:00:34,520 --> 00:00:40,160
+ Finally a .NET app will run from inside this container.
+
+8
+00:00:40,160 --> 00:00:52,800
+ Since the app has all deleted resources or dependencies like OS.NET runtime as pk web servers
+
+9
+00:00:52,800 --> 00:00:55,400
+ like Engine X.
+
+10
+00:00:55,400 --> 00:01:03,160
+ So this .NET app is ready to run from inside the Docker container.
+
+11
+00:01:03,160 --> 00:01:08,200
+ Let us understand the working from a real world example.
+
+12
+00:01:08,200 --> 00:01:13,960
+ The boy is opening an ASP.NET Core website on his browser.
+
+13
+00:01:13,960 --> 00:01:20,040
+ First a browser will make an HTTP request to the Engine X web server.
+
+14
+00:01:20,040 --> 00:01:25,840
+ Engine X web server will forward this request to cluster web server.
+
+15
+00:01:25,840 --> 00:01:31,640
+ Note that Engine X is working as a reverse proxy in this case.
+
+16
+00:01:31,640 --> 00:01:35,480
+ Crestale is hosting the .NET web site.
+
+17
+00:01:35,480 --> 00:01:38,800
+ It forwards the request to the web site.
+
+18
+00:01:38,800 --> 00:01:44,360
+ The web site in turn sends back the response to Crestale.
+
+19
+00:01:44,360 --> 00:01:49,880
+ And now Crestale forwards the request to Engine X web server.
+
+20
+00:01:49,880 --> 00:01:55,160
+ Finally, Engine X sends the response to the boy's browser.
+
+21
+00:01:55,160 --> 00:02:00,360
+ The browser will show the web site.
+
+22
+00:02:00,360 --> 00:02:08,440
+ This whole thing, the Engine X the cluster, the .NET app, is hosted on a Docker container.
+
+23
+00:02:08,440 --> 00:02:12,800
+ Docker is super fast and easy.
+
+24
+00:02:12,800 --> 00:02:20,080
+ Think about installing Windows 11 with .NET SDK on your PC.
+
+25
+00:02:20,080 --> 00:02:24,880
+ It will take no less than one hour of your time.
+
+26
+00:02:24,880 --> 00:02:32,840
+ But in Docker you can install both these things in just 20 to 30 seconds only.
+
+27
+00:02:32,840 --> 00:02:40,320
+ You just have to run the Docker commands and Docker will do the heavy lifting for you.
+
+28
+00:02:40,320 --> 00:02:47,600
+ The Docker commands will tell Docker engine what type of Docker container you need.
+
+29
+00:02:47,600 --> 00:02:52,640
+ Along with the software needed on the container.
+
+30
+00:02:52,640 --> 00:02:56,240
+ This whole process is extremely fast.
+
+31
+00:02:56,240 --> 00:03:02,320
+ Docker will provide the container running in a matter of seconds.
+
+32
+00:03:02,320 --> 00:03:06,640
+ Create containers of different .NET versions.
+
+33
+00:03:06,640 --> 00:03:13,360
+ For example, a container can be running on Windows along with .NET version 10.
+
+34
+00:03:13,360 --> 00:03:19,360
+ Second container can be running on Linux with .NET 8.0.
+
+35
+00:03:19,360 --> 00:03:30,200
+ Third container can be running on Linux with .NET version 9 along with Node.js and PHP.
+
+36
+00:03:30,200 --> 00:03:37,600
+ These all three containers can run at the same time from the host operating system.
+
+37
+00:03:37,600 --> 00:03:44,760
+ Docker provides these containers all the resources they need for the need.
+
+38
+00:03:44,760 --> 00:03:55,740
+ These includes, required software, like Linux, .NET, Node.js and PHP installed on these
+
+39
+00:03:55,740 --> 00:04:06,560
+ containers, note that there is no need to install Linux, Node.js .NET or PHP on the host
+
+40
+00:04:06,560 --> 00:04:15,240
+ machine which is our PC as these are running from inside the containers.
+
+41
+00:04:15,240 --> 00:04:22,440
+ Benefits of Docker fast and easy continuous delivery of apps.
+
+42
+00:04:22,440 --> 00:04:30,340
+ Docker is great for continuous integration and continuous delivery of software development.
+
+43
+00:04:30,340 --> 00:04:33,840
+ This is known as CI/CD.
+
+44
+00:04:33,840 --> 00:04:42,400
+ Developers and testers working in a project can share their work using Docker containers.
+
+45
+00:04:42,400 --> 00:04:51,840
+ This developer creates code for a .NET app and pushes the whole app on a Docker container.
+
+46
+00:04:51,840 --> 00:04:59,880
+ The tester will use the container to test the code and will provide the bug list.
+
+47
+00:04:59,880 --> 00:05:07,480
+ This means that Docker container, both the developer and tester are working together.
+
+48
+00:05:07,480 --> 00:05:16,400
+ Once the bug list is resolved, the new .NET app is deployed to the production.
+
+49
+00:05:16,400 --> 00:05:23,040
+ It is not necessary for the developers and testers to remain side by side sitting at the
+
+50
+00:05:23,040 --> 00:05:28,440
+ same office that testers can be anywhere on the world.
+
+51
+00:05:28,440 --> 00:05:33,000
+ They just need to test the app from Docker containers.
+
+52
+00:05:33,000 --> 00:05:39,240
+ In this way, Docker provides very fast and consistent delivery of apps.
+
+53
+00:05:39,240 --> 00:05:44,880
+ Responsive development and scaling of apps with Docker.
+
+54
+00:05:44,880 --> 00:05:52,280
+ For example, we have a .NET website and we noticed a traffic to the website has increased
+
+55
+00:05:52,280 --> 00:05:53,760
+ by 100%.
+
+56
+00:05:53,760 --> 00:06:03,480
+ We can increase the Docker containers hosting the website in order to fulfill the new demands.
+
+57
+00:06:03,480 --> 00:06:16,680
+ Earlier, we were hosting the website from 10 containers.
+
+58
+00:06:16,680 --> 00:06:24,240
+ In the same way, we can scale down the app by reducing the containers, thus reducing
+
+59
+00:06:24,240 --> 00:06:31,840
+ the hosting charges of our website, reducing the cost of development of apps when we use
+
+60
+00:06:31,840 --> 00:06:40,520
+ Docker, a small startup has a small team of developers and testers and they do not have
+
+61
+00:06:40,520 --> 00:06:48,720
+ lots of funds to create infrastructure so they can run all the needful apps from the
+
+62
+00:06:48,720 --> 00:06:50,720
+ Docker containers.
+
+63
+00:06:50,720 --> 00:07:01,800
+ These apps are SQL Server, MySQL, Redis.NET, Node.js, Apache and others.
+
+64
+00:07:01,800 --> 00:07:08,560
+ As reducing the infrastructure cost of the company also, they do not have to shed more
+
+65
+00:07:08,560 --> 00:07:16,880
+ money on buying their license fees when they are running the apps from the Docker containers.
+
