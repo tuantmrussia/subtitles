@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:08,360
+ You guys, welcome to another video, let's discuss our phone program.
+
+2
+00:00:08,360 --> 00:00:15,840
+ Prudam Panels has, which we have created, okay, so you will be finding the program in
+
+3
+00:00:15,840 --> 00:00:26,040
+ the repo, which we have, but let's explore the program first, okay.
+
+4
+00:00:26,040 --> 00:00:32,600
+ So these are the libraries we are going to use and the dv, dv.lib, this process
+
+5
+00:00:32,600 --> 00:00:37,160
+ contained the mini-dumb right, APA we are going to use, okay.
+
+6
+00:00:37,160 --> 00:00:42,800
+ That's why this was here and it's a function properties, nothing there.
+
+7
+00:00:42,800 --> 00:00:47,800
+ And first of all, we need to locate the process where the process of sitting.
+
+8
+00:00:47,800 --> 00:00:54,640
+ So we know each process has one unique process ID, so we need to search the process, we have
+
+9
+00:00:54,640 --> 00:01:02,960
+ used to this create tools, create tool helps, 32 snapshot in various programs before.
+
+10
+00:01:02,960 --> 00:01:08,800
+ So it will be used for a process enumeration, it will go by one by one process process first
+
+11
+00:01:08,800 --> 00:01:12,400
+ and process next, and it will be searching the Ls as right.
+
+12
+00:01:12,400 --> 00:01:17,680
+ So this program is used to locate and process, okay.
+
+13
+00:01:17,680 --> 00:01:23,160
+ So the next we have this much of functions, so before dumping an Ls as, so if we are using
+
+14
+00:01:23,160 --> 00:01:30,120
+ CMD.exe to dump an Ls as, that current process needs have enough privilege.
+
+15
+00:01:30,120 --> 00:01:36,040
+ We discussed the privilege before previous section, privileged escalation, like AC debug privilege,
+
+16
+00:01:36,040 --> 00:01:38,760
+ AC impersonate privilege, okay.
+
+17
+00:01:38,760 --> 00:01:44,720
+ So to dump an Ls as, your own process, for which process you are using to dump, like
+
+18
+00:01:44,720 --> 00:01:56,760
+ CMD.exe, or any remote process that needs to be, that program needs some privilege, okay,
+
+19
+00:01:56,760 --> 00:02:07,480
+ to dump an Ls as, next we will be having a create mini dump of target process, okay.
+
+20
+00:02:07,480 --> 00:02:13,120
+ So from here we will be opening the process and we will be getting a handle, then we will
+
+21
+00:02:13,120 --> 00:02:19,920
+ be creating a file, okay, that is a dump file, so anyway it will be sitting on the Ls
+
+22
+00:02:19,920 --> 00:02:27,960
+ as advanced dot DMP, enter the temp directory, so we will be creating a file or modifying
+
+23
+00:02:27,960 --> 00:02:34,500
+ the existing file, and we will be using the mini dump with full memory, okay, mini
+
+24
+00:02:34,500 --> 00:02:41,560
+ dump with full memory function, like to dump the complete memory of an Ls as, and we will
+
+25
+00:02:41,560 --> 00:02:48,160
+ be dumping the process, okay, this complete code will be responsible for opening, creating
+
+26
+00:02:48,160 --> 00:02:50,560
+ the file and dumping the process, okay.
+
+27
+00:02:50,560 --> 00:02:56,200
+ Then we have a certain main functions, and our total process will be Ls as dot exe, and
+
+28
+00:02:56,200 --> 00:03:01,360
+ our dump file will be the dump path, so we are giving the path, we can modify the path,
+
+29
+00:03:01,360 --> 00:03:06,720
+ which you want, but I was creating under the temp folder, okay.
+
+30
+00:03:06,720 --> 00:03:13,520
+ So this is our privileged name, SCD bug privilege, which will be, which will be giving
+
+31
+00:03:13,520 --> 00:03:21,320
+ here, privileged name, okay, and we will be giving a process ID under the create mini
+
+32
+00:03:21,320 --> 00:03:22,320
+ dump, okay.
+
+33
+00:03:22,320 --> 00:03:30,520
+ This is the, I already said we will be using a process ID, when the windows, when we open
+
+34
+00:03:30,520 --> 00:03:35,560
+ any kind of process in Windows, it will be automatically, allocating your unique PID
+
+35
+00:03:35,560 --> 00:03:42,120
+ for each process ID, so we need to give the process ID here, so from that we can, we will
+
+36
+00:03:42,120 --> 00:03:49,560
+ be giving the process ID parameter, okay, process ID in the create mini dump, and we will
+
+37
+00:03:49,560 --> 00:03:57,000
+ be dumping the file, we will be dumping the Ls as process finally, okay.
+
+38
+00:03:57,000 --> 00:04:01,800
+ So to compile this program, it has been automatically compiled and it will be sitting under
+
+39
+00:04:01,800 --> 00:04:09,200
+ the GitHub repo, so you can find it from here, lsdum.exe, for if you want to compile the
+
+40
+00:04:09,200 --> 00:04:17,920
+ program, if you want to modify or do anything, so you can use the CL, CL dump Lsas.clink
+
+41
+00:04:17,920 --> 00:04:26,720
+ and ADVAP 832 live, because we will be using certain kind of, certain kind of libraries
+
+42
+00:04:26,720 --> 00:04:33,400
+ here, right, so we will be using the ADVAP, that it will API, and we will be outputting
+
+43
+00:04:33,400 --> 00:04:43,540
+ the files, which we need, so let's finally, our X6482 command prompt, give the output
+
+44
+00:04:43,540 --> 00:04:46,680
+ an lsdum.exe for that, okay.
+
+45
+00:04:46,680 --> 00:04:56,160
+ So let me open my program in my directory, it will be in our downloads, so let me go to
+
+46
+00:04:56,160 --> 00:04:57,160
+ an lsdum.
+
+47
+00:04:57,160 --> 00:05:12,220
+ So I will be opening a cmd, and let us an administrator move, because I already said, we
+
+48
+00:05:12,220 --> 00:05:20,200
+ discussed a lot of things in a privileged escalation section, right, so let me copy this, okay.
+
+49
+00:05:20,200 --> 00:05:37,360
+ So let me redirect to the program directory, so build, start the dump now, so the single
+
+50
+00:05:37,360 --> 00:05:46,360
+ thing you need to execute like, so you just need to give lsdum.exe, so now you can see
+
+51
+00:05:46,360 --> 00:05:51,400
+ the minidum has been successfully created, and the operation completed successfully, let's
+
+52
+00:05:51,400 --> 00:06:10,560
+ verify this directory, see term, so here you can find the lsdum that has been created just
+
+53
+00:06:10,560 --> 00:06:20,880
+ now like to 1825, here you can verify the date to 1825, and to 2030, now it's a 238 am,
+
+54
+00:06:20,880 --> 00:06:29,360
+ but the file has been created to 37 am, this is the dump file, and it's the size of the file,
+
+55
+00:06:29,360 --> 00:06:37,880
+ so by verifying the size, you can understand the lsdum has been successfully created, okay.
+
+56
+00:06:37,880 --> 00:06:44,280
+ So there will be an interview post in some time, so how do you verify whether the lsdum
+
+57
+00:06:44,280 --> 00:06:52,620
+ has been successfully, okay, so your answer will be, so if you verify the size of the file,
+
+58
+00:06:52,620 --> 00:06:57,640
+ so you can confirm if the lsdum has been successfully, okay, so here the size of the file
+
+59
+00:06:57,640 --> 00:07:09,160
+ will be for 58, 415 KB, and the lsdum was successfully, okay, so hope you enjoyed this video and you can
+
+60
+00:07:09,160 --> 00:07:15,800
+ use your, you can download the program, you can execute the program in any of the routine assessment,
+
+61
+00:07:15,800 --> 00:07:28,520
+ so if you are doing, yeah, so that's all about the first video, and in upcoming sections, we will
+
+62
+00:07:28,520 --> 00:07:37,240
+ be learn how to dig the ls, or ls, file, and we can find the credentials, okay, so hope you
+
+63
+00:07:37,240 --> 00:07:44,120
+ enjoyed this video, we will be discussing the other lsdum techniques in our coming videos,
+
+64
+00:07:44,120 --> 00:07:47,320
+ We hope of and we'll meet you in the next video. Bye.
+
