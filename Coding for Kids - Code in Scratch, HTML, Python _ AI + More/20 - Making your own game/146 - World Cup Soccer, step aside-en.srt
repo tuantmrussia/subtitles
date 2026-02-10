@@ -1,0 +1,552 @@
+1
+00:00:00,320 --> 00:00:05,320
+Our amazing soccer game is coming on, and there's just one last element that we want to add, and we
+
+2
+00:00:05,320 --> 00:00:08,000
+want to make the field a little bit more interesting.
+
+3
+00:00:08,240 --> 00:00:10,280
+At the moment, we've just got a sort of really basic field.
+
+4
+00:00:10,320 --> 00:00:14,680
+We want to show you how you can just color it in and draw some lines on it, etc. and so that's what
+
+5
+00:00:14,680 --> 00:00:15,800
+we're going to cover in this lesson.
+
+6
+00:00:15,800 --> 00:00:18,960
+And then we're going to combine that into our main soccer program.
+
+7
+00:00:19,160 --> 00:00:21,320
+And you're going to be ready for all the action.
+
+8
+00:00:22,400 --> 00:00:28,200
+If you look at this code over here for the field, you'll see there's quite a lot.
+
+9
+00:00:28,240 --> 00:00:30,520
+And it looks a bit weird and confusing.
+
+10
+00:00:31,040 --> 00:00:33,800
+So this is really where you have to start playing around.
+
+11
+00:00:33,800 --> 00:00:37,880
+And this did take a lot of trial and errors to get it exact.
+
+12
+00:00:37,880 --> 00:00:41,080
+But let's get into it and see what it is doing.
+
+13
+00:00:41,440 --> 00:00:47,000
+Our first line again is importing turtles so we can use all the turtle functions.
+
+14
+00:00:47,040 --> 00:00:53,160
+Just as an aside, you know we're using these functions like drawing and changing colors and all those
+
+15
+00:00:53,200 --> 00:00:54,040
+sort of things.
+
+16
+00:00:54,080 --> 00:00:57,320
+As we said earlier, you don't have to know all of these things.
+
+17
+00:00:57,320 --> 00:01:02,570
+Simply go and look at the documentation So you can say, I want to look at the turtle function, and
+
+18
+00:01:02,570 --> 00:01:05,730
+it'll show you all of the things that you can do with that turtle function.
+
+19
+00:01:05,770 --> 00:01:06,690
+It's not difficult.
+
+20
+00:01:06,690 --> 00:01:08,370
+So you want to know, oh, can I draw?
+
+21
+00:01:08,410 --> 00:01:10,170
+How do I lift the pen or how do I put a pen down?
+
+22
+00:01:10,210 --> 00:01:11,770
+Or how do I change what the turtle is?
+
+23
+00:01:11,930 --> 00:01:13,530
+All of that is in the documentation.
+
+24
+00:01:13,530 --> 00:01:15,290
+So it's not something you actually have to remember.
+
+25
+00:01:15,290 --> 00:01:17,410
+You will start to remember it the more you use it.
+
+26
+00:01:17,410 --> 00:01:22,210
+But all of that is available in the documentation for Python.
+
+27
+00:01:22,610 --> 00:01:27,450
+So our function here is just called draw field and it's pretty self-explanatory.
+
+28
+00:01:27,450 --> 00:01:29,410
+We want it to draw the field.
+
+29
+00:01:29,410 --> 00:01:33,690
+So basically just the lines on the field and make it look more interesting.
+
+30
+00:01:34,170 --> 00:01:40,850
+We've created this variable here called field which is just a turtle like we had before with the goalie
+
+31
+00:01:40,850 --> 00:01:41,770
+and the ball.
+
+32
+00:01:42,050 --> 00:01:44,970
+We have made the shape a circle, which that can be anything.
+
+33
+00:01:45,010 --> 00:01:46,810
+It's just something that's drawing.
+
+34
+00:01:47,250 --> 00:01:49,770
+And we've we've hidden the turtle.
+
+35
+00:01:49,770 --> 00:01:53,890
+Just so you don't actually see the turtle going around, uh, the whole time.
+
+36
+00:01:55,010 --> 00:01:56,170
+But obviously you don't.
+
+37
+00:01:56,210 --> 00:01:57,930
+This isn't really necessary.
+
+38
+00:01:57,930 --> 00:01:59,450
+That's just kind of for fun.
+
+39
+00:01:59,490 --> 00:01:59,610
+Yeah.
+
+40
+00:01:59,610 --> 00:02:01,530
+If you like seeing turtles draw, then that's fine.
+
+41
+00:02:01,530 --> 00:02:02,170
+But just.
+
+42
+00:02:02,170 --> 00:02:03,570
+We didn't want the turtle to be seen.
+
+43
+00:02:03,570 --> 00:02:05,810
+We wanted the drawing to look like it happened by magic.
+
+44
+00:02:06,290 --> 00:02:07,650
+Yeah, but we still.
+
+45
+00:02:07,650 --> 00:02:14,610
+You will see the field being drawn out because, well, that's just how Turtle Graphics works.
+
+46
+00:02:14,930 --> 00:02:20,250
+And then we do a whole lot of and a whole lot of other stuff underneath that.
+
+47
+00:02:21,090 --> 00:02:25,490
+Uh, I'm not going to go through every single line because I've pretty much explained what all these
+
+48
+00:02:25,490 --> 00:02:27,730
+functions do in the previous lecture.
+
+49
+00:02:27,810 --> 00:02:28,770
+A lot of them are pretty obvious.
+
+50
+00:02:28,770 --> 00:02:30,290
+It's obvious what pen size does.
+
+51
+00:02:30,330 --> 00:02:32,650
+It's obvious what go to does pen down.
+
+52
+00:02:32,650 --> 00:02:34,090
+So we've covered all of these.
+
+53
+00:02:34,130 --> 00:02:35,010
+And just by reading it.
+
+54
+00:02:35,010 --> 00:02:36,250
+That's the nice thing about the code.
+
+55
+00:02:36,290 --> 00:02:40,730
+You can literally now read it with your experience and what you've been through and understand what
+
+56
+00:02:40,730 --> 00:02:41,370
+it's doing.
+
+57
+00:02:41,970 --> 00:02:42,370
+Yeah.
+
+58
+00:02:42,370 --> 00:02:46,570
+So this is just moving the turtle to different parts on the screen.
+
+59
+00:02:46,570 --> 00:02:51,050
+It has to be lifted up at certain times because we don't want lines all the way around.
+
+60
+00:02:51,090 --> 00:02:55,610
+And yeah, this is fiddling around and trying to make it the perfect field.
+
+61
+00:02:55,940 --> 00:02:58,260
+But yeah, it just takes practice.
+
+62
+00:02:58,260 --> 00:03:00,500
+But the main thing you just need to know what.
+
+63
+00:03:00,540 --> 00:03:03,940
+All these different functions do, which you should already know.
+
+64
+00:03:04,220 --> 00:03:09,100
+The one I do want to point out though is this for loop over here.
+
+65
+00:03:09,620 --> 00:03:17,180
+Now what this for loop is doing is it's actually telling the our turtle to draw a semicircle.
+
+66
+00:03:17,460 --> 00:03:21,140
+Now how it's doing that is it's saying for x in range 180.
+
+67
+00:03:21,140 --> 00:03:26,900
+And the reason it's 180 is because if you think about it, a semicircle would be 180 degrees because
+
+68
+00:03:26,940 --> 00:03:29,100
+a full circle is 360.
+
+69
+00:03:29,540 --> 00:03:35,100
+So for each x in 180 we want it to move forward once.
+
+70
+00:03:35,420 --> 00:03:44,060
+So basically all that's doing is each time this for loop runs it's moving the field, the field turtle
+
+71
+00:03:44,180 --> 00:03:52,020
+forward once and turning it to the right by an angle of one or by a degree of one.
+
+72
+00:03:52,020 --> 00:03:57,910
+So very slowly you'll see it is going to draw a semi-circle because each time the loop's going, it's
+
+73
+00:03:57,910 --> 00:03:58,830
+moving by one.
+
+74
+00:03:59,230 --> 00:04:00,870
+Turning the turtle by one.
+
+75
+00:04:00,870 --> 00:04:01,470
+Moving by one.
+
+76
+00:04:01,470 --> 00:04:05,230
+Turning the turtle by one until it's done 180 times and made a semi-circle.
+
+77
+00:04:05,270 --> 00:04:07,430
+And if you can't really imagine that, you could turn the turtle.
+
+78
+00:04:07,430 --> 00:04:11,270
+So you could actually see the turtle in the drawing as we've turned it off, and you'll actually see
+
+79
+00:04:11,270 --> 00:04:15,230
+the turtle turning as it slowly draws that 180 degree semicircle.
+
+80
+00:04:15,470 --> 00:04:20,790
+Yeah, and that will slow everything down quite a bit, but it will definitely help you see what's happening.
+
+81
+00:04:20,950 --> 00:04:25,030
+And we have two semicircles so we have another one here.
+
+82
+00:04:25,390 --> 00:04:27,110
+And the reason you'll see that one's right.
+
+83
+00:04:27,110 --> 00:04:27,710
+That one's left.
+
+84
+00:04:27,710 --> 00:04:28,910
+It's still doing the same thing.
+
+85
+00:04:28,910 --> 00:04:31,470
+It's just drawing it from a different side.
+
+86
+00:04:31,790 --> 00:04:38,750
+But yeah and changing this is just going to make your circle bigger or smaller or your semicircle bigger
+
+87
+00:04:38,750 --> 00:04:39,150
+or smaller.
+
+88
+00:04:39,150 --> 00:04:39,710
+So yeah.
+
+89
+00:04:39,750 --> 00:04:40,630
+Change that number.
+
+90
+00:04:40,670 --> 00:04:41,350
+Change that number.
+
+91
+00:04:41,390 --> 00:04:42,430
+See what happens.
+
+92
+00:04:42,990 --> 00:04:44,430
+Um, yeah.
+
+93
+00:04:44,470 --> 00:04:45,550
+Just play around.
+
+94
+00:04:45,590 --> 00:04:51,390
+I think, you know, all these other functions, maybe just this one you haven't seen before.
+
+95
+00:04:51,510 --> 00:04:57,270
+What that does is it just makes a stamp of the turtle wherever it is on our screen.
+
+96
+00:04:57,350 --> 00:05:03,150
+So literally it just makes a stamp and the turtle carries on doing what it was meant to.
+
+97
+00:05:03,310 --> 00:05:07,950
+Then right at the bottom of all of this, I am calling our function draw field.
+
+98
+00:05:07,950 --> 00:05:12,830
+So by calling it here, it is going to be doing all of this over here.
+
+99
+00:05:14,070 --> 00:05:17,870
+Now we want to add our field to our game.
+
+100
+00:05:17,870 --> 00:05:25,790
+So just like we have these other modules called Turtle and Random field now becomes its own module.
+
+101
+00:05:25,910 --> 00:05:33,670
+So every file program we have that and this and the others we've created are all their own modules.
+
+102
+00:05:33,670 --> 00:05:40,310
+So if I now want the field module to be seen in the module I have to import it.
+
+103
+00:05:40,630 --> 00:05:44,910
+Now one thing you need to know is when you save your files.
+
+104
+00:05:45,190 --> 00:05:53,240
+If you haven't saved the soccer module and the field module in the same folder, It's not going to like
+
+105
+00:05:53,280 --> 00:05:57,160
+it, and it's going to be confused, and it actually won't be able to find where this field module is.
+
+106
+00:05:57,600 --> 00:06:01,640
+If you don't want them in the same folder, you have to put the whole path in and it gets a bit confusing.
+
+107
+00:06:01,640 --> 00:06:06,800
+But for now, just know save these two modules in the same file.
+
+108
+00:06:07,720 --> 00:06:09,800
+And that's all that's changed on this side.
+
+109
+00:06:09,800 --> 00:06:12,480
+So let's now run it.
+
+110
+00:06:14,680 --> 00:06:17,200
+Here you see it's creating one of our semi-circles.
+
+111
+00:06:17,200 --> 00:06:23,720
+So you can kind of tell that it's slowly turning and moving by 1 or 2 each time to create this little
+
+112
+00:06:23,760 --> 00:06:24,880
+semicircle here.
+
+113
+00:06:25,360 --> 00:06:28,280
+And we have our ball and we have our turtle.
+
+114
+00:06:28,520 --> 00:06:35,360
+So if we click off and now it just looks a little bit more exciting and we can keep on doing it like
+
+115
+00:06:35,360 --> 00:06:36,040
+we did before.
+
+116
+00:06:36,200 --> 00:06:43,280
+You'll also see now that the reason I made our angle a maximum angles 27 before and did all those sort
+
+117
+00:06:43,280 --> 00:06:50,240
+of random numbers is because the size of this only allows for the angle to be a maximum of 27.
+
+118
+00:06:50,240 --> 00:06:54,000
+And that means that this ball will never go out of this goalie box.
+
+119
+00:06:54,000 --> 00:06:56,240
+It won't end up over here or over here.
+
+120
+00:06:56,400 --> 00:06:56,680
+Yeah.
+
+121
+00:06:56,680 --> 00:06:57,840
+So that's our game.
+
+122
+00:06:57,880 --> 00:07:02,200
+Go ahead, type out the code, copy it, ask us questions if you're confused.
+
+123
+00:07:02,320 --> 00:07:05,800
+But really, everything that's here you should understand.
+
+124
+00:07:05,840 --> 00:07:09,120
+They all very self-explanatory functions.
+
+125
+00:07:09,120 --> 00:07:11,040
+The names all seem to make sense.
+
+126
+00:07:11,560 --> 00:07:15,480
+And I think you should be fine to.
+
+127
+00:07:15,520 --> 00:07:20,160
+Now go and finish up your game you have been creating.
+
+128
+00:07:20,200 --> 00:07:25,000
+You also notice that in the game we've put in lots of comments just to help you as well to try and explain
+
+129
+00:07:25,000 --> 00:07:26,240
+every line of code.
+
+130
+00:07:26,240 --> 00:07:29,120
+So again, as Sarah said, it's all in the practice.
+
+131
+00:07:29,120 --> 00:07:29,960
+It's all in the playing.
+
+132
+00:07:29,960 --> 00:07:34,480
+So feel free to take the code, edit little things, change it, see what it does because that's how
+
+133
+00:07:34,480 --> 00:07:35,480
+you're going to learn.
+
+134
+00:07:35,480 --> 00:07:37,720
+So you've achieved this amazing goal.
+
+135
+00:07:37,720 --> 00:07:40,760
+You've actually been able to create your own game.
+
+136
+00:07:40,760 --> 00:07:41,960
+So give it a try.
+
+137
+00:07:42,080 --> 00:07:46,560
+Do what we've done there, make the game, tweak it and show us what you can do, that you can be an
+
+138
+00:07:46,560 --> 00:07:48,520
+amazing programmer in Python.
+
