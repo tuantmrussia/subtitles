@@ -1,0 +1,480 @@
+1
+00:00:00,000 --> 00:00:02,000
+Kiến trúc Docker.
+
+2
+00:00:02,000 --> 00:00:05,380
+Kiến trúc Docker là kiểu máy chủ.
+
+3
+00:00:05,380 --> 00:00:09,080
+Chỉ có hai thứ là khách hàng Docker,
+
+4
+00:00:09,080 --> 00:00:13,560
+Cũng được biết đến với tên Docker CLI và máy chủ Docker.
+
+5
+00:00:13,560 --> 00:00:16,640
+Máy phục vụ Docker này cũng được biết bằng tên khác
+
+6
+00:00:16,640 --> 00:00:19,720
+như Docker devil hay Docker.
+
+7
+00:00:19,720 --> 00:00:22,280
+Tiếp theo,
+
+8
+00:00:22,280 --> 00:00:26,120
+Chúng ta thấy toàn bộ kiến trúc của Docker.
+
+9
+00:00:26,120 --> 00:00:31,120
+Đây là khách hàng và đây là máy chủ Docker hay Docker.
+
+10
+00:00:31,120 --> 00:00:36,440
+Vì vậy, trình khách Docker sẽ gửi những lệnh này
+
+11
+00:00:36,440 --> 00:00:41,440
+Yêu quái Docker sẽ bị hành quyết.
+
+12
+00:00:41,440 --> 00:00:42,320
+những mệnh lệnh này.
+
+13
+00:00:42,320 --> 00:00:46,400
+Chúng tôi chạy lệnh này từ nhắc lệnh của cửa sổ
+
+14
+00:00:46,400 --> 00:00:49,440
+hoặc thiết bị cuối Linux.
+
+15
+00:00:49,440 --> 00:00:51,440
+Một khi những lệnh này được thực hiện,
+
+16
+00:00:51,440 --> 00:00:56,600
+Khách hàng sẽ mang những mệnh lệnh này đến Docker devil
+
+17
+00:00:56,600 --> 00:01:00,560
+Và con quỷ Docker sẽ thực hiện những mệnh lệnh này.
+
+18
+00:01:00,560 --> 00:01:04,280
+Những lệnh này có thể tạo ra hình ảnh, hộp chứa,
+
+19
+00:01:04,280 --> 00:01:07,320
+và làm những việc khác như Docker,
+
+20
+00:01:07,320 --> 00:01:10,800
+Rút lệnh, Docker, xây dựng, chạy Docker,
+
+21
+00:01:10,800 --> 00:01:12,880
+là những loại lệnh khác nhau.
+
+22
+00:01:12,880 --> 00:01:16,080
+Chúng ta sẽ hiểu rõ hơn về mệnh lệnh,
+
+23
+00:01:16,080 --> 00:01:19,800
+các thùng chứa hình ảnh sau này.
+
+24
+00:01:19,800 --> 00:01:22,520
+Bây giờ chúng ta sẽ hiểu hình ảnh Docker.
+
+25
+00:01:22,520 --> 00:01:26,000
+Một ảnh Docker là mẫu cho các hộp đang chạy.
+
+26
+00:01:26,000 --> 00:01:31,000
+Ví dụ, Microsoft.net được cung cấp như một hình ảnh Docker.
+
+27
+00:01:31,000 --> 00:01:36,200
+Tương tự như vậy, máy phục vụ « Microsoft » cũng được cung cấp
+
+28
+00:01:36,200 --> 00:01:38,400
+như một hình ảnh Docker.
+
+29
+00:01:38,400 --> 00:01:42,480
+Hình ảnh Docker của chúng ta có thể là động cơ X, máy chủ web,
+
+30
+00:01:42,480 --> 00:01:47,120
+Sau khi tốt nghiệp, ngày đỏ, PHP và Python,
+
+31
+00:01:47,120 --> 00:01:51,280
+vân vân, vân vân. Chúng ta có thể tạo ảnh Docker
+
+32
+00:01:51,280 --> 00:01:55,520
+cho ứng dụng của chúng tôi trên.net, phiên bản 10.
+
+33
+00:01:55,520 --> 00:02:00,520
+Dựa trên trẻ sơ sinh của hệ điều hành cùng với động cơ X, máy chủ mạng.
+
+34
+00:02:00,520 --> 00:02:05,520
+Chúng tôi có thể tạo ra một hình ảnh khác của ứng dụng của chúng tôi trên phiên bản 9.0,
+
+35
+00:02:05,520 --> 00:02:13,960
+Nó được dựa trên hệ điều hành Windows cùng với động cơ X, máy chủ web.
+
+36
+00:02:13,960 --> 00:02:16,280
+Đây có thể là hai hình ảnh.
+
+37
+00:02:16,280 --> 00:02:21,040
+Tương tự như vậy, bạn có thể là nhiều hình ảnh của ứng dụng của chúng tôi.
+
+38
+00:02:21,040 --> 00:02:25,280
+Vậy chúng ta hãy hiểu hình ảnh được xây dựng như thế nào.
+
+39
+00:02:25,280 --> 00:02:29,800
+Vì vậy, hình ảnh được xây dựng trên các lớp.
+
+40
+00:02:29,800 --> 00:02:33,960
+Và có nhiều lớp trong hình ảnh.
+
+41
+00:02:33,960 --> 00:02:37,480
+Ví dụ, có một hình ảnh hệ điều hành cơ bản,
+
+42
+00:02:37,480 --> 00:02:42,480
+Nó có thể là Linux hoặc Windows hoặc MacOS.
+
+43
+00:02:43,120 --> 00:02:48,120
+Và sau đó có thể có một lớp thời gian chạy khác,
+
+44
+00:02:48,120 --> 00:02:53,440
+có thể là.net runtime, phiên bản 10.
+
+45
+00:02:53,440 --> 00:02:57,960
+hoặc runtime.net 9, etcetera.
+
+46
+00:02:57,960 --> 00:03:02,680
+Có thể có phụ thuộc, mà ứng dụng của chúng tôi cần.
+
+47
+00:03:02,680 --> 00:03:07,680
+Đây có thể là gói JSON.net hoặc khuôn khổ thực thể,
+
+48
+00:03:07,680 --> 00:03:12,680
+Gói mã, vân vân, vân vân.
+
+49
+00:03:12,680 --> 00:03:16,840
+Và mã ứng dụng là ứng dụng mạng của chúng tôi,
+
+50
+00:03:16,840 --> 00:03:20,880
+mà chúng tôi đã xây dựng và cấu hình tập tin
+
+51
+00:03:20,880 --> 00:03:25,480
+có thể là lớp ảnh khác
+
+52
+00:03:25,480 --> 00:03:28,800
+cho các tập tin cấu hình của ứng dụng của chúng tôi.
+
+53
+00:03:28,800 --> 00:03:32,240
+Hình ảnh rất nhẹ và rất nhanh
+
+54
+00:03:32,240 --> 00:03:35,800
+bởi vì chúng được xây trên các lớp.
+
+55
+00:03:35,800 --> 00:03:38,400
+Khi chúng ta thay đổi chúng,
+
+56
+00:03:38,400 --> 00:03:42,520
+thì chỉ những lớp đã thay đổi mới được xây dựng lại,
+
+57
+00:03:42,520 --> 00:03:44,400
+Nghỉ ngơi vẫn như cũ.
+
+58
+00:03:44,400 --> 00:03:47,840
+Điều này làm cho hình ảnh nhẹ và rất nhanh.
+
+59
+00:03:47,840 --> 00:03:49,360
+Để xây dựng một hình ảnh,
+
+60
+00:03:49,360 --> 00:03:51,960
+Chúng ta cần có hồ sơ Docker,
+
+61
+00:03:51,960 --> 00:03:53,880
+Đó là một tập tin văn bản,
+
+62
+00:03:53,880 --> 00:03:58,520
+cung cấp tất cả các hướng dẫn cần thiết cho hình ảnh xây dựng.
+
+63
+00:03:58,520 --> 00:04:03,520
+Hãy xem tập tin Docker của một ứng dụng.net phiên bản 10.
+
+64
+00:04:03,520 --> 00:04:06,920
+Đây là tập tin Docker.
+
+65
+00:04:06,920 --> 00:04:11,200
+Mỗi chỉ dẫn ở đây sẽ tạo ra một lớp.
+
+66
+00:04:11,200 --> 00:04:16,200
+Ví dụ, chỉ thị này từ mcccccrosoft.com,
+
+67
+00:04:16,200 --> 00:04:19,200
+etcetera sẽ tạo ra một lớp.
+
+68
+00:04:19,200 --> 00:04:21,680
+Một hướng dẫn khác là điều này.
+
+69
+00:04:21,680 --> 00:04:24,200
+Điều này cũng sẽ tạo ra một lớp.
+
+70
+00:04:24,200 --> 00:04:27,200
+Và thứ ba này cũng sẽ tạo ra một lớp.
+
+71
+00:04:27,200 --> 00:04:31,200
+Tương tự, lớp thứ tư cũng sẽ tạo ra lớp.
+
+72
+00:04:31,200 --> 00:04:34,760
+Tập tin Docker cũng sẽ tham chiếu đến tập tin bên ngoài
+
+73
+00:04:34,760 --> 00:04:37,680
+và thư viện cần thiết để ứng dụng chạy.
+
+74
+00:04:37,680 --> 00:04:42,680
+Ví dụ, nó ám chỉ phiên bản SDK 10 của.net
+
+75
+00:04:42,680 --> 00:04:47,240
+và AP.net phiên bản 10.
+
+76
+00:04:47,240 --> 00:04:52,240
+Nó cũng có thể đề cập đến các phụ thuộc khác như Newton của JSON
+
+77
+00:04:52,240 --> 00:04:58,640
+hoặc khuôn khổ thực thể hoặc cần thiết để ứng dụng chạy,
+
+78
+00:04:58,640 --> 00:05:01,600
+Tất cả sẽ được liệt kê vào tập tin Docker này.
+
+79
+00:05:01,600 --> 00:05:03,920
+Khi bức ảnh được xây dựng,
+
+80
+00:05:03,920 --> 00:05:06,560
+nó sẽ tải về các phụ thuộc
+
+81
+00:05:06,560 --> 00:05:10,600
+Để ứng dụng có thể chạy công-ten-nơ Docker.
+
+82
+00:05:10,600 --> 00:05:15,240
+Một container Docker là một đối tượng chạy các hình ảnh.
+
+83
+00:05:15,240 --> 00:05:17,320
+Ví dụ, đây là những hình ảnh
+
+84
+00:05:17,320 --> 00:05:21,440
+Và công-ten-nơ Docker sẽ cần thiết để chạy chúng.
+
+85
+00:05:21,440 --> 00:05:25,200
+Một container Docker có thể chạy ảnh.net
+
+86
+00:05:25,200 --> 00:05:29,520
+Một container Docker khác có thể chạy ảnh máy phục vụ hệ thống MS mặc định.
+
+87
+00:05:29,520 --> 00:05:33,880
+Một container Docker khác có thể chạy động cơ X ảnh,
+
+88
+00:05:33,880 --> 00:05:37,160
+Ảnh đỏ, vân vân, vân vân.
+
+89
+00:05:37,160 --> 00:05:40,960
+Chúng tôi có lệnh của Docker để tạo ra container,
+
+90
+00:05:40,960 --> 00:05:44,920
+vận hành các thùng chứa, xóa các thùng chứa, vân vân.
+
+91
+00:05:44,920 --> 00:05:47,200
+Bộ đăng ký Docker.
+
+92
+00:05:47,200 --> 00:05:50,360
+Đăng ký lưu trữ ảnh Docker trực tuyến
+
+93
+00:05:50,360 --> 00:05:53,240
+Để mọi người có thể tải về những ảnh Docker
+
+94
+00:05:53,240 --> 00:05:57,840
+Bộ đăng ký phần mềm của ARMD. ảnh lưới
+
+95
+00:05:57,840 --> 00:06:01,800
+và ảnh MS mặc định, hình ảnh X động cơ, vân vân,
+
+96
+00:06:01,800 --> 00:06:05,360
+Tất cả vẫn tiếp tục thi đỗ.
+
+97
+00:06:05,360 --> 00:06:08,760
+Ví dụ về các khóa học là trung tâm Docker
+
+98
+00:06:08,760 --> 00:06:11,560
+và nhà kho container Azure.
+
+99
+00:06:11,560 --> 00:06:14,800
+Name
+
+100
+00:06:14,800 --> 00:06:21,560
+và nhấn vào kết quả tìm kiếm.
+
+101
+00:06:21,560 --> 00:06:26,080
+Ở đây chúng ta có thể tìm kiếm microsoft.
+
+102
+00:06:28,880 --> 00:06:33,880
+Đây là những hình ảnh Microsoft của các sản phẩm khác nhau.
+
+103
+00:06:33,880 --> 00:06:40,080
+Ở đây bạn sẽ tìm thấy ảnh của máy phục vụ MIME MS.
+
+104
+00:06:40,080 --> 00:06:44,960
+Và đây là những hình ảnh khác,
+
+105
+00:06:44,960 --> 00:06:49,960
+bao gồm cả hình ảnh màn chấm cần thiết cho ứng dụng mạng chấm cần thiết để xây dựng.
+
+106
+00:06:49,960 --> 00:06:56,640
+Vì vậy, bạn có thể tạo một tài khoản ở đây
+
+107
+00:06:56,640 --> 00:07:01,640
+Và bạn có thể lưu hình ảnh ứng dụng của bạn trên căn cứ Docker.
+
+108
+00:07:01,640 --> 00:07:05,800
+Ngoài ra,
+
+109
+00:07:05,800 --> 00:07:10,800
+Bạn cũng có thể tìm kiếm là đăng ký container của bạn.
+
+110
+00:07:10,800 --> 00:07:22,920
+Bạn có thể tạo tài khoản trên Azure để sử dụng các công-te-nơ này.
+
+111
+00:07:25,760 --> 00:07:28,840
+Chúng ta có thể hiểu toàn bộ quá trình từ hình ảnh này.
+
+112
+00:07:28,840 --> 00:07:33,840
+Chương trình tạo ảnh màn chấm cho ứng dụng của mình
+
+113
+00:07:33,840 --> 00:07:37,840
+và đẩy ảnh này tới danh sách ghi chép trung tâm Docker.
+
+114
+00:07:37,840 --> 00:07:41,360
+Chương trình B bây giờ muốn tải ảnh này về
+
+115
+00:07:41,360 --> 00:07:43,640
+từ danh sách ghi chép trung tâm Docker
+
+116
+00:07:43,640 --> 00:07:46,800
+và cô ấy có thể dễ dàng tải ảnh về
+
+117
+00:07:46,800 --> 00:07:51,560
+Và hình ảnh đến máy tính xách tay địa phương
+
+118
+00:07:51,560 --> 00:07:55,000
+và cô ấy có thể tạo ra một container của ảnh này
+
+119
+00:07:55,000 --> 00:07:57,840
+và chạy ứng dụng mạng chấm
+
+120
+00:07:57,840 --> 00:08:01,000
+Được lập trình viên A sản xuất.
+
