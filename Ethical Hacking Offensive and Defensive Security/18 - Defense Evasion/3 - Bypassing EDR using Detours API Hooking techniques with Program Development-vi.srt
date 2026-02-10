@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:12,960
+Vì vậy, chúng ta hãy thảo luận về KPA móc các phương pháp chúng tôi có đó là một trong những khác
+
+2
+00:00:12,960 --> 00:00:20,840
+Chúng ta sẽ thấy đường vòng, KPA móc nối trong video này OK.
+
+3
+00:00:20,840 --> 00:00:28,600
+Vì vậy, đây là một trong những điều này là một trong những thực sự một ví dụ tốt và một phương pháp tốt để vượt qua
+
+4
+00:00:28,600 --> 00:00:36,760
+Tình huống và ngay cả EDRs và phần mềm antivir cũng sẽ được sử dụng này APA là để làm một số
+
+5
+00:00:36,760 --> 00:00:38,640
+nhiệm vụ trong cỗ máy.
+
+6
+00:00:38,640 --> 00:00:41,960
+Để tôi giải thích đường vòng đầu tiên nhé.
+
+7
+00:00:41,960 --> 00:00:49,400
+Vì vậy, đi vòng là một trong những kỹ thuật của chúng tôi được giới thiệu bởi Microsoft.
+
+8
+00:00:49,400 --> 00:00:58,480
+Vì vậy, điều này được thiết kế đặc biệt để ngăn chặn các chức năng gọi và chuyển hướng
+
+9
+00:00:58,480 --> 00:01:01,880
+nó để các chức năng tùy chỉnh ok.
+
+10
+00:01:01,880 --> 00:01:10,720
+Vì vậy, về cơ bản chúng ta hãy nói một ví dụ cho tôi đưa ra một ví dụ nhỏ ở đây có một nguồn
+
+11
+00:01:10,720 --> 00:01:17,360
+chức năng và cho chúng tôi suy nghĩ về bạn biết nghĩ về ứng dụng của bạn ứng dụng của bạn
+
+12
+00:01:17,360 --> 00:01:24,400
+sẽ lưu tập tin bằng cách gọi tập tin lưu của hàm APA.
+
+13
+00:01:24,400 --> 00:01:31,400
+Vì vậy, một khi các nguồn chức năng là điều này chức năng nguồn cần
+
+14
+00:01:31,400 --> 00:01:32,600
+để lưu một số file OK.
+
+15
+00:01:32,600 --> 00:01:40,200
+Vì vậy, chức năng nguồn được gọi là một tập tin lưu của chức năng và nó đã được thực hiện bởi
+
+16
+00:01:40,200 --> 00:01:41,400
+Mục tiêu hoạt động ổn.
+
+17
+00:01:41,400 --> 00:01:49,840
+Vì vậy, một khi tập tin lưu đã được một khi tập tin đã được lưu này đã được chuyển hướng sang
+
+18
+00:01:49,840 --> 00:01:54,760
+Chức năng nguồn một lần nữa OK Hãy để chúng tôi lấy một ví dụ bạn đang tải một cái gì đó từ Google
+
+19
+00:01:54,760 --> 00:01:57,360
+Chrome hoặc một số ứng dụng trình duyệt.
+
+20
+00:01:57,360 --> 00:02:02,280
+Vì vậy, ứng dụng trình duyệt của bạn được gọi là lưu tập tin đó là chức năng nguồn và mục tiêu
+
+21
+00:02:02,280 --> 00:02:10,280
+hàm sẽ được lưu một tập tin nó đã được thực hiện và lưu tập tin
+
+22
+00:02:10,280 --> 00:02:12,080
+trong những ngày nóng bức.
+
+23
+00:02:12,080 --> 00:02:17,800
+Vì vậy, một khi tập tin được lưu thành công nó đã chuyển hướng một lần nữa đến chức năng nguồn
+
+24
+00:02:17,800 --> 00:02:24,240
+OK một lần nữa để chức năng nguồn cần phải là những gì cần phải thực hiện khác
+
+25
+00:02:24,240 --> 00:02:25,240
+Được rồi.
+
+26
+00:02:25,240 --> 00:02:28,240
+Vì vậy, đây là lời thỉnh cầu mà không cần ngăn chặn.
+
+27
+00:02:28,240 --> 00:02:35,400
+Vì vậy, điều này là một cái gì đó giống như một tập tin chức năng bên phải chúng tôi đang gọi một tập tin lưu hàm
+
+28
+00:02:35,400 --> 00:02:40,560
+và chúng tôi đang làm một cái gì đó và chúng tôi đang trở lại các chức năng nguồn OK.
+
+29
+00:02:40,560 --> 00:02:48,900
+Vì vậy, chúng ta hãy xem xét các chức năng vòng quanh, vì vậy chúng ta hãy vẽ trong hình ảnh vì vậy chúng ta hãy xem xét
+
+30
+00:02:48,900 --> 00:02:49,900
+Một đường vòng.
+
+31
+00:02:49,900 --> 00:02:55,160
+Vì vậy, có một chức năng nguồn và chúng tôi có một mục tiêu ở đây.
+
+32
+00:02:55,160 --> 00:03:02,120
+Vì vậy, những gì chúng tôi đang làm như vậy một khi chương trình một khi các chức năng nguồn được gọi là
+
+33
+00:03:02,120 --> 00:03:03,120
+Mục tiêu hoạt động.
+
+34
+00:03:03,120 --> 00:03:10,520
+Vì vậy, chúng tôi đang nói chúng tôi đang cung cấp một số hướng dẫn đặc biệt, hướng dẫn đặc biệt cho mục tiêu
+
+35
+00:03:10,520 --> 00:03:19,760
+chức năng như không thực hiện các chức năng mục tiêu bây giờ vì vậy di chuyển đến các đường vòng ok, chỉ cần nhảy
+
+36
+00:03:19,760 --> 00:03:28,880
+để chức năng vòng quanh và thực hiện các mã tự chọn, thực hiện các mã các đường vòng và sau đó
+
+37
+00:03:28,880 --> 00:03:30,800
+được rồi.
+
+38
+00:03:30,800 --> 00:03:33,800
+Vì vậy, hãy để tôi cho một ví dụ.
+
+39
+00:03:33,800 --> 00:03:42,920
+Vì vậy, ở đây chúng tôi thiết kế một mã để bạn có thể thấy một chương trình C++ đơn giản ở đây và tôi chỉ
+
+40
+00:03:42,920 --> 00:03:48,160
+đã thực hiện một chức năng vòng quanh vì vậy ở đây bạn có thể thấy giao dịch đường vòng bắt đầu.
+
+41
+00:03:48,160 --> 00:03:50,600
+Vậy chúng ta làm gì ở đây?
+
+42
+00:03:50,600 --> 00:03:57,360
+Vì vậy, một khi chương trình thực hiện chức năng chính vì vậy điều tiếp theo sẽ được gắn kết
+
+43
+00:03:57,360 --> 00:03:58,360
+Đi đường này được rồi.
+
+44
+00:03:58,360 --> 00:04:05,000
+Vì vậy, một khi chức năng nguồn được gọi là chức năng này đã được chuyển hướng đến chức năng chính
+
+45
+00:04:05,000 --> 00:04:08,560
+sạc một khi nó được chuyển hướng tới chức năng vòng quanh ok.
+
+46
+00:04:08,560 --> 00:04:16,440
+Vì vậy, bây giờ chúng tôi đang nói với chương trình của chúng tôi Vì vậy, những gì tự chọn mã dưới đường vòng
+
+47
+00:04:16,440 --> 00:04:17,440
+chức năng.
+
+48
+00:04:17,440 --> 00:04:26,880
+Vì vậy, những gì đi vòng đã nói như vậy thực hiện mà, thực hiện mà và chuyển hướng và hướng về
+
+49
+00:04:26,880 --> 00:04:29,120
+chức năng lò xo ổn.
+
+50
+00:04:29,120 --> 00:04:36,600
+Vì vậy, chúng tôi đang tạm thời bỏ qua các chức năng mục tiêu để thực hiện thay vì các chức năng mục tiêu
+
+51
+00:04:36,600 --> 00:04:39,920
+Chương trình của chúng tôi thực hiện việc vòng quanh chức năng.
+
+52
+00:04:39,920 --> 00:04:48,980
+Vì vậy, một khi các chức năng vòng quanh thực hiện để mục tiêu bộ nhớ của chúng tôi OK chức năng mục tiêu của chúng tôi
+
+53
+00:04:48,980 --> 00:04:53,520
+Địa chỉ bộ nhớ sẽ được lưu dưới chức năng lò xo và một khi các chức năng vòng quanh
+
+54
+00:04:53,520 --> 00:05:00,800
+Thực hiện nó được chuyển hướng đến các chức năng lò xo và chức năng lò xo có bộ nhớ của chúng tôi
+
+55
+00:05:00,800 --> 00:05:06,800
+địa chỉ của một chức năng mục tiêu và nó chuyển hướng đến tổng chức năng và thực hiện đó OK.
+
+56
+00:05:06,800 --> 00:05:15,680
+Vì vậy, về cơ bản trong mã của chúng tôi những gì chúng tôi đang làm vì vậy chúng tôi chỉ cần sử dụng giao dịch đường vòng
+
+57
+00:05:15,680 --> 00:05:21,640
+bắt đầu tắt chức năng vòng quanh và chúng tôi đã gắn kết các chức năng thực tế thông điệp và thông điệp của tôi
+
+58
+00:05:21,640 --> 00:05:23,860
+hộp ok.
+
+59
+00:05:23,860 --> 00:05:35,860
+Vì vậy, điều này sẽ được chuyển hướng về chức năng móc của tôi hộp thông điệp W của và nó sẽ thực hiện
+
+60
+00:05:35,860 --> 00:05:37,720
+cái móc nối tùy chỉnh này để chức năng ok.
+
+61
+00:05:37,720 --> 00:05:47,040
+Chúng tôi đã cung cấp cho các đường vòng đính kèm của thông điệp của tôi hộp chức năng OK và chúng tôi được lưu lại thực tế
+
+62
+00:05:47,040 --> 00:05:56,360
+Thông điệp trong chức năng lò xo và chúng tôi thực hiện các chức năng móc liên lạc của các
+
+63
+00:05:56,360 --> 00:06:05,160
+Chức năng móc và do đó, một khi chức năng móc tự chọn có được thực hiện nó chuyển hướng về gốc
+
+64
+00:06:05,160 --> 00:06:06,160
+chức năng ok.
+
+65
+00:06:06,160 --> 00:06:08,800
+Để tôi giải thích đoạn mã này một cách ngắn gọn.
+
+66
+00:06:08,800 --> 00:06:16,160
+Vì vậy, hãy để tôi bắt đầu từ đầu của các mã như thế nào đã được trong thiết kế Hãy để cho
+
+67
+00:06:16,160 --> 00:06:18,960
+Tôi sẽ kể cho bạn một số yếu tố thú vị.
+
+68
+00:06:18,960 --> 00:06:25,200
+Vì vậy, bây giờ chúng tôi đã có dòng đầu tiên đây là thư viện điều vì vậy hãy để chúng tôi giữ cho OK.
+
+69
+00:06:25,200 --> 00:06:31,800
+Chúng tôi đang tuyên bố một con trỏ cho một hộp thư thực sự W ok đây là thông điệp thực sự
+
+70
+00:06:31,800 --> 00:06:35,960
+đây là điều bình thường.
+
+71
+00:06:35,960 --> 00:06:45,360
+Đây là cái cần phải in khi chúng ta thực hiện lập trình của chúng ta OK.
+
+72
+00:06:45,360 --> 00:06:52,480
+Nhưng bạn có thể hiểu nó sẽ làm gì khi một người nhìn thấy thực hiện chương trình ok.
+
+73
+00:06:52,480 --> 00:07:00,360
+Hãy để chúng tôi đi đến chương trình vì vậy đây là thông điệp thực sự W chức năng con trỏ và chúng tôi chỉ cần
+
+74
+00:07:00,360 --> 00:07:10,120
+đã lưu địa chỉ bộ nhớ của hộp thư W vào hộp thư đích L ok.
+
+75
+00:07:10,120 --> 00:07:22,320
+Vì vậy, trong dòng này chúng tôi chỉ cần chúng tôi đang chỉ cần lấy một bản sao chép của hộp thông điệp W bộ nhớ
+
+76
+00:07:22,320 --> 00:07:30,880
+địa chỉ và chúng tôi sẽ gửi nó vào hộp thư thật để dùng nó sau này ok.
+
+77
+00:07:30,880 --> 00:07:39,240
+Vì vậy, dòng này được gọi là một chức năng lò xo tôi đã nói như vậy này lò xoline chức năng
+
+78
+00:07:39,240 --> 00:07:42,440
+có địa chỉ bộ nhớ mục tiêu.
+
+79
+00:07:42,440 --> 00:07:49,280
+Vì vậy, một khi chức năng tự chọn một khi chức năng vòng quanh tự chọn đã được thực hiện như vậy
+
+80
+00:07:49,280 --> 00:07:53,920
+sau khi lên tiếp theo sẽ được nó sẽ được di chuyển về phía chức năng lò xo vì vậy lò xo
+
+81
+00:07:53,920 --> 00:07:59,120
+hàm chứa địa chỉ bộ nhớ của chức năng mục tiêu vì vậy nó sẽ được thực hiện
+
+82
+00:07:59,120 --> 00:08:00,920
+Cái lõi bên phải.
+
+83
+00:08:00,920 --> 00:08:07,560
+Vì vậy, chúng ta hãy di chuyển đến chương trình để dòng tiếp theo và là số ít của các đường vòng tự chọn
+
+84
+00:08:07,560 --> 00:08:17,720
+hàm vì vậy ở đây bạn có thể tìm thấy chức năng vòng quanh trong hộp thông điệp W của hoặc nó có thể có
+
+85
+00:08:17,720 --> 00:08:32,280
+trong hộp thông điệp của tôi W chức năng
+
+86
+00:08:32,280 --> 00:08:41,160
+Vì vậy, tôi đã viết một số tin nhắn như những người có thể thông điệp W gọi là gốc
+
+87
+00:08:41,160 --> 00:08:46,800
+văn bản thông điệp này đã được thu thập bởi dữ liệu vì vậy chúng tôi thực hiện chương trình và chúng tôi có thể hiểu
+
+88
+00:08:46,800 --> 00:08:48,720
+Chuyện gì sẽ xảy ra ở đây?
+
+89
+00:08:48,720 --> 00:08:54,880
+Vì vậy, đây là khởi đầu của việc đi vòng quanh vì vậy chúng tôi đang chỉ lập trình đây là giống như tôi chỉ
+
+90
+00:08:54,880 --> 00:09:03,160
+nói rằng một chức năng đặc biệt chúng tôi đang cung cấp cho chương trình của chúng tôi quyền chúng tôi đang chuyển hướng của chúng tôi
+
+91
+00:09:03,160 --> 00:09:12,560
+Chức năng nguồn để chức năng đường vòng phải để nói rằng chúng tôi đã gọi bên trong đường vòng
+
+92
+00:09:12,560 --> 00:09:19,640
+Chức năng trong nội bộ chính của chúng tôi chỉ cần chuyển hướng đến các chức năng vòng quanh vì vậy đây là
+
+93
+00:09:19,640 --> 00:09:31,880
+Đây là thông điệp chúng ta cần in
+
+94
+00:09:31,880 --> 00:09:38,600
+Từ và thông điệp ok chúng ta cần in nó như vậy nói chung nhưng hãy để chúng tôi xem làm thế nào chương trình của chúng tôi
+
+95
+00:09:38,600 --> 00:09:53,420
+Sẽ thực hiện điều này một OK. Hãy xem tôi có một chương trình và ở đây cho tôi thực hiện
+
+96
+00:09:53,420 --> 00:10:00,920
+Các bạn có thể thấy chương trình của tôi được thực hiện như thế nào. Vì vậy, một khi tôi đã chọn
+
+97
+00:10:00,920 --> 00:10:05,600
+trên ứng dụng vì vậy ở đây bạn có thể thấy ví dụ đường vòng thông điệp đã bị chặn bởi
+
+98
+00:10:05,600 --> 00:10:15,400
+các đường vòng để vụ này được xử tử. Vậy, ai có thể nhắn tin cho chúng ta?
+
+99
+00:10:15,400 --> 00:10:26,800
+Người ok ngay tại đây bạn có thể tìm thấy nó chỉ cần in một người có thể tin nhắn và như vậy sau đó
+
+100
+00:10:26,800 --> 00:10:34,600
+Điều này sẽ được thực hiện đầu tiên sau đó những gì nó sẽ làm nó sẽ thực hiện ví dụ đường vòng
+
+101
+00:10:34,600 --> 00:10:41,520
+cái bàn điều khiển nhỏ này. Vì vậy, một khi bàn điều khiển được thực hiện sau khi văn bản gốc sẽ
+
+102
+00:10:41,520 --> 00:10:50,240
+được in ra ok chúng tôi chỉ là chúng tôi chỉ cần thay đổi chức năng và chúng tôi đang thực hiện
+
+103
+00:10:50,240 --> 00:10:55,560
+mật mã tùy chỉnh của chúng tôi chúng tôi đang ẩn mã tùy chỉnh của chúng tôi và về cơ bản chúng tôi đang ẩn mã tùy chỉnh của chúng tôi
+
+104
+00:10:55,560 --> 00:11:04,640
+Và chúng tôi đang thực hiện tốt. Vì vậy, bây giờ điều này được gọi là câu kết ARI chúng tôi là móc thông điệp
+
+105
+00:11:04,640 --> 00:11:11,320
+hộp W API và thay vì thực hiện thông điệp hộp W chức năng chúng tôi đang thực hiện đường vòng
+
+106
+00:11:11,320 --> 00:11:19,040
+hộp thư của tôi W của chức năng và chúng tôi đang in kết xuất ok.
+
+107
+00:11:19,040 --> 00:11:28,680
+Vì vậy, điều này sẽ được gọi là chức năng vòng quanh. Vì vậy, bạn có một
+
+108
+00:11:28,680 --> 00:11:34,520
+câu hỏi. Vì vậy, tại sao Microsoft giới thiệu một chức năng vòng quanh OK. Chúng ta hãy xem một ví dụ tôi đã làm
+
+109
+00:11:34,520 --> 00:11:42,200
+nói rằng một số lập trình viên đã rời khỏi tổ chức và chương trình đó cần phải có
+
+110
+00:11:42,200 --> 00:11:50,920
+một số cập nhật như vậy ứng dụng chỉ có khả năng lưu tập tin
+
+111
+00:11:50,920 --> 00:11:57,680
+nhưng người phát triển còn lại giữa công ty. Vì vậy, bây giờ các mã đã không được nhìn thấy
+
+112
+00:11:57,680 --> 00:12:07,200
+Với mọi người. Vì vậy, ứng dụng. Vì vậy, bây giờ có một nhà phát triển khác nhau
+
+113
+00:12:07,200 --> 00:12:15,600
+Để làm việc và anh ta cần phải và cô ấy cần phải cập nhật một số loại tính năng như xóa
+
+114
+00:12:15,600 --> 00:12:23,880
+nội dung đang sửa đổi nội dung. Vì vậy, tại thời điểm đó bạn có thể sử dụng các chức năng vòng quanh
+
+115
+00:12:23,880 --> 00:12:31,120
+Và bạn có thể đặt các ADIs và bạn có thể thực hiện chương trình đúng. Vì vậy, đây là lý do tại sao
+
+116
+00:12:31,120 --> 00:12:40,600
+Microsoft giới thiệu với mục đích thay đổi tên, ok. Các khu vực và phần mềm kháng virus đơn giản là
+
+117
+00:12:40,600 --> 00:12:47,720
+Vì vậy, sử dụng này hoặc đi vòng quanh thiết lập một chức năng để loại bỏ các tập tin đe dọa từ máy okay.
+
+118
+00:12:47,720 --> 00:12:55,720
+Vì vậy, trong các mối đe dọa an ninh mạng loại quan điểm bên trong nhóm tùy chỉnh chức năng
+
+119
+00:12:55,720 --> 00:13:03,040
+Chúng tôi đang giấu mật mã độc hại của chúng tôi hoặc giấu thực thi EA độc ác của chúng tôi bên trong các phong tục
+
+120
+00:13:03,040 --> 00:13:13,020
+Các chức năng nhóm và chúng tôi đang thực hiện nó OK. Vì vậy, đây là một trong những cách chúng tôi có thể
+
+121
+00:13:13,020 --> 00:13:22,920
+Dễ dàng giấu phần mềm chống vi khuẩn và hệ thống EER trước đó bằng cách sử dụng móc câu ADI ok.
+
+122
+00:13:22,920 --> 00:13:30,480
+Vì vậy, thay vì gọi các thông điệp gốc hộp W của các chức năng API chúng tôi thực hiện đường vòng
+
+123
+00:13:30,480 --> 00:13:38,280
+Và chúng tôi đã gọi là hộp thông điệp của tôi W một trong các chức năng móc tùy chỉnh và
+
+124
+00:13:38,280 --> 00:13:46,480
+Chúng ta đã thi hành đúng quy tắc. Vì vậy, phương pháp này đã được thực hiện trong rất nhiều
+
+125
+00:13:46,480 --> 00:13:55,080
+Phần mềm độc hại như chúng tôi sẽ quan trọng tình nhân 2 theo dõi các phím đột quỵ, các phần mềm gián điệp, Troy là vvetera
+
+126
+00:13:55,080 --> 00:14:05,600
+Xin lỗi, sợi vải và vài loại mã độc. Vì vậy, đây là một trong những phương pháp mạnh mẽ để qua
+
+127
+00:14:05,600 --> 00:14:14,160
+Kĩ thuật EDR ổn. Đây là một ví dụ đơn giản khi bạn có thể làm nhiều hơn bằng cách mở rộng này
+
+128
+00:14:14,160 --> 00:14:22,080
+Chương trình vì vậy, bạn mọi người có ý tưởng tốt hơn và vì vậy, một khi bạn hoàn thành khóa học bạn có thể phát triển
+
+129
+00:14:22,080 --> 00:14:28,480
+Phát triển một nghiên cứu phần mềm độc hại mới bằng kỹ thuật móc câu.
+
+130
+00:14:28,480 --> 00:14:34,680
+Vì vậy, tôi hy vọng bạn đã thích video này và bạn có sự hiểu biết rõ ràng về những gì là
+
+131
+00:14:34,680 --> 00:14:45,760
+Việc đi vòng vòng và việc kiếm tiền qua đường vòng. Vì vậy, chúng ta có thể nhảy từ video này và
+
+132
+00:14:45,760 --> 00:14:52,560
+Chúng tôi sẽ kết nối các chàng trai trong video tiếp theo xem bạn có một xin lỗi và một điều nữa. Vì vậy, một lần
+
+133
+00:14:52,560 --> 00:15:01,040
+Chúng tôi thực hiện những thứ đi vòng quanh chúng tôi cần để chúng tôi cần phải làm detas vượt qua detas chúng tôi có
+
+134
+00:15:01,040 --> 00:15:09,880
+Đính kèm các chức năng móc câu tùy chỉnh cũng như địa chỉ bộ nhớ gốc. Vì vậy, một lần
+
+135
+00:15:09,880 --> 00:15:17,720
+Mọi thứ đã được thực hiện chúng ta cần phải gỡ móc trước khi thoát ra. Vì vậy, cảm ơn bạn đã
+
+136
+00:15:17,720 --> 00:15:32,640
+Xem video này, chúng tôi sẽ gặp các bạn trong video sau tạm biệt.
+
