@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:08,840
+ hey guys welcome to another video in this video we are going to discuss about the one of
+
+2
+00:00:08,840 --> 00:00:16,360
+ the important topic and privilege escalation the access token so many of them not have
+
+3
+00:00:16,360 --> 00:00:23,580
+ an idea about what is an access token in windows probably because the Linux will handle
+
+4
+00:00:23,580 --> 00:00:31,520
+ tokens in a different way so we are not going to discuss that but in windows there is
+
+5
+00:00:31,520 --> 00:00:40,560
+ a concept called as an access token okay so this access token mainly used for a privilege
+
+6
+00:00:40,560 --> 00:00:48,760
+ escalation escalating from on privilege to another another another privilege there was
+
+7
+00:00:48,760 --> 00:01:00,040
+ a main goal we have to do this access token topic let us do a little bit explanation
+
+8
+00:01:00,040 --> 00:01:06,520
+ of access token okay so when you give a username and password and when you try to login
+
+9
+00:01:06,520 --> 00:01:13,560
+ into the machine absolutely the your tromcial username and password get verified instead
+
+10
+00:01:13,560 --> 00:01:18,920
+ of database so whether it was a right username and password or not so once it get
+
+11
+00:01:18,920 --> 00:01:29,220
+ very fed and the username and password also correct the windows operating system will allocate
+
+12
+00:01:29,220 --> 00:01:36,660
+ a certain token okay for you okay that's called as an access token the access token contain
+
+13
+00:01:36,660 --> 00:01:46,200
+ a set of information so you are going to use that token to create a new process or create
+
+14
+00:01:46,200 --> 00:01:53,440
+ a new thread because this access token contains certain information like what's your privilege
+
+15
+00:01:53,440 --> 00:02:01,920
+ for which user group you belongs to and what are the things you can access in windows operating
+
+16
+00:02:01,920 --> 00:02:09,040
+ system example you can't able to enter into see directory if you are a user normal user
+
+17
+00:02:09,040 --> 00:02:14,560
+ you are on your you can't able to open this process there are certain access controls for
+
+18
+00:02:14,560 --> 00:02:23,720
+ you so all the things will be it's a container all the things will be put inside the access
+
+19
+00:02:23,720 --> 00:02:31,500
+ token and the windows operating system will be giving you that so once you got an access
+
+20
+00:02:31,500 --> 00:02:38,020
+ token so after you logged in you can create a new process you can create a new thread
+
+21
+00:02:38,020 --> 00:02:43,840
+ okay so this is the information basically the access token contain the SAD of a user account
+
+22
+00:02:43,840 --> 00:02:53,740
+ so SAD is nothing but so if you you are for my slash all command you can see a unique
+
+23
+00:02:53,740 --> 00:03:01,980
+ SAD that has been allocated for you okay so this SAD the access token contain this
+
+24
+00:03:01,980 --> 00:03:08,820
+ SAD information okay so which and which group belongs to the SAD belongs to which group
+
+25
+00:03:08,820 --> 00:03:17,420
+ it's a user group or an RDP group or any other VPN if there is any other groups inside
+
+26
+00:03:17,420 --> 00:03:25,980
+ the company organization so which group it belongs to and logon sections the main thing
+
+27
+00:03:25,980 --> 00:03:32,800
+ we need to discuss is the default DSS data access control so it will be like a secure
+
+28
+00:03:32,800 --> 00:03:39,660
+ object basically which folder you can access for which files you have a read only permission
+
+29
+00:03:39,660 --> 00:03:45,620
+ write only permission or you have an executable permission so basically the access token
+
+30
+00:03:45,620 --> 00:03:52,300
+ contains this much of information okay so the SAD of it's it's used for a security context
+
+31
+00:03:52,300 --> 00:03:57,900
+ okay because the access token contains a privilege of an user account so which privilege
+
+32
+00:03:57,900 --> 00:04:02,360
+ you have so you can able to access this process or you can able to create the process
+
+33
+00:04:02,360 --> 00:04:08,940
+ or not so this will be completely deserted by the windows access token okay so your windows
+
+34
+00:04:08,940 --> 00:04:17,940
+ mission operating system will provide that so in access token we have two types so one
+
+35
+00:04:17,940 --> 00:04:25,180
+ is a primary token and another one is a impersonate token we'll discuss that token in a different
+
+36
+00:04:25,180 --> 00:04:35,800
+ video the next video but let's say I was in the mission so if I opened the command
+
+37
+00:04:35,800 --> 00:04:41,260
+ program here so now you can see there's a command problem let me open the process hacker
+
+38
+00:04:41,260 --> 00:04:49,180
+ and check the token information so now you can now you can see I just opened a command
+
+39
+00:04:49,180 --> 00:04:58,680
+ prompt not in a administrator mode it's a user privilege which is how you can verify that
+
+40
+00:04:58,680 --> 00:05:05,380
+ so I only have a medium mandatory level of privilege I do not have a high mandatory level but
+
+41
+00:05:05,380 --> 00:05:13,200
+ you can see a privilege information I have only this much of privilege but let me open
+
+42
+00:05:13,200 --> 00:05:24,700
+ the command prompt in a administrator console okay now I will be let me check which promises
+
+43
+00:05:24,700 --> 00:05:36,960
+ which I have open 4804 or so Pd of the CMD so this is the first command CMD I open let's
+
+44
+00:05:36,960 --> 00:05:44,360
+ Wcon this one so now you can find the difference between both of the access this is the
+
+45
+00:05:44,360 --> 00:05:51,260
+ normal privilege and this is the administrator level privilege right and here you can find
+
+46
+00:05:51,260 --> 00:05:57,340
+ a lot of privilege we have also we have a SC impersonate privilege okay impersonate a
+
+47
+00:05:57,340 --> 00:06:13,220
+ client after authentication so we are going to use this API to use this privilege okay
+
+48
+00:06:13,220 --> 00:06:26,060
+ to bypass the access token manipulation attack okay so but the normal user privilege does
+
+49
+00:06:26,060 --> 00:06:34,380
+ not have this SC impersonate privilege so we are we can't able to do the access token
+
+50
+00:06:34,380 --> 00:06:44,660
+ manipulation attack in a normal user privilege okay medium mandatory level so we can only use
+
+51
+00:06:44,660 --> 00:06:51,060
+ token manipulation attack you know administrator mode privilege okay because so here you
+
+52
+00:06:51,060 --> 00:06:57,980
+ can find a SC impersonate level okay so we can impersonate a client after an authentication
+
+53
+00:06:57,980 --> 00:07:08,500
+ it's an enabled okay so in this privilege escalation techniques we are going to develop
+
+54
+00:07:08,500 --> 00:07:19,300
+ a program to do access token manipulation attack we will do we will do it in another video
+
+55
+00:07:19,300 --> 00:07:29,460
+ about a high register something let me open a Cal.exe from administrator level privilege
+
+56
+00:07:29,460 --> 00:07:39,020
+ so now so I already discussed okay so if you need to create any process so your access
+
+57
+00:07:39,020 --> 00:07:48,380
+ token will be used okay so windows will create a process through using your access token so
+
+58
+00:07:48,380 --> 00:07:54,200
+ now if I open a command prompt in administrator mode I have a certain access token for an
+
+59
+00:07:54,200 --> 00:08:03,200
+ administrator so if this administrator open a Cal so now this calculator also have a similar
+
+60
+00:08:03,200 --> 00:08:16,420
+ token okay so if one process burning I mean the way if if CMD.exe triggering Cal.exe
+
+61
+00:08:16,420 --> 00:08:26,220
+ the Cal.exe has the same access token what the administrator command prompt has okay so in
+
+62
+00:08:26,220 --> 00:08:33,260
+ our scenario I just opened the Cal.exe in administrator command prompt so now this administrator
+
+63
+00:08:33,260 --> 00:08:40,900
+ has on access token the same access token will be represented in the Cal.exe in the calculator
+
+64
+00:08:40,900 --> 00:08:50,060
+ okay so let me close this and let me go move to a normal CMD and if I open the CMD Cal.exe
+
+65
+00:08:50,060 --> 00:09:02,660
+ here now this is the normal user privilege this user has a certain access token so sometime
+
+66
+00:09:02,660 --> 00:09:07,220
+ he was unable to access all the files all the resources in here the machine because he is
+
+67
+00:09:07,220 --> 00:09:17,220
+ a medium mandatory level he only has a medium level permission so you can verify so here you
+
+68
+00:09:17,220 --> 00:09:23,580
+ can see medium mandatory level so sometime this user was unable to access many resource in
+
+69
+00:09:23,580 --> 00:09:33,620
+ the machine if I open a Cal.exe inside from this command CMD.exe so this Cal.exe contains
+
+70
+00:09:33,620 --> 00:09:44,980
+ the access token for a normal C command prompt okay so let's repeat one more time so if any of
+
+71
+00:09:44,980 --> 00:09:56,340
+ the higher privilege process spend or triggered and another process so the target process so
+
+72
+00:09:56,340 --> 00:10:03,460
+ the triggering process that has an access token of the process food triggered maybe in our
+
+73
+00:10:03,460 --> 00:10:11,620
+ scenario it's a command.exe that spun this Cal.exe okay so if the CMD.exe has a lesser
+
+74
+00:10:11,620 --> 00:10:19,700
+ privilege access token so the triggering process will also have a lesser privilege okay if the
+
+75
+00:10:19,700 --> 00:10:28,740
+ CMD has a higher level of privilege the triggering process will also have a higher privilege
+
+76
+00:10:28,740 --> 00:10:37,220
+ of access token okay so that's a scenario here so we'll discuss about the types of access token
+
+77
+00:10:37,220 --> 00:10:43,940
+ in our upcoming video so let's hop off and we'll see you guys in the next video bye bye
+
