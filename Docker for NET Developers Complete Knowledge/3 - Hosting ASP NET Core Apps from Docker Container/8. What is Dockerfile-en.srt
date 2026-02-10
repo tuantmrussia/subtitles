@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:09,300
+ What is a Dockerfile? It is a plain text document containing sets of instructions for Docker
+
+2
+00:00:09,300 --> 00:00:17,620
+ to build an image. This file will tell Docker how to build the image of our .NET app.
+
+3
+00:00:17,620 --> 00:00:25,840
+ Dockerfile builds image in layers with each instruction creating a new layer. Let us now
+
+4
+00:00:25,840 --> 00:00:33,560
+ understand the Dockerfile of our .NET app. There are stages and each starting from the
+
+5
+00:00:33,560 --> 00:00:37,800
+ from instruction.
+
+6
+00:00:37,800 --> 00:00:54,800
+ It gives each of these stage some named like base, build, publish and final.
+
+7
+00:00:56,680 --> 00:01:10,560
+ See the first stage from mci.microsoft.com/dotnet/aspnet colon 10 references the .NET
+
+8
+00:01:10,560 --> 00:01:20,640
+ 10 runtime image which is a lightweight compared to SDK version. This stage is given the name base.
+
+9
+00:01:23,600 --> 00:01:33,040
+ The dollar app underscore UID is an environment variable for non-root users that will be used to
+
+10
+00:01:33,040 --> 00:01:43,200
+ run the command here. The work directory slash app creates a directory by the name of app in the
+
+11
+00:01:43,200 --> 00:01:52,240
+ image of our .NET app. And it sets it as the working directory. It then exposes the container
+
+12
+00:01:52,240 --> 00:02:03,360
+ port's number 8080 and 8081 to the outside world. That is to the host machine. So this way we can
+
+13
+00:02:03,360 --> 00:02:12,160
+ access the container on these ports. Obviously one port will be for HTTP and the other for the
+
+14
+00:02:12,160 --> 00:02:21,280
+ HTTPS versions. So we have our local machine on the left and it contains our .NET app with
+
+15
+00:02:21,280 --> 00:02:30,560
+ Dockerfile and on the right here is the Docker image of our app. The first stage tells .NET app
+
+16
+00:02:30,560 --> 00:02:41,040
+ image to reference the .NET runtime image from mci. It then creates a work directory called app
+
+17
+00:02:41,840 --> 00:02:52,560
+ inside the image and exposes ports 8080 and 8081 of the container that will be containing this
+
+18
+00:02:52,560 --> 00:03:01,280
+ image of our app. Let's now move to the second stage. Here will be restoring and building the app
+
+19
+00:03:01,280 --> 00:03:11,680
+ using .NET restore and .NET build commands. So we have reference the SDK image of .NET 10 and
+
+20
+00:03:11,680 --> 00:03:20,960
+ not its runtime image like before. The name this stage build argument build underscore configuration
+
+21
+00:03:20,960 --> 00:03:33,280
+ is set to release. Then work directory slash src creates a new directory called src in the .NET
+
+22
+00:03:33,280 --> 00:03:46,240
+ apps image. Inside this directory first docker app cs project file is copied from the local machine.
+
+23
+00:03:46,240 --> 00:03:55,280
+ Now the .NET restore command is run for the cs project file which is inside the docker image
+
+24
+00:03:55,280 --> 00:04:06,400
+ of the .NET app. This will restore the dependencies like NuGet packages and dls which the app has
+
+25
+00:04:06,400 --> 00:04:18,560
+ after that with copy .NET command all the apps files are copied from the local machine to the src
+
+26
+00:04:18,560 --> 00:04:26,480
+ directory on the image. The first dot is for the from location on the local machine
+
+27
+00:04:26,480 --> 00:04:34,560
+ and the second dot is for the location on the image which is set to the work dir instruction.
+
+28
+00:04:34,560 --> 00:04:42,880
+ Finally the .NET build command builds the apps cs project file inside the src directory.
+
+29
+00:04:44,400 --> 00:04:53,200
+ In the build command configuration is set as release and output from this command will be placed
+
+30
+00:04:53,200 --> 00:05:01,600
+ in the apps slash build directory inside the image. Let us understand this from the animations.
+
+31
+00:05:01,600 --> 00:05:10,400
+ The src directory is first created inside the .NET apps image. Now the apps project file is copy
+
+32
+00:05:10,400 --> 00:05:18,480
+ to this src directory from the local machine. Next we run the .NET restore command on this cs
+
+33
+00:05:18,480 --> 00:05:27,520
+ project file. After that we copy all the apps files from the local machine to inside this src
+
+34
+00:05:27,520 --> 00:05:35,680
+ directory. Finally we build this app cs project file and the output is placed inside the apps
+
+35
+00:05:35,680 --> 00:05:44,960
+ slash build directory. Notice the dash O parameter given on the .NET build command. Moving to the
+
+36
+00:05:44,960 --> 00:05:52,640
+ third stage where we publish the app by running the .NET publish command we reference the build
+
+37
+00:05:52,640 --> 00:06:01,840
+ stage from build as publish. The .NET publish command is run on the cs project file of the app which
+
+38
+00:06:01,840 --> 00:06:11,680
+ is residing on the src directory in the image. Build_configuration is kept as release and output
+
+39
+00:06:11,680 --> 00:06:21,600
+ is set to app slash publish folder inside the image of the .NET app. The use app host property
+
+40
+00:06:21,600 --> 00:06:28,720
+ is set to false. This will disable the creation of platform specific executable of the app.
+
+41
+00:06:28,720 --> 00:06:36,560
+ This means it will be producing platform independent exc of the app. Let's see the animations to
+
+42
+00:06:36,560 --> 00:06:45,120
+ understand this. We run .NET publish command on the cs project file located inside the src
+
+43
+00:06:45,120 --> 00:06:52,880
+ directory and the output of this command goes to app slash published directory inside the image.
+
+44
+00:06:53,520 --> 00:07:00,240
+ Here the app published files are kept. Final stage references the base stage.
+
+45
+00:07:00,240 --> 00:07:11,760
+ Then work directory is set to app. After that the copy command is used to copy from publish stage
+
+46
+00:07:12,480 --> 00:07:22,080
+ app slash publish directory to the app directory on the route. Finally the entry point instruction
+
+47
+00:07:22,080 --> 00:07:31,360
+ specifies to run the dll called first docker app dot dll when the container starts.
+
+48
+00:07:31,360 --> 00:07:38,800
+ In this way whenever the container starts our .NET app will start running.
+
+49
+00:07:39,680 --> 00:07:48,320
+ So this is the slide of the final stage. It copies all the files from the app slash publish folder
+
+50
+00:07:48,320 --> 00:07:57,440
+ to the app folder and adds entry point to the first docker app dot dll file. What is dot docker
+
+51
+00:07:57,440 --> 00:08:05,760
+ ignore file? You will find it below the docker file. Click the arrow in front of the docker file
+
+52
+00:08:05,760 --> 00:08:16,160
+ to open the dot docker ignore file. This file lists the files and folders directories to exclude
+
+53
+00:08:16,160 --> 00:08:25,760
+ from the building context of the image. There are matching patterns given per line example
+
+54
+00:08:25,760 --> 00:08:35,760
+ asterisk asterisk means to match anything. So asterisk asterisk dot class path means to ignore files
+
+55
+00:08:35,760 --> 00:08:45,120
+ that are of dot class path extension. And residing on the local machine the exclamation pattern
+
+56
+00:08:45,120 --> 00:08:52,560
+ is to re include the files and directories that are excluded by the previous pattern.
+
+57
+00:08:53,360 --> 00:09:03,200
+ So this means these patterns will be included. Example the dot get ignore file will be included
+
+58
+00:09:03,200 --> 00:09:05,440
+ similarly for the others.
+
