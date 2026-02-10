@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:12,000
+ Let's start with Section 4. We want to download and extract WordPress files to the host directory.
+
+2
+00:00:12,000 --> 00:00:23,000
+ But before we can do that, let's do a quick qualification to make sure that the path of the mounting that we have set to the home user pass.
+
+3
+00:00:23,000 --> 00:00:34,000
+ And number, home and number, forward slash WWW. So to inspect it, we need to issue this comment.
+
+4
+00:00:34,000 --> 00:00:44,000
+ Docker inspect my PHP Apache and we will grab these three mounts to show the mounted volumes.
+
+5
+00:00:44,000 --> 00:00:58,000
+ So here, we can see here that we have the mountain volume of home and number WWW also tilde tilde symbol WWW.
+
+6
+00:00:58,000 --> 00:01:02,000
+ Okay, so we are good for the mounting.
+
+7
+00:01:02,000 --> 00:01:13,000
+ Now, let's go to the mounting mounted directory. Sorry, so type.
+
+8
+00:01:13,000 --> 00:01:19,000
+ If we type print working directory, we're ready in and number. So we can simply type WWW.
+
+9
+00:01:19,000 --> 00:01:24,000
+ So we're here in the WWW direction.
+
+10
+00:01:24,000 --> 00:01:33,000
+ Let's call type the curl comment to download the WordPress VZ. We start.
+
+11
+00:01:33,000 --> 00:01:49,000
+ So let's download it.
+
+12
+00:01:49,000 --> 00:02:05,000
+ Okay, or WordPress is downloaded, but now we need to extract it. So we type these comments to extract all of the files.
+
+13
+00:02:05,000 --> 00:02:30,000
+ Take rates, all of the files are extracted. So here, we just move according to the request to move all of the WordPress folder to the parent directory.
+
+14
+00:02:30,000 --> 00:02:37,000
+ Okay, if we can see here, we should have if we type let's hear.
+
+15
+00:02:37,000 --> 00:02:41,000
+ If we type here let's show a.
+
+16
+00:02:41,000 --> 00:02:52,000
+ We have WordPress, we copy all of the content of this WordPress, then we will delete this folder and also the zip drive or the zip file.
+
+17
+00:02:52,000 --> 00:03:03,000
+ So let's go move first. All of the content of the WordPress directory to this location.
+
+18
+00:03:03,000 --> 00:03:22,000
+ Take rate. If you can edit it here, you can see that now all of the files are moved, which is great. And now let's remove the unnecessary file info.
+
+19
+00:03:22,000 --> 00:03:36,000
+ Remove first WordPress directory and let's now remove the file by typing our end.
+
+20
+00:03:36,000 --> 00:03:47,000
+ And now we have only the files and the directory and the file are removed.
+
+21
+00:03:47,000 --> 00:03:52,000
+ Let's continue here.
+
+22
+00:03:52,000 --> 00:04:06,000
+ First, we want to initialize before we can install the WordPress. Let's initialize a get repository for the web directory.
+
+23
+00:04:06,000 --> 00:04:21,000
+ This get repository will contain or any changes that we do to the WordPress here will be committed and saved later to the get repository.
+
+24
+00:04:21,000 --> 00:04:42,000
+ So we need first two initialize the get okay before we will install the WordPress. So before there is important things to do that there is some files. For example, here WP content uploads and also the secrets for the security purposes.
+
+25
+00:04:42,000 --> 00:04:53,000
+ We will not commit these changes. These changes will stay internally for security purposes and only to just copy the necessary files.
+
+26
+00:04:53,000 --> 00:05:14,000
+ So first here we are already in this directory, okay.
+
+27
+00:05:14,000 --> 00:05:29,000
+ Let's create the dot git ignore to ignore only some files, okay. So we'll type nano dot git ignore.
+
+28
+00:05:29,000 --> 00:05:55,000
+ Let's make sure here, okay, we are in the correct path. Okay, we'll open the file of dot git ignore because all of these files as I put here will not be replicated or not be committed to be copied to the main branch or main location of the repo.
+
+29
+00:05:55,000 --> 00:06:06,000
+ So here if we can we'll paste it, okay.
+
+30
+00:06:06,000 --> 00:06:35,000
+ As these are the files to be ignored will include we ignore the core files, okay, because it is optional. I don't want to track custom themes and plugins. And also I will not especially the database credential this is not secure to commit it is stored in this WP configuration, okay, or the WordPress configuration.
+
+31
+00:06:35,000 --> 00:07:03,000
+ This and this file will fail it or will write it before we install the WordPress and also the for the sake of privacy also users files and images will not be committed also and also for the system files for logging temporary files and operating system files will not be uploaded as well or committed as well.
+
+32
+00:07:03,000 --> 00:07:32,000
+ So after that after we write the file we'll type just control. Okay, and exit, okay, and now we have all the file is written without any issue, okay.
+
+33
+00:07:32,000 --> 00:07:38,000
+ Now we are ready to initialize the git.
+
+34
+00:07:38,000 --> 00:07:58,000
+ We are already in the directory, we just type git initialize, come and not found but no problems it will be installed by the system install the git code.
+
+35
+00:07:58,000 --> 00:08:25,000
+ Install also the package dependencies or the package required for to get to initialize. And we should see after the initialization that we'll have dot a hidden file called dot git and these files will modify liter's configuration into it, okay, so to clarify my point here.
+
+36
+00:08:25,000 --> 00:08:38,000
+ If we type this to the shell a this file is hidden, it's not present but after we initialize it, it is now we can see it, okay.
+
+37
+00:08:38,000 --> 00:08:57,000
+ And also we'll see after installation, there is another file which called HD dot HD access will be also created by the word press late, okay. So now here let's go to
+
+38
+00:08:57,000 --> 00:09:22,000
+ to modify the configuration we inject a local identity, okay, just to avoid any issue when I want to commit the gates will insert the local identity between be inserted into the git configuration file we'll go to the get directory and we'll modify the configuration file of it.
+
+39
+00:09:22,000 --> 00:09:47,000
+ So here let's do it, and let's get configuration, okay, we just add here user, okay, and we'll just add name and email.
+
+40
+00:09:47,000 --> 00:10:16,000
+ Okay, this is our case and value, okay, name and email, okay, and we have saved it, and now we can try git add.
+
+41
+00:10:16,000 --> 00:10:25,000
+ That's because we want to set this is the location only from m no more.
+
+42
+00:10:25,000 --> 00:10:43,000
+ Ww, this is the location here, continue the word press file, and this is always the location of commit of commitment in which I will do the commit or any changes for the files will be committed here, not any other in any other location.
+
+43
+00:10:43,000 --> 00:10:57,000
+ So let's do it, and now let's try to commit the initial word press for the setup, let's make initial comments.
+
+44
+00:10:57,000 --> 00:11:11,000
+ Okay, all of these files now are committed here to the gates like so if we type git one more time,
+
+45
+00:11:11,000 --> 00:11:21,000
+ which we'll see here that we are on branch master and nothing here to commit, we already done the commit for the files.
+
+46
+00:11:21,000 --> 00:11:40,000
+ All of the files here, we do this actually for the version control to make sure that everything in this repository is committed or it's using the same version of file.
+
+47
+00:11:40,000 --> 00:12:01,000
+ Okay, this is the git tool that we'll use it and later we will use the, we'll show you later how to use the git lab so that we create a repository to copy all of the files of the projects into it.
+
+48
+00:12:01,000 --> 00:12:15,000
+ Okay, so if I want to verify that everything you will just get status.
+
+49
+00:12:15,000 --> 00:12:30,000
+ This case is still okay, so here if we type commit one more time or git status, you will show you that you are on the branch master and nothing to commit.
+
+50
+00:12:30,000 --> 00:12:38,000
+ Everything is okay, perfect.
+
+51
+00:12:38,000 --> 00:12:51,000
+ So now we have prepared everything so that when later we create a repository, we will synchronize our copy all of the files to set repo late.
+
+52
+00:12:51,000 --> 00:13:06,000
+ So now, before the installation of the WordPress, we need to copy or modify the word press configuration file.
+
+53
+00:13:06,000 --> 00:13:21,000
+ So here we have a sample file, we will copy the word the press dash config dash sample or PHP to the word press dash config dot PHP.
+
+54
+00:13:21,000 --> 00:13:37,000
+ Let's do that.
+
+55
+00:13:37,000 --> 00:13:53,000
+ Okay, and now we will edit with edit it by our beautiful nano editor with edit or the press dash config dot PHP.
+
+56
+00:13:53,000 --> 00:14:10,000
+ Okay, if we can go here, if we need to define our database, if you can recall from the previous tutorial section 2, we named it my app.
+
+57
+00:14:10,000 --> 00:14:24,000
+ And user is my user is database user and password if I can recall it correctly.
+
+58
+00:14:24,000 --> 00:14:40,000
+ So here if you want to revise it, because it is very important.
+
