@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:12,040
+ So, from this session we are going to dump into the security or actual security, how the
+
+2
+00:00:12,040 --> 00:00:21,040
+ attacker will hijack the comp environment without any noise or detections and how they
+
+3
+00:00:21,040 --> 00:00:26,720
+ will operate. We will learn each and everything, okay. So, in the first video we will learn
+
+4
+00:00:26,720 --> 00:00:32,160
+ the stage and stage of the stage, sometimes this will be, this question will be asking
+
+5
+00:00:32,160 --> 00:00:38,360
+ in interviews, if you are a fresh or experienced or any. If you are going for a routine
+
+6
+00:00:38,360 --> 00:00:45,020
+ any, any jobs, okay. I will cover everything, so how to, so which payload is better,
+
+7
+00:00:45,020 --> 00:00:50,420
+ stage are stages, how it will be get caught, okay. So, first one we will going to discuss
+
+8
+00:00:50,420 --> 00:00:58,280
+ the stage payload, okay. So, stage, so let us take a stage payload, okay. So, it will be
+
+9
+00:00:58,280 --> 00:01:05,160
+ delivered by a power, okay. So, first thing, when you download the stage payload, so it
+
+10
+00:01:05,160 --> 00:01:10,060
+ will just give a C2 connection, like it will just give a terminal connection, okay terminal
+
+11
+00:01:10,060 --> 00:01:17,560
+ connection. So, next after getting the terminal connection, so this is the first part, okay.
+
+12
+00:01:17,560 --> 00:01:23,860
+ The second part will be getting uploaded, okay to the target windows, okay. It will be
+
+13
+00:01:23,860 --> 00:01:28,560
+ delivered by one by one, okay. First part, second part, third part. So, if you, if you, if
+
+14
+00:01:28,560 --> 00:01:32,440
+ a payload need to do any other things like current shield on b-card village is patient,
+
+15
+00:01:32,440 --> 00:01:36,980
+ the third part, fourth part it will be, it will be sent it by the part by part, okay.
+
+16
+00:01:36,980 --> 00:01:41,680
+ It will be delivered by the part two part, okay. But if you see the stageless payload,
+
+17
+00:01:41,680 --> 00:01:46,620
+ it will not be delivered by the part two part, okay. It will be delivered by the single
+
+18
+00:01:46,620 --> 00:01:51,360
+ payload, okay. This will not be delivered by the single payload, every, it will be delivered
+
+19
+00:01:51,360 --> 00:01:55,720
+ by one by one part. This will be delivered by a single payload, okay. Everything will be
+
+20
+00:01:55,720 --> 00:02:01,440
+ in the same part. So, you know the stage payload will be actually less when you are generating,
+
+21
+00:02:01,440 --> 00:02:07,520
+ it is less size. So, you will not be get easily caught by antivirus officers or any
+
+22
+00:02:07,520 --> 00:02:13,000
+ idiot platform because this payload only will send a C2 connection, right. The next payload
+
+23
+00:02:13,000 --> 00:02:17,040
+ will do some other tasks, the next payload will do some other tasks, the next payload
+
+24
+00:02:17,040 --> 00:02:24,160
+ will do some other tasks, okay. But stageless is actually not like that, okay. It's pretty
+
+25
+00:02:24,160 --> 00:02:30,540
+ different, okay. So, everything the first, the second, third, fourth, everything will
+
+26
+00:02:30,540 --> 00:02:37,680
+ be delivered in a single file, okay. Single file, okay. Now, the, the file size will be,
+
+27
+00:02:37,680 --> 00:02:45,120
+ big, okay. It's a bigger size. So, anyway, it will be a bigger size. And it will be easily
+
+28
+00:02:45,120 --> 00:02:52,680
+ caught by EDR or antivirus platforms because every payloads are single file, right. Single
+
+29
+00:02:52,680 --> 00:03:00,440
+ file, okay. Let me go and develop that. I will, I will teach you the real time in the practical
+
+30
+00:03:00,440 --> 00:03:05,400
+ field. Let me jump into the, one of the C2 parameter. We will cover these things in later.
+
+31
+00:03:05,400 --> 00:03:11,980
+ So, let's go to the windows, page or payload. So, let's select, hmm. This is a very
+
+32
+00:03:11,980 --> 00:03:15,400
+ example, okay. This is just an example. Don't worry about the tool. We will be learning
+
+33
+00:03:15,400 --> 00:03:22,200
+ this tool in the next section, the cobalt section, okay. Let's develop. I need to give
+
+34
+00:03:22,200 --> 00:03:27,240
+ example what is the stage and stageless, okay. So, that I was covering this tool. Don't
+
+35
+00:03:27,240 --> 00:03:30,400
+ worry about the usage as and don't worry about the working principle of this tool. I will
+
+36
+00:03:30,400 --> 00:03:36,860
+ be covering each and everything in a, a demonstration, okay. Let's select this and we will
+
+37
+00:03:36,860 --> 00:03:43,360
+ generate a payload. So, let me put it in the music directory. So, we will generate a payload
+
+38
+00:03:43,360 --> 00:03:53,560
+ named a stage.exe. So, in the same time, we will generate an stageless payload, okay, stage
+
+39
+00:03:53,560 --> 00:04:04,920
+less payload. Select a generate, so, stageless, okay. So, I already said, stage will be delivered
+
+40
+00:04:04,920 --> 00:04:10,680
+ by part two part, okay, one by one part, okay. It will be delivered, one by one part, okay.
+
+41
+00:04:10,680 --> 00:04:16,640
+ So, now just go to the properties of a stage payload. You can see there is only a 19 kilobytes
+
+42
+00:04:16,640 --> 00:04:23,240
+ of file. If I go to the stageless, so now you can find the difference between both of the
+
+43
+00:04:23,240 --> 00:04:27,540
+ things, okay. I already discussed, stage payloads will be delivered by part by part, but stage
+
+44
+00:04:27,540 --> 00:04:32,860
+less payload will be delivered single file. Every payloads will be delivered in a one, one
+
+45
+00:04:32,860 --> 00:04:38,740
+ file. So, you can see the file here two, eight, nine, K, B, and you can see the another file
+
+46
+00:04:38,740 --> 00:04:43,440
+ here, stage to payload. You can see only 19 kilobytes of data will be there, but stage
+
+47
+00:04:43,440 --> 00:04:47,480
+ payload, there is a two, eight in a kilobytes of data, sorry, stageless payload, there
+
+48
+00:04:47,480 --> 00:04:51,740
+ is a two, eight in a kilobytes of data will be there, okay. So, this is the difference between
+
+49
+00:04:51,740 --> 00:04:58,160
+ the stage and stageless payload, okay. So, if you want to go for a payload, which will
+
+50
+00:04:58,160 --> 00:05:04,600
+ be easily bypassed the antivirus software and malware, sorry, malware detection programs.
+
+51
+00:05:04,600 --> 00:05:15,320
+ So, you need to use the stage payload, okay. So, because it will be delivered by one part
+
+52
+00:05:15,320 --> 00:05:20,440
+ by part, okay. Your antivirus software are EDRs. Don't know what what happening and what
+
+53
+00:05:20,440 --> 00:05:28,480
+ was the file is about, okay. So, but if there is a network monitoring, where SARC or if
+
+54
+00:05:28,480 --> 00:05:33,840
+ they are using the where SARC and do a critical network monitoring, okay, the environment,
+
+55
+00:05:33,840 --> 00:05:39,160
+ the organization is doing a very, very good critical things in network monitoring, then
+
+56
+00:05:39,160 --> 00:05:43,360
+ you will be get caught by the stage grid, okay. So, anyway, it will be delivered by part
+
+57
+00:05:43,360 --> 00:05:48,720
+ one, part two, part three, part four, right, right. However, each river where SARC will
+
+58
+00:05:48,720 --> 00:05:52,880
+ resolve everything towards what's ascending and what's receiving, right. So, it will be
+
+59
+00:05:52,880 --> 00:06:00,800
+ get caught by the network monitoring, but it will be bypassing the EDRs and AV sometime,
+
+60
+00:06:00,800 --> 00:06:06,220
+ okay. But stageless, it will not get caught by the where SARC, so we can bypass the
+
+61
+00:06:06,220 --> 00:06:14,840
+ where SARC, but it will be caught by the AV EDRs and other part forms, okay. This is the
+
+62
+00:06:14,840 --> 00:06:19,760
+ difference between both of the things, but the stage will be caught by the where SARC because
+
+63
+00:06:19,760 --> 00:06:23,760
+ payload will be delivered one by one, one first file, second file, third file, fourth file
+
+64
+00:06:23,760 --> 00:06:28,280
+ like that, but stageless, there is a single payload, it will be directly sent to the
+
+65
+00:06:28,280 --> 00:06:35,440
+ target machine. So, there's if there is if they are monitoring the network, so then they
+
+66
+00:06:35,440 --> 00:06:39,440
+ don't know what happening in federal network, because there is only one file, which will
+
+67
+00:06:39,440 --> 00:06:43,920
+ be sent to the target machine, okay. But stageless, stage is not like that, payload will
+
+68
+00:06:43,920 --> 00:06:48,600
+ be sent by one part, one part, second part, third part like that, okay, based on direct
+
+69
+00:06:48,600 --> 00:06:55,120
+ command. This difference between the stage and stageless payload, so you can use both
+
+70
+00:06:55,120 --> 00:07:00,920
+ EDRs, stageless, stageless for a C2 connections, but in this course I will be mostly
+
+71
+00:07:00,920 --> 00:07:08,880
+ using the stage payload for doing many attacks, okay. So, I hope you have clear understanding
+
+72
+00:07:08,880 --> 00:07:12,560
+ about the stage and stageless payload, once again stage payload will be delivered by part
+
+73
+00:07:12,560 --> 00:07:16,560
+ by part, but stageless payload will be delivered by a single file, so that's the difference,
+
+74
+00:07:16,560 --> 00:07:21,480
+ you can see your size will be less in stage and size will be bigger in stageless, okay.
+
+75
+00:07:21,480 --> 00:07:24,960
+ So, let's swap off this video and we will continue our discussion in the next video. See
+
+76
+00:07:24,960 --> 00:07:25,560
+ you guys, bye bye.
+
