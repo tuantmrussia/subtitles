@@ -1,0 +1,368 @@
+1
+00:00:00,050 --> 00:00:03,530
+Well, it's time to get back to it and finish what we started.
+
+2
+00:00:03,620 --> 00:00:09,380
+Our arcade game is fun, but it's missing that crucial element that takes you from being a kind of fun
+
+3
+00:00:09,380 --> 00:00:11,180
+game to a really fun game.
+
+4
+00:00:11,480 --> 00:00:14,330
+And this is what polishing is all about.
+
+5
+00:00:14,360 --> 00:00:16,460
+It's the final stage of our workflow.
+
+6
+00:00:16,460 --> 00:00:21,530
+So for the first step of polishing, we are going to make our graphics a bit better, make our game
+
+7
+00:00:21,530 --> 00:00:23,000
+feel much more real.
+
+8
+00:00:23,390 --> 00:00:25,730
+The first thing we want to discuss is layers.
+
+9
+00:00:25,760 --> 00:00:29,660
+We briefly discussed this in an earlier lesson, but let's run over it again.
+
+10
+00:00:29,870 --> 00:00:35,930
+So in scratch, each of our sprites appear on our screen with an x and Y position, as you know.
+
+11
+00:00:36,110 --> 00:00:45,320
+Now this is easy to see, but our sprites also have a z axis, which we can't easily see as everything
+
+12
+00:00:45,320 --> 00:00:47,930
+is 2D and we are looking from a top down view.
+
+13
+00:00:47,960 --> 00:00:52,100
+We basically the z axis is the layer.
+
+14
+00:00:52,430 --> 00:00:54,980
+So imagine a stack of papers.
+
+15
+00:00:54,980 --> 00:00:59,300
+You might have 20 pieces of paper on top of one another and each has its layer.
+
+16
+00:01:00,400 --> 00:01:06,220
+So if the paper is on the top of the pile, it is at layer one, and if it's on the bottom, it's layer
+
+17
+00:01:06,220 --> 00:01:06,880
+20.
+
+18
+00:01:07,150 --> 00:01:13,150
+And naturally, if a paper is at a higher layer like layer one, it will cover the paper that is at
+
+19
+00:01:13,150 --> 00:01:14,740
+a lower layer like layer two.
+
+20
+00:01:14,770 --> 00:01:20,260
+So the exact same thing happens in scratch when our sprites are on different layers.
+
+21
+00:01:20,290 --> 00:01:27,160
+So if we play our game quickly and if we crash into a tree, you will see that, well, we kind of ski
+
+22
+00:01:27,160 --> 00:01:29,380
+over the tree, which doesn't make sense.
+
+23
+00:01:29,410 --> 00:01:31,630
+So how do we fix this?
+
+24
+00:01:32,270 --> 00:01:39,230
+Well, if we move over to our player sprite, we can grab another when flag clicked and then move up
+
+25
+00:01:39,230 --> 00:01:40,790
+to the looks tab.
+
+26
+00:01:42,050 --> 00:01:43,790
+Here we will see we have two options.
+
+27
+00:01:43,790 --> 00:01:51,740
+Either we can make it go to the front or back, or we can have it go backwards or forwards a layer.
+
+28
+00:01:52,480 --> 00:01:55,960
+So if we were to say go to back and then hit play.
+
+29
+00:01:56,260 --> 00:02:01,420
+As you can see, our snow trail goes in front of us, so this isn't an option.
+
+30
+00:02:01,870 --> 00:02:04,120
+So let's bring this back to the front.
+
+31
+00:02:04,120 --> 00:02:05,050
+Like this.
+
+32
+00:02:05,540 --> 00:02:09,350
+Now, this time we can instead say go back one layer.
+
+33
+00:02:10,060 --> 00:02:15,160
+So now, rather than sending this to the very back, we'll just moving it back one layer, which means
+
+34
+00:02:15,160 --> 00:02:17,470
+our player sprite will be in layer two.
+
+35
+00:02:18,770 --> 00:02:24,230
+Now dragging the script over to both our snow pixels, we can have it go backwards two layers, and
+
+36
+00:02:24,230 --> 00:02:27,020
+we can also do the same for the other sprite.
+
+37
+00:02:27,970 --> 00:02:28,990
+Clicking play.
+
+38
+00:02:29,320 --> 00:02:31,060
+Well that's weird.
+
+39
+00:02:31,480 --> 00:02:33,040
+Our picks are listed in front.
+
+40
+00:02:33,190 --> 00:02:33,490
+Hmm.
+
+41
+00:02:34,060 --> 00:02:36,100
+Any ideas what's happening here?
+
+42
+00:02:37,110 --> 00:02:42,030
+Well, the reason for this is because each time we start the game, it keeps going back more and more
+
+43
+00:02:42,030 --> 00:02:42,840
+layers.
+
+44
+00:02:43,230 --> 00:02:51,090
+So what we need to do is go to each of these sprites and bring in this go to front layer, just like
+
+45
+00:02:51,090 --> 00:02:51,540
+that.
+
+46
+00:02:52,380 --> 00:02:55,110
+And we can also do the same for our tree sprite.
+
+47
+00:02:55,620 --> 00:03:00,660
+We can just drag in a when flag clicked and then a go to front layer.
+
+48
+00:03:01,600 --> 00:03:07,810
+So now this way, when we start our game, each of our sprites starts on the same layer, but our player
+
+49
+00:03:07,810 --> 00:03:11,200
+moves back one and our pixels go back two.
+
+50
+00:03:11,500 --> 00:03:12,820
+So trying this out.
+
+51
+00:03:13,590 --> 00:03:15,360
+As you can see, it works perfectly.
+
+52
+00:03:15,420 --> 00:03:18,510
+When we crash into a tree, we don't glide in front of it.
+
+53
+00:03:18,540 --> 00:03:20,580
+Now that's much more realistic.
+
+54
+00:03:22,130 --> 00:03:26,060
+So with that out of the way, there is one more thing we need to do.
+
+55
+00:03:26,640 --> 00:03:28,110
+When we play the game.
+
+56
+00:03:28,110 --> 00:03:32,550
+As you can see, our trees kind of just pop into view, which is a bit jarring.
+
+57
+00:03:33,020 --> 00:03:39,380
+Wouldn't it be better if they kind of faded in, almost like there was a mist and they were coming into
+
+58
+00:03:39,380 --> 00:03:40,610
+view from the mist?
+
+59
+00:03:41,630 --> 00:03:46,430
+Sounds great, but it sounds like a rather complex task.
+
+60
+00:03:46,820 --> 00:03:50,510
+But fear not, because there is a fairly simple way to do this.
+
+61
+00:03:51,290 --> 00:03:57,230
+If you look over at our looks group, you will see this change color or set color to.
+
+62
+00:03:58,220 --> 00:04:01,460
+Dragging the set color effect into our player sprite.
+
+63
+00:04:01,730 --> 00:04:05,480
+You'll see that if we click it, oh, nothing happens.
+
+64
+00:04:05,960 --> 00:04:14,330
+But if we change this number to say, 40, our sprite changes color and it almost looks like an alien.
+
+65
+00:04:14,920 --> 00:04:18,790
+But this isn't what we want so we can set it back to zero.
+
+66
+00:04:19,540 --> 00:04:24,670
+But you will see that if we click here, there are all these other options.
+
+67
+00:04:25,210 --> 00:04:28,510
+And the effect we are interested in is this ghost effect.
+
+68
+00:04:29,380 --> 00:04:36,670
+So let's set it to 95 and clicking it you will see how sprite almost fades out.
+
+69
+00:04:36,670 --> 00:04:39,130
+So we can use this to fade in our trees.
+
+70
+00:04:39,370 --> 00:04:41,050
+So quickly resetting it.
+
+71
+00:04:41,610 --> 00:04:44,850
+We then can move over to our tree sprite.
+
+72
+00:04:45,690 --> 00:04:47,880
+Now this is your next mini challenge.
+
+73
+00:04:47,880 --> 00:04:55,200
+Try and see if you can create this effect where our trees fade into view instead of just suddenly appearing.
+
+74
+00:04:55,200 --> 00:04:59,310
+Come on, give it a try before we show you how to do it.
+
+75
+00:05:00,590 --> 00:05:01,790
+Did you get it?
+
+76
+00:05:02,720 --> 00:05:03,890
+Now let's see how it's done.
+
+77
+00:05:04,400 --> 00:05:11,540
+Now, what we want to happen is when our sprite starts as a clone, we want to set the ghost effect
+
+78
+00:05:11,540 --> 00:05:12,590
+to 95.
+
+79
+00:05:13,070 --> 00:05:20,090
+Then to make it fade in, what we are going to do is grab this change effect by block and again set
+
+80
+00:05:20,090 --> 00:05:20,990
+it to ghost.
+
+81
+00:05:21,820 --> 00:05:22,120
+Here.
+
+82
+00:05:22,120 --> 00:05:28,210
+We want to drag it into this forever loop so that the ghosting slowly fades out, which makes it look
+
+83
+00:05:28,210 --> 00:05:30,700
+like our trees are fading in.
+
+84
+00:05:31,720 --> 00:05:38,080
+To do this, we need to change this value because currently our ghosting is at 95 and we want to bring
+
+85
+00:05:38,080 --> 00:05:39,460
+it back to zero.
+
+86
+00:05:40,480 --> 00:05:45,370
+So we can just enter in minus three here or whatever looks best for you.
+
+87
+00:05:45,580 --> 00:05:46,990
+So let's give this a test.
+
+88
+00:05:47,680 --> 00:05:52,360
+You can see that our trees now look like they are slowly appearing into view from the mist.
+
+89
+00:05:52,660 --> 00:05:58,360
+And yes, it's a very subtle effect, but it just makes our game that much better.
+
+90
+00:05:58,870 --> 00:06:00,100
+So that's it for now.
+
+91
+00:06:00,160 --> 00:06:05,110
+If you can see any other areas where you think the graphics can be improved, I encourage you to give
+
+92
+00:06:05,110 --> 00:06:07,060
+it a go and see what you can do.
+
