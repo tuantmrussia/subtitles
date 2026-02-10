@@ -1,0 +1,8 @@
+Docker Commands that we will learn in this lecture:
+
+1. Dotnet  dev-certs commands
+
+2. dotnet dev-certs https --clean
+3. dotnet dev-certs https -ep aspnetapp.pfx -p mypass123 --trust
+
+4. docker run --name FDAC -p 5001:8080 -p 4001:8081 -e ASPNETCORE_URLS="https://+:8081;http://+:8080" -e ASPNETCORE_HTTPS_PORT=4001 -e ASPNETCORE_Kestrel__Certificates__Default__Password="mypass123" -e ASPNETCORE_Kestrel__Certificates__Default__Path=/app/wwwroot/https/aspnetapp.pfx fda
