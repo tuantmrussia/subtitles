@@ -1,0 +1,500 @@
+1
+00:00:00,000 --> 00:00:08,000
+ In this lecture, we will be performing cloud operations in ASP.NET Core app with SQL Server
+
+2
+00:00:08,000 --> 00:00:09,000
+ as database.
+
+3
+00:00:09,000 --> 00:00:18,600
+ Both the ASP.NET Core app and SQL Server will be running from two separate Docker containers.
+
+4
+00:00:18,600 --> 00:00:25,000
+ So this is the architecture of the whole app which will be created by us.
+
+5
+00:00:25,000 --> 00:00:32,600
+ This is the ASP.NET Core MVC app and it will be running from a Docker container and since
+
+6
+00:00:32,600 --> 00:00:39,160
+ it will be a database driven, so it will be connecting with SQL Server database and
+
+7
+00:00:39,160 --> 00:00:43,800
+ SQL Server database will also be running from Docker container.
+
+8
+00:00:43,800 --> 00:00:51,200
+ So there will be two separate containers each for the app and the SQL Server and the app
+
+9
+00:00:51,200 --> 00:00:54,600
+ will perform cloud operations on the database.
+
+10
+00:00:54,600 --> 00:01:00,880
+ These cloud operations as you know are create, read, update and delete operations.
+
+11
+00:01:00,880 --> 00:01:01,880
+ So let's start.
+
+12
+00:01:01,880 --> 00:01:10,400
+ So first of all, I would like to show the link to SQL Server running on a Docker container.
+
+13
+00:01:10,400 --> 00:01:19,000
+ On Google, you should type SQL Server and Docker.
+
+14
+00:01:19,000 --> 00:01:25,600
+ Then you will find the Microsoft Learn website.
+
+15
+00:01:25,600 --> 00:01:32,280
+ You will find Microsoft Learn website and Docker Run containers for SQL Server Online
+
+16
+00:01:32,280 --> 00:01:33,280
+ Next.
+
+17
+00:01:33,280 --> 00:01:40,080
+ This link on this link, there are the commands which you have to run.
+
+18
+00:01:40,080 --> 00:01:44,160
+ You can run the full command of SQL Server.
+
+19
+00:01:44,160 --> 00:01:53,520
+ This is the command which will download the SQL Server 2025 image on your local environment
+
+20
+00:01:53,520 --> 00:02:02,960
+ or local PC and to run this container with the SQL Server 2025 image, you copy this
+
+21
+00:02:02,960 --> 00:02:12,000
+ whole command of Docker Run and you change this MS SQL as a password to your own password
+
+22
+00:02:12,000 --> 00:02:19,600
+ which you would like to keep it strong password and you should follow the SQL Server
+
+23
+00:02:19,600 --> 00:02:25,800
+ default password policy which states that the password should have capital letters and
+
+24
+00:02:25,800 --> 00:02:30,920
+ so much smaller letters at least it should be query letters etc.
+
+25
+00:02:30,920 --> 00:02:39,000
+ So you should keep a strong password then let me show you how to run copy this command
+
+26
+00:02:39,000 --> 00:02:53,740
+ and open command prompt and here you paste this command and as you see it is Docker
+
+27
+00:02:53,740 --> 00:03:03,580
+ Run command and dash is the environment flag makes you to accept the policy of this SQL
+
+28
+00:03:03,580 --> 00:03:10,120
+ Server then another environment variable which states that MS SQL underscore S way
+
+29
+00:03:10,120 --> 00:03:16,840
+ underscore password and then afterward you give your own password a strong password like
+
+30
+00:03:16,840 --> 00:03:27,680
+ this one and after that with dash P you specify their ports mappings 1, 4, 4, 0 is D.
+
+31
+00:03:27,680 --> 00:03:34,840
+ You are the host port and then afterwards 1, 4, 4, 3 is the SQL Server container port 1,
+
+32
+00:03:34,840 --> 00:03:42,380
+ 4, 4, 0 you can keep your host port any port of your liking I have kept 1, 4, 4, 0 and
+
+33
+00:03:42,380 --> 00:03:51,020
+ then with dash dash name you specify the container name of the SQL Server it can be anything
+
+34
+00:03:51,020 --> 00:04:00,740
+ then with H flag again you keep the same whatever the container name you also keep the same
+
+35
+00:04:00,740 --> 00:04:08,860
+ thing here and then with dash D is it means the detached mode afterwards this is the Microsoft
+
+36
+00:04:08,860 --> 00:04:20,440
+ container registry image of SQL Server 2005 this is the whole command and then you press
+
+37
+00:04:20,440 --> 00:04:29,340
+ enter it gives unable to find image so it is not finding the SQL Server 2025 image
+
+38
+00:04:29,340 --> 00:04:38,220
+ on my PC locally so it is pulling from Microsoft container registry and since it is around
+
+39
+00:04:38,220 --> 00:04:48,740
+ 550 MB so you will have to wait from 5 minutes for it to get completed.
+
+40
+00:04:48,740 --> 00:05:02,820
+ Let us see the Docker desktop and this is the SQL Server image which is downloaded and
+
+41
+00:05:02,820 --> 00:05:11,620
+ on containers you will find SQL Server container by the name my SQL Server is now running
+
+42
+00:05:11,620 --> 00:05:22,700
+ and it contains the SQL Server image 2025 image and the ports are 1, 4, 4, 0 colon 1,
+
+43
+00:05:22,700 --> 00:05:34,220
+ port V3 here 1, 4, 4, 0 is the host port and 1, 4, 3, 3 is the port inside the container
+
+44
+00:05:34,220 --> 00:05:41,540
+ we now connect with the database through Visual Studio on Visual Studio check the view
+
+45
+00:05:41,540 --> 00:05:51,860
+ menu then select SQL Server object explorer through this we will connect with the SQL Server
+
+46
+00:05:51,860 --> 00:05:59,620
+ like D plus icon that says add SQL Server in the connect dialog so let D browse then
+
+47
+00:05:59,620 --> 00:06:08,820
+ on D connection properties add SQL details for SQL name add local host comma 1, 4, 4,
+
+48
+00:06:08,820 --> 00:06:19,660
+ 0 1, 4, 4, 0 is default on the host which we added to the dash P flag for authentication
+
+49
+00:06:19,660 --> 00:06:28,260
+ select SQL Server authentication username should be essay in capital letters password
+
+50
+00:06:28,260 --> 00:06:46,860
+ should be the one which we use during running the container
+
+51
+00:06:46,860 --> 00:06:56,300
+ with this option which says remember password database name keep it default in crypt mandatory
+
+52
+00:06:56,300 --> 00:07:03,580
+ and fast trust server certificate make sure you check this option now click the connect
+
+53
+00:07:03,580 --> 00:07:10,740
+ button we are now connected to the database inside the database area we have no databases
+
+54
+00:07:10,740 --> 00:07:21,580
+ right now we will be creating our database soon we now move to sp.net core mbc database
+
+55
+00:07:21,580 --> 00:07:29,500
+ driven app here it is you can download this app from this lecture itself let me explain
+
+56
+00:07:29,500 --> 00:07:38,100
+ quickly how this app works this is a movie library app where movies details can be stored
+
+57
+00:07:38,100 --> 00:07:46,820
+ in the database it contains credit operations enable user to create read update and delete
+
+58
+00:07:46,820 --> 00:07:54,060
+ movie records the movies will be stored on the database running from a docker container
+
+59
+00:07:54,060 --> 00:08:01,700
+ let's see the home controller where we have d create action method which does the creation
+
+60
+00:08:01,700 --> 00:08:11,780
+ of the movies on the database the index action where movies are read from the database
+
+61
+00:08:11,780 --> 00:08:18,500
+ the date action method does the updation of the movie records on the database lastly
+
+62
+00:08:18,500 --> 00:08:25,380
+ there is the delete action method which deletes the movies from the database this is the
+
+63
+00:08:25,380 --> 00:08:33,980
+ movie entity class where there are three properties defined these are id name and actors
+
+64
+00:08:33,980 --> 00:08:43,400
+ these are the razor view files the index.cshtml file which shows all the movies in an
+
+65
+00:08:43,400 --> 00:08:52,380
+ HTML table the create.cshtml file contains deform through which new movies are inserted
+
+66
+00:08:52,380 --> 00:09:01,740
+ to the database lastly there is a update.cshtml razor view file where updation of a movie
+
+67
+00:09:01,740 --> 00:09:11,500
+ is done the movie context.cs file acts as a DB context for this whole app the database
+
+68
+00:09:11,500 --> 00:09:18,020
+ connection string is stored in the app settings.json file located on the root of the
+
+69
+00:09:18,020 --> 00:09:29,020
+ app let's understand the connection string the data source should be d SQL server which
+
+70
+00:09:29,020 --> 00:09:38,220
+ is local host comma 1440 recall 1440 is the host port we added on the docker run command
+
+71
+00:09:49,020 --> 00:09:55,620
+ initial catalog is the database name which can be anything of your choice i have named
+
+72
+00:09:55,620 --> 00:10:05,540
+ my database as movie DB user id should be s a in capital letters and password should be
+
+73
+00:10:05,540 --> 00:10:20,260
+ the same used when running the docker container secure server it's time we run the entity
+
+74
+00:10:20,260 --> 00:10:34,900
+ frame of code migration commands from new get package manager console window the first command
+
+75
+00:10:34,900 --> 00:10:48,340
+ to run is ad dash migration followed by migration name i have named my migration as migration
+
+76
+00:10:48,340 --> 00:11:12,980
+ 1 you can name it anything now the migration is created with a migration folder on the application
+
+77
+00:11:12,980 --> 00:11:19,700
+ the migration folder contains migration files that are used to execute demigration
+
+78
+00:11:19,700 --> 00:11:30,740
+ on the database next we run the update dash database command this command applies demigration
+
+79
+00:11:30,740 --> 00:11:58,180
+ and so the database is created ok done let's refresh d database
+
+80
+00:12:01,740 --> 00:12:20,420
+ and you can see the database is created it has one table called movie open this table by
+
+81
+00:12:20,420 --> 00:12:28,660
+ right clicking on it and selecting view data there are no movies right now we will be adding
+
+82
+00:12:28,660 --> 00:12:36,660
+ movies with the app in just a moment let's run the app
+
+83
+00:12:51,860 --> 00:12:58,660
+ this is the app let's create a movie for name add layer window
+
+84
+00:13:03,780 --> 00:13:23,780
+ and actors james t word and grey scally the movie is created they are also the update and delete
+
+85
+00:13:23,780 --> 00:13:34,980
+ buttons next to the movie name let's create another movie expandable three actors
+
+86
+00:13:34,980 --> 00:13:54,580
+ sylvester still on and on all scores in agar i think the spelling is a mistake so let's update
+
+87
+00:13:54,580 --> 00:14:15,700
+ and you can see the date have been done click delete button to delete this movie from the database
+
+88
+00:14:19,940 --> 00:14:33,540
+ now refresh the table you can see there is only one movie because we deleted the second movie
+
+89
+00:14:33,540 --> 00:14:40,500
+ and everything is working properly now we will add container compose support to the app
+
+90
+00:14:42,020 --> 00:14:50,740
+ right click depoject name and select add then select container compose support now on the container
+
+91
+00:14:50,740 --> 00:14:58,580
+ scaffolding options window keep all the default settings and click the ok button docker compose
+
+92
+00:14:58,580 --> 00:15:07,220
+ support is added to the app with docker file along with the docker dash compose project open the
+
+93
+00:15:07,220 --> 00:15:14,980
+ docker dash compose dot yml file here you will see the app is added as a service we will now
+
+94
+00:15:14,980 --> 00:15:23,540
+ add SQL server service to this docker dash compose dot yml file i will be copying and pasting
+
+95
+00:15:23,540 --> 00:15:30,340
+ all the necessary codes here but don't worry all these codes will be available for download
+
+96
+00:15:30,340 --> 00:15:43,380
+ from the lecture itself so this is decode we named the service SQL data its name can be anything
+
+97
+00:15:43,380 --> 00:15:52,980
+ this is the SQL server 2025 image the environments are added which basically sets the SQL password
+
+98
+00:15:52,980 --> 00:16:01,300
+ is strong password and except ula policy the ports are different than the one we used earlier
+
+99
+00:16:01,300 --> 00:16:07,220
+ i am using a different port this time since this instance of SQL server will be different
+
+100
+00:16:07,220 --> 00:16:15,460
+ from the one we used before this SQL server will run from a different container i am using port
+
+101
+00:16:15,460 --> 00:16:24,660
+ 1450 for the host and 1433 is the SQL server container port always we also add the port
+
+102
+00:16:24,660 --> 00:16:31,620
+ mappings for the dot net corrupt app so that we can access the app on the browser without the
+
+103
+00:16:31,620 --> 00:16:40,500
+ help of visual studio add this below code discord is the same which we used earlier in the previous
+
+104
+00:16:40,500 --> 00:16:48,260
+ lecture note that we have used the host port nine thousand two this time on app settings dot
+
+105
+00:16:48,260 --> 00:17:00,900
+ JSON file change local host comma or zero to SQL data which is the name of the SQL server service
+
+106
+00:17:03,940 --> 00:17:11,140
+ now we run docker compose commands to build and run the whole app from the directory of the
+
+107
+00:17:11,140 --> 00:17:18,420
+ docker dash compose dot yml file you have to run the two commands the first one is docker dash
+
+108
+00:17:18,420 --> 00:17:34,900
+ compose build this will build the images let's see the docker desktop this is the image of the app
+
+109
+00:17:36,100 --> 00:17:50,420
+ and SQL server now run the docker dash compose up to run the two containers done
+
+110
+00:17:50,420 --> 00:17:57,700
+ now on docker desktop you can see these two containers
+
+111
+00:18:03,860 --> 00:18:13,860
+ now we will have to run the migrations so first open the app settings dot JSON file here change
+
+112
+00:18:13,860 --> 00:18:29,860
+ this data source to local host comma 1450 this is the address of the SQL server which we have
+
+113
+00:18:30,420 --> 00:18:40,580
+ recently started in a docker container and now right click the docker current app and select
+
+114
+00:18:40,580 --> 00:18:52,260
+ set as startup project and on package manager console we will write the commands for migrations
+
+115
+00:18:52,980 --> 00:19:05,540
+ so first delete this previous migrations folder and now type add dash migration migration name
+
+116
+00:19:05,540 --> 00:19:14,260
+ i have kept migration name as migration one you can change it based on your choice next command
+
+117
+00:19:14,260 --> 00:19:25,140
+ is update dash database this will apply the migration okay done the database is created
+
+118
+00:19:25,140 --> 00:19:33,060
+ now we change the app settings to previous ones on connection string change SQL data
+
+119
+00:19:44,980 --> 00:19:54,900
+ set docker dash compose project as startup project
+
+120
+00:19:54,900 --> 00:20:05,380
+ the SQL server and dotnet containers are already running so we don't have to do anything
+
+121
+00:20:05,380 --> 00:20:11,940
+ the SQL server container already has the database added to it through migrations
+
+122
+00:20:12,740 --> 00:20:20,580
+ so we just have to open the app on the browser the address is local host colon 9002
+
+123
+00:20:20,580 --> 00:20:25,220
+ and here the app is working from the docker container
+
+124
+00:20:25,220 --> 00:20:34,260
+ congrats you have successfully created this docker compose task of hosting a dotnet
+
+125
+00:20:34,980 --> 00:20:45,780
+ DB based app from docker containers
+
