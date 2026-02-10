@@ -1,0 +1,376 @@
+1
+00:00:00,080 --> 00:00:02,930
+Well, I think that game is really starting to take shape.
+
+2
+00:00:02,960 --> 00:00:05,630
+We have our road that moves down constantly.
+
+3
+00:00:05,630 --> 00:00:10,070
+We have our car that we control, we have our obstacles that we have to avoid.
+
+4
+00:00:10,070 --> 00:00:16,160
+So our so now pretty good turn this morning tackle into obstacles have generating more traffic adding
+
+5
+00:00:16,160 --> 00:00:17,510
+in more cars.
+
+6
+00:00:17,930 --> 00:00:20,720
+So generally may be thinking to yourself well this is easy.
+
+7
+00:00:20,720 --> 00:00:27,200
+You can see if all is to do is duplicate the obstacle car the few times and Bob's your uncle.
+
+8
+00:00:28,150 --> 00:00:31,690
+Well, maybe your uncle, but that's not really the solution.
+
+9
+00:00:31,690 --> 00:00:32,830
+Well, let's give it a try, shall?
+
+10
+00:00:33,760 --> 00:00:37,600
+You know, as I say, the simplest solution is the best solution.
+
+11
+00:00:37,600 --> 00:00:39,160
+And this sure sounds simple.
+
+12
+00:00:39,190 --> 00:00:42,400
+So right clicking on our car then hitting duplicate.
+
+13
+00:00:42,400 --> 00:00:45,010
+And let's do that one more time.
+
+14
+00:00:45,010 --> 00:00:45,670
+There we go.
+
+15
+00:00:45,700 --> 00:00:47,290
+Now we have three cars ready to go.
+
+16
+00:00:47,290 --> 00:00:48,190
+Let's test this out.
+
+17
+00:00:49,910 --> 00:00:55,490
+Well, that's somewhat works, but our cars all appear at the same time, and sometimes in the same
+
+18
+00:00:55,490 --> 00:00:55,790
+lane.
+
+19
+00:00:56,700 --> 00:01:02,610
+So we could just go to these duplicated cars, add a wait statement to each of them at the top of the
+
+20
+00:01:02,610 --> 00:01:09,150
+script, and have it be one second and two seconds to have them evenly spaced and once again hitting
+
+21
+00:01:09,150 --> 00:01:09,660
+play.
+
+22
+00:01:10,950 --> 00:01:12,720
+Well, I got off to.
+
+23
+00:01:12,720 --> 00:01:14,430
+We got calls to start moving the bear.
+
+24
+00:01:14,520 --> 00:01:15,420
+You can actually see it works.
+
+25
+00:01:15,540 --> 00:01:17,430
+Uh, now, it was just.
+
+26
+00:01:17,670 --> 00:01:21,990
+If it all be like, so, well, then, like, why don't we joins the solution?
+
+27
+00:01:23,320 --> 00:01:28,060
+Let me introduce you to a little acronym which is called Dry code.
+
+28
+00:01:28,090 --> 00:01:30,250
+Dry code.
+
+29
+00:01:30,730 --> 00:01:36,370
+And what Dry stands for is don't repeat yourself.
+
+30
+00:01:36,400 --> 00:01:37,300
+Let me say it again.
+
+31
+00:01:37,330 --> 00:01:39,130
+Don't repeat yourself.
+
+32
+00:01:39,280 --> 00:01:40,480
+Haha, that's very funny.
+
+33
+00:01:40,900 --> 00:01:46,870
+Yeah, this is very popular saying in programming is often duplicating code.
+
+34
+00:01:46,870 --> 00:01:48,910
+Might sound like the easy solution.
+
+35
+00:01:48,910 --> 00:01:56,470
+However, when you start doing this, things can get really messy and it also makes things hard to maintain.
+
+36
+00:01:56,470 --> 00:02:02,860
+For instance, if I wanted to change the speed of my cars, I couldn't just go change it in one spot.
+
+37
+00:02:02,860 --> 00:02:05,950
+I would have to go into each sprite to change it.
+
+38
+00:02:05,950 --> 00:02:09,610
+So that being said, let's look for a smarter solution.
+
+39
+00:02:10,210 --> 00:02:16,210
+So firstly deleting all these duplicates, then going to our main obstacle sprite and finally going
+
+40
+00:02:16,210 --> 00:02:17,260
+to the control blocks.
+
+41
+00:02:17,260 --> 00:02:19,180
+You will see we have these blocks here.
+
+42
+00:02:19,390 --> 00:02:25,660
+When I start as a clone, create clone of and delete this clone.
+
+43
+00:02:25,660 --> 00:02:27,610
+And these are really important blocks.
+
+44
+00:02:27,970 --> 00:02:32,530
+So dragging them down and then down.
+
+45
+00:02:32,530 --> 00:02:34,090
+Let's have a look.
+
+46
+00:02:34,090 --> 00:02:40,060
+So let's test this out by bringing this create clone of myself inside of this if statement.
+
+47
+00:02:40,700 --> 00:02:41,780
+Then hitting play.
+
+48
+00:02:41,780 --> 00:02:46,040
+You'll see that each time our car reaches the end, a new clone appears at the top.
+
+49
+00:02:46,880 --> 00:02:50,270
+But you also see that these cars don't really move.
+
+50
+00:02:50,270 --> 00:02:53,180
+They just sort of stay there, which isn't really ideal.
+
+51
+00:02:53,480 --> 00:02:57,950
+Well, that, my friends, is what this block is for.
+
+52
+00:02:58,500 --> 00:03:02,130
+So basically what is happening is our script is playing.
+
+53
+00:03:02,130 --> 00:03:08,370
+And then when this condition is true, it creates a clone of itself, which is the obstacle call.
+
+54
+00:03:08,760 --> 00:03:13,980
+A clone is essentially an identical copy of a sprite, such as all the costumes.
+
+55
+00:03:13,980 --> 00:03:15,900
+It has, the sound effects, and more.
+
+56
+00:03:16,140 --> 00:03:23,430
+However, one key difference is that a clone isn't the same as duplicating a sprite, because as you
+
+57
+00:03:23,430 --> 00:03:29,190
+saw, the duplicated sprites move like the regular ones, while the clone just was stuck at the top.
+
+58
+00:03:29,760 --> 00:03:36,330
+That's because the clone doesn't have access to the script, because this script is only activated when
+
+59
+00:03:36,330 --> 00:03:39,990
+the flag is clicked, and that only happens once at the beginning.
+
+60
+00:03:39,990 --> 00:03:42,900
+So this is where this block comes in.
+
+61
+00:03:43,140 --> 00:03:46,830
+It allows us to add code to our cloned sprites.
+
+62
+00:03:47,440 --> 00:03:55,780
+So if we simply duplicate this code and add it to when I start as a clone, then hit play.
+
+63
+00:03:55,930 --> 00:04:03,460
+You will see that each time our characters reaches the end, a clone is added and has the same functionality.
+
+64
+00:04:03,940 --> 00:04:07,870
+But as you can also see, it really just doesn't stop cloning.
+
+65
+00:04:08,320 --> 00:04:09,940
+But I think you get the idea.
+
+66
+00:04:11,080 --> 00:04:18,640
+So now that you have a good understanding of the important concept of dry code and cloning, don't repeat
+
+67
+00:04:18,640 --> 00:04:19,450
+yourself.
+
+68
+00:04:19,480 --> 00:04:20,620
+Let's make this work.
+
+69
+00:04:21,330 --> 00:04:28,530
+Firstly, we can get rid of all the code in the code block, as we can also disconnect this code from
+
+70
+00:04:28,530 --> 00:04:30,660
+the when flag clicked button.
+
+71
+00:04:31,260 --> 00:04:37,980
+Now we can add a forever block and a wait block, and in this create a clone of myself block.
+
+72
+00:04:38,660 --> 00:04:41,540
+So basically every second will create a clone of itself.
+
+73
+00:04:41,900 --> 00:04:43,460
+Now for the important bit.
+
+74
+00:04:43,460 --> 00:04:46,880
+Let's drag this code here onto the when I start as a clone.
+
+75
+00:04:46,910 --> 00:04:51,920
+But remember, we can't keep it like this because it will just keep creating new clones.
+
+76
+00:04:52,070 --> 00:04:57,440
+Basically, what we can do is when the car reaches the end, we can delete this clone.
+
+77
+00:04:57,470 --> 00:04:58,640
+Well, let's test this out.
+
+78
+00:05:00,970 --> 00:05:03,850
+Once again, that's not quite right.
+
+79
+00:05:03,970 --> 00:05:05,980
+The cars just drive in a line.
+
+80
+00:05:06,370 --> 00:05:11,950
+And this makes sense, obviously, because if you look at the code every time the car starts at a clone,
+
+81
+00:05:11,950 --> 00:05:15,460
+it goes to zero x and 190 y.
+
+82
+00:05:15,790 --> 00:05:21,520
+So all we need to do is get rid of that and then move this go to random position to the start of the
+
+83
+00:05:21,520 --> 00:05:22,120
+script.
+
+84
+00:05:22,120 --> 00:05:26,680
+And once again, if we hit play well that works a lot better.
+
+85
+00:05:27,160 --> 00:05:29,320
+There are two small bugs we can fix.
+
+86
+00:05:29,320 --> 00:05:36,250
+Firstly, let's hide our main sprite so it doesn't stick to our screen and then show our cloned sprite.
+
+87
+00:05:38,990 --> 00:05:40,370
+Also we can change this.
+
+88
+00:05:40,370 --> 00:05:45,860
+Go to Y to a higher number like 250 which makes it look more seamless.
+
+89
+00:05:46,160 --> 00:05:47,030
+And there you go.
+
+90
+00:05:47,030 --> 00:05:48,410
+It's working properly now.
+
+91
+00:05:49,360 --> 00:05:52,960
+And if you follow along, that is absolutely amazing.
+
+92
+00:05:52,960 --> 00:05:54,730
+Work on completing this lesson.
+
+93
+00:05:54,730 --> 00:05:57,190
+We really covered some ground here, so well done.
+
+94
+00:05:57,190 --> 00:06:02,110
+So let's keep up this momentum and start bringing this game to life.
+
