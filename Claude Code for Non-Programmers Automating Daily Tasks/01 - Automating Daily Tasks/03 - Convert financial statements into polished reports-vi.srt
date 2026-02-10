@@ -1,0 +1,300 @@
+1
+00:00:00,000 --> 00:00:05,000
+Tất cả chúng ta đều biết rằng bản đồ JCPD.ri những cuộc đấu tranh với phân tích dữ liệu.
+
+2
+00:00:05,000 --> 00:00:12,000
+Họ không thể có toàn bộ dữ liệu, tập tin CSV vượt trội vào cửa sổ ngữ cảnh.
+
+3
+00:00:12,000 --> 00:00:15,000
+Và đó là nơi Bộ luật Mây thực sự chiếu sáng.
+
+4
+00:00:15,000 --> 00:00:24,000
+Nó có thể đọc tất cả các tập tin của bạn, viết mã để phân tích tất cả các dữ liệu, Pdf, bất cứ điều gì,
+
+5
+00:00:24,000 --> 00:00:27,000
+và sẽ trả lời tất cả các câu hỏi.
+
+6
+00:00:27,000 --> 00:00:36,000
+Hãy xem nó thực hiện như thế nào trên nhiều tập tin dữ liệu và cho bạn tất cả các câu trả lời của bạn.
+
+7
+00:00:36,000 --> 00:00:39,000
+Tôi có một thư mục được gọi là tuyên bố tài chính.
+
+8
+00:00:39,000 --> 00:00:45,000
+Có rất nhiều hồ sơ chứa tài chính của công ty này tên là Red30.
+
+9
+00:00:45,000 --> 00:00:47,000
+Tên, họ, email.
+
+10
+00:00:47,000 --> 00:00:50,000
+Đây là một số người tham dự hội nghị.
+
+11
+00:00:50,000 --> 00:01:01,000
+Hãy xem những dữ liệu này, sau đó chúng tôi có danh sách khách hàng. Đây là khách hàng, một danh sách khách hàng khác, sau đó chúng tôi có tuyên bố tài chính.
+
+12
+00:01:01,000 --> 00:01:09,000
+Một lần nữa, đây là chi phí tiếp thị, dòng sản phẩm, doanh thu chi tiết.
+
+13
+00:01:09,000 --> 00:01:12,000
+Vì vậy tôi có rất nhiều dữ liệu Push.
+
+14
+00:01:12,000 --> 00:01:15,000
+Bây giờ hãy nói rằng tôi muốn tiến hành phân tích dữ liệu.
+
+15
+00:01:15,000 --> 00:01:23,000
+Với tư cách là một nhà phân tích, tôi phải xem qua từng tập tin, đọc, và nghiền nát những con số này, và chuẩn bị một bộ bài.
+
+16
+00:01:23,000 --> 00:01:27,000
+Nó giống như một dự án dài một tuần.
+
+17
+00:01:27,000 --> 00:01:31,000
+Bây giờ, làm thế nào tôi có thể làm điều này sử dụng đồ thị mã?
+
+18
+00:01:31,000 --> 00:01:35,000
+Trước hết, như tôi đã nói, bạn cần phải ở đúng thư mục.
+
+19
+00:01:35,000 --> 00:01:41,000
+Thư mục này là tuyên bố tài chính, nếu tôi, nếu bạn muốn xem những gì là thư mục,
+
+20
+00:01:41,000 --> 00:01:47,000
+Bạn muốn, và những thư mục bạn có trong thư mục hiện thời, bạn có thể đơn giản làm LS.
+
+21
+00:01:47,000 --> 00:01:49,000
+LS là danh sách các tập tin.
+
+22
+00:01:49,000 --> 00:01:54,000
+Vì vậy, bạn có thể thấy tôi có hỗn loạn, nội dung mã, và báo cáo tài chính trong thư mục cụ thể này.
+
+23
+00:01:54,000 --> 00:02:01,000
+Vì vậy tôi có thể nói đơn giản nếu tôi muốn vào bên trong các báo cáo tài chính, tôi có thể nói rằng CD đã thay đổi thư mục đó,
+
+24
+00:02:01,000 --> 00:02:04,000
+và sau đó là tuyên bố tài chính.
+
+25
+00:02:04,000 --> 00:02:08,000
+Thế đấy, đột nhập vào, và giờ anh đang ở trong báo cáo tài chính.
+
+26
+00:02:08,000 --> 00:02:13,000
+Từ thư mục này, tôi sẽ bắt đầu vẽ đồ thị.
+
+27
+00:02:13,000 --> 00:02:17,000
+Bây giờ tôi đang chạy âm mưu trong thư mục tài chính của tôi.
+
+28
+00:02:17,000 --> 00:02:18,000
+Tuyệt.
+
+29
+00:02:18,000 --> 00:02:26,000
+Câu hỏi tôi có là, trên tất cả các tập tin đã được tải lên,
+
+30
+00:02:26,000 --> 00:02:46,000
+Bạn có thể củng cố ngân sách của boong tàu và xác định các thay đổi trong nhiều năm qua của bạn chi tiêu bởi phân loại tô sáng
+
+31
+00:02:46,000 --> 00:02:53,000
+sự gia tăng lớn nhất và những giọt nước lớn nhất.
+
+32
+00:02:53,000 --> 00:02:56,000
+Đây là câu hỏi phân tích dữ liệu.
+
+33
+00:02:56,000 --> 00:03:00,000
+Bây giờ, hãy xem làm thế nào âm mưu giải quyết nó.
+
+34
+00:03:00,000 --> 00:03:02,000
+Tôi vừa truyền lại.
+
+35
+00:03:02,000 --> 00:03:05,000
+Mã đồ thị sẽ đọc tất cả các tập tin này.
+
+36
+00:03:05,000 --> 00:03:12,000
+Và để nhai những con số này để làm phân tích, nó sẽ viết mã.
+
+37
+00:03:12,000 --> 00:03:15,000
+Để xem nó xử lý thế nào.
+
+38
+00:03:15,000 --> 00:03:18,000
+Nó sẽ biến toàn bộ thư mục này thành một mật mã.
+
+39
+00:03:18,000 --> 00:03:23,000
+Vì vậy, bạn có thể thấy nó đầu tiên tìm ra rằng nó đang gặp khó khăn để đọc tập tin Push.
+
+40
+00:03:23,000 --> 00:03:26,000
+Và phải, tiếp tục.
+
+41
+00:03:26,000 --> 00:03:28,000
+Tôi chỉ đơn giản là cho phép thôi.
+
+42
+00:03:28,000 --> 00:03:33,000
+Một điều khác mà bạn có thể làm là bạn có thể bấm nút thay đổi cộng với tab.
+
+43
+00:03:33,000 --> 00:03:36,000
+Hiện tại, nó sẽ yêu cầu bạn cho mỗi chỉnh sửa.
+
+44
+00:03:36,000 --> 00:03:39,000
+Vì vậy bây giờ nó đang cài đặt một số gói.
+
+45
+00:03:39,000 --> 00:03:41,000
+Tôi đã cho phép nó.
+
+46
+00:03:41,000 --> 00:03:46,000
+Shift cộng với tab bật tùy chọn này, ngoại trừ chỉnh sửa.
+
+47
+00:03:46,000 --> 00:03:49,000
+Vì vậy, chế độ này bây giờ được bật.
+
+48
+00:03:49,000 --> 00:03:52,000
+Có hai hoặc ba chế độ khác nhau ngoại trừ chỉnh sửa.
+
+49
+00:03:52,000 --> 00:03:57,000
+Và sau đó là một chế độ kế hoạch, mà chúng ta thấy trong các phiên họp sắp tới.
+
+50
+00:03:57,000 --> 00:04:01,000
+Vì vậy, nó đang thực hiện một số điều mã hóa.
+
+51
+00:04:01,000 --> 00:04:04,000
+Nó sẽ viết một số mã Python và phân tích những con số này.
+
+52
+00:04:04,000 --> 00:04:06,000
+Chúng ta chỉ cần cho phép nó.
+
+53
+00:04:06,000 --> 00:04:11,000
+Và chúng ta thấy phân tích chính xác đến mức nào.
+
+54
+00:04:11,000 --> 00:04:16,000
+Vậy là tốt rồi.
+
+55
+00:04:16,000 --> 00:04:20,000
+Bạn có thể thấy nó đã viết một số mã, ở đây, phân tích ngân sách công nghệ.
+
+56
+00:04:20,000 --> 00:04:23,000
+Và bạn có thể luôn yêu cầu nó làm sạch tất cả các tập tin, vv.
+
+57
+00:04:23,000 --> 00:04:26,000
+Và đảm bảo nó chạy phân tích theo cách đó.
+
+58
+00:04:26,000 --> 00:04:31,000
+Nhưng hãy xem làm thế nào nó làm lặp lại đầu tiên.
+
+59
+00:04:31,000 --> 00:04:36,000
+Giờ nó đang phân tích báo cáo tài chính cho dữ liệu ngân sách công nghệ.
+
+60
+00:04:36,000 --> 00:04:37,000
+Tuyệt.
+
+61
+00:04:37,000 --> 00:04:42,000
+Vì vậy, bạn có thể thấy phân tích đã xong, phân tích ngân sách công nghệ hoàn tất.
+
+62
+00:04:42,000 --> 00:04:48,000
+Tôi đã củng cố dữ liệu ngân sách công nghệ từ tất cả các hồ sơ của chuyến bay và xác định được sự thay đổi trong năm qua.
+
+63
+00:04:48,000 --> 00:04:59,000
+Từ các báo cáo tài chính, dữ liệu marketing, tôi đã chiết xuất những thứ này, sự gia tăng lớn nhất do nghiên cứu số lượng đô la và chi phí phát triển, những giọt nước lớn nhất trên tất cả các bản tóm tắt.
+
+64
+00:04:59,000 --> 00:05:11,000
+Và bây giờ tôi cũng có thể hỏi nó, biến bản phân tích này thành một lớp trượt hình ảnh hấp dẫn.
+
+65
+00:05:11,000 --> 00:05:14,000
+Để xem nó làm được gì.
+
+66
+00:05:14,000 --> 00:05:18,000
+Nó sẽ tạo ra các tập tin PPTX, PowerPoint.
+
+67
+00:05:18,000 --> 00:05:22,000
+Và nó đang cài đặt một số thư viện từ Python PPTX.
+
+68
+00:05:22,000 --> 00:05:25,000
+Và điều này sẽ thực sự hiệu quả.
+
+69
+00:05:25,000 --> 00:05:30,000
+Để xem hồ sơ PPTX thế nào.
+
+70
+00:05:30,000 --> 00:05:34,000
+Được rồi, chúng ta đã có bài thuyết trình sẵn sàng.
+
+71
+00:05:34,000 --> 00:05:41,000
+Và bạn có thể thấy tôi có một tập tin PPTX ở đây, được tạo ra cho tôi bởi mã đám mây.
+
+72
+00:05:41,000 --> 00:05:48,000
+Nếu tôi mở nó ra bây giờ, bạn có thể thấy toàn bộ bản tóm tắt phân tích.
+
+73
+00:05:48,000 --> 00:06:04,000
+Các xu hướng tiêu dùng văn bản, các khu vực phát triển hàng đầu, các giọt nước lớn nhất, nền truyền thông xã hội sụp đổ, tỷ lệ tăng trưởng cao, so sánh, tóm tắt và giới thiệu.
+
+74
+00:06:04,000 --> 00:06:17,000
+Vì vậy phân tích của bạn, báo cáo của bạn, tất cả mọi thứ đều được giải quyết bởi vì mật mã đám mây có thể thực sự viết các mã và làm một phân tích trên nhiều tập tin rất nhanh chóng.
+
+75
+00:06:17,000 --> 00:06:27,000
+Vì vậy, chúng tôi mất từ 3 đến 4 phút để tiến hành phân tích toàn bộ và tạo ra báo cáo hấp dẫn này mà tôi có thể truyền lại cho cấp trên của tôi.
+
