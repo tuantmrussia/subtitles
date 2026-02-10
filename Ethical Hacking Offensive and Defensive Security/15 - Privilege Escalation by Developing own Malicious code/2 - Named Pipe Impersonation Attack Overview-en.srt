@@ -1,0 +1,512 @@
+1
+00:00:00,000 --> 00:00:08,720
+ Welcome to another video and in this video. We are going to discuss one of the one of the important topic called a C name to pipe
+
+2
+00:00:08,720 --> 00:00:12,240
+ Okay, so the name itself is very different. It's a name to pipe
+
+3
+00:00:12,240 --> 00:00:13,960
+ so
+
+4
+00:00:13,960 --> 00:00:15,960
+ Let's start our discussion
+
+5
+00:00:15,960 --> 00:00:22,720
+ So we already discussed if the threat actor want to do any changes in the registry or do anything in the operating system
+
+6
+00:00:22,720 --> 00:00:27,560
+ So they need a high elevator privilege or to do the operations, right?
+
+7
+00:00:28,280 --> 00:00:30,280
+ So we already did a
+
+8
+00:00:30,280 --> 00:00:38,560
+ Medium to high integrity privilege, but we need to transfer our privilege escalation to high-to system integrity. Okay, so here
+
+9
+00:00:38,560 --> 00:00:40,560
+ I draw some
+
+10
+00:00:40,560 --> 00:00:43,600
+ diagram this is a client and this is a service provider
+
+11
+00:00:43,600 --> 00:00:48,940
+ So let in the same time. I will give the example for a name to pipe. Okay
+
+12
+00:00:48,940 --> 00:00:53,560
+ So why we are using the name to pipe based attack?
+
+13
+00:00:53,560 --> 00:00:57,520
+ So the attacks like name to pipe impersonation. So what is a name to pipe? Okay?
+
+14
+00:00:58,320 --> 00:01:02,920
+ So name to pipe was one of the windows feature that was introduced in
+
+15
+00:01:02,920 --> 00:01:06,440
+ Microsoft windows and
+
+16
+00:01:06,440 --> 00:01:08,440
+ That named by pause used for
+
+17
+00:01:08,440 --> 00:01:15,320
+ Communicating with communicating to process. Okay, so let's consider there was a two process
+
+18
+00:01:15,320 --> 00:01:21,320
+ Let's say there's a set to the land a bit certain in this two process one to communicate with each other
+
+19
+00:01:21,320 --> 00:01:27,160
+ They will you they this two process will use the name to pipe for a communication. Okay, so basically
+
+20
+00:01:27,720 --> 00:01:32,640
+ If the third you will want to transfer some data to the bits admin it will use a
+
+21
+00:01:32,640 --> 00:01:40,600
+ Name to pipe, okay, or or if the bits admin want to transfer some message to your third you till it will use a named to pipe
+
+22
+00:01:40,600 --> 00:01:44,920
+ To your transfer, okay, either it will transfer through a file or a network
+
+23
+00:01:44,920 --> 00:01:50,680
+ So this is called as a named pipe. So named to pipe is basically introduced for a process communication
+
+24
+00:01:50,680 --> 00:01:52,680
+ So communicate between two process
+
+25
+00:01:52,680 --> 00:01:55,880
+ The windows windows
+
+26
+00:01:57,800 --> 00:01:59,800
+ Microsoft windows introduced to the future. Okay
+
+27
+00:01:59,800 --> 00:02:05,960
+ For every operating system, okay
+
+28
+00:02:05,960 --> 00:02:12,840
+ So let's talk about how how we can elevate our privilege using the name to pipe, okay?
+
+29
+00:02:12,840 --> 00:02:17,720
+ So let's come to the diagram. So here you can see one of the one of the pew man
+
+30
+00:02:17,720 --> 00:02:21,000
+ and he's
+
+31
+00:02:21,000 --> 00:02:24,760
+ And
+
+32
+00:02:24,760 --> 00:02:26,760
+ He's a client
+
+33
+00:02:27,160 --> 00:02:30,360
+ And this is a service provider. Okay, so let's take service provider as a
+
+34
+00:02:30,360 --> 00:02:33,480
+ MySQL server
+
+35
+00:02:33,480 --> 00:02:39,720
+ So it's a MySQL server. Okay, so this is a client or a user. So let's take client or a
+
+36
+00:02:39,720 --> 00:02:45,880
+ User so if the user or a client want to query the MySQL
+
+37
+00:02:45,880 --> 00:02:48,520
+ So what he will do he will
+
+38
+00:02:48,520 --> 00:02:50,040
+ Use a
+
+39
+00:02:50,040 --> 00:02:56,280
+ Particular language always query or some other MySQL query to query the MySQL server, right?
+
+40
+00:02:57,160 --> 00:03:00,200
+ So this that's that's a basic programming. So if you want to
+
+41
+00:03:00,200 --> 00:03:09,000
+ If the user want to take any data from the MySQL server, he will query the database, right? He will query some program select star from
+
+42
+00:03:09,000 --> 00:03:13,000
+ Users it will display all the users, right? Instead the MySQL
+
+43
+00:03:13,000 --> 00:03:16,360
+ So let's take
+
+44
+00:03:16,360 --> 00:03:21,240
+ The user only have a low level privilege. Okay, so user only have the low level privilege
+
+45
+00:03:21,240 --> 00:03:25,720
+ Absolutely our service provider will have some high integrity level privilege because
+
+46
+00:03:26,440 --> 00:03:31,080
+ It can able to interact with the every database inside it, right? So once the user
+
+47
+00:03:31,080 --> 00:03:35,000
+ User user gives some query
+
+48
+00:03:35,000 --> 00:03:42,920
+ To the service provider this service provider will verify the user. Okay, so if the user only have a low integrity level
+
+49
+00:03:42,920 --> 00:03:47,400
+ So if or some of the low integrity level user
+
+50
+00:03:47,400 --> 00:03:51,960
+ Only can able to query the database. Okay, he can view the users
+
+51
+00:03:52,440 --> 00:03:57,320
+ He can view a particular column or he can view some information in the database. Okay
+
+52
+00:03:57,320 --> 00:04:02,600
+ So only he can he can query the database. Okay, he can get only the information
+
+53
+00:04:02,600 --> 00:04:08,760
+ He can't able to delete or he can't able to modify or he can't able to add any table or column in the database
+
+54
+00:04:08,760 --> 00:04:16,040
+ Okay, so the service provider will take the user level user privilege. Okay, so user user privilege and it will
+
+55
+00:04:16,760 --> 00:04:22,760
+ Rend the query as a user. Okay, so this is the intermediate between the
+
+56
+00:04:22,760 --> 00:04:30,440
+ Client and the client or user or the and the MySQL server. Okay, this service provider will take the user level privilege
+
+57
+00:04:30,440 --> 00:04:35,720
+ User privilege and it will verify that privilege. So if the user only can able to
+
+58
+00:04:35,720 --> 00:04:38,440
+ Query the database
+
+59
+00:04:38,440 --> 00:04:41,480
+ The user access control was only query the database. It will
+
+60
+00:04:41,480 --> 00:04:46,360
+ It will only query the database. Okay, it will only do they give the information
+
+61
+00:04:46,760 --> 00:04:52,040
+ Based on the privilege. Okay, so let's say if the
+
+62
+00:04:52,040 --> 00:05:03,080
+ Let's think about this user. Okay, so let's say we'll delete the user and I will remove everything
+
+63
+00:05:03,080 --> 00:05:06,120
+ From here
+
+64
+00:05:17,720 --> 00:05:19,720
+ So this is a superman user
+
+65
+00:05:19,720 --> 00:05:31,160
+ Okay, this is a superman user and not a superman. He's a spider-man and he has a privilege
+
+66
+00:05:31,160 --> 00:05:34,840
+ Sorry
+
+67
+00:05:34,840 --> 00:05:37,640
+ He's one of the user
+
+68
+00:05:37,640 --> 00:05:44,840
+ So I already discussed the service provider have has one of the privilege right the service provider has a
+
+69
+00:05:45,720 --> 00:05:49,960
+ One of the privilege it will take the user privilege and it will
+
+70
+00:05:49,960 --> 00:05:53,080
+ execute the query
+
+71
+00:05:53,080 --> 00:05:55,560
+ What the
+
+72
+00:05:55,560 --> 00:05:58,520
+ Based on the user privilege right based on the user privilege. Okay
+
+73
+00:05:58,520 --> 00:06:03,080
+ So let's say the service provider has a privilege. Okay
+
+74
+00:06:03,080 --> 00:06:08,280
+ And this client have a very high level privilege. Okay, very
+
+75
+00:06:08,280 --> 00:06:14,920
+ High level privilege then the service provider. Okay, so the service provider only have a high level privilege
+
+76
+00:06:15,560 --> 00:06:20,760
+ But this client or user have a very high level privilege. This is the very high level privilege in the sense
+
+77
+00:06:20,760 --> 00:06:26,760
+ The privilege was greater than this service provider. So now what service provider will do
+
+78
+00:06:26,760 --> 00:06:31,560
+ So if I'm a service provider, I will I will abuse this
+
+79
+00:06:31,560 --> 00:06:41,400
+ Client or user privilege to do some activities. Okay, so let's say the service provider only can able to
+
+80
+00:06:41,400 --> 00:06:44,120
+ Modify the data
+
+81
+00:06:44,840 --> 00:06:46,840
+ Or add the data. Okay
+
+82
+00:06:46,840 --> 00:06:53,720
+ But this spider-man this very high privilege user can able to add
+
+83
+00:06:53,720 --> 00:06:57,880
+ Modify
+
+84
+00:06:57,880 --> 00:07:06,280
+ As well as delete. Okay, he can able to delete the database. Okay, so now the service provider will
+
+85
+00:07:06,280 --> 00:07:08,120
+ Because uh
+
+86
+00:07:08,120 --> 00:07:13,880
+ This user this very high privilege user this spider-man need to interact
+
+87
+00:07:14,520 --> 00:07:21,720
+ With this service provider, right to query the database to do something with the database. Okay. So now this service provider
+
+88
+00:07:21,720 --> 00:07:30,440
+ Will get the user this spider-man privilege, right? We'll get this spider-man privilege. I mean the very high privilege. Okay
+
+89
+00:07:30,440 --> 00:07:33,240
+ What he will do
+
+90
+00:07:33,240 --> 00:07:38,840
+ He will query the database by querying this service provider will get the very high privilege
+
+91
+00:07:38,840 --> 00:07:43,400
+ To add
+
+92
+00:07:45,480 --> 00:07:47,480
+ Delete
+
+93
+00:07:47,480 --> 00:07:50,840
+ And modify. Okay, by this
+
+94
+00:07:50,840 --> 00:07:55,160
+ This uh, service provider will get a very high privilege
+
+95
+00:07:55,160 --> 00:08:03,880
+ And he will do anything in the database. Okay, so it was called as the impersonation
+
+96
+00:08:03,880 --> 00:08:11,080
+ Okay, named pipe impersonation. Okay. So let's take a example of a real real real time
+
+97
+00:08:11,160 --> 00:08:16,760
+ So what it will do? Okay, I will I will explain this the example. Okay, this is a overall
+
+98
+00:08:16,760 --> 00:08:23,000
+ Understanding of what is a named pipe. I will explain it in how the how it will happen inside the computer. Okay
+
+99
+00:08:23,000 --> 00:08:31,640
+ So let's take as an example of our cobalt straight payload root ket remover. Okay, so let's take an example of our root ket remover
+
+100
+00:08:35,080 --> 00:08:41,240
+ Dot exa. So what it will do it will create a
+
+101
+00:08:41,240 --> 00:08:49,000
+ It will create a process with a high level privilege. Okay
+
+102
+00:08:49,000 --> 00:08:55,560
+ For example, it's a run
+
+103
+00:08:55,560 --> 00:09:00,760
+ DLL 32 dot exa wait a second
+
+104
+00:09:04,120 --> 00:09:06,120
+ Yep, so now
+
+105
+00:09:06,120 --> 00:09:10,920
+ Let's take an example of a root ket remover dot exa our cobalt strike payload
+
+106
+00:09:10,920 --> 00:09:16,520
+ It created a rendial 32 dot exa as a system level privilege. Okay
+
+107
+00:09:16,520 --> 00:09:21,960
+ So it created a
+
+108
+00:09:21,960 --> 00:09:30,680
+ Rendial 32 dot exa system level privilege. We know the root ket remover will be the root ket remover will be the owner. Okay, because
+
+109
+00:09:33,560 --> 00:09:38,360
+ We are the owner, right? So we only created the rendial 32 dot exa. Okay, so we are the server
+
+110
+00:09:38,360 --> 00:09:41,960
+ Are we are the owner? Okay
+
+111
+00:09:41,960 --> 00:09:48,760
+ So we created a
+
+112
+00:09:48,760 --> 00:09:59,800
+ System level process rendial 32 dot exa system level privilege. Okay, so now what we we can we will do we are doing the same thing
+
+113
+00:09:59,880 --> 00:10:05,800
+ What I said in the above diagram. We are using this very high level privilege
+
+114
+00:10:05,800 --> 00:10:15,960
+ For our attack for doing our malicious activities. Okay, so now this is the owner
+
+115
+00:10:15,960 --> 00:10:23,000
+ This is the server and the owner the root ket remover dot exa will be the server or a owner and the created process will be the
+
+116
+00:10:24,280 --> 00:10:31,160
+ Running under the system level privilege. So automatically this root ket remover will got a very high level privilege
+
+117
+00:10:31,160 --> 00:10:37,640
+ Right, so this is called as the named pipe impulse nation. Okay, so in a board diagram
+
+118
+00:10:37,640 --> 00:10:43,000
+ I already discussed this user have a very high level privilege and if the service provider
+
+119
+00:10:43,000 --> 00:10:49,720
+ Impose net abuse this very high level user privilege for a for doing a malicious activities
+
+120
+00:10:50,200 --> 00:10:55,400
+ So in this scenario our house our client will be the rendial 32 dot exa
+
+121
+00:10:55,400 --> 00:10:59,720
+ And our service provider will be our cobalt straight payload
+
+122
+00:10:59,720 --> 00:11:13,160
+ Okay, so this is called as the named pipe impulse nation. Okay, so we will see how to do the named pipe impulse nation attack in a practical
+
+123
+00:11:13,160 --> 00:11:16,680
+ Okay, in the next video. So this this
+
+124
+00:11:18,360 --> 00:11:21,320
+ Theory video, but I hope I explained everything
+
+125
+00:11:21,320 --> 00:11:23,800
+ Good way
+
+126
+00:11:23,800 --> 00:11:28,600
+ So if you do not understand about this video if you do not understand so no problem. We will
+
+127
+00:11:28,600 --> 00:11:31,560
+ We will see in the practical section. Okay
+
+128
+00:11:31,560 --> 00:11:38,680
+ That's all about this video. We will meet on you. So we will meet you on the next video. Thank you. Thank you for watching
+
