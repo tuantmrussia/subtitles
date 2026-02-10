@@ -1,0 +1,556 @@
+1
+00:00:00,160 --> 00:00:06,520
+Now that you've had the intro to, let's see how we can use him and where we'll actually use them.
+
+2
+00:00:06,520 --> 00:00:09,480
+So let's start off by creating a list.
+
+3
+00:00:09,520 --> 00:00:15,400
+Say we want to store a list of all the friends you want to invite to a party.
+
+4
+00:00:15,400 --> 00:00:24,240
+So we could do like what we did before and say maybe friend one as a variable and let's go and call
+
+5
+00:00:24,240 --> 00:00:31,040
+that friend Mary and then go friend two so you can see this can start to get a little bit repetitive,
+
+6
+00:00:31,040 --> 00:00:32,840
+especially if you've got a lot of friends.
+
+7
+00:00:32,960 --> 00:00:33,920
+Friend three.
+
+8
+00:00:33,960 --> 00:00:34,880
+Friend four.
+
+9
+00:00:34,880 --> 00:00:38,200
+And you're going to keep having to add them all into your list like that.
+
+10
+00:00:38,400 --> 00:00:43,480
+And that's going to get like just a bit messy to have to deal with all of those different variables.
+
+11
+00:00:43,640 --> 00:00:45,520
+Essentially, they all belong to one list.
+
+12
+00:00:45,520 --> 00:00:47,320
+They're your party friends.
+
+13
+00:00:47,360 --> 00:00:47,560
+Okay.
+
+14
+00:00:47,560 --> 00:00:53,840
+So let's uh, instead of going on and on about and typing in 520 different variables, let's just store
+
+15
+00:00:53,840 --> 00:00:54,600
+them in one place.
+
+16
+00:00:54,600 --> 00:00:59,440
+So to create a list, let's call this list friends.
+
+17
+00:00:59,920 --> 00:01:05,430
+All you have to do is put these two square brackets.
+
+18
+00:01:06,070 --> 00:01:08,190
+So now I actually have a list.
+
+19
+00:01:08,190 --> 00:01:09,030
+It's an empty list.
+
+20
+00:01:09,030 --> 00:01:12,990
+It isn't storing anything, but Python now sees this as a list.
+
+21
+00:01:13,030 --> 00:01:15,710
+Okay, so it's actually a special type of data.
+
+22
+00:01:15,710 --> 00:01:21,790
+So this is now you've actually created you see it's distinct from just being an integer or a string.
+
+23
+00:01:21,790 --> 00:01:24,110
+This is actually a list type that you can now work with.
+
+24
+00:01:24,150 --> 00:01:27,110
+So let's start storing those frames in our list.
+
+25
+00:01:27,150 --> 00:01:28,910
+Now remember these are names.
+
+26
+00:01:28,910 --> 00:01:31,110
+So we're going to store them all as strings.
+
+27
+00:01:31,110 --> 00:01:34,390
+And to store a string we use inverted commas.
+
+28
+00:01:34,750 --> 00:01:38,150
+Now to separate the different names we use commas.
+
+29
+00:01:38,150 --> 00:01:43,390
+So first name Mary next friend okay let's go again with Fred.
+
+30
+00:01:43,990 --> 00:01:45,590
+And let's put my name in here.
+
+31
+00:01:46,030 --> 00:01:47,630
+We can be friends okay.
+
+32
+00:01:47,630 --> 00:01:49,430
+You can go on as long as you want.
+
+33
+00:01:49,470 --> 00:01:50,070
+Let's go.
+
+34
+00:01:50,110 --> 00:01:53,630
+One more name to okay.
+
+35
+00:01:53,670 --> 00:01:55,510
+So here's a list of four friends.
+
+36
+00:01:55,550 --> 00:01:58,430
+Again, if we print this, it isn't going to show anything.
+
+37
+00:01:58,430 --> 00:02:04,470
+But what Python has done is it's taken this list and Mary, Fred, Sarah, Charlie and stored all of
+
+38
+00:02:04,510 --> 00:02:07,510
+that inside this variable called friends.
+
+39
+00:02:07,750 --> 00:02:12,900
+So now let's first just print it just to make sure that is what it's doing.
+
+40
+00:02:13,260 --> 00:02:15,700
+Print the variable friends.
+
+41
+00:02:16,380 --> 00:02:19,180
+And there you see it's stored it as a list.
+
+42
+00:02:19,180 --> 00:02:20,140
+It's not a string.
+
+43
+00:02:20,140 --> 00:02:22,620
+It hasn't stored them all as one sentence inside.
+
+44
+00:02:22,660 --> 00:02:25,060
+So you can actually see each of inverted commas.
+
+45
+00:02:25,260 --> 00:02:29,380
+Each of them has a little set of inverted commas around them, indicating that each of them is an individual
+
+46
+00:02:29,380 --> 00:02:29,780
+string.
+
+47
+00:02:29,780 --> 00:02:32,340
+So it sees that as four separate names.
+
+48
+00:02:32,380 --> 00:02:32,620
+Okay.
+
+49
+00:02:32,660 --> 00:02:34,260
+So now we have these in a list.
+
+50
+00:02:34,260 --> 00:02:38,900
+But now let's just say I'm wanting to send an invitation to Sara.
+
+51
+00:02:39,020 --> 00:02:42,180
+How can I now say I want to send it to Sara.
+
+52
+00:02:42,660 --> 00:02:49,180
+So what we're going to do is in all programming languages we have something called indexing.
+
+53
+00:02:49,180 --> 00:02:55,940
+What that basically means is each element in our list has a specific number associated with it.
+
+54
+00:02:55,980 --> 00:03:02,980
+So now you would think that if I had to ask you what number in the list is Sara, you're going to go,
+
+55
+00:03:03,020 --> 00:03:03,700
+well that's easy.
+
+56
+00:03:03,740 --> 00:03:06,620
+Sara is Mary Fred Sara Sara is three.
+
+57
+00:03:06,620 --> 00:03:08,540
+But you would be wrong.
+
+58
+00:03:08,580 --> 00:03:09,180
+Wrong.
+
+59
+00:03:09,740 --> 00:03:12,370
+Computers are just a little bit different.
+
+60
+00:03:12,570 --> 00:03:17,090
+Like we said earlier, computers might seem a bit confusing to people who don't know anything about
+
+61
+00:03:17,090 --> 00:03:21,690
+them, but as soon as you start learning the way they work their language, it really makes so much
+
+62
+00:03:21,690 --> 00:03:22,130
+more sense.
+
+63
+00:03:22,130 --> 00:03:24,330
+And it really it's it's very simple.
+
+64
+00:03:24,450 --> 00:03:27,570
+So what you need to remember with computers counting starts from zero.
+
+65
+00:03:27,570 --> 00:03:35,010
+So here instead of going one, two, three, four, five whatever we go 0123.
+
+66
+00:03:35,170 --> 00:03:41,810
+So where you might have thought before Sarah would be number three in the list, it is actually indexed
+
+67
+00:03:41,850 --> 00:03:42,410
+two.
+
+68
+00:03:42,610 --> 00:03:46,130
+So let's just say now I want to be able to print out that name.
+
+69
+00:03:46,130 --> 00:03:47,570
+Sarah I don't want any of the other names.
+
+70
+00:03:47,570 --> 00:03:51,530
+I just want Sarah in order to pull out that name.
+
+71
+00:03:51,530 --> 00:03:53,810
+We use what I said earlier, indexing.
+
+72
+00:03:53,890 --> 00:03:59,610
+And again, this might seem a bit confusing, but we're using square brackets again, so maybe easy
+
+73
+00:03:59,610 --> 00:04:02,850
+way to remember it is if I want to call a number from the list.
+
+74
+00:04:02,890 --> 00:04:08,650
+I'm using the same square brackets, but it doesn't necessarily mean the same thing at all.
+
+75
+00:04:08,690 --> 00:04:11,170
+This means that you want to call that number again.
+
+76
+00:04:11,210 --> 00:04:19,950
+So what I've typed here, I've typed the name of a list friends, and I'm saying I want index two from
+
+77
+00:04:19,950 --> 00:04:20,550
+that list.
+
+78
+00:04:20,670 --> 00:04:21,830
+Index position number two.
+
+79
+00:04:21,870 --> 00:04:23,030
+So 012.
+
+80
+00:04:23,190 --> 00:04:25,990
+And down the bottom here you see we found Sarah.
+
+81
+00:04:26,350 --> 00:04:30,710
+So if we tried zero if we wanted Mary we would actually use zero.
+
+82
+00:04:31,630 --> 00:04:32,110
+There we go.
+
+83
+00:04:32,150 --> 00:04:32,790
+At the bottom.
+
+84
+00:04:32,790 --> 00:04:33,910
+It's pulled out Mary.
+
+85
+00:04:33,950 --> 00:04:34,230
+Okay.
+
+86
+00:04:34,230 --> 00:04:36,550
+So what happens if we put, uh five.
+
+87
+00:04:38,430 --> 00:04:39,310
+Good question.
+
+88
+00:04:39,870 --> 00:04:40,830
+That's a good question.
+
+89
+00:04:40,870 --> 00:04:41,550
+There we go.
+
+90
+00:04:41,590 --> 00:04:42,350
+Not happy.
+
+91
+00:04:42,350 --> 00:04:43,430
+You'll see it on the bottom there.
+
+92
+00:04:43,430 --> 00:04:49,630
+It's giving you an index error list index out of range obviously because there isn't a position five
+
+93
+00:04:49,630 --> 00:04:51,790
+or a value in position five in your list.
+
+94
+00:04:51,830 --> 00:04:59,270
+And obviously the same with negatives, but actually complained about that fact because there are only
+
+95
+00:04:59,310 --> 00:05:04,670
+four different elements in this list and it only goes up to index three.
+
+96
+00:05:05,230 --> 00:05:05,550
+Okay.
+
+97
+00:05:05,590 --> 00:05:12,830
+So again, instead of now having to type hello comma friend one hello comma friend two, we can just
+
+98
+00:05:12,870 --> 00:05:14,310
+easily change that number.
+
+99
+00:05:14,310 --> 00:05:17,910
+And let's just say you're invited.
+
+100
+00:05:19,460 --> 00:05:22,100
+And we wanted to invite Charlie.
+
+101
+00:05:22,100 --> 00:05:23,940
+And don't forget that comma.
+
+102
+00:05:24,220 --> 00:05:24,820
+Okay.
+
+103
+00:05:24,980 --> 00:05:27,380
+And then you could do it with the others.
+
+104
+00:05:27,380 --> 00:05:33,940
+And we actually going to later on look at something called loops, which makes this even more powerful.
+
+105
+00:05:33,980 --> 00:05:34,260
+Okay.
+
+106
+00:05:34,260 --> 00:05:38,620
+So as you can see, slowly things are starting to get more and more complicated.
+
+107
+00:05:38,620 --> 00:05:42,700
+And as your programs start to get longer and longer and eventually you're going to have programs that
+
+108
+00:05:42,700 --> 00:05:44,460
+can be thousands of lines long.
+
+109
+00:05:44,660 --> 00:05:51,220
+We want to try and keep track of what we're doing, and by the time you're down on line 373, you might
+
+110
+00:05:51,220 --> 00:05:56,340
+scroll up, back on back to line four and have no idea what you were typing there.
+
+111
+00:05:56,380 --> 00:06:03,100
+So in order to help us as programmers and also help other people when they might read your code or try
+
+112
+00:06:03,100 --> 00:06:06,660
+and understand what you've been doing, we have something called comments.
+
+113
+00:06:06,860 --> 00:06:09,380
+So all our comment is, is it's very simple.
+
+114
+00:06:09,580 --> 00:06:13,060
+It's a hashtag and whatever you want.
+
+115
+00:06:13,540 --> 00:06:13,860
+Okay.
+
+116
+00:06:13,900 --> 00:06:16,340
+Now this hello hashtag hello.
+
+117
+00:06:16,380 --> 00:06:20,060
+What Python basically does is it completely ignores this.
+
+118
+00:06:20,380 --> 00:06:22,180
+So comments are for yourself.
+
+119
+00:06:22,180 --> 00:06:23,530
+It's to help you.
+
+120
+00:06:23,570 --> 00:06:24,370
+Pathan.
+
+121
+00:06:24,370 --> 00:06:26,890
+When it runs the program, it doesn't even see this.
+
+122
+00:06:26,890 --> 00:06:29,930
+So anything after that hash tag, it completely ignores.
+
+123
+00:06:29,930 --> 00:06:31,970
+You can have a space and say whatever.
+
+124
+00:06:32,010 --> 00:06:34,210
+So the point of commenting is very important.
+
+125
+00:06:34,250 --> 00:06:38,010
+As Sarah said, a lot of programmers think, oh, they're just going to rush through and code.
+
+126
+00:06:38,050 --> 00:06:41,810
+But understand this even if someone else is not having to look at your code, if you're going to look
+
+127
+00:06:41,810 --> 00:06:45,530
+at someone else's code and they haven't commented it, you have no idea what they've done.
+
+128
+00:06:45,530 --> 00:06:50,650
+But even you yourself, you come back a week or a month later and you look at your code and you cannot
+
+129
+00:06:50,650 --> 00:06:53,010
+remember why you did certain things.
+
+130
+00:06:53,330 --> 00:06:55,090
+So it is very important.
+
+131
+00:06:55,090 --> 00:06:56,610
+It's a good habit to get into.
+
+132
+00:06:56,890 --> 00:07:03,370
+To start to add comments, you can add comments on a line, you can add comments on its own line.
+
+133
+00:07:03,370 --> 00:07:06,410
+So you might want to say you know the code below.
+
+134
+00:07:06,410 --> 00:07:08,210
+Here is where we are.
+
+135
+00:07:08,250 --> 00:07:14,890
+We are printing out the friends names, etc. really important to put as many comments as you can just
+
+136
+00:07:14,890 --> 00:07:18,010
+to remind yourself and others who are reading the code what is going on.
+
+137
+00:07:18,010 --> 00:07:19,770
+So it's a good habit to get used to it.
+
+138
+00:07:20,010 --> 00:07:24,770
+You will be very thankful if you put comments in, because you're guaranteed you're going to come back
+
+139
+00:07:24,770 --> 00:07:27,610
+later and you're going to go, what in the world was I doing there?
+
