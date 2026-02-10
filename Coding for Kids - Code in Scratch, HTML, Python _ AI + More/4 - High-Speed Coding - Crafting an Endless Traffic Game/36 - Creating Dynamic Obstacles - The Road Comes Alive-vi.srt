@@ -1,0 +1,400 @@
+1
+00:00:00,110 --> 00:00:04,040
+À, đã đến lúc cho chương trình này lên đường, theo đúng nghĩa đen.
+
+2
+00:00:04,520 --> 00:00:10,580
+Ở giai đoạn này, chúng ta có ảo giác chuyển động, giống như cách xe của chúng ta chạy dọc đường cao tốc và chúng ta
+
+3
+00:00:10,580 --> 00:00:13,370
+có khả năng điều khiển xe bằng cách rẽ trái hay phải.
+
+4
+00:00:13,370 --> 00:00:17,390
+Nhưng bây giờ chúng ta cần tập trung vào việc đưa những chiếc xe gây trở ngại trên đường.
+
+5
+00:00:17,450 --> 00:00:21,680
+Đây là những chiếc xe mà chúng tôi sẽ hàn giữa chừng khi chúng tôi chơi trò chơi.
+
+6
+00:00:22,280 --> 00:00:28,580
+Như các bạn có thể thấy, ở giai đoạn này, chúng ta chỉ có một chiếc xe, nhưng các bạn sẽ sớm thấy cách chúng tôi có thể từ nó
+
+7
+00:00:28,580 --> 00:00:30,890
+Tạo ra vô số xe hơi.
+
+8
+00:00:31,380 --> 00:00:36,150
+Và một lần nữa, trước khi chúng ta bắt đầu lập trình, hãy nghĩ xem nó cần làm gì.
+
+9
+00:00:36,150 --> 00:00:39,660
+Và sau đó chúng ta có thể xem xét làm thế nào chúng ta có thể đạt được điều này bằng mật mã.
+
+10
+00:00:40,470 --> 00:00:46,860
+Vì vậy, để tiếp tục ảo tưởng chuyển động và thêm một chướng ngại vật mà chúng ta phải tránh, chúng ta muốn chiếc xe này
+
+11
+00:00:46,860 --> 00:00:49,800
+Có vẻ như nó chạy chậm hơn xe của chúng ta.
+
+12
+00:00:50,280 --> 00:00:57,240
+Vì vậy, nó sẽ được đi chậm xuống một làn đường như thế này, và sau đó chúng tôi sẽ cần phải tránh nó bằng cách rẽ trái
+
+13
+00:00:57,240 --> 00:00:57,810
+hoặc bên phải.
+
+14
+00:00:58,330 --> 00:01:02,770
+Vì vậy, hãy cố gắng giải quyết vấn đề đầu tiên di chuyển đến thanh quản xe của chúng tôi.
+
+15
+00:01:02,800 --> 00:01:10,540
+Chúng tôi có thể lần đầu tiên gắn một khối mãi mãi vào văn lệnh này, và đơn giản là tất cả chúng tôi sẽ làm là có
+
+16
+00:01:10,540 --> 00:01:15,670
+Xe từ từ di chuyển xuống màn hình bằng cách thay đổi Y với một giá trị tiêu cực của, giả sử, năm.
+
+17
+00:01:16,390 --> 00:01:17,170
+Sau đó đánh bóng.
+
+18
+00:01:17,770 --> 00:01:20,830
+Có vẻ hoàn hảo vì nó đang đi xuống đường.
+
+19
+00:01:21,370 --> 00:01:28,840
+Nó vẫn có vẻ như đang di chuyển về phía trước vì nó đang di chuyển chậm hơn con đường đang quay trở lại.
+
+20
+00:01:29,540 --> 00:01:35,390
+Nhưng bây giờ chúng ta có cuộc gọi này đang chuyển động, bạn có thể thấy nó chỉ dừng lại khi nó đi đến cuối màn hình.
+
+21
+00:01:35,840 --> 00:01:37,730
+Và nó hoạt động rất tốt.
+
+22
+00:01:37,730 --> 00:01:42,290
+Hoàn hảo nếu tất cả chúng ta muốn là một trở ngại trong trò chơi của chúng ta, đó không phải là mục tiêu ở đây.
+
+23
+00:01:42,290 --> 00:01:46,730
+Thay vào đó, chúng ta cần chiếc xe quay trở lại điểm bắt đầu của màn hình khi nó chạm tới đáy.
+
+24
+00:01:47,520 --> 00:01:52,140
+Và để làm được điều này chúng ta cần thêm một số loại kiểm tra điều kiện.
+
+25
+00:01:52,790 --> 00:02:00,290
+Nhưng nếu bạn chuyển sang nhóm chuyển động của chúng tôi, nếu bạn nhớ, chúng tôi có Y này vị trí và chúng tôi có thể sử dụng
+
+26
+00:02:00,290 --> 00:02:05,600
+điều này để kiểm tra những gì y vị trí của chúng tôi sumnite, có nghĩa là chúng tôi có thể kiểm tra xem nếu chúng tôi spite có
+
+27
+00:02:05,600 --> 00:02:10,370
+Đến cuối màn hình, và nếu có, chúng ta có thể khiến nó trở lại đỉnh.
+
+28
+00:02:11,430 --> 00:02:14,790
+Trước hết, điều chúng ta cần là một tuyên bố.
+
+29
+00:02:14,790 --> 00:02:21,060
+Và bạn sẽ nhận thấy ở đây rằng bạn không thể đặt này vị trí y trong tuyên bố.
+
+30
+00:02:21,540 --> 00:02:26,310
+Và cũng vì lý do rõ ràng nó là như thế nếu y vị trí sau đó làm một cái gì đó.
+
+31
+00:02:26,310 --> 00:02:28,080
+Thật vô lý.
+
+32
+00:02:28,080 --> 00:02:32,610
+Những gì chúng tôi cần làm là kiểm tra y vị trí là thấp hơn một giá trị nhất định.
+
+33
+00:02:33,060 --> 00:02:39,810
+Và cũng giống như với đường của chúng tôi, chúng tôi có thể làm điều này bằng cách lấy khối màu xanh lá cây này từ các nhà điều hành.
+
+34
+00:02:40,470 --> 00:02:44,310
+Đây là những gì kiểm tra nếu giá trị lớn hơn hay nhỏ hơn giá trị khác.
+
+35
+00:02:44,310 --> 00:02:48,180
+Hãy nhớ chú ý đến kích thước lúc đầu.
+
+36
+00:02:48,630 --> 00:02:55,170
+Ở đây nó đi từ kích thước nhỏ hơn kích thước của nó, và ở đây nó đi từ kích thước mà
+
+37
+00:02:55,170 --> 00:02:56,370
+lớn hơn.
+
+38
+00:02:57,020 --> 00:03:03,050
+Vì vậy, chúng tôi muốn kiểm tra nếu y là ít hơn -210, mà về cơ bản là đáy của màn hình.
+
+39
+00:03:03,700 --> 00:03:08,230
+Bây giờ, nếu điều kiện này là đúng, chúng tôi muốn xe của chúng tôi quay trở lại đầu màn hình.
+
+40
+00:03:08,230 --> 00:03:16,540
+Vì vậy, tất cả những gì chúng tôi cần làm là mang lại một trong một đi đến khối và thiết lập giá trị Y đến 210, đó là về cơ bản là đầu
+
+41
+00:03:16,540 --> 00:03:18,550
+và nhấn ga.
+
+42
+00:03:19,480 --> 00:03:19,630
+Cái gì?
+
+43
+00:03:19,630 --> 00:03:25,690
+Như các bạn có thể thấy, xe của chúng tôi lái xuống và khi nó xuống dưới đáy, nó quay trở lại phía trên.
+
+44
+00:03:25,690 --> 00:03:26,620
+Đẹp lắm.
+
+45
+00:03:26,890 --> 00:03:28,660
+Trông khá ổn đấy.
+
+46
+00:03:29,380 --> 00:03:31,990
+Nhưng còn một điều nữa chúng ta cần giải quyết.
+
+47
+00:03:31,990 --> 00:03:33,250
+Và đó là xe của chúng ta.
+
+48
+00:03:33,400 --> 00:03:40,690
+Vâng, nó liên tục đi xuống cùng một làn đường, mà sẽ làm cho trò chơi khá dễ dàng, bởi vì tất cả các bạn
+
+49
+00:03:40,690 --> 00:03:43,690
+Sẽ cần phải lái xe trong bất kỳ làn đường nào khác và chúng ta sẽ thắng.
+
+50
+00:03:43,870 --> 00:03:46,300
+Và chúng ta không muốn chiến thắng giá rẻ ở đây.
+
+51
+00:03:46,750 --> 00:03:52,750
+Vì vậy, những gì chúng tôi cần là cho chiếc xe bằng cách nào đó thay đổi ngẫu nhiên giữa mỗi làn đường mỗi lần nó
+
+52
+00:03:52,750 --> 00:03:53,830
+trở lại đỉnh.
+
+53
+00:03:54,830 --> 00:04:00,530
+Bây giờ, đây là một chút khó khăn hơn bạn có thể nghĩ, nhưng hãy bắt đầu với những gì chúng ta biết.
+
+54
+00:04:01,100 --> 00:04:08,420
+Vì vậy, chúng tôi biết rằng điều này sẽ có một cái gì đó để làm với giá trị x, như ngay bây giờ chúng tôi thiết lập nó bằng không mỗi
+
+55
+00:04:08,420 --> 00:04:09,830
+Thời gian nó lên đến đỉnh.
+
+56
+00:04:10,160 --> 00:04:12,110
+Chúng ta cần thay đổi điều đó.
+
+57
+00:04:12,720 --> 00:04:16,530
+Chúng tôi cũng biết rằng như một cái gì đó để làm với chọn một số ngẫu nhiên.
+
+58
+00:04:17,120 --> 00:04:23,030
+Vì vậy, để bắt đầu với, hãy chỉ cần mang chọn ngẫu nhiên vào đi đến x.
+
+59
+00:04:24,020 --> 00:04:29,480
+Bây giờ chúng ta có thể thấy giới hạn trên và thấp hơn bằng cách kéo xe của chúng tôi đến làn đầu tiên.
+
+60
+00:04:30,050 --> 00:04:34,100
+Vâng, bạn có thể thấy nó ở -145.
+
+61
+00:04:34,610 --> 00:04:36,680
+Và dòng cuối cùng thì tốt.
+
+62
+00:04:36,680 --> 00:04:38,090
+145.
+
+63
+00:04:38,580 --> 00:04:45,240
+Vì vậy, chúng ta có thể có X được thiết lập đến một số ngẫu nhiên từ -145 đến 145.
+
+64
+00:04:45,240 --> 00:04:51,060
+Và nếu chúng tôi chơi, bạn có thể thấy rằng mỗi khi xe của chúng tôi đến cuối.
+
+65
+00:04:52,090 --> 00:04:58,270
+Nó chuyển đổi làn đường tốt, nhưng vấn đề là đôi khi nó đi giữa các làn đường,
+
+66
+00:04:58,270 --> 00:04:59,620
+Nó không tốt.
+
+67
+00:05:00,310 --> 00:05:02,620
+Và đây là lúc nó trở nên khó khăn.
+
+68
+00:05:02,620 --> 00:05:05,020
+Nên chúng ta cần thay đổi cách chúng ta tiếp cận.
+
+69
+00:05:05,740 --> 00:05:11,560
+Vì vậy, thay vì thiết lập số giữa -145 và 145, chúng ta cần làm một chút toán học.
+
+70
+00:05:11,560 --> 00:05:11,920
+Ừ.
+
+71
+00:05:11,950 --> 00:05:12,520
+Vui chứ?
+
+72
+00:05:12,520 --> 00:05:12,700
+Huh.
+
+73
+00:05:13,420 --> 00:05:19,360
+Vì vậy, những gì chúng tôi cần là một khối cộng và một khối, và bạn sẽ thấy lý do tại sao.
+
+74
+00:05:20,030 --> 00:05:25,100
+Vậy vị trí X của chúng ta có thể là tối thiểu -145.
+
+75
+00:05:25,580 --> 00:05:28,850
+Vì vậy, chúng tôi có thể nhập đó vào đầu vào đầu vào đầu vào đầu vào đầu vào đầu vào đầu tiên của chúng tôi.
+
+76
+00:05:29,350 --> 00:05:30,790
+Bây giờ có năm.
+
+77
+00:05:31,590 --> 00:05:35,820
+Những làn đường có thể xảy ra bất cứ lúc nào.
+
+78
+00:05:36,370 --> 00:05:39,820
+Vì vậy, những gì chúng tôi cần làm là tìm ra khoảng trống giữa các làn đường.
+
+79
+00:05:39,820 --> 00:05:42,490
+Vì vậy, làn đường đầu tiên là -145.
+
+80
+00:05:42,700 --> 00:05:46,840
+Nếu chúng ta chuyển nó sang làn thứ hai, nó ở -70.
+
+81
+00:05:46,870 --> 00:05:49,510
+Bây giờ là 4570.
+
+82
+00:05:49,540 --> 00:05:50,920
+Nó cho bạn 75.
+
+83
+00:05:50,920 --> 00:05:52,570
+Nhưng chúng ta có thể nói khoảng 75.
+
+84
+00:05:53,140 --> 00:05:56,590
+Vậy 75 là khoảng cách giữa các làn đường.
+
+85
+00:05:56,770 --> 00:06:03,130
+Vì vậy, nếu chúng tôi di chuyển lần này chặn vào khối cộng, chúng tôi có thể nhập 75.
+
+86
+00:06:03,130 --> 00:06:07,480
+Và có 5 làn đường chúng ta có thể sử dụng ngẫu nhiên.
+
+87
+00:06:07,480 --> 00:06:11,590
+Và ở đây chúng tôi có thể đặt nó bằng không và bốn.
+
+88
+00:06:12,100 --> 00:06:14,290
+Và số 0 có vẻ kỳ lạ.
+
+89
+00:06:14,680 --> 00:06:15,820
+Sao không từ 1 đến 5.
+
+90
+00:06:15,820 --> 00:06:21,010
+Và đây là bởi vì tốt -145 là là đường đầu tiên của chúng tôi và bất cứ điều gì lần zero.
+
+91
+00:06:21,010 --> 00:06:25,510
+Vì vậy, nếu số ngẫu nhiên là zero chiếc xe của chúng tôi sẽ ở trong làn đường đầu tiên của chúng tôi.
+
+92
+00:06:25,510 --> 00:06:30,280
+Và tôi biết điều này có thể là một chút bối rối, nhưng khi bạn làm việc nhiều hơn với những loại khối, tốt hơn
+
+93
+00:06:30,280 --> 00:06:31,330
+Anh hiểu mà.
+
+94
+00:06:31,510 --> 00:06:32,350
+Nhưng nói đủ rồi.
+
+95
+00:06:32,470 --> 00:06:34,480
+Hãy xem điều này trong hành động.
+
+96
+00:06:35,990 --> 00:06:40,850
+À, trông gần như hoàn hảo, nhưng chúng ta có thể điều chỉnh nó chỉ một chút để có thể trở nên tốt hơn.
+
+97
+00:06:41,240 --> 00:06:43,640
+Như các bạn thấy, dòng cuối cùng hơi xa.
+
+98
+00:06:43,760 --> 00:06:48,620
+Vì vậy, hãy chỉ thay đổi điều này là 74 bởi vì nó là tất cả về thử và sai sót.
+
+99
+00:06:48,950 --> 00:06:51,530
+Nhưng nhìn ngon đấy.
+
+100
+00:06:51,530 --> 00:06:57,530
+Vì vậy, bây giờ chỉ cần ngồi lại, thư giãn và thưởng thức sáng tạo của bạn bởi vì nó sẽ chỉ trở nên tốt hơn.
+
