@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:09,600
+ If there is a welcome to another session, the successfully escalated the privileges from
+
+2
+00:00:09,600 --> 00:00:15,860
+ user to admin admin to system, we have seen various methods to how to do that.
+
+3
+00:00:15,860 --> 00:00:22,100
+ So in this section, we are going to discuss about the persistence, so this one of important
+
+4
+00:00:22,100 --> 00:00:31,160
+ things for all the threat actors and their teammates. So if you can able to take your malicious
+
+5
+00:00:31,160 --> 00:00:40,840
+ executable inside the environment, any of the machine, so let's see, you have a malware,
+
+6
+00:00:40,840 --> 00:00:48,920
+ you successfully did an initial access and you just executed the malware in one of the
+
+7
+00:00:48,920 --> 00:00:57,560
+ machines inside the organization. But there is a problem if they restart or the machine
+
+8
+00:00:57,560 --> 00:01:05,200
+ or if they shut down the machine and again they start there. So at that time, we were
+
+9
+00:01:05,200 --> 00:01:12,160
+ malware will be get terminated, right? So there will be no connection from your side
+
+10
+00:01:12,160 --> 00:01:20,640
+ if they restarted the machine because that executable has been literally Terminator by
+
+11
+00:01:20,640 --> 00:01:30,720
+ the operating system. So there is a way to achieve the goal for if they restarted the
+
+12
+00:01:30,720 --> 00:01:36,640
+ machine or if they shut down the machine and if they again start there, you were executed
+
+13
+00:01:36,640 --> 00:01:46,240
+ or it will be automatically executed without any manual thing, it will be an automation
+
+14
+00:01:46,240 --> 00:01:55,480
+ thing. So windows have set of persistent mechanism, so this is one of interview questions,
+
+15
+00:01:55,480 --> 00:02:02,560
+ so the blue teamers as well as their teamers, there are five kind of persistence in the
+
+16
+00:02:02,560 --> 00:02:11,680
+ windows machine, in Linux machine there was like cron jobs, services and startup, but will
+
+17
+00:02:11,680 --> 00:02:18,960
+ be focusing on windows, so windows have five kind of persistence, so the owners registry
+
+18
+00:02:18,960 --> 00:02:26,080
+ and the two is start of folder, the three could be a WMI, we will be seeing windows management
+
+19
+00:02:26,080 --> 00:02:31,640
+ instrumentation and four will be scheduled task and five will be a services, okay?
+
+20
+00:02:31,640 --> 00:02:42,640
+ So in this section, we are going to fulfill the persistent later activities, so we will
+
+21
+00:02:42,640 --> 00:02:49,960
+ be seeing how the threat actors will be achieving the persistence inside the machine, okay?
+
+22
+00:02:49,960 --> 00:02:55,480
+ So the commands will be seen here, I will be giving that in our resource session, don't
+
+23
+00:02:55,480 --> 00:03:04,200
+ worry, the all the commands which I have mentioned, it will be executed in the active
+
+24
+00:03:04,200 --> 00:03:14,300
+ incidents, which we have handled by the threat actors, okay? So whenever they're targeting,
+
+25
+00:03:14,300 --> 00:03:18,980
+ whenever they're attacking any organization, we'll be occurring, this kind of persistence
+
+26
+00:03:18,980 --> 00:03:27,080
+ based commands from the machine, okay? So I hope you have a bit understanding about
+
+27
+00:03:27,080 --> 00:03:34,480
+ what is a persistence, so I'll be going for one more time, so what if if they restart
+
+28
+00:03:34,480 --> 00:03:38,840
+ the machine, your executable will be get terminated and it will be not getting any connection
+
+29
+00:03:38,840 --> 00:03:48,620
+ from that, so you'll be taking your executable in a persistence mode, like if they restart
+
+30
+00:03:48,620 --> 00:03:54,240
+ the machine or if they shut down the machine and take up again, so that malware will
+
+31
+00:03:54,240 --> 00:03:59,040
+ be get automatically executed by the Windows operating system and you'll be getting
+
+32
+00:03:59,040 --> 00:04:04,600
+ connection on the post came back online, okay? So you don't need to do any, any sort
+
+33
+00:04:04,600 --> 00:04:14,200
+ of things, everything will be handled by the Windows operating system, okay? Let me, let
+
+34
+00:04:14,200 --> 00:04:24,640
+ me create some malware using the MS of venom, I think this coming in sudden cover in this
+
+35
+00:04:24,640 --> 00:04:33,160
+ post, if I not cover, so I'll be explaining this command, so here you need to give which
+
+36
+00:04:33,160 --> 00:04:38,960
+ payloads you will be choosing, so I'll be choosing the Windows based payloads and
+
+37
+00:04:38,960 --> 00:04:47,520
+ the metadata and reverse TCP, this is the pair of which I am choosing and L host will
+
+38
+00:04:47,520 --> 00:04:58,640
+ be my calling machine post, that will be a I have a config and it's the IP was on 18.27,
+
+39
+00:04:58,640 --> 00:05:07,760
+ let me 92.168.18.27 and L port will be the port, you can choose any port, I'll be choosing
+
+40
+00:05:07,760 --> 00:05:14,840
+ like 87.69 and that's your feel be the format, which format you need, I'll be keeping
+
+41
+00:05:14,840 --> 00:05:21,320
+ this in a EXE format, EXE equitable format, and I'll be saving my malware as a process
+
+42
+00:05:21,320 --> 00:05:35,080
+ to mal.exe, okay? P-E-R-S-A-S-T mal.exe, so once I execute this, so this method is like
+
+43
+00:05:35,080 --> 00:05:43,360
+ you are creating a new malware, okay, let me do L-S, so here you can find our malware which
+
+44
+00:05:43,360 --> 00:05:52,120
+ has been created, so let me do one more thing, I'll be creating, I'll be listening, I'll
+
+45
+00:05:52,120 --> 00:06:04,840
+ be starting a listener using the MS of console, okay? So let me do that, so let me do
+
+46
+00:06:04,840 --> 00:06:15,920
+ that. So I'll be choosing the listener exploit multi handler, so it will handle multiple
+
+47
+00:06:15,920 --> 00:06:43,160
+ connections, and I'll be setting the pair or a, a, the pair would be generator, a, meter,
+
+48
+00:06:43,160 --> 00:06:56,120
+ and L-Port, on 92.168.18.27 and L-Port will be the port, which we have given when we create
+
+49
+00:06:56,120 --> 00:07:10,520
+ a dirty malware, 897, I feel that support which I have opened, which I got again, 8769, yeah. So now,
+
+50
+00:07:10,520 --> 00:07:20,800
+ everything, I feel everything has been settled, so let me deliver this malware, to my, let
+
+51
+00:07:20,800 --> 00:07:34,800
+ me deliver this malware to my Windows machine, C-P-E-P-O-S-S-S, I'll put it in a, I'll
+
+52
+00:07:34,800 --> 00:07:50,960
+ put it in a Apache folder, and let me start Apache, so I'm going to the Windows machine,
+
+53
+00:07:50,960 --> 00:08:11,320
+ and I will be uploading this, okay, done, yeah, we just created a malware, as well as we
+
+54
+00:08:11,320 --> 00:08:17,960
+ have created a listener for our reverse connection, and in the next video, we'll be adding
+
+55
+00:08:17,960 --> 00:08:24,560
+ this power system, ALD, or T-X-E inside the rent key registry, I have already mentioned,
+
+56
+00:08:24,560 --> 00:08:29,200
+ there are five kind of power systems we can do, so in the next video, we are going to add
+
+57
+00:08:29,200 --> 00:08:37,080
+ this registry keys, okay, so let's hop off from here, and we'll continue our discussion
+
+58
+00:08:37,080 --> 00:08:39,000
+ next video, you guys, bye bye.
+
