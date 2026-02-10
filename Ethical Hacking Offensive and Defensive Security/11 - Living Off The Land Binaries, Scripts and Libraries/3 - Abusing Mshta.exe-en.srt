@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:09,840
+ Welcome to another video, so previous videos we have seen some of vlogs, so in this video
+
+2
+00:00:09,840 --> 00:00:15,920
+ we will see the Haciomasa state that we have seen, so that will be used for malicious purpose
+
+3
+00:00:15,920 --> 00:00:25,880
+ most of the time, let us see what was the login is about, I am damn sure guys this knowledge
+
+4
+00:00:25,880 --> 00:00:36,600
+ will be alpha into the knowledge based on the threat analysis, the threat hunting, it will
+
+5
+00:00:36,600 --> 00:00:41,920
+ give enough knowledge to you everything retaining, blue teaming and all ok, so go to the
+
+6
+00:00:41,920 --> 00:00:51,720
+ best, just search for MSHTA.exe, so you can see it will execute dot HTA files, the HTA means
+
+7
+00:00:51,720 --> 00:01:03,360
+ HtML, okay, HtML application host HTA, the MSHTA.exe or that login or all that was responsible
+
+8
+00:01:03,360 --> 00:01:09,860
+ for executing the HTA file, because sometime the threat type will generate a malicious HTA files,
+
+9
+00:01:09,860 --> 00:01:16,560
+ we will see how to generate that and all and he will be trying to execute inside the machine
+
+10
+00:01:16,560 --> 00:01:24,840
+ and he will be taking actual, taking x, okay, and let us start our practical, I am going
+
+11
+00:01:24,840 --> 00:01:43,860
+ to command, so we will generate our HTA pair at first, MSH of venom, dash P tends to pair
+
+12
+00:01:43,860 --> 00:01:57,420
+ our shell, reverse, underscore, TCP and you have to give the L host, my local host IP
+
+13
+00:01:57,420 --> 00:02:03,880
+ will be the one, so you have to give a local host IP that is 18.27, so I am giving
+
+14
+00:02:03,880 --> 00:02:17,180
+ 192.168.18.27 here and L port equal to, so if you can use some other ports, you can
+
+15
+00:02:17,180 --> 00:02:33,780
+ you water ports you want, I will just giving the 8654 port, okay, so you can do water port,
+
+16
+00:02:33,780 --> 00:02:55,260
+ it 5, 8 by 43 dash F, HTA dash TSH will generate a name like shell dot HTA, okay, now
+
+17
+00:02:55,260 --> 00:03:03,660
+ the pair has been generated with the 724 zone bytes, let us verify this, yes, it is
+
+18
+00:03:03,660 --> 00:03:17,580
+ all payload, so let us copy the pair in our server directory where www, so we can download
+
+19
+00:03:17,580 --> 00:03:31,540
+ their HTML server, one let us go to the Windows machine, let us download the shell dash
+
+20
+00:03:31,540 --> 00:03:39,460
+ HTA here and we will keep this, okay, let us open this, so you can see it was pointing
+
+21
+00:03:39,460 --> 00:03:44,460
+ to HTML files, so when I give, when I press double click on this, so you can see it
+
+22
+00:03:44,460 --> 00:03:53,820
+ was like executing, it was executing state, if you are giving a run, so it has been executed
+
+23
+00:03:53,820 --> 00:03:59,980
+ right, and there is no remote access because we did not open any of the port, so let us
+
+24
+00:03:59,980 --> 00:04:11,280
+ open our port, LVD, the port number will be 8
+
+25
+00:04:11,280 --> 00:04:18,240
+ 543, let us do it now, you can see if I open the Microsoft RHT, HTML application
+
+26
+00:04:18,240 --> 00:04:23,060
+ post, this is called the MSHT process, Microsoft HTML application post, if I click
+
+27
+00:04:23,060 --> 00:04:30,940
+ on the open with MS, sorry Microsoft HTML application post, so now the pair was running,
+
+28
+00:04:30,940 --> 00:04:40,720
+ so now you can see we got a reversal, it was connection, sorry, it is a IP config, so we
+
+29
+00:04:40,720 --> 00:04:48,240
+ got a reverse connection from the target machine, and if I give who am I, okay, who,
+
+30
+00:04:48,240 --> 00:05:03,220
+ I, so he is a user, let us take a privilege, who am I, so he is just a normal user,
+
+31
+00:05:03,220 --> 00:05:09,820
+ you do not have an off privilege, only medium mandatory privilege, he has, so this is
+
+32
+00:05:09,820 --> 00:05:20,780
+ the complete overview of MSHT.exe, you can use the line, you can use the scripts to create
+
+33
+00:05:20,780 --> 00:05:25,420
+ the stable loads, and you can execute in the target machine, and you can see whatever it
+
+34
+00:05:25,420 --> 00:05:33,020
+ was, okay, and let me do one more thing, we will go and investigate what was inside
+
+35
+00:05:33,020 --> 00:05:43,900
+ the script, open with, okay, you edit with notepad.exe, so you can see here, we have some
+
+36
+00:05:43,900 --> 00:05:51,700
+ encrypted payload, we have some encrypted payload here, right, so the payload has been
+
+37
+00:05:51,700 --> 00:06:21,700
+ completely encrypted, and the WSL script and yeah, so that is our
+
