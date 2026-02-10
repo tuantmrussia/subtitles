@@ -1,0 +1,404 @@
+1
+00:00:00,000 --> 00:00:07,440
+ Hey guys, welcome to the session, so before jumping out to the process threads or the
+
+2
+00:00:07,440 --> 00:00:22,320
+ dealers, you need to learn few things before the PE, so PE is basically called us a portable
+
+3
+00:00:22,320 --> 00:00:30,200
+ executeable. So let us take a Windows based applications, so it will be the Windows based
+
+4
+00:00:30,200 --> 00:00:39,480
+ application will be in the EXE format or in like EXE executable format. So we will call
+
+5
+00:00:39,480 --> 00:00:47,020
+ that as for PE, portable executeable, chrome.exe, so let us see an example how we are operating
+
+6
+00:00:47,020 --> 00:00:57,640
+ a load that program, so let us take a hard disk, okay, honestly what storage system you
+
+7
+00:00:57,640 --> 00:01:05,480
+ need, you can take that. So here in the folder, there is a chrome.exe, right, so when
+
+8
+00:01:05,480 --> 00:01:13,520
+ you double click on the chrome.exe, the windows have their own loader PE loader, portable
+
+9
+00:01:13,520 --> 00:01:20,000
+ executeable loader, this loader will take the chrome.exe from the disk, from the hard disk
+
+10
+00:01:20,000 --> 00:01:27,260
+ from our directory, so the directory is like whether you have downloaded and the C uses
+
+11
+00:01:27,260 --> 00:01:36,240
+ our downloads or any other directory, so it will load the chrome.exe from the directory
+
+12
+00:01:36,240 --> 00:01:48,880
+ into the memory, okay, so memory means of SQL memory like RAM, okay RAM, CPU or whatever
+
+13
+00:01:48,880 --> 00:01:53,320
+ you can call, okay, so this is the normal process when you are executing any program, the
+
+14
+00:01:53,320 --> 00:02:03,360
+ program will be loaded in the from disk to the memory of the CPU, okay, so this is the normal
+
+15
+00:02:03,360 --> 00:02:11,920
+ process but the PE, executeable will see some headers, like we will see that it depends
+
+16
+00:02:11,920 --> 00:02:18,000
+ upon you if you want to learn, you can, if you want to skip, you can go ahead and skip
+
+17
+00:02:18,000 --> 00:02:25,000
+ that topics because you need to understand this kind of topics in a malware analysis, okay,
+
+18
+00:02:25,000 --> 00:02:34,080
+ so let's see a real example, let me, so this is the program which we have created yesterday,
+
+19
+00:02:34,080 --> 00:02:45,560
+ let's pull the PE beer, so PE beer is an application used for malware analysis, like
+
+20
+00:02:45,560 --> 00:02:54,480
+ using the executeable, we can understand what are the functions, APAs and libraries were used,
+
+21
+00:02:54,480 --> 00:03:02,280
+ this open source application you can download it from the Google easily, not a complicated
+
+22
+00:03:02,280 --> 00:03:09,800
+ thing, nothing you are going to pay anything for this, okay, so when you are downloading
+
+23
+00:03:09,800 --> 00:03:26,680
+ for Windows, you can, you can see this releases, sorry, yep, you can see here download
+
+24
+00:03:26,680 --> 00:03:33,560
+ the latest release, so click on that and you can download whatever version you want,
+
+25
+00:03:33,560 --> 00:03:40,680
+ I better go for a latest version, so if you are making the, making download, okay, so this
+
+26
+00:03:40,680 --> 00:03:48,880
+ is the PE beer, this tool is used for malware analysis, the static analysis, so here you
+
+27
+00:03:48,880 --> 00:03:55,660
+ can see the load PE's, so let's load our program which we have created yesterday, robust
+
+28
+00:03:55,660 --> 00:04:08,480
+ circuit, so now you can see there is much data get loaded inside the PE beer, so you can
+
+29
+00:04:08,480 --> 00:04:15,200
+ see the header, header information, dos, header, okay, so dos is a one of the operating
+
+30
+00:04:15,200 --> 00:04:20,640
+ system, this program will not load in the dos mode, okay, that's previously we used the
+
+31
+00:04:20,640 --> 00:04:27,220
+ operating system, so there is a empty header, signature headers and a lot of headers we have,
+
+32
+00:04:27,220 --> 00:04:33,700
+ and we have a text section, so text section contains the code which needs to execute basically,
+
+33
+00:04:33,700 --> 00:04:43,140
+ and the data section and we hear resource sections, right, so our data sessions and so this
+
+34
+00:04:43,140 --> 00:04:52,820
+ kind of section will hold the information like icons and the icon of the program or whatever
+
+35
+00:04:52,820 --> 00:04:57,300
+ extra things we are giving, it will hold the information and text section will contain
+
+36
+00:04:57,300 --> 00:05:02,180
+ the program that we need to execute, these are the separate separate section, right,
+
+37
+00:05:02,180 --> 00:05:07,920
+ but when we developed the program we didn't care about any, we didn't set any session
+
+38
+00:05:07,920 --> 00:05:13,880
+ header or any file headers, but when we compiled the program, when you are compiling the
+
+39
+00:05:13,880 --> 00:05:21,760
+ program you are changing your program into EXE format, your compiler will set or will all
+
+40
+00:05:21,760 --> 00:05:25,960
+ will do all these things, okay, it will do all these things, it's an automated, it will
+
+41
+00:05:25,960 --> 00:05:31,640
+ do all these things, you don't need to do anything like manually pointing the session header
+
+42
+00:05:31,640 --> 00:05:37,720
+ or option header all done, okay, so this is called as the PE, the PE files contains many
+
+43
+00:05:37,720 --> 00:05:42,520
+ headers, headers, information like functions, instead of header information you can see
+
+44
+00:05:42,520 --> 00:05:51,360
+ the APA functions, whatever things which can be used, okay, so I already said the text
+
+45
+00:05:51,360 --> 00:06:01,960
+ header contained the program which we have already can see the program here, CMD.exe and
+
+46
+00:06:01,960 --> 00:06:12,160
+ library files which we have which we have developed and all, okay, so let's start this,
+
+47
+00:06:12,160 --> 00:06:19,480
+ let's go to the NT header, you can see the first two values of the file, you can see
+
+48
+00:06:19,480 --> 00:06:28,960
+ it's a PE portable executable, if you going to the desk header you can see the magic value
+
+49
+00:06:28,960 --> 00:06:38,000
+ of 4D and 5A and it was pointing to the image set, so if you want more clear about that,
+
+50
+00:06:38,000 --> 00:06:56,040
+ so we can say that as a magic value like 4D5A file header, so this file header basically
+
+51
+00:06:56,040 --> 00:07:10,560
+ says it's an EXE files, executable files, so this is called as the magic number, so if you
+
+52
+00:07:10,560 --> 00:07:27,360
+ will be the mark to something something, okay, so it's a M is an executable file format used
+
+53
+00:07:27,360 --> 00:07:34,600
+ for EXE files, okay, basically this is the extension for EXE dot com or dot dl files, okay,
+
+54
+00:07:34,600 --> 00:07:43,800
+ so now you have a clear understanding about the PE loaders and process executable, how
+
+55
+00:07:43,800 --> 00:07:51,760
+ the PE loader will take the EXE from the disk and it will execute load into the memory
+
+56
+00:07:51,760 --> 00:08:02,440
+ and how to identify whether the file was executed or file or not, okay, if I load some
+
+57
+00:08:02,440 --> 00:08:21,800
+ other file let it unload it and let's load some other files if we have, let's load this
+
+58
+00:08:21,800 --> 00:08:31,520
+ bad file, so the bad file will not be get loaded, so let's try to load some other files from
+
+59
+00:08:31,520 --> 00:08:56,980
+ the disk, leave that leave the alerts, okay, let's skip that, so if you pull any other files
+
+60
+00:08:56,980 --> 00:09:02,960
+ into the PE, the form header format will be changed, okay, it will be, it will, it did not
+
+61
+00:09:02,960 --> 00:09:11,720
+ in the M is that our PE, it will be in the other magic values, okay, so let's come through
+
+62
+00:09:11,720 --> 00:09:21,120
+ our discussion, what is the process and what is the thread, so I have put a simple presentation
+
+63
+00:09:21,120 --> 00:09:30,200
+ for this, but this, we will see the things in a practical if you, if you are just reading
+
+64
+00:09:30,200 --> 00:09:34,800
+ this, you will not able to understand what is the process and what is the thread, okay,
+
+65
+00:09:34,800 --> 00:09:43,920
+ so let's jump on to the Canva, so what is the process many of you seeing the process is
+
+66
+00:09:43,920 --> 00:09:49,260
+ called as a application, so process is called as a Chrome or whatever you want, but the
+
+67
+00:09:49,260 --> 00:09:59,660
+ technical term is process, you can say it's a container, okay, the process is a container,
+
+68
+00:09:59,660 --> 00:10:15,340
+ this container contains information about the DLLs library files, PE programs, the code
+
+69
+00:10:15,340 --> 00:10:24,780
+ of the executable and we have an API's, imports exports, many, many, many things are
+
+70
+00:10:24,780 --> 00:10:30,620
+ there, we already see the, the headers information say everything, right, it will be called
+
+71
+00:10:30,620 --> 00:10:39,060
+ as a process, okay, a process a container which hold every information like this, the DLL
+
+72
+00:10:39,060 --> 00:10:45,780
+ is everything it will hold instead the container, okay, that's called as a process, okay,
+
+73
+00:10:45,780 --> 00:10:54,460
+ so if you take an example of a process which the process has a separate ID, so let's see
+
+74
+00:10:54,460 --> 00:11:16,180
+ that, let's install the process attacker, so you can see the PID of the process, the
+
+75
+00:11:16,180 --> 00:11:28,820
+ SC shows holding the 940 and task was 988, each process hold a separate PID process ID,
+
+76
+00:11:28,820 --> 00:11:38,220
+ it has a process ID, okay, so let's take one of the process, I'll give something, yeah,
+
+77
+00:11:38,220 --> 00:11:48,140
+ let's take a notepad.exe, let's double click on that, let's explore the notepad, so now
+
+78
+00:11:48,140 --> 00:11:57,540
+ you can see the threads and modules, memory, environment, DLLs get load on these are the files
+
+79
+00:11:57,540 --> 00:12:05,980
+ get loaded and you can see the DLL files here, the APP help the DLL a lot of things,
+
+80
+00:12:05,980 --> 00:12:12,140
+ this is called as the process, okay, so it has a thread, it has a token information so
+
+81
+00:12:12,140 --> 00:12:19,620
+ which privilege it has and the modules which DLLs get loaded and the memory information,
+
+82
+00:12:19,620 --> 00:12:26,940
+ the environment TV process environment block, a lot of things will be there, okay, so this
+
+83
+00:12:26,940 --> 00:12:32,700
+ is called as the process, okay, let's take an example of a thread, so what is a thread,
+
+84
+00:12:32,700 --> 00:12:39,300
+ so thread is an execution object of a program, okay, so let's take an example of
+
+85
+00:12:39,300 --> 00:12:52,380
+ chrome.exe, so this chrome.exe need to do multiple functionalities like, right, so
+
+86
+00:12:52,380 --> 00:13:13,780
+ like need to connect to internet, internet, need to download, upload, this process has multiple
+
+87
+00:13:13,780 --> 00:13:19,580
+ functionalities, right, thread is an execution object of a program, okay, when you called
+
+88
+00:13:19,580 --> 00:13:25,180
+ the download, if you try to download something, there is a one thread will be loaded, okay,
+
+89
+00:13:25,180 --> 00:13:30,940
+ or like download, okay, the name is a download, the thread will be loaded and it will do
+
+90
+00:13:30,940 --> 00:13:35,880
+ their function, it's an execution object, okay, the process contain one or more thread,
+
+91
+00:13:35,880 --> 00:13:43,020
+ okay, based on the process functionality, the process contain one or more thread, okay,
+
+92
+00:13:43,020 --> 00:13:50,940
+ so need to develop a program, right, so that program basically contain many threads, right,
+
+93
+00:13:50,940 --> 00:13:58,820
+ so it need to provide a C2C and execute our command, so this all the things are doing
+
+94
+00:13:58,820 --> 00:14:03,820
+ by the thread, separate, separate, don't buy one thread, okay, so if there is a need to connect
+
+95
+00:14:03,820 --> 00:14:06,620
+ to the internet, there is one thread will be loaded, need to download one thread will be
+
+96
+00:14:06,620 --> 00:14:12,700
+ loaded, need to upload another one thread will be loaded, so this is called as the thread, okay, it's an
+
+97
+00:14:12,700 --> 00:14:20,300
+ execution object of a program, so one process contains more or one or more than one thread, okay,
+
+98
+00:14:20,300 --> 00:14:27,260
+ so in the notepad, you can see a thread here, so you can see there is a four thread will be loaded,
+
+99
+00:14:27,260 --> 00:14:35,900
+ right, so every process contain one or more than one thread, okay, so this is called as the process
+
+100
+00:14:35,900 --> 00:14:46,140
+ and a thread, I hope you have a clear understanding about this video, let's hope of this video
+
+101
+00:14:46,140 --> 00:14:49,900
+ and we will continue our discussion in the next video, see you guys bye-bye!
+
