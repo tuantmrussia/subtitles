@@ -1,0 +1,476 @@
+1
+00:00:00,290 --> 00:00:04,070
+So we've talked a lot about functions and have seen a few examples.
+
+2
+00:00:04,580 --> 00:00:07,790
+But as you know, the real learning happens in the doing.
+
+3
+00:00:07,970 --> 00:00:11,390
+So in this lesson we're going to create some functions of our own.
+
+4
+00:00:11,540 --> 00:00:16,040
+So to do this we are just going to get back to the basics by creating a new project.
+
+5
+00:00:16,490 --> 00:00:19,130
+I don't think I have to explain to you how to do that.
+
+6
+00:00:19,970 --> 00:00:25,430
+So with our new project created, as you can see, we have our classic cat sprite ready for action.
+
+7
+00:00:25,550 --> 00:00:32,840
+Now for this project we are going to do is something a little bit different and not just with functions.
+
+8
+00:00:32,840 --> 00:00:36,290
+We're going to make our cat draw with pens.
+
+9
+00:00:36,290 --> 00:00:40,010
+And yeah, I know it's pretty groundbreaking stuff.
+
+10
+00:00:40,740 --> 00:00:46,260
+So before we get into functions, you may be wondering how do I use this pen that you're speaking of?
+
+11
+00:00:46,680 --> 00:00:50,730
+Well, if you look right at the bottom, you will see this small button here.
+
+12
+00:00:51,030 --> 00:00:56,250
+Now, if you click it, you will see it brings up a bunch of different extensions that you can add to
+
+13
+00:00:56,250 --> 00:01:03,360
+your project, like music and camera, etc. and a lot of different ones that use external hardware.
+
+14
+00:01:03,900 --> 00:01:06,990
+Anyways, the one we are interested in is this drawer extension.
+
+15
+00:01:06,990 --> 00:01:08,280
+So clicking on it.
+
+16
+00:01:08,370 --> 00:01:14,610
+As you can see it adds this extra code group to our project and all these different code blocks that
+
+17
+00:01:14,610 --> 00:01:16,110
+are for the pen.
+
+18
+00:01:16,740 --> 00:01:19,530
+Now our project is going to be quite simple.
+
+19
+00:01:19,680 --> 00:01:24,810
+The cat is going to ask how many circles we must draw and then while it's going to draw them.
+
+20
+00:01:25,260 --> 00:01:30,810
+So to do this, we can grab a when flag clicked and then move to the sensing group.
+
+21
+00:01:30,810 --> 00:01:33,030
+Bring down this ask block.
+
+22
+00:01:33,150 --> 00:01:36,810
+Here we can just say how many circles shall I draw?
+
+23
+00:01:37,990 --> 00:01:42,370
+So if we click play, our cat asks how many circles it should draw.
+
+24
+00:01:42,670 --> 00:01:44,470
+We can enter in a number.
+
+25
+00:01:44,470 --> 00:01:46,780
+And of course, well, nothing happens.
+
+26
+00:01:47,550 --> 00:01:52,050
+So now what we're going to do is create a function that draws circles.
+
+27
+00:01:52,050 --> 00:01:59,730
+So moving down to my blocks here you can see we can click this option here to make a new block.
+
+28
+00:02:00,060 --> 00:02:05,010
+So this is where we can name our function I'll just call it a draw circle.
+
+29
+00:02:05,010 --> 00:02:05,430
+Then.
+
+30
+00:02:05,430 --> 00:02:10,560
+Remember how earlier I told you that some functions can have inputs while some don't?
+
+31
+00:02:10,590 --> 00:02:16,830
+Well, for our draw circle function we could just have it that we call it.
+
+32
+00:02:16,830 --> 00:02:19,770
+It just draws a single circle and that's that.
+
+33
+00:02:19,770 --> 00:02:25,020
+Or we could have it accept an input where we can choose how many circles we want to draw.
+
+34
+00:02:25,020 --> 00:02:30,480
+Just like with the example of the toy making machine, where we can decide if we want blue or red or
+
+35
+00:02:30,480 --> 00:02:31,950
+whatever color car.
+
+36
+00:02:31,950 --> 00:02:37,560
+In this case, we can decide for the function to accept an input, which will change the output that
+
+37
+00:02:37,560 --> 00:02:38,610
+the function creates.
+
+38
+00:02:38,610 --> 00:02:44,400
+So to do this, all we need to do is click this, add an input like so.
+
+39
+00:02:44,700 --> 00:02:48,030
+And as you can see at the top, we now have an input.
+
+40
+00:02:48,030 --> 00:02:53,490
+So I'll rename it to number of circles and then hit okay.
+
+41
+00:02:53,850 --> 00:02:57,690
+So now as you can see we now have this block right here.
+
+42
+00:02:57,690 --> 00:03:00,300
+And this is where we define our function.
+
+43
+00:03:00,540 --> 00:03:06,750
+So this is basically like we are building the machine telling it what it needs to do when it gets called.
+
+44
+00:03:07,310 --> 00:03:12,290
+So what we want our machine, or rather our function to do is draw circles.
+
+45
+00:03:12,290 --> 00:03:14,810
+So to draw a circle is quite simple.
+
+46
+00:03:14,810 --> 00:03:20,480
+All you need to do is put the pen down, then go over to motion and move ten steps.
+
+47
+00:03:20,480 --> 00:03:23,780
+Then turn 15 degrees and repeat this.
+
+48
+00:03:24,600 --> 00:03:25,800
+30 times like that.
+
+49
+00:03:25,800 --> 00:03:30,960
+So if you just click on this function you will see our cat draws a circle.
+
+50
+00:03:31,320 --> 00:03:32,640
+So that's cool and all.
+
+51
+00:03:32,640 --> 00:03:34,830
+But how do we use this function then.
+
+52
+00:03:35,670 --> 00:03:41,340
+Well, here we ask the user how many circles shall I draw to use this function?
+
+53
+00:03:41,340 --> 00:03:47,790
+All we need to do is grab this block draw circle underneath which calls our function.
+
+54
+00:03:47,790 --> 00:03:50,820
+And if we hit play and click this button.
+
+55
+00:03:51,150 --> 00:03:53,160
+As you can see, our cat draws a circle.
+
+56
+00:03:53,580 --> 00:03:57,990
+But of course there's a problem being our cat just draws one circle.
+
+57
+00:03:57,990 --> 00:04:02,640
+So this is where we need to tell the function how many circles it must draw.
+
+58
+00:04:02,640 --> 00:04:09,300
+So instead of leaving this blank, we can go to our sensing group and grab this answer block and use
+
+59
+00:04:09,300 --> 00:04:10,470
+it as an input.
+
+60
+00:04:10,970 --> 00:04:18,380
+So basically what this is doing is calling our draw circle function with the input entered in from the
+
+61
+00:04:18,380 --> 00:04:19,100
+user.
+
+62
+00:04:20,020 --> 00:04:24,880
+However, this still won't do anything because if you look at our function, we never tell the machine
+
+63
+00:04:24,880 --> 00:04:28,540
+what to do with the input it gets when it's being called.
+
+64
+00:04:29,170 --> 00:04:34,210
+So what we need to do is grab another repeat block and put all this inside.
+
+65
+00:04:34,480 --> 00:04:40,270
+And instead of entering in a value, we can grab this number of circles block and put it inside.
+
+66
+00:04:41,120 --> 00:04:45,110
+Now let's look at our script step by step so we can better understand.
+
+67
+00:04:45,980 --> 00:04:48,350
+Arquette asks how many circles to draw.
+
+68
+00:04:48,380 --> 00:04:50,210
+Let's say we enter in five circles.
+
+69
+00:04:50,240 --> 00:04:53,990
+We then call our circle drawing function with the number five as the input.
+
+70
+00:04:54,620 --> 00:04:57,710
+What this function does is it puts the pen down.
+
+71
+00:04:57,710 --> 00:05:02,660
+And then we have this repeat block with the input being the number of circles.
+
+72
+00:05:02,660 --> 00:05:08,300
+And since we entered in five, as the input for our function is going to repeat all this code five times
+
+73
+00:05:08,570 --> 00:05:13,070
+and the code is this move and turn which basically creates the circle.
+
+74
+00:05:13,310 --> 00:05:17,270
+So seeing this in action here, our cat asks how many circles we want.
+
+75
+00:05:17,270 --> 00:05:18,710
+Let's say three.
+
+76
+00:05:18,710 --> 00:05:22,250
+And as you can see our cat draws three circles just like that.
+
+77
+00:05:22,910 --> 00:05:28,520
+The only problem we do have is that we can't see them all as it's all in the same area.
+
+78
+00:05:29,000 --> 00:05:30,650
+So let's upgrade this function a bit.
+
+79
+00:05:31,520 --> 00:05:32,150
+Thirsty.
+
+80
+00:05:32,300 --> 00:05:35,510
+We will put the pin up so it doesn't draw everywhere.
+
+81
+00:05:35,510 --> 00:05:38,420
+Then we'll have our cat go to a random position.
+
+82
+00:05:38,690 --> 00:05:41,060
+Then we can put the pen back down.
+
+83
+00:05:41,060 --> 00:05:44,390
+And lastly we can have it change the pen color by ten.
+
+84
+00:05:45,270 --> 00:05:48,900
+And also it's just erase all when we start.
+
+85
+00:05:48,900 --> 00:05:56,220
+So giving this another go let's enter for and well that's not quite right I had is doing the same thing.
+
+86
+00:05:56,340 --> 00:06:00,930
+And well our problem is all this code should be inside our repeat block.
+
+87
+00:06:01,020 --> 00:06:06,000
+So moving it inside like so and giving it another go.
+
+88
+00:06:06,420 --> 00:06:07,200
+How many circles.
+
+89
+00:06:07,200 --> 00:06:08,490
+Let's say seven.
+
+90
+00:06:08,730 --> 00:06:15,630
+And slowly but surely, as you can see, our cat draws seven circles and it also draws each circle a
+
+91
+00:06:15,630 --> 00:06:16,440
+different color.
+
+92
+00:06:16,960 --> 00:06:22,450
+Now remember how I said functions are so useful because we can just write the code once and use it over
+
+93
+00:06:22,450 --> 00:06:23,410
+and over and over.
+
+94
+00:06:23,710 --> 00:06:29,170
+Well, if you look at this code, while the function is very useful as it makes our code very easy to
+
+95
+00:06:29,170 --> 00:06:34,600
+understand and manage, as we can see clearly what is going on, we are asking a question and then we
+
+96
+00:06:34,600 --> 00:06:40,360
+are drawing a certain number of circles, but we aren't really using this function to its full advantage
+
+97
+00:06:40,360 --> 00:06:43,120
+because, well, we are only calling it once.
+
+98
+00:06:43,650 --> 00:06:48,990
+So let's say in our program, we wanted our cat to draw a circle if we clicked on it because we have
+
+99
+00:06:48,990 --> 00:06:51,120
+this function, well, that's simple to do.
+
+100
+00:06:51,840 --> 00:06:55,230
+We can just grab this when the sprite is clicked block.
+
+101
+00:06:55,590 --> 00:06:59,310
+Then we can just say draw circle and enter one.
+
+102
+00:06:59,980 --> 00:07:01,270
+Now clicking play.
+
+103
+00:07:01,270 --> 00:07:02,200
+How many circles?
+
+104
+00:07:02,200 --> 00:07:03,430
+Let's say two.
+
+105
+00:07:03,970 --> 00:07:04,390
+Okay.
+
+106
+00:07:04,390 --> 00:07:05,440
+After that's done.
+
+107
+00:07:05,560 --> 00:07:09,280
+Now if we click the cat, it draws a circle.
+
+108
+00:07:09,310 --> 00:07:10,180
+Nice.
+
+109
+00:07:10,330 --> 00:07:12,970
+And also, let's say we wanted to make our circle smaller.
+
+110
+00:07:12,970 --> 00:07:18,310
+For some reason we can just go into our function, change the move to say five steps.
+
+111
+00:07:18,370 --> 00:07:23,020
+Now clicking play entering in one it draws a smaller circle.
+
+112
+00:07:23,500 --> 00:07:26,830
+But also if we click the cat, it also draws the smaller circle.
+
+113
+00:07:26,830 --> 00:07:33,010
+So as you can see, using this function ensures our code is consistent and it's easy to manage and easy
+
+114
+00:07:33,010 --> 00:07:33,970
+to use.
+
+115
+00:07:34,000 --> 00:07:36,070
+Now that's the power of functions.
+
+116
+00:07:36,070 --> 00:07:43,150
+But before I end, if you want to have fun with this, hold down shift while you click the flag and
+
+117
+00:07:43,150 --> 00:07:46,630
+you will see it goes into turbo mode.
+
+118
+00:07:46,630 --> 00:07:55,000
+And then if we enter a crazy value like 100,000, our cat goes absolutely crazy drawing circles.
+
+119
+00:07:55,000 --> 00:07:58,240
+So have some art fun with that.
+
