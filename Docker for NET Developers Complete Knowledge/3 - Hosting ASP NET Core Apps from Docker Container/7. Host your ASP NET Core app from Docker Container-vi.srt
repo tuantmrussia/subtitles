@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,300
+Đang sử dụng AP.NET Core App trong một container Docker.
+
+2
+00:00:05,300 --> 00:00:14,400
+Đã đến lúc tất cả chúng ta phải chờ đợi để tổ chức một Ủy ban Quản trị chứng khoán trong một container Docker.
+
+3
+00:00:14,400 --> 00:00:21,300
+Đây là một chủ đề quan trọng, vì vậy hãy chắc chắn rằng bạn tập trung vào những gì tôi đang làm.
+
+4
+00:00:21,300 --> 00:00:27,600
+Ngoài ra, cậu nên làm cùng với tôi.
+
+5
+00:00:27,600 --> 00:00:37,800
+Bằng cách này, bạn sẽ học nó một cách nhanh chóng hơn, mở phòng thu bằng mắt.
+
+6
+00:00:37,800 --> 00:00:41,000
+Nhấn vào để tạo một dự án mới.
+
+7
+00:00:41,000 --> 00:00:49,600
+Kế tiếp, hãy chọn hành động AP.NET Cơ quan Quản lý Web
+
+8
+00:00:49,600 --> 00:00:57,100
+Kể tên dự án như là First Docker App.
+
+9
+00:00:57,100 --> 00:01:02,200
+Sau đó chọn vị trí trên máy tính nơi bạn muốn lưu ứng dụng này.
+
+10
+00:01:02,200 --> 00:01:09,400
+Có một hộp đánh dấu cho biết giải pháp đặt và dự án trong cùng một thư mục.
+
+11
+00:01:09,400 --> 00:01:12,100
+Anh cần phải kiểm tra lựa chọn này.
+
+12
+00:01:12,100 --> 00:01:20,900
+Điều này rất cần thiết vì Docker cần phải tìm tập tin .NET App về vị trí đã được lưu.
+
+13
+00:01:20,900 --> 00:01:29,200
+Nếu bạn bỏ chọn tùy chọn này, Docker sẽ không thể tìm thấy tập tin .NET app
+
+14
+00:01:29,200 --> 00:01:32,600
+Và nó sẽ không thể tạo ra một container.
+
+15
+00:01:32,600 --> 00:01:36,600
+Click tiếp theo.
+
+16
+00:01:36,600 --> 00:01:39,600
+Ở đây, chọn khung hình.
+
+17
+00:01:39,600 --> 00:01:42,800
+Tôi đang chọn loại 10.
+
+18
+00:01:42,800 --> 00:01:47,800
+Đây, xem hộp đánh dấu cho phép hỗ trợ container.
+
+19
+00:01:47,800 --> 00:01:54,800
+Bạn có thể bật tùy chọn này nếu bạn muốn phục vụ ứng dụng từ hộp Docker từ đầu.
+
+20
+00:01:54,800 --> 00:02:03,200
+Bạn cũng có thể hiệu lực khả năng hỗ trợ container, đó là Docker sau khi ứng dụng được tạo.
+
+21
+00:02:03,200 --> 00:02:12,800
+Tôi sẽ giữ tùy chọn này không được chọn vì tôi muốn hiển thị cách bạn có thể thêm hỗ trợ công cụ Docker vào ứng dụng
+
+22
+00:02:12,800 --> 00:02:15,800
+mà đang hoạt động.
+
+23
+00:02:15,800 --> 00:02:19,400
+Điều này sẽ giúp bạn học Docker sâu sắc hơn.
+
+24
+00:02:19,400 --> 00:02:21,700
+Bây giờ nhấn nút tạo.
+
+25
+00:02:21,700 --> 00:02:25,300
+Điều này sẽ tạo các .NET App.
+
+26
+00:02:25,300 --> 00:02:35,500
+Ứng dụng được tạo ra.
+
+27
+00:02:35,500 --> 00:02:37,800
+Hãy để chúng tôi kiểm tra.
+
+28
+00:02:45,800 --> 00:03:00,300
+Nó chỉ là một ứng dụng cơ bản chỉ có hai trang, nhà và riêng tư.
+
+29
+00:03:00,300 --> 00:03:04,800
+Đóng trình duyệt và cửa sổ bàn điều khiển.
+
+30
+00:03:04,800 --> 00:03:11,800
+Trong bàn làm việc Docker, bạn có thể thấy tôi không có hình ảnh và không có thùng chứa.
+
+31
+00:03:15,800 --> 00:03:25,800
+Bây giờ, trên phòng thu trực quan, hãy thêm hỗ trợ công-ten-nơ Docker.
+
+32
+00:03:25,800 --> 00:03:32,800
+Vì vậy, nhấn vào tên của dự án, chọn thêm thực đơn.
+
+33
+00:03:32,800 --> 00:03:37,800
+Sau đó bạn sẽ thấy tùy chọn hỗ trợ container.
+
+34
+00:03:37,800 --> 00:03:43,800
+Hãy nhắp vào tùy chọn này, mà sẽ thêm khả năng hỗ trợ hộp Docker vào .NET App.
+
+35
+00:03:46,800 --> 00:03:51,800
+Trong cửa sổ mới mở nơi bạn có thể chọn các tùy chọn container.
+
+36
+00:03:51,800 --> 00:03:56,800
+Trên hệ điều hành container, hãy chọn kiểu công-ten- tô X.
+
+37
+00:03:56,800 --> 00:03:59,800
+Hãy để nó còn lại tập tin Docker.
+
+38
+00:03:59,800 --> 00:04:02,800
+Di chuyển ảnh
+
+39
+00:04:02,800 --> 00:04:08,800
+Bạn có thể chọn phiên bản X như Ubuntu, Debian, Alpine, vv.
+
+40
+00:04:08,800 --> 00:04:11,800
+Hãy để nó còn lại mặc định.
+
+41
+00:04:11,800 --> 00:04:16,800
+Đối với container xây dựng bối cảnh, hãy để nó tồn tại như nó đã được.
+
+42
+00:04:16,800 --> 00:04:19,800
+Tiếp theo, nhấn nút ok.
+
+43
+00:04:19,800 --> 00:04:23,800
+Phòng thu trực quan đã thêm hỗ trợ Docker vào ứng dụng.
+
+44
+00:04:23,800 --> 00:04:27,800
+Và tập tin Docker được tạo cho ứng dụng này.
+
+45
+00:04:27,800 --> 00:04:30,800
+Thông báo ở góc trái.
+
+46
+00:04:30,800 --> 00:04:34,800
+Phòng thu hình đang thực hiện một số nhiệm vụ.
+
+47
+00:04:34,800 --> 00:04:39,800
+Nó đang tạo ra hình ảnh Docker của ứng dụng này.
+
+48
+00:04:39,800 --> 00:04:45,800
+Và cũng tạo ra một dòng X dựa trên hộp Docker sẽ chứa ảnh của ứng dụng này.
+
+49
+00:04:45,800 --> 00:04:49,800
+Bây giờ, nhiệm vụ đã hoàn thành.
+
+50
+00:04:49,800 --> 00:04:57,800
+Nếu bạn mở màn hình Docker, ngay bây giờ bạn sẽ thấy hai ảnh được tạo ra trên máy phục vụ Docker.
+
+51
+00:04:57,800 --> 00:05:00,800
+Đầu tiên là tsp.net.
+
+52
+00:05:00,800 --> 00:05:06,800
+10 hình ảnh được tải xuống từ danh sách công-ten-nơ Azure.
+
+53
+00:05:06,800 --> 00:05:11,800
+Danh sách đăng nhập này còn được biết đến với tên đăng ký của Microsoft container.
+
+54
+00:05:11,800 --> 00:05:14,800
+Shortform MCR.
+
+55
+00:05:14,800 --> 00:05:18,800
+Ảnh thứ hai là ảnh ứng dụng docker tạo.
+
+56
+00:05:18,800 --> 00:05:22,800
+Tên ảnh được giữ giống với tên ứng dụng.
+
+57
+00:05:22,800 --> 00:05:28,800
+Giờ hãy đến khu vực container nơi bạn sẽ tìm thấy một container mới.
+
+58
+00:05:28,800 --> 00:05:31,800
+Có tên ứng dụng Docker đầu tiên.
+
+59
+00:05:31,800 --> 00:05:37,800
+Công-te-nơ này thực ra đang chứa hình ảnh của chúng tôi.net ứng dụng.
+
+60
+00:05:37,800 --> 00:05:42,800
+Phòng thu hình ảnh có rất nhiều tính năng xây dựng Docker.
+
+61
+00:05:42,800 --> 00:05:46,800
+Và tôi nên giải thích cho anh ngay bây giờ.
+
+62
+00:05:46,800 --> 00:05:51,800
+Trên cửa sổ xuất chọn các công cụ hộp.
+
+63
+00:06:01,800 --> 00:06:07,800
+Ở đây bạn sẽ thấy nhiệm vụ khác mà Docker đã thực hiện.
+
+64
+00:06:07,800 --> 00:06:23,800
+Giống như kéo.net 10.0 hình ảnh từ MCR bắt đầu công cụ, tạo lớp ảnh và thiết lập toàn bộ hình ảnh của ứng dụng.net.
+
+65
+00:06:31,800 --> 00:06:47,800
+Cuối cùng, có một lệnh docker chạy mà đang tạo hộp Docker để chạy ảnh.net ứng dụng.
+
+66
+00:06:47,800 --> 00:07:05,800
+Trên studio hình ảnh tôi biết bạn cũng sẽ tìm thấy một tập tin container Docker mới mà sẽ cho phép bạn khởi động công-ten-nơ Docker từ phòng thu trực quan.
+
+67
+00:07:05,800 --> 00:07:08,800
+Nhấn vào tùy chọn này để chạy ứng dụng.
+
+68
+00:07:17,800 --> 00:07:44,800
+Phòng thu trực quan mở cửa sổ container hiển thị các container và hình ảnh của ứng dụng này.
+
+69
+00:07:44,800 --> 00:07:55,800
+Xin chúc mừng bạn có thể thấy ứng dụng này được tổ chức từ một container Docker và nó hoạt động chính xác.
+
+70
+00:07:55,800 --> 00:08:01,800
+Ngoài ra, bạn sẽ thấy các biến môi trường.
+
+71
+00:08:01,800 --> 00:08:20,800
+Cổng, số lượng, nhật ký, vân vân.
+
+72
+00:08:20,800 --> 00:08:41,800
+Thực ra, nó đã chuyển tất cả các chi tiết từ bàn làm việc Docker.
+
+73
+00:08:41,800 --> 00:08:54,800
+Bây giờ mở màn hình nền Docker sau đó nhấn vào tên container.
+
+74
+00:08:54,800 --> 00:09:14,800
+Bạn sẽ thấy các bản ghi, tập tin, thống kê và các thông tin khác mà bạn đã thấy trên studio hình ảnh.
+
+75
+00:09:14,800 --> 00:09:28,800
+Trên thẻ exe, bạn có thể chạy lệnh X như là danh sách các tập tin và thư mục bên trong hộp.
+
+76
+00:09:28,800 --> 00:09:35,800
+Cũng tìm cổng của máy chủ và cổng container.
+
+77
+00:09:35,800 --> 00:09:48,800
+Những cổng này được liệt kê trong tập tin Docker.
+
