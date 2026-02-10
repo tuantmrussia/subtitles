@@ -1,0 +1,360 @@
+1
+00:00:00,110 --> 00:00:06,500
+Right now, you have really developed a lot of programming skills, and I'm thrilled to see the progress
+
+2
+00:00:06,500 --> 00:00:07,310
+you've made.
+
+3
+00:00:07,490 --> 00:00:13,370
+Now we're going to embark on a new adventure, as programming is often an adventure of twists and turns,
+
+4
+00:00:13,370 --> 00:00:15,470
+getting lost and then finding your way.
+
+5
+00:00:15,740 --> 00:00:22,100
+It's much like a navigating through a dense forest, but eventually you find a way to the clearing where
+
+6
+00:00:22,100 --> 00:00:25,250
+the beauty of your creation awaits you.
+
+7
+00:00:25,780 --> 00:00:28,810
+That's it for our next programming adventure.
+
+8
+00:00:28,810 --> 00:00:35,260
+We will rarely be leveling up your skills by creating a much more complex and dynamic game.
+
+9
+00:00:35,880 --> 00:00:41,820
+This game is an endless traffic runner game where you are a car and you're speeding along a highway.
+
+10
+00:00:42,120 --> 00:00:46,470
+This game will challenge your programming skills, but it'll also be a lot of fun.
+
+11
+00:00:47,030 --> 00:00:53,510
+So before we dive into importing sprites and designing the game, let's first take a step back and understand
+
+12
+00:00:53,510 --> 00:00:54,560
+the bigger picture.
+
+13
+00:00:55,580 --> 00:00:57,230
+When building a game.
+
+14
+00:00:57,230 --> 00:01:03,230
+As I've said, it's crucial to break down the project into smaller, achievable steps, and this becomes
+
+15
+00:01:03,230 --> 00:01:06,560
+even more important the more complex a project becomes.
+
+16
+00:01:06,590 --> 00:01:13,100
+That said, in our endless traffic running game, we'll be building the following components the player
+
+17
+00:01:13,100 --> 00:01:20,990
+car, the trees on each side of the road, the road lines, the obstacle course and the road backdrop.
+
+18
+00:01:21,580 --> 00:01:26,740
+Now let's take a look at why we need these sprites and how they will contribute to our game.
+
+19
+00:01:27,550 --> 00:01:33,520
+Firstly, the player's car sprite will be the main character that the user controls, dodging obstacles
+
+20
+00:01:33,520 --> 00:01:35,200
+and navigating through the traffic.
+
+21
+00:01:35,440 --> 00:01:41,770
+Then, the tree sprites create a visually appealing environment and help set the scene for our game.
+
+22
+00:01:41,770 --> 00:01:47,320
+So while we're driving, it'll appear like we are passing trees and other plants and rocks.
+
+23
+00:01:48,650 --> 00:01:55,070
+The road lines are all about providing a sense of motion or the illusion of motion, because obviously
+
+24
+00:01:55,070 --> 00:02:00,350
+our car can't move forward, will go off the top of the screen so we can make it look like it is going
+
+25
+00:02:00,350 --> 00:02:02,240
+forward with the road sprite.
+
+26
+00:02:03,270 --> 00:02:04,470
+The obstacle course.
+
+27
+00:02:04,500 --> 00:02:07,170
+Spratt will be the challenge of our game.
+
+28
+00:02:07,170 --> 00:02:10,830
+It's what the player must avoid to keep their run going.
+
+29
+00:02:11,380 --> 00:02:18,700
+And finally the road backdrop sets the stage for a game, immersing the player in the world that we've
+
+30
+00:02:18,700 --> 00:02:19,420
+created.
+
+31
+00:02:20,090 --> 00:02:25,040
+Now that we have a clear understanding of the components needed for our game, let's start importing
+
+32
+00:02:25,040 --> 00:02:26,030
+our assets.
+
+33
+00:02:26,330 --> 00:02:30,110
+Now, this will be our first time importing sprite assets from our computer.
+
+34
+00:02:30,110 --> 00:02:33,170
+But don't worry, it's a simple process.
+
+35
+00:02:34,150 --> 00:02:38,050
+And before we continue, as mentioned before, you have a choice here.
+
+36
+00:02:38,200 --> 00:02:41,080
+You have two different types of assets to choose from.
+
+37
+00:02:41,140 --> 00:02:48,580
+Either you can download the raw assets which will be all the different images, sounds, music, etc.
+
+38
+00:02:48,580 --> 00:02:51,940
+and follow along as we show you how to import and edit them.
+
+39
+00:02:51,940 --> 00:02:54,640
+And this will give you some experience working with the graphics.
+
+40
+00:02:54,640 --> 00:03:01,480
+Or if you just want to focus on the coding side of things, you can download the project asset which
+
+41
+00:03:01,480 --> 00:03:06,730
+will have all the sprites, music and sound effects are ready to go, but personally, I do encourage
+
+42
+00:03:06,730 --> 00:03:11,560
+you to follow along with the raw assets as this will give you some great experience.
+
+43
+00:03:11,890 --> 00:03:18,400
+So first things first, let's create our brand new project and like all the times before we can just
+
+44
+00:03:18,400 --> 00:03:21,100
+click select this create button.
+
+45
+00:03:21,100 --> 00:03:28,210
+And if at this stage you want to use the preloaded project, simply click here, then load from your
+
+46
+00:03:28,210 --> 00:03:33,130
+computer, then move over to our Starter Traffic Runner project file.
+
+47
+00:03:34,160 --> 00:03:36,260
+But let's look at the proper way now.
+
+48
+00:03:36,290 --> 00:03:39,830
+Firstly, let's delete the cat sprite where we don't need.
+
+49
+00:03:40,610 --> 00:03:45,140
+So the next thing we need to do is upload our sprite like before.
+
+50
+00:03:45,170 --> 00:03:47,960
+Move over to this button but don't click it.
+
+51
+00:03:47,960 --> 00:03:53,630
+Instead, we can select this button right at the top that says Upload Sprite.
+
+52
+00:03:54,500 --> 00:03:58,160
+So the first sprite we want to upload is our player car sprite.
+
+53
+00:03:58,160 --> 00:04:04,760
+So moving over to the Project assets folder here you will see our Traffic Runner folder.
+
+54
+00:04:04,760 --> 00:04:10,400
+And if you click on that you will see that we have a folder for each of our sprites.
+
+55
+00:04:10,400 --> 00:04:16,010
+So selecting our player sprite here you can choose whatever car you want for your player sprite.
+
+56
+00:04:16,250 --> 00:04:19,820
+I will select this one here and hit open.
+
+57
+00:04:20,770 --> 00:04:21,790
+And do you have it?
+
+58
+00:04:21,790 --> 00:04:24,850
+Our player sprite is now in our project and ready to go.
+
+59
+00:04:25,570 --> 00:04:26,890
+But let's not stop there.
+
+60
+00:04:26,920 --> 00:04:29,380
+Let's upload our other sprite.
+
+61
+00:04:29,380 --> 00:04:35,680
+So like before, just click upload and this time we can select the obstacle course sprite.
+
+62
+00:04:35,680 --> 00:04:39,850
+And here it doesn't matter which one you select as we'll use all of them.
+
+63
+00:04:40,620 --> 00:04:42,240
+So we can select open.
+
+64
+00:04:42,240 --> 00:04:47,220
+And before we move to our next sprite, we need to upload our other core obstacle sprites.
+
+65
+00:04:47,220 --> 00:04:52,680
+And you may be thinking that we will just have a bunch of different obstacle sprites here, but we will
+
+66
+00:04:52,680 --> 00:04:55,530
+do something a bit more clever than that.
+
+67
+00:04:56,730 --> 00:04:59,070
+Moving on to the costumes for this cosplay.
+
+68
+00:04:59,430 --> 00:05:05,580
+Here we can again click upload and this time we can select all the other cars simply by clicking this
+
+69
+00:05:05,580 --> 00:05:06,180
+car.
+
+70
+00:05:06,210 --> 00:05:10,260
+Holding down shift and clicking the last car.
+
+71
+00:05:10,290 --> 00:05:11,430
+And there you have it.
+
+72
+00:05:11,430 --> 00:05:13,830
+All our cars are in one.
+
+73
+00:05:14,010 --> 00:05:14,910
+Fancy that.
+
+74
+00:05:16,050 --> 00:05:20,280
+So let's move on to our next sprite and again clicking upload.
+
+75
+00:05:20,880 --> 00:05:24,450
+This time we can select our tree and foliage sprite.
+
+76
+00:05:24,540 --> 00:05:29,790
+So just like with our car sprite, we can just select the first one, then hit open.
+
+77
+00:05:30,430 --> 00:05:34,360
+Then moving over to the costume editor, we can click this button here.
+
+78
+00:05:34,360 --> 00:05:39,100
+And then once again we can select all these other costumes and hit upload.
+
+79
+00:05:39,610 --> 00:05:40,630
+And there you go.
+
+80
+00:05:41,790 --> 00:05:45,180
+So now there's just one more sprite.
+
+81
+00:05:45,750 --> 00:05:53,130
+So hitting upload and this time we can select this road lane sprite here and click open.
+
+82
+00:05:54,730 --> 00:05:56,320
+So that's all our sprite.
+
+83
+00:05:56,650 --> 00:05:59,020
+We just now need to upload our backdrop.
+
+84
+00:05:59,020 --> 00:06:04,660
+So simply clicking on it, clicking backdrops and then upload.
+
+85
+00:06:04,930 --> 00:06:09,340
+And here we can choose this backdrop image here and click open.
+
+86
+00:06:09,820 --> 00:06:11,200
+And that's just about it.
+
+87
+00:06:11,200 --> 00:06:15,310
+We have all our sprites ready to go so get ready for it.
+
+88
+00:06:15,310 --> 00:06:19,300
+But but great work so far as we have all our sprites uploaded.
+
+89
+00:06:19,300 --> 00:06:24,760
+We have completed our first stage of game development, and you also have a good idea of the bigger
+
+90
+00:06:24,760 --> 00:06:29,110
+picture of the game and why we have all the sprites we have.
+
