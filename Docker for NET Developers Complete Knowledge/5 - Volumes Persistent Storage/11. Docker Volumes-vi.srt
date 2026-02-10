@@ -1,0 +1,448 @@
+1
+00:00:00,000 --> 00:00:08,000
+Trong các bài giảng ngày, chúng ta sẽ hiểu tập Docker và cách sử dụng chúng trong ứng dụng Dockerize.net.
+
+2
+00:00:08,000 --> 00:00:12,800
+Volumes là các kho dữ liệu kiên trì cho các thùng chứa.
+
+3
+00:00:12,800 --> 00:00:20,640
+Ở đây bạn có thể giữ dữ liệu của bạn để nó vẫn an toàn ngay cả khi các container rơi.
+
+4
+00:00:20,640 --> 00:00:27,520
+Âm lượng được cất giữ trong thư mục của máy Docker là máy cá nhân của chúng tôi
+
+5
+00:00:28,240 --> 00:00:36,560
+Và vì vậy khi chúng tôi lắp một khối lượng vào một container thư mục này là những gì được gắn vào thùng.
+
+6
+00:00:36,560 --> 00:00:44,080
+Bức tranh giải thích tập Docker. Đây là công-te-nơ đang tham khảo lại âm lượng Docker.
+
+7
+00:00:44,080 --> 00:00:51,840
+Tập tin này chứa tập tin quan trọng cho ứng dụng và được cất giữ bên ngoài container trên
+
+8
+00:00:52,480 --> 00:01:00,480
+Name Vì vậy, điều này có nghĩa là các tập tin ứng dụng là an toàn ngay cả khi các container
+
+9
+00:01:00,480 --> 00:01:08,720
+Tai nạn. Hãy để chúng tôi hiểu khái niệm về âm lượng của Docker nhưng sự giúp đỡ của một trang web lõi AP.net.
+
+10
+00:01:08,720 --> 00:01:12,960
+Đây là website của tôi và để tôi điều hành nó.
+
+11
+00:01:22,480 --> 00:01:39,120
+Mục đích của trang web này là thu thập tên và địa chỉ email của mọi người những người truy cập trang web này.
+
+12
+00:01:39,120 --> 00:01:46,320
+Mọi người được thấy một thông điệp rất hấp dẫn nói rằng bạn là người may mắn được chọn cho một chiếc iPhone
+
+13
+00:01:46,320 --> 00:01:54,560
+Quà. Gửi tên và email của bạn để gửi iPhone cho bạn. Hãy nghĩ về việc bạn xem trang web này
+
+14
+00:01:54,560 --> 00:02:02,320
+và đăng chi tiết của bạn sau đó các chi tiết của bạn là an toàn trên trang web. Các chi tiết an toàn được nhìn thấy
+
+15
+00:02:02,320 --> 00:02:08,320
+tại trang người dùng. Để tôi trình bày thêm vài mục nhập trên trang web này.
+
+16
+00:02:08,320 --> 00:02:12,560
+Mọi chi tiết đều an toàn.
+
+17
+00:02:16,320 --> 00:02:18,320
+[không âm thanh]
+
+18
+00:02:46,320 --> 00:02:48,320
+[không âm thanh]
+
+19
+00:03:17,120 --> 00:03:19,120
+[không âm thanh]
+
+20
+00:03:19,120 --> 00:03:27,040
+Hãy để chúng tôi hiểu một chút về phần mã hóa. Name
+
+21
+00:03:27,040 --> 00:03:36,240
+Bộ điều khiển lưu chi tiết người dùng vào tập tin văn bản. Ở đây được gọi trực tiếp là email được tạo
+
+22
+00:03:36,240 --> 00:03:47,040
+sau đó một tập tin văn bản được gọi là dữ liệu người dùng.txt được tạo ra bên trong thư mục email và chúng tôi lưu tên người dùng
+
+23
+00:03:47,040 --> 00:03:56,080
+và email của những người trên mỗi hàng theo cách dấu phẩy tách ra. Name
+
+24
+00:03:56,080 --> 00:04:06,880
+trong một tập tin văn bản bên trong thư mục email. Tên tập tin là userdata.txt. Bạn có thể xem tập tin văn bản
+
+25
+00:04:06,880 --> 00:04:15,520
+lưu dữ liệu vào đây. Mỗi dữ liệu người dùng được lưu trên mỗi dòng theo cách riêng của dấu phẩy. Tập tin xem phụ lục
+
+26
+00:04:15,520 --> 00:04:23,280
+có dạng thức nơi người dùng có thể đệ trình chi tiết của mình. Anh có thể thấy mật mã ở đây.
+
+27
+00:04:26,960 --> 00:04:28,960
+[không âm thanh]
+
+28
+00:04:28,960 --> 00:04:35,520
+Di chuyển tới phương pháp hành động người dùng trong bộ điều khiển chính mà đọc dữ liệu người dùng từ
+
+29
+00:04:35,520 --> 00:04:44,160
+tập tin văn bản và hiển thị chúng theo định dạng bảng HTML. Đây là mật mã thực hiện nhiệm vụ này. Name
+
+30
+00:04:44,160 --> 00:04:51,200
+Mã chứa một dạng HTML nơi chúng tôi hiển thị tất cả dữ liệu gửi đi của người dùng. Bây giờ chúng tôi sẽ
+
+31
+00:04:51,200 --> 00:05:00,240
+Dockerize này AlP.NET Trang web lõi. Trước hết chúng tôi xoá thư mục vì mọi mục người dùng
+
+32
+00:05:00,240 --> 00:05:07,440
+Sẽ được tạo ra lần nữa. Tiếp theo chúng tôi thêm hỗ trợ Docker vào trang web này bằng cách nhấn chuột phải dự án
+
+33
+00:05:07,440 --> 00:05:16,720
+và chọn bổ sung, rồi chọn tùy chọn hỗ trợ Docker. Trong giàn giáo container,
+
+34
+00:05:16,720 --> 00:05:25,360
+Giữ tất cả các chi tiết mặc định và nhấn nút Được. Bây giờ mở thư mục trang web trong tập tin khám phá.
+
+35
+00:05:25,360 --> 00:05:39,920
+Bây giờ chúng tôi có thể đóng cửa phòng thu trực quan và sau đó mở màn hình docker nơi bạn có thể thấy phòng thu trực quan có
+
+36
+00:05:39,920 --> 00:05:48,800
+tạo ra hình ảnh các trang web với tên của người chiến thắng may mắn. Xoá ảnh này vì chúng tôi sẽ xây dựng một
+
+37
+00:05:48,800 --> 00:05:58,960
+mới ảnh qua lệnh Docker. Đây là thư mục trang web và đây là tập tin docker.
+
+38
+00:05:59,680 --> 00:06:09,920
+Bây giờ chúng ta sẽ mở PowerShell tại vị trí này. Bây giờ chúng tôi chạy docker xây dựng lệnh kiểu Docker space xây dựng
+
+39
+00:06:09,920 --> 00:06:20,720
+dấu cách -t xác định tên của ảnh mà bạn có thể chọn. Tôi đặt tên
+
+40
+00:06:20,720 --> 00:06:31,440
+may mắn thay, tập tin không gian v1 sau đó - f space docker không gian chấm.
+
+41
+00:06:31,440 --> 00:06:48,880
+Đây là toàn bộ mệnh lệnh. Sau đó nhấn vào bạn có thể thấy hình ảnh đang được xây dựng và hãy chờ đợi cho một số
+
+42
+00:06:48,880 --> 00:06:56,640
+giây để hoàn thành.
+
+43
+00:07:13,680 --> 00:07:20,560
+OK bây giờ nó đang xây dựng thành công. Trên màn hình nền Docker bạn có thể thấy ảnh này.
+
+44
+00:07:20,560 --> 00:07:38,640
+Bây giờ chúng tôi chạy một container cho hình ảnh này. Chỉ huy là docker chạy. Do đó, gõ khoảng không docker chạy - tên
+
+45
+00:07:40,240 --> 00:07:52,080
+Không gian xác định tên của hộp. Tôi đặt tên nó là người chiến thắng may mắn sau đó gõ cờ và cung cấp cho
+
+46
+00:07:52,080 --> 00:07:59,520
+Bản đồ cổng 5000 cho cổng chủ và 8080 cho cổng container.
+
+47
+00:08:11,040 --> 00:08:17,520
+Sau đó, xác định tên ảnh mà là người thắng cuộc may mắn kết thúc v1.
+
+48
+00:08:25,440 --> 00:08:41,760
+Đây là toàn bộ mệnh lệnh. Bây giờ nhấn Enter. Okay các container được tạo ra bây giờ và chúng ta có thể thấy
+
+49
+00:08:41,760 --> 00:08:52,320
+tin nhắn lắng nghe ở địa phương đại lộ 8080. Bây giờ chúng ta có thể mở trang web trên trình duyệt Chrome.
+
+50
+00:08:53,200 --> 00:09:02,320
+Do đó, gõ vật chủ ở ruột kết 5.002 đó là cổng chủ sau đó nhấn phím Enter. Xem đây là trang web
+
+51
+00:09:02,320 --> 00:09:09,040
+Mở cửa và lần này trang web đang mở từ công-ten-nơ docker. Bây giờ chúng tôi có thể thêm một số người
+
+52
+00:09:09,040 --> 00:09:19,520
+Chi tiết trang web này như trước đây. Bạn có thể thấy họ đang tiết kiệm chính xác trên trang web.
+
+53
+00:09:20,560 --> 00:09:27,920
+Lần này họ đang tiết kiệm trong container.
+
+54
+00:09:47,040 --> 00:09:54,560
+Mở màn hình nền docker bạn có thể thấy ảnh và container của trang web. Hãy phân tích
+
+55
+00:09:54,560 --> 00:10:06,080
+dữ liệu của người dùng được lưu trong container. Mở một thẻ PowerShell mới. Name
+
+56
+00:10:06,080 --> 00:10:18,240
+Chỉ huy ps và điều này sẽ hiển thị các container điều hành trang web. Đây là ID container. Bây giờ gõ
+
+57
+00:10:18,240 --> 00:10:42,240
+Docker exec gạch ngang nó dấu gạch ngang u gốc sau đó container là sau đó gạch ngang và sau đó nhấn nhập. Đây là
+
+58
+00:10:42,240 --> 00:10:51,600
+Phiên chạy bass bên trong container Linux. Ở đây có lệnh là xem mọi thư mục và tập tin.
+
+59
+00:10:51,600 --> 00:11:05,280
+Đây là thư mục email chứa chi tiết người dùng. Chúng ta hãy vào trong thư mục này với
+
+60
+00:11:05,280 --> 00:11:16,720
+cd email rồi gõ lệnh là xem tất cả các tập tin bên trong thư mục này. Đây là người dùng
+
+61
+00:11:16,720 --> 00:11:27,760
+tập tin dữ liệu st cho máy tính. Chúng ta có thể mở tập tin này bằng lệnh mèo của Linux. Name
+
+62
+00:11:28,560 --> 00:11:36,160
+Và ở đây bạn có thể thấy chi tiết người dùng. Đây là những gì trang web đang chiếu.
+
+63
+00:11:36,160 --> 00:11:47,520
+Mọi thứ đều hoạt động đúng đắn nhưng vấn đề có thể xảy ra bất cứ lúc nào. Giả sử do một sự xúc phạm này
+
+64
+00:11:47,520 --> 00:11:58,800
+Tai nạn container sau đó chúng tôi phải quay một container mới cho hình ảnh của chúng tôi dotnet. Hãy tạo ra kịch bản này.
+
+65
+00:11:58,800 --> 00:12:06,800
+Đầu tiên chúng ta dừng công-ten-nơ bằng cách chặn đứng chỉ huy chiến thắng.
+
+66
+00:12:14,800 --> 00:12:21,200
+Sau đó lấy hộp này bởi docker rm may mắn chỉ huy người chiến thắng.
+
+67
+00:12:21,200 --> 00:12:42,080
+Sau vụ này chúng ta sẽ quay một cái container mới bởi cùng một lệnh docker điều hành mà chúng ta đã chạy trước đó.
+
+68
+00:12:43,840 --> 00:12:52,880
+Bây giờ trên trang web cập nhật lại, bạn có thể thấy không có dữ liệu nào bởi vì dữ liệu bị mất.
+
+69
+00:12:52,880 --> 00:13:01,760
+Có lẽ thư mục chứa chúng cũng bị mất. Chúng ta có thể kiểm tra bằng cách chạy
+
+70
+00:13:01,760 --> 00:13:18,240
+phiên điều trị tốt nhất như chúng tôi đã làm trước đó.
+
+71
+00:13:27,040 --> 00:13:35,600
+Chúng tôi đang ở trong container và chúng tôi chạy Chỉ huy cho thấy không có thư mục email.
+
+72
+00:13:35,600 --> 00:13:44,560
+Điều này xác nhận rằng chúng ta đã mất dữ liệu. Do đó, hãy nhớ rằng khi container rơi
+
+73
+00:13:44,560 --> 00:13:54,240
+Dữ liệu cũng bị mất. Bây giờ chúng tôi sẽ hiểu làm thế nào để ngăn chặn sự mất mát dữ liệu này khi các container
+
+74
+00:13:54,240 --> 00:14:03,200
+bị rớt. Giải pháp rõ ràng là docker Volume. Chúng tôi sẽ sử dụng tập docker để tạo
+
+75
+00:14:03,200 --> 00:14:15,840
+một dữ liệu bền bỉ được lưu trữ. Chúng tôi sẽ tạo một thư mục trên pc của chúng tôi trên ổ đĩa d và điều này sẽ phục vụ
+
+76
+00:14:15,840 --> 00:14:25,360
+như một khối lượng. Thư mục là thứ được gắn trên container. Bây giờ chúng ta sẽ dừng lại và loại bỏ
+
+77
+00:14:25,360 --> 00:14:36,560
+đang chạy container và sẽ tái tạo container này. Vì vậy, đầu tiên chạy docker ps lệnh để có được các container
+
+78
+00:14:36,560 --> 00:14:49,760
+id sau đó dừng container bằng cách sử dụng docker stop sau đó container ID và cuối cùng loại bỏ này container
+
+79
+00:14:49,760 --> 00:15:01,760
+từ máy tính docker bằng lệnh docker rm container ID. Hãy tạo một container mới với âm lượng
+
+80
+00:15:01,760 --> 00:15:15,040
+Lên ngựa. Lệnh là docker chạy -p để cung cấp cho các bản đồ cổng ở đây loại 5000 để ruột kết 8080
+
+81
+00:15:15,040 --> 00:15:26,720
+sau đó gõ -v lá cờ tượng trưng cho khối lượng. Ở đây chúng tôi đầu tiên cung cấp cho phần tuyệt đối của thư mục
+
+82
+00:15:26,720 --> 00:15:40,480
+trên chiếc máy địa phương sẽ đóng vai trò là số lượng lớn. Phần này là dcc/mail. Bạn có thể chọn
+
+83
+00:15:40,480 --> 00:15:50,320
+Bất cứ phần nào trong lựa chọn của anh. Sau khi đó loại ruột kết và ở đây chúng tôi phải cung cấp cho phần trên container
+
+84
+00:15:50,320 --> 00:16:01,120
+nơi sẽ bật thư mục này. Phần này là / ứng dụng / email thư mục. Hãy nhớ lại trang web
+
+85
+00:16:01,120 --> 00:16:10,320
+đang lưu dữ liệu của người dùng vào thư mục. Phải rồi gõ tên ảnh là
+
+86
+00:16:11,360 --> 00:16:23,600
+Chúc may mắn. Tôi cũng muốn anh cho tôi xem ổ đĩa của tôi. Ở đây bạn có thể thấy không có
+
+87
+00:16:23,600 --> 00:16:33,680
+ngay bây giờ. Khi tôi bấm vào bạn có thể thấy thư mục email được tạo ra trên ổ đĩa.
+
+88
+00:16:35,920 --> 00:16:44,960
+Công-te-nơ đang chạy với số lượng lớn gắn trên đó. Hãy tạo ra một số người dùng tăng
+
+89
+00:16:44,960 --> 00:16:49,040
+và kiểm tra tính bền bỉ của dữ liệu.
+
+90
+00:17:05,920 --> 00:17:25,520
+Bạn có thể thấy tất cả dữ liệu đã được lưu.
+
+91
+00:17:32,880 --> 00:17:39,440
+Chúng ta lại làm điều tương tự. Dừng công-te-nơ rồi gỡ nó ra.
+
+92
+00:17:39,440 --> 00:17:54,880
+Bạn có thể nghĩ về điều này mà các container bị rơi. Bây giờ chúng ta phải quay một container mới cho
+
+93
+00:17:54,880 --> 00:18:08,320
+Hình ảnh của trang web. Một lần nữa chúng tôi làm cùng một lệnh, docker, chạy, -p,
+
+94
+00:18:10,160 --> 00:18:38,400
+-5,02 ruột kết 8080 -v, ruột kết / email ruột kết / ứng dụng / apps may mắn người chiến thắng p1.
+
+95
+00:18:40,800 --> 00:18:48,880
+Trước khi tôi bấm nhập, tôi muốn hiển thị các thư mục email trên ổ đĩa chứa người dùng
+
+96
+00:18:48,880 --> 00:18:58,400
+tập tin dữ liệu.txt đang lưu các chi tiết người dùng. Được rồi, hãy nhấn phím vào để chạy lệnh.
+
+97
+00:19:05,040 --> 00:19:13,040
+Xem trình duyệt D mới và bạn có thể thấy dữ liệu đã tiếp tục. Xin chúc mừng chúng tôi đã thực hiện
+
+98
+00:19:13,040 --> 00:19:24,160
+Docker Volume trong trang web mã hóa.net của chúng tôi. Giờ chúng ta vào trong container. Vì vậy, trong bàn làm việccker nhấp chuột
+
+99
+00:19:24,160 --> 00:19:35,840
+Tên của container sau đó trên exe tab chạy Là lệnh đi vào trong thư mục email với cd email
+
+100
+00:19:35,840 --> 00:19:47,520
+lệnh và sau đó với is lệnh một lần nữa đến tập tin cd người dùng.txt. Hãy làm một thư mục xyz với
+
+101
+00:19:47,520 --> 00:20:04,080
+mkdir xyz lệnh. Xem thư mục đã được tạo. Nếu chúng tôi kiểm tra thư mục trên ổ đĩa của bạn
+
+102
+00:20:04,080 --> 00:20:13,520
+có thể thấy thư mục xyz được tạo. Bây giờ chúng ta hãy làm cho một tập tin văn bản mới và tên nó abc
+
+103
+00:20:17,760 --> 00:20:26,480
+Ở đây chúng tôi thấy một con mèo tin nhắn là bạn tốt của con người
+
+104
+00:20:26,480 --> 00:20:42,960
+Chúng tôi bây giờ kiểm tra tập tin này bên trong các loại container Là và ở đây bạn có thể thấy abc.txt file
+
+105
+00:20:44,800 --> 00:20:53,920
+Để mở tập tin này, chúng tôi sử dụng lệnh mèo của dòng x loại abc.txt
+
+106
+00:20:53,920 --> 00:21:04,960
+Vì vậy ở đây bạn thấy cùng một văn bản mèo là bạn tốt của con người. Tôi hy vọng với điều này bạn có thể để
+
+107
+00:21:04,960 --> 00:21:13,920
+Hiểu làm thế nào docker Volume hoạt động. Trước khi chúng tôi kết thúc bài giảng này Hãy thảo luận về sử dụng chính của docker
+
+108
+00:21:13,920 --> 00:21:25,840
+khối lượng. Đầu tiên là sự kiên trì dữ liệu của tập tin chứa một số dữ liệu quan trọng. Thứ hai là cơ sở dữ liệu
+
+109
+00:21:25,840 --> 00:21:34,480
+Quản lý. Chúng tôi có thể lưu tập tin cơ sở dữ liệu để chúng sẽ được lưu bên ngoài container và bằng cách này
+
+110
+00:21:34,480 --> 00:21:44,240
+Dữ liệu cơ sở dữ liệu được lưu trong trường hợp container sụp đổ. Thứ ba là chia sẻ dữ liệu giữa nhiều thứ tiếng
+
+111
+00:21:44,240 --> 00:21:52,320
+Thùng. Điều này có ích cho kiến trúc vi mô. Bây giờ bạn có thể tải về mã nguồn
+
+112
+00:21:52,320 --> 00:22:08,240
+của dsp.net. và chạy tất cả các bước tôi đã thực hiện trong bài giảng này.
+
