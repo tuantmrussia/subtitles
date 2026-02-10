@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:13,080
+ Okay, so now we have set the path of the home for the user, okay, which, which got the
+
+2
+00:00:13,080 --> 00:00:18,680
+ tilde symbol, MySQL dash data, we have created the directory as we have done with the
+
+3
+00:00:18,680 --> 00:00:25,920
+ previous container and now we will give it access but make sure this time that it is very
+
+4
+00:00:25,920 --> 00:00:33,760
+ critical for MySQL to have a redripe access for owner users which means you need to set
+
+5
+00:00:33,760 --> 00:00:43,280
+ it to 777 at least if you are in staging or not any production environment for the MySQL dash
+
+6
+00:00:43,280 --> 00:00:55,840
+ data container tool, okay, and now let's run the container, we need to run the database image but
+
+7
+00:00:55,840 --> 00:01:07,920
+ with the publish port of the default SQL port of 3, 3, 6, so let's run this container, okay,
+
+8
+00:01:07,920 --> 00:01:17,680
+ so we type Docker run and we name it my dash MySQL and this is a publish port of 3, 3,
+
+9
+00:01:17,680 --> 00:01:25,520
+ 3, 3, 0, 6 and we will mount it, we will mount it to this volume of MySQL dash data,
+
+10
+00:01:25,520 --> 00:01:34,560
+ okay, and this is a map drive of Z, okay, which is equivalent to var library and we set the
+
+11
+00:01:34,560 --> 00:01:41,920
+ password, this is the password and set the database my app and MySQL user which name it my user
+
+12
+00:01:41,920 --> 00:01:50,560
+ and this is the password for my user and we use MySQL dot latest to pull down from the Docker
+
+13
+00:01:50,560 --> 00:02:00,480
+ Hub to latest MySQL image, okay, it should search it from the Docker Hub because it will not find
+
+14
+00:02:00,480 --> 00:02:07,520
+ it locally and it will pull it down, so it might take some time, I will pause the video till the download
+
+15
+00:02:07,520 --> 00:02:24,080
+ and pull operations are complete, okay, now our back is a container of MySQL column latest is
+
+16
+00:02:24,080 --> 00:02:35,440
+ successfully downloaded and pull down, so if we hear what we do next, we let's first verify that we
+
+17
+00:02:35,440 --> 00:02:50,160
+ have two doctors, we have MySQL, okay, and it is up for 39 seconds and we have PHP Apache which
+
+18
+00:02:50,160 --> 00:02:58,560
+ is run for 18 minutes and this is the test container that it is exited and we run it since three days
+
+19
+00:02:58,560 --> 00:03:08,880
+ ago, okay, perfect, so if you want to run this column one more time, okay, if the MySQL has a problem,
+
+20
+00:03:08,880 --> 00:03:17,360
+ if you see it down, it will take less than one minute, if you are above one minute then
+
+21
+00:03:17,360 --> 00:03:24,640
+ everything is okay, everything is okay now with MySQL and you can proceed with the next step,
+
+22
+00:03:25,840 --> 00:03:32,720
+ so let's link all of these containers together in the one network, so we will use this command
+
+23
+00:03:32,720 --> 00:03:42,640
+ docker network to create something like a small LAN or local LAN network, so we'll use, we'll type
+
+24
+00:03:42,640 --> 00:03:52,800
+ docker network create my dash network, okay, this is our network and let's connect both of these
+
+25
+00:03:52,800 --> 00:04:00,800
+ created docker streets, so docker network we'll use this time connect, connect instead of
+
+26
+00:04:00,800 --> 00:04:09,280
+ create and my network which is our the name of our network, my PHP dash, Apache this is our first
+
+27
+00:04:09,280 --> 00:04:20,880
+ container and we'll use the same command but we'll need, we'll link my dash MySQL, okay, this is our
+
+28
+00:04:20,880 --> 00:04:37,200
+ second duck, okay and when we run it we should see now if I want to double check that both of the
+
+29
+00:04:37,200 --> 00:04:44,480
+ containers are in the same network, we'll type this command docker network, inspect my network
+
+30
+00:04:45,440 --> 00:04:52,800
+ and let's double check if we have both of the container is in this network, this is the name of
+
+31
+00:04:52,800 --> 00:05:03,120
+ my network, this is the ID of this container and this is the net mask inside of my virtual machines
+
+32
+00:05:03,120 --> 00:05:11,920
+ which needs this PC to connect to the internet and this is the net gateway, net IP address of the
+
+33
+00:05:11,920 --> 00:05:21,600
+ net gateway, okay, so we should have the range 172.8.0.2 goes on for the gateway, so we should
+
+34
+00:05:21,600 --> 00:05:31,600
+ have .2 and .3, .2 is reserved for my PHP Apache, it's go from here to here, from down to up,
+
+35
+00:05:31,600 --> 00:05:38,400
+ so this is the first IP address, it's the container IP for my PHP Apache and this is
+
+36
+00:05:38,400 --> 00:05:47,360
+ .03 and this is the container ID for my SQL, so both of them as you can see are having the
+
+37
+00:05:47,360 --> 00:05:57,840
+ correct IP in the same local net IP that we have set on our virtual machines and both of them
+
+38
+00:05:57,840 --> 00:06:08,080
+ also these containers are on my network containers that we have created above, okay, that's very
+
+39
+00:06:08,080 --> 00:06:16,080
+ so now the last thing to do here is we want to connect from our PHP container by using the
+
+40
+00:06:16,080 --> 00:06:27,920
+ container name, I want first to connect to my PHP container, so let's clear this and connect to
+
+41
+00:06:27,920 --> 00:06:40,080
+ let's connect to our Apache PHP container and from there we need to make update updates because
+
+42
+00:06:40,080 --> 00:06:46,960
+ this is the Debian actually containers is running on Debian Linux, so there is no more use of the
+
+43
+00:06:46,960 --> 00:06:58,000
+ NF that we have used in our Linux, we would use the APT tool to update this container and we install
+
+44
+00:06:58,000 --> 00:07:06,560
+ the MySQL client because we want to connect to my database from this web server or this Apache
+
+45
+00:07:06,560 --> 00:07:25,280
+ container, so let's update the package and come and install the MySQL client, okay, it's
+
+46
+00:07:25,280 --> 00:07:36,880
+ operation two minutes and now we are back again, we install these times IP utilities, you
+
+47
+00:07:36,880 --> 00:07:43,680
+ because you want to use from the IP entities that speak, we want to first pin the containers,
+
+48
+00:07:43,680 --> 00:07:52,800
+ I will think my SQL container from the Apache, okay, so what I will do here after I install the
+
+49
+00:07:52,800 --> 00:08:07,680
+ pink, I will type pink dash or pink my dash my SQL, pink my dash my SQL and as you can see
+
+50
+00:08:07,680 --> 00:08:14,400
+ here from the Docker inspect comments, the previous command of network inspect, it is resolved
+
+51
+00:08:14,400 --> 00:08:25,440
+ to 18.0.3, so network resolutions worked, I type control C to breaks operation and now we will
+
+52
+00:08:25,440 --> 00:08:32,000
+ just make a connection by using MySQL to do which we have installed, dash actually we connect to
+
+53
+00:08:32,000 --> 00:08:39,440
+ the host to my dash my SQL and we use user my user dash p and we skip SSL verification, we need to
+
+54
+00:08:39,440 --> 00:08:46,000
+ type it like this or you'll get an error and this is the name of our database which is called
+
+55
+00:08:46,000 --> 00:09:01,440
+ my app, so let's connect it and we'll type our password, okay and as you can see here
+
+56
+00:09:01,440 --> 00:09:07,280
+ we have connected to my SQL, so both the pink is working and of course the connection to my
+
+57
+00:09:07,280 --> 00:09:17,120
+ SQL database is worked, I hope this lesson clarifies the containers and how we can create it and
+
+58
+00:09:17,120 --> 00:09:24,720
+ put them into the same networks and how we can interact with one container to other or connect
+
+59
+00:09:24,720 --> 00:09:38,960
+ from one container to another one, I hope this lesson is beneficial to you and see you on the next session, goodbye.
+
