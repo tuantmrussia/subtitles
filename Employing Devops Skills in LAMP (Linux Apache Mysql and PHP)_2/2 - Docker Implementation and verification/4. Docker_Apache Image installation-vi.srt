@@ -1,0 +1,332 @@
+1
+00:00:00,000 --> 00:00:09,120
+Xin chào tất cả và chào mừng đến với khóa học thứ hai của chúng tôi. Trong hướng dẫn này như chúng tôi có thể nhớ từ
+
+2
+00:00:09,120 --> 00:00:19,120
+trước đó chúng tôi đã cài đặt Docker và bây giờ chúng tôi sẽ chơi với nó để cài đặt máy phục vụ web
+
+3
+00:00:19,120 --> 00:00:26,840
+và máy phục vụ mặc định và sau đó chúng ta sẽ kết nối máy chủ hệ thống mạng với nhau. Vì vậy, đầu tiên
+
+4
+00:00:26,840 --> 00:00:36,840
+bước vào đây chúng ta sẽ vẽ một hình ảnh Docker có cả người Apache lẫn người mới nhất. Vì vậy, đầu tiên
+
+5
+00:00:36,840 --> 00:00:43,520
+trước khi chúng tôi có thể kéo Docker Hãy tạo một thư mục vĩnh viễn thư mục
+
+6
+00:00:43,520 --> 00:00:52,360
+Chúng tôi tạo ra bởi makedier-p có nghĩa là vĩnh viễn và tilde có nghĩa là hướng về nhà
+
+7
+00:00:52,360 --> 00:01:00,040
+và www thư mục chứa các trang web mặc định cho máy phục vụ Mạng Apache và sau đó
+
+8
+00:01:00,040 --> 00:01:09,880
+chúng tôi sẽ thực hiện thay đổi để cung cấp cho nó quyền để có đọc/ ghi thực hiện cho người dùng
+
+9
+00:01:09,880 --> 00:01:17,480
+và tương tự cho nhóm và cho khác chỉ đọc và thực hiện và nó nên làm việc mà không có bất kỳ vấn đề
+
+10
+00:01:17,480 --> 00:01:27,960
+Bởi vì trong máy phục vụ web 775 cho phép là đủ okay để điều này chúng tôi cung cấp nó cho thư mục này
+
+11
+00:01:27,960 --> 00:01:37,720
+và sau đó chúng tôi sẽ có bạn biết một số nội dung để hiển thị và khi chỉ cho mục đích thử nghiệm
+
+12
+00:01:37,720 --> 00:01:44,600
+Và chúng ta sẽ đưa thông tin này cho hàm thông tin của PHP vào thông tin.
+
+13
+00:01:44,600 --> 00:01:53,160
+chỉ để kiểm tra chức năng của máy chủ web. Vì vậy, đầu tiên ở đây hãy tạo một thư mục
+
+14
+00:01:53,160 --> 00:02:09,800
+OK và tất nhiên khi chúng tôi cố gắng để thay đổi các văn bản nên được yêu cầu tôi để làm điều đó với sudo
+
+15
+00:02:09,800 --> 00:02:18,440
+Okay không hỏi tôi điều đó là tốt bởi vì tôi đã không thực hiện một sự thay đổi lớn cho 777 đó là tốt
+
+16
+00:02:18,440 --> 00:02:28,120
+và bây giờ chúng ta hãy đặt thông tin của PHP thông tin chức năng vào thư mục www
+
+17
+00:02:30,840 --> 00:02:43,960
+okay vì vậy tốt chúng tôi bây giờ tiến hành với chạy hình ảnh máy chủ và chúng tôi sẽ xuất bản nó với sử dụng
+
+18
+00:02:43,960 --> 00:02:56,280
+Cả hai cảng 80 và 443 nên trước tiên chúng ta sẽ không chạy một con chim gõ kiến được rồi chúng ta sẽ chạy chim gõ kiến
+
+19
+00:02:56,280 --> 00:03:04,600
+Nhưng nó được đặt tên PHP Apache để bao gồm phiên bản mới nhất của PHP và Apache và để xác định
+
+20
+00:03:04,600 --> 00:03:15,400
+P4 cổng P80 và P4043 bắt đầu và kết thúc tất cả các cảng và chúng tôi sẽ gắn nó vào một khối lượng có thể ghi
+
+21
+00:03:15,400 --> 00:03:27,320
+Được rồi, nói rằng bạn sẽ gắn nó vào www cho www rộng rãi và với bản đồ ổ đĩa z okay và chúng tôi chọn
+
+22
+00:03:27,320 --> 00:03:35,400
+PHP 88.5 với máy chủ Apache Vì vậy, đầu tiên hãy chạy docker
+
+23
+00:03:35,400 --> 00:03:45,240
+Chúng ta nên chạy trực tiếp nó mà không sử dụng sudo bởi vì chúng tôi đã thêm các người dùng như bạn có thể nhớ
+
+24
+00:03:45,240 --> 00:03:58,920
+từ bản thu trước chúng tôi thêm số m người dùng vào nhóm docker
+
+25
+00:03:58,920 --> 00:04:06,440
+Được rồi, có một cái gì đó với sự cho phép
+
+26
+00:04:15,320 --> 00:04:23,880
+Tôi nhớ chúng ta đã đồng ý nhưng dù sao cũng không thành vấn đề
+
+27
+00:04:23,880 --> 00:04:31,320
+chúng ta có thể chạy chim gõ kiến chúng ta chỉ cần làm nếu chúng ta đối mặt với vấn đề như thế này đó không phải là vấn đề
+
+28
+00:04:31,320 --> 00:04:43,560
+OK bây giờ chúng ta đã chờ đợi hoặc tạm dừng video cho đến khi docker được đặt và bây giờ chúng ta có thể thấy rằng
+
+29
+00:04:43,560 --> 00:04:54,440
+Đây là ID của container và nó được tải về với phiên bản PHP 8.5 okay cho đến nay tốt như vậy.
+
+30
+00:04:54,440 --> 00:05:07,240
+Bây giờ chúng ta có thể kiểm tra với quyền truy cập HTTP cho máy cục bộ Vì vậy, hãy thử nó hãy mở nó ra ví dụ ở đây
+
+31
+00:05:08,280 --> 00:05:14,840
+Hãy mở máy chủ địa phương với lò sưởi.
+
+32
+00:05:14,840 --> 00:05:26,360
+OK như bạn thấy ở đây nó là thành công nó có thể chạy thành công với một máy cục bộ
+
+33
+00:05:26,360 --> 00:05:36,680
+và thông tin.hp hiển thị tất cả mọi thứ okay nhưng nếu bạn có thể xem bây giờ nếu chúng tôi có thể bấm HTTPS
+
+34
+00:05:37,480 --> 00:05:48,600
+Như ở đây nếu chúng tôi thêm s nó không nên làm việc okay và đó là một kết nối bảo mật thất bại okay
+
+35
+00:05:48,600 --> 00:06:00,680
+Tại sao điều này xảy ra bởi vì đơn giản là chúng tôi chưa tạo chứng nhận SSL hoặc chứng nhận tự khoa học
+
+36
+00:06:00,680 --> 00:06:09,240
+và chúng ta nên tạo nó trước khi có thể hiệu lực mô- đun SSL và tạo một trang web SSL mặc định
+
+37
+00:06:09,240 --> 00:06:22,280
+Vì vậy, hãy làm điều này để hiệu lực SSL để làm việc đúng okay chúng tôi cần đầu tiên để kết nối đến docker
+
+38
+00:06:23,880 --> 00:06:32,440
+Chúng ta đã tạo ra docker Hãy quay trở lại phần cuối của chúng tôi ví dụ ở đây nếu chúng tôi gõ Docker
+
+39
+00:06:32,440 --> 00:06:35,320
+ps
+
+40
+00:06:35,320 --> 00:06:48,200
+Okay nếu bạn có thể thấy ở đây chúng tôi có hai docker
+
+41
+00:06:50,040 --> 00:06:57,800
+Chúng tôi có một cái mới nhất là 8,5 và chúng tôi có từ chào mà chúng tôi đã chạy.
+
+42
+00:06:57,800 --> 00:07:06,600
+rằng chúng tôi chạy trong kỷ lục trước đó okay nó là khoảng một ngày và điều này chúng tôi chạy nó chỉ chạy
+
+43
+00:07:06,600 --> 00:07:16,200
+trong ba phút và nó đã tồn tại nhưng bây giờ PHP nó đang chạy mà không có bất kỳ vấn đề okay đó là mát mẻ
+
+44
+00:07:17,480 --> 00:07:31,880
+Vì vậy, hãy cố gắng để nhập này để thực hiện một số bình luận trong của tôi-p Apache vì vậy chúng ta cần phải gõ
+
+45
+00:07:31,880 --> 00:07:49,000
+bình luận như thế okay docker thực hiện - nó và chúng ta cần cạn tweet đập và bây giờ chúng ta cần phải đầu tiên
+
+46
+00:07:49,000 --> 00:07:56,600
+hiệu lực mô- đun SSL và chúng tôi cần cẩn thận làm theo những bước này vì bạn cần phải bật trước
+
+47
+00:07:56,600 --> 00:08:04,360
+Mô- đun SSL rồi tạo chứng nhận trước khi bạn có thể hiệu lực các nơi Mạng, ví dụ
+
+48
+00:08:04,360 --> 00:08:12,520
+hiệu lực chứng nhận SSL và sau đó tạo SSL và cố gắng phục hồi lại máy phục vụ Mạng Apache hoặc khởi chạy lại
+
+49
+00:08:12,520 --> 00:08:19,080
+nó trước khi tạo chứng nhận nó sẽ gây ra vấn đề và có thể container của bạn sẽ sụp đổ
+
+50
+00:08:19,080 --> 00:08:27,400
+Vì vậy, bạn cần phải cẩn thận khi áp dụng điều này trong cùng một chuỗi hoặc như vậy đầu tiên, hãy thực hiện
+
+51
+00:08:27,400 --> 00:08:33,640
+Những lời bình luận này để hiệu lực mô- đun SSL trên máy phục vụ mạng một giờ của người Apache
+
+52
+00:08:33,640 --> 00:08:43,160
+Được rồi chúng tôi sẽ không kích hoạt nó bây giờ chúng tôi sẽ kích hoạt nó sau đó chúng tôi sẽ làm cho một duyên dáng khởi động lại sau
+
+53
+00:08:43,160 --> 00:08:52,920
+sau khi tạo các chứng nhận và cho phép các nơi Mạng SSL Hãy tạo các chứng nhận tự ký
+
+54
+00:08:52,920 --> 00:09:02,120
+okay điều này sẽ được hợp lệ cho một năm đây là khóa mã RSA
+
+55
+00:09:02,120 --> 00:09:10,200
+OK đây sẽ là chìa khóa mà sẽ được chuyển thành dot CT và đây là chủ đề
+
+56
+00:09:11,480 --> 00:09:23,080
+Tên đối tượng okay hoặc có thể chính điển tên sẽ là local Vì vậy, chúng tôi có bây giờ đây là hash chứng chỉ hath của chúng tôi
+
+57
+00:09:23,080 --> 00:09:27,960
+và bây giờ chúng ta hãy bật các nơi SSL
+
+58
+00:09:35,880 --> 00:09:48,760
+OK vì vậy bây giờ tôi thấy chúng tôi là tốt để tiếp tục với sự cho phép các trang web hoặc trước khi
+
+59
+00:09:48,760 --> 00:10:01,320
+chúng tôi có thể kiểm tra các trang web hoặc chúng tôi làm cho bất kỳ khởi động lại okay chúng tôi cần đầu tiên để trước khi chúng tôi làm một duyên
+
+60
+00:10:01,320 --> 00:10:12,680
+Khởi động lại người Apache, chúng ta cần thực hiện những bình luận này. Được rồi. Ghi chú này đã đặt là gì?
+
+61
+00:10:12,680 --> 00:10:22,680
+bình luận tránh vấn đề vì có một số chứng nhận SSL nó là những cái mặc định được dùng
+
+62
+00:10:22,680 --> 00:10:36,440
+Bởi người Apache bạn cần phải thay thế họ okay với thay vì được lớn với PM để được CT okay
+
+63
+00:10:36,440 --> 00:10:47,160
+Chú thích này sẽ thực hiện nó để được Apache chấm CT okay cho và khóa ốc sên này
+
+64
+00:10:47,160 --> 00:10:53,560
+OK sẽ được thay thế bằng phím Apache do đó bạn cần phải có cả hai dấu chấm Apache CT và Apache
+
+65
+00:10:53,560 --> 00:11:04,040
+Chìa khóa chấm okay điều này là rất quan trọng để chạy okay Vì vậy, hãy đi ở đây chúng tôi đã có trong chúng tôi
+
+66
+00:11:06,840 --> 00:11:21,080
+trong các nhắc chính xác vì vậy bạn cần phải thực hiện bình luận này okay hoàn hảo bây giờ chúng tôi đã sẵn sàng để
+
+67
+00:11:21,080 --> 00:11:31,560
+Khởi động lại Docker đi. Bắt đầu lại đi.
+
+68
+00:11:37,240 --> 00:11:48,120
+OK đây là cảnh báo bình thường bởi vì chúng tôi đã có đây là địa chỉ IP mạng bên trong của tôi
+
+69
+00:11:48,120 --> 00:11:57,480
+VMware mà sẽ được chỉ định cho các container và đây chỉ là một thông điệp cảnh báo rằng bạn nên
+
+70
+00:11:57,480 --> 00:12:08,280
+sử dụng một miền đầy đủ khả năng không phải địa chỉ IP okay bây giờ vì vậy nếu chúng tôi có thể nếu chúng tôi muốn thử HTTPS
+
+71
+00:12:08,280 --> 00:12:18,120
+Nó sẽ hoạt động mà không cần nó như bạn thấy bây giờ nó chỉ cho bạn cảnh báo nhưng nếu bạn có thể click vào
+
+72
+00:12:18,120 --> 00:12:28,840
+chấp nhận rủi ro và chào mừng nó đang hoạt động mà không có bất kỳ vấn đề vì vậy bây giờ chúng tôi đã hoàn thành
+
+73
+00:12:28,840 --> 00:12:39,960
+nhiệm vụ chạy máy phục vụ web và chúng tôi đã công bố 80 cổng và truy cập nó bằng cách sử dụng
+
+74
+00:12:39,960 --> 00:12:51,720
+Thông tin chấm PHP của chúng tôi và cũng chúng tôi truy cập SSL mà cũng HTTPS để hiển thị trang thử nghiệm nhỏ của
+
+75
+00:12:51,720 --> 00:13:02,520
+PHP okay Hãy di chuyển sang phần khác ở đây chúng tôi sẽ kéo hình ảnh Docker tôi sẽ sử dụng tùy chọn
+
+76
+00:13:02,520 --> 00:13:11,480
+A tôi sẽ sử dụng lock của tôi tôi sẽ kéo hình ảnh Docker với cơ sở dữ liệu của tôi không phải Maria okay này
+
+77
+00:13:11,480 --> 00:13:23,960
+Vì vậy, như chúng tôi đã làm trong các bước trước chúng tôi sẽ làm tương tự nhưng chúng tôi sẽ chỉ làm cho một rất quan trọng
+
+78
+00:13:23,960 --> 00:13:31,400
+thay đổi cho sự cho phép chúng tôi tạo thư mục để chỉ vào dữ liệu MIME của tôi nhưng cho chế độ thay đổi
+
+79
+00:13:31,400 --> 00:13:41,640
+Nó sẽ là 777 không phải 775 nếu bạn đặt nó 775 cơ sở dữ liệu sẽ chạy tôi đã tiếp tục chạy
+
+80
+00:13:41,640 --> 00:13:48,360
+Nhưng nó sẽ dừng lại có lẽ sau vài giây năm giây để ví dụ bởi vì bạn cần phải có
+
+81
+00:13:48,360 --> 00:13:55,000
+Cho phép thực phẩm cho nhóm người dùng và yêu cầu bạn có đầy đủ sự cho phép okay vì vậy bạn cần phải mất
+
+82
+00:13:55,000 --> 00:14:02,120
+quan tâm cho phần đó vì vậy hãy tạo ở đây dữ liệu lock của tôi
+
+83
+00:14:02,120 --> 00:14:12,520
+Chúng ta hãy rõ ràng điều này
+
