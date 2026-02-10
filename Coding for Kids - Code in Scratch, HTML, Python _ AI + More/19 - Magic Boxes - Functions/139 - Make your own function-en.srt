@@ -1,0 +1,388 @@
+1
+00:00:00,160 --> 00:00:04,800
+We're looking at these really amazing and powerful things called functions.
+
+2
+00:00:05,240 --> 00:00:09,800
+These are these sort of black boxes in a sense, that have all sorts of code inside of them.
+
+3
+00:00:09,800 --> 00:00:12,600
+We can call them and they can return values for us.
+
+4
+00:00:12,680 --> 00:00:16,440
+Now we know that there are lots and lots of built in functions, and there's all sorts of modules.
+
+5
+00:00:16,440 --> 00:00:23,080
+So you can have functions from everything from drawing type function to math functions, etc. and we
+
+6
+00:00:23,080 --> 00:00:25,320
+can use those functions to do lots of amazing things.
+
+7
+00:00:25,320 --> 00:00:28,560
+But the real power comes in when you start to create your own functions.
+
+8
+00:00:28,920 --> 00:00:30,120
+Why would you want to do this?
+
+9
+00:00:30,160 --> 00:00:32,200
+Well, it allows you to have this reusable code.
+
+10
+00:00:32,240 --> 00:00:36,760
+And as we'll show you now in this lesson, when you start to create functions, it makes it so much
+
+11
+00:00:36,760 --> 00:00:42,200
+easier to actually code because once the function is done once, it's like an amazing little magic box
+
+12
+00:00:42,200 --> 00:00:44,400
+that you can just use over and over and over again.
+
+13
+00:00:44,440 --> 00:00:45,480
+So let's have a look.
+
+14
+00:00:45,480 --> 00:00:51,240
+We're going to start off with a relatively simple example, just so I can show you the layout and the
+
+15
+00:00:51,240 --> 00:00:54,280
+syntax and basically what a function looks like.
+
+16
+00:00:54,400 --> 00:00:58,240
+So this is what you do to create your own function.
+
+17
+00:00:58,560 --> 00:01:04,210
+You start off by typing tapping this keyword def, which basically stands for define.
+
+18
+00:01:04,250 --> 00:01:08,770
+Because every time you type in a new function, you're basically defining a new function.
+
+19
+00:01:08,930 --> 00:01:12,610
+The next thing you want is to give your function a name.
+
+20
+00:01:13,090 --> 00:01:19,930
+So in this example I'm just going to show you how to create a function that cubes a number.
+
+21
+00:01:20,170 --> 00:01:24,170
+So obviously just like variables you're going to want to give your function a name that makes sense.
+
+22
+00:01:24,170 --> 00:01:27,610
+So let me just call my function cube.
+
+23
+00:01:27,810 --> 00:01:33,930
+And then functions also have the same thing with variables where you shouldn't start with a capital
+
+24
+00:01:33,930 --> 00:01:37,210
+letter and you shouldn't start with a number.
+
+25
+00:01:37,930 --> 00:01:38,490
+Okay.
+
+26
+00:01:38,970 --> 00:01:41,210
+So there's define cube.
+
+27
+00:01:41,850 --> 00:01:47,610
+The next thing we need to make this cube function work we need a parameter in here which is going to
+
+28
+00:01:47,650 --> 00:01:51,570
+hold the number that the user wants to cube.
+
+29
+00:01:51,690 --> 00:01:54,890
+So in other words it's basically a variable called num.
+
+30
+00:01:55,690 --> 00:02:00,460
+So this is the value that's going to be passed to the function so that it can cube that number.
+
+31
+00:02:00,540 --> 00:02:02,660
+So this parameter will hold that value.
+
+32
+00:02:02,700 --> 00:02:05,660
+Just like when you chose to call print.
+
+33
+00:02:05,700 --> 00:02:09,340
+Well when we did examples with print you put in a value in those brackets.
+
+34
+00:02:09,340 --> 00:02:14,220
+And that's how the function knew what sentence or what you wanted it to print.
+
+35
+00:02:14,660 --> 00:02:15,060
+Okay.
+
+36
+00:02:15,100 --> 00:02:17,500
+And then so how would we cube a number.
+
+37
+00:02:17,940 --> 00:02:25,100
+Basically what we want to do is we want to take that number times it by itself again and times it again.
+
+38
+00:02:25,100 --> 00:02:28,820
+And that will give us the cube of the number.
+
+39
+00:02:29,020 --> 00:02:36,380
+But now with functions, you want this answer to be given back to the user or returned to the user,
+
+40
+00:02:36,380 --> 00:02:37,140
+as we would say.
+
+41
+00:02:37,500 --> 00:02:42,780
+So what you actually want to do is you want to type in this word here called return.
+
+42
+00:02:43,580 --> 00:02:46,300
+Now I'm going to show you what happens in this one that works.
+
+43
+00:02:46,300 --> 00:02:48,660
+And then I'm going to show you what happens if we take it away.
+
+44
+00:02:48,980 --> 00:02:55,380
+So what this should do is the user is going to call the function by just typing the function's name.
+
+45
+00:02:55,540 --> 00:03:00,180
+And then because we have this parameter Here we have one parameter called number.
+
+46
+00:03:00,420 --> 00:03:05,220
+That means in order to call this function, the user has to put in a parameter.
+
+47
+00:03:06,660 --> 00:03:08,220
+Let's just say seven.
+
+48
+00:03:08,380 --> 00:03:12,980
+If the user didn't put in a parameter yet, that means that this.
+
+49
+00:03:13,580 --> 00:03:18,700
+That means that Python will not see this cube function as being the same as this one.
+
+50
+00:03:19,620 --> 00:03:22,940
+Let's just, for example, say that I'm put it in another variable here.
+
+51
+00:03:22,940 --> 00:03:24,620
+Let's just call it Num2.
+
+52
+00:03:24,740 --> 00:03:28,220
+This now no longer calls this function over here.
+
+53
+00:03:28,220 --> 00:03:34,140
+So you've got to check that your function has the same amount of parameters as the function you are
+
+54
+00:03:34,180 --> 00:03:35,700
+wanting to call.
+
+55
+00:03:36,500 --> 00:03:37,060
+Okay.
+
+56
+00:03:37,620 --> 00:03:41,980
+And then obviously we want to print this value.
+
+57
+00:03:41,980 --> 00:03:45,820
+If I didn't put the print statement well I'll show you what will happen.
+
+58
+00:03:45,860 --> 00:03:46,220
+Okay.
+
+59
+00:03:46,260 --> 00:03:49,500
+So all this is doing is it's taking this number seven.
+
+60
+00:03:50,180 --> 00:03:54,060
+And this number seven is becoming this variable num.
+
+61
+00:03:54,060 --> 00:03:59,830
+Just like we assign variables NUM becomes seven and then it's just going seven times seven times seven,
+
+62
+00:03:59,830 --> 00:04:02,070
+and it is returning that value to us.
+
+63
+00:04:02,750 --> 00:04:04,350
+Interestingly what's actually happening here.
+
+64
+00:04:04,390 --> 00:04:06,790
+We're running a function within a function.
+
+65
+00:04:06,790 --> 00:04:10,230
+So the print function is obviously Python's own function.
+
+66
+00:04:10,550 --> 00:04:14,270
+And we are passing that the result of our own function which was cube.
+
+67
+00:04:14,270 --> 00:04:18,670
+So cube does something returns the result, hands it to the print function which does something which
+
+68
+00:04:18,670 --> 00:04:19,670
+prints it on the screen.
+
+69
+00:04:19,670 --> 00:04:21,470
+So you can see how powerful these little things are.
+
+70
+00:04:21,470 --> 00:04:23,750
+Because one statement could do all of that.
+
+71
+00:04:24,230 --> 00:04:24,590
+Yeah.
+
+72
+00:04:24,590 --> 00:04:29,910
+So I also wanted to show you that this return value doesn't actually print anything.
+
+73
+00:04:30,070 --> 00:04:36,190
+All it does is it returns this value to this function call.
+
+74
+00:04:36,230 --> 00:04:40,150
+So if you never printed it you would actually it's almost a pointless function.
+
+75
+00:04:40,150 --> 00:04:41,830
+But if I change this to print.
+
+76
+00:04:44,350 --> 00:04:47,590
+Then it's going to print the value because it's going num becomes seven.
+
+77
+00:04:47,590 --> 00:04:49,950
+And we're just doing like a normal print statement.
+
+78
+00:04:49,950 --> 00:04:52,470
+Print seven times seven times seven.
+
+79
+00:04:52,510 --> 00:04:56,560
+Now, the reason we wouldn't really want to do that is we want it to be a cube function, because you
+
+80
+00:04:56,560 --> 00:04:58,680
+might now want to do a calculation with it.
+
+81
+00:04:59,040 --> 00:05:03,800
+And so rather than necessarily printing it the moment that Sarah's got cube seven so she could go cube
+
+82
+00:05:03,800 --> 00:05:10,080
+seven plus three and we could print that result or store that result in a variable, do whatever we
+
+83
+00:05:10,080 --> 00:05:10,680
+wanted.
+
+84
+00:05:10,840 --> 00:05:15,080
+So now you can see how powerful it is, because we now have this function that can actually be used
+
+85
+00:05:15,080 --> 00:05:16,280
+as part of a formula.
+
+86
+00:05:16,520 --> 00:05:16,800
+Okay.
+
+87
+00:05:16,840 --> 00:05:23,200
+So there you can see what I did is I now could add three to the cube of seven because it's returned
+
+88
+00:05:23,240 --> 00:05:24,200
+an integer.
+
+89
+00:05:24,200 --> 00:05:30,200
+So because it's returned integer or returned a number I can add I can subtract and do all those other
+
+90
+00:05:30,400 --> 00:05:31,840
+fun operations.
+
+91
+00:05:32,160 --> 00:05:35,720
+So that's the basic layout of a function.
+
+92
+00:05:35,720 --> 00:05:43,520
+Just remember you have this diff, you have your name and then you have these brackets with option with
+
+93
+00:05:43,520 --> 00:05:44,880
+optional parameters.
+
+94
+00:05:44,880 --> 00:05:46,960
+Some functions don't actually need this.
+
+95
+00:05:46,960 --> 00:05:47,680
+One does.
+
+96
+00:05:47,680 --> 00:05:51,040
+We'll get to examples where you may not need any parameters at all.
+
+97
+00:05:51,200 --> 00:05:55,240
+But for now know that is the layout of a function.
+
