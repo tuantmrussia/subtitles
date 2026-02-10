@@ -1,0 +1,556 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Okay, so now I have added all of these zombies and shared them up as well as you can see on all of these zombies.
+
+2
+00:00:07,000 --> 00:00:14,000
+ The simple third person controller zombie and these two scripts are added.
+
+3
+00:00:14,000 --> 00:00:20,000
+ We're going to make sure that you follow the previous video and add everything to your own zombie as well.
+
+4
+00:00:20,000 --> 00:00:29,000
+ Okay, for these zombies I've set the AI random destination values to 3, 10, and 30, so make sure that you do it.
+
+5
+00:00:29,000 --> 00:00:32,000
+ For all of your zombies as well.
+
+6
+00:00:32,000 --> 00:00:44,000
+ All right, now the next thing which we will be adding to our zombies is we want this zombie to have a rag doll whenever we try to shoot these zombies.
+
+7
+00:00:44,000 --> 00:00:50,000
+ Okay, because zombie was going inside the ground and also it was not playing the rag doll effect.
+
+8
+00:00:50,000 --> 00:00:57,000
+ So, now to add the rag doll effect, what you will have to do is right click on the zombie.
+
+9
+00:00:57,000 --> 00:01:09,000
+ Then in the 3D object you will find this rag doll right here, so click on it, then try and drop the zombie in there so that it takes the animator from there.
+
+10
+00:01:09,000 --> 00:01:16,000
+ Let's open up these bones as you can see they are all empty, so if you click on auto field, they will auto fill all over the parts in there.
+
+11
+00:01:16,000 --> 00:01:21,000
+ Then change the total was to 80 and then click on create.
+
+12
+00:01:21,000 --> 00:01:32,000
+ When you do that then the second step is to select this hips of the zombie and click on its layer and change its layer to bones.
+
+13
+00:01:32,000 --> 00:01:34,000
+ Click on yes change children.
+
+14
+00:01:34,000 --> 00:01:42,000
+ All right, when you do that second step now the third step is to add the advanced rag doll controller component when you add it.
+
+15
+00:01:42,000 --> 00:01:49,000
+ If you are seeing these values right here then it means that the rag doll is applied perfectly fine.
+
+16
+00:01:49,000 --> 00:01:57,000
+ The final step is to open up ju character controller and then in the death event make sure that you enable this option.
+
+17
+00:01:57,000 --> 00:02:00,000
+ Enable rag doll when die.
+
+18
+00:02:00,000 --> 00:02:06,000
+ All right, you can repeat these steps for the other zombies as well.
+
+19
+00:02:06,000 --> 00:02:12,000
+ For example now for this one the first step is to add rag doll, all right try and drop that.
+
+20
+00:02:12,000 --> 00:02:15,000
+ Click on auto fail change this to 80.
+
+21
+00:02:15,000 --> 00:02:23,000
+ All right after doing that then the second step is to select this hips, change its layer to bones, yes change children.
+
+22
+00:02:23,000 --> 00:02:32,000
+ And then the third step is to add the advanced rag doll and if you are seeing these values it means that it is added perfectly fine.
+
+23
+00:02:32,000 --> 00:02:39,000
+ And then the final step is to open up character controller and death event enable this option right there.
+
+24
+00:02:39,000 --> 00:02:42,000
+ All right now let's do it for the other three zombies.
+
+25
+00:02:42,000 --> 00:02:49,000
+ All right, so when you do it for all of these zombies now I'm just gonna leave the first zombie.
+
+26
+00:02:49,000 --> 00:02:55,000
+ As open because we don't want all of these zombies to chasing us for now since we are just testing, right?
+
+27
+00:02:55,000 --> 00:03:00,000
+ So just leave the first zombie active and let's play the game.
+
+28
+00:03:00,000 --> 00:03:06,000
+ All right, so the zombie is walking right there as you can see.
+
+29
+00:03:06,000 --> 00:03:13,000
+ Let's go ahead and pick up the pistol and then we will check how does it looks.
+
+30
+00:03:13,000 --> 00:03:21,000
+ All right, the zombie is walking right there as you can see.
+
+31
+00:03:21,000 --> 00:03:28,000
+ Let's pick this up, move outside and let's see if the zombie okay.
+
+32
+00:03:28,000 --> 00:03:33,000
+ Now as you can see the zombie is following us.
+
+33
+00:03:33,000 --> 00:03:37,000
+ Over it and now if you try to shoot the zombie.
+
+34
+00:03:37,000 --> 00:03:45,000
+ As you can see now it plays the rag doll physics and if you try to shoot the rag doll anything as you can see each part of the case.
+
+35
+00:03:45,000 --> 00:04:04,000
+ Working perfectly fine if you notice.
+
+36
+00:04:04,000 --> 00:04:08,000
+ All right, so rag doll is working perfectly fine.
+
+37
+00:04:08,000 --> 00:04:15,000
+ Now the next thing is to allow the zombie to have a hit force on the player.
+
+38
+00:04:15,000 --> 00:04:19,000
+ Okay, in order to deal damage to the player.
+
+39
+00:04:19,000 --> 00:04:23,000
+ So the player has this J you had right there.
+
+40
+00:04:23,000 --> 00:04:29,000
+ All right, now in order to make the zombies damage the player let's enable all of these zombies.
+
+41
+00:04:29,000 --> 00:04:33,000
+ Let's select the first one and if you turn on the gizmos.
+
+42
+00:04:33,000 --> 00:04:44,000
+ Now what we're going to do is right click click on create and then right here click on quick setup.
+
+43
+00:04:44,000 --> 00:04:50,000
+ And then click on add and then right here select this setup character hit boxes.
+
+44
+00:04:50,000 --> 00:04:53,000
+ When you click that as you can see it at these boxes.
+
+45
+00:04:53,000 --> 00:04:59,000
+ All right, so now when these boxes hit player it will deal damage to the player right.
+
+46
+00:04:59,000 --> 00:05:06,000
+ So when you add them then I will show you where you can find all of these hit boxes as you can see right here.
+
+47
+00:05:06,000 --> 00:05:14,000
+ Okay, so this is the left leg box and then you can find the right leg in the other and the same for the hands.
+
+48
+00:05:14,000 --> 00:05:20,000
+ All right, so let's do the same to the other zombies as well.
+
+49
+00:05:20,000 --> 00:05:34,000
+ So right click create quick setup add character hit boxes there they are we will resize these hit boxes once we add them to all of these zombies.
+
+50
+00:05:34,000 --> 00:05:42,000
+ All right, so let's add to this one now add character hit boxes.
+
+51
+00:05:42,000 --> 00:05:52,000
+ Then the same for this one and then to this zombie right here.
+
+52
+00:05:52,000 --> 00:05:56,000
+ All right, now in order to resize them let's search for hit boxes.
+
+53
+00:05:56,000 --> 00:06:05,000
+ Okay, so this for this hit box and this hit boxes for the player we just can ignore that and get towards this hit box.
+
+54
+00:06:05,000 --> 00:06:17,000
+ Okay, so now we need to resize it so I'm just gonna make it let's just say 4.4 and then 0.4 we up.
+
+55
+00:06:17,000 --> 00:06:24,000
+ You can do the same for the next 1.4 point 4.4 point 4 all right now as you can see.
+
+56
+00:06:24,000 --> 00:06:30,000
+ Let's start there in the player fields these two and boxes this one.
+
+57
+00:06:30,000 --> 00:06:33,000
+ So let's just move it a little bit up.
+
+58
+00:06:33,000 --> 00:06:41,000
+ All right, and let's do the same for the next one all the top the same direction now let's double click on this one.
+
+59
+00:06:41,000 --> 00:06:44,000
+ Okay, it's this zombie hit box.
+
+60
+00:06:44,000 --> 00:06:52,000
+ Yep, let's resize them to 4.4 and 4.
+
+61
+00:06:52,000 --> 00:06:56,000
+ All right, and now as you can see they are away from the player at the zombie hands.
+
+62
+00:06:56,000 --> 00:07:00,000
+ So just make sure the zombie hand is fully covered in there.
+
+63
+00:07:00,000 --> 00:07:04,000
+ Okay, if you can't see here it is.
+
+64
+00:07:04,000 --> 00:07:08,000
+ All right, let's do the same for this one.
+
+65
+00:07:08,000 --> 00:07:11,000
+ Move it right there.
+
+66
+00:07:11,000 --> 00:07:15,000
+ Okay, then we have this feeds.
+
+67
+00:07:15,000 --> 00:07:22,000
+ So 0.4 point 4.4 and move them up a little bit.
+
+68
+00:07:22,000 --> 00:07:26,000
+ That's it.
+
+69
+00:07:26,000 --> 00:07:34,000
+ All right, now for this zombie select both of the handed boxes.
+
+70
+00:07:34,000 --> 00:07:40,000
+ Change it to 4.4 and then select the handed box right there.
+
+71
+00:07:40,000 --> 00:07:45,000
+ Move it according to the hands like that.
+
+72
+00:07:45,000 --> 00:07:49,000
+ All right, then select the feed.
+
+73
+00:07:49,000 --> 00:07:56,000
+ Hit boxes and then move them up a little bit.
+
+74
+00:07:56,000 --> 00:08:02,000
+ Now it's this zombie right here.
+
+75
+00:08:02,000 --> 00:08:08,000
+ All right, change it to 0.4 and select the first one.
+
+76
+00:08:08,000 --> 00:08:18,000
+ Make sure it covers the old hand the same for the other side and then for the feed.
+
+77
+00:08:18,000 --> 00:08:25,000
+ All right, let's now select this zombie which is right here.
+
+78
+00:08:25,000 --> 00:08:36,000
+ So 4, 4 and 4 and then I can't see this hand.
+
+79
+00:08:36,000 --> 00:08:39,000
+ Okay, so for this one we will move it right here.
+
+80
+00:08:39,000 --> 00:08:46,000
+ Okay, because this zombie has one hand which is cut in the middle.
+
+81
+00:08:46,000 --> 00:08:49,000
+ All right, and for this one we just can't leave it right there.
+
+82
+00:08:49,000 --> 00:08:55,000
+ Then for the fields.
+
+83
+00:08:55,000 --> 00:08:59,000
+ All right, now this is the player head box right now.
+
+84
+00:08:59,000 --> 00:09:02,000
+ It's this zombie right here.
+
+85
+00:09:02,000 --> 00:09:06,000
+ Okay, and this zombie feeds are done but just the hands.
+
+86
+00:09:06,000 --> 00:09:13,000
+ So 0.4, let's select the this hand.
+
+87
+00:09:13,000 --> 00:09:17,000
+ There, move it and then the same for this side.
+
+88
+00:09:17,000 --> 00:09:19,000
+ That's it.
+
+89
+00:09:19,000 --> 00:09:31,000
+ All right, now once you are done with this let's turn off the cosmos and we need to set up the attack time for all of these zombies.
+
+90
+00:09:31,000 --> 00:09:40,000
+ So if we select all of these zombies, right here as you can see we have this minimum time to attack and then maximum time to attack.
+
+91
+00:09:40,000 --> 00:09:53,000
+ Let's set the minimum to 1.2 and the maximum is called right and also it deals a lot of damage.
+
+92
+00:09:53,000 --> 00:10:01,000
+ Let's check the head box actually first of all and see how much damage it does as you can see it does 30 damage.
+
+93
+00:10:01,000 --> 00:10:07,000
+ All right, so you need to select all of the head boxes in except the player one.
+
+94
+00:10:07,000 --> 00:10:15,000
+ If you notice the player head box has just blue icon and the other one which are for the zombies has this plus sign.
+
+95
+00:10:15,000 --> 00:10:23,000
+ Okay, so select all of these and change the damage to let us say 15.
+
+96
+00:10:23,000 --> 00:10:26,000
+ All right, that's it.
+
+97
+00:10:26,000 --> 00:10:29,000
+ Now we can go ahead and play the game.
+
+98
+00:10:29,000 --> 00:10:41,000
+ Here we are, let's now move towards the zombie.
+
+99
+00:10:41,000 --> 00:10:43,000
+ All right, the zombie is right there.
+
+100
+00:10:43,000 --> 00:10:46,000
+ I was just checking the zombie animation and it's good.
+
+101
+00:10:46,000 --> 00:10:50,000
+ All right, now as you can see, the zombie is quite hitting the same.
+
+102
+00:10:50,000 --> 00:10:52,000
+ We'll try to chase us.
+
+103
+00:10:52,000 --> 00:10:54,000
+ Let's now stop.
+
+104
+00:10:54,000 --> 00:10:57,000
+ Okay.
+
+105
+00:10:57,000 --> 00:11:02,000
+ As you can see, it is dealing damage to the player or right.
+
+106
+00:11:02,000 --> 00:11:08,000
+ But if you notice there was a lot of damages and that is because there are head boxes on the player field.
+
+107
+00:11:08,000 --> 00:11:14,000
+ So when that head box is try to get trigger with the player, it also turned damage.
+
+108
+00:11:14,000 --> 00:11:18,000
+ So we need to remove the triggers from the zombie fields.
+
+109
+00:11:18,000 --> 00:11:26,000
+ All right, so let's type hit box in the hierarchy and let's check all of them one by one.
+
+110
+00:11:26,000 --> 00:11:32,000
+ So turn on the gizmos so that we can see, again, this is a field head box and the next one as well.
+
+111
+00:11:32,000 --> 00:11:35,000
+ So just simply delete them.
+
+112
+00:11:35,000 --> 00:11:39,000
+ All right, so I'm just going to delete now.
+
+113
+00:11:39,000 --> 00:11:40,000
+ Let's double click on this.
+
+114
+00:11:40,000 --> 00:11:42,000
+ Okay, these are the hands.
+
+115
+00:11:42,000 --> 00:11:45,000
+ Head boxes, we don't need to delete that.
+
+116
+00:11:45,000 --> 00:11:47,000
+ Okay, then the next two is the field.
+
+117
+00:11:47,000 --> 00:11:49,000
+ So delete them.
+
+118
+00:11:49,000 --> 00:11:55,000
+ Now these are the hands and then these are the field.
+
+119
+00:11:55,000 --> 00:11:59,000
+ These are the fields to delete them.
+
+120
+00:11:59,000 --> 00:12:07,000
+ All right, hands and then where is it?
+
+121
+00:12:07,000 --> 00:12:10,000
+ Okay, hands and hands.
+
+122
+00:12:10,000 --> 00:12:12,000
+ Let's do a click on it here.
+
+123
+00:12:12,000 --> 00:12:15,000
+ Okay, these are the fields.
+
+124
+00:12:15,000 --> 00:12:26,000
+ All right, delete them.
+
+125
+00:12:26,000 --> 00:12:29,000
+ Okay, hand and then let's double go on this case.
+
+126
+00:12:29,000 --> 00:12:30,000
+ Hand hit box.
+
+127
+00:12:30,000 --> 00:12:37,000
+ That one as well.
+
+128
+00:12:37,000 --> 00:12:43,000
+ All right, so I think all of these zombies have now just hundred boxes.
+
+129
+00:12:43,000 --> 00:12:47,000
+ But this zombie right here has one feet.
+
+130
+00:12:47,000 --> 00:12:52,000
+ Head box, let me check which one is it.
+
+131
+00:12:52,000 --> 00:12:55,000
+ Okay, I think these first two.
+
+132
+00:12:55,000 --> 00:12:58,000
+ Yep, now.
+
+133
+00:12:58,000 --> 00:13:06,000
+ And for this zombie, hands, hands, hands, and so right.
+
+134
+00:13:06,000 --> 00:13:12,000
+ So when you do that, then you can now go ahead and test it out and it will work perfectly fine.
+
+135
+00:13:12,000 --> 00:13:18,000
+ And if it's still do double damage, then you can decrease the head boxes sizes.
+
+136
+00:13:18,000 --> 00:13:21,000
+ All right, because the zombie is really close to the player.
+
+137
+00:13:21,000 --> 00:13:24,000
+ So that's why it deals double damage.
+
+138
+00:13:24,000 --> 00:13:35,000
+ Okay, so now with our zombies ready up right here, as you can see, all the zombies have controllers and also now the
+
+139
+00:13:35,000 --> 00:13:43,000
+ erectile physics and also the zombies still damage to the player, also the player deal damage to the zombie and with this turn, let's send this video right here.
+
