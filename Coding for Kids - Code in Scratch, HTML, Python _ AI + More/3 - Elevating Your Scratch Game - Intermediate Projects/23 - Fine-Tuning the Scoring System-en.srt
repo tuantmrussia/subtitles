@@ -1,0 +1,152 @@
+1
+00:00:00,080 --> 00:00:01,190
+Well, how did it go?
+
+2
+00:00:01,960 --> 00:00:06,700
+You may have run into a few problems, but a problem is just a stepping stone in your learning, which
+
+3
+00:00:06,700 --> 00:00:07,510
+leads to growth.
+
+4
+00:00:07,540 --> 00:00:09,220
+Yeah, I know it's quite profound, isn't it?
+
+5
+00:00:09,520 --> 00:00:11,230
+But that's what it is.
+
+6
+00:00:11,590 --> 00:00:13,840
+Anyway, let's just get to it.
+
+7
+00:00:14,050 --> 00:00:21,700
+So we want to change the score by one each time our guy gets a header and our guy is getting a header
+
+8
+00:00:21,700 --> 00:00:23,560
+when he is touching the ball.
+
+9
+00:00:23,560 --> 00:00:26,620
+So if you look at the script here, it's basically doing that.
+
+10
+00:00:26,620 --> 00:00:28,990
+It's sensing if we are touching Ben.
+
+11
+00:00:28,990 --> 00:00:34,600
+So it works perfectly for our variable change and we don't even need to create a new script.
+
+12
+00:00:34,600 --> 00:00:35,770
+So let's do this.
+
+13
+00:00:36,880 --> 00:00:42,730
+If the ball touches Ben, we want to change our variable score by one and change the ball's direction.
+
+14
+00:00:43,290 --> 00:00:44,760
+So let's check this out.
+
+15
+00:00:44,790 --> 00:00:48,570
+Clicking play you will see when we get a header it works.
+
+16
+00:00:48,570 --> 00:00:53,580
+But just before you celebrate too much, see that if we touch the ball from the side.
+
+17
+00:00:54,870 --> 00:00:58,860
+We get a whole stack of points, and that's one way to cheat in our game.
+
+18
+00:00:58,860 --> 00:01:01,890
+That's a bit of a hack, so we definitely need to fix that.
+
+19
+00:01:01,890 --> 00:01:08,160
+And also notice that when we restart the game, our score stays at the same number.
+
+20
+00:01:08,820 --> 00:01:16,230
+So firstly we can fix our score, not a restarting simply by adding this set variable block to the start
+
+21
+00:01:16,230 --> 00:01:16,770
+of our script.
+
+22
+00:01:16,770 --> 00:01:21,780
+And this way each time we start our game, our score is reset to zero.
+
+23
+00:01:22,460 --> 00:01:25,520
+Our next problem needs a smarter fix.
+
+24
+00:01:25,520 --> 00:01:31,580
+Because if you look at this code, if Ben is touching the ball, it changes the variable by one and
+
+25
+00:01:31,580 --> 00:01:34,010
+it keeps doing this until he's not touching the ball.
+
+26
+00:01:34,010 --> 00:01:39,110
+So even if we are only touching for a second, the score will increase a bunch of times in that second.
+
+27
+00:01:39,640 --> 00:01:46,120
+So to fix this, add in a wait one second right to the end of the code and we don't even need it to
+
+28
+00:01:46,120 --> 00:01:46,840
+be that long.
+
+29
+00:01:46,840 --> 00:01:49,450
+So let's change it maybe to half a second.
+
+30
+00:01:50,310 --> 00:01:53,610
+Now, if you look at the script, we set our score to zero.
+
+31
+00:01:53,640 --> 00:01:58,770
+Then if we touch Ben, we change the direction, change our score.
+
+32
+00:01:58,800 --> 00:02:02,790
+Then we wait for one second, which means that our players can't cheat anymore.
+
+33
+00:02:03,660 --> 00:02:05,640
+And with that, your scoring is done.
+
+34
+00:02:06,240 --> 00:02:11,250
+And one quick tip if you double click on the variable, you can make it big like this.
+
+35
+00:02:11,250 --> 00:02:13,950
+And also you can move it around and put it anywhere on your screen.
+
+36
+00:02:13,950 --> 00:02:19,500
+Now have some fun with this game and try it out and see how high can you get.
+
+37
+00:02:19,500 --> 00:02:20,670
+What is your high score?
+
+38
+00:02:20,700 --> 00:02:24,750
+Have some fun because you are busy creating an absolutely amazing game.
+
