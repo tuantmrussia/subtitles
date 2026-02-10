@@ -1,0 +1,576 @@
+1
+00:00:00,000 --> 00:00:07,100
+Vì vậy, chúng ta hãy chào mừng đến với video khác và trong video này, chúng tôi sẽ thảo luận một
+
+2
+00:00:07,100 --> 00:00:15,100
+là cơ chế an ninh quan trọng thường được sử dụng trong hệ điều hành Windows.
+
+3
+00:00:15,100 --> 00:00:20,400
+Tên của nó là một giao diện quét phần mềm, AMSI, rất nhiều trong số họ ở đây về
+
+4
+00:00:20,400 --> 00:00:29,200
+Mục tiêu của AMSI, vì vậy AMSI về cơ bản là đối phó với scan phần mềm, vì vậy đây là một bảo mật
+
+5
+00:00:29,200 --> 00:00:38,700
+Cơ chế được giới thiệu bởi hệ điều hành Windows và nó là thế này, chủ yếu là
+
+6
+00:00:38,700 --> 00:00:45,700
+Được sử dụng bởi PowerShell, chỉ huy ngay lập tức và nhiều hơn nữa, để phát hiện một kịch bản độc ác, được rồi.
+
+7
+00:00:45,700 --> 00:00:53,800
+Vì vậy, bất cứ khi nào, ví dụ, bất cứ khi nào bạn cố gắng để tải bất kỳ kịch bản độc hại từ PowerShell.ex,
+
+8
+00:00:53,800 --> 00:01:00,600
+Vì vậy AMSI sẽ là người đầu tiên, nó sẽ phát hiện rằng hệ thống PowerShell, nguy hiểm
+
+9
+00:01:00,600 --> 00:01:03,500
+Hệ thống cấp điện và nó sẽ chấm dứt quá trình đó.
+
+10
+00:01:03,500 --> 00:01:11,900
+Vì vậy, đây là các tính năng chính của AMSI, do đó, đây là một trong những khác biệt rất mạnh mẽ
+
+11
+00:01:11,900 --> 00:01:15,400
+Cơ chế được Windows giới thiệu.
+
+12
+00:01:15,400 --> 00:01:22,000
+Vì vậy, cơ chế khác nhau này sẽ chủ yếu tập trung vào tập tin như là phần mềm độc hại, vì vậy tập tin như là phần mềm độc hại
+
+13
+00:01:22,000 --> 00:01:29,700
+sẽ như thế này, không có tập tin.t hay không có tập tin đó, tập tin như phần mềm sai sẽ như
+
+14
+00:01:29,700 --> 00:01:36,500
+Tổng bộ mã hóa 64, nó sẽ chạy thẳng tới PowerShell. Và nó sẽ tiêm
+
+15
+00:01:36,500 --> 00:01:38,200
+được chứ?
+
+16
+00:01:38,200 --> 00:01:46,900
+Đó là, đó là, chúng tôi gọi đó là một file như là một phần mềm, okay.
+
+17
+00:01:46,900 --> 00:01:53,400
+Vì vậy, chúng ta hãy thảo luận một số chủ đề như một ai đó sẽ suy nghĩ như, tôi có một
+
+18
+00:01:53,400 --> 00:01:58,000
+Hơi khác một chút, tại sao tôi cần AMSI để bảo vệ mình, được chứ?
+
+19
+00:01:58,000 --> 00:02:08,200
+Vì vậy, hãy nghĩ về một chút khác nhau chống virus chỉ có các tín hiệu tĩnh, hahes,
+
+20
+00:02:08,200 --> 00:02:09,200
+Được rồi.
+
+21
+00:02:09,200 --> 00:02:16,840
+Các tập tin hath nguy hiểm, vì vậy nó sẽ chỉ quét, quét, quét tập tin của bạn bằng cách sử dụng chữ ký
+
+22
+00:02:16,840 --> 00:02:17,840
+phải rồi.
+
+23
+00:02:17,840 --> 00:02:25,800
+Vậy nó sẽ chỉ phát hiện ra dấu hiệu hiểm độc, nó sẽ được khớp với hồ sơ của chúng ta, đúng không?
+
+24
+00:02:25,800 --> 00:02:30,760
+Vì vậy, ví dụ, nếu bạn đang tải về mô phỏng. Hồ sơ ngoại lệ, nếu bắt chước. exe hash
+
+25
+00:02:30,760 --> 00:02:37,960
+Hiện tại trong dấu hiệu khác nhau, nó sẽ phát hiện rằng, nó sẽ phát hiện ra hash,
+
+26
+00:02:37,960 --> 00:02:47,080
+Để tôi lấy hồ sơ.
+
+27
+00:02:47,080 --> 00:02:55,300
+Vì vậy, hãy đi đến ví dụ của tập tin là mã hóa, nếu bạn đang tải bất kỳ, bất kỳ văn lệnh, mà
+
+28
+00:02:55,300 --> 00:03:02,720
+là hồ sơ, nộp trực tiếp vào PowerShell.exe, vì vậy thời gian đó động cơ AV của bạn làm
+
+29
+00:03:02,720 --> 00:03:07,240
+Không có một ý tưởng để phát hiện ra điều đó và những gì nó, quyền.
+
+30
+00:03:07,240 --> 00:03:12,720
+Vì vậy, trong thời gian đó AMSI hoặc giao diện quét phần mềm sẽ đến để chơi, okay.
+
+31
+00:03:12,720 --> 00:03:18,520
+Vì vậy, tôi sẽ giải thích trong thực tế, vì vậy, bất cứ ai có một nghi ngờ những gì là một tập tin
+
+32
+00:03:18,520 --> 00:03:27,480
+Hãy để tôi đưa ra một vài ví dụ về những gì là một tập tin là không chính xác, OK.
+
+33
+00:03:27,480 --> 00:03:38,120
+Vì vậy, tôi sẽ mở một PowerShell trong chế độ quản trị và tôi đang cung cấp một tham số gọi là
+
+34
+00:03:38,120 --> 00:03:47,160
+một hàm và tôi đang đưa ra biến, bạn đã biết, cho phép tôi sẽ cung cấp cho tên của tôi và tôi sẽ gõ
+
+35
+00:03:47,160 --> 00:04:00,220
+tôi sẽ giải thích nó sẽ làm gì, nó sẽ làm gì.
+
+36
+00:04:00,220 --> 00:04:29,840
+Bây giờ, được rồi, cho tôi chút thời gian, hãy nạp đạn.
+
+37
+00:04:29,840 --> 00:04:59,620
+Được rồi, nó nói cái tên bị mất sau cuộc tranh luận, được rồi, nó đã được phát hiện, hãy cố gắng
+
+38
+00:04:59,620 --> 00:05:09,220
+Máy điện.exe, nên nó phải được nạp đạn, để tôi mở PowerShell, nhà quản trị
+
+39
+00:05:09,220 --> 00:05:25,100
+Chế độ, hãy thử ngay bây giờ, bạn có thể thấy TAO và, được rồi, bây giờ chúng tôi nhận được màu xanh lá cây, phải.
+
+40
+00:05:25,100 --> 00:05:33,760
+Vì vậy, bây giờ hàm số của tôi đã có, mà tôi sẽ cung cấp, trong công việc, H, A, Y, và tôi đang viết
+
+41
+00:05:33,760 --> 00:05:49,940
+Một kịch bản, viết máy và bỏ qua, A, B, hãy để tôi đóng kịch bản này.
+
+42
+00:05:49,940 --> 00:06:00,100
+Vì vậy, bây giờ nếu tôi cung cấp cho trong công việc, H, A, Y, vì vậy nó nạp, những gì tôi trở lại bên trong chức năng,
+
+43
+00:06:00,100 --> 00:06:02,220
+Phải, viết chức năng máy, bên phải.
+
+44
+00:06:02,220 --> 00:06:07,020
+Vì vậy, đây là tập tin như là phần mềm độc hại, do đó, bạn có thể tải dữ liệu độc hại của bạn, về cơ bản
+
+45
+00:06:07,020 --> 00:06:14,140
+4 hoặc obofusate script bên trong máy hoặc các chức năng khác và bạn có thể trực tiếp tải
+
+46
+00:06:14,140 --> 00:06:19,340
+Đây là một ví dụ đơn giản, tập tin là phần mềm độc hại,
+
+47
+00:06:19,340 --> 00:06:26,820
+Bạn có thể kịch bản, bạn có thể sử dụng hệ thống PowerShell và bạn có thể phát triển độc ác của riêng bạn
+
+48
+00:06:26,820 --> 00:06:31,660
+Văn lệnh và bạn có thể tải vào máy mục tiêu, vì vậy nó sẽ trực tiếp tải, kịch bản sẽ
+
+49
+00:06:31,660 --> 00:06:38,020
+Nạp trực tiếp vào bộ nhớ và nó không được phát hiện bởi hầu hết các động cơ A, B cũng
+
+50
+00:06:38,020 --> 00:06:44,420
+Là EER, được rồi, trong một thời gian eDR của bạn cũng sẽ không phát hiện này loại độc hại
+
+51
+00:06:44,420 --> 00:06:54,820
+kịch bản đã được tiêm trực tiếp từ PowerShell, được rồi, hãy nói chuyện với
+
+52
+00:06:54,820 --> 00:07:03,060
+AMSI bằng cách thông qua, vì vậy làm thế nào tôi có thể làm AMSI bằng cách thông qua, okay, vì vậy hãy xem những gì đang xảy ra
+
+53
+00:07:03,060 --> 00:07:13,820
+Đầu tiên trong PowerShell, hãy để tôi mở nhà thám hiểm quá trình của tôi, vì vậy tôi đã giải thích
+
+54
+00:07:13,820 --> 00:07:22,180
+Động cơ AMSI chủ yếu tập trung vào PowerShell.ex để phát hiện một tập tin là phần mềm độc hại, okay,
+
+55
+00:07:22,180 --> 00:07:29,420
+Vì vậy, hãy để tôi sẽ tải PowerShell vào nhà thám hiểm quá trình của tôi và tôi sẽ xem những gì thực sự
+
+56
+00:07:29,420 --> 00:07:36,380
+Đang xảy ra ở PowerShell, vậy động cơ AMSI của tôi sẽ biết như thế nào, làm thế nào để bảo vệ Windows của tôi
+
+57
+00:07:36,380 --> 00:07:45,340
+Động cơ sẽ biết rằng kịch bản là độc hại, làm thế nào nó sẽ biết, okay, hãy tải điều này, chúng ta hãy
+
+58
+00:07:45,340 --> 00:07:57,020
+Đợi bọn buôn ma túy nạp đạn, mở PowerShell, một PowerShell khác, hãy mở ra.
+
+59
+00:07:57,020 --> 00:08:12,960
+Thấy chưa, được rồi, giờ cậu có thể thấy PowerShell. Exe và hầu hết bọn buôn bán đều bị nạp đạn, nên
+
+60
+00:08:12,960 --> 00:08:19,940
+Bạn có thể thấy hai người bán hàng đã được sử dụng cho một cơ chế khác, ở đây bạn có thể thấy
+
+61
+00:08:19,940 --> 00:08:34,300
+khác biệt, uh, an ninh khác một chút, phải, vì vậy tại sao một chút khác nhau giao dịch của tôi đã được bên trong của tôi
+
+62
+00:08:34,300 --> 00:08:35,860
+ĐiệnShell.ex, hãy suy nghĩ về nó, okay, ví dụ, nếu thuốc chống virus của bạn cần phải giám sát
+
+63
+00:08:35,860 --> 00:08:42,940
+PowerShell.ex, nếu kháng virus của bạn cần theo dõi hành vi của PowerShell.ex,
+
+64
+00:08:42,940 --> 00:08:50,420
+Kháng virus của anh cần tiêm mã vào PowerShell.ex, okay, thuốc kháng virus của anh cần
+
+65
+00:08:50,420 --> 00:08:57,740
+tiêm một mật mã hoặc một tên bán hàng vào PowerShell của anh. Để giám sát những gì xảy ra bên trong
+
+66
+00:08:57,740 --> 00:09:04,820
+PowerShell.ex, nếu nó không tải lên một tay buôn bán hay mã nguồn vào PowerShell.ex,
+
+67
+00:09:04,820 --> 00:09:12,020
+Kháng virus của bạn không biết những gì xảy ra bên trong PowerShell.ex, okay, vậy hãy xem
+
+68
+00:09:12,020 --> 00:09:18,740
+Một ví dụ thực sự, vì vậy trong nhà đối diện của bạn, chúng ta hãy lấy một ví dụ của đối phương nhà, vì vậy có
+
+69
+00:09:18,740 --> 00:09:26,300
+là một trận đấu lớn ở trong căn nhà đối diện của bạn, được rồi, vì vậy bạn đang chờ đợi bên ngoài nhà,
+
+70
+00:09:26,300 --> 00:09:31,020
+Bạn không biết những gì xảy ra bên trong, những gì xảy ra bên trong ngôi nhà đó, phải, vì vậy nếu bạn đi
+
+71
+00:09:31,020 --> 00:09:36,580
+vào hệ thống, vào nhà, bạn có thể hiểu vấn đề thực sự là gì, được chứ,
+
+72
+00:09:36,580 --> 00:09:42,620
+Rằng có một ví dụ ở đây, okay, thuốc chống virus của bạn hoặc phòng thủ Windows cần phải theo dõi
+
+73
+00:09:42,620 --> 00:09:49,540
+PowerShell.ex, nó cần phải tiêm mã hoặc một tập tin bán hàng vào PowerShell của bạn và nó
+
+74
+00:09:49,540 --> 00:09:56,660
+sẽ theo dõi những gì xảy ra bên trong PowerShell.ex, okay, vậy nên nếu nó giám sát, thì của bạn
+
+75
+00:09:56,660 --> 00:10:03,220
+Ví dụ, nếu bit khác nhau hoặc người chia bài giám sát bất kỳ hoạt động khả nghi đó là
+
+76
+00:10:03,220 --> 00:10:09,420
+chạy bên trong PowerShell, nó sẽ kết thúc quá trình đó, được rồi, đây là cách mà hệ thống EDR của bạn,
+
+77
+00:10:09,420 --> 00:10:15,820
+Động cơ AV và các cơ chế phòng thủ khác sẽ hoạt động bất cứ khi nào có mối đe dọa xảy ra.
+
+78
+00:10:15,820 --> 00:10:20,980
+Hãy lấy một ví dụ về một quá trình tiêm, do đó, bạn đang tiêm một số mã vào mục tiêu của bạn
+
+79
+00:10:20,980 --> 00:10:26,140
+Quá trình, hành vi xử lý mục tiêu của bạn đã được thay đổi, phải, vì vậy quá trình mục tiêu của bạn
+
+80
+00:10:26,140 --> 00:10:32,180
+Nó sẽ hành động như một phần mềm độc hại, nó sẽ ra lệnh và kiểm soát cuộc tấn công đe dọa, okay,
+
+81
+00:10:32,180 --> 00:10:42,100
+Trong thời gian đó AMSI hoặc cơ chế phòng thủ của bạn, như AV, nó sẽ phát hiện nghi ngờ
+
+82
+00:10:42,100 --> 00:10:47,660
+Hành vi và nó sẽ chấm dứt quá trình, okay, vì vậy đây là lời giải thích thực tế về
+
+83
+00:10:47,660 --> 00:10:55,980
+Làm thế nào động cơ EDR và AV của bạn sẽ hoạt động, vì vậy ở đây bạn có thể thấy AMSI.dell đã được nạp
+
+84
+00:10:55,980 --> 00:11:05,340
+bên trong PowerShell.ex, vì vậy AMSI.dell của tôi sẽ theo dõi PowerShell.e bất cứ điều gì xảy ra,
+
+85
+00:11:05,340 --> 00:11:12,300
+Bất cứ hành động hiểm độc nào xảy ra, nó sẽ chấm dứt quá trình đó, okay, vì vậy đây là thực tế
+
+86
+00:11:12,300 --> 00:11:20,300
+Hành vi của các cơ chế phòng thủ như Windows Defenseer và động cơ phản kháng, okay, vậy
+
+87
+00:11:20,300 --> 00:11:27,740
+Hãy tải một số kịch bản độc hại vào PowerShell, hãy để tôi tải trực tiếp tải một
+
+88
+00:11:27,740 --> 00:11:50,540
+Gọi nhiều cat, okay, gọi MMI, xin lỗi, vì vậy nếu tôi cung cấp, do đó, bạn có thể bây giờ thấy các hoạt động đáng ngờ
+
+89
+00:11:50,540 --> 00:11:57,540
+Nơi bị chặn, do đó hệ thống chống đối của tôi cũng hoạt động, cũng như của tôi AMSI cũng
+
+90
+00:11:57,540 --> 00:12:03,520
+hoạt động, cả hai được kết hợp với nhau và nó đã phát hiện ra nó là một mối đe dọa, đúng không,
+
+91
+00:12:03,520 --> 00:12:10,020
+Vì vậy, bất cứ khi nào tôi cố gắng để tải mô-đun điện tử mMI mèo bên trong PowerShell, lệnh của tôi
+
+92
+00:12:10,020 --> 00:12:17,260
+nhận được phát hiện là một phần mềm độc hại và nó đã bị chặn bởi phần mềm chống đảo ngược của bạn, vì vậy trong kịch bản này
+
+93
+00:12:17,260 --> 00:12:22,300
+Bảo vệ Windows của tôi, cũng như của tôi bit khác nhau, cả hai đang cộng tác với mỗi
+
+94
+00:12:22,300 --> 00:12:28,620
+và nó đã phát hiện ra một mối đe dọa, đúng vậy, vì vậy đây là ví dụ chung của làm thế nào của bạn
+
+95
+00:12:28,620 --> 00:12:35,460
+Phần mềm Antivert hoặc AMSI của bạn đã phát hiện các kịch bản độc hại, okay, vì vậy làm thế nào tôi sẽ
+
+96
+00:12:35,460 --> 00:12:44,100
+Bỏ qua chuyện này, anh có nghĩ đến việc tôi cần phải làm gì bất cứ khi nào tôi đến phòng thủ không?
+
+97
+00:12:44,100 --> 00:12:52,620
+Cơ chế kích hoạt, làm thế nào tôi có thể vượt qua kịch bản này, được rồi, hãy đi đến một số ví dụ khác,
+
+98
+00:12:52,620 --> 00:13:00,980
+Khi bạn tiêm, khi bạn vượt qua bất kỳ, khi bạn vượt qua bất kỳ cơ sở 64 hoặc obfuscated
+
+99
+00:13:00,980 --> 00:13:09,220
+bên trong PowerShell, năng lượng của anh sẽ cố gắng, cơ chế phòng thủ của anh sẽ cố gắng giảm thiểu
+
+100
+00:13:09,220 --> 00:13:15,980
+Một cổng hoặc giải mã văn lệnh PowerShell và nó sẽ tìm kiếm một chuỗi phổ biến mà
+
+101
+00:13:15,980 --> 00:13:23,020
+đã được sử dụng bởi phần mềm độc hại và nó sẽ phát hiện ra rằng đó là một độc ác, okay, vì vậy chúng tôi biết nếu tôi
+
+102
+00:13:23,020 --> 00:13:30,300
+Được thông qua các cuộc gọi mMI mèo đó là một điều hoàn toàn độc ác, cơ chế phòng thủ của bạn
+
+103
+00:13:30,300 --> 00:13:35,380
+Bắt được dây, gọi dây mèo MMI và phát hiện một số nội dung độc hại, vì vậy xem phát hiện
+
+104
+00:13:35,380 --> 00:13:42,480
+Làm một nội dung hiểm độc, vì vậy đây là nội dung độc hại, phải, để chúng tôi có thể vượt qua,
+
+105
+00:13:42,480 --> 00:13:47,900
+Chúng ta hãy, okay, nhiều người trong số họ biết những gì là mèo MMI, vì vậy mèo MMI là một trong những sau khai thác
+
+106
+00:13:47,900 --> 00:13:53,140
+Mô-đun, giống như khung tiếp xúc, hãy nghĩ về khung tiếp xúc,
+
+107
+00:13:53,140 --> 00:14:01,140
+Vì vậy, chúng tôi có thể, chúng tôi có thể sử dụng các con mèo MMI cho nhiều loại tấn công như truy cập mạch máu, đổ
+
+108
+00:14:01,140 --> 00:14:07,780
+hashes, Kerbro stoned tấn công, mì ống tấn công, tấn công thư mục chủ yếu, và
+
+109
+00:14:07,780 --> 00:14:13,340
+Chúng tôi, chúng tôi có thể làm rất nhiều việc với mèo MMI, chúng tôi sẽ thấy rằng trong các hoạt động của đội, vì vậy
+
+110
+00:14:13,340 --> 00:14:19,460
+Chúng ta hãy bàn về vấn đề này, vì vậy làm thế nào, tôi, làm thế nào tôi sẽ vượt qua nó, okay, hãy để tôi sẽ làm một trong những
+
+111
+00:14:19,460 --> 00:14:27,220
+Điều này, được rồi, tôi, tôi biết động cơ của tôi, b và khác nhau, khác nhau, Windows Defender động cơ
+
+112
+00:14:27,220 --> 00:14:31,780
+sẽ phát hiện, đây là một số nội dung độc hại, hãy để tôi chia sẻ nội dung đó, okay, hãy để tôi sẽ
+
+113
+00:14:31,780 --> 00:14:43,220
+để, hãy để tôi làm một điều, I n, cộng với, tôi sẽ chia nội dung đó, tôi sẽ cung cấp, okay,
+
+114
+00:14:43,220 --> 00:15:12,380
+b, cộng với, k e, cộng với, gạch ngang, cộng với, m, i, cộng với.
+
+115
+00:15:12,380 --> 00:15:30,020
+m, i, cộng thêm, k, a, cộng với, t, z, okay, vì vậy bây giờ tôi chia tất cả mọi thứ, bên phải,
+
+116
+00:15:30,020 --> 00:15:37,300
+b, o, k, a, cộng với, gạch ngang, và m, i, m, k, a, t, z, bây giờ tôi sẽ tải, vì vậy hãy xem
+
+117
+00:15:37,300 --> 00:15:46,660
+những gì sẽ xảy ra, vì vậy, xem, kịch bản của tôi sẽ được thực hiện, phải, trong im lặng của tôi con mèo MMI được thực hiện,
+
+118
+00:15:46,660 --> 00:15:55,620
+Đây là cách bạn cần vượt qua, a, m, tôi động cơ sử dụng các chuỗi tách
+
+119
+00:15:55,620 --> 00:16:01,180
+cơ chế, okay, bạn có thể chia chuỗi và bạn có thể thực hiện nó, okay, tôi sẽ cung cấp
+
+120
+00:16:01,180 --> 00:16:08,900
+Một số ví dụ khác để vượt qua các máy bảo vệ Windows khác nhau AMSA, để bạn có thể tách
+
+121
+00:16:08,900 --> 00:16:16,580
+Mã của bạn và bạn có thể sử dụng các cơ bản cho, với cơ bản của bạn để mã hóa, cũng như bạn
+
+122
+00:16:16,580 --> 00:16:23,100
+có thể obfusate các chuỗi, okay, obfusate, chia chuỗi, làm cơ bản cho mã hóa
+
+123
+00:16:23,100 --> 00:16:30,900
+và obfusate rằng, obfusth mật mã, okay, vì vậy bây giờ tiêm mã đó bên trong PowerShell của bạn
+
+124
+00:16:30,900 --> 00:16:40,140
+Tôi chắc chắn rằng năng lượng của anh hoặc động cơ AMSA sẽ không phát hiện ra kịch bản đó.
+
+125
+00:16:40,140 --> 00:16:45,960
+Ví dụ tôi chỉ, tôi đã không làm bất kỳ mã hóa hoặc bất kỳ mã hóa hoặc bất kỳ sư phạm nào, tôi chỉ
+
+126
+00:16:45,960 --> 00:16:53,940
+Chia chuỗi ra, tôi có thể vượt qua động cơ AV của tôi cũng như động cơ AMSA của tôi, phải, vì vậy điều này
+
+127
+00:16:53,940 --> 00:16:59,260
+là cách bạn, bạn có thể suy nghĩ về khi bạn đang đến để vượt qua AMSA và
+
+128
+00:16:59,260 --> 00:17:06,420
+Giao diện quét phần mềm độc hại hoặc động cơ kháng virus, được rồi, vì vậy tôi sẽ sử dụng các ví dụ khác,
+
+129
+00:17:06,420 --> 00:17:12,420
+Nhưng tôi hầu như không thích, bạn có thể, bạn có thể, bạn có thể sử dụng các mã nóng chuỗi như, bạn có thể mã hóa
+
+130
+00:17:12,420 --> 00:17:19,660
+Bộ phận mã hóa làm việc đó để vượt qua các động cơ, nhưng chúng tôi cũng có các cơ chế khác, bạn
+
+131
+00:17:19,660 --> 00:17:26,820
+Có thể chấm dứt sự bảo vệ của Windows hoặc bạn có thể đi cho một số công cụ bên thứ ba như, ở đây
+
+132
+00:17:26,820 --> 00:17:33,220
+Bạn có thể thấy các gọi tắt AMSA.ps1, bạn có thể trực tiếp tải văn lệnh PowerShell này vào
+
+133
+00:17:33,220 --> 00:17:41,600
+Cái, vào bàn điều khiển PowerShell và PowerShell của bạn, nó sẽ làm một số bộ nhớ vá và
+
+134
+00:17:41,600 --> 00:17:51,700
+nó sẽ làm một số, nó sẽ tải một gánh nặng, một bộ nhớ đệm và chủ yếu nó sẽ tải, nó sẽ vượt qua
+
+135
+00:17:51,700 --> 00:17:56,980
+AMSA, okay, vì vậy vượt qua AMSA, bạn có thể dễ dàng vượt qua AMSA, nhưng tôi sẽ không
+
+136
+00:17:56,980 --> 00:18:03,700
+Thích loại này hơn, nhưng bởi vì hệ thống EDR của bạn rất dễ dàng, động cơ AV đã có
+
+137
+00:18:03,700 --> 00:18:13,380
+Điều này đã bên trong dấu hiệu tĩnh, vì vậy tôi hầu như không thích, bạn có thể, bạn có thể đi,
+
+138
+00:18:13,380 --> 00:18:19,800
+Anh có thể dùng mã hóa bí mật và tách các chuỗi ra, được chứ?
+
+139
+00:18:19,800 --> 00:18:27,860
+Tôi sẽ cung cấp cho bạn để theo bất cứ khi nào bạn đến AV, AV hoặc AMSA bắc cầu, okay,
+
+140
+00:18:27,860 --> 00:18:33,180
+Vì vậy, tôi hy vọng bạn, bạn sẽ hiểu tất cả về động cơ AMSA, làm thế nào nó đã hoạt động, những gì
+
+141
+00:18:33,180 --> 00:18:38,140
+là sự khác biệt, một cơ chế khác biệt nó đã được theo và làm thế nào để tránh sự khác biệt đó
+
+142
+00:18:38,140 --> 00:18:46,660
+Cơ chế để vượt qua, vượt qua động cơ AV cũng như AMSA để tiêm của bạn
+
+143
+00:18:46,660 --> 00:18:52,900
+kịch bản độc ác, vì vậy hy vọng bạn hiểu và bạn có một hiểu rõ ràng về video này
+
+144
+00:18:52,900 --> 00:18:56,700
+và chúng tôi sẽ gặp lại bạn trong video tiếp theo, tạm biệt, cảm ơn bạn.
+
