@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:08,000
+ Okay guys let's think about the blue team so you need to detect a specified process token
+
+2
+00:00:08,000 --> 00:00:14,000
+ sorry access token manipulation attack so it's a bit simple so you need to investigate
+
+3
+00:00:14,000 --> 00:00:22,600
+ one of the even tidy 4656 so you can open a logs security log okay so this is the directory
+
+4
+00:00:22,600 --> 00:00:29,600
+ and you need to open the security log and you need to filter it with the 4656 here before
+
+5
+00:00:29,600 --> 00:00:37,200
+ 650 so if you investigating the 4656 so here you can find a handle to an object or
+
+6
+00:00:37,200 --> 00:00:43,300
+ a keyster so we know anyway we are going to take a handle so this is the code we are
+
+7
+00:00:43,300 --> 00:00:50,400
+ going to take a handle so that's why we have a we have the even tidy handle to an object
+
+8
+00:00:50,400 --> 00:00:59,400
+ or a keyster and here you can find the process name it's a token stealer.exe and the
+
+9
+00:00:59,400 --> 00:01:06,400
+ object that has been accessed is a win log1.exe so it access to win log1.exe and the process
+
+10
+00:01:06,400 --> 00:01:16,400
+ which was accessed it's a token stealer so now you can find the access mask of X10, X1000 so let
+
+11
+00:01:16,400 --> 00:01:38,400
+ me do some googler of this
+
+12
+00:01:38,400 --> 00:02:01,400
+ it's a code for X1000.exe access mask.
+
+13
+00:02:01,400 --> 00:02:08,400
+ Okay.
+
+14
+00:02:08,400 --> 00:02:31,400
+ Let me open this.
+
+15
+00:02:31,400 --> 00:02:54,400
+ Let me search with the access rights.
+
+16
+00:02:54,400 --> 00:03:03,400
+ This was not giving a property address it.
+
+17
+00:03:03,400 --> 00:03:10,400
+ Yeah now we got an address it X1000 access rights for process query limited information so
+
+18
+00:03:10,400 --> 00:03:17,400
+ in this code we have used the process query limited information so by this way you can find there
+
+19
+00:03:17,400 --> 00:03:22,400
+ is access token manipulation attack has been happened.
+
+20
+00:03:24,400 --> 00:03:35,400
+ So you can learn more about the process query information access right about this access
+
+21
+00:03:35,400 --> 00:03:45,400
+ so but yeah anyway we have completed the investigation so this is how you can easily find out how
+
+22
+00:03:45,400 --> 00:03:48,400
+ the access token manipulation has been executed okay.
+
+23
+00:03:48,400 --> 00:03:54,400
+ Okay let's swap off and we will see you in another video thank you.
+
