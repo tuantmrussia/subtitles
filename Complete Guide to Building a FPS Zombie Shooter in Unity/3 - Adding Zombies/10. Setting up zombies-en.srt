@@ -1,0 +1,356 @@
+1
+00:00:00,000 --> 00:00:05,240
+ Okay, so in this video, I'm going to show you how you can set up these zombies.
+
+2
+00:00:05,240 --> 00:00:11,000
+ All right, it is really simple, you just have to follow me step-by-step, all right?
+
+3
+00:00:11,000 --> 00:00:15,600
+ So let's start from the first zombie, which is this one right here.
+
+4
+00:00:15,600 --> 00:00:23,200
+ Okay, in order to set this zombie, what we're going to do is, first of all, try and drop
+
+5
+00:00:23,200 --> 00:00:27,840
+ it right here and make sure that all of your zombies are human-oriented.
+
+6
+00:00:27,840 --> 00:00:34,840
+ Just a reminder, then you can select this zombie, then click on, I mean, right-click,
+
+7
+00:00:34,840 --> 00:00:43,080
+ and then click on this JUTPS create, all right, then click on Quick Setup, and then click
+
+8
+00:00:43,080 --> 00:00:50,580
+ on JU Character, and in here, you can add this simple, third person controller, all right.
+
+9
+00:00:50,580 --> 00:00:55,760
+ When you do that, it will show you this successful message, all right, and it will show
+
+10
+00:00:55,760 --> 00:01:02,360
+ the successful message once your character is human or if it is not, then it will not work.
+
+11
+00:01:02,360 --> 00:01:08,040
+ Okay, that's why, make sure your character is human-oriented and it has a avatar, all right.
+
+12
+00:01:08,040 --> 00:01:15,680
+ When you do that, you will notice that on this, now there will be these few options, all right,
+
+13
+00:01:15,680 --> 00:01:16,680
+ which are added.
+
+14
+00:01:16,680 --> 00:01:22,080
+ So now this is actually a controller, a simple, third person controller, now in order
+
+15
+00:01:22,080 --> 00:01:29,880
+ to make it a zombie, to give it the zombie AI, you will have to click on Quick Setup, add,
+
+16
+00:01:29,880 --> 00:01:36,360
+ and then set up zombie AI, all right, when you do that, now it has the zombie AI and everything
+
+17
+00:01:36,360 --> 00:01:37,360
+ else as well.
+
+18
+00:01:37,360 --> 00:01:42,720
+ All right, so now we need to do a few changes, the first one will be to change the attacker
+
+19
+00:01:42,720 --> 00:01:49,000
+ distance, so I'm just going to change this to 1.2, and then if you check the field of
+
+20
+00:01:49,000 --> 00:01:57,120
+ view, we're going to change that to 12, and then this to 280, and you will be seeing these
+
+21
+00:01:57,120 --> 00:02:02,560
+ values once you run on the cosmos, okay, as you can see right there, okay, this is the field
+
+22
+00:02:02,560 --> 00:02:07,760
+ of view, that's why I made it 280, so that the zombie can detect player in this red circle
+
+23
+00:02:07,760 --> 00:02:12,520
+ and then this is the radius, so if the player gets inside this radius, the zombie will
+
+24
+00:02:12,520 --> 00:02:17,440
+ know that he has the player has entered, so I'm just going to leave this 12 and 280 and
+
+25
+00:02:17,440 --> 00:02:22,400
+ the attacker distance, make sure it is 1.2, these are the three things which we need to
+
+26
+00:02:22,400 --> 00:02:29,000
+ change in the zombie AI, now for the animator, we need to change its animator because right
+
+27
+00:02:29,000 --> 00:02:34,600
+ now it is a third person controller animator, we need to change this to the zombie, so
+
+28
+00:02:34,600 --> 00:02:40,360
+ if you click on this circle right here and then select animator zombie, all right, it will
+
+29
+00:02:40,360 --> 00:02:46,440
+ now play the zombie animation, the attack and everything, all right, once you do that,
+
+30
+00:02:46,440 --> 00:02:57,480
+ then you can go ahead and play the game, and the game start, the zombies as you can see
+
+31
+00:02:57,480 --> 00:03:04,760
+ walking right there, moving to different points, but if you notice it is just going in circles
+
+32
+00:03:04,760 --> 00:03:11,920
+ and also the zombie doesn't move to anywhere else, and the reason behind that is we didn't
+
+33
+00:03:11,920 --> 00:03:18,920
+ have any nav mesh, so now before testing it out, we need to have nav mesh, I mean we need
+
+34
+00:03:18,920 --> 00:03:24,320
+ to bake our environment, so in order to bake it, what we are going to do is click on
+
+35
+00:03:24,320 --> 00:03:37,000
+ this environment and let's add not a nav mesh agent, actually nav mesh obstacle, all right and
+
+36
+00:03:37,000 --> 00:03:41,880
+ for this as you can see you will have to install the AI navigation package, so if you
+
+37
+00:03:41,880 --> 00:03:45,980
+ are seeing this button, just click it, but if you are not seeing this button, then you
+
+38
+00:03:45,980 --> 00:03:53,280
+ can click on package, management and package manager, and in the Unity registry, right here
+
+39
+00:03:53,280 --> 00:04:02,120
+ you can search for AI, and right here we have AI navigation, let's click on install, once
+
+40
+00:04:02,120 --> 00:04:08,960
+ it is installed, let's click that out now, and in the environment, we have this nav mesh
+
+41
+00:04:08,960 --> 00:04:16,520
+ obstacle, right here let's actually now remove that and nav mesh surface add that to the
+
+42
+00:04:16,520 --> 00:04:23,040
+ environment, turn on the gizmos, so that we can see whatever is happening, and now we just
+
+43
+00:04:23,040 --> 00:04:30,280
+ need to click on this bake, make sure the environment is selected and then the environment
+
+44
+00:04:30,280 --> 00:04:36,440
+ had the nav mesh surface and then click bake, and now as you can see it is baking, so you
+
+45
+00:04:36,440 --> 00:04:41,880
+ will have to wait for it, it will take few seconds or few minutes that according to your
+
+46
+00:04:41,880 --> 00:04:49,440
+ PC, all right so let's just wait for it, and it took 10, 15 seconds and now it is baked
+
+47
+00:04:49,440 --> 00:04:54,880
+ as you can see, you can see these blue things, now the zombie will be able to walk in this
+
+48
+00:04:54,880 --> 00:05:02,440
+ whole environment, all right turn off the gizmos, all right and click on the zombie, on
+
+49
+00:05:02,440 --> 00:05:14,480
+ the zombie now, we will be adding few things, for example the script call AI random destination,
+
+50
+00:05:14,480 --> 00:05:25,120
+ make sure that you add that script to it and after that you will have to add the ju character
+
+51
+00:05:25,120 --> 00:05:32,280
+ setting for, all to make sure that you add this script as well, and for the player controller
+
+52
+00:05:32,280 --> 00:05:40,000
+ it will be added automatically, you just have to add this, all right, if you turn
+
+53
+00:05:40,000 --> 00:05:46,920
+ on here it is, now the zombie will still be not able to follow the player around, so for
+
+54
+00:05:46,920 --> 00:05:54,360
+ that you will have to click on this FPS character which is over player, okay and make sure
+
+55
+00:05:54,360 --> 00:06:01,640
+ that on this character the nav mesh obstacle is added, okay, it will be added automatically
+
+56
+00:06:01,640 --> 00:06:06,560
+ if you follow the same step as I did from the start of this course, it will be already
+
+57
+00:06:06,560 --> 00:06:12,200
+ added but if it is not make sure that you add it and all of the values are same as this
+
+58
+00:06:12,200 --> 00:06:20,040
+ and when that is added the player will be, I mean the zombie player will be able to follow
+
+59
+00:06:20,040 --> 00:06:24,440
+ the player in the environment now, okay, so if we turn the game again click on scene
+
+60
+00:06:24,440 --> 00:06:30,320
+ wheel, okay this is over player, this is the zombie now, as we can see the zombie can walk
+
+61
+00:06:30,320 --> 00:06:41,200
+ around in the environment, okay, the zombie is going inside the water, but that's okay,
+
+62
+00:06:41,200 --> 00:07:08,700
+ that's to the zombie now and see what the zombie do when it sees the player, okay, I think
+
+63
+00:07:08,700 --> 00:07:14,760
+ the zombie move away, okay there it is, whoops, whoops, whoops, okay, now the zombie is
+
+64
+00:07:14,760 --> 00:07:23,640
+ on the ground, if we go ahead and see the thing it is really dark, I can't see the zombie,
+
+65
+00:07:23,640 --> 00:07:32,640
+ okay there it is, okay there is the zombie, now when the zombie sees the player as you can
+
+66
+00:07:32,640 --> 00:07:41,800
+ see, the zombie try to run towards the player and try to attack the player, but if you
+
+67
+00:07:41,800 --> 00:07:49,520
+ notice the zombie is unable to deal any damage to the player, because the zombie doesn't
+
+68
+00:07:49,520 --> 00:07:54,840
+ have any hitboxes for now, don't worry we will make the zombie damage the player and
+
+69
+00:07:54,840 --> 00:07:58,960
+ if you notice the cursor when the cursor is on the zombie it is where it means that this
+
+70
+00:07:58,960 --> 00:08:07,160
+ is the zombie and if you notice we can deal damage to the zombie and we can kill the zombie
+
+71
+00:08:07,160 --> 00:08:13,400
+ there it is, but if you notice the animations were a bit messed up and also as you can see
+
+72
+00:08:13,400 --> 00:08:19,800
+ the zombie is going inside the ground, okay we will be fixing these issues as well, also
+
+73
+00:08:19,800 --> 00:08:35,360
+ let's click on the zombie and for the area we are going to select 50 and we are going to
+
+74
+00:08:35,360 --> 00:08:43,920
+ move the zombie in the middle, so at the zombie doesn't walk in the water, okay make sure
+
+75
+00:08:43,920 --> 00:08:51,340
+ that you do that and if you select the zombie, okay the animator zombie controller is added,
+
+76
+00:08:51,340 --> 00:08:58,920
+ let's also go ahead and resize its capsule color, if you check its capsule color this
+
+77
+00:08:58,920 --> 00:09:05,640
+ zombie, okay we need to fix that, so what we are going to do is we are going to change
+
+78
+00:09:05,640 --> 00:09:16,280
+ its radius to 1 and the height should be 1.9, alright that is it and we need to move this a little
+
+79
+00:09:16,280 --> 00:09:29,720
+ bit up, so that covers the zombie head as well, okay so for that make it 1.1 so that
+
+80
+00:09:29,720 --> 00:09:38,480
+ covers the zombie head like that, okay and actually let's make this 2 and make this 1.07,
+
+81
+00:09:38,480 --> 00:09:47,920
+ oh yep 1.04, so make sure that you do all of these changes, alright and in the same way
+
+82
+00:09:47,920 --> 00:09:53,200
+ you can go ahead and set up these other zombies as well, you can follow this video for
+
+83
+00:09:53,200 --> 00:09:59,800
+ this other zombies now and set up them 1 by 1, alright I am going to do it in order to save
+
+84
+00:09:59,800 --> 00:10:05,600
+ all time, because if I try to add all of this stuff it will make the video really lengthy,
+
+85
+00:10:05,600 --> 00:10:11,280
+ so now you know how you can set up the zombie step by step and go ahead and set all
+
+86
+00:10:11,280 --> 00:10:15,280
+ of these zombies, I know there are some issues, for example the zombie were going inside
+
+87
+00:10:15,280 --> 00:10:23,200
+ the ground, okay and also the animation was a bit messed up, so in the upcoming videos
+
+88
+00:10:23,200 --> 00:10:28,960
+ we are going to fix that, okay but your first kind of a homework case to set up out of
+
+89
+00:10:28,960 --> 00:10:30,640
+ the other zombies by your own.
+
