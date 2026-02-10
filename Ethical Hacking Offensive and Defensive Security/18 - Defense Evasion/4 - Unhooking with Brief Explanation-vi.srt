@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:11,600
+Hey guys, chào mừng đến với video khác, vì vậy chúng tôi đang ở cấp cao, video trước
+
+2
+00:00:11,600 --> 00:00:19,720
+Chúng ta đã thấy hệ thống bắc cầu và phản ứng kháng virus thông qua một cơ chế móc, và trong này
+
+3
+00:00:19,720 --> 00:00:29,040
+video chúng tôi sẽ chạm vào phương pháp uncrooking và chúng tôi sẽ thảo luận về chương trình
+
+4
+00:00:29,040 --> 00:00:34,680
+Và làm thế nào điều này sẽ xảy ra, và những gì đã xảy ra ở phía sau và tiếp cận và
+
+5
+00:00:34,680 --> 00:00:45,160
+mọi thứ chúng ta có thể thảo luận ở đây, tôi sẽ cung cấp cho bạn mỗi và mỗi chương trình, mỗi chương trình
+
+6
+00:00:45,160 --> 00:00:56,880
+Mà tôi đã sử dụng, biên dịch viên, lệnh, mã hóa AES dựa trên chương trình, mã hóa tôi sẽ là
+
+7
+00:00:56,880 --> 00:01:02,760
+Đưa tất cả mọi thứ cho bạn trong kho chứa GitHub, để bạn có thể sử dụng nó và bạn có thể sử dụng nó
+
+8
+00:01:02,760 --> 00:01:12,240
+vì môi trường thử nghiệm của bạn, nhưng trước khi tiếp tục thảo luận tôi sẽ cung cấp cho bạn
+
+9
+00:01:12,240 --> 00:01:18,160
+Một, tôi sẽ cho bạn biết một điều, vì vậy khóa học này là hoàn thành thiết kế cho pháp lý và đạo đức
+
+10
+00:01:18,160 --> 00:01:27,640
+Mục đích hack, các chương trình chúng tôi thảo luận trong khóa học của chúng tôi, nó hoàn toàn thuộc về
+
+11
+00:01:27,640 --> 00:01:33,720
+để khai thác, và nâng cao khai thác vào Thứ Hai Viron, ngay cả cùng một chương trình
+
+12
+00:01:33,720 --> 00:01:41,320
+được những người bảo vệ sử dụng để thực hiện một số loại nhiệm vụ nguy hiểm trong môi trường, vì vậy bạn
+
+13
+00:01:41,320 --> 00:01:48,920
+Cần phải rất quan tâm về loại ứng dụng này và loại công cụ mà chúng tôi là
+
+14
+00:01:48,920 --> 00:01:55,960
+sử dụng trong thế giới thực, okay, vì vậy một lần nữa tôi nói khóa học này hoàn toàn được thiết kế
+
+15
+00:01:55,960 --> 00:02:01,680
+cho chỉ một mục đích giáo dục, không phải theo thuật ngữ để thiết kế cho bất kỳ loại khai thác trong
+
+16
+00:02:01,680 --> 00:02:08,680
+được rồi, nếu bạn cần kiểm tra đoạn mã này bạn có thể chạy nó trong môi trường
+
+17
+00:02:08,680 --> 00:02:20,640
+Nếu bạn không sử dụng nó trong môi trường tập đoàn toàn cầu hoặc bất kỳ máy tính nào khác, okay, vì vậy
+
+18
+00:02:20,640 --> 00:02:25,960
+Hãy để chúng tôi nhảy vào phương pháp tháo móc, vì vậy chúng tôi biết những gì của móc câu, làm thế nào chúng tôi sẽ được
+
+19
+00:02:25,960 --> 00:02:33,320
+móc câu, chúng ta đã thảo luận về detors và làm thế nào nó sẽ xảy ra, tôi đã nói EDR sẽ
+
+20
+00:02:33,320 --> 00:02:43,820
+là cũng liên kết phương pháp tương tự, vì vậy những gì chúng tôi thảo luận trong video trước, vì vậy nếu bạn
+
+21
+00:02:43,820 --> 00:02:52,200
+Cần phải vượt qua các cơ chế móc từ EER, cách chúng tôi có thể làm thời gian có thể
+
+22
+00:02:52,200 --> 00:02:58,840
+Nói rằng nó được gọi là một unoking, okay, ER gắn thỏa thuận của họ vào quá trình, vì vậy những gì chúng tôi
+
+23
+00:02:58,840 --> 00:03:05,840
+sẽ làm, chúng tôi sẽ tháo DL ra từ quá trình, để tôi cho bạn thấy một
+
+24
+00:03:05,840 --> 00:03:25,840
+Ví dụ về quá trình, ví dụ từ nhà thám hiểm quá trình, đến chủ nhiệm vụ như ngày hôm qua
+
+25
+00:03:25,840 --> 00:03:39,840
+Sau đó chúng ta có thể, okay, tôi sẽ có thể làm điều đó, tôi sẽ có thể làm điều đó, tôi sẽ có thể để
+
+26
+00:03:39,840 --> 00:04:04,440
+Làm điều đó, và chúng ta có thể thấy, vì vậy chúng ta hãy xem bất kỳ loại quá trình, cho dù đó là móc câu của chúng tôi
+
+27
+00:04:04,440 --> 00:04:11,840
+Phần mềm chống virus, ở đây bạn có thể thấy vật chủ nhiệm vụ. Bị hút bởi vi khuẩn diệt khuẩn B.
+
+28
+00:04:11,840 --> 00:04:21,560
+Phần mềm, vì vậy nó cũng là phương pháp từ phần mềm chống virus, và EDR sẽ móc
+
+29
+00:04:21,560 --> 00:04:27,760
+Chính họ đã tham gia vào quá trình này, được chứ, nên cơ bản là hệ thống EDR sẽ nhắm vào NDL,
+
+30
+00:04:27,760 --> 00:04:33,840
+Vì vậy, nếu bất kỳ cuộc gọi đã xảy ra, bất kỳ cuộc gọi chức năng đã được xảy ra từ
+
+31
+00:04:33,840 --> 00:04:44,000
+NDIL quá trình phục vụ thư viện NDL, nó sẽ là, DR sẽ bắt đầu móc, móc
+
+32
+00:04:44,000 --> 00:04:53,000
+Trong video trước chúng ta đã thảo luận với rất nhiều ví dụ
+
+33
+00:04:53,000 --> 00:04:59,840
+giống như eEDR sẽ được móc, khi EDR sẽ móc, quá trình, vì vậy trong video này
+
+34
+00:04:59,840 --> 00:05:06,240
+chúng ta có thể xem làm thế nào chúng ta có thể tháo móc điều đó, okay, làm thế nào chúng ta có thể tháo móc mà, vì vậy tôi đã nói eDR
+
+35
+00:05:06,240 --> 00:05:14,200
+sẽ nhắm vào ứng dụng NDL, nên chức năng thư viện dựa trên NDIL, nếu như
+
+36
+00:05:14,200 --> 00:05:20,080
+ứng dụng nạp thư viện NDL, và nó gọi một số chức năng NDL như tập tin bên phải
+
+37
+00:05:20,080 --> 00:05:29,680
+tập tin NDL của, nó sẽ bắt đầu gắn kết chức năng API, phải không, vì vậy chúng tôi biết duy nhất,
+
+38
+00:05:29,680 --> 00:05:40,200
+Vì vậy DR nhắm vào các thư viện NDL, và nó đã móc vào chương trình EDR, okay, do đó, của chúng tôi
+
+39
+00:05:40,200 --> 00:05:50,000
+Giả định là, nếu như, nếu chúng ta tháo móc thư viện NDL từ quá trình, bạn đã làm
+
+40
+00:05:50,000 --> 00:05:58,960
+Lấy điểm đó ra, nếu tôi bỏ NDL ra khỏi thư viện của tôi
+
+41
+00:05:58,960 --> 00:06:08,760
+Quá trình, okay, vì vậy bây giờ EDR không thể liên kết quá trình của tôi một lần nữa, phải, vì vậy EDR không biết
+
+42
+00:06:08,760 --> 00:06:17,840
+Làm thế nào để móc câu, bởi vì không có thư viện NDL nào ở đó, được rồi, để tôi đi sâu hơn,
+
+43
+00:06:17,840 --> 00:06:24,480
+Được rồi, vậy nếu bạn gỡ bỏ, nếu bạn gỡ bỏ thư viện NDL khỏi tiến trình, ứng dụng của bạn
+
+44
+00:06:24,480 --> 00:06:34,200
+sẽ bị thất bại, bởi vì ứng dụng của bạn bắt buộc cần thư viện NDL để thực hiện một số nhiệm vụ,
+
+45
+00:06:34,200 --> 00:06:41,960
+OK, vậy mỗi quá trình có một thư viện NDL, ở đây bạn có thể thấy thư viện NDL đã ở đó, vì vậy
+
+46
+00:06:41,960 --> 00:06:50,760
+Nếu tôi bỏ thư viện NDL này ra khỏi ứng dụng này, ứng dụng này sẽ bị thất bại,
+
+47
+00:06:50,760 --> 00:06:57,820
+Và hệ thống của tôi sẽ bị kẹt, được rồi, vì vậy ứng dụng cần một thư viện NDL, vì vậy những gì chúng tôi
+
+48
+00:06:57,820 --> 00:07:10,760
+Chúng ta có thể tháo móc thư viện NDL, và nạp đạn
+
+49
+00:07:10,760 --> 00:07:20,760
+Thư viện NDL mới nhất từ đĩa, được rồi, để chúng ta có thể tháo móc thư viện NDL hiện tại,
+
+50
+00:07:20,760 --> 00:07:26,940
+Tập tin thư viện DL, và chúng tôi có thể tải một thư viện NDL khác từ đĩa, một bản sao mới của NDL
+
+51
+00:07:26,940 --> 00:07:32,760
+Thư viện từ đĩa, được rồi, vì vậy bây giờ EDR không biết những gì đang xảy ra trong nền,
+
+52
+00:07:32,760 --> 00:07:40,160
+Bởi vì hệ điều hành sẽ chỉ móc một khi ứng dụng khởi động thư viện NDL, một lần
+
+53
+00:07:40,160 --> 00:07:46,380
+ứng dụng đã được khởi động và nó bắt đầu nhập thư viện NDL, nó đã được tải
+
+54
+00:07:46,380 --> 00:07:55,960
+Một thư viện NDL, tại thời điểm đó EDR sẽ gắn mã DL của họ vào quá trình,
+
+55
+00:07:55,960 --> 00:08:07,360
+Vì vậy bây giờ chúng tôi đang gỡ bỏ các móc thư viện NDL và chúng tôi tải các bản sao mới của thư viện NDL
+
+56
+00:08:07,360 --> 00:08:14,440
+Từ đĩa, vì vậy bây giờ EDR không biết, vì vậy những gì đang xảy ra, EDR, bạn đang suy nghĩ như
+
+57
+00:08:14,440 --> 00:08:21,040
+Tôi đã móc NDL ở đó và không có gì xảy ra bên trong quá trình, nhưng EDDI
+
+58
+00:08:21,040 --> 00:08:28,400
+không biết, chúng tôi sẽ thay thế thư viện NDL bằng bản sao mới, được chứ, để mà
+
+59
+00:08:28,400 --> 00:08:37,940
+Nó được gọi là thư viện phát thanh mới của NDI unoking, vì vậy trong video này tôi chỉ giải thích
+
+60
+00:08:37,940 --> 00:08:42,440
+lý thuyết những gì sẽ xảy ra ở hậu phương, vì vậy video tiếp theo chúng tôi sẽ thảo luận
+
+61
+00:08:42,440 --> 00:08:48,960
+Về chương trình và cách nó sẽ xảy ra, vì vậy đây là một trong những kỹ thuật tiên tiến,
+
+62
+00:08:48,960 --> 00:08:56,040
+Vì vậy, đây sẽ là rất nhiều người cảm thấy đây có thể là một kỹ thuật khó khăn, khó hiểu,
+
+63
+00:08:56,040 --> 00:09:05,600
+Nhưng nếu bạn có bất kỳ câu hỏi nào chỉ cần liên lạc với tôi trong các câu hỏi và trả lời phiên họp,
+
+64
+00:09:05,600 --> 00:09:14,960
+Và tôi sẽ trả lời câu hỏi trong 24 giờ tới,
+
+65
+00:09:14,960 --> 00:09:23,320
+Vâng, vì vậy đó sẽ là lời giải thích tổng thể về những gì chúng tôi sẽ làm, được rồi, vì vậy mỗi
+
+66
+00:09:23,320 --> 00:09:29,640
+chương trình, mọi lệnh biên dịch viên, tôi sẽ đưa ra bản sao GitHub, vì vậy đừng lo lắng về
+
+67
+00:09:29,640 --> 00:09:35,040
+rằng, chúng ta sẽ nhận được mỗi và tất cả mọi thứ mà tôi sẽ sử dụng, okay, vì vậy hãy nhảy
+
+68
+00:09:35,040 --> 00:09:40,840
+rời khỏi đây và chúng tôi sẽ thảo luận chương trình và thực hiện phần trong video tiếp theo, cảm ơn
+
+69
+00:09:40,840 --> 00:09:41,360
+Tạm biệt.
+
