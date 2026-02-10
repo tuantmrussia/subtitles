@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:27,000
+ So, we discussed a lot of things in search order hijacking the similar way the DLL sideloading will be also a good work, you need to find out which DLL you are going to hijack so I just I use one of the principle called credit base.exe.
+
+2
+00:00:27,000 --> 00:00:44,000
+ So, this is a legitimate executable to store the credential. Let me go with the prop man.
+
+3
+00:00:44,000 --> 00:01:05,000
+ Which need which find out the URL so that that that needs okay. I will filter out the credit base in the prop man tool to find out which dealers we can we can have a possibilities to hijack.
+
+4
+00:01:05,000 --> 00:01:29,000
+ So, let me execute. Let me rename this dealer into another name. S A M E tamed our dealer this just a renames don't worry about that. So, before let me find out the DLL first okay let me execute this tool.
+
+5
+00:01:29,000 --> 00:01:42,000
+ And we will see what will happen what happened in the prop man. So, now I am going to filter out the name not found the result.
+
+6
+00:01:42,000 --> 00:02:02,000
+ So, we can see what are the DLL we can hijack. So, here you can find about 64 log dot dealer that was not found. And let you till start here that was not found SAM CLI SAM CLI dot dealer not found.
+
+7
+00:02:02,000 --> 00:02:29,000
+ Let me do one more pick thing. Let me fill that. Then we can understand things we sleep. Okay. So, yeah. So, now it was saying four dealers are not found on the directory.
+
+8
+00:02:29,000 --> 00:02:43,000
+ So, where where the application of the application was present under the desktop credit base and user desktop credit base. So, here you can find a similar directory.
+
+9
+00:02:43,000 --> 00:03:11,000
+ So, one of the negatives and the SAM CLI DLL D user dot dealer. So, you can choose this last four dealers to siloed your to siloed your malicious deal. Okay. So, before that I just generated a malicious DLL through one of a tool that was called as the rust packer rust packer.
+
+10
+00:03:11,000 --> 00:03:25,000
+ You can find it from GitHub repo. So, this is one of the platform to choose to develop Windows executable or DLL using various injection method.
+
+11
+00:03:25,000 --> 00:03:48,000
+ Okay. So, I just installed and you can see the installation packages here git clone and I just going to the direct rest packer. So, I try to execute this Portman the Portman was not found. And again I just given APT install Portman to install the Portman.
+
+12
+00:03:48,000 --> 00:04:07,000
+ So, now I just given the Portman build rust packer. So, it was it was installed. And once once it gets installed I just created a payload using the MS of the shell code in the raw format.
+
+13
+00:04:07,000 --> 00:04:23,000
+ It was TCP. And once I generated a payload I just given the rust packer again it was saying command not phone. And I have given every command you can see in the repo. So, here you can see. Okay.
+
+14
+00:04:23,000 --> 00:04:41,000
+ So, the one more thing you need to copy the payload which you have created into the shared directory under the rust packer. So, once you done unit execute this command again the rust packer was not supporting.
+
+15
+00:04:41,000 --> 00:05:04,000
+ So, we have an alternate thing for rust pack rust packer. We have a cargo. So, yeah cargo. So, I just installed the cargo in the machine. So, once the cargo get installed.
+
+16
+00:05:04,000 --> 00:05:20,000
+ So, I installed the rust rust up also. Sorry rust up also. And I just done the payload. Okay. So, now again it's so an error. So, and then again what I did I just used.
+
+17
+00:05:20,000 --> 00:05:38,000
+ I just installed this one installed the rust thing for and I just choose the standalone installation. Again I just executed the source and rust up target I just installed.
+
+18
+00:05:38,000 --> 00:06:02,000
+ So, once I get installed this one. Now, I executed the cargo run this command which you can find it from here itself. So, instead of giving explorer.exe and d, to exe dash d exe I just given the dash d d L L. So, it generated a d L L file on the machine.
+
+19
+00:06:02,000 --> 00:06:22,000
+ So, the file was present under the d L file was present under the directory, linked, music, AES, rust packer, shared, target release.
+
+20
+00:06:22,000 --> 00:06:42,000
+ X64 release, yeah. Here can find it generated a malicious d L file. Okay. So, the d L file is packed with the shell core that we have created in the m s creator through the m s of v in them.
+
+21
+00:06:42,000 --> 00:07:06,000
+ Using, yeah. Using this command this is the payload route payload route. This will be packed. Okay. With this because here you can see how we how we generated the payload. Okay.
+
+22
+00:07:06,000 --> 00:07:22,000
+ The d L file. Okay. This is the command I just used to get a d L file. You can see the d L file with the name of phi H APT dot d L. So, here you can see the similar file here and I copied copy the file into the machine.
+
+23
+00:07:22,000 --> 00:07:32,000
+ So, which I am going to do. So, now we know which or the d L we can use d user dot d L. I was just renaming this.
+
+24
+00:07:32,000 --> 00:07:42,000
+ Uh, uh, uh, the data dealer to the d user dot d L.
+
+25
+00:07:42,000 --> 00:08:00,000
+ The user dot d L that fine. Let's uh, let's clear this and let's load the application now.
+
+26
+00:08:00,000 --> 00:08:15,000
+ So, now here you can find, uh, the d L file was missing d user dot d L was missing because we just created a d user fire in the directory. So, the similar way the application loads the d L L into the process. Okay.
+
+27
+00:08:15,000 --> 00:08:31,000
+ So, uh, I'm not key. I didn't got a reverse connection. Uh, I need to troubleshoot this one. I just opened the case eight zero eight on port here. So, but I didn't get a reverse connection for something.
+
+28
+00:08:31,000 --> 00:08:53,000
+ Uh, get, uh, double in between. So, this is how the d L side loading will, uh, work. And, uh, we know the credit we start ex us a legitimate application. So, the d, uh, side load on the d user dot d L and, uh, so let's find out. Let's filter on more things.
+
+29
+00:08:53,000 --> 00:09:17,000
+ Uh, that's this.
+
+30
+00:09:17,000 --> 00:09:20,000
+ Okay.
+
+31
+00:09:20,000 --> 00:09:37,000
+ Let's find the d user. So, here you can see, uh, the d L was loaded successfully and image base address. Okay. So, it's loaded image here.
+
+32
+00:09:37,000 --> 00:09:55,000
+ So, I hope, uh, this will give you the brief explanation and brief practical explanation in d L are hijacking for d L side loading. Uh, we'll hop off and we'll connect you guys in next video. See you. Bye.
+
