@@ -1,0 +1,148 @@
+1
+00:00:00,200 --> 00:00:04,250
+Okay, so we have our game mechanics down for our main character.
+
+2
+00:00:04,280 --> 00:00:06,800
+Now we need to do the same for our ball.
+
+3
+00:00:07,040 --> 00:00:12,770
+Firstly, we want to get our ball bouncing around the screen before we try to get it to interact with
+
+4
+00:00:12,770 --> 00:00:13,970
+the with the soccer player.
+
+5
+00:00:14,450 --> 00:00:18,860
+So how can we get our ball to randomly bounce around the screen?
+
+6
+00:00:18,920 --> 00:00:20,570
+Well, let's give it a shot.
+
+7
+00:00:21,210 --> 00:00:26,280
+Let's grab the when flag clicked and also bring in a forever loop.
+
+8
+00:00:26,980 --> 00:00:29,920
+Also, we know it has something to do with motion.
+
+9
+00:00:29,920 --> 00:00:32,650
+So let's have a look to see what we could use.
+
+10
+00:00:33,460 --> 00:00:37,750
+We know we can move the ball across the screen by changing its X position.
+
+11
+00:00:38,020 --> 00:00:43,240
+And there is a neat block that says if on edge bounce, which sounds hopeful.
+
+12
+00:00:43,240 --> 00:00:47,590
+So let's bring both of these into our script and clicking play.
+
+13
+00:00:48,840 --> 00:00:49,380
+Hmm.
+
+14
+00:00:49,380 --> 00:00:51,360
+No, that's not quite what we want.
+
+15
+00:00:51,360 --> 00:00:55,890
+The ball is just moving to the right side of the screen and bouncing when it hits the edge, which is
+
+16
+00:00:55,890 --> 00:00:57,300
+kind of to be expected.
+
+17
+00:00:57,800 --> 00:01:03,230
+So this change x by is clearly not the block that we need.
+
+18
+00:01:03,320 --> 00:01:08,450
+But before I continue, try to play around with the blocks and see if you can get it right.
+
+19
+00:01:08,480 --> 00:01:10,460
+Come on, just pause and give it a try.
+
+20
+00:01:11,400 --> 00:01:13,080
+So did you manage to figure it out?
+
+21
+00:01:13,630 --> 00:01:15,670
+Well, let's see how we can fix this.
+
+22
+00:01:15,700 --> 00:01:20,590
+Firstly, this change X is not what we want, so let's get rid of it.
+
+23
+00:01:21,200 --> 00:01:27,350
+Now remember how with our first program, I told you not to use the move ten steps block because we
+
+24
+00:01:27,350 --> 00:01:29,150
+can't make it go up and down.
+
+25
+00:01:29,420 --> 00:01:33,470
+Well, that's not quite true, because you actually can't.
+
+26
+00:01:33,500 --> 00:01:40,130
+You see, when we move ten steps, we are moving ten steps in whatever direction the sprite is facing.
+
+27
+00:01:40,220 --> 00:01:43,850
+So if our sprite were facing up, we would move up.
+
+28
+00:01:44,390 --> 00:01:50,900
+This is all to do with direction, and the direction of a sprite can be set over here or by these code
+
+29
+00:01:50,900 --> 00:01:51,500
+blocks.
+
+30
+00:01:51,830 --> 00:01:57,980
+Anyway, we won't worry too much about how direction works right now, as you'll get good at it in our
+
+31
+00:01:57,980 --> 00:01:59,570
+upcoming games.
+
+32
+00:01:59,960 --> 00:02:06,860
+But what you should know is when we bounce off the edge, it will point the sprite in a random direction
+
+33
+00:02:06,860 --> 00:02:09,350
+that is opposite to the wall it is bouncing off.
+
+34
+00:02:09,870 --> 00:02:16,140
+So with that all in mind, if we put the moving block in here instead, notice how our ball bounces
+
+35
+00:02:16,140 --> 00:02:18,750
+across the screen just how we want it.
+
+36
+00:02:18,900 --> 00:02:21,300
+So we are getting there with our game mechanics.
+
+37
+00:02:21,780 --> 00:02:28,320
+Next, we need to connect both of these sprites so we can start getting some headers going.
+
