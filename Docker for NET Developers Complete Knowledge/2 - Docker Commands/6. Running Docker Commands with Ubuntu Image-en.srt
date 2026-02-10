@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:06,860
+ Now we will run Docker commands and understand how each of them work.
+
+2
+00:00:06,860 --> 00:00:16,300
+ First of all open command prompt window and make sure your Docker desktop is running.
+
+3
+00:00:16,300 --> 00:00:21,380
+ Check it on the taskbar to be sure it's running.
+
+4
+00:00:30,000 --> 00:00:59,780
+ Now on command prompt also known as CMD type Docker space ps and enter.
+
+5
+00:00:59,780 --> 00:01:07,500
+ This will show all the running containers on your local PC.
+
+6
+00:01:07,500 --> 00:01:14,840
+ Right now there are none and so it's not showing any one of them.
+
+7
+00:01:14,840 --> 00:01:21,080
+ You can also check the containers from the Docker desktop app.
+
+8
+00:01:21,080 --> 00:01:27,640
+ Click the container tab on the left to see all the containers.
+
+9
+00:01:27,640 --> 00:01:35,840
+ Currently there are none and Docker desktop is also showing no containers.
+
+10
+00:01:35,840 --> 00:01:44,960
+ Let's create a container containing you want to Linux operating system.
+
+11
+00:01:44,960 --> 00:01:50,960
+ So I have a question for you, where are we supposed to get this?
+
+12
+00:01:50,960 --> 00:01:58,140
+ You want to OS from you want to website, right?
+
+13
+00:01:58,140 --> 00:02:01,020
+ Absolutely wrong.
+
+14
+00:02:01,020 --> 00:02:09,780
+ We will have to get you want to OS Docker image and that we can download from Docker Hub website.
+
+15
+00:02:09,780 --> 00:02:12,700
+ Open Docker Hub on your browser.
+
+16
+00:02:20,960 --> 00:02:32,100
+ Then search for you pun two.
+
+17
+00:02:32,100 --> 00:02:39,540
+ The first result of you pun two showing text, Docker official images is the one you have
+
+18
+00:02:39,540 --> 00:02:41,620
+ to click.
+
+19
+00:02:41,620 --> 00:02:48,660
+ On the right portion you will see Docker pull command, just copy it and paste it on your
+
+20
+00:02:48,660 --> 00:02:56,580
+ CMD window press enter.
+
+21
+00:02:56,580 --> 00:03:01,380
+ Do you know how to paste on command prompt?
+
+22
+00:03:01,380 --> 00:03:08,780
+ You just right click the mouse button and it will paste the copied text.
+
+23
+00:03:08,780 --> 00:03:18,620
+ So the command will download the you pun two image from Docker Hub to your local machine.
+
+24
+00:03:18,620 --> 00:03:29,540
+ Just wait for one two minutes and now the you pun two images downloaded on our local machine.
+
+25
+00:03:29,540 --> 00:03:45,580
+ Confirm this on Docker desktop by clicking the images section to find the you pun two image.
+
+26
+00:03:45,580 --> 00:03:56,180
+ Now on CMD type Docker images command and press enter this will show all the images present
+
+27
+00:03:56,180 --> 00:03:59,500
+ on our Docker server.
+
+28
+00:03:59,500 --> 00:04:06,060
+ It showing the you pun two image, understanding image tags.
+
+29
+00:04:06,060 --> 00:04:15,340
+ The copy the Docker pull command in order to download you pun two image on our PC.
+
+30
+00:04:15,340 --> 00:04:27,260
+ Notice after the image name there is colon resolute dash 20 25 11 30 this thing is the
+
+31
+00:04:27,260 --> 00:04:37,820
+ image tag image tag is a label to identify a specific version of it Docker image within
+
+32
+00:04:37,820 --> 00:04:46,500
+ a repository on the you pun two page click on the text section.
+
+33
+00:04:46,500 --> 00:04:54,660
+ There are multiple versions of you pun two image distinguished by different tags.
+
+34
+00:04:54,660 --> 00:05:00,060
+ One is resolute another one is devil.
+
+35
+00:05:00,060 --> 00:05:10,940
+ Let's copy devil tag paste it on the command window of the colon.
+
+36
+00:05:10,940 --> 00:05:21,260
+ Then press enter to pull this devil tag image of you pun two it has downloaded now check
+
+37
+00:05:21,260 --> 00:05:34,060
+ it on Docker desktop we can see it there now we change the tag to latest and press enter
+
+38
+00:05:34,060 --> 00:05:44,260
+ the latest tag image of you pun two is downloaded the latest tag image is the most recently
+
+39
+00:05:44,260 --> 00:05:53,460
+ pushed version of the image in every positive it means it is the latest version of you
+
+40
+00:05:53,460 --> 00:06:03,060
+ pun two image also the latest tag in Docker image references the default tag assigned
+
+41
+00:06:03,060 --> 00:06:10,860
+ to an image if no specified tag is provided to it let us now run the you pun two image
+
+42
+00:06:10,860 --> 00:06:22,620
+ from Docker container the command to use this Docker run
+
+43
+00:06:22,620 --> 00:06:38,940
+ enter cmt window type Docker space run space dash dash name space and then specified the container name.
+
+44
+00:06:38,940 --> 00:06:51,300
+ I am naming the container you see after that type dash IT the IT tag tells Docker to
+
+45
+00:06:51,300 --> 00:07:00,660
+ start an interactive batch session within the you pun two container give a space then
+
+46
+00:07:00,660 --> 00:07:15,180
+ type the image with its tag which is you bun two colon resolute dash 20 25 11 30 we can copy
+
+47
+00:07:15,180 --> 00:07:29,540
+ this tag from Docker desktop also give a space then type slash bin slash bash and
+
+48
+00:07:29,540 --> 00:07:39,620
+ press enter the you pun two container is created with you pun two image and we are now
+
+49
+00:07:39,620 --> 00:07:57,720
+ inside the best session we can check the container in the Docker desktop
+
+50
+00:07:57,720 --> 00:08:07,420
+ inside the best session we can enter line next commands like ls which shows all the
+
+51
+00:08:07,420 --> 00:08:17,580
+ directories inside you pun pose OS type OMI and press enter this line next command shows
+
+52
+00:08:17,580 --> 00:08:27,740
+ the username of T current user which is removed next type exit and press enter this will
+
+53
+00:08:27,740 --> 00:08:38,740
+ exit the best session check the Docker desktop now and you will find the container is
+
+54
+00:08:38,740 --> 00:08:50,580
+ exited it's now better to remove this container and free some space so type Docker space
+
+55
+00:08:50,580 --> 00:09:00,880
+ Rm followed by uc which is the name of the container this will delete the uc container
+
+56
+00:09:00,880 --> 00:09:11,900
+ from our machine confirm this on Docker desktop which shows the container is indeed deleted
+
+57
+00:09:11,900 --> 00:09:22,500
+ before we end this lecture one more thing needs to be told on the Docker desktop delete
+
+58
+00:09:22,500 --> 00:09:41,900
+ all images now on tcmt again run the same Docker command that we previously ran
+
+59
+00:09:52,500 --> 00:10:13,580
+ now this time we do not have the you pun tools image on our local machine so it gave
+
+60
+00:10:13,580 --> 00:10:25,180
+ T message unable to find the image then it starts downloading from the Docker hub registry
+
+61
+00:10:25,180 --> 00:10:34,780
+ the image is downloaded and the container is created and in running state confirm this
+
+62
+00:10:34,780 --> 00:10:51,380
+ on Docker desktop also
+
