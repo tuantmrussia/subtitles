@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:07,000
+ You guys are welcome to another video, so in this video we are going to see another kind
+
+2
+00:00:07,000 --> 00:00:15,200
+ of privilege escalation, named it is a powerful access in Windows, it is named as a
+
+3
+00:00:15,200 --> 00:00:23,400
+ C-impersonate privilege, okay, so I will show you what is let me open the command prompt
+
+4
+00:00:23,400 --> 00:00:39,240
+ in an administrator mode and let me check which privileges I have, so now we can find
+
+5
+00:00:39,240 --> 00:00:46,800
+ a few privileged names, here we are going to use a C-impersonate privilege, this should
+
+6
+00:00:46,800 --> 00:00:55,160
+ be enabled, okay, so by default and most of the machines it will be enabled, okay, so let
+
+7
+00:00:55,160 --> 00:01:00,880
+ us discuss what is an impersonate privilege, a C-impersonate privilege, okay, so this is one
+
+8
+00:01:00,880 --> 00:01:11,280
+ of the most powerful mechanism in Windows, so it allows a process to impersonate the security
+
+9
+00:01:11,280 --> 00:01:20,280
+ context of another user, okay, so if you want to start a process you can use a security
+
+10
+00:01:20,280 --> 00:01:32,500
+ context of another user in that process, okay, I mean the higher privilege user security
+
+11
+00:01:32,500 --> 00:01:40,420
+ context into the, which process you are going to create, okay, so this is like it will
+
+12
+00:01:40,420 --> 00:01:45,980
+ be temporarily taking the identity of a higher privileged process and it will be using
+
+13
+00:01:45,980 --> 00:01:57,060
+ that in the current process, okay, so we have set of tools to do this, we have a print
+
+14
+00:01:57,060 --> 00:02:03,940
+ spooler, we have a juicy butter, rotten butter to and row your token manipulation, there
+
+15
+00:02:03,940 --> 00:02:09,900
+ are few tools you can do, but in this video we are going to use one of the tool called
+
+16
+00:02:09,900 --> 00:02:18,620
+ print spooler, okay, let me, you small explanation about the print spooler, okay, so every
+
+17
+00:02:18,620 --> 00:02:26,740
+ computer they it will be connected to the printer, so you can, you can, you can print or scan
+
+18
+00:02:26,740 --> 00:02:36,900
+ remotely, okay, remotely order or a, or a connection, so by using the print spooler software,
+
+19
+00:02:36,900 --> 00:02:41,300
+ our Windows machine will interact with the printer, okay, that's a print spooler, so we
+
+20
+00:02:41,300 --> 00:02:48,260
+ are using the print spooler to exploit this a C-impersonate privilege escalation vulnerability,
+
+21
+00:02:48,260 --> 00:02:58,260
+ okay, basically, so I am going to use this tool, so if you search for K4STH4, print spooler,
+
+22
+00:02:58,260 --> 00:03:05,020
+ this guy has a good tool, print spooler, just download this tool and we need one more
+
+23
+00:03:05,020 --> 00:03:21,420
+ executable called the netcat, so from here you can download the netcat nc.exe 64 or nc.exe
+
+24
+00:03:21,420 --> 00:03:27,460
+ just whichever is feasible, you can download this, okay, so let's keep both of the things
+
+25
+00:03:27,460 --> 00:03:36,300
+ in the same repository, that's your choice, okay, keeping in the same repository or any other
+
+26
+00:03:36,300 --> 00:03:43,980
+ repo, but we'll start working on this, this pretty easy, okay, to elevate the privilege,
+
+27
+00:03:43,980 --> 00:04:01,820
+ let me first use the print spooler, okay, let me show you, we'll execute the, we'll go
+
+28
+00:04:01,820 --> 00:04:25,620
+ to the directory first, okay, we have a print spooler and as I dash C, let me, once again,
+
+29
+00:04:25,620 --> 00:04:32,620
+ so executing this command, let me show you something, so I was in a high mandatory level
+
+30
+00:04:32,620 --> 00:04:40,460
+ of privilege and now I will be executing the, that command print spooler.exe dash
+
+31
+00:04:40,460 --> 00:04:57,480
+ I dash C, CMD, so now it was created process as user, it showed it, okay, and you can
+
+32
+00:04:57,480 --> 00:05:16,140
+ see, we got another CMD, let me view who am I slash hall here, okay, so now you can find
+
+33
+00:05:16,140 --> 00:05:21,760
+ we are in a system mandatory level of privilege, it's a very, very higher privilege, here
+
+34
+00:05:21,760 --> 00:05:28,500
+ you can see everything has been enabled, right, so you can't do any, any sort of things
+
+35
+00:05:28,500 --> 00:05:33,720
+ in a, in a, in a machine, but here you can see a lot of privilege has been, permission
+
+36
+00:05:33,720 --> 00:05:37,980
+ has been disabled, privilege, permission has been disabled, here you can see everything
+
+37
+00:05:37,980 --> 00:05:46,500
+ has been enabled, right, so the reason why I asked you to download the NetCAD, we can take
+
+38
+00:05:46,500 --> 00:05:52,460
+ a reverse connection from this to, it's, it's pretty simple to taking a reverse connection,
+
+39
+00:05:52,460 --> 00:05:58,580
+ let me show you that, to taking a reverse connection, you need a, we will call it an
+
+40
+00:05:58,580 --> 00:06:08,780
+ X machine, let me open up port, name name, all in the LDP, listen, verbos port, 857, let
+
+41
+00:06:08,780 --> 00:06:16,700
+ me, let me open this 856 on port, and let me go to the, let me close these windows, and
+
+42
+00:06:16,700 --> 00:06:31,820
+ I will be using another, let me use another prompt, a certain administrator privilege, so
+
+43
+00:06:31,820 --> 00:06:38,420
+ now here you can see it's, it's like a normal, it's a privilege, it's a high mandatory
+
+44
+00:06:38,420 --> 00:06:56,540
+ level, but not a system level, let me go to redirect to the, okay, so let's use the print
+
+45
+00:06:56,540 --> 00:07:04,980
+ of puller, and we need to, you the command, which command you are going to, we are going
+
+46
+00:07:04,980 --> 00:07:11,220
+ to use, so we are using, so instead of giving the normal CMDR, we are using the NetCAD
+
+47
+00:07:11,220 --> 00:07:26,980
+ here, let me, NetCAD, and you know how to handle a NetCAD, we need to give a IP address of
+
+48
+00:07:26,980 --> 00:07:34,820
+ a listening machine, let me show the IP address here, if, if, I can't say, my IP will be
+
+49
+00:07:34,820 --> 00:07:51,980
+ on 6a dot 18 dot 27, let me, give an IP on and 26a dot 18 dot 27, so now you need to
+
+50
+00:07:51,980 --> 00:08:10,040
+ set up port, which port we are, we have used, it's 8 5 6 7 8 5 6 7 8 5 6 7, and finally, we
+
+51
+00:08:10,040 --> 00:08:20,580
+ can, we can give a CMDR in that end, okay, so let, let me execute this, so now you can
+
+52
+00:08:20,580 --> 00:08:26,760
+ see the create process user as, okay, and here you can see, we got a reverse connection
+
+53
+00:08:26,760 --> 00:08:33,940
+ from that, we can control everything from here in the Kali machine, okay, so we have
+
+54
+00:08:33,940 --> 00:08:43,540
+ a system mandatory level privilege, or we have each and everything to, to handle, right,
+
+55
+00:08:43,540 --> 00:08:51,300
+ so that's all about this video, so another time, so in this privilege escalation, we have
+
+56
+00:08:51,300 --> 00:09:01,220
+ used a SC impersonate privilege to do a privilege escalation, you can find it here, to do
+
+57
+00:09:01,220 --> 00:09:06,540
+ your privilege escalation from administrator privilege to a service account, like a system
+
+58
+00:09:06,540 --> 00:09:15,940
+ account, okay, yes, hope, I have a clear understanding about this video, and we'll continue
+
+59
+00:09:15,940 --> 00:09:17,940
+ our discussion in the next video, see you guys, bye bye.
+
