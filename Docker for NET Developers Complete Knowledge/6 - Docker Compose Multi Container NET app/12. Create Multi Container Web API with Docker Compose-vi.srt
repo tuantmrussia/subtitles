@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:05,580
+Bộ quản lý đa đối thoạiName lõi App với kịch bản Docker.
+
+2
+00:00:05,580 --> 00:00:09,000
+Chúng ta hãy xem bài giảng nổi bật.
+
+3
+00:00:09,000 --> 00:00:13,400
+Bài giảng này sẽ trình bày những gì.
+
+4
+00:00:13,400 --> 00:00:19,900
+Chúng tôi sẽ tạo ra một AP.NET Core App đa ngành có hai dự án trong đó.
+
+5
+00:00:19,900 --> 00:00:23,400
+Chúng tôi sẽ cung cấp toàn bộ ứng dụng từ trình soạn thảo Docker.
+
+6
+00:00:23,400 --> 00:00:28,640
+Sẽ có hai thùng chứa mỗi người tổ chức một dự án .NET của ứng dụng.
+
+7
+00:00:28,640 --> 00:00:33,940
+Những dự án này cũng sẽ liên lạc với nhau bằng mạng Docker.
+
+8
+00:00:33,940 --> 00:00:37,940
+Sau đó chúng tôi sẽ thêm một chứng nhận SSL vào ứng dụng.
+
+9
+00:00:37,940 --> 00:00:42,340
+Và cuối cùng, chúng tôi sẽ chạy toàn bộ ứng dụng với lệnh soạn thảo Docker.
+
+10
+00:00:42,340 --> 00:00:47,340
+Bây giờ chúng ta hãy tạo ra AP.NET Core App đa nguyên tố.
+
+11
+00:00:47,340 --> 00:00:57,840
+Đến phòng thu hình và tạo một dự án mới.
+
+12
+00:00:57,840 --> 00:01:04,440
+Chọn mẫu AP.NET Ứng dụng mạng lõi, trang dao cạo.
+
+13
+00:01:04,440 --> 00:01:12,340
+Sau đó nhấn nút Tiếp theo, đặt tên dự án là multi-app.
+
+14
+00:01:12,340 --> 00:01:15,640
+Và chọn vị trí của nó trên ổ đĩa.
+
+15
+00:01:15,640 --> 00:01:23,440
+Bây giờ hãy chắc chắn để bỏ chọn tùy chọn được gọi là "giải pháp dây chuyền" và dự án trong cùng một thư mục.
+
+16
+00:01:23,440 --> 00:01:29,240
+Điều này là cần thiết cho trình soạn thảo Docker để lấy các tập tin ứng dụng.
+
+17
+00:01:29,240 --> 00:01:35,840
+Hãy nhắp vào kế để tới màn hình kế tiếp, nơi có tùy chọn hiệu lực hộp mật mã.
+
+18
+00:01:35,840 --> 00:01:37,440
+Giữ nó không bị kiểm soát.
+
+19
+00:01:37,440 --> 00:01:40,840
+Chúng ta sẽ làm phần này sau.
+
+20
+00:01:40,840 --> 00:01:44,040
+Ấn nút tạo để tạo dự án này.
+
+21
+00:01:53,440 --> 00:01:58,440
+Bây giờ chúng tôi thêm một dự án khác vào ứng dụng.
+
+22
+00:01:58,440 --> 00:02:06,940
+Nhấn- phải vào tên giải quyết và chọn thêm, rồi chọn dự án mới.
+
+23
+00:02:06,940 --> 00:02:17,940
+Trong mẫu được chọn AP.NET dẫn đầu trang mạng API và nhấn nút Tiếp theo.
+
+24
+00:02:17,940 --> 00:02:26,540
+Cho dự án biết tên nhiều người. Rồi nhấn nút Tiếp theo.
+
+25
+00:02:26,540 --> 00:02:33,140
+Trong màn hình, hãy bỏ chọn cấu hình HTTPS.
+
+26
+00:02:33,140 --> 00:02:38,040
+Bởi vì chúng ta không cần sự kết nối HTTPS cho trang mạng API.
+
+27
+00:02:38,040 --> 00:02:44,240
+Lý do là dự án này sẽ chạy từ một container Docker và một dự án khác,
+
+28
+00:02:44,240 --> 00:02:49,740
+Mà cũng sẽ chạy từ công-ten-nơ Docker sẽ gọi là dự án Facebook.
+
+29
+00:02:49,740 --> 00:02:58,740
+Và vì vậy không cần thiết giao thức HTTPS trong khi gọi vì giao thức HTTP sẽ làm tất cả những điều cần thiết.
+
+30
+00:02:58,740 --> 00:03:02,740
+Bật tùy chọn hỗ trợ hộp không chọn.
+
+31
+00:03:02,740 --> 00:03:06,740
+Ấn nút tạo để tạo dự án này.
+
+32
+00:03:06,740 --> 00:03:14,240
+Bây giờ bạn có thể thấy ứng dụng này có hai dự án trong đó, đa-API và multi-app.
+
+33
+00:03:14,240 --> 00:03:17,240
+Bây giờ thêm vào chức năng của ADI.
+
+34
+00:03:17,240 --> 00:03:33,240
+Vì vậy, nhấn chuột phải dự án đa AI và thêm một lớp học mới gọi là trò đùa.c.
+
+35
+00:03:33,240 --> 00:03:40,740
+Đối với lớp này thêm ba thuộc tính của chuỗi kiểu, tên văn bản và loại.
+
+36
+00:03:40,740 --> 00:03:47,240
+Hãy chú ý rằng tôi chỉ đang sao chép và dán mã để tiến hành nhanh hơn.
+
+37
+00:03:47,240 --> 00:03:57,240
+Đừng lo về những mật mã này khi bạn có thể tải về mã nguồn đầy đủ từ chính bài giảng.
+
+38
+00:03:57,240 --> 00:04:11,740
+Kế bên thư mục điều khiển, thêm một bộ điều khiển mới được gọi là bộ điều khiển trò chơi.
+
+39
+00:04:11,740 --> 00:04:29,740
+Ở đây chúng tôi sẽ thêm một phương pháp và trò đùa kho phần mềm.
+
+40
+00:04:29,740 --> 00:04:36,740
+Đây là phương pháp API sẽ cung cấp một trò đùa ngẫu nhiên từ kho.
+
+41
+00:04:36,740 --> 00:04:45,740
+Trò đùa sẽ được cung cấp theo định dạng JSON và ở đây nó là kho chứa 10 câu chuyện cười.
+
+42
+00:04:45,740 --> 00:04:48,240
+Hãy để chúng tôi kiểm tra hệ điều hành.
+
+43
+00:04:48,240 --> 00:04:54,240
+Vì vậy, nhấn chuột phải vào tên của nó và chọn thiết lập như dự án khởi động.
+
+44
+00:04:54,240 --> 00:04:58,240
+Rồi bấm nút chạy trên phòng thu.
+
+45
+00:05:06,740 --> 00:05:19,740
+Dự án đã bắt đầu sao chép URL của nó và mở trình duyệt.
+
+46
+00:05:19,740 --> 00:05:26,240
+Chúng ta phải thêm điểm kết thúc ARI vào địa chỉ URL là api/joke.
+
+47
+00:05:26,240 --> 00:05:31,740
+Đây là một trò đùa ở JSON được đưa ra bởi trang ADI.
+
+48
+00:05:31,740 --> 00:05:39,740
+Làm tươi trình duyệt và bạn sẽ thấy một trò đùa ngẫu nhiên mỗi lần.
+
+49
+00:05:39,740 --> 00:05:47,240
+Bây giờ chúng tôi thêm mật mã vào dự án đa ứng dụng mà trong các trang dao cạo.
+
+50
+00:05:47,240 --> 00:05:55,740
+Bên trong thư mục, có một tập tin index.cshml.cs.
+
+51
+00:05:55,740 --> 00:06:01,740
+Ở đây trên phương pháp này, tôi gọi cho trang mạng API.
+
+52
+00:06:01,740 --> 00:06:08,240
+Bạn có thể tải mã nguồn của ứng dụng và bạn sẽ tìm thấy tất cả các mã.
+
+53
+00:06:08,240 --> 00:06:18,240
+Các đối tượng lớp HTTP được sử dụng để gọi các trang mạng API và trang mạng trả lại trò đùa theo định dạng JSON.
+
+54
+00:06:18,240 --> 00:06:32,240
+Đối tượng j là một đối tượng của các mớit JSON gói. Thêm mới của gói chấm JSON vào dự án đa ứng dụng từ trình quản lý nhận gói mới.
+
+55
+00:06:48,240 --> 00:06:58,240
+Bạn có thể sử dụng kiểu đối tượng j này.
+
+56
+00:06:58,240 --> 00:07:08,240
+Tên viết tắt và phân loại được lấy từ JSON và gửi đến tập tin xem index.cshml.
+
+57
+00:07:08,240 --> 00:07:14,240
+Chúng tôi sử dụng đối tượng dữ liệu xem để gửi điều này đến tập tin xem.
+
+58
+00:07:14,240 --> 00:07:24,240
+Ở đây hãy xem trang web API được gọi là. Bạn phải thay đổi địa chỉ URL này thành dự án api của bạn. Anh ở đó.
+
+59
+00:07:24,240 --> 00:07:33,240
+Tìm địa chỉ URL này bằng cách nhắp phải vào dự án đa api. Sau đó chọn các thuộc tính.
+
+60
+00:07:33,240 --> 00:07:41,240
+Ở đây hãy nhắp vào vùng gỡ lỗi bên trái. Sau đó nhấn vào hồ sơ phóng gỡ lỗi mở.
+
+61
+00:07:41,240 --> 00:07:54,240
+Bạn là cuộn xuống dưới cùng để tìm địa chỉ Mạng của ứng dụng. Bạn phải sao chép địa chỉ URL này và dán nó vào tập tin index.cshml.cs.
+
+62
+00:07:54,240 --> 00:08:07,240
+Trong trường hợp của tôi, chỉ cảng mới cần thay đổi phần còn lại. Vì vậy, tôi đang thay đổi các cổng và bây giờ các URL được thay đổi như tôi muốn.
+
+63
+00:08:07,240 --> 00:08:16,240
+Chúng tôi chuyển sang tập tin index.cshml.cs để hiển thị trò đùa trên bảng HTML.
+
+64
+00:08:16,240 --> 00:08:23,240
+Đây là mật mã. Bây giờ hãy chạy toàn bộ ứng dụng. Đó là cả hai dự án.
+
+65
+00:08:23,240 --> 00:08:28,240
+Vì vậy, nhấn chuột phải vào tên giải pháp. Sau đó chọn các thuộc tính.
+
+66
+00:08:28,240 --> 00:08:38,240
+Ở đây hãy chọn nhiều dự án khởi động. Đặt hành động cho mỗi dự án bắt đầu và nhấn nút ok.
+
+67
+00:08:38,240 --> 00:08:57,240
+Bây giờ trên studio hình ảnh nhấn nút khởi động mà sẽ chạy ứng dụng.
+
+68
+00:08:57,240 --> 00:09:04,240
+Xem cả hai dự án này đang chạy. Bạn có thể thấy những trò đùa được hiển thị trên trình duyệt.
+
+69
+00:09:04,240 --> 00:09:16,240
+Cập nhật lại trình duyệt và trò đùa mới được hiển thị cho bạn.
+
+70
+00:09:16,240 --> 00:09:27,240
+Bây giờ là lúc để tổ chức ứng dụng. Đó là cả hai dự án hoặc hộp đựng Docker. Chúng ta sẽ dùng nhạc kịch Docker để làm việc này.
+
+71
+00:09:27,240 --> 00:09:37,240
+Nghệ thuật Docker là gì? Trình soạn thảo Docker là một công cụ giúp xác định và chạy các ứng dụng Docker đa container.
+
+72
+00:09:37,240 --> 00:09:48,240
+Nó sử dụng tập tin yeml tên là Docker-composy.yml hoặc syml.yml.
+
+73
+00:09:48,240 --> 00:09:55,240
+Nó cấu hình toàn bộ các ứng dụng, mạng, âm thanh với một lệnh duy nhất.
+
+74
+00:09:55,240 --> 00:10:04,240
+Vì vậy, chúng tôi viết tất cả các cấu hình trên tập tin khoai lang này và sau đó sử dụng lệnh soạn thảo Docker để máy.
+
+75
+00:10:04,240 --> 00:10:15,240
+Xem hình ảnh này cho thấy ứng dụng và thành phần của nó là cơ sở dữ liệu, ứng dụng web, APIs, bộ nhớ tạm, vân vân.
+
+76
+00:10:15,240 --> 00:10:25,240
+Nó sẽ được lưu giữ trên các hộp riêng biệt của Docker. Tất cả các thùng hàng này sẽ được tạo ra và quản lý bởi nhà soạn nhạc Docker.
+
+77
+00:10:25,240 --> 00:10:39,240
+Trong ứng dụng của chúng tôi, có hai dự án đa ứng dụng và đa AI. Do đó, nhà soạn nhạc Docker sẽ chứa chúng từ hai thùng, mỗi thùng cho mỗi dự án.
+
+78
+00:10:39,240 --> 00:11:00,240
+Đây là ứng dụng. Chúng tôi bắt đầu với dự án đa ứng dụng. Nhấn chuột phải vào đó rồi chọn thêm, rồi chọn tùy chọn hỗ trợ soạn thảo công cụ. Chúng tôi gọi trước đó chúng tôi đã chọn lựa lựa chọn thứ hai là hỗ trợ container cho Docker.
+
+79
+00:11:00,240 --> 00:11:14,240
+Nhưng hãy nhớ rằng nghệ thuật làm Docker chúng tôi phải chọn hỗ trợ công cụ sản xuất. Trên giàn giáo hộp, trang tùy chọn giữ mọi thứ mặc định và nhấn nút OK.
+
+80
+00:11:14,240 --> 00:11:22,240
+Bây giờ hãy xem một dự án mới được thêm vào cho dàn nhạc Docker.
+
+81
+00:11:22,240 --> 00:11:31,240
+Nó yêu cầu tôi khởi động máy tính Docker nên tôi nhấn nút có. Đây là dự án mới được thêm vào giải pháp.
+
+82
+00:11:31,240 --> 00:11:45,240
+Cũng trên studio hình ảnh xem tùy chọn chạy mà dự án soạn thảo Docker được tự động chọn.
+
+83
+00:11:45,240 --> 00:12:06,240
+Bàn làm việc Docker của tôi đã khởi động. Nó đang xây dựng hình ảnh cho dự án đa ứng dụng.
+
+84
+00:12:06,240 --> 00:12:20,240
+Đây là tập tin kiểu Docker Có các dịch vụ đại diện cho các container sẽ được tạo ra.
+
+85
+00:12:20,240 --> 00:12:32,240
+Tên container được đưa ra như là đa ứng dụng mà bạn có thể thay đổi như bạn muốn. Sau đó chúng tôi có tên hình ảnh được xác định là đa ứng dụng.
+
+86
+00:12:32,240 --> 00:12:45,240
+Bạn có thể thay đổi tên của ảnh theo ý muốn. Sau đó, phần xây dựng được định nghĩa là phần của thư mục chứa tập tin Docker.
+
+87
+00:12:45,240 --> 00:13:01,240
+Chấm đại diện cho nó tương đương với địa điểm của tập tin đồ họa Docker. Sau đó có một tập tin đa ứng dụng smash Docker đại diện cho vị trí của tập tin Docker.
+
+88
+00:13:02,240 --> 00:13:10,240
+Tập tin Docker cũng được tạo cho dự án.
+
+89
+00:13:10,240 --> 00:13:20,240
+Nhấn vào tên dự án và chọn mở trong trình khám phá tập tin. Đây là thư mục dự án.
+
+90
+00:13:20,240 --> 00:13:33,240
+Đi lên và trên con đường bạn sẽ tìm thấy tập tin của nhà soạn nhạc Docker.
+
+91
+00:13:33,240 --> 00:13:45,240
+Nhấn vào mũi tên ở phía trước tập tin trình soạn thảo kiểu Docker. Bạn sẽ thấy một tập tin khác tên là Docker gạch chéo chấm có ghi đè YML.
+
+92
+00:13:45,240 --> 00:13:53,240
+Tập tin này chứa một số cấu hình khác và mở rộng tập tin trình soạn thảo kiểu Docker.
+
+93
+00:13:53,240 --> 00:14:02,240
+Đây là những biến môi trường được định nghĩa. Sau đó, đây là các cổng xác định và sau đó là các khối.
+
+94
+00:14:02,240 --> 00:14:17,240
+Docker cuối cùng sẽ hợp nhất cả hai tập tin docker gạch gạch gạch gạch chân YML và Docker gạch chéo dấu chấm ghi đè chấm YML thành một khi tạo một container.
+
+95
+00:14:17,240 --> 00:14:37,240
+Hãy làm tương tự cho dự án thứ hai là đa ứng dụng. Nhấn chuột phải vào tên của nó và chọn cách hỗ trợ khả năng soạn thảo container trên cửa sổ hộp thoại tùy chọn. Giữ nguyên mọi thứ và nhấn nút OK.
+
+96
+00:14:37,240 --> 00:15:02,240
+Bây giờ mở tập tin trình soạn thảo Docker Chúng ta sẽ thấy một dịch vụ khác được thêm vào đó là cho dự án đa kênh. Ở đây nó được đặt tên hình ảnh của nó là đa hệ thống trí tuệ và vị trí của tập tin Docker được đưa ra bên trong thư mục đa ứng dụng.
+
+97
+00:15:02,240 --> 00:15:07,240
+Đây là tập tin Docker của dự án.
+
+98
+00:15:07,240 --> 00:15:19,240
+Sau đó mở tập tin đồ họa docker gạch gạch dưới chấm YML và bạn sẽ thấy một dịch vụ mới được thêm vào cho dự án với biến môi trường và cổng thêm vào.
+
+99
+00:15:19,240 --> 00:15:34,240
+Trước khi chúng tôi chạy ứng dụng này, chúng tôi phải thay đổi các trang web URL. URL trên mạng được đưa trên phương pháp HTTP bên trong tập tin chỉ mục dot CNSTML dot CN.
+
+100
+00:15:34,240 --> 00:15:40,240
+Đây là địa chỉ URL và kể từ khi các trang mạng API đang chạy từ một container Docker.
+
+101
+00:15:40,240 --> 00:16:09,240
+Vì vậy, chúng tôi phải tham khảo nó bằng tên dịch vụ của nó được định nghĩa trong tập tin docker gạch chéo dot YML. Thay đổi địa chỉ URL này thành địa chỉ Mạng HTTP cắt giảm đa hệ thống API đa dịch vụ là tên dịch vụ và sau đó kết nối 80 đó là cổng của các container như được đưa ra trên tập tin Docker sau khi đó smash API.
+
+102
+00:16:09,240 --> 00:16:24,240
+Vì vậy, đây là toàn bộ các URL mới của trang web API. Hãy để tôi hiển thị các tập tin docker gạch chéo st YML. Đây là tên dịch vụ của trang mạng API mà chúng tôi đang sử dụng trong URL.
+
+103
+00:16:24,240 --> 00:16:43,240
+Sau đó, đây là tập tin Docker của dự án Steve và bạn có thể thấy 80 80 là cổng container. Bây giờ chúng tôi chạy ứng dụng từ phòng thu trực quan.
+
+104
+00:16:54,240 --> 00:17:20,240
+Bạn có thể thấy ứng dụng đang mở đúng.
+
+105
+00:17:24,240 --> 00:17:38,240
+Hãy xem máy tính cá nhân.
+
+106
+00:17:38,240 --> 00:17:50,240
+Đây là container được tạo ra bởi trình soạn thảo Docker. Mở nó ra để xem hai thùng chứa cho các dự án. Đây là hai hình ảnh của hai dự án.
+
+107
+00:17:50,240 --> 00:17:59,240
+Bây giờ hãy đi vào phần hình ảnh bên trái và bạn sẽ tìm thấy đa kênh và nhiều ứng dụng của hai dự án.
+
+108
+00:17:59,240 --> 00:18:14,240
+Bây giờ chúng tôi sẽ chạy ứng dụng trực tiếp từ lệnh soạn thảo Docker thay vì sử dụng hiển thị studio. Hãy để tôi dừng ứng dụng.
+
+109
+00:18:14,240 --> 00:18:29,240
+Trên tập tin docker gạch gạch ngang dấu chấm YML chúng tôi có để thêm một số cấu hình. Tôi sẽ chỉ sao chép và dán chúng nhưng không lo lắng bạn sẽ tìm thấy chúng trong mã nguồn của ứng dụng.
+
+110
+00:18:29,240 --> 00:18:54,240
+Ở đây chúng tôi có thêm hai phần, cảng và môi trường. Trên các cổng, chúng tôi xác định cổng máy và cổng container. Cổng chủ được đưa ra 6000. Anh có thể thay đổi nếu anh muốn. Sau đó ruột kết sau đó là cổng hộp Docker đó là 80 80 và điều này được đưa vào bên trong tập tin Docker.
+
+111
+00:18:54,240 --> 00:19:08,240
+Vì vậy, điều này có nghĩa là chúng tôi sẽ gõ máy địa phương đại tràng 9000 trên trình duyệt để truy cập ứng dụng. Sau đó chúng tôi đưa chi tiết môi trường cho ứng dụng bên trong phần môi trường.
+
+112
+00:19:08,240 --> 00:19:29,240
+Biến số đầu tiên là mật mã mạng cao hơn môi trường phát triển. Vì nó nằm trên máy phát triển nên chúng tôi đưa giá trị phát triển cho biến môi trường. Các giá trị khác có thể được dàn xếp và sản xuất dựa trên trạng thái dàn xếp và sản xuất của ứng dụng.
+
+113
+00:19:29,240 --> 00:19:57,240
+Một biến môi trường khác là mã AP Mạng nhấn mạnh URLS tương đương với việc cắt ruột kết HTTP cộng với ruột kết 80. Tùy chọn này xác định địa chỉ Mạng chấm chạy từ cổng 80 container. Bây giờ chúng ta có thể đóng cửa phòng thu trực quan vì nó không cần thiết nữa.
+
+114
+00:19:57,240 --> 00:20:05,240
+Hãy xem máy tính cá nhân.
+
+115
+00:20:05,240 --> 00:20:31,240
+Không có hình ảnh của dự án. Không có container nào hiện diện. Đây là bởi vì khi đóng phim trực quan studio hình ảnh đã gỡ bỏ tất cả các ứng dụng và hình ảnh container tự động để giải phóng không gian từ thư mục của Docker gạch gạch ngang tập tin YML. Chúng tôi chạy lệnh soạn thảo Docker.
+
+116
+00:20:31,240 --> 00:20:53,240
+Mở cửa sổ PowerShell ra. Lệnh đầu tiên chúng tôi thực hiện là lệnh xây dựng sẽ xây dựng hai hình ảnh cho hai dự án. Lệnh là docker đang xây dựng.
+
+117
+00:20:53,240 --> 00:21:10,240
+Những hình ảnh được xây dựng bây giờ. Hãy xác nhận hình ảnh trên bàn làm việc Docker. Đúng vậy, các hình ảnh có mặt và được tạo ra sau đó chạy đến các thùng chứa cho hai hình ảnh này.
+
+118
+00:21:10,240 --> 00:21:35,240
+Lệnh là Docker đang soạn thảo. Hai thùng hàng giờ được tạo ra. Bạn có thể thấy trên nhật ký tin nhắn rằng các thùng hàng đang chạy. Hãy mở ứng dụng trong trình duyệt.
+
+119
+00:21:35,240 --> 00:21:43,240
+Địa chỉ của ứng dụng này sẽ là vật chủ cục bộ.
+
+120
+00:21:43,240 --> 00:22:04,240
+Và đó là ứng dụng mạng chấm đang chạy từ container Docker trên Docker kiểm tra các thùng chứa. Vâng, có hai thùng chứa và đây là những hình ảnh đáng yêu mà chúng đang chạy trên thiết bị báo PowerShell và C để ngăn chặn các thùng chứa.
+
+121
+00:22:04,240 --> 00:22:22,240
+Bây giờ chúng tôi sẽ di chuyển tới tạo chứng nhận SSL. Vì vậy, chúng tôi đi vào bên trong thư mục đa ứng dụng và ở đây chúng tôi tạo một thư mục mới được gọi là HTTPS.
+
+122
+00:22:22,240 --> 00:22:45,240
+Trong thư mục này, chúng tôi sẽ tạo một chứng nhận SSL và dùng nó trên ứng dụng bên trong thư mục HTTPS mở một cửa sổ PowerShell. Bây giờ chúng tôi sẽ chạy lệnh tìm kiếm dấu chấm « mạng ». Hãy làm sạch đầu tiên tất cả các chứng chỉ phát triển trước có mặt trên máy tính của chúng tôi.
+
+123
+00:22:45,240 --> 00:22:52,240
+Lệnh là hiển thị tìm kiếm dấu chấm « lặt vặt ».
+
+124
+00:22:52,240 --> 00:23:14,240
+HTTPS gạch ngang làm sạch nhập trừ bất kỳ dấu nhắc. Tất cả các chứng nhận trước đây được gỡ bỏ khỏi máy của chúng tôi. Bây giờ chúng tôi sẽ tạo một chứng nhận SSL mới. Lệnh là hiển thị tìm kiếm dấu chấm « lặt vặt ».
+
+125
+00:23:14,240 --> 00:23:43,240
+HTTPS gạch ngang e p một ứng dụng mạng spt hiệu ứng p. Đây là tên chứng nhận sau đó gõ gạch ngang p và cho mật khẩu đó là mật khẩu của tôi mật khẩu 123 tên chứng nhận và mật khẩu có thể là bất cứ điều gì sau đó gạch ngang.
+
+126
+00:23:43,240 --> 00:23:54,240
+Mà là tin tưởng chứng nhận này ngoại trừ dấu nhắc và xem chứng nhận SSL được tạo.
+
+127
+00:23:54,240 --> 00:24:04,240
+Bây giờ chúng tôi sẽ sử dụng chứng nhận này trên ứng dụng. Vậy hãy mở dự án về studio hình ảnh một lần nữa.
+
+128
+00:24:13,240 --> 00:24:30,240
+Và sau đó mở tập tin docker gạch gạch ngang soạn thảo yml. Ở đây chúng tôi thêm các cấu hình cho chứng nhận SSL.
+
+129
+00:24:30,240 --> 00:24:46,240
+Đầu tiên chúng tôi thêm một cảng mới, đó là 9001 đại tràng 8081.
+
+130
+00:24:46,240 --> 00:24:59,240
+Ở đây 9001 là cổng chủ có thể là bất cứ thứ gì bạn thích và 8081 là cổng khác trên container mà bạn có thể tìm thấy 8081 này.
+
+131
+00:24:59,240 --> 00:25:12,240
+Cổng 8081 này được đưa vào tập tin Docker. Vì vậy, bây giờ chúng tôi có hai cổng 9001 và 9000 và những cảng này là cho máy chủ.
+
+132
+00:25:12,240 --> 00:25:28,240
+Và chúng được lập bản đồ với 8080 và 8081 cảng trên container. Tiếp theo chúng tôi thêm một địa chỉ URL HTTPS mới của ứng dụng sẽ nhắm vào cổng 8081 trên container.
+
+133
+00:25:28,240 --> 00:25:43,240
+Vì vậy, viết semicolon HTTPS cắt ruột kết cộng với ruột kết 8081.
+
+134
+00:25:43,240 --> 00:26:02,240
+Bây giờ chúng ta sẽ thêm một vài biến môi trường như sau.
+
+135
+00:26:02,240 --> 00:26:18,240
+Đầu tiên là lõi mạng AlP nhấn mạnh cổng HTTPS nhấn mạnh bằng 8081. Chúng tôi đã xác định cổng HTTPS là 8081 trên container.
+
+136
+00:26:18,240 --> 00:26:44,240
+Sau đó, chúng tôi cung cấp cho mật khẩu chứng nhận SSL mà là lõi AP trực tiếp nhấn mạnh cụm chứng nhận gạch dưới nhấn mạnh mặc định nhấn mạnh nhấn mạnh mật khẩu Mặc định là bằng chứng nhận SSL khi chúng tôi tạo chứng nhận.
+
+137
+00:26:44,240 --> 00:27:04,240
+Chúng tôi sẽ cung cấp đường dẫn SSL với cơ sở dữ liệu mạng dưới nhấn mạnh cụm chứng nhận gạch dưới tô sáng mặc định tô sáng đường dẫn bằng cách cắt bỏ ứng dụng HTTPS st mạng pfx.
+
+138
+00:27:04,240 --> 00:27:11,240
+Đây là phần của chứng nhận SSL bên trong thư mục HTTPS nằm trong container.
+
+139
+00:27:11,240 --> 00:27:29,240
+Hãy kiểm tra lại những thiết lập này một lần nữa vì chúng phải sửa chữa các hộp khác sẽ không chạy được cuối cùng chúng tôi gắn kết chứng nhận từ phần máy đến phần container bằng âm lượng Docker.
+
+140
+00:27:29,240 --> 00:27:58,240
+Vì vậy, thêm phần âm lượng docker trong tập tin soạn thảo đây là phần âm lượng đầu tiên là vị trí của SSL trên máy đó là bên trong thư mục đa ứng dụng cắt HTTPS sau đó chúng tôi cung cấp cho SSL sau khi kết nối đó và ở đây cung cấp cho một phần của thư mục bên trong hộp thư mục đang giữ chứng nhận SSL.
+
+141
+00:27:58,240 --> 00:28:16,240
+Đây là cắt bỏ các ứng dụng mạng HTTPS cắt bỏ dấu chấm pfx ruột kết RO tất cả các cấu hình được áp dụng ngay bây giờ và chúng tôi có thể đóng cửa studio hình ảnh.
+
+142
+00:28:16,240 --> 00:28:42,240
+Vì vậy việc cập nhật cho trình duyệt bị dừng lại bởi vì phòng thu hình đã đóng tất cả các thùng chứa ứng dụng vì vậy không mở lại các lệnh soạn thảo docker.
+
+143
+00:28:42,240 --> 00:29:05,240
+Lệnh đầu tiên là docker gạch gạch gạch gạch ngang được xây dựng để xây dựng các ảnh.
+
+144
+00:29:05,240 --> 00:29:18,240
+Điều răn thứ hai là docker nhanh chóng soạn thảo.
+
+145
+00:29:18,240 --> 00:29:38,240
+Các thùng hàng đang hoạt động và chạy ứng dụng kiểm tra trên trình duyệt địa chỉ URL lần này là HTTPS cắt đại tràng đại tràng địa phương 9 ngàn 1.
+
+146
+00:29:38,240 --> 00:30:07,240
+Chín ngàn một là cổng HTTPS mà chúng tôi định nghĩa trên tập tin docker gạch gạch gạch gạch gạch lát để bạn nhớ điều này và đây là ứng dụng mở từ URL HTTPS và SSL được áp dụng bạn có thể kiểm tra chứng nhận SSL nó là hợp lệ để chúc mừng tất cả chúng tôi đã thành công.
+
+147
+00:30:07,240 --> 00:30:15,240
+Chúng tôi đã thành công trong việc cung cấp cho ứng dụng mạng đa container của chúng tôi từ nói chuyện sáng tác.
+
