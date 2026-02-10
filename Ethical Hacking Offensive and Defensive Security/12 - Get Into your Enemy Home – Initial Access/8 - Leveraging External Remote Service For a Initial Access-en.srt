@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:09,120
+ to see another way of initial access
+
+2
+00:00:09,120 --> 00:00:13,060
+ to be using the scanning tools for you are no
+
+3
+00:00:13,060 --> 00:00:18,360
+ if you want to know about your enemy you need to gather some information about the about
+
+4
+00:00:18,360 --> 00:00:26,000
+ you enemy right that the same way if you're targeting one organization you need to know about the organization what service of their are using
+
+5
+00:00:26,000 --> 00:00:31,880
+ version of the service service and whether they are using any victims like easily targeted
+
+6
+00:00:31,880 --> 00:00:38,280
+ services like VPNs are 3 3 8 and so in this video we are going to see another one of
+
+7
+00:00:38,280 --> 00:00:46,600
+ a day the threat types will be used most of that in the same the ransomware so we are facing
+
+8
+00:00:46,600 --> 00:00:54,760
+ 40 to 50% of the attacks from the RDP sessions okay so let's start our video in the practical
+
+9
+00:00:54,760 --> 00:01:04,800
+ let me I'm putting the 3 3 8 9 so if you know about the 3 3 8 9 port that belongs to
+
+10
+00:01:04,800 --> 00:01:15,560
+ an RDP okay so the port 21 belongs to the FTP port 3 3 8 9 belongs to an RDP okay so let's
+
+11
+00:01:15,560 --> 00:01:27,480
+ open any of the terminal so if you see here R 3 3 8 9 there's a remote RDP connection has been
+
+12
+00:01:27,480 --> 00:01:32,760
+ available right so we can connect through the RDP so it was in the public facing application
+
+13
+00:01:32,760 --> 00:01:40,280
+ so we can use this RDP connection to get into a machine okay so that's the point so in this
+
+14
+00:01:40,280 --> 00:01:48,800
+ IP here you can find there's a RDP has been open and here the RDP has been open and
+
+15
+00:01:48,800 --> 00:02:01,400
+ okay so let's get on to the practical so I just created a I just installed one of the
+
+16
+00:02:01,400 --> 00:02:10,320
+ VM and I'm going to hack this VM using the RDP methods okay so first of all V need if we need
+
+17
+00:02:10,320 --> 00:02:15,080
+ to if we need to log into the RDP we need the user name sent password okay so we will be
+
+18
+00:02:15,080 --> 00:02:22,760
+ get clear about this video let me will do on by one okay so I just created one of the user
+
+19
+00:02:22,760 --> 00:02:30,520
+ called my username is AJ away and my password will be passed this is my username and password again let's
+
+20
+00:02:30,520 --> 00:02:41,960
+ I will just typing here blindly let me go to the user ij yeah so my password will dts okay so I'm
+
+21
+00:02:41,960 --> 00:02:55,160
+ logged into my user username okay so let's go to an exploit okay so for RDP brute forcing I'm
+
+22
+00:02:55,160 --> 00:03:02,120
+ going to use a hydra okay so here is a hydra command I'm going to use a hydra for the RDP
+
+23
+00:03:02,120 --> 00:03:08,240
+ brute force okay so the T will be let me explain the hydra command hydra dash fetch so if the
+
+24
+00:03:08,240 --> 00:03:15,840
+ first option will be T right so if you go for a T it's a task okay so we are going to target
+
+25
+00:03:15,840 --> 00:03:20,800
+ a only one target okay we are going to target a Windows machine so it's a only one target so the
+
+26
+00:03:20,800 --> 00:03:26,480
+ next one so the next command will be one we are going to target one okay right Cv will be a verbose
+
+27
+00:03:26,480 --> 00:03:37,520
+ verbose will be giving more additional information that's all and Fpld let's see that yeah
+
+28
+00:03:38,240 --> 00:03:44,880
+ so when a username password is successfully found we need to terminate decisions right so we will be
+
+29
+00:03:44,880 --> 00:03:51,440
+ will be seeing there seeing this later so dash L means a login name and dash T means a password okay
+
+30
+00:03:51,440 --> 00:03:59,360
+ so let me give the login name as ij so this is the test dot txt I just created one that was filed
+
+31
+00:03:59,360 --> 00:04:06,640
+ sorry one of the text to dogman like let me give some more thing there's the file we are going to
+
+32
+00:04:06,640 --> 00:04:11,440
+ use for a brute force okay so the threat actors contain lot and lot of passwords in the file I will
+
+33
+00:04:11,440 --> 00:04:18,240
+ be I will be getting you how to take this password from the GitHub so here you can find I have
+
+34
+00:04:18,240 --> 00:04:25,360
+ created a small word list for doing a brute force so let me do a brute force okay so let me do
+
+35
+00:04:25,360 --> 00:04:36,560
+ a brute force and we will be we'll go for a login okay so let me so now the attack has been
+
+36
+00:04:36,560 --> 00:04:42,320
+ started so you can find so it was attacking one by one the username is a j it was trying one by
+
+37
+00:04:42,320 --> 00:04:48,240
+ one basically the brute force means means like a trying one by one uh username sent password okay
+
+38
+00:04:48,240 --> 00:04:58,240
+ so we have created a few passwords in the uh file test dot txt and we are we are going to try
+
+39
+00:04:58,240 --> 00:05:04,000
+ one by one one by one username and password okay so you can see it first you tried a j a the first
+
+40
+00:05:04,000 --> 00:05:10,400
+ entry so the login was failed okay zero child so the login was failed and you tried the next entry
+
+41
+00:05:10,400 --> 00:05:18,320
+ next line so next the line was failed and it tried one by one one and finally if you see the last
+
+42
+00:05:18,320 --> 00:05:25,200
+ so I can get a green line for a j so RDB goes to be the username and password will be passed okay
+
+43
+00:05:25,200 --> 00:05:31,680
+ so we are successfully found the RDP section in the same way in the same way the threat actors
+
+44
+00:05:31,680 --> 00:05:37,440
+ will be using this okay in the same way the threat actors will be using this
+
+45
+00:05:37,440 --> 00:05:46,320
+ uh publicly available available RDP service uh for a brute force okay they will be
+
+46
+00:05:46,320 --> 00:05:50,320
+ they will be brute they will be brute forcing this kind of publicly accessible service
+
+47
+00:05:50,320 --> 00:05:54,080
+ and they will be finding their username sent passwords and they will be logging into their
+
+48
+00:05:54,080 --> 00:05:58,960
+ machine so I will be giving so how to login into I will be giving a small example how to
+
+49
+00:05:58,960 --> 00:06:03,360
+ login into the machine so already we have found a username and password this is the one I just
+
+50
+00:06:03,360 --> 00:06:11,440
+ created for my own okay so I will be getting you how to take a big brute force like documents
+
+51
+00:06:11,440 --> 00:06:23,360
+ like login fields like username sent password so x3 RDP there is a one tool called xp RDP for
+
+52
+00:06:24,080 --> 00:06:31,600
+ Linux machine so you can go for a user user a j a y and you can go for a password so password we
+
+53
+00:06:31,600 --> 00:06:38,160
+ know we already brute force p a s s will be the password and we need to do the uh
+
+54
+00:06:38,160 --> 00:06:45,280
+ host name okay so host name on an IP address so my host name will be our IP address will be
+
+55
+00:06:45,280 --> 00:06:58,880
+ the 192.160.18.10 so this is this is 10 windows machine so this is the windows machine host name
+
+56
+00:06:58,880 --> 00:07:11,600
+ which I create um install okay so let's 192.168.18.10 so let me enter so now it's now it was asking
+
+57
+00:07:11,600 --> 00:07:20,960
+ some certification let me UI so now you can see I got a clean connect directly right I got a
+
+58
+00:07:20,960 --> 00:07:26,400
+ screen correct I can able to control each and everything okay I can able to do anything here okay
+
+59
+00:07:26,400 --> 00:07:32,720
+ so I can go to the browser uh okay so this section will be logged out okay so I can go to the
+
+60
+00:07:32,720 --> 00:07:38,640
+ browser I can do whatever I want I can do okay I can do anything okay so this is the way the thread
+
+61
+00:07:38,640 --> 00:07:45,760
+ factors will brute force the RDP use an event password they will be using this kind of uh X3 RDP
+
+62
+00:07:45,760 --> 00:07:50,720
+ or any other tools they will be logging into their machine directly okay so this is a very very
+
+63
+00:07:50,720 --> 00:07:55,440
+ powerful method the thread tactics will be followed you can do anything you can go to anywhere you
+
+64
+00:07:55,440 --> 00:08:04,480
+ can go to uh any you can set anything you want okay so this is the uh another way exploiting the
+
+65
+00:08:04,480 --> 00:08:09,840
+ remote services so this you need to be very very careful so if you are username and passwords are
+
+66
+00:08:09,840 --> 00:08:16,400
+ very weak if your password was weak okay the thread tactics can able to easily uh enter into our
+
+67
+00:08:16,400 --> 00:08:22,720
+ organization okay so uh so you can see how easy I get into the getting to the server right I just
+
+68
+00:08:22,720 --> 00:08:29,200
+ created a small um group a small uh word list for a brute force attempt for my brute force
+
+69
+00:08:29,200 --> 00:08:33,760
+ and I use the hydro tool for a brute force finally I got a username and password I use the
+
+70
+00:08:33,760 --> 00:08:40,240
+ username and password I use a name and password for login into the login to the RDP right so it's a
+
+71
+00:08:40,240 --> 00:08:45,520
+ very very uh EC method and it's a very powerful method the thread tactics will be following I will
+
+72
+00:08:45,520 --> 00:08:53,040
+ be given I will be giving a live example so how the thread tactics will be using the RDP so how we
+
+73
+00:08:53,040 --> 00:09:08,240
+ did the same with the the tactics will be using the hackers will be using so RDP so you can see RDP
+
+74
+00:09:08,240 --> 00:09:13,360
+ can be used by a ransomware attack typically the port 3 3 8 9 we already queried with the
+
+75
+00:09:13,360 --> 00:09:19,680
+ sold on 3 3 8 9 so you can find everything here 3 3 8 9 remote desktop protocol okay so you
+
+76
+00:09:19,680 --> 00:09:25,680
+ can uh do some brute forcing in that and you can get the current shells and you can directly log
+
+77
+00:09:25,680 --> 00:09:31,040
+ into the organization this is the uh one of the way okay so here you can find a lot and lot of
+
+78
+00:09:31,040 --> 00:09:36,720
+ ransomware they will be using uh so see here RDP abuse prevents in 90 percent of the ransomware
+
+79
+00:09:36,720 --> 00:09:43,680
+ breaches okay so 90 percent of the ransomware uh breaches it will be happened by the RDP so if you see
+
+80
+00:09:43,680 --> 00:09:50,480
+ this thread scalar ball RDP uh so ransomware delivery delivered using RDP brute force attempt okay
+
+81
+00:09:50,480 --> 00:09:56,400
+ so how we did the brute forcing the similar way the same way the threat tactics will be
+
+82
+00:09:56,400 --> 00:10:01,520
+ doing the brute force attempt they will be get inside the machine okay so you will need to be
+
+83
+00:10:01,520 --> 00:10:08,640
+ very careful uh about that okay so the threat tactics will be using RDP for a initial access okay
+
+84
+00:10:12,480 --> 00:10:22,960
+ so let's uh I hope you have clear understanding about the RDP so first of all we uh just created
+
+85
+00:10:22,960 --> 00:10:30,400
+ one of the word list file uh to use for a brute force and we use a hydro tool to brute force the
+
+86
+00:10:30,400 --> 00:10:38,800
+ RDP and finally we got a username and passwords so next we use the x3 RDP to log it into the
+
+87
+00:10:38,800 --> 00:10:44,640
+ username and uh login into the our Windows machine right so next we use the username and password
+
+88
+00:10:44,640 --> 00:10:50,480
+ to login into the Windows machine right so this is the same way so you'll be using you'll be
+
+89
+00:10:50,480 --> 00:10:56,960
+ exploiting the RDP in the public facing applications okay and uh instead of this IP you will be
+
+90
+00:10:56,960 --> 00:11:05,360
+ giving a uh your target your company which company you are targeting that IP okay so I hope you
+
+91
+00:11:05,360 --> 00:11:10,400
+ have a clear understanding about this video how the threat tactics will be uh hijacking uh
+
+92
+00:11:10,400 --> 00:11:16,880
+ our brute forcing RDP and get into the access we will uh I will get into one more thing
+
+93
+00:11:16,880 --> 00:11:24,560
+ there will be a brute force passwords and all draw q dot txt uh 2024
+
+94
+00:11:24,560 --> 00:11:34,320
+ so here is a bird list so this bird list contained a lot and a lot of passwords okay so you can
+
+95
+00:11:34,320 --> 00:11:42,480
+ see here it's a 133 mb uh you will be getting 133 megabytes of passwords megabytes of passwords
+
+96
+00:11:42,480 --> 00:11:50,800
+ probably more than uh more than like uh blacks and lacs of passwords so we'll be getting
+
+97
+00:11:50,800 --> 00:11:56,640
+ early you are using this file for a for a brute force okay so instead of giving the
+
+98
+00:11:58,560 --> 00:12:11,440
+ test to dot txt you can give the rachu dot txt okay very really okay opening
+
+99
+00:12:11,440 --> 00:12:24,320
+ okay so here you can find a lot of username and password here so there's um it's uncountable okay
+
+100
+00:12:24,320 --> 00:12:29,120
+ many many usernames and password okay so instead of you can using the just test to file
+
+101
+00:12:29,120 --> 00:12:34,960
+ I'll be using the rachu dot txt so if I need to brute force this kind of public facing
+
+102
+00:12:34,960 --> 00:12:40,640
+ applications okay so be very careful the threat tactics will be using RDP for initial access
+
+103
+00:12:40,640 --> 00:12:48,320
+ so your username and passwords will be very strong um so if your if your service RDP service is
+
+104
+00:12:48,320 --> 00:12:54,800
+ publicly accessible okay so your RDP username and password will be very strong if you're using the
+
+105
+00:12:54,800 --> 00:13:03,360
+ RDP in a publicly accessible next thing so if you don't want RDP for publicly accessible
+
+106
+00:13:03,360 --> 00:13:08,080
+ you need to restrict that protocol you need to block that port okay uh so preventing this kind
+
+107
+00:13:08,080 --> 00:13:13,760
+ of attack if there is no RDP in their uh company environment so the threat tactics can't able to
+
+108
+00:13:13,760 --> 00:13:20,000
+ attack the RDP they can't able to brute force the RDP they can't able to get into set
+
+109
+00:13:20,000 --> 00:13:24,960
+ get inside the organization through the RDP okay so the first recommendation to the so use a
+
+110
+00:13:24,960 --> 00:13:33,840
+ very good uh passwords so that will be um unknown by uh threat tactics and the next one
+
+111
+00:13:33,840 --> 00:13:40,480
+ so restrict the RDP and the final recommendation uh if you have if you can able to enable the
+
+112
+00:13:40,480 --> 00:13:46,560
+ multi-factor authentication like your two way authentication like uh by uh by uh authenticating through
+
+113
+00:13:46,560 --> 00:13:53,280
+ the mobile uh so some more DPP will be sent into the mobile like that so go for that okay these are
+
+114
+00:13:53,280 --> 00:14:00,560
+ the recommendations you need to provide to the customers okay so i hope you have a clear understanding
+
+115
+00:14:00,560 --> 00:14:06,560
+ about the RDP control so how we how we got the got have you got the RDP so i can able to control
+
+116
+00:14:06,560 --> 00:14:12,880
+ each and everything uh in this machine okay so let's pop off this video and we will continue our
+
+117
+00:14:12,880 --> 00:14:18,000
+ discussion in the next video see you guys bye bye if you have any questions any queries just uh
+
+118
+00:14:18,000 --> 00:14:21,200
+ bring in a comment
+
