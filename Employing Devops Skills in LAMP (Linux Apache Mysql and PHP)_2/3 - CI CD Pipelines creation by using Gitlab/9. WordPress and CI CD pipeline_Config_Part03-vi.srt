@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:21,160
+Được rồi, bây giờ chúng ta hãy làm bài kiểm tra cuối cùng ở phần 4, đó là tạo ra CN, CI và ống dẫn CD.
+
+2
+00:00:21,160 --> 00:00:32,240
+Được rồi, cho tích hợp liên tục, phát triển liên tục, loại, dòng sử dụng getLab CR, okay.
+
+3
+00:00:32,240 --> 00:00:43,840
+Ý tưởng ở đây là chúng ta muốn chứng minh một mật mã từ kho, tất nhiên, rằng chúng ta cất giữ ở đây, bằng cách sử dụng công cụ.
+
+4
+00:00:43,840 --> 00:00:54,440
+Tôi chỉ muốn sử dụng, ví dụ, đó là công cụ chỉ huy, như Jenkins, nhưng đối với hướng dẫn này, chúng tôi sử dụng getLab, okay.
+
+5
+00:00:54,440 --> 00:01:04,640
+Chỉ để lấy mã từ kho lưu trữ, được rồi, và tải về WordPress vào thư mục mới của việc cài đặt.
+
+6
+00:01:04,640 --> 00:01:16,800
+Đây là đường ống để tự động hóa hai giai đoạn mà chúng ta có cho vòng đời của bất kỳ mã lệnh nào, đó là triển khai và xây dựng.
+
+7
+00:01:16,800 --> 00:01:18,800
+Nó sẽ đi từ trên xuống.
+
+8
+00:01:18,800 --> 00:01:24,960
+Vì vậy, hãy thực hiện điều này với nhau.
+
+9
+00:01:24,960 --> 00:01:32,040
+Nên, tất nhiên là ở đây anh cần phải chắc chắn là anh có tài khoản của Lab, được chứ?
+
+10
+00:01:32,040 --> 00:01:35,600
+Tôi có một tài khoản, và tôi sẽ đăng nhập vào đó.
+
+11
+00:02:02,040 --> 00:02:19,760
+tôi sẽ đăng nhập.
+
+12
+00:02:19,760 --> 00:02:31,080
+Đây là người dùng của tôi, M more, 87, và tôi có mật khẩu, tôi sẽ đăng ký.
+
+13
+00:02:31,080 --> 00:02:47,160
+Được rồi, và tôi đã tạo ra một dự án, được rồi, được gọi là, đây là một nhóm cho dự án, m more, 87, gạch ngang nhóm, và đây là tên của dự án.
+
+14
+00:02:47,160 --> 00:02:53,720
+Nó cũng là tên người dùng đó, nhưng đối với nhóm người, nhóm nhanh chóng, cho dự án này.
+
+15
+00:02:53,720 --> 00:03:13,760
+Vì vậy, nếu tôi muốn ở đây để xem liên kết của tôi, ví dụ, okay, đây là kho tồn tại cho tôi, okay.
+
+16
+00:03:13,760 --> 00:03:21,360
+Vì vậy, đây là URL của tôi cho nó, mà tôi sẽ sử dụng.
+
+17
+00:03:21,360 --> 00:03:29,880
+Đầu tiên, hãy sao chép hoặc nhân bản, tôi đã tạo ra một dự án mới, nó rất đơn giản.
+
+18
+00:03:29,880 --> 00:03:38,320
+Khi bạn có một tài khoản trên getlab, bạn có thể tạo ra một dự án mới, và tôi cho nó tên của dự án m more, gạch ngang.
+
+19
+00:03:38,320 --> 00:03:41,320
+Anh có thể đặt bất cứ cái tên nào anh muốn.
+
+20
+00:03:41,320 --> 00:04:00,440
+Và Set là một chút công khai, và tạo ra nó, okay. Bây giờ chúng ta hãy sao chép hoặc nhân bản kho này đến các liên kết, làm thế nào tôi có thể sao chép kho này bằng cách sử dụng bình luận mà tôi có, okay.
+
+21
+00:04:00,440 --> 00:04:30,280
+Sau đây là một nhận xét mà chúng tôi đã sử dụng trước đây. Vì vậy, ở đây tôi sẽ gõ, đây là liên kết của tôi, tôi sẽ gõ CD, nhân bản, okay, tôi sẽ nhân bản nó, và sau khi tôi nhân bản nó, tôi muốn chắc chắn rằng tất cả các thư mục dự án, nó sẽ làm cho thư mục gọi là m more, tôi muốn thay đổi thư mục.
+
+22
+00:04:30,280 --> 00:04:37,640
+Tự động, để tôi có thể xem những gì được tạo ra bên trong thư mục đó.
+
+23
+00:04:37,640 --> 00:05:07,480
+Vì vậy, hãy làm điều này, tôi cần phải gõ tên người dùng, và tất nhiên mật khẩu, okay, tôi cần phải chắc chắn rằng
+
+24
+00:05:07,480 --> 00:05:19,880
+Tôi gõ đúng mật khẩu tên người dùng, sau đó tôi sẽ trở lại với bạn bởi vì có một vấn đề với xác thực.
+
+25
+00:05:19,880 --> 00:05:49,640
+Được rồi, tôi cần phải gõ lại bình luận, okay, vấn đề ở đây, mà tôi gõ
+
+26
+00:05:49,640 --> 00:06:19,480
+Nó sai, nó là m không còn nữa, 87, đó là tên người dùng nhất không đúng, okay, vì vậy bây giờ tôi đã chuyển đổi nó tự động sang dự án này, đây là kho lưu trữ, tôi đã sao chép các kho,
+
+27
+00:06:19,480 --> 00:06:33,720
+tôi có thể thấy ở đây nó chứa dấu chấm,
+
+28
+00:06:33,720 --> 00:06:43,480
+Nó được giấu và sẵn sàng, bởi vì nó là những dự án mới trống, đây là tập tin bị ẩn bên trong nó, được chứ.
+
+29
+00:06:43,480 --> 00:07:00,480
+Vì vậy, tôi có bản sao kho, đây là điều đầu tiên cần làm, bây giờ nếu chúng ta có thể sử dụng cấu trúc thư mục trong bất kỳ kho lưu trữ nào, được rồi, tôi cần thiết lập các kịch bản,
+
+30
+00:07:00,480 --> 00:07:14,480
+Xác định đây là các tập lệnh bao gồm việc triển khai, và đây là tập tin ML chứa hướng dẫn cho hai giai đoạn của việc triển khai và xây dựng.
+
+31
+00:07:14,480 --> 00:07:27,480
+Được rồi, đầu tiên tôi cần chắc chắn để thiết lập môi trường để chuẩn bị nó để tải về tất cả các từ in nghiêng, và sau đó nếu những điều này thành công, tôi sẽ tham gia xây dựng.
+
+32
+00:07:27,480 --> 00:07:32,480
+Và khi tôi bước vào tòa nhà, tôi cần thực hiện các kịch bản ở đây.
+
+33
+00:07:32,480 --> 00:07:46,480
+Và tất nhiên, đây là tập tin báo chí, đó là thư mục wp-contenent, sẽ sau khi tôi nhấn vào các lệnh tự động hóa thực hiện,
+
+34
+00:07:46,480 --> 00:07:56,480
+Nó sẽ sửa đổi nội dung từ này, vì vậy điều đầu tiên ở đây, tôi cần phải tạo cấu trúc thư mục cho tập tin của tôi, đó là lý do tại sao tôi đã sao chép nó,
+
+35
+00:07:56,480 --> 00:08:00,480
+Để tôi có thể quản lý nó từ máy chủ Alma Linux của tôi.
+
+36
+00:08:00,480 --> 00:08:15,480
+Vì vậy, điều đầu tiên ở đây, tôi cần phải tạo ra các thư mục, được rồi, bao gồm cả các tập tin, đây là tập tin ML và đây là SH, đây là hai thư mục của chúng tôi và đây là hai tập tin của chúng tôi,
+
+37
+00:08:15,480 --> 00:08:30,480
+Tập tin về công cụ và kịch bản, hãy làm thôi.
+
+38
+00:08:30,480 --> 00:08:42,480
+Được rồi, ở đây chúng tôi có thư mục và tập tin, okay, và nếu tôi đi qua
+
+39
+00:08:42,480 --> 00:08:52,480
+kịch bản, tôi nên xem các kịch bản, hoặc đây là cấu hình trong này.
+
+40
+00:08:52,480 --> 00:09:09,480
+Được rồi, nếu tôi học kịch bản, xin lỗi, nếu tôi học kịch bản,
+
+41
+00:09:09,480 --> 00:09:14,480
+Tôi có thể thấy cuộc triển khai với SH mà tôi cũng đã tạo ra.
+
+42
+00:09:14,480 --> 00:09:25,480
+Được rồi, tuyệt, xin lỗi, tôi đã đóng cửa nhầm.
+
+43
+00:09:25,480 --> 00:09:40,480
+Vì vậy, hãy nhập thư mục một lần nữa.
+
+44
+00:09:40,480 --> 00:09:48,480
+Tiếp tục bước tiếp theo.
+
+45
+00:09:48,480 --> 00:09:56,480
+Làm hai việc ở đây, chúng ta tạo ra bản sao, được rồi, đây là giai đoạn cuối cùng hoặc giai đoạn đầu tiên,
+
+46
+00:09:56,480 --> 00:10:05,480
+Và sau đó chúng tôi tạo tập tin ML, các tập tin ML bao gồm tất cả mọi thứ, triển khai và xây dựng.
+
+47
+00:10:05,480 --> 00:10:34,480
+Được rồi, đầu tiên hãy bắt đầu với bản thảo triển khai, được rồi, hãy chỉnh sửa triển khai sang SH.
+
+48
+00:10:34,480 --> 00:10:39,480
+Vì vậy, ở đây hãy chuẩn bị tập tin đó.
+
+49
+00:10:39,480 --> 00:10:47,480
+Nó là một hồ sơ đập, được rồi, vì vậy chúng tôi đặt đầu tiên như tôi đã nói với bạn, nó sẽ đi từ trên xuống,
+
+50
+00:10:47,480 --> 00:10:52,480
+Vì vậy cho việc triển khai đầu tiên, trước khi tôi xây dựng, tôi cần thiết lập các biến số.
+
+51
+00:10:52,480 --> 00:11:00,480
+Đây là dịch vụ mà tôi sẽ sử dụng, xin lỗi, nó là người dùng, không còn nữa, và nó là một máy phục vụ hệ thống RLS,
+
+52
+00:11:00,480 --> 00:11:08,480
+hoặc máy chủ cơ sở dữ liệu cũng ở đây, vì vậy chúng tôi sẽ sử dụng máy phục vụ này, và bởi vì nó là web và trở lại,
+
+53
+00:11:08,480 --> 00:11:19,480
+hoặc máy phục vụ MIME, và thư mục triển khai được đặt về nhà và di động và thư mục xây dựng ở đây được gọi là xây dựng.
+
+54
+00:11:19,480 --> 00:11:24,480
+Đây là thư mục mà tôi sẽ bật lên sau khi triển khai xong.
+
+55
+00:11:24,480 --> 00:11:38,480
+Được rồi, và sau đó nó sẽ lặp lại việc triển khai máy chủ, và tôi sẽ bắt đầu triển khai tất cả các tập tin sao chép về máy chủ.
+
+56
+00:11:38,480 --> 00:11:44,480
+Vì vậy, bước đầu tiên là thiết lập các biến số và sao chép tập tin đến máy chủ,
+
+57
+00:11:44,480 --> 00:11:50,480
+và tất nhiên nó sẽ đảm bảo rằng tất cả các tập tin dữ liệu cũng sẽ bị xoá khỏi thư mục.
+
+58
+00:11:50,480 --> 00:11:57,480
+Nó sẽ đồng bộ hoá hay chỉ sao chép các tập tin chưa được xoá hoặc tồn tại trên thư mục đó.
+
+59
+00:11:57,480 --> 00:12:06,480
+Và nó cũng sẽ sửa chữa sự cho phép để như chúng ta đã làm trước đây,
+
+60
+00:12:06,480 --> 00:12:17,480
+Chúng tôi cần phải kiểm tra sự cho phép bên trong thùng chứa để nó có thể viết về các tập tin WordPress,
+
+61
+00:12:17,480 --> 00:12:24,480
+và sau đó nó sẽ bắt đầu nội dung Docker, và triển khai hoàn tất.
+
+62
+00:12:24,480 --> 00:12:31,480
+Được rồi, đây là một kịch bản tự động hóa, vậy hãy sao chép tất cả những điều này.
+
+63
+00:12:31,480 --> 00:12:53,480
+Được rồi, và cứu.
+
+64
+00:12:53,480 --> 00:12:56,480
+Được rồi.
+
+65
+00:12:56,480 --> 00:13:06,480
+Bây giờ chúng tôi chỉ cần làm cho nó thực hiện được bằng cách gõ thay đổi sửa đổi cộng với chữ X chỉ để làm cho các văn lệnh thực hiện được.
+
+66
+00:13:06,480 --> 00:13:21,480
+Tất cả đều chạy được.
+
+67
+00:13:21,480 --> 00:13:32,480
+Được rồi, chúng ta cần thiết lập những bình luận từ bên ngoài, bởi vì nó kích hoạt các kịch bản.
+
+68
+00:13:32,480 --> 00:13:35,480
+Mở văn lệnh.sh.
+
+69
+00:13:35,480 --> 00:13:42,480
+Được rồi, bây giờ chúng ta chuyển sang bước tiếp theo, bước 5.
+
+70
+00:13:42,480 --> 00:13:44,480
+Hãy tạo ra GitLab.
+
+71
+00:13:44,480 --> 00:13:50,480
+Đây là đường ống GitLab hay CI chứa cấu hình YML.
+
+72
+00:13:50,480 --> 00:14:00,480
+Vậy hãy mở ra bằng các công cụ nano tuyệt đẹp của chúng ta.
+
+73
+00:14:00,480 --> 00:14:09,480
+Mở hồ sơ này ra.
+
+74
+00:14:09,480 --> 00:14:21,480
+Và ở đây nó hơi dài một chút vì nó thực sự chứa 2 giai đoạn, như tôi đã nói với các bạn, xin lỗi, nó chứa những cấu trúc đầu tiên,
+
+75
+00:14:21,480 --> 00:14:28,480
+thì việc triển khai là điều cuối cùng, và việc xây dựng là điều đầu tiên để điều chỉnh sự đa dạng.
+
+76
+00:14:28,480 --> 00:14:32,480
+Vậy, sân khấu ở đây là để xây dựng, xây dựng, rồi triển khai.
+
