@@ -1,0 +1,336 @@
+1
+00:00:00,080 --> 00:00:07,200
+Vì vậy, trò chơi của chúng tôi đang dần phát triển, và trong bài học trước chúng tôi xem xét làm thế nào đá có thể xảy ra
+
+2
+00:00:07,200 --> 00:00:13,080
+và làm thế nào chúng tôi có thể điều chỉnh góc độ để nó là ngẫu nhiên
+
+3
+00:00:13,120 --> 00:00:14,920
+Nó sẽ làm cho nó thú vị hơn một chút.
+
+4
+00:00:15,200 --> 00:00:19,000
+Và để cho thủ môn có thể leo lên và xuống ở vị trí đó và cố gắng cứu lấy những quả bóng đó.
+
+5
+00:00:19,000 --> 00:00:24,680
+Nhưng bây giờ những gì chúng ta cần làm là chúng ta cần phải có một chức năng mà cho phép chúng tôi để di chuyển các mục tiêu
+
+6
+00:00:24,960 --> 00:00:26,000
+Lên và xuống.
+
+7
+00:00:26,160 --> 00:00:30,560
+Và vì vậy về cơ bản chúng tôi sẽ cần đến hai chức năng bởi vì chúng tôi đang gonna cần một chức năng mà đi
+
+8
+00:00:30,600 --> 00:00:31,520
+để tăng thủ môn lên.
+
+9
+00:00:31,760 --> 00:00:35,760
+Và sau đó chúng tôi sẽ cần một chức năng khác mà sẽ di chuyển các thủ môn xuống.
+
+10
+00:00:36,000 --> 00:00:40,880
+Và đó là sẽ đáp ứng với các mũi tên lên và xuống trên bàn phím của chúng tôi.
+
+11
+00:00:40,880 --> 00:00:45,400
+Và cuối cùng chúng tôi cũng sẽ muốn gọi chức năng kick của chúng tôi là tốt.
+
+12
+00:00:45,400 --> 00:00:49,120
+Vì vậy, chúng ta sẽ có một cái nhìn vào đó trong bài học này về làm thế nào để tạo ra những chức năng đó.
+
+13
+00:00:49,120 --> 00:00:55,920
+Vì vậy, chức năng đầu tiên của chúng tôi chúng tôi cần phải xác định để dạy cho thủ môn của chúng tôi làm thế nào để lưu là ứng dụng thủ môn này
+
+14
+00:00:55,960 --> 00:00:56,520
+chức năng.
+
+15
+00:00:56,520 --> 00:00:59,000
+Một lần nữa, nó chỉ là một sự khác biệt đơn giản.
+
+16
+00:00:59,000 --> 00:01:01,400
+Và chúng tôi gọi chức năng của mình là ứng dụng thủ môn.
+
+17
+00:01:02,120 --> 00:01:11,130
+Vì vậy, để có được mục tiêu của chúng tôi để đi lên chúng tôi muốn nó để hướng về phía bắc đó là góc 9 độ này.
+
+18
+00:01:11,410 --> 00:01:18,410
+Vì vậy, tôi đã thiết lập thủ môn để đi về phía bắc, và tôi muốn các thủ môn chỉ cần di chuyển về phía trước bởi năm điểm, mà
+
+19
+00:01:18,410 --> 00:01:19,170
+Khá nhỏ.
+
+20
+00:01:19,170 --> 00:01:22,850
+Nhưng anh sẽ hiểu tại sao tôi lại xuống đây.
+
+21
+00:01:22,850 --> 00:01:25,370
+Vậy là bây giờ, thủ môn.
+
+22
+00:01:25,370 --> 00:01:31,090
+Tất cả những gì nó làm là chỉ ra con rùa đi lên và nó di chuyển nó về phía trước năm.
+
+23
+00:01:31,290 --> 00:01:35,530
+Sau đó chức năng này ở đây là khá đối diện với các thủ môn lên.
+
+24
+00:01:35,570 --> 00:01:37,690
+Nó làm thủ môn ngã xuống.
+
+25
+00:01:37,970 --> 00:01:43,370
+Vì vậy, những gì chúng tôi đang làm là chúng tôi đang thiết lập các tiêu đề hoặc thiết lập hướng của các thủ môn xuống hoặc
+
+26
+00:01:43,410 --> 00:01:45,530
+Phía nam là 270 độ.
+
+27
+00:01:45,530 --> 00:01:49,410
+Và chúng tôi lại chuyển mục tiêu lên trước 5.
+
+28
+00:01:49,450 --> 00:01:53,010
+Nhưng điều này về phía trước bây giờ sẽ đi xuống.
+
+29
+00:01:53,050 --> 00:01:58,130
+Cậu sẽ trở thành một hướng đạo sinh, bảo vệ nữ, hay bất cứ thứ gì sau chuyện này, nhưng cậu nên...
+
+30
+00:01:58,130 --> 00:01:59,290
+Hãy biết rõ hướng đi của mình.
+
+31
+00:02:00,050 --> 00:02:00,530
+Được chứ?
+
+32
+00:02:00,570 --> 00:02:05,690
+Nhưng bây giờ tất cả những điều này thực sự không làm bất cứ điều gì mà không có chức năng được gọi là.
+
+33
+00:02:05,690 --> 00:02:11,410
+Vì vậy, như chúng tôi đã nói trước đó, chức năng này thực sự không làm bất cứ điều gì bởi vì chúng tôi không bao giờ gọi nó theo cách
+
+34
+00:02:11,410 --> 00:02:18,290
+Chúng tôi muốn gọi những chức năng này trong trò chơi của chúng tôi thực sự là một cách đặc biệt hoặc một cách chúng tôi đã không làm trước đây.
+
+35
+00:02:18,810 --> 00:02:25,580
+Những gì chúng tôi muốn làm là chúng tôi muốn màn hình đợi một phím để được nhấn.
+
+36
+00:02:25,580 --> 00:02:30,060
+Vì vậy, các biến màn hình có phương pháp này được gọi trên phím bấm.
+
+37
+00:02:30,060 --> 00:02:36,340
+Và những gì về cơ bản xảy ra ở đây, các biến màn hình trên đây mà chúng tôi định nghĩa ở đầu
+
+38
+00:02:36,340 --> 00:02:42,100
+Một màn hình rùa có chức năng mà chúng tôi có thể sử dụng trên nó được gọi là ấn phím.
+
+39
+00:02:42,340 --> 00:02:46,060
+Bây giờ những gì chức năng này làm cho chúng tôi là nó cần hai tham số.
+
+40
+00:02:46,060 --> 00:02:52,300
+Và đó là một chức năng như tham số đầu tiên và một phím trên bàn phím của chúng tôi như một tham số thứ hai.
+
+41
+00:02:52,420 --> 00:02:59,260
+Và những gì nó làm là nó lấy bất cứ chức năng nào bạn muốn và nó buộc nó vào một phím trên bàn phím.
+
+42
+00:02:59,580 --> 00:03:06,900
+Ví dụ, ở đây chúng tôi đã lấy lên phím và chúng tôi đã nói với nó bất cứ khi nào các phím lên được bấm cuộc gọi
+
+43
+00:03:06,900 --> 00:03:08,620
+hàm số này được gọi là tăng lên.
+
+44
+00:03:08,780 --> 00:03:15,100
+Vì vậy, mỗi lần tôi nhấp vào phím lên khi trò chơi của chúng tôi đang chạy, nó sẽ gọi chức năng này và làm
+
+45
+00:03:15,100 --> 00:03:15,900
+bên trong.
+
+46
+00:03:15,900 --> 00:03:20,980
+Vì vậy, về cơ bản thay đổi nó về phía bắc và di chuyển nó về phía trước năm không gian.
+
+47
+00:03:21,260 --> 00:03:26,020
+Vì vậy, đó là lý do tại sao tôi chỉ phải di chuyển nó lên 5 bởi vì thay vì di chuyển nó một khoảng cách lớn, tôi
+
+48
+00:03:26,020 --> 00:03:27,140
+Tôi muốn làm.
+
+49
+00:03:27,180 --> 00:03:32,280
+Nếu chìa khóa đang được nhấn, sau đó tiếp tục di chuyển nó lên năm không gian.
+
+50
+00:03:33,080 --> 00:03:39,360
+Sau đó chúng tôi có một lần nữa điều tương tự, nhưng rõ ràng điều này là chỉ cần làm đi xuống với các phím xuống.
+
+51
+00:03:39,360 --> 00:03:42,400
+Vì vậy, các phím xuống gọi chức năng này đi xuống.
+
+52
+00:03:43,400 --> 00:03:48,160
+Và sau đó cho đá bởi vì chúng tôi muốn quả bóng rõ ràng để di chuyển về phía trước và bị đá.
+
+53
+00:03:48,200 --> 00:03:51,080
+Tôi đã chọn chỉ sử dụng phím k trên bàn phím.
+
+54
+00:03:51,360 --> 00:03:53,240
+Ý tôi là anh có thể làm được mọi thứ.
+
+55
+00:03:53,240 --> 00:03:56,960
+Bạn có thể biến nó thành J, bạn có thể biến nó thành L bất cứ thứ gì bạn muốn.
+
+56
+00:03:57,000 --> 00:04:01,720
+Nhưng chúng tôi đã nói với nó khi phím bấm, gọi chức năng đá.
+
+57
+00:04:01,880 --> 00:04:09,720
+Bây giờ nếu bạn có những trên phím bấm và phương pháp mà bạn đang sử dụng bàn phím và bạn muốn
+
+58
+00:04:09,720 --> 00:04:15,520
+chương trình để chờ phím cần nhấn, sau đó chúng tôi cần chức năng khác ở đây được gọi là chấm.
+
+59
+00:04:15,520 --> 00:04:16,200
+Nghe này.
+
+60
+00:04:16,200 --> 00:04:21,560
+Và về cơ bản những gì này làm là nó chỉ có chương trình sẽ liên tục chờ đợi cho một phím để được nhấn.
+
+61
+00:04:21,560 --> 00:04:26,000
+Và nếu một phím được nhấn sau đó nó nhận ra nó và nó sẽ chạy chức năng này.
+
+62
+00:04:26,000 --> 00:04:33,120
+Vì vậy, không có điều này, chương trình của chúng tôi sẽ không bận tâm lắng nghe cho bất kỳ phím và nó sẽ hầu như có thể
+
+63
+00:04:33,320 --> 00:04:34,240
+Tai nạn.
+
+64
+00:04:34,800 --> 00:04:37,960
+Và một điều khác mà bạn nên luôn luôn có là chương trình của bạn.
+
+65
+00:04:37,960 --> 00:04:39,290
+Là đường này trên đây.
+
+66
+00:04:39,290 --> 00:04:45,330
+Và dòng này về cơ bản là luôn luôn trong dòng cuối cùng của chương trình của bạn, và nó cần nó để
+
+67
+00:04:45,490 --> 00:04:46,170
+Chạy đi.
+
+68
+00:04:51,130 --> 00:04:53,730
+Tôi đang nhấn bàn phím K ngay trên màn hình.
+
+69
+00:04:53,730 --> 00:04:56,730
+Và như các bạn thấy, quả bóng của chúng ta đã tiến về phía trước.
+
+70
+00:04:56,730 --> 00:04:59,050
+Nên lần đó tôi đã bỏ lỡ.
+
+71
+00:04:59,330 --> 00:05:04,930
+Uh, và sau đó điều khác mà chúng tôi định nghĩa trong chương trình của chúng tôi rõ ràng là di chuyển rùa lên và
+
+72
+00:05:04,930 --> 00:05:05,090
+Xuống.
+
+73
+00:05:05,090 --> 00:05:07,450
+Vì vậy, nếu tôi nhấn phím xuống, nó sẽ làm điều đó.
+
+74
+00:05:07,690 --> 00:05:10,690
+Nếu tôi nhấn phím lên nó sẽ làm điều đó.
+
+75
+00:05:11,210 --> 00:05:18,170
+Vì vậy, về cơ bản tất cả những gì chúng tôi có là chúng tôi có thể đá với K và chúng tôi có thể di chuyển rùa lên và xuống để cố gắng và
+
+76
+00:05:18,210 --> 00:05:20,690
+Giữ quả bóng với chìa khóa lên xuống.
+
+77
+00:05:20,890 --> 00:05:23,770
+Vì vậy, bạn có thể tiếp tục làm điều này bao nhiêu lần bạn muốn.
+
+78
+00:05:24,570 --> 00:05:25,930
+Đây có vẻ là một trò chơi vui.
+
+79
+00:05:25,930 --> 00:05:28,050
+Cái này chắc chắn sẽ bán chạy nhất.
+
+80
+00:05:28,050 --> 00:05:31,170
+Tôi chắc các bạn sẽ kiếm được rất nhiều tiền với trò chơi này.
+
+81
+00:05:31,370 --> 00:05:34,130
+Nhưng phải, và một khi đã xong, bạn nhấn nút thoát ra.
+
+82
+00:05:34,130 --> 00:05:37,330
+Và vâng, chúng ta đã bắt đầu một trò chơi.
+
+83
+00:05:37,570 --> 00:05:43,570
+Tất cả những gì còn lại để làm bây giờ là làm cho nó trông đẹp hơn một chút, thêm một lĩnh vực và làm rằng chúng tôi sẽ
+
+84
+00:05:43,570 --> 00:05:48,930
+Chỉ cho bạn cách sử dụng các vòng lặp trong nó và tất cả các loại thú vị.
+
