@@ -1,0 +1,524 @@
+1
+00:00:00,080 --> 00:00:05,930
+So we are at stage three, which is polishing the game, and this is where we make sure everything looks
+
+2
+00:00:05,930 --> 00:00:12,530
+nice by adding animations and music, sound and etc. but as I said, this is quite an exciting stage
+
+3
+00:00:12,530 --> 00:00:15,200
+as you get to see your game really come to life.
+
+4
+00:00:15,620 --> 00:00:20,600
+Now this stage can take a short amount of time or it can be a lot of time.
+
+5
+00:00:20,600 --> 00:00:24,380
+It all depends on how nice you want your game to look and how much you want to play.
+
+6
+00:00:24,380 --> 00:00:30,050
+But it's certainly true that having nice graphics and sound can go a long way to really improving your
+
+7
+00:00:30,050 --> 00:00:34,610
+game, so it's important to make sure you give this stage some real love.
+
+8
+00:00:35,190 --> 00:00:36,480
+Okay, let's get going.
+
+9
+00:00:37,170 --> 00:00:42,900
+Looking at this game, the first thing that I don't like is the size of the ball.
+
+10
+00:00:43,080 --> 00:00:44,790
+So let's make it smaller.
+
+11
+00:00:45,120 --> 00:00:47,850
+Yeah, let's set its size to 80%.
+
+12
+00:00:48,150 --> 00:00:48,390
+Right.
+
+13
+00:00:48,390 --> 00:00:49,260
+That looks better.
+
+14
+00:00:49,590 --> 00:00:54,660
+Now the second thing that needs improvement is how our main character just sort of kind of like floats
+
+15
+00:00:54,660 --> 00:00:59,130
+left and right while he should actually be moving his legs.
+
+16
+00:00:59,980 --> 00:01:05,080
+Now this is where we will really get a better understanding of costumes.
+
+17
+00:01:05,110 --> 00:01:12,190
+So clicking on our Ben two sprite which has the legs, I want to make it appear like his legs are moving.
+
+18
+00:01:12,800 --> 00:01:14,900
+So we can click on costumes.
+
+19
+00:01:15,350 --> 00:01:19,880
+And here the first thing we need to do is get rid of these other costumes as we don't need them and
+
+20
+00:01:19,880 --> 00:01:21,710
+they're just going to mess up the animation we want to create.
+
+21
+00:01:22,740 --> 00:01:27,480
+Now, if you right click on our first costume, you will see you can duplicate it.
+
+22
+00:01:28,050 --> 00:01:29,160
+Now we have two of them.
+
+23
+00:01:29,340 --> 00:01:32,640
+And this is where the fun world of animation begins.
+
+24
+00:01:32,670 --> 00:01:37,740
+So clicking on the select tool we can just select just the legs.
+
+25
+00:01:38,160 --> 00:01:42,450
+And below here you can see we are able to rotate the legs.
+
+26
+00:01:42,480 --> 00:01:49,320
+So because we want it to look like it's running we will have a shift left and then shift right.
+
+27
+00:01:49,830 --> 00:01:55,470
+So now for the tedious part, rotate it just a bit more to the left and center it.
+
+28
+00:01:56,310 --> 00:02:05,550
+Now duplicate the sprite, select the legs again, rotate them, center them and rinse and repeat.
+
+29
+00:02:07,960 --> 00:02:14,890
+And when we get to about this angle, we're going to start shifting the legs to the right again.
+
+30
+00:02:14,890 --> 00:02:16,900
+Rinse and repeat.
+
+31
+00:02:17,970 --> 00:02:18,390
+Now.
+
+32
+00:02:18,390 --> 00:02:21,540
+When the legs reach the far right, move it back one more time.
+
+33
+00:02:21,540 --> 00:02:24,900
+This way we have a seamless animation.
+
+34
+00:02:25,320 --> 00:02:30,270
+Now, although we now have the special animation, we still need the code to make it work.
+
+35
+00:02:30,270 --> 00:02:32,640
+So moving back to our code tab.
+
+36
+00:02:32,760 --> 00:02:39,780
+Yeah, we could start writing the code, or we could be smart and realize that the code for our original
+
+37
+00:02:39,780 --> 00:02:45,840
+bin is perfect for Ben two, so simply drag it over and then remove all these unnecessary blocks.
+
+38
+00:02:46,870 --> 00:02:51,190
+All we have to do now is put the next column into each of these conditional checks.
+
+39
+00:02:51,190 --> 00:02:54,670
+Meaning if we click left or right, it will change the costume.
+
+40
+00:02:54,730 --> 00:03:00,820
+So if we play the game now, notice how much better this is, how much more realistic it looks.
+
+41
+00:03:00,820 --> 00:03:03,520
+It shows you the power of animation.
+
+42
+00:03:03,520 --> 00:03:08,080
+And even if you wanted to, we could have made the body even rotate a bit.
+
+43
+00:03:08,350 --> 00:03:09,940
+You can give that a try if you want.
+
+44
+00:03:11,140 --> 00:03:14,650
+But on to the next thing, which is the ball.
+
+45
+00:03:15,240 --> 00:03:18,060
+And here there are a few improvements I want to make.
+
+46
+00:03:18,060 --> 00:03:24,480
+Firstly, I want it to play a bouncing sound when Ben hits the ball and a referee whistle when it hits
+
+47
+00:03:24,480 --> 00:03:25,230
+the ground.
+
+48
+00:03:25,530 --> 00:03:29,700
+So moving over to our sound group we can choose the start sound.
+
+49
+00:03:29,700 --> 00:03:30,240
+Also.
+
+50
+00:03:30,240 --> 00:03:35,490
+As a side note, the difference between these two is this one will play the sound until it finishes
+
+51
+00:03:35,490 --> 00:03:37,290
+before moving to the next code block.
+
+52
+00:03:37,290 --> 00:03:43,770
+Kind of like a wait block while this one won't interfere, so this one works better in our case, as
+
+53
+00:03:43,770 --> 00:03:47,820
+we want to ensure it doesn't interfere with our code while the sound is playing.
+
+54
+00:03:48,350 --> 00:03:49,280
+That's it.
+
+55
+00:03:49,310 --> 00:03:54,380
+If our ball touches Ben, we wanted to play the sound so we can add it here.
+
+56
+00:03:55,200 --> 00:03:56,880
+Next for the referee sound.
+
+57
+00:03:56,880 --> 00:04:00,750
+You will see we don't have it on the sprite, so we need to add it.
+
+58
+00:04:00,750 --> 00:04:02,940
+So going into the sound tab.
+
+59
+00:04:03,830 --> 00:04:07,220
+We can just click this button here and just search ref.
+
+60
+00:04:07,220 --> 00:04:08,360
+And here it is.
+
+61
+00:04:09,090 --> 00:04:14,610
+And now with it added to our sprite, you can see we can now select it in our code.
+
+62
+00:04:14,610 --> 00:04:19,140
+And again, logically, this should sound when our game ends.
+
+63
+00:04:19,140 --> 00:04:22,800
+So we can add it right here before the stop all.
+
+64
+00:04:23,280 --> 00:04:29,070
+Although when we play the game you might be a bit disappointed because although our ball bounce sound
+
+65
+00:04:29,070 --> 00:04:30,630
+works, the whistle does not.
+
+66
+00:04:30,840 --> 00:04:37,230
+And well, as I just said, this sound block will play until it's done, while this sound block will
+
+67
+00:04:37,230 --> 00:04:39,780
+play and execute the next code.
+
+68
+00:04:39,780 --> 00:04:43,800
+So we with a stop all is the next block.
+
+69
+00:04:43,800 --> 00:04:48,570
+The sound won't play all the way through, so let's switch this out for the other block.
+
+70
+00:04:49,360 --> 00:04:50,560
+And there you have it.
+
+71
+00:04:50,560 --> 00:04:51,640
+That works.
+
+72
+00:04:51,880 --> 00:04:58,000
+Now, with both the sounds added, the last thing I want to do for the ball is to have it look like
+
+73
+00:04:58,000 --> 00:05:02,080
+it is rotating in the air, instead of just like staying static like it is.
+
+74
+00:05:02,560 --> 00:05:07,330
+And for this, we need to go back to the costumes, but this time for the ball.
+
+75
+00:05:07,540 --> 00:05:09,370
+I bet you can figure this out.
+
+76
+00:05:09,430 --> 00:05:10,960
+So why don't you pause the video?
+
+77
+00:05:10,960 --> 00:05:12,670
+You've just seen what we've done already.
+
+78
+00:05:12,670 --> 00:05:17,980
+Pause the video and see if you can make the ball look like it's rotating.
+
+79
+00:05:19,490 --> 00:05:20,060
+Right.
+
+80
+00:05:20,060 --> 00:05:23,930
+Let me show you how you could do it if you haven't already figured it out, which I bet you did.
+
+81
+00:05:24,290 --> 00:05:28,880
+As you can see, we only have one costume here, so we need to make the animation ourselves.
+
+82
+00:05:28,880 --> 00:05:34,820
+So here, just like with our legs, we're going to need to duplicate it, then select it, rotate it
+
+83
+00:05:34,820 --> 00:05:37,940
+a little and select duplicate.
+
+84
+00:05:37,940 --> 00:05:39,290
+Rotate a little.
+
+85
+00:05:39,290 --> 00:05:41,960
+And I'm sure you can see where this is going.
+
+86
+00:05:41,960 --> 00:05:46,580
+But basically we need to keep rotating until our ball gets back to the position it started at.
+
+87
+00:05:46,880 --> 00:05:51,710
+So through the power of editing I'm going to fast forward this process.
+
+88
+00:05:51,710 --> 00:05:55,700
+But unfortunately for you this is no such fast forward process.
+
+89
+00:05:55,700 --> 00:05:59,390
+But it shouldn't take too long for you to continue doing this.
+
+90
+00:06:00,300 --> 00:06:01,470
+Well, there you have it.
+
+91
+00:06:01,500 --> 00:06:06,300
+As you can see, we have all these costumes that come together to form a perfect loop.
+
+92
+00:06:06,300 --> 00:06:12,450
+So if we go back into our code, we can easily implement this just by sticking the next costume in our
+
+93
+00:06:12,450 --> 00:06:13,200
+forever loop.
+
+94
+00:06:13,200 --> 00:06:17,190
+And when we play, look at how much more realistic this looks.
+
+95
+00:06:18,030 --> 00:06:19,920
+And now we're on to our last touch up.
+
+96
+00:06:21,060 --> 00:06:27,240
+And for this, we can move over to our backdrop and here to make the game really feel more alive.
+
+97
+00:06:27,240 --> 00:06:32,640
+What I want to do is animate the background by having flashing lights in the stadium.
+
+98
+00:06:33,320 --> 00:06:34,370
+So you know the drill.
+
+99
+00:06:34,460 --> 00:06:35,930
+Let's go to our backdrop.
+
+100
+00:06:36,320 --> 00:06:37,670
+We can delete this one.
+
+101
+00:06:38,090 --> 00:06:42,380
+And now this time I'm going to first duplicate the original three times.
+
+102
+00:06:42,380 --> 00:06:44,840
+So we have four backdrops in total.
+
+103
+00:06:45,520 --> 00:06:49,180
+So for the smarting light effect, it's just huge, easy to figure.
+
+104
+00:06:49,180 --> 00:06:52,630
+All we need to do is how this tool work allows us to create.
+
+105
+00:06:52,630 --> 00:06:53,470
+So what?
+
+106
+00:06:54,150 --> 00:06:58,710
+Then color the circle white by clicking here and dragging the slider.
+
+107
+00:06:58,980 --> 00:07:03,420
+And now, as you can see, we are now able to draw these white circles.
+
+108
+00:07:03,870 --> 00:07:09,720
+So what I'll do is cover some of these circles with white to make them look like flashing lights.
+
+109
+00:07:09,990 --> 00:07:17,340
+A quick tip you can zoom in by just clicking here, and you can also resize and reposition your circle.
+
+110
+00:07:18,000 --> 00:07:23,370
+So now I will go through each of these costumes and cover some circles just at random.
+
+111
+00:07:24,130 --> 00:07:24,460
+Okay.
+
+112
+00:07:24,460 --> 00:07:25,000
+Done.
+
+113
+00:07:25,000 --> 00:07:30,070
+Just like before, we can use a forever and next costume or backdrop in this case.
+
+114
+00:07:32,630 --> 00:07:35,570
+Okay, that's definitely a bit much.
+
+115
+00:07:35,570 --> 00:07:41,030
+So to make it less crazy, let's bring in a, you guessed it, a white block.
+
+116
+00:07:41,030 --> 00:07:45,050
+And now we can just use something small like 0.1 seconds.
+
+117
+00:07:45,410 --> 00:07:46,790
+That's much better.
+
+118
+00:07:46,790 --> 00:07:49,700
+So now for the final touch, some gay music.
+
+119
+00:07:49,700 --> 00:07:55,550
+And for this we can just go into the sound tab, add a new sound, and here you can choose whatever
+
+120
+00:07:55,550 --> 00:07:57,620
+you like, but make sure it's a loop.
+
+121
+00:07:58,130 --> 00:07:59,030
+For this game.
+
+122
+00:07:59,030 --> 00:08:01,370
+The video game two sound works all right.
+
+123
+00:08:03,210 --> 00:08:09,660
+Now going back to the code, we can duplicate the script because we don't want a wait statement in here
+
+124
+00:08:09,900 --> 00:08:13,800
+and just add the sound in and change it to Video Game two.
+
+125
+00:08:14,780 --> 00:08:17,870
+And that, my friends, is it.
+
+126
+00:08:17,870 --> 00:08:19,970
+Our game is done.
+
+127
+00:08:20,000 --> 00:08:21,320
+It's polished.
+
+128
+00:08:21,320 --> 00:08:23,300
+It's where we want it to be.
+
+129
+00:08:23,300 --> 00:08:30,740
+At this stage, I'm sure you can take it even further, but for now, just appreciate where it's at
+
+130
+00:08:30,740 --> 00:08:36,890
+and the amount of subtle detail and animations that got this to where it is.
+
+131
+00:08:36,890 --> 00:08:43,670
+Great work, enjoy your game and even more the fact that you are a coder.
+
