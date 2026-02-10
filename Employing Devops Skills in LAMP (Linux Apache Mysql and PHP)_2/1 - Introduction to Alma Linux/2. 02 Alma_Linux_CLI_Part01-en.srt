@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:09,360
+ So we back again now and we start to implement the exciting part which is using
+
+2
+00:00:09,360 --> 00:00:20,240
+ the comment prompt or the CLI. For now, as you recall in our last video, when we
+
+3
+00:00:20,240 --> 00:00:25,840
+ want to use IP addresses or we configure the static IP address, if I want to
+
+4
+00:00:25,840 --> 00:00:33,520
+ seize IP address that I have configured, which was 120, I need to type either the
+
+5
+00:00:33,520 --> 00:00:42,640
+ legacy comment, which is if config. Okay, this is the legacy comment, or there is the
+
+6
+00:00:42,640 --> 00:00:47,440
+ new more comment, which is actually I prefer it because it is very simple. You
+
+7
+00:00:47,440 --> 00:00:56,160
+ can type IP space A. If you can see here, it doesn't matter the loop back
+
+8
+00:00:56,160 --> 00:01:04,520
+ interface, since it is a logical interface, no need to use it or configure it.
+
+9
+00:01:04,520 --> 00:01:10,960
+ This is actually the physical interface starting with DNS, okay, and this is
+
+10
+00:01:10,960 --> 00:01:21,920
+ our IP address with the subnet mask because it is starting from 0.2 to 5.5.5.5.5.5.0.
+
+11
+00:01:21,920 --> 00:01:28,480
+ Actually, if I want to see the default route or the default route, I need to
+
+12
+00:01:28,480 --> 00:01:35,640
+ issue another comment. If I want to use DNS, I need to issue another one, so IP
+
+13
+00:01:35,640 --> 00:01:42,600
+ route here, as you can see, it is the default route, which is 100.1, it is the static
+
+14
+00:01:42,600 --> 00:01:49,400
+ route that we made or create in the previous video, and if I want to see the
+
+15
+00:01:49,400 --> 00:01:56,000
+ DNS, I need to type get catch file or read file, which is something like in the
+
+16
+00:01:56,000 --> 00:02:03,840
+ windows, which says like host file, it is a file containing all of the naming
+
+17
+00:02:03,840 --> 00:02:08,720
+ servers that I have, the primary and secondary, and if you can remember, we
+
+18
+00:02:08,720 --> 00:02:14,760
+ configured only one DNS, one primary, we didn't configure the secondary DNS, so we
+
+19
+00:02:14,760 --> 00:02:23,920
+ need to type catch, ETC, and resolve, and take care to write it correctly because
+
+20
+00:02:23,920 --> 00:02:31,040
+ it is a sensitive, okay, as you can see here, we have only one name server, which
+
+21
+00:02:31,040 --> 00:02:41,400
+ is 888 of Google. So great, let's start now with setting, try to check first host
+
+22
+00:02:41,400 --> 00:02:48,920
+ name, by issuing this comment, host name, control, okay, let's see what the
+
+23
+00:02:48,920 --> 00:02:55,240
+ server is named, okay, by default, there is no static host name, as you can see
+
+24
+00:02:55,240 --> 00:03:03,440
+ here, and let's try to set the host name by using the comment line, so we need
+
+25
+00:03:03,440 --> 00:03:10,080
+ to type the sudo, because I need the super user privilege to make the change
+
+26
+00:03:10,080 --> 00:03:20,520
+ like that, and we'll type host name, control, and we'll type, for example, here set
+
+27
+00:03:20,520 --> 00:03:32,960
+ host name, and make it devops server, for example, and when I press enter, need to
+
+28
+00:03:32,960 --> 00:03:44,120
+ type my password, as expected, and no more is not in the sudo, okay, and this is
+
+29
+00:03:44,120 --> 00:03:52,160
+ very normal, I need to add this user to be in the sudo or file, so that he can make
+
+30
+00:03:52,160 --> 00:03:59,520
+ or use the super user privilege, there is a legacy method to add it to the super
+
+31
+00:03:59,520 --> 00:04:04,680
+ user file, and there is a newer method to add it to the wheel group, which is
+
+32
+00:04:04,680 --> 00:04:10,840
+ contained in the sudo or file, so let's start with, or let's make it by using
+
+33
+00:04:10,840 --> 00:04:16,600
+ the newer method, by adding it to the wheel groups, so first I need to
+
+34
+00:04:16,600 --> 00:04:21,980
+ switch user, need to switch of course to the rules, let's type the password
+
+35
+00:04:21,980 --> 00:04:30,600
+ of the rules, okay, as you can see now, the comment changes from this one,
+
+36
+00:04:30,600 --> 00:04:40,760
+ $2 this one of hashtag, because now I am an administrator, okay, perfect, so to add the user,
+
+37
+00:04:40,760 --> 00:04:48,960
+ I need to type sudo of course, and I need to type this comment user mode, user
+
+38
+00:04:48,960 --> 00:05:01,160
+ modification -a, g to add is to some group, and this group will be named wheel, okay, and
+
+39
+00:05:01,160 --> 00:05:11,640
+ let's type the name of this, let's click on enter, and boom, now we are, or this
+
+40
+00:05:11,640 --> 00:05:20,840
+ user is in the sudo word, but to try to execute any comment, I need to log on,
+
+41
+00:05:20,840 --> 00:05:26,880
+ log off and log on, so let's do it quickly, I will log off and log on, and try to
+
+42
+00:05:26,880 --> 00:05:47,760
+ execute the comment again.
+
+43
+00:05:47,760 --> 00:06:15,000
+ Okay, here I am back again, I will open the terminal, and let's type the comment again,
+
+44
+00:06:15,000 --> 00:06:23,640
+ okay, I can search, I can type it again from the history by using the apparel, so do host
+
+45
+00:06:23,640 --> 00:06:38,040
+ name, and let's set it to the ops server, okay, now we should be okay, so if I want to
+
+46
+00:06:38,040 --> 00:06:45,400
+ validate it, I can type host name, control, and static host name is successfully changed
+
+47
+00:06:45,400 --> 00:06:53,920
+ as you can see now, perfect, so now we have changed the host name after adding the user
+
+48
+00:06:53,920 --> 00:07:01,480
+ and the model successfully to the sudo word file, so let's move with another task or another
+
+49
+00:07:01,480 --> 00:07:10,720
+ tutorial, so now we need to make, or make sure that this server is protected by using
+
+50
+00:07:10,720 --> 00:07:16,840
+ the firewall, so the first thing to do here is to make sure that the firewall, it should
+
+51
+00:07:16,840 --> 00:07:21,640
+ be by default installed, but anyway, we will install it, and if it is already installed
+
+52
+00:07:21,640 --> 00:07:33,880
+ it will inform us, okay, so to install it, we need to type the sudo, system, control, and
+
+53
+00:07:33,880 --> 00:07:54,780
+ we'll type firewall, daemon, to install the firewall, daemon, sorry, just the comment, it
+
+54
+00:07:54,780 --> 00:08:07,320
+ is a missed typo, so I need to type it correctly, the error here that I need to use dnf package
+
+55
+00:08:07,320 --> 00:08:31,940
+ manager, to install it, set my bed, okay, so to the nf, this is the default package manager
+
+56
+00:08:31,940 --> 00:08:42,780
+ okay, so now, as you can see here, this package, okay, is already installed, if it's not
+
+57
+00:08:42,780 --> 00:08:49,040
+ installed, it will take some time, maybe 5 to 10 minutes until it is installed, and there
+
+58
+00:08:49,040 --> 00:08:58,180
+ is no dependencies, issues, and everything is okay, perfect, so now let's clear the screen,
+
+59
+00:08:58,180 --> 00:09:07,100
+ let's now try to make sure that the firewall daemon is run, it's okay, so let's type
+
+60
+00:09:07,100 --> 00:09:36,840
+ sudo, system, control, and let's enable first firewall d, okay, sudo, system, system,
+
+61
+00:09:36,840 --> 00:09:50,180
+ start, not enable, let's start it and then enable it later, okay, system, ctl, ctl, not
+
+62
+00:09:50,180 --> 00:10:00,960
+ lt, this is a case sensitive, okay, so system, control, start firewall daemon, and let's
+
+63
+00:10:00,960 --> 00:10:12,840
+ enable it after that, okay, so you should now be cool, and the firewall daemon should
+
+64
+00:10:12,840 --> 00:10:19,360
+ run successfully, if I want to make sure that it is okay, so I need to type the same
+
+65
+00:10:19,360 --> 00:10:31,320
+ command of system, control, and status, and now it's okay, we can see that it is active and
+
+66
+00:10:31,320 --> 00:10:39,480
+ run, okay, that's perfect, and if we show the process IDs runs in, so I'm everything, okay,
+
+67
+00:10:39,480 --> 00:10:47,360
+ that's perfect, so now let's try after make sure that the firewall is installed and configured,
+
+68
+00:10:47,360 --> 00:10:53,400
+ let's do some basic configuration, what basic configuration we can do, actually we can,
+
+69
+00:10:53,400 --> 00:11:00,600
+ after we check that the firewall is okay, we have different type of zones, let's check
+
+70
+00:11:00,600 --> 00:11:07,360
+ what is available zones in firewall, for example I may be at work, I need public network,
+
+71
+00:11:07,360 --> 00:11:14,320
+ if I have outside in airports or any public place, for work, if I am in the work, I need
+
+72
+00:11:14,320 --> 00:11:21,600
+ to access some interfaces, maybe use the special access, where my mom's work network,
+
+73
+00:11:21,600 --> 00:11:29,880
+ and also if I am at home, I need another zone, okay, so to list the zones, I need to
+
+74
+00:11:29,880 --> 00:11:42,280
+ type this command, okay, it would say that these, these are all the zones that I have from
+
+75
+00:11:42,280 --> 00:11:51,000
+ internal trusted block, it is, okay, so these are all the zones that I have, all types
+
+76
+00:11:51,000 --> 00:12:03,040
+ of, so by default it is already made that we have a default zone of trusted, okay, or the
+
+77
+00:12:03,040 --> 00:12:11,240
+ public, sorry, so I can set any interface to be created, to be set automatic to the public
+
+78
+00:12:11,240 --> 00:12:19,720
+ or untrusted zone, okay, this is the interface, which you can see, not secure, because
+
+79
+00:12:19,720 --> 00:12:28,680
+ it is failing the internet, it is the public one, the trusted internal, are the one with
+
+80
+00:12:28,680 --> 00:12:36,680
+ more security, B and Z are the zones or can be the zone between the two firewalls, for
+
+81
+00:12:36,680 --> 00:12:46,200
+ example, so let's set the default zone, okay, this already set the public to be the default
+
+82
+00:12:46,200 --> 00:12:53,600
+ zone for any network interface that I have, okay, perfect, so now let's configure or allow
+
+83
+00:12:53,600 --> 00:13:00,160
+ some connectivity, I want to allow some connectivity to the server to maybe access it,
+
+84
+00:13:00,160 --> 00:13:11,120
+ supposing that I installed it using only a common prompt or server core, I don't have access
+
+85
+00:13:11,120 --> 00:13:19,960
+ to the GUI, so I need to set special access to it like SSH to come to make some common,
+
+86
+00:13:19,960 --> 00:13:26,200
+ execute some common, run some comments on it, I need maybe to upload some files, so I need
+
+87
+00:13:26,200 --> 00:13:36,320
+ to enable protocols like FTP, maybe I need to install some services like Genix, Apache,
+
+88
+00:13:36,320 --> 00:13:48,680
+ any web server on it, I need maybe to use any backend services or I install maybe SQL
+
+89
+00:13:48,680 --> 00:13:56,000
+ on it, PHP, something like that, so I need maybe SQL access or access to support
+
+90
+00:13:56,000 --> 00:14:00,880
+ 3D to 2D SQL, okay, so we can sum up.
+
