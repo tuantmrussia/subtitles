@@ -1,0 +1,412 @@
+1
+00:00:00,000 --> 00:00:08,900
+ Now, since we have plot code running within our system, this works right out of your directory,
+
+2
+00:00:08,900 --> 00:00:11,100
+ right out of your file system.
+
+3
+00:00:11,100 --> 00:00:17,300
+ If I want to come out of plot code, if I want to shut down plot code from our terminal,
+
+4
+00:00:17,300 --> 00:00:21,240
+ I can simply press Ctrl+C on my keyboard.
+
+5
+00:00:21,240 --> 00:00:26,580
+ Ctrl+C, Ctrl+C, twice, and you have come out of your plot.
+
+6
+00:00:26,580 --> 00:00:31,180
+ Currently, the folder that IMN is user's Hershey.
+
+7
+00:00:31,180 --> 00:00:36,480
+ Now, only thing that we have to take care of is we need to be in the right folder.
+
+8
+00:00:36,480 --> 00:00:41,780
+ So, Claude operates from the file system, you have to be in the right directory
+
+9
+00:00:41,780 --> 00:00:46,680
+ to give it access to all the files present in your file system.
+
+10
+00:00:46,680 --> 00:00:53,880
+ To follow along, just add the path to the folder which contains all of your files.
+
+11
+00:00:53,880 --> 00:01:01,780
+ Now, in this case, I have a chaos folder which contains all sorts of files, folders, as you can see.
+
+12
+00:01:01,780 --> 00:01:10,080
+ Now, you might have your folders where you would have a lot of raw files, different formats,
+
+13
+00:01:10,080 --> 00:01:15,280
+ everything messed up, and you might want to clean up that folder, that directory.
+
+14
+00:01:15,280 --> 00:01:21,180
+ Now, all you need to do is, in your terminal, outside of Claude,
+
+15
+00:01:21,180 --> 00:01:29,380
+ you would write the command CD, and then, the path to the correct folder that you want to clean up.
+
+16
+00:01:29,380 --> 00:01:35,680
+ Now, in my case, I am currently in my root directory, as you can see from here.
+
+17
+00:01:35,680 --> 00:01:42,280
+ I'll say, I want to go into Claude_code_course.
+
+18
+00:01:42,280 --> 00:01:44,380
+ This is the first folder.
+
+19
+00:01:44,380 --> 00:01:51,080
+ So, if you see this present, this is present in Claude_course within this, I have chaos.
+
+20
+00:01:51,080 --> 00:01:56,980
+ So, slash, I have another folder which is called chaos.
+
+21
+00:01:56,980 --> 00:01:58,580
+ I just change the directory.
+
+22
+00:01:58,580 --> 00:02:04,080
+ This means the terminal will now move into this particular directory.
+
+23
+00:02:04,080 --> 00:02:05,280
+ Great.
+
+24
+00:02:05,280 --> 00:02:06,880
+ So, the path has changed.
+
+25
+00:02:06,880 --> 00:02:15,080
+ Now, from within this directory, I'm going to get start Claude_code with the command Claude, I'll hit enter.
+
+26
+00:02:15,080 --> 00:02:21,580
+ Now, Claude is going to work outside of my chaos folder.
+
+27
+00:02:21,580 --> 00:02:23,980
+ This is very important for us.
+
+28
+00:02:23,980 --> 00:02:27,980
+ Now, to check all the files present, these are all the files.
+
+29
+00:02:27,980 --> 00:02:34,180
+ So, I'm writing LS, these are some basic commands, CD is change the folder, change the directory.
+
+30
+00:02:34,180 --> 00:02:38,780
+ LS is for listing all the files that are present in that folder.
+
+31
+00:02:38,780 --> 00:02:48,680
+ So, now, from within this folder, I will run the Claude command so that it has access to all the files present within this folder.
+
+32
+00:02:48,680 --> 00:02:57,080
+ Now, obviously, if I open up Claude from my home or root directory, then also it can access all these files.
+
+33
+00:02:57,080 --> 00:03:02,780
+ But it's better that you open up Claude from within your project folders.
+
+34
+00:03:02,780 --> 00:03:11,280
+ Proceed. Now, here, Claude would have access to all the files in my folder.
+
+35
+00:03:11,280 --> 00:03:20,280
+ So, if I write simply what all files do I have in my folder?
+
+36
+00:03:20,280 --> 00:03:25,780
+ It's going to take some time, go through your entire folder and it will tell you all the files that are present.
+
+37
+00:03:25,780 --> 00:03:31,280
+ So, you can see it has automatically written some shell commands, some terminal commands.
+
+38
+00:03:31,280 --> 00:03:33,280
+ And it is going to give you a list.
+
+39
+00:03:33,280 --> 00:03:35,280
+ So, you can see the breakdown.
+
+40
+00:03:35,280 --> 00:03:37,280
+ Your folder contains these directories.
+
+41
+00:03:37,280 --> 00:03:38,280
+ There are some folders.
+
+42
+00:03:38,280 --> 00:03:40,280
+ As you can see, there are reports.
+
+43
+00:03:40,280 --> 00:03:41,280
+ There are folders.
+
+44
+00:03:41,280 --> 00:03:42,280
+ There are PDF files.
+
+45
+00:03:42,280 --> 00:03:43,280
+ There are some images.
+
+46
+00:03:43,280 --> 00:03:45,280
+ There are some duplicate files.
+
+47
+00:03:45,280 --> 00:04:01,080
+ So, I can say clean up the entire directory by placing the files in their respective / relevant folder.
+
+48
+00:04:01,280 --> 00:04:05,280
+ Now, this should clean up this entire folder.
+
+49
+00:04:05,280 --> 00:04:12,280
+ You would see Claude writing those commands and it will place all of these images into images folder.
+
+50
+00:04:12,280 --> 00:04:17,280
+ The data which has CSV files in the data folder, let's see how it operates.
+
+51
+00:04:17,280 --> 00:04:20,280
+ So, it is going to ask you for permissions.
+
+52
+00:04:20,280 --> 00:04:24,280
+ Either you can give it yes or you can say second option.
+
+53
+00:04:24,280 --> 00:04:28,280
+ You can just toggle it with your up and down key.
+
+54
+00:04:28,280 --> 00:04:31,280
+ So, I have given all the permissions.
+
+55
+00:04:31,280 --> 00:04:36,280
+ Now, it is not going to ask me permissions again for that one single folder.
+
+56
+00:04:36,280 --> 00:04:39,280
+ So, now you can see it has already started cleaning up.
+
+57
+00:04:39,280 --> 00:04:42,280
+ There is one duplicate file as we can see.
+
+58
+00:04:42,280 --> 00:04:47,280
+ And after this, it is asking for one other permission.
+
+59
+00:04:47,280 --> 00:04:50,280
+ Moving all the files, MV is the command.
+
+60
+00:04:50,280 --> 00:04:52,280
+ So, it is doing it all by itself.
+
+61
+00:04:52,280 --> 00:04:55,280
+ We are just texting in plain English.
+
+62
+00:04:55,280 --> 00:04:56,280
+ And there you go.
+
+63
+00:04:56,280 --> 00:04:57,280
+ This is my images folder.
+
+64
+00:04:57,280 --> 00:05:01,280
+ So, all the .png files are here.
+
+65
+00:05:01,280 --> 00:05:06,280
+ JSON files, all the templates.json files have been captured.
+
+66
+00:05:06,280 --> 00:05:08,280
+ Let's check data as well.
+
+67
+00:05:08,280 --> 00:05:13,280
+ .csv.json, the data files are captured in the data folder.
+
+68
+00:05:13,280 --> 00:05:14,280
+ Great.
+
+69
+00:05:14,280 --> 00:05:20,280
+ And lastly, it is now creating a new directory for the rest of the invoices that we had.
+
+70
+00:05:20,280 --> 00:05:24,280
+ So, it has created a new folder, which is called documents.
+
+71
+00:05:24,280 --> 00:05:27,280
+ Within documents, I have this .pdf.
+
+72
+00:05:27,280 --> 00:05:29,280
+ Okay, this is asking for skills.md.
+
+73
+00:05:29,280 --> 00:05:32,280
+ So, it is also creating a document for that.
+
+74
+00:05:32,280 --> 00:05:35,280
+ The only file that was present over there.
+
+75
+00:05:35,280 --> 00:05:37,280
+ So, docs is another folder.
+
+76
+00:05:37,280 --> 00:05:42,280
+ You can always press escape if you want to make some changes.
+
+77
+00:05:42,280 --> 00:05:46,280
+ The root directory is now clean with only organized folders remaining.
+
+78
+00:05:46,280 --> 00:05:47,280
+ Great.
+
+79
+00:05:47,280 --> 00:05:50,280
+ There is one file, which we know.
+
+80
+00:05:50,280 --> 00:05:51,280
+ Let's look at data.
+
+81
+00:05:51,280 --> 00:05:52,280
+ Average ratings.
+
+82
+00:05:52,280 --> 00:05:54,280
+ We know that these are duplicate files.
+
+83
+00:05:54,280 --> 00:06:02,280
+ Can you check and delete duplicates and our data?
+
+84
+00:06:02,280 --> 00:06:08,280
+ Now, it's going to find out which folder contains duplicates, everything on its own.
+
+85
+00:06:08,280 --> 00:06:11,280
+ It's going to clean up your entire mess.
+
+86
+00:06:11,280 --> 00:06:14,280
+ So, think about cleaning up your downloads folder.
+
+87
+00:06:14,280 --> 00:06:16,280
+ This has got all the mess.
+
+88
+00:06:16,280 --> 00:06:18,280
+ This is going to take care of everything.
+
+89
+00:06:18,280 --> 00:06:19,280
+ Let's see.
+
+90
+00:06:19,280 --> 00:06:24,280
+ It is now checking the difference because the names are slightly different,
+
+91
+00:06:24,280 --> 00:06:30,280
+ but it is going to look into the files to actually figure out whether they are duplicates or not.
+
+92
+00:06:30,280 --> 00:06:34,280
+ You can see it has already figured out average reading 1.csv.
+
+93
+00:06:34,280 --> 00:06:36,280
+ This is the duplicate.
+
+94
+00:06:36,280 --> 00:06:38,280
+ It should remove this file from here.
+
+95
+00:06:38,280 --> 00:06:39,280
+ Let's see.
+
+96
+00:06:39,280 --> 00:06:41,280
+ You can see average ratings.
+
+97
+00:06:41,280 --> 00:06:43,280
+ Now, it's all done.
+
+98
+00:06:43,280 --> 00:06:49,280
+ That's how Cloud Code would simply clean up your file system.
+
+99
+00:06:49,280 --> 00:06:51,280
+ This is just the tip of the iceberg.
+
+100
+00:06:51,280 --> 00:06:52,280
+ We've just gone started.
+
+101
+00:06:52,280 --> 00:06:54,280
+ Let's see where this goes.
+
+102
+00:06:54,280 --> 00:06:56,280
+ We have set up Cloud Code within our terminal.
+
+103
+00:06:56,280 --> 00:07:00,280
+ And now, we're going to move on to more complex use cases.
+
