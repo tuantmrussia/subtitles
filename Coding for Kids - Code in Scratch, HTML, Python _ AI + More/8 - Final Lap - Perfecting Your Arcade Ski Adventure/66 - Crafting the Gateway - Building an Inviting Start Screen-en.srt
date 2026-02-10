@@ -1,0 +1,224 @@
+1
+00:00:00,140 --> 00:00:02,240
+So we're almost at the finish line.
+
+2
+00:00:02,240 --> 00:00:05,960
+But to get to the finish line, you need a start line.
+
+3
+00:00:06,050 --> 00:00:09,320
+And that's exactly what we're doing in this lesson.
+
+4
+00:00:09,320 --> 00:00:11,660
+We'll be adding in a start screen.
+
+5
+00:00:12,830 --> 00:00:18,020
+As you know, with our game development workflow, the first thing we need to do is think about how
+
+6
+00:00:18,020 --> 00:00:20,390
+it's going to look and how it's going to work.
+
+7
+00:00:20,810 --> 00:00:24,770
+Thinking about it, what we simply want is a nice looking screen.
+
+8
+00:00:24,770 --> 00:00:27,740
+That is the first thing that appears when we start the game.
+
+9
+00:00:28,430 --> 00:00:35,780
+So with that 30s idea dropped out of the way, we can move on to step two, which is laying out the
+
+10
+00:00:35,780 --> 00:00:36,590
+foundation.
+
+11
+00:00:36,860 --> 00:00:42,170
+So first things first, let's bring in our main backdrop for our start screen.
+
+12
+00:00:42,740 --> 00:00:45,590
+And for this we can use our main stage.
+
+13
+00:00:45,770 --> 00:00:48,920
+So clicking on it and then backdrops.
+
+14
+00:00:48,920 --> 00:00:51,740
+You'll notice that we don't have any backdrops at the moment.
+
+15
+00:00:52,670 --> 00:00:58,730
+However, because we are simulating snow, we are just using blank white backdrop.
+
+16
+00:00:58,730 --> 00:01:00,170
+So keep that in mind.
+
+17
+00:01:00,670 --> 00:01:07,480
+So clicking the import button, then moving to the folder start screen, we can select these two start
+
+18
+00:01:07,480 --> 00:01:10,000
+screen files and hit open.
+
+19
+00:01:11,420 --> 00:01:11,930
+Here.
+
+20
+00:01:11,930 --> 00:01:14,990
+As you can see, we have this animation that flickers.
+
+21
+00:01:14,990 --> 00:01:22,010
+You are here text, but as you can see, is this big empty gap at the bottom of our start screen.
+
+22
+00:01:22,010 --> 00:01:27,440
+So this is where we want to add a nice little animation that plays with trees.
+
+23
+00:01:28,050 --> 00:01:31,860
+So for all these trees, we could technically import them into our background.
+
+24
+00:01:31,860 --> 00:01:37,920
+However, because we want to create a nice layered effect, we are going to make it a new sprite.
+
+25
+00:01:38,970 --> 00:01:45,900
+So again, uploading a new sprite here you'll see we have this tree line sprite over here.
+
+26
+00:01:46,530 --> 00:01:51,780
+So selecting that and hitting open there you can see some nice trees.
+
+27
+00:01:52,620 --> 00:01:57,960
+Now what we want is for these trees to move over to the left and then back to the right, which will
+
+28
+00:01:57,960 --> 00:01:59,160
+create our animation.
+
+29
+00:01:59,370 --> 00:02:05,040
+The only problem, however, is our trees are pretty much the exact size of the screen.
+
+30
+00:02:05,550 --> 00:02:08,100
+So there's little room to move them.
+
+31
+00:02:08,460 --> 00:02:10,680
+So what do we do?
+
+32
+00:02:11,280 --> 00:02:13,320
+Well, we have two options to fix this.
+
+33
+00:02:13,320 --> 00:02:20,130
+We could either scale them up, which would work, but even better, if we move over to the costume
+
+34
+00:02:20,130 --> 00:02:24,330
+editor and click this button Convert to Vector.
+
+35
+00:02:24,810 --> 00:02:33,060
+Selecting this tool, what we can now do is move it all over to the right, copy it, and then paste.
+
+36
+00:02:33,360 --> 00:02:37,140
+And then we can try and get it to somewhat line up.
+
+37
+00:02:37,320 --> 00:02:40,560
+So with this tree line done we can duplicate the sprite.
+
+38
+00:02:40,560 --> 00:02:43,170
+So we can have two tree lines.
+
+39
+00:02:43,930 --> 00:02:46,480
+Now we need to do is add in our start button.
+
+40
+00:02:46,840 --> 00:02:52,360
+Once again hitting upload we can select the start button image.
+
+41
+00:02:52,780 --> 00:02:56,110
+And there you have it a gigantic start button.
+
+42
+00:02:56,140 --> 00:02:57,100
+Great.
+
+43
+00:02:57,340 --> 00:03:04,510
+But before we try write any proper code, let's organize all this so we actually have an idea of what's
+
+44
+00:03:04,510 --> 00:03:05,290
+going on.
+
+45
+00:03:05,890 --> 00:03:08,830
+Firstly, let's fix this start button.
+
+46
+00:03:09,370 --> 00:03:13,840
+I think that here 25 is a much more realistic size.
+
+47
+00:03:14,290 --> 00:03:17,650
+So with that you can just move it to the bottom here.
+
+48
+00:03:17,890 --> 00:03:22,930
+And finally for our trees we want it to be something like this.
+
+49
+00:03:22,930 --> 00:03:26,860
+So this tree line should cover this a blank space.
+
+50
+00:03:27,100 --> 00:03:31,240
+And then this bottom tree line needs to be in the very front.
+
+51
+00:03:31,240 --> 00:03:35,680
+So it covers our start button just a bit which gives us a nice layered effect.
+
+52
+00:03:36,460 --> 00:03:38,230
+Well that's basically it for now.
+
+53
+00:03:38,620 --> 00:03:40,150
+Our sprites are imported.
+
+54
+00:03:40,300 --> 00:03:41,860
+Everything is in place.
+
+55
+00:03:41,890 --> 00:03:45,370
+Now all we need to do is get coding.
+
+56
+00:03:45,370 --> 00:03:48,790
+So prepare yourself because it's about to start.
+
