@@ -1,0 +1,628 @@
+1
+00:00:00,000 --> 00:00:08,320
+Chào mừng trở lại. Trong video này, chúng ta sẽ thấy các thư viện kết nối năng động. Về cơ bản,
+
+2
+00:00:08,320 --> 00:00:14,000
+Chúng tôi sẽ gọi nó là một tập tin DRL, và tập tin DRL này sẽ được sử dụng bởi các trạm tấn công
+
+3
+00:00:14,000 --> 00:00:21,960
+Chuyển phần mềm độc hại của họ vào hệ thống cập nhật thành công, vào máy Windows,
+
+4
+00:00:21,960 --> 00:00:29,320
+được chứ? Hãy lấy một ví dụ về DRL trước. Rồi chúng ta sẽ đi.
+
+5
+00:00:29,320 --> 00:00:41,080
+cho một bệnh nhân ADI. Vì vậy, trong một video trước đó, bạn thấy có một tập tin thập phân thực hiện, EXE.
+
+6
+00:00:41,080 --> 00:00:48,560
+Bạn có thể thấy giá trị kỳ diệu 45A và M là nó. Vì vậy, hồ sơ DRL, nó giống như một thư viện
+
+7
+00:00:48,560 --> 00:00:56,440
+Được rồi. Về cơ bản, chúng tôi sẽ nói tập tin này như là một tập tin PE, chỉ có điều không phải là một CR bất kỳ lập trình khác
+
+8
+00:00:56,440 --> 00:01:02,960
+Hồ sơ. Chúng tôi sẽ gọi nó là một tập tin PE chỉ, nhưng loại DRL này có một xuất quan trọng
+
+9
+00:01:02,960 --> 00:01:10,600
+chức năng. Vì vậy, hãy để bạn có một ví dụ của bạn sẽ phát triển một của trình duyệt
+
+10
+00:01:10,600 --> 00:01:16,000
+ứng dụng và ứng dụng trình duyệt cần phải liên lạc với internet.
+
+11
+00:01:16,000 --> 00:01:23,480
+Vì vậy, bạn cần đối mặt với sự mất mát, mất mát, bạn cần đối mặt với nhiều thử thách hơn khi bạn đang phát triển
+
+12
+00:01:23,480 --> 00:01:30,680
+Phải rồi. Vì vậy, bởi vì bạn phải thực hiện rất nhiều giao thức và chức năng để
+
+13
+00:01:30,680 --> 00:01:37,720
+sử dụng nó, okay. Nhưng những gì Microsoft đã làm, Microsoft tạo ra các DRL tùy chỉnh và họ đặt
+
+14
+00:01:37,720 --> 00:01:47,640
+trong các thư mục hệ thống hệ thống kiểu Windows như bạn làm. Vì vậy, bạn cần phải sử dụng DRL,
+
+15
+00:01:47,640 --> 00:01:53,680
+Được rồi. Vì vậy, đây là một cách đơn giản, họ đã tạo ra một DRL cho bạn, đã được tạo ra mỗi
+
+16
+00:01:53,680 --> 00:02:01,520
+điều khiển mọi mật mã cho bạn. Vì vậy, bạn cần phải sử dụng rằng DRL và chức năng và bạn có thể
+
+17
+00:02:01,520 --> 00:02:06,320
+phát triển một ứng dụng trình duyệt đơn giản, okay. Vì vậy, nếu có, nếu bạn cần phát triển
+
+18
+00:02:06,320 --> 00:02:11,640
+một ứng dụng trình duyệt với hàng ngàn dòng mã. Vì vậy, nếu Microsoft có tùy chỉnh
+
+19
+00:02:11,640 --> 00:02:17,480
+DRLs đã được đặt trên Windows 32, vì vậy mã của bạn sẽ được giảm xuống
+
+20
+00:02:17,480 --> 00:02:23,160
+300 hay 400 dòng. Vì vậy, Microsoft đã chứa tất cả các mã và chức năng,
+
+21
+00:02:23,160 --> 00:02:29,880
+được chứ? Đó gọi là động lực
+
+22
+00:02:29,880 --> 00:02:36,600
+Tập tin thư viện liên kết, đó là tập tin thư viện, chúng tôi đang sử dụng tập tin thư viện đó cho ứng dụng của chúng tôi
+
+23
+00:02:36,600 --> 00:02:42,440
+cho một số chức năng, okay. Vì vậy, hãy để tôi đưa ra một vài ví dụ, có một hạt nhân 32.0
+
+24
+00:02:42,440 --> 00:02:51,080
+DRL, nó nằm dưới hệ thống 32 thư mục. Thành phố này có chức năng đọc một bộ nhớ,
+
+25
+00:02:51,080 --> 00:02:58,840
+Viết một bộ nhớ và tạo ra một không gian trong bộ nhớ và mỗi chức năng APA, APA,
+
+26
+00:02:58,840 --> 00:03:07,800
+được rồi. Vì vậy, tiếp theo chúng tôi có AD, APA 32.0 DRL. Vì vậy, nếu bạn muốn mã hóa
+
+27
+00:03:07,800 --> 00:03:13,400
+Bất kỳ dữ liệu trong máy của bạn, vì vậy này DRL sẽ có, vì vậy nếu bạn muốn phát triển một phần mềm
+
+28
+00:03:13,400 --> 00:03:19,120
+ứng dụng như vậy cần để mã hóa dữ liệu của bạn bằng tay, bạn có thể sử dụng này DRL, bạn không
+
+29
+00:03:19,120 --> 00:03:25,000
+Cần phải tự mã tất cả mọi thứ, bạn có thể sử dụng này DRL và bạn có thể sử dụng các chức năng DRL
+
+30
+00:03:25,000 --> 00:03:30,360
+được chứ? Và nếu bạn cần phát triển một ứng dụng liều lượng, bạn có một URL
+
+31
+00:03:30,360 --> 00:03:35,160
+Ngày, do đó, bạn có một URL trên DRL sẽ giúp bạn tải về các tập tin, tải lên các tập tin,
+
+32
+00:03:35,160 --> 00:03:41,800
+nén mạng, làm việc với URL, mọi thứ, mọi thứ. Vì vậy, bạn không cần phải làm
+
+33
+00:03:41,800 --> 00:03:48,200
+nhưng Microsoft đã tạo ra tất cả mọi thứ và bạn phải sử dụng chương trình đó và bạn có thể phát triển
+
+34
+00:03:48,200 --> 00:03:55,880
+Đơn xin việc của anh, nên sẽ dễ thôi. Vì vậy, mọi, mọi lập trình viên hệ thống cần phải hiểu,
+
+35
+00:03:55,880 --> 00:04:00,440
+Họ có một ý tưởng về loại DRL này ở Microsoft, okay.
+
+36
+00:04:00,440 --> 00:04:13,480
+Vì vậy, hãy lấy một ví dụ đơn giản của DRL đầu tiên, chúng ta hãy, hãy đi vào máy Windows và chúng tôi sẽ
+
+37
+00:04:15,400 --> 00:04:32,920
+đi tìm cửa sổ. Hãy tìm hệ thống 34, và ở đây bạn có thể thấy rất nhiều tập tin, có rất nhiều
+
+38
+00:04:32,920 --> 00:04:51,480
+Thành phố DRL sẽ được đặt ở đây, để tôi tìm hạt nhân, vì vậy bạn có thể thấy có một hạt nhân 30 để
+
+39
+00:04:51,480 --> 00:05:01,560
+DRL thua ở đây, chúng ta đã bàn rồi. Vì vậy, hãy để chúng tôi sẽ kéo này DRL vào T tải, để tôi
+
+40
+00:05:01,560 --> 00:05:15,560
+tạo ra một thứ khác, hãy để tôi tải một nhà thám hiểm khác và chúng tôi sẽ tải dữ liệu bên trong DDR của chúng tôi và chúng tôi sẽ
+
+41
+00:05:15,560 --> 00:05:25,000
+Xem DL sẽ như thế nào cho định dạng của DRL's và tất cả, okay. Hãy lấy, hãy nạp hạt nhân
+
+42
+00:05:25,640 --> 00:05:51,080
+Cái thứ này, hạt nhân 30 đến DRL, hãy đặt nó vào DDR của chúng ta. Vì vậy, hôm nay bạn đã nhìn thấy
+
+43
+00:05:51,080 --> 00:05:57,560
+giống như loại dữ liệu trong tập tin exe, bạn có thể nhìn thấy cùng một dữ liệu với định dạng thư viện, tôi đã
+
+44
+00:05:57,560 --> 00:06:06,200
+nói rằng DRL cũng là một tập tin thực hiện được, do đó, nó sẽ được trong thư viện và các con số ma thuật sẽ
+
+45
+00:06:06,200 --> 00:06:13,400
+4D và 5A của đó và chúng tôi có đầu đề khác và đầu trống như bạn có thể thấy
+
+46
+00:06:13,400 --> 00:06:19,720
+Chỉ tới định dạng tập tin thực hiện được của PE và chúng tôi đã thấy một phần văn bản, phần tài nguyên,
+
+47
+00:06:19,720 --> 00:06:27,400
+Chúng ta có những gì cơ bản là gì, okay. Hãy xem qua các hàm nhập khẩu,
+
+48
+00:06:27,400 --> 00:06:41,480
+Hiện tại trong DRL, chúng tôi có thể thấy rất nhiều chức năng ở đây và rất nhiều xuất khẩu và nhập khẩu
+
+49
+00:06:41,480 --> 00:06:52,920
+chức năng từ đây. Vì vậy, đây là tất cả các chức năng sẽ được sử dụng cho một số thứ,
+
+50
+00:06:52,920 --> 00:07:00,040
+Vì vậy, bạn có thể thấy tạo ra một đối tượng công việc, tạo ra một cái gì đó, một cái gì đó tạo ra quá trình, chúng ta cần sử dụng nó
+
+51
+00:07:00,040 --> 00:07:13,720
+vô hướng khi bạn cần tạo ra một quá trình, tạo ra một sợi chỉ từ xa, vì vậy chúng tôi sẽ đi cho thú vị hơn,
+
+52
+00:07:13,720 --> 00:07:30,920
+Chữ cái và chúng ta sẽ thấy không có gì trong chữ V,
+
+53
+00:07:43,960 --> 00:07:52,680
+Hãy lấy một ví dụ, đừng đi cho một V, hãy lấy một ví dụ về một chức năng khác như
+
+54
+00:07:52,680 --> 00:08:03,560
+tạo ra đối tượng hoặc tạo ra một luồng từ xa của, do đó, có một tạo ra chỉ từ xa, chúng ta hãy
+
+55
+00:08:03,560 --> 00:08:20,600
+nghiên cứu thứ gì đó về việc tạo ra sợi chỉ từ xa, chúng ta sẽ đi tìm một con bọ hung và hãy đi vào
+
+56
+00:08:20,600 --> 00:08:31,560
+Bilati.io, do đó, nếu đây là kho, điều này chứa rất nhiều chức năng, hiện tại dưới
+
+57
+00:08:31,560 --> 00:08:41,160
+DRL, okay, nó là về cơ bản chúng tôi có thể nói nó là một chức năng APA, vì vậy nó cung cấp một thông tin về các
+
+58
+00:08:41,160 --> 00:08:47,880
+Hàm APA, được rồi, vì vậy hãy lấy một ví dụ thực sự ở đây, bạn có thể thấy một tạo ra chỉ từ xa của
+
+59
+00:08:47,880 --> 00:08:56,120
+Chức năng sẽ có ở đó, vì vậy theo cùng một cách bạn có thể nhìn thấy các mũi tiêm, vì vậy ở đây bạn có thể thấy sự sáng tạo
+
+60
+00:08:56,120 --> 00:09:02,200
+chỉ từ xa, để tạo ra chỉ từ xa sẽ được dùng để tạo một sợi, rửa trong ảo
+
+61
+00:09:02,200 --> 00:09:10,440
+địa chỉ không gian của một quá trình khác, vì vậy chúng tôi có thể tìm hiểu thêm về điều này tạo ra chỉ từ xa
+
+62
+00:09:10,440 --> 00:09:17,480
+Trong các phiên họp sắp tới, có rất nhiều các APA sẽ được sử dụng
+
+63
+00:09:17,480 --> 00:09:27,080
+Vì vậy, bạn có thể nhìn thấy tất cả mọi thứ từ đây, vì vậy hãy đi
+
+64
+00:09:27,080 --> 00:09:35,800
+Đối với một khóa ảo, do đó, chức năng APA này mà tôi đã tìm kiếm, điều này sẽ được sử dụng để cấp phát một số
+
+65
+00:09:35,800 --> 00:09:43,480
+bộ nhớ cho một quá trình, okay, bất cứ khi nào bạn nhấp đôi vào bất kỳ của ứng dụng, mặc dù
+
+66
+00:09:43,480 --> 00:09:51,160
+ứng dụng sẽ được tải bên trong bộ nhớ, bên phải, vì vậy bạn cần cấp phát một số bộ nhớ, phân cấp
+
+67
+00:09:51,160 --> 00:09:56,360
+một số khoảng trống trong bộ nhớ, phải, vì vậy bạn sẽ sử dụng ảo một khóa chức năng, vì vậy hạt nhân
+
+68
+00:09:56,360 --> 00:10:03,800
+32 sẽ được nạp, thư viện này sẽ được tải, thư viện này chứa chức năng này, vì vậy điều này
+
+69
+00:10:03,800 --> 00:10:11,000
+Chức năng sẽ được sử dụng để tính toán một số khoảng trống bên trong bộ nhớ, CPU hoặc nóng là bất cứ điều gì bạn có thể
+
+70
+00:10:11,000 --> 00:10:17,240
+Nói, hoặc RAM, okay, vì vậy sau khi tất cả các tính toán định vị chỉ, bạn có thể tải trọng tiến trình của bạn bên trong
+
+71
+00:10:17,240 --> 00:10:22,360
+bộ nhớ, phải, vì vậy đó là tất cả các giải thích của chúng tôi về ảo, tôi chỉ cần tìm kiếm điều này
+
+72
+00:10:22,360 --> 00:10:31,560
+ảo một ví dụ khóa, không có gì, tôi chỉ cần kiểm tra ảo này một khóa ở đây, vì vậy chức năng
+
+73
+00:10:31,560 --> 00:10:42,600
+Cho dù chúng tôi có thể, trong các tuyên bố, chúng ta hãy đi đến các chức năng nhập khẩu, vì vậy nhập khẩu phần có chúng tôi có
+
+74
+00:10:42,600 --> 00:10:49,560
+Không có gì nhiều, nhưng trong một khu xuất khẩu chỉ có chúng tôi có rất nhiều thứ, được rồi, khu xuất khẩu là như
+
+75
+00:10:49,560 --> 00:10:58,200
+chúng tôi, vì vậy nếu bất kỳ ứng dụng nào cần phải sử dụng chức năng của chúng tôi, như tạo ra một chỉ từ xa của,
+
+76
+00:10:58,200 --> 00:11:02,200
+họ có thể sử dụng mà chúng tôi có thể xuất các chức năng đến các ứng dụng, okay, vì vậy nhập khẩu
+
+77
+00:11:02,200 --> 00:11:08,360
+là giống như chúng tôi đang nhập một cái gì đó từ một số ứng dụng và chúng tôi đang sử dụng mà để xa hơn
+
+78
+00:11:08,360 --> 00:11:20,200
+Các tính năng và các thứ khác, được rồi, làm một số việc khác, yeah, yeah, ở đây bạn có thể thấy một
+
+79
+00:11:20,200 --> 00:11:28,120
+ảo một khóa, ảo một khóa, một khóa và một khóa ảo, X của hiện tại dưới đây, phải,
+
+80
+00:11:28,120 --> 00:11:37,000
+Vì vậy, đây là lời giải thích tổng thể cho những gì DI sẽ được bao gồm và một lần nữa tôi đang nói rằng
+
+81
+00:11:37,000 --> 00:11:43,400
+Phần văn bản chứa tất cả các mã hóa cần được thực hiện, vì vậy hãy phát triển của chúng tôi
+
+82
+00:11:44,520 --> 00:11:51,320
+mảnh đất DLR của riêng chúng tôi sẽ xem làm thế nào để phát triển DLR của riêng chúng tôi, hãy nạp của chúng tôi cột,
+
+83
+00:11:51,320 --> 00:12:02,360
+Vì vậy, đây là một ví dụ rất đơn giản về phát triển một phát triển DLR riêng của bạn, vì vậy một điều nữa bạn
+
+84
+00:12:02,360 --> 00:12:10,040
+Cần phải hiểu các tập tin DLR hoặc như vậy nếu bạn muốn thực hiện tập tin DLR, vì vậy bạn không thể
+
+85
+00:12:10,040 --> 00:12:16,840
+để thực hiện tập tin DLR, hãy để tôi nhấn vào bất kỳ tập tin nào của DLR như q5, qT5 là nó, vì vậy nó sẽ không tải, okay,
+
+86
+00:12:16,840 --> 00:12:21,880
+Nó sẽ không tải về cơ bản, nó sẽ không thực hiện, chúng tôi không thể thực hiện DLR một cách mù quáng,
+
+87
+00:12:21,880 --> 00:12:33,000
+Vì vậy, khi bạn đang chất PEBR, okay, vì vậy hãy xem ở đây tôi đang tải PEBR, do đó, PEBR này sẽ
+
+88
+00:12:33,000 --> 00:12:41,560
+sử dụng qT5 nó chỉ chấm DLR, do đó, PEBR này sẽ sử dụng các mã hiện diện bên trong qT5 nó chỉ là chấm DLR
+
+89
+00:12:41,560 --> 00:12:46,760
+và nó sẽ nạp các ứng dụng, okay, chúng tôi không thể mù quáng thực hiện các tập tin DIR gấp đôi
+
+90
+00:12:46,760 --> 00:12:52,760
+Hãy nhấp vào máy Windows, okay, nhưng chúng tôi có một vài cách khác, phần mềm độc hại
+
+91
+00:12:52,760 --> 00:12:57,160
+Chiến thuật đe dọa sẽ được sử dụng, những cách khác để thực hiện DLR, tôi sẽ thảo luận rằng trong
+
+92
+00:12:57,160 --> 00:13:03,560
+Trong video này chỉ, okay, vì vậy nếu tôi đặt này DIR trong, nếu tôi cắt và dán này DIR trong một số
+
+93
+00:13:03,560 --> 00:13:12,440
+Những thư mục khác như q5, đến lượt bạn, bây giờ nếu tôi cố gắng để tải PEBR, PEBR của tôi sẽ không được tải
+
+94
+00:13:12,440 --> 00:13:19,800
+hoặc bởi vì nó đã nói một số DLRRR sẽ được bỏ lỡ, phải, vì vậy tôi chỉ cần đặt nó vào
+
+95
+00:13:20,760 --> 00:13:30,680
+Buổi chụp ảnh, vì vậy hãy để tôi thay thế nó, đến đây, vì vậy bây giờ ứng dụng của tôi sẽ là
+
+96
+00:13:30,680 --> 00:13:35,640
+thông thường được xây dựng, bây giờ nạp nó, okay, vì vậy đây là cách các ứng dụng Windows sẽ
+
+97
+00:13:35,640 --> 00:13:39,880
+sử dụng DLR cho mục đích xa hơn, okay, nếu bạn muốn phát triển bất kỳ chương trình khác,
+
+98
+00:13:39,880 --> 00:13:44,600
+Bất kỳ ứng dụng nào khác cho Windows, bạn cần phải sử dụng DLR cho điều đó, vì vậy hoàn toàn chúng tôi là cũng
+
+99
+00:13:44,600 --> 00:13:50,680
+sử dụng DLR, phát triển phần mềm độc hại của chúng tôi, okay, vì vậy hãy chơi với
+
+100
+00:13:50,680 --> 00:13:56,840
+DLR của chúng tôi, chúng tôi có, chúng tôi có, chúng tôi đã biết tất cả mọi thứ về DLR, okay, đây là một đơn giản
+
+101
+00:13:56,840 --> 00:14:03,400
+chương trình mà chúng tôi đã phát triển, và đây là điểm nhập của DIR, chạy thông điệp
+
+102
+00:14:03,400 --> 00:14:09,800
+hộp DXC, thay vì hộp thư bạn có thể nói, nói rằng nó sẽ hiển thị chỉ là một thế giới chào, okay,
+
+103
+00:14:09,800 --> 00:14:19,640
+Vì vậy, bạn có thể phát triển một DLR bằng nhiều cách, nhưng tôi chỉ phát triển DLR với điểm nhập,
+
+104
+00:14:19,640 --> 00:14:24,440
+Vì vậy, đây là điểm nhập cho DLR, vì vậy nếu bạn cần thực hiện DLR, bạn cần phải gọi
+
+105
+00:14:24,440 --> 00:14:31,560
+điểm mục nhập của hàm số như bất kỳ chức năng APA, vì vậy đây là chức năng APA, vì vậy tôi đã làm
+
+106
+00:14:31,560 --> 00:14:38,280
+nói, vì vậy nếu ứng dụng của bạn cần để giao tiếp hoặc bất kỳ, hoặc đưa ra bất kỳ không gian ảo
+
+107
+00:14:38,280 --> 00:14:44,360
+Thay vì bộ nhớ, bạn cần phải sử dụng một số chức năng APA như EX ảo, điều này là như thế này,
+
+108
+00:14:44,360 --> 00:14:49,800
+Đây là chức năng của điểm nhập, chúng tôi sẽ nói đây là điểm nhập sau DLR, vì vậy nếu bạn
+
+109
+00:14:49,800 --> 00:14:53,960
+Cần phải thực hiện DLR này, bạn cần phải gọi điểm nhập, thủ công, để cuộc tấn công
+
+110
+00:14:53,960 --> 00:15:01,240
+tôi sẽ giải thích rằng trong cùng một video, vì vậy hãy để điều này, nó sẽ chỉ
+
+111
+00:15:01,240 --> 00:15:06,440
+được rồi, chỉ là nó sẽ không trả lại nhiều thứ, nên nó sẽ...
+
+112
+00:15:07,160 --> 00:15:18,760
+bên dưới, nó sẽ được, các tập tin là dưới các video, nhưng chúng tôi sẽ làm một điều, chúng tôi sẽ lưu
+
+113
+00:15:18,760 --> 00:15:30,200
+file này trong một số thư mục khác như âm nhạc, nhưng để giảm sự nhầm lẫn của chúng tôi, CPP, xin chào,
+
+114
+00:15:33,720 --> 00:15:43,080
+Hãy để tôi thay đổi tên của nó như là một dấu chấm, CPP, hãy lưu vào chương trình trong thư mục âm nhạc,
+
+115
+00:15:43,080 --> 00:15:52,120
+Hãy đi đến âm nhạc và chúng tôi sẽ mở một trạm cuối ở đây, nếu không chúng tôi sẽ đi cho video,
+
+116
+00:15:52,120 --> 00:16:03,480
+Và hãy xem, chuyển hướng đến thư mục âm nhạc, vì vậy bây giờ bạn có thể xem tập tin CNP
+
+117
+00:16:03,480 --> 00:16:11,480
+đã có mặt dưới thư mục này, hãy biên dịch nó, vì vậy bạn có thể sử dụng, biên dịch này để biên dịch
+
+118
+00:16:11,480 --> 00:16:19,960
+Các tập tin DLR, vì vậy DLR của chúng tôi sẽ là điều này, các, trực tuyến, tập tin DIR này mà tôi đã tổ chức trước đây,
+
+119
+00:16:19,960 --> 00:16:25,640
+Dù sao, đừng lo lắng về điều đó, được rồi, vì vậy bài kiểm tra chào mừng, hồ sơ DLR của chúng tôi sẽ là bài kiểm tra xin chào, đúng không,
+
+120
+00:16:25,640 --> 00:16:34,440
+Kiểm tra dấu chấm CPP, và chúng ta cần phải cứu DLR, vì vậy xin chào dấu chấm DLR, vì vậy hãy thực hiện ngay bây giờ,
+
+121
+00:16:34,440 --> 00:16:40,440
+Bạn có thể thấy DLR của chúng tôi đã được thực hiện, biên dịch, xin lỗi, biên dịch, vì vậy bây giờ bạn có thể thấy các lời chào
+
+122
+00:16:40,440 --> 00:16:46,520
+Thử nghiệm DLR có mặt ở đây, để tôi đến máy Windows và chúng tôi sẽ,
+
+123
+00:16:47,800 --> 00:16:59,160
+Hoặc cho tôi một giây, để tôi, yeah, do đó, tốt hơn, để tôi sẽ sao chép này DIR vào thư mục máy chủ,
+
+124
+00:16:59,160 --> 00:17:16,840
+Cho tôi thời gian, tôi không thể mở thư mục từ đây, nên tôi sẽ sao chép từ đây,
+
+125
+00:17:17,400 --> 00:17:26,680
+Bằng cách ra lệnh, WWW, HTML của chúng tôi, đặt tên nó như là một, xin chào chấm,
+
+126
+00:17:26,680 --> 00:17:37,960
+Hãy để tôi chạy với một, đồ ngốc, phải, khóa học Udemy, xin chào DL,
+
+127
+00:17:37,960 --> 00:17:46,040
+Vì vậy, tôi nghĩ bây giờ dấu chấm câu hỏi xin chào sẽ được sao chép ở đó, để tôi đi qua máy Windows,
+
+128
+00:17:46,760 --> 00:17:55,640
+Và chúng ta sẽ, và chúng ta sẽ thấy rằng, IP của tôi sẽ đi chín đến 12 một lần, nói chấm 18 chấm
+
+129
+00:17:55,640 --> 00:18:04,360
+3 Cut, đồ ngốc, DLR của chúng ta đã ở đó, xin chào DL, hãy tải về file này,
+
+130
+00:18:04,360 --> 00:18:14,520
+nó là file, vì vậy bây giờ DLR của chúng tôi kiểm tra chấm DL sẽ được đặt trong thư mục tải về, chúng ta hãy
+
+131
+00:18:14,520 --> 00:18:21,800
+Chất đồ lên đây, và chúng tôi sẽ điều tra cái máy bay nhỏ này, và mọi thứ về DL,
+
+132
+00:18:21,800 --> 00:18:28,200
+Vâng, tôi đã nói DL, chúng tôi có một mục tìm kiếm, bên phải, nó có một vài chức năng,
+
+133
+00:18:28,200 --> 00:18:37,880
+Vì vậy, hãy tải DPE và tải một DLC như thế nào tạo ra, hãy đi đến, uh,
+
+134
+00:18:40,200 --> 00:18:47,960
+Bảng nhập khẩu hoặc xuất khẩu xuất khẩu, khi tôi có thể thấy hộp thông điệp chạy, chỉ có một chức năng,
+
+135
+00:18:47,960 --> 00:19:03,400
+và đây là chuỗi, được rồi, sau DL, tôi đã nói
+
+136
+00:19:03,400 --> 00:19:11,400
+Thử nghiệm, uh, phiên họp có mã, xin chào từ DL, mọi thứ đều ở đó, mà chúng tôi đã phát triển,
+
+137
+00:19:11,400 --> 00:19:22,360
+Hãy, uh, hãy thực hiện DL này, tôi đã đề cập, nếu bạn muốn thực hiện một DL,
+
+138
+00:19:22,360 --> 00:19:29,000
+bạn cần một tập tin thực hiện được, đúng không, một số tập tin exe cần phải gọi DLR cần phải,
+
+139
+00:19:29,000 --> 00:19:35,240
+Nhưng tiêu đề sẽ làm theo một cách khác, họ có một cách tiếp cận khác, vì vậy chúng tôi đã biết,
+
+140
+00:19:35,240 --> 00:19:44,360
+Có một điểm vào của DL, uh, vậy điểm vào của DL là một hộp thông điệp chạy, chúng tôi
+
+141
+00:19:44,360 --> 00:19:56,680
+là thảo luận về chương trình đó, chúng tôi thảo luận về chương trình đó trước đây, phải, vì vậy chúng tôi có thể sử dụng một trong những
+
+142
+00:19:56,680 --> 00:20:06,680
+Các công cụ liên quan đến, uh, cửa sổ tên là, uh, chạy DL32.exe, vì vậy chạy DL32.ex về cơ bản
+
+143
+00:20:06,680 --> 00:20:19,880
+có tính năng, chức năng để thực hiện một tập tin DL, được rồi, vậy hãy gọi chạy DL30 để chấm exe,
+
+144
+00:20:20,520 --> 00:20:27,320
+Vì vậy, bạn có thể thấy không có lỗi được bật lên, để tôi thực hiện bài kiểm tra đồng nghiệp này,
+
+145
+00:20:27,320 --> 00:20:36,760
+Dot DL, vì vậy tôi đã nói nếu bạn muốn thực hiện một DL bằng cách chạy DL30 để dot exe,
+
+146
+00:20:36,760 --> 00:20:44,680
+Anh cần biết, anh cần biết điểm nhập từ DLR, đúng không, nếu, uh, chúng ta biết
+
+147
+00:20:44,680 --> 00:20:50,920
+Điểm nhập sẽ là hộp thông điệp chạy ở đây, nhưng chiến thuật đe dọa sẽ làm tương tự, họ sẽ làm
+
+148
+00:20:50,920 --> 00:20:57,560
+Phát triển một máy DL và chúng đang phát triển một hệ thống DL, vì vậy chúng, uh, chúng có một điểm tham gia của DL,
+
+149
+00:20:57,560 --> 00:21:03,240
+Vì vậy, họ sẽ thực hiện DLR với một điểm nhập, được rồi, điểm nhập của chúng tôi là một hộp thông điệp chạy,
+
+150
+00:21:03,240 --> 00:21:13,320
+Tôi đang làm cùng một hộp thông điệp chạy, vì vậy đây là cách mà chiến thuật đe dọa thực hiện DL,
+
+151
+00:21:14,440 --> 00:21:21,400
+Uh, theo một cách đáng ngờ bên trong chủ thể mục tiêu, được rồi, bây giờ anh có thể thấy, xin chào của chúng tôi từ DL,
+
+152
+00:21:21,400 --> 00:21:28,520
+Vì vậy mà chúng tôi đã viết mà đã được gọi là, okay, vì vậy đe dọa chiến thuật chơi một mật mã độc hại
+
+153
+00:21:28,520 --> 00:21:37,320
+Thay vì gửi lời chào từ DL và họ sẽ thực hiện DL bằng cách sử dụng quá trình chạy DL32.ex,
+
+154
+00:21:38,200 --> 00:21:44,040
+Vậy đây là lời giải thích tổng thể về DL, chúng ta đã mất 21 phút,
+
+155
+00:21:44,040 --> 00:21:49,880
+Chúng tôi sẽ gặp các bạn ở phần tiếp theo, xin lỗi, video tiếp theo,
+
+156
+00:21:49,880 --> 00:21:55,400
+Tạm biệt, vậy là chúng ta đã hoàn thành DL, uh, mọi thứ, tôi hy vọng các bạn đã rõ ràng về điều đó,
+
+157
+00:21:55,400 --> 00:21:57,400
+Ừ, tạm biệt.
+
