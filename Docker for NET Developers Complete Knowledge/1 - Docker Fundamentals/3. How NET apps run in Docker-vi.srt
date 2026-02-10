@@ -1,0 +1,260 @@
+1
+00:00:00,000 --> 00:00:05,960
+Bây giờ chúng ta hãy hiểu làm thế nào các ứng dụng .NET được chạy ở Docker.
+
+2
+00:00:05,960 --> 00:00:10,060
+Đầu tiên một container Docker được tạo ra.
+
+3
+00:00:10,060 --> 00:00:18,900
+Tiếp theo chúng tôi cài đặt hệ điều hành như Windows, Linux, hoặc MacOS trong container này.
+
+4
+00:00:18,900 --> 00:00:26,140
+Sau đó trong hệ điều hành này chúng tôi cài đặt .NET thời gian chạy hoặc SDK.
+
+5
+00:00:26,140 --> 00:00:29,620
+Tiếp theo chúng tôi cài đặt một máy chủ web như
+
+6
+00:00:29,620 --> 00:00:34,520
+Apache, động cơ X, vân vân.
+
+7
+00:00:34,520 --> 00:00:40,160
+Cuối cùng một ứng dụng .NET sẽ chạy từ bên trong container này.
+
+8
+00:00:40,160 --> 00:00:52,800
+Vì ứng dụng đã xóa bỏ tất cả tài nguyên hay phụ thuộc như hệ điều hành hệ thống tập tin chạy thời gian dạng trình phục vụ mạng pk
+
+9
+00:00:52,800 --> 00:00:55,400
+Như động cơ X.
+
+10
+00:00:55,400 --> 00:01:03,160
+Vì vậy ứng dụng .NET này đã sẵn sàng chạy từ bên trong hộp Docker.
+
+11
+00:01:03,160 --> 00:01:08,200
+Chúng ta hãy hiểu công việc của một gương mẫu thật sự trong thế giới.
+
+12
+00:01:08,200 --> 00:01:13,960
+Cậu bé đang mở một chiếc AP.NET Trang web lõi trên trình duyệt của anh ta.
+
+13
+00:01:13,960 --> 00:01:20,040
+Đầu tiên một trình duyệt sẽ yêu cầu HTTP tới máy phục vụ mạng máy X.
+
+14
+00:01:20,040 --> 00:01:25,840
+Máy phục vụ mạng máy X sẽ chuyển yêu cầu này đến trình phục vụ mạng cụm.
+
+15
+00:01:25,840 --> 00:01:31,640
+Ghi chú rằng động cơ X đang hoạt động như một ủy nhiệm đảo ngược trong trường hợp này.
+
+16
+00:01:31,640 --> 00:01:35,480
+Cresale đang tổ chức trang web .NET.
+
+17
+00:01:35,480 --> 00:01:38,800
+Nó chuyển yêu cầu tới trang web.
+
+18
+00:01:38,800 --> 00:01:44,360
+Trang web sẽ gửi lại phản hồi cho Crestale.
+
+19
+00:01:44,360 --> 00:01:49,880
+Và bây giờ Cresale chuyển yêu cầu máy chủ X.
+
+20
+00:01:49,880 --> 00:01:55,160
+Cuối cùng, động cơ X gửi phản hồi đến trình duyệt của cậu bé.
+
+21
+00:01:55,160 --> 00:02:00,360
+Trình duyệt sẽ hiển thị trang web.
+
+22
+00:02:00,360 --> 00:02:08,440
+Toàn bộ điều này, động cơ X cụm, ứng dụng .NET, được tổ chức trên một container Docker.
+
+23
+00:02:08,440 --> 00:02:12,800
+Docker rất nhanh và dễ.
+
+24
+00:02:12,800 --> 00:02:20,080
+Hãy nghĩ về việc cài đặt cửa sổ 11 với máy tính cá nhân SDK.
+
+25
+00:02:20,080 --> 00:02:24,880
+Nó sẽ không mất ít hơn một giờ của bạn.
+
+26
+00:02:24,880 --> 00:02:32,840
+Nhưng ở Docker bạn có thể cài đặt cả hai thứ này chỉ trong 20 đến 30 giây.
+
+27
+00:02:32,840 --> 00:02:40,320
+Anh chỉ cần điều hành lệnh Docker và Docker sẽ làm việc nặng nề cho anh.
+
+28
+00:02:40,320 --> 00:02:47,600
+Lệnh Docker sẽ cho động cơ Docker biết loại container Docker bạn cần.
+
+29
+00:02:47,600 --> 00:02:52,640
+Cùng với phần mềm cần thiết cho container.
+
+30
+00:02:52,640 --> 00:02:56,240
+Toàn bộ quá trình này cực kỳ nhanh.
+
+31
+00:02:56,240 --> 00:03:02,320
+Docker sẽ cung cấp container chạy trong vài giây.
+
+32
+00:03:02,320 --> 00:03:06,640
+Tạo thùng chứa các phiên bản .NET khác nhau.
+
+33
+00:03:06,640 --> 00:03:13,360
+Ví dụ, một container có thể chạy trên Windows cùng với .NET phiên bản 10.
+
+34
+00:03:13,360 --> 00:03:19,360
+Công-ten-nơ thứ hai có thể chạy trên Linux với .NET 8.0
+
+35
+00:03:19,360 --> 00:03:30,200
+container thứ ba có thể chạy trên Linux với phiên bản .NET 9 cùng với Node.js và PHP.
+
+36
+00:03:30,200 --> 00:03:37,600
+Cả ba thùng hàng này có thể chạy cùng lúc với máy điều hành.
+
+37
+00:03:37,600 --> 00:03:44,760
+Docker cung cấp những thùng chứa này mọi nguồn lực cần thiết.
+
+38
+00:03:44,760 --> 00:03:55,740
+Những bao gồm, cần thiết phần mềm như Linux, .NET, Node.js và PHP được cài đặt vào những thứ này
+
+39
+00:03:55,740 --> 00:04:06,560
+Hộp, ghi chú rằng không cần thiết cài đặt Linux, Node.js .NET hoặc PHP trên máy
+
+40
+00:04:06,560 --> 00:04:15,240
+Máy tính là máy tính của chúng tôi vì chúng đang chạy từ bên trong các thùng chứa.
+
+41
+00:04:15,240 --> 00:04:22,440
+Lợi ích của việc phân phối ứng dụng nhanh và dễ dàng.
+
+42
+00:04:22,440 --> 00:04:30,340
+Docker rất tốt cho sự tích hợp liên tục và tiếp tục cung cấp phát triển phần mềm.
+
+43
+00:04:30,340 --> 00:04:33,840
+Cái này được gọi là CI/CD.
+
+44
+00:04:33,840 --> 00:04:42,400
+Những nhà phát triển và người thử nghiệm làm việc trong một dự án có thể chia sẻ công việc của họ bằng cách dùng những thùng đựng Docker.
+
+45
+00:04:42,400 --> 00:04:51,840
+Bộ phát triển này tạo ra mã cho ứng dụng .NET và đẩy toàn bộ ứng dụng lên một container Docker.
+
+46
+00:04:51,840 --> 00:04:59,880
+Người thử sẽ dùng container để thử mã và cung cấp danh sách lỗi.
+
+47
+00:04:59,880 --> 00:05:07,480
+Điều này có nghĩa là Docker container, cả người phát triển và người thử nghiệm đang làm việc cùng nhau.
+
+48
+00:05:07,480 --> 00:05:16,400
+Một khi danh sách lỗi được giải quyết, ứng dụng .NET mới sẽ được triển khai.
+
+49
+00:05:16,400 --> 00:05:23,040
+Nó không cần thiết cho các nhà phát triển và người thử nghiệm để vẫn còn bên cạnh nhau ngồi tại
+
+50
+00:05:23,040 --> 00:05:28,440
+Cùng một văn phòng có thể ở bất cứ đâu trên thế giới.
+
+51
+00:05:28,440 --> 00:05:33,000
+Họ chỉ cần kiểm tra ứng dụng từ hộp đựng Docker.
+
+52
+00:05:33,000 --> 00:05:39,240
+Bằng cách này, Docker cung cấp các ứng dụng rất nhanh chóng và nhất quán.
+
+53
+00:05:39,240 --> 00:05:44,880
+Phát triển và tăng cường ứng dụng với Docker.
+
+54
+00:05:44,880 --> 00:05:52,280
+Ví dụ, chúng tôi có một trang web .NET và chúng tôi nhận thấy một giao thông vào trang web đã tăng
+
+55
+00:05:52,280 --> 00:05:53,760
+khoảng 100%.
+
+56
+00:05:53,760 --> 00:06:03,480
+Chúng ta có thể gia tăng các thùng chứa Docker tổ chức trang web để đáp ứng các yêu cầu mới.
+
+57
+00:06:03,480 --> 00:06:16,680
+Trước đó, chúng tôi tổ chức trang web từ 10 container.
+
+58
+00:06:16,680 --> 00:06:24,240
+Tương tự, chúng ta có thể giảm bớt ứng dụng bằng cách giảm các thùng chứa, do đó giảm
+
+59
+00:06:24,240 --> 00:06:31,840
+Việc tổ chức các cáo buộc của website của chúng tôi, giảm chi phí phát triển các ứng dụng khi chúng tôi sử dụng
+
+60
+00:06:31,840 --> 00:06:40,520
+Docker, một nhỏ khởi nghiệp có một nhóm nhỏ của các nhà phát triển và nhân viên thử nghiệm và họ không có
+
+61
+00:06:40,520 --> 00:06:48,720
+rất nhiều quỹ để tạo cơ sở hạ tầng để họ có thể chạy tất cả các ứng dụng cần thiết từ
+
+62
+00:06:48,720 --> 00:06:50,720
+Thùng Docker.
+
+63
+00:06:50,720 --> 00:07:01,800
+Những ứng dụng này là máy chủ hệ thống rym, MySQL, Redis. NET, Node.js, Apache và những người khác.
+
+64
+00:07:01,800 --> 00:07:08,560
+Khi giảm chi phí cơ sở hạ tầng của công ty, họ không phải đổ thêm
+
+65
+00:07:08,560 --> 00:07:16,880
+Tiền mua bằng lái khi họ chạy ứng dụng từ hộp đựng Docker.
+
