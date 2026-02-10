@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:09,300
+Dockerfile là gì? Đó là một tài liệu văn bản thường chứa các bộ hướng dẫn cho Docker
+
+2
+00:00:09,300 --> 00:00:17,620
+để xây dựng một hình ảnh. Tập tin này sẽ nói cho Docker biết cách xây dựng ảnh của ứng dụng .NET.
+
+3
+00:00:17,620 --> 00:00:25,840
+Dockerfile xây dựng ảnh trong các lớp với mỗi hướng dẫn tạo một lớp mới. Để chúng tôi.
+
+4
+00:00:25,840 --> 00:00:33,560
+hiểu về các tập tin Docker của ứng dụng .NET của chúng tôi. Có những giai đoạn và mỗi bắt đầu từ
+
+5
+00:00:33,560 --> 00:00:37,800
+từ chỉ dẫn.
+
+6
+00:00:37,800 --> 00:00:54,800
+Nó cung cấp cho mỗi sân khấu này một số tên như cơ sở, xây dựng, xuất bản và cuối cùng.
+
+7
+00:00:56,680 --> 00:01:10,560
+Xem giai đoạn đầu tiên từ mcy.microsoft.com/dotnet/aspnet cong 10 tham khảo .NET
+
+8
+00:01:10,560 --> 00:01:20,640
+10 lần chạy ảnh mà là một phiên bản nhẹ so với SDK. Sân khấu này được đặt tên căn cứ.
+
+9
+00:01:23,600 --> 00:01:33,040
+Ứng dụng đồng đô la nhấn mạnh UID là một biến môi trường cho người dùng không phải gốc sẽ được sử dụng
+
+10
+00:01:33,040 --> 00:01:43,200
+Chỉ huy ở đây. Các thư mục làm việc cắt giảm ứng dụng tạo ra một thư mục với tên ứng dụng trong đó
+
+11
+00:01:43,200 --> 00:01:52,240
+hình ảnh của ứng dụng .NET của chúng tôi. Và nó đặt nó như là thư mục hoạt động. Sau đó nó sẽ phơi bày thùng hàng.
+
+12
+00:01:52,240 --> 00:02:03,360
+Cổng số 8080 và 8081 đến thế giới bên ngoài. Đó là máy chủ. Vì vậy, cách này chúng tôi có thể
+
+13
+00:02:03,360 --> 00:02:12,160
+Truy cập vào container trên các cổng. Rõ ràng một cổng sẽ dành cho HTTP và một cổng khác cho
+
+14
+00:02:12,160 --> 00:02:21,280
+Phiên bản HTTPS. Vì vậy, chúng tôi có máy địa phương của chúng tôi bên trái và nó chứa của chúng tôi ứng dụng .NET với
+
+15
+00:02:21,280 --> 00:02:30,560
+Dockerfile và ở bên phải là hình ảnh Docker của ứng dụng của chúng tôi. Giai đoạn đầu tiên nói với ứng dụng .NET
+
+16
+00:02:30,560 --> 00:02:41,040
+ảnh để tham chiếu ảnh .NET chạy thời gian từ mc. Sau đó tạo một thư mục làm việc được gọi là ứng dụng
+
+17
+00:02:41,840 --> 00:02:52,560
+bên trong hình ảnh và các cổng 8080 và 8081 của các container sẽ chứa này
+
+18
+00:02:52,560 --> 00:03:01,280
+hình ảnh ứng dụng của chúng tôi. Bây giờ hãy chuyển sang giai đoạn hai. Ở đây sẽ khôi phục và xây dựng ứng dụng
+
+19
+00:03:01,280 --> 00:03:11,680
+bằng cách khôi phục lại và xây dựng lệnh. Vì vậy, chúng tôi có tham chiếu hình ảnh SDK của .NET 10.
+
+20
+00:03:11,680 --> 00:03:20,960
+không phải là hình ảnh thời gian chạy của nó như trước đây. Tên sân khấu này xây dựng đối số xây dựng cấu hình nhấn mạnh
+
+21
+00:03:20,960 --> 00:03:33,280
+được thiết lập để phát hành. Sau đó thư mục làm việc sc tạo một thư mục mới được gọi là sc trong .NET
+
+22
+00:03:33,280 --> 00:03:46,240
+ứng dụng hình ảnh. Bên trong thư mục này, hồ sơ dự án ứng dụngcker đầu tiên được sao chép từ máy cục bộ.
+
+23
+00:03:46,240 --> 00:03:55,280
+Bây giờ lệnh phục hồi .NET được chạy cho tập tin dự án cs nằm bên trong ảnh docker
+
+24
+00:03:55,280 --> 00:04:06,400
+của ứng dụng .NET. Điều này sẽ phục hồi các phụ thuộc như NuGet gói và dls mà ứng dụng đã có
+
+25
+00:04:06,400 --> 00:04:18,560
+Sau đó với bản sao .NE lệnh tất cả các tập tin ứng dụng được sao chép từ máy địa phương để sc
+
+26
+00:04:18,560 --> 00:04:26,480
+Thư mục trên ảnh. Chấm đầu tiên là cho các từ địa điểm trên máy tính địa phương
+
+27
+00:04:26,480 --> 00:04:34,560
+Và chấm thứ hai là cho vị trí trên ảnh được đặt để chuyển công việc.
+
+28
+00:04:34,560 --> 00:04:42,880
+Cuối cùng lệnh xây dựng các ứng dụng cs file trong thư mục sc.
+
+29
+00:04:44,400 --> 00:04:53,200
+Trong cấu hình lệnh xây dựng được đặt khi phát hành và xuất từ lệnh này sẽ được đặt
+
+30
+00:04:53,200 --> 00:05:01,600
+trong ứng dụng cắt giảm thư mục xây dựng bên trong ảnh. Hãy để chúng tôi hiểu điều này từ các hoạt hình.
+
+31
+00:05:01,600 --> 00:05:10,400
+Thư mục sc được tạo đầu tiên bên trong ảnh .NET ứng dụng. Bây giờ tập tin dự án ứng dụng đã được sao chép
+
+32
+00:05:10,400 --> 00:05:18,480
+tới thư mục sc này từ máy cục bộ. Tiếp theo chúng tôi chạy lệnh .NET khôi phục cs
+
+33
+00:05:18,480 --> 00:05:27,520
+Tập tin dự án. Sau đó chúng tôi sao chép tất cả các tập tin ứng dụng từ máy địa phương để bên trong sc này
+
+34
+00:05:27,520 --> 00:05:35,680
+Thư mục. Cuối cùng chúng tôi xây dựng tập tin dự án cs ứng dụng này và đầu ra được đặt bên trong các ứng dụng
+
+35
+00:05:35,680 --> 00:05:44,960
+Đang phân tích thư mục xây dựng. Lưu ý tham số O gạch dưới được đưa ra trên lệnh xây dựng .NET. Di chuyển đến
+
+36
+00:05:44,960 --> 00:05:52,640
+Giai đoạn thứ ba nơi chúng tôi công bố ứng dụng bằng cách chạy lệnh .NET xuất bản chúng tôi tham khảo xây dựng
+
+37
+00:05:52,640 --> 00:06:01,840
+sân khấu từ công trường xuất bản. Lệnh .NET được chạy trên tập tin dự án cs của ứng dụng mà
+
+38
+00:06:01,840 --> 00:06:11,680
+nằm trên thư mục sc trong ảnh.  Xây dựng
+
+39
+00:06:11,680 --> 00:06:21,600
+được đặt thành thư mục in ứng dụng bên trong ảnh của ứng dụng .NET. Tài sản máy chủ ứng dụng sử dụng
+
+40
+00:06:21,600 --> 00:06:28,720
+được thiết lập để sai. Tùy chọn này sẽ tắt khả năng tạo tập tin thực hiện riêng của ứng dụng.
+
+41
+00:06:28,720 --> 00:06:36,560
+Điều này có nghĩa là nó sẽ sản xuất ra nền tảng độc lập của ứng dụng. Hãy xem các hoạt hình để
+
+42
+00:06:36,560 --> 00:06:45,120
+Hãy hiểu điều này. Chúng tôi chạy lệnh .NET xuất trên tập tin dự án cs nằm bên trong sc
+
+43
+00:06:45,120 --> 00:06:52,880
+thư mục và kết xuất của lệnh này đi tới thư mục đã được công bố bên trong ảnh.
+
+44
+00:06:53,520 --> 00:07:00,240
+Ở đây ứng dụng được lưu tập tin đã xuất bản. Sân khấu cuối cùng chỉ về sân khấu cơ bản.
+
+45
+00:07:00,240 --> 00:07:11,760
+Sau đó thư mục làm việc được thiết lập thành ứng dụng. Sau đó lệnh sao chép được sử dụng để sao chép từ sân khấu xuất bản
+
+46
+00:07:12,480 --> 00:07:22,080
+Name Cuối cùng chỉ dẫn mục nhập
+
+47
+00:07:22,080 --> 00:07:31,360
+Chỉ định để chạy dll được gọi là docker app dt dll đầu tiên khi container bắt đầu.
+
+48
+00:07:31,360 --> 00:07:38,800
+Bằng cách này, bất cứ khi nào công-ten-nơ khởi động ứng dụng .NET của chúng tôi sẽ chạy.
+
+49
+00:07:39,680 --> 00:07:48,320
+Đây là slide của giai đoạn cuối. Nó sao chép tất cả các tập tin từ thư mục in ứng dụng
+
+50
+00:07:48,320 --> 00:07:57,440
+vào thư mục ứng dụng và thêm điểm nhập vào tập tin đồ chơi docker đầu tiên. Dot docker là gì
+
+51
+00:07:57,440 --> 00:08:05,760
+Bỏ qua tập tin? Bạn sẽ tìm thấy nó dưới tập tin docker. Nhấn vào mũi tên ở phía trước tập tin docker
+
+52
+00:08:05,760 --> 00:08:16,160
+để mở tập tin docker bỏ qua. Tập tin này liệt kê các tập tin và thư mục cần thoát
+
+53
+00:08:16,160 --> 00:08:25,760
+từ bối cảnh xây dựng của hình ảnh. Có các mẫu khớp cho mỗi dòng ví dụ
+
+54
+00:08:25,760 --> 00:08:35,760
+Nguy hiểm là khớp mọi thứ. Vì vậy, astesk astesk dot đường dẫn lớp lớp học có nghĩa là bỏ qua tập tin
+
+55
+00:08:35,760 --> 00:08:45,120
+đó là phần mở rộng của con đường lớp chấm. Và cư trú trên máy địa phương mô hình than phiền
+
+56
+00:08:45,120 --> 00:08:52,560
+là bao gồm các tập tin và thư mục bị bỏ đi bởi mẫu trước.
+
+57
+00:08:53,360 --> 00:09:03,200
+Vì vậy, điều này có nghĩa là những mô hình sẽ được bao gồm. Ví dụ chấm nhận được bỏ qua tập tin sẽ được bao gồm
+
+58
+00:09:03,200 --> 00:09:05,440
+Những người khác cũng vậy.
+
