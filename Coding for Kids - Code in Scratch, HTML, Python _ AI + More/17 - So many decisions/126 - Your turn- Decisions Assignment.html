@@ -1,0 +1,14 @@
+<p>Bonus Question:</p><p>You would have noticed that if the user picks the first mood in the mood list the first song in the song list should be printed, if the user picks the 2nd mood the 2nd song should be printed, if they pick the 3rd mood the 3rd song should be printed, and so on. Instead of asking the user to type out their mood write a program that will instead&nbsp;ask the user to choose a mood&nbsp;by typing in the number of their mood in the list. Eg if the user typed in 1 it would mean they were Happy,&nbsp;5 would mean they were feeling Empowered, and so on. This will stop our program from giving logical&nbsp;errors if&nbsp;the user types&nbsp;the wrong spelling or leaves&nbsp;out a capital.</p><p>Hint1: Use indexing.</p><p>Hint2: If you put int() around the input it will change the input from a string to an integer. Eg mood = int(input("Pick a mood by typing the number of the mood in the list"))</p><pre class="prettyprint linenums">moodNum = int(input("Pick a mood by typing the number of the mood in the list"))
+myMood = moods[moodNum - 1]&nbsp; &nbsp; #we subtract 1 beacuse our list index starts from 0. So if the user types 1 we want moods[0] in the list
+if myMood == moods[0]:
+&nbsp; &nbsp; print(songs[0])
+elif myMood == moods[1]:
+&nbsp; &nbsp; print(songs[1])
+elif myMood == moods[2]:
+&nbsp; &nbsp; print(songs[2])
+elif myMood== moods[3]:
+&nbsp; &nbsp; print(songs[3])
+elif myMood == moods[4]:
+&nbsp; &nbsp; print(songs[4])
+else:
+&nbsp; &nbsp; print("You did not type a valid mood number")</pre>
