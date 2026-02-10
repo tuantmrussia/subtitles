@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:07,500
+ Docker can be installed on all OS whether it is Windows, Linux or Mac OS, we will
+
+2
+00:00:07,500 --> 00:00:15,860
+ understand the installation process on each of these OS. Go to Docker.com where you can
+
+3
+00:00:15,860 --> 00:00:23,780
+ download the Docker desktop application and this application is available for every operating
+
+4
+00:00:23,780 --> 00:00:31,580
+ system whether it is Mac based on Apple silicon chip or Intel chip, Windows based on AMD 64
+
+5
+00:00:31,580 --> 00:00:38,600
+ chip or ARM 64 chip and Linux. So let us first understand the process for installing
+
+6
+00:00:38,600 --> 00:00:48,640
+ Docker desktop on Linux. Here in this page you go to Ubuntu and these are the two commands
+
+7
+00:00:48,640 --> 00:00:56,800
+ which you have to run on the terminal process the pseudo app dash get update and second
+
+8
+00:00:56,800 --> 00:01:05,520
+ is these pseudo app dash get install dot slash Docker dash desktop dash AMD 64 dot
+
+9
+00:01:05,520 --> 00:01:14,080
+ depth. This will download the depth package and install it on your Linux computer. After
+
+10
+00:01:14,080 --> 00:01:21,860
+ it is installed you need to launch your Docker desktop through this system CTL command,
+
+11
+00:01:21,860 --> 00:01:28,180
+ run it on your terminal and you will start the Docker desktop. Now understand the
+
+12
+00:01:28,180 --> 00:01:38,780
+ process of other two whether it is Mac OS or Windows you just download this package
+
+13
+00:01:38,780 --> 00:01:52,420
+ and install it. I am using Windows 11 based on AMD chip. So I need to download this version
+
+14
+00:01:52,420 --> 00:02:00,940
+ and download has started and it will take some 1 to 2 minutes to complete in the meanwhile
+
+15
+00:02:00,940 --> 00:02:10,720
+ we can learn what is WSL known as Windows subsystems for Linux. Windows subsystem for Linux
+
+16
+00:02:10,720 --> 00:02:18,080
+ WSL it is a feature of Windows that allows you to run a full Linux environment including
+
+17
+00:02:18,080 --> 00:02:25,840
+ command like tools like bash and applications directly on Windows without a virtual machine.
+
+18
+00:02:25,840 --> 00:02:35,980
+ There are two ways to install WSL first is do it manually by yourself and second is by
+
+19
+00:02:35,980 --> 00:02:44,620
+ letting Docker desktop to install WSL for you. We will prefer the second option we now
+
+20
+00:02:44,620 --> 00:02:58,860
+ learn how to install WSL manually head on to Google and type in install WSL and click
+
+21
+00:02:58,860 --> 00:03:10,120
+ on this Microsoft result here you get the commands to install WSL for example WSL install
+
+22
+00:03:10,120 --> 00:03:22,620
+ and WSL.exe install and WSL.exe list online so you have to run these commands on the
+
+23
+00:03:22,620 --> 00:03:36,120
+ command prompt window. So let's open command prompt window and we now copy this command
+
+24
+00:03:36,120 --> 00:03:54,940
+ that will list all these Linux installation packages so we can install WSL copy paste and
+
+25
+00:03:54,940 --> 00:04:08,640
+ type in you want to and then you enter it to install it. I will not install WSL instead
+
+26
+00:04:08,640 --> 00:04:18,860
+ let Docker desktop do this for me so in the command prompt let me show you one more command
+
+27
+00:04:18,860 --> 00:04:28,600
+ if I type in WSL and you can see this message Windows subsystems or Linux has no installed
+
+28
+00:04:28,600 --> 00:04:38,600
+ distribution this means my PC has no WSL right now but don't worry once I installed Docker
+
+29
+00:04:38,600 --> 00:04:46,200
+ desktop WSL will be installed for me by Docker desktop so let's continue with the installation
+
+30
+00:04:46,200 --> 00:04:52,880
+ of Docker desktop application Docker desktop is now downloaded we open the folder which
+
+31
+00:04:52,880 --> 00:05:05,400
+ is redown loads folder and double click it to start the installation procedure and we
+
+32
+00:05:05,400 --> 00:05:16,480
+ can see the installation has started click okay and we have to wait some 5 minutes for the
+
+33
+00:05:16,480 --> 00:05:28,560
+ Docker desktop to get installed on our laptop so it's nearing completion and it has installed
+
+34
+00:05:28,560 --> 00:05:46,760
+ click okay and now we open the Docker desktop from the start menu and once it is open
+
+35
+00:05:46,760 --> 00:06:02,720
+ you will find it in the task bar so okay it has started click accept and in this screen
+
+36
+00:06:02,720 --> 00:06:14,800
+ just skip and now it is starting and we can see it has started and since there are no container
+
+37
+00:06:14,800 --> 00:06:24,280
+ containers we are not seeing any containers or images or volumes right now we will be creating
+
+38
+00:06:24,280 --> 00:06:36,200
+ them one more thing I want to show you in the Docker desktop here click settings and click
+
+39
+00:06:36,200 --> 00:06:45,560
+ on resources and then go to WSL integration here you will see all the Linux restores WSL
+
+40
+00:06:45,560 --> 00:06:52,760
+ which you have installed manually we did not install any one manually and so we are not
+
+41
+00:06:52,760 --> 00:06:59,200
+ seeing any of them if we would have installed it then we would have the option to select
+
+42
+00:06:59,200 --> 00:07:07,240
+ them for Docker desktop to use them so in our case Docker has already installed WSL
+
+43
+00:07:07,240 --> 00:07:14,680
+ and we are using it before we move forward let us quickly see some container commands number
+
+44
+00:07:14,680 --> 00:07:23,120
+ one is docker ps this will list all the containers in your local machine second one is
+
+45
+00:07:23,120 --> 00:07:31,160
+ docker create name of the container and then name of the image so this will create a container
+
+46
+00:07:31,160 --> 00:07:40,360
+ with a given image and name of this container will be this one first and docker start container
+
+47
+00:07:40,360 --> 00:07:49,360
+ name this will start the container by the name of this one docker stop container name this
+
+48
+00:07:49,360 --> 00:07:59,180
+ will stop the container whose name is this one then we have docker run my image this command
+
+49
+00:07:59,180 --> 00:08:07,600
+ will run a container with a given image name so my image you replace it with this image
+
+50
+00:08:07,600 --> 00:08:19,880
+ name and docker will run a container with this image on it docker run dash p these are the 2 ports
+
+51
+00:08:19,880 --> 00:08:29,160
+ this is the image which will run and docker will create a container for this image and first
+
+52
+00:08:29,160 --> 00:08:36,760
+ is the host port and second is the container port the traffic from the host port which
+
+53
+00:08:36,760 --> 00:08:45,640
+ will be on local machine will be forwarded to 80 80 of the container so you will be opening
+
+54
+00:08:45,640 --> 00:08:56,720
+ local host column 5000 and this will go straight away to this container port 80 80 we will
+
+55
+00:08:56,720 --> 00:09:04,920
+ see more about it when we will create our home dotnet app in a container next command
+
+56
+00:09:04,920 --> 00:09:12,800
+ this docker rm test c this will delete this container by the name of test c docker container
+
+57
+00:09:12,800 --> 00:09:19,360
+ prune this will delete all the containers that are not running this will free of your local
+
+58
+00:09:19,360 --> 00:09:28,080
+ machine space and docker logs this one this is the container id you can see the logs of
+
+59
+00:09:28,080 --> 00:09:36,680
+ the container whose id is this one by this command then there are the docker image commands
+
+60
+00:09:36,680 --> 00:09:44,280
+ docker image ls this will list all the images in your local machine similarly the other
+
+61
+00:09:44,280 --> 00:09:52,080
+ command is docker build dash team my image dash f docker file dot this will build the image
+
+62
+00:09:52,080 --> 00:10:02,240
+ by the name of my image and bit the docker file which is residing on the current location
+
+63
+00:10:02,240 --> 00:10:10,560
+ so building image command from this based on docker file you use this command similarly
+
+64
+00:10:10,560 --> 00:10:18,520
+ this is the same command but it has a colon b1 which is the tag images can have any tag
+
+65
+00:10:18,520 --> 00:10:28,100
+ like v1 version 1 version 2 latest etc you can give the image any tag when you are creating
+
+66
+00:10:28,100 --> 00:10:37,320
+ the image docker pull hello world this will pull the hello world docker image from docker
+
+67
+00:10:37,320 --> 00:10:46,480
+ hub into your local laptop or local machine so that you can use it locally another command
+
+68
+00:10:46,480 --> 00:10:56,280
+ this docker push my image this will push my image to the docker repository docker hub so
+
+69
+00:10:56,280 --> 00:11:04,200
+ you can store my image to docker hub repository online so that other people can use it
+
+70
+00:11:04,200 --> 00:11:12,320
+ docker image rm hello world this will remove the image by the name hello dash world so
+
+71
+00:11:12,320 --> 00:11:18,720
+ you replace hello dash world with the image name and it will delete the image on your
+
+72
+00:11:18,720 --> 00:11:26,320
+ docker machine and docker image prune this will remove all the images that are not currently
+
+73
+00:11:26,320 --> 00:11:32,920
+ used in a container so this will similar it this will delete the images so that you get
+
+74
+00:11:32,920 --> 00:11:45,620
+ these spaces so let's continue with the development of .NET app in a docker container
+
