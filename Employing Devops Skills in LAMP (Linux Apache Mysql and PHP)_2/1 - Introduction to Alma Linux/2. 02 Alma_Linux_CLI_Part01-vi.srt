@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:09,360
+Vì vậy, chúng tôi trở lại một lần nữa bây giờ và chúng tôi bắt đầu để thực hiện phần thú vị đang sử dụng
+
+2
+00:00:09,360 --> 00:00:20,240
+lời bình luận hay tiếng CLI. Bây giờ, như bạn còn nhớ trong video trước, khi chúng tôi
+
+3
+00:00:20,240 --> 00:00:25,840
+muốn sử dụng địa chỉ IP hoặc cấu hình địa chỉ IP tĩnh, nếu tôi muốn
+
+4
+00:00:25,840 --> 00:00:33,520
+Lấy địa chỉ IP mà tôi đã cấu hình, đó là 120, tôi cần phải gõ một trong hai
+
+5
+00:00:33,520 --> 00:00:42,640
+Ghi chú di sản, nếu cấu hình. Được rồi, đây là bình luận di sản, hoặc có
+
+6
+00:00:42,640 --> 00:00:47,440
+Thêm một bình luận mới, mà thực ra tôi thích nó vì nó rất đơn giản. Ngươi
+
+7
+00:00:47,440 --> 00:00:56,160
+có thể gõ IP space A. Nếu bạn có thể thấy ở đây, nó không quan trọng vòng lặp trở lại
+
+8
+00:00:56,160 --> 00:01:04,520
+Giao diện, vì nó là một giao diện logic, không cần phải sử dụng hoặc cấu hình nó.
+
+9
+00:01:04,520 --> 00:01:10,960
+Đây là thực sự giao diện vật lý bắt đầu với DNS, và đây là
+
+10
+00:01:10,960 --> 00:01:21,920
+địa chỉ IP của chúng tôi với mặt nạ subnet bởi vì nó đang bắt đầu từ 0.2 đến 5.5.5.5.0.
+
+11
+00:01:21,920 --> 00:01:28,480
+Trên thực tế, nếu tôi muốn xem các lộ trình mặc định hoặc các mặc định, tôi cần phải
+
+12
+00:01:28,480 --> 00:01:35,640
+đăng một lời bình luận khác. Nếu tôi muốn sử dụng DNS, tôi cần phải phát hành một cái khác, vì vậy IP
+
+13
+00:01:35,640 --> 00:01:42,600
+lộ trình ở đây, như bạn thấy, nó là đường mặc định, đó là 100.1, nó là tĩnh
+
+14
+00:01:42,600 --> 00:01:49,400
+lộ trình mà chúng tôi thực hiện hoặc tạo trong video trước, và nếu tôi muốn xem
+
+15
+00:01:49,400 --> 00:01:56,000
+DNS, tôi cần phải gõ lấy tập tin bắt hoặc đọc tập tin, mà giống như trong
+
+16
+00:01:56,000 --> 00:02:03,840
+cửa sổ, mà nói như tập tin máy, nó là tập tin chứa tất cả các tên
+
+17
+00:02:03,840 --> 00:02:08,720
+Máy chủ mà tôi có, máy chủ chính và thứ hai, và nếu bạn có thể nhớ, chúng tôi
+
+18
+00:02:08,720 --> 00:02:14,760
+Đã cấu hình chỉ một DNS, một nguyên tố chính, chúng tôi đã không cấu hình DNS thứ hai, vì vậy chúng tôi
+
+19
+00:02:14,760 --> 00:02:23,920
+Cần phải gõ bắt, ETC, và quyết tâm, và cẩn thận để viết nó chính xác bởi vì
+
+20
+00:02:23,920 --> 00:02:31,040
+Nó là một máy chủ nhạy cảm, okay, như bạn có thể thấy ở đây, chúng tôi chỉ có một máy chủ tên, mà
+
+21
+00:02:31,040 --> 00:02:41,400
+là 888 của Google. Vì vậy, tuyệt, hãy bắt đầu bây giờ với thiết lập, cố gắng để kiểm tra máy đầu tiên
+
+22
+00:02:41,400 --> 00:02:48,920
+tên, bằng cách đưa ra bình luận này, tên máy, kiểm soát, okay, hãy xem những gì các
+
+23
+00:02:48,920 --> 00:02:55,240
+Máy phục vụ được đặt tên, được rồi, theo mặc định, không có tên máy tĩnh, như bạn có thể thấy
+
+24
+00:02:55,240 --> 00:03:03,440
+Ở đây, và chúng ta hãy cố gắng đặt tên máy bằng cách sử dụng dòng chú thích, vì vậy chúng ta cần
+
+25
+00:03:03,440 --> 00:03:10,080
+để gõ sudo, bởi vì tôi cần đặc quyền siêu người dùng để thực hiện thay đổi
+
+26
+00:03:10,080 --> 00:03:20,520
+Như vậy, và chúng tôi sẽ gõ tên máy, điều khiển, và chúng tôi sẽ gõ, ví dụ, ở đây đặt
+
+27
+00:03:20,520 --> 00:03:32,960
+Tên máy, và làm cho nó devops máy phục vụ, ví dụ, và khi tôi bấm nhập, cần phải
+
+28
+00:03:32,960 --> 00:03:44,120
+Gõ mật khẩu của tôi, như mong đợi, và không có nhiều hơn trong sudo, okay, và điều này là
+
+29
+00:03:44,120 --> 00:03:52,160
+rất bình thường, tôi cần thêm người dùng này để được trong sudo hoặc tập tin, để ông có thể làm
+
+30
+00:03:52,160 --> 00:03:59,520
+hoặc sử dụng đặc quyền siêu người dùng, có một phương pháp di sản để thêm nó vào siêu
+
+31
+00:03:59,520 --> 00:04:04,680
+Tập tin người dùng, và có một phương pháp mới hơn để thêm nó vào nhóm bánh xe, đó là
+
+32
+00:04:04,680 --> 00:04:10,840
+Trong hồ sơ hay sudo, hãy bắt đầu với, hoặc sử dụng
+
+33
+00:04:10,840 --> 00:04:16,600
+phương pháp mới hơn, bằng cách thêm nó vào các nhóm bánh xe, vì vậy đầu tiên tôi cần phải
+
+34
+00:04:16,600 --> 00:04:21,980
+chuyển đổi người dùng, cần phải chuyển đổi tất nhiên theo quy tắc, hãy gõ mật khẩu
+
+35
+00:04:21,980 --> 00:04:30,600
+Về quy tắc, được rồi, như các bạn có thể thấy, bình luận thay đổi từ cái này,
+
+36
+00:04:30,600 --> 00:04:40,760
+Đây là 2 đô la, vì bây giờ tôi là một nhà quản trị, được rồi, hoàn hảo, để thêm người dùng,
+
+37
+00:04:40,760 --> 00:04:48,960
+Tôi cần phải gõ sudo tất nhiên, và tôi cần phải gõ chế độ người dùng chú thích này, người dùng
+
+38
+00:04:48,960 --> 00:05:01,160
+Sửa đổi -a, g to add là cho một số nhóm, và nhóm này sẽ được đặt tên bánh xe, okay, và
+
+39
+00:05:01,160 --> 00:05:11,640
+Hãy gõ tên của điều này, hãy nhấp chuột vào, và bùm, bây giờ chúng ta đang, hoặc điều này
+
+40
+00:05:11,640 --> 00:05:20,840
+Người dùng có trong từ sudo, nhưng để thực hiện bất kỳ bình luận nào, tôi cần đăng nhập vào,
+
+41
+00:05:20,840 --> 00:05:26,880
+đăng nhập và đăng nhập vào, vì vậy hãy làm điều đó một cách nhanh chóng, tôi sẽ đăng nhập ra và đăng nhập vào, và cố gắng để
+
+42
+00:05:26,880 --> 00:05:47,760
+Thực hiện lại bình luận.
+
+43
+00:05:47,760 --> 00:06:15,000
+Được rồi, tôi trở lại đây, tôi sẽ mở thiết bị cuối, và hãy gõ lại bình luận,
+
+44
+00:06:15,000 --> 00:06:23,640
+Được rồi, tôi có thể tìm kiếm, tôi có thể gõ nó một lần nữa từ lịch sử bằng cách sử dụng quần áo, vì vậy, máy chủ
+
+45
+00:06:23,640 --> 00:06:38,040
+tên, và hãy đặt nó vào máy chủ của chiến dịch, okay, bây giờ chúng ta nên được okay, vì vậy nếu tôi muốn
+
+46
+00:06:38,040 --> 00:06:45,400
+Xác nhận nó, tôi có thể gõ tên máy, điều khiển và tên máy tĩnh đã được thay đổi
+
+47
+00:06:45,400 --> 00:06:53,920
+Như bạn có thể thấy bây giờ, hoàn hảo, vì vậy bây giờ chúng tôi đã thay đổi tên máy sau khi thêm người dùng
+
+48
+00:06:53,920 --> 00:07:01,480
+và mô hình thành công vào tập tin từ sudo, vì vậy hãy di chuyển với nhiệm vụ khác hoặc khác
+
+49
+00:07:01,480 --> 00:07:10,720
+Hướng dẫn, vì vậy bây giờ chúng tôi cần phải làm, hoặc đảm bảo rằng trình phục vụ này được bảo vệ bằng cách sử dụng
+
+50
+00:07:10,720 --> 00:07:16,840
+Bức tường lửa, nên việc đầu tiên phải làm ở đây là đảm bảo tường lửa, nó nên
+
+51
+00:07:16,840 --> 00:07:21,640
+được cài đặt theo mặc định, nhưng dù sao, chúng tôi sẽ cài đặt nó, và nếu nó đã được cài đặt
+
+52
+00:07:21,640 --> 00:07:33,880
+Nó sẽ cho chúng ta biết, được rồi, để cài đặt nó, chúng ta cần phải gõ các sudo, hệ thống, kiểm soát, và
+
+53
+00:07:33,880 --> 00:07:54,780
+Chúng tôi sẽ gõ tường lửa, trình nền, để lắp đặt tường lửa, trình nền, xin lỗi.
+
+54
+00:07:54,780 --> 00:08:07,320
+lỗi ở đây mà tôi cần sử dụng gói dnf
+
+55
+00:08:07,320 --> 00:08:31,940
+Quản lý, cài đặt nó, đặt giường của tôi, okay, vì vậy để nf, đây là trình quản lý gói mặc định
+
+56
+00:08:31,940 --> 00:08:42,780
+Được rồi, bây giờ, như bạn có thể thấy ở đây, gói này, okay, đã được cài đặt, nếu nó không
+
+57
+00:08:42,780 --> 00:08:49,040
+cài đặt, nó sẽ mất một số thời gian, có lẽ 5 đến 10 phút cho đến khi nó được cài đặt, và ở đó
+
+58
+00:08:49,040 --> 00:08:58,180
+là không có phụ thuộc, vấn đề, và tất cả mọi thứ là okay, hoàn hảo, vì vậy bây giờ hãy xóa màn hình,
+
+59
+00:08:58,180 --> 00:09:07,100
+Bây giờ chúng ta hãy cố gắng chắc chắn rằng trình nền tường lửa đã chạy, nó là okay, vì vậy hãy gõ
+
+60
+00:09:07,100 --> 00:09:36,840
+sudo, hệ thống, điều khiển, và hãy kích hoạt tường lửa đầu tiên d, okay, sudo, hệ thống, hệ thống,
+
+61
+00:09:36,840 --> 00:09:50,180
+bắt đầu, không bật, hãy bắt đầu nó và sau đó hiệu lực nó sau, okay, hệ thống, ctl, ctl, không
+
+62
+00:09:50,180 --> 00:10:00,960
+Nó, đây là một trường hợp nhạy cảm, được rồi, vì vậy hệ thống, kiểm soát, bắt đầu trình nền tường lửa, và hãy
+
+63
+00:10:00,960 --> 00:10:12,840
+Cho phép nó sau đó, okay, vì vậy bạn nên bây giờ được mát mẻ, và trình nền tường lửa nên
+
+64
+00:10:12,840 --> 00:10:19,360
+Chạy thành công, nếu tôi muốn chắc chắn rằng nó là okay, vì vậy tôi cần phải gõ cùng một
+
+65
+00:10:19,360 --> 00:10:31,320
+Chỉ huy của hệ thống, kiểm soát và trạng thái, và bây giờ nó ổn, chúng ta có thể thấy rằng nó đang hoạt động và
+
+66
+00:10:31,320 --> 00:10:39,480
+Chạy đi, được rồi, thật hoàn hảo, và nếu chúng ta cho họ thấy danh tính của quá trình, nên tôi là tất cả, được chứ?
+
+67
+00:10:39,480 --> 00:10:47,360
+hoàn hảo, bây giờ hãy thử sau khi chắc chắn rằng tường lửa đã được cài đặt và cấu hình,
+
+68
+00:10:47,360 --> 00:10:53,400
+Hãy làm một số cấu hình cơ bản, những gì cơ bản chúng tôi có thể làm, thực sự chúng tôi có thể,
+
+69
+00:10:53,400 --> 00:11:00,600
+Sau khi chúng tôi kiểm tra tường lửa là okay, chúng tôi có các loại khác nhau khu vực, hãy kiểm tra
+
+70
+00:11:00,600 --> 00:11:07,360
+Những khu vực có sẵn trong tường lửa, ví dụ như tôi đang làm việc, tôi cần mạng lưới công cộng,
+
+71
+00:11:07,360 --> 00:11:14,320
+Nếu tôi có ngoài sân bay hay bất cứ nơi công cộng nào, công việc, nếu tôi làm việc, tôi cần
+
+72
+00:11:14,320 --> 00:11:21,600
+Để truy cập vào một số giao diện, có thể sử dụng các truy cập đặc biệt, nơi mà mạng lưới làm việc của mẹ tôi,
+
+73
+00:11:21,600 --> 00:11:29,880
+Và nếu tôi ở nhà, tôi cần khu vực khác, được rồi, để liệt kê các khu vực, tôi cần phải
+
+74
+00:11:29,880 --> 00:11:42,280
+Hãy gõ lệnh này, được rồi, nó sẽ nói rằng những, đây là tất cả các vùng mà tôi có từ
+
+75
+00:11:42,280 --> 00:11:51,000
+Đây là những khu vực mà tôi có, tất cả các loại
+
+76
+00:11:51,000 --> 00:12:03,040
+của, do đó, theo mặc định nó đã được thực hiện rằng chúng tôi có một khu vực tin tưởng, okay, hoặc
+
+77
+00:12:03,040 --> 00:12:11,240
+Công cộng, xin lỗi, vì vậy tôi có thể thiết lập bất kỳ giao diện để được tạo ra, để được thiết lập tự động cho công chúng
+
+78
+00:12:11,240 --> 00:12:19,720
+Đây là giao diện, mà bạn có thể thấy, không an toàn, bởi vì
+
+79
+00:12:19,720 --> 00:12:28,680
+Nó là thất bại của internet, nó là công cộng, tin cậy nội bộ, là một trong những
+
+80
+00:12:28,680 --> 00:12:36,680
+an ninh, B và Z là khu vực hoặc có thể là vùng giữa hai bức tường lửa,
+
+81
+00:12:36,680 --> 00:12:46,200
+Ví dụ, vì vậy hãy thiết lập vùng mặc định, okay, điều này đã đặt công chúng là mặc định
+
+82
+00:12:46,200 --> 00:12:53,600
+Vùng cho bất kỳ giao diện mạng nào tôi có, được rồi, hoàn hảo, bây giờ hãy cấu hình hoặc cho phép
+
+83
+00:12:53,600 --> 00:13:00,160
+Một số kết nối, tôi muốn cho phép một số kết nối đến máy chủ để có thể truy cập nó,
+
+84
+00:13:00,160 --> 00:13:11,120
+Giả sử tôi cài đặt nó bằng cách sử dụng chỉ một dấu nhắc hoặc lõi máy chủ phổ biến, tôi không có quyền truy cập
+
+85
+00:13:11,120 --> 00:13:19,960
+để làm cho một số phổ biến, tôi cần thiết lập truy cập đặc biệt vào nó như SSH để làm cho một số phổ biến,
+
+86
+00:13:19,960 --> 00:13:26,200
+Thực hiện một số phổ biến, chạy một số bình luận trên nó, tôi cần có lẽ để tải lên một số tập tin, vì vậy tôi cần
+
+87
+00:13:26,200 --> 00:13:36,320
+Để cho phép các giao thức như FTP, có lẽ tôi cần cài đặt một số dịch vụ như Genix, Apache,
+
+88
+00:13:36,320 --> 00:13:48,680
+Bất kỳ máy phục vụ web nào trên nó, tôi cần có lẽ để sử dụng bất kỳ dịch vụ hậu phương nào hoặc tôi cài đặt có lẽ là mặc định mặc định
+
+89
+00:13:48,680 --> 00:13:56,000
+Trên đó, PHP, một cái gì đó như thế, vì vậy tôi cần có lẽ là đường dẫn mặc định truy cập hoặc truy cập để hỗ trợ
+
+90
+00:13:56,000 --> 00:14:00,880
+3D đến 2D mặc định.
+
