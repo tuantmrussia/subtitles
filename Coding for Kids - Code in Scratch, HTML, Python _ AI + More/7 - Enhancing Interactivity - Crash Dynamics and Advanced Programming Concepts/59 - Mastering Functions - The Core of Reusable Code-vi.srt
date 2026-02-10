@@ -1,0 +1,384 @@
+1
+00:00:00,110 --> 00:00:04,940
+Vì vậy, ở giai đoạn này, chúng tôi đã thảo luận hầu hết các khối mã sẵn có cho chúng tôi.
+
+2
+00:00:04,940 --> 00:00:10,040
+Tuy nhiên, chỉ có một điều nữa một khối mã và một khái niệm mã hóa rất quan trọng để lập trình
+
+3
+00:00:10,040 --> 00:00:15,890
+Tôi cần phải đợi cho đến khi anh trở thành một lập trình viên khá giỏi trước khi tôi giới thiệu nó với anh.
+
+4
+00:00:15,890 --> 00:00:18,710
+Và đó là chức năng.
+
+5
+00:00:19,160 --> 00:00:22,130
+Vậy một chức năng là gì và tại sao chúng ta nên quan tâm đến nó?
+
+6
+00:00:23,030 --> 00:00:27,290
+Hãy tưởng tượng bạn có một cái máy làm đồ chơi, nó sẽ rất tuyệt.
+
+7
+00:00:27,290 --> 00:00:32,000
+Vì vậy, bạn đặt vào một số vật liệu, nhấn một nút, và ra đi một chiếc xe đồ chơi.
+
+8
+00:00:32,480 --> 00:00:37,340
+Và mỗi lần bạn muốn một chiếc xe mới, bạn chỉ cần nhấn nút một lần nữa và ra ngoài một chiếc xe.
+
+9
+00:00:37,340 --> 00:00:41,360
+Mặc dù vấn đề duy nhất với cái máy này là mỗi lần nó là cùng một chiếc xe.
+
+10
+00:00:42,020 --> 00:00:47,660
+Bây giờ tưởng tượng bạn có một máy khác thậm chí còn tốt hơn, bởi vì nếu bạn muốn một chiếc xe màu đỏ, bạn đặt màu đỏ
+
+11
+00:00:47,660 --> 00:00:49,250
+sơn và ra ngoài một chiếc xe màu đỏ.
+
+12
+00:00:49,250 --> 00:00:52,160
+Hoặc nếu bạn muốn một chiếc xe màu xanh, bạn sơn màu xanh dương và ra một chiếc xe màu xanh dương.
+
+13
+00:00:52,160 --> 00:00:53,180
+Anh hiểu rồi đấy.
+
+14
+00:00:53,510 --> 00:00:59,270
+Vâng, cả hai máy tính này là ví dụ về chức năng, ngoại trừ một trong những chức năng cho phép đầu vào
+
+15
+00:00:59,270 --> 00:01:01,100
+Mà có thể thay đổi đầu ra.
+
+16
+00:01:01,910 --> 00:01:07,130
+Trong thế giới lập trình, chức năng giống như cái nút kỳ diệu đó.
+
+17
+00:01:07,130 --> 00:01:13,880
+Bạn viết một mảnh mã một lần, và sau đó bạn có thể sử dụng nó lặp đi lặp lại chỉ bằng cách gọi các chức năng
+
+18
+00:01:13,880 --> 00:01:14,570
+tên.
+
+19
+00:01:14,750 --> 00:01:20,390
+Bây giờ một số chức năng có thể chấp nhận đầu vào như một số hoặc chuỗi, và phụ thuộc vào những gì đầu vào,
+
+20
+00:01:20,390 --> 00:01:22,640
+Xác định kết xuất nào sẽ cung cấp cho bạn.
+
+21
+00:01:22,640 --> 00:01:29,030
+Cũng giống như xe của chúng tôi làm cho máy sản xuất khác nhau xe màu sắc, nhưng cũng một số chức năng sẽ luôn luôn
+
+22
+00:01:29,030 --> 00:01:31,280
+trả lại cùng một đầu ra.
+
+23
+00:01:31,640 --> 00:01:33,170
+Vậy các hàm số hoạt động như thế nào?
+
+24
+00:01:33,440 --> 00:01:36,260
+Đầu tiên chúng tôi viết một chức năng.
+
+25
+00:01:36,260 --> 00:01:40,880
+Nó giống như chế tạo đồ chơi của chúng tôi, thiết lập nó để làm một đồ chơi cụ thể.
+
+26
+00:01:41,660 --> 00:01:47,360
+Tiếp theo, bất cứ khi nào chúng tôi cần nhiệm vụ cụ thể thực hiện, chúng tôi gọi các chức năng giống như nhấn nút
+
+27
+00:01:47,360 --> 00:01:48,200
+trên máy.
+
+28
+00:01:48,500 --> 00:01:53,000
+Các chức năng sau đó thực hiện nhiệm vụ và cung cấp cho chúng tôi kết quả, giống như máy móc ra một đồ chơi
+
+29
+00:01:53,000 --> 00:01:53,450
+Xe.
+
+30
+00:01:54,160 --> 00:01:57,220
+Vậy tại sao các chức năng trong lập trình lại quan trọng?
+
+31
+00:01:57,700 --> 00:02:00,040
+Tôi chắc là anh đã đoán ra lý do rồi.
+
+32
+00:02:00,400 --> 00:02:06,520
+Trước hết, tiết kiệm thời gian không có chức năng, chúng tôi sẽ phải viết cùng một mã và lặp đi lặp lại
+
+33
+00:02:06,520 --> 00:02:08,350
+cũng như vậy.
+
+34
+00:02:08,380 --> 00:02:09,880
+Hàm tiết kiệm thời gian.
+
+35
+00:02:09,880 --> 00:02:13,330
+Chúng tôi viết một lần và chúng tôi sử dụng rất, rất nhiều lần.
+
+36
+00:02:13,850 --> 00:02:14,720
+Tiếp theo.
+
+37
+00:02:14,720 --> 00:02:19,460
+Tổ chức mã hóa giúp chúng ta giữ cho mã của chúng ta sạch sẽ và có tổ chức.
+
+38
+00:02:19,490 --> 00:02:24,170
+Mỗi chức năng có công việc của nó, và nó làm cho nó dễ dàng hơn để theo dõi và sửa chữa bất kỳ vấn đề nào.
+
+39
+00:02:24,890 --> 00:02:27,110
+Thứ ba, ít sai lầm hơn.
+
+40
+00:02:27,470 --> 00:02:31,820
+Có một đoạn mã nghĩa là chỉ có một nơi để kiểm tra và sửa chữa nếu có gì không ổn.
+
+41
+00:02:31,850 --> 00:02:34,100
+Không tìm kiếm thông qua các khối và khối mã nữa.
+
+42
+00:02:34,310 --> 00:02:40,790
+Và cuối cùng, chia sẻ mã chức năng cũng có thể được chia sẻ giữa các phần khác nhau của chương trình của chúng tôi hoặc thậm chí
+
+43
+00:02:40,790 --> 00:02:42,230
+giữa các chương trình khác nhau.
+
+44
+00:02:42,230 --> 00:02:45,350
+Và như bạn đã biết, mã tái sử dụng là rất quan trọng.
+
+45
+00:02:45,530 --> 00:02:46,640
+Hãy tưởng tượng điều này.
+
+46
+00:02:46,970 --> 00:02:51,140
+Anh đang tạo ra một trò chơi thú vị khi một hiệp sĩ dũng cảm đi tìm kiếm.
+
+47
+00:02:51,680 --> 00:02:55,070
+Trong cuộc tìm kiếm này, hiệp sĩ đã chạm trán với kho báu.
+
+48
+00:02:55,250 --> 00:02:59,660
+Mỗi lần hiệp sĩ chạm vào ngực, nó mở ra và mở ra.
+
+49
+00:02:59,690 --> 00:03:01,970
+Tất cả đều nhảy ra ngoài.
+
+50
+00:03:02,510 --> 00:03:03,560
+Bây giờ là vấn đề.
+
+51
+00:03:03,590 --> 00:03:09,230
+Trò chơi của chúng tôi không chỉ có một, không phải hai, mà còn có nhiều kho báu rải rác ở nhiều cấp độ khác nhau.
+
+52
+00:03:09,260 --> 00:03:13,310
+Chúng tôi muốn mỗi cái rương làm cùng một màn mở đầu kỳ diệu.
+
+53
+00:03:13,730 --> 00:03:18,710
+Vậy làm thế nào chúng ta có thể làm điều này xảy ra mà không viết cùng một mã cho mỗi cái ngực?
+
+54
+00:03:18,950 --> 00:03:20,780
+Đây là hàm số.
+
+55
+00:03:21,770 --> 00:03:28,640
+Chúng tôi có thể viết một chức năng tên là Open Chest có chứa các mã để làm cho ngực mở và tiền xu pop
+
+56
+00:03:28,640 --> 00:03:29,030
+ra ngoài.
+
+57
+00:03:29,060 --> 00:03:34,370
+Bây giờ, mỗi lần hiệp sĩ chạm vào ngực, chúng ta chỉ đơn giản gọi chức năng mở ngực.
+
+58
+00:03:34,610 --> 00:03:38,570
+Nó giống như là kể cho trò chơi, này, làm việc mở ngực ngay bây giờ và voila!
+
+59
+00:03:38,600 --> 00:03:41,540
+Ngực mở ra và tiền xu ra và ta da!
+
+60
+00:03:41,540 --> 00:03:45,110
+Và cho dù cái rương ở đâu, nó vẫn hoạt động.
+
+61
+00:03:46,010 --> 00:03:51,920
+Và để cung cấp cho bạn một ví dụ thực tế thế giới đầu của chức năng trong DOS, có một dự án phổ biến trong đầu
+
+62
+00:03:51,920 --> 00:03:56,600
+Gọi là động cơ chuyển động mịn, và tôi khuyến khích bạn tự kiểm tra.
+
+63
+00:03:57,050 --> 00:03:59,000
+Nhưng hãy click vào dự án này.
+
+64
+00:03:59,000 --> 00:04:03,650
+Chú ý cách mà tất cả các bào tử di chuyển trong một chuyển động rất lỏng.
+
+65
+00:04:04,100 --> 00:04:05,450
+Và nếu chúng ta bấm nút tiếp theo.
+
+66
+00:04:06,470 --> 00:04:12,020
+Và tiếp theo bạn có thể thấy tất cả các dự án sử dụng chuyển động trơn tru.
+
+67
+00:04:12,140 --> 00:04:18,410
+Dù sao đi nữa, nếu chúng ta bấm vào cái nút này, bạn sẽ thấy rằng có một khối mã được gọi là Tự do
+
+68
+00:04:18,410 --> 00:04:18,950
+Block.
+
+69
+00:04:18,950 --> 00:04:23,330
+Và nếu chúng tôi phóng to bạn sẽ thấy tất cả các chức năng khác nhau.
+
+70
+00:04:23,660 --> 00:04:25,670
+Và vâng, chúng khá phức tạp.
+
+71
+00:04:25,670 --> 00:04:27,890
+Nên đừng lo lắng về việc cố gắng hiểu nó hoạt động như thế nào.
+
+72
+00:04:27,890 --> 00:04:31,700
+Điều quan trọng ở đây là những gì các hàm số làm.
+
+73
+00:04:31,820 --> 00:04:37,250
+Vì vậy, nếu chúng tôi chuyển sang thẻ My Blocks bạn sẽ thấy tất cả các khối khác nhau.
+
+74
+00:04:37,760 --> 00:04:40,760
+Nhưng về cơ bản những khối này được sử dụng để gọi các chức năng.
+
+75
+00:04:40,760 --> 00:04:44,270
+Vì vậy, hãy nói rằng chúng tôi đã có một spite và chúng tôi muốn nó để tăng lên.
+
+76
+00:04:44,270 --> 00:04:49,850
+Vì vậy, đầu tiên hãy xóa tất cả các spites để bạn có thể nhìn thấy điều này trong hành động và cũng hiển thị các spite.
+
+77
+00:04:50,470 --> 00:04:53,440
+Bây giờ chúng tôi muốn hỏi nơi spite để di chuyển về phía trước 100 bước.
+
+78
+00:04:53,770 --> 00:04:58,090
+Bây giờ, thay vì sử dụng mã chuyển động, chúng ta có thể gọi chức năng này ở đây.
+
+79
+00:04:58,360 --> 00:05:01,420
+Vì vậy, như bạn có thể thấy khối này cung cấp rất nhiều lựa chọn.
+
+80
+00:05:01,420 --> 00:05:07,060
+Vì vậy, hãy nói rằng chúng tôi muốn di chuyển 100 bước trong hai giây với một loại giảm một.
+
+81
+00:05:07,870 --> 00:05:08,920
+Nhấn nút play.
+
+82
+00:05:08,920 --> 00:05:12,790
+Như các bạn thấy, cây keo của chúng ta di chuyển trơn tru xuống màn hình.
+
+83
+00:05:13,060 --> 00:05:19,510
+Vì vậy, bây giờ hãy nói rằng chúng tôi muốn quay và tiến về phía trước một lần nữa để chúng tôi có thể lấy này quay mịn.
+
+84
+00:05:19,630 --> 00:05:25,930
+Vì vậy, hãy nói rằng chúng tôi muốn để mịn góc 45 độ trong một giây với một loại tăng cường ba.
+
+85
+00:05:26,290 --> 00:05:30,790
+Sau đó, chúng ta có thể mô phỏng chuyển động trơn tru này và gắn nó ở cuối.
+
+86
+00:05:31,210 --> 00:05:35,260
+Bây giờ nếu chúng ta đánh vào trò chơi, hãy chú ý làm thế nào cá tuyết di chuyển chậm và nhẹ nhàng về phía trước.
+
+87
+00:05:36,670 --> 00:05:40,330
+Sau đó quay một vòng và cuối cùng tiến về phía trước một lần nữa.
+
+88
+00:05:40,780 --> 00:05:43,240
+Và tôi chỉ lấy 3 dãy mã.
+
+89
+00:05:43,660 --> 00:05:48,940
+Nhưng nếu chúng tôi đã cố gắng tự tay tạo ra các chuyển động mịn cho mỗi chuyển động, nó sẽ mất nhiều thời gian
+
+90
+00:05:48,940 --> 00:05:53,500
+Và mật mã của chúng tôi sẽ rất khó hiểu để hiểu những gì đang thực sự xảy ra.
+
+91
+00:05:53,590 --> 00:05:59,410
+Tóm lại, chức năng là một trong những công cụ tốt nhất của lập trình viên để viết, có tổ chức, và
+
+92
+00:05:59,410 --> 00:06:00,460
+Mật mã sạch.
+
+93
+00:06:00,550 --> 00:06:07,600
+Trong lập trình, một chức năng giống như một trợ lý tiện ích làm một công việc cụ thể bất cứ khi nào chúng tôi yêu cầu, và nó là
+
+94
+00:06:07,600 --> 00:06:11,080
+Rất đáng tin cậy, chúng ta biết nó hoạt động vì nó đã được thử nghiệm và tái sử dụng.
+
+95
+00:06:11,080 --> 00:06:17,560
+Và vì vậy bằng cách làm chủ các chức năng, bạn đang trên đường trở thành một lập trình viên có thể làm cho phức tạp
+
+96
+00:06:17,560 --> 00:06:19,510
+và các chương trình tương tác.
+
