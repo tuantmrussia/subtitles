@@ -1,0 +1,428 @@
+1
+00:00:00,320 --> 00:00:06,350
+Okay, so now we need to change the direction of our car so it doesn't just look like it's gliding across
+
+2
+00:00:06,350 --> 00:00:07,910
+the screen but actually turning.
+
+3
+00:00:08,360 --> 00:00:14,180
+And to achieve this, like with our other project we can use this point direction block.
+
+4
+00:00:14,770 --> 00:00:17,620
+But you might have noticed something strange if you try to use it.
+
+5
+00:00:17,740 --> 00:00:23,260
+And that is if you point in a straight direction and click it, you'll see our car point to the side,
+
+6
+00:00:23,260 --> 00:00:24,970
+which seems rather weird.
+
+7
+00:00:25,240 --> 00:00:27,220
+But there is some sense to this.
+
+8
+00:00:27,610 --> 00:00:32,770
+Scratch assumes that your sprites default direction is facing to the right.
+
+9
+00:00:33,620 --> 00:00:36,050
+Let's take the default cat sprite as an example.
+
+10
+00:00:36,080 --> 00:00:40,850
+When you bring it into your project, you'll see that it really looks like it's facing right.
+
+11
+00:00:41,420 --> 00:00:50,360
+So when you use a block to make it face up or zero degrees, it's actually looks like it's facing up
+
+12
+00:00:50,360 --> 00:00:53,510
+because it was initially facing the right.
+
+13
+00:00:53,540 --> 00:00:59,570
+Now, I know it's still a bit confusing, but the key here is to understand that scratch assumes all
+
+14
+00:00:59,570 --> 00:01:01,580
+your sprites are facing this way.
+
+15
+00:01:01,670 --> 00:01:08,480
+So when you create your own sprite or use a different one, just make sure to adjust its initial direction
+
+16
+00:01:08,480 --> 00:01:13,220
+in the costume editor so it faces the right way when you start working with it.
+
+17
+00:01:13,730 --> 00:01:21,140
+So moving back to our car, we can go into the editor and using this arrow, we can rotate our car to
+
+18
+00:01:21,140 --> 00:01:22,340
+have it face right.
+
+19
+00:01:23,010 --> 00:01:24,240
+And here you have it.
+
+20
+00:01:24,270 --> 00:01:27,990
+Now you can see that it points in the exact direction that we set it.
+
+21
+00:01:28,020 --> 00:01:28,830
+Great.
+
+22
+00:01:29,500 --> 00:01:32,800
+Now let's implement this into our code.
+
+23
+00:01:32,800 --> 00:01:39,910
+So quite simply what we want is to look like it's turning right when we click the right arrow and left
+
+24
+00:01:39,910 --> 00:01:42,250
+when we click the left arrow.
+
+25
+00:01:42,900 --> 00:01:48,570
+So we can just drag our point direction and put one in each of these if statements.
+
+26
+00:01:49,310 --> 00:01:53,360
+So for the first we can have it at about 15 degrees.
+
+27
+00:01:54,050 --> 00:01:57,230
+And for the second, we can set it to -50.
+
+28
+00:01:57,770 --> 00:02:02,810
+Now, if we hit play again and then turn, you can see it works.
+
+29
+00:02:02,930 --> 00:02:10,310
+Now, although there are clearly a few bugs here, the first is quite easy to dress, which is when
+
+30
+00:02:10,310 --> 00:02:11,060
+we start the game.
+
+31
+00:02:11,060 --> 00:02:15,770
+Our car kind of points to the side, which doesn't quite look right.
+
+32
+00:02:16,040 --> 00:02:21,500
+So we can just add a point direction to the start and have it point straight on the start.
+
+33
+00:02:21,800 --> 00:02:24,020
+And now, as you can see, that's much better.
+
+34
+00:02:24,020 --> 00:02:29,390
+Although as you can also see, if we stop turning and just go straight, our car still points in whatever
+
+35
+00:02:29,390 --> 00:02:31,130
+direction it was last pointing.
+
+36
+00:02:31,730 --> 00:02:37,820
+Now this is a bit more complex, as we need a way for a car to point straight if none of the buttons
+
+37
+00:02:37,820 --> 00:02:38,450
+are clicked.
+
+38
+00:02:38,950 --> 00:02:46,570
+So once again, pause the video and try to see if you can get this to work and get the car to point
+
+39
+00:02:46,570 --> 00:02:47,260
+straight.
+
+40
+00:02:48,380 --> 00:02:49,460
+Did you figure it out?
+
+41
+00:02:51,020 --> 00:02:56,930
+Now looking at our code, you can see we have these two if statements that check if we are clicking
+
+42
+00:02:56,930 --> 00:02:58,250
+one key or the other key.
+
+43
+00:02:58,520 --> 00:03:02,090
+But there is another type of if statement that we haven't really used.
+
+44
+00:03:02,090 --> 00:03:04,280
+And it's so super important.
+
+45
+00:03:04,800 --> 00:03:09,690
+So if we're going down to our control, you will see we have this if else block.
+
+46
+00:03:10,170 --> 00:03:17,010
+And well we know what the if block does like if a condition is true it will execute some code.
+
+47
+00:03:17,010 --> 00:03:19,770
+Like if the right arrow is clicked, it will turn right.
+
+48
+00:03:19,770 --> 00:03:21,990
+And with this block it will do the same.
+
+49
+00:03:21,990 --> 00:03:28,170
+But if the condition is not true, it will execute any code in this else block.
+
+50
+00:03:28,760 --> 00:03:30,560
+So let's see this in action.
+
+51
+00:03:30,860 --> 00:03:34,940
+Firstly, taking all this code out we can swap it for this.
+
+52
+00:03:35,240 --> 00:03:42,920
+And here we can bring in if the right arrow is clicked and then point the direction and change x.
+
+53
+00:03:43,880 --> 00:03:45,350
+In for the elves.
+
+54
+00:03:45,380 --> 00:03:47,330
+Let's just bring in this other code.
+
+55
+00:03:47,870 --> 00:03:53,600
+Now, if you hit play, you will see that if you click the right arrow, the car does what is expected.
+
+56
+00:03:53,930 --> 00:03:59,630
+But if the right arrow is not clicked, the car glides to the left.
+
+57
+00:04:00,560 --> 00:04:03,050
+So now we understand how all that works.
+
+58
+00:04:03,050 --> 00:04:06,620
+Let's bring it back to how it was and a useful tip.
+
+59
+00:04:07,100 --> 00:04:09,470
+Just click command Z or control Z.
+
+60
+00:04:09,470 --> 00:04:12,470
+If you're on windows and you'll see your code revert to how it was.
+
+61
+00:04:12,470 --> 00:04:13,580
+So let's do this.
+
+62
+00:04:14,550 --> 00:04:18,330
+Let's swap out this left arrow for this if else.
+
+63
+00:04:19,030 --> 00:04:21,610
+And then move the code inside.
+
+64
+00:04:22,330 --> 00:04:29,110
+And finally in the else we can bring in a point direction and have it point straight.
+
+65
+00:04:29,880 --> 00:04:31,860
+Well, that makes sense.
+
+66
+00:04:32,130 --> 00:04:34,470
+If we click right, it points right.
+
+67
+00:04:34,620 --> 00:04:36,540
+If we click left, it points left.
+
+68
+00:04:36,570 --> 00:04:38,820
+Otherwise it points up.
+
+69
+00:04:38,940 --> 00:04:40,290
+So let's give that a try.
+
+70
+00:04:41,510 --> 00:04:44,690
+Well, that's not right, is it?
+
+71
+00:04:45,350 --> 00:04:47,090
+Let's try to untangle this a bit.
+
+72
+00:04:47,120 --> 00:04:52,340
+We have a situation where clicking right doesn't seem to work as expected, but clicking left does.
+
+73
+00:04:53,280 --> 00:04:57,810
+The answer lies in the order in which the code is processed.
+
+74
+00:04:57,840 --> 00:05:02,730
+Remember, in programming, code is run from the top to the bottom.
+
+75
+00:05:02,760 --> 00:05:06,000
+It checks each condition in the order they appear.
+
+76
+00:05:06,000 --> 00:05:10,530
+So when we click write, our sprite is indeed instructed to point right.
+
+77
+00:05:10,620 --> 00:05:16,650
+However, there is more code after this that the computer still has to check, which is this here.
+
+78
+00:05:17,010 --> 00:05:19,860
+If we click left, it will point left.
+
+79
+00:05:19,860 --> 00:05:27,510
+But you see here, if this condition is not true, whatever is in this block will happen.
+
+80
+00:05:27,510 --> 00:05:31,410
+The final block of code gives a command for the sprite to point straight.
+
+81
+00:05:31,950 --> 00:05:37,500
+The sprite will follow this command if this condition is not met, and because this block is last,
+
+82
+00:05:37,500 --> 00:05:40,530
+it's ultimately what will be executed.
+
+83
+00:05:41,280 --> 00:05:46,890
+Yeah, I know programming logic is quite something, but the more you really try to understand it,
+
+84
+00:05:46,890 --> 00:05:48,360
+the more clear it all becomes.
+
+85
+00:05:48,360 --> 00:05:51,330
+It's all about thinking like a computer.
+
+86
+00:05:52,060 --> 00:05:54,010
+So that all said, how do we fix this?
+
+87
+00:05:54,520 --> 00:06:00,610
+Well, in programming, you generally don't want to have a situation where there are if blocks in a
+
+88
+00:06:00,610 --> 00:06:01,930
+single script or loop.
+
+89
+00:06:01,930 --> 00:06:06,130
+Instead, what we want to use is an if else.
+
+90
+00:06:06,280 --> 00:06:14,470
+So instead of this code looking like this, we will grab another if else, put this code inside.
+
+91
+00:06:15,610 --> 00:06:16,900
+Put it in the loop.
+
+92
+00:06:17,530 --> 00:06:22,630
+And finally we can put this if else in this else statement.
+
+93
+00:06:23,230 --> 00:06:25,510
+So not if we look at the code.
+
+94
+00:06:25,510 --> 00:06:28,990
+If the right arrow is clicked, this will execute.
+
+95
+00:06:29,170 --> 00:06:33,850
+Otherwise, if the left arrow is clicked, this code will execute.
+
+96
+00:06:33,850 --> 00:06:38,380
+And then only if none of the above conditions are true.
+
+97
+00:06:38,470 --> 00:06:40,600
+No left or right is clicked.
+
+98
+00:06:40,750 --> 00:06:42,730
+Our car will point straight.
+
+99
+00:06:43,090 --> 00:06:44,920
+So playing the game again.
+
+100
+00:06:44,920 --> 00:06:46,720
+See now how it runs perfectly.
+
+101
+00:06:47,810 --> 00:06:55,730
+So adding in this if else ensures that this bottom code can only execute if we aren't clicking the right
+
+102
+00:06:55,730 --> 00:06:59,810
+arrow, and then only if we aren't also clicking the left arrow.
+
+103
+00:06:59,840 --> 00:07:03,620
+Then finally will this else execute.
+
+104
+00:07:04,410 --> 00:07:09,480
+Now, all this might be a little bit confusing, but this is really the essence of programming.
+
+105
+00:07:09,480 --> 00:07:16,320
+Just understanding the order of operations and how code is executed and organized logically.
+
+106
+00:07:16,320 --> 00:07:20,580
+And trust me, the more you build, the clearer it will become.
+
+107
+00:07:20,580 --> 00:07:26,190
+So play around with it and try to understand it because they are exciting things to come.
+
