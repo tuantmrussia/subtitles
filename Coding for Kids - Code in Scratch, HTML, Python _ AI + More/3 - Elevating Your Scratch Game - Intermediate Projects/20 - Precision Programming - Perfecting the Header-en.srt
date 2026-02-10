@@ -1,0 +1,248 @@
+1
+00:00:00,110 --> 00:00:01,970
+So our game is really coming along.
+
+2
+00:00:01,970 --> 00:00:04,190
+But this is a header game after all.
+
+3
+00:00:04,190 --> 00:00:09,470
+And if you play the game, you can see that you don't just have to hit the ball with your head.
+
+4
+00:00:09,500 --> 00:00:16,340
+You can use any part of your body, and hitting the ball with your head doesn't seem to be the main
+
+5
+00:00:16,340 --> 00:00:17,690
+element of the game.
+
+6
+00:00:17,690 --> 00:00:24,800
+So how can we fix this so that only when the ball hits her head does it start to bounce?
+
+7
+00:00:25,570 --> 00:00:31,210
+We look at our code, this is to be expected has all it's actually doing is sensing the ball is touching
+
+8
+00:00:31,210 --> 00:00:33,460
+Ben, which is the whole character.
+
+9
+00:00:33,790 --> 00:00:38,950
+We don't have any code to deal with this, because it's not like we have code that says if it's touching
+
+10
+00:00:38,950 --> 00:00:40,780
+its head, do something.
+
+11
+00:00:41,230 --> 00:00:45,490
+But that's fine because we are programmers and we solve problems.
+
+12
+00:00:45,700 --> 00:00:47,470
+So what could we do?
+
+13
+00:00:48,000 --> 00:00:55,320
+Well, maybe we could write some code that checks the Y position of the ball and compares it to the
+
+14
+00:00:55,320 --> 00:00:57,780
+y position of Ben's head, and so on.
+
+15
+00:00:57,780 --> 00:01:01,980
+And we could maybe eventually get the problem solved like that.
+
+16
+00:01:02,800 --> 00:01:05,230
+Now, but that would take a whole lot of code and programming.
+
+17
+00:01:05,230 --> 00:01:11,560
+But it's also about thinking outside the box to find simple solutions to complex problems.
+
+18
+00:01:12,150 --> 00:01:12,750
+Okay.
+
+19
+00:01:12,750 --> 00:01:13,470
+So.
+
+20
+00:01:14,110 --> 00:01:19,360
+All we want our code to do is to check if a touching Ben's head.
+
+21
+00:01:20,290 --> 00:01:22,780
+Okay, pause the video and think for a moment.
+
+22
+00:01:22,780 --> 00:01:26,740
+What clever thing could we do to solve this problem?
+
+23
+00:01:26,920 --> 00:01:31,270
+We want the ball only to bounce off Ben's head.
+
+24
+00:01:31,390 --> 00:01:32,710
+Pause and think.
+
+25
+00:01:33,460 --> 00:01:35,140
+Did you come with any good ideas?
+
+26
+00:01:35,680 --> 00:01:39,430
+Well, here is a gruesome but clever way to do it.
+
+27
+00:01:39,460 --> 00:01:40,990
+How about this?
+
+28
+00:01:41,020 --> 00:01:44,020
+We cut off Ben's head.
+
+29
+00:01:44,470 --> 00:01:45,220
+Okay, now hold on.
+
+30
+00:01:45,220 --> 00:01:47,140
+You think I sound crazy here?
+
+31
+00:01:47,770 --> 00:01:49,030
+But hear me out.
+
+32
+00:01:49,650 --> 00:01:56,340
+If we can have a separate sprite for Ben's head, we can easily check if the ball is only touching the
+
+33
+00:01:56,340 --> 00:01:56,910
+head.
+
+34
+00:01:57,510 --> 00:02:05,310
+But of course, we will also need Ben's body so we can have that also as a separate sprite.
+
+35
+00:02:05,730 --> 00:02:10,800
+But before I cut off Ben's body from his head, I'm going to show you another trick.
+
+36
+00:02:11,520 --> 00:02:17,670
+We can actually duplicate an entire sprite by just right clicking and hitting duplicate.
+
+37
+00:02:17,730 --> 00:02:21,000
+Here you can see we now have Ben two.
+
+38
+00:02:21,700 --> 00:02:29,650
+Okay, so now with that done, we can go to our original bin, go to costumes, and here you can see
+
+39
+00:02:29,650 --> 00:02:32,740
+we can actually make a lot of adjustments to our character.
+
+40
+00:02:32,980 --> 00:02:35,710
+But all we need to do is remove the body.
+
+41
+00:02:36,370 --> 00:02:40,600
+So we can drag and select all this and hit backspace.
+
+42
+00:02:41,240 --> 00:02:42,050
+And there you go.
+
+43
+00:02:42,350 --> 00:02:44,450
+Ben is now a floating head.
+
+44
+00:02:44,540 --> 00:02:48,680
+However, because we duplicated him earlier, we didn't even notice this.
+
+45
+00:02:50,290 --> 00:02:54,070
+And if we play the game again, look how it works perfectly.
+
+46
+00:02:54,070 --> 00:02:57,310
+And even if the ball touches the body, it doesn't count.
+
+47
+00:02:58,520 --> 00:03:03,740
+The one thing I will say, though, is the fact that our Ben two sprite works perfectly is a little
+
+48
+00:03:03,740 --> 00:03:07,130
+bit unintentional, as we haven't programmed it at all.
+
+49
+00:03:07,130 --> 00:03:10,250
+And in programming we call this a happy accident.
+
+50
+00:03:10,250 --> 00:03:15,260
+But the reason it works is because the controls are exactly the same.
+
+51
+00:03:15,260 --> 00:03:16,580
+So it just follows.
+
+52
+00:03:16,580 --> 00:03:21,860
+And although this works, which is cool, we still need to change this code because the problem we have
+
+53
+00:03:21,860 --> 00:03:27,710
+is that if we ever change our original code and Ben for instance, changing the x speed to seven and
+
+54
+00:03:27,710 --> 00:03:34,040
+minus seven, you can see now things start to get a bit freaky as Ben has a double head.
+
+55
+00:03:34,590 --> 00:03:40,770
+So instead of this code here, we can get rid of it and replace it with just a go to block.
+
+56
+00:03:41,740 --> 00:03:43,420
+And we can now select Ben.
+
+57
+00:03:44,170 --> 00:03:47,500
+Now, if we play our code once more, you will notice that it works.
+
+58
+00:03:47,500 --> 00:03:48,400
+No problem.
+
+59
+00:03:48,400 --> 00:03:54,160
+And this is what we call robust code as it is able to adapt to its circumstances.
+
+60
+00:03:55,450 --> 00:03:58,390
+So we learned some important lessons in this lesson.
+
+61
+00:03:58,480 --> 00:04:06,910
+Think creatively, but also make sure you code in a resilient way that will work even if things change,
+
+62
+00:04:06,910 --> 00:04:10,840
+and with time you will learn to do this more and more.
+
