@@ -1,0 +1,388 @@
+1
+00:00:00,000 --> 00:00:08,960
+Xin chào tất cả và chào mừng đến khu vực cuối cùng của chúng tôi ở đây để dạy thêm cho dev.
+
+2
+00:00:08,960 --> 00:00:21,000
+Vì vậy, trong phần cuối cùng ở đây chúng tôi sẽ thực hiện cơ sở hạ tầng như một mật mã hoặc Terraform.
+
+3
+00:00:21,000 --> 00:00:26,800
+Vì vậy, mục tiêu ở đây để tự động hóa cung cấp của Docker dựa trên WordPress, có nghĩa là
+
+4
+00:00:26,800 --> 00:00:35,800
+Tôi sẽ không chỉ để chạy Terraform thay vì gõ tất cả các lệnh để bắt đầu và bật
+
+5
+00:00:35,800 --> 00:00:39,400
+Docker và tác phẩm của Docker.
+
+6
+00:00:39,400 --> 00:00:45,600
+Tôi sẽ dùng Terraform làm cơ sở hạ tầng để tự động hóa quá trình đó.
+
+7
+00:00:45,600 --> 00:00:51,520
+Vì vậy, đầu tiên hãy cài đặt nó với cài đặt nó, có một số phương pháp, nhưng chúng tôi sẽ cài đặt nó bằng
+
+8
+00:00:51,520 --> 00:00:56,520
+Hashicorp là kho chính thức.
+
+9
+00:00:56,520 --> 00:01:03,520
+Vì vậy, chúng ta đã có các trình quản lý cấu hình trẻ, vì vậy hãy tải về nó.
+
+10
+00:01:03,520 --> 00:01:18,200
+Đây là phiên họp cuối cùng của chúng tôi trong đó chúng tôi đã cho phép trình chạy GitHub, đó là bên trong
+
+11
+00:01:18,200 --> 00:01:21,040
+trên hệ thống hay máy ảo.
+
+12
+00:01:21,040 --> 00:01:31,960
+Vì vậy, bây giờ, chúng ta hãy tải về hoặc thêm các kho, chúng tôi đã thêm các kho
+
+13
+00:01:31,960 --> 00:01:38,960
+của Hashicorp và bây giờ chúng tôi sẽ cài đặt đơn giản là Terraform.
+
+14
+00:01:38,960 --> 00:01:59,720
+Được rồi, tôi sẽ tạm dừng video bởi vì nó sẽ mất một thời gian cho cài đặt và tải về
+
+15
+00:01:59,720 --> 00:02:05,160
+và khi nó hoàn thành, tôi sẽ trở lại với các bạn.
+
+16
+00:02:05,160 --> 00:02:12,160
+Okay, tuyệt, chúng tôi đã cài đặt bây giờ Terraform và không cần thiết cho các hợp lệ hoá cho
+
+17
+00:02:12,160 --> 00:02:18,400
+phiên bản được cài đặt với phiên bản 1.14, tuyệt.
+
+18
+00:02:18,400 --> 00:02:31,840
+Vì vậy, bây giờ hãy tiếp tục nhiệm vụ của chúng tôi đầu tiên.
+
+19
+00:02:31,840 --> 00:02:36,320
+Đầu tiên chúng tôi tạo cấu hình Terraform cho các nhiệm vụ sau.
+
+20
+00:02:36,320 --> 00:02:41,600
+Chúng tôi muốn hộp liên lạc mạng Docker, vì vậy chúng tôi sẽ tự động hóa sáng tạo
+
+21
+00:02:41,600 --> 00:02:46,640
+của Docker cùng với mạng lưới kết nối giữa chúng.
+
+22
+00:02:46,640 --> 00:02:54,040
+Chúng tôi sử dụng cơ sở dữ liệu mà không phải là dữ liệu của Maria.
+
+23
+00:02:54,040 --> 00:03:00,840
+Chúng tôi sử dụng một hộp dán HP với gắn hoặc lắp đặt âm lượng cho WordPres và chúng tôi chắc chắn
+
+24
+00:03:00,840 --> 00:03:07,240
+Các thùng chứa tất nhiên nằm trên cùng một mạng và tôi sẽ chỉ cho bạn cuối cùng làm thế nào để
+
+25
+00:03:07,240 --> 00:03:15,200
+Xác thực hoặc tích hợp Terraform bằng cách sử dụng công cụ CD CN và cuối cùng sau khi chúng tôi khởi tạo
+
+26
+00:03:15,200 --> 00:03:21,200
+và áp dụng cấu hình Terraform, tôi sẽ chỉ cho bạn cách chúng tôi có thể xác minh các WordPress
+
+27
+00:03:21,200 --> 00:03:30,380
+bằng cách kết nối đến máy truy cập HTTP và kiểm tra truy cập vào cơ sở dữ liệu.
+
+28
+00:03:30,380 --> 00:03:41,360
+Vì vậy, bước đầu tiên ở đây, hãy làm cho một thư mục mà chúng tôi gọi là Terraform hoặc nhấn, okay.
+
+29
+00:03:41,360 --> 00:03:48,360
+Điều này sẽ được trong thư mục chính của chúng tôi như thường lệ trong phòng thí nghiệm của chúng tôi, vì vậy như chúng tôi đã làm cho
+
+30
+00:03:48,360 --> 00:03:57,040
+Ví dụ GitLab, theo hướng nhà tôi, tôi có thể thấy thư mục GitLab của tôi và cũng có
+
+31
+00:03:57,040 --> 00:04:11,160
+Ở đây chúng ta có thể tìm thấy các Terraform và hãy chuyển sang, okay, CD tilde và chúng tôi bây giờ
+
+32
+00:04:11,160 --> 00:04:12,780
+Những tín hiệu từ Terraform.
+
+33
+00:04:12,780 --> 00:04:21,120
+Vì vậy, chúng tôi tạo ra Terraform có ba thứ cần được tạo ra, được rồi, đây là cấu trúc tập tin
+
+34
+00:04:21,120 --> 00:04:27,160
+hoặc cấu trúc lõi của Terraform, bạn cần phải tạo các biến chính và
+
+35
+00:04:27,160 --> 00:04:34,480
+Tập tin xuất, được rồi, vậy hãy tạo ra tất cả ba tập tin này và tôi sẽ giải thích cho bạn
+
+36
+00:04:34,480 --> 00:04:44,400
+Trong chi tiết, tại sao chúng ta cần những tập tin này, được rồi, chúng được tạo ra, hãy xác minh, được rồi,
+
+37
+00:04:44,400 --> 00:04:48,440
+Đây là các đầu ra và biến chính.
+
+38
+00:04:48,440 --> 00:04:57,560
+Đây là tập tin đầu tiên, tập tin đầu tiên để tạo là Terraform,
+
+39
+00:04:57,560 --> 00:05:04,520
+Ví dụ ở đây, đây là phần đầu tiên, chúng ta sẽ tạo ra Terraform và Docker
+
+40
+00:05:04,520 --> 00:05:11,440
+Nó sẽ đi xuống Terraform mà thực ra là Terraform sẽ quản lý hoặc tự động hóa tất cả mọi thứ,
+
+41
+00:05:11,440 --> 00:05:26,440
+Vì vậy, hãy lần đầu tiên chỉnh sửa chính. Tập tin df, được rồi, và tập tin này là một cái gì đó giống như tập tin chính
+
+42
+00:05:27,560 --> 00:05:37,560
+chức năng, okay, các chức năng chính được cấu hình hoặc được viết ở đây, okay, vì vậy chúng tôi có
+
+43
+00:05:37,560 --> 00:05:44,280
+Các nhà cung cấp yêu cầu nhà cung cấp cho Terraform, chúng tôi có Docker và đây là nguồn
+
+44
+00:05:44,280 --> 00:05:50,840
+Cho Docker và đây là phiên bản Docker mà chúng tôi đang sử dụng và Terraform
+
+45
+00:05:50,840 --> 00:05:57,480
+Khi anh ta muốn quản lý Docker, anh ta sẽ sử dụng nhà cung cấp Docker, okay, do đó, điều này
+
+46
+00:05:57,480 --> 00:06:05,800
+là nhà cung cấp Docker và mạng Docker, chúng tôi có tài nguyên được gọi là mạng Docker
+
+47
+00:06:05,800 --> 00:06:17,080
+và gọi là kênh WP nhấn mạnh trong đó chúng tôi sẽ kết nối MLS và PHP Apache của tôi
+
+48
+00:06:17,080 --> 00:06:23,480
+Hộp đựng nó và đây là tên của mạng của chúng tôi, WP nhấn mạnh mạng, đây là Docker
+
+49
+00:06:23,480 --> 00:06:37,080
+chúng ta sẽ bắt đầu với cơ sở dữ liệu, okay, chúng ta sẽ tạo ra
+
+50
+00:06:37,080 --> 00:06:58,680
+Trước hết, được rồi, tất nhiên không phải ở đây, chúng ta cần tạo ra nó ở đây, được rồi, đây là âm lượng của chúng ta,
+
+51
+00:06:58,680 --> 00:07:09,320
+Dữ liệu định vị, được rồi, đây là tên của dữ liệu của nó, đây là kho lưu trữ của MyQL,
+
+52
+00:07:09,320 --> 00:07:19,000
+OK, đây là tên của nó, okay, và hãy tạo ra chính container, tài nguyên tên là Docker
+
+53
+00:07:19,000 --> 00:07:24,760
+Công-ten-nơ vì đã tạo ra âm lượng gắn kết, chúng ta cần tạo ra container, container được đặt tên
+
+54
+00:07:24,760 --> 00:07:33,080
+Bản tóm tắt, được rồi, và chúng tôi sẽ xác định ở đây hình ảnh mà chúng tôi muốn sử dụng và chúng tôi sẽ sử dụng ở đây một khác
+
+55
+00:07:33,080 --> 00:07:40,200
+Ví dụ, từ báo chí, từ bấm dấu gạch chéo; và đây là hình ảnh của chúng tôi MyQL, nó giống nhau
+
+56
+00:07:40,200 --> 00:07:47,960
+Một cái mà chúng tôi đã sử dụng và cũng ở đây chúng tôi sử dụng khởi động lại như luôn luôn để khởi động lại các container
+
+57
+00:07:47,960 --> 00:07:54,680
+Khi cần thiết và chúng tôi sẽ thiết lập một số biến môi trường và đây là điều, hãy để tôi đặt
+
+58
+00:07:54,680 --> 00:08:08,760
+ở đây đầu tiên bình luận, OK, ở đây nếu bạn có thể thấy chúng tôi đã giải thích đã có tên hình ảnh của bạn
+
+59
+00:08:08,760 --> 00:08:15,960
+Khởi chạy lại và môi trường ở đây chỉ tới một số biến số, vậy ở đây là liên kết giữa
+
+60
+00:08:15,960 --> 00:08:21,960
+Hai tập tin, chúng tôi có tập tin chính và tập tin biến sẽ chứa giá trị cho điều này,
+
+61
+00:08:21,960 --> 00:08:29,400
+Ví dụ, có một lĩnh vực cho mật khẩu, cơ sở dữ liệu#7911;is, người dùng BAR và mật khẩu người dùng;
+
+62
+00:08:29,400 --> 00:08:34,840
+Tất cả các biến môi trường này chỉ mới bắt đầu trong tập tin chính và chúng tôi sẽ được xác định
+
+63
+00:08:34,840 --> 00:08:46,280
+Sau này trong tập tin biến.tf, vì vậy chúng tôi đã tạo các bước đầu hoặc bắt đầu biến và đây là một
+
+64
+00:08:46,280 --> 00:08:59,000
+Âm lượng, chúng ta sẽ tạo ra một khối lượng, được rồi, tạo ra một tên âm lượng, âm lượng docker, khóa MySQL.name, okay,
+
+65
+00:08:59,000 --> 00:09:04,600
+và chúng tôi cần xác định đường dẫn container để cơ sở dữ liệu hoạt động đúng, bạn cần phải đặt
+
+66
+00:09:04,600 --> 00:09:14,920
+là đường dẫn hợp lệ để có thể hợp lệ hoá đường dẫn, nên âm lượng, được rồi, âm lượng docker. đường dẫn của tôi. Tên cho dữ liệu MySQL, okay,
+
+67
+00:09:15,480 --> 00:09:24,920
+Chúng tôi sẽ được lưu trữ trong con đường này chính xác, và trước mạng tất nhiên không quên điều này trước khi chúng tôi
+
+68
+00:09:24,920 --> 00:09:33,880
+Đóng hộp này, đừng quên gõ tiến trình mạng vì mạng tiến tới như bạn
+
+69
+00:09:33,880 --> 00:09:41,240
+Nếu bạn có thể nhớ lại đây là mạng docker, chúng ta sẽ là thành viên của mạng docker,
+
+70
+00:09:41,800 --> 00:09:48,840
+Đây là mạng lưới thực vật học WP.
+
+71
+00:09:48,840 --> 00:10:00,280
+Docker hoặc WP nhấn mạnh mạng, nó là WP ở đây nhấn mạnh mạng, okay, và chúng tôi đóng ngoặc
+
+72
+00:10:00,280 --> 00:10:09,560
+Bởi vì chúng tôi muốn đóng các dấu ngoặc mà chúng tôi đã tạo ra cho mình, đây là kết thúc
+
+73
+00:10:09,560 --> 00:10:24,280
+cho ngoặc này, okay, và chúng tôi sẽ lặp lại cùng một bước, chúng tôi sẽ vẫn còn trên tập tin chính nhưng chúng tôi cần phải
+
+74
+00:10:24,280 --> 00:10:33,320
+tạo ra, chúng tôi sẽ sử dụng cùng một tính năng phong phú như hình ảnh PHP Apache, chúng tôi sẽ lặp lại cùng một bước
+
+75
+00:10:33,320 --> 00:10:41,000
+Đối với Apache và PHP và WordPress container, vì vậy điều này bạn cần phải đảm bảo rằng nó vẫn còn tồn tại
+
+76
+00:10:41,000 --> 00:10:51,160
+Vẫn tồn tại trên hệ thống của chúng ta, vì vậy chúng ta là mát mẻ, và bây giờ chúng ta cần phải tạo ra, okay, thời gian này chúng ta cần
+
+77
+00:10:51,160 --> 00:11:06,360
+Tạo ra một container PHP Apache, vậy nên chúng tôi đã tạo ra container, chúng tôi đặt tên nó là WP gạch ngang Apache,
+
+78
+00:11:06,360 --> 00:11:15,160
+Và đây là hình ảnh mà nó đang sử dụng, và nó bắt đầu luôn luôn, và đây là bên trong
+
+79
+00:11:15,160 --> 00:11:21,000
+Và cổng ngoài đặt 8080, và chúng tôi có thể đặt đến bất kỳ cổng nào để mong muốn tất nhiên,
+
+80
+00:11:21,000 --> 00:11:31,400
+và khối lượng sẽ được đặt về nhà mmm, mmm, nhiều hơn www tất nhiên, và đường dẫn container
+
+81
+00:11:31,400 --> 00:11:39,880
+sẽ được xem như một ứng dụng, vì vậy chúng tôi cần xác định khối lượng như chúng tôi đã làm với đường dẫn mặc định,
+
+82
+00:11:41,560 --> 00:11:55,560
+Và ở đây, sau đó chúng tôi cần xác định biến cho gốc tài liệu web, chúng tôi thiết lập để ứng dụng,
+
+83
+00:11:55,560 --> 00:12:00,760
+Vì điều này chúng ta cần được xác định cho tất cả các tập tin mà chúng ta có cho trang web của mình, ví dụ,
+
+84
+00:12:00,760 --> 00:12:10,360
+Và bộ nhớ PHP giới hạn chúng tôi thiết lập để không làm cho bất kỳ sử dụng đầy đủ của bộ nhớ, chúng tôi thiết lập nó 500 và 12
+
+85
+00:12:10,360 --> 00:12:24,120
+mega byte, đây là chỉ để thúc đẩy hiệu suất phần cứng, không có gì hơn, okay, và bước cuối cùng ở đây mà
+
+86
+00:12:24,120 --> 00:12:34,120
+Chúng tôi cần thiết lập các mạng lưới tiến lên thành viên của cùng một bộ điều chỉnh mạng lưới của đường dẫn mặc định.
+
+87
+00:12:35,800 --> 00:12:42,600
+Được rồi, lời bình luận tương tự, và ở đây đừng quên làm điều này bởi vì nó phụ thuộc vào các container
+
+88
+00:12:42,600 --> 00:12:51,080
+của MyQL, bởi vì sẽ có một kết nối hậu phương giữa máy phục vụ mạng Apache và ICC,
+
+89
+00:12:51,080 --> 00:13:02,360
+Vì vậy, nó nên phụ thuộc vào nó, và chúng tôi nên xác định rằng dòng, tốt, vì vậy sau khi chúng tôi thiết lập này,
+
+90
+00:13:02,360 --> 00:13:10,760
+Các dấu ngoặc này tất nhiên bạn sẽ thấy rằng điều này đóng lại bởi điều này, tất nhiên bạn cần phải có
+
+91
+00:13:10,760 --> 00:13:17,960
+Loại đặc biệt của một cơ sở khác, t2 đang mở và đóng gói, nhưng nếu bạn có thể theo dõi nó,
+
+92
+00:13:17,960 --> 00:13:25,960
+Nó rất dễ dàng, bạn có thể thấy rằng nó là sự đóng cửa container của PHP lần này,
+
+93
+00:13:28,360 --> 00:13:34,920
+hay máy chủ Apache lần này, được rồi, vậy chúng ta cần phải cứu nó, kiểm soát O,
+
+94
+00:13:34,920 --> 00:13:46,680
+Và nếu chúng ta mở nó ra một lần nữa, bạn có thể thấy rằng nó được chỉnh sửa thành công hoặc lấp đầy với dữ liệu mà chúng ta muốn,
+
+95
+00:13:46,680 --> 00:13:58,200
+OK, bây giờ chúng ta hãy chuyển sang phần thứ hai, đó là các biến số, chúng tôi sẽ chỉnh sửa bây giờ biến,
+
+96
+00:13:58,200 --> 00:14:07,960
+Được rồi, vậy ở đây chúng ta cần thiết lập như tôi đã nói với các bạn, mật khẩu, cơ sở dữ liệu MySQL, người dùng cùng đường,
+
+97
+00:14:07,960 --> 00:14:11,960
+Được rồi, vậy chúng ta cần,
+
