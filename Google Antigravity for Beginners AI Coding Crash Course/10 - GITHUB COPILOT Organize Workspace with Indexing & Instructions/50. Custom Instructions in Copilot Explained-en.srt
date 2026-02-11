@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:05,000
+ Hi, in this lesson, I will talk about custom instructions in GitHub code pilot.
+
+2
+00:00:05,000 --> 00:00:06,500
+ Let's get started.
+
+3
+00:00:06,500 --> 00:00:12,000
+ When you chat with GitHub code pilot, you might often find yourself repeating the same context.
+
+4
+00:00:12,000 --> 00:00:18,000
+ Like, saying, we use TypeScript or use React functional components.
+
+5
+00:00:18,000 --> 00:00:22,000
+ With custom instructions, you don't have to do that anymore.
+
+6
+00:00:22,000 --> 00:00:26,500
+ You can save all of these preferences in a Markzone file once.
+
+7
+00:00:26,500 --> 00:00:30,500
+ And code pilot will automatically follow them in every chat request.
+
+8
+00:00:30,500 --> 00:00:34,500
+ This makes your AI assistant feel more personal.
+
+9
+00:00:34,500 --> 00:00:39,500
+ Almost like, it truly understands your project and your unique coding style.
+
+10
+00:00:39,500 --> 00:00:43,500
+ So, what exactly do custom instructions do?
+
+11
+00:00:43,500 --> 00:00:49,500
+ Think of them as a built-in guide that tells code pilot how your project works.
+
+12
+00:00:49,500 --> 00:00:55,500
+ You can define coding rules, naming styles or language preferences, all in one place.
+
+13
+00:00:56,500 --> 00:01:03,500
+ For example, you could tell code pilot to use camel case for variables, Pascal case for components,
+
+14
+00:01:03,500 --> 00:01:09,500
+ always wrap a sim code in try and catch blocks, and to write tests for every public function.
+
+15
+00:01:09,500 --> 00:01:14,500
+ Once you've defined these rules, code pilot automatically applies them to its chat responses,
+
+16
+00:01:14,500 --> 00:01:18,500
+ making sure all answers fit your project standards.
+
+17
+00:01:18,500 --> 00:01:23,500
+ Just remember, custom instructions only affect chat responses.
+
+18
+00:01:23,500 --> 00:01:27,500
+ Note the small code suggestions you see as you type.
+
+19
+00:01:27,500 --> 00:01:29,500
+ Now, how do they actually work?
+
+20
+00:01:29,500 --> 00:01:34,500
+ You simply write your instructions inside Markdown files.
+
+21
+00:01:34,500 --> 00:01:41,500
+ Visual Studio Code reads those files, and includes them as part of Copitis chat context.
+
+22
+00:01:41,500 --> 00:01:45,500
+ That means you no longer need to explain your setup every time.
+
+23
+00:01:45,500 --> 00:01:48,500
+ Copitis already knows it.
+
+24
+00:01:48,500 --> 00:01:54,500
+ You can make these instructions apply to the whole workspace to specific files or folders,
+
+25
+00:01:54,500 --> 00:01:58,500
+ or even attach them manually to individual chat prompts.
+
+26
+00:01:58,500 --> 00:02:04,500
+ So, there are a few different ways to organize your custom instructions in Visual Studio Code.
+
+27
+00:02:04,500 --> 00:02:07,500
+ Let's look into each option separately.
+
+28
+00:02:07,500 --> 00:02:13,500
+ The first option is the file name dot github/copilot-instructions.md.
+
+29
+00:02:13,500 --> 00:02:17,500
+ This is the main file for your entire workspace.
+
+30
+00:02:17,500 --> 00:02:23,500
+ It sits inside your projects.github folder and applies to every single chat request.
+
+31
+00:02:23,500 --> 00:02:29,500
+ If you just want one simple setup for your whole project, this is the best option to use.
+
+32
+00:02:29,500 --> 00:02:33,500
+ The second option is dot-instructions.md.
+
+33
+00:02:33,500 --> 00:02:41,500
+ These are smaller, more focused instruction files meant for specific files, folders, or tasks.
+
+34
+00:02:41,500 --> 00:02:48,500
+ You can create multiple of them, one for React components, one for test files, another for documentation,
+
+35
+00:02:48,500 --> 00:02:53,500
+ and Visual Studio Code will automatically combine them together.
+
+36
+00:02:53,500 --> 00:03:04,500
+ You can also narrow them down using a property called apply2, which tell Visual Studio Code exactly which files or folders those instructions should apply to.
+
+37
+00:03:04,500 --> 00:03:10,500
+ The third type is agents.md, and this one is still experimental.
+
+38
+00:03:10,500 --> 00:03:19,500
+ It's designed for workspaces that use multiple AI agents, like separate agents for documentation, frontend, and backend.
+
+39
+00:03:19,500 --> 00:03:24,500
+ This file applies automatically to all chat requests in your workspace.
+
+40
+00:03:24,500 --> 00:03:33,500
+ You can even enable nested agents.md files, meaning that each folder can have its own specific set of rules.
+
+41
+00:03:33,500 --> 00:03:41,500
+ The wrap-up. Custom instructions let you teach GitHub co-pilot how to work like your team.
+
+42
+00:03:41,500 --> 00:03:50,500
+ They help make a response's more consistent, match your coding style, and save you time by not having to repeat the same rules over and over.
+
+43
+00:03:50,500 --> 00:03:58,500
+ You can use a single markdown file for your entire project or create multiple smaller ones for different tasks.
+
+44
+00:03:58,500 --> 00:04:06,500
+ With their setup, co-pilot automatically follows your rules every time you chat, making it feel like a true part of your team.
+
+45
+00:04:06,500 --> 00:04:11,500
+ I hope this lesson was useful for you and see you in the next lesson.
+
