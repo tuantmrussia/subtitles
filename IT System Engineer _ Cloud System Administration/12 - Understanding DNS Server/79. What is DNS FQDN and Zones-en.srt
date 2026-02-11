@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:06,920
+ We are going to be discussing what DNS is and how DNS works.
+
+2
+00:00:06,920 --> 00:00:14,200
+ DNS server translates fully qualified domain name names into IP addresses and can
+
+3
+00:00:14,200 --> 00:00:21,440
+ invest in translate IP addresses into fully qualified domain name.
+
+4
+00:00:21,440 --> 00:00:28,680
+ Apart from translations DNS is also used to locate the service on a network using DNS
+
+5
+00:00:28,680 --> 00:00:29,680
+ records.
+
+6
+00:00:29,680 --> 00:00:35,440
+ So we are going to learn about DNS record later in this, in this course, so I will show you
+
+7
+00:00:35,440 --> 00:00:43,400
+ some of the DNS records we have, but the services that are located using DNS can be domain
+
+8
+00:00:43,400 --> 00:00:51,000
+ controllers, name servers, mail servers and a bunch of other services.
+
+9
+00:00:51,000 --> 00:00:57,100
+ A common scenario where DNS is being used to locate the service is when on a corporate network
+
+10
+00:00:57,100 --> 00:01:11,660
+ client machines uses the LDAP server to record server records to locate a domain controller.
+
+11
+00:01:11,660 --> 00:01:17,000
+ Let's say we have this domain name kelvglobar.com.
+
+12
+00:01:17,000 --> 00:01:25,720
+ So this is the kelvglobar.com website for the employee to login.
+
+13
+00:01:25,720 --> 00:01:32,160
+ The web address will be www.kelvglobar.com.
+
+14
+00:01:32,160 --> 00:01:38,980
+ So this is the fully qualified domain name of the whole server where the website is running.
+
+15
+00:01:38,980 --> 00:01:46,220
+ In this fully qualified domain name that's fqddn, the dot com is the top level domain.
+
+16
+00:01:46,220 --> 00:01:52,740
+ The center portion which is a kelvglobar is known as the domain name portion.
+
+17
+00:01:52,740 --> 00:02:01,380
+ And the last one which of course is the www is known as the host offering the service.
+
+18
+00:02:01,380 --> 00:02:05,520
+ So it must have seen, it must have seen some where that's fully qualified domain name is
+
+19
+00:02:05,520 --> 00:02:09,260
+ always followed by dots.
+
+20
+00:02:09,260 --> 00:02:16,380
+ But this dot is a root domain and typically this dot is not at all you use on a website.
+
+21
+00:02:16,380 --> 00:02:21,040
+ You can see the examples here at N of it all, you see it dot after the dot com, for
+
+22
+00:02:21,040 --> 00:02:25,140
+ example dot com, then you see another dot, but this dot is not at all used.
+
+23
+00:02:25,140 --> 00:02:30,040
+ But this dot, if you look at a web server, you're going to see this dot there, but on
+
+24
+00:02:30,040 --> 00:02:36,720
+ the inside of by the end user's side, this dot will not be displayed.
+
+25
+00:02:36,720 --> 00:02:43,000
+ So DNS zone is a portion of the DNS namespace that hosts all, hosts a collection of DNS
+
+26
+00:02:43,000 --> 00:02:47,280
+ records as you can see in this image.
+
+27
+00:02:47,280 --> 00:02:54,320
+ For the DNS record, like host record, names of our record, PTR records will all reside
+
+28
+00:02:54,320 --> 00:02:55,320
+ in its zone.
+
+29
+00:02:55,320 --> 00:03:00,120
+ It's a kind of a photo containing all the list files.
+
+30
+00:03:00,120 --> 00:03:05,400
+ So we will see all the different records later in this training.
+
