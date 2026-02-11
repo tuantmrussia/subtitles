@@ -1,0 +1,284 @@
+1
+00:00:01,509 --> 00:00:06,780
+Hãy tưởng tượng trong tổ chức của bạn một vài dịch vụ trên Google Cloud,
+
+2
+00:00:06,989 --> 00:00:12,869
+Một vài trong số họ trên kênh GKE, một số là dịch vụ di sản được sử dụng trên mạng,
+
+3
+00:00:13,050 --> 00:00:19,270
+và CTO của anh muốn triển khai mọi thứ nhanh hơn mà không phá vỡ sản phẩm.
+
+4
+00:00:19,549 --> 00:00:23,729
+Bây giờ làm thế nào để bạn xây dựng hệ thống CI/CD mà làm việc trên GCP
+
+5
+00:00:24,995 --> 00:00:28,934
+Môi trường lai và thậm chí là nhiều đám mây? Đó là
+
+6
+00:00:28,934 --> 00:00:29,864
+những gì chúng ta sẽ thấy ở đây.
+
+7
+00:00:30,975 --> 00:00:35,215
+Trước đó, đầu tiên hãy hiểu được CI/CD thực sự là gì.
+
+8
+00:00:35,455 --> 00:00:39,834
+CI/CD không chỉ làm xét nghiệm và triển khai mã.
+
+9
+00:00:40,115 --> 00:00:45,095
+Google định nghĩa nó như một đường đi tự động từ cam kết đến
+
+10
+00:00:45,095 --> 00:00:47,974
+sản xuất với trục xe bảo vệ an toàn.
+
+11
+00:00:48,205 --> 00:00:53,779
+Một đường ống CI/CD hiện đại bao gồm sự kết hợp liên tục,
+
+12
+00:00:53,990 --> 00:00:59,690
+Giao tiếp liên tục mà di chuyển các hiện vật qua môi trường tự động,
+
+13
+00:00:59,690 --> 00:01:04,000
+Và nó cũng có sự tiếp tục triển khai đầy đủ
+
+14
+00:01:04,000 --> 00:01:06,779
+Tự động triển khai.
+
+15
+00:01:07,029 --> 00:01:13,160
+Bạn có thể nghĩ rằng CN là tạo ra, xác nhận và CD như là quảng cáo và phát hành.
+
+16
+00:01:13,400 --> 00:01:16,324
+Việc đăng ký nghệ thuật là nguồn duy nhất của sự thật.
+
+17
+00:01:16,565 --> 00:01:20,654
+Tất cả xây dựng các đầu ra như hộp đựng, các gói Maven,
+
+18
+00:01:20,934 --> 00:01:25,144
+các mô- đun nút, các mô- đun Terraform được đưa vào mục đăng ký đồ họa.
+
+19
+00:01:25,415 --> 00:01:28,775
+Google khuyên đăng ký hợp pháp vì nó
+
+20
+00:01:28,775 --> 00:01:30,834
+Hỗ trợ tái tạo đa năng.
+
+21
+00:01:31,014 --> 00:01:34,415
+Nó kết hợp với việc xây dựng đám mây và triển khai đám mây.
+
+22
+00:01:34,625 --> 00:01:38,464
+Nó áp đặt IM ở cấp kho,
+
+23
+00:01:38,614 --> 00:01:42,029
+Và nó ghi lại mọi thứ để kiểm toán của anh,
+
+24
+00:01:42,269 --> 00:01:45,910
+Vì vậy, không trộn các hiện vật ở những nơi ngẫu nhiên.
+
+25
+00:01:46,160 --> 00:01:51,760
+Công trình xây dựng đám mây là động cơ CI của bạn điều khiển và chạy thử nghiệm đơn vị của bạn,
+
+26
+00:01:52,040 --> 00:01:55,980
+Tiếng gió, công-ten-nơ, máy quét an ninh,
+
+27
+00:01:56,110 --> 00:01:59,389
+Thế hệ SBOM của các bạn, và việc triển khai xem thử.
+
+28
+00:01:59,599 --> 00:02:04,739
+Xây dựng mây là không có máy chủ, vì vậy nó cân nặng đẹp trong thời gian bận rộn.
+
+29
+00:02:04,919 --> 00:02:10,029
+Đám mây triển khai việc quảng cáo cổ vật thông qua dev của bạn,
+
+30
+00:02:10,389 --> 00:02:16,130
+Ngồi tù, và phê thuốc. Triển khai đường ống dẫn mây hỗ trợ các lối cuộn chim hoàng yến,
+
+31
+00:02:16,389 --> 00:02:18,899
+xanh da trời, giấy phép sử dụng thủ công,
+
+32
+00:02:19,110 --> 00:02:24,270
+Sự tích hợp trên giàn giáo, cuộn lại, và dàn nhạc dịch vụ đa dịch vụ.
+
+33
+00:02:24,470 --> 00:02:28,649
+Việc triển khai các cửa hàng mây công bố lịch sử, phê chuẩn,
+
+34
+00:02:28,710 --> 00:02:33,389
+và quay lại, cực kỳ quan trọng cho việc tuân thủ các ngành công nghiệp kinh doanh.
+
+35
+00:02:33,630 --> 00:02:38,705
+Mây tập hợp bản xứ với tùy chỉnh môi trường
+
+36
+00:02:38,705 --> 00:02:42,824
+Bao gồm và giàn giáo để xây dựng và triển khai luồng công việc.
+
+37
+00:02:42,955 --> 00:02:47,595
+Đây là cách bạn tránh việc phức tạp hóa YML trong môi trường.
+
+38
+00:02:47,794 --> 00:02:53,464
+Mỗi môi trường có một miếng vá nhỏ riêng, sạch sẽ và thanh lịch.
+
+39
+00:02:53,804 --> 00:02:57,205
+Bây giờ chúng ta hãy mở rộng môi trường lai nơi
+
+40
+00:02:57,434 --> 00:02:59,744
+Một số dịch vụ trong GCP,
+
+41
+00:03:00,074 --> 00:03:05,110
+Một vài trong số đó trong tạp chí trên trang web này và một số vẫn là đơn xin thừa kế di sản.
+
+42
+00:03:05,169 --> 00:03:09,169
+Điều này là phổ biến trong các bán lẻ ngân hàng, giao tiếp và chăm sóc sức khỏe.
+
+43
+00:03:09,720 --> 00:03:13,059
+Bây giờ chúng ta cần một đường ống phải được triển khai ở khắp nơi.
+
+44
+00:03:13,339 --> 00:03:15,320
+Điều này có thể được thực hiện bằng nhiều cách.
+
+45
+00:03:15,529 --> 00:03:18,949
+Đầu tiên là công trình xây dựng Mây.
+
+46
+00:03:19,130 --> 00:03:23,389
+Công trình xây dựng đám mây có thể đẩy cổ vật lên trên các cửa hàng khác,
+
+47
+00:03:23,669 --> 00:03:24,690
+Các nhóm Anthos,
+
+48
+00:03:24,830 --> 00:03:30,610
+GKE, máy ảo, và hệ thống triển khai di sản.
+
+49
+00:03:30,610 --> 00:03:35,940
+Bởi vì mây Xây dựng sử dụng một mô hình xây dựng rộng lớn, bạn có thể chạy bất kỳ
+
+50
+00:03:35,940 --> 00:03:39,380
+kịch bản cần thiết để triển khai vào môi trường riêng tư.
+
+51
+00:03:39,580 --> 00:03:44,429
+Một lựa chọn khác là quản lý cấu hình Anthos với GitOps.
+
+52
+00:03:44,529 --> 00:03:48,779
+Đường ống dẫn máu lai thường dùng chữ Git làm mẫu chân lý.
+
+53
+00:03:49,050 --> 00:03:56,389
+Cloud Xây dựng các bản xuất bản và quản lý con tin Anthos đồng bộ với nhau trên kênh GKE,
+
+54
+00:03:56,630 --> 00:03:59,929
+Mây GKE, và những cụm cạnh.
+
+55
+00:04:00,089 --> 00:04:04,350
+Một lựa chọn khác là bảo vệ hệ thống VPN hoặc triển khai liên kết.
+
+56
+00:04:04,589 --> 00:04:09,869
+Xây dựng đám mây có thể với tới những cụm riêng sử dụng Cloud VPN,
+
+57
+00:04:10,070 --> 00:04:12,690
+Liên kết đám mây, và mạng lưới cho phép.
+
+58
+00:04:13,240 --> 00:04:16,510
+Đây là thông thường đối với việc làm có quy định nhạy cảm.
+
+59
+00:04:16,760 --> 00:04:19,548
+Một số công ty triển khai tới đám mây đa tầng,
+
+60
+00:04:19,769 --> 00:04:24,630
+Nơi có thể là GCP và AWS, GCP và Azure,
+
+61
+00:04:25,000 --> 00:04:26,890
+hoặc có thể là GCP và trên kênh truyền hình.
+
+62
+00:04:27,160 --> 00:04:30,100
+Ở đây các đường ống thông thường sẽ được làm công việc xây dựng đám mây,
+
+63
+00:04:30,239 --> 00:04:34,119
+Xây dựng, và quét an ninh, đồ tạo tác lưu trữ trong bộ nhớ lưu trữ.
+
+64
+00:04:34,769 --> 00:04:37,489
+Đám mây triển khai các hoạt động triển khai GCP.
+
+65
+00:04:37,779 --> 00:04:43,709
+GitHub Action or GitLab CI triển khai tới AWS hoặc Azure,
+
+66
+00:04:43,899 --> 00:04:47,160
+và giám sát tập trung tại Google Cloud giám sát.
+
+67
+00:04:47,459 --> 00:04:51,559
+Nhiều khối mây CI/CD chủ yếu là về tiêu chuẩn hóa,
+
+68
+00:04:51,700 --> 00:04:53,720
+Cùng một hệ thống xây dựng,
+
+69
+00:04:53,899 --> 00:04:58,440
+Cùng mô hình và các động cơ phân phối riêng biệt trên từng đám mây.
+
+70
+00:04:58,700 --> 00:05:00,859
+Điều này giữ cho sự phức tạp được kiểm soát.
+
+71
+00:05:01,140 --> 00:05:06,239
+Đó là nền tảng của việc thiết kế một hệ thống CN/CD hiện đại cho Google Cloud.
+
