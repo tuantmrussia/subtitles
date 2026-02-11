@@ -1,0 +1,228 @@
+1
+00:00:01,600 --> 00:00:07,239
+Nếu bạn từng bước vào một công ty mà mọi dự án đều cảm thấy khác biệt,
+
+2
+00:00:07,269 --> 00:00:11,989
+Tên khác nhau, vùng khác nhau, lựa chọn mạng khác nhau,
+
+3
+00:00:12,159 --> 00:00:16,989
+Bạn đã trải qua cái mà chúng tôi gọi là entropy tổ chức,
+
+4
+00:00:17,120 --> 00:00:21,840
+Và một khi nó bắt đầu, nó trở nên rất khó để đo lường.
+
+5
+00:00:22,000 --> 00:00:24,579
+Nhưng tin tốt là hoàn toàn trong sạch.
+
+6
+00:00:24,920 --> 00:00:27,520
+Hệ thống phân cấp tài nguyên Google Cloud được thiết kế tốt
+
+7
+00:00:27,520 --> 00:00:30,600
+Loại bỏ sự hỗn loạn đó trước khi nó bắt đầu.
+
+8
+00:00:30,719 --> 00:00:34,419
+Tổ chức là cái neo của anh, gốc rễ của mọi thứ,
+
+9
+00:00:34,549 --> 00:00:39,430
+Nhưng lần này công việc của chúng tôi là định hình những gì đến dưới
+
+10
+00:00:39,430 --> 00:00:42,439
+Tổ chức theo một cách có lý cho đội của anh,
+
+11
+00:00:42,560 --> 00:00:45,000
+và tăng trưởng dài hạn.
+
+12
+00:00:45,119 --> 00:00:49,099
+Bạn có thể nghĩ đến tổ chức được gọi là thân cây.
+
+13
+00:00:49,279 --> 00:00:52,279
+Bây giờ chúng tôi sắp thiết kế các chi nhánh.
+
+14
+00:00:52,439 --> 00:00:56,779
+Thư mục thường bị hiểu lầm, nhưng chúng cực kỳ mạnh mẽ.
+
+15
+00:00:56,919 --> 00:01:00,400
+Google mô tả chúng như một cơ chế nhóm cho
+
+16
+00:01:00,400 --> 00:01:04,019
+Dự án phản ánh kinh doanh, an ninh,
+
+17
+00:01:04,040 --> 00:01:08,480
+hay thậm chí là giới hạn ứng dụng. Hãy chia chúng ra xa hơn.
+
+18
+00:01:08,519 --> 00:01:10,550
+Dễ hiểu hơn.
+
+19
+00:01:10,720 --> 00:01:14,319
+Điều phổ biến nhất là bạn có tổ chức.
+
+20
+00:01:14,519 --> 00:01:18,410
+Tổ chức chứa các thư mục dựa trên môi trường.
+
+21
+00:01:18,599 --> 00:01:22,160
+Những thư mục này có các dự án ứng dụng.
+
+22
+00:01:22,319 --> 00:01:25,519
+Ví dụ, bạn có thể có các thư mục cho sản xuất,
+
+23
+00:01:25,680 --> 00:01:26,510
+Để dàn xếp,
+
+24
+00:01:26,669 --> 00:01:30,300
+cho môi trường không sinh sản hay dev của bạn, và có thể
+
+25
+00:01:30,300 --> 00:01:33,069
+cho hộp cát và cho thí nghiệm.
+
+26
+00:01:33,120 --> 00:01:34,290
+Bạn có thể nghĩ,
+
+27
+00:01:34,580 --> 00:01:37,639
+Tại sao Google đề nghị điều này. Bởi vì cấp môi trường
+
+28
+00:01:37,639 --> 00:01:40,930
+Thư mục giúp bạn áp dụng chính sách riêng.
+
+29
+00:01:41,080 --> 00:01:44,040
+Thí dụ, sản xuất có thể có những luật lệ khắt khe hơn.
+
+30
+00:01:44,269 --> 00:01:49,540
+Cát có thể linh hoạt hơn, và thiết kế gương bảo mật sản xuất,
+
+31
+00:01:49,970 --> 00:01:51,580
+Nhưng ở mức thấp hơn.
+
+32
+00:01:51,720 --> 00:01:55,629
+Cuối cùng, điều này giúp tạo ra sự cô lập chính sách,
+
+33
+00:01:55,760 --> 00:01:59,680
+Đó là một trong những nguyên tắc thiết kế cần thiết cho sự an toàn.
+
+34
+00:01:59,849 --> 00:02:03,989
+Bây giờ chúng ta hãy nhìn vào mức độ nơi các công việc tải lên cuộc sống thực.
+
+35
+00:02:04,279 --> 00:02:05,239
+Đó là dự án.
+
+36
+00:02:05,400 --> 00:02:08,399
+Dự án là đơn vị nguyên tử của Google Cloud,
+
+37
+00:02:08,520 --> 00:02:12,440
+Các ranh giới thực sự cho hệ điều hành của bạn, hóa đơn,
+
+38
+00:02:12,600 --> 00:02:16,899
+Bộ điều khiển, chỉ tiêu, nhật ký và giám sát,
+
+39
+00:02:17,000 --> 00:02:19,080
+Và cho sự gắn bó mạng lưới của anh.
+
+40
+00:02:19,360 --> 00:02:22,029
+Vậy điều đó có nghĩa gì đối với thiết kế?
+
+41
+00:02:22,160 --> 00:02:22,839
+Thiết kế này,
+
+42
+00:02:22,960 --> 00:02:28,550
+Nó có nghĩa là mỗi ứng dụng hoặc đôi khi mỗi thành phần chính của một
+
+43
+00:02:28,550 --> 00:02:31,029
+Ứng dụng nên sống trong dự án riêng của nó.
+
+44
+00:02:31,119 --> 00:02:33,960
+Điều này cho anh quyền sở hữu, sự cô lập,
+
+45
+00:02:34,119 --> 00:02:39,600
+Một bán kính vụ nổ nhỏ hơn, và nó giúp bạn có bản kiểm toán sạch hơn.
+
+46
+00:02:39,610 --> 00:02:43,619
+Nói chung, điều này giúp mọi thứ sạch sẽ, dễ đoán trước và có thể sinh sôi nảy nở.
+
+47
+00:02:43,800 --> 00:02:46,399
+Một khi chúng tôi có các thư mục và các dự án được xây dựng,
+
+48
+00:02:46,520 --> 00:02:51,940
+chúng ta có thể áp dụng chính sách tổ chức tự động sụp đổ.
+
+49
+00:02:52,080 --> 00:02:54,520
+Điều này bao gồm những thứ như cho phép vùng đất,
+
+50
+00:02:54,639 --> 00:02:58,100
+Yêu cầu cư trú dữ liệu, hạn chế IP công cộng,
+
+51
+00:02:58,240 --> 00:03:01,029
+Thực hiện các hạn chế của tài khoản dịch vụ,
+
+52
+00:03:01,220 --> 00:03:02,559
+Và còn nhiều nữa.
+
+53
+00:03:02,720 --> 00:03:06,820
+Vì vậy cấp bậc của bạn không chỉ là về tổ chức,
+
+54
+00:03:06,880 --> 00:03:12,520
+Nó là về an ninh nhất quán và sự tuân thủ tự động.
+
+55
+00:03:12,639 --> 00:03:17,300
+Và nhớ rằng, mọi thứ đều xuống dốc trừ khi cố ý bị đè nén.
+
+56
+00:03:17,410 --> 00:03:21,759
+Đây là cách mà các công ty lớn tránh sự lây lan và
+
+57
+00:03:21,759 --> 00:03:25,320
+Kiểm soát hàng rào mà không cần kiểm soát vi mô các đội.
+
