@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:06,240
+Xin chào, trong bài học này, tôi sẽ nói về chỉ số không gian lao động trong phi công phụ bên trong mã VS.
+
+2
+00:00:06,240 --> 00:00:11,520
+Bắt đầu thôi. Khi bạn hỏi một phi công một câu hỏi, nó không chỉ đoán.
+
+3
+00:00:11,520 --> 00:00:17,280
+Nó thực sự nhìn vào dự án của bạn để hiểu cách các tập tin kết nối,
+
+4
+00:00:17,280 --> 00:00:20,720
+nơi chức năng được định nghĩa và cách các thành phần hoạt động cùng nhau.
+
+5
+00:00:20,720 --> 00:00:27,520
+Và đó gọi là bối cảnh không gian làm việc. Đó là những gì giúp người giao dịch trả lời phù hợp với bạn
+
+6
+00:00:27,520 --> 00:00:33,440
+không phải ví dụ ngẫu nhiên từ internet. Khi bạn mở một dự án, mã VS
+
+7
+00:00:33,440 --> 00:00:39,360
+Nhẹ nhàng quét nó ở phía sau. Nó nhìn qua tất cả các tập tin, cấu trúc thư mục,
+
+8
+00:00:39,360 --> 00:00:46,080
+và ký hiệu mã của bạn như lớp học và chức năng. Nó cũng thông báo tập tin nào bạn biên tập
+
+9
+00:00:46,080 --> 00:00:51,040
+Và bạn đã chọn đoạn văn nào. Điều đó giúp nó tập trung vào những gì liên quan nhất.
+
+10
+00:00:52,560 --> 00:00:57,280
+Tất cả những thông tin này được lưu trữ trong một thứ gọi là chỉ mục vùng làm việc.
+
+11
+00:00:57,280 --> 00:01:03,360
+Liên kết nó như một bản đồ tìm kiếm thông minh của dự án của bạn. Đây là những gì phi công phụ sử dụng để nhanh chóng
+
+12
+00:01:03,360 --> 00:01:07,840
+tìm và hiểu những mật mã liên quan đến câu hỏi của anh. Đối với những dự án nhỏ,
+
+13
+00:01:07,840 --> 00:01:13,280
+Phi công phụ có thể bao gồm cả không gian làm việc trực tiếp khi nó trả lời câu hỏi của bạn.
+
+14
+00:01:13,280 --> 00:01:20,960
+Đối với những dự án lớn hơn, nó chỉ giữ những phần liên quan nhất, vì vậy mọi thứ luôn nhanh và tập trung.
+
+15
+00:01:20,960 --> 00:01:25,040
+Mật mã VS có thể sử dụng các phương pháp tìm kiếm khác nhau tùy thuộc vào những gì có sẵn,
+
+16
+00:01:25,040 --> 00:01:28,960
+và đôi khi nó tìm kiếm bằng cách sử dụng ngữ pháp tìm kiếm.
+
+17
+00:01:28,960 --> 00:01:36,240
+Đôi khi nó trông giống tên tập tin hoặc văn bản chính xác, và nếu dự án của bạn có trên GitHub,
+
+18
+00:01:36,240 --> 00:01:40,240
+Nó thậm chí có thể sử dụng mã tìm kiếm của GitHub để tìm kết quả nhanh hơn.
+
+19
+00:01:40,240 --> 00:01:46,240
+Nó kết hợp tất cả các phương pháp này để chọn kết quả tốt nhất trước khi cho bạn câu trả lời.
+
+20
+00:01:46,240 --> 00:01:49,760
+Chỉ số không gian làm việc là những phần then chốt điều khiển tất cả những thứ này.
+
+21
+00:01:50,640 --> 00:01:54,640
+Đó là những gì phi công phụ sử dụng để hiểu và tìm kiếm cơ sở mã của bạn một cách nhanh chóng.
+
+22
+00:01:54,640 --> 00:02:01,280
+Phụ thuộc vào thiết lập của bạn, chỉ mục có thể để lại từ xa trên GitHub hoặc Azure DevOps,
+
+23
+00:02:01,280 --> 00:02:06,640
+hoặc địa phương trên máy tính riêng của bạn. Nếu mã của bạn được lưu trữ trên GitHub hoặc Azure DevOps,
+
+24
+00:02:06,640 --> 00:02:13,360
+Mật mã VS sử dụng chỉ số từ xa. Chỉ mục này được xây dựng tự động lần đầu tiên bạn dùng
+
+25
+00:02:13,360 --> 00:02:20,640
+không gian làm việc hoặc mã lượng tử trong chat. Sau đó, nó sẽ tự động cập nhật mỗi lần bạn đẩy
+
+26
+00:02:20,640 --> 00:02:28,080
+Mật mã mới. Nó nhanh và hoàn hảo cho các kho lớn, và bạn không cần phải làm bất cứ điều gì bằng tay.
+
+27
+00:02:28,080 --> 00:02:34,160
+Nếu dự án của bạn không nằm trên GitHub hay Azure DevOps, mã VS sẽ tạo ra chỉ mục địa phương.
+
+28
+00:02:34,160 --> 00:02:41,120
+Chỉ số này được lưu trên máy của bạn và chỉ được sử dụng để tìm kiếm nhanh hơn trong dự án của bạn.
+
+29
+00:02:41,920 --> 00:02:48,560
+Đối với các dự án nhỏ, nó tự động được xây dựng. Đối với kích thước trung bình, bạn có thể mở lệnh
+
+30
+00:02:48,560 --> 00:02:55,600
+Bảng màu và chạy xây dựng chỉ mục không gian làm việc địa phương một lần, và nếu dự án của bạn là rất lớn,
+
+31
+00:02:55,600 --> 00:03:05,920
+Hơn 2.500 hồ sơ. Mã VS sẽ chuyển sang chỉ số đơn giản hơn. Chỉ mục cơ bản là một
+
+32
+00:03:05,920 --> 00:03:13,200
+Phiên bản nhỏ hoạt động khi dự án của bạn quá lớn so với chỉ số địa phương. Nó không bao gồm
+
+33
+00:03:13,200 --> 00:03:19,920
+Tất cả các tính năng tìm kiếm ngữ pháp sâu sắc, nhưng nó vẫn giúp đồng điều khiển tìm ra mã liên quan một cách nhanh chóng.
+
+34
+00:03:19,920 --> 00:03:26,800
+Đối với hầu hết các dự án, nó là quá đủ để có được câu trả lời tốt ngay lập tức. Bạn có thể luôn luôn kiểm tra
+
+35
+00:03:26,800 --> 00:03:32,800
+Loại phi công phụ nào đang sử dụng từ thanh trạng thái ở dưới cùng của mã VS. Nó cho thấy
+
+36
+00:03:32,800 --> 00:03:38,240
+Cho dù chỉ số này đang được xây dựng hay cập nhật và nó là từ xa, địa phương hay cơ bản.
+
+37
+00:03:38,240 --> 00:03:42,800
+Nếu cần, bạn cũng có thể xây dựng lại nó bằng tay từ bảng chọn lệnh.
+
+38
+00:03:42,800 --> 00:03:52,080
+Chỉ cần tìm các lệnh như xây dựng chỉ mục không gian làm việc địa phương, xây dựng chỉ mục không gian làm việc từ xa, chỉ mục mật mã VS,
+
+39
+00:03:52,080 --> 00:03:58,320
+Tất cả các tập tin dựa trên văn bản thuộc dự án của bạn bao gồm mã, tập tin cấu hình,
+
+40
+00:03:58,320 --> 00:04:04,320
+và tài liệu. Nó bỏ qua những thứ như hình ảnh, PDF và tập tin tạm thời.
+
+41
+00:04:04,320 --> 00:04:11,680
+Các tập tin được liệt kê trong.gitignore hoặc bị loại bỏ trong thiết lập mã VS cũng bị bỏ qua.
+
+42
+00:04:11,680 --> 00:04:18,320
+Nhưng nếu bạn mở một trong những tập tin bị bỏ qua, đồng điều khiển sẽ vẫn đọc nó cho phiên chạy
+
+43
+00:04:18,320 --> 00:04:24,640
+Hãy chắc chắn rằng câu hỏi của bạn có ý nghĩa. Để tổng kết lại, chỉ số không gian làm việc là những gì giúp đỡ đồng lái
+
+44
+00:04:24,640 --> 00:04:29,280
+hiểu toàn bộ mã của anh, không chỉ tập tin anh đang làm.
+
+45
+00:04:29,280 --> 00:04:34,880
+Nó xảy ra tự động và điều chỉnh dựa trên kích thước dự án của bạn và nơi mã của bạn sống.
+
+46
+00:04:34,880 --> 00:04:40,000
+Bạn luôn có thể kiểm tra hoặc xây dựng lại nó từ thanh trạng thái hay thực đơn lệnh.
+
+47
+00:04:40,000 --> 00:04:48,000
+Một khi bạn hiểu làm thế nào chỉ số hoạt động, bạn sẽ hiểu tại sao đồng hành có thể cung cấp cho như vậy thông minh,
+
+48
+00:04:48,000 --> 00:04:55,280
+bối cảnh mà câu trả lời về dự án của bạn. Nó không còn đoán mò nữa, nó đang đọc mã của anh.
+
+49
+00:04:55,280 --> 00:05:01,120
+Tôi hy vọng bài học này hữu ích cho bạn và nhìn thấy bạn trong bài học tiếp theo.
+
