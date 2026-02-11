@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:09,580
+ Remember we talked about hard coded values like these which are never recommended because
+
+2
+00:00:09,580 --> 00:00:15,800
+ as I said they make your program or applications one dimensional rather we should take in
+
+3
+00:00:15,800 --> 00:00:19,840
+ always use an input from runtime and there are few ways to do it in Java but I'll just
+
+4
+00:00:19,840 --> 00:00:25,140
+ keep it simple for you I'll just walk you through the most popular way of doing that
+
+5
+00:00:25,140 --> 00:00:31,080
+ and that is through the scanner class the inbox scanner class let's try to do that so
+
+6
+00:00:31,080 --> 00:00:36,240
+ I'll do is let me quickly go on and even create a new class here I'll just right click
+
+7
+00:00:36,240 --> 00:00:41,480
+ on the package and say new Java class more about packages in a little video but for now
+
+8
+00:00:41,480 --> 00:00:51,280
+ let's just call it user input right enter let me again maximize the font for you put it
+
+9
+00:00:51,280 --> 00:00:57,920
+ full screen will again have the mean method right at this time I'll just say just
+
+10
+00:00:57,920 --> 00:01:04,480
+ get it the scanner class now the scanner class the beauty of intelligent can you start
+
+11
+00:01:04,480 --> 00:01:08,320
+ typing and it just gives you the intelligence it says that this class is a Java dot
+
+12
+00:01:08,320 --> 00:01:13,120
+ util package that means you need to import it but you don't need to do the heavy lifting
+
+13
+00:01:13,120 --> 00:01:19,200
+ just hit enter and intelligent put in the input for you now import is the keyword import
+
+14
+00:01:19,200 --> 00:01:24,880
+ is used to import classes in Java like from Java to util this is the super package the
+
+15
+00:01:24,880 --> 00:01:30,480
+ sub package and this is the class again see S isn't capitals that is cable case should
+
+16
+00:01:30,480 --> 00:01:35,120
+ be a class and then you hover on this it just gives you the description about this class
+
+17
+00:01:35,120 --> 00:01:40,160
+ as well that tells you a simple text scanner right and this is what we're using I'll just
+
+18
+00:01:40,160 --> 00:01:45,360
+ call it variable as scan I'll say new scanner and here because we want to take user input
+
+19
+00:01:45,360 --> 00:01:51,360
+ from runtime that's why I say system dot end I say I don't have to do it from any file right
+
+20
+00:01:51,360 --> 00:01:56,880
+ but from console runtime that's where system dot end comes in and then I'll ask the user
+
+21
+00:01:56,880 --> 00:02:03,200
+ to enter a number or a couple of numbers and I'll just say for example a sound this time I'll
+
+22
+00:02:03,200 --> 00:02:17,520
+ say enter another and the user I'll just say int let's call it value and you'll say scan dot next
+
+23
+00:02:17,520 --> 00:02:23,120
+ see now in scan and there are lots of utility methods right if you want to take a string
+
+24
+00:02:23,120 --> 00:02:28,240
+ from user runtime there is next and there is next line if you want to take a int there is next
+
+25
+00:02:28,240 --> 00:02:35,360
+ int if you want to take a bite there is next bite next short next Boolean double and so on a lot
+
+26
+00:02:35,360 --> 00:02:41,520
+ of utility myths out there but for now we're just interested in taking integer see it has the return
+
+27
+00:02:41,520 --> 00:02:47,440
+ type of int and we're taking it in a variable of value that is a type int the compiler is happy
+
+28
+00:02:47,440 --> 00:02:57,120
+ and for now I'll just printed back I'll just say you entered the value and I'll just concatenated
+
+29
+00:02:57,120 --> 00:03:03,520
+ value and let's go on and check this so what happens is when the user gets this scan dot next line
+
+30
+00:03:03,520 --> 00:03:09,760
+ the cursor just keeps on blinking the console just pauses until the user enters something and hits
+
+31
+00:03:09,760 --> 00:03:17,200
+ enter so I'll just say it could be like see enter number it has stopped for a paused for us
+
+32
+00:03:17,200 --> 00:03:24,560
+ waiting for us to enter any number and I'll say one two eight six and it says you entered the value
+
+33
+00:03:24,560 --> 00:03:32,320
+ as one two eight six right so that is the simplest way of taking a value from runtime even if
+
+34
+00:03:32,320 --> 00:03:40,480
+ you want to take a string I'll just comment this out control slash remember and then you'll say
+
+35
+00:03:40,480 --> 00:03:47,920
+ a south I'll say enter unit let's say we want to take a name of a user and I'll just go on and
+
+36
+00:03:47,920 --> 00:03:54,000
+ say this time this variable value variable type is string I'll just say user name again in
+
+37
+00:03:54,000 --> 00:03:59,760
+ camel case remember because you small in capital that's how we declare variables and I'll just say
+
+38
+00:03:59,760 --> 00:04:08,560
+ scan dot next line because we want to take the next line as well and I'll just say a south
+
+39
+00:04:08,560 --> 00:04:17,200
+ let's say welcome username we're just printing it apart that's just simplified stop I'll just
+
+40
+00:04:17,200 --> 00:04:22,320
+ go on and hit run it says enter your name and I'll say believe say it's welcome well it you hit
+
+41
+00:04:22,320 --> 00:04:28,080
+ it the next time that's the multi-dimensional nature of our program now it's not hard coded I'll just
+
+42
+00:04:28,080 --> 00:04:35,360
+ say enter your name and you'll just see for example sonna and says welcome sonna right on your screen
+
+43
+00:04:35,360 --> 00:04:43,440
+ so that is and then try your hand son with taking doubles by its bullions shorts you have all
+
+44
+00:04:43,440 --> 00:04:49,120
+ those utility methods in the scanning class and a point here with integers is that is when you say
+
+45
+00:04:49,120 --> 00:04:54,640
+ next int right and let's say after this you have to take another string or another integer so
+
+46
+00:04:54,640 --> 00:05:05,760
+ make sure you do a empty scan dot next line because what happens with integers is next int doesn't
+
+47
+00:05:05,760 --> 00:05:12,800
+ have the capability to take the next line as well so what happens is it doesn't take it just puts
+
+48
+00:05:12,800 --> 00:05:18,960
+ the value here and if you don't put it then you are in problems right then whatever you're doing
+
+49
+00:05:18,960 --> 00:05:24,320
+ next would just take the next line but not the actual value so whenever you're taking integers and
+
+50
+00:05:24,320 --> 00:05:29,520
+ after that you're taking any strings or any any other values just do an empty next line that just
+
+51
+00:05:29,520 --> 00:05:34,800
+ absorbs the next line that is the slash and that's it otherwise pretty straightforward stuff
+
+52
+00:05:34,800 --> 00:05:40,880
+ that's how you scan to take user input from runtime to make your programs dynamic in nature
+
