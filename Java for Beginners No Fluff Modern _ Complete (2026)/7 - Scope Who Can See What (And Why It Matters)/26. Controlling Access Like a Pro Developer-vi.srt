@@ -1,0 +1,752 @@
+1
+00:00:00,000 --> 00:00:05,680
+Tất cả các quyền sau đó tất cả mọi người, trong video trước đây chúng tôi đã có một cái nhìn vào phạm vi được xác định tại
+
+2
+00:00:05,680 --> 00:00:11,440
+Các cấp độ khác nhau, thực sự 4 cấp độ, và sau đó những gói là gì? Tại sao chúng ta lại dùng chúng?
+
+3
+00:00:11,440 --> 00:00:16,960
+Và sau đó trong video này chúng tôi sẽ xem xét làm thế nào chúng tôi sử dụng các gói? Chúng ta tuyên bố thế nào đây?
+
+4
+00:00:16,960 --> 00:00:21,200
+Chúng ta nhập khẩu chúng như thế nào? Và họ có quan hệ gì với phạm vi? Và chúng ta trở lại với
+
+5
+00:00:21,200 --> 00:00:28,720
+Đó là thông minh và tạo ra này phạm vi lớp học làm việc. Vũ khí chính công cộng sẵn sàng.
+
+6
+00:00:28,720 --> 00:00:33,680
+Và bây giờ là nơi chúng tôi sẽ, chúng tôi sẽ chứng minh các gói. Và như anh đã làm
+
+7
+00:00:33,680 --> 00:00:40,080
+nhìn vào dòng đầu tiên, nó nói rằng gói org dot w aq. Đây là gói hàng mà chúng tôi đã được
+
+8
+00:00:40,080 --> 00:00:46,560
+Sau tất cả các điểm, phải không? Vì vậy, bây giờ chúng tôi sẽ phóng to này và điều này sẽ chỉ làm cho bạn rõ ràng
+
+9
+00:00:46,560 --> 00:00:53,920
+phải không? Vì vậy, những gì này nói là, làm thế nào để bạn xác định một gói mới trong một lớp học
+
+10
+00:00:53,920 --> 00:01:00,080
+với gói từ khóa? Và điều đầu tiên, chúng ta không bao giờ nên đưa vào lớp mà không có gói hàng,
+
+11
+00:01:00,080 --> 00:01:06,000
+Mặc dù chúng tôi có thể, nhưng điều đó không bao giờ được đề nghị bởi vì mật mã không được tổ chức. Và bạn biết rằng
+
+12
+00:01:06,000 --> 00:01:12,240
+Rất khó để sửa lỗi và cuối cùng sẽ gặp nhiều vấn đề sau này. Vì vậy, chúng ta nên luôn luôn
+
+13
+00:01:12,240 --> 00:01:16,080
+cho vào gói. Đó là những gì chúng tôi đang theo dõi. Nhưng bây giờ chúng tôi đang xem xét tại sao chúng tôi làm
+
+14
+00:01:16,080 --> 00:01:22,480
+Cái đó? Vậy chúng ta làm điều đó như thế nào? Vì vậy, trong một lớp trong một tập tin, trong một tập tin Java, làm thế nào để bạn tuyên bố một gói mới
+
+15
+00:01:22,480 --> 00:01:29,200
+với gói từ khóa? Và sau đó bộ nhận diện và thông qua trường hợp cáp gói nên được trong tất cả
+
+16
+00:01:29,200 --> 00:01:34,240
+những đứa nhỏ. Và như chúng tôi đang theo dõi ở đây, siêu gói phụ thuộc chấm, hoặc bạn có thể có chỉ
+
+17
+00:01:34,240 --> 00:01:39,600
+Gọi nó là, anh sẽ gọi nó là điên. Vậy cũng tốt, phải không? Nhưng nhìn chung, bạn sẽ thấy
+
+18
+00:01:39,600 --> 00:01:45,280
+Gói phụ tùng siêu gói tin chấm nhỏ. Đó là kiểu cú pháp chúng tôi viết. Và đó là lý do
+
+19
+00:01:45,280 --> 00:01:51,840
+Tôi đang theo nó ở đây. Và tiêu chuẩn của ngành công nghiệp là chúng ta làm điều đó trong lĩnh vực ngược lại. Hãy nói
+
+20
+00:01:52,480 --> 00:01:57,920
+Anh đang làm việc ở TCS. Vì vậy, bạn chỉ cần nói bình tĩnh chấm TCS đào tạo. Bạn đang làm việc trong xã hội
+
+21
+00:01:57,920 --> 00:02:04,240
+Đại tướng. Bạn sẽ nói bình tĩnh dot soggen dot học. Anh đang làm việc. Hãy nói rằng tại Google, bạn sẽ
+
+22
+00:02:04,240 --> 00:02:12,560
+Không nói là huấn luyện chấm mạng Google, phát triển chấm com Google, đúng không? Vì vậy, ngược miền là
+
+23
+00:02:12,560 --> 00:02:18,080
+Tiêu chuẩn công nghiệp. Đó là những gì chúng ta đang bám lấy. Vì vậy, org chấm wag là tốt. Bây giờ bất cứ lớp học nào
+
+24
+00:02:18,080 --> 00:02:24,160
+bạn sẽ đưa vào cuộc chiến này sẽ thuộc về gói này vì quy tắc là một tập tin Java có thể có
+
+25
+00:02:24,160 --> 00:02:32,640
+Chỉ có một tuyên bố gói. Và nó phải ở trên đỉnh. Một lần nữa, tập tin Java có thể có
+
+26
+00:02:32,640 --> 00:02:38,880
+Chỉ có một tuyên bố gói. Và nó phải ở trên đỉnh. Và đó là lý do chúng tôi có nó
+
+27
+00:02:38,880 --> 00:02:46,400
+Đây. Tôi không thể để gói hàng rơi xuống. Tôi không thể nói ví dụ, gói khác đó là một mũi tên
+
+28
+00:02:46,400 --> 00:02:52,240
+Đây. Nó nói nếu bạn lơ lửng trên lớp học này hoặc giao diện, mong đợi nó không phải là một gói bởi vì nó chỉ có thể được
+
+29
+00:02:52,240 --> 00:02:57,840
+Chỉ vài tháng và ở dòng đầu tiên. Vì vậy, bất kỳ lớp học bạn đặt ở đây giống như phạm vi lớp học công cộng
+
+30
+00:02:57,840 --> 00:03:04,560
+làm việc, hãy nói rằng tôi có một lớp học khác, ví dụ, tôi sẽ chỉ gọi khác và hãy nói điều này như là chỉ
+
+31
+00:03:04,560 --> 00:03:13,120
+một phương pháp, vớ vẩn. Vì vậy, bây giờ lớp này cũng thuộc về gói org dot wag. ♪ Và đằng sau khung cảnh ♪
+
+32
+00:03:13,120 --> 00:03:20,160
+trong thư mục vật lý của bạn, chúng sẽ là một phần của thư mục org chấm wag. Vậy
+
+33
+00:03:20,160 --> 00:03:29,200
+Đó là cách bạn tuyên bố gói hàng. Tôi đến để làm thế nào để bạn nhập chúng trong một thời gian. Nhưng bắt đầu với
+
+34
+00:03:29,200 --> 00:03:35,600
+phạm vi đầu tiên, và đó là phạm vi riêng của gói, theo mặc định. Như bạn đang thấy
+
+35
+00:03:35,600 --> 00:03:42,080
+lớp học này, tôi đã công khai. Nhưng lớp học này không có phạm vi. Có nghĩa là nó có gói
+
+36
+00:03:42,080 --> 00:03:47,920
+Phạm vi cá nhân, đó là phạm vi mặc định trong Java. Và phương pháp chính này luôn phải được công khai.
+
+37
+00:03:47,920 --> 00:03:53,200
+Điều đó có nghĩa là chính có phạm vi công khai, nhưng lak không có một phạm vi rõ ràng được viết ra. Nghĩa là
+
+38
+00:03:53,200 --> 00:03:58,800
+Nó có phạm vi mặc định và những gì là một lần nữa, gói riêng tư. Bây giờ, hãy xem xét những gì
+
+39
+00:03:58,800 --> 00:04:04,640
+có nghĩa là bạn phải định nghĩa loại người hoặc thành viên của bạn là gói riêng. Đó là mặc định.
+
+40
+00:04:04,640 --> 00:04:10,240
+Đúng không? Và một lần nữa, phạm vi cá nhân gói có thể được đưa vào ở cấp giao diện cấp lớp
+
+41
+00:04:10,240 --> 00:04:15,040
+hoặc ở cấp độ thành viên. Các thành viên bây giờ, phải không? Biến thể của lớp học
+
+42
+00:04:15,040 --> 00:04:21,840
+cũng như phương pháp, đúng không? Vì vậy, gói riêng tư là ứng dụng ở hai cấp độ, phải không? Ngay đây,
+
+43
+00:04:21,840 --> 00:04:27,920
+Ngay đây. Và trong một lớp học ở cấp độ thành viên, biến số địa phương,
+
+44
+00:04:27,920 --> 00:04:32,720
+Chúng ta không thể kiểm tra bên phải họ. Không có phạm vi nào được áp dụng ở đây bởi vì chúng đã có một phạm vi,
+
+45
+00:04:32,720 --> 00:04:38,720
+địa phương hoặc địa phương của họ đến phương pháp đó hay địa phương mà họ được định nghĩa.
+
+46
+00:04:38,720 --> 00:04:47,120
+Phải. Vậy nó có nghĩa là gì? Được rồi. Ví dụ bây giờ, nếu bạn muốn truy cập vào funk của
+
+47
+00:04:47,120 --> 00:04:52,480
+bên trong chính, rõ ràng, tôi sẽ có một tin nhắn âm thanh, một tin nhắn mẫu, tôi sẽ nói bên trong một thông điệp.
+
+48
+00:04:52,480 --> 00:04:58,480
+Nếu bạn muốn gọi nó ở dòng thứ năm, cú pháp để làm điều đó là gì? Cứ ghi lại,
+
+49
+00:04:58,480 --> 00:05:02,960
+Chúng tôi đã có một cái nhìn về điều đó khi chúng tôi nói về lớp học và đồ vật, nó vẫn như cũ,
+
+50
+00:05:02,960 --> 00:05:09,680
+Đúng không? Nhưng bây giờ chúng ta đang xem nó có được gọi hay không, đúng không? Chúng tôi không coi đó là chuyện đương nhiên.
+
+51
+00:05:09,680 --> 00:05:14,080
+Bởi vì chúng ta đang nói về phạm vi. Và tôi sẽ nói, ví dụ, rõ ràng, tôi cần phải tạo ra một
+
+52
+00:05:14,080 --> 00:05:23,120
+Đối tượng khác, tôi sẽ nói khác, và bạn sẽ thấy khác chấm punk, nó có thể truy cập? Đó là lý do.
+
+53
+00:05:23,120 --> 00:05:29,600
+Bây giờ, hãy xem qua. Xem, niềm vui được xác định trong khác là riêng gói, khác là gói
+
+54
+00:05:29,600 --> 00:05:34,720
+Riêng tư, anh đang truy cập nó vào chính, đúng không? Vậy nó có ý nghĩa gì đối với bạn? Có
+
+55
+00:05:34,720 --> 00:05:39,920
+gói riêng tư, đó là, và bạn có thể ghi chú ở đây hoặc chỉ cần nhớ nó, gói riêng tư
+
+56
+00:05:39,920 --> 00:05:47,520
+Thành viên của lớp, hay thậm chí cả lớp, đúng không? Chúng ở ngay bên kia gói hàng.
+
+57
+00:05:47,520 --> 00:05:52,800
+trong đó chúng được xác định, nhưng không phải bên ngoài gói. Đó là lý do họ được gọi là riêng tư.
+
+58
+00:05:52,800 --> 00:05:58,800
+phải không? Thấy chưa, gói hàng riêng. Vì vậy, gói thành viên riêng của một lớp học hoặc lớp học
+
+59
+00:05:58,800 --> 00:06:04,240
+bản thân hoặc giao diện, họ có thể truy cập ngay trên các gói mà họ trong đó
+
+60
+00:06:04,240 --> 00:06:09,840
+được hiển thị trong các lớp khác, nhưng mà thuộc cùng một gói, nhưng họ không thể được
+
+61
+00:06:09,840 --> 00:06:15,600
+Truy cập bên ngoài gói hàng. Và tại sao chúng lại dễ tiếp cận ở đây? Bởi vì khác và phạm vi làm việc
+
+62
+00:06:15,600 --> 00:06:20,800
+Cả hai đều được xác định trong gói, tất cả đều được đánh dấu, đúng không? Vì vậy, khác có thể truy cập ở đây,
+
+63
+00:06:20,800 --> 00:06:27,600
+mọi thứ có thể truy cập ở đây. Tại sao nó lại hoạt động? Được rồi.
+
+64
+00:06:27,600 --> 00:06:32,960
+Và nếu bạn muốn có các lớp khác nhau, nhưng thuộc về cùng một gói, nhưng không phải trong tập tin này,
+
+65
+00:06:32,960 --> 00:06:37,760
+Bạn có thể tiếp tục và xác định chúng trong một tập tin mới, nhưng dòng đầu tiên nên
+
+66
+00:06:37,760 --> 00:06:43,280
+Tất cả các dấu chấm, xem, như là một phản ứng, tính toán bổ sung, logic điều kiện, tất cả chúng là một phần
+
+67
+00:06:43,280 --> 00:06:49,920
+của tất cả các chấm gõ. Điều đó có nghĩa là tất cả bọn họ có thể truy cập tầm nhìn của những người khác. Đúng rồi. Đó là
+
+68
+00:06:49,920 --> 00:06:54,800
+Làm thế nào tôi có để truy cập một phương pháp vòng thời gian làm việc ngay tại đây. Tôi có thể làm điều đó nếu đó cũng được định nghĩa là
+
+69
+00:06:54,800 --> 00:07:01,920
+gói riêng. Đó là cách làm việc của các gói riêng tư. Cái đó là riêng tư cho gói hàng. Được rồi.
+
+70
+00:07:01,920 --> 00:07:09,200
+Vì vậy, tin sốt dẻo thứ hai ở Java mà chúng tôi sẽ nói về được bảo vệ và bảo vệ có một
+
+71
+00:07:09,200 --> 00:07:16,400
+khác biệt nhỏ với gói riêng, nhưng quan trọng, phải không? Và bảo vệ điều đầu tiên
+
+72
+00:07:16,400 --> 00:07:24,640
+về bảo vệ là nó không thể được nó chỉ có thể truy cập hoặc phạm vi là chỉ áp dụng tại
+
+73
+00:07:24,640 --> 00:07:32,560
+Không bao giờ là thành viên lớp. Không có khái niệm nào như một lớp học được bảo vệ ở Java,
+
+74
+00:07:32,560 --> 00:07:38,400
+Đúng không? Chúng tôi có thể làm điều đó với các lớp học nội bộ, nhưng hãy để lại cuộc thảo luận đó cho một ngày khác,
+
+75
+00:07:38,400 --> 00:07:45,840
+Một video khác. Nhưng bây giờ, được bảo vệ, nó không thể áp dụng ở đây chỉ trong lớp học,
+
+76
+00:07:45,840 --> 00:07:51,200
+Hoặc với các biến số hoặc phương pháp, nhưng không bao giờ ở cấp độ lớp học. Nếu anh cố làm thế,
+
+77
+00:07:51,200 --> 00:07:56,720
+anh nên nhận lỗi. Và đó là những gì anh làm. Bạn đang lơ lửng trên này nói rằng sửa đổi bảo vệ
+
+78
+00:07:56,720 --> 00:08:03,600
+không được phép vào đây. Nhân tiện, ở lớp học, một lớp học có thể riêng tư,
+
+79
+00:08:03,600 --> 00:08:08,960
+Mà là mặc định hoặc nó có thể được công khai, không có gì khác. Không có phạm vi nào khác được áp dụng ở đây. Được rồi.
+
+80
+00:08:08,960 --> 00:08:15,840
+Vậy bây giờ bạn định nghĩa thành viên của mình là gói riêng có nghĩa gì? Nó thực sự có nghĩa gì?
+
+81
+00:08:15,840 --> 00:08:21,920
+Tôi nói họ có một sự khác biệt nhỏ, một sự khác biệt tối thiểu với các thành viên bưu kiện riêng,
+
+82
+00:08:21,920 --> 00:08:29,840
+nhưng vẫn còn ý nghĩa. Và đó là gì? Vì vậy, gói thành viên riêng của một lớp học như được bảo vệ
+
+83
+00:08:29,840 --> 00:08:35,760
+Hoặc tôi sẽ chỉ giới thiệu nó xuống dưới. Như vậy bảo vệ các thành viên của lớp học như gói
+
+84
+00:08:35,760 --> 00:08:40,720
+Thành viên cá nhân có thể truy cập ngay trên gói mà trong đó họ được xác định,
+
+85
+00:08:41,520 --> 00:08:50,000
+Nhưng đây là một lỗi rất lớn, nhưng ở đây, nhưng chúng cũng có thể truy cập bên ngoài gói
+
+86
+00:08:50,000 --> 00:08:57,680
+trong trường hợp thừa kế đặc biệt. Và một lần nữa, để lặp lại, tôi sẽ chỉ đặt nó xuống cho bạn
+
+87
+00:08:57,680 --> 00:09:03,760
+có thể ghi lại được. Đó là bảo vệ các thành viên của một lớp như các thành viên gói riêng tư
+
+88
+00:09:03,760 --> 00:09:10,080
+có thể truy cập ngay trên gói mà chúng được xác định, nhưng cũng có thể truy cập được
+
+89
+00:09:10,080 --> 00:09:18,640
+bên ngoài bưu kiện thông qua di sản bên trong các tầng lớp phụ thuộc thông qua các tầng lớp phụ.
+
+90
+00:09:18,640 --> 00:09:24,000
+Đó là sự khác biệt duy nhất ở đây. Phải. Và hãy thử làm điều đó. Tôi sẽ nói
+
+91
+00:09:24,000 --> 00:09:30,400
+Lần này, nó được bảo vệ. Thấy chưa, chẳng có gì khác biệt nếu anh...
+
+92
+00:09:30,400 --> 00:09:36,320
+Truy cập nó trong gói dưới lớp học, nó vẫn có thể truy cập được. Phải. Nhưng nếu bạn cố gắng truy cập
+
+93
+00:09:36,320 --> 00:09:43,360
+thực tế hãy thử làm điều đó. Điều tôi sẽ nói là tôi sẽ tiếp tục và
+
+94
+00:09:43,360 --> 00:09:51,840
+Trên Java bây giờ tôi sẽ nói gói mới. Hãy gọi nó là chấm org làm việc ví dụ.
+
+95
+00:09:51,840 --> 00:09:58,480
+Cái đầu tiên là thẻ org. Đây là công việc của org. Hãy tạo một lớp học mới vào năm org công việc
+
+96
+00:09:58,480 --> 00:10:05,920
+và tôi sẽ gọi đó là nhiệm vụ ví dụ. Thấy chưa, đây là công việc ở org. Bây giờ xem với điều này.
+
+97
+00:10:05,920 --> 00:10:11,360
+Tất cả những người khác đều bị đánh. Đây là một gói phụ khác được gọi là công việc và những gì tôi đang cố gắng để
+
+98
+00:10:11,360 --> 00:10:17,760
+ở đây là nó không có tôi, nhưng hoặc giả sử nó có tôi. Tôi đang gọi nó cho tôi và tôi muốn gọi
+
+99
+00:10:17,760 --> 00:10:25,600
+Tôi muốn gọi đến nơi đã làm việc đó. Tôi muốn gọi
+
+100
+00:10:28,640 --> 00:10:35,920
+Còn những người khác từ bên ngoài gói hàng đang làm nhiệm vụ. Phải. Vì vậy điều đầu tiên, rõ ràng cú pháp
+
+101
+00:10:35,920 --> 00:10:41,680
+Vẫn như cũ. Cách tiếp cận nó là như nhau. Có thể truy cập được không? Đó chính là chúng ta.
+
+102
+00:10:41,680 --> 00:10:53,200
+sẽ thảo luận ở đây. Vì vậy, tôi sẽ chỉ nói khác với khác và tôi sẽ nói lỗi khác ở cả hai dòng
+
+103
+00:10:53,760 --> 00:11:02,480
+chính xác cùng một cú pháp hiệu quả trên dòng thứ năm và thứ sáu đang cho bạn một lỗi
+
+104
+00:11:02,480 --> 00:11:08,720
+5 và 6 bên trong một gói hàng khác. Tại sao bạn đang lơ lửng trên đó và lỗi này
+
+105
+00:11:08,720 --> 00:11:16,640
+không liên quan gì đến phạm vi. Phải. Nó nói rằng tôi không hiểu những gì khác bạn đang nói về
+
+106
+00:11:16,640 --> 00:11:24,400
+Bởi vì một lớp bên ngoài gói hàng thậm chí không nhìn thấy được. Nó thậm chí còn không được tìm thấy. Phải. Làm thế nào có thể
+
+107
+00:11:24,400 --> 00:11:30,720
+Anh tạo ra một vật thể từ đó? Phải. Vậy bước đầu tiên là nhập khẩu nó và làm thế nào để nhập khẩu nó?
+
+108
+00:11:30,720 --> 00:11:43,680
+Chúng tôi nói những điều như thế này. Tôi nói nhập khẩu org chấm wack chấm khác lớp đặc biệt. Phải.
+
+109
+00:11:43,680 --> 00:11:47,440
+Vì vậy, đó là cách để nhập sau khi gói để tuyên bố. Bạn nói nhập khẩu và sau đó
+
+110
+00:11:47,440 --> 00:11:53,120
+tên lớp. Nếu không, bạn có thể nói bắt đầu
+
+111
+00:11:53,120 --> 00:11:58,400
+khởi chạy có nghĩa là nhập mọi hạng từ org chấm wack. Nhưng điều đó không được đề nghị bởi vì
+
+112
+00:11:58,400 --> 00:12:03,120
+Hãy nghĩ về nó trong một dự án kinh doanh vĩ đại. Có thể có hàng trăm lớp học trong này
+
+113
+00:12:03,120 --> 00:12:10,000
+gói. Nếu chúng ta đặt quá nhiều gánh nặng lên hệ thống. Phải. Vì vậy, luôn luôn nhập các lớp
+
+114
+00:12:10,000 --> 00:12:14,880
+mà anh muốn làm việc cùng. Và ở đây tôi muốn làm việc với những người khác. Đây là cách nhập khẩu nó,
+
+115
+00:12:14,880 --> 00:12:23,120
+Nhưng bạn đang thấy vẫn còn một lỗi tại dòng thứ hai. Bây giờ, nó biết rằng có một lớp học bên trong
+
+116
+00:12:23,120 --> 00:12:29,440
+org dot wack, mà tôi đang cố nhập khẩu. Tốt thôi, nhưng nó không dễ thấy. Tại sao nó nên
+
+117
+00:12:29,440 --> 00:12:35,680
+nói cho bạn biết dấu chấm khác wck để khác là không công cộng trong org chấm wack không thể truy cập từ bên ngoài
+
+118
+00:12:35,680 --> 00:12:41,760
+gói. Tôi đã nói gì với anh? Đó là gói điều riêng tư chỉ có thể truy cập trong cùng một
+
+119
+00:12:41,760 --> 00:12:47,280
+gói, nhưng không phải trong các gói khác. Và để điều này có hiệu quả, rõ ràng, nếu điều này không hiệu quả, nếu
+
+120
+00:12:47,280 --> 00:12:52,640
+bạn không thể nhập khẩu nó, làm thế nào bạn có thể tạo ra một đối tượng? Làm thế nào bạn có thể gọi một phương pháp? Vì vậy, cho điều này để làm việc,
+
+121
+00:12:52,640 --> 00:12:59,520
+Chúng ta sẽ nói đến những người khác và công khai chuyện này. Phải. Và bây giờ, một lỗi, nó nói gì?
+
+122
+00:12:59,520 --> 00:13:05,440
+Nó nói rằng lớp học khác là công khai nên được tuyên bố với một danh tiếng tốt. Còn lại không phải Java.
+
+123
+00:13:05,440 --> 00:13:11,920
+Đây là một lỗi khác, một lý do khác. Và đó là gì? Đó là tập tin Java chỉ có thể có một
+
+124
+00:13:11,920 --> 00:13:17,520
+Lớp học công cộng, và đó nên là tên của tập tin đó. Nhưng trong trường hợp này, tôi có hai
+
+125
+00:13:17,520 --> 00:13:23,760
+xuất bản các lớp trong tập tin này không thể được vì Java không cho phép nhiều lớp học công cộng
+
+126
+00:13:23,760 --> 00:13:29,600
+có thể nằm trong cùng một hồ sơ, nhưng nhiều đến mức không có lớp học công cộng. Và người có công chúng
+
+127
+00:13:29,600 --> 00:13:34,720
+xác định với nó phải là tên của tập tin của bạn. Vì vậy, những gì tôi sẽ làm là tôi sẽ chỉ cần thoát khỏi điều này
+
+128
+00:13:34,720 --> 00:13:47,120
+ở đây và trong org.wag, tạo một tập tin riêng. Tôi sẽ gọi nó khác. Và tôi chỉ cần dán nó.
+
+129
+00:13:47,120 --> 00:13:54,720
+Phải. Làm tốt lắm. Lớp công cộng khác vẫn còn trong org.wag, nhưng trong một tập tin của riêng mình. Phải. Và tôi
+
+130
+00:13:54,720 --> 00:13:59,600
+có thể công khai chuyện này. Tôi cũng có thể làm việc trong phạm vi công cộng. Không vấn đề gì. Nó vẫn còn
+
+131
+00:13:59,600 --> 00:14:04,880
+làm việc vì bạn đang truy cập nó trong cùng một gói. Nhưng khi bạn cố gắng truy cập nó,
+
+132
+00:14:04,880 --> 00:14:13,040
+ở một lớp khác. Bây giờ lỗi đã hết. Phải. Chúng ta có thể nhập khẩu nó bởi vì
+
+133
+00:14:13,040 --> 00:14:19,040
+Công khai. Chúng ta có thể tạo ra một vật thể từ đó. Nó công khai, nhưng không có nghĩa là
+
+134
+00:14:19,040 --> 00:14:24,080
+tập trung cho đến khi có thể truy cập. Tại sao? Vì tầm ngắm. Và đó là vẻ đẹp của ống kính ở Java. Nó đã được giải quyết
+
+135
+00:14:24,080 --> 00:14:28,880
+bởi hai tầng trong Java. Đầu tiên là tầng lớp trên cùng là lớp học. Và sau đó thành viên
+
+136
+00:14:28,880 --> 00:14:34,800
+Hãy nghĩ về một sự tương đồng tuyệt vời đó là nhà của bạn. Chỉ vì anh đã mở cổng chính
+
+137
+00:14:34,800 --> 00:14:40,880
+tất cả mọi người không có nghĩa là tất cả mọi người có thể vào trong phòng ngủ của bạn và sử dụng nhà vệ sinh của bạn hoặc bất kỳ khác
+
+138
+00:14:40,880 --> 00:14:48,880
+phòng. Phải. Bạn vẫn có thể kiểm soát những người có thể truy cập vào phòng ngủ của bạn người được truy cập vào
+
+139
+00:14:48,880 --> 00:14:54,480
+Vào hành lang và nhà vệ sinh. Phải. Cái này mở ra. Đó là cổng chính của lớp.
+
+140
+00:14:54,480 --> 00:15:01,280
+cấp độ. Bây giờ các phòng cá nhân vẫn đóng cửa. Tại sao? Bởi vì funk như bạn thấy vẫn còn được xác định
+
+141
+00:15:01,280 --> 00:15:08,800
+được bảo vệ. Không thể truy cập nó bên ngoài gói. Phải. Vì vậy, đó là bởi lỗi này.
+
+142
+00:15:08,800 --> 00:15:13,600
+Nhưng nếu bạn có thể, nếu bạn chỉ cố gắng truy cập nó trong cùng một gói, bạn sẽ có
+
+143
+00:15:13,600 --> 00:15:23,280
+ở đó. Phải. Vì vậy, đó là chúng tôi vẫn không thể truy cập nó. Tôi sẽ nói. Tại sao? Bởi vì nó được định nghĩa là
+
+144
+00:15:23,280 --> 00:15:29,760
+Được bảo vệ. Vì vậy, bạn cần phải xác định rằng cũng như công cộng hoặc điều thứ hai là một
+
+145
+00:15:29,760 --> 00:15:37,280
+hai thành viên mới được bảo vệ có thể truy cập bên ngoài gói cũng như di sản bên trong
+
+146
+00:15:37,280 --> 00:15:41,520
+Tầng hầm. Vì vậy, tôi không muốn công khai điều này bởi vì nếu tôi giữ nó như công cộng có nghĩa
+
+147
+00:15:41,520 --> 00:15:47,760
+Truy cập toàn cầu. Phải. Tôi vẫn muốn tiếp cận ai đó theo cách hạn chế
+
+148
+00:15:47,760 --> 00:15:54,640
+Và tôi có thể làm điều đó. Làm thế nào tôi sẽ nói rằng đi khác và tôi sẽ nói điều này được bảo vệ bởi một. Không sao.
+
+149
+00:15:54,640 --> 00:16:05,120
+Nhiệm vụ. Tôi sẽ nói là mở rộng. Khác. Tôi sẽ làm di sản ở đây. Chỉ cần chịu đựng với tôi cho một số
+
+150
+00:16:05,120 --> 00:16:09,680
+trong một thời gian bởi vì chúng tôi đã không trang trải di sản. Nhưng đó là cách chúng ta thừa kế. Chúng ta
+
+151
+00:16:09,680 --> 00:16:13,920
+Sẽ lấy lại nó với vết xước từ đầu. Nhưng bây giờ, đó là cách chúng tôi làm thừa kế ở Java.
+
+152
+00:16:13,920 --> 00:16:18,880
+Công việc mở rộng để nó trở thành lớp học trẻ em. Điều này trở thành lớp phụ huynh. Phải. Nhưng...
+
+153
+00:16:18,880 --> 00:16:24,640
+Vẫn là lỗi bởi vì cậu quên điểm kết thúc mà tôi đã nói bảo vệ thành viên của lớp có thể là
+
+154
+00:16:24,640 --> 00:16:31,840
+Truy cập bên ngoài gói trong tầng hầm. Nhưng chỉ qua thừa kế. Di sản nghĩa là gì?
+
+155
+00:16:31,840 --> 00:16:38,080
+Di sản có nghĩa là như thể tầng lớp trẻ em có một thành viên của riêng mình. Phải. Đó là thụ thai
+
+156
+00:16:38,080 --> 00:16:43,760
+Từ một siêu đẳng. Nhưng nếu bộ phận là của riêng nó, có nghĩa là bạn đã có thể gọi
+
+157
+00:16:43,760 --> 00:16:52,320
+nó. Nếu bạn đã có thể truy cập nó với đối tượng riêng của nó, đó là nhiệm vụ mới. Giờ thì có tác dụng rồi.
+
+158
+00:16:52,320 --> 00:17:02,640
+Dành thời gian ở đây sau khi đoạn phim này hoàn thành và suy nghĩ về những gì đang diễn ra ở đây. Phải.
+
+159
+00:17:02,640 --> 00:17:07,520
+Các thành viên được bảo vệ vẫn có thể truy cập ra khỏi gói. Nhưng trong một tình huống đặc biệt,
+
+160
+00:17:07,520 --> 00:17:12,800
+đó là hai phần thừa kế trong tầng lớp phụ. Vì vậy chúng tôi đã làm lớp ngầm, nhưng sau đó đây là thừa kế. Cái này
+
+161
+00:17:12,800 --> 00:17:16,720
+Không phải vì cậu vẫn gọi nó là siêu môn. Không, nếu anh gọi từ
+
+162
+00:17:16,720 --> 00:17:21,440
+Đối tượng lớp học trẻ em, nếu nó có thể truy cập, bạn biết đấy, chúng tôi đang ở trong một tình huống đặc biệt. Và giờ thì...
+
+163
+00:17:21,440 --> 00:17:26,480
+sự khác biệt giữa bảo vệ và gói riêng. Và bạn có thể đặt các bảo vệ
+
+164
+00:17:26,480 --> 00:17:31,360
+đã xác định với biến thể ví dụ như tôi đã nói, nó áp dụng cho cả hai thành viên, phương pháp và
+
+165
+00:17:31,360 --> 00:17:37,040
+Ví dụ biến. Và đó là cách nó hoạt động. Vì vậy, bây giờ cấp độ thứ ba của phạm vi trong Java là công khai.
+
+166
+00:17:37,040 --> 00:17:42,400
+Chúng tôi đã xem qua rồi. Đó là nếu nó là công khai, nếu điều này là công khai, sau đó chúng tôi đã không cần
+
+167
+00:17:42,400 --> 00:17:48,080
+Để phân loại nó. Chúng tôi không cần làm gì khác. Nó sẽ được nhập khẩu. Và bạn có thể tiếp tục
+
+168
+00:17:48,080 --> 00:17:54,000
+Và gọi vì công cộng nghĩa là phổ biến. Nó có thể được truy cập thông qua gói hàng. Có thể
+
+169
+00:17:54,000 --> 00:17:58,720
+được truy cập trong các lớp khác và các gói khác. Anh không cần làm gì khác biệt cả. Đó là
+
+170
+00:17:58,720 --> 00:18:04,880
+Hoàn toàn ổn. Được rồi. Và phạm vi cuối cùng, là phạm vi hạn chế nhất ở Java là riêng tư.
+
+171
+00:18:04,880 --> 00:18:11,920
+Và đoán xem cái gì riêng tư mà không thể tiếp cận bên ngoài lớp mà nó được tuyên bố,
+
+172
+00:18:11,920 --> 00:18:18,160
+Làm thế nào để truy cập nó từ bên ngoài gói hàng? Điều đó có nghĩa, ví dụ, nếu bạn đã có điều này khác
+
+173
+00:18:18,160 --> 00:18:26,800
+Đây. Và ví dụ, tôi đã tuyên bố một biến, chiều dài riêng tư. Và nhân tiện, ví dụ của chúng tôi
+
+174
+00:18:26,800 --> 00:18:33,600
+Các biến số của một lớp học nên luôn được tuyên bố riêng tư hơn về điều đó sau này. Nhưng bây giờ...
+
+175
+00:18:33,600 --> 00:18:38,240
+Tôi tuyên bố đây là chuyện riêng tư. Tôi sẽ nói lý do tại sao tôi nói điều đó sau này
+
+176
+00:18:38,240 --> 00:18:44,560
+Video. Nhưng bây giờ, nó là riêng tư, nó không thể truy cập ngay cả trong cùng một gói bên ngoài,
+
+177
+00:18:44,560 --> 00:18:50,640
+ngoài lớp học. Cứ cho đây là lần cuối. Tôi có phương pháp màu trắng.
+
+178
+00:18:50,640 --> 00:18:59,760
+Và tôi đang cố gắng truy cập chiều dài. Tôi sẽ nói những thứ khác, mà tôi có thể làm được.
+
+179
+00:19:04,560 --> 00:19:10,240
+Nó bằng 90. Nó nói gì? Anh cứ tiếp tục đi. Vì vậy, nó dài như riêng tư,
+
+180
+00:19:10,240 --> 00:19:16,080
+Truy cập, và tất cả lùi hoặc thậm chí không thể truy cập từ bên ngoài lớp trong cùng một gói,
+
+181
+00:19:16,080 --> 00:19:21,200
+nhớ chứ? Vì vậy, đây là bốn cấp độ cho hiện nay. Tôi sẽ đi vào trong này, phải không? Đây là
+
+182
+00:19:21,200 --> 00:19:26,720
+Toàn bộ phạm vi trong Java trong số ba chỉ là từ khóa, phải không? Và tôi sẽ chỉ
+
+183
+00:19:26,720 --> 00:19:33,280
+cố gắng tạo ra một cái bàn, nó sẽ tự giải thích. Đó là điều dễ tiếp cận.
+
+184
+00:19:33,600 --> 00:19:39,280
+Ở đâu, nhưng đó là về phạm vi trong Java, phải không? Ở cấp độ lớp học, chỉ có hai phạm vi áp dụng,
+
+185
+00:19:39,280 --> 00:19:44,400
+Đó là một gói riêng tư hoặc công cộng, không có khái niệm như một lớp bảo vệ hoặc một lớp tư nhân
+
+186
+00:19:44,400 --> 00:19:51,680
+ở Java, phải không? Và ở cấp độ thành viên, cả bốn ống đều áp dụng. Hẹn gặp lại bạn trong video tiếp theo.
+
+187
+00:19:51,680 --> 00:19:57,520
+Nhưng, như tôi đã nói, chỉ cần tạm dừng mọi thứ, dành thời gian suy nghĩ về phạm vi, cố gắng thao túng
+
+188
+00:19:57,520 --> 00:20:02,160
+Mã của tôi, cố gắn nó vào, và xem anh có thể vui vẻ cỡ nào.
+
