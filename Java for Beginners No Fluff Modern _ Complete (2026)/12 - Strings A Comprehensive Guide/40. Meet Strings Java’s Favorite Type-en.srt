@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:06,000
+ All our difference, let's start talking about string handling in Java, right?
+
+2
+00:00:06,000 --> 00:00:10,760
+ One of the more important concepts that we have to cover, because against strings are
+
+3
+00:00:10,760 --> 00:00:16,880
+ something that you will use every day, not just almost every day, but every single day
+
+4
+00:00:16,880 --> 00:00:22,560
+ in the Java programming language, because that's the use case.
+
+5
+00:00:22,560 --> 00:00:27,920
+ Strings is Java gives us a comprehensive way of dealing with strings.
+
+6
+00:00:27,920 --> 00:00:30,720
+ You will shortly know why I say so, right?
+
+7
+00:00:30,720 --> 00:00:35,840
+ And we start with the Java.land.string class.
+
+8
+00:00:35,840 --> 00:00:41,600
+ Now, what is Java to rely on?
+
+9
+00:00:41,600 --> 00:00:47,600
+ That is slightly short for language, and it is a package which is pretty imported whenever
+
+10
+00:00:47,600 --> 00:00:49,400
+ you write a program in Java.
+
+11
+00:00:49,400 --> 00:00:56,520
+ That is the system class, the string in public static wide main of integer upper classes.
+
+12
+00:00:56,520 --> 00:01:02,240
+ Because all are in Java.land and whatever classes are in the Java.land package, we were
+
+13
+00:01:02,240 --> 00:01:05,680
+ never meant to, or we were never meant to import, right?
+
+14
+00:01:05,680 --> 00:01:10,560
+ We never imported that by, because that's already imported for us.
+
+15
+00:01:10,560 --> 00:01:15,560
+ To take it to make it convenient for us to get started out to the box, to write code
+
+16
+00:01:15,560 --> 00:01:16,800
+ in Java, right?
+
+17
+00:01:16,800 --> 00:01:21,720
+ So they said that all the important classes that we use almost any other day, let's put
+
+18
+00:01:21,720 --> 00:01:26,960
+ that in-land and let's onto import everything that is in Java.land.And one of those important
+
+19
+00:01:26,960 --> 00:01:33,920
+ classes is the Java.land.string class S with a capital SY, because it's a class that
+
+20
+00:01:33,920 --> 00:01:36,360
+ I remember came with the case, right?
+
+21
+00:01:36,360 --> 00:01:41,720
+ And now, two things are often said about strings in Java.
+
+22
+00:01:41,720 --> 00:01:52,760
+ The first is that is strings in Java are immutable, that is string immutability.
+
+23
+00:01:52,760 --> 00:02:00,220
+ The first property is string immutability, that is not changeable, and that means strings
+
+24
+00:02:00,220 --> 00:02:03,680
+ in Java are constants.
+
+25
+00:02:03,680 --> 00:02:09,480
+ That means if you put a value in a string object in Java, it cannot be changed.
+
+26
+00:02:09,480 --> 00:02:15,480
+ It is fixed for all things to come until that is garbage collected, until that is deleted.
+
+27
+00:02:15,480 --> 00:02:19,840
+ So that is strings or string immutability.
+
+28
+00:02:19,840 --> 00:02:26,600
+ Now, let's have a look at why they're immutable and what makes them constant and why
+
+29
+00:02:26,600 --> 00:02:29,000
+ cannot be changed, right?
+
+30
+00:02:29,000 --> 00:02:32,320
+ But first, how do you use the string class in Java simple, right?
+
+31
+00:02:32,320 --> 00:02:36,720
+ A couple of ways to do that, because it's an object, now you know how to use an object.
+
+32
+00:02:36,720 --> 00:02:44,640
+ So you will just go out and say string, let's call it str, obviously, this is not how
+
+33
+00:02:44,640 --> 00:02:50,480
+ we should name our variables, as I've been telling you all through, that as we should all,
+
+34
+00:02:50,480 --> 00:02:53,320
+ we should always be up for better identifiers.
+
+35
+00:02:53,320 --> 00:03:01,680
+ So for now, str works, and I'll say, new string, right?
+
+36
+00:03:01,680 --> 00:03:07,140
+ So if you wrote this kind of a code in your IDE, that is how you would create a new string
+
+37
+00:03:07,140 --> 00:03:11,120
+ object in Java with the string constructor now, right?
+
+38
+00:03:11,120 --> 00:03:24,040
+ And then you will go on and put the value like this, right?
+
+39
+00:03:24,040 --> 00:03:29,560
+ Java still rocks, and you should know now a pair of double quotes is considered a string
+
+40
+00:03:29,560 --> 00:03:30,560
+ object in Java.
+
+41
+00:03:30,560 --> 00:03:36,960
+ So whenever you see a pair of double quotes, it's a string object, and that's how it works,
+
+42
+00:03:36,960 --> 00:03:42,360
+ because str on the left side is of type string, double quotes a string, it's compatible,
+
+43
+00:03:42,360 --> 00:03:45,040
+ your new friend, the compiler is happy, right?
+
+44
+00:03:45,040 --> 00:03:56,720
+ The second way of doing that would have something like this, I'll say string, SD, and
+
+45
+00:03:56,720 --> 00:04:04,880
+ you would have said to new string on the next line, right?
+
+46
+00:04:04,880 --> 00:04:09,160
+ So that is obviously you know it by now, this is declaration, and analyses on two different
+
+47
+00:04:09,160 --> 00:04:10,160
+ lines.
+
+48
+00:04:10,160 --> 00:04:15,120
+ This is declaration and initialization on the same line we have yet on the way.
+
+49
+00:04:15,120 --> 00:04:19,680
+ That is, that is particular to strings, the what you can do is I'll say this is the first
+
+50
+00:04:19,680 --> 00:04:28,040
+ way, this is the second way of defining strings, the third way is just what you will most
+
+51
+00:04:28,040 --> 00:04:34,880
+ likely use always and you just directly say, I'll just call it, for example, my well
+
+52
+00:04:34,880 --> 00:04:40,360
+ equal to delete, that's it.
+
+53
+00:04:40,360 --> 00:04:44,960
+ So no new required, I told you there are situations in Java where even without using the
+
+54
+00:04:44,960 --> 00:04:48,440
+ keyword new, you can still go ahead and create objects.
+
+55
+00:04:48,440 --> 00:04:53,160
+ This is one of them, this is the first way I'm telling you, there is no new, but again
+
+56
+00:04:53,160 --> 00:04:57,280
+ a new string object is created, right?
+
+57
+00:04:57,280 --> 00:05:02,040
+ If it doesn't exist, but more on that later, but for now though that this is another way
+
+58
+00:05:02,040 --> 00:05:08,000
+ and the most preferred way of creating strings in Java, that is the third, right?
+
+59
+00:05:08,000 --> 00:05:13,480
+ And once you do that, we can go ahead and operate on the string and as I told you, it's
+
+60
+00:05:13,480 --> 00:05:19,600
+ a comprehensive class, it has great utility methods defined within the string class and
+
+61
+00:05:19,600 --> 00:05:24,000
+ you can go ahead and just utilize them, I'll just walk you through highlights some of the
+
+62
+00:05:24,000 --> 00:05:25,320
+ common ones.
+
+63
+00:05:25,320 --> 00:05:30,680
+ So for example, now you declared this variable as my value called delete, the first thing
+
+64
+00:05:30,680 --> 00:05:35,720
+ we'll do is for example, I would want to concatenate it.
+
+65
+00:05:35,720 --> 00:05:43,840
+ So you can go ahead and use the concatenation operator, I'll say plus equal to, let's
+
+66
+00:05:43,840 --> 00:05:53,920
+ just say is teaching Java.
+
+67
+00:05:53,920 --> 00:06:02,120
+ And then I'll just say a system without a print ln my Y. Obviously, this is non the proper
+
+68
+00:06:02,120 --> 00:06:06,440
+ syntax, I'm just using the whiteboard to make you understand properly to annotate in
+
+69
+00:06:06,440 --> 00:06:08,640
+ some time we'll go in the right here as well.
+
+70
+00:06:08,640 --> 00:06:13,000
+ So when we say system allowed to create a minor, what is the output that you're expecting?
+
+71
+00:06:13,000 --> 00:06:16,440
+ Think about it, what I told you about strings.
+
+72
+00:06:16,440 --> 00:06:24,600
+ Take a moment, yes, I told you the immutable and if the immutable if there are constants,
+
+73
+00:06:24,600 --> 00:06:33,280
+ this should still print over leave.
+
+74
+00:06:33,280 --> 00:06:37,800
+ But does it when you go ahead and print this and you go ahead and run this on your system,
+
+75
+00:06:37,800 --> 00:06:43,000
+ you will get where it is teaching Java, that means it was in fact concatenated.
+
+76
+00:06:43,000 --> 00:06:45,920
+ So what is going on here?
+
+77
+00:06:45,920 --> 00:06:51,240
+ What is the hype about immutable these string immortability that is once we can put a value,
+
+78
+00:06:51,240 --> 00:06:54,360
+ once we put a value in a string object in Java, we cannot change it.
+
+79
+00:06:54,360 --> 00:06:59,720
+ It's changing and it's printing as well that is just spending the complete thing that
+
+80
+00:06:59,720 --> 00:07:09,680
+ is we'll leave is teaching job, right?
+
+81
+00:07:09,680 --> 00:07:12,480
+ So what on earth is going on here?
+
+82
+00:07:12,480 --> 00:07:17,560
+ So let me make you understand see what happens is now what happens is let's just put
+
+83
+00:07:17,560 --> 00:07:24,200
+ this to the left for string strings in Java, there's a special area of RAM.
+
+84
+00:07:24,200 --> 00:07:27,480
+ The result for just storing string objects, why?
+
+85
+00:07:27,480 --> 00:07:32,760
+ Because we use them a lot and that is called the scp.
+
+86
+00:07:32,760 --> 00:07:37,320
+ Sure, but the string constant pool, right?
+
+87
+00:07:37,320 --> 00:07:39,800
+ It's a pool of string constants.
+
+88
+00:07:39,800 --> 00:07:44,440
+ What happens is when you say string my value equal to let's take it from the third syntax.
+
+89
+00:07:44,440 --> 00:07:51,960
+ So this is something like this, see, my value is your variable and on the heap in the string
+
+90
+00:07:51,960 --> 00:07:58,680
+ constant pool of RAM, you get that object from it.
+
+91
+00:07:58,680 --> 00:08:02,640
+ See, my value is the reference, that's very important for you to understand how you
+
+92
+00:08:02,640 --> 00:08:03,640
+ will change it.
+
+93
+00:08:03,640 --> 00:08:06,760
+ So then you say my value plus equal to is teaching Java.
+
+94
+00:08:06,760 --> 00:08:11,680
+ So what did I say the first step is whenever you say a double course, it's a string object
+
+95
+00:08:11,680 --> 00:08:12,680
+ in Java.
+
+96
+00:08:12,680 --> 00:08:13,680
+ So what does it do?
+
+97
+00:08:13,680 --> 00:08:20,520
+ It goes on to the scp sees if we already have an object with this value, why?
+
+98
+00:08:20,520 --> 00:08:26,920
+ Because they want to effectively, efficiently use strings, string constant memory in Java,
+
+99
+00:08:26,920 --> 00:08:31,680
+ the string handling, because we use a lot of strings in a programming, so they want to efficiently
+
+100
+00:08:31,680 --> 00:08:32,680
+ utilize that.
+
+101
+00:08:32,680 --> 00:08:37,600
+ If it's only there, so no new object would be created, but in our case, it's not there.
+
+102
+00:08:37,600 --> 00:08:48,560
+ So they went ahead and created one more object that is is teaching Java.
+
+103
+00:08:48,560 --> 00:08:53,880
+ And then plus, then caffeinated, remember, this is plus equal to concatenated this with
+
+104
+00:08:53,880 --> 00:08:55,680
+ wallet is teaching Java.
+
+105
+00:08:55,680 --> 00:09:03,160
+ Again, that's not there, they went ahead and created one more.
+
+106
+00:09:03,160 --> 00:09:15,960
+ And what happened is just reassigned this my value that is is equal to the new object
+
+107
+00:09:15,960 --> 00:09:22,280
+ that was created and diagram became like this.
+
+108
+00:09:22,280 --> 00:09:27,160
+ And that is why when you printed system around the prison my bad, you got a lead is teaching
+
+109
+00:09:27,160 --> 00:09:28,920
+ Java, not well.
+
+110
+00:09:28,920 --> 00:09:34,200
+ But you see that, well, this still there, it is not changed a bit.
+
+111
+00:09:34,200 --> 00:09:35,200
+ It's a constant.
+
+112
+00:09:35,200 --> 00:09:40,000
+ I told you there in mutable see and what happened behind the scenes is, until line number
+
+113
+00:09:40,000 --> 00:09:44,920
+ three, you think that you're just dealing with one object that was created right here.
+
+114
+00:09:44,920 --> 00:09:51,840
+ But in five, three objects have been created unintentionally behind the scenes, but efficiently
+
+115
+00:09:51,840 --> 00:09:55,000
+ utilizing the string memory, right?
+
+116
+00:09:55,000 --> 00:09:57,360
+ So that is how it works.
+
+117
+00:09:57,360 --> 00:10:08,920
+ Now we move ahead and then what do you do is you say, my well, that's it.
+
+118
+00:10:08,920 --> 00:10:11,560
+ You want its value in lower case.
+
+119
+00:10:11,560 --> 00:10:15,720
+ You say or in other case, there's a utility method by it because I told you that a lot
+
+120
+00:10:15,720 --> 00:10:17,160
+ of utility methods, right?
+
+121
+00:10:17,160 --> 00:10:22,720
+ You say dot to upper case.
+
+122
+00:10:22,720 --> 00:10:27,680
+ And then you go ahead and print system without the print ln my bad.
+
+123
+00:10:27,680 --> 00:10:29,480
+ So what is the value that you're expecting?
+
+124
+00:10:29,480 --> 00:10:31,480
+ Think about it, right?
+
+125
+00:10:31,480 --> 00:10:36,720
+ We will still get wallet is teaching Java, right?
+
+126
+00:10:36,720 --> 00:10:42,520
+ Or let's do one thing, let's try to keep it small, what I do is, I'll just try to replace
+
+127
+00:10:42,520 --> 00:10:43,520
+ it here.
+
+128
+00:10:43,520 --> 00:10:57,280
+ See, I'll try to replace this first, what I'll do is, I'll say something like this
+
+129
+00:10:57,280 --> 00:11:06,920
+ first, I'll say, after this print ln my value equal to, I'll just say, changed.
+
+130
+00:11:06,920 --> 00:11:07,920
+ So I put the value change.
+
+131
+00:11:07,920 --> 00:11:08,920
+ So what happens?
+
+132
+00:11:08,920 --> 00:11:16,840
+ Obviously, you know, in the Cp, there was one more object created with the value changed
+
+133
+00:11:16,840 --> 00:11:27,680
+ and my well was referring to that now, it's true like this.
+
+134
+00:11:27,680 --> 00:11:33,160
+ So now it has changed and then you say my bad dot upper case, when you say my well,
+
+135
+00:11:33,160 --> 00:11:38,560
+ you still get changed as it was, see capital, all of this and small.
+
+136
+00:11:38,560 --> 00:11:43,720
+ So what is going on here again now, so that means when you say my value to upper case,
+
+137
+00:11:43,720 --> 00:11:51,920
+ it went ahead in the Cp and created one more in upper case, but, and this is a big
+
+138
+00:11:51,920 --> 00:11:58,360
+ part here, you forgot to reassign, because my value is still referring to the current
+
+139
+00:11:58,360 --> 00:12:04,080
+ older value with only the C in capitals, that's why you just get with my well, you still
+
+140
+00:12:04,080 --> 00:12:13,720
+ get this, not the capital one, because this was left on a sign, right? So remember, whenever
+
+141
+00:12:13,720 --> 00:12:19,160
+ you operate on a string, object in Java, you have to reassign or assign it to a new string
+
+142
+00:12:19,160 --> 00:12:25,160
+ variable, right? So we forgot that, that's why we get this older value. If you want the
+
+143
+00:12:25,160 --> 00:12:33,880
+ newer value, always do this. I'll say my value equal and now you will see the diagram like
+
+144
+00:12:33,880 --> 00:12:54,120
+ this, and remember, whenever you are put in a new value or change or operate on a string,
+
+145
+00:12:54,120 --> 00:13:02,680
+ you not forget to reassign, right? So that's just a short intro to how strings work, right?
+
+146
+00:13:02,680 --> 00:13:10,400
+ And we'll just go ahead in our IDE now quickly and just put in this code and much more to
+
+147
+00:13:10,400 --> 00:13:15,680
+ make you understand the different utility methods as it has and what lies in it.
+
