@@ -1,0 +1,432 @@
+1
+00:00:00,000 --> 00:00:07,360
+ In this video, we're going to have a quick look at why genetics were introduced and how do we use them?
+
+2
+00:00:07,360 --> 00:00:11,760
+ Right, we have been using them obviously with collections for just one reason and that's the
+
+3
+00:00:11,760 --> 00:00:17,520
+ overwhelming reason really. So what happened before Java 5 was released,
+
+4
+00:00:17,520 --> 00:00:22,720
+ that's quickly going in the collections package again. I'll just have a new class, I'll say
+
+5
+00:00:24,480 --> 00:00:34,400
+ generics here. So here we go, as you see on my screen, love the mean method. And now let's use
+
+6
+00:00:34,400 --> 00:00:45,760
+ any collection, right? For example, let's go on and use an analyst. And I'll say less to new.
+
+7
+00:00:45,760 --> 00:00:51,520
+ Just ignore the warnings for now, because you know that I'm not using generics, the angular
+
+8
+00:00:51,520 --> 00:00:58,160
+ brackets, right? And that's why there are warnings. But this list, before Java 5.0 was a
+
+9
+00:00:58,160 --> 00:01:03,600
+ heady using a list or any collection for that matter, it could store, it could handle any type
+
+10
+00:01:03,600 --> 00:01:10,160
+ of data. So at first, in the beginning, that looks a great feature, right? That looks an
+
+11
+00:01:10,160 --> 00:01:16,800
+ advantage over areas, which were always type restricted. So what you did is you did something like
+
+12
+00:01:16,800 --> 00:01:22,800
+ you said, less today and any object now, right? Not just string or integer because object is the
+
+13
+00:01:22,800 --> 00:01:28,640
+ superclass of every class in Java. And it can hold any, any object there, right? So we get hold,
+
+14
+00:01:28,640 --> 00:01:34,800
+ let's say the integer 56. And you will be surprised to see how is 56 as an integer story.
+
+15
+00:01:34,800 --> 00:01:40,320
+ This is through Java 5, another feature, which was introduced in Java 5, that was
+
+16
+00:01:40,320 --> 00:01:47,120
+ auto boxing and unboxing, right? This in primitive value is it is automatically converted into
+
+17
+00:01:47,120 --> 00:01:54,240
+ its wrapper class object, right? We call that auto boxing. And when a wrapper object is automatically
+
+18
+00:01:54,240 --> 00:02:00,800
+ converted into its primitive equivalent, it's called unboxing. Remember the word that important
+
+19
+00:02:00,800 --> 00:02:06,160
+ word here is automatic. If you do it, then it's not automatic boxing, right? It has to be not
+
+20
+00:02:06,160 --> 00:02:14,320
+ automatically. So now this is stored, you can go ahead and do, let's start a string as well.
+
+21
+00:02:14,320 --> 00:02:21,600
+ And that works, remember before Java 5, where having a look at how things work in the pre-java
+
+22
+00:02:21,600 --> 00:02:28,720
+ 5, well, without generic spin there. And then you could have said, let's start add, let's say my new
+
+23
+00:02:30,560 --> 00:02:39,120
+ generic, a more object as well, kind of of this class. And it was able to hold that as well.
+
+24
+00:02:39,120 --> 00:02:46,000
+ And then I said, let's just ignore all these warnings. I can even store a boolean, all right.
+
+25
+00:02:46,000 --> 00:02:52,320
+ So now at the surface, things look very good. And you go ahead and just print it out
+
+26
+00:02:52,320 --> 00:02:56,400
+ by the same list. And we should get it in insertion order because you know now that
+
+27
+00:02:56,400 --> 00:03:00,160
+ error list maintains the insertion order, but it's not sorted. So we'll just run this.
+
+28
+00:03:00,160 --> 00:03:07,200
+ And off we go, we get 56, what an object of generic is demo and then false, right?
+
+29
+00:03:07,200 --> 00:03:14,960
+ So in the order in which you inserted them. Now, let's say I have to traverse them with an enhanced
+
+30
+00:03:14,960 --> 00:03:21,760
+ for loop, or I have to get the value at an index, let's do that. So let's say list or get perfectly
+
+31
+00:03:21,760 --> 00:03:32,080
+ fine, index of three, or let's say three, okay. And we know 0, 1, 2, 3, let's say we would take it in a
+
+32
+00:03:32,080 --> 00:03:41,680
+ boolean. Let's say boolean value, you get immediately an error. And why is that? Can you guess that?
+
+33
+00:03:41,680 --> 00:03:48,720
+ And that is because you added an object, right? Or all of these are objects, right? But generic
+
+34
+00:03:48,720 --> 00:03:54,080
+ objects, right? So how about this? It says that required time Boolean provided object, right? Because
+
+35
+00:03:54,080 --> 00:03:59,280
+ these sometimes we added integers, other times we ended strings, custom class objects,
+
+36
+00:03:59,280 --> 00:04:06,640
+ Boolean. So they are added into this list as the generic object, that is an object of that class
+
+37
+00:04:06,640 --> 00:04:10,240
+ object of the capital O, right? Which is the super class of every class in Java, that's why it's
+
+38
+00:04:10,240 --> 00:04:16,160
+ allowed. And once you try to get it, it is returned as an object, it doesn't know there is a boolean
+
+39
+00:04:16,160 --> 00:04:21,040
+ there, but only you know it, right? And currently because you have a look at all of this class,
+
+40
+00:04:21,040 --> 00:04:29,680
+ that's why you can go ahead and try to try cast it. And it works. But what happens when you don't know
+
+41
+00:04:29,680 --> 00:04:33,760
+ what is in the list and that's the majority of the situation because you'll be getting a list,
+
+42
+00:04:33,760 --> 00:04:38,480
+ that's it. The values won't be coming from a database, from an API, from another class, you won't
+
+43
+00:04:38,480 --> 00:04:45,360
+ know what is in the list. So how can you safely convert it? You can't, right? So this is painful,
+
+44
+00:04:46,800 --> 00:04:55,120
+ and not certain to work, right? This type of casting approach and you'd have to do that for
+
+45
+00:04:55,120 --> 00:04:59,360
+ anything that you get out of it. So that's the first problem. The second problem is let's say I do a
+
+46
+00:04:59,360 --> 00:05:07,360
+ for loop. And I say I have to get the values out of this list, but this time what is that you would
+
+47
+00:05:07,360 --> 00:05:12,560
+ define the type of this value earlier, when I had a string only less, I put the variable type to
+
+48
+00:05:12,560 --> 00:05:17,600
+ string, when I had an integer only less, I put the variable type to integer, when I had a
+
+49
+00:05:17,600 --> 00:05:23,520
+ generic demo only less, I put the variable type to generic demo, but what would I put here, right?
+
+50
+00:05:23,520 --> 00:05:32,080
+ If we just say, teacher error, right, say says that required object provided integer,
+
+51
+00:05:32,080 --> 00:05:36,800
+ and that's why you would have to say option because it takes everything. And then when you say
+
+52
+00:05:36,800 --> 00:05:45,360
+ a system or don't bring it in, now I want to call whack dot to lowercase, right? So I'll say
+
+53
+00:05:45,360 --> 00:05:53,520
+ why not to lowercase doesn't work because again, while is a type of object inside object,
+
+54
+00:05:53,520 --> 00:06:00,080
+ there is no method called to lowercase, it's only inside string. So again, type casting,
+
+55
+00:06:00,080 --> 00:06:10,880
+ you would do it like this. That's how it works, but it would fail at runtime because the first object
+
+56
+00:06:10,880 --> 00:06:16,960
+ that would be fetched out from this list is an integer, and you're trying to convert an integer
+
+57
+00:06:16,960 --> 00:06:23,520
+ into a string that they have no relationship in between. That's why this would fail for the first time,
+
+58
+00:06:23,520 --> 00:06:28,640
+ so you would have to put in that instance of test and then check it and then convert it
+
+59
+00:06:28,640 --> 00:06:33,840
+ too painful, too verbose, right? So these are the glaring disadvantages we get with
+
+60
+00:06:33,840 --> 00:06:39,040
+ pre-generics, reach out of five quotes. You run this, we hear expert in error. First,
+
+61
+00:06:39,040 --> 00:06:43,840
+ prints out everything that is, then gets the Boolean out, then for the first instance in the loop,
+
+62
+00:06:43,840 --> 00:06:49,040
+ says exception in thread main job line dot class class exception. Now you should know when does
+
+63
+00:06:49,040 --> 00:06:53,680
+ the compiler throw us a class class exception is when you're trying to convert the wrong types,
+
+64
+00:06:53,680 --> 00:07:00,400
+ it says integer cannot be cast string, right? Those are the problems, right? And that is where
+
+65
+00:07:00,400 --> 00:07:09,120
+ generics came in and just removed all of that, right? It said, define your list first. Do you
+
+66
+00:07:09,120 --> 00:07:15,840
+ want it to hold integer strings or generics demo your choice? I'll say string, right? And diamond syntax,
+
+67
+00:07:15,840 --> 00:07:22,800
+ that's it. Now in error here, you cannot enter an integer into a string or a list. You cannot enter
+
+68
+00:07:22,800 --> 00:07:27,840
+ a generics demo object interesting. So a list, you cannot enter a Boolean object into a
+
+69
+00:07:27,840 --> 00:07:34,160
+ general string only list, right? Doesn't work only this works as you're seeing. Just comment this.
+
+70
+00:07:34,160 --> 00:07:46,560
+ Let's add one more, I'll say list, right? And let's say shooting. And now, see, this won't work
+
+71
+00:07:46,560 --> 00:07:51,440
+ obviously. And it's not even required because the moment you try to get it, see, you'll just say,
+
+72
+00:07:51,440 --> 00:07:57,440
+ you know, when you're sure what is going inside, you're 100% certain what would come out,
+
+73
+00:07:57,440 --> 00:08:05,360
+ and that means if I say list or get of one, I know it's always going to be a string.
+
+74
+00:08:05,360 --> 00:08:16,880
+ See, no type casting required, no fingers crossed. This would always work. It would get a string,
+
+75
+00:08:16,880 --> 00:08:22,320
+ I'm taking into a string, and then here, not object, just string, and this will always work
+
+76
+00:08:22,320 --> 00:08:26,800
+ type casting no longer required. See, you run this.
+
+77
+00:08:26,800 --> 00:08:34,880
+ We should get what we are looking for, right? So that is the idea would teach we get with
+
+78
+00:08:34,880 --> 00:08:40,000
+ generics. And this was the overwhelming reason to introduce generics was for collections,
+
+79
+00:08:40,000 --> 00:08:44,800
+ right? But sometimes you would define, you can go ahead and do other things with generics,
+
+80
+00:08:44,800 --> 00:08:49,840
+ but one of them is defining your custom class like this, for example, let's say over class,
+
+81
+00:08:49,840 --> 00:08:57,840
+ I'll just call it my, and then you define a generic parameter right here, right? Or what I'll say
+
+82
+00:08:57,840 --> 00:09:10,400
+ is I'll define it here. See, I'll say E, okay, and define this E right here. Okay, and then what
+
+83
+00:09:10,400 --> 00:09:15,200
+ happens is whatever you pass when you create an object of this class, whatever this E is,
+
+84
+00:09:15,200 --> 00:09:20,880
+ a drawing time, it would be decided. There was a similar concept such as templates in C++,
+
+85
+00:09:20,880 --> 00:09:26,080
+ this is generics in Java, for creating custom parameters, custom classes, right? So that is you're
+
+86
+00:09:26,080 --> 00:09:31,920
+ saying whatever I pass at a drawing time, that is what E would become, right? If I pass integer,
+
+87
+00:09:31,920 --> 00:09:36,640
+ this ref would become a type integer. If I pass string, it would become a save string. If I pass
+
+88
+00:09:36,640 --> 00:09:41,600
+ a custom class object, this would become a type of that custom class, and then go ahead and
+
+89
+00:09:41,600 --> 00:09:51,280
+ read custom classes, sorry, constructors, I'll say E, if, and you'll see. Like you do this
+
+90
+00:09:51,280 --> 00:10:07,360
+ or type equal to graph, you can even have methods, I'll say, I'll click E, which will be the return type
+
+91
+00:10:07,360 --> 00:10:11,040
+ now, get graph, and you'll say this dot, there, please return that. You can even have setters,
+
+92
+00:10:12,000 --> 00:10:21,440
+ I'll say public, white, saved, there, take an argument, type E, and then you'll say,
+
+93
+00:10:21,440 --> 00:10:31,200
+ let's start, absolutely wonderful stuff this, this E is not known until you pass it later on,
+
+94
+00:10:31,200 --> 00:10:35,120
+ and in different situations, this E becomes different, sometimes it becomes an integer,
+
+95
+00:10:35,120 --> 00:10:39,680
+ all through the class, then it becomes a string, it becomes a floated becomes your custom
+
+96
+00:10:39,680 --> 00:10:44,000
+ class object as well. Let me just try to give you an example, a brief example here, see.
+
+97
+00:10:44,000 --> 00:10:49,520
+ Now, when you try to click create an object, I'll say my seeds, seeds, pass an argument,
+
+98
+00:10:49,520 --> 00:10:55,360
+ and I'll say, this time, it's an integer, I'll say, let's call it OBJ,
+
+99
+00:10:55,360 --> 00:11:04,960
+ create an object, new, my timer, syntax, and pass that, hey, I say 560, that becomes the ref,
+
+100
+00:11:04,960 --> 00:11:09,520
+ and now, see, everywhere down the line, this becomes an integer, integer, integer,
+
+101
+00:11:09,520 --> 00:11:15,040
+ integer, integer, it takes an integer, gets an integer, and sets an integer as well, right,
+
+102
+00:11:15,040 --> 00:11:22,880
+ and a demo of that would be, let's say a sound, I'll say OBJ, right, let's try, see, returns
+
+103
+00:11:22,880 --> 00:11:32,880
+ an integer, do you see that, right, you run this, say, 560, so that is another use case of using
+
+104
+00:11:32,880 --> 00:11:37,360
+ generics, but as I said, the overwhelming situation is for using these collections, and that's how
+
+105
+00:11:37,360 --> 00:11:43,680
+ they've changed collections, because sometimes this is the same error list, it behaves as a string
+
+106
+00:11:43,680 --> 00:11:49,440
+ only list, it behaves at other times as an integer, it behaves at another time as a double only
+
+107
+00:11:49,440 --> 00:11:55,120
+ list, or a custom class object only list, how, because thanks to the generic parameters, whatever
+
+108
+00:11:55,120 --> 00:12:03,600
+ you pass, that e behind the scenes, take takes the place of that.
+
