@@ -1,0 +1,284 @@
+1
+00:00:01,120 --> 00:00:05,070
+Hãy nghĩ về lần cuối cùng anh triển khai một mục trong quá trình sản xuất.
+
+2
+00:00:05,250 --> 00:00:09,609
+Có lẽ anh đã kiểm tra nó tại địa phương và bắt chéo ngón tay trong quá trình triển khai.
+
+3
+00:00:09,850 --> 00:00:13,210
+Bây giờ tưởng tượng làm điều tương tự trong dự án đó là
+
+4
+00:00:13,210 --> 00:00:15,609
+có 40 dịch vụ vi mô.
+
+5
+00:00:15,770 --> 00:00:20,129
+Hãy tưởng tượng tổ chức GCP của bạn như một thành phố, và trong thành phố này,
+
+6
+00:00:20,540 --> 00:00:25,520
+Mỗi môi trường như prod, sân khấu giống như một quận với nhiều rủi ro khác nhau,
+
+7
+00:00:25,520 --> 00:00:29,840
+với các quy tắc khác nhau, và với mức độ tiếp cận khác nhau.
+
+8
+00:00:30,069 --> 00:00:36,209
+Sản xuất là khu vực an toàn nhất nơi mọi thứ ở đây phải ổn định,
+
+9
+00:00:36,349 --> 00:00:38,229
+Theo dõi và hạn chế.
+
+10
+00:00:38,470 --> 00:00:41,330
+Anh có chính sách an ninh nội bộ nghiêm ngặt.
+
+11
+00:00:41,442 --> 00:00:44,462
+Nó cũng có một chính sách tổ chức hạn chế,
+
+12
+00:00:44,962 --> 00:00:49,192
+cô lập mạng lưới thông qua VPC, phiên bản ổn định của dịch vụ,
+
+13
+00:00:49,402 --> 00:00:54,301
+Chính sách lưu trữ lâu hơn, và đòi hỏi sự cứng nhắc cao.
+
+14
+00:00:54,562 --> 00:00:57,481
+Google đề nghị cô lập rộng bởi vì sản xuất
+
+15
+00:00:57,481 --> 00:01:00,881
+môi trường phải được bảo vệ khỏi sự trôi dạt và
+
+16
+00:01:00,881 --> 00:01:03,201
+Sự nhầm lẫn hoặc lạm dụng đặc quyền.
+
+17
+00:01:03,692 --> 00:01:07,533
+Khung cảnh là bản sao. Chỗ này là chỗ của anh.
+
+18
+00:01:07,533 --> 00:01:09,484
+Mô phỏng sản xuất thế giới thực.
+
+19
+00:01:09,613 --> 00:01:11,594
+Nó thường phản ánh sản xuất.
+
+20
+00:01:11,814 --> 00:01:14,814
+Nó có cùng cấu trúc VPC giống nhau,
+
+21
+00:01:15,054 --> 00:01:18,573
+Cùng luật tường lửa, cùng khu vực và kích cỡ cụm,
+
+22
+00:01:18,643 --> 00:01:21,134
+và cùng phiên bản phụ thuộc.
+
+23
+00:01:21,333 --> 00:01:24,674
+Nó gần giống hệt với môi trường sản xuất của bạn
+
+24
+00:01:25,323 --> 00:01:28,880
+mà không có rủi ro sản xuất. In dev
+
+25
+00:01:28,880 --> 00:01:31,045
+môi trường, kỹ sư thử nghiệm, xây dựng,
+
+26
+00:01:31,625 --> 00:01:34,146
+Phá vỡ các điều, và thử các tính năng mới.
+
+27
+00:01:34,346 --> 00:01:37,106
+Những môi trường này cố ý linh hoạt.
+
+28
+00:01:37,426 --> 00:01:41,286
+An ninh vẫn quan trọng, nhưng ít hạn chế hơn,
+
+29
+00:01:41,466 --> 00:01:44,545
+Và hầu hết các nhà phát triển được ưu tiên cao hơn ở đây.
+
+30
+00:01:44,825 --> 00:01:48,225
+Hầu hết các doanh nghiệp cũng có một thư mục dịch vụ chung là
+
+31
+00:01:48,225 --> 00:01:52,459
+Trung tâm lưu trữ đồ hoạ
+
+32
+00:01:52,459 --> 00:01:55,419
+theo dõi và ghi chép, và phục vụ mesh.
+
+33
+00:01:55,589 --> 00:02:01,260
+Điều này giữ cho các thành phần chia sẻ quan trọng được tách khỏi các ứng dụng cá nhân.
+
+34
+00:02:01,540 --> 00:02:04,139
+Hãy làm việc thông qua làm thế nào mã di chuyển qua các
+
+35
+00:02:04,139 --> 00:02:06,540
+môi trường, một luồng công việc của DevOps.
+
+36
+00:02:06,660 --> 00:02:10,258
+Hãy tưởng tượng bạn đang làm việc trên thêm phương pháp thanh toán mới
+
+37
+00:02:10,258 --> 00:02:11,800
+đặc điểm của dịch vụ thanh toán.
+
+38
+00:02:12,059 --> 00:02:13,759
+Đây là một vòng đời điển hình.
+
+39
+00:02:14,029 --> 00:02:17,210
+Đầu tiên, nhà phát triển quy định mã kích hoạt CIA.
+
+40
+00:02:17,330 --> 00:02:19,833
+Nó sẽ làm xét nghiệm đơn vị, quét an ninh,
+
+41
+00:02:20,003 --> 00:02:24,444
+Xây dựng sổ ghi chép tượng trưng, và cất giữ ảnh trong bộ quản lý tạo đồ họa.
+
+42
+00:02:24,794 --> 00:02:28,544
+Sau đó, mây triển khai hình ảnh vào quá trình phát triển.
+
+43
+00:02:28,833 --> 00:02:32,194
+Môi trường này có ý nghĩa lặp nhanh.
+
+44
+00:02:32,464 --> 00:02:35,813
+Các nhà phát triển có thể thấy các đặc điểm hoạt động trong vòng vài phút.
+
+45
+00:02:36,194 --> 00:02:37,753
+Một khi kiểm tra dev qua,
+
+46
+00:02:38,014 --> 00:02:41,604
+Các đường ống thúc đẩy việc giải phóng môi trường xây dựng.
+
+47
+00:02:41,794 --> 00:02:45,363
+Đây là bài kiểm tra kết hợp, E2E,
+
+48
+00:02:45,434 --> 00:02:47,697
+Đó là kết thúc lưu lượng công việc được kiểm tra.
+
+49
+00:02:47,968 --> 00:02:53,177
+Điều này làm cho người kỹ sư tin chắc rằng vai trò của bộ phận này diễn ra đúng như mong đợi.
+
+50
+00:02:53,328 --> 00:02:56,037
+Trong bước tiếp theo, phụ thuộc vào công ty,
+
+51
+00:02:56,307 --> 00:02:59,388
+Điều này có thể bao gồm việc xem xét kỹ thuật hoặc quản lý,
+
+52
+00:02:59,567 --> 00:03:03,527
+một người sở hữu sản phẩm chấp thuận, kiểm tra sẵn sàng.
+
+53
+00:03:03,727 --> 00:03:06,760
+Một khi tất cả những điều này được thực hiện, chúng ta chuyển đến bước năm,
+
+54
+00:03:07,328 --> 00:03:11,207
+Nơi cuối cùng đám mây triển khai đẩy sự sạch sẽ
+
+55
+00:03:11,207 --> 00:03:13,488
+đã thử nghiệm phiên bản sản xuất.
+
+56
+00:03:13,852 --> 00:03:14,682
+Lúc này,
+
+57
+00:03:14,871 --> 00:03:18,662
+Google Cloud đề nghị phát hành nên ở dạng chim yến
+
+58
+00:03:18,662 --> 00:03:22,572
+Phát hành hoặc có thể là màu xanh lá cây xanh, hoặc có thể là do tiến bộ.
+
+59
+00:03:22,572 --> 00:03:24,302
+Bay qua đám mây.
+
+60
+00:03:24,582 --> 00:03:29,561
+Bây giờ chúng ta hãy nói về sự thay đổi trò chơi thực sự, đó là môi trường phù du.
+
+61
+00:03:29,811 --> 00:03:33,341
+Đây là môi trường xem thử tạm thời được tạo ra trên
+
+62
+00:03:33,341 --> 00:03:35,882
+Yêu cầu kéo hoặc mỗi chi nhánh.
+
+63
+00:03:36,182 --> 00:03:39,141
+Điều này sẽ giúp quản lý sản phẩm xem xét UI
+
+64
+00:03:39,141 --> 00:03:42,705
+thay đổi, QA để xác nhận hành vi trước khi hợp nhất.
+
+65
+00:03:42,955 --> 00:03:48,055
+Bạn có thể triển khai các ô xem thử mà không làm hỏng môi trường dev hoặc con chạy.
+
+66
+00:03:48,315 --> 00:03:52,195
+Những thực hành tốt nhất của Google mô tả nó như là tạo ra trên Facebookdemand
+
+67
+00:03:52,195 --> 00:03:55,936
+Môi trường riêng lẻ để thử nghiệm các tính năng độc lập
+
+68
+00:03:55,936 --> 00:03:57,695
+của môi trường ổn định.
+
+69
+00:03:57,966 --> 00:04:01,106
+Vì vậy, đó là cách bạn quản lý đa vũ khí và
+
+70
+00:04:01,106 --> 00:04:04,156
+Các cuộc triển khai phù du ở Google Cloud,
+
+71
+00:04:04,195 --> 00:04:07,996
+Cùng một cách mà các đội ngũ vận động cao trên toàn thế giới làm.
+
