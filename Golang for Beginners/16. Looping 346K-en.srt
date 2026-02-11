@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:04,680
+ In this video, I'll be discussing loops.
+
+2
+00:00:04,680 --> 00:00:11,580
+ We'll cover basic loops, while loops, and infinite loops.
+
+3
+00:00:11,580 --> 00:00:15,280
+ So when you're writing programs, it's often required to repeat actions in code more than
+
+4
+00:00:15,280 --> 00:00:18,720
+ once, or to iterate over the items in a collection.
+
+5
+00:00:18,720 --> 00:00:21,620
+ And these tests are accomplished by using loops.
+
+6
+00:00:21,620 --> 00:00:29,940
+ In Go, there's only one keyword that we use for looping, and that is the "for" keyword.
+
+7
+00:00:29,940 --> 00:00:32,560
+ Let's take a look at the basic C-style loop.
+
+8
+00:00:32,560 --> 00:00:38,440
+ So we have the "for" keyword, followed by the initialization statement, a condition check,
+
+9
+00:00:38,440 --> 00:00:42,120
+ and the "post loop" statement.
+
+10
+00:00:42,120 --> 00:00:47,520
+ Each one of these portions is separated with semicolons, so you have three sections.
+
+11
+00:00:47,520 --> 00:00:51,200
+ Initialization, condition, and post.
+
+12
+00:00:51,200 --> 00:00:54,560
+ To recreate our loop with the "for" keyword, in our initialization statement, we would
+
+13
+00:00:54,560 --> 00:00:59,120
+ typically create a new variable, and it's usually named "I" for iteration.
+
+14
+00:00:59,120 --> 00:01:02,500
+ Usually you start at zero, but you can start at any point you want.
+
+15
+00:01:02,500 --> 00:01:09,840
+ We're using the Create and Assign operator to create "I" and assign it the value of zero.
+
+16
+00:01:09,840 --> 00:01:13,600
+ Our condition portion of the loop will be checked before every iteration.
+
+17
+00:01:13,600 --> 00:01:16,880
+ So what's going to happen is we'll create this variable "I".
+
+18
+00:01:16,880 --> 00:01:19,680
+ It's then going to be checked to see if it's less than 10.
+
+19
+00:01:19,680 --> 00:01:22,960
+ And then if it is, we're going to enter into this loop.
+
+20
+00:01:22,960 --> 00:01:25,720
+ So then all the code in here will get executed.
+
+21
+00:01:25,720 --> 00:01:30,160
+ Once execution completes, we'll go back up to this "post" statement, and "I" will be
+
+22
+00:01:30,160 --> 00:01:34,520
+ incremented by using the "plus-plus" operator.
+
+23
+00:01:34,520 --> 00:01:36,600
+ "plus-plus" just adds one to "I".
+
+24
+00:01:36,600 --> 00:01:41,800
+ So in the first iteration, "I" will be zero, "I" is less than 10, because it's zero.
+
+25
+00:01:41,800 --> 00:01:47,880
+ The code will execute, then "I" will be incremented by one, and then we'll check again.
+
+26
+00:01:47,880 --> 00:01:53,200
+ So is "I" less than 10, it'll be one at that point, yes it is, and we'll execute.
+
+27
+00:01:53,200 --> 00:01:56,560
+ And this will continue until finally "I" is equal to 10.
+
+28
+00:01:56,560 --> 00:02:01,320
+ Once it's 10, this check will fail, and it'll be false, and then we'll exit out of
+
+29
+00:02:01,320 --> 00:02:07,320
+ the loop, and continue executing code.
+
+30
+00:02:07,320 --> 00:02:11,560
+ Go does support while loops, however, we can only use the "for" keyword in Go, since
+
+31
+00:02:11,560 --> 00:02:13,200
+ there's only one loop in keyword.
+
+32
+00:02:13,200 --> 00:02:18,960
+ So to create a while loop, we'll just use the "for" keyword, and a condition.
+
+33
+00:02:18,960 --> 00:02:23,000
+ Note that the condition must have the variable created beforehand, so "I" needs to
+
+34
+00:02:23,000 --> 00:02:25,680
+ exist prior to using this loop.
+
+35
+00:02:25,680 --> 00:02:30,200
+ If this happens to evaluate the true, then the loop will execute.
+
+36
+00:02:30,200 --> 00:02:34,600
+ One thing to note with this style of looping is you'll always want to adjust the loop
+
+37
+00:02:34,600 --> 00:02:43,240
+ counter within this loop, otherwise it'll just go on forever.
+
+38
+00:02:43,240 --> 00:02:45,600
+ We also have support for infinite loops.
+
+39
+00:02:45,600 --> 00:02:49,640
+ So if we want an infinite loop, we can just use "for", and then nothing else.
+
+40
+00:02:49,640 --> 00:02:53,880
+ All we need is our curly braces right here, and then the code within is just going to execute
+
+41
+00:02:53,880 --> 00:02:55,880
+ over and over and over.
+
+42
+00:02:55,880 --> 00:03:00,160
+ In order to exit an infinite loop, we'll have to use the "break" keyword.
+
+43
+00:03:00,160 --> 00:03:05,600
+ Usually you would check, so in this case we're checking if something happened is true,
+
+44
+00:03:05,600 --> 00:03:07,280
+ then we'll break.
+
+45
+00:03:07,280 --> 00:03:11,400
+ And if it's false, then we'll just keep continuing on forever, since this is an infinite
+
+46
+00:03:11,400 --> 00:03:14,440
+ loop.
+
+47
+00:03:14,440 --> 00:03:17,640
+ Loops like this will be used for something like web servers, or if you're reading data
+
+48
+00:03:17,640 --> 00:03:25,240
+ from some kind of data stream, and then you would choose the condition on which to break.
+
+49
+00:03:25,240 --> 00:03:30,280
+ We also have the "Continue" keyword, which can be used to skip the current loop.
+
+50
+00:03:30,280 --> 00:03:34,440
+ So we have a typical for loop, where we're setting i to 0, as long as it's less than 10,
+
+51
+00:03:34,440 --> 00:03:38,960
+ we're going to loop, and we're incrementing one time each iteration.
+
+52
+00:03:38,960 --> 00:03:43,120
+ Within our loop we have an if statement, and we're checking the i with remainder division
+
+53
+00:03:43,120 --> 00:03:46,160
+ of 2, and if that's equal to 0, we'll continue.
+
+54
+00:03:46,160 --> 00:03:51,480
+ So what this will do is this will skip every iteration where i is an even number.
+
+55
+00:03:51,480 --> 00:03:56,720
+ That means as soon as "Continue" is hit, we'll go straight up here, and we'll do the
+
+56
+00:03:56,720 --> 00:03:58,280
+ condition check again.
+
+57
+00:03:58,280 --> 00:04:03,160
+ So this code will never get executed down here, if the "Continue" is hit first.
+
+58
+00:04:03,160 --> 00:04:08,200
+ However, if we have an odd number, then this will be false, and "Continue" will not
+
+59
+00:04:08,200 --> 00:04:16,080
+ be executed, and therefore we will print out the odd numbers.
+
+60
+00:04:16,080 --> 00:04:17,080
+ Let's recap.
+
+61
+00:04:17,080 --> 00:04:19,040
+ The "For" keyword creates a loop.
+
+62
+00:04:19,040 --> 00:04:23,160
+ We can use the "Break" keyword to exit the loop on a specific condition.
+
+63
+00:04:23,160 --> 00:04:28,840
+ The initialization variable can be used only within the loop block, and the post statement
+
+64
+00:04:28,840 --> 00:04:31,600
+ executes every iteration.
+
+65
+00:04:31,600 --> 00:04:37,240
+ We have three styles of loops, we have the typical loop, where you get to set the variable,
+
+66
+00:04:37,240 --> 00:04:40,160
+ the condition, and how much it changes.
+
+67
+00:04:40,160 --> 00:04:45,760
+ We have the while loop, where we have a variable created previously, and as long as
+
+68
+00:04:45,760 --> 00:04:50,640
+ that variable is less than the value supplied here, then we'll execute the loop.
+
+69
+00:04:50,640 --> 00:04:55,400
+ Always remember to increment that within your loop, otherwise it'll go on forever.
+
+70
+00:04:55,400 --> 00:04:58,560
+ Then we have the intentional infinite loop, where there's nothing right here.
+
+71
+00:04:58,560 --> 00:05:02,160
+ We just have four and our curly braces, and that will just go on forever.
+
