@@ -1,0 +1,224 @@
+1
+00:00:01,590 --> 00:00:05,150
+Hãy hiểu cách quản lý cơ sở hạ tầng của Google Cloud
+
+2
+00:00:05,150 --> 00:00:08,329
+mà không bao giờ nhấn nút trên bàn điều khiển,
+
+3
+00:00:08,439 --> 00:00:10,600
+Chúng tôi gọi đây là GitOps,
+
+4
+00:00:10,720 --> 00:00:13,489
+Và chúng ta sẽ sử dụng bộ điều khiển của Google Cloud.
+
+5
+00:00:13,560 --> 00:00:17,149
+Trước hết, hãy hiểu toàn bộ dòng chảy này trông như thế nào.
+
+6
+00:00:17,319 --> 00:00:20,879
+Vì vậy, người dùng sẽ đẩy một tập tin YML vào GitHub.
+
+7
+00:00:21,000 --> 00:00:25,950
+Chúng tôi có đồng bộ cấu hình mà phát hiện các thay đổi. Và nó sẽ kéo
+
+8
+00:00:25,950 --> 00:00:28,899
+Tập tin YML từ Git, chúng tôi có bộ kết nối cấu.
+
+9
+00:00:29,000 --> 00:00:32,549
+Kết nối cấu hình chuyển đổi tập tin YML này vào
+
+10
+00:00:32,549 --> 00:00:37,216
+Cuộc gọi điện thoại trên Google Cloud và sau đó là Google Cloud
+
+11
+00:00:37,216 --> 00:00:41,450
+Đã nhận được yêu cầu. Và theo yêu cầu, nó đang diễn ra
+
+12
+00:00:41,450 --> 00:00:44,306
+cập nhật tài nguyên.
+
+13
+00:00:44,536 --> 00:00:46,497
+Bây giờ hãy xem làm thế nào chúng ta có thể làm điều đó.
+
+14
+00:00:46,817 --> 00:00:47,676
+Đằng sau hiện trường,
+
+15
+00:00:47,696 --> 00:00:51,236
+Tôi đã cung cấp cho trung tâm quản lý của chúng tôi bằng cách chạy
+
+16
+00:00:51,777 --> 00:00:54,256
+Đám mây và bộ điều khiển cấu trúc.
+
+17
+00:00:54,376 --> 00:00:57,646
+Bạn có thể thấy rằng người điều khiển cấu hình của chúng tôi đang chạy.
+
+18
+00:00:57,817 --> 00:01:00,247
+Đó là một cụm GKE được giấu kín.
+
+19
+00:01:01,304 --> 00:01:04,352
+Lệnh để tạo ra bộ điều khiển này là như thế này.
+
+20
+00:01:04,513 --> 00:01:07,893
+Bây giờ tôi đã chỉ định điều khiển này chủ sở hữu
+
+21
+00:01:07,893 --> 00:01:09,744
+Cho phép ở cấp độ dự án.
+
+22
+00:01:10,064 --> 00:01:14,314
+Điều này cho phép trung tâm của chúng tôi để nói chuyện với Google APIs và
+
+23
+00:01:14,314 --> 00:01:16,353
+Tạo ra tài nguyên thay mặt chúng tôi.
+
+24
+00:01:16,473 --> 00:01:20,603
+Bạn có thể thấy rằng chúng ta có ở đây gốc của thuật ngữ.
+
+25
+00:01:20,753 --> 00:01:25,814
+Bây giờ trong căn nhà này, chúng tôi đang cung cấp kho bạc của chúng tôi,
+
+26
+00:01:25,823 --> 00:01:29,850
+Và tôi đã tạo ra nó từ GitHub. Anh cũng có thể
+
+27
+00:01:29,850 --> 00:01:33,291
+Tạo ra biểu tượng từ một GitHub bằng cách đi xuống đây,
+
+28
+00:01:33,411 --> 00:01:35,481
+vào trang thiết lập, và ở dưới cùng,
+
+29
+00:01:35,570 --> 00:01:36,801
+đi đến các thiết lập nhà phát triển,
+
+30
+00:01:36,850 --> 00:01:40,331
+Và bạn có thể tạo ra một biểu tượng truy cập cá nhân mới từ đây.
+
+31
+00:01:40,450 --> 00:01:42,611
+Bây giờ anh cung cấp giấy chứng nhận cho Git,
+
+32
+00:01:42,621 --> 00:01:47,041
+Vì vậy, bạn có thể chạy kubictl này tạo bí mật gitGtcateds chung
+
+33
+00:01:47,041 --> 00:01:50,371
+lệnh bằng cách cung cấp tên người dùng và thẻ tín dụng.
+
+34
+00:01:50,691 --> 00:01:56,790
+Bây giờ, một khi bạn thực hiện những thay đổi và áp dụng nó bằng cách sử dụng kubectl áp dụng uf
+
+35
+00:01:56,790 --> 00:02:03,699
+Căn bản là thuật ngữ gốc. Và bây giờ của bạn
+
+36
+00:02:03,699 --> 00:02:08,029
+Bộ điều khiển cấu hình đồng bộ với kho GitHub của bạn.
+
+37
+00:02:08,270 --> 00:02:11,449
+Bây giờ, một khi đã làm điều đó, hãy đi xuống GitHub của bạn.
+
+38
+00:02:11,899 --> 00:02:15,789
+Bây giờ, trong kho bạc của tôi, tôi đã tạo một thư mục cấu hình,
+
+39
+00:02:15,940 --> 00:02:19,949
+Và dưới đó tôi có một YAML, xô YML trông
+
+40
+00:02:19,949 --> 00:02:24,369
+nhưng loại này là một xô chứa.
+
+41
+00:02:24,860 --> 00:02:28,820
+Bây giờ bạn có thể thấy rằng tôi đang thực hiện một thay đổi, và tôi nói
+
+42
+00:02:28,820 --> 00:02:35,570
+Rằng cái tên xô mà tôi đang tìm bây giờ là 2. Và
+
+43
+00:02:35,570 --> 00:02:38,449
+Tôi sẽ thực hiện những thay đổi này,
+
+44
+00:02:38,490 --> 00:02:42,050
+tự động nó sẽ bắt đầu triển khai cụ thể này
+
+45
+00:02:42,050 --> 00:02:44,470
+xô vào Google Cloud.
+
+46
+00:02:45,220 --> 00:02:46,589
+Tôi nói cam kết thay đổi.
+
+47
+00:02:47,259 --> 00:02:52,619
+Và nếu tôi đi xuống đây trên Google Cloud,
+
+48
+00:02:53,210 --> 00:03:01,740
+Tìm kiếm Buckets, ngay bây giờ bạn có thể thấy rằng trước đó xô là 2025 độ 1.
+
+49
+00:03:02,070 --> 00:03:02,919
+Hãy làm lại từ đầu.
+
+50
+00:03:03,110 --> 00:03:06,550
+Và trong vài phút tới, bạn sẽ thấy rằng nó đã
+
+51
+00:03:06,550 --> 00:03:09,949
+Đã xoá xô đặc biệt này và tạo ra một cái mới
+
+52
+00:03:09,949 --> 00:03:12,410
+Bởi vì nó muốn nó đồng bộ.
+
+53
+00:03:14,990 --> 00:03:18,990
+Bây giờ bạn có thể thấy rằng nó đã tạo ra một xô khác và xóa
+
+54
+00:03:18,990 --> 00:03:24,229
+Người lớn tuổi hơn vì tôi đã thay đổi hồ sơ của YAML.
+
+55
+00:03:24,559 --> 00:03:28,029
+Vì vậy, đó là cách bộ điều khiển cấu hình có thể giúp bạn làm
+
+56
+00:03:28,029 --> 00:03:31,350
+GitOps mà không chạm vào bàn điều khiển Google.
+
