@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:06,240
+ Hi, in this lesson, I will talk about workspace indexing in copilot inside VS Code.
+
+2
+00:00:06,240 --> 00:00:11,520
+ Let's get started. When you ask a pilot a question, it doesn't just guess.
+
+3
+00:00:11,520 --> 00:00:17,280
+ It actually looks into your project to understand how files connect,
+
+4
+00:00:17,280 --> 00:00:20,720
+ where functions are defined and how components work together.
+
+5
+00:00:20,720 --> 00:00:27,520
+ And that's called workspace context. It's what help copilers give answers that match your
+
+6
+00:00:27,520 --> 00:00:33,440
+ own code, not random examples from the internet. When you open a project, VS Code
+
+7
+00:00:33,440 --> 00:00:39,360
+ quietly scans it in the background. It looks through all your files, your folder structure,
+
+8
+00:00:39,360 --> 00:00:46,080
+ and your code symbols such as classes and functions. It also notices which file your editing
+
+9
+00:00:46,080 --> 00:00:51,040
+ and what text you have selected. That helps it focus on what's most relevant.
+
+10
+00:00:52,560 --> 00:00:57,280
+ All this information is stored in something called a workspace index.
+
+11
+00:00:57,280 --> 00:01:03,360
+ Link of it as a smart searchable map of your project. This is what copilot uses to quickly
+
+12
+00:01:03,360 --> 00:01:07,840
+ find and understand the codes that relates to your question. For small projects,
+
+13
+00:01:07,840 --> 00:01:13,280
+ copilot can include your entire workspace directly when it answers your question.
+
+14
+00:01:13,280 --> 00:01:20,960
+ For larger projects, it only keeps the most relevant parts, so everything stays fast and focused.
+
+15
+00:01:20,960 --> 00:01:25,040
+ VS Code can use different search methods depending on what's available,
+
+16
+00:01:25,040 --> 00:01:28,960
+ and sometimes it searches by meaning using semantic search.
+
+17
+00:01:28,960 --> 00:01:36,240
+ Sometimes it looks by file name or exact text, and if your project is on GitHub,
+
+18
+00:01:36,240 --> 00:01:40,240
+ it can even use GitHub's code search to find results more quickly.
+
+19
+00:01:40,240 --> 00:01:46,240
+ It combines all these methods to pick the best results before giving you an answer.
+
+20
+00:01:46,240 --> 00:01:49,760
+ The workspace index is the key parts that powers all of this.
+
+21
+00:01:50,640 --> 00:01:54,640
+ It's what copilot uses to understand and search your code base quickly.
+
+22
+00:01:54,640 --> 00:02:01,280
+ Depending on your setup, the index can leave remotely on GitHub or Azure DevOps,
+
+23
+00:02:01,280 --> 00:02:06,640
+ or locally on your own computer. If your code is stored on GitHub or Azure DevOps,
+
+24
+00:02:06,640 --> 00:02:13,360
+ VS Code uses a remote index. This index is built automatically the first time you use
+
+25
+00:02:13,360 --> 00:02:20,640
+ out workspace or zodiac code base in chat. After that, it updates automatically every time you push
+
+26
+00:02:20,640 --> 00:02:28,080
+ new code. It's fast and perfect for large repositories, and you don't have to do anything manually.
+
+27
+00:02:28,080 --> 00:02:34,160
+ If your project isn't on GitHub or Azure DevOps, VS Code creates a local index instead.
+
+28
+00:02:34,160 --> 00:02:41,120
+ This index is saved on your own machine and used only for faster searching inside your project.
+
+29
+00:02:41,920 --> 00:02:48,560
+ For small projects, it's built automatically. For medium sized ones, you can open the command
+
+30
+00:02:48,560 --> 00:02:55,600
+ palette and run build local workspace index once, and if your project is very large,
+
+31
+00:02:55,600 --> 00:03:05,920
+ more than about 2500 files. VS Code will switch to simpler basic index. The basic index is a
+
+32
+00:03:05,920 --> 00:03:13,200
+ lightweight version that works when your project is too large for a local index. It doesn't include
+
+33
+00:03:13,200 --> 00:03:19,920
+ all the deep semantic search features, but it still helps co-pilot find relevant code quickly.
+
+34
+00:03:19,920 --> 00:03:26,800
+ For most projects, it's more than enough to get good answers in no time. You can always check
+
+35
+00:03:26,800 --> 00:03:32,800
+ what type of index co-pilot is using from the status bar at the bottom of VS Code. It shows
+
+36
+00:03:32,800 --> 00:03:38,240
+ whether the index is being built or updated and whether it's remote, local, or basic.
+
+37
+00:03:38,240 --> 00:03:42,800
+ If you need to, you can also rebuild it manually from the command palette.
+
+38
+00:03:42,800 --> 00:03:52,080
+ Just find commands like build local workspace index, build remote workspace index, VS Code indexes,
+
+39
+00:03:52,080 --> 00:03:58,320
+ all text-based files that belong to your project that includes your code, configuration files,
+
+40
+00:03:58,320 --> 00:04:04,320
+ and documentation. It skips things like images, PDFs, and temporary files.
+
+41
+00:04:04,320 --> 00:04:11,680
+ Files listed in.gittignore or excluded in VS Code settings are also skipped.
+
+42
+00:04:11,680 --> 00:04:18,320
+ But if you open one of those ignored files, co-pilot will still read it for the session to
+
+43
+00:04:18,320 --> 00:04:24,640
+ make sure your question makes sense. To sum it up, workspace indexing is what help co-pilot
+
+44
+00:04:24,640 --> 00:04:29,280
+ understand your entire code base, not just the file you're currently working on.
+
+45
+00:04:29,280 --> 00:04:34,880
+ It happens automatically and adjusts based on your project size and where your code lives.
+
+46
+00:04:34,880 --> 00:04:40,000
+ You can always check or rebuild it from the status bar or the command menu.
+
+47
+00:04:40,000 --> 00:04:48,000
+ Once you understand how indexing works, you'll see why co-pilot can give such smart,
+
+48
+00:04:48,000 --> 00:04:55,280
+ context where answers about your project. It's not guessing anymore, it's actually reading your code.
+
+49
+00:04:55,280 --> 00:05:01,120
+ I hope this lesson was useful for you and see you in the next lesson.
+
