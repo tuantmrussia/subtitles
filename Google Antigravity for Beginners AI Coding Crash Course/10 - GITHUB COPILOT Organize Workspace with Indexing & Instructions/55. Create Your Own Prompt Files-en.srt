@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:05,000
+ Now we know and understand what Chrome files are.
+
+2
+00:00:05,000 --> 00:00:10,000
+ Now let's see how actually create one and use it in your daily workflow.
+
+3
+00:00:10,000 --> 00:00:16,000
+ You see how easy it is to set up a new prompt file, test it and run it whenever you need.
+
+4
+00:00:16,000 --> 00:00:19,000
+ So let's start with creating prompt files.
+
+5
+00:00:19,000 --> 00:00:22,000
+ Creating prompt files is really simple.
+
+6
+00:00:22,000 --> 00:00:28,000
+ But before we create it, we look at some examples for the prompt files,
+
+7
+00:00:28,000 --> 00:00:30,000
+ so there is some documentation.
+
+8
+00:00:30,000 --> 00:00:32,000
+ So there are two examples.
+
+9
+00:00:32,000 --> 00:00:34,000
+ The first one to generate the form component.
+
+10
+00:00:34,000 --> 00:00:38,000
+ And next one to perform security review of press API.
+
+11
+00:00:38,000 --> 00:00:41,000
+ We have in our project.
+
+12
+00:00:41,000 --> 00:00:46,000
+ The first one is to learn when previous lesson has some header information.
+
+13
+00:00:46,000 --> 00:00:48,000
+ We specify the mode.
+
+14
+00:00:48,000 --> 00:00:52,000
+ We'd like to use the edge and edit or ask mode.
+
+15
+00:00:52,000 --> 00:00:54,000
+ We can specify a model.
+
+16
+00:00:54,000 --> 00:00:59,000
+ We can also specify tools like it has access to GitHub repository to source the code base.
+
+17
+00:00:59,000 --> 00:01:02,000
+ If you'd like, you can also skip it.
+
+18
+00:01:02,000 --> 00:01:05,000
+ And I will decide what tools you need.
+
+19
+00:01:05,000 --> 00:01:11,000
+ And you can add some description like it will be shown in user interface.
+
+20
+00:01:11,000 --> 00:01:19,000
+ Then you describe the instructions that you go with to generate new React form component based on a place from GitHub repository.
+
+21
+00:01:19,000 --> 00:01:24,000
+ And then you ask for the form name and fields if not provided.
+
+22
+00:01:24,000 --> 00:01:28,000
+ So here I will ask us for the form name and some fields.
+
+23
+00:01:28,000 --> 00:01:33,000
+ And there are some rules it should follow when creating it.
+
+24
+00:01:33,000 --> 00:01:36,000
+ And another one is for the API.
+
+25
+00:01:36,000 --> 00:01:38,000
+ You see it's a bit shortened.
+
+26
+00:01:38,000 --> 00:01:39,000
+ We have ask mode.
+
+27
+00:01:39,000 --> 00:01:40,000
+ We have model.
+
+28
+00:01:40,000 --> 00:01:41,000
+ And we have description.
+
+29
+00:01:41,000 --> 00:01:45,000
+ So we doesn't specify those right here.
+
+30
+00:01:45,000 --> 00:01:50,000
+ And you see, the goal of this one is to review an API.
+
+31
+00:01:50,000 --> 00:01:55,000
+ We already haven't provided some to do list of security issues.
+
+32
+00:01:55,000 --> 00:01:57,000
+ And we have a list of instructions.
+
+33
+00:01:57,000 --> 00:02:02,000
+ And we also ask the eye in what format to return the result.
+
+34
+00:02:02,000 --> 00:02:06,000
+ So let me show you how to create this prompt.
+
+35
+00:02:06,000 --> 00:02:08,000
+ So, okay.
+
+36
+00:02:08,000 --> 00:02:11,000
+ I just got the paste it.
+
+37
+00:02:11,000 --> 00:02:22,000
+ You can also hear right here that the prompts should have the same name and convention as instructions, but just the prompts.
+
+38
+00:02:22,000 --> 00:02:32,000
+ And we also can put them into folder prompts.
+
+39
+00:02:32,000 --> 00:02:34,000
+ And now you can create a new prompt.
+
+40
+00:02:34,000 --> 00:02:40,000
+ So this one will be about, let's say, React form.
+
+41
+00:02:40,000 --> 00:02:51,000
+ So, React form, sorry, React form dot prompt dot MD.
+
+42
+00:02:51,000 --> 00:02:54,000
+ Let me quickly check here dot prompt.
+
+43
+00:02:54,000 --> 00:02:58,000
+ It should be dot prompt.
+
+44
+00:02:58,000 --> 00:02:59,000
+ Okay.
+
+45
+00:02:59,000 --> 00:03:01,000
+ And now we can paste the prompt right here.
+
+46
+00:03:01,000 --> 00:03:07,000
+ And let's do it for the one more prompt for the.
+
+47
+00:03:07,000 --> 00:03:13,000
+ For an API, let's check API security.
+
+48
+00:03:13,000 --> 00:03:22,000
+ Or maybe I review just API review prompt dot MD.
+
+49
+00:03:22,000 --> 00:03:24,000
+ And you'll paste it here.
+
+50
+00:03:24,000 --> 00:03:26,000
+ When you see a prompt, you start here.
+
+51
+00:03:26,000 --> 00:03:30,000
+ And it could like, for example, use this prompts right here.
+
+52
+00:03:30,000 --> 00:03:32,000
+ So you can click slash.
+
+53
+00:03:32,000 --> 00:03:35,000
+ And start writing the prompt name.
+
+54
+00:03:35,000 --> 00:03:45,000
+ For example, redirect form.
+
+55
+00:03:45,000 --> 00:03:50,000
+ Yeah, we can add the message context.
+
+56
+00:03:50,000 --> 00:03:51,000
+ Okay.
+
+57
+00:03:51,000 --> 00:03:55,000
+ And now we can ask, for example, so we'll do ask.
+
+58
+00:03:55,000 --> 00:04:05,000
+ To ask the cream, a form component for, again, add, again, form.
+
+59
+00:04:05,000 --> 00:04:07,000
+ And let's see what the I will do.
+
+60
+00:04:07,000 --> 00:04:10,000
+ You see, it user references the customer instructions.
+
+61
+00:04:10,000 --> 00:04:15,000
+ Of course, you have to create the gain following the provided requirements.
+
+62
+00:04:15,000 --> 00:04:17,000
+ First, blah, blah, blah.
+
+63
+00:04:17,000 --> 00:04:19,000
+ Let me create a login form.
+
+64
+00:04:19,000 --> 00:04:23,000
+ It's proper TypeScript.
+
+65
+00:04:23,000 --> 00:04:25,000
+ Let's check what we'd like to use.
+
+66
+00:04:25,000 --> 00:04:29,000
+ We'd like to use the code form for inside.
+
+67
+00:04:29,000 --> 00:04:32,000
+ We also should use TypeScript.
+
+68
+00:04:32,000 --> 00:04:34,000
+ Right here.
+
+69
+00:04:34,000 --> 00:04:36,000
+ As you see, it used already TypeScript.
+
+70
+00:04:36,000 --> 00:04:40,000
+ We have some validation file where we have.
+
+71
+00:04:40,000 --> 00:04:41,000
+ Yep.
+
+72
+00:04:41,000 --> 00:04:47,000
+ If we open a form, right here, we use the Act hook forms.
+
+73
+00:04:47,000 --> 00:04:50,000
+ And it's really following instructions.
+
+74
+00:04:50,000 --> 00:04:54,000
+ And we can also, it asks us to install all the libraries.
+
+75
+00:04:54,000 --> 00:04:55,000
+ Okay.
+
+76
+00:04:55,000 --> 00:04:57,000
+ We can allow it to install.
+
+77
+00:04:57,000 --> 00:05:00,000
+ As you see, this prompts can save you a lot of time.
+
+78
+00:05:00,000 --> 00:05:06,000
+ If you have some repetitive request, like you create in components with the same style.
+
+79
+00:05:06,000 --> 00:05:09,000
+ Yeah, you can have a prompt.
+
+80
+00:05:09,000 --> 00:05:14,000
+ To create this component and just provide a name, you can use variables as well.
+
+81
+00:05:14,000 --> 00:05:21,000
+ This is so, in presentation, previous lesson.
+
+82
+00:05:21,000 --> 00:05:25,000
+ And this really helps you to make it faster without repeating in actions.
+
+83
+00:05:25,000 --> 00:05:31,000
+ So now you know how to use the prompts and how to use instructions.
+
+84
+00:05:31,000 --> 00:05:38,000
+ And you have full pack for development with NEI, the faster development.
+
+85
+00:05:38,000 --> 00:05:39,000
+ Okay.
+
+86
+00:05:39,000 --> 00:05:43,000
+ It's really simple workflows that save time for you.
+
+87
+00:05:43,000 --> 00:05:50,000
+ Just keep your prompts organized, basically our names, you or your members can read the name and understand what is it.
+
+88
+00:05:50,000 --> 00:05:54,000
+ Also, add some description right here.
+
+89
+00:05:54,000 --> 00:05:59,000
+ And also, then compile it.
+
+90
+00:05:59,000 --> 00:06:03,000
+ We'll keep following your instructions as you expect it.
+
+91
+00:06:03,000 --> 00:06:04,000
+ Okay.
+
+92
+00:06:04,000 --> 00:06:08,000
+ I hope Slaton was useful for you and see you in the next lesson.
+
