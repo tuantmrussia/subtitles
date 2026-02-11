@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:29,500
+ All right there my friends, now we start talking about methods or as we like to call them in other languages that is functions, but in Java we appropriately call them methods and that's what I'm going to stick to calling them right throughout this course and these are important because and you need to have a good understanding of them of course because they're used almost every day in your life as a developer, not just as a Java developer, but whether you're working in Java or not in other languages,
+
+2
+00:00:29,500 --> 00:00:46,500
+ you're going to use methods or functions. So how do we use functions and where do we use them and how can we call them right? So different parts of the puzzle that start with the basics and that is how do we, why do we use methods right?
+
+3
+00:00:46,500 --> 00:01:05,000
+ So methods are like for example, if you, until now we have been writing all of our code in the main method that is the special public study void main, but after some time we start to realize that we cannot go on and put everything inside main that will be putting all junk inside one method.
+
+4
+00:01:05,000 --> 00:01:25,000
+ And why is that not realistic in a real world project or or a project that you're working on in your company, because obviously the first thing is that debugging would get difficult because if you put everything in the same method, then you will need to start from the first line until you reach the line that is causing that bug.
+
+5
+00:01:25,000 --> 00:01:42,000
+ Right, the debugging becomes difficult maintenance of code becomes difficult right, so you need to know where do I have to make changes to enhance this code again, if you have written everything inside one method like the main method, so then you have to start from line one right.
+
+6
+00:01:42,000 --> 00:02:05,000
+ And then the third problem is code organization is difficult as well that's why we can now divide our code into those tiny chunks as I like to call them or units if you like to refer them right and then call them with their unique names and a class in Java can have multiple methods right.
+
+7
+00:02:05,000 --> 00:02:22,000
+ Depending on your requirement and your preference, you can go on and create and use them on the fly on the globe right so that is why do we use methods again as my philosophy says I always stick to that I've always talk about first the why.
+
+8
+00:02:22,000 --> 00:02:40,000
+ Because if you want to know why do we use something obviously to focus on the why, why are we even discussing this on on let's say if you're watching this video on a Sunday afternoon or a Monday morning, why are you even here listening to me and spending so much of time on that, why is that important.
+
+9
+00:02:40,000 --> 00:02:57,000
+ The status clear you know the goal you know the motor then we focus on the how right and how is the syntax part right so let's go on and check the how part again about I'll do is I'll just create a new file here a new class I'll just call it.
+
+10
+00:02:57,000 --> 00:03:26,000
+ The starting to talk about methods and I'll just say the main method here which is we just has to be at all times inside your your classes right public static void main and now you can go on and define your own methods the first thing to using methods says the method definition the method declaration with you specify what goes on in a method and then the second part is calling that method right and you can call it as many times as your requirements.
+
+11
+00:03:26,000 --> 00:03:42,000
+ So what is the declaration what is the definition of a method syntax it goes on like this in Java you say the school and you say the return type.
+
+12
+00:03:42,000 --> 00:03:57,000
+ And then you put in the identifier and then the parameter list and then the board right.
+
+13
+00:03:57,000 --> 00:04:12,000
+ This is the syntax of using a method of defining of declaring a method in Java obviously have commented this out because otherwise it would result in an error because what a scope mean it's a literally sense here right so scope is what we haven't covered until now.
+
+14
+00:04:12,000 --> 00:04:26,000
+ So we'll just keep it to the default scope and what is the default scope in Java I obviously tell you when we come across the video about scope and trust me on that we're going to have a great discussion again about scopes taking it as I always do from scratch.
+
+15
+00:04:26,000 --> 00:04:36,000
+ So scope is what is the scope of this method by default let's not specify that return type is what is that method going to be returning right more on that in some time.
+
+16
+00:04:36,000 --> 00:05:00,000
+ Let's get into fire again falling cable case and the rules we specify a better readable identifier the name of this method you know the cable case rules now and then the parameter list this can be zero to n how many parameters does this method take right and then the body that is what is that you want to be written in this method and you want that to be reused because remember if you put in something in a method then you can go on and call that.
+
+17
+00:05:00,000 --> 00:05:28,000
+ n number of times that means you're reusing that same code again another advantage of dividing your code into methods of functions right and following the syntax let's go on and define a method in the class method demo because remember I told you that without or outside classes very few things in Java are allowed and methods are not one of them you cannot define a method outside of a class in Java it has to be in any of the classes.
+
+18
+00:05:28,000 --> 00:05:42,000
+ This time I'm putting this in method demo I'm just saying white MIT in short for method and then the body wide means this method is not going to return anything scope I've left blank that means it has a default scope.
+
+19
+00:05:42,000 --> 00:06:06,000
+ And then no parameters because I told you parameters can be zero to n and then you put in the body braces and braces closed and within this what you want to be reused what you want to be included in this method body definition for now just to get started I'll just put a system without dot print in and I'll say when this is called please print this method message inside MIT because that's often.
+
+20
+00:06:06,000 --> 00:06:20,000
+ A good way of knowing where the control currently is right so inside MIT and that's the first part method definition declaration remember it has to be within the body of a class but outside.
+
+21
+00:06:20,000 --> 00:06:41,000
+ Other methods again the other rule is you cannot define a method within a method in Java right so that's the first part the second part is calling that because if you do not call a method it would not be executed the code that you've written within it would never be executed right and how do you call it from within any other method not just mean.
+
+22
+00:06:41,000 --> 00:06:55,000
+ Here in this example we're having the main method so you want to call it from here I would just create a object I'll say method demo let's call it rep to new method demo.
+
+23
+00:06:55,000 --> 00:07:00,000
+ I'll say rev dot empty.
+
+24
+00:07:00,000 --> 00:07:10,000
+ So what you do is you put in the object reference variable or the object dot operator and the method name and with the arguments here you specify the arguments here you specify the parameters
+
+25
+00:07:10,000 --> 00:07:23,000
+ and they have to be the same currently there are no parameters not surprisingly there not are there no arguments as well and once this is called the control leaves temporarily from outside main goes to MIT
+
+26
+00:07:23,000 --> 00:07:49,000
+ executes it finishes the execution comes back and resumes the execution in main and yet and your program exits here. So we should now get inside MIT once I run this and what does it say illegal in a code escape character let's remove that for now because that was in a previous program but we're just running this.
+
+27
+00:07:49,000 --> 00:08:01,000
+ Somehow it's going to the previous programs we have nothing to do with that so what you do is current file and then zero again it says index previous error let's come in that.
+
+28
+00:08:01,000 --> 00:08:18,000
+ Yeah inside MIT right still getting that on screen let's run me run it again so inside MIT the call was made and it was executed at the simplest case of using a method first you define its signature right signature is the first line.
+
+29
+00:08:18,000 --> 00:08:32,000
+ And the first line is important it tells you see what does a method do is what you define in the body right always but the signature is the first line of the method declaration it tells you a lot about the methods behavior.
+
+30
+00:08:32,000 --> 00:08:47,000
+ How is it going to behave and that tells you the signature holds the part as in scope return time identifying parameter list right so we get an idea what is this methods behavior going to look like but what would it do always the body.
+
+31
+00:08:47,000 --> 00:08:49,000
+ Like it said inside the meeting.
+
+32
+00:08:49,000 --> 00:09:09,000
+ Right so that's the first way of using methods right now obviously there would be parameters the return type would change that is coming up for you in the next video where we'll just go and take the discussion forward and talk about parameter list and return types how do they affect a methods behavior and signature.
+
