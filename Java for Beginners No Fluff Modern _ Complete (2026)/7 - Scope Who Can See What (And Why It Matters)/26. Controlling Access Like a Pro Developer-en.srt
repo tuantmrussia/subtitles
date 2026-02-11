@@ -1,0 +1,752 @@
+1
+00:00:00,000 --> 00:00:05,680
+ All right then everyone, in the past video we had a look at what is scope defined at
+
+2
+00:00:05,680 --> 00:00:11,440
+ different levels, four levels of scope actually, and then what are packages? Why do we use them?
+
+3
+00:00:11,440 --> 00:00:16,960
+ And then in this video we are going to look at how do we use packages? How do we declare them?
+
+4
+00:00:16,960 --> 00:00:21,200
+ How do we import them? And what relation do they have with the scope? And we're back to our
+
+5
+00:00:21,200 --> 00:00:28,720
+ IDE that is intelligent and created this class scope work. Public static void main is ready.
+
+6
+00:00:28,720 --> 00:00:33,680
+ And now there is this is where we would, we would demonstrate packages. And as you have
+
+7
+00:00:33,680 --> 00:00:40,080
+ look at the first line, it says package org dot w aq. This is the package that we've been
+
+8
+00:00:40,080 --> 00:00:46,560
+ following all along the scores, right? So now we'll zoom into this and this will just make you clear
+
+9
+00:00:46,560 --> 00:00:53,920
+ what are we after here, right? So what does this say is, how do you define a new package in a class
+
+10
+00:00:53,920 --> 00:01:00,080
+ with the keyword package? And first things first, we should never put in classes without packages,
+
+11
+00:01:00,080 --> 00:01:06,000
+ although we can, but that's never recommended because code is not organized. And you know that
+
+12
+00:01:06,000 --> 00:01:12,240
+ debugging is difficult and and would end up in a lot of problems later on. So we should always
+
+13
+00:01:12,240 --> 00:01:16,080
+ put in packages. That's what we have been following. But now we are having a look at why do we do
+
+14
+00:01:16,080 --> 00:01:22,480
+ that? So how do we do that? So in a class in a file, in a Java file, how do you declare a new package
+
+15
+00:01:22,480 --> 00:01:29,200
+ with the keyword package? And then the identifier and through cable case packages should be in all
+
+16
+00:01:29,200 --> 00:01:34,240
+ smalls. And like we're following here, super package dot sub package, or you could have just
+
+17
+00:01:34,240 --> 00:01:39,600
+ called it, you would have just called it whack. That's fine as well, right? But generally you will see
+
+18
+00:01:39,600 --> 00:01:45,280
+ super package dot sub package dot sub package. That's the kind of syntax we write. And that's why
+
+19
+00:01:45,280 --> 00:01:51,840
+ I'm following it here. And the industry standard is we do that in reverse domain. Let's say
+
+20
+00:01:52,480 --> 00:01:57,920
+ you're working at TCS. So you'll just say calm dot TCS dot training. You're working at society
+
+21
+00:01:57,920 --> 00:02:04,240
+ general. You'll say calm dot soggen dot learning. You're working. Let's say at Google, you will
+
+22
+00:02:04,240 --> 00:02:12,560
+ not say google dot com dot training, com dot Google dot development, right? So reverse domain is the
+
+23
+00:02:12,560 --> 00:02:18,080
+ industry standard. That's what we are sticking to here. So org dot wag is fine. Now whatever class
+
+24
+00:02:18,080 --> 00:02:24,160
+ you will put in in this fight will belong to this package because the rule is a Java file can have
+
+25
+00:02:24,160 --> 00:02:32,640
+ only one package statement declaration. And it should be at the top. Again, a Java file can have
+
+26
+00:02:32,640 --> 00:02:38,880
+ only one package statement declaration. And it should be at the top. And that's why we're having it
+
+27
+00:02:38,880 --> 00:02:46,400
+ here. I cannot have a package down the line. I can't say for example, package other that's an arrow
+
+28
+00:02:46,400 --> 00:02:52,240
+ here. It says if you hover on this class or interface, expect it not a package because it can just be
+
+29
+00:02:52,240 --> 00:02:57,840
+ only months and at the very first line. So whatever classes you put in here like public class scope
+
+30
+00:02:57,840 --> 00:03:04,560
+ work, let's say I have another class, for example, I'll just call other and let's say this as just
+
+31
+00:03:04,560 --> 00:03:13,120
+ one method, wide funk. So now this class also belongs to this package org dot wag. And behind the scenes
+
+32
+00:03:13,120 --> 00:03:20,160
+ on your physical directory, they would both be a part of the folder org dot wag. So
+
+33
+00:03:20,160 --> 00:03:29,200
+ that's how you declare packages. I come to how do you import them in some while. But starting with
+
+34
+00:03:29,200 --> 00:03:35,600
+ the first scope, and that is the package private scope, which is by default. As you're seeing
+
+35
+00:03:35,600 --> 00:03:42,080
+ this class, I made it as public. But this class doesn't have a scope. This means it has package
+
+36
+00:03:42,080 --> 00:03:47,920
+ private scope, which is the default scope in Java. And this method, main always has to be public.
+
+37
+00:03:47,920 --> 00:03:53,200
+ That means main has public scope, but funk doesn't have a scope written explicitly. That means
+
+38
+00:03:53,200 --> 00:03:58,800
+ it has the default scope and what is that again, package private. Now, let's have a look at what
+
+39
+00:03:58,800 --> 00:04:04,640
+ does it mean for you to define your types or your members as package private. That is default,
+
+40
+00:04:04,640 --> 00:04:10,240
+ right? And again, package private scope can be put in at the class level interface level
+
+41
+00:04:10,240 --> 00:04:15,040
+ or at the member level. You know, the members now, right? The instance variables of a class
+
+42
+00:04:15,040 --> 00:04:21,840
+ as well as the methods, right? So package private is applicable at two levels, right? Right here,
+
+43
+00:04:21,840 --> 00:04:27,920
+ right here. And within a class at the member level as well, local variables, local variables,
+
+44
+00:04:27,920 --> 00:04:32,720
+ we cannot scope their right. None of the scope applies there because they already have a scope,
+
+45
+00:04:32,720 --> 00:04:38,720
+ their local or their local to that method or local to that block in which they are defined.
+
+46
+00:04:38,720 --> 00:04:47,120
+ Right. So now what does it mean? All right. So now for example, if you want to access this funk of
+
+47
+00:04:47,120 --> 00:04:52,480
+ other inside main, obviously, I'll just have a sound message, a sample message, I'll say inside one.
+
+48
+00:04:52,480 --> 00:04:58,480
+ If you want to call it at line number five, what is the syntax to do that? Just go on a recollect,
+
+49
+00:04:58,480 --> 00:05:02,960
+ we had a look at that when we were talking about classes and objects, it remains the same,
+
+50
+00:05:02,960 --> 00:05:09,680
+ right? But now we are seeing if it would be called or not, right? We do not take it for granted now
+
+51
+00:05:09,680 --> 00:05:14,080
+ because we're talking about scope. And I'll say, for example, obviously, I need to create an
+
+52
+00:05:14,080 --> 00:05:23,120
+ other object, I'll say new other, and you'll see other dot punk, is it accessible? It is why
+
+53
+00:05:23,120 --> 00:05:29,600
+ now, let's have a look at that. See, fun defined in other is package private, other is package
+
+54
+00:05:29,600 --> 00:05:34,720
+ private, you're accessing it in main, right? So what does it mean for you to define? It has
+
+55
+00:05:34,720 --> 00:05:39,920
+ package private, that is, and you can take a note here or just remember it, package private
+
+56
+00:05:39,920 --> 00:05:47,520
+ members of a class, or even the class itself, right? They're accessible right across the package
+
+57
+00:05:47,520 --> 00:05:52,800
+ in which they are defined, but not outside of the package. That's why they're called private
+
+58
+00:05:52,800 --> 00:05:58,800
+ to that package, right? See, package private. So package private members of a class or the class
+
+59
+00:05:58,800 --> 00:06:04,240
+ itself or the interface itself, they are accessible right across the package in which they are
+
+60
+00:06:04,240 --> 00:06:09,840
+ displayed within other classes as well, but which belong to the same package, but they cannot be
+
+61
+00:06:09,840 --> 00:06:15,600
+ access outside of the package. And why are they accessible here? Because other and scope work
+
+62
+00:06:15,600 --> 00:06:20,800
+ are both defined in the package, all dot whack, right? So other can be accessed here,
+
+63
+00:06:20,800 --> 00:06:27,600
+ funk is again, package private, it can be accessed here. Now, you know, why does this work? All right.
+
+64
+00:06:27,600 --> 00:06:32,960
+ And if you want to have different classes, but belong into the same package, but not in this file,
+
+65
+00:06:32,960 --> 00:06:37,760
+ you can just go on and define them in a new file, but the first line should be
+
+66
+00:06:37,760 --> 00:06:43,280
+ all dot whack, see, as is a response, calculate addition, conditional logic, all of them are part
+
+67
+00:06:43,280 --> 00:06:49,920
+ of the all dot whack. That means all of them can access funk of other and funk. That's it. That's
+
+68
+00:06:49,920 --> 00:06:54,800
+ how I have to access a method of loops work right here. I can do that if that is also defined as
+
+69
+00:06:54,800 --> 00:07:01,920
+ package private. That's how package private works. That is private to the package. All right.
+
+70
+00:07:01,920 --> 00:07:09,200
+ So the second scoop in Java that we are going to talk about is protected and protected has a
+
+71
+00:07:09,200 --> 00:07:16,400
+ slight difference with package private, but significant, right? And protected the first thing
+
+72
+00:07:16,400 --> 00:07:24,640
+ about protected is it cannot be it's only accessible or the scope is only applicable at the
+
+73
+00:07:24,640 --> 00:07:32,560
+ member level, never at the class level. There is no such concept as a protected class in Java,
+
+74
+00:07:32,560 --> 00:07:38,400
+ right? We can do that with inner classes, but let's leave that discussion for another day,
+
+75
+00:07:38,400 --> 00:07:45,840
+ another video. But for now, protected, that is it cannot be applicable here just within the class,
+
+76
+00:07:45,840 --> 00:07:51,200
+ either with instance variables or methods, but never at the class level. If you try to do that,
+
+77
+00:07:51,200 --> 00:07:56,720
+ you should get an error. And that's what you do. You hover on this says modifier protected
+
+78
+00:07:56,720 --> 00:08:03,600
+ not allowed here. So at the class level, by the way, a class can either be package private,
+
+79
+00:08:03,600 --> 00:08:08,960
+ which is default or it can be public, nothing else. No other scopes are applicable here. All right.
+
+80
+00:08:08,960 --> 00:08:15,840
+ So now what does it mean for you to define your members as package private? What does it really mean?
+
+81
+00:08:15,840 --> 00:08:21,920
+ I said they have a slight difference, a minimal difference with package private members,
+
+82
+00:08:21,920 --> 00:08:29,840
+ but significant yet. And what is that? So package private members of a class like protected members
+
+83
+00:08:29,840 --> 00:08:35,760
+ or I'll just reference it all the way down. So protected members of a class like package
+
+84
+00:08:35,760 --> 00:08:40,720
+ private members are accessible right across the package in which they are defined,
+
+85
+00:08:41,520 --> 00:08:50,000
+ but this is a very bug, but big but here, but they can also be accessed outside of the package
+
+86
+00:08:50,000 --> 00:08:57,680
+ in a special scenario of inheritance. And again, for iteration, I'll just put it down for you
+
+87
+00:08:57,680 --> 00:09:03,760
+ can just take a note of this. That is protected members of a class like package private members
+
+88
+00:09:03,760 --> 00:09:10,080
+ are accessible right across the package in which they are defined, but they're also accessible
+
+89
+00:09:10,080 --> 00:09:18,640
+ outside of the package through inheritance within subclasses through inheritance within subclasses.
+
+90
+00:09:18,640 --> 00:09:24,000
+ That's the only difference here. Right. And let's try to do that. What I'll say is I'll say
+
+91
+00:09:24,000 --> 00:09:30,400
+ this class other and white fund this time it is protected. See, it makes no difference if you
+
+92
+00:09:30,400 --> 00:09:36,320
+ access it within the package in under the class, it is still accessible. Right. But if you try to access
+
+93
+00:09:36,320 --> 00:09:43,360
+ it outside of the package, let's in fact try to do that. What I'll say is I'll just go on and
+
+94
+00:09:43,360 --> 00:09:51,840
+ on Java now I'll say new package. Let's just call it org dot for example work.
+
+95
+00:09:51,840 --> 00:09:58,480
+ The first one was org dot back. This is org dot work. Let's create a new class in org dot work
+
+96
+00:09:58,480 --> 00:10:05,920
+ and I'll just call it for example task. See, this is in org dot work. Now see shows with this.
+
+97
+00:10:05,920 --> 00:10:11,360
+ All others are in whack. This one is in another sub package called work and what I'm trying to
+
+98
+00:10:11,360 --> 00:10:17,760
+ do here is it doesn't have me, but or let's say it has me. I am calling it for me and I want to call
+
+99
+00:10:17,760 --> 00:10:25,600
+ I want to call where did that go scope work. I want to call
+
+100
+00:10:28,640 --> 00:10:35,920
+ others funk from outside of the package in task. Right. So the first thing, obviously the syntax
+
+101
+00:10:35,920 --> 00:10:41,680
+ remains the same. What is the way to access it is the same. Can it be accessed? That's what we are
+
+102
+00:10:41,680 --> 00:10:53,200
+ going to discuss here. So I'll just say other to new other and I'll say other errors at both lines
+
+103
+00:10:53,760 --> 00:11:02,480
+ exactly the same syntax which worked in on line number five and six is now giving you an error
+
+104
+00:11:02,480 --> 00:11:08,720
+ at five and six inside task inside another package. Why is that you hover on that and this error
+
+105
+00:11:08,720 --> 00:11:16,640
+ isn't even related to scope. Right. It says that I don't understand which other you're talking about
+
+106
+00:11:16,640 --> 00:11:24,400
+ because a class outside of the package isn't even visible. It isn't even found. Right. How can
+
+107
+00:11:24,400 --> 00:11:30,720
+ you create an object out of it? Right. So the first step is to import that and how do we import it?
+
+108
+00:11:30,720 --> 00:11:43,680
+ We say something like this. I say import org dot wack dot other that particular class. Right.
+
+109
+00:11:43,680 --> 00:11:47,440
+ So that's the way to import after the package to the declaration. You say import and then
+
+110
+00:11:47,440 --> 00:11:53,120
+ package dot sub package dot the class name. Otherwise, the alternative is you can just say start
+
+111
+00:11:53,120 --> 00:11:58,400
+ start means all import every class from org dot wack. But that's not recommended because
+
+112
+00:11:58,400 --> 00:12:03,120
+ think about it in a real world enterprise great project. There might be hundreds of classes in this
+
+113
+00:12:03,120 --> 00:12:10,000
+ package. If we just put in an overburden on the on the system. Right. So always import the classes
+
+114
+00:12:10,000 --> 00:12:14,880
+ that you want to work with. And here I want to work with other. Now, this is the way to import it,
+
+115
+00:12:14,880 --> 00:12:23,120
+ but you're seeing still an error at line number two. Now, it knows that there is a class inside
+
+116
+00:12:23,120 --> 00:12:29,440
+ org dot wack, which I'm trying to import. That's fine, but it isn't it isn't visible. Why it should
+
+117
+00:12:29,440 --> 00:12:35,680
+ tells you other org dot wack to other is not public in org dot wack cannot be accessed from outside
+
+118
+00:12:35,680 --> 00:12:41,760
+ package. What did I tell you? That is package private things can only be accessed within the same
+
+119
+00:12:41,760 --> 00:12:47,280
+ package, but not in other packages. And for this to work, obviously, if this doesn't work, if
+
+120
+00:12:47,280 --> 00:12:52,640
+ you're not able to import it, how can you create an object? How can you call a method? So for this to work,
+
+121
+00:12:52,640 --> 00:12:59,520
+ we'll say we'll go to other and make this as public. Right. And now, an error, what does it say?
+
+122
+00:12:59,520 --> 00:13:05,440
+ It says that class other is public should be declared in a fine name. Other don't Java.
+
+123
+00:13:05,440 --> 00:13:11,920
+ Now, this is another error, another reason. And what is that? That is a Java file can have only one
+
+124
+00:13:11,920 --> 00:13:17,520
+ public class, and that should be in the name of that file. But in this case, I have two
+
+125
+00:13:17,520 --> 00:13:23,760
+ published classes in this file that cannot be because Java doesn't allow multiple public classes
+
+126
+00:13:23,760 --> 00:13:29,600
+ to be in the same file, but as many as non public classes. And the one that has the public
+
+127
+00:13:29,600 --> 00:13:34,720
+ specified with it has to be the name of your file. So what I'll do is I'll just get rid of this
+
+128
+00:13:34,720 --> 00:13:47,120
+ here and in org.wag, create a separate file. I'll call it other. And I'll just paste it.
+
+129
+00:13:47,120 --> 00:13:54,720
+ Right. Works fine. Public class other still in org.wag, but in a file of its own. Right. And I
+
+130
+00:13:54,720 --> 00:13:59,600
+ can have this as public here. I can have scope work as public as well. No problems there. It still
+
+131
+00:13:59,600 --> 00:14:04,880
+ works because you're accessing it within the same package. But when you try to access it,
+
+132
+00:14:04,880 --> 00:14:13,040
+ outside the package in a different class. Now the error goes away. Right. We can import it because
+
+133
+00:14:13,040 --> 00:14:19,040
+ it's public. We can create an object of out of it. It is public, but doesn't mean that
+
+134
+00:14:19,040 --> 00:14:24,080
+ focus till accessible. Why? Because scope. And that's the beauty of scope in Java. It is resolved
+
+135
+00:14:24,080 --> 00:14:28,880
+ by two levels in Java. The first is the top level that is the class level. And then the member
+
+136
+00:14:28,880 --> 00:14:34,800
+ level and think about a great analogy that is your home. Just because you have opened the main gate
+
+137
+00:14:34,800 --> 00:14:40,880
+ to everyone doesn't mean everyone can enter inside your bedrooms and use your washrooms or any other
+
+138
+00:14:40,880 --> 00:14:48,880
+ room. Right. You still can control who gets access to coming into your bedroom who gets access to
+
+139
+00:14:48,880 --> 00:14:54,480
+ coming into your lobby and washrooms. Right. So this one was open. That is the main gate at the class
+
+140
+00:14:54,480 --> 00:15:01,280
+ level. Now the individual rooms are still closed. Why? Because funk as you saw is still defined
+
+141
+00:15:01,280 --> 00:15:08,800
+ as protected. It cannot be accessed outside of the package. Right. So that is by this error.
+
+142
+00:15:08,800 --> 00:15:13,600
+ But if you were able, if you were just trying to access it within the same package, you would have
+
+143
+00:15:13,600 --> 00:15:23,280
+ been there. Right. So that is we still can't access it. I'll say. Why? Because it is defined as
+
+144
+00:15:23,280 --> 00:15:29,760
+ protected. So you would need to define that also as public or or the second thing is as a
+
+145
+00:15:29,760 --> 00:15:37,280
+ two new protected members can be accessed outside of the package as well through inheritance within
+
+146
+00:15:37,280 --> 00:15:41,520
+ subclasses. So I don't want to keep this as public because if I keep it as public public means
+
+147
+00:15:41,520 --> 00:15:47,760
+ universal access. Right. I still want to give access to someone in a restricted manner of inheritance
+
+148
+00:15:47,760 --> 00:15:54,640
+ and I can do that. How I'll say go to other and I'll say this is protected by one. That's fine.
+
+149
+00:15:54,640 --> 00:16:05,120
+ Task. I'll say extends. Other. I'll do the inheritance here. And just bear with me for a few
+
+150
+00:16:05,120 --> 00:16:09,680
+ for some time because we have not covered inheritance yet. But that's how we do inheritance. We're
+
+151
+00:16:09,680 --> 00:16:13,920
+ going to take it again with scratch from scratch. But for now, that's how we do inheritance in Java.
+
+152
+00:16:13,920 --> 00:16:18,880
+ Task extends so that this becomes the child class. This becomes the parent class. Right. But it's
+
+153
+00:16:18,880 --> 00:16:24,640
+ still an error because you forgot the ending point I said protected members of a class can be
+
+154
+00:16:24,640 --> 00:16:31,840
+ accessed outside of the package within subclasses. But only through inheritance. What does inheritance mean
+
+155
+00:16:31,840 --> 00:16:38,080
+ inheritance means as if the child class has a member as if it's its own. Right. It's deriving
+
+156
+00:16:38,080 --> 00:16:43,760
+ it from a super class. But as if the member is its own, that means you would have been able to call
+
+157
+00:16:43,760 --> 00:16:52,320
+ it. If you would have been accessing it with its own object, that's new task. Now works.
+
+158
+00:16:52,320 --> 00:17:02,640
+ Spend some time here after this video is done and think what is happening here. Right.
+
+159
+00:17:02,640 --> 00:17:07,520
+ Protected members can still be accessed out of the package. But in a special scenario,
+
+160
+00:17:07,520 --> 00:17:12,800
+ that is two inheritance in subclasses. So we did the subclass, but then this is inheritance. This
+
+161
+00:17:12,800 --> 00:17:16,720
+ is not because you're still calling it with the super class object. No, if you call it from the
+
+162
+00:17:16,720 --> 00:17:21,440
+ child class object, if it is accessible, you know, we are in for a special situation. And now that's
+
+163
+00:17:21,440 --> 00:17:26,480
+ the difference between protected and and package private. And you can put the protected
+
+164
+00:17:26,480 --> 00:17:31,360
+ specified with instance variables as well as I said, it applies to both members, methods and
+
+165
+00:17:31,360 --> 00:17:37,040
+ instance variables. And that's how it works. So now the third level of scope in Java is public.
+
+166
+00:17:37,040 --> 00:17:42,400
+ We already had a look at it. That is if it was public, if this was public, then we did not need
+
+167
+00:17:42,400 --> 00:17:48,080
+ to subclass it. We did not need to do anything else. It would be importable. And you can just go on
+
+168
+00:17:48,080 --> 00:17:54,000
+ and call it because public means universal. It can be access right through the package. It can
+
+169
+00:17:54,000 --> 00:17:58,720
+ be accessed in other classes and other packages. You don't need to do anything different. That's
+
+170
+00:17:58,720 --> 00:18:04,880
+ perfectly fine. All right. And the last scope, which is the most restricted scope in Java is private.
+
+171
+00:18:04,880 --> 00:18:11,920
+ And guess what private cannot be even accessed outside of the class in which it is declared,
+
+172
+00:18:11,920 --> 00:18:18,160
+ how can it be accessed from outside the package? That means, for example, if you had this other
+
+173
+00:18:18,160 --> 00:18:26,800
+ here. And for example, I declared a variable, private int length. And by the way, our instance
+
+174
+00:18:26,800 --> 00:18:33,600
+ variables of a class should always be declared private more on that later. But for now, just
+
+175
+00:18:33,600 --> 00:18:38,240
+ know that I've declared this as private. I'll tell you the reason why I said that in later
+
+176
+00:18:38,240 --> 00:18:44,560
+ video. But for now, it later as private, it can't be accessed even in the same package outside,
+
+177
+00:18:44,560 --> 00:18:50,640
+ outside the class. Let's say this is last another. I have a method white, do.
+
+178
+00:18:50,640 --> 00:18:59,760
+ And I am trying to access length. I'll say new other, which I can do dot length.
+
+179
+00:19:04,560 --> 00:19:10,240
+ It's equal to 90. What does it say? You hover on this. So it's length as private,
+
+180
+00:19:10,240 --> 00:19:16,080
+ access, and all back either cannot even be accessed from outside the class in the same package,
+
+181
+00:19:16,080 --> 00:19:21,200
+ remember, right? So these are the four levels for now. I'll just come in this, right? These are the
+
+182
+00:19:21,200 --> 00:19:26,720
+ full levels of scope in Java out of these three are just keywords, right? And I'll just
+
+183
+00:19:26,720 --> 00:19:33,280
+ try to create a table, which would be self-explanatory. That is which is accessible.
+
+184
+00:19:33,600 --> 00:19:39,280
+ Where, but that is about scope in Java, right? At the class level, only two scopes apply,
+
+185
+00:19:39,280 --> 00:19:44,400
+ that is a package private or public, there is no such concept as a protected or a private class
+
+186
+00:19:44,400 --> 00:19:51,680
+ in Java, right? Then at the member level, all four scopes apply. I'll see you in the next video.
+
+187
+00:19:51,680 --> 00:19:57,520
+ But, but as I said, just pause things, spend some time thinking about scope, try to manipulate
+
+188
+00:19:57,520 --> 00:20:02,160
+ my code, try to tinker with it, and then see how playful you can get.
+
