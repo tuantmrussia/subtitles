@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:12,000
+ All right, so we had a look in the last video about scope and where can you put scope in Java and how is it resolved.
+
+2
+00:00:12,000 --> 00:00:21,000
+ Let's move the discussion forward and talk about an interesting keyword in Java that is the keyword this. So for that, let's again.
+
+3
+00:00:21,000 --> 00:00:32,000
+ On your hands dirty as you've been seen in the entirety of the scores until now that that is I take up every topic with you with that it's completely hands on so.
+
+4
+00:00:32,000 --> 00:00:44,000
+ Let's just go on and in either of the packages that is ordered while we're all going to work and you know how packages work now let's go on and quickly create a new class and I'll just call it this.
+
+5
+00:00:44,000 --> 00:00:51,000
+ Let's say working with this.
+
+6
+00:00:51,000 --> 00:01:04,000
+ All right, so let's get this on your screen completely and what I'll do is obviously the customary main method and then I'll just have a couple of more methods.
+
+7
+00:01:04,000 --> 00:01:23,000
+ I'll just call it white funk that does something and then white MIT that does something. All right, and let's say this class has an instance variable and that instance variable is for example of the type double right.
+
+8
+00:01:23,000 --> 00:01:35,000
+ So I'll just say double my. Well, and you know that if we declare a variable of type double at the instance level it has the default value 0.0 right.
+
+9
+00:01:35,000 --> 00:01:44,000
+ So we don't need to really initialize it because it's already initialized obviously we might want to put in a different value but that is your your choice.
+
+10
+00:01:44,000 --> 00:01:56,000
+ So now if you want to use this variable inside main so so you know that we have to create its object and call it with the dot operator.
+
+11
+00:01:56,000 --> 00:02:21,000
+ So let's try to access it directly can we do that I'll say my value equal to 890.87 right and you immediately see it's an error it says this is not a local variable this is not a block variable and the only way to access it is with the dot operator because it belongs to an instance of of this classic belongs to an object of this class.
+
+12
+00:02:21,000 --> 00:02:40,000
+ So let's say double to access it directly right it gives you a different reason here non static feel my value cannot be referenced from a static contest I'll get there in a moment but the underlying reason is that is how can you access it here because it doesn't even exist because just go back in time and.
+
+13
+00:02:40,000 --> 00:02:59,000
+ We're discussing about instance variables I told you instance variables are created at the time and whenever an object of the class is created so this variable doesn't even exist how you accessing it right so it needs to be accessed the object but let's try to do the same thing inside funk.
+
+14
+00:02:59,000 --> 00:03:28,000
+ So let's say my well to 567.89 and wow it's it works here exactly the same syntax doesn't work in main works in funk and works in MIT as well let's put in different value just to access it or maybe you just try to access it I'll just say a sound and you say my well.
+
+15
+00:03:28,000 --> 00:03:37,000
+ This works but how does this work here and why does the same thing doesn't work here because still the same logic applies the object hasn't been created.
+
+16
+00:03:37,000 --> 00:03:49,000
+ And it doesn't exist yet and it has to be accessed with the dot operator following that object reference but you're just calling it like it's local variable of funk like so local variable with MIT what an earth is going on here.
+
+17
+00:03:49,000 --> 00:04:16,000
+ So, again to get to the root of the issue let me just first make you understand why is this working here right so what happens is that is inside and this is a note to be taken and that is inside every non static method of a class there is a reference to the currently executing object that is with the key word this.
+
+18
+00:04:16,000 --> 00:04:25,000
+ So what happens is that is that said this is a non static method white funk obviously main is static more on static in the next video but you now you know with this keyword made static always is.
+
+19
+00:04:25,000 --> 00:04:53,000
+ Funk is non static I although I could have kept it static but currently it's non static MIT is non static that means I'm telling you inside these methods which are non static there is a reference automatic implicit reference to the currently executing object that is with the key word.
+
+20
+00:04:53,000 --> 00:05:13,000
+ Now what is the currently executing object it is the object on which you have called the method from okay the currently executing object is the object on which you've called the method from so inside every method you have that implicit reference.
+
+21
+00:05:13,000 --> 00:05:28,000
+ See for now I'll just come in this and then come back to this I'll just create a object of working with this I'll call it rap and new working with this and then I'll say ref dot.
+
+22
+00:05:28,000 --> 00:05:57,000
+ So what is happening at this line is line number seven an object of working with this is created the reference is being put to re f right and within that object this instance variable also exist now because remember the start to exist once you create an object of the class that's exactly what we did at line number seven right now this variable and any other instance variables will start to exist but in this case there's just one instance variable of type double it's called my well.
+
+23
+00:05:57,000 --> 00:06:03,000
+ So my well exists whether default value that is 0.0 now you call funk.
+
+24
+00:06:03,000 --> 00:06:18,000
+ So we call funk and if inside funk we want to get to my bad right we want to call my well obviously the first step that would come to your mind is let's create one more object of this class I'll just call it.
+
+25
+00:06:18,000 --> 00:06:34,000
+ Other rep and let's him slice this and then call it with that I'll say sound other rep and let's put chemil case right as we always have been doing I'll say other rep dot my.
+
+26
+00:06:34,000 --> 00:06:37,000
+ So what would it print here.
+
+27
+00:06:37,000 --> 00:07:06,000
+ No surprises it would print 0.0 why because this is not the same my well that existed at line number seven why you created yet under the object it would have its own copy of the instance variables remember that point from that video right every object of the class has its own copy of the instance variables and this is a different my value talking about that's why it's 0.0 even if you had done before calling funk that is my well.
+
+28
+00:07:06,000 --> 00:07:10,000
+ Two 90 27.
+
+29
+00:07:10,000 --> 00:07:18,000
+ See inside starting methods we can call it with an object that's fine but we can't call it directly I'll tell you why in some time but you had.
+
+30
+00:07:18,000 --> 00:07:34,000
+ Put the value 90 put 87 into it but when you call it funk you're accessing my well this is not the same my well that you did on line of the end it's a different copy in this object and that's why it should give you 0.0 let me come in this right let's see do I get 0 1 0.
+
+31
+00:07:34,000 --> 00:07:54,000
+ And it says that it's problem with the other method other class let's come in that for now go back to working with this let's find this missing return statement this is end let's keep it to why this is from a previous previous.
+
+32
+00:07:54,000 --> 00:08:08,000
+ This is from a previous previous video etc and again this is white type not allowed here let's comment this as well and let me go and run this.
+
+33
+00:08:08,000 --> 00:08:23,000
+ So do you see this it just says 0.0 so for the ones who were expecting 90 put 87 that is not true that's not going to happen because as I told you it's a different copy of my well which resides in object which is referred to by other.
+
+34
+00:08:23,000 --> 00:08:35,000
+ But let's say more often than not you want to access the same variable you want to access that same object variable can you do that right even without doing this.
+
+35
+00:08:35,000 --> 00:08:59,000
+ So can I just say sound and have an access to the same my well that was accessible line number it obviously if you say ref dot my well it won't exist because ref is a local variable of main cannot be accessed outside main it tells you I don't know which are if you're talking about.
+
+36
+00:08:59,000 --> 00:09:09,000
+ So we can do that and if you say something like this new working with this dot my well it's a new object being created again 0.0 on your screen.
+
+37
+00:09:09,000 --> 00:09:18,000
+ New object new variable copy right but I still want to get an access to that same object from which I was being called that is fun.
+
+38
+00:09:18,000 --> 00:09:34,000
+ You have a magical implicit automatic reference to the currently executing object inside non static methods of class with the keyword this see and now you should get 90 point 87 here.
+
+39
+00:09:34,000 --> 00:10:02,000
+ That's it run again and off we go right, so this although I can't access ref because that's a local variable of main cannot be accessed outside but I still have an implicit way to access that object which was created in main with the keyword this and this also works right here say you can even say this dot my well and it should still print 90 point 87 twice.
+
+40
+00:10:02,000 --> 00:10:22,000
+ So obviously I do not call me t let me call that as well I can say even for calling this dot me t from that same object that you created at line number seven inside main you're able to access one your even able to access me t because why do you why do you want to create multiple objects, why do you want to.
+
+41
+00:10:22,000 --> 00:10:34,000
+ So memory when we can just get it done with just one object right and that is this remedy and it within this I'll say this door my well should still print that 90 point 87 and this.
+
+42
+00:10:34,000 --> 00:10:50,000
+ Right, so that is the keyword this that's the first usage of keyword this and I'll obviously walk you through the second usage in a different video but for now it is used to access the currently executing object and now getting back to the initial thing.
+
+43
+00:10:50,000 --> 00:11:08,000
+ I did this without this here here and here as well and you're seeing no errors it still works and the same output would be on the screen just have a look at this now how does this work right this is an implicit call to this that means.
+
+44
+00:11:08,000 --> 00:11:28,000
+ By behind the scenes is interpreted as this whether you write it or not this dot my val similarly here and similarly here it is interpreted as this dot my val just think about it automatically this dot is put in for you before the call right so whether you put it or not this
+
+45
+00:11:28,000 --> 00:11:47,000
+ dot my val and as far as my style goes I like it to be explicit because see someone else reading my program might think that this is a local variable of fun because that's how we call it without the dot operator without the object reference right but we know what's going on behind the scenes so let's make it explicit let's stick to.
+
+46
+00:11:47,000 --> 00:12:05,000
+ By creating confusion I'll just say this dot everywhere I'm accessing the currently executing objects properties right so device whether you write it or not it would still work and now getting back to the initial problem why does the same thing not work here.
+
+47
+00:12:05,000 --> 00:12:16,000
+ See even this dot my val doesn't work and directly doesn't work why that's going to be the first thing if I said this on my well I'll say doesn't.
+
+48
+00:12:16,000 --> 00:12:24,000
+ And why is that because just go back and and recollect what I told you initially in this video.
+
+49
+00:12:24,000 --> 00:12:36,000
+ The keyword this that is we have an implicit reference to the currently executing object inside only non static methods of a class and main happens to be static.
+
+50
+00:12:36,000 --> 00:12:48,000
+ One case non static images non strike that's why you were able to access it why because as per my that line definition the keyword this can not be used within static context.
+
+51
+00:12:48,000 --> 00:13:01,000
+ Right, and that's why it's an error you hover on this tells you of dot back to working with this or this cannot be referenced from a static countries the keyword this is restricted to be used only in non static context.
+
+52
+00:13:01,000 --> 00:13:12,000
+ It cannot be used and the reason is which I'll brief you through in the next video but for now you know what is the usage of the keyword this and where can we use it.
+
