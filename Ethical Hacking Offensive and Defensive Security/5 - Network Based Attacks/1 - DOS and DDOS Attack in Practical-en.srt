@@ -1,0 +1,304 @@
+1
+00:00:00,000 --> 00:00:12,120
+ This section, mostly we are concentrating in network based attacks that will be commonly
+
+2
+00:00:12,120 --> 00:00:22,400
+ used by the detectors to down the servos and do some other kind of attacks, like sniffing
+
+3
+00:00:22,400 --> 00:00:28,880
+ and all, so monitoring the user name's passwords in the network, so we will see briefly
+
+4
+00:00:28,880 --> 00:00:35,240
+ how the attackers will do the attacks one by one, first of all, we will discuss about
+
+5
+00:00:35,240 --> 00:00:51,960
+ the denial of service, the Dorset attacks, so let me open the canva and we will draw something
+
+6
+00:00:51,960 --> 00:01:09,560
+ and we will learn about the Dorset attacks, so let me take this is the web server, so
+
+7
+00:01:09,560 --> 00:01:16,880
+ let us think, it's not a high performance web server, only this web server can be able
+
+8
+00:01:16,880 --> 00:01:32,400
+ to handle only the 1000 reduced at a time, so now many machines like the 1000 machines,
+
+9
+00:01:32,400 --> 00:01:41,000
+ 1,000 accessing this web server, or do anything, take anything watch movies or downloading
+
+10
+00:01:41,000 --> 00:01:53,000
+ the uploading pictures, etc etc, and all, if anyone of the other users, 1000 and
+
+11
+00:01:53,000 --> 00:02:02,560
+ 1, if he tries to login, this web server can't able to provide service to this user because
+
+12
+00:02:02,560 --> 00:02:09,720
+ it can only handle only 1000 reduced at a time, so in the task attack, what the attacker
+
+13
+00:02:09,720 --> 00:02:21,440
+ will do, they will create a, they will send multiple request to the web server simultaneously
+
+14
+00:02:21,440 --> 00:02:31,720
+ within a few seconds, so now the server can't able to handle any of their request, so
+
+15
+00:02:31,720 --> 00:02:37,880
+ it will be shut down, so it will not give any results to anyone of them, okay, for an
+
+16
+00:02:37,880 --> 00:02:47,760
+ example, so let's take a human behavior, so if someone asks me, like how are you, why
+
+17
+00:02:47,760 --> 00:02:55,440
+ will say I am fine, so if two of them are coming and they are asking which food they are
+
+18
+00:02:55,440 --> 00:03:02,040
+ eating, and where you went, yesterday, so even I can able to answer within a few seconds
+
+19
+00:03:02,040 --> 00:03:07,680
+ answering one by one, if 10 people simultaneously asking what you did the rest of the
+
+20
+00:03:07,680 --> 00:03:14,120
+ day, so it's like an investigation, some police investigation phone, at that time I was
+
+21
+00:03:14,120 --> 00:03:19,960
+ unable to answer all the questions because it will be confusing for me, my mind will be
+
+22
+00:03:19,960 --> 00:03:26,880
+ frustrated, so I can't able to provide answers to everyone, so the same, the server will
+
+23
+00:03:26,880 --> 00:03:32,680
+ be thinking, okay, a lot of requests are coming, and I was unable to answer any of them,
+
+24
+00:03:32,680 --> 00:03:41,480
+ so it will be in a shut down state, it will go to the shut down state, okay, so once
+
+25
+00:03:41,480 --> 00:03:46,400
+ it gets shut down, so the administrator need to restart the service, and again they need
+
+26
+00:03:46,400 --> 00:03:52,440
+ to start the server, okay, we can do the dasa tag in our column machine, we have a lot
+
+27
+00:03:52,440 --> 00:03:58,760
+ of tools for doing the dasa tag, so don't worry about that, we will see in practical,
+
+28
+00:03:58,760 --> 00:04:10,480
+ so before that we will see the distributor denial of service, okay, so in dasa tag in dasa,
+
+29
+00:04:10,480 --> 00:04:18,600
+ so one computer it will send a n number of requests, okay, infinity number of requests used
+
+30
+00:04:18,600 --> 00:04:26,600
+ to the server, so the server will be shut down, so infinity number of requests used to the
+
+31
+00:04:26,600 --> 00:04:31,400
+ server, so the server will be unable to handle all the requests or the time, so it will
+
+32
+00:04:31,400 --> 00:04:37,920
+ be in a shut down, in the dasa tag there will be not one system, there will be a lot
+
+33
+00:04:37,920 --> 00:04:45,720
+ of machines, like n number of machines, it will send the request simultaneously to the
+
+34
+00:04:45,720 --> 00:04:53,120
+ web server, okay, so now the web server will be completely down, okay, this is the exact
+
+35
+00:04:53,120 --> 00:04:59,680
+ scenario, what will happen in dasa and dasa tag, so say discuss, we have a lot of tools
+
+36
+00:04:59,680 --> 00:05:05,360
+ to do that, the dasa tag is like a distributor denial of service, in the name we can understand,
+
+37
+00:05:05,360 --> 00:05:11,480
+ so distributed, we have a distributed computer, so we are using that computer and doing
+
+38
+00:05:11,480 --> 00:05:21,080
+ that, doing such a tags, so let's take a practical example here, so we have two machines
+
+39
+00:05:21,080 --> 00:05:28,240
+ and two or Kali, just note the one calling machine is 20, 24 point third version, the other
+
+40
+00:05:28,240 --> 00:05:34,840
+ Kali machine is 20, 24 point second versions, so what I am going to do, I am doing, I am
+
+41
+00:05:34,840 --> 00:05:44,040
+ going to do a dasa tag from 20, 24 point two to 20, 24 point three, okay, from that machine
+
+42
+00:05:44,040 --> 00:05:51,840
+ to this machine, okay, so if you see my IP, the IP was 18.3, so I just chartered the Apache
+
+43
+00:05:51,840 --> 00:06:07,700
+ to server in Kali Linux, so I already said, if there is a website, we can target that website
+
+44
+00:06:07,700 --> 00:06:18,200
+ and we can do our dasa tag, so now let's see my server IP will be, I am considering this
+
+45
+00:06:18,200 --> 00:06:26,600
+ machine as a web server and this is the attack term machine, 24.2, this is an attack
+
+46
+00:06:26,600 --> 00:06:33,440
+ term machine, okay, and now you can see the Apache was loading, there is a one web server
+
+47
+00:06:33,440 --> 00:06:54,020
+ was running and we have a lot of tools to do the DOS, so I was using a DDoS attack
+
+48
+00:06:54,020 --> 00:07:14,840
+ tool, so no worry, you can download that from GitHub, so here you can find an N number
+
+49
+00:07:14,840 --> 00:07:23,920
+ of tools for doing the DOS and DDoS attack, so whichever tools you are comfortable with,
+
+50
+00:07:23,920 --> 00:07:33,780
+ you can go for that tool and you can do the DOS, okay, so this is a good tool which I am
+
+51
+00:07:33,780 --> 00:07:45,600
+ using, so let's think of it, let's go inside the directory and let's check what was there,
+
+52
+00:07:45,600 --> 00:07:59,980
+ so DDoS attack.py and let's start the Python, so now you can see, when I start the
+
+53
+00:07:59,980 --> 00:08:10,720
+ executor the DDoS.py, it was asking for a target IP, we know we are going to group 4, sorry,
+
+54
+00:08:10,720 --> 00:08:24,940
+ we are going to do a DDoS attack for this service 192.6.18.3 and we need to search the target
+
+55
+00:08:24,940 --> 00:08:32,960
+ of port, so we can use just 84.43 whatever you can, you can set that, okay, before that
+
+56
+00:08:32,960 --> 00:08:46,300
+ let me start a wire shock here to monitor what's happening in our network, so let's start
+
+57
+00:08:46,300 --> 00:08:56,540
+ the wire shock here also, in both of the machine, so we can easily monitor what, what
+
+58
+00:08:56,540 --> 00:09:09,120
+ electricity speed was receiving, okay, so now the oil shock was started and let me close
+
+59
+00:09:09,120 --> 00:09:19,640
+ other tabs, I will post this also, let's start this and let's start this, so currently
+
+60
+00:09:19,640 --> 00:09:41,940
+ there is no like used, so let's do a DDoS, so the attack was going to start, it's a 50
+
+61
+00:09:41,940 --> 00:09:57,100
+ days now and 75% days, so now see once the attack gets started, so you can see a large number
+
+62
+00:09:57,100 --> 00:10:06,740
+ of executors coming from 192.16.18.27, so in this machine, so you can in 24.2 machine, you
+
+63
+00:10:06,740 --> 00:10:12,900
+ can easily find out, so in the source IP sending some rectus to the destination, it's a
+
+64
+00:10:12,900 --> 00:10:20,260
+ huge number of rectus, let's stop this, so within a few seconds you can see, there's
+
+65
+00:10:20,260 --> 00:10:29,100
+ a 81,000 something packets were sent to different different ports, 14.3, 79 and different
+
+66
+00:10:29,100 --> 00:10:33,700
+ different ports, so now you can see a lot and a lot of rectus was coming up with enough
+
+67
+00:10:33,700 --> 00:10:43,640
+ few seconds, it was coming from 18.27 IP and it was receiving to 18.3 IP, so now you can
+
+68
+00:10:43,640 --> 00:10:50,500
+ understand, so there is a lot of rectus targeting this server and it was giving some
+
+69
+00:10:50,500 --> 00:11:04,700
+ rectus, so this server can't able to handle this rectus and the server will be easily shut
+
+70
+00:11:04,700 --> 00:11:21,100
+ up, it will take some time to completely get down this server, okay, so now you can find
+
+71
+00:11:21,100 --> 00:11:26,100
+ it, the source IP and the source Mac destination Mac, so it's a dummy, it looks like a dummy
+
+72
+00:11:26,100 --> 00:11:35,540
+ packet, something will be inside this packet, okay, so this is the explanation for a DOS and
+
+73
+00:11:35,540 --> 00:11:40,580
+ DRAS attack, we have seen this in practical how to do, do this, so if you have a lab you
+
+74
+00:11:40,580 --> 00:11:46,700
+ can also try to do this task and you can understand what will come here and you can also
+
+75
+00:11:46,700 --> 00:11:54,140
+ you can investigate through OSHA, okay, so let's hop of this video and we will continue
+
+76
+00:11:54,140 --> 00:11:57,420
+ our network based attack in our next video. Thank you, bye bye.
+
