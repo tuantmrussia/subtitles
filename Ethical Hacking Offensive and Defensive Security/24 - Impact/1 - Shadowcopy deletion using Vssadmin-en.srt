@@ -1,0 +1,424 @@
+1
+00:00:00,000 --> 00:00:10,280
+ Hey guys, welcome to the last topic of MITRE, the impact section.
+
+2
+00:00:10,280 --> 00:00:21,240
+ So in this video, we are going to discuss about the shadow copies in the Windows mission.
+
+3
+00:00:21,240 --> 00:00:32,320
+ So if you see, before deploying the ransomware, before encrypting a machine, what the
+
+4
+00:00:32,320 --> 00:00:34,560
+ protectors will do, okay.
+
+5
+00:00:34,560 --> 00:00:41,160
+ So let us say you have, you have successfully compromised one of our organization.
+
+6
+00:00:41,160 --> 00:00:44,680
+ And the data in the organization is really important, right?
+
+7
+00:00:44,680 --> 00:00:49,160
+ Anyway, you are going to exfiltrate the data into the cloud application and you are going
+
+8
+00:00:49,160 --> 00:00:57,320
+ to encrypt all the important files and folders present inside the machine.
+
+9
+00:00:57,320 --> 00:01:02,120
+ So how the organization will pay their ransom amount for you?
+
+10
+00:01:02,120 --> 00:01:03,800
+ They need their data, right?
+
+11
+00:01:03,800 --> 00:01:11,600
+ They need their data back and the data should not be in an encrypted format.
+
+12
+00:01:11,600 --> 00:01:21,920
+ So if let us say, you have successfully encrypted all the data, okay.
+
+13
+00:01:21,920 --> 00:01:32,760
+ But the organization already have the backup file in another server or a cloud platform.
+
+14
+00:01:32,760 --> 00:01:35,240
+ They can rebuild the machine.
+
+15
+00:01:35,240 --> 00:01:39,200
+ Once you encrypted the machine, they can easily rebuild the machine with the backup files.
+
+16
+00:01:39,200 --> 00:01:43,200
+ They have a backup files, they don't need to pay their ransom amount to you because they
+
+17
+00:01:43,200 --> 00:01:44,200
+ have a backup file.
+
+18
+00:01:44,200 --> 00:01:49,720
+ They can easily backup all the files inside, uh, into the Windows mission.
+
+19
+00:01:49,720 --> 00:01:54,920
+ So the exfiltration, you are exfilted the exfilted the, uh, since you data, that is one
+
+20
+00:01:54,920 --> 00:01:55,920
+ of the thing.
+
+21
+00:01:55,920 --> 00:02:03,800
+ But what organization will think, uh, the system is also encrypted and, uh, to decrypt
+
+22
+00:02:03,800 --> 00:02:09,240
+ the data, you will be asking some money as a hacker, as a ransomware, that, uh, you will
+
+23
+00:02:09,240 --> 00:02:19,280
+ be going to ask some money to provide a description key, uh, sorry, decryption key to the organization.
+
+24
+00:02:19,280 --> 00:02:22,080
+ And uh, what organization will think?
+
+25
+00:02:22,080 --> 00:02:25,880
+ So they have, they already have a backup files.
+
+26
+00:02:25,880 --> 00:02:28,320
+ So why they need to pay the money for you, right?
+
+27
+00:02:28,320 --> 00:02:33,600
+ So they can easily rebuild the machine, uh, reinstall the windows and they can easily
+
+28
+00:02:33,600 --> 00:02:34,600
+ backup all the files.
+
+29
+00:02:34,600 --> 00:02:35,600
+ Right?
+
+30
+00:02:35,600 --> 00:02:42,360
+ So this, there is a problem for, uh, a ransomware detector, uh, so there is one solution
+
+31
+00:02:42,360 --> 00:02:48,880
+ for, uh, hackers, so every backup files, okay.
+
+32
+00:02:48,880 --> 00:02:56,280
+ So if windows sending any backup files, uh, to the cloud, we will be calling it as a shadow
+
+33
+00:02:56,280 --> 00:02:57,280
+ copies.
+
+34
+00:02:57,280 --> 00:03:03,560
+ So the shadow copies is nothing but the shadow copy file only knows which file
+
+35
+00:03:03,560 --> 00:03:08,320
+ and folders belongs to which directory, basically, okay.
+
+36
+00:03:08,320 --> 00:03:14,240
+ So it's basically like a, uh, blueprint of the entire, uh, file system inside your
+
+37
+00:03:14,240 --> 00:03:15,240
+ windows machine.
+
+38
+00:03:15,240 --> 00:03:22,560
+ So the shadow copies know which file and which, uh, folders will be sitting in, see,
+
+39
+00:03:22,560 --> 00:03:25,920
+ see directory or a D directory or a E directory or anything.
+
+40
+00:03:25,920 --> 00:03:32,920
+ So if you deleted the shadow copy from the machine, so still, if you have a backup file,
+
+41
+00:03:32,920 --> 00:03:38,680
+ your computer would not be able to backup all the files, uh, from the cloud or any server
+
+42
+00:03:38,680 --> 00:03:41,400
+ platforms, okay.
+
+43
+00:03:41,400 --> 00:03:49,720
+ So the backup file is a, the shadow copy file is a blueprint of all the files present inside
+
+44
+00:03:49,720 --> 00:03:50,720
+ the windows machine.
+
+45
+00:03:50,720 --> 00:03:58,920
+ So if you deleted the shadow copies, okay, so if you deleted the shadow copy of a machine,
+
+46
+00:03:58,920 --> 00:04:05,640
+ so if you have a backup file also, you can't able to recover, uh, recover the file inside
+
+47
+00:04:05,640 --> 00:04:11,320
+ the host, okay, because the blueprint has been deleted.
+
+48
+00:04:11,320 --> 00:04:16,920
+ The windows doesn't know where to keep this file, uh, inside the machine, okay.
+
+49
+00:04:16,920 --> 00:04:22,960
+ So shadow copies are, uh, most important thing, uh, they will do when they are, uh,
+
+50
+00:04:22,960 --> 00:04:27,480
+ when they are targeting, uh, around somewhere inside the machine, okay.
+
+51
+00:04:27,480 --> 00:04:32,640
+ So you can see adversaries may delete or remove the built-in data, turn off services designed
+
+52
+00:04:32,640 --> 00:04:35,920
+ to aid off recovery of a character's, this character system.
+
+53
+00:04:35,920 --> 00:04:41,480
+ So if the system was corrupted, if the system was encrypted or corrupted, uh, corrupted.
+
+54
+00:04:41,480 --> 00:04:47,040
+ So if you need to take a backup from your, uh, server or a cloud platform, the shadow
+
+55
+00:04:47,040 --> 00:04:51,560
+ copies will be one of the important thing, uh, to do a backup.
+
+56
+00:04:51,560 --> 00:05:01,360
+ So if you do not have a shadow copies, your system could not able to recover the data from
+
+57
+00:05:01,360 --> 00:05:07,720
+ the cloud and the system could not know which files, which files, uh, needs to keep in
+
+58
+00:05:07,720 --> 00:05:14,760
+ which folder or which, uh, files belongs to which directory, okay.
+
+59
+00:05:14,760 --> 00:05:22,040
+ So we are going to delete a blueprint, uh, the entire blueprint, uh, of the file system.
+
+60
+00:05:22,040 --> 00:05:25,040
+ So basically, uh, we'll, we'll say, okay.
+
+61
+00:05:25,040 --> 00:05:29,320
+ So deleting the where volume shadow copies is one of the primary target of the threat
+
+62
+00:05:29,320 --> 00:05:30,320
+ factors.
+
+63
+00:05:30,320 --> 00:05:36,000
+ If they, if they need to install the ransomware inside the environment, if they need to encrypt
+
+64
+00:05:36,000 --> 00:05:42,340
+ the data inside the organization, okay, before encrypting the data, they, their target is
+
+65
+00:05:42,340 --> 00:05:46,560
+ like, they need to delete all the backup related things.
+
+66
+00:05:46,560 --> 00:05:52,000
+ The organization should not go for a backup so that they'll be deleting the shadow copies,
+
+67
+00:05:52,000 --> 00:05:53,000
+ okay.
+
+68
+00:05:53,000 --> 00:05:56,400
+ So that was an easy thing, uh, deleting the shadow copies, okay.
+
+69
+00:05:56,400 --> 00:06:02,480
+ So already we, we, we, we just, uh, took the impact and, uh, the simple command is like
+
+70
+00:06:02,480 --> 00:06:05,520
+ VSS, uh, VSS are been delete shadows, okay.
+
+71
+00:06:05,520 --> 00:06:13,080
+ Let me list, uh, the shadow of VSS, I mean, list shadows.
+
+72
+00:06:13,080 --> 00:06:35,360
+ So my system do not have a, uh, shadow copies, let me, so if you, so, if you see,
+
+73
+00:06:35,360 --> 00:06:38,700
+ you don't have a correct permission to run this command.
+
+74
+00:06:38,700 --> 00:06:57,580
+ Let me run this is an administrator format, so no item phone, uh, satisfy the query because
+
+75
+00:06:57,580 --> 00:07:04,000
+ I do not have any kind of recovery, uh, software for any kind of recovery, uh, in recovery,
+
+76
+00:07:04,000 --> 00:07:08,000
+ uh, programs that was installed to take a back of, uh, about my mission.
+
+77
+00:07:08,000 --> 00:07:09,520
+ So this is the test mission.
+
+78
+00:07:09,520 --> 00:07:15,360
+ I didn't did that, uh, but the organization missions will be take a backup every day, uh,
+
+79
+00:07:15,360 --> 00:07:17,380
+ at the particular time, okay.
+
+80
+00:07:17,380 --> 00:07:22,640
+ So deleting the val, valing shadow copies is one of the important thing, uh, for a threat
+
+81
+00:07:22,640 --> 00:07:23,640
+ type does, okay.
+
+82
+00:07:23,640 --> 00:07:30,360
+ So here it's nothing but VSS admin, it's one of, uh, the, uh, command line features.
+
+83
+00:07:30,360 --> 00:07:32,820
+ So administrator command line tool, okay.
+
+84
+00:07:32,820 --> 00:07:37,880
+ So you just need to give the parameter, uh, like delete shadows, okay.
+
+85
+00:07:37,880 --> 00:07:41,280
+ So it will delete the shadow copy from the C directory.
+
+86
+00:07:41,280 --> 00:07:56,320
+ So if you, you, this command, yes, it's, uh, delete.
+
+87
+00:08:02,820 --> 00:08:24,500
+ I think I, uh, yeah, command or site, if you, you this command, it will delete the shadow
+
+88
+00:08:24,500 --> 00:08:25,500
+ copies.
+
+89
+00:08:25,500 --> 00:08:26,500
+ Okay.
+
+90
+00:08:26,500 --> 00:08:30,100
+ If you, if you want to delete all the shadow copies, uh, from the mission, you can simply
+
+91
+00:08:30,100 --> 00:08:31,100
+ type all, okay.
+
+92
+00:08:31,100 --> 00:08:33,560
+ It will delete all the shadow copies, okay.
+
+93
+00:08:33,560 --> 00:08:38,620
+ By deleting the shadow copies, your system could not able to take a backup from the, uh,
+
+94
+00:08:38,620 --> 00:08:44,720
+ cloud platform or any, uh, any kind of servers, uh, if it, if it's, it's the system
+
+95
+00:08:44,720 --> 00:08:45,720
+ was corrupted.
+
+96
+00:08:45,720 --> 00:08:46,720
+ Okay.
+
+97
+00:08:46,720 --> 00:08:52,720
+ So the organization, uh, the organization will be blank, because they have deleted the shadows.
+
+98
+00:08:52,720 --> 00:08:56,920
+ They can't able to take a backup, they, they do not, they, they are like blank.
+
+99
+00:08:56,920 --> 00:09:02,640
+ They, needs to pay the amount to you and they need to take a key from your, uh, key from
+
+100
+00:09:02,640 --> 00:09:03,640
+ you.
+
+101
+00:09:03,640 --> 00:09:04,640
+ Right.
+
+102
+00:09:04,640 --> 00:09:10,720
+ Uh, yeah, let's, uh, yeah, this is the scenario.
+
+103
+00:09:10,720 --> 00:09:17,040
+ So once they, once the, once the detector has a tactics to install the ransomware inside the
+
+104
+00:09:17,040 --> 00:09:18,040
+ environment, okay.
+
+105
+00:09:18,040 --> 00:09:21,560
+ I hope you have a clear understanding about this, uh, we'll connect you guys in a next
+
+106
+00:09:21,560 --> 00:09:24,800
+ video with WMI-V. Okay.
+
