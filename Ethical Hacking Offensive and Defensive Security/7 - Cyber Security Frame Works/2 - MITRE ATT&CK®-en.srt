@@ -1,0 +1,504 @@
+1
+00:00:00,000 --> 00:00:07,760
+ Hey guys, welcome to another video, so we previously discussed the cyberkill chain.
+
+2
+00:00:07,760 --> 00:00:14,640
+ So in this video, we will discuss about the Mitrotax framework, so that was commonly used
+
+3
+00:00:14,640 --> 00:00:21,960
+ in scheduling the EDR rules, detection engineering, MDR, XPRs, everything, everywhere
+
+4
+00:00:21,960 --> 00:00:29,960
+ you can see the rule based on Mitrotax framework, because if you see a cyberkill chain,
+
+5
+00:00:29,960 --> 00:00:36,320
+ there is only a seven tactics are there, right, common weaponization, delivery, seven
+
+6
+00:00:36,320 --> 00:00:45,040
+ methods are there, but if we see in Mitrotax, there will be 14 tactics, it will be there,
+
+7
+00:00:45,040 --> 00:00:46,040
+ okay.
+
+8
+00:00:46,040 --> 00:00:52,560
+ This is a detailed exploration, detailed explanation, if it is comparing the difference
+
+9
+00:00:52,560 --> 00:00:57,280
+ between the cyberkill chain and Mitrotax, Mitrotax will be a bus thing, so it will, because
+
+10
+00:00:57,280 --> 00:01:06,000
+ it will give a detailed explanation of attacker how they will achieve their goal to attack
+
+11
+00:01:06,000 --> 00:01:12,960
+ the organization, okay, so basically in my turn, so this is the, I am not discussing about
+
+12
+00:01:12,960 --> 00:01:22,720
+ this kind of things and, okay, so let us, let us learn what are the things we need in
+
+13
+00:01:22,720 --> 00:01:28,200
+ Mitrot, okay, there is a three things, one is for tactics and another one is for technique
+
+14
+00:01:28,200 --> 00:01:34,640
+ and another one is a TT procedure, okay, tactics, techniques and procedure, okay, so basically
+
+15
+00:01:34,640 --> 00:01:43,400
+ we will call, this is a TT, TT, TTP, yes, TT, static, technique and procedures, so we can
+
+16
+00:01:43,400 --> 00:01:50,640
+ see the tactic is like a reconnaissance, resource development, initial access, execution,
+
+17
+00:01:50,640 --> 00:01:56,160
+ poor system privilege, escalation, defense evasion, this all the things we can say, it
+
+18
+00:01:56,160 --> 00:02:01,920
+ is a tactics, okay, so see in cyberkill chain, there is only a recon and we will directly
+
+19
+00:02:01,920 --> 00:02:06,520
+ go for our pronunciation, delivery and exploration, initial access, sorry, exploitation and
+
+20
+00:02:06,520 --> 00:02:14,760
+ initial access, but in Mitrot framework, there is lot and lot of tactics, tactics will
+
+21
+00:02:14,760 --> 00:02:20,920
+ be there, okay, so we can learn all the tactics in a optimization, one by one, so the privilege
+
+22
+00:02:20,920 --> 00:02:26,440
+ escalation, how they will achieve, different evasion, how they will do, everything, everything
+
+23
+00:02:26,440 --> 00:02:37,880
+ we can see there, okay, so probably this is the things, we can, we can say this is a tactics
+
+24
+00:02:37,880 --> 00:02:43,600
+ and insert the tactics, tactics, you can see different techniques, so if it is a reconnaissance,
+
+25
+00:02:43,600 --> 00:02:49,920
+ how the protector will do the recon, using the active scan or which technique they will
+
+26
+00:02:49,920 --> 00:02:59,560
+ use, gather victim information through LinkedIn or any social engineering, like exploring
+
+27
+00:02:59,560 --> 00:03:06,040
+ the Instagram or Facebook or anything, how the protector will achieve the reconnaissance
+
+28
+00:03:06,040 --> 00:03:13,800
+ or phishing for information like your setting some phishing link to the victim and once
+
+29
+00:03:13,800 --> 00:03:19,480
+ a victim gets logged in, so you will get the credentials, that depends upon which technique
+
+30
+00:03:19,480 --> 00:03:27,800
+ you are using and the procedure, sorry, and the procedures like, so if I give the execution
+
+31
+00:03:27,800 --> 00:03:33,240
+ part, if I click on the technique, this is the execution tactics and the technique will
+
+32
+00:03:33,240 --> 00:03:38,400
+ be the, there is wooden techniques and I will click one of the technique, so you can see
+
+33
+00:03:38,400 --> 00:03:43,240
+ command and scripting that product, so these are the procedures, okay, procedures will give
+
+34
+00:03:43,240 --> 00:03:51,240
+ a detailed explanation, how the goal will be, how the protector will achieve their goal,
+
+35
+00:03:51,240 --> 00:03:56,880
+ exactly, okay, so whether they will use a PowerShell or whether they use any other visual
+
+36
+00:03:56,880 --> 00:04:04,440
+ basics, based applications or anything, okay, so how exactly the protector will achieve
+
+37
+00:04:04,440 --> 00:04:09,920
+ their goal in the execution, okay, so this will give a very detailed explanation comparing
+
+38
+00:04:09,920 --> 00:04:14,800
+ to the cybercoaching, so sometime in interview, they will ask the questions like, so
+
+39
+00:04:14,800 --> 00:04:19,560
+ whether you will use a cybercoaching or MITRE, so your answers should be a MITRE because
+
+40
+00:04:19,560 --> 00:04:25,040
+ MITRE will give a detailed explanation of the protector, how they will operate and how
+
+41
+00:04:25,040 --> 00:04:32,080
+ they will achieve their goal, achieve their goal to attack the organization, okay, this
+
+42
+00:04:32,080 --> 00:04:36,440
+ will give a very detailed explanation like each and every technique that the attackers
+
+43
+00:04:36,440 --> 00:04:46,480
+ will use for it, okay, so let me explain each and every tactics here so that you can,
+
+44
+00:04:46,480 --> 00:04:53,160
+ you have some idea about this, okay, so let's start with the recognizance, so recognizance
+
+45
+00:04:53,160 --> 00:04:58,920
+ is, we know it's a, it's a information gathering, so you can gather information from
+
+46
+00:04:58,920 --> 00:05:04,920
+ any way like you can scan the machine or you can do some other recognizance like you can
+
+47
+00:05:04,920 --> 00:05:12,680
+ use the multigo or you can go for a Facebook Instagram or whatever social, social engineering
+
+48
+00:05:12,680 --> 00:05:19,400
+ things and social medias, so you can use any tools for your account to gather, about, gather
+
+49
+00:05:19,400 --> 00:05:26,960
+ the victim information, okay, once you gather the victim information, you need to develop
+
+50
+00:05:26,960 --> 00:05:33,520
+ the resource, so what are the resource you need to, you need for attacking the organization
+
+51
+00:05:33,520 --> 00:05:38,480
+ right, so you need to develop your own program, your own code or your own malware, whatever
+
+52
+00:05:38,480 --> 00:05:43,480
+ you can say, you have to develop that and the third thing, the initial access, the initial
+
+53
+00:05:43,480 --> 00:05:49,640
+ access will be, how you are getting into the machine like whether you are using the phishing
+
+54
+00:05:49,640 --> 00:05:56,840
+ or you can doing some external remote service like RDB or anything, okay, some code injections
+
+55
+00:05:56,840 --> 00:06:01,040
+ or anything, the initial access, what techniques you are following, for example the phishing,
+
+56
+00:06:01,040 --> 00:06:06,760
+ you are sending a spam email to your victim in the outlook and you are when the victim
+
+57
+00:06:06,760 --> 00:06:12,920
+ click on the link, so now the code will be executed on the victim machine, so that's the
+
+58
+00:06:12,920 --> 00:06:17,120
+ one way, so we can discuss everything in the initial access of the upcoming videos, I just
+
+59
+00:06:17,120 --> 00:06:22,040
+ give you some examples, don't worry about that, so if you are afraid, don't worry about
+
+60
+00:06:22,040 --> 00:06:27,680
+ that, okay, the next execution will be how you are executing your code, how you are executing
+
+61
+00:06:27,680 --> 00:06:33,000
+ your malware instead of the machine, okay, after executing, the next technique will be
+
+62
+00:06:33,000 --> 00:06:40,280
+ the persistence, so persistence is like when the victim shut down or restarted their
+
+63
+00:06:40,280 --> 00:06:46,400
+ machine, so your malware will be terminated, your malware will be deleted from the memory,
+
+64
+00:06:46,400 --> 00:06:51,760
+ so you will not get any reverse connection from the malware, so you can't able to control
+
+65
+00:06:51,760 --> 00:06:58,440
+ the victim machine, control the target machine, so what you are doing, you need some
+
+66
+00:06:58,440 --> 00:07:06,280
+ persistent connection from the victim machine, so you can use some techniques to be
+
+67
+00:07:06,280 --> 00:07:11,520
+ a persistence, if the victim restarted or the machine also, you will be getting the command
+
+68
+00:07:11,520 --> 00:07:18,360
+ and control probably, if the victim rebooted or restarted their machine, so you will
+
+69
+00:07:18,360 --> 00:07:24,120
+ get command and connections, okay, so next thing will be the privilege escalation, privilege
+
+70
+00:07:24,120 --> 00:07:29,880
+ escalation is like if you are in a user privilege, you can move to the administrator privilege,
+
+71
+00:07:29,880 --> 00:07:34,320
+ it's an example of college, let me take an example of a college, so there's a student
+
+72
+00:07:34,320 --> 00:07:41,160
+ ID and a principal head of the department, stuff, everything, everything, every people
+
+73
+00:07:41,160 --> 00:07:47,400
+ are there, right, so if you are in a student ID, so you need to move to the principal
+
+74
+00:07:47,400 --> 00:07:55,680
+ privilege, so you can do some techniques and you can easily get the administrator privilege
+
+75
+00:07:55,680 --> 00:08:03,960
+ user to the administrator privilege, administrator to the super admin privilege, okay, so
+
+76
+00:08:03,960 --> 00:08:12,720
+ you can see that in the privilege escalation tactics, and let's discuss about the defense
+
+77
+00:08:12,720 --> 00:08:18,840
+ evasion, defense evasion is like your turning of the, if you are disabling the defenders
+
+78
+00:08:18,840 --> 00:08:26,280
+ or you are bypassing the anti-wares platform or any EDR platform they are using, okay, so
+
+79
+00:08:26,280 --> 00:08:30,280
+ next we have a credential access, the defense evasion is like bypassing the anti-wares
+
+80
+00:08:30,280 --> 00:08:35,320
+ or firewalls or whatever you can call, so next thing will be a credential access, so once
+
+81
+00:08:35,320 --> 00:08:41,960
+ you get into the machine you can steal the browser credentials, you can take the victim targeted
+
+82
+00:08:41,960 --> 00:08:48,880
+ browser credentials, example the Facebook, Instagram passwords or the Windows machine
+
+83
+00:08:48,880 --> 00:08:54,360
+ passwords or any passwords you want, you can gather the information, credential information
+
+84
+00:08:54,360 --> 00:09:01,080
+ from the victim machine and discover it's like if you want to do, if you want to hack
+
+85
+00:09:01,080 --> 00:09:07,560
+ other machines inside the organization, you can do some scanning, so what are the machines
+
+86
+00:09:07,560 --> 00:09:12,960
+ are present inside the network and which machines will be the active directory, which
+
+87
+00:09:12,960 --> 00:09:19,800
+ machine will be the, which machine we can hack, we can do our next exploit, next exploitations,
+
+88
+00:09:19,800 --> 00:09:25,600
+ you can scanning the internal host basically, it's discovery like that, lateral movement
+
+89
+00:09:25,600 --> 00:09:31,640
+ is like once you have the information, like you will get enough information from the discovery
+
+90
+00:09:31,640 --> 00:09:36,080
+ part, like what are the machines are available in the internet, so which are the machines
+
+91
+00:09:36,080 --> 00:09:43,000
+ are we can hack, okay, so once you got some information, you are trying to move from
+
+92
+00:09:43,000 --> 00:09:50,960
+ one machine to another, you have done one machine, you need to hack another machine
+
+93
+00:09:50,960 --> 00:09:55,680
+ instead of organization, so what you are doing, by using the lateral movement tactics,
+
+94
+00:09:55,680 --> 00:10:00,840
+ you can move from one machine to another, that's how you are doing your discovery part,
+
+95
+00:10:00,840 --> 00:10:05,280
+ so discovery, you are scanning the internal network and you are discovering what are the
+
+96
+00:10:05,280 --> 00:10:10,080
+ machines are live in the internal network and you are hacking one by, you are going to
+
+97
+00:10:10,080 --> 00:10:14,680
+ hack the machines one by one, okay, to one by one, inside the organization, so that's
+
+98
+00:10:14,680 --> 00:10:20,120
+ a lateral movement, so once you get all the machines, you are collecting the information,
+
+99
+00:10:20,120 --> 00:10:25,800
+ okay, you are collecting, so if you want to exfiltered, if you want to exfiltered the data
+
+100
+00:10:25,800 --> 00:10:32,960
+ into the public cloud or if you want to gather all the confidential documents, informations,
+
+101
+00:10:32,960 --> 00:10:40,040
+ videos, presentations from the company to move it to the cloud, to move it to our server,
+
+102
+00:10:40,040 --> 00:10:45,560
+ you are collecting all the information what you want, okay, so that's basically a collection,
+
+103
+00:10:45,560 --> 00:10:50,080
+ so you are collecting the information, whatever you want from the company, and the command
+
+104
+00:10:50,080 --> 00:10:55,960
+ and control will be, you are using the, that party applications like the any desk, team
+
+105
+00:10:55,960 --> 00:11:03,260
+ we were, so RDP like that, so the screen will be visible to you, okay, you can easily
+
+106
+00:11:03,260 --> 00:11:11,640
+ control the machine from the command and control, it's like, you can execute whatever you
+
+107
+00:11:11,640 --> 00:11:17,360
+ want, you can do whatever you want, okay, in command and control, so next we have an
+
+108
+00:11:17,360 --> 00:11:23,280
+ exfiltration, exfiltration is like a, so you are transferring the data, so what are
+
+109
+00:11:23,280 --> 00:11:29,160
+ the data, so you have collected and you are transferring all the data into your cloud, okay,
+
+110
+00:11:29,160 --> 00:11:35,840
+ into your cloud platform, or into your server, into your computer, okay, so you can gather
+
+111
+00:11:35,840 --> 00:11:42,720
+ all the credentials, for example, you gathered a, you gathered a, those are based, those
+
+112
+00:11:42,720 --> 00:11:47,480
+ are credentials from the credential access, and you are collecting the, those are credentials
+
+113
+00:11:47,480 --> 00:11:51,880
+ by using the exfiltration, you are uploading the username and password into your server,
+
+114
+00:11:51,880 --> 00:11:56,920
+ so that's an exfiltration, and impact is like basically you are installing the ransomware,
+
+115
+00:11:56,920 --> 00:12:03,240
+ and we are deleting the shadow copies, deleting the files in the organizations, deleting
+
+116
+00:12:03,240 --> 00:12:08,600
+ the backups, and deleting everything, so doing, modifying the machine, so doing whatever
+
+117
+00:12:08,600 --> 00:12:14,440
+ you want, okay, that's an impact, so there is a few tactics and techniques are there,
+
+118
+00:12:14,440 --> 00:12:24,040
+ so we have seen everything, we can see the detailed attacks in practical in upcoming videos,
+
+119
+00:12:24,040 --> 00:12:30,160
+ let's hop off this video and we will continue our discussion, our continue our practical
+
+120
+00:12:30,160 --> 00:12:35,160
+ things in the next video, so in the next section, see you guys, I hope you have cleared
+
+121
+00:12:35,160 --> 00:12:41,320
+ about the, you have a clear understanding about the miter attack framework, okay, so if
+
+122
+00:12:41,320 --> 00:12:45,880
+ any of them ask the questions like, in interview like, if any of them ask like, whether
+
+123
+00:12:45,880 --> 00:12:50,840
+ you will be using the cybercloud chain or a miter, so your answers be a miter, because
+
+124
+00:12:50,840 --> 00:12:55,400
+ miter will give the detailed explanation of each and everything, so every tactics, techniques,
+
+125
+00:12:55,400 --> 00:13:01,160
+ and procedures, so you can follow that, okay, so that's all guys from my side, we'll hop off,
+
+126
+00:13:01,160 --> 00:13:06,600
+ and we will continue our practical in our next session, you guys, bye bye.
+
