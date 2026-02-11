@@ -1,0 +1,376 @@
+1
+00:00:00,000 --> 00:00:06,080
+ Hi, I'll show you how to use Agent mode of cursor got the data.
+
+2
+00:00:06,080 --> 00:00:11,080
+ So you can enable Agent mode right here.
+
+3
+00:00:11,080 --> 00:00:15,040
+ And you can use Agent mode for complex coding tasks.
+
+4
+00:00:15,040 --> 00:00:21,240
+ Your agent automatically exports your codebase, we'll do address across multiple files,
+
+5
+00:00:21,240 --> 00:00:25,800
+ run some commands, and we'll fix errors to complete your request.
+
+6
+00:00:25,800 --> 00:00:32,600
+ So let's go through some popular use cases of Agent mode.
+
+7
+00:00:32,600 --> 00:00:39,280
+ In this case, you can use it to reflect big parts of your code in your codebase.
+
+8
+00:00:39,280 --> 00:00:46,240
+ For example, you can replace the using libraries in your application.
+
+9
+00:00:46,240 --> 00:00:53,080
+ Imagine you have a lot of files which use some API library, some library to make API calls,
+
+10
+00:00:53,080 --> 00:00:59,000
+ and you want to replace it. So instead of making it manually through I know 10, 20 files,
+
+11
+00:00:59,000 --> 00:01:06,760
+ you can ask cursor agent to do it for you and it will do other deployments automatically.
+
+12
+00:01:06,760 --> 00:01:11,000
+ You just need to mention what library you want to use instead of Fish Library and he will find
+
+13
+00:01:11,000 --> 00:01:18,920
+ all the places need to be updated. But don't remember to provide really clear instructions,
+
+14
+00:01:18,920 --> 00:01:25,240
+ otherwise it won't understand you and can do some things you know to really expect.
+
+15
+00:01:25,240 --> 00:01:28,440
+ You can also plan and implement new features.
+
+16
+00:01:28,440 --> 00:01:34,680
+ You can ask the login form to your application using, for example, some authentication provider
+
+17
+00:01:34,680 --> 00:01:38,520
+ like Firebase or Superbase to your project.
+
+18
+00:01:38,520 --> 00:01:46,680
+ Until automatically creates the client files with the library, it automatically creates the layout
+
+19
+00:01:46,680 --> 00:01:53,320
+ with the form automatically creates the logic for the login screen, so you just need to review it
+
+20
+00:01:53,320 --> 00:01:57,960
+ and fix it something you don't like to do differently.
+
+21
+00:01:57,960 --> 00:02:05,960
+ You can use agent mode and help to migrate the new setup. If you use co-off components in
+
+22
+00:02:05,960 --> 00:02:14,200
+ all the operations, you can convert them to hooks. For example, you can migrate with agent help
+
+23
+00:02:14,200 --> 00:02:20,680
+ to another framework, like from Angular to React, from you to React. Doesn't matter.
+
+24
+00:02:20,680 --> 00:02:25,240
+ So we can generate a task plan for some complex tasks, like if you want to create the
+
+25
+00:02:25,240 --> 00:02:31,160
+ application using React to read docs and edges by can solve a lot of technologies and frameworks,
+
+26
+00:02:31,160 --> 00:02:36,920
+ you can ask a great new plan step-by-step guide on how I can implement it.
+
+27
+00:02:36,920 --> 00:02:42,200
+ You can also define high-level requirements for functionality.
+
+28
+00:02:43,080 --> 00:02:48,120
+ Imagine you need to implement for God Passport functionality and you don't know the requirements
+
+29
+00:02:48,120 --> 00:02:53,400
+ so how it should work, so what, in case it should handle, it can also create the primary
+
+30
+00:02:53,400 --> 00:03:00,920
+ requirements and it will tell you all functionality you need to support, so it will make it clear for you.
+
+31
+00:03:00,920 --> 00:03:08,600
+ Okay, let's back to our code leader. I'll show you some options of agent mode you can use.
+
+32
+00:03:09,240 --> 00:03:15,640
+ If you click on this edit icon, you same can set the model you want to use for your agent,
+
+33
+00:03:15,640 --> 00:03:23,160
+ you can use the max mode if you want to make your request more powerful or it will use more tokens
+
+34
+00:03:23,160 --> 00:03:31,480
+ and more resources. So you can also set the k-bidings, you can use out-to-run,
+
+35
+00:03:31,480 --> 00:03:37,000
+ it's useful when you want to create some files, for example, automatically without
+
+36
+00:03:37,000 --> 00:03:43,800
+ confirmating in console or when you want to run some, right, we shall commands. You can also
+
+37
+00:03:43,800 --> 00:03:52,840
+ enable option to out-to-fix roles if I will do some errors, sometimes I can notice it and fix it.
+
+38
+00:03:52,840 --> 00:04:03,240
+ Now let me show you some example how to use agent mode. We have two files,
+
+39
+00:04:03,800 --> 00:04:08,680
+ provide to the currency functionality, and the first one we have currency converter,
+
+40
+00:04:08,680 --> 00:04:14,600
+ and the next one we have UTO to format currency. I don't really see a sense to have it as a
+
+41
+00:04:14,600 --> 00:04:20,840
+ separate UTO function. I want to integrate it into my currency converter class, for example,
+
+42
+00:04:20,840 --> 00:04:27,640
+ when I call the convert method right here, I'd like to get already formatted currency,
+
+43
+00:04:27,640 --> 00:04:43,080
+ so I'd also ask an agent to do it for me. I want to have all currency functionality in
+
+44
+00:04:46,120 --> 00:05:02,440
+ currency converter class, so move all functions from UTO file inside class,
+
+45
+00:05:05,880 --> 00:05:19,880
+ and use or mod function as internal method on the word method,
+
+46
+00:05:19,880 --> 00:05:32,280
+ when return result, looks a bit complex, but I think I've provided some clear instructions,
+
+47
+00:05:33,080 --> 00:05:35,320
+ or let's see how it will handle it.
+
+48
+00:05:35,320 --> 00:05:45,160
+ How it reads currency details file, it reads currency converter file, do some changes,
+
+49
+00:05:45,160 --> 00:05:50,920
+ how it moved already as a method, you see it use it as an internal method,
+
+50
+00:05:50,920 --> 00:05:55,160
+ it also removed all the files from here,
+
+51
+00:05:57,720 --> 00:06:05,880
+ and we see, I can also update this example, so as you see, you can do it as a cross multiple
+
+52
+00:06:05,880 --> 00:06:10,680
+ files, you can do different places in the file where we need to update the code,
+
+53
+00:06:10,680 --> 00:06:14,680
+ we understand it's internal class, you need to use this,
+
+54
+00:06:14,680 --> 00:06:20,280
+ oh it's fine, so I gonna accept all the changes, so you same have,
+
+55
+00:06:20,280 --> 00:06:26,360
+ you can switch between files right here, you can switch between
+
+56
+00:06:27,400 --> 00:06:33,560
+ what parts were updated, in the first file if you switch to another file, you also be able
+
+57
+00:06:33,560 --> 00:06:38,520
+ to switch, but you have only one part, so you can accept it one by one for example,
+
+58
+00:06:38,520 --> 00:06:47,960
+ and you can accept it everything together, okay, now I gonna ask to
+
+59
+00:06:47,960 --> 00:06:52,120
+ compile it also delete this file, okay, I need to accept this file as well,
+
+60
+00:06:52,920 --> 00:06:57,720
+ let's delete this empty file, delete empty file,
+
+61
+00:06:57,720 --> 00:07:07,560
+ okay, you see it deleted it, it do it automatically because we enable out-to-run option,
+
+62
+00:07:07,560 --> 00:07:15,320
+ okay, what I can do, I can ask to parse this file by unit test, so for example,
+
+63
+00:07:17,320 --> 00:07:36,280
+ okay, other currency converter was by unit test, and use with test, and install all dependencies,
+
+64
+00:07:38,600 --> 00:07:47,240
+ and provide me a month to run out of the test,
+
+65
+00:07:47,240 --> 00:07:57,320
+ let's see how it will handle this case, and you see it's already provided a command to
+
+66
+00:07:57,320 --> 00:08:03,640
+ install the dependency, and as we enable out-to-run, you see the out-to-run option right here,
+
+67
+00:08:04,600 --> 00:08:09,320
+ you can change the task every time, but if you use out-to-run it automatically run all the
+
+68
+00:08:09,320 --> 00:08:19,320
+ commands, so it's fine, you see it created the test file with some context, you can click right
+
+69
+00:08:19,320 --> 00:08:29,880
+ here to expand it and to see all the content of a file, you see here, try to cover different cases,
+
+70
+00:08:31,000 --> 00:08:41,800
+ even the key staircase, clear history, oh it's fine, I like it, also export the currency converter,
+
+71
+00:08:41,800 --> 00:08:50,520
+ because we don't have an export, okay, then we see he started the second iteration, he did some
+
+72
+00:08:50,520 --> 00:08:59,400
+ updates, okay, this is because I think because we enabled out-to-fix errors, but I'm not really sure
+
+73
+00:08:59,400 --> 00:09:06,520
+ here on, yeah, we see also here the test command, and we can run, and we can run test,
+
+74
+00:09:06,520 --> 00:09:14,280
+ let's try to run, I'm not sure if, yeah, if you run everything, oh we see
+
+75
+00:09:14,280 --> 00:09:22,920
+ a history, a local storage is not defined, okay, what we can do, we can
+
+76
+00:09:24,840 --> 00:09:37,240
+ ask a pilot to fix it, let's check how we can fix it, we can try to use the corner,
+
+77
+00:09:37,240 --> 00:09:51,080
+ the, oh we have an error, we normally should have, yeah, we can add the chart, if we hover it,
+
+78
+00:09:53,240 --> 00:10:08,360
+ we selected the lines in terminal, and we can ask now fix error in test, okay, let's check if we
+
+79
+00:10:08,360 --> 00:10:17,800
+ really use, yeah, we really use local storage, okay, he's trying to fix it, he check, okay, if it's
+
+80
+00:10:17,800 --> 00:10:26,520
+ undefined, if it's not defined, then he tried to mock the local storage, okay, it's also
+
+81
+00:10:26,520 --> 00:10:33,560
+ can be solution, let's try to run test again, local storage is not defined,
+
+82
+00:10:33,560 --> 00:10:41,720
+ the test error, because local storage was not defined for us, I'm seeing right there, okay,
+
+83
+00:10:41,720 --> 00:10:48,840
+ is you see he cannot solve it, let's do one more time, it doesn't help,
+
+84
+00:10:48,840 --> 00:10:55,640
+ if not we need to fix, we need to think how to fix it by ourselves,
+
+85
+00:10:55,640 --> 00:11:06,360
+ oh, of course, yeah, not always can handle errors, not always know how to fix it, so
+
+86
+00:11:06,360 --> 00:11:12,200
+ I will sometimes need to do some research, of course, maybe ask in some right prompts,
+
+87
+00:11:12,200 --> 00:11:34,760
+ okay, let's try to run it, if we fix all the tests, yeah, if we fix,
+
+88
+00:11:35,880 --> 00:11:47,960
+ okay, he check that, I think an issue, because we don't do it on browser render when
+
+89
+00:11:47,960 --> 00:11:56,040
+ local storage is available, oh, why is that is why he added this additional checks, yeah, but
+
+90
+00:11:56,040 --> 00:12:04,440
+ anyway, it works, for example, if you're going to use it for some production, you're going to
+
+91
+00:12:04,440 --> 00:12:08,760
+ write some production code, you of course need to spend more time and be more careful with
+
+92
+00:12:08,760 --> 00:12:17,080
+ the isolation, because some time it can suggest some solutions really hacky, and you don't do
+
+93
+00:12:17,080 --> 00:12:23,000
+ it in production code, so we need always control and review what he suggests. I hope the
+
+94
+00:12:23,000 --> 00:12:35,800
+ source and what's really useful for you, now you know more capabilities would agent mode can provide,
+
