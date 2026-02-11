@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:06,080
+ Hi, in this lesson, even with all how to make numbers in your calculator easier to read by adding
+
+2
+00:00:06,080 --> 00:00:12,560
+ thousand separators. But not just adding with the I like with some custom logic, we should
+
+3
+00:00:12,560 --> 00:00:19,520
+ don't understand because it's written complex, it uses a lot of regular expressions, a lot of
+
+4
+00:00:19,520 --> 00:00:26,160
+ searching and etc. So it's a really custom way. So we'll replace it on sums in much easier.
+
+5
+00:00:26,160 --> 00:00:31,280
+ So, in this lesson, we will be researching the JavaScript libraries that can handle
+
+6
+00:00:31,280 --> 00:00:37,280
+ number formatting. Look always to understand what those exist, how they differ and what features
+
+7
+00:00:37,280 --> 00:00:44,560
+ they offer. Like localization, custom separators, decimal formatting, etc. We will use
+
+8
+00:00:44,560 --> 00:00:51,280
+ AI to do a research right here in the query chat. And you'll also take a look at the
+
+9
+00:00:51,280 --> 00:00:57,920
+ pros and cons of each option and see some simple examples of what comparison. And next, we
+
+10
+00:00:57,920 --> 00:01:04,400
+ will refactor the number formatting using this library. We will refactor this function to use
+
+11
+00:01:04,400 --> 00:01:13,120
+ a library approach and to have ever seen as we want to look at same like this. So by
+
+12
+00:01:13,120 --> 00:01:18,480
+ the end of this lesson, you will know how to format numbers consistently using a JavaScript
+
+13
+00:01:18,480 --> 00:01:25,360
+ libraries and how to do a quick research using AI in a hard compiler. So I suggest, let's get started.
+
+14
+00:01:25,360 --> 00:01:33,760
+ I will use Ask mode for doing the research because I don't need to apply any changes, so please
+
+15
+00:01:33,760 --> 00:01:39,200
+ also switch it. And I have problem. I will ask search for JavaScript libraries that can
+
+16
+00:01:39,200 --> 00:01:45,360
+ format numbers with thousand separators. Compare some popular options and summarize pros,
+
+17
+00:01:45,360 --> 00:01:53,200
+ cons and short code example for each. Now let's start and let's see what research it will do.
+
+18
+00:01:53,200 --> 00:02:01,760
+ I will increase the chat window size. So we have the numero.js, okay, it's have the full number
+
+19
+00:02:01,760 --> 00:02:10,000
+ formatting etc. It also shows how many stars it has on GitHub and how much what is the size of the
+
+20
+00:02:10,000 --> 00:02:19,280
+ library? We have Intel number format. So the first one looks really simple. Just say the format.
+
+21
+00:02:19,280 --> 00:02:24,240
+ The next one, more dependencies native browser support and their bundle size.
+
+22
+00:02:24,240 --> 00:02:31,520
+ All I think I like this one because it's built in, we shouldn't install anything. So JavaScript
+
+23
+00:02:31,520 --> 00:02:39,920
+ and browser already supported. How it's used? We can use it Intel number format, provide the location
+
+24
+00:02:40,640 --> 00:02:48,880
+ provide grouping and maximum digit fraction digits. A grouping separator, okay, it's good that
+
+25
+00:02:48,880 --> 00:02:57,760
+ we can provide a grouping separator. So I like it. The next one is format.js. It's a larger bundle
+
+26
+00:02:57,760 --> 00:03:09,760
+ size. So you see it also looks same as number format, but it just a separate library. Okay.
+
+27
+00:03:10,000 --> 00:03:15,520
+ And the recommendation for this calculator project use the Intel number format. So AI give us
+
+28
+00:03:15,520 --> 00:03:20,560
+ the recommendation because it's already built in in browsers. It's their bundle size. It's simple
+
+29
+00:03:20,560 --> 00:03:26,720
+ to customize separator and more external dependencies. So when you can use, you can replace the
+
+30
+00:03:26,720 --> 00:03:36,880
+ current formatting with this example. But the maximum fraction digits is not okay for us because
+
+31
+00:03:40,640 --> 00:03:48,320
+ but I think it's fine because we will control it. Oh, let's start. So you can just ask, okay,
+
+32
+00:03:48,320 --> 00:03:55,360
+ just implement it or you can click it apply to source utils format number.
+
+33
+00:03:55,360 --> 00:04:07,760
+ And if you replace all the code, let's click heap. I will reduce the size. Now we see that grouping
+
+34
+00:04:07,760 --> 00:04:16,640
+ separator doesn't exist. Okay, now I will ask AI fix it because sometimes it can
+
+35
+00:04:16,640 --> 00:04:27,360
+ respond to the sums and doesn't really exist. So I will copy paste this error and we'll say to AI,
+
+36
+00:04:27,360 --> 00:04:39,440
+ but I will use the agent mode now that he love fix it. So it looks simple. We check if there is no
+
+37
+00:04:39,440 --> 00:04:47,280
+ value of your return zero, if value is equal, the dash will return value to interesting.
+
+38
+00:04:47,280 --> 00:04:51,920
+ Then we parse a number and then we try to format it.
+
+39
+00:04:57,840 --> 00:05:07,680
+ Okay, so we will keep the code and I will explain to you. So there is small ability to provide
+
+40
+00:05:07,680 --> 00:05:16,560
+ a group separator because the image will use his own separator as a comma as we see and we just
+
+41
+00:05:16,560 --> 00:05:24,640
+ will replace it on space. So let's check how it works, but it looks much more simpler. So either
+
+42
+00:05:24,640 --> 00:05:30,240
+ a fresh page, I will start typing numbers. We see the silent format and it works.
+
+43
+00:05:30,240 --> 00:05:37,840
+ I'll let me check how the decimal, the decimal is also works. It might be
+
+44
+00:05:37,840 --> 00:05:50,800
+ so let's let's multiply it and click equal. Yeah, we see everything works fine.
+
+45
+00:05:52,640 --> 00:06:01,520
+ I like it. I guess you do. So if you see any complex code, you can ask AI to use some library,
+
+46
+00:06:01,520 --> 00:06:09,360
+ you can do first research and then ask to apply it. So for example, this logic is really simple,
+
+47
+00:06:09,360 --> 00:06:14,480
+ the calculate logic also simple, you can also ask to refactor your quality for like.
+
+48
+00:06:14,480 --> 00:06:22,560
+ Okay, I hope this lesson was useful for you. And now you know about this
+
+49
+00:06:22,640 --> 00:06:28,400
+ last library is that you can use it for formatting and see you in the next lessons.
+
