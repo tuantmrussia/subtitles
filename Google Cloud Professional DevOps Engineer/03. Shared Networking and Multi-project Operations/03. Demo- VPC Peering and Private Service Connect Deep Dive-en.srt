@@ -1,0 +1,255 @@
+1
+00:00:00,439 --> 00:00:03,089
+Two teams build systems separately, in fact,
+
+2
+00:00:03,289 --> 00:00:05,519
+even in different GCP projects,
+
+3
+00:00:05,650 --> 00:00:08,659
+and suddenly they need to talk to each other privately.
+
+4
+00:00:08,779 --> 00:00:11,770
+This is exactly where VPC peering is going to use.
+
+5
+00:00:11,920 --> 00:00:13,350
+Let's see how we can do that.
+
+6
+00:00:13,449 --> 00:00:16,000
+I'm in the console, and I have two projects.
+
+7
+00:00:16,170 --> 00:00:20,530
+One is hpc3 and another one is hpc2.
+
+8
+00:00:20,700 --> 00:00:24,040
+Earlier in the previous clip, we have added both of
+
+9
+00:00:24,040 --> 00:00:26,500
+these two projects to the shared VPC.
+
+10
+00:00:26,639 --> 00:00:31,399
+I've removed that and deleted all the instances so that these are clean now.
+
+11
+00:00:31,520 --> 00:00:35,119
+What we're going to do is we're going to create two different
+
+12
+00:00:35,119 --> 00:00:38,759
+networks in each of these projects, and then we're going to do
+
+13
+00:00:38,759 --> 00:00:40,580
+the VPC peering between them.
+
+14
+00:00:40,720 --> 00:00:46,270
+So for that, come down to the hpc2 and let's create one new VPC network.
+
+15
+00:00:46,549 --> 00:00:48,509
+Say here, Create VPC network.
+
+16
+00:00:48,630 --> 00:00:51,630
+I give the name as project‑2‑vpc.
+
+17
+00:00:51,840 --> 00:00:57,110
+Similarly, for the subnet, I'm going to give the name as project‑2‑vpc‑subnet.
+
+18
+00:00:57,229 --> 00:00:58,310
+In the IP range,
+
+19
+00:00:58,470 --> 00:01:05,910
+I'm going to select the IP range as 10.1.0.0, and I'm going to say Create.
+
+20
+00:01:06,419 --> 00:01:10,699
+Select the region as asia‑southeast1 and say Create.
+
+21
+00:01:10,860 --> 00:01:14,019
+Now on similar lines, go to the other project.
+
+22
+00:01:14,099 --> 00:01:17,949
+Here also, I go down to my VPC.
+
+23
+00:01:18,379 --> 00:01:21,940
+Here as well, I'm going to create one VPC network.
+
+24
+00:01:22,059 --> 00:01:26,059
+I'm going to call this as project‑3‑vpc.
+
+25
+00:01:26,269 --> 00:01:32,300
+On similar lines, I'm going to give the name as project‑3‑vpc‑subnet,
+
+26
+00:01:32,379 --> 00:01:35,949
+select the region as asia‑southeast1,
+
+27
+00:01:36,069 --> 00:01:43,349
+select the IP range as 10.2.0.0 and say Create.
+
+28
+00:01:43,470 --> 00:01:46,389
+Now both the project has their VPC.
+
+29
+00:01:46,589 --> 00:01:49,910
+Now it's time to create a VPC peering.
+
+30
+00:01:50,029 --> 00:01:55,550
+So I'm going back into the project 2, and I'm creating a VPC network peering.
+
+31
+00:01:55,919 --> 00:01:59,129
+In the VPC network peering, click on Create connection,
+
+32
+00:01:59,410 --> 00:02:07,400
+give the name as project2‑to‑3, that is the connection. Select the VPC network,
+
+33
+00:02:07,730 --> 00:02:13,130
+that is project‑2‑vpc, and where we want to do this peering into another project.
+
+34
+00:02:13,250 --> 00:02:16,050
+So I need another project ID.
+
+35
+00:02:16,279 --> 00:02:21,419
+So I come down here, copy the name of my project ID, say this,
+
+36
+00:02:21,440 --> 00:02:25,320
+and it will ask me to give the name of the VPC there.
+
+37
+00:02:26,399 --> 00:02:27,259
+Say Create.
+
+38
+00:02:27,759 --> 00:02:31,800
+Now this will create the peering from project 2 to project 3.
+
+39
+00:02:32,000 --> 00:02:35,149
+Now to check whether this is working or not,
+
+40
+00:02:35,199 --> 00:02:39,740
+I'm going to create two instances, one in each project.
+
+41
+00:02:39,919 --> 00:02:42,509
+So I come down here, Create instance.
+
+42
+00:02:42,759 --> 00:02:44,679
+Now while I'm going to create the instance,
+
+43
+00:02:44,800 --> 00:02:49,639
+I'm going to choose a specific network here under the Networking setting.
+
+44
+00:02:49,850 --> 00:02:52,300
+The network is project‑2‑vpc.
+
+45
+00:02:52,960 --> 00:02:58,639
+Second project, I'm using the project‑2‑vpc as my network and say Create.
+
+46
+00:02:58,839 --> 00:03:04,259
+I go to the project 3, and I'm going to create one instance here as well.
+
+47
+00:03:04,589 --> 00:03:05,514
+Create instance,
+
+48
+00:03:05,875 --> 00:03:09,654
+select the region. Under the Networking field, we're going to select
+
+49
+00:03:09,654 --> 00:03:15,785
+here the network as our project‑3‑vpc and say Create.
+
+50
+00:03:16,505 --> 00:03:20,024
+Now we have an instance in each of these projects,
+
+51
+00:03:20,035 --> 00:03:24,764
+and I want to connect project 2 to project 3 using the peering.
+
+52
+00:03:24,884 --> 00:03:29,929
+Now I have to just test so I can just come down here and say
+
+53
+00:03:30,130 --> 00:03:35,750
+SSH. We also need to create the VPC peering from project 3 to
+
+54
+00:03:35,750 --> 00:03:37,740
+project 2, so let's do that as well.
+
+55
+00:03:37,910 --> 00:03:42,460
+Say Create connection and give the name as peering‑project‑3‑to‑2.
+
+56
+00:03:42,789 --> 00:03:45,229
+Select the network and select the project ID.
+
+57
+00:03:45,490 --> 00:03:47,990
+Select the VPC name and say Create.
+
+58
+00:03:48,089 --> 00:03:48,250
+Now,
+
+59
+00:03:48,320 --> 00:03:52,710
+if I do the SSH from this project 2 and in the project
+
+60
+00:03:53,089 --> 00:03:56,729
+3, the VM IP address is 10.2.0.2.
+
+61
+00:03:56,850 --> 00:03:58,190
+So I can just say here,
+
+62
+00:03:58,330 --> 00:04:06,500
+ping 10.2.0.2, and see we are able to make a connection to
+
+63
+00:04:06,500 --> 00:04:12,779
+the project 3 instance from project 2, because we have done the VPC peering.
+
+64
+00:04:12,899 --> 00:04:15,669
+The network can now talk internally using private IP.
