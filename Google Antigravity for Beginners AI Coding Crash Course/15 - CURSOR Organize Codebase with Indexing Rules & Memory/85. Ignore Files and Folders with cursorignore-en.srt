@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Hi, in this lesson, you will learn how to control what parts of your project cursor
+
+2
+00:00:07,000 --> 00:00:09,000
+ can see and can use.
+
+3
+00:00:09,000 --> 00:00:17,000
+ We will talk about dot cursor, ignore file, I will explain how it works, why it matters
+
+4
+00:00:17,000 --> 00:00:23,000
+ and how it can help you keep your project structure secure and efficient.
+
+5
+00:00:23,000 --> 00:00:26,000
+ So, let's do it week over you.
+
+6
+00:00:26,000 --> 00:00:33,000
+ From the previous lesson, you remember that we saw automatically reads an index your project
+
+7
+00:00:33,000 --> 00:00:40,000
+ got based to make a feature like search, how to complete an agent work.
+
+8
+00:00:40,000 --> 00:00:42,000
+ So, it does it automatically.
+
+9
+00:00:42,000 --> 00:00:46,000
+ But sometimes you don't want everything to be included.
+
+10
+00:00:46,000 --> 00:00:53,000
+ Maybe some of your files contain secrets, but we just don't want it to be processed by cursor.
+
+11
+00:00:53,000 --> 00:00:56,000
+ Here's dot cursor, ignore file can help us.
+
+12
+00:00:56,000 --> 00:01:04,000
+ It will let you block some specific files of photos from being indexed or accessed by cursor AI tools.
+
+13
+00:01:04,000 --> 00:01:09,000
+ You can simply add this file, add the root of your project, and the cursor will read it
+
+14
+00:01:09,000 --> 00:01:13,000
+ and will exclude this files we should mention.
+
+15
+00:01:13,000 --> 00:01:19,000
+ Or you can also go to the settings, find this option and create just edit,
+
+16
+00:01:19,000 --> 00:01:25,000
+ and cursor view automatically creates this file, dot cursor, ignore in the root of your project.
+
+17
+00:01:25,000 --> 00:01:28,000
+ And here you can add some rules.
+
+18
+00:01:28,000 --> 00:01:34,000
+ So, let me now explain why ignore files is matter and why it's important.
+
+19
+00:01:34,000 --> 00:01:35,000
+ There are too many reasons.
+
+20
+00:01:35,000 --> 00:01:38,000
+ The first reason is security.
+
+21
+00:01:38,000 --> 00:01:47,000
+ So, for security reason you can prevent cursor from accessing some sensitive files like APA keys for your external tools,
+
+22
+00:01:47,000 --> 00:01:55,000
+ credentials for a database, or some private configuration, for example, for a cloud service or others.
+
+23
+00:01:55,000 --> 00:01:57,000
+ So, you can exclude it.
+
+24
+00:01:57,000 --> 00:02:04,000
+ And a lot of companies not allow you to, a lot of companies are really careful with using AI.
+
+25
+00:02:04,000 --> 00:02:11,000
+ So, and this file really helps to control what files can be read by AI and what files not.
+
+26
+00:02:11,000 --> 00:02:20,000
+ A cursor, of course, already protect your data, but ignore in this files adds an extra layer of safety and confidence.
+
+27
+00:02:20,000 --> 00:02:23,000
+ Let's not talk about the performance.
+
+28
+00:02:23,000 --> 00:02:26,000
+ Performance, what it means.
+
+29
+00:02:26,000 --> 00:02:35,000
+ If you work in big project like Monorepo, you have you front-end applications in one project,
+
+30
+00:02:35,000 --> 00:02:40,000
+ you have you back-end applications, but you mainly front-end developer.
+
+31
+00:02:40,000 --> 00:02:45,000
+ And you don't work with front-end, or sorry, you don't work with the back-end.
+
+32
+00:02:45,000 --> 00:02:50,000
+ So, you can exclude the whole back-end folder from a cursor.
+
+33
+00:02:50,000 --> 00:02:51,000
+ What it does.
+
+34
+00:02:51,000 --> 00:03:01,000
+ If you exclude it, your index end will work faster because it will save, you know, hundreds files won't be indexed.
+
+35
+00:03:01,000 --> 00:03:06,000
+ And you will save a lot of time resources for a cursor.
+
+36
+00:03:06,000 --> 00:03:11,000
+ It will speed up the storage, the answers, of course.
+
+37
+00:03:11,000 --> 00:03:17,000
+ And you don't get more accurate answers, which always only to work, only to your front-end project.
+
+38
+00:03:17,000 --> 00:03:20,000
+ You won't get something from the back-end project in answers.
+
+39
+00:03:20,000 --> 00:03:24,000
+ So, this is like a lot of benefits from doing it.
+
+40
+00:03:24,000 --> 00:03:32,000
+ Okay, let's not talk, and I will show you how to use syntax of dot cursor, ignore file.
+
+41
+00:03:32,000 --> 00:03:38,000
+ I prepared some example. I'll just copy it from the cursor documentation.
+
+42
+00:03:38,000 --> 00:03:46,000
+ And it will go one by one, explain you how to exclude files and folders, and what syntax you can use.
+
+43
+00:03:46,000 --> 00:03:55,000
+ For example, if you want to exclude one file, you can just mention file pass right here.
+
+44
+00:03:55,000 --> 00:04:06,000
+ Imagine we want to exclude utl.js, we just mentioned pass of this file, utl.js.
+
+45
+00:04:06,000 --> 00:04:12,000
+ Or, I don't know, imagine we want to expose the currency converter test.
+
+46
+00:04:12,000 --> 00:04:20,000
+ I can also, if you're lazy to type, I can copy a relative pass, and just paste it here, and it will be also excluded.
+
+47
+00:04:20,000 --> 00:04:25,000
+ Yep, let's make it like this.
+
+48
+00:04:25,000 --> 00:04:27,000
+ Okay, specific file.
+
+49
+00:04:27,000 --> 00:04:39,000
+ So, if you want to exclude a directory from being indexed, you can just mention the pass of directory, like source, utils, for example.
+
+50
+00:04:39,000 --> 00:04:45,000
+ And this directory will be excluded, and all files under this directory.
+
+51
+00:04:45,000 --> 00:04:53,000
+ Another example is file extension. For example, if you want to exclude all the tests, the just files.
+
+52
+00:04:53,000 --> 00:04:58,000
+ Yep, let's start maybe with just files. You can just mention, like this.
+
+53
+00:04:58,000 --> 00:05:07,000
+ But if you want to exclude all the tests, yeah, from the bin, indexed by console, you can just type something like this.
+
+54
+00:05:07,000 --> 00:05:19,000
+ Yep, and for example, nested directory is really powerful. You can exclude, for example, anything.
+
+55
+00:05:19,000 --> 00:05:32,000
+ Imagine we, in the utils, we have all the like tests, and in tests, we have some, I don't know, utl.js, for example, yeah.
+
+56
+00:05:32,000 --> 00:05:43,000
+ And you, for example, like exclude all, and we have tests folder somewhere here.
+
+57
+00:05:43,000 --> 00:05:52,000
+ Yep, and you'd like to exclude all the, all the tests folders. Yeah, you can write something like this.
+
+58
+00:05:52,000 --> 00:06:06,000
+ Yeah, it goes to all the tests folders. And for example, if you'd like to exclude, I don't know, all the JavaScript files inside of the nested folder, you can do something like this.
+
+59
+00:06:06,000 --> 00:06:22,000
+ For example, source, like, all the JavaScript files under first folder, you do the pattern of the nest folder and then.js.
+
+60
+00:06:22,000 --> 00:06:33,000
+ So it looks good. All the JavaScript files inside of the source folder and all folders, which are nested to the source folder.
+
+61
+00:06:33,000 --> 00:06:47,000
+ And the last one, in our list is negation. It's when you want, if you already excluded something and you want to like back it. Yeah, you want this file been included.
+
+62
+00:06:47,000 --> 00:07:08,000
+ You just add negation before, for example, you like to, you can do it like this, yeah, with a file with a folder, source, utls, utls. Okay, but please be careful, if it's good, a whole folder, you can't use negation.
+
+63
+00:07:08,000 --> 00:07:28,000
+ Like if you've scored the full folder before, for example, source utls, you can do something like this after, because they have also some limitations.
+
+64
+00:07:28,000 --> 00:07:43,000
+ So to explode it, you need to explicitly explode this folder instead. So yeah, please be careful with this excluded behavior.
+
+65
+00:07:43,000 --> 00:07:54,000
+ Okay, so I guess it's every, might be, I also will show you that this is the project ignore files and also we can do it on a global level on user level.
+
+66
+00:07:54,000 --> 00:08:08,000
+ So if you go to corsor patterns via squad settings, a little type ignore here, you will see global corsor ignore list, it was created by default by corsor.
+
+67
+00:08:08,000 --> 00:08:23,000
+ And for example, this is the most popular files normally a lot of developers exclude. Yeah, and you can manage this list, you can edit items, you can remove items, you can add another items and.
+
+68
+00:08:23,000 --> 00:08:32,000
+ Any, any project you open with a corsor will follow this patterns. So all these files in corsor will be excluded.
+
+69
+00:08:32,000 --> 00:08:47,000
+ Okay, now you know everything about the ignore files. If you'd like to read more, you can of course go to the corsor documentation, the link you can find in this lesson in the resources below the video.
+
+70
+00:08:47,000 --> 00:08:53,000
+ And all of the slides on the words useful for you and see you.
+
