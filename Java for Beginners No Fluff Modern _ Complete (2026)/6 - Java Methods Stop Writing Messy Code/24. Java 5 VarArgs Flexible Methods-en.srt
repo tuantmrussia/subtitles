@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:05,280
+ Alright, so after having a look at method overloading, which is the first way to implement
+
+2
+00:00:05,280 --> 00:00:12,880
+ polymorphism in Java, which says one face many forms, now I want to talk about new addition
+
+3
+00:00:12,880 --> 00:00:13,880
+ to the language.
+
+4
+00:00:13,880 --> 00:00:20,160
+ Obviously, which is not relatively new now in 2026 was introduced a long way back, but
+
+5
+00:00:20,160 --> 00:00:26,680
+ it's well worth talking about because it is a significant addition and we kind of use it
+
+6
+00:00:26,680 --> 00:00:28,440
+ when it comes handy.
+
+7
+00:00:28,440 --> 00:00:31,880
+ So if you have a look at this calculate or we're obviously overloading what purpose does
+
+8
+00:00:31,880 --> 00:00:36,760
+ it serve is that we have multiple methods with the same name now, right?
+
+9
+00:00:36,760 --> 00:00:42,120
+ But after a while you look at this situation and you still think that this is a bit repetitive,
+
+10
+00:00:42,120 --> 00:00:43,120
+ right?
+
+11
+00:00:43,120 --> 00:00:46,760
+ Because you're just multiplying two numbers, three and four numbers here.
+
+12
+00:00:46,760 --> 00:00:51,880
+ And let's say they ask you that we don't know how many arguments would come in.
+
+13
+00:00:51,880 --> 00:00:57,600
+ So you're going to just have different versions with multiply with five parameters, multiply
+
+14
+00:00:57,600 --> 00:01:04,240
+ six, seven, let's say 20 parameters, 20 versions of multiply, but which is still never going
+
+15
+00:01:04,240 --> 00:01:05,240
+ to be sufficed.
+
+16
+00:01:05,240 --> 00:01:10,760
+ And it's never going to suffice the requirements because who knows their past 50 are humans
+
+17
+00:01:10,760 --> 00:01:11,760
+ later on.
+
+18
+00:01:11,760 --> 00:01:14,120
+ They want 15 numbers to be multiplied.
+
+19
+00:01:14,120 --> 00:01:19,240
+ And that is where Java 5.0, which by the way is considered one of the greatest Java
+
+20
+00:01:19,240 --> 00:01:23,520
+ versions ever released because of a number of significant features that were introduced
+
+21
+00:01:23,520 --> 00:01:24,680
+ in this version.
+
+22
+00:01:24,680 --> 00:01:30,200
+ And we talk about them and other features which were introduced in later versions as well.
+
+23
+00:01:30,200 --> 00:01:35,760
+ But this particular one was exactly for this kind of a problem where we are not sure how
+
+24
+00:01:35,760 --> 00:01:38,200
+ many arguments would be passed later on.
+
+25
+00:01:38,200 --> 00:01:43,920
+ And when that is the requirement, then what you do is you try to convert the C, what
+
+26
+00:01:43,920 --> 00:01:49,960
+ I do now is instead of having these three or seven 20 methods for multiply, which were
+
+27
+00:01:49,960 --> 00:01:55,480
+ never going to be sufficient, I would just have one method.
+
+28
+00:01:55,480 --> 00:02:01,820
+ And it will still work how that is variable arguments.
+
+29
+00:02:01,820 --> 00:02:11,720
+ It was introduced in Java 5 in short, we call it where rocks and how does this work?
+
+30
+00:02:11,720 --> 00:02:17,840
+ This works within at just one place in Java that is within parameters to a method right.
+
+31
+00:02:17,840 --> 00:02:21,600
+ And that's why it's called variable arguments, the arguments which vary.
+
+32
+00:02:21,600 --> 00:02:26,320
+ And for example, you have a method, for example, white and minty, this is where you define
+
+33
+00:02:26,320 --> 00:02:27,320
+ it.
+
+34
+00:02:27,320 --> 00:02:30,960
+ You say type any type of parameter that you're declaring.
+
+35
+00:02:30,960 --> 00:02:35,920
+ And then you say I identified obviously like we have been doing until now, but after
+
+36
+00:02:35,920 --> 00:02:39,640
+ Java 5, you do the three dots.
+
+37
+00:02:39,640 --> 00:02:43,760
+ And that means now what happens is almost magically.
+
+38
+00:02:43,760 --> 00:02:50,520
+ So white and minty can take now from zero to n arguments, right?
+
+39
+00:02:50,520 --> 00:02:53,360
+ It can even take zero and it would work perfectly fine.
+
+40
+00:02:53,360 --> 00:03:01,000
+ It can even take two, it can even take 50 and just one method for all kinds of situations.
+
+41
+00:03:01,000 --> 00:03:05,680
+ And this in this case would be a drastic reduction of code, right?
+
+42
+00:03:05,680 --> 00:03:12,040
+ So that is variable arguments following this syntax, let's compress our earlier program,
+
+43
+00:03:12,040 --> 00:03:13,040
+ right?
+
+44
+00:03:13,040 --> 00:03:18,120
+ Multiply, I'm not sure how many parameters would be passed, I'll just say in values and
+
+45
+00:03:18,120 --> 00:03:22,760
+ put in see if I do it like this, it would exactly what one argument, but if I do something
+
+46
+00:03:22,760 --> 00:03:28,880
+ like this, this is a catch also now, this is a take call scenario, it can take zero arguments,
+
+47
+00:03:28,880 --> 00:03:33,240
+ works fine, it can take 75 arguments works perfectly fine.
+
+48
+00:03:33,240 --> 00:03:39,040
+ And that is now it can take from zero to n number of integer values, absolutely wonderful.
+
+49
+00:03:39,040 --> 00:03:44,120
+ Obviously, how would you write the code then the logic that depends on you because otherwise
+
+50
+00:03:44,120 --> 00:03:48,520
+ you knew there were multiple methods and you just did multiply two numbers, three or
+
+51
+00:03:48,520 --> 00:03:51,120
+ four, but how do you multiply here, right?
+
+52
+00:03:51,120 --> 00:03:57,360
+ And that is using two new features of the language in Java 5, that is literally not new
+
+53
+00:03:57,360 --> 00:04:03,400
+ as I said, but new at the time, but still significant, that is the enhanced for loop and variable
+
+54
+00:04:03,400 --> 00:04:04,400
+ arguments.
+
+55
+00:04:04,400 --> 00:04:09,080
+ See, I just took this internally behaves like an array, what else would it be, right?
+
+56
+00:04:09,080 --> 00:04:17,440
+ So you say, for example, for, I'll say int value from values like we had earlier done,
+
+57
+00:04:17,440 --> 00:04:24,600
+ and I'll say, I'll define one more variable, let me put it on local variable, I'll say
+
+58
+00:04:24,600 --> 00:04:33,840
+ in total is equal to zero, and I will say, total multiply equal to the compound operator
+
+59
+00:04:33,840 --> 00:04:39,640
+ remember, and then I'll say, so whatever is in this array, just multiply this and put
+
+60
+00:04:39,640 --> 00:04:49,840
+ this result to total after the loop is done, I'll just say our start, I'll say, multiplication
+
+61
+00:04:49,840 --> 00:04:55,720
+ of no matter how many numbers you put in, I'll just give you type of total, that's it.
+
+62
+00:04:55,720 --> 00:04:57,360
+ Right, what is the warning?
+
+63
+00:04:57,360 --> 00:04:58,360
+ What does it say?
+
+64
+00:04:58,360 --> 00:05:04,200
+ It says that variable update does nothing, a redundant assignment, right?
+
+65
+00:05:04,200 --> 00:05:09,800
+ So what we can do in status, you can also prefer writing it at the instance level, and
+
+66
+00:05:09,800 --> 00:05:14,040
+ you don't need to instantiate it here, you know that, right?
+
+67
+00:05:14,040 --> 00:05:18,400
+ Because instance variables like I told you in the previous videos, they have default values
+
+68
+00:05:18,400 --> 00:05:20,720
+ in Java, and now this would just work.
+
+69
+00:05:20,720 --> 00:05:30,800
+ So if you call multiply and you pass in three parameters works, if you call multiply
+
+70
+00:05:30,800 --> 00:05:40,000
+ and without an argument still works, thanks to well, absolutely wonderful stuff this.
+
+71
+00:05:40,000 --> 00:05:46,160
+ You pass in 20 arguments, works almost magically, and this was Java five variable arguments
+
+72
+00:05:46,160 --> 00:05:50,200
+ and now on to the rules, how can you use it as I told you, the first rule is you can only
+
+73
+00:05:50,200 --> 00:05:53,280
+ use it here, when you declare parameters to a method, right?
+
+74
+00:05:53,280 --> 00:06:00,280
+ The second rule is a method can have only one where our parameter and the third rule is,
+
+75
+00:06:00,280 --> 00:06:06,240
+ and that should be the last, again, a method can have only one variable argument parameter,
+
+76
+00:06:06,240 --> 00:06:12,920
+ it should be the last, that is it can't be something like this, that's an error, but it
+
+77
+00:06:12,920 --> 00:06:17,160
+ can be something like this.
+
+78
+00:06:17,160 --> 00:06:21,120
+ Say perfectly fine because this is only one where our parameter in this method, and it's
+
+79
+00:06:21,120 --> 00:06:22,280
+ the last parameter.
+
+80
+00:06:22,280 --> 00:06:28,280
+ So now a question to you before I end this video, how many arguments are required at a
+
+81
+00:06:28,280 --> 00:06:34,160
+ minimum to be passed to multiply, are there zero or something else?
+
+82
+00:06:34,160 --> 00:06:36,760
+ Think about it before I see you in the next video.
+
