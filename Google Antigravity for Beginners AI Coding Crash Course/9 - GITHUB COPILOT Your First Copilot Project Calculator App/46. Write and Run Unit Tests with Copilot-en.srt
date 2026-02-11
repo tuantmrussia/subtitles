@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:05,160
+ Hi, in this lesson we'll ask the pilot to write unit tests.
+
+2
+00:00:05,160 --> 00:00:11,300
+ Unit tests help ensure our application still works correctly after any change we made.
+
+3
+00:00:11,300 --> 00:00:17,340
+ They automatically check small parts of the code, so every file, every function of the files
+
+4
+00:00:17,340 --> 00:00:20,200
+ that it still works correctly.
+
+5
+00:00:20,200 --> 00:00:22,800
+ And you shouldn't test it manually.
+
+6
+00:00:22,800 --> 00:00:30,760
+ In this lesson, you ask a pilot to generate a unit test for the calculator app, then review
+
+7
+00:00:30,760 --> 00:00:31,760
+ them.
+
+8
+00:00:31,760 --> 00:00:33,440
+ We'll make some changes if needed.
+
+9
+00:00:33,440 --> 00:00:39,400
+ We'll apply fixes if it won't work at the end, but of course it will work, and we'll
+
+10
+00:00:39,400 --> 00:00:40,400
+ confirm the changes.
+
+11
+00:00:40,400 --> 00:00:46,400
+ So we'll focus on testing the main application logic inside of the application component
+
+12
+00:00:46,400 --> 00:00:47,400
+ here.
+
+13
+00:00:47,400 --> 00:00:55,320
+ We'll also focus on testing the details, all the details we have, and we'll ask a pilot
+
+14
+00:00:55,320 --> 00:00:57,480
+ to cover all the cases.
+
+15
+00:00:57,480 --> 00:01:05,320
+ We'll also focus on testing the hook, we have a lot of logic in our hook.
+
+16
+00:01:05,320 --> 00:01:12,360
+ The components, the card components, the display components, the icon button, I noticed
+
+17
+00:01:12,360 --> 00:01:18,360
+ that some of the components we don't use, the card component we don't use, so I simply
+
+18
+00:01:18,360 --> 00:01:28,720
+ I just forget about it, we can just delete this component, not just that the icon won't
+
+19
+00:01:28,720 --> 00:01:32,040
+ cover it with that, so.
+
+20
+00:01:32,040 --> 00:01:38,400
+ I can button the key button, the key part, so we have a logic here.
+
+21
+00:01:38,400 --> 00:01:46,360
+ Okay, I prepared the prompt, so I will use an engine mode, I ask, right, unit test for
+
+22
+00:01:46,360 --> 00:01:52,240
+ the calculator application using the vtest, it's the utl, the writing unit test, similar
+
+23
+00:01:52,240 --> 00:01:59,480
+ to just, I ask cover all main use cases for all components, hooks, utils, and main
+
+24
+00:01:59,480 --> 00:02:08,720
+ up logic, everything I see is important to cover with test, use.spec.ts or the spec.ts,
+
+25
+00:02:08,720 --> 00:02:15,240
+ spec prefix in the file with test, for the name and keep all the tests near the corresponding
+
+26
+00:02:15,240 --> 00:02:21,560
+ file, so we'll help test files close to the, to the other components, hooks, so to be more
+
+27
+00:02:21,560 --> 00:02:23,560
+ easier to update them.
+
+28
+00:02:23,560 --> 00:02:29,440
+ Okay, let's write, let's ask, the power to write the unit test, and then we can,
+
+29
+00:02:29,440 --> 00:02:36,480
+ review it one by one, and see, and evaluate it, if it be satisfied or not.
+
+30
+00:02:36,480 --> 00:02:45,320
+ Let's see, he first analyze the package, the JSON file, and check if we have to install
+
+31
+00:02:45,320 --> 00:02:54,160
+ any libraries, like vtest, or some test details, so what it does, the model wants to
+
+32
+00:02:54,160 --> 00:02:59,240
+ edit sensitive files, back into JSON, do you want to allow this?
+
+33
+00:02:59,240 --> 00:03:08,720
+ Okay, let's allow my video, just add a new library versions, so we'll add a vtest, some
+
+34
+00:03:08,720 --> 00:03:16,200
+ tests in utils, etc, okay, so mark your create the vtest config file, we also need it, it
+
+35
+00:03:16,200 --> 00:03:28,200
+ would like to use the vtest, can you see all the changes here, and now it will create all
+
+36
+00:03:28,200 --> 00:03:41,560
+ the tests one by one, of course, first we need setup, okay, I will just close this files, okay,
+
+37
+00:03:41,560 --> 00:03:48,980
+ and now we have the first test for the format number, so we just test the different cases
+
+38
+00:03:48,980 --> 00:03:54,900
+ like it should handle an empty input, how we handle the menu sign, how we format integer
+
+39
+00:03:54,900 --> 00:04:02,180
+ with 1000 separator, with decimal numbers, and negative one, so we see a really nice, really
+
+40
+00:04:02,180 --> 00:04:10,880
+ edit a lot of test cases, which I like, so just to be sure everything works, okay, let's
+
+41
+00:04:10,880 --> 00:04:17,640
+ check the rest of the tests, we have the test for the display, so we just render the component
+
+42
+00:04:17,640 --> 00:04:25,160
+ and try to find, so with the value, just try to find it render the value, and then we
+
+43
+00:04:25,160 --> 00:04:35,440
+ check that the history is provided, we check the messages exist, I don't know why the message
+
+44
+00:04:35,440 --> 00:04:41,320
+ is displayed, oh yeah, because we just provide a message, so, and should not render empty
+
+45
+00:04:41,320 --> 00:04:47,360
+ history, we have like the cases, the key button, so it will check that it will render
+
+46
+00:04:47,360 --> 00:04:53,960
+ the different buttons, it will click works, and set right applies the correct type of operator
+
+47
+00:04:53,960 --> 00:05:01,840
+ digital control, for the calculate, we have with the addition, the subscriptions, the
+
+48
+00:05:01,840 --> 00:05:10,320
+ multiply, so we see test, the different cases, even with, even with decimals, so I like
+
+49
+00:05:10,320 --> 00:05:22,360
+ it, what else, we have the hook, for the hook we have quite a lot of test cases, so we
+
+50
+00:05:22,360 --> 00:05:30,680
+ have a check that it's limit up to 10 digits, and of the percentage, the total sign, the
+
+51
+00:05:30,680 --> 00:05:39,120
+ AC to clear all the texts, so I like it, okay, what else, the key button, we already
+
+52
+00:05:39,120 --> 00:05:54,240
+ see it, so, we don't write all the tests, we ask, I don't know why, I don't know if we
+
+53
+00:05:54,240 --> 00:06:06,020
+ see the test files, okay, I don't kill, click keep, and stop, so for now I will just test
+
+54
+00:06:06,020 --> 00:06:13,160
+ that all the test works, I will run npm run test, as he suggested, I'll just npm test,
+
+55
+00:06:13,160 --> 00:06:22,900
+ okay, in the same, okay, I think I first need to run npm install just 10,000 new
+
+56
+00:06:22,900 --> 00:06:32,320
+ dependencies, so if this is a case that AI doesn't cover all components you expect, you might
+
+57
+00:06:32,320 --> 00:06:37,480
+ be need to move all the components as a context, we'd like to cover, we just mentioned
+
+58
+00:06:37,480 --> 00:06:45,040
+ them, we had text, and then you will be for sure, he will cover all the components, so
+
+59
+00:06:45,040 --> 00:06:55,980
+ currently, we run the test, and we have 65 tests, let's file it, expect, extend matures,
+
+60
+00:06:55,980 --> 00:07:06,360
+ okay, let's move it, and ask the I to fix it, because I don't like, he wrote the tests
+
+61
+00:07:06,360 --> 00:07:11,680
+ and it doesn't work, so if you need to indentify the error, because when you configure
+
+62
+00:07:11,680 --> 00:07:16,200
+ with this property for your components test, okay, but you didn't configure it properly,
+
+63
+00:07:16,200 --> 00:07:24,840
+ so yeah, now it works, but not all the test works, okay, AI is still fixing all the tests,
+
+64
+00:07:24,840 --> 00:07:41,120
+ what should we fix now, the changes, okay, fix all the tests, demo, them, doesn't work, so
+
+65
+00:07:41,120 --> 00:07:54,360
+ let's see if I don't specify the test, doesn't work, if you fix them, we can copy
+
+66
+00:07:54,360 --> 00:08:00,760
+ the past it, for the case, you won't fix it correctly, because we see one case for the
+
+67
+00:08:00,760 --> 00:08:05,520
+ key button, one case for use calculator, and two cases for application, doesn't work,
+
+68
+00:08:05,520 --> 00:08:17,040
+ so let's see if he wouldn't identify it correctly, because if we say we use the auto model,
+
+69
+00:08:17,040 --> 00:08:25,160
+ I simply use some chip model from pilot, I don't know, and how is it good for writing
+
+70
+00:08:25,160 --> 00:08:32,920
+ the test, but if you'd like to have a good quality use one of the latest model, like, I
+
+71
+00:08:32,920 --> 00:08:42,520
+ know, GPT file for, quote, format, open files of nowadays in the latest model, okay, he's fixing
+
+72
+00:08:42,520 --> 00:08:55,640
+ some of the tests, so yeah, it's nice, okay, I will restart all the tests again, okay, now
+
+73
+00:08:55,640 --> 00:09:06,780
+ the key button doesn't work one test, let's run, I will remove the calculator from here,
+
+74
+00:09:06,780 --> 00:09:16,880
+ fix, in this component, and I will just copy paste what is doesn't work, you also can do
+
+75
+00:09:16,880 --> 00:09:30,920
+ like this, then he will identify faster what doesn't work, and we'll fix it, okay, he sees
+
+76
+00:09:30,920 --> 00:09:44,840
+ the potential issue, okay, now it works, I will stop it, so just if you'd like to cover
+
+77
+00:09:44,840 --> 00:09:51,360
+ more components by unit SEO, just move the files to the context, and you'll just write
+
+78
+00:09:51,360 --> 00:09:58,760
+ the problem, cover all these components by unit SEO, you can just copy paste the prompt, we
+
+79
+00:09:58,760 --> 00:10:04,560
+ type initially, just update it to mode to all hooks, the components, but on the aforementioned
+
+80
+00:10:04,560 --> 00:10:12,120
+ files, and then the Ivo generated for you, so I will keep everything, let's check some
+
+81
+00:10:12,120 --> 00:10:18,480
+ of the tests, for example, for the calculator logic, so we already checked, it makes sense,
+
+82
+00:10:18,480 --> 00:10:29,720
+ not my best time, you for format number, yeah, we see, we have much more cases here, we
+
+83
+00:10:29,720 --> 00:10:38,120
+ do decimals, which is not impossible, in theory, but it might happen, sorry, not impossible
+
+84
+00:10:38,120 --> 00:10:47,920
+ on practice, okay, but it really makes sense, this test really makes sense, okay, you see, sometimes
+
+85
+00:10:47,920 --> 00:10:54,200
+ you can use some deprecated methods, so you also need to be careful, like when you get the
+
+86
+00:10:54,200 --> 00:10:59,880
+ test results and you sometimes need to refactor, so you can ask that this method is deprecated
+
+87
+00:10:59,880 --> 00:11:07,800
+ so this picked to refactor it, okay, if this is fast and it's everything I'd like to show
+
+88
+00:11:07,800 --> 00:11:14,320
+ you, sorry, for the long platform, you see, I didn't hit from across the temp, you may also
+
+89
+00:11:14,320 --> 00:11:21,280
+ face this issue, but now you see my approach, how I fix the test, I try to show you a different
+
+90
+00:11:21,280 --> 00:11:27,120
+ approach, is how I do is to copy paste the terminal message, move files to the context, just
+
+91
+00:11:27,120 --> 00:11:34,880
+ mentioned, fix all the tests, which doesn't work and you might use this approach, okay,
+
+92
+00:11:34,880 --> 00:11:36,240
+ see you in the next lesson.
+
