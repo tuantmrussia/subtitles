@@ -1,0 +1,291 @@
+1
+00:00:00,759 --> 00:00:01,759
+If you remember,
+
+2
+00:00:02,240 --> 00:00:07,599
+the structure we created earlier has inherited the policy from the ancestor.
+
+3
+00:00:07,800 --> 00:00:11,380
+The structure was organization, folder.
+
+4
+00:00:11,840 --> 00:00:17,559
+Inside the folder, we had projects, and within the project, we had resources.
+
+5
+00:00:17,760 --> 00:00:20,200
+Let's understand it with one example.
+
+6
+00:00:20,319 --> 00:00:24,659
+Imagine your organization is the roof of a house.
+
+7
+00:00:24,879 --> 00:00:30,260
+Folders are the rooms, projects are the furniture inside each room.
+
+8
+00:00:30,520 --> 00:00:35,939
+If it's raining outside and the roof leaks, every room gets wet.
+
+9
+00:00:36,040 --> 00:00:38,520
+Every piece of furniture gets wet.
+
+10
+00:00:38,799 --> 00:00:40,960
+That's the IAM inheritance.
+
+11
+00:00:40,960 --> 00:00:45,354
+A role granted at the organizational level trickles down
+
+12
+00:00:45,354 --> 00:00:48,294
+into every folder and every project.
+
+13
+00:00:48,474 --> 00:00:52,275
+That's how the organizational level roles must be
+
+14
+00:00:52,275 --> 00:00:55,665
+treated like high security master keys.
+
+15
+00:00:55,875 --> 00:01:02,479
+For example, let's say you assign a role of compute admin to the networking team.
+
+16
+00:01:02,759 --> 00:01:05,989
+Now this group can now create virtual machines,
+
+17
+00:01:06,279 --> 00:01:08,830
+delete virtual machines, modify networks,
+
+18
+00:01:09,309 --> 00:01:10,629
+change firewalls.
+
+19
+00:01:10,910 --> 00:01:11,739
+Super powerful.
+
+20
+00:01:11,959 --> 00:01:15,959
+They can do this across all the projects everywhere.
+
+21
+00:01:16,199 --> 00:01:18,870
+This potentially could be super dangerous,
+
+22
+00:01:18,870 --> 00:01:23,040
+but absolutely necessary for the platform network teams.
+
+23
+00:01:23,279 --> 00:01:26,080
+Now let's contrast this with folder‑level access.
+
+24
+00:01:26,550 --> 00:01:31,260
+Folders are where enterprise locks in the environment‑specific roles.
+
+25
+00:01:31,349 --> 00:01:35,180
+Let's say we assign the role of viewer permission for
+
+26
+00:01:35,180 --> 00:01:38,129
+the logging on a production folder.
+
+27
+00:01:38,309 --> 00:01:39,019
+Now what happens?
+
+28
+00:01:39,110 --> 00:01:42,349
+Every project inside this production folder now
+
+29
+00:01:42,349 --> 00:01:46,069
+automatically inherits this logging viewer access.
+
+30
+00:01:46,349 --> 00:01:52,150
+This is fantastic for SRE teams who need to look across all the production
+
+31
+00:01:52,150 --> 00:01:56,760
+logs without having to request access project by project,
+
+32
+00:01:56,949 --> 00:01:59,940
+this approach gives you the consistency,
+
+33
+00:02:00,059 --> 00:02:03,519
+easy onboarding, and clear safety boundaries.
+
+34
+00:02:03,699 --> 00:02:07,339
+It also prevents the classic mistake of giving
+
+35
+00:02:07,339 --> 00:02:09,800
+developers the production write access.
+
+36
+00:02:10,020 --> 00:02:12,520
+If you talk about the project‑level roles,
+
+37
+00:02:12,660 --> 00:02:13,380
+for example,
+
+38
+00:02:13,529 --> 00:02:17,169
+let's imagine the payment engineering team needs
+
+39
+00:02:17,169 --> 00:02:20,600
+read‑only access to view the metric and log,
+
+40
+00:02:21,059 --> 00:02:22,380
+and we provide them.
+
+41
+00:02:22,970 --> 00:02:26,229
+This is specific permission and nothing more.
+
+42
+00:02:26,449 --> 00:02:28,210
+They should not deploy infrastructure.
+
+43
+00:02:28,330 --> 00:02:30,009
+They should not modify IAM.
+
+44
+00:02:30,369 --> 00:02:32,429
+They should not have a billing permission.
+
+45
+00:02:32,770 --> 00:02:35,740
+This is least privilege in action.
+
+46
+00:02:35,970 --> 00:02:38,470
+Let's compare two real‑world scenarios.
+
+47
+00:02:38,610 --> 00:02:41,089
+A bad pattern, just give them the editor access.
+
+48
+00:02:41,690 --> 00:02:42,560
+It's easier.
+
+49
+00:02:42,560 --> 00:02:47,160
+If you give someone editor, they can delete your VPC,
+
+50
+00:02:47,580 --> 00:02:52,899
+modify IAM, turn off logging, and maybe they can stop the production jobs.
+
+51
+00:02:53,100 --> 00:02:55,460
+Editor is simply too powerful.
+
+52
+00:02:55,740 --> 00:02:59,610
+These roles represent thousands, yes, thousands of the permissions,
+
+53
+00:02:59,610 --> 00:03:01,869
+and that is why it is not good.
+
+54
+00:03:02,009 --> 00:03:06,970
+The good pattern would be is give them exactly the predefined roles they need.
+
+55
+00:03:07,250 --> 00:03:12,369
+For example, let's say a developer needs to deploy cloud‑run services,
+
+56
+00:03:12,729 --> 00:03:15,370
+view logs, and read configuration.
+
+57
+00:03:15,370 --> 00:03:19,479
+Then you should define the exact role for that.
+
+58
+00:03:19,649 --> 00:03:26,119
+These predefined roles contain exactly the permission needed and nothing extra.
+
+59
+00:03:26,330 --> 00:03:31,729
+The correct roles would be run.developer, logging.viewer, and monitoring.viewer.
+
+60
+00:03:31,929 --> 00:03:36,195
+These predefined roles contain exactly the permission needed.
+
+61
+00:03:36,345 --> 00:03:37,716
+Let's take another example.
+
+62
+00:03:37,916 --> 00:03:42,195
+Another bad pattern would be a giant custom role with 200
+
+63
+00:03:42,195 --> 00:03:45,026
+permissions becomes impossible to audit.
+
+64
+00:03:45,186 --> 00:03:48,865
+The good pattern would be the small, purpose‑built custom role,
+
+65
+00:03:49,095 --> 00:03:52,315
+and only when it is necessary, for example,
+
+66
+00:03:52,395 --> 00:03:58,052
+a role containing exactly the 12 permissions needed for a pipeline to run tests.
+
+67
+00:03:59,061 --> 00:04:02,632
+Another example would be giving an IAM to individuals.
+
+68
+00:04:02,781 --> 00:04:04,871
+This becomes a maintenance nightmare.
+
+69
+00:04:05,102 --> 00:04:08,302
+The good pattern would be grant IAM to the groups.
+
+70
+00:04:08,501 --> 00:04:11,322
+Team evolves, but permission should not, right?
+
+71
+00:04:11,582 --> 00:04:12,141
+In fact,
+
+72
+00:04:12,401 --> 00:04:15,781
+the Google's recommendation is managing the permission using
+
+73
+00:04:15,781 --> 00:04:18,940
+groups to simplify the access control.
