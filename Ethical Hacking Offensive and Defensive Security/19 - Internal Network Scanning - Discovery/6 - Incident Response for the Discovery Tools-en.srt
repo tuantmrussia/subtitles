@@ -1,0 +1,132 @@
+1
+00:00:00,000 --> 00:00:10,800
+ We quickly discuss about the incident response process for our discovery tactics.
+
+2
+00:00:10,800 --> 00:00:14,560
+ Let me give an example.
+
+3
+00:00:14,560 --> 00:00:24,240
+ You are a threat analyst and during your investigation, you found there's something where
+
+4
+00:00:24,240 --> 00:00:30,640
+ happening like one of the user. Let's think about one of the threat hacker executed an
+
+5
+00:00:30,640 --> 00:00:39,280
+ advanced IP scanner inside the machine. So at that point, what actions you'll be going to take
+
+6
+00:00:39,280 --> 00:00:51,040
+ for this process? So the initial thing, you need to stop the threat attacker. So they just
+
+7
+00:00:51,040 --> 00:00:58,880
+ pull it straight, advance IP scanner for scanning the environment. And you need to do something
+
+8
+00:00:58,880 --> 00:01:08,560
+ before they start the scanning. They start scanning in the environment.
+
+9
+00:01:08,560 --> 00:01:18,720
+ So not only that, maybe they can jump on to the other departments too. I mean, you compromised
+
+10
+00:01:20,560 --> 00:01:28,400
+ HR department. And you put an advanced IP scanner in the HR department machine.
+
+11
+00:01:28,400 --> 00:01:33,680
+ And that's HR domain. And the next domain you are targeting will be in
+
+12
+00:01:33,680 --> 00:01:42,320
+ programming software development department. And you compromised and you are trying to
+
+13
+00:01:42,320 --> 00:01:49,280
+ compromise another domain. And you did, you moved to the software development department. And you
+
+14
+00:01:49,280 --> 00:01:56,240
+ installed an advanced IP scanner in the machine. You are trying to install advanced IP scanner
+
+15
+00:01:56,240 --> 00:02:10,960
+ in the machine. So the reason, the thing we can perform for an incident response for the discovery
+
+16
+00:02:11,600 --> 00:02:23,440
+ tactics, you can block the hash of advanced IP scanner in the EDR tool. So which you will be using
+
+17
+00:02:23,440 --> 00:02:31,360
+ so that that will be a perfect thing. You can, you can, you can do it, do it there. Okay.
+
+18
+00:02:31,360 --> 00:02:39,760
+ Let me show you something. So how to get the hash of the executable
+
+19
+00:02:42,480 --> 00:02:50,400
+ it can use PowerShell to get the hash. But in EDR, you can easily find out the hash of an
+
+20
+00:02:50,400 --> 00:03:00,640
+ executable. So it's really, really simple one. So the command we are using get file hash.
+
+21
+00:03:01,600 --> 00:03:13,360
+ And we need to be a path here, you know, to mention the path, see slash users, user downloads.
+
+22
+00:03:13,360 --> 00:03:23,280
+ And let's say, advanced IP scanner. And you need to mention the algorithm. So most of the
+
+23
+00:03:23,280 --> 00:03:32,720
+ EDRs will be supporting a chart to five six to five six. So now you can see the hash of,
+
+24
+00:03:32,720 --> 00:03:43,520
+ hash of the executable here, 26 D five seven. So this is the way you can take the hash of
+
+25
+00:03:43,520 --> 00:03:51,600
+ the executable and you can block in the firewall or you can block in the security
+
+26
+00:03:52,400 --> 00:03:57,040
+ defense tool. So whatever you are using, maybe it's so false, defender,
+
+27
+00:03:57,040 --> 00:04:02,560
+ or cloud stakes, and you don't own our extra, anything. Okay. So you can get the hash and you can
+
+28
+00:04:02,560 --> 00:04:08,880
+ block the hash and then you don't. So other than that, you can see, send the credentials for the
+
+29
+00:04:08,880 --> 00:04:25,760
+ user, user, user executed. So in our scenario, he, if the user, net user, user, active.
+
+30
+00:04:25,760 --> 00:04:37,120
+ So you can, you can, you can, I don't think the command was correct or not, but you can disable
+
+31
+00:04:37,120 --> 00:04:42,960
+ the user temporarily. So if something is going on and reset the crunches of the user. So that will
+
+32
+00:04:42,960 --> 00:04:49,040
+ be what's going to find. So let's hop off from this section and we'll continue our, uh,
+
+33
+00:04:49,040 --> 00:04:52,080
+ attack scenario in the next section. See you guys. Goodbye.
+
