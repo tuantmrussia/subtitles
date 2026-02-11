@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:07,000
+ In the last video, we had a detailed look at what this keyword does and how do we use it?
+
+2
+00:00:07,000 --> 00:00:08,000
+ Where can we use it?
+
+3
+00:00:08,000 --> 00:00:14,000
+ Now, next we talk about one of the trickiest keyword in Java and that is the keyword static.
+
+4
+00:00:14,000 --> 00:00:15,000
+ Why tricky?
+
+5
+00:00:15,000 --> 00:00:21,000
+ I'll, you'd shortly come to know, but, but first things first, where can we use the keyword static?
+
+6
+00:00:21,000 --> 00:00:29,000
+ And that is within a class that is you can use the keyword static with members of a class that means with
+
+7
+00:00:29,000 --> 00:00:32,000
+ instance variables and, and methods, right?
+
+8
+00:00:32,000 --> 00:00:40,000
+ And let's say in this class when we're working with this, what I can do is this is a non static variable, obviously my
+
+9
+00:00:40,000 --> 00:00:44,000
+ well, and now you declare a static integer value.
+
+10
+00:00:44,000 --> 00:00:51,000
+ So that makes this variable as static and how can you define static with methods?
+
+11
+00:00:51,000 --> 00:00:56,000
+ You already know that because we have been doing that with the public static wide main, but now you can go ahead
+
+12
+00:00:56,000 --> 00:01:05,000
+ and create your own starting methods, just put in static before and then say white, for example, do something.
+
+13
+00:01:05,000 --> 00:01:07,000
+ All right, I'll just put in this out here.
+
+14
+00:01:07,000 --> 00:01:11,000
+ I'll say inside do something.
+
+15
+00:01:11,000 --> 00:01:13,000
+ All right.
+
+16
+00:01:13,000 --> 00:01:21,000
+ So now we've got the first thing out of the way that is where can we use the keyword static that is with members of a
+
+17
+00:01:21,000 --> 00:01:27,000
+ class instance variables and methods, not within a method, not within a block, right?
+
+18
+00:01:27,000 --> 00:01:30,000
+ The static keyword is prohibited to be used there.
+
+19
+00:01:30,000 --> 00:01:31,000
+ So now what does this mean?
+
+20
+00:01:31,000 --> 00:01:37,000
+ That is the second point of the story is what does it mean for you to define a member of a class as static?
+
+21
+00:01:37,000 --> 00:01:47,000
+ And that is again, a point to be noted here is that is static members of a class are allocated memory.
+
+22
+00:01:47,000 --> 00:01:55,000
+ At the time when the class is loaded, that is even before any object of the class is created.
+
+23
+00:01:55,000 --> 00:02:06,000
+ Again, I'll put it for emphasis static members of a class are allocated memory that is there created at the time when the class is loaded.
+
+24
+00:02:06,000 --> 00:02:10,000
+ That is even before any objects of the class are created.
+
+25
+00:02:10,000 --> 00:02:19,000
+ That means static has a relationship directly with the class never with an object, never belongs to an object, right?
+
+26
+00:02:19,000 --> 00:02:26,000
+ Because it's created at the very first instance at the very beginning that is when the class is loaded into memory.
+
+27
+00:02:26,000 --> 00:02:30,000
+ That is even before any objects of the class are created.
+
+28
+00:02:30,000 --> 00:02:36,000
+ And this is serious repercussions on static member properties, which obviously will have a look at.
+
+29
+00:02:36,000 --> 00:02:47,000
+ So now that is if I'm in static into value and this is double my well, so that is what I mean is double my well would not exist until you do this.
+
+30
+00:02:47,000 --> 00:03:02,000
+ Right, until you create an object of the class, but this has already started to exist even before you create any objects of the class wide because this has a direct relationship with the class, right?
+
+31
+00:03:02,000 --> 00:03:18,000
+ And even though you can and you are using the keyword static with instance variables, but now these variables are not said to be instance variables that just call static variables or just for understanding you can also call them class variables.
+
+32
+00:03:18,000 --> 00:03:30,000
+ But I'll stick to what the industry calls them that is static variables and see that is ironic why because you're defining static at the instance level and still not calling an instance variable why?
+
+33
+00:03:30,000 --> 00:03:40,000
+ Because instance variables are which belong to instances which belong to objects, but now with the definition of starting you know, they have no relationship with objects, right?
+
+34
+00:03:40,000 --> 00:03:51,000
+ So this is started to exist, this would only exist when you create an object of the class and and the number of times you create an object of the class right as we saw previously.
+
+35
+00:03:51,000 --> 00:04:08,000
+ So what that means is that is once this is done, you don't need an object to be created, you can directly call that and what is the syntax of accessing static members be it starting variables or starting methods, you still need the dot operator of course, but not an object
+
+36
+00:04:08,000 --> 00:04:26,000
+ divide because again, it does not belong to an object belongs to the class that's why the syntax of using static members is you put in the type that is either a class or any other type in this case a class and my class is called working by this dot operator and then value.
+
+37
+00:04:26,000 --> 00:04:41,000
+ You access it and I'll just put in this is an int value and say 100 that's it. So this is the way we access a static member that is directly with the class name dot operator and then the member and then do whatever you want to do with it.
+
+38
+00:04:41,000 --> 00:04:51,000
+ And similarly, you can call static methods also and obviously I'll just comment this line because you know now this doesn't work in a static context.
+
+39
+00:04:51,000 --> 00:05:02,000
+ You can call them directly with the class him I'll say do something we don't need an object.
+
+40
+00:05:02,000 --> 00:05:17,000
+ Same goes here and object not needed for you to call do something or value, but you need an object to call my val and fun because these are non static members of your class.
+
+41
+00:05:17,000 --> 00:05:27,000
+ So static direct relationship with the class and object is where non static members are are accessible with right.
+
+42
+00:05:27,000 --> 00:05:47,000
+ And and guess what if you even more to call it implicitly you can directly do that this would still work in static context that is you just call do something and behind the scenes automatically it would be read as working with this door to something because it has a relationship right.
+
+43
+00:05:47,000 --> 00:06:00,000
+ I told you, I like to be more explicit which makes my core readable that's my strong suggestion to you as well, so I'll just do something like this working with this do something or do something right.
+
+44
+00:06:00,000 --> 00:06:16,000
+ That is how we call static right and you said working with this don't do something right was called and for example from here you want to go to fun right can I do this dot one.
+
+45
+00:06:16,000 --> 00:06:41,000
+ And now you know from the last video why because the keyword this can only be used in a non static context never within a static context why, because since the initial times the keyword this and static have never been good friends they've been fighting all along and I'll tell you the reason why now obviously this doesn't work this is an error right.
+
+46
+00:06:41,000 --> 00:07:04,000
+ Why doesn't this work is and why can't we use the keyword this in a static context because think about it for calling static methods of static context do we need an object no we do not why because I told you they exist even before an object exists so you directly call them with the class name like this right once you do right it comes here what is this refer to.
+
+47
+00:07:04,000 --> 00:07:22,000
+ I told you this refers to the currently executing object but do we have an object on which we have called do something no we directly have a class working with this or to something so when in the first place we never call do something with an object.
+
+48
+00:07:22,000 --> 00:07:51,000
+ This refer to there is no currently executing object in a static context that my second important point I'm making it so in a static context there is no such concept as a currently executing object hence the keyword this is prohibited to be used here we can use that that just gives you the reasoning as well the reason behind why this and static do not go well together now you know the reason as well right and just to make this a bit more fun for you.
+
+49
+00:07:51,000 --> 00:08:15,000
+ If you try to call this do something with an object let's say you create new and say do something can we do that right do something obviously directly belongs to the class it has no business what so ever with an object but surprisingly this works.
+
+50
+00:08:15,000 --> 00:08:29,000
+ But not recommended right and why do I say so why does this work because they said that do something is a member of working with this class.
+
+51
+00:08:29,000 --> 00:08:45,000
+ New working with this object is an object of working with this is compatibility this should work but behind the scenes this would still be interpreted like this that is with the class name working with this dot to something whether you write it or not.
+
+52
+00:08:45,000 --> 00:09:01,000
+ I say if this works right but why is this not recommended because it creates confusing code because someone else will read your code and think that do something is a non static method and you're calling it the non static way which is the non static way with the object.
+
+53
+00:09:01,000 --> 00:09:17,000
+ But behind the scenes and in reality it is never so because it would be read as class name or do something right and once you do that you come to do something right then you said this dot funk still in error.
+
+54
+00:09:17,000 --> 00:09:32,000
+ Right wonder because in do something now don't we have a non that is currently executive object because we have called this with an object if yes why can't we call this no just go back to basics that is this just looks like we are calling this with an object.
+
+55
+00:09:32,000 --> 00:09:52,000
+ In reality this is still interpreted as class name dot do something the static way and once you do that there is no such concept as a CEO are currently executing object in the static context and when that is not the case how can you still call this this still fails that's why this.
+
+56
+00:09:52,000 --> 00:10:09,000
+ So I say it creates confused code right that's why we can that's my next point here you can note it down or remember that right and that is we can call static members with an object although we should not.
+
+57
+00:10:09,000 --> 00:10:38,000
+ But we should not be doing that again I repeat it for you static members of a class can be called with objects although we should not right and I hope this gives you a solid reasoning as well and again a point on why are we going in details why are we discussing things and taking them from scratches because I want to lay out a solid good foundation for you in Java so that your rock solid to take on the more advanced topics.
+
+58
+00:10:38,000 --> 00:10:50,000
+ That would come later on in the scores as well as as in your career when you take up on some frameworks which are very top of Java this just sets you up so nicely to just take on them.
+
