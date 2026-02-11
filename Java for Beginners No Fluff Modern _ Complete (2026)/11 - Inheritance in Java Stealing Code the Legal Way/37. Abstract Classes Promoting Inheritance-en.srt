@@ -1,0 +1,376 @@
+1
+00:00:00,000 --> 00:00:05,760
+ Alright, by friends, let's take the discussion forward with inheritance, we will have a look
+
+2
+00:00:05,760 --> 00:00:11,440
+ at overriding and exceptions in our number one regarding scope. Now let's take the idea forward
+
+3
+00:00:11,440 --> 00:00:16,720
+ and if you zoom in to class human, see we have big eat and walk with their bodies, right?
+
+4
+00:00:16,720 --> 00:00:22,240
+ And Ranjith has a choice to override eat and walk and breathe or not, doesn't take the choice,
+
+5
+00:00:22,240 --> 00:00:26,400
+ show that it takes the choice to eat and walk but doesn't take the choice to breathe, that's perfectly
+
+6
+00:00:26,400 --> 00:00:33,440
+ fine but now if you zoom in to class human, what sense does it make to have the logic of
+
+7
+00:00:33,440 --> 00:00:38,080
+ how humans eat and walk in human because think about this human as just speak an idea,
+
+8
+00:00:38,080 --> 00:00:44,240
+ as just you have just drawn out the idea of how humans would act in the real world on a piece of
+
+9
+00:00:44,240 --> 00:00:49,760
+ paper because think about the super classes as just being blue, blueprints and abstract ideas
+
+10
+00:00:49,760 --> 00:00:57,760
+ or even or even something that is not concrete by itself, right? What does it telling me, right?
+
+11
+00:00:57,760 --> 00:01:03,440
+ So, because Ranjith walks and eats in the same way every human does, obviously has a choice
+
+12
+00:01:03,440 --> 00:01:07,600
+ but doesn't take the choice, right? But that's not how things work in the real world because in
+
+13
+00:01:07,600 --> 00:01:13,920
+ the real world what you would see is every human would have its own way of eating, have their
+
+14
+00:01:13,920 --> 00:01:18,880
+ own ways of walking, breathing and crying and running and smiling, right? That's make them
+
+15
+00:01:18,880 --> 00:01:25,440
+ unique humans unique individuals, something unique to them and that is why I zoom into this
+
+16
+00:01:25,440 --> 00:01:30,800
+ and introduce you to the concept of abstract classes. Remember we are discussed abstracting before,
+
+17
+00:01:30,800 --> 00:01:35,600
+ this is how we implement that in Java, the first way to do that is to abstract classes and it's
+
+18
+00:01:35,600 --> 00:01:42,160
+ such a great idea, right? Now, what are abstract classes? They're defined or declared with the keyword
+
+19
+00:01:42,160 --> 00:01:48,480
+ abstract and that's the first thing about them, the second thing is an abstract class in Java
+
+20
+00:01:48,480 --> 00:01:54,560
+ can have zero to n number of abstract methods, right? What are abstract methods,
+
+21
+00:01:54,560 --> 00:01:59,840
+ methods which are defined without a body and with the keyword abstract? That is, what I do is
+
+22
+00:01:59,840 --> 00:02:08,960
+ I leave breathe like this concrete, I'll call it a concrete method now and I make eat and walk as
+
+23
+00:02:08,960 --> 00:02:15,040
+ abstract, see, study colon, study colon, let me remove this final, you already know what do they do
+
+24
+00:02:15,040 --> 00:02:26,400
+ and I'll declare them with the keyword abstract. So now we have three methods in this class,
+
+25
+00:02:26,400 --> 00:02:31,040
+ breathe is concrete with a body that's fine because we still want humans to know how do we breathe,
+
+26
+00:02:31,040 --> 00:02:36,880
+ otherwise a new baby bonds up is born in the world and immediately dies because they don't even
+
+27
+00:02:36,880 --> 00:02:42,240
+ know how to breathe but they learn other traits like eat walking and running and crying after
+
+28
+00:02:42,240 --> 00:02:47,280
+ some time, right, but at least they do have to breathe, at least they're able to make it through
+
+29
+00:02:47,280 --> 00:02:51,680
+ and until they learn other traits. That's the great idea we're talking about
+
+30
+00:02:51,680 --> 00:02:55,840
+ the Almighty's idea of human, right? And that's why what I said is essentially,
+
+31
+00:02:55,840 --> 00:03:01,600
+ I said humans should have breathe eat and walk but Almighty will not tell us how to eat and how to
+
+32
+00:03:01,600 --> 00:03:08,480
+ walk, we have to make that up on our own, we have to understand that our own way of these two
+
+33
+00:03:08,480 --> 00:03:14,560
+ on our techniques such a great idea, right? And what happens is immediately in error because
+
+34
+00:03:14,560 --> 00:03:22,560
+ the abstract methods now often abstract class need to be overridden in the subclass or the subclass
+
+35
+00:03:22,560 --> 00:03:26,720
+ also needs to be defined as abstract. That's why we're getting an error here. Why? Because
+
+36
+00:03:26,720 --> 00:03:32,000
+ see, now we're getting three methods down inside our genes. One is concrete, that's not a problem,
+
+37
+00:03:32,000 --> 00:03:36,000
+ plantate has a choice to override that or not, but plantate does not have a choice to override
+
+38
+00:03:36,000 --> 00:03:40,640
+ eat and walk because they have come as abstract and abstract class, abstract methods can only
+
+39
+00:03:40,640 --> 00:03:46,080
+ be inside abstract classes, they cannot be normal classes, so either we'll declare this as abstract,
+
+40
+00:03:46,080 --> 00:03:52,160
+ error goes away, but if you want to have a mutation, what you would do, you will have a body of it.
+
+41
+00:03:52,160 --> 00:04:03,120
+ And still in error, unless you have a body of walk as it is. See, the error goes away,
+
+42
+00:04:03,120 --> 00:04:08,240
+ because I did not override read because read wasn't necessarily meant to be overridden. That's
+
+43
+00:04:08,240 --> 00:04:12,880
+ my choice. That's RNG choice. You want to do it or not because it's concrete, but that abstract
+
+44
+00:04:12,880 --> 00:04:18,240
+ methods of again, I repeat it for you to rule, and subtract methods of an abstract class need to
+
+45
+00:04:18,240 --> 00:04:23,680
+ be implemented in the subclass or the subclass also needs to be declared as abstract. And you're
+
+46
+00:04:23,680 --> 00:04:29,600
+ seeing this small i and i that means see whether error upwards, they are being seen, it takes
+
+47
+00:04:29,600 --> 00:04:36,480
+ due to the declaration, and this one takes you to the implementation. See, say RNG, yes.
+
+48
+00:04:36,480 --> 00:04:44,800
+ So the same goes with Schweta, the same goes with Sneha, but for now, let's come into Sneha,
+
+49
+00:04:44,800 --> 00:04:50,000
+ because it was extending in a final class, and you know final classes now cannot be overridden,
+
+50
+00:04:50,000 --> 00:04:55,600
+ sorry, cannot be extended inherited in Java, right. So, same choices with Schweta, right,
+
+51
+00:04:55,600 --> 00:04:59,680
+ but guess what now, and I'll just put in a sound here later on, you'll put the logic for how
+
+52
+00:04:59,680 --> 00:05:11,760
+ RNG walks and eats here, but I'll just when I'll say RNG on eat in ways only. Make sense? Let me
+
+53
+00:05:11,760 --> 00:05:20,640
+ comment this, paste it here, RNG can walk his own way, right, and then Schweta obviously had
+
+54
+00:05:20,640 --> 00:05:25,200
+ her own way of eating and walking, she still has a choice of breathing and she does that, and same
+
+55
+00:05:25,200 --> 00:05:30,240
+ D, let's remove this annotation, I'll get back to that in some time, and just put up written
+
+56
+00:05:30,240 --> 00:05:42,160
+ here as well, that is Schweta, own way of it, right, that's a test still choice, otherwise you're not
+
+57
+00:05:42,160 --> 00:05:48,240
+ going to error, but abstract methods, they need to be overridden, and why is this a such a great idea,
+
+58
+00:05:48,240 --> 00:05:54,480
+ because it promotes inheritance, why? Because now RNG has to have a deep nose, I would be able to
+
+59
+00:05:54,480 --> 00:06:00,080
+ eat and walk, but how I would have to figure that on my own, Schweta knows I have a version of
+
+60
+00:06:00,080 --> 00:06:06,240
+ eat and walk, but I would have to figure how do I walk and eat in my own way, but I still have a
+
+61
+00:06:06,240 --> 00:06:11,040
+ version of breathe, whether I want to stick to the generic way or have my own way, that's
+
+62
+00:06:11,040 --> 00:06:18,240
+ completely on my own, right, that's the great power of inheritance with abstract, abstract glasses, not.
+
+63
+00:06:18,240 --> 00:06:22,800
+ The third rule about abstract glasses is, abstract glasses in Java cannot be instantiated,
+
+64
+00:06:22,800 --> 00:06:27,120
+ that's we cannot create objects of them, now it makes sense why, because that's it,
+
+65
+00:06:27,120 --> 00:06:31,360
+ you were able to create an object of human, what would you do with it? You can't call human or to
+
+66
+00:06:31,360 --> 00:06:36,240
+ eat and walk, because these are just declarations, but you might have a count grant given,
+
+67
+00:06:36,240 --> 00:06:42,400
+ what wrong did breathe do, can't we call new human or breathe? Yes, we call it, but think about it
+
+68
+00:06:42,400 --> 00:06:47,760
+ in the literary sense, and that is, breathe in human, eat and human and walk in human, where
+
+69
+00:06:47,760 --> 00:06:54,640
+ never meant to be of humans, this was just as the ideal class, the ideal type that all subclasses
+
+70
+00:06:54,640 --> 00:07:00,480
+ looked up to for behavior, so the super class here, abstract class, it just defines the behavior
+
+71
+00:07:00,480 --> 00:07:06,080
+ for all the subclasses to implement themselves, right, it will not tell them how now, it would
+
+72
+00:07:06,080 --> 00:07:10,480
+ just tell them what do you need, but how, just figure it out on your own, that's why it's such a
+
+73
+00:07:10,480 --> 00:07:16,960
+ great idea, and that's why we cannot create objects of super class, that's abstract glasses in Java,
+
+74
+00:07:16,960 --> 00:07:22,080
+ and now, let's come in this, and you can call rangit.eat, walk and breathe,
+
+75
+00:07:22,080 --> 00:07:26,720
+ shredder.eat, walk and breathe, just have a look at this, what will we get once green, see,
+
+76
+00:07:26,720 --> 00:07:30,320
+ humans breathe with rangit or breathe, because still rangit had a choice,
+
+77
+00:07:30,320 --> 00:07:34,160
+ breathe was a concrete method, he took that choice, that is indeed not all right, that's right,
+
+78
+00:07:34,160 --> 00:07:39,520
+ but rangit was made to eat and walk in his own way, particular way, so now we know how rangit
+
+79
+00:07:39,520 --> 00:07:44,960
+ walks and dates, shredder took the choice of breathing as well, and shredder has their own way of
+
+80
+00:07:44,960 --> 00:07:50,000
+ eating, has their own way of walking, and still can't dance because it's our own method, right,
+
+81
+00:07:50,000 --> 00:07:57,840
+ so that is how we can do stuff with, with abstract glasses, and now, if you try to do
+
+82
+00:07:57,840 --> 00:08:03,600
+ new human, immediately in error, it says plain and simple, that is, human is abstract cannot be
+
+83
+00:08:03,600 --> 00:08:22,800
+ instantiated, I'll say, doesn't work now, why human is abstract, right, it would not work now,
+
+84
+00:08:22,800 --> 00:08:28,000
+ right, so again, I'll just repeat the rules for you, before ending this video wrapping this up,
+
+85
+00:08:28,000 --> 00:08:32,480
+ that is the first rule is, abstract glasses are there to promote inheritance, because by it said,
+
+86
+00:08:32,480 --> 00:08:36,720
+ what would you do with them, you cannot create an object, you cannot call the methods, right,
+
+87
+00:08:36,720 --> 00:08:41,200
+ almost useless, doesn't make sense, it's just therefore one reason to promote
+
+88
+00:08:41,200 --> 00:08:45,280
+ and courage inheritance, abstract glasses are defined with a keyword abstract, they can have
+
+89
+00:08:45,280 --> 00:08:50,160
+ from zero to end of our website methods, abstract methods can only be inside abstract glasses,
+
+90
+00:08:50,160 --> 00:08:54,160
+ they are declared with a keyword abstract without bodies, ending with semicolon,
+
+91
+00:08:54,160 --> 00:08:59,280
+ and abstract methods of an abstract class need to be implemented in the subclass, or the subclass,
+
+92
+00:08:59,280 --> 00:09:03,680
+ also needs to be declared as abstract, abstract glasses in Java cannot be instantiated,
+
+93
+00:09:03,680 --> 00:09:09,680
+ we cannot create objects out of them, in the next video, we'll take this even a step further
+
+94
+00:09:09,680 --> 00:09:13,360
+ with another concept that you will just, you're just going to learn,
+
