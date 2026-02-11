@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:29,500
+Tất cả các quyền bạn bè của tôi, bây giờ chúng tôi bắt đầu nói về phương pháp hoặc như chúng tôi muốn gọi chúng trong các ngôn ngữ khác đó là chức năng, nhưng ở Java chúng tôi gọi chúng một cách thích hợp là phương pháp và đó là những gì tôi sẽ gắn kết để gọi chúng ngay trong suốt khóa học này và những điều này là quan trọng bởi vì và bạn cần phải có sự hiểu biết tốt về chúng tất nhiên bởi vì chúng được sử dụng hầu như mỗi ngày trong cuộc sống của bạn như là một nhà phát triển, không chỉ là một nhà phát triển Java, nhưng cho dù bạn đang làm việc trong Java hoặc không phải ngôn ngữ khác,
+
+2
+00:00:29,500 --> 00:00:46,500
+bạn sẽ sử dụng phương pháp hoặc chức năng. Vì vậy, làm thế nào để chúng tôi sử dụng chức năng và nơi chúng tôi sử dụng chúng và làm thế nào chúng tôi có thể gọi chúng đúng? Vì vậy, các phần khác nhau của câu đố bắt đầu với các cơ bản và đó là làm thế nào chúng tôi, tại sao chúng tôi sử dụng phương pháp đúng?
+
+3
+00:00:46,500 --> 00:01:05,000
+Vì vậy, các phương pháp giống như, nếu bạn, cho đến bây giờ chúng tôi đã viết tất cả các mã của chúng tôi trong phương pháp chính đó là sự thiếu hụt đặc biệt nghiên cứu chính, nhưng sau một thời gian chúng tôi bắt đầu nhận ra rằng chúng tôi không thể tiếp tục và đặt tất cả mọi thứ bên trong chính mà sẽ đặt tất cả các rác vào một phương pháp.
+
+4
+00:01:05,000 --> 00:01:25,000
+Và tại sao đó là không thực tế trong một dự án thế giới thực hoặc một dự án mà bạn đang thực hiện trong công ty của bạn, bởi vì rõ ràng điều đầu tiên là việc gỡ lỗi sẽ trở nên khó khăn bởi vì nếu bạn đặt tất cả mọi thứ vào cùng một phương pháp, sau đó bạn sẽ cần phải bắt đầu từ dòng đầu tiên cho đến khi bạn đạt được dòng mà gây ra lỗi đó.
+
+5
+00:01:25,000 --> 00:01:42,000
+Đúng vậy, việc gỡ lỗi trở nên khó bảo trì mã hóa, vì vậy bạn cần phải biết nơi nào tôi phải thay đổi để tăng cường mã này một lần nữa, nếu bạn đã viết tất cả mọi thứ bên trong một phương pháp giống như phương pháp chính, vì vậy sau đó bạn phải bắt đầu từ dòng một bên phải.
+
+6
+00:01:42,000 --> 00:02:05,000
+Và vấn đề thứ ba là tổ chức mật mã cũng khó khăn như vậy đó là lý do tại sao chúng tôi bây giờ có thể chia mã của chúng tôi thành những đoạn nhỏ như tôi muốn gọi cho họ hoặc đơn vị nếu bạn muốn giới thiệu chúng đúng và sau đó gọi chúng với tên độc đáo của họ và một lớp học ở Java có thể có nhiều phương pháp đúng.
+
+7
+00:02:05,000 --> 00:02:22,000
+Tùy theo yêu cầu của bạn và sở thích của bạn, bạn có thể tiếp tục và tạo ra và sử dụng chúng trên các con ruồi trên trái đất đúng vì vậy đó là lý do tại sao chúng ta sử dụng phương pháp một lần nữa như triết lý của tôi nói rằng tôi luôn luôn gắn bó với điều đó tôi luôn luôn nói về đầu tiên tại sao.
+
+8
+00:02:22,000 --> 00:02:40,000
+Bởi vì nếu bạn muốn biết tại sao chúng ta sử dụng một cái gì đó rõ ràng để tập trung vào lý do tại sao chúng ta thậm chí thảo luận về điều này trên hãy nói nếu bạn đang xem video này vào một buổi chiều chủ nhật hoặc một buổi sáng thứ hai, tại sao bạn thậm chí ở đây lắng nghe tôi và dành rất nhiều thời gian vào đó, tại sao điều đó là quan trọng.
+
+9
+00:02:40,000 --> 00:02:57,000
+Trạng thái rõ ràng bạn biết mục tiêu bạn biết động cơ sau đó chúng tôi tập trung vào làm thế nào đúng và làm thế nào là phần cú pháp bên phải vì vậy hãy kiểm tra làm thế nào một lần nữa một phần về tôi sẽ làm là tôi sẽ chỉ tạo một tập tin mới ở đây một lớp học mới tôi sẽ chỉ gọi nó.
+
+10
+00:02:57,000 --> 00:03:26,000
+Bắt đầu nói về phương pháp và tôi sẽ chỉ nói phương pháp chính ở đây đó là chúng tôi chỉ cần phải ở tất cả các lớp học của bạn phải ở bên trong các lớp học công cộng tĩnh khoảng trống chính và bây giờ bạn có thể đi vào và xác định phương pháp của riêng bạn điều đầu tiên để sử dụng phương pháp nói phương pháp này phương pháp tuyên bố với bạn xác định những gì đi trên một phương pháp và sau đó phần thứ hai là gọi phương pháp đó đúng và bạn có thể gọi nó nhiều lần như yêu cầu của bạn.
+
+11
+00:03:26,000 --> 00:03:42,000
+Vì vậy, những gì là tuyên bố những gì là định nghĩa của một cú pháp phương pháp nó đi như thế này trong Java bạn nói trường học và bạn nói loại trở lại.
+
+12
+00:03:42,000 --> 00:03:57,000
+Và sau đó bạn đặt vào bộ nhận diện và sau đó danh sách tham số và sau đó bảng bên phải.
+
+13
+00:03:57,000 --> 00:04:12,000
+Đây là cú pháp của việc sử dụng một phương pháp định nghĩa một phương pháp trong Java rõ ràng đã bình luận điều này ra bởi vì nếu không nó sẽ gây ra một lỗi bởi vì một phạm vi có nghĩa là nó là một cảm giác đúng theo nghĩa đen ở đây vì vậy phạm vi là những gì chúng tôi đã không bao gồm cho đến bây giờ.
+
+14
+00:04:12,000 --> 00:04:26,000
+Vì vậy, chúng tôi sẽ giữ nó trong phạm vi mặc định và những gì là phạm vi mặc định trong Java tôi rõ ràng cho bạn biết khi chúng tôi đi qua video về phạm vi và tin tưởng tôi trên đó chúng tôi sẽ có một cuộc thảo luận tuyệt vời một lần nữa về ống kính như tôi luôn luôn làm từ đầu.
+
+15
+00:04:26,000 --> 00:04:36,000
+Vì vậy, phạm vi là những gì là phạm vi của phương pháp này theo mặc định, chúng ta hãy không xác định rằng loại trả lại là những gì là phương pháp đó sẽ trở lại trên đó trong một thời gian.
+
+16
+00:04:36,000 --> 00:05:00,000
+Hãy nhận được vào lửa một lần nữa rơi trường hợp cáp và các quy tắc chúng tôi xác định một tốt hơn có thể đọc được tên của phương pháp này bạn biết các quy tắc dây cáp bây giờ và sau đó các tham số danh sách này có thể là zero để n bao nhiêu tham số làm phương pháp này và sau đó cơ thể đó là những gì bạn muốn được viết trong phương pháp này và bạn muốn được sử dụng lại bởi vì nếu bạn đặt vào một cái gì đó trong một phương pháp sau đó bạn có thể đi và gọi.
+
+17
+00:05:00,000 --> 00:05:28,000
+n số lần đó có nghĩa là bạn đang sử dụng lại mã đó một lần nữa một lợi thế khác của chia mã của bạn thành các phương pháp chức năng đúng và theo cú pháp chúng ta hãy đi vào và xác định một phương pháp trong các phương pháp thử nghiệm của lớp học bởi vì nhớ rằng tôi đã nói với bạn rằng không có hoặc bên ngoài lớp học rất ít điều trong Java được cho phép và phương pháp không phải là một trong số họ bạn không thể xác định một phương pháp bên ngoài của một lớp học ở Java nó phải được trong bất kỳ lớp học nào.
+
+18
+00:05:28,000 --> 00:05:42,000
+Lần này tôi sẽ đặt nó vào bản thử nghiệm phương pháp tôi chỉ nói ngắn gọn là MIT trắng trong phương pháp và sau đó cơ thể rộng rãi có nghĩa là phương pháp này sẽ không trả lại bất cứ cái gì mà tôi đã để trống có nghĩa là nó có một phạm vi mặc định.
+
+19
+00:05:42,000 --> 00:06:06,000
+Và sau đó không có tham số bởi vì tôi đã nói với bạn các tham số có thể là zero để n và sau đó bạn đặt vào cơ thể giá trị và các khớp tay đóng và trong này những gì bạn muốn được sử dụng lại những gì bạn muốn được bao gồm trong phương pháp cơ thể cho bây giờ chỉ để bắt đầu tôi sẽ chỉ cần đặt một hệ thống mà không in trong và tôi sẽ nói khi điều này được gọi là in thông điệp phương pháp này bên trong MIT bởi vì đó là thường.
+
+20
+00:06:06,000 --> 00:06:20,000
+Một cách tốt để biết nơi mà kiểm soát hiện tại là như vậy bên trong MIT và đó là phần phương pháp đầu tiên định nghĩa nhớ rằng nó phải ở trong cơ thể của một lớp học nhưng bên ngoài.
+
+21
+00:06:20,000 --> 00:06:41,000
+Các phương pháp khác một lần nữa, quy tắc khác là bạn không thể xác định một phương pháp trong một phương pháp ở Java phải vì vậy đó là phần đầu tiên phần thứ hai gọi đó là bởi vì nếu bạn không gọi một phương pháp nó sẽ không được thực hiện đoạn mã mà bạn đã viết bên trong nó sẽ không bao giờ được thực hiện đúng và làm thế nào để bạn gọi nó từ bất kỳ phương pháp khác không chỉ có nghĩa.
+
+22
+00:06:41,000 --> 00:06:55,000
+Ở đây trong ví dụ này chúng tôi đang có phương pháp chính vì vậy bạn muốn gọi nó từ đây tôi sẽ chỉ cần tạo ra một đối tượng tôi sẽ nói phương pháp thử nghiệm phương pháp này hãy gọi nó là đại diện cho phương pháp mới thử nghiệm.
+
+23
+00:06:55,000 --> 00:07:00,000
+Tôi sẽ nói chấm đỏ hết.
+
+24
+00:07:00,000 --> 00:07:10,000
+Vì vậy, những gì bạn làm là bạn đặt vào biến tham chiếu đối tượng hoặc đối tượng chấm người điều hành và tên phương pháp và các đối số ở đây bạn xác định các đối số ở đây bạn xác định các tham số
+
+25
+00:07:10,000 --> 00:07:23,000
+Và họ phải giống nhau hiện tại không có tham số không ngạc nhiên không có không có các đối số cũng và một khi điều này được gọi là lá điều khiển tạm thời từ bên ngoài chính đi MIT
+
+26
+00:07:23,000 --> 00:07:49,000
+Thực hiện nó hoàn tất việc thực hiện quay trở lại và tiếp tục thực hiện chính và nhưng chương trình của bạn ra khỏi đây. Vì vậy, bây giờ chúng ta nên vào MIT một khi tôi điều hành và những gì nó nói bất hợp pháp trong một nhân vật vượt ngục bây giờ chúng ta hãy loại bỏ nó vì đó là trong một chương trình trước đó nhưng chúng tôi chỉ đang chạy điều này.
+
+27
+00:07:49,000 --> 00:08:01,000
+Bằng cách nào đó, nó đi đến các chương trình trước đó chúng tôi không có gì để làm với điều đó vì vậy những gì bạn làm là tập tin hiện tại và sau đó một lần nữa nó nói chỉ số trước đó lỗi hãy đi vào đó.
+
+28
+00:08:01,000 --> 00:08:18,000
+Yeah bên trong MIT vẫn nhận được rằng trên màn hình Hãy cho tôi chạy nó một lần nữa để bên trong MIT cuộc gọi đã được thực hiện và nó đã được thực hiện tại một trường hợp đơn giản nhất của sử dụng một phương pháp đầu tiên bạn xác định chữ ký của nó đúng là dòng đầu tiên.
+
+29
+00:08:18,000 --> 00:08:32,000
+Và dòng đầu tiên là quan trọng nó cho bạn biết những gì làm một phương pháp là những gì bạn định nghĩa trong cơ thể luôn luôn đúng nhưng chữ ký là dòng đầu tiên của phương pháp tuyên bố nó cho bạn biết rất nhiều về hành vi phương pháp.
+
+30
+00:08:32,000 --> 00:08:47,000
+Nó sẽ hành xử như thế nào và cho bạn biết chữ ký giữ một phần như trong phạm vi nhận diện thời gian danh sách tham số đúng vì vậy chúng tôi nhận được một ý tưởng những phương pháp hành xử này sẽ trông như thế nào nhưng những gì nó sẽ làm luôn luôn cơ thể.
+
+31
+00:08:47,000 --> 00:08:49,000
+Như đã nói trong cuộc họp.
+
+32
+00:08:49,000 --> 00:09:09,000
+Đúng vậy, vì vậy đó là cách đầu tiên để sử dụng phương pháp ngay bây giờ rõ ràng sẽ có các tham số loại trả về sẽ thay đổi mà sẽ đến cho bạn trong video tiếp theo nơi chúng tôi sẽ chỉ cần đi và bàn luận về phía trước và nói về danh sách tham số và các loại trở lại làm thế nào họ ảnh hưởng đến một hành vi và ký hiệu phương pháp.
+
