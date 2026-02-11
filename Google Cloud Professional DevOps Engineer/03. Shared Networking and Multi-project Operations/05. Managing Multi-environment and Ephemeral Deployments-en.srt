@@ -1,0 +1,283 @@
+1
+00:00:01,120 --> 00:00:05,070
+Think about the last time you deployed a feature in the production.
+
+2
+00:00:05,250 --> 00:00:09,609
+You probably tested it locally and crossed your fingers during the deployment.
+
+3
+00:00:09,850 --> 00:00:13,210
+Now imagine doing that same in the project which is
+
+4
+00:00:13,210 --> 00:00:15,609
+having a 40 plus microservices.
+
+5
+00:00:15,770 --> 00:00:20,129
+Picture your GCP organization as a city, and in this city,
+
+6
+00:00:20,540 --> 00:00:25,520
+each environment like prod, stage is like a district with different risks,
+
+7
+00:00:25,520 --> 00:00:29,840
+with different rules, and with different levels of access.
+
+8
+00:00:30,069 --> 00:00:36,209
+The production is the most secure district where everything here must be stable,
+
+9
+00:00:36,349 --> 00:00:38,229
+monitored, and restricted.
+
+10
+00:00:38,470 --> 00:00:41,330
+You have the strict IAM policy.
+
+11
+00:00:41,442 --> 00:00:44,462
+It also has a restrictive organization policy,
+
+12
+00:00:44,962 --> 00:00:49,192
+network isolation through shared VPC, stable version of services,
+
+13
+00:00:49,402 --> 00:00:54,301
+longer retention policies, and high observability requirements.
+
+14
+00:00:54,562 --> 00:00:57,481
+Google recommends broad isolation because the production
+
+15
+00:00:57,481 --> 00:01:00,881
+environment must be protected from the drift and
+
+16
+00:01:00,881 --> 00:01:03,201
+misconfiguration or privilege misuse.
+
+17
+00:01:03,692 --> 00:01:07,533
+Staging is the production replica. Staging is where you
+
+18
+00:01:07,533 --> 00:01:09,484
+simulate the real‑world production.
+
+19
+00:01:09,613 --> 00:01:11,594
+It typically mirrors the production.
+
+20
+00:01:11,814 --> 00:01:14,814
+It has the same VPC, same IAM structure,
+
+21
+00:01:15,054 --> 00:01:18,573
+same firewall rules, same region and cluster sizes,
+
+22
+00:01:18,643 --> 00:01:21,134
+and same version of dependencies.
+
+23
+00:01:21,333 --> 00:01:24,674
+It's almost like exactly to your production environment
+
+24
+00:01:25,323 --> 00:01:28,880
+without actually having the production risk. In dev
+
+25
+00:01:28,880 --> 00:01:31,045
+environments, engineers experiment, build,
+
+26
+00:01:31,625 --> 00:01:34,146
+break the things, and try out the new features.
+
+27
+00:01:34,346 --> 00:01:37,106
+These environments are intentionally flexible.
+
+28
+00:01:37,426 --> 00:01:41,286
+Security is still important, but less restrictive,
+
+29
+00:01:41,466 --> 00:01:44,545
+and mostly the developers get the higher privileges here.
+
+30
+00:01:44,825 --> 00:01:48,225
+Most enterprises also have a shared service folder which is
+
+31
+00:01:48,225 --> 00:01:52,459
+having the centralized CI/CD, Artifact Registry, central
+
+32
+00:01:52,459 --> 00:01:55,419
+monitoring and logging, and service mesh.
+
+33
+00:01:55,589 --> 00:02:01,260
+This keeps critical shared components isolated from individual applications.
+
+34
+00:02:01,540 --> 00:02:04,139
+Let's work through how code moves across the
+
+35
+00:02:04,139 --> 00:02:06,540
+environment, a critical DevOps workflow.
+
+36
+00:02:06,660 --> 00:02:10,258
+Imagine you're working on the add new payment method
+
+37
+00:02:10,258 --> 00:02:11,800
+feature for the payment service.
+
+38
+00:02:12,059 --> 00:02:13,759
+Here is the typical lifecycle.
+
+39
+00:02:14,029 --> 00:02:17,210
+First, the developer commits the code that triggered the CI.
+
+40
+00:02:17,330 --> 00:02:19,833
+It will do the unit test, security scans,
+
+41
+00:02:20,003 --> 00:02:24,444
+build Artifact Registry, and store images in the Artifact Registry.
+
+42
+00:02:24,794 --> 00:02:28,544
+Then Cloud Deploy promotes the image into the development.
+
+43
+00:02:28,833 --> 00:02:32,194
+This environment is meant for fast iteration.
+
+44
+00:02:32,464 --> 00:02:35,813
+Developers can see the features live within minutes.
+
+45
+00:02:36,194 --> 00:02:37,753
+Once the dev test passes,
+
+46
+00:02:38,014 --> 00:02:41,604
+the pipeline promotes the release to the staging environment.
+
+47
+00:02:41,794 --> 00:02:45,363
+Here your integration test will run, your E2E,
+
+48
+00:02:45,434 --> 00:02:47,697
+that is end to end workflow gets tested.
+
+49
+00:02:47,968 --> 00:02:53,177
+This gives the engineer confidence that the feature behaves as expected.
+
+50
+00:02:53,328 --> 00:02:56,037
+In the next step, depending on the company,
+
+51
+00:02:56,307 --> 00:02:59,388
+this may involve engineering or manager review,
+
+52
+00:02:59,567 --> 00:03:03,527
+a product owner approval, SRE rollout readiness check.
+
+53
+00:03:03,727 --> 00:03:06,760
+Once all this gets done, we move to step five,
+
+54
+00:03:07,328 --> 00:03:11,207
+where finally the Cloud Deploy pushes the clean
+
+55
+00:03:11,207 --> 00:03:13,488
+tested version to the production.
+
+56
+00:03:13,852 --> 00:03:14,682
+At this point,
+
+57
+00:03:14,871 --> 00:03:18,662
+Google Cloud recommends the release should be in the form of canary
+
+58
+00:03:18,662 --> 00:03:22,572
+release or maybe blue‑green deployment or it may be the progressive
+
+59
+00:03:22,572 --> 00:03:24,302
+rollout through the Cloud Deploy.
+
+60
+00:03:24,582 --> 00:03:29,561
+Now let's talk about the real game changer, that is ephemeral environments.
+
+61
+00:03:29,811 --> 00:03:33,341
+These are the temporary preview environments created per
+
+62
+00:03:33,341 --> 00:03:35,882
+pull request or per feature branch.
+
+63
+00:03:36,182 --> 00:03:39,141
+This will help the product manager to review the UI
+
+64
+00:03:39,141 --> 00:03:42,705
+changes, QA to validate behavior before merge.
+
+65
+00:03:42,955 --> 00:03:48,055
+You can deploy the previews without breaking the dev or the staging environment.
+
+66
+00:03:48,315 --> 00:03:52,195
+Google's best practices describe it as creating on‑demand
+
+67
+00:03:52,195 --> 00:03:55,936
+isolated environments for testing the features independent
+
+68
+00:03:55,936 --> 00:03:57,695
+of the stable environment.
+
+69
+00:03:57,966 --> 00:04:01,106
+So that's how you manage the multi‑environment and
+
+70
+00:04:01,106 --> 00:04:04,156
+ephemeral deployments in the Google Cloud,
+
+71
+00:04:04,195 --> 00:04:07,996
+the same way high‑performing DevOps teams do worldwide.
