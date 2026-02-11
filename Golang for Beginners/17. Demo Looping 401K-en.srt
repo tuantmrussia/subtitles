@@ -1,0 +1,312 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this demo, we'll be creating a program that utilizes looping.
+
+2
+00:00:05,000 --> 00:00:08,000
+ Once you're ready, fire up Visual Studio Code, and let's go.
+
+3
+00:00:08,000 --> 00:00:15,000
+ Once Visual Studio Code loads, click on the demo folder.
+
+4
+00:00:15,000 --> 00:00:19,000
+ We're on the Loops demo, so scroll down to Loops,
+
+5
+00:00:19,000 --> 00:00:22,000
+ click that, and then double click on Loops.go.
+
+6
+00:00:22,000 --> 00:00:27,000
+ We'll be creating a basic for loop,
+
+7
+00:00:27,000 --> 00:00:29,000
+ and we'll take the iterator value and add it together
+
+8
+00:00:29,000 --> 00:00:31,000
+ to create a sum.
+
+9
+00:00:31,000 --> 00:00:33,000
+ So the first thing we need to do is create a sum variable,
+
+10
+00:00:33,000 --> 00:00:35,000
+ and we'll set it to be equal to zero.
+
+11
+00:00:35,000 --> 00:00:38,000
+ We'll then do a print line that way when we run the program.
+
+12
+00:00:38,000 --> 00:00:41,000
+ We know what the sum is when we start the program.
+
+13
+00:00:41,000 --> 00:00:45,000
+ We'll then create our for loop by creating a new i variable,
+
+14
+00:00:45,000 --> 00:00:47,000
+ and set it to the value of one.
+
+15
+00:00:47,000 --> 00:00:49,000
+ As long as i is less than or equal to 10,
+
+16
+00:00:49,000 --> 00:00:52,000
+ we'll increment it by one and run the loop.
+
+17
+00:00:52,000 --> 00:00:56,000
+ Within the loop, we'll take sum, and we'll add i to it.
+
+18
+00:00:57,000 --> 00:01:01,000
+ Each loop iteration will print out some is, and we'll print the sum.
+
+19
+00:01:01,000 --> 00:01:07,000
+ So in our code, we're creating a new i variable for this for loop,
+
+20
+00:01:07,000 --> 00:01:09,000
+ and we're setting it to be equal to one.
+
+21
+00:01:09,000 --> 00:01:11,000
+ And as long as i is less than or equal to 10,
+
+22
+00:01:11,000 --> 00:01:13,000
+ we'll execute the body of this loop.
+
+23
+00:01:13,000 --> 00:01:16,000
+ Whenever this loop body executes and gets to the end,
+
+24
+00:01:16,000 --> 00:01:20,000
+ i will be incremented by one, and it'll be checked again for this condition.
+
+25
+00:01:20,000 --> 00:01:24,000
+ And once i is greater than 10, this will evaluate two false,
+
+26
+00:01:24,000 --> 00:01:27,000
+ then we'll exit out and continue running the program.
+
+27
+00:01:27,000 --> 00:01:31,000
+ Within our loop body, we take the sum, which is initially zero,
+
+28
+00:01:31,000 --> 00:01:33,000
+ and we add i to it.
+
+29
+00:01:33,000 --> 00:01:37,000
+ i starts at one, so first will be plus one, then plus two,
+
+30
+00:01:37,000 --> 00:01:41,000
+ then plus three, all the way until i is 10.
+
+31
+00:01:41,000 --> 00:01:44,000
+ Before we continue, let's run this program,
+
+32
+00:01:44,000 --> 00:01:46,000
+ and we'll see what kind of output that we get.
+
+33
+00:01:46,000 --> 00:01:48,000
+ Someone hop into a terminal.
+
+34
+00:01:48,000 --> 00:01:54,000
+ We can run this program with go, run dot slash demo slash loops.
+
+35
+00:01:54,000 --> 00:01:58,000
+ And we can see the output starts at zero, one, three,
+
+36
+00:01:58,000 --> 00:02:00,000
+ and then eventually we end up at 55.
+
+37
+00:02:00,000 --> 00:02:03,000
+ We hop back into the code.
+
+38
+00:02:03,000 --> 00:02:05,000
+ We're not going to create another loop,
+
+39
+00:02:05,000 --> 00:02:08,000
+ and as long as the sum is greater than 10,
+
+40
+00:02:08,000 --> 00:02:11,000
+ we'll take the sum minus equals five,
+
+41
+00:02:11,000 --> 00:02:13,000
+ and then we'll print it out.
+
+42
+00:02:13,000 --> 00:02:17,000
+ And we'll also note that we're having a decrement operation
+
+43
+00:02:17,000 --> 00:02:20,000
+ that we know that which loop that we're in.
+
+44
+00:02:20,000 --> 00:02:24,000
+ So with this loop, we don't create a new variable at all.
+
+45
+00:02:24,000 --> 00:02:27,000
+ All we're doing is checking if the sum is greater than 10.
+
+46
+00:02:27,000 --> 00:02:30,000
+ We know from the last run that the sum was 55,
+
+47
+00:02:30,000 --> 00:02:32,000
+ so it's definitely greater than 10,
+
+48
+00:02:32,000 --> 00:02:34,000
+ and this will check out as true.
+
+49
+00:02:34,000 --> 00:02:36,000
+ We'll then enter into this loop.
+
+50
+00:02:36,000 --> 00:02:39,000
+ We'll take the sum, which is 55,
+
+51
+00:02:39,000 --> 00:02:43,000
+ or minus five from it, and then it'll get reassigned back into sum.
+
+52
+00:02:43,000 --> 00:02:45,000
+ We'll then print out a message that we're documenting,
+
+53
+00:02:45,000 --> 00:02:47,000
+ and then the loop will continue.
+
+54
+00:02:47,000 --> 00:02:49,000
+ And this condition is going to keep being checked
+
+55
+00:02:49,000 --> 00:02:52,000
+ until sum is finally less than 10,
+
+56
+00:02:52,000 --> 00:02:54,000
+ or less than or equal to 10.
+
+57
+00:02:54,000 --> 00:02:56,000
+ So let's save and run this program,
+
+58
+00:02:56,000 --> 00:02:58,000
+ and we'll see what we get.
+
+59
+00:02:58,000 --> 00:03:02,000
+ So here we have at the top, it won't have the screen,
+
+60
+00:03:02,000 --> 00:03:05,000
+ but we started one, and then we end up at 55,
+
+61
+00:03:05,000 --> 00:03:07,000
+ and now we decrement five at a time.
+
+62
+00:03:07,000 --> 00:03:12,000
+ So 50, 45, 40, all the way down until the sum is 10.
+
+63
+00:03:14,000 --> 00:03:17,000
+ One particular thing to remember about this loop down here on the bottom
+
+64
+00:03:17,000 --> 00:03:21,000
+ is we aren't changing the sum within the loop statement itself.
+
+65
+00:03:21,000 --> 00:03:23,000
+ So here in this for loop, this first one,
+
+66
+00:03:23,000 --> 00:03:25,000
+ we have the i plus plus at the end,
+
+67
+00:03:25,000 --> 00:03:27,000
+ which modifies this i,
+
+68
+00:03:27,000 --> 00:03:29,000
+ which eventually affects this condition.
+
+69
+00:03:29,000 --> 00:03:31,000
+ None of that is present here on this bottom loop,
+
+70
+00:03:31,000 --> 00:03:34,000
+ so if we forget to subtract or add to the sum,
+
+71
+00:03:34,000 --> 00:03:36,000
+ then this will just go on forever,
+
+72
+00:03:36,000 --> 00:03:38,000
+ because 55 is greater than 10,
+
+73
+00:03:38,000 --> 00:03:40,000
+ and so this is always going to be true,
+
+74
+00:03:40,000 --> 00:03:42,000
+ and this will just be an infinite loop.
+
+75
+00:03:42,000 --> 00:03:46,000
+ So always remember to have something that modifies this expression
+
+76
+00:03:46,000 --> 00:03:48,000
+ that way the loop eventually terminates.
+
+77
+00:03:48,000 --> 00:03:52,000
+ This concludes the demo on loops.
+
+78
+00:03:52,000 --> 00:03:54,000
+ I'll see you in the next presentation.
+
