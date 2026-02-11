@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:04,560
+ Hi, and this is awesome. I will show you quickly how you can use the Cursor.
+
+2
+00:00:04,560 --> 00:00:10,400
+ I will do really quick overview of what you can use from an interface, how you can use some
+
+3
+00:00:10,400 --> 00:00:19,920
+ main features. It will be really short lesson and in details, I will go for every feature in the
+
+4
+00:00:19,920 --> 00:00:26,160
+ next lesson. So this lesson is just needed that you have idea how it works in general and what you
+
+5
+00:00:26,160 --> 00:00:33,680
+ can do. I will create a new project which I will call Winsoft. I will open it from my folder.
+
+6
+00:00:33,680 --> 00:00:45,600
+ I need to create a new folder. Winsoft and I open it. Okay, now we will create a new file. We will
+
+7
+00:00:45,600 --> 00:00:55,760
+ be implementing the utility for check password strings. And this utility will check if the
+
+8
+00:00:55,760 --> 00:01:03,360
+ password you provided to this utility is a weak or strong or very strong. Yeah. And the first
+
+9
+00:01:03,360 --> 00:01:08,080
+ thing I want to show you is how the Cursor understands the context of what we're doing.
+
+10
+00:01:08,080 --> 00:01:14,400
+ When you will create a file, I will provide a name, the player name, what the utility is.
+
+11
+00:01:14,400 --> 00:01:20,320
+ And Cursor will take this file name and you understand the context of what we're creating.
+
+12
+00:01:20,880 --> 00:01:27,680
+ And based on this name, he can do some suggestions. So let's create a password
+
+13
+00:01:27,680 --> 00:01:44,080
+ string check. Checker.js. Oh, we have a name. And when I will start type in class, we implement it.
+
+14
+00:01:44,080 --> 00:01:53,040
+ Winsoft already suggests the name for us. And you see if a press stop, I can implement the next
+
+15
+00:01:53,040 --> 00:02:04,080
+ part. He suggests, okay. So what else? Okay, now he suggests us to create the class instance
+
+16
+00:02:04,080 --> 00:02:12,320
+ and just log the result. Okay, that's great. Now I want to show you how to work with the chat.
+
+17
+00:02:12,320 --> 00:02:17,440
+ So we have the mods right in chat. I will switch to chat mode because I gonna ask some questions.
+
+18
+00:02:18,640 --> 00:02:24,960
+ And I don't ask because I see the check method is not implemented here. So I want to
+
+19
+00:02:24,960 --> 00:02:30,960
+ implement it. But I first, I will ask how as a Winsoft sees implementation of this method.
+
+20
+00:02:32,320 --> 00:02:49,440
+ I'll do use C and implementation of the check password strands method.
+
+21
+00:02:58,800 --> 00:03:06,240
+ Okay, he can understand we have a class. He's analyzing the file. He's proposing some edit.
+
+22
+00:03:06,240 --> 00:03:18,080
+ Okay, we see it did some suggestions. So the method, you know, a lot of logic. And he's
+
+23
+00:03:18,080 --> 00:03:28,400
+ providing some summary. So, okay, there is a method check and he implemented some scoring system.
+
+24
+00:03:29,760 --> 00:03:35,680
+ So he'll check for the lens of the passwords for the character types. One point for each
+
+25
+00:03:35,680 --> 00:03:41,440
+ lower case, upper case and numbers. There are some special characters, which will get two points
+
+26
+00:03:41,440 --> 00:03:47,840
+ for symbols and there is some pattern detection. It's minus two points for some common patterns
+
+27
+00:03:47,840 --> 00:03:53,360
+ like one, two, three, four, five, six, a password to something else. And there are some
+
+28
+00:03:55,600 --> 00:04:04,080
+ categories of how our password is strong or weak. Yeah. And he will provide it with output.
+
+29
+00:04:04,080 --> 00:04:14,160
+ Okay, nice. So let's do the implementation. We can scroll and click just apply.
+
+30
+00:04:14,160 --> 00:04:18,320
+ And we will see all the code right here.
+
+31
+00:04:21,200 --> 00:04:26,560
+ We see if there is no password, the password is required. Then there are some checks
+
+32
+00:04:26,560 --> 00:04:36,480
+ and the method to do the checks. Okay, nice. I'm not going to analyze the implementation. Of
+
+33
+00:04:36,480 --> 00:04:43,920
+ course, it can be better always, but we just apply it and he will click a sub changes right here.
+
+34
+00:04:45,360 --> 00:04:51,600
+ So let's check how it works. I will run the terminal, just run my script,
+
+35
+00:04:51,600 --> 00:04:59,360
+ not any. I'm lazy. I will just click rename to copy the file name.
+
+36
+00:04:59,360 --> 00:05:07,520
+ Okay, we see the score of our password is one. The maximum score is 10. It's really weak
+
+37
+00:05:07,520 --> 00:05:12,640
+ because there is a feedback. We need to include upper case letters, numbers,
+
+38
+00:05:12,640 --> 00:05:18,400
+ special characters and avoid common patterns and repeated characters. Okay, let's make it
+
+39
+00:05:18,400 --> 00:05:26,720
+ something like, okay, he already suggested to do it. Okay, it's a six.
+
+40
+00:05:26,720 --> 00:05:35,920
+ What do we missed? And now common patterns, it would come on patterns and repeated
+
+41
+00:05:35,920 --> 00:05:44,400
+ characters. Okay, if we, I don't know. Let's create something like this.
+
+42
+00:05:44,400 --> 00:05:56,400
+ Okay, it's 80%. It's eight. The password is excellent. We did all the checks, but of course,
+
+43
+00:05:56,400 --> 00:06:05,280
+ there are any improvements. So I think we cannot have a 10 or we cannot have 10. Okay, but that's
+
+44
+00:06:05,280 --> 00:06:12,400
+ area for improvements always. Let me show you some other features like line shots. So you can
+
+45
+00:06:12,400 --> 00:06:19,200
+ select any area and just ask a question about this part of code or ask to implement
+
+46
+00:06:19,200 --> 00:06:26,960
+ something or fix it. For example, I want to add more common patterns. I can just click on edit
+
+47
+00:06:26,960 --> 00:06:35,920
+ or common eye if you're on mark or control eye if you're on window and just extend it with more
+
+48
+00:06:35,920 --> 00:06:47,280
+ variants. Okay, he added more variants. Okay, I just click a step. So you see there is also a line
+
+49
+00:06:47,280 --> 00:06:57,840
+ shot. For example, as another one, what you can do, for example, if you break something, I don't know,
+
+50
+00:06:57,840 --> 00:07:11,120
+ check prints. So and we can collect it and click fix method name, fix wrong method name.
+
+51
+00:07:14,000 --> 00:07:20,480
+ You see, he did a fix. Oh, this is it. All I did it quick already or so. You can use the other
+
+52
+00:07:20,480 --> 00:07:27,280
+ complete. You know, you can use a chat for asking the questions. You can also use a line chat. You
+
+53
+00:07:27,280 --> 00:07:34,880
+ can also select some area of code and ask the fix or improve it. And in much more details,
+
+54
+00:07:34,880 --> 00:07:45,360
+ you will go through all this feature in the next lesson. So, see you.
+
