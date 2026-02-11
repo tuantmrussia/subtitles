@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:07,200
+Trong bài học này, chúng ta sẽ tìm hiểu về các bí danh gõ trong TypeUS, vì vậy gõ các bí danh
+
+2
+00:00:07,200 --> 00:00:13,120
+Hãy để chúng tôi cung cấp cho một loại, làm cho mã của chúng tôi sạch, hợp lý và dễ dàng hơn nhiều
+
+3
+00:00:13,120 --> 00:00:15,480
+để hiểu.
+
+4
+00:00:15,480 --> 00:00:21,440
+Bí danh gõ được sử dụng ở khắp mọi nơi trong các dự án định kiểu chữ thật, đặc biệt khi
+
+5
+00:00:21,440 --> 00:00:26,640
+và cấu trúc dữ liệu phức tạp.
+
+6
+00:00:26,640 --> 00:00:31,360
+Vì vậy, hãy chứng minh bằng cách bắt đầu với một vấn đề.
+
+7
+00:00:31,360 --> 00:00:34,560
+Đôi khi chúng ta lặp đi lặp lại cùng loại.
+
+8
+00:00:34,560 --> 00:00:47,800
+Hãy có một người dùng của một, và chúng tôi có số ID, chuỗi tên.
+
+9
+00:00:47,800 --> 00:00:56,480
+Hãy tạo một kiểu người dùng khác, hãy gọi nó là người dùng hai, và thậm chí có thể có người dùng ba.
+
+10
+00:00:56,480 --> 00:01:03,840
+Bây giờ, chúng ta có thể thấy rằng chúng ta chỉ lặp đi lặp lại cấu trúc cùng một vật thể lặp đi lặp lại,
+
+11
+00:01:03,840 --> 00:01:09,560
+Nó sẽ vội vàng trở nên rối loạn , Và làm cho lòng nó vững bền .
+
+12
+00:01:09,560 --> 00:01:15,440
+Vì vậy, một loại bí danh cho phép chúng tôi tạo ra một tên riêng cho loại.
+
+13
+00:01:15,440 --> 00:01:22,960
+Những gì chúng tôi có thể làm thay vào đó là chúng tôi có thể đến đây và chúng tôi có thể tạo ra một loại cho cụ thể này
+
+14
+00:01:22,960 --> 00:01:34,040
+Hình người dùng, vì vậy chúng tôi có thể gõ người dùng, và sau đó chúng tôi có thể xác định các thuộc tính số, tên
+
+15
+00:01:34,040 --> 00:01:40,080
+bằng chuỗi, và chúng tôi thấy điều này ngắn gọn trong bài học trước làm thế nào chúng tôi sử dụng này.
+
+16
+00:01:40,080 --> 00:01:45,960
+Bây giờ những gì chúng tôi có thể làm tất nhiên là chúng tôi bây giờ có thể tạo ra các đối tượng của loại, vì vậy chúng tôi có thể
+
+17
+00:01:45,960 --> 00:01:54,560
+hãy sử dụng một bằng người dùng một là một loại người dùng, và sau đó chúng ta có thể tạo ra các thuộc tính
+
+18
+00:01:54,560 --> 00:02:00,080
+để ID một, tên bằng Alice.
+
+19
+00:02:00,080 --> 00:02:06,800
+Và sau đó chúng tôi có thể đến và làm người dùng thứ hai, người dùng hai là loại người dùng, xác định ID,
+
+20
+00:02:06,800 --> 00:02:12,400
+ID của hai người, tên là Bob.
+
+21
+00:02:12,400 --> 00:02:17,720
+Vì vậy bây giờ mã của chúng tôi trở nên sạch hơn và dễ dàng hơn để cập nhật.
+
+22
+00:02:17,720 --> 00:02:24,040
+Bây giờ, các cấu trúc thay đổi ở tất cả các người dùng này, chúng tôi muốn có lẽ đặt một số điện thoại
+
+23
+00:02:24,040 --> 00:02:28,480
+hay gì đó, sau đó chúng ta có thể làm điều đó trên loại của chúng tôi, thay vì phải làm nó nhiều
+
+24
+00:02:28,480 --> 00:02:30,240
+thời gian.
+
+25
+00:02:30,240 --> 00:02:35,720
+Những bí danh này không chỉ thay đổi hành vi, mà còn thêm ý nghĩa và sự rõ ràng vào mật mã của chúng ta.
+
+26
+00:02:35,720 --> 00:02:42,000
+Bây giờ, loại bí danh thực sự tự phát sinh khi chúng ta làm việc với các loại liên minh.
+
+27
+00:02:42,000 --> 00:02:44,880
+Đây là loại bỏ các mã ở đây và làm một ví dụ.
+
+28
+00:02:44,880 --> 00:02:57,600
+Vì vậy, chúng tôi có một loại trạng thái, và điều này có thể là một cái gì đó giống như thành công với biểu tượng ống,
+
+29
+00:02:57,600 --> 00:03:06,040
+Có thể là lỗi, biểu tượng đường ống, và sau đó tải lên ví dụ, ba trạng thái riêng biệt.
+
+30
+00:03:06,040 --> 00:03:11,880
+Bây giờ, điều này giới hạn giá trị của chúng tôi với các thiết lập cụ thể, làm cho mã an toàn hơn.
+
+31
+00:03:11,880 --> 00:03:20,920
+Bây giờ, chúng tôi có thể xác định và một thực tế thể hiện bằng cách làm cho một trạng thái hiện tại là
+
+32
+00:03:20,920 --> 00:03:22,320
+Tình trạng kiểu của chúng ta.
+
+33
+00:03:22,320 --> 00:03:29,720
+Bây giờ, chúng ta chỉ cần thiết lập giá trị của chúng tôi nói thành công, chúng tôi cố gắng và thiết lập nó như một cái gì đó khác, có lẽ
+
+34
+00:03:29,720 --> 00:03:34,800
+Ví dụ, nó không phải là một trong số đó.
+
+35
+00:03:34,800 --> 00:03:36,940
+3 giá trị.
+
+36
+00:03:36,940 --> 00:03:43,320
+Chúng tôi cũng có thể sử dụng các loại bí danh để mô tả hình dạng chức năng.
+
+37
+00:03:43,320 --> 00:03:46,240
+Vì vậy, hãy đến đây và làm một ví dụ.
+
+38
+00:03:46,240 --> 00:03:57,440
+Nếu chúng tôi làm loại bổ sung, và chúng tôi nói một số, và chúng tôi có một số B khác, bây giờ chúng tôi có thể chỉ cần
+
+39
+00:03:57,440 --> 00:04:06,000
+Đơn giản chỉ cần sử dụng mũi tên, và chúng tôi có thể nói nó là loại hoặc số trở lại.
+
+40
+00:04:06,000 --> 00:04:13,000
+Vì vậy, chúng tôi có thể gõ thêm, và sau đó chúng tôi cần phải làm dấu ngoặc, và chúng tôi nói tham số đầu tiên
+
+41
+00:04:13,000 --> 00:04:21,360
+là A, và đó là một số, sau đó chúng tôi có một tham số B, cũng là một số, và sau đó
+
+42
+00:04:21,360 --> 00:04:27,040
+Chúng ta có thể đơn giản sử dụng đường tắt mũi tên này để xác định kiểu trở về của hàm số này, và nói
+
+43
+00:04:27,040 --> 00:04:30,320
+Nó trả lại một con số.
+
+44
+00:04:30,320 --> 00:04:40,800
+Bây giờ chúng tôi có thể thực sự xác định các thực hiện của chức năng đó, chúng tôi có thể làm con số thêm,
+
+45
+00:04:40,800 --> 00:04:47,120
+Chúng tôi nói rằng nó là loại thêm, do đó, có nghĩa là nó có hai tham số, hãy nói rằng x và y, và bây giờ
+
+46
+00:04:47,120 --> 00:04:51,440
+Chúng tôi tạo ra thực tế thực hiện chức năng đó, và bởi vì chúng tôi đang thêm số
+
+47
+00:04:51,440 --> 00:04:58,560
+Cùng với nhau, chúng ta có thể nói đó là x cộng với y, và chúng ta có thể làm một cái khác, ví dụ, trừ
+
+48
+00:04:58,560 --> 00:05:06,880
+Số lượng, đây là hàm số của chúng tôi thêm, trong khi thêm một tên thực sự ngớ ngẩn, nhưng giả sử bạn mất
+
+49
+00:05:06,880 --> 00:05:12,840
+2 số, và đó sẽ là x trừ y, cũng đặc biệt tốt tên có, nhưng bạn
+
+50
+00:05:12,840 --> 00:05:22,240
+Bạn có thể thấy điểm, bạn có thể thấy xy, và nó nói thực tế, các sản phẩm của x trừ y, chúng tôi
+
+51
+00:05:22,240 --> 00:05:26,600
+nên không thực sự gọi đó thêm, nhưng bạn có thể thấy điểm ở đây, nơi chúng tôi có thể thực sự
+
+52
+00:05:26,600 --> 00:05:33,000
+sau đó xác định các thực hiện, bằng cách sử dụng các loại ở đây.
+
+53
+00:05:33,000 --> 00:05:41,720
+Bí danh gõ cũng có thể mô tả cấu trúc phức tạp hơn, chúng ta hãy có một loại địa chỉ, điều này
+
+54
+00:05:41,720 --> 00:05:51,440
+có một đường phố, loại chuỗi, một thành phố, loại chuỗi, và chúng ta có thể có một loại khác
+
+55
+00:05:51,440 --> 00:06:05,400
+Hồ sơ người dùng, mã số, tên, nhưng quan trọng hơn, chúng ta có thể có địa chỉ,
+
+56
+00:06:05,400 --> 00:06:11,600
+mà sẽ tái sử dụng địa chỉ của chúng tôi tại đây, nhưng cấu trúc này cho phép chúng tôi để giúp đỡ
+
+57
+00:06:11,600 --> 00:06:17,960
+Phá vỡ những cấu trúc này thành những mảnh nhỏ hơn và hợp lý hơn, vì vậy chúng tôi có một đơn giản
+
+58
+00:06:17,960 --> 00:06:24,360
+địa chỉ ở đây, xác định hồ sơ người dùng của chúng tôi, và chúng tôi có thể đi bao nhiêu cấp độ tùy thích.
+
+59
+00:06:24,360 --> 00:06:31,360
+Vì vậy, chúng ta hãy có một tóm tắt của loại bí danh, vì vậy những người này cho phép
+
+60
+00:06:31,360 --> 00:06:38,840
+chúng tôi để cải thiện khả năng đọc và sử dụng lại, nó cho phép chúng tôi làm việc với các đối tượng, các công đoàn, các chức năng,
+
+61
+00:06:38,840 --> 00:06:43,920
+và nguyên thủy, và chúng rất quan trọng bởi vì chúng là những khối xây dựng cốt lõi
+
+62
+00:06:43,920 --> 00:06:44,640
+Máy đánh chữ.
+
