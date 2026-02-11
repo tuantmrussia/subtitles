@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this lesson, we're going to compare TypeScript directly with JavaScript.
+
+2
+00:00:05,000 --> 00:00:10,000
+ Now, a lot of new developers wonder, is TypeScript a totally different language?
+
+3
+00:00:10,000 --> 00:00:16,000
+ Or is it just JavaScript with just a bit of extra fluff added on top?
+
+4
+00:00:16,000 --> 00:00:21,000
+ So, the first thing you need to know is TypeScript is a superset of JavaScript,
+
+5
+00:00:21,000 --> 00:00:25,000
+ and I've already spoken to you back that in a previous lesson.
+
+6
+00:00:25,000 --> 00:00:32,000
+ So, as a recap, this just means that every valid JavaScript file is also a valid TypeScript file.
+
+7
+00:00:32,000 --> 00:00:39,000
+ So, if you already know JavaScript, then you already know 90% of TypeScript.
+
+8
+00:00:39,000 --> 00:00:45,000
+ But TypeScript doesn't replace JavaScript, it builds functionality on top of it.
+
+9
+00:00:45,000 --> 00:00:51,000
+ The main difference between JavaScript and TypeScript is its type checking.
+
+10
+00:00:51,000 --> 00:00:56,000
+ JavaScript is dynamically typed. That's important to remember, is dynamically typed,
+
+11
+00:00:56,000 --> 00:01:00,000
+ whereas TypeScript is statically typed.
+
+12
+00:01:00,000 --> 00:01:05,000
+ JavaScript only finds typed errors when the code actually runs,
+
+13
+00:01:05,000 --> 00:01:10,000
+ whereas TypeScript finds our typed errors while we're writing the code.
+
+14
+00:01:10,000 --> 00:01:17,000
+ And that's one huge difference that has a big effect on reliability and developer productivity.
+
+15
+00:01:17,000 --> 00:01:23,000
+ Basically, consider as a metaphor, JavaScript equals seatbelt off,
+
+16
+00:01:23,000 --> 00:01:27,000
+ whereas TypeScript equals seatbelt on.
+
+17
+00:01:27,000 --> 00:01:31,000
+ Now, one thing that's also to bear in mind is TypeScript gets removed.
+
+18
+00:01:31,000 --> 00:01:34,000
+ It actually compiles to JavaScript.
+
+19
+00:01:34,000 --> 00:01:40,000
+ There is something that most beginners don't realise that TypeScript never runs in the browser.
+
+20
+00:01:40,000 --> 00:01:48,000
+ The browser actually has no idea what TypeScript is, and it cannot execute it.
+
+21
+00:01:48,000 --> 00:01:53,000
+ The TypeScript code must be compiled into plain JavaScript.
+
+22
+00:01:53,000 --> 00:01:58,000
+ And during that process, TypeScript removes all types, checks for errors,
+
+23
+00:01:58,000 --> 00:02:05,000
+ and outputs clean JavaScript that any browser or Node.js environments can run.
+
+24
+00:02:05,000 --> 00:02:10,000
+ So the flow basically looks like this. First, we write TypeScript,
+
+25
+00:02:10,000 --> 00:02:17,000
+ then TypeScript checks our code, then TypeScript outputs normal JavaScript,
+
+26
+00:02:17,000 --> 00:02:21,000
+ and finally the browser runs that JavaScript as per normal.
+
+27
+00:02:21,000 --> 00:02:29,000
+ So TypeScript is just a developer tool, whereas JavaScript is actually what runs.
+
+28
+00:02:29,000 --> 00:02:36,000
+ Now, another difference is that TypeScript introduces features that JavaScript doesn't support natively,
+
+29
+00:02:36,000 --> 00:02:43,000
+ or at least not yet. For example, things like interfaces, inums,
+
+30
+00:02:43,000 --> 00:02:51,000
+ type aliases, access modifiers like public and private generics, and decorators.
+
+31
+00:02:51,000 --> 00:02:58,000
+ Now, these features help teams manage complexity as the applications grow much larger.
+
+32
+00:02:58,000 --> 00:03:03,000
+ There's some of these features eventually get adopted into JavaScript itself.
+
+33
+00:03:03,000 --> 00:03:09,000
+ So in a way, TypeScript helps push the language forward.
+
+34
+00:03:09,000 --> 00:03:15,000
+ Now, one of the things the developers absolutely love about TypeScript is the tooling.
+
+35
+00:03:15,000 --> 00:03:21,000
+ In JavaScript, your editor basically guesses what types your variables might have.
+
+36
+00:03:21,000 --> 00:03:25,000
+ But in TypeScript, your editor actually knows.
+
+37
+00:03:25,000 --> 00:03:30,000
+ That means that we have more accurate autocompletion.
+
+38
+00:03:30,000 --> 00:03:36,000
+ We have better error messages. We have the ability to safely refactor our code,
+
+39
+00:03:36,000 --> 00:03:40,000
+ and we also get real-time documentation and type hints.
+
+40
+00:03:40,000 --> 00:03:46,000
+ And this basically means that we can write code faster and with a lot more confidence.
+
+41
+00:03:46,000 --> 00:03:52,000
+ Now, another question you might hear is does TypeScript actually make our app slower?
+
+42
+00:03:52,000 --> 00:03:58,000
+ And the answer is no. TypeScript has zero impact on how our code actually runs.
+
+43
+00:03:58,000 --> 00:04:01,000
+ It's completely removed before execution.
+
+44
+00:04:01,000 --> 00:04:08,000
+ Once it's compiled, which runs in a browser, is just optimised JavaScript.
+
+45
+00:04:08,000 --> 00:04:13,000
+ So when can we use JavaScript and when should you use TypeScript?
+
+46
+00:04:13,000 --> 00:04:20,000
+ For QuickScripts, or perhaps toy, throw out projects, or when doing project types,
+
+47
+00:04:20,000 --> 00:04:25,000
+ or just learning JS concepts, then JavaScript is totally fine.
+
+48
+00:04:25,000 --> 00:04:30,000
+ They have anything serious, especially if apps that's going to grow over dozens of files,
+
+49
+00:04:30,000 --> 00:04:37,000
+ or involve multiple with the variables, then TypeScript is almost always going to be the better choice.
+
+50
+00:04:37,000 --> 00:04:43,000
+ Most modern projects, frameworks and libraries, are now built with TypeScript by default.
+
+51
+00:04:43,000 --> 00:04:54,000
+ In summary, TypeScript is basically JavaScript plus types plus better tooling plus advanced features that makes our code safer and easier to maintain.
+
+52
+00:04:54,000 --> 00:05:03,000
+ We still write JavaScript, but TypeScript just makes our entire development process so much smoother and far less error-prone.
+
