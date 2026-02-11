@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:04,480
+ So with the concept of inheritance that we had a look at in the last video now let's just
+
+2
+00:00:04,480 --> 00:00:10,080
+ dive in and write some actual code and you will see how do we go about inheritance in the Java
+
+3
+00:00:10,080 --> 00:00:15,760
+ programming language. What I'll do is in the work package I'll say right click new and I'll just
+
+4
+00:00:15,760 --> 00:00:21,200
+ create a new Java class. Let's call this as inheritance term.
+
+5
+00:00:25,040 --> 00:00:36,320
+ All right. So this has the main method and now to demonstrate that I'll just take that idea
+
+6
+00:00:36,320 --> 00:00:43,440
+ along only that is the idea of human and just say class human and this is how you do it in Java
+
+7
+00:00:43,440 --> 00:00:51,120
+ you have these classes right and then I'll say for example white, green and just put in a sample
+
+8
+00:00:51,120 --> 00:00:58,800
+ message that is humans breed. All you have to think is that how do humans breathe? You would
+
+9
+00:00:58,800 --> 00:01:04,240
+ define that logic inside void meet a breed method and whenever you need to call it obviously
+
+10
+00:01:04,240 --> 00:01:11,440
+ call it with an object right. Similarly what I'll do is I'll say white, eat and I'll just put in
+
+11
+00:01:11,440 --> 00:01:22,160
+ this out I'll say inside or for now humans eat right. Let's copy this one more time. Let's say in
+
+12
+00:01:22,160 --> 00:01:27,280
+ human for now we have three methods humans can do three things only but you know in the real world
+
+13
+00:01:27,280 --> 00:01:32,960
+ they can do so much right. All of that would go in this class human but for now let's take this is
+
+14
+00:01:32,960 --> 00:01:42,240
+ white work and I'll say humans this is a normal class no irritants inheritance for now but now I'll say class
+
+15
+00:01:42,240 --> 00:01:51,120
+ and it extends from human. So what I did is on that diagram where I was drawing it for you I
+
+16
+00:01:51,120 --> 00:01:55,920
+ showed inheritance with an arrow but in Java we use the keyword extends and the moment you do
+
+17
+00:01:55,920 --> 00:02:05,920
+ extends the JVM the Java environment knows that this is now a subclass of this super class right.
+
+18
+00:02:05,920 --> 00:02:10,880
+ So subclass comes on the left of the extends keyword and super class comes on the right so this
+
+19
+00:02:10,880 --> 00:02:16,640
+ becomes the subclass this becomes a super class that is Ranjit is a super subclass of the super
+
+20
+00:02:16,640 --> 00:02:22,480
+ class human and the moment you do this now Ranjit is not an empty blank class because it has all
+
+21
+00:02:22,480 --> 00:02:29,600
+ of that which was in human it has breathe it has eat it has work but just inevitably out there
+
+22
+00:02:29,600 --> 00:02:36,000
+ right and it had a choice that it can have its own particular method as well which Ranjit did not
+
+23
+00:02:36,000 --> 00:02:44,080
+ take but there was a class as we did on the diagram I'll say schweta and also extends from
+
+24
+00:02:44,080 --> 00:02:50,560
+ human this is again single level inheritance and schweta now has eat walk and breathe as well as
+
+25
+00:02:50,560 --> 00:02:57,680
+ schweta took the choice and has her own particular method as well why dance what I'll do is
+
+26
+00:02:57,680 --> 00:03:05,600
+ I'll just put in a sound and I'll say schweta can dance but not every human can that's perfectly
+
+27
+00:03:05,600 --> 00:03:11,360
+ fine as well absolutely fine that right but see how inheritance works and the moment you try to create
+
+28
+00:03:11,360 --> 00:03:17,120
+ an object now what I'll do at line number five I'll obviously if you call a humans breathe eat
+
+29
+00:03:17,120 --> 00:03:21,360
+ and walk with an object of human that's that's all story now we have been doing that from
+
+30
+00:03:21,360 --> 00:03:26,240
+ the first video but now if you do something like this I'll say Ranjit let's call it Ranjit
+
+31
+00:03:26,240 --> 00:03:34,320
+ an object of Ranjit and I'll just say Ranjit got breathe the moment this starts to work you know
+
+32
+00:03:34,320 --> 00:03:40,800
+ this is something special because at first Ranjit has nothing but extends human it has
+
+33
+00:03:40,800 --> 00:03:45,360
+ everything that you that was in human that means if you can do this you can do this as well
+
+34
+00:03:48,080 --> 00:03:58,080
+ I can say eat I can say walk and let's see if this works and works like a child with an object
+
+35
+00:03:58,080 --> 00:04:05,280
+ of Ranjit right you're able to call the methods which were initially originally in human
+
+36
+00:04:05,280 --> 00:04:12,160
+ that is inheritance that is how we inherit some properties through the lineage from our ancestors
+
+37
+00:04:12,160 --> 00:04:18,960
+ from our parents grandparents and and and so on right and similarly if you do something like this
+
+38
+00:04:18,960 --> 00:04:24,640
+ I'll say Schrader that's all the object reference variable I'll show it as well and I'll say
+
+39
+00:04:24,640 --> 00:04:31,520
+ Schrader dot breathe and in no particular order daughter is not Ranjit Schrader dot for
+
+40
+00:04:31,520 --> 00:04:36,640
+ example walk I just need to call breathe and walk from Schrader now let's say I don't have to call
+
+41
+00:04:38,000 --> 00:04:43,200
+ eat right Schrader doesn't want to eat right now she wants to eat after one hour that's perfectly
+
+42
+00:04:43,200 --> 00:04:47,600
+ fine right okay let's just requirement driven just because you call three methods from Ranjit
+
+43
+00:04:47,600 --> 00:04:51,680
+ you do not have to necessarily call it from Schrader as well think about it right
+
+44
+00:04:51,680 --> 00:04:57,200
+ and when you do that when this works you would know this is inheritance see first humans breathe
+
+45
+00:04:57,200 --> 00:05:02,720
+ eat and walk from Ranjit's object and then Schrader's object humans breathe and walk as well
+
+46
+00:05:02,720 --> 00:05:10,320
+ and now with an object of Schrader I can even call dance later on and it would tell you in
+
+47
+00:05:10,320 --> 00:05:15,840
+ addition to Schrader being breathing walking she can also dance and she can do that really well
+
+48
+00:05:15,840 --> 00:05:22,000
+ right so that Ranjit cannot dance I told you that is just because their siblings doesn't mean
+
+49
+00:05:22,000 --> 00:05:27,680
+ they can access each other properties I can never do this put in the comment
+
+50
+00:05:30,640 --> 00:05:37,920
+ doesn't work because this method is neither found in human it's not found in Ranjit it's a
+
+51
+00:05:37,920 --> 00:05:44,240
+ unique personal method of Schrader only an object of Schrader can call dance or the subclasses of
+
+52
+00:05:44,240 --> 00:05:49,280
+ Schrader can also call it right no right so this is a single level there's a single level
+
+53
+00:05:49,280 --> 00:05:56,240
+ but let's say I have one more class here and I'll say for example class let's say snina
+
+54
+00:05:56,240 --> 00:06:03,760
+ this time it extends from Schrader okay this is inheritance but this time it is multilevel
+
+55
+00:06:03,760 --> 00:06:09,600
+ that is inside snia you would have properties of Schrader as well as of human as well as sni has
+
+56
+00:06:09,600 --> 00:06:14,960
+ old properties see I don't have anything else here but if you do something like this let's say
+
+57
+00:06:14,960 --> 00:06:22,800
+ it's new the the most effective way I create an object I say dance I can call because this method
+
+58
+00:06:22,800 --> 00:06:29,680
+ was inherited from sni has parent or super class that was Schrader and that is found in sni
+
+59
+00:06:29,680 --> 00:06:36,400
+ high as well this should work it says in sni high as well Schrader can dance so that is the basic
+
+60
+00:06:36,400 --> 00:06:44,480
+ form of inheritance how does it work with the keyword extends right so again after this video is
+
+61
+00:06:44,480 --> 00:06:52,720
+ done just spend some time just hold on please let me stop the timer I'm sorry the timer
+
+62
+00:06:52,720 --> 00:06:59,360
+ ran so I was just saying that the video is done they just put in your hands dirty again
+
+63
+00:06:59,360 --> 00:07:04,000
+ and just write some code not just based on class human but anything that comes to your mind
+
+64
+00:07:04,000 --> 00:07:09,040
+ because as I said we are just revolved around with the classes of with the idea of classes and
+
+65
+00:07:09,040 --> 00:07:14,000
+ objects you can just envision everything around you as classes and objects just take this idea
+
+66
+00:07:14,000 --> 00:07:21,120
+ forward and write your own code in the next video we'll try to make it a bit more sophisticated
+
+67
+00:07:21,120 --> 00:07:25,920
+ see what else we can do with inheritance and trust me on that we can do so much more
+
