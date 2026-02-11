@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:07,280
+ Let us start our investigation on the device, how we can find out someone's connector
+
+2
+00:00:07,280 --> 00:00:10,440
+ from through the RDP.
+
+3
+00:00:10,440 --> 00:00:19,600
+ Let us jump on to the logs.
+
+4
+00:00:19,600 --> 00:00:25,840
+ So, we do not want to check the system logs, we need to check the security logs.
+
+5
+00:00:25,840 --> 00:00:42,280
+ That is for some time and let us filter out the 4, 6, 2, 4 and I already said if it is an
+
+6
+00:00:42,280 --> 00:00:47,600
+ interactive logon, the logon type will be 2 and network logon in a previous section we
+
+7
+00:00:47,600 --> 00:00:54,720
+ have seen in packet that will be a 3, if it is an RDP logon then the logon type will be
+
+8
+00:00:54,720 --> 00:00:55,720
+ 10.
+
+9
+00:00:55,720 --> 00:01:03,680
+ So, if you investigate this logon type 10, the account name was user, so here you can
+
+10
+00:01:03,680 --> 00:01:10,200
+ see the source network IP address, you got it.
+
+11
+00:01:10,200 --> 00:01:19,760
+ So, if you see this thing logon type 10, you can find there is something someone connected
+
+12
+00:01:19,760 --> 00:01:45,440
+ from that RDP, logon type 10, let us search for 4, 6, 2, 4, I, 10, even, I already.
+
+13
+00:01:45,440 --> 00:01:52,240
+ And we will see remote interactive, okay, user logged into this computer remotely using
+
+14
+00:01:52,240 --> 00:01:55,520
+ two minute service or remote desktop, you got this.
+
+15
+00:01:55,520 --> 00:02:00,720
+ So, this is how you need to figure out someone connected from an RDP, okay.
+
+16
+00:02:00,720 --> 00:02:08,000
+ So, that is all about this video, we are clear about RDT and we will move on to the next
+
+17
+00:02:08,000 --> 00:02:09,060
+ video, see you guys, bye bye.
+
