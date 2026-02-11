@@ -1,0 +1,223 @@
+1
+00:00:00,569 --> 00:00:03,930
+Picture this, your company has one cluster for dev,
+
+2
+00:00:04,210 --> 00:00:08,470
+three for staging, two for production, and a couple of more.
+
+3
+00:00:08,729 --> 00:00:14,840
+Now, imagine having these kind of multiple workloads and multiple clusters.
+
+4
+00:00:15,130 --> 00:00:19,590
+Now having that many number of clusters, how do you manage them consistently?
+
+5
+00:00:19,959 --> 00:00:24,110
+This is exactly why Google built GKE fleets.
+
+6
+00:00:24,329 --> 00:00:25,309
+Let's dive in.
+
+7
+00:00:25,639 --> 00:00:30,480
+A fleet is a logical grouping of Kubernetes cluster that lets you manage
+
+8
+00:00:30,480 --> 00:00:35,740
+them as one unit. A fleet standardizes your identity,
+
+9
+00:00:36,080 --> 00:00:41,459
+policy, configuration, services, and multi‑cluster automation.
+
+10
+00:00:41,720 --> 00:00:46,880
+As per the Google definition, a fleet provides a consistent way to manage,
+
+11
+00:00:47,049 --> 00:00:52,110
+secure, and observe the multiple cluster across the environments.
+
+12
+00:00:52,360 --> 00:00:57,990
+Enterprises need fleet because they have multiple clusters across regions.
+
+13
+00:00:58,389 --> 00:01:00,380
+They have multiple business units.
+
+14
+00:01:00,909 --> 00:01:03,509
+Sometimes they have multiple environments like dev,
+
+15
+00:01:03,709 --> 00:01:08,540
+stage, prod, and they have the compliance and security controls.
+
+16
+00:01:08,910 --> 00:01:11,269
+Fleets solve major pain points.
+
+17
+00:01:11,550 --> 00:01:14,050
+For example, if you don't have a fleet,
+
+18
+00:01:14,430 --> 00:01:17,269
+then each cluster managed would be separately.
+
+19
+00:01:17,470 --> 00:01:21,970
+However, along with the fleet, you can have a unified control plan.
+
+20
+00:01:22,400 --> 00:01:25,510
+Without fleet, the policies are manually applied.
+
+21
+00:01:25,949 --> 00:01:30,050
+However, with the fleet, you can have a global policy sync.
+
+22
+00:01:30,550 --> 00:01:33,750
+No fleet causes inconsistent workloads,
+
+23
+00:01:33,949 --> 00:01:37,940
+and with the fleet you can make it multi‑cluster services.
+
+24
+00:01:38,230 --> 00:01:42,779
+You can also solve the problem of federated identity because fleet
+
+25
+00:01:42,779 --> 00:01:46,089
+can provide you the unified workload identity.
+
+26
+00:01:46,349 --> 00:01:50,309
+Fleet can also help you to resolve the drift between the clusters.
+
+27
+00:01:50,760 --> 00:01:55,139
+With fleet you can have the config sync and Anthos policy controller.
+
+28
+00:01:55,480 --> 00:01:58,900
+Overall, fleets solve the multi‑cluster chaos problem.
+
+29
+00:01:59,319 --> 00:02:03,500
+A fleet starts with a project that acts as a fleet host,
+
+30
+00:02:03,839 --> 00:02:09,179
+and then you can register GKE clusters, Anthos on‑prem clusters,
+
+31
+00:02:09,460 --> 00:02:13,839
+Anthos bare metal, and you can also have multi‑cloud clusters.
+
+32
+00:02:14,710 --> 00:02:19,770
+This means fleets unify cloud and on‑prem operations.
+
+33
+00:02:20,149 --> 00:02:24,029
+Google Cloud recommends Workload Identity as the identity
+
+34
+00:02:24,029 --> 00:02:26,779
+solution for workloads across the clusters.
+
+35
+00:02:27,029 --> 00:02:28,770
+Fleets extend this model.
+
+36
+00:02:29,229 --> 00:02:30,690
+One identity configuration,
+
+37
+00:02:31,070 --> 00:02:35,699
+one mapping definition works across all the member clusters.
+
+38
+00:02:35,940 --> 00:02:38,270
+Fleet‑wide policies and configuration.
+
+39
+00:02:38,710 --> 00:02:40,690
+This is where the fleet shines.
+
+40
+00:02:40,990 --> 00:02:44,820
+You point your fleet to a Git repository and fleet pulls the
+
+41
+00:02:44,820 --> 00:02:48,300
+configuration from the Git and applies to every cluster.
+
+42
+00:02:48,580 --> 00:02:51,970
+Here, every cluster will receive the RBAC policies,
+
+43
+00:02:52,300 --> 00:02:54,839
+resource quotas, and network policies.
+
+44
+00:02:55,179 --> 00:02:57,479
+It has Anthos Policy Controller.
+
+45
+00:02:57,779 --> 00:03:01,130
+This enforces constraints like no privileged containers,
+
+46
+00:03:01,580 --> 00:03:05,320
+no host path mounts, and only signed images allowed.
+
+47
+00:03:05,779 --> 00:03:09,750
+These policies apply across all the clusters in the fleet.
+
+48
+00:03:10,229 --> 00:03:14,669
+Multi‑cluster ingress creates a single global load balancer for
+
+49
+00:03:14,669 --> 00:03:17,940
+workloads running across multiple clusters.
+
+50
+00:03:18,270 --> 00:03:19,770
+Multi‑cluster services,
+
+51
+00:03:20,000 --> 00:03:23,800
+a service in a staging cluster can discover a service in a broad
+
+52
+00:03:23,800 --> 00:03:27,259
+cluster, useful for multi‑region failover.
+
+53
+00:03:27,580 --> 00:03:31,750
+Enterprises use this for rolling upgrades across regions.
+
+54
+00:03:32,240 --> 00:03:37,929
+So that's how GKE fleets help enterprises manage cluster at scale,
+
+55
+00:03:38,270 --> 00:03:41,460
+with unified identity, consistent policy,
+
+56
+00:03:41,880 --> 00:03:46,220
+multi‑cluster services, and seamless hybrid cloud support.
