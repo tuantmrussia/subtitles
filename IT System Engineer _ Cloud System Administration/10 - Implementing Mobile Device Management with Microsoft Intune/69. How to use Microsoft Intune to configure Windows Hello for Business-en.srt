@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:06,760
+ In this video, I'll be showing you how to configure the Windows Hello for business.
+
+2
+00:00:06,760 --> 00:00:12,320
+ Well, don't forget, we have the Windows Hello and the Windows Hello for business.
+
+3
+00:00:12,320 --> 00:00:16,160
+ So this is utterly going to be focused on Windows Hello for business.
+
+4
+00:00:16,160 --> 00:00:21,680
+ We have to configure it, what you need to do, you need to go to devices, and here we have
+
+5
+00:00:21,680 --> 00:00:22,680
+ an enrollment.
+
+6
+00:00:22,680 --> 00:00:26,840
+ And in enrollment, you can see we have the Windows Hello for business.
+
+7
+00:00:26,840 --> 00:00:30,400
+ But first of all, what is utterly the Windows Hello for business?
+
+8
+00:00:30,400 --> 00:00:34,960
+ Well, if you are using your Windows client operating system, you don't want to work for a company,
+
+9
+00:00:34,960 --> 00:00:36,920
+ you have your own personal device.
+
+10
+00:00:36,920 --> 00:00:39,720
+ There's what we call the Windows Hello.
+
+11
+00:00:39,720 --> 00:00:45,240
+ So I call it Microsoft Windows Hello is an authentication technology that allows users
+
+12
+00:00:45,240 --> 00:00:53,560
+ to sign in to their Windows devices using barmetric data or pin instead of a traditional password.
+
+13
+00:00:53,560 --> 00:01:00,400
+ So it provides an enhanced security, which gives it kind of a more resistant to two-factor
+
+14
+00:01:00,400 --> 00:01:04,680
+ authentication and a built-in, brute force protection.
+
+15
+00:01:04,680 --> 00:01:12,880
+ Well, the Windows Hello for business is an extension of the Windows Hello which you use on a regular device.
+
+16
+00:01:12,880 --> 00:01:21,160
+ But this utterly provides an enterprise-grade security and management capabilities,
+
+17
+00:01:21,160 --> 00:01:30,040
+ which include device attestation, certificate base authentication, and also conditional access policy.
+
+18
+00:01:30,040 --> 00:01:34,800
+ So I just want to show you how to utterly configure it using Microsoft Intune.
+
+19
+00:01:34,800 --> 00:01:39,960
+ Well, you still need to utterly deploy it to your devices and make sure that your users are totally
+
+20
+00:01:39,960 --> 00:01:46,760
+ forced using policies to utterly forced to use the Windows Hello for business and any device
+
+21
+00:01:46,760 --> 00:01:53,400
+ that or any user that does not use the Windows Hello for business, that device may be marked as non-compliance.
+
+22
+00:01:53,400 --> 00:02:00,600
+ So what you need to do is to go to Windows Hello for business and here you can see at this moment it is not configured.
+
+23
+00:02:00,600 --> 00:02:07,080
+ So here you can say you can say "configure Windows Hello for business", then we're going to say enabled.
+
+24
+00:02:07,080 --> 00:02:09,800
+ And now you can say we have the different options.
+
+25
+00:02:09,800 --> 00:02:13,240
+ So well, you want to say it's usually trusted platform model.
+
+26
+00:02:13,240 --> 00:02:17,320
+ I'm not that you can also say require, but I'm going to put this as preferred.
+
+27
+00:02:17,320 --> 00:02:22,440
+ And for the minimum length for pin, you can see we have 6, but the minimum is hydraulic,
+
+28
+00:02:22,440 --> 00:02:25,320
+ you can see it's between 4 and 1 around 27.
+
+29
+00:02:25,320 --> 00:02:29,400
+ So here you can see the maximum I can just put 20.
+
+30
+00:02:29,400 --> 00:02:33,480
+ And lower case letters, you can see we have different options.
+
+31
+00:02:33,480 --> 00:02:35,960
+ We can say well, I want to allow it.
+
+32
+00:02:35,960 --> 00:02:42,040
+ And upper case as well, I want to allow which means they will be forced to use the lower case
+
+33
+00:02:42,040 --> 00:02:48,920
+ and upper case, because what disabled these, which for example they can just use just numbers.
+
+34
+00:02:48,920 --> 00:02:54,680
+ And again we have the pin as far as shown this, because here you can see it's never
+
+35
+00:02:54,680 --> 00:02:58,680
+ but you can't really enter a day and say well, I want to put it for 90 days,
+
+36
+00:02:58,680 --> 00:03:02,920
+ that the user will be forced to actually change their pin.
+
+37
+00:03:02,920 --> 00:03:09,160
+ And then we have remember pin history, I can't really put like 5 so that the users should not
+
+38
+00:03:09,160 --> 00:03:12,440
+ use the same pin all the time.
+
+39
+00:03:12,440 --> 00:03:17,880
+ And you can see it's allowed by matricle dedication, of course you want to configure it to yes,
+
+40
+00:03:17,880 --> 00:03:20,200
+ and then you use enhanced anti-spuffin.
+
+41
+00:03:20,200 --> 00:03:23,960
+ Well, I'm going to leave this to not not configured.
+
+42
+00:03:23,960 --> 00:03:29,160
+ Allow full signing, we can't just, can't say no, well, we can't say yes.
+
+43
+00:03:29,160 --> 00:03:34,520
+ And here you can see we have the enabled enhanced signing security.
+
+44
+00:03:34,520 --> 00:03:38,520
+ And I can just say well, let me use the enhanced signing security
+
+45
+00:03:38,520 --> 00:03:41,640
+ to be enabled on system with capable, capable hardware.
+
+46
+00:03:41,640 --> 00:03:46,040
+ Well, remember not all had all devices have this feature.
+
+47
+00:03:46,040 --> 00:03:51,960
+ So I'm just going to leave that for not configured and use security keys for signing,
+
+48
+00:03:51,960 --> 00:03:54,680
+ also I'm going to leave that for not configured.
+
+49
+00:03:54,680 --> 00:03:55,960
+ And then I will click save.
+
+50
+00:03:55,960 --> 00:03:59,400
+ Here you can see it's been, it's been saved.
+
+51
+00:03:59,400 --> 00:04:04,280
+ But next in a different video, I'm going to be showing you how to actually implement it
+
+52
+00:04:04,280 --> 00:04:09,160
+ to your devices, to your company, and make sure that every single user, your company is
+
+53
+00:04:09,160 --> 00:04:14,760
+ being forced to, or users, are being forced to actually use Windows Hello for business.
+
+54
+00:04:14,760 --> 00:04:19,640
+ And if they don't use it, those devices that are not configured with Hello for business
+
+55
+00:04:19,640 --> 00:04:22,360
+ will be marked as known compliance.
+
