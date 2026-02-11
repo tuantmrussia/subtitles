@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:13,400
+ you successfully disable the valve volume set of copy in the machine, so the organization
+
+2
+00:00:13,400 --> 00:00:23,240
+ can't able to reboot, sorry, recover any data from the cloud services or the backup data.
+
+3
+00:00:23,240 --> 00:00:30,800
+ But the organization can do one thing, they can enable the safeboard mode. Many of them
+
+4
+00:00:30,800 --> 00:00:37,340
+ are here about this safeboard mode. So if our primary machine has any issue, if it's
+
+5
+00:00:37,340 --> 00:00:47,760
+ corrupted, we have an option to get into the safeboard mode, right? What will do? If the
+
+6
+00:00:47,760 --> 00:00:57,480
+ primary operating system was corrupted, we will use some kind of options in the boot options
+
+7
+00:00:57,480 --> 00:01:02,880
+ like this and we can enter through the safeboard mode, safe mode with networking, safe mode
+
+8
+00:01:02,880 --> 00:01:11,760
+ with command problem. So most of the organization machines, it was enabled, the safeboard mode
+
+9
+00:01:11,760 --> 00:01:19,940
+ was enabled, but in our home machines, this was disabled, okay, defaultly. So here
+
+10
+00:01:19,940 --> 00:01:25,080
+ you can see an option, yeah, let me, I will show you how to, how to enter this, enter
+
+11
+00:01:25,080 --> 00:01:32,820
+ under the safeboard. So this is one of the, the victim of ransomware threat actors, the ransomware
+
+12
+00:01:32,820 --> 00:01:37,280
+ threat actors will only primarily targeting this safeboard mode, because they are going
+
+13
+00:01:37,280 --> 00:01:41,560
+ to encrypt the machine, right? They are going to, they are going to delete the shadow
+
+14
+00:01:41,560 --> 00:01:48,160
+ copies, delete the distracting the data and they are also, they are deleting the safeboard
+
+15
+00:01:48,160 --> 00:01:54,500
+ mode, right? So if they can able to delete, disable the safeboard mode, the organization
+
+16
+00:01:54,500 --> 00:02:02,240
+ machine, what they have encrypted, what they have compromised and installed the ransomware,
+
+17
+00:02:02,240 --> 00:02:08,080
+ the organization can't able to recover that machine. That's the scenario, right? Because
+
+18
+00:02:08,080 --> 00:02:13,760
+ if the safe, if there is no safeboard mode, the primary operating system get encrypted with
+
+19
+00:02:13,760 --> 00:02:22,240
+ and encrypted by Akira or some kind of ransomware. So the organization, well, organization
+
+20
+00:02:22,240 --> 00:02:28,600
+ have few possibilities to do. One is, they need to rebuild the machine and they need
+
+21
+00:02:28,600 --> 00:02:33,960
+ to recover the data. The other is, they need to enter into the safeboard mode to login
+
+22
+00:02:33,960 --> 00:02:40,160
+ into the machine. So if they do not have both the options, they are previously disabled
+
+23
+00:02:40,160 --> 00:02:44,080
+ the valing shadow copies, you have deleted the valing shadow copies. So in this video,
+
+24
+00:02:44,080 --> 00:02:49,120
+ they are disabling the safe mode, okay? So in your primary machine, you can find the
+
+25
+00:02:49,120 --> 00:02:57,920
+ safe mode in, by giving Windows plus R, you must come to here and once they must come to
+
+26
+00:02:57,920 --> 00:03:03,420
+ get loaded, just go to the boot. So here you can see that in primary machines, like
+
+27
+00:03:03,420 --> 00:03:10,920
+ home machines, differently, the safeboard mode has been disabled, we didn't check any safe
+
+28
+00:03:10,920 --> 00:03:25,040
+board mode, right? We didn't change anything. The similar thing will be there in my primary
+
+29
+00:03:25,040 --> 00:03:34,440
+ machine because, right? So it also has the same, it also has the same thing, right?
+
+30
+00:03:34,440 --> 00:03:44,800
+ So the thing is, they can delete the safeboard mode using the BCD edit, one of an utility
+
+31
+00:03:44,800 --> 00:03:51,080
+ in Windows slash ENUM. So if I do this one, so here you can find the Windows boot manager,
+
+32
+00:03:51,080 --> 00:03:57,580
+ it's showing some kind of information. So recovery enabled is no and isolated context
+
+33
+00:03:57,580 --> 00:04:10,200
+ is no and, and fibroes are auto, so it was giving some kind of information about the Windows
+
+34
+00:04:10,200 --> 00:04:20,380
+ bootloader, but we know that, let's check the MSConf, we know that the safeboard mode
+
+35
+00:04:20,380 --> 00:04:28,740
+ was already disabled in this machine, right? So if the threat actors need to disable
+
+36
+00:04:28,740 --> 00:04:33,700
+ the safeboard mode, they will choose one command, this is the single command, okay, this
+
+37
+00:04:33,700 --> 00:04:39,700
+ is the single command, they will choose a safeboard mode to disable.
+
+38
+00:04:39,700 --> 00:04:46,020
+ Let me execute this command and see what I was getting. So it will show, it will show
+
+39
+00:04:46,020 --> 00:04:50,760
+ a failure lock and error occur attempting to delete the specific data element, element
+
+40
+00:04:50,760 --> 00:05:02,160
+ not found, because we do not have the safeboard mode enabled, right? So we do not have
+
+41
+00:05:02,160 --> 00:05:10,020
+ safeboard mode, that was enabled, so it was already disabled, okay, so we don't need to
+
+42
+00:05:10,020 --> 00:05:19,500
+ delete any values, we are already disabled. So the reason I showed this video, because you
+
+43
+00:05:19,500 --> 00:05:24,900
+ need to understand, if you see this command in any kind of invovolutions or a parent, you
+
+44
+00:05:24,900 --> 00:05:33,420
+ need to know there is some kind of activity has been happened, okay. So this is how the
+
+45
+00:05:33,420 --> 00:05:39,740
+ threat actors will be removing and modifying your machine before delivering their answer,
+
+46
+00:05:39,740 --> 00:05:49,100
+ because they need to prepare the machine for everything. They will not use any possibilities
+
+47
+00:05:49,100 --> 00:05:55,620
+ for an organization to recover or rebuild, rebuild the machine. So once the ransomware has
+
+48
+00:05:55,620 --> 00:06:02,500
+ been properly executed. So that's all about this one, let's hop off from here and we'll
+
+49
+00:06:02,500 --> 00:06:04,420
+ We continue our discussion in the next video.
+
+50
+00:06:04,420 --> 00:06:05,220
+ See you guys, bye-bye.
+
