@@ -1,0 +1,512 @@
+1
+00:00:00,000 --> 00:00:05,380
+ Have you tried to register your device in Microsoft Intune?
+
+2
+00:00:05,380 --> 00:00:08,660
+ For example, a Windows 10 or Windows 11 device.
+
+3
+00:00:08,660 --> 00:00:12,580
+ Another device never should opt in Microsoft Intune.
+
+4
+00:00:12,580 --> 00:00:18,260
+ But the device is actually should in IntraID.
+
+5
+00:00:18,260 --> 00:00:20,700
+ So, yeah, it's a Windows 10 device.
+
+6
+00:00:20,700 --> 00:00:23,300
+ This could be a Windows 11 device.
+
+7
+00:00:23,300 --> 00:00:26,260
+ And you've tried to register a device in Intune,
+
+8
+00:00:26,260 --> 00:00:27,300
+ but it's not sure enough.
+
+9
+00:00:27,300 --> 00:00:31,060
+ So let's go to our IntraID, for example,
+
+10
+00:00:31,060 --> 00:00:34,280
+ we have all our devices in IntraID.
+
+11
+00:00:34,280 --> 00:00:37,020
+ You can set a device to see 001,
+
+12
+00:00:37,020 --> 00:00:41,020
+ which has just been recognized.
+
+13
+00:00:41,020 --> 00:00:43,220
+ You can see the register is suspended.
+
+14
+00:00:43,220 --> 00:00:44,980
+ So this is going to take some time.
+
+15
+00:00:44,980 --> 00:00:48,260
+ But at the same time, if I go to Microsoft Intune,
+
+16
+00:00:48,260 --> 00:00:50,500
+ you can see we only have just one device.
+
+17
+00:00:50,500 --> 00:00:53,220
+ And the other device is not sure enough.
+
+18
+00:00:53,220 --> 00:00:54,620
+ So once it's actually the issue.
+
+19
+00:00:54,620 --> 00:00:57,740
+ So if I go back again to my device,
+
+20
+00:00:57,740 --> 00:01:00,220
+ if I go back into my C001,
+
+21
+00:01:00,220 --> 00:01:03,020
+ then we got only verify this in EventViewer.
+
+22
+00:01:03,020 --> 00:01:05,220
+ Because there's a policy,
+
+23
+00:01:05,220 --> 00:01:07,580
+ there's a group policy that has been configured
+
+24
+00:01:07,580 --> 00:01:09,420
+ in the domain controller
+
+25
+00:01:09,420 --> 00:01:12,660
+ that I totally registered the files automatically
+
+26
+00:01:12,660 --> 00:01:14,460
+ to Microsoft Intune.
+
+27
+00:01:14,460 --> 00:01:17,820
+ So what right now you can see when I go to
+
+28
+00:01:17,820 --> 00:01:22,820
+ on an EventViewer here, you need to go to applications
+
+29
+00:01:23,460 --> 00:01:26,820
+ and service logs, go to Microsoft, Windows,
+
+30
+00:01:26,820 --> 00:01:29,260
+ and then set for device management
+
+31
+00:01:29,260 --> 00:01:32,140
+ enterprise diagnostic provider.
+
+32
+00:01:32,140 --> 00:01:33,780
+ And here we can see the admin.
+
+33
+00:01:33,780 --> 00:01:37,340
+ So if you can see we have a lot of error opposite here.
+
+34
+00:01:37,340 --> 00:01:39,060
+ So let's start from here.
+
+35
+00:01:39,060 --> 00:01:41,700
+ You can see it says no migration needed.
+
+36
+00:01:41,700 --> 00:01:42,740
+ Okay, that is okay.
+
+37
+00:01:42,740 --> 00:01:46,340
+ But here you can see it says Auto, MDM
+
+38
+00:01:46,340 --> 00:01:48,860
+ and role device credentials field.
+
+39
+00:01:48,860 --> 00:01:51,300
+ The system try to delete the join of a driver
+
+40
+00:01:51,300 --> 00:01:52,460
+ that is not joined.
+
+41
+00:01:53,740 --> 00:01:56,740
+ So we keep getting the same error message
+
+42
+00:01:56,740 --> 00:02:01,260
+ and this device could not be joined to MDM.
+
+43
+00:02:01,260 --> 00:02:03,860
+ And one of the problems is this.
+
+44
+00:02:03,860 --> 00:02:05,060
+ I've seen this at a level apart.
+
+45
+00:02:05,060 --> 00:02:06,340
+ So I'm not trying to do this video
+
+46
+00:02:06,340 --> 00:02:09,100
+ to help someone who is having that issue.
+
+47
+00:02:09,100 --> 00:02:11,300
+ Before someone could join his device
+
+48
+00:02:11,300 --> 00:02:15,860
+ to Microsoft Intune, that person must have a license.
+
+49
+00:02:15,860 --> 00:02:17,460
+ If that person does not have a license,
+
+50
+00:02:17,460 --> 00:02:20,860
+ that person will not be able to join his device
+
+51
+00:02:20,860 --> 00:02:22,620
+ to Microsoft Intune.
+
+52
+00:02:22,620 --> 00:02:27,620
+ For example, if I just go, let me just enter a CMD
+
+53
+00:02:27,620 --> 00:02:31,780
+ and here you can see this is the host demo of the device.
+
+54
+00:02:31,780 --> 00:02:36,780
+ If I see who am I, you can see this is actually Kelvin Johnson.
+
+55
+00:02:36,780 --> 00:02:40,820
+ But the issue is Kelvin Johnson does not have
+
+56
+00:02:40,820 --> 00:02:43,900
+ a Microsoft Intune license.
+
+57
+00:02:43,900 --> 00:02:47,540
+ So if I go to my domain controller
+
+58
+00:02:47,540 --> 00:02:52,540
+ and I start active directory users and computers,
+
+59
+00:02:52,540 --> 00:02:55,140
+ here you can see for example,
+
+60
+00:02:55,140 --> 00:02:58,380
+ if I go to my domain and go to users,
+
+61
+00:02:58,380 --> 00:03:01,500
+ here you can see we have the account of Kelvin Johnson.
+
+62
+00:03:01,500 --> 00:03:05,580
+ And you can see Kelvin belongs to the kelv global ICT.com
+
+63
+00:03:05,580 --> 00:03:09,900
+ and Simon Johnson belongs to the kelv global tech.
+
+64
+00:03:09,900 --> 00:03:14,660
+ Well, the kelv global tech is the right name
+
+65
+00:03:14,660 --> 00:03:17,100
+ that have the license to Microsoft Intune
+
+66
+00:03:17,100 --> 00:03:20,340
+ which means that if I switch, for example,
+
+67
+00:03:20,340 --> 00:03:23,860
+ if I decide right now, I want to lock out of,
+
+68
+00:03:23,860 --> 00:03:28,860
+ let me just sign out or ask Kelvin Johnson
+
+69
+00:03:28,860 --> 00:03:32,100
+ and then let's switch to a different user.
+
+70
+00:03:32,100 --> 00:03:34,660
+ So let's switch right now to, for example,
+
+71
+00:03:34,660 --> 00:03:39,260
+ I'm going to use the account of Simon dot Johnson
+
+72
+00:03:39,260 --> 00:03:43,060
+ and I just hit into the password and it's enter.
+
+73
+00:03:43,060 --> 00:03:45,740
+ So let's switch for Simon to log on
+
+74
+00:03:45,740 --> 00:03:49,100
+ and then we can now see if this device is registered
+
+75
+00:03:49,100 --> 00:03:51,500
+ in Microsoft Intune.
+
+76
+00:03:51,500 --> 00:03:54,460
+ So after I log on to the device
+
+77
+00:03:54,460 --> 00:03:57,700
+ and I go back again to events if you are,
+
+78
+00:03:57,700 --> 00:04:00,180
+ here in the device management enterprise
+
+79
+00:04:00,180 --> 00:04:03,980
+ and I check admin, you can see we have some extra information
+
+80
+00:04:03,980 --> 00:04:06,220
+ let me just try to bring this down.
+
+81
+00:04:06,220 --> 00:04:08,200
+ You can see we are seeing more information
+
+82
+00:04:08,200 --> 00:04:11,260
+ now and I've seen less of error message
+
+83
+00:04:11,260 --> 00:04:13,180
+ and the error message is actually different.
+
+84
+00:04:13,180 --> 00:04:14,980
+ But if I scroll up,
+
+85
+00:04:14,980 --> 00:04:17,780
+ you can see we are now having some of the session
+
+86
+00:04:17,780 --> 00:04:21,140
+ and then we start off the pressure completeness successfully.
+
+87
+00:04:21,140 --> 00:04:25,820
+ So when I go back again to my,
+
+88
+00:04:25,820 --> 00:04:29,460
+ to the intro idea, you can see when I do a refresh,
+
+89
+00:04:29,460 --> 00:04:33,460
+ you can see that the device is 001 is now available
+
+90
+00:04:33,460 --> 00:04:36,340
+ and says the MDM is Microsoft Intune
+
+91
+00:04:36,340 --> 00:04:37,780
+ like the other one says it's known
+
+92
+00:04:37,780 --> 00:04:40,580
+ and this is a totally core management.
+
+93
+00:04:40,580 --> 00:04:43,260
+ Then if we go back into Intune self,
+
+94
+00:04:43,260 --> 00:04:45,340
+ here you can see we have core managed
+
+95
+00:04:45,340 --> 00:04:49,540
+ and you can see that the device just appeared in Intune,
+
+96
+00:04:49,540 --> 00:04:52,420
+ it's not evaluated, it's gonna take some time
+
+97
+00:04:52,420 --> 00:04:55,100
+ for this to be evaluated.
+
+98
+00:04:55,100 --> 00:04:56,620
+ So the bottom line is this.
+
+99
+00:04:56,620 --> 00:05:00,020
+ If you are seeing a device in Intune,
+
+100
+00:05:00,020 --> 00:05:03,300
+ probably the user is actually trying to sign in
+
+101
+00:05:03,300 --> 00:05:05,860
+ with an account that does not have a license.
+
+102
+00:05:05,860 --> 00:05:09,340
+ So what you need to do is to assign a license
+
+103
+00:05:09,340 --> 00:05:12,980
+ to that user and the user will be able to log on.
+
+104
+00:05:12,980 --> 00:05:15,220
+ And apart from that, you should make sure
+
+105
+00:05:15,220 --> 00:05:19,260
+ that the user is using the right domain name.
+
+106
+00:05:19,260 --> 00:05:20,940
+ Probably in your domain environment,
+
+107
+00:05:20,940 --> 00:05:23,180
+ you may have different domain accounts.
+
+108
+00:05:23,180 --> 00:05:26,060
+ So if you assign a user it domain accounts,
+
+109
+00:05:26,060 --> 00:05:28,780
+ those notes, that does not correspond
+
+110
+00:05:28,780 --> 00:05:32,260
+ with Microsoft Intune domain
+
+111
+00:05:32,260 --> 00:05:34,260
+ or the domain that is ready started Intune,
+
+112
+00:05:34,260 --> 00:05:37,020
+ like for example, if I go to,
+
+113
+00:05:37,020 --> 00:05:40,660
+ let me just enter DNS here, DNS zones.
+
+114
+00:05:42,460 --> 00:05:47,460
+ Let me see, let me see, let me see domain name, sorry.
+
+115
+00:05:47,460 --> 00:05:51,420
+ Here you can see we have some domain verified domain name.
+
+116
+00:05:51,420 --> 00:05:52,980
+ So the verified domain name,
+
+117
+00:05:52,980 --> 00:05:56,460
+ which is the care of global tech is the verified domain name,
+
+118
+00:05:56,460 --> 00:05:59,980
+ which I have assigned some license to.
+
+119
+00:05:59,980 --> 00:06:02,420
+ So the user is trying to use a different domain name
+
+120
+00:06:02,420 --> 00:06:07,420
+ may not be able to add the device to Microsoft Intune.
+
+121
+00:06:07,420 --> 00:06:11,780
+ My name is Kelvin, Johnson and please don't forget
+
+122
+00:06:11,780 --> 00:06:15,700
+ to subscribe to my YouTube channel for more IT related video
+
+123
+00:06:15,700 --> 00:06:16,540
+ like this.
+
+124
+00:06:16,540 --> 00:06:19,940
+ And if you haven't any issue with consigns Microsoft Intune,
+
+125
+00:06:19,940 --> 00:06:22,540
+ please don't forget to send me an email
+
+126
+00:06:22,540 --> 00:06:25,060
+ or leave a comment in the comment section of this video.
+
+127
+00:06:25,060 --> 00:06:28,540
+ And I'll reply to you as quick as possible.
+
+128
+00:06:28,540 --> 00:06:29,380
+ Bye.
+
