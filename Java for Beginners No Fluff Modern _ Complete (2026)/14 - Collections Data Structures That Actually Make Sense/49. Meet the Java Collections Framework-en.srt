@@ -1,0 +1,332 @@
+1
+00:00:00,000 --> 00:00:04,960
+ all at their friends and now we're going to talk about collections it's a
+
+2
+00:00:04,960 --> 00:00:10,000
+ comprehensive API again provides you lots of interfaces and lots of lots of
+
+3
+00:00:10,000 --> 00:00:15,160
+ classes which implement those interfaces and we'll just have a look at why do we
+
+4
+00:00:15,160 --> 00:00:19,700
+ use collections and then how do we use them so again as the philosophy goes first
+
+5
+00:00:19,700 --> 00:00:24,720
+ the why and then the how and the why is why are we talking about collections
+
+6
+00:00:24,720 --> 00:00:31,400
+ today so I'll just write some pointers for you that will make it clear why are
+
+7
+00:00:31,400 --> 00:00:36,680
+ we even doing this video so you remember we use arrays all the time but there
+
+8
+00:00:36,680 --> 00:00:42,600
+ are significant disadvantages of arrays and the disadvantages that what you
+
+9
+00:00:42,600 --> 00:00:46,800
+ have to put the size before compile time and once you put the size it cannot
+
+10
+00:00:46,800 --> 00:00:51,040
+ be changed what that means is it's not a growable data structure it's not a
+
+11
+00:00:51,040 --> 00:00:56,240
+ shrinkable data structure right those are glaring disadvantages working with
+
+12
+00:00:56,240 --> 00:01:01,480
+ arrays and a good analogy to understand that would be let's say you are
+
+13
+00:01:01,480 --> 00:01:05,120
+ working for a you're developing a school management system you're providing them
+
+14
+00:01:05,120 --> 00:01:09,960
+ with a solution and they expect that in this session 500 students would new
+
+15
+00:01:09,960 --> 00:01:14,640
+ students would join in but let's say it's the times of COVID and only 100 join
+
+16
+00:01:14,640 --> 00:01:19,480
+ in what happens to that 400 blocks of memory that you had reserved if you're
+
+17
+00:01:19,480 --> 00:01:23,480
+ working with arrays that goes waste there is no way you can delete that and let's
+
+18
+00:01:23,480 --> 00:01:28,200
+ say in another world instead of 500 they get 800 new admissions so they
+
+19
+00:01:28,200 --> 00:01:33,880
+ cannot change we cannot add more memory bytes at runtime another disadvantage
+
+20
+00:01:33,880 --> 00:01:39,840
+ that's why I say arrays is there are not a growable data structure neither
+
+21
+00:01:39,840 --> 00:01:44,320
+ they are shrinkable and that's where collections come into the picture they
+
+22
+00:01:44,320 --> 00:01:48,760
+ provide you all of that and much more right so first things first about
+
+23
+00:01:48,760 --> 00:01:55,600
+ collections is that collections can store objects in Java don't matter what
+
+24
+00:01:55,600 --> 00:01:59,560
+ those objects are obviously rubber class objects strings custom class
+
+25
+00:01:59,560 --> 00:02:04,080
+ objects we can store all of them but never permit use right and for storing
+
+26
+00:02:04,080 --> 00:02:08,280
+ primitives we have a workaround I'll just brief you on that later on so they
+
+27
+00:02:08,280 --> 00:02:18,680
+ can store objects they are growable they are shrinkable as well right so
+
+28
+00:02:18,680 --> 00:02:23,320
+ that means that whatever and it's very important for you to understand that
+
+29
+00:02:23,320 --> 00:02:27,300
+ there are a lot of collection classes out there right but all of them share
+
+30
+00:02:27,300 --> 00:02:31,160
+ these same properties and traits and they would have something of their own
+
+31
+00:02:31,160 --> 00:02:35,440
+ that is unique to those particular collection classes but these properties are
+
+32
+00:02:35,440 --> 00:02:40,480
+ common to all of them they're growable they are shrinkable they are short
+
+33
+00:02:40,480 --> 00:02:48,200
+ table as well and they are searchables right so all of these
+
+34
+00:02:48,200 --> 00:02:52,320
+ properties are common to all collection classes as I said they bring this
+
+35
+00:02:52,320 --> 00:02:56,520
+ much to the table and much much more and when once we write the code once we
+
+36
+00:02:56,520 --> 00:03:01,000
+ talk about a particular collection classes you will know why I say they bring
+
+37
+00:03:01,000 --> 00:03:04,240
+ so much to the table so it's very important to understand that all of them
+
+38
+00:03:04,240 --> 00:03:09,120
+ share the same properties but they have uniqueness to them as well right and
+
+39
+00:03:09,120 --> 00:03:14,400
+ then another property I want you to understand about collections whenever
+
+40
+00:03:14,400 --> 00:03:23,880
+ you're dealing with collections is that that is ordering and sorting so this
+
+41
+00:03:23,880 --> 00:03:29,280
+ place a role for you to decide which collection class to use in what
+
+42
+00:03:29,280 --> 00:03:34,540
+ situation right now what is ordering ordering is how are the values stored in a
+
+43
+00:03:34,540 --> 00:03:38,760
+ data structure if you put them for example and let's take an example with
+
+44
+00:03:38,760 --> 00:03:44,960
+ areas let's say you enter user enters at runtime these values let's say 31 65
+
+45
+00:03:44,960 --> 00:03:52,920
+ 93 2 and 7 60 and then once you print them once user let's say a for loop or
+
+46
+00:03:52,920 --> 00:03:56,600
+ enhanced for loop Java 5 enhanced for loop to traverse them what is the output
+
+47
+00:03:56,600 --> 00:04:00,000
+ that you get in the order they would be saved right what is the order that
+
+48
+00:04:00,000 --> 00:04:06,720
+ that would be saved right so obviously you will get 31 65 93 2 and 7 60 that
+
+49
+00:04:06,720 --> 00:04:11,760
+ means in the order that that you inserted is the order in which they were
+
+50
+00:04:11,760 --> 00:04:16,000
+ stored it is always do that right but we shouldn't take that for granted until
+
+51
+00:04:16,000 --> 00:04:21,800
+ now we have why because areas always maintain what we say is the insertion order
+
+52
+00:04:21,800 --> 00:04:25,200
+ we call it the insertion order what does that mean in the order in which you
+
+53
+00:04:25,200 --> 00:04:29,440
+ insert the elements is the order in which they actually would be stored that's
+
+54
+00:04:29,440 --> 00:04:34,400
+ called insertion order but is this sorted as well no not really it isn't sorted
+
+55
+00:04:34,400 --> 00:04:39,960
+ so we say areas always are ordered but not sorted right so some of the
+
+56
+00:04:39,960 --> 00:04:43,200
+ certain some of the Kalisha classes out there which you will come across
+
+57
+00:04:43,200 --> 00:04:47,520
+ shortly they would be acting like arrays in terms of ordering and sorting they
+
+58
+00:04:47,520 --> 00:04:51,720
+ would be just insert they'll be following the insertion order but not sorted but
+
+59
+00:04:51,720 --> 00:04:56,480
+ some of the other Kalisha classes they would be different how let's say there's
+
+60
+00:04:56,480 --> 00:05:00,640
+ a Kalisha class where you insert values like this and then they end up big
+
+61
+00:05:00,640 --> 00:05:08,680
+ stored like this and when you bring them you get there this like this you get
+
+62
+00:05:08,680 --> 00:05:17,440
+ two 31 65 93 and 7 60 right there's something look interesting here yes
+
+63
+00:05:17,440 --> 00:05:22,160
+ they're sorted right that means you insert it like this but they're actually
+
+64
+00:05:22,160 --> 00:05:27,200
+ stored in sorted order and those Kalisha classes we say they're ordered as
+
+65
+00:05:27,200 --> 00:05:32,280
+ well as sorted sorted in natural ordering see it's ascending order we call that
+
+66
+00:05:32,280 --> 00:05:36,200
+ as natural ordering all right and then there would be a third situation where
+
+67
+00:05:36,200 --> 00:05:42,880
+ you inserted like this but actually you get them stored like this
+
+68
+00:05:42,880 --> 00:05:52,280
+ right so is there some order to this is there any sorting order to this not
+
+69
+00:05:52,280 --> 00:05:57,680
+ at all that means they are unordered and sorted and there are a few
+
+70
+00:05:57,680 --> 00:06:02,040
+ collection glasses that that allow you to do that right that is which do not
+
+71
+00:06:02,040 --> 00:06:06,400
+ maintain any order and if they are not ordered they are not sorted right the
+
+72
+00:06:06,400 --> 00:06:10,400
+ fourth situation this is my question to you right is that can there be a
+
+73
+00:06:10,400 --> 00:06:16,080
+ collection class which allows you to enter data and then give you
+
+74
+00:06:16,080 --> 00:06:21,560
+ unordered but sorted collection can there be a situation where they provide you
+
+75
+00:06:21,560 --> 00:06:26,680
+ unordered but sorted no there can't be why because sorting in itself is an
+
+76
+00:06:26,680 --> 00:06:31,240
+ order it would be like I'll tell you to sort your books at home today so you'll
+
+77
+00:06:31,240 --> 00:06:35,120
+ come back to me you'll say in what order will eat I'll say no just sort them
+
+78
+00:06:35,120 --> 00:06:39,680
+ right that doesn't make any sense you'll say no I need to know which order by
+
+79
+00:06:39,680 --> 00:06:45,040
+ author me by reverse author name by price by reverse price high to low and low
+
+80
+00:06:45,040 --> 00:06:48,800
+ to high or by the publication date there has to be an order that's why I say
+
+81
+00:06:48,800 --> 00:06:53,120
+ sorting in itself is an order so the fourth situation cannot cannot occur
+
+82
+00:06:53,120 --> 00:06:57,200
+ right so three situation can occur and that's about ordering and sorting
+
+83
+00:06:57,200 --> 00:07:01,720
+ will see which glasses provide us what
+
