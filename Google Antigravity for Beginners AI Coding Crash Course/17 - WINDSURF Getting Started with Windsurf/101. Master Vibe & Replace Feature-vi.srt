@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,320
+Trong bài học này, bạn sẽ học cách dùng tính năng lau chùi và thay thế.
+
+2
+00:00:05,320 --> 00:00:11,240
+Nó là một loại của một yeah, một phiên bản nghèo đói của tìm kiếm các tính năng thay thế mà mỗi
+
+3
+00:00:11,240 --> 00:00:17,160
+Có, nhưng tính năng này cho phép bạn chuyển đổi mã thông minh của bạn qua
+
+4
+00:00:17,160 --> 00:00:18,160
+Toàn bộ dự án.
+
+5
+00:00:18,160 --> 00:00:21,340
+Vì vậy, hãy nói một chút về cách nó hoạt động và nó là gì.
+
+6
+00:00:21,340 --> 00:00:26,600
+Quét và thay thế tính năng bắt đầu giống như bình thường tìm kiếm tính năng thay thế, nhưng thay vào đó
+
+7
+00:00:26,600 --> 00:00:32,480
+là thay thế đơn giản khi áp dụng bất kỳ địa chỉ IP nào cho mỗi trận đấu.
+
+8
+00:00:32,480 --> 00:00:36,000
+Điều đó có nghĩa là mọi thay thế đều nhận thức được bối cảnh.
+
+9
+00:00:36,000 --> 00:00:41,640
+Nó nhìn vào cách mà mã được sử dụng và điều chỉnh sự biến đổi để cảm thấy cụ thể
+
+10
+00:00:41,640 --> 00:00:42,640
+nơi.
+
+11
+00:00:42,640 --> 00:00:43,840
+Nó thực sự thông minh.
+
+12
+00:00:43,840 --> 00:00:48,280
+Bạn có thể sử dụng nó để khổng lồ các yếu tố mà chạm hàng trăm tập tin của toàn bộ
+
+13
+00:00:48,280 --> 00:00:49,280
+dự án.
+
+14
+00:00:49,280 --> 00:00:54,400
+Ví dụ, bạn có thể thay đổi tên của biến ngữ, tạo ra chú giải hoặc loại bỏ
+
+15
+00:00:54,400 --> 00:00:58,720
+cờ đặc trưng tất cả trong một hoạt động thông minh.
+
+16
+00:00:58,720 --> 00:01:04,600
+Nó thực sự là một bước tiến lớn từ tìm kiếm cơ bản và thay thế và nó đã được xây dựng cho các nhà phát triển
+
+17
+00:01:04,600 --> 00:01:12,360
+người đã thực sự thay thế thông minh hơn, an toàn hơn với tự động hóa thông qua toàn bộ mã.
+
+18
+00:01:12,360 --> 00:01:14,560
+Giờ là lúc để xem nó hoạt động như thế nào.
+
+19
+00:01:14,560 --> 00:01:22,240
+Tôi sẽ chuyển sang lướt sóng và tôi sẽ mở quá khứ cho một tập tin lắc lạ và chúng ta cần
+
+20
+00:01:22,240 --> 00:01:28,840
+để tìm một cái gì đó chúng tôi muốn thay thế, nhưng một cái gì đó khó khăn chỉ cho một thay thế đơn giản
+
+21
+00:01:28,840 --> 00:01:29,840
+Chiến dịch.
+
+22
+00:01:29,840 --> 00:01:36,200
+Vì vậy, hãy tưởng tượng chúng tôi có một phản hồi, chúng tôi muốn đổi tên phản hồi này để khuyến cáo.
+
+23
+00:01:36,200 --> 00:01:41,960
+Bởi vì biến phản hồi này được sử dụng thực sự để mở trong tập tin của chúng tôi, nó sử dụng các gợi ý
+
+24
+00:01:41,960 --> 00:01:47,120
+biến trong phương pháp của chúng tôi, chúng tôi đang làm nó như là một cái bẫy.
+
+25
+00:01:47,120 --> 00:01:56,360
+Kết quả là, chúng tôi cũng sử dụng điều này trong bình luận, chúng tôi cũng sử dụng điều này ở đây và một đối tượng khác
+
+26
+00:01:56,360 --> 00:02:06,720
+là đối tượng cuối cùng và chúng tôi sử dụng nó cũng ở đây khi chúng tôi có ra khỏi hệ thống phản hồi.
+
+27
+00:02:06,720 --> 00:02:13,000
+Và vâng, chúng tôi sử dụng nó ở đây rất nhiều nơi mà chúng tôi sử dụng phản hồi và chúng tôi muốn thay đổi tên
+
+28
+00:02:13,000 --> 00:02:15,040
+để giới thiệu.
+
+29
+00:02:15,040 --> 00:02:20,460
+Vì vậy hãy tưởng tượng chúng tôi không có một nơi webinar và tôi sẽ cho bạn thấy làm thế nào chúng tôi sẽ làm điều đó với
+
+30
+00:02:20,460 --> 00:02:22,800
+Hướng dẫn tìm một địa điểm khác.
+
+31
+00:02:22,800 --> 00:02:30,320
+Tôi sẽ chỉ đề cập đến phản hồi, nhưng bởi vì chúng tôi có tắt phản hồi, tôi cần phải chọn
+
+32
+00:02:30,320 --> 00:02:37,880
+rất nhiều trường hợp để loại trừ này ra phản hồi từ các thay đổi bởi vì nó bắt đầu từ vốn
+
+33
+00:02:37,880 --> 00:02:41,920
+Thư và tôi không thể làm cả hai cùng một lúc.
+
+34
+00:02:41,920 --> 00:02:49,640
+Và tôi cũng sẽ sử dụng toàn bộ từ an toàn của tôi bởi vì nếu bạn có một từ như
+
+35
+00:02:49,640 --> 00:02:56,800
+Tôi không biết phản hồi là một phần của một từ khác hoặc ví dụ chúng tôi có một số tiền tố trước khi
+
+36
+00:02:56,800 --> 00:03:03,920
+Sau đó nó cũng sẽ được thay thế vì vậy tôi muốn được an toàn hơn và bây giờ tôi sẽ viết từ
+
+37
+00:03:03,920 --> 00:03:06,000
+Tôi muốn, giới thiệu.
+
+38
+00:03:06,000 --> 00:03:14,120
+Và chỉ cần nhấp chuột vào tất cả các nơi ở đây bạn có thể thấy lịch sử của những gì từ
+
+39
+00:03:14,120 --> 00:03:16,080
+sẽ bị thay thế.
+
+40
+00:03:16,080 --> 00:03:25,400
+Được rồi, bạn thấy nó đã được thay thế, bây giờ chúng ta cần phải thay thế phản hồi, tắt phản hồi cho hơn
+
+41
+00:03:25,400 --> 00:03:28,760
+giới thiệu.
+
+42
+00:03:28,760 --> 00:03:35,000
+Tôi vẫn sẽ sử dụng nhiều trường hợp và toàn bộ hạn chế từ và tôi sẽ thay thế
+
+43
+00:03:35,000 --> 00:03:36,000
+nó.
+
+44
+00:03:36,000 --> 00:03:43,140
+Vì vậy, như bạn thấy chúng tôi cần phải viết một văn bản, chúng tôi cần phải làm điều đó trong hai ca phẫu thuật, chúng tôi cũng không
+
+45
+00:03:43,140 --> 00:03:50,360
+Thực sự chắc chắn nếu chúng tôi không thay thế, chúng tôi không muốn.
+
+46
+00:03:50,360 --> 00:03:59,520
+Và bây giờ hãy để tôi chỉ cho bạn làm thế nào là một công việc bình thường tìm thấy một kết thúc rộng của nơi, vì vậy chúng tôi đã đề cập đến
+
+47
+00:03:59,520 --> 00:04:03,520
+công việc mà chúng tôi muốn thay thế phản hồi.
+
+48
+00:04:03,520 --> 00:04:10,240
+Và bây giờ trong công việc nơi chúng tôi chỉ cho phép các rung cảm dưới chế độ vị trí và chúng tôi có thể nhập
+
+49
+00:04:10,240 --> 00:04:11,240
+một vấn đề.
+
+50
+00:04:11,240 --> 00:04:17,560
+Vì vậy, tôi sẽ nói rằng thay thế phản hồi là một từ, không quan trọng để bắt đầu từ chữ cái vốn
+
+51
+00:04:17,560 --> 00:04:22,040
+hoặc một lá thư nhỏ, thay thế nó để giới thiệu trong toàn bộ dự án.
+
+52
+00:04:33,520 --> 00:04:49,680
+Và trong nền tảng của toàn bộ dự án và tôi sẽ click vào, chúng ta thấy nó bắt đầu
+
+53
+00:04:49,680 --> 00:04:53,840
+Biểu đồ mới với một dấu nhắc và hãy xem nó được thay thế như thế nào.
+
+54
+00:04:53,840 --> 00:05:01,520
+Oh, chúng tôi thấy nó thay thế các biến ngay tại đây, nó thay thế các biến quá trình khi chúng tôi thêm
+
+55
+00:05:01,520 --> 00:05:11,720
+Một món đồ mới để chuyển thành kết quả, khi chúng tôi đang làm một cái gì đó, chúng tôi cũng cập nhật các bình luận
+
+56
+00:05:11,720 --> 00:05:22,800
+chúng tôi cũng cập nhật các bình luận ở đây, nhưng vâng, tôi rất quan tâm nếu
+
+57
+00:05:22,800 --> 00:05:29,240
+sẽ thay thế, vì vậy chúng tôi thấy chúng tôi có tất cả các phản hồi và nó đã được thay thế tất cả các khuyến cáo.
+
+58
+00:05:29,240 --> 00:05:30,240
+Và khắp mọi nơi.
+
+59
+00:05:30,240 --> 00:05:37,400
+Vì vậy, nó thực sự thông minh và bạn có thể tiết kiệm thời gian của bạn, chúng tôi tất nhiên chấp nhận tất cả các thay đổi.
+
+60
+00:05:37,400 --> 00:05:46,800
+Bây giờ chúng tôi muốn hiển thị cho bạn một tính năng thêm của trang web này theo nơi, bạn có thể sử dụng hai chế độ để
+
+61
+00:05:46,800 --> 00:05:48,840
+chế độ thông minh và chế độ nhanh.
+
+62
+00:05:48,840 --> 00:05:57,800
+Chế độ thông minh là sử dụng các mô hình máy chủ tiên tiến hơn mà áp dụng cho mỗi thay đổi thực sự cẩn thận,
+
+63
+00:05:57,800 --> 00:06:04,480
+Nó có thể là hoàn hảo khi chính xác vấn đề, như khi bạn tái tạo, xem dự án hoặc tạo ra
+
+64
+00:06:04,480 --> 00:06:09,440
+một số tài liệu quan trọng và bạn thực sự muốn nó có thể đặt tất cả mọi thứ một cách cẩn thận
+
+65
+00:06:09,440 --> 00:06:10,920
+và thông minh.
+
+66
+00:06:10,920 --> 00:06:18,400
+Và chúng tôi sử dụng sự thay thế thông minh ở đây bởi vì chúng tôi có các biến ở các cạnh khác nhau.
+
+67
+00:06:18,400 --> 00:06:25,040
+Ví dụ, chế độ nhanh, bạn có thể sử dụng, bạn chỉ muốn thực hiện một số bản cập nhật nhanh qua
+
+68
+00:06:25,040 --> 00:06:31,760
+rất nhiều tập tin và không thực sự cần một số lý luận sâu đằng sau mỗi thay đổi, bởi vì điều này là
+
+69
+00:06:31,760 --> 00:06:36,560
+Nhẹ hơn, yếu hơn và áp dụng những thay đổi ngay lập tức.
+
+70
+00:06:36,560 --> 00:06:40,800
+Và công tắc giữa các chế độ, bạn có thể sử dụng mũi tên này và chỉ cần chuyển đổi.
+
+71
+00:06:40,800 --> 00:06:46,760
+Nếu bạn, bạn đã biết, nếu bạn làm một cái gì đó khó khăn, chỉ cần sử dụng một chế độ thông minh hoặc chỉ trên máy ảnh
+
+72
+00:06:46,760 --> 00:06:49,400
+và luôn sử dụng chế độ thông minh.
+
+73
+00:06:49,400 --> 00:06:56,360
+Vì vậy, trong bài học này, chúng tôi đã học làm thế nào web dưới vị trí cụ thể hoạt động.
+
+74
+00:06:56,360 --> 00:07:02,760
+Tôi hy vọng bạn sẽ sử dụng nó bây giờ thường xuyên hơn bởi vì công cụ này giúp sửa đổi hàng trăm dòng
+
+75
+00:07:02,760 --> 00:07:11,680
+của mã, dễ dàng hơn nhiều với AI trợ giúp và bây giờ chúng tôi có thể chọn giữa các chế độ thông minh và nhanh, vì vậy
+
+76
+00:07:11,680 --> 00:07:13,240
+Anh cũng biết nó hoạt động thế nào.
+
+77
+00:07:13,240 --> 00:07:15,280
+Được rồi, và gặp lại cậu trong bài học tiếp theo.
+
