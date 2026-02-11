@@ -1,0 +1,332 @@
+1
+00:00:00,000 --> 00:00:04,960
+Tất cả bạn bè của họ và bây giờ chúng ta sẽ nói về bộ sưu tập nó là một
+
+2
+00:00:04,960 --> 00:00:10,000
+Lại cung cấp cho bạn rất nhiều giao diện và rất nhiều
+
+3
+00:00:10,000 --> 00:00:15,160
+Các lớp học mà thực hiện các giao diện và chúng tôi sẽ chỉ có một cái nhìn tại sao chúng tôi
+
+4
+00:00:15,160 --> 00:00:19,700
+sử dụng bộ sưu tập và sau đó làm thế nào để chúng tôi sử dụng chúng như vậy một lần nữa khi triết học đi đầu tiên
+
+5
+00:00:19,700 --> 00:00:24,720
+Tại sao và sau đó là làm thế nào và tại sao là lý do tại sao chúng tôi nói về bộ sưu tập
+
+6
+00:00:24,720 --> 00:00:31,400
+Hôm nay vì vậy tôi sẽ chỉ cần viết một số chỉ dẫn cho bạn mà sẽ làm cho nó rõ ràng tại sao
+
+7
+00:00:31,400 --> 00:00:36,680
+Chúng tôi thậm chí làm video này để bạn nhớ chúng tôi sử dụng các mảng tất cả các thời gian nhưng có
+
+8
+00:00:36,680 --> 00:00:42,600
+là quan trọng bất lợi của các mảng và bất lợi mà bạn
+
+9
+00:00:42,600 --> 00:00:46,800
+phải đặt kích cỡ trước thời gian biên dịch và một khi bạn đặt kích thước nó không thể
+
+10
+00:00:46,800 --> 00:00:51,040
+được thay đổi điều đó có nghĩa là nó không phải là một cấu trúc dữ liệu có thể phát triển nó không phải là một
+
+11
+00:00:51,040 --> 00:00:56,240
+Cấu trúc dữ liệu thu nhỏ bên phải đó là bất lợi rõ ràng làm việc với
+
+12
+00:00:56,240 --> 00:01:01,480
+Các mảng và một so sánh tốt để hiểu rằng sẽ được cho là bạn đang
+
+13
+00:01:01,480 --> 00:01:05,120
+làm việc cho một hệ thống quản lý trường học bạn đang cung cấp cho họ
+
+14
+00:01:05,120 --> 00:01:09,960
+Với một giải pháp và họ mong đợi rằng trong buổi này 500 học sinh sẽ mới
+
+15
+00:01:09,960 --> 00:01:14,640
+Học sinh tham gia nhưng hãy nói rằng đây là thời gian của COVID và chỉ 100 tham gia
+
+16
+00:01:14,640 --> 00:01:19,480
+Trong những gì xảy ra với 400 khối bộ nhớ mà bạn đã dành riêng nếu bạn
+
+17
+00:01:19,480 --> 00:01:23,480
+làm việc với các mảng mà đi lãng phí không có là không có cách nào bạn có thể xóa mà và hãy
+
+18
+00:01:23,480 --> 00:01:28,200
+Nói rằng trong một thế giới khác thay vì 500 họ nhận được 800 nhập viện mới vì vậy họ
+
+19
+00:01:28,200 --> 00:01:33,880
+Không thể thay đổi chúng ta không thể thêm nhiều byte bộ nhớ vào lúc chạy khác bất lợi
+
+20
+00:01:33,880 --> 00:01:39,840
+Đó là lý do tại sao tôi nói các mảng là không có một cấu trúc dữ liệu tăng trưởng cả hai
+
+21
+00:01:39,840 --> 00:01:44,320
+Chúng có thể thu nhỏ và đó là nơi bộ sưu tập đi vào bức tranh
+
+22
+00:01:44,320 --> 00:01:48,760
+cung cấp cho bạn tất cả những điều đó và nhiều hơn nữa đúng vì vậy đầu tiên điều đầu tiên về
+
+23
+00:01:48,760 --> 00:01:55,600
+sưu tập là bộ sưu tập có thể lưu trữ đối tượng trong Java không quan trọng những gì
+
+24
+00:01:55,600 --> 00:01:59,560
+Những đối tượng này rõ ràng là các đối tượng cao su lớp dây lớp tùy chỉnh
+
+25
+00:01:59,560 --> 00:02:04,080
+Vật thể chúng ta có thể lưu trữ tất cả nhưng không bao giờ cho phép sử dụng đúng và lưu trữ
+
+26
+00:02:04,080 --> 00:02:08,280
+Những người nguyên thủy chúng tôi có một công việc xoay quanh tôi sẽ chỉ cho bạn về điều đó sau này trên vì vậy họ
+
+27
+00:02:08,280 --> 00:02:18,680
+có thể lưu trữ các đối tượng chúng là có thể phát triển chúng được thu nhỏ là tốt như vậy
+
+28
+00:02:18,680 --> 00:02:23,320
+có nghĩa là bất cứ điều gì và nó rất quan trọng cho bạn để hiểu rằng
+
+29
+00:02:23,320 --> 00:02:27,300
+Có rất nhiều lớp học sưu tập ngoài kia nhưng tất cả đều có chung
+
+30
+00:02:27,300 --> 00:02:31,160
+Những đặc tính và tính cách giống nhau và họ sẽ có một cái gì đó của riêng họ
+
+31
+00:02:31,160 --> 00:02:35,440
+đó là duy nhất trong các lớp thu thập đặc biệt nhưng các tính chất là
+
+32
+00:02:35,440 --> 00:02:40,480
+Thông thường với tất cả họ đang phát triển họ đang được thu nhỏ họ là ngắn
+
+33
+00:02:40,480 --> 00:02:48,200
+bảng cũng và họ có thể tìm kiếm quyền vì vậy tất cả các
+
+34
+00:02:48,200 --> 00:02:52,320
+Thuộc tính là phổ biến cho tất cả các lớp học sưu tập như tôi đã nói họ mang này
+
+35
+00:02:52,320 --> 00:02:56,520
+Nhiều đến bảng và nhiều hơn nữa và khi chúng tôi viết các mã một khi chúng tôi
+
+36
+00:02:56,520 --> 00:03:01,000
+Nói về một lớp sưu tập đặc biệt bạn sẽ biết tại sao tôi nói họ mang đến
+
+37
+00:03:01,000 --> 00:03:04,240
+Vì vậy, rất nhiều để bàn nên nó là rất quan trọng để hiểu rằng tất cả họ
+
+38
+00:03:04,240 --> 00:03:09,120
+Chia sẻ các thuộc tính tương tự nhưng chúng có độc nhất vô nhị với chúng và
+
+39
+00:03:09,120 --> 00:03:14,400
+Sau đó một bất động sản khác tôi muốn bạn hiểu về bộ sưu tập bất cứ khi nào
+
+40
+00:03:14,400 --> 00:03:23,880
+Bạn đang làm việc với các bộ sưu tập là rằng đó là đặt hàng và sắp xếp như vậy này
+
+41
+00:03:23,880 --> 00:03:29,280
+đặt một vai trò cho bạn để quyết định bộ sưu tập nào để sử dụng trong những gì
+
+42
+00:03:29,280 --> 00:03:34,540
+Tình hình ngay bây giờ những gì là đặt hàng là làm thế nào là các giá trị được lưu trữ trong một
+
+43
+00:03:34,540 --> 00:03:38,760
+cấu trúc dữ liệu nếu bạn đặt chúng ví dụ và hãy lấy một ví dụ với
+
+44
+00:03:38,760 --> 00:03:44,960
+Những khu vực cho rằng bạn nhập người dùng vào lúc chạy các giá trị này hãy nói 31 65
+
+45
+00:03:44,960 --> 00:03:52,920
+93 2 và 7 60 và sau đó một khi bạn in chúng một khi người dùng hãy nói một vòng lặp hoặc
+
+46
+00:03:52,920 --> 00:03:56,600
+Tăng cường cho vòng lặp Java 5 tăng cường cho vòng lặp để đi qua đầu ra
+
+47
+00:03:56,600 --> 00:04:00,000
+Bạn nhận được theo thứ tự họ sẽ được lưu giữ đúng những gì là trật tự
+
+48
+00:04:00,000 --> 00:04:06,720
+Nó sẽ được lưu đúng vì vậy rõ ràng bạn sẽ nhận được 31 65 93 2 và 7 60 mà
+
+49
+00:04:06,720 --> 00:04:11,760
+có nghĩa là theo thứ tự mà bạn chèn là thứ tự mà họ đã
+
+50
+00:04:11,760 --> 00:04:16,000
+lưu trữ nó luôn luôn làm đúng nhưng chúng ta không nên coi đó là hiển nhiên cho đến khi
+
+51
+00:04:16,000 --> 00:04:21,800
+bây giờ chúng tôi có lý do tại sao bởi vì khu vực luôn duy trì những gì chúng tôi nói là thứ tự chèn
+
+52
+00:04:21,800 --> 00:04:25,200
+Chúng tôi gọi nó là thứ tự chèn những gì không có nghĩa là trong thứ tự trong đó bạn
+
+53
+00:04:25,200 --> 00:04:29,440
+chèn các yếu tố là thứ tự trong đó họ thực sự sẽ được lưu trữ đó là
+
+54
+00:04:29,440 --> 00:04:34,400
+Được gọi là lệnh chèn nhưng được sắp xếp này cũng không có không thực sự nó không được sắp xếp
+
+55
+00:04:34,400 --> 00:04:39,960
+Vì vậy, chúng tôi nói khu vực luôn luôn được đặt hàng nhưng không được sắp xếp đúng vì vậy một số
+
+56
+00:04:39,960 --> 00:04:43,200
+Chắc chắn một số lớp học của Kalisha ngoài đó mà bạn sẽ gặp
+
+57
+00:04:43,200 --> 00:04:47,520
+Chẳng bao lâu họ sẽ hành động như mảng theo thứ tự và sắp xếp họ
+
+58
+00:04:47,520 --> 00:04:51,720
+sẽ được chỉ chèn họ sẽ theo thứ tự chèn nhưng không sắp xếp nhưng
+
+59
+00:04:51,720 --> 00:04:56,480
+Một trong những lớp học khác của Kalisha họ sẽ khác nhau làm thế nào để nói rằng có
+
+60
+00:04:56,480 --> 00:05:00,640
+Một lớp học Kalisha nơi bạn chèn các giá trị như thế này và sau đó họ kết thúc lớn
+
+61
+00:05:00,640 --> 00:05:08,680
+Được lưu trữ như thế này và khi bạn mang chúng bạn nhận được điều này như thế này bạn nhận được
+
+62
+00:05:08,680 --> 00:05:17,440
+hai 31 65 93 và 760 bên phải có một cái gì đó trông thú vị ở đây vâng
+
+63
+00:05:17,440 --> 00:05:22,160
+Họ đang sắp xếp quyền mà có nghĩa là bạn chèn nó như thế này nhưng họ đang thực sự
+
+64
+00:05:22,160 --> 00:05:27,200
+Được sắp xếp theo thứ tự và những lớp học của Kalisha chúng tôi cho rằng chúng được đặt hàng như
+
+65
+00:05:27,200 --> 00:05:32,280
+cũng như sắp xếp theo thứ tự tự nhiên xem nó là tăng theo thứ tự chúng tôi gọi là
+
+66
+00:05:32,280 --> 00:05:36,200
+là tự nhiên đặt hàng tất cả các quyền và sau đó sẽ có một tình huống thứ ba nơi
+
+67
+00:05:36,200 --> 00:05:42,880
+Bạn chèn như thế này nhưng thực sự bạn nhận được chúng lưu trữ như thế này
+
+68
+00:05:42,880 --> 00:05:52,280
+Phải vậy không?
+
+69
+00:05:52,280 --> 00:05:57,680
+Tất cả có nghĩa là họ không có trật tự và sắp xếp và có một số
+
+70
+00:05:57,680 --> 00:06:02,040
+Kính thu thập mà cho phép bạn làm điều đó đúng đó là không
+
+71
+00:06:02,040 --> 00:06:06,400
+duy trì bất kỳ trật tự và nếu họ không được lệnh họ không được sắp xếp đúng
+
+72
+00:06:06,400 --> 00:06:10,400
+Tình huống thứ tư đây là câu hỏi đúng đắn của tôi.
+
+73
+00:06:10,400 --> 00:06:16,080
+Lớp học thu thập cho phép bạn nhập dữ liệu và sau đó cung cấp cho bạn
+
+74
+00:06:16,080 --> 00:06:21,560
+Có thể có một tình huống mà họ cung cấp cho bạn
+
+75
+00:06:21,560 --> 00:06:26,680
+Không có trật tự nhưng được sắp xếp không thể có lý do tại sao bởi vì phân loại trong chính nó là một
+
+76
+00:06:26,680 --> 00:06:31,240
+Thứ tự sẽ giống như tôi sẽ nói với bạn để sắp xếp sách của bạn tại nhà ngày hôm nay để bạn sẽ
+
+77
+00:06:31,240 --> 00:06:35,120
+Trở lại với tôi bạn sẽ nói theo thứ tự sẽ ăn tôi sẽ nói không chỉ phân loại chúng
+
+78
+00:06:35,120 --> 00:06:39,680
+Phải đó không làm cho bất kỳ ý nghĩa bạn sẽ nói không tôi cần biết trật tự nào bởi
+
+79
+00:06:39,680 --> 00:06:45,040
+Tác giả của tôi bằng cách đảo ngược tên tác giả với giá cả bằng cách đảo ngược giá cả xuống thấp
+
+80
+00:06:45,040 --> 00:06:48,800
+để cao hoặc trước ngày xuất bản phải có một lệnh đó là lý do tại sao tôi nói
+
+81
+00:06:48,800 --> 00:06:53,120
+Tự phân loại là một thứ tự để tình huống thứ tư không thể xảy ra
+
+82
+00:06:53,120 --> 00:06:57,200
+Đúng vậy, ba tình huống có thể xảy ra và đó là về sắp xếp và sắp xếp
+
+83
+00:06:57,200 --> 00:07:01,720
+sẽ xem kính nào cung cấp cho chúng tôi những gì
+
