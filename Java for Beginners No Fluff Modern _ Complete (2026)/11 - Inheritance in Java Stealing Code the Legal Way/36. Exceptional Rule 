@@ -1,572 +1,572 @@
 1
 00:00:00,000 --> 00:00:06,160
- All right, let's take the discussion forward and the first scenario, the exceptional scenario
+Tất cả các quyền, chúng ta hãy thảo luận về phía trước và kịch bản đầu tiên, kịch bản đặc biệt
 
 2
 00:00:06,160 --> 00:00:11,600
- where the super class method in the subclass method would have different signatures, but
+Nơi các phương pháp siêu hạng trong lớp con sẽ có chữ ký khác nhau, nhưng
 
 3
 00:00:11,600 --> 00:00:16,880
- it would still be overriding, let's talk about exceptional scenario number one.
+Nó vẫn sẽ vượt quá giới hạn, hãy nói về trường hợp đặc biệt thứ nhất.
 
 4
 00:00:16,880 --> 00:00:19,440
- But before that, see, this is overriding.
+Nhưng trước đó, chuyện này thật quá sức chịu đựng.
 
 5
 00:00:19,440 --> 00:00:25,040
- Let's say you had done something like this that is int eat and you had then went ahead
+Hãy nói rằng bạn đã làm một cái gì đó như thế này là int ăn và bạn đã đi trước
 
 6
 00:00:25,040 --> 00:00:27,480
- and returned an integer for example.
+và trả lại một số nguyên.
 
 7
 00:00:27,480 --> 00:00:33,080
- Now, this is sorry, I did it at human, human is the subclass, let's keep it that way.
+Bây giờ, đây là xin lỗi, tôi đã làm điều đó với con người, con người là tầng lớp con người, hãy giữ như vậy.
 
 8
 00:00:33,080 --> 00:00:40,640
- Let's say when Schweta was doing the overriding and then we said, we're going to turn zero.
+Hãy nói rằng khi Schweta đã vượt qua và sau đó chúng tôi đã nói, chúng tôi sẽ biến số 0.
 
 9
 00:00:40,640 --> 00:00:44,320
- They should give an error because you're breaking the rules of overriding because the signatures
+Họ nên đưa ra một lỗi bởi vì bạn đang vi phạm các quy tắc của vượt quá bởi vì các chữ ký
 
 10
 00:00:44,320 --> 00:00:45,320
- are different.
+khác biệt.
 
 11
 00:00:45,320 --> 00:00:50,440
- See, you hold on this, eat and Schweta clashes with eat and human in compatible return
+Thấy chưa, anh cầm cái này, ăn và đụng độ Schweta với thức ăn và con người.
 
 12
 00:00:50,440 --> 00:00:51,440
- types.
+Loại.
 
 13
 00:00:51,440 --> 00:00:56,760
- Make eat return white because that is for overriding two of the signatures have to be
+Hãy làm cho bữa ăn trở lại trắng bởi vì đó là để vượt qua hai ký hiệu phải được
 
 14
 00:00:56,760 --> 00:01:00,200
- different, but now the exceptions scenario number one, right?
+khác biệt, nhưng bây giờ là trường hợp thứ nhất, đúng không?
 
 15
 00:01:00,200 --> 00:01:02,680
- And that is related to scope, right?
+Và nó liên quan đến phạm vi, đúng không?
 
 16
 00:01:02,680 --> 00:01:07,040
- All right, and in scope, we had a look at excessive bias, now they're interrelated
+Tất cả các quyền, và trong phạm vi, chúng tôi đã có một cái nhìn về thành kiến quá mức, bây giờ họ liên quan đến nhau
 
 17
 00:01:07,040 --> 00:01:08,040
- here.
+Đây.
 
 18
 00:01:08,040 --> 00:01:11,560
- That is what is that rule, say, exceptions scenario number one, you can note it down with respect
+Đó là những gì là quy tắc đó, nói, trường hợp số một, bạn có thể lưu ý nó với sự tôn trọng
 
 19
 00:01:11,560 --> 00:01:20,160
- overriding and that is the scope of the overriding method in the subclass can be the same
+Vượt quá và đó là phạm vi của phương pháp vượt quá giới hạn trong lớp con có thể là tương tự
 
 20
 00:01:20,160 --> 00:01:26,320
- as of the scope of the overridden method in the super class or it can be broader but never
+là phạm vi của phương pháp bị đè nén trong siêu hạng hoặc nó có thể rộng hơn nhưng không bao giờ
 
 21
 00:01:26,320 --> 00:01:28,200
- narrow down, right?
+Thu hẹp phạm vi, đúng không?
 
 22
 00:01:28,200 --> 00:01:30,560
- I'll again repeat it for you.
+Tôi sẽ nhắc lại lần nữa.
 
 23
 00:01:30,560 --> 00:01:38,360
- That is scope of the overriding method in the subclass can be the same as of the overridden
+Đó là phạm vi của phương pháp vượt quá giới hạn trong tầng lớp con có thể giống như quá tải
 
 24
 00:01:38,360 --> 00:01:41,680
- method in the super class or it can be different.
+Phương pháp trong siêu đẳng hoặc nó có thể khác nhau.
 
 25
 00:01:41,680 --> 00:01:45,800
- That is it can be broader, but never narrow down, right?
+Đó là nó có thể rộng hơn, nhưng không bao giờ thu hẹp, phải không?
 
 26
 00:01:45,800 --> 00:01:50,360
- And the hierarchy, the self-explanatory table that I shared with you earlier on would come
+Và phân cấp, bảng tự giải thích mà tôi chia sẻ với bạn trước đó sẽ đến
 
 27
 00:01:50,360 --> 00:01:52,640
- handy in this video in this concept.
+trong video này.
 
 28
 00:01:52,640 --> 00:01:59,240
- That is now see, uh, it is defined with the default scope and that is you would remember
+Đó là bây giờ xem, uh, nó được xác định với phạm vi mặc định và đó là bạn sẽ nhớ
 
 29
 00:01:59,240 --> 00:02:04,000
- that is it is package private in Java in human it is package private, shader does the
+Đó là nó là gói riêng tư trong Java trong con người nó là gói riêng tư, bóng loáng làm
 
 30
 00:02:04,000 --> 00:02:07,480
- same with it or with what let's take the example of it, right?
+Tương tự với nó hoặc với những gì chúng ta hãy lấy ví dụ của nó, phải không?
 
 31
 00:02:07,480 --> 00:02:11,680
- And keeps it the same because I said the scope can be the same, but it can be broader,
+Và giữ nó như vậy bởi vì tôi đã nói phạm vi có thể giống nhau, nhưng nó có thể rộng hơn,
 
 32
 00:02:11,680 --> 00:02:17,080
- but never never narrow down, but say, let's say I in shader, what do I do is I keep
+nhưng đừng bao giờ thu hẹp phạm vi, nhưng hãy nói, tôi trong bóng râm, những gì tôi làm là giữ
 
 33
 00:02:17,080 --> 00:02:23,800
- it as protected, would it work, right, is the scope because see now I'm breaking in a way
+nó được bảo vệ, nó sẽ hoạt động, phải, là phạm vi bởi vì nhìn thấy bây giờ tôi đang phá vỡ một cách
 
 34
 00:02:23,800 --> 00:02:28,320
- the signature, that signature of the subclass is different in super class, it was package
+Chữ ký, chữ ký của lớp con khác biệt ở hạng siêu đẳng, nó là gói hàng
 
 35
 00:02:28,320 --> 00:02:30,960
- private in the subclass, it is protected, would it work?
+Riêng tư trong tầng hầm, nó được bảo vệ, nó sẽ hoạt động chứ?
 
 36
 00:02:30,960 --> 00:02:35,160
- I said, it can be broader, but never narrow down and yes, it would work.
+Tôi đã nói, nó có thể rộng hơn, nhưng không bao giờ thu hẹp và đúng, nó sẽ hiệu quả.
 
 37
 00:02:35,160 --> 00:02:36,160
- Why?
+Tại sao?
 
 38
 00:02:36,160 --> 00:02:42,000
- Because protected is a scope that is has larger scope than package private.
+Bởi vì được bảo vệ là một phạm vi có phạm vi lớn hơn gói riêng tư.
 
 39
 00:02:42,000 --> 00:02:44,440
- Just go back to that self-explanatory table.
+Quay lại cái bàn tự giải thích đi.
 
 40
 00:02:44,440 --> 00:02:48,080
- So see, the signature is the same, no compile time error, this works.
+Vì vậy, xem, chữ ký là giống nhau, không có lỗi thời gian biên dịch, điều này làm việc.
 
 41
 00:02:48,080 --> 00:02:53,760
- And now show it that does that is public, still works, right, because public is universal
+Và bây giờ chỉ ra rằng đó là công khai, vẫn hoạt động, bởi vì công chúng là phổ biến
 
 42
 00:02:53,760 --> 00:02:59,280
- scope, it sits at the top of the hierarchy where again broadening the scope, not narrowing
+Phạm vi, nó ngồi ở trên cùng của hệ thống phân cấp nơi một lần nữa mở rộng phạm vi, không thu hẹp
 
 43
 00:02:59,280 --> 00:03:00,600
- it down, right.
+nó xuống, phải.
 
 44
 00:03:00,600 --> 00:03:05,080
- So two situation, three situations work, either you keep it the same that is package private.
+Vì vậy, hai tình huống, ba tình huống có hiệu quả, hoặc bạn giữ cho nó như nhau là gói riêng tư.
 
 45
 00:03:05,080 --> 00:03:10,400
- If you keep it public or protected, both work, if you keep it private, would it work absolutely
+Nếu bạn giữ cho nó công khai hoặc bảo vệ, cả hai làm việc, nếu bạn giữ nó riêng tư, nó sẽ làm việc hoàn toàn
 
 46
 00:03:10,400 --> 00:03:15,360
- not, because you are restricting the scope, I said it cannot be narrowed down over on this.
+Không, bởi vì anh đang hạn chế phạm vi, tôi đã nói nó không thể bị thu hẹp lại.
 
 47
 00:03:15,360 --> 00:03:19,720
- This is breaking the rules of overriding, it says eat, ensure the clashes with it in human
+Điều này là vi phạm các quy tắc của vượt qua, nó nói ăn, đảm bảo các xung đột với nó trong con người
 
 48
 00:03:19,720 --> 00:03:23,880
- attempt, attempting to assign weaker access privileges.
+Cố gắng, để chỉ định quyền truy cập yếu hơn.
 
 49
 00:03:23,880 --> 00:03:28,240
- It was package private, you're trying to assign private, you are narrowing down the scope,
+Đó là gói riêng tư, anh đang cố chỉ định riêng tư, thu hẹp phạm vi,
 
 50
 00:03:28,240 --> 00:03:33,480
- this cannot work, either keep it the same or package private, that is the same, either
+điều này không thể làm việc, hoặc giữ cho nó một hoặc gói riêng tư, đó là tương tự, hoặc
 
 51
 00:03:33,480 --> 00:03:36,480
- protected or public, but never private, right.
+Bảo vệ hay công khai, nhưng không bao giờ riêng tư, đúng không?
 
 52
 00:03:36,480 --> 00:03:42,600
- In a different situation, let's work with work, let's say walk here in human was protected.
+Trong một tình huống khác, hãy làm việc với công việc, giả sử đi bộ ở đây trong con người đã được bảo vệ.
 
 53
 00:03:42,600 --> 00:03:48,280
- So what scopes can the subclass method do at overriding times?
+Vậy phương pháp của tầng lớp con có thể làm gì trong những lúc khó khăn?
 
 54
 00:03:48,280 --> 00:03:53,680
- First obviously it can keep it as protected or it can keep it as public, right, but it
+Đầu tiên rõ ràng nó có thể giữ cho nó được bảo vệ hoặc nó có thể giữ cho công chúng, đúng, nhưng nó
 
 55
 00:03:53,680 --> 00:03:56,840
- can keep, can it keep it as package private?
+nó có thể giữ kín không?
 
 56
 00:03:56,840 --> 00:04:02,760
- No, again just go back to the self-explanatory table, right, because protected is a scope
+Không, một lần nữa chỉ cần trở lại bàn tự giải thích, bởi vì bảo vệ là một phạm vi
 
 57
 00:04:02,760 --> 00:04:08,080
- which sits on top of package private, package private is a restrictive scope.
+mà nằm trên đầu gói riêng tư, gói riêng tư là một phạm vi hạn chế.
 
 58
 00:04:08,080 --> 00:04:12,680
- And that's why, when Shweta tries to override in the same thing now fails, it would tell
+Và đó là lý do tại sao, khi Shweta cố gắng vượt qua cùng một điều bây giờ thất bại, nó sẽ nói
 
 59
 00:04:12,680 --> 00:04:17,640
- you the same thing, attempting to assign weaker access privileges package private, because
+bạn điều tương tự, cố gắng để chỉ định quyền truy cập yếu hơn gói đặc quyền truy cập riêng, bởi vì
 
 60
 00:04:17,640 --> 00:04:18,640
- it was protected.
+Nó đã được bảo vệ.
 
 61
 00:04:18,640 --> 00:04:24,440
- So either keep it protected or public, cannot keep it private, never.
+Vì vậy, hoặc giữ nó bảo vệ hoặc công khai, không thể giữ nó riêng tư, không bao giờ.
 
 62
 00:04:24,440 --> 00:04:34,400
- Third situation, if in the super class, I had this method as public, what scopes apply
+Trường hợp thứ ba, nếu trong Super class, tôi đã có phương pháp này như công khai, phạm vi áp dụng
 
 63
 00:04:34,400 --> 00:04:39,160
- when we tried to override it, think about it for a moment, I'll just give you that.
+Khi chúng tôi cố áp đảo nó, hãy nghĩ về nó một chút, tôi sẽ cho bạn biết.
 
 64
 00:04:39,160 --> 00:04:45,320
- Yes, you're right, that is public methods can only be overridden in the public way, why,
+Phải, anh nói đúng, đó là phương pháp công cộng chỉ có thể bị áp đảo công khai, tại sao,
 
 65
 00:04:45,320 --> 00:04:50,520
- because all other scopes fall down the hierarchy, they're all restrictive, so it says that
+Bởi vì tất cả các phạm vi khác giảm xuống hệ thống phân cấp, tất cả đều hạn chế, vì vậy nó nói rằng
 
 66
 00:04:50,520 --> 00:04:54,640
- attempting to assign a weaker access privileges protected, it was public that is universal
+Cố gắng để chỉ định một quyền truy cập yếu được bảo vệ, nó được công khai mà là phổ biến
 
 67
 00:04:54,640 --> 00:04:58,840
- skill, scope that is, you have to keep it as public at all times.
+Kĩ năng, phạm vi, bạn phải luôn công khai nó.
 
 68
 00:04:58,840 --> 00:05:05,440
- Public methods can only be overridden in the public way, the last one is, inside human,
+Phương pháp công cộng chỉ có thể bị ảnh hưởng bởi công chúng, phương pháp cuối cùng là, bên trong con người,
 
 69
 00:05:05,440 --> 00:05:10,680
- if I try to keep it as private, what does it do, it stops inheritance.
+Nếu tôi cố giữ nó riêng tư, nó làm gì, nó sẽ ngăn chặn thừa kế.
 
 70
 00:05:10,680 --> 00:05:15,320
- Now what scopes apply when I tried to override that in any of the subclasses, think about
+Bây giờ những phạm vi áp dụng khi tôi cố gắng để ghi đè mà trong bất kỳ lớp con, suy nghĩ về
 
 71
 00:05:15,320 --> 00:05:18,200
- it, I'll again give you a moment.
+tôi sẽ cho anh một lần nữa.
 
 72
 00:05:18,200 --> 00:05:24,320
- In the meantime, I'll just look outside my window, just to get away from that screen for
+Trong khi đó, tôi sẽ chỉ nhìn ra ngoài cửa sổ của tôi, chỉ để có được từ đó màn hình cho
 
 73
 00:05:24,320 --> 00:05:30,160
- a moment, right, because we just bound to do screens at all times these days, all right.
+Một khoảnh khắc, phải không, bởi vì chúng ta chỉ cần buộc phải làm màn hình ở tất cả các thời điểm này, tất cả các quyền.
 
 74
 00:05:30,160 --> 00:05:36,840
- So private is here, it would be tempting for you to know that we can apply all four scopes
+Vì vậy, cá nhân là ở đây, sẽ rất cám dỗ cho bạn biết rằng chúng tôi có thể áp dụng tất cả bốn phạm vi
 
 75
 00:05:36,840 --> 00:05:43,640
- at the subclass level, but that is wrong, why, private, you would know that, private methods
+Ở tầng lớp dưới, nhưng điều đó là sai, tại sao, riêng tư, bạn sẽ biết rằng, phương pháp cá nhân
 
 76
 00:05:43,640 --> 00:05:48,760
- or variables can only be accessed within the class in which they're declared, they don't
+Hoặc biến chỉ có thể truy cập trong lớp học mà họ được tuyên bố, họ không
 
 77
 00:05:48,760 --> 00:05:53,800
- even come down, they're not even inherited, how can they be overridden?
+Thậm chí đi xuống, chúng thậm chí còn không được thừa kế, làm sao chúng có thể bị đè bẹp?
 
 78
 00:05:53,800 --> 00:05:57,640
- Because for overriding to work, I told you first inheritance has to work, but with private
+Bởi vì để vượt quá quyền làm việc, tôi đã nói với bạn đầu tiên thừa kế phải làm việc, nhưng với riêng tư
 
 79
 00:05:57,640 --> 00:06:03,400
- inheritance doesn't work, they never, they never come down the lineage, so how can you
+Di sản không có tác dụng, chúng không bao giờ, chúng không bao giờ đi xuống dòng họ, do đó, làm thế nào bạn có thể
 
 80
 00:06:03,400 --> 00:06:04,400
- override them?
+Ghi đè họ?
 
 81
 00:06:04,400 --> 00:06:09,520
- So private methods can never be overridden, but you would wonder, why is this still working?
+Vì thế, những phương pháp riêng tư không bao giờ có thể bị đè nén, nhưng bạn có thể tự hỏi tại sao nó vẫn còn hiệu quả?
 
 82
 00:06:09,520 --> 00:06:14,920
- Because inside shweta, now there is no walk, and this is her own method here, but it's
+Bởi vì bên trong shweta, bây giờ không có đi bộ, và đây là phương pháp riêng của cô ở đây, nhưng nó là
 
 83
 00:06:14,920 --> 00:06:18,920
- tempting for you to realize that this is overriding, but it's not, right.
+Muốn các bạn nhận ra rằng điều này là quá sức chịu đựng, nhưng không phải, đúng không?
 
 84
 00:06:18,920 --> 00:06:25,440
- So again, think about this exceptional scenario number one after this video, exceptional
+Vì vậy, một lần nữa, hãy nghĩ về trường hợp đặc biệt thứ nhất sau video này, ngoại lệ
 
 85
 00:06:25,440 --> 00:06:29,280
- scenario number two and three, there are a couple more exceptions, not used with overriding,
+Trường hợp thứ hai và thứ ba, có thêm một vài ngoại lệ, không được sử dụng với vượt quá,
 
 86
 00:06:29,280 --> 00:06:35,120
- but they're coming on for you once you, once we take up a couple of other concepts.
+Nhưng họ sẽ đến tìm anh một lần, một khi chúng tôi đưa ra một vài khái niệm khác.
 
 87
 00:06:35,120 --> 00:06:38,720
- But for now, remember this, exceptional scenario number one, right.
+Nhưng bây giờ, hãy nhớ điều này, kịch bản số 1 đặc biệt,
 
 88
 00:06:38,720 --> 00:06:46,320
- Now, just a bit of tinkering here with my code just to make it more clear for you, right.
+Bây giờ, chỉ cần sửa một chút ở đây với mã của tôi chỉ để làm cho nó rõ ràng hơn cho bạn, phải không.
 
 89
 00:06:46,320 --> 00:06:47,640
- Just to make it fun.
+Chỉ để làm cho nó vui.
 
 90
 00:06:47,640 --> 00:06:55,040
- That is for example, sometimes what you want is you want the methods not to be overridden,
+Đó là ví dụ, đôi khi những gì bạn muốn là bạn muốn những phương pháp không bị áp đảo,
 
 91
 00:06:55,040 --> 00:06:56,040
- right.
+Phải.
 
 92
 00:06:56,040 --> 00:06:57,680
- You want overriding to stop, right.
+Anh muốn vượt quá giới hạn để dừng lại, đúng không?
 
 93
 00:06:57,680 --> 00:07:00,800
- You don't want inheritance to stop because you know that, how do you stop inheritance?
+Anh không muốn thừa kế bị ngăn chặn bởi vì anh biết điều đó, làm sao để ngăn chặn thừa kế?
 
 94
 00:07:00,800 --> 00:07:02,040
- Private, okay.
+Binh nhì, được rồi.
 
 95
 00:07:02,040 --> 00:07:06,800
- But you want inheritance to be there, that is, this should go down in the subclasses, but
+Nhưng bạn muốn thừa kế ở đó, có nghĩa là, điều này nên đi xuống dưới tầng hầm, nhưng
 
 96
 00:07:06,800 --> 00:07:10,040
- no one else should be able to override them.
+Không ai khác có thể áp đảo chúng.
 
 97
 00:07:10,040 --> 00:07:11,040
- Why?
+Tại sao?
 
 98
 00:07:11,040 --> 00:07:12,120
- I'll just give you good analogy.
+Tôi sẽ chỉ cho bạn so sánh tốt.
 
 99
 00:07:12,120 --> 00:07:18,320
- That is let's say we have, I have a grandmother who makes really good material out, right.
+Hãy nói rằng chúng ta có, tôi có một bà ngoại người mà làm ra những vật liệu thực sự tốt.
 
 100
 00:07:18,320 --> 00:07:23,560
- And she does not want her recipe to be altered with, right.
+Và cô ấy không muốn công thức của mình bị thay đổi.
 
 101
 00:07:23,560 --> 00:07:29,560
- And whether it's her daughter, son, or granddaughter, she wants to pass on the recipe
+Và dù là con gái, con trai, hay cháu gái, cô ấy muốn chuyển công thức
 
 102
 00:07:29,560 --> 00:07:35,920
- through her inheritance or lineage, but she wants no one to alter that or tinker with
+thông qua di sản hay dòng dõi của mình, nhưng cô ấy không muốn ai thay đổi điều đó hay hàn gắn với
 
 103
 00:07:35,920 --> 00:07:36,920
- that.
+cái đó.
 
 104
 00:07:36,920 --> 00:07:41,840
- She wants this recipe to be true to how she made multiple out at all times.
+Cô ấy muốn công thức này đúng như cách cô ấy làm nhiều lần.
 
 105
 00:07:41,840 --> 00:07:46,760
- So for that kind of situation, and I know this is a beautiful analogy again, you have a
+Vì vậy, đối với loại tình huống, và tôi biết đây là một sự tương tự đẹp một lần nữa, bạn có một
 
 106
 00:07:46,760 --> 00:07:51,520
- way to stop overriding in Java, no one else can alter the behavior.
+Không ai có thể thay đổi hành vi đó.
 
 107
 00:07:51,520 --> 00:07:56,520
- And that is when we can have final methods, see, that's it.
+Và đó là khi chúng ta có những phương pháp cuối cùng, thấy không, đó là nó.
 
 108
 00:07:56,520 --> 00:08:01,920
- We don't want or to be altered with, so to clear, that is final.
+Chúng ta không muốn hay thay đổi, nên để rõ ràng, đó là quyết định cuối cùng.
 
 109
 00:08:01,920 --> 00:08:06,480
- And final methods cannot be ordered, they can still be inherited, but never altered.
+Và phương pháp cuối cùng không thể ra lệnh, chúng vẫn có thể được thừa kế, nhưng không bao giờ thay đổi.
 
 110
 00:08:06,480 --> 00:08:12,000
- Let's see, when Shweta tries to override walk and error now, it says walk, cannot override
+Hãy xem, khi Shweta cố gắng để vượt qua bước đi và lỗi bây giờ, nó nói đi bộ, không thể ghi đè
 
 111
 00:08:12,000 --> 00:08:14,880
- walk in human or written method is final.
+đi bộ trong con người hoặc văn bản phương pháp là cuối cùng.
 
 112
 00:08:14,880 --> 00:08:17,000
- You can't do that, right.
+Anh không thể làm thế.
 
 113
 00:08:17,000 --> 00:08:21,760
- And in extraordinary situations, and this is the first usage of the key will final, I'm
+Và trong những tình huống khác thường, và đây là cách sử dụng đầu tiên của chìa khóa cuối cùng, tôi
 
 114
 00:08:21,760 --> 00:08:27,160
- telling you, there is the second usage that is to define constants in Java, right.
+Nói cho bạn, có cách sử dụng thứ hai là xác định hằng số trong Java, bên phải.
 
 115
 00:08:27,160 --> 00:08:32,280
- And see or other languages, we have the cons, but in Java, we have the final key words.
+Và nhìn thấy hoặc các ngôn ngữ khác, chúng tôi có các tù nhân, nhưng ở Java, chúng tôi có các từ then chốt cuối cùng.
 
 116
 00:08:32,280 --> 00:08:36,080
- You can use it like this, final, for example, in length.
+Bạn có thể sử dụng nó như thế này, cuối cùng, ví dụ, trong chiều dài.
 
 117
 00:08:36,080 --> 00:08:39,000
- And let's say I want it to be 900.
+Và hãy nói rằng tôi muốn nó là 900.
 
 118
 00:08:39,000 --> 00:08:40,600
- So you cannot change the value now.
+Vì vậy, bạn không thể thay đổi giá trị bây giờ.
 
 119
 00:08:40,600 --> 00:08:42,160
- This is a final variable.
+Đây là biến cuối cùng.
 
 120
 00:08:42,160 --> 00:08:47,520
- And with cable case, I told you that final variables should be defined in all caps, right.
+Và với trường hợp cáp, tôi đã nói với bạn rằng các biến số cuối cùng nên được xác định trên tất cả các nắp, đúng không.
 
 121
 00:08:47,520 --> 00:08:51,520
- But this is the second usage, coming back to the first usage, final methods, they can
+Nhưng đây là cách sử dụng thứ hai, quay trở lại với cách sử dụng đầu tiên, phương pháp cuối cùng, họ có thể
 
 122
 00:08:51,520 --> 00:08:53,560
- never be overridden.
+Không bao giờ bị đè bẹp.
 
 123
 00:08:53,560 --> 00:09:00,080
- And in extraordinary situations, when you would want a class not to be even inherited, right.
+Và trong những tình huống khác thường, khi bạn muốn một lớp học không được thừa kế, phải không?
 
 124
 00:09:00,080 --> 00:09:03,840
- How can that be overridden over writing is out of the question, but you want inheritance
+Làm sao có thể bỏ qua việc viết lách nhưng bạn muốn thừa kế sản nghiệp
 
 125
 00:09:03,840 --> 00:09:07,360
- to stop one of the core principles of the Java programming language.
+để ngăn chặn một trong những nguyên tắc cơ bản của ngôn ngữ lập trình Java.
 
 126
 00:09:07,360 --> 00:09:08,880
- And you want to stop it.
+Và anh muốn ngăn chặn nó.
 
 127
 00:09:08,880 --> 00:09:12,280
- Sometimes there might be a situation, but Java gives you the flexibility.
+Đôi khi có thể có một tình huống, nhưng Java cho bạn sự linh động.
 
 128
 00:09:12,280 --> 00:09:19,000
- And in that time, the third usage of the keyword final is with the class itself, right.
+Và trong thời gian đó, cách sử dụng thứ ba của cuối cùng từ khóa là với chính lớp học, phải.
 
 129
 00:09:19,000 --> 00:09:24,800
- Now, this class is not even inheritable, see an error when Sneha tries to extensue without
+Bây giờ, lớp học này thậm chí không thể thừa kế, xem một lỗi khi Sneha cố gắng để mở rộng mà không có
 
 130
 00:09:24,800 --> 00:09:30,640
- says that cannot inherit from a class, which is final, say those final, and can we override
+nói rằng không thể thừa kế từ một lớp học, đó là cuối cùng, nói những cuối cùng, và chúng tôi có thể ghi đè
 
 131
 00:09:30,640 --> 00:09:31,640
- anything?
+Có gì không?
 
 132
 00:09:31,640 --> 00:09:33,560
- No, because inheritance doesn't work.
+Không, vì thừa kế không có tác dụng.
 
 133
 00:09:33,560 --> 00:09:38,760
- Again, I told you for inheritance to work for overriding to work, sorry, inheritance has
+Một lần nữa, tôi đã nói với bạn để di sản để làm việc hơn để làm việc, xin lỗi, đã
 
 134
 00:09:38,760 --> 00:09:44,920
- to work here, but here, inheritance isn't working because you stop that with the final class.
+để làm việc ở đây, nhưng ở đây, thừa kế không có tác dụng bởi vì bạn dừng nó lại với lớp cuối cùng.
 
 135
 00:09:44,920 --> 00:09:49,080
- And the classes in Java are not extendable, they're not inheritable, right.
+Và các lớp học ở Java không thể mở rộng, chúng không thể được thừa kế, phải không?
 
 136
 00:09:49,080 --> 00:09:54,920
- So three usages I've told you for final, right, and I've given you good food for thought
+Vì vậy, ba cách sử dụng tôi đã nói với bạn cho cuối cùng, quyền, và tôi đã cung cấp cho bạn thức ăn tốt cho suy nghĩ
 
 137
 00:09:54,920 --> 00:09:59,640
- about thinking about of all these work, what is overriding, what are those exceptions
+Về suy nghĩ về tất cả những công việc này, những gì là vượt quá, những gì là ngoại lệ
 
 138
 00:09:59,640 --> 00:10:00,640
- scenarios?
+Trường hợp?
 
 139
 00:10:00,640 --> 00:10:04,600
- Or when would you consider something to be overloading and overriding or when there
+Hoặc khi nào bạn sẽ xem xét một cái gì đó là quá tải và quá tải hoặc khi đó
 
 140
 00:10:04,600 --> 00:10:05,760
- would be an error?
+sẽ là một sai lầm?
 
 141
 00:10:05,760 --> 00:10:07,600
- And what do final methods mean?
+Và phương pháp cuối cùng có nghĩa gì?
 
 142
 00:10:07,600 --> 00:10:08,760
- What are final classes used for?
+Lớp cuối dùng để làm gì?
 
 143
 00:10:08,760 --> 00:10:10,160
- I'll see you in the next video.
+Hẹn gặp lại bạn trong video tiếp theo.
 
