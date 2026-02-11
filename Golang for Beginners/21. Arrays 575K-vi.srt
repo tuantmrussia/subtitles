@@ -1,0 +1,524 @@
+1
+00:00:00,000 --> 00:00:06,380
+Trong video này, chúng tôi sẽ nói về các mảng, làm thế nào để tạo ra một mảng truy cập, và làm thế nào để
+
+2
+00:00:06,380 --> 00:00:11,020
+phát tán thông tin.
+
+3
+00:00:11,020 --> 00:00:14,700
+Array là một cách để lưu trữ nhiều mảnh của cùng một loại dữ liệu.
+
+4
+00:00:14,700 --> 00:00:21,000
+Khi bạn đang làm việc với một mảng dữ liệu, dữ liệu được lưu trữ liên tục trong một dãy dữ liệu.
+
+5
+00:00:21,000 --> 00:00:24,740
+Mỗi mảnh dữ liệu trong mảng được gọi là một yếu tố.
+
+6
+00:00:24,740 --> 00:00:28,340
+Để truy cập mục vào danh sách, cần dùng chỉ mục vùng.
+
+7
+00:00:28,340 --> 00:00:34,000
+Chỉ số luôn luôn bắt đầu từ số không, có nghĩa là không mục từ đầu trang.
+
+8
+00:00:34,000 --> 00:00:37,940
+Chỉ số 0 chỉ đơn giản là nhân với kích thước của các mục.
+
+9
+00:00:37,940 --> 00:00:42,220
+Vì vậy, tại chỉ số 0, bạn đang truy cập vào các bắt đầu, và chỉ số một, bạn đang nhân
+
+10
+00:00:42,220 --> 00:00:48,960
+Kích thước của mục theo một, có nghĩa là bạn bỏ qua mục đầu tiên, kết thúc trên
+
+11
+00:00:48,960 --> 00:00:50,440
+Mục hai.
+
+12
+00:00:50,440 --> 00:00:55,120
+Vì vậy, zero là mục một, một là mục hai, vân vân.
+
+13
+00:00:55,120 --> 00:00:59,320
+Cuối cùng, các dãy là kích cỡ cố định và không thể thay đổi kích cỡ.
+
+14
+00:00:59,320 --> 00:01:03,160
+Đi thực hiện cung cấp cơ sở, tuy nhiên, làm việc với các mảng kích thước khác nhau, và chúng tôi sẽ
+
+15
+00:01:03,160 --> 00:01:09,120
+là nhìn vào những người trong một video trong tương lai.
+
+16
+00:01:09,120 --> 00:01:13,920
+Đây là hình dung về một mảng trong bộ nhớ.
+
+17
+00:01:13,920 --> 00:01:20,280
+Nếu chúng ta có cấu trúc này ở đây, một cấu trúc thẻ chiết khấu, có ID, mã cửa hàng,
+
+18
+00:01:20,280 --> 00:01:23,800
+Và một tốc độ, đây là những gì nó sẽ như thế trong bộ nhớ.
+
+19
+00:01:23,800 --> 00:01:31,240
+Ở đây chúng ta có những khối bộ nhớ, và ID lấy 2 byte ở đây.
+
+20
+00:01:31,240 --> 00:01:37,040
+Mã cửa hàng tăng 1 byte, và tốc độ tăng lên 4 byte.
+
+21
+00:01:37,040 --> 00:01:41,280
+Toàn bộ chỗ này là một cấu trúc thẻ giảm giá.
+
+22
+00:01:41,280 --> 00:01:47,400
+Và khi bạn đặt chúng vào một danh sách, bạn sẽ có một ở đây, một ở đây, và một ở đây.
+
+23
+00:01:47,400 --> 00:01:54,120
+Vì vậy, khi chúng tôi đang làm việc với chỉ số dãy, chúng tôi có chỉ số 0, đó là zero byte từ các
+
+24
+00:01:54,120 --> 00:01:55,120
+Bắt đầu.
+
+25
+00:01:55,120 --> 00:01:56,120
+Bắt đầu từ đây.
+
+26
+00:01:56,120 --> 00:01:58,960
+Và mỗi thẻ giảm giá là 7 byte.
+
+27
+00:01:58,960 --> 00:02:03,840
+Vì vậy, nếu chúng tôi muốn truy cập mục thứ ba, chúng tôi phải sử dụng index 2.
+
+28
+00:02:03,840 --> 00:02:09,880
+Vì vậy, nó sẽ mất bảy byte, nhân nó hai, đó là 14, và nó sẽ bỏ qua trên
+
+29
+00:02:09,880 --> 00:02:15,800
+14 byte, và bạn sẽ kết thúc tại mục số ba của bạn bằng cách sử dụng chỉ số
+
+30
+00:02:15,800 --> 00:02:18,080
+hai.
+
+31
+00:02:18,080 --> 00:02:24,040
+Cái trên cùng này là trông như thế nào trong bộ nhớ, và bạn cũng có thể hình dung nó như thế này.
+
+32
+00:02:24,040 --> 00:02:30,400
+Vì vậy, ở đây chúng tôi có các mục 0, một, hai, ba, bốn.
+
+33
+00:02:30,400 --> 00:02:38,520
+Nó cũng giống như vậy, chỉ là một cách khác để hình dung nó.
+
+34
+00:02:38,520 --> 00:02:44,760
+Vì vậy, để tạo ra một mảng, chúng tôi sử dụng các biến từ khóa theo sau bởi tên của các mảng, chúng tôi có hình vuông
+
+35
+00:02:44,760 --> 00:02:50,040
+chuẩn bị tinh thần, số lượng các mục mà chúng tôi muốn trong dãy của chúng tôi, và loại các mục
+
+36
+00:02:50,040 --> 00:02:52,000
+sẽ được vào danh sách.
+
+37
+00:02:52,000 --> 00:02:55,080
+Ví dụ đầu tiên này là chưa được kích hoạt.
+
+38
+00:02:55,080 --> 00:03:01,560
+Vì vậy, chúng tôi sẽ có một mảng ba số nguyên, và họ sẽ tất cả được bằng 0.
+
+39
+00:03:01,560 --> 00:03:07,040
+Trong ví dụ thứ hai này, chúng tôi đang sử dụng việc tạo ra một quy định, chúng tôi đang sử dụng các khung vuông
+
+40
+00:03:07,040 --> 00:03:13,360
+Để thực hiện một mảng, và một lần nữa, chúng tôi đang làm cho ba số nguyên, và chúng tôi sử dụng chumply kẹp để thiết lập
+
+41
+00:03:13,360 --> 00:03:15,240
+các giá trị ban đầu cho những số nguyên này.
+
+42
+00:03:15,240 --> 00:03:19,200
+Vì vậy, chúng ta sẽ có ba số nguyên, và chúng sẽ bằng bảy, tám,
+
+43
+00:03:19,200 --> 00:03:21,300
+và 9 người theo thứ tự đó.
+
+44
+00:03:21,300 --> 00:03:26,680
+Ở đây trên ví dụ thứ ba của chúng tôi, chúng tôi đang sử dụng các tạo ra một lần nữa, khung vuông cho một
+
+45
+00:03:26,680 --> 00:03:28,720
+và 3 chấm.
+
+46
+00:03:28,720 --> 00:03:33,080
+Vì vậy, những gì ba chấm sẽ làm là những chấm này sẽ nhìn trên đây và xem
+
+47
+00:03:33,080 --> 00:03:37,000
+Bao nhiêu món hàng bạn đã tạo ra, và nó chỉ cần đi để thay thế số lượng ở đây cho
+
+48
+00:03:37,000 --> 00:03:38,000
+anh.
+
+49
+00:03:38,000 --> 00:03:42,880
+Cách thứ ba giống như cách bạn muốn tạo ra một dãy.
+
+50
+00:03:42,880 --> 00:03:47,360
+Bằng cách đó, bạn có thể dễ dàng cập nhật số lượng các mục mà không cần phải thực sự lo lắng
+
+51
+00:03:47,360 --> 00:03:50,320
+Về số điện thoại của anh.
+
+52
+00:03:50,320 --> 00:03:55,800
+Vì vậy, đây sẽ là ba và bảy, tám, và chín sẽ là số nguyên của bạn.
+
+53
+00:03:55,800 --> 00:04:00,400
+Và điều này cuối cùng ở đây là một lần nữa, tạo ra một chỉ định, chúng tôi đang thực sự tạo ra một kích thước cho
+
+54
+00:04:00,400 --> 00:04:03,160
+bao gồm các số nguyên một lần nữa.
+
+55
+00:04:03,160 --> 00:04:08,160
+Số đầu tiên là 7, 8, 9 và mục thứ tư là 0.
+
+56
+00:04:08,160 --> 00:04:09,640
+Vì vậy, thứ tư sẽ nhận được một mặc định.
+
+57
+00:04:09,640 --> 00:04:16,120
+Vì vậy, nó là chúng tôi chỉ cung cấp ba số.
+
+58
+00:04:16,120 --> 00:04:21,400
+Vì vậy, để truy cập các yếu tố mảng, chúng tôi lấy tên của các dãy, mảng của tôi trong trường hợp này, chúng tôi sử dụng
+
+59
+00:04:21,400 --> 00:04:28,720
+các dây cột vuông, các chỉ số mà chúng tôi muốn truy cập trong tương đương dấu hiệu, và giá trị mà chúng tôi
+
+60
+00:04:28,720 --> 00:04:29,920
+muốn chỉ định.
+
+61
+00:04:29,920 --> 00:04:32,080
+Vì vậy, đây sẽ là cách chúng tôi chỉ định dữ liệu.
+
+62
+00:04:32,080 --> 00:04:33,600
+Vì vậy, ba sẽ chỉ định.
+
+63
+00:04:33,600 --> 00:04:38,120
+Vì vậy, chúng tôi có thể chỉ số 0, một, và hai sẽ là bảy, tám, và chín, giống như trước của chúng tôi
+
+64
+00:04:38,120 --> 00:04:39,440
+Slide
+
+65
+00:04:39,440 --> 00:04:44,320
+Và ở dưới cùng, nếu chúng ta muốn đọc một số dữ liệu, chúng ta có thể lấy tên
+
+66
+00:04:44,320 --> 00:04:48,360
+và chỉ số mà chúng ta muốn đọc.
+
+67
+00:04:48,360 --> 00:04:52,160
+Vì vậy, thực sự chỉ cần phụ thuộc nếu bạn muốn chỉ định, sau đó các dãy của bạn biến số sẽ ở bên trái
+
+68
+00:04:52,160 --> 00:04:53,160
+Bên này.
+
+69
+00:04:53,160 --> 00:05:00,640
+Nếu bạn muốn đọc, thì biến dãy sẽ ở bên phải.
+
+70
+00:05:00,640 --> 00:05:02,200
+Chúng ta cũng có thể lặp lại thông qua một mảng.
+
+71
+00:05:02,200 --> 00:05:06,040
+Điều đó có nghĩa là chúng ta sẽ xem qua từng món đồ một.
+
+72
+00:05:06,040 --> 00:05:10,640
+Để làm được điều đó, chúng tôi dùng bốn vòng thời gian, vì đó là nhiệm vụ của chúng tôi.
+
+73
+00:05:10,640 --> 00:05:12,560
+Và những gì bạn sẽ làm là bạn sẽ có danh sách của bạn.
+
+74
+00:05:12,560 --> 00:05:17,840
+Vì vậy, chúng tôi tạo ra một ở đây, chúng tôi có ba yếu tố tự động tính dựa trên các con số
+
+75
+00:05:17,840 --> 00:05:18,840
+cung cấp.
+
+76
+00:05:18,840 --> 00:05:22,520
+Ở phía dưới, chúng ta có 4 vòng thời gian.
+
+77
+00:05:22,520 --> 00:05:25,720
+Chúng tôi tạo biến số lặp lại I, chỉ định nó là 0.
+
+78
+00:05:25,720 --> 00:05:30,000
+Miễn là tôi nhỏ hơn chức năng này, chúng tôi sẽ đi vào cơ thể vòng, và sau đó
+
+79
+00:05:30,000 --> 00:05:35,160
+Tiếp tục với điển hình cộng cộng thêm tăng dần nó.
+
+80
+00:05:35,160 --> 00:05:39,240
+Vì vậy, chức năng này ở đây là các chức năng dài, để ngắn.
+
+81
+00:05:39,240 --> 00:05:44,080
+Và những gì đó làm là nó đi và tính toán bao nhiêu giá trị trong mảng này.
+
+82
+00:05:44,080 --> 00:05:49,840
+Vì vậy, đối với điều này một cụ thể, nó sẽ là ba bởi vì chúng tôi có ba giá trị trong mảng của chúng tôi.
+
+83
+00:05:49,840 --> 00:05:53,800
+Vì vậy, bất cứ khi nào bạn đang lặp qua các mảng, bạn thường muốn sử dụng các li dầu hoặc chiều dài
+
+84
+00:05:53,800 --> 00:05:57,280
+Chức năng để tìm ra bao nhiêu bạn đã làm việc với cách đó bạn có thể lặp lại
+
+85
+00:05:57,280 --> 00:05:58,280
+qua từng cái một.
+
+86
+00:05:58,280 --> 00:06:03,680
+Những gì chúng tôi đang làm trong vòng này là chúng tôi đang đọc từ dãy kể từ khi các mảng trên
+
+87
+00:06:03,680 --> 00:06:08,160
+bên phải của biến, và chúng tôi đang phân loại một bản sao vào biến này.
+
+88
+00:06:08,160 --> 00:06:14,200
+Vì vậy, khi chúng tôi làm điều này, chúng tôi đang làm cho một bản sao từ mảng này vào mục.
+
+89
+00:06:14,200 --> 00:06:19,320
+Sau đó chúng tôi chỉ cần in ra.
+
+90
+00:06:19,320 --> 00:06:23,200
+Vì vậy, nó là thực sự quan trọng khi bạn đang làm việc với các mảng mà bạn gắn kết trong các giới hạn
+
+91
+00:06:23,200 --> 00:06:24,240
+trong danh sách.
+
+92
+00:06:24,240 --> 00:06:29,040
+Có nghĩa là nếu bạn có một mảng với ba mục và bạn cố gắng để truy cập một mục thứ tư, sau đó
+
+93
+00:06:29,040 --> 00:06:30,440
+bạn sẽ nhận được một lỗi.
+
+94
+00:06:30,440 --> 00:06:34,780
+Hãy xem xét một số trường hợp mà bạn nhận được một số lỗi.
+
+95
+00:06:34,780 --> 00:06:37,960
+Cái này ở bên trái, sẽ là lỗi thời gian chạy.
+
+96
+00:06:37,960 --> 00:06:43,000
+Vì vậy, ở đây chúng tôi có một mảng chưa khởi động mà có một kích thước của ba, và tất cả các số nguyên
+
+97
+00:06:43,000 --> 00:06:44,560
+Sẽ là số không.
+
+98
+00:06:44,560 --> 00:06:48,960
+Chúng tôi không kiểm tra độ dài của dãy ở đây.
+
+99
+00:06:48,960 --> 00:06:53,400
+Chúng tôi chỉ nói rằng, hey, tiếp tục lặp đi lặp lại miễn là tôi ít hơn 10, và chúng tôi đang cố gắng
+
+100
+00:06:53,400 --> 00:06:59,480
+in ra danh sách của tôi và sau đó là chỉ số lặp lại.
+
+101
+00:06:59,480 --> 00:07:05,400
+Bây giờ nó sẽ xảy ra ở đây là 0, 1 và 2, tất cả sẽ kiểm tra, bởi vì chúng ta có
+
+102
+00:07:05,400 --> 00:07:06,720
+3 món đồ.
+
+103
+00:07:06,720 --> 00:07:11,400
+Một khi chúng tôi nhận được để tôi bằng bốn, sau đó chương trình sẽ rơi xuống bởi vì không có
+
+104
+00:07:11,400 --> 00:07:15,360
+dữ liệu tại thời điểm đó bởi vì chỉ có ba trong mảng.
+
+105
+00:07:15,360 --> 00:07:20,280
+Vì vậy, điều này ngay tại đây sẽ là một lỗi thời gian chạy, và đây là lý do tại sao bạn sẽ hầu như luôn luôn
+
+106
+00:07:20,280 --> 00:07:25,320
+muốn sử dụng hàm dài như một phần của kiểm tra tình trạng của bạn.
+
+107
+00:07:25,320 --> 00:07:28,800
+Ở phía bên tay phải, chúng ta sẽ có lỗi thời gian biên dịch.
+
+108
+00:07:28,800 --> 00:07:33,520
+Vì vậy, một lần nữa, chúng tôi đang chỉ cần tạo ra một mảng có ba số nguyên, và chúng tôi đang thiết lập các
+
+109
+00:07:33,520 --> 00:07:38,920
+Ba là bảy, tám, và chín, và sau đó chúng tôi thiết lập giá trị thứ tư
+
+110
+00:07:38,920 --> 00:07:39,920
+10 phút.
+
+111
+00:07:39,920 --> 00:07:44,120
+Tuy nhiên, chỉ có ba giá trị trong dãy, không phải bốn.
+
+112
+00:07:44,120 --> 00:07:47,280
+Và vì vậy bạn sẽ nhận được một lỗi khi bạn cố gắng biên dịch chương trình, và nó có thể
+
+113
+00:07:47,280 --> 00:07:49,440
+để tính số lượng trong dãy.
+
+114
+00:07:49,440 --> 00:07:54,760
+Và vì nó đọc tất cả các thông tin trong mã nguồn của bạn, nó biết rằng tại đây
+
+115
+00:07:54,760 --> 00:07:59,240
+Điểm chỉ có ba, và tại thời điểm này bạn đang cố gắng để truy cập một phần tư, và vì vậy đó là
+
+116
+00:07:59,240 --> 00:08:01,640
+chỉ là lỗi biên dịch.
+
+117
+00:08:01,640 --> 00:08:05,320
+Ở phía bên trái, nó không thể quyết định trước, vì vậy nó xảy ra
+
+118
+00:08:05,320 --> 00:08:06,320
+lúc chạy.
+
+119
+00:08:06,320 --> 00:08:10,240
+Và tôi nghe nói ở phía dưới, chúng tôi có những thứ như ở trên.
+
+120
+00:08:10,240 --> 00:08:15,600
+Vì vậy, chúng tôi chỉ cần sử dụng chỉ định bằng thay vì chỉ số trực tiếp.
+
+121
+00:08:15,600 --> 00:08:20,040
+Vì vậy, chúng tôi đang cố gắng để đọc từ chỉ số thứ tư, mà không tồn tại, và đó là đi
+
+122
+00:08:20,040 --> 00:08:24,680
+để được biên dịch lỗi thời gian cũng.
+
+123
+00:08:24,680 --> 00:08:30,440
+Hãy recap, mảng là một bộ sưu tập kích cỡ cố định của cùng loại mục, các mảng được truy cập
+
+124
+00:08:30,440 --> 00:08:33,160
+sử dụng chỉ mục dãy.
+
+125
+00:08:33,160 --> 00:08:37,160
+Đó là một lỗi khi sử dụng một chỉ số nằm ngoài giới hạn của một mảng.
+
+126
+00:08:37,160 --> 00:08:41,800
+Các yếu tố Array có thể được đặt tùy chọn trong quá trình tạo ra dãy, và bất kỳ yếu tố nào mà bạn không
+
+127
+00:08:41,800 --> 00:08:45,560
+một tập hợp trong tạo sẽ có giá trị mặc định.
+
+128
+00:08:45,560 --> 00:08:50,440
+Bạn có thể sử dụng chức năng LEN, đó là ngắn cho chiều dài, để có độ dài của một mảng
+
+129
+00:08:50,440 --> 00:08:59,160
+Và dùng nó để lặp lại trong vòng lặp.
+
+130
+00:08:59,160 --> 00:08:59,880
+Bạn sẽ hầu như luôn luôn muốn sử dụng chức năng này khi bạn đang lặp lại một mảng.
+
+131
+00:08:59,880 --> 00:09:01,840
+Bằng cách đó bạn không nhận được bất kỳ sai sót nào ra giới hạn.
+
