@@ -1,0 +1,64 @@
+1
+00:00:00,000 --> 00:00:29,000
+và video chúng tôi đã thảo luận về TCP và UDP, làm thế nào các giao thức sẽ hoạt động, và tại sao đó là một bài học kết nối, định hướng kết nối. Vì vậy chúng ta sẽ thảo luận thêm một điều nữa mà sẽ được thêm vào lớp vận chuyển. Vì vậy, đó là một số cổng, nhiều người trong số họ biết những gì là cổng số. Hãy bắt đầu thảo luận về số hiệu cổng. Được rồi. Trong máy tính, có rất nhiều thứ khác mà chúng ta phải làm với hệ thống. Vì vậy, chúng tôi có liên quan đến hệ thống.
+
+2
+00:00:29,000 --> 00:00:46,000
+Và trong máy tính, có rất nhiều không khí đang hoạt động. Bạn đang sử dụng Google Chrome để tiếp cận với Google hay bất kỳ dịch vụ công cộng nào bạn cần, hoặc bạn cần chuyển một số tập tin sang một nơi khác vì vậy chúng tôi đang sử dụng FTP cho giao thức chuyển tập tin.
+
+3
+00:00:46,000 --> 00:00:59,000
+Và có một hệ thống tên DNS hoặc gửi tên miền. Có rất nhiều cổng và giao thức sẽ chạy trong máy của anh. Có thể có cá sovies. Vì vậy, mặc định sẽ sử dụng một số cổng khác.
+
+4
+00:00:59,000 --> 00:01:24,000
+Vì vậy, tại sao chúng ta cần cổng này cho không khí hệ thống vận chuyển, tại sao số hiệu cổng này được thêm vào lớp vận chuyển. Hãy bàn bạc chuyện đó. Được rồi. Trong máy tính, hãy lấy máy tính này làm ví dụ. Trong máy tính này, có một ứng dụng tên là Chrome hay đang chạy. Được rồi. Và có một ứng dụng khác chạy như phóng to.
+
+5
+00:01:24,000 --> 00:01:46,000
+Và một lần nữa, có một ứng dụng khác giống như MySQL. Dịch vụ này đang hoạt động. Được rồi. Máy tính này đã gửi một số dữ liệu đến nhiều máy chủ. Máy phục vụ này dành cho máy phục vụ kiểu Chrome và một trình phục vụ khác là cho một trình phục vụ phóng to và một trình phục vụ khác của tôi.
+
+6
+00:01:46,000 --> 00:01:59,000
+Vì vậy, điều này là cho MyQL và nó là cho một phóng to và nó cho Google. Vì vậy, nó đã sử dụng máy chủ khác nhau và ứng dụng khác nhau để tiếp cận với phía máy chủ đó.
+
+7
+00:01:59,000 --> 00:02:15,000
+Vì vậy, nếu không có số hiệu cổng nơi đã xác định máy tính của bạn không biết dữ liệu nào sẽ được gửi đến ứng dụng nào. Có thể nếu không có số hiệu cổng. Vì vậy, phóng to này sẽ gửi dữ liệu đến máy này.
+
+8
+00:02:15,000 --> 00:02:42,000
+Vậy gói hàng sẽ bị nhầm lẫn trước khi vào máy. Vì vậy, chúng tôi đang sử dụng các số hiệu cổng cụ thể cho điều đó trong bang. Vâng, chúng tôi biết khi chúng tôi tìm kiếm trên Google, có một trong những giao thức thêm vào như nó là HTTP. Vì vậy, chúng tôi có một cổng riêng biệt cho HTTP.
+
+9
+00:02:42,000 --> 00:03:03,000
+Vâng, đó là 433 sẽ được thêm vào. Nó sẽ được thêm vào lớp vận chuyển. Được rồi. Vì vậy, TCP hoặc UDP mà sẽ được thêm vào và số cổng cụ thể mà sẽ được thêm vào dữ liệu của chúng tôi. Được rồi.
+
+10
+00:03:03,000 --> 00:03:14,000
+Trong lớp vận chuyển. Vì vậy, dữ liệu biết những máy chủ nào tôi cần để đạt được và những ứng dụng nào tôi cần để liên lạc với kết quả. Được rồi.
+
+11
+00:03:14,000 --> 00:03:34,000
+Ví dụ như, Chrome đã chạy trên 443. Vì vậy, số hiệu cổng này, Chrome đã sử dụng và nó đã buộc tội một cái gì đó Google bằng cách sử dụng cổng số 433. Vì vậy bây giờ các máy chủ Google biết ứng dụng nào là số hiệu cổng mà tôi cần gửi. Vì vậy, nó sẽ trực tiếp gửi dữ liệu đến chume.exe.
+
+12
+00:03:34,000 --> 00:03:50,000
+Được rồi. Và giả sử ứng dụng có thể là một thu nhỏ hoặc gửi một trong ba 0 5 cổng. Vì vậy, nó sẽ gửi video kết quả tương tự này truyền đến ứng dụng phóng to cụ thể và các MySQL chạy như là một số không ba.
+
+13
+00:03:50,000 --> 00:04:18,000
+Ví dụ như sự bất công. Vì vậy, câu hỏi đó biết tôi cần gửi dịch vụ nào. Được rồi. Bằng cách sử dụng cổng, nó sẽ theo dõi ứng dụng nào tôi cần để gửi dữ liệu. Được rồi. Chúng tôi đang sử dụng số hiệu cổng cho điều đó nếu không có một số cổng. Vì vậy, chúng tôi không thể theo dõi dữ liệu. Vậy nơi nó sẽ đến. Nó sẽ được đến với phóng to hoặc nó sẽ được đưa vào ứng dụng đường cong của tôi.
+
+14
+00:04:18,000 --> 00:04:39,000
+Vì vậy, chúng tôi có một vài quy tắc cho điều đó. Được rồi. Nếu chúng tôi đang dùng FTP, nếu bạn muốn chuyển tập tin từ nơi này sang nơi khác. Vì vậy, chúng tôi đang sử dụng giao thức FTP và SSH cho cấu hình của chúng tôi. Vì vậy, chúng tôi có thể ngắn gọn xem những gì là các cảng chung và các cổng phổ biến và các giao thức trong các video tiếp theo.
+
+15
+00:04:39,000 --> 00:05:02,000
+Nhưng bây giờ chúng tôi có thể hiểu những gì hỗ trợ okay bởi vì các cổng sẽ đặt các con số sẽ được thêm vào lớp vận chuyển. Phải. Đây là lời giải thích cho bến cảng. Tại sao các số hiệu cổng sẽ được thêm vào các gói dữ liệu của chúng tôi. Được rồi. Nên tôi nghĩ anh thích đoạn băng và tôi hy vọng anh có thể dọn dẹp.
+
+16
+00:05:02,000 --> 00:05:13,000
+Anh hiểu rõ về số hiệu cảng. Vì vậy, hãy kết thúc video này và chúng tôi sẽ tiếp tục trong video tiếp theo. Chúng tôi sẽ tiếp tục trong lớp tiếp theo gọi là lớp mạng. Tạm biệt.
+
