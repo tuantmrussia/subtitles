@@ -1,0 +1,672 @@
+1
+00:00:00,000 --> 00:00:09,000
+Trong video này, tôi sẽ chỉ cho bạn làm thế nào để triển khai cánh cổng công ty để thiết bị của bạn sử dụng Microsoft Intune.
+
+2
+00:00:09,000 --> 00:00:17,000
+Vì vậy, nếu bạn đang làm việc như một quản trị hệ thống IT, chắc chắn bạn sẽ không muốn người dùng của bạn tải về cánh cổng công ty từ Microsoft Store.
+
+3
+00:00:17,000 --> 00:00:23,000
+Bạn muốn triển khai các ứng dụng khác sử dụng cấu hình quản lý hoặc Microsoft Intune.
+
+4
+00:00:23,000 --> 00:00:31,000
+Trong video này, chúng ta sẽ tập trung vào việc triển khai cánh cổng công ty bằng cách sử dụng Microsoft Intune.
+
+5
+00:00:31,000 --> 00:00:37,000
+Đầu tiên, những gì bạn muốn làm là điện thoại và bạn muốn đi đến cửa hàng kinh doanh của bạn.microsoft.com.
+
+6
+00:00:37,000 --> 00:00:41,000
+Và từ đó, bạn có thể đi đến thiết lập.
+
+7
+00:00:41,000 --> 00:00:45,000
+Và từ thiết lập, bạn chắc chắn sẽ muốn đi để quản lý.
+
+8
+00:00:45,000 --> 00:00:48,000
+Và ở đây bạn có thể thấy chúng tôi có cửa hàng.
+
+9
+00:00:48,000 --> 00:00:53,000
+Và đó là lúc bạn có thể thấy trải nghiệm mua sắm là ứng dụng tắt giầy.
+
+10
+00:00:53,000 --> 00:00:55,000
+Nhưng lỗi là do nó.
+
+11
+00:00:55,000 --> 00:00:58,000
+Vậy là ít nhất anh cũng muốn làm.
+
+12
+00:00:58,000 --> 00:01:07,000
+Lúc đó, bạn đến cửa hàng của bạn, rồi gõ cổng công ty.
+
+13
+00:01:07,000 --> 00:01:11,000
+Và ở đây chúng ta chỉ cần nhấn vào nút đặt.
+
+14
+00:01:11,000 --> 00:01:14,000
+Bằng cách ấn vào nó, bạn có thể thấy kết quả của cánh cổng công ty.
+
+15
+00:01:14,000 --> 00:01:18,000
+Và đây rồi. Bạn có thể thấy chúng ta có một cổng công ty, nó nói nó hoàn toàn tự do.
+
+16
+00:01:18,000 --> 00:01:22,000
+Tôi chỉ cần nhấp chuột vào đó.
+
+17
+00:01:22,000 --> 00:01:26,000
+Và ngay bây giờ bạn có thể thấy rằng nó nói rằng các loại giấy phép là trực tuyến.
+
+18
+00:01:26,000 --> 00:01:32,000
+Vì vậy, nó rất, rất, rất quan trọng bởi vì bạn muốn thực sự thay đổi điều này để ngoại tuyến.
+
+19
+00:01:32,000 --> 00:01:39,000
+Bởi vì cánh cổng công ty thực sự được chuyển qua Microsoft Store.
+
+20
+00:01:39,000 --> 00:01:44,000
+Vì vậy, Microsoft Store ứng dụng được chuyển giao từ Microsoft Store trực tuyến.
+
+21
+00:01:44,000 --> 00:01:48,000
+Nhưng tôi sẽ nói nó triển khai bằng cách sử dụng cấu trúc quản lý hay Microsoft Intune của bạn.
+
+22
+00:01:48,000 --> 00:01:52,000
+Cậu chắc chắn muốn tải về cánh cổng ngoại tuyến.
+
+23
+00:01:52,000 --> 00:01:59,000
+Vì vậy, bây giờ chúng tôi đã có tùy chọn ngoại tuyến và sau đó chúng tôi có thể nhấp chuột vào quản lý.
+
+24
+00:01:59,000 --> 00:02:02,000
+Vì vậy, bằng cách click vào quản lý, bạn có thể thấy chúng tôi có các lựa chọn khác nhau ở đây.
+
+25
+00:02:02,000 --> 00:02:08,000
+Bạn có thể thấy chúng ta không thể chọn Windows 10 hay các thiết bị, đó là Windows 10 và trên.
+
+26
+00:02:08,000 --> 00:02:12,000
+Và sau đó bạn có thể thấy chúng tôi có thời trang, bạn muốn đi cho mới nhất, thời trang cao nhất.
+
+27
+00:02:12,000 --> 00:02:16,000
+Và kiến trúc, bạn có thể thấy chúng tôi cũng có thời trang khác nhau.
+
+28
+00:02:16,000 --> 00:02:21,000
+Vì vậy, những gì tôi muốn chọn, họ thấy bốn nhịp bởi vì hệ thống điều hành Windows của tôi
+
+29
+00:02:21,000 --> 00:02:23,000
+hoặc từ 4 nhịp.
+
+30
+00:02:23,000 --> 00:02:26,000
+Và sau đó ứng dụng tải về sẽ là tiếng Anh.
+
+31
+00:02:26,000 --> 00:02:29,000
+Tôi sẽ để việc đó cho Hoa Kỳ.
+
+32
+00:02:29,000 --> 00:02:34,000
+Nhưng bạn có thể, bằng cách lựa chọn rằng, bạn có thể thấy chúng tôi có khác nhau download ở đây.
+
+33
+00:02:34,000 --> 00:02:38,000
+Trước hết, chúng tôi có ứng dụng, nó là một gói tải về.
+
+34
+00:02:38,000 --> 00:02:40,000
+Chúng ta phải tải về.
+
+35
+00:02:40,000 --> 00:02:43,000
+Và khi tôi di chuyển xuống, bạn có thể thấy chúng tôi có một số download khác.
+
+36
+00:02:43,000 --> 00:02:45,000
+Chúng ta cũng cần tải về đây.
+
+37
+00:02:45,000 --> 00:02:51,000
+Bạn có thể thấy nó khoảng 1, 2, 3, 4, 5, 6, 7, 8.
+
+38
+00:02:51,000 --> 00:02:54,000
+Bây giờ chúng ta cần tải về khoảng 8 ứng dụng.
+
+39
+00:02:54,000 --> 00:02:59,000
+Vì vậy, nếu tôi click vào, bạn có thể thấy nó sẽ tải về.
+
+40
+00:02:59,000 --> 00:03:05,000
+Và đó là cổng công ty Microsoft với một chìa khóa yêu cầu.
+
+41
+00:03:05,000 --> 00:03:10,000
+Và từ đó trở đi, chúng tôi không thể quyết định chỉ cần nhấn vào và tạo ra giấy phép.
+
+42
+00:03:10,000 --> 00:03:14,000
+Và tất cả những thứ này sẽ được tải về thư mục tải về của bạn.
+
+43
+00:03:14,000 --> 00:03:22,000
+Vì vậy, những gì thực sự đã làm là sao chép tất cả các tập tin tải về ở đây để các thư mục riêng biệt tôi tạo ra.
+
+44
+00:03:22,000 --> 00:03:31,000
+Ví dụ như, bạn có thể thấy chúng ta có tập tin gói AWPX JSON là APPX như thế nào.
+
+45
+00:03:31,000 --> 00:03:35,000
+Vì vậy, nếu tôi tải về tập tin này, chỉ cần cố gắng và đặt tất cả các file với nhau.
+
+46
+00:03:35,000 --> 00:03:36,000
+Thư mục này.
+
+47
+00:03:36,000 --> 00:03:39,000
+Và sau đó chúng ta hãy đi đến Microsoft Intion.
+
+48
+00:03:39,000 --> 00:03:43,000
+Từ phần tham khảo Microsoft của bạn, bạn muốn chuyển sang ứng dụng.
+
+49
+00:03:43,000 --> 00:03:46,000
+Và từ ứng dụng của bạn, bạn muốn đi đến tất cả các ứng dụng.
+
+50
+00:03:46,000 --> 00:03:51,000
+Vì vậy, ở đây bạn có thể thấy tôi đã tải nó và triển khai thiết bị của tôi.
+
+51
+00:03:51,000 --> 00:03:53,000
+Nhưng tôi chỉ muốn chỉ cho anh cách làm.
+
+52
+00:03:53,000 --> 00:03:56,000
+Phòng trường hợp anh làm lần đầu.
+
+53
+00:03:56,000 --> 00:03:59,000
+Vì vậy, những gì bạn muốn làm là nhấp chuột vào bổ sung.
+
+54
+00:03:59,000 --> 00:04:02,000
+Và ở đây chúng tôi đi để chọn.
+
+55
+00:04:02,000 --> 00:04:06,000
+Trong lựa chọn, chúng tôi sẽ thực sự chọn dòng của ứng dụng kinh doanh.
+
+56
+00:04:06,000 --> 00:04:09,000
+Chỉ cần nhấp chuột vào đó.
+
+57
+00:04:09,000 --> 00:04:15,000
+Và sau đó bạn có thể thấy tất cả các ứng dụng khác nhau chúng tôi không thể thực sự cài đặt thông qua dòng của ứng dụng kinh doanh.
+
+58
+00:04:15,000 --> 00:04:19,000
+Vì vậy, chỉ cần nhấp chuột chọn.
+
+59
+00:04:19,000 --> 00:04:23,000
+Và bây giờ chúng tôi muốn chọn tập tin gói ứng dụng.
+
+60
+00:04:23,000 --> 00:04:28,000
+Vì vậy, hãy nhấp vào việc chọn tập tin gói của chúng tôi.
+
+61
+00:04:28,000 --> 00:04:30,000
+Và sau đó là tập tin gói hàng.
+
+62
+00:04:30,000 --> 00:04:34,000
+Và sau đó bạn có thể thấy nếu bạn click vào đó, bạn có thể thấy tất cả các ứng dụng.
+
+63
+00:04:34,000 --> 00:04:35,000
+Tôi đang cho anh vài thông tin.
+
+64
+00:04:35,000 --> 00:04:38,000
+Nhưng hãy để tôi nhấn vào đây không có tập tin chọn văn bản.
+
+65
+00:04:38,000 --> 00:04:39,000
+Không chọn tập tin.
+
+66
+00:04:39,000 --> 00:04:41,000
+Để tôi nhấn vào thư mục đó.
+
+67
+00:04:41,000 --> 00:04:43,000
+Và nó sẽ đưa tôi tới thư mục của tôi.
+
+68
+00:04:43,000 --> 00:04:45,000
+Chắc chắn là một tập tài liệu khác.
+
+69
+00:04:45,000 --> 00:04:48,000
+Nhưng sau đó bạn không thể duyệt tới thư mục nơi tất cả các tập tin của bạn ở.
+
+70
+00:04:48,000 --> 00:04:50,000
+Nhìn đi, nhìn đi.
+
+71
+00:04:50,000 --> 00:04:52,000
+Trước hết, tôi muốn chọn tập tin này.
+
+72
+00:04:52,000 --> 00:04:57,000
+Và sau đó nhấp chuột vào như là ứng dụng, xuất tập tin, và sau đó nhấn nút mở.
+
+73
+00:04:57,000 --> 00:04:59,000
+Nhưng chúng ta có thể mở cửa.
+
+74
+00:04:59,000 --> 00:05:02,000
+Bạn có thể thấy nó nói chọn tập tin ứng dụng phụ thuộc.
+
+75
+00:05:02,000 --> 00:05:04,000
+Nó rất, rất quan trọng.
+
+76
+00:05:04,000 --> 00:05:06,000
+Bạn thấy bạn chọn tập tin ứng dụng phụ thuộc.
+
+77
+00:05:06,000 --> 00:05:11,000
+Vì không có tập tin ứng dụng phụ thuộc, việc cài đặt chắc chắn sẽ đầy đủ.
+
+78
+00:05:11,000 --> 00:05:15,000
+Vì vậy, những gì bạn cần làm ngay bây giờ là nhấn vào điều này cho trò chơi đó.
+
+79
+00:05:15,000 --> 00:05:20,000
+Và bây giờ chúng tôi có thể chọn chỉ với điều khiển a, và sau đó click mở.
+
+80
+00:05:20,000 --> 00:05:23,000
+Bạn có thể thấy tất cả các tập tin vừa được chèn vào.
+
+81
+00:05:23,000 --> 00:05:26,000
+Và bây giờ chúng ta có thể click OK.
+
+82
+00:05:26,000 --> 00:05:30,000
+Bằng cách click OK, bạn có thể thấy ở đây chúng tôi có công ty.
+
+83
+00:05:30,000 --> 00:05:33,000
+Tên của cánh cổng Microsoft.
+
+84
+00:05:33,000 --> 00:05:35,000
+Anh có thể hoàn toàn thay đổi mô tả.
+
+85
+00:05:35,000 --> 00:05:39,000
+Nhưng tại thời điểm này, hãy để tôi cố gắng chỉ cần thêm các file vào nó.
+
+86
+00:05:39,000 --> 00:05:42,000
+Bởi vì tôi đã tạo ra một cái rồi.
+
+87
+00:05:42,000 --> 00:05:45,000
+Và ở đây chúng ta có thể nhập thêm thông tin.
+
+88
+00:05:45,000 --> 00:05:49,000
+Nó nói, cho thấy đây là một ứng dụng trong một cổng công ty.
+
+89
+00:05:49,000 --> 00:05:51,000
+Vâng, bạn có thể hiển thị điều này như một ứng dụng đặc trưng.
+
+90
+00:05:51,000 --> 00:05:54,000
+Bởi vì anh đang cố cài đặt nó.
+
+91
+00:05:54,000 --> 00:05:56,000
+Ngay bây giờ cả hai có thể hiển thị nó trung tâm.
+
+92
+00:05:56,000 --> 00:05:59,000
+Nhưng đồng thời, chúng tôi đang cố gắng cài đặt nó lần đầu tiên.
+
+93
+00:05:59,000 --> 00:06:00,000
+Tôi sẽ dùng nó làm hồ sơ.
+
+94
+00:06:00,000 --> 00:06:02,000
+Vì vậy, những gì tôi sẽ làm là tôi sẽ để lại nó như thế này.
+
+95
+00:06:02,000 --> 00:06:05,000
+Và loại chúng ta không thể chọn được.
+
+96
+00:06:05,000 --> 00:06:09,000
+Để tôi để cái này cho quản lý công ty.
+
+97
+00:06:09,000 --> 00:06:13,000
+Và bây giờ chúng ta có thể click vào Tổ chức.
+
+98
+00:06:13,000 --> 00:06:17,000
+Vì vậy, ở đây nó nói, chúng tôi thực sự có thể giao nó cho tất cả các thiết bị.
+
+99
+00:06:17,000 --> 00:06:22,000
+Nhưng thực hành tốt nhất là triển khai tới một nhóm thiết bị.
+
+100
+00:06:22,000 --> 00:06:24,000
+Và từ đó, bạn không thể kiểm tra.
+
+101
+00:06:24,000 --> 00:06:29,000
+Ví dụ, nếu tập tin được tải về và cài đặt vào tập tin khác
+
+102
+00:06:29,000 --> 00:06:34,000
+Trước khi bạn phân phối nó cho mọi thiết bị trên toàn thế giới.
+
+103
+00:06:34,000 --> 00:06:37,000
+Nhưng tốt nhất anh nên phân bổ một nhóm an ninh.
+
+104
+00:06:37,000 --> 00:06:39,000
+Tôi là một nhóm an ninh.
+
+105
+00:06:39,000 --> 00:06:42,000
+Bạn không thể quyết định đi rồi chọn.
+
+106
+00:06:42,000 --> 00:06:49,000
+Ví dụ, tôi có thể, được rồi, tôi có một thiết bị Windows 11.
+
+107
+00:06:49,000 --> 00:06:54,000
+Hãy để tôi chỉ cần chọn Windows 10 cho bây giờ và sau đó nhấn chuột vào chọn.
+
+108
+00:06:54,000 --> 00:06:59,000
+Và sau đó chúng ta có thể quyết định chỉ cần nhấp chuột vào tổ.
+
+109
+00:06:59,000 --> 00:07:02,000
+Okay, ở đây bạn có thể thực sự chỉ cần xem tất cả các thông tin.
+
+110
+00:07:02,000 --> 00:07:05,000
+Bạn có thể kiểm tra xem tất cả đã được cấu hình đúng chưa.
+
+111
+00:07:05,000 --> 00:07:11,000
+Bạn thấy yêu cầu của bạn hoặc của tôi, thực sự, chọn nhóm được gọi là tất cả các Windows 10.
+
+112
+00:07:11,000 --> 00:07:13,000
+Và sau đó chúng tôi có thể nhấp chuột vào tạo.
+
+113
+00:07:13,000 --> 00:07:17,000
+Vì vậy, bằng cách click vào tạo, bạn có thể thấy nó sẽ thực sự, kể từ khi ứng dụng được tạo ra.
+
+114
+00:07:17,000 --> 00:07:22,000
+Và bây giờ những gì sẽ xảy ra là thực sự nhập các tập tin vào,
+
+115
+00:07:22,000 --> 00:07:25,000
+Nó sẽ tải cánh cổng Microsoft vào hệ thống của bạn, vào Intune.
+
+116
+00:07:25,000 --> 00:07:27,000
+Sẽ mất vài phút.
+
+117
+00:07:27,000 --> 00:07:30,000
+Bạn có thể thấy chúng tôi có một file âm tiết mà tôi đã được tải lên ngay bây giờ.
+
+118
+00:07:30,000 --> 00:07:34,000
+Và sau đó, tập tin sẽ được phân phối cho Windows của bạn.
+
+119
+00:07:34,000 --> 00:07:36,000
+10 hay Windows 11.
+
+120
+00:07:36,000 --> 00:07:40,000
+Nhưng tôi muốn cung cấp cho bạn một số thông tin vì phân phối tập tin này đến thiết bị này
+
+121
+00:07:40,000 --> 00:07:42,000
+Có thể mất thời gian.
+
+122
+00:07:42,000 --> 00:07:45,000
+Nhưng những gì chúng ta không thể thực sự làm là một tốc độ tối đa,
+
+123
+00:07:45,000 --> 00:07:49,000
+Tốc độ của thiết bị, rằng virus nhanh nhất có thể.
+
+124
+00:07:49,000 --> 00:07:55,000
+Ví dụ, nếu điều này đã được hoàn thành, chúng ta có thể đi đến tất cả các thiết bị.
+
+125
+00:07:55,000 --> 00:08:01,000
+Hãy để tôi chọn tất cả các thiết bị.
+
+126
+00:08:01,000 --> 00:08:05,000
+Và ở đây chúng ta, ví dụ, chúng ta có các cửa sổ 10
+
+127
+00:08:05,000 --> 00:08:07,000
+Bạn có thể thấy nó được gọi là Quản lý.
+
+128
+00:08:07,000 --> 00:08:10,000
+Và sau đó tôi có thể chọn thiết bị này.
+
+129
+00:08:10,000 --> 00:08:13,000
+Sẽ đồng bộ.
+
+130
+00:08:13,000 --> 00:08:15,000
+Điều tôi sẽ làm là hoàn toàn đồng bộ.
+
+131
+00:08:15,000 --> 00:08:16,000
+Ở đây tôi sẽ click đồng bộ.
+
+132
+00:08:16,000 --> 00:08:18,000
+Vì vậy, bằng cách đồng bộ hóa, click đồng bộ.
+
+133
+00:08:18,000 --> 00:08:24,000
+Nó sẽ đồng bộ mọi chính sách, tuân thủ chính sách, chính sách an ninh, triển khai.
+
+134
+00:08:24,000 --> 00:08:27,000
+Tôi đã làm nó từ Intune thành thiết bị đó.
+
+135
+00:08:27,000 --> 00:08:30,000
+Vì vậy, bằng cách nhấp chuột đồng bộ, nó nói Intune sẽ thử kiểm tra với thiết bị này.
+
+136
+00:08:30,000 --> 00:08:36,000
+Nó thành công để đồng bộ hóa hoặc đồng bộ hoặc hành động hoặc chính sách cho thiết bị.
+
+137
+00:08:36,000 --> 00:08:38,000
+Tôi có thể đồng ý.
+
+138
+00:08:38,000 --> 00:08:39,000
+Và rồi chúng ta bắt đầu.
+
+139
+00:08:39,000 --> 00:08:41,000
+Bây giờ nó sẽ bắt đầu đồng bộ L.
+
+140
+00:08:41,000 --> 00:08:46,000
+@ info: status
+
+141
+00:08:46,000 --> 00:08:50,000
+Và bây giờ nếu tôi đi đến, ví dụ, hãy để tôi chỉ cần đi đến cửa sổ 10.
+
+142
+00:08:50,000 --> 00:08:51,000
+Có một thiết bị Windows 11.
+
+143
+00:08:51,000 --> 00:08:53,000
+Hãy để tôi đến cửa sổ số 10.
+
+144
+00:08:53,000 --> 00:08:57,000
+Và nếu tôi đi đến cửa sổ 10, sau một thời gian, bạn sẽ thấy
+
+145
+00:08:57,000 --> 00:09:01,000
+rằng cổng CompNet đã được cài đặt vào thiết bị này.
+
+146
+00:09:01,000 --> 00:09:03,000
+Ở đây chúng ta có thể thấy tôi đã triển khai.
+
+147
+00:09:03,000 --> 00:09:04,000
+Bạn có thể thấy nó ghi New.
+
+148
+00:09:04,000 --> 00:09:09,000
+Và nếu tôi quay trở lại cửa sổ 11, tôi nghĩ tôi cũng như vậy.
+
+149
+00:09:09,000 --> 00:09:13,000
+Ở đây bạn có thể thấy chúng tôi đã thêm vào cổng CompNet gần đây.
+
+150
+00:09:13,000 --> 00:09:17,000
+Nhưng mọi thứ đều được đóng từ hệ thống Windows 10 hay Windows 11.
+
+151
+00:09:17,000 --> 00:09:20,000
+Để tôi lấy Windows 10 làm ví dụ.
+
+152
+00:09:20,000 --> 00:09:23,000
+Chúng ta có thể đến trung tâm.
+
+153
+00:09:23,000 --> 00:09:26,000
+Và từ thiết lập, chúng ta có thể khai trình.
+
+154
+00:09:26,000 --> 00:09:31,000
+Và vì vậy, bây giờ chúng tôi có thể đi làm hoặc trường học.
+
+155
+00:09:31,000 --> 00:09:34,000
+Từ công việc hay trường học, bạn có thể thấy chúng tôi đã kết nối với sức khỏe,
+
+156
+00:09:34,000 --> 00:09:36,000
+Lãnh thổ toàn cầu.
+
+157
+00:09:36,000 --> 00:09:38,000
+Ở đây tôi muốn nhấp vào thông tin.
+
+158
+00:09:38,000 --> 00:09:42,000
+Và khi tôi click vào thông tin, nó cho tôi lựa chọn sẽ nhấp chuột đồng bộ.
+
+159
+00:09:42,000 --> 00:09:45,000
+Đây là thiết bị đồng bộ hóa trạng thái.
+
+160
+00:09:45,000 --> 00:09:49,000
+Phụ đề được thực hiện bởi Động Phim
+
+161
+00:09:49,000 --> 00:09:53,000
+Và sau đó kiểm tra tất cả các chính sách và ứng dụng ở đây bạn có thể thấy.
+
+162
+00:09:53,000 --> 00:09:58,000
+Đây là cổng của công ty đã để lại phần mở rộng của Microsoft Intune Management.
+
+163
+00:09:58,000 --> 00:10:00,000
+Và trước hết, nó cũng được hoàn thành.
+
+164
+00:10:00,000 --> 00:10:03,000
+Tôi có thể thấy một số chính sách đã được triển khai cho thiết bị này.
+
+165
+00:10:03,000 --> 00:10:09,000
+Vì vậy, nếu tôi click đồng bộ, bây giờ nó sẽ cố gắng đồng bộ Microsoft Intune của tôi và đám mây
+
+166
+00:10:09,000 --> 00:10:14,000
+và tải xuống tất cả các chính sách, các chính sách hoặc tuân thủ chính sách
+
+167
+00:10:14,000 --> 00:10:18,000
+và áp dụng vào thiết bị này.
+
+168
+00:10:18,000 --> 00:10:29,000
+Đây là cách bạn triển khai Microsoft trong cổng công ty để đến với Windows 10 hay Windows 11 thiết bị sử dụng Microsoft Intune.
+
