@@ -1,0 +1,180 @@
+1
+00:00:00,319 --> 00:00:05,320
+Google đã tạo bản thiết kế và thực hiện an toàn để bạn có thể
+
+2
+00:00:05,320 --> 00:00:09,539
+Hãy theo đuổi những thói quen tốt nhất và tránh những sai lầm chung.
+
+3
+00:00:09,840 --> 00:00:13,340
+Một bản thiết kế của Google Cloud là bản thiết kế sẵn sàng
+
+4
+00:00:13,520 --> 00:00:17,780
+Cơ sở hạ tầng được tạo ra bởi các kỹ sư Google.
+
+5
+00:00:17,840 --> 00:00:22,159
+Nó bao gồm các thực hành tốt nhất, tiêu chuẩn an ninh theo mặc định,
+
+6
+00:00:22,479 --> 00:00:27,309
+Các mẫu IM, đăng nhập và giám sát, và các cấu hình cuộn giấy an toàn.
+
+7
+00:00:27,690 --> 00:00:30,569
+Bản in xanh được vận chuyển qua công cụ công cụ của tổ chức Cloud,
+
+8
+00:00:30,780 --> 00:00:33,380
+Tóm lại, nó cũng được gọi là CFT.
+
+9
+00:00:33,860 --> 00:00:36,849
+Những mô-đun này được sử dụng bởi các công ty Fortune 500,
+
+10
+00:00:37,020 --> 00:00:40,200
+Chính phủ, những người khởi xướng và các tổ chức tài chính.
+
+11
+00:00:40,619 --> 00:00:43,220
+Bản in xanh giải quyết ba vấn đề lớn nhất.
+
+12
+00:00:43,580 --> 00:00:45,979
+Đầu tiên là cấu hình không nhất quán.
+
+13
+00:00:46,380 --> 00:00:49,959
+Các kỹ sư viết mã cơ sở hạ tầng bằng tay tạo ra
+
+14
+00:00:49,959 --> 00:00:52,450
+Những sai lầm tinh tế như mạng lưới phụ,
+
+15
+00:00:52,740 --> 00:00:55,840
+nhầm VPC. Bản đồ xanh loại bỏ những sai lầm đó.
+
+16
+00:00:56,200 --> 00:00:59,240
+Một vấn đề khác nó giải quyết là tái phát minh cơ sở hạ tầng.
+
+17
+00:00:59,569 --> 00:01:03,959
+Mỗi công ty không nên tự thiết kế VPC, tường lửa, vân vân.
+
+18
+00:01:04,169 --> 00:01:06,919
+Google biết các mẫu được đề nghị tốt nhất,
+
+19
+00:01:07,239 --> 00:01:10,019
+và bản thiết kế giúp anh mã hóa nó.
+
+20
+00:01:10,160 --> 00:01:12,800
+Một vấn đề khác nó giải quyết được là các cuộc triển khai không an toàn.
+
+21
+00:01:12,919 --> 00:01:15,510
+Bản in màu xanh thường bao gồm các chiến lược xây dựng,
+
+22
+00:01:15,860 --> 00:01:22,099
+Vì vậy, bạn vốn đã triển khai những kiến trúc an toàn hơn, ngay cả khi bạn sử dụng IEC.
+
+23
+00:01:22,480 --> 00:01:24,639
+Cách bạn thực hiện thay đổi là vấn đề.
+
+24
+00:01:25,129 --> 00:01:27,080
+Google đề nghị một số kỹ thuật.
+
+25
+00:01:27,330 --> 00:01:30,309
+Đầu tiên là sự thay đổi cơ sở hạ tầng màu xanh lá cây.
+
+26
+00:01:30,610 --> 00:01:33,889
+Nó có nghĩa là bạn xây dựng một cơ sở hạ tầng mới song song,
+
+27
+00:01:33,970 --> 00:01:35,199
+và một khi mọi thứ hoạt động,
+
+28
+00:01:35,410 --> 00:01:40,489
+Bạn chuyển giao thông qua và xoá phiên bản cũ chỉ sau khi thẩm tra.
+
+29
+00:01:40,839 --> 00:01:42,760
+Cách khác là ra chim yến.
+
+30
+00:01:43,000 --> 00:01:43,440
+Trong này,
+
+31
+00:01:43,599 --> 00:01:48,510
+Bạn triển khai các thay đổi đến một phần nhỏ của môi trường trước tiên, ví dụ,
+
+32
+00:01:48,760 --> 00:01:52,480
+triển khai một phiên bản mới của dịch vụ chỉ 5% các bộ phận,
+
+33
+00:01:52,599 --> 00:01:58,199
+Xác nhận mọi thứ có vẻ tốt, rồi triển khai 95% còn lại.
+
+34
+00:01:58,610 --> 00:02:00,949
+Một cách khác là từ từ AM thay đổi.
+
+35
+00:02:01,099 --> 00:02:03,819
+IM là một trong những nơi nguy hiểm nhất để sửa đổi.
+
+36
+00:02:04,029 --> 00:02:06,300
+Google khuyên giới thiệu vai trò mới trước,
+
+37
+00:02:06,419 --> 00:02:07,690
+Kiểm tra với các nhóm nhỏ,
+
+38
+00:02:07,699 --> 00:02:11,080
+và gỡ bỏ mọi quyền truy cập chỉ sau khi thẩm tra.
+
+39
+00:02:11,259 --> 00:02:15,940
+Một cái khác là quay hồ bơi thay vì nâng cấp ở nơi khác.
+
+40
+00:02:16,169 --> 00:02:21,565
+Xoay tạo nút mới, ống thoát nước chứa và xóa các nút cũ an toàn.
+
+41
+00:02:21,875 --> 00:02:25,714
+Cuối cùng, sử dụng cờ đặc trưng để thay đổi môi trường rủi ro.
+
+42
+00:02:25,804 --> 00:02:28,725
+Điều này là phổ biến trong đường ống của Terraform hoặc GitHub.
+
+43
+00:02:28,835 --> 00:02:32,395
+Thay vì ngay lập tức triển khai một sự thay đổi đột ngột,
+
+44
+00:02:32,634 --> 00:02:35,074
+Các đội bọc nó trong một lá cờ đặc trưng.
+
+45
+00:02:35,195 --> 00:02:38,214
+Điều này cho phép bạn chuyển dần các tính năng.
+
