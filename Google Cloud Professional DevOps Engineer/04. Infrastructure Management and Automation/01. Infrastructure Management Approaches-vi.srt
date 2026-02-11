@@ -1,0 +1,236 @@
+1
+00:00:01,139 --> 00:00:05,440
+Nếu bạn đã bao giờ triển khai cơ sở hạ tầng bằng tay, bạn biết cảm giác đó.
+
+2
+00:00:05,659 --> 00:00:09,060
+Bạn nhấn vài cái nút và những cụm Kibernetes của bạn bắt đầu chạy.
+
+3
+00:00:09,220 --> 00:00:12,489
+Nhưng sau đó, nếu bạn cố gắng lặp lại cùng một cuộc triển khai,
+
+4
+00:00:12,659 --> 00:00:14,539
+Anh bỏ lỡ vài thứ ở đây và kia.
+
+5
+00:00:14,779 --> 00:00:18,500
+Cơ sở hạ tầng là một mật mã tồn tại chính xác để ngăn chặn điều đó.
+
+6
+00:00:18,590 --> 00:00:22,010
+Hãy xem làm thế nào chúng tôi có thể sử dụng Terraform để triển khai các
+
+7
+00:00:22,010 --> 00:00:25,329
+Các nhóm và nguồn lực vào Google Cloud.
+
+8
+00:00:25,450 --> 00:00:26,000
+Vì điều này,
+
+9
+00:00:26,129 --> 00:00:30,329
+Tôi giả sử rằng bạn đã cài đặt và trong
+
+10
+00:00:30,329 --> 00:00:33,150
+mà bạn đã thêm vào Terraform.
+
+11
+00:00:33,450 --> 00:00:34,689
+Nếu anh không nhận ra,
+
+12
+00:00:34,810 --> 00:00:40,690
+Đơn giản là bạn đi xuống Google, và nó đơn giản là cài đặt các mã VS,
+
+13
+00:00:40,690 --> 00:00:44,349
+Và tương tự, việc cài đặt Terraform cũng dễ dàng.
+
+14
+00:00:44,470 --> 00:00:44,909
+Cuối cùng,
+
+15
+00:00:44,990 --> 00:00:50,599
+Tôi cũng cho rằng bạn có Google SDK cũng được cài đặt trên máy địa phương.
+
+16
+00:00:50,750 --> 00:00:52,340
+Giờ tôi dùng MacBook,
+
+17
+00:00:52,389 --> 00:00:56,069
+Nhưng bài tập này cũng có thể được thực hiện dễ dàng trên một máy Windows.
+
+18
+00:00:56,189 --> 00:01:00,310
+Bây giờ ở Terraform, chúng ta nên có một tập tin, tiểu đội chính.
+
+19
+00:01:00,509 --> 00:01:02,959
+Đây là để khởi tạo cấu hình Terraform.
+
+20
+00:01:03,592 --> 00:01:06,222
+Tôi bắt đầu định nghĩa bởi nhà cung cấp Google.
+
+21
+00:01:06,513 --> 00:01:09,572
+Sau đó, tôi cho phép các ADIs yêu cầu,
+
+22
+00:01:09,623 --> 00:01:14,513
+Và chúng tôi đang tạo ra mạng VPC và mạng ngầm thông qua mã đặc trưng này.
+
+23
+00:01:14,822 --> 00:01:15,822
+Bây giờ trên cùng một đường,
+
+24
+00:01:15,913 --> 00:01:19,392
+Tôi có các biến số.tf có chứa một vài
+
+25
+00:01:19,392 --> 00:01:23,032
+Biến nơi tôi đặt tên, mã nhận dạng dự án,
+
+26
+00:01:23,313 --> 00:01:23,913
+vùng,
+
+27
+00:01:24,032 --> 00:01:29,313
+và tên mạng và tên công ty con của chúng tôi là một biến. Và chúng ta
+
+28
+00:01:29,313 --> 00:01:32,865
+có kết xuất.tf nơi chúng tôi đã xác định đầu ra,
+
+29
+00:01:33,396 --> 00:01:33,835
+tên mạng:
+
+30
+00:01:34,026 --> 00:01:36,555
+Kết nối mạng lưới phụ. Và cuối cùng, chúng tôi đã
+
+31
+00:01:36,555 --> 00:01:41,835
+terraform.tfvars nơi tôi cung cấp ID dự án.
+
+32
+00:01:41,835 --> 00:01:44,795
+Tôi sẽ tạo ra chính xác tất cả những thứ này.
+
+33
+00:01:44,875 --> 00:01:46,636
+Đến lúc chạy rồi.
+
+34
+00:01:46,875 --> 00:01:50,216
+Điều đầu tiên chúng ta cần làm là xác thực Google Cloud.
+
+35
+00:01:50,316 --> 00:01:51,776
+Và ở đây, tại nhà ga,
+
+36
+00:01:51,875 --> 00:01:55,526
+Tôi đang gõ gwash ath ứng dụng đăng nhập mặc định và nói Enter.
+
+37
+00:01:57,080 --> 00:02:00,209
+Nó sẽ chuyển hướng, và tôi sẽ làm Google xác thực.
+
+38
+00:02:00,360 --> 00:02:04,139
+Bây giờ, một khi xác thực đã được thực hiện, tôi sẽ chạy khí tượng.
+
+39
+00:02:05,389 --> 00:02:06,550
+Nó sẽ bắt đầu.
+
+40
+00:02:06,750 --> 00:02:10,190
+Sau đó tôi sẽ thực hiện kế hoạch địa lý. Điều đó sẽ cho tôi
+
+41
+00:02:10,190 --> 00:02:11,990
+Kế hoạch chính xác mà anh sẽ tạo ra.
+
+42
+00:02:12,070 --> 00:02:15,169
+Và cuối cùng tôi sẽ nói rằng thực vật học áp dụng.
+
+43
+00:02:15,279 --> 00:02:18,910
+Bây giờ đây là điểm mà nó đi và thực sự bắt đầu
+
+44
+00:02:18,910 --> 00:02:21,580
+Triển khai nguồn lực của chúng ta vào Google Cloud.
+
+45
+00:02:21,649 --> 00:02:25,919
+Bây giờ bạn có thể thấy rằng nó đã thành công trong việc tạo ra tài nguyên của chúng tôi.
+
+46
+00:02:26,039 --> 00:02:31,160
+Bây giờ tôi đi xuống Google Cloud, đi xuống dự án cụ thể của tôi, đó là Hpc1,
+
+47
+00:02:31,399 --> 00:02:34,639
+Và bên trong đó, nếu tôi đi xuống VPC của tôi có,
+
+48
+00:02:34,800 --> 00:02:40,789
+Vì vậy, bạn có thể thấy rằng tôi nhận được nó, demovpc 1. Và nếu tôi vào bên trong bản thử nghiệm,
+
+49
+00:02:41,000 --> 00:02:46,580
+Tôi cũng có thể thấy mạng phụ, đó là bản mẫu của mạng lưới 1.
+
+50
+00:02:46,779 --> 00:02:51,369
+Đó là cách mà Terraform của chúng ta đã tạo ra nguồn lực vào Google Cloud.
+
+51
+00:02:51,500 --> 00:02:54,500
+Tương tự, chúng ta cũng có thể dùng CFT.
+
+52
+00:02:54,699 --> 00:02:58,220
+CFT viết tắt cho công cụ của Google Cloud Foundation.
+
+53
+00:02:58,419 --> 00:03:02,500
+Chúng là những mẫu đã được chấp thuận từ Google mà bạn có thể
+
+54
+00:03:02,500 --> 00:03:05,250
+sử dụng để tạo cơ sở nội bộ của bạn như là một mật mã.
+
+55
+00:03:05,350 --> 00:03:10,580
+Ví dụ, trong này, tôi sử dụng mô-đun mạng CFT từ CFT,
+
+56
+00:03:10,619 --> 00:03:13,949
+Đó là một mô-đun được chấp nhận để tạo ra các nguồn tài nguyên mạng.
+
+57
+00:03:14,149 --> 00:03:16,110
+Vì vậy, thay vì viết mã riêng của bạn,
+
+58
+00:03:16,229 --> 00:03:20,419
+Bạn có thể sử dụng các mẫu đã được xây dựng sẵn từ Google CFT, và
+
+59
+00:03:20,419 --> 00:03:23,750
+Bạn có thể dùng nó để tạo ra nguồn lực.
+
