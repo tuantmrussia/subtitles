@@ -1,0 +1,336 @@
+1
+00:00:00,000 --> 00:00:05,360
+ In this lesson, we're going to be talking about object types in TypeScript.
+
+2
+00:00:05,360 --> 00:00:12,240
+ Objects are everywhere in JavaScript and TypeScript, so having an understanding how to
+
+3
+00:00:12,240 --> 00:00:17,520
+ type them is critical skill for writing safe, maintainable code.
+
+4
+00:00:17,520 --> 00:00:24,360
+ In TypeScript, an object type describes the shape of an object, what property it has,
+
+5
+00:00:24,360 --> 00:00:26,880
+ and what types those properties should be.
+
+6
+00:00:26,880 --> 00:00:33,560
+ So we have properties, property types, and whether they're required versus optional.
+
+7
+00:00:33,560 --> 00:00:39,720
+ Unlike JavaScript, TypeScript lets us be very explicit about object structure.
+
+8
+00:00:39,720 --> 00:00:43,720
+ So let's have an example of that, and we define its shape as follows.
+
+9
+00:00:43,720 --> 00:00:53,080
+ We define some properties, say name, and a type, object string, and maybe an age property
+
+10
+00:00:53,080 --> 00:00:56,440
+ of type number.
+
+11
+00:00:56,440 --> 00:01:00,640
+ Now what we can do is we can initialize that object with the actual values by doing
+
+12
+00:01:00,640 --> 00:01:07,640
+ equal sign, then curly braces, and then we can specify the actual values, say name, that
+
+13
+00:01:07,640 --> 00:01:15,640
+ can be Alice, and the age, we can set for example to 30.
+
+14
+00:01:15,640 --> 00:01:21,800
+ Notice we put semicolons after the definition, but commas on the actual values.
+
+15
+00:01:21,800 --> 00:01:24,920
+ So here we define an object type in line.
+
+16
+00:01:24,920 --> 00:01:30,840
+ The object must have a name, that's a string, and an age, that is a number.
+
+17
+00:01:30,840 --> 00:01:35,400
+ If we miss a property or use a wrong type, then TypeScript's going to immediately show us
+
+18
+00:01:35,400 --> 00:01:36,400
+ an error.
+
+19
+00:01:36,400 --> 00:01:43,160
+ So if we change an age, for example, and put some speech marks, it's going to, we hover
+
+20
+00:01:43,160 --> 00:01:46,840
+ over it, it's going to show us that we have made a mistake.
+
+21
+00:01:46,840 --> 00:01:48,800
+ Let's just change it back to a number.
+
+22
+00:01:48,800 --> 00:01:58,520
+ Now object types prevent a huge class of bugs, they catch our mistakes before our code runs.
+
+23
+00:01:58,520 --> 00:02:04,160
+ And this is especially important when working with things like APIs and large objects.
+
+24
+00:02:04,160 --> 00:02:08,800
+ But sometimes not all object properties are acquired.
+
+25
+00:02:08,800 --> 00:02:13,480
+ Let's say for example that the age is an optional field, we can do that by putting a
+
+26
+00:02:13,480 --> 00:02:19,920
+ question mark at the end, and then we can actually move the property here and TypeScript's
+
+27
+00:02:19,920 --> 00:02:22,040
+ going to be happy.
+
+28
+00:02:22,040 --> 00:02:27,480
+ But sometimes you also want properties that cannot be changed after creation.
+
+29
+00:02:27,480 --> 00:02:35,160
+ Let's say we define an ID property, and we can do that by ID and then a number.
+
+30
+00:02:35,160 --> 00:02:42,880
+ So that's going to make us enter in ID, which we can do by ID one, that keeps TypeScript
+
+31
+00:02:42,880 --> 00:02:43,880
+ happy.
+
+32
+00:02:43,880 --> 00:02:48,120
+ But let's say we don't want to change the ID at all.
+
+33
+00:02:48,120 --> 00:02:53,400
+ We can do that by doing the read only here.
+
+34
+00:02:53,400 --> 00:03:04,000
+ That means when we come to here, and we say for example user, let me specify the ID.
+
+35
+00:03:04,000 --> 00:03:10,080
+ Then if we try and change it to two, it's not going to let us because it's a read only
+
+36
+00:03:10,080 --> 00:03:11,080
+ property.
+
+37
+00:03:11,080 --> 00:03:16,880
+ Now often objects can also contain other objects.
+
+38
+00:03:16,880 --> 00:03:19,240
+ Let me show an example of that.
+
+39
+00:03:19,240 --> 00:03:23,880
+ Let's do an object of order.
+
+40
+00:03:23,880 --> 00:03:28,320
+ And the order is going to have a few properties, but most importantly we're going to create
+
+41
+00:03:28,320 --> 00:03:31,580
+ an object inside it of type customer.
+
+42
+00:03:31,580 --> 00:03:38,200
+ Let's have a customer, and the customer is going to have a name property of string, and
+
+43
+00:03:38,200 --> 00:03:48,740
+ an email address, and the order ID, let's put on here is a number.
+
+44
+00:03:48,740 --> 00:03:55,320
+ We can see we have an ID property on our main order object, and we also have this embedded
+
+45
+00:03:55,320 --> 00:03:59,340
+ object with a name and an email address for a customer.
+
+46
+00:03:59,340 --> 00:04:04,680
+ Now we can actually create that object by to equal sign, then curly brace, we can do
+
+47
+00:04:04,680 --> 00:04:12,320
+ ID, let's say 101, and then we can set up our customer, so bits of by the name, let's
+
+48
+00:04:12,320 --> 00:04:21,220
+ say Alice again, let's get an email address, just say up test at test.com.
+
+49
+00:04:21,220 --> 00:04:27,640
+ Type script enforces structure at every single level, even deeply nested objects.
+
+50
+00:04:27,640 --> 00:04:33,760
+ The objects can also contain arrays as well, so let's do an example of that.
+
+51
+00:04:33,760 --> 00:04:41,920
+ Let's remove this, and let's create a blog post object, blog post, and we're going to
+
+52
+00:04:41,920 --> 00:04:50,800
+ give it a title, obviously string, and also some tags, and the tag are going to be in
+
+53
+00:04:50,800 --> 00:04:56,240
+ array of strings, which we do by doing some square brackets.
+
+54
+00:04:56,240 --> 00:05:04,960
+ Now we can create this object, let's give it a title and say my title, and all the tags
+
+55
+00:05:04,960 --> 00:05:15,060
+ themselves, we do that inside the square brackets, then we can say Type script and programming,
+
+56
+00:05:15,060 --> 00:05:16,800
+ for example.
+
+57
+00:05:16,800 --> 00:05:22,480
+ So this ensures every element in the array follows this correct type, you might be thinking
+
+58
+00:05:22,480 --> 00:05:28,200
+ why bother with all this at all, why not just use the object type from JavaScript, and
+
+59
+00:05:28,200 --> 00:05:29,200
+ let me show you what's happening.
+
+60
+00:05:29,200 --> 00:05:38,800
+ So if we do, let's say let's put a value, set it to object, now we can do value equals,
+
+61
+00:05:38,800 --> 00:05:49,000
+ let's say we set a the object to name, and Alice, what we can now do is to value equals,
+
+62
+00:05:49,000 --> 00:05:52,840
+ we can set it to an array, for example.
+
+63
+00:05:52,840 --> 00:05:57,640
+ The Type Scripts not going to complain, and it's not giving us any protection at all,
+
+64
+00:05:57,640 --> 00:06:03,720
+ so the object just means it's not a primitive, and it's not describing any structure.
+
+65
+00:06:03,720 --> 00:06:09,440
+ So you want to avoid using this object pretty much all costs, in other ways you're to
+
+66
+00:06:09,440 --> 00:06:12,840
+ fit in the whole purpose of using the Type Script.
+
+67
+00:06:12,840 --> 00:06:18,320
+ Now when we're using Type Scripts, our objects types can get quite large, in line
+
+68
+00:06:18,320 --> 00:06:22,360
+ definitions, it can often become quite messy.
+
+69
+00:06:22,360 --> 00:06:28,960
+ So let's go back and we're going to, this time, create our user, or define our user type,
+
+70
+00:06:28,960 --> 00:06:34,480
+ but we're going to use the actual type alias, which we can do by doing type, and then
+
+71
+00:06:34,480 --> 00:06:46,360
+ user, and now we can do our actual property, so ID number, let's say name, string, email,
+
+72
+00:06:46,360 --> 00:06:52,560
+ I can spell it, email string.
+
+73
+00:06:52,560 --> 00:06:58,680
+ Now this type gives us the option to reuse this object type anyway we want, so we could
+
+74
+00:06:58,680 --> 00:07:07,000
+ do const, user one, we can now say this is our type user, now we can define the properties,
+
+75
+00:07:07,000 --> 00:07:17,360
+ ID one, name, that is, and you also need the email address of course, and it's @test.com.
+
+76
+00:07:17,360 --> 00:07:24,040
+ And again, we can come in and we can create another user, we can do const, user, two
+
+77
+00:07:24,040 --> 00:07:28,520
+ equals, user, for example, and then define its properties.
+
+78
+00:07:28,520 --> 00:07:35,280
+ Let's have a look at a more realistic API example, perhaps that's to find a type for an
+
+79
+00:07:35,280 --> 00:07:47,680
+ API response, we can do type, API response, let's give it a status of number, and we're
+
+80
+00:07:47,680 --> 00:07:59,760
+ going to now create an inline object to the data, and this is going to have an ID of number,
+
+81
+00:07:59,760 --> 00:08:05,560
+ and a title of string.
+
+82
+00:08:05,560 --> 00:08:12,080
+ This is going to make our API responses are predictable, and much safer to work with.
+
+83
+00:08:12,080 --> 00:08:17,760
+ In summary, our object types allows us to describe the shape of objects, and they also
+
+84
+00:08:17,760 --> 00:08:32,800
+ allow us to enforce, required, and any optional properties, as well as improving safety and
+
