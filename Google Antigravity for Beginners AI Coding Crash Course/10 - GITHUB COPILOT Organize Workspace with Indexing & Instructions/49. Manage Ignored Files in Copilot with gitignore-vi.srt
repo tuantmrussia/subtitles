@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:06,640
+Trong bài học này, tôi sẽ nói về làm thế nào để kiểm soát những phần của dự án GitHub Co-Pilot
+
+2
+00:00:06,640 --> 00:00:08,240
+và nhìn và sử dụng.
+
+3
+00:00:08,240 --> 00:00:09,240
+Bắt đầu thôi.
+
+4
+00:00:09,240 --> 00:00:14,080
+Chúng ta sẽ bắt đầu bằng cách nói về chấm nhận được hồ sơ của bạn.
+
+5
+00:00:14,080 --> 00:00:21,360
+Cách nó hoạt động, vấn đề về màu trắng, và cách nó giúp bạn giữ không gian làm việc an toàn và hiệu quả.
+
+6
+00:00:21,360 --> 00:00:27,520
+GitHub Co-Pilot sử dụng ngữ cảnh không gian làm việc của bạn để cung cấp câu trả lời tốt hơn, tìm kiếm mã của bạn,
+
+7
+00:00:27,520 --> 00:00:31,280
+và hiểu cách tập tin của bạn kết nối.
+
+8
+00:00:31,280 --> 00:00:34,880
+Nhưng đôi khi anh không muốn mọi thứ được bao gồm.
+
+9
+00:00:34,880 --> 00:00:42,520
+Ví dụ, tập tin chứa bí mật hoặc thư mục được xây dựng lớn không liên quan đến mã lệnh của bạn.
+
+10
+00:00:42,520 --> 00:00:45,120
+Đó là nơi có dấu chấm nhận được hồ sơ của anh.
+
+11
+00:00:45,120 --> 00:00:51,160
+Nó nói với cả Git và Co-Pilot, những tập tin và thư mục nào nên bị bỏ qua trong chỉ mục
+
+12
+00:00:51,160 --> 00:00:52,800
+và tìm kiếm.
+
+13
+00:00:52,800 --> 00:00:58,440
+Các doanh số và danh sách ở đây sẽ bị loại ra khỏi chỉ mục vùng làm việc của Co-Plot và sẽ không xuất hiện
+
+14
+00:00:58,440 --> 00:01:01,520
+trong việc tìm kiếm hay đề nghị mã hóa không gian làm việc.
+
+15
+00:01:01,520 --> 00:01:04,440
+Trừ khi cô mở trực tiếp đống hồ sơ đó.
+
+16
+00:01:04,440 --> 00:01:09,040
+Bây giờ hãy nói về lý do tại sao bạn có thể muốn bỏ qua các tập tin.
+
+17
+00:01:09,040 --> 00:01:12,520
+Có hai lý do chính, an ninh và hiệu quả.
+
+18
+00:01:12,520 --> 00:01:19,360
+Đối với an ninh như là một dấu chấm nhận được tập tin của bạn giúp đảm bảo rằng các tập tin nhạy cảm như các phím API,
+
+19
+00:01:19,360 --> 00:01:25,440
+Thông tin, hoặc tập tin cấu hình cục bộ, không được bao gồm trong bối cảnh của Co-Plot
+
+20
+00:01:25,440 --> 00:01:29,440
+hoặc vô tình tham gia vào các ví dụ mật mã.
+
+21
+00:01:29,440 --> 00:01:35,720
+Cũng như Co-Plot không tải mã riêng của bạn lên máy chủ bên ngoài để đào tạo, trừ
+
+22
+00:01:35,720 --> 00:01:40,800
+Những tập tin này vẫn cho thêm một lớp an toàn.
+
+23
+00:01:40,800 --> 00:01:47,120
+Đối với hiệu suất, bỏ qua thư mục không cần thiết như mô-đun nút, dist hoặc tin tức giữ
+
+24
+00:01:47,120 --> 00:01:51,520
+Chỉ số không gian làm việc của Co-Plot, nhỏ hơn và nhanh hơn.
+
+25
+00:01:51,520 --> 00:01:56,480
+Điều này có nghĩa là phản ứng nhanh hơn và những gợi ý có liên quan hơn mà tập trung vào nguồn thực tế của bạn
+
+26
+00:01:56,480 --> 00:01:57,480
+Mật mã.
+
+27
+00:01:57,480 --> 00:02:01,760
+Hãy xem xét cách cấu hình dấu chấm của bạn nhận được tập tin của bạn.
+
+28
+00:02:01,760 --> 00:02:04,360
+Sáng tạo hay cập nhật thì đơn giản thôi.
+
+29
+00:02:04,360 --> 00:02:07,480
+Nó chỉ sử dụng các mẫu văn bản đơn giản.
+
+30
+00:02:07,480 --> 00:02:11,600
+Bạn có thể bỏ qua tập tin, thư mục hay kiểu tập tin riêng.
+
+31
+00:02:11,600 --> 00:02:19,320
+Ví dụ, thêm cấu hình dòng cấu hình.json, bỏ qua một tập tin cụ thể tên là config.json.
+
+32
+00:02:19,320 --> 00:02:23,800
+Nó nói nóng và Co-Pilot hoàn toàn bỏ qua tập tin đó.
+
+33
+00:02:23,800 --> 00:02:29,320
+Nếu bạn thêm cái dao này vào, nó sẽ bỏ qua toàn bộ thư mục và mọi thứ bên trong nó.
+
+34
+00:02:29,320 --> 00:02:33,280
+Bạn thường làm điều này cho xây dựng hoặc biên dịch tập tin.
+
+35
+00:02:33,280 --> 00:02:41,160
+Đang thêm đầu. log bỏ qua tất cả các tập tin kết thúc bằng .log, ví dụ, máy phục vụ.log hay lỗi.log sẽ không hoạt động được.log sẽ không còn nữa.log sẽ không còn nữa.
+
+36
+00:02:41,160 --> 00:02:42,560
+được theo dõi.
+
+37
+00:02:42,560 --> 00:02:49,360
+Sử dụng hai lần khởi động/logs bảo git bỏ qua bất kỳ thư mục tên bản ghi, bất kể nó ở đâu.
+
+38
+00:02:49,360 --> 00:02:54,840
+Dù nó ở gốc hay sâu bên trong thư mục khác, tất cả sẽ bị bỏ qua.
+
+39
+00:02:54,840 --> 00:03:01,320
+Cuối cùng, thêm một dấu chấm than trước khi một mô hình có nghĩa là không bỏ qua.
+
+40
+00:03:01,320 --> 00:03:05,880
+Vì vậy, nếu mọi thứ khác bị bỏ qua, thư mục ứng dụng vẫn sẽ được bao gồm.
+
+41
+00:03:05,880 --> 00:03:10,640
+Bây giờ làm thế nào để Co-Pilot thực sự sử dụng các file .kitigner?
+
+42
+00:03:10,640 --> 00:03:15,320
+Khi bạn chạy tìm kiếm không gian làm việc hoặc hỏi một phi công một câu hỏi về dự án của bạn, nó có vẻ như
+
+43
+00:03:15,320 --> 00:03:19,320
+chỉ khi tập tin không bị bỏ qua bởi .kitigner.
+
+44
+00:03:19,320 --> 00:03:24,480
+Bỏ qua các tập tin bị bỏ qua trong khi tìm kiếm chỉ mục và sẽ không xuất hiện trong ngữ pháp.
+
+45
+00:03:24,480 --> 00:03:30,480
+Tuy nhiên, nếu bạn mở tập tin bị bỏ qua bằng tay, Co-Plot vẫn có thể sử dụng nội dung đó
+
+46
+00:03:30,480 --> 00:03:35,280
+trong cuộc trò chuyện hay hoàn tất hiện thời, vì nó đang hoạt động trong trình biên tập của bạn.
+
+47
+00:03:35,280 --> 00:03:39,860
+Điều này trùng khớp với hành vi chính thức của GitHub và được thiết kế để giúp bạn khi bạn đang làm việc
+
+48
+00:03:39,860 --> 00:03:42,520
+với hồ sơ đó một cách cố ý.
+
+49
+00:03:42,520 --> 00:03:47,600
+Còn một điều nữa cần phải nhận thức, những giới hạn tiêu tốn.
+
+50
+00:03:47,600 --> 00:03:52,960
+Nếu bạn bỏ qua toàn bộ thư mục, bạn không thể mở lại tập tin bên trong nó, trừ khi bạn thay đổi
+
+51
+00:03:52,960 --> 00:03:53,960
+mẫu.
+
+52
+00:03:53,960 --> 00:04:00,880
+Ví dụ, nếu bạn bỏ qua toàn bộ thư mục công cộng và cố gắng bao gồm các phong cách.cs,
+
+53
+00:04:00,880 --> 00:04:04,440
+Nó sẽ không hoạt động vì thư mục đã bị loại bỏ.
+
+54
+00:04:04,440 --> 00:04:08,200
+Đó là cách làm việc với GitHub Co-Pilot.
+
+55
+00:04:08,200 --> 00:04:14,800
+Một cách đơn giản nhưng mạnh mẽ để giữ cho trợ lý AI của bạn tập trung vào đúng tập tin.
+
+56
+00:04:14,800 --> 00:04:20,560
+Bằng cách lờ đi những tập tin nhạy cảm hoặc không cần thiết, bạn làm cho Co-Pilot nhanh hơn, an toàn hơn và nhiều hơn nữa
+
+57
+00:04:20,560 --> 00:04:24,440
+hiệu quả trong việc hiểu mật mã thật của anh.
+
+58
+00:04:24,440 --> 00:04:28,560
+Tôi hy vọng bài học này hữu ích cho bạn và nhìn thấy bạn trong bài học tiếp theo.
+
