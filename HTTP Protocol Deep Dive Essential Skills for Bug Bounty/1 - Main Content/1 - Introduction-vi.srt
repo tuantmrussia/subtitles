@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:07,280
+Chào mừng mọi người. Tên tôi là Amit Kumar. Và tôi rất vui được làm bạn.
+
+2
+00:00:07,280 --> 00:00:16,880
+Huấn luyện viên cho phiên họp này về cơ bản HTTP và HTTP. Vậy đây là ai?
+
+3
+00:00:16,880 --> 00:00:23,040
+cho. Vì vậy, về cơ bản huấn luyện này được thiết kế cho những người hoàn toàn mới bắt đầu
+
+4
+00:00:23,040 --> 00:00:29,840
+Chưa bao giờ làm việc với HTTP trước khi và các nhà phát triển trẻ bắt đầu với
+
+5
+00:00:29,840 --> 00:00:34,280
+hành trình phát triển web. Comment
+
+6
+00:00:34,280 --> 00:00:40,560
+hiểu cách hoạt động của ứng dụng web. Có ai tò mò về chuyện gì xảy ra khi
+
+7
+00:00:40,560 --> 00:00:46,400
+Bạn nhấp vào liên kết hay gởi đơn? Không có kiến thức kỹ thuật nào cần thiết nếu bạn
+
+8
+00:00:46,400 --> 00:00:54,800
+biết cách sử dụng trình duyệt web bạn đang sẵn sàng cho khóa học này okay và những gì I
+
+9
+00:00:54,800 --> 00:01:01,240
+sẽ yểm trợ hôm nay. Về cơ bản trên hơn giờ tiếp theo chúng tôi sẽ để
+
+10
+00:01:01,240 --> 00:01:08,120
+khám phá những khối xây dựng cơ bản của web mỗi lần bạn thăm một
+
+11
+00:01:08,120 --> 00:01:14,840
+Kiểm tra các thư hoặc cửa hàng online HTTPs làm việc phía sau hiện trường okay
+
+12
+00:01:14,840 --> 00:01:19,560
+bởi có vào cuối buổi, bạn sẽ hiểu chính xác những gì
+
+13
+00:01:19,560 --> 00:01:25,720
+Ý tôi là những gì đang xảy ra ổn thỏa. Vì vậy, đây là cuộc hành trình recap vì vậy về cơ bản chúng tôi
+
+14
+00:01:25,720 --> 00:01:35,400
+sẽ đầu tiên như vậy ban đầu chúng tôi sẽ
+
+15
+00:01:37,240 --> 00:01:56,740
+Chúng tôi sẽ hiểu HTTP trên cơ bản HTTPS okay HTTP và HTTPS cơ bản
+
+16
+00:01:58,800 --> 00:02:13,960
+HTTPS ổn. Vì vậy, phần đầu tiên của chúng tôi là điều này okay và thứ hai sẽ giống như chúng tôi sau đó chúng tôi
+
+17
+00:02:13,960 --> 00:02:21,240
+sẽ tìm hiểu về phương pháp HTTP okay trong phương pháp nào
+
+18
+00:02:26,080 --> 00:02:34,840
+như phương pháp HTTP nơi chúng tôi sẽ tìm hiểu các loại phương pháp khác nhau
+
+19
+00:02:34,840 --> 00:02:40,960
+Nơi trình duyệt của bạn nói chuyện với máy chủ okay và sau đó chúng tôi sẽ hiểu các
+
+20
+00:02:40,960 --> 00:02:52,320
+Mã vị trí ổn trong đó mã số bí ẩn như 404 và 500
+
+21
+00:02:52,320 --> 00:03:02,360
+Vì vậy, hãy nói rằng nó là mã okay nó về cơ bản là một mã trạng thái vì vậy chúng tôi sẽ bao gồm trạng thái
+
+22
+00:03:02,360 --> 00:03:11,360
+Mã và sau đó chúng tôi sẽ bao gồm như đầu đề okay như đầu quay
+
+23
+00:03:11,360 --> 00:03:26,300
+dữ liệu ẩn làm cho trang web hoạt động tốt vì vậy chúng tôi sẽ bao gồm đầu trang
+
+24
+00:03:26,300 --> 00:03:38,240
+Chúng tôi sẽ bao gồm đầu trang và một trong những thứ năm là thứ năm một là như chúng tôi sẽ làm một số
+
+25
+00:03:38,240 --> 00:03:45,760
+demo chúng tôi sẽ mở ra công cụ dev và xem tất cả mọi thứ trong hành động okay chúng ta hãy
+
+26
+00:03:45,760 --> 00:03:55,880
+Nói rằng chúng tôi sẽ xem các cuộc biểu tình khi okay khi các công cụ dev okay vì vậy, chúng ta hãy
+
+27
+00:03:55,880 --> 00:04:00,840
+Nói các bản thử nghiệm do đó, đây là các mô-đun mà chúng tôi sẽ bao gồm trong này
+
+28
+00:04:00,840 --> 00:04:08,520
+Giống như trong đào tạo này để bạn có thể suy nghĩ tại sao tôi cần phải biết điều này
+
+29
+00:04:08,520 --> 00:04:15,640
+Đây là lý do tại sao về cơ bản cho các nhà phát triển bạn sẽ viết mã tốt hơn khi bạn
+
+30
+00:04:15,640 --> 00:04:21,840
+hiểu phương pháp HTTP hoạt động cho người thử nghiệm bạn sẽ gỡ lỗi nhanh hơn
+
+31
+00:04:21,840 --> 00:04:27,920
+Kiểm tra giao thông mạng lưới cho tất cả mọi người bạn sẽ hiểu những gì là
+
+32
+00:04:27,920 --> 00:04:33,760
+xảy ra với dữ liệu trực tuyến của bạn và cho sự phát triển kiến thức HTTP là
+
+33
+00:04:33,760 --> 00:04:39,800
+cơ bản cho bất kỳ vai trò web liên quan và làm thế nào phiên chạy này hoạt động như vậy
+
+34
+00:04:39,800 --> 00:04:44,720
+Về cơ bản, phiên chạy này là một phiên tập được ghi âm Vì vậy, hãy thoải mái dừng lại
+
+35
+00:04:44,720 --> 00:04:53,720
+và tua lại nếu cần thiết và ghi chú trên các khái niệm quan trọng okay cố gắng tập thể dục
+
+36
+00:04:53,720 --> 00:05:02,720
+sau mỗi mô- đun và chúng tôi có một hành động QS ở cuối bao gồm phổ biến
+
+37
+00:05:02,720 --> 00:05:06,840
+Những câu hỏi sẽ có ở đó OK và những gì bạn sẽ cần vì vậy về cơ bản để theo dõi
+
+38
+00:05:06,840 --> 00:05:12,400
+cùng với bản thử nghiệm giơ tay okay bất kỳ trình duyệt web hiện đại bạn sẽ được cần thiết như vậy
+
+39
+00:05:12,400 --> 00:05:18,800
+Về cơ bản nó là Chrome Firefox H Safari okay vì vậy bất kỳ trình duyệt bạn có thể sử dụng
+
+40
+00:05:18,800 --> 00:05:26,840
+Nhưng tôi chủ yếu đề nghị sử dụng Chrome hoặc Firefox okay vì vậy đó là tất cả chúng tôi
+
+41
+00:05:26,840 --> 00:05:32,160
+Cần thiết đã được xây dựng vào trình duyệt của bạn okay vì vậy thiết lập những gì sẽ là
+
+42
+00:05:32,160 --> 00:05:38,060
+Giống như khóa học là những gì là như vậy về cơ bản mới bắt đầu giới thiệu thân thiện với
+
+43
+00:05:38,060 --> 00:05:44,680
+Các khái niệm thực tiễn và bàn tay trên với ví dụ thế giới thực okay và
+
+44
+00:05:44,680 --> 00:05:49,800
+tập trung vào hiểu biết ghi nhớ không ghi nhớ okay vì vậy
+
+45
+00:05:49,800 --> 00:05:57,240
+Về cơ bản những gì khóa học này là cho không okay về cơ bản và tiến bộ
+
+46
+00:05:57,240 --> 00:06:03,200
+Name
+
+47
+00:06:03,200 --> 00:06:08,120
+Xây dựng một nền tảng vững chắc suy nghĩ về điều này như học bảng chữ cái trước khi
+
+48
+00:06:08,120 --> 00:06:13,360
+Viết tiểu thuyết cũng được và tiếp tục theo nhóm tuổi cho các yêu cầu của bạn okay và
+
+49
+00:06:13,360 --> 00:06:19,440
+Tôi khuyến khích các bạn hãy tự hỏi tại sao
+
+50
+00:06:19,440 --> 00:06:25,500
+Khi chúng tôi đi qua khái niệm mất giải lao nếu bạn cần họ okay thực hành
+
+51
+00:06:25,500 --> 00:06:29,480
+Ngay lập tức mở công cụ dev trong khi xem không lo lắng về sự hoàn hảo
+
+52
+00:06:29,480 --> 00:06:35,200
+Hiểu rằng sự hiểu biết đến với luyện tập tốt.
+
+53
+00:06:35,200 --> 00:06:41,760
+Hãy thở một chút uống cà phê và nếu bạn có nếu bạn cần một và hãy
+
+54
+00:06:41,760 --> 00:06:45,280
+Mở khóa bí ẩn của HDP cùng nhau. Sẵn sàng, đi thôi!
+
