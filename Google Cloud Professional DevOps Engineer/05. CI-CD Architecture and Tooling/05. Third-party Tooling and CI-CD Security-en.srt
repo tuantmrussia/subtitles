@@ -1,0 +1,247 @@
+1
+00:00:01,269 --> 00:00:02,970
+Every company has a tooling history.
+
+2
+00:00:03,309 --> 00:00:06,630
+Maybe you are introducing Cloud Build and Cloud Deploy today,
+
+3
+00:00:06,750 --> 00:00:10,430
+but your organization already has years of
+
+4
+00:00:10,430 --> 00:00:13,590
+investment in Jenkins or GitHub Actions.
+
+5
+00:00:13,789 --> 00:00:16,510
+They want to ensure the entire pipeline,
+
+6
+00:00:16,950 --> 00:00:20,670
+no matter the tool, is secure from supply chain attacks.
+
+7
+00:00:20,870 --> 00:00:24,920
+And the good news is Google Cloud is incredibly flexible,
+
+8
+00:00:24,920 --> 00:00:29,530
+and it integrates seamlessly with third‑party CI tools while
+
+9
+00:00:29,530 --> 00:00:32,189
+giving you rock solid security foundation.
+
+10
+00:00:32,490 --> 00:00:36,330
+Jenkins is still used heavily in large enterprises,
+
+11
+00:00:36,569 --> 00:00:39,529
+banks, telecoms, and hybrid environments.
+
+12
+00:00:39,740 --> 00:00:44,750
+Jenkins integrates with Google Cloud through the Jenkins Google OAuth plugin
+
+13
+00:00:44,750 --> 00:00:48,970
+that allows secure authentication with Google identities.
+
+14
+00:00:49,250 --> 00:00:53,970
+Jenkins can trigger Cloud Build to offload heavy builds.
+
+15
+00:00:54,169 --> 00:00:57,310
+This lets Jenkins orchestrate the workflows,
+
+16
+00:00:57,459 --> 00:01:00,620
+but lets Cloud Build do the compute heavy work.
+
+17
+00:01:00,620 --> 00:01:06,870
+A very common setup is Jenkins handles the CI and Cloud Deploy handles the dev,
+
+18
+00:01:06,870 --> 00:01:08,589
+staging, and prod rollout.
+
+19
+00:01:08,849 --> 00:01:12,902
+This provides compliance‑level release, tracking, and rollback
+
+20
+00:01:12,902 --> 00:01:16,241
+capabilities that Jenkins alone does not offer.
+
+21
+00:01:16,491 --> 00:01:20,622
+GitHub Actions is now extremely popular in the SaaS
+
+22
+00:01:21,111 --> 00:01:23,452
+startups and even enterprise teams.
+
+23
+00:01:23,641 --> 00:01:27,882
+This acts as the CI front end while Google handles the
+
+24
+00:01:27,882 --> 00:01:30,052
+artifact storage and deployments.
+
+25
+00:01:30,241 --> 00:01:33,291
+A pretty common pattern is GitHub Actions,
+
+26
+00:01:33,372 --> 00:01:36,692
+Cloud Build, Artifact Registry, and Cloud Deploy.
+
+27
+00:01:37,012 --> 00:01:42,454
+Companies adopt this hybrid approach because developers stay in the GitHub,
+
+28
+00:01:42,653 --> 00:01:46,790
+identities stay secure using the Workload Identity Federation,
+
+29
+00:01:46,933 --> 00:01:49,054
+and builds run on Google Cloud.
+
+30
+00:01:49,253 --> 00:01:51,814
+This model is now extremely common.
+
+31
+00:01:52,134 --> 00:01:54,774
+Argo CD is the king of GitOps,
+
+32
+00:01:54,893 --> 00:01:59,814
+and it pairs beautifully with the Google Kubernetes Engine and Config Connector.
+
+33
+00:02:00,054 --> 00:02:03,094
+The typical architecture is Cloud Build handles the CI,
+
+34
+00:02:03,244 --> 00:02:08,945
+Artifact Registry store the images, GitOps repos store the Kubernetes manifest,
+
+35
+00:02:09,015 --> 00:02:13,136
+and Argo CD automatically syncs to GKE clusters.
+
+36
+00:02:13,335 --> 00:02:18,175
+The GitOps works very well in the GCP because GKE has a
+
+37
+00:02:18,175 --> 00:02:20,955
+strong RBAC and native workload identity,
+
+38
+00:02:21,175 --> 00:02:26,065
+and Config Connector lets GitHub manage both apps and infra.
+
+39
+00:02:26,416 --> 00:02:29,115
+The most important part is securing the pipeline.
+
+40
+00:02:29,345 --> 00:02:34,598
+Google Cloud follows SLSA, an industry standard for supply chain security.
+
+41
+00:02:34,777 --> 00:02:38,177
+It has artifactory registry scanning that every pushed
+
+42
+00:02:38,177 --> 00:02:41,768
+image is scanned for OS vulnerabilities,
+
+43
+00:02:41,988 --> 00:02:44,968
+language‑level CVs, and base image issues.
+
+44
+00:02:45,138 --> 00:02:48,098
+You can block images with critical vulnerabilities.
+
+45
+00:02:48,257 --> 00:02:53,658
+It has the binary authorization that can enforce only signed images can deploy,
+
+46
+00:02:53,938 --> 00:02:56,218
+build, and only approved releases.
+
+47
+00:02:56,388 --> 00:02:59,770
+This prevents tampered containers, compromised build
+
+48
+00:02:59,770 --> 00:03:02,070
+systems, and unauthorized deployments.
+
+49
+00:03:02,210 --> 00:03:06,339
+Workload Identity Federation is recommended over service account keys.
+
+50
+00:03:06,539 --> 00:03:08,600
+Your GitHub Actions, Jenkins,
+
+51
+00:03:08,610 --> 00:03:13,779
+and Argo CD can all authenticate to Google Cloud without JSON keys,
+
+52
+00:03:13,940 --> 00:03:16,210
+removing a massive security risk.
+
+53
+00:03:16,419 --> 00:03:16,660
+Also,
+
+54
+00:03:16,740 --> 00:03:21,539
+the tools like OPA Gatekeeper can enforce policy as a code
+
+55
+00:03:21,539 --> 00:03:24,929
+where you can enforce no privileged containers,
+
+56
+00:03:25,289 --> 00:03:28,932
+no public buckets, all deployment must declare limits.
+
+57
+00:03:29,102 --> 00:03:29,701
+And lastly,
+
+58
+00:03:29,981 --> 00:03:35,382
+CI/CD isolation never runs CI and production workload on the same cluster.
+
+59
+00:03:35,542 --> 00:03:40,261
+Google Cloud Deploy and Artifact Registry enforce this separation.
+
+60
+00:03:40,501 --> 00:03:43,371
+So that's how the third‑party tools Jenkins,
+
+61
+00:03:43,501 --> 00:03:48,201
+GitHub Actions, Argo CD integrate seamlessly with Google Cloud,
+
+62
+00:03:48,251 --> 00:03:52,462
+and that's how you secure the entire CI/CD supply chain.
