@@ -1,0 +1,227 @@
+1
+00:00:01,600 --> 00:00:07,239
+If you've ever walked into a company where every project feels different,
+
+2
+00:00:07,269 --> 00:00:11,989
+different naming, different regions, different networking choices,
+
+3
+00:00:12,159 --> 00:00:16,989
+you have experienced what we call as organizational entropy,
+
+4
+00:00:17,120 --> 00:00:21,840
+and once that sets in, it becomes really hard to scale.
+
+5
+00:00:22,000 --> 00:00:24,579
+But the good news is a clean,
+
+6
+00:00:24,920 --> 00:00:27,520
+well‑designed Google Cloud resource hierarchy
+
+7
+00:00:27,520 --> 00:00:30,600
+eliminates that chaos before it even begins.
+
+8
+00:00:30,719 --> 00:00:34,419
+Organization is your anchor, the root of everything,
+
+9
+00:00:34,549 --> 00:00:39,430
+but this time our job is to shape what comes under the
+
+10
+00:00:39,430 --> 00:00:42,439
+organization in a way that makes sense for your team,
+
+11
+00:00:42,560 --> 00:00:45,000
+your workload, and your long‑term growth.
+
+12
+00:00:45,119 --> 00:00:49,099
+You can think of the organization known as the trunk of a tree.
+
+13
+00:00:49,279 --> 00:00:52,279
+Now we are about to design the branches.
+
+14
+00:00:52,439 --> 00:00:56,779
+Folders are often misunderstood, but they are extremely powerful.
+
+15
+00:00:56,919 --> 00:01:00,400
+Google describes them as a grouping mechanism for the
+
+16
+00:01:00,400 --> 00:01:04,019
+projects that mirror the business, security,
+
+17
+00:01:04,040 --> 00:01:08,480
+or even the application boundaries. Let's break them into a further,
+
+18
+00:01:08,519 --> 00:01:10,550
+more easy way to understand.
+
+19
+00:01:10,720 --> 00:01:14,319
+The most common enterprise pattern is you have organization.
+
+20
+00:01:14,519 --> 00:01:18,410
+Organization contains the folders based on environments.
+
+21
+00:01:18,599 --> 00:01:22,160
+These folders have projects for applications.
+
+22
+00:01:22,319 --> 00:01:25,519
+For example, you could have the folders for production,
+
+23
+00:01:25,680 --> 00:01:26,510
+for staging,
+
+24
+00:01:26,669 --> 00:01:30,300
+for your non‑production or dev environment, and maybe
+
+25
+00:01:30,300 --> 00:01:33,069
+for sandbox and for experiments.
+
+26
+00:01:33,120 --> 00:01:34,290
+You may be thinking,
+
+27
+00:01:34,580 --> 00:01:37,639
+why Google recommends this. Because environment‑level
+
+28
+00:01:37,639 --> 00:01:40,930
+folders help you apply distinct policies.
+
+29
+00:01:41,080 --> 00:01:44,040
+For example, production can have stricter rules.
+
+30
+00:01:44,269 --> 00:01:49,540
+Sandbox can have more flexible, and staging mirrors the production security,
+
+31
+00:01:49,970 --> 00:01:51,580
+but at the lower scale.
+
+32
+00:01:51,720 --> 00:01:55,629
+Eventually, this helps to create the policy isolation,
+
+33
+00:01:55,760 --> 00:01:59,680
+which is one of an essential design principles for safety.
+
+34
+00:01:59,849 --> 00:02:03,989
+Now let's zoom into the level where the actual workload lives.
+
+35
+00:02:04,279 --> 00:02:05,239
+That is the projects.
+
+36
+00:02:05,400 --> 00:02:08,399
+Projects are the atomic unit of Google Cloud,
+
+37
+00:02:08,520 --> 00:02:12,440
+the actual boundaries for your APIs, billing,
+
+38
+00:02:12,600 --> 00:02:16,899
+your IAM, your quotas, for logs and monitoring,
+
+39
+00:02:17,000 --> 00:02:19,080
+and for your networking attachments.
+
+40
+00:02:19,360 --> 00:02:22,029
+So what does that mean for design?
+
+41
+00:02:22,160 --> 00:02:22,839
+This design,
+
+42
+00:02:22,960 --> 00:02:28,550
+it means each application or sometimes each major component of an
+
+43
+00:02:28,550 --> 00:02:31,029
+application should live in its own project.
+
+44
+00:02:31,119 --> 00:02:33,960
+This gives you clear ownership, isolation,
+
+45
+00:02:34,119 --> 00:02:39,600
+a smaller blast radius, and it helps you to have the cleaner audit logs.
+
+46
+00:02:39,610 --> 00:02:43,619
+Overall, this keeps the things clean, predictable, and scalable.
+
+47
+00:02:43,800 --> 00:02:46,399
+Once we have folders and projects structured,
+
+48
+00:02:46,520 --> 00:02:51,940
+we can apply the organization policy that automatically cascades down.
+
+49
+00:02:52,080 --> 00:02:54,520
+This includes the things like allow regions,
+
+50
+00:02:54,639 --> 00:02:58,100
+data residency requirements, restricting the public IPs,
+
+51
+00:02:58,240 --> 00:03:01,029
+enforcing service account key restrictions,
+
+52
+00:03:01,220 --> 00:03:02,559
+and many more.
+
+53
+00:03:02,720 --> 00:03:06,820
+So your hierarchy is not just about the organization,
+
+54
+00:03:06,880 --> 00:03:12,520
+it's about the consistent security and compliances enforced automatically.
+
+55
+00:03:12,639 --> 00:03:17,300
+And remember, everything flows downward unless overridden intentionally.
+
+56
+00:03:17,410 --> 00:03:21,759
+This is how the large companies avoid the configuration drift and
+
+57
+00:03:21,759 --> 00:03:25,320
+enforce the guardrails without micromanaging the teams.
