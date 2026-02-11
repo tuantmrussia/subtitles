@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:07,360
+ Hi. In the previous version, we used a course sort of one to build an application.
+
+2
+00:00:07,360 --> 00:00:13,040
+ So, we also know that we use the MOOC API Red.
+
+3
+00:00:13,040 --> 00:00:16,520
+ So, it's actually only for today,
+
+4
+00:00:16,520 --> 00:00:21,160
+ but in one day, in one week, it won't be extra anymore.
+
+5
+00:00:21,160 --> 00:00:24,320
+ And it would be nice to use the wife RedData.
+
+6
+00:00:24,320 --> 00:00:27,160
+ We can fetch it from API.
+
+7
+00:00:27,160 --> 00:00:31,640
+ To get always up-to-date results,
+
+8
+00:00:31,640 --> 00:00:35,880
+ okay, let's wish our application.
+
+9
+00:00:35,880 --> 00:00:42,280
+ The first is always you can keep all if you like the changes.
+
+10
+00:00:42,280 --> 00:00:49,760
+ It will be stored and then after you ask for new changes,
+
+11
+00:00:49,760 --> 00:00:55,800
+ you always have an updated difference like what was updated.
+
+12
+00:00:55,800 --> 00:00:58,720
+ I can close the plan.
+
+13
+00:00:58,720 --> 00:01:02,280
+ So, in this version, we will do two things.
+
+14
+00:01:02,280 --> 00:01:11,120
+ First, we will ask a course or about some components and investigation of what API external services we can use
+
+15
+00:01:11,120 --> 00:01:13,200
+ for getting the live rates.
+
+16
+00:01:13,200 --> 00:01:17,240
+ And the next, we will ask a course or to implement it.
+
+17
+00:01:17,240 --> 00:01:20,440
+ So, I already prepared the prompt,
+
+18
+00:01:20,440 --> 00:01:27,640
+ but I will use Ask mode because we're not going to change something to just an investigation.
+
+19
+00:01:27,640 --> 00:01:35,040
+ So, I'm asking what are the most popular external currency exchange rate APIs for JavaScript?
+
+20
+00:01:35,040 --> 00:01:42,920
+ Please compare them with pros and cons and also highlight once which does not require API.
+
+21
+00:01:42,920 --> 00:01:46,040
+ Because if an API require an API key,
+
+22
+00:01:46,040 --> 00:01:53,720
+ it means we need to register, we need to create API key, it might be paid, so I want really easy integration.
+
+23
+00:01:53,720 --> 00:01:59,440
+ So, let's ask a course or and see what investigation he wrote down.
+
+24
+00:01:59,440 --> 00:02:06,480
+ We also can enable, of course, connect to browser, then he will search at the internet.
+
+25
+00:02:06,480 --> 00:02:15,440
+ Not only is the mortgage based, so guess of my bits and other tool, okay.
+
+26
+00:02:15,440 --> 00:02:25,640
+ Okay, we must use current series JavaScript, we have about 10 APIs.
+
+27
+00:02:25,640 --> 00:02:34,080
+ So, the first one is open exchange rates, it requires API key, I will look at this parameter initially,
+
+28
+00:02:34,080 --> 00:02:41,240
+ just don't spend the time if it's not a browser criterion.
+
+29
+00:02:41,240 --> 00:02:54,640
+ And the next fixer is also required, current supplier, also required API key, exchange rate API, same XE currency data, same alpha advantage.
+
+30
+00:02:54,640 --> 00:03:03,640
+ I never heard about it, of data, how much new exchange rate was, if they are not required,
+
+31
+00:03:03,640 --> 00:03:16,840
+ the case, fine, output are not required, and European Central one, also not required.
+
+32
+00:03:16,840 --> 00:03:27,240
+ Free official now also daily only URL based menu and points, okay.
+
+33
+00:03:27,240 --> 00:03:49,840
+ Only in the else, so API, with examples, how to use them, so I need to make my choice between the three.
+
+34
+00:03:49,840 --> 00:04:02,440
+ Okay, it's preparing API, those exchange rate that was no key, case the integration looks really simple.
+
+35
+00:04:02,440 --> 00:04:19,240
+ Here, the transition by default, that place, so I'm going to create a bunch of data, ACB data only, it means it's used on the European Central bank data,
+
+36
+00:04:19,240 --> 00:04:27,440
+ so it has some limited currencies, but for testing purposes it's fine, same, it also looks easy.
+
+37
+00:04:27,440 --> 00:04:42,840
+ Okay, this one is source page, it's XML, you parse and build it on, okay, it's not a good one because it used XML, so JSON and points.
+
+38
+00:04:42,840 --> 00:04:54,440
+ Okay, let's now quickly check this to, at the internet, just to make a quick choice.
+
+39
+00:04:54,440 --> 00:05:07,440
+ Okay, so the exchange.post, I see it's free, but it's requiring API key, okay, so AI doesn't have access to latest information,
+
+40
+00:05:07,440 --> 00:05:19,440
+ or it was just lazy, didn't search the internet, okay, we can ignore this one, and this one, no usage or API key.
+
+41
+00:05:19,440 --> 00:05:38,440
+ Okay, it looks fine, it's a port, a URL, some base currencies, so it updates about four, it's fine, I guess it's fine for us, so we can use this one.
+
+42
+00:05:38,440 --> 00:05:52,440
+ Okay, I already have a prompt, yeah, I will ask replace the mock exchange rates with the front footer API and this application and updates the UI to show the converted results from the API.
+
+43
+00:05:52,440 --> 00:06:06,440
+ So I will ask him to leave the mock data, the rates, and use the actual ones and always get it from API, but I will use agent mode because I need to make changes.
+
+44
+00:06:06,440 --> 00:06:17,440
+ And from this investigation, you can see how I did it, I used ask mode, I first ask about all apps, then pass some criteria.
+
+45
+00:06:17,440 --> 00:06:34,440
+ Then I choose the three looks more of us fine, I ask about more details, then I filtered only two, and then I visited the URL websites, just double check if it's really a pass my criteria or not.
+
+46
+00:06:34,440 --> 00:06:45,440
+ Okay, and if it's implemented, it also makes a small plan, you see like some bigger changes, course or make plan by default, yeah, you have some to do.
+
+47
+00:06:45,440 --> 00:06:54,440
+ And current data updates the rates, and what we have.
+
+48
+00:06:54,440 --> 00:07:07,440
+ Okay, it's decided to make an API request in this file, okay, it's also fine for me, yeah, it's good, it's updating the application.
+
+49
+00:07:07,440 --> 00:07:29,440
+ So let's see what changes he will do, he update, and they'll swap and do convert.
+
+50
+00:07:29,440 --> 00:07:33,440
+ Okay, he finished.
+
+51
+00:07:33,440 --> 00:07:36,440
+ So let's check.
+
+52
+00:07:36,440 --> 00:07:46,440
+ We'll refresh my page, and I try to convert use g2 euro, for example, 500.
+
+53
+00:07:46,440 --> 00:07:54,440
+ Yeah, it did the fetch, so we can check, we can inspect, we can open network pop, and did it again.
+
+54
+00:07:54,440 --> 00:08:07,440
+ Yeah, we see it requested the euro rate with a base currency use here, so it was a days date, so it's great.
+
+55
+00:08:07,440 --> 00:08:18,440
+ I would say it works, so we can keep all changes, I will quickly review, yeah, we have an API instead of mod data, we still have more currencies.
+
+56
+00:08:18,440 --> 00:08:30,440
+ Yeah, so it's fine. Now we know how we can implement some feature requests using kulsorii, and in the next lesson we will do an improvement, so don't miss it.
+
+57
+00:08:30,440 --> 00:08:32,440
+ See you in the next lesson.
+
