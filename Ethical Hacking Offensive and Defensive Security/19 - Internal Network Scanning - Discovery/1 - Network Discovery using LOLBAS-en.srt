@@ -1,0 +1,428 @@
+1
+00:00:00,000 --> 00:00:06,480
+ Hey guys, welcome to another tactics discovery.
+
+2
+00:00:06,480 --> 00:00:13,080
+ So this is one of important things, so once you get on to the organization in any of
+
+3
+00:00:13,080 --> 00:00:17,660
+ a mission, let us think there is a thousand mission in the organization and if I compromise
+
+4
+00:00:17,660 --> 00:00:25,600
+ one of the server and you need to move from one mission to another because hijacking or
+
+5
+00:00:25,600 --> 00:00:35,320
+ hacking one mission is not a very big bill, it's not really helpful for any of them.
+
+6
+00:00:35,320 --> 00:00:40,180
+ If you think about any of an attacker, if you compromised any one mission in the organization,
+
+7
+00:00:40,180 --> 00:00:49,660
+ this will be, this is not a helpful thing because they will be easily rebuilding the
+
+8
+00:00:49,660 --> 00:00:57,100
+ database, the device only contain a few of sensitive data, so only you can hijack few things.
+
+9
+00:00:57,100 --> 00:01:04,520
+ But what, what if you had thousand mission in the organization, you had all the, all the
+
+10
+00:01:04,520 --> 00:01:05,880
+ missions inside the organization.
+
+11
+00:01:05,880 --> 00:01:11,780
+ So now the internal employees of the organization, they cannot able to access their mission
+
+12
+00:01:11,780 --> 00:01:20,660
+ and all the mission sensitive data get published in any of dark over cloud platforms.
+
+13
+00:01:20,660 --> 00:01:26,700
+ So this, this will be a very big deal to the organization because they need to pay a lot
+
+14
+00:01:26,700 --> 00:01:30,000
+ of money to erase the data, right.
+
+15
+00:01:30,000 --> 00:01:34,440
+ So once you achieved the differentization tactics in any of the mission, you will be
+
+16
+00:01:34,440 --> 00:01:44,060
+ going for, for a next tactics like discovery, maybe mitral will be also showing the same,
+
+17
+00:01:44,060 --> 00:01:48,860
+ let's jump on to the mitral here, so once we, once you've done everything, we already
+
+18
+00:01:48,860 --> 00:01:56,980
+ did a credential access to information and all and once you, once you have a credential
+
+19
+00:01:56,980 --> 00:02:01,740
+ access, you will be getting a lot of credentials, I already said maybe you will be getting
+
+20
+00:02:01,740 --> 00:02:08,500
+ active directory credentials, lot of RDP uses credential, excuse me, human passwords.
+
+21
+00:02:08,500 --> 00:02:14,660
+ So the next, next tactics will be jumping on to the discovery section, so you will be
+
+22
+00:02:14,660 --> 00:02:19,980
+ understanding what is the internal network infrastructure, you will be understanding how
+
+23
+00:02:19,980 --> 00:02:26,060
+ the network was architected and how the network was structured inside the organizations
+
+24
+00:02:26,060 --> 00:02:35,140
+ and who are all the RDP uses, who are all the, what are the machines surrounding and
+
+25
+00:02:35,140 --> 00:02:39,700
+ what is the gateway information and what are the service was there, ID was there, each
+
+26
+00:02:39,700 --> 00:02:45,100
+ and everything and domains are there, whether the domain has any trust or not, each
+
+27
+00:02:45,100 --> 00:02:48,380
+ and everything will be getting from the discovery tactics, okay.
+
+28
+00:02:48,380 --> 00:02:52,660
+ Because the next, next tactics, you will be jumping, we will be moving on to the lateral
+
+29
+00:02:52,660 --> 00:02:56,860
+ movement, so the lateral movement is nothing but you will be jumping from one machine
+
+30
+00:02:56,860 --> 00:02:57,860
+ to one another.
+
+31
+00:02:57,860 --> 00:03:01,860
+ So I already said the organization have 1000 machine, you compromise 20 and you need
+
+32
+00:03:01,860 --> 00:03:07,740
+ to jump on to other 999 machine, so you will be scanning the internal networks and you
+
+33
+00:03:07,740 --> 00:03:11,860
+ will be understanding the networks, how it was structured and you will be start taking
+
+34
+00:03:11,860 --> 00:03:14,420
+ the lateral movement tactics, right.
+
+35
+00:03:14,420 --> 00:03:21,740
+ So this is the flow and this is the path for the next cybersecurity attacks we are going
+
+36
+00:03:21,740 --> 00:03:25,380
+ to follow, even the attackers will be following this, okay.
+
+37
+00:03:25,380 --> 00:03:30,100
+ So there is a lot of tool to scan the internal networks as we already know, there will
+
+38
+00:03:30,100 --> 00:03:38,380
+ be advanced IP scan or angry IP scan on its scan and few scanning tools, but if you install
+
+39
+00:03:38,380 --> 00:03:44,380
+ this scanning tool inside the, any of the machine, so sometime your EDRs or antivirus software
+
+40
+00:03:44,380 --> 00:03:49,380
+ will be cache-up and it will be detected and it will be given a lot to the analyst who
+
+41
+00:03:49,380 --> 00:03:51,500
+ is working, okay.
+
+42
+00:03:51,500 --> 00:04:02,740
+ So but we can also take information from the normal command room, we will not get as much
+
+43
+00:04:02,740 --> 00:04:09,600
+ information but we can gather some of the information, like we can ping whatever host
+
+44
+00:04:09,600 --> 00:04:17,420
+ which has I have, let me ping for 18.1, so I am already, I am getting a request so I can
+
+45
+00:04:17,420 --> 00:04:27,140
+ assume the 18.1 was online and if I give the ARP-A, you can understand few of the host,
+
+46
+00:04:27,140 --> 00:04:36,540
+ it was giving an ARP request, like one dot one dot 2981 to 65 and few of the host and
+
+47
+00:04:36,540 --> 00:04:47,260
+ let me ping for ARP-A 192.168.18.1, so here you can find the physical
+
+48
+00:04:47,260 --> 00:04:53,140
+ address of my gateway, once you get the physical address, you can, if you need you can
+
+49
+00:04:53,140 --> 00:05:05,140
+ go for a max checker, so you will be getting, you will be getting, get an extra information
+
+50
+00:05:05,140 --> 00:05:12,500
+ about what the, what router I was using and this information, I was using the how, how
+
+51
+00:05:12,500 --> 00:05:19,660
+ how I take technologies, how I write router, so from the MAC address you can find what
+
+52
+00:05:19,660 --> 00:05:27,060
+ was the device, so that's Dell or HD or Apple machines or any, any others, you can also
+
+53
+00:05:27,060 --> 00:05:34,540
+ find the VPN, VPN name, VPN vendor name, firewall vendors name, etc, okay, so this is
+
+54
+00:05:34,540 --> 00:05:44,300
+ enough, the thing, and you can also use the in the based commands to be domain, so what
+
+55
+00:05:44,300 --> 00:05:50,020
+ are the, what are the domain information, like visible computers inside the domain, so
+
+56
+00:05:50,020 --> 00:05:55,820
+ as of now I do not have an, I do not have an active directory that was configured in my
+
+57
+00:05:55,820 --> 00:06:05,860
+ machine, so I will not get much information here, so, because it was saying system error
+
+58
+00:06:05,860 --> 00:06:10,980
+ 6 chronometer has been observed, the list of server follow, blue is not currently available
+
+59
+00:06:10,980 --> 00:06:16,340
+ because I didn't configure the domain in my visual environment, that way it was showing,
+
+60
+00:06:16,340 --> 00:06:24,820
+ so next command we can do ipconfig slash all to list each and every information about
+
+61
+00:06:24,820 --> 00:06:32,740
+ the device, and we have other commands as well, we have an account discovery command
+
+62
+00:06:32,740 --> 00:06:39,740
+ like net user to list all the user, so here we can see the administrator attacker, guest
+
+63
+00:06:39,740 --> 00:06:50,700
+ user, and the user, we have, we have plenty of thing, and let's, again, numerate the local
+
+64
+00:06:50,700 --> 00:06:57,140
+ group, so here you can find few of the list, few of the local group it has listed, access
+
+65
+00:06:57,140 --> 00:07:05,100
+ control assistant operator administrator list, and we have a remote desktop user, so here
+
+66
+00:07:05,100 --> 00:07:32,540
+ you can find of let me check for net unit local group remote desktop, this is, okay.
+
+67
+00:07:32,540 --> 00:07:46,620
+ So, there is a, there is no more users was present inside the remote desktop group, let
+
+68
+00:07:46,620 --> 00:08:02,060
+ me check for an administrator group, so here you can find few users, they are in
+
+69
+00:08:02,060 --> 00:08:12,060
+ administrator, administrator level group, so administrator, attacker, and user, these three
+
+70
+00:08:12,060 --> 00:08:17,780
+ users are in the administrator, so you can understand how the network has been structured
+
+71
+00:08:17,780 --> 00:08:24,300
+ and who are all the domain group, who are all this domain group, and whether they have
+
+72
+00:08:24,300 --> 00:08:32,700
+ an RDP, they can use an RDP or not, whether they are in the administrator group or each
+
+73
+00:08:32,700 --> 00:08:39,860
+ and everything, so let me show another command, "OMI slash", this is one of the common
+
+74
+00:08:39,860 --> 00:08:46,900
+ command that was used by threat actors to check the privilege of an account, so this
+
+75
+00:08:46,900 --> 00:08:51,500
+ is an administrator account, so that we are getting high mandatory level, we have already
+
+76
+00:08:51,500 --> 00:08:58,860
+ seen a lot of things in a privilege escalation section about escalating the privileges,
+
+77
+00:08:58,860 --> 00:09:06,060
+ and so once you get some of the account and domain-based information, so the next step
+
+78
+00:09:06,060 --> 00:09:11,460
+ of the threat actors, they will be jumping on to the system-based information, you can
+
+79
+00:09:11,460 --> 00:09:19,220
+ use system info command to load the system information, so what are the hard fit studies,
+
+80
+00:09:19,220 --> 00:09:25,540
+ and whether the which update we are in, and macro, etc, etc, so what are the physical
+
+81
+00:09:25,540 --> 00:09:33,340
+ memory, and everything, it will be giving, so you can see here, so you will be getting
+
+82
+00:09:33,340 --> 00:09:38,340
+ each and every information about my, about the mission, so what was the processor, what
+
+83
+00:09:38,340 --> 00:09:50,980
+ was the hard fixers, and the memory space, everything will be getting from this, okay, and
+
+84
+00:09:50,980 --> 00:10:03,980
+ you can also get much information using the login tool, the WMIC, computer system,
+
+85
+00:10:03,980 --> 00:10:31,340
+ you get name, domain, manufacturer, so here you can see it given few of the information,
+
+86
+00:10:31,340 --> 00:10:53,340
+ no text, you can see the machine, let me show my screen on from, so here you can find my machine
+
+87
+00:10:53,340 --> 00:10:59,580
+ information, so I do not have any kind of domain, so it was not given any domain, and it was
+
+88
+00:10:59,580 --> 00:11:05,500
+ given other things like model, manufacturer, and fewer information, so you can get a lot
+
+89
+00:11:05,500 --> 00:11:12,820
+ of information from the machine using the pre different custom commands of the logins,
+
+90
+00:11:12,820 --> 00:11:21,900
+ so this is one of the best, best example of how the threat tactics use the commands
+
+91
+00:11:21,900 --> 00:11:27,220
+ to enumerate from the machine, the reason I am showing these commands, because when you
+
+92
+00:11:27,220 --> 00:11:33,060
+ are in a blue teaming, so if you started investigating the threat tactics activity, if you
+
+93
+00:11:33,060 --> 00:11:38,740
+ doing some foreign 16, any of the machine, so you need to understand this, all the commands
+
+94
+00:11:38,740 --> 00:11:45,900
+ are used for the discovery to get the account information, okay, account information, network
+
+95
+00:11:45,900 --> 00:11:52,620
+ information, and domain information, so you can easily figure it out, what was happening
+
+96
+00:11:52,620 --> 00:11:56,860
+ inside the machine, and what are the commands get executed, so if you think of, you think
+
+97
+00:11:56,860 --> 00:12:04,900
+ about the PowerShell, so there is a powerful commands get AD users, so it will give the user
+
+98
+00:12:04,900 --> 00:12:12,220
+ information in the Active Directory, so now we do not have an Active Directory that
+
+99
+00:12:12,220 --> 00:12:28,660
+ it configured, so we will not get anything, and we have other powerful commands also, NetIP
+
+100
+00:12:28,660 --> 00:12:46,220
+ can find a few information from here, if the Active Directory has been configured, it will
+
+101
+00:12:46,220 --> 00:12:53,920
+ show plenty of information about the machines and about the users, but our test environment
+
+102
+00:12:53,920 --> 00:13:01,940
+ we do not have an Active Directory, but this is not like an organization, because organization
+
+103
+00:13:01,940 --> 00:13:06,300
+ have an Active Directory that has been configured internally, so you will be get much, much
+
+104
+00:13:06,300 --> 00:13:12,500
+ information, then what we are getting here, okay, so that's all about the video, and
+
+105
+00:13:12,500 --> 00:13:18,420
+ these are the few enumeration discovery commands that the threat tactics may use to get
+
+106
+00:13:18,420 --> 00:13:24,100
+ information about internal networks, users, domain and about these systems, okay, so let's
+
+107
+00:13:24,100 --> 00:13:27,540
+ swap off from here, and we will connect you guys in the next video, see you, bye bye.
+
