@@ -1,0 +1,560 @@
+1
+00:00:00,000 --> 00:00:05,680
+ All right folks next we talk about operators and expressions. Now what are
+
+2
+00:00:05,680 --> 00:00:10,720
+ expressions in any programming language you can just think about them as being
+
+3
+00:00:10,720 --> 00:00:17,880
+ let's say in Java or C++ or in C# or Python anything that can be evaluated to a
+
+4
+00:00:17,880 --> 00:00:22,800
+ value right. So they can be for example if we just have a look at this
+
+5
+00:00:22,800 --> 00:00:31,040
+ invitation you can just say 6 plus 9 this is an expression right you can even say
+
+6
+00:00:31,040 --> 00:00:38,240
+ 16 divided by 7 for example this is another expression so so these are all
+
+7
+00:00:38,240 --> 00:00:43,640
+ expressions that can evaluate to a value that is 6 plus 9 you would say
+
+8
+00:00:43,640 --> 00:00:49,920
+ would evaluate to a value that is 15 similarly you do the division for 16
+
+9
+00:00:49,920 --> 00:00:57,240
+ divided by 7 you will again get a different value so that is about expressions
+
+10
+00:00:57,240 --> 00:01:03,960
+ right so and then we come upon and expressions you can find them any anywhere or
+
+11
+00:01:03,960 --> 00:01:10,080
+ everywhere in programming languages like in conditions loops or in method
+
+12
+00:01:10,080 --> 00:01:14,520
+ bodies you'll find them everywhere right and then we would have this has
+
+13
+00:01:14,520 --> 00:01:19,200
+ something to do with operators as well if you have a look at this thing here so
+
+14
+00:01:19,200 --> 00:01:25,840
+ you can say this here is an operator similarly this here is an operator that
+
+15
+00:01:25,840 --> 00:01:31,080
+ is the operator here is the plus this is the division and then we have some
+
+16
+00:01:31,080 --> 00:01:35,200
+ operators in Java as with any of the programming language like for example we
+
+17
+00:01:35,200 --> 00:01:41,240
+ have arithmetic operators and those are for example less you have minus you
+
+18
+00:01:41,240 --> 00:01:48,000
+ have multiply you have divide and you have modulus as well right so now
+
+19
+00:01:48,000 --> 00:01:54,160
+ obviously you will know that these require operands to be worked with right
+
+20
+00:01:54,160 --> 00:02:00,760
+ on both the left and the right side with plus it just results in addition this
+
+21
+00:02:00,760 --> 00:02:04,720
+ is a subtraction a multiplication and a division and the difference between the
+
+22
+00:02:04,720 --> 00:02:09,760
+ modulus and the division is now if you sometimes have a requirement of using
+
+23
+00:02:09,760 --> 00:02:16,000
+ the modulus operator it would give you not the cushion but the remainder of
+
+24
+00:02:16,000 --> 00:02:20,760
+ things right and there are certain requirements or situations where we instead
+
+25
+00:02:20,760 --> 00:02:27,720
+ of division we use this modulus operator as well and then we have some more
+
+26
+00:02:27,720 --> 00:02:35,040
+ operators into the mix like we have comparison operators like you have less
+
+27
+00:02:35,040 --> 00:02:42,280
+ than greater than less than equal to you have greater than equal to you have
+
+28
+00:02:42,280 --> 00:02:48,640
+ a assignment operator and you have not equal to as well so these are what you
+
+29
+00:02:48,640 --> 00:02:54,000
+ say is comparison operators and generally we use them with conditions wherever
+
+30
+00:02:54,000 --> 00:02:58,880
+ you have to specify a condition be it in a if condition or a for loop or a
+
+31
+00:02:58,880 --> 00:03:03,880
+ while or a do while or somewhere as I said where you require conditions to be
+
+32
+00:03:03,880 --> 00:03:09,200
+ put in so for that fact we have the comparison operators that are these ones
+
+33
+00:03:09,200 --> 00:03:17,240
+ here right the second ones so then you have the unary operators that is
+
+34
+00:03:17,240 --> 00:03:26,960
+ plus plus and minus minus right which you use again for addition and
+
+35
+00:03:26,960 --> 00:03:33,040
+ subtraction but use it only as with one operand rather than these ones which
+
+36
+00:03:33,040 --> 00:03:37,960
+ require two operands to be used but these just require one operand either to
+
+37
+00:03:37,960 --> 00:03:43,480
+ the left or the right and if you use it if you use let's say a variable with
+
+38
+00:03:43,480 --> 00:03:48,040
+ the and then plus plus it becomes the post fix unary operator if you use the
+
+39
+00:03:48,040 --> 00:03:52,640
+ operator first and then the operand it becomes the prefix unary operator
+
+40
+00:03:52,640 --> 00:03:56,920
+ right so we'll have a look at those ones as well with some quick examples I'll
+
+41
+00:03:56,920 --> 00:04:02,920
+ just head over back to intelligent IDE and what I'll do is this was user input
+
+42
+00:04:02,920 --> 00:04:09,120
+ or Java we'll again say a new class inside my package that is org org for
+
+43
+00:04:09,120 --> 00:04:17,360
+ now and I'll just call it operators work right again I'll just maximize this
+
+44
+00:04:17,360 --> 00:04:21,040
+ for you for you to have a good look at this we have the main method we don't
+
+45
+00:04:21,040 --> 00:04:24,840
+ need to write it completely as you know the IntelliSense in IntelliG has
+
+46
+00:04:24,840 --> 00:04:31,760
+ always been one of its 40 right so starting with let's say I have a variable
+
+47
+00:04:31,760 --> 00:04:37,880
+ there I just call it well and you can get user input from runtime as well and
+
+48
+00:04:37,880 --> 00:04:42,440
+ I can instead of doing the scanner first and then the next int I can just do it
+
+49
+00:04:42,440 --> 00:04:47,480
+ at this way like if I just have to use it at one line I'll say new scanner it
+
+50
+00:04:47,480 --> 00:04:55,160
+ was imported once I hit enter dot next int right and so that the user knows why
+
+51
+00:04:55,160 --> 00:05:02,080
+ the cursor is blinking so I'll just put in a sound and I'll just say enter a number
+
+52
+00:05:02,080 --> 00:05:07,320
+ and the value would be taken into this variable that as well and then what I
+
+53
+00:05:07,320 --> 00:05:12,440
+ can do is I can say well plus plus for example for starting with I can just say
+
+54
+00:05:12,440 --> 00:05:18,440
+ well plus 10 and I can assign it through the same variable well or if my
+
+55
+00:05:18,440 --> 00:05:21,400
+ requirement is different then I can assign it to a different variable that
+
+56
+00:05:21,400 --> 00:05:25,680
+ depends on the requirement I say always say programming is requirement
+
+57
+00:05:25,680 --> 00:05:29,880
+ driven it doesn't depend on the mood that you are in today right it doesn't
+
+58
+00:05:29,880 --> 00:05:35,160
+ depend on what you're feeling like but it's always requirement driven whatever
+
+59
+00:05:35,160 --> 00:05:38,600
+ user require your requirement is those kind of tools you're going to use I'm
+
+60
+00:05:38,600 --> 00:05:41,680
+ just going to tell you about the different tools that are available for you in
+
+61
+00:05:41,680 --> 00:05:46,080
+ the Java programming language like these operators but then it's upon you how
+
+62
+00:05:46,080 --> 00:05:50,840
+ and where you would use them right so for example now my requirement is I just
+
+63
+00:05:50,840 --> 00:05:55,760
+ want to add 10 with the number that the user entered at on time and then
+
+64
+00:05:55,760 --> 00:06:01,400
+ assign it to the same variable and then I'll just say sound and I'll just print
+
+65
+00:06:01,400 --> 00:06:05,360
+ in the value I'll hit quickly control R and you're seeing enter a number I'll
+
+66
+00:06:05,360 --> 00:06:11,880
+ say 210 and you're seeing 220 right so this 10 was added to well and it did
+
+67
+00:06:11,880 --> 00:06:19,400
+ the job similarly try your stuff out with the minus multiply divide and
+
+68
+00:06:19,400 --> 00:06:23,960
+ modulus for divide let's do it because there's a difference if you said well
+
+69
+00:06:23,960 --> 00:06:29,800
+ divided by 10 I'll just say run and then you say three forty nine and you got
+
+70
+00:06:29,800 --> 00:06:35,520
+ thirty four right because three forty nine was divided by ten and once you do
+
+71
+00:06:35,520 --> 00:06:39,440
+ that we got thirty four but if you had done the modulus just have a look at
+
+72
+00:06:39,440 --> 00:06:46,880
+ the difference it would have made again hit run so again I'll say three forty
+
+73
+00:06:46,880 --> 00:06:50,800
+ nine and you just got nine right so that's the difference between the divide
+
+74
+00:06:50,800 --> 00:06:56,740
+ and the modulus this time also three forty nine was divided by ten and ten
+
+75
+00:06:56,740 --> 00:07:03,360
+ usually say thirty four into ten is three forty and you got the remainder in
+
+76
+00:07:03,360 --> 00:07:08,200
+ this case that is that is nine and for a classic program like reverse of any
+
+77
+00:07:08,200 --> 00:07:12,440
+ number that the user interests on time we need the modules right we can't do
+
+78
+00:07:12,440 --> 00:07:16,120
+ stuff there with the divide right that is something you can just try out after
+
+79
+00:07:16,120 --> 00:07:20,400
+ this video as an exercise that is just take a number from user run time and
+
+80
+00:07:20,400 --> 00:07:26,080
+ then calculate and print it servers okay so that's a difference and but if
+
+81
+00:07:26,080 --> 00:07:30,940
+ you would just want it to shorten this a bit right because see we should
+
+82
+00:07:30,940 --> 00:07:36,460
+ always try to write a succent precise code but only after we learn the
+
+83
+00:07:36,460 --> 00:07:40,080
+ fundamentals well first do it the longer way that's my advice that's my
+
+84
+00:07:40,080 --> 00:07:44,600
+ suggestion always to all the learners in my sessions but once you have got a
+
+85
+00:07:44,600 --> 00:07:49,640
+ hold of the longer way then always try to do things the shorter way the more
+
+86
+00:07:49,640 --> 00:07:55,320
+ succinct way the less were was way right and if you would have wanted to do
+
+87
+00:07:55,320 --> 00:07:59,760
+ this you could have just shortened it by just saying something like this that
+
+88
+00:07:59,760 --> 00:08:05,040
+ is modulus is equal to that is a compound operator here right these are all
+
+89
+00:08:05,040 --> 00:08:11,000
+ compound operators right what does this do is it first modulus that device
+
+90
+00:08:11,000 --> 00:08:15,200
+ sets and just puts in the result into this variable similarly we have plus
+
+91
+00:08:15,200 --> 00:08:21,000
+ equal to we have minus equal to we have multiplied equal to as well these are
+
+92
+00:08:21,000 --> 00:08:24,600
+ all compound operators why are they called compound operators because they do
+
+93
+00:08:24,600 --> 00:08:29,280
+ more the one operation at the same time it multiplies as well as a sign and in
+
+94
+00:08:29,280 --> 00:08:32,800
+ our case it does the modulus and then does the assignment as well these are
+
+95
+00:08:32,800 --> 00:08:40,360
+ compound operators right and then I was telling you we can too that is let's
+
+96
+00:08:40,360 --> 00:08:44,960
+ just comment this out for now I can do the unary operator weekly I'll say
+
+97
+00:08:44,960 --> 00:08:50,520
+ well plus plus right and they'll use do a sound and I'll just say well so what
+
+98
+00:08:50,520 --> 00:08:55,680
+ happens is it just gets the value from memory that would be what I would have
+
+99
+00:08:55,680 --> 00:09:01,280
+ entered at runtime then if there was an associated operation on this line it
+
+100
+00:09:01,280 --> 00:09:05,080
+ would have done that first and then the addition right that's why it's called
+
+101
+00:09:05,080 --> 00:09:11,320
+ post fix right so a rule of thumb or the thing that makes you remember this is
+
+102
+00:09:11,320 --> 00:09:15,720
+ post fix says it gets the value from memory then first does the associated
+
+103
+00:09:15,720 --> 00:09:19,440
+ operation first if there was any on line number 16 there is no there is no
+
+104
+00:09:19,440 --> 00:09:23,880
+ associated operation right it's simple but I'll just shortly make it do so and
+
+105
+00:09:23,880 --> 00:09:28,480
+ then does the addition but on the other hand if it was like this that is the
+
+106
+00:09:28,480 --> 00:09:34,200
+ prefix then it would do the get the memory value first then do the addition and
+
+107
+00:09:34,200 --> 00:09:38,280
+ then the associated value that's why it's called prefix do it first and then do
+
+108
+00:09:38,280 --> 00:09:42,840
+ the associated operation but here you should remember on line number 16 plus
+
+109
+00:09:42,840 --> 00:09:47,220
+ plus well or if you would write like this this doesn't make any difference it
+
+110
+00:09:47,220 --> 00:09:50,880
+ just adds it because there is it's just a singular operation just run this
+
+111
+00:09:50,880 --> 00:09:56,640
+ out and you say 230 becomes 31 but if you would have written this the other way
+
+112
+00:09:56,640 --> 00:10:04,560
+ it would still give you 231 see but now if you would have done something like
+
+113
+00:10:04,560 --> 00:10:08,960
+ this and this would make it clear to you I have just used this unary operator
+
+114
+00:10:08,960 --> 00:10:14,280
+ within a print ln and if said print ln plus plus well what would it do now is
+
+115
+00:10:14,280 --> 00:10:19,040
+ if I enter 230 or any number it would get that but first do the increment in
+
+116
+00:10:19,040 --> 00:10:23,000
+ the memory update that in the memory and then do the print ln so you'll get the
+
+117
+00:10:23,000 --> 00:10:29,400
+ updated value let's have a look at that so I'll say 231 gets gives you
+
+118
+00:10:29,400 --> 00:10:33,680
+ 232 but if you would have done the post fix with minus minus or plus plus
+
+119
+00:10:33,680 --> 00:10:38,800
+ with just using plus plus as an example and you will see now you will only get
+
+120
+00:10:38,800 --> 00:10:43,320
+ the value that is not updated you will get the older value what does it do it
+
+121
+00:10:43,320 --> 00:10:47,440
+ gets the value from the memory what is that in the memory then first does the
+
+122
+00:10:47,440 --> 00:10:51,600
+ associated operation and then increments in the memory let's have a look at this
+
+123
+00:10:51,600 --> 00:10:58,480
+ they should still give me 231 but in the memory it's 232 now and you can get a
+
+124
+00:10:58,480 --> 00:11:06,040
+ proof of that by just saying control D just print well now see say 231 say
+
+125
+00:11:06,040 --> 00:11:11,560
+ first 231 but in the memory it was 232 right that's how prefix and post
+
+126
+00:11:11,560 --> 00:11:16,760
+ fix work right similarly we have other operators as I said that that is less
+
+127
+00:11:16,760 --> 00:11:21,720
+ than we have less than equal to we have greater than we have greater than equal to
+
+128
+00:11:21,720 --> 00:11:26,800
+ and we have assignment operator and we have not equal to as well but these are
+
+129
+00:11:26,800 --> 00:11:33,240
+ comparison operators generally we use them with in a condition generally not
+
+130
+00:11:33,240 --> 00:11:42,400
+ always but generally I'll just say these are comparison operators and then you
+
+131
+00:11:42,400 --> 00:11:50,080
+ have logical operators for combining multiple conditions like and you have or
+
+132
+00:11:50,080 --> 00:11:55,720
+ and you have not and you have a variety of these as well with the singular and
+
+133
+00:11:55,720 --> 00:12:00,640
+ and with the singular or that is the short circuit and and the short circuit or
+
+134
+00:12:00,640 --> 00:12:05,440
+ and this is the non short circuit and in the short circuit or and there is a
+
+135
+00:12:05,440 --> 00:12:10,560
+ significant difference in how they work and more on that in the next video with
+
+136
+00:12:10,560 --> 00:12:14,560
+ how these work in conditions and these ones but before that obviously we
+
+137
+00:12:14,560 --> 00:12:19,640
+ need to know how does if else or particularly how does if work in Java to get
+
+138
+00:12:19,640 --> 00:12:23,040
+ you started with writing conditions even if you're coming from a different
+
+139
+00:12:23,040 --> 00:12:26,720
+ language what is same here what is similar and what is different what are the
+
+140
+00:12:26,720 --> 00:12:33,680
+ varieties in Java when it comes to when it comes to writing conditions
+
