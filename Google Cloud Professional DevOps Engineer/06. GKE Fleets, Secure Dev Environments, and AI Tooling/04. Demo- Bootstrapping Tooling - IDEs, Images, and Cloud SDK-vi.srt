@@ -1,0 +1,396 @@
+1
+00:00:01,230 --> 00:00:04,710
+Hãy tưởng tượng một nhà phát triển mới gia nhập đội của bạn vào thứ hai.
+
+2
+00:00:04,829 --> 00:00:10,909
+Họ mở máy tính xách tay và lập tức bỏ ra hai ngày để cài đặt những thông tin đó.
+
+3
+00:00:11,109 --> 00:00:12,949
+Không chỉ điều này là không hiệu quả,
+
+4
+00:00:13,109 --> 00:00:16,909
+Nhưng nó cũng tạo ra sự không nhất quán và không đáng tin cậy.
+
+5
+00:00:17,069 --> 00:00:20,430
+Nếu mỗi nhà phát triển có thể bắt đầu với một cấu hình đầy đủ,
+
+6
+00:00:20,670 --> 00:00:23,469
+Hoàn toàn phù hợp với môi trường trong vài giây?
+
+7
+00:00:23,590 --> 00:00:26,725
+Đó chính xác là điều chúng tôi sẽ làm trong clip này. Chúng ta
+
+8
+00:00:26,725 --> 00:00:29,045
+sẽ vào trạm làm việc của chúng ta,
+
+9
+00:00:29,225 --> 00:00:30,545
+mà chúng ta đã tạo ra.
+
+10
+00:00:30,665 --> 00:00:34,865
+Bây giờ, ở trạm làm việc Đám mây này, nơi chúng tôi đã tạo ra trong clip trước,
+
+11
+00:00:34,944 --> 00:00:38,505
+Tôi sẽ cài đặt một vài phần mềm, và tôi muốn
+
+12
+00:00:38,505 --> 00:00:40,865
+Hãy tạo nó như một hình ảnh đã được cấu hình sẵn.
+
+13
+00:00:40,944 --> 00:00:44,455
+Vì vậy, trong clip trước đây, chúng tôi đã cài đặt Google Cloud CLI.
+
+14
+00:00:44,575 --> 00:00:46,564
+Bây giờ hãy thêm một số nữa.
+
+15
+00:00:46,825 --> 00:00:47,685
+Nói rõ nhé.
+
+16
+00:00:48,049 --> 00:00:50,700
+Hãy cài kibctl. Nó đang được cài đặt.
+
+17
+00:00:50,889 --> 00:00:52,250
+Sẽ mất chút thời gian.
+
+18
+00:00:52,490 --> 00:00:56,049
+Bây giờ khi nó được cài đặt, tôi sẽ cài đặt một thư viện khác,
+
+19
+00:00:56,130 --> 00:01:00,689
+Hãy nói rằng Helm, nói sudo apt conglet cài đặt,
+
+20
+00:01:00,849 --> 00:01:02,150
+Hãy nói rõ ràng.
+
+21
+00:01:02,569 --> 00:01:05,989
+Bây giờ chúng ta hãy nói rằng sudo apt chủ nghĩa địa chất.
+
+22
+00:01:06,440 --> 00:01:08,160
+Bây giờ điều này sẽ cài đặt Terraform.
+
+23
+00:01:08,529 --> 00:01:10,330
+Bây giờ hãy thêm một tập tin mới.
+
+24
+00:01:11,080 --> 00:01:13,169
+Và tôi gọi nó là Dockerfile.
+
+25
+00:01:13,569 --> 00:01:17,199
+Bây giờ bên trong tập tin Docker này, hãy để tôi gõ một lệnh.
+
+26
+00:01:17,489 --> 00:01:23,250
+Ở đây, từ Asiasesoutheast1 người máy. pkg.dev.
+
+27
+00:01:23,720 --> 00:01:27,830
+Vì vậy, tôi cung cấp toàn bộ thông tin, và bây giờ tôi sẽ tạo ra
+
+28
+00:01:27,830 --> 00:01:35,010
+ảnh cho điều này ghi trong bảng điều khiển docker xây dựng ảnh  gốc dev:v1.
+
+29
+00:01:35,010 --> 00:01:37,699
+Và điều này sẽ tạo ra một hình ảnh cho tôi.
+
+30
+00:01:37,919 --> 00:01:40,459
+Bây giờ một khi bức ảnh này được tạo ra,
+
+31
+00:01:40,599 --> 00:01:44,860
+Bức ảnh này tôi sẽ đưa vào kho đồ vật.
+
+32
+00:01:45,040 --> 00:01:47,160
+Việc tạo ra hình ảnh này sẽ mất thời gian.
+
+33
+00:01:47,480 --> 00:01:52,722
+Một khi nó đã sẵn sàng, chúng ta sẽ sử dụng hình ảnh này sau này để
+
+34
+00:01:52,722 --> 00:01:56,902
+Tạo ra một trạm làm việc mới để tất cả các trạm làm việc mới mà chúng tôi
+
+35
+00:01:57,751 --> 00:02:02,722
+Tạo sẽ có môi trường chính xác và tất cả các cụ thể
+
+36
+00:02:02,722 --> 00:02:04,522
+Phần mềm đã cài đặt vào đó.
+
+37
+00:02:04,722 --> 00:02:07,402
+Bây giờ bạn có thể thấy rằng nó đã được hoàn thành.
+
+38
+00:02:07,482 --> 00:02:11,722
+Hãy để tôi chỉ cần xóa các màn hình, và bây giờ tôi muốn đẩy này
+
+39
+00:02:11,722 --> 00:02:14,623
+ảnh đặc trưng cho kho đồ họa.
+
+40
+00:02:14,723 --> 00:02:18,904
+Bây giờ để đưa hình ảnh cụ thể này vào kho đồ cổ,
+
+41
+00:02:19,044 --> 00:02:21,324
+Đầu tiên, chúng ta hãy tạo ra một kho cổ vật.
+
+42
+00:02:21,404 --> 00:02:24,583
+Vì vậy tôi đang nói rằng các hiện vật g Cloud
+
+43
+00:02:24,583 --> 00:02:28,664
+tạo kho hình ảnh trạm làm việc.
+
+44
+00:02:28,723 --> 00:02:31,363
+Bây giờ nó sẽ yêu cầu tôi rằng tôi chưa được đăng nhập.
+
+45
+00:02:31,444 --> 00:02:35,764
+Vì vậy, hãy để tôi chỉ nói g Cloud auth đăng nhập để tôi sẽ nhận được xác thực.
+
+46
+00:02:35,884 --> 00:02:38,640
+Giờ thì việc xác thực được thực hiện, để tôi chạy lại lệnh.
+
+47
+00:02:38,640 --> 00:02:41,945
+Bây giờ nó đang tạo ra kho đó.
+
+48
+00:02:42,126 --> 00:02:43,595
+Bây giờ cất những thứ đã được tạo ra.
+
+49
+00:02:43,845 --> 00:02:46,666
+Bây giờ hãy đưa hình ảnh vào kho này.
+
+50
+00:02:46,925 --> 00:02:50,005
+Vì điều này, tôi sẽ sử dụng thẻ lệnh docker,
+
+51
+00:02:50,285 --> 00:02:52,955
+Và sau đó trong đó tôi sẽ cung cấp cho các hình ảnh rume.
+
+52
+00:02:53,126 --> 00:02:55,966
+Vì vậy, điều này cũng cho tôi một lỗi của không có thẩm quyền.
+
+53
+00:02:56,205 --> 00:03:00,705
+Vì vậy, hãy để tôi chỉ cần làm điều này, nói rằng g Cloud auth cấu hình lý do máy đánh bạc,
+
+54
+00:03:00,925 --> 00:03:03,106
+Và sau đó tôi cố gắng thêm vào giấy ủy quyền.
+
+55
+00:03:03,647 --> 00:03:04,078
+Nói đồng ý đi.
+
+56
+00:03:04,408 --> 00:03:06,307
+Bây giờ để nó chạy một lần nữa,
+
+57
+00:03:06,488 --> 00:03:09,248
+Và bây giờ bạn có thể thấy rằng nó đã bắt đầu đẩy này
+
+58
+00:03:09,248 --> 00:03:12,248
+ảnh đặc trưng trong kho đồ tạo tác.
+
+59
+00:03:12,298 --> 00:03:15,307
+Sẽ mất một lúc để đẩy toàn bộ hình ảnh này.
+
+60
+00:03:15,527 --> 00:03:17,488
+Một khi bức ảnh này được hoàn thành,
+
+61
+00:03:17,768 --> 00:03:21,848
+chúng tôi đã sẵn sàng để tạo ra các trạm làm việc sử dụng hình ảnh này.
+
+62
+00:03:21,968 --> 00:03:23,798
+Bây giờ điều này đã được đẩy thành công.
+
+63
+00:03:24,087 --> 00:03:29,770
+Bây giờ tôi quay trở lại với Google Cloud của tôi, và ở đây tại nhà ga, tôi sẽ gõ
+
+64
+00:03:29,770 --> 00:03:33,229
+trong lệnh nói tạo cấu hình trạm làm việc.
+
+65
+00:03:33,649 --> 00:03:36,429
+Lần này, tên của tôi được gọi là thiết bị kết nối.
+
+66
+00:03:36,630 --> 00:03:38,100
+Và quan trọng nhất,
+
+67
+00:03:38,410 --> 00:03:43,529
+ảnh hộp chúng tôi cung cấp ở đây là ảnh tự chọn mà chúng tôi
+
+68
+00:03:43,529 --> 00:03:47,210
+đã được tạo ra và đẩy vào kho cổ vật.
+
+69
+00:03:47,610 --> 00:03:48,570
+Bây giờ hãy nói rằng tạo.
+
+70
+00:03:48,759 --> 00:03:52,250
+Bây giờ điều này sẽ tạo ra cấu hình trạm làm việc. ♪ Và một lần ♪
+
+71
+00:03:52,250 --> 00:03:56,200
+chúng ta bắt đầu tạo ra trạm làm việc. Bây giờ
+
+72
+00:03:56,200 --> 00:03:58,029
+cấu hình của chúng ta được tạo ra.
+
+73
+00:03:58,179 --> 00:03:59,919
+Bây giờ hãy tạo ra trạm làm việc.
+
+74
+00:04:00,270 --> 00:04:03,770
+Vì vậy, hãy để tôi đi xuống các trạm làm việc ở đây.
+
+75
+00:04:04,070 --> 00:04:09,250
+Dưới cấu hình trạm làm việc, bây giờ tôi có thể nhìn thấy devcustomconfig.
+
+76
+00:04:09,830 --> 00:04:14,309
+Khi tôi đi vào khu vực của tôi, tôi có thể thấy tên cụm.
+
+77
+00:04:14,589 --> 00:04:17,928
+Và quan trọng nhất, dưới bức ảnh ngăn chặn,
+
+78
+00:04:18,070 --> 00:04:22,690
+Tôi có thể thấy hình ảnh mà chúng tôi đã đưa vào kho đồ vật.
+
+79
+00:04:23,029 --> 00:04:24,269
+Bây giờ ở trên cùng,
+
+80
+00:04:24,390 --> 00:04:30,649
+Hãy tạo ra trạm làm việc, và đặt tên cho trạm làm việc đó.
+
+81
+00:04:30,750 --> 00:04:35,399
+Và đối với trạm làm việc này, tôi chọn cấu hình mà chúng tôi đã tạo ra,
+
+82
+00:04:35,670 --> 00:04:39,269
+Đó là thiết bị hỗ trợ máy tính và nói rằng tạo hóa.
+
+83
+00:04:39,589 --> 00:04:43,029
+Bây giờ sẽ mất một lúc để trạm làm việc này được tạo ra.
+
+84
+00:04:43,309 --> 00:04:44,029
+Đây rồi.
+
+85
+00:04:44,500 --> 00:04:48,339
+Chúng ta sẽ click vào đây trên 3 chấm và nói Bắt đầu.
+
+86
+00:04:48,589 --> 00:04:52,559
+Sẽ mất một lúc để khởi động trạm làm việc đặc biệt này.
+
+87
+00:04:52,869 --> 00:04:54,079
+Một khi chuyện này bắt đầu,
+
+88
+00:04:54,220 --> 00:04:59,540
+Chúng tôi đi vào bên trong trạm làm việc này và xem liệu nó có các chấm mây mà
+
+89
+00:04:59,540 --> 00:05:04,040
+Chúng tôi đã thêm vào là tự động cài đặt có hoặc không.
+
+90
+00:05:04,279 --> 00:05:05,959
+Bây giờ trạm làm việc của chúng tôi đã bắt đầu.
+
+91
+00:05:06,140 --> 00:05:08,059
+Để tôi vào phòng làm việc.
+
+92
+00:05:08,380 --> 00:05:09,640
+Giờ để tôi mở cửa ga.
+
+93
+00:05:09,989 --> 00:05:11,160
+Và bên trong nhà ga,
+
+94
+00:05:11,269 --> 00:05:15,160
+Để tôi kiểm tra xem Google CL của chúng tôi đã được cài đặt hay chưa.
+
+95
+00:05:15,320 --> 00:05:20,399
+Chúng ta chỉ có thể gõ vào để nói sự đảo ngược của đám mây và nói Enter. Để chúng ta có thể
+
+96
+00:05:20,399 --> 00:05:23,239
+Xem Google Cloud đã được cài đặt ở đây.
+
+97
+00:05:23,320 --> 00:05:25,500
+Chúng tôi lắp đặt tất cả những thứ này.
+
+98
+00:05:25,959 --> 00:05:29,299
+Vì vậy, đó là cách khởi động an toàn, nhất quán,
+
+99
+00:05:29,519 --> 00:05:33,160
+Môi trường phát triển sẵn sàng sử dụng trạm làm việc của Mây.
+
