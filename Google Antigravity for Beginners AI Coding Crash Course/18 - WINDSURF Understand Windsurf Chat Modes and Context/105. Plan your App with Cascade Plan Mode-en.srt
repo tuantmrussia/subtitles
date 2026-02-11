@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:01,000
+ Hi.
+
+2
+00:00:01,000 --> 00:00:06,240
+ In this awesome, I want to show you and explain how work with plan mode.
+
+3
+00:00:06,240 --> 00:00:11,320
+ It's something you'll form with, so let's go.
+
+4
+00:00:11,320 --> 00:00:18,280
+ The planning mode, it can help you to talk about some big, really complex tasks by breaking
+
+5
+00:00:18,280 --> 00:00:22,080
+ them into smaller, easy-to-hando steps.
+
+6
+00:00:22,080 --> 00:00:27,060
+ Instead of trying to describe everything in one long prompt, you can work with SCSI to
+
+7
+00:00:27,060 --> 00:00:29,880
+ plan the process step by step.
+
+8
+00:00:29,880 --> 00:00:35,760
+ This makes it easier to stay organized, track progress, and make sure each part of work is
+
+9
+00:00:35,760 --> 00:00:40,840
+ done correctly, before moving to the next part, which is really important.
+
+10
+00:00:40,840 --> 00:00:46,840
+ Also planning mode is available on all paid plans and currently no extra cost.
+
+11
+00:00:46,840 --> 00:00:52,280
+ So if you're using wind source, free plan, you won't be able to use it unfortunately.
+
+12
+00:00:52,280 --> 00:00:58,140
+ Okay, let's not talk about when you can use the planning mode, but the use cases.
+
+13
+00:00:58,140 --> 00:01:02,120
+ Now, we can use it for multipart changes.
+
+14
+00:01:02,120 --> 00:01:05,880
+ It's like features that touch many files or systems.
+
+15
+00:01:05,880 --> 00:01:11,680
+ You can use it for big code changes, so when you do some big refactoring or updating a project
+
+16
+00:01:11,680 --> 00:01:17,240
+ structure, when you use, when you're going to create some complex features, like you need
+
+17
+00:01:17,240 --> 00:01:23,960
+ to work carefully and have some coordination between different parts of your project.
+
+18
+00:01:23,960 --> 00:01:29,140
+ Okay, when you're going to create a new project, and you need a clear plan to understand
+
+19
+00:01:29,140 --> 00:01:31,600
+ and change some unfamiliar code.
+
+20
+00:01:31,600 --> 00:01:36,680
+ So this is all nice cases for using the planning mode.
+
+21
+00:01:36,680 --> 00:01:41,360
+ How planning mode works, so you first need to start your goal.
+
+22
+00:01:41,360 --> 00:01:46,760
+ So click the Plan icon I will show you, where to find it, you describe just your goal and
+
+23
+00:01:46,760 --> 00:01:53,200
+ add any rules or requirements, for example, I don't know what libraries you want to use,
+
+24
+00:01:53,200 --> 00:01:57,360
+ what you expect from a AI, etc.
+
+25
+00:01:57,360 --> 00:02:01,920
+ Then you get the plan, because you can create a markdown plan with goals for you with all
+
+26
+00:02:01,920 --> 00:02:09,240
+ the steps, challenges, and some dependencies, and it saves the file locally for the reference.
+
+27
+00:02:09,240 --> 00:02:14,520
+ And then you execute it together with Cascade, you ask the scale to do some steps, update
+
+28
+00:02:14,520 --> 00:02:21,920
+ the plan if needed, write progress, and at any moment you can pause or resume the plan.
+
+29
+00:02:21,920 --> 00:02:30,360
+ So, let's now talk, and quickly, I will explain you some benefits of structured approach,
+
+30
+00:02:30,360 --> 00:02:36,920
+ why you might need to use the plan mode, like what is a benefit for you, how it better
+
+31
+00:02:36,920 --> 00:02:42,080
+ keeps the compact, the plan stay as a reference, that's how Cascade always remember your
+
+32
+00:02:42,080 --> 00:02:47,280
+ goals, even for long past where you have no many files.
+
+33
+00:02:47,280 --> 00:02:52,640
+ It's less mental effort, because breaking big tasks into smaller steps let you focus
+
+34
+00:02:52,640 --> 00:02:59,440
+ on scene at time, so you don't think about the whole plan you've seen, it's some period
+
+35
+00:02:59,440 --> 00:03:06,200
+ of time you just focus on like on a one step.
+
+36
+00:03:06,200 --> 00:03:11,920
+ It more accurate, a clear roadmap helps you with missing some requirements or making some
+
+37
+00:03:11,920 --> 00:03:12,920
+ mistakes.
+
+38
+00:03:12,920 --> 00:03:18,000
+ And of course it's easy to adjust, you can update the plan as you go while still staying
+
+39
+00:03:18,000 --> 00:03:25,160
+ aligned with your main goal, so, now let's switch to the wind source and I will show you,
+
+40
+00:03:25,160 --> 00:03:33,280
+ there is an icon right here, you can enable the plan mode, okay, so you see it's a better
+
+41
+00:03:33,280 --> 00:03:39,440
+ feature for now, but maybe when you see this video, it won't be better anymore, so when
+
+42
+00:03:39,440 --> 00:03:45,920
+ you click on it, just remember that if you use a 3 plan, you won't be able to use this
+
+43
+00:03:45,920 --> 00:03:58,720
+ feature, it's only for paid plans, okay, I prepared some prompt and I will explain what
+
+44
+00:03:58,720 --> 00:04:04,960
+ you will do, it opens the password strength class, you see it's really a big class, it's
+
+45
+00:04:04,960 --> 00:04:10,280
+ fine, but what I'm wondering that we have the check method which contains a really a lot
+
+46
+00:04:10,280 --> 00:04:16,880
+ of check, and it's difficult to maintain this method, and I want to ask cascade to split
+
+47
+00:04:16,880 --> 00:04:24,920
+ up this method on different methods for easier maintenance and testability, so I will
+
+48
+00:04:24,920 --> 00:04:31,000
+ write my message, so I just explain the goal what you need to do, just split the logic
+
+49
+00:04:31,000 --> 00:04:38,280
+ of check method from password strength checker class, I clearly say about the context
+
+50
+00:04:38,280 --> 00:04:43,880
+ and what you need to do, into separate class methods for every check, update also unit
+
+51
+00:04:43,880 --> 00:04:49,560
+ test with new changes because we have unit test, they also should be updated for the new
+
+52
+00:04:49,560 --> 00:04:58,600
+ structure, and double check all logic and unit test works, this goal I will use a different
+
+53
+00:04:58,600 --> 00:05:04,200
+ model, I will group it by provider, and for example we will use the close on that portal
+
+54
+00:05:04,200 --> 00:05:11,040
+ because I am on 3L and I can, and I can use the premium model, and let's see what the result
+
+55
+00:05:11,040 --> 00:05:19,760
+ will be, oh I have a bit of a factor, he's creating a plan, you see it's updating, you
+
+56
+00:05:19,760 --> 00:05:29,840
+ can view the plan, let's click view, you see it's plan.md file, you see some modes that
+
+57
+00:05:29,840 --> 00:05:34,480
+ user wants to split the logic, blah, blah, blah, blah, it's my request, this past
+
+58
+00:05:34,480 --> 00:05:42,040
+ please, the cost analyze the class and check method logic, then identify distance which
+
+59
+00:05:42,040 --> 00:05:50,440
+ can be separated, okay it's now updated, so let's click view it again, yeah, I can just
+
+60
+00:05:50,440 --> 00:05:56,400
+ update it, so the first two plans, the next step is just refactor, move it check into
+
+61
+00:05:56,400 --> 00:06:02,280
+ its own class method, separate step, the separate step for update unit test and separate
+
+62
+00:06:02,280 --> 00:06:09,280
+ step, double check all the logic, so if we scroll down, we will see that he analyzes the
+
+63
+00:06:09,280 --> 00:06:16,920
+ files, then he updated the plan, okay, he's say perfect, now we will refactor the password
+
+64
+00:06:16,920 --> 00:06:23,120
+ check strange, so he's doing everything step by step, and we can review not everything
+
+65
+00:06:23,120 --> 00:06:32,080
+ at once, but for example every step, so I was just close the plan, but now and we'll wait,
+
+66
+00:06:32,080 --> 00:06:43,440
+ he will update it, okay we see he edited the password strange, oh, strange check, okay
+
+67
+00:06:43,440 --> 00:06:49,840
+ we see the separate method for check command patterns, check symbols, check members, check
+
+68
+00:06:49,840 --> 00:06:55,840
+ upper case, he also edited just doc the commentation, so it's really nice, it's much more
+
+69
+00:06:55,840 --> 00:07:09,800
+ readable, it's much more readable, okay, let's see, there is a check function still, where
+
+70
+00:07:09,800 --> 00:07:21,880
+ what he did, over here, he ran individual checks, but it's still a lot of code, so you've
+
+71
+00:07:21,880 --> 00:07:33,040
+ got always kind of refactor it, and then proven, improve it, okay, he's finished, what
+
+72
+00:07:33,040 --> 00:07:41,620
+ he did, he showed what files was refactor, okay, I split it up by six separate class
+
+73
+00:07:41,620 --> 00:07:47,120
+ methods, he explains all the methods, or you can click on the method and see every method,
+
+74
+00:07:47,120 --> 00:07:55,360
+ when you click on it, you scroll into the right position in your editor, then you hit
+
+75
+00:07:55,360 --> 00:08:04,080
+ out here, that architecture, a bit, he enhanced unit test, and it's 15 new test cases,
+
+76
+00:08:04,080 --> 00:08:12,600
+ so and all the test cases passing, so if we open the test cases, we'll see, okay, he
+
+77
+00:08:12,600 --> 00:08:18,880
+ did, he split it up by the sections, like the just initialization, then individual check
+
+78
+00:08:18,880 --> 00:08:25,760
+ methods, separate section, check lens method, some different use cases, for check lower
+
+79
+00:08:25,760 --> 00:08:33,320
+ case, you see now we have much more test cases, it's much better for our project, and we
+
+80
+00:08:33,320 --> 00:08:42,360
+ can be sure it works, okay, I will accept all the changes, as we open the plan, we can
+
+81
+00:08:42,360 --> 00:08:49,200
+ also accept all the planches, we see he market everything is done, and when it back to our method,
+
+82
+00:08:49,200 --> 00:08:56,080
+ yeah, we see all the changes, right zero, the old was deleted, it updated, so now let's
+
+83
+00:08:56,080 --> 00:09:00,920
+ run the test command, if you forget what the test command, you can always open package
+
+84
+00:09:00,920 --> 00:09:07,360
+ the JSON file, and see the scripts right here, and run this command, you can use NPM
+
+85
+00:09:07,360 --> 00:09:15,800
+ run test, and we'll double check all the test works, and you see, this is the summary
+
+86
+00:09:15,800 --> 00:09:22,400
+ of what test was run, and how it works, okay, I hope now you much more clear why you need
+
+87
+00:09:22,400 --> 00:09:30,840
+ to use the planning mode, of course, if you have much bigger tasks, so it will be more
+
+88
+00:09:30,840 --> 00:09:36,520
+ relevant, because it's really difficult to do everything at once, and you have ability
+
+89
+00:09:36,520 --> 00:09:43,960
+ to review it, that by step, and see you in the next lesson, where I will explain you about
+
+90
+00:09:43,960 --> 00:09:44,840
+ the context.
+
