@@ -1,0 +1,924 @@
+1
+00:00:00,000 --> 00:00:04,120
+ Alright then friends, in this video we're going to talk about constructors and
+
+2
+00:00:04,120 --> 00:00:10,360
+ constructors again play a center role in in almost every day that you write
+
+3
+00:00:10,360 --> 00:00:14,260
+ code and Java and we're important that you have a good understanding of this
+
+4
+00:00:14,260 --> 00:00:18,400
+ concept as well. So first things first what are constructors and what is the
+
+5
+00:00:18,400 --> 00:00:23,160
+ specialty about them right? So constructors are methods right that's the
+
+6
+00:00:23,160 --> 00:00:26,880
+ first thing to understand about them but they're special methods right and
+
+7
+00:00:26,880 --> 00:00:32,720
+ what is that specialty? The specialty lies in these constructors they're called
+
+8
+00:00:32,720 --> 00:00:39,000
+ implicitly automatically at the time and whenever we create an object of the
+
+9
+00:00:39,000 --> 00:00:46,120
+ class. That means we do not need to call them explicitly ourselves. We don't do
+
+10
+00:00:46,120 --> 00:00:51,600
+ that we can't do that right there. Always automatically implicitly called at
+
+11
+00:00:51,600 --> 00:00:56,760
+ the time and whenever we create an object of the class and that's unlike how you
+
+12
+00:00:56,760 --> 00:01:01,720
+ call methods right how methods are called because a method is only called once
+
+13
+00:01:01,720 --> 00:01:07,320
+ you place a call to it. Without that it will never be executed but a
+
+14
+00:01:07,320 --> 00:01:13,000
+ constructor body is executed every time you create an object of that class. That's
+
+15
+00:01:13,000 --> 00:01:19,760
+ their specialty right? That means the code that you would need to be executed or
+
+16
+00:01:19,760 --> 00:01:26,480
+ initialized at first you might want to put that inside a constructor of a class. Some
+
+17
+00:01:26,480 --> 00:01:31,480
+ of the code that you would want to run anytime an object is created and you
+
+18
+00:01:31,480 --> 00:01:35,600
+ would not to be now you would not want that to be called automatically put that
+
+19
+00:01:35,600 --> 00:01:40,040
+ code inside the constraint of body. Let's go on and have a look at that with
+
+20
+00:01:40,040 --> 00:01:44,760
+ real-world analogy. So what I'll do is I'll go to arm.war.org or opt.work for that
+
+21
+00:01:44,760 --> 00:01:49,680
+ for that matter and I'll just say a new class and this time I'll say day with
+
+22
+00:01:49,680 --> 00:01:56,400
+ constrictors because that's what we are going to do. We're going to try a
+
+23
+00:01:56,400 --> 00:02:02,240
+ hands-on with constrictors in Java. All right so we'll have the customary
+
+24
+00:02:02,240 --> 00:02:10,680
+ main maker and let's again go back and use a user code that is or user
+
+25
+00:02:10,680 --> 00:02:15,520
+ example of the classic example of humans right and this would make exact or
+
+26
+00:02:15,520 --> 00:02:19,240
+ this would make complete sense but before we do that let me just go on and tell
+
+27
+00:02:19,240 --> 00:02:22,720
+ you about the things I told you what a constructors and what is the specialty
+
+28
+00:02:22,720 --> 00:02:27,880
+ about them but which functions or which methods are called constructive what is
+
+29
+00:02:27,880 --> 00:02:31,920
+ the representation of a constructor because I told you it's a method first so
+
+30
+00:02:31,920 --> 00:02:37,040
+ which methods are not considered ordinary but constructive methods. The first
+
+31
+00:02:37,040 --> 00:02:40,840
+ property there are a couple of properties the first property is that is
+
+32
+00:02:40,840 --> 00:02:46,160
+ constructors have the same name as the class name. That is the name of the class
+
+33
+00:02:46,160 --> 00:02:51,200
+ and the name of the constructor method is the same. The second property is that
+
+34
+00:02:51,200 --> 00:02:58,040
+ is constructors in Java do not have a return type not even white right otherwise
+
+35
+00:02:58,040 --> 00:03:02,680
+ it would be an ordinary simple method so they do not have a return type not
+
+36
+00:03:02,680 --> 00:03:06,840
+ even white. So to just give an example if we're I walk you through a real
+
+37
+00:03:06,840 --> 00:03:11,720
+ technology of humans I'll just define a constructor so I told you the name of the
+
+38
+00:03:11,720 --> 00:03:18,240
+ class has to be the same as the name of the of the constructor. So here you're
+
+39
+00:03:18,240 --> 00:03:22,040
+ seeing play with constructors is the same name as the class name that's the
+
+40
+00:03:22,040 --> 00:03:25,800
+ first point more constructors and the second thing if you've observed is I've
+
+41
+00:03:25,800 --> 00:03:30,400
+ not put in a return time because constructors do not have a return type not
+
+42
+00:03:30,400 --> 00:03:34,640
+ even white. This is a constructor now and just to give you a proof of that I'll
+
+43
+00:03:34,640 --> 00:03:44,320
+ just say a sound and I'll say constructor court right and inside me I'm just
+
+44
+00:03:44,320 --> 00:03:50,320
+ going to create a new object of this class and if you get this printed out on
+
+45
+00:03:50,320 --> 00:03:56,920
+ screen you know this is called in a spatial situation that is I did not call
+
+46
+00:03:56,920 --> 00:04:03,320
+ this automatically explicitly sorry but it was called automatically right I'm
+
+47
+00:04:03,320 --> 00:04:11,080
+ sorry let's go on and run this and you're seeing construct to call it and that
+
+48
+00:04:11,080 --> 00:04:14,200
+ was automatically because you just created an object you did not call it
+
+49
+00:04:14,200 --> 00:04:19,360
+ explicitly and it was called right and why is it called because now if you zoom
+
+50
+00:04:19,360 --> 00:04:23,520
+ into this line we were saying new play with constructors we know this creates an
+
+51
+00:04:23,520 --> 00:04:28,680
+ object of a class in Java but if you zoom into this these circular braces and
+
+52
+00:04:28,680 --> 00:04:33,200
+ these ones they're the same that means it is not so implicit but just that you
+
+53
+00:04:33,200 --> 00:04:37,200
+ just go on and do your job you know worry about the constructor call because
+
+54
+00:04:37,200 --> 00:04:41,480
+ it's been taken here at the object creation time and no matter how many
+
+55
+00:04:41,480 --> 00:04:44,760
+ objects you create let's say I create two objects of this class it would be
+
+56
+00:04:44,760 --> 00:04:49,320
+ called that many times let's run this again we'll get it twice let's try to
+
+57
+00:04:49,320 --> 00:04:54,000
+ all but if there was a normal method in this in this class let's say white
+
+58
+00:04:54,000 --> 00:05:01,480
+ fun it will say sound and I'll say fun called this will not be called unless you
+
+59
+00:05:01,480 --> 00:05:06,640
+ call it say we just get consider call construct a call but not fun called if
+
+60
+00:05:06,640 --> 00:05:11,120
+ you do not call it explicitly for example let's just do that I'll say now you
+
+61
+00:05:11,120 --> 00:05:16,080
+ say I'll say inside constructor or consider call and then fun call let's run
+
+62
+00:05:16,080 --> 00:05:21,880
+ this and that is what you saw so for this to be called it has to be a call
+
+63
+00:05:21,880 --> 00:05:26,240
+ but for constructors to be called you don't need to worry about that you need
+
+64
+00:05:26,240 --> 00:05:31,920
+ to worry about calling them that's how constructors work right so we have the
+
+65
+00:05:31,920 --> 00:05:36,720
+ same name as the class name and and they are called automatically at the time
+
+66
+00:05:36,720 --> 00:05:43,360
+ and whenever you create an object of that class right now obviously we're done
+
+67
+00:05:43,360 --> 00:05:48,400
+ with this I'll just come in this out and walk you through what is the what is
+
+68
+00:05:48,400 --> 00:05:52,760
+ the real-world analogy when does it make sense and I'll just walk you
+
+69
+00:05:52,760 --> 00:05:56,200
+ through where we would be stuck with the problem and then constructors would
+
+70
+00:05:56,200 --> 00:06:01,840
+ come to the rescue that's how we learn the better way right so what I'll do is
+
+71
+00:06:01,840 --> 00:06:07,120
+ I'll go on and create a new class I'll call it class human right but it says
+
+72
+00:06:07,120 --> 00:06:12,720
+ that human is already found in this package it cannot be a duplicate class so
+
+73
+00:06:12,720 --> 00:06:17,000
+ we have two options either we put it in that other package org.work for it to
+
+74
+00:06:17,000 --> 00:06:20,840
+ be worked one we just deal with something else for now let's just call it for
+
+75
+00:06:20,840 --> 00:06:34,720
+ example we can call it class let's say student all right okay so let's let's
+
+76
+00:06:34,720 --> 00:06:41,080
+ think about a scenario where we have to register some students right and the
+
+77
+00:06:41,080 --> 00:06:45,320
+ requirement from the client comes in that is at the time the student comes on
+
+78
+00:06:45,320 --> 00:06:50,400
+ the very first day we have to at least save a couple of their details that is
+
+79
+00:06:50,400 --> 00:06:56,880
+ their name and their uniquely right other details like the gender which plays
+
+80
+00:06:56,880 --> 00:07:02,320
+ they come from that can be saved later on but we want the system to be able to
+
+81
+00:07:02,320 --> 00:07:06,400
+ save two details at the time the student comes to the college from the
+
+82
+00:07:06,400 --> 00:07:10,560
+ very first day they're very explicit with their requirement they want this
+
+83
+00:07:10,560 --> 00:07:15,440
+ these particular two details to be saved mandatory early on that day but rest of
+
+84
+00:07:15,440 --> 00:07:20,360
+ the details can be saved later on so we as a development team think about it
+
+85
+00:07:20,360 --> 00:07:26,140
+ and and come to the conclusion this is a classic case a classic example a
+
+86
+00:07:26,140 --> 00:07:30,200
+ classic situation to use constructors right I'll tell you why so I'll say
+
+87
+00:07:30,200 --> 00:07:38,600
+ a student but now this is a constructor obviously you know because the name of
+
+88
+00:07:38,600 --> 00:07:42,280
+ the method and the name of the class is the same right this makes it a
+
+89
+00:07:42,280 --> 00:07:46,760
+ constructor so whenever I create a student object right this constructor would
+
+90
+00:07:46,760 --> 00:07:54,040
+ be called let's try doing that with the main let's say student first to
+
+91
+00:07:54,040 --> 00:07:58,600
+ new student and it would be called that's fine but it doesn't serve the purpose
+
+92
+00:07:58,600 --> 00:08:03,360
+ because the requirement from the client was at the time the student comes in I
+
+93
+00:08:03,360 --> 00:08:08,440
+ want the system to be able to save two details mandatory that is the name and
+
+94
+00:08:08,440 --> 00:08:13,760
+ the ID but this doesn't save it anywhere so we as a development team what
+
+95
+00:08:13,760 --> 00:08:21,160
+ about it and came to this particular code that is I'll just say in ID and I'll
+
+96
+00:08:21,160 --> 00:08:27,920
+ say string new more on strings in detail in the next or in later video but if
+
+97
+00:08:27,920 --> 00:08:32,640
+ no strings are just what what you'll find in other languages let us you want to
+
+98
+00:08:32,640 --> 00:08:36,680
+ store a bunch of characters together you have the string type in Java with a
+
+99
+00:08:36,680 --> 00:08:41,640
+ capital S because it's an in-built class all right so ID and name and now I want
+
+100
+00:08:41,640 --> 00:08:46,280
+ these two to be stored at the time the object is created of that student
+
+101
+00:08:46,280 --> 00:08:50,400
+ right so for that what I'll do is see and this is a requirement driven programming
+
+102
+00:08:50,400 --> 00:08:54,520
+ as I always say programming is requirement driven not just depends on my mood
+
+103
+00:08:54,520 --> 00:09:01,960
+ right so this time what I'll do ahead is just like you can have parameterized
+
+104
+00:09:01,960 --> 00:09:06,080
+ methods you can have parameterized constructor as well so I'll do is I'll say
+
+105
+00:09:06,080 --> 00:09:11,960
+ student and I'll say integer ID and I'll say string name and then you'll say
+
+106
+00:09:11,960 --> 00:09:17,320
+ now and then why did I have parameters because I want this to be working as
+
+107
+00:09:17,320 --> 00:09:21,160
+ permit lines three requirement and that was at the time the object was created
+
+108
+00:09:21,160 --> 00:09:25,600
+ the system needs to take two details and I know at the time the student object
+
+109
+00:09:25,600 --> 00:09:30,240
+ is created the constructor would be called and at that time it needs to take two
+
+110
+00:09:30,240 --> 00:09:35,240
+ details at that very time from the object right and these two details would come
+
+111
+00:09:35,240 --> 00:09:39,320
+ in from somewhere else where you create an object and I would need to pass these
+
+112
+00:09:39,320 --> 00:09:44,360
+ to these so I've created them as local variables these are instance variables
+
+113
+00:09:44,360 --> 00:09:48,360
+ right so I would need to before it reaches this body because I would know the
+
+114
+00:09:48,360 --> 00:09:52,440
+ local variables would be dead that's their lifespan but as I told you in the
+
+115
+00:09:52,440 --> 00:09:56,600
+ previous video that is when we talked about instance variables instance
+
+116
+00:09:56,600 --> 00:10:01,480
+ variables live as long as the object is alive so I know they would live much
+
+117
+00:10:01,480 --> 00:10:06,520
+ longer than these right so I would need to pass the details of this ID and name
+
+118
+00:10:06,520 --> 00:10:10,760
+ to this ID and name and how can I do that you will see this kind of first
+
+119
+00:10:10,760 --> 00:10:16,840
+ syntax almost every day in job and that is if I say ID equal to ID now which
+
+120
+00:10:16,840 --> 00:10:21,480
+ ID am I referring to first of all let's see if this is an error this ID and
+
+121
+00:10:21,480 --> 00:10:26,640
+ this ID can they exist the same name yes they can why because these are
+
+122
+00:10:26,640 --> 00:10:30,840
+ instance variables these are local variables they are at two different levels and I
+
+123
+00:10:30,840 --> 00:10:35,360
+ can have two variables at two different scopes with the same name and that's
+
+124
+00:10:35,360 --> 00:10:38,800
+ perfectly fun and for better readability in fact they prefer them calling the
+
+125
+00:10:38,800 --> 00:10:44,600
+ same now you want to save this ID to this ID if you say ID equal ID this is just
+
+126
+00:10:44,600 --> 00:10:49,160
+ the local variable because at the local level the local variables take
+
+127
+00:10:49,160 --> 00:10:55,440
+ precedence right but that is the second usage of the key word this to overcome
+
+128
+00:10:55,440 --> 00:11:00,280
+ this is called shadowing why because the local variable is set to be shadowing
+
+129
+00:11:00,280 --> 00:11:05,480
+ the instance variable and here I need to overcome shadowing and in in times
+
+130
+00:11:05,480 --> 00:11:08,880
+ where I need to overcome shadowing that is where the this key word makes a
+
+131
+00:11:08,880 --> 00:11:15,040
+ comeback and that is I can say this to ID to ID that means this to ID refers to
+
+132
+00:11:15,040 --> 00:11:19,040
+ the instance variable and ID refers to the local variable because shadowing
+
+133
+00:11:19,040 --> 00:11:25,840
+ right here I have overcome shadowing and similarly I'll say this name to name you'll
+
+134
+00:11:25,840 --> 00:11:30,320
+ say as I said you'll find this kind of syntax almost every day right so just
+
+135
+00:11:30,320 --> 00:11:34,600
+ get used to it just try to understand what I'm doing here that is I'm just
+
+136
+00:11:34,600 --> 00:11:40,000
+ mapping the variable values that is the variables at the local level to the
+
+137
+00:11:40,000 --> 00:11:44,240
+ variables at the instance level this is how we do it and at this line nine
+
+138
+00:11:44,240 --> 00:11:48,920
+ number 26 ID and name would be dead but these ones would remain because I had
+
+139
+00:11:48,920 --> 00:11:52,360
+ mapped them thanks to the currently executing object that magical
+
+140
+00:11:52,360 --> 00:11:56,040
+ way of referring to the currently executing object and this is both my
+
+141
+00:11:56,040 --> 00:12:01,520
+ requirement now how do you call it this is an error now that is no longer true
+
+142
+00:12:01,520 --> 00:12:05,520
+ no longer correct that is you cannot create objects in Java like this now
+
+143
+00:12:05,520 --> 00:12:10,440
+ because it says arguments and parameters don't match because this constructor
+
+144
+00:12:10,440 --> 00:12:15,080
+ call it takes two parameters I would have to pass to arguments right and
+
+145
+00:12:15,080 --> 00:12:21,640
+ what I'll do is as always we'll take it through scanner and say scanner
+
+146
+00:12:21,640 --> 00:12:38,880
+ new scanner and I'll say us out enter ID and name of the new student
+
+147
+00:12:38,880 --> 00:12:44,240
+ I'll do is I'll say int file you're in local variable of mean does not conflict
+
+148
+00:12:44,240 --> 00:12:49,160
+ with those variables right different scope so it works so I'll say scan dot
+
+149
+00:12:49,160 --> 00:12:57,720
+ next int and I told you if you have to take a string after an integer right
+
+150
+00:12:57,720 --> 00:13:04,600
+ do a empty next line because it takes that slashing and then I'll say string
+
+151
+00:13:04,600 --> 00:13:14,240
+ name equal to scan dot next line right and then pass these to the constructor
+
+152
+00:13:14,240 --> 00:13:22,000
+ call ID and the error goes away so at the time now you're creating an object
+
+153
+00:13:22,000 --> 00:13:26,440
+ in Java like this and the syntax is perfectly valid correct syntax right
+
+154
+00:13:26,440 --> 00:13:32,200
+ because you're passing arguments with that call so this and this does it
+
+155
+00:13:32,200 --> 00:13:37,360
+ look the same yes it does that ID and name the local variable of variables of
+
+156
+00:13:37,360 --> 00:13:41,280
+ mean the values of those are passed into the local variables of the
+
+157
+00:13:41,280 --> 00:13:45,360
+ constructor and the local variables values of the constraints passed to the
+
+158
+00:13:45,360 --> 00:13:51,120
+ instance variables right so that is my requirement just works and then
+
+159
+00:13:51,120 --> 00:13:55,600
+ afterwards whenever you want to print those out there are different ways to do
+
+160
+00:13:55,600 --> 00:13:58,960
+ that the first way is not to the recommended way I'll tell you in a later
+
+161
+00:13:58,960 --> 00:14:03,280
+ video when we are talking about Java beans right but for now let's say
+
+162
+00:14:03,280 --> 00:14:07,960
+ there is an audit or you won't access their names all you have to do is just say
+
+163
+00:14:07,960 --> 00:14:21,960
+ set for example student emails and you will see first dot name and I'll
+
+164
+00:14:21,960 --> 00:14:31,960
+ concatenate it with first dot ID see let's just go on and run this it
+
+165
+00:14:31,960 --> 00:14:37,080
+ relaxes the instant variables what does it say no suitable constraint account for
+
+166
+00:14:37,080 --> 00:14:42,920
+ scanner why because we missed system yeah see again the arguments and
+
+167
+00:14:42,920 --> 00:14:46,520
+ parameters didn't match because the now you know why does this works in now
+
+168
+00:14:46,520 --> 00:14:49,720
+ try to interlate things in your mind that's the beauty of it when you
+
+169
+00:14:49,720 --> 00:14:53,320
+ understand concept you know what is going on behind the scenes in the language
+
+170
+00:14:53,320 --> 00:14:58,560
+ as well or what is going on in someone else code as well see now why does this
+
+171
+00:14:58,560 --> 00:15:04,840
+ fail is why did it say no suitable constraint account for scanner why because
+
+172
+00:15:04,840 --> 00:15:09,560
+ the scanner class behind the scenes takes one argument and we did not pass
+
+173
+00:15:09,560 --> 00:15:14,600
+ that right so they don't match so that's why we say system dot in pass it to
+
+174
+00:15:14,600 --> 00:15:21,800
+ what it takes the error should be got right let's run this says and try the name
+
+175
+00:15:21,800 --> 00:15:27,960
+ of the new student as a 345 and I'll say for example let's just put it to
+
+176
+00:15:27,960 --> 00:15:52,200
+ snare still till snare and I need to win it later on obviously we'll have a
+
+177
+00:15:52,200 --> 00:15:56,720
+ menu driven program that would it would take more than one student details that
+
+178
+00:15:56,720 --> 00:16:00,200
+ would be a complete program here we're shortly reaching that point as with
+
+179
+00:16:00,200 --> 00:16:05,920
+ right and but for now this was my requirement at the very first place because if
+
+180
+00:16:05,920 --> 00:16:11,000
+ you do not pass the idea and the name of the new student object it won't work
+
+181
+00:16:11,000 --> 00:16:14,960
+ it won't move forward your program right it has to be mandatory the other
+
+182
+00:16:14,960 --> 00:16:20,560
+ details the system said they could be taken later on like for example string
+
+183
+00:16:20,560 --> 00:16:29,840
+ location or string skills but we wanted these to be taken at the very first
+
+184
+00:16:29,840 --> 00:16:35,840
+ instance these we could take with different methods as well right and but
+
+185
+00:16:35,840 --> 00:16:40,320
+ you might be wondering until now we were not dealing with constructors but
+
+186
+00:16:40,320 --> 00:16:43,840
+ we are written a lot of code here see how many files we've written until now
+
+187
+00:16:43,840 --> 00:16:48,640
+ all right so I did not discuss constructors but I'll tell you that inside every
+
+188
+00:16:48,640 --> 00:16:53,920
+ class in Java there is a by default constructor it's called the default
+
+189
+00:16:53,920 --> 00:16:57,920
+ constructor nor surprisingly right it has the same name as of the class name
+
+190
+00:16:57,920 --> 00:17:01,940
+ doesn't have a return type right and if you don't write your own
+
+191
+00:17:01,940 --> 00:17:07,480
+ constructor every class as its own every class has its default constructor but
+
+192
+00:17:07,480 --> 00:17:11,360
+ the moment you start to write your own constructor there is no such thing
+
+193
+00:17:11,360 --> 00:17:16,520
+ called a default constructor now right and why didn't it give us an error
+
+194
+00:17:16,520 --> 00:17:21,000
+ until then until now because we went writing around customers now you know
+
+195
+00:17:21,000 --> 00:17:25,200
+ why did this line always work without obviously arguments because there was
+
+196
+00:17:25,200 --> 00:17:30,040
+ that default constructor always because now you know that constructors are
+
+197
+00:17:30,040 --> 00:17:33,840
+ called automatically at the time and whenever we create an object to the class
+
+198
+00:17:33,840 --> 00:17:38,880
+ and we have been creating objects all through these lectures and videos but
+
+199
+00:17:38,880 --> 00:17:43,080
+ we never wrote a constructor why did that still work because in those cases the
+
+200
+00:17:43,080 --> 00:17:47,480
+ default constructor was called right now the next point I'm going to make here is
+
+201
+00:17:47,480 --> 00:17:53,760
+ now they say some students do not want to put in their names and IDs at the
+
+202
+00:17:53,760 --> 00:17:57,600
+ very first date they've just come come for counseling and they are still not
+
+203
+00:17:57,600 --> 00:18:02,400
+ sure whether they join the college so the system now should allow for certain
+
+204
+00:18:02,400 --> 00:18:08,320
+ rare cases where the student doesn't want to save their or give their details
+
+205
+00:18:08,320 --> 00:18:12,680
+ like you name an idea at the very first day after thinking about it whether they
+
+206
+00:18:12,680 --> 00:18:16,020
+ want to join the college or not they would want to but not at the very first
+
+207
+00:18:16,020 --> 00:18:20,280
+ instance but some of the students the details should be saved right so the
+
+208
+00:18:20,280 --> 00:18:24,400
+ system should allow that and for that very reason now we as a development team
+
+209
+00:18:24,400 --> 00:18:28,360
+ think about it and again not just because we are in the mood to do that
+
+210
+00:18:28,360 --> 00:18:32,960
+ because the requirement tells us to it and it forces us to do that and in the
+
+211
+00:18:32,960 --> 00:18:37,640
+ same way you can overload methods you can overload constructor as well so I'll do
+
+212
+00:18:37,640 --> 00:18:41,200
+ it for that kind of a situation this is a very good program now right a
+
+213
+00:18:41,200 --> 00:18:46,600
+ beautiful program because it demonstrates everything as if when we are stuck
+
+214
+00:18:46,600 --> 00:18:51,840
+ and then we will get a solution and we say this time our constructor without
+
+215
+00:18:51,840 --> 00:18:56,760
+ parameters it doesn't do anything why because id and name would they have
+
+216
+00:18:56,760 --> 00:19:01,800
+ default values yes they won't why because again they defined at the
+
+217
+00:19:01,800 --> 00:19:05,600
+ instance level at height I told you instance variables have default value in
+
+218
+00:19:05,600 --> 00:19:09,400
+ Java id will have zero name because it's a reference variable it would have
+
+219
+00:19:09,400 --> 00:19:15,680
+ null so if some of the students don't want to put in their details now this
+
+220
+00:19:15,680 --> 00:19:24,160
+ will also work see let's say second new student without arguments now works
+
+221
+00:19:24,160 --> 00:19:32,640
+ because we have put in a constructor which is parameterless we have overloaded
+
+222
+00:19:32,640 --> 00:19:36,320
+ constructors and when you pass to this one would be called when you pass new
+
+223
+00:19:36,320 --> 00:19:40,160
+ arguments this one would be called this is a great example of understanding
+
+224
+00:19:40,160 --> 00:19:44,560
+ constructors from a real world perspective and why would use it as I said
+
+225
+00:19:44,560 --> 00:19:49,320
+ almost every single day in Java programming in your careers right so just
+
+226
+00:19:49,320 --> 00:19:52,880
+ think about it take care it over that after the video is done just try to
+
+227
+00:19:52,880 --> 00:19:56,440
+ manipulate it just take your own example minus a student your might be a
+
+228
+00:19:56,440 --> 00:20:01,600
+ teacher you might be a furniture class you might be a shared class you might be
+
+229
+00:20:01,600 --> 00:20:05,800
+ a table class you might be a smartphone class just think about it come up your
+
+230
+00:20:05,800 --> 00:20:10,320
+ own examples write your own and just try to interlate things then right and
+
+231
+00:20:10,320 --> 00:20:14,240
+ I'll see you in the next video
+
