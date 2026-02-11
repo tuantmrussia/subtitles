@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:06,520
+ In this video, we are going to be installing our DNS server.
+
+2
+00:00:06,520 --> 00:00:09,840
+ So here, as you can see, we have a difference in error.
+
+3
+00:00:09,840 --> 00:00:16,160
+ First of all, I have my domain controller which is a DC01 and I also have a secondary domain
+
+4
+00:00:16,160 --> 00:00:22,040
+ controller which is the DC02, so my primary domain controller is a DC01, here you can see
+
+5
+00:00:22,040 --> 00:00:28,960
+ we have the DC01 and the DC02, both are actually configured with the DNS server.
+
+6
+00:00:28,960 --> 00:00:34,240
+ Here, you can see we have our DNS, that's the DC01 and the DC02.
+
+7
+00:00:34,240 --> 00:00:37,200
+ Thirdly, I'm going to configure it.
+
+8
+00:00:37,200 --> 00:00:42,120
+ Third DNS, which is going to be actually a standalone DNS server.
+
+9
+00:00:42,120 --> 00:00:45,960
+ So by mind, you haven't actually multiple DNS server, it's very, very important if you are
+
+10
+00:00:45,960 --> 00:00:50,680
+ walking for a big company, should it give something good wrong with one of your server, your
+
+11
+00:00:50,680 --> 00:00:55,440
+ second server will still be available to help you that users should still be able to assess
+
+12
+00:00:55,440 --> 00:01:01,400
+ your website, or assess domains, and so forth.
+
+13
+00:01:01,400 --> 00:01:05,700
+ So for example, right now, you can see we have for example, here we have the 4 look-up zone
+
+14
+00:01:05,700 --> 00:01:11,200
+ and also have the 4 look-up zone, everything is actually being replicated and if I go click
+
+15
+00:01:11,200 --> 00:01:16,000
+ on my 4 look-up zone, you can see we have a kelblubout.com and the same thing on our
+
+16
+00:01:16,000 --> 00:01:26,880
+ secondary server will have a kelblubout.com.
+
+17
+00:01:26,880 --> 00:01:28,200
+ Now, we want to install a standalone DNS server, what you need to do right now is to go to our
+
+18
+00:01:28,200 --> 00:01:33,760
+ DNS server and here we are going to be adding rules and future.
+
+19
+00:01:33,760 --> 00:01:39,360
+ So right now, let us click Nest and in this select installation type, we're just going
+
+20
+00:01:39,360 --> 00:01:40,360
+ to click.
+
+21
+00:01:40,360 --> 00:01:44,720
+ It's going to be a rule-based or future-based installation, so click Nest and we are going
+
+22
+00:01:44,720 --> 00:01:49,920
+ to be doing it on this server, does they check if the IP address is correct and then click
+
+23
+00:01:49,920 --> 00:01:50,920
+ Nest.
+
+24
+00:01:50,920 --> 00:01:55,920
+ All right now, what you want to do is you see, it's asking what we want to apply, install
+
+25
+00:01:55,920 --> 00:01:58,720
+ which rules we want to install.
+
+26
+00:01:58,720 --> 00:02:04,480
+ We want to install the DNS server rules, so these are the other features that will be added
+
+27
+00:02:04,480 --> 00:02:12,080
+ to it, just click add futures and then click Nest, and then we're going to click Nest
+
+28
+00:02:12,080 --> 00:02:14,360
+ and then we need to install.
+
+29
+00:02:14,360 --> 00:02:18,760
+ So the installation is about to take long time, so let me just pause this video and come
+
+30
+00:02:18,760 --> 00:02:24,420
+ back again when installation, installation, complete.
+
+31
+00:02:24,420 --> 00:02:30,360
+ So right now, you can see that it says the installation succeeded on our server, so let's
+
+32
+00:02:30,360 --> 00:02:37,360
+ just click close and we don't have any other task we need to perform, that installation
+
+33
+00:02:37,360 --> 00:02:39,000
+ of our DNS rules.
+
+34
+00:02:39,000 --> 00:02:43,680
+ So what you need to do right now is to go and just here we have our tools and then let's
+
+35
+00:02:43,680 --> 00:02:46,160
+ just click the Nest.
+
+36
+00:02:46,160 --> 00:02:50,720
+ You can see, this is actually that the host name of our, the other name of our device,
+
+37
+00:02:50,720 --> 00:02:55,520
+ you can see that the DNS server has just been installed, and at this moment you can see
+
+38
+00:02:55,520 --> 00:03:01,120
+ we don't have any, see the four look-up zone, at this moment you can see it's when we've
+
+39
+00:03:01,120 --> 00:03:03,240
+ seen any information.
+
+40
+00:03:03,240 --> 00:03:09,960
+ So what we need to do, we need to actually allow our device from our main domain server
+
+41
+00:03:09,960 --> 00:03:15,760
+ to allow that this is 01, to actually replicate to this server and add the IP address of
+
+42
+00:03:15,760 --> 00:03:22,360
+ this server to that server so that the server will be able to retrieve all the four look-ups
+
+43
+00:03:22,360 --> 00:03:30,120
+ on the reverse look-ups zone, conditional for us from main server.
+
+44
+00:03:30,120 --> 00:03:41,320
+ And also, you can actually install your DNS rules using the following PowerShell command.
+
+45
+00:03:41,320 --> 00:03:49,800
+ If for example, if I just go to my start menu and enter PowerShell, I don't switch to that
+
+46
+00:03:49,800 --> 00:04:01,560
+ PowerShell, there we go, let me just launch the PowerShell eC as an administrator.
+
+47
+00:04:01,560 --> 00:04:10,880
+ So let's enter the following command from our PowerShell, get Windows, future, and the name
+
+48
+00:04:10,880 --> 00:04:13,720
+ the game to be DNS.
+
+49
+00:04:13,720 --> 00:04:18,920
+ So we'll enter that, you can see that this is the DNS server is installed.
+
+50
+00:04:18,920 --> 00:04:24,280
+ But if the DNS, for example, we then use our server manager to actually add the rules,
+
+51
+00:04:24,280 --> 00:04:33,880
+ we cannot actually use PowerShell by entering the following command, install Windows, future,
+
+52
+00:04:33,880 --> 00:04:43,000
+ and the name is going to be DNS, and then you're going to do include the tools.
+
+53
+00:04:43,000 --> 00:04:45,080
+ And then you can just hit enter.
+
+54
+00:04:45,080 --> 00:04:52,320
+ So at this point, you can see it says no, because the installation has been DNS rules
+
+55
+00:04:52,320 --> 00:04:55,640
+ have been installed, so it's not going to install it for the second time.
+
+56
+00:04:55,640 --> 00:05:00,960
+ But mind you, if you've not installed it using server manager, you cannot use the Windows
+
+57
+00:05:00,960 --> 00:05:03,520
+ PowerShell to perform this installation.
+
