@@ -1,0 +1,300 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this demo, we'll be creating a program that utilizes ranges.
+
+2
+00:00:05,000 --> 00:00:08,000
+ Once you're ready, fire up Visual Studio Code, and let's go.
+
+3
+00:00:08,000 --> 00:00:16,000
+ Once Visual Studio Code loads navigate to the demo folder.
+
+4
+00:00:16,000 --> 00:00:20,000
+ We are on the ranges demo, so click on the ranges folder,
+
+5
+00:00:20,000 --> 00:00:22,000
+ and then double click on ranges.go.
+
+6
+00:00:22,000 --> 00:00:28,000
+ So when we use the range keyword, it's going to automatically
+
+7
+00:00:28,000 --> 00:00:31,000
+ create an iterator for us.
+
+8
+00:00:31,000 --> 00:00:36,000
+ And so it's kind of like an easier way of making a for loop with the counter.
+
+9
+00:00:36,000 --> 00:00:39,000
+ So let's start by making a slice.
+
+10
+00:00:39,000 --> 00:00:42,000
+ So like a string slice.
+
+11
+00:00:42,000 --> 00:00:45,000
+ We'll have a low world and an exclamation point.
+
+12
+00:00:45,000 --> 00:00:50,000
+ So we'll have four I comma element.
+
+13
+00:00:50,000 --> 00:00:53,000
+ Sign equals range slice.
+
+14
+00:00:53,000 --> 00:00:57,000
+ So when we use range, we're going to get two things back from this slice.
+
+15
+00:00:57,000 --> 00:01:00,000
+ I will be the index number.
+
+16
+00:01:00,000 --> 00:01:03,000
+ And element will be the thing in the slice.
+
+17
+00:01:03,000 --> 00:01:06,000
+ So it's always going to start at zero for I.
+
+18
+00:01:06,000 --> 00:01:09,000
+ And then elements in this case will be hello.
+
+19
+00:01:09,000 --> 00:01:11,000
+ And then the second iteration will be world.
+
+20
+00:01:11,000 --> 00:01:15,000
+ And then the third will be the exclamation point.
+
+21
+00:01:15,000 --> 00:01:19,000
+ So we'll have a we'll do a print line that we can see what gets printed out.
+
+22
+00:01:19,000 --> 00:01:22,000
+ So we'll print I and elements.
+
+23
+00:01:22,000 --> 00:01:25,000
+ Let's just run that as is and then we'll add some more to it.
+
+24
+00:01:25,000 --> 00:01:27,000
+ So I'll hop into a terminal.
+
+25
+00:01:27,000 --> 00:01:32,000
+ You can run this with go run dot slash demo slash ranges.
+
+26
+00:01:32,000 --> 00:01:38,000
+ And so here we have the zero hello one world to exclamation point.
+
+27
+00:01:38,000 --> 00:01:41,000
+ So now we that we have the range keyword.
+
+28
+00:01:41,000 --> 00:01:46,000
+ We're going to be able to iterate over individual letters of these strings.
+
+29
+00:01:46,000 --> 00:01:48,000
+ If you'll recall from our previous lecture,
+
+30
+00:01:48,000 --> 00:01:53,000
+ I did mention that we're not able to go through letters by using a typical for loop.
+
+31
+00:01:53,000 --> 00:01:58,000
+ So if we had a loop like this and we hit something like that.
+
+32
+00:01:58,000 --> 00:02:00,000
+ And try to go into the slice.
+
+33
+00:02:00,000 --> 00:02:03,000
+ Like that to access the letters of hello.
+
+34
+00:02:03,000 --> 00:02:08,000
+ This isn't going to work because we're going through individual bytes of that string.
+
+35
+00:02:08,000 --> 00:02:12,000
+ And if you'll recall, the letters take up more than one byte in some cases,
+
+36
+00:02:12,000 --> 00:02:15,000
+ like special characters or emoji for example.
+
+37
+00:02:15,000 --> 00:02:18,000
+ So we're not able to do this to access each letter.
+
+38
+00:02:18,000 --> 00:02:21,000
+ However, when we use the range keyword,
+
+39
+00:02:21,000 --> 00:02:24,000
+ it's going to automatically account for all that for us.
+
+40
+00:02:24,000 --> 00:02:28,000
+ And so we are able to go through each letter when we have the range keyword.
+
+41
+00:02:28,000 --> 00:02:29,000
+ So let me delete this.
+
+42
+00:02:29,000 --> 00:02:31,000
+ And now we'll go through each letter.
+
+43
+00:02:31,000 --> 00:02:34,000
+ So I'm going to ignore the index for this case.
+
+44
+00:02:34,000 --> 00:02:38,000
+ And I'll just use CH and CH will just be short for our character.
+
+45
+00:02:38,000 --> 00:02:41,000
+ I'll go from a range of elements.
+
+46
+00:02:41,000 --> 00:02:46,000
+ So this outer loop here is going to go through each one of these words.
+
+47
+00:02:46,000 --> 00:02:50,000
+ And this inner loop is going to go through each letter of each word.
+
+48
+00:02:50,000 --> 00:02:55,000
+ I'll do a print F in this case.
+
+49
+00:02:55,000 --> 00:02:57,000
+ A little bit of spaces.
+
+50
+00:02:57,000 --> 00:03:04,000
+ And if we do percent to Q, we'll actually print out the glyph representation of these runes.
+
+51
+00:03:04,000 --> 00:03:07,000
+ Because each one of these is a rune.
+
+52
+00:03:07,000 --> 00:03:11,000
+ I'm also going to add a little bit here.
+
+53
+00:03:11,000 --> 00:03:14,000
+ So now thanks to range, we get the length.
+
+54
+00:03:14,000 --> 00:03:17,000
+ The first range here, we're getting the length of the string automatically for us
+
+55
+00:03:17,000 --> 00:03:22,000
+ because we don't have to check to see how far long we are in the iteration.
+
+56
+00:03:22,000 --> 00:03:25,000
+ And on the second range, we're getting the same thing.
+
+57
+00:03:25,000 --> 00:03:30,000
+ We're getting the length of the total number of characters in these strings, not the bytes.
+
+58
+00:03:30,000 --> 00:03:34,000
+ So we're going to get individual letters regardless of how many bytes they consume
+
+59
+00:03:34,000 --> 00:03:35,000
+ and how complex they are.
+
+60
+00:03:35,000 --> 00:03:40,000
+ And when we use percent Q within this print F function,
+
+61
+00:03:40,000 --> 00:03:44,000
+ we're able to print out a rune instead of just the number of the rune.
+
+62
+00:03:44,000 --> 00:03:49,000
+ So let's hop back into a terminal and see what happens.
+
+63
+00:03:49,000 --> 00:03:52,000
+ And so on our first iteration, we print out hello.
+
+64
+00:03:52,000 --> 00:03:56,000
+ And then each iteration of the inner loop, we have each letter being printed out.
+
+65
+00:03:56,000 --> 00:04:01,000
+ And the same thing for world and the same thing for the exclamation.
+
+66
+00:04:01,000 --> 00:04:04,000
+ This is just a short demo on the range keyword.
+
+67
+00:04:04,000 --> 00:04:05,000
+ It's pretty straightforward.
+
+68
+00:04:05,000 --> 00:04:11,000
+ And for the most part, simulates the typical for loop with the iteration and the counter.
+
+69
+00:04:11,000 --> 00:04:19,000
+ Except it also takes into account the glyph representation of these string and runes.
+
+70
+00:04:19,000 --> 00:04:26,000
+ We're also able to use a range on different data types that will be covering later on in the course.
+
+71
+00:04:26,000 --> 00:04:31,000
+ And finally, one of the most convenient thing about ranges is we don't have to calculate the length or anything,
+
+72
+00:04:31,000 --> 00:04:35,000
+ because all of that is considered within the range keyword itself.
+
+73
+00:04:35,000 --> 00:04:41,000
+ And it's totally normal to ignore either the index or the element depending on what you're trying to do.
+
+74
+00:04:41,000 --> 00:04:44,000
+ Let's conclude the demo on the range keyword.
+
+75
+00:04:44,000 --> 00:04:46,000
+ I'll see you in the next presentation.
+
