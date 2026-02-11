@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:09,200
+ Hi, and so to last time, I want to show you what is the data privacy and security of the
+
+2
+00:00:09,200 --> 00:00:12,080
+ VIN sort of code the data.
+
+3
+00:00:12,080 --> 00:00:20,360
+ So I will go through main points of this documentation and if you want to read more or
+
+4
+00:00:20,360 --> 00:00:26,640
+ search more, you can find this link in the resources for this lesson and I also shared
+
+5
+00:00:26,640 --> 00:00:29,480
+ the link for privacy policy page.
+
+6
+00:00:29,480 --> 00:00:38,480
+ So there is a term, zero data retention in VIN sort, it means that your code or code like
+
+7
+00:00:38,480 --> 00:00:47,640
+ you sent never saved on the servers and can be only processed in memory which can be
+
+8
+00:00:47,640 --> 00:00:53,000
+ stored in a few minutes or some number of hours.
+
+9
+00:00:53,000 --> 00:00:59,280
+ So I'll let quickly search, I especially highlighted some key moments with the green
+
+10
+00:00:59,280 --> 00:01:05,680
+ color, they just different colors because they keep together.
+
+11
+00:01:05,680 --> 00:01:14,360
+ Because moments that any team or enterprise plan, so all inputs and outputs for this
+
+12
+00:01:14,360 --> 00:01:19,040
+ request follow zero data retention policy by default.
+
+13
+00:01:19,040 --> 00:01:23,640
+ So if you are enterprise plan, a team plan, you shouldn't care about any tall goals
+
+14
+00:01:23,640 --> 00:01:27,760
+ in your settings, it's enabled by default.
+
+15
+00:01:27,760 --> 00:01:34,200
+ And if you're an individual plan like three or problem, you have an optional toggle as
+
+16
+00:01:34,200 --> 00:01:36,080
+ yes in the settings.
+
+17
+00:01:36,080 --> 00:01:43,240
+ So when you install your application, your VIN sort for the data, you need to go to
+
+18
+00:01:43,240 --> 00:01:51,480
+ settings and disable it and this way you will enable zero data retention mode and your data
+
+19
+00:01:51,480 --> 00:01:56,360
+ 1% or VIN sort of one between it on them.
+
+20
+00:01:56,360 --> 00:02:06,400
+ So let go to the next key points, you can see, so VIN of each of these requests like some
+
+21
+00:02:06,400 --> 00:02:13,340
+ magenta experience or some autocomplete, super complete or tap the jump features with
+
+22
+00:02:13,340 --> 00:02:22,280
+ the VIN sort, also with the command, it's in line shot for terminal and code the guitar, and
+
+23
+00:02:22,280 --> 00:02:29,520
+ some real time, the client machine sends a combination of the context, I just sort of
+
+24
+00:02:29,520 --> 00:02:37,180
+ on snippets of code, recent actions, so file names, sometimes conversation history, some
+
+25
+00:02:37,180 --> 00:02:43,420
+ users, specified signals, like rules, memories, etc.
+
+26
+00:02:43,420 --> 00:02:49,580
+ But most single requests contain the entire code base or really large portions of codes
+
+27
+00:02:49,580 --> 00:02:52,380
+ or more.
+
+28
+00:02:52,380 --> 00:03:00,300
+ As it tells, they send it to the server to compute yet to process it, but not receiving
+
+29
+00:03:00,300 --> 00:03:07,020
+ a single request within the entire code base, so they like sent only small parts and needed
+
+30
+00:03:07,020 --> 00:03:10,700
+ for execute the particular request.
+
+31
+00:03:10,700 --> 00:03:17,260
+ You also can see that there is some usage analytics, but it's not about the code data,
+
+32
+00:03:17,260 --> 00:03:23,940
+ it's only about some usage metadata, and they log it to BigQuery on their servers.
+
+33
+00:03:23,940 --> 00:03:31,140
+ So it's about that they can save some information here with features you run, so how many
+
+34
+00:03:31,140 --> 00:03:37,940
+ times you run, etc, there's some metadata.
+
+35
+00:03:37,940 --> 00:03:41,780
+ Also, if an individual plan without zero data retention mode, if you have not enabled the
+
+36
+00:03:41,780 --> 00:03:50,020
+ struggle, thumb logs may contain cod snippets and user, so this information can be stored,
+
+37
+00:03:50,020 --> 00:03:52,820
+ so just be aware of it.
+
+38
+00:03:52,820 --> 00:04:03,980
+ Okay, I'll let go next, there is another, you can use different features, like different
+
+39
+00:04:03,980 --> 00:04:09,380
+ features from VensorFlow, like deployment plans, the web search, etc.
+
+40
+00:04:09,380 --> 00:04:16,580
+ And there are a lot of providers, like Google Cloud providers, AWS, OpenAI for some models
+
+41
+00:04:16,580 --> 00:04:24,380
+ and proper pick and other providers, and of course there is a bank API, so if you use
+
+42
+00:04:24,380 --> 00:04:33,260
+ a bank API, the VensorFlow doesn't have zero data retention policy agreement with BIMP,
+
+43
+00:04:33,260 --> 00:04:43,300
+ and for example, so it can contain some user inputs, some conversation history, potentially
+
+44
+00:04:43,300 --> 00:04:48,860
+ there's some cod data, so please be aware if you're on enterprise, so you can disable
+
+45
+00:04:48,860 --> 00:05:01,100
+ this bank API from settings, okay, I'll let go next, what else, so we have the zero data
+
+46
+00:05:01,100 --> 00:05:08,020
+ retention mode, guarantees that cod or cod driver data is never serialized or stored in
+
+47
+00:05:08,020 --> 00:05:15,900
+ a plaintext at our servers or by subprocessors, so also zero data retention mode is a default
+
+48
+00:05:15,900 --> 00:05:23,460
+ or any user of a team or enterprise plan and can be enabled by individual from the
+
+49
+00:05:23,460 --> 00:05:30,380
+ profile page, so you will just need to open the VensorFlow, go to settings and enable the
+
+50
+00:05:30,380 --> 00:05:37,540
+ start though if you're on individual plan, also the cod data is still visible to servers in memory,
+
+51
+00:05:37,540 --> 00:05:44,540
+ for the YF time of the request, because they need processes information, and you see some
+
+52
+00:05:44,540 --> 00:05:51,460
+ time as might exist for someone to preload in order to minutess minutes of hours for
+
+53
+00:05:51,460 --> 00:05:57,860
+ some replication, also the cod data submitted by zero data retention mode users will
+
+54
+00:05:57,860 --> 00:06:06,340
+ never be trained on, this is important option that if you enable this total VensorFlow
+
+55
+00:06:06,340 --> 00:06:14,580
+ one train on your data, or one train their models, this is the main key points, so that
+
+56
+00:06:14,580 --> 00:06:21,060
+ you understand what is the security and data privacy or source that is already transparent
+
+57
+00:06:21,060 --> 00:06:29,420
+ with the users who use it and so I hope this information was really useful to you, and
+
+58
+00:06:29,420 --> 00:06:30,980
+ see you in the next lesson.
+
