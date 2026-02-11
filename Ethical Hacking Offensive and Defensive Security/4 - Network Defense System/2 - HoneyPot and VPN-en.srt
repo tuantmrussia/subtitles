@@ -1,0 +1,608 @@
+1
+00:00:00,000 --> 00:00:06,860
+ Okay guys welcome to another video, in this video we will explore the honey pod, already
+
+2
+00:00:06,860 --> 00:00:13,240
+ we have seen the IPS ideas as well as the firewall, the working mechanism and how it will
+
+3
+00:00:13,240 --> 00:00:20,600
+ protect the network from the protectors, so now we will discuss another security mechanism
+
+4
+00:00:20,600 --> 00:00:26,340
+ that was commonly used in organizations, so the name was a honey pod, so the name looks
+
+5
+00:00:26,340 --> 00:00:33,240
+ like a beard, it is a honey with a pod, it is a cyber security mechanism designed to attract
+
+6
+00:00:33,240 --> 00:00:38,960
+ detect anomalies, the malicious activity by simulating a vulnerable system or a network,
+
+7
+00:00:38,960 --> 00:00:45,140
+ okay, so basically let me explain with the diagram, so let us think of it, here is
+
+8
+00:00:45,140 --> 00:01:01,140
+ your router and it is your router and here is a application server or any service which
+
+9
+00:01:01,140 --> 00:01:08,920
+ is very needle for an organization, but it was a public facing, it will be available
+
+10
+00:01:08,920 --> 00:01:19,760
+ in internet, so anyone if they have authorized username and password, anyone from any home,
+
+11
+00:01:19,760 --> 00:01:26,080
+ they can use their internet and they can use their internet and they can access this
+
+12
+00:01:26,080 --> 00:01:37,760
+ service, okay, so in that organization there is a honey pod as been implemented, okay, so let
+
+13
+00:01:37,760 --> 00:01:48,620
+ us think of it here is a attacker, so he is used to attack the web servers, so it is a web
+
+14
+00:01:48,620 --> 00:01:57,960
+ server, this hobby is to attack a web server, but what is this honey pod, this honey pod
+
+15
+00:01:57,960 --> 00:02:04,280
+ is like a already we have seen, it is a mechanism designed to attract the hackers, okay,
+
+16
+00:02:04,280 --> 00:02:11,720
+ so the detector will think this is a real server, but this is a fake server designed to
+
+17
+00:02:11,720 --> 00:02:17,080
+ attract the hackers, okay, it is designed to attract the hackers, so they think of it,
+
+18
+00:02:17,080 --> 00:02:23,080
+ this is the real server and they will try to enter into the machine, but they are unable
+
+19
+00:02:23,080 --> 00:02:29,920
+ to access into the machine, but they will connect to the honey pod, so it will act
+
+20
+00:02:29,920 --> 00:02:36,360
+ like a real web server and the attacker things, yeah I hacked the organizations, I hacked
+
+21
+00:02:36,360 --> 00:02:42,200
+ the web server, but that was not a real scenario, but because attacker hacked the fake
+
+22
+00:02:42,200 --> 00:02:48,620
+ honey pod server, so that's why it is used to attract the hackers, okay, it will be
+
+23
+00:02:48,620 --> 00:02:55,520
+ a vulnerable system, okay, so attacker tried attacker will come into the organization
+
+24
+00:02:55,520 --> 00:03:00,400
+ through any vulnerability, and what we will do, we will do the attack analysis, how he
+
+25
+00:03:00,400 --> 00:03:06,560
+ enter into the machine, which vulnerability he used and which is the compromise to password,
+
+26
+00:03:06,560 --> 00:03:11,080
+ username and password, he will use and we will check for the vulnerability, discover which
+
+27
+00:03:11,080 --> 00:03:17,880
+ vulnerability he tried to get to the machine, and we will improve our security team to the
+
+28
+00:03:17,880 --> 00:03:23,040
+ incident response, so we all know there is an incident response team in every server security
+
+29
+00:03:23,040 --> 00:03:30,560
+ company, so we can implement a good incident response, a team we can learn from this attack,
+
+30
+00:03:30,560 --> 00:03:34,340
+ so basically if there is a threat attacker, first of all we will learn from the threat
+
+31
+00:03:34,340 --> 00:03:39,680
+ attacker, so how he is entering into the machine, and what techniques he will use, and
+
+32
+00:03:39,680 --> 00:03:46,920
+ we will get all the IOCs, the indicator of compromise like IP address, and which command
+
+33
+00:03:46,920 --> 00:03:52,000
+ line he used, all this, all the activities we will observe from the threat attacker, and
+
+34
+00:03:52,000 --> 00:03:59,640
+ then we will design a rule to detect that automatically by our next-gen antivirus tools,
+
+35
+00:03:59,640 --> 00:04:07,280
+ okay, so if there is an IP address, the attacker used, we will block that IP address in
+
+36
+00:04:07,280 --> 00:04:12,080
+ the antivirus software, or a firewall, so the next time if the attacker tried to login
+
+37
+00:04:12,080 --> 00:04:19,280
+ into the machine by using that IP, the antivirus software or the firewall or EDR, it will
+
+38
+00:04:19,280 --> 00:04:24,640
+ automatically block that IP, okay, so it is a legal evidence how the attacker entered
+
+39
+00:04:24,640 --> 00:04:29,440
+ into the machine, so because the honey pod save all the logs, what are the things, what
+
+40
+00:04:29,440 --> 00:04:36,880
+ are the stuff the attacker did in the target machine, in the fake machine, so he it logs
+
+41
+00:04:36,880 --> 00:04:42,800
+ every, every each and everything, so we have a legal evidence of attacker, how he entered
+
+42
+00:04:42,800 --> 00:04:49,200
+ into the machine, and what are the commands he executed, so what is the IOC standalone, okay,
+
+43
+00:04:49,200 --> 00:04:54,200
+ so basically it will attract the hackers to hack into the machine, so by that we can
+
+44
+00:04:54,200 --> 00:05:00,840
+ as a security analyst, we can do our investigation, and we can improve our incident response
+
+45
+00:05:00,840 --> 00:05:06,960
+ team or any threat tunnelist team, inside the organization, okay, it is a very interesting
+
+46
+00:05:06,960 --> 00:05:12,720
+ field, the threat tunnelist, these things and all we will do some foreign stuff, and we can
+
+47
+00:05:12,720 --> 00:05:17,520
+ do an incident response, we can implement a new detection tools to stop the threat next
+
+48
+00:05:17,520 --> 00:05:26,500
+ time, yep, so this is the diagram where the honey pod will be placed, it will be placed
+
+49
+00:05:26,500 --> 00:05:35,160
+ after the, after the router, the first and it will be placed in a service network with
+
+50
+00:05:35,160 --> 00:05:40,840
+ the, it's the application service and our web service and the honey pod will be placed
+
+51
+00:05:40,840 --> 00:05:45,880
+ after the external firewall, so first honey pod was placed before the firewall, the next
+
+52
+00:05:45,880 --> 00:05:52,600
+ honey pod was placed after the firewall, so if the attacker things, it is a real web server
+
+53
+00:05:52,600 --> 00:05:59,640
+ and he will try to attack the machine and a threat, a threat tunnelist or a, a, a foreign
+
+54
+00:05:59,640 --> 00:06:05,960
+ six tunnelist, we can do some investigation and you can find out how the attacker can enter into
+
+55
+00:06:05,960 --> 00:06:11,000
+ the machine, okay, so this is the over our explanation of honey pod and let me see the another
+
+56
+00:06:11,000 --> 00:06:18,360
+ security mechanism that was broadly used in every organization, so this is the, one of
+
+57
+00:06:18,360 --> 00:06:24,960
+ the entry point of most of the threat actors, the ransomware, especially the ransomware threat
+
+58
+00:06:24,960 --> 00:06:31,960
+ actor, they will use VPNs to get into their organizations, they will use the VPN vulnerabilities
+
+59
+00:06:31,960 --> 00:06:38,840
+ to enter into the organization, okay, so let us see what's VPN, so it's a, it's a visual
+
+60
+00:06:38,840 --> 00:06:45,400
+ private network that allows user to create a secure and encrypted connection over a less secure
+
+61
+00:06:45,400 --> 00:06:54,320
+ network, such as internet, okay, so let me see some diagrams about the VPN, so you are
+
+62
+00:06:54,320 --> 00:07:12,320
+ for an example, so you are in an airport, so this is the airport and you have connected
+
+63
+00:07:12,320 --> 00:07:22,680
+ with the airport network through the Wi-Fi and your machine is here, so also the, one of
+
+64
+00:07:22,680 --> 00:07:29,040
+ the threat actor, the attacker connected in the Wi-Fi network, so he can able to see the
+
+65
+00:07:29,040 --> 00:07:35,080
+ data what you are sending, okay, he can able to sniff all the data, what you are sending,
+
+66
+00:07:35,080 --> 00:07:41,600
+ what, from the request and response, so what the request sending from your, your host
+
+67
+00:07:41,600 --> 00:07:47,640
+ machine and what's the response received from the other servers, okay, he can able to see
+
+68
+00:07:47,640 --> 00:07:54,960
+ everything, so we will do, we have a mechanism like a VPN visual private network, so basically
+
+69
+00:07:54,960 --> 00:08:01,760
+ we know what's encryption, so VPN supports the encryption, so VPN will create an encrypted
+
+70
+00:08:01,760 --> 00:08:09,400
+ channel, so it will create an encrypted channel, so attacker, if the attacker was here,
+
+71
+00:08:09,400 --> 00:08:16,720
+ if he tries to sniff all the data, he was monitoring all the data from these two machines,
+
+72
+00:08:16,720 --> 00:08:22,280
+ he was unable to understand what we are sending, okay, so the first thing in VPN, it
+
+73
+00:08:22,280 --> 00:08:31,220
+ has an encryption, so we are using for our security, you know, unsecured networks, so
+
+74
+00:08:31,220 --> 00:08:38,320
+ basically this is the first point, such as the internet and the less secure network, okay,
+
+75
+00:08:38,320 --> 00:08:46,680
+ so also we are using in our home network also because if we need a security, let's
+
+76
+00:08:46,680 --> 00:08:54,200
+ think of very big organizations and they don't know if any of the machines get compromised,
+
+77
+00:08:54,200 --> 00:09:00,400
+ so if there's a VPN has been implemented, so they can able to securely transfer their data
+
+78
+00:09:00,400 --> 00:09:09,600
+ and receive their data, right, so next thing the privacy, so VPN basically hide your IP address,
+
+79
+00:09:09,600 --> 00:09:17,600
+ so no one able to track, or track you, so where you are and who you are, this details
+
+80
+00:09:17,600 --> 00:09:23,400
+ will be hidden, so VPN will support a privacy for you and there's something, so when you
+
+81
+00:09:23,400 --> 00:09:28,600
+ are connecting to any internet it will be, it will be change your IP address basically,
+
+82
+00:09:28,600 --> 00:09:37,280
+ I will give you a real example of how it will do, so security in the sense it will encrypt
+
+83
+00:09:37,280 --> 00:09:43,360
+ all the network traffic and wife in it, which is more vulnerable to attack, so bypassing
+
+84
+00:09:43,360 --> 00:09:49,320
+ geo restriction, so for example if your country, so for my country, India will sometime
+
+85
+00:09:49,320 --> 00:09:57,400
+ block some, some of the websites, right, so if we are implementing the VPN, so we can bypass
+
+86
+00:09:57,400 --> 00:10:03,640
+ this restriction, so because it will change the IP address to other location, okay, so
+
+87
+00:10:03,640 --> 00:10:12,640
+ we can by easily bypass the geo location restrictions, this will be a good thing, so another
+
+88
+00:10:12,640 --> 00:10:17,640
+ one of the important, very important things we need to notice, there is a remote access,
+
+89
+00:10:17,640 --> 00:10:24,880
+ so in COVID time in 2020 to 2022, so everyone are in home, you are working in a home,
+
+90
+00:10:24,880 --> 00:10:33,480
+ so if everyone will be in the remote network, right, so let's think of it, here is a home,
+
+91
+00:10:33,480 --> 00:10:44,600
+ so you are working in a home, and here is your organization, here is your router, and
+
+92
+00:10:44,600 --> 00:10:50,880
+ the organization have a VPN, so it will be in the network, so you can, you need to access
+
+93
+00:10:50,880 --> 00:10:56,600
+ some web servers inside of our organization, so you are a network administrator or so we
+
+94
+00:10:56,600 --> 00:11:03,640
+ serve administrator, so you can able to use the VPN for a secure and safe communication, it will
+
+95
+00:11:03,640 --> 00:11:11,600
+ be encrypted, right, so you can use the VPN to get into the web servers, and you can configure
+
+96
+00:11:11,600 --> 00:11:17,800
+ what you want, okay, this is the real thing, so what you used, what you used to do during
+
+97
+00:11:17,800 --> 00:11:24,240
+ your COVID time, so when you are in the web from home, so it will be in the safe and secure
+
+98
+00:11:24,240 --> 00:11:33,360
+ channel, but the attackers, the hackers will use the VPN vulnerability, so if you have compromised
+
+99
+00:11:33,360 --> 00:11:44,440
+ the VPN, so you can easily enter into the web server, okay, so I will show that publicly,
+
+100
+00:11:44,440 --> 00:11:56,840
+ so if we search of the 48 VPN, show down, so you can easily go to show down and you can
+
+101
+00:11:56,840 --> 00:12:19,280
+ notice everything, so here is, I just checked the 48, and you can see the 48 VPN was asking
+
+102
+00:12:19,280 --> 00:12:30,520
+ your username and password to me, basically 48 was a VPN provider, so here you can see
+
+103
+00:12:30,520 --> 00:12:38,000
+ they have a separate VPN, they are a VPN providers, so the VPN will be in both, the hardware
+
+104
+00:12:38,000 --> 00:12:51,880
+ as well as the software we can see there, from here the VPN will be looked like this,
+
+105
+00:12:51,880 --> 00:12:59,400
+ okay, so it will support encryption and all, so if you have the username and password,
+
+106
+00:12:59,400 --> 00:13:05,040
+ you can login into the organization and you can hack whatever you want, okay, so there
+
+107
+00:13:05,040 --> 00:13:11,280
+ will be a lot of CV for a VPN, so the attackers will use this CV and get into the machines,
+
+108
+00:13:11,280 --> 00:13:16,400
+ so it will be one of the easy things, because it was publicly faced, we will take, this
+
+109
+00:13:16,400 --> 00:13:22,720
+ is a public facing application, we can able to access it from our internal, so this VPN
+
+110
+00:13:22,720 --> 00:13:28,040
+ is public facing, if we have a username and password, we can able to login into that machine,
+
+111
+00:13:28,040 --> 00:13:38,400
+ so you can see a critical vulnerability was found in the VPN and SSL function, and there's
+
+112
+00:13:38,400 --> 00:13:48,160
+ a lot of vulnerabilities like remote code execution, send all remote code execution, so
+
+113
+00:13:48,160 --> 00:13:56,040
+ CV 2024, 21762, it has a remote code execution, you can execute any remote code in any of
+
+114
+00:13:56,040 --> 00:14:02,560
+ the parameter and you can get into the machines, like you can execute the I/F_con suite
+
+115
+00:14:02,560 --> 00:14:09,360
+ command, like that and you can access whatever you want, like the vulnerabilities like
+
+116
+00:14:09,360 --> 00:14:18,280
+ that, okay, so RLS, you can post your malicious code in new web server and you can give
+
+117
+00:14:18,280 --> 00:14:23,680
+ the URLs, like we can, we will see all the things in upcoming topics and we can discuss
+
+118
+00:14:23,680 --> 00:14:28,280
+ whatever you want, so let us think of it, this is our remote server and you are hosting
+
+119
+00:14:28,280 --> 00:14:36,760
+ a server dot exefil, so this will execute in the VPN and it will give you the reverse
+
+120
+00:14:36,760 --> 00:14:44,760
+ connection to you, so the vulnerabilities are like that, so you can easily get into the
+
+121
+00:14:44,760 --> 00:14:56,160
+ machines, okay, so it's a remote access software, you have a, if you have a username and
+
+122
+00:14:56,160 --> 00:15:03,720
+ post it, you can easily access it remotely, okay, the VPN will be hosted like this and
+
+123
+00:15:03,720 --> 00:15:09,040
+ there's internet and there's VPN gateway, so it will be hosted like this, so if you have
+
+124
+00:15:09,040 --> 00:15:14,200
+ the credentials or if the VPN have any vulnerability, you can easily enter into any of
+
+125
+00:15:14,200 --> 00:15:21,720
+ the machines inside the organizations, so the ransomware protectors mostly use, so 48 VPNs
+
+126
+00:15:21,720 --> 00:15:34,520
+ and others is go or any VPNs to spread their ransomware across the environment, okay,
+
+127
+00:15:34,520 --> 00:15:41,640
+ so ransomware update of exploiting 48 networks, ransomware hackers is hijacked 48 VPNs,
+
+128
+00:15:41,640 --> 00:15:49,000
+ okay, so not only the 48 VPN, not a lot of VPN, so every VPN source vulnerable on of the
+
+129
+00:15:49,000 --> 00:15:54,840
+ time, so after that they will release a patch for that, so there we can fix, so let me see
+
+130
+00:15:54,840 --> 00:16:09,720
+ what's about VPN, so I have a bit different VPN, so now you can see my IP address was 1172027.125,
+
+131
+00:16:09,720 --> 00:16:24,360
+ if I give you my IP here, it will be showing some other IPs, okay, so my IP will be 15
+
+132
+00:16:24,360 --> 00:16:37,240
+ and our 192 on 246.32, let's put this in virus total, let's understand what this virus
+
+133
+00:16:37,240 --> 00:16:49,560
+ total, saying it's showing my IP was a malware and it's the media, let's connect it to the VPN,
+
+134
+00:16:52,440 --> 00:17:04,040
+ and now I am in Singapore, let it will load, let's give me some seconds, let it will be
+
+135
+00:17:04,040 --> 00:17:18,280
+ loaded, once it gets loaded we will refresh that, so now you can see my IP was changed to 146.70.149.104,
+
+136
+00:17:18,280 --> 00:17:28,600
+ so if I put this in virus total, so now it's a VPN IP and it's from Singapore, so the virus
+
+137
+00:17:28,600 --> 00:17:35,480
+ total showing, it also VPN IP, so the VPN is basically changed your IP address to your location,
+
+138
+00:17:35,480 --> 00:17:44,680
+ so if any of the IP websites has been blocked in India, so we can access that websites through the
+
+139
+00:17:45,400 --> 00:17:53,640
+ VPNs, okay, so not only that you can easily switch from one place to another, so by using the
+
+140
+00:17:53,640 --> 00:17:59,560
+ location tab, so here we have all the locations, so you have switch all the locations, what locations
+
+141
+00:17:59,560 --> 00:18:07,800
+ you want, so I'm not using the premium version, so it's 250 free for, if you want to upgrade,
+
+142
+00:18:07,800 --> 00:18:14,440
+ you can go ahead and upgrade, I'm not interested, I'm not using VPN for my day-to-day activities,
+
+143
+00:18:15,160 --> 00:18:21,320
+ I don't need that, so this is the overall explanation of the virtual private network, so let's
+
+144
+00:18:21,320 --> 00:18:26,200
+ understand, it's more vulnerable and you can easily enter into the organization through the VPN
+
+145
+00:18:26,200 --> 00:18:31,400
+ networks, if you do need to, if you need to research something about the vulnerability, just go ahead
+
+146
+00:18:31,400 --> 00:18:36,360
+ and research about the vulnerability, because most of the threat factors, especially the ransomware
+
+147
+00:18:36,360 --> 00:18:41,800
+ threat factors, they will use VPN networks to get into the organizations and spread their
+
+148
+00:18:41,800 --> 00:18:49,160
+ ransomware binaries across the network, okay, many of them are of freshers while taking this course,
+
+149
+00:18:49,160 --> 00:18:57,800
+ but don't worry about the big big words like ransomware, VPNs, and the organizations, etc, etc,
+
+150
+00:18:57,800 --> 00:19:06,680
+ so we will learn in the upcoming top sections, on by one, okay, so thank you guys, I hope you
+
+151
+00:19:06,680 --> 00:19:11,960
+ have a clear understanding, understanding about the funny part of the VPN, we will continue the
+
+152
+00:19:11,960 --> 00:19:16,120
+ discussion in the next video, see you, bye bye.
+
