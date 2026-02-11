@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:07,480
+ So, let us start with another video, in this video we will see the man in the middle attack
+
+2
+00:00:07,480 --> 00:00:13,520
+ probably we will say M ITM, man in the middle, so then he made self with it, it was showing
+
+3
+00:00:13,520 --> 00:00:19,800
+ someone's monitoring from middle of the network, before entering into the man in the
+
+4
+00:00:19,800 --> 00:00:20,800
+ middle.
+
+5
+00:00:20,800 --> 00:00:28,800
+ So, we need to understand the ARP protocol, so let us check for that, so first understand
+
+6
+00:00:28,800 --> 00:00:42,040
+ about the ARP, so ARP stands for address resolution protocol, so you have an IP address ok,
+
+7
+00:00:42,040 --> 00:00:49,080
+ but you need a MAC address to communicate into a network, so now this ARP help you to solve
+
+8
+00:00:49,080 --> 00:01:02,300
+ this problem, so ARP will change, it will, it will ask the MAC address for the host into
+
+9
+00:01:02,300 --> 00:01:07,480
+ the network ok, so that is why the name itself the address resolution protocol, resolving
+
+10
+00:01:07,480 --> 00:01:17,640
+ the IP address into the MAC address ok, it will do the MAC address for you ok, so let us take
+
+11
+00:01:17,640 --> 00:01:29,160
+ a router here, and we have a lot of machines inside the network that was connected into
+
+12
+00:01:29,160 --> 00:01:37,960
+ the router, so outside of the network if you need to communicate outside to a network
+
+13
+00:01:37,960 --> 00:01:46,320
+ so you can, the IP address is enough to communicate outside, but inside of a network for
+
+14
+00:01:46,320 --> 00:01:54,560
+ some of this machine need to send high to this machine, so now this machine needs to know
+
+15
+00:01:54,560 --> 00:02:01,880
+ the IP address of computer, let us think of the computer ABC, so computer A wants to communicate
+
+16
+00:02:01,880 --> 00:02:08,480
+ it computer B, so computer A needs to know the IP address, sorry the MAC address of a computer
+
+17
+00:02:08,480 --> 00:02:16,040
+ B ok, so the MAC address will be on of an important thing for communicate communication
+
+18
+00:02:16,040 --> 00:02:27,260
+ inside the network ok, so by using the ARP protocol, so computer A will send a broadcast
+
+19
+00:02:27,260 --> 00:02:35,280
+ recused to every host inside a network ok, so broadcast means it will be sent to everyone
+
+20
+00:02:35,280 --> 00:02:46,200
+ inside the network ok, so computer will A will send like I have an IP, so let us think
+
+21
+00:02:46,200 --> 00:02:55,200
+ of it computer AIP was dot 2, and computer B IP was dot 3, dot 3, let us own 92 160
+
+22
+00:02:55,200 --> 00:03:03,760
+ dot 18 dot 3 ok, so the computer gave you last I have an IP, but I need a MAC for this
+
+23
+00:03:03,760 --> 00:03:20,200
+ address, MAC for this address ok, the address is 18 dot 3, so it will send to every host
+
+24
+00:03:20,200 --> 00:03:26,720
+ person inside the network if 100 computers are there, it will send to look 100 computers,
+
+25
+00:03:26,720 --> 00:03:35,120
+ so let us think of it computer C has 18 dot 4, computer D has 18 dot 5, so now computer
+
+26
+00:03:35,120 --> 00:03:40,320
+ C will reject I do not have the IP address of 18 dot 3, computer D will also reject because
+
+27
+00:03:40,320 --> 00:03:53,920
+ I do not have the IP address of 18 dot 3 right, so now computer B will give the IP MAC
+
+28
+00:03:53,920 --> 00:04:01,320
+ address to computer A ok, so computer B will give a MAC address to computer A ok, so now
+
+29
+00:04:01,320 --> 00:04:10,240
+ computer A know the MAC address, because of the address resolution protocol ok, so more
+
+30
+00:04:10,240 --> 00:04:17,000
+ time, so inside the network if you need to communicate we need a MAC address, so to resolve
+
+31
+00:04:17,000 --> 00:04:25,160
+ the MAC address we need a ARP protocol, so ARP the computer A needs to communicate with
+
+32
+00:04:25,160 --> 00:04:30,800
+ computer B, the computer will send a broadcast message to everyone inside the network,
+
+33
+00:04:30,800 --> 00:04:36,240
+ computer A computer D computer D, so like I have an IP address of 18 dot 3, but I need
+
+34
+00:04:36,240 --> 00:04:41,640
+ a MAC address of 18 dot 3, so it will be shared with everyone, so computer D do not have
+
+35
+00:04:41,640 --> 00:04:46,640
+ the 18 dot 3 address, computer C also do not have 18 dot 3 address, computer B have 18 dot
+
+36
+00:04:46,640 --> 00:04:52,640
+ 3 address, so computer D will response to the computer A, I have an IP and my MAC address
+
+37
+00:04:52,640 --> 00:05:01,560
+ is this ok, so now computer A and computer B can able to communicate with each other, so
+
+38
+00:05:01,560 --> 00:05:09,280
+ they can enjoy the communication ok, so this is the overall explanation of address resolution
+
+39
+00:05:09,280 --> 00:05:17,240
+ protocol, so let us think of it MATM, so here you have a router and here is your call
+
+40
+00:05:17,240 --> 00:05:28,520
+ emission, so here is your Windows machine, so normal, a normal communication to what
+
+41
+00:05:28,520 --> 00:05:33,240
+ the call emission and Windows machine will do call, Windows machine will send something
+
+42
+00:05:33,240 --> 00:05:40,960
+ to router and router will send something to internet write, this is the normal communication,
+
+43
+00:05:40,960 --> 00:05:52,720
+ so if use poisoned the ARP, ARP poisoning address resolution protocol poisoning, so now
+
+44
+00:05:52,720 --> 00:05:58,680
+ what will happen, so let us think of it, here is your call emission and here is your
+
+45
+00:05:58,680 --> 00:06:11,280
+ Windows machine, so you are tricking, you are doing some trick and you are saying to
+
+46
+00:06:11,280 --> 00:06:16,880
+ you are saying, you are saying this Windows machine like, so I am the router ok, so now
+
+47
+00:06:16,880 --> 00:06:22,200
+ Windows machine thing of it, so the calling machine is my router ok, so because you are
+
+48
+00:06:22,200 --> 00:06:27,440
+ doing some optics ok, and you are saying I am the router ok, calling machine is the router
+
+49
+00:06:27,440 --> 00:06:34,520
+ the attacker, the call is router and what Windows will now do, Windows will send all the
+
+50
+00:06:34,520 --> 00:06:44,040
+ recused to the call emission and it got every response from the call emissions ok, so
+
+51
+00:06:44,040 --> 00:06:47,680
+ once it send a recused to the call emission, call emission will send it to the router
+
+52
+00:06:47,680 --> 00:06:55,360
+ and it will reach us to the internet ok, so you are doing some trick and you are saying
+
+53
+00:06:55,360 --> 00:07:00,720
+ so I am the router ok, so send all the packets to me, I am the router send all the packets
+
+54
+00:07:00,720 --> 00:07:04,840
+ to me, so now Windows machine will send all the packets to the call emission and call
+
+55
+00:07:04,840 --> 00:07:11,440
+ emission transfer that packets to the internet ok, so I am not compromising this attack
+
+56
+00:07:11,440 --> 00:07:20,480
+ because you can do it in terminal, so we can easily do it in GUI tool, so there is a lot
+
+57
+00:07:20,480 --> 00:07:28,400
+ of ways to do, but I will say one of the easiest way you can do air piece poisoning
+
+58
+00:07:28,400 --> 00:07:38,320
+ attack, so let me close off the previous OSR, we will clear this and we will stop the
+
+59
+00:07:38,320 --> 00:07:54,000
+ service, stop the Apache service, let us pick on the Kali Linux logo and go to the sniffing
+
+60
+00:07:54,000 --> 00:08:00,760
+ and the spoofing tool, so you can see the ether cap, so there is a GUI tool will be there,
+
+61
+00:08:00,760 --> 00:08:06,400
+ also will be there, also you have a terminal based tool for a ether cap, so the easiest
+
+62
+00:08:06,400 --> 00:08:11,460
+ one is a graphical user, so you can use the graphical user interface to do this attack
+
+63
+00:08:11,460 --> 00:08:18,800
+ ok, let us open this, so now you got a console, primary it will be a constant, no need
+
+64
+00:08:18,800 --> 00:08:25,900
+ to change, just assert this terms and condition, so now it was loaded, let me take my
+
+65
+00:08:25,900 --> 00:08:39,400
+ primary machine and we will launch an attack, so my primary machine IP will be I/F config
+
+66
+00:08:39,400 --> 00:08:47,060
+ so now you can find out 18.29 is my primary machine IP, that Windows machine IP, so this
+
+67
+00:08:47,060 --> 00:08:58,900
+ machine okay, this machine IP was 18.29, so now let us scan the servers, so scan the host
+
+68
+00:08:58,900 --> 00:09:09,780
+ person inside the network, so now you can find 18.29 and with the MAC address, if you
+
+69
+00:09:09,780 --> 00:09:20,340
+ want to check the MAC address, I will show that I P config last R, now you can find
+
+70
+00:09:20,340 --> 00:09:29,980
+ our physical address DC97DA, and similar ADZ97DA will be in the back, so now you can
+
+71
+00:09:29,980 --> 00:09:38,420
+ become add to target, so now you can see the target get adder, now you go to the MATM menu
+
+72
+00:09:38,420 --> 00:09:44,340
+ man in the middle attack menu, and you can see a lot of options will be there, they get
+
+73
+00:09:44,340 --> 00:09:51,100
+ CP spoofing, stop MATM, and LDP poisoning, so we need the ARP spoofing, so I am selecting
+
+74
+00:09:51,100 --> 00:10:03,980
+ the ARP spoofing here, so now we have successfully launched the ARP spoofing attack, right,
+
+75
+00:10:03,980 --> 00:10:16,180
+ ARP poisoning attack, so now this Windows machine, this Windows machine will send all the
+
+76
+00:10:16,180 --> 00:10:23,900
+ reduced to my calling machine, to my attack permission, okay, we will see that in next video,
+
+77
+00:10:23,900 --> 00:10:31,220
+ we will try to login in one of the website, and we can see what happened if we do a ARP
+
+78
+00:10:31,220 --> 00:10:34,860
+ poisoning attack, okay, let's swap off this video, and we will continue this video in the
+
+79
+00:10:34,860 --> 00:10:38,540
+ next video, thank you, bye.
+
