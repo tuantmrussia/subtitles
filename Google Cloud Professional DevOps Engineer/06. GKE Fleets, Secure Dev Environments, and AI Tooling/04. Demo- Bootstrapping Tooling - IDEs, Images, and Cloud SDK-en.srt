@@ -1,0 +1,395 @@
+1
+00:00:01,230 --> 00:00:04,710
+Imagine a new developer joins your team on Monday.
+
+2
+00:00:04,829 --> 00:00:10,909
+They open their laptop and immediately spend two full days installing the IDEs.
+
+3
+00:00:11,109 --> 00:00:12,949
+Not only this is inefficient,
+
+4
+00:00:13,109 --> 00:00:16,909
+but it also creates inconsistent and unreliable setup.
+
+5
+00:00:17,069 --> 00:00:20,430
+What if every developer could start with a fully configured,
+
+6
+00:00:20,670 --> 00:00:23,469
+perfectly consistent environment in seconds?
+
+7
+00:00:23,590 --> 00:00:26,725
+That's exactly what we're going to do in this clip. We're
+
+8
+00:00:26,725 --> 00:00:29,045
+going to get into our Cloud Workstation,
+
+9
+00:00:29,225 --> 00:00:30,545
+which we already created.
+
+10
+00:00:30,665 --> 00:00:34,865
+Now, in this Cloud Workstation, which we have created in the previous clip,
+
+11
+00:00:34,944 --> 00:00:38,505
+I'm going to install a couple of softwares, and I want to
+
+12
+00:00:38,505 --> 00:00:40,865
+make this as a preconfigured image.
+
+13
+00:00:40,944 --> 00:00:44,455
+So in the previous clip, we have already installed the Google Cloud CLI.
+
+14
+00:00:44,575 --> 00:00:46,564
+Now let's add a couple of more.
+
+15
+00:00:46,825 --> 00:00:47,685
+Let's say clear.
+
+16
+00:00:48,049 --> 00:00:50,700
+Let's install kubectl. It is installing.
+
+17
+00:00:50,889 --> 00:00:52,250
+It will take a little time.
+
+18
+00:00:52,490 --> 00:00:56,049
+Now once this gets installed, I'm going to install another library,
+
+19
+00:00:56,130 --> 00:01:00,689
+let's say Helm, saying sudo apt‑get install helm,
+
+20
+00:01:00,849 --> 00:01:02,150
+let's say clear.
+
+21
+00:01:02,569 --> 00:01:05,989
+Now let's say sudo apt‑get installed terraform.
+
+22
+00:01:06,440 --> 00:01:08,160
+Now this will install the Terraform.
+
+23
+00:01:08,529 --> 00:01:10,330
+Now let's add a new file.
+
+24
+00:01:11,080 --> 00:01:13,169
+And I call it as a Dockerfile.
+
+25
+00:01:13,569 --> 00:01:17,199
+Now inside this Dockerfile, let me type in one command.
+
+26
+00:01:17,489 --> 00:01:23,250
+Say here, from asia‑southeast1‑docker.pkg.dev.
+
+27
+00:01:23,720 --> 00:01:27,830
+So I give that entire information, and now I'm going to create the
+
+28
+00:01:27,830 --> 00:01:35,010
+image for this saying in the console docker build ‑t dev‑image:v1.
+
+29
+00:01:35,010 --> 00:01:37,699
+And this will create one image for me.
+
+30
+00:01:37,919 --> 00:01:40,459
+Now once this image is going to get created,
+
+31
+00:01:40,599 --> 00:01:44,860
+this image I'm going to push to the artifact repository.
+
+32
+00:01:45,040 --> 00:01:47,160
+This image creation will take some time.
+
+33
+00:01:47,480 --> 00:01:52,722
+Once this is ready, we're going to use this image later on to
+
+34
+00:01:52,722 --> 00:01:56,902
+create a new workstation so that all the new workstations which we
+
+35
+00:01:57,751 --> 00:02:02,722
+create will have the same exact environment and all these specific
+
+36
+00:02:02,722 --> 00:02:04,522
+softwares installed on that.
+
+37
+00:02:04,722 --> 00:02:07,402
+Now you can see that it has been finished successfully.
+
+38
+00:02:07,482 --> 00:02:11,722
+Let me just clear the screen, and now I want to push this
+
+39
+00:02:11,722 --> 00:02:14,623
+specific image to the artifact repository.
+
+40
+00:02:14,723 --> 00:02:18,904
+Now to push this specific image into the artifact repository,
+
+41
+00:02:19,044 --> 00:02:21,324
+first, let's create an artifact repository.
+
+42
+00:02:21,404 --> 00:02:24,583
+So I'm saying that gcloud artifacts repositories
+
+43
+00:02:24,583 --> 00:02:28,664
+create workstation‑images repository.
+
+44
+00:02:28,723 --> 00:02:31,363
+Now it will ask me that I'm not yet logged in.
+
+45
+00:02:31,444 --> 00:02:35,764
+So let me just say gcloud auth login so that I will get authenticated.
+
+46
+00:02:35,884 --> 00:02:38,640
+Now the authentication gets done, let me run the command again.
+
+47
+00:02:38,640 --> 00:02:41,945
+Now it is creating that specific repository.
+
+48
+00:02:42,126 --> 00:02:43,595
+Now repository the got created.
+
+49
+00:02:43,845 --> 00:02:46,666
+Now let's push the image into this repository.
+
+50
+00:02:46,925 --> 00:02:50,005
+For this, I'm going to use the command docker tag,
+
+51
+00:02:50,285 --> 00:02:52,955
+and then in that I'm going to give the dev‑image.
+
+52
+00:02:53,126 --> 00:02:55,966
+So this is also giving me an error of unauthorization.
+
+53
+00:02:56,205 --> 00:03:00,705
+So let me just do this, saying gcloud auth configure‑docker,
+
+54
+00:03:00,925 --> 00:03:03,106
+and then I try to add the credentials.
+
+55
+00:03:03,647 --> 00:03:04,078
+Say yes.
+
+56
+00:03:04,408 --> 00:03:06,307
+Now let it run one more time,
+
+57
+00:03:06,488 --> 00:03:09,248
+and now you can see that it did start pushing this
+
+58
+00:03:09,248 --> 00:03:12,248
+specific image into the artifact repository.
+
+59
+00:03:12,298 --> 00:03:15,307
+It will take a while to push this entire image.
+
+60
+00:03:15,527 --> 00:03:17,488
+Once this image pushing gets done,
+
+61
+00:03:17,768 --> 00:03:21,848
+we are ready to create the workstation using this image.
+
+62
+00:03:21,968 --> 00:03:23,798
+Now this has been pushed successfully.
+
+63
+00:03:24,087 --> 00:03:29,770
+Now I go back to my Google Cloud, and here in the terminal, I'm going to type
+
+64
+00:03:29,770 --> 00:03:33,229
+in the command saying create the workstation configuration.
+
+65
+00:03:33,649 --> 00:03:36,429
+This time the name is dev‑custom‑config,
+
+66
+00:03:36,630 --> 00:03:38,100
+and most importantly,
+
+67
+00:03:38,410 --> 00:03:43,529
+the container image we are providing here is the custom image that we
+
+68
+00:03:43,529 --> 00:03:47,210
+had created and pushed into the artifact repository.
+
+69
+00:03:47,610 --> 00:03:48,570
+Now let's say Create.
+
+70
+00:03:48,759 --> 00:03:52,250
+Now this will create the workstation configuration. And once
+
+71
+00:03:52,250 --> 00:03:56,200
+this gets done, we start going to create the workstation. Now
+
+72
+00:03:56,200 --> 00:03:58,029
+our configuration got created.
+
+73
+00:03:58,179 --> 00:03:59,919
+Now let's create the workstation.
+
+74
+00:04:00,270 --> 00:04:03,770
+So for that, let me go down to the workstations here.
+
+75
+00:04:04,070 --> 00:04:09,250
+Under the Workstation configurations, now I can see my dev‑custom‑config.
+
+76
+00:04:09,830 --> 00:04:14,309
+When I go into my dev‑custom‑config, I can see the cluster name.
+
+77
+00:04:14,589 --> 00:04:17,928
+And most importantly, under the Container image,
+
+78
+00:04:18,070 --> 00:04:22,690
+I can see the image that we had pushed into the artifact repository.
+
+79
+00:04:23,029 --> 00:04:24,269
+Now on the top,
+
+80
+00:04:24,390 --> 00:04:30,649
+let's create on the workstation, and let's give a name to that workstation wk‑1.
+
+81
+00:04:30,750 --> 00:04:35,399
+And for this workstation, I'm choosing the configuration which we have created,
+
+82
+00:04:35,670 --> 00:04:39,269
+that is dev‑custom‑config and say Create.
+
+83
+00:04:39,589 --> 00:04:43,029
+Now it will take a while for this workstation to get created.
+
+84
+00:04:43,309 --> 00:04:44,029
+Here it is.
+
+85
+00:04:44,500 --> 00:04:48,339
+We're going to click here on the three dots and say Start.
+
+86
+00:04:48,589 --> 00:04:52,559
+It will take a while to start this specific workstation.
+
+87
+00:04:52,869 --> 00:04:54,079
+Once this gets started,
+
+88
+00:04:54,220 --> 00:04:59,540
+we go inside this workstation and see that whether it has the Cloud CLI which
+
+89
+00:04:59,540 --> 00:05:04,040
+we already added is installed automatically there or not.
+
+90
+00:05:04,279 --> 00:05:05,959
+Now our workstation got started.
+
+91
+00:05:06,140 --> 00:05:08,059
+Let me log in into this workstation.
+
+92
+00:05:08,380 --> 00:05:09,640
+Now let me open the terminal.
+
+93
+00:05:09,989 --> 00:05:11,160
+And inside the terminal,
+
+94
+00:05:11,269 --> 00:05:15,160
+let me check if our Google CLI is already installed or not.
+
+95
+00:05:15,320 --> 00:05:20,399
+We can just type in saying gcloud ‑‑version and say Enter. So we can
+
+96
+00:05:20,399 --> 00:05:23,239
+see that Google Cloud is already installed here.
+
+97
+00:05:23,320 --> 00:05:25,500
+So we got all of those things installed.
+
+98
+00:05:25,959 --> 00:05:29,299
+So that's how to bootstrap secure, consistent,
+
+99
+00:05:29,519 --> 00:05:33,160
+production‑ready development environments using the Cloud Workstations.
