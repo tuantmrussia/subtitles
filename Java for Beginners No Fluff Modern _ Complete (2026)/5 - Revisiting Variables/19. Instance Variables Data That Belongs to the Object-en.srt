@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:06,640
+ So in this video we're going to start revisiting variables again, right? We have some business
+
+2
+00:00:06,640 --> 00:00:13,200
+ left with variables. So let's just go in and dive into what remains or variables to be seen.
+
+3
+00:00:13,200 --> 00:00:18,240
+ Obviously we keep on using variables different way right across the scores and in your program
+
+4
+00:00:18,240 --> 00:00:24,720
+ in your development or your developer journeys. But this is very important for you to understand
+
+5
+00:00:24,720 --> 00:00:31,760
+ how variables behave depending on where you declare and use them. So by now we know that
+
+6
+00:00:31,760 --> 00:00:36,640
+ we have two types of variables in Java that is primitive variables at reference variables
+
+7
+00:00:36,640 --> 00:00:42,080
+ or you can just call them primitive type variables at reference type variables. But we have then
+
+8
+00:00:42,080 --> 00:00:48,320
+ three levels of variables as well that is two types and three levels. What are levels now?
+
+9
+00:00:48,320 --> 00:00:54,880
+ Levels are where exactly at what places can you declare variables in Java? And there are
+
+10
+00:00:54,880 --> 00:01:00,400
+ three places to be exact. There are three places to be appropriate. And depending on where you
+
+11
+00:01:00,400 --> 00:01:05,760
+ declare them, they would have their repercussions, right? So let's just have a look at them.
+
+12
+00:01:05,760 --> 00:01:09,920
+ There are three levels as I said where you can declare variables. Both these types of variables
+
+13
+00:01:09,920 --> 00:01:16,480
+ mind, mind you that is reference as well as primitives. We can declare these two types of variables
+
+14
+00:01:16,480 --> 00:01:22,560
+ at three levels in Java. The first level is called instance level variables. And once you
+
+15
+00:01:22,560 --> 00:01:28,080
+ declare these variables at the instance level, then then appropriately called instance variables
+
+16
+00:01:28,080 --> 00:01:34,240
+ in Java, and which is the instance level. Let me just go on and show you that. I'll just quickly
+
+17
+00:01:34,240 --> 00:01:44,320
+ go on and create a new class for that. I'll just call it variable level work. Again, I appropriately
+
+18
+00:01:44,320 --> 00:01:49,200
+ calling them as I've been telling you across the course, we should always pay attention to what
+
+19
+00:01:49,200 --> 00:01:56,640
+ we name our identifier. They go a long way in your code being better readable. So again, we'll just
+
+20
+00:01:56,640 --> 00:02:02,240
+ maximize this window for you. So this is variable level of work. I'll just have this as the main
+
+21
+00:02:02,240 --> 00:02:08,240
+ method. Now let's say I have another function or method here and move on methods that's coming
+
+22
+00:02:08,240 --> 00:02:13,920
+ on for you in the next video where we are going to look at methods or functions from absolute
+
+23
+00:02:13,920 --> 00:02:19,440
+ scratch again. And that would just give you an understanding of why do we use methods? How do we
+
+24
+00:02:19,440 --> 00:02:25,040
+ use them in the Java programming language? But for now, just understand that like main, we have
+
+25
+00:02:25,040 --> 00:02:30,640
+ our own under the method. I'll just call it white funk, for example, and you do something here,
+
+26
+00:02:30,640 --> 00:02:37,440
+ and you have, let's say, white MIT short for method. And you do something here, right? Now,
+
+27
+00:02:37,440 --> 00:02:42,960
+ which is the instance level, right? But to get started with first things first, there is no such
+
+28
+00:02:42,960 --> 00:02:50,240
+ concept as a global variable in Java that practice was stopped with C++. We cannot do that.
+
+29
+00:02:50,240 --> 00:02:55,600
+ There's no such concept in reality in Java. There's no such concept as a global variable.
+
+30
+00:02:55,600 --> 00:03:01,280
+ That means you cannot define a variable outside of a class that's not permissible, right?
+
+31
+00:03:01,280 --> 00:03:07,600
+ What is permissible is what I told you within the class at the instance level and that instance
+
+32
+00:03:07,600 --> 00:03:14,560
+ level is this. I'll just put that as dashes for you. And obviously, comment that.
+
+33
+00:03:14,560 --> 00:03:30,160
+ So, just have a look at where exactly can we declare these variables that means either here,
+
+34
+00:03:30,160 --> 00:03:34,800
+ or here, or here, or at the bottom, but still within the class. And that is
+
+35
+00:03:34,800 --> 00:03:39,440
+ instance variables that instance level is when you declare variables of a class,
+
+36
+00:03:39,440 --> 00:03:45,040
+ either of those two, by the way, primitive and reference variables at within the class,
+
+37
+00:03:45,040 --> 00:03:51,760
+ but outside every method C within the class, but outside mean within the class still, but outside
+
+38
+00:03:51,760 --> 00:03:57,200
+ funk within the class, but outside funk and MIT and main and within the class outside all methods.
+
+39
+00:03:57,200 --> 00:04:02,800
+ So, within the class, but outside every method, we call them as instance variables, right?
+
+40
+00:04:03,680 --> 00:04:08,560
+ So, technically, we can declare them at the top or in between the methods or at the bottom,
+
+41
+00:04:08,560 --> 00:04:14,400
+ right? But why would we define variables in between the methods that would just make it look ugly,
+
+42
+00:04:14,400 --> 00:04:21,040
+ right? And I'm all of for writing better readable as you know me now, and code quality should be
+
+43
+00:04:21,040 --> 00:04:25,840
+ of the of the priority here, right? So, why would we declare them? Although we can, but we should
+
+44
+00:04:25,840 --> 00:04:31,040
+ not declare them or we would not declare them within methods. So, either you can stick them to be
+
+45
+00:04:31,040 --> 00:04:36,240
+ declared at the top or at the bottom in your projects, you might see one of these approaches,
+
+46
+00:04:36,240 --> 00:04:39,920
+ but right across the scores will stick to declaring them at the top.
+
+47
+00:04:39,920 --> 00:04:44,720
+ That's how I find them better readable, but as I told you in your projects, don't be surprised
+
+48
+00:04:44,720 --> 00:04:50,720
+ if you see them being declared at the bottom, but still within the class, right? And for now,
+
+49
+00:04:50,720 --> 00:04:56,640
+ I'll just go ahead and declare a variable right here. And again, it can be any variable either
+
+50
+00:04:56,640 --> 00:05:03,920
+ permit your reference. Let me just go ahead and I'll say int value, right? Okay. And then I'll say,
+
+51
+00:05:03,920 --> 00:05:11,600
+ for example, let me just declare it up type Boolean, I'll just call it is acting, right?
+
+52
+00:05:11,600 --> 00:05:20,320
+ Now, these are instance level variables. These are instance variables of the class variable level
+
+53
+00:05:20,320 --> 00:05:26,960
+ or right. But as I said, you could have declared them between methods at the bottom would make no
+
+54
+00:05:26,960 --> 00:05:31,840
+ difference, right? To how they behave, because these are all instance variables. And in this class,
+
+55
+00:05:31,840 --> 00:05:38,720
+ I have two variables of type primitive level instance for it, re emphasis type primitive,
+
+56
+00:05:38,720 --> 00:05:44,640
+ because both are int and Boolean, right? And level is instance. So, now, the next thing is
+
+57
+00:05:44,640 --> 00:05:51,680
+ to know, what does it mean for you to declare a variable at level instance? So again, first things first,
+
+58
+00:05:51,680 --> 00:05:57,760
+ instance variables, you should note it down, right? If you are taking notes, or just remember it,
+
+59
+00:05:57,760 --> 00:06:03,520
+ and obviously when you do a handsome, get your hands dirty. So, right, a lot of code tinker with
+
+60
+00:06:03,520 --> 00:06:10,160
+ them and you would know, what do I mean by saying instance level variables in Java are created,
+
+61
+00:06:10,160 --> 00:06:17,200
+ they are given memory, right? They're allocated memory at the time. And whenever we create an
+
+62
+00:06:17,200 --> 00:06:23,040
+ object of the class, again, I'll just put it for reiteration instance level variables of a class
+
+63
+00:06:23,040 --> 00:06:30,880
+ are allocated memory, they exist at the time. And whenever we create an object of the class,
+
+64
+00:06:30,880 --> 00:06:35,360
+ so that is before you create an object of a class, this is just pure English, nothing else,
+
+65
+00:06:36,560 --> 00:06:44,240
+ right? Okay. So, and no matter how many objects you create in the class, those many times,
+
+66
+00:06:44,240 --> 00:06:49,360
+ the instance variables would be created, right? So, more than that in some time,
+
+67
+00:06:49,360 --> 00:06:53,920
+ but for now, do you know the first property again, instance variables, they exist after you create
+
+68
+00:06:53,920 --> 00:06:58,640
+ an object of the class, and whenever you create an object of class, right? So, that means,
+
+69
+00:06:58,640 --> 00:07:02,720
+ in this class, if you have a look at it, I am not created an object of this class,
+
+70
+00:07:02,720 --> 00:07:09,360
+ variable level of work, that means value and is active do not exist, they just do not exist,
+
+71
+00:07:09,360 --> 00:07:14,160
+ right? And that is why they cannot be called, if you do something like this,
+
+72
+00:07:14,160 --> 00:07:23,600
+ it should be an error. I'll say doesn't exist yet, right? That's why an error,
+
+73
+00:07:23,600 --> 00:07:29,040
+ I'll just comment the entire line would not work, all right? And that brings me to the second
+
+74
+00:07:29,040 --> 00:07:35,360
+ property of instance variables, they can then be accessed with the dot operator using that instance,
+
+75
+00:07:35,360 --> 00:07:43,040
+ right? Because every instance, that is instance variables or let me just rephrase it for you to
+
+76
+00:07:43,040 --> 00:07:50,880
+ understand it clearly and simply, and that is instance variables or every object of the class
+
+77
+00:07:50,880 --> 00:07:56,800
+ has its own copy of the instance variables. Remember what I told you, right? Whenever we create an
+
+78
+00:07:56,800 --> 00:08:02,240
+ object of the class, that means every object of the class has its own copy of the instance
+
+79
+00:08:02,240 --> 00:08:06,080
+ variables, that is the second property, I'm telling you, the third property rather, the second one
+
+80
+00:08:06,080 --> 00:08:10,880
+ being that they're then accessible by that dot operator to use that instance. So, that means,
+
+81
+00:08:10,880 --> 00:08:17,760
+ if I say variable level work, and I'll just call it rep to new variable level work,
+
+82
+00:08:17,760 --> 00:08:23,920
+ I've created an instance of this class as I told you the syntax to do so in Java, and then you say
+
+83
+00:08:23,920 --> 00:08:33,520
+ ref dot the scroll is active, and I'll say also, see, no error this time. Why? Because
+
+84
+00:08:33,520 --> 00:08:46,640
+ exist now, and accessible by its object, because it belongs to an object, which is referred to by
+
+85
+00:08:46,640 --> 00:08:52,160
+ the reference variable that is REF, right? That's how we have called it ref dot instance variable,
+
+86
+00:08:52,160 --> 00:08:57,440
+ that is reference variable dot, and then the property name this time it's active, and similarly,
+
+87
+00:08:57,440 --> 00:09:03,840
+ you could have called ref dot value, and put in the value that you want it to be hold,
+
+88
+00:09:03,840 --> 00:09:10,000
+ and that just works, right? So, that is, when I say they can be called with their own instances
+
+89
+00:09:10,000 --> 00:09:14,560
+ using the dot operator, and similarly, let's say I create another object of this class, I'll just
+
+90
+00:09:14,560 --> 00:09:22,880
+ call other ref to new variable level work, that's the object, and I say other ref dot value is
+
+91
+00:09:22,880 --> 00:09:28,960
+ equal to its 70, and guess what? This object, which is referred to by other ref, would have its
+
+92
+00:09:28,960 --> 00:09:36,560
+ value inside this value variable, its 70, but ref dot value would still be 900, why? Because every
+
+93
+00:09:36,560 --> 00:09:44,480
+ object of the class has its own copy of the instance variables, right? That means, if you change
+
+94
+00:09:44,480 --> 00:09:50,560
+ the value once, it would not reflect those updates anywhere else, because everyone has its own
+
+95
+00:09:50,560 --> 00:09:56,320
+ copy, right? And a great analogy that comes to my mind right here is, let's say, in a game of
+
+96
+00:09:56,320 --> 00:10:01,200
+ football or cricket, let's say in football, who's your favorite player? I know it should be
+
+97
+00:10:01,200 --> 00:10:06,240
+ Lionel Messi or Cristiano Ronaldo, or in the cricket, who's your favorite player? Maybe
+
+98
+00:10:06,240 --> 00:10:12,400
+ Verat Coley or Stephen Smith, or for example Mitchell's stock, or even just played Bumura,
+
+99
+00:10:12,400 --> 00:10:20,720
+ right? Now, let's say God forbid, Messi is injured, does it mean that, or Messi's arm is injured,
+
+100
+00:10:20,720 --> 00:10:24,640
+ or Messi's leg is injured to be appropriate, right? Because we play football with the legs,
+
+101
+00:10:24,640 --> 00:10:30,320
+ so Messi's leg is injured, all footballers have the property legs, right? So, but Messi's
+
+102
+00:10:30,320 --> 00:10:34,960
+ leg is injured, does it mean all other 10 players are injured as well? They've injured the legs,
+
+103
+00:10:34,960 --> 00:10:41,280
+ absolutely not, right? Because every object, Messi, like all those 10 other players in that
+
+104
+00:10:41,280 --> 00:10:46,400
+ football team, have their own copy of the legs, right? So, Messi's legs were injured,
+
+105
+00:10:46,400 --> 00:10:51,040
+ does not mean everyone else was injured. Similarly, with, let's say, just be Bumura got forward,
+
+106
+00:10:51,040 --> 00:10:57,120
+ he injured his back, does it mean every other player in the team would injure their back? No,
+
+107
+00:10:57,120 --> 00:11:01,920
+ not necessarily, right? And it's the rarest of rarest scenarios, right? Why? Because just
+
+108
+00:11:01,920 --> 00:11:08,480
+ because Bumura has access to his own back while others have the same back, but their own copy,
+
+109
+00:11:08,480 --> 00:11:13,200
+ right? That's a great analogy. Just think about it, ponder about it, and you will know what I mean.
+
+110
+00:11:13,200 --> 00:11:19,760
+ So, coming back, so this is why Rev.valu would have its own value, other Rev.valu would have its own
+
+111
+00:11:19,760 --> 00:11:24,560
+ value, right? And, and that is how instance variables work. And the fourth property I'm going to
+
+112
+00:11:24,560 --> 00:11:30,080
+ tell you about is instance variables in Java have default values, right? I told you there's no
+
+113
+00:11:30,080 --> 00:11:35,440
+ such concept as a garbage value, like there was in C and C++, it doesn't exist in Java,
+
+114
+00:11:35,440 --> 00:11:38,960
+ but they have instance variables. If you declare variables at the instance level,
+
+115
+00:11:38,960 --> 00:11:43,360
+ they have default values depending on what type of variable you declare.
+
+116
+00:11:43,360 --> 00:11:49,760
+ If you declare the variable as Boolean at the instance level, it has the default value of false.
+
+117
+00:11:49,760 --> 00:11:58,720
+ If you declare it of type byte or short or in or long, they have the default value that is zero.
+
+118
+00:11:58,720 --> 00:12:05,840
+ If you declare a variable of type care, they have the default value that is slash u 000,
+
+119
+00:12:05,840 --> 00:12:10,320
+ which is pronounced as the null character. If you declare a variable at the instance
+
+120
+00:12:10,320 --> 00:12:18,320
+ level of type float or double, they have the default value of 0.0. And, if you declare a variable of
+
+121
+00:12:18,320 --> 00:12:23,440
+ type reference, right, reference variables, right, what would they have? They would have the default
+
+122
+00:12:23,440 --> 00:12:38,240
+ value of null, right? The any kind of a variable sort of depending on the type that you declare,
+
+123
+00:12:38,240 --> 00:12:41,600
+ these would have default values. That means when I declare value at the instance level,
+
+124
+00:12:41,600 --> 00:12:45,120
+ because see it is at the instance level within the class, but outside every method,
+
+125
+00:12:45,120 --> 00:12:48,640
+ it would have the default value of zero, right, even if you do not initialize it,
+
+126
+00:12:49,760 --> 00:12:55,600
+ is active, would have the default value of, you get to write the response. And, if I declare
+
+127
+00:12:55,600 --> 00:13:00,720
+ a variable of type reference, that is, let's say variable level work, let's call it work,
+
+128
+00:13:00,720 --> 00:13:10,640
+ what would it have, default value of null. I'll say, null. This is false. This is zero.
+
+129
+00:13:10,640 --> 00:13:17,680
+ Depending on what I told you, what is the type of variable that you would declare, right?
+
+130
+00:13:17,680 --> 00:13:22,800
+ So, these are instance level variables. And, they live the last property, what instance variables
+
+131
+00:13:22,800 --> 00:13:28,480
+ are going to tell you about is, they live as long as the object is aligned, right? As long as
+
+132
+00:13:28,480 --> 00:13:32,640
+ the object is alive, you can just call them with the dot operator, right? But, once the object is
+
+133
+00:13:32,640 --> 00:13:39,520
+ no longer there, instance variables are also said to be lost or dead depending on the context,
+
+134
+00:13:39,520 --> 00:13:44,320
+ but they cannot be exist, right? So, in the next video, we're going to talk about the second
+
+135
+00:13:44,320 --> 00:13:50,880
+ and the third level of variables. Again, where you, if you declare them at those levels,
+
+136
+00:13:50,880 --> 00:13:55,840
+ they would have their own properties and the behavior would change significantly.
+
