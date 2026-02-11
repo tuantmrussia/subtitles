@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:08,960
+ Hello everyone, welcome to this training on HTTP and HTTPS fundamentals, let's start from
+
+2
+00:00:08,960 --> 00:00:15,320
+ the very beginning HTTP stands for hypertext transfer protocol. Think of it as the language
+
+3
+00:00:15,320 --> 00:00:22,280
+ that your web browser speaks to communicate with websites. HTTP is the set of rules for
+
+4
+00:00:22,280 --> 00:00:30,960
+ this conversion and basically it's unsecured. Let's discuss about what is HTTPS, HTTP basically
+
+5
+00:00:30,960 --> 00:00:41,880
+ HTTP plus S stands for secure. So the full form will be hypertext transfer protocol
+
+6
+00:00:41,880 --> 00:00:52,240
+ secure and it is an encrypted layer, it is an encrypted, encrypted form. With regular HTTP anyone
+
+7
+00:00:52,240 --> 00:00:59,640
+ can listen in on the conversation between your browser and the website, okay. So basically
+
+8
+00:00:59,640 --> 00:01:18,200
+ it's a part. So it will be you and me, okay. So we are doing a communication, we are
+
+9
+00:01:18,200 --> 00:01:36,080
+ doing a communication by using HTTP, okay. It's HTTP, okay. And what will be happen in HTTP?
+
+10
+00:01:36,080 --> 00:01:44,560
+ Like anyone would like to, would like to hear our conversation or anyone would like to see
+
+11
+00:01:44,560 --> 00:01:53,520
+ our conversation. So a guy who comes up with the name with let's say attacker, okay.
+
+12
+00:01:53,520 --> 00:02:01,760
+ So this guy is a third party, okay. So this guy is the third party, okay. So he wanted
+
+13
+00:02:01,760 --> 00:02:09,080
+ to listen our conversation between of this service, between of this communication, right.
+
+14
+00:02:09,080 --> 00:02:20,640
+ So this is the basic thing, this is the HTTP main like loophole, okay. So where like
+
+15
+00:02:20,640 --> 00:02:26,840
+ anyone can listen in on the conversation between your browser and the website. So it's
+
+16
+00:02:26,840 --> 00:02:39,800
+ like talking loudly in a public place, okay. But what will happen in HTTPS? What will happen
+
+17
+00:02:39,800 --> 00:02:47,520
+ in HTTPS? The conversation is encrypted. So this will be encrypted, totally encrypted, okay.
+
+18
+00:02:47,520 --> 00:02:55,640
+ No one can, this will be totally encrypted. It's like a whispering in a secret code, okay. That
+
+19
+00:02:55,640 --> 00:03:03,080
+ only you and the website understand. So like you just, when you just connect this call
+
+20
+00:03:03,080 --> 00:03:15,800
+ to me, okay. You created a code which is a very encrypted code, ex, y, z. Let's say this
+
+21
+00:03:15,800 --> 00:03:23,600
+ code, okay. And this code will be at this will be the encrypted code. And on the other hand,
+
+22
+00:03:23,600 --> 00:03:38,480
+ I will, I will get the decrypted code, okay. So let's say, yeah, let's say ex, ex, y, z,
+
+23
+00:03:38,480 --> 00:03:47,040
+ one. So this is a decrypted code, okay. So when I will, I will like, I got a connection
+
+24
+00:03:47,040 --> 00:03:55,200
+ from you, like I got a call from you, okay. So I need to just decode that code first, okay.
+
+25
+00:03:55,200 --> 00:04:01,100
+ Then automatically it will decode the code and we will just communicate from this, this
+
+26
+00:04:01,100 --> 00:04:07,480
+ HTTPS connection. So that is the main difference between HTTP and HTTPS. So when do we
+
+27
+00:04:07,480 --> 00:04:15,720
+ use HTTPS? Basically, when we are using banking apps, okay, when we using banking apps,
+
+28
+00:04:15,720 --> 00:04:23,560
+ banking apps or website, shopping, shopping site, okay, like like Amazon, okay, flip card,
+
+29
+00:04:23,560 --> 00:04:29,360
+ this kinds of shopping sites, eBay, right. So email services, when we are email services
+
+30
+00:04:29,360 --> 00:04:40,320
+ like Google, Google Mills service or Yahoo, okay. And when we are doing social media, okay,
+
+31
+00:04:40,320 --> 00:04:47,000
+ when we are doing social media, then we need basically secured connection. So basically any
+
+32
+00:04:47,000 --> 00:04:55,080
+ site handling sensitive information, like for that time, we need to use HTTPS. So how to
+
+33
+00:04:55,080 --> 00:05:05,720
+ spot HTTPS? How to spot HTTPS? Basically, you need to look for a paddle lock, a paddle
+
+34
+00:05:05,720 --> 00:05:22,360
+ lock icon, okay, like like, okay, like this. When you, a paddle lock icon in your browser
+
+35
+00:05:22,360 --> 00:05:49,800
+ address bar, here you can see, okay, let's see, Google.com, let's see, Google.com.
+
+36
+00:05:49,800 --> 00:05:57,160
+ Basically, they are using HTTPS connection, right. So when you are seeing the paddle lock
+
+37
+00:05:57,160 --> 00:06:06,920
+ or HTTPS, okay, so the URL start with HTTPS, not HTTP, okay. So that is the part of HTTPS,
+
+38
+00:06:06,920 --> 00:06:13,120
+ okay. Now let's talk about how HTTPS works. So request response cycle, there will be a method
+
+39
+00:06:13,120 --> 00:06:22,040
+ which will be request response cycle. So let me explain the basic flow, you type a URL,
+
+40
+00:06:22,040 --> 00:06:41,320
+ like, like, let's say a test, test.com, let's say test.com in your browser, okay. You type
+
+41
+00:06:41,320 --> 00:06:49,080
+ test.com in your browser, okay, and browser sends the request to the server, okay. And it
+
+42
+00:06:49,080 --> 00:06:56,520
+ will, this test.com, there, there will be a server, okay. Now let's say this is the just
+
+43
+00:06:56,520 --> 00:07:11,240
+ commit, let's create this first. Now let's say, this is the ear browser, okay. This is your browser.
+
+44
+00:07:11,240 --> 00:07:21,680
+ And in your browser address bar, you just type, takes.com or sorry, test.com, okay.
+
+45
+00:07:21,680 --> 00:07:28,360
+ You just type, test.com. Now what will happen? Now a browser will send a request to the, to
+
+46
+00:07:28,360 --> 00:07:44,760
+ the, this server, test.com server, okay. Okay. So like, like this, it will, it will communicate
+
+47
+00:07:44,760 --> 00:07:51,560
+ here, can I have your homepage? So it's sending the request and it will, it will ask
+
+48
+00:07:51,560 --> 00:07:57,600
+ that he, can I have your homepage and server will process the request and prepare the response,
+
+49
+00:07:57,600 --> 00:08:09,020
+ okay. So if, okay, and then it will, it will give you a response with sends us, server
+
+50
+00:08:09,020 --> 00:08:16,800
+ sends our response back, show here's the homepage of HTML, homepage HTML in images, etc.
+
+51
+00:08:16,800 --> 00:08:23,800
+ Okay. And browser displays the page for you to see, okay. So this happens within a
+
+52
+00:08:23,800 --> 00:08:29,440
+ millisecond every time you visit a website. Thank you.
+
