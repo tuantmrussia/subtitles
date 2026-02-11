@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:07,200
+ In this lesson, we're going to be learning about type aliases in TypeScript, so type aliases
+
+2
+00:00:07,200 --> 00:00:13,120
+ let us give a name to a type, which makes our code cleaner, reasonable, and much easier
+
+3
+00:00:13,120 --> 00:00:15,480
+ to understand.
+
+4
+00:00:15,480 --> 00:00:21,440
+ Type aliases are used pretty much everywhere in real TypeScript projects, especially when
+
+5
+00:00:21,440 --> 00:00:26,640
+ working with objects, unions, and complex data structures.
+
+6
+00:00:26,640 --> 00:00:31,360
+ So let's demonstrate by starting off with a problem.
+
+7
+00:00:31,360 --> 00:00:34,560
+ Sometimes we repeat our same type over and over again.
+
+8
+00:00:34,560 --> 00:00:47,800
+ Let's have a user of one, and we have ID number, name string.
+
+9
+00:00:47,800 --> 00:00:56,480
+ Let's create another user type, let's call it user two, and maybe even have user three.
+
+10
+00:00:56,480 --> 00:01:03,840
+ Now, we can see that we're just repeating the same object structure over and over again,
+
+11
+00:01:03,840 --> 00:01:09,560
+ which is going to quickly become messy, as well as making its heart maintain.
+
+12
+00:01:09,560 --> 00:01:15,440
+ So a type alias allows us to create a custom name for the type.
+
+13
+00:01:15,440 --> 00:01:22,960
+ What we can do instead is we can come to here and we can create a type for this particular
+
+14
+00:01:22,960 --> 00:01:34,040
+ user shape, so we can do type user, and then we can define the properties ID number, name
+
+15
+00:01:34,040 --> 00:01:40,080
+ equals string, and we saw this briefly in the previous lesson how we use this.
+
+16
+00:01:40,080 --> 00:01:45,960
+ Now what we can do of course is we can now create objects of that given type, so we can
+
+17
+00:01:45,960 --> 00:01:54,560
+ do let's user one equals the user one is a type of user, and then we can create the properties
+
+18
+00:01:54,560 --> 00:02:00,080
+ to ID one, name equals Alice.
+
+19
+00:02:00,080 --> 00:02:06,800
+ And then we can come and do the second user, user two is of type user, specify the ID,
+
+20
+00:02:06,800 --> 00:02:12,400
+ ID of two, name is Bob.
+
+21
+00:02:12,400 --> 00:02:17,720
+ So now our code becomes so much cleaner and much easier to update.
+
+22
+00:02:17,720 --> 00:02:24,040
+ Now, the structure changes at all on this user, we want to perhaps put a phone number
+
+23
+00:02:24,040 --> 00:02:28,480
+ or something, then we can just do it on our type, rather than having to do it multiple
+
+24
+00:02:28,480 --> 00:02:30,240
+ times.
+
+25
+00:02:30,240 --> 00:02:35,720
+ These aliases don't just change behavior, but they add meaning and clarity to our code.
+
+26
+00:02:35,720 --> 00:02:42,000
+ Now, type aliases really come into the own when we're working with union types.
+
+27
+00:02:42,000 --> 00:02:44,880
+ This is remove the code here and do an example.
+
+28
+00:02:44,880 --> 00:02:57,600
+ So we have a type status, and this might be something like success with the pipe symbol,
+
+29
+00:02:57,600 --> 00:03:06,040
+ maybe error, pipe symbol, and then loading for example, so three separate statuses.
+
+30
+00:03:06,040 --> 00:03:11,880
+ Now, this limits our values to the specific set, making our code much safer.
+
+31
+00:03:11,880 --> 00:03:20,920
+ Now, we can define and an actual instance of that by doing a let current status is of
+
+32
+00:03:20,920 --> 00:03:22,320
+ our type status.
+
+33
+00:03:22,320 --> 00:03:29,720
+ Now, we just set our value say to success, we try and set it as something else, perhaps
+
+34
+00:03:29,720 --> 00:03:34,800
+ like done, for example, then we're going to get an error because it's not one of those
+
+35
+00:03:34,800 --> 00:03:36,940
+ three values.
+
+36
+00:03:36,940 --> 00:03:43,320
+ We can also use type aliases to describe function shapes.
+
+37
+00:03:43,320 --> 00:03:46,240
+ So let's come to here and do an example.
+
+38
+00:03:46,240 --> 00:03:57,440
+ If we do type of add, and we say A number, and we have another B number, now we can just
+
+39
+00:03:57,440 --> 00:04:06,000
+ simply use the arrow, and we can say it is of type or returns number.
+
+40
+00:04:06,000 --> 00:04:13,000
+ So we can do type add, and then we need to do brackets, and we say the first parameter
+
+41
+00:04:13,000 --> 00:04:21,360
+ is A, and that's a number, then we have a parameter B, which is also a number, and then
+
+42
+00:04:21,360 --> 00:04:27,040
+ we can simply use this arrow shortcut to define the return type of this function, and say
+
+43
+00:04:27,040 --> 00:04:30,320
+ it returns a number.
+
+44
+00:04:30,320 --> 00:04:40,800
+ Now we can actually define the implementation of that function, we can do const say add numbers,
+
+45
+00:04:40,800 --> 00:04:47,120
+ we say it's of type add, so that means it has two parameters, let's say x and y, and now
+
+46
+00:04:47,120 --> 00:04:51,440
+ we create the actual implementation of that function, and because we're adding numbers
+
+47
+00:04:51,440 --> 00:04:58,560
+ together, we might say it's x plus y, and we can do another one, for example, subtract
+
+48
+00:04:58,560 --> 00:05:06,880
+ numbers, this is our function add, while adds a really silly name, but let's say you take
+
+49
+00:05:06,880 --> 00:05:12,840
+ two numbers, and that would be x minus y, also particularly good naming there, but you
+
+50
+00:05:12,840 --> 00:05:22,240
+ can see the point, you can see xy, and it say the actual, the product of x minus y, we
+
+51
+00:05:22,240 --> 00:05:26,600
+ shouldn't really call that add, but you can see the point here, where we can actually
+
+52
+00:05:26,600 --> 00:05:33,000
+ then define the implementation, by using the type here.
+
+53
+00:05:33,000 --> 00:05:41,720
+ Type aliases can also describe more complex structures, let's have a type of address, this
+
+54
+00:05:41,720 --> 00:05:51,440
+ has a street, of type string, a city, of type string, and we might have another type
+
+55
+00:05:51,440 --> 00:06:05,400
+ of user profile, an ID, which is number, a name, but more importantly, we can have an address,
+
+56
+00:06:05,400 --> 00:06:11,600
+ which is going to reuse our address type at this, but this structure allows us to help
+
+57
+00:06:11,600 --> 00:06:17,960
+ break these structures into much more smaller and reasonable pieces, so we have a simple
+
+58
+00:06:17,960 --> 00:06:24,360
+ address here, defining on our user profile, and we can go as many levels as we want.
+
+59
+00:06:24,360 --> 00:06:31,360
+ So let's have a summary of type aliases, so these gives us a name, so our types, it allows
+
+60
+00:06:31,360 --> 00:06:38,840
+ us to improve readability and reuse, it allows us to work with objects, unions, functions,
+
+61
+00:06:38,840 --> 00:06:43,920
+ and primitives, and they are very important because they are core building block in
+
+62
+00:06:43,920 --> 00:06:44,640
+ TypeScript.
+
