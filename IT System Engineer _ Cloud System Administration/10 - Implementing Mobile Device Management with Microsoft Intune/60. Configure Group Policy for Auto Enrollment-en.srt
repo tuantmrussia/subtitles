@@ -1,0 +1,240 @@
+1
+00:00:00,000 --> 00:00:15,000
+ To configure auto and raw melt for your Windows 10 or Windows 11 device, we need to create a GPU that will allow all of our devices to auto and roll into mobile device management at your MDM without the users interference.
+
+2
+00:00:15,000 --> 00:00:23,000
+ So what you need to do right now is I'm going to create a GPU in the Europe organizational units, I'm going to create this GPU and just call this.
+
+3
+00:00:23,000 --> 00:00:34,000
+ And the raw melt and then click OK, now we need to actually a data policy.
+
+4
+00:00:34,000 --> 00:00:41,000
+ And here we need to go to policies and they want to go to administrative templates and just expand that.
+
+5
+00:00:41,000 --> 00:00:44,000
+ They want to go to Windows components.
+
+6
+00:00:44,000 --> 00:00:48,000
+ So we're going to look for the following called MDM.
+
+7
+00:00:48,000 --> 00:00:55,000
+ So what you're actually interested on is a following enable automatic MDM enrollment using the default Azure AD credentials.
+
+8
+00:00:55,000 --> 00:00:57,000
+ So I'm going to select that.
+
+9
+00:00:57,000 --> 00:00:59,000
+ So I'm going to do just a click enabled.
+
+10
+00:00:59,000 --> 00:01:02,000
+ You can see we're going to use user's credentials.
+
+11
+00:01:02,000 --> 00:01:11,000
+ We can't really use the device credentials but you want to use user's credentials because if they use a log on to the other device with its long name or with its log on name,
+
+12
+00:01:11,000 --> 00:01:20,000
+ that have a Microsoft internal license or to modify the device would be enrolled to Microsoft to your MDM to into click apply.
+
+13
+00:01:20,000 --> 00:01:22,000
+ And then we need to click OK.
+
+14
+00:01:22,000 --> 00:01:30,000
+ So if I go to my Azure Active Directory, you can see on the answer, for example, I have this user's called for tutorial.
+
+15
+00:01:30,000 --> 00:01:32,000
+ Waltz, I did it the follow.
+
+16
+00:01:32,000 --> 00:01:34,000
+ You can see I have to UPN.
+
+17
+00:01:34,000 --> 00:01:41,000
+ So the first one is a document domain which I created and the second one is the one which I added to this domain environment,
+
+18
+00:01:41,000 --> 00:01:49,000
+ which of course allows the user to log on to this environment using the kel global for. Microsoft.com,
+
+19
+00:01:49,000 --> 00:01:53,000
+ which of course has a license with Microsoft Intune.
+
+20
+00:01:53,000 --> 00:02:03,000
+ And automatically when this user's log on, when I actually configured my Azure AD sync, if I go to my Microsoft Intune,
+
+21
+00:02:03,000 --> 00:02:07,000
+ you can see that the users are already been.
+
+22
+00:02:07,000 --> 00:02:17,000
+ The other already be synced to Microsoft 365, which of course I've already assigned a license to the user, Victoria, John.
+
+23
+00:02:17,000 --> 00:02:20,000
+ So let's go to our Windows 10 device.
+
+24
+00:02:20,000 --> 00:02:23,000
+ I'm going to go to the C002.
+
+25
+00:02:23,000 --> 00:02:33,000
+ And on this device, I actually let me just close this.
+
+26
+00:02:33,000 --> 00:02:35,000
+ So these are Windows 10 device.
+
+27
+00:02:35,000 --> 00:02:42,000
+ And if I go to my start menu, you can see that the user has log on its Victoria, John.
+
+28
+00:02:42,000 --> 00:02:51,000
+ So what I need to do right now is to start the CMD and let us wait for some seconds for the command prompt to start.
+
+29
+00:02:51,000 --> 00:02:53,000
+ Here we go, here we have the command prompt.
+
+30
+00:02:53,000 --> 00:02:59,000
+ So I'm going to enter the following GP updates, and then slash false.
+
+31
+00:02:59,000 --> 00:03:07,000
+ So by the GP updates, false is going to actually try to update the policy, the computer policy, and then the user's policy.
+
+32
+00:03:07,000 --> 00:03:10,000
+ So that policy we just applied using the GPU.
+
+33
+00:03:10,000 --> 00:03:12,000
+ We bought some potentially false to this device.
+
+34
+00:03:12,000 --> 00:03:14,000
+ Or you can only restart your device.
+
+35
+00:03:14,000 --> 00:03:19,000
+ By restart your device, every policy will actually be applied to your device.
+
+36
+00:03:19,000 --> 00:03:21,000
+ You can see the same computer policy.
+
+37
+00:03:21,000 --> 00:03:22,000
+ I don't know.
+
+38
+00:03:22,000 --> 00:03:29,000
+ They said, "I just want to start a device, because those are so true that it was distributed to this device."
+
+39
+00:03:29,000 --> 00:03:32,000
+ Which, of course, requires the device to restart.
+
+40
+00:03:32,000 --> 00:03:33,000
+ So I start doing that.
+
+41
+00:03:33,000 --> 00:03:36,000
+ Then you want to also check if the policy has been applied.
+
+42
+00:03:36,000 --> 00:03:40,000
+ What you need to do is to go to task scheduler.
+
+43
+00:03:40,000 --> 00:03:48,000
+ So if I go to my search and I enter task, it was search for task scheduler.
+
+44
+00:03:48,000 --> 00:03:50,000
+ Here you can see we have our task scheduler.
+
+45
+00:03:50,000 --> 00:03:52,000
+ So let's open task scheduler.
+
+46
+00:03:52,000 --> 00:03:59,000
+ So when we open our task scheduler, and then we go to all edges as pandas.
+
+47
+00:03:59,000 --> 00:04:06,000
+ I go to Microsoft, Windows, and then we go to search for enterprise management.
+
+48
+00:04:06,000 --> 00:04:07,000
+ So let's just go down.
+
+49
+00:04:07,000 --> 00:04:12,000
+ Here we have the enterprise MGMT.
+
+50
+00:04:12,000 --> 00:04:19,000
+ You can see it's so folder had just been created recently.
+
+51
+00:04:19,000 --> 00:04:20,000
+ That's actually new.
+
+52
+00:04:20,000 --> 00:04:26,000
+ And now we're going to see a trace of extra information, which is saying login shell created
+
+53
+00:04:26,000 --> 00:04:28,000
+ a romantic client.
+
+54
+00:04:28,000 --> 00:04:34,000
+ And then when we do just a spend that, here you can see it says, "It does have much here,
+
+55
+00:04:34,000 --> 00:04:37,000
+ run it," and you can see it's Microsoft Corporation.
+
+56
+00:04:37,000 --> 00:04:41,000
+ So this is actually going to tell us that this has actually been triggered.
+
+57
+00:04:41,000 --> 00:04:46,000
+ So let me show you next in this video that this device is going to be ready to start a Microsoft Intune,
+
+58
+00:04:46,000 --> 00:04:55,000
+ because we're logged on with a user's name that have the right license to utterly use the Intune.
+
+59
+00:04:55,000 --> 00:05:04,000
+ If not, the device will not be ready to start Intune.
+
+60
+00:05:04,000 --> 00:05:07,000
+ You're going to receive an error message.
+
