@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:05,300
+ In this demo, we'll be creating a program that utilizes structures.
+
+2
+00:00:05,300 --> 00:00:11,540
+ Once you're ready, fire up Visual Studio Code, and let's go.
+
+3
+00:00:11,540 --> 00:00:16,740
+ Once Visual Studio Code loads, navigate to your demo directory, or on these structures demo.
+
+4
+00:00:16,740 --> 00:00:22,100
+ So scroll down to "Strucks" and double-click on "Strucks.go."
+
+5
+00:00:22,100 --> 00:00:29,180
+ We'll make a small program that has passenger tickets and a bus, and the bus will indicate
+
+6
+00:00:29,180 --> 00:00:32,320
+ who's in the front seat, and the passenger tickets will indicate whether or not they
+
+7
+00:00:32,320 --> 00:00:34,040
+ boarded the bus.
+
+8
+00:00:34,040 --> 00:00:37,700
+ So we'll create our first structure, we'll use the Type Keyword, and the name of our
+
+9
+00:00:37,700 --> 00:00:40,480
+ structure for the first one is Passenger.
+
+10
+00:00:40,480 --> 00:00:44,260
+ We follow up with the struct keyword and our curly braces, passengers are going to have
+
+11
+00:00:44,260 --> 00:00:51,500
+ a name, they're going to have a ticket number, and whether or not they're boarded.
+
+12
+00:00:51,500 --> 00:00:54,280
+ The next structure I'll make is the bus structure.
+
+13
+00:00:54,280 --> 00:00:58,660
+ So again, we'll use the Type Keyword, this will be a bus, followed by the struct keyword, and
+
+14
+00:00:58,660 --> 00:01:03,580
+ this is just going to indicate who is in the front seat of the bus, and this will be
+
+15
+00:01:03,580 --> 00:01:05,060
+ a passenger.
+
+16
+00:01:05,060 --> 00:01:10,780
+ So what we can do is we can have our front seats, the name of our variable, and Passenger
+
+17
+00:01:10,780 --> 00:01:15,620
+ is the Type, and so we created our Type Alias here, which is a structure, so this passenger
+
+18
+00:01:15,620 --> 00:01:19,060
+ refers to this entire structure up here.
+
+19
+00:01:19,060 --> 00:01:23,900
+ We go down to our main function, we can start creating some passengers.
+
+20
+00:01:23,900 --> 00:01:30,140
+ So the first passenger I'll create is named Casey, and I'll use the one line instantiation
+
+21
+00:01:30,140 --> 00:01:35,420
+ technique, and so we'll just list out all the values for each field.
+
+22
+00:01:35,420 --> 00:01:38,500
+ We should always print out some information that we know what we're working with.
+
+23
+00:01:38,500 --> 00:01:46,060
+ Next, I'm going to create a few structures using the VAR keyword, and so we'll have Bill,
+
+24
+00:01:46,060 --> 00:01:51,140
+ and I'll name the fields that I'm using, so we're going to use the name field, and
+
+25
+00:01:51,140 --> 00:01:52,300
+ the ticket number field.
+
+26
+00:01:52,300 --> 00:01:59,940
+ I'm not going to specify the other field, so I'm not going to specify the boarded field,
+
+27
+00:01:59,940 --> 00:02:03,940
+ and that will have a default value, and the default for Boolean is false, so it's going
+
+28
+00:02:03,940 --> 00:02:08,260
+ to be false by default, meaning they're not boarded, and we'll have the second one, and
+
+29
+00:02:08,260 --> 00:02:12,860
+ this will be Ella, and their ticket number is going to be three.
+
+30
+00:02:12,860 --> 00:02:16,660
+ And just like Casey, we'll print out these tickets out.
+
+31
+00:02:16,660 --> 00:02:24,660
+ Next, I'm going to create an uninitialized variable, so I created one named Heidi, and
+
+32
+00:02:24,660 --> 00:02:25,660
+ that's a passenger.
+
+33
+00:02:25,660 --> 00:02:31,100
+ So right now, the fields for that particular structure are all defaults.
+
+34
+00:02:31,100 --> 00:02:37,720
+ Next, I'll change the name, so we'll have Heidi's name, the Heidi, and we'll set her
+
+35
+00:02:37,720 --> 00:02:45,620
+ ticket number to be four, and then print the ticket out.
+
+36
+00:02:45,620 --> 00:02:49,740
+ Next, we're going to update some of the fields, so we'll update Casey's ticket, and
+
+37
+00:02:49,740 --> 00:02:56,500
+ we'll set that he's boarded now, and we'll also have Bill B board on the bus.
+
+38
+00:02:56,500 --> 00:03:08,060
+ We'll then access these fields again, and we'll do the same for Casey.
+
+39
+00:03:16,340 --> 00:03:19,140
+ Next, we'll have Heidi board the bus, and she's our last passenger.
+
+40
+00:03:19,140 --> 00:03:27,500
+ We'll then create a new bus, and we'll set Heidi to be the passenger that's in the front seat.
+
+41
+00:03:27,500 --> 00:03:38,660
+ So we'll print out the bus.frontseat.name, just to confirm that Heidi is
+
+42
+00:03:38,660 --> 00:03:39,700
+ indeed in the front seat.
+
+43
+00:03:42,140 --> 00:03:45,620
+ Once all that's done, we can save and run, and see what kind of messages we have.
+
+44
+00:03:45,620 --> 00:03:48,700
+ I'll be hopping into a terminal.
+
+45
+00:03:48,700 --> 00:03:53,300
+ We can run this program with go run dot slash demo slash trucks.
+
+46
+00:03:53,300 --> 00:03:57,300
+ And so here we have our three tickets that we made in the beginning.
+
+47
+00:03:57,300 --> 00:04:01,700
+ So we have Casey, Bill, Ella, and then the fourth ticket is Heidi.
+
+48
+00:04:01,700 --> 00:04:04,340
+ We then have Bill and Casey board the bus.
+
+49
+00:04:04,340 --> 00:04:07,700
+ We change Heidi's boarded status to true.
+
+50
+00:04:07,700 --> 00:04:11,220
+ And then we also print out some information from the bus structure.
+
+51
+00:04:11,220 --> 00:04:13,380
+ So Heidi is indeed in the front seat.
+
+52
+00:04:13,380 --> 00:04:18,780
+ If we jump back to our code, we can access Heidi's information.
+
+53
+00:04:18,780 --> 00:04:25,380
+ We used bus and then access the front seat field and then access the name field.
+
+54
+00:04:25,380 --> 00:04:30,380
+ So we have the bus variable, the front seat field in the bus structure,
+
+55
+00:04:30,380 --> 00:04:33,020
+ and then the name field in the passenger structure.
+
+56
+00:04:35,740 --> 00:04:42,060
+ So we're accessing the bus dot front seat, which is the passenger.
+
+57
+00:04:42,060 --> 00:04:46,500
+ And since that's a passenger, we can then access dot name.
+
+58
+00:04:46,500 --> 00:04:49,820
+ So depending on how deep your nesting structure is,
+
+59
+00:04:49,820 --> 00:04:53,380
+ you just keep doing dots and eventually you'll get to the data that you need.
+
+60
+00:04:53,380 --> 00:04:57,340
+ This concludes the demo on structures.
+
+61
+00:04:57,340 --> 00:04:58,540
+ I'll see you in the next presentation.
+
