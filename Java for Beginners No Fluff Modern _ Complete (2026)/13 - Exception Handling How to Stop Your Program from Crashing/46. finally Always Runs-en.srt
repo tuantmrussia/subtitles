@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:10,000
+ So, taking this example forward after we now know there are a lot of accepted classes defined in the API and now there is a block all the finally block.
+
+2
+00:00:10,000 --> 00:00:29,000
+ I just wanted to touch down upon that here and and repeat after me finally always runs that means see if there is an exception in the try somewhere you know that the try block would not run completely right and it would just go in the catch and execute that and the control.
+
+3
+00:00:30,000 --> 00:00:55,000
+ If there is no exception raised in the try block right catches skip and the control resumes here, but what if you want a guarantee that is irrespective of the exception being thrown or not there is some part of your code that you always want to run for sure so put that in the finally.
+
+4
+00:00:55,000 --> 00:01:03,000
+ So, let's say finally always.
+
+5
+00:01:03,000 --> 00:01:19,000
+ For now, I'll just say for example normal print out I'll say finally always just a print out right let's go and check that see.
+
+6
+00:01:19,000 --> 00:01:28,000
+ So, I do numbers usually for 9 3 and then finally all business no exception raised catch skipped but goes on to finally.
+
+7
+00:01:28,000 --> 00:01:42,000
+ Let's run this let's say you enter the wrong numbers 0 sorry division by 0 not possible that means the try block was not executed completely it went out of the try and cash the exception here the step touch would execute it.
+
+8
+00:01:42,000 --> 00:01:50,000
+ Sorry division by 0 not possible still finally always runs that's why I said finally all business but let's say if I move this.
+
+9
+00:01:50,000 --> 00:01:55,000
+ I just put it without a finally after the try catch let's see if this still works.
+
+10
+00:01:55,000 --> 00:02:15,000
+ I said to two numbers the right numbers 23 and 90 finally always runs after the division wrong numbers sorry division by 0 not possible still finding your results so what is the height height about why did I tell you to repeat after me finally always runs is in a spatial scenario see what happens is.
+
+11
+00:02:15,000 --> 00:02:39,000
+ So, in this case it did not make a difference but it won't in a particular situation so in repeat after me find these find me always runs even in the case of a return statement implemented you know when there's a return statement in the method the control immediately gets out of the method and goes back to the calling method right.
+
+12
+00:02:39,000 --> 00:02:54,000
+ Not in finding if you have a finding that is I said finally still runs even in the case of a return statement that is right after the call to return is encountered before it is executed.
+
+13
+00:02:54,000 --> 00:03:20,000
+ And that is the essence of finally in those situations finally plays a role and there is one more situation where finally makes a sense that is you now know we can use try catch right but never try individually never catch it.
+
+14
+00:03:20,000 --> 00:03:48,000
+ And we can also use try with a finally without catch you might want to what sense does it mean when we don't have something to handle the exception I'm saying you can use a try without a catch but with finding you can never use try usually either with a catch either with a catch and finally but even with try with finally only.
+
+15
+00:03:48,000 --> 00:03:57,000
+ And what sense does it make we would have to go on to the next video for understanding that when does it make sense to just use try with only finally.
+
