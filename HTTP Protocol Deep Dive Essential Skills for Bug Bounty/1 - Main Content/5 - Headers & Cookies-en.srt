@@ -1,0 +1,400 @@
+1
+00:00:00,000 --> 00:00:06,720
+ what are headers, headers are additional information sent with HTTP request and response,
+
+2
+00:00:06,720 --> 00:00:16,160
+ thing of them as metadata, about data, simple, simple energy when you send a letter the envelope
+
+3
+00:00:16,160 --> 00:00:26,400
+ as information, return address, sending destination address and with the postage stamp, right.
+
+4
+00:00:26,400 --> 00:00:32,000
+ So, headers are like that envelope information, okay. It is a common request headers,
+
+5
+00:00:32,000 --> 00:00:44,720
+ yeah. It is a common, it is a browser, okay. And it will send the information to the server,
+
+6
+00:00:44,720 --> 00:00:53,920
+ so basically there will be some headers which will be the first header which is basically post,
+
+7
+00:00:56,480 --> 00:01:07,440
+ post header, okay. What does it mean post header? It will tell the server which website you want,
+
+8
+00:01:07,440 --> 00:01:16,880
+ you want and the one server can post multiple websites, okay. So, I want to host like
+
+9
+00:01:17,760 --> 00:01:37,040
+ Google.com. Now, let us see the next header will be our user isn't here,
+
+10
+00:01:38,640 --> 00:01:57,120
+ user, user, user, agent, user, agent, user agent, okay. Our next header will be user agent header.
+
+11
+00:01:57,120 --> 00:02:04,880
+ So, if what will be the user agent, your like identifies your browser and device. So,
+
+12
+00:02:05,520 --> 00:02:12,560
+ your device information and your browser information, okay. Like which versions you want to
+
+13
+00:02:12,560 --> 00:02:18,240
+ invite, right. So, server can optimize content based on this. So, example,
+
+14
+00:02:18,240 --> 00:02:29,520
+ sent, example send mobile version to phone users, okay. So, how application able to know
+
+15
+00:02:29,520 --> 00:02:36,800
+ that you are using phone, you are like looking there contains by using your phone, okay. How?
+
+16
+00:02:36,800 --> 00:02:43,760
+ So, by using this, user agent header, okay. So, it will identify your browser and device
+
+17
+00:02:43,760 --> 00:03:01,680
+ information. Now, next header will be accept header. So, in accept header, it tells what type of
+
+18
+00:03:01,680 --> 00:03:13,440
+ content you can handle. Like saying, I can read only English and Spanish, okay. I can read only
+
+19
+00:03:13,440 --> 00:03:37,120
+ English and Spanish. Now, let's talk about the, okay header. So, over here, over here, the there
+
+20
+00:03:37,120 --> 00:03:43,680
+ will be, there will be session ID, your session ID or your session informations, okay. We will be there.
+
+21
+00:03:43,680 --> 00:03:54,320
+ Session informations will be there. It, it sends stored cookies back to servers more on this below,
+
+22
+00:03:54,320 --> 00:04:01,200
+ okay. And then, it will, it will like send the authorization, the next header will be
+
+23
+00:04:01,200 --> 00:04:08,960
+ authorization header, okay. The next header will be authorization header,
+
+24
+00:04:08,960 --> 00:04:15,440
+ auto, right, session header.
+
+25
+00:04:15,440 --> 00:04:28,320
+ The next header will be authorization header, okay. It contains your login credentials or APIs
+
+26
+00:04:28,320 --> 00:04:34,080
+ prove you, prove you are, okay. So, common response headers will be like server is more
+
+27
+00:04:34,080 --> 00:04:40,160
+ server to browser. Now, let's talk about contain type, okay. Now, let's talk about,
+
+28
+00:04:42,240 --> 00:04:58,640
+ now let's talk about content type, okay. So, in this content type header, sorry. So, in this
+
+29
+00:04:58,640 --> 00:05:05,520
+ content type header tells browser what kind of content it's receiving, HTML page, image,
+
+30
+00:05:05,520 --> 00:05:12,400
+ JSON data, okay. So, that is the part of content type header. Now, let's talk about content, length,
+
+31
+00:05:13,760 --> 00:05:37,200
+ content length, okay. So, in this content length size of response in bytes, okay, like how many
+
+32
+00:05:37,200 --> 00:05:44,480
+ contains would like, would you like to send? So, it's, you want to send three, four, eight contains,
+
+33
+00:05:44,480 --> 00:05:49,360
+ okay, like three, four, eight contains content length, okay.
+
+34
+00:05:49,360 --> 00:06:03,440
+ Then, what will be the next header will be set, okay.
+
+35
+00:06:08,160 --> 00:06:18,960
+ Set, okay, okay. So, in this set, okay, set, okay. So, server as browser to save up, okay,
+
+36
+00:06:18,960 --> 00:06:26,560
+ okay. So, in this, like, server as browser to save up, okay. So, and next talk about
+
+37
+00:06:26,560 --> 00:06:36,400
+ cache control header. So, these are the headers which are very essential guys. So, you need to know
+
+38
+00:06:36,400 --> 00:06:43,440
+ very careful, okay. How these headers works and what kind of information is they just
+
+39
+00:06:43,440 --> 00:06:51,360
+ handling, right, caching, control header. So, in this cache control header,
+
+40
+00:06:51,360 --> 00:06:58,560
+ this browser, it tells browser how long to cache this content, okay. Like if you want,
+
+41
+00:06:59,440 --> 00:07:11,440
+ you want max is like, like, it's, it looks like this, max h, or let's it max a, okay.
+
+42
+00:07:11,440 --> 00:07:24,560
+ Max equals to three, six, double, okay. So, improves, improves performance, okay.
+
+43
+00:07:24,560 --> 00:07:31,200
+ So, and now, our next header will be, will be location header, okay. Our next header will be
+
+44
+00:07:31,200 --> 00:07:35,040
+ location header. So, what will be do, if this location header,
+
+45
+00:07:35,040 --> 00:07:49,760
+ this location header will like, like, it will tells that used with the redirect,
+
+46
+00:07:49,760 --> 00:07:58,640
+ specifically used for redirects, redirects means 3xx codes, okay. And it tells browser where to
+
+47
+00:07:58,640 --> 00:08:07,040
+ go next, okay. It tells browser where to go next. So, here is the, here will be the, like,
+
+48
+00:08:07,040 --> 00:08:15,360
+ I will show you in the demonstration, okay. So, these are the headers which are very, very
+
+49
+00:08:15,360 --> 00:08:22,240
+ essential, okay. First we cover host header, then we cover this as a generator,
+
+50
+00:08:22,240 --> 00:08:27,440
+ then we cover accepted, then we cover cookie, then we cover authorized generator, then we cover
+
+51
+00:08:27,440 --> 00:08:34,480
+ content, content, like, content size, okay. Then we cover content, then we cover set,
+
+52
+00:08:34,480 --> 00:08:39,040
+ okay. Then we cover cache control, then we cover location header. So, these are the headers,
+
+53
+00:08:39,040 --> 00:08:46,240
+ which are variations essential. Now, let's do deep and dive in cookies. So, basically, what are
+
+54
+00:08:46,240 --> 00:08:57,840
+ okay, you can see, these are the content headers, okay. Now, what are these, okay. So, basically,
+
+55
+00:08:57,840 --> 00:09:04,480
+ cookies are small pieces of data that websites stores in your browser, the help website,
+
+56
+00:09:04,480 --> 00:09:10,720
+ remember you, okay. Like, I will tell you the real life analogy. Imagine a coffee shop,
+
+57
+00:09:10,720 --> 00:09:16,560
+ giving you a loyalty card with your name and points. Every time you come back,
+
+58
+00:09:16,560 --> 00:09:23,360
+ they recognize you and know your usual order that what cookie do for website.
+
+59
+00:09:26,160 --> 00:09:35,040
+ Why do we need cookies? The problem will be HTTP stateless. The server doesn't remember you
+
+60
+00:09:35,040 --> 00:09:43,360
+ between request. Every time you click a link, the server thinks, "Who are you?" And I have,
+
+61
+00:09:43,360 --> 00:09:50,880
+ I have never seen you before, okay. So, what will be the solution? The solution will be like cookie,
+
+62
+00:09:50,880 --> 00:09:57,120
+ okay. Cookies, let the server remember things about you. Are you logged in?
+
+63
+00:09:57,120 --> 00:10:02,560
+ What's in your shopping card? Your language preference,
+
+64
+00:10:02,560 --> 00:10:12,160
+ the preference, okay. And how cookies work? So, the step-by-step process. So, the first thing,
+
+65
+00:10:12,560 --> 00:10:23,440
+ first visit, you visit website for the first time, okay. And server sent response with
+
+66
+00:10:23,440 --> 00:10:32,000
+ set cookie header, browser set cookie, okay. And later visit, you visit the same website again,
+
+67
+00:10:32,000 --> 00:10:40,080
+ okay. And browser automatically sent back, sent the cookie, sent the cookie back, okay.
+
+68
+00:10:40,080 --> 00:10:47,520
+ And then, server recognize you. So, let's take an example. First visit, browser,
+
+69
+00:10:47,520 --> 00:10:55,920
+ browser to server, okay. Where, here, show me your webpage. You send the information like,
+
+70
+00:10:55,920 --> 00:11:04,640
+ show me your webpage. And server will respond to browser. Here's the page, also save this cookie,
+
+71
+00:11:04,640 --> 00:11:12,160
+ user ID, 1, 2, 3, 4, 5, okay. And second visit, browser to server, hey, show me the page,
+
+72
+00:11:12,160 --> 00:11:18,480
+ show me the another page. Then, it will respond some like, by the way, my cookie says,
+
+73
+00:11:18,480 --> 00:11:26,000
+ user ID, 1, 2, 3, 4, 5, okay. Like, you are handling your cookie. And browser will remember you
+
+74
+00:11:26,000 --> 00:11:35,760
+ by seeing your user ID, okay. So, server to browser, like, server, you are sending information to
+
+75
+00:11:35,760 --> 00:11:44,160
+ server to browser, like, server to browser sent the information to you. Oh, hey, I just remember you,
+
+76
+00:11:44,160 --> 00:11:51,600
+ here's your personalized page, okay. So, this is how this will communicate, okay. So, basically,
+
+77
+00:11:51,600 --> 00:12:04,240
+ what are the, like, there are, there are types of cookies, okay. So, the first type of cookie,
+
+78
+00:12:04,240 --> 00:12:13,120
+ like, session management, like session cookies, okay. So, the session cookie, yeah.
+
+79
+00:12:13,120 --> 00:12:18,720
+ And in session cookie, delete, delete it when you, when you close the browser.
+
+80
+00:12:19,280 --> 00:12:24,720
+ Used for temporary things, like shopping cart. And the second cookie will be persistent cookie,
+
+81
+00:12:24,720 --> 00:12:31,120
+ which is basically stay on your device for days, months, years, okay. Used for
+
+82
+00:12:31,120 --> 00:12:36,880
+ remembering mean login features. And the third cookie will be, third cookie will be like,
+
+83
+00:12:37,840 --> 00:12:56,640
+ first party, third will be the first party cookies, okay. So, the first one is,
+
+84
+00:13:03,920 --> 00:13:17,600
+ so the first one is, session cookie, second one is,
+
+85
+00:13:27,680 --> 00:13:43,280
+ persistent, second one is persistent, and third one is like, first party cookie,
+
+86
+00:13:48,800 --> 00:14:08,560
+ first party cookies, okay. Basically, in first party cookies created by the website,
+
+87
+00:14:08,560 --> 00:14:12,480
+ you are visiting generally useful and necessary. And the fourth number is,
+
+88
+00:14:12,480 --> 00:14:24,080
+ fourth party cookie, let's say, fourth party cookie, sorry, it's, it's not fourth party,
+
+89
+00:14:24,080 --> 00:14:30,880
+ it's basically a third party, there will be two parties over there, first one is,
+
+90
+00:14:30,880 --> 00:14:35,360
+ first party and the second one is third party, not fourth party, okay. So, basically,
+
+91
+00:14:35,360 --> 00:14:43,360
+ in third party cookie, created by other domains, like ads analytics, okay. They used for tracking
+
+92
+00:14:43,360 --> 00:14:51,040
+ across websites and often blocked by browser for privacy, okay. Now, there will be
+
+93
+00:14:51,040 --> 00:14:58,960
+ some some cookie attributes, which will be the secure, HTTP only, same site, max age, okay.
+
+94
+00:15:00,000 --> 00:15:06,640
+ And there will be another cookie type, which is the privacy and cookies, like, in modern
+
+95
+00:15:06,640 --> 00:15:12,960
+ concern, concerns tracking your browsing habits, building profiles about you, selling your data,
+
+96
+00:15:12,960 --> 00:15:19,600
+ okay. So, that's why browser cookie now asks, this website uses cookies, accept, would you
+
+97
+00:15:19,600 --> 00:15:26,880
+ like to accept, or not accept, right. So, when you just click up on that app, accept, it can,
+
+98
+00:15:26,880 --> 00:15:30,160
+ It has the ability to sell your data.
+
+99
+00:15:30,160 --> 00:15:31,160
+ Okay?
+
+100
+00:15:31,160 --> 00:15:32,000
+ Thank you guys.
+
