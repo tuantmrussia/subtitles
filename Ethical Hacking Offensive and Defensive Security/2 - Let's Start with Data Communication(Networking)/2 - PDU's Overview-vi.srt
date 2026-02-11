@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,960
+Chúng ta hãy thảo luận thêm về mô hình hệ điều hành.
+
+2
+00:00:05,960 --> 00:00:13,040
+Vì vậy, nếu bạn thấy trong biểu đồ này, có một lớp ứng dụng, trong lớp ứng dụng
+
+3
+00:00:13,040 --> 00:00:20,520
+Chúng tôi sẽ đại diện cho dữ liệu yêu cầu của chúng tôi, vì vậy bất cứ điều gì bạn đang gửi, như một thông điệp cao
+
+4
+00:00:20,520 --> 00:00:25,560
+hoặc gửi tên người dùng và mật khẩu, vì vậy đó sẽ là dữ liệu.
+
+5
+00:00:25,560 --> 00:00:34,400
+Vì vậy, trong lớp 4 của mô hình hệ điều hành, vì vậy chúng tôi sẽ gọi dữ liệu của chúng tôi, bất cứ điều gì cao
+
+6
+00:00:34,400 --> 00:00:41,720
+hoặc bất kỳ tên người dùng và mật khẩu là một đoạn, vì vậy tại sao chúng tôi gọi là một đoạn, bởi vì
+
+7
+00:00:41,720 --> 00:00:47,640
+được rồi.
+
+8
+00:00:47,640 --> 00:01:00,260
+Vì vậy, hãy xem một ví dụ, vì vậy nếu có một 30 MB dữ liệu, vì vậy nó sẽ được chia thành nhiều
+
+9
+00:01:00,260 --> 00:01:08,160
+Được rồi, vậy 5 MB, 5 MB, 5, 5, 5, 5, 5, 5 cái gì cũng được.
+
+10
+00:01:08,160 --> 00:01:15,320
+Vì vậy, dữ liệu sẽ có thể được chia thành nhiều đoạn, được rồi, vì vậy đó là lý do tại sao chúng tôi
+
+11
+00:01:15,320 --> 00:01:23,280
+Gọi dữ liệu của chúng tôi là một đoạn, được rồi, trong lớp vận chuyển, vì vậy chúng tôi đã thảo luận
+
+12
+00:01:23,280 --> 00:01:29,760
+Có hai giao thức, chỉ có TCP và một trong những là UDP, do đó, điều này sẽ là hai TCP sẽ
+
+13
+00:01:29,760 --> 00:01:33,200
+được thêm vào hoặc UDP sẽ được thêm vào, okay.
+
+14
+00:01:33,200 --> 00:01:41,280
+Sau đó, chúng tôi có một lớp mạng, trong lớp mạng, chúng tôi đã biết, rất xin lỗi
+
+15
+00:01:41,280 --> 00:01:46,720
+Trong lớp vận chuyển, một điều nữa sẽ được thêm vào, đó là một số cổng
+
+16
+00:01:46,720 --> 00:01:55,640
+của giao thức, nếu nó là HTTP, số cổng sẽ là 80, nếu nó là HTTP, vâng, sau đó
+
+17
+00:01:55,640 --> 00:02:01,880
+Số hiệu cổng sẽ là 443, nếu là FTP, thì cổng sẽ là 21, chúng ta sẽ thảo luận.
+
+18
+00:02:01,880 --> 00:02:10,160
+Các giao thức và số hiệu cổng ngắn gọn trong các video sắp tới về sau, vì vậy trong lớp mạng,
+
+19
+00:02:10,160 --> 00:02:16,680
+Chúng tôi sẽ gọi các đoạn phim của chúng tôi như là một gói, okay, vì vậy đó là gói dữ liệu của chúng tôi, vì vậy chúng tôi đã có
+
+20
+00:02:16,680 --> 00:02:21,840
+biết trong lớp mạng, địa chỉ IP nguồn và địa chỉ IP đích sẽ là
+
+21
+00:02:21,840 --> 00:02:28,600
+thêm, nếu dữ liệu sẽ như thế này, okay, giao thông tiêu đề như TCP và IP nguồn
+
+22
+00:02:28,600 --> 00:02:36,720
+Địa điểm IP và dữ liệu, chúng tôi sẽ gọi toàn bộ điều này như là một gói, okay, vì vậy, chúng ta hãy
+
+23
+00:02:36,720 --> 00:02:44,920
+Hãy nhìn vào đây, trong lớp mạng, địa chỉ IP nguồn, điều này sẽ được thêm vào
+
+24
+00:02:44,920 --> 00:02:51,960
+trong mỗi đoạn, được rồi, mỗi đoạn, IP nguồn và đích
+
+25
+00:02:51,960 --> 00:02:57,680
+dữ liệu cần được chia nhỏ, tại sao chúng ta cần chia nhỏ dữ liệu, bởi vì
+
+26
+00:02:57,680 --> 00:03:03,880
+Như trên internet, nếu internet đã trả cho chúng tôi 5 MVP như một giây, chúng tôi cần
+
+27
+00:03:03,880 --> 00:03:14,160
+để phân chia dữ liệu này thành từng đoạn nhỏ, đúng không, để chia dữ liệu này thành nhiều mảng,
+
+28
+00:03:14,160 --> 00:03:20,800
+Nhiều đoạn phim, vì vậy chúng tôi đang phân đoạn dữ liệu và chúng tôi đang thêm IP nguồn và đích
+
+29
+00:03:20,800 --> 00:03:28,760
+IP trong mỗi đoạn, được rồi, mỗi đoạn mà chúng tôi phân đoạn bởi vận chuyển
+
+30
+00:03:28,760 --> 00:03:38,320
+lớp, được rồi, nguồn và đích IP sẽ được thêm vào, phải không, vì vậy một khi chúng tôi thêm địa chỉ IP
+
+31
+00:03:38,320 --> 00:03:43,280
+trong lớp mạng, sau đó gói của chúng tôi sẽ được lên đến lớp dữ liệu liên kết, trong
+
+32
+00:03:43,280 --> 00:03:49,120
+Lớp dữ liệu liên kết, chúng tôi biết khung hình, được rồi, xin lỗi, chúng tôi biết địa chỉ MAC sẽ được thêm vào,
+
+33
+00:03:49,120 --> 00:03:59,480
+Nguồn MAC và đích MAC, phải, vì vậy ở đây, bây giờ chúng ta có một điều và
+
+34
+00:03:59,480 --> 00:04:06,680
+Nguồn MAC và địa chỉ đích MAC sẽ được thêm vào mỗi phần, như
+
+35
+00:04:06,680 --> 00:04:16,160
+Trước khi, okay, cuối cùng, dữ liệu của chúng tôi sẽ đạt đến lớp vật lý và dữ liệu của chúng tôi
+
+36
+00:04:16,160 --> 00:04:22,440
+sẽ được chuyển đổi thành số không cát, phải không, bởi vì dữ liệu của chúng tôi cần phải giao tiếp thông qua
+
+37
+00:04:22,440 --> 00:04:28,560
+Dây cáp, hệ thống 45 hay bất kỳ dây cáp quang nào, nó mới, nó cần được chuyển đi.
+
+38
+00:04:28,560 --> 00:04:35,760
+để truyền hình cáp, chúng ta đang chuyển dữ liệu thành bit, được rồi, chúng ta sẽ gọi nó là
+
+39
+00:04:35,760 --> 00:04:42,040
+chúng tôi khung, vì vậy một khi bạn thêm địa chỉ MAC, gói dữ liệu của chúng tôi sẽ được gọi là một khung
+
+40
+00:04:42,040 --> 00:04:48,120
+Và một khi nó chạm đến lớp vật lý, nó sẽ được gọi là chúng ta, gọi chúng ta là bit, okay,
+
+41
+00:04:48,120 --> 00:04:55,200
+Vì vậy, điều này sẽ có trong các đơn vị dữ liệu giao thức, okay, PDUs, chúng tôi sẽ nói nó như một PDU, okay,
+
+42
+00:04:55,200 --> 00:05:02,080
+Tôi sẽ thảo luận thêm một lần nữa, bất cứ khi nào
+
+43
+00:05:02,080 --> 00:05:07,600
+Các dữ liệu sẽ được chuyển đến lớp vận chuyển, chúng tôi sẽ gọi dữ liệu của chúng tôi là một đoạn,
+
+44
+00:05:07,600 --> 00:05:13,960
+có, nó sẽ được phân chia thành nhiều đoạn, nhiều đoạn, vì vậy một khi dữ liệu đến
+
+45
+00:05:13,960 --> 00:05:19,060
+để lớp mạng, chúng tôi sẽ gọi dữ liệu của chúng tôi như gói, một gói, gói để gói
+
+46
+00:05:19,060 --> 00:05:24,640
+cây và một khi dữ liệu đạt đến lớp dữ liệu liên kết, nó sẽ gọi gói của chúng tôi, nó là
+
+47
+00:05:24,640 --> 00:05:31,080
+một khung hình, phải, vì vậy một khi nó đạt đến lớp vật lý, vì vậy dữ liệu này cần được chuyển
+
+48
+00:05:31,080 --> 00:05:36,440
+đến không bãi cát, chúng ta đã thảo luận, nó cần được chuyển tới dây cáp, đúng không?
+
+49
+00:05:36,440 --> 00:05:43,520
+ở một nguồn đến, ở điểm đến, vì vậy chúng tôi đang biến dữ liệu thành bit, okay,
+
+50
+00:05:43,520 --> 00:05:52,560
+Đây là toàn bộ quá trình của các đơn vị dữ liệu giao thức, được rồi, vì vậy hãy hy vọng của video này,
+
+51
+00:05:52,560 --> 00:05:58,560
+Và chúng tôi sẽ thảo luận về TCP và UDP, miễn phí trong video tiếp theo, cảm ơn bạn đã xem.
+
