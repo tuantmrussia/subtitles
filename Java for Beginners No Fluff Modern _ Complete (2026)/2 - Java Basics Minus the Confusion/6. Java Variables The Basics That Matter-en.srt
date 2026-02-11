@@ -1,0 +1,572 @@
+1
+00:00:00,000 --> 00:00:06,960
+ We move on and talk about variables because they are central to any programming language.
+
+2
+00:00:06,960 --> 00:00:12,480
+ These are like containers which hold your value and the data keeps on varying, the data keeps
+
+3
+00:00:12,480 --> 00:00:13,480
+ on changing.
+
+4
+00:00:13,480 --> 00:00:16,480
+ That's why they are in fact called variables.
+
+5
+00:00:16,480 --> 00:00:23,760
+ And I remember what I had listened to in my many years back in my C-tution class about
+
+6
+00:00:23,760 --> 00:00:28,560
+ what is a variable that is name of location and memory where data can be stored.
+
+7
+00:00:28,560 --> 00:00:30,640
+ Again, I'll repeat it for you.
+
+8
+00:00:30,640 --> 00:00:34,760
+ Name in location, name of location and memory where data can be stored.
+
+9
+00:00:34,760 --> 00:00:36,960
+ So you need to store data, right?
+
+10
+00:00:36,960 --> 00:00:40,400
+ And you need a container, guess what in programming languages we have variable.
+
+11
+00:00:40,400 --> 00:00:45,280
+ So people coming in here from other languages, they will know what variables are and they
+
+12
+00:00:45,280 --> 00:00:49,480
+ will just see how do we do that in Java and what is the variation.
+
+13
+00:00:49,480 --> 00:00:54,120
+ But people who are just starting to code that's important for you to understand that is
+
+14
+00:00:54,120 --> 00:00:57,120
+ it's just the name of the container in memory for you.
+
+15
+00:00:57,120 --> 00:01:03,240
+ And how do you use variables, how do we declare variables in Java is we just say the data
+
+16
+00:01:03,240 --> 00:01:07,160
+ type and then the identifier.
+
+17
+00:01:07,160 --> 00:01:15,400
+ So now this time on line number 16, the identifier is something which resembles your variable.
+
+18
+00:01:15,400 --> 00:01:18,840
+ Here at line number 7, the identifier was the name of the class.
+
+19
+00:01:18,840 --> 00:01:23,800
+ At line number 9, it was the name of the method, but at line number 16, it's the name
+
+20
+00:01:23,800 --> 00:01:28,280
+ of the variable. And again, we follow the rules and we follow the recommendations that
+
+21
+00:01:28,280 --> 00:01:29,840
+ is cable case.
+
+22
+00:01:29,840 --> 00:01:35,320
+ And in this in these series of videos, we'll follow the recommendations as if their rules
+
+23
+00:01:35,320 --> 00:01:40,040
+ are always say that because it just gives you that tighter hold on the syntax, right?
+
+24
+00:01:40,040 --> 00:01:45,960
+ And you're able to understand and read someone else scored that much easily and quickly,
+
+25
+00:01:45,960 --> 00:01:46,960
+ right?
+
+26
+00:01:46,960 --> 00:01:51,040
+ So again, my rule for this series is just follow the rules, follow the recommendations rather
+
+27
+00:01:51,040 --> 00:01:52,040
+ sorry.
+
+28
+00:01:52,040 --> 00:01:56,800
+ If it is it, let's follow the recommendations as if their rules, right?
+
+29
+00:01:56,800 --> 00:02:01,360
+ So so identify, obviously we know the rules and recommendations now, but what a data
+
+30
+00:02:01,360 --> 00:02:05,080
+ types now, that is the type of data you're going to store, right?
+
+31
+00:02:05,080 --> 00:02:11,320
+ And in Java, we have these eight primitive data types and I'm going to just type them
+
+32
+00:02:11,320 --> 00:02:17,360
+ out for you so that you understand what are the data types in Java, right?
+
+33
+00:02:17,360 --> 00:02:20,320
+ So if you have a look at my screen now.
+
+34
+00:02:20,320 --> 00:02:24,440
+ So in terms of their hierarchy, in terms of their size, I'm going to list them out
+
+35
+00:02:24,440 --> 00:02:25,440
+ for you.
+
+36
+00:02:25,440 --> 00:02:31,280
+ So starting with byte, right?
+
+37
+00:02:31,280 --> 00:02:43,400
+ And then we have short, we have a care, we have int, we have float, we have double and
+
+38
+00:02:43,400 --> 00:02:46,120
+ we have long as well.
+
+39
+00:02:46,120 --> 00:02:48,120
+ And because I just wrote them in the hierarchy.
+
+40
+00:02:48,120 --> 00:02:52,600
+ So after in, we also have long, right?
+
+41
+00:02:52,600 --> 00:03:01,800
+ And these folks here, that is byte, short, and as well as int and long, you can use them
+
+42
+00:03:01,800 --> 00:03:06,240
+ to store integer data, right, numbers, that is.
+
+43
+00:03:06,240 --> 00:03:12,840
+ And care is for character data type, that is, it's a two, two byte, Unicode character
+
+44
+00:03:12,840 --> 00:03:21,200
+ in Java, and float and double now are for precision numbers, right, that is with points.
+
+45
+00:03:21,200 --> 00:03:25,240
+ And then long as I said, I'll just remove it from here because I just wrote it, right,
+
+46
+00:03:25,240 --> 00:03:26,400
+ there for you.
+
+47
+00:03:26,400 --> 00:03:31,800
+ So these are if you see one, two, three, four, five, six, seven, I'm missing a data type that
+
+48
+00:03:31,800 --> 00:03:41,440
+ is byte, short, care, int, long, float, and double, one, two, three, four, five, six, seven,
+
+49
+00:03:41,440 --> 00:03:52,720
+ the one that I'm missing currently is, that is byte, is so, okay, yeah, that is Boolean.
+
+50
+00:03:52,720 --> 00:03:57,400
+ And it takes the values true and false, right.
+
+51
+00:03:57,400 --> 00:03:59,760
+ So these are the eight primitive data types in Java.
+
+52
+00:03:59,760 --> 00:04:04,760
+ So byte is which takes one byte in memory.
+
+53
+00:04:04,760 --> 00:04:08,680
+ This byte also takes one byte, but for numbers, short takes two bytes.
+
+54
+00:04:08,680 --> 00:04:14,720
+ If you have a slightly large number to be stored, care is two bytes, int is four bytes
+
+55
+00:04:14,720 --> 00:04:20,760
+ and long as eight bytes, and then float, we have four bytes, and if you have a slightly larger
+
+56
+00:04:20,760 --> 00:04:26,280
+ precision number, decimal number, then you would have double there to be stored.
+
+57
+00:04:26,280 --> 00:04:35,160
+ So these are the data types, if we call them in Java.
+
+58
+00:04:35,160 --> 00:04:41,600
+ And like the language itself, data types in Java are platform independent, right.
+
+59
+00:04:41,600 --> 00:04:46,320
+ That's unlike other languages where let's say you're working in a C environment, int data
+
+60
+00:04:46,320 --> 00:04:51,960
+ type on a 16 bit machine would take two bytes, but on a 32 it would take more bytes.
+
+61
+00:04:51,960 --> 00:04:56,160
+ But in Java, across architecture, across hardware, the data types are going to be the
+
+62
+00:04:56,160 --> 00:04:58,200
+ same in terms of size, right.
+
+63
+00:04:58,200 --> 00:05:08,340
+ That's why I say they like the language itself, their platform independent.
+
+64
+00:05:08,340 --> 00:05:14,720
+ So that is no matter which platform you're going to use, you're going to find them the
+
+65
+00:05:14,720 --> 00:05:15,720
+ same, right.
+
+66
+00:05:15,720 --> 00:05:23,160
+ So we're going to our environment and now following the syntax, if I come in this out and
+
+67
+00:05:23,160 --> 00:05:28,760
+ that's the comment and comment is obviously the line would not be executed in for a single
+
+68
+00:05:28,760 --> 00:05:29,760
+ line comment.
+
+69
+00:05:29,760 --> 00:05:34,040
+ This is the shortcut that is slash slash and the shortcut is control slash, right.
+
+70
+00:05:34,040 --> 00:05:39,160
+ See, uncomment, if you again press it, control slash is coming to right, see, comment
+
+71
+00:05:39,160 --> 00:05:40,160
+ and uncomment.
+
+72
+00:05:40,160 --> 00:05:41,160
+ So control slash.
+
+73
+00:05:41,160 --> 00:05:44,720
+ And if you want to put in multi line comments, then you're going to just put in something
+
+74
+00:05:44,720 --> 00:05:45,720
+ like this.
+
+75
+00:05:45,720 --> 00:05:50,040
+ So slash star and then at then star slash, right.
+
+76
+00:05:50,040 --> 00:05:52,960
+ These are multi line comments.
+
+77
+00:05:52,960 --> 00:06:00,360
+ Now, following this syntax, what I'll do is is let's say I want to store bullions.
+
+78
+00:06:00,360 --> 00:06:05,280
+ So I'll just say Boolean, not here, but within my code here.
+
+79
+00:06:05,280 --> 00:06:11,520
+ So I'll say Boolean, let's just call it black, that's how you declare a variable in Java.
+
+80
+00:06:11,520 --> 00:06:17,200
+ And the rule is because Java is a strictly typed language that is a variable needs to be
+
+81
+00:06:17,200 --> 00:06:22,640
+ declared before you can use it again to reiterate any variable that you're going to use.
+
+82
+00:06:22,640 --> 00:06:25,520
+ It needs to be declared before we can use it.
+
+83
+00:06:25,520 --> 00:06:29,400
+ And that's why I'm declaring that the syntax is first define the data, right?
+
+84
+00:06:29,400 --> 00:06:31,080
+ And then the name of the variable.
+
+85
+00:06:31,080 --> 00:06:32,440
+ And how do you initialize it?
+
+86
+00:06:32,440 --> 00:06:36,880
+ That is variable name is equal to that is assignment operator and then value.
+
+87
+00:06:36,880 --> 00:06:42,520
+ And I'm just going to say flat assignment operator that's put in the value true, right?
+
+88
+00:06:42,520 --> 00:06:48,520
+ Similarly, you could have combined these two lines that is declaration and introilization
+
+89
+00:06:48,520 --> 00:06:55,480
+ on the same line. So what I could have done is I could have directly said, that's it, right?
+
+90
+00:06:55,480 --> 00:07:00,600
+ And you can declare multiple variables at the same line by separating them with a comma.
+
+91
+00:07:00,600 --> 00:07:06,480
+ I can just say, for example, second, and I've left second, whereas uninitialized, because
+
+92
+00:07:06,480 --> 00:07:10,560
+ I think that it might be like sometime later on and that's what we find.
+
+93
+00:07:10,560 --> 00:07:15,960
+ But the only rule is that the second word should be of the same type as the first variable.
+
+94
+00:07:15,960 --> 00:07:21,120
+ Like there are multiple types like this, then an error, then there needs to be a separator
+
+95
+00:07:21,120 --> 00:07:24,480
+ that is a semi column. And that's perfectly fine, right?
+
+96
+00:07:24,480 --> 00:07:31,760
+ So similarly, I've just said in second word to 900 and by the way, just a note to be taken
+
+97
+00:07:31,760 --> 00:07:37,480
+ here is these are like hard coded values that you put right there in the program and they're
+
+98
+00:07:37,480 --> 00:07:43,080
+ never recommended. Why? Because it just makes your program one dimensional because this flag
+
+99
+00:07:43,080 --> 00:07:45,600
+ would always be false at the start.
+
+100
+00:07:45,600 --> 00:07:52,480
+ The second word would always be 900, right? So rather we should take user input wherever
+
+101
+00:07:52,480 --> 00:07:57,080
+ we can. And how do you take user input from runtime and Java that's coming on for you
+
+102
+00:07:57,080 --> 00:08:02,120
+ in the next video? But for now, just for demonstration, this is how you initialize a variable.
+
+103
+00:08:02,120 --> 00:08:06,280
+ And if you want to print it out, I'll just say the system without a print ln. And rather
+
+104
+00:08:06,280 --> 00:08:11,960
+ than typing the entire thing, you have a shortcut in IntelliJ, that is a south. Say, just
+
+105
+00:08:11,960 --> 00:08:18,520
+ say a south, it means a control set and just say a south enter. That's it. If you were working
+
+106
+00:08:18,520 --> 00:08:24,400
+ in the eclipse, the shortcut says out SYS or UT, but in IntelliJ, it's just south. And
+
+107
+00:08:24,400 --> 00:08:32,800
+ IntelliJ's IntelliSense has always been, has always been so much easier, so much captivating
+
+108
+00:08:32,800 --> 00:08:38,400
+ because you just type in and the suggestions come and see, you just say SYS, system comes
+
+109
+00:08:38,400 --> 00:08:43,760
+ in, right, or system color. And then it keeps on trimming down the results as you type
+
+110
+00:08:43,760 --> 00:08:48,320
+ in. I'll just say system T. See, only the things with system and starting with T comment,
+
+111
+00:08:48,320 --> 00:08:52,920
+ right. So that is the IntelliSense you get with IntelliJ. So system or a print ln again,
+
+112
+00:08:52,920 --> 00:08:57,360
+ I just use south and I'll just want to print the variable value. I'll just say black.
+
+113
+00:08:57,360 --> 00:09:01,520
+ Let's go on and run this. You don't need to save it in IntelliJ. That's the other benefit.
+
+114
+00:09:01,520 --> 00:09:06,880
+ Otherwise, control S is the shortcut. I'll just say controller. See, hello world on the next
+
+115
+00:09:06,880 --> 00:09:12,480
+ line and we do get a false. And similarly, I can say a south, I want to print the value of the
+
+116
+00:09:12,480 --> 00:09:18,680
+ second where I'll just say run, you got on screen. See, just remove extra where I'll say
+
+117
+00:09:18,680 --> 00:09:26,320
+ controller false and the 900, which is the current value of this variable, right. So, and
+
+118
+00:09:26,320 --> 00:09:30,920
+ similarly, you can declare other types. And not just at the top wherever you require them,
+
+119
+00:09:30,920 --> 00:09:35,640
+ I want to declare a variable of type that's a float. I can just go on and say float. Let's
+
+120
+00:09:35,640 --> 00:09:44,520
+ call it, for example, F 278 by 90. And immediately you got an error. Now, take a moment and guess
+
+121
+00:09:44,520 --> 00:09:52,760
+ why we got an error. So we get an error because precision numbers in Java by default are of the
+
+122
+00:09:52,760 --> 00:09:57,720
+ type double, not float, right. And that's why the compiler is your new new friend is unhappy. It
+
+123
+00:09:57,720 --> 00:10:03,880
+ says, it says that on the right, you're putting a double into a left variable that is a float and
+
+124
+00:10:03,880 --> 00:10:10,200
+ that's a mismatch. You hover on this gives you that a required type float provided double,
+
+125
+00:10:10,200 --> 00:10:15,880
+ right. Because precision numbers by default in Java or type double, so there are two ways to go
+
+126
+00:10:15,880 --> 00:10:22,280
+ around this. The first one is just put in a F here and that works. And here a capital F works
+
+127
+00:10:22,280 --> 00:10:26,600
+ as well, because you're signaling to the compiler, this is a float value. Please treat it as a
+
+128
+00:10:26,600 --> 00:10:32,120
+ float. And here a small and a capital works, but otherwise Java is a case sensitive language,
+
+129
+00:10:32,120 --> 00:10:36,920
+ but here both of them work. The other way would have been that is if you still want to treat it as
+
+130
+00:10:36,920 --> 00:10:44,200
+ a double, just change the variable type here to a double. And now you're putting a double value
+
+131
+00:10:44,200 --> 00:10:49,000
+ into a double variable. The compiler is happy. You go on and print it and rather than just printing
+
+132
+00:10:49,000 --> 00:10:57,080
+ the variable value, I want something to make sense on my console. So I want to say value of F is
+
+133
+00:10:57,720 --> 00:11:07,000
+ and just say concatenate. That is F. Double F, let's go on and run this and do we get it? Yes,
+
+134
+00:11:07,000 --> 00:11:12,440
+ see, this is false and I know we don't know what these are, but we now know the 78.9 is the value
+
+135
+00:11:12,440 --> 00:11:18,440
+ of the variable F. And this is how we concatenate it, right. In Java operator overloading is not
+
+136
+00:11:18,440 --> 00:11:25,560
+ permissible. The spread is was stopped with C++, right, but there is a variable which by default
+
+137
+00:11:25,560 --> 00:11:30,040
+ is overloaded. That is the plus operator. It sometimes does the addition and it other times does
+
+138
+00:11:30,040 --> 00:11:35,400
+ the concatenation. And one does it know what to do. It's quite intelligent to know. So that is if
+
+139
+00:11:35,400 --> 00:11:41,320
+ it sees on both sides of the operator, there is the string value, it concatenates. If it sees
+
+140
+00:11:41,320 --> 00:11:48,920
+ there is a string and then there is a variable value, for example, a double in a long, then it
+
+141
+00:11:48,920 --> 00:11:55,000
+ concatenates, right. Otherwise it does addition when there are both numbers of the operands or
+
+142
+00:11:55,000 --> 00:12:00,920
+ both numbers. So that's how you can just use these variables, right. And similarly, short,
+
+143
+00:12:00,920 --> 00:12:05,480
+ byte, long, you can use them as you go along.
+
