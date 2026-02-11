@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:07,000
+Hi, trong bài học này, bạn sẽ tìm hiểu làm thế nào để kiểm soát những phần của dự án con trỏ
+
+2
+00:00:07,000 --> 00:00:09,000
+Có thể thấy và có thể sử dụng.
+
+3
+00:00:09,000 --> 00:00:17,000
+Chúng ta sẽ nói về con trỏ chấm, bỏ qua tập tin, tôi sẽ giải thích làm thế nào nó hoạt động, tại sao nó quan trọng
+
+4
+00:00:17,000 --> 00:00:23,000
+Và làm thế nào nó có thể giúp bạn giữ cho cấu trúc dự án của bạn an toàn và hiệu quả.
+
+5
+00:00:23,000 --> 00:00:26,000
+Vì vậy, hãy làm điều đó một tuần trên bạn.
+
+6
+00:00:26,000 --> 00:00:33,000
+Từ bài học trước, bạn nhớ rằng chúng tôi đã xem tự động đọc một chỉ số dự án của bạn
+
+7
+00:00:33,000 --> 00:00:40,000
+được dựa trên để tạo ra một tính năng như tìm kiếm, làm thế nào để hoàn thành một tác nhân.
+
+8
+00:00:40,000 --> 00:00:42,000
+Vì vậy, nó thực hiện nó một cách tự động.
+
+9
+00:00:42,000 --> 00:00:46,000
+Nhưng đôi khi anh không muốn mọi thứ được bao gồm.
+
+10
+00:00:46,000 --> 00:00:53,000
+Có thể một số hồ sơ của anh chứa bí mật, nhưng chúng tôi không muốn nó được xử lý bằng con trỏ.
+
+11
+00:00:53,000 --> 00:00:56,000
+Đây là con trỏ chấm, bỏ qua tập tin có thể giúp chúng ta.
+
+12
+00:00:56,000 --> 00:01:04,000
+Nó sẽ cho bạn khả năng chặn một số tập tin ảnh đặc trưng từ việc được chỉ mục hoặc truy cập bởi công cụ AI con chạy.
+
+13
+00:01:04,000 --> 00:01:09,000
+Bạn có thể chỉ cần thêm tập tin này, thêm gốc của dự án của bạn, và con chạy sẽ đọc nó
+
+14
+00:01:09,000 --> 00:01:13,000
+và sẽ loại bỏ những tập tin chúng ta nên đề cập đến.
+
+15
+00:01:13,000 --> 00:01:19,000
+Hoặc bạn cũng có thể đi đến các thiết lập, tìm tùy chọn này và tạo chỉ cần chỉnh sửa,
+
+16
+00:01:19,000 --> 00:01:25,000
+và ô xem con chạy tự động tạo ra tập tin này, con trỏ chấm, bỏ qua trong gốc dự án của bạn.
+
+17
+00:01:25,000 --> 00:01:28,000
+Và ở đây bạn có thể thêm vào một số quy tắc.
+
+18
+00:01:28,000 --> 00:01:34,000
+Vì vậy, hãy để tôi giải thích tại sao bỏ qua tập tin là quan trọng và tại sao nó quan trọng.
+
+19
+00:01:34,000 --> 00:01:35,000
+Có quá nhiều lý do.
+
+20
+00:01:35,000 --> 00:01:38,000
+Lý do đầu tiên là an ninh.
+
+21
+00:01:38,000 --> 00:01:47,000
+Vì lý do an ninh, bạn có thể ngăn con trỏ truy cập vào một số tập tin nhạy cảm như phím APA cho công cụ bên ngoài,
+
+22
+00:01:47,000 --> 00:01:55,000
+Chẳng hạn, ủy nhiệm về một cơ sở dữ liệu, hoặc một cấu hình riêng nào đó, cho một dịch vụ mây hay cho người khác.
+
+23
+00:01:55,000 --> 00:01:57,000
+Vì vậy, bạn có thể loại bỏ nó.
+
+24
+00:01:57,000 --> 00:02:04,000
+Và rất nhiều công ty không cho phép bạn sử dụng AI, nhiều công ty rất cẩn thận.
+
+25
+00:02:04,000 --> 00:02:11,000
+Vì vậy, và tập tin này thực sự giúp kiểm soát những tập tin nào có thể được đọc bởi AI và những tập tin nào không.
+
+26
+00:02:11,000 --> 00:02:20,000
+Một con chạy, tất nhiên, đã bảo vệ dữ liệu của bạn, nhưng bỏ qua trong tập tin này thêm một lớp an toàn và tự tin.
+
+27
+00:02:20,000 --> 00:02:23,000
+Đừng nói về màn trình diễn.
+
+28
+00:02:23,000 --> 00:02:26,000
+Hiệu suất, ý nghĩa của nó.
+
+29
+00:02:26,000 --> 00:02:35,000
+Nếu bạn làm việc trong một dự án lớn như Monorepo, bạn có các ứng dụng tiên phong trong một dự án,
+
+30
+00:02:35,000 --> 00:02:40,000
+Bạn có các ứng dụng ngược, nhưng bạn chủ yếu là người phát triển trước.
+
+31
+00:02:40,000 --> 00:02:45,000
+Và bạn không làm việc với tiền tuyến, hoặc xin lỗi, bạn không làm việc với hậu phương.
+
+32
+00:02:45,000 --> 00:02:50,000
+Vì vậy, bạn có thể loại bỏ toàn bộ thư mục cuối ra một con trỏ.
+
+33
+00:02:50,000 --> 00:02:51,000
+Những gì nó làm.
+
+34
+00:02:51,000 --> 00:03:01,000
+Nếu bạn loại bỏ nó, kết thúc chỉ mục của bạn sẽ hoạt động nhanh hơn vì nó sẽ tiết kiệm, bạn biết đấy, hàng trăm tập tin sẽ không được chỉ mục.
+
+35
+00:03:01,000 --> 00:03:06,000
+Và bạn sẽ tiết kiệm rất nhiều thời gian cho một con trỏ.
+
+36
+00:03:06,000 --> 00:03:11,000
+Nó sẽ tăng tốc lưu trữ, tất nhiên là câu trả lời.
+
+37
+00:03:11,000 --> 00:03:17,000
+Và bạn không nhận được câu trả lời chính xác hơn, mà luôn luôn chỉ để làm việc, chỉ để dự án phía trước của bạn.
+
+38
+00:03:17,000 --> 00:03:20,000
+Bạn sẽ không nhận được một cái gì đó từ dự án cuối cùng trong câu trả lời.
+
+39
+00:03:20,000 --> 00:03:24,000
+Vì vậy, điều này giống như rất nhiều lợi ích khi làm điều đó.
+
+40
+00:03:24,000 --> 00:03:32,000
+Được rồi, đừng nói nữa, tôi sẽ chỉ cho bạn cách sử dụng cú pháp của con trỏ chấm, bỏ qua tập tin.
+
+41
+00:03:32,000 --> 00:03:38,000
+Tôi đã chuẩn bị vài ví dụ. Tôi sẽ sao chép nó từ tài liệu về con chạy.
+
+42
+00:03:38,000 --> 00:03:46,000
+Và nó sẽ đi từng người một, giải thích cho bạn cách loại bỏ tập tin và thư mục, và cú pháp nào bạn có thể sử dụng.
+
+43
+00:03:46,000 --> 00:03:55,000
+Ví dụ, nếu bạn muốn loại bỏ một tập tin, bạn chỉ cần đề cập đến thẻ thông hành ở đây.
+
+44
+00:03:55,000 --> 00:04:06,000
+Hãy tưởng tượng chúng tôi muốn loại bỏ utl.js, chúng tôi vừa đề cập đến thông qua tập tin này, utl.js.
+
+45
+00:04:06,000 --> 00:04:12,000
+Hoặc, tôi không biết, tưởng tượng chúng ta muốn vạch trần thử nghiệm chuyển đổi tiền tệ.
+
+46
+00:04:12,000 --> 00:04:20,000
+Tôi cũng có thể, nếu bạn lười biếng để gõ, tôi có thể sao chép một giấy thông hành tương đối, và chỉ cần dán ở đây, và nó cũng sẽ được loại trừ.
+
+47
+00:04:20,000 --> 00:04:25,000
+Phải, hãy làm như thế này.
+
+48
+00:04:25,000 --> 00:04:27,000
+Được rồi, hồ sơ cụ thể.
+
+49
+00:04:27,000 --> 00:04:39,000
+Vì vậy, nếu bạn muốn loại bỏ một thư mục ra khỏi chỉ số, bạn có thể chỉ cần đề cập đến sự đi qua của thư mục, như mã nguồn, ulits, ví dụ.
+
+50
+00:04:39,000 --> 00:04:45,000
+Và thư mục này sẽ bị xoá, và mọi tập tin dưới thư mục này.
+
+51
+00:04:45,000 --> 00:04:53,000
+Một ví dụ khác là mở rộng tập tin. Ví dụ, nếu bạn muốn loại bỏ tất cả các bài kiểm tra, chỉ các tập tin.
+
+52
+00:04:53,000 --> 00:04:58,000
+Phải, bắt đầu với hồ sơ. Anh có thể chỉ cần đề cập, như thế này.
+
+53
+00:04:58,000 --> 00:05:07,000
+Nhưng nếu bạn muốn loại bỏ tất cả các bài kiểm tra, yeah, ra khỏi thùng rác, chỉ số bằng bảng điều khiển, bạn có thể gõ một cái gì đó như thế này.
+
+54
+00:05:07,000 --> 00:05:19,000
+Vâng, và ví dụ, thư mục lồng chim rất mạnh mẽ. Bạn có thể loại bỏ, ví dụ, bất cứ điều gì.
+
+55
+00:05:19,000 --> 00:05:32,000
+Hãy tưởng tượng chúng tôi, trong tiểu, chúng tôi có tất cả các loại thử nghiệm, và trong các thử nghiệm, chúng tôi có, tôi không biết, utl.js, ví dụ, yeah.
+
+56
+00:05:32,000 --> 00:05:43,000
+Và bạn, ví dụ như loại bỏ tất cả, và chúng tôi có thư mục thử nghiệm ở đâu đó ở đây.
+
+57
+00:05:43,000 --> 00:05:52,000
+Phải, và anh muốn loại bỏ tất cả các thư mục kiểm tra. Ừ, cậu có thể viết như thế này.
+
+58
+00:05:52,000 --> 00:06:06,000
+Phải, nó được gửi tới tất cả các thư mục thử nghiệm. Và ví dụ, nếu bạn muốn loại bỏ, tôi không biết, tất cả các tập tin JavaScript bên trong của thư mục tổ, bạn có thể làm một cái gì đó như thế này.
+
+59
+00:06:06,000 --> 00:06:22,000
+Ví dụ, nguồn, giống như, tất cả các tập tin JavaScript dưới thư mục thứ nhất, bạn làm mẫu của thư mục tổ và sau đó.js.
+
+60
+00:06:22,000 --> 00:06:33,000
+Trông có vẻ tốt. Tất cả các tập tin JavaScript bên trong thư mục nguồn và mọi thư mục, được lồng nhau vào thư mục nguồn.
+
+61
+00:06:33,000 --> 00:06:47,000
+Và cái cuối cùng, trong danh sách của chúng tôi là giả mạo. Đó là khi bạn muốn, nếu bạn đã loại bỏ một cái gì đó và bạn muốn trở lại nó. Phải, anh muốn hồ sơ này được thêm vào.
+
+62
+00:06:47,000 --> 00:07:08,000
+Bạn chỉ cần thêm tiêu đề trước, ví dụ, bạn muốn, bạn có thể làm điều đó như thế này, yeah, với một tập tin với một thư mục, nguồn, utls, utls. Được rồi, nhưng hãy cẩn thận, nếu nó tốt, cả một tập tài liệu, bạn không thể dùng negation.
+
+63
+00:07:08,000 --> 00:07:28,000
+Ví dụ như nếu bạn đã ghi đầy đủ các thư mục trước đây, nguồn utls, bạn có thể làm một cái gì đó như thế này sau đó, bởi vì họ cũng có một số giới hạn.
+
+64
+00:07:28,000 --> 00:07:43,000
+Để làm nổ nó, bạn cần phải làm nổ tung thư mục này một cách rõ ràng. Vì vậy, hãy cẩn thận với hành vi loại trừ này.
+
+65
+00:07:43,000 --> 00:07:54,000
+Được rồi, tôi đoán nó là tất cả, có thể, tôi cũng sẽ cho bạn thấy rằng đây là dự án bỏ qua tập tin và chúng tôi cũng có thể làm điều đó trên một cấp độ toàn cầu trên người dùng.
+
+66
+00:07:54,000 --> 00:08:08,000
+Vì vậy, nếu bạn đi đến các mô hình vành đai thông qua thiết lập đội, một loại nhỏ bỏ qua ở đây, bạn sẽ thấy đồng vị toàn cầu bỏ qua danh sách, nó được tạo ra bởi cosor mặc định.
+
+67
+00:08:08,000 --> 00:08:23,000
+Và ví dụ, đây là những tập tin phổ biến nhất thông thường rất nhiều nhà phát triển loại trừ. Yeah, và bạn có thể quản lý danh sách này, bạn có thể chỉnh sửa mục, bạn có thể gỡ bỏ mục, bạn có thể thêm mục khác và.
+
+68
+00:08:23,000 --> 00:08:32,000
+Bất kỳ dự án nào mà các bạn mở với một chiếc cốc sẽ theo kiểu này. Vì vậy, tất cả các tập tin trong Corsor sẽ bị loại trừ.
+
+69
+00:08:32,000 --> 00:08:47,000
+Được rồi, giờ anh đã biết mọi thứ về hồ sơ bị bỏ qua. Nếu bạn muốn đọc nhiều hơn, tất nhiên bạn có thể đi đến các tài liệu Cors, các liên kết bạn có thể tìm thấy trong bài học này trong các nguồn tài nguyên bên dưới video.
+
+70
+00:08:47,000 --> 00:08:53,000
+Và tất cả các slide trên các từ hữu ích cho bạn và nhìn thấy bạn.
+
