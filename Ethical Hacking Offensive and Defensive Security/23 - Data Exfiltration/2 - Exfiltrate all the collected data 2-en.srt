@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:09,100
+ Yeah, welcome to another video and in this video we will going to see the
+
+2
+00:00:09,100 --> 00:00:16,280
+ might attack the kx filtration, okay. So most of the courses they won't cover
+
+3
+00:00:16,280 --> 00:00:22,560
+ about the x filtration or later commands how the attacker will do the
+
+4
+00:00:22,560 --> 00:00:27,680
+ exfiltrations, okay. So in this video we will see how to exfiltrate a data from
+
+5
+00:00:27,680 --> 00:00:36,320
+ how to exfiltrate a data from a term machine to the cloud platform, okay. So what's an
+
+6
+00:00:36,320 --> 00:00:40,200
+ exfiltration? So let's think about what is an exfiltration. So exfiltration is
+
+7
+00:00:40,200 --> 00:00:46,620
+ like you are just uploading an important and confidential data to the cloud,
+
+8
+00:00:46,620 --> 00:00:50,920
+ okay. So if you take an organization the organization absolutely have a
+
+9
+00:00:50,920 --> 00:00:56,360
+ confidential data that will not be shared to anyone, right. So threat
+
+10
+00:00:56,360 --> 00:01:03,420
+ tactor once they will fulfill all the mitotatics of
+
+11
+00:01:03,420 --> 00:01:07,800
+ previous legislation and credential access and before the ransomware deployment
+
+12
+00:01:07,800 --> 00:01:15,440
+ they will go for exfiltration, okay. So if they exfiltrate all the data from the
+
+13
+00:01:15,440 --> 00:01:21,400
+ target machine, if the target, if the target organization will not pay the
+
+14
+00:01:21,400 --> 00:01:26,320
+ ransomware ransomware money they will upload, they will publish that
+
+15
+00:01:26,320 --> 00:01:32,840
+ confidential files and contents in a dark web, okay. In a dark web or they will
+
+16
+00:01:32,840 --> 00:01:38,320
+ publish in an online, okay. So that will be a serious threat, okay. So the
+
+17
+00:01:38,320 --> 00:01:43,880
+ organization have most confidential data that will be used for our future but
+
+18
+00:01:43,880 --> 00:01:47,320
+ the threat attacker will steal that kind of data and they will simply
+
+19
+00:01:47,320 --> 00:01:51,920
+ upload that data into the internet and public forum, okay. So that will be one of
+
+20
+00:01:51,920 --> 00:01:59,880
+ the serious issue, okay. So if you tracking the exfiltration later activities,
+
+21
+00:01:59,880 --> 00:02:04,240
+ if you are investigating exfiltration later activities it's not a simple thing,
+
+22
+00:02:04,240 --> 00:02:11,000
+ okay. So we will see how to investigate the exfiltration things in a
+
+23
+00:02:11,000 --> 00:02:14,440
+ bluetooth section, investigation section, there is a separate section that
+
+24
+00:02:14,440 --> 00:02:20,480
+ was available. So in this video we will see how to exfiltrate the data from the
+
+25
+00:02:20,480 --> 00:02:25,560
+ target machine to cloud, okay. So I have already created a mega account, so in
+
+26
+00:02:25,560 --> 00:02:31,880
+ this video we are going to upload our data into the mega, okay. Mega is one of
+
+27
+00:02:31,880 --> 00:02:41,640
+ a cloud platform, so you will get a lot of data from mega, okay. So give me a
+
+28
+00:02:41,640 --> 00:02:49,480
+ you may sometime my machine was still stuck, okay. So let I will, I think I need to
+
+29
+00:02:49,480 --> 00:02:57,880
+ restart my machine, I will restart my machine and I will be back, okay. Let's power
+
+30
+00:02:57,880 --> 00:03:05,640
+ off and let's start a machine, okay. I did not expect that this machine was
+
+31
+00:03:05,640 --> 00:03:13,200
+ hanged. So not a problem, we will discuss the thing, okay. For exfiltrating the
+
+32
+00:03:13,200 --> 00:03:16,080
+ data, now we are professional in red team, right. Now we are professional in
+
+33
+00:03:16,080 --> 00:03:20,120
+ red team because the class are multiple things, okay. We did initial access,
+
+34
+00:03:20,120 --> 00:03:24,600
+ differentiation, privilege escalation, credential access, etc, etc, right. So we did
+
+35
+00:03:24,600 --> 00:03:28,400
+ lot of things and now we are professional in relative related activities,
+
+36
+00:03:28,400 --> 00:03:38,000
+ okay. To uploading a data into the mega, so here we are using, I already told in
+
+37
+00:03:38,000 --> 00:03:43,280
+ our log bin, so there is a R code.exe that can be abused by other
+
+38
+00:03:43,280 --> 00:03:48,000
+ attackers to exfiltrated a data, right. So for that you need to download our
+
+39
+00:03:48,000 --> 00:03:59,220
+ clone.exe from the website, okay. So if you go to the Google and if you give the R clone,
+
+40
+00:03:59,220 --> 00:04:08,040
+ R clone.exe and you can click on the download button, you can download a Intel AMD 64
+
+41
+00:04:08,040 --> 00:04:13,320
+ or 32 bit, okay. So whatever you want, okay. I already downloaded the R clone.exe
+
+42
+00:04:13,320 --> 00:04:18,480
+ into my downloads and here you can find the R clone folder, okay. So what I did,
+
+43
+00:04:18,480 --> 00:04:24,200
+ I just copied this application to the system 32, okay. I just copied this
+
+44
+00:04:24,200 --> 00:04:32,200
+ application and said the system 32 folder, so here you can find the R clone,
+
+45
+00:04:32,200 --> 00:04:39,560
+ R clone.exe, okay. So we are using the R clone.exe to exfiltrate the data
+
+46
+00:04:39,560 --> 00:04:46,520
+ from the target machine to the cloud, okay. So this is the first video, this one
+
+47
+00:04:46,520 --> 00:04:50,200
+ of the method that was frequently used by the threat actor to exfiltrate the
+
+48
+00:04:50,200 --> 00:05:03,160
+ data, okay. And in the right hand side, if I go to my Kali machine, so let's open
+
+49
+00:05:03,160 --> 00:05:23,600
+ the mega, okay. Let it be load, do some time.
+
+50
+00:05:33,160 --> 00:05:49,040
+ I just, let's give me a few seconds more, yep. So we are using this mega to
+
+51
+00:05:49,040 --> 00:05:58,120
+ upload the data to our data like platform, okay. So you can see there is a
+
+52
+00:05:58,120 --> 00:06:02,480
+ directory which I have created called the exfil, okay. So if you want to create a
+
+53
+00:06:02,480 --> 00:06:07,680
+ directory in mega, if you want to sign in into a mega, you can create your
+
+54
+00:06:07,680 --> 00:06:12,200
+ account in mega and once you create your own account, your front page will
+
+55
+00:06:12,200 --> 00:06:16,040
+ be looked like this, okay. So if you want to create any folder, you can, you can
+
+56
+00:06:16,040 --> 00:06:24,440
+ give that. So if I give the ransom, so it will be, it will be created, okay. The
+
+57
+00:06:24,440 --> 00:06:30,920
+ folder will be automatically created, okay. So that's all about the mega thing
+
+58
+00:06:30,920 --> 00:06:35,480
+ and we will, we have successfully created our account and all, I can see there's
+
+59
+00:06:35,480 --> 00:06:40,720
+ a two folder which I have created on this exfil and on this ransom. And I hope
+
+60
+00:06:40,720 --> 00:06:45,120
+ you will also create the mega, there was a very simple one, it's like a Google
+
+61
+00:06:45,120 --> 00:06:52,240
+ Drive, okay. So if you go to the target machine, so now we are
+
+62
+00:06:52,240 --> 00:06:55,680
+ professionals, right. If I explain in the target machine, so it will easily
+
+63
+00:06:55,680 --> 00:07:00,600
+ understand what happened, how to, how to do exfiltration, okay. So you need to
+
+64
+00:07:00,600 --> 00:07:06,160
+ configure the, configure the R clone, okay. So once you install the R clone in
+
+65
+00:07:06,160 --> 00:07:10,920
+ target machine, okay, in a target machine, so you can do it, do it like you can
+
+66
+00:07:10,920 --> 00:07:15,600
+ transfer the R clone using the 30 alert bits admin and you can execute in the,
+
+67
+00:07:15,600 --> 00:07:20,120
+ execute the R clone in the target machine and you can, you need to configure,
+
+68
+00:07:20,120 --> 00:07:25,640
+ okay. You need to configure something, I have created the name of AJAY and I, I
+
+69
+00:07:25,640 --> 00:07:31,720
+ gave the, if you want to give your R clone config, okay, in a command first, okay. So
+
+70
+00:07:31,720 --> 00:07:36,280
+ then it will last for what editing you need. So if you need to create a new
+
+71
+00:07:36,280 --> 00:07:42,360
+ remote or a rename or copy anything, so I just created a one, editing the
+
+72
+00:07:42,360 --> 00:07:47,560
+ existing thing and there's some configuration source available, okay. So if you
+
+73
+00:07:47,560 --> 00:07:53,840
+ see in the 29th storage, you can find the mega here. So I gave 29 and I gave
+
+74
+00:07:53,840 --> 00:08:00,160
+ the user name to my email and password us take my mega password, okay. So the
+
+75
+00:08:00,160 --> 00:08:13,400
+ password will be my mega password and if I give the, sorry, R clone, let me
+
+76
+00:08:13,400 --> 00:08:25,760
+ recover the command, yeah, list l i s t or mo t s, okay. So, okay, cool R clone is
+
+77
+00:08:25,760 --> 00:08:42,640
+ not a, organized command, we will do one thing, so we will execute like this, R
+
+78
+00:08:42,640 --> 00:08:51,800
+ clone dot exes, still it will also be not organized, yeah, now it came R clone dot exes a
+
+79
+00:08:51,800 --> 00:09:12,600
+ list remotes, okay. So it was asking, okay, so R clone dot exes list remotes, so this
+
+80
+00:09:12,600 --> 00:09:18,800
+ right command, so here you can find the, I have created the mega and if I, you
+
+81
+00:09:18,800 --> 00:09:41,080
+ are clone l s f and the, the name mega, so it will recover all the folders which
+
+82
+00:09:41,080 --> 00:09:46,760
+ we have created. So you can see here X phil and ransom which we have created recently
+
+83
+00:09:46,760 --> 00:09:55,160
+ the ransom we have created and in this video, I will, I will take on file as a target,
+
+84
+00:09:55,160 --> 00:10:04,040
+ okay, this is t, this is the file, we are going to upload, okay, l s s dot DMP, so here
+
+85
+00:10:04,040 --> 00:10:08,800
+ you can find the similar command, okay. So the command will be R clone dot exes and we are
+
+86
+00:10:08,800 --> 00:10:15,680
+ going to copy the l s s dump and mega is my name of the configurations, I did some configuration
+
+87
+00:10:15,680 --> 00:10:20,360
+ right. So X will use a folder, you need, you need to give the folder which folder we need
+
+88
+00:10:20,360 --> 00:10:27,760
+ to upload, okay, and this argument, this was an optional because if you are uploading multiple
+
+89
+00:10:27,760 --> 00:10:33,480
+ files in a one shot, you need to create a streams, okay, because the internet speeds it
+
+90
+00:10:33,480 --> 00:10:41,160
+ will vary of, you know, organization, so your R clone activity will not upload the data sometimes,
+
+91
+00:10:41,160 --> 00:10:47,840
+ so we are giving some of the, some of the additional flags to resolve that issue, okay.
+
+92
+00:10:47,840 --> 00:10:52,840
+ Okay, sometime the organization will set the rules like this is that if it exceeds more,
+
+93
+00:10:52,840 --> 00:10:59,800
+ more data, your firewall block, okay, so it will bypass this kind of restriction, okay.
+
+94
+00:10:59,800 --> 00:11:09,400
+ So let's copy this command, and let's check the mega, okay, so there is no files instead
+
+95
+00:11:09,400 --> 00:11:26,040
+ of the folder, let's execute this command, okay, so hope you all can see the commands
+
+96
+00:11:26,040 --> 00:11:31,800
+ which I have did, I just copy paste or the l s dot dump, the target folder, and mega
+
+97
+00:11:31,800 --> 00:11:42,000
+ X fill, okay, so if I do enter, so my data was uploading, okay, let's go move to the configuration
+
+98
+00:11:42,000 --> 00:12:03,680
+ later thing, okay, yeah, these are all the configuration you can see which I did before,
+
+99
+00:12:03,680 --> 00:12:09,840
+ there was a easy configuration, not a tough one, so you can also do it if you want, and
+
+100
+00:12:09,840 --> 00:12:15,560
+ if I go to the target folder, the mega app, you can see the l s dot dump here, it was
+
+101
+00:12:15,560 --> 00:12:24,440
+ 51 MB, right, so this is how the threat actors will, threat actors will exfiltrate the
+
+102
+00:12:24,440 --> 00:12:31,200
+ data from the target machines using the orthorn.exe, okay, so another one thing, we all know
+
+103
+00:12:31,200 --> 00:12:38,040
+ orthorn.exe was used for an exfiltration, right, so sometime what threat actor will do,
+
+104
+00:12:38,040 --> 00:12:45,680
+ the threat actor will rename the orthorn to some other executeable, okay, so if you do the
+
+105
+00:12:45,680 --> 00:12:54,840
+ for an example, or clone, okay, so what is the threat actor will do, they will rename
+
+106
+00:12:54,840 --> 00:13:09,560
+ the r clone to the run the l l r s v c host or any other executeable, okay, they will rename
+
+107
+00:13:09,560 --> 00:13:17,080
+ that r clone.exe into any name, partial.exe or any other, any other Google.exe, anything,
+
+108
+00:13:17,080 --> 00:13:22,600
+ okay, they will rename it like anything and they will use that, they will use the, the
+
+109
+00:13:22,600 --> 00:13:27,000
+ original binary was an r clone, okay, the original binary was an r clone, if you check the
+
+110
+00:13:27,000 --> 00:13:33,040
+ name of the executeable, the executeable will be f v c host or s a host or conv host, okay,
+
+111
+00:13:33,040 --> 00:13:41,040
+ so this is one of the mechanism that was followed by the threat actor, okay, so as a threat
+
+112
+00:13:41,040 --> 00:13:46,440
+ analyst, if you are, if there is an exfiltration that was happening, you will directly see
+
+113
+00:13:46,440 --> 00:13:51,320
+ the r clone activity, right, so what they will do, they will rename the r clone into
+
+114
+00:13:51,320 --> 00:13:57,720
+ other executable and they will do the exfiltration, okay, like this, okay, this is what
+
+115
+00:13:57,720 --> 00:14:03,840
+ threat actors will do and this is how the threat actor will exfiltrate the data from the
+
+116
+00:14:03,840 --> 00:14:09,640
+ target machines, okay, so you need to aware about this activity, if there is a ransomware
+
+117
+00:14:09,640 --> 00:14:14,360
+ deployment, if the threat actor goal is ransomware deployment, they will absolutely do this
+
+118
+00:14:14,360 --> 00:14:21,240
+ step, okay, they will absolutely follow the exfiltration step to upload the data to the cloud
+
+119
+00:14:21,240 --> 00:14:29,340
+ machine, okay, yep, that's all about the video, we will meet you in the next video, thank
+
+120
+00:14:29,340 --> 00:14:35,040
+ you for watching, okay, next video we will see some third party application that was
+
+121
+00:14:35,040 --> 00:14:40,600
+ used for an exfiltration, okay, so yeah, hope you understand this video, we will meet
+
+122
+00:14:40,600 --> 00:14:43,160
+ do in the next video. Thank you. Thank you for watching.
+
