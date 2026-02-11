@@ -1,0 +1,224 @@
+1
+00:00:00,569 --> 00:00:03,930
+Hãy tưởng tượng điều này, công ty của bạn có một cụm cho dev,
+
+2
+00:00:04,210 --> 00:00:08,470
+3 để dàn dựng, 2 cho sản xuất, và thêm vài thứ nữa.
+
+3
+00:00:08,729 --> 00:00:14,840
+Bây giờ, tưởng tượng có những loại tải công việc và nhiều cụm.
+
+4
+00:00:15,130 --> 00:00:19,590
+Bây giờ có rất nhiều cụm, làm thế nào để bạn quản lý chúng một cách nhất quán?
+
+5
+00:00:19,959 --> 00:00:24,110
+Đó chính là lý do tại sao Google đã xây dựng các hạm đội GKE.
+
+6
+00:00:24,329 --> 00:00:25,309
+Hãy lặn xuống.
+
+7
+00:00:25,639 --> 00:00:30,480
+Một hạm đội là một nhóm hợp lý của nhóm Kibernetes cho phép bạn quản lý
+
+8
+00:00:30,480 --> 00:00:35,740
+Họ là một đơn vị. Một hạm đội tiêu chuẩn hóa danh tính của bạn,
+
+9
+00:00:36,080 --> 00:00:41,459
+Chính sách, cấu hình, dịch vụ, và tự động hóa đa tầng.
+
+10
+00:00:41,720 --> 00:00:46,880
+Theo định nghĩa của Google, một hạm đội cung cấp một cách nhất quán để quản lý,
+
+11
+00:00:47,049 --> 00:00:52,110
+An toàn, và quan sát nhiều cụm vi sinh trên môi trường.
+
+12
+00:00:52,360 --> 00:00:57,990
+Enterprise cần hạm đội vì chúng có nhiều cụm ở khắp các vùng.
+
+13
+00:00:58,389 --> 00:01:00,380
+Họ có nhiều đơn vị kinh doanh.
+
+14
+00:01:00,909 --> 00:01:03,509
+Đôi khi họ có nhiều môi trường như dev,
+
+15
+00:01:03,709 --> 00:01:08,540
+Sân khấu, chuyên nghiệp, và họ có hệ thống kiểm soát an ninh.
+
+16
+00:01:08,910 --> 00:01:11,269
+Hạm đội giải quyết các điểm đau chính.
+
+17
+00:01:11,550 --> 00:01:14,050
+Ví dụ, nếu bạn không có một hạm đội,
+
+18
+00:01:14,430 --> 00:01:17,269
+thì mỗi chùm sẽ được phân chia.
+
+19
+00:01:17,470 --> 00:01:21,970
+Tuy nhiên, cùng với hạm đội, anh có thể có một kế hoạch điều khiển thống nhất.
+
+20
+00:01:22,400 --> 00:01:25,510
+Không có hạm đội, chính sách được áp dụng bằng tay.
+
+21
+00:01:25,949 --> 00:01:30,050
+Tuy nhiên, với hạm đội, bạn có thể đồng bộ chính sách toàn cầu.
+
+22
+00:01:30,550 --> 00:01:33,750
+Không có hạm đội nào gây ra nhiều công việc không ổn định.
+
+23
+00:01:33,949 --> 00:01:37,940
+Và với cả hạm đội, anh có thể làm nhiều dịch vụ đa năng.
+
+24
+00:01:38,230 --> 00:01:42,779
+Bạn cũng có thể giải quyết vấn đề liên quan đến nhân dạng bởi vì hạm đội
+
+25
+00:01:42,779 --> 00:01:46,089
+có thể cung cấp cho bạn danh tính tải công việc thống nhất.
+
+26
+00:01:46,349 --> 00:01:50,309
+Hạm đội cũng có thể giúp bạn giải quyết sự trôi dạt giữa các cụm.
+
+27
+00:01:50,760 --> 00:01:55,139
+Với hạm đội, bạn có thể đồng bộ hóa và kiểm soát chính sách của Anthis.
+
+28
+00:01:55,480 --> 00:01:58,900
+Nói chung, các hạm đội giải quyết nhiều vấn đề hỗn loạn.
+
+29
+00:01:59,319 --> 00:02:03,500
+Một hạm đội bắt đầu với một dự án hoạt động như là một chủ hạm đội,
+
+30
+00:02:03,839 --> 00:02:09,179
+Và sau đó bạn có thể đăng ký các cụm GKE, Anthos trên các cụm máy tính xách tay,
+
+31
+00:02:09,460 --> 00:02:13,839
+Anthos trần kim loại, và bạn cũng có thể có các cụm mây đa tầng.
+
+32
+00:02:14,710 --> 00:02:19,770
+Điều này có nghĩa là hạm đội đã thống nhất đám mây và trong các hoạt động của tàu.
+
+33
+00:02:20,149 --> 00:02:24,029
+Name
+
+34
+00:02:24,029 --> 00:02:26,779
+Giải pháp cho tải công việc qua các cụm.
+
+35
+00:02:27,029 --> 00:02:28,770
+Hạm đội mở rộng mô hình này.
+
+36
+00:02:29,229 --> 00:02:30,690
+Một nhân dạng,
+
+37
+00:02:31,070 --> 00:02:35,699
+Một định nghĩa bản đồ hoạt động trên tất cả các nhóm thành viên.
+
+38
+00:02:35,940 --> 00:02:38,270
+Hạm đội chính sách và cấu hình toàn diện.
+
+39
+00:02:38,710 --> 00:02:40,690
+Đây là nơi hạm đội tỏa sáng.
+
+40
+00:02:40,990 --> 00:02:44,820
+Anh đưa hạm đội của anh tới kho chứa kim loại và hạm đội kéo
+
+41
+00:02:44,820 --> 00:02:48,300
+cấu hình từ Git và áp dụng cho mỗi cụm.
+
+42
+00:02:48,580 --> 00:02:51,970
+Ở đây, mỗi cụm sẽ nhận được chính sách của RBAC,
+
+43
+00:02:52,300 --> 00:02:54,839
+Chỉ tiêu tài nguyên và chính sách mạng.
+
+44
+00:02:55,179 --> 00:02:57,479
+Nó có Anthos Controller.
+
+45
+00:02:57,779 --> 00:03:01,130
+Điều này thực thi các hạn chế như không có hộp đặc quyền,
+
+46
+00:03:01,580 --> 00:03:05,320
+không có đường dẫn máy gắn kết, và chỉ cho phép ảnh được ký tên.
+
+47
+00:03:05,779 --> 00:03:09,750
+Những chính sách này áp dụng cho tất cả các nhóm trong hạm đội.
+
+48
+00:03:10,229 --> 00:03:14,669
+Nhiều tham số không hoạt động tạo ra một bộ cân bằng tải toàn cầu cho
+
+49
+00:03:14,669 --> 00:03:17,940
+Công việc tải hàng loạt.
+
+50
+00:03:18,270 --> 00:03:19,770
+Dịch vụ đa động cơ,
+
+51
+00:03:20,000 --> 00:03:23,800
+Một công việc trong một nhóm nhỏ có thể phát hiện một công việc phụng sự ở một vùng rộng lớn
+
+52
+00:03:23,800 --> 00:03:27,259
+Có ích cho nhiều bộ phận bị hỏng.
+
+53
+00:03:27,580 --> 00:03:31,750
+Enterprise dùng cái này để kéo nâng cấp các vùng.
+
+54
+00:03:32,240 --> 00:03:37,929
+Đó là cách các hạm đội GKE giúp các tập đoàn quản lý quy mô,
+
+55
+00:03:38,270 --> 00:03:41,460
+với danh tính thống nhất, chính sách nhất quán,
+
+56
+00:03:41,880 --> 00:03:46,220
+Các dịch vụ hỗ trợ đám mây lai liên tục.
+
