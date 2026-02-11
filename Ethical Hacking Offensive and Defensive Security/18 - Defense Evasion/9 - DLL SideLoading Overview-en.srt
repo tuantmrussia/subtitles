@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,000
+ So, I will come to another video.
+
+2
+00:00:05,000 --> 00:00:12,000
+ Hope we see multiple topics in defense evasion, attacks from my turn.
+
+3
+00:00:12,000 --> 00:00:24,000
+ So, in this video, we are going to see one of the important techniques that was followed by the threat tactics to evade the defense mechanism as well as for our privilege escalation.
+
+4
+00:00:24,000 --> 00:00:34,000
+ So, the attack name of the DLL side loading attack already we have seen how the DL hijacking, how the search error hijacking was working.
+
+5
+00:00:34,000 --> 00:00:39,000
+ The similar way the threat tactics side loading the DLL.
+
+6
+00:00:39,000 --> 00:00:46,000
+ So, this technique was followed by many threat tactics including black dust, dog gang, achira, log bit.
+
+7
+00:00:46,000 --> 00:00:50,000
+ Many threat tactics they are following DLL side loading attack.
+
+8
+00:00:50,000 --> 00:00:59,000
+ So, I just, we have an article in front of the screen.
+
+9
+00:00:59,000 --> 00:01:11,000
+ So, that was related to the log bit gang side load microsoft defender even microsoft security tool executable.
+
+10
+00:01:11,000 --> 00:01:22,000
+ They involved the MP CMD run this is related to the Microsoft Windows Defender command line tool to side load a cobalt strike based payload.
+
+11
+00:01:22,000 --> 00:01:30,000
+ So, here you can see they have used the MP CMD run.exe.
+
+12
+00:01:30,000 --> 00:01:40,000
+ This is the legitimate Windows Defender command line tool and the side loaded malicious DLL.
+
+13
+00:01:40,000 --> 00:01:45,000
+ So, that was the punished DL load out.
+
+14
+00:01:45,000 --> 00:02:06,000
+ So, basically this MP CMD run.exe, it needs one of the DLLs called MP kind of DLL to load when the application has been executed.
+
+15
+00:02:06,000 --> 00:02:19,000
+ So, basically the DLL side loading attack is one of the exploit where a malicious DLL is placed in a location where it loaded by a legitimate application.
+
+16
+00:02:19,000 --> 00:02:32,000
+ So, the MP CMD run.exe needs MP client.dll to load into the memory for further execution.
+
+17
+00:02:32,000 --> 00:02:40,000
+ So, they will be placing the MP CMD.dll into in the location in the different locations.
+
+18
+00:02:40,000 --> 00:02:42,000
+ We know how search order hijacking will work.
+
+19
+00:02:42,000 --> 00:02:46,000
+ The similar way the DLL side loading will be also working.
+
+20
+00:02:46,000 --> 00:02:59,000
+ They will be placing the DLL in the location and once the DLL get placed in the proper location, the application get loaded.
+
+21
+00:02:59,000 --> 00:03:04,000
+ So, we can see how it will be working in a practical way in the next video.
+
+22
+00:03:04,000 --> 00:03:12,000
+ But let me show some of the article that will be really helpful for you to understand the DLL side loading attack.
+
+23
+00:03:12,000 --> 00:03:22,000
+ So, once the MP CMD run.exe has got executed, the MP CMD run.exe called the MP client.dll.
+
+24
+00:03:22,000 --> 00:03:34,000
+ And the MP CMD.dll which loads g0015.log which is encrypted, cobalt side pair.
+
+25
+00:03:34,000 --> 00:03:36,000
+ So, this get loaded.
+
+26
+00:03:36,000 --> 00:03:50,000
+ So, this is the appendized MP CMD.dll and MP CMD.dll pointing towards the g0015.log and once the locks get in loaded.
+
+27
+00:03:50,000 --> 00:04:02,000
+ So, once the file get loaded, so the attacker got CMD session from the host machine.
+
+28
+00:04:02,000 --> 00:04:06,000
+ So, why they are going with the DLL side loading attack?
+
+29
+00:04:06,000 --> 00:04:16,000
+ So, this is one of very good, very powerful and very powerful defense evasion method.
+
+30
+00:04:16,000 --> 00:04:22,000
+ So, because we are involving a legitimate application to side load or malicious DLL.
+
+31
+00:04:22,000 --> 00:04:36,000
+ So, even they did with the Microsoft Defender tool, it didn't detect and it didn't save the corporate life.
+
+32
+00:04:36,000 --> 00:04:48,000
+ So, this is one kind of very, very powerful method for a threat attacker to do some kind of bypassing the security related things.
+
+33
+00:04:48,000 --> 00:04:55,000
+ So, DLL side loading attack has been used by multiple times in multiple attacks.
+
+34
+00:04:55,000 --> 00:05:01,000
+ So, let me show another important article that was really, really awesome one.
+
+35
+00:05:01,000 --> 00:05:10,000
+ So, they just did a DLL side loading attack through Microsoft team.
+
+36
+00:05:10,000 --> 00:05:15,000
+ So, black bastard and the cactus ransomware group, they have worked on this.
+
+37
+00:05:15,000 --> 00:05:17,000
+ So, what they will do?
+
+38
+00:05:17,000 --> 00:05:27,000
+ They will contact you in Microsoft Outlook and they will be seeing you have some error in the one drive standalone.
+
+39
+00:05:27,000 --> 00:05:32,000
+ DLL, you are an risk, your device was risk.
+
+40
+00:05:32,000 --> 00:05:43,000
+ And they will be seeing us, we are connecting from the Microsoft troubleshooting team and we need to check your one drive standalone update or how it will be acting.
+
+41
+00:05:43,000 --> 00:05:52,000
+ So, because we got a report from your end and it considers the application of the risk.
+
+42
+00:05:52,000 --> 00:06:02,000
+ So, you will be trusting them and they will be sharing a team, they will be sharing an awful link and Microsoft Quick Assist.
+
+43
+00:06:02,000 --> 00:06:07,000
+ The Microsoft Quick Assist is one of our arm and tool, remote management tool like any desk.
+
+44
+00:06:07,000 --> 00:06:16,000
+ So, once you download and install the Microsoft Quick Assist, they will be coming up with the C.
+
+45
+00:06:16,000 --> 00:06:24,000
+ Okay, peer fishing voice or something, okay, they are calling in from the ID support desk and they will be asking you to install the Quick Assist.
+
+46
+00:06:24,000 --> 00:06:29,000
+ So, we will be trusting them and we will be installing the Quick Assist and what they will do.
+
+47
+00:06:29,000 --> 00:06:37,000
+ They will be, you will be sharing your screen and they will be sending some kind of, some kind of C file to you.
+
+48
+00:06:37,000 --> 00:06:43,000
+ And in the Teams channel, in the Teams, Microsoft Teams channel or something.
+
+49
+00:06:43,000 --> 00:06:50,000
+ And once you download the C file, so the C file contain two files, only one drive standalone update.
+
+50
+00:06:50,000 --> 00:06:54,000
+ And another one is a backdoor VINH-T-T-B-D-L.
+
+51
+00:06:54,000 --> 00:06:58,000
+ So, this is one kind of a D-L side loading attack.
+
+52
+00:06:58,000 --> 00:07:04,000
+ They are compromising your machines through the fishing, okay, the initial access to the fishing.
+
+53
+00:07:04,000 --> 00:07:10,000
+ And they are installing the Quick Assist and they are asking you to download some kind of C file.
+
+54
+00:07:10,000 --> 00:07:14,000
+ And you will be trusting that and you will be downloading that.
+
+55
+00:07:14,000 --> 00:07:18,000
+ So, and you will be installing the OneDrive standalone.exe.
+
+56
+00:07:18,000 --> 00:07:31,000
+ So, once you double-check on the OneDrive standalone.exe, at the same minute, at the same second, the VINH-T-T-T-P-D-L will get side load into OneDrive standalone.exe.
+
+57
+00:07:31,000 --> 00:07:36,000
+ And it gives a C2 connection to the black bastard.
+
+58
+00:07:36,000 --> 00:07:49,000
+ So, once it gives a C2 connection, so, they are in out of control, and they will be adding the Titan Plus Run key registry for a persistence.
+
+59
+00:07:49,000 --> 00:07:53,000
+ And they doesn't know what will be happening in the backend, okay.
+
+60
+00:07:53,000 --> 00:08:04,000
+ They will be compromising one machine, and they will be compromised one machines, and they will be doing some lateral movement, and they will be compromising other machines.
+
+61
+00:08:04,000 --> 00:08:15,000
+ So, this is one of very, this is one of a very, very powerful and good attacks to land.
+
+62
+00:08:15,000 --> 00:08:22,000
+ You can see the initial access the mail was coming from admin at on Microsoft.com.
+
+63
+00:08:22,000 --> 00:08:29,000
+ So, Microsoft also blacklisted multiple on Microsoft.com based domains.
+
+64
+00:08:29,000 --> 00:08:38,000
+ So, the execution in the part, we have seen there are two files get downloaded through some URL.
+
+65
+00:08:38,000 --> 00:08:42,000
+ You can see the URL named Amazon AWS from the cloud.
+
+66
+00:08:42,000 --> 00:08:56,000
+ So, once you download that, you will be extracting the files using the tar or something, and you will be executing, so, whatever in the directory.
+
+67
+00:08:56,000 --> 00:09:03,000
+ So, once you execute that, everything, everything has been done, okay.
+
+68
+00:09:03,000 --> 00:09:07,000
+ So, you need to be really, really careful about this attack.
+
+69
+00:09:07,000 --> 00:09:14,000
+ This is like, really, really difficult to troubleshoot, because we doesn't know what happened inside that, okay.
+
+70
+00:09:14,000 --> 00:09:22,000
+ See how they added a run key registry, which add a Titan Plus, and it was pointing towards some kind of remote IP.
+
+71
+00:09:22,000 --> 00:09:30,000
+ And really, we are blank what was happening in our, in our mission, and they'll be doing some lateral movement through SMB.
+
+72
+00:09:30,000 --> 00:09:38,000
+ And they'll be, they'll be even extra straight the stuff what we have, okay.
+
+73
+00:09:38,000 --> 00:09:50,000
+ So, we need, we need to have a clear understanding about this kind of attack, because this kind of attacks clearly looks like a legitimate one.
+
+74
+00:09:50,000 --> 00:09:58,000
+ Because they are using a legitimate, one tries standalone for malicious purpose to silo the DLL.
+
+75
+00:09:58,000 --> 00:10:01,000
+ So, this attacks look like a completely a legitimate one.
+
+76
+00:10:01,000 --> 00:10:09,000
+ We doesn't know even the security tools doesn't know what was happening inside the device.
+
+77
+00:10:09,000 --> 00:10:27,000
+ So, we have two very, very careful when we are dealing with types kind of days, and you need to be very, very careful when you are dealing with any phishing incident, any kind of emails or the other later things.
+
+78
+00:10:27,000 --> 00:10:38,000
+ So, I hope you have enjoyed this video. We will see something, we can cook something in a practical way to understand everything in the DLL siloing attack.
+
+79
+00:10:38,000 --> 00:10:44,000
+ We hope often here, and we'll connect you guys in the next video. Bye.
+
