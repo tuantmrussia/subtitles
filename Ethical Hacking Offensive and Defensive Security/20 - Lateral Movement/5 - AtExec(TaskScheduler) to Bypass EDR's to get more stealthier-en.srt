@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:11,960
+ Let's go with the AT accept.py, so this is one of our best methods to bypass EDR sometime.
+
+2
+00:00:11,960 --> 00:00:20,080
+ So basically, in the previous video, the SMB-Exacan PSX was creating a noisy services that
+
+3
+00:00:20,080 --> 00:00:26,640
+ can be easily detected by EDR, so there is new service here created, and it's too suspicious.
+
+4
+00:00:26,640 --> 00:00:33,920
+ The EDR will easily catch those services, and it will alert the analyst who is working.
+
+5
+00:00:33,920 --> 00:00:45,000
+ So instead of using the PSX can SMB-Exacan, you can use AT-Exacan to evade, to hide from these
+
+6
+00:00:45,000 --> 00:00:46,000
+ EDRs.
+
+7
+00:00:46,000 --> 00:00:52,760
+ It makes your tactics more still there than creating a new service, okay?
+
+8
+00:00:52,760 --> 00:01:01,980
+ Only AT accept leverages task scheduler service on the windows, and it will use the SMB server
+
+9
+00:01:01,980 --> 00:01:12,760
+ message block to authenticate, and use task scheduler remote procedure call to temporarily
+
+10
+00:01:12,760 --> 00:01:16,200
+ create a task.
+
+11
+00:01:16,200 --> 00:01:22,520
+ So it will create a task temporarily, and it will delete the task once the task has been
+
+12
+00:01:22,520 --> 00:01:24,720
+ completed, okay?
+
+13
+00:01:24,720 --> 00:01:33,920
+ So it uses, once again, it uses a SMB for an authentication, so once it gets authenticated,
+
+14
+00:01:33,920 --> 00:01:43,960
+ it will use task scheduler remote procedure call, or PC, to create a temporary task, like
+
+15
+00:01:43,960 --> 00:01:44,960
+ who am I?
+
+16
+00:01:44,960 --> 00:01:51,200
+ We are giving you who am I, it's a temporary task, and it will execute the task once the task
+
+17
+00:01:51,200 --> 00:01:54,200
+ has been completed, it will remove the task, okay?
+
+18
+00:01:54,200 --> 00:02:08,560
+ So I will execute this command, who am I, and now you can see creating a task, it created
+
+19
+00:02:08,560 --> 00:02:14,760
+ a temporary task, and it ran the task, so here is the result of the task, and it deleted
+
+20
+00:02:14,760 --> 00:02:16,800
+ the task, right?
+
+21
+00:02:16,800 --> 00:02:24,400
+ So creating, running, deleting, so this will be best, best, and best thing, so coming
+
+22
+00:02:24,400 --> 00:02:32,560
+ up to the security, the defense mechanism tool, so if I give the AR, so it created
+
+23
+00:02:32,560 --> 00:02:38,360
+ a task, and it gives a result, and terminated, and close the connection, right?
+
+24
+00:02:38,360 --> 00:02:47,000
+ So the investigation part, if you go to the security log, you can find out there is a log
+
+25
+00:02:47,000 --> 00:02:54,040
+ on type 3, because we are using the SMB for authenticate, the network log on protocol,
+
+26
+00:02:54,040 --> 00:03:10,720
+ so here you can find a few information, so here you can see, it was giving the IP address
+
+27
+00:03:10,720 --> 00:03:22,940
+ with the target state, and the user is an user, he executed, he just log into network-based
+
+28
+00:03:22,940 --> 00:03:31,640
+ log-ons, like SMB, and we don't know what he executed, but we just got a log-on information
+
+29
+00:03:31,640 --> 00:03:38,560
+ side, so this looks like the normal, so the EDRs and analysts who doesn't know what happened
+
+30
+00:03:38,560 --> 00:03:44,560
+ in the machine, so until and unless there's a process activity or running process of the
+
+31
+00:03:44,560 --> 00:03:46,560
+ port, okay?
+
+32
+00:03:46,560 --> 00:03:51,840
+ So the commands are pretty easy, so we are going to complete the impact, we have a few
+
+33
+00:03:51,840 --> 00:03:57,560
+ more impact-based commands, if you need, you can use that also, but three are very familiar
+
+34
+00:03:57,560 --> 00:04:06,960
+ in a hackers perspective, so I have took this three, and created a video, let's hop
+
+35
+00:04:06,960 --> 00:04:10,560
+ of them here and we will connect you guys in the next video. See you. Bye bye.
+
