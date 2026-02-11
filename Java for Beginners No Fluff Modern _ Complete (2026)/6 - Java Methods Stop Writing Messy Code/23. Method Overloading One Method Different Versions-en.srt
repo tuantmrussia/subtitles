@@ -1,0 +1,448 @@
+1
+00:00:00,000 --> 00:00:09,440
+ All right friends, so in the last video we had a look at a detailed look rather at methods
+
+2
+00:00:09,440 --> 00:00:17,800
+ and how they're useful, why do we use them every day in a programming lives and what purpose
+
+3
+00:00:17,800 --> 00:00:23,120
+ do they serve and we then have a look at when would we pass in no parameters when
+
+4
+00:00:23,120 --> 00:00:28,160
+ would we have declared parameters 0 to n and when would we declare a return type and would
+
+5
+00:00:28,160 --> 00:00:34,000
+ we have a method return a value back as well and then you saw I created different versions
+
+6
+00:00:34,000 --> 00:00:39,280
+ of the same addition of two programs although they all meant the same to the end user but
+
+7
+00:00:39,280 --> 00:00:46,960
+ in programming terms the last version was the best version yet and the exercise you would have created
+
+8
+00:00:46,960 --> 00:00:51,840
+ one more version which would rather be the best version yet right and that just goes on
+
+9
+00:00:51,840 --> 00:00:57,120
+ to tell you different versions of the same program does the same thing but some are efficient
+
+10
+00:00:57,120 --> 00:01:02,880
+ others are not and again that tells you programming is always requirement driven and based on
+
+11
+00:01:02,880 --> 00:01:07,440
+ your preference as a developer based on your style of coding what is that you would bring to the
+
+12
+00:01:07,440 --> 00:01:13,200
+ table and we should always strive as I've been repeatedly telling you it has become a cliche now
+
+13
+00:01:13,200 --> 00:01:20,000
+ that is we should always aim for writing better readable quality code because in 2026
+
+14
+00:01:20,000 --> 00:01:26,960
+ programming is no longer a rocket science right but what matters is how how better code you would
+
+15
+00:01:26,960 --> 00:01:32,960
+ write how what is the level of the quality of your code and is it efficient is it succinct less
+
+16
+00:01:32,960 --> 00:01:38,720
+ verbose those are the factors that would determine you being a good or a bad developer not just
+
+17
+00:01:38,720 --> 00:01:45,520
+ a Java developer but a programmer a developer in general so with that we take this discussion forward
+
+18
+00:01:45,520 --> 00:01:51,680
+ and get back to now polymorphism and you would remember me talking about polymorphism one face
+
+19
+00:01:51,680 --> 00:01:57,440
+ many forms we are taken that real well analogy as well time to put that into practice and this is
+
+20
+00:01:57,440 --> 00:02:03,120
+ the first way we implement polymorphism in Java and that's coming on for you in this video let's
+
+21
+00:02:03,120 --> 00:02:11,440
+ just go on and create a new class quickly again so I'll just say a new class let's just call it
+
+22
+00:02:11,440 --> 00:02:15,520
+ method overloading team
+
+23
+00:02:19,600 --> 00:02:25,680
+ right and before we move on I just hope that you're not just just watching the scores although
+
+24
+00:02:25,680 --> 00:02:30,880
+ that is good that's good for a start but what would drive you ahead is if you code with me
+
+25
+00:02:30,880 --> 00:02:36,720
+ if you code alongside with me if you put in your efforts as well it's a two-way traffic that
+
+26
+00:02:36,720 --> 00:02:43,920
+ would hold you in great state to to to move ahead in a really nice and and cool manner right
+
+27
+00:02:43,920 --> 00:02:50,320
+ so getting back and I'll just have the main method as always and now let's say we have a class
+
+28
+00:02:50,320 --> 00:03:00,640
+ again I'll just call it class calculate all right and what does it say sorry that's the syntax
+
+29
+00:03:00,640 --> 00:03:08,480
+ error it says class calculate is never used we would use that thank you Mr. compiler for warning
+
+30
+00:03:08,480 --> 00:03:14,000
+ us on that but don't worry we're going to use that so I'll just say I have a requirement again I want
+
+31
+00:03:14,000 --> 00:03:19,920
+ to I have a requirement from the client that is I want to have a method which takes two arguments
+
+32
+00:03:19,920 --> 00:03:25,200
+ and returns their multiplication for example so I'll just say wide multiply
+
+33
+00:03:25,200 --> 00:03:33,520
+ right and should take two arguments I'll say int first
+
+34
+00:03:34,400 --> 00:03:42,560
+ int second and you'll say return first multiplied second and obviously the return time now has
+
+35
+00:03:42,560 --> 00:03:47,680
+ to be of type int because that's what we are returning right so this method when called would need
+
+36
+00:03:47,680 --> 00:03:52,880
+ to be passed to our humans and return back the multiplication of two numbers obviously I'm not
+
+37
+00:03:52,880 --> 00:03:58,000
+ calling it yet let's just go on and do that I'll say calculate let's say calculate is a reference
+
+38
+00:03:58,000 --> 00:04:07,200
+ variable new calculate and I'll say calculate dot multiply and let's pass in the two numbers
+
+39
+00:04:07,200 --> 00:04:17,200
+ which I'll take from user at runtime so I'll again say scanner let's call it scan new scanner
+
+40
+00:04:17,200 --> 00:04:29,760
+ and I'll say system dot n and again ask the user to enter two numbers the same drill obviously
+
+41
+00:04:29,760 --> 00:04:34,320
+ and just to make this code sucks and rather than getting the numbers right here and putting them
+
+42
+00:04:34,320 --> 00:04:39,280
+ into two variables I'll just pass them directly this again goes on to tell you how we can write
+
+43
+00:04:39,280 --> 00:04:49,600
+ less verb or score I'll just say scan dot next int and separated by comma scan dot next int
+
+44
+00:04:49,600 --> 00:04:55,600
+ so the numbers are taken right within arguments to a method right and then they are passed as
+
+45
+00:04:55,600 --> 00:05:01,760
+ arguments to the parameters we do the multiplication and this would be printed in a sound I'll say
+
+46
+00:05:05,280 --> 00:05:11,920
+ let's put in a multiplication I'll say system dot or print L and this is multiply this is fine
+
+47
+00:05:11,920 --> 00:05:22,560
+ and this just makes it complete and then I'll say that is the multiplication of two numbers is
+
+48
+00:05:23,600 --> 00:05:38,960
+ right you've just printed out so let's just go on and run this let's stop this run this again
+
+49
+00:05:38,960 --> 00:05:46,000
+ and bring it up a bit it says enter two numbers I'll say 12 I'll say 8 it says 96 works absolutely
+
+50
+00:05:46,000 --> 00:05:50,400
+ fine but after some time the requirement changes they say that now there should be a method which
+
+51
+00:05:50,400 --> 00:05:56,560
+ takes two arguments and returns their result but now there should be an option based on the user's
+
+52
+00:05:56,560 --> 00:06:02,880
+ choice at runtime it should take three numbers and multiply their their result as well just print it
+
+53
+00:06:02,880 --> 00:06:07,200
+ out but the two number thing should also be there you don't have to get rid of that so what I'll do
+
+54
+00:06:07,200 --> 00:06:14,960
+ is I'll create one more method I'll say int multiply and this time I'll pass in in first
+
+55
+00:06:16,160 --> 00:06:23,680
+ in second and in third and you you're guessing you're right where is this going I'll say return
+
+56
+00:06:23,680 --> 00:06:32,560
+ first multiply second multiply third and please return the result right and I'll obviously need to
+
+57
+00:06:32,560 --> 00:06:41,760
+ call it multiply three because obviously it multiplies three numbers right instead of two
+
+58
+00:06:42,320 --> 00:06:47,280
+ all right so this is a method which multiplies two numbers and returns the result this is a method
+
+59
+00:06:47,280 --> 00:06:53,200
+ which multiplies three numbers takes three arguments and returns their result their multiplication
+
+60
+00:06:53,200 --> 00:06:58,800
+ right and but this is what's obviously when I call multiply three then at that time
+
+61
+00:06:58,800 --> 00:07:02,880
+ that is the method that need would be called right here I'm just calling calculate multiply
+
+62
+00:07:02,880 --> 00:07:08,080
+ so two number one is called but if you want that I'll just say control D again the shortcut
+
+63
+00:07:08,080 --> 00:07:15,360
+ that is hit comment and this time I'll say enter three numbers right and I'll say result is
+
+64
+00:07:15,360 --> 00:07:20,800
+ and then you will take one more number from the ramp time scan dot next int
+
+65
+00:07:20,800 --> 00:07:29,760
+ all right takes three numbers now and calls multiply three and the arrow goes over here right
+
+66
+00:07:29,760 --> 00:07:33,760
+ obviously in a real goal program you will just take it forward and create a menu driven program you
+
+67
+00:07:33,760 --> 00:07:39,280
+ will say press and one if you want to multiply two numbers press two if you want to multiply
+
+68
+00:07:39,280 --> 00:07:43,440
+ three numbers right but for now we're just calling either of them you get the idea right I'll just
+
+69
+00:07:43,440 --> 00:07:50,480
+ hit run and this time it says enter three numbers now I'll say 34 I'll say two I'll say four
+
+70
+00:07:50,480 --> 00:07:56,000
+ let's say two 72 perfectly fine after some time they say that now there should be these two
+
+71
+00:07:56,000 --> 00:08:02,080
+ but there should be one more method which takes four arguments and returns the multiplication
+
+72
+00:08:02,080 --> 00:08:07,920
+ of four numbers so I'll just copy base this as a programmer and I'll say multiply two numbers
+
+73
+00:08:07,920 --> 00:08:15,760
+ okay and then I'll say int first in second in third and I'll say int fourth
+
+74
+00:08:15,760 --> 00:08:25,200
+ and return the result of the multiplied four numbers all right that works fine as well so multiply
+
+75
+00:08:25,200 --> 00:08:30,000
+ multiply three multiply four based on the method that I'm calling that would be called right
+
+76
+00:08:30,000 --> 00:08:36,000
+ but after some time as a programmer I realize that this is redundant coding this is almost
+
+77
+00:08:36,000 --> 00:08:42,160
+ writing repetitive code see you're just multiplying two numbers or three or four right in these three
+
+78
+00:08:42,160 --> 00:08:47,840
+ methods you're multiplying numbers right but you would have to remember three different names
+
+79
+00:08:47,840 --> 00:08:54,160
+ so that's when I say when your job is to essentially do the same thing with different methods
+
+80
+00:08:54,160 --> 00:09:00,640
+ I'll repeat it again when your job is when your task is to do the same thing essentially the same
+
+81
+00:09:00,640 --> 00:09:07,120
+ thing with different methods we do not have to name them differently right because you're
+
+82
+00:09:07,120 --> 00:09:12,720
+ essentially multiplying why should I call them ugly like multiply three and multiply four right
+
+83
+00:09:12,720 --> 00:09:17,840
+ so that is when polymorphism comes in remember one face many forms and the first way to implement
+
+84
+00:09:17,840 --> 00:09:23,920
+ polymorphism in Java is method overloading right and what is that concept that says inside
+
+85
+00:09:23,920 --> 00:09:30,640
+ a class now we can have more than one methods with the same name and that is called method
+
+86
+00:09:30,640 --> 00:09:36,800
+ overloading a method is said to be overloading another method right so again inside one class
+
+87
+00:09:36,800 --> 00:09:44,160
+ we can have multiple methods with the same name but and this is a bit but here but the rule is
+
+88
+00:09:44,160 --> 00:09:50,800
+ because how would now the compiler if I just call this see first of all I can call them multiply
+
+89
+00:09:50,800 --> 00:09:57,040
+ multiply and multiply three methods with the same name the first time you're seeing right
+
+90
+00:09:57,040 --> 00:10:02,960
+ it isn't a conflict it's not an error why because polymorphism method overloading this method
+
+91
+00:10:02,960 --> 00:10:08,160
+ is overloading this one this is overloading the other two right and we're just calling them the
+
+92
+00:10:08,160 --> 00:10:13,200
+ same because they're just multiplying numbers why should we call them differently so it's a programming
+
+93
+00:10:13,200 --> 00:10:19,440
+ convenience after disposal right so they say for overloading to work in a class you can have
+
+94
+00:10:19,440 --> 00:10:25,280
+ different methods with the same name but the parameters have to be different because otherwise
+
+95
+00:10:25,280 --> 00:10:31,120
+ how do the compiler resolve calls to these methods because they're all called the same if we
+
+96
+00:10:31,120 --> 00:10:37,600
+ just call multiply there's no multiply three now so if you pass three or two or four parameters
+
+97
+00:10:37,600 --> 00:10:44,240
+ how would it resolve it by the parameters by the arguments you pass in because the name is the same
+
+98
+00:10:44,240 --> 00:10:49,120
+ right otherwise it would have been a conflict it would have been an ambiguity right and to resolve that
+
+99
+00:10:49,120 --> 00:10:54,400
+ they say the rule is in a class you can have multiple methods with the same name but the parameters
+
+100
+00:10:54,400 --> 00:10:59,600
+ have to be different and how do they be different is either their type or their number or their
+
+101
+00:10:59,600 --> 00:11:05,200
+ sequence and here I'm sticking to the number of parameters being different that's why this is allowed
+
+102
+00:11:05,200 --> 00:11:11,680
+ see if they were the same we should get an error it says you hover on this multiply intent
+
+103
+00:11:11,680 --> 00:11:20,000
+ is already defined in org dot one dot calculate show multiply duplicates right so they're resolved
+
+104
+00:11:20,000 --> 00:11:26,720
+ by the number or the type or the sequence of parameters you define right and that's why I would say
+
+105
+00:11:26,720 --> 00:11:32,400
+ in third the error goes away essentially reads this as a different method a new method
+
+106
+00:11:32,400 --> 00:11:36,960
+ but the name is the same right you just have to name them the same that is method overloading see
+
+107
+00:11:36,960 --> 00:11:43,200
+ one face multiplies the face to the entire world but many forms that is polymorphism right
+
+108
+00:11:43,200 --> 00:11:48,800
+ and again we just specify two parameters here three and here four depending on the arguments you
+
+109
+00:11:48,800 --> 00:11:54,160
+ pass in if you pass in three the three parameter one would be called if you pass in the four
+
+110
+00:11:54,160 --> 00:11:58,720
+ one the four one would be called if you pass in two arguments this first one would be called
+
+111
+00:11:58,720 --> 00:12:04,880
+ so programming convenience that is method overloading the first way to implement polymorphism in
+
+112
+00:12:04,880 --> 00:12:14,860
+ [BLANK_AUDIO]
+
