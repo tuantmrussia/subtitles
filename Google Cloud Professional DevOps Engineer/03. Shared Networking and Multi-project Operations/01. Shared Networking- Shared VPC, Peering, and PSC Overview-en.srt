@@ -1,0 +1,195 @@
+1
+00:00:00,990 --> 00:00:04,050
+Shared VPC lets you create one central VPC,
+
+2
+00:00:04,230 --> 00:00:05,590
+we call it the host project,
+
+3
+00:00:05,630 --> 00:00:09,380
+and then you can attach this with multiple service projects.
+
+4
+00:00:09,590 --> 00:00:14,510
+For example, you create a one shared VPC that you call it as a host project,
+
+5
+00:00:14,569 --> 00:00:18,069
+and inside that project you define all your subnets,
+
+6
+00:00:18,270 --> 00:00:19,780
+routes, etc.
+
+7
+00:00:19,780 --> 00:00:25,670
+And to this specific shared VPC, you attach the multiple service project.
+
+8
+00:00:25,750 --> 00:00:28,870
+In short, your networking team manages the network,
+
+9
+00:00:28,870 --> 00:00:32,025
+and your application team uses the network.
+
+10
+00:00:32,165 --> 00:00:37,685
+This is the same model used by the Fortune 500 companies because it
+
+11
+00:00:37,685 --> 00:00:41,194
+gives them the central control of IP address ranges.
+
+12
+00:00:41,325 --> 00:00:44,645
+They can effectively manage their consistent firewalls,
+
+13
+00:00:44,805 --> 00:00:49,525
+no duplicate VPC, no IP conflicts, and no unnecessary public access.
+
+14
+00:00:49,645 --> 00:00:50,875
+And most importantly,
+
+15
+00:00:51,255 --> 00:00:56,485
+shared VPC is a zero‑trust friendly model because service projects cannot
+
+16
+00:00:56,485 --> 00:01:00,310
+modify the network settings as they cannot touch it.
+
+17
+00:01:00,459 --> 00:01:03,979
+There is another important pattern, that is VPC peering.
+
+18
+00:01:04,099 --> 00:01:08,339
+If shared VPC is like joining multiple rooms inside the same house,
+
+19
+00:01:08,540 --> 00:01:13,559
+VPC peering is like connecting two different houses with a private walkway.
+
+20
+00:01:13,620 --> 00:01:18,739
+It is basically a private connection between the two independent VPCs.
+
+21
+00:01:18,860 --> 00:01:22,339
+Here are some of the common scenarios where you're going to use the
+
+22
+00:01:22,339 --> 00:01:26,114
+peering. When two departments build network independently,
+
+23
+00:01:26,235 --> 00:01:29,450
+but now they want to integrate and talk to each other,
+
+24
+00:01:29,450 --> 00:01:31,114
+that's where you can use peering.
+
+25
+00:01:31,235 --> 00:01:34,315
+You might have a one partner team and a one vendor team,
+
+26
+00:01:34,425 --> 00:01:35,754
+and they both want to talk.
+
+27
+00:01:35,875 --> 00:01:38,794
+That's where we can also use the VPC peering.
+
+28
+00:01:38,875 --> 00:01:42,794
+Remember one thing, VPC peering is non‑transitive in nature.
+
+29
+00:01:42,955 --> 00:01:44,714
+Everything comes with pros and cons,
+
+30
+00:01:44,834 --> 00:01:48,235
+so peering also brings in a lot of pros like low latency,
+
+31
+00:01:48,434 --> 00:01:50,915
+fully private, and no shared VPC requirement.
+
+32
+00:01:51,035 --> 00:01:55,690
+On the other hand, it also comes with little bit cons that once you grow,
+
+33
+00:01:55,809 --> 00:01:58,319
+the routing complexity grows with the scale,
+
+34
+00:01:58,449 --> 00:02:00,449
+and that is a little difficult to manage.
+
+35
+00:02:00,610 --> 00:02:04,279
+There is another concept, PSC, that is Private Service Connect.
+
+36
+00:02:04,370 --> 00:02:07,330
+PSC allows you to access Google services,
+
+37
+00:02:07,610 --> 00:02:08,639
+partner services,
+
+38
+00:02:08,889 --> 00:02:14,110
+or even your own service privately without exposing traffic to the internet.
+
+39
+00:02:14,210 --> 00:02:15,690
+Let's understand the scenario one.
+
+40
+00:02:15,779 --> 00:02:18,690
+Instead of calling the Google service over the internet,
+
+41
+00:02:18,809 --> 00:02:20,850
+you create a PSC endpoint.
+
+42
+00:02:21,059 --> 00:02:25,684
+Now traffic stays inside the Google's backbone, no public IP needed.
+
+43
+00:02:25,794 --> 00:02:26,744
+Another scenario,
+
+44
+00:02:27,024 --> 00:02:30,945
+imagine you have a service in one project and another
+
+45
+00:02:30,945 --> 00:02:33,735
+team in another project need the access.
+
+46
+00:02:33,865 --> 00:02:37,544
+Instead of opening the firewall rules or peering networks,
+
+47
+00:02:37,695 --> 00:02:43,065
+you publish the service using the PSC, and they connect via private endpoint.
+
+48
+00:02:43,195 --> 00:02:46,645
+This gives you the isolation, traffic policy control,
+
+49
+00:02:46,664 --> 00:02:49,225
+and no overlapping IP issues.
