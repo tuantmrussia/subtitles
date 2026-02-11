@@ -1,0 +1,184 @@
+1
+00:00:00,000 --> 00:00:05,500
+ So now what I've done is I've just went ahead and created a class for you called it appropriately
+
+2
+00:00:05,500 --> 00:00:10,500
+ handle exceptions. That's what we are doing. And in the mean method, write it's currently empty.
+
+3
+00:00:10,500 --> 00:00:18,800
+ So now for example, your requirement and that is you have to take two numbers from runtime and return its division.
+
+4
+00:00:18,800 --> 00:00:29,500
+ So I'll just say plus calculate division, right? And appropriately call it, I'll say void divided.
+
+5
+00:00:29,500 --> 00:00:38,700
+ Take two numbers, let's say int first, int second, and then you go ahead and take in the two numbers from main
+
+6
+00:00:38,700 --> 00:00:50,100
+ pass it here. And I'll say int result to first divided by second. And then you just say uptrend talent.
+
+7
+00:00:50,100 --> 00:00:57,500
+ Now this isn't simple, right? So now you take the numbers here from main, otherwise you can have a different method to do that.
+
+8
+00:00:57,500 --> 00:01:06,500
+ But for now that just works as a scanner, let's say scan or scanner, let's call it scanner. And you know what needs to be done system, but then again,
+
+9
+00:01:06,500 --> 00:01:13,500
+ you now know why don't we have to override. Sorry, import system because it's again in Java dot land, right?
+
+10
+00:01:13,500 --> 00:01:32,500
+ So I'll just put it in the South, I'll say, ask the user, and include numbers. And I'll say int first to scanner dot next int.
+
+11
+00:01:32,500 --> 00:01:45,500
+ You know how this works, right? We are doing that and in second to scanner dot next int, and then we'll just go ahead and call calculate division.
+
+12
+00:01:45,500 --> 00:01:56,500
+ I'll say new calculate division, right, passing first, passing second, and it should work, right?
+
+13
+00:01:56,500 --> 00:01:59,500
+ So let's go ahead and run this and see what happens.
+
+14
+00:02:02,500 --> 00:02:21,500
+ It says into two numbers, I'll say 120, and I'll say 45 gives me two, right? That's the division of 120 by 45, and I'll run it one more time, and I'll say three, 21, 76 gives me four, I'll run it one more time.
+
+15
+00:02:21,500 --> 00:02:36,500
+ I'll say 100, 25 gives me four, and similarly, I run it for 70 times and advanced by, right, 71st time, what I do is I'll run this again, I'll say three 40 nine to zero in each eight feet.
+
+16
+00:02:36,500 --> 00:02:50,500
+ This is what I call an embarrassment at runtime. This is an embarrassment for the developer because he did not see this coming, although should have because of what did I tell you, you cannot guarantee if an exception would be thrown or not.
+
+17
+00:02:50,500 --> 00:03:04,500
+ When it would be thrown or not, right, but you will always know as a developer, your core contains some vulnerability, some susceptibility to a particular danger, but you did not see that coming, and that's on you.
+
+18
+00:03:04,500 --> 00:03:28,500
+ That says, exception in red, thread, main Java line or earth, meaning exception, create a break point divided by zero at this, and this, and why I say this is an embarrassment, because to the end user to your client for whom you have created this application, they would not understand these things same, red, they would not understand what exception, thread, main Java line or the money exception is, the only thing they'll understand is divide by zero.
+
+19
+00:03:28,500 --> 00:03:48,500
+ So they don't know what is going on here, you need to tell them, right, and the first way, what would that be to tell them what went wrong, to tell them politely lying before dividing, right, you'll say, or before taking numbers and the two numbers.
+
+20
+00:03:48,500 --> 00:04:05,500
+ See, let's make it interesting, and I'll say, about a greater than that is, don't enter the second number as zero.
+
+21
+00:04:05,500 --> 00:04:09,500
+ So we have warned them, I'll run this.
+
+22
+00:04:09,500 --> 00:04:27,500
+ Again, the user paid heed to this, did not enter it as zero, worked fine, but it's the 16th time still went ahead, even after you have asked the user to not enter the second number as zero and it's zero again, an embarrassment.
+
+23
+00:04:27,500 --> 00:04:36,500
+ So you'll go ahead, try to handle it differently, you'll say, please.
+
+24
+00:04:36,500 --> 00:04:46,500
+ Don't enter, you're just requesting the user politely, don't enter the second number as zero, things might go wrong, you run this.
+
+25
+00:04:46,500 --> 00:05:00,500
+ Enter two numbers, please don't enter the second number as zero, I'll say, 45, nine, up, still zero, by mistake, see, unintentionally, I just was about to press nine on my keyboard and intentionally press zero and still a problem.
+
+26
+00:05:00,500 --> 00:05:12,500
+ So what you will do is the third step you'll take is, you'll say, please don't enter the second number as zero and use that emotic one for please, that is, a request, right.
+
+27
+00:05:12,500 --> 00:05:15,500
+ So these.
+
+28
+00:05:15,500 --> 00:05:37,500
+ Excuses, wait a minute, yeah, I said this, you know where this going right, please turn into the second number as zero, I'm feeling I'm requesting you, but the user was not he still did that and embarrassment, right time that means these things would not work, but they are steps to handle the exception right if that happens.
+
+29
+00:05:37,500 --> 00:05:52,500
+ So these things don't work, so I'll say at the two numbers and I know what I know is I know there is something that might not go wrong here, but this is my vulnerable piece of line, which I need to take here, right.
+
+30
+00:05:52,500 --> 00:06:01,500
+ And how would I do that, I'll say in result, declare it at the local level and I'll say.
+
+31
+00:06:01,500 --> 00:06:17,500
+ This is the vulnerable right, right, this nothing will go wrong nothing will go wrong, this is sometimes something might go terribly wrong and I need to take care and how do you take care, I said, I'll try catch.
+
+32
+00:06:17,500 --> 00:06:37,500
+ And now what is the appropriate handler here, the class exception that will be thrown is earth money exception again in Java line, you don't need to import it, just say earth money exception and create a variable and do something with that because if you don't do the code would work, but this is even.
+
+33
+00:06:37,500 --> 00:06:51,500
+ Worse than not even putting tried gadget or this is something which gets your project managers boiling because imagine about it, see if the exception doesn't come that's fine, if it comes it would come out.
+
+34
+00:06:51,500 --> 00:07:09,500
+ But you didn't do anything with it, so you never got to know what went wrong, right, it just worked, but the output was not right, so something that is never put in your catch blocks empty, it can just be a sound, I'll see.
+
+35
+00:07:09,500 --> 00:07:21,500
+ Sorry, division by zero, not possible.
+
+36
+00:07:21,500 --> 00:07:36,500
+ But what is the error here can anyone guess again just pause your video think about it come back, so the error is it says a result is might not have been each slice, but you say I have initialized it right inside, you tell the compiler back, but it says that you put that that in a
+
+37
+00:07:36,500 --> 00:07:53,500
+ try block and try block, I know that is where you put a vulnerable piece of a code that is not required or that is not guaranteed to run, but you see no.
+
+38
+00:07:53,500 --> 00:08:10,500
+ I take what is guaranteed to run always, and that is when you say integral equal to zero, and then this, right, so now you run this, see what happens this time the normal case I'll send it to numbers who 38.
+
+39
+00:08:10,500 --> 00:08:32,500
+ Wrong number I'll say 563 0 no embarrassment say sorry division by zero not possible, but then goes ahead and print zero that's a bomb, because the end user your client would think that okay division by zero not possible because I've entered the wrong number, but why does it give the division is zero, because.
+
+40
+00:08:32,500 --> 00:08:49,500
+ It's still printing result that was inch lies to zero that is when although this is not a vulnerability, but this should be only executed once this line completely excuse that means this is dependent on this line to be executed, I'll hit.
+
+41
+00:08:49,500 --> 00:09:04,500
+ And you know, this would only run when this works, so I'll go ahead and run this now we should get it right, and it will numbers the right way what if I write we get five I'll say one zero to zero.
+
+42
+00:09:04,500 --> 00:09:26,500
+ That's me that's how you try catch that's how you handle exceptions and this was the first example that is with arithmetic exceptions but there are a lot of other classes that you'll come to know as you move on in your career with Java and you don't need to remember those right right you just come across them handle them and then move ahead right.
+
+43
+00:09:26,500 --> 00:09:39,500
+ That is how we handle it that is how we took care, but this is very important, you should have a appropriate time learning let's say you have a file on here.
+
+44
+00:09:39,500 --> 00:10:05,500
+ That's why it was important it's not in line right so the problem with this code is that is the exception that you're expecting might sometime come is arithmetic, but you're using a completely different handler to handle that as that does it make any sense no it's like you're expecting a thief at home and you're deploying the army.
+
+45
+00:10:05,500 --> 00:10:25,500
+ To be at the borders, but since does it make they just kill the poor thief because they're not trained to deal with thieves the security person is so always put in that's why I say always put in appropriate catch handlers and here the appropriate hand was worth money exception.
+
+46
+00:10:25,500 --> 00:10:26,000
+ Right.
+
