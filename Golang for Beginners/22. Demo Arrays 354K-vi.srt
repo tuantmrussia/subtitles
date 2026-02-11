@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,860
+Trong bản thử nghiệm này, chúng tôi sẽ tạo ra một chương trình sử dụng các mảng.
+
+2
+00:00:05,860 --> 00:00:12,760
+Khi đã sẵn sàng, bắn vào mã phòng thu và đi thôi.
+
+3
+00:00:12,760 --> 00:00:17,200
+Một khi đã thấy mã studio, hãy mở thư mục chứng minh của bạn.
+
+4
+00:00:17,200 --> 00:00:21,560
+Chúng tôi đang ở trong bản demo Arrays, vậy hãy nhấp vào Arrays, và nhấp đôi vào Arrays.go.
+
+5
+00:00:21,560 --> 00:00:28,080
+Đối với này demo, chúng tôi sẽ thực hiện một chương trình nhanh có thể được sử dụng bởi một dịch vụ sạch
+
+6
+00:00:28,080 --> 00:00:31,600
+Để xác định xem họ có dọn dẹp một căn phòng cụ thể hay không.
+
+7
+00:00:31,600 --> 00:00:37,820
+Vì vậy, những gì chúng tôi sẽ cần làm là tạo ra một cấu trúc phòng, chúng tôi sẽ cung cấp cho mỗi phòng một tên, và cho dù
+
+8
+00:00:37,820 --> 00:00:43,400
+Hoặc không nó đã được làm sạch.
+
+9
+00:00:43,400 --> 00:00:47,880
+Điều đầu tiên tôi sẽ làm, nếu chúng tôi là chức năng, là tạo ra một chức năng kiểm tra một mảng,
+
+10
+00:00:47,880 --> 00:00:50,200
+và xác định phòng nào được dọn dẹp hay không.
+
+11
+00:00:50,200 --> 00:00:56,600
+Vì vậy, chức năng đặc biệt này sẽ hoạt động chỉ trên một mảng đó là kích thước 4.
+
+12
+00:00:56,600 --> 00:01:01,060
+Chúng tôi có một 4 ở đây, do đó, các mảng mà chúng tôi sử dụng phải có 4 yếu tố, và nó phải là loại
+
+13
+00:01:01,060 --> 00:01:02,060
+phòng.
+
+14
+00:01:02,060 --> 00:01:08,360
+Sau đó tôi sẽ tạo một vòng lặp 4 và biến số lặp lại của tôi sẽ là I và thiết lập 0
+
+15
+00:01:08,360 --> 00:01:18,600
+Và miễn là nó ít hơn tổng số phòng của chúng tôi, sau đó chúng tôi sẽ tăng nó bằng 1.
+
+16
+00:01:18,600 --> 00:01:24,240
+Vì vậy, điều đầu tiên tôi sẽ làm trong vòng này là làm một bản sao của phòng, và hầu hết thời gian
+
+17
+00:01:24,240 --> 00:01:28,680
+Bạn sẽ muốn làm điều này, nơi bạn làm cho một bản sao vào một biến mới, và điều này sẽ giúp
+
+18
+00:01:28,680 --> 00:01:35,000
+Một khi chúng tôi nhận được này phần về sự nhất trí, bởi vì tôi sẽ thay đổi trong một sợi, nhưng
+
+19
+00:01:35,000 --> 00:01:36,160
+Không phải người kia.
+
+20
+00:01:36,160 --> 00:01:39,280
+Và vì vậy nếu bạn chỉ cần thực hiện một bản sao, sau đó bạn không phải lo lắng về bất kỳ côn trùng nứt
+
+21
+00:01:39,280 --> 00:01:40,280
+Dậy.
+
+22
+00:01:40,280 --> 00:01:44,840
+Chúng tôi sẽ thử xem căn phòng có sạch không.
+
+23
+00:01:44,840 --> 00:01:52,640
+Vì vậy, nếu làm sạch là đúng, sau đó chúng tôi sẽ in ra một tin nhắn.
+
+24
+00:01:52,640 --> 00:01:57,440
+Và nếu không, chúng tôi sẽ in ra một thông điệp khác.
+
+25
+00:01:57,440 --> 00:02:02,160
+Và đó là tất cả những gì chúng tôi sẽ làm cho chức năng đó, chẳng hạn như lặp đi lặp lại thông qua mỗi phòng mà chúng tôi
+
+26
+00:02:02,160 --> 00:02:07,280
+có một dãy, và nếu nó được làm sạch, sau đó chúng tôi sẽ in ra được làm sạch, nếu không chúng tôi sẽ
+
+27
+00:02:07,280 --> 00:02:10,560
+in ra là bẩn.
+
+28
+00:02:10,560 --> 00:02:13,960
+Tiếp theo, chúng ta cần làm một dãy phòng.
+
+29
+00:02:13,960 --> 00:02:18,200
+Tôi sẽ sử dụng các hình bầu dục theo cách đó.
+
+30
+00:02:18,200 --> 00:02:21,440
+Chúng tôi không phải lo lắng về bao nhiêu thực sự có ở đây, và biên dịch viên sẽ con số
+
+31
+00:02:21,440 --> 00:02:22,920
+ra ngoài cho chúng ta.
+
+32
+00:02:22,920 --> 00:02:32,640
+Vì vậy, căn phòng đầu tiên sẽ ở trong văn phòng, và sau đó chúng tôi sẽ có một nhà kho, một tiếp tân, và
+
+33
+00:02:32,640 --> 00:02:35,600
+Một khu vực hoạt động.
+
+34
+00:02:35,600 --> 00:02:38,720
+Đội chỉ có thể ở bất cứ nơi nào họ làm việc bình thường.
+
+35
+00:02:38,720 --> 00:02:44,480
+Sau đó chúng tôi sẽ gọi kiểm tra chức năng vệ sinh với các phòng.
+
+36
+00:02:44,480 --> 00:02:47,840
+Chức năng này sẽ đi qua mỗi phòng, và nó sẽ in ra dù có hay không
+
+37
+00:02:47,840 --> 00:02:48,840
+Nó sạch sẽ.
+
+38
+00:02:48,840 --> 00:02:52,240
+Chúng tôi đã không chỉ ra biến đã được làm sạch ở đây.
+
+39
+00:02:52,240 --> 00:02:57,480
+Điều đó có nghĩa là tất cả những điều này sẽ là sai cho biến đó, bởi vì sai là mặc định
+
+40
+00:02:57,480 --> 00:02:59,720
+giá trị của Boovenans.
+
+41
+00:02:59,720 --> 00:03:10,120
+Chúng tôi sẽ có một thông điệp chỉ ra rằng một số làm sạch đang được thực hiện, và chúng tôi sẽ thiết lập một vài
+
+42
+00:03:10,120 --> 00:03:11,120
+Phòng để làm sạch.
+
+43
+00:03:11,120 --> 00:03:17,760
+Chúng ta sẽ dọn phòng số 3 và phòng 4 được dọn sạch.
+
+44
+00:03:17,760 --> 00:03:20,000
+Hãy nhớ rằng mảng đã bắt đầu chỉ số 0.
+
+45
+00:03:20,000 --> 00:03:24,160
+Vì vậy, khi chúng tôi có phòng 2 ở đây, đó sẽ là tiếp tân.
+
+46
+00:03:24,160 --> 00:03:27,800
+Vì vậy, chúng tôi có phòng 0, 1, 2, và sau đó 3.
+
+47
+00:03:27,800 --> 00:03:32,360
+Vì vậy chúng ta sẽ phải dọn dẹp phòng tiếp tân và hoạt động.
+
+48
+00:03:32,360 --> 00:03:36,800
+Vì vậy, khi chúng tôi chạy chương trình, nó sẽ chỉ ra rằng những thứ đó được làm sạch trên thiết bị cuối.
+
+49
+00:03:36,800 --> 00:03:38,640
+Điều cuối cùng chúng tôi sẽ làm là chỉ gọi chức năng này một lần nữa.
+
+50
+00:03:38,640 --> 00:03:40,760
+Bằng cách đó chúng ta có thể xem nó có sạch hay không.
+
+51
+00:03:40,760 --> 00:03:43,840
+Tôi sẽ nhảy vào giai đoạn cuối, và chúng ta sẽ chạy nó.
+
+52
+00:03:43,840 --> 00:03:50,400
+Chúng ta có thể chạy thử với gorun.shdemo/arrays.
+
+53
+00:03:50,400 --> 00:03:53,600
+Và vì vậy chúng tôi bắt đầu, mọi thứ đều bẩn vì mặc định sai.
+
+54
+00:03:53,600 --> 00:03:55,040
+Chúng tôi làm sạch.
+
+55
+00:03:55,040 --> 00:03:58,640
+Sau đó chúng tôi có các hoạt động trong nhà kho vẫn còn bẩn vì họ đã không được dọn sạch, vì vậy đó là
+
+56
+00:03:58,640 --> 00:03:59,640
+Được rồi.
+
+57
+00:03:59,640 --> 00:04:06,520
+Và sau đó chúng ta có tiếp tân sạch sẽ và các hoạt động được làm sạch.
+
+58
+00:04:06,520 --> 00:04:11,960
+Rất nhanh recap trước khi chúng tôi hoàn thành, bất cứ khi nào bạn đang làm việc với biến lặp
+
+59
+00:04:11,960 --> 00:04:15,480
+nó trong một vòng lặp, luôn luôn tạo ra một bản sao.
+
+60
+00:04:15,480 --> 00:04:17,680
+Trong trường hợp này, chúng tôi đang sao chép các phòng.
+
+61
+00:04:17,680 --> 00:04:22,440
+Vì vậy, chúng tôi đang sử dụng tôi ở đây, vì vậy chúng tôi cần phải làm một bản sao của bất cứ điều gì chúng tôi đang sử dụng nó với.
+
+62
+00:04:22,440 --> 00:04:26,320
+Và nếu chúng tôi không làm thế, chắc chắn anh sẽ gặp vài con bọ sau.
+
+63
+00:04:26,320 --> 00:04:30,920
+Vì vậy, hãy luôn luôn chắc chắn rằng bất cứ khi nào bạn sử dụng biến vòng lặp trong vòng lặp, bạn đang làm
+
+64
+00:04:30,920 --> 00:04:32,160
+Trong bối cảnh của bản sao.
+
+65
+00:04:32,160 --> 00:04:34,560
+Vì vậy chúng tôi đang sao chép phòng trong trường hợp này.
+
+66
+00:04:34,560 --> 00:04:39,080
+Và thậm chí nếu bạn chỉ muốn biến mà không cần chỉ số một mảng, bạn vẫn muốn
+
+67
+00:04:39,080 --> 00:04:40,680
+để sao chép nó.
+
+68
+00:04:40,680 --> 00:04:45,480
+Ví dụ, bạn có thể làm một điều như thế này.
+
+69
+00:04:45,480 --> 00:04:51,240
+Và bây giờ bạn có thể làm việc với J từ thời điểm đó trên thay vì tôi.
+
+70
+00:04:51,240 --> 00:04:53,480
+Đây là kết thúc bản thử nghiệm trên bảng xếp hạng.
+
+71
+00:04:53,480 --> 00:04:54,640
+Hẹn gặp lại trong bài thuyết trình tiếp theo.
+
