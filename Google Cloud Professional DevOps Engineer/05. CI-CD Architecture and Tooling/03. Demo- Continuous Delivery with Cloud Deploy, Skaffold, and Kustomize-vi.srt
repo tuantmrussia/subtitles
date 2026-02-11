@@ -1,0 +1,496 @@
+1
+00:00:01,139 --> 00:00:05,179
+Phần lớn thất bại khi triển khai xảy ra do lỗi của con người hoặc một
+
+2
+00:00:05,179 --> 00:00:07,869
+cấu hình trôi dạt giữa các môi trường.
+
+3
+00:00:07,980 --> 00:00:13,539
+Tôi sẽ chỉ cho bạn làm thế nào để loại bỏ những rủi ro bằng cách thực hiện đầy đủ
+
+4
+00:00:13,539 --> 00:00:17,979
+Các đường ống giao hàng liên tục tự động sử dụng Google Cloud,
+
+5
+00:00:18,059 --> 00:00:20,100
+và Kustomize.
+
+6
+00:00:20,209 --> 00:00:24,219
+Hãy tới bàn điều khiển đám mây. Bây giờ những gì tôi đã làm
+
+7
+00:00:24,219 --> 00:00:27,319
+là tôi đã tạo ra hai cụm.
+
+8
+00:00:27,459 --> 00:00:33,959
+Nếu tôi đi xuống động cơ Kubernetes của chúng tôi và nếu tôi cho bạn thấy các cụm ở đó,
+
+9
+00:00:34,360 --> 00:00:36,169
+Ở đây chúng ta có hai cụm.
+
+10
+00:00:36,560 --> 00:00:38,090
+Một là devclucker.
+
+11
+00:00:38,400 --> 00:00:40,119
+Một người khác là một người quảng cáo.
+
+12
+00:00:40,240 --> 00:00:43,779
+Tôi cũng đã tạo ra một ứng dụng mẫu Flask.
+
+13
+00:00:43,880 --> 00:00:45,139
+Để tôi cho anh xem.
+
+14
+00:00:45,159 --> 00:00:47,880
+Tôi đã tạo ra một tập tài liệu.
+
+15
+00:00:47,959 --> 00:00:51,470
+Trong thư mục đó, tôi có tài liệu chính.py.
+
+16
+00:00:51,470 --> 00:00:56,470
+Ở giữa, bạn có thể thấy chúng tôi có một mẫu
+
+17
+00:00:56,470 --> 00:00:59,759
+Ứng dụng của Flask chỉ là nói xin chào.
+
+18
+00:00:59,930 --> 00:01:05,449
+Bây giờ chúng tôi muốn ứng dụng Flask này hành động khác nhau trong
+
+19
+00:01:05,449 --> 00:01:08,510
+dev hơn những gì nó làm trong quá trình sản xuất.
+
+20
+00:01:08,690 --> 00:01:11,980
+Giờ thay vì tôi chỉnh sửa bằng tay,
+
+21
+00:01:12,169 --> 00:01:16,760
+Chúng ta sẽ để đường ống xử lý logic môi trường,
+
+22
+00:01:16,849 --> 00:01:20,989
+và việc triển khai an toàn thông qua mã.
+
+23
+00:01:21,625 --> 00:01:26,525
+Bộ não của thiết lập này là tùy chỉnh. Nhìn vào thư mục cơ bản của chúng ta.
+
+24
+00:01:27,065 --> 00:01:28,625
+Bây giờ bên trong thư mục cơ bản này,
+
+25
+00:01:28,754 --> 00:01:34,135
+Nó có một bản thiết kế chung như triển khai. tập tin yeml cho bạn biết
+
+26
+00:01:34,555 --> 00:01:38,355
+Tên của ứng dụng và các thông tin khác,
+
+27
+00:01:38,595 --> 00:01:42,665
+và chúng ta có kustomization. khoai lang chứa
+
+28
+00:01:42,665 --> 00:01:46,135
+Đang triển khai thông tin.
+
+29
+00:01:46,275 --> 00:01:49,055
+Điều quan trọng ở đây là lớp phủ.
+
+30
+00:01:49,559 --> 00:01:53,209
+Dưới thư mục bọc này, tôi đã tạo hai thư mục.
+
+31
+00:01:53,400 --> 00:01:56,330
+Một là cho môi trường dev và một khác là
+
+32
+00:01:56,330 --> 00:01:57,809
+cho môi trường sản xuất.
+
+33
+00:01:57,930 --> 00:02:02,970
+Và bên trong các dev, chúng tôi có kustomization. Đó là
+
+34
+00:02:02,970 --> 00:02:05,730
+cụ thể cho môi trường phát triển.
+
+35
+00:02:05,889 --> 00:02:09,570
+Chúng tôi đang nói với Kubernetes để nó đơn giản ở đây
+
+36
+00:02:09,570 --> 00:02:11,929
+trong môi trường phát triển của chúng ta.
+
+37
+00:02:12,360 --> 00:02:17,809
+Tuy nhiên, trong môi trường sản xuất, tôi đặc biệt nói rằng Kubernetes,
+
+38
+00:02:17,820 --> 00:02:22,410
+Xin vui lòng có hai bản sao bởi vì tôi đang thiết lập ở đây đếm ở đây là 2.
+
+39
+00:02:22,570 --> 00:02:26,570
+Vì vậy khi nó triển khai trong môi trường phát triển, nó tạo ra một bản sao.
+
+40
+00:02:26,929 --> 00:02:30,869
+Khi nó triển khai, nó sẽ tạo ra hai bản sao.
+
+41
+00:02:31,050 --> 00:02:35,570
+Và ở đây trong vụ nổ này. các bạn có thể thấy
+
+42
+00:02:35,570 --> 00:02:38,119
+Chúng ta đã tạo ra một đường ống,
+
+43
+00:02:38,130 --> 00:02:41,850
+Và đường ống đó nói rằng nó có hai giai đoạn.
+
+44
+00:02:42,330 --> 00:02:45,600
+Ở hàng số 7 và hàng số 9.
+
+45
+00:02:45,699 --> 00:02:50,660
+Bạn có thể thấy rằng chúng ta sẽ có một giai đoạn phát triển và một là
+
+46
+00:02:50,660 --> 00:02:54,639
+sân khấu sản xuất. Và ở hàng thứ 17
+
+47
+00:02:54,820 --> 00:02:59,470
+Tôi đang cung cấp cho các cụm thông tin về cụm dev, và tại dòng
+
+48
+00:02:59,470 --> 00:03:04,080
+Số 24, tôi đang cung cấp cho các cụm thông tin về sản xuất
+
+49
+00:03:04,080 --> 00:03:07,360
+cụm. Và nếu tôi cho anh xem cái này. yeml,
+
+50
+00:03:07,479 --> 00:03:14,000
+Bây giờ skaffold.yaml chứa tất cả các thông tin về con đường cho
+
+51
+00:03:14,000 --> 00:03:16,710
+Môi trường phát triển và môi trường sản xuất.
+
+52
+00:03:16,839 --> 00:03:18,800
+Bạn có thể nhìn vào dòng số 14.
+
+53
+00:03:18,990 --> 00:03:22,639
+Nó cho thấy sự liên quan đến môi trường phát triển
+
+54
+00:03:22,639 --> 00:03:26,330
+Thông tin và dòng thứ 18 cho thấy nơi nó có thể tìm thấy
+
+55
+00:03:26,669 --> 00:03:28,789
+thông tin liên quan đến sản xuất.
+
+56
+00:03:28,949 --> 00:03:32,149
+Bây giờ chúng tôi sẽ sử dụng này skaffold để xây dựng của chúng tôi
+
+57
+00:03:32,149 --> 00:03:35,770
+Hình ảnh hộp, và sau đó chúng tôi sẽ sử dụng đám mây
+
+58
+00:03:35,770 --> 00:03:38,880
+Chuẩn bị triển khai tòa nhà đặc biệt đó.
+
+59
+00:03:38,979 --> 00:03:42,160
+Vậy hãy mở cửa ra. Bây giờ tôi là giàn giáo
+
+60
+00:03:42,160 --> 00:03:44,570
+Xây dựng lệnh để xây dựng các hiện vật.
+
+61
+00:03:44,820 --> 00:03:48,860
+Trước hết, hãy để tôi vào thư mục của tôi, đó là rượu nguyên chất của tôi.
+
+62
+00:03:48,970 --> 00:03:52,020
+Trong thư mục của tôi, tôi sẽ chạy skaffold
+
+63
+00:03:52,020 --> 00:03:54,100
+Xây dựng quyền chỉ huy cho thấy xây dựng những tòa tháp.
+
+64
+00:03:54,259 --> 00:03:59,460
+Bây giờ nó sẽ xây dựng một hình ảnh cho chúng ta. Vì vậy, bạn có thể thấy rằng xây dựng của chúng tôi đã
+
+65
+00:03:59,460 --> 00:04:03,529
+đã được tạo thành công và hình ảnh cũng đã được đẩy.
+
+66
+00:04:03,699 --> 00:04:06,440
+Giờ đã đến lúc tiến hành và tạo ra đường ống.
+
+67
+00:04:06,619 --> 00:04:08,059
+Vì vậy để tạo ra đường ống,
+
+68
+00:04:08,339 --> 00:04:12,929
+Tôi sẽ chạy lệnh đơn giản này nói rằng...
+
+69
+00:04:12,940 --> 00:04:17,220
+Và tôi đã có đường ống dẫn nước. yeml chứa tất cả các
+
+70
+00:04:17,220 --> 00:04:19,809
+Thông tin như chúng ta nên có hai giai đoạn.
+
+71
+00:04:20,029 --> 00:04:23,049
+Một là sự phát triển và thứ hai là sản xuất.
+
+72
+00:04:23,269 --> 00:04:24,579
+Để tôi nhấn Enter,
+
+73
+00:04:24,589 --> 00:04:28,429
+Và điều này sẽ tạo ra một đường ống có hai giai đoạn.
+
+74
+00:04:28,549 --> 00:04:31,489
+Có vẻ như đường ống đã được tạo ra.
+
+75
+00:04:31,790 --> 00:04:36,350
+Hãy đến chỗ triển khai đám mây và xem chúng ta đã sẵn sàng chưa.
+
+76
+00:04:36,589 --> 00:04:39,250
+Vì vậy, tôi đi xuống Đám mây triển khai, và ở đó bạn có thể
+
+77
+00:04:39,250 --> 00:04:42,200
+Chúng ta có đường ống dẫn nước.
+
+78
+00:04:42,459 --> 00:04:46,980
+Nếu tôi nhấn vào đường ống nước này, bạn có thể thấy chúng ta có hai giai đoạn.
+
+79
+00:04:47,100 --> 00:04:50,130
+Một là cho dev, và một khác là prod.
+
+80
+00:04:50,220 --> 00:04:52,779
+Vì vậy, các đường ống của chúng tôi được tạo ra thành công.
+
+81
+00:04:52,899 --> 00:04:55,799
+Bây giờ là lúc để tiến lên và tạo ra sự giải phóng.
+
+82
+00:04:56,140 --> 00:05:00,339
+Một khi bạn tạo ra bản phát hành, nó sẽ triển khai vào môi trường dev,
+
+83
+00:05:00,380 --> 00:05:03,940
+Và từ đó chúng tôi sẽ quảng cáo nó vào môi trường sản xuất.
+
+84
+00:05:04,059 --> 00:05:05,920
+Hãy quay lại bàn điều khiển,
+
+85
+00:05:06,019 --> 00:05:09,929
+Và lần này tôi sẽ viết một mệnh lệnh để tạo ra sự giải thoát.
+
+86
+00:05:10,010 --> 00:05:12,970
+Vì vậy tôi đang tiến hành một cuộc triển khai G Cloud.
+
+87
+00:05:13,290 --> 00:05:14,859
+Điều này sẽ tạo ra sự giải thoát,
+
+88
+00:05:15,089 --> 00:05:20,609
+Và tôi sẽ đặt tên cho nó như là giải thoát cho 10001 và giao đường ống nước,
+
+89
+00:05:20,730 --> 00:05:22,890
+Và tôi cũng sẽ chia sẻ khu vực của mình.
+
+90
+00:05:23,010 --> 00:05:24,290
+Hãy gõ Enter.
+
+91
+00:05:24,489 --> 00:05:27,549
+Bây giờ bạn có thể thấy rằng nó đã tạo ra sự giải thoát.
+
+92
+00:05:27,929 --> 00:05:31,130
+Bây giờ nếu chúng ta quay lại với cuộc triển khai của đám mây,
+
+93
+00:05:31,369 --> 00:05:34,549
+Hãy đến các đường ống giao hàng, ở đây bạn có thể thấy rằng
+
+94
+00:05:34,890 --> 00:05:39,519
+Phóng thích 10001 đang ở đó. Bạn có thể nhấp vào bản phát hành đó, và bạn
+
+95
+00:05:39,519 --> 00:05:41,779
+có thể thấy rằng nó đang trong quá trình.
+
+96
+00:05:41,970 --> 00:05:44,910
+Sẽ mất một lúc và một khi mọi chuyện tốt đẹp,
+
+97
+00:05:45,160 --> 00:05:49,309
+Bạn sẽ thấy một dấu hiệu màu xanh lá cây ở đây nói rằng nó đã triển khai
+
+98
+00:05:49,320 --> 00:05:51,040
+Thành công trong môi trường dev.
+
+99
+00:05:51,279 --> 00:05:52,739
+Trong khi đó, nó đang được tiến hành.
+
+100
+00:05:52,880 --> 00:05:55,510
+Nếu bạn muốn xem các bản ghi, bạn có thể nhấp vào đó,
+
+101
+00:05:55,519 --> 00:06:00,290
+Và ở đây bạn có thể tiếp tục nhìn thấy tất cả các bản ghi trên cột bên phải.
+
+102
+00:06:00,440 --> 00:06:04,010
+Bây giờ tuyệt, bạn có thể thấy rằng nó đã triển khai thành công,
+
+103
+00:06:04,070 --> 00:06:06,750
+Và chúng ta đang thấy dấu hiệu xanh. Bây giờ, hãy để tôi quay lại
+
+104
+00:06:06,750 --> 00:06:10,730
+để giải thoát. Và trong bản phát hành này, nếu trên ba chấm này,
+
+105
+00:06:10,829 --> 00:06:11,540
+Nếu tôi click vào,
+
+106
+00:06:11,630 --> 00:06:15,510
+Tôi có thể thấy các cuộn phim xem, cung cấp cho tôi tất cả thông tin mà nó có
+
+107
+00:06:15,510 --> 00:06:19,649
+được dùng trong danh sách tập tin và giá đỡ. khoai lang.
+
+108
+00:06:19,790 --> 00:06:23,829
+Bây giờ bạn có thể đi đến đường ống, và ở đây bạn có thể thấy rằng
+
+109
+00:06:23,829 --> 00:06:27,959
+Chúng tôi đã hoàn thành việc triển khai tới tận dev. Và nếu
+
+110
+00:06:27,959 --> 00:06:29,899
+Cái này trông hoàn toàn ổn.
+
+111
+00:06:30,119 --> 00:06:34,040
+Bạn có thể nhấp vào phần quảng cáo, và dưới phần quảng cáo, bạn có thể kiểm tra ở đây
+
+112
+00:06:34,040 --> 00:06:38,470
+Có sự khác biệt. Và bạn có thể thấy rằng nó nói rằng khi nó là
+
+113
+00:06:38,470 --> 00:06:41,250
+sẽ triển khai ở hàng số 33,
+
+114
+00:06:41,279 --> 00:06:45,320
+Các bản sao nó sẽ tạo ra là hai bởi vì chúng tôi có
+
+115
+00:06:45,320 --> 00:06:49,399
+viết trong tập tin sản xuất của chúng tôi bao gồm nói rằng trong
+
+116
+00:06:49,399 --> 00:06:51,730
+sản xuất chúng tôi muốn là hai bản sao của nó.
+
+117
+00:06:51,829 --> 00:06:55,230
+Bây giờ bạn có thể nói rằng thăng tiến, và bây giờ triển khai cho
+
+118
+00:06:55,230 --> 00:06:57,609
+Bắt đầu sản xuất. Và nếu mọi chuyện ổn,
+
+119
+00:06:58,190 --> 00:07:01,950
+Nó cũng sẽ được triển khai thành công trong môi trường sản xuất.
+
+120
+00:07:02,190 --> 00:07:02,470
+Xong.
+
+121
+00:07:02,630 --> 00:07:05,510
+Vì vậy, bạn có thể thấy rằng chúng tôi đã thành công đẩy của chúng tôi
+
+122
+00:07:05,510 --> 00:07:07,309
+Cả mật mã nữa.
+
+123
+00:07:07,470 --> 00:07:11,369
+Đó là cách bạn có thể di chuyển mã của bạn từ dev đến prod
+
+124
+00:07:13,000 --> 00:07:14,309
+Mà không cần phải can thiệp bằng tay.
+
