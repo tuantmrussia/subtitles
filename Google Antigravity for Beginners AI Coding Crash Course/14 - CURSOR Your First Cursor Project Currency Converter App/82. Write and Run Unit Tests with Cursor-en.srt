@@ -1,0 +1,336 @@
+1
+00:00:00,000 --> 00:00:03,200
+ Hey, in this lesson, we'll work with unit test.
+
+2
+00:00:03,200 --> 00:00:09,520
+ So unit tests will help us to make sure that our application still works after any changes.
+
+3
+00:00:09,520 --> 00:00:15,680
+ They check some small parts of the app automatically, so we don't have the test everything by hand.
+
+4
+00:00:15,680 --> 00:00:20,560
+ And we shouldn't care if you broke something, we will see it immediately.
+
+5
+00:00:20,560 --> 00:00:26,720
+ In this lesson, we'll ask our source AI to create a plan for covering our app by unit tests.
+
+6
+00:00:26,720 --> 00:00:31,120
+ And it should list what test we need for each file.
+
+7
+00:00:31,120 --> 00:00:37,680
+ So then we'll work to sort generate this test in our codebase regarding to the plan.
+
+8
+00:00:37,680 --> 00:00:41,440
+ We will review it, we will fix and make changes if it's needed.
+
+9
+00:00:41,440 --> 00:00:46,960
+ Then we can run the test and to be sure that all of them correct and works.
+
+10
+00:00:46,960 --> 00:00:52,720
+ And this way, our application will stay stable and easy to update in the future.
+
+11
+00:00:52,720 --> 00:00:55,920
+ So our plan shouldn't include everything we need.
+
+12
+00:00:55,920 --> 00:01:00,880
+ Test in the conversion logic, test in the different components we have right here.
+
+13
+00:01:00,880 --> 00:01:04,560
+ Test in API calls and test in the utils.
+
+14
+00:01:04,560 --> 00:01:08,160
+ And of course, the main application state also works.
+
+15
+00:01:08,160 --> 00:01:15,280
+ So this help us catch problems early and keep our project stable as it told you.
+
+16
+00:01:15,280 --> 00:01:21,120
+ Okay, I prepared a prompt, a pressure prompt, which we'll ask to sort generate all the files,
+
+17
+00:01:21,120 --> 00:01:28,320
+ but we will use the planning mode to first see what crossroads going to cover and might be
+
+18
+00:01:28,320 --> 00:01:30,320
+ adjusted.
+
+19
+00:01:30,320 --> 00:01:32,480
+ So if we need more coverage.
+
+20
+00:01:32,480 --> 00:01:35,760
+ Okay, the prompt is the following.
+
+21
+00:01:35,760 --> 00:01:41,760
+ Create a step-by-step plan to add a run unit test in this application using the test.
+
+22
+00:01:41,760 --> 00:01:46,720
+ With test, it's a util, something like just, but it's a bit newer.
+
+23
+00:01:47,280 --> 00:01:54,160
+ So, and we also ask our all functionality and API requests also more network calls.
+
+24
+00:01:54,160 --> 00:01:57,440
+ Okay, let's ask to sort generate the plan.
+
+25
+00:01:57,440 --> 00:02:03,120
+ And we will see in a minute, oh, what is going to cover.
+
+26
+00:02:03,120 --> 00:02:06,960
+ Okay, first, we need to add a bit test library to the project.
+
+27
+00:02:06,960 --> 00:02:15,200
+ Also, we will use test and library react, library for finding components in a domain, etc.
+
+28
+00:02:16,320 --> 00:02:20,480
+ So, as then we will configure a bit test, of course, it's also needed.
+
+29
+00:02:20,480 --> 00:02:27,440
+ And then the unit test structure will be, so I don't like this test structure, so we will update it.
+
+30
+00:02:27,440 --> 00:02:32,480
+ I don't want to have a separate folder for all tests.
+
+31
+00:02:32,480 --> 00:02:37,760
+ I'd like all the tests, you'll be keep together with the components, just with the test extensions,
+
+32
+00:02:37,760 --> 00:02:38,400
+ for example.
+
+33
+00:02:40,240 --> 00:02:56,960
+ So, let's adjust it, so I can ask it, I'd like to have, let's gather this component.
+
+34
+00:02:56,960 --> 00:03:02,240
+ I said it's clear, so, and you need to adjust the plan.
+
+35
+00:03:02,240 --> 00:03:08,800
+ I, of course, can edit it here, so, but I decided to adjust to our console, rewrite it.
+
+36
+00:03:09,840 --> 00:03:16,880
+ So, use a test.ts.ts.ts.ts file next to source file, not as folder, okay, it's fine.
+
+37
+00:03:16,880 --> 00:03:24,080
+ Then, we will write test for utilities, okay, he's going to cover two utilities, that's fine.
+
+38
+00:03:24,080 --> 00:03:29,280
+ Write test for 8-day models for fetch currencies and get rates.
+
+39
+00:03:29,280 --> 00:03:34,560
+ It's also fine, he will use, he will mock the fetch and network calls.
+
+40
+00:03:35,120 --> 00:03:40,960
+ He will write test for the components, we have a mount input, currency survey, result, and swap
+
+41
+00:03:40,960 --> 00:03:47,520
+ button. He will verify rendering, probes, and main behavior, it's fine, he will also add some
+
+42
+00:03:47,520 --> 00:03:54,480
+ high level tests for application component logic. And he will run and verify all the task works.
+
+43
+00:03:54,480 --> 00:04:02,000
+ So, this is an implementation to do, and with test, test, it deals this IP test components,
+
+44
+00:04:02,000 --> 00:04:07,680
+ this app, and test, so it looks fine. Amazing, I would say, and it will click build.
+
+45
+00:04:07,680 --> 00:04:18,720
+ Oh, of course, I was trying to run all the, he felt installing all the libraries.
+
+46
+00:04:18,720 --> 00:04:24,240
+ Be aware that sometimes you need to approve, you allow to run the command,
+
+47
+00:04:24,240 --> 00:04:31,600
+ course order suggestion. So, we can see that it's adding a new libraries, the test library,
+
+48
+00:04:32,000 --> 00:04:41,840
+ the, with test, he's adding the libraries. And now, he's starting configuring the with test.
+
+49
+00:04:41,840 --> 00:04:48,720
+ And don't like releases configuration, so it's really easy that he, I can help with this,
+
+50
+00:04:48,720 --> 00:04:54,400
+ because you're spending a lot of time on this documentation, trying to configure between
+
+51
+00:04:54,400 --> 00:04:59,280
+ different versions, especially if you use TypeScript. So, it's really fun activity,
+
+52
+00:04:59,920 --> 00:05:07,760
+ but I prefer to delegate it to AI. So, we have first tests for the utils, we have convert
+
+53
+00:05:07,760 --> 00:05:14,000
+ amount.test, and with a test, it tells it to the tune of the right and total, then it's through
+
+54
+00:05:14,000 --> 00:05:27,760
+ an error, if right is not number, and it also handles negative amounts. Okay, looks, okay, I don't
+
+55
+00:05:27,760 --> 00:05:34,560
+ know what has the negative amounts, I guess we not allow it, but okay. Make for the currency,
+
+56
+00:05:34,560 --> 00:05:42,880
+ right, test the different euros, the different symbols. I will also show you a small life hack,
+
+57
+00:05:42,880 --> 00:05:49,840
+ then how we can, for example, optimize this test. So, it makes sense if you have bigger tests,
+
+58
+00:05:49,840 --> 00:05:59,120
+ we can use test dot each, or it ID dot each, so we will just enter in mention all the
+
+59
+00:05:59,120 --> 00:06:04,400
+ values and names for the test, and then it will check, it will implement it on the ones.
+
+60
+00:06:04,400 --> 00:06:11,120
+ But, for this case, we have, we check different, so we have to be, which it's to be the
+
+61
+00:06:11,120 --> 00:06:18,800
+ emojent, we check it to be on the finer, so it doesn't really make sense. So, let's check the rest of the test,
+
+62
+00:06:18,800 --> 00:06:25,440
+ we have amount input, we still see a rose because it's working on it. So, we have the trenders and
+
+63
+00:06:25,440 --> 00:06:32,800
+ input help text, it goes on change, allows only one decimal point, blocking put if you didn't
+
+64
+00:06:33,760 --> 00:06:46,880
+ max integer digits, okay, what it should be, yeah, so we can provide maximum digits.
+
+65
+00:06:46,880 --> 00:06:57,280
+ currency select, it also, we always can optimize it, we can create helpers to render components,
+
+66
+00:06:57,280 --> 00:07:04,400
+ if we like, but I will leave it up to you, you can always optimize your tests.
+
+67
+00:07:04,400 --> 00:07:14,000
+ The result, this was the promoted convention, conversion, yeah, it's fine, the swap button,
+
+68
+00:07:14,000 --> 00:07:20,080
+ we check that it's, render the button and then click off the works, it's for currencies.
+
+69
+00:07:21,680 --> 00:07:31,920
+ We have the get rates API, it fetches, and it mugs the API, and it's tried to get it and
+
+70
+00:07:31,920 --> 00:07:42,480
+ see that we get what we mocked previously, and also check it through an error. For the fetch
+
+71
+00:07:42,480 --> 00:07:51,760
+ currencies, it's the same, it just did one more, can check the smoke is a return it, and also is it
+
+72
+00:07:51,760 --> 00:07:59,280
+ we reacted, it's a bad response, and now we have the application dot test, so we what we test,
+
+73
+00:07:59,280 --> 00:08:07,680
+ we test the application render and can convert, we can enter amount, we can handle swap,
+
+74
+00:08:07,680 --> 00:08:13,760
+ we can show it, or if API fails, so this is a basic test, you of course can extend it at much more
+
+75
+00:08:13,760 --> 00:08:20,800
+ test cases cover some edge cases, but it seems for us, it will be fine, to stop at this point,
+
+76
+00:08:20,800 --> 00:08:29,840
+ I will pick people, okay, now time to test our test works, I will stop the server,
+
+77
+00:08:29,840 --> 00:08:37,680
+ and then we will run, come on, and we are on test, let's see the result, oh, we see, oh, our test
+
+78
+00:08:37,680 --> 00:08:50,720
+ was passed, okay, it's fine, oh, we have, we have, so just seven tests, all of them passed, and we
+
+79
+00:08:50,720 --> 00:08:59,040
+ covered eight files, so this fine, just a quick remark, if your test for some reason doesn't work,
+
+80
+00:08:59,040 --> 00:09:05,840
+ can you have, I don't know, any error in terminal, you can just put it by this error, like
+
+81
+00:09:05,840 --> 00:09:16,000
+ this text, you can just paste it here, and ask, fix this test, and you can do more iterations,
+
+82
+00:09:16,000 --> 00:09:25,040
+ and if you are on paid plan, I recommend for you to use one of the sonnet model, it's much smarter
+
+83
+00:09:25,040 --> 00:09:32,320
+ than the auto model for three points, and you might have the better results, so I think this
+
+84
+00:09:32,320 --> 00:09:36,560
+ everything I'd like to show you, and see you in the next lesson,
+
