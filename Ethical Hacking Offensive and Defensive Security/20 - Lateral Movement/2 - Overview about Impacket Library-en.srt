@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:12,400
+ So we completed a differentization and discovery tactics and we now moving on to impact
+
+2
+00:00:12,400 --> 00:00:19,400
+ that library section sorry the lateral moment session so most of the lateral moment will
+
+3
+00:00:19,400 --> 00:00:27,280
+ be happening through impact at library but this library needs some information like the
+
+4
+00:00:27,280 --> 00:00:33,720
+ user name domain name and passwords anyway we got the information from the
+
+5
+00:00:33,720 --> 00:00:38,380
+ credential access section you will be seeing we used pipecats and few other
+
+6
+00:00:38,380 --> 00:00:44,280
+ credential access methods to gather the username and passwords from the local
+
+7
+00:00:44,280 --> 00:00:53,760
+ machine so in this section we are going to use these credentials to move
+
+8
+00:00:53,760 --> 00:00:59,280
+ laterally from one machine to another machine so think of it you have a domain
+
+9
+00:00:59,280 --> 00:01:06,120
+ administrator credentials and you need to move to the machine inside an
+
+10
+00:01:06,120 --> 00:01:12,960
+ organization so you need some kind of protocol some kind of application or
+
+11
+00:01:12,960 --> 00:01:20,840
+ some kind of network port or to move from this machine to another machine okay so
+
+12
+00:01:20,840 --> 00:01:28,200
+ impact will give you give you a easy easy methods to move from one machine to
+
+13
+00:01:28,200 --> 00:01:35,180
+ another because it will it's a collection of network protocols and the
+
+14
+00:01:35,180 --> 00:01:41,960
+ impact at libraries designed with Python classes and it will very well work
+
+15
+00:01:41,960 --> 00:01:48,760
+ with the network protocols and it's one of a powerful very very powerful toolkit
+
+16
+00:01:48,760 --> 00:01:55,000
+ and a library that will remotely execute a command from one machine to another
+
+17
+00:01:55,000 --> 00:02:03,520
+ machine so let's think of it you are using a Kali Linux machine and your
+
+18
+00:02:03,520 --> 00:02:08,800
+ target was a Windows machine but impact library will be supporting the
+
+19
+00:02:08,800 --> 00:02:15,560
+ native language what windows were supporting example and SMB so in Kali Linux
+
+20
+00:02:15,560 --> 00:02:21,380
+ our Linux based operating system we have an SMB as well as the windows operating
+
+21
+00:02:21,380 --> 00:02:28,880
+ machines will be also supporting the SMB protocols right so we can interact
+
+22
+00:02:28,880 --> 00:02:38,200
+ with the with the machine through the native windows services like SMB or
+
+23
+00:02:38,200 --> 00:02:45,240
+ WHIC or anything okay so you don't need to install any kind of third-party
+
+24
+00:02:45,240 --> 00:02:51,660
+ applications to get access get moved laterally from this machine to another
+
+25
+00:02:51,660 --> 00:02:58,800
+ machine impact libraries enough to move and go ahead okay so this comes with
+
+26
+00:02:58,800 --> 00:03:04,120
+ our Kali Linux defaultly but some of the Kali Linux still we need an
+
+27
+00:03:04,120 --> 00:03:08,320
+ we need an installation so installation of pretty simple units to install the
+
+28
+00:03:08,320 --> 00:03:14,960
+ pseudo APT install Python 3 impact it so it's it's it's a quite simple okay so
+
+29
+00:03:14,960 --> 00:03:24,080
+ once you install the impact at library so you can you can see how much how much
+
+30
+00:03:24,080 --> 00:03:30,920
+ thing it was supporting AT-exect DCOM-exect DPA-PA here you can find
+
+31
+00:03:30,920 --> 00:03:38,240
+ MimiCads NetView PS-exect so the next in this section we are going to use few
+
+32
+00:03:38,240 --> 00:03:43,200
+ of the impact at libraries to move laterally from this machine to another
+
+33
+00:03:43,200 --> 00:03:52,520
+ machine okay so PS-exect and SMB-exect and SMB-clined RDP check is SAM or the SAM
+
+34
+00:03:52,520 --> 00:04:01,440
+ dump secret of many many options or they are to support to move to help us to move
+
+35
+00:04:01,440 --> 00:04:08,640
+ from one machine to another okay so let's use a credential access tactics we
+
+36
+00:04:08,640 --> 00:04:12,400
+ already gathered the domain name as well as the username and password from the
+
+37
+00:04:12,400 --> 00:04:17,640
+ machine in the similar way once you got domain administrator
+
+38
+00:04:17,640 --> 00:04:22,160
+ pencils your target will be moving to an admission to another machine let me
+
+39
+00:04:22,160 --> 00:04:27,360
+ show you some other things why we what are the libraries what's supporting the
+
+40
+00:04:27,360 --> 00:04:34,440
+ impact okay so let's think about the PS-exect we are going to use PS-exect in
+
+41
+00:04:34,440 --> 00:04:45,280
+ the in this session so PS-exect is also enough really really very really famous
+
+42
+00:04:45,280 --> 00:04:51,880
+ tool it directly interact with the command shell CMD.exe or PowerShell.exe on
+
+43
+00:04:51,880 --> 00:04:58,440
+ remote machine okay so basically it will install a small service inside the
+
+44
+00:04:58,440 --> 00:05:06,920
+ machine and we'll get a reverse connection so let's go to another another one SMB
+
+45
+00:05:06,920 --> 00:05:12,400
+ Exect it will be similar to a PS-exect and it will be using the SMB-exect
+
+46
+00:05:12,400 --> 00:05:17,720
+ protocol let I will attach this hacker recipient article so this is one of
+
+47
+00:05:17,720 --> 00:05:24,760
+ good article which you can read why what about the impact libraries and
+
+48
+00:05:24,760 --> 00:05:33,160
+ why and which situations he needs to use this okay so if any of some faced
+
+49
+00:05:33,160 --> 00:05:36,480
+ interview questions what is an impact that you can directly say it's a
+
+50
+00:05:36,480 --> 00:05:42,760
+ collection of Python libraries supporting major network protocols to move
+
+51
+00:05:42,760 --> 00:05:47,120
+ laterally from one machine to another it's enough to move laterally from one
+
+52
+00:05:47,120 --> 00:05:56,520
+ machine to another also we can steal credentials we can we can do some
+
+53
+00:05:56,520 --> 00:06:01,920
+ some things like lateral movement okay so this could be a best explanation so
+
+54
+00:06:01,920 --> 00:06:07,200
+ you can say PS-exect SMB-exect a few of the next sample that will be supporting
+
+55
+00:06:07,200 --> 00:06:14,880
+ impact library so let's go from here we'll jump on to another next video to see
+
+56
+00:06:14,880 --> 00:06:21,960
+ how the impact it will be okay so thanks for watching we'll connect you guys in
+
+57
+00:06:21,960 --> 00:06:24,640
+ the next video bye
+
