@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:03,520
+ Hey guys, so I welcome to another video.
+
+2
+00:00:03,520 --> 00:00:11,880
+ So this is one of interesting thing we are going to see one of a tool called TDSS killer
+
+3
+00:00:11,880 --> 00:00:20,000
+ that was the tool is developed by the test security, so that tool was used to remove
+
+4
+00:00:20,000 --> 00:00:25,400
+ the root kits and other malware from the machine.
+
+5
+00:00:25,400 --> 00:00:33,600
+ But our thing is what we are going to do, we are going to remove the bin different, okay,
+
+6
+00:00:33,600 --> 00:00:37,640
+ the defender service from the machine, okay.
+
+7
+00:00:37,640 --> 00:00:42,840
+ So if you see this tool, it was built by the casper sky.
+
+8
+00:00:42,840 --> 00:00:47,840
+ Even you can also download it in soft turning.
+
+9
+00:00:47,840 --> 00:00:58,720
+ If you check in the bleating computer, so it was saying, it will remove the root kits, okay.
+
+10
+00:00:58,720 --> 00:01:12,400
+ So some of the threat factors, they are, they are even abusing this tool to TDSS killer
+
+11
+00:01:12,400 --> 00:01:23,400
+ might, yeah, some of the threat factors even, even using this tool are to remove the
+
+12
+00:01:23,400 --> 00:01:31,160
+ defender or remove the EDR services from our endpoints, okay.
+
+13
+00:01:31,160 --> 00:01:37,000
+ So here you can find logbit 3.0, they have used the TDSS killer to EDR evasion.
+
+14
+00:01:37,000 --> 00:01:54,440
+ So this is one of something which we can do to evade from different mechanism, okay.
+
+15
+00:01:54,440 --> 00:02:00,480
+ So the main objective of the tool is designed to kill root kits, but what threat factors
+
+16
+00:02:00,480 --> 00:02:10,000
+ often you engineer is doing, so they are abusing this tool to kill the defense mechanism,
+
+17
+00:02:10,000 --> 00:02:11,000
+ okay.
+
+18
+00:02:11,000 --> 00:02:17,240
+ If the tool is thing, the defense, when defender, windows, defenders, root kits and it will
+
+19
+00:02:17,240 --> 00:02:19,800
+ kill the service, okay.
+
+20
+00:02:19,800 --> 00:02:27,200
+ Let us see, you can see an impaired defense, the transmission in mitre also.
+
+21
+00:02:27,200 --> 00:02:35,400
+ So if you see the documentation here, so we can have multiple options, but we are going
+
+22
+00:02:35,400 --> 00:02:41,600
+ to use this option, delete the specific service, only if you sure service should be removed.
+
+23
+00:02:41,600 --> 00:02:42,600
+ Okay.
+
+24
+00:02:42,600 --> 00:02:47,760
+ So in my machine, I already have a TDS killer that get downloaded and I given a link
+
+25
+00:02:47,760 --> 00:02:52,440
+ how to even download the TDS killer, okay.
+
+26
+00:02:52,440 --> 00:03:02,240
+ So let me show you something here, TDS killer, DCSPC.
+
+27
+00:03:02,240 --> 00:03:09,520
+ So if you given this, I will give some information how to use this tool.
+
+28
+00:03:09,520 --> 00:03:16,960
+ So our option is here, so to DCSST to service name and delete the service.
+
+29
+00:03:16,960 --> 00:03:28,920
+ So now let me search for the SE query when different, let me search for the service, the
+
+30
+00:03:28,920 --> 00:03:30,440
+ when different was running or not.
+
+31
+00:03:30,440 --> 00:03:35,760
+ So now I can see the when different was running in our machine.
+
+32
+00:03:35,760 --> 00:03:42,560
+ So it's Windows Defender service, so we can use TDS killer to start this service, okay.
+
+33
+00:03:42,560 --> 00:03:53,720
+ TDS killer - DCSPC, and we need to see the service name in the front.
+
+34
+00:03:53,720 --> 00:04:05,840
+ So now it was initializing the process and getting some measures and now it was seeing
+
+35
+00:04:05,840 --> 00:04:09,560
+ it necessary to remove the reboot for your competition.
+
+36
+00:04:09,560 --> 00:04:16,160
+ So if I do the details, so you can see it will be deleted after the reboot, the key has
+
+37
+00:04:16,160 --> 00:04:20,880
+ been deleted once if I reboot my machine.
+
+38
+00:04:20,880 --> 00:04:26,960
+ So think of it, how cool the threat factors will be doing this stuff, okay.
+
+39
+00:04:26,960 --> 00:04:36,520
+ They are more and more advanced, they are abusing the manual removal tool and they are
+
+40
+00:04:36,520 --> 00:04:40,160
+ killing the defense mechanism service, okay.
+
+41
+00:04:40,160 --> 00:04:50,440
+ So one time be phased the incident active incident like attacker, attack one of them organization
+
+42
+00:04:50,440 --> 00:04:51,720
+ with the tool, okay.
+
+43
+00:04:51,720 --> 00:05:01,120
+ So I was investigating the incident and I can see one thing, the TDS killer, the hash of
+
+44
+00:05:01,120 --> 00:05:06,800
+ the hash file matching to a casper's case, so I was thinking what was going, why it was
+
+45
+00:05:06,800 --> 00:05:12,240
+ killing Defender, why it was killing our EDR, EDR services.
+
+46
+00:05:12,240 --> 00:05:20,240
+ Then I just realized something going on because if you install a new Antiverse program,
+
+47
+00:05:20,240 --> 00:05:29,400
+ it will kill some of the current triggers of the current services and it will do something,
+
+48
+00:05:29,400 --> 00:05:31,400
+ okay.
+
+49
+00:05:31,400 --> 00:05:36,640
+ The user is studying the TDS killer, root kit maneuver, that was a problem, okay.
+
+50
+00:05:36,640 --> 00:05:44,560
+ So the assumption I made that was completely wrong, so that's new, that's the new, the
+
+51
+00:05:44,560 --> 00:05:48,580
+ threat factor used, that's the first time the threat factor used the TDS killer to
+
+52
+00:05:48,580 --> 00:05:50,160
+ degrade the service, okay.
+
+53
+00:05:50,160 --> 00:05:56,560
+ So we phased active incidents and finally the ransomware has been arrived, so my mistake,
+
+54
+00:05:56,560 --> 00:06:01,040
+ there, I just assumed this is legitimate activity from the user.
+
+55
+00:06:01,040 --> 00:06:06,640
+ So when you doing some kind of blue teaming based investigation or foreign success, you
+
+56
+00:06:06,640 --> 00:06:12,600
+ need to be aware about this root kit remover tools, not only the TDS killer, we have other
+
+57
+00:06:12,600 --> 00:06:19,920
+ root kit remover tools also, so that will be enough to delete the services from the
+
+58
+00:06:19,920 --> 00:06:27,640
+ information, even the legitimate services, like wind defenders, EDR services, even Palo Alto,
+
+59
+00:06:27,640 --> 00:06:35,000
+ Kotx area, Cloud Sega or anything, that can, that's, that's capable to boot, okay.
+
+60
+00:06:35,000 --> 00:06:38,640
+ So please, we more focus on when you're investigating.
+
+61
+00:06:38,640 --> 00:06:43,440
+ So that's all about the video, I hope you have enjoyed this video, we'll hope of and we'll
+
+62
+00:06:43,440 --> 00:06:45,120
+ connect you guys in the next video, bye.
+
