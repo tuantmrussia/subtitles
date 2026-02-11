@@ -1,0 +1,864 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Now, in extraordinary situations, you might want to through an exception to yourself.
+
+2
+00:00:07,000 --> 00:00:09,000
+ And why is extraordinary?
+
+3
+00:00:09,000 --> 00:00:16,000
+ Because until now, what have we been discussing is that if an exception comes, how do we take care of it?
+
+4
+00:00:16,000 --> 00:00:17,000
+ How do we handle it?
+
+5
+00:00:17,000 --> 00:00:19,000
+ But now I'm telling you the opposite.
+
+6
+00:00:19,000 --> 00:00:23,000
+ That is, you might want to throw an exception to yourself.
+
+7
+00:00:23,000 --> 00:00:27,000
+ The same exception that you have been trying to handle and take care of.
+
+8
+00:00:27,000 --> 00:00:30,000
+ What would that kind of a situation be, right?
+
+9
+00:00:30,000 --> 00:00:31,000
+ But challenges.
+
+10
+00:00:31,000 --> 00:00:34,000
+ The flexible language, the huge, flexible language it is.
+
+11
+00:00:34,000 --> 00:00:37,000
+ It even gives you a situation for that edge case.
+
+12
+00:00:37,000 --> 00:00:41,000
+ And this edge case is not that edge case in reality.
+
+13
+00:00:41,000 --> 00:00:42,000
+ We generally do that.
+
+14
+00:00:42,000 --> 00:00:44,000
+ I'll just give you an example here.
+
+15
+00:00:44,000 --> 00:00:45,000
+ Let's see.
+
+16
+00:00:45,000 --> 00:00:47,000
+ I have this class exception propagation.
+
+17
+00:00:47,000 --> 00:00:53,000
+ And here, let's say I have a method white.
+
+18
+00:00:53,000 --> 00:00:56,000
+ Or something.
+
+19
+00:00:56,000 --> 00:00:59,000
+ Or let's say a white.
+
+20
+00:00:59,000 --> 00:01:06,000
+ Yeah, let's just want to do something.
+
+21
+00:01:06,000 --> 00:01:08,000
+ And it takes an integer.
+
+22
+00:01:08,000 --> 00:01:11,000
+ I'll say integer value.
+
+23
+00:01:11,000 --> 00:01:18,000
+ And now, let's say you.
+
+24
+00:01:18,000 --> 00:01:23,000
+ You don't have to have a flexibility to throw an exception.
+
+25
+00:01:23,000 --> 00:01:25,000
+ If something goes terribly wrong.
+
+26
+00:01:25,000 --> 00:01:30,000
+ And that sometimes can be, in this case, it can be value is less than zero.
+
+27
+00:01:30,000 --> 00:01:32,000
+ That is, it's a value in minus.
+
+28
+00:01:32,000 --> 00:01:35,000
+ You don't want to pass it to one of the methods.
+
+29
+00:01:35,000 --> 00:01:39,000
+ So what do you do is you can say, for example,
+
+30
+00:01:39,000 --> 00:01:44,000
+ if it's a value is less than zero.
+
+31
+00:01:44,000 --> 00:01:49,000
+ For the first time, you can throw your own exception.
+
+32
+00:01:49,000 --> 00:01:52,000
+ That is, use the keyword that is true.
+
+33
+00:01:52,000 --> 00:01:54,000
+ And it is different than throws.
+
+34
+00:01:54,000 --> 00:01:57,000
+ In the sense, this actually throws the exception.
+
+35
+00:01:57,000 --> 00:01:59,000
+ It is not like it might.
+
+36
+00:01:59,000 --> 00:02:00,000
+ throws is a warning.
+
+37
+00:02:00,000 --> 00:02:02,000
+ throws actually throws it.
+
+38
+00:02:02,000 --> 00:02:03,000
+ That's a true.
+
+39
+00:02:03,000 --> 00:02:04,000
+ New.
+
+40
+00:02:04,000 --> 00:02:05,000
+ That's how you throw an exception Java.
+
+41
+00:02:05,000 --> 00:02:08,000
+ Let's say that is runtime.
+
+42
+00:02:08,000 --> 00:02:13,000
+ For example, otherwise, you go ahead and say,
+
+43
+00:02:13,000 --> 00:02:16,000
+ it is expected to be done here.
+
+44
+00:02:16,000 --> 00:02:18,000
+ Whatever that is, tell you're working.
+
+45
+00:02:18,000 --> 00:02:20,000
+ For example, right?
+
+46
+00:02:20,000 --> 00:02:23,000
+ And we'll just have it like this where it works.
+
+47
+00:02:23,000 --> 00:02:24,000
+ Right?
+
+48
+00:02:24,000 --> 00:02:28,000
+ But this is the point, the line and focus here.
+
+49
+00:02:28,000 --> 00:02:30,000
+ That is, if it is less than zero, throw this.
+
+50
+00:02:30,000 --> 00:02:34,000
+ No, don't run anything because it immediately throws the exception.
+
+51
+00:02:34,000 --> 00:02:37,000
+ And otherwise, just go ahead and do whatever you want to or whatever
+
+52
+00:02:37,000 --> 00:02:39,000
+ you were required to be doing.
+
+53
+00:02:39,000 --> 00:02:41,000
+ But this is how you throw an exception in Java.
+
+54
+00:02:41,000 --> 00:02:43,000
+ Throw in your runtime exception.
+
+55
+00:02:43,000 --> 00:02:45,000
+ And again, it has a relation with final and declare.
+
+56
+00:02:45,000 --> 00:02:48,000
+ And that is, if the exception that you're throwing
+
+57
+00:02:48,000 --> 00:02:52,000
+ with the throw keyword, right, happens to be a checked exception,
+
+58
+00:02:52,000 --> 00:02:56,000
+ you need to declare that as part of the methods signature.
+
+59
+00:02:56,000 --> 00:03:00,000
+ If it's an unchecked exception, like runtime, null pointer,
+
+60
+00:03:00,000 --> 00:03:02,000
+ arithmetic, there is no need to do that.
+
+61
+00:03:02,000 --> 00:03:04,000
+ See, no error set.
+
+62
+00:03:04,000 --> 00:03:08,000
+ But if it was a checked exception, like IO,
+
+63
+00:03:08,000 --> 00:03:11,000
+ it would have been given you a PowerPoint time error, see,
+
+64
+00:03:11,000 --> 00:03:12,000
+ hover on this.
+
+65
+00:03:12,000 --> 00:03:16,000
+ It says, untangle the exception, Java.io.io exception.
+
+66
+00:03:16,000 --> 00:03:18,000
+ You need to add that to the method signature.
+
+67
+00:03:18,000 --> 00:03:21,000
+ So again, for the emphasis, the first point we did in this
+
+68
+00:03:21,000 --> 00:03:24,000
+ video is if you want to throw your own exceptions,
+
+69
+00:03:24,000 --> 00:03:26,000
+ you can do that in Java with the keyword throw.
+
+70
+00:03:26,000 --> 00:03:29,000
+ It's different than throws, throws is used to send a warning
+
+71
+00:03:29,000 --> 00:03:32,000
+ to the calling methods, throw actually throws the exception.
+
+72
+00:03:32,000 --> 00:03:35,000
+ And if that exception that you're using with the throw keyword
+
+73
+00:03:35,000 --> 00:03:38,000
+ happens to be a checked exception, it needs to be declared
+
+74
+00:03:38,000 --> 00:03:40,000
+ as part of the method signature.
+
+75
+00:03:40,000 --> 00:03:44,000
+ If it is an unchecked exception, you do not need to, all right.
+
+76
+00:03:44,000 --> 00:03:47,000
+ So that is what the keyword throw does.
+
+77
+00:03:47,000 --> 00:03:50,000
+ And the next point I'm going to talk about before we wrap it up
+
+78
+00:03:50,000 --> 00:03:53,000
+ is our own custom exceptions.
+
+79
+00:03:53,000 --> 00:03:56,000
+ The beautiful language I've eyes, it allows you to even define
+
+80
+00:03:56,000 --> 00:03:58,000
+ your own exceptions because we can never be sure
+
+81
+00:03:58,000 --> 00:04:02,000
+ that as we're done with all exceptions in our use, Java has
+
+82
+00:04:02,000 --> 00:04:05,000
+ not done.
+
+83
+00:04:05,000 --> 00:04:08,000
+ It doesn't zip dot hundreds of exception classes out there.
+
+84
+00:04:08,000 --> 00:04:11,000
+ But still, your application, your project, right, your app
+
+85
+00:04:11,000 --> 00:04:16,000
+ would have an exception that is not generic or that is unique
+
+86
+00:04:16,000 --> 00:04:18,000
+ to your application scenario as well, right.
+
+87
+00:04:18,000 --> 00:04:21,000
+ For example, there is an exception called username,
+
+88
+00:04:21,000 --> 00:04:24,000
+ not for exception or using not for exception.
+
+89
+00:04:24,000 --> 00:04:27,000
+ So that's not in the normal Java world that cannot be everywhere.
+
+90
+00:04:27,000 --> 00:04:31,000
+ So Java gives you flexibility of defining your own exceptions.
+
+91
+00:04:31,000 --> 00:04:35,000
+ So we've got something like this.
+
+92
+00:04:35,000 --> 00:04:38,000
+ Let me go ahead and write that here for you.
+
+93
+00:04:38,000 --> 00:04:41,000
+ See, in any of the places like in normal class,
+
+94
+00:04:41,000 --> 00:04:44,000
+ I'll just say my exception.
+
+95
+00:04:44,000 --> 00:04:46,000
+ And you can extend it.
+
+96
+00:04:46,000 --> 00:04:48,000
+ If you want to make it a checked exception,
+
+97
+00:04:48,000 --> 00:04:51,000
+ just extend it with a checked exception class.
+
+98
+00:04:51,000 --> 00:04:55,000
+ If you want to make it look like or won't like an unchecked exception,
+
+99
+00:04:55,000 --> 00:04:58,000
+ make it an extent with let's say our exception.
+
+100
+00:04:58,000 --> 00:05:01,000
+ That's fine. That's all you need to do.
+
+101
+00:05:01,000 --> 00:05:04,000
+ If you wanted to this to be in checked exception,
+
+102
+00:05:04,000 --> 00:05:07,000
+ then extension exception, that's it.
+
+103
+00:05:07,000 --> 00:05:11,000
+ And then what I'll do in I'll have a constructor, my exception,
+
+104
+00:05:11,000 --> 00:05:16,000
+ I'll just say a message at a string message.
+
+105
+00:05:16,000 --> 00:05:21,000
+ Call super, more on super in some time because I know we haven't touched it yet,
+
+106
+00:05:21,000 --> 00:05:24,000
+ right, but there won't be a separate video for super.
+
+107
+00:05:24,000 --> 00:05:27,000
+ So, but for now know that this is used to call
+
+108
+00:05:27,000 --> 00:05:32,000
+ what are the usages of the keyword super is to call the super class constructor.
+
+109
+00:05:32,000 --> 00:05:36,000
+ And inside the constructor, I've said super and I'm going passing message.
+
+110
+00:05:36,000 --> 00:05:38,000
+ That's it.
+
+111
+00:05:38,000 --> 00:05:45,000
+ And appropriately, let's call it user lockbox exception.
+
+112
+00:05:45,000 --> 00:05:46,000
+ You heard that right.
+
+113
+00:05:46,000 --> 00:05:50,000
+ This is an exception, which was not there in the Java programming language,
+
+114
+00:05:50,000 --> 00:05:54,000
+ but customization, right, the full accessibility to go ahead
+
+115
+00:05:54,000 --> 00:05:56,000
+ and create your own exception classes.
+
+116
+00:05:56,000 --> 00:05:57,000
+ That is how you do it.
+
+117
+00:05:57,000 --> 00:06:00,000
+ And obviously the constructor now looks like it's username.
+
+118
+00:06:00,000 --> 00:06:02,000
+ Use a note found exception.
+
+119
+00:06:02,000 --> 00:06:07,000
+ And now it just gives you scenario where you can even throw this, right, see.
+
+120
+00:06:07,000 --> 00:06:09,000
+ What I'll do is.
+
+121
+00:06:09,000 --> 00:06:13,000
+ Let me call it all of this for now because you've understood it.
+
+122
+00:06:13,000 --> 00:06:15,000
+ See, there's just this class.
+
+123
+00:06:15,000 --> 00:06:21,000
+ Last username or user not for an exception, extension and.
+
+124
+00:06:21,000 --> 00:06:26,000
+ Let's have the closing body here.
+
+125
+00:06:26,000 --> 00:06:27,000
+ All right.
+
+126
+00:06:27,000 --> 00:06:29,000
+ The warning should go away now.
+
+127
+00:06:29,000 --> 00:06:31,000
+ The breeze was missing, right?
+
+128
+00:06:31,000 --> 00:06:36,000
+ So let's say I want to take a string from user runtime, I'll say.
+
+129
+00:06:36,000 --> 00:06:38,000
+ And it is.
+
+130
+00:06:38,000 --> 00:06:44,000
+ And I want to take that in a string and I'll say string my.
+
+131
+00:06:44,000 --> 00:06:51,000
+ Or, let's call it user name to new scanner.
+
+132
+00:06:51,000 --> 00:06:55,000
+ Remember the efficient way now system dot in your next line.
+
+133
+00:06:55,000 --> 00:06:59,000
+ How do you do strings in Java either through the next method or the next line.
+
+134
+00:06:59,000 --> 00:07:01,000
+ And I prefer next line.
+
+135
+00:07:01,000 --> 00:07:07,000
+ And then you say, for example, if using me later on, you will check it in area or an alias.
+
+136
+00:07:07,000 --> 00:07:10,000
+ Or in a database or through the API.
+
+137
+00:07:10,000 --> 00:07:13,000
+ But for now, hard put it because it focuses something else.
+
+138
+00:07:13,000 --> 00:07:20,000
+ So let's say for now, hard put if username dot equals is a method equals, which we should use instead of the double equal to.
+
+139
+00:07:20,000 --> 00:07:21,000
+ Again, I have a video on that.
+
+140
+00:07:21,000 --> 00:07:24,000
+ But for now, you want to compare two strings use it or equals matter.
+
+141
+00:07:24,000 --> 00:07:29,000
+ I'll say if the username dot equals W a queue, that is why.
+
+142
+00:07:29,000 --> 00:07:31,000
+ That means it's a valid user.
+
+143
+00:07:31,000 --> 00:07:33,000
+ I'll just put a print element message.
+
+144
+00:07:33,000 --> 00:07:37,000
+ I'll say welcome work.
+
+145
+00:07:37,000 --> 00:07:41,000
+ Otherwise, if this is not there, I want to throw that.
+
+146
+00:07:41,000 --> 00:07:47,000
+ I'll say through new use and not for an exception with a constrictor C parameters.
+
+147
+00:07:47,000 --> 00:07:49,000
+ And I'll give it time to match.
+
+148
+00:07:49,000 --> 00:07:51,000
+ I'll just save user.
+
+149
+00:07:51,000 --> 00:07:53,000
+ That's it.
+
+150
+00:07:53,000 --> 00:07:55,000
+ Right.
+
+151
+00:07:55,000 --> 00:07:58,000
+ I said through new use and not for an exception user doesn't exist.
+
+152
+00:07:58,000 --> 00:08:04,000
+ And because it is a checked exception, it needs to be declared as part of the method signature.
+
+153
+00:08:04,000 --> 00:08:06,000
+ And we'll do that with those.
+
+154
+00:08:06,000 --> 00:08:11,000
+ And I'll say news and not for an exception, the error should go away and it does.
+
+155
+00:08:11,000 --> 00:08:12,000
+ What does it say the warning?
+
+156
+00:08:12,000 --> 00:08:17,000
+ Class use and not for the exception is exposed outside its default visibility.
+
+157
+00:08:17,000 --> 00:08:22,000
+ So it's related to the scope, but don't worry, we are working in the same package.
+
+158
+00:08:22,000 --> 00:08:23,000
+ And that's fine.
+
+159
+00:08:23,000 --> 00:08:23,000
+ It's for work.
+
+160
+00:08:23,000 --> 00:08:25,000
+ It's just a warning that you can go for now.
+
+161
+00:08:25,000 --> 00:08:28,000
+ But the focus is let's see when this would run.
+
+162
+00:08:28,000 --> 00:08:30,000
+ It will give you in the stack trace.
+
+163
+00:08:30,000 --> 00:08:36,000
+ This is accepted as well as this custom message, which you can obviously customize whatever you write here.
+
+164
+00:08:36,000 --> 00:08:38,000
+ Let's go on and on this.
+
+165
+00:08:38,000 --> 00:08:41,000
+ And I'll see you and to use the name first the right one back.
+
+166
+00:08:41,000 --> 00:08:42,000
+ It says welcome back.
+
+167
+00:08:42,000 --> 00:08:44,000
+ Let's sign it on it for the 11th time.
+
+168
+00:08:44,000 --> 00:08:47,000
+ I enter a user name, which is not there.
+
+169
+00:08:47,000 --> 00:08:50,000
+ I'll see for example, this time.
+
+170
+00:08:50,000 --> 00:08:51,000
+ Yeah.
+
+171
+00:08:51,000 --> 00:09:02,000
+ See, exception thread, mean all the work or user not for the exception, user doesn't exist. This user doesn't exist. You know where this comes from. And this was your own custom exception.
+
+172
+00:09:02,000 --> 00:09:04,000
+ Again, the exception propagation.
+
+173
+00:09:04,000 --> 00:09:07,000
+ The stack trace first at line number.
+
+174
+00:09:07,000 --> 00:09:10,000
+ What did we get line before, because there's just one method here.
+
+175
+00:09:10,000 --> 00:09:11,000
+ Right.
+
+176
+00:09:11,000 --> 00:09:13,000
+ So that is user doesn't exist.
+
+177
+00:09:13,000 --> 00:09:15,000
+ And now you might wonder.
+
+178
+00:09:15,000 --> 00:09:21,000
+ The question you have, can we even catch the exceptions that we ourselves through?
+
+179
+00:09:21,000 --> 00:09:22,000
+ Yes, we can.
+
+180
+00:09:22,000 --> 00:09:24,000
+ But why wouldn't you do that?
+
+181
+00:09:24,000 --> 00:09:25,000
+ Generally we don't.
+
+182
+00:09:25,000 --> 00:09:26,000
+ Right.
+
+183
+00:09:26,000 --> 00:09:28,000
+ That is, I can put this line in a trying catch.
+
+184
+00:09:28,000 --> 00:09:30,000
+ But generally we don't because this is useful for testing.
+
+185
+00:09:30,000 --> 00:09:32,000
+ We won't give it to the end user.
+
+186
+00:09:32,000 --> 00:09:34,000
+ We'll use it for testing our applications.
+
+187
+00:09:34,000 --> 00:09:37,000
+ And that is where tool makes perfect sense.
+
+188
+00:09:37,000 --> 00:09:38,000
+ Right.
+
+189
+00:09:38,000 --> 00:09:42,000
+ So again, to wrap this video up, we talked about exceptions.
+
+190
+00:09:42,000 --> 00:09:45,000
+ How to handle them would try to catch.
+
+191
+00:09:45,000 --> 00:09:49,000
+ How to strike at finally work or how only try with finally works.
+
+192
+00:09:49,000 --> 00:09:53,000
+ Why? Because sometimes what happens in exception propagation.
+
+193
+00:09:53,000 --> 00:09:56,000
+ The method that you're calling right is.
+
+194
+00:09:56,000 --> 00:10:00,000
+ Let's say using tried and only finally not try to catch finally.
+
+195
+00:10:00,000 --> 00:10:04,000
+ When would the person use that when they don't want to handle or catch the exception.
+
+196
+00:10:04,000 --> 00:10:11,000
+ But there is some code they want always to be executed irrespective of whether the exception is thrown or not.
+
+197
+00:10:11,000 --> 00:10:15,000
+ In that scenario, I try with finally still works right not catching it.
+
+198
+00:10:15,000 --> 00:10:18,000
+ They leave it to you to catch that.
+
+199
+00:10:18,000 --> 00:10:19,000
+ They don't handle it.
+
+200
+00:10:19,000 --> 00:10:20,000
+ Right.
+
+201
+00:10:20,000 --> 00:10:25,000
+ They just use try with finding why because they're selfish in a way they still want to.
+
+202
+00:10:25,000 --> 00:10:30,000
+ There are one of their code to be a lines of code to be executed even if the exception has been thrown.
+
+203
+00:10:30,000 --> 00:10:34,000
+ And then we got putting on the focus on you whether you would catch it or not.
+
+204
+00:10:34,000 --> 00:10:36,000
+ That is where try with finally works.
+
+205
+00:10:36,000 --> 00:10:38,000
+ And we had a look at exception propagation.
+
+206
+00:10:38,000 --> 00:10:42,000
+ But the truth you were such a beautiful scenario of inter method communication when a method.
+
+207
+00:10:42,000 --> 00:10:47,000
+ Once the method before even calling it you're dealing with potentially dangerous code.
+
+208
+00:10:47,000 --> 00:10:52,000
+ And the handler declare rule only applies to checked exceptions does not apply to inject exceptions.
+
+209
+00:10:52,000 --> 00:10:55,000
+ We had a look at what I checked and unchecked checked exceptions in Java.
+
+210
+00:10:55,000 --> 00:11:01,000
+ Our class exception and its subclasses excluding runtime exception and its subclasses.
+
+211
+00:11:01,000 --> 00:11:10,000
+ And date exceptions are class error and subclasses including runtime exceptions that are time exception class and its subclasses.
+
+212
+00:11:10,000 --> 00:11:12,000
+ So that's about exception right Megan Java.
+
+213
+00:11:12,000 --> 00:11:15,000
+ We had a quite a detailed discussion.
+
+214
+00:11:15,000 --> 00:11:24,000
+ Again, just get your hands dirty right in your own code take my code forward along and just manipulated edited see what happens what doesn't.
+
+215
+00:11:24,000 --> 00:11:26,000
+ And if you have any questions.
+
+216
+00:11:26,000 --> 00:11:32,000
+ I'm all ears but I see before I see you in the next video with one more important concept.
+
