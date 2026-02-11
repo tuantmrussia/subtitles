@@ -1,0 +1,384 @@
+1
+00:00:00,000 --> 00:00:07,000
+Được rồi các bạn, chào mừng trở lại và sau khi chúng ta nói về lập trình định hướng đối tượng,
+
+2
+00:00:07,000 --> 00:00:12,480
+bốn nguyên tắc nằm bên dưới đó là nền tảng của chương trình hướng đối tượng
+
+3
+00:00:12,480 --> 00:00:17,880
+Tại bất kỳ đối tượng hướng ngôn ngữ lập trình cho vấn đề đó, chúng tôi tiếp tục và nói về
+
+4
+00:00:17,880 --> 00:00:24,280
+hai khái niệm quan trọng là cốt lõi của mọi thứ mà bạn làm trong một định hướng đối tượng
+
+5
+00:00:24,280 --> 00:00:30,520
+Ngôn ngữ lập trình không chỉ ở Java và rõ ràng chúng ta sẽ chỉ nói về
+
+6
+00:00:30,520 --> 00:00:35,840
+Thực hiện các khái niệm hai trong điều khoản Java nhưng đầu tiên hãy xem xét chúng
+
+7
+00:00:35,840 --> 00:00:40,880
+Trong ý nghĩa văn học và tôi sẽ chỉ cho bạn một lần nữa với thế giới thực tương tự để hiểu
+
+8
+00:00:40,880 --> 00:00:46,760
+họ và những khái niệm đó là đối tượng và lớp học và một khi bạn hiểu chúng bạn sẽ
+
+9
+00:00:46,760 --> 00:00:54,040
+là trong hình dạng tuyệt vời để viết một chính xác, thông minh và thông minh mã trong chương trình Java
+
+10
+00:00:54,040 --> 00:00:55,040
+ngôn ngữ.
+
+11
+00:00:55,040 --> 00:01:00,040
+Vì vậy, hãy chỉ có một cái nhìn vào những gì một lớp học được theo sau bởi những gì một đối tượng, phải không?
+
+12
+00:01:00,040 --> 00:01:07,160
+Tôi sẽ chỉ làm điều đó ở đây cho bạn để bắt đầu với một tương tự thế giới thực, vì vậy các lớp học bây giờ họ
+
+13
+00:01:07,160 --> 00:01:09,040
+đúng không?
+
+14
+00:01:09,040 --> 00:01:14,040
+Họ là một ý tưởng ngay tại đây trong tâm trí của bạn, không nơi nào khác họ không phải là một cái gì đó mà
+
+15
+00:01:14,040 --> 00:01:18,960
+Là hữu hình đó là một cái gì đó mà bạn có thể cảm nhận thể chất, đúng không?
+
+16
+00:01:18,960 --> 00:01:26,120
+Chúng chỉ là một mẫu thử nghiệm, một bản thiết kế của một cái gì đó khác để đến sau này và đó là một cái gì đó
+
+17
+00:01:26,120 --> 00:01:29,760
+nếu không thì chúng ta gọi nó là một vật thể, đúng không?
+
+18
+00:01:29,760 --> 00:01:35,880
+Vì vậy, lớp là một định nghĩa, một nguyên mẫu, một bản thiết kế, một ý tưởng và đối tượng là thực hiện của nó
+
+19
+00:01:35,880 --> 00:01:41,680
+Và một ví dụ thực tế về điều đó một lần nữa, bạn có thể lấy bất kỳ ví dụ nào trong đầu bạn,
+
+20
+00:01:41,680 --> 00:01:48,680
+Một trong những ví dụ cổ điển của tôi trong buổi nói chuyện là ý tưởng về toàn năng và đó là
+
+21
+00:01:48,680 --> 00:01:51,040
+ý tưởng về con người, phải không?
+
+22
+00:01:51,040 --> 00:01:59,040
+Vì vậy bây giờ hãy nghĩ về nó nếu toàn năng, chủ yếu là đầu tiên, trước khi đưa con người đến trái đất sẽ
+
+23
+00:01:59,040 --> 00:02:04,720
+đã nghĩ về nó và sẽ có một số loại ý tưởng trong tâm trí của họ những gì một con người
+
+24
+00:02:04,720 --> 00:02:09,280
+Sẽ được xem như là và chúng ta hãy chỉ nói về sự so sánh này và những gì tôi sẽ làm là tôi sẽ
+
+25
+00:02:09,280 --> 00:02:18,640
+Ví dụ, đây là ý tưởng về con người của anh, phải không?
+
+26
+00:02:18,640 --> 00:02:30,680
+Và bây giờ con người có những đặc tính nhất định, chân, tay, mắt,
+
+27
+00:02:30,680 --> 00:02:36,840
+Chúng có miệng, chúng có trái tim, phải không?
+
+28
+00:02:36,840 --> 00:02:45,840
+Và ở phía bên kia, con người cũng có thể đi lại, ví dụ như việc di chuyển tài sản,
+
+29
+00:02:45,840 --> 00:02:58,520
+Họ có chỗ ngồi, không khí và họ thở và họ khóc và họ cười
+
+30
+00:02:58,520 --> 00:03:03,960
+phải không?
+
+31
+00:03:03,960 --> 00:03:05,760
+Tất cả chúng ta đều có cùng một đặc tính.
+
+32
+00:03:05,760 --> 00:03:10,240
+Bây giờ, hãy nghĩ về nó, các thuộc tính bên tay trái và các thuộc tính bên tay phải
+
+33
+00:03:10,240 --> 00:03:16,120
+là liên quan đến nhau bởi vì bây giờ đi bộ không có chân sẽ làm cho vô nghĩa, thở mà không có một trái tim
+
+34
+00:03:16,120 --> 00:03:21,120
+Sẽ không có ý nghĩa gì, ăn mà không có miệng sẽ không có ý nghĩa, nhìn mà không có một mắt sẽ
+
+35
+00:03:21,120 --> 00:03:29,120
+Làm cho vô lý, đấm ví dụ, hoặc nói bạn đánh ai đó, hit là một bất động sản, hit mà không
+
+36
+00:03:29,120 --> 00:03:36,280
+một nụ cười không có miệng sẽ vô nghĩa.
+
+37
+00:03:36,280 --> 00:03:40,800
+Đó là lý do tại sao tôi sẽ nói rằng họ đang liên hệ với nhau và đây là các loại thuộc tính
+
+38
+00:03:40,800 --> 00:03:51,040
+Bất kỳ lớp nào cũng có, hãy nghĩ về ý tưởng này của con người như một lớp học, phải không?
+
+39
+00:03:51,040 --> 00:04:02,080
+Và hãy nghĩ về hai đặc tính này, đúng không?
+
+40
+00:04:02,080 --> 00:04:10,920
+Và đặc tính bên tay phải, chúng tôi gọi chúng là lõi, mà hoạt động trên dữ liệu, phải không?
+
+41
+00:04:10,920 --> 00:04:16,160
+lõi hoạt động trên dữ liệu như tôi đã nói, đi bộ mà không có chân làm cho vô nghĩa, xem mà không có
+
+42
+00:04:16,160 --> 00:04:20,680
+Không có tai thì chẳng có nghĩa lý gì.
+
+43
+00:04:20,680 --> 00:04:23,360
+Đó là lý do tôi nói mật mã hoạt động trên dữ liệu.
+
+44
+00:04:23,360 --> 00:04:27,680
+Đây là những tính chất mà bất cứ lúc nào bạn cũng có trong lớp học,
+
+45
+00:04:27,680 --> 00:04:28,680
+Đúng không?
+
+46
+00:04:28,680 --> 00:04:30,840
+Không chỉ trong tầng lớp con người, phải không?
+
+47
+00:04:30,840 --> 00:04:44,120
+Và theo thuật ngữ lập trình, chúng ta gọi những tính chất này là các biến số, phải không?
+
+48
+00:04:44,120 --> 00:04:52,640
+Và chúng tôi gọi mã là phương pháp hoặc chức năng, phải không?
+
+49
+00:04:52,640 --> 00:04:56,040
+Vì vậy, đây là loại, đây là loại công cụ tại bất cứ thời điểm nào thời điểm, mà bạn sẽ
+
+50
+00:04:56,040 --> 00:04:58,200
+phải không?
+
+51
+00:04:58,200 --> 00:05:03,760
+Và lớp học này cũng giống như một ý tưởng riêng, nó không có bất kỳ sự hiện diện vật lý, bởi vì
+
+52
+00:05:03,760 --> 00:05:09,680
+toàn năng, trước khi đưa con người xuống trái đất có lẽ đã viết nó ở đâu đó, có lẽ trên bất kỳ lưu ý nào
+
+53
+00:05:09,680 --> 00:05:15,180
+Lấy ứng dụng nếu họ sẽ có truy cập nó tại thời điểm đó, một mảnh thô của giấy hoặc dính
+
+54
+00:05:15,180 --> 00:05:21,640
+nhưng nó sẽ trông như thế này trước khi đưa con người xuống trái đất, đúng không?
+
+55
+00:05:21,640 --> 00:05:28,280
+Và rằng thực hiện vật lý bây giờ, những gì bạn và tôi thấy trong hình dạng của một cơ thể
+
+56
+00:05:28,280 --> 00:05:34,320
+là cái mà chúng tôi gọi là một vật thể, một đối tượng của loại người, phải không, loại người.
+
+57
+00:05:34,320 --> 00:05:43,000
+Vì vậy, lớp học, ví dụ, sau đó điều này ở đây trở thành đối tượng của bạn, khi một con người mới
+
+58
+00:05:43,000 --> 00:05:55,680
+Em bé được sinh ra, chúng ta nói đây là một đối tượng của tầng lớp con người, phải không?
+
+59
+00:05:55,680 --> 00:05:59,920
+Và bạn biết đấy, khi một vật thể mới của con người được tạo ra trên thế giới, có nghĩa là khi một vật thể mới được tạo ra
+
+60
+00:05:59,920 --> 00:06:02,760
+Đứa bé được sinh ra đến thế giới này, đúng không?
+
+61
+00:06:02,760 --> 00:06:09,120
+Và chúng tôi nói, oh, đứa trẻ con người này có thể đi bộ ở đây, thở, cố gắng và cười và
+
+62
+00:06:09,120 --> 00:06:12,480
+Chạy và có chân, tay, mắt, miệng và tim.
+
+63
+00:06:12,480 --> 00:06:16,040
+Vậy có nghĩa là chúc mừng con người, đúng không?
+
+64
+00:06:16,040 --> 00:06:17,920
+Đó là cách chúng ta suy nghĩ.
+
+65
+00:06:17,920 --> 00:06:29,360
+Đây là một thứ có sự hiện diện vật lý, phải không?
+
+66
+00:06:29,360 --> 00:06:32,080
+Vì vậy, đây là một cái gì đó hữu hình.
+
+67
+00:06:32,080 --> 00:06:38,520
+Vì vậy, những gì làm chúng tôi gọi là một đối tượng của một lớp học, một đối tượng, như bạn sẽ nghe, hoặc đọc nó hoặc
+
+68
+00:06:38,520 --> 00:06:43,440
+Xem nó trực tuyến, họ nói một đối tượng là một thể hiện của một lớp học, nhưng bạn không thể chỉ là giới hạn
+
+69
+00:06:43,440 --> 00:06:48,760
+để định nghĩa này, chỉ cần xác định nó trong điều kiện của riêng bạn, tôi sẽ nói một đối tượng là một vật lý
+
+70
+00:06:48,760 --> 00:06:55,480
+biểu hiện ý tưởng của một lớp học, nó là một biểu hiện vật lý, nó là một hiện thân
+
+71
+00:06:55,480 --> 00:07:02,800
+Ý tưởng đó, mà bạn thấy trong thực tế, mà bạn cảm thấy trong thực tế, phải, một lớp học con người, nó là một
+
+72
+00:07:02,800 --> 00:07:09,320
+Mô hình trừu tượng, chỉ là một ý tưởng, nhưng một đối tượng là thực hiện của nó như một tập hợp vật lý
+
+73
+00:07:09,320 --> 00:07:12,960
+phải không?
+
+74
+00:07:12,960 --> 00:07:17,320
+Và sau đó làm thế nào để chúng tôi đi về những công cụ này là, tại sao điều này là tuyệt vời?
+
+75
+00:07:17,320 --> 00:07:22,560
+Bởi vì chỉ có một ý tưởng, nhưng hãy nghĩ về nó, bao nhiêu người đã đến cho đến bây giờ
+
+76
+00:07:22,560 --> 00:07:26,480
+phải không?
+
+77
+00:07:26,480 --> 00:07:32,680
+Bao nhiêu người đã sống, bao nhiêu người đã chết, và bao nhiêu người tiếp tục đến,
+
+78
+00:07:32,680 --> 00:07:38,960
+như hàng tỷ, chết, hàng tỷ, đến, nở hoa, hàng tỷ, theo dõi tốt hơn trong tất cả các xác suất,
+
+79
+00:07:38,960 --> 00:07:44,480
+Và ý tưởng chỉ là một, đó là nó chỉ một lần nữa giúp bạn chỉ cần viết nó một lần, nhưng
+
+80
+00:07:44,480 --> 00:07:50,680
+Sử dụng nó nhiều lần trong các hình dạng và hình dạng khác nhau, nhưng tất cả các tính chất tương tự,
+
+81
+00:07:50,680 --> 00:07:54,000
+nơi mà tôi chỉ lấy một ví dụ về người đẳng cấp.
+
+82
+00:07:54,000 --> 00:07:57,280
+Vì vậy, hãy nghĩ về nó, những điểm tương đồng khác có thể xuất hiện trong tâm trí bạn.
+
+83
+00:07:57,280 --> 00:08:02,760
+Bạn có thể nghĩ về những ý tưởng như một điện thoại thông minh đó là một ý tưởng khác của một lớp học, nhưng chỉ
+
+84
+00:08:02,760 --> 00:08:08,000
+Nổi loạn xung quanh như tôi nói, với ý tưởng của các lớp học và các đối tượng xung quanh chúng tôi, bất cứ điều gì
+
+85
+00:08:08,000 --> 00:08:11,120
+Bạn thấy một vật thể ở xung quanh bạn, phải không?
+
+86
+00:08:11,120 --> 00:08:16,160
+Và rõ ràng nó có cơ sở ở đâu đó, có một ý tưởng được gọi là lớp học,
+
+87
+00:08:16,160 --> 00:08:22,520
+Ví dụ như, bạn và tôi sẽ có một bàn, bên phải, đó là một đối tượng, nhưng có một cơ sở
+
+88
+00:08:22,520 --> 00:08:29,880
+Đâu đó là một bàn học, chúng tôi có đèn, lớp học và đối tượng, bạn có, bạn có
+
+89
+00:08:29,880 --> 00:08:35,640
+màn hình, máy tính xách tay, chai nước, đây là tất cả các lớp học và
+
+90
+00:08:35,640 --> 00:08:36,800
+đúng không?
+
+91
+00:08:36,800 --> 00:08:41,480
+Chỉ cần làm cho nó tốt hơn, chỉ cần làm cho nó rất nhiều tiện lợi và dễ dàng để bạn hiểu
+
+92
+00:08:41,480 --> 00:08:46,600
+Đó là ý tưởng của một lớp học, đó là
+
+93
+00:08:46,600 --> 00:08:47,600
+ý tưởng về một vật thể.
+
+94
+00:08:47,600 --> 00:08:52,520
+Và trong video tiếp theo, tôi sẽ cho bạn biết nếu tất cả người của tôi đã được trong phát triển Java,
+
+95
+00:08:52,520 --> 00:08:58,040
+Họ định nghĩa lớp người này như thế nào và họ sẽ tạo ra một vật thể như thế nào?
+
+96
+00:08:58,040 --> 00:09:01,160
+Vì vậy, thực hiện đến cho bạn trong video tiếp theo.
+
