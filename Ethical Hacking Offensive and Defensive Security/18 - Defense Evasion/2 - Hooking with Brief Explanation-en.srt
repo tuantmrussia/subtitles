@@ -1,0 +1,824 @@
+1
+00:00:00,000 --> 00:00:10,920
+ Hey guys, and welcome to a different space and fiction maybe most of them most of them
+
+2
+00:00:10,920 --> 00:00:19,440
+ will be a new to this topic, Hooking and Unhooking maybe some of them shared or set
+
+3
+00:00:19,440 --> 00:00:31,200
+ term of Hooking. We will be we will be use Hooks word in multiple times even fish when
+
+4
+00:00:31,200 --> 00:00:37,200
+ we will be going for fishing in harbor or something. But in cyber security time it will be
+
+5
+00:00:37,200 --> 00:00:45,200
+ like pretty different like the Hooking part. Let me show you what was the hooking. Basically
+
+6
+00:00:45,200 --> 00:00:55,440
+ the hooking is used by the EDRs antivirus softwares as well as the threat factors. Both the
+
+7
+00:00:55,440 --> 00:01:06,080
+ terms like the hooking method will be used by protectors to develop their malware to evade the
+
+8
+00:01:06,080 --> 00:01:21,840
+ EDRs and antivirus platforms as well as the different a different schools like EDRs and
+
+9
+00:01:21,840 --> 00:01:32,320
+ antivirus softwares or whatever. So, the basically the hooking was introduced by introduced for
+
+10
+00:01:32,320 --> 00:01:41,120
+ programmers. So, let us take an example. There is there is a programmer who developed an
+
+11
+00:01:41,120 --> 00:01:49,000
+ application and he left that organization and so a new developer has been joined and the
+
+12
+00:01:49,000 --> 00:01:57,800
+ new developer was unable to see the code. So, what was the code he was used and how he
+
+13
+00:01:57,800 --> 00:02:04,280
+ returned the program and how he quoted the application. He does not know what was going on inside
+
+14
+00:02:04,280 --> 00:02:12,120
+ because the code was not visible. So, at this time he needs to use some updates. He needs to
+
+15
+00:02:12,120 --> 00:02:20,680
+ change some options or he needs to add some options in the program. So, for that, we can use a
+
+16
+00:02:20,680 --> 00:02:33,800
+ hooking. Basically, hooking will change the execution flow of the program and let us, I will give
+
+17
+00:02:33,800 --> 00:02:42,200
+ you a small example. So, you are playing some game and your health is important there. There was a
+
+18
+00:02:42,200 --> 00:02:53,240
+ fighting game and so your health will be, if the health will be 100 you can fight more but when the
+
+19
+00:02:53,240 --> 00:03:01,000
+ health will be reduced to less than 10, you have a lesser time to fight right. So, what we can do,
+
+20
+00:03:01,000 --> 00:03:08,040
+ we can hoop the game and we can change the execution flow. So, whenever you hit by an target,
+
+21
+00:03:08,040 --> 00:03:15,960
+ whenever you hit by some gun or sniper or something, till you will be having 100 percent
+
+22
+00:03:15,960 --> 00:03:22,840
+ of your health. So, you hit multiple times like even 100,000 times. So, still you will be having
+
+23
+00:03:22,840 --> 00:03:30,280
+ a full percentage of health to fight against your target. So, what we did, we just
+
+24
+00:03:30,280 --> 00:03:36,760
+ changed, we just given small modification in a program. It started as a hooking, we just
+
+25
+00:03:36,760 --> 00:03:51,720
+ modified the execution flow of the program and we just modified the health to 100.
+
+26
+00:03:51,720 --> 00:04:00,920
+ So, whenever we did some kind of hooking in a gaming applications to change the health
+
+27
+00:04:00,920 --> 00:04:12,680
+ to make a consistent health, like 100 percentage, you can continuously play the gaming.
+
+28
+00:04:12,680 --> 00:04:19,400
+ So, this is called as the game hacking or something. So, by the method of hooking, you can
+
+29
+00:04:19,400 --> 00:04:27,160
+ easily achieve that. The same way in cybersecurity, the difference aviation tactics,
+
+30
+00:04:27,160 --> 00:04:35,960
+ the difference aviation programs, it will be doing some APA level hooking to hide from
+
+31
+00:04:35,960 --> 00:04:42,760
+ antivirus softwares or EDRs programs. So, let me give a small example of how the hooking
+
+32
+00:04:42,760 --> 00:04:50,120
+ will be worse in the real time. So, I have a bit different of antivirus program in my machine,
+
+33
+00:04:50,120 --> 00:04:59,320
+ so you can see here and let me go for a task post. So, here you can see the application,
+
+34
+00:04:59,320 --> 00:05:10,280
+ task post-30XE and here you can see the handles, dealers, threads has been loaded. So, if you see this
+
+35
+00:05:10,280 --> 00:05:18,840
+ DLL, DTHKM64.DLL, a bit different of hooking DLL. So, it was involved in the process, right,
+
+36
+00:05:18,840 --> 00:05:25,560
+ it was involved in the task post-DrdXE process. Why? The bit different are involving in task
+
+37
+00:05:25,560 --> 00:05:34,200
+ post-DrdXE. What? The bit different are doing here. So, let me give a brief explanation.
+
+38
+00:05:34,200 --> 00:05:42,200
+ So, let us take an example. I was developing a program, a malicious code, so that code will be going
+
+39
+00:05:42,200 --> 00:05:54,920
+ to inject a malicious cell code into the task post-DrdXE. So, whenever we tries to inject
+
+40
+00:05:55,640 --> 00:06:01,400
+ our malicious code into the task post-DrdXE, so what we will be doing? We will be calling some kind
+
+41
+00:06:01,400 --> 00:06:07,320
+ of APA functions, right, like virtual log of right process memory of create remote thread of,
+
+42
+00:06:07,320 --> 00:06:18,920
+ okay. So, EDR will be monitoring this APA functions and it will be stopping us, right. So,
+
+43
+00:06:22,040 --> 00:06:28,200
+ in the backend, EDR monitoring the process, right, EDR is EDR monitoring the process.
+
+44
+00:06:28,200 --> 00:06:35,640
+ How EDR monitoring the process? How EDR knows? Our malicious program is going to inject something
+
+45
+00:06:35,640 --> 00:06:43,080
+ into the task post-DrdXE. How EDR knows? How EDR understand what was going in the background of the
+
+46
+00:06:43,080 --> 00:06:52,280
+ process, okay. So, the hooking is coming into play, okay. So, the anti-virus software, food, some
+
+47
+00:06:52,280 --> 00:07:00,200
+ DLLs into the application task post-DrdXE and it was completely monitoring the process,
+
+48
+00:07:00,200 --> 00:07:09,480
+ okay. So, now the EDR know what was going inside the process, what was the IP communication going on,
+
+49
+00:07:09,480 --> 00:07:14,680
+ what is the DLLs calling, what is the APA functions calls are going on,
+
+50
+00:07:14,680 --> 00:07:21,320
+ what was the system calls going on, everything EDR come to know the entire process, the backbone
+
+51
+00:07:21,320 --> 00:07:30,360
+ of entire process, okay. So, by the hooking technique, the EDR can completely monitor the process
+
+52
+00:07:30,360 --> 00:07:42,440
+ including the APIs, IT communications, contents, code, et cetera, okay. So, now I already said,
+
+53
+00:07:42,440 --> 00:07:50,840
+ so, EDR will be one of a powerful tool, it will be, it has a capability to do anything
+
+54
+00:07:50,840 --> 00:07:59,000
+ inside Windows, it can hook any kind of process, okay. So, in our example, we just see in the
+
+55
+00:07:59,000 --> 00:08:04,760
+ task post-DrdXD, that was hooked by the bid defender hooking DLL process, okay.
+
+56
+00:08:04,760 --> 00:08:19,160
+ So, whenever the Windows, Windows boots up, the bid defender loads DLL file by calling
+
+57
+00:08:19,160 --> 00:08:27,400
+ load library of DLL and hook the DLL inside the task post-DrdXE, okay. By this,
+
+58
+00:08:27,400 --> 00:08:35,320
+ so, whatever the application was doing, the EDR comes to know, the EDR and if a software
+
+59
+00:08:35,320 --> 00:08:42,920
+ comes to know what was happening inside the process, okay. So, now I hope you have a clear
+
+60
+00:08:42,920 --> 00:08:49,160
+ understanding about the hooking, so what was hooking and how the EDR and the EDR software still
+
+61
+00:08:49,160 --> 00:09:01,240
+ hook, okay. Let's take an example of real world, how the malware is going to be react and how the
+
+62
+00:09:01,240 --> 00:09:09,560
+ EDR will be reacting. Let me, you, you very brief explanation how it will be happening, okay,
+
+63
+00:09:09,560 --> 00:09:18,360
+ in the subo example, the subar example, okay. So, let's take an example of
+
+64
+00:09:19,640 --> 00:09:26,440
+ our day-to-day activities in the home, okay. Not a, not a home, let's take an example of
+
+65
+00:09:26,440 --> 00:09:33,080
+ example of a store and so the restaurant has a kitchen, right. So, inside the kitchen, everything
+
+66
+00:09:33,080 --> 00:09:44,040
+ has been performed, right. The cooking, the cleaning, managing everything, right. So, the kitchen,
+
+67
+00:09:44,040 --> 00:09:53,800
+ okay. So, the next part of the kitchen will be the headstop, okay. One of the headships
+
+68
+00:09:55,480 --> 00:10:19,480
+ is commanding what needs to be done head, the head chef, who will be coming and next part will be the
+
+69
+00:10:19,480 --> 00:10:28,600
+ waiter, okay. She will be, so we are the customers and we'll be ordering to the waiter, right.
+
+70
+00:10:28,600 --> 00:10:37,880
+ I need a piece of it more cheese or more chicken, that you can need some tomato, onion or whatever,
+
+71
+00:10:37,880 --> 00:10:45,480
+ right. So, we'll be calling the waiter and we'll be ordering and we are the customers, right.
+
+72
+00:10:47,320 --> 00:10:58,680
+ So, this is, okay. So, let's take an example, the kitchen of a kernel in our machine,
+
+73
+00:10:58,680 --> 00:11:11,400
+ okay. We will be calling the kitchen of a sub kernel and the head chef of the NTDLL,
+
+74
+00:11:12,280 --> 00:11:27,560
+ so we know what is a NTDLL, right. NTDLL. This is a DL file which holds an important AP functions,
+
+75
+00:11:27,560 --> 00:11:35,320
+ which will be which will be used by windows, okay. And we can call the waiter as the kernel,
+
+76
+00:11:35,320 --> 00:11:51,960
+ kernel32dLL, sorry I was taking some time, I was drawing in the Hpad, okay.
+
+77
+00:11:51,960 --> 00:12:01,880
+ Okay. And the human of application, okay.
+
+78
+00:12:06,280 --> 00:12:10,520
+ You can call the application as a Chrome task host or whatever, okay.
+
+79
+00:12:10,520 --> 00:12:16,920
+ So, let's take an example here, okay. So, our program,
+
+80
+00:12:16,920 --> 00:12:25,720
+ chilling to the waiter, okay. Our program, telling to the kernel32dLL, like I want to save a file,
+
+81
+00:12:25,720 --> 00:12:33,160
+ I need to save a file, okay. So, you are downloading something from a Chrome and the file needs
+
+82
+00:12:33,160 --> 00:12:37,800
+ to be saved in download folder. So, your Chrome calling, I want to save a file, okay.
+
+83
+00:12:37,800 --> 00:12:45,880
+ And it was telling to the kernel dot DL, okay. So, it's not a kernel, kernel32, okay.
+
+84
+00:12:45,880 --> 00:12:55,800
+ Let me take that kernel32dLL. And what the next step, so your kernel32 dot DLLL calling
+
+85
+00:12:55,800 --> 00:13:07,160
+ the Hpad self, okay. The NTDLL, and it was telling the application needs to save some file, okay.
+
+86
+00:13:07,160 --> 00:13:15,560
+ So, what the Hpad self will be doing? The Hpad self will be calling the sys call, okay.
+
+87
+00:13:15,560 --> 00:13:24,520
+ Direct sys call, and he will be reaching out to the kernel, and the Hpad self, the NTDLL will be
+
+88
+00:13:24,520 --> 00:13:31,720
+ saying to the kernel, like the application needs to save some file, please allocate some space and
+
+89
+00:13:31,720 --> 00:13:37,880
+ help them, okay. So, the kitchen directly got the order and he is cooking. The same way,
+
+90
+00:13:37,880 --> 00:13:44,680
+ your application commanding to, I want to save a file to kernel32dLL, and your kernel32dLL
+
+91
+00:13:44,680 --> 00:13:50,840
+ reaching out to the NTDLL, the lower AP function, it's a high level AP, the kernel32dLL
+
+92
+00:13:50,840 --> 00:13:59,000
+ was a higher level, and it was calling to the lower level AP function, the Hpad self, and there
+
+93
+00:13:59,000 --> 00:14:08,680
+ was NTDLL, and NTDLL dot DLLL, giving a sys call to the system call to the kernel,
+
+94
+00:14:08,680 --> 00:14:16,520
+ and saying the application needs to save some file, we need to do some help there, okay.
+
+95
+00:14:17,880 --> 00:14:26,600
+ So, whenever you need to interact with the hardware, so you were saving the files to the hardware
+
+96
+00:14:26,600 --> 00:14:36,920
+ side, or hottest, that was a physical pause in our laptop, right. So, if you want to interact with
+
+97
+00:14:36,920 --> 00:14:44,600
+ the hardware, the operating system, the windows will not have a capability to do that, okay.
+
+98
+00:14:44,600 --> 00:14:52,120
+ So, only the kernel can able to communicate with the hardware as well as the operating system,
+
+99
+00:14:52,120 --> 00:15:04,200
+ okay. It was, it was, it was, it has an intermediate, it was an intermediate for the hardware,
+
+100
+00:15:04,200 --> 00:15:10,360
+ as well as the windows operating system, okay. So, the kernel only can able to allocate
+
+101
+00:15:10,920 --> 00:15:14,760
+ some memory inside the hardware, okay. The same thing happening here.
+
+102
+00:15:14,760 --> 00:15:23,640
+ So, the kernel, like the kernel, when the, when the heads of the NTDLL dot DL call the sys call,
+
+103
+00:15:23,640 --> 00:15:28,840
+ so the kernel goes to the hard drive, and he, and it was doing, and it was,
+
+104
+00:15:28,840 --> 00:15:37,480
+ giving some space to save the file, okay. So, only the NTDLL dot DLLL
+
+105
+00:15:38,600 --> 00:15:44,680
+ can only call the sys call, so the kernel will be only responsible for sys calls, okay.
+
+106
+00:15:44,680 --> 00:15:54,520
+ Only it was, only it was, communicate through the sys call, okay.
+
+107
+00:15:54,520 --> 00:16:00,360
+ So, the kernel only need a sys call for a communication, so to allocate a space to do anything,
+
+108
+00:16:01,080 --> 00:16:10,680
+ okay. So, this is the entire worry, what will this happen? So, once you, once you call anything
+
+109
+00:16:10,680 --> 00:16:14,200
+ inside the program, even in node path, you are writing something or anything, okay.
+
+110
+00:16:14,200 --> 00:16:23,960
+ So, let's take a real-time example. So, there is a, there is a node path, and there was an
+
+111
+00:16:23,960 --> 00:16:29,080
+ application, and the node path was calling the right file of APA function, it was going to the
+
+112
+00:16:29,080 --> 00:16:34,520
+ writer, okay. And it needs to write some file, and to what the kernel was doing,
+
+113
+00:16:34,520 --> 00:16:44,200
+ so it was calling the AP function, W write, write file, okay.
+
+114
+00:16:44,200 --> 00:16:55,320
+ Write file of, and the beta going with the H of, and he's saying, this node path needs to
+
+115
+00:16:55,320 --> 00:17:01,880
+ save some file, okay. So, suddenly the APA, so this all the higher level APA is, okay, write file out, okay.
+
+116
+00:17:01,880 --> 00:17:14,360
+ And the entity LL, so once it reaches to entity LL, so the APA will be changed to the lower, lower level
+
+117
+00:17:14,360 --> 00:17:21,240
+ of APA, okay, it will be adding NT, native, write file out, okay. So, nothing gets changed, only the
+
+118
+00:17:21,240 --> 00:17:29,000
+ APA functions will be changed, so this all the lower level APA functions, so this all the lower level
+
+119
+00:17:29,000 --> 00:17:37,320
+ APA is, okay. So, this is the higher level, write file off, and the NT, DLL was a lower level APA,
+
+120
+00:17:37,320 --> 00:17:48,680
+ okay. And once the lower level APA gets called, so the next part will be the syscals,
+
+121
+00:17:48,680 --> 00:17:53,400
+ okay, the syscals will be calling and it will reach now to the panel, okay. So, this is the
+
+122
+00:17:53,400 --> 00:18:02,840
+ entire cycle of, of cooking, okay. So, in our scenario, what our bit different software did,
+
+123
+00:18:02,840 --> 00:18:09,080
+ okay. So, our area, our area, and the various software, it will be creating
+
+124
+00:18:09,080 --> 00:18:17,240
+ God, it will be acting as a God after the kitchen, okay. So, it will be the, the, the,
+
+125
+00:18:17,240 --> 00:18:29,400
+ the area will be staying here, or AV, and the various software will be staying here,
+
+126
+00:18:29,400 --> 00:18:34,680
+ and it will be watching what was happening in the back end. So, what APA was calling,
+
+127
+00:18:34,680 --> 00:18:41,240
+ so what was going and what needs to be, what needs to be saved in the download folder,
+
+128
+00:18:41,240 --> 00:18:46,040
+ what needs to be right in the memory or anything. So, it will be watching everything,
+
+129
+00:18:46,040 --> 00:18:52,840
+ okay. It will be cooking, and it will be watching age and everything, okay.
+
+130
+00:18:52,840 --> 00:19:03,800
+ Now, let us see which function, which APA function area, who, okay. The EDR, who, the lower level APA
+
+131
+00:19:03,800 --> 00:19:11,880
+ function, NT write-off, right. So, it, who, the NT write-off APA functions and watching what
+
+132
+00:19:11,880 --> 00:19:17,560
+ was happening in the programs, right. Because it was inter mediator for the heads-off,
+
+133
+00:19:17,560 --> 00:19:23,160
+ and it was inter mediator between the kitchen and the heads-up, okay. So, in between on AP,
+
+134
+00:19:23,160 --> 00:19:32,280
+ if going to be called, the NT write-off function, there was a, there was a helping assist call,
+
+135
+00:19:32,920 --> 00:19:42,520
+ and this needs to be called. So, okay. So, the EDR, understand each and everything, it was
+
+136
+00:19:42,520 --> 00:19:48,760
+ who, the NT write-off APA functions, right. So, it, who.
+
+137
+00:19:48,760 --> 00:20:00,760
+ So, now, let us take a, let us take a real time example, let me show you something.
+
+138
+00:20:00,760 --> 00:20:05,720
+ Let me open a node pad here, so act, and I can explain for what will be,
+
+139
+00:20:05,720 --> 00:20:19,400
+ what will be done. Let me open, what, what is actually a cooking, okay. Let me open a X64 debug,
+
+140
+00:20:19,400 --> 00:20:29,000
+ and let me attach the node pad here, and let me go for a memory map, and let me redirect to the,
+
+141
+00:20:31,320 --> 00:20:46,040
+ text for minute text resource. Yeah, follow in disassembler,
+
+142
+00:20:46,040 --> 00:20:54,680
+ and here you can see, here you can see the bytes 40 is 255,
+
+143
+00:20:55,240 --> 00:21:09,960
+ and the text section was pointing towards this BCE,000, let me open a process hacker,
+
+144
+00:21:10,920 --> 00:21:25,080
+ and let me go to the node pad here, load the node pad, and let me search for node pad.exe. So,
+
+145
+00:21:25,080 --> 00:21:38,120
+ here you can find the same address, the 75 BCE,000, right BCE,000, let me expand this, okay.
+
+146
+00:21:38,120 --> 00:21:49,400
+ So, here you can see the same memory functions, right, same bytes, 40 is 255, then
+
+147
+00:21:49,400 --> 00:22:06,200
+ 8d, second, sorry for the previous, previous one because I already set up break point there. So, now,
+
+148
+00:22:06,200 --> 00:22:16,760
+ you can see the 40 is 255, and the next byte was 48 AD, 60, 24 C9, right. So, you can see the
+
+149
+00:22:16,760 --> 00:22:37,640
+ 40, 55, 45, 45, 48, 48 AD, 60, okay. So, what I am going to do,
+
+150
+00:22:38,360 --> 00:22:48,440
+ I was sitting up break point, okay, break point, so now the break point has been set towards this
+
+151
+00:22:48,440 --> 00:23:00,520
+ address, and so what we are going to do, we are going to move this, okay. So, we are going to change
+
+152
+00:23:00,520 --> 00:23:09,800
+ the execution flow of that, flow of this program, okay. Let me go to the process hacker,
+
+153
+00:23:09,800 --> 00:23:18,120
+ and let me give a rewrite, rewrite. So, now you can see the bytes has been changed, 40, 55,
+
+154
+00:23:18,120 --> 00:23:28,040
+ and CC. So, previously it was in the 40, 48, right. So, now we can see the CC has been involved,
+
+155
+00:23:28,040 --> 00:23:36,840
+ right. But in before it was of 48, before I set to the break point, before I set in a break point,
+
+156
+00:23:36,840 --> 00:23:43,800
+ it was in the 48, now it was CC. We just changed execution flow, right,
+
+157
+00:23:43,800 --> 00:23:52,520
+ of the program. So, now, so if I execute, if I execute this program,
+
+158
+00:23:53,320 --> 00:24:01,880
+ so what the program will do, it will be redirecting to the debugger, right, because I set a break
+
+159
+00:24:01,880 --> 00:24:09,240
+ point there, right. It will be stopping there, okay. There is a break point, so the program execution
+
+160
+00:24:09,240 --> 00:24:17,880
+ will be stopped, and it will be waiting for a next command from a debugger, okay. So, this is called
+
+161
+00:24:17,880 --> 00:24:24,280
+ as the hooking. We just changed the execution flow, right. So, we just talked to the programs
+
+162
+00:24:24,280 --> 00:24:29,400
+ from the execution by setting a break point. The address has been changed to CC,
+
+163
+00:24:29,400 --> 00:24:35,800
+ the bytes have been changed instead of 48, here you can find the CC. After 40, 55, 48 will be there,
+
+164
+00:24:35,800 --> 00:24:41,080
+ but now there is a CC. So, now you can see the execution flow has been changed.
+
+165
+00:24:41,080 --> 00:24:50,600
+ Now, the flow is redirecting to the debugger, so now you can, now you can feel how hooking will
+
+166
+00:24:50,600 --> 00:24:59,880
+ be, how hooks will be opened, okay. So, this is how the EDRs and EDRs and anti-verse software
+
+167
+00:24:59,880 --> 00:25:04,680
+ should be hooking, and it will be monitoring for what we are doing in the application, okay.
+
+168
+00:25:05,800 --> 00:25:15,480
+ So, now, let's see how we can bypass the anti-verse software using the hooking method, okay.
+
+169
+00:25:15,480 --> 00:25:29,080
+ Let's go to the draw and take an example. Let me erase this, give me a sec.
+
+170
+00:25:29,080 --> 00:25:34,920
+ Now, let's take an example about how we need to develop our programs here, okay.
+
+171
+00:25:35,400 --> 00:25:41,800
+ So, there is some malicious application, you are developing this malicious app, malapp,
+
+172
+00:25:41,800 --> 00:25:45,480
+ so mal.exe, okay.
+
+173
+00:25:45,480 --> 00:25:59,800
+ So, once you, once you call in any kind of API function, like kernel 32-based functions,
+
+174
+00:25:59,800 --> 00:26:06,840
+ like write file off, so your mal.exe will be going to write a ransom node, read me.txt or something,
+
+175
+00:26:06,840 --> 00:26:12,360
+ okay. So, your kernel 32.DRL will be calling write file off function, right.
+
+176
+00:26:12,360 --> 00:26:22,040
+ Right file of function, but once the write file off function get called through the kernel 32.DRL,
+
+177
+00:26:22,040 --> 00:26:32,920
+ so the, it will be redirecting towards the heads of anti-DRL, the function named anti-write off.
+
+178
+00:26:32,920 --> 00:26:40,680
+ So, the important thing we need to monitor, the EDR will be hooked, the anti-write off functions,
+
+179
+00:26:40,680 --> 00:26:49,240
+ okay. So, now, whenever your program calls the anti-write off functions, EDR knows what was going
+
+180
+00:26:50,040 --> 00:26:54,280
+ inside the background, it was completely monitoring what was going inside the background, okay.
+
+181
+00:26:54,280 --> 00:27:00,360
+ So, whenever your program calls the, your mal.exe calls the anti-write off function,
+
+182
+00:27:00,360 --> 00:27:06,040
+ so the EDR coming into play, and it was watching what was going inside the program, okay.
+
+183
+00:27:06,040 --> 00:27:12,120
+ It can, it to have a couple of videos stop, terminate your process, even it can do anything, okay.
+
+184
+00:27:12,120 --> 00:27:19,320
+ So, now what we can do, we need to bypass this step, right. We need to bypass this step.
+
+185
+00:27:20,040 --> 00:27:27,880
+ Instead of calling anti-write off the lower level AP functions, so what our program needs to do,
+
+186
+00:27:27,880 --> 00:27:38,520
+ it needs to, it needs to directly call the syscall, okay. Through the syscall number, for example,
+
+187
+00:27:38,520 --> 00:27:45,320
+ the syscall number of anti-write off function will be 0x65, this was by it, okay.
+
+188
+00:27:45,320 --> 00:27:52,360
+ Let's call this was a syscall number of anti-write off function, so our program needs to
+
+189
+00:27:52,360 --> 00:28:00,680
+ call the 0x55, and it needs to reach out to the kernel. Instead of calling a function AP function,
+
+190
+00:28:00,680 --> 00:28:07,240
+ you needs to call a syscall number, okay. So, by calling the syscall number, you can easily bypass
+
+191
+00:28:08,280 --> 00:28:21,080
+ EDR by EDR, okay. So, now the EDR doesn't know what was going inside, what was happening inside of the program, okay.
+
+192
+00:28:39,240 --> 00:28:48,040
+ So, you will be reading a syscall, how you got to know what was a syscall number, okay.
+
+193
+00:28:48,040 --> 00:28:57,080
+ So, whenever you started running the application, okay, for application, you need to collect a syscall address,
+
+194
+00:28:57,080 --> 00:29:02,840
+ okay. So, the syscall address will be hiding inside the anti-reall dot-reall function,
+
+195
+00:29:02,840 --> 00:29:08,520
+ so you need to read a syscall from anti-reall dot-reall functions whenever you
+
+196
+00:29:08,520 --> 00:29:17,160
+ whenever you started executing the, whenever your program was in the execution mode, okay.
+
+197
+00:29:17,160 --> 00:29:21,560
+ So, that will be the only method you can
+
+198
+00:29:26,360 --> 00:29:34,200
+ you can easily bypass the EDR, okay. So, this will be the only step.
+
+199
+00:29:34,200 --> 00:29:46,520
+ I hope you have, you have understood explanation about the hooking, so how it will be happening,
+
+200
+00:29:46,520 --> 00:29:52,760
+ okay. So, the last instead of calling the APA function directly, we can use a syscall number,
+
+201
+00:29:53,560 --> 00:30:01,080
+ 0-X-5-5 and we can, it's an example, 0-X-5-5 and we can call the kernel. So, this is the,
+
+202
+00:30:01,080 --> 00:30:06,200
+ you can easily bypass the EDRs without monitoring what you are doing, okay.
+
+203
+00:30:06,200 --> 00:30:16,520
+ So, you need to read the syscall number whenever your program was in the runtime
+
+204
+00:30:18,440 --> 00:30:26,200
+ and you need to call the syscall number and you can that are very short to the kernel,
+
+205
+00:30:26,200 --> 00:30:31,880
+ instead of calling the lower level APA function, okay. So, I hope you have enjoyed this video
+
+206
+00:30:31,880 --> 00:30:36,520
+ and we can see you guys in the next video. Bye-bye.
+
