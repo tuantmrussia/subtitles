@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,000
+ All it brings in this video, we're going to have a look at the set interface and its subclasses.
+
+2
+00:00:05,000 --> 00:00:11,000
+ So first things first, when are you going to use sets now when storing duplicate values is a concern.
+
+3
+00:00:11,000 --> 00:00:14,000
+ That is you do not want duplicate values to be stored.
+
+4
+00:00:14,000 --> 00:00:19,000
+ That's the first criteria for you to decide on what you want to use sets and their subclasses.
+
+5
+00:00:19,000 --> 00:00:24,000
+ And obviously you're not going to use the set interface directly, you're going to use any of its subclasses.
+
+6
+00:00:24,000 --> 00:00:32,000
+ In this video, we're going to have a look at two of those classes that is has set and entry set.
+
+7
+00:00:32,000 --> 00:00:47,000
+ So starting with the has set class, I quickly go into the collections package again, new Java class and let's just call it working with has set.
+
+8
+00:00:47,000 --> 00:00:52,000
+ And let's again have the mean method.
+
+9
+00:00:52,000 --> 00:00:56,000
+ And now what I do is I just have a has set.
+
+10
+00:00:56,000 --> 00:01:02,000
+ Again, as you're seeing from Java to detail, let's just make it with this timer integer only set.
+
+11
+00:01:02,000 --> 00:01:05,000
+ Let's say we want to store IDs, right.
+
+12
+00:01:05,000 --> 00:01:10,000
+ I'll just call it IDs of learners.
+
+13
+00:01:10,000 --> 00:01:12,000
+ That's what we want to store.
+
+14
+00:01:12,000 --> 00:01:14,000
+ Let's say new has set time at syntax.
+
+15
+00:01:14,000 --> 00:01:15,000
+ We're good to go.
+
+16
+00:01:15,000 --> 00:01:20,000
+ This is an integer only set now would not allow duplicates to be stored.
+
+17
+00:01:20,000 --> 00:01:22,000
+ That's the first thing we're looking at sets.
+
+18
+00:01:22,000 --> 00:01:25,000
+ And what brings us to has set, you will know by the end of this video.
+
+19
+00:01:25,000 --> 00:01:33,000
+ So then next let's say set dot add, sorry, we've called it IDs of learners dot add again and interest rates integers.
+
+20
+00:01:33,000 --> 00:01:37,000
+ This copy pasted a few times that we have some data to play around with.
+
+21
+00:01:37,000 --> 00:01:42,000
+ And let's just say 345 1 0 3 2.
+
+22
+00:01:42,000 --> 00:01:44,000
+ Some more numbers.
+
+23
+00:01:44,000 --> 00:01:46,000
+ All right.
+
+24
+00:01:46,000 --> 00:01:55,000
+ So now if you just sound and if you try to print this and say IDs of learners, okay, this would just print it out.
+
+25
+00:01:55,000 --> 00:01:56,000
+ What is in the set.
+
+26
+00:01:56,000 --> 00:02:01,000
+ So you would see that this just stores elements in what order.
+
+27
+00:02:01,000 --> 00:02:04,000
+ Remember the analyst it was in search order with linked list.
+
+28
+00:02:04,000 --> 00:02:10,000
+ It was in search order by index because we could add in between at the start and the add the end as well.
+
+29
+00:02:10,000 --> 00:02:15,000
+ But with a has set you will see it is an unordered unsorted collection in Java.
+
+30
+00:02:15,000 --> 00:02:20,000
+ It's only one of those two classes which are unordered as well as unsorted.
+
+31
+00:02:20,000 --> 00:02:22,000
+ There would be no order that is guaranteed.
+
+32
+00:02:22,000 --> 00:02:24,000
+ You're inserting in 345.
+
+33
+00:02:24,000 --> 00:02:25,000
+ That's the first element.
+
+34
+00:02:25,000 --> 00:02:26,000
+ And the last being 34.
+
+35
+00:02:26,000 --> 00:02:29,000
+ But what you will get is is not guaranteed.
+
+36
+00:02:29,000 --> 00:02:30,000
+ You'll see that's like here.
+
+37
+00:02:30,000 --> 00:02:33,000
+ I'll just go on around this quickly off you go.
+
+38
+00:02:33,000 --> 00:02:34,000
+ It says one.
+
+39
+00:02:34,000 --> 00:02:36,000
+ It looks like it has sorted it.
+
+40
+00:02:36,000 --> 00:02:45,000
+ But let's see one 34, but then one 032, then three 45, six, six, six, seven and all your machines that can be something else.
+
+41
+00:02:45,000 --> 00:02:48,000
+ So the order with the last set is not guaranteed.
+
+42
+00:02:48,000 --> 00:02:49,000
+ Right.
+
+43
+00:02:49,000 --> 00:02:51,000
+ So that is unordered unsorted.
+
+44
+00:02:51,000 --> 00:02:54,000
+ And let's say you try to duplicate values.
+
+45
+00:02:54,000 --> 00:02:57,000
+ IDs of learners dot error gain.
+
+46
+00:02:57,000 --> 00:03:00,000
+ Let's say I had a number which already exists.
+
+47
+00:03:00,000 --> 00:03:01,000
+ I'll say one 032.
+
+48
+00:03:01,000 --> 00:03:04,000
+ This would not be added, but it would not be an error.
+
+49
+00:03:04,000 --> 00:03:12,000
+ I'll say no error, but wouldn't be right.
+
+50
+00:03:12,000 --> 00:03:13,000
+ All right.
+
+51
+00:03:13,000 --> 00:03:14,000
+ Let's have a look at this.
+
+52
+00:03:14,000 --> 00:03:15,000
+ We'll just get it once.
+
+53
+00:03:15,000 --> 00:03:23,000
+ And it says one 34, one 032 only once, three 45, six, six, six, seven and intelligence and tell it intelligent by its name.
+
+54
+00:03:23,000 --> 00:03:25,000
+ You hover on the says that duplicate set element.
+
+55
+00:03:25,000 --> 00:03:26,000
+ Right.
+
+56
+00:03:26,000 --> 00:03:27,000
+ So no errors.
+
+57
+00:03:27,000 --> 00:03:33,000
+ And it also gives you the return that has Boolean so that you can check it as I did in the last video with an if if this was added.
+
+58
+00:03:33,000 --> 00:03:34,000
+ Let's say you're very quiet.
+
+59
+00:03:34,000 --> 00:03:35,000
+ You want to do something.
+
+60
+00:03:35,000 --> 00:03:37,000
+ If not added, you want to let's say print it out.
+
+61
+00:03:37,000 --> 00:03:40,000
+ It was not added, but just doesn't doesn't work.
+
+62
+00:03:40,000 --> 00:03:47,000
+ Otherwise, if you want to traverse it, go on and use the enhanced for loop or the for each whatever way you prefer.
+
+63
+00:03:47,000 --> 00:03:57,000
+ So and and the other thing here is that is now what would what would how or when would you decide to use a high set.
+
+64
+00:03:57,000 --> 00:04:04,000
+ The first thing is again, you want to, you want the duplicate values to not be stored.
+
+65
+00:04:04,000 --> 00:04:05,000
+ All right.
+
+66
+00:04:05,000 --> 00:04:06,000
+ That's the first requirement.
+
+67
+00:04:06,000 --> 00:04:07,000
+ The second is has set.
+
+68
+00:04:07,000 --> 00:04:13,000
+ When your requirement is you do not, you're not concerned with the order in which the elements would be stored.
+
+69
+00:04:13,000 --> 00:04:15,000
+ You're not concerned in a for sorting.
+
+70
+00:04:15,000 --> 00:04:17,000
+ So that is when you should decide using a has set.
+
+71
+00:04:17,000 --> 00:04:21,000
+ It's an unordered and unsorted collection.
+
