@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:06,320
+ In this lesson, you will style the calculator to give it a clean, modern look.
+
+2
+00:00:06,320 --> 00:00:12,460
+ So, we will keep the key part on logic exactly the same, we will only focus on improving
+
+3
+00:00:12,460 --> 00:00:13,460
+ the design.
+
+4
+00:00:13,460 --> 00:00:18,820
+ First, you will set a different background for the page and place the calculator in the
+
+5
+00:00:18,820 --> 00:00:23,380
+ centre of the screen, both vertically and horizontally.
+
+6
+00:00:23,380 --> 00:00:28,900
+ The calculator itself will also have a different background, a bigger size and some padding
+
+7
+00:00:28,900 --> 00:00:32,800
+ and soft shadow, to make it look nicely.
+
+8
+00:00:32,800 --> 00:00:40,500
+ Next, we will start improving the buttons, so each of them will be circular, with text
+
+9
+00:00:40,500 --> 00:00:46,040
+ or symbol perfectly centered mode as it is currently, so it will be much better.
+
+10
+00:00:46,040 --> 00:00:52,080
+ So, we will also add some hover effects for the buttons and we will change it depend on
+
+11
+00:00:52,080 --> 00:00:53,080
+ the button time.
+
+12
+00:00:53,080 --> 00:00:58,480
+ For example, it will depend on the control button, it is a digit or it is an operator
+
+13
+00:00:58,480 --> 00:01:02,280
+ button, all of them will have different background colors.
+
+14
+00:01:02,280 --> 00:01:07,440
+ So, by the end of this lesson, you calculate the view look professional and visually
+
+15
+00:01:07,440 --> 00:01:10,960
+ balanced and keeps the same punch mode.
+
+16
+00:01:10,960 --> 00:01:13,000
+ So, I suggest let it get started.
+
+17
+00:01:13,000 --> 00:01:19,320
+ Let's switch to our compiler and I will present you the first one, I prepared.
+
+18
+00:01:19,320 --> 00:01:26,360
+ So, I first ask, keep the keypad exactly the same as it has.
+
+19
+00:01:26,360 --> 00:01:34,840
+ Use a light page background and dark calculator cards background, so we will have the opposite
+
+20
+00:01:34,840 --> 00:01:41,360
+ of the background, we will be, it will be state dark, but it will dark grey background and
+
+21
+00:01:41,360 --> 00:01:47,720
+ the calculator, sorry, the page background will be white and the calculator will be still
+
+22
+00:01:47,720 --> 00:01:51,180
+ same dark grey background.
+
+23
+00:01:51,180 --> 00:01:59,440
+ We will center the calculator as it all will set the fixed widths as 480 pixels, which
+
+24
+00:01:59,440 --> 00:02:08,240
+ is a bit bigger than we will add some patterns, some rounded corners, some soft shadow and
+
+25
+00:02:08,240 --> 00:02:09,240
+ etc.
+
+26
+00:02:09,240 --> 00:02:16,480
+ So, I will use an ancient mode to exactly apply changes and let's see what you will get
+
+27
+00:02:16,480 --> 00:02:17,960
+ at the result.
+
+28
+00:02:17,960 --> 00:02:26,320
+ So, it will take some time to send your start to managing some CSS, also please keep in
+
+29
+00:02:26,320 --> 00:02:32,720
+ mind that if you will use a different model, you might have a better result, for example,
+
+30
+00:02:32,720 --> 00:02:40,640
+ if you use the cloud sonnet or some other models, like you might have the opening eye, another
+
+31
+00:02:40,640 --> 00:02:48,080
+ model and of course, to use the models you need to have a plate plan, but you will have
+
+32
+00:02:48,080 --> 00:02:57,360
+ a better result, so indeed, okay, it reads in the CSS file just to analyze what styles
+
+33
+00:02:57,360 --> 00:03:07,760
+ to be already have here and let me close this preview, and in a while it will suggest
+
+34
+00:03:07,760 --> 00:03:19,560
+ some changes, so let's wait a bit.
+
+35
+00:03:19,560 --> 00:03:27,920
+ Also, if you use one of the premium model, you might get the faster results, so it's for
+
+36
+00:03:27,920 --> 00:03:28,920
+ short.
+
+37
+00:03:28,920 --> 00:03:35,000
+ Okay, we have some changes, it was changed, we changed only the one file, you see all
+
+38
+00:03:35,000 --> 00:03:41,760
+ the files were changed, if we click, we'll see the red one, what was removed and the blue
+
+39
+00:03:41,760 --> 00:03:50,320
+ one, what was added, okay, I'll click, keep all the changes and we'll switch to application,
+
+40
+00:03:50,320 --> 00:03:59,080
+ when I see it looks better, almost better, so we'll fix the buttons in the next prompt,
+
+41
+00:03:59,080 --> 00:04:04,960
+ what else I suggest you just to fix the layout because it's not centered, so I will say
+
+42
+00:04:04,960 --> 00:04:21,860
+ it's, wait or up, it's not centered vertically, exit, so sometimes the guy doesn't keep
+
+43
+00:04:21,860 --> 00:04:30,520
+ all details, sometimes forget something or just do mistakes, so we always need to validate
+
+44
+00:04:30,520 --> 00:04:44,760
+ it and be ready to write some additional prompt to fix it, okay, now we see, he applied
+
+45
+00:04:44,760 --> 00:04:51,600
+ some minimal hate for the application, it should be fixed, so it's centered now, it looks
+
+46
+00:04:51,600 --> 00:05:00,440
+ much better, okay, great, let's now start with our next prompt, I will keep all the changes
+
+47
+00:05:00,440 --> 00:05:06,240
+ you close the index CSS, and in the next prompt we'll work with the buttons, we'll make
+
+48
+00:05:06,240 --> 00:05:14,260
+ them more beautiful, I'd like to make all buttons circular and the same size, just to be sure
+
+49
+00:05:14,260 --> 00:05:20,960
+ AI doesn't broke it, I will center the text of symbol inside each button, I will also
+
+50
+00:05:20,960 --> 00:05:28,200
+ range buttons in a grid, same as we have, I just repeat it for AI to doesn't broke it because
+
+51
+00:05:28,200 --> 00:05:35,080
+ it can, I will equal spacing between them, so that it will carry about the position in
+
+52
+00:05:35,080 --> 00:05:42,480
+ the buttons, not like we have, but like a strange it for the full width, and I will ask
+
+53
+00:05:42,480 --> 00:05:47,200
+ use equal pattern for consistent look at some however effects, based on time, for example
+
+54
+00:05:47,200 --> 00:05:54,200
+ the light gray for contour buttons, we have the contour button as AC, backspace, equal
+
+55
+00:05:54,200 --> 00:06:01,840
+ and others, then we have orange for operator buttons, just operator and the gray for the
+
+56
+00:06:01,840 --> 00:06:11,480
+ digits, okay, let's ask to implement the changes, you can always use JGBT to help you improve
+
+57
+00:06:11,480 --> 00:06:20,200
+ your prompts, I did it always, especially if it's a first prompt, you'd like to write it
+
+58
+00:06:20,200 --> 00:06:26,680
+ in details, you can share a screenshot, a JGBT or write it directly, and it will help to
+
+59
+00:06:26,680 --> 00:06:33,880
+ improve and add more details, and then like AI will understand you better, okay, we have
+
+60
+00:06:33,880 --> 00:06:40,960
+ some changes, but it's still working, okay, it adds some animations, some backgrounds, okay,
+
+61
+00:06:40,960 --> 00:06:51,920
+ I am curious how it looks like, yeah, but let's wait a bit, if it's applied, all the changes,
+
+62
+00:06:51,920 --> 00:07:01,280
+ okay, we see, all the changes was applied, yeah, we have a background, it's too big,
+
+63
+00:07:01,280 --> 00:07:14,720
+ I would say, so let's ask make buttons, make buttons a bit smaller, a bit more, what else?
+
+64
+00:07:14,720 --> 00:07:28,160
+ So I guess the background just looks fine, just, okay, let's ask to make buttons a bit
+
+65
+00:07:28,160 --> 00:07:40,800
+ smaller, just, because it's too big buttons, too big spacing, okay, it did it, so it looks
+
+66
+00:07:40,800 --> 00:07:46,640
+ much better, so we have beautiful buttons, okay, and I will see you in the next lesson,
+
+67
+00:07:46,640 --> 00:07:53,640
+ where we'll start with the formatting of the numbers and some other things which are really
+
+68
+00:07:53,640 --> 00:07:55,640
+ important for the users.
+
+69
+00:07:55,640 --> 00:07:57,640
+ Okay, see you in the next lesson.
+
