@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:09,660
+ Hi, now our application use live exchange rates, but we want to improve some user experience.
+
+2
+00:00:09,660 --> 00:00:16,800
+ In that lesson, we will ask for sort of to help us make UI smarter, more beautiful with
+
+3
+00:00:16,800 --> 00:00:22,320
+ better experience, and this improvements will make the app feel more professional, friendly
+
+4
+00:00:22,320 --> 00:00:25,960
+ and reliable, and we will ask AI to make these changes.
+
+5
+00:00:25,960 --> 00:00:35,560
+ So, the first change I'd like to make is a limit number of digits in amount, so I would
+
+6
+00:00:35,560 --> 00:00:41,200
+ like to limit it in app 12 and display some message right here.
+
+7
+00:00:41,200 --> 00:00:49,920
+ So, the next change will be, I want to, for B to choose in two same currencies, because
+
+8
+00:00:49,920 --> 00:00:55,800
+ no sense, to compare them, we will make them disabled.
+
+9
+00:00:55,800 --> 00:01:02,280
+ And next one, I'd like to extend the currencies we support, so we will fetch available
+
+10
+00:01:02,280 --> 00:01:10,600
+ currencies from front footer API, and we'll show them, okay, we have some more even.
+
+11
+00:01:10,600 --> 00:01:17,360
+ Yeah, so it's when the API doesn't work, we display some error message here.
+
+12
+00:01:17,360 --> 00:01:26,320
+ Okay, let's first start with the limit in the amount, so what we will do, user should
+
+13
+00:01:26,320 --> 00:01:33,000
+ not enter extremely large amounts, because it can break logic, it's not real use case,
+
+14
+00:01:33,000 --> 00:01:39,480
+ or even can confuse the layout, so you see it's not believable, or it can be displayed
+
+15
+00:01:39,480 --> 00:01:48,600
+ like this, so if you introduce a safe limit as to how much money, how much, how the big
+
+16
+00:01:48,600 --> 00:01:56,040
+ amount can be, so the message explains this rule right here, this will keep your eye clean
+
+17
+00:01:56,040 --> 00:02:05,040
+ and avoid some unexpected behavior, so let's type a prompt, you can find a prompt in one
+
+18
+00:02:05,040 --> 00:02:10,640
+ of the last sound with all the materials, I will ask limit the amount input to maximum
+
+19
+00:02:10,640 --> 00:02:16,640
+ to our digits, before that's the most, and also show small info message below the input
+
+20
+00:02:16,640 --> 00:02:22,600
+ that explains the limit to the user, I'll still use an engine, oh, let's open the
+
+21
+00:02:22,600 --> 00:02:34,840
+ amount input and see how it will work, we can normally should work in this component, might
+
+22
+00:02:34,840 --> 00:02:53,800
+ be a test, so let's see, let's see how you handle it, I see here you can use the maximum
+
+23
+00:02:53,800 --> 00:03:07,120
+ message, okay, that's interesting approach, I was in a kit building with the maximum length,
+
+24
+00:03:07,120 --> 00:03:15,960
+ using HTML attribute, what might be this approach work best better, oh, let's try to make
+
+25
+00:03:15,960 --> 00:03:22,960
+ it bigger, oh, might be it's not yet finished, now it's finished, okay, oh, let's save
+
+26
+00:03:22,960 --> 00:03:29,320
+ it, and refresh page, yeah, we need to start our application, because I did it commit
+
+27
+00:03:29,320 --> 00:03:38,960
+ before, you can see always up to date code source, I will use NPM run dev, and we'll refresh
+
+28
+00:03:38,960 --> 00:03:48,080
+ my page, and now you'll try to enter digits, yeah, you see it's limited, how much, 1, 2,
+
+29
+00:03:48,080 --> 00:04:04,480
+ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, okay, but I will do like this, if I will be right
+
+30
+00:04:04,480 --> 00:04:11,080
+ to target, yeah, it's most, also not allowed, yeah, okay, it's really smart, and we see this
+
+31
+00:04:11,080 --> 00:04:20,000
+ message, okay, with this change, we find, I don't click keep all, the next one, I will
+
+32
+00:04:20,000 --> 00:04:27,640
+ ask to disable the same parenthesis, like for example, if we, from this list, we shouldn't
+
+33
+00:04:27,640 --> 00:04:32,480
+ be able to choose euro, because it's selected here, and from this list, we shouldn't
+
+34
+00:04:32,480 --> 00:04:40,880
+ be able to select power, used it, because it's already selected, so it doesn't make sense
+
+35
+00:04:40,880 --> 00:04:48,800
+ to user, this will prevent some error and create a pretty better experience, I also prepared
+
+36
+00:04:48,800 --> 00:04:56,120
+ some prompt, let's switch to, and I ask, it's able to select in the same parent in
+
+37
+00:04:56,120 --> 00:05:02,680
+ both drop downs, if user selected from currency, disable the same option in to drop down,
+
+38
+00:05:02,680 --> 00:05:07,640
+ and do the opposite as well, that's was, I was explaining to you, make sure users can only
+
+39
+00:05:07,640 --> 00:05:13,520
+ choose two different currencies at all the time, okay, let's ask the implemented, I think
+
+40
+00:05:13,520 --> 00:05:23,040
+ it will change the currency select, and might be also the application dot test fix, our main
+
+41
+00:05:23,040 --> 00:05:29,840
+ file where we dispose the layout, okay, let's wait a bit till he will apply changes,
+
+42
+00:05:29,840 --> 00:05:37,560
+ so he's changing the select, he added disabled quotes, so when we go disable this code,
+
+43
+00:05:37,560 --> 00:05:45,760
+ okay, that's fine, what else he will update, he will update his application, and disabled
+
+44
+00:05:45,760 --> 00:05:53,000
+ quotes is really easy, he already has his values, okay, let's now update page, and
+
+45
+00:05:53,000 --> 00:05:59,720
+ I will try to choose use them is disabled, it's fine, and from the front we are not able
+
+46
+00:05:59,720 --> 00:06:10,240
+ to choose and the error, so it's great, as we'd like, I will click keep changes, and now
+
+47
+00:06:10,240 --> 00:06:17,840
+ we'll implement the last improvement, we'll ask to support the more currencies, instead
+
+48
+00:06:17,840 --> 00:06:24,960
+ of using a fixed list of our currencies, our option to support much more currencies might
+
+49
+00:06:24,960 --> 00:06:31,640
+ be all available currencies, we'll loss this list dynamically from the front footer API,
+
+50
+00:06:31,640 --> 00:06:39,240
+ I suppose it should have some API to display all available currencies, let's search, yes,
+
+51
+00:06:39,240 --> 00:06:48,560
+ it has an API for all available currencies, yeah, I should get all of them, and then display,
+
+52
+00:06:48,560 --> 00:06:55,240
+ what else do we generate also, do we need to generate a mod just for those currencies,
+
+53
+00:06:55,240 --> 00:07:00,240
+ I guess it should be possible on a currency port, so yeah, I should figure out how to do
+
+54
+00:07:00,240 --> 00:07:09,040
+ it, for us, and I already have a prompt, let's paste it, so I ask dynamically
+
+55
+00:07:09,040 --> 00:07:16,340
+ load all supported currencies from front footer API and display dynamically, dynamically
+
+56
+00:07:16,340 --> 00:07:22,240
+ generate like a mod just for each currency, remove all mock data and replace it, it will
+
+57
+00:07:22,240 --> 00:07:28,560
+ be a real data from API, but we don't have a dead code, never heard code currency flag
+
+58
+00:07:28,560 --> 00:07:34,520
+ or modules generated dynamically, please, and if an emoji cannot be generated, show
+
+59
+00:07:34,520 --> 00:07:45,480
+ it without emoji just a currency code, so let's ask and see the result, all like the structure
+
+60
+00:07:45,480 --> 00:07:53,120
+ of application is really good, it's lit up by components, it's really easy to track the
+
+61
+00:07:53,120 --> 00:07:59,840
+ changes, because normally if you need to handle the limit of the amount, we do it in the
+
+62
+00:07:59,840 --> 00:08:05,640
+ amount component, if we need to do something with currency select, we do it inside of it,
+
+63
+00:08:05,640 --> 00:08:24,920
+ it's really good architecture, okay, let's wait, so yeah, it's changing the currency
+
+64
+00:08:24,920 --> 00:08:37,720
+ select, we would change, we update some values, interesting, yeah, because you don't cannot
+
+65
+00:08:37,720 --> 00:08:43,800
+ predict the currency code, so that's why just drink, because we get them from API, and what
+
+66
+00:08:43,800 --> 00:09:01,560
+ else is updating the application, what you're updating, they show me, I'm interesting, okay,
+
+67
+00:09:01,560 --> 00:09:14,440
+ we see changes, we, in use effect, we face list of verbal currencies, you need a mass in
+
+68
+00:09:14,440 --> 00:09:22,840
+ application file, so we can ask him to move it to details, order, because it's not really
+
+69
+00:09:22,840 --> 00:09:33,120
+ good to have this application, to have this, have this function right here, maybe because
+
+70
+00:09:33,120 --> 00:09:39,840
+ he started really good with splitting components, but he did a mass now in the main file,
+
+71
+00:09:39,840 --> 00:09:47,160
+ hey, he finished an update, he also updates the rates, yes, I have to stream, okay, let's
+
+72
+00:09:47,160 --> 00:10:01,520
+ click, keep all, I'll refresh my page, so we now have more currencies, okay, all of them
+
+73
+00:10:01,520 --> 00:10:09,480
+ have a module, so let's check how we generate the modules, the application test, a lot
+
+74
+00:10:09,480 --> 00:10:21,960
+ of symbols, make more currency, okay, define somehow the region, okay, I'm not going to
+
+75
+00:10:21,960 --> 00:10:30,560
+ dive into it, oh, let's try to convert, you know, rate reason pound to, for example, I don't
+
+76
+00:10:30,560 --> 00:10:46,520
+ know, we have to put it so what, what's the rate, okay, if it like 500, yeah, it's updated,
+
+77
+00:10:46,520 --> 00:10:55,600
+ okay, I see a few more improvements, but we'll make them in the next person, so and see
+
+78
+00:10:55,600 --> 00:11:02,240
+ you, for now, with done, we already support a lot of currencies, it's really great, we support
+
+79
+00:11:02,240 --> 00:11:09,640
+ limited number of currencies because they come from European Central Bank, if you'd like
+
+80
+00:11:09,640 --> 00:11:15,720
+ support more currencies, you of course used another API with API key, okay, see you in the next
+
+81
+00:11:15,720 --> 00:11:18,260
+ So that's not what we will do more improvements.
+
