@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:15,000
+Xây dựng trên đầu video cuối cùng nơi chúng tôi thảo luận về khái niệm của một hạt đậu Java, bây giờ là thời gian để viết các mã mà thực hiện khái niệm đó và bạn sẽ thấy vào cuối video này, tại sao tôi nói nó, nó là, bạn sẽ tìm thấy nó omnipresent trong hệ sinh thái Java.
+
+2
+00:00:15,000 --> 00:00:31,000
+Vì vậy chúng tôi sẽ chỉ cần đi trước và trong, hãy nói cho một sự thay đổi, chúng tôi sẽ chỉ cần tạo ra lớp mới này trong các chấm làm việc, phải không? Và tôi sẽ chỉ gọi nó là hạt đậu Java, bên phải.
+
+3
+00:00:31,000 --> 00:00:47,000
+Hãy tối đa hóa điều này cho bạn một lần nữa và một lần nữa có phương pháp chính truyền thống và lần này chúng tôi sẽ chỉ lấy một ví dụ và trong video trước, chúng tôi đã lấy một ví dụ của một sinh viên, nhưng nó có thể chỉ là bất cứ điều gì đến với tâm trí của bạn hoặc bất cứ điều gì bạn đang làm việc với, quyền.
+
+4
+00:00:47,000 --> 00:01:02,000
+Bây giờ, hãy lấy một ví dụ về điện thoại thông minh. Giả sử đây là thực thể mà chúng ta đang đối mặt, bởi vì mọi lúc và sau đó bất cứ khi nào bạn viết logic kinh doanh của mã của bạn, bất cứ ứng dụng nào bạn đang viết, sẽ có thực thể, phải không.
+
+5
+00:01:02,000 --> 00:01:18,000
+Sẽ có những thực thể như sinh viên, sẽ có một thực thể như, ví dụ như, nếu bạn làm việc cho một hệ thống quản lý bệnh viện, sẽ có thực thể như bác sĩ, thư ký, tiếp tân, kế toán, bệnh nhân và tất cả những thứ đó. Nếu bạn làm việc cho một hệ thống quản lý trường học, sẽ có sinh viên, giáo viên,
+
+6
+00:01:18,000 --> 00:01:34,000
+Các nhà quản trị, kế toán và hiệu trưởng, ví dụ như, và hãy lấy một ví dụ mà tôi vừa nghĩ đến ngay bây giờ, nhưng bạn có thể lấy bất cứ ví dụ nào phù hợp với hoàn cảnh của bạn. Bây giờ, hãy nói về điện thoại thông minh.
+
+7
+00:01:34,000 --> 00:02:03,000
+Và tôi sẽ chỉ nói, ví dụ, đó là riêng tư hoặc đầu tiên mà không có riêng tư, tôi sẽ tiết kiệm một thời gian dài, hãy nói rằng tôi đang ở đây số, phải.
+
+8
+00:02:03,000 --> 00:02:18,000
+Tôi sẽ chỉ nói một số duy nhất, bên phải. Điều đó là duy nhất đối với mọi điện thoại thông minh và sau đó chúng tôi sẽ có một chuỗi tên và chúng tôi sẽ có một nhà sản xuất dây, bên phải.
+
+9
+00:02:18,000 --> 00:02:32,000
+Hiển nhiên, điện thoại thông minh có những tính chất khác như nội gián, đúng không, và những tính chất khác như kho lưu trữ là gì và những gì là máy ảnh, màn hình mật độ điểm ảnh, nhưng bây giờ hãy giữ cho nó ngắn gọn, đúng không, để bạn dễ hiểu hơn.
+
+10
+00:02:32,000 --> 00:02:51,000
+Và những gì chúng tôi sẽ làm là vì chúng tôi đang rơi vào quy ước của một bánh xe Java, chúng tôi cần điện thoại thông minh này để hành động như chúng tôi Java bây giờ, vì vậy những gì tôi sẽ làm là tôi chỉ tạo ra tất cả các khía cạnh.
+
+11
+00:02:51,000 --> 00:03:04,000
+Vì vậy, đó là bước đầu tiên mà chúng tôi đã theo dõi dựa trên video trước, chúng tôi đã giữ các biến thể như riêng tư, có nghĩa là bất cứ ai, không ai có thể truy cập các biến số từ bên ngoài, bên phải.
+
+12
+00:03:04,000 --> 00:03:25,000
+Chúng chỉ có thể truy cập trong lớp học được tuyên bố bằng hình ảnh, quay trở lại đoạn phim nơi chúng tôi đã thảo luận về phạm vi và truy cập các quang phổ, đúng không. Bây giờ, bất động sản tiếp theo, đó là, chúng ta nên có một tập hợp các phương pháp mà nên có để làm cho các biến thể có thể tiếp cận, đúng không.
+
+13
+00:03:25,000 --> 00:03:39,000
+Và đây là một tập hợp các phương pháp, bạn nên có một nhà thu và một tập hợp của mỗi biến thể của Java và chúng tôi có bốn ở đây trong trường hợp của bạn, nó có thể ba hoặc mười biến số, do đó, bạn sẽ có những
+
+14
+00:03:39,000 --> 00:03:53,000
+Số nhà thu nhập được thiết lập như một đàn, nhưng chúng ta nên có một bộ thu thập cho mỗi biến số và bắt đầu với nếu tôi làm điều đó cho bạn, tôi sẽ nói ví dụ, cú pháp cho việc viết một nhà ngoại ô là chúng ta nói công khai, và nó nên có một loại trở lại.
+
+15
+00:03:53,000 --> 00:04:05,000
+Kiểu trả lại, kiểu trả lại nên giống với biến số đó, ví dụ như, bây giờ chúng tôi đang viết các getter cho số duy nhất độc nhất, vì vậy tôi sẽ nói công chúng dài, và bạn sẽ nói.
+
+16
+00:04:05,000 --> 00:04:18,000
+Hãy bắt đầu với các thiết lập viên thay vì, và những gì là cú pháp cho các thiết lập văn bản, bạn nên có loại trở lại là rộng, tại sao, bởi vì chúng tôi đang thiết lập những điều nó không trả lại bất cứ điều gì và những phương pháp này không bao giờ nên trả lại bất cứ điều gì.
+
+17
+00:04:18,000 --> 00:04:47,000
+Nó là một tập màu trắng và nó nên bắt đầu với các chữ cái đặt, phải, và nhìn thấy thông minh hành vi thông minh của thông minh chỉ nói, có phải bạn tạo ra nó cho tên riêng biệt số nhà sản xuất chỉ cung cấp cho chúng tôi các trí thông minh, chúng tôi nói đặt số độc nhất, phải, nó nên được trong trường hợp cáp, xem nó ở đây bạn nhỏ và vốn, nhưng bởi vì bạn đã đặt với nó như nhỏ như bạn và trong vốn, đó là thiết lập cho số duy nhất độc nhất.
+
+18
+00:04:47,000 --> 00:04:56,000
+Và nó nên mất một tham số chính xác của cùng loại như của biến, bên phải, và ở đây nó là một dài, vì vậy chúng tôi sẽ nói.
+
+19
+00:04:56,000 --> 00:05:24,000
+Lâu dài, tên nên giống nhau rõ ràng là cấp độ địa phương bạn biết có là không có xung đột và sau đó chúng ta nên chỉ cần vẽ chúng tôi sẽ chỉ này số liên đoàn duy nhất chấm như chúng tôi đã làm trong cuối cùng.
+
+20
+00:05:24,000 --> 00:05:46,000
+Chúng tôi đang tạo ra nó cho con số duy nhất dài, hãy nói rằng nhận được cho tôi những gợi ý tôi sẽ nói có được số và nó không nên tham số bởi vì nhớ các đối số của một thiết lập mà là nhận được bạn chỉ đọc đúng đây là cho việc ghi này là người đọc tập viết của việc đọc nên nó không nên có một tham số, nhưng chúng tôi nên trả lại rằng.
+
+21
+00:05:46,000 --> 00:06:01,000
+Hãy nói rằng trả lại số dấu chấm này, nhưng bạn có thể chỉ cần nói trả lại số duy nhất và làm việc dựa trên video về điều này đúng, nhưng tôi muốn được rõ ràng tôi nói rõ ràng trả lại này bởi vì đây không phải là một biến địa phương nó thuộc về đối tượng của lớp học này tôi sẽ nói rằng này dấu chấm.
+
+22
+00:06:01,000 --> 00:06:22,000
+Vì vậy, setter và getter sẵn sàng cho số độc nhất vô nhị tương tự tôi cần để tạo cho tên như vậy tôi sẽ chỉ cần đi trước một lần nữa nó nên được công khai như bạn đã biết có một thiết lập và thời gian này, tại sao vì chúng tôi đang thiết lập tôi sẽ nói tên đặt và nên có một biến số tương tự như một tham số tôi sẽ nói tên chuỗi và sau đó bạn sẽ nói.
+
+23
+00:06:22,000 --> 00:06:40,000
+Cái tên chấm này. Được rồi, và tương tự như vậy bạn nên có gtor cho nó tôi sẽ nói công khai thời gian này tôi quay trở lại lần này những gì nó nên được đoán đúng dây vì vậy tôi sẽ nói chuỗi.
+
+24
+00:06:40,000 --> 00:07:04,000
+Đó là không gian bổ sung và lần này nó nên bắt đầu với một nhận được tôi sẽ nói có tên và không nên mất một tham số, nhưng nên trả lại giá trị tôi sẽ nói trả lại tên chấm này đúng vì vậy hãy có được một bộ đặt tên cho số và bây giờ điều này là trái cho sản xuất và RAM và chúng tôi có thể chỉ cần sao chép các mã hoặc thậm chí tốt hơn sử dụng.
+
+25
+00:07:04,000 --> 00:07:13,000
+Những câu hỏi với những thẻ căn cước như thông minh và tôi sẽ chỉ nói cho các bạn biết đường tắt để xem tôi sẽ xóa nó.
+
+26
+00:07:13,000 --> 00:07:24,000
+Bởi vì tất cả các ID hiện đại ngày họ biết bạn sử dụng Java đậu rất nhiều như tôi đã nói hàng ngày đó là lý do tại sao họ đã xây dựng hỗ trợ để tạo ra những người xếp đặt tất cả những gì bạn phải làm là bạn nói nhấn chuột phải.
+
+27
+00:07:24,000 --> 00:07:36,000
+Tôi chỉ nói rằng tạo ra hoặc chỉ cần nói kiểm soát và như là nói với bạn nhìn thấy chỉ nhấn kiểm soát và nói get và thiết lập. Phải, nó đi vào và nói bạn muốn trở thành gì.
+
+28
+00:07:36,000 --> 00:07:53,000
+Tạo ra bộ tập hợp chỉ cho con số duy nhất tôi nói là mới tất cả bốn trong số họ nên chỉ cần chọn bốn trong số họ trên màn hình của bạn tên duy nhất sản xuất RAM nó cũng biết loại của họ và bạn sẽ nói rằng nó có được một mẫu tôi sẽ giữ nó hoặc mặc định thông minh tôi sẽ nói.
+
+29
+00:07:53,000 --> 00:08:07,000
+Và bạn đi xem xét rằng có được con số độc nhất vô nhị xem trở lại con số duy nhất này đặt một số duy nhất với số duy nhất tương tự với số duy nhất này có tên đặt được thiết lập này để sản xuất và có được RAM và đặt RAM.
+
+30
+00:08:07,000 --> 00:08:22,000
+Tôi sẽ chỉ hoàn tác điều này và hãy làm điều đó một lần nữa cho bạn kiểm soát và tôi sẽ nói rằng xin vui lòng tạo ra một bộ đặt cho tôi cho tất cả các người trong số họ nó nhập và tắt bạn đi các setters đã sẵn sàng và bây giờ điểm thứ ba nếu bạn nhớ những gì là nó nên có một đối số.
+
+31
+00:08:22,000 --> 00:08:30,000
+Vì vậy, để làm điều đó một lần nữa tôi sẽ nói kiểm soát và bạn sẽ nói xây dựng tôi không cần điều này quyền tôi sẽ nói chọn không có gì nói.
+
+32
+00:08:30,000 --> 00:08:41,000
+Hoặc rõ ràng là sẽ đi trước và tạo ra điều này như công chúng là tùy chọn cho một nhà xây dựng và tôi sẽ nói đó là một điện thoại thông minh.
+
+33
+00:08:41,000 --> 00:08:58,000
+Ngoài ra, bạn có thể có một đối số là một tham số được xem xét nhưng đó là lựa chọn của bạn đó là yêu cầu của bạn nhưng ít nhất bạn nên có một đối số được xem xét tại tất cả các thời điểm cho lớp học này được xem xét như Java là bởi vì nhớ chúng tôi đang theo một hội nghị và bây giờ đây là sẵn sàng.
+
+34
+00:08:58,000 --> 00:09:11,000
+Chúng tôi đã có một bộ lập trình viên sẵn sàng và chúng tôi không có người xây dựng lập luận điều này bây giờ được xem là một công việc của bởi vì nó theo tất cả các kỳ hội nghị đúng và.
+
+35
+00:09:11,000 --> 00:09:27,000
+Nhưng đó là một công việc của anh ta tại sao chúng tôi sử dụng nó như tôi đã nói với bạn trong dự án của bạn rằng bạn sẽ làm việc trên nói chung họ sẽ được bao gồm họ sẽ được dựa trên các lớp kiến trúc đúng hoặc MVC rằng bạn sẽ có một lớp khác nhau để giữ tất cả các lớp xem của bạn.
+
+36
+00:09:27,000 --> 00:09:48,000
+Bạn sẽ có một lớp khác để giữ cơ sở dữ liệu riêng của bạn bạn sẽ có một lớp mà sẽ được chính xác khi lớp dịch vụ đúng và làm thế nào các lớp đó làm cho giao tiếp họ gửi dữ liệu như với các nhà truyền dữ liệu đúng những gì là những nhà truyền tải dữ liệu này là lớp học ngay lập tức hành động như người vận chuyển dữ liệu đúng.
+
+37
+00:09:48,000 --> 00:10:06,000
+Họ gửi thông tin của họ từ lớp này sang lớp khác hoặc từ phương pháp khác vì vậy hãy nghĩ về nó xem hãy xem bạn phải gửi một đối tượng điện thoại thông minh từ một nơi khác nó có bốn tính chất vì vậy bạn sẽ phải có bốn tính chất trong phương pháp đó để gửi nó đúng.
+
+38
+00:10:06,000 --> 00:10:18,000
+Chỉ có bốn tính chất ở đây nhưng bạn biết điện thoại thông minh bạn đang xem video này hoặc những gì bạn có tại nhà bạn đúng bao nhiêu thuộc tính đến với bạn có thể năm 2013 50 tính chất độc đáo.
+
+39
+00:10:18,000 --> 00:10:35,000
+Đối với điện thoại thông minh của bạn vì vậy, bạn mong đợi chúng tôi viết 50 tham số hoặc 30 tham số với phương pháp và sau đó vượt qua chúng mặc dù chúng tôi chỉ tóm tắt rằng trong chỉ một đối tượng đó là vẻ đẹp của lớp học là đối tượng đúng và tôi sẽ làm điều đó cho bạn một thời gian ngắn.
+
+40
+00:10:35,000 --> 00:10:52,000
+Một khi chúng tôi đi đến một khái niệm khác, tôi sẽ sử dụng chúng như là các nhà mang dữ liệu nhưng bây giờ chỉ cần suy nghĩ về những hạt đậu Java như những gì tôi gọi là lớp học mang dữ liệu hoặc chỉ là các nhà mang dữ liệu hoặc các đối tượng chuyển giao dữ liệu.
+
+41
+00:10:52,000 --> 00:11:06,000
+Đó là DTO hoặc thậm chí ở một số nơi nó đi vào có được gọi là mô hình bên phải nhưng tôi sẽ thích gọi họ là người đưa dữ liệu bởi vì họ mang dữ liệu hoặc dữ liệu chuyển đồ vật bởi vì họ chuyển dữ liệu từ nơi này sang nơi khác.
+
+42
+00:11:06,000 --> 00:11:19,000
+Phải và đó là khái niệm của một hạt đậu Java và bây giờ tất cả những gì bạn cần làm là nếu bạn muốn truy cập nó từ một nơi nào đó là hãy nói rằng tôi đang truy cập từ một lớp khác nhau gọi là chứng minh hạt đậu Java vì vậy tôi sẽ chỉ tạo ra một đối tượng đám mây như một điện thoại thông minh.
+
+43
+00:11:19,000 --> 00:11:25,000
+Để tôi gọi nó là điện thoại mới.
+
+44
+00:11:25,000 --> 00:11:34,000
+Điện thoại thông minh và nếu tôi cố gắng nếu ai đó khác cố gắng truy cập số độc nhất vô nhị từ bên ngoài thì điều sẽ xảy ra là.
+
+45
+00:11:34,000 --> 00:11:49,000
+Chúng tôi sẽ chỉ viết ví dụ một cái gì đó như thế này nó là một lỗi bởi vì biến tư nhân không thể truy cập từ bên ngoài lớp học và xem những gì thông minh bạn của tôi thông minh đến với với nó nói thay thế bằng một thiết lập.
+
+46
+00:11:49,000 --> 00:11:58,000
+Nếu bạn đang cố gắng để viết giá trị cho con số độc đáo này nó không thể truy cập từ bên ngoài bởi vì nhà thiết kế của lớp học này đã làm cho nó riêng tư nhưng.
+
+47
+00:11:58,000 --> 00:12:13,000
+Họ có một phương pháp công cộng tại sao không sử dụng nó xem thiết lập một số độc nhất vô nhị và đó là cách bạn đặt nó như thế nào bạn đặt nó đúng như vậy đặt số độc đáo tôi sẽ nói 9 0 một số giá trị cho ví dụ và tôi sẽ nói điện thoại không đặt.
+
+48
+00:12:13,000 --> 00:12:29,000
+Hãy đặt nó cho Google của riêng tôi tôi sẽ nói đặt tên cho các điểm ảnh.
+
+49
+00:12:29,000 --> 00:12:53,000
+Hãy xem điều này làm việc nó là một chạy và nó nói rằng điểm ảnh nó pro và rõ ràng bạn có thể in tất cả các thuộc tính cũng có những cách tốt hơn để viết lớp này có những cách tốt hơn để viết lớp này.
+
+50
+00:12:53,000 --> 00:13:19,000
+Có những cách tốt hơn để có được các thuộc tính ra khỏi nó rõ ràng là nhiều hơn về sau này trên một khi bạn đạt được rằng cấp nhưng bây giờ điều này bây giờ nên làm cho ý nghĩa hành động như truyền dữ liệu chỉ cần bạn phải làm là nếu bạn muốn gửi này từ cụm chứng minh Java này một nơi nào đó bạn không phải gửi tất cả các tính chất chỉ.
+
+51
+00:13:19,000 --> 00:13:29,000
+Hãy nghĩ về nó, nó đã thu thập và bọc tất cả mọi thứ bên trong vật thể điện thoại mà nó đúng và rõ ràng là sẽ tiếp tục.
+
+52
+00:13:29,000 --> 00:13:48,000
+Sử dụng hạt Java khi chúng tôi di chuyển về phía trước với điểm số nhưng bây giờ thời gian để suy ngẫm về những gì tôi vừa nói trong video này và tại sao tôi đã nói những điều này là quan trọng đó là bắt buộc bạn có một sự hiểu biết tốt về những gì Java là nó là một ý tưởng khá đơn giản nhưng tuy nhiên quan trọng.
+
+53
+00:13:48,000 --> 00:13:58,000
+[BLANK UO]
+
