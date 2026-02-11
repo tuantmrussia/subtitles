@@ -1,0 +1,460 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Alright in this video after we talked about the idea of a class and an object, time to implement
+
+2
+00:00:07,000 --> 00:00:12,200
+ those concepts because, uh, imperative you have a good understanding how we implement them,
+
+3
+00:00:12,200 --> 00:00:16,560
+ how we use them, different ways of using them because, because you will be using them
+
+4
+00:00:16,560 --> 00:00:19,760
+ every single day in your life as a Java developer.
+
+5
+00:00:19,760 --> 00:00:25,520
+ So you're back into a playground that is intelligent and we're just going to quickly go on
+
+6
+00:00:25,520 --> 00:00:31,280
+ and just replicate that idea, what I drew for you in the previous video in real, in Java.
+
+7
+00:00:31,280 --> 00:00:36,920
+ So I'm just going to create a new class again and let me just call it class object
+
+8
+00:00:36,920 --> 00:00:44,840
+ Tim, right, because we're demonstrating how do we work with classes and objects in Java.
+
+9
+00:00:44,840 --> 00:00:49,520
+ So I'm going to use the main method again and just to replicate that idea, just to make
+
+10
+00:00:49,520 --> 00:00:55,400
+ you feel related to what we did in the previous video, we're just going to take that idea
+
+11
+00:00:55,400 --> 00:01:00,240
+ forward of the class human and just do it for real in Java in intelligence.
+
+12
+00:01:00,240 --> 00:01:04,600
+ So I'm just going to create the class human as I told you, if now you would have to define
+
+13
+00:01:04,600 --> 00:01:08,480
+ it in Java terms, this is how it would like, just to give you a rough idea.
+
+14
+00:01:08,480 --> 00:01:14,760
+ So class human and I'll say, for example, in legs and you'll say, let's say, uh, long,
+
+15
+00:01:14,760 --> 00:01:19,360
+ uh, for example, arms, that's a two variables for now.
+
+16
+00:01:19,360 --> 00:01:22,920
+ And then we're going to have some methods, some functions, more on variables, we're going
+
+17
+00:01:22,920 --> 00:01:28,520
+ to revisit variables in a different video, we're going to come to methods from scratch
+
+18
+00:01:28,520 --> 00:01:34,360
+ for you, because remember, I'm laying laying out the foundations, very strong and solid
+
+19
+00:01:34,360 --> 00:01:39,720
+ foundations for you to take on the advanced concepts later on with that much ease, right?
+
+20
+00:01:39,720 --> 00:01:46,400
+ So white, but for now, let's put in the method, I'll just say white, uh, white, now let's
+
+21
+00:01:46,400 --> 00:01:55,400
+ say, walk and just an sample sound message, I'll say, humans walk this, right, humans
+
+22
+00:01:55,400 --> 00:01:56,400
+ walk method.
+
+23
+00:01:56,400 --> 00:02:03,280
+ Similarly, I'm going to say, wide eight, how humans would eat, you'll put that idea here,
+
+24
+00:02:03,280 --> 00:02:07,880
+ right, inside class human, this is just the idea that we are defining currently, right?
+
+25
+00:02:07,880 --> 00:02:13,600
+ So it's a humans eat.
+
+26
+00:02:13,600 --> 00:02:21,600
+ Similarly, just one more method there to make you understand the concept, and I'll say,
+
+27
+00:02:21,600 --> 00:02:30,080
+ white sleep, again, in a sound message, I'll say, how do humans sleep, I'll have that defined
+
+28
+00:02:30,080 --> 00:02:36,000
+ here, right, a single class with some variables and some methods, as I said, these are what
+
+29
+00:02:36,000 --> 00:02:39,680
+ we call as data, and this is core, which operates on data.
+
+30
+00:02:39,680 --> 00:02:46,200
+ Right, now, this is just an idea until you create its object, it won't make much sense.
+
+31
+00:02:46,200 --> 00:02:52,160
+ It would make little sense, but not much until you have its physical implementation.
+
+32
+00:02:52,160 --> 00:02:54,640
+ And how do we do that in Java, a few ways to do that?
+
+33
+00:02:54,640 --> 00:02:59,600
+ The first one is just say the type of this time, again, I'm not saying data type because
+
+34
+00:02:59,600 --> 00:03:04,960
+ as I told you in a later video, uh, we would have more types, and this is the right place
+
+35
+00:03:04,960 --> 00:03:10,800
+ to understand that. Now, type cannot just be data types, but a class name as well, right?
+
+36
+00:03:10,800 --> 00:03:17,680
+ So the syntax goes like you say, identify and the new and then type, and the two circular braces,
+
+37
+00:03:17,680 --> 00:03:23,920
+ that's the syntax for creating a new object in Java. Now, this type is, and this identifier is,
+
+38
+00:03:23,920 --> 00:03:29,680
+ what are we trying to name this identifier? What is this identifier for? This is for what we call
+
+39
+00:03:29,680 --> 00:03:35,760
+ as a reference variable. Now, revisiting variables are quickly here. There are two types of variables
+
+40
+00:03:35,760 --> 00:03:40,560
+ in Java. First are primitive type variables, or we can just call them primitive types,
+
+41
+00:03:40,560 --> 00:03:45,840
+ and the second one is reference type variables or just reference variables. Now, which are primitive
+
+42
+00:03:45,840 --> 00:03:51,760
+ types, which have the data type as being from one of those eight primitive types that I told you
+
+43
+00:03:51,760 --> 00:03:58,880
+ that is either a Boolean, a byte, shot, care, int, log, or flow to double, right? If that is, uh,
+
+44
+00:03:58,880 --> 00:04:04,000
+ the data type or the type of a variable, it becomes a primitive type variable, but the type,
+
+45
+00:04:04,000 --> 00:04:10,880
+ if it is not from among those eight primitive variables, data types, then it is a reference type
+
+46
+00:04:10,880 --> 00:04:18,640
+ variable. And what is a reference variable in Java, which can refer to an actual object in memory?
+
+47
+00:04:18,640 --> 00:04:24,720
+ Again, I'll reiterate for you, our reference variable in Java is which can hook or which can point
+
+48
+00:04:24,720 --> 00:04:31,280
+ to or which can refer to the actual object in memory, not a normal constant value that you give
+
+49
+00:04:31,280 --> 00:04:37,360
+ for your primitive variables. And that is why I say type, identifier becomes the identifier for
+
+50
+00:04:37,360 --> 00:04:43,680
+ that reference variable. And then the keyword new, because the keyword new is used to create a new
+
+51
+00:04:43,680 --> 00:04:49,280
+ object in Java at all times, there will be certain situations where you will find an object being
+
+52
+00:04:49,280 --> 00:04:55,280
+ created without even using the keyword new, right? I'll walk you through those, but whenever you
+
+53
+00:04:55,280 --> 00:05:02,320
+ see new, know that a new object is created and what type not to the left of it, but to the right
+
+54
+00:05:02,320 --> 00:05:08,560
+ of it, right? And first starters, this type and this type should be the same until in a later
+
+55
+00:05:08,560 --> 00:05:14,000
+ video, we can change them as well. And I'll tell you why at that time, but for now, for getting started,
+
+56
+00:05:14,000 --> 00:05:19,840
+ the left hand set type and the right hand set type should be the same. And this left hand
+
+57
+00:05:19,840 --> 00:05:26,160
+ sent type in this declaration, it's called a reference type and the right hand type, it's called
+
+58
+00:05:26,160 --> 00:05:32,000
+ the object type. And for starters, I'm telling you the reference type and the object type
+
+59
+00:05:32,000 --> 00:05:36,160
+ should be the same, right? But just for now, later on, we'll change that. So,
+
+60
+00:05:37,040 --> 00:05:41,840
+ following the syntax, if you want to create an object of class human, we'll do it with a main,
+
+61
+00:05:41,840 --> 00:05:47,680
+ we can't do much outside of a method or outside of a class. It's Java, remember, strictly type,
+
+62
+00:05:47,680 --> 00:05:53,440
+ most of the things you will do within a method of a class. And main is a method, right? And I'll
+
+63
+00:05:53,440 --> 00:06:00,160
+ just say, calling this syntax, my reference type is human, I'll call it red to new human object
+
+64
+00:06:00,160 --> 00:06:06,800
+ type would be the same at this line, a new object would be created in memory, right? And that
+
+65
+00:06:06,800 --> 00:06:12,880
+ reference, because we want to still reach out to that object after line number seven at eight,
+
+66
+00:06:12,880 --> 00:06:19,360
+ nine or 10 lines, how would we be able to do that once we have a hook and that hook is in our case,
+
+67
+00:06:19,360 --> 00:06:25,440
+ called ref. So, ref would hold that hook. It would point to that object in memory, right? And with
+
+68
+00:06:25,440 --> 00:06:32,240
+ this object, now you have an object of class human, but there are variations here. Again, you could
+
+69
+00:06:32,240 --> 00:06:39,920
+ do it on two lines, that is like this, ref equal, but at line number seven, make new doubts about it,
+
+70
+00:06:39,920 --> 00:06:46,800
+ no objects exist yet of human. This is just a reference variable, we can refer to an object of class
+
+71
+00:06:46,800 --> 00:06:54,240
+ human in the near future, but it is not referring to anything yet at line away, this is where an
+
+72
+00:06:54,240 --> 00:07:00,400
+ object was created with the keyword new, and we put the reference of that object into our
+
+73
+00:07:00,400 --> 00:07:08,720
+ reference variable called ref, right? And now that's why I say never call ref and as an object,
+
+74
+00:07:08,720 --> 00:07:14,160
+ this is a mistake, which I've seen quite widespread in the industry, freshers even experienced
+
+75
+00:07:14,160 --> 00:07:18,880
+ folks out there, make this, but you're not the one who's going to make this mistake, never call
+
+76
+00:07:18,880 --> 00:07:26,480
+ ref as an object, ref is just a reference variable that can refer to an actual object in the memory,
+
+77
+00:07:26,480 --> 00:07:33,200
+ but it's not the object itself. So, just call it what it is, that is a reference variable,
+
+78
+00:07:33,200 --> 00:07:38,320
+ all right? So, two ways to do that, and then you can go ahead and call it all the methods with the
+
+79
+00:07:38,320 --> 00:07:43,920
+ dot operator on it, and see, this just gives you the variables in the methods that are accessible,
+
+80
+00:07:43,920 --> 00:07:50,480
+ I can call arms, I can say two, you can say ref dot, for example, the method work,
+
+81
+00:07:50,480 --> 00:07:56,320
+ right? Let's run this, we should get the output, which you have written inside work,
+
+82
+00:07:56,320 --> 00:08:01,760
+ and you say humans work, right? Similarly, you can call all the other methods, I'll say
+
+83
+00:08:01,760 --> 00:08:11,440
+ ref dot sleep, let's run this. Humans work and human sleep, that's what we had written inside those
+
+84
+00:08:11,440 --> 00:08:17,200
+ methods, right? So, that's how you create an object, and that's how you call the methods in the
+
+85
+00:08:17,200 --> 00:08:23,920
+ variables on it, and you have even one more way to create an object directly saying something like
+
+86
+00:08:23,920 --> 00:08:29,280
+ this, new human. Without the hook, without the reference variable, and that's probably possible,
+
+87
+00:08:29,280 --> 00:08:33,520
+ because I did not say for creating an object in Java, you just need a reference variable,
+
+88
+00:08:33,520 --> 00:08:39,440
+ no, I said you need the key one, that's what we are doing. And in a way, this looks bizarre,
+
+89
+00:08:39,440 --> 00:08:45,440
+ but it is the most efficient way of creating objects in Java. Why do I say so? Because, see,
+
+90
+00:08:45,440 --> 00:08:52,560
+ when you say new human, all right, so you created the object, and after line number 15,
+
+91
+00:08:52,560 --> 00:08:59,600
+ this object in Java is said to be lost. And once an object in Java is lost, we can never get
+
+92
+00:08:59,600 --> 00:09:06,560
+ back, right? It is lost for all times to come, just remember that, right? And why is it lost?
+
+93
+00:09:06,560 --> 00:09:12,240
+ Because how would you call it? It doesn't have a reference, unlike this one, which had a reference
+
+94
+00:09:12,240 --> 00:09:17,200
+ called REF, so you could call it a line number 10 to an 13 as well, but how would you call it?
+
+95
+00:09:17,200 --> 00:09:22,400
+ But still, I say, this is the most efficient way of creating an object in Java. Why? Because it's
+
+96
+00:09:22,400 --> 00:09:27,600
+ like use and throw, you say new human, you say directly it. Let's say you have to create an object,
+
+97
+00:09:27,600 --> 00:09:32,800
+ call a method on it, call a variable, do something, and you're done with it, and you do not want to
+
+98
+00:09:32,800 --> 00:09:40,640
+ hold unnecessary references, right? Because memory in 2026 is more valuable than ever before,
+
+99
+00:09:40,640 --> 00:09:47,760
+ you do not want to call or have references to unnecessary resources, something which you do not
+
+100
+00:09:47,760 --> 00:09:52,400
+ even need. And what does this do? This creates an object, the efficient way without a reference
+
+101
+00:09:52,400 --> 00:09:57,360
+ variable, without any hook, and then calls a method, and it's done because after line number 15,
+
+102
+00:09:57,360 --> 00:10:03,680
+ we can never reach back to it because that object was lost and it was lost for all times to come.
+
+103
+00:10:03,680 --> 00:10:10,960
+ So three ways to create an object in Java, but in reality, just with the keyboard new, but I
+
+104
+00:10:10,960 --> 00:10:15,120
+ told you that is there would be certain situations, where even without the keyboard new,
+
+105
+00:10:15,120 --> 00:10:20,160
+ we're able to create objects in Java, but I'll just brief you through them when we come across
+
+106
+00:10:20,160 --> 00:10:24,400
+ those situations. But for now, this is how we create in the class, this is how we create an object,
+
+107
+00:10:24,400 --> 00:10:30,960
+ and even better, you can create multiple objects of the same class like we did talk about it
+
+108
+00:10:30,960 --> 00:10:36,400
+ in our in our analogy with human. There was just one human idea that came to almighty,
+
+109
+00:10:36,400 --> 00:10:41,680
+ and then billions came in and followed the same idea. And similarly, you can just do it like this,
+
+110
+00:10:41,680 --> 00:10:46,640
+ in this program only, until line number 15, I've created two objects, one, which has the reference
+
+111
+00:10:46,640 --> 00:10:51,600
+ variable, ref, the second doesn't have a reference, but it was created. I can create another one
+
+112
+00:10:51,600 --> 00:11:01,520
+ as well. I'll just call it another rep. This is the third object created when we reach line number
+
+113
+00:11:01,520 --> 00:11:08,640
+ 17 and has the same properties as every human shears, right, but has its own personality as well.
+
+114
+00:11:08,640 --> 00:11:14,400
+ So that is how we can go ahead and create different objects again based on the requirements we would
+
+115
+00:11:14,400 --> 00:11:24,420
+ [BLANK_AUDIO]
+
