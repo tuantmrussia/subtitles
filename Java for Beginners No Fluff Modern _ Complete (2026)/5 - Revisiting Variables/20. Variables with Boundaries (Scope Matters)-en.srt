@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:19,000
+ Alright, so after having a look at instance variables and their behavior now the second level where you can declare a variable in Java again remember both those types of variables whether reference or in where the reference or primitives and that level is called local level variables and which is that level that is this level.
+
+2
+00:00:22,000 --> 00:00:51,000
+ See, I just comment them for you but you understood where is that level that I'm talking about that is still within the class because I remember I told you we cannot declare a variable outside of the class in Java there is no such concept as a global variable in Java but we can define them within the class but at three levels the first one was at the instance level that is outside every method second level still within the class but within a particular method.
+
+3
+00:00:53,000 --> 00:01:12,000
+ Or in funk or in MIT that means that makes it local to that particular method that's why the name local level variables are just local variables right and depending on if you define a variable at the local level it would have significant differences with instance variables let's have a look at that right.
+
+4
+00:01:12,000 --> 00:01:41,000
+ So now this class has three instance variables two of type primitive one of type reference but until now right we have not declared local variables or have we we have that is re if and other if why guess what I've defined them within a method that in your case is mean so there are two local variables of meaning right and I can just go ahead and define more local variables like for example I'll say int well this or let me just appropriately call it local value.
+
+5
+00:01:43,000 --> 00:01:53,000
+ And let's say in funk or MIT or in both of them I'll declare one more local variable let's say this time of type float.
+
+6
+00:01:53,000 --> 00:02:19,000
+ I'll say this symbol well okay now this class has three variables of type instance two primitive one reference and it has local variables inside main with local well ref and other ref and it has one more local variable in funk that is this symbol well primitive type of type float MIT doesn't have any variables.
+
+7
+00:02:19,000 --> 00:02:32,000
+ Does it mean or why would you declare variables at this level that is within a particular method is the first property is local variables start to exist when you place a call to that particular method.
+
+8
+00:02:32,000 --> 00:02:50,000
+ Before that doesn't exist even if you create 100 objects of this class local variables do not have anything to do with instances or objects they're called when you place a call to that particular method in which they are declared that's a first property right that means.
+
+9
+00:02:50,000 --> 00:03:04,000
+ If you don't call me but but did we call main throughout this course no we did not because it's automatically called by the development environment that is where we are working in Java right.
+
+10
+00:03:04,000 --> 00:03:18,000
+ It automatically calls it main is being programmed to be called automatically because that's why it's special right and once it is called local well ref and other ref start to exist and decimal well doesn't exist yet because we have not called funk.
+
+11
+00:03:18,000 --> 00:03:33,000
+ So until we call funk it would not be executed right that's the first property the second property is local variables are accessible only within that particular method not outside of the boundaries of the method.
+
+12
+00:03:33,000 --> 00:03:50,000
+ You can only excess local variables within the boundaries of that method that means this local well ref and other if can only be exist until line the Yosemite because they're local to mean that's their boundary right that is their cage in which they can be exist.
+
+13
+00:03:50,000 --> 00:04:13,000
+ Similarly decimal well can only be accessed within these lines that is unlit line about only two amity cannot access it if you try to access it it should give you an error see decimal well equal to 90.8 if and tells you I don't know which decimal value you're talking about see you hover on this it tells you cannot result symbol decimal well.
+
+14
+00:04:13,000 --> 00:04:25,000
+ Do you want to create a new local variable no I was referring to this, but you can only access it until 22 is what the compiler your good friend tells you you cannot access it outside right so.
+
+15
+00:04:25,000 --> 00:04:28,000
+ I'll say.
+
+16
+00:04:28,000 --> 00:04:31,000
+ Can't be.
+
+17
+00:04:31,000 --> 00:04:53,000
+ Exist outside fuck appropriate comments you all right so that is that is local variable second property the third property i'm going to tell you about local variables is that they don't need the dot operator to be called why because they don't belong to any instances they don't belong to any objects so why would we call them without the dot operator right directly with the names.
+
+18
+00:04:53,000 --> 00:05:08,000
+ The fourth property local variables and Java do not have instance sorry let me rephrase it local variables in Java do not have default values and that is they need to be initialized before we can use them.
+
+19
+00:05:08,000 --> 00:05:25,000
+ So again local variables in Java do not have default values that is they need to be initialized before we can use them so if you use them before initialization it would give you an error let me check just go on and check that this is local well let me put in a sound i'll say local.
+
+20
+00:05:25,000 --> 00:05:42,000
+ And an error a compile time you hover on this variable local well might not have been initialized but you not get the same error with instance variables go ahead and tinker with those manipulate those try to use value inside main you will see it would be accessed even before.
+
+21
+00:05:42,000 --> 00:05:57,000
+ In addition, obviously with the dot operator with its instance but you don't need to slice them right so local well now it tells you it needs to be initialized before we can use them let me try to initialize them the error goes away immediately because now we have.
+
+22
+00:05:57,000 --> 00:06:17,000
+ Analyze them right local variables need to be initialized before we can use the other property about local variables and then we have the third level where we can declare variables in Java and that is that's me let me just go ahead and for example put in a for loop here.
+
+23
+00:06:17,000 --> 00:06:46,000
+ In index to 10 index is less than equal to 90 and i'll say index plus plus let me just say indexes less than or equal to nine alright and what i'll say is after this i'll just put in a sound let me just comment this for now so that you can guess what would happen here i'll put in a comment here i'll say index.
+
+24
+00:06:46,000 --> 00:07:08,000
+ Okay, so i have removed the curly braces i'm not put the curly basic because i told you if there is just one line within a for loop or an if else a so the curly braces become option right and for better readability for writing sucks in code why would be put something that is unnecessary although we can write so index 10 index is less than nine though for the first time it is not.
+
+25
+00:07:08,000 --> 00:07:18,000
+ So that means what would happen here just take a few seconds to guess what would happen and what is the output that you will get.
+
+26
+00:07:18,000 --> 00:07:37,000
+ Alright, so let me just walk you through that index 10 10 is not less than or equal to nine so the for loop condition is false for the very very first time that means the loop would never go in and this would not give you anything this would not result you anything so after this if I say.
+
+27
+00:07:37,000 --> 00:07:42,000
+ A system lot of printing again we copy this.
+
+28
+00:07:42,000 --> 00:07:45,000
+ Me paste this.
+
+29
+00:07:45,000 --> 00:08:00,000
+ And put this in comments as well so now what would you expect at line number 22 because this line is outside the loop right this line belongs to the loop that's 21 22 is outside of the loop what do you expect to be done here this is an error in job see.
+
+30
+00:08:00,000 --> 00:08:19,000
+ It tells you I don't know which index you're talking about all on this cannot resolve symbol index you say back you tell it back this is the index I am telling about I'm speaking about which I declared a line about 20 but it tells you back right the system tells you back that this index is a example of.
+
+31
+00:08:19,000 --> 00:08:42,000
+ Something which we call the third level block level variables and block level variables are only accessible only within the block in which it was created not even the method knows about it so this index variable is a block variable of four it can only be exist until line by 21 22 is outside and let me put it a bit readable for you.
+
+32
+00:08:42,000 --> 00:08:53,000
+ This is like this right so this is outside the loop right and it tells you I don't know so just say.
+
+33
+00:08:53,000 --> 00:08:55,000
+ Not.
+
+34
+00:08:55,000 --> 00:09:24,000
+ Right so so that is block variables and block variables like local variables do not have default values they need to be initialized before we can use them and they can only be accessed within the block in which you've declared them and they can be accessed without the dot operator that is directly with their names so they share a lot of properties with with local variables so now you might be wondering when to use which level of variable.
+
+35
+00:09:24,000 --> 00:09:36,000
+ That is what I'm going to leave to you to decide right as a developer my job is you just pay for you or throw at you different tools what you would use when it's completely.
+
+36
+00:09:36,000 --> 00:09:53,000
+ I'll just leave it to you and you would have the wisdom and the decisions to make at what in what situations would you use what type of variable and at what level but now we know we have two types of variables in Java which we can declare at three levels instance level.
+
+37
+00:09:53,000 --> 00:09:58,600
+ local level and below 11 videos.
+
