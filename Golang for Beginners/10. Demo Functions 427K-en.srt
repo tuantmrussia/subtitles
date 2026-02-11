@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:05,680
+ In this demo, we'll be creating and utilizing some functions.
+
+2
+00:00:05,680 --> 00:00:12,080
+ Once you're ready, fire up Visual Studio Code, and let's go.
+
+3
+00:00:12,080 --> 00:00:17,440
+ Once Visual Studio Code loads navigate to your demo folder, we're on the functions demo,
+
+4
+00:00:17,440 --> 00:00:23,880
+ so click on the functions folder here, and then finally, double click on functions.go.
+
+5
+00:00:23,880 --> 00:00:27,600
+ Once that's loaded, you're ready to go.
+
+6
+00:00:27,600 --> 00:00:31,080
+ So the first function we'll be creating is a function that doubles a number.
+
+7
+00:00:31,080 --> 00:00:34,800
+ So we'll call it double, and it's going to take a single parameter,
+
+8
+00:00:34,800 --> 00:00:39,120
+ and it's going to be an integer parameter, and it's going to also return an integer.
+
+9
+00:00:39,120 --> 00:00:42,600
+ We're just going to return the number plus itself, that way we can double it.
+
+10
+00:00:42,600 --> 00:00:48,800
+ We'll then create a second function name add, and that we're going to be adding two numbers together.
+
+11
+00:00:48,800 --> 00:00:53,200
+ So we have a left hand side, a right hand side, and both are going to be integers.
+
+12
+00:00:53,200 --> 00:00:57,600
+ Since we're using the same type integer for both left hand side and right hand side,
+
+13
+00:00:57,600 --> 00:00:59,480
+ we don't need to specify it two times.
+
+14
+00:00:59,480 --> 00:01:03,920
+ So we can just use a comma, and use int once, and both of these here will be integers.
+
+15
+00:01:03,920 --> 00:01:11,640
+ The add function is going to be returning an integer, so let's return left hand side plus right hand side.
+
+16
+00:01:11,640 --> 00:01:17,400
+ Next, we'll make a function called greet, and that's going to display a message.
+
+17
+00:01:17,400 --> 00:01:23,040
+ This function has no input parameters and no output data, so we can just use parentheses with nothing in it.
+
+18
+00:01:23,040 --> 00:01:26,400
+ And we'll just use a blank space right there.
+
+19
+00:01:26,400 --> 00:01:31,440
+ In our greet function, we'll use the format package, and we'll do a print line,
+
+20
+00:01:31,440 --> 00:01:33,520
+ hello from greet function.
+
+21
+00:01:33,520 --> 00:01:38,400
+ We go down on our main function, we can start utilizing these functions we just created.
+
+22
+00:01:38,400 --> 00:01:42,720
+ So the first function we'll use is the greet function.
+
+23
+00:01:42,720 --> 00:01:47,280
+ To call the function, all we need to do is type the name of the function and our two parentheses.
+
+24
+00:01:49,120 --> 00:01:54,000
+ The next function we'll use is the double function. So I'm going to create and assign a variable name dozen,
+
+25
+00:01:54,000 --> 00:01:57,440
+ and we're going to take the double function, we'll double the number six,
+
+26
+00:01:57,440 --> 00:01:58,960
+ and that'll give us 12, which is a dozen.
+
+27
+00:01:58,960 --> 00:02:04,080
+ We'll need to print out this result, that way we can see that we get the correct number.
+
+28
+00:02:04,080 --> 00:02:15,360
+ Next up, we'll create a baker's dozen, so a baker's dozen is 13.
+
+29
+00:02:16,240 --> 00:02:20,240
+ So we'll use the add function, and we're going to add our dozen that we already have,
+
+30
+00:02:20,240 --> 00:02:23,200
+ we'll add one to it, and we'll print that out as well.
+
+31
+00:02:23,200 --> 00:02:35,440
+ So what we're doing here with the add function is we're adding the value of dozen and one.
+
+32
+00:02:35,440 --> 00:02:41,120
+ Here in our double function, we're doubling six, which is 12, that'll get placed into dozen.
+
+33
+00:02:42,000 --> 00:02:46,720
+ But we're then going to add the dozen from here, that's going to be 12,
+
+34
+00:02:46,720 --> 00:02:52,320
+ and we'll add one to it, and this is going to place 13 into a baker's dozen.
+
+35
+00:02:52,320 --> 00:02:54,080
+ So baker's dozen will have 13.
+
+36
+00:02:54,080 --> 00:03:00,640
+ And finally, we're going to have both functions call at the same time, so we'll do
+
+37
+00:03:00,640 --> 00:03:07,200
+ another baker's dozen, and that will be the result of add and double,
+
+38
+00:03:07,200 --> 00:03:10,320
+ and then we'll print that out.
+
+39
+00:03:12,880 --> 00:03:15,920
+ [BLANK_AUDIO]
+
+40
+00:03:15,920 --> 00:03:20,480
+ So here we're nesting functions, we have the add function, and the double function.
+
+41
+00:03:20,480 --> 00:03:24,560
+ This double function is going to be called first, and we'll get a 12 back.
+
+42
+00:03:24,560 --> 00:03:27,200
+ Once we have that 12, we'll take the 12 and the one,
+
+43
+00:03:27,200 --> 00:03:33,440
+ add them together in this function, and then return a 13 into another baker's dozen variable.
+
+44
+00:03:33,440 --> 00:03:38,560
+ Once you have all that in, let's save our work, and go hop into a terminal,
+
+45
+00:03:38,560 --> 00:03:39,600
+ and see if we get the right answers.
+
+46
+00:03:41,440 --> 00:03:46,080
+ To run this demo, we'll use gorun.slashdemo/functions.
+
+47
+00:03:46,080 --> 00:03:51,680
+ And so here we have hello from read function, a dozen is 12,
+
+48
+00:03:51,680 --> 00:03:55,680
+ a baker's dozen is 13, and another baker's dozen is also 13.
+
+49
+00:03:55,680 --> 00:04:00,240
+ This concludes the demo on writing and utilizing functions.
+
+50
+00:04:00,240 --> 00:04:01,440
+ I'll see you in the next presentation.
+
