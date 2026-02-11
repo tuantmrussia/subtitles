@@ -1,0 +1,200 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this video, I'll be talking about the switch statement.
+
+2
+00:00:05,000 --> 00:00:12,000
+ We'll cover basic usage, case lists, and follow-through behavior.
+
+3
+00:00:12,000 --> 00:00:14,000
+ First, a little bit about switch.
+
+4
+00:00:14,000 --> 00:00:17,000
+ Switch is used to easily check multiple conditions.
+
+5
+00:00:17,000 --> 00:00:20,000
+ And it's an alternative way to do if else blocks.
+
+6
+00:00:20,000 --> 00:00:28,000
+ Switch is execute from top to bottom, and they optionally have a default action.
+
+7
+00:00:28,000 --> 00:00:30,000
+ Let's look at a basic example.
+
+8
+00:00:30,000 --> 00:00:35,000
+ On the left, we have an x, and that's been assigned to the value of 3.
+
+9
+00:00:35,000 --> 00:00:40,000
+ We then use the switch keyword, and we switch on x.
+
+10
+00:00:40,000 --> 00:00:44,000
+ Next, we have the case keyword.
+
+11
+00:00:44,000 --> 00:00:48,000
+ In the case that x is equal to 1, we'll print out 1.
+
+12
+00:00:48,000 --> 00:00:52,000
+ In the case that x is equal to 2, we'll print out 2.
+
+13
+00:00:52,000 --> 00:00:55,000
+ And in the case that x is equal to 3, we'll print out 3.
+
+14
+00:00:55,000 --> 00:00:58,000
+ We then have the default case.
+
+15
+00:00:58,000 --> 00:01:03,000
+ So whenever the case is not covered, instead we'll execute the default.
+
+16
+00:01:03,000 --> 00:01:09,000
+ And the default case for this particular switch is to print out other and the value of x.
+
+17
+00:01:09,000 --> 00:01:15,000
+ It's always a good practice to have a default case, and that's just in the event that you forget to check for a case.
+
+18
+00:01:15,000 --> 00:01:18,000
+ At least you have something that will it be executed.
+
+19
+00:01:18,000 --> 00:01:21,000
+ We're not limited just to switching on integers.
+
+20
+00:01:21,000 --> 00:01:22,000
+ We can also switch on strings.
+
+21
+00:01:22,000 --> 00:01:29,000
+ So around the right, we have a string example.com, and we're switching on this URL variable that we created right here.
+
+22
+00:01:29,000 --> 00:01:33,000
+ So we can do the case of example.com, we'll print out test.
+
+23
+00:01:33,000 --> 00:01:36,000
+ In the case of Google.com, we'll print out live.
+
+24
+00:01:36,000 --> 00:01:44,000
+ And in any other case, so the default case is any other case, we'll print out dev.
+
+25
+00:01:44,000 --> 00:01:47,000
+ We can also have conditional cases.
+
+26
+00:01:47,000 --> 00:01:53,000
+ So in this particular switch statement, we're creating an assigning a variable, and then we're going to switch on it.
+
+27
+00:01:53,000 --> 00:01:57,000
+ So we're creating a variable named result using create an assign.
+
+28
+00:01:57,000 --> 00:02:02,000
+ We're assigning the value of calculate and the function argument of five.
+
+29
+00:02:02,000 --> 00:02:10,000
+ We then use a semicolon, our curly braces, and then within those curly braces, we have our cases.
+
+30
+00:02:10,000 --> 00:02:18,000
+ So our first case will execute when result is greater than 10, our second case will be when our result is equal to six, then this will execute.
+
+31
+00:02:18,000 --> 00:02:28,000
+ And the last case, if the result is less than 10, then this one will execute.
+
+32
+00:02:28,000 --> 00:02:30,000
+ We can also have case lists.
+
+33
+00:02:30,000 --> 00:02:34,000
+ So case lists allows us to check for multiple things in the same case.
+
+34
+00:02:34,000 --> 00:02:42,000
+ So if we switch on x, which would be an integer, on this first case, if it's either one, two, or three, we'll execute some code.
+
+35
+00:02:42,000 --> 00:02:48,000
+ In the second case, if it's 10, 20, or 30, we'll execute this code.
+
+36
+00:02:48,000 --> 00:02:56,000
+ Case lists are useful if you want to take the same action for multiple different values.
+
+37
+00:02:56,000 --> 00:03:03,000
+ The default behavior for switches and go is to automatically stop executing once one of the cases matches.
+
+38
+00:03:03,000 --> 00:03:10,000
+ What this means is if we have a letter and it's a space, then this case does nothing, and none of these will be checked.
+
+39
+00:03:10,000 --> 00:03:16,000
+ However, if we use the fall through keyword, then automatically the next case will be executed.
+
+40
+00:03:16,000 --> 00:03:24,000
+ So for example, if we have the letter be equal to I, this case will be executed because I is present here.
+
+41
+00:03:24,000 --> 00:03:26,000
+ We'll print out a vowel.
+
+42
+00:03:26,000 --> 00:03:34,000
+ The fall through keyword is encountered, and we're going to automatically execute the next case, even though it's not equal to any of these.
+
+43
+00:03:34,000 --> 00:03:38,000
+ So we'll print out a vowel and vowels are great.
+
+44
+00:03:38,000 --> 00:03:47,000
+ The fall through behavior can be useful if you want to always execute some code regardless of which case was matched.
+
+45
+00:03:47,000 --> 00:03:48,000
+ Let's recap.
+
+46
+00:03:48,000 --> 00:03:51,000
+ Switch can be used to easily check a variable for different values.
+
+47
+00:03:51,000 --> 00:03:55,000
+ You can use commas to check multiple values on a single case.
+
+48
+00:03:55,000 --> 00:03:57,000
+ Expressions are also allowed as a case.
+
+49
+00:03:57,000 --> 00:04:02,000
+ You can include function calls, mathematical operations, and logic within these cases.
+
+50
+00:04:02,000 --> 00:04:07,000
+ The fall through keyword will automatically execute the next case, even if it doesn't match.
+
