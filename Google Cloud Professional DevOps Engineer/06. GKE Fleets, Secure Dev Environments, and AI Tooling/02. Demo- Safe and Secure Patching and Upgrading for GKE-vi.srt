@@ -1,0 +1,272 @@
+1
+00:00:01,120 --> 00:00:05,630
+Nếu bạn đã bao giờ nâng cấp một cụm Kibernetes bằng tay, bạn biết cảm giác đó.
+
+2
+00:00:05,769 --> 00:00:08,350
+Anh đã nâng cấp và sau đó anh bắt chéo ngón tay,
+
+3
+00:00:08,689 --> 00:00:11,210
+Hy vọng các công việc của bạn sẽ tồn tại.
+
+4
+00:00:11,329 --> 00:00:15,489
+Tin tốt là trên kênh GKE, nâng cấp không nhất thiết phải giống như đánh bạc.
+
+5
+00:00:15,689 --> 00:00:19,389
+Google sẽ cung cấp cho bạn một cơ chế xây dựng để nâng cấp an toàn,
+
+6
+00:00:19,600 --> 00:00:22,239
+Có thể đoán trước được, và với sự gián đoạn tối thiểu.
+
+7
+00:00:22,420 --> 00:00:23,579
+Để xem chúng ta làm thế nào.
+
+8
+00:00:23,780 --> 00:00:25,920
+Google khuyên dùng kênh phát hành,
+
+9
+00:00:26,299 --> 00:00:31,409
+không phải những phiên bản tĩnh, bởi vì điều này cung cấp các nâng cấp có thể đoán trước,
+
+10
+00:00:31,700 --> 00:00:37,290
+Làm giảm sự ngạc nhiên của bản dịch, và nó đơn giản hóa việc bảo trì toàn bộ hạm đội.
+
+11
+00:00:37,619 --> 00:00:38,740
+Bây giờ làm thế nào bạn có thể làm điều đó,
+
+12
+00:00:38,860 --> 00:00:42,159
+Vì vậy, cho rằng bạn có thể chạy một lệnh đơn giản nói
+
+13
+00:00:42,439 --> 00:00:45,000
+Cập nhật nhóm container g Cloud.
+
+14
+00:00:45,299 --> 00:00:46,830
+Bạn đặt tên cho cụm của mình.
+
+15
+00:00:46,939 --> 00:00:49,340
+Trong trường hợp này, tên tập hợp của tôi là ruxcluster.
+
+16
+00:00:49,729 --> 00:00:53,810
+Và tôi nói rằng kênh phát hành là thông thường và nói Enter.
+
+17
+00:00:54,090 --> 00:00:56,549
+Bây giờ điều này sẽ cập nhật của tôi dev cụm.
+
+18
+00:00:56,860 --> 00:01:00,009
+Nếu tôi muốn xem điều này đã được thực hiện thành công
+
+19
+00:01:00,009 --> 00:01:02,810
+Dù không, tôi cũng có thể đến phần UI,
+
+20
+00:01:02,900 --> 00:01:09,769
+Và ở đó, tôi có thể đi vào bên trong cụm Kibernetes, đến cụm cụ thể của tôi,
+
+21
+00:01:10,129 --> 00:01:13,779
+Đó là một cái máy kích hoạt tiếng dev, và bên trong cái máy hút bụi dev,
+
+22
+00:01:14,169 --> 00:01:15,849
+Tôi có thể đi xuống chi tiết.
+
+23
+00:01:16,720 --> 00:01:20,440
+Và trong các chi tiết, tôi có thể thấy rằng đường hầm giải phóng
+
+24
+00:01:20,440 --> 00:01:22,919
+Đây là kênh thông thường.
+
+25
+00:01:22,970 --> 00:01:27,040
+Bây giờ trên những đường tương tự, khi bạn nâng cấp các nút,
+
+26
+00:01:27,139 --> 00:01:29,800
+Tôi khuyên anh nên có một cảng.
+
+27
+00:01:29,800 --> 00:01:32,160
+Phá vỡ ngân sách mà bạn có thể thiết lập nó.
+
+28
+00:01:32,319 --> 00:01:34,440
+Chỉ cần đến gặp biên tập viên mở.
+
+29
+00:01:34,760 --> 00:01:39,940
+Trong biên tập, tôi có một hồ sơ về việc thanh toán.
+
+30
+00:01:40,080 --> 00:01:45,120
+Bây giờ trong tập tin này, tôi đã thiết lập rằng tối thiểu sẵn có là 2.
+
+31
+00:01:45,319 --> 00:01:50,099
+Bây giờ điều này đảm bảo rằng ít nhất hai cảng vẫn còn ở trên trong ống dẫn nước.
+
+32
+00:01:50,319 --> 00:01:54,180
+Google đề nghị cấp cứu trước khi bảo trì.
+
+33
+00:01:54,400 --> 00:01:55,790
+Bây giờ làm thế nào tôi có thể áp dụng điều đó,
+
+34
+00:01:55,800 --> 00:01:59,040
+Tôi có thể đơn giản đi xuống nhà ga và tôi có thể thấy ở đây
+
+35
+00:02:00,099 --> 00:02:05,030
+Name
+
+36
+00:02:05,790 --> 00:02:08,229
+Điều này sẽ tạo ra chính sách cho tôi.
+
+37
+00:02:08,380 --> 00:02:10,559
+Chúng tôi cũng có nâng cấp tìm kiếm.
+
+38
+00:02:11,029 --> 00:02:13,259
+Điều đó làm cho GKE đẹp.
+
+39
+00:02:13,458 --> 00:02:16,149
+Thay vì hút một lõi, xóa nó,
+
+40
+00:02:16,268 --> 00:02:18,869
+Tái lập nó, và sắp xếp lại các kén,
+
+41
+00:02:18,979 --> 00:02:21,988
+Nó có thể gây ra nhiều thời gian suy giảm, ở GKE,
+
+42
+00:02:22,108 --> 00:02:25,328
+Bạn có thể thêm nút tạm thời đầu tiên, thay đổi giao thông,
+
+43
+00:02:25,548 --> 00:02:27,078
+và sau đó loại bỏ những cái cũ.
+
+44
+00:02:27,229 --> 00:02:30,619
+Điều này cho phép nâng cấp 0 xuống giờ.
+
+45
+00:02:30,869 --> 00:02:33,869
+Làm thế nào bạn có thể làm điều đó, đó cũng là rất dễ dàng để làm.
+
+46
+00:02:34,149 --> 00:02:39,389
+Bạn có thể chỉ cần nói rằng g Cloud nodepools cập nhật cho mặc định,
+
+47
+00:02:39,559 --> 00:02:43,470
+Cho tập hợp của bạn tên và nói tối đa kết quả kiểm tra
+
+48
+00:02:43,470 --> 00:02:46,300
+1 và tối đa không thể đến 0
+
+49
+00:02:46,429 --> 00:02:49,899
+Nó sẽ thêm một nút phụ tạm thời trong lúc nâng cấp.
+
+50
+00:02:50,149 --> 00:02:52,350
+Bây giờ bạn có thể thấy rằng cập nhật đã được thực hiện.
+
+51
+00:02:52,589 --> 00:02:55,320
+Bạn cũng có thể thêm vào một số thực hành tốt nhất,
+
+52
+00:02:55,330 --> 00:02:59,070
+Giống như bạn có thể sử dụng cửa sổ bảo trì nơi bạn có thể
+
+53
+00:02:59,070 --> 00:03:01,979
+hạn chế nâng cấp trong thời gian có thể đoán trước.
+
+54
+00:03:02,190 --> 00:03:02,690
+Ví dụ,
+
+55
+00:03:02,949 --> 00:03:07,130
+bạn có thể đơn giản dùng lệnh này khi bạn đặt cửa sổ bảo trì
+
+56
+00:03:07,130 --> 00:03:11,009
+Bắt đầu thời gian và cửa sổ bảo trì kết thúc thời gian và nói Enter.
+
+57
+00:03:11,149 --> 00:03:15,309
+Vì vậy, điều này sẽ giới hạn nâng cấp đến một thời gian cụ thể mà bạn đã cho.
+
+58
+00:03:15,669 --> 00:03:18,070
+Tương tự, việc sửa chữa xe có hiệu lực không.
+
+59
+00:03:18,139 --> 00:03:22,559
+Trong trường hợp đó, GKE sẽ tự động sửa chữa các nút không lành mạnh.
+
+60
+00:03:22,789 --> 00:03:25,820
+Bạn có thể chỉ cần nói g Cloud container nodepools cập nhật
+
+61
+00:03:25,820 --> 00:03:28,429
+mặc định, công cụ này có thể được bật.
+
+62
+00:03:28,610 --> 00:03:30,860
+Có vẻ như khu vực của tôi không đúng,
+
+63
+00:03:31,149 --> 00:03:33,820
+Vì vậy, tôi chỉ cần thay đổi khu vực và sau đó nó sẽ làm việc tốt.
+
+64
+00:03:34,080 --> 00:03:34,850
+Tương tự,
+
+65
+00:03:34,990 --> 00:03:37,630
+Bạn cũng có thể để Google xử lý việc vá vá
+
+66
+00:03:37,630 --> 00:03:41,100
+Tự động bằng cách tự động nâng cấp hiệu lực.
+
+67
+00:03:41,259 --> 00:03:45,029
+Đây là chính xác như thế nào quy mô sản xuất Kubernetes môi trường
+
+68
+00:03:45,029 --> 00:03:48,550
+Giữ cho mọi thứ hoạt động trôi chảy mà không mất thời gian.
+
