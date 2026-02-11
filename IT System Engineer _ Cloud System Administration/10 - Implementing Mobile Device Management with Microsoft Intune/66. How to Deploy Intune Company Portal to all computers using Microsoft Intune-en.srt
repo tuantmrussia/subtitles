@@ -1,0 +1,672 @@
+1
+00:00:00,000 --> 00:00:09,000
+ In this video, I'll be showing you how to deploy the company portal to your devices using Microsoft Intune.
+
+2
+00:00:09,000 --> 00:00:17,000
+ So if you are working as an IT system administrator, definitely you will not want your users to be downloading the company portal from Microsoft Store.
+
+3
+00:00:17,000 --> 00:00:23,000
+ You want to deploy the others app using config manager or Microsoft Intune.
+
+4
+00:00:23,000 --> 00:00:31,000
+ Well, in this video, we're going to be focusing on how to deploy the company portal using Microsoft Intune.
+
+5
+00:00:31,000 --> 00:00:37,000
+ So first of all, what you want to do is the phone and you want to go to your business store.microsoft.com.
+
+6
+00:00:37,000 --> 00:00:41,000
+ And from there, you can now go to settings.
+
+7
+00:00:41,000 --> 00:00:45,000
+ And from settings, you would definitely want to go to manage.
+
+8
+00:00:45,000 --> 00:00:48,000
+ And then here you can see we have shop.
+
+9
+00:00:48,000 --> 00:00:53,000
+ And that's the moment you can see shopping experience is the shoes offline app.
+
+10
+00:00:53,000 --> 00:00:55,000
+ But the fault, this is set to off.
+
+11
+00:00:55,000 --> 00:00:58,000
+ So you want to at least set it to on.
+
+12
+00:00:58,000 --> 00:01:07,000
+ At that setting it to on, then you go to your set, the store, and then type company portal.
+
+13
+00:01:07,000 --> 00:01:11,000
+ And here we need to just click on the set button.
+
+14
+00:01:11,000 --> 00:01:14,000
+ By clicking it, you can see shoes results for company portal.
+
+15
+00:01:14,000 --> 00:01:18,000
+ And here we go. You can see we have a company portal, it says it's exactly free.
+
+16
+00:01:18,000 --> 00:01:22,000
+ So I just click on that.
+
+17
+00:01:22,000 --> 00:01:26,000
+ And right now you can see that it says license type is online.
+
+18
+00:01:26,000 --> 00:01:32,000
+ So it is very, very, very important because you want to actually change this to offline.
+
+19
+00:01:32,000 --> 00:01:39,000
+ Because the company portal is actually delivered through the Microsoft Store.
+
+20
+00:01:39,000 --> 00:01:44,000
+ So Microsoft Store apps are delivered from the Microsoft Store online.
+
+21
+00:01:44,000 --> 00:01:48,000
+ But I'll tell it deploys using config manager or your Microsoft Intune.
+
+22
+00:01:48,000 --> 00:01:52,000
+ You definitely want to download the offline portal.
+
+23
+00:01:52,000 --> 00:01:59,000
+ So now we have the option offline and then we can now click manage.
+
+24
+00:01:59,000 --> 00:02:02,000
+ So by clicking manage, you can see we have different options here.
+
+25
+00:02:02,000 --> 00:02:08,000
+ You can see we can't really select Windows 10 or the devices, which is Windows 10 and above.
+
+26
+00:02:08,000 --> 00:02:12,000
+ And then you can see we have the fashion, you want to go for the latest, the highest fashion.
+
+27
+00:02:12,000 --> 00:02:16,000
+ And the architecture, you can see we have different fashion as well.
+
+28
+00:02:16,000 --> 00:02:21,000
+ So what I want to select, they see the four beats because my Windows operating system
+
+29
+00:02:21,000 --> 00:02:23,000
+ or since the four beats.
+
+30
+00:02:23,000 --> 00:02:26,000
+ And then the download app is going to be in English.
+
+31
+00:02:26,000 --> 00:02:29,000
+ I'm going to leave that for the United States.
+
+32
+00:02:29,000 --> 00:02:34,000
+ But mind you, by selecting that, you can see we have different download here.
+
+33
+00:02:34,000 --> 00:02:38,000
+ First of all, we have the app himself, it's a download package.
+
+34
+00:02:38,000 --> 00:02:40,000
+ That's the, we got to click download.
+
+35
+00:02:40,000 --> 00:02:43,000
+ And when I scroll down, you can see we have some other download.
+
+36
+00:02:43,000 --> 00:02:45,000
+ We also need to download here.
+
+37
+00:02:45,000 --> 00:02:51,000
+ You can see it's about one, two, three, four, five, six, seven, eight.
+
+38
+00:02:51,000 --> 00:02:54,000
+ So now we need to download about eight apps.
+
+39
+00:02:54,000 --> 00:02:59,000
+ So if I click download, you can see it's going to download it.
+
+40
+00:02:59,000 --> 00:03:05,000
+ And then that's the Microsoft company portal with a required key.
+
+41
+00:03:05,000 --> 00:03:10,000
+ And then from there on, we cannot decide to just click download and generate license.
+
+42
+00:03:10,000 --> 00:03:14,000
+ And this all will be actually downloaded to your download folder.
+
+43
+00:03:14,000 --> 00:03:22,000
+ So what actually did is actually copy all the other download files here to the separate folder I created.
+
+44
+00:03:22,000 --> 00:03:31,000
+ You can see we have, for example, how the AWPX bundle file JSON being an APPX.
+
+45
+00:03:31,000 --> 00:03:35,000
+ So if I download download this file, just try and put all this file together.
+
+46
+00:03:35,000 --> 00:03:36,000
+ One folder.
+
+47
+00:03:36,000 --> 00:03:39,000
+ And then let's go to Microsoft Intion.
+
+48
+00:03:39,000 --> 00:03:43,000
+ From your Microsoft Intion, you want to go to apps.
+
+49
+00:03:43,000 --> 00:03:46,000
+ And from your apps, you want to go to all apps.
+
+50
+00:03:46,000 --> 00:03:51,000
+ So here you can see I've already downloaded it and deployed to my devices.
+
+51
+00:03:51,000 --> 00:03:53,000
+ But I just want to show you how to do it.
+
+52
+00:03:53,000 --> 00:03:56,000
+ You should in case you are doing it for the first time.
+
+53
+00:03:56,000 --> 00:03:59,000
+ So what you want to do is to click the add.
+
+54
+00:03:59,000 --> 00:04:02,000
+ And here we go to click select.
+
+55
+00:04:02,000 --> 00:04:06,000
+ In the select, we're going to actually select the line of business app.
+
+56
+00:04:06,000 --> 00:04:09,000
+ So just click on that.
+
+57
+00:04:09,000 --> 00:04:15,000
+ And then you can see all the different apps options we can't really install through the line of business app.
+
+58
+00:04:15,000 --> 00:04:19,000
+ So just click select.
+
+59
+00:04:19,000 --> 00:04:23,000
+ And now we want to select our app package file.
+
+60
+00:04:23,000 --> 00:04:28,000
+ So click on select our package file.
+
+61
+00:04:28,000 --> 00:04:30,000
+ And then it says our package file.
+
+62
+00:04:30,000 --> 00:04:34,000
+ And then you can see if you go to click there, you can see all the some of the apps.
+
+63
+00:04:34,000 --> 00:04:35,000
+ I was giving you some info.
+
+64
+00:04:35,000 --> 00:04:38,000
+ But let me just click on this no file select text.
+
+65
+00:04:38,000 --> 00:04:39,000
+ No file choosing.
+
+66
+00:04:39,000 --> 00:04:41,000
+ Let me just click on that folder.
+
+67
+00:04:41,000 --> 00:04:43,000
+ And it's going to take me to my folder.
+
+68
+00:04:43,000 --> 00:04:45,000
+ Definitely maybe to a different folder.
+
+69
+00:04:45,000 --> 00:04:48,000
+ But then you can't browse to the folder where all your files are.
+
+70
+00:04:48,000 --> 00:04:50,000
+ Look at it, look at it.
+
+71
+00:04:50,000 --> 00:04:52,000
+ So first of all, I want to actually select this file.
+
+72
+00:04:52,000 --> 00:04:57,000
+ And then click open as the app, export the file, and then click open.
+
+73
+00:04:57,000 --> 00:04:59,000
+ But we can open.
+
+74
+00:04:59,000 --> 00:05:02,000
+ You can see it says select dependency app file.
+
+75
+00:05:02,000 --> 00:05:04,000
+ It is very, very important.
+
+76
+00:05:04,000 --> 00:05:06,000
+ You see that you select the dependency app file.
+
+77
+00:05:06,000 --> 00:05:11,000
+ Because without the dependency app file, the installation will definitely fill.
+
+78
+00:05:11,000 --> 00:05:15,000
+ So what you need to do right now is to click on this for that game.
+
+79
+00:05:15,000 --> 00:05:20,000
+ And now we can now select just with control a, and then click open.
+
+80
+00:05:20,000 --> 00:05:23,000
+ You can see all the files have just been inserted.
+
+81
+00:05:23,000 --> 00:05:26,000
+ And then we can now click OK.
+
+82
+00:05:26,000 --> 00:05:30,000
+ By clicking OK, you can see here we have the company.
+
+83
+00:05:30,000 --> 00:05:33,000
+ Well, the name of the Microsoft company portal description.
+
+84
+00:05:33,000 --> 00:05:35,000
+ You can totally change the description.
+
+85
+00:05:35,000 --> 00:05:39,000
+ But at this moment, let me just try to just add the file into it.
+
+86
+00:05:39,000 --> 00:05:42,000
+ Because I've already created one before now.
+
+87
+00:05:42,000 --> 00:05:45,000
+ And then here we can enter some extra information.
+
+88
+00:05:45,000 --> 00:05:49,000
+ Well, it says, show this as a featured app in a company portal.
+
+89
+00:05:49,000 --> 00:05:51,000
+ Well, you can actually show this as a featured app.
+
+90
+00:05:51,000 --> 00:05:54,000
+ Because you're totally trying to install it.
+
+91
+00:05:54,000 --> 00:05:56,000
+ Right now both can centrally show it.
+
+92
+00:05:56,000 --> 00:05:59,000
+ But at the same time, we are trying to install it for the first time.
+
+93
+00:05:59,000 --> 00:06:00,000
+ I'm going to use as the file.
+
+94
+00:06:00,000 --> 00:06:02,000
+ So what I'm going to do is I'm going to leave it just like this.
+
+95
+00:06:02,000 --> 00:06:05,000
+ And the category we can't set to actually choose the category.
+
+96
+00:06:05,000 --> 00:06:09,000
+ Let me just leave this for company management.
+
+97
+00:06:09,000 --> 00:06:13,000
+ And then we can now click Nest.
+
+98
+00:06:13,000 --> 00:06:17,000
+ So here it says, we can actually assign this to all devices.
+
+99
+00:06:17,000 --> 00:06:22,000
+ But best practices are totally to deploy to just a group of device.
+
+100
+00:06:22,000 --> 00:06:24,000
+ And then from there, you cannot check.
+
+101
+00:06:24,000 --> 00:06:29,000
+ If, for example, the file is properly downloaded and installed on another file
+
+102
+00:06:29,000 --> 00:06:34,000
+ before you now distribute it to all devices worldwide.
+
+103
+00:06:34,000 --> 00:06:37,000
+ But the best you want to do is allocate a security group.
+
+104
+00:06:37,000 --> 00:06:39,000
+ I'm a security group.
+
+105
+00:06:39,000 --> 00:06:42,000
+ You cannot just decide to go and then select.
+
+106
+00:06:42,000 --> 00:06:49,000
+ For example, I can, okay, I have a Windows 11 device.
+
+107
+00:06:49,000 --> 00:06:54,000
+ Let me just select Windows 10 for now and then click select.
+
+108
+00:06:54,000 --> 00:06:59,000
+ And then we can now decide to just click Nest.
+
+109
+00:06:59,000 --> 00:07:02,000
+ Okay, here you can actually just see all the information.
+
+110
+00:07:02,000 --> 00:07:05,000
+ You can check if all is properly configured.
+
+111
+00:07:05,000 --> 00:07:11,000
+ You see your required or my, actually, select the group called all Windows 10.
+
+112
+00:07:11,000 --> 00:07:13,000
+ And then we can now click Create.
+
+113
+00:07:13,000 --> 00:07:17,000
+ So by clicking Create, you can see it's going to actually, since the application's created.
+
+114
+00:07:17,000 --> 00:07:22,000
+ And now what is going to happen is going to actually import those files into,
+
+115
+00:07:22,000 --> 00:07:25,000
+ it's going to upload the Microsoft portal into your, into Intune.
+
+116
+00:07:25,000 --> 00:07:27,000
+ It's going to take some few minutes.
+
+117
+00:07:27,000 --> 00:07:30,000
+ You can see we have a sys file that I've been uploaded right now.
+
+118
+00:07:30,000 --> 00:07:34,000
+ And then after that, the file will now be distributed to your Windows.
+
+119
+00:07:34,000 --> 00:07:36,000
+ 10 or Windows 11 device.
+
+120
+00:07:36,000 --> 00:07:40,000
+ But I want to give you some information because distributing this file to this device
+
+121
+00:07:40,000 --> 00:07:42,000
+ may take some time.
+
+122
+00:07:42,000 --> 00:07:45,000
+ But what we can't really do is a full and totally speed,
+
+123
+00:07:45,000 --> 00:07:49,000
+ speed of the device, that the virus is as far as quick as possible.
+
+124
+00:07:49,000 --> 00:07:55,000
+ If, for example, this has been completed, we can now go to all the, to devices.
+
+125
+00:07:55,000 --> 00:08:01,000
+ Let me just select all devices.
+
+126
+00:08:01,000 --> 00:08:05,000
+ And here we, for example, let's say we have our Windows 10 device.
+
+127
+00:08:05,000 --> 00:08:07,000
+ You can see it's called Manage.
+
+128
+00:08:07,000 --> 00:08:10,000
+ And then I can just select this device.
+
+129
+00:08:10,000 --> 00:08:13,000
+ Going to sync.
+
+130
+00:08:13,000 --> 00:08:15,000
+ What I'm going to do is I'm what I totally sync.
+
+131
+00:08:15,000 --> 00:08:16,000
+ Here I'm going to click Sync.
+
+132
+00:08:16,000 --> 00:08:18,000
+ So by sync, click Sync.
+
+133
+00:08:18,000 --> 00:08:24,000
+ It's going to sync every policy, compliance policy, security policies, deployment.
+
+134
+00:08:24,000 --> 00:08:27,000
+ I made it from Intune to that device.
+
+135
+00:08:27,000 --> 00:08:30,000
+ So by clicking Sync, it says Intune will attempt to check with this device.
+
+136
+00:08:30,000 --> 00:08:36,000
+ It's successful to sync or sync or action or policies to the device.
+
+137
+00:08:36,000 --> 00:08:38,000
+ I can then say yes.
+
+138
+00:08:38,000 --> 00:08:39,000
+ And then here we go.
+
+139
+00:08:39,000 --> 00:08:41,000
+ It will now start syncing L.
+
+140
+00:08:41,000 --> 00:08:46,000
+ Pre-info from my Intune to that device.
+
+141
+00:08:46,000 --> 00:08:50,000
+ And now if I go to, for example, let me just go to my Windows 10.
+
+142
+00:08:50,000 --> 00:08:51,000
+ There's a Windows 11 device.
+
+143
+00:08:51,000 --> 00:08:53,000
+ Let me go to this Windows 10.
+
+144
+00:08:53,000 --> 00:08:57,000
+ And if I if you go to Windows 10, after some time, you're going to see
+
+145
+00:08:57,000 --> 00:09:01,000
+ that the CompNet portal has been installed on this device.
+
+146
+00:09:01,000 --> 00:09:03,000
+ Here we can see I've already deployed.
+
+147
+00:09:03,000 --> 00:09:04,000
+ You can see it says New.
+
+148
+00:09:04,000 --> 00:09:09,000
+ And if I go back again to my Windows 11, I think I have the same.
+
+149
+00:09:09,000 --> 00:09:13,000
+ Here you can see we have our CompNet portal recently added.
+
+150
+00:09:13,000 --> 00:09:17,000
+ But totally fasten everything as well from your Windows 10 or Windows 11 device.
+
+151
+00:09:17,000 --> 00:09:20,000
+ Let me just use Windows 10 as an example.
+
+152
+00:09:20,000 --> 00:09:23,000
+ We can go to Settings.
+
+153
+00:09:23,000 --> 00:09:26,000
+ And from Settings, we can go to Account.
+
+154
+00:09:26,000 --> 00:09:31,000
+ And on account, we can now go to Access work or school.
+
+155
+00:09:31,000 --> 00:09:34,000
+ So from Access work or school, you can see we have Connected to health,
+
+156
+00:09:34,000 --> 00:09:36,000
+ global domain.
+
+157
+00:09:36,000 --> 00:09:38,000
+ Here I want to click on Info.
+
+158
+00:09:38,000 --> 00:09:42,000
+ And my click on Info, it gives me the option that will click Sync.
+
+159
+00:09:42,000 --> 00:09:45,000
+ So here the device sync status.
+
+160
+00:09:45,000 --> 00:09:49,000
+ My clicking Sync is good to actually sync with Microsoft Intune.
+
+161
+00:09:49,000 --> 00:09:53,000
+ And then check all the policies and applications here you can see.
+
+162
+00:09:53,000 --> 00:09:58,000
+ This is a company portal seceded Microsoft Intune Management extension.
+
+163
+00:09:58,000 --> 00:10:00,000
+ And first of all, it is also completed.
+
+164
+00:10:00,000 --> 00:10:03,000
+ I can see some of the policies that have been deployed to this device.
+
+165
+00:10:03,000 --> 00:10:09,000
+ So if I click Sync, it will now try to sync my Microsoft Intune and Cloud
+
+166
+00:10:09,000 --> 00:10:14,000
+ and download all these policies, the policies or compliance policies
+
+167
+00:10:14,000 --> 00:10:18,000
+ and application that has been deployed to this device.
+
+168
+00:10:18,000 --> 00:10:29,000
+ This is how you deploy Microsoft in the company portal to your Windows 10 or Windows 11 devices using Microsoft Intune.
+
