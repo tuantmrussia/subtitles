@@ -1,0 +1,572 @@
+1
+00:00:00,000 --> 00:00:06,160
+ All right, let's take the discussion forward and the first scenario, the exceptional scenario
+
+2
+00:00:06,160 --> 00:00:11,600
+ where the super class method in the subclass method would have different signatures, but
+
+3
+00:00:11,600 --> 00:00:16,880
+ it would still be overriding, let's talk about exceptional scenario number one.
+
+4
+00:00:16,880 --> 00:00:19,440
+ But before that, see, this is overriding.
+
+5
+00:00:19,440 --> 00:00:25,040
+ Let's say you had done something like this that is int eat and you had then went ahead
+
+6
+00:00:25,040 --> 00:00:27,480
+ and returned an integer for example.
+
+7
+00:00:27,480 --> 00:00:33,080
+ Now, this is sorry, I did it at human, human is the subclass, let's keep it that way.
+
+8
+00:00:33,080 --> 00:00:40,640
+ Let's say when Schweta was doing the overriding and then we said, we're going to turn zero.
+
+9
+00:00:40,640 --> 00:00:44,320
+ They should give an error because you're breaking the rules of overriding because the signatures
+
+10
+00:00:44,320 --> 00:00:45,320
+ are different.
+
+11
+00:00:45,320 --> 00:00:50,440
+ See, you hold on this, eat and Schweta clashes with eat and human in compatible return
+
+12
+00:00:50,440 --> 00:00:51,440
+ types.
+
+13
+00:00:51,440 --> 00:00:56,760
+ Make eat return white because that is for overriding two of the signatures have to be
+
+14
+00:00:56,760 --> 00:01:00,200
+ different, but now the exceptions scenario number one, right?
+
+15
+00:01:00,200 --> 00:01:02,680
+ And that is related to scope, right?
+
+16
+00:01:02,680 --> 00:01:07,040
+ All right, and in scope, we had a look at excessive bias, now they're interrelated
+
+17
+00:01:07,040 --> 00:01:08,040
+ here.
+
+18
+00:01:08,040 --> 00:01:11,560
+ That is what is that rule, say, exceptions scenario number one, you can note it down with respect
+
+19
+00:01:11,560 --> 00:01:20,160
+ overriding and that is the scope of the overriding method in the subclass can be the same
+
+20
+00:01:20,160 --> 00:01:26,320
+ as of the scope of the overridden method in the super class or it can be broader but never
+
+21
+00:01:26,320 --> 00:01:28,200
+ narrow down, right?
+
+22
+00:01:28,200 --> 00:01:30,560
+ I'll again repeat it for you.
+
+23
+00:01:30,560 --> 00:01:38,360
+ That is scope of the overriding method in the subclass can be the same as of the overridden
+
+24
+00:01:38,360 --> 00:01:41,680
+ method in the super class or it can be different.
+
+25
+00:01:41,680 --> 00:01:45,800
+ That is it can be broader, but never narrow down, right?
+
+26
+00:01:45,800 --> 00:01:50,360
+ And the hierarchy, the self-explanatory table that I shared with you earlier on would come
+
+27
+00:01:50,360 --> 00:01:52,640
+ handy in this video in this concept.
+
+28
+00:01:52,640 --> 00:01:59,240
+ That is now see, uh, it is defined with the default scope and that is you would remember
+
+29
+00:01:59,240 --> 00:02:04,000
+ that is it is package private in Java in human it is package private, shader does the
+
+30
+00:02:04,000 --> 00:02:07,480
+ same with it or with what let's take the example of it, right?
+
+31
+00:02:07,480 --> 00:02:11,680
+ And keeps it the same because I said the scope can be the same, but it can be broader,
+
+32
+00:02:11,680 --> 00:02:17,080
+ but never never narrow down, but say, let's say I in shader, what do I do is I keep
+
+33
+00:02:17,080 --> 00:02:23,800
+ it as protected, would it work, right, is the scope because see now I'm breaking in a way
+
+34
+00:02:23,800 --> 00:02:28,320
+ the signature, that signature of the subclass is different in super class, it was package
+
+35
+00:02:28,320 --> 00:02:30,960
+ private in the subclass, it is protected, would it work?
+
+36
+00:02:30,960 --> 00:02:35,160
+ I said, it can be broader, but never narrow down and yes, it would work.
+
+37
+00:02:35,160 --> 00:02:36,160
+ Why?
+
+38
+00:02:36,160 --> 00:02:42,000
+ Because protected is a scope that is has larger scope than package private.
+
+39
+00:02:42,000 --> 00:02:44,440
+ Just go back to that self-explanatory table.
+
+40
+00:02:44,440 --> 00:02:48,080
+ So see, the signature is the same, no compile time error, this works.
+
+41
+00:02:48,080 --> 00:02:53,760
+ And now show it that does that is public, still works, right, because public is universal
+
+42
+00:02:53,760 --> 00:02:59,280
+ scope, it sits at the top of the hierarchy where again broadening the scope, not narrowing
+
+43
+00:02:59,280 --> 00:03:00,600
+ it down, right.
+
+44
+00:03:00,600 --> 00:03:05,080
+ So two situation, three situations work, either you keep it the same that is package private.
+
+45
+00:03:05,080 --> 00:03:10,400
+ If you keep it public or protected, both work, if you keep it private, would it work absolutely
+
+46
+00:03:10,400 --> 00:03:15,360
+ not, because you are restricting the scope, I said it cannot be narrowed down over on this.
+
+47
+00:03:15,360 --> 00:03:19,720
+ This is breaking the rules of overriding, it says eat, ensure the clashes with it in human
+
+48
+00:03:19,720 --> 00:03:23,880
+ attempt, attempting to assign weaker access privileges.
+
+49
+00:03:23,880 --> 00:03:28,240
+ It was package private, you're trying to assign private, you are narrowing down the scope,
+
+50
+00:03:28,240 --> 00:03:33,480
+ this cannot work, either keep it the same or package private, that is the same, either
+
+51
+00:03:33,480 --> 00:03:36,480
+ protected or public, but never private, right.
+
+52
+00:03:36,480 --> 00:03:42,600
+ In a different situation, let's work with work, let's say walk here in human was protected.
+
+53
+00:03:42,600 --> 00:03:48,280
+ So what scopes can the subclass method do at overriding times?
+
+54
+00:03:48,280 --> 00:03:53,680
+ First obviously it can keep it as protected or it can keep it as public, right, but it
+
+55
+00:03:53,680 --> 00:03:56,840
+ can keep, can it keep it as package private?
+
+56
+00:03:56,840 --> 00:04:02,760
+ No, again just go back to the self-explanatory table, right, because protected is a scope
+
+57
+00:04:02,760 --> 00:04:08,080
+ which sits on top of package private, package private is a restrictive scope.
+
+58
+00:04:08,080 --> 00:04:12,680
+ And that's why, when Shweta tries to override in the same thing now fails, it would tell
+
+59
+00:04:12,680 --> 00:04:17,640
+ you the same thing, attempting to assign weaker access privileges package private, because
+
+60
+00:04:17,640 --> 00:04:18,640
+ it was protected.
+
+61
+00:04:18,640 --> 00:04:24,440
+ So either keep it protected or public, cannot keep it private, never.
+
+62
+00:04:24,440 --> 00:04:34,400
+ Third situation, if in the super class, I had this method as public, what scopes apply
+
+63
+00:04:34,400 --> 00:04:39,160
+ when we tried to override it, think about it for a moment, I'll just give you that.
+
+64
+00:04:39,160 --> 00:04:45,320
+ Yes, you're right, that is public methods can only be overridden in the public way, why,
+
+65
+00:04:45,320 --> 00:04:50,520
+ because all other scopes fall down the hierarchy, they're all restrictive, so it says that
+
+66
+00:04:50,520 --> 00:04:54,640
+ attempting to assign a weaker access privileges protected, it was public that is universal
+
+67
+00:04:54,640 --> 00:04:58,840
+ skill, scope that is, you have to keep it as public at all times.
+
+68
+00:04:58,840 --> 00:05:05,440
+ Public methods can only be overridden in the public way, the last one is, inside human,
+
+69
+00:05:05,440 --> 00:05:10,680
+ if I try to keep it as private, what does it do, it stops inheritance.
+
+70
+00:05:10,680 --> 00:05:15,320
+ Now what scopes apply when I tried to override that in any of the subclasses, think about
+
+71
+00:05:15,320 --> 00:05:18,200
+ it, I'll again give you a moment.
+
+72
+00:05:18,200 --> 00:05:24,320
+ In the meantime, I'll just look outside my window, just to get away from that screen for
+
+73
+00:05:24,320 --> 00:05:30,160
+ a moment, right, because we just bound to do screens at all times these days, all right.
+
+74
+00:05:30,160 --> 00:05:36,840
+ So private is here, it would be tempting for you to know that we can apply all four scopes
+
+75
+00:05:36,840 --> 00:05:43,640
+ at the subclass level, but that is wrong, why, private, you would know that, private methods
+
+76
+00:05:43,640 --> 00:05:48,760
+ or variables can only be accessed within the class in which they're declared, they don't
+
+77
+00:05:48,760 --> 00:05:53,800
+ even come down, they're not even inherited, how can they be overridden?
+
+78
+00:05:53,800 --> 00:05:57,640
+ Because for overriding to work, I told you first inheritance has to work, but with private
+
+79
+00:05:57,640 --> 00:06:03,400
+ inheritance doesn't work, they never, they never come down the lineage, so how can you
+
+80
+00:06:03,400 --> 00:06:04,400
+ override them?
+
+81
+00:06:04,400 --> 00:06:09,520
+ So private methods can never be overridden, but you would wonder, why is this still working?
+
+82
+00:06:09,520 --> 00:06:14,920
+ Because inside shweta, now there is no walk, and this is her own method here, but it's
+
+83
+00:06:14,920 --> 00:06:18,920
+ tempting for you to realize that this is overriding, but it's not, right.
+
+84
+00:06:18,920 --> 00:06:25,440
+ So again, think about this exceptional scenario number one after this video, exceptional
+
+85
+00:06:25,440 --> 00:06:29,280
+ scenario number two and three, there are a couple more exceptions, not used with overriding,
+
+86
+00:06:29,280 --> 00:06:35,120
+ but they're coming on for you once you, once we take up a couple of other concepts.
+
+87
+00:06:35,120 --> 00:06:38,720
+ But for now, remember this, exceptional scenario number one, right.
+
+88
+00:06:38,720 --> 00:06:46,320
+ Now, just a bit of tinkering here with my code just to make it more clear for you, right.
+
+89
+00:06:46,320 --> 00:06:47,640
+ Just to make it fun.
+
+90
+00:06:47,640 --> 00:06:55,040
+ That is for example, sometimes what you want is you want the methods not to be overridden,
+
+91
+00:06:55,040 --> 00:06:56,040
+ right.
+
+92
+00:06:56,040 --> 00:06:57,680
+ You want overriding to stop, right.
+
+93
+00:06:57,680 --> 00:07:00,800
+ You don't want inheritance to stop because you know that, how do you stop inheritance?
+
+94
+00:07:00,800 --> 00:07:02,040
+ Private, okay.
+
+95
+00:07:02,040 --> 00:07:06,800
+ But you want inheritance to be there, that is, this should go down in the subclasses, but
+
+96
+00:07:06,800 --> 00:07:10,040
+ no one else should be able to override them.
+
+97
+00:07:10,040 --> 00:07:11,040
+ Why?
+
+98
+00:07:11,040 --> 00:07:12,120
+ I'll just give you good analogy.
+
+99
+00:07:12,120 --> 00:07:18,320
+ That is let's say we have, I have a grandmother who makes really good material out, right.
+
+100
+00:07:18,320 --> 00:07:23,560
+ And she does not want her recipe to be altered with, right.
+
+101
+00:07:23,560 --> 00:07:29,560
+ And whether it's her daughter, son, or granddaughter, she wants to pass on the recipe
+
+102
+00:07:29,560 --> 00:07:35,920
+ through her inheritance or lineage, but she wants no one to alter that or tinker with
+
+103
+00:07:35,920 --> 00:07:36,920
+ that.
+
+104
+00:07:36,920 --> 00:07:41,840
+ She wants this recipe to be true to how she made multiple out at all times.
+
+105
+00:07:41,840 --> 00:07:46,760
+ So for that kind of situation, and I know this is a beautiful analogy again, you have a
+
+106
+00:07:46,760 --> 00:07:51,520
+ way to stop overriding in Java, no one else can alter the behavior.
+
+107
+00:07:51,520 --> 00:07:56,520
+ And that is when we can have final methods, see, that's it.
+
+108
+00:07:56,520 --> 00:08:01,920
+ We don't want or to be altered with, so to clear, that is final.
+
+109
+00:08:01,920 --> 00:08:06,480
+ And final methods cannot be ordered, they can still be inherited, but never altered.
+
+110
+00:08:06,480 --> 00:08:12,000
+ Let's see, when Shweta tries to override walk and error now, it says walk, cannot override
+
+111
+00:08:12,000 --> 00:08:14,880
+ walk in human or written method is final.
+
+112
+00:08:14,880 --> 00:08:17,000
+ You can't do that, right.
+
+113
+00:08:17,000 --> 00:08:21,760
+ And in extraordinary situations, and this is the first usage of the key will final, I'm
+
+114
+00:08:21,760 --> 00:08:27,160
+ telling you, there is the second usage that is to define constants in Java, right.
+
+115
+00:08:27,160 --> 00:08:32,280
+ And see or other languages, we have the cons, but in Java, we have the final key words.
+
+116
+00:08:32,280 --> 00:08:36,080
+ You can use it like this, final, for example, in length.
+
+117
+00:08:36,080 --> 00:08:39,000
+ And let's say I want it to be 900.
+
+118
+00:08:39,000 --> 00:08:40,600
+ So you cannot change the value now.
+
+119
+00:08:40,600 --> 00:08:42,160
+ This is a final variable.
+
+120
+00:08:42,160 --> 00:08:47,520
+ And with cable case, I told you that final variables should be defined in all caps, right.
+
+121
+00:08:47,520 --> 00:08:51,520
+ But this is the second usage, coming back to the first usage, final methods, they can
+
+122
+00:08:51,520 --> 00:08:53,560
+ never be overridden.
+
+123
+00:08:53,560 --> 00:09:00,080
+ And in extraordinary situations, when you would want a class not to be even inherited, right.
+
+124
+00:09:00,080 --> 00:09:03,840
+ How can that be overridden over writing is out of the question, but you want inheritance
+
+125
+00:09:03,840 --> 00:09:07,360
+ to stop one of the core principles of the Java programming language.
+
+126
+00:09:07,360 --> 00:09:08,880
+ And you want to stop it.
+
+127
+00:09:08,880 --> 00:09:12,280
+ Sometimes there might be a situation, but Java gives you the flexibility.
+
+128
+00:09:12,280 --> 00:09:19,000
+ And in that time, the third usage of the keyword final is with the class itself, right.
+
+129
+00:09:19,000 --> 00:09:24,800
+ Now, this class is not even inheritable, see an error when Sneha tries to extensue without
+
+130
+00:09:24,800 --> 00:09:30,640
+ says that cannot inherit from a class, which is final, say those final, and can we override
+
+131
+00:09:30,640 --> 00:09:31,640
+ anything?
+
+132
+00:09:31,640 --> 00:09:33,560
+ No, because inheritance doesn't work.
+
+133
+00:09:33,560 --> 00:09:38,760
+ Again, I told you for inheritance to work for overriding to work, sorry, inheritance has
+
+134
+00:09:38,760 --> 00:09:44,920
+ to work here, but here, inheritance isn't working because you stop that with the final class.
+
+135
+00:09:44,920 --> 00:09:49,080
+ And the classes in Java are not extendable, they're not inheritable, right.
+
+136
+00:09:49,080 --> 00:09:54,920
+ So three usages I've told you for final, right, and I've given you good food for thought
+
+137
+00:09:54,920 --> 00:09:59,640
+ about thinking about of all these work, what is overriding, what are those exceptions
+
+138
+00:09:59,640 --> 00:10:00,640
+ scenarios?
+
+139
+00:10:00,640 --> 00:10:04,600
+ Or when would you consider something to be overloading and overriding or when there
+
+140
+00:10:04,600 --> 00:10:05,760
+ would be an error?
+
+141
+00:10:05,760 --> 00:10:07,600
+ And what do final methods mean?
+
+142
+00:10:07,600 --> 00:10:08,760
+ What are final classes used for?
+
+143
+00:10:08,760 --> 00:10:10,160
+ I'll see you in the next video.
+
