@@ -1,0 +1,344 @@
+1
+00:00:01,309 --> 00:00:05,349
+Anh đã bao giờ thử gỡ lỗi một cuộc triển khai chỉ để tìm ra anh
+
+2
+00:00:05,349 --> 00:00:07,710
+Hình ảnh hộp ở chỗ khác à?
+
+3
+00:00:07,840 --> 00:00:11,510
+Nó có thể nằm trong danh sách của ai đó địa phương Docker hoặc có thể là
+
+4
+00:00:11,510 --> 00:00:13,630
+cất giữ trong một kho chứa bị phản đối.
+
+5
+00:00:13,789 --> 00:00:18,040
+Quản lý động tác có thể tạo ra hoặc phá vỡ toàn bộ đường ống CI/CD của bạn.
+
+6
+00:00:18,190 --> 00:00:21,350
+Đó là lý do tại sao sổ ghi chép của Google Cloud là
+
+7
+00:00:21,350 --> 00:00:23,632
+được thiết kế để trở thành một nguồn lẽ thật duy nhất.
+
+8
+00:00:23,783 --> 00:00:26,462
+Bây giờ hãy xem làm thế nào chúng ta có thể sử dụng nó tốt hơn.
+
+9
+00:00:26,702 --> 00:00:30,603
+Trước hết, bộ đăng ký đồ họa hỗ trợ nhiều dạng.
+
+10
+00:00:30,702 --> 00:00:37,042
+Nó hỗ trợ Docker, Muven, NPM, Python, Go, và chung OCI.
+
+11
+00:00:37,193 --> 00:00:42,062
+Vì vậy, tôi vừa tạo ra một ứng dụng dựa trên Docker,
+
+12
+00:00:42,222 --> 00:00:45,576
+Vì vậy, nếu tôi đi xuống biên tập mở của tôi, tôi có một
+
+13
+00:00:45,576 --> 00:00:48,855
+Ứng dụng Flask mẫu mà chúng tôi đã tạo ra.
+
+14
+00:00:49,055 --> 00:00:54,055
+Bây giờ cho điều này, tôi sẽ tạo ra một kho chứa mà là định dạng của Docker.
+
+15
+00:00:54,236 --> 00:00:56,675
+Vì vậy, ở đây chỉ cần nói chào thế giới.
+
+16
+00:00:56,816 --> 00:00:58,296
+Bây giờ để tạo kho hàng,
+
+17
+00:00:58,416 --> 00:01:01,096
+Tôi quay trở lại với cửa sổ thiết bị cuối của tôi, và tôi sẽ gõ
+
+18
+00:01:01,096 --> 00:01:04,275
+ra lệnh như đồ cổ của đám mây.
+
+19
+00:01:04,580 --> 00:01:10,269
+Và sau đó tôi sẽ nói về việc tạo ra món khai vị của tôi. Đó là tên kho của tôi.
+
+20
+00:01:10,470 --> 00:01:16,430
+Sau đó tôi sẽ đưa ra định dạng kho lưu trữ là Docker và địa điểm của Asiasouteast1,
+
+21
+00:01:16,510 --> 00:01:21,220
+và sau đó bất kỳ mô tả, bất cứ điều gì bạn muốn cung cấp và sau đó nói Enter.
+
+22
+00:01:21,279 --> 00:01:25,629
+Điều này sẽ mất một lúc, và nó sẽ tạo ra kho đồ vật của chúng ta.
+
+23
+00:01:25,790 --> 00:01:26,610
+Không chỉ thế này,
+
+24
+00:01:26,870 --> 00:01:31,959
+Nếu bạn đã nhận thấy rằng chúng tôi đã đặc biệt đề cập đến khu vực.
+
+25
+00:01:32,150 --> 00:01:36,510
+Name
+
+26
+00:01:36,510 --> 00:01:40,230
+Với tư cách là nhóm GKE hay dịch vụ Cloud Run,
+
+27
+00:01:40,349 --> 00:01:43,330
+và nó cũng khuyên bạn nên tạo kho lưu trữ đồ tạo tác
+
+28
+00:01:43,330 --> 00:01:46,273
+Cùng một khu vực mà Cloud xây dựng.
+
+29
+00:01:46,313 --> 00:01:48,722
+Trên thực tế, điều này làm giảm hiệu quả mạng lưới,
+
+30
+00:01:48,803 --> 00:01:51,962
+Chi phí đi lại, xây dựng thời gian, và triển khai thời gian.
+
+31
+00:01:52,252 --> 00:01:55,303
+Có lẽ, hãy nói cho kinh doanh triển khai, bạn
+
+32
+00:01:55,483 --> 00:01:57,483
+muốn thực hiện trên nhiều vùng.
+
+33
+00:01:57,602 --> 00:02:02,822
+Trong trường hợp đó, bạn có thể tạo ra nhiều đảo cho mỗi khu vực,
+
+34
+00:02:02,843 --> 00:02:06,742
+Và sau đó bạn có thể sử dụng các mô phỏng hoặc các đường ống quảng cáo.
+
+35
+00:02:06,763 --> 00:02:08,502
+Nếu bạn muốn xem nó trông như thế nào,
+
+36
+00:02:08,602 --> 00:02:12,136
+Anh có thể xuống đây tìm hồ sơ ghi chép.
+
+37
+00:02:12,335 --> 00:02:15,776
+Ở đây bạn có thể thấy tất cả các đăng ký nằm trong tài khoản của bạn.
+
+38
+00:02:15,936 --> 00:02:19,830
+Ở đây bạn có thể thấy tất cả các đăng ký nằm trong tài khoản của tôi,
+
+39
+00:02:19,830 --> 00:02:23,335
+Điều tôi có thể làm là tôi có thể đi xuống kho đặc biệt của tôi.
+
+40
+00:02:23,455 --> 00:02:26,365
+Tôi có thể đặc biệt chỉ định vai phụ tá,
+
+41
+00:02:26,496 --> 00:02:29,776
+mà đôi khi rất quan trọng dựa trên
+
+42
+00:02:29,776 --> 00:02:32,136
+Một ca phẫu thuật đặc biệt mà ai đó muốn làm.
+
+43
+00:02:32,296 --> 00:02:38,110
+Vì vậy, tôi có thể chọn ứng dụng của tôi và nói Hiển thị bảng thông tin. ♪ And here I
+
+44
+00:02:38,110 --> 00:02:40,470
+có thể thêm những vai trò và sự cho phép cụ thể này.
+
+45
+00:02:40,880 --> 00:02:44,720
+Tôi có thể nói rằng phụ trách bổ sung, và cho một bộ cụ thể của người dùng hoặc một nhóm,
+
+46
+00:02:45,809 --> 00:02:47,169
+Tôi có thể chỉ định vai diễn.
+
+47
+00:02:47,919 --> 00:02:51,210
+Có lẽ tôi muốn chỉ định vai trò đọc sách nghệ thuật,
+
+48
+00:02:51,250 --> 00:02:55,139
+Hoặc có lẽ tôi muốn chỉ định sự cho phép của nhà văn,
+
+49
+00:02:55,220 --> 00:02:59,270
+Ví dụ như, xây dựng mây, hoặc có thể đọc sự cho phép cho mây triển khai.
+
+50
+00:02:59,369 --> 00:03:00,990
+Vì vậy, theo nhu cầu,
+
+51
+00:03:01,089 --> 00:03:05,009
+chúng ta có thể phân công vai trò và sự cho phép cho đăng ký đặc biệt này.
+
+52
+00:03:05,100 --> 00:03:08,880
+Enterprises sử dụng bộ đăng ký nghệ thuật cho một vài lý do khác.
+
+53
+00:03:09,050 --> 00:03:10,992
+Một trong số đó là máy quét dễ bị tổn thương.
+
+54
+00:03:11,091 --> 00:03:16,212
+Google tự động chạy và quét các điểm yếu đã được đẩy lên ảnh.
+
+55
+00:03:16,292 --> 00:03:20,412
+Bạn có thể áp đặt các chính sách để ngăn chặn các cuộc triển khai khi quan trọng
+
+56
+00:03:20,412 --> 00:03:25,371
+Thiết lập chung tìm thấy lỗi xây dựng nếu ảnh cơ bản bị lỗi.
+
+57
+00:03:25,481 --> 00:03:29,531
+Một cách tốt nhất khác là đánh dấu bất biến.
+
+58
+00:03:29,651 --> 00:03:36,011
+Bạn không bao giờ ghi đè các thẻ như prod hoặc cho phép chúng tôi sử dụng các fups cam kết
+
+59
+00:03:36,011 --> 00:03:39,031
+Thay vào đó, và sau đó đề cao siêu dữ liệu của phiên bản,
+
+60
+00:03:39,531 --> 00:03:40,634
+Chứ không phải đăng ký lại.
+
+61
+00:03:40,813 --> 00:03:45,494
+Theo mặc định, bộ đăng ký nghệ thuật là riêng tư, đó chính xác là những gì bạn muốn.
+
+62
+00:03:45,694 --> 00:03:47,194
+Với giấy phép nhị phân,
+
+63
+00:03:47,494 --> 00:03:51,274
+Đội có thể ký vào hình ảnh container trước khi triển khai.
+
+64
+00:03:51,414 --> 00:03:56,123
+Điều này ngăn chặn việc xâm nhập hình ảnh, xây dựng không hợp lệ, đẩy trái phép.
+
+65
+00:03:56,373 --> 00:04:01,154
+Đặc biệt, nhiều tổ chức tài chính và y tế đòi hỏi điều này.
+
+66
+00:04:01,333 --> 00:04:03,274
+Không chỉ thế này, trong một khoảng thời gian,
+
+67
+00:04:03,494 --> 00:04:06,494
+các hiện vật xây dựng hàng trăm phiên bản,
+
+68
+00:04:06,654 --> 00:04:08,414
+Ảnh cũ, thẻ không dùng,
+
+69
+00:04:08,533 --> 00:04:12,296
+Tất cả chiếm chỗ và tiền bạc. Bộ ký hợp lệ
+
+70
+00:04:12,296 --> 00:04:14,975
+Hỗ trợ chính sách dọn dẹp mà bạn có thể thiết lập.
+
+71
+00:04:15,186 --> 00:04:18,365
+Chẳng hạn, bạn có thể trở về kho của mình.
+
+72
+00:04:18,454 --> 00:04:21,815
+Khi anh vào trong kho và nói sửa kho,
+
+73
+00:04:21,915 --> 00:04:26,075
+Trong kho của anh, anh có thể thêm vào chính sách dọn dẹp.
+
+74
+00:04:26,135 --> 00:04:27,885
+Và khi anh lập một chính sách dọn dẹp,
+
+75
+00:04:28,055 --> 00:04:31,496
+Bạn có thể cho một cái tên và bạn có thể quyết định cơ sở trên
+
+76
+00:04:31,496 --> 00:04:33,055
+Mà anh muốn dọn dẹp.
+
+77
+00:04:33,335 --> 00:04:35,656
+Có lẽ anh muốn xóa điều kiện,
+
+78
+00:04:35,816 --> 00:04:40,697
+Nói rằng nếu một hình ảnh cụ thể là cũ sau đó điều này là cụ thể,
+
+79
+00:04:40,898 --> 00:04:41,817
+thì anh có thể loại bỏ nó.
+
+80
+00:04:41,898 --> 00:04:46,537
+Hoặc có lẽ bạn chỉ muốn giữ một số phiên bản gần đây.
+
+81
+00:04:46,768 --> 00:04:49,157
+Tôi không muốn nó có hơn 50 hình ảnh,
+
+82
+00:04:49,257 --> 00:04:51,778
+để bạn có thể giữ số tài khoản đó.
+
+83
+00:04:51,937 --> 00:04:55,097
+Đây là cách bạn có thể thiết lập chính sách dọn dẹp.
+
+84
+00:04:55,227 --> 00:04:59,578
+Điều này sẽ cực kỳ hữu ích cho các đội thực hiện các phát hành thường xuyên.
+
+85
+00:04:59,697 --> 00:05:03,738
+Vì vậy, đó là cách bạn có thể cấu hình bộ đăng ký nghệ thuật cho một an ninh,
+
+86
+00:05:03,977 --> 00:05:08,898
+Dòng điện công nhân đa năng và sự kết hợp giữa mây xây dựng và mây.
+
