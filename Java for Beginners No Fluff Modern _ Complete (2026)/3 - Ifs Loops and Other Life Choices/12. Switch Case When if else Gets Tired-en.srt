@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:09,200
+ Welcome back folks and after encountering or coming across the if else and the logical operators,
+
+2
+00:00:09,200 --> 00:00:14,560
+ the comparison operators, we move on to branching control statements and we do that with a switch
+
+3
+00:00:14,560 --> 00:00:19,360
+ case. Now people coming in from a different programming language, they would have an idea of how
+
+4
+00:00:19,360 --> 00:00:25,200
+ a switch case works. But in Java, we'll just have a look at the syntax. It's mostly like other
+
+5
+00:00:25,200 --> 00:00:32,160
+ C style languages like CC++ or C#, but let's just have a quick look at the switch case
+
+6
+00:00:32,160 --> 00:00:39,440
+ syntax and when we use it. And what were the changes in the recent versions in Java for when it
+
+7
+00:00:39,440 --> 00:00:46,320
+ comes to switch case? So first of all, let's go on and create a new class here again. I'll take control
+
+8
+00:00:46,320 --> 00:01:01,040
+ in and call this a switch case demo, right? So again, we'll just maximize this and I'll just put in
+
+9
+00:01:01,040 --> 00:01:08,720
+ the traditional the customer you may make heard. And now the syntax of writing a switch case is
+
+10
+00:01:08,720 --> 00:01:15,600
+ like this. You say a switch and then just put in a condition and then the braces and then you say
+
+11
+00:01:15,600 --> 00:01:27,200
+ case one, case two, case three, and then a default, right? So now obviously one, two, three,
+
+12
+00:01:27,200 --> 00:01:32,320
+ this is just an example. They do not necessarily need to be ordered. Depends on what you're trying
+
+13
+00:01:32,320 --> 00:01:38,400
+ to compare. They can sometimes be a string. They can sometimes be enumeration as well. Now for the
+
+14
+00:01:38,400 --> 00:01:43,440
+ ones who are wondering what an enumeration is, we have a separate video lined up for what
+
+15
+00:01:43,440 --> 00:01:50,240
+ items are in Java, quite a detailed video about it. But for now, this is the syntax of writing
+
+16
+00:01:50,240 --> 00:01:56,080
+ a switch case. And there were changes made to how the switch case operates in different versions
+
+17
+00:01:56,080 --> 00:02:01,920
+ of Java. I'm going to walk you through some of the most significant changes. And but let's just get
+
+18
+00:02:01,920 --> 00:02:07,600
+ started with using the switch case now, following the syntax. So I'll just take a number from runtime
+
+19
+00:02:07,600 --> 00:02:15,120
+ because as I said, that hard quality values are never recommended. So I'll just say enter a number.
+
+20
+00:02:15,120 --> 00:02:20,400
+ Let's say my requirement is to compare that number with a bunch of values. And this time,
+
+21
+00:02:20,400 --> 00:02:24,960
+ I want to use a switch case. I'll say switch. But first of all, obviously, I need to take this
+
+22
+00:02:24,960 --> 00:02:36,000
+ in a variable. I'll just say in value to new scanner system loaded again. And we'll say dot next
+
+23
+00:02:36,000 --> 00:02:44,960
+ it. Right. And this switch value will just use it in a value. That is a switch case. Sorry.
+
+24
+00:02:44,960 --> 00:02:52,080
+ And then put in multiple cases. And what I'll do is, I'll say if that number, for example, is 10,
+
+25
+00:02:52,800 --> 00:03:06,400
+ right, I want to print that in words, so I'll say 10. And then I'll say a case. Let's say 15. Again,
+
+26
+00:03:06,400 --> 00:03:14,400
+ want to print it in words. I'll say 15. And I'll have one more case. I'll say case three.
+
+27
+00:03:15,840 --> 00:03:23,440
+ And a stout again, I'll just say three. And if none of the matches, I'll say a stout,
+
+28
+00:03:23,440 --> 00:03:34,480
+ no match font. So this works as. So this value is then compared with different case values. First
+
+29
+00:03:34,480 --> 00:03:39,920
+ of all, it would be matched with 10. If it's a match, then whatever you write in the body is executed,
+
+30
+00:03:39,920 --> 00:03:46,800
+ right? And all other cases are ignored, even the default is ignored. Think about default as being
+
+31
+00:03:46,800 --> 00:03:55,360
+ the else to all cases, right? So if 10 doesn't match, then there is a possible match with 15.
+
+32
+00:03:55,360 --> 00:04:00,560
+ If it doesn't match, even three, otherwise the default is executed, right? So let's have a look
+
+33
+00:04:00,560 --> 00:04:08,240
+ at this. And if I hit run, and let's say I enter the number 15, right? So when I hit enter,
+
+34
+00:04:08,240 --> 00:04:13,040
+ what is the output that you're expecting here? So you might wonder that if the value
+
+35
+00:04:13,040 --> 00:04:17,920
+ that obviously I enter the number as 15, this will not be matched, it would move on to the next case,
+
+36
+00:04:17,920 --> 00:04:24,960
+ I'll get 15. And that's it. But you'll be surprised to see I'll get 15, three, and even no match
+
+37
+00:04:24,960 --> 00:04:30,480
+ found. Let's find it out. And that's what you're getting 15, three, and no match found. Now,
+
+38
+00:04:30,480 --> 00:04:36,400
+ what an earth has happened here. I was just expecting 15 to be printed, how on earth were three,
+
+39
+00:04:36,400 --> 00:04:41,840
+ and no match found even printed, that's like an else to all apps. So what happened there is,
+
+40
+00:04:41,840 --> 00:04:48,480
+ there's a condition called fall through that happens in a switch case. So that is, if the value
+
+41
+00:04:48,480 --> 00:04:56,160
+ that you are evaluating in a switch case, it matches any of the case values, then the flu,
+
+42
+00:04:56,160 --> 00:05:02,240
+ the control keeps on falling through. We call it fall through until it finds one of two things,
+
+43
+00:05:02,240 --> 00:05:10,880
+ either the optional break statement or the ending brace of the switch case. So until then,
+
+44
+00:05:10,880 --> 00:05:18,400
+ it keeps on falling through. That's why you would see generally we write after every case,
+
+45
+00:05:18,400 --> 00:05:22,560
+ after every switch rather, we put in a break statement like this.
+
+46
+00:05:27,680 --> 00:05:33,680
+ Now, why do we do that? Because we do not want the fall through to happen. So what happens is,
+
+47
+00:05:33,680 --> 00:05:39,360
+ if any of these case values matches, let's say I enter 10 or 15, right? So I get 15 and then
+
+48
+00:05:39,360 --> 00:05:44,800
+ break, what does break do break immediately gets the control out of the switch case at line number
+
+49
+00:05:44,800 --> 00:05:50,800
+ 23. That's it. And in this situation, I wanted that kind of a behavior, but there are situations
+
+50
+00:05:50,800 --> 00:05:56,640
+ where you would want the fall through to happen. And that's why they have kept the break as optional.
+
+51
+00:05:56,640 --> 00:06:01,280
+ But for this kind of a situation, as I told you, the requirement again, it's the program is
+
+52
+00:06:01,280 --> 00:06:06,080
+ programming again is requirement, given the requirement was, and I did not want the fall through to
+
+53
+00:06:06,080 --> 00:06:11,680
+ happen this time. And that's why I put in the optional break statement. I'll just say 15 this time,
+
+54
+00:06:11,680 --> 00:06:19,760
+ it is just 15. So that is how the fall through happens and how you control it with the optional
+
+55
+00:06:19,760 --> 00:06:30,240
+ break statement, right? So, no, then there were some changes with the switch case that happened
+
+56
+00:06:30,240 --> 00:06:36,080
+ in some of the recent versions in the language. I'll just briefly through those changes,
+
+57
+00:06:36,080 --> 00:06:40,000
+ which are quite significant to be true in the next video.
+
