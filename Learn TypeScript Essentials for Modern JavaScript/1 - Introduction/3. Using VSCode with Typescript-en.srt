@@ -1,0 +1,168 @@
+1
+00:00:00,000 --> 00:00:07,120
+ Okay, so in this lesson that we're going to look at how to use Visual Studio Code with TypeScript,
+
+2
+00:00:07,120 --> 00:00:13,760
+ we offer a node that Visual Studio Code is perhaps one of the best editors for TypeScript
+
+3
+00:00:13,760 --> 00:00:20,720
+ because it gives us intelligence, type checking, debugging, and a great developer experience.
+
+4
+00:00:21,760 --> 00:00:28,880
+ Now, we've had a look in the previous lesson how to do the TypeScript compiler, TSC,
+
+5
+00:00:28,880 --> 00:00:35,680
+ in a simple and notepad file. Obviously, we don't want to do it in notepad because we've got a
+
+6
+00:00:35,680 --> 00:00:42,080
+ Visual Studio Code. Now, the tools you're going to need to first of all make sure you have node installed,
+
+7
+00:00:42,080 --> 00:00:48,400
+ so make sure you go to terminal prompts, first of all, and to node, and then V for version.
+
+8
+00:00:49,280 --> 00:00:54,480
+ If you haven't got node installed, then you just do a quick Google search and get that installed
+
+9
+00:00:54,480 --> 00:01:00,720
+ on your system. You also want to make sure you have MPM installed as well. Again, just do MPM
+
+10
+00:01:00,720 --> 00:01:08,320
+ hyphen V and should output the version of MPM, and once again, just pop up to the internet,
+
+11
+00:01:08,320 --> 00:01:16,400
+ friendly Google, and grabs your copy of MPM. Now, you can obviously need to install TypeScript,
+
+12
+00:01:16,400 --> 00:01:21,840
+ and we learned how to do that in the previous lesson, so you should already have that on your
+
+13
+00:01:21,840 --> 00:01:29,520
+ machine by now. Let's do TSC version, and she had the version of TypeScript. If you don't have
+
+14
+00:01:29,520 --> 00:01:39,280
+ it installed, you can do MPM, install, hyphen G, and then TypeScript, and that's pretty much it.
+
+15
+00:01:39,280 --> 00:01:43,520
+ You should have everything you need to be able to do some TypeScript development.
+
+16
+00:01:44,240 --> 00:01:49,200
+ So, I'm just going to go to a folder, let's just create yourselves, open a folder,
+
+17
+00:01:49,200 --> 00:01:57,520
+ let's just go to our TypeScript folder here. Okay, it's going to blank folder to work with.
+
+18
+00:01:57,520 --> 00:02:03,760
+ Going to create a new file, just like we did in the previous example, but we're now
+
+19
+00:02:03,760 --> 00:02:14,160
+ going to get inside Visual Studio Code, so let's do hello.ts. We're going to use the same code as we did
+
+20
+00:02:14,160 --> 00:02:20,000
+ in the previous example, so let's message. Notice, as we type in Visual Studio Code,
+
+21
+00:02:20,000 --> 00:02:26,560
+ we of course get IntelliSense support, so if we type S, we get the option to do it as a string,
+
+22
+00:02:26,560 --> 00:02:41,920
+ so we can then define it, the hello VS Code, TypeScript, and let's just output our message,
+
+23
+00:02:41,920 --> 00:02:50,720
+ so console, and then we call this HubLog, and then it puts our message. Okay, so that's our
+
+24
+00:02:50,720 --> 00:02:59,600
+ hello.ts file, and of course, we can now go to a terminal prompt, and we can compile this guy,
+
+25
+00:02:59,600 --> 00:03:08,800
+ and convert it into JavaScript, so we can do TSC, and then do hello.ts.
+
+26
+00:03:08,800 --> 00:03:19,280
+ Just like it did in the previous lesson, which now created ourselves a JavaScript file,
+
+27
+00:03:20,240 --> 00:03:25,680
+ and let's remove the types just like I did before. Now we can do this, we can execute that,
+
+28
+00:03:25,680 --> 00:03:34,880
+ we can go to a terminal prompt and do node, and then hello.js, and then we get our outputs by
+
+29
+00:03:34,880 --> 00:03:40,400
+ hello VS Code, TypeScript, so you can see how easy it is to actually create some TypeScript
+
+30
+00:03:40,400 --> 00:03:48,160
+ in Visual Studio Code. Now when our project grows, compiling individual files comes rather
+
+31
+00:03:48,160 --> 00:03:54,960
+ inefficient, so instead we can create ourselves a TS config JSON file that's basically
+
+32
+00:03:54,960 --> 00:04:01,680
+ tells TypeScript how to compile our entire project, and we can do that again inside our terminal
+
+33
+00:04:01,680 --> 00:04:12,240
+ prompt by doing TSC, hyphen, hyphen, and then in it, and IT. Execute that, and it creates us a
+
+34
+00:04:12,240 --> 00:04:21,920
+ TS config JSON file with a whole load of defaults here. And then what we can do is that allows us
+
+35
+00:04:21,920 --> 00:04:29,280
+ to compile everything inside our folder just by doing TSC without specifying the name of the file,
+
+36
+00:04:29,280 --> 00:04:37,280
+ and it's going to output and create our whole compile or whole load of stuff, including
+
+37
+00:04:37,280 --> 00:04:41,760
+ these mapping files, allowing us to be able to do things like debugging and stuff like that.
+
+38
+00:04:41,760 --> 00:04:48,000
+ So we get more options because of this config file than just calling the command directly,
+
+39
+00:04:48,000 --> 00:04:53,280
+ and this is going to be great for our development because we never have to rerun the
+
+40
+00:04:53,280 --> 00:04:59,280
+ compiler for each file manually. In the next session, we're going to expand upon this
+
+41
+00:04:59,280 --> 00:05:06,640
+ by installing some extensions, also learning how to do some debugging in TypeScript in Visual Studio
+
+42
+00:05:06,640 --> 00:05:07,640
+ code.
+
