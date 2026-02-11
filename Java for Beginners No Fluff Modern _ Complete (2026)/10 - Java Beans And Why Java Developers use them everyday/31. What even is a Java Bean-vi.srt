@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:07,200
+Tất cả bạn bè của chúng tôi trong video này, chúng tôi sẽ nói về một cái gì đó mà bạn chắc chắn sẽ
+
+2
+00:00:07,200 --> 00:00:11,280
+Hãy dùng mỗi ngày trong đời bạn làm nhà phát triển Java.
+
+3
+00:00:11,280 --> 00:00:21,240
+Và đó là khái niệm về một chiếc Java Bean.
+
+4
+00:00:21,240 --> 00:00:24,760
+Đầu tiên, Java Bean là gì?
+
+5
+00:00:24,760 --> 00:00:28,600
+Và tại sao tôi lại nói chúng ta sẽ sử dụng nó mỗi ngày?
+
+6
+00:00:28,600 --> 00:00:31,840
+Tại sao nó lại hiện hữu trong hệ sinh thái Java?
+
+7
+00:00:31,840 --> 00:00:36,840
+Dù bạn đang sử dụng Java lõi, bạn đang sử dụng bất kỳ khuôn khổ tiên tiến hoặc một cái gì đó khác,
+
+8
+00:00:36,840 --> 00:00:41,160
+Có thể anh sẽ dùng Java Beans ở đâu đó.
+
+9
+00:00:41,160 --> 00:00:45,080
+Vì vậy, những gì là một Java Bean và tại sao chúng tôi sử dụng nó?
+
+10
+00:00:45,080 --> 00:00:51,800
+Đầu tiên, tại sao nó lại hoạt động như một người mang dữ liệu, đúng không?
+
+11
+00:00:51,800 --> 00:00:58,480
+Hoặc để gửi dữ liệu từ lớp này sang lớp khác, bạn sẽ cần một cái gì đó giống như một Java
+
+12
+00:00:58,480 --> 00:00:59,480
+Bean.
+
+13
+00:00:59,480 --> 00:01:03,800
+Rõ ràng trong video tiếp theo khi chúng tôi sẽ nhận được bàn tay bẩn, đưa vào một số mã, bạn sẽ
+
+14
+00:01:03,800 --> 00:01:08,000
+Hiểu tôi đang nói gì về việc gửi dữ liệu giữa các lớp.
+
+15
+00:01:08,000 --> 00:01:11,960
+Nhưng bây giờ, một chiếc Java Bean là gì?
+
+16
+00:01:11,960 --> 00:01:12,960
+Đó là một lớp học.
+
+17
+00:01:12,960 --> 00:01:14,280
+Một lần nữa, điều đầu tiên, phải không?
+
+18
+00:01:14,280 --> 00:01:20,200
+Để tôi làm cho nó đơn giản cho bạn để hiểu thêm một lần nữa, một Java Bean là một lớp học, nhưng
+
+19
+00:01:20,200 --> 00:01:23,520
+phải không?
+
+20
+00:01:23,520 --> 00:01:31,440
+Đó là một lớp học bình thường giống như bạn đã viết lớp, nhưng theo một loạt hội nghị.
+
+21
+00:01:31,440 --> 00:01:38,240
+Và điều đầu tiên là một Java Bean phải có các biến thể, được tuyên bố
+
+22
+00:01:38,240 --> 00:01:39,240
+Riêng tư.
+
+23
+00:01:39,240 --> 00:01:44,320
+Vì vậy, ví dụ biến trong một Java Bean là riêng tư.
+
+24
+00:01:44,320 --> 00:01:50,080
+Để tôi viết cho anh.
+
+25
+00:01:50,080 --> 00:01:56,280
+Rõ ràng, bạn sẽ biết rằng riêng tư là một từ khóa.
+
+26
+00:01:56,280 --> 00:01:57,520
+Vì vậy, nó bắt đầu với một nhỏ.
+
+27
+00:01:57,520 --> 00:02:00,800
+Vì vậy, đừng đi với những gì tôi viết ở đây trên bảng trắng của tôi.
+
+28
+00:02:00,800 --> 00:02:03,520
+Nhưng ví dụ biến số phải được tuyên bố riêng tư.
+
+29
+00:02:03,520 --> 00:02:08,640
+Và nhân tiện, đó là một trong những tiêu chuẩn công nghiệp, đó là đề nghị, dù
+
+30
+00:02:08,640 --> 00:02:14,240
+Bạn đang sử dụng Java Bean hay không, bạn nên luôn luôn tuyên bố các biến số riêng tư.
+
+31
+00:02:14,240 --> 00:02:15,760
+Phải.
+
+32
+00:02:15,760 --> 00:02:20,120
+Ngay cả khi bạn không, rõ ràng đó không phải là một sai lầm, đó là lý do tại sao tôi nói bạn nên.
+
+33
+00:02:20,120 --> 00:02:24,840
+Tôi đã không nói phải khi tôi nói phải suy nghĩ về rằng như là một lỗi hoặc không, nhưng khi
+
+34
+00:02:24,840 --> 00:02:29,400
+Tôi nói nên, đó là một lời khuyên như và như tôi đã nói với bạn, và theo sau
+
+35
+00:02:29,400 --> 00:02:32,960
+Ở điểm số, chúng tôi làm theo những đề nghị như thể đó là luật.
+
+36
+00:02:32,960 --> 00:02:38,960
+Đến cuối điểm, bạn nắm chặt cú pháp hơn và như tôi đã nói,
+
+37
+00:02:38,960 --> 00:02:43,240
+đó là chất lượng văn bản của bạn, tốt hơn, dễ đọc, hay.
+
+38
+00:02:43,240 --> 00:02:48,320
+Vì vậy, quay trở lại với Java Bean, bất cứ điều gì bạn tuyên bố, chúng nên được riêng tư.
+
+39
+00:02:48,320 --> 00:02:53,880
+Và tôi đã nói với bạn về khuyến cáo cũng, tại sao chúng tôi nên tuyên bố các biến số
+
+40
+00:02:53,880 --> 00:02:55,040
+một lớp học riêng tư?
+
+41
+00:02:55,040 --> 00:03:00,120
+Bởi vì chúng tôi không bao giờ nên chia sẻ trạng thái của chương trình trực tiếp, trạng thái của một ví dụ lớp học
+
+42
+00:03:00,120 --> 00:03:03,960
+Các biến giữ một cái gì đó quan trọng liên quan đến đối tượng đó.
+
+43
+00:03:03,960 --> 00:03:08,120
+Và chúng ta không bao giờ nên chia sẻ công khai hoặc không có quyền riêng tư.
+
+44
+00:03:08,120 --> 00:03:09,400
+Đó là tài sản đầu tiên.
+
+45
+00:03:09,400 --> 00:03:19,600
+Tài sản thứ hai của một chiếc Java Bean là nó nên có những phương pháp thu hút công chúng và thiết lập các phương pháp.
+
+46
+00:03:19,600 --> 00:03:26,120
+Vâng, đó là chúng tôi nên, bởi vì chúng tôi bây giờ có các biến thể như riêng tư, bạn sẽ
+
+47
+00:03:26,120 --> 00:03:30,800
+khiến cho thế giới bên ngoài truy cập chúng bằng cách công khai có một bộ phương pháp.
+
+48
+00:03:30,800 --> 00:03:34,680
+Vì vậy, bạn nên có phương pháp, mà là thu nhỏ và đặt nhiều hơn về điều đó trong video tiếp theo.
+
+49
+00:03:34,680 --> 00:03:38,640
+Và chúng tôi viết một số mã thực tế, nhưng bộ thu thập các phương pháp nên được tuyên bố như công khai
+
+50
+00:03:38,640 --> 00:03:43,960
+bởi vì họ sẽ cho phép ai đó khác để truy cập các biến thể và thứ ba
+
+51
+00:03:43,960 --> 00:03:51,360
+Tài sản của một chiếc Java Bean là nó không nên có một người xây dựng đối số.
+
+52
+00:03:51,360 --> 00:03:55,040
+Tóm lại, chúng tôi gọi đó là không xây dựng vòng cung.
+
+53
+00:03:55,040 --> 00:03:59,880
+Phải, vì vậy nó có thể có nhiều như tham số xây dựng, nhưng tại tất cả thời gian, nó nên có
+
+54
+00:03:59,880 --> 00:04:04,280
+không có người xây dựng lập luận, người xây dựng, không tham gia bất kỳ lập luận nào.
+
+55
+00:04:04,280 --> 00:04:09,360
+Và một khi một lớp học có tất cả những ba trong đó, nó đang theo hội nghị của một Java
+
+56
+00:04:09,360 --> 00:04:15,320
+Bean, chúng tôi gọi lớp học đó là một chiếc Java Bean, và nó thực sự là như vậy.
+
+57
+00:04:15,320 --> 00:04:21,160
+Và trong video tiếp theo, tôi sẽ đi vào các chi tiết thực hiện, làm thế nào để bạn viết
+
+58
+00:04:21,160 --> 00:04:22,160
+Một chiếc Java Bean?
+
+59
+00:04:22,160 --> 00:04:27,600
+Và nó đặc biệt quan trọng, bởi vì như tôi đã nói, thứ mà bạn sử dụng hàng ngày,
+
+60
+00:04:27,600 --> 00:04:31,720
+chắc chắn bạn sẽ cần có một sự hiểu biết tuyệt vời về khái niệm đó.
+
+61
+00:04:31,720 --> 00:04:35,180
+Vì vậy, tôi sẽ gặp lại bạn trong video tiếp theo và mã số sẽ đến cho bạn một thời gian ngắn.
+
