@@ -1,0 +1,384 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Alright friends, welcome back and after we talked about object oriented programming,
+
+2
+00:00:07,000 --> 00:00:12,480
+ the four principles that lie beneath that are the foundations of object oriented programming
+
+3
+00:00:12,480 --> 00:00:17,880
+ at any object oriented programming language for that matter, we go on and talk about
+
+4
+00:00:17,880 --> 00:00:24,280
+ two significant concepts which are at the core of everything that you do in an object oriented
+
+5
+00:00:24,280 --> 00:00:30,520
+ programming language not just in Java and obviously we're just going to talk about the
+
+6
+00:00:30,520 --> 00:00:35,840
+ implementation of those two concepts in Java terms but first let's have a look at them
+
+7
+00:00:35,840 --> 00:00:40,880
+ in literary sense and I'll just walk you through again with real world analogies to understand
+
+8
+00:00:40,880 --> 00:00:46,760
+ them and those concepts are objects and classes and once you understand them you would
+
+9
+00:00:46,760 --> 00:00:54,040
+ be in great shape to write a precise, intelligent and smarter code in the Java programming
+
+10
+00:00:54,040 --> 00:00:55,040
+ language.
+
+11
+00:00:55,040 --> 00:01:00,040
+ So let's just have a look at what a class is followed by what an object is, right?
+
+12
+00:01:00,040 --> 00:01:07,160
+ I'll just do it here for you to start with a real world analogy, so classes now they're
+
+13
+00:01:07,160 --> 00:01:09,040
+ like an idea, right?
+
+14
+00:01:09,040 --> 00:01:14,040
+ They're an idea right here in your mind, the nowhere else they're again not something which
+
+15
+00:01:14,040 --> 00:01:18,960
+ is tangible that's something which you can feel physically, right?
+
+16
+00:01:18,960 --> 00:01:26,120
+ They're just a prototype, a blueprint of something else to come later on and that's something
+
+17
+00:01:26,120 --> 00:01:29,760
+ else to come later on is what we call an object, right?
+
+18
+00:01:29,760 --> 00:01:35,880
+ So class is a definition, a prototype, a blueprint, an idea and object is its implementation
+
+19
+00:01:35,880 --> 00:01:41,680
+ and a real world example of that again, you can take any examples that come to your mind,
+
+20
+00:01:41,680 --> 00:01:48,680
+ one of my classic examples in my sessions is the idea of the almighty and that is of the
+
+21
+00:01:48,680 --> 00:01:51,040
+ idea of humans, right?
+
+22
+00:01:51,040 --> 00:01:59,040
+ So now think about it if almighty, mostly first, before bringing humans to planet Earth would
+
+23
+00:01:59,040 --> 00:02:04,720
+ have thought about it and would have some sort of an idea in their mind what a human's
+
+24
+00:02:04,720 --> 00:02:09,280
+ going to be looked like and let's just talk about this analogy and what I'll do is I'll
+
+25
+00:02:09,280 --> 00:02:18,640
+ say for example, this is your idea of human, right?
+
+26
+00:02:18,640 --> 00:02:30,680
+ And now humans have certain properties, they have legs, they have arms, they have eyes,
+
+27
+00:02:30,680 --> 00:02:36,840
+ they have mouth, they have a heart for example, right?
+
+28
+00:02:36,840 --> 00:02:45,840
+ And on the other side, humans also have walk, they have, for example, the property move,
+
+29
+00:02:45,840 --> 00:02:58,520
+ they have seat, they have air and they have breathe and they have cry and they have smile
+
+30
+00:02:58,520 --> 00:03:03,960
+ and other properties that all of us humans have, right?
+
+31
+00:03:03,960 --> 00:03:05,760
+ All of us share the same properties.
+
+32
+00:03:05,760 --> 00:03:10,240
+ Now, think about it, the left hand side properties and the right hand side properties
+
+33
+00:03:10,240 --> 00:03:16,120
+ are interrelated because now walk without legs would make no sense, breathe without a heart
+
+34
+00:03:16,120 --> 00:03:21,120
+ would make no sense, eat without a mouth would make no sense, see without an eye would
+
+35
+00:03:21,120 --> 00:03:29,120
+ make no sense, punch for example, or say you hit someone, hit is a property, hit without
+
+36
+00:03:29,120 --> 00:03:36,280
+ arms, that would make no sense, a smile without a mouth would make no sense.
+
+37
+00:03:36,280 --> 00:03:40,800
+ That's why I'll say they're interdependent on each other and these are the sort of properties
+
+38
+00:03:40,800 --> 00:03:51,040
+ any class would have, think about this human of this idea as a class, right?
+
+39
+00:03:51,040 --> 00:04:02,080
+ And think about these two as properties, right?
+
+40
+00:04:02,080 --> 00:04:10,920
+ And the right hand side properties, we refer to them as core, which operates on data, right?
+
+41
+00:04:10,920 --> 00:04:16,160
+ Core, which operates on data as I said, walk without legs makes no sense, see without
+
+42
+00:04:16,160 --> 00:04:20,680
+ eyes makes no sense here without ears would make no sense.
+
+43
+00:04:20,680 --> 00:04:23,360
+ That's why I said code that operates on data.
+
+44
+00:04:23,360 --> 00:04:27,680
+ So these are the kind of properties that at any moment of time you would have in a class,
+
+45
+00:04:27,680 --> 00:04:28,680
+ right?
+
+46
+00:04:28,680 --> 00:04:30,840
+ Not just in a human class, right?
+
+47
+00:04:30,840 --> 00:04:44,120
+ And in programming terms, we call these properties as now data as variables, right?
+
+48
+00:04:44,120 --> 00:04:52,640
+ And we call code as methods or functions, right?
+
+49
+00:04:52,640 --> 00:04:56,040
+ So this is the kind, this is the kind of stuff at any moment of time, which you would
+
+50
+00:04:56,040 --> 00:04:58,200
+ have in a class, right?
+
+51
+00:04:58,200 --> 00:05:03,760
+ And this class just as an idea by itself, it doesn't have any physical presence, because
+
+52
+00:05:03,760 --> 00:05:09,680
+ almighty, before bringing humans to earth would have written it somewhere, maybe on any note
+
+53
+00:05:09,680 --> 00:05:15,180
+ taking app if they would have access it at that time, a rough piece of paper or a sticky
+
+54
+00:05:15,180 --> 00:05:21,640
+ pad, but this is what it would have looked like before bringing humans to earth, right?
+
+55
+00:05:21,640 --> 00:05:28,280
+ And that physical implementation now, what is what you and me see in the form of a body
+
+56
+00:05:28,280 --> 00:05:34,320
+ is what we call as an object, an object of of type human, right, of class human.
+
+57
+00:05:34,320 --> 00:05:43,000
+ So class, so now for example, then this thing here becomes your object, when a new human
+
+58
+00:05:43,000 --> 00:05:55,680
+ baby is born, we say this is an object of the class human, right?
+
+59
+00:05:55,680 --> 00:05:59,920
+ And you know, when a new object of human is created in the world, that means when a new
+
+60
+00:05:59,920 --> 00:06:02,760
+ born baby comes to the world, right?
+
+61
+00:06:02,760 --> 00:06:09,120
+ And we say, oh, this human baby is able to walk moosey here, breathe, try and smile and
+
+62
+00:06:09,120 --> 00:06:12,480
+ run and has legs, arms, eyes, mouth and heart.
+
+63
+00:06:12,480 --> 00:06:16,040
+ So that means is a human congratulations, right?
+
+64
+00:06:16,040 --> 00:06:17,920
+ That's how we think about it.
+
+65
+00:06:17,920 --> 00:06:29,360
+ So this is something which has physical presence, right?
+
+66
+00:06:29,360 --> 00:06:32,080
+ So this is something tangible.
+
+67
+00:06:32,080 --> 00:06:38,520
+ So what do we call an object of a class, an object, as you would hear, or read it or
+
+68
+00:06:38,520 --> 00:06:43,440
+ see it online, they say an object is an instance of a class, but you cannot just be limited
+
+69
+00:06:43,440 --> 00:06:48,760
+ to this definition, just define it in your own terms, I would say an object is a physical
+
+70
+00:06:48,760 --> 00:06:55,480
+ manifestation of the idea of a class, it's a physical manifestation, it's a personification
+
+71
+00:06:55,480 --> 00:07:02,800
+ of that idea, which you see in real, which you feel in real, right, a human class, it's an
+
+72
+00:07:02,800 --> 00:07:09,320
+ abstract model, right, just an idea, but an object is its implementation as a set of physical
+
+73
+00:07:09,320 --> 00:07:12,960
+ manifestation of personification, right?
+
+74
+00:07:12,960 --> 00:07:17,320
+ And then how do we go about this stuff is, why is this great?
+
+75
+00:07:17,320 --> 00:07:22,560
+ Because there's just one idea, but think about it, how many humans have come until now
+
+76
+00:07:22,560 --> 00:07:26,480
+ in this planet Earth, into this planet Earth, right?
+
+77
+00:07:26,480 --> 00:07:32,680
+ How many have lived, how many have died, and how many keep continuing to come as well,
+
+78
+00:07:32,680 --> 00:07:38,960
+ like billions, died, billions, came in, blooms, billions, more good follow in all probabilities,
+
+79
+00:07:38,960 --> 00:07:44,480
+ and but the idea is just one, that is it just again helps you to just write it once, but
+
+80
+00:07:44,480 --> 00:07:50,680
+ use it as many as times in different forms and shapes, but all of a sheer similar properties,
+
+81
+00:07:50,680 --> 00:07:54,000
+ where I just took in one example of class human.
+
+82
+00:07:54,000 --> 00:07:57,280
+ So think about it, what other analogies could come to your mind.
+
+83
+00:07:57,280 --> 00:08:02,760
+ You can think about ideas like a smartphone that is another idea of a class, but just
+
+84
+00:08:02,760 --> 00:08:08,000
+ revolt around as I say, with the idea of classes and objects all around us, whatever
+
+85
+00:08:08,000 --> 00:08:11,120
+ you see is an object all around you, right?
+
+86
+00:08:11,120 --> 00:08:16,160
+ And that obviously has some basis somewhere, has an idea somewhere that's called a class,
+
+87
+00:08:16,160 --> 00:08:22,520
+ like for example, you and me would have a table, right, that is an object, but has a basis
+
+88
+00:08:22,520 --> 00:08:29,880
+ somewhere that's a class table, we have the lamp, class and object, you have the, you have
+
+89
+00:08:29,880 --> 00:08:35,640
+ the monitor, you have the laptop, you have the water bottle, these are all classes and
+
+90
+00:08:35,640 --> 00:08:36,800
+ objects, right?
+
+91
+00:08:36,800 --> 00:08:41,480
+ Just makes it so much better, just make it so much convenient and easy for you to understand
+
+92
+00:08:41,480 --> 00:08:46,600
+ these concepts when you take real world analogies, so that's the idea of a class, that's
+
+93
+00:08:46,600 --> 00:08:47,600
+ the idea of an object.
+
+94
+00:08:47,600 --> 00:08:52,520
+ And in the next video, I'm going to tell you if all my people have been in Java developer,
+
+95
+00:08:52,520 --> 00:08:58,040
+ how would have they defined this class human and how would have they created an object?
+
+96
+00:08:58,040 --> 00:09:01,160
+ So implementation coming on for you in the next video.
+
