@@ -1,0 +1,271 @@
+1
+00:00:01,120 --> 00:00:05,630
+If you ever upgrade a Kubernetes cluster manually, you know the feeling.
+
+2
+00:00:05,769 --> 00:00:08,350
+You hit Upgrade and then you cross your fingers,
+
+3
+00:00:08,689 --> 00:00:11,210
+hoping your workloads survive the process.
+
+4
+00:00:11,329 --> 00:00:15,489
+The good news is on GKE, upgrades don't have to feel like a gamble.
+
+5
+00:00:15,689 --> 00:00:19,389
+Google gives you a built‑in mechanism to upgrade safely,
+
+6
+00:00:19,600 --> 00:00:22,239
+predictably, and with minimal disruption.
+
+7
+00:00:22,420 --> 00:00:23,579
+Let's see how we can do that.
+
+8
+00:00:23,780 --> 00:00:25,920
+Google recommends using release channel,
+
+9
+00:00:26,299 --> 00:00:31,409
+not these static versions, because this provides the predictable upgrades,
+
+10
+00:00:31,700 --> 00:00:37,290
+reduce the surprise version jumps, and it simplifies the fleetwide maintenance.
+
+11
+00:00:37,619 --> 00:00:38,740
+Now how you can do that,
+
+12
+00:00:38,860 --> 00:00:42,159
+so for that you can run a simple command saying
+
+13
+00:00:42,439 --> 00:00:45,000
+gcloud container clusters update.
+
+14
+00:00:45,299 --> 00:00:46,830
+You give the name of your cluster.
+
+15
+00:00:46,939 --> 00:00:49,340
+In this case, my cluster name is dev‑cluster.
+
+16
+00:00:49,729 --> 00:00:53,810
+And I'm saying that release channel is regular and say Enter.
+
+17
+00:00:54,090 --> 00:00:56,549
+Now this will update my dev cluster.
+
+18
+00:00:56,860 --> 00:01:00,009
+If I want to see whether this has been done successfully
+
+19
+00:01:00,009 --> 00:01:02,810
+or not, I can also go to the UI part,
+
+20
+00:01:02,900 --> 00:01:09,769
+and there I can go inside the Kubernetes cluster, go to my specific cluster,
+
+21
+00:01:10,129 --> 00:01:13,779
+that is a dev‑cluster, and inside that dev‑cluster,
+
+22
+00:01:14,169 --> 00:01:15,849
+I can go down to the Details.
+
+23
+00:01:16,720 --> 00:01:20,440
+And within the Details, I can see that the release tunnel
+
+24
+00:01:20,440 --> 00:01:22,919
+which is mentioned here is a regular channel.
+
+25
+00:01:22,970 --> 00:01:27,040
+Now on similar lines, when you do the upgrading of the nodes,
+
+26
+00:01:27,139 --> 00:01:29,800
+it is recommended that you should have a port
+
+27
+00:01:29,800 --> 00:01:32,160
+disruption budget which you can set it.
+
+28
+00:01:32,319 --> 00:01:34,440
+Just go to the Open editor.
+
+29
+00:01:34,760 --> 00:01:39,940
+In the editor, I have a file called payments‑pbd.yaml file.
+
+30
+00:01:40,080 --> 00:01:45,120
+Now in this file, I have set that the minimum availability is 2.
+
+31
+00:01:45,319 --> 00:01:50,099
+Now this ensures at least two ports stay up during the node drain.
+
+32
+00:01:50,319 --> 00:01:54,180
+Google strongly recommends PDBs before any maintenance.
+
+33
+00:01:54,400 --> 00:01:55,790
+Now how I can apply that,
+
+34
+00:01:55,800 --> 00:01:59,040
+I can simply go down to the terminal and I can see here
+
+35
+00:02:00,099 --> 00:02:05,030
+kubectl apply ‑f payments‑pbd.yaml file.
+
+36
+00:02:05,790 --> 00:02:08,229
+Now this will create the policy for me.
+
+37
+00:02:08,380 --> 00:02:10,559
+We also have search upgrades.
+
+38
+00:02:11,029 --> 00:02:13,259
+That makes the GKE beautiful.
+
+39
+00:02:13,458 --> 00:02:16,149
+Instead of draining a node, deleting it,
+
+40
+00:02:16,268 --> 00:02:18,869
+recreating it, and rescheduling the pods,
+
+41
+00:02:18,979 --> 00:02:21,988
+which can cause a lot of downtime, in GKE,
+
+42
+00:02:22,108 --> 00:02:25,328
+you can add the temporary node first, shift the traffic,
+
+43
+00:02:25,548 --> 00:02:27,078
+and then remove the old ones.
+
+44
+00:02:27,229 --> 00:02:30,619
+This enables the zero downtime upgrades.
+
+45
+00:02:30,869 --> 00:02:33,869
+How you can do that, that is also very easy to do.
+
+46
+00:02:34,149 --> 00:02:39,389
+You can just say gcloud container node‑pools update default‑pool,
+
+47
+00:02:39,559 --> 00:02:43,470
+give your cluster name and say max‑surge‑upgrade to
+
+48
+00:02:43,470 --> 00:02:46,300
+1 and maximum unavailable to 0.
+
+49
+00:02:46,429 --> 00:02:49,899
+It will add one extra temporary node during the upgrade.
+
+50
+00:02:50,149 --> 00:02:52,350
+Now you can see that update has been done.
+
+51
+00:02:52,589 --> 00:02:55,320
+You can also add some of the best practices,
+
+52
+00:02:55,330 --> 00:02:59,070
+like you can use the maintenance window where you can
+
+53
+00:02:59,070 --> 00:03:01,979
+restrict the upgrades to the predictable times.
+
+54
+00:03:02,190 --> 00:03:02,690
+For example,
+
+55
+00:03:02,949 --> 00:03:07,130
+you can simply use this command where you are setting the maintenance window
+
+56
+00:03:07,130 --> 00:03:11,009
+start time and the maintenance window end time and say Enter.
+
+57
+00:03:11,149 --> 00:03:15,309
+So this will restrict the upgrade to a specific time which you have given.
+
+58
+00:03:15,669 --> 00:03:18,070
+Similarly, do the autorepair enable.
+
+59
+00:03:18,139 --> 00:03:22,559
+In that case, GKE will automatically fix the unhealthy nodes.
+
+60
+00:03:22,789 --> 00:03:25,820
+You can just say gcloud container node‑pools update
+
+61
+00:03:25,820 --> 00:03:28,429
+default‑pool and enable‑autorepair.
+
+62
+00:03:28,610 --> 00:03:30,860
+Seems my region was not right,
+
+63
+00:03:31,149 --> 00:03:33,820
+so I just change the region and then it should work fine.
+
+64
+00:03:34,080 --> 00:03:34,850
+Similarly,
+
+65
+00:03:34,990 --> 00:03:37,630
+you can also let Google handle the patching
+
+66
+00:03:37,630 --> 00:03:41,100
+automatically by auto‑upgrading enable.
+
+67
+00:03:41,259 --> 00:03:45,029
+This is exactly how large scale production Kubernetes environment
+
+68
+00:03:45,029 --> 00:03:48,550
+keeps the things running smoothly without downtime.
