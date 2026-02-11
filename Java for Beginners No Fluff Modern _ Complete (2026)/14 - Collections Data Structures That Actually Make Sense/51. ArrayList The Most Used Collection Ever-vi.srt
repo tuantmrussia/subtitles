@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:26,000
+Vì vậy, hãy đi trước và bắt đầu sử dụng các bộ sưu tập bắt đầu với các giao diện danh sách và lớp con và lớp con của nó và lớp ngầm đầu tiên chúng tôi sẽ nói về là danh sách lỗi nhớ khi chúng tôi đang nói về ít hơn chúng tôi đang nói về khả năng lưu trữ các giá trị sao chép, nó sẽ không giới hạn chúng tôi làm như vậy tôi sẽ nhanh chóng tạo ra một gói mới ở đây để các thứ vẫn được tổ chức và tôi sẽ nói rằng nó là bộ sưu tập.
+
+2
+00:00:26,000 --> 00:00:35,000
+Và trong đó tôi sẽ chỉ cần tạo ra một lớp Java mới, sau đó chúng tôi gọi nó làm việc với.
+
+3
+00:00:35,000 --> 00:00:50,000
+Bởi vì đó là những gì chúng tôi sẽ làm đúng vì vậy đây là phương pháp chính của bạn và làm thế nào chúng tôi bắt đầu sử dụng một danh sách lỗi chúng tôi sẽ chỉ tạo ra một đối tượng tôi sẽ nói một danh sách và sau đó tôi sẽ chỉ gọi nó là một danh sách.
+
+4
+00:00:50,000 --> 00:01:08,000
+Danh sách lỗi mới và đó là nó để bạn nhớ để bạn thấy rằng nó cho chúng tôi một cảnh báo là danh sách lỗi này không thể lưu bất kỳ loại dữ liệu bên phải và đó có thể là một vấn đề sau này bên phải và để đáp lại rằng chúng tôi sử dụng các dấu ngoặc góc đó là tham số chung.
+
+5
+00:01:08,000 --> 00:01:25,000
+Vì vậy, chung được cho là giới thiệu trong Java 5 để tạo ra những gì chúng tôi gọi là bộ sưu tập loại an toàn bên phải đó là các mảng luôn luôn được gõ an toàn, nhưng trước khi Java 5 bộ sưu tập không phải là bạn có thể thêm bất kỳ loại dữ liệu bất kỳ loại giá trị nào trong một bộ sưu tập và mà làm cho chúng.
+
+6
+00:01:25,000 --> 00:01:40,000
+Vì vậy, nếu bạn thấy các vùng thu thập kết thúc với các vấn đề sau đó trên đó là bằng cách giới thiệu chung tôi sẽ có một video riêng biệt và di truyền nhưng bây giờ cho biết rằng điều này là để đảm bảo loại an toàn đó là nếu chúng tôi chỉ cần nói đây là một chuỗi ở đây nó trở thành một chuỗi trên
+
+7
+00:01:40,000 --> 00:01:58,000
+Danh sách rằng nó là nó không thể giữ bất kỳ loại dữ liệu khác và sau đó ở phía bên phải nó phải được nhìn thấy cảnh báo đi mất rằng lời cảnh báo màu vàng vì vậy bây giờ một điều cần lưu ý ở đây là nếu bạn thấy tôi có thể có hoặc chỉ có danh sách đó được nhập khẩu.
+
+8
+00:01:58,000 --> 00:02:16,000
+Các nhiệm vụ đa hình học hoạt động, bởi vì đây là một siêu loại này là một lớp học chỉ làm việc đúng như chúng tôi đã thấy trong thời gian chạy nghèo đa dạng thời gian, nhưng với các nhiệm vụ chung không làm việc bạn cần phải cẩn thận đó là những gì ở bên trái của các.
+
+9
+00:02:16,000 --> 00:02:37,000
+Các bài tập phải ở bên phải điều này và họ nên phù hợp với chúng ta hãy nói rằng tôi chỉ nói đối tượng mặc dù là một siêu lớp học của mỗi lớp học trong Java thậm chí chuỗi, nhưng điều này không được cho phép bởi như tôi nói nhiệm vụ đa dạng không làm việc vì vậy những gì ở đây là phải là chính xác ở đây mũi tên đi mất và sau đó Java 6 đến.
+
+10
+00:02:37,000 --> 00:02:56,000
+Như nó nói rằng họ đã được giới thiệu trong Java 5 nhưng sau đó Java 6 đến trong các nhà thiết kế nhìn vào điều này và nghĩ rằng điều này là thừa những gì bên trái nên luôn luôn ở bên phải, tại sao chúng tôi thậm chí cần phải có điều này để họ giới thiệu những gì họ gọi là Java 6 cú pháp kim cương ở bên phải bạn không cần phải đặt nó bây giờ.
+
+11
+00:02:56,000 --> 00:03:08,000
+Đối với cú pháp kim cương Java 6 và như đã hứa tôi sẽ giữ cho bạn cập nhật với các thay đổi quan trọng trong các phiên bản khác nhau của Java phải vì vậy đây là Java 6.
+
+12
+00:03:08,000 --> 00:03:25,000
+Và sau đó chỉ cần đi trên này trở thành một danh sách duy nhất bây giờ bởi vì các gen bạn có thể chỉ cần đi vào và chỉnh sửa tôi sẽ nói danh sách hoặc thêm đó là cách chúng tôi thêm vào phương pháp lỗi không còn bạn phải sử dụng những cú pháp xấu xí đó với những gì bạn đã làm với các khu vực và chỉ số và sau đó tôi nói rằng đó là nó.
+
+13
+00:03:25,000 --> 00:03:37,000
+Ngay bây giờ những gì bạn có bây giờ quan sát và bây giờ là tôi đã không đặt bất kỳ kích thước ở đây vì vậy ngay lập tức chăm sóc bất lợi của các khu vực bạn phải đặt trong kích thước và một khi bạn đặt trong kích thước nó không thể được thay đổi nó được cố định cho tất cả các thời điểm để đến.
+
+14
+00:03:37,000 --> 00:03:51,000
+Nhưng với các bộ sưu tập bất kỳ vấn đề đó ở đây trong danh sách lỗi là tốt bạn không cần phải đặt vào kích thước nó đã được thực hiện và sau đó ông tiếp tục và tiếp tục chỉ cần thêm nó sẽ tiếp tục phát triển tầm vóc như vậy.
+
+15
+00:03:51,000 --> 00:04:06,000
+Nhưng bây giờ kích thước khác là zero tại thời điểm này nó sẽ là một trong những năm kích thước trở thành năm đó là lợi thế nó là thêm một số dữ liệu ở đây và tôi sẽ nói ví dụ ba chắc chắn tôi sẽ nói tỷ lệ.
+
+16
+00:04:06,000 --> 00:04:25,000
+Và tôi sẽ nói rằng mang lại ví dụ như vậy đi đến bốn nơi mà tôi đã làm bạn thậm chí có thể in kích thước của đám mây và làm thế nào để làm rằng danh sách một dấu chấm một kích thước nhà sản xuất và tại thời điểm này nó sẽ cho tôi bốn đó là kích thước hiện tại của danh sách của bạn nó đi xung quanh điều này.
+
+17
+00:04:25,000 --> 00:04:50,000
+Ví dụ, đó là nó là máy của bạn ngay bây giờ chúng tôi thêm và nói danh sách L một trong ví dụ, tôi sẽ nói W một Q đó là làm việc và sau đó sau đó hãy in lại kích thước này nên in năm chúng tôi nên đưa cho bạn rằng có trong thực tế, tôi sẽ chỉ cần chạy điều này một lần nữa và đi nó là năm ngay bây giờ.
+
+18
+00:04:50,000 --> 00:05:09,000
+Như tôi đã nói, chúng có thể thu nhỏ tất cả các lớp học ngay cả thực tế và nếu bạn muốn thu nhỏ nó bạn có thể làm điều đó hai cách hoặc bằng một chỉ số như bạn đã làm với mảng nhưng bạn không thực sự xóa nó đúng chúng tôi chỉ cần đặt trong số không hoặc một cái gì đó hoặc vôll nhưng ở đây bạn có thể loại bỏ bởi một chỉ số hoặc loại bỏ bởi một đối tượng chúng ta hãy làm gì đó.
+
+19
+00:05:09,000 --> 00:05:19,000
+Chỉ số nhận thấy nó bị quá tải nhớ lại khi chúng ta gặp quá tải tôi đã nói với bạn một mặt của nhiều hình thức đây là cách sử dụng thực tế của quá tải.
+
+20
+00:05:19,000 --> 00:05:33,000
+Chúng tôi chỉ có cùng một tên loại bỏ lý do tại sao họ nên gọi nó loại bỏ chỉ số và loại bỏ đối tượng ngay chỉ cần loại bỏ nhưng các tham số là khác nhau mà là quá tải vì vậy đầu tiên hãy làm điều đó bằng chỉ số tôi sẽ chỉ nói xin vui lòng loại bỏ các đối tượng tại chỉ số hai.
+
+21
+00:05:33,000 --> 00:05:53,000
+Và sau đó nếu bạn đặt nó nếu bạn một lần nữa nói rằng đó là ít kích thước chấm bây giờ chúng tôi nên nhận được một kích thước ít hơn như thế này và cho bạn biết ban đầu nó đã được cho sau đó trở thành năm và bây giờ bốn là tốt phải đó là zero một và hai sugi sẽ không có.
+
+22
+00:05:53,000 --> 00:06:14,000
+Nếu trước kích cỡ nếu bạn cố gắng in trực tiếp nó như một hệ thống không in nó chỉ bán danh sách đó là okay và nó nên in theo cùng một thứ tự vì tại sao danh sách lỗi luôn luôn duy trì thứ tự chèn nhưng nó không được sắp xếp đó là danh sách lỗi không được sắp xếp nhưng bộ sưu tập chưa được yêu cầu hãy xem xét điều này.
+
+23
+00:06:14,000 --> 00:06:28,000
+Và xem bạn chèn tỷ lệ đầu tiên được lưu trữ trước sau đó tỷ lệ sau đó bagi và Reno bởi vì giống như các khu vực như tôi nói họ đang đặt hàng trong chèn họ duy trì chèn thứ tự nhưng họ không được sắp xếp đúng như vậy.
+
+24
+00:06:28,000 --> 00:06:39,000
+Bây giờ bạn có thể đã loại bỏ bởi một đối tượng là tốt chúng tôi chỉ nói rằng chúng ta hãy bắt đầu loại bỏ chúng ta hãy nói bởi một đối tượng tôi muốn loại bỏ mưa.
+
+25
+00:06:39,000 --> 00:06:58,000
+Chạy điều này bạn chỉ có ba ngay cả đối tượng với giá trị ba là mưa đã được gỡ bỏ và bây giờ nếu bạn muốn đi qua nó bạn có thể làm điều đó nhiều cách và cách đầu tiên là tôi có thể làm điều đó trong vòng lặp truyền thống nhưng tại sao tôi viết nó sẽ như vậy.
+
+26
+00:06:58,000 --> 00:07:08,000
+Như một động từ thừa và như vậy hoặc điểm tôi có thể làm điều đó với Java năm và nhà cho vòng lặp Hãy để tôi làm rằng tôi sẽ nói những gì là trong danh sách cảm ơn.
+
+27
+00:07:08,000 --> 00:07:27,000
+Tạo ra nó chỉ là một chuỗi ít hơn tôi biết những gì đang đi ra trong trường hợp này đó là một chuỗi và tôi sẽ nói giá trị và tên của tôi là danh sách bởi vì tôi đã nói với bạn nơi chúng tôi đã bao gồm rằng nhà vòng Java năm và nhà cho vòng tôi nói với bạn nó có thể được sử dụng với các khu vực hoặc bộ sưu tập và bây giờ là thời gian bạn có thể sử dụng nó với bộ sưu tập như.
+
+28
+00:07:27,000 --> 00:07:34,000
+Hãy sử dụng nó với bộ sưu tập khi chúng ta sẽ thấy bộ sưu tập mặt tích cực và sau đó nó đi trước và mang nó ra.
+
+29
+00:07:34,000 --> 00:07:52,000
+Xem này in ba tỷ lệ ba trisha và tại sao bởi vì hai trong số họ hạnh phúc xóa và Java tám giới thiệu thậm chí tốt hơn động từ ít hơn là cách đi qua chúng một dòng và đó là bạn có thể làm điều đó tương tự như thế này đơn giản là như thế này chúng ta hãy bắt đầu cho mỗi.
+
+30
+00:07:52,000 --> 00:08:01,000
+Đó là nó sẽ giới thiệu trong Java 8 và sau đó nói rằng root hệ thống ra và cú pháp sẽ khác nhau một chút đó là điều này được gọi là a.
+
+31
+00:08:01,000 --> 00:08:10,000
+Phương pháp tham chiếu trong Java về điều đó một khi chúng tôi đang bao gồm cừu làm và dòng nhưng bây giờ không phải là một phương pháp tham chiếu nhưng đây là.
+
+32
+00:08:10,000 --> 00:08:22,000
+Ít động từ là ngắn hơn chỉ là một dòng mã điều này đã đi qua mỗi yếu tố trong bộ sưu tập của bạn Hãy xem nếu nó làm tương tự và làm tỷ lệ clisha trở lại trên màn hình của bạn.
+
+33
+00:08:22,000 --> 00:08:24,000
+Đúng vậy, đó là lớp học.
+
+34
+00:08:24,000 --> 00:08:36,000
+Và bây giờ khi nào bạn sẽ là một nhà phát triển quyết định sử dụng một danh sách diện tích đầu tiên là khi bạn muốn khả năng lưu trữ bản sao hãy làm trùng tìm kiếm xem tôi sẽ chỉ nói.
+
+35
+00:08:36,000 --> 00:08:42,000
+Hãy nói một lần nữa Trisha.
+
+36
+00:08:42,000 --> 00:09:03,000
+Được rồi, và điều này sẽ được cho phép bạn có một chạy tại đây nó nói tỷ lệ thrisha một lần nữa bên phải do đó, nhân tố quyết định cho quyết định của bạn để chọn một lớp phân tích là khi bạn muốn sao chép được lưu bởi vì đây là một danh sách bên phải điểm thứ hai.
+
+37
+00:09:03,000 --> 00:09:16,000
+Chỉ cần có ngày tháng thu hồi dữ liệu nhanh hơn đúng tỷ lệ thu hồi dữ liệu nhanh hơn điều thứ ba là khi tôi nghĩ rằng hai yếu tố đó là không có quyền sau đó chúng tôi có khác.
+
+38
+00:09:16,000 --> 00:09:20,000
+Và bên nhà máy thứ ba nhớ rằng đó là.
+
+39
+00:09:20,000 --> 00:09:37,000
+Một danh sách khu vực cung cấp cho bạn một thứ tự chèn đặt hàng nhưng nó là một bộ sưu tập chưa được sắp xếp nhưng chưa xác định bạn thấy rằng trong cách chúng tôi chèn các yếu tố là cách thức mà họ đã được lưu trữ bên phải vì vậy tôi sẽ có một xem xét danh sách liên kết trong video thứ hai.
+
