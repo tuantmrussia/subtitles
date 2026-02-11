@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:04,760
+ Hi, in this lesson, we will talk about one mode in Kursor.
+
+2
+00:00:04,760 --> 00:00:10,040
+ It's one of the most powerful features that help you can do big and complex coding task
+
+3
+00:00:10,040 --> 00:00:15,800
+ more easily, and it also was one of the latest feature Kursor was released.
+
+4
+00:00:15,800 --> 00:00:21,560
+ So, when you turn on one mode, Kursor doesn't just start coding right away.
+
+5
+00:00:21,560 --> 00:00:27,460
+ In that it just create a clear step-by-step plan, like to do least for your task, this helps
+
+6
+00:00:27,460 --> 00:00:32,600
+ to understand what's going to happen before any code will be written, and you can save
+
+7
+00:00:32,600 --> 00:00:33,880
+ a lot of tokens.
+
+8
+00:00:33,880 --> 00:00:39,880
+ So, it's especially useful when you ask Kursor to do some some large, like, for example,
+
+9
+00:00:39,880 --> 00:00:45,800
+ you have your dashboard page and application and you want to redesign it, and you just
+
+10
+00:00:45,800 --> 00:00:52,480
+ want to create a plan first about splitting on the steps, and then do it one by one.
+
+11
+00:00:52,480 --> 00:00:57,440
+ For example, you want to connect your application to a new API, and this was some data
+
+12
+00:00:57,440 --> 00:00:58,440
+ in table.
+
+13
+00:00:58,440 --> 00:01:01,640
+ It's a lot of work, and it's better to start with a plan.
+
+14
+00:01:01,640 --> 00:01:03,960
+ So, now let's see how it works.
+
+15
+00:01:03,960 --> 00:01:11,800
+ So, here you can see quickly about the Kursor plan that creates the tablet plan, do some
+
+16
+00:01:11,800 --> 00:01:17,240
+ researches in your code base, and build exactly the specification here.
+
+17
+00:01:17,240 --> 00:01:22,800
+ Okay, let's start with a plan, for example, to quickly switch to the plan mode, you can
+
+18
+00:01:22,800 --> 00:01:28,720
+ use Shift + Stop Combination, and you see it was switched, or you can just click on this
+
+19
+00:01:28,720 --> 00:01:30,600
+ drop-down and choose the plan mode.
+
+20
+00:01:30,600 --> 00:01:37,400
+ You can also click Edit, you can set the model you prefer to work with.
+
+21
+00:01:37,400 --> 00:01:43,280
+ If you want paid plan, you can use any other models, but for example, what else you can edit,
+
+22
+00:01:43,280 --> 00:01:49,400
+ you can also set some key by then, so just see some hot keys for it.
+
+23
+00:01:49,400 --> 00:01:57,800
+ Okay, let's ask some questions, so we have a currency converter application, and we have
+
+24
+00:01:57,800 --> 00:01:59,720
+ our rates hardcoded.
+
+25
+00:01:59,720 --> 00:02:05,520
+ But what if I want to carry it up-to-date, every time I run an application, and I will
+
+26
+00:02:05,520 --> 00:02:13,000
+ ask for source to fetch the latest current rates from an API, so it's complex task because
+
+27
+00:02:13,000 --> 00:02:21,320
+ we need to first find the external API where we can get the current rates, then we need
+
+28
+00:02:21,320 --> 00:02:26,400
+ to build an API call, we need to fetch it, we need to store it somewhere, and set
+
+29
+00:02:26,400 --> 00:02:33,760
+ rates kind of complex task, and I don't run it until it will be executing, I will explain
+
+30
+00:02:33,760 --> 00:02:36,760
+ you how it works under the hood.
+
+31
+00:02:36,760 --> 00:02:43,160
+ So, I could sort of ask you, might ask you some time, some qualifying questions, make sure
+
+32
+00:02:43,160 --> 00:02:49,500
+ you really understand what you mean, so you see, we have some qualification questions,
+
+33
+00:02:49,500 --> 00:02:56,040
+ so which currency exchange rates API would like to use exchange rate API, fixer, let's
+
+34
+00:02:56,040 --> 00:03:02,280
+ say the first one, I don't really did the research about them, but let's just need to
+
+35
+00:03:02,280 --> 00:03:07,640
+ give an example of a plan, when should the rates be fetched, once during initialization
+
+36
+00:03:07,640 --> 00:03:14,880
+ constructor on demand, when you method automatically before each conversation, both initial
+
+37
+00:03:14,880 --> 00:03:24,680
+ and on demand, let's say once during initialization, okay, and the next question should
+
+38
+00:03:24,680 --> 00:03:30,760
+ the fetched rates replace the hardcoded defaults or supplement them, sure, we need to
+
+39
+00:03:30,760 --> 00:03:38,880
+ replace because our hardcoded not actually anymore have to date, so I will answer.
+
+40
+00:03:38,880 --> 00:03:46,040
+ So, then, we sort of will do research of your code waste, to collect all the relevant information
+
+41
+00:03:46,040 --> 00:03:51,880
+ it needs, you see it use the auto source you can, although it on and continue to allow
+
+42
+00:03:51,880 --> 00:03:59,800
+ search and the exchange rate API, and point out the search and web, so it will do the
+
+43
+00:03:59,800 --> 00:04:06,220
+ research of your code waste, to get all the relevant information you need, the file structure,
+
+44
+00:04:06,220 --> 00:04:13,760
+ the import, the existing components and so on, as you see it's the fetchly discount rates
+
+45
+00:04:13,760 --> 00:04:22,520
+ from exchange rate, integrate exchange rate API, okay, it's doing it, so, and after that
+
+46
+00:04:22,520 --> 00:04:30,040
+ it will create the plan for you, this plan is completely stuff what changes should be made
+
+47
+00:04:30,040 --> 00:04:37,080
+ step by step, once the plan is ready, you can review it, edit or comment on it before letting
+
+48
+00:04:37,080 --> 00:04:43,080
+ close or start coding, this will give you a really full control of what's going to happen,
+
+49
+00:04:43,080 --> 00:04:50,560
+ so, let's see what the plan is, so implementation steps, update currency converter, make
+
+50
+00:04:50,560 --> 00:04:57,160
+ the constructor asynchronous, to be able to execute the API, add API keys, fetch rates
+
+51
+00:04:57,160 --> 00:05:06,240
+ from the API and point, keep the code iterate at all back, if API call 1B, and we will
+
+52
+00:05:06,240 --> 00:05:13,080
+ do an error, for example, just to have a good user experience, handle errors gracefully
+
+53
+00:05:13,080 --> 00:05:20,840
+ with strike edge, but, for example, I don't like this app for that rate, because imagine
+
+54
+00:05:20,840 --> 00:05:26,480
+ in a year, the rates will be different and user will get the wrong result, so, we have
+
+55
+00:05:26,480 --> 00:05:38,040
+ ability to edit it, so, idle, first, never use of back rates, and I will mention the line
+
+56
+00:05:38,040 --> 00:05:45,060
+ version, delete it, so, let's continue to review it, file currency converter, just create
+
+57
+00:05:45,060 --> 00:05:50,480
+ a simple method to make, get request, first, response in a struct, conversion rates, what
+
+58
+00:05:50,480 --> 00:05:56,480
+ it did to response, return object, then we can update the example usage, update example,
+
+59
+00:05:56,480 --> 00:06:12,360
+ use await or then, so, let's say, use only a sync, wait, for example, I don't want to use
+
+60
+00:06:12,360 --> 00:06:20,960
+ promises, I show how to use this without API key, the test, only a minute update unit test,
+
+61
+00:06:20,960 --> 00:06:27,280
+ of course, update package, JSON, I have a model, if not present, keep technical details,
+
+62
+00:06:27,280 --> 00:06:37,040
+ a pain point is response format is, from back strategy, you have your updated base currency,
+
+63
+00:06:37,040 --> 00:06:42,560
+ use D, and there are handling traffic, yes, and you see, we have to the list and for
+
+64
+00:06:42,560 --> 00:06:48,240
+ so, when he will build it, he will do it time-by-step, so, we can click build, but we want
+
+65
+00:06:48,240 --> 00:06:56,240
+ to ask it to make some changes to the plan, you see, it's creating an updated version
+
+66
+00:06:56,240 --> 00:07:16,800
+ of a plan, so we can see how it will go on the slide from a plan, okay, nice, you see, we
+
+67
+00:07:16,800 --> 00:07:28,320
+ don't have any more, the file decorates, you'll see it updated, and it also showed a test,
+
+68
+00:07:28,320 --> 00:07:33,440
+ there's a user on the sentiments, yeah, he should also update the user on their sync, yes,
+
+69
+00:07:33,440 --> 00:07:41,920
+ okay, and also, so, I want to click build, I will explain you more about the plans,
+
+70
+00:07:42,480 --> 00:07:48,880
+ so, the nice feature we have, the message query, of course, also support it, it's small,
+
+71
+00:07:48,880 --> 00:07:55,760
+ useful feature, but it's also can be useful, for example, when restore working on really big plan,
+
+72
+00:07:55,760 --> 00:08:02,080
+ it's an all can take 30, 40 seconds to generate it, and you, imagine, and you, for example,
+
+73
+00:08:02,080 --> 00:08:08,880
+ realize you need to change something in this plan, like, you need to change the builds, you need
+
+74
+00:08:08,880 --> 00:08:16,000
+ to get into change the external API, or external tools, et cetera, so you can type your message,
+
+75
+00:08:16,000 --> 00:08:24,080
+ and you can send it, and restore a view, edit, in the, I would say, it will read it in the middle
+
+76
+00:08:24,080 --> 00:08:32,640
+ of a creating plan, and we'll recognize it, and we'll apply the result, so, they will be active,
+
+77
+00:08:33,680 --> 00:08:39,360
+ so the advantage of this weird messages is that you shouldn't wait till the whole plan will be
+
+78
+00:08:39,360 --> 00:08:45,760
+ built, you can modify it on a way, so this is what I like about this feature, so we kind of
+
+79
+00:08:45,760 --> 00:08:55,200
+ interrupt, or sort, like, not, like, interrupted during the making of plan, and give some more
+
+80
+00:08:55,200 --> 00:09:03,120
+ changes, so, I think it can, of course, create build and build this plan, oh, what else you have,
+
+81
+00:09:03,120 --> 00:09:09,760
+ you can view it as a preview, or as a markdown text, you can need to copy paste it, for example,
+
+82
+00:09:09,760 --> 00:09:18,640
+ or what else, oh, yep, this is everything we have in this plan, you can also add some
+
+83
+00:09:18,640 --> 00:09:32,160
+ items manually, like, right here, I know, great, more files, always are in the series, so you can
+
+84
+00:09:32,160 --> 00:09:40,240
+ edit it on a way, you can edit anything right here, so, it's up to you, okay, I hope this lesson
+
+85
+00:09:40,240 --> 00:09:46,160
+ really was useful for you, so you can use a blend mode, it's a best friend, for managing some
+
+86
+00:09:46,160 --> 00:09:53,040
+ complex coding tasks, it will help you see it before coding, we'll save your tokens and keep work
+
+87
+00:09:53,040 --> 00:10:00,880
+ organized, and so, your cooperation with course, sort of will be easier, the nice, you can review
+
+88
+00:10:00,880 --> 00:10:07,520
+ every step, don't delay it to read the plan, because, of course, sort of it will do something wrong,
+
+89
+00:10:07,520 --> 00:10:13,520
+ but you will notice you expected, you will need to update or change it anyway, write some prompts
+
+90
+00:10:13,520 --> 00:10:22,880
+ and etc, so, okay, I'll see you next time, and goodbye.
+
