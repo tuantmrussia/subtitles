@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:07,220
+ Let's investigate the X-field file from the machine.
+
+2
+00:00:07,220 --> 00:00:17,560
+ So we have X-field32.txt file through the R1.
+
+3
+00:00:17,560 --> 00:00:26,040
+ So there is database that will store all these kinds of network usage.
+
+4
+00:00:26,040 --> 00:00:37,160
+ The data base will be present under the C Windows system 32.
+
+5
+00:00:37,160 --> 00:00:41,600
+ There is a folder called S-U.
+
+6
+00:00:41,600 --> 00:00:45,000
+ Let me see where it is here, here we have.
+
+7
+00:00:45,000 --> 00:00:51,960
+ So here we can find S-R-U-D-B dot is dot V-8, okay?
+
+8
+00:00:51,960 --> 00:00:55,120
+ System resource usage or database, okay?
+
+9
+00:00:55,120 --> 00:01:02,180
+ So the first form is system resource usage data base, it will store all the resource
+
+10
+00:01:02,180 --> 00:01:10,280
+ usage like application usage, network usage, network connections and CPU usage, a lot
+
+11
+00:01:10,280 --> 00:01:12,280
+ of things, okay?
+
+12
+00:01:12,280 --> 00:01:20,220
+ We need to investigate this S-R-U-D-B dot-D-8 and let me copy this file and let me put
+
+13
+00:01:20,220 --> 00:01:28,700
+ it in and I'll create a folder and put in S-R-U, okay?
+
+14
+00:01:28,700 --> 00:01:46,760
+ So let's move towards one of the tool called Eric Cimmerman tool, Eric Cimmerman tool.
+
+15
+00:01:46,760 --> 00:01:57,540
+ So here we can find a lot of foreign six tools here, so we are going to choose S-R-U-Sum-E-B,
+
+16
+00:01:57,540 --> 00:02:04,220
+ sorry, yeah, some data, sorry, S-R-U-Sum-E-C-M-D, okay?
+
+17
+00:02:04,220 --> 00:02:17,980
+ And let's open this and let's push this file into this directory, let's move to let's
+
+18
+00:02:17,980 --> 00:02:35,540
+ do this and here we have, let's see how to move this and here you can find this and
+
+19
+00:02:35,540 --> 00:02:50,660
+ for example, to use this tool, okay, let's execute this S-R-E-C-F and we need to give the
+
+20
+00:02:50,660 --> 00:03:08,100
+ data base file, that's the C-S-V and we can store the C-S-V in the same, okay?
+
+21
+00:03:08,100 --> 00:03:34,300
+ So if it was done and we can see plenty of, we can see plenty of Excel sheets, C-S-E-C-Files,
+
+22
+00:03:34,300 --> 00:03:41,380
+ we got from the S-R-V data, okay, we're including push notification, energy usage, application
+
+23
+00:03:41,380 --> 00:03:46,180
+ timeline provider, application resources usage, network usage.
+
+24
+00:03:46,180 --> 00:03:56,100
+ So currently I don't have the Excel sheet here, so I'll be moving to my primary machine
+
+25
+00:03:56,100 --> 00:04:09,020
+ to get a help from the Excel, let's draw a hand drop, the network usage, cell sheet and
+
+26
+00:04:09,020 --> 00:04:21,500
+ let's investigate that, so this is the one, yeah, and we know the threat attack is used
+
+27
+00:04:21,500 --> 00:04:33,460
+ R-Clone for exfiltration, so let me filter it with the R-Clone and see how this happened,
+
+28
+00:04:33,460 --> 00:04:41,620
+ okay, now we can understand, there is bytes sent and bytes is used, right?
+
+29
+00:04:41,620 --> 00:04:56,980
+ So 14, 737, 520, so issue, convert this sent to Google bytes to any, so it's, it was
+
+30
+00:04:56,980 --> 00:05:06,580
+ saying 14 megabytes of data get transformed into the cloud application, right?
+
+31
+00:05:06,580 --> 00:05:21,460
+ So we exfilled the file from, where it is, where we collected the file, see user's
+
+32
+00:05:21,460 --> 00:05:33,680
+ public, if you see this, this file is also saying 14 megabytes of data, right, so we can
+
+33
+00:05:33,680 --> 00:05:43,920
+ understand from here, so this file get, from 14 megabytes of data get exfilled data to
+
+34
+00:05:43,920 --> 00:05:49,860
+ through R-Clone.exe on the date and the time, right?
+
+35
+00:05:49,860 --> 00:05:55,620
+ So this is how you can do some kind of foreign 16 cube inside the machine and you can find
+
+36
+00:05:55,620 --> 00:06:01,020
+ out what actually happened, how much data get exfilled data, okay, you can track the data,
+
+37
+00:06:01,020 --> 00:06:21,340
+ how much data get exfilled it, let's take out the network connection logs, okay, we can't
+
+38
+00:06:21,340 --> 00:06:42,060
+ able to see any other data from here, let's dig something,
+
+39
+00:06:42,060 --> 00:07:10,540
+ it's an resource usage, this application has to start, and it has to be embedded, so this
+
+40
+00:07:10,540 --> 00:07:24,700
+ was used to buy, this user, this user said, right, this is the SAD of the user's security
+
+41
+00:07:24,700 --> 00:07:40,880
+ identifier, let's move to the game, let's use the user.
+
+42
+00:07:54,700 --> 00:08:12,540
+ this is the same SAD of the user head, so we need to find out this who exfilled the file
+
+43
+00:08:12,540 --> 00:08:20,500
+ into the cloud platform, so this is important, we check, okay, because we are going to do
+
+44
+00:08:20,500 --> 00:08:29,140
+ some kind of response actions from this collected information, okay, let's hop off from
+
+45
+00:08:29,140 --> 00:08:32,740
+ here we'll continue our discussion in the next video, see you guys, bye.
+
