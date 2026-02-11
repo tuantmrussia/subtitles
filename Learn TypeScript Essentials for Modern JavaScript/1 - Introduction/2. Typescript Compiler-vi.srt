@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:08,740
+Trong bài học này, chúng ta sẽ khám phá bộ biên dịch TypeC, cũng được gọi là TSC.
+
+2
+00:00:08,740 --> 00:00:14,460
+Hiểu được cách trình biên dịch hoạt động là thiết yếu bởi vì nó sẽ biến định dạng kiểu MIME của bạn
+
+3
+00:00:14,460 --> 00:00:21,580
+Mã để chạy JavaScript có thể chạy trong trình duyệt hay Node.js.
+
+4
+00:00:21,580 --> 00:00:25,620
+Vì vậy, chính xác là những gì là các trình biên dịch TypeCuter?
+
+5
+00:00:25,620 --> 00:00:34,600
+Vì vậy, bộ biên dịch chuyển đổi TypeSQL, đó là tập tin .ts sang JavaScript.js.
+
+6
+00:00:34,600 --> 00:00:42,960
+Nó cũng thực hiện kiểm tra và tạo ra tương thích với mục tiêu.js.
+
+7
+00:00:42,960 --> 00:00:49,160
+Vì vậy, trình biên dịch TSC là một công cụ khá quan trọng mà làm hai điều quan trọng.
+
+8
+00:00:49,160 --> 00:00:57,860
+Nó kiểm tra mã số của chúng tôi cho lỗi loại và nó tạo ra Type Locse và có thể chạy bất cứ nơi nào
+
+9
+00:00:57,860 --> 00:00:59,900
+Chạy JavaScript.
+
+10
+00:00:59,900 --> 00:01:02,680
+Nhưng chúng ta hãy thực sự xem làm thế nào nó hoạt động và thực hành.
+
+11
+00:01:02,680 --> 00:01:09,080
+Vì vậy, tôi chỉ có một nhắc lệnh ở đây và tôi đã tạo một thư mục trống.
+
+12
+00:01:09,080 --> 00:01:15,320
+Bây giờ trước hết bạn cần chắc chắn rằng bạn đã cài đặt Máy tính của bạn
+
+13
+00:01:15,320 --> 00:01:25,240
+Vì vậy, bạn có thể thực hiện NPM, cài đặt, và sau đó G, lá cờ toàn cầu, TypeUS.
+
+14
+00:01:25,240 --> 00:01:28,280
+Đó là sẽ đi ra và nó sẽ chỉ cài đặt TypeSSQL.
+
+15
+00:01:28,280 --> 00:01:34,740
+Bây giờ để kiểm tra điều đó đã được thực hiện tốt, bạn có thể làm TSC, đó là tên của biên dịch viên,
+
+16
+00:01:34,740 --> 00:01:37,040
+hiphen, hyphen, và sau đó phiên bản.
+
+17
+00:01:37,040 --> 00:01:44,880
+Bây giờ tôi đã có phiên bản hiện nay, 5.93, chỉ cần kiểm tra xem mọi thứ đã được cài đặt đúng chưa.
+
+18
+00:01:44,880 --> 00:01:51,840
+Bây giờ những gì chúng tôi có thể làm là chúng tôi có thể tạo ra cho mình một ví dụ loại nhỏ, tập tin Typejude.
+
+19
+00:01:51,840 --> 00:02:00,000
+Chúng tôi có thể làm điều đó trong bất kỳ biên tập viên nào, ví dụ, chúng tôi có thể chỉ cần khởi động một biên tập văn bản như ghi chú.
+
+20
+00:02:00,000 --> 00:02:08,640
+Vì vậy, tôi sẽ chỉ cần tạo một tập tin mới, chúng tôi gọi nó là hi.ts, và tôi sẽ đi
+
+21
+00:02:08,640 --> 00:02:11,920
+để mở nó trong danh mục.
+
+22
+00:02:11,920 --> 00:02:12,920
+Đây là hồ sơ của tôi.
+
+23
+00:02:12,920 --> 00:02:20,600
+Vì vậy, chúng ta hãy chỉ cần làm rất đơn giản gõ, vì vậy chúng tôi có thể nói để chào hỏi, và chúng tôi có thể tìm thấy nó
+
+24
+00:02:20,600 --> 00:02:24,360
+như một sợi dây, mà chúng ta có thể làm bằng ruột kết và sau đó dây.
+
+25
+00:02:24,360 --> 00:02:29,120
+Tôi không lo lắng quá nhiều về điều này lúc này, chúng tôi đã có thẻ này mới.
+
+26
+00:02:29,120 --> 00:02:34,240
+Vì vậy, chỉ đây là một cách chúng tôi định nghĩa một biến như một chuỗi.
+
+27
+00:02:34,240 --> 00:02:37,800
+Ý tôi là, nó có thể xác định giá trị của nó.
+
+28
+00:02:37,800 --> 00:02:46,880
+Vì vậy, chúng tôi có thể nói xin chào, JavaScript, xin chào, JavaScript, xin chào, Type Thu xếp, và sau đó chúng tôi có thể làm
+
+29
+00:02:46,880 --> 00:02:51,880
+bàn điều khiển, bản ghi, và chuyển lời chào của chúng tôi.
+
+30
+00:02:51,880 --> 00:02:54,360
+Thật dễ thương và đơn giản.
+
+31
+00:02:54,360 --> 00:03:03,400
+Chỉ cần lưu tập tin đó, và nó rất lưu tại, là tập tin thử nghiệm t, tôi sẽ thay đổi
+
+32
+00:03:03,400 --> 00:03:16,840
+nó từ tập tin ts.txt của chúng tôi bằng cách chạy, xin chào.ts.txt đến xin chào.ts, vì vậy bây giờ chúng tôi chỉ có xin chào.ts.ts.
+
+33
+00:03:16,840 --> 00:03:25,080
+Bây giờ để biên dịch và chuyển đổi nó thành JavaScript, chúng tôi chỉ cần thực hiện tsc, tsc, và sau đó tên
+
+34
+00:03:25,080 --> 00:03:25,800
+của hồ sơ.
+
+35
+00:03:25,800 --> 00:03:33,320
+Vì vậy, xin chào.
+
+36
+00:03:33,320 --> 00:03:42,600
+Nó xảy ra, nhưng nếu chúng ta nhìn vào thư mục của chúng tôi, nó đây, chúng tôi có một file js, xin chào.js.
+
+37
+00:03:42,600 --> 00:03:50,480
+Chúng ta có thể mở nó trong Sổ tay, và này presto, nó trông giống hệt nhau, gần giống hệt nhau, nhưng
+
+38
+00:03:50,480 --> 00:03:57,040
+nhận thấy sự khác biệt trong thực tế rằng chúng tôi không có chuỗi ruột kết, chúng tôi có chỉ bình thường
+
+39
+00:03:57,040 --> 00:03:59,000
+JavaScript.
+
+40
+00:03:59,000 --> 00:04:04,400
+Chúng ta có thể lấy JavaScript theo cách bình thường, và thực hiện nút hay trình duyệt.
+
+41
+00:04:04,400 --> 00:04:10,280
+Vì vậy, như bạn có thể thấy, loại máy tính được loại bỏ trong quá trình tính toán, và chúng chỉ được sử dụng
+
+42
+00:04:10,280 --> 00:04:16,280
+nhưng nó có thể phun ra về JavaScript.
+
+43
+00:04:16,280 --> 00:04:24,200
+Bây giờ mà tsc lệnh đi kèm với một loạt các tùy chọn khác nhau, và nếu chúng tôi làm tsc,
+
+44
+00:04:24,200 --> 00:04:31,600
+không gian của tôi và hiphen hiphen trợ giúp, chúng tôi có thể thấy nó đi kèm với tất cả các lựa chọn.
+
+45
+00:04:31,600 --> 00:04:41,040
+Những cái mà tôi khuyến cáo rằng chúng ta cần là cái ở đây, mục tiêu, bởi vì nó quyết định,
+
+46
+00:04:41,040 --> 00:04:49,080
+Tôi đã nói, mà phiên bản JavaScript mà chúng tôi muốn phát ra, và chúng tôi đề nghị rằng chúng tôi làm
+
+47
+00:04:49,080 --> 00:04:59,560
+tại ES6, bởi vì tất cả các trình duyệt như hỗ trợ mà, hệ thống ES6, và công tắc khác có ích
+
+48
+00:04:59,560 --> 00:05:05,920
+là một trong những hiphen gạch nối nghiêm ngặt, bởi vì bạn muốn chắc chắn rằng chúng tôi hiệu lực tất cả các
+
+49
+00:05:05,920 --> 00:05:10,160
+Kiểm tra kỹ các tùy chọn, thay vì chỉ một số tùy chọn.
+
+50
+00:05:10,160 --> 00:05:20,240
+Vì vậy, chúng tôi có thể đi vào đây, và chúng tôi có thể làm tsc, để muốn để tương tác lại với các lựa chọn của ES6, chúng tôi
+
+51
+00:05:20,240 --> 00:05:27,240
+Cũng muốn nghiêm ngặt, do đó, gạch gạch ngang chặt chẽ, và sau đó tên của tập tin thực tế của chúng tôi, vì vậy
+
+52
+00:05:27,240 --> 00:05:36,360
+chúng tôi có thể làm hit ts, mà sẽ đầu vào JavaScript trong này với các tùy chọn.
+
+53
+00:05:36,360 --> 00:05:40,880
+Đây là những cái chúng tôi đề nghị, chúng tôi có một số có lẽ bạn muốn có thể đặt nó một chút
+
+54
+00:05:40,880 --> 00:05:46,000
+Tập tin hàng loạt, hoặc chỉ là một phần trong quá trình xây dựng của bạn.
+
+55
+00:05:46,000 --> 00:05:54,920
+Công tắc lệnh hữu ích khác là xem, vì vậy chúng tôi làm tsc, hiphen hiphen đồng hồ, sau đó
+
+56
+00:05:54,920 --> 00:06:04,360
+sẽ xem các thay đổi của một tập tin cụ thể, vì vậy nếu chúng tôi làm hit ts, và sau đó
+
+57
+00:06:04,360 --> 00:06:14,140
+Đặt nó vào chế độ quan sát, vì vậy nếu chúng tôi sau đó đi vào đây, hoặc hãy mở tập tin ts của chúng tôi, chỉ cần
+
+58
+00:06:14,140 --> 00:06:27,120
+Đưa nó lên đây, mở nó ra, hãy mở nó bằng mã studio hình ảnh, và bây giờ nếu
+
+59
+00:06:27,120 --> 00:06:36,040
+Chúng tôi quyết định thay đổi từ alô TypeSwell, hãy nói, xin chào Type tsc, sau đó lưu
+
+60
+00:06:36,040 --> 00:06:48,640
+tập tin, bây giờ nếu chúng tôi đi đến tập tin js của chúng tôi, chúng tôi tự động nhận được phiên bản biên dịch tsc bất kỳ
+
+61
+00:06:48,640 --> 00:06:49,640
+thay đổi.
+
+62
+00:06:49,640 --> 00:06:54,880
+Chúng ta đã học được về bộ biên dịch TypeCuper từ những điều cơ bản, và một số hữu ích
+
+63
+00:06:54,880 --> 00:07:01,840
+lựa chọn. Trong bài học tiếp theo, chúng tôi sẽ tìm hiểu làm thế nào để sử dụng các trình biên dịch TypeCuper trong
+
+64
+00:07:01,840 --> 00:07:09,760
+Mã phòng thu hình ảnh, có lẽ là biên tập viên nổi tiếng nhất thế giới về làm trò chơi xếp chữ.
+
