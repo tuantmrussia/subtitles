@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:13,360
+ Let's see how we can use SMDXX to get the reverse connection. Basically the lateral movement
+
+2
+00:00:13,360 --> 00:00:25,640
+ to the target connection on the organization. So similar to the TSXX, this is also a similar
+
+3
+00:00:25,640 --> 00:00:38,480
+ one and you need to do the post domain. So I already said you can get every information
+
+4
+00:00:38,480 --> 00:00:55,320
+ from the credential access session. So it will the SMDXX will be basically open a semi-interactive
+
+5
+00:00:55,320 --> 00:01:13,000
+ prompt. So you can see, let me do "my/al" and it was running in the system mandatory
+
+6
+00:01:13,000 --> 00:01:23,840
+ level. So in this ticket, the post, we all know where the logware saved. See Windows
+
+7
+00:01:23,840 --> 00:01:44,160
+ system, 32 community logs and let's see the system. First, something get created. So
+
+8
+00:01:44,160 --> 00:01:59,760
+ now you can see this command, copy paste. Let me try to copy paste this command. While
+
+9
+00:01:59,760 --> 00:02:12,080
+ you are performing any kind of investigation in EDR, so the EDR will show this command, this
+
+10
+00:02:12,080 --> 00:02:17,960
+ command, what was going on inside the machine. So here you can find the executor.com/al
+
+11
+00:02:17,960 --> 00:02:32,200
+ and let me execute a few of the commands here like net users and let's see the refresh
+
+12
+00:02:32,200 --> 00:02:46,560
+ that. So you can find the next command that has been executed. You can see it here. Similar
+
+13
+00:02:46,560 --> 00:02:55,360
+ to that, when you try to execute any commands, like any commands, any Windows-based commands,
+
+14
+00:02:55,360 --> 00:03:14,240
+ sorry, EAR, IP config, it will create a service, it will create a service name basically
+
+15
+00:03:14,240 --> 00:03:28,840
+ and you can see IP config and TAR and let's see how given. So this showed much, much
+
+16
+00:03:28,840 --> 00:03:38,840
+ information. Well, you're performing any kind of investigation using an EDR, you need
+
+17
+00:03:38,840 --> 00:03:49,520
+ to really understand what's going on to the command. So you can see a column, a spec and
+
+18
+00:03:49,520 --> 00:04:00,280
+ QC, a code, whoever I slash or and computer name, C# and some bad files. So while performing
+
+19
+00:04:00,280 --> 00:04:09,600
+ any investigation, if you see this command get executed, so that will be a malicious activity,
+
+20
+00:04:09,600 --> 00:04:16,280
+ okay, we will be calling this as an impact command, okay, impact command. So it's really
+
+21
+00:04:16,280 --> 00:04:32,000
+ a bad and malicious one, okay. Let's do some more things here. Here you can find the information
+
+22
+00:04:32,000 --> 00:04:42,620
+ who is the user executor and let's move on to the security log and we can understand
+
+23
+00:04:42,620 --> 00:05:04,080
+ what the, what was going on, okay. We need the event ID of 46244624. Let's do it
+
+24
+00:05:04,080 --> 00:05:20,600
+ without the event ID. This is the log on type 3, network-based log on. This is the user
+
+25
+00:05:20,600 --> 00:05:31,080
+ performed a network-based log on. So once we connected through impacted section, impact
+
+26
+00:05:31,080 --> 00:05:40,520
+ target, using SMBX accord, DX accord, anything. So you can find someone logged into the machine,
+
+27
+00:05:40,520 --> 00:05:56,600
+ you can, if you investigating 4624 events, okay. So we know what was really happening
+
+28
+00:05:56,600 --> 00:06:09,440
+ here, fixed 24 event ID and if you notice the 4624 event ID from security log, the account
+
+29
+00:06:09,440 --> 00:06:15,000
+ was successfully get logged in. So once the account was logged in, you will be getting
+
+30
+00:06:15,000 --> 00:06:21,760
+ 4624 log ons. So if you check the log on type 2 is an interactive and 3 is a network-based
+
+31
+00:06:21,760 --> 00:06:27,960
+ log on. So network-based in the sense like if you are using the impact library, you will
+
+32
+00:06:27,960 --> 00:06:35,880
+ be absolutely using a network protocols to connect to the target machine. So your log on
+
+33
+00:06:35,880 --> 00:06:44,880
+ type should be a 3. So in our scenario, if you see this, the log on type was a 3 and the user
+
+34
+00:06:44,880 --> 00:06:56,000
+ who connected from the IP address 18.49, right. So we know our calling machine has
+
+35
+00:06:56,000 --> 00:07:13,040
+ IP address of 18.49. So someone performed some login from IP, the calling machine IP, so we can
+
+36
+00:07:13,040 --> 00:07:22,800
+ understand who connected and from which IP address, he shall connected. So this is how you
+
+37
+00:07:22,800 --> 00:07:29,400
+ need to investigate the system and security logs for 4 and 6 and further investigation
+
+38
+00:07:29,400 --> 00:07:37,280
+ so what's going on inside the machine and what happened inside the machine, okay. So
+
+39
+00:07:37,280 --> 00:07:47,040
+ you will be easily get a log from security and system section. So it's really, really, really
+
+40
+00:07:47,040 --> 00:07:54,480
+ helpful to understand to do a forums, okay. I hope you have a clear understanding about
+
+41
+00:07:54,480 --> 00:07:59,680
+ this, what we did, what are the activities we have come from, how we investigate, what
+
+42
+00:07:59,680 --> 00:08:05,000
+ was going on inside the machine, right. So now what recommendations you will be taking
+
+43
+00:08:05,000 --> 00:08:12,240
+ so if you observe this log on type. So the recommendations you can easily block the IP
+
+44
+00:08:12,240 --> 00:08:21,240
+ address of IP address and you can reset the credentials for the user and you can once you
+
+45
+00:08:21,240 --> 00:08:29,880
+ block the IP address, the detector will not able to login into the any of the machine.
+
+46
+00:08:29,880 --> 00:08:35,520
+ So if you block this IP address in firewall so the detector will not use this IP to login
+
+47
+00:08:35,520 --> 00:08:40,640
+ in any of the machine inside the organization, okay. And once you reset the credentials
+
+48
+00:08:40,640 --> 00:08:47,200
+ for the user, the detector didn't know what was a newly, what was new password, what's
+
+49
+00:08:47,200 --> 00:08:53,520
+ the new credentials for the user, right. So these are the recommendations you can take
+
+50
+00:08:53,520 --> 00:09:02,040
+ and you can do one more thing, you can delete all the service which was created, okay.
+
+51
+00:09:02,040 --> 00:09:14,660
+ Let me check for any kind of service, let me have a C query. So here you can see there
+
+52
+00:09:14,660 --> 00:09:25,120
+ is a service name that was created with R/O DJE-A-N-P, right. So when we, when this was created,
+
+53
+00:09:25,120 --> 00:09:36,080
+ but so he only created a service, R/O-D-J-E-A-N-P, right. So if you delete this service, so
+
+54
+00:09:36,080 --> 00:09:41,000
+ that will be very, very good that the detector will not have anything inside the machine,
+
+55
+00:09:41,000 --> 00:09:48,000
+ right. So this is how you need to perform the investigation and instant response for this
+
+56
+00:09:48,000 --> 00:09:52,600
+ kind of impact attack activity, okay. Let's hop off from here and we'll connect you guys
+
+57
+00:09:52,600 --> 00:09:54,040
+ in the next video, see you, bye bye.
+
