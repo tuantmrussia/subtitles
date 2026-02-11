@@ -1,0 +1,248 @@
+1
+00:00:01,269 --> 00:00:02,970
+Mỗi công ty đều có một lịch sử quá khích.
+
+2
+00:00:03,309 --> 00:00:06,630
+Có lẽ hôm nay bạn sẽ giới thiệu công trình xây dựng mây và sự triển khai của đám mây,
+
+3
+00:00:06,750 --> 00:00:10,430
+Nhưng tổ chức của bạn đã có nhiều năm của
+
+4
+00:00:10,430 --> 00:00:13,590
+Đầu tư vào Jenkins hoặc GitHub Actions.
+
+5
+00:00:13,789 --> 00:00:16,510
+Họ muốn đảm bảo toàn bộ đường ống,
+
+6
+00:00:16,950 --> 00:00:20,670
+Bất kể công cụ nào, đều được bảo vệ khỏi các cuộc tấn công hàng loạt.
+
+7
+00:00:20,870 --> 00:00:24,920
+Và tin tốt là Google Cloud rất linh hoạt,
+
+8
+00:00:24,920 --> 00:00:29,530
+Và nó tích hợp liên tục với công cụ CI thứ ba của hãng CN
+
+9
+00:00:29,530 --> 00:00:32,189
+Cho anh nền an ninh vững chắc.
+
+10
+00:00:32,490 --> 00:00:36,330
+Jenkins vẫn được sử dụng nhiều trong các doanh nghiệp lớn,
+
+11
+00:00:36,569 --> 00:00:39,529
+Ngân hàng, viễn thông, và môi trường lai.
+
+12
+00:00:39,740 --> 00:00:44,750
+Jenkins kết hợp với Google Cloud thông qua bổ sung của Jenkins Google OAuth
+
+13
+00:00:44,750 --> 00:00:48,970
+Nó cho phép xác thực an toàn với danh tính Google.
+
+14
+00:00:49,250 --> 00:00:53,970
+Jenkins có thể kích hoạt Cloud Xây dựng để tải các công trình nặng.
+
+15
+00:00:54,169 --> 00:00:57,310
+Điều này cho phép Jenkins dàn xếp công việc,
+
+16
+00:00:57,459 --> 00:01:00,620
+Nhưng cho phép Cloud xây dựng các tính toán nặng.
+
+17
+00:01:00,620 --> 00:01:06,870
+Một thiết lập rất phổ biến là Jenkins xử lý CN và Cloud triển khai xử lý các dev,
+
+18
+00:01:06,870 --> 00:01:08,589
+Thu xếp, và nộp đơn.
+
+19
+00:01:08,849 --> 00:01:12,902
+Điều này cung cấp cho chấp thuận phóng thích, theo dõi và quay trở lại
+
+20
+00:01:12,902 --> 00:01:16,241
+Khả năng mà Jenkins không cung cấp.
+
+21
+00:01:16,491 --> 00:01:20,622
+Hành động GitHub bây giờ là cực kỳ phổ biến ở SaaS
+
+22
+00:01:21,111 --> 00:01:23,452
+Bắt đầu và thậm chí là các đội thương mại.
+
+23
+00:01:23,641 --> 00:01:27,882
+Điều này hoạt động như là CI tiền tuyến trong khi Google xử lý
+
+24
+00:01:27,882 --> 00:01:30,052
+Hiện vật lưu trữ và triển khai.
+
+25
+00:01:30,241 --> 00:01:33,291
+Một mô hình khá phổ biến là hành động GitHub,
+
+26
+00:01:33,372 --> 00:01:36,692
+Xây dựng mây, đăng ký nghệ thuật, và triển khai mây.
+
+27
+00:01:37,012 --> 00:01:42,454
+Các công ty áp dụng phương pháp lai này bởi vì các nhà phát triển ở lại GitHub,
+
+28
+00:01:42,653 --> 00:01:46,790
+Nhân dạng được bảo mật sử dụng danh tính của Liên bang,
+
+29
+00:01:46,933 --> 00:01:49,054
+và xây dựng chạy trên Google Cloud.
+
+30
+00:01:49,253 --> 00:01:51,814
+Mô hình này bây giờ là cực kỳ phổ biến.
+
+31
+00:01:52,134 --> 00:01:54,774
+Argo CD là vua của GitOps,
+
+32
+00:01:54,893 --> 00:01:59,814
+Và nó kết nối đẹp với máy Google Kubernetes và kết nối cấu.
+
+33
+00:02:00,054 --> 00:02:03,094
+Kiến trúc điển hình là Cloud Xây dựng xử lý CIA,
+
+34
+00:02:03,244 --> 00:02:08,945
+Bức ảnh đăng ký nghệ thuật lưu lại các ảnh, GitOps repos lưu các biểu đồ Kibernetes,
+
+35
+00:02:09,015 --> 00:02:13,136
+Và CD Argo tự động đồng bộ với cụm GKE.
+
+36
+00:02:13,335 --> 00:02:18,175
+GitOps làm việc rất tốt trong GCP bởi vì GKE có một
+
+37
+00:02:18,175 --> 00:02:20,955
+RBAC mạnh mẽ và bản sắc làm việc hàng ngày,
+
+38
+00:02:21,175 --> 00:02:26,065
+và cấu hình Kết nối cho phép GitHub quản lý cả các ứng dụng và infra.
+
+39
+00:02:26,416 --> 00:02:29,115
+Phần quan trọng nhất là bảo vệ đường ống.
+
+40
+00:02:29,345 --> 00:02:34,598
+Google Cloud theo SSSA, một tiêu chuẩn công nghiệp cho hệ thống an ninh cung cấp.
+
+41
+00:02:34,777 --> 00:02:38,177
+Nó có bảng khảo cổ mà mỗi lần đẩy
+
+42
+00:02:38,177 --> 00:02:41,768
+Ảnh được quét các điểm yếu của cơ sở dữ liệu,
+
+43
+00:02:41,988 --> 00:02:44,968
+và có vấn đề về hình ảnh cơ bản.
+
+44
+00:02:45,138 --> 00:02:48,098
+Bạn có thể chặn những hình ảnh với điểm yếu quan trọng.
+
+45
+00:02:48,257 --> 00:02:53,658
+Nó có sự cho phép nhị phân mà chỉ có thể thực thi các hình ảnh được ký mới có thể triển khai,
+
+46
+00:02:53,938 --> 00:02:56,218
+xây dựng, và chỉ được chấp thuận phóng thích.
+
+47
+00:02:56,388 --> 00:02:59,770
+Điều này ngăn chặn các thùng chứa bị xâm nhập, bị hư hại xây dựng
+
+48
+00:02:59,770 --> 00:03:02,070
+Hệ thống, và các cuộc triển khai trái phép.
+
+49
+00:03:02,210 --> 00:03:06,339
+Công việc tải danh tính Liên bang được đề nghị qua khóa tài khoản dịch vụ.
+
+50
+00:03:06,539 --> 00:03:08,600
+Hành động GitHub của anh, Jenkins,
+
+51
+00:03:08,610 --> 00:03:13,779
+Và CD Argo có thể xác nhận Google Cloud mà không cần khoá JSON,
+
+52
+00:03:13,940 --> 00:03:16,210
+Loại bỏ một rủi ro an ninh khổng lồ.
+
+53
+00:03:16,419 --> 00:03:16,660
+Còn nữa,
+
+54
+00:03:16,740 --> 00:03:21,539
+Các công cụ như cổng OPA có thể thực thi chính sách như một mã
+
+55
+00:03:21,539 --> 00:03:24,929
+Nơi mà ông không thể thực thi các vật chứa đặc quyền,
+
+56
+00:03:25,289 --> 00:03:28,932
+Không có xô công cộng, tất cả các cuộc triển khai phải tuyên bố giới hạn.
+
+57
+00:03:29,102 --> 00:03:29,701
+Và cuối cùng,
+
+58
+00:03:29,981 --> 00:03:35,382
+Sự cô lập CI/CD không bao giờ chạy CI và sản xuất tải về cùng một cụm.
+
+59
+00:03:35,542 --> 00:03:40,261
+Google Cloud triển khai và đăng ký nghệ thuật thực hiện sự phân chia này.
+
+60
+00:03:40,501 --> 00:03:43,371
+Và đó là cách mà công cụ thứ ba của hãng hàng không Jenkins,
+
+61
+00:03:43,501 --> 00:03:48,201
+GitHub Actions, Argo CD tích hợp liên tục với Google Cloud,
+
+62
+00:03:48,251 --> 00:03:52,462
+Và đó là cách anh bảo vệ toàn bộ hệ thống cung cấp máy tính của CIA.
+
