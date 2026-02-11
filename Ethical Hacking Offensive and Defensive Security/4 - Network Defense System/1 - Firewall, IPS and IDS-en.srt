@@ -1,0 +1,336 @@
+1
+00:00:00,000 --> 00:00:08,680
+ So, welcome to another session, so in this session we will discuss different system which
+
+2
+00:00:08,680 --> 00:00:13,520
+ will be actually presented in the corporate environment.
+
+3
+00:00:13,520 --> 00:00:16,880
+ And in the previous section we have discussed about the ways a model and a few network
+
+4
+00:00:16,880 --> 00:00:17,880
+ concepts.
+
+5
+00:00:17,880 --> 00:00:22,100
+ So, in the next section we are going to discuss about the different system that has been
+
+6
+00:00:22,100 --> 00:00:23,100
+ used in the network.
+
+7
+00:00:23,100 --> 00:00:29,400
+ So, first of all, so when we coming up to the different system in a network, so the firewall
+
+8
+00:00:29,400 --> 00:00:35,200
+ will be the first thing that will coming into the into our mind, so we are going to discuss
+
+9
+00:00:35,200 --> 00:00:36,960
+ about the firewall first.
+
+10
+00:00:36,960 --> 00:00:44,760
+ So, let us say, so firewall is basically a security device, so either it will be like a hardware
+
+11
+00:00:44,760 --> 00:00:48,520
+ or and it will be like a software for a combination of both.
+
+12
+00:00:48,520 --> 00:00:54,300
+ So, sometime in some corporate environment the firewall is based on hardware, there is a
+
+13
+00:00:54,300 --> 00:01:02,780
+ 48 firewall, Cisco firewall and a lot of firewalls are there, so sometime we are using
+
+14
+00:01:02,780 --> 00:01:08,900
+ the software for that example the Windows firewall and it will be a combination of both.
+
+15
+00:01:08,900 --> 00:01:13,820
+ So, hardware under a solar system software, the main purpose of the firewall is like monitoring
+
+16
+00:01:13,820 --> 00:01:15,860
+ the inbound and the outbound traffic.
+
+17
+00:01:15,860 --> 00:01:24,140
+ So, let us consider here is our router and inside the router, so there is firewall inside
+
+18
+00:01:24,140 --> 00:01:25,140
+ it.
+
+19
+00:01:25,140 --> 00:01:33,220
+ So, after the firewall many devices has been connected under the firewall, so every device
+
+20
+00:01:33,220 --> 00:01:38,780
+ is under the firewall it will send the traffic, it will send the traffic to the firewall,
+
+21
+00:01:38,780 --> 00:01:49,280
+ then the firewall to router and the router to the internal, this is the scenario of the
+
+22
+00:01:49,280 --> 00:01:54,740
+ firewall how our corporate environment will operate. So, in firewall there is a two thing
+
+23
+00:01:54,740 --> 00:02:02,900
+ or there is an inbound rule and another one is a outbound rule. So, inbound rule is basically
+
+24
+00:02:02,900 --> 00:02:10,820
+ we will see a diagram for that, so it is basically here is an attacker, so you can see
+
+25
+00:02:10,820 --> 00:02:18,340
+ the inbound rule from the attacker machine to the corporate environment, so it is like, so
+
+26
+00:02:18,340 --> 00:02:27,860
+ from internet to the router and router to firewall and firewall to the device. So, this
+
+27
+00:02:27,860 --> 00:02:36,140
+ rule is called as inbound some incoming calls and some traffic are sending from devices
+
+28
+00:02:36,140 --> 00:02:45,420
+ to firewall, firewall to router and router to internet. So, we will call this as a outbound
+
+29
+00:02:45,420 --> 00:02:54,020
+ traffic, basically firewall will monitor this inbound and outbound traffic and if the traffic
+
+30
+00:02:54,020 --> 00:03:00,380
+ was malicious, it will block that traffic, if the traffic was good it will allow that
+
+31
+00:03:00,380 --> 00:03:11,380
+ traffic, based on the rules. So, firewall have some set of rules or policies, so it will
+
+32
+00:03:11,380 --> 00:03:21,980
+ decide whether the packet was malicious or the packet was sending is malicious or packet
+
+33
+00:03:21,980 --> 00:03:27,860
+ was receiving was good. So, basically it will monitor these two things, for other packets
+
+34
+00:03:27,860 --> 00:03:33,620
+ are sending from the machine and what are the packets are receiving from the internet.
+
+35
+00:03:33,620 --> 00:03:39,420
+ Based on the rule it will take a decision, so let we will see other features of the firewall
+
+36
+00:03:39,420 --> 00:03:45,820
+ here and it is a best access control, if you want to block some devices from accessing
+
+37
+00:03:45,820 --> 00:03:51,140
+ the internet, for example, so here is a device, so we are going to block this device
+
+38
+00:03:51,140 --> 00:03:57,500
+ to access to the internet, so we can configure the device IP in a firewall and this firewall
+
+39
+00:03:57,500 --> 00:04:05,780
+ will not send any traffic outside of the network, if it will block here. So, this is
+
+40
+00:04:05,780 --> 00:04:12,880
+ a best access control mechanism and we have a packet filtering, so we can filter whatever
+
+41
+00:04:12,880 --> 00:04:19,060
+ packets need to send to the internet and we can block based on that, based on the rule
+
+42
+00:04:19,060 --> 00:04:29,100
+ it will act. So, it has a best VPN support, so VPN is used for connecting securely to
+
+43
+00:04:29,100 --> 00:04:36,100
+ a remote network and it has a VPN filtering also, so if you want to block a pornography
+
+44
+00:04:36,100 --> 00:04:43,300
+ or some adult flame, you can configure the same things in a firewall, it will automatically
+
+45
+00:04:43,300 --> 00:04:49,780
+ block that websites. So, the firewall will be like this, if there is any unwanted connection
+
+46
+00:04:49,780 --> 00:04:55,980
+ was coming, it will block here and the perimeter traffic only, it will be allowed inside
+
+47
+00:04:55,980 --> 00:05:03,540
+ to the network. So, the inbound and outbound will be acts like this, the red column
+
+48
+00:05:03,540 --> 00:05:12,860
+ is like a attacker traffic, so it was blocked and the good traffic was coming from the
+
+49
+00:05:12,860 --> 00:05:20,380
+ server, so it has been allowed, so in the outbound packets, so inside one of the machine,
+
+50
+00:05:20,380 --> 00:05:25,860
+ the proper environment, one of the machine was connecting with the malicious traffic, so
+
+51
+00:05:25,860 --> 00:05:31,340
+ outbound packets that it has been blocked. So, it will be act like that, so next mechanism
+
+52
+00:05:31,340 --> 00:05:38,700
+ we are going to see the IPS as well as the IDS, so IPS stand for the intrusion detection
+
+53
+00:05:38,700 --> 00:05:46,860
+ system, sorry, IDS stand for intrusion detection system and IPS stand for an intrusion
+
+54
+00:05:46,860 --> 00:05:54,500
+ prevention system, both of the technologies are used to detect and prevent the threats,
+
+55
+00:05:54,500 --> 00:06:06,340
+ ok. So, this both are in the first method, we can discuss about the IDS, so IDS is also
+
+56
+00:06:06,340 --> 00:06:12,460
+ like a firewall, it will monitor and analyze the network traffic, but the only difference,
+
+57
+00:06:12,460 --> 00:06:20,140
+ it will not react, so let us see with the practical explanation with the diagram, so here
+
+58
+00:06:20,140 --> 00:06:30,780
+ you have a router and inside the router you have placed IP IDS, ok. So, let us consider
+
+59
+00:06:30,780 --> 00:06:39,140
+ some bad traffic was coming from here to here, and it was reaching to the machine, ok,
+
+60
+00:06:39,140 --> 00:06:48,500
+ so it is a bad traffic, some bad traffic and the IDS will only detect that traffic, ok.
+
+61
+00:06:48,500 --> 00:06:56,100
+ So, it will not prevent that, it will not block that, it only detect that, ok. So, after
+
+62
+00:06:56,100 --> 00:07:05,660
+ detecting it will send alert to a administrator, ok, so it will send alert like some malicious
+
+63
+00:07:05,660 --> 00:07:14,140
+ traffic has been detected, so it will send alert like this, ok. So, but the threats will
+
+64
+00:07:14,140 --> 00:07:20,780
+ be allowed to the machine, ok. It will not block, it will just detect that, ok. So, if
+
+65
+00:07:20,780 --> 00:07:32,780
+ you, so that is why we are saying the IPS, sorry, the IDS is a passive tool, IPS is active
+
+66
+00:07:32,780 --> 00:07:42,620
+ tool, ok. Let us say the IPS here, so here we have an IPS intrusion prevention system
+
+67
+00:07:42,620 --> 00:07:50,820
+ and the same like some bad traffic is reaching to IPS, and here is our machine. So,
+
+68
+00:07:50,820 --> 00:07:58,540
+ it will detect that, and it will stop that, it will block that, ok. So, it will block,
+
+69
+00:07:58,540 --> 00:08:05,540
+ it will respond, so response is like I need to block or I need to do something, ok. That
+
+70
+00:08:05,540 --> 00:08:11,100
+ is a response, so it will block that, so we are calling this tool as an active tool, ok.
+
+71
+00:08:11,100 --> 00:08:20,780
+ So, active and IDS is a passive, let us go to our presentation here, ok. So, let us jump
+
+72
+00:08:20,780 --> 00:08:27,300
+ on to here, we will see the, we will already saw the thing, how it will be hacked. So,
+
+73
+00:08:27,300 --> 00:08:34,300
+ the key difference between the IDS and IPS us, in IDS it will be one detecting and alerting
+
+74
+00:08:34,300 --> 00:08:38,420
+ the threats, but IPS it will detect and prevent the threat. So, the response mode will
+
+75
+00:08:38,420 --> 00:08:44,920
+ be the only alert, so that we are saying it is a passive, so but it will block the traffic,
+
+76
+00:08:44,920 --> 00:08:50,460
+ so that we are saying it is an active, ok. So, the placement it will be placed outside
+
+77
+00:08:50,460 --> 00:09:00,460
+ of the main firewall, so it is like the, so if there is a modem or router and the IDS
+
+78
+00:09:00,460 --> 00:09:11,060
+ will be here, after IDS there is a firewall and IPS, so the structure will be like this,
+
+79
+00:09:11,060 --> 00:09:18,020
+ ok. So, it will be placed outside of the firewall, so in line with the firewall, does
+
+80
+00:09:18,020 --> 00:09:22,620
+ not affect network traffic, but it will affect the network, but we as it will block the
+
+81
+00:09:22,620 --> 00:09:29,180
+ traffic, ok. So, alerts to administrators, but it will not give any alerts to the administrators,
+
+82
+00:09:29,180 --> 00:09:38,640
+ ok. So, here is a diagram representation of IPS and IDS, so hope you enjoyed this video
+
+83
+00:09:38,640 --> 00:09:46,020
+ and we will continue our different mechanism, network calls in our next video, see you
+
+84
+00:09:46,020 --> 00:09:46,860
+ you guys, bye bye.
+
