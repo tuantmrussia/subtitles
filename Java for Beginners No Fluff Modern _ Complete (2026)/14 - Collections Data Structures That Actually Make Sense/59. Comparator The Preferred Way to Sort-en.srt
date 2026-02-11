@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:06,180
+ So in the last video, we saw how do we sought collections and then went ahead to sort
+
+2
+00:00:06,180 --> 00:00:11,620
+ our own collections, which had custom class objects using comparable and did a good job.
+
+3
+00:00:11,620 --> 00:00:15,880
+ But then at then you found out the disadvantages, which we are going to take care in this
+
+4
+00:00:15,880 --> 00:00:16,880
+ video.
+
+5
+00:00:16,880 --> 00:00:19,380
+ And that is with implementing comparator.
+
+6
+00:00:19,380 --> 00:00:23,520
+ It solves everything that was a problem with comparable.
+
+7
+00:00:23,520 --> 00:00:26,240
+ And I'm just going to change this example only.
+
+8
+00:00:26,240 --> 00:00:31,720
+ So what I'll do is the first change I make is I don't want to write the sorting logic in
+
+9
+00:00:31,720 --> 00:00:34,000
+ the class, which I'm trying to sort right.
+
+10
+00:00:34,000 --> 00:00:37,160
+ I want to create classes which are high on cohesion.
+
+11
+00:00:37,160 --> 00:00:41,060
+ As I told you, that's the indices standard practice, we'll just get rid of this here.
+
+12
+00:00:41,060 --> 00:00:46,480
+ And once we do, we'll also get rid of the sorting logic.
+
+13
+00:00:46,480 --> 00:00:52,520
+ This now remains a cleaner class, it just has to do with laptops, right.
+
+14
+00:00:52,520 --> 00:01:04,280
+ So now, next is what I'll do is I'll create a separate class, see, I'll say sort laptops
+
+15
+00:01:04,280 --> 00:01:11,240
+ by and I implement a different interface here called comparator.
+
+16
+00:01:11,240 --> 00:01:16,080
+ It's in Java or Google and just passing the generic argument, what do you want to sort?
+
+17
+00:01:16,080 --> 00:01:22,400
+ I'll say laptop and then hover on this, say implement the unimplemented methods and
+
+18
+00:01:22,400 --> 00:01:29,000
+ it just has one again, it's a sound type, it's a it's a functional interface, we just
+
+19
+00:01:29,000 --> 00:01:33,640
+ has one abstract method and that is compare and just the difference between compare to
+
+20
+00:01:33,640 --> 00:01:39,120
+ and compare is compare to incompatible takes one argument, this takes two both of them.
+
+21
+00:01:39,120 --> 00:01:43,920
+ And because thanks to generics, this now is laptop, no more instance of needed no more
+
+22
+00:01:43,920 --> 00:01:47,600
+ type class, you need to be just dangerous as well, right, and you're not certain.
+
+23
+00:01:47,600 --> 00:01:50,880
+ So go ahead and write your logic, I'll say return.
+
+24
+00:01:50,880 --> 00:02:00,880
+ Let's call them appropriately, I'll say first and second laptop, it's a first dot,
+
+25
+00:02:00,880 --> 00:02:07,240
+ get your dot compare to still, right, just that you've used comparator doesn't mean
+
+26
+00:02:07,240 --> 00:02:12,680
+ the string starts to use comparator as well, they're still using comparable, you just need
+
+27
+00:02:12,680 --> 00:02:17,440
+ to call its own compared to you're not worried about how the logic is written for sorting
+
+28
+00:02:17,440 --> 00:02:23,960
+ behind the scenes, just leverage it, call it, and I'll say second dot, get, yeah, and
+
+29
+00:02:23,960 --> 00:02:24,960
+ that's all.
+
+30
+00:02:24,960 --> 00:02:30,760
+ No, this is a separate class, doesn't have to do anything with laptop, right, but now
+
+31
+00:02:30,760 --> 00:02:31,960
+ how do you call it here?
+
+32
+00:02:31,960 --> 00:02:37,560
+ Because now it still takes the sort method still takes the list in which you're storing
+
+33
+00:02:37,560 --> 00:02:43,560
+ objects of a type, which have implemented compare and boo, but now laptop is not implementing
+
+34
+00:02:43,560 --> 00:02:49,520
+ comparable anymore, right, how do you sorted by using comparator turns out we have an
+
+35
+00:02:49,520 --> 00:02:55,640
+ overloaded version of sort, which takes two arguments, the first one, the list to be sorted
+
+36
+00:02:55,640 --> 00:03:03,760
+ second by which comparator, I'll say new sort laptops better, right, we're using an overloaded
+
+37
+00:03:03,760 --> 00:03:04,840
+ version of sort.
+
+38
+00:03:04,840 --> 00:03:11,560
+ The first one is the list to be sorted, the second one is the custom comparator that you
+
+39
+00:03:11,560 --> 00:03:18,200
+ worked with, and now let's see, does it still do the same, and does first round eight, then
+
+40
+00:03:18,200 --> 00:03:26,800
+ 16, and then the 32 gram version, getting the point here, and turns out even in Java 8.0,
+
+41
+00:03:26,800 --> 00:03:38,080
+ we even have a better way to use the sort, that is, you will see Java 8 syntax, you don't
+
+42
+00:03:38,080 --> 00:03:45,060
+ need to now write collections, you just need to say the list that you want to sort directly
+
+43
+00:03:45,060 --> 00:03:51,560
+ to sort, they introduce the sort method directly on that list, and just pass in your custom
+
+44
+00:03:51,560 --> 00:03:57,760
+ comparator here, that's it looks more better readable than the previous one, right, because
+
+45
+00:03:57,760 --> 00:04:02,400
+ you're just sorting that list and then passing the constant custom comparator, and that
+
+46
+00:04:02,400 --> 00:04:07,780
+ is how this works, and now let's say you decide to sort your laptops on the basis
+
+47
+00:04:07,780 --> 00:04:14,000
+ of name, how you do that, you don't need to change anything here, just class, create a new
+
+48
+00:04:14,000 --> 00:04:21,640
+ class, and just copy paste the code, and say sort laptops by name, right, and just change
+
+49
+00:04:21,640 --> 00:04:30,160
+ the logic, that's it, name, and this is a separate class altogether for sorting, for writing
+
+50
+00:04:30,160 --> 00:04:35,640
+ the logic for sorting laptops by name at a different place, and similarly I've been doing
+
+51
+00:04:35,640 --> 00:04:44,000
+ other parameters, I'll say sort laptops by monoclexural, perfectly fine, and this just changes
+
+52
+00:04:44,000 --> 00:04:51,240
+ the method, that's all you need to do, that's it, so three different classes write on
+
+53
+00:04:51,240 --> 00:04:56,680
+ their own, no more tinkering and manipulating or editing that laptop class at all times
+
+54
+00:04:56,680 --> 00:05:01,200
+ whenever you want to change, and highly cohesive classes, this is high equation, this
+
+55
+00:05:01,200 --> 00:05:05,560
+ is high equation and the laptop also is highly cohesive, and all you have to do is, whatever
+
+56
+00:05:05,560 --> 00:05:11,520
+ you want to use, I'll say sort laptops by manufacturer, let's go ahead and run this, now
+
+57
+00:05:11,520 --> 00:05:17,800
+ the laptop is with the laptop app will should come first, and then let know, right, perfectly
+
+58
+00:05:17,800 --> 00:05:22,720
+ fine, and obviously in a menu driven program, and that's an exciting exercise for you after
+
+59
+00:05:22,720 --> 00:05:27,960
+ this video, and that is you have to create a menu driven program, that is let's say we press
+
+60
+00:05:27,960 --> 00:05:35,120
+ one, and then it sorts the laptops by manufacturer, press two, sort the laptop by name,
+
+61
+00:05:35,120 --> 00:05:42,160
+ press three, sorts the laptop by SSD, sort, enter four, sort the laptop by RAM, right, that
+
+62
+00:05:42,160 --> 00:05:48,000
+ should be a menu driven program, and that will just make it completely flexible and customizable
+
+63
+00:05:48,000 --> 00:05:55,360
+ as well, but that is the edge we get with comparator and how it solves the purpose, right,
+
+64
+00:05:55,360 --> 00:06:00,760
+ and when we would bring, or when you would use lambda syntax, or even inner classes, syntax,
+
+65
+00:06:00,760 --> 00:06:06,640
+ you would not even need to write these classes at first, right, you can just go ahead
+
+66
+00:06:06,640 --> 00:06:13,320
+ and write them on the go on the flight, thanks to inner classes, and Java 8 lambda's, right,
+
+67
+00:06:13,320 --> 00:06:19,000
+ in this video again, we saw comparator and how it served the purpose of sorting in the
+
+68
+00:06:19,000 --> 00:06:20,680
+ most convenient of madness.
+
