@@ -1,0 +1,192 @@
+1
+00:00:00,000 --> 00:00:09,420
+ Welcome to another video, so in this video we are going to learn the other tools that
+
+2
+00:00:09,420 --> 00:00:17,760
+ was used for discovery tactics, this is 60% of the time, I have observed in multiple
+
+3
+00:00:17,760 --> 00:00:22,920
+ threat factors, active incidents, the advanced IP scanner, they will be commonly using
+
+4
+00:00:22,920 --> 00:00:31,160
+ this tool for network infrastructure, infrastructure enumerations activity and from this
+
+5
+00:00:31,160 --> 00:00:37,760
+ tool they can understand what was the host was online and what was the host is about,
+
+6
+00:00:37,760 --> 00:00:40,400
+ even the microtrus activity, everything, okay.
+
+7
+00:00:40,400 --> 00:00:49,800
+ So, I have a lot of incident and a lot of cases that was triggered for the advanced IP
+
+8
+00:00:49,800 --> 00:00:56,280
+ scanner activities, let me learn how to detect the flow bridging that legitimate tools
+
+9
+00:00:56,280 --> 00:00:59,240
+ to perform their malicious activity, okay.
+
+10
+00:00:59,240 --> 00:01:09,240
+ So, let me want to the advanced IP scanner download, so once you get on this, just click
+
+11
+00:01:09,240 --> 00:01:12,840
+ on the feed download, it will automatically download the advanced IP scanner into your
+
+12
+00:01:12,840 --> 00:01:19,120
+ launcher and once you download and double click on the advanced IP scanner, it will
+
+13
+00:01:19,120 --> 00:01:26,840
+ install your environment and this is the consuming interface, this is the GUI interface,
+
+14
+00:01:26,840 --> 00:01:34,560
+ you can use it in the console also, we will learn how to do that in the next thing.
+
+15
+00:01:34,560 --> 00:01:39,880
+ And let me show you something, so here you can see, you need to give the proper input
+
+16
+00:01:39,880 --> 00:01:49,360
+ here, if you need to scan the entire host, like entire network, so my gateway will be
+
+17
+00:01:49,360 --> 00:02:01,200
+ starting from, let me show you something, IEPCon, okay, so here I can see my default
+
+18
+00:02:01,200 --> 00:02:11,640
+ data was 192.168.18.1, so I just given the 192.168.18.1 to 254 to scan the entire network,
+
+19
+00:02:11,640 --> 00:02:20,000
+ let me scan this, so it started the scanning, it will be giving the input which host
+
+20
+00:02:20,000 --> 00:02:28,440
+ are offline and which of the host are online and here you can find few more input with
+
+21
+00:02:28,440 --> 00:02:40,160
+ the name Navin and multiple devices, it was showing, so you can see, once the scans get
+
+22
+00:02:40,160 --> 00:02:53,760
+ completed you can save your input by giving the save us and there is much option to explore
+
+23
+00:02:53,760 --> 00:03:00,760
+ in this advanced IP scanner, but it is definitely a good tool to enumerate the network
+
+24
+00:03:00,760 --> 00:03:06,480
+ information, so the host related information, okay, and so as per the contactive activity
+
+25
+00:03:06,480 --> 00:03:13,080
+ they will be using the console also, so once they get on to the mission, they will be executing
+
+26
+00:03:13,080 --> 00:03:19,280
+ the command, so you guys are now familiar with how to handle the mission from the Carlian
+
+27
+00:03:19,280 --> 00:03:24,720
+ X, you can use Smallbin, you can use multiple things, so you have, you are very familiar
+
+28
+00:03:24,720 --> 00:03:31,440
+ how to handle this, so I was showing just an example within a live mission, but if you
+
+29
+00:03:31,440 --> 00:03:36,200
+ are attacking any environment, you will be getting your Carlian X console and you will be
+
+30
+00:03:36,200 --> 00:03:46,120
+ executing from command from that mission, so the GUI output has been completed, so
+
+31
+00:03:46,120 --> 00:03:53,240
+ we can give a save us and you can save the output in these three formats which TML or
+
+32
+00:03:53,240 --> 00:04:01,480
+ CSE has something, okay, so let me cancel this and we will jump on to the console interface,
+
+33
+00:04:01,480 --> 00:04:08,760
+ so this is the path which the advanced IP scanner console was there and I was giving
+
+34
+00:04:08,760 --> 00:04:21,560
+ the range as 192.168. me and edit this range, yes, 18.1, 2, 2, 5, 4 and the file output will
+
+35
+00:04:21,560 --> 00:04:34,920
+ be saving the network.6 instead of that attack, scan attacker, scan.cs, let me execute
+
+36
+00:04:34,920 --> 00:04:45,960
+ this one, it will take some time to complete the scanning, because you can see the GUI
+
+37
+00:04:45,960 --> 00:04:52,640
+ also took some time to scan the environment, the similar way the console will be also
+
+38
+00:04:52,640 --> 00:04:58,160
+ take some time to scan the environment, okay, this is the way how the attack test will
+
+39
+00:04:58,160 --> 00:05:14,420
+ be executing the commands, okay, now it was given the output here, the attacker scan.cs,
+
+40
+00:05:14,420 --> 00:05:23,360
+ let go to the directory and let's see how the scan has been saved, so here you can find
+
+41
+00:05:23,360 --> 00:05:44,440
+ the result, so let, now you can find some alive host and some dead host and some unknown
+
+42
+00:05:44,440 --> 00:05:58,700
+ host type, so these are the host are now alive and let me filter out the live host and
+
+43
+00:05:58,700 --> 00:06:13,280
+ some, so these are some services are running, let's take this, let's store this information
+
+44
+00:06:13,280 --> 00:06:23,720
+ for the future purpose, okay, so let's have this information for future attacks, okay,
+
+45
+00:06:23,720 --> 00:06:28,560
+ so this is how the threat attack will be compromising the account and they will be using
+
+46
+00:06:28,560 --> 00:06:32,900
+ the advanced safety scanner command line in the face to scan the environment and they
+
+47
+00:06:32,900 --> 00:06:39,040
+ will be getting the results like this, okay, so let's hop off this video and we will continue
+
+48
+00:06:39,040 --> 00:06:44,000
+ our topic in the next video. See you guys. Bye bye.
+
