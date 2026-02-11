@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:03,560
+ And similarly, we can combine multiple conditions
+
+2
+00:00:03,560 --> 00:00:07,080
+ using the logical operators, how exactly.
+
+3
+00:00:07,080 --> 00:00:11,920
+ So let's say I wanted to compare if, in ID,
+
+4
+00:00:11,920 --> 00:00:14,400
+ let me just comment all of this for now.
+
+5
+00:00:14,400 --> 00:00:16,680
+ You can play around with this later on,
+
+6
+00:00:16,680 --> 00:00:19,800
+ the same kind of a code, just a moment.
+
+7
+00:00:19,800 --> 00:00:24,760
+ Yeah, this is commented.
+
+8
+00:00:24,760 --> 00:00:28,120
+ So let's say either requirement,
+
+9
+00:00:28,120 --> 00:00:33,120
+ I said, if ID is not equal to zero, right?
+
+10
+00:00:33,120 --> 00:00:42,200
+ Now the second condition,
+
+11
+00:00:42,200 --> 00:00:44,600
+ rather than writing a different separative,
+
+12
+00:00:44,600 --> 00:00:48,480
+ I could have said, and there's a variable called user,
+
+13
+00:00:48,480 --> 00:00:52,440
+ or let's call it, is user at queue.
+
+14
+00:00:52,440 --> 00:00:56,760
+ And I said, if ID is not equal to zero
+
+15
+00:00:56,760 --> 00:00:59,480
+ and is user at queue equal to equal to true.
+
+16
+00:00:59,480 --> 00:01:05,400
+ Then say, a sound, welcome user.
+
+17
+00:01:05,400 --> 00:01:11,480
+ Okay.
+
+18
+00:01:11,480 --> 00:01:17,760
+ Otherwise, a sound, I'll say, invalid user.
+
+19
+00:01:17,760 --> 00:01:21,880
+ Okay. And again, you can remove the curly braces
+
+20
+00:01:21,880 --> 00:01:24,360
+ because these are just one lines here, right?
+
+21
+00:01:24,360 --> 00:01:26,040
+ But, and this is active.
+
+22
+00:01:26,040 --> 00:01:27,640
+ We can obviously take it from runtime
+
+23
+00:01:27,640 --> 00:01:30,720
+ or get it from a database in a big application later on.
+
+24
+00:01:30,720 --> 00:01:33,080
+ But for now, let's put in a hard code of value.
+
+25
+00:01:33,080 --> 00:01:37,160
+ I'll say, is user at queue, and I'll say it true for now.
+
+26
+00:01:37,160 --> 00:01:40,880
+ Myself, later on, this would come from a data source
+
+27
+00:01:40,880 --> 00:01:42,680
+ or a console, right?
+
+28
+00:01:42,680 --> 00:01:44,720
+ So I've said that if ID is only equal to zero
+
+29
+00:01:44,720 --> 00:01:46,640
+ and is user at queue equal to,
+
+30
+00:01:46,640 --> 00:01:49,960
+ this is just, it says, it can be simplified of course, right?
+
+31
+00:01:49,960 --> 00:01:53,160
+ So we can email it like this, because why not, right?
+
+32
+00:01:53,160 --> 00:01:56,640
+ Now, why is this still a still warning?
+
+33
+00:01:56,640 --> 00:01:59,040
+ Condition is user at queue is always true and reached.
+
+34
+00:01:59,040 --> 00:02:01,320
+ Why? Because this is a hard coded value,
+
+35
+00:02:01,320 --> 00:02:02,560
+ we should never take it, right?
+
+36
+00:02:02,560 --> 00:02:05,800
+ But for the purpose of this program, we'll just stick to it.
+
+37
+00:02:05,800 --> 00:02:09,840
+ So it says that it's not zero and the user is active.
+
+38
+00:02:09,840 --> 00:02:12,520
+ Welcome user, otherwise invalid user.
+
+39
+00:02:12,520 --> 00:02:15,120
+ Now, without the logical operator,
+
+40
+00:02:15,120 --> 00:02:16,760
+ I would have been made to,
+
+41
+00:02:16,760 --> 00:02:19,240
+ I would have been forced to write two conditions,
+
+42
+00:02:19,240 --> 00:02:20,640
+ a nested if, right?
+
+43
+00:02:20,640 --> 00:02:25,520
+ But here I just have used the logical operator and, right?
+
+44
+00:02:25,520 --> 00:02:26,440
+ What does that mean?
+
+45
+00:02:26,440 --> 00:02:31,240
+ This if is now true if both the conditions are true, right?
+
+46
+00:02:31,240 --> 00:02:32,760
+ Only in this case, it works.
+
+47
+00:02:32,760 --> 00:02:34,720
+ Even if one of the conditions is false,
+
+48
+00:02:34,720 --> 00:02:37,640
+ this is considered to be false, right?
+
+49
+00:02:37,640 --> 00:02:39,400
+ And let's just have a look at this.
+
+50
+00:02:39,400 --> 00:02:44,360
+ See, I'll just run this and it says,
+
+51
+00:02:44,360 --> 00:02:47,320
+ enter your ID, I says zero, see, invalid user.
+
+52
+00:02:47,320 --> 00:02:50,080
+ It did not execute this if and went on to this.
+
+53
+00:02:50,080 --> 00:02:52,680
+ That means both of these need to be true.
+
+54
+00:02:52,680 --> 00:02:55,080
+ I'll say it on this again, enter one.
+
+55
+00:02:55,080 --> 00:02:57,200
+ Welcome user because easier is active is true.
+
+56
+00:02:57,200 --> 00:03:00,200
+ This is also true, it's not zero, it's a welcome user.
+
+57
+00:03:00,200 --> 00:03:04,360
+ So even if one of the conditions is false, that's false, right?
+
+58
+00:03:04,360 --> 00:03:07,840
+ Then the other operator is the or, right?
+
+59
+00:03:07,840 --> 00:03:10,200
+ And that means either of these two conditions
+
+60
+00:03:10,200 --> 00:03:13,520
+ should be true for this if to be considered true, right?
+
+61
+00:03:13,520 --> 00:03:16,880
+ Unlike and because answers both should be true,
+
+62
+00:03:16,880 --> 00:03:20,160
+ then I would consider this entire condition to be true,
+
+63
+00:03:20,160 --> 00:03:23,960
+ but or says either one of these conditions needs to be true.
+
+64
+00:03:23,960 --> 00:03:28,520
+ So now if you enter ID, which is not zero,
+
+65
+00:03:28,520 --> 00:03:29,920
+ but user active would be false,
+
+66
+00:03:29,920 --> 00:03:32,080
+ this would still be considered true.
+
+67
+00:03:32,080 --> 00:03:33,880
+ Obviously in this kind of a requirement,
+
+68
+00:03:33,880 --> 00:03:37,200
+ I don't need to use or because here the requirement says,
+
+69
+00:03:37,200 --> 00:03:38,360
+ I have to use and right?
+
+70
+00:03:38,360 --> 00:03:39,720
+ Because for this to work,
+
+71
+00:03:39,720 --> 00:03:42,680
+ either of these conditions should be true, right?
+
+72
+00:03:42,680 --> 00:03:45,040
+ And if both of them are true, it's still true.
+
+73
+00:03:45,040 --> 00:03:48,640
+ And when does this fail, when both the conditions are false,
+
+74
+00:03:48,640 --> 00:03:52,440
+ then this if is considered to be a false, right?
+
+75
+00:03:52,440 --> 00:03:54,760
+ So and on the other hand,
+
+76
+00:03:54,760 --> 00:03:58,200
+ I can also use singular and singular.
+
+77
+00:03:58,200 --> 00:03:59,480
+ This is still a logical operator,
+
+78
+00:03:59,480 --> 00:04:04,240
+ but this time it's a non short circuit and this is a slightly
+
+79
+00:04:04,240 --> 00:04:08,040
+ lesser effective version of the logical and why?
+
+80
+00:04:08,040 --> 00:04:11,240
+ Because it says again, for this if to be considered true,
+
+81
+00:04:11,240 --> 00:04:13,160
+ both the conditions should be true,
+
+82
+00:04:13,160 --> 00:04:15,920
+ that is the left hand side and the right hand side,
+
+83
+00:04:15,920 --> 00:04:19,000
+ but there is a big part here.
+
+84
+00:04:19,000 --> 00:04:22,200
+ Now, let's say this condition was false.
+
+85
+00:04:22,200 --> 00:04:23,520
+ I entered 10.
+
+86
+00:04:23,520 --> 00:04:25,440
+ Oh, sorry, I entered zero, right?
+
+87
+00:04:25,440 --> 00:04:27,760
+ Obviously now this if cannot be true
+
+88
+00:04:27,760 --> 00:04:30,320
+ because no matter if this is true or false,
+
+89
+00:04:30,320 --> 00:04:32,680
+ this has turned out to be false.
+
+90
+00:04:32,680 --> 00:04:35,400
+ This if is a false because and says both the conditions
+
+91
+00:04:35,400 --> 00:04:36,920
+ have to be true, right?
+
+92
+00:04:36,920 --> 00:04:41,720
+ But this still goes on and evaluates the second condition
+
+93
+00:04:41,720 --> 00:04:44,640
+ less efficient making it less efficient, right?
+
+94
+00:04:44,640 --> 00:04:46,360
+ Because this is still going to be false,
+
+95
+00:04:46,360 --> 00:04:51,200
+ but if this was a logical operator that is short circuit
+
+96
+00:04:51,200 --> 00:04:55,320
+ and that means if the first condition was false,
+
+97
+00:04:55,320 --> 00:04:58,400
+ it would not even evaluate the second condition
+
+98
+00:04:58,400 --> 00:05:00,640
+ because no matter if it is true or false,
+
+99
+00:05:00,640 --> 00:05:02,000
+ this is still going to be false.
+
+100
+00:05:02,000 --> 00:05:04,080
+ It just moves on and goes through the else.
+
+101
+00:05:04,080 --> 00:05:07,760
+ That's why this short circuit and is more effective.
+
+102
+00:05:07,760 --> 00:05:09,280
+ But in certain situations,
+
+103
+00:05:09,280 --> 00:05:12,280
+ you want it to still evaluate the second condition.
+
+104
+00:05:12,280 --> 00:05:14,720
+ That's why there is the stool in the language,
+
+105
+00:05:14,720 --> 00:05:15,960
+ the non short circuit hand.
+
+106
+00:05:15,960 --> 00:05:18,600
+ And similarly, we have the short circuit or
+
+107
+00:05:18,600 --> 00:05:21,680
+ and the non short circuit or and this works like,
+
+108
+00:05:21,680 --> 00:05:23,520
+ if the first condition is true,
+
+109
+00:05:23,520 --> 00:05:26,800
+ now even if it's false, the condition works, right?
+
+110
+00:05:26,800 --> 00:05:29,840
+ But it still goes on and evaluates it, right?
+
+111
+00:05:29,840 --> 00:05:32,520
+ So this is the difference between short circuit and
+
+112
+00:05:32,520 --> 00:05:35,040
+ and short circuit or and here obviously I know
+
+113
+00:05:35,040 --> 00:05:38,200
+ I have to use the short circuit and right?
+
+114
+00:05:38,200 --> 00:05:41,400
+ And then I have the not as well,
+
+115
+00:05:41,400 --> 00:05:45,240
+ which unlike a logical operator and an or,
+
+116
+00:05:45,240 --> 00:05:47,280
+ it can only be used with one condition
+
+117
+00:05:47,280 --> 00:05:50,600
+ and just makes the inverse, the reverse of a condition.
+
+118
+00:05:50,600 --> 00:05:54,280
+ I say for example, if ID equal to equal to 90,
+
+119
+00:05:54,280 --> 00:05:57,680
+ do something, but if you use not here,
+
+120
+00:05:57,680 --> 00:06:01,480
+ it just inverses the complete condition, right?
+
+121
+00:06:01,480 --> 00:06:03,320
+ Or for example, if I would have said,
+
+122
+00:06:03,320 --> 00:06:05,920
+ if ID is less than or equal to 90,
+
+123
+00:06:05,920 --> 00:06:07,840
+ let's say this was my requirement, right?
+
+124
+00:06:07,840 --> 00:06:11,480
+ So you would just put in a not here and it would have worked
+
+125
+00:06:11,480 --> 00:06:14,720
+ like this and it was, that's it.
+
+126
+00:06:14,720 --> 00:06:17,280
+ What does it say in the morning?
+
+127
+00:06:17,280 --> 00:06:18,200
+ Remember yellow is a warning.
+
+128
+00:06:18,200 --> 00:06:20,320
+ It says if statement has empty body,
+
+129
+00:06:20,320 --> 00:06:21,720
+ why are you writing it?
+
+130
+00:06:21,720 --> 00:06:23,560
+ We know it's empty obviously.
+
+131
+00:06:23,560 --> 00:06:25,400
+ We want to put something significant there.
+
+132
+00:06:25,400 --> 00:06:28,080
+ But for now, just making you understand this is a not.
+
+133
+00:06:28,080 --> 00:06:30,240
+ Now see, if there was not a not here,
+
+134
+00:06:30,240 --> 00:06:32,920
+ so you would have said if ID equal to or less than equal to 90,
+
+135
+00:06:32,920 --> 00:06:35,360
+ that is if ID was 87, this would have worked.
+
+136
+00:06:35,360 --> 00:06:37,720
+ But now it does the inverse, right?
+
+137
+00:06:37,720 --> 00:06:41,400
+ Now this needs to be greater than 90 for this to be worked.
+
+138
+00:06:41,400 --> 00:06:43,840
+ And sometimes you have a requirement of using what?
+
+139
+00:06:43,840 --> 00:06:48,880
+ So this was using the if and the else with the comparison
+
+140
+00:06:48,880 --> 00:06:51,920
+ operators and the logical operators as well.
+
+141
+00:06:51,920 --> 00:06:54,080
+ So again, depending on your requirement,
+
+142
+00:06:54,080 --> 00:06:55,360
+ you would use any one of them.
+
+143
+00:06:55,360 --> 00:06:58,080
+ And I'll just put in some exercises after this video
+
+144
+00:06:58,080 --> 00:07:01,000
+ so that you have good hands-on on using.
+
+145
+00:07:01,000 --> 00:07:05,160
+ And you can think about when to use which kind of operator
+
+146
+00:07:05,160 --> 00:07:10,680
+ member of my lines that is a requirement is always as is always.
+
+147
+00:07:10,680 --> 00:07:15,160
+ So it's not requirement, programming is always a requirement.
+
