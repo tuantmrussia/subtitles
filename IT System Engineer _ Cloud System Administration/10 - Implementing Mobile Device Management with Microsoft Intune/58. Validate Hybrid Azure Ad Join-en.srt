@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:06,000
+ If you have configured your device to be hybrid Azure ID joined,
+
+2
+00:00:06,000 --> 00:00:13,000
+ definitely sometimes you want to verify if every team is okay because if you are working for a big company,
+
+3
+00:00:13,000 --> 00:00:19,000
+ it may definitely go wrong sometimes that a user calls in and says that it's having issues with the device,
+
+4
+00:00:19,000 --> 00:00:27,000
+ so you need to verify if that device is hybrid Azure ID joined as you can totally see here.
+
+5
+00:00:27,000 --> 00:00:32,000
+ So you can see that most of the device are hybrid Azure ID joined.
+
+6
+00:00:32,000 --> 00:00:37,000
+ So right now to verify if your device is actually hybrid Azure ID joined,
+
+7
+00:00:37,000 --> 00:00:45,000
+ because the device needs to be joined to your Azure Active Directory before it will be joined to your MDM or Microsoft Intune.
+
+8
+00:00:45,000 --> 00:00:51,000
+ For example, you can see we have a device which is totally a personal device,
+
+9
+00:00:51,000 --> 00:00:59,000
+ which is about neural fucent, you can see that the money by Microsoft Intune and all the other devices are not money by Intune.
+
+10
+00:00:59,000 --> 00:01:10,000
+ So if I go to let me try to open CMD as an administrator and just run as an administrator.
+
+11
+00:01:10,000 --> 00:01:13,000
+ And then I'm going to select yes.
+
+12
+00:01:13,000 --> 00:01:22,000
+ So if I enter the following command, which is called the sregcmd/stutters.
+
+13
+00:01:22,000 --> 00:01:26,000
+ So this is going to give all the status of the device, if the device you can see here,
+
+14
+00:01:26,000 --> 00:01:31,000
+ what you are totally interested on is the Azure ID joined.
+
+15
+00:01:31,000 --> 00:01:37,000
+ So the Azure ID joined means that this device has been joined to Azure ID.
+
+16
+00:01:37,000 --> 00:01:43,000
+ So this is actually not a personal device. The device belongs to the domain kelv global.
+
+17
+00:01:43,000 --> 00:01:48,000
+ So if I switch now to this device here, let's switch to this device.
+
+18
+00:01:48,000 --> 00:01:56,000
+ And this is actually a personal device which was also joined to Azure ID using the Microsoft Intune.
+
+19
+00:01:56,000 --> 00:02:01,000
+ So if I have license from a personal user, so let me open the command prompt.
+
+20
+00:02:01,000 --> 00:02:08,000
+ Let me run this as an administrator as well.
+
+21
+00:02:08,000 --> 00:02:15,000
+ So now we will put this as a personal device which was registered to with the money by Microsoft Intune.
+
+22
+00:02:15,000 --> 00:02:26,000
+ So when I enter the following, let me just enter the sregcmd/stutters.
+
+23
+00:02:26,000 --> 00:02:31,000
+ So right now you can see that because this device is not hybrid Azure ID joined.
+
+24
+00:02:31,000 --> 00:02:36,000
+ You can see, so it's not, it doesn't belong to any domain and that's that device name.
+
+25
+00:02:36,000 --> 00:02:40,000
+ Because this is Azure ID joined is no.
+
+26
+00:02:40,000 --> 00:02:47,000
+ No, this means that, but if I go back again to my C001, here you can see this is Azure ID registered.
+
+27
+00:02:47,000 --> 00:02:52,000
+ It's actually different than Azure ID, the hybrid Azure ID joined.
+
+28
+00:02:52,000 --> 00:02:57,000
+ So this means that it's actually a hybrid Azure ID joined.
+
