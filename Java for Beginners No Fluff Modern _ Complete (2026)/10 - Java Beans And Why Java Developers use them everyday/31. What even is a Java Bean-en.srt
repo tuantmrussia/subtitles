@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:07,200
+ All our friends in this video, we're going to talk about something which you would definitely
+
+2
+00:00:07,200 --> 00:00:11,280
+ use every single day in your life as a Java developer.
+
+3
+00:00:11,280 --> 00:00:21,240
+ And that's the concept of a Java Bean.
+
+4
+00:00:21,240 --> 00:00:24,760
+ So first things first, what is a Java Bean?
+
+5
+00:00:24,760 --> 00:00:28,600
+ And why did I say we would use it every single day?
+
+6
+00:00:28,600 --> 00:00:31,840
+ Why is it omnipresent in the Java ecosystem?
+
+7
+00:00:31,840 --> 00:00:36,840
+ Whether you're using core Java, you're using any advanced frameworks or something else,
+
+8
+00:00:36,840 --> 00:00:41,160
+ you would most likely be using Java Beans somewhere down the line.
+
+9
+00:00:41,160 --> 00:00:45,080
+ So what is a Java Bean and why do we use it?
+
+10
+00:00:45,080 --> 00:00:51,800
+ So first, the why is that it acts like a data carrier, right?
+
+11
+00:00:51,800 --> 00:00:58,480
+ Or for sending data from one layer to another, you would require something like a Java
+
+12
+00:00:58,480 --> 00:00:59,480
+ Bean.
+
+13
+00:00:59,480 --> 00:01:03,800
+ Obviously in the next video when we would get our hands dirty, put in some code, you would
+
+14
+00:01:03,800 --> 00:01:08,000
+ understand what I'm talking about sending data between layers.
+
+15
+00:01:08,000 --> 00:01:11,960
+ But for now, what is a Java Bean in Java?
+
+16
+00:01:11,960 --> 00:01:12,960
+ So it's a class.
+
+17
+00:01:12,960 --> 00:01:14,280
+ Again, first things first, right?
+
+18
+00:01:14,280 --> 00:01:20,200
+ Let me make it simple for you to understand yet another time, a Java Bean is a class, but
+
+19
+00:01:20,200 --> 00:01:23,520
+ which adheres to a convention, right?
+
+20
+00:01:23,520 --> 00:01:31,440
+ It is an ordinary class like you have written classes, but which adheres to a set of conventions.
+
+21
+00:01:31,440 --> 00:01:38,240
+ And the first one is that a Java Bean has to have instance variables, which are declared
+
+22
+00:01:38,240 --> 00:01:39,240
+ private.
+
+23
+00:01:39,240 --> 00:01:44,320
+ So instance variables in a Java Bean are private.
+
+24
+00:01:44,320 --> 00:01:50,080
+ Let me write that for you.
+
+25
+00:01:50,080 --> 00:01:56,280
+ Obviously, you will know that private is a keyword.
+
+26
+00:01:56,280 --> 00:01:57,520
+ So it starts with a small.
+
+27
+00:01:57,520 --> 00:02:00,800
+ So don't go with what I'm writing here on my whiteboard.
+
+28
+00:02:00,800 --> 00:02:03,520
+ But instance variables have to be declared private.
+
+29
+00:02:03,520 --> 00:02:08,640
+ And by the way, that is one of the industry standards, that's the recommendation, whether
+
+30
+00:02:08,640 --> 00:02:14,240
+ you're using a Java Bean or not, you should always declare instance variables as private.
+
+31
+00:02:14,240 --> 00:02:15,760
+ Right.
+
+32
+00:02:15,760 --> 00:02:20,120
+ Even if you do not, obviously that's not an error, that's why I said you should.
+
+33
+00:02:20,120 --> 00:02:24,840
+ I did not say must when I say must think about that as being an error or not, but when
+
+34
+00:02:24,840 --> 00:02:29,400
+ I say should, it is a recommendation as and as I've been telling you, and following along
+
+35
+00:02:29,400 --> 00:02:32,960
+ in the scores, we are following recommendations as if they're rules.
+
+36
+00:02:32,960 --> 00:02:38,960
+ So that by the end of the scores, you have a tighter hold on the syntax and as I said,
+
+37
+00:02:38,960 --> 00:02:43,240
+ that that goes a long way in your writing quality, better, readable, cool.
+
+38
+00:02:43,240 --> 00:02:48,320
+ So coming back to a Java Bean, whatever variables that you declare, they should be private.
+
+39
+00:02:48,320 --> 00:02:53,880
+ And I was telling you about the recommendation also, why should we declare instance variables
+
+40
+00:02:53,880 --> 00:02:55,040
+ of a class as private?
+
+41
+00:02:55,040 --> 00:03:00,120
+ Because we should never share the state of the program directly, state of a classes instance
+
+42
+00:03:00,120 --> 00:03:03,960
+ variables holds something substantial related to that object.
+
+43
+00:03:03,960 --> 00:03:08,120
+ And we should never share that publicly or without private right.
+
+44
+00:03:08,120 --> 00:03:09,400
+ So that's the first property.
+
+45
+00:03:09,400 --> 00:03:19,600
+ The second property of a Java Bean is that it should have public getter and set of methods.
+
+46
+00:03:19,600 --> 00:03:26,120
+ Right, that is we should, because we now have instance variables as private, how would you
+
+47
+00:03:26,120 --> 00:03:30,800
+ make the outside world to access them by public get a set of methods.
+
+48
+00:03:30,800 --> 00:03:34,680
+ So you should have methods, which are getter and set more on that in the next video.
+
+49
+00:03:34,680 --> 00:03:38,640
+ And we write some actual code, but the getter set of methods should be declared as public
+
+50
+00:03:38,640 --> 00:03:43,960
+ because they would then allow someone else to access these instance variables and third
+
+51
+00:03:43,960 --> 00:03:51,360
+ property of a Java Bean is it should have a no argument constructor.
+
+52
+00:03:51,360 --> 00:03:55,040
+ In short, we call that a no arc constructor.
+
+53
+00:03:55,040 --> 00:03:59,880
+ Right, so it can have as many as parameterized constructor, but at all times, it should have
+
+54
+00:03:59,880 --> 00:04:04,280
+ a no argument constructor, constructor, which does not take any arguments.
+
+55
+00:04:04,280 --> 00:04:09,360
+ And once a class has all these three in it, it is following the convention of a Java
+
+56
+00:04:09,360 --> 00:04:15,320
+ Bean, we refer to that class as a Java Bean, and that is what it really is.
+
+57
+00:04:15,320 --> 00:04:21,160
+ And in the next video, I'm going to go into the implementation details, how do you write
+
+58
+00:04:21,160 --> 00:04:22,160
+ a Java Bean?
+
+59
+00:04:22,160 --> 00:04:27,600
+ And it's especially important, because as I said, something that you use every day,
+
+60
+00:04:27,600 --> 00:04:31,720
+ you definitely would need to have a great understanding of that concept.
+
+61
+00:04:31,720 --> 00:04:35,180
+ So I'll see you in the next video and the code is coming for you shortly.
+
