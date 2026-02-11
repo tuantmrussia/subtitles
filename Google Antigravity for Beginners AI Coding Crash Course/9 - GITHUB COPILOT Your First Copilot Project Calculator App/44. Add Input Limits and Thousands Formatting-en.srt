@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:05,600
+ Hi, in this lesson, you will improve how numbers are handled and displayed in your calculate.
+
+2
+00:00:05,600 --> 00:00:12,560
+ So, of course, you'll add a limit of 10 digits in total. If I enter an amount,
+
+3
+00:00:12,560 --> 00:00:19,520
+ you'll see I can enter as much digits as I want, and it's much bigger than the calculator display.
+
+4
+00:00:19,520 --> 00:00:22,960
+ So, and mostly it's not real numbers, yeah.
+
+5
+00:00:24,720 --> 00:00:32,880
+ Build, we'll limit it to 10 digits, the digits before decimal, before the dot, and after the decimal
+
+6
+00:00:32,880 --> 00:00:38,720
+ in total of 10 digits. This prevents user from entering unreleased to take the long numbers
+
+7
+00:00:38,720 --> 00:00:45,040
+ and keeps the display clear and readable. You'll also show a message when the limit is reached,
+
+8
+00:00:45,040 --> 00:00:52,480
+ so user will be notified that he can't pipe more digits. It will be small hemed, but it will be useful.
+
+9
+00:00:52,480 --> 00:00:58,800
+ So, in general, this improvement improves usability and prevents some display overflow.
+
+10
+00:00:58,800 --> 00:01:05,200
+ Next, we will format the large numbers with a view of x-space.
+
+11
+00:01:05,200 --> 00:01:14,560
+ This just after decimal, you will see that it's difficult to read how much thousands have.
+
+12
+00:01:15,360 --> 00:01:22,560
+ And we'll format the large numbers with a space between thousands, like a view at a space right here,
+
+13
+00:01:22,560 --> 00:01:34,080
+ and here. So, this change makes numbers much easier to read. You'll see that you have, for example,
+
+14
+00:01:34,080 --> 00:01:46,320
+ 88, 88, 88, 88, 88, you'll have a separator as a space right here up.
+
+15
+00:01:46,320 --> 00:01:54,400
+ And it will be much easier to read for calculations, and you'll look more professional.
+
+16
+00:01:54,400 --> 00:01:59,600
+ So, but then that's also awesome, calculator will be much more professional, and of course,
+
+17
+00:01:59,600 --> 00:02:07,280
+ user friendly. So, let's get started. And I prepared the prompt to limit digits, maximum number of digits.
+
+18
+00:02:07,280 --> 00:02:15,040
+ I'll ask AI to limit it up to 10 total digits, digits before and after decimal in total,
+
+19
+00:02:15,040 --> 00:02:23,120
+ and when the limit is reached, the block extra characters but still allow backspace in editing.
+
+20
+00:02:23,120 --> 00:02:27,040
+ So, we'll block user from entering more digits than is allowed.
+
+21
+00:02:27,920 --> 00:02:34,400
+ And we will allow user to remove these digits, of course, that like. We'll also short the short message,
+
+22
+00:02:34,400 --> 00:02:39,680
+ as I told you, and it will be disappeared after three seconds. So, let's run this prompt,
+
+23
+00:02:39,680 --> 00:02:47,760
+ and see what the result will be. So, as more details, you will give to AI, in your prompt,
+
+24
+00:02:47,760 --> 00:02:54,400
+ the more accurate result you will get. So, always, if you know some edge cases or some
+
+25
+00:02:54,400 --> 00:03:01,040
+ small details, always describe them in the prompt. Okay, let's see if I update the calculator
+
+26
+00:03:01,040 --> 00:03:11,760
+ of the block digits. Okay, here's still syncing, I guess. Yes, it's still syncing. Okay, now we
+
+27
+00:03:11,760 --> 00:03:26,320
+ see, we ended up updating this way. Okay, here's the message. Okay, and in the use calculator,
+
+28
+00:03:26,320 --> 00:03:33,920
+ here's the message time mode, here's the message digits. Okay, it's still working,
+
+29
+00:03:33,920 --> 00:03:41,360
+ and also better the application, and just add a message. So, let's now see how it works.
+
+30
+00:03:42,160 --> 00:03:51,200
+ I go and there are more digits, so maximum 10 digits. Okay, it's fine. Yep, it looks correct.
+
+31
+00:03:51,200 --> 00:04:01,040
+ So, I can backspace, and for example, we have 10 digits. Let's add, yep, we can add more digits. So,
+
+32
+00:04:01,040 --> 00:04:09,360
+ it looks good. I like it. Oh, let's now format the varish numbers at a thousand separator.
+
+33
+00:04:10,000 --> 00:04:17,760
+ Oh, I will paste my next prompt. I will click keep to keep all the changes, close the files.
+
+34
+00:04:17,760 --> 00:04:24,560
+ We don't need it. So, my next prompt is format large numbers in the display by adding a space
+
+35
+00:04:24,560 --> 00:04:30,000
+ as a thousand separator. I show an example how I'd like to format it. I also ask apply
+
+36
+00:04:30,000 --> 00:04:36,240
+ format and dynamically as user types, or when showing the result. So, and also ensure
+
+37
+00:04:36,240 --> 00:04:39,840
+ formatting doesn't affect calculations of stoichiometric values.
+
+38
+00:04:39,840 --> 00:04:53,680
+ After I make font, font, size, and bit, smaller. So, let's make it smaller because if you add a thousand
+
+39
+00:04:53,680 --> 00:05:00,960
+ separator, it will go much bigger, and the patterns will be too small from the left side.
+
+40
+00:05:00,960 --> 00:05:02,720
+ Okay, let's run it.
+
+41
+00:05:06,960 --> 00:05:21,680
+ So, we see the outer model also looks good for these changes, but we have some limitations in
+
+42
+00:05:21,680 --> 00:05:28,160
+ the free plan. Okay, it's adding some logic to format numbers. So, we have now a big function,
+
+43
+00:05:29,200 --> 00:05:37,680
+ but no worry. Okay, the red gets at the check it. So, I'm not going to dive into what AI
+
+44
+00:05:37,680 --> 00:05:45,680
+ added. That was the logic. So, the font size is smaller. Okay, it's fine. And the display,
+
+45
+00:05:45,680 --> 00:05:52,080
+ yeah, we just use a format number. Ideally, you can use some libraries, some npm libraries,
+
+46
+00:05:52,080 --> 00:05:59,120
+ the format numbers, you can ask AI like use a give. For example, we can ask, did so,
+
+47
+00:05:59,120 --> 00:06:04,320
+ we will do it in the next one, I guess. We will use, we will do an investigation of thought,
+
+48
+00:06:04,320 --> 00:06:12,080
+ formatting libraries we might use, and then we'll apply one just to not have a lot of custom code we
+
+49
+00:06:12,080 --> 00:06:19,280
+ need to support and test. So, it finished. Let's click keep and check how it works. So, we see
+
+50
+00:06:19,280 --> 00:06:25,680
+ it's formatted. I will start typing. Let me see, plus.
+
+51
+00:06:25,680 --> 00:06:35,440
+ Okay, we can, plus something, plus.
+
+52
+00:06:35,440 --> 00:06:45,840
+ Okay, cool. And I feel it's wrong.
+
+53
+00:06:49,760 --> 00:07:00,960
+ Last. So, all we need to do one more fix. If the first part of a calculation that felt the
+
+54
+00:07:00,960 --> 00:07:09,920
+ the first number is as tendages, we cannot enter anything up to the sign. So, we need to fix it.
+
+55
+00:07:13,040 --> 00:07:31,200
+ A user is not able to enter another digit, another amount after he entered the first
+
+56
+00:07:32,320 --> 00:07:50,240
+ amount as then digits in thought. And click it on operator bottom. So, we'll ask AI to fix it.
+
+57
+00:07:50,240 --> 00:07:57,600
+ Because it's not okay. So, let's see if he can fix it.
+
+58
+00:08:00,720 --> 00:08:06,880
+ Yeah, he understand it's a bug. He'll update an input digit logic.
+
+59
+00:08:06,880 --> 00:08:11,840
+ Oh, let's see what he did waiting for operand.
+
+60
+00:08:11,840 --> 00:08:19,600
+ Okay, you can just move it to another place. So, I hope it will work. Let's try again.
+
+61
+00:08:21,760 --> 00:08:33,920
+ Plus. So, yeah, it looks it works. So, let's not try to calculate some big digits. We want to
+
+62
+00:08:33,920 --> 00:08:40,160
+ multiply and just I'm curious how the result will be shown. Okay, it's fine. It's displayed in
+
+63
+00:08:40,160 --> 00:08:47,840
+ into lines. So, I like it. Okay, that's great. So, in this lesson, you learn how to apply
+
+64
+00:08:47,840 --> 00:08:55,760
+ different fixes to improve logic with AI. You even see that we can ask some follow-up questions
+
+65
+00:08:55,760 --> 00:09:01,680
+ about the prompts we asked before. So, when an AI will do the fixes. And see you in the next
+
+66
+00:09:01,680 --> 00:09:08,000
+ lesson. Where we will investigate what formatting libraries we can use do not have a lot of custom
+
+67
+00:09:08,000 --> 00:09:14,320
+ code and use some code which is tested by community. So, see you in the next lesson.
+
