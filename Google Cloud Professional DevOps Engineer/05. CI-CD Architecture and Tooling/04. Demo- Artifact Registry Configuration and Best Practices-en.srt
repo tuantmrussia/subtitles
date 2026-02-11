@@ -1,0 +1,343 @@
+1
+00:00:01,309 --> 00:00:05,349
+Have you ever tried to debug a deployment only to find your
+
+2
+00:00:05,349 --> 00:00:07,710
+container image is sitting somewhere else?
+
+3
+00:00:07,840 --> 00:00:11,510
+It might be in someone's local Docker registry or might be
+
+4
+00:00:11,510 --> 00:00:13,630
+stored in a deprecated Container Registry.
+
+5
+00:00:13,789 --> 00:00:18,040
+Artifact management can make or break your entire CI/CD pipeline.
+
+6
+00:00:18,190 --> 00:00:21,350
+That's why Google Cloud's Artifact Registry is
+
+7
+00:00:21,350 --> 00:00:23,632
+designed to be a single source of truth.
+
+8
+00:00:23,783 --> 00:00:26,462
+Now let's see how we can use it for better.
+
+9
+00:00:26,702 --> 00:00:30,603
+First of all, Artifact Registry supports multiple formats.
+
+10
+00:00:30,702 --> 00:00:37,042
+It supports Docker, Maven, NPM, Python, Go, and generic OCI.
+
+11
+00:00:37,193 --> 00:00:42,062
+Now for this, I've just created one application that is Docker‑based.
+
+12
+00:00:42,222 --> 00:00:45,576
+So if I go down to my Open editor, there I have a
+
+13
+00:00:45,576 --> 00:00:48,855
+sample Flask app that we have created.
+
+14
+00:00:49,055 --> 00:00:54,055
+Now for this, I'm going to create a repository which is of the format of Docker.
+
+15
+00:00:54,236 --> 00:00:56,675
+So here it is just saying Hello world.
+
+16
+00:00:56,816 --> 00:00:58,296
+Now to create the repository,
+
+17
+00:00:58,416 --> 00:01:01,096
+I go back to my terminal window, and I'm going to type
+
+18
+00:01:01,096 --> 00:01:04,275
+command like gcloud artifacts repositories.
+
+19
+00:01:04,580 --> 00:01:10,269
+And then I'm saying create my‑flask‑app‑repo. That is the name of my repository.
+
+20
+00:01:10,470 --> 00:01:16,430
+Then I'm giving the repository format as Docker and location as asia‑southeast1,
+
+21
+00:01:16,510 --> 00:01:21,220
+and then any description, whatever you like to give and then say Enter.
+
+22
+00:01:21,279 --> 00:01:25,629
+This will take a while, and it is going to create our artifact repository.
+
+23
+00:01:25,790 --> 00:01:26,610
+Not only this,
+
+24
+00:01:26,870 --> 00:01:31,959
+if you have noticed that we have specifically mentioned the region location.
+
+25
+00:01:32,150 --> 00:01:36,510
+Google recommends placing artifact repository in the same region
+
+26
+00:01:36,510 --> 00:01:40,230
+as your GKE cluster or your Cloud Run service,
+
+27
+00:01:40,349 --> 00:01:43,330
+and it also recommends that create the artifact repository in
+
+28
+00:01:43,330 --> 00:01:46,273
+the same region where Cloud Build executes.
+
+29
+00:01:46,313 --> 00:01:48,722
+Actually, this reduces the network latency,
+
+30
+00:01:48,803 --> 00:01:51,962
+egress cost, build time, and deploy time.
+
+31
+00:01:52,252 --> 00:01:55,303
+Maybe, let's say for enterprise deployment, you
+
+32
+00:01:55,483 --> 00:01:57,483
+wanted to do across multiple regions.
+
+33
+00:01:57,602 --> 00:02:02,822
+In that case, you can create the multiple repos for each and every region,
+
+34
+00:02:02,843 --> 00:02:06,742
+and then you can use the replication or the promotion pipelines.
+
+35
+00:02:06,763 --> 00:02:08,502
+If you want to see how this looks like,
+
+36
+00:02:08,602 --> 00:02:12,136
+you can come down here and search for Artifact Registry.
+
+37
+00:02:12,335 --> 00:02:15,776
+Now here you can see all the registry which is there in your account.
+
+38
+00:02:15,936 --> 00:02:19,830
+So here you can see that all the registry which is there in my account,
+
+39
+00:02:19,830 --> 00:02:23,335
+what I can do is I can go down to my specific repository.
+
+40
+00:02:23,455 --> 00:02:26,365
+I can specifically assign the IAM roles,
+
+41
+00:02:26,496 --> 00:02:29,776
+which sometimes is very important based on the
+
+42
+00:02:29,776 --> 00:02:32,136
+specific operation someone wanted to do.
+
+43
+00:02:32,296 --> 00:02:38,110
+So I can select my application and say Show Info panel. And here I
+
+44
+00:02:38,110 --> 00:02:40,470
+can add these specific roles and permission.
+
+45
+00:02:40,880 --> 00:02:44,720
+I can say Add principal, and for a specific set of users or a group,
+
+46
+00:02:45,809 --> 00:02:47,169
+I can assign the roles.
+
+47
+00:02:47,919 --> 00:02:51,210
+Maybe I'm interested in assigning the Artifact Reader Role,
+
+48
+00:02:51,250 --> 00:02:55,139
+or maybe I'm interested in assigning the writer permission for,
+
+49
+00:02:55,220 --> 00:02:59,270
+let's say, Cloud Build, or maybe read permission for Cloud Deploy.
+
+50
+00:02:59,369 --> 00:03:00,990
+So according to the need,
+
+51
+00:03:01,089 --> 00:03:05,009
+we can assign the roles and permission for this specific registry.
+
+52
+00:03:05,100 --> 00:03:08,880
+Enterprises use the Artifact Registry for a couple of more reasons.
+
+53
+00:03:09,050 --> 00:03:10,992
+One of them is a vulnerability scanning.
+
+54
+00:03:11,091 --> 00:03:16,212
+Google automatically runs and scans the vulnerabilities on pushed images.
+
+55
+00:03:16,292 --> 00:03:20,412
+You can enforce the policies to block the deployments when critical
+
+56
+00:03:20,412 --> 00:03:25,371
+CVs found fail builds if base images are outdated.
+
+57
+00:03:25,481 --> 00:03:29,531
+Another important best practice is to have your immutable tagging.
+
+58
+00:03:29,651 --> 00:03:36,011
+You never overwrite the tags like prod or let us use the commit SHAs
+
+59
+00:03:36,011 --> 00:03:39,031
+instead and then promote the version's metadata,
+
+60
+00:03:39,531 --> 00:03:40,634
+not re‑tags.
+
+61
+00:03:40,813 --> 00:03:45,494
+By default, the Artifact Registry is private, which is exactly what you want.
+
+62
+00:03:45,694 --> 00:03:47,194
+With the binary authorization,
+
+63
+00:03:47,494 --> 00:03:51,274
+teams can sign container images before they deploy.
+
+64
+00:03:51,414 --> 00:03:56,123
+This prevents tampered images, unapproved builds, unauthorized pushes.
+
+65
+00:03:56,373 --> 00:04:01,154
+Specifically, many finance and healthcare organizations require this.
+
+66
+00:04:01,333 --> 00:04:03,274
+Not only this, over a period of time,
+
+67
+00:04:03,494 --> 00:04:06,494
+the artifacts build up hundreds of the versions,
+
+68
+00:04:06,654 --> 00:04:08,414
+old images, unused tags,
+
+69
+00:04:08,533 --> 00:04:12,296
+all taking up this space and money. Artifact Registry
+
+70
+00:04:12,296 --> 00:04:14,975
+supports the cleanup policy that you can set.
+
+71
+00:04:15,186 --> 00:04:18,365
+For example, you can go back to your repository.
+
+72
+00:04:18,454 --> 00:04:21,815
+When you go inside your repository and say Edit repository,
+
+73
+00:04:21,915 --> 00:04:26,075
+in your repository here itself, you can add the cleanup policy.
+
+74
+00:04:26,135 --> 00:04:27,885
+And when you set up a cleanup policy,
+
+75
+00:04:28,055 --> 00:04:31,496
+you can give a name and you can decide the basis on
+
+76
+00:04:31,496 --> 00:04:33,055
+which you want to do cleanup.
+
+77
+00:04:33,335 --> 00:04:35,656
+Maybe you wanted to do the conditional delete,
+
+78
+00:04:35,816 --> 00:04:40,697
+saying that if a specific image is older then this is specific,
+
+79
+00:04:40,898 --> 00:04:41,817
+then you can remove it.
+
+80
+00:04:41,898 --> 00:04:46,537
+Or maybe you wanted to keep only some specific number of recent version.
+
+81
+00:04:46,768 --> 00:04:49,157
+Say, I don't want it to have more than 50 images,
+
+82
+00:04:49,257 --> 00:04:51,778
+so you can keep that specific number of accounts.
+
+83
+00:04:51,937 --> 00:04:55,097
+So this is how you can even set up your cleanup policy.
+
+84
+00:04:55,227 --> 00:04:59,578
+This is going to be extremely useful for the teams doing the frequent releases.
+
+85
+00:04:59,697 --> 00:05:03,738
+So that's how you can configure the Artifact Registry for a secure,
+
+86
+00:05:03,977 --> 00:05:08,898
+scalable CI/CD workflow and integration with the Cloud Build and Cloud Deploy.
