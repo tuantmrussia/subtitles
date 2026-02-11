@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,320
+ In this lesson, you will learn how to use Wipe and Replace feature.
+
+2
+00:00:05,320 --> 00:00:11,240
+ It's been sort of a yeah, a poverty version of finding the replace features that every
+
+3
+00:00:11,240 --> 00:00:17,160
+ detour has, but this feature allows you to transform your code intelligently across the
+
+4
+00:00:17,160 --> 00:00:18,160
+ whole project.
+
+5
+00:00:18,160 --> 00:00:21,340
+ So let's talk a bit how it works and what it is.
+
+6
+00:00:21,340 --> 00:00:26,600
+ Wipe and Replace features start just like normal finding the replace feature, but instead
+
+7
+00:00:26,600 --> 00:00:32,480
+ of doing the simple replacement when sort of applies any IPROM to each match.
+
+8
+00:00:32,480 --> 00:00:36,000
+ That means that every replacement is context aware.
+
+9
+00:00:36,000 --> 00:00:41,640
+ It looks at how the code is used and adapts the transformation to feel that specific
+
+10
+00:00:41,640 --> 00:00:42,640
+ place.
+
+11
+00:00:42,640 --> 00:00:43,840
+ So it's really smart.
+
+12
+00:00:43,840 --> 00:00:48,280
+ You can use it to massive the factors that touch hundreds of files of the whole
+
+13
+00:00:48,280 --> 00:00:49,280
+ project.
+
+14
+00:00:49,280 --> 00:00:54,400
+ For example, you can rename variable semantically generate the commentation or remove
+
+15
+00:00:54,400 --> 00:00:58,720
+ feature flags all in one single intelligent operation.
+
+16
+00:00:58,720 --> 00:01:04,600
+ It's really a big forward step from basic search and replace and it was built for developers
+
+17
+00:01:04,600 --> 00:01:12,360
+ who was really do replacement smarter, safer with automation across the whole code base.
+
+18
+00:01:12,360 --> 00:01:14,560
+ So now it's time to see how it works.
+
+19
+00:01:14,560 --> 00:01:22,240
+ I will switch to be surfed up and I will open past for a strange shaker file and we need
+
+20
+00:01:22,240 --> 00:01:28,840
+ to find something we want to replace, but something challenging for just a simple replace
+
+21
+00:01:28,840 --> 00:01:29,840
+ operation.
+
+22
+00:01:29,840 --> 00:01:36,200
+ So imagine we have a feedback, we want to rename this feedback to recommendation.
+
+23
+00:01:36,200 --> 00:01:41,960
+ Because this feedback variable is used really to open in our file, it uses the suggest
+
+24
+00:01:41,960 --> 00:01:47,120
+ variable in our methods, we are doing it as a prop.
+
+25
+00:01:47,120 --> 00:01:56,360
+ As a result, we also use this one in comments, we also use this here and another object
+
+26
+00:01:56,360 --> 00:02:06,720
+ is the final object and we use it also right here when we have off feedback array.
+
+27
+00:02:06,720 --> 00:02:13,000
+ And yes, we use it here so a lot of places where we use feedback and we want to rename
+
+28
+00:02:13,000 --> 00:02:15,040
+ it to recommendation.
+
+29
+00:02:15,040 --> 00:02:20,460
+ So imagine we don't have a webinar place and I will show you how we will do it with
+
+30
+00:02:20,460 --> 00:02:22,800
+ manual find another place feature.
+
+31
+00:02:22,800 --> 00:02:30,320
+ I will just mention feedback, but because we have off feedback, I need to choose the
+
+32
+00:02:30,320 --> 00:02:37,880
+ much case to exclude this off feedback from the changes because it starts from capital
+
+33
+00:02:37,880 --> 00:02:41,920
+ letter and I cannot do it both at the same time.
+
+34
+00:02:41,920 --> 00:02:49,640
+ And I also will use my the whole word of all the safety because if you have a word like
+
+35
+00:02:49,640 --> 00:02:56,800
+ I don't know feedback is a part of another word or for example we have some prefix before
+
+36
+00:02:56,800 --> 00:03:03,920
+ after so it will also be replaced so I want to be safer and I will now enter word word
+
+37
+00:03:03,920 --> 00:03:06,000
+ I want, recommendation.
+
+38
+00:03:06,000 --> 00:03:14,120
+ And just click replace all the places right here you can see the history of what words
+
+39
+00:03:14,120 --> 00:03:16,080
+ will be replaced.
+
+40
+00:03:16,080 --> 00:03:25,400
+ Okay, you see it was replaced, now we need to replace off feedback, off feedback to over
+
+41
+00:03:25,400 --> 00:03:28,760
+ recommendation.
+
+42
+00:03:28,760 --> 00:03:35,000
+ I still will be use the much case and the much whole word restrictions and I will replace
+
+43
+00:03:35,000 --> 00:03:36,000
+ it.
+
+44
+00:03:36,000 --> 00:03:43,140
+ So as you see we need to write a text, we need to do it in two operations, we also not
+
+45
+00:03:43,140 --> 00:03:50,360
+ really sure if we didn't do the replacements, we don't want, so.
+
+46
+00:03:50,360 --> 00:03:59,520
+ And now let me show you how work is a normal find a wide end of the place, so we mentioned
+
+47
+00:03:59,520 --> 00:04:03,520
+ what work we want to replace feedback.
+
+48
+00:04:03,520 --> 00:04:10,240
+ And now in the place work we just enable the vibe under the place mode and we can enter
+
+49
+00:04:10,240 --> 00:04:11,240
+ a problem.
+
+50
+00:04:11,240 --> 00:04:17,560
+ So I would say replace feedback was a word, doesn't matter to start from capital letter
+
+51
+00:04:17,560 --> 00:04:22,040
+ or small letter, replace it to recommendation in the whole project.
+
+52
+00:04:33,520 --> 00:04:49,680
+ And in the foundation in the whole project and I will click run, we see it started the
+
+53
+00:04:49,680 --> 00:04:53,840
+ new chart with a prompt and let's see how it was replaced.
+
+54
+00:04:53,840 --> 00:05:01,520
+ Oh, we see it replace the variables right here, it replace the process variable when we add
+
+55
+00:05:01,520 --> 00:05:11,720
+ a new item to array as a result, when we were doing something, we also update the comments
+
+56
+00:05:11,720 --> 00:05:22,800
+ of the comments, fine, we also updated the comments here, but yeah, I was interested if it
+
+57
+00:05:22,800 --> 00:05:29,240
+ will replace, so we see we have all feedback and it was replaced all recommendation.
+
+58
+00:05:29,240 --> 00:05:30,240
+ And everywhere.
+
+59
+00:05:30,240 --> 00:05:37,400
+ So it's really smart and you can save your time, we of course accept all the changes.
+
+60
+00:05:37,400 --> 00:05:46,800
+ Now we want to show you one more feature of this web under place, you can use two modes to
+
+61
+00:05:46,800 --> 00:05:48,840
+ the smart mode and the fast mode.
+
+62
+00:05:48,840 --> 00:05:57,800
+ The smart mode is uses more advanced server models that applies each change really carefully,
+
+63
+00:05:57,800 --> 00:06:04,480
+ it can be perfect when accuracy matters, like when you refactor, watch project or generating
+
+64
+00:06:04,480 --> 00:06:09,440
+ some important documentation and you really want it to be able to place everything carefully
+
+65
+00:06:09,440 --> 00:06:10,920
+ and smart.
+
+66
+00:06:10,920 --> 00:06:18,400
+ And we use the smart replacement here because we have variables in different edges to it.
+
+67
+00:06:18,400 --> 00:06:25,040
+ For example, the fast mode, you can use, you just want to do some quick updates across
+
+68
+00:06:25,040 --> 00:06:31,760
+ many files and don't really need some deep reasoning behind every change, because this is
+
+69
+00:06:31,760 --> 00:06:36,560
+ lighter, weaker and applies changes right away.
+
+70
+00:06:36,560 --> 00:06:40,800
+ And the switch between modes, you can use this arrow and just switch.
+
+71
+00:06:40,800 --> 00:06:46,760
+ If you, you know, if you do something difficult, just use a smart mode or just on camera
+
+72
+00:06:46,760 --> 00:06:49,400
+ and use smart mode always.
+
+73
+00:06:49,400 --> 00:06:56,360
+ So, in this lesson, we learned how the web under place feature works.
+
+74
+00:06:56,360 --> 00:07:02,760
+ I hope you will use it now more often because this tool helps refactor hundreds of lines
+
+75
+00:07:02,760 --> 00:07:11,680
+ of code, much easier with AI help and now we can choose between smart and fast modes, so
+
+76
+00:07:11,680 --> 00:07:13,240
+ you also know how it works.
+
+77
+00:07:13,240 --> 00:07:15,280
+ Okay, and see you in the next lesson.
+
