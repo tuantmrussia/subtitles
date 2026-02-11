@@ -1,0 +1,239 @@
+1
+00:00:01,299 --> 00:00:04,519
+For the demo, let's log into our Google Cloud console.
+
+2
+00:00:04,739 --> 00:00:07,139
+Here, I'm inside the Google Cloud console.
+
+3
+00:00:07,300 --> 00:00:10,050
+I'm logged in as an organizational admin,
+
+4
+00:00:10,140 --> 00:00:13,939
+which gives me the permission to create the folders and
+
+5
+00:00:13,939 --> 00:00:15,800
+projects at the organizational level.
+
+6
+00:00:15,899 --> 00:00:19,180
+You can access this by navigating here.
+
+7
+00:00:19,540 --> 00:00:23,159
+Go to the IAM and admin and click on Manage resources.
+
+8
+00:00:24,299 --> 00:00:28,299
+This page is the tree view of your entire cloud footprint.
+
+9
+00:00:28,459 --> 00:00:33,200
+If your organization is brand new, you probably see only one thing,
+
+10
+00:00:33,299 --> 00:00:36,700
+your organization name, with generally your company name.
+
+11
+00:00:36,819 --> 00:00:37,659
+That's perfect.
+
+12
+00:00:37,779 --> 00:00:38,990
+But in my case,
+
+13
+00:00:39,139 --> 00:00:44,360
+I've already created a couple of projects and folders inside this organization.
+
+14
+00:00:44,500 --> 00:00:46,779
+That's why you are seeing a couple of them.
+
+15
+00:00:46,939 --> 00:00:50,069
+Let me just create one new folder.
+
+16
+00:00:50,259 --> 00:00:52,939
+So on the top here you see Create folder.
+
+17
+00:00:53,639 --> 00:00:58,220
+Let me create a folder, name as production and say Create.
+
+18
+00:00:58,520 --> 00:01:01,500
+Whenever you create the folder, internally,
+
+19
+00:01:01,700 --> 00:01:05,160
+Google assigns it a numeric ID corresponding to it.
+
+20
+00:01:05,279 --> 00:01:09,620
+For example, right now we are not able to see the folder that we have created.
+
+21
+00:01:10,099 --> 00:01:13,839
+Just click on Refresh so that it will be visible here.
+
+22
+00:01:14,019 --> 00:01:17,580
+Now you can see that I have a production folder, and I
+
+23
+00:01:17,580 --> 00:01:19,739
+can see a corresponding numerical ID.
+
+24
+00:01:20,319 --> 00:01:24,800
+We can think about creating multiple folders corresponding to environment.
+
+25
+00:01:25,019 --> 00:01:29,379
+For example, I can create one more folder for staging.
+
+26
+00:01:30,349 --> 00:01:34,400
+And similarly, I create one more folder for the development,
+
+27
+00:01:34,489 --> 00:01:38,160
+so I click on here, say Folder, and say development.
+
+28
+00:01:39,239 --> 00:01:41,099
+Now if I refresh it again,
+
+29
+00:01:41,480 --> 00:01:46,180
+I can see all those folder that I've already created, development,
+
+30
+00:01:46,260 --> 00:01:47,620
+staging, and production.
+
+31
+00:01:47,900 --> 00:01:53,220
+Now it's time to go ahead and populate these folders with application projects.
+
+32
+00:01:53,300 --> 00:01:57,779
+You might have multiple applications, maybe like payment service,
+
+33
+00:01:57,900 --> 00:02:00,720
+inventory service, or a notification service.
+
+34
+00:02:00,900 --> 00:02:04,279
+What you can think about is having all those
+
+35
+00:02:04,279 --> 00:02:06,730
+applications in each of these environments.
+
+36
+00:02:06,860 --> 00:02:11,669
+For example, let's click on Create project, and let's say create a project,
+
+37
+00:02:11,869 --> 00:02:14,350
+say, payment‑app‑service‑prod.
+
+38
+00:02:14,750 --> 00:02:19,550
+Now what I will do is I click on Browse here because I want this
+
+39
+00:02:19,550 --> 00:02:23,669
+project to get created within my development folder.
+
+40
+00:02:23,800 --> 00:02:26,729
+So I select the development and say Create.
+
+41
+00:02:28,520 --> 00:02:33,869
+Now you will see that under the Notifications, a project has started initiating.
+
+42
+00:02:34,070 --> 00:02:34,220
+Now,
+
+43
+00:02:34,240 --> 00:02:38,240
+if I simply refresh and if I expand this development
+
+44
+00:02:38,240 --> 00:02:42,919
+tab, you can see a project inside it.
+
+45
+00:02:43,279 --> 00:02:47,720
+Now what I can do is, when I move to the staging or I move to the production,
+
+46
+00:02:48,000 --> 00:02:48,610
+similarly,
+
+47
+00:02:48,720 --> 00:02:51,880
+I will create this kind of project into my staging
+
+48
+00:02:51,880 --> 00:02:54,279
+folder and in my production folder.
+
+49
+00:02:54,949 --> 00:02:56,580
+Maybe I have multiple applications.
+
+50
+00:02:57,270 --> 00:03:01,229
+So correspondingly, I can create multiple projects
+
+51
+00:03:01,229 --> 00:03:02,800
+within a single folder itself.
+
+52
+00:03:02,880 --> 00:03:04,100
+So if you look at it,
+
+53
+00:03:04,320 --> 00:03:08,199
+we have created the entire hierarchy for our
+
+54
+00:03:08,199 --> 00:03:10,960
+project, which involves development, staging,
+
+55
+00:03:11,199 --> 00:03:14,979
+and the production. And we have not talked about the IAM yet,
+
+56
+00:03:15,279 --> 00:03:17,860
+but the moment you create a folder,
+
+57
+00:03:18,119 --> 00:03:21,410
+a couple of roles have been assigned to these folders.
+
+58
+00:03:21,460 --> 00:03:25,399
+You can go down to the settings, and you can click on the IAM here
+
+59
+00:03:25,399 --> 00:03:29,740
+and you can see that, a couple of roles and permissions have been
+
+60
+00:03:29,740 --> 00:03:32,940
+assigned to this specific folder.
