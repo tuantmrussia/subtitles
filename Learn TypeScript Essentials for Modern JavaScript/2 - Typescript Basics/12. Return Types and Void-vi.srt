@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:04,880
+Trong bài học này, chúng ta sẽ học về chức năng trả lại các loại trong TypeSQL.
+
+2
+00:00:04,880 --> 00:00:10,440
+Chúng ta sẽ biết chính xác làm thế nào để xác định những gì một chức năng trả lại, mà sẽ làm cho
+
+3
+00:00:10,440 --> 00:00:16,340
+Mã an toàn hơn và sau đó dễ hiểu hơn.
+
+4
+00:00:16,340 --> 00:00:19,600
+Vì vậy, mỗi chức năng có thể trả lại một giá trị.
+
+5
+00:00:19,600 --> 00:00:26,120
+Loại phân loại phân tích ngữ pháp cho phép chúng tôi xác định rõ loại giá trị trả về đó.
+
+6
+00:00:26,120 --> 00:00:29,760
+Đây được gọi là kiểu hàm trả về.
+
+7
+00:00:29,760 --> 00:00:35,600
+Theo mặc định, TypeUS sẽ cố gắng để suy luận loại, có nghĩa là chúng tôi không cần phải
+
+8
+00:00:35,600 --> 00:00:37,160
+Chuẩn bị rõ ràng.
+
+9
+00:00:37,160 --> 00:00:40,560
+Điều này sẽ cố gắng và làm tốt nhất của nó trong đoán nó.
+
+10
+00:00:40,560 --> 00:00:45,640
+Nhưng nếu bạn xác định nó, nó sẽ làm cho mã của bạn dễ đoán hơn.
+
+11
+00:00:45,640 --> 00:00:49,240
+Vì vậy, hãy chỉ cần làm một ví dụ.
+
+12
+00:00:49,240 --> 00:00:53,880
+Vì vậy, chúng ta hãy có một chức năng và một trong đơn giản, như thêm hai số với nhau.
+
+13
+00:00:53,880 --> 00:01:00,040
+Một số và hãy có B số.
+
+14
+00:01:00,040 --> 00:01:08,560
+Bây giờ chúng ta có thể đơn giản là trả lại một cộng B. Nếu chúng tôi làm điều đó, tất nhiên, gõ  SP
+
+15
+00:01:08,560 --> 00:01:13,720
+để có một cái nhìn và tìm ra rằng chúng tôi đang thực sự cố gắng để trả lại một số.
+
+16
+00:01:13,720 --> 00:01:16,760
+Vì vậy, nó suy luận loại này.
+
+17
+00:01:16,760 --> 00:01:23,000
+Nhưng để làm cho nó rõ ràng hơn, chúng tôi thực sự có thể loại thực thi nó bằng cách làm mã sau khi
+
+18
+00:01:23,000 --> 00:01:26,560
+các chức năng và sau đó làm số.
+
+19
+00:01:26,560 --> 00:01:30,840
+Tất nhiên, chúng ta có chính xác cùng một thứ, nhưng chúng ta chỉ đang có Máy đánh chữ.
+
+20
+00:01:30,840 --> 00:01:32,480
+Chúng tôi biết mình đang làm gì.
+
+21
+00:01:32,480 --> 00:01:33,480
+Đây là những gì chúng ta xem.
+
+22
+00:01:33,480 --> 00:01:35,760
+Chúng tôi muốn trở lại.
+
+23
+00:01:35,760 --> 00:01:36,760
+Nó sẽ bảo vệ chúng ta.
+
+24
+00:01:36,760 --> 00:01:41,480
+Vì vậy, nếu chúng tôi đã không cố gắng để trả lại bất kỳ giá trị khác, ví dụ, một khởi đầu, sau đó nó đi
+
+25
+00:01:41,480 --> 00:01:43,280
+Tôi không nghĩ vậy.
+
+26
+00:01:43,280 --> 00:01:47,320
+Và nó sẽ trả lại lỗi lầm, bảo vệ chúng ta.
+
+27
+00:01:47,320 --> 00:01:52,600
+Điều gì sẽ xảy ra nếu chúng ta thực sự không muốn trả lại bất cứ thứ gì?
+
+28
+00:01:52,600 --> 00:02:00,840
+Vì vậy, hãy chỉ có một chức năng và hãy nói rằng, gọi nó rời rạc, lấy một tên và bên trong
+
+29
+00:02:00,840 --> 00:02:08,840
+Chức năng đó, chúng tôi chỉ muốn chỉ cần làm một bản ghi bàn điều khiển và nói, xin chào, chỉ cần trả lại của người
+
+30
+00:02:08,840 --> 00:02:14,680
+tên, xin chào, tên tiền.
+
+31
+00:02:14,680 --> 00:02:19,880
+Bây giờ, nếu bạn lơ lửng trên nó, một lần nữa, các TypeUse sẽ được thông minh và nó sẽ
+
+32
+00:02:19,880 --> 00:02:25,680
+Tìm ra rằng chúng tôi sẽ không trả lại bất cứ điều gì và nó sẽ chỉ định loại trống.
+
+33
+00:02:25,680 --> 00:02:30,480
+Vì vậy, khoảng trống có nghĩa là chúng tôi không mong đợi bất kỳ giá trị trả về, mà tất nhiên chúng tôi không phải bởi vì
+
+34
+00:02:30,480 --> 00:02:32,400
+Chúng tôi chỉ làm bản ghi bàn điều khiển.
+
+35
+00:02:32,400 --> 00:02:40,680
+Bây giờ, trong bất kỳ trường hợp này, chúng tôi có thể cố gắng để được rõ ràng hơn bằng cách làm ruột kết và sau đó trống và
+
+36
+00:02:40,680 --> 00:02:44,880
+khoảng trống có nghĩa là trống của bất kỳ loại trở lại.
+
+37
+00:02:44,880 --> 00:02:50,920
+Tại sao lại phải dùng những kiểu trả lại rõ ràng, nếu chúng ta có thể tự mình cho xếp thức ăn ra.
+
+38
+00:02:50,920 --> 00:02:57,360
+Trước hết, chúng ta đang ở trong một thế giới mới, chúng ta không sử dụng JavaScript, bằng cách sử dụng Type Thung lũng,
+
+39
+00:02:57,360 --> 00:03:04,080
+Vì vậy, chúng tôi muốn gõ tất cả những gì có thể bởi vì nó làm cho mã của chúng tôi tự lưu trữ.
+
+40
+00:03:04,080 --> 00:03:10,040
+Khi chúng tôi đi dọc theo, làm cho nó rất rõ ràng, bao gồm cả Type Thu nhập và bất cứ ai xem xét các mã
+
+41
+00:03:10,040 --> 00:03:16,040
+Ý định của chúng tôi là chúng tôi sẽ không trả lại bất cứ thứ gì và đó không chỉ là một sai lầm.
+
+42
+00:03:16,040 --> 00:03:22,520
+Ngoài ra, việc đánh máy để bắt lỗi và giúp đời sống chúng ta dễ dàng hơn rất nhiều.
+
+43
+00:03:22,520 --> 00:03:29,000
+Và như tôi đã nói, nó sẽ thực sự cải thiện khả năng đọc mã cho các nhà phát triển khác.
+
+44
+00:03:29,000 --> 00:03:35,360
+Và điều này là tất nhiên sẽ có lợi ích nếu bạn đang làm việc về dự án lớn hoặc một thành viên
+
+45
+00:03:35,360 --> 00:03:36,360
+của một đội.
+
+46
+00:03:36,360 --> 00:03:42,680
+Tất nhiên, nếu bạn chỉ là một loại tổ chức một số mã với nhau như một thí nghiệm của riêng bạn
+
+47
+00:03:42,680 --> 00:03:50,560
+dự án nhỏ, sau đó cảm thấy thoải mái không cần phải đặt bất kỳ loại trả lại và gõ
+
+48
+00:03:50,560 --> 00:03:51,560
+vì nó.
+
+49
+00:03:51,560 --> 00:03:59,160
+Nhưng một lần nữa, tôi đề nghị có lẽ ngay cả trong các dự án nhỏ mà bạn trở nên kỷ luật,
+
+50
+00:03:59,160 --> 00:04:06,280
+mà bạn phải chắc chắn rằng bạn luôn luôn đặt các loại trở lại trên chức năng của bạn để khi bạn
+
+51
+00:04:06,280 --> 00:04:13,400
+Kiếm một công việc và làm việc với một đội lớn hơn, rằng bạn đã có những kỹ năng đó
+
+52
+00:04:13,400 --> 00:04:16,480
+và kỷ luật đúng chỗ.
+
+53
+00:04:16,480 --> 00:04:20,880
+Không chỉ trả lại một giá trị, chúng tôi tất nhiên có thể trả lại nhiều giá trị, vì vậy chúng tôi có thể làm, cho
+
+54
+00:04:20,880 --> 00:04:26,000
+Ví dụ, chúng tôi có thể trở lại một chuỗi, chúng tôi cũng có thể trả lại một số nếu bạn muốn cụ thể
+
+55
+00:04:26,000 --> 00:04:32,180
+Một trên hai, và tất nhiên chúng tôi có thể khá tốt mật mã làm điều đó.
+
+56
+00:04:32,180 --> 00:04:39,240
+Bây giờ một điều bạn có thể làm là bạn có thể nói tôi muốn trở lại trống rỗng và tôi cũng có thể trở lại
+
+57
+00:04:39,240 --> 00:04:45,360
+Một chuỗi và gõ chữ là hạnh phúc bởi vì có thể có một trường hợp nếu bạn có một số logic
+
+58
+00:04:45,360 --> 00:04:53,840
+trong mã của bạn để trả lại một chuỗi trên các trường hợp nhất định và rất nhiều trả lại một giá trị
+
+59
+00:04:53,840 --> 00:04:55,640
+trong những hoàn cảnh khác nhau.
+
+60
+00:04:55,640 --> 00:04:58,000
+Vì vậy, điều này là loại hợp lệ.
+
+61
+00:04:58,000 --> 00:05:04,380
+Bây giờ đây là một số mẹo nhanh chóng, vì vậy nếu bạn đang viết một số chức năng cho một AI công cộng, sau đó
+
+62
+00:05:04,380 --> 00:05:09,160
+Luôn tuyên bố loại trả lời bởi vì khách hàng của bạn sẽ cảm ơn bạn nếu bạn là
+
+63
+00:05:09,160 --> 00:05:14,160
+rất thẳng thắn với những gì anh đang thực sự trở lại.
+
+64
+00:05:14,160 --> 00:05:20,800
+Sử dụng khoảng trống cho bất kỳ chức năng chỉ cần thực hiện hành động, có lẽ ví dụ là giống như nói
+
+65
+00:05:20,800 --> 00:05:25,200
+Việc khai thác gỗ hoặc mục đích gỡ lỗi.
+
+66
+00:05:25,200 --> 00:05:31,320
+Và chắc chắn cố gắng tránh phụ thuộc vào suy luận của TypeCute nếu bạn đang viết một số
+
+67
+00:05:31,320 --> 00:05:35,200
+Các chức năng phức tạp vì nó không phải lúc nào cũng đúng.
+
