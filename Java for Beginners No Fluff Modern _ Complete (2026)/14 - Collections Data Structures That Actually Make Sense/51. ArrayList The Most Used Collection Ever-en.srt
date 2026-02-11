@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:26,000
+ So let's go ahead and start using collections starting with the listing interface and its subclasses and the first subclass we're going to talk about is the error list remember when we are talking about less we're talking about storing the ability to store duplicate values, it won't it won't restrict us in doing so so I'll do it quickly I'll just create a new package here so that things remain organized and I'll say let's call it collections.
+
+2
+00:00:26,000 --> 00:00:35,000
+ And within that I'll just create a new Java class, then we call it working with.
+
+3
+00:00:35,000 --> 00:00:50,000
+ Because that's what we are going to do right so this is your main method and how do we start using an error list we'll just create an object I'll say a list and then I'll just call it a list.
+
+4
+00:00:50,000 --> 00:01:08,000
+ New error list and that's it so you remember so you see that it's giving us a warning the warning is that this error list can not now store any type of data right and that might be a problem later on right and in order to counter that we use these angular brackets which are generic parameters.
+
+5
+00:01:08,000 --> 00:01:25,000
+ So, generic supposed introduced in Java 5 for creating what we call as type safe collections right that is arrays were always type safe, but before Java 5 collections were not that is you could add any type of data any type of value in a collection and that made them.
+
+6
+00:01:25,000 --> 00:01:40,000
+ So, if you see regions collections which ended up with problems later on that's by the introduce generics I'll have a separate video and genetics but for now know that this is to ensure type safety that is if we just say this is a string here it becomes a string on the
+
+7
+00:01:40,000 --> 00:01:58,000
+ list that's it it cannot hold any other type of data and then on the right side it has to be the same see the warning goes away that hello yellow warning so now a thing to note here is if you see I could have either said just the list that's imported.
+
+8
+00:01:58,000 --> 00:02:16,000
+ The polymorphic assignment works, because this is a super type this is a subclass that just works right as we have seen in poor runtime polymorphism, but with generics polymorphic assignments do not work you need to be careful that is what is on the left side of the.
+
+9
+00:02:16,000 --> 00:02:37,000
+ The assignment has to be on the right side right this and they should match let's say I just say object although object is a super class of every class in Java even of string, but this is not allowed by as I said polymorphic assignments with generics do not work so what is here has to be exactly the same here the arrow goes away and then Java 6 came in.
+
+10
+00:02:37,000 --> 00:02:56,000
+ As it said that is they were introduced in Java 5 but then Java 6 came in the designers look at this and thought that this is being redundant what is on the left should always be on the right, why do we even need to have this so they introduced what they called as Java 6 diamond syntax that is on the right you do not need to put it now.
+
+11
+00:02:56,000 --> 00:03:08,000
+ For the Java 6 diamond syntax and as promised I'm keeping you up to date with the the significant changes in the different versions of Java right so this was Java 6.
+
+12
+00:03:08,000 --> 00:03:25,000
+ And then just go on this becomes a string only list now thanks to generics you can just go on and edit I'll say list or add that's how we added with the error method no longer you have to use those ugly syntax with what you did with areas and index and then I said that's it.
+
+13
+00:03:25,000 --> 00:03:37,000
+ Right now what you have now observe and now is I did not put any size here so immediately takes care of the disadvantage of areas you have to put in the size and once you put in the size it cannot be changed it's fixed for all times to come.
+
+14
+00:03:37,000 --> 00:03:51,000
+ But with collections any collection for that matter here in error list as well you don't need to put in the size it's done and then he go on and go on just adding it would just go on growing in stature right so.
+
+15
+00:03:51,000 --> 00:04:06,000
+ But now the other size is zero at this point it would be one I like five the size becomes five that's the advantage it's said add some data here and I'll say for example three sure I'll say ratio.
+
+16
+00:04:06,000 --> 00:04:25,000
+ And I'll say bring for example so go to four therefore where I did you can even print the size I'll say cloud and how do you do that list dot a maker size and at this point it should give me four that's the current size of your list it's going around this.
+
+17
+00:04:25,000 --> 00:04:50,000
+ For example, that's it as your single machine right and now we add more and say list dot L one more for example I'll say W a Q that is work and then afterwards let's print the size again this should print five we should put to you that yes in fact these are growable I'll just run this again and off you go it's five now right so.
+
+18
+00:04:50,000 --> 00:05:09,000
+ As I said they are shrinkable all of the collection classes right even the real is and if you want to shrink it you can do it two ways either by an index like you did with arrays but you do not really delete it right we just put in zero or something or null but here you can remove by an index or remove by an object let's do remove by an.
+
+19
+00:05:09,000 --> 00:05:19,000
+ Index see it is overloaded right remember when we when we came across overloading I told you one face many forms this is the practical usage of overloading.
+
+20
+00:05:19,000 --> 00:05:33,000
+ We just have the same name remove why should they call it remove index and remove object right just remove but the parameters are different that is overloading so first let's do it by index I'll just say please remove the object at index two.
+
+21
+00:05:33,000 --> 00:05:53,000
+ And then if you put it if you again say that is less dot size now we should get one size less let's go on and like this and tell you initially it was for then became five and now four as well right that is zero one and two gagi would not be there.
+
+22
+00:05:53,000 --> 00:06:14,000
+ If before the size if you try to print it directly as a system not to print it just sell list right that's it okay and it should print in the same order why because error list like areas always maintains the insertion order but it's not sorted that is error list isn't ordered but unsorted collection let's have a look at this.
+
+23
+00:06:14,000 --> 00:06:28,000
+ And see you inserted ratio first ratio stored first then ratio then gagi and the Reno because like areas as I said they're ordered in insertion they maintain insertion order but they're not sorted right so.
+
+24
+00:06:28,000 --> 00:06:39,000
+ Now you could have removed by an object as well we just say let's start remove let's say by an object I want to remove rain.
+
+25
+00:06:39,000 --> 00:06:58,000
+ Run this you just have three even the object with the value three that is the rain was removed and now if you want to traverse this you could do it multiple ways and the first way is I can do it within traditional for loop but why would why why would I write it would be such a.
+
+26
+00:06:58,000 --> 00:07:08,000
+ As such redundant and such verb or scored I can do it with Java five and house for loop let me do that I'll say what is in the list thanks to.
+
+27
+00:07:08,000 --> 00:07:27,000
+ Generate right it's a string only less I know what is coming out in this case that's a string and I'll say value and my name is list because I told you where we were covering that house for loop the Java five and house for loop I told you it can be either used with areas or collections and now is the time you can even use it with the collection as.
+
+28
+00:07:27,000 --> 00:07:34,000
+ Use it with the collection as we'll see the collection bright side and then it's go ahead and bring this out.
+
+29
+00:07:34,000 --> 00:07:52,000
+ See this print three trisha ratio and why because two of them happy deleted and Java eight introduced even better less verb was way of traversing them one liner and that is you could have done it similarly simply like this let's start for each.
+
+30
+00:07:52,000 --> 00:08:01,000
+ That's it it's going to introduce in Java eight and then say system root out and the syntax would differ a bit that is this is called a.
+
+31
+00:08:01,000 --> 00:08:10,000
+ Method reference in Java right more on that once we are covering lamb does and streams but for now no this is a method reference but this is.
+
+32
+00:08:10,000 --> 00:08:22,000
+ Less verb was more succinct just one line of code this was traverse through each element in your collection let's see if it does the same and does clisha ratio back on your screen.
+
+33
+00:08:22,000 --> 00:08:24,000
+ Right so that is the class.
+
+34
+00:08:24,000 --> 00:08:36,000
+ And now when would you as a developer decide to use an area list the first factor is when you want the capability to store duplicates let's do duplicate search well see I'll just say.
+
+35
+00:08:36,000 --> 00:08:42,000
+ List let's say one more time Trisha.
+
+36
+00:08:42,000 --> 00:09:03,000
+ Okay, and this would be allowed you have a run at this it says thrisha ratio thrisha again right so duplicates are allowed so the the deciding factors for your decision to choose a collection class as analyst is when you want duplicates to be stored because this is a list right the second point is.
+
+37
+00:09:03,000 --> 00:09:16,000
+ Just have faster data retrieval dates right the rates of data retrieval are faster the third thing is that is when I think those two factors are no right then we have another.
+
+38
+00:09:16,000 --> 00:09:20,000
+ And the third factory side remember that is that.
+
+39
+00:09:20,000 --> 00:09:37,000
+ An area list provides you an ordered insertion order but unsorted collection it's an ordered but unsorted collection you saw that in the manner we inserted the elements is the manner in which they were stored right so I'll have a look at linked list in the second video.
+
