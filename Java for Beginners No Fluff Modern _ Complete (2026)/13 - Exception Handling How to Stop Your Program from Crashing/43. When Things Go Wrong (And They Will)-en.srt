@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:06,800
+ Alright then friends, let's move ahead and talk about yet another concept which is at the core
+
+2
+00:00:06,800 --> 00:00:12,960
+ of programming languages not just Java and that is how you handle exceptions. In short,
+
+3
+00:00:12,960 --> 00:00:16,080
+ we call this as exception handling.
+
+4
+00:00:16,080 --> 00:00:27,360
+ Again, I'm just using my right board first, but the digital wide board to make it more
+
+5
+00:00:27,360 --> 00:00:32,480
+ understandable more clear for you before we dive in and write some actual code because
+
+6
+00:00:32,480 --> 00:00:38,000
+ you'll be seeing all along the scores how this is different as this is completely hands-on
+
+7
+00:00:38,000 --> 00:00:43,280
+ and we take it from absolute scratch as promised. So, exception handling, before we talk about
+
+8
+00:00:43,280 --> 00:00:49,760
+ exception handling, let's talk about exceptions, what are exceptions, right? What is obviously the
+
+9
+00:00:49,760 --> 00:00:56,640
+ English term exception and does anything or any examples come to your mind, any exceptions that
+
+10
+00:00:56,640 --> 00:01:03,200
+ happen in your everyday life or has happened until now, think about it, or is the video come back
+
+11
+00:01:03,200 --> 00:01:10,560
+ and then map to what I say. So, exceptions in the real world can be anything that is not usual,
+
+12
+00:01:10,560 --> 00:01:15,280
+ not something that you expect every day to have. Like say for example, go forward
+
+13
+00:01:15,280 --> 00:01:20,640
+ you're traveling and there is an accident while you're traveling while you're driving your bike.
+
+14
+00:01:20,640 --> 00:01:26,960
+ That is an exception because every day let's say for six months going to your college or going
+
+15
+00:01:26,960 --> 00:01:32,800
+ to your university or going to your workplace that didn't happen, you started from whom
+
+16
+00:01:32,800 --> 00:01:40,400
+ reached your workplace or your university in a safe manner and that was fine, but on one fine day
+
+17
+00:01:40,400 --> 00:01:47,680
+ an accident happened and things took a bad turn. Another case of exception would be an earthquake,
+
+18
+00:01:47,680 --> 00:01:55,120
+ right? It doesn't happen every day, but once it does, can wreck havoc. Another one would be floods,
+
+19
+00:01:55,120 --> 00:02:03,200
+ right? Because floods don't come every other day, but when they do, they can just ruin everything
+
+20
+00:02:03,200 --> 00:02:09,360
+ that we earn until now. And yet another exception that comes to mind is a theft at your hope,
+
+21
+00:02:09,360 --> 00:02:15,120
+ go forward, right? Because again, it doesn't happen every day, but can happen any time, any day.
+
+22
+00:02:15,120 --> 00:02:21,360
+ Those are all exceptions now use and once you understand them, now then that is how do we handle them?
+
+23
+00:02:21,360 --> 00:02:26,640
+ In terms of earthquake, how do you handle exceptions? Obviously you cannot get rid of them completely,
+
+24
+00:02:26,640 --> 00:02:34,480
+ not yet, but you prepare for it. You create earthquake proof houses and in terms of floods,
+
+25
+00:02:34,480 --> 00:02:39,680
+ how do you prepare? How do you handle that kind of an exception? You know that who are the people
+
+26
+00:02:39,680 --> 00:02:46,240
+ who are more prone, who are more susceptible, who are more vulnerable to flooding are the ones who
+
+27
+00:02:46,240 --> 00:02:54,560
+ lie, who stay, or who live in low-lying areas, right? The ones who don't, they're less susceptible.
+
+28
+00:02:54,560 --> 00:03:01,520
+ And then how you prepare is you put all your gold, cash and precious belongings on the second floor,
+
+29
+00:03:01,520 --> 00:03:06,160
+ not on the, not in the basement, not on the down floor, right? That's how you prepare because
+
+30
+00:03:06,160 --> 00:03:10,800
+ even if the flood has come in, obviously your data on the second floor would be saved in all
+
+31
+00:03:10,800 --> 00:03:19,840
+ probability. Then in terms of theft, right? The, the fear of theft is how you prepare is you get a good
+
+32
+00:03:19,840 --> 00:03:25,440
+ lock. That's the first step that you take. The second step is that you only put that in a particular
+
+33
+00:03:25,440 --> 00:03:32,240
+ room, not in all rooms. The third one is you hire a security guard from a security agency and put them
+
+34
+00:03:32,240 --> 00:03:37,680
+ outside your room where you'll be longing start at all times, right? So those are the steps,
+
+35
+00:03:37,680 --> 00:03:42,640
+ the measures that you take. In terms of programming again, there are exceptions, situations like,
+
+36
+00:03:42,640 --> 00:03:48,320
+ for example, if you try to divide something by zero, that is something which hasn't been defined yet,
+
+37
+00:03:48,320 --> 00:03:54,240
+ right? And Java obviously would not be stuck, that's an exception, that is arithmetic exception,
+
+38
+00:03:54,240 --> 00:04:00,000
+ we call that, right? And how do you handle it is what we are, we are going to discuss,
+
+39
+00:04:00,000 --> 00:04:04,800
+ what is that security guard that you're going to put in here, right? And for all those
+
+40
+00:04:04,800 --> 00:04:10,000
+ exceptions, not used like, as I said, divided by zero or there is a file that was on your system,
+
+41
+00:04:10,000 --> 00:04:15,440
+ but a virus came in and deleted that the same code that existed and worked before doesn't work
+
+42
+00:04:15,440 --> 00:04:21,760
+ now out of out of nowhere. Let's again, in exceptions, not you. How do you handle that is what we're
+
+43
+00:04:21,760 --> 00:04:26,720
+ going to talk about that spying not found, but all these exceptions in our use for Java to not be
+
+44
+00:04:26,720 --> 00:04:32,480
+ stuck and not be embarrassed, they created different exception classes for us in the API,
+
+45
+00:04:32,480 --> 00:04:39,280
+ and they threw exceptions, we say, an exception is thrown that we need to handle, right? And how
+
+46
+00:04:39,280 --> 00:04:45,920
+ do you handle it? You put that vulnerable piece of code in something called a tri-catch.
+
+47
+00:04:49,680 --> 00:04:58,720
+ Right, put your vulnerable code right here, that can be one line, 10 line or 50 lines,
+
+48
+00:04:58,720 --> 00:05:05,200
+ put place that in the tri-block, and after the catch, put in the appropriate exception handle,
+
+49
+00:05:05,200 --> 00:05:14,640
+ and an object of that, I'll just call it ref, and then do something with that here,
+
+50
+00:05:20,640 --> 00:05:26,400
+ with that exception, right? So what happens is in the tri-block, you put in your vulnerable code
+
+51
+00:05:26,400 --> 00:05:32,240
+ that is susceptible to dangers that you know, right? And then afterwards, you put in the catch,
+
+52
+00:05:32,240 --> 00:05:38,320
+ if the exception was thrown, because the exceptions are never guaranteed to be thrown, right? You
+
+53
+00:05:38,320 --> 00:05:45,040
+ can only assume you can only think of them that they're possible because earthquakes never
+
+54
+00:05:45,040 --> 00:05:51,760
+ happen every day, floods don't come every day, tifts don't happen every day, right? They can
+
+55
+00:05:51,760 --> 00:05:56,800
+ happen once in a while. So I, you as a developer, would never know whether an exception would be
+
+56
+00:05:56,800 --> 00:06:02,560
+ thrown or not. Is it guaranteed to be thrown or not? When it would be thrown, but you always know
+
+57
+00:06:02,560 --> 00:06:08,960
+ as a developer, you would always know that in my code, there is a vulnerable piece of code,
+
+58
+00:06:08,960 --> 00:06:14,320
+ which is susceptible to this kind of danger, because at my home, I know if I have some golden
+
+59
+00:06:14,320 --> 00:06:20,960
+ cash, I am vulnerable to tifts, right? If I don't have any golden cash, so I'm not, I can sleep
+
+60
+00:06:20,960 --> 00:06:26,320
+ peacefully, right? So you would always know, that's why I'll just reiterate that. So that is,
+
+61
+00:06:26,320 --> 00:06:30,240
+ as a developer, you would never know for sure whether an exception would be thrown or not,
+
+62
+00:06:30,240 --> 00:06:35,280
+ when it would be thrown or not, at what time, but you would always know, if I have a vulnerable
+
+63
+00:06:35,280 --> 00:06:40,480
+ deed in my code, and that's when I say, please take care, and how do you take care, that is
+
+64
+00:06:40,480 --> 00:06:46,240
+ right, thank you, put that vulnerable code here, see, if the exception doesn't come, your code
+
+65
+00:06:46,240 --> 00:06:52,720
+ runs fine, cash block is skipped, and the control resumes here, but if somewhere in the try, the
+
+66
+00:06:52,720 --> 00:06:59,120
+ exception is raised, the exception is thrown, the other code in the try would not be executed,
+
+67
+00:06:59,120 --> 00:07:04,720
+ immediately comes out and looks for its appropriate latch handler, and you take that with that
+
+68
+00:07:04,720 --> 00:07:12,400
+ variable, and then do something with that here, right, as does or as or that security card
+
+69
+00:07:12,400 --> 00:07:19,680
+ do with the theme that he would catch, right? So that is how this thing works, let's go ahead
+
+70
+00:07:19,680 --> 00:07:26,320
+ and write some actual code to demonstrate try cash for you, and how exception handling works in job.
+
