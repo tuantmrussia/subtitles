@@ -1,0 +1,616 @@
+1
+00:00:00,000 --> 00:00:04,800
+ Welcome back to this tutorial. In this training we are going to be discussing about
+
+2
+00:00:04,800 --> 00:00:11,240
+ troubleshooting common Microsoft Intune issues. If you are working as an IT system
+
+3
+00:00:11,240 --> 00:00:17,000
+ administrator, managing client devices definitely you are going to encounter
+
+4
+00:00:17,000 --> 00:00:24,340
+ issues. One of the advantage of Microsoft Intune is you can actually use Intune
+
+5
+00:00:24,340 --> 00:00:32,040
+ at any given time to at least troubleshoot your devices and at least generate
+
+6
+00:00:32,040 --> 00:00:38,540
+ reports to see which device have a specific issue. So for example if I go to my
+
+7
+00:00:38,540 --> 00:00:43,020
+ dashboard, here on my dashboard first of all you can get a glance if there are
+
+8
+00:00:43,020 --> 00:00:48,420
+ any issues with for example your compliancy device configuration or device
+
+9
+00:00:48,420 --> 00:00:53,920
+ and romance you can see for example without device configuration it says policies
+
+10
+00:00:53,920 --> 00:01:01,140
+ which error or conflict. So now we can decide to click on that and check which
+
+11
+00:01:01,140 --> 00:01:06,080
+ of this device is giving which of the policies giving error. So we can see
+
+12
+00:01:06,080 --> 00:01:11,500
+ this device with error. So here is the policy that I created the configuration
+
+13
+00:01:11,500 --> 00:01:15,740
+ policy that I created, that's totally giving that error. So we can actually check
+
+14
+00:01:15,740 --> 00:01:21,980
+ and see so it says you can see one is it the user principle name if I click on
+
+15
+00:01:21,980 --> 00:01:27,500
+ that we can actually see a lot of so suited but here we can actually just go
+
+16
+00:01:27,500 --> 00:01:32,920
+ down to see which of the error okay here we can see we have high high
+
+17
+00:01:32,920 --> 00:01:38,300
+ privacy and false code integrity error. Well this totally feature machine so
+
+18
+00:01:38,300 --> 00:01:44,100
+ probably it is possible to see such error. Well that shouldn't be any issue
+
+19
+00:01:44,100 --> 00:01:51,420
+ because we can see a lot of so C-dead and just that hypervisor error message
+
+20
+00:01:51,420 --> 00:01:56,380
+ here we go and enable visualization be security. So because this I'm using
+
+21
+00:01:56,380 --> 00:02:02,100
+ the feature machine which I machine for this training purpose definitely
+
+22
+00:02:02,100 --> 00:02:10,420
+ misses something like this. So if I go back again to all to my devices here on my
+
+23
+00:02:10,420 --> 00:02:14,340
+ device you can see we have we can also see for example configuration policy
+
+24
+00:02:14,340 --> 00:02:18,720
+ assignments failures we can see non-compliant devices so all devices are
+
+25
+00:02:18,720 --> 00:02:24,220
+ currency compliance. Well I'll have just one device here so definitely I mean
+
+26
+00:02:24,220 --> 00:02:29,700
+ I see that error but we can see with that we have one configuration policy
+
+27
+00:02:29,700 --> 00:02:37,220
+ error message. So if I go to monitor here we can on a monitor you can see a lot
+
+28
+00:02:37,220 --> 00:02:42,820
+ of reports we can totally check to see if there are any issues. For example we
+
+29
+00:02:42,820 --> 00:02:47,180
+ can see it's device with restricted apps or we can see the driver of the
+
+30
+00:02:47,180 --> 00:02:52,100
+ policies with a lot and romance failure I can't really click on that to see
+
+31
+00:02:52,100 --> 00:02:57,940
+ refresh we see we don't have any error error meant failure at the moment. So
+
+32
+00:02:57,940 --> 00:03:02,180
+ here we can tell you we can't tell you for example non-compliant devices we
+
+33
+00:03:02,180 --> 00:03:06,500
+ can check if a device is not compliant so you're gonna get all the devices that are
+
+34
+00:03:06,500 --> 00:03:12,100
+ not compliant and you kind of own a spot there as well. For example if I
+
+35
+00:03:12,100 --> 00:03:17,260
+ scroll down again and check we don't have any autopilot devices policies with
+
+36
+00:03:17,260 --> 00:03:21,420
+ non-compliant error devices we can also check on that and see you can see we
+
+37
+00:03:21,420 --> 00:03:29,700
+ have one error device. And also sometimes we have issues whereby your device is
+
+38
+00:03:29,700 --> 00:03:35,580
+ always specific device is not receiving a policy that has been deployed to
+
+39
+00:03:35,580 --> 00:03:41,300
+ that device or to specific devices. So maybe a specific device is not receiving
+
+40
+00:03:41,300 --> 00:03:48,140
+ that policy. What we got to do is do is to go to devices Windows device and on
+
+41
+00:03:48,140 --> 00:03:52,420
+ another device we can click on another device and here for example I can say
+
+42
+00:03:52,420 --> 00:03:57,060
+ sync. By clicking this sync it's going to what is going to happen it's going to
+
+43
+00:03:57,060 --> 00:04:01,660
+ we are attempt to check in with this device. So if you're successful it will
+
+44
+00:04:01,660 --> 00:04:08,820
+ sync code action. So if you deploy a policy to all your devices it takes time for
+
+45
+00:04:08,820 --> 00:04:13,540
+ that policy to be deployed. Think some minutes about three or five minutes but if
+
+46
+00:04:13,540 --> 00:04:19,180
+ you click sync it takes immediate effects for the policy to be deployed. So I
+
+47
+00:04:19,180 --> 00:04:26,500
+ can click yes and the policy will be deployed and if no user is actually log on
+
+48
+00:04:26,500 --> 00:04:30,980
+ to that device or if he uses log on to that device and you've informed that
+
+49
+00:04:30,980 --> 00:04:35,140
+ user that well I'm going to restart your device you can tell a restart the
+
+50
+00:04:35,140 --> 00:04:41,460
+ device from Intune. Why is it also go to restart a device from Intune or I've done
+
+51
+00:04:41,460 --> 00:04:45,580
+ allowing the user to restart the device himself. But I restart the device from
+
+52
+00:04:45,580 --> 00:04:51,620
+ Intune it gives you the ability to say well there is a connection between Intune
+
+53
+00:04:51,620 --> 00:04:57,740
+ and other device. Because if I click for example I click restart I say yes. So it
+
+54
+00:04:57,740 --> 00:05:04,180
+ says restart initiated and now if I go back again here we have that device so
+
+55
+00:05:04,180 --> 00:05:08,380
+ let me go to the device. Here we have the device. Let me try to log on to
+
+56
+00:05:08,380 --> 00:05:16,460
+ the device. So here we have the device and again this device because I've
+
+57
+00:05:16,460 --> 00:05:21,540
+ actually initiate that restart reboot. So it will take some minutes and then
+
+58
+00:05:21,540 --> 00:05:27,820
+ the initialization then I will see if we call from message the proper message which
+
+59
+00:05:27,820 --> 00:05:33,180
+ says your device will restart in probably 60 seconds. So it's going to take some
+
+60
+00:05:33,180 --> 00:05:37,820
+ time. One again the user will have all the opportunities which will close all
+
+61
+00:05:37,820 --> 00:05:44,940
+ applications and devices on that device. So here we can see right now it says
+
+62
+00:05:44,940 --> 00:05:50,300
+ your device administrator has scheduled a reboot you are about to be signed
+
+63
+00:05:50,300 --> 00:05:55,580
+ out. So it means that the device is going to restart in no time. So mind you it
+
+64
+00:05:55,580 --> 00:05:59,460
+ takes about maybe probably two to three minutes when you initiate the reboot
+
+65
+00:05:59,460 --> 00:06:05,860
+ for the reboot to take effect. So I can click close. So by clicking close with
+
+66
+00:06:05,860 --> 00:06:10,700
+ means that your device will restart in no time. So probably you want to make
+
+67
+00:06:10,700 --> 00:06:15,340
+ sure that every single program that are open on that device is close to you. So
+
+68
+00:06:15,340 --> 00:06:20,860
+ you will need to advise the user to close all programs open on that device. So
+
+69
+00:06:20,860 --> 00:06:26,180
+ let's go back again to our Intune. And apart from that you can see this device
+
+70
+00:06:26,180 --> 00:06:32,060
+ device action status. You see a restart pending, locate device pending,
+
+71
+00:06:32,060 --> 00:06:38,740
+ collecting diagnostic complete. And also for example if I go to recovery key here
+
+72
+00:06:38,740 --> 00:06:43,140
+ we can see the recovery key you can actually show the recovery key. We can see
+
+73
+00:06:43,140 --> 00:06:47,340
+ the recovery key of this device because bitlocker has been configured on that
+
+74
+00:06:47,340 --> 00:06:54,500
+ device using the Microsoft Intune as well. And again if I decided to just click
+
+75
+00:06:54,500 --> 00:07:00,340
+ here close and then go back again to reports. Like we did I did a video on
+
+76
+00:07:00,340 --> 00:07:06,340
+ reports on how to actually generate reports on Microsoft Intune for your
+
+77
+00:07:06,340 --> 00:07:11,020
+ devices or for users or devices that are not compliance. You can see we have a
+
+78
+00:07:11,020 --> 00:07:15,260
+ lot of reports we can't actually generate for our environment. So you can
+
+79
+00:07:15,260 --> 00:07:20,340
+ generate reports for devices that are not compliance for device configuration
+
+80
+00:07:20,340 --> 00:07:26,460
+ policies for Windows updates firewall Microsoft definite antivirals and even
+
+81
+00:07:26,460 --> 00:07:32,660
+ endpoint analytic. So we can't really generate this all this reports. And again
+
+82
+00:07:32,660 --> 00:07:39,380
+ if for example your device is having any issues you can't really troubleshoot
+
+83
+00:07:39,380 --> 00:07:44,660
+ your device specifically by doing the following so let us with our device to
+
+84
+00:07:44,660 --> 00:07:49,180
+ restart and then let me check you to my Windows 11 operating system to show
+
+85
+00:07:49,180 --> 00:07:54,380
+ you where we can't really get some log files or not device. So let's go to our
+
+86
+00:07:54,380 --> 00:07:59,380
+ Windows 10, our Windows 11 device and in our Windows 11 device let me maximize
+
+87
+00:07:59,380 --> 00:08:06,860
+ this. So here we can't really go to file explorer. So in file explorer let's go
+
+88
+00:08:06,860 --> 00:08:12,740
+ to this PC and then click on local drive. Here we have our program data. So if
+
+89
+00:08:12,740 --> 00:08:16,900
+ you're not seeing this program data what you need to do is to go to view and
+
+90
+00:08:16,900 --> 00:08:22,300
+ click sorry for that view then click show and you want to show the hidden
+
+91
+00:08:22,300 --> 00:08:28,660
+ item. You can see it just disappear. So the hidden items are actually
+
+92
+00:08:28,660 --> 00:08:32,700
+ programs that you don't want to delete from your device. So let's go to program
+
+93
+00:08:32,700 --> 00:08:38,260
+ data and from program data let's go to Microsoft and here we need to go to let's
+
+94
+00:08:38,260 --> 00:08:43,180
+ see we have the into management extension and then we have our log file. You
+
+95
+00:08:43,180 --> 00:08:49,500
+ can see we have a lot of log if I for example up workload. So you can't really
+
+96
+00:08:49,500 --> 00:08:56,220
+ see for example check inside. So this we actually give you a kind of idea if
+
+97
+00:08:56,220 --> 00:08:59,820
+ something is wrong with your device you can't really client's health you can't
+
+98
+00:08:59,820 --> 00:09:06,820
+ really check if you have any red error message showing here for you to be
+
+99
+00:09:06,820 --> 00:09:11,460
+ able to check and verify what the problem is with your device we can also see
+
+100
+00:09:11,460 --> 00:09:16,780
+ how the health script and the wind that it to up in victory. So I totally click
+
+101
+00:09:16,780 --> 00:09:21,920
+ on that as well and check if we have any error message. You can see some yellow
+
+102
+00:09:21,920 --> 00:09:28,740
+ warning message but for the rest don't have any red error message. And also you
+
+103
+00:09:28,740 --> 00:09:34,660
+ know I've already configured a group policy to automatically register my
+
+104
+00:09:34,660 --> 00:09:40,380
+ device in Intune. Sometimes you're admin the administrator will configure a
+
+105
+00:09:40,380 --> 00:09:45,140
+ policy. They must be some devices which are not enrolling in Intune. So I want to
+
+106
+00:09:45,140 --> 00:09:49,740
+ give you a specific tip. You know I've seen this in the past when you try to
+
+107
+00:09:49,740 --> 00:09:54,860
+ enroll a device or you log on to that device with a specific user name. Mind
+
+108
+00:09:54,860 --> 00:10:01,660
+ you that user must have the Microsoft Intune license which means the user
+
+109
+00:10:01,660 --> 00:10:08,540
+ must have a license that allows him or how to use Microsoft Intune if not the
+
+110
+00:10:08,540 --> 00:10:12,820
+ device may not get ready starting Intune. It may be on hybrid device which
+
+111
+00:10:12,820 --> 00:10:17,820
+ of course the device is ready starting active in Azure Active Directory but
+
+112
+00:10:17,820 --> 00:10:21,860
+ not in Intune. So you'll be seeing it in Azure Active Directory but you
+
+113
+00:10:21,860 --> 00:10:26,220
+ definitely don't see that device in Intune. It will just show manage then it will
+
+114
+00:10:26,220 --> 00:10:32,780
+ not be Intune or MD and the mobile device management. And one of that thing you
+
+115
+00:10:32,780 --> 00:10:37,140
+ want to do again is the following. If for example we go to I'm going to search
+
+116
+00:10:37,140 --> 00:10:46,540
+ for the company portal. Let's see we have the portal let's see. Okay I'm not
+
+117
+00:10:46,540 --> 00:10:51,820
+ installing the company portal on this device yet but if for example we will have
+
+118
+00:10:51,820 --> 00:10:56,940
+ issues or you want to actually download and install the company portal on this
+
+119
+00:10:56,940 --> 00:11:06,900
+ device you need to go to the Microsoft store. Here we can just type for
+
+120
+00:11:06,900 --> 00:11:16,540
+ example I can just enter and just type the company portal. Here we go you can
+
+121
+00:11:16,540 --> 00:11:21,060
+ see we have the company portal up and then we can now click on it and then click
+
+122
+00:11:21,060 --> 00:11:26,800
+ get to install it. Remind you when you download it and it's got to install a
+
+123
+00:11:26,800 --> 00:11:32,140
+ device you still need to register your you still need to actually register your
+
+124
+00:11:32,140 --> 00:11:36,500
+ accounts because you are again your account should have the Microsoft Intune
+
+125
+00:11:36,500 --> 00:11:42,860
+ license. If not it is not going to work. Here we go you can see this is the
+
+126
+00:11:42,860 --> 00:11:47,900
+ company portal. It's still so I can just click open to open it and then we can
+
+127
+00:11:47,900 --> 00:11:51,780
+ start the installation. We can start the configuration process of the company
+
+128
+00:11:51,780 --> 00:11:57,240
+ portal. So sometimes it means you want to use kind of a single sign-on to
+
+129
+00:11:57,240 --> 00:12:02,060
+ configure your company portal if you were designing to the device using that
+
+130
+00:12:02,060 --> 00:12:06,460
+ account. So let just hold on for this to get configured. You can see that every
+
+131
+00:12:06,460 --> 00:12:11,820
+ configuration I made from the Intune portal is being configured you can
+
+132
+00:12:11,820 --> 00:12:16,260
+ hit the green background and also the care of globalicity and it's using a kind
+
+133
+00:12:16,260 --> 00:12:21,900
+ of a single sign-on to configure everything for me without me doing any other
+
+134
+00:12:21,900 --> 00:12:25,660
+ configuration. For example we can decide to go to app what is going to take
+
+135
+00:12:25,660 --> 00:12:32,420
+ some time for the other app that has been deployed to be listed here. So I
+
+136
+00:12:32,420 --> 00:12:38,140
+ just wait for this and see what we got. So if I check apps that is where you can
+
+137
+00:12:38,140 --> 00:12:44,140
+ see there is no apps because I've not deployed any apps to my environment. So
+
+138
+00:12:44,140 --> 00:12:48,980
+ here we can have we can just click the download updates download and updates. You
+
+139
+00:12:48,980 --> 00:12:52,620
+ can see there are no updates available. But sometimes updates have already been
+
+140
+00:12:52,620 --> 00:12:57,220
+ pushed to this device with me take some time for the updates to be available or
+
+141
+00:12:57,220 --> 00:13:02,340
+ if new updates are available they are going to be displayed here. Because if I
+
+142
+00:13:02,340 --> 00:13:13,220
+ go to updates let me just go to updates check for updates. You can see at this
+
+143
+00:13:13,220 --> 00:13:17,300
+ moment it says windows update settings are managed by organization. So you
+
+144
+00:13:17,300 --> 00:13:21,900
+ can't check for updates because it has already been blocked that every update
+
+145
+00:13:21,900 --> 00:13:27,880
+ will be download or update available will be actually pushed through Microsoft
+
+146
+00:13:27,880 --> 00:13:33,900
+ Intune and not from not downloading it direct from the Internet from my
+
+147
+00:13:33,900 --> 00:13:38,460
+ Microsoft website through the device. You see this here by this moment I know
+
+148
+00:13:38,460 --> 00:13:44,100
+ updates are available and if I click device here we can see the device. So we're
+
+149
+00:13:44,100 --> 00:13:48,940
+ also good to have and support we can also upload logs request help for the
+
+150
+00:13:48,940 --> 00:13:53,300
+ pro level you guys press in the company portal we send logs to Microsoft what
+
+151
+00:13:53,300 --> 00:13:57,940
+ is one of the just the laws that we send to Microsoft and sometimes for the
+
+152
+00:13:57,940 --> 00:14:02,460
+ IT help desk you can get some valuable information here available which of
+
+153
+00:14:02,460 --> 00:14:07,140
+ course you can send that information. You can call the IT help desk can sell an
+
+154
+00:14:07,140 --> 00:14:13,140
+ email to your IT help desk to help you resolve some issues.
+
