@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:05,760
+ Alright then gang in the last video we were talking about variables and with the
+
+2
+00:00:05,760 --> 00:00:09,920
+ different type data types that come in that come along in the Java programming
+
+3
+00:00:09,920 --> 00:00:14,300
+ language and as I said like the language itself data types in Java are also
+
+4
+00:00:14,300 --> 00:00:20,680
+ platform independent and now for example if you were requirements such as this is
+
+5
+00:00:20,680 --> 00:00:26,360
+ a double variable and you want it to be or let's say we had this int variable
+
+6
+00:00:26,360 --> 00:00:32,320
+ that is second var and we want to save this int to a variable of a different
+
+7
+00:00:32,320 --> 00:00:36,840
+ type and that is for example if I want to say something like this I'll say
+
+8
+00:00:36,840 --> 00:00:42,560
+ shot s to second var and you'll notice that the compiler immediately gives you
+
+9
+00:00:42,560 --> 00:00:46,480
+ an error it's unhappy and the reason is because these are of different data
+
+10
+00:00:46,480 --> 00:00:52,280
+ types and second var is of a data type that is int which has 4 bytes in which
+
+11
+00:00:52,280 --> 00:00:57,920
+ takes 4 bytes in memory and then shot just takes 2 bytes in memory so a bigger
+
+12
+00:00:57,920 --> 00:01:04,120
+ data type variable cannot be put into a smaller data type variable right and
+
+13
+00:01:04,120 --> 00:01:09,640
+ that is because if but if you would have done this same thing in C or C plus
+
+14
+00:01:09,640 --> 00:01:13,880
+ plus this would have worked because the value would have been truncated and
+
+15
+00:01:13,880 --> 00:01:18,400
+ and you would just get the equivalent value which would be in a shot but
+
+16
+00:01:18,400 --> 00:01:24,120
+ not not in Java because Java is very strict with types and what happens is
+
+17
+00:01:24,120 --> 00:01:30,200
+ here you can get away with this we have a workaround and that is called explicit
+
+18
+00:01:30,200 --> 00:01:35,120
+ typecasting or in shot we call it typecasting so what we can do is we can
+
+19
+00:01:35,120 --> 00:01:42,720
+ just put this shot in a pair of circular braces and you see that the error
+
+20
+00:01:42,720 --> 00:01:46,680
+ immediately goes away and now what happens is we're signaling to the compiler
+
+21
+00:01:46,680 --> 00:01:51,840
+ that second var is of type in please convert it into shot first and then save it
+
+22
+00:01:51,840 --> 00:01:56,800
+ in a variable of type shot and this way you're just saving a variable of type
+
+23
+00:01:56,800 --> 00:02:01,520
+ shot in a value for type shot in a variable of a type shot and that's why it
+
+24
+00:02:01,520 --> 00:02:06,920
+ works or for example for that fact if this was of type double C again you would
+
+25
+00:02:06,920 --> 00:02:13,560
+ have got an error not unless you do something like this and this time I'll do a
+
+26
+00:02:13,560 --> 00:02:19,080
+ setup right so now sorry this time I'll again do a shot so what we are saying is
+
+27
+00:02:19,080 --> 00:02:23,920
+ this F has to be converted into a shot and then put in a variable of type
+
+28
+00:02:23,920 --> 00:02:28,160
+ shot and this should work I'll just put in a sound again and I'll just say
+
+29
+00:02:28,160 --> 00:02:35,520
+ value now in S is and calculate it with the variable S and let's go on and
+
+30
+00:02:35,520 --> 00:02:39,280
+ run this quickly and see it for ourselves and it just gives you see it first the
+
+31
+00:02:39,280 --> 00:02:44,880
+ value of F was 78.9 when it was a variable of type double but now it has been
+
+32
+00:02:44,880 --> 00:02:49,000
+ converted into shot and you saw after the point after the precision the
+
+33
+00:02:49,000 --> 00:02:54,280
+ decimal everything goes away and then you just get a 78 so the compiler is
+
+34
+00:02:54,280 --> 00:02:59,920
+ telling you that I won't let this work before you take a risk at your own
+
+35
+00:02:59,920 --> 00:03:04,760
+ barrel and that risk is called typecasting explicitly typecasting it and
+
+36
+00:03:04,760 --> 00:03:09,160
+ then you do that and then you get the truncated value but you took the
+
+37
+00:03:09,160 --> 00:03:14,760
+ risk right you said that I want this to be worked working but okay I'm all right
+
+38
+00:03:14,760 --> 00:03:20,000
+ with the truncation right and then if you and this explicit typecasting
+
+39
+00:03:20,000 --> 00:03:25,760
+ right now we converted a value of a double into a shot and that means if you do
+
+40
+00:03:25,760 --> 00:03:35,480
+ something like this that is you go this way right that is up or down side up
+
+41
+00:03:35,480 --> 00:03:40,240
+ and this is for example when you want to convert a variable of a type double into
+
+42
+00:03:40,240 --> 00:03:47,960
+ an end a float into a long along into a bite this is called we're trying to do
+
+43
+00:03:47,960 --> 00:04:00,680
+ narrowing all right and for narrowing we always need an explicit typecast but
+
+44
+00:04:00,680 --> 00:04:08,600
+ if you want to go or if you want to come in reverse right like this that is you
+
+45
+00:04:08,600 --> 00:04:14,520
+ want to convert a variable of a type bite into an end or an end into a float or a
+
+46
+00:04:14,520 --> 00:04:21,800
+ double that is what we call as appropriately as widening or even you can call it
+
+47
+00:04:21,800 --> 00:04:27,680
+ broadening but I'll just stick to widening but for widening you don't need the
+
+48
+00:04:27,680 --> 00:04:38,960
+ explicit typecast I'll say no typecast required right so whenever you're trying
+
+49
+00:04:38,960 --> 00:04:44,120
+ to do widening there is not a typecast to be needed why because you're putting a
+
+50
+00:04:44,120 --> 00:04:48,800
+ smaller value into a bigger container that would always fit in right and we'll
+
+51
+00:04:48,800 --> 00:04:53,720
+ just have a look at exactly that now for example this is a shot and after this
+
+52
+00:04:53,720 --> 00:04:59,600
+ you want this to be put in a s or a int I'll just say int value and you'll just
+
+53
+00:04:59,600 --> 00:05:06,240
+ say s and see even without the typecast this worked and I'll say this is
+
+54
+00:05:06,240 --> 00:05:11,480
+ because it was done with implicit type casting right where you don't need to put
+
+55
+00:05:11,480 --> 00:05:15,200
+ in the cast but behind the scenes there's still a cast that is done for you
+
+56
+00:05:15,200 --> 00:05:20,000
+ automatically by your new friends in the Java programming language right but
+
+57
+00:05:20,000 --> 00:05:24,760
+ this just works and you just get a value as well I'll just say I'm sowed and
+
+58
+00:05:24,760 --> 00:05:30,640
+ many value just run this quickly let's see we get a 72 so that is how explicit
+
+59
+00:05:30,640 --> 00:05:33,760
+ typecasting works or implicit typecasting works again a rule of thumb
+
+60
+00:05:33,760 --> 00:05:39,200
+ is whenever you're trying to do what I said as narrowing you always would
+
+61
+00:05:39,200 --> 00:05:44,760
+ neither explicit typecast but whenever you do widening no typecast needed it
+
+62
+00:05:44,760 --> 00:05:49,280
+ would be handled for you or to matically
+
