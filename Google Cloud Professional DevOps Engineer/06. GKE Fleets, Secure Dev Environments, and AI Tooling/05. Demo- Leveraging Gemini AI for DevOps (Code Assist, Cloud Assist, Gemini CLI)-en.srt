@@ -1,0 +1,375 @@
+1
+00:00:01,250 --> 00:00:04,760
+Imagine having a DevOps teammate who never sleeps,
+
+2
+00:00:05,059 --> 00:00:07,340
+someone who can debug a failing deployment,
+
+3
+00:00:07,539 --> 00:00:11,279
+optimize Terraform modules, write Skaffold configuration,
+
+4
+00:00:11,579 --> 00:00:14,920
+enter CI pipelines, and that too instantly.
+
+5
+00:00:15,140 --> 00:00:18,340
+That's what Gemini brings to DevOps on Google Cloud.
+
+6
+00:00:18,540 --> 00:00:20,489
+Let's just see how we can do all that.
+
+7
+00:00:20,690 --> 00:00:22,379
+When you search for Gemini,
+
+8
+00:00:22,700 --> 00:00:26,520
+there are three Gemini tools that we can use as a DevOps.
+
+9
+00:00:26,659 --> 00:00:29,424
+The first one is Gemini Code Assist.
+
+10
+00:00:29,665 --> 00:00:34,805
+This is AI assisted coding inside VS Code and Cloud Workstation.
+
+11
+00:00:35,064 --> 00:00:37,444
+The second one is a Gemini Cloud Assist.
+
+12
+00:00:37,705 --> 00:00:39,685
+That is like an operational partner.
+
+13
+00:00:39,904 --> 00:00:42,415
+And the third one is a Gemini CLI.
+
+14
+00:00:42,625 --> 00:00:44,525
+Let's first start with the Code Assist.
+
+15
+00:00:44,705 --> 00:00:47,705
+So come down here and search for Code Assist.
+
+16
+00:00:48,025 --> 00:00:51,895
+Now inside the Gemini Code Assist, if you are doing for the first time,
+
+17
+00:00:52,064 --> 00:00:53,284
+you need to enable.
+
+18
+00:00:54,049 --> 00:00:56,770
+Now you have to select your billing account and let's
+
+19
+00:00:56,770 --> 00:00:59,439
+say continue to Admin for Gemini page.
+
+20
+00:00:59,689 --> 00:01:03,060
+Now select here the Standard, say Continue.
+
+21
+00:01:03,250 --> 00:01:07,900
+In the number of license, I'm choosing just one license and saying Continue.
+
+22
+00:01:08,169 --> 00:01:09,720
+Right now it is in trial mode,
+
+23
+00:01:10,010 --> 00:01:13,470
+so that's why the cost is saying $0 for the first month.
+
+24
+00:01:13,610 --> 00:01:15,069
+And let's say Complete purchase.
+
+25
+00:01:15,610 --> 00:01:18,089
+Now this will enable a Gemini Code Assist.
+
+26
+00:01:18,410 --> 00:01:22,764
+Now let's open up the VS Code and let's look for a plugin for Gemini.
+
+27
+00:01:23,044 --> 00:01:24,794
+Here you see Gemini Code Assist.
+
+28
+00:01:25,014 --> 00:01:28,154
+Let's install that app. Now this got installed successfully.
+
+29
+00:01:28,385 --> 00:01:32,654
+Now on the right side bottom corner, you see an option for Gemini.
+
+30
+00:01:32,855 --> 00:01:33,584
+Click on that.
+
+31
+00:01:33,815 --> 00:01:35,894
+Here you see Gemini Code Assist.
+
+32
+00:01:36,135 --> 00:01:37,434
+Let's say Enable.
+
+33
+00:01:37,775 --> 00:01:40,495
+Now it's asking for sign in, so let's sign in.
+
+34
+00:01:40,894 --> 00:01:41,614
+Say Open.
+
+35
+00:01:41,735 --> 00:01:42,684
+It got logged in.
+
+36
+00:01:42,894 --> 00:01:46,254
+Now it is asking me to select a cloud project, so I'm
+
+37
+00:01:46,254 --> 00:01:48,815
+selecting that. Here I can see all of them.
+
+38
+00:01:49,260 --> 00:01:54,580
+I'm selecting my specific hpc‑1 project, and now you can see that we are
+
+39
+00:01:54,580 --> 00:01:57,959
+successfully connected, and it can do a couple of things for me.
+
+40
+00:01:58,180 --> 00:02:00,050
+I have to just type in here the prompt.
+
+41
+00:02:00,260 --> 00:02:04,779
+For example, I can say Find the issues in my file,
+
+42
+00:02:04,940 --> 00:02:08,020
+and then it can start suggesting to me that what could be the
+
+43
+00:02:08,020 --> 00:02:11,050
+potential error and what I can do best with that.
+
+44
+00:02:11,229 --> 00:02:15,740
+Or maybe I can say here in my chat Generate a Cloud
+
+45
+00:02:15,740 --> 00:02:20,710
+Build pipeline that runs tests, builds a Docker image from a Dockerfile,
+
+46
+00:02:20,910 --> 00:02:25,210
+scan it for vulnerabilities, and pushes it to the Artifact Registry.
+
+47
+00:02:25,389 --> 00:02:26,139
+And let's go now.
+
+48
+00:02:26,389 --> 00:02:29,869
+You can see that it has started creating the code for us, and it
+
+49
+00:02:29,869 --> 00:02:33,029
+has written the cloudbuild.yaml completely.
+
+50
+00:02:33,270 --> 00:02:34,800
+You have to just say Accept,
+
+51
+00:02:34,990 --> 00:02:38,789
+and here you can see that code written for a Dockerfile as well and has
+
+52
+00:02:38,789 --> 00:02:41,610
+given us all the commands that need to be get executed.
+
+53
+00:02:41,910 --> 00:02:44,960
+So that's how Gemini Code Assist can help you to write the code,
+
+54
+00:02:44,990 --> 00:02:49,139
+to find the issues, and to improve the performance of your specific code.
+
+55
+00:02:49,350 --> 00:02:54,429
+Now on a similar line of the Code Assist, we have Gemini Cloud Assist as well.
+
+56
+00:02:54,630 --> 00:02:59,500
+You can just search here Cloud Assist. And if it is not enabled,
+
+57
+00:02:59,710 --> 00:03:03,880
+just click on Enable and enable the API for this Cloud Assist.
+
+58
+00:03:04,199 --> 00:03:07,229
+Now let's say you go down to our Cloud Workstation.
+
+59
+00:03:07,699 --> 00:03:10,660
+And on the top you can see Gemini Cloud Assist.
+
+60
+00:03:10,899 --> 00:03:14,860
+Click on that icon. That will open up a window for Gemini Cloud Assist,
+
+61
+00:03:15,070 --> 00:03:17,589
+and there you can start asking a question,
+
+62
+00:03:17,869 --> 00:03:18,369
+saying,
+
+63
+00:03:18,550 --> 00:03:22,710
+Explain my current cloud workstation. Even though I
+
+64
+00:03:22,710 --> 00:03:25,699
+have misspelled the explain spelling,
+
+65
+00:03:25,830 --> 00:03:28,190
+but still it is going to take it and give me the
+
+66
+00:03:28,190 --> 00:03:31,229
+explanation about my current Cloud Workstations.
+
+67
+00:03:31,399 --> 00:03:34,000
+It can help you to generate the Terraform scripts.
+
+68
+00:03:34,080 --> 00:03:37,839
+It can help you to debug the issues, and many more.
+
+69
+00:03:38,080 --> 00:03:41,660
+Here you can see that it has created the entire summary for me,
+
+70
+00:03:41,919 --> 00:03:44,720
+saying that the cluster name is this, location is this,
+
+71
+00:03:44,919 --> 00:03:48,220
+and entire information that is there in my Cloud Workstation.
+
+72
+00:03:48,580 --> 00:03:49,080
+Similarly,
+
+73
+00:03:49,160 --> 00:03:54,699
+I can open up my logs and I can debug the logs using this Cloud Assist as well.
+
+74
+00:03:55,229 --> 00:03:59,449
+Cloud Assist is available default in your entire cloud.
+
+75
+00:03:59,729 --> 00:04:02,880
+Wherever you go on that screen, on the top,
+
+76
+00:04:03,009 --> 00:04:06,119
+you can click on that icon of the Google Cloud Assist,
+
+77
+00:04:06,330 --> 00:04:07,770
+and that window is available.
+
+78
+00:04:07,929 --> 00:04:10,820
+You can start chatting and ask all your questions.
+
+79
+00:04:11,130 --> 00:04:12,710
+Not only this, in fact,
+
+80
+00:04:13,169 --> 00:04:17,010
+this Gemini Cloud Assist is also available in the CLI
+
+81
+00:04:17,290 --> 00:04:20,059
+where we call it Gemini Cloud CLI.
+
+82
+00:04:20,298 --> 00:04:22,769
+So let's open up our CLI, say Authorize.
+
+83
+00:04:23,019 --> 00:04:25,980
+In the Cloud Shell, you have to just type in Gemini,
+
+84
+00:04:26,209 --> 00:04:30,619
+and then the Gemini will appear where you can start typing your prompt
+
+85
+00:04:30,619 --> 00:04:33,700
+and you can take all the help from the Google CLI.
+
+86
+00:04:33,980 --> 00:04:38,010
+So that's how easy it is to use the Gemini in the CLI.
+
+87
+00:04:38,260 --> 00:04:42,700
+So overall, we have a lot of AI assistance there for DevOps.
+
+88
+00:04:43,109 --> 00:04:44,140
+As we have seen that,
+
+89
+00:04:44,339 --> 00:04:47,959
+we have the AIs assistant in the form of Code Assist that
+
+90
+00:04:47,959 --> 00:04:49,799
+you can integrate with the VS Code.
+
+91
+00:04:50,200 --> 00:04:51,989
+Cloud Assist automatically there,
+
+92
+00:04:52,160 --> 00:04:58,260
+which can help you for the operation purpose within your admin console itself.
+
+93
+00:04:58,399 --> 00:05:02,519
+And the third one is you have the Gemini AI Assistant
+
+94
+00:05:02,519 --> 00:05:05,559
+available within the Google Cloud CLI as well.
