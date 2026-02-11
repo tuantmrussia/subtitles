@@ -1,0 +1,299 @@
+1
+00:00:01,008 --> 00:00:04,090
+If you've ever worked in the finance, healthcare,
+
+2
+00:00:04,380 --> 00:00:08,819
+or even just a global company with strict compliance rules,
+
+3
+00:00:08,909 --> 00:00:11,810
+you have probably heard someone say we need to
+
+4
+00:00:11,810 --> 00:00:14,970
+ensure data never leaves this region, and in the cloud,
+
+5
+00:00:15,130 --> 00:00:18,549
+enforcing that manually, project by project,
+
+6
+00:00:18,790 --> 00:00:21,500
+service by service is a recipe for mistake.
+
+7
+00:00:21,649 --> 00:00:24,370
+Let's see how we can do it in the best possible way.
+
+8
+00:00:24,450 --> 00:00:27,673
+I'm inside the Google Cloud console, and at the top,
+
+9
+00:00:27,773 --> 00:00:29,972
+let me select my organization.
+
+10
+00:00:30,093 --> 00:00:31,013
+This is important.
+
+11
+00:00:31,173 --> 00:00:34,562
+This setting must be applied at the organization or
+
+12
+00:00:34,562 --> 00:00:36,932
+folder level to apply consistently.
+
+13
+00:00:37,053 --> 00:00:42,402
+Now let me go to the IAM, and here I go to the Organization policies.
+
+14
+00:00:42,693 --> 00:00:47,312
+What you are looking at here is essentially a master list of
+
+15
+00:00:47,312 --> 00:00:50,013
+guardrails for your entire cloud environment.
+
+16
+00:00:50,213 --> 00:00:54,405
+Each policy here is like a rule you define once and
+
+17
+00:00:54,405 --> 00:01:00,055
+Google Cloud enforces everywhere, no matter which team or project is involved.
+
+18
+00:01:00,206 --> 00:01:03,995
+Let's begin with one most common restricting region policy.
+
+19
+00:01:04,135 --> 00:01:09,416
+Let's say you are a company that must keep all the data inside Asia
+
+20
+00:01:09,416 --> 00:01:13,966
+South 1 or Asia Southeast 1 due to the compliance rules.
+
+21
+00:01:14,445 --> 00:01:15,805
+Now how we can enforce that?
+
+22
+00:01:15,896 --> 00:01:25,970
+So for that, let's just search gcp.resourceLocations. Now I can see that.
+
+23
+00:01:26,099 --> 00:01:27,190
+Let me click on that.
+
+24
+00:01:27,290 --> 00:01:31,169
+Right now, it is inactive, there is no enforcement.
+
+25
+00:01:31,250 --> 00:01:36,220
+Let me click on these three dots and say Edit policy. This
+
+26
+00:01:36,220 --> 00:01:39,459
+constraint controls where resources can be created.
+
+27
+00:01:39,580 --> 00:01:44,959
+I'm here saying override parent's policy, and I'm saying add a rule.
+
+28
+00:01:45,300 --> 00:01:48,260
+In the rule, I will say Custom.
+
+29
+00:01:49,639 --> 00:01:59,290
+I'm saying Allow only if the region is asia‑south‑1 or
+
+30
+00:02:00,120 --> 00:02:08,029
+asia‑southeast1. So I'm just saying that I want this organization to
+
+31
+00:02:08,029 --> 00:02:12,419
+allow creating the resources only in these two regions,
+
+32
+00:02:13,270 --> 00:02:14,809
+say Done, and say Set policy.
+
+33
+00:02:15,029 --> 00:02:18,089
+From now on, no virtual machine, no bucket,
+
+34
+00:02:18,509 --> 00:02:23,809
+no SQL databases, no managed service can be created outside these regions.
+
+35
+00:02:23,910 --> 00:02:28,830
+If someone tries to spin a VM in let's say us‑central‑1,
+
+36
+00:02:28,990 --> 00:02:30,350
+they will see an error,
+
+37
+00:02:30,589 --> 00:02:34,093
+maybe saying like constraint GCP resource location
+
+38
+00:02:34,093 --> 00:02:36,533
+prohibits the creation of this resource.
+
+39
+00:02:36,772 --> 00:02:39,203
+It looks like this is a small change,
+
+40
+00:02:39,533 --> 00:02:44,492
+but actually this is how organizations enforce the GDPR,
+
+41
+00:02:44,772 --> 00:02:49,673
+HIPAA, and all those different types of compliances based on their industry.
+
+42
+00:02:49,843 --> 00:02:50,623
+Let's go back.
+
+43
+00:02:50,733 --> 00:02:55,132
+Not only this, we can also add a couple of more different policies as well.
+
+44
+00:02:55,813 --> 00:03:00,546
+For example, let's say I want to disable the external IPs.
+
+45
+00:03:00,906 --> 00:03:05,035
+Sometimes developers love to create virtual machines with public IPs
+
+46
+00:03:05,035 --> 00:03:07,276
+because it's a little bit convenient for them,
+
+47
+00:03:07,436 --> 00:03:09,035
+but attackers love it.
+
+48
+00:03:09,076 --> 00:03:12,555
+And because of that, many times organizations want to disable that.
+
+49
+00:03:12,705 --> 00:03:15,055
+How we can do that? So here under the filter,
+
+50
+00:03:15,475 --> 00:03:20,115
+you search for compute.vmExternalIpAddress.
+
+51
+00:03:20,386 --> 00:03:23,955
+Now here you can see that this policy is also inactive.
+
+52
+00:03:24,055 --> 00:03:29,098
+What we can do is we can click on these three dots, say Edit policy, and we
+
+53
+00:03:29,098 --> 00:03:32,718
+say overwrite parent's policy saying that Add a rule,
+
+54
+00:03:32,938 --> 00:03:35,979
+Deny all, and say Set policy.
+
+55
+00:03:36,179 --> 00:03:39,938
+Now the effect of this will be if someone tries to create a
+
+56
+00:03:39,938 --> 00:03:43,429
+VM and choose assign a new external IP,
+
+57
+00:03:43,498 --> 00:03:47,738
+the deployment will fail until and unless a folder or
+
+58
+00:03:47,738 --> 00:03:50,039
+a project overrides this policy.
+
+59
+00:03:50,208 --> 00:03:53,792
+Now let's quickly confirm how these policies flow down
+
+60
+00:03:53,792 --> 00:03:55,712
+to the folders and the projects.
+
+61
+00:03:55,921 --> 00:03:58,322
+Let me here click and get into the project.
+
+62
+00:03:58,432 --> 00:04:00,522
+Here is our project, payments‑prod.
+
+63
+00:04:00,761 --> 00:04:03,121
+Now here under the payments‑prod project,
+
+64
+00:04:03,281 --> 00:04:06,102
+if you see the organization's policy here also,
+
+65
+00:04:06,121 --> 00:04:09,212
+you will find the same policy has been active.
+
+66
+00:04:09,322 --> 00:04:12,542
+For example, if I search here constraints location,
+
+67
+00:04:12,682 --> 00:04:16,721
+you can see that. This policy is active here because the
+
+68
+00:04:16,721 --> 00:04:19,361
+source is Inherit parent's policy.
+
+69
+00:04:19,682 --> 00:04:25,304
+Similarly, if I search for compute.vmExternalIpAccess,
+
+70
+00:04:25,424 --> 00:04:28,714
+you can see that this policy is also active,
+
+71
+00:04:28,744 --> 00:04:32,904
+and you can see that the source is again Inherit parent's policy.
+
+72
+00:04:33,024 --> 00:04:38,804
+This cascading behavior is exactly why a solid hierarchy is so powerful.
+
+73
+00:04:38,904 --> 00:04:41,975
+You don't enforce the compliance project by project,
+
+74
+00:04:42,304 --> 00:04:44,885
+but you did it at the organizational level,
+
+75
+00:04:45,095 --> 00:04:47,184
+and it will flow down automatically.
