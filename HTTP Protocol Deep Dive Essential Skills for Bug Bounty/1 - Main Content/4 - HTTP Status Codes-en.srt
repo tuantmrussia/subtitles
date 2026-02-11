@@ -1,0 +1,484 @@
+1
+00:00:00,000 --> 00:00:07,720
+ So, when the server respond to your request, it includes a status code, a 3 digit number
+
+2
+00:00:07,720 --> 00:00:10,560
+ that tells you what happened.
+
+3
+00:00:10,560 --> 00:00:18,640
+ Think of status code as the server's way to say, got it, not found or something went wrong.
+
+4
+00:00:18,640 --> 00:00:25,440
+ The five categories status codes are grouped by their first digit.
+
+5
+00:00:25,440 --> 00:00:34,440
+ So first digit will be start with one tablex, which is basically informational, very
+
+6
+00:00:34,440 --> 00:00:48,040
+ clear and when a web application like talking with web socket connection, so during that
+
+7
+00:00:48,040 --> 00:00:55,120
+ web socket connection that request will be made in 101.
+
+8
+00:00:55,120 --> 00:01:05,120
+ Now, 2 doublex, basically it is a successful response and 3 doublex, which is a red direction
+
+9
+00:01:05,120 --> 00:01:15,640
+ response and 4 doublex, basically it is a client error, not your mistakes like it is your
+
+10
+00:01:15,640 --> 00:01:16,640
+ mistakes.
+
+11
+00:01:16,640 --> 00:01:26,880
+ It means a client error, you haven't permission for any kind of resource, for admin kind
+
+12
+00:01:26,880 --> 00:01:36,840
+ of resource or sensitive resources, you don't have any kind of permissions, so five doublex
+
+13
+00:01:36,840 --> 00:01:42,680
+ which is server error, basically it is a server mistakes, not your mistakes.
+
+14
+00:01:42,680 --> 00:01:50,420
+ So now let's talk about common status code, you should know.
+
+15
+00:01:50,420 --> 00:02:01,920
+ So the first status code which you need to know to doublex, 2 doublex, what does it mean?
+
+16
+00:02:01,920 --> 00:02:28,560
+ It means it is successful, it is successful code, it is success, so 200, 200, okay.
+
+17
+00:02:28,560 --> 00:02:38,840
+ Most common status code, 200, okay is the most common status code, everything like work
+
+18
+00:02:38,840 --> 00:02:49,660
+ perfectly, and here what you asked for, like example, you load a web page successfully.
+
+19
+00:02:49,660 --> 00:03:01,340
+ Let me show you, when I did, when I did like, old.com, okay, let's open to open network
+
+20
+00:03:01,340 --> 00:03:08,400
+ tab and do refresh it, and here you can see what I got, 200, okay.
+
+21
+00:03:08,400 --> 00:03:09,760
+ So what does it mean?
+
+22
+00:03:09,760 --> 00:03:20,040
+ It means that this is like my web application or web page successfully loaded, okay.
+
+23
+00:03:20,040 --> 00:03:37,760
+ So now let's talk about 200, okay, basically it means created, when this response will happen,
+
+24
+00:03:37,760 --> 00:03:51,040
+ then you create an account or when you just, so something new was created successfully,
+
+25
+00:03:51,040 --> 00:03:52,040
+ okay.
+
+26
+00:03:52,040 --> 00:04:01,080
+ Example like, you successfully posted a tweet, a new tweet, so that will be made in 201 created,
+
+27
+00:04:01,080 --> 00:04:03,280
+ okay.
+
+28
+00:04:03,280 --> 00:04:19,320
+ Now let's talk about, now let's talk about three, double, sorry, let's do it like this,
+
+29
+00:04:19,320 --> 00:04:47,640
+ basically it's, it's read direction, already I have told you, very direct, read direction,
+
+30
+00:04:47,640 --> 00:04:48,640
+ okay.
+
+31
+00:04:48,640 --> 00:05:09,520
+ So basically, what does it mean, 301, it means, moved permanently, moved, moved, okay.
+
+32
+00:05:09,520 --> 00:05:30,600
+ So what does it mean, moved, moved permanently, the web page moved from, has been moved to
+
+33
+00:05:30,600 --> 00:05:42,720
+ a new address, okay, like this is the old page, and this is the new page, okay, like
+
+34
+00:05:42,720 --> 00:05:44,040
+ new address.
+
+35
+00:05:44,040 --> 00:05:52,400
+ So this means that it was moved from this old, old page to new address, old address to new
+
+36
+00:05:52,400 --> 00:06:00,800
+ address, okay, for that time you can see that 301 moved, okay.
+
+37
+00:06:00,800 --> 00:06:30,000
+ Now let me show you an example, it works, sorry, yeah, moved, it works, let's see, yeah,
+
+38
+00:06:30,000 --> 00:06:58,000
+ you can see, what are you able to see, 301 moved permanently, okay.
+
+39
+00:06:58,000 --> 00:07:02,000
+ So basically, this is the read direction, okay.
+
+40
+00:07:02,000 --> 00:07:16,400
+ So one time, at a time, like somewhere around like, 2000 or 2005 to 2010, Google used
+
+41
+00:07:16,400 --> 00:07:27,480
+ this address, acitypsgoogle.com, okay, now they just moved from this acitypsgoogle.com to this
+
+42
+00:07:27,480 --> 00:07:41,040
+ address, acitypsww.google.com, okay, so this is the part of 301 moved permanently, okay.
+
+43
+00:07:41,040 --> 00:07:53,000
+ Now let's talk about 302, we understood 301, now let's talk about 302, so what will happen
+
+44
+00:07:53,000 --> 00:08:13,480
+ in this 302, it means, basically it means found, or you can say it's temporary redirect,
+
+45
+00:08:13,480 --> 00:08:20,080
+ temporary redirect, we talked about permanent redirect, now it's a temporary redirect, okay.
+
+46
+00:08:20,080 --> 00:08:43,640
+ Temporary redirect, now oh sorry, oh this, this one, so temporary right, now what will happen
+
+47
+00:08:43,640 --> 00:08:52,760
+ in this temporary redirect, the page, temporary, like somewhere else, okay.
+
+48
+00:08:52,760 --> 00:09:04,680
+ So basically, this page, temporary is like, like, like a place where, like you are, this
+
+49
+00:09:04,680 --> 00:09:14,920
+ is your home, okay, this is your home, okay, this is your home, and in a same city, and
+
+50
+00:09:14,920 --> 00:09:27,480
+ you are staying at a hotel, okay, let's say hotel, HO, okay, so basically this is a hotel
+
+51
+00:09:27,480 --> 00:09:37,480
+ and this is your home, okay, at same city, but what happened, you are doing some, you are
+
+52
+00:09:37,480 --> 00:09:44,120
+ doing interior renovation of your home, okay, you are doing your interior renovation in
+
+53
+00:09:44,120 --> 00:09:51,160
+ your home, so for that reason you are not able to, like, you are not able to, like, stay
+
+54
+00:09:51,160 --> 00:09:58,440
+ in your home for, because of lots of stuffs over there, right, so for that reason you are
+
+55
+00:09:58,440 --> 00:10:06,480
+ staying temporary at a hotel, okay, when this maintenance will be done, when this maintenance
+
+56
+00:10:06,480 --> 00:10:12,320
+ will be done, interior designing will be done, then you will come back to this again,
+
+57
+00:10:12,320 --> 00:10:18,720
+ so for that, for this is the, this is the example basically, okay, so this is how, when
+
+58
+00:10:18,720 --> 00:10:26,200
+ like, the page is temporary somewhere else, so example maintenance derived, okay, so they
+
+59
+00:10:26,200 --> 00:10:33,120
+ are, they are doing something, something changes, so for at that time it will, you will,
+
+60
+00:10:33,120 --> 00:10:39,800
+ you will, you will able to see that, three zero, three, three or two found, which means
+
+61
+00:10:39,800 --> 00:10:51,760
+ temporary right, okay, now let us talk about, three zero four, three zero four, where
+
+62
+00:10:51,760 --> 00:11:20,800
+ it means, not modified, the page
+
+63
+00:11:20,800 --> 00:11:30,320
+ hasn't changed, since you last visited, okay, so browser use catchy version faster, so
+
+64
+00:11:30,320 --> 00:11:49,200
+ what will happen, like, let's say, like Google.com, okay, Google.com, they haven't,
+
+65
+00:11:49,200 --> 00:12:07,280
+ like, it haven't changed, okay, when you, when you did last visit, last visit, okay,
+
+66
+00:12:07,280 --> 00:12:17,400
+ so basically, let's say example, you are going to your friend's home, okay, and for, for
+
+67
+00:12:17,400 --> 00:12:24,400
+ like, you want to meet up with your friend, okay, so you, once upon a time you, you,
+
+68
+00:12:24,400 --> 00:12:35,800
+ you just visited his home, near about five years ago, okay, and after that, you again,
+
+69
+00:12:35,800 --> 00:12:48,560
+ you want to again visit, today, okay, so what will happen, you just, in 2020, okay, in 2020,
+
+70
+00:12:48,560 --> 00:12:57,540
+ whatever you just saw in a, in his home, okay, this will be the same, there will be the
+
+71
+00:12:57,540 --> 00:13:07,800
+ same thing, again and again, in, in his home, okay, so in 2020, in 2025, that is the,
+
+72
+00:13:07,800 --> 00:13:14,960
+ like, fully, fully, fully, same things, like, he, he doesn't change the wall paint,
+
+73
+00:13:14,960 --> 00:13:21,200
+ he doesn't change the, like, change the, like, change anything, he doesn't change anything
+
+74
+00:13:21,200 --> 00:13:27,400
+ in his home, okay, so that is a part of, not modified, three or four, not modified, so
+
+75
+00:13:27,400 --> 00:13:39,400
+ now let's talk about, now let's talk about four double X, basically four double X means
+
+76
+00:13:39,400 --> 00:13:52,560
+ client error quotes, client error quotes, okay, now what does it mean client error quotes,
+
+77
+00:13:52,560 --> 00:14:00,700
+ basically, it's your problem, okay, so the first word which will be face four double
+
+78
+00:14:00,700 --> 00:14:11,840
+ O, four double O, which means bad request, okay, which means bad request, so why, why this
+
+79
+00:14:11,840 --> 00:14:18,600
+ will happen, bad request, basically your request was invalid or malformed, and I don't
+
+80
+00:14:18,600 --> 00:14:26,940
+ understand what you are saying for, okay, and example, you said data in the wrong format,
+
+81
+00:14:26,940 --> 00:14:38,400
+ so at that time, this will happen, this four double O will happen, okay, bad, bad request,
+
+82
+00:14:38,400 --> 00:14:45,760
+ now let's talk about, four O, one, four O, one, what does it mean, four O, one, it means
+
+83
+00:14:45,760 --> 00:15:09,280
+ unauthorized, unauthorized, unauthorized, yeah, unauthorized, okay, so when, when you got this unauthorized
+
+84
+00:15:09,280 --> 00:15:19,400
+ four O, one status code, during, you need to log in first, okay, and it was asking you
+
+85
+00:15:19,400 --> 00:15:27,280
+ to, who are you, show me your credentials, and in example, like trying to access your profile
+
+86
+00:15:27,280 --> 00:15:33,740
+ without log in in, okay, without log in in, so at that time you will face this four O, one
+
+87
+00:15:33,740 --> 00:15:40,320
+ unauthorized, okay, so you need to enter the credentials properly, then you can, you can do
+
+88
+00:15:40,320 --> 00:15:52,780
+ what, in your profile, now, now let's talk about four O, three, four O, three, which means
+
+89
+00:15:52,780 --> 00:16:14,020
+ forbidden, which means forbidden, forbidden, when you will face this four O, three, forbidden,
+
+90
+00:16:14,020 --> 00:16:18,920
+ you are logged in, but you don't have permissions, okay, when you are logged in, but you
+
+91
+00:16:18,920 --> 00:16:28,300
+ don't have permissions, like you logged in in user, user role, and you want to do changes,
+
+92
+00:16:28,300 --> 00:16:37,160
+ and you want to do changes in admin, so at that time you need to upgrade your profile from
+
+93
+00:16:37,160 --> 00:16:45,500
+ user to admin, like if you, if you don't do this, then you will, you will, you will
+
+94
+00:16:45,500 --> 00:16:53,780
+ able to see that four O, three, forbidden, okay, you cannot see the admin access, or admin
+
+95
+00:16:53,780 --> 00:17:05,700
+ stuffs directly, without getting the admin access, okay, now let's say, now another thing
+
+96
+00:17:05,700 --> 00:17:16,700
+ was four O, four, I hope you are, you guys are familiar with this four O, four, so basically
+
+97
+00:17:16,700 --> 00:17:37,900
+ it means not found, not found, so the page doesn't exist basically, okay, when the page
+
+98
+00:17:37,900 --> 00:17:47,660
+ doesn't exist, doesn't exist, like it will, it will say I can't, I can't find what
+
+99
+00:17:47,660 --> 00:17:57,520
+ we're looking for, example, example clicking on a broken link, or typing wrong URL, okay,
+
+100
+00:17:57,520 --> 00:18:05,760
+ so at that time you will face this four O, four, four, four, now let's talk about five
+
+101
+00:18:05,760 --> 00:18:29,020
+ double x, now let's talk about five double x, five double x, what does it mean, it means
+
+102
+00:18:29,020 --> 00:18:50,260
+ internal server error, okay, internal server error, okay,
+
+103
+00:18:50,260 --> 00:19:14,900
+ internal server, so when it, when this will happen, internal server error, so something broke
+
+104
+00:19:14,900 --> 00:19:19,980
+ on the server, okay, something broke on the server, it's not your fault basically, guys,
+
+105
+00:19:19,980 --> 00:19:27,100
+ it's a totally server fault, server site fault, okay, so it will say like, oops, something
+
+106
+00:19:27,100 --> 00:19:34,960
+ went wrong on our end, okay, examples of work code has a book, so at that time you will
+
+107
+00:19:34,960 --> 00:20:02,260
+ be able to see this, like, like 500, 500, which is i s e, which is internal server
+
+108
+00:20:02,260 --> 00:20:19,340
+ error, okay, now let's talk about our next status code code, which is 5002, okay, so what does
+
+109
+00:20:19,340 --> 00:20:27,020
+ it mean 5002, it means bad request, sorry, bad gateway, it's not request, already we did
+
+110
+00:20:27,020 --> 00:20:41,860
+ bad request, which is like, already we talked about gateway, bad gateway, so what will happen
+
+111
+00:20:41,860 --> 00:20:49,860
+ in this five or two bad gateway, so server received invalid response from another server,
+
+112
+00:20:49,860 --> 00:20:56,540
+ and example, example server trying to contact data with what failing, okay, at that time, this
+
+113
+00:20:56,540 --> 00:21:19,180
+ will happen, now let's talk about 5,0003, okay, 503, which is service service, service
+
+114
+00:21:19,180 --> 00:21:39,700
+ unavailable, okay, service unavailable, so at this time 503, service unavailable, server
+
+115
+00:21:39,700 --> 00:21:47,500
+ is temporarily down or overloaded, we are too busy right now trying again later, okay, so
+
+116
+00:21:47,500 --> 00:21:54,600
+ at that time you are getting this 503, which is like server is temporary down or overloaded
+
+117
+00:21:54,600 --> 00:22:04,500
+ example websites under having heavy traffic, so at that time you will able to see this 503,
+
+118
+00:22:04,500 --> 00:22:14,860
+ so now let's now let's understand what we did, here is the quick memory tricks, okay,
+
+119
+00:22:14,860 --> 00:22:22,760
+ so basically 200, okay, success, everything is too good, 300, red irate, go three
+
+120
+00:22:22,760 --> 00:22:33,500
+ doors down, okay, 400, which is your fault for you to fix, okay, so and then 5w, which
+
+121
+00:22:33,500 --> 00:22:47,320
+ is server fault 5w on server, okay, so this was the thing in status mode, thank you guys.
+
