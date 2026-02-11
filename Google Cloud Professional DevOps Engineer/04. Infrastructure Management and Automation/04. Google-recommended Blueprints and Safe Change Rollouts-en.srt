@@ -1,0 +1,179 @@
+1
+00:00:00,319 --> 00:00:05,320
+Google created blueprints and safe rollout practices so that you can
+
+2
+00:00:05,320 --> 00:00:09,539
+follow the best practices and avoid the general mistakes.
+
+3
+00:00:09,840 --> 00:00:13,340
+A Google Cloud blueprint is a pre‑built production‑ready
+
+4
+00:00:13,520 --> 00:00:17,780
+Infrastructure as a Code template created by Google engineers.
+
+5
+00:00:17,840 --> 00:00:22,159
+It includes best practices, security standards by default,
+
+6
+00:00:22,479 --> 00:00:27,309
+IAM patterns, logging and monitoring, and safe rollout configurations.
+
+7
+00:00:27,690 --> 00:00:30,569
+Blueprints are shipped through Cloud Foundation Toolkit,
+
+8
+00:00:30,780 --> 00:00:33,380
+which, in short, is also called a CFT.
+
+9
+00:00:33,860 --> 00:00:36,849
+These modules are used by Fortune 500 companies,
+
+10
+00:00:37,020 --> 00:00:40,200
+governments, startups, and financial institutions.
+
+11
+00:00:40,619 --> 00:00:43,220
+Blueprints solve the three biggest problems.
+
+12
+00:00:43,580 --> 00:00:45,979
+First one is inconsistent configuration.
+
+13
+00:00:46,380 --> 00:00:49,959
+Engineers writing the infrastructure code manually make
+
+14
+00:00:49,959 --> 00:00:52,450
+subtle mistakes like wrong subnet,
+
+15
+00:00:52,740 --> 00:00:55,840
+wrong VPC. Blueprints eliminate those mistakes.
+
+16
+00:00:56,200 --> 00:00:59,240
+Another problem it solves is reinventing infrastructure.
+
+17
+00:00:59,569 --> 00:01:03,959
+Every company should not design their own VPC, firewall, etc.
+
+18
+00:01:04,169 --> 00:01:06,919
+Google knows the best recommended patterns,
+
+19
+00:01:07,239 --> 00:01:10,019
+and blueprint helps you to encode that.
+
+20
+00:01:10,160 --> 00:01:12,800
+Another problem it solves is in unsafe deployments.
+
+21
+00:01:12,919 --> 00:01:15,510
+Blueprints often include the built‑in strategies,
+
+22
+00:01:15,860 --> 00:01:22,099
+so you inherently deploy safer architectures, even when you use IEAC.
+
+23
+00:01:22,480 --> 00:01:24,639
+How you roll out the changes matters.
+
+24
+00:01:25,129 --> 00:01:27,080
+Google recommends several techniques.
+
+25
+00:01:27,330 --> 00:01:30,309
+The first one is a blue‑green infrastructure change.
+
+26
+00:01:30,610 --> 00:01:33,889
+It means that you build the new infrastructure in parallel,
+
+27
+00:01:33,970 --> 00:01:35,199
+and once everything works,
+
+28
+00:01:35,410 --> 00:01:40,489
+you switch traffic over and delete the older version only after the validation.
+
+29
+00:01:40,839 --> 00:01:42,760
+Another way is a canary rollout.
+
+30
+00:01:43,000 --> 00:01:43,440
+In this,
+
+31
+00:01:43,599 --> 00:01:48,510
+you deploy the changes to a small portion of the environment first, for example,
+
+32
+00:01:48,760 --> 00:01:52,480
+deploy a new version of a service to just 5% of the parts,
+
+33
+00:01:52,599 --> 00:01:58,199
+validate everything looks good, then you deploy the remaining 95%.
+
+34
+00:01:58,610 --> 00:02:00,949
+Another way is gradual IAM changes.
+
+35
+00:02:01,099 --> 00:02:03,819
+IAM is one of the most dangerous areas to modify.
+
+36
+00:02:04,029 --> 00:02:06,300
+Google recommends introducing new roles first,
+
+37
+00:02:06,419 --> 00:02:07,690
+test with the small groups,
+
+38
+00:02:07,699 --> 00:02:11,080
+and removing all permissions only after the validation.
+
+39
+00:02:11,259 --> 00:02:15,940
+Another one is a node pool rotation instead of in‑place upgrades.
+
+40
+00:02:16,169 --> 00:02:21,565
+Rotation creates new nodes, drains workload, and deletes old nodes safely.
+
+41
+00:02:21,875 --> 00:02:25,714
+Lastly, using feature flag for risky infra changes.
+
+42
+00:02:25,804 --> 00:02:28,725
+This is common in Terraform or GitHub's pipeline.
+
+43
+00:02:28,835 --> 00:02:32,395
+Instead of immediately deploying a risky infra changes,
+
+44
+00:02:32,634 --> 00:02:35,074
+teams wrap it inside a feature flag.
+
+45
+00:02:35,195 --> 00:02:38,214
+This lets you toggle features progressively.
