@@ -1,0 +1,207 @@
+1
+00:00:01,008 --> 00:00:03,190
+CI is where everything begins.
+
+2
+00:00:03,490 --> 00:00:06,690
+It's the engine that tells you your code compiles,
+
+3
+00:00:06,730 --> 00:00:09,789
+your tests passed, your container image is secure,
+
+4
+00:00:10,130 --> 00:00:12,649
+and your build artifact is ready to deploy.
+
+5
+00:00:12,810 --> 00:00:17,659
+And if your CI pipeline breaks, your entire delivery process comes to a halt.
+
+6
+00:00:17,850 --> 00:00:20,450
+Let's just see how we can build this continuous
+
+7
+00:00:20,450 --> 00:00:22,049
+integration with the cloud build.
+
+8
+00:00:22,209 --> 00:00:23,219
+Let me create a folder.
+
+9
+00:00:23,329 --> 00:00:26,610
+Now, let's go inside that folder, and let's create one file.
+
+10
+00:00:26,729 --> 00:00:28,530
+I'm using an open editor now.
+
+11
+00:00:28,600 --> 00:00:30,889
+Inside this folder, let me create a file,
+
+12
+00:00:31,049 --> 00:00:35,680
+quickstart.sh, and let's have this Hello, world code inside that.
+
+13
+00:00:35,770 --> 00:00:38,979
+Let's create one more file that is a Dockerfile.
+
+14
+00:00:39,169 --> 00:00:40,569
+Now inside my Dockerfile,
+
+15
+00:00:40,689 --> 00:00:44,330
+I'm just writing this small code saying FROM Alpine, COPY
+
+16
+00:00:44,330 --> 00:00:48,450
+quickstart.sh, and CMD/quickstart.sh.
+
+17
+00:00:48,729 --> 00:00:52,930
+Now go back to the terminal window, and let me say here chmod and
+
+18
+00:00:52,930 --> 00:00:55,840
+give the execute permission on quickstart.sh.
+
+19
+00:00:56,209 --> 00:00:59,009
+Now type in the command saying gcloud artifacts
+
+20
+00:00:59,009 --> 00:01:02,610
+repositories create quickstart‑docker‑repo1,
+
+21
+00:01:02,729 --> 00:01:05,830
+and you give the location and format as docker.
+
+22
+00:01:05,930 --> 00:01:06,690
+Let's enter.
+
+23
+00:01:06,830 --> 00:01:10,449
+It will take a while, and then it will create the repository.
+
+24
+00:01:10,569 --> 00:01:13,629
+Use the gcloud builds submit command to build the
+
+25
+00:01:13,629 --> 00:01:15,569
+Docker image using a Dockerfile.
+
+26
+00:01:15,690 --> 00:01:18,449
+You don't require a separate cloud‑built config file.
+
+27
+00:01:18,610 --> 00:01:22,809
+Let's get your cloud project ID by running the following command.
+
+28
+00:01:22,970 --> 00:01:28,379
+Now use the same project ID and write the command gcloud builds submit.
+
+29
+00:01:28,779 --> 00:01:29,669
+Give the region,
+
+30
+00:01:30,099 --> 00:01:35,199
+give tag which contains your project ID and entire repo information,
+
+31
+00:01:35,260 --> 00:01:36,139
+and say Enter.
+
+32
+00:01:36,309 --> 00:01:39,059
+Now you can see that it has started the build.
+
+33
+00:01:39,180 --> 00:01:42,239
+Now it's pushing the repository image,
+
+34
+00:01:42,330 --> 00:01:44,779
+and then you can see that it is successful.
+
+35
+00:01:44,940 --> 00:01:51,739
+So now what we can do is we can go to our UI and search for cloud build.
+
+36
+00:01:53,250 --> 00:01:58,220
+And there we should be able to see the build that we have generated just now.
+
+37
+00:01:58,330 --> 00:02:01,569
+You can see that we got this one build ready.
+
+38
+00:02:01,730 --> 00:02:05,720
+You can click on that build and you can see the build ID.
+
+39
+00:02:05,839 --> 00:02:11,139
+If you come down to our console, you can see the ID here, f53,
+
+40
+00:02:11,309 --> 00:02:14,949
+which exactly is the same you can see here at the top.
+
+41
+00:02:15,070 --> 00:02:19,199
+So this is the specific build which we have created.
+
+42
+00:02:19,309 --> 00:02:22,110
+If you want to go inside the build artifacts,
+
+43
+00:02:22,229 --> 00:02:24,820
+you can see the name of the image as well.
+
+44
+00:02:24,910 --> 00:02:29,190
+Later on, if you want to see the repository, you can see the repositories here.
+
+45
+00:02:29,750 --> 00:02:32,740
+And if you want to add the triggers, for example,
+
+46
+00:02:33,000 --> 00:02:36,960
+you want this build to get automatically generated whenever
+
+47
+00:02:36,960 --> 00:02:41,880
+some triggers happens up like trigger could be when somebody
+
+48
+00:02:41,880 --> 00:02:46,880
+pushes something inside the repository or maybe someone pushes
+
+49
+00:02:46,880 --> 00:02:49,009
+a new tag or a pull request,
+
+50
+00:02:49,279 --> 00:02:53,279
+and in that case, you automatically wanted to create the trigger,
+
+51
+00:02:53,460 --> 00:02:57,690
+you can just set that trigger here, and that will run the build for you.
+
+52
+00:02:58,020 --> 00:03:00,259
+You can make this build automated.
