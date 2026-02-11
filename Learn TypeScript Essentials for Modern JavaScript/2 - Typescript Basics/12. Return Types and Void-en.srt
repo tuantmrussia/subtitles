@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:04,880
+ In this lesson we're going to be learning about function return types in TypeScript.
+
+2
+00:00:04,880 --> 00:00:10,440
+ We're going to know exactly how to define what a function returns, which is going to make
+
+3
+00:00:10,440 --> 00:00:16,340
+ your code safer and then much easier to understand.
+
+4
+00:00:16,340 --> 00:00:19,600
+ So every function can return a value.
+
+5
+00:00:19,600 --> 00:00:26,120
+ TypeScript of course allows us to explicitly define the type of that return value.
+
+6
+00:00:26,120 --> 00:00:29,760
+ This is called the functions return type.
+
+7
+00:00:29,760 --> 00:00:35,600
+ By default, TypeScript's going to try to infer the type, which means we don't have to
+
+8
+00:00:35,600 --> 00:00:37,160
+ explicitly set it.
+
+9
+00:00:37,160 --> 00:00:40,560
+ This is going to try and do its best at guessing it.
+
+10
+00:00:40,560 --> 00:00:45,640
+ But if you specify it, it's going to make your code much more predictable.
+
+11
+00:00:45,640 --> 00:00:49,240
+ So let's just knock up an example.
+
+12
+00:00:49,240 --> 00:00:53,880
+ So let's have a function and a simple one, like adding two numbers together.
+
+13
+00:00:53,880 --> 00:01:00,040
+ A number and let's have B number.
+
+14
+00:01:00,040 --> 00:01:08,560
+ Now we could just simply return a plus B. If we do that, of course, TypeScript's going
+
+15
+00:01:08,560 --> 00:01:13,720
+ to have a look and work out that we are indeed trying to return a number.
+
+16
+00:01:13,720 --> 00:01:16,760
+ So it's inferring this type.
+
+17
+00:01:16,760 --> 00:01:23,000
+ But to make it more explicit, we can actually kind of enforce it by doing code on after
+
+18
+00:01:23,000 --> 00:01:26,560
+ the function and then do number.
+
+19
+00:01:26,560 --> 00:01:30,840
+ Of course, we have exactly the same thing, but we're just having TypeScript.
+
+20
+00:01:30,840 --> 00:01:32,480
+ You know, we know what we're doing.
+
+21
+00:01:32,480 --> 00:01:33,480
+ This is what we watch.
+
+22
+00:01:33,480 --> 00:01:35,760
+ We want to return.
+
+23
+00:01:35,760 --> 00:01:36,760
+ It's going to protect us.
+
+24
+00:01:36,760 --> 00:01:41,480
+ So if we didn't try to return any other value, for example, a Boolean, then it's going
+
+25
+00:01:41,480 --> 00:01:43,280
+ to say, I don't think so.
+
+26
+00:01:43,280 --> 00:01:47,320
+ And it's going to return an error, protect us.
+
+27
+00:01:47,320 --> 00:01:52,600
+ What happens if we actually didn't want to return anything at all?
+
+28
+00:01:52,600 --> 00:02:00,840
+ So let's just have a function and let's say, call it discrete, take a name and inside
+
+29
+00:02:00,840 --> 00:02:08,840
+ that function, we just want to just do a console log and say, hello, just return the person's
+
+30
+00:02:08,840 --> 00:02:14,680
+ name, hello, dollar name.
+
+31
+00:02:14,680 --> 00:02:19,880
+ Now, if you hover over it, again, the TypeScript is going to be smart and it's going to
+
+32
+00:02:19,880 --> 00:02:25,680
+ figure out that we are not returning anything and it's going to assign the type void.
+
+33
+00:02:25,680 --> 00:02:30,480
+ So void means we're not expecting any return value, which of course we're not because
+
+34
+00:02:30,480 --> 00:02:32,400
+ we're just doing a console log.
+
+35
+00:02:32,400 --> 00:02:40,680
+ Now, in any this case, we could try to be more explicit by doing colon and then void and
+
+36
+00:02:40,680 --> 00:02:44,880
+ void means void of any return type.
+
+37
+00:02:44,880 --> 00:02:50,920
+ Why bother to use explicit return types, if we could just let TypeScript food out ourselves.
+
+38
+00:02:50,920 --> 00:02:57,360
+ Well, first of all, we are in a new world now, we're not using JavaScript, using TypeScript,
+
+39
+00:02:57,360 --> 00:03:04,080
+ so we want to type everything we can because it makes our code self documenting.
+
+40
+00:03:04,080 --> 00:03:10,040
+ As we go along, makes it very clear, including TypeScript and anyone looking at the code
+
+41
+00:03:10,040 --> 00:03:16,040
+ that our intention is that we're not going to return anything and it's not just a mistake.
+
+42
+00:03:16,040 --> 00:03:22,520
+ Also helps TypeScript to course catch errors and that makes our lives a lot easier.
+
+43
+00:03:22,520 --> 00:03:29,000
+ And as I said, it will really improve code readability for other developers.
+
+44
+00:03:29,000 --> 00:03:35,360
+ And this is of course going to have benefits if you're working on large projects or a member
+
+45
+00:03:35,360 --> 00:03:36,360
+ of a team.
+
+46
+00:03:36,360 --> 00:03:42,680
+ Of course, if you're just kind of throwing some code together as an experiment on your own
+
+47
+00:03:42,680 --> 00:03:50,560
+ tiny project, then feel free to not bother to put any return types and that TypeScript
+
+48
+00:03:50,560 --> 00:03:51,560
+ to it.
+
+49
+00:03:51,560 --> 00:03:59,160
+ But again, I recommend perhaps even in doing small projects that you become disciplined,
+
+50
+00:03:59,160 --> 00:04:06,280
+ that you make sure you always put return types on your functions so that when you
+
+51
+00:04:06,280 --> 00:04:13,400
+ get a job and you're working with a bigger team, that you've already got those skills
+
+52
+00:04:13,400 --> 00:04:16,480
+ and discipline in place.
+
+53
+00:04:16,480 --> 00:04:20,880
+ Not just return one value, we can of course return multiple values, so we could do, for
+
+54
+00:04:20,880 --> 00:04:26,000
+ example, we could return a string, we could also return a number if you want particular
+
+55
+00:04:26,000 --> 00:04:32,180
+ one to two, and of course we could quite as well code do that.
+
+56
+00:04:32,180 --> 00:04:39,240
+ Now one thing you could do is you could say I want to return void and I also could return
+
+57
+00:04:39,240 --> 00:04:45,360
+ a string and TypeScript is happy because there could be a situation if you have some logic
+
+58
+00:04:45,360 --> 00:04:53,840
+ in your code to return a string on the certain circumstances and lots of return a value
+
+59
+00:04:53,840 --> 00:04:55,640
+ on the different circumstances.
+
+60
+00:04:55,640 --> 00:04:58,000
+ So this is kind of valid.
+
+61
+00:04:58,000 --> 00:05:04,380
+ Now here's some quick tips, so if you're writing some functions for a public API, then
+
+62
+00:05:04,380 --> 00:05:09,160
+ always declare the return types because your clients are going to thank you if you're
+
+63
+00:05:09,160 --> 00:05:14,160
+ very upfront with what you're actually returning.
+
+64
+00:05:14,160 --> 00:05:20,800
+ Use void for any functions that just perform actions, perhaps examples are just like say
+
+65
+00:05:20,800 --> 00:05:25,200
+ logging or the debugging purposes.
+
+66
+00:05:25,200 --> 00:05:31,320
+ And definitely try to avoid relying on TypeScript's inference if you're writing some
+
+67
+00:05:31,320 --> 00:05:35,200
+ complex functions because it may not always get it right.
+
