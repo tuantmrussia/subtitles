@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:06,800
+Được rồi sau đó bạn bè, chúng ta hãy đi về phía trước và nói về một khái niệm khác là cốt lõi
+
+2
+00:00:06,800 --> 00:00:12,960
+của ngôn ngữ lập trình không chỉ Java và đó là cách bạn xử lý ngoại lệ. Tóm lại,
+
+3
+00:00:12,960 --> 00:00:16,080
+Chúng tôi gọi đây là ngoại lệ xử lý.
+
+4
+00:00:16,080 --> 00:00:27,360
+Một lần nữa, tôi chỉ sử dụng bảng bên phải của tôi đầu tiên, nhưng bảng số rộng hơn để làm cho nó nhiều hơn
+
+5
+00:00:27,360 --> 00:00:32,480
+Dễ hiểu hơn cho bạn trước khi chúng tôi lao vào và viết một số mã thực tế bởi vì
+
+6
+00:00:32,480 --> 00:00:38,000
+Bạn sẽ thấy tất cả các điểm khác nhau như thế nào khi điều này là hoàn toàn tay trên
+
+7
+00:00:38,000 --> 00:00:43,280
+Và chúng ta lấy nó từ vết xước hoàn toàn như đã hứa. Vì vậy, ngoại lệ xử lý, trước khi chúng tôi nói về
+
+8
+00:00:43,280 --> 00:00:49,760
+Ngoại lệ, hãy nói về ngoại lệ, ngoại lệ là gì, phải không? Rõ ràng là gì?
+
+9
+00:00:49,760 --> 00:00:56,640
+Ngoại lệ từ tiếng Anh và làm bất cứ điều gì hoặc bất kỳ ví dụ đến trong tâm trí của bạn, bất kỳ ngoại lệ
+
+10
+00:00:56,640 --> 00:01:03,200
+xảy ra trong cuộc sống hàng ngày của bạn hoặc đã xảy ra cho đến nay, suy nghĩ về nó, hoặc là video trở lại
+
+11
+00:01:03,200 --> 00:01:10,560
+và sau đó vẽ bản đồ những gì tôi nói. Vậy, ngoại lệ trong thế giới thực có thể là bất cứ thứ gì không bình thường,
+
+12
+00:01:10,560 --> 00:01:15,280
+Không phải thứ mà bạn mong đợi mỗi ngày. Giống như nói ví dụ, đi về phía trước
+
+13
+00:01:15,280 --> 00:01:20,640
+Anh đang đi du lịch và có một tai nạn trong khi anh đang lái xe đạp.
+
+14
+00:01:20,640 --> 00:01:26,960
+Đó là một ngoại lệ bởi vì mỗi ngày hãy nói rằng trong sáu tháng đi học của bạn hoặc đi
+
+15
+00:01:26,960 --> 00:01:32,800
+để trường đại học của bạn hoặc đi đến nơi làm việc của bạn mà đã không xảy ra, bạn bắt đầu từ ai
+
+16
+00:01:32,800 --> 00:01:40,400
+Đến nơi làm việc hoặc trường đại học của bạn một cách an toàn và đó là tốt, nhưng vào một ngày đẹp trời
+
+17
+00:01:40,400 --> 00:01:47,680
+Một tai nạn xảy ra và mọi chuyện trở nên tồi tệ. Một trường hợp ngoại lệ khác là động đất,
+
+18
+00:01:47,680 --> 00:01:55,120
+Đúng không? Nó không xảy ra mỗi ngày, nhưng một khi nó xảy ra, nó có thể phá hủy sự tàn phá. Một người khác sẽ bị lũ lụt,
+
+19
+00:01:55,120 --> 00:02:03,200
+Đúng không? Bởi vì lũ lụt không đến mỗi ngày, nhưng khi chúng đến, chúng có thể phá hủy mọi thứ.
+
+20
+00:02:03,200 --> 00:02:09,360
+chúng ta kiếm được cho đến bây giờ. Và một ngoại lệ khác xuất hiện trong đầu là một vụ trộm theo hy vọng của bạn,
+
+21
+00:02:09,360 --> 00:02:15,120
+Tiến lên, phải không? Bởi vì nó không xảy ra mỗi ngày, nhưng có thể xảy ra bất cứ lúc nào, bất cứ ngày nào.
+
+22
+00:02:15,120 --> 00:02:21,360
+Đó là tất cả các ngoại lệ bây giờ sử dụng và một khi bạn hiểu chúng, bây giờ đó là cách chúng tôi xử lý chúng?
+
+23
+00:02:21,360 --> 00:02:26,640
+Về mặt động đất, bạn xử lý ngoại lệ như thế nào? Rõ ràng bạn không thể loại bỏ hoàn toàn chúng,
+
+24
+00:02:26,640 --> 00:02:34,480
+Vẫn chưa, nhưng anh chuẩn bị đi. Bạn tạo ra nhà bằng chứng động đất và về lũ lụt,
+
+25
+00:02:34,480 --> 00:02:39,680
+Anh chuẩn bị thế nào? Anh xử lý ngoại lệ kiểu đó thế nào? Anh biết ai là người
+
+26
+00:02:39,680 --> 00:02:46,240
+Những người dễ bị lũ lụt hơn, dễ bị tổn thương hơn.
+
+27
+00:02:46,240 --> 00:02:54,560
+nói dối, ai ở lại, hay ai sống ở khu hạ tầng, phải không? Những người không, họ ít dễ bị tổn thương hơn.
+
+28
+00:02:54,560 --> 00:03:01,520
+Và sau đó cách bạn chuẩn bị là bạn đặt tất cả vàng, tiền mặt và đồ quý giá của bạn trên tầng hai,
+
+29
+00:03:01,520 --> 00:03:06,160
+Không phải ở tầng hầm, không phải dưới tầng hầm, đúng không? Đó là cách bạn chuẩn bị bởi
+
+30
+00:03:06,160 --> 00:03:10,800
+Ngay cả khi lũ lụt đã đến, rõ ràng dữ liệu của bạn trên tầng hai sẽ được lưu trong tất cả
+
+31
+00:03:10,800 --> 00:03:19,840
+Xác suất. Vậy nói về trộm cắp, phải không? Nỗi sợ của trộm cắp là cách bạn chuẩn bị là bạn nhận được một tốt
+
+32
+00:03:19,840 --> 00:03:25,440
+Khóa. Đó là bước đầu tiên. Bước thứ hai là bạn chỉ đặt điều đó vào một cụ thể
+
+33
+00:03:25,440 --> 00:03:32,240
+không phải trong tất cả các phòng. Thứ ba là anh thuê một nhân viên bảo vệ từ một cơ quan an ninh và đưa họ đi.
+
+34
+00:03:32,240 --> 00:03:37,680
+phải không? Vì vậy, đó là các bước,
+
+35
+00:03:37,680 --> 00:03:42,640
+Các biện pháp của anh. Về mặt lập trình một lần nữa, có những ngoại lệ, tình huống như,
+
+36
+00:03:42,640 --> 00:03:48,320
+Ví dụ, nếu bạn cố gắng chia một cái gì đó bằng 0, đó là một cái gì đó chưa được định nghĩa,
+
+37
+00:03:48,320 --> 00:03:54,240
+Đúng không? Và Java rõ ràng sẽ không bị mắc kẹt, đó là một ngoại lệ, đó là ngoại lệ số học,
+
+38
+00:03:54,240 --> 00:04:00,000
+đúng không? Và làm thế nào bạn xử lý nó là những gì chúng tôi, chúng tôi sẽ thảo luận,
+
+39
+00:04:00,000 --> 00:04:04,800
+Bảo vệ mà anh sắp đặt ở đây là gì? Và cho tất cả
+
+40
+00:04:04,800 --> 00:04:10,000
+Ngoại lệ, không được sử dụng như tôi đã nói, chia bởi zero hoặc có một tập tin trên hệ thống của bạn,
+
+41
+00:04:10,000 --> 00:04:15,440
+Nhưng một con vi rút xuất hiện và xóa đi cùng một mã đã tồn tại và hoạt động trước đó không hoạt động
+
+42
+00:04:15,440 --> 00:04:21,760
+tự nhiên xuất hiện. Một lần nữa, ngoại lệ, không phải anh. Làm thế nào để bạn xử lý đó là chúng tôi là
+
+43
+00:04:21,760 --> 00:04:26,720
+sẽ nói về rằng do thám không tìm thấy, nhưng tất cả các ngoại lệ trong sử dụng của chúng tôi Java không được
+
+44
+00:04:26,720 --> 00:04:32,480
+Bị mắc kẹt và không bị xấu hổ, họ đã tạo ra những lớp ngoại lệ khác nhau cho chúng tôi trong ADI,
+
+45
+00:04:32,480 --> 00:04:39,280
+Và họ đưa ra ngoại lệ, chúng tôi nói, một ngoại lệ được ném mà chúng tôi cần phải xử lý, phải không? Và làm thế nào
+
+46
+00:04:39,280 --> 00:04:45,920
+Anh có lo được không? Bạn đặt đoạn mã dễ bị tổn thương đó vào cái gọi là bộ ba.
+
+47
+00:04:49,680 --> 00:04:58,720
+Được rồi, để đoạn mã dễ bị tổn thương ở đây, có thể là một dòng, 10 dòng hoặc 50 dòng,
+
+48
+00:04:58,720 --> 00:05:05,200
+đặt nó trong khối ba, và sau khi bắt được, đặt vào xử lý ngoại lệ thích hợp,
+
+49
+00:05:05,200 --> 00:05:14,640
+Và một đối tượng, tôi sẽ gọi nó là trọng tài, và sau đó làm một cái gì đó với điều đó ở đây,
+
+50
+00:05:20,640 --> 00:05:26,400
+phải không? Vì vậy, những gì xảy ra là trong ba khối, bạn đặt vào mã dễ bị tổn thương của bạn
+
+51
+00:05:26,400 --> 00:05:32,240
+phải không? Và sau đó, bạn đặt vào cái bẫy,
+
+52
+00:05:32,240 --> 00:05:38,320
+Nếu ngoại lệ đã được ném, bởi vì các ngoại lệ không bao giờ được đảm bảo để được ném, phải không? Ngươi
+
+53
+00:05:38,320 --> 00:05:45,040
+Chỉ có thể cho rằng bạn chỉ có thể nghĩ về họ rằng họ là có thể bởi vì động đất không bao giờ
+
+54
+00:05:45,040 --> 00:05:51,760
+xảy ra hàng ngày, lũ lụt không đến mỗi ngày, không xảy ra mỗi ngày, đúng không? Họ có thể
+
+55
+00:05:51,760 --> 00:05:56,800
+Thỉnh thoảng cũng có một lần. Vì vậy, tôi, bạn là một nhà phát triển, sẽ không bao giờ biết liệu một ngoại lệ sẽ được
+
+56
+00:05:56,800 --> 00:06:02,560
+ném hay không. Nó có được đảm bảo ném hay không? Khi nó được ném, nhưng bạn luôn luôn biết
+
+57
+00:06:02,560 --> 00:06:08,960
+Là một nhà phát triển, bạn sẽ luôn biết rằng trong mã của tôi, có một đoạn mã dễ bị tổn thương,
+
+58
+00:06:08,960 --> 00:06:14,320
+Nó rất nguy hiểm, bởi vì ở nhà tôi, tôi biết nếu tôi có một số vàng
+
+59
+00:06:14,320 --> 00:06:20,960
+Tiền mặt, tôi dễ bị ảnh hưởng, đúng không? Nếu tôi không có tiền vàng, thì không, tôi có thể ngủ.
+
+60
+00:06:20,960 --> 00:06:26,320
+phải không? Vì vậy bạn sẽ luôn luôn biết, đó là lý do tại sao tôi sẽ chỉ nhắc lại rằng. Đó là,
+
+61
+00:06:26,320 --> 00:06:30,240
+Là một nhà phát triển, bạn sẽ không bao giờ biết chắc rằng một ngoại lệ sẽ được ném hay không,
+
+62
+00:06:30,240 --> 00:06:35,280
+Khi nó sẽ được ném hay không, vào những lúc nào, nhưng bạn sẽ luôn luôn biết, nếu tôi có một tổn thương
+
+63
+00:06:35,280 --> 00:06:40,480
+Hành động trong mã của tôi, và đó là khi tôi nói, hãy chăm sóc, và làm thế nào để chăm sóc, đó là
+
+64
+00:06:40,480 --> 00:06:46,240
+Được rồi, cảm ơn bạn, đặt mã dễ bị tổn thương ở đây, xem, nếu ngoại lệ không đến, mã của bạn
+
+65
+00:06:46,240 --> 00:06:52,720
+Điều hành tốt, tiền mặt được bỏ qua, và kiểm soát tiếp tục ở đây, nhưng nếu một nơi nào đó trong cố gắng,
+
+66
+00:06:52,720 --> 00:06:59,120
+ngoại trừ được nêu ra, ngoại lệ được đưa ra, còn mã khác trong lần thử sẽ không được thực hiện,
+
+67
+00:06:59,120 --> 00:07:04,720
+Ngay lập tức đi ra ngoài và tìm kiếm bộ phận điều khiển chốt thích hợp của nó, và bạn mang nó với
+
+68
+00:07:04,720 --> 00:07:12,400
+biến, và sau đó làm một cái gì đó với điều đó ở đây, phải, như làm hoặc như hoặc đó thẻ bảo mật
+
+69
+00:07:12,400 --> 00:07:19,680
+phải không? Vì vậy, đó là cách nó hoạt động, hãy đi trước
+
+70
+00:07:19,680 --> 00:07:26,320
+và viết một số mã thực sự để chứng minh rằng thử tiền mặt cho bạn, và cách xử lý ngoại lệ trong công việc.
+
