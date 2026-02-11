@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:05,320
+ All right. So as in the last video, I told you that there's a better way, much
+
+2
+00:00:05,320 --> 00:00:10,400
+ succinct way to traverse an area in Java now. And I told you that I'll keep
+
+3
+00:00:10,400 --> 00:00:14,920
+ you updated with the with the recent changes that have been made from time to
+
+4
+00:00:14,920 --> 00:00:19,200
+ time in the language. And one of those was the enhanced for loop. And it was
+
+5
+00:00:19,200 --> 00:00:22,760
+ specifically introduced for a couple of reasons. The first one being arrays and
+
+6
+00:00:22,760 --> 00:00:27,160
+ the second one being collections. And we are in good spot right now to use that
+
+7
+00:00:27,160 --> 00:00:33,160
+ with an area. And that is the Java five enhanced for looping. Other languages
+
+8
+00:00:33,160 --> 00:00:36,520
+ they call in the for each, but Java thought that the designers thought that
+
+9
+00:00:36,520 --> 00:00:41,080
+ it's still the Java for loop. Right. It's not for each. So why should we just
+
+10
+00:00:41,080 --> 00:00:45,720
+ stick to calling in the for loop, but enhanced and more intelligent as you're
+
+11
+00:00:45,720 --> 00:00:49,160
+ going to shortly find out. And as you look at line number 20, this perfectly
+
+12
+00:00:49,160 --> 00:00:54,240
+ works fine, but, but it looks a bit laborious. You have to put in the
+
+13
+00:00:54,240 --> 00:00:58,040
+ internalization, the condition, the increment agreement and get the values
+
+14
+00:00:58,040 --> 00:01:04,640
+ out of it, which shortly would look more like like mid-age. Right. And that is
+
+15
+00:01:04,640 --> 00:01:10,120
+ we have, I'll just put in the comments for you. I'll just say the Java five
+
+16
+00:01:10,120 --> 00:01:17,440
+ enhanced for loop. And the syntax for doing that is you just say a four and then
+
+17
+00:01:17,440 --> 00:01:28,320
+ you say variable declaration. And then you say name or array or collection. By
+
+18
+00:01:28,320 --> 00:01:32,760
+ the way for now, let's just stick to array. Once we come across collections,
+
+19
+00:01:32,760 --> 00:01:37,320
+ then we can use the same enhanced for loop for collections as well. So and this
+
+20
+00:01:37,320 --> 00:01:41,320
+ is where it's where it gets different. That is you just need to declare a new
+
+21
+00:01:41,320 --> 00:01:46,600
+ variable here. And the rule is the type of that variable should be the same as
+
+22
+00:01:46,600 --> 00:01:49,880
+ of the type of this area. Right. That's very important. Otherwise, it won't
+
+23
+00:01:49,880 --> 00:01:53,400
+ work. Okay. Now, you declare a variable, then instead of a semicolon, you
+
+24
+00:01:53,400 --> 00:01:57,040
+ just say a column and then the name of the array, which you're going to
+
+25
+00:01:57,040 --> 00:02:00,280
+ traverse, which you're going to deal with, which you're going to get the
+
+26
+00:02:00,280 --> 00:02:05,680
+ values out of. Right. So put that here. And no internalization required. No
+
+27
+00:02:05,680 --> 00:02:09,800
+ condition, no increment agreement, because it's an intelligent form of the
+
+28
+00:02:09,800 --> 00:02:13,280
+ for loop. That is, that's why it's called the enhanced for loop. So following
+
+29
+00:02:13,280 --> 00:02:18,600
+ the syntax, let's go on and do this with the enhanced for loop. I'll just
+
+30
+00:02:18,600 --> 00:02:32,800
+ comment this, I'll say, or with Java, five enhanced for loop. Okay. How do we do
+
+31
+00:02:32,800 --> 00:02:40,760
+ that? I'll say a four and the variable type this time is long, which we're
+
+32
+00:02:40,760 --> 00:02:48,160
+ going to traverse. Right. I'll say long value, name of value, array is values
+
+33
+00:02:48,160 --> 00:02:52,280
+ appropriately. See, the benefit you derive from naming your identifiers
+
+34
+00:02:52,280 --> 00:02:55,640
+ appropriately, this is values, which is more than one values. That's why
+
+35
+00:02:55,640 --> 00:03:00,000
+ it's an array. This is a value, which is one value. And then go on and do
+
+36
+00:03:00,000 --> 00:03:04,520
+ whatever you want to do with this value. That's it. Shorter precise,
+
+37
+00:03:04,600 --> 00:03:10,960
+ succent less verbos coding. You hit run. Let's see if this still works. And as works
+
+38
+00:03:10,960 --> 00:03:17,400
+ like a charm, but without that laborious steps, right? No need to put in the
+
+39
+00:03:17,400 --> 00:03:20,480
+ internalization. What you need to do is how does this work? You say long
+
+40
+00:03:20,480 --> 00:03:25,480
+ value, right? So it's a call in values. So what it does is it intelligently
+
+41
+00:03:25,480 --> 00:03:29,920
+ gets the first value out of first index at zero index, puts it into this
+
+42
+00:03:29,920 --> 00:03:34,440
+ variable, and then you are free to do whatever you want to do with that variable.
+
+43
+00:03:34,440 --> 00:03:39,000
+ Remember, if you did it with the what we now call after Java five, we started
+
+44
+00:03:39,000 --> 00:03:43,080
+ to call this as a traditional for loop, because it had a tradition. It was
+
+45
+00:03:43,080 --> 00:03:48,240
+ there from the times of C and other languages. But now this is new. Since this
+
+46
+00:03:48,240 --> 00:03:53,040
+ come in, came in, we call this the traditional for loop, right? So now with
+
+47
+00:03:53,040 --> 00:03:57,760
+ the enhanced for loop gets the value, right? You print it out. You don't need to
+
+48
+00:03:57,760 --> 00:04:02,440
+ write it now. What looks like the ugly way, array of index, no directly, say
+
+49
+00:04:02,440 --> 00:04:08,440
+ value, right? And then you go on the loops, loop moves on to the second iteration.
+
+50
+00:04:08,440 --> 00:04:13,440
+ Intelligently moves the cursor one step forward, gets you the value from the
+
+51
+00:04:13,440 --> 00:04:19,000
+ second index that in our case is one and puts it into this particular variable.
+
+52
+00:04:19,000 --> 00:04:21,840
+ And then you're free to do whatever you want to do. No increment,
+
+53
+00:04:21,880 --> 00:04:28,160
+ tickling and require no condition. And then once it reaches the end of the array,
+
+54
+00:04:28,160 --> 00:04:31,880
+ intelligently gets you out of the for loop, right? So that is why it's called
+
+55
+00:04:31,880 --> 00:04:36,280
+ the enhanced for loop, because it produces succinct code less verb or scored.
+
+56
+00:04:36,280 --> 00:04:41,080
+ No angelization, no conditional increment agreement, but does the same job, but
+
+57
+00:04:41,080 --> 00:04:47,440
+ for all its glory, the enhanced for loop remains less flexible, less strong
+
+58
+00:04:47,440 --> 00:04:51,240
+ than the traditional for loop. That's why the traditional for loop is still
+
+59
+00:04:51,240 --> 00:04:55,960
+ used in the language, right? Why do I say so? Because the enhanced for
+
+60
+00:04:55,960 --> 00:05:02,160
+ loop can only work in forward on the direction. If you have to get back
+
+61
+00:05:02,160 --> 00:05:05,960
+ from the array in reverse order, you have to go back and use the traditional
+
+62
+00:05:05,960 --> 00:05:10,720
+ for loop, right? And the enhanced for loop can only work with areas or
+
+63
+00:05:10,720 --> 00:05:14,520
+ collections. But the traditional for loop can be used to print for
+
+64
+00:05:14,520 --> 00:05:18,520
+ but not see series can be used to get you prime numbers, print different
+
+65
+00:05:18,520 --> 00:05:21,240
+ series and even work with areas and collections. That's why it's more
+
+66
+00:05:21,240 --> 00:05:27,120
+ flexible, more stronger. This is not so, but for this kind of a situation
+
+67
+00:05:27,120 --> 00:05:31,480
+ where I just have to travel to an array in forward only direction, I
+
+68
+00:05:31,480 --> 00:05:36,200
+ definitely use the enhanced for loop. And I hope you would agree with me as well.
+
