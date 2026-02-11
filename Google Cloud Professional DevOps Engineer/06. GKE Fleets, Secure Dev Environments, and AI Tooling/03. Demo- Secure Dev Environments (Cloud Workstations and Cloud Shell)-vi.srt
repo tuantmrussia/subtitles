@@ -1,0 +1,640 @@
+1
+00:00:01,850 --> 00:00:05,800
+Các nhà phát triển yêu thích tự do, và các đội an ninh yêu thích kiểm soát.
+
+2
+00:00:05,940 --> 00:00:08,800
+Làm thế nào bạn cung cấp cho các kỹ sư nhanh chóng, linh hoạt,
+
+3
+00:00:09,020 --> 00:00:12,699
+và môi trường phát triển mạnh mẽ mà cũng không cho phép
+
+4
+00:00:12,699 --> 00:00:15,189
+Mã hay thẻ tín dụng cho máy tính cá nhân?
+
+5
+00:00:15,300 --> 00:00:18,559
+Câu trả lời là trạm làm việc của mây và mây Shell.
+
+6
+00:00:18,649 --> 00:00:20,000
+Để xem chúng ta làm thế nào.
+
+7
+00:00:20,100 --> 00:00:25,215
+Trong hiện đại DevOps, các nhà phát triển thường cần truy cập vào sản xuất như ADIs,
+
+8
+00:00:25,625 --> 00:00:27,215
+Truy cập vào khu bảo tồn tư nhân,
+
+9
+00:00:27,274 --> 00:00:32,395
+và đôi khi họ cũng cần một trải nghiệm địa phương như nhận dạng. Nhưng
+
+10
+00:00:32,395 --> 00:00:34,534
+Khi chúng ta làm điều đó trên máy tính xách tay truyền thống,
+
+11
+00:00:34,794 --> 00:00:37,154
+Điều đó tạo ra nguy cơ rò rỉ mã nguồn,
+
+12
+00:00:37,395 --> 00:00:39,845
+Vấn đề an ninh như bí mật được lưu trữ tại địa phương.
+
+13
+00:00:39,994 --> 00:00:45,744
+Để trả lời, bạn có thể tạo ra một trạm làm việc dựa trên mây.
+
+14
+00:00:45,944 --> 00:00:47,235
+Gõ vào lệnh đầu tiên.
+
+15
+00:00:47,669 --> 00:00:52,029
+Tôi sẽ nói rằng g Clouds làm việc cụm, và tạo ra cụm.
+
+16
+00:00:52,189 --> 00:00:56,110
+Bây giờ tôi đang cung cấp cho tên của cụm này như một cụm dev.
+
+17
+00:00:56,229 --> 00:01:00,689
+Tôi cần cung cấp cho khu vực, mạng lưới và thông tin mạng ngầm.
+
+18
+00:01:00,830 --> 00:01:02,000
+Và hãy nói rằng Enter.
+
+19
+00:01:02,159 --> 00:01:02,930
+Bây giờ hãy nhớ,
+
+20
+00:01:03,150 --> 00:01:05,503
+Khi bạn sẽ tạo ra cụm, đây là
+
+21
+00:01:05,503 --> 00:01:09,984
+mất khoảng 15 đến 20 phút
+
+22
+00:01:10,183 --> 00:01:13,444
+Vì vậy chúng ta phải thi hành mệnh lệnh này và kiên nhẫn chờ đợi.
+
+23
+00:01:13,694 --> 00:01:15,374
+Bây giờ cụm của tôi được tạo ra.
+
+24
+00:01:15,573 --> 00:01:17,543
+Nếu tôi muốn đi xem nó,
+
+25
+00:01:17,704 --> 00:01:22,344
+Tôi có thể xuống đây trên Google Cloud và tìm trạm làm việc.
+
+26
+00:01:22,823 --> 00:01:26,524
+Vì vậy, hãy đi đến trạm làm việc, và ở đây dưới trạm làm việc,
+
+27
+00:01:26,664 --> 00:01:31,624
+Tôi có thể thấy quản lý Cluster. Và bên trong bộ quản lý cụm, bạn có thể thấy
+
+28
+00:01:31,624 --> 00:01:37,160
+rằng chúng tôi đã có cụm dev sẵn sàng và nó đã thực hiện tất cả các mạng lưới và
+
+29
+00:01:37,160 --> 00:01:40,319
+Thông tin ngầm mà tôi đã cung cấp.
+
+30
+00:01:40,519 --> 00:01:45,989
+Nó không phải là bạn chỉ có thể tạo ra cụm này từ lệnh.
+
+31
+00:01:46,199 --> 00:01:50,610
+Bạn cũng có thể tạo ra cụm này trực tiếp từ Google Cloud.
+
+32
+00:01:51,139 --> 00:01:54,120
+Bạn có thể xuống đây và nói rằng tạo hóa,
+
+33
+00:01:54,180 --> 00:01:57,779
+và sau đó bạn có thể cung cấp tất cả các thông tin như tên,
+
+34
+00:01:58,569 --> 00:02:02,709
+Vị trí, và thiết lập mạng lưới, bất cứ thứ gì anh muốn,
+
+35
+00:02:03,019 --> 00:02:04,599
+và sau đó bạn có thể nói tạo.
+
+36
+00:02:04,739 --> 00:02:08,649
+Vậy cụm mây làm việc này có thể được tạo ra thông qua
+
+37
+00:02:08,649 --> 00:02:11,070
+cũng như qua đây.
+
+38
+00:02:11,509 --> 00:02:13,869
+Bây giờ, như chúng ta đã tạo ra cụm,
+
+39
+00:02:14,139 --> 00:02:18,300
+Bây giờ là lúc để tiến hành và thiết lập một số loại cấu hình cho điều đó.
+
+40
+00:02:18,539 --> 00:02:22,339
+Vì vậy, tôi sẽ sử dụng lệnh của đám mây lần nữa.
+
+41
+00:02:22,720 --> 00:02:25,820
+Hãy để tôi nói rõ ràng ở đây và gõ lệnh.
+
+42
+00:02:26,210 --> 00:02:28,690
+Vì vậy, lệnh để tạo ra các trạm làm việc
+
+43
+00:02:28,690 --> 00:02:32,419
+Cấu hình là g Cloud works conig,
+
+44
+00:02:32,570 --> 00:02:36,270
+và sau đó bạn nói tạo và cung cấp cho các tên cấu hình.
+
+45
+00:02:36,570 --> 00:02:40,990
+Tôi sẽ đặt tên cho nó như là thanh toán.
+
+46
+00:02:41,210 --> 00:02:43,800
+Tôi cung cấp cho các vùng, cụm.
+
+47
+00:02:44,020 --> 00:02:48,580
+Hãy nhớ rằng đây là cụm mà chúng ta đã tạo ra trong bước trước.
+
+48
+00:02:48,899 --> 00:02:52,059
+Vì vậy, tôi cung cấp cho các cụm tương tự đó là cụm dev.
+
+49
+00:02:52,300 --> 00:02:54,199
+Tôi cung cấp loại máy móc,
+
+50
+00:02:54,419 --> 00:02:58,919
+Nói rằng khi bạn sẽ thêm các trạm làm việc sử dụng cấu hình này,
+
+51
+00:02:59,500 --> 00:03:04,440
+Kích thước của máy đó sẽ là e2 độ C2.
+
+52
+00:03:04,619 --> 00:03:08,740
+và sau đó tôi cung cấp cuối cùng hình ảnh container.
+
+53
+00:03:08,940 --> 00:03:12,610
+Vì vậy, những gì có thể là hình ảnh của container, đó là
+
+54
+00:03:12,610 --> 00:03:14,539
+sẽ được nạp đạn vào cái máy đó.
+
+55
+00:03:14,770 --> 00:03:18,929
+Vì vậy, tôi đang sử dụng một số hình ảnh được xác định sẵn, và hãy nói rằng Enter.
+
+56
+00:03:19,210 --> 00:03:22,429
+Bây giờ điều này cũng sẽ mất một vài phút
+
+57
+00:03:22,610 --> 00:03:25,520
+để tạo ra cấu hình này.
+
+58
+00:03:25,809 --> 00:03:30,770
+Bây giờ cùng cấu hình bạn có thể quay lại và nhìn thấy từ UI.
+
+59
+00:03:30,970 --> 00:03:32,589
+Vì vậy, bạn giảm thiểu này cửa sổ,
+
+60
+00:03:32,889 --> 00:03:37,050
+đi đến các cấu hình trạm làm việc, và ở đây bạn có thể thấy
+
+61
+00:03:37,050 --> 00:03:40,740
+mà cấu hình một khi điều này được thêm vào đúng cách. Phải
+
+62
+00:03:40,740 --> 00:03:45,740
+Bây giờ nó đang ở trạng thái cập nhật, vì vậy nó chưa được tạo ra hoàn toàn.
+
+63
+00:03:45,990 --> 00:03:47,960
+Trong khi đó, nó đang chạy phía sau hiện trường.
+
+64
+00:03:48,179 --> 00:03:50,600
+Chúng ta có thể vào bên trong cái cấu trúc thanh toán này.
+
+65
+00:03:50,820 --> 00:03:53,460
+Đó là cấu hình. Ở đây bạn có thể thấy rằng
+
+66
+00:03:53,669 --> 00:03:55,820
+Hiện giờ tình trạng đang được cập nhật.
+
+67
+00:03:56,179 --> 00:04:00,300
+Nhưng nó chứa thông tin mà chúng tôi cung cấp,
+
+68
+00:04:00,309 --> 00:04:02,460
+giống như một cụm tên là keepclucker.
+
+69
+00:04:03,000 --> 00:04:03,899
+Thiết lập máy móc,
+
+70
+00:04:03,979 --> 00:04:09,300
+Nó vẫn còn được cập nhật, và tương ứng, chúng tôi có thể thêm một vài
+
+71
+00:04:09,300 --> 00:04:14,619
+thông tin trong phần cấu hình này. Và bạn cũng có thể nhấn vào Thêm người dùng
+
+72
+00:04:14,619 --> 00:04:18,000
+và sự cho phép cho cấu hình cụ thể đó.
+
+73
+00:04:18,238 --> 00:04:22,489
+Thực tế, bạn cũng có thể tạo ra cấu hình từ bây giờ.
+
+74
+00:04:22,660 --> 00:04:24,950
+Bạn chỉ có thể nói ở đây +Create,
+
+75
+00:04:25,019 --> 00:04:28,220
+và sau đó bạn có thể tạo ra cấu hình trạm làm việc từ
+
+76
+00:04:28,220 --> 00:04:30,940
+ở đây cũng vậy. Và khi bạn làm điều đó từ đây,
+
+77
+00:04:31,149 --> 00:04:33,399
+Bạn có thể cung cấp thêm thông tin,
+
+78
+00:04:33,660 --> 00:04:37,059
+rất cụ thể. Vào lúc gõ lệnh,
+
+79
+00:04:37,179 --> 00:04:40,179
+Chúng tôi có thể không cung cấp thông tin chi tiết đó,
+
+80
+00:04:40,500 --> 00:04:44,739
+Nhưng ở đây bạn có thể thiết lập thêm vài thông tin nữa.
+
+81
+00:04:44,980 --> 00:04:47,279
+Vì vậy, nếu bạn trở lại trạm cuối của chúng tôi,
+
+82
+00:04:47,459 --> 00:04:52,579
+Bạn có thể thấy rằng nó cho thấy cấu hình đã được tạo ra thành công.
+
+83
+00:04:52,790 --> 00:04:55,769
+Bây giờ, một khi cấu hình được tạo ra thành công,
+
+84
+00:04:55,989 --> 00:04:58,570
+Đã đến lúc tạo ra nơi làm việc.
+
+85
+00:04:58,829 --> 00:05:01,290
+Vì vậy, hãy gõ thêm một lệnh cho điều đó.
+
+86
+00:05:01,510 --> 00:05:07,049
+Vì vậy, mệnh lệnh là các trạm làm việc của đám mây và chúng tôi đang nói đến việc tạo ra các trạm làm việc,
+
+87
+00:05:07,350 --> 00:05:11,109
+Đặt tên cho trạm làm việc như là thanh toán.
+
+88
+00:05:11,339 --> 00:05:16,350
+Chúng tôi cung cấp cho các khu vực và cụm và cấu trúc mà chúng tôi có chỉ
+
+89
+00:05:16,350 --> 00:05:21,570
+tạo để trạm làm việc này tự động lấy tất cả các tính chất
+
+90
+00:05:21,570 --> 00:05:23,989
+mà bạn đã thiết lập vào cấu hình.
+
+91
+00:05:24,269 --> 00:05:24,950
+Nói Enter đi.
+
+92
+00:05:25,190 --> 00:05:29,190
+Bây giờ nó sẽ mất thêm vài phút nữa, và nó sẽ tạo ra. Vậy
+
+93
+00:05:29,190 --> 00:05:32,250
+Anh có thể thấy là chúng ta đã sẵn sàng.
+
+94
+00:05:33,799 --> 00:05:35,730
+Chúng ta có thể đi xuống phần UI một lần nữa,
+
+95
+00:05:35,989 --> 00:05:37,950
+Đi xuống trạm làm việc của đám mây,
+
+96
+00:05:38,109 --> 00:05:41,230
+Và ở đây chúng tôi có thể nhấp vào thẻ làm việc này.
+
+97
+00:05:41,660 --> 00:05:46,470
+Và bên trong trạm làm việc, bạn có thể thấy rằng chúng tôi đã có một trạm làm việc sẵn sàng.
+
+98
+00:05:46,790 --> 00:05:50,429
+Vậy trạm làm việc ngay bây giờ ở bang Stoped,
+
+99
+00:05:51,059 --> 00:05:54,450
+Hoặc là anh có thể ra lệnh để khởi động trạm làm việc đó,
+
+100
+00:05:54,630 --> 00:05:57,899
+Hoặc anh có thể bắt đầu từ đây nói về Bắt đầu.
+
+101
+00:05:58,109 --> 00:06:02,910
+Bây giờ điều này cũng sẽ mất vài phút để bắt đầu và sẵn sàng.
+
+102
+00:06:03,190 --> 00:06:05,369
+Bây giờ một khi nó bắt đầu và sẵn sàng,
+
+103
+00:06:05,510 --> 00:06:10,950
+Chúng ta có thể dùng Kinh Thánh trực tiếp. Bạn sẽ nhận được một URL.
+
+104
+00:06:11,190 --> 00:06:16,339
+Với sự giúp đỡ của địa chỉ URL đó, bạn có thể khởi động trạm làm việc chính xác này.
+
+105
+00:06:16,579 --> 00:06:20,309
+Bây giờ các bạn có thể thấy là trạm làm việc của chúng ta đang ở bang Running.
+
+106
+00:06:20,549 --> 00:06:22,649
+Tôi có thể nhấp vào 3 chấm này,
+
+107
+00:06:22,670 --> 00:06:26,989
+Và nếu tôi muốn xem các bản ghi cụ thể liên quan đến trạm làm việc đó,
+
+108
+00:06:27,109 --> 00:06:32,429
+Tôi có thể click vào các bản ghi, và nó sẽ cho tôi thấy tình trạng của nó,
+
+109
+00:06:32,670 --> 00:06:35,350
+và bạn có thể thấy toàn bộ thông tin.
+
+110
+00:06:35,589 --> 00:06:40,709
+Nếu bạn trở lại một lần nữa và hãy nói rằng bạn muốn để có được vào này công việc,
+
+111
+00:06:40,910 --> 00:06:45,029
+Vì vậy, bạn chỉ cần nhấp chuột vào trạm làm việc này và các
+
+112
+00:06:45,029 --> 00:06:48,190
+Ở trên cùng, bạn có thể thấy một lựa chọn trong việc khởi chạy.
+
+113
+00:06:48,390 --> 00:06:49,640
+Để bạn có thể khởi động nó,
+
+114
+00:06:49,750 --> 00:06:53,829
+hoặc có thể bạn muốn kết nối đến ứng dụng web trên một cụ thể
+
+115
+00:06:53,829 --> 00:06:56,670
+Cổng ra hay là bạn muốn kết nối qua SSH.
+
+116
+00:06:56,989 --> 00:07:01,429
+Vì vậy, hãy làm kết nối với ứng dụng web, và tôi nhận được URL này.
+
+117
+00:07:01,709 --> 00:07:07,649
+Những gì tôi có thể làm là tôi có thể sao chép địa chỉ URL này và mở nó trong một tab khác.
+
+118
+00:07:07,950 --> 00:07:12,109
+Bây giờ anh sẽ thấy là chúng ta có cả một trạm làm việc.
+
+119
+00:07:12,309 --> 00:07:16,239
+Vì vậy, đây là một môi trường sạch sẽ, chúng tôi có nó.
+
+120
+00:07:16,390 --> 00:07:18,989
+Tôi có thể nói chúng ta chỉ cần mở một thư mục,
+
+121
+00:07:19,109 --> 00:07:25,230
+và từ đây tôi có thể bắt đầu làm công việc của mình trên trạm làm việc mới được tạo ra của Mây.
+
+122
+00:07:25,619 --> 00:07:29,269
+Vì vậy, đó sẽ là một môi trường trong sạch nơi nhà phát triển của bạn có thể
+
+123
+00:07:29,269 --> 00:07:33,989
+Làm việc và tất cả mọi thứ sẽ cư ngụ trong này máy thay vì trên
+
+124
+00:07:33,989 --> 00:07:36,109
+Máy tính cá nhân của nhà phát triển.
+
+125
+00:07:36,309 --> 00:07:39,269
+Bạn cũng có được phần cuối, nhấp vào ba dòng này,
+
+126
+00:07:39,589 --> 00:07:41,670
+Nói trạm cuối và nói trạm cuối mới.
+
+127
+00:07:41,869 --> 00:07:44,130
+Vì vậy, ở dưới cùng, bạn có được nhà ga.
+
+128
+00:07:44,299 --> 00:07:46,130
+Để tôi mở rộng nó một chút.
+
+129
+00:07:46,309 --> 00:07:50,230
+Nếu bạn muốn cài đặt thêm mục, bạn có thể cài đặt nó từ đây.
+
+130
+00:07:50,309 --> 00:07:53,010
+Bạn chỉ cần nói sudo apt update.
+
+131
+00:07:54,649 --> 00:07:56,869
+Bây giờ cập nhật này được thực hiện, để tôi làm rõ,
+
+132
+00:07:57,089 --> 00:08:01,089
+Và sau đó tôi có thể tiếp tục cài đặt
+
+133
+00:08:01,089 --> 00:08:04,450
+Thêm những thư viện như Google Cloud CLI,
+
+134
+00:08:04,730 --> 00:08:10,510
+Có thể Kubectl, Terraform, và tất cả những gì tôi có thể làm trên trạm làm việc cụ thể này.
+
+135
+00:08:10,690 --> 00:08:13,730
+Ngoài trạm làm việc đặc biệt này,
+
+136
+00:08:13,970 --> 00:08:16,750
+Chúng tôi cũng có một lựa chọn của một tấm phủ Mây.
+
+137
+00:08:16,920 --> 00:08:20,510
+Bây giờ là mây Đạn là thứ luôn sẵn có,
+
+138
+00:08:20,679 --> 00:08:22,825
+và thiết bị cuối dev nhẹ.
+
+139
+00:08:23,005 --> 00:08:26,904
+Mặc dù chúng tôi đã sử dụng nó từ đầu khóa học này,
+
+140
+00:08:27,144 --> 00:08:28,864
+Tôi sẽ hướng dẫn anh lần nữa.
+
+141
+00:08:29,065 --> 00:08:32,304
+Khi bạn đi xuống Google Cloud, ở góc phải,
+
+142
+00:08:32,424 --> 00:08:34,414
+bạn thấy một dấu hiệu cho nhà ga.
+
+143
+00:08:34,655 --> 00:08:36,344
+Ngay bây giờ, trạm cuối của tôi đã mở rồi.
+
+144
+00:08:36,664 --> 00:08:40,234
+Để tôi xuống dưới, để tôi đóng cửa sổ lại.
+
+145
+00:08:40,385 --> 00:08:44,664
+Ở trên cùng, bạn bắt đầu lại xem tùy chọn thiết bị cuối này được bật.
+
+146
+00:08:44,825 --> 00:08:47,905
+Bạn có thể nhấp vào cái này, và bạn sẽ có được tấm phủ Mây.
+
+147
+00:08:48,145 --> 00:08:50,460
+Bây giờ vẻ đẹp của tầng mây này là bạn có thể
+
+148
+00:08:51,440 --> 00:08:53,369
+Chạy bất cứ mệnh lệnh nào anh muốn,
+
+149
+00:08:53,559 --> 00:08:56,520
+Và anh không cần phải cài đặt gì đặc biệt.
+
+150
+00:08:56,799 --> 00:09:02,469
+Tất cả Google Cloud SDK và CLI đã được cài đặt ở đây.
+
+151
+00:09:02,679 --> 00:09:07,020
+Trong thực tế, nếu bạn muốn có một loại mã phòng thu trực quan,
+
+152
+00:09:07,520 --> 00:09:11,380
+Bạn có thể nhấp vào biên tập mở này và vào môi trường
+
+153
+00:09:11,559 --> 00:09:15,869
+Nơi bạn có thể nhận được một IPE như hiển thị mã studio.
+
+154
+00:09:16,150 --> 00:09:22,294
+Đám mây Shell này được cho là một VM miễn phí, và nó đã được cài đặt trước với g Cloud,
+
+155
+00:09:22,455 --> 00:09:24,494
+Kubectl, và Terraform.
+
+156
+00:09:24,684 --> 00:09:28,955
+Nó cũng bao gồm 5 GB lưu trữ liên tục,
+
+157
+00:09:29,094 --> 00:09:33,854
+Và quan trọng nhất, nó được bảo mật, dựa trên trình duyệt như là,
+
+158
+00:09:34,054 --> 00:09:37,414
+và nó không cần bất kỳ giấy tờ địa phương nào.
+
+159
+00:09:37,664 --> 00:09:42,174
+Vì vậy, đó là cách trạm làm việc của đám mây và Mây Shell cung cấp một an toàn,
+
+160
+00:09:42,234 --> 00:09:45,594
+Môi trường sản xuất hàng loạt sẵn sàng phát triển.
+
