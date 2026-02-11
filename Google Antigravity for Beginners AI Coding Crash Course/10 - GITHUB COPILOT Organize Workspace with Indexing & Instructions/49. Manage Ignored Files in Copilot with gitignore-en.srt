@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:06,640
+ In this lesson, I will talk about how to control what parts of your project GitHub Co-Pilot
+
+2
+00:00:06,640 --> 00:00:08,240
+ and see and use.
+
+3
+00:00:08,240 --> 00:00:09,240
+ Let's get started.
+
+4
+00:00:09,240 --> 00:00:14,080
+ We'll start by talking about the dot getting your file.
+
+5
+00:00:14,080 --> 00:00:21,360
+ How it works, white matters, and how it helps you keep your workspace secure and efficient.
+
+6
+00:00:21,360 --> 00:00:27,520
+ GitHub Co-Pilot uses your workspace context to provide better answers, search your code,
+
+7
+00:00:27,520 --> 00:00:31,280
+ and understand how your files connect.
+
+8
+00:00:31,280 --> 00:00:34,880
+ But sometimes you don't want everything to be included.
+
+9
+00:00:34,880 --> 00:00:42,520
+ For example, files that contain secrets or large-built folders that aren't relevant to your code.
+
+10
+00:00:42,520 --> 00:00:45,120
+ That's where the dot getting your file comes in.
+
+11
+00:00:45,120 --> 00:00:51,160
+ It tells both Git and Co-Pilot, which files and folders should be ignored during indexing
+
+12
+00:00:51,160 --> 00:00:52,800
+ and search.
+
+13
+00:00:52,800 --> 00:00:58,440
+ Sales and listed here will be excluded from Co-Pilot's workspace index and won't appear
+
+14
+00:00:58,440 --> 00:01:01,520
+ in workspace searches or code suggestions.
+
+15
+00:01:01,520 --> 00:01:04,440
+ Unless you open those files directly.
+
+16
+00:01:04,440 --> 00:01:09,040
+ Now let's talk about why you might want to ignore files.
+
+17
+00:01:09,040 --> 00:01:12,520
+ There are two main reasons, security and performance.
+
+18
+00:01:12,520 --> 00:01:19,360
+ For security as a dot getting your file helps make sure that sensitive files like API keys,
+
+19
+00:01:19,360 --> 00:01:25,440
+ credentials, or local configuration files, don't get included in Co-Pilot's context
+
+20
+00:01:25,440 --> 00:01:29,440
+ or accidentally shared in code examples.
+
+21
+00:01:29,440 --> 00:01:35,720
+ Also Co-Pilot doesn't upload your private code to external servers for training, excluding
+
+22
+00:01:35,720 --> 00:01:40,800
+ these files still adds an extra layer of safety.
+
+23
+00:01:40,800 --> 00:01:47,120
+ For performance, ignoring unnecessary folders like node modules, dist or coverage keeps
+
+24
+00:01:47,120 --> 00:01:51,520
+ Co-Pilot's workspace index, smaller and faster.
+
+25
+00:01:51,520 --> 00:01:56,480
+ This means quicker responses and more relevant suggestions that focus on your actual source
+
+26
+00:01:56,480 --> 00:01:57,480
+ code.
+
+27
+00:01:57,480 --> 00:02:01,760
+ Let's go over how to configure your dot getting your file.
+
+28
+00:02:01,760 --> 00:02:04,360
+ Creating or updating it is simple.
+
+29
+00:02:04,360 --> 00:02:07,480
+ It just uses plain text patterns.
+
+30
+00:02:07,480 --> 00:02:11,600
+ You can ignore single files, folders or file types.
+
+31
+00:02:11,600 --> 00:02:19,320
+ For example, adding the line config.json, ignores one specific file named config.json.
+
+32
+00:02:19,320 --> 00:02:23,800
+ It tells heat and Co-Pilot to completely skip that file.
+
+33
+00:02:23,800 --> 00:02:29,320
+ If you add this slash, it ignores the entire dist folder and everything inside it.
+
+34
+00:02:29,320 --> 00:02:33,280
+ You usually do this for build or compiled files.
+
+35
+00:02:33,280 --> 00:02:41,160
+ Adding start.log ignores all files ending with .log, for instance, server.log or error.log won't
+
+36
+00:02:41,160 --> 00:02:42,560
+ be tracked.
+
+37
+00:02:42,560 --> 00:02:49,360
+ Using double start/logs tells git to ignore any folder named logs, no matter where it is.
+
+38
+00:02:49,360 --> 00:02:54,840
+ Whether it's at the root or deep inside another folder, all will be ignored.
+
+39
+00:02:54,840 --> 00:03:01,320
+ Finally, adding an exclamation mark before a pattern means don't ignore.
+
+40
+00:03:01,320 --> 00:03:05,880
+ So if everything else is ignored, the app folder will still be included.
+
+41
+00:03:05,880 --> 00:03:10,640
+ Now how does Co-Pilot actually use the .kittigner file?
+
+42
+00:03:10,640 --> 00:03:15,320
+ When you run a workspace search or ask a pilot a question about your project, it looks
+
+43
+00:03:15,320 --> 00:03:19,320
+ only at files not ignored by .kittigner.
+
+44
+00:03:19,320 --> 00:03:24,480
+ Ignored files are skipped during indexing and won't show up in semantic searches.
+
+45
+00:03:24,480 --> 00:03:30,480
+ However, if you open an ignored file manually, Co-Pilot can still use that files content
+
+46
+00:03:30,480 --> 00:03:35,280
+ in your current chat or completion, because it's now active in your editor.
+
+47
+00:03:35,280 --> 00:03:39,860
+ This matches GitHub's official behavior and is designed to help you when you're working
+
+48
+00:03:39,860 --> 00:03:42,520
+ with that file intentionally.
+
+49
+00:03:42,520 --> 00:03:47,600
+ There's one more thing to be aware of, negation limitations.
+
+50
+00:03:47,600 --> 00:03:52,960
+ If you ignore an entire folder you can't re-include files inside it unless you change
+
+51
+00:03:52,960 --> 00:03:53,960
+ the pattern.
+
+52
+00:03:53,960 --> 00:04:00,880
+ For example, if you ignore the whole public folder and then try to include style.css,
+
+53
+00:04:00,880 --> 00:04:04,440
+ it won't work because the folder itself is already excluded.
+
+54
+00:04:04,440 --> 00:04:08,200
+ So that's how .kittigner works with GitHub Co-Pilot.
+
+55
+00:04:08,200 --> 00:04:14,800
+ A simple but powerful way to keep your AI assistant focused on the right files.
+
+56
+00:04:14,800 --> 00:04:20,560
+ By ignoring sensitive or unnecessary files, you make Co-Pilot faster, safer and much more
+
+57
+00:04:20,560 --> 00:04:24,440
+ efficient at understanding your real code.
+
+58
+00:04:24,440 --> 00:04:28,560
+ I hope this lesson was useful for you and see you in the next lesson.
+
