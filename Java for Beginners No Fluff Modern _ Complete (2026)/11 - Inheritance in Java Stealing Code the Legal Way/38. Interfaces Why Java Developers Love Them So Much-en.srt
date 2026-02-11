@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:21,000
+ Welcome back friends and in the last video, we had a detailed look at what abstract classes and Java bring to the table, such a great addition, but now we take it a step further in our pursuit of ideal types and that is where we talk about interfaces right and this is your final stop right that means that is now.
+
+2
+00:00:21,000 --> 00:00:46,000
+ Think about this abstract class as a tool you that this should just look as an idea as we as we saw them now super classes, they should just act as an idea to define the behavior of all other subclasses to come and but how do they do things that is left on their own that is what we live on their own to decide right that's what we did with a kind of site classes, but now after sometime you have a look at this class.
+
+3
+00:00:46,000 --> 00:01:02,000
+ The other class human or any of the class that you're working with, and you think that why does even breathe have to be here, why do we even have one concrete method right and that is where the concept why why why do these just act like.
+
+4
+00:01:02,000 --> 00:01:15,000
+ The ideal types that should just tell us what to do, but not how to do because we figured that out on their own that will make us individual unique distinctive classes right.
+
+5
+00:01:15,000 --> 00:01:25,000
+ That's where what I do is I even get rid of the green sporting or even make it as abstract.
+
+6
+00:01:25,000 --> 00:01:46,000
+ Even the class keyword now goes for a toss and I release that with the keyword human right see and the great thing with intelligence says to uses is to implementations you click on that it will take you to those particular spots but for now it says that this is an interface just zoom into this right what is this now this is just a bunch of.
+
+7
+00:01:46,000 --> 00:02:10,000
+ A bunch of declarations and I tell you an interface and Java is declared with the keyword interface and it can only have abstract methods inside it, but just put it in brackets before Java 8 came in so there was something significant that changed in Java 8 will have a data and look at that in the next video, but for now just for the context of this video.
+
+8
+00:02:10,000 --> 00:02:19,000
+ Let's just think about this example in the pre Java 8 world, and in the pre Java 8 world.
+
+9
+00:02:19,000 --> 00:02:48,000
+ I mean, you cannot even have one concrete method it can just have abstract methods and even the variables that it can have.
+
+10
+00:02:48,000 --> 00:03:12,000
+ The variables that it can have an instance level, they should be fine, like all things if you don't put final they're always final implicitly and guess what at interfaces are implicitly abstract whether you write it or not, and that's why I write it right and even methods in an interface they're implicitly abstract.
+
+11
+00:03:12,000 --> 00:03:27,000
+ To add to that methods in an interface are implicitly abstract and public. Yes, you were that right what was the default scope of class members that I told you until now it was package private right.
+
+12
+00:03:27,000 --> 00:03:44,000
+ It changed it, but interfaces change the game that means that implicitly public and it makes sense why because public means universal scope, but we don't have any fear of that being misused why they do not even have bodies bodies would be in subclasses.
+
+13
+00:03:44,000 --> 00:04:04,000
+ Interface methods are implicitly abstract and public and they can have only constants that means only variables which are final whether explicitly or implicitly alright and like abstract classes interfaces in Java cannot be instantiated we cannot create objects out of them.
+
+14
+00:04:04,000 --> 00:04:09,000
+ That's not the thing that I'm telling you about interfaces in Java.
+
+15
+00:04:09,000 --> 00:04:27,000
+ That's obviously when we can't have objects on abstract classes, how can you expect me to create an object of an interface because an abstract class could still have concrete methods even then object instantiation was not permitted, but now interfaces right.
+
+16
+00:04:27,000 --> 00:04:56,000
+ We don't have anything concrete how we would create an object that's why it's prohibited right it's not allow for you to create an instance of an interface in Java and the same rules that is an a subclass of an interface needs to overwrite all the abstract methods come in down or declare it's also abstract but there's this error that's for a different reason here the reason is even the keyword change and rightfully so from extends to limits.
+
+17
+00:04:56,000 --> 00:05:25,000
+ The class can never extend an interface it can only implement it and that's makes that makes perfect science sense because now this is just an idea which was of which I was looking forward to all the around all the now right that means just an idea needs to be implemented that's by the keyword changed from extend to implement a class can extend a class a class can implement an interface now whenever still although you're overriding it and walk let's overwrite.
+
+18
+00:05:25,000 --> 00:05:28,000
+ Green as well.
+
+19
+00:05:28,000 --> 00:05:32,000
+ And I'm say south.
+
+20
+00:05:32,000 --> 00:05:34,000
+ Ran jeans.
+
+21
+00:05:34,000 --> 00:05:54,000
+ It won't work in obtaining but still an error right although I'm over in it all the abstract methods of the interface human inside class rangine we're still getting an error why are we breaking something else as well we have over idly implemented them that was the rule all we had to declare class as rangine eyes and start.
+
+22
+00:05:54,000 --> 00:06:10,000
+ But we went with the first choice we implemented these methods why we still getting an error here thank for a moment I'll give you that until I just look out of my window on fine sunny afternoon.
+
+23
+00:06:10,000 --> 00:06:23,000
+ I hope some of you got it if not I did you this is the exceptional scenario number one with over idling we are breaking that what was that it said that the overriding method in the sub class just go back to that.
+
+24
+00:06:23,000 --> 00:06:35,000
+ And recollect the overriding method in the sub class can have the same scope as of the overridden method in the super type or it can be broader but never narrow down.
+
+25
+00:06:35,000 --> 00:06:49,000
+ But aren't we have the same scope why did you know it's tempting for you to see that this has the same scope but what did I say at the beginning of the studio interface methods are implicitly abstract and public this is not a class.
+
+26
+00:06:49,000 --> 00:06:59,000
+ A class as the default scope of package private at the member level, but interface methods by default or public and what are you putting the.
+
+27
+00:06:59,000 --> 00:07:18,000
+ The scope in a deep because in the class right and the member level that he for scope is package private right and it was public package private go back to that video about scope that is the exception now you know one with regards to over idling you will remember idling you it can be the same same or any.
+
+28
+00:07:18,000 --> 00:07:32,000
+ And never being that on down your restricting the scope because it was public how can it be package brand new over on this eat in ranging clashes with eating human attempting to assign weaker excess privileges package private it was public.
+
+29
+00:07:32,000 --> 00:07:47,000
+ Right, the implicitly public whether you like it or not and public methods you would know they're only over idling in the public way so i'll just say public the error should go away, I'll say public the error should go away, I'll say.
+
+30
+00:07:47,000 --> 00:08:00,000
+ The error should go away and same you will need to do with strata cannot extend it now but implement because that's an interface and this eat has to be public.
+
+31
+00:08:00,000 --> 00:08:24,000
+ Walk has to be public sorry there and read also has to be public, the errors go away and similarly still we can't create an object of an interface and Java that's not permissible but running the breathe and eat and work would produce and it's all versions of reading it and work and same goes with the shader but score on around this.
+
+32
+00:08:24,000 --> 00:08:45,000
+ Right, now, if abstract classes where a great idea to promote inheritance, as I say interfaces are a step further down the road that is they're just there for one reason and that is that reason is to encourage to promote inheritance in usability of code and in a role ways.
+
+33
+00:08:45,000 --> 00:09:07,000
+ Rangeet can do things which are in humor in his own way show it up can do things in her own way a sort of can do the same things that are human in their own way so that they produce or they create their own personality right that is the concept of interfaces right.
+
+34
+00:09:07,000 --> 00:09:18,000
+ Now to decide your forward now I said that Rangeet can implement human can never extend it but let's say there was another thing in place and that was employee.
+
+35
+00:09:18,000 --> 00:09:25,000
+ Let's just one minute for example in advance is work for ages.
+
+36
+00:09:25,000 --> 00:09:38,000
+ Again, this is abstracted by default, this is abstracted by default you know that cannot be instantiated this is an interface right the method body should be in the subclass of the subclass also needs to be declared as abstract the same rules.
+
+37
+00:09:38,000 --> 00:09:53,000
+ What is Rangeet, there's a novel human this implement human but straight up wants to work as well right so what is straight up to options the first thing it straight up doesn't implement human but does employ influence.
+
+38
+00:09:53,000 --> 00:10:20,000
+ All right, obviously should I know doesn't need to have all eaten walk I'll come in this neither breathe I'll come in this or just needs to have one method of employee that is work for ages right and what I do is I'll hold on this I'll say implement methods and that that for you order to come in that for now I'm coming to that shortly work for ages and now I'll say so I'll say.
+
+39
+00:10:20,000 --> 00:10:36,000
+ split up and now work well she's an employee now right that's another interface but for employees to exist shouldn't be humans first and that is when I say interface employee extends.
+
+40
+00:10:36,000 --> 00:10:56,000
+ So let's see makes so much sense and with employees before anyone can be employed they need to be a human first we still do not apply robo's I know it's 26 it's just coming for all of us right robo's that is AI is just coming for all of us and having us by our next but it's still.
+
+41
+00:10:56,000 --> 00:11:10,000
+ And later on we'll just we'll just have employees who are human and this would change then but for now any employee needs to be human first and we should be able to breathe eat and walk and then they can work for ages and see.
+
+42
+00:11:10,000 --> 00:11:27,000
+ Just implement sure just needs to have three words just eat walk and breathe but sure that is an air she tries to dance her own property works for ages but it tells it sure that you can work for ages but before that you at least need to breathe for goodness sake you need to eat and walk.
+
+43
+00:11:27,000 --> 00:11:35,000
+ And that's why because sure that now implement human it needs to have the implementing methods of human as well makes sense.
+
+44
+00:11:35,000 --> 00:11:44,000
+ Just ignore this at all right for now i'm just telling you on repeat but i'll just go to the shortly see.
+
+45
+00:11:44,000 --> 00:12:03,000
+ That is when we say an interface can never implement an interface it doesn't make any sense but it can extend another interface as well just to extend that idea right for sure that to be an employee she puts needs to be a human that's why she needs to have a version of eat walk and.
+
+46
+00:12:03,000 --> 00:12:23,000
+ And then only she can work for ages that makes so much sense and then with an object of shredder obviously go ahead and just fall down for ages about this should work and does sure that can now work as well she has started to be an employee right she's working in the industry now.
+
+47
+00:12:23,000 --> 00:12:45,000
+ So that is another thing that I told you about interfaces they can extend from another interface is as well right and just one more a year then class cannot class now this is indeed it implements human and as well as employee.
+
+48
+00:12:45,000 --> 00:12:53,000
+ See it just needs to implement right because indirectly for the implement human as we shall be sure that but now let's see tries to do that.
+
+49
+00:12:53,000 --> 00:13:05,000
+ And this is my tip in inheritance when I talked about inheritance I told you multiple inheritance is not allowed is not permissible in job right directly but indirectly we can and this is the day this is the video and you know what is that
+
+50
+00:13:05,000 --> 00:13:32,000
+ what is that indeed different way to implement method that is to have that concept of multiple inheritance working in Java and that is a bit interfaces because I tell you another thing there are two types of inheritance in Java first it's code inheritance core inheritance means class to class which we will do not allow when a class extends from another class and through code inheritance multiple inheritance is prohibited it's not permissible it's not allowed for you to.
+
+51
+00:13:32,000 --> 00:13:59,000
+ And then there is another form of inheritance that is time inheritance what is type inheritance mean class to interface when a class implements an interface and through type inheritance multiple inheritance starts to work it's permissible it is allowed to work see you say implements human and employee and you override the method from employee that's work for wages and yes it's out for example.
+
+52
+00:13:59,000 --> 00:14:05,000
+ Rangit works now.
+
+53
+00:14:05,000 --> 00:14:28,000
+ You see this error is going I have the methods of human I have the methods of employing energy combined it is happy and even I'm doing multiple inheritance where a subclass has more than one super classes so through code inheritance that is class class multiple inheritance doesn't work you can do that it's prohibited but through type inheritance that needs better class implements an interface it can go on.
+
+54
+00:14:28,000 --> 00:14:38,000
+ It can go on implement more than one interfaces that is multiple inheritance to type inheritance is in fact permissible right.
+
