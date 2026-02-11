@@ -1,0 +1,620 @@
+1
+00:00:00,000 --> 00:00:05,980
+ Next we talk about a concept called exception propagation that is how our exceptions actually
+
+2
+00:00:05,980 --> 00:00:07,920
+ propagated right.
+
+3
+00:00:07,920 --> 00:00:12,120
+ So before understanding that let's talk about real world analogy I will always take is that
+
+4
+00:00:12,120 --> 00:00:17,280
+ let's say we have a three-story building right and on the top floor there's a person
+
+5
+00:00:17,280 --> 00:00:23,960
+ who is juggling with a ball on a fine Sunday morning right just playing catch up and goes
+
+6
+00:00:23,960 --> 00:00:31,920
+ on to to the story says that once after many attempts the boy on the top floor misses
+
+7
+00:00:31,920 --> 00:00:36,480
+ the ball right what has happened does does the ball directly fall on the ground no it
+
+8
+00:00:36,480 --> 00:00:41,080
+ goes to the second floor on the second floor there's a person who's watering his plants
+
+9
+00:00:41,080 --> 00:00:45,920
+ and misses that ball as well then it goes to to the first door on the first floor there
+
+10
+00:00:45,920 --> 00:00:52,120
+ is a girl who is reading a good novel and again misses the ball and then it goes through
+
+11
+00:00:52,120 --> 00:00:58,760
+ to the ground floor and then is that falls on the ground but not before giving you three chances
+
+12
+00:00:58,760 --> 00:01:03,720
+ to catch it that is the ball right similarly we have exceptions that are propagated that
+
+13
+00:01:03,720 --> 00:01:09,040
+ is for example if you have a good look at this let's say I was not getting this exception
+
+14
+00:01:09,040 --> 00:01:17,280
+ let me comment this see I was not having try catch sorry see one variable one variable
+
+15
+00:01:17,280 --> 00:01:23,040
+ piece of code here right mind break any time and and the problem is we don't know when
+
+16
+00:01:23,040 --> 00:01:27,960
+ what if it would break but we know it's a vulnerability we've not taken care of that now
+
+17
+00:01:27,960 --> 00:01:32,120
+ we'll just run this just have a look at this I want to show you something say and do
+
+18
+00:01:32,120 --> 00:01:39,720
+ numbers 23 nine works fine run this again one two zero zero yeah exception thread name divided
+
+19
+00:01:39,720 --> 00:01:45,840
+ by zero but just have a look at this just zoom into this it says at calculate division
+
+20
+00:01:45,840 --> 00:01:51,240
+ dot divide handle exceptions dot Java 22 that is it was originated from this but then
+
+21
+00:01:51,240 --> 00:01:57,280
+ also tells you handle exception Java 13 that is it was raised from here as well you
+
+22
+00:01:57,280 --> 00:02:04,720
+ might wonder why you might wonder how because the exception came at 22 but which is the
+
+23
+00:02:04,720 --> 00:02:10,400
+ code that it that called it it was the line number 13 which called divide right if you
+
+24
+00:02:10,400 --> 00:02:15,120
+ had never called divide in the first place you would have no probability of this exception
+
+25
+00:02:15,120 --> 00:02:20,440
+ being thrown right that is why when this exception is thrown at that this line in
+
+26
+00:02:20,440 --> 00:02:27,320
+ line number 22 obviously 23 would not even be evaluated let alone executed it immediately
+
+27
+00:02:27,320 --> 00:02:33,800
+ goes out of the method right to the calling method at the line where the call was made
+
+28
+00:02:33,800 --> 00:02:39,200
+ and that is what we call as the stack trace it just prints you the complete status
+
+29
+00:02:39,200 --> 00:02:45,840
+ it originated from 22 but even at 13 that means even this line becomes responsible in
+
+30
+00:02:45,840 --> 00:02:51,080
+ turn it this line becomes vulnerable because if you never call divide there would have
+
+31
+00:02:51,080 --> 00:02:56,560
+ been no exception at all times that means this line also becomes vulnerable and that
+
+32
+00:02:56,560 --> 00:03:03,400
+ is the stack trace right that is how it gets out of the stack right that is how exceptions
+
+33
+00:03:03,400 --> 00:03:10,200
+ are propagated we are getting my point right that is exception propagation in Java
+
+34
+00:03:10,200 --> 00:03:18,240
+ and related concept is now think about it what I will do is see I will go to work and
+
+35
+00:03:18,240 --> 00:03:22,600
+ this is another example I always take a great example to understand how it just works
+
+36
+00:03:22,600 --> 00:03:29,240
+ all of it and how it makes sense I will create a new class let me call it exceptions propagation
+
+37
+00:03:29,240 --> 00:03:49,200
+ or exception propagation and have the mean now you had a method that is let us say white
+
+38
+00:03:49,200 --> 00:03:54,880
+ print charts you are working on project you need to print charts and suddenly the requirement
+
+39
+00:03:54,880 --> 00:04:01,960
+ came in that is at 6 o'clock in the evening at 558 from your team lead that is the requirement
+
+40
+00:04:01,960 --> 00:04:07,080
+ they want the charts to be printed a different way so you are about to leave home but
+
+41
+00:04:07,080 --> 00:04:12,760
+ they said that the deadline is by end of day to day so what will you do the option A is
+
+42
+00:04:12,760 --> 00:04:19,440
+ you will go on dive deep take help online AI you took everything and you will just write
+
+43
+00:04:19,440 --> 00:04:24,000
+ your code but that is going to take a lot of hit and tries and a lot of time and you don't
+
+44
+00:04:24,000 --> 00:04:29,040
+ know whether that would be done by end of day but you remember your team leads words
+
+45
+00:04:29,040 --> 00:04:35,200
+ that is the deadline is today by end of day so the option B is you look online for a solution
+
+46
+00:04:35,200 --> 00:04:40,480
+ that already exists and you find one after searching for 15 20 minutes which has five
+
+47
+00:04:40,480 --> 00:04:46,840
+ star ratings online right and you just they try to call that so how would it work so for
+
+48
+00:04:46,840 --> 00:04:51,760
+ example and this is just an assumption that code that you downloaded from GitHub is like
+
+49
+00:04:51,760 --> 00:05:02,480
+ this and say back age special and there was a class for example class work with or that
+
+50
+00:05:02,480 --> 00:05:09,440
+ is it automatic charts someone has created that with a five star rating online on GitHub
+
+51
+00:05:09,440 --> 00:05:22,280
+ and then there was a major wide make charts takes the index X axis or Y axis and writes
+
+52
+00:05:22,280 --> 00:05:33,680
+ the code here code here to generate charts effective right so we don't know that code right
+
+53
+00:05:33,680 --> 00:05:38,560
+ we just downloaded what we need and we just need to call it so obviously I will just
+
+54
+00:05:38,560 --> 00:05:42,880
+ come in this because you know that in a Java file there can only be one package statement
+
+55
+00:05:42,880 --> 00:05:46,900
+ declaration and it should be the top and that is it so I just come in this just assume
+
+56
+00:05:46,900 --> 00:05:51,480
+ that this code is what you downloaded so how do you call it now from your print charts
+
+57
+00:05:51,480 --> 00:05:56,720
+ you will just say you will obviously import the spatial dot automatic charts class
+
+58
+00:05:56,720 --> 00:06:03,600
+ and they should be public you know that by now and then you just call the method you
+
+59
+00:06:03,600 --> 00:06:13,960
+ just say new automatic charts dot make charts you will take the numbers on runtime but
+
+60
+00:06:13,960 --> 00:06:20,000
+ for now this works 67 97 I will come in this out obviously when you run this so you will
+
+61
+00:06:20,000 --> 00:06:25,040
+ get the charts and you just push this to production and your manager is happy you are happy
+
+62
+00:06:25,040 --> 00:06:31,360
+ you go home and have a good nice sleep and this was just done in one hour or so that's fine
+
+63
+00:06:31,360 --> 00:06:35,600
+ so now after three months of this solution being working the team lead comes to you says
+
+64
+00:06:35,600 --> 00:06:40,380
+ that I got a call from the project manager of my client where we have deployed this application
+
+65
+00:06:40,380 --> 00:06:44,800
+ they say that this code was only absolutely fine for three months thank you very much
+
+66
+00:06:44,800 --> 00:06:50,960
+ for that but suddenly since yesterday we were getting unusual unusual behavior we're getting
+
+67
+00:06:50,960 --> 00:06:55,800
+ an error or something we don't understand but for three months that same code work and that
+
+68
+00:06:55,800 --> 00:07:02,760
+ has left them to wonder what is going on wrong right and after diving into your code for
+
+69
+00:07:02,760 --> 00:07:07,320
+ a couple of hours scratching your heart head you come up on the conclusion there was nothing
+
+70
+00:07:07,320 --> 00:07:11,680
+ wrong with your code nothing wrong because you called print charts from here like this
+
+71
+00:07:11,680 --> 00:07:18,440
+ new exception propagation dot print charts and from print charts you went to make charts
+
+72
+00:07:18,440 --> 00:07:24,120
+ did the solution just fine but after scratching your head for a couple of hours you come
+
+73
+00:07:24,120 --> 00:07:31,000
+ to the conclusion that this is originating from somewhere in that five star code right and turns
+
+74
+00:07:31,000 --> 00:07:39,640
+ out that guy with a five star rating has not taken here of an exception right and turns out that
+
+75
+00:07:39,640 --> 00:07:45,960
+ five star code was not that five star in the first place because this guy hasn't even taken
+
+76
+00:07:45,960 --> 00:07:52,760
+ here I told you as a developer you never know if my code would cause an exception what time
+
+77
+00:07:52,760 --> 00:07:59,000
+ would it cause it but you would always know my code has a piece which is dangerous which is
+
+78
+00:07:59,000 --> 00:08:05,000
+ susceptible to dangers which has a vulnerability to a particular exception exceptions and that's why
+
+79
+00:08:05,000 --> 00:08:11,400
+ you should always take here right but this book has not done it right and you put in a comment on
+
+80
+00:08:11,400 --> 00:08:17,400
+ on there get a repository page and say that you have not taken care of this exception please do
+
+81
+00:08:17,400 --> 00:08:22,120
+ that because it's causing me exception after three months of running this fine we understand it's
+
+82
+00:08:22,120 --> 00:08:28,680
+ a special piece of coding just serves the purpose but it has a problem that might break this code
+
+83
+00:08:28,680 --> 00:08:34,120
+ any time so you have not taken here so this guy goes in and takes care let's try
+
+84
+00:08:34,120 --> 00:08:45,240
+ right and puts this in a tried garage and let's say he's expecting a IO exception
+
+85
+00:08:52,760 --> 00:08:58,440
+ like this and then there's something here with the exception
+
+86
+00:08:58,440 --> 00:09:09,640
+ all right and now you know it would be handled well or obviously you need it to handle it
+
+87
+00:09:09,640 --> 00:09:15,080
+ right here right it should be handled somewhere so pushes the score back to get help you get the
+
+88
+00:09:15,080 --> 00:09:19,640
+ latest update and you push it live to your production the client is happy your manager is happy
+
+89
+00:09:19,640 --> 00:09:25,960
+ your happy as well you can spend your weekend in a piece for me right so this is the first step that
+
+90
+00:09:25,960 --> 00:09:32,280
+ he took right I would still say this guy is a good job at developer but not an excellent one why
+
+91
+00:09:32,280 --> 00:09:36,920
+ because he would have been excellent because if he would have told us that all the taken care of
+
+92
+00:09:36,920 --> 00:09:41,480
+ the exception you don't need to worry about it but you have every right to know your dealing with
+
+93
+00:09:41,480 --> 00:09:46,040
+ potentially your calling potentially dangers why did I say potentially because you would never
+
+94
+00:09:46,040 --> 00:09:50,760
+ know whether the exception would come or not as you saw in this example it came after three months
+
+95
+00:09:50,760 --> 00:09:59,240
+ but when it did it right have right so this guy thinks that anyone calling my code my make
+
+96
+00:09:59,240 --> 00:10:04,520
+ charts has a right to know whether I'm taking care of that or not whether try catch they have a
+
+97
+00:10:04,520 --> 00:10:11,800
+ right to know they are calling possibly potentially dangerous code so I need to make them away
+
+98
+00:10:11,800 --> 00:10:17,720
+ I need to inform them before they call me and how does it make that right happen
+
+99
+00:10:17,720 --> 00:10:22,840
+ then that is a beautiful scenario of inter metal communication when a method talks to another
+
+100
+00:10:22,840 --> 00:10:28,200
+ method the call the method to the calling method that is gives them a warning and how do you do
+
+101
+00:10:28,200 --> 00:10:37,800
+ that with the keyword throws do you put that exception right here as part of the metal signature
+
+102
+00:10:37,800 --> 00:10:42,760
+ at the first line with the keyword throws and remember throws does not mean it is throwing it
+
+103
+00:10:42,760 --> 00:10:49,560
+ throws means it might throw it please take care right now this make charts is communicating to
+
+104
+00:10:49,560 --> 00:10:56,040
+ any method that is calling it in our case that is print charts that is please take care the score
+
+105
+00:10:56,040 --> 00:11:04,120
+ is great fabulous five star but it might break at runtime do not do not depend on me I might take
+
+106
+00:11:04,120 --> 00:11:10,200
+ care or not but you take care and that is where throws comes in and that is where inter
+
+107
+00:11:10,200 --> 00:11:16,520
+ method communication comes in and that is where a rule that I call as the handle or declare
+
+108
+00:11:16,520 --> 00:11:21,560
+ rule comes into picture now what is the handle or declare rule right just make a note there
+
+109
+00:11:21,560 --> 00:11:28,840
+ or just understand this that is if a method is throwing an exception or exceptions as part of their
+
+110
+00:11:29,720 --> 00:11:37,240
+ method signature the calling method also then needs to either handle it or declare it to be
+
+111
+00:11:37,240 --> 00:11:42,040
+ thrown right that is the rule otherwise you will get a compile time error in Java right now
+
+112
+00:11:42,040 --> 00:11:46,680
+ how do you handle it you know this needs to be done in a tri-catch but you have a choice
+
+113
+00:11:46,680 --> 00:11:57,720
+ either handle it or also declare it to be thrown like this exactly all right so you either have a choice
+
+114
+00:11:57,720 --> 00:12:01,800
+ either put this also in a tri-catch but if you think that has already put in a tri-catch
+
+115
+00:12:01,800 --> 00:12:06,280
+ you need to declare it that's the handle or declare rule again I'll just reiterate for you
+
+116
+00:12:06,280 --> 00:12:12,040
+ for emphasis that is if a method that you're calling throws an exception as part of their method
+
+117
+00:12:12,040 --> 00:12:20,280
+ signature your calling method also needs to either handle it by tri-catch or throw it as part
+
+118
+00:12:20,280 --> 00:12:25,800
+ of the method signature with the throws and do you see this you an error now inside main as well
+
+119
+00:12:25,800 --> 00:12:30,600
+ because it says unhindling exception jouled iota iota iu exception why because now the
+
+120
+00:12:30,600 --> 00:12:36,840
+ responsibility comes to main why main is calling a method which is throwing an iu exception
+
+121
+00:12:36,840 --> 00:12:42,120
+ as part of the method signature but remember throws does not mean throw it's throwing it actually
+
+122
+00:12:42,120 --> 00:12:51,160
+ it might please take it now main also needs to take here or handle or declare it to be thrown
+
+123
+00:12:51,160 --> 00:12:59,080
+ right and that is or that is how it works the handle or declare rule how does that work in joule
+
+124
+00:12:59,080 --> 00:13:04,920
+ and on the other hand and this is a beautiful scenario because why because you're warning beforehand
+
+125
+00:13:04,920 --> 00:13:09,880
+ the calling method all right you're calling my code I've done something fabulous but please be
+
+126
+00:13:09,880 --> 00:13:16,040
+ aware this is dealing with potentially dangerous code please take care or declare it to be thrown
+
+127
+00:13:16,040 --> 00:13:22,280
+ right so but now if this method was throwing an exception as part of the method signature that is
+
+128
+00:13:22,280 --> 00:13:28,760
+ let's say null pointer exception and this method does not throw it the calling method now you're
+
+129
+00:13:28,760 --> 00:13:33,800
+ not getting a thump file no matter why because go back to that and what I drew for you on my white
+
+130
+00:13:33,800 --> 00:13:39,160
+ board that is the exception class hierarchy right exception and error and with your subclasses
+
+131
+00:13:39,160 --> 00:13:45,080
+ and that is there are two types of exceptions java checked and unchecked now what I checked what
+
+132
+00:13:45,080 --> 00:13:51,320
+ I checked and what does that have to do with with with the handle of declare rule that is
+
+133
+00:13:51,320 --> 00:13:57,800
+ first what I checked and unchecked that is class exception and its subclasses
+
+134
+00:13:57,800 --> 00:14:04,520
+ excluding class runtime exception and its subclasses are categorized in java as checked exceptions
+
+135
+00:14:04,520 --> 00:14:12,200
+ okay class exception exception and its subclasses excluding runtime exception and its subclasses
+
+136
+00:14:12,200 --> 00:14:19,320
+ are categorized in java is checked exceptions class error and its subclasses including class runtime
+
+137
+00:14:19,320 --> 00:14:26,280
+ exception and its subclasses are classified in java as unchecked exceptions so these are the two types
+
+138
+00:14:26,280 --> 00:14:31,400
+ of exceptions now what do they have to do with what we're discussing handle or declare rule that is
+
+139
+00:14:31,400 --> 00:14:37,960
+ the handle or declare rule only applies on checked exceptions in java it does not apply on unchecked
+
+140
+00:14:37,960 --> 00:14:43,160
+ exceptions that's why you saw when I said throws iu exception as part of a method signature
+
+141
+00:14:43,160 --> 00:14:48,520
+ I did not get an error remain because that sorry I got an error remain with iu exception why
+
+142
+00:14:48,520 --> 00:14:54,120
+ because it is a checked exception it's a subclass of exception but when a method throws an unchecked
+
+143
+00:14:54,120 --> 00:14:59,480
+ exception like point to exception arithmetic exception I would not get an error compile time error
+
+144
+00:14:59,480 --> 00:15:04,200
+ although you can still handle or declare it you have a choice but you not get an error because
+
+145
+00:15:04,200 --> 00:15:10,600
+ the handle or declare rule does not apply on unchecked exceptions I just make it clear for you to
+
+146
+00:15:10,600 --> 00:15:18,600
+ understand all right and why is this classification because unhandled exceptions sorry unchecked
+
+147
+00:15:18,600 --> 00:15:24,840
+ exceptions like null pointer exception or even let's say a stack overflow error when is the
+
+148
+00:15:24,840 --> 00:15:30,760
+ situation when you get stack overflow error when you run out of stack memory let's try you
+
+149
+00:15:30,760 --> 00:15:36,200
+ handle that which I catch what is the best that you can do would you just open up the laptop or
+
+150
+00:15:36,200 --> 00:15:42,200
+ a desktop with your screwdriver and put in more RAM so that the stack memory is reloaded and do
+
+151
+00:15:42,200 --> 00:15:50,520
+ that right so that's why I say you can handle unchecked exceptions in java but even if you do
+
+152
+00:15:50,520 --> 00:15:56,040
+ there is very little you can do right so that's why it's your choice whether you want to handle
+
+153
+00:15:56,040 --> 00:16:01,080
+ unchecked exceptions or what there is something concrete that you can do while handling checked
+
+154
+00:16:01,080 --> 00:16:05,640
+ exceptions that's why we have two types of exceptions in java and that's why the handle or declare
+
+155
+00:16:05,640 --> 00:16:13,240
+ rule does not apply to unchecked exceptions but it only applies to checked exceptions in java
+
