@@ -1,0 +1,332 @@
+1
+00:00:00,000 --> 00:00:03,720
+ In this video, I'll be talking about structures.
+
+2
+00:00:03,720 --> 00:00:08,160
+ I'll explain what they are, how to define, create, and access data within structures,
+
+3
+00:00:08,160 --> 00:00:14,040
+ and a little bit about anonymous structures.
+
+4
+00:00:14,040 --> 00:00:16,000
+ Structures allow data to be stored in groups.
+
+5
+00:00:16,000 --> 00:00:19,280
+ These are similar to a class in other programming languages.
+
+6
+00:00:19,280 --> 00:00:23,760
+ Each data point in the structure is called a field, and storing data in groups is usually
+
+7
+00:00:23,760 --> 00:00:28,560
+ more efficient than storing them on their own, both for running your program and for
+
+8
+00:00:28,560 --> 00:00:30,880
+ reading or writing your code.
+
+9
+00:00:30,880 --> 00:00:34,360
+ It is possible to associate functionality with structures, sort of like writing a method
+
+10
+00:00:34,360 --> 00:00:38,640
+ for a class, which further helps organize your code and your data.
+
+11
+00:00:38,640 --> 00:00:45,320
+ We won't be covering that in this video, but it will be in a future lesson.
+
+12
+00:00:45,320 --> 00:00:47,440
+ Let's take a look at how to define a structure.
+
+13
+00:00:47,440 --> 00:00:54,000
+ We'll use the type keyword, followed by the name of the structure, and then finally, the
+
+14
+00:00:54,000 --> 00:00:55,000
+ struct keyword.
+
+15
+00:00:55,000 --> 00:01:01,520
+ We'll have some curly braces, and within the curly braces we'll have our fields.
+
+16
+00:01:01,520 --> 00:01:05,160
+ This field is named field, and it is a type of string.
+
+17
+00:01:05,160 --> 00:01:08,960
+ Here we have an A and a B, and both of those are an int.
+
+18
+00:01:08,960 --> 00:01:13,400
+ So as you can see, this is similar to the function parameters when you write functions.
+
+19
+00:01:13,400 --> 00:01:20,240
+ Let's take a look at how to instantiate a structure.
+
+20
+00:01:20,240 --> 00:01:25,840
+ We'll be working with the sample struct that we just created, and to make one in memory,
+
+21
+00:01:25,840 --> 00:01:32,120
+ we can create a variable, create an assign, use the name of our structure, the curly braces,
+
+22
+00:01:32,120 --> 00:01:36,280
+ and then each field of the structure in order.
+
+23
+00:01:36,280 --> 00:01:41,160
+ We need to make sure that we have the fields in order for this example, because we don't
+
+24
+00:01:41,160 --> 00:01:43,160
+ list the names of the fields.
+
+25
+00:01:43,160 --> 00:01:46,760
+ On the second example, however, we are listing out the names of the field, so they can
+
+26
+00:01:46,760 --> 00:01:50,440
+ be in any order you like, but you would generally want to follow the same order as a struct
+
+27
+00:01:50,440 --> 00:01:51,440
+ itself.
+
+28
+00:01:51,440 --> 00:01:58,480
+ That way, if you make updates, it's easier to change it.
+
+29
+00:01:58,480 --> 00:02:02,080
+ Just like with variables, if you try to create a structure and don't supply any data,
+
+30
+00:02:02,080 --> 00:02:03,640
+ the fields will have default values.
+
+31
+00:02:03,640 --> 00:02:07,800
+ So here on this first example, we're creating a sample structure, and we have curly
+
+32
+00:02:07,800 --> 00:02:09,760
+ braces with nothing in between.
+
+33
+00:02:09,760 --> 00:02:12,640
+ This means that all the fields will have default values.
+
+34
+00:02:12,640 --> 00:02:19,360
+ So the field field will just have an empty string, A and B will both be equal to zero.
+
+35
+00:02:19,360 --> 00:02:23,960
+ It still will be valid to use this sample structure, because default values will populate
+
+36
+00:02:23,960 --> 00:02:26,160
+ when necessary.
+
+37
+00:02:26,160 --> 00:02:30,080
+ On this second example, we're creating another sample structure, and we're setting A equal
+
+38
+00:02:30,080 --> 00:02:31,080
+ to five.
+
+39
+00:02:31,080 --> 00:02:38,680
+ So A will now be five, but field and B will have their default values set.
+
+40
+00:02:38,680 --> 00:02:41,480
+ When we're working with structures, we'll need to be able to access the fields within
+
+41
+00:02:41,480 --> 00:02:44,880
+ the structures, both for reading and writing.
+
+42
+00:02:44,880 --> 00:02:47,160
+ To do so, we use dot notation.
+
+43
+00:02:47,160 --> 00:02:52,040
+ So we'll have the variable name that has the structure, A dot, and then the field name
+
+44
+00:02:52,040 --> 00:02:55,280
+ that we want to access.
+
+45
+00:02:55,280 --> 00:03:00,720
+ In this data example on the bottom, we created a sample structure, and the field is word,
+
+46
+00:03:00,720 --> 00:03:03,520
+ A is one, and B is two.
+
+47
+00:03:03,520 --> 00:03:09,720
+ So if we create the word variable and do the structure name dot field, then this word variable
+
+48
+00:03:09,720 --> 00:03:15,120
+ will contain the word word.
+
+49
+00:03:15,120 --> 00:03:25,800
+ And the same goes for A and B right here, A will be one, and B will be two.
+
+50
+00:03:25,800 --> 00:03:29,760
+ We can modify the structure by reassigning the values.
+
+51
+00:03:29,760 --> 00:03:33,400
+ So we take our data that we created, which is the structure here.
+
+52
+00:03:33,400 --> 00:03:39,000
+ We access the field field, and we use an equal sign and set a new value.
+
+53
+00:03:39,000 --> 00:03:49,840
+ So field will now have hello in it, A will have ten, and B will have twenty.
+
+54
+00:03:49,840 --> 00:03:53,960
+ It's possible to create anonymous or inline structures inside of a function.
+
+55
+00:03:53,960 --> 00:03:57,000
+ This is useful when you're working with library functions or when shipping data across
+
+56
+00:03:57,000 --> 00:03:59,040
+ a network.
+
+57
+00:03:59,040 --> 00:04:03,520
+ What this allows you to do is easily define the data structure where you need it, instead
+
+58
+00:04:03,520 --> 00:04:09,480
+ of having it in a different file or somewhere else across the source code.
+
+59
+00:04:09,480 --> 00:04:15,360
+ Here's an example of some anonymous structures.
+
+60
+00:04:15,360 --> 00:04:18,880
+ To create them, we use the var keyword, just like a variable.
+
+61
+00:04:18,880 --> 00:04:23,880
+ We give it a name, and we use the keyword struct afterward.
+
+62
+00:04:23,880 --> 00:04:31,960
+ We then have our curly braces, and we have our field names, and our types for the fields.
+
+63
+00:04:31,960 --> 00:04:35,720
+ And then we can access it just like we have been using the variable name, and then dot
+
+64
+00:04:35,720 --> 00:04:39,720
+ notation, and the fields that we want to access.
+
+65
+00:04:39,720 --> 00:04:44,480
+ On this second example here on the right, we use the create and assign to create a sample.
+
+66
+00:04:44,480 --> 00:04:50,080
+ We then use the keyword struct, our curly braces, the field names that we want, and then
+
+67
+00:04:50,080 --> 00:04:54,360
+ additional curly braces to define what's going to be in those fields.
+
+68
+00:04:54,360 --> 00:04:59,720
+ So in this example, we have field A and B. Hello, we're going to field.
+
+69
+00:04:59,720 --> 00:05:06,280
+ And then we'll go into A and two will go into B. The main difference between this one
+
+70
+00:05:06,280 --> 00:05:11,080
+ on the left and the one on the right is the one on the left will have default values
+
+71
+00:05:11,080 --> 00:05:12,600
+ if you don't supply any.
+
+72
+00:05:12,600 --> 00:05:18,120
+ So as soon as you create the variable with your var keyword, all of these fields will immediately
+
+73
+00:05:18,120 --> 00:05:24,000
+ have default values, and then later on you can assign them to whatever you need.
+
+74
+00:05:24,000 --> 00:05:28,960
+ The one on the right, however, has to declare these fields and assign them all at the same
+
+75
+00:05:28,960 --> 00:05:31,600
+ time, and you can't be missing any fields.
+
+76
+00:05:31,600 --> 00:05:36,160
+ So when you use the create and assign shorthand, you won't be able to have default values
+
+77
+00:05:36,160 --> 00:05:38,040
+ for any field infrastructure.
+
+78
+00:05:38,040 --> 00:05:42,700
+ Let's recap.
+
+79
+00:05:42,700 --> 00:05:47,040
+ Structures are used to group similar data, and these data points are called fields.
+
+80
+00:05:47,040 --> 00:05:51,280
+ Structures are defined using a type alias with the type keyword.
+
+81
+00:05:51,280 --> 00:05:55,160
+ Fields within the structure can be accessed using dot notation.
+
+82
+00:05:55,160 --> 00:06:00,520
+ Any fields that are not present during instantiation are set to defaults.
+
+83
+00:06:00,520 --> 00:06:03,160
+ In line, anonymous structures can be created within functions.
+
