@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,860
+ In this demo, we'll be creating a program that utilizes arrays.
+
+2
+00:00:05,860 --> 00:00:12,760
+ Once you're ready, fire it Visual Studio Code, and let's go.
+
+3
+00:00:12,760 --> 00:00:17,200
+ Once Visual Studio Code loads, open up your demo directory.
+
+4
+00:00:17,200 --> 00:00:21,560
+ We're on the Arrays demo, so click on Arrays, and then double click on Arrays.go.
+
+5
+00:00:21,560 --> 00:00:28,080
+ For this demo, we'll be making a quick program that could be used by a clean service
+
+6
+00:00:28,080 --> 00:00:31,600
+ to determine whether or not they've cleaned a specific room.
+
+7
+00:00:31,600 --> 00:00:37,820
+ So what we'll need to do is create a room structure, we'll give each room a name, and whether
+
+8
+00:00:37,820 --> 00:00:43,400
+ or not it's been cleaned.
+
+9
+00:00:43,400 --> 00:00:47,880
+ The first thing I'll do, if we're functionality, is create a function that checks an array,
+
+10
+00:00:47,880 --> 00:00:50,200
+ and determines which rooms are cleaned or not.
+
+11
+00:00:50,200 --> 00:00:56,600
+ So this particular function will operate only on an array that's size 4.
+
+12
+00:00:56,600 --> 00:01:01,060
+ We have a 4 here, so the array that we use has to have 4 elements, and it must be of type
+
+13
+00:01:01,060 --> 00:01:02,060
+ room.
+
+14
+00:01:02,060 --> 00:01:08,360
+ I'm then going to create a 4 loop, and my iterator variable is going to be i and set to 0,
+
+15
+00:01:08,360 --> 00:01:18,600
+ and as long as it's less than our total number of rooms, then we will increase it by 1.
+
+16
+00:01:18,600 --> 00:01:24,240
+ So the first thing I'll do in this loop is make a copy of the room, and most of the time
+
+17
+00:01:24,240 --> 00:01:28,680
+ you'll want to do this, where you make a copy into a new variable, and this will help
+
+18
+00:01:28,680 --> 00:01:35,000
+ once we get to this section on concurrency, because the i will change in one thread, but
+
+19
+00:01:35,000 --> 00:01:36,160
+ not the other.
+
+20
+00:01:36,160 --> 00:01:39,280
+ And so if you just make a copy, then you don't have to worry about any bugs popping
+
+21
+00:01:39,280 --> 00:01:40,280
+ up.
+
+22
+00:01:40,280 --> 00:01:44,840
+ We'll try to see if the room is cleaned.
+
+23
+00:01:44,840 --> 00:01:52,640
+ So if cleaned is true, then we'll print out a message.
+
+24
+00:01:52,640 --> 00:01:57,440
+ And otherwise, we'll print out a different message.
+
+25
+00:01:57,440 --> 00:02:02,160
+ And that's all we'll do for that function, such as iterating through each room that we
+
+26
+00:02:02,160 --> 00:02:07,280
+ have an array, and if it's cleaned, then we'll print out is cleaned, otherwise we'll
+
+27
+00:02:07,280 --> 00:02:10,560
+ print out is dirty.
+
+28
+00:02:10,560 --> 00:02:13,960
+ Next up, we need to make our array of rooms.
+
+29
+00:02:13,960 --> 00:02:18,200
+ I'm going to use the ellipses that way.
+
+30
+00:02:18,200 --> 00:02:21,440
+ We don't have to worry about how many are actually in here, and the compiler will figure
+
+31
+00:02:21,440 --> 00:02:22,920
+ out for us.
+
+32
+00:02:22,920 --> 00:02:32,640
+ So the first room will be in office, and then we'll have a warehouse, a reception, and
+
+33
+00:02:32,640 --> 00:02:35,600
+ an ops section.
+
+34
+00:02:35,600 --> 00:02:38,720
+ Ops can just be wherever they do their normal operations.
+
+35
+00:02:38,720 --> 00:02:44,480
+ We'll then call the check cleanliness function with the rooms.
+
+36
+00:02:44,480 --> 00:02:47,840
+ This function's going to go through each room, and it's going to print out whether or not
+
+37
+00:02:47,840 --> 00:02:48,840
+ it's cleaned.
+
+38
+00:02:48,840 --> 00:02:52,240
+ We didn't specify the cleaned variable here.
+
+39
+00:02:52,240 --> 00:02:57,480
+ That means all of these are going to be false for that variable, because false is the default
+
+40
+00:02:57,480 --> 00:02:59,720
+ value for Booleans.
+
+41
+00:02:59,720 --> 00:03:10,120
+ We'll have a message indicating that some cleaning is being done, and we'll set a few
+
+42
+00:03:10,120 --> 00:03:11,120
+ rooms to be cleaned.
+
+43
+00:03:11,120 --> 00:03:17,760
+ So we'll set room 3 to be cleaned, and room 4 to be cleaned.
+
+44
+00:03:17,760 --> 00:03:20,000
+ Remember that array started index 0.
+
+45
+00:03:20,000 --> 00:03:24,160
+ So when we have rooms 2 here, that will be the reception.
+
+46
+00:03:24,160 --> 00:03:27,800
+ So we have room 0, 1, 2, and then 3.
+
+47
+00:03:27,800 --> 00:03:32,360
+ So we're going to have the reception and ops room be cleaned.
+
+48
+00:03:32,360 --> 00:03:36,800
+ So when we run the program, it should indicate that those are cleaned on the terminal.
+
+49
+00:03:36,800 --> 00:03:38,640
+ Last thing we'll do is just call this function again.
+
+50
+00:03:38,640 --> 00:03:40,760
+ That way we can see if it's cleaned or not.
+
+51
+00:03:40,760 --> 00:03:43,840
+ I'm going to hop into a terminal, and we'll run it.
+
+52
+00:03:43,840 --> 00:03:50,400
+ We can run this demo with gorun.slashdemo/arrays.
+
+53
+00:03:50,400 --> 00:03:53,600
+ And so we start out, everything is dirty because of default to false.
+
+54
+00:03:53,600 --> 00:03:55,040
+ We perform some cleaning.
+
+55
+00:03:55,040 --> 00:03:58,640
+ We then have the ops in warehouse are still dirty because they weren't cleaned, so that's
+
+56
+00:03:58,640 --> 00:03:59,640
+ OK.
+
+57
+00:03:59,640 --> 00:04:06,520
+ And then we have the reception clean and the ops being cleaned.
+
+58
+00:04:06,520 --> 00:04:11,960
+ Real quick recap before we finish up, whenever you're working with the iterator variable
+
+59
+00:04:11,960 --> 00:04:15,480
+ itself within a for loop, always make a copy.
+
+60
+00:04:15,480 --> 00:04:17,680
+ So in this case, we're making a copy of rooms.
+
+61
+00:04:17,680 --> 00:04:22,440
+ So we're using i here, so we need to make a copy of whatever we're using it with.
+
+62
+00:04:22,440 --> 00:04:26,320
+ And if we don't do that, then you will for sure run into some bugs later.
+
+63
+00:04:26,320 --> 00:04:30,920
+ So always make sure whenever you utilize the iterator variable within a loop, you're making
+
+64
+00:04:30,920 --> 00:04:32,160
+ it in the context of a copy.
+
+65
+00:04:32,160 --> 00:04:34,560
+ So we're copying room in this case.
+
+66
+00:04:34,560 --> 00:04:39,080
+ And even if you just want the variable by itself without indexing an array, you still want
+
+67
+00:04:39,080 --> 00:04:40,680
+ to make a copy of it.
+
+68
+00:04:40,680 --> 00:04:45,480
+ So for example, you can just do something like this.
+
+69
+00:04:45,480 --> 00:04:51,240
+ And now you can work with J from that point on instead of i.
+
+70
+00:04:51,240 --> 00:04:53,480
+ This concludes the demo on arrays.
+
+71
+00:04:53,480 --> 00:04:54,640
+ I'll see you in the next presentation.
+
