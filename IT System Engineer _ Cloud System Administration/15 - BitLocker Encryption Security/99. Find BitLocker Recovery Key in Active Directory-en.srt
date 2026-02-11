@@ -1,0 +1,364 @@
+1
+00:00:00,000 --> 00:00:07,540
+ If you're working as an IT system engineer or an IT system administrator, security will
+
+2
+00:00:07,540 --> 00:00:11,840
+ be one of your big upgrades consigned at your company.
+
+3
+00:00:11,840 --> 00:00:17,860
+ Definitely, you want to make sure that all your company devices are properly secured, not
+
+4
+00:00:17,860 --> 00:00:25,760
+ only with fire firewall, windows defender, anti-virus protection, but also making sure that
+
+5
+00:00:25,760 --> 00:00:33,820
+ the device is properly equipped, I want to base with totally equipped device is Bitlocker.
+
+6
+00:00:33,820 --> 00:00:38,760
+ So if you're not actually configured Bitlocking an enterprise environment, you will not
+
+7
+00:00:38,760 --> 00:00:46,580
+ want to be going from individual devices to just configure Bitlocking and save the password
+
+8
+00:00:46,580 --> 00:00:49,100
+ to your local device.
+
+9
+00:00:49,100 --> 00:00:54,940
+ You definitely want to make sure that the password of that Bitlocking is saved to your active
+
+10
+00:00:54,940 --> 00:00:59,860
+ directory or to your Azure Active Directory.
+
+11
+00:00:59,860 --> 00:01:03,940
+ So I'm going to be showing you in this video how to configure this is actually going
+
+12
+00:01:03,940 --> 00:01:08,940
+ to, this is going to be configured in a lab environment, so I'll be showing you how to
+
+13
+00:01:08,940 --> 00:01:16,940
+ configure Bitlocking in an enterprise environment for your, if you're actually doing
+
+14
+00:01:16,940 --> 00:01:20,700
+ this lab environment, or if you're trying to alter to this, the production environment,
+
+15
+00:01:20,700 --> 00:01:24,380
+ you can't only use this video as a guide.
+
+16
+00:01:24,380 --> 00:01:29,580
+ So first of all, you want to actually install the Bitlocker rules on your Windows server,
+
+17
+00:01:29,580 --> 00:01:36,500
+ which allows you to view the Bitlocker key on that device from Active Directory and also
+
+18
+00:01:36,500 --> 00:01:41,900
+ allows you to see the Bitlocker key of that device when something goes wrong with that
+
+19
+00:01:41,900 --> 00:01:42,900
+ device.
+
+20
+00:01:42,900 --> 00:01:46,460
+ So first of all, let's try to add the Bitlocker features.
+
+21
+00:01:46,460 --> 00:01:51,960
+ So I'll just go to click Nest and then select the right, operating system, the right
+
+22
+00:01:51,960 --> 00:01:55,420
+ Windows server that you'll be installing the Bitlocker features.
+
+23
+00:01:55,420 --> 00:01:59,380
+ Let's just click Nest and it's not going to be a role, it's going to be a future, so
+
+24
+00:01:59,380 --> 00:02:01,060
+ we're going to click Nest.
+
+25
+00:02:01,060 --> 00:02:05,340
+ So here, if I hear you can see, we have the Bitlocker driver encryption, that already
+
+26
+00:02:05,340 --> 00:02:07,500
+ been installed.
+
+27
+00:02:07,500 --> 00:02:12,020
+ And then when we scroll down, yeah, we scroll down on other remote server tools.
+
+28
+00:02:12,020 --> 00:02:18,460
+ Yeah, then if I go here to future administrator, you can see we have the Bitlocker driver
+
+29
+00:02:18,460 --> 00:02:23,860
+ encryption, which is good, you're going to select this and then install the features.
+
+30
+00:02:23,860 --> 00:02:27,320
+ So by starting the features, you will now restart your device.
+
+31
+00:02:27,320 --> 00:02:29,560
+ Then I'll tell you that your device, that is not all.
+
+32
+00:02:29,560 --> 00:02:33,540
+ We now need to actually configure a group policy.
+
+33
+00:02:33,540 --> 00:02:36,460
+ So what you need to do is you're going to start a group policy.
+
+34
+00:02:36,460 --> 00:02:40,020
+ And first of all, what we want to actually do, because you want to store the password
+
+35
+00:02:40,020 --> 00:02:45,020
+ in Active Directory, you can see this is the Bitlocker recovery information in Active Directory
+
+36
+00:02:45,020 --> 00:02:46,020
+ domain.
+
+37
+00:02:46,020 --> 00:02:50,220
+ So you double click on that and you enable it.
+
+38
+00:02:50,220 --> 00:02:51,220
+ And there we can.
+
+39
+00:02:51,220 --> 00:02:57,380
+ So it says, okay, require Bitlocker, Bitlocker backup to Active Directory domain service and
+
+40
+00:02:57,380 --> 00:03:03,180
+ the recovery password and the key packages, you can actually select the recovery password
+
+41
+00:03:03,180 --> 00:03:04,180
+ only.
+
+42
+00:03:04,180 --> 00:03:05,620
+ So let me cancel that.
+
+43
+00:03:05,620 --> 00:03:09,740
+ And then now, we now also have some options, for example, you can see we have fixed drive,
+
+44
+00:03:09,740 --> 00:03:15,400
+ data drives, or previous system drives, or removable data drives, but I want to go to the
+
+45
+00:03:15,400 --> 00:03:16,820
+ operating system drives.
+
+46
+00:03:16,820 --> 00:03:22,740
+ And on the operating system drive, here you can see we have required additional authentication
+
+47
+00:03:22,740 --> 00:03:23,740
+ as touch-up.
+
+48
+00:03:23,740 --> 00:03:27,740
+ You want to try to configure that, you can see it's going to say, I'm a lot bitlocker,
+
+49
+00:03:27,740 --> 00:03:34,540
+ with tactical portable TPM, of course required a password or a startup key on a USB flash drive.
+
+50
+00:03:34,540 --> 00:03:38,340
+ So because I'm using a virtual machine for this training, I want to totally configure
+
+51
+00:03:38,340 --> 00:03:42,020
+ this if not, I'm going to receive an error message.
+
+52
+00:03:42,020 --> 00:03:47,200
+ And here you can see it says configure, configure TPM startup, you want to say allow, and
+
+53
+00:03:47,200 --> 00:03:53,860
+ the startup TPM startup and pin, we're going to also allow startup pin with TPM, and also
+
+54
+00:03:53,860 --> 00:03:58,460
+ the startup key, we're going to allow startup key with TPM.
+
+55
+00:03:58,460 --> 00:04:02,180
+ And then lastly, it's going to say, choose how Bitlocker protection, and protect the
+
+56
+00:04:02,180 --> 00:04:06,040
+ operating system drives can be recovered, we're going to say, well, we're going in a
+
+57
+00:04:06,040 --> 00:04:13,040
+ window that has totally recovery password and key passwords as well, so actually the battery,
+
+58
+00:04:13,040 --> 00:04:17,560
+ and here we can see it says allow the 48-digit recovery password, and allow the true for
+
+59
+00:04:17,560 --> 00:04:21,600
+ 5 to 5-6 bit recovery key.
+
+60
+00:04:21,600 --> 00:04:23,080
+ So let me just cancel that.
+
+61
+00:04:23,080 --> 00:04:28,040
+ So after you've done this configuration, and then you apply the policy, let me just close
+
+62
+00:04:28,040 --> 00:04:29,040
+ this.
+
+63
+00:04:29,040 --> 00:04:35,240
+ There right now, you can see that this policy has been applied to the long-done position.
+
+64
+00:04:35,240 --> 00:04:41,120
+ Now you need to have one computer, there is a Windows 11 device, so now let's go to
+
+65
+00:04:41,120 --> 00:04:45,040
+ our Windows 11 device, and then you can see this is our seat drive.
+
+66
+00:04:45,040 --> 00:04:50,760
+ So if I decide to click on the seat drive and turn on Bitlocker, remind you, you still need
+
+67
+00:04:50,760 --> 00:04:55,640
+ to turn if you are installing that device for the first time, you still need to turn on
+
+68
+00:04:55,640 --> 00:04:57,680
+ a bit Locker.
+
+69
+00:04:57,680 --> 00:05:01,720
+ So here you can see, I have to choose how Bitlocker, or you want to unlock your driver's
+
+70
+00:05:01,720 --> 00:05:08,520
+ touch-up, so I definitely want to use a pin, I'm going to just go for, let me just enter
+
+71
+00:05:08,520 --> 00:05:17,480
+ the pin, go to my password, and then I'm going to click Nest.
+
+72
+00:05:17,480 --> 00:05:24,200
+ This is a clip, I'm using the taskbase only, or a clip entire disk, I'm going to encrypt
+
+73
+00:05:24,200 --> 00:05:29,200
+ the user taskbase only, I'm going to click Nest, and then you ask a clip show mode, I
+
+74
+00:05:29,200 --> 00:05:34,200
+ will select that and click Nest, and then run the Bitlocker system, check, I'm just going
+
+75
+00:05:34,200 --> 00:05:38,400
+ to click Continue, so it's trying to actually encrypt my device.
+
+76
+00:05:38,400 --> 00:05:43,640
+ So right now, is going to try, I'm going to restart my device, and then the encryption
+
+77
+00:05:43,640 --> 00:05:50,680
+ will continue, and then we can now check and see how our Bitlocker is actually saved.
+
+78
+00:05:50,680 --> 00:05:55,560
+ So let me just restart my device, or I'll actually start later, but definitely I want
+
+79
+00:05:55,560 --> 00:06:01,200
+ to restart my device now.
+
+80
+00:06:01,200 --> 00:06:06,600
+ So now, we need to enter a password to itali, and get access to our device, so I'll just
+
+81
+00:06:06,600 --> 00:06:14,200
+ need to enter my password, the hit enter, and right now you can see that I'm able to
+
+82
+00:06:14,200 --> 00:06:18,800
+ itali, assess my device, we'll go with how my password, I'm not able to get into my
+
+83
+00:06:18,800 --> 00:06:25,040
+ device, and if you try to type the password several times, definitely you'll be requested
+
+84
+00:06:25,040 --> 00:06:27,360
+ to enter a recovery key.
+
+85
+00:06:27,360 --> 00:06:32,360
+ So let's just wait for this device to get started, and then we can now log on to our
+
+86
+00:06:32,360 --> 00:06:46,880
+ device, here we go, if I go now to my file explorer, and I go to this PC, here you can
+
+87
+00:06:46,880 --> 00:06:51,520
+ see that Bitlocker has been configured on this device.
+
+88
+00:06:51,520 --> 00:06:58,520
+ So next I will show you how to itali, recovery key for Bitlocker in case you enter your
+
+89
+00:06:58,520 --> 00:07:02,800
+ PIN code, and something goes wrong, or if you got your PIN code, definitely you will
+
+90
+00:07:02,800 --> 00:07:06,720
+ requested to profile your Bitlocker recovery key.
+
+91
+00:07:06,720 --> 00:07:09,600
+ So let me just show you how to get your recovery key.
+
