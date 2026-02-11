@@ -1,0 +1,336 @@
+1
+00:00:00,000 --> 00:00:03,200
+Này, trong bài học này, chúng ta sẽ làm bài kiểm tra đơn vị.
+
+2
+00:00:03,200 --> 00:00:09,520
+Vì vậy, các thử nghiệm đơn vị sẽ giúp chúng tôi chắc chắn rằng ứng dụng của chúng tôi vẫn hoạt động sau bất kỳ thay đổi nào.
+
+3
+00:00:09,520 --> 00:00:15,680
+Họ tự động kiểm tra một số bộ phận nhỏ của ứng dụng, vì vậy chúng tôi không có kiểm tra tất cả mọi thứ bằng tay.
+
+4
+00:00:15,680 --> 00:00:20,560
+Và chúng ta không nên quan tâm nếu anh làm hỏng thứ gì, chúng ta sẽ thấy nó ngay lập tức.
+
+5
+00:00:20,560 --> 00:00:26,720
+Trong bài học này, chúng tôi sẽ yêu cầu trí tuệ nguồn của chúng tôi tạo ra một kế hoạch để bao gồm ứng dụng của chúng tôi bằng các bài kiểm tra đơn vị.
+
+6
+00:00:26,720 --> 00:00:31,120
+Và nó nên liệt kê những thử nghiệm chúng ta cần cho mỗi tập tin.
+
+7
+00:00:31,120 --> 00:00:37,680
+Vì vậy, sau đó chúng tôi sẽ làm việc để sắp xếp để tạo ra kiểm tra này trong cơ sở mã của chúng tôi về kế hoạch.
+
+8
+00:00:37,680 --> 00:00:41,440
+Chúng ta sẽ xem lại, chúng ta sẽ sửa chữa và thay đổi nếu cần.
+
+9
+00:00:41,440 --> 00:00:46,960
+Sau đó, chúng ta có thể kiểm tra và đảm bảo rằng tất cả họ đều đúng và có hiệu quả.
+
+10
+00:00:46,960 --> 00:00:52,720
+Và bằng cách này, ứng dụng của chúng tôi sẽ ổn định và dễ dàng cập nhật trong tương lai.
+
+11
+00:00:52,720 --> 00:00:55,920
+Để kế hoạch của chúng ta không bao gồm mọi thứ chúng ta cần.
+
+12
+00:00:55,920 --> 00:01:00,880
+Kiểm tra logic chuyển đổi, kiểm tra các thành phần khác nhau chúng ta có ở đây.
+
+13
+00:01:00,880 --> 00:01:04,560
+Kiểm tra các cuộc gọi và kiểm tra trong ống tiểu.
+
+14
+00:01:04,560 --> 00:01:08,160
+Và tất nhiên, trạng thái ứng dụng chính cũng hoạt động.
+
+15
+00:01:08,160 --> 00:01:15,280
+Điều này giúp chúng tôi bắt những vấn đề sớm và giữ cho dự án của chúng tôi ổn định như nó đã nói với bạn.
+
+16
+00:01:15,280 --> 00:01:21,120
+Được rồi, tôi đã chuẩn bị một dấu nhắc, một dấu nhắc áp lực, mà chúng tôi sẽ yêu cầu để sắp xếp để tạo ra tất cả các tập tin,
+
+17
+00:01:21,120 --> 00:01:28,320
+Nhưng chúng tôi sẽ sử dụng chế độ lên kế hoạch đầu tiên xem những gì giao lộ sẽ bao gồm và có thể là
+
+18
+00:01:28,320 --> 00:01:30,320
+Điều chỉnh.
+
+19
+00:01:30,320 --> 00:01:32,480
+Vậy nếu chúng ta cần thêm người.
+
+20
+00:01:32,480 --> 00:01:35,760
+Ok, dấu nhắc là những điều sau đây.
+
+21
+00:01:35,760 --> 00:01:41,760
+Tạo một kế hoạch từng bước để thêm một thử nghiệm đơn vị chạy trong ứng dụng này bằng kiểm tra.
+
+22
+00:01:41,760 --> 00:01:46,720
+Với bài kiểm tra, nó là ulit, đại loại thế, nhưng nó hơi mới hơn.
+
+23
+00:01:47,280 --> 00:01:54,160
+Vì vậy, và chúng tôi cũng yêu cầu tất cả các yêu cầu chức năng của chúng tôi và các cuộc gọi trên mạng.
+
+24
+00:01:54,160 --> 00:01:57,440
+Được rồi, hãy yêu cầu sắp xếp kế hoạch.
+
+25
+00:01:57,440 --> 00:02:03,120
+Và chúng ta sẽ thấy trong một phút nữa, ồ, những gì sẽ bao gồm.
+
+26
+00:02:03,120 --> 00:02:06,960
+Đầu tiên, chúng ta cần thêm một thư viện thử nghiệm vào dự án.
+
+27
+00:02:06,960 --> 00:02:15,200
+Ngoài ra, chúng tôi sẽ sử dụng các phản ứng thư viện và kiểm tra, thư viện để tìm các thành phần trong một miền, vv.
+
+28
+00:02:16,320 --> 00:02:20,480
+Vì vậy, như sau đó chúng tôi sẽ cấu hình một chút thử nghiệm, tất nhiên, nó cũng cần thiết.
+
+29
+00:02:20,480 --> 00:02:27,440
+Và sau đó cấu trúc thử nghiệm đơn vị sẽ là, vì vậy tôi không thích cấu trúc thử nghiệm này, vì vậy chúng tôi sẽ cập nhật nó.
+
+30
+00:02:27,440 --> 00:02:32,480
+Tôi không muốn có một thư mục riêng cho tất cả các bài kiểm tra.
+
+31
+00:02:32,480 --> 00:02:37,760
+Tôi muốn tất cả các xét nghiệm, các bạn sẽ tiếp tục với các thành phần, chỉ với phần mở rộng thử nghiệm,
+
+32
+00:02:37,760 --> 00:02:38,400
+Ví dụ.
+
+33
+00:02:40,240 --> 00:02:56,960
+Vì vậy, hãy điều chỉnh nó, vì vậy tôi có thể hỏi nó, tôi muốn có, hãy thu thập thành phần này.
+
+34
+00:02:56,960 --> 00:03:02,240
+Tôi đã nói là an toàn, nên anh cần phải điều chỉnh kế hoạch.
+
+35
+00:03:02,240 --> 00:03:08,800
+Tất nhiên, tôi có thể chỉnh sửa nó ở đây, nên tôi quyết định điều chỉnh lại bảng điều khiển, viết lại nó.
+
+36
+00:03:09,840 --> 00:03:16,880
+Nên sử dụng một tập tin thử nghiệm bên cạnh tập tin mã nguồn, không phải là thư mục, được chứ?
+
+37
+00:03:16,880 --> 00:03:24,080
+Sau đó, chúng tôi sẽ viết bài kiểm tra cho các tiện ích, okay, anh ta sẽ bao gồm hai tiện ích, đó là tốt.
+
+38
+00:03:24,080 --> 00:03:29,280
+Viết bài kiểm tra cho các mô hình 8 ngày để kiếm tiền và lấy lãi suất.
+
+39
+00:03:29,280 --> 00:03:34,560
+Cũng không sao, anh ta sẽ sử dụng, chế nhạo cuộc gọi và mạng lưới.
+
+40
+00:03:35,120 --> 00:03:40,960
+Ông sẽ viết bài kiểm tra cho các thành phần, chúng tôi có một đầu vào núi, khảo sát tiền tệ, kết quả, và trao đổi
+
+41
+00:03:40,960 --> 00:03:47,520
+Nút. Ông sẽ xác minh vẽ, thăm dò, và hành vi chính, nó là tốt, ông cũng sẽ thêm một số
+
+42
+00:03:47,520 --> 00:03:54,480
+kiểm tra mức độ cao cho logic thành phần ứng dụng. Và anh ta sẽ chạy và xác minh mọi việc.
+
+43
+00:03:54,480 --> 00:04:02,000
+Vì vậy, đây là một thực hiện để làm, và với kiểm tra, kiểm tra, nó thực hiện thành phần thử nghiệm IP này,
+
+44
+00:04:02,000 --> 00:04:07,680
+ứng dụng này, và kiểm tra, vì vậy nó trông tốt. Tuyệt vời, tôi sẽ nói, và nó sẽ được xây dựng.
+
+45
+00:04:07,680 --> 00:04:18,720
+Oh, tất nhiên, tôi đã cố gắng điều hành tất cả các thư viện, ông cảm thấy cài đặt tất cả các thư viện.
+
+46
+00:04:18,720 --> 00:04:24,240
+Hãy nhận thức rằng đôi khi bạn cần phải chấp nhận, bạn cho phép để thực hiện mệnh lệnh,
+
+47
+00:04:24,240 --> 00:04:31,600
+đề nghị đặt hàng. Vì vậy, chúng ta có thể thấy rằng nó đang thêm vào một thư viện mới, thư viện kiểm tra,
+
+48
+00:04:32,000 --> 00:04:41,840
+Với bài kiểm tra, anh ta sẽ thêm thư viện. Và bây giờ, anh ta đang bắt đầu điều chỉnh bằng kiểm tra.
+
+49
+00:04:41,840 --> 00:04:48,720
+Và không thích cấu hình phát tán, nên rất dễ để anh ấy, tôi có thể giúp việc này,
+
+50
+00:04:48,720 --> 00:04:54,400
+Bởi vì bạn đang dành rất nhiều thời gian cho tài liệu này, cố gắng để cấu hình giữa
+
+51
+00:04:54,400 --> 00:04:59,280
+Các phiên bản khác nhau, đặc biệt là khi bạn sử dụng TypeSQL. Vì vậy, đó là thực sự thú vị hoạt động,
+
+52
+00:04:59,920 --> 00:05:07,760
+Nhưng tôi thích giao nó cho Al hơn. Vì vậy, chúng tôi có thử nghiệm đầu tiên cho tiểu, chúng tôi đã chuyển đổi
+
+53
+00:05:07,760 --> 00:05:14,000
+thử nghiệm, và với một bài kiểm tra, nó nói với giai điệu bên phải và tổng thể, sau đó nó kết thúc
+
+54
+00:05:14,000 --> 00:05:27,760
+một lỗi, nếu bên phải không phải là số, và nó cũng giải quyết các số âm. Okay, look, okay, I don't
+
+55
+00:05:27,760 --> 00:05:34,560
+Biết những gì có số lượng âm, tôi đoán chúng tôi không cho phép nó, nhưng okay. Cho tiền tệ,
+
+56
+00:05:34,560 --> 00:05:42,880
+Rồi, thử loại Euro khác, các biểu tượng khác nhau. Tôi cũng sẽ cho bạn thấy một cuộc sống nhỏ hack,
+
+57
+00:05:42,880 --> 00:05:49,840
+Ví dụ, làm thế nào chúng ta có thể tối ưu hóa thử nghiệm này. Vì vậy, nó sẽ hợp lý nếu bạn có các xét nghiệm lớn hơn,
+
+58
+00:05:49,840 --> 00:05:59,120
+chúng tôi có thể sử dụng dấu chấm thử mỗi, hoặc nó ID chấm mỗi, vì vậy chúng tôi sẽ chỉ cần nhập vào đề cập đến tất cả các
+
+59
+00:05:59,120 --> 00:06:04,400
+giá trị và tên cho bài kiểm tra, và sau đó nó sẽ kiểm tra, nó sẽ thực hiện nó trên một.
+
+60
+00:06:04,400 --> 00:06:11,120
+Nhưng, trong trường hợp này, chúng tôi có, chúng tôi kiểm tra khác nhau, vì vậy chúng tôi phải là, mà nó là
+
+61
+00:06:11,120 --> 00:06:18,800
+Emojent, chúng tôi kiểm tra nó để được tốt hơn, vì vậy nó không thực sự có ý nghĩa. Hãy kiểm tra phần còn lại của bài kiểm tra,
+
+62
+00:06:18,800 --> 00:06:25,440
+Chúng tôi có số lượng đầu vào, chúng tôi vẫn thấy một bông hồng vì nó đang hoạt động trên nó. Vì vậy, chúng tôi có các xu hướng và
+
+63
+00:06:25,440 --> 00:06:32,800
+Nhập đoạn trợ giúp, nó tiếp tục thay đổi, cho phép chỉ một dấu thập phân, chặn việc đặt nếu không
+
+64
+00:06:33,760 --> 00:06:46,880
+Số nguyên tối đa, OK, những gì nó nên là, yeah, vì vậy chúng tôi có thể cung cấp số tối đa.
+
+65
+00:06:46,880 --> 00:06:57,280
+Chúng tôi luôn có thể tối ưu hóa nó, chúng tôi có thể tạo ra các trợ giúp để tạo ra các thành phần,
+
+66
+00:06:57,280 --> 00:07:04,400
+Nếu chúng tôi thích, nhưng tôi sẽ để cho anh quyết định, anh luôn có thể tối ưu hóa bài kiểm tra.
+
+67
+00:07:04,400 --> 00:07:14,000
+Kết quả là, đây là quy ước được thăng tiến, cải đạo, vâng, nó ổn, nút trao đổi,
+
+68
+00:07:14,000 --> 00:07:20,080
+Chúng tôi kiểm tra nó, tạo ra cái nút và sau đó nhấn nút công việc, nó dùng cho tiền tệ.
+
+69
+00:07:21,680 --> 00:07:31,920
+Chúng tôi đã có được các tỷ lệ API, nó lấy, và nó criping các AI, và nó đã cố gắng để có được nó và
+
+70
+00:07:31,920 --> 00:07:42,480
+Xem chúng ta có được những gì chúng ta đã chế nhạo trước đây, và cũng kiểm tra nó thông qua một lỗi. Để lấy lại
+
+71
+00:07:42,480 --> 00:07:51,760
+Tiền tệ, nó giống nhau, nó chỉ cần làm thêm một, có thể kiểm tra khói là một trả lại, và cũng là nó
+
+72
+00:07:51,760 --> 00:07:59,280
+Chúng tôi phản ứng, phản ứng không tốt, và bây giờ chúng tôi đã có bài kiểm tra chấm đơn, nên chúng tôi kiểm tra,
+
+73
+00:07:59,280 --> 00:08:07,680
+Chúng tôi kiểm tra các công thức ứng dụng và có thể chuyển đổi, chúng tôi có thể nhập số lượng, chúng tôi có thể xử lý trao đổi,
+
+74
+00:08:07,680 --> 00:08:13,760
+Chúng tôi có thể hiển thị nó, hoặc nếu Facebook thất bại, do đó, đây là một bài kiểm tra cơ bản, bạn tất nhiên có thể mở rộng nó nhiều hơn
+
+75
+00:08:13,760 --> 00:08:20,800
+Kiểm tra các vụ án bao gồm một số vụ, nhưng có vẻ như đối với chúng ta, sẽ ổn thôi, dừng lại tại thời điểm này,
+
+76
+00:08:20,800 --> 00:08:29,840
+Tôi sẽ chọn mọi người, được rồi, bây giờ đến lúc kiểm tra thành công, tôi sẽ dừng máy chủ,
+
+77
+00:08:29,840 --> 00:08:37,680
+Và sau đó chúng tôi sẽ chạy, đi, và chúng tôi đang trong thử nghiệm, hãy xem kết quả, oh, chúng tôi thấy, oh, bài kiểm tra của chúng tôi
+
+78
+00:08:37,680 --> 00:08:50,720
+Được thông qua, được rồi, tốt thôi, chúng ta có, vậy nên chỉ có bảy xét nghiệm, tất cả đều đã qua, và chúng ta
+
+79
+00:08:50,720 --> 00:08:59,040
+đã bao gồm cả tám tập tin, nên tốt thôi, chỉ là một nhận xét nhanh thôi, nếu xét nghiệm của anh không có tác dụng,
+
+80
+00:08:59,040 --> 00:09:05,840
+Bạn có thể có, tôi không biết, bất kỳ lỗi nào trong thiết bị cuối, bạn có thể chỉ cần đặt nó bằng lỗi này, như
+
+81
+00:09:05,840 --> 00:09:16,000
+Văn bản này, bạn chỉ cần dán nó ở đây, và yêu cầu, sửa chữa bài kiểm tra này, và bạn có thể làm nhiều lặp hơn,
+
+82
+00:09:16,000 --> 00:09:25,040
+Và nếu bạn đang trên kế hoạch được trả lương, tôi khuyên bạn nên sử dụng một trong các mô hình của Sonnet, nó là thông minh hơn nhiều
+
+83
+00:09:25,040 --> 00:09:32,320
+Hơn mô hình ô tô cho ba điểm, và bạn có thể có kết quả tốt hơn, vì vậy tôi nghĩ rằng điều này
+
+84
+00:09:32,320 --> 00:09:36,560
+mọi thứ tôi muốn cho các bạn xem, và nhìn thấy bạn trong bài học tiếp theo,
+
