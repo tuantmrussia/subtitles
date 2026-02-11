@@ -1,0 +1,283 @@
+1
+00:00:01,509 --> 00:00:06,780
+Imagine in your organization a couple of services run on Google Cloud,
+
+2
+00:00:06,989 --> 00:00:12,869
+some of them on GKE, some of them are legacy services which are on‑prem,
+
+3
+00:00:13,050 --> 00:00:19,270
+and your CTO wants to deploy everything faster without breaking the production.
+
+4
+00:00:19,549 --> 00:00:23,729
+Now how do you build the CI/CD system that works across GCP
+
+5
+00:00:24,995 --> 00:00:28,934
+hybrid environment and maybe even multiple cloud? That's
+
+6
+00:00:28,934 --> 00:00:29,864
+what we're going to see here.
+
+7
+00:00:30,975 --> 00:00:35,215
+Before that, first understand what CI/CD really is.
+
+8
+00:00:35,455 --> 00:00:39,834
+CI/CD is more than just running tests and deploying code.
+
+9
+00:00:40,115 --> 00:00:45,095
+Google defines it as a fully automated path from commit to
+
+10
+00:00:45,095 --> 00:00:47,974
+production with guardrails for safety.
+
+11
+00:00:48,205 --> 00:00:53,779
+A modern CI/CD pipeline includes the continuous integration,
+
+12
+00:00:53,990 --> 00:00:59,690
+continuous delivery that moves the artifact across environments automatically,
+
+13
+00:00:59,690 --> 00:01:04,000
+and it also has the continuous deployment that fully
+
+14
+00:01:04,000 --> 00:01:06,779
+automates the deployment into the production.
+
+15
+00:01:07,029 --> 00:01:13,160
+You can think of CI as creation and validation and CD as promotion and release.
+
+16
+00:01:13,400 --> 00:01:16,324
+Artifact Registry is the single source of truth.
+
+17
+00:01:16,565 --> 00:01:20,654
+All build outputs like containers, Maven packages,
+
+18
+00:01:20,934 --> 00:01:25,144
+node modules, Terraform modules go into the Artifact Registry.
+
+19
+00:01:25,415 --> 00:01:28,775
+Google recommends Artifact Registry because it
+
+20
+00:01:28,775 --> 00:01:30,834
+supports the multi‑region replication.
+
+21
+00:01:31,014 --> 00:01:34,415
+It integrates with the Cloud Build and Cloud Deploy.
+
+22
+00:01:34,625 --> 00:01:38,464
+It enforces the IAM at the repository level,
+
+23
+00:01:38,614 --> 00:01:42,029
+and It logs everything for your audit,
+
+24
+00:01:42,269 --> 00:01:45,910
+so no more mixing artifacts in the random places.
+
+25
+00:01:46,160 --> 00:01:51,760
+The Cloud Build is your CI engine that handles and runs your unit test,
+
+26
+00:01:52,040 --> 00:01:55,980
+your linting, your container builds, your security scans,
+
+27
+00:01:56,110 --> 00:01:59,389
+your SBOM generation, and preview deployments.
+
+28
+00:01:59,599 --> 00:02:04,739
+Cloud Build is serverless, so it scales beautifully during busy times.
+
+29
+00:02:04,919 --> 00:02:10,029
+Cloud Deploy handles the promotion of artifacts through your dev,
+
+30
+00:02:10,389 --> 00:02:16,130
+staging, and prod. Cloud Deploy pipeline supports canary rollouts,
+
+31
+00:02:16,389 --> 00:02:18,899
+blue‑green deployments, manual approvals,
+
+32
+00:02:19,110 --> 00:02:24,270
+your scaffold integration, rollbacks, and your multi‑service orchestration.
+
+33
+00:02:24,470 --> 00:02:28,649
+Cloud Deploy stores release history, approvals,
+
+34
+00:02:28,710 --> 00:02:33,389
+and rollbacks, extremely important for compliance‑heavy industries.
+
+35
+00:02:33,630 --> 00:02:38,705
+Cloud Deploy natively integrates with customize for environment
+
+36
+00:02:38,705 --> 00:02:42,824
+overlays and scaffold for build and deploy workflows.
+
+37
+00:02:42,955 --> 00:02:47,595
+This is how you avoid duplicating the YAML across environment.
+
+38
+00:02:47,794 --> 00:02:53,464
+Each environment gets its own small patch, clean and elegant.
+
+39
+00:02:53,804 --> 00:02:57,205
+Now let's expand to the hybrid environment where
+
+40
+00:02:57,434 --> 00:02:59,744
+some of the services in the GCP,
+
+41
+00:03:00,074 --> 00:03:05,110
+some of them in the on‑prem and some are still legacy applications.
+
+42
+00:03:05,169 --> 00:03:09,169
+This is common in the banking, telecom, and healthcare retail.
+
+43
+00:03:09,720 --> 00:03:13,059
+Now we need a pipeline that must deploy everywhere.
+
+44
+00:03:13,339 --> 00:03:15,320
+This can be done in multiple ways.
+
+45
+00:03:15,529 --> 00:03:18,949
+The first one would be the Cloud Build builds.
+
+46
+00:03:19,130 --> 00:03:23,389
+Cloud Build can push artifacts to on‑prem Kubernetes,
+
+47
+00:03:23,669 --> 00:03:24,690
+Anthos clusters,
+
+48
+00:03:24,830 --> 00:03:30,610
+bare metal GKE, virtual machines, and legacy deployment systems.
+
+49
+00:03:30,610 --> 00:03:35,940
+Because Cloud Build uses an extensive builder model, you can run any
+
+50
+00:03:35,940 --> 00:03:39,380
+script needed to deploy to private environments.
+
+51
+00:03:39,580 --> 00:03:44,429
+Another option is Anthos configuration management with GitOps.
+
+52
+00:03:44,529 --> 00:03:48,779
+Hybrid pipeline often use a Git as the truth model.
+
+53
+00:03:49,050 --> 00:03:56,389
+Cloud Build publishes and Anthos config management syncs it to on‑prem GKE,
+
+54
+00:03:56,630 --> 00:03:59,929
+Cloud GKE, and the edge clusters.
+
+55
+00:04:00,089 --> 00:04:04,350
+Another option is secure VPN or interconnected deployment.
+
+56
+00:04:04,589 --> 00:04:09,869
+Cloud Build can reach private clusters using Cloud VPN,
+
+57
+00:04:10,070 --> 00:04:12,690
+Cloud Interconnect, and authorized networks.
+
+58
+00:04:13,240 --> 00:04:16,510
+This is common for sensitive regulated workloads.
+
+59
+00:04:16,760 --> 00:04:19,548
+Some companies deploy to the multi‑cloud,
+
+60
+00:04:19,769 --> 00:04:24,630
+where it could be GCP and AWS, GCP and Azure,
+
+61
+00:04:25,000 --> 00:04:26,890
+or maybe GCP and on‑prem.
+
+62
+00:04:27,160 --> 00:04:30,100
+Here the typical pipeline would be Cloud Build perform,
+
+63
+00:04:30,239 --> 00:04:34,119
+build, and security scans, artifacts stored in Artifact Registry.
+
+64
+00:04:34,769 --> 00:04:37,489
+Cloud Deploy handles GCP deployments.
+
+65
+00:04:37,779 --> 00:04:43,709
+GitHub Action or GitLab CI deploys to AWS or Azure,
+
+66
+00:04:43,899 --> 00:04:47,160
+and monitoring centralized in the Google Cloud monitoring.
+
+67
+00:04:47,459 --> 00:04:51,559
+Multi‑cloud CI/CD is mostly about the standardization,
+
+68
+00:04:51,700 --> 00:04:53,720
+which has the same build system,
+
+69
+00:04:53,899 --> 00:04:58,440
+same configuration model and separate delivery engines per cloud.
+
+70
+00:04:58,700 --> 00:05:00,859
+This keeps complexity manageable.
+
+71
+00:05:01,140 --> 00:05:06,239
+So that's the foundation of designing a modern CI/CD system for Google Cloud.
