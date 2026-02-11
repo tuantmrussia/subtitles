@@ -1,0 +1,256 @@
+1
+00:00:00,439 --> 00:00:03,089
+Hai đội xây dựng hệ thống riêng biệt, trên thực tế,
+
+2
+00:00:03,289 --> 00:00:05,519
+Thậm chí trong các dự án khác,
+
+3
+00:00:05,650 --> 00:00:08,659
+và đột nhiên họ cần nói chuyện riêng với nhau.
+
+4
+00:00:08,779 --> 00:00:11,770
+Đây chính xác là nơi VPC đang được sử dụng.
+
+5
+00:00:11,920 --> 00:00:13,350
+Để xem chúng ta làm thế nào.
+
+6
+00:00:13,449 --> 00:00:16,000
+Tôi đang ở trên bảng điều khiển, và tôi có hai dự án.
+
+7
+00:00:16,170 --> 00:00:20,530
+Một là hpc3 và một là hpc2.
+
+8
+00:00:20,700 --> 00:00:24,040
+Trước đó trong clip trước đó, chúng tôi đã thêm cả hai
+
+9
+00:00:24,040 --> 00:00:26,500
+Hai dự án này được chia sẻ bởi VPC.
+
+10
+00:00:26,639 --> 00:00:31,399
+Tôi đã xóa và xóa tất cả các trường hợp để chúng sạch sẽ.
+
+11
+00:00:31,520 --> 00:00:35,119
+Những gì chúng tôi sẽ làm là chúng tôi sẽ tạo ra hai khác nhau
+
+12
+00:00:35,119 --> 00:00:38,759
+mạng lưới trong mỗi dự án này, và sau đó chúng tôi sẽ làm
+
+13
+00:00:38,759 --> 00:00:40,580
+Phó chủ tịch đang nhìn nhau.
+
+14
+00:00:40,720 --> 00:00:46,270
+Vì vậy, hãy đi xuống hpc2 và hãy tạo ra một mạng VPC mới.
+
+15
+00:00:46,549 --> 00:00:48,509
+Nói ở đây, tạo mạng VPC.
+
+16
+00:00:48,630 --> 00:00:51,630
+Tôi đặt tên cho nó là dự án "Porvpc".
+
+17
+00:00:51,840 --> 00:00:57,110
+Tương tự như vậy, đối với mạng ngầm, tôi sẽ đặt tên cho dự án này như là dự án cho máy tính xách tay 2.
+
+18
+00:00:57,229 --> 00:00:58,310
+Trong phạm vi IP,
+
+19
+00:00:58,470 --> 00:01:05,910
+Tôi sẽ chọn phạm vi IP là 10.1.0, và tôi sẽ nói tạo.
+
+20
+00:01:06,419 --> 00:01:10,699
+Chọn khu vực như Asiasoutheast1 và nói Tạo.
+
+21
+00:01:10,860 --> 00:01:14,019
+Bây giờ trên những đường thẳng tương tự, hãy đi đến dự án khác.
+
+22
+00:01:14,099 --> 00:01:17,949
+Và đây, tôi đi xuống VPC.
+
+23
+00:01:18,379 --> 00:01:21,940
+Tôi cũng sẽ tạo ra một mạng VPC.
+
+24
+00:01:22,059 --> 00:01:26,059
+Tôi sẽ gọi dự án này như là dự án ba phần.
+
+25
+00:01:26,269 --> 00:01:32,300
+Tương tự như vậy, tôi sẽ đặt tên cho dự án này như là dự án mạng cấu trúc 3  BAR
+
+26
+00:01:32,379 --> 00:01:35,949
+chọn vùng Aniasoutheast1,
+
+27
+00:01:36,069 --> 00:01:43,349
+chọn vùng IP là 10.2.0.0 và nói tạo.
+
+28
+00:01:43,470 --> 00:01:46,389
+Cả hai dự án đều có VPC của họ.
+
+29
+00:01:46,589 --> 00:01:49,910
+Bây giờ là lúc tạo ra một cuộc thăm dò tổng thống.
+
+30
+00:01:50,029 --> 00:01:55,550
+Vì vậy tôi quay lại dự án 2, và tôi đang tạo ra một mạng VPC xem xét.
+
+31
+00:01:55,919 --> 00:01:59,129
+Trong mạng VPC xem xét, hãy nhấn vào kết nối tạo,
+
+32
+00:01:59,410 --> 00:02:07,400
+Hãy đặt tên cho dự án này là dự án số 2 và số 3, đó là sự kết nối. Chọn mạng VPC,
+
+33
+00:02:07,730 --> 00:02:13,130
+Đó là dự án cho sự nghiên cứu và nghiên cứu về một dự án khác.
+
+34
+00:02:13,250 --> 00:02:16,050
+Nên tôi cần một ID dự án khác.
+
+35
+00:02:16,279 --> 00:02:21,419
+Vì vậy, tôi đến đây, sao chép tên của ID dự án của tôi, nói điều này,
+
+36
+00:02:21,440 --> 00:02:25,320
+Và nó sẽ yêu cầu tôi đặt tên cho VPC ở đó.
+
+37
+00:02:26,399 --> 00:02:27,259
+Giả sử tạo.
+
+38
+00:02:27,759 --> 00:02:31,800
+Bây giờ điều này sẽ tạo ra sự xem xét từ dự án 2 đến dự án 3.
+
+39
+00:02:32,000 --> 00:02:35,149
+Bây giờ để kiểm tra xem nó có hoạt động hay không,
+
+40
+00:02:35,199 --> 00:02:39,740
+Tôi sẽ tạo ra hai trường hợp, một trong mỗi dự án.
+
+41
+00:02:39,919 --> 00:02:42,509
+Vì vậy, tôi đi xuống đây, tạo ra ví dụ.
+
+42
+00:02:42,759 --> 00:02:44,679
+Bây giờ trong khi tôi sẽ tạo ra một ví dụ,
+
+43
+00:02:44,800 --> 00:02:49,639
+Tôi sẽ chọn một mạng cụ thể ở đây dưới thiết lập mạng lưới.
+
+44
+00:02:49,850 --> 00:02:52,300
+Mạng lưới này là dự án cho sự thay đổi khí hậu.
+
+45
+00:02:52,960 --> 00:02:58,639
+Dự án thứ hai, tôi đang sử dụng dự án này với tư cách là mạng lưới và nói rằng tạo hóa.
+
+46
+00:02:58,839 --> 00:03:04,259
+Tôi đi đến dự án 3, và tôi sẽ tạo ra một ví dụ ở đây.
+
+47
+00:03:04,589 --> 00:03:05,514
+Tạo ví dụ,
+
+48
+00:03:05,875 --> 00:03:09,654
+chọn vùng. Dưới trường mạng, chúng tôi sẽ chọn
+
+49
+00:03:09,654 --> 00:03:15,785
+Đây là mạng lưới dự án của chúng tôi, mặc dù nó có giá trị lớn nhất.
+
+50
+00:03:16,505 --> 00:03:20,024
+Bây giờ chúng ta có một ví dụ trong mỗi dự án,
+
+51
+00:03:20,035 --> 00:03:24,764
+Và tôi muốn kết nối dự án 2 với dự án 3 bằng cách nhìn nhận.
+
+52
+00:03:24,884 --> 00:03:29,929
+Bây giờ tôi chỉ cần kiểm tra để tôi có thể chỉ cần xuống đây và nói
+
+53
+00:03:30,130 --> 00:03:35,750
+SSH. Chúng tôi cũng cần phải tạo ra các VPC xem xét từ dự án 3 đến
+
+54
+00:03:35,750 --> 00:03:37,740
+Dự án 2, vì vậy hãy làm điều đó là tốt.
+
+55
+00:03:37,910 --> 00:03:42,460
+Hãy nói rằng tạo kết nối và đặt tên cho nó như là phân tích kỹ thuật số 3 độ C.
+
+56
+00:03:42,789 --> 00:03:45,229
+Chọn mạng và chọn ID dự án.
+
+57
+00:03:45,490 --> 00:03:47,990
+Chọn tên VPC và nói tạo.
+
+58
+00:03:48,089 --> 00:03:48,250
+Bây giờ,
+
+59
+00:03:48,320 --> 00:03:52,710
+Nếu tôi thực hiện SSH từ dự án này 2 và trong dự án
+
+60
+00:03:53,089 --> 00:03:56,729
+3, địa chỉ IP VM là 10.2.2.
+
+61
+00:03:56,850 --> 00:03:58,190
+Vì vậy, tôi chỉ có thể nói ở đây,
+
+62
+00:03:58,330 --> 00:04:06,500
+Tín hiệu 10.2.0.2, và xem chúng ta có thể kết nối
+
+63
+00:04:06,500 --> 00:04:12,779
+Dự án 3 ví dụ từ dự án 2, bởi vì chúng tôi đã thực hiện dự án VPC xem xét.
+
+64
+00:04:12,899 --> 00:04:15,669
+Mạng lưới bây giờ có thể nói chuyện bên trong sử dụng IP riêng.
+
