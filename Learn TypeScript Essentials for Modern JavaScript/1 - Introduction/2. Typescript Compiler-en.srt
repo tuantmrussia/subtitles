@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:08,740
+ In this lesson we're going to explore the TypeScript compiler, which is also called TSC.
+
+2
+00:00:08,740 --> 00:00:14,460
+ Understanding how the compiler works is essential because it's going to turn your TypeScript
+
+3
+00:00:14,460 --> 00:00:21,580
+ code into executable JavaScript that can run in a browser or Node.js.
+
+4
+00:00:21,580 --> 00:00:25,620
+ So what exactly is the TypeScript compiler?
+
+5
+00:00:25,620 --> 00:00:34,600
+ So the compiler converts TypeScript, which is .ts files to JavaScript.js files.
+
+6
+00:00:34,600 --> 00:00:42,960
+ It also performs type checking and generates target compatible.js.
+
+7
+00:00:42,960 --> 00:00:49,160
+ So the compiler TSC is a pretty important tool that does two important things.
+
+8
+00:00:49,160 --> 00:00:57,860
+ It checks our code for type errors and it generates TypeScript and which can run anywhere
+
+9
+00:00:57,860 --> 00:00:59,900
+ that JavaScript runs.
+
+10
+00:00:59,900 --> 00:01:02,680
+ But let's actually see how it works and practice.
+
+11
+00:01:02,680 --> 00:01:09,080
+ So I've just got a command prompt here and I've created a blank folder.
+
+12
+00:01:09,080 --> 00:01:15,320
+ Now first of all you need to make sure you have TypeScript installed on your computer.
+
+13
+00:01:15,320 --> 00:01:25,240
+ So you can do NPM, install, and then G, the global flag, TypeScript.
+
+14
+00:01:25,240 --> 00:01:28,280
+ That's going to go off and it's just going to install TypeScript.
+
+15
+00:01:28,280 --> 00:01:34,740
+ Now to check that's been working fine, you can do TSC, which is the name of the compiler,
+
+16
+00:01:34,740 --> 00:01:37,040
+ hyphen, hyphen, and then version.
+
+17
+00:01:37,040 --> 00:01:44,880
+ Now I've got version currently, 5.93, so just checks that things are installed correctly.
+
+18
+00:01:44,880 --> 00:01:51,840
+ Now what we can do is we can create ourselves a little type example, TypeScript file.
+
+19
+00:01:51,840 --> 00:02:00,000
+ We can do it in any editor, for example, we can just fire up a text editor like notepad.
+
+20
+00:02:00,000 --> 00:02:08,640
+ So I'm just going to create a new file, we call it call it hello.ts, and I'm going
+
+21
+00:02:08,640 --> 00:02:11,920
+ to open that in notepad.
+
+22
+00:02:11,920 --> 00:02:12,920
+ So here's my file.
+
+23
+00:02:12,920 --> 00:02:20,600
+ So let's just do very simple TypeScript, so we can say let greeting, and we can find it
+
+24
+00:02:20,600 --> 00:02:24,360
+ as a string, which we can do by colon and then string.
+
+25
+00:02:24,360 --> 00:02:29,120
+ I don't worry too much about this at the moment, we had card this just yet.
+
+26
+00:02:29,120 --> 00:02:34,240
+ So just this is a way we define a variable as a string.
+
+27
+00:02:34,240 --> 00:02:37,800
+ I mean, it can define a value for that.
+
+28
+00:02:37,800 --> 00:02:46,880
+ So we can say hello, JavaScript, hello, JavaScript, hello, TypeScript, and then we can do
+
+29
+00:02:46,880 --> 00:02:51,880
+ console, a log, and output our greeting.
+
+30
+00:02:51,880 --> 00:02:54,360
+ So nice and simple.
+
+31
+00:02:54,360 --> 00:03:03,400
+ Let's just save that file, and it's so saved at, is that test t file, I'm going to change
+
+32
+00:03:03,400 --> 00:03:16,840
+ it from our ts.txt file by doing run, hello.ts.txt to hello.ts, so now we just have hello.ts.
+
+33
+00:03:16,840 --> 00:03:25,080
+ Now to compile this and convert it into JavaScript, we just do tsc, tsc, and then the name
+
+34
+00:03:25,080 --> 00:03:25,800
+ of the file.
+
+35
+00:03:25,800 --> 00:03:33,320
+ So hello.ts, wait a moment, and nothing particularly looks like
+
+36
+00:03:33,320 --> 00:03:42,600
+ it happens, but if we have a look at our folder, here it is, we have a js file, hello.js.
+
+37
+00:03:42,600 --> 00:03:50,480
+ We can open that in Notepad, and hey presto, it looks identical, a nearly identical, but
+
+38
+00:03:50,480 --> 00:03:57,040
+ notice the difference in the fact that we don't have that colon string, we have just normal
+
+39
+00:03:57,040 --> 00:03:59,000
+ JavaScript.
+
+40
+00:03:59,000 --> 00:04:04,400
+ We can just take this JavaScript in a normal way, and execute node or browser.
+
+41
+00:04:04,400 --> 00:04:10,280
+ So as you can see, TypeScript types are removed during compilation, and they're only used
+
+42
+00:04:10,280 --> 00:04:16,280
+ for development type checks, but it can spit out about a JavaScript.
+
+43
+00:04:16,280 --> 00:04:24,200
+ Now that tsc commands comes with a whole load of different options, and if we do tsc,
+
+44
+00:04:24,200 --> 00:04:31,600
+ my space and hyphen hyphen help, we can see it comes with all these options.
+
+45
+00:04:31,600 --> 00:04:41,040
+ The ones that I would recommend that we need is the one here, target, because it decides,
+
+46
+00:04:41,040 --> 00:04:49,080
+ I said, which JavaScript language version we want to emit, and we recommend that we do
+
+47
+00:04:49,080 --> 00:04:59,560
+ at ES6, because all browsers as support that, ES6, and the other switch that's useful
+
+48
+00:04:59,560 --> 00:05:05,920
+ is this one hyphen hyphen strict, because you want to make sure that we enable all the
+
+49
+00:05:05,920 --> 00:05:10,160
+ strict type checking options, rather than just some of them.
+
+50
+00:05:10,160 --> 00:05:20,240
+ So we can come into here, and we can do tsc, to want to recompile with options of ES6, we
+
+51
+00:05:20,240 --> 00:05:27,240
+ also want the strict, so hyphen hyphen strict, and then the name of our actual files, so
+
+52
+00:05:27,240 --> 00:05:36,360
+ we can do hello dot ts, that's going to input the JavaScript in these with these options.
+
+53
+00:05:36,360 --> 00:05:40,880
+ This is the ones we recommend, we have some perhaps you want to maybe put it in a little
+
+54
+00:05:40,880 --> 00:05:46,000
+ batch file, or just have this as part of your build process.
+
+55
+00:05:46,000 --> 00:05:54,920
+ The other useful command line switch is watch, so we do tsc, hyphen hyphen watch, is then
+
+56
+00:05:54,920 --> 00:06:04,360
+ going to watch for the changes of a particular file, so if we do hello dot ts, and then
+
+57
+00:06:04,360 --> 00:06:14,140
+ put it into a watch mode, so if we then come into here, or let's open up our ts file, just
+
+58
+00:06:14,140 --> 00:06:27,120
+ bring it up here, open that we have, let's open it with visual studio code, and now if
+
+59
+00:06:27,120 --> 00:06:36,040
+ we decide to change from hello TypeScript, let's say, hello TypeScript tsc, then save
+
+60
+00:06:36,040 --> 00:06:48,640
+ the file, now if we go to our js file, we automatically get the compile version tsc any
+
+61
+00:06:48,640 --> 00:06:49,640
+ changes.
+
+62
+00:06:49,640 --> 00:06:54,880
+ We've learned about the TypeScript compiler out of the very basics, and some useful
+
+63
+00:06:54,880 --> 00:07:01,840
+ options. In the next lesson we're going to learn how to use the TypeScript compiler in
+
+64
+00:07:01,840 --> 00:07:09,760
+ Visual Studio Code, which is probably the world's most popular editor for doing TypeScript.
+
