@@ -1,0 +1,676 @@
+1
+00:00:00,000 --> 00:00:04,080
+ All at the difference, in this video, let's have a look at how do we sort
+
+2
+00:00:04,080 --> 00:00:09,120
+ collections in Java and there are such great ways to do that as you'll come to
+
+3
+00:00:09,120 --> 00:00:15,400
+ see shortly. So we start with the basics again and I mean I'll just use a list
+
+4
+00:00:15,400 --> 00:00:24,760
+ here. Let's say we're just sorting for example the list of strings. We want to do
+
+5
+00:00:24,760 --> 00:00:31,080
+ that. Let's really have a list, a list of names and you see this is an
+
+6
+00:00:31,080 --> 00:00:34,180
+ error list, but you can just go ahead and do it with a link list if you want,
+
+7
+00:00:34,180 --> 00:00:40,480
+ right? I'll say list of names and let's say it's certain strings here so that we
+
+8
+00:00:40,480 --> 00:00:47,620
+ have some data to play around with again as you always see, say some names
+
+9
+00:00:50,200 --> 00:01:05,880
+ let's put this to any, and I don't, okay. So this is good. And obviously you know
+
+10
+00:01:05,880 --> 00:01:10,220
+ that the examples that we've taken until now that this would maintain the
+
+11
+00:01:10,220 --> 00:01:13,400
+ insertion order that is whack would be inserted first, then Snayla and at
+
+12
+00:01:13,400 --> 00:01:23,100
+ last wrong, right? So and you can just edit it out and say list before sorting,
+
+13
+00:01:23,100 --> 00:01:32,640
+ let's put it on the second line and I'll just say list of names. Now if you want
+
+14
+00:01:32,640 --> 00:01:36,940
+ to sort it, there is a way you can sort it out of the box, the default behavior,
+
+15
+00:01:36,940 --> 00:01:42,440
+ all you have to do is you'll say there's a utility class that is collections,
+
+16
+00:01:42,440 --> 00:01:47,000
+ not the collections we are talking about, it's a class in the java.util path.
+
+17
+00:01:47,000 --> 00:01:52,280
+ He's right. I'll say collections dot the static method sort. Why did I say static?
+
+18
+00:01:52,280 --> 00:01:57,520
+ Because I never needed to create an object of collections to call sort directly
+
+19
+00:01:57,520 --> 00:02:02,440
+ with the types of type name dot sort and just pass in the list you want to sort.
+
+20
+00:02:02,440 --> 00:02:10,000
+ That's it. It's such easy. This would sort your list in natural ordering, right?
+
+21
+00:02:10,000 --> 00:02:14,440
+ So this time, out of the box in error list, you know that it's unordered, sorry,
+
+22
+00:02:14,440 --> 00:02:18,800
+ it's ordered in in session order, it's ordered, but unsorted, but this time
+
+23
+00:02:18,800 --> 00:02:23,880
+ this will be sorted in natural order and I can just say let's print the same
+
+24
+00:02:23,880 --> 00:02:32,000
+ thing. After list of the sorting, as you will see, this will be sorted any
+
+25
+00:02:32,000 --> 00:02:36,880
+ would come at the top. Let's go ahead and run this and just check for yourself.
+
+26
+00:02:36,880 --> 00:02:40,800
+ See, this before sorting in the order that you inserted wax me her step
+
+27
+00:02:40,800 --> 00:02:45,560
+ any run and the list out the sorting, right? On chronological order, any
+
+28
+00:02:45,560 --> 00:02:50,720
+ runs me her step and her class to act has been sorted in the most convenient
+
+29
+00:02:50,720 --> 00:02:56,480
+ of manners. Now, taking this example forward, what happens if you want to sort
+
+30
+00:02:56,480 --> 00:03:00,440
+ a custom class object? Obviously, this would work for strings, integers, doubles,
+
+31
+00:03:00,440 --> 00:03:03,960
+ but there's a custom class object, right? And that is, I'll just clear that
+
+32
+00:03:03,960 --> 00:03:10,000
+ I'll say for example, that is a class, let's call it a stick example of that
+
+33
+00:03:10,000 --> 00:03:15,800
+ class, right? And let's make it a Java being and you know now how do we create a
+
+34
+00:03:15,800 --> 00:03:21,320
+ Java being, right? So private instance variables, I'll say private in to, let's
+
+35
+00:03:21,320 --> 00:03:29,360
+ say, yeah, import a property private in SSD or hard drive, for example, for
+
+36
+00:03:29,360 --> 00:03:41,400
+ that matter. And for now, private string, manufacture, right? And let's have one
+
+37
+00:03:41,400 --> 00:03:46,720
+ more property private string name of the laptop and let's quickly go ahead and
+
+38
+00:03:46,720 --> 00:03:51,920
+ create the get a sectors what are required for making this adhere to the
+
+39
+00:03:51,920 --> 00:03:59,240
+ convention of Java means. I'll say get a set for all of them done and I
+
+40
+00:03:59,240 --> 00:04:08,160
+'ll also create a constructor. Okay, I'll just like none, constructors done,
+
+41
+00:04:08,160 --> 00:04:12,880
+ get a set of ready, private instance variables, that's fine. And I can
+
+42
+00:04:12,880 --> 00:04:16,480
+ optionally create a constructor using fields as well, that is for all of them
+
+43
+00:04:16,480 --> 00:04:20,680
+ because if I want to initialize the value of this class at the time I create
+
+44
+00:04:20,680 --> 00:04:27,280
+ an object, that's a generate a constructor for all, which has the RAM, SSD,
+
+45
+00:04:27,280 --> 00:04:31,360
+ manufacturer and stream name. So just with a few clicks, it's all done, right? The
+
+46
+00:04:31,360 --> 00:04:35,720
+ Java being is ready. And now I want to create a list of laptops. For now, I'll
+
+47
+00:04:35,720 --> 00:04:47,000
+ just come in this code. Okay, and I'll just go ahead, I don't say list. Let's create
+
+48
+00:04:47,000 --> 00:04:51,960
+ a type laptop. A laptop only list, that means it can hold any object that is a
+
+49
+00:04:51,960 --> 00:04:57,760
+ type laptop. And I'll just call laptops appropriate, and then select an analyst. My
+
+50
+00:04:57,760 --> 00:05:02,960
+ default again, insertion order. So what you'll do is the laptops, don't edit. I'll
+
+51
+00:05:02,960 --> 00:05:11,080
+ just create a new. All right, and let's put in the values. I need the RAM, SSD
+
+52
+00:05:11,080 --> 00:05:20,920
+ manufacturer, and mean, I'll say RAM is a GB, and I have to put in SSD, let's say 128 GB, let's
+
+53
+00:05:20,920 --> 00:05:27,880
+ say the manufacturer and name. I'll say this is from a Lenovo. And then let's make
+
+54
+00:05:27,880 --> 00:05:35,840
+ it a good example. And I'll say the name is, let's say L, put it free. Yeah. Okay,
+
+55
+00:05:35,840 --> 00:05:39,960
+ let's copy this review times. Let's say three options. Again, new laptop
+
+56
+00:05:39,960 --> 00:05:43,600
+ object can be put to this laptops only list. Why? Because I've defined the
+
+57
+00:05:43,600 --> 00:05:50,200
+ generic parameter of type laptop. Right. Now let's say this is 16 GB SSD, same
+
+58
+00:05:50,200 --> 00:05:56,580
+ Lenovo, the manufacturer L23. And then there is only two. This is two, three, six
+
+59
+00:05:56,580 --> 00:06:06,120
+ GB manufacturer. It's Apple. And this is the MacBook Air. Right. So three laptops
+
+60
+00:06:06,120 --> 00:06:10,020
+ now in this laptops only list. Let's say what the warning says, contents of
+
+61
+00:06:10,020 --> 00:06:14,520
+ collection laptops are updated, but never query. To signal this warning for
+
+62
+00:06:14,520 --> 00:06:18,400
+ now, it does have no repercussions. Right. It will just take care of that in a
+
+63
+00:06:18,400 --> 00:06:26,720
+ moment. Now, if you, in this out, that's a sound, and you just see laptops, see
+
+64
+00:06:26,720 --> 00:06:33,200
+ what it gets us. See, and this is laptop objects, but these hacks that
+
+65
+00:06:33,200 --> 00:06:37,320
+ they're similar, you don't know which object is what, right? You know, in the
+
+66
+00:06:37,320 --> 00:06:41,640
+ previous video, I've talked about two string overriding two string. So that
+
+67
+00:06:41,640 --> 00:06:45,040
+ is why we would need, we would need to, or I do string here as well, because
+
+68
+00:06:45,040 --> 00:06:49,160
+ you want to get meaningful information with these laptops, right? So what I
+
+69
+00:06:49,160 --> 00:06:54,400
+ do is, I just have a version of two string. Again, I'll ask my ID that is
+
+70
+00:06:54,400 --> 00:06:58,760
+ intelligent to generate that for me. I'll say two string and include all the
+
+71
+00:06:58,760 --> 00:07:02,840
+ properties. So that I know which laptop that is. And now immediately when you run
+
+72
+00:07:02,840 --> 00:07:07,040
+ this two string, as you know, from a one of the videos on two string, that it's
+
+73
+00:07:07,040 --> 00:07:11,960
+ it's implicitly called. Now, you should get the insertion on the scene. Select
+
+74
+00:07:11,960 --> 00:07:17,000
+ up, that is, ramid 128 manufacturer, Leno, name is L23, which was
+
+75
+00:07:17,000 --> 00:07:23,000
+ introduced, insert it first. Then the 16 GB one Leno again, and then the last one
+
+76
+00:07:23,000 --> 00:07:30,480
+ Apple, the MacBook L. Okay. So that is what we saw how it came in. Now, you want to
+
+77
+00:07:30,480 --> 00:07:37,640
+ sort it. So I'll say again, collections, but sort. And this time, I'll pass it
+
+78
+00:07:37,640 --> 00:07:44,480
+ now, laptop list, but now what worked earlier, like this here, same. This perfectly
+
+79
+00:07:44,480 --> 00:07:49,960
+ worked here, doesn't work here. The same logic, the same code error. Why you
+
+80
+00:07:49,960 --> 00:07:54,440
+ hover on this? It says that required list t provided list laptop, it says
+
+81
+00:07:54,440 --> 00:07:58,720
+ these are no instance of type t exists, so that laptop confronts to
+
+82
+00:07:58,720 --> 00:08:03,440
+ comparable, just remember that. So turns out, how did this worked earlier,
+
+83
+00:08:03,440 --> 00:08:08,000
+ collections were sort when I passed in a list, which was of type string, right,
+
+84
+00:08:08,000 --> 00:08:12,720
+ because turns out string implements an interface in Java called
+
+85
+00:08:12,720 --> 00:08:18,540
+ comparable, right. And for this collections to sort to work, you can only
+
+86
+00:08:18,540 --> 00:08:25,280
+ pass in an argument of a type list, which has implemented, compare again, I
+
+87
+00:08:25,280 --> 00:08:29,240
+ just rephrase it for you to make it better understandable and clear. That
+
+88
+00:08:29,240 --> 00:08:34,960
+ is collections to sort takes a parameter of a list, in which you store objects
+
+89
+00:08:34,960 --> 00:08:40,320
+ of a type of a class, which is implemented, comparable, and turns out string
+
+90
+00:08:40,320 --> 00:08:44,920
+ behind the scenes implements comparable, integer, does that all the
+
+91
+00:08:44,920 --> 00:08:49,960
+ important wrapper classes, all the important and the wrapper classes implement
+
+92
+00:08:49,960 --> 00:08:54,000
+ comparable, that's why it works. And your laptop class, because it's a laptop
+
+93
+00:08:54,000 --> 00:08:57,940
+ only list, it does not implement comparable. And why do we have to
+
+94
+00:08:57,940 --> 00:09:02,000
+ implement, and why do those classes implement comparable to make sorting like a
+
+95
+00:09:02,000 --> 00:09:07,360
+ piece of cake look, work like a piece of cake, that is, inside the, whenever
+
+96
+00:09:07,360 --> 00:09:11,800
+ you try to sort your collection, right, you should define your logic, how does
+
+97
+00:09:11,800 --> 00:09:16,840
+ it know, do I sort it on the basis of RAM, or on the basis of SSD, or on the
+
+98
+00:09:16,840 --> 00:09:20,480
+ basis of manufacture, or name, how does it know, how do you expect it to sort it
+
+99
+00:09:20,480 --> 00:09:26,080
+ right. And how do you expect this to be sorted, because the logic is written
+
+100
+00:09:26,080 --> 00:09:31,200
+ behind the scenes in the string class, when they have implemented comparable, and
+
+101
+00:09:31,200 --> 00:09:35,960
+ over written one of its methods, because comparable has just one maker
+
+102
+00:09:35,960 --> 00:09:41,400
+ behind the scene, and that is compared to. And your class should override that, and
+
+103
+00:09:41,400 --> 00:09:46,240
+ write the logic there for your, for your sorting to take place later on. So I do
+
+104
+00:09:46,240 --> 00:09:52,800
+ that as a class laptop, say implements, not bad. This one, Java to Clank. I told
+
+105
+00:09:52,800 --> 00:09:57,160
+ you some of the interfaces, this is an interface comparable, it is a Java to
+
+106
+00:09:57,160 --> 00:10:01,840
+ like, not in Java due to, right. And now you hover on this, it's an error by,
+
+107
+00:10:01,840 --> 00:10:06,000
+ because you know the rules that is interface methods need to be overrated in
+
+108
+00:10:06,000 --> 00:10:10,000
+ the subclasses, or the subclass also needs to be declared as abstract, I don't
+
+109
+00:10:10,000 --> 00:10:14,560
+ want to do that, I want to implement that. So how on that say implement methods,
+
+110
+00:10:14,560 --> 00:10:22,080
+ just one maker compare to, and it takes an object, takes an object, right. So
+
+111
+00:10:22,080 --> 00:10:26,640
+ public and compare to object O return zero, right. And this method is called
+
+112
+00:10:26,640 --> 00:10:31,680
+ automatically, when you call sort behind the scene, recursually. And if the left
+
+113
+00:10:31,680 --> 00:10:36,320
+ hand side object is greater than right hand side, it returns a value in minus. If
+
+114
+00:10:36,320 --> 00:10:40,160
+ they're equal zero, if it is greater, it returns a value plus. So all you have to do
+
+115
+00:10:40,160 --> 00:10:48,880
+ is define your logic. All right. So what I'll do is, I'll say return, right, and I'll
+
+116
+00:10:48,880 --> 00:10:57,120
+ say return this dot, get, let's see, I decide to sort them on the basis of the
+
+117
+00:10:57,120 --> 00:11:04,880
+ RAM, let's say get RAM, now what does get RAM return? It returns an int, right. So
+
+118
+00:11:04,880 --> 00:11:08,720
+ I need an integer, because only then I can call the dot operator, right. So
+
+119
+00:11:08,720 --> 00:11:17,440
+ better is what I do is I just change it here to integer, the wrapper class integer,
+
+120
+00:11:17,440 --> 00:11:23,680
+ and then what I'll do is, I'll say return this dot this, this dot get RAM dot compare to,
+
+121
+00:11:23,680 --> 00:11:32,320
+ I'll say O dot, again, get RAM is not an object, it won't be called, you need a type
+
+122
+00:11:32,320 --> 00:11:40,960
+ of cost here, now that's like this. Teacher, that's how you do the reference variable type
+
+123
+00:11:40,960 --> 00:11:54,640
+ casting, you know that, and we do it, what does it say, return this or get RAM, returns an integer, got
+
+124
+00:11:54,640 --> 00:12:02,720
+ them get to, we converted this O into an integer, this was done here, this is dot RAM is
+
+125
+00:12:03,520 --> 00:12:14,000
+ for a moment to just, we converted this into an integer just a moment, and then we should say
+
+126
+00:12:14,000 --> 00:12:22,400
+ get some but, okay sorry, my, my bad, not integer, laptop, and now this will work,
+
+127
+00:12:22,400 --> 00:12:30,000
+ because get RAM is in laptop dot integer, and to avoid such painful convergence and not unsafe
+
+128
+00:12:30,000 --> 00:12:35,040
+ operations, because this can give you a class class exception at RAM time, because if you pass any
+
+129
+00:12:35,040 --> 00:12:41,120
+ other object that's not a laptop, so to avoid that, what we can do is, we can put in the generic
+
+130
+00:12:41,120 --> 00:12:48,160
+ argument for compareable here, see the benefits of compareable, I'll say please do this for laptops,
+
+131
+00:12:48,160 --> 00:12:54,560
+ right, and now when you do this, this becomes a laptop, they're not an object,
+
+132
+00:12:57,840 --> 00:13:06,000
+ and now you do not need the cost, I'm going to step this, absolutely, right, we do not need the
+
+133
+00:13:06,000 --> 00:13:10,880
+ type casting to be put in here, right, but this is how you put the logic for sorting your list
+
+134
+00:13:10,880 --> 00:13:16,240
+ inside compare to, which would be called automatically, once you call collections dot sort,
+
+135
+00:13:16,240 --> 00:13:21,680
+ and do you see this, the same language was giving an error is not anymore, why, because your
+
+136
+00:13:21,680 --> 00:13:27,440
+ past a parameter of the right type, what is that, that is collections dot sort, takes one on
+
+137
+00:13:27,440 --> 00:13:33,600
+ human of a list in which you've stored objects of a type, which has implemented comparable,
+
+138
+00:13:33,600 --> 00:13:40,000
+ and R type now has implemented comparable, it has the logic, how do I want them to be sorted on the
+
+139
+00:13:40,000 --> 00:13:47,760
+ basis of RAM, and we go ahead and bring them afterwards, let's say system product of print Ln,
+
+140
+00:13:49,360 --> 00:14:03,440
+ up to sorting list looks like this, I call it laptops, it will be sorted in natural ordering
+
+141
+00:14:03,440 --> 00:14:14,400
+ by their who are around this, say laptop RAM first RAM 8, then 16, then 32, right, but you might
+
+142
+00:14:14,400 --> 00:14:22,240
+ wonder that we put it in that same order, right, so that is just by by incident, but let's try
+
+143
+00:14:22,240 --> 00:14:27,760
+ to reverse order them, you can do that as well, all you have to do is just change the order of this
+
+144
+00:14:27,760 --> 00:14:35,200
+ and oh, let's say over here, let's say this here, and now run this, you would see like a sorting
+
+145
+00:14:35,200 --> 00:14:41,360
+ logic is fact working C plus 32, the laptops for the RAM 32 on the higher end, then 16, then the
+
+146
+00:14:41,360 --> 00:14:47,920
+ last one laptop with the RAM 8 has been ordered has been sorted in reverse natural ordering,
+
+147
+00:14:47,920 --> 00:14:55,600
+ right, so that's the logic of collections or sort using comparable now, if you decide to sort them
+
+148
+00:14:55,600 --> 00:15:01,120
+ on the basis of their let's say name, you can even do that, all you have to do is just say
+
+149
+00:15:01,120 --> 00:15:10,240
+ get name, and I don't want to do reverse sort and this say O dot get name, just change it right here,
+
+150
+00:15:10,240 --> 00:15:17,200
+ let's see your logic, right, and run this, you don't need to change it at the top, see now first,
+
+151
+00:15:17,200 --> 00:15:23,200
+ the Apple one should come doesn't come, that means something wrong here, let's see what did I get
+
+152
+00:15:23,200 --> 00:15:32,800
+ wrong, I said this or get name or compare to O dot get name, and I printed it out, oh sorry,
+
+153
+00:15:32,800 --> 00:15:39,760
+ I put the name wrong here, right, this is Apple, I want to sort them on the basis of manufacturer,
+
+154
+00:15:39,760 --> 00:15:55,840
+ right, that's right, see the Apple one's because A is at the start and then Leno and Leno,
+
+155
+00:15:55,840 --> 00:16:01,280
+ right, so this was sorted by their manufacturer, so whenever you want to change it, you have to
+
+156
+00:16:01,280 --> 00:16:07,440
+ go ahead and change it here, that brings me to the disadvantage of comparable, if you want to sort
+
+157
+00:16:07,440 --> 00:16:13,840
+ your collections with comparable, it's one dimension, why there are few disadvantages, the first
+
+158
+00:16:13,840 --> 00:16:20,480
+ disadvantages you have to actually think of the code within your class entity class, you have to
+
+159
+00:16:20,480 --> 00:16:27,120
+ write the logic for comparing for sorting in the laptop class, right, that's never a good,
+
+160
+00:16:27,120 --> 00:16:33,200
+ good programming practice, why, objectory to design philosophy says our classes should be highly
+
+161
+00:16:33,200 --> 00:16:40,160
+ cohesive, what does that mean, one task, one goal per class, there should just be one task per class,
+
+162
+00:16:40,160 --> 00:16:45,600
+ but you are now diluting that, you're writing the laptop specific things here as well as sorting
+
+163
+00:16:45,600 --> 00:16:51,280
+ them, right, the logic for sorting them, the second disadvantage is whenever you have to change things,
+
+164
+00:16:51,280 --> 00:16:55,600
+ that is you want to sort of the base of name, you know, you have to go ahead and change it in the
+
+165
+00:16:55,600 --> 00:17:00,720
+ actual code in the laptop class, and then change it here as well, right, so two glaring
+
+166
+00:17:01,440 --> 00:17:06,480
+ disadvantages, although this works, but it's not a good programming practice, it's not recommended,
+
+167
+00:17:06,480 --> 00:17:11,760
+ that's why we move on to the second way, my personal favorite way, and that's what the industry
+
+168
+00:17:11,760 --> 00:17:18,080
+ uses as well, to sort collections in Java, and that is using comparator, and we talk about
+
+169
+00:17:18,080 --> 00:17:20,400
+ comparator in the next video.
+
