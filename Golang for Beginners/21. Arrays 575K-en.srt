@@ -1,0 +1,524 @@
+1
+00:00:00,000 --> 00:00:06,380
+ In this video, we'll be talking about arrays, how to create an access arrays, and how to
+
+2
+00:00:06,380 --> 00:00:11,020
+ iterate over arrays.
+
+3
+00:00:11,020 --> 00:00:14,700
+ Arrays are a way to store multiple pieces of the same kind of data.
+
+4
+00:00:14,700 --> 00:00:21,000
+ When you're working with an array, the data is stored consecutively in an array of data.
+
+5
+00:00:21,000 --> 00:00:24,740
+ Each piece of data in the array is called an element.
+
+6
+00:00:24,740 --> 00:00:28,340
+ To access items in the array, an array index is used.
+
+7
+00:00:28,340 --> 00:00:34,000
+ The index always starts at zero, meaning zero items from the array start.
+
+8
+00:00:34,000 --> 00:00:37,940
+ The zero index is simply multiplied by the size of the items.
+
+9
+00:00:37,940 --> 00:00:42,220
+ So at index zero, you're accessing the very beginning, and index one, you're multiplying
+
+10
+00:00:42,220 --> 00:00:48,960
+ the size of the item by one, meaning you skip over the very first item, ending up on
+
+11
+00:00:48,960 --> 00:00:50,440
+ item two.
+
+12
+00:00:50,440 --> 00:00:55,120
+ So zero is item one, one is item two, et cetera.
+
+13
+00:00:55,120 --> 00:00:59,320
+ Lastly, arrays are a fixed size and cannot be resized.
+
+14
+00:00:59,320 --> 00:01:03,160
+ Go does provide facilities, however, to work with arrays of different sizes, and we'll
+
+15
+00:01:03,160 --> 00:01:09,120
+ be taking a look at those in a future video.
+
+16
+00:01:09,120 --> 00:01:13,920
+ So here's a visualization of an array in memory.
+
+17
+00:01:13,920 --> 00:01:20,280
+ If we have this structure right here, a discount card structure, having a ID, store code,
+
+18
+00:01:20,280 --> 00:01:23,800
+ and a rate, this is what it would look like in memory.
+
+19
+00:01:23,800 --> 00:01:31,240
+ So here we have blocks of memory, and the ID takes up two bytes here.
+
+20
+00:01:31,240 --> 00:01:37,040
+ The store code takes up one byte, and the rate takes up four bytes.
+
+21
+00:01:37,040 --> 00:01:41,280
+ This entire chunk here is one discount card structure.
+
+22
+00:01:41,280 --> 00:01:47,400
+ And when you put them into an array, you'll have one here, one here, and one here.
+
+23
+00:01:47,400 --> 00:01:54,120
+ So when we're dealing with array indexes, we have index zero, which is zero bytes from the
+
+24
+00:01:54,120 --> 00:01:55,120
+ beginning.
+
+25
+00:01:55,120 --> 00:01:56,120
+ So it starts right here.
+
+26
+00:01:56,120 --> 00:01:58,960
+ And each one of these discount cards is seven bytes.
+
+27
+00:01:58,960 --> 00:02:03,840
+ So if we want to access item number three, we have to use index two.
+
+28
+00:02:03,840 --> 00:02:09,880
+ So it'll take seven bytes, multiply it by two, which is 14, and it's going to skip over
+
+29
+00:02:09,880 --> 00:02:15,800
+ 14 bytes, and you'll end up exactly at your item number three by using index number
+
+30
+00:02:15,800 --> 00:02:18,080
+ two.
+
+31
+00:02:18,080 --> 00:02:24,040
+ So this top one is how it looks in memory, and you can also visualize it like this.
+
+32
+00:02:24,040 --> 00:02:30,400
+ So here we have the item zero, one, two, three, four.
+
+33
+00:02:30,400 --> 00:02:38,520
+ It's the same thing, just a different way to visualize it.
+
+34
+00:02:38,520 --> 00:02:44,760
+ So to create an array, we use the var keyword followed by the name of the array, we have square
+
+35
+00:02:44,760 --> 00:02:50,040
+ braces, the number of items that we want within our array, and the type of the items that
+
+36
+00:02:50,040 --> 00:02:52,000
+ are going to be in the array.
+
+37
+00:02:52,000 --> 00:02:55,080
+ So this first example is uninitialized.
+
+38
+00:02:55,080 --> 00:03:01,560
+ So we'll have an array of three integers, and they'll all be equal to zero.
+
+39
+00:03:01,560 --> 00:03:07,040
+ In this second example, we're using the create an assign, we're using the square braces
+
+40
+00:03:07,040 --> 00:03:13,360
+ to make an array, and again, we're making three integers, and we use curly braces to set
+
+41
+00:03:13,360 --> 00:03:15,240
+ the initial values for these integers.
+
+42
+00:03:15,240 --> 00:03:19,200
+ So we're going to have three integers, and they're going to be equal to seven, eight,
+
+43
+00:03:19,200 --> 00:03:21,300
+ and nine in that order.
+
+44
+00:03:21,300 --> 00:03:26,680
+ Here on our third example, we're using the create an assign again, square braces for an
+
+45
+00:03:26,680 --> 00:03:28,720
+ array, and three dots.
+
+46
+00:03:28,720 --> 00:03:33,080
+ So what three dots is going to do is these dots are going to look over here and see
+
+47
+00:03:33,080 --> 00:03:37,000
+ how many items you've created, and it's just going to substitute that number here for
+
+48
+00:03:37,000 --> 00:03:38,000
+ you.
+
+49
+00:03:38,000 --> 00:03:42,880
+ So the third way is kind of like the default way you'd want to make an array.
+
+50
+00:03:42,880 --> 00:03:47,360
+ That way, you can easily update the number of items without having to actually worry
+
+51
+00:03:47,360 --> 00:03:50,320
+ about how many what your number is right there.
+
+52
+00:03:50,320 --> 00:03:55,800
+ So this will be three and seven, eight, and nine will be your integers.
+
+53
+00:03:55,800 --> 00:04:00,400
+ And this last one here is again, create an assign, we're actually creating a size for
+
+54
+00:04:00,400 --> 00:04:03,160
+ array containing integers again.
+
+55
+00:04:03,160 --> 00:04:08,160
+ The first ones will be seven, eight, and nine, and the fourth item will be zero.
+
+56
+00:04:08,160 --> 00:04:09,640
+ So the fourth will get a default.
+
+57
+00:04:09,640 --> 00:04:16,120
+ So it's we only supplied three numbers.
+
+58
+00:04:16,120 --> 00:04:21,400
+ So to access array elements, we take the name of the array, my array in this case, we use
+
+59
+00:04:21,400 --> 00:04:28,720
+ the square braces, the index that we want to access in equal sign, and the value that we
+
+60
+00:04:28,720 --> 00:04:29,920
+ want to assign.
+
+61
+00:04:29,920 --> 00:04:32,080
+ So this will be how we assign data.
+
+62
+00:04:32,080 --> 00:04:33,600
+ So these three will assign.
+
+63
+00:04:33,600 --> 00:04:38,120
+ So we can index zero, one, and two will be seven, eight, and nine, just like our previous
+
+64
+00:04:38,120 --> 00:04:39,440
+ slide.
+
+65
+00:04:39,440 --> 00:04:44,320
+ And then here on the bottom, if we want to read some data, we can just take the name of
+
+66
+00:04:44,320 --> 00:04:48,360
+ the array, our square braces, and the index that we want to read.
+
+67
+00:04:48,360 --> 00:04:52,160
+ So really just depends if you want to assign, then your array variable will be on the left
+
+68
+00:04:52,160 --> 00:04:53,160
+ side.
+
+69
+00:04:53,160 --> 00:05:00,640
+ If you want to read, then your array variable will be on the right side.
+
+70
+00:05:00,640 --> 00:05:02,200
+ We can also iterate through an array.
+
+71
+00:05:02,200 --> 00:05:06,040
+ So that just means we're going to go through each item one at a time.
+
+72
+00:05:06,040 --> 00:05:10,640
+ To do so, we use the four loops, since that's our go to loop and go.
+
+73
+00:05:10,640 --> 00:05:12,560
+ And what you'll do is you'll have your array.
+
+74
+00:05:12,560 --> 00:05:17,840
+ So we create one here, we have three elements automatically calculated based on the numbers
+
+75
+00:05:17,840 --> 00:05:18,840
+ supplied.
+
+76
+00:05:18,840 --> 00:05:22,520
+ Here on the bottom, we have our four loop.
+
+77
+00:05:22,520 --> 00:05:25,720
+ We create iteration variable i, assign it to zero.
+
+78
+00:05:25,720 --> 00:05:30,000
+ As long as i is less than this function, we're going to go into the loop body, and then
+
+79
+00:05:30,000 --> 00:05:35,160
+ continue on with our typical plus plus to increment it by one.
+
+80
+00:05:35,160 --> 00:05:39,240
+ So this function here is the length functions, len for short.
+
+81
+00:05:39,240 --> 00:05:44,080
+ And what that does is it goes and calculates how many values are in this array.
+
+82
+00:05:44,080 --> 00:05:49,840
+ So for this particular one, it's going to be three because we have three values in our array.
+
+83
+00:05:49,840 --> 00:05:53,800
+ So whenever you're iterating through arrays, you normally want to use the lin or length
+
+84
+00:05:53,800 --> 00:05:57,280
+ function in order to find out how many you've working with that way you can iterate
+
+85
+00:05:57,280 --> 00:05:58,280
+ through each one.
+
+86
+00:05:58,280 --> 00:06:03,680
+ What we're doing in this loop is we're reading from the array since the arrays on the
+
+87
+00:06:03,680 --> 00:06:08,160
+ right side of the variable, and we're assigning a copy into this item variable.
+
+88
+00:06:08,160 --> 00:06:14,200
+ So when we do this, we're making a copy from this array into item.
+
+89
+00:06:14,200 --> 00:06:19,320
+ We then just print it out.
+
+90
+00:06:19,320 --> 00:06:23,200
+ So it's really important when you're working with arrays that you stick within the bounds
+
+91
+00:06:23,200 --> 00:06:24,240
+ of your array.
+
+92
+00:06:24,240 --> 00:06:29,040
+ That means if you have an array with three items and you try to access a fourth item, then
+
+93
+00:06:29,040 --> 00:06:30,440
+ you're going to get an error.
+
+94
+00:06:30,440 --> 00:06:34,780
+ Let's take a look at a few situations where you get some errors.
+
+95
+00:06:34,780 --> 00:06:37,960
+ This one on the left side, this will be a runtime error.
+
+96
+00:06:37,960 --> 00:06:43,000
+ So here we have an uninitialized array that has a size of three, and all the integers
+
+97
+00:06:43,000 --> 00:06:44,560
+ will be zero.
+
+98
+00:06:44,560 --> 00:06:48,960
+ In our for loop, we're not checking the length of the array here.
+
+99
+00:06:48,960 --> 00:06:53,400
+ We're just saying that, hey, keep looping as long as i's less than 10, and we're trying
+
+100
+00:06:53,400 --> 00:06:59,480
+ to print out my array and then the iteration index.
+
+101
+00:06:59,480 --> 00:07:05,400
+ Now it'll happen here is zero, one, and two, those will all check out, because we have
+
+102
+00:07:05,400 --> 00:07:06,720
+ three items.
+
+103
+00:07:06,720 --> 00:07:11,400
+ Once we get to i equals to four, then the program's going to crash because there's no
+
+104
+00:07:11,400 --> 00:07:15,360
+ data at that point because there's only three in the array.
+
+105
+00:07:15,360 --> 00:07:20,280
+ So this right here is going to be a runtime error, and this is why you'll almost always
+
+106
+00:07:20,280 --> 00:07:25,320
+ want to use the length function as part of your condition check.
+
+107
+00:07:25,320 --> 00:07:28,800
+ On the right hand side here, we'll get a compile time error.
+
+108
+00:07:28,800 --> 00:07:33,520
+ So again, we're just creating an array that has three integers, and we're setting the
+
+109
+00:07:33,520 --> 00:07:38,920
+ first three to be seven, eight, and nine, and then we're setting the fourth value to be
+
+110
+00:07:38,920 --> 00:07:39,920
+ 10.
+
+111
+00:07:39,920 --> 00:07:44,120
+ However, there's only three values in the array, not four.
+
+112
+00:07:44,120 --> 00:07:47,280
+ And so you're going to get an error when you try to compile the program, and it's able
+
+113
+00:07:47,280 --> 00:07:49,440
+ to calculate how many are in the array.
+
+114
+00:07:49,440 --> 00:07:54,760
+ And since it's reading all the information in your source code, it knows that at this
+
+115
+00:07:54,760 --> 00:07:59,240
+ point there's only three, and at this point you're trying to access a fourth, and so that's
+
+116
+00:07:59,240 --> 00:08:01,640
+ just going to be a compiler error.
+
+117
+00:08:01,640 --> 00:08:05,320
+ On the left side, it's not able to make that determination ahead of time, so it happens
+
+118
+00:08:05,320 --> 00:08:06,320
+ at runtime.
+
+119
+00:08:06,320 --> 00:08:10,240
+ And I hear on the bottom, we have the same as the above.
+
+120
+00:08:10,240 --> 00:08:15,600
+ So we're just using the assign equals instead of the index directly.
+
+121
+00:08:15,600 --> 00:08:20,040
+ So we're trying to read from the fourth index, which doesn't exist, and that's going
+
+122
+00:08:20,040 --> 00:08:24,680
+ to be compile time error as well.
+
+123
+00:08:24,680 --> 00:08:30,440
+ Let's recap, arrays are a fixed size collection of same type items, arrays are accessed
+
+124
+00:08:30,440 --> 00:08:33,160
+ using an array index.
+
+125
+00:08:33,160 --> 00:08:37,160
+ It is an error to use an index that's outside the bounds of an array.
+
+126
+00:08:37,160 --> 00:08:41,800
+ Array elements can be optionally set during array creation, and any elements that you don't
+
+127
+00:08:41,800 --> 00:08:45,560
+ a set during creation will have a default value assigned.
+
+128
+00:08:45,560 --> 00:08:50,440
+ You can use the LEN function, which is short for length, to get the length of an array
+
+129
+00:08:50,440 --> 00:08:59,160
+ and use it to iterate in a for loop.
+
+130
+00:08:59,160 --> 00:08:59,880
+ You'll almost always want to use this function when you're iterating an array.
+
+131
+00:08:59,880 --> 00:09:01,840
+ That way you don't get any out of bounds errors.
+
