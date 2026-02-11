@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:05,880
+ In this lesson, you'll learn what rules and memories are, how they work, and why there's
+
+2
+00:00:05,880 --> 00:00:09,600
+ such a powerful part of your AA workflow.
+
+3
+00:00:09,600 --> 00:00:14,820
+ By the end, you'll understand how to guide the agent consistently across your projects
+
+4
+00:00:14,820 --> 00:00:17,840
+ and help it remember what matters most.
+
+5
+00:00:17,840 --> 00:00:20,640
+ Let's start with rules.
+
+6
+00:00:20,640 --> 00:00:25,720
+ Rules are like system-level instructions for your source agent and inline edit.
+
+7
+00:00:25,720 --> 00:00:31,280
+ They tell the AI how to behave, what's style to follow, and what preference to keep in mind
+
+8
+00:00:31,280 --> 00:00:34,240
+ when generating or editing code.
+
+9
+00:00:34,240 --> 00:00:36,960
+ Think of them as persistent context.
+
+10
+00:00:36,960 --> 00:00:42,040
+ Away to teach cursor, how you want things done, even after you close the chat.
+
+11
+00:00:42,040 --> 00:00:45,680
+ Now, how do rules actually work?
+
+12
+00:00:45,680 --> 00:00:50,200
+ Large language models, like the one behind cursor, don't remember context between
+
+13
+00:00:50,200 --> 00:00:51,200
+ completions.
+
+14
+00:00:51,200 --> 00:00:53,640
+ That's exactly why rules exist.
+
+15
+00:00:53,640 --> 00:00:58,120
+ They're loaded automatically at the start of each chat or inline edit, giving the model
+
+16
+00:00:58,120 --> 00:01:01,480
+ consistent and reusable context.
+
+17
+00:01:01,480 --> 00:01:06,240
+ When active, your rules appear in the agent sidebar, so you always know which ones
+
+18
+00:01:06,240 --> 00:01:08,360
+ are guiding the AI.
+
+19
+00:01:08,360 --> 00:01:11,240
+ There are four main types of rules.
+
+20
+00:01:11,240 --> 00:01:17,240
+ Project rules live in your code base under the folder called dot cursor slash rules.
+
+21
+00:01:17,240 --> 00:01:21,880
+ These are version controlled, so they stay with your project.
+
+22
+00:01:21,880 --> 00:01:26,320
+ Other rules are your personal preferences stored globally in cursor settings.
+
+23
+00:01:26,320 --> 00:01:28,800
+ They apply everywhere you code.
+
+24
+00:01:28,800 --> 00:01:33,720
+ Team rules come from your organization's dashboard, where admins can enforce shared standards
+
+25
+00:01:33,720 --> 00:01:35,920
+ for all developers.
+
+26
+00:01:35,920 --> 00:01:39,080
+ And finally, there's agents.md.
+
+27
+00:01:39,080 --> 00:01:44,600
+ A simple markdown file you can use instead of dot cursor slash rules for quick, readable
+
+28
+00:01:44,600 --> 00:01:47,240
+ project instructions.
+
+29
+00:01:47,240 --> 00:01:50,960
+ Let's look a bit deeper at project rules.
+
+30
+00:01:50,960 --> 00:01:57,040
+ By dot cursor slash rules, each rule is stored as a separate file in MDC format.
+
+31
+00:01:57,040 --> 00:02:01,600
+ This format allows you to include both metadata and instructions.
+
+32
+00:02:01,600 --> 00:02:07,240
+ You can define when a rule should apply, always, automatically based on file patterns,
+
+33
+00:02:07,240 --> 00:02:09,720
+ or only when you call it manually.
+
+34
+00:02:09,720 --> 00:02:14,640
+ For example, you might have one rule for your back and folder and another for your front-end
+
+35
+00:02:14,640 --> 00:02:15,640
+ components.
+
+36
+00:02:15,640 --> 00:02:22,240
+ It's a great way to keep your project logic, architecture, and style decisions consistent.
+
+37
+00:02:22,240 --> 00:02:26,240
+ Next, let's talk about user rules.
+
+38
+00:02:26,240 --> 00:02:29,320
+ User rules are your personal global preferences.
+
+39
+00:02:29,320 --> 00:02:33,200
+ You can set them in cursor settings under the rules section.
+
+40
+00:02:33,200 --> 00:02:39,760
+ For example, you could add something like write concise answers, or use consistent naming
+
+41
+00:02:39,760 --> 00:02:41,760
+ for functions.
+
+42
+00:02:41,760 --> 00:02:46,880
+ Use rules apply to everything you do in cursor and help you maintain your preferred communication
+
+43
+00:02:46,880 --> 00:02:50,280
+ or coding style across all your projects.
+
+44
+00:02:50,280 --> 00:02:55,600
+ Now, for larger teams, team rules make it easy to keep everyone aligned.
+
+45
+00:02:55,600 --> 00:03:00,320
+ They're created from the cursor dashboard and can be marked as enforced, meaning no one
+
+46
+00:03:00,320 --> 00:03:02,760
+ can disable them locally.
+
+47
+00:03:02,760 --> 00:03:10,000
+ This ensures every teammate follows the same coding style, workflow, or architecture pattern.
+
+48
+00:03:10,000 --> 00:03:15,760
+ User rules apply everywhere, across all repositories and projects, and they take precedence
+
+49
+00:03:15,760 --> 00:03:18,640
+ over user and project rules.
+
+50
+00:03:18,640 --> 00:03:24,880
+ If you prefer a simpler setup, you can use agents.md in your project route.
+
+51
+00:03:24,880 --> 00:03:30,880
+ It's just a markdown file with plain text instructions, like use TypeScript for all new
+
+52
+00:03:30,880 --> 00:03:35,440
+ files, or prefer functional React components.
+
+53
+00:03:35,440 --> 00:03:40,920
+ It's perfect for smaller projects where you want clear guidance without extra configuration.
+
+54
+00:03:40,920 --> 00:03:44,440
+ Now let's see how to create and manage rules.
+
+55
+00:03:44,440 --> 00:03:49,400
+ You can create a new rule directly from cursor settings under the rules section, or generate
+
+56
+00:03:49,400 --> 00:03:54,160
+ one from chat using the /generate cursor rules command.
+
+57
+00:03:54,160 --> 00:03:57,120
+ Good rules are short, focused, and actionable.
+
+58
+00:03:57,120 --> 00:04:01,840
+ Keep them under a few hundred lines, split larger ones into smaller files, and always include
+
+59
+00:04:01,840 --> 00:04:06,640
+ clear examples, like templates for components or service files.
+
+60
+00:04:06,640 --> 00:04:11,840
+ That way, the AI will naturally follow your standards without needing extra reminders.
+
+61
+00:04:11,840 --> 00:04:15,200
+ Now let's talk about memories.
+
+62
+00:04:15,200 --> 00:04:19,960
+ Memories work like automatic rules created by cursor based on your conversations.
+
+63
+00:04:19,960 --> 00:04:24,840
+ When you tell the agent something like "always use async await in this project", cursor
+
+64
+00:04:24,840 --> 00:04:28,680
+ can remember it, but only if you approve.
+
+65
+00:04:28,680 --> 00:04:33,920
+ These memories are scoped to your current project and help maintain context across sessions,
+
+66
+00:04:33,920 --> 00:04:37,520
+ so the AI doesn't forget your preferences next time.
+
+67
+00:04:37,520 --> 00:04:40,760
+ Here's how memories are created.
+
+68
+00:04:40,760 --> 00:04:46,600
+ Cursor uses a background observer model that watches your chats and looks for useful information.
+
+69
+00:04:46,600 --> 00:04:52,720
+ When it detects something relevant, like a decision, rule, or pattern, it suggests creating
+
+70
+00:04:52,720 --> 00:04:54,440
+ a memory.
+
+71
+00:04:54,440 --> 00:04:58,520
+ You always get to review and approve it before it's saved.
+
+72
+00:04:58,520 --> 00:05:03,920
+ You can also explicitly ask the agent to remember something, and it will store it as a project
+
+73
+00:05:03,920 --> 00:05:06,200
+ memory for future use.
+
+74
+00:05:06,200 --> 00:05:10,440
+ You can view and manage all your saved memories from cursor settings under rules.
+
+75
+00:05:10,440 --> 00:05:16,600
+ There, you can edit, delete, or disable any of them if you no longer need them.
+
+76
+00:05:16,600 --> 00:05:19,960
+ This gives you full control over what the AI remembers.
+
+77
+00:05:19,960 --> 00:05:26,080
+ So to wrap up, rules define how cursor behaves and memories help it remember what matters
+
+78
+00:05:26,080 --> 00:05:27,400
+ to you.
+
+79
+00:05:27,400 --> 00:05:33,000
+ Together, they make the agent smarter, more consistent, and perfectly tuned to your coding
+
+80
+00:05:33,000 --> 00:05:36,120
+ style and project needs.
+
+81
+00:05:36,120 --> 00:05:39,480
+ I hope this lesson was useful for you and see you in the next lesson.
+
