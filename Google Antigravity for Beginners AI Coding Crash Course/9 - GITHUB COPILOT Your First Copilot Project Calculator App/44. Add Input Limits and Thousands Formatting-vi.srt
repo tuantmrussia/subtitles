@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:05,600
+Xin chào, trong bài học này, bạn sẽ cải thiện cách xử lý và hiển thị con số trong tính toán của bạn.
+
+2
+00:00:05,600 --> 00:00:12,560
+Vì vậy, tất nhiên, bạn sẽ thêm một giới hạn của 10 số tổng cộng. Nếu tôi nhập một số tiền,
+
+3
+00:00:12,560 --> 00:00:19,520
+Bạn sẽ thấy tôi có thể nhập nhiều chữ số như tôi muốn, và nó lớn hơn nhiều so với màn hình máy tính.
+
+4
+00:00:19,520 --> 00:00:22,960
+Vì vậy, và chủ yếu nó không phải là số thực, yeah.
+
+5
+00:00:24,720 --> 00:00:32,880
+Xây dựng, chúng ta sẽ giới hạn nó thành 10 số trước thập phân, trước dấu chấm, và sau dấu thập phân
+
+6
+00:00:32,880 --> 00:00:38,720
+tổng cộng là 10 chữ số. Điều này ngăn cản người dùng vào mà không được phép sử dụng các số dài
+
+7
+00:00:38,720 --> 00:00:45,040
+và giữ màn hình rõ ràng và dễ đọc. Bạn cũng sẽ hiển thị một thông điệp khi đến giới hạn,
+
+8
+00:00:45,040 --> 00:00:52,480
+Vì vậy người dùng sẽ được thông báo rằng ông không thể đường ống nhiều chữ số hơn. Nó sẽ là một cái vỏ nhỏ, nhưng sẽ có ích.
+
+9
+00:00:52,480 --> 00:00:58,800
+Vì vậy, nói chung, sự cải thiện này cải thiện khả năng sử dụng và ngăn chặn một số sự trưng bày tràn ngập.
+
+10
+00:00:58,800 --> 00:01:05,200
+Tiếp theo, chúng tôi sẽ định dạng các số lớn với một cái nhìn của x- space.
+
+11
+00:01:05,200 --> 00:01:14,560
+Điều này chỉ sau thập phân, bạn sẽ thấy rằng nó là khó khăn để đọc bao nhiêu ngàn có.
+
+12
+00:01:15,360 --> 00:01:22,560
+Và chúng tôi sẽ định dạng những con số lớn với một không gian giữa hàng ngàn, như một khung cảnh ở một không gian ngay đây,
+
+13
+00:01:22,560 --> 00:01:34,080
+và đây. Vì vậy, thay đổi này làm cho số lượng dễ đọc hơn. Bạn sẽ thấy rằng bạn có, ví dụ,
+
+14
+00:01:34,080 --> 00:01:46,320
+88, 88, 88, 88, 88, 88, anh sẽ có một khoảng trống ở ngay đây.
+
+15
+00:01:46,320 --> 00:01:54,400
+Và nó sẽ dễ đọc hơn nhiều để tính toán, và bạn sẽ trông chuyên nghiệp hơn.
+
+16
+00:01:54,400 --> 00:01:59,600
+Vì vậy, nhưng sau đó cũng tuyệt vời, máy tính sẽ được nhiều hơn nữa chuyên nghiệp, và tất nhiên,
+
+17
+00:01:59,600 --> 00:02:07,280
+người dùng thân thiện. Bắt đầu thôi. Và tôi đã chuẩn bị các dấu nhắc để giới hạn các chữ số, số tối đa của các chữ số.
+
+18
+00:02:07,280 --> 00:02:15,040
+Tôi sẽ yêu cầu AI giới hạn nó lên đến 10 số, số trước và sau thập phân tổng cộng,
+
+19
+00:02:15,040 --> 00:02:23,120
+Và khi đạt đến giới hạn, các khối thêm ký tự nhưng vẫn cho phép không gian lùi trong việc chỉnh sửa.
+
+20
+00:02:23,120 --> 00:02:27,040
+Vì vậy, chúng tôi sẽ ngăn chặn người dùng nhập nhiều chữ số hơn được cho phép.
+
+21
+00:02:27,920 --> 00:02:34,400
+Và chúng tôi sẽ cho phép người dùng để loại bỏ những con số, tất nhiên, đó như. Chúng tôi cũng sẽ viết tắt tin nhắn ngắn,
+
+22
+00:02:34,400 --> 00:02:39,680
+Như tôi đã nói, nó sẽ biến mất sau 3 giây. Vì vậy, hãy chạy nhắc nhở này,
+
+23
+00:02:39,680 --> 00:02:47,760
+và xem kết quả sẽ ra sao. Vì vậy, như chi tiết hơn, bạn sẽ cung cấp cho AI, trong lời nhắc nhở của bạn,
+
+24
+00:02:47,760 --> 00:02:54,400
+Kết quả càng chính xác. Vì vậy, luôn luôn, nếu bạn biết một số trường hợp cạnh hoặc một số
+
+25
+00:02:54,400 --> 00:03:01,040
+những chi tiết nhỏ, luôn luôn mô tả chúng trong dấu nhắc. Được rồi, để xem tôi có cập nhật máy tính
+
+26
+00:03:01,040 --> 00:03:11,760
+những con số ngăn chặn. Được rồi, đây vẫn là đồng bộ. Vâng, nó vẫn còn đồng bộ. Được rồi, bây giờ chúng ta
+
+27
+00:03:11,760 --> 00:03:26,320
+Chúng tôi đã cập nhật theo cách này. Được rồi, tin nhắn đây. Okay, và trong máy tính sử dụng,
+
+28
+00:03:26,320 --> 00:03:33,920
+Đây là chế độ thời gian thông điệp, đây là các chữ số thông điệp. Được rồi, nó vẫn hoạt động.
+
+29
+00:03:33,920 --> 00:03:41,360
+Và cũng tốt hơn ứng dụng, và chỉ cần thêm một thông điệp. Giờ hãy xem nó hoạt động thế nào.
+
+30
+00:03:42,160 --> 00:03:51,200
+Tôi đi và có nhiều chữ số hơn, vì vậy tối đa 10 chữ số. Không sao đâu. Phải, có vẻ đúng.
+
+31
+00:03:51,200 --> 00:04:01,040
+Vì vậy, tôi có thể quay ngược không gian, và ví dụ, chúng ta có 10 số. Hãy thêm vào, chúng ta có thể thêm nhiều chữ số. Vậy,
+
+32
+00:04:01,040 --> 00:04:09,360
+Trông được đấy. Tôi thích nó. Ồ, bây giờ hãy định dạng các số biến đổi tại một ngàn phân cách.
+
+33
+00:04:10,000 --> 00:04:17,760
+Oh, tôi sẽ dán dấu nhắc kế tiếp. Tôi sẽ nhấn giữ các thay đổi, đóng các tập tin.
+
+34
+00:04:17,760 --> 00:04:24,560
+Chúng ta không cần nó. Vì vậy, dấu nhắc tiếp theo của tôi là định dạng số lượng lớn trong hiển thị bằng cách thêm một không gian
+
+35
+00:04:24,560 --> 00:04:30,000
+là một ngàn phân cách. Tôi cho thấy một ví dụ tôi muốn định hình nó như thế nào. Tôi cũng yêu cầu nộp đơn
+
+36
+00:04:30,000 --> 00:04:36,240
+Định dạng và động là kiểu người dùng, hoặc khi hiển thị kết quả. Vì vậy, và cũng đảm bảo
+
+37
+00:04:36,240 --> 00:04:39,840
+Định dạng không ảnh hưởng đến tính toán của giá trị sinh trắc học stoich.
+
+38
+00:04:39,840 --> 00:04:53,680
+Sau khi tôi làm cho phông chữ, phông chữ, kích cỡ, và bit, nhỏ hơn. Vì vậy, hãy làm cho nó nhỏ hơn bởi vì nếu bạn thêm một ngàn
+
+39
+00:04:53,680 --> 00:05:00,960
+Phân cách, nó sẽ lớn hơn nhiều, và các mẫu hình sẽ quá nhỏ từ bên trái.
+
+40
+00:05:00,960 --> 00:05:02,720
+Được rồi, chạy đi.
+
+41
+00:05:06,960 --> 00:05:21,680
+Vì vậy, chúng tôi thấy các mô hình bên ngoài cũng có vẻ tốt cho những thay đổi, nhưng chúng tôi có một số giới hạn trong
+
+42
+00:05:21,680 --> 00:05:28,160
+Kế hoạch tự do. Được rồi, nó thêm vào một số logic để định dạng số. Vì vậy, bây giờ chúng tôi có một chức năng lớn,
+
+43
+00:05:29,200 --> 00:05:37,680
+Nhưng đừng lo. Được rồi, màu đỏ sẽ được kiểm tra. Vì vậy, tôi sẽ không đi sâu vào AI
+
+44
+00:05:37,680 --> 00:05:45,680
+thêm vào. Đó là logic. Kích cỡ phông chữ nhỏ hơn. Không sao đâu. Và màn hình,
+
+45
+00:05:45,680 --> 00:05:52,080
+Vâng, chúng tôi chỉ sử dụng một số định dạng. Lý tưởng là, bạn có thể sử dụng một số thư viện, một số thư viện npm,
+
+46
+00:05:52,080 --> 00:05:59,120
+Các số định dạng, bạn có thể hỏi AI muốn sử dụng một cho. Ví dụ, chúng ta có thể hỏi,
+
+47
+00:05:59,120 --> 00:06:04,320
+Chúng ta sẽ làm điều đó trong lần tới. Chúng tôi sẽ sử dụng, chúng tôi sẽ thực hiện một cuộc điều tra tư tưởng,
+
+48
+00:06:04,320 --> 00:06:12,080
+Định dạng thư viện chúng tôi có thể sử dụng, và sau đó chúng tôi sẽ áp dụng một chỉ để không có rất nhiều mã tự chọn chúng tôi
+
+49
+00:06:12,080 --> 00:06:19,280
+Cần hỗ trợ và kiểm tra. Vậy là xong. Hãy click vào và kiểm tra xem nó hoạt động thế nào. Vì vậy, chúng tôi thấy
+
+50
+00:06:19,280 --> 00:06:25,680
+Nó có thông tin. Tôi sẽ bắt đầu gõ. Để tôi xem, cộng với.
+
+51
+00:06:25,680 --> 00:06:35,440
+Được rồi, chúng ta có thể, cộng thêm cái gì đó, cộng với.
+
+52
+00:06:35,440 --> 00:06:45,840
+Được rồi. Và tôi cảm thấy điều đó là sai.
+
+53
+00:06:49,760 --> 00:07:00,960
+Cuối cùng. Vì vậy, tất cả những gì chúng ta cần làm để sửa chữa một lần nữa. Nếu phần đầu tiên của một tính toán mà cảm thấy
+
+54
+00:07:00,960 --> 00:07:09,920
+Con số đầu tiên là xu hướng, chúng ta không thể nhập bất cứ thứ gì vào biển. Vì vậy, chúng ta cần sửa chữa nó.
+
+55
+00:07:13,040 --> 00:07:31,200
+Một người dùng không thể nhập một số khác, một số khác sau khi anh ta nhập số đầu tiên
+
+56
+00:07:32,320 --> 00:07:50,240
+số lượng như sau đó con số trong suy nghĩ. Và nhấp vào đáy máy. Vậy, chúng ta sẽ nhờ Al sửa chữa.
+
+57
+00:07:50,240 --> 00:07:57,600
+Vì nó không ổn. Để xem anh ta có sửa được không.
+
+58
+00:08:00,720 --> 00:08:06,880
+Phải, hắn hiểu đó là một con bọ. Anh ta sẽ cập nhật một số logic.
+
+59
+00:08:06,880 --> 00:08:11,840
+Để xem hắn đã làm gì khi chờ nhạc kịch.
+
+60
+00:08:11,840 --> 00:08:19,600
+Được rồi, anh có thể chuyển nó sang chỗ khác. Tôi hy vọng nó sẽ thành công. Hãy thử lại.
+
+61
+00:08:21,760 --> 00:08:33,920
+Thêm nữa. Có vẻ nó hoạt động. Vì vậy, chúng ta đừng cố gắng để tính toán một số lớn con số. Chúng tôi muốn
+
+62
+00:08:33,920 --> 00:08:40,160
+nhân và chỉ là tôi tò mò làm thế nào kết quả sẽ được hiển thị. Không sao đâu. Nó được hiển thị trong
+
+63
+00:08:40,160 --> 00:08:47,840
+thành hàng. Tôi thích nó. Được rồi, tuyệt lắm. Vì vậy, trong bài học này, bạn học cách áp dụng
+
+64
+00:08:47,840 --> 00:08:55,760
+Các phương pháp khác nhau để cải thiện logic với AI. Bạn thậm chí thấy rằng chúng tôi có thể hỏi một số câu hỏi tiếp theo
+
+65
+00:08:55,760 --> 00:09:01,680
+về những lời nhắc nhở chúng ta đã hỏi lúc trước. Vì vậy, khi AI sẽ sửa chữa. Hẹn gặp lại.
+
+66
+00:09:01,680 --> 00:09:08,000
+Bài học. Nơi chúng tôi sẽ điều tra những gì định dạng thư viện chúng tôi có thể sử dụng không có rất nhiều tùy biến
+
+67
+00:09:08,000 --> 00:09:14,320
+mật mã và sử dụng một số mã được kiểm tra bởi cộng đồng. Hẹn gặp lại trong bài tới.
+
