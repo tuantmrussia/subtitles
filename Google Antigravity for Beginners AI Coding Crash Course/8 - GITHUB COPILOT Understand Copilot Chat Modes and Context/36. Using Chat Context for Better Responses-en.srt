@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Hi, and that's awesome. I will explain how work with chat context with the Kafka pilot.
+
+2
+00:00:07,000 --> 00:00:12,000
+ I also will show you how to mention different files, what you can do else with the context.
+
+3
+00:00:12,000 --> 00:00:20,000
+ But let's start that the Y context is needed. By providing the context, you can get more relevant answers
+
+4
+00:00:20,000 --> 00:00:25,000
+ and more accurate responses from NEI in Visual Studio Code.
+
+5
+00:00:25,000 --> 00:00:32,000
+ I can text it some files related to questions, some files where you want to change something.
+
+6
+00:00:32,000 --> 00:00:40,000
+ So when you specify them, a compiler would better understand what you need to do and where you need to do it.
+
+7
+00:00:40,000 --> 00:00:50,000
+ But it's a device to the ask and edit mode, but for agent mode, it will find context automatically.
+
+8
+00:00:50,000 --> 00:00:57,000
+ So let's talk first about implicit context.
+
+9
+00:00:57,000 --> 00:01:03,000
+ Like when you open any file, as the file has the file name, has some content.
+
+10
+00:01:03,000 --> 00:01:07,000
+ Also, you might select some text and then ask a question.
+
+11
+00:01:07,000 --> 00:01:19,000
+ And the normally compiler will get the file name as a context implicitly, and also the circuit area of the code also get it as a context.
+
+12
+00:01:19,000 --> 00:01:25,000
+ But if you don't select it and you'll remove it, so a compiler won't have any context.
+
+13
+00:01:25,000 --> 00:01:32,000
+ Also, if you choose the file, you'll see the file here is used as a context, then you have an icon.
+
+14
+00:01:32,000 --> 00:01:41,000
+ So we can disable it from a context, or you can enable, I suggest you have it enabled.
+
+15
+00:01:41,000 --> 00:01:45,000
+ It will help you get better responses.
+
+16
+00:01:45,000 --> 00:01:50,000
+ Let's now talk how that files to the context, there are a few options.
+
+17
+00:01:50,000 --> 00:01:58,000
+ You can choose the add context button and add any file of the files listed here at the bottom.
+
+18
+00:01:58,000 --> 00:02:00,000
+ It's a recently opened file.
+
+19
+00:02:00,000 --> 00:02:07,000
+ If you need more files, you can click on files and folders, and you can choose any file of folder right here.
+
+20
+00:02:07,000 --> 00:02:16,000
+ So, and the site is a context. You can also use symbols. As symbols, it's a method.
+
+21
+00:02:16,000 --> 00:02:25,000
+ It's the variables you have in the scope of the current file, so you can also mention them if they are related.
+
+22
+00:02:25,000 --> 00:02:30,000
+ You can also mention some problems in terminal, we'll back to it later.
+
+23
+00:02:30,000 --> 00:02:38,000
+ There are also some other instruments like instructions, tools, we won't cover them in those lessons.
+
+24
+00:02:38,000 --> 00:02:47,000
+ So, another option, how we choose the context, you can just drag and drop files right here, and if you'll be added.
+
+25
+00:02:47,000 --> 00:02:59,000
+ You can also use hashtag mention, you type hashtag, you see some comments, you'll look through them a bit later, and you can scroll down and choose the file.
+
+26
+00:02:59,000 --> 00:03:07,000
+ For example, you can also start typing and choose the file from over here.
+
+27
+00:03:07,000 --> 00:03:11,000
+ This file is added here as a context.
+
+28
+00:03:11,000 --> 00:03:20,000
+ Also, what is important, when you add some files is the context.
+
+29
+00:03:20,000 --> 00:03:38,000
+ Normally, this code includes all the files, but if files are big for processing by a compiler, just process from the files, like some method names, and their descriptions.
+
+30
+00:03:38,000 --> 00:03:49,000
+ It named outline, and don't include any implementation of the files, is a file is really big.
+
+31
+00:03:49,000 --> 00:03:58,000
+ If files are very big, then it won't be included at all, because the power won't be able to process it.
+
+32
+00:03:58,000 --> 00:04:08,000
+ So, please, be aware of it, and be careful when you structure some big files for the context, they might not be considered.
+
+33
+00:04:08,000 --> 00:04:20,000
+ Let's now talk about mentions, hashtag mentions. When you use hashtag, you see a lot of comments. I will cover some popular of them.
+
+34
+00:04:20,000 --> 00:04:35,000
+ As the first one is changes, you can get the divs of changes files in source control, what it means. If you use git, git a set tool to add record changes, and you can then store in remote repository.
+
+35
+00:04:35,000 --> 00:04:54,000
+ Normally, when you use git tool, you will see all files you touch, you can have changes over here, and you can ask, regarding these files, some questions, you can ask summary of these files, which changes are, like give me a short summary.
+
+36
+00:04:54,000 --> 00:05:15,000
+ You can also change these files, for example. The next hashtag is code base. You can also contact the whole workspace, you have all the files and folders you see right here, and you can ask questions that help the power to have, as a contact the whole project.
+
+37
+00:05:15,000 --> 00:05:26,000
+ For example, it can be useful when you don't know which file a relevant equation, so the power to do it automatically.
+
+38
+00:05:26,000 --> 00:05:41,000
+ The next one is fetch. You can use fetch. For example, if you want to get content for some specific web page, for example, some documentation, about the framework.
+
+39
+00:05:41,000 --> 00:05:56,000
+ You can just use fetch and then specify the website, blah, blah, blah, blah, and the pilot will look into the documentation, this link.
+
+40
+00:05:56,000 --> 00:06:12,000
+ For the next, you can use it's the GitHub wrapper. It's when you want to follow some templates from GitHub repositories, for example, or look into GitHub repositories and examples, or ask some questions regarding some GitHub repository.
+
+41
+00:06:12,000 --> 00:06:20,000
+ You can also mention the repository name, for example, mine, your, and you can ask questions.
+
+42
+00:06:20,000 --> 00:06:32,000
+ The next popular one is problems. If you open terminal, you'll see also the problems top right here.
+
+43
+00:06:32,000 --> 00:06:53,000
+ In this step, you see all the mistakes you have in the file, so I have mistakes right here. You see the power to suggest me to fix. I can ask, okay, fix all problems, and it should do, okay, check problems.
+
+44
+00:06:53,000 --> 00:07:06,000
+ I need to apply because it's the ask mode. After I apply it, show me the changes and the fix. So you can use it. For example, the fix, some TypeScript, or some Yesly in the roles.
+
+45
+00:07:06,000 --> 00:07:28,000
+ Also, the next one is test favor. When you run your test and you have private tests, for example, you can also ask to pick on the private tests, and it will have a private test, the context, but you first need to run them.
+
+46
+00:07:28,000 --> 00:07:52,000
+ And also, one more popular one is usage. You can use it for some method. For example, where is this method is used. I will close file and don't have it in the context.
+
+47
+00:07:52,000 --> 00:08:00,000
+ It tells me to use and date test the just.
+
+48
+00:08:00,000 --> 00:08:15,000
+ This method is using the following places, but it also should be used in Datejust, okay, I ask, but where is used? So it's just the finite right here, but used is, yeah, and you can test.
+
+49
+00:08:15,000 --> 00:08:25,000
+ So you can ask some questions regarding the symbols, symbols, it's any method of variable.
+
+50
+00:08:25,000 --> 00:08:48,000
+ And now let's, I want to show you some more concrete use cases of hashtag mentions. So let's go through them. As I told you, you can reference summary of your changes in source control. You see the exact prompt right here, so you can just use them.
+
+51
+00:08:48,000 --> 00:09:03,000
+ If you need it, for example, to generate the release mode. The next one is how you can understand battery code base and not mention any file in a context. You can just specify the code base and ask any questions.
+
+52
+00:09:03,000 --> 00:09:28,000
+ Explain how our identification works, where is the user data stored to some other questions. This is the question about usages, which we did, where is the get method, get user method is used. For example, you can use just the method name like let's name, for example, add days.
+
+53
+00:09:28,000 --> 00:09:36,000
+ So when you see this is a, we added a symbol to the context, so.
+
+54
+00:09:36,000 --> 00:09:51,000
+ And as the next you can generate some port consistent with your code base. I like when you mentioned the code base is the context, compile it will look through your code base and you'll find some examples to fall like at least you'll do something in the same code,
+
+55
+00:09:51,000 --> 00:10:06,000
+ as quite styling you have in your code base. It's going to be useful for generating a better old, for example, create some pages, especially like if you use an engine mode, so we don't shouldn't mention the code context, so.
+
+56
+00:10:06,000 --> 00:10:14,000
+ For example, you can mention specific files, the content, just to follow some rules like describe it here.
+
+57
+00:10:14,000 --> 00:10:27,000
+ And a few more examples, you can fix issues in your place, like when it uses a problem stack, we can fix the power test, so it also can be useful.
+
+58
+00:10:27,000 --> 00:10:48,000
+ For example, how to reference content from the web page, for example, you can ask how I can use use state hook in red 18 version, and I use fetch stack and I use right here as the link to the commentations, so the power to look into this documentation, if you get answer from this page.
+
+59
+00:10:48,000 --> 00:11:04,000
+ For example, if you want to build the endpoint and follow some templates from GitHub repository convention hit hop repo, hashtag, and then the repository name and pass my bills, the folder or place where it's the template is located.
+
+60
+00:11:04,000 --> 00:11:08,000
+ This is how you can use it.
+
+61
+00:11:08,000 --> 00:11:30,000
+ For one more useful thing, you can use it at symbol mentions, especially when you when you in ask mode, because if I switch to agent mode, I don't see at symbol mentions, and in edit mode, I also don't have it, but if I use ask mode, I have this symbol.
+
+62
+00:11:30,000 --> 00:11:48,000
+ It's kind of the main experts, some plugins might have it, the compiler might have it, VS code have a few, you can ask some questions how to use the plugin or some, I know terminal, the VS code.
+
+63
+00:11:48,000 --> 00:12:07,000
+ For example, you can use GitHub participant or some question about the hit hop, as a VS code use about VS code, for example, how to enable agent mode.
+
+64
+00:12:07,000 --> 00:12:34,000
+ Let's see if it can help us. Imagine mode, you need to use this setting. So if you don't know how to, the name of some settings, you can ask VS code, the main expert, as same, you can use the terminal to ask some questions about terminal, like how to, I know, use a list of files, so how to create a folder, how to change the rules for the folder.
+
+65
+00:12:34,000 --> 00:12:46,000
+ You can use ask different questions, you can use the videos, the workspaces, some workspaces, some commands.
+
+66
+00:12:46,000 --> 00:13:01,000
+ Also, if the plugins or like, I mean extensions, you have the participant, which is possible, you may also ask questions regarding the extensions, of course.
+
+67
+00:13:01,000 --> 00:13:09,000
+ For example, you can use the hashtag of extensions and ask some questions about some particular extension, also possible.
+
+68
+00:13:09,000 --> 00:13:38,000
+ So, I hope after this lesson, you know better how to use context, and it really would help you to get more appropriate answers from compile it. I really hope. So, and see you in the next lesson.
+
