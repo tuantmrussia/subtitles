@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:15,000
+ Building on top of the last video where we discussed the concept of a Java bean, now it's time to write the code that implements that concept and you will see by the end of this video, why I said it is, it is, you'll find it omnipresent in the Java ecosystem.
+
+2
+00:00:15,000 --> 00:00:31,000
+ So we'll just go ahead quickly and in, let's say for a change, we'll just create this new class in the org dot work package, right? And I'll just call it Java bean tip, right.
+
+3
+00:00:31,000 --> 00:00:47,000
+ Let's maximize this for you again and again have the customary main method and this time we'll just take an example and in the past video last video, we took an example of a student, but it can just be anything that comes to your mind or whatever you are dealing with, right.
+
+4
+00:00:47,000 --> 00:01:02,000
+ So for now, let's just take an example of a smartphone. Let's say this is the entity that we are dealing with right, because every now and then whenever you're writing business logic of your code, right, whatever application you're writing in, there would be entities, right.
+
+5
+00:01:02,000 --> 00:01:18,000
+ There would be entities like student, there would be an entity like, for example, if you're working for a hospital management system, there would be entity like doctors, clerks, receptionist, accountant, patients and all of those. If you're working for a school management system, there would be students, teachers,
+
+6
+00:01:18,000 --> 00:01:34,000
+ administrators, accountants and principal, for example, and let's take an example that just comes to my mind right now, but you could just take any example that fits your situation. So for now, let's talk about a smartphone.
+
+7
+00:01:34,000 --> 00:02:03,000
+ And I'll just say, for example, those are private or first without private, I'll save a long, let's say I am, I am here number, right.
+
+8
+00:02:03,000 --> 00:02:18,000
+ I'll just say a unique number, right. That is unique to every smartphone and then we would have a string name and we would have a string manufacturer, right.
+
+9
+00:02:18,000 --> 00:02:32,000
+ Obviously, a smartphone has other properties like intram, right, and other properties like what is the storage and what are the cameras, pixel density screens, but for now let's keep it short, right, to keep it simple for you to understand.
+
+10
+00:02:32,000 --> 00:02:51,000
+ And what we'll do is because we're falling in the convention of a Java wheel, we need this smartphone to act like us Java being now, so what I'll do is I just create all of them aspect.
+
+11
+00:02:51,000 --> 00:03:04,000
+ So that's the first step that we have followed based on the last video, we have kept the instance variables as private, that means anyone, no one rather can access these variables from outside, right.
+
+12
+00:03:04,000 --> 00:03:25,000
+ They can only be accessed within the class in visual declared, go back to that video where we were discussing scope and access specifiers, right. Now, the next property is, that is, we should have public get a set of methods that should be there for making these variables accessible, right.
+
+13
+00:03:25,000 --> 00:03:39,000
+ And these get a set of methods, you should have a getter and a set of for each of the instance variables of your Java being and we have four here in your case, it might three, it might be three or 10 variables, so you would have those
+
+14
+00:03:39,000 --> 00:03:53,000
+ number of getter set as a colony, but we should have a getter set for each of these variables and starting with if I do it for you, I'll say for example, the syntax for writing a getter is we say public, right, and it should have a return type.
+
+15
+00:03:53,000 --> 00:04:05,000
+ The return type, the return type should be the same type as of that variable, for example, for now we're writing the getter for unique number, so I'll say public long, and you'll say.
+
+16
+00:04:05,000 --> 00:04:18,000
+ Let's start with setters rather, right, and what is the syntax for writing setters, you should have the return type as wide, why, because we're setting things it doesn't return anything and these methods should never return anything.
+
+17
+00:04:18,000 --> 00:04:47,000
+ It's a white set and it should start with the the letters set always, right, and see intelligent the the intelligent behavior of intelligent just says, are you creating it for name unique number manufacturer just gives us the intelligence, we say set unique number, right, it should be in cable case, see it was here you small and capital, but because you had to put set with it as small you and in capital, that is the setter for unique number.
+
+18
+00:04:47,000 --> 00:04:56,000
+ And it should take one parameter exactly of the same type as of the variable, right, and here it is a long, so we'll say.
+
+19
+00:04:56,000 --> 00:05:24,000
+ Long, the name should be the same right obviously local level instance level you know there is no conflict and then we should just map them I'll say this dot unique number union number like we did in the last.
+
+20
+00:05:24,000 --> 00:05:46,000
+ We're creating it for unique number long, let's say get gives me the suggestion I'll say get number and it should not take an argument because remember arguments of a setting with getters which is getting you're just reading right this is for writing this is reading setters of writing getters of reading so it should not have a parameter, but we should return that.
+
+21
+00:05:46,000 --> 00:06:01,000
+ Let's say return this dot unique number, but you can just say return unique number and work based on the video that was about this right, but I like to be explicit I say return this because this is not a local variable it belongs to the object of this class I'll say return this dot.
+
+22
+00:06:01,000 --> 00:06:22,000
+ So setter and getter ready for unique number similarly I need to create for name so I'll just go ahead again it should be public as you know get a setters and this time, why because we're setting I'll say set name and should have a same type variable as a parameter I'll say string name and then you will say.
+
+23
+00:06:22,000 --> 00:06:40,000
+ This dot name to name. Okay, and then similarly you should have the gator for it I'll say public I return time this time what should it be guess what string right so I'll say string.
+
+24
+00:06:40,000 --> 00:07:04,000
+ That additional space and this time it should start with a get I'll say get name and should not take a parameter, but should return the value I'll say return this dot name right so get a setters ready for unique number and name now this is left for manufacture and RAM and we can just copy based the code or even better use the.
+
+25
+00:07:04,000 --> 00:07:13,000
+ Questions that come up with these IDs like intelligent and I'll just I'm just going to tell you the shortcut for that see I'll just delete this.
+
+26
+00:07:13,000 --> 00:07:24,000
+ Because all these modern day IDs they know you use Java beans a lot as I said every day that's why they have inbuilt support for creating these get a setters all you have to do is you say right click.
+
+27
+00:07:24,000 --> 00:07:36,000
+ I just say generate or just say control and as is about telling you see just hit control and and say get and set. Right, it enter and it says what is that you want to be.
+
+28
+00:07:36,000 --> 00:07:53,000
+ Created the get a setters for only unique number I say new all four of them so just select all four of them on your screen unique number name manufacture RAM it knows their type as well and you will say it says get a template set a template I'll keep it or default intelligent I'll say.
+
+29
+00:07:53,000 --> 00:08:07,000
+ And off you go let's see says that get unique number see return unique number set unique number this dot unique number to unique number similarly for this get name set name get manufacture set manufacture and get RAM and set RAM.
+
+30
+00:08:07,000 --> 00:08:22,000
+ I'll just undo this and let's do it one more time for you control and I'll say please generate get a setters for me for all of them it enter and off you go the setters are ready and now the third point if you remember what was that it should have a no argument.
+
+31
+00:08:22,000 --> 00:08:30,000
+ So for doing that again I'll say control and you'll say constructor I don't need this right I'll say select none that said.
+
+32
+00:08:30,000 --> 00:08:41,000
+ Or obviously would have gone ahead and created this yourself as the public public is optional by the way for a constructor and I'll say that is a smartphone.
+
+33
+00:08:41,000 --> 00:08:58,000
+ In addition to this you might have an argument that is a parameter is considered but that's your choice that's your preference that's your requirement but at least you should have a no argument considered at all times for this class to be considered as Java being because remember we're following a convention and now this is ready.
+
+34
+00:08:58,000 --> 00:09:11,000
+ We have the get a setters ready right and we have the no argument constructor this is now considered a job of because it follows all those conventions right and.
+
+35
+00:09:11,000 --> 00:09:27,000
+ But that is a job of him now why do we use it as I told you in your projects that you will be working on generally they would be layered they'll be based on layered architecture right or MVC that is you would have a different layer for holding all your view classes.
+
+36
+00:09:27,000 --> 00:09:48,000
+ You would have a different layer for holding your database specific classes you will have a layer which will be accurate as the service layer right and how do these layers do the communication they send data as with data carriers right what are those data carriers these Java being classes right the act as data carriers right.
+
+37
+00:09:48,000 --> 00:10:06,000
+ They send their use to send data from one layer to another or from one method to another method so think about it see let's say you have to send a smartphone object from a place to another it has four properties so you would have to have four properties in that method for sending that right.
+
+38
+00:10:06,000 --> 00:10:18,000
+ Just four properties here but you know the smartphone you are currently watching this video on or what do you have at your home right how many properties come to your mind maybe 2013 maybe 50 unique properties.
+
+39
+00:10:18,000 --> 00:10:35,000
+ For your smartphone so are you expecting us to write 50 parameters or 30 parameters with the method and then passing them though we just encapsulate that in just one object that's the beauty of classes are objects right and I'll do that for you shortly.
+
+40
+00:10:35,000 --> 00:10:52,000
+ Once we come to another concept I'll use these as data carriers but for now just think about these Java beans as what I call as data carrier classes or just data carriers or data transfer objects.
+
+41
+00:10:52,000 --> 00:11:06,000
+ That is DTO's or even in some places it's go in there called models right but I'll prefer calling them data carriers because they carry the data or data transfer objects because they transfer data from one place to another.
+
+42
+00:11:06,000 --> 00:11:19,000
+ Right and that is the concept of a Java bean and now all you have to do is if you want to access it from somewhere is let's say I'm currently accessing from a different class called Java bean demo so I'll just create a cloud object as a smartphone.
+
+43
+00:11:19,000 --> 00:11:25,000
+ Let me call it phone to new.
+
+44
+00:11:25,000 --> 00:11:34,000
+ Smart phone and if I try if someone else tries to access unique number from outside so what would happen is.
+
+45
+00:11:34,000 --> 00:11:49,000
+ We'll just write for example something like this it's an error because private variables cannot be accessed from outside the the class and see what intelligent suggestion does my friend intelligent come up with it says replace with a set up.
+
+46
+00:11:49,000 --> 00:11:58,000
+ If you're trying to write the value for this proper unique number it cannot be accessed from outside because the designer of this class has made it private but.
+
+47
+00:11:58,000 --> 00:12:13,000
+ They have a public set a method why don't use it see set unique number and that's how you set it that's how you set it right so set unique number I'll say 9 0 some value for example and I'll say phone dot set.
+
+48
+00:12:13,000 --> 00:12:29,000
+ Let's set it for Google own dot I'll say set name let's say pixel.
+
+49
+00:12:29,000 --> 00:12:53,000
+ Let's see this works it's a run and does it says that pixel it pro and obviously you can print all the properties as well there are better ways to write this class there are better ways to write this class.
+
+50
+00:12:53,000 --> 00:13:19,000
+ There are better ways to get properties out of it obviously more on that later on once you reach that level but for now this should now make sense right the act as data transfer just all you have to do is if you want to send this from this Java being demo cluster somewhere else you don't have to send all these properties just.
+
+51
+00:13:19,000 --> 00:13:29,000
+ Think about it it has encapsulated and wrapped everything that is within it within that phone object that's it right and more on obviously will be keeping on.
+
+52
+00:13:29,000 --> 00:13:48,000
+ Using Java beans as we move ahead with the scores but for now time to ponder upon what I just said in this video and why did I say these are these are important it's imperative you have a good understanding of what Java being is it's quite a simple idea but nevertheless important.
+
+53
+00:13:48,000 --> 00:13:58,000
+ [BLANK_AUDIO]
+
