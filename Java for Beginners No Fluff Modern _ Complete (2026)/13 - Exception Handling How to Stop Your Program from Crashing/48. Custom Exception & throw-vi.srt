@@ -1,0 +1,864 @@
+1
+00:00:00,000 --> 00:00:07,000
+Bây giờ, trong những tình huống khác thường, bạn có thể muốn vượt qua một ngoại lệ cho chính mình.
+
+2
+00:00:07,000 --> 00:00:09,000
+Và tại sao lại phi thường?
+
+3
+00:00:09,000 --> 00:00:16,000
+Bởi vì cho đến bây giờ, chúng ta đã thảo luận về điều gì khi có ngoại lệ, thì làm sao chúng ta có thể chăm sóc nó?
+
+4
+00:00:16,000 --> 00:00:17,000
+Chúng ta xử lý thế nào đây?
+
+5
+00:00:17,000 --> 00:00:19,000
+Nhưng giờ tôi nói ngược lại.
+
+6
+00:00:19,000 --> 00:00:23,000
+Nghĩa là, anh có thể muốn một ngoại lệ cho chính mình.
+
+7
+00:00:23,000 --> 00:00:27,000
+Cùng một ngoại lệ mà anh đang cố giải quyết và chăm sóc.
+
+8
+00:00:27,000 --> 00:00:30,000
+Tình huống đó là gì chứ?
+
+9
+00:00:30,000 --> 00:00:31,000
+Nhưng thử thách.
+
+10
+00:00:31,000 --> 00:00:34,000
+Ngôn ngữ linh hoạt, ngôn ngữ linh hoạt.
+
+11
+00:00:34,000 --> 00:00:37,000
+Nó thậm chí cho bạn một tình huống cho trường hợp cạnh tranh đó.
+
+12
+00:00:37,000 --> 00:00:41,000
+Và trường hợp cạnh này không phải là trường hợp cạnh tranh trong thực tế.
+
+13
+00:00:41,000 --> 00:00:42,000
+Chúng tôi thường làm thế.
+
+14
+00:00:42,000 --> 00:00:44,000
+Tôi sẽ cho bạn một ví dụ ở đây.
+
+15
+00:00:44,000 --> 00:00:45,000
+Để xem nào.
+
+16
+00:00:45,000 --> 00:00:47,000
+Tôi có ngoại lệ cấp lớp này.
+
+17
+00:00:47,000 --> 00:00:53,000
+Và ở đây, hãy nói rằng tôi có một phương pháp màu trắng.
+
+18
+00:00:53,000 --> 00:00:56,000
+Hay gì đó.
+
+19
+00:00:56,000 --> 00:00:59,000
+Hoặc giả sử là một người da trắng.
+
+20
+00:00:59,000 --> 00:01:06,000
+Phải, hãy làm gì đó đi.
+
+21
+00:01:06,000 --> 00:01:08,000
+Và nó cần một số nguyên.
+
+22
+00:01:08,000 --> 00:01:11,000
+Tôi sẽ nói giá trị số nguyên.
+
+23
+00:01:11,000 --> 00:01:18,000
+Và bây giờ, cứ cho là anh.
+
+24
+00:01:18,000 --> 00:01:23,000
+Bạn không cần phải có sự linh hoạt để đưa ra ngoại lệ.
+
+25
+00:01:23,000 --> 00:01:25,000
+Nếu có chuyện gì không hay xảy ra.
+
+26
+00:01:25,000 --> 00:01:30,000
+Và đôi khi có thể, trong trường hợp này, nó có thể là giá trị nhỏ hơn 0.
+
+27
+00:01:30,000 --> 00:01:32,000
+Đó là, nó là một giá trị trong trừ.
+
+28
+00:01:32,000 --> 00:01:35,000
+Anh không muốn đưa nó cho một trong những phương pháp đó đâu.
+
+29
+00:01:35,000 --> 00:01:39,000
+Bạn có thể nói, ví dụ,
+
+30
+00:01:39,000 --> 00:01:44,000
+Nếu nó là một giá trị nhỏ hơn 0.
+
+31
+00:01:44,000 --> 00:01:49,000
+Lần đầu tiên, bạn có thể đưa ra ngoại lệ của riêng bạn.
+
+32
+00:01:49,000 --> 00:01:52,000
+Đó là, sử dụng từ khóa là đúng.
+
+33
+00:01:52,000 --> 00:01:54,000
+Và nó khác với ném.
+
+34
+00:01:54,000 --> 00:01:57,000
+Theo nghĩa này, điều này thực sự đưa ra ngoại lệ.
+
+35
+00:01:57,000 --> 00:01:59,000
+Nó không giống như nó có thể.
+
+36
+00:01:59,000 --> 00:02:00,000
+ném là cảnh báo.
+
+37
+00:02:00,000 --> 00:02:02,000
+ném nó.
+
+38
+00:02:02,000 --> 00:02:03,000
+Đúng vậy.
+
+39
+00:02:03,000 --> 00:02:04,000
+Mới.
+
+40
+00:02:04,000 --> 00:02:05,000
+Đó là cách bạn ném một ngoại lệ Java.
+
+41
+00:02:05,000 --> 00:02:08,000
+Hãy nói rằng đó là thời gian chạy.
+
+42
+00:02:08,000 --> 00:02:13,000
+Ví dụ, nếu không, bạn cứ nói,
+
+43
+00:02:13,000 --> 00:02:16,000
+Nó sẽ được thực hiện ở đây.
+
+44
+00:02:16,000 --> 00:02:18,000
+Dù đó là gì, hãy nói với anh là anh đang làm việc.
+
+45
+00:02:18,000 --> 00:02:20,000
+Ví dụ nhé?
+
+46
+00:02:20,000 --> 00:02:23,000
+Và chúng ta sẽ có nó như thế này nơi nó hoạt động.
+
+47
+00:02:23,000 --> 00:02:24,000
+Đúng không?
+
+48
+00:02:24,000 --> 00:02:28,000
+Nhưng đây là điểm, đường thẳng và tập trung ở đây.
+
+49
+00:02:28,000 --> 00:02:30,000
+Đó là, nếu nó nhỏ hơn 0, ném này.
+
+50
+00:02:30,000 --> 00:02:34,000
+Không, đừng chạy gì hết bởi vì nó ngay lập tức đưa ra ngoại lệ.
+
+51
+00:02:34,000 --> 00:02:37,000
+Và nếu không, cứ làm bất cứ điều gì bạn muốn hoặc bất cứ điều gì
+
+52
+00:02:37,000 --> 00:02:39,000
+Anh được yêu cầu phải làm.
+
+53
+00:02:39,000 --> 00:02:41,000
+Nhưng đây là cách bạn đưa một ngoại lệ ở Java.
+
+54
+00:02:41,000 --> 00:02:43,000
+Cho thêm ngoại lệ thời gian đi.
+
+55
+00:02:43,000 --> 00:02:45,000
+Và một lần nữa, nó có một mối quan hệ với cuối cùng và tuyên bố.
+
+56
+00:02:45,000 --> 00:02:48,000
+Và đó là, nếu ngoại lệ mà bạn đang ném
+
+57
+00:02:48,000 --> 00:02:52,000
+với từ khóa ném, phải, tình cờ là một ngoại lệ được kiểm tra,
+
+58
+00:02:52,000 --> 00:02:56,000
+Anh cần phải tuyên bố rằng đó là một phần của phương pháp ký hiệu.
+
+59
+00:02:56,000 --> 00:03:00,000
+Nếu đó là một ngoại lệ không được kiểm soát, như thời gian chạy, vô giá trị,
+
+60
+00:03:00,000 --> 00:03:02,000
+Số học, không cần phải làm thế.
+
+61
+00:03:02,000 --> 00:03:04,000
+Thấy chưa, không có lỗi nào cả.
+
+62
+00:03:04,000 --> 00:03:08,000
+Nhưng nếu đó là một ngoại lệ đã được kiểm tra, như IO,
+
+63
+00:03:08,000 --> 00:03:11,000
+Nó sẽ là một sai lầm về thời gian PowerPoint.
+
+64
+00:03:11,000 --> 00:03:12,000
+Cứ tiếp tục đi.
+
+65
+00:03:12,000 --> 00:03:16,000
+Nó nói, mở rối ngoại lệ, Java.io.io ngoại lệ.
+
+66
+00:03:16,000 --> 00:03:18,000
+Bạn cần phải thêm nó vào chữ ký phương pháp.
+
+67
+00:03:18,000 --> 00:03:21,000
+Vì vậy, một lần nữa, để nhấn mạnh, điểm đầu tiên chúng tôi đã làm trong này
+
+68
+00:03:21,000 --> 00:03:24,000
+Video là nếu bạn muốn đưa ra ngoại lệ riêng của bạn,
+
+69
+00:03:24,000 --> 00:03:26,000
+bạn có thể làm điều đó trong Java với ném từ khóa.
+
+70
+00:03:26,000 --> 00:03:29,000
+Nó khác với ném, ném được sử dụng để gửi một cảnh báo
+
+71
+00:03:29,000 --> 00:03:32,000
+để các phương pháp gọi, thực sự ném các ngoại lệ.
+
+72
+00:03:32,000 --> 00:03:35,000
+Và nếu ngoại lệ mà bạn đang sử dụng với từ khóa ném
+
+73
+00:03:35,000 --> 00:03:38,000
+xảy ra là một ngoại lệ được kiểm tra, nó cần phải được tuyên bố
+
+74
+00:03:38,000 --> 00:03:40,000
+là một phần của phương pháp ký hiệu.
+
+75
+00:03:40,000 --> 00:03:44,000
+Nếu đó là một ngoại lệ không kiểm soát, bạn không cần phải, được rồi.
+
+76
+00:03:44,000 --> 00:03:47,000
+Vì vậy, đó là những gì ném từ khóa làm.
+
+77
+00:03:47,000 --> 00:03:50,000
+Và điểm tiếp theo tôi sẽ nói về trước khi chúng tôi kết thúc nó
+
+78
+00:03:50,000 --> 00:03:53,000
+là ngoại lệ tùy biến của chúng ta.
+
+79
+00:03:53,000 --> 00:03:56,000
+Ngôn ngữ tuyệt vời mà tôi có đôi mắt, nó cho phép bạn để xác định
+
+80
+00:03:56,000 --> 00:03:58,000
+Ngoại lệ của anh là vì chúng tôi không bao giờ có thể chắc chắn
+
+81
+00:03:58,000 --> 00:04:02,000
+Java đã
+
+82
+00:04:02,000 --> 00:04:05,000
+Chưa xong.
+
+83
+00:04:05,000 --> 00:04:08,000
+Không có hàng trăm lớp ngoại lệ ngoài kia.
+
+84
+00:04:08,000 --> 00:04:11,000
+Tuy nhiên, ứng dụng của bạn, dự án của bạn, phải, ứng dụng của bạn
+
+85
+00:04:11,000 --> 00:04:16,000
+sẽ có một ngoại lệ mà không phải chung hoặc đó là duy nhất
+
+86
+00:04:16,000 --> 00:04:18,000
+phải rồi.
+
+87
+00:04:18,000 --> 00:04:21,000
+Ví dụ, có một ngoại lệ được gọi là tên người dùng,
+
+88
+00:04:21,000 --> 00:04:24,000
+Không phải cho ngoại lệ hoặc sử dụng không cho ngoại lệ.
+
+89
+00:04:24,000 --> 00:04:27,000
+Vì vậy, đó không phải là trong thế giới Java bình thường mà không thể có ở khắp mọi nơi.
+
+90
+00:04:27,000 --> 00:04:31,000
+Java cho bạn sự linh hoạt trong việc xác định ngoại lệ của riêng bạn.
+
+91
+00:04:31,000 --> 00:04:35,000
+Chúng ta có những thứ như thế này.
+
+92
+00:04:35,000 --> 00:04:38,000
+Để tôi viết nó cho anh.
+
+93
+00:04:38,000 --> 00:04:41,000
+Ở bất cứ nơi nào như lớp học bình thường,
+
+94
+00:04:41,000 --> 00:04:44,000
+Tôi chỉ nói ngoại lệ thôi.
+
+95
+00:04:44,000 --> 00:04:46,000
+Và bạn có thể mở rộng nó.
+
+96
+00:04:46,000 --> 00:04:48,000
+Nếu anh muốn nó là một ngoại lệ được kiểm tra,
+
+97
+00:04:48,000 --> 00:04:51,000
+Chỉ cần mở rộng nó với một lớp ngoại lệ đã được kiểm tra.
+
+98
+00:04:51,000 --> 00:04:55,000
+Nếu bạn muốn làm cho nó trông giống như hoặc sẽ không giống như một ngoại lệ không kiểm soát,
+
+99
+00:04:55,000 --> 00:04:58,000
+Cho nó một mức độ với chúng ta hãy nói ngoại lệ.
+
+100
+00:04:58,000 --> 00:05:01,000
+Không sao. Đó là tất cả những gì anh cần làm.
+
+101
+00:05:01,000 --> 00:05:04,000
+Nếu anh muốn chuyện này được kiểm tra ngoại lệ,
+
+102
+00:05:04,000 --> 00:05:07,000
+Rồi ngoại lệ kéo dài, thế thôi.
+
+103
+00:05:07,000 --> 00:05:11,000
+Và sau đó những gì tôi sẽ làm trong tôi sẽ có một xây dựng, ngoại lệ của tôi,
+
+104
+00:05:11,000 --> 00:05:16,000
+Tôi sẽ chỉ nói một tin nhắn tại một tin nhắn dây.
+
+105
+00:05:16,000 --> 00:05:21,000
+Thỉnh thoảng hãy gọi siêu nhân vì tôi biết chúng ta chưa chạm vào nó.
+
+106
+00:05:21,000 --> 00:05:24,000
+Nhưng sẽ không có video riêng cho siêu nhân.
+
+107
+00:05:24,000 --> 00:05:27,000
+Vì vậy, cho bây giờ biết rằng điều này được sử dụng để gọi
+
+108
+00:05:27,000 --> 00:05:32,000
+Cách sử dụng của siêu từ khóa là gọi cho nhà xây dựng siêu hạng.
+
+109
+00:05:32,000 --> 00:05:36,000
+Và bên trong máy xây dựng, tôi đã nói siêu và tôi sẽ chuyển lời nhắn.
+
+110
+00:05:36,000 --> 00:05:38,000
+Đúng rồi.
+
+111
+00:05:38,000 --> 00:05:45,000
+Và phù hợp, hãy gọi nó là ngoại lệ cho người dùng khóa hộp.
+
+112
+00:05:45,000 --> 00:05:46,000
+Anh nghe đúng đấy.
+
+113
+00:05:46,000 --> 00:05:50,000
+Đây là một ngoại lệ, không có trong ngôn ngữ lập trình Java,
+
+114
+00:05:50,000 --> 00:05:54,000
+Nhưng tùy biến, đúng, toàn bộ quyền truy cập để tiếp tục
+
+115
+00:05:54,000 --> 00:05:56,000
+và tạo ra các lớp ngoại lệ của riêng bạn.
+
+116
+00:05:56,000 --> 00:05:57,000
+Đó là cách anh làm.
+
+117
+00:05:57,000 --> 00:06:00,000
+Và rõ ràng là người xây dựng bây giờ có vẻ như nó là tên người dùng.
+
+118
+00:06:00,000 --> 00:06:02,000
+Dùng chú thích tìm ngoại lệ.
+
+119
+00:06:02,000 --> 00:06:07,000
+Và bây giờ nó chỉ cho bạn một kịch bản để bạn có thể ném cái này, thấy không.
+
+120
+00:06:07,000 --> 00:06:09,000
+Điều tôi sẽ làm là.
+
+121
+00:06:09,000 --> 00:06:13,000
+Hãy để tôi gọi nó là tất cả những điều này bây giờ bởi vì bạn đã hiểu nó.
+
+122
+00:06:13,000 --> 00:06:15,000
+Chỉ có lớp học này.
+
+123
+00:06:15,000 --> 00:06:21,000
+Tên người dùng cuối cùng hoặc người dùng không cho ngoại lệ, mở rộng và.
+
+124
+00:06:21,000 --> 00:06:26,000
+Hãy để cái xác ở đây.
+
+125
+00:06:26,000 --> 00:06:27,000
+Được rồi.
+
+126
+00:06:27,000 --> 00:06:29,000
+Lời cảnh báo phải biến ngay.
+
+127
+00:06:29,000 --> 00:06:31,000
+Cơn gió đã biến mất, phải không?
+
+128
+00:06:31,000 --> 00:06:36,000
+Vì vậy, hãy nói rằng tôi muốn lấy một chuỗi từ người dùng chạy thời gian, tôi sẽ nói.
+
+129
+00:06:36,000 --> 00:06:38,000
+Và đúng vậy.
+
+130
+00:06:38,000 --> 00:06:44,000
+Và tôi muốn mang nó theo một sợi dây và tôi sẽ nói chuỗi của tôi.
+
+131
+00:06:44,000 --> 00:06:51,000
+Hoặc, hãy gọi nó là tên người dùng để quét mới.
+
+132
+00:06:51,000 --> 00:06:55,000
+Hãy nhớ cách hiệu quả bây giờ hệ thống chấm trong dòng tiếp theo của bạn.
+
+133
+00:06:55,000 --> 00:06:59,000
+Làm thế nào để bạn làm chuỗi trong Java hoặc qua phương pháp tiếp theo hoặc dòng tiếp theo.
+
+134
+00:06:59,000 --> 00:07:01,000
+Và tôi thích câu tiếp theo hơn.
+
+135
+00:07:01,000 --> 00:07:07,000
+Và sau đó bạn nói, ví dụ, nếu sử dụng tôi sau này, bạn sẽ kiểm tra nó trong khu vực hoặc một bí danh.
+
+136
+00:07:07,000 --> 00:07:10,000
+Hoặc là trong một cơ sở dữ liệu hoặc là thông qua ADI.
+
+137
+00:07:10,000 --> 00:07:13,000
+Nhưng bây giờ, khó nói vì nó tập trung vào một thứ khác.
+
+138
+00:07:13,000 --> 00:07:20,000
+Vì vậy, hãy nói cho bây giờ, khó đặt nếu tên người dùng chấm bằng là một phương pháp bằng, mà chúng ta nên sử dụng thay vì gấp đôi bằng.
+
+139
+00:07:20,000 --> 00:07:21,000
+Một lần nữa, tôi có một video về điều đó.
+
+140
+00:07:21,000 --> 00:07:24,000
+Nhưng bây giờ, bạn muốn so sánh hai chuỗi sử dụng nó hoặc bằng vật chất.
+
+141
+00:07:24,000 --> 00:07:29,000
+Tôi sẽ nói nếu dấu chấm tên người dùng bằng W một hàng đợi, đó là lý do tại sao.
+
+142
+00:07:29,000 --> 00:07:31,000
+Nghĩa là nó là một người dùng hợp lệ.
+
+143
+00:07:31,000 --> 00:07:33,000
+Tôi sẽ chỉ để lại một tin nhắn yếu tố in.
+
+144
+00:07:33,000 --> 00:07:37,000
+Tôi sẽ nói chào mừng công việc.
+
+145
+00:07:37,000 --> 00:07:41,000
+Nếu không có, tôi muốn ném nó.
+
+146
+00:07:41,000 --> 00:07:47,000
+Tôi sẽ nói thông qua sử dụng mới và không phải cho một ngoại lệ với một co bóp C tham số.
+
+147
+00:07:47,000 --> 00:07:49,000
+Và tôi sẽ cho nó thời gian phù hợp.
+
+148
+00:07:49,000 --> 00:07:51,000
+Tôi sẽ chỉ cứu người dùng.
+
+149
+00:07:51,000 --> 00:07:53,000
+Đúng rồi.
+
+150
+00:07:53,000 --> 00:07:55,000
+Phải.
+
+151
+00:07:55,000 --> 00:07:58,000
+Tôi đã nói thông qua sử dụng mới và không cho một ngoại lệ người dùng không tồn tại.
+
+152
+00:07:58,000 --> 00:08:04,000
+Và vì đó là một ngoại lệ được kiểm tra, nó cần được công bố là một phần của phương pháp ký hiệu.
+
+153
+00:08:04,000 --> 00:08:06,000
+Và chúng ta sẽ làm điều đó với chúng.
+
+154
+00:08:06,000 --> 00:08:11,000
+Và tôi sẽ nói rằng tin tức và không phải cho một ngoại lệ, các lỗi nên đi xa và nó có.
+
+155
+00:08:11,000 --> 00:08:12,000
+Nó nói gì về lời cảnh báo?
+
+156
+00:08:12,000 --> 00:08:17,000
+Sử dụng lớp học và không phải cho ngoại lệ được phơi bày ngoài tầm nhìn mặc định của nó.
+
+157
+00:08:17,000 --> 00:08:22,000
+Nó liên quan đến phạm vi, nhưng đừng lo, chúng tôi đang làm việc trong cùng một gói hàng.
+
+158
+00:08:22,000 --> 00:08:23,000
+Và cũng tốt thôi.
+
+159
+00:08:23,000 --> 00:08:23,000
+Để làm việc.
+
+160
+00:08:23,000 --> 00:08:25,000
+Đó chỉ là lời cảnh báo cho anh thôi.
+
+161
+00:08:25,000 --> 00:08:28,000
+Nhưng tập trung là hãy xem khi nào nó sẽ chạy.
+
+162
+00:08:28,000 --> 00:08:30,000
+Nó sẽ cho anh biết dấu vết.
+
+163
+00:08:30,000 --> 00:08:36,000
+Điều này được chấp nhận cũng như thông điệp tùy chỉnh này, mà bạn có thể tự chọn bất cứ điều gì bạn viết ở đây.
+
+164
+00:08:36,000 --> 00:08:38,000
+Cứ tiếp tục đi.
+
+165
+00:08:38,000 --> 00:08:41,000
+Và tôi sẽ gặp anh và dùng cái tên trước, cái tên đúng sau.
+
+166
+00:08:41,000 --> 00:08:42,000
+Nó nói chào mừng trở lại.
+
+167
+00:08:42,000 --> 00:08:44,000
+Ký vào đó lần thứ 11.
+
+168
+00:08:44,000 --> 00:08:47,000
+Tôi nhập một tên người dùng, mà không có ở đó.
+
+169
+00:08:47,000 --> 00:08:50,000
+Tôi sẽ xem xét, thời gian này.
+
+170
+00:08:50,000 --> 00:08:51,000
+Ừ.
+
+171
+00:08:51,000 --> 00:09:02,000
+Xem này, ngoại lệ chỉ, có nghĩa là tất cả các công việc hoặc người dùng không cho ngoại lệ, người dùng không tồn tại. Người dùng này không tồn tại. Anh biết nó đến từ đâu mà. Và đây là ngoại lệ riêng của anh.
+
+172
+00:09:02,000 --> 00:09:04,000
+Một lần nữa, sự truyền bá ngoại lệ.
+
+173
+00:09:04,000 --> 00:09:07,000
+Lần đầu tiên theo dấu ở số hàng.
+
+174
+00:09:07,000 --> 00:09:10,000
+Chúng tôi đã nhận được những gì trước đây, bởi vì chỉ có một phương pháp ở đây.
+
+175
+00:09:10,000 --> 00:09:11,000
+Phải.
+
+176
+00:09:11,000 --> 00:09:13,000
+Vậy đó là người dùng không tồn tại.
+
+177
+00:09:13,000 --> 00:09:15,000
+Và bây giờ bạn có thể tự hỏi.
+
+178
+00:09:15,000 --> 00:09:21,000
+Câu hỏi của anh, liệu chúng ta có thể bắt kịp ngoại lệ mà chính chúng ta đã trải qua?
+
+179
+00:09:21,000 --> 00:09:22,000
+Có, chúng ta có thể.
+
+180
+00:09:22,000 --> 00:09:24,000
+Nhưng sao anh không làm thế?
+
+181
+00:09:24,000 --> 00:09:25,000
+Thường thì không.
+
+182
+00:09:25,000 --> 00:09:26,000
+Phải.
+
+183
+00:09:26,000 --> 00:09:28,000
+Có nghĩa là, tôi có thể đặt dòng này vào một cố gắng bắt.
+
+184
+00:09:28,000 --> 00:09:30,000
+Nhưng nói chung thì không vì nó có ích cho việc thử nghiệm.
+
+185
+00:09:30,000 --> 00:09:32,000
+Chúng tôi sẽ không đưa nó cho người dùng cuối cùng.
+
+186
+00:09:32,000 --> 00:09:34,000
+Chúng tôi sẽ sử dụng nó để kiểm tra các ứng dụng của chúng tôi.
+
+187
+00:09:34,000 --> 00:09:37,000
+Và đó là nơi công cụ có ý nghĩa hoàn hảo.
+
+188
+00:09:37,000 --> 00:09:38,000
+Phải.
+
+189
+00:09:38,000 --> 00:09:42,000
+Vì vậy, một lần nữa, để kết thúc video này, chúng tôi đã nói về ngoại lệ.
+
+190
+00:09:42,000 --> 00:09:45,000
+Cách xử lý chúng sẽ cố bắt chúng.
+
+191
+00:09:45,000 --> 00:09:49,000
+Làm thế nào để tấn công tại công việc hoặc làm thế nào chỉ thử với cuối cùng hoạt động.
+
+192
+00:09:49,000 --> 00:09:53,000
+Tại sao? Bởi vì đôi khi những gì xảy ra trong việc truyền bá ngoại lệ.
+
+193
+00:09:53,000 --> 00:09:56,000
+Phương pháp anh gọi là đúng.
+
+194
+00:09:56,000 --> 00:10:00,000
+Giả sử sử sử sử dụng cố gắng và chỉ cuối cùng không cố gắng bắt cuối cùng.
+
+195
+00:10:00,000 --> 00:10:04,000
+Khi nào người ta sẽ sử dụng nó khi họ không muốn xử lý hoặc bắt ngoại lệ.
+
+196
+00:10:04,000 --> 00:10:11,000
+Nhưng có một số quy tắc mà họ muốn luôn luôn được thực hiện bất kể có phải là ngoại lệ hay không.
+
+197
+00:10:11,000 --> 00:10:15,000
+Trong trường hợp đó, tôi cố gắng với cuối cùng vẫn còn hiệu quả không bắt nó.
+
+198
+00:10:15,000 --> 00:10:18,000
+Họ để lại cho anh để bắt nó.
+
+199
+00:10:18,000 --> 00:10:19,000
+Họ không chịu nổi.
+
+200
+00:10:19,000 --> 00:10:20,000
+Phải.
+
+201
+00:10:20,000 --> 00:10:25,000
+Họ chỉ cố gắng tìm ra lý do vì sao họ ích kỷ theo cách mà họ vẫn muốn.
+
+202
+00:10:25,000 --> 00:10:30,000
+Có một trong những mật mã của họ sẽ được thi hành ngay cả khi ngoại lệ đã được tung ra.
+
+203
+00:10:30,000 --> 00:10:34,000
+Và sau đó chúng tôi tập trung vào bạn cho dù bạn có bắt được nó hay không.
+
+204
+00:10:34,000 --> 00:10:36,000
+Đó là nơi cuối cùng cố gắng làm việc.
+
+205
+00:10:36,000 --> 00:10:38,000
+Và chúng tôi có một cái nhìn về sự truyền bá ngoại lệ.
+
+206
+00:10:38,000 --> 00:10:42,000
+Nhưng sự thật là cô đã từng là một kịch bản giao tiếp tuyệt vời khi có một phương pháp.
+
+207
+00:10:42,000 --> 00:10:47,000
+Một khi phương pháp trước khi gọi, anh sẽ phải đối mặt với mật mã nguy hiểm.
+
+208
+00:10:47,000 --> 00:10:52,000
+Và quy tắc quản lý chỉ áp dụng cho ngoại lệ được kiểm tra không áp dụng cho ngoại lệ tiêm.
+
+209
+00:10:52,000 --> 00:10:55,000
+Chúng tôi đã xem qua những gì tôi đã kiểm tra và kiểm tra ngoại lệ ở Java.
+
+210
+00:10:55,000 --> 00:11:01,000
+Ngoại lệ lớp học của chúng tôi và tiểu tiết của nó trừ thời gian chạy và các tầng lớp phụ của nó.
+
+211
+00:11:01,000 --> 00:11:10,000
+Và ngoại lệ ngày tháng là lỗi giai cấp và tiểu tiết bao gồm ngoại lệ thời gian mà là hạng ngoại lệ thời gian và hạng phụ.
+
+212
+00:11:10,000 --> 00:11:12,000
+Đó là ngoại lệ của Megan Java.
+
+213
+00:11:12,000 --> 00:11:15,000
+Chúng tôi có một cuộc thảo luận chi tiết.
+
+214
+00:11:15,000 --> 00:11:24,000
+Một lần nữa, hãy làm bẩn tay mình trong mã lệnh của chính mình, lấy mã của tôi và thao túng biên tập viên xem chuyện gì sẽ xảy ra.
+
+215
+00:11:24,000 --> 00:11:26,000
+Và nếu anh có thắc mắc gì.
+
+216
+00:11:26,000 --> 00:11:32,000
+Tôi nghe đây nhưng tôi thấy trước khi tôi thấy bạn trong video tiếp theo với một khái niệm quan trọng hơn.
+
