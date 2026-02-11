@@ -1,0 +1,408 @@
+1
+00:00:00,000 --> 00:00:05,880
+ Hi, and that was on, I want to show you how to work with ride mode in Cascade.
+
+2
+00:00:05,880 --> 00:00:09,640
+ Cascade right mode works like auto GPT.
+
+3
+00:00:09,640 --> 00:00:15,560
+ It can create files, run scripts, tests, and debug for you.
+
+4
+00:00:15,560 --> 00:00:18,480
+ Just approach the checks and wait for it finished.
+
+5
+00:00:18,480 --> 00:00:23,400
+ It automate about 90% of coding and debugging for you.
+
+6
+00:00:23,400 --> 00:00:29,960
+ I did not let you make changes to multiple files at once in a one-shot prompt.
+
+7
+00:00:29,960 --> 00:00:37,080
+ I did appear right in your editor, so you can review it and accept the client changes.
+
+8
+00:00:37,080 --> 00:00:42,640
+ So you can also provide the relevant context and files for your prompt to be more accurate,
+
+9
+00:00:42,640 --> 00:00:46,040
+ but I will cover it in the next lesson.
+
+10
+00:00:46,040 --> 00:00:53,120
+ So now let's talk about some popular use cases for when you might need to use the ride mode.
+
+11
+00:00:53,120 --> 00:01:00,320
+ For example, the first use case when you refactor parts of code of your application.
+
+12
+00:01:00,320 --> 00:01:11,640
+ I know, imagine you have a big class and you want to split up all this functionality into separate methods,
+
+13
+00:01:11,640 --> 00:01:19,600
+ so you can ask right mode for this case, you can just, okay, refactor this class just to lit up this
+
+14
+00:01:19,600 --> 00:01:27,960
+ also logic inside of check method into separate methods or better maintenance, like you can ask, okay,
+
+15
+00:01:27,960 --> 00:01:34,600
+ convert this class component into functions, for example, it's more useful like when you use
+
+16
+00:01:34,600 --> 00:01:40,240
+ the when you have a React application, you can ask, okay, I want to migrate from class components to
+
+17
+00:01:40,240 --> 00:01:46,720
+ functional components, for instance, you can ask about adding a new features.
+
+18
+00:01:46,720 --> 00:01:51,160
+ If you have an application, you want to add a login form with validation.
+
+19
+00:01:51,160 --> 00:01:57,120
+ You can ask in edit mode, add a login form with validation using React hooks.
+
+20
+00:01:57,120 --> 00:02:01,920
+ You can ask, okay, implement dark mode toggle, for example, for your application,
+
+21
+00:02:01,920 --> 00:02:07,200
+ it will add crazy needed files and implement it.
+
+22
+00:02:07,200 --> 00:02:13,160
+ Now you can also fix the box, like if you're, I know, meta doesn't work or the logic
+
+23
+00:02:13,160 --> 00:02:19,480
+ will work incorrectly, you can ask it, so like at least fix this method, I get some virtual
+
+24
+00:02:19,480 --> 00:02:20,480
+ results.
+
+25
+00:02:20,480 --> 00:02:29,400
+ For example, I know if like your application crash, you can also ask it, you can ask to
+
+26
+00:02:29,400 --> 00:02:35,160
+ write unit tests, like I have this big class, so I want to ask, okay, this cover all this
+
+27
+00:02:35,160 --> 00:02:44,840
+ matters by unit tests, and it will create a separate test file, it will add all the cases, and so it will be done for you.
+
+28
+00:02:44,840 --> 00:02:51,240
+ For example, you can ask about improving the performance, like, I know, I use React application
+
+29
+00:02:51,240 --> 00:02:57,800
+ and the application really slow, you can ask, okay, do some optimizations to load page faster,
+
+30
+00:02:57,800 --> 00:03:03,240
+ so it might, you know, improve the performance and some of your hooks of functions, so
+
+31
+00:03:04,360 --> 00:03:12,440
+ you can ask to optimize the API calls, like to use the new syntax or some library, for example,
+
+32
+00:03:12,440 --> 00:03:20,600
+ or you can ask, ask to add some error handles in when you send, I know some requests to the backend.
+
+33
+00:03:20,600 --> 00:03:30,600
+ Okay, let's now go into write mode in details, I have this big class with a lot of logic,
+
+34
+00:03:30,600 --> 00:03:36,440
+ and I'm really lazy to create the unit test, so I want to ask also a wind source to do it for me,
+
+35
+00:03:36,440 --> 00:03:46,600
+ so what I will do, I will just move the file right here as a kind of context, yeah,
+
+36
+00:03:46,600 --> 00:03:59,400
+ and so write unit test, or this was over,
+
+37
+00:04:00,600 --> 00:04:04,920
+ all the cases. Let's see what you'll do it.
+
+38
+00:04:04,920 --> 00:04:11,960
+ Okay, it's generating something.
+
+39
+00:04:11,960 --> 00:04:20,120
+ Okay, here's analyzing the class file,
+
+40
+00:04:20,120 --> 00:04:29,400
+ here's analyzing all sorts of iterative files, so yeah, I guess not necessarily just to move
+
+41
+00:04:29,400 --> 00:04:36,920
+ the file as a context, yeah, here's analyzing, but it's because our application is just two files,
+
+42
+00:04:36,920 --> 00:04:42,920
+ so that's why he really easy understand, but if you have much more files, so you need to specify
+
+43
+00:04:42,920 --> 00:04:49,880
+ a whole class, you want to write some unit test, as you see, analyze it all the files,
+
+44
+00:04:49,880 --> 00:04:57,480
+ he's okay, he's gonna use just to write the test, we can also specify okay, what tools we want,
+
+45
+00:04:58,040 --> 00:05:06,200
+ he will use to write the test, okay, and now it's providing some summary, what test he's creating,
+
+46
+00:05:06,200 --> 00:05:11,160
+ so basic initialization with the password, okay, let's check method,
+
+47
+00:05:11,160 --> 00:05:16,840
+ it checks, yeah, all the cases that our password has strong verification, common
+
+48
+00:05:16,840 --> 00:05:23,000
+ password detection, some missing character types, etc, I check all the methods,
+
+49
+00:05:23,000 --> 00:05:30,120
+ I check the very long password or an empty passwords, okay, he's also providing a common
+
+50
+00:05:30,120 --> 00:05:40,840
+ for us, which we need to run, but it really, I don't know why it's not, but executable,
+
+51
+00:05:40,840 --> 00:05:49,960
+ so let's check the settings, just get at the fixed links after execution, yeah, we can,
+
+52
+00:05:49,960 --> 00:05:57,240
+ after execution, change the auto, I think, so let's see, so the auto mode model that
+
+53
+00:05:57,240 --> 00:06:02,440
+ decides whenever to terminal, auto execute, premium models only,
+
+54
+00:06:02,440 --> 00:06:08,600
+ and oh, turbo mode is always auto execute, terminal commands and browser controls,
+
+55
+00:06:08,600 --> 00:06:12,920
+ except those things in the denial list, so we can set it to turbo,
+
+56
+00:06:15,960 --> 00:06:23,560
+ okay, and let's see the difference, so we see right here, we created the test folder and a test file,
+
+57
+00:06:23,560 --> 00:06:31,560
+ so we can click an open div, and we will see as a new file with all the test cases, we have
+
+58
+00:06:31,560 --> 00:06:38,920
+ right here, it's not too many to be honest, okay, it's checked like one test, a lot of scenarios,
+
+59
+00:06:39,880 --> 00:06:49,160
+ so we can click accept changes, right here, or reject, for example, we can click accept all,
+
+60
+00:06:49,160 --> 00:06:55,000
+ right here, or reject all, what's the difference, if we, if you edited a multiple files,
+
+61
+00:06:55,000 --> 00:07:01,800
+ and we click accept all or reject all in a cascade, so it will be applied for all the files,
+
+62
+00:07:02,520 --> 00:07:10,440
+ you will see the context, but if we open a specific file, we can like accept changes or reject
+
+63
+00:07:10,440 --> 00:07:19,640
+ for all the files, for example, if you have a few places, like in a file, you can just click accept,
+
+64
+00:07:19,640 --> 00:07:25,560
+ or reject it just for the one block of the change, and for example, if there is a part of
+
+65
+00:07:25,560 --> 00:07:31,640
+ what wasn't changed and below you have a new code, you will have also this section, okay,
+
+66
+00:07:31,640 --> 00:07:46,520
+ let's click accept all, and so I'm lazy to copy this command, so, okay, I will ask, just run
+
+67
+00:07:46,520 --> 00:07:55,960
+ those commands for me, and you will check how the auto running commands work, yeah, we see the
+
+68
+00:07:55,960 --> 00:08:04,520
+ command was run, okay, he's created the package, the JSON file for our project, because we need to
+
+69
+00:08:04,520 --> 00:08:14,280
+ store dependencies and the command somewhere, you see he created not modules folder with some libraries,
+
+70
+00:08:14,280 --> 00:08:25,480
+ okay, I will open it one more time, yeah, okay, and we see he's running tests, yeah,
+
+71
+00:08:26,040 --> 00:08:35,720
+ okay, yeah, he's finishing the installing dependencies, we see the package, load the JSON files with
+
+72
+00:08:35,720 --> 00:08:41,080
+ all the dependencies of the libraries folder project, yeah, and now we see the package JSON file is
+
+73
+00:08:41,080 --> 00:08:48,840
+ updated, install it, all the dependencies we need to run the project, so, and we have a lot of
+
+74
+00:08:48,840 --> 00:08:55,880
+ multiple files right here, so we can see what was created and what was edited, and we can click
+
+75
+00:08:55,880 --> 00:09:07,960
+ open deep right here for any of the file, like we said told you we can, yeah, can change this
+
+76
+00:09:07,960 --> 00:09:13,240
+ over you, yeah, we can click and change this over you, we will see all the files were changed and how
+
+77
+00:09:13,240 --> 00:09:23,160
+ my alliance was changed, we can click some additional options, it's not fast for now, okay, we see one
+
+78
+00:09:23,160 --> 00:09:33,400
+ fillet thing, so he's trying to fix, yes, this is what my thing about the right mode,
+
+79
+00:09:33,400 --> 00:09:41,400
+ if he had to defy an error, he's like a real developer trying to fix it, and let's see the result,
+
+80
+00:09:41,400 --> 00:09:51,720
+ how it will be it, okay, he's adding some of the files, so let's wait a bit, so we can click on any file,
+
+81
+00:09:52,280 --> 00:10:01,080
+ click open deep and you will see what was updated, okay, so we can click on the common
+
+82
+00:10:01,080 --> 00:10:13,960
+ pattern on possible strands, you see the import was updated, and beat on the rest is same, okay,
+
+83
+00:10:13,960 --> 00:10:26,120
+ of the tastes, file it, yep, as you see he did iterations, he faced with the files at all,
+
+84
+00:10:26,120 --> 00:10:33,240
+ he'd been trying to fix it, then he ran test again, this is why I recommend you to enable
+
+85
+00:10:33,240 --> 00:10:42,040
+ outrun to not always manually run it or copy paste the commands, oh, and then he'll see the
+
+86
+00:10:42,040 --> 00:10:50,280
+ result and fail it, this he's trying to fix it, he's to face the test need to be adjusted to
+
+87
+00:10:50,280 --> 00:10:59,880
+ refine the current behavior of the class, so let's wait a bit, let's see, he also created some
+
+88
+00:10:59,880 --> 00:11:07,800
+ Babel config, just file it, okay, that's the file with mode version to use and what resets for
+
+89
+00:11:07,800 --> 00:11:18,520
+ transparency of code to use, okay, now he's you see all the tests is pass it, so he did a fix, so we
+
+90
+00:11:18,520 --> 00:11:25,080
+ took three iterations, as I see, and now he's providing a summary, okay, create all the tests on our
+
+91
+00:11:25,080 --> 00:11:32,360
+ passing, there is a summary, and he's explaining what he did, he set up just testing environment,
+
+92
+00:11:33,560 --> 00:11:46,200
+ he created this test cases, he also, what he did, fix the test case to match the actual implementation,
+
+93
+00:11:46,200 --> 00:11:53,720
+ sometimes he can do it wrong for the first attempt, he verifies all the tests of passing, and now
+
+94
+00:11:53,720 --> 00:12:02,360
+ he provides a test use, oh, we can click accept all, or of course, yeah, we can click accept one by one,
+
+95
+00:12:02,360 --> 00:12:09,800
+ like you see there are one change we click accept, and accept another change, so but it's,
+
+96
+00:12:09,800 --> 00:12:17,000
+ if you want to do it manually, or for some special, you see when it hover on another block,
+
+97
+00:12:17,000 --> 00:12:24,120
+ I see also accept, so I would recommend you to accept all the changes right now, and now we can run
+
+98
+00:12:24,120 --> 00:12:33,800
+ tests with NPM test command, let's check it by our cell, yeah, everything works, okay, this is great,
+
+99
+00:12:33,800 --> 00:12:44,760
+ yeah, so, and now we spent about five minutes to write all the tests with AI, he did iterations
+
+100
+00:12:44,760 --> 00:12:51,320
+ to fix it, so now you know how to use write mode, and for what use cases, you can use it,
+
+101
+00:12:52,040 --> 00:12:58,120
+ and see you in the next lesson, where I will tell you how to use the plan mode, also nice features
+
+102
+00:12:58,120 --> 00:13:01,160
+ from them in surfing.
+
