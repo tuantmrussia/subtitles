@@ -1,0 +1,223 @@
+1
+00:00:01,590 --> 00:00:05,150
+Let's understand how to manage the Google Cloud infrastructure
+
+2
+00:00:05,150 --> 00:00:08,329
+without ever clicking a button in the console,
+
+3
+00:00:08,439 --> 00:00:10,600
+we call this the GitOps,
+
+4
+00:00:10,720 --> 00:00:13,489
+and we're going to use the Google Cloud config controller.
+
+5
+00:00:13,560 --> 00:00:17,149
+Let's first understand how this entire flow looks like.
+
+6
+00:00:17,319 --> 00:00:20,879
+So user will going to push a YAML file into the GitHub.
+
+7
+00:00:21,000 --> 00:00:25,950
+We have the config sync that detects the changes. And it will pull the
+
+8
+00:00:25,950 --> 00:00:28,899
+YAML file from the Git, we have the config connector.
+
+9
+00:00:29,000 --> 00:00:32,549
+The config connector converts this YAML file into the
+
+10
+00:00:32,549 --> 00:00:37,216
+corresponding Google Cloud API calls, and then the Google Cloud
+
+11
+00:00:37,216 --> 00:00:41,450
+received the request. And according to the request, it is going
+
+12
+00:00:41,450 --> 00:00:44,306
+to make the update into the resources.
+
+13
+00:00:44,536 --> 00:00:46,497
+Now let's just see how we can do that.
+
+14
+00:00:46,817 --> 00:00:47,676
+Behind the scenes,
+
+15
+00:00:47,696 --> 00:00:51,236
+I've already provisioned our management hub by running
+
+16
+00:00:51,777 --> 00:00:54,256
+gcloud and the config controller.
+
+17
+00:00:54,376 --> 00:00:57,646
+You can see that our config controller is already running.
+
+18
+00:00:57,817 --> 00:01:00,247
+That is a dedicated hidden GKE cluster.
+
+19
+00:01:01,304 --> 00:01:04,352
+The command to create this controller is like this.
+
+20
+00:01:04,513 --> 00:01:07,893
+Now I have already assigned this controller the owner
+
+21
+00:01:07,893 --> 00:01:09,744
+permission at the project level.
+
+22
+00:01:10,064 --> 00:01:14,314
+This allows our hub to talk to the Google APIs and
+
+23
+00:01:14,314 --> 00:01:16,353
+create the resource on our behalf.
+
+24
+00:01:16,473 --> 00:01:20,603
+You can see that we have here root‑sync.yaml.
+
+25
+00:01:20,753 --> 00:01:25,814
+Now in this root‑sync.yaml, we are providing our GitHub repository,
+
+26
+00:01:25,823 --> 00:01:29,850
+and I have already generated the token from my GitHub. You can also
+
+27
+00:01:29,850 --> 00:01:33,291
+generate the token from a GitHub by just coming down here,
+
+28
+00:01:33,411 --> 00:01:35,481
+going to the Settings tab, and in the bottom,
+
+29
+00:01:35,570 --> 00:01:36,801
+go to the Developer settings,
+
+30
+00:01:36,850 --> 00:01:40,331
+and you can generate a new personal access token from here.
+
+31
+00:01:40,450 --> 00:01:42,611
+Now you provide that Git credential,
+
+32
+00:01:42,621 --> 00:01:47,041
+so you can run this kubectl create secret generic git‑creds
+
+33
+00:01:47,041 --> 00:01:50,371
+command by providing your username and the token.
+
+34
+00:01:50,691 --> 00:01:56,790
+Now once you make those changes and apply it using kubectl apply ‑f
+
+35
+00:01:56,790 --> 00:02:03,699
+root‑sync.yaml, this is going to apply all those changes. And now your
+
+36
+00:02:03,699 --> 00:02:08,029
+config controller is in sync with your GitHub repository.
+
+37
+00:02:08,270 --> 00:02:11,449
+Now, once you have done that, let's go down to your GitHub.
+
+38
+00:02:11,899 --> 00:02:15,789
+Now into my GitHub repository, I have created a folder config,
+
+39
+00:02:15,940 --> 00:02:19,949
+and under that I have a YAML, bucket YAML that looks
+
+40
+00:02:19,949 --> 00:02:24,369
+like a standard Kubernetes manifest, but the kind is a storage bucket.
+
+41
+00:02:24,860 --> 00:02:28,820
+Now here you can see that I'm making one change, and I'm saying
+
+42
+00:02:28,820 --> 00:02:35,570
+that the bucket name which I'm now looking for is ‑2. And the
+
+43
+00:02:35,570 --> 00:02:38,449
+moment I'm going to commit these changes,
+
+44
+00:02:38,490 --> 00:02:42,050
+automatically it will start deploying this specific
+
+45
+00:02:42,050 --> 00:02:44,470
+bucket into our Google Cloud.
+
+46
+00:02:45,220 --> 00:02:46,589
+I say Commit changes.
+
+47
+00:02:47,259 --> 00:02:52,619
+And if I go down to here in our Google Cloud,
+
+48
+00:02:53,210 --> 00:03:01,740
+search for Buckets, right now you can see that earlier the bucket was 2025‑1.
+
+49
+00:03:02,070 --> 00:03:02,919
+Let's refresh,
+
+50
+00:03:03,110 --> 00:03:06,550
+and in the next few minutes, you will see that it has
+
+51
+00:03:06,550 --> 00:03:09,949
+deleted this specific bucket and created a new one
+
+52
+00:03:09,949 --> 00:03:12,410
+because it wants this to be in sync.
+
+53
+00:03:14,990 --> 00:03:18,990
+Now here you can see that it has created another bucket and deleted the
+
+54
+00:03:18,990 --> 00:03:24,229
+older one because I have changed that specific YAML file.
+
+55
+00:03:24,559 --> 00:03:28,029
+So that's how the config controller can help you to do the
+
+56
+00:03:28,029 --> 00:03:31,350
+GitOps without touching your Google console.
