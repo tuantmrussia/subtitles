@@ -1,0 +1,468 @@
+1
+00:00:00,000 --> 00:00:05,840
+ All right, there friends, after loops we come across arrays and have a good little
+
+2
+00:00:05,840 --> 00:00:10,880
+ discussion about them. Why do we use them? How do we use them in Java? And just to start
+
+3
+00:00:10,880 --> 00:00:16,960
+ quickly, why would you use arrays is because let's say now your requirement is to save multiple
+
+4
+00:00:16,960 --> 00:00:23,120
+ values at the same time. With a variable, a bit of any data type, you can just store one value
+
+5
+00:00:23,120 --> 00:00:28,480
+ at a time. And then you can change the value, but it has to be of the same data type of which
+
+6
+00:00:28,480 --> 00:00:34,560
+ you have declared that variable of. But with arrays that give you the flexibility of storing
+
+7
+00:00:34,560 --> 00:00:41,840
+ multiple values at the same time of that same data type, right? And in Java, how can we
+
+8
+00:00:41,840 --> 00:00:47,280
+ declare an initialize an array? So there are actually a few ways to do that. Let's go on and
+
+9
+00:00:47,280 --> 00:00:53,840
+ quickly create a new class. Again, I'll just say control n Java class and let's just call it
+
+10
+00:00:53,840 --> 00:01:08,240
+ arrays fun. So we go on with the customary, the traditional main method. And now how can you declare
+
+11
+00:01:08,240 --> 00:01:14,960
+ an array in Java? As I said, few ways to do that, the first one is you just say the data type
+
+12
+00:01:14,960 --> 00:01:20,880
+ or let's just stick to type because as you will find shortly later in the codes that there are
+
+13
+00:01:21,680 --> 00:01:29,120
+ more types in Java. So we not just specify this as a data type, but more generically as a type.
+
+14
+00:01:29,120 --> 00:01:40,240
+ So I'll just say type identifier. And then you would say that identifier to new the keyword
+
+15
+00:01:40,240 --> 00:01:44,960
+ new and we'll have a detailed discussion about the keyword new in some time. But for now,
+
+16
+00:01:44,960 --> 00:01:53,680
+ this is the syntax and you'll say type and then the dimension or the size. That is how many values
+
+17
+00:01:53,680 --> 00:02:00,240
+ you want to be this variable of array to be holding at a particular time. That is what you define
+
+18
+00:02:00,240 --> 00:02:06,720
+ here. And then you put in the square representation brackets of the array right here so that it doesn't
+
+19
+00:02:06,720 --> 00:02:12,160
+ look like a normal variable, but an array variable. Remember, the representation is these
+
+20
+00:02:12,160 --> 00:02:18,320
+ scale brackets, but never ever define the size here, the dimension here that doesn't have to be
+
+21
+00:02:18,320 --> 00:02:25,040
+ done at the declaration time, but always on the right side at the initialization time, right?
+
+22
+00:02:25,040 --> 00:02:29,680
+ And following this syntax, whatever your type is currently, we'll just stick to data types,
+
+23
+00:02:29,680 --> 00:02:35,040
+ but when I tell you about more types that you can use to declare a variable, then you would know
+
+24
+00:02:35,040 --> 00:02:40,000
+ you can have that kind of an array as well. And that's perfectly possible. And just to pause here,
+
+25
+00:02:40,880 --> 00:02:47,520
+ I just hope that you're having a good time understanding these Java concepts from absolute scratch,
+
+26
+00:02:47,520 --> 00:02:53,680
+ right? That's what I promised at the start of this course. And we will slowly go on into details,
+
+27
+00:02:53,680 --> 00:03:02,000
+ dive deep into these concepts, take the discussion forward, but just do your hands on properly,
+
+28
+00:03:02,000 --> 00:03:08,720
+ go through the exercises. And if you have any questions, make sure you reach out. All right, so coming
+
+29
+00:03:08,720 --> 00:03:15,200
+ back to the discussion following this, following this syntax. So let's say we have to declare a
+
+30
+00:03:15,200 --> 00:03:24,560
+ data type or an array of type, let's say long. So how would you do that? You'll say long, and then
+
+31
+00:03:24,560 --> 00:03:30,000
+ you can say for example, let's call it values, that's appropriate, and that's declaration,
+
+32
+00:03:30,000 --> 00:03:34,560
+ and then we have to initialize it. At the time of initialization, we don't put the square brackets here,
+
+33
+00:03:34,560 --> 00:03:40,160
+ because it's already done, that would be redundant. So we'll say values equal to the keyword new,
+
+34
+00:03:40,160 --> 00:03:46,880
+ and then again, long, and you say five for a start. Now you've got to get an array variable,
+
+35
+00:03:46,880 --> 00:03:54,160
+ which can hold five values of type long at one time, right? And then you can go on and
+
+36
+00:03:54,160 --> 00:04:00,320
+ initialize it. How do you initialize it? You say with the index, right? And this is where you put
+
+37
+00:04:00,320 --> 00:04:05,760
+ in the index, and arrays in Java like other languages, the index is start with zero, and the last
+
+38
+00:04:05,760 --> 00:04:12,560
+ index is dimension minus one. In this case, that would be four. So we'll start with zero, and I'll say
+
+39
+00:04:12,560 --> 00:04:19,040
+ for example, five, 67. Similarly, we'll just paste it a few times, I'll say values of one, two,
+
+40
+00:04:19,040 --> 00:04:29,360
+ some other value. And then we'll say values of two, two, three, four, for example. Now values of
+
+41
+00:04:29,360 --> 00:04:37,120
+ three and values of four, they would not have any values, that is, I'm coming to, what do variables
+
+42
+00:04:37,120 --> 00:04:42,640
+ have in Java as the default value? But for a start, there is no such concept as a garbage value
+
+43
+00:04:42,640 --> 00:04:48,560
+ in Java, right? There is a value or there is not. And with array variables, they have default values
+
+44
+00:04:48,560 --> 00:04:54,080
+ depending on the type of the array variable, right? And in this case, it's long, that means they
+
+45
+00:04:54,080 --> 00:05:00,320
+ would have zero and zero. If you don't initialize them, but for now, let's go on and initialize them.
+
+46
+00:05:00,320 --> 00:05:09,440
+ So I'll say three, two, let's say some other value, four, two, some other value. And then let's
+
+47
+00:05:09,440 --> 00:05:16,560
+ say mistakenly, if you say five, and the thing to observe it is, it would not be a error, it would
+
+48
+00:05:16,560 --> 00:05:22,640
+ not be a compile time error, but it would be an exception at runtime. Why does this compile is because
+
+49
+00:05:22,640 --> 00:05:27,280
+ for the syntax, it just checks that the array name is values, you have declared that,
+
+50
+00:05:27,280 --> 00:05:32,000
+ and then five, that means it just expects you to put in a number. And that's what you're doing.
+
+51
+00:05:32,000 --> 00:05:38,880
+ At runtime, it sees that this is out of bounds. This index doesn't exist because guess what?
+
+52
+00:05:38,880 --> 00:05:43,600
+ The last index of this array was four, because it started with zero, but IntelliJ,
+
+53
+00:05:43,600 --> 00:05:52,160
+ the name is IntelliJ, that is, IntelliJ is built in, it gives you that that that warning in yellow,
+
+54
+00:05:52,160 --> 00:05:57,440
+ if you hold on this, it says array index out of bounds, but it's just a warning, right? If you
+
+55
+00:05:57,440 --> 00:06:01,680
+ run this, you'll get an array index out of bounds, exception at runtime. I'll just say for now,
+
+56
+00:06:01,680 --> 00:06:11,040
+ exception at runtime. But it just compiles perfectly fine, right? So now you have
+
+57
+00:06:11,040 --> 00:06:17,520
+ initialized it, let's go on and run this, and off you go exception in thread means Java or
+
+58
+00:06:17,520 --> 00:06:22,880
+ land dot array index out of bounds exception index five out of bounds for length five. That means the
+
+59
+00:06:22,880 --> 00:06:27,520
+ last one is four, you click on this blue, it takes you exactly to that point. And for now,
+
+60
+00:06:27,520 --> 00:06:33,920
+ what I'll do is I'll just comment this out, right? So once you have initialized it, now we need to
+
+61
+00:06:33,920 --> 00:06:39,200
+ get the values out of the array and then print them out. And I'll just say a south, for example,
+
+62
+00:06:39,200 --> 00:06:46,960
+ our values of, let's say three. So we'll get the value at location full, remember, because it starts
+
+63
+00:06:46,960 --> 00:06:52,560
+ with zero index. So I'll just say run and gives us two, two, three, three, four, because we had put
+
+64
+00:06:52,560 --> 00:06:59,520
+ that at the third index in that area. But we will need to display it or to work with an array
+
+65
+00:06:59,520 --> 00:07:04,320
+ individually with all indexes. We can just use our good friend's the loops, whether or for,
+
+66
+00:07:04,320 --> 00:07:10,000
+ or a buy or a do while or this time will have one more loop, which was specifically introduced for
+
+67
+00:07:10,000 --> 00:07:14,480
+ arrays. And that is coming for you in the next video. But for now, I'll just get rid of this and use
+
+68
+00:07:14,480 --> 00:07:18,800
+ the traditional for loop. But in your case, you can just go on and use the value as well. And I'll
+
+69
+00:07:18,800 --> 00:07:24,960
+ say int index appropriately named, I'll just start with zero. This is the starting point, I'll say
+
+70
+00:07:24,960 --> 00:07:34,640
+ index is less than, I can say five, right? But guess what? Sometimes you would get these
+
+71
+00:07:34,640 --> 00:07:40,400
+ arrays as values from a different method and you won't know the length. That's why it's always
+
+72
+00:07:40,400 --> 00:07:49,280
+ handy. You use the inbuilt dot length, the inbuilt variable, which just gets you the dynamically
+
+73
+00:07:49,280 --> 00:07:58,160
+ the length of that in, right? And I'll say index plus plus. And then we'll have it for loop body,
+
+74
+00:07:58,160 --> 00:08:05,040
+ the warnings are gone. And I'll just say a sound, I'll say get me values of index.
+
+75
+00:08:06,240 --> 00:08:12,320
+ And that's it. Right. So we started with the follow up for, let's see what the warnings it says
+
+76
+00:08:12,320 --> 00:08:18,640
+ for loop can be replaced with the enhanced for loop, your right, Mr and Mrs, our miss,
+
+77
+00:08:18,640 --> 00:08:23,920
+ IntelliJ, right? When I told you that is coming for you in the next video. But for now, we'll just
+
+78
+00:08:23,920 --> 00:08:28,720
+ use a traditional for loop, right? And we start with zero. We say index is less than values or
+
+79
+00:08:28,720 --> 00:08:35,200
+ length until then keep running the loop in iteration and then print me every value at that index
+
+80
+00:08:35,200 --> 00:08:40,320
+ inside the area. Let's see if that gets me the job, then I'll just, and I'll also say a sound,
+
+81
+00:08:40,320 --> 00:08:50,160
+ and I'll say values in area are. Let's run this and gets me all the values in the order in which
+
+82
+00:08:50,160 --> 00:08:57,600
+ you had inserted them. 567, 1 3 6 7 2 3 3 4 2 2 3 4 and 3 6 5 7 for you. But again, you can just do
+
+83
+00:08:57,600 --> 00:09:04,080
+ it with a while loop. And then line number 10 to 14. Again, I'm not doing the recommended things here.
+
+84
+00:09:04,080 --> 00:09:09,360
+ I'm putting the hard coded values. You tell me what needs to be done here. Just recollect it
+
+85
+00:09:09,360 --> 00:09:15,280
+ from your memory, what I have been telling you. That is, we need to always take, we should always
+
+86
+00:09:15,280 --> 00:09:19,840
+ rather take values from user at runtime. And I've told you the best and the quickest way to do
+
+87
+00:09:19,840 --> 00:09:24,960
+ that. And that's using the scanner class, right? And just go on, think over this program,
+
+88
+00:09:24,960 --> 00:09:30,240
+ get the values from runtime, right? Just do it on your own. So for now, we have got this from the
+
+89
+00:09:30,240 --> 00:09:35,600
+ indexes. That's perfectly fine. This is one of the basic ways to declare an array. What we did
+
+90
+00:09:35,600 --> 00:09:41,360
+ is we declared an initialize on two different lines, but we can just go ahead and put this all
+
+91
+00:09:41,360 --> 00:09:47,680
+ at on just one line. That is declaration and initialization on the same line. That's another way,
+
+92
+00:09:47,680 --> 00:09:53,360
+ right? The third way would have been that is if, let's say I have to declare a variable or an
+
+93
+00:09:53,360 --> 00:10:04,880
+ array of type care. And I see, let's just call it vowels, right? And now, let's say you know what
+
+94
+00:10:04,880 --> 00:10:11,760
+ is going to be in this array before combined at the time you're writing the school. So that is where
+
+95
+00:10:11,760 --> 00:10:16,320
+ Java comes up with the syntax, which is like other C style languages. And you put in like this.
+
+96
+00:10:16,320 --> 00:10:23,200
+ That is the curly braces. And this is helpful. When you know it, what is going to be in the array,
+
+97
+00:10:23,200 --> 00:10:28,080
+ before combined users go in and put in the individual values. And for characters, we put
+
+98
+00:10:28,080 --> 00:10:33,600
+ the values in single quotes for numbers. No such thing, maybe, right? I'll just say, for example,
+
+99
+00:10:33,600 --> 00:10:45,600
+ R or T, I'll say E, I'll say Y. So for now, you know what is in going to be in the array before
+
+100
+00:10:45,600 --> 00:10:50,800
+ compiling this program. So this is another way to do this, right? And the length of this array
+
+101
+00:10:50,800 --> 00:10:58,400
+ will now be three, it's dynamic. And then, yet, another way to declare an array in Java is quite a
+
+102
+00:10:58,400 --> 00:11:04,240
+ handful in reality. And you just do directly like something like this. Let's say I need a integer array,
+
+103
+00:11:04,240 --> 00:11:14,240
+ I'll say int like this and like this. And then I put in the values, I say 45, 967, 889 and 4.
+
+104
+00:11:14,240 --> 00:11:18,800
+ And that just works. And for now, it doesn't work. It gives an error. I'll tell you why in something,
+
+105
+00:11:18,800 --> 00:11:25,200
+ but this is one more way to declare an array in Java perfectly valid way. It's called array
+
+106
+00:11:25,200 --> 00:11:38,160
+ inline creation rather to be appropriate. An anonymous array in line creation, right?
+
+107
+00:11:38,160 --> 00:11:45,200
+ Hopefully valid, but it just works at one place in Java that is within parameters or within
+
+108
+00:11:45,200 --> 00:11:49,520
+ arguments to a method. That's why it's not working here. Say it's not a statement. I've not put
+
+109
+00:11:49,520 --> 00:11:55,120
+ in a semi colon, not needed. I'm not even naming this array, not needed, but it doesn't work here,
+
+110
+00:11:55,120 --> 00:12:00,400
+ right? And that's why I'll just for now come in this out. I'll walk you through this example when
+
+111
+00:12:00,400 --> 00:12:06,720
+ we are discussing methods or functions, right? But for now, just telling you, this is one another way
+
+112
+00:12:06,720 --> 00:12:13,280
+ to declare an array in Java is called an anonymous array inline creation. Why are we going through
+
+113
+00:12:13,280 --> 00:12:20,000
+ these concepts? The fundamentals, because in the age of AI in 2026, getting a good hold,
+
+114
+00:12:20,000 --> 00:12:27,280
+ understanding fundamentals is more important than ever, right? So that is how we clear arrays,
+
+115
+00:12:27,280 --> 00:12:33,440
+ multiple ways, how we initialize them, how we get values out of them, right? Display them or do
+
+116
+00:12:33,440 --> 00:12:38,560
+ whatever you want to do with them. But in the next video, I'm going to tell you about a more
+
+117
+00:12:38,560 --> 00:12:41,560
+ a modern way to traverse through any.
+
