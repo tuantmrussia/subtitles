@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:07,920
+ There is a let's jump on to another one of a powerful tool but I will not suggest you
+
+2
+00:00:07,920 --> 00:00:15,320
+ to use it against an environment so until and unless you turn off the different mechanism
+
+3
+00:00:15,320 --> 00:00:20,480
+ completely because it will be easily creating a detection and it will be blocking the tool
+
+4
+00:00:20,480 --> 00:00:26,240
+ okay this sharpened and the blood from both tools are really really powerful to enumerate
+
+5
+00:00:26,240 --> 00:00:31,200
+ all the domain-based information so which I have seen plenty of tools that can angry
+
+6
+00:00:31,200 --> 00:00:37,120
+ it can advance if it cannot scan the network infrastructure in the environment but if you see
+
+7
+00:00:37,120 --> 00:00:43,120
+ this tool it will be mainly focusing on the domain and user-based information let's take an
+
+8
+00:00:43,120 --> 00:00:51,680
+ example who is an RDP users and how to like how to move to that user host so which user has
+
+9
+00:00:51,680 --> 00:01:00,560
+ the which privileges and so it will it will be basically it will be showing the information which
+
+10
+00:01:00,560 --> 00:01:07,280
+ will be easy to get a privileged escalation and which will be easy to get information about the
+
+11
+00:01:07,280 --> 00:01:15,040
+ users to move to a lateral moment and to understand which users have the administrator and which
+
+12
+00:01:15,040 --> 00:01:24,000
+ user has how much privileges he has okay so in overall understanding the tool will be collecting
+
+13
+00:01:24,000 --> 00:01:33,040
+ the users and domain-based information and helping us to find out a best and best path to move
+
+14
+00:01:33,040 --> 00:01:41,040
+ forward to choose which account we can use to move laterally and which account we can use for
+
+15
+00:01:41,040 --> 00:01:46,720
+ a privilege escalation okay so this tool is also used for a privilege escalation to find out which
+
+16
+00:01:46,720 --> 00:01:56,560
+ which account we can use for further for ex-escalating privileges okay so let's go to the
+
+17
+00:01:56,560 --> 00:02:03,840
+ sharpen community edition you can find the sharpen community edition here and you can see few
+
+18
+00:02:03,840 --> 00:02:11,840
+ of the commands that needs to get in but if you are a Kali Linux user so no don't worry about that
+
+19
+00:02:11,840 --> 00:02:21,520
+ you will be you can easily get the sharpen done but can't okay you can sharpen it so here you can
+
+20
+00:02:21,520 --> 00:02:29,840
+ find in the user shared sharpen folder there is few executable was hiding inside the folder
+
+21
+00:02:30,720 --> 00:02:44,720
+ so let's sum again it's to the c user
+
+22
+00:02:44,720 --> 00:02:59,680
+ sharpen to sharpen and here you can find the sharpen.exe executable
+
+23
+00:02:59,680 --> 00:03:07,600
+ so I just move I just download this executable in my Windows
+
+24
+00:03:07,600 --> 00:03:11,520
+ destination okay so I never did anything I didn't download it from anywhere I just used a
+
+25
+00:03:11,520 --> 00:03:19,040
+ Kali machine and downloaded the sharpen here okay so I think my machine has stuck let me I need
+
+26
+00:03:19,040 --> 00:03:30,400
+ to restart this let's restart and we'll discuss
+
+27
+00:03:30,400 --> 00:03:37,600
+ so maybe you have here about a few questions in the interview what's about the sharpen done
+
+28
+00:03:37,600 --> 00:03:45,440
+ that one so sharpen is basically a data collector it will collect the information from the device
+
+29
+00:03:46,400 --> 00:03:52,400
+ even in the in the Windows device or if you run the sharpen against the server or active directory
+
+30
+00:03:52,400 --> 00:03:59,680
+ it will collect as much information and it will just collect the information okay it will not
+
+31
+00:03:59,680 --> 00:04:05,280
+ show you anything just collect information it's a collector tool okay so data collector for
+
+32
+00:04:05,280 --> 00:04:12,080
+ a blood hunt it collect the information to be to showcase to be the information you need a you
+
+33
+00:04:12,080 --> 00:04:19,040
+ need a blood hunt okay the similar tool blood hunt okay the executing blood hunt is also
+
+34
+00:04:19,040 --> 00:04:27,680
+ is available in the Kali Linux so not a problem we can you can easily get a blood hunt tool
+
+35
+00:04:27,680 --> 00:04:33,840
+ in Kali Linux 2 so just execute a blood hunt it will be running in the server one two seven
+
+36
+00:04:33,840 --> 00:04:40,160
+ dot zero dot zero dot one and 80 it will automatically open and it will it will you can you can login
+
+37
+00:04:40,160 --> 00:04:48,080
+ again and so let's uh let's see our Windows machine get turned on
+
+38
+00:04:48,080 --> 00:04:59,280
+ let's wait for a sec and uh and we'll get our Windows machine up and I'll show you something
+
+39
+00:05:01,040 --> 00:05:04,160
+ yeah our Windows machine get uh powered up let's open
+
+40
+00:05:04,160 --> 00:05:14,480
+ let me check if I have a sharp hunt yeah here here here we have a short context executable
+
+41
+00:05:14,480 --> 00:05:33,840
+ here let me go for uh pmd and send us an administrator
+
+42
+00:05:44,960 --> 00:06:00,000
+ okay so here we have a sharpened and uh this is the command you can uh you can execute
+
+43
+00:06:00,000 --> 00:06:04,240
+ to get an information so basically the sharpened will be collecting the information in uh
+
+44
+00:06:04,240 --> 00:06:11,440
+ see as you file so you can execute this command uh uh in a you can execute this command and
+
+45
+00:06:11,440 --> 00:06:15,120
+ like to collect the information okay it's a collection method so it will collect basically all
+
+46
+00:06:15,120 --> 00:06:21,360
+ the information like session so who is an RDB users and what privileges he have and uh everything
+
+47
+00:06:21,360 --> 00:06:28,720
+ everything from the domain okay uh so currently our uh test syndrome and do not have a uh sorry
+
+48
+00:06:28,720 --> 00:06:35,760
+ our test syndrome and do not have a uh active directory and domain domain uh the
+
+49
+00:06:36,960 --> 00:06:41,520
+ active directory does not configure so we will not get any kind of information so let me execute
+
+50
+00:06:41,520 --> 00:06:50,640
+ the command anyway okay uh and it was showing some kind of selection method is unknown
+
+51
+00:06:50,640 --> 00:07:02,880
+ so we have an all to collect uh these information like collection with a group local group
+
+52
+00:07:02,880 --> 00:07:07,760
+ advanced RDB ED comments etc uh but let's let's see this
+
+53
+00:07:07,760 --> 00:07:16,720
+ execute mostly this
+
+54
+00:07:16,720 --> 00:07:29,440
+ so uh I just executed this command and uh sorry my videos get uh uh passed I don't know why
+
+55
+00:07:29,440 --> 00:07:36,160
+ uh maybe uh it was considered a lot of memory uh the video get break up uh so it showed an error
+
+56
+00:07:36,160 --> 00:07:43,840
+ unable to get the domain information so you can see here uh but uh I just uh I just uh I just
+
+57
+00:07:43,840 --> 00:07:52,400
+ needs to show an example to you uh how this blood control will uh work okay so let me uh I just
+
+58
+00:07:52,400 --> 00:08:02,240
+ selected a few of the uh things before and this is the blood hunt uh sick data and uh I will be
+
+59
+00:08:02,240 --> 00:08:07,520
+ opening uh this one uploading this one to the tool and uh you can see it has been successfully
+
+60
+00:08:07,520 --> 00:08:16,800
+ uploaded uh let me go towards the uh towards this and I can see uh there is a lot of information
+
+61
+00:08:16,800 --> 00:08:28,560
+ since it has been uh collected and uh here you can find the the map north uh seven uh kingdom
+
+62
+00:08:28,560 --> 00:08:36,080
+ here you can find all the domains and computer one GPU groups uh 12 etc etc so here you can
+
+63
+00:08:36,080 --> 00:08:43,760
+ find a search command you can use a search command to uh search the uh users here you can find
+
+64
+00:08:43,760 --> 00:08:49,360
+ authenticated user distributed users uh remote desktop user let me go for a remote desktop user
+
+65
+00:08:49,360 --> 00:08:53,680
+ and uh click on this so here you can see two section was there and uh
+
+66
+00:08:53,680 --> 00:09:06,320
+ oh it was connecting to stark and uh this is uh mind domain main user
+
+67
+00:09:09,440 --> 00:09:22,960
+ so inside you have fun user and these are or the uh users which have a RDP uh based connection
+
+68
+00:09:22,960 --> 00:09:35,040
+ so so this is how we will be showing all each and every information so to you how to how to
+
+69
+00:09:35,040 --> 00:09:39,840
+ which account we can use and how to we can enumerate the uh privileges and all okay
+
+70
+00:09:39,840 --> 00:09:44,240
+ so it will show you as much of information so what informations you know when the account was
+
+71
+00:09:44,240 --> 00:09:50,080
+ created uh when it was possible going to expand a city of the account uh everything everything basically
+
+72
+00:09:50,080 --> 00:09:57,840
+ okay uh so this tool will be really helpful to enumerate and focus the information uh so what uh
+
+73
+00:09:57,840 --> 00:10:06,160
+ uh what you need and uh not only that you can see who are all the uh authenticated users
+
+74
+00:10:06,160 --> 00:10:10,320
+ to be good domain users you can see the domain users in the domain who are all the domain users
+
+75
+00:10:10,320 --> 00:10:21,600
+ okay uh so there is uh 15 members who has a domain uh based uh domain uh domain users and
+
+76
+00:10:21,600 --> 00:10:26,560
+ here you can see the user name actually are so here you can uh find all the information you know
+
+77
+00:10:26,560 --> 00:10:32,720
+ what account we can choose to uh uh choose to elevate the privileges or um that really from
+
+78
+00:10:32,720 --> 00:10:39,760
+ on machine to another okay i think uh we are good with this and uh we'll hop off uh from here and
+
+79
+00:10:39,760 --> 00:10:44,240
+ we'll connect you guys in the next video see you bye bye
+
