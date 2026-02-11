@@ -1,0 +1,412 @@
+1
+00:00:00,000 --> 00:00:08,980
+ Let's talk about an interesting command line interface, that was a Windows Management
+
+2
+00:00:08,980 --> 00:00:18,260
+ Instrumentation command line, we call it as WMIC, so this is one of the wonderful features
+
+3
+00:00:18,260 --> 00:00:28,420
+ in Windows, so you can launch any kind of process from this command line, okay.
+
+4
+00:00:28,420 --> 00:00:39,920
+ So you can just say WMIC process called create, so now we can see the calculator has been
+
+5
+00:00:39,920 --> 00:00:42,960
+ opened in the backend, right.
+
+6
+00:00:42,960 --> 00:00:52,120
+ So with the process area of 13, 4, 8 and written value 0, so the command line was executed
+
+7
+00:00:52,120 --> 00:00:57,780
+ and it triggered a process CLC, okay.
+
+8
+00:00:57,780 --> 00:01:11,100
+ So this is one of the utility, the threat technology using to launch multiple process, okay.
+
+9
+00:01:11,100 --> 00:01:15,300
+ So in case, if you need to install a ransomware in the remote environment, you can use
+
+10
+00:01:15,300 --> 00:01:24,660
+ WMIC to do that, so in our scenario we are going to do that and we are installing a ransomware.
+
+11
+00:01:24,660 --> 00:01:41,920
+ So if you want to launch any kind of process, even you can launch a notepad or anything,
+
+12
+00:01:41,920 --> 00:01:54,740
+ okay, so you can launch a notepad.exe orepad.exe, okay.
+
+13
+00:01:54,740 --> 00:02:00,780
+ So this will be like this, you can launch any kind of process, okay.
+
+14
+00:02:00,780 --> 00:02:06,660
+ So think about one thing, let's me show you from here, let me take an impact from this
+
+15
+00:02:06,660 --> 00:02:12,080
+ we know we will be getting higher over a privilege, like system privilege from the impact
+
+16
+00:02:12,080 --> 00:02:23,060
+ and system mandatory level, if I launch any kind of process from here, let me close the
+
+17
+00:02:23,060 --> 00:02:31,340
+ calculator, you can close the command line and we can launch the count now, so you can
+
+18
+00:02:31,340 --> 00:02:36,540
+ see the process ID, there was created 13, 4, 4 and written value, written the value
+
+19
+00:02:36,540 --> 00:02:39,340
+ 0, right.
+
+20
+00:02:39,340 --> 00:02:49,820
+ So if you go to the target machine, Windows machine, in the result it was saying it,
+
+21
+00:02:49,820 --> 00:02:56,500
+ in the result it was saying, it's like the process has been launched and process has been
+
+22
+00:02:56,500 --> 00:03:01,080
+ successful launched, right, with the process ID, but if I go to the target machine, there
+
+23
+00:03:01,080 --> 00:03:06,460
+ is no process, you will not find any process in the backend, so what was the reason, okay.
+
+24
+00:03:06,460 --> 00:03:22,860
+ But if I launch anything, if I launch anything from here, so now it was opening a calculator
+
+25
+00:03:22,860 --> 00:03:30,500
+ in the, in the GUI graph, it leaves interface, but in, if I open, if I execute this command,
+
+26
+00:03:30,500 --> 00:03:37,500
+ if I open the calculator from the system privilege at the network level, because we are,
+
+27
+00:03:37,500 --> 00:03:41,860
+ we are using a impact connection and we are in a network level, right.
+
+28
+00:03:41,860 --> 00:03:49,980
+ So we did not, we do not see any kind of, any kind of calculator has been open.
+
+29
+00:03:49,980 --> 00:04:04,840
+ So now my, now the machine was like blank, let, let's call, let's use WMI-C2 create process.
+
+30
+00:04:04,840 --> 00:04:09,740
+ So now again, it was saying the process has been launched and, but you can't find it in the,
+
+31
+00:04:09,740 --> 00:04:11,540
+ in the target machine.
+
+32
+00:04:11,540 --> 00:04:17,940
+ So the reason is, WMI-C worked with two sections, section 0 and section 1, okay.
+
+33
+00:04:17,940 --> 00:04:25,060
+ So basically, section 0 is like, so this is like, this section 0 is like a non-interactive
+
+34
+00:04:25,060 --> 00:04:26,900
+ section, okay.
+
+35
+00:04:26,900 --> 00:04:32,420
+ So the section 0 is like a non-interactive section, we are, we didn't interacted with the
+
+36
+00:04:32,420 --> 00:04:37,460
+ target machine, right, we didn't interact with the target machine, we just executed everything
+
+37
+00:04:37,460 --> 00:04:41,740
+ from the remote call emission, right, from the attacker call emission, okay.
+
+38
+00:04:41,740 --> 00:04:47,460
+ So we will be calling this as a non-interactive, as a section 0.
+
+39
+00:04:47,460 --> 00:04:55,580
+ So if any process with a section, launched with the section 0, okay, maybe the higher
+
+40
+00:04:55,580 --> 00:05:00,500
+ privilege, anti-system, from this system privilege, okay.
+
+41
+00:05:00,500 --> 00:05:06,100
+ If any process launched with the system privilege, the system and the trigger privilege,
+
+42
+00:05:06,100 --> 00:05:09,380
+ it will not show, it will not show in the graphical user interface, okay.
+
+43
+00:05:09,380 --> 00:05:15,660
+ It will not open the particular task, but it will run that task or service in the back,
+
+44
+00:05:15,660 --> 00:05:19,580
+ okay.
+
+45
+00:05:19,580 --> 00:05:27,660
+ So if you need to run any kind of task in the background, without knowing the user, you
+
+46
+00:05:27,660 --> 00:05:36,820
+ can use the WMIC in packet or remote session and you can launch that, okay.
+
+47
+00:05:36,820 --> 00:05:54,260
+ So to find, it was working properly, I was executing this command, okay, let me do this one.
+
+48
+00:05:54,260 --> 00:05:58,620
+ And let me launch this command.
+
+49
+00:05:58,620 --> 00:06:03,380
+ So now it was saying the process was created and it ran the value, it was executed successfully,
+
+50
+00:06:03,380 --> 00:06:04,580
+ let's find out the target machine.
+
+51
+00:06:04,580 --> 00:06:12,980
+ So we just executed a WMI to CMD.exe and we saved the output into the WMI.txt in a
+
+52
+00:06:12,980 --> 00:06:14,460
+ term folder.
+
+53
+00:06:14,460 --> 00:06:21,260
+ Let's move on to that directory and we'll check whether we have the format TXT or not.
+
+54
+00:06:21,260 --> 00:06:25,980
+ Okay, here you can find the format was there and into the authority system, right.
+
+55
+00:06:25,980 --> 00:06:29,700
+ It was successfully launched and it was successfully executed, okay.
+
+56
+00:06:29,700 --> 00:06:35,700
+ So this is called a session zero.
+
+57
+00:06:35,700 --> 00:06:40,800
+ So everything runs in the background, okay, so we will not find, okay, we will not find
+
+58
+00:06:40,800 --> 00:06:45,820
+ an interactive section, we will not find that GUI, you will not find the interface, whatever,
+
+59
+00:06:45,820 --> 00:06:46,820
+ okay.
+
+60
+00:06:46,820 --> 00:06:51,060
+ If I launch the calculator from session zero, you will not find in the target interface,
+
+61
+00:06:51,060 --> 00:06:52,060
+ okay.
+
+62
+00:06:52,060 --> 00:06:57,460
+ But the session one is like interactive user, okay, it's an interactive thing, okay.
+
+63
+00:06:57,460 --> 00:07:04,740
+ So if you launch anything from the interactive session zero, like running as an administrator
+
+64
+00:07:04,740 --> 00:07:05,740
+ mode, okay.
+
+65
+00:07:05,740 --> 00:07:13,180
+ So only we'll be getting a system, only let's, let me tell you, okay, my slash all.
+
+66
+00:07:13,180 --> 00:07:18,740
+ So here you can find it's a high mandatory level, it's in the administrator privilege, right.
+
+67
+00:07:18,740 --> 00:07:29,660
+ So if I launch anything here, so now the calculator has been open, right.
+
+68
+00:07:29,660 --> 00:07:33,740
+ But if I launch anything from the system level, system mandatory level of privilege, but
+
+69
+00:07:33,740 --> 00:07:35,820
+ it was not opening anything, okay.
+
+70
+00:07:35,820 --> 00:07:40,300
+ So that's the difference between the session zero and session zero, okay.
+
+71
+00:07:40,300 --> 00:07:50,180
+ So that type of utilizing this and they are like executing the ransomware inside the environment.
+
+72
+00:07:50,180 --> 00:07:52,180
+ Okay.
+
+73
+00:07:52,180 --> 00:07:59,860
+ So this is nothing simple, if we, yeah, so it's a, it's a simple command.
+
+74
+00:07:59,860 --> 00:08:06,100
+ So you need to give the IP address of the machine, so 18.our IP address 94 and you need
+
+75
+00:08:06,100 --> 00:08:18,300
+ to be the domain and the user is a user and how domain is like win, df, a well, two to one
+
+76
+00:08:18,300 --> 00:08:26,180
+ on something, and password is password.
+
+77
+00:08:26,180 --> 00:08:34,140
+ So if we execute this command from any remote machine, so it will directly calling the
+
+78
+00:08:34,140 --> 00:08:39,420
+ ransomware.exe, right, so you can execute anything.
+
+79
+00:08:39,420 --> 00:08:44,460
+ If you, if your file is in your server, you can use this command, PowerShell and you can download
+
+80
+00:08:44,460 --> 00:08:47,020
+ the strings and you can execute this.
+
+81
+00:08:47,020 --> 00:08:51,660
+ So this is how the threat tactics will be delivering the malware and installing the malware
+
+82
+00:08:51,660 --> 00:08:53,700
+ through WMIC.
+
+83
+00:08:53,700 --> 00:09:01,900
+ So WMIC is one of a better thing to execute the ransomware, except not only WMIC, we have
+
+84
+00:09:01,900 --> 00:09:08,620
+ seen plenty of other things, execution parts, like, you can execute through CMD.exe,
+
+85
+00:09:08,620 --> 00:09:15,860
+ PowerShell.exe, and we have, we have a lot of methods, right, even you can take a command
+
+86
+00:09:15,860 --> 00:09:18,540
+ control to any disk and you can, W can't the application.
+
+87
+00:09:18,540 --> 00:09:25,300
+ So that's also one of the thing, so there is multiple ways to execute, but this is,
+
+88
+00:09:25,300 --> 00:09:30,740
+ this is one of the way I need to, I need to let you know everyone, because if you are doing
+
+89
+00:09:30,740 --> 00:09:36,900
+ a threat investigations, if you are doing some kind of foreign, you need to understand,
+
+90
+00:09:36,900 --> 00:09:43,460
+ this is also one of a scenario that the threat tactics will be, will launch the WMIC to execute
+
+91
+00:09:43,460 --> 00:09:45,820
+ any kind of files, okay.
+
+92
+00:09:45,820 --> 00:09:54,340
+ So that's all about this video, will, will execute the ransomware in the next video, okay.
+
+93
+00:09:54,340 --> 00:10:00,340
+ So the thing is, I don't want to, I don't want to corrupt my primary machine, okay, corrupt
+
+94
+00:10:00,340 --> 00:10:07,020
+ my Windows, this working machine, because I need to give the Windows machine to you,
+
+95
+00:10:07,020 --> 00:10:08,020
+ in the lab section.
+
+96
+00:10:08,020 --> 00:10:13,420
+ So because of that, I just attached my previous, one of the video, which I have recorded
+
+97
+00:10:13,420 --> 00:10:20,540
+ previously, executing a ransomware, and you can see that in the next video, so how, how
+
+98
+00:10:20,540 --> 00:10:24,300
+ the system will act, for one scene is telling a ransomware, okay.
+
+99
+00:10:24,300 --> 00:10:30,780
+ So I'll be giving this machine, which I am working, I'll be giving this Windows machine
+
+100
+00:10:30,780 --> 00:10:35,460
+ pinned out two to one one, which we have used as a target in the lab section, right.
+
+101
+00:10:35,460 --> 00:10:39,700
+ So you have installed, maybe you have, you have already installed.
+
+102
+00:10:39,700 --> 00:10:44,460
+ So this is the scenario, and let's hop off from here, and we'll continue our discussion
+
+103
+00:10:44,460 --> 00:10:45,740
+ in the next video, see you guys, bye bye.
+
