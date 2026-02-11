@@ -1,0 +1,468 @@
+1
+00:00:00,000 --> 00:00:06,580
+ Hi, in this lesson, give a little about Engine Planning Mode in Google Antigravity.
+
+2
+00:00:06,580 --> 00:00:11,540
+ This is a mode you will use when you need Engine to handle compact stars, can require
+
+3
+00:00:11,540 --> 00:00:14,900
+ careful planning and careful execution.
+
+4
+00:00:14,900 --> 00:00:16,860
+ So let's start with this Engine Mode.
+
+5
+00:00:16,860 --> 00:00:23,100
+ As you see, the documentation is not provided to much information, it might be complex from
+
+6
+00:00:23,100 --> 00:00:27,780
+ a first look, but I will try to structure everything to use it, you will understand how
+
+7
+00:00:27,780 --> 00:00:29,420
+ to use it right.
+
+8
+00:00:29,420 --> 00:00:36,680
+ So, Engine Planning Mode is designed for quality and so when you activate this mode, the
+
+9
+00:00:36,680 --> 00:00:40,160
+ Engine takes time to blend before executing your task.
+
+10
+00:00:40,160 --> 00:00:45,760
+ It's perfect when you need a deeper search, some complex implementations or some collaborative
+
+11
+00:00:45,760 --> 00:00:51,640
+ work where the Engine needs to sync through multiple steps before taking an action.
+
+12
+00:00:51,640 --> 00:00:56,360
+ So, Planning Mode works best for complex stars, that involve in multiple files.
+
+13
+00:00:56,360 --> 00:01:02,360
+ We should require some careful consideration or need some structured approach.
+
+14
+00:01:02,360 --> 00:01:08,200
+ For example, adding new features, the touch, a lot of files, your code base, the refactor
+
+15
+00:01:08,200 --> 00:01:13,400
+ and architecture or implementing of course some complex business logic.
+
+16
+00:01:13,400 --> 00:01:19,400
+ This is a task where taking extra time to blend upfront saves the time fixing mistakes
+
+17
+00:01:19,400 --> 00:01:20,400
+ later.
+
+18
+00:01:20,400 --> 00:01:26,240
+ So, as the Engine Deal organized it worked, research your code base and execute with optimal
+
+19
+00:01:26,240 --> 00:01:27,240
+ quality.
+
+20
+00:01:27,240 --> 00:01:32,480
+ So, let's now talk about use cases and I will show you its own practice.
+
+21
+00:01:32,480 --> 00:01:36,000
+ For example, you can refactor an existing code.
+
+22
+00:01:36,000 --> 00:01:40,640
+ Sometimes I need to restrict your code for better maintainability, for instance you might
+
+23
+00:01:40,640 --> 00:01:46,200
+ want to separate like your calendar class into smaller parts, imagine it's a big class
+
+24
+00:01:46,200 --> 00:01:49,960
+ and no one 500 lines of code and you'd like to separate it.
+
+25
+00:01:49,960 --> 00:01:54,320
+ So, you can ask AI and plan what to do it.
+
+26
+00:01:54,320 --> 00:01:56,600
+ You can implement complex business logic.
+
+27
+00:01:56,600 --> 00:02:03,200
+ If you'd like to add some validation rules to calendar, you'd like to support different
+
+28
+00:02:03,200 --> 00:02:06,840
+ calendar dates for different locations and etc.
+
+29
+00:02:06,840 --> 00:02:09,440
+ You can also use plan what for it.
+
+30
+00:02:09,440 --> 00:02:13,440
+ You can use it for adding new features with multiple files.
+
+31
+00:02:13,440 --> 00:02:16,040
+ Oh, let's take it into example.
+
+32
+00:02:16,040 --> 00:02:22,080
+ So, you might want to deal with the current month as a grid with weak names and days.
+
+33
+00:02:22,080 --> 00:02:28,920
+ Like, imagine a table when you open a date picker with a weak name, so you see the structured
+
+34
+00:02:28,920 --> 00:02:34,560
+ dates in the provided column under the weak name.
+
+35
+00:02:34,560 --> 00:02:39,160
+ So, and we're going to implement it.
+
+36
+00:02:39,160 --> 00:02:45,120
+ So, just make sure the planning mode is selected here.
+
+37
+00:02:45,120 --> 00:02:46,120
+ And now we can ask it.
+
+38
+00:02:46,120 --> 00:02:52,600
+ So, we'll type this with the current month as a grid with weak numbers and days of the
+
+39
+00:02:52,600 --> 00:02:53,600
+ month.
+
+40
+00:02:53,600 --> 00:02:56,800
+ So, it will provide some HTML from the method for us.
+
+41
+00:02:56,800 --> 00:03:02,160
+ Yeah, and we of course hope it will create multiple methods.
+
+42
+00:03:02,160 --> 00:03:08,520
+ It will have a good structure to be able to reuse it later.
+
+43
+00:03:08,520 --> 00:03:17,640
+ So, when the press enter and what's the edge and sync, it will sync about our request.
+
+44
+00:03:17,640 --> 00:03:21,640
+ It will eliminate some existing files we already have.
+
+45
+00:03:21,640 --> 00:03:26,560
+ The calendar and helper.js to understand our current structure.
+
+46
+00:03:26,560 --> 00:03:31,200
+ I'll start and we'll explain you in parallel how it works.
+
+47
+00:03:31,200 --> 00:03:37,000
+ The plan mode follows the clear workflow that keeps you in control on every stage.
+
+48
+00:03:37,000 --> 00:03:42,560
+ The first the edges will request and eliminate your existing code base.
+
+49
+00:03:42,560 --> 00:03:45,560
+ It creates the implementation plan cost.
+
+50
+00:03:45,560 --> 00:03:53,080
+ So, first it's a research the code base and the next step it creates implementation plan.
+
+51
+00:03:53,080 --> 00:03:55,920
+ It creates implementation plan as artifact.
+
+52
+00:03:55,920 --> 00:04:02,040
+ This plan outlines what the edge and intends to do, which files that you create, modify,
+
+53
+00:04:02,040 --> 00:04:03,760
+ and what approach it would take.
+
+54
+00:04:03,760 --> 00:04:11,440
+ So, after it will be created, you see it was already done and it asks us to review it.
+
+55
+00:04:11,440 --> 00:04:14,120
+ This review it and then we can process it.
+
+56
+00:04:14,120 --> 00:04:21,960
+ So, if you close it, we can always click open it or we can click artifacts and find it here.
+
+57
+00:04:21,960 --> 00:04:28,320
+ So, as artifacts, it files as that edge and create during the work with you here,
+
+58
+00:04:28,320 --> 00:04:31,320
+ during the planning during different tasks.
+
+59
+00:04:31,320 --> 00:04:35,800
+ So, we now can review this plan.
+
+60
+00:04:35,800 --> 00:04:45,520
+ Yes, we see the display as the current month as agreed with week-long names and days of the month.
+
+61
+00:04:45,520 --> 00:04:47,360
+ Okay, proposal changes.
+
+62
+00:04:47,360 --> 00:04:51,320
+ In calendar, we will add the getdays and months method.
+
+63
+00:04:51,320 --> 00:04:52,880
+ Yeah, it's so logical.
+
+64
+00:04:52,880 --> 00:04:57,320
+ You'll add get first day of the month method, update render method.
+
+65
+00:04:57,320 --> 00:05:05,320
+ Okay, so details the week names are this, so if I'd like to change the implementation plan,
+
+66
+00:05:05,320 --> 00:05:07,480
+ I can add a comments.
+
+67
+00:05:07,480 --> 00:05:13,440
+ I just select the part of the text, yeah, and for example, I'd like to start a week from
+
+68
+00:05:13,440 --> 00:05:21,760
+ a Monday, start from Monday, and I will consider our comments.
+
+69
+00:05:21,760 --> 00:05:29,200
+ Okay, the verification view verifies the logic variant test script, but with you create
+
+70
+00:05:29,200 --> 00:05:33,720
+ the test script, view verify all logic works and then the script will be removed.
+
+71
+00:05:33,720 --> 00:05:41,360
+ We can create a small test script, it imports the class, okay, it's fine, let's check
+
+72
+00:05:41,360 --> 00:05:55,320
+ out might be with like to, let's might be Monday, okay, let's click review and add optional
+
+73
+00:05:55,320 --> 00:06:10,760
+ comment, some additional comment, display, display and the top, all storm, oh, what we'd like?
+
+74
+00:06:10,760 --> 00:06:23,480
+ The months, the month's name, we can click submit, so the implementation plan starts.
+
+75
+00:06:23,480 --> 00:06:32,780
+ So let's just see, so it can fit me in implementation details, it's syncing, so as we see
+
+76
+00:06:32,780 --> 00:06:40,160
+ it updates the implementation plan and we again can review it, so we see the week names
+
+77
+00:06:40,160 --> 00:06:50,520
+ start from Monday, it's good, so and we also should see some words, display federal
+
+78
+00:06:50,520 --> 00:07:00,000
+ with the weekdays, display the days of the month's, where is the month's name at the top?
+
+79
+00:07:00,000 --> 00:07:17,800
+ Okay, display at the top of the table, the month's name at the top of the grid.
+
+80
+00:07:17,800 --> 00:07:28,880
+ Okay, so every time, if we don't like something plan, we can add a comment, add a review,
+
+81
+00:07:28,880 --> 00:07:37,520
+ do the review, so we can verify it, we won't be finalized as we want, okay, it is processing
+
+82
+00:07:37,520 --> 00:07:47,760
+ our request, okay, let's wait a bit, so it's finished.
+
+83
+00:07:47,760 --> 00:08:05,840
+ And display, oh no, it's not yet finished, okay, it's processing still, oops, I think
+
+84
+00:08:05,840 --> 00:08:23,160
+ I clicked not updates the plan, but it might be, yeah, I think I clicked already updates
+
+85
+00:08:23,160 --> 00:08:28,760
+ the code, not the right button, but you know, you can still do it in the comments and
+
+86
+00:08:28,760 --> 00:08:37,880
+ doing the review, the next step after you press an enter or press the proceed button, the
+
+87
+00:08:37,880 --> 00:08:44,840
+ plan mode, so it will proceed with the implementation plan, and you can of course review
+
+88
+00:08:44,840 --> 00:08:51,840
+ and some pending actions, if it will be popping up, so for example, there are some task
+
+89
+00:08:51,840 --> 00:09:00,360
+ groups, if the plan is big, yeah, you see the task groups like the helper methods, and
+
+90
+00:09:00,360 --> 00:09:07,240
+ the next one is rendering, yeah, and you might see it here, you of course need to expand
+
+91
+00:09:07,240 --> 00:09:13,560
+ it, and you see, you can see the start, you can see the files were edited, you can open
+
+92
+00:09:13,560 --> 00:09:20,320
+ the div only for the start group, so it was done for, to simplify the review, don't
+
+93
+00:09:20,320 --> 00:09:26,640
+ review all the code at one time, but reviewed by small pieces, so and you can verify
+
+94
+00:09:26,640 --> 00:09:34,400
+ what a helper matters, give us edit, and how we, how he implemented, let's close the
+
+95
+00:09:34,400 --> 00:09:40,920
+ div, and how he implemented the render method, so the buttons this lesson, we want to
+
+96
+00:09:40,920 --> 00:09:49,080
+ verify it, so, but it's of course really important, so then he asks us to verify the document,
+
+97
+00:09:49,080 --> 00:09:58,440
+ yeah, and at the bottom, might be some pending actions, for example, if it will need to
+
+98
+00:09:58,440 --> 00:10:03,720
+ create a file, if it need to rename some file, he might ask you, okay, I'd like to rename
+
+99
+00:10:03,720 --> 00:10:09,720
+ this file, can you approve it, or declare it, yeah, and use some time, it's need to be
+
+100
+00:10:09,720 --> 00:10:19,880
+ aware of it, and just monitor it, sometimes it requires an action from you, okay, so let's
+
+101
+00:10:19,880 --> 00:10:27,240
+ wrap up, you can use plain mode when task is complex, involve multiple files, so you can
+
+102
+00:10:27,240 --> 00:10:33,600
+ click of course accept all changes, yeah, as it added a method, as it added the render
+
+103
+00:10:33,600 --> 00:10:40,960
+ method, but my recommendation is always to review it, always ask a lot of questions if you
+
+104
+00:10:40,960 --> 00:10:46,120
+ don't understand how something to work, if you'll see it might be implemented easier,
+
+105
+00:10:46,120 --> 00:10:53,560
+ you can also ask to refactor it, because really often a I do the small steps to implement
+
+106
+00:10:53,560 --> 00:11:00,160
+ something, sometimes it's been lazy, and you might need few more iterations to make your
+
+107
+00:11:00,160 --> 00:11:09,680
+ code, not perfect but better, more performant, so as a main benefit of plain mode is quality
+
+108
+00:11:09,680 --> 00:11:16,560
+ and control, as you can create a plan, you can review it, you can add a common review
+
+109
+00:11:16,560 --> 00:11:24,360
+ it again, you can work in organized task groups as you see here, yeah, you can review each
+
+110
+00:11:24,360 --> 00:11:31,040
+ task group, so you can, if you need to create to delete some files, you will have some
+
+111
+00:11:31,040 --> 00:11:39,240
+ ending actions, you also hear in control, so and it's really good for some complex tasks,
+
+112
+00:11:39,240 --> 00:11:45,400
+ of course the trade-off is speeds, you might spend more time on with a plan mode, we
+
+113
+00:11:45,400 --> 00:11:49,920
+ are leaving the comments for the plan, but you will win at the end, you will have a better
+
+114
+00:11:49,920 --> 00:12:04,680
+ implementation, and so you will have more expected implementation, so of course, so I recommend
+
+115
+00:12:04,680 --> 00:12:12,560
+ you to use it for some features, some refactoring code for big changes, and don't forget
+
+116
+00:12:12,560 --> 00:12:21,120
+ always verify and review a code AI, give you always tested, you can also have to test it,
+
+117
+00:12:21,120 --> 00:12:23,160
+ and see you in the next lesson.
+
