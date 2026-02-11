@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,960
+ Let's discuss more about the OSM model.
+
+2
+00:00:05,960 --> 00:00:13,040
+ So if you see in this diagram, there is an application layer, in the application layer
+
+3
+00:00:13,040 --> 00:00:20,520
+ we will represent our requester data, so whatever you are sending, like a high message
+
+4
+00:00:20,520 --> 00:00:25,560
+ or sending username and password, so that will be the data.
+
+5
+00:00:25,560 --> 00:00:34,400
+ So, in the fourth layer of the OSM model, so we will call our data, whatever the high
+
+6
+00:00:34,400 --> 00:00:41,720
+ or any username and password as a segment, so why we are calling as a segment, because
+
+7
+00:00:41,720 --> 00:00:47,640
+ data will be splitred into multiple parts, okay.
+
+8
+00:00:47,640 --> 00:01:00,260
+ So let's see an example, so if there is a 30 MB of data, so it will be splitred into multiple
+
+9
+00:01:00,260 --> 00:01:08,160
+ chunks, okay, so 5 MB, 5 MB, 5, 5, 5, 5, whatever, okay.
+
+10
+00:01:08,160 --> 00:01:15,320
+ So the data will be probably splitred into multiple segments, okay, so that's why we are
+
+11
+00:01:15,320 --> 00:01:23,280
+ calling our data as a segment, okay, in the transport layer, so we already discussed
+
+12
+00:01:23,280 --> 00:01:29,760
+ there is two protocols, only TCP and another one is UDP, so this will be either TCP will
+
+13
+00:01:29,760 --> 00:01:33,200
+ be added or UDP will be added, okay.
+
+14
+00:01:33,200 --> 00:01:41,280
+ So after that, we have a network layer, in the network layer, we already know, so sorry
+
+15
+00:01:41,280 --> 00:01:46,720
+ for that, in the transport layer, one more thing will be added, that was a port number
+
+16
+00:01:46,720 --> 00:01:55,640
+ of the protocol, if it's a HTTP, then the port number will be 80, if it's a HTTP, yes, then
+
+17
+00:01:55,640 --> 00:02:01,880
+ the port number will be 443, if it's FTP, then the port number will be 21, we will discuss
+
+18
+00:02:01,880 --> 00:02:10,160
+ the protocols and port number briefly in upcoming videos later on, so in the network layer,
+
+19
+00:02:10,160 --> 00:02:16,680
+ we will call our the segments as a packet, okay, so that was our data packet, so we already
+
+20
+00:02:16,680 --> 00:02:21,840
+ know in the network layer, the source IP address and the destination IP address will be
+
+21
+00:02:21,840 --> 00:02:28,600
+ added, if the data will be like this, okay, transport header like TCP and the source IP
+
+22
+00:02:28,600 --> 00:02:36,720
+ destination IP and the data, we will call this entire thing as a packet, okay, so let's
+
+23
+00:02:36,720 --> 00:02:44,920
+ take a look here, in the network layer, the source IP destination IP, this will be added
+
+24
+00:02:44,920 --> 00:02:51,960
+ in each of the segments, okay, each of the segments, the source IP and destination IP
+
+25
+00:02:51,960 --> 00:02:57,680
+ will be added, the data needs to be splitter, why we need to split the data, because
+
+26
+00:02:57,680 --> 00:03:03,880
+ as per the internet sphere, if the internet has paid us 5 MVP as per second, we need
+
+27
+00:03:03,880 --> 00:03:14,160
+ to segment this data into chunks, right, into divide this data into multiple chunks, right,
+
+28
+00:03:14,160 --> 00:03:20,800
+ multiple segments, so we are segmenting the data and we are adding source IP and the destination
+
+29
+00:03:20,800 --> 00:03:28,760
+ IP in each of the segments, okay, each of the segment that we segmented by the transport
+
+30
+00:03:28,760 --> 00:03:38,320
+ layer, okay, source and destination IP will be added, right, so once we add the IP address
+
+31
+00:03:38,320 --> 00:03:43,280
+ in the network layer, then our packets will be come up to the data link layer, in the
+
+32
+00:03:43,280 --> 00:03:49,120
+ data link layer, we know the frame, okay, sorry, we know the MAC address will be added,
+
+33
+00:03:49,120 --> 00:03:59,480
+ the source MAC and the destination MAC, right, so here, now we have a one more thing and the
+
+34
+00:03:59,480 --> 00:04:06,680
+ source MAC and the destination MAC address will be added in each of the segments, like
+
+35
+00:04:06,680 --> 00:04:16,160
+ before, okay, so finally, our data will be reaching to the physical layer and our data
+
+36
+00:04:16,160 --> 00:04:22,440
+ will be converted to zero sand ones, right, because our data need to communicate through
+
+37
+00:04:22,440 --> 00:04:28,560
+ the cable, it's array 45 or any fiber optic cable, it's new, it's need to be transferred
+
+38
+00:04:28,560 --> 00:04:35,760
+ to the cable, so we are transforming our data into the bits, okay, so we will call it
+
+39
+00:04:35,760 --> 00:04:42,040
+ us frames, so once you add the MAC address, our data packets will be called as a frames
+
+40
+00:04:42,040 --> 00:04:48,120
+ and once it reaches to the physical layer, this will be called us, called us bits, okay,
+
+41
+00:04:48,120 --> 00:04:55,200
+ so this will be in the protocol data units, okay, PDUs, we will say it as a PDU, okay,
+
+42
+00:04:55,200 --> 00:05:02,080
+ data segments back at frames and bits, okay, so I'll discuss one more time, whenever
+
+43
+00:05:02,080 --> 00:05:07,600
+ the data will be reached to the transport layer, we will call our data as a segments,
+
+44
+00:05:07,600 --> 00:05:13,960
+ yes, it will be segmented into multiple chunks, multiple segments, so once the data reaches
+
+45
+00:05:13,960 --> 00:05:19,060
+ to the network layer, we will be call our data as packets, one packet, packet to packet
+
+46
+00:05:19,060 --> 00:05:24,640
+ tree and once the data reaches to the data link layer, it will call our packets, it's
+
+47
+00:05:24,640 --> 00:05:31,080
+ a frames, right, so once it reaches to the physical layer, so this data needs to be transferred
+
+48
+00:05:31,080 --> 00:05:36,440
+ to zero sand ones, we already discuss, it's need to be transferred to the cable, right,
+
+49
+00:05:36,440 --> 00:05:43,520
+ on place to one source to, on destination, so we are transforming our data to bits, okay,
+
+50
+00:05:43,520 --> 00:05:52,560
+ this is the entire process of protocol data units, okay, so let's hope of this video,
+
+51
+00:05:52,560 --> 00:05:58,560
+ and we will discuss the TCP and UDP, the free in the next video, thank you for watching.
+
