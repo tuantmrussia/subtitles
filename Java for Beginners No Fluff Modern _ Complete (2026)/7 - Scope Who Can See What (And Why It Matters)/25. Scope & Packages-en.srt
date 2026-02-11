@@ -1,0 +1,240 @@
+1
+00:00:00,000 --> 00:00:05,040
+ All right, everyone. Next, we talk about scoop and that is about excess as well.
+
+2
+00:00:05,040 --> 00:00:10,720
+ You can refer to that as either scope or excess. Remember, we talked about encapsulation
+
+3
+00:00:10,720 --> 00:00:20,480
+ and the ability to disclose or to hide details from the end user from someone else, right?
+
+4
+00:00:20,480 --> 00:00:26,560
+ And we took real-world analogy about understanding encapsulation as well. If you want to recollect,
+
+5
+00:00:26,560 --> 00:00:33,120
+ just go back to that video and then come back to this one, but that is about encapsulation.
+
+6
+00:00:33,120 --> 00:00:40,240
+ So how do we do it in Java? We do that with the concept of excess specifiers, right?
+
+7
+00:00:40,240 --> 00:00:49,680
+ And that is how you would be able to open up your code to whomever you wish, right? That is
+
+8
+00:00:49,680 --> 00:00:55,760
+ Java gives you complete control as a developer, right? So starting with, as I said,
+
+9
+00:00:55,760 --> 00:01:04,000
+ we'll do that with scope. And for that, we have four types, four levels of scope in Java,
+
+10
+00:01:04,000 --> 00:01:09,760
+ out of which only three are keywords, right? And starting with, I'll say package private,
+
+11
+00:01:09,760 --> 00:01:20,640
+ right? Or some refer to it as package only, but I prefer this wording as more appropriate,
+
+12
+00:01:20,640 --> 00:01:28,320
+ right? I'll tell you why shortly, but package private is the default scope in Java and it's not
+
+13
+00:01:28,320 --> 00:01:38,880
+ a keyword, right? Because it's the default scope. If you do not put scope of members in Java,
+
+14
+00:01:38,880 --> 00:01:44,480
+ that means it has a default scope. And now you know, what is that? That is package private.
+
+15
+00:01:44,480 --> 00:01:55,360
+ So the next one we have is the referred to that as public, right? Which is a keyword,
+
+16
+00:01:55,360 --> 00:02:07,760
+ then we have protected. And then we have private. All right. So four levels of scope in Java,
+
+17
+00:02:07,760 --> 00:02:12,960
+ out of which only three are keywords that is public, protected or private. And package private
+
+18
+00:02:12,960 --> 00:02:20,640
+ is the default scope. It is not a keyword as a tool. You just remember that. And maybe you
+
+19
+00:02:20,640 --> 00:02:26,080
+ apply scope. It's very important for you to understand that first. So scope is applicable in Java
+
+20
+00:02:26,080 --> 00:02:31,760
+ two levels. So either at the class level, right? Or later on, you will see at the interface
+
+21
+00:02:31,760 --> 00:02:36,400
+ level as well. But because for now, we're just dealing with classes. So just think about it as
+
+22
+00:02:36,400 --> 00:02:42,720
+ be applicable either at the class level or at the member level. Now wait a minute, what are members now,
+
+23
+00:02:42,720 --> 00:02:49,120
+ right? I didn't talk about them, but we have covered them. So members of a class are it's
+
+24
+00:02:49,120 --> 00:02:56,640
+ instance variables and methods. And I'm going to refrace with you for clarity. Instance variables
+
+25
+00:02:56,640 --> 00:03:04,320
+ and methods of a class are referred to as members of class, right? Collectivity. And at the member
+
+26
+00:03:04,320 --> 00:03:09,680
+ level, you can put in the scope or at the class level. That is where scope is resolved in Java. And
+
+27
+00:03:09,680 --> 00:03:15,680
+ we just have a look at it. And both those, those approaches are just right now. So let's go in
+
+28
+00:03:15,680 --> 00:03:22,960
+ two R I D E. But remember, we just have these four levels of scope in Java, right? And what I'll do
+
+29
+00:03:22,960 --> 00:03:30,080
+ is I'll just head over back to my ID. And that is intelligent again. And let's go on and quickly create
+
+30
+00:03:30,080 --> 00:03:41,920
+ a new class this time. And I'll just call it scope work. So I'll maximize this,
+
+31
+00:03:41,920 --> 00:03:52,000
+ have the main method again. So, but now before taking on scope, we need to understand one more
+
+32
+00:03:52,000 --> 00:03:59,440
+ concept. And that is the concept of packages. So let me just go back through my whiteboard
+
+33
+00:03:59,440 --> 00:04:14,400
+ and that is what is a package now, right? So now think about it. It's the time of collaboration,
+
+34
+00:04:14,400 --> 00:04:19,280
+ you're working with your team. Someone is working remotely. You're working from a remote location,
+
+35
+00:04:19,280 --> 00:04:26,480
+ different location. So you collaborate using tools like Git, right? And so just imagine a scenario
+
+36
+00:04:26,480 --> 00:04:33,760
+ where you name a class as task or Java, but your colleague also names a task or Java. And then
+
+37
+00:04:33,760 --> 00:04:40,720
+ for such a trivial matter, you both are, yeah, are quarreling, right? That is your colleague says,
+
+38
+00:04:40,720 --> 00:04:46,160
+ I named it task or Java first, but your argument is I named it first, right? So that is the first
+
+39
+00:04:46,160 --> 00:04:51,600
+ use case of using packages or Java games, you now is the flexibility to have your own folders,
+
+40
+00:04:51,600 --> 00:04:57,040
+ right? So they say, have your own classes in your own folders and they say or talk to your
+
+41
+00:04:57,040 --> 00:05:02,800
+ colleague as have your classes in your own folders and these folders and in the Java programming
+
+42
+00:05:02,800 --> 00:05:08,480
+ language are called packages. So in the code, these are packages at the back end, these are folders,
+
+43
+00:05:08,480 --> 00:05:14,240
+ right? And obviously the ambiguity goes away, the conflict goes away, why? Because you would have
+
+44
+00:05:14,240 --> 00:05:18,160
+ your own classes in your own folder, your colleague would have their own classes in their own
+
+45
+00:05:18,160 --> 00:05:26,000
+ folder, for example, they'll just call their package as, let's say, my Inc and you would call
+
+46
+00:05:26,000 --> 00:05:34,720
+ your own package as, for example, Gary, right? Now, Gary goes on and stores their classes in
+
+47
+00:05:34,720 --> 00:05:43,680
+ their own package or folder, for example, task or Java, there is some Java and my Inc is working on
+
+48
+00:05:43,680 --> 00:05:52,800
+ world or Java, he also has task and he also has do it or Java. But see, these two classes now,
+
+49
+00:05:52,800 --> 00:05:58,640
+ tasks and tasks are named the same, but no more conflicts because they're represented now to the
+
+50
+00:05:58,640 --> 00:06:04,800
+ outside world with their own folders or packages in Java, right? So the, the conflict goes away
+
+51
+00:06:04,800 --> 00:06:11,040
+ and the other advantage of packages is code is organized better, why? Because my Inc has his own
+
+52
+00:06:11,040 --> 00:06:17,360
+ files in his own package. Gargi has his her own files in her own package in her own folder,
+
+53
+00:06:17,360 --> 00:06:22,880
+ right? And the third advantage is, let's say there's a problem with a file in Gargi's package,
+
+54
+00:06:22,880 --> 00:06:27,600
+ the team leader, the project manager doesn't need to summon my Inc and other folks working in the
+
+55
+00:06:27,600 --> 00:06:33,360
+ team. He just needs to summon Gargi and ask her, what is going on wrong in this some package,
+
+56
+00:06:33,360 --> 00:06:38,880
+ in the some class belonging to the Gargi package, right? So that are some of the great advantages
+
+57
+00:06:38,880 --> 00:06:44,480
+ which packages bring to the table. And why did I talk about packages is because they have
+
+58
+00:06:44,480 --> 00:06:51,360
+ relations to how scope applies in Java, right? And packages now in the next video, we're first
+
+59
+00:06:51,360 --> 00:06:56,800
+ going to know about how do we create our own packages in Java, how do we import them and what
+
+60
+00:06:56,800 --> 00:06:58,320
+ relation do they have with scope?
+
