@@ -1,0 +1,292 @@
+1
+00:00:00,759 --> 00:00:01,759
+Nếu anh nhớ,
+
+2
+00:00:02,240 --> 00:00:07,599
+cấu trúc mà chúng ta đã tạo ra trước đó đã thừa hưởng chính sách từ tổ tiên.
+
+3
+00:00:07,800 --> 00:00:11,380
+Cấu trúc là tổ chức, thư mục.
+
+4
+00:00:11,840 --> 00:00:17,559
+Trong thư mục, chúng tôi có các dự án, và trong dự án, chúng tôi có nguồn lực.
+
+5
+00:00:17,760 --> 00:00:20,200
+Hãy hiểu nó với một ví dụ.
+
+6
+00:00:20,319 --> 00:00:24,659
+Hãy tưởng tượng tổ chức của bạn là mái nhà.
+
+7
+00:00:24,879 --> 00:00:30,260
+Thư mục là phòng, dự án là đồ nội thất bên trong mỗi phòng.
+
+8
+00:00:30,520 --> 00:00:35,939
+Nếu trời mưa bên ngoài và mái nhà bị dột, mọi phòng đều bị ướt.
+
+9
+00:00:36,040 --> 00:00:38,520
+Mọi đồ đạc đều bị ướt.
+
+10
+00:00:38,799 --> 00:00:40,960
+Đó là di sản của IM.
+
+11
+00:00:40,960 --> 00:00:45,354
+Name
+
+12
+00:00:45,354 --> 00:00:48,294
+vào mọi thư mục và mọi dự án.
+
+13
+00:00:48,474 --> 00:00:52,275
+Đó là cách mà các vai trò cấp bậc tổ chức phải được thực hiện
+
+14
+00:00:52,275 --> 00:00:55,665
+được xem như chìa khóa an ninh cao cấp.
+
+15
+00:00:55,875 --> 00:01:02,479
+Ví dụ, hãy nói rằng bạn chỉ định một vai trò của admin tính toán cho đội mạng.
+
+16
+00:01:02,759 --> 00:01:05,989
+Bây giờ nhóm này có thể tạo ra những cỗ máy ảo,
+
+17
+00:01:06,279 --> 00:01:08,830
+Xóa máy ảo, thay đổi mạng,
+
+18
+00:01:09,309 --> 00:01:10,629
+Thay đổi tường lửa.
+
+19
+00:01:10,910 --> 00:01:11,739
+Siêu quyền lực.
+
+20
+00:01:11,959 --> 00:01:15,959
+Họ có thể làm điều này trên tất cả các dự án ở khắp mọi nơi.
+
+21
+00:01:16,199 --> 00:01:18,870
+Việc này có thể rất nguy hiểm.
+
+22
+00:01:18,870 --> 00:01:23,040
+nhưng hoàn toàn cần thiết cho các đội mạng.
+
+23
+00:01:23,279 --> 00:01:26,080
+Bây giờ chúng ta hãy so sánh điều này với việc truy cập thư mục cấp cao.
+
+24
+00:01:26,550 --> 00:01:31,260
+Thư mục là nơi mà doanh nghiệp khóa chặt các vai trò cụ thể trong môi trường.
+
+25
+00:01:31,349 --> 00:01:35,180
+Giả sử chúng ta chỉ định vai trò của người xem cho phép
+
+26
+00:01:35,180 --> 00:01:38,129
+ghi nhật ký vào thư mục sản xuất.
+
+27
+00:01:38,309 --> 00:01:39,019
+Giờ thì sao?
+
+28
+00:01:39,110 --> 00:01:42,349
+Mọi dự án bên trong thư mục sản xuất này
+
+29
+00:01:42,349 --> 00:01:46,069
+Tự động thừa kế truy cập máy tính này.
+
+30
+00:01:46,349 --> 00:01:52,150
+Điều này là tuyệt vời cho các đội SRE những người cần phải xem qua tất cả các sản phẩm
+
+31
+00:01:52,150 --> 00:01:56,760
+Bản ghi mà không cần yêu cầu truy cập dự án bằng dự án,
+
+32
+00:01:56,949 --> 00:01:59,940
+Cách tiếp cận này cho bạn sự nhất quán,
+
+33
+00:02:00,059 --> 00:02:03,519
+Dễ dàng lên tàu, và ranh giới an toàn.
+
+34
+00:02:03,699 --> 00:02:07,339
+Nó cũng ngăn chặn sự sai lầm của việc ban cho
+
+35
+00:02:07,339 --> 00:02:09,800
+Các nhà phát triển quyền ghi.
+
+36
+00:02:10,020 --> 00:02:12,520
+Nếu bạn nói về dự án này,
+
+37
+00:02:12,660 --> 00:02:13,380
+Ví dụ như,
+
+38
+00:02:13,529 --> 00:02:17,169
+Hãy tưởng tượng đội công nghệ thanh toán cần
+
+39
+00:02:17,169 --> 00:02:20,600
+đọc chỉ truy cập để xem thước đo và ghi nhật ký,
+
+40
+00:02:21,059 --> 00:02:22,380
+và chúng tôi cung cấp cho họ.
+
+41
+00:02:22,970 --> 00:02:26,229
+Đây là sự cho phép cụ thể và không gì hơn.
+
+42
+00:02:26,449 --> 00:02:28,210
+Họ không nên triển khai cơ sở hạ tầng.
+
+43
+00:02:28,330 --> 00:02:30,009
+Họ không nên thay đổi IM.
+
+44
+00:02:30,369 --> 00:02:32,429
+Họ không được phép thanh toán hóa đơn.
+
+45
+00:02:32,770 --> 00:02:35,740
+Đây không phải là đặc ân khi hành động.
+
+46
+00:02:35,970 --> 00:02:38,470
+Hãy so sánh hai kịch bản thế giới thực.
+
+47
+00:02:38,610 --> 00:02:41,089
+Một khuôn mẫu xấu, cho họ quyền truy cập biên tập viên.
+
+48
+00:02:41,690 --> 00:02:42,560
+Nó dễ dàng hơn.
+
+49
+00:02:42,560 --> 00:02:47,160
+Nếu bạn cho ai đó biên tập, họ có thể xóa VPC của bạn,
+
+50
+00:02:47,580 --> 00:02:52,899
+Thay đổi IM, tắt nhật ký, và có thể họ có thể dừng sản xuất.
+
+51
+00:02:53,100 --> 00:02:55,460
+Biên tập đơn giản là quá mạnh.
+
+52
+00:02:55,740 --> 00:02:59,610
+Những vai trò này đại diện cho hàng ngàn, vâng, hàng ngàn quyền hạn,
+
+53
+00:02:59,610 --> 00:03:01,869
+Và đó là lý do tại sao nó không tốt.
+
+54
+00:03:02,009 --> 00:03:06,970
+Các mô hình tốt sẽ là cung cấp cho họ chính xác các vai trò đã xác định trước họ cần.
+
+55
+00:03:07,250 --> 00:03:12,369
+Ví dụ, một nhà phát triển cần triển khai dịch vụ phát triển mây,
+
+56
+00:03:12,729 --> 00:03:15,370
+xem bản ghi, và đọc cấu hình.
+
+57
+00:03:15,370 --> 00:03:19,479
+Sau đó, bạn nên xác định chính xác vai trò của mình.
+
+58
+00:03:19,649 --> 00:03:26,119
+Những vai trò được xác định trước này chứa chính xác quyền cần thiết và không có gì thêm.
+
+59
+00:03:26,330 --> 00:03:31,729
+Vai trò chính xác sẽ là người phát triển, người khai thác gỗ. khán giả, và giám sát. khán giả.
+
+60
+00:03:31,929 --> 00:03:36,195
+Những vai trò được định trước này chứa chính xác quyền cần thiết.
+
+61
+00:03:36,345 --> 00:03:37,716
+Hãy lấy một ví dụ khác.
+
+62
+00:03:37,916 --> 00:03:42,195
+Một mô hình xấu khác sẽ là một vai trò khổng lồ tùy chỉnh với 200
+
+63
+00:03:42,195 --> 00:03:45,026
+Quyền được phép trở nên không thể kiểm toán.
+
+64
+00:03:45,186 --> 00:03:48,865
+Các mô hình tốt sẽ là nhỏ, mục đích xây dựng vai trò tùy chỉnh,
+
+65
+00:03:49,095 --> 00:03:52,315
+và chỉ khi cần thiết, ví dụ như,
+
+66
+00:03:52,395 --> 00:03:58,052
+Một vai trò bao gồm chính xác 12 quyền cho phép cần thiết để tiến hành kiểm tra đường ống.
+
+67
+00:03:59,061 --> 00:04:02,632
+Một ví dụ khác là đưa ra ý kiến cá nhân.
+
+68
+00:04:02,781 --> 00:04:04,871
+Điều này trở thành một cơn ác mộng bảo trì.
+
+69
+00:04:05,102 --> 00:04:08,302
+Mẫu tốt sẽ được cấp IM cho các nhóm.
+
+70
+00:04:08,501 --> 00:04:11,322
+Đội hình tiến hóa, nhưng sự cho phép thì không, đúng không?
+
+71
+00:04:11,582 --> 00:04:12,141
+Thật ra,
+
+72
+00:04:12,401 --> 00:04:15,781
+Giới thiệu của Google là quản lý sự cho phép sử dụng
+
+73
+00:04:15,781 --> 00:04:18,940
+Các nhóm để đơn giản hóa điều khiển truy cập.
+
