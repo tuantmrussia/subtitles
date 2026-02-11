@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:05,040
+ In this lesson I will talk about prompt engineering techniques. Let's get started.
+
+2
+00:00:05,040 --> 00:00:09,520
+ Prompt engineering isn't only about asking clear questions.
+
+3
+00:00:09,520 --> 00:00:17,200
+ Developers can also use special techniques to guide the model into better, clearer and more useful
+
+4
+00:00:17,200 --> 00:00:24,400
+ answers. In this lesson we will walk through eight common techniques you can apply right away.
+
+5
+00:00:24,400 --> 00:00:29,440
+ Chain of thought prompt and ask the model to show it's reasoning step by step.
+
+6
+00:00:30,000 --> 00:00:36,720
+ Like working a problem on paper, it is especially helpful for logic, math and debugging code.
+
+7
+00:00:36,720 --> 00:00:44,560
+ Why it helps. You can inspect the reasoning, sport shaky steps and catch errors before trusting
+
+8
+00:00:44,560 --> 00:00:55,040
+ the final result. Example. Instead of pick this bug, try, explain what this code does step by step,
+
+9
+00:00:55,040 --> 00:00:58,400
+ show me why it fails, and then give me the fixed version.
+
+10
+00:00:58,400 --> 00:01:04,960
+ Three of thought promptings explores multiple solution paths rather than just one,
+
+11
+00:01:04,960 --> 00:01:10,800
+ then compares them to pick the best approach. Why it helps? Many software problems have
+
+12
+00:01:10,800 --> 00:01:15,600
+ several valid paths, as seen options with trade-offs leads to better decisions.
+
+13
+00:01:15,600 --> 00:01:23,040
+ Example, instead of how should I add login to my app, try. Suggest three ways to add login to a
+
+14
+00:01:23,040 --> 00:01:30,160
+ React and Node.js app, JWT, OAuth, or Nexus. Write pros and cons for each approach,
+
+15
+00:01:30,160 --> 00:01:32,880
+ then recommends the best option for a small project.
+
+16
+00:01:32,880 --> 00:01:40,080
+ Matic prompt in builds an explanation, and then expands each part of that explanation.
+
+17
+00:01:40,080 --> 00:01:47,200
+ Creating a three of clarifications you can validate or prune. Why it helps complex topics
+
+18
+00:01:47,200 --> 00:01:54,880
+ benefit from layered depth. You get the main idea plus the necessary details of how and why it works.
+
+19
+00:01:54,880 --> 00:02:02,880
+ Example. Instead of what is React hydration, try. Explain what React hydration is.
+
+20
+00:02:02,880 --> 00:02:08,640
+ Then explain what server rendered HTML means, how hydration attached event listeners,
+
+21
+00:02:08,640 --> 00:02:14,720
+ and why hydration can make the app feel faster. Complexity-based promptings generate several
+
+22
+00:02:14,720 --> 00:02:21,440
+ step-by-step answers. Prefer the longer and more detailed ones, and looks for the common conclusion
+
+23
+00:02:21,440 --> 00:02:29,520
+ across them. Why it helps? Harder problems often require more deliberate reasoning.
+
+24
+00:02:29,520 --> 00:02:36,800
+ Longer, more explicit solutions tend to be more reliable sort. Example. Instead of
+
+25
+00:02:36,800 --> 00:02:43,760
+ how do I reverse a linked list in JavaScript? Try. Write three different ways to reverse a
+
+26
+00:02:43,760 --> 00:02:50,240
+ linked list. Show the step-by-step logic for each approach, then pick the most reliable solution
+
+27
+00:02:50,240 --> 00:02:58,000
+ and explain why it is best. Generated knowledge. Prompting first gather the facts or background
+
+28
+00:02:58,000 --> 00:03:04,320
+ the model needs, and only then use those nodes to produce the final answer. Why it helps?
+
+29
+00:03:04,320 --> 00:03:10,000
+ Collecting key details upfront keeps the solution focused and accurate rather than jumping
+
+30
+00:03:10,000 --> 00:03:18,080
+ too quickly to code or conclusions. Example. Instead of write an API for task, try. First,
+
+31
+00:03:18,080 --> 00:03:24,000
+ list the most common features of a task manager API, such as creating, updating, deleting,
+
+32
+00:03:24,000 --> 00:03:29,520
+ and filtering tasks. Then write and express just APIs that include those features.
+
+33
+00:03:29,520 --> 00:03:37,120
+ List the most prompt in breaks a big task into smaller sub-problems. Solves the easiest ones first
+
+34
+00:03:37,120 --> 00:03:43,120
+ and use those results to tackle the harder parts. Why it helps decomposing work reduces
+
+35
+00:03:43,120 --> 00:03:48,240
+ overwhelm, improve organization, and helps the model build toward a complete solution.
+
+36
+00:03:48,240 --> 00:03:56,720
+ Example. Instead of build a chat app in React. Try. First, show me how to set up a React project
+
+37
+00:03:56,720 --> 00:04:03,840
+ with VIT. Next, show me how to add chat input and a message list. Finally, show me how to connect
+
+38
+00:04:03,840 --> 00:04:10,960
+ it to a WebSocket server for real-time messages. Self-refined prompting has the model draft an
+
+39
+00:04:10,960 --> 00:04:17,600
+ answer with tickets on work for mistakes or gaps, and then rewrite with improvements. You can repeat
+
+40
+00:04:17,600 --> 00:04:24,400
+ this a few times. Why it helps the first draft is rarely the best. A built-in review loop
+
+41
+00:04:24,400 --> 00:04:32,080
+ improves accuracy, clarity, and quality. Example. Instead of write a function to ordinary,
+
+42
+00:04:32,960 --> 00:04:38,400
+ try it. Write a JavaScript function to sort an array. Then review the code for readability
+
+43
+00:04:38,400 --> 00:04:45,520
+ and performance. Rewrite it with improvements and add comments for clarity. Directional stimulus
+
+44
+00:04:45,520 --> 00:04:53,200
+ prompting gives the model explicit rules. He words constraints or formats to follow so the output
+
+45
+00:04:53,200 --> 00:05:00,320
+ stays on target. Why it helps when you need a specific style or format like JSON,
+
+46
+00:05:00,320 --> 00:05:07,520
+ just tests, or required phrasing, constraints keep the response consistent. Example. Instead of
+
+47
+00:05:07,520 --> 00:05:14,160
+ generate test cases, try generate five unit test cases for the add user function in user service
+
+48
+00:05:14,160 --> 00:05:20,800
+ just use just format. Include three success cases and two error cases. Wrap up.
+
+49
+00:05:20,800 --> 00:05:27,920
+ Design techniques give you more control over the models thinking and output. Chain of thought for
+
+50
+00:05:27,920 --> 00:05:34,880
+ step by step reasoning, three of thought to explore options, music for deeper explanations,
+
+51
+00:05:34,880 --> 00:05:40,720
+ complexity-based favorite sort of reasoning, generated knowledge to gather facts first,
+
+52
+00:05:40,720 --> 00:05:46,880
+ leads to most built solutions gradually, self-refined to improve drafts, and directional
+
+53
+00:05:46,880 --> 00:05:54,320
+ stimulus to enforce rules and formats. By practicing these methods, you will get better answers,
+
+54
+00:05:54,320 --> 00:06:00,480
+ save time, and use AI like a real coding partner. I hope this lesson was useful for you
+
+55
+00:06:00,480 --> 00:06:06,160
+ and see you in the next lesson.
+
