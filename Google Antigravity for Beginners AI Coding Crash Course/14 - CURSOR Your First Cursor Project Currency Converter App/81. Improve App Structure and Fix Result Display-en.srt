@@ -1,0 +1,340 @@
+1
+00:00:00,000 --> 00:00:05,500
+ Hi. In this lesson, we will focus on fixes and improvements.
+
+2
+00:00:05,500 --> 00:00:08,340
+ So we will make a few improvements.
+
+3
+00:00:08,340 --> 00:00:13,380
+ The first one, we have more data could sort of get to delete them.
+
+4
+00:00:13,380 --> 00:00:16,940
+ We need to mention it, just to clean up our application.
+
+5
+00:00:16,940 --> 00:00:22,780
+ And the next improvement is our application file really mess.
+
+6
+00:00:22,780 --> 00:00:29,420
+ So we have IPI code, here's the utils to make the flock from currents, etc.
+
+7
+00:00:29,420 --> 00:00:35,000
+ We're going to split it up, we're going to move APIs to APA folder, utils to utils folder.
+
+8
+00:00:35,000 --> 00:00:44,220
+ We also, in our rate, we have an APA code, which is used under util, which is due to the conversion.
+
+9
+00:00:44,220 --> 00:00:52,080
+ So it's not good. We need to split up the API, the get data, and the conversion itself, because it's util.
+
+10
+00:00:52,080 --> 00:00:55,660
+ And it will be much easier to write the tests then.
+
+11
+00:00:55,660 --> 00:01:03,300
+ And also, we need to do one fix, so it's how we dispose the result, because if I get the exchange rate,
+
+12
+00:01:03,300 --> 00:01:09,700
+ I see it's correct, but when I start changing an amount, it's now it's wrong.
+
+13
+00:01:09,700 --> 00:01:13,300
+ So because we update an amount, it's out the recalculation.
+
+14
+00:01:13,300 --> 00:01:19,900
+ So what we do, we will just hide the result, we will use it to not click get exchange rates again.
+
+15
+00:01:19,900 --> 00:01:30,900
+ And we also need to check that if user change the currency, or if he change the amount, or if he change currency from,
+
+16
+00:01:30,900 --> 00:01:36,340
+ so we need to clean up it, and just hide it.
+
+17
+00:01:36,340 --> 00:01:41,900
+ Okay, let's start with, this might be cleaning a mock data.
+
+18
+00:01:41,900 --> 00:01:49,700
+ So as I mentioned, AI missed to remove this data, it's not good to keep them, because we use real API calls.
+
+19
+00:01:49,700 --> 00:01:56,340
+ But now, and you'll clean up this key power project structure, clean, and up to date.
+
+20
+00:01:56,340 --> 00:01:59,780
+ So I will ask AI to delete the specific file.
+
+21
+00:01:59,780 --> 00:02:04,220
+ I of course can remove it by myself, but might be imported somewhere.
+
+22
+00:02:04,220 --> 00:02:10,300
+ I can also ask AI, please remove all mocks, but sometimes he can make it wrong.
+
+23
+00:02:10,300 --> 00:02:16,260
+ He can delete the wrong files, so you, the more the task to give him, the more context to give him.
+
+24
+00:02:16,260 --> 00:02:21,140
+ So simple, I can write result, you will give, you will have.
+
+25
+00:02:21,140 --> 00:02:26,500
+ So I will use agent, because I need to make some fixes.
+
+26
+00:02:26,500 --> 00:02:37,180
+ So let's check, so he deleted currencies, he check that have been deleted, there are no direct imports to this file.
+
+27
+00:02:37,180 --> 00:02:39,100
+ Okay, yeah, that's fine.
+
+28
+00:02:39,100 --> 00:02:42,380
+ It was deleted and more imports.
+
+29
+00:02:42,380 --> 00:02:49,460
+ So the next fix we will do, we will, we have to API calls with the cross one to get currencies,
+
+30
+00:02:49,460 --> 00:02:56,820
+ with all supported currencies we have, and the next one, we have to get the latest controllers and rights.
+
+31
+00:02:56,820 --> 00:03:03,220
+ It should be moved out from the details to the separate folder.
+
+32
+00:03:03,220 --> 00:03:09,780
+ And same for this util, like the conversion util should be separate and stored on the utils folder,
+
+33
+00:03:09,780 --> 00:03:16,620
+ and also this make from currency also should be separate one.
+
+34
+00:03:16,620 --> 00:03:23,500
+ So because it's not, it's really a mess, so when we will write the unit test, we will need to do some refactoring,
+
+35
+00:03:23,500 --> 00:03:26,220
+ we might have some difficulties.
+
+36
+00:03:26,220 --> 00:03:37,220
+ So I prepared the prompt, so I will ask, move all API calls to source API folder in separate files,
+
+37
+00:03:37,220 --> 00:03:46,740
+ and it mentions the name of the files like fetch currencies and get rates that he'll understand what exactly API calls I want to move.
+
+38
+00:03:46,740 --> 00:03:54,980
+ I also mentioned that more conversion logic from data rates, this conversion logic, he did it here, yeah.
+
+39
+00:03:54,980 --> 00:04:03,940
+ To separate util, like convert amount, which will be placed on the utils folder,
+
+40
+00:04:03,940 --> 00:04:11,940
+ and also move helper function like make fleck from currency, which we use in app.tastic files,
+
+41
+00:04:11,940 --> 00:04:19,900
+ the main application file also to use folder, also ask update all imports to match new paths.
+
+42
+00:04:19,900 --> 00:04:25,740
+ So let's ask, and you'll see how he will do it.
+
+43
+00:04:25,740 --> 00:04:31,500
+ Also, if you don't like the result, it might be because you use the model automatically,
+
+44
+00:04:31,500 --> 00:04:42,500
+ and you can use the, I recommend you to use a cloud sonnet, so you can use sonnet or 0.5.
+
+45
+00:04:42,500 --> 00:04:50,300
+ Nowadays, it's the latest model, it's really good for coding tasks for some research, so you can use it.
+
+46
+00:04:50,300 --> 00:04:56,300
+ But because I'm on a free plan, I have limitations, so I will use auto.
+
+47
+00:04:56,300 --> 00:05:04,540
+ You can also try to use the composer, it's something you presented from Kursor, which should be good for coding tasks.
+
+48
+00:05:04,540 --> 00:05:14,220
+ So we'll see, okay, AI is finished, let's, it's a summary, it was smooth to get.
+
+49
+00:05:14,220 --> 00:05:23,780
+ I'll open API folder, I see fetch currencies, yes, it looks okay, what is the abort signal?
+
+50
+00:05:23,780 --> 00:05:34,300
+ Then all get rates, we also have, we get a URL problems, we set the URL, then we get the rates,
+
+51
+00:05:34,300 --> 00:05:40,620
+ and then we return all the data, okay, it also looks fine, it's of course mode ideal,
+
+52
+00:05:40,620 --> 00:05:48,020
+ because we duplicate the types right here, but it's fine for now, let's check the details we have,
+
+53
+00:05:48,020 --> 00:05:59,020
+ convert amount, yes, it also looks good, yes, acceptable, I would say, and make like from currency, it also looks acceptable.
+
+54
+00:05:59,020 --> 00:06:12,180
+ And now let's check our API f.t6, so yeah, we have f.t6, so we move the fetch in currencies,
+
+55
+00:06:12,180 --> 00:06:20,740
+ here we use the fetch method, we also move this URL, okay, we also use get rates here,
+
+56
+00:06:20,740 --> 00:06:32,540
+ to convert an amount, okay, we can click keep all, keep all the changes, it's now a bit better,
+
+57
+00:06:32,540 --> 00:06:46,260
+ as we do rates, fetch rates, and it's separate utl, so we still have rates file, which is not used anymore, I suppose,
+
+58
+00:06:46,260 --> 00:07:04,820
+ so let me check it here, so we don't use, and let's ask linear files, not all files, not used anymore,
+
+59
+00:07:04,820 --> 00:07:14,660
+ when I say I mean this rates.ts file, let's see, we should identify it, yep, it was deleted, okay,
+
+60
+00:07:14,660 --> 00:07:21,940
+ and now we're finished with doing these changes, we of course can do the refactoring, yes, because we can improve,
+
+61
+00:07:21,940 --> 00:07:28,500
+ well, I just use the use effect, not react, but use effect, so we can do a lot of improvements here,
+
+62
+00:07:28,500 --> 00:07:35,540
+ we can also ask to refactor this method, a lot of symbols, etc, so there are a lot of places to improve,
+
+63
+00:07:35,540 --> 00:07:43,460
+ but then we spend a lot of time on just until slathons, so I won't do it, so last fix, I don't do,
+
+64
+00:07:43,460 --> 00:07:56,100
+ I don't ask to fix how we will dispose the result, so because right now is displayed, always
+
+65
+00:07:56,100 --> 00:08:02,660
+ and we need to dispose it only when we click get a change rates, and after we change any amount,
+
+66
+00:08:02,660 --> 00:08:13,140
+ any currency, or we do the swap, so we just hide it, okay, I also prepared the prompt,
+
+67
+00:08:14,420 --> 00:08:21,940
+ let's ask it, clear the result, display when the user changes, the amount of currencies,
+
+68
+00:08:21,940 --> 00:08:26,660
+ all the result only after new conversion is completed, if no conversion yet,
+
+69
+00:08:26,660 --> 00:08:34,340
+ keep the result there is empty, I'll show a short hand hint message, okay, all the prompts you can
+
+70
+00:08:34,340 --> 00:08:40,020
+ find in specific words and with materials and prompts, so no worry you can codify them and run,
+
+71
+00:08:40,580 --> 00:08:50,820
+ so let's see how we either do the task, so I think you should make it perfect,
+
+72
+00:08:50,820 --> 00:09:09,860
+ okay, you know, use has converted, okay, if we have amount from up to was updated,
+
+73
+00:09:11,460 --> 00:09:26,500
+ okay we first had the values state, okay, plus just check if it works, yeah, we need to run
+
+74
+00:09:26,500 --> 00:09:35,540
+ application again, yeah, it works, so let me enter an amount and click on the word to see the result,
+
+75
+00:09:36,580 --> 00:09:48,020
+ let me do it, we have the right, if I change, it works for the change of the amount, let's
+
+76
+00:09:48,020 --> 00:09:55,940
+ change the currency, it works, let's change the currency to it works, what if you do the swap,
+
+77
+00:09:57,060 --> 00:10:07,460
+ yep, it also works, okay, now let's show information with display, so, hey, this is page insulate,
+
+78
+00:10:07,460 --> 00:10:13,220
+ straight, yeah, everything works perfect, or if you'd like to do any other improvements,
+
+79
+00:10:13,220 --> 00:10:21,620
+ you can follow a approach with it, so you can ask to refactor it, to split some logic,
+
+80
+00:10:21,620 --> 00:10:29,220
+ to, I don't know, improve some UI, add some new features, so you can play with it, I recommend
+
+81
+00:10:29,220 --> 00:10:36,820
+ you to, I know, create an ideas, what else you can improve in this UI and try it by yourself,
+
+82
+00:10:36,820 --> 00:10:44,180
+ might be to add, might be to add a history, what currencies we change might be, I don't know,
+
+83
+00:10:44,180 --> 00:10:51,540
+ this way, some preferred currency, some might be anything else, okay, I'll see you in the next
+
+84
+00:10:51,540 --> 00:10:56,740
+ last time, the value right, the unit test, I will show you how to do it, and how to ask the eye,
+
+85
+00:10:56,740 --> 00:11:01,140
+ clearly to make it, with a good structure.
+
