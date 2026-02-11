@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:05,520
+ Hi, in this lesson I want to talk with you about chat context.
+
+2
+00:00:05,520 --> 00:00:11,680
+ I will explain what is this, why we need to use it in how it helps to get better responses
+
+3
+00:00:11,680 --> 00:00:13,440
+ from AI.
+
+4
+00:00:13,440 --> 00:00:19,400
+ So context is all information we provide to AI models during core generation.
+
+5
+00:00:19,400 --> 00:00:24,560
+ It might include files, symbols, folders and conversation history.
+
+6
+00:00:24,560 --> 00:00:29,240
+ If it's clear what is files and folders, conversation history, you might ask what is
+
+7
+00:00:29,240 --> 00:00:30,720
+ symbols.
+
+8
+00:00:30,720 --> 00:00:37,600
+ If I open any file, you will see the name of the class, the constructor, the name of the
+
+9
+00:00:37,600 --> 00:00:44,240
+ methods, a format currency, convert, save to history, it's all as symbols.
+
+10
+00:00:44,240 --> 00:00:49,960
+ So symbols, it's methods, class names, variables and etc.
+
+11
+00:00:49,960 --> 00:00:59,080
+ So the easiest way to provide explicit context is with this button or you can just type
+
+12
+00:00:59,080 --> 00:01:04,720
+ the same symbol right here in a chat and you will see the drop down where you can choose
+
+13
+00:01:04,720 --> 00:01:07,600
+ type of context you want to use.
+
+14
+00:01:07,600 --> 00:01:14,720
+ So this is a great way to know specifically what file, folder or piece of code you will change
+
+15
+00:01:14,720 --> 00:01:20,520
+ because the more specific you be, the better answer you will get from AI.
+
+16
+00:01:20,520 --> 00:01:26,360
+ And if you see, let's talk about files and folders.
+
+17
+00:01:26,360 --> 00:01:34,680
+ For example, you can reference entire files in chat by mentioning them right here.
+
+18
+00:01:34,680 --> 00:01:45,240
+ And the story provides, you follow these files when generating the answers.
+
+19
+00:01:45,240 --> 00:01:52,040
+ You can also drag and drop these files right here to the sidebar or if I just drag and
+
+20
+00:01:52,040 --> 00:01:57,560
+ drop you see they edit as a context.
+
+21
+00:01:57,560 --> 00:02:05,520
+ If you want to use folders, so you can choose folders like I don't have any folder right
+
+22
+00:02:05,520 --> 00:02:11,880
+ here, I have the whole folder of the project, I can mention it.
+
+23
+00:02:11,880 --> 00:02:20,560
+ And for example, if you need to choose, for example, the shooting folders, let's create
+
+24
+00:02:20,560 --> 00:02:30,680
+ some source folder, some, I know, other utils and create just file util.js.
+
+25
+00:02:30,680 --> 00:02:40,920
+ And let's try to mention like if I use source, I will type it, I will type source.
+
+26
+00:02:40,920 --> 00:02:48,800
+ If I want to go to the Julian file, I just type the slash and I can choose utils and when
+
+27
+00:02:48,800 --> 00:02:55,760
+ I type course or highlight what folders I have, so I can choose it.
+
+28
+00:02:55,760 --> 00:02:58,080
+ Okay.
+
+29
+00:02:58,080 --> 00:03:04,880
+ You also see when I've been typing the folder names, we have an option enable full context
+
+30
+00:03:04,880 --> 00:03:06,560
+ in settings.
+
+31
+00:03:06,560 --> 00:03:13,660
+ This is an option I talk you in one of the previous or last time that you can include
+
+32
+00:03:13,660 --> 00:03:22,520
+ full context and for example, when it's enabled, corsard tries to include all files from
+
+33
+00:03:22,520 --> 00:03:24,720
+ the folder as the context.
+
+34
+00:03:24,720 --> 00:03:29,320
+ It might be used if you really need to consider all files in the folder as the context
+
+35
+00:03:29,320 --> 00:03:36,400
+ because the downside of this option as, for example, models have some limitations.
+
+36
+00:03:36,400 --> 00:03:38,800
+ How context big can be?
+
+37
+00:03:38,800 --> 00:03:43,680
+ For example, how many symbols you can send them to the as a context?
+
+38
+00:03:43,680 --> 00:03:50,080
+ And if you have this option enabled by default, you will use really a lot of tokens, tokens
+
+39
+00:03:50,080 --> 00:03:58,160
+ it's like some symbols you send to the models, they have some rate limits and you will
+
+40
+00:03:58,160 --> 00:04:00,440
+ see this tokens much faster.
+
+41
+00:04:00,440 --> 00:04:07,520
+ So, I not recommend you to enable every time only if you own a proper one or in some higher
+
+42
+00:04:07,520 --> 00:04:12,600
+ plans where you have a lot of really big rate limits and you really need to consider it
+
+43
+00:04:12,600 --> 00:04:13,840
+ as a context.
+
+44
+00:04:13,840 --> 00:04:18,600
+ I recommend you to explicitly mention files you need to use.
+
+45
+00:04:18,600 --> 00:04:26,400
+ For example, also if you really need a big context, you can include this on.
+
+46
+00:04:26,400 --> 00:04:35,040
+ You can also use, for example, Max mode for your model and in this case, you can include
+
+47
+00:04:35,040 --> 00:04:42,480
+ the bigger context, but you of course you use much more tokens.
+
+48
+00:04:42,480 --> 00:04:50,600
+ And also, every time you send a message, you might check how much tokens you send, for
+
+49
+00:04:50,600 --> 00:05:03,600
+ example, I will ask both currencies, my app, the port, so after it will answer, I can
+
+50
+00:05:03,600 --> 00:05:20,400
+ check how many tokens I used, so see, generate responses a bit longer, okay, it's quite
+
+51
+00:05:20,400 --> 00:05:21,400
+ long.
+
+52
+00:05:21,400 --> 00:05:29,960
+ I will stop it, so, but there are 2T pride here, you can hover it and see how many tokens
+
+53
+00:05:29,960 --> 00:05:30,960
+ you use.
+
+54
+00:05:30,960 --> 00:05:37,840
+ Also, there are another symbol quote you can use, or I will remove all the context, you
+
+55
+00:05:37,840 --> 00:05:46,120
+ can mention a quote right here, and you can select some specific parts of quote which
+
+56
+00:05:46,120 --> 00:05:58,200
+ you want to use, so, for example, I don't have many, if you have a bigger application,
+
+57
+00:05:58,200 --> 00:06:03,120
+ you will see the difference, but currently, it suggests me only some parts of line you
+
+58
+00:06:03,120 --> 00:06:13,280
+ see from 65 to 60, so, from 1 to 57, so, this is a class implementation, this is a class,
+
+59
+00:06:13,280 --> 00:06:27,280
+ our user class name, okay, also, there is a docs symbol, so you can mention any doc,
+
+60
+00:06:27,280 --> 00:06:38,560
+ the documentation, we can use, so, we can use any documentation, like if you know your
+
+61
+00:06:38,560 --> 00:06:48,800
+ question is about the nexus, you can access right here, docs, access, so, and you will
+
+62
+00:06:48,800 --> 00:06:55,040
+ use this documentation, if you need, you can add any documentation right here, you can
+
+63
+00:06:55,040 --> 00:07:01,440
+ just mention the URL of the documentation, if it's not listed, so, and it will go through
+
+64
+00:07:01,440 --> 00:07:06,000
+ the documentation, and when you ask some questions, you can also consider some sub pages,
+
+65
+00:07:06,000 --> 00:07:15,240
+ so, it's really useful, okay, you can also use past shots, for example, if you are working
+
+66
+00:07:15,240 --> 00:07:19,880
+ on a complex task, and you might need to reference context or some decisions from your
+
+67
+00:07:19,880 --> 00:07:27,640
+ previous conversations, and, like, normally, when you need it, like, when you have a lot
+
+68
+00:07:27,640 --> 00:07:33,000
+ of discussion with important context reference, so, when you start in a new task, and you
+
+69
+00:07:33,000 --> 00:07:42,120
+ want to continue on the previous one, for example, you can use this previous shot as a context,
+
+70
+00:07:42,120 --> 00:07:49,680
+ another symbol you can use is linear errors, when you mention it, and you have any linear
+
+71
+00:07:49,680 --> 00:07:58,960
+ errors, like, you have some wrong formatting, you code, like, let me show you, for example,
+
+72
+00:07:58,960 --> 00:08:10,380
+ I forget to paste comma, I have a literal, so, and I can mention it, what errors I have,
+
+73
+00:08:10,380 --> 00:08:18,120
+ so, let's wait, you have a syntax error, so, and it's just me how I can fix it, I can
+
+74
+00:08:18,120 --> 00:08:25,880
+ apply it right from here, and accept it, so, this is the most popular symbol, you can, of
+
+75
+00:08:25,880 --> 00:08:32,320
+ course, use a different, the rest of the symbols, you can read about them in the commentation,
+
+76
+00:08:32,320 --> 00:08:37,360
+ and I really hope this lesson give you much more information about context, and you'll
+
+77
+00:08:37,360 --> 00:08:44,800
+ help you to be more clear in your prompts, and to really get better responses from AI, so,
+
+78
+00:08:44,800 --> 00:08:50,880
+ let's see you in the next lesson, hi, I would love to hear, what do you think about this
+
+79
+00:08:50,880 --> 00:08:56,000
+ course, I really hope you enjoy, and just want to say, your thoughts are very important
+
+80
+00:08:56,000 --> 00:09:01,960
+ to me, if you have a moment, let's show your feedback and experience, believe in a review,
+
+81
+00:09:01,960 --> 00:09:07,760
+ in case you have any questions, feel free to ask them in Q&A section, anytime, and see you
+
+82
+00:09:07,760 --> 00:09:08,600
+ in the course.
+
