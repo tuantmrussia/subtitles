@@ -1,0 +1,824 @@
+1
+00:00:00,000 --> 00:00:10,920
+Hey guys, và chào mừng đến với một không gian khác và tưởng tượng có lẽ hầu hết trong số họ
+
+2
+00:00:10,920 --> 00:00:19,440
+sẽ là một mới chủ đề này, Hooking và Unoking có lẽ một số trong số họ chia sẻ hoặc thiết lập
+
+3
+00:00:19,440 --> 00:00:31,200
+Thuật ngữ móc câu. Chúng tôi sẽ được sử dụng Hooks từ trong nhiều lần thậm chí cá khi
+
+4
+00:00:31,200 --> 00:00:37,200
+Chúng ta sẽ đi câu cá ở bến cảng hay gì đó. Nhưng trong thời gian an ninh mạng sẽ là
+
+5
+00:00:37,200 --> 00:00:45,200
+giống như khá khác biệt như một phần Hooking. Để tôi cho các bạn thấy cái móc là gì. Cơ bản là
+
+6
+00:00:45,200 --> 00:00:55,440
+móc câu được sử dụng bởi các phần mềm kháng virus và các yếu tố đe dọa. Cả hai
+
+7
+00:00:55,440 --> 00:01:06,080
+những điều khoản như phương pháp móc câu sẽ được sử dụng bởi những người bảo vệ để phát triển phần mềm độc hại của họ để tránh
+
+8
+00:01:06,080 --> 00:01:21,840
+EDR và nền tảng chống virus cũng như các trường học khác nhau như EDRs và
+
+9
+00:01:21,840 --> 00:01:32,320
+Thuốc kháng virus hay gì đó. Vì vậy, về cơ bản móc câu được giới thiệu bởi giới thiệu
+
+10
+00:01:32,320 --> 00:01:41,120
+Lập trình viên. Vậy, chúng ta hãy lấy một ví dụ. Có một lập trình viên đã phát triển một
+
+11
+00:01:41,120 --> 00:01:49,000
+ứng dụng và ông rời khỏi tổ chức đó và vì vậy một nhà phát triển mới đã được tham gia và
+
+12
+00:01:49,000 --> 00:01:57,800
+Người phát triển mới không thể thấy mã. Vậy, mật mã hắn dùng là gì và hắn đã được dùng như thế nào?
+
+13
+00:01:57,800 --> 00:02:04,280
+đã trả lại chương trình và cách anh trích dẫn đơn. Hắn không biết bên trong đang xảy ra chuyện gì.
+
+14
+00:02:04,280 --> 00:02:12,120
+vì không thấy được mật mã. Vì vậy, tại thời điểm này, ông cần sử dụng một số bản cập nhật. Anh ấy cần phải...
+
+15
+00:02:12,120 --> 00:02:20,680
+Thay đổi một số tùy chọn hoặc anh ta cần thêm một số tùy chọn vào chương trình. Vì vậy, vì vậy, chúng tôi có thể sử dụng một
+
+16
+00:02:20,680 --> 00:02:33,800
+móc câu. Về cơ bản, móc câu sẽ thay đổi lưu lượng thực hiện của chương trình và cho chúng tôi, tôi sẽ cung cấp
+
+17
+00:02:33,800 --> 00:02:42,200
+ví dụ nhỏ thôi. Vì vậy, bạn đang chơi một số trò chơi và sức khỏe của bạn là quan trọng ở đó. Có một
+
+18
+00:02:42,200 --> 00:02:53,240
+Trò chơi chiến đấu và vì vậy sức khỏe của bạn sẽ là, nếu sức khỏe sẽ là 100 bạn có thể chiến đấu nhiều hơn nhưng khi
+
+19
+00:02:53,240 --> 00:03:01,000
+Sức khỏe sẽ giảm xuống còn dưới 10, bạn có ít thời gian hơn để chiến đấu cho đúng. Vậy, những gì chúng ta có thể làm,
+
+20
+00:03:01,000 --> 00:03:08,040
+Chúng ta có thể chơi trò chơi và thay đổi dòng chảy thi hành. Vì vậy, bất cứ khi nào bạn trúng mục tiêu,
+
+21
+00:03:08,040 --> 00:03:15,960
+Bất cứ khi nào bạn bị bắn, bắn tỉa hoặc cái gì đó, cho đến khi bạn sẽ có 100%
+
+22
+00:03:15,960 --> 00:03:22,840
+vì sức khỏe của anh. Vì vậy, bạn nhấn nhiều lần như là 100,000 lần. Vì vậy, bạn vẫn sẽ có
+
+23
+00:03:22,840 --> 00:03:30,280
+Một phần trăm sức khỏe để chống lại mục tiêu. Vì vậy, những gì chúng tôi đã làm, chúng tôi chỉ
+
+24
+00:03:30,280 --> 00:03:36,760
+Thay đổi, chúng tôi chỉ đưa ra những thay đổi nhỏ trong một chương trình. Nó bắt đầu như một cái móc, chúng tôi chỉ
+
+25
+00:03:36,760 --> 00:03:51,720
+Thay đổi dòng chảy thực thi của chương trình và chúng tôi vừa thay đổi sức khỏe thành 100.
+
+26
+00:03:51,720 --> 00:04:00,920
+Vì vậy, bất cứ khi nào chúng tôi làm một số loại móc nối trong một ứng dụng chơi game để thay đổi sức khỏe
+
+27
+00:04:00,920 --> 00:04:12,680
+Để có sức khỏe ổn định, như 100%, bạn có thể liên tục chơi game.
+
+28
+00:04:12,680 --> 00:04:19,400
+Đây được gọi là hack game hay gì đó. Vì vậy, theo phương pháp móc câu, bạn có thể
+
+29
+00:04:19,400 --> 00:04:27,160
+Dễ dàng đạt được điều đó. Cùng một cách trong an ninh mạng, chiến thuật hàng không khác nhau,
+
+30
+00:04:27,160 --> 00:04:35,960
+Các chương trình hàng không khác nhau, nó sẽ làm một số mức độ APA móc để ẩn
+
+31
+00:04:35,960 --> 00:04:42,760
+Phần mềm chống virus hoặc chương trình EDRs. Vì vậy, hãy để tôi cung cấp cho một ví dụ nhỏ về làm thế nào móc
+
+32
+00:04:42,760 --> 00:04:50,120
+Sẽ còn tệ hơn trong thời gian thực. Vì vậy, tôi có một chút khác biệt của chương trình chống virus trong máy của tôi,
+
+33
+00:04:50,120 --> 00:04:59,320
+Vì vậy, bạn có thể thấy ở đây và cho tôi đi cho một bài tập. Vì vậy, ở đây bạn có thể thấy các ứng dụng,
+
+34
+00:04:59,320 --> 00:05:10,280
+Nhiệm vụ sau 30XE và ở đây các bạn có thể thấy các tay cầm, các tay buôn, các sợi chỉ đã được nạp đạn. Vì vậy, nếu bạn thấy điều này
+
+35
+00:05:10,280 --> 00:05:18,840
+DL, DTHKM64.DL, có chút khác biệt về móc câu. Nó liên quan đến quá trình, đúng không?
+
+36
+00:05:18,840 --> 00:05:25,560
+Nó liên quan đến quá trình sau khi chết. Tại sao? Các bit khác nhau liên quan đến nhiệm vụ
+
+37
+00:05:25,560 --> 00:05:34,200
+Sau khi chết. Cái gì? Các bit khác nhau đang làm ở đây. Để tôi giải thích ngắn gọn.
+
+38
+00:05:34,200 --> 00:05:42,200
+Vậy, chúng ta hãy lấy một ví dụ. Tôi đã phát triển một chương trình, một mã độc, vì vậy mà mã sẽ được đi
+
+39
+00:05:42,200 --> 00:05:54,920
+để đưa một mã tế bào độc hại vào nhiệm vụ sau khi chết. Vì vậy, bất cứ khi nào chúng tôi cố gắng tiêm
+
+40
+00:05:55,640 --> 00:06:01,400
+Chúng ta sẽ làm gì đây? Chúng tôi sẽ gọi một số loại
+
+41
+00:06:01,400 --> 00:06:07,320
+chức năng của APA, bên phải, giống như bản ghi của quá trình đúng bộ nhớ tạo ra sợi tơ từ xa,
+
+42
+00:06:07,320 --> 00:06:18,920
+Được rồi. Vì vậy, EDR sẽ theo dõi này chức năng APA và nó sẽ ngăn chặn chúng tôi, đúng không. Vậy,
+
+43
+00:06:22,040 --> 00:06:28,200
+ở hậu phương, EER theo dõi quá trình, đúng vậy, EER đang giám sát quá trình.
+
+44
+00:06:28,200 --> 00:06:35,640
+Hệ thống giám sát bằng cách nào? Làm sao EDR biết? Chương trình nguy hiểm của chúng tôi sẽ tiêm một cái gì đó
+
+45
+00:06:35,640 --> 00:06:43,080
+trong nhiệm vụ sau khi chết. Làm sao EDR biết? Làm thế nào ER hiểu những gì đã xảy ra trong nền của các
+
+46
+00:06:43,080 --> 00:06:52,280
+được rồi. Vụ móc câu sắp diễn ra rồi. Phần mềm chống virus, thức ăn,
+
+47
+00:06:52,280 --> 00:07:00,200
+DLS trong các nhiệm vụ ứng dụng sau khi tiến sĩXE và nó hoàn toàn theo dõi quá trình,
+
+48
+00:07:00,200 --> 00:07:09,480
+Được rồi. Vì vậy, bây giờ EDR biết những gì đã xảy ra bên trong quá trình, những gì đã xảy ra giao tiếp IP,
+
+49
+00:07:09,480 --> 00:07:14,680
+Các cuộc gọi của APA đang diễn ra như thế nào?
+
+50
+00:07:14,680 --> 00:07:21,320
+Những gì là các cuộc gọi hệ thống đang xảy ra, tất cả mọi thứ EDR đến để biết toàn bộ quá trình, xương sống
+
+51
+00:07:21,320 --> 00:07:30,360
+toàn bộ quá trình. Vì vậy, bằng kỹ thuật móc, ER có thể hoàn toàn theo dõi quá trình
+
+52
+00:07:30,360 --> 00:07:42,440
+Bao gồm các hệ thống ATI, thông tin liên lạc IT, nội dung, mã, vân vân, được rồi. Giờ tôi đã nói,
+
+53
+00:07:42,440 --> 00:07:50,840
+Vì vậy, EDR sẽ là một trong những công cụ mạnh mẽ, nó sẽ được, nó có khả năng làm bất cứ điều gì
+
+54
+00:07:50,840 --> 00:07:59,000
+bên trong Windows, nó có thể móc bất cứ quá trình nào, okay. Vì vậy, trong ví dụ của chúng tôi, chúng tôi chỉ nhìn thấy trong
+
+55
+00:07:59,000 --> 00:08:04,760
+được rồi.
+
+56
+00:08:04,760 --> 00:08:19,160
+Vì vậy, bất cứ khi nào các cửa sổ, Windows khởi động lên, giá thầu bảo vệ nạp tập tin DI bằng cách gọi
+
+57
+00:08:19,160 --> 00:08:27,400
+Thư viện LL tải và đưa DL vào trong nhiệm vụ sau khi chết, được chứ. Bằng cách này,
+
+58
+00:08:27,400 --> 00:08:35,320
+Vì vậy, bất cứ điều gì ứng dụng đã làm, EDR đến biết, ER và nếu một phần mềm
+
+59
+00:08:35,320 --> 00:08:42,920
+được rồi. Vì vậy, bây giờ tôi hy vọng bạn đã rõ ràng
+
+60
+00:08:42,920 --> 00:08:49,160
+Hiểu biết về móc, do đó, những gì đã được móc và làm thế nào ER và phần mềm EDR vẫn
+
+61
+00:08:49,160 --> 00:09:01,240
+Được rồi. Hãy lấy một ví dụ về thế giới thực, làm thế nào các phần mềm độc hại sẽ được phản ứng và làm thế nào
+
+62
+00:09:01,240 --> 00:09:09,560
+EDR sẽ phản ứng lại. Để tôi giải thích cho cô hiểu chuyện gì sẽ xảy ra.
+
+63
+00:09:09,560 --> 00:09:18,360
+trong ví dụ dưới bậc thang, được rồi. Hãy lấy một ví dụ
+
+64
+00:09:19,640 --> 00:09:26,440
+hoạt động thường ngày của chúng tôi trong nhà, okay. Không một, không một ngôi nhà, hãy lấy một ví dụ
+
+65
+00:09:26,440 --> 00:09:33,080
+Ví dụ về một cửa hàng và nhà hàng có một nhà bếp. Trong nhà bếp, mọi thứ
+
+66
+00:09:33,080 --> 00:09:44,040
+đã được thực hiện. Nấu ăn, dọn dẹp, quản lý mọi thứ, đúng không? Nhà bếp,
+
+67
+00:09:44,040 --> 00:09:53,800
+Được rồi. Phần tiếp theo của bếp sẽ là đầu bếp. Một trong những quyền làm đầu
+
+68
+00:09:55,480 --> 00:10:19,480
+là chỉ huy những gì cần phải được thực hiện đầu, đầu bếp trưởng, người sẽ đến và phần tiếp theo sẽ là
+
+69
+00:10:19,480 --> 00:10:28,600
+bồi bàn, được rồi. Cô ấy sẽ như vậy, vì vậy chúng tôi là khách hàng và chúng tôi sẽ gọi cho bồi bàn, phải.
+
+70
+00:10:28,600 --> 00:10:37,880
+Tôi cần một miếng phô mai hay nhiều thịt gà hơn, các bạn có thể cần cà chua, hành tây hay gì đó,
+
+71
+00:10:37,880 --> 00:10:45,480
+Phải. Chúng ta sẽ gọi bồi bàn và gọi món và chúng ta là khách hàng, đúng không?
+
+72
+00:10:47,320 --> 00:10:58,680
+Đây là, okay. Vì vậy, hãy lấy một ví dụ, nhà bếp hạt nhân trong máy của chúng tôi,
+
+73
+00:10:58,680 --> 00:11:11,400
+Được rồi. Chúng tôi sẽ gọi nhà bếp của một hạt nhân phụ và bếp trưởng trưởng của NTDI,
+
+74
+00:11:12,280 --> 00:11:27,560
+Vì vậy, chúng tôi biết những gì là một NTdell, quyền. NTdell. Đây là một tập tin DL giữ một chức năng AP quan trọng,
+
+75
+00:11:27,560 --> 00:11:35,320
+sẽ được dùng bởi cửa sổ, okay. Và chúng ta có thể gọi người bồi bàn là hạt nhân,
+
+76
+00:11:35,320 --> 00:11:51,960
+xin lỗi vì đã dành thời gian, tôi đang vẽ trong Hpad, được chứ.
+
+77
+00:11:51,960 --> 00:12:01,880
+Được rồi. Và ứng dụng con người, được rồi.
+
+78
+00:12:06,280 --> 00:12:10,520
+Anh có thể gọi đơn đó là chủ nhiệm vụ Chrome hay gì đó, được chứ?
+
+79
+00:12:10,520 --> 00:12:16,920
+Hãy lấy một ví dụ ở đây. Vì vậy, chương trình của chúng tôi,
+
+80
+00:12:16,920 --> 00:12:25,720
+Bình tĩnh với bồi bàn. Chương trình của chúng tôi, nói với hạt nhân32dll, như tôi muốn lưu một tập tin,
+
+81
+00:12:25,720 --> 00:12:33,160
+Tôi cần lưu hồ sơ. Vì vậy, bạn đang tải một cái gì đó từ một Chrome và tập tin cần
+
+82
+00:12:33,160 --> 00:12:37,800
+để lưu vào thư mục tải về. Vậy, cuộc gọi của Chrome, tôi muốn lưu lại hồ sơ, được chứ?
+
+83
+00:12:37,800 --> 00:12:45,880
+Và nó nói với hạt nhân DL, okay. Nó không phải hạt nhân, hạt nhân32, được chứ?
+
+84
+00:12:45,880 --> 00:12:55,800
+Để tôi lấy hạt nhân 32dll. Và những gì các bước tiếp theo, do đó hạt nhân 32 chấm DL gọi
+
+85
+00:12:55,800 --> 00:13:07,160
+Bản thân Hpad, được rồi. Bản NTDL, và nó nói với ứng dụng cần phải lưu một số tập tin, okay.
+
+86
+00:13:07,160 --> 00:13:15,560
+Vậy bản thân Hpad sẽ làm gì? Bản thân Hpad sẽ gọi cho chương trình, okay.
+
+87
+00:13:15,560 --> 00:13:24,520
+Cuộc gọi trực tiếp, và ông sẽ được tiếp cận đến hạt nhân, và bản thân Hpad, NTdell sẽ được
+
+88
+00:13:24,520 --> 00:13:31,720
+nói với hạt nhân, giống như ứng dụng cần lưu một số tập tin, vui lòng phân cấp một số khoảng trống và
+
+89
+00:13:31,720 --> 00:13:37,880
+Giúp họ đi. Vậy là nhà bếp đã nhận được lệnh và anh ta đang nấu ăn. Cùng một cách,
+
+90
+00:13:37,880 --> 00:13:44,680
+Ứng dụng của bạn chỉ huy, tôi muốn lưu một tập tin vào hạt nhân 32dL, và hạt nhân 32dll của bạn
+
+91
+00:13:44,680 --> 00:13:50,840
+Tiếp cận với NTDL, hàm bên dưới AP, đó là một cấp độ cao AP, hạt nhân 32dell
+
+92
+00:13:50,840 --> 00:13:59,000
+là một cấp cao hơn, và nó đã được gọi đến hàm bên dưới AP, bản thân Hpad, và có
+
+93
+00:13:59,000 --> 00:14:08,680
+là NTDIL, và NTDIL dot DLL, cho một cuộc gọi cộng hưởng từ hệ thống cho hạt nhân,
+
+94
+00:14:08,680 --> 00:14:16,520
+và nói rằng ứng dụng cần phải lưu một số tập tin, chúng tôi cần làm một số trợ giúp ở đó, okay.
+
+95
+00:14:17,880 --> 00:14:26,600
+Vì vậy, bất cứ khi nào bạn cần để tương tác với phần cứng, vì vậy bạn đã lưu các tập tin vào phần cứng
+
+96
+00:14:26,600 --> 00:14:36,920
+Bên phải, hay nóng nhất, đó là một khoảng dừng vật lý trong laptop của chúng tôi. Vì vậy, nếu bạn muốn tương tác với
+
+97
+00:14:36,920 --> 00:14:44,600
+Các phần cứng, hệ điều hành, các cửa sổ sẽ không có khả năng làm điều đó, okay.
+
+98
+00:14:44,600 --> 00:14:52,120
+Vậy, chỉ hạt nhân mới có thể giao tiếp với phần cứng cũng như hệ điều hành,
+
+99
+00:14:52,120 --> 00:15:04,200
+Được rồi. Nó, nó là, nó là, nó có một trung gian, nó là trung gian cho phần cứng,
+
+100
+00:15:04,200 --> 00:15:10,360
+cũng như hệ điều hành cửa sổ. Vì vậy, hạt nhân chỉ có thể phân phối
+
+101
+00:15:10,920 --> 00:15:14,760
+Một chút ký ức bên trong phần cứng, được chứ? Điều tương tự cũng xảy ra ở đây.
+
+102
+00:15:14,760 --> 00:15:23,640
+Vì vậy, hạt nhân, giống như hạt nhân, khi các, khi những người đứng đầu của các chấm NTDI gọi các âm tiết,
+
+103
+00:15:23,640 --> 00:15:28,840
+Hạt nhân đi tới ổ cứng, và anh ta, và nó đang làm, và nó đã,
+
+104
+00:15:28,840 --> 00:15:37,480
+tạo khoảng trống để lưu tập tin. Vì vậy, chỉ có chấm NTDI
+
+105
+00:15:38,600 --> 00:15:44,680
+Chỉ có thể gọi cho Sys, nên hạt nhân sẽ chỉ chịu trách nhiệm cho cuộc gọi cộng hưởng, okay.
+
+106
+00:15:44,680 --> 00:15:54,520
+Chỉ có điều, chỉ có điều nó là, giao tiếp thông qua cuộc gọi cộng hưởng, okay.
+
+107
+00:15:54,520 --> 00:16:00,360
+Vì vậy, hạt nhân chỉ cần một âm tiết để giao tiếp, để cấp cho không gian để làm bất cứ điều gì,
+
+108
+00:16:01,080 --> 00:16:10,680
+Được rồi. Vậy đây là toàn bộ sự lo lắng, chuyện gì sẽ xảy ra? Vì vậy, một khi bạn, một khi bạn gọi bất cứ điều gì
+
+109
+00:16:10,680 --> 00:16:14,200
+được chứ.
+
+110
+00:16:14,200 --> 00:16:23,960
+Hãy lấy một ví dụ thời gian thực. Vì vậy, có một, có một đường nút, và có một
+
+111
+00:16:23,960 --> 00:16:29,080
+ứng dụng, và đường dẫn nút đã gọi tập tin bên phải của hàm APA, nó đã đi đến
+
+112
+00:16:29,080 --> 00:16:34,520
+được rồi. Và nó cần phải viết một số hồ sơ, và những gì hạt nhân đã làm,
+
+113
+00:16:34,520 --> 00:16:44,200
+Nên nó gọi hàm AP, W, viết file, okay.
+
+114
+00:16:44,200 --> 00:16:55,320
+Viết tập tin của, và beta đi với H của, và ông nói, con đường nút này cần phải
+
+115
+00:16:55,320 --> 00:17:01,880
+lưu một số tập tin, okay. Vì vậy, đột nhiên APA, vì vậy điều này tất cả các cấp độ APA là, okay, viết file ra, okay.
+
+116
+00:17:01,880 --> 00:17:14,360
+Và thực thể L, vì vậy một khi nó đạt đến thực thể LL, vì vậy APA sẽ được thay đổi đến cấp thấp hơn, thấp hơn
+
+117
+00:17:14,360 --> 00:17:21,240
+của APA, okay, nó sẽ thêm NT, bản địa, viết file ra, okay. Vì vậy, không có gì thay đổi, chỉ có
+
+118
+00:17:21,240 --> 00:17:29,000
+Các chức năng của APA sẽ được thay đổi, vì vậy điều này tất cả các chức năng thấp hơn APA, do đó, điều này tất cả các cấp thấp hơn
+
+119
+00:17:29,000 --> 00:17:37,320
+APA là, okay. Vì vậy, đây là cấp cao hơn, ghi tập tin ra, và NT, DL là một cấp độ thấp hơn APA,
+
+120
+00:17:37,320 --> 00:17:48,680
+Được rồi. Và một khi mức độ APA thấp hơn được gọi, phần tiếp theo sẽ là âm tiết,
+
+121
+00:17:48,680 --> 00:17:53,400
+Được rồi, các âm tiết sẽ gọi và nó sẽ đến bảng điều khiển ngay bây giờ. Vậy đây là
+
+122
+00:17:53,400 --> 00:18:02,840
+Toàn bộ chu kỳ nấu ăn. Vì vậy, trong trường hợp của chúng tôi, những gì phần mềm khác nhau của chúng tôi đã làm,
+
+123
+00:18:02,840 --> 00:18:09,080
+Được rồi. Vì vậy, khu vực của chúng tôi, khu vực của chúng tôi, và các phần mềm khác nhau, nó sẽ tạo ra
+
+124
+00:18:09,080 --> 00:18:17,240
+được chứ. Vậy, nó sẽ là...
+
+125
+00:18:17,240 --> 00:18:29,400
+Khu vực sẽ ở đây, hoặc AV, và các phần mềm khác nhau sẽ ở đây,
+
+126
+00:18:29,400 --> 00:18:34,680
+Và nó sẽ theo dõi những gì đã xảy ra ở phía sau. APA gọi là,
+
+127
+00:18:34,680 --> 00:18:41,240
+Vì vậy những gì đã đi và những gì cần phải là, những gì cần được lưu trong thư mục tải về,
+
+128
+00:18:41,240 --> 00:18:46,040
+những thứ cần phải ở trong ký ức hay gì đó. Nó sẽ theo dõi mọi thứ,
+
+129
+00:18:46,040 --> 00:18:52,840
+Được rồi. Nó sẽ được nấu ăn, và nó sẽ theo dõi tuổi tác và mọi thứ, okay.
+
+130
+00:18:52,840 --> 00:19:03,800
+Bây giờ, chúng ta hãy xem chức năng nào, mà hàm số APA, người, okay. EDR, người, ở cấp độ thấp hơn APA
+
+131
+00:19:03,800 --> 00:19:11,880
+chức năng, NT viết tắt, bên phải. Vì vậy, nó, người, các chức năng viết-off NT và xem những gì
+
+132
+00:19:11,880 --> 00:19:17,560
+đúng không. Bởi vì nó là liên lạc viên cho người dẫn đầu,
+
+133
+00:19:17,560 --> 00:19:23,160
+Và nó là trung gian liên lạc giữa nhà bếp và các đầu trang, okay. Vì vậy, ở giữa trên AP,
+
+134
+00:19:23,160 --> 00:19:32,280
+Nếu sẽ được gọi, chức năng viết tắt NT, có, có một cuộc gọi trợ giúp,
+
+135
+00:19:32,920 --> 00:19:42,520
+Và điều này cần được gọi. Được rồi. Vì vậy, EER, hiểu từng thứ một,
+
+136
+00:19:42,520 --> 00:19:48,760
+Mà, các chức năng viết-off NT APA, bên phải. Vậy là ai?
+
+137
+00:19:48,760 --> 00:20:00,760
+Vì vậy, bây giờ, chúng ta hãy xem một ví dụ thời gian thực, hãy để tôi cho bạn thấy một cái gì đó.
+
+138
+00:20:00,760 --> 00:20:05,720
+Hãy để tôi mở một nút đệm ở đây, vì vậy hành động, và tôi có thể giải thích cho những gì sẽ là,
+
+139
+00:20:05,720 --> 00:20:19,400
+những gì sẽ được thực hiện. Để tôi mở, cái gì, cái gì thực sự là một món ăn, okay. Để tôi mở một cái gỡ lỗi X64,
+
+140
+00:20:19,400 --> 00:20:29,000
+Và để tôi gắn miếng lõi ở đây, và để tôi đi lấy bản đồ bộ nhớ, và để tôi chuyển hướng đến,
+
+141
+00:20:31,320 --> 00:20:46,040
+văn bản cho tài nguyên văn bản phút. Vâng, xin hãy tháo lắp ráp,
+
+142
+00:20:46,040 --> 00:20:54,680
+Và ở đây bạn có thể thấy, ở đây bạn có thể thấy byte 40 là 255,
+
+143
+00:20:55,240 --> 00:21:09,960
+Và phần văn bản hướng về BCE, 1000, để tôi mở một hacker quy trình,
+
+144
+00:21:10,920 --> 00:21:25,080
+Và cho phép tôi đi đến các nút giấy ở đây, tải các nút giấy, và để tôi tìm kiếm cho mục.ex. Vậy,
+
+145
+00:21:25,080 --> 00:21:38,120
+Ở đây bạn có thể tìm cùng một địa chỉ, 75 BCE, 1000, BCE, 1000, để tôi mở rộng nó, được chứ?
+
+146
+00:21:38,120 --> 00:21:49,400
+Vì vậy, ở đây bạn có thể thấy cùng một chức năng bộ nhớ, bên phải, cùng một byte, 40 là 257, sau đó
+
+147
+00:21:49,400 --> 00:22:06,200
+8d, thứ hai, xin lỗi cho những lần trước, trước đó bởi vì tôi đã thiết lập điểm ngắt ở đó. Vậy, bây giờ,
+
+148
+00:22:06,200 --> 00:22:16,760
+Bạn có thể thấy 40 là 257, và byte tiếp theo là 48 AD, 60, 24 C9, bên phải. Vì vậy, bạn có thể thấy
+
+149
+00:22:16,760 --> 00:22:37,640
+40, 55, 45, 45, 48, 48 TCN, 60, okay. Vì vậy, những gì tôi sẽ làm,
+
+150
+00:22:38,360 --> 00:22:48,440
+Tôi đã ngồi lên điểm nghỉ giải lao, okay, phá vỡ điểm, vì vậy bây giờ điểm ngắt đã được thiết lập về phía này
+
+151
+00:22:48,440 --> 00:23:00,520
+địa chỉ, và những gì chúng ta sẽ làm, chúng ta sẽ di chuyển nó, okay. Vì vậy, chúng ta sẽ thay đổi
+
+152
+00:23:00,520 --> 00:23:09,800
+được rồi. Hãy để tôi đi đến quá trình hacker,
+
+153
+00:23:09,800 --> 00:23:18,120
+Và để tôi viết lại. Bây giờ bạn có thể thấy các byte đã được thay đổi, 40, 55,
+
+154
+00:23:18,120 --> 00:23:28,040
+và CC. Vậy, trước đây là 40, 48, đúng không? Giờ chúng ta có thể thấy C.C có liên quan,
+
+155
+00:23:28,040 --> 00:23:36,840
+Phải. Nhưng trước khi nó là 48, trước khi tôi đặt đến điểm nghỉ, trước khi tôi đặt vào một điểm nghỉ,
+
+156
+00:23:36,840 --> 00:23:43,800
+Đó là vào năm 48, giờ là CC. Chúng tôi vừa thay đổi dòng chảy hành hình, đúng không?
+
+157
+00:23:43,800 --> 00:23:52,520
+của chương trình. Vì vậy, bây giờ, nếu tôi thực hiện, nếu tôi thực hiện chương trình này,
+
+158
+00:23:53,320 --> 00:24:01,880
+Vì vậy, những gì chương trình sẽ làm, nó sẽ được chuyển hướng đến bộ gỡ lỗi, bên phải, bởi vì tôi thiết lập một giải lao
+
+159
+00:24:01,880 --> 00:24:09,240
+Đúng rồi. Nó sẽ dừng lại ở đó. Có một điểm ngắt, do đó, chương trình thực hiện
+
+160
+00:24:09,240 --> 00:24:17,880
+sẽ bị ngăn chặn, và nó sẽ chờ lệnh tiếp theo từ một người gỡ lỗi, được chứ? Vì vậy, nó được gọi là
+
+161
+00:24:17,880 --> 00:24:24,280
+là móc câu. Chúng tôi vừa thay đổi dòng chảy hành hình. Vì vậy, chúng tôi chỉ cần nói chuyện với các chương trình
+
+162
+00:24:24,280 --> 00:24:29,400
+từ cuộc hành hình bằng cách đặt một điểm nghỉ. Địa chỉ đã được đổi thành C.C.
+
+163
+00:24:29,400 --> 00:24:35,800
+Các byte đã thay đổi thay vì 48, ở đây bạn có thể tìm thấy CC. Sau 40, 55, 48 sẽ ở đó,
+
+164
+00:24:35,800 --> 00:24:41,080
+Nhưng bây giờ là CC. Vì vậy, bây giờ bạn có thể thấy dòng chảy hành hình đã được thay đổi.
+
+165
+00:24:41,080 --> 00:24:50,600
+Bây giờ, dòng chảy đang chuyển hướng đến bộ gỡ lỗi, vì vậy bây giờ bạn có thể, bây giờ bạn có thể cảm thấy làm thế nào móc sẽ
+
+166
+00:24:50,600 --> 00:24:59,880
+được rồi. Vì vậy, đây là làm thế nào EERs và EDRs và phần mềm chống ngược
+
+167
+00:24:59,880 --> 00:25:04,680
+Nó nên là móc câu, và nó sẽ giám sát những gì chúng tôi đang làm trong ứng dụng, okay.
+
+168
+00:25:05,800 --> 00:25:15,480
+Vì vậy, bây giờ, hãy xem làm thế nào chúng ta có thể vượt qua phần mềm chống đảo bằng phương pháp móc, okay.
+
+169
+00:25:15,480 --> 00:25:29,080
+Hãy rút ra một ví dụ. Để tôi xóa cái này, cho tôi một giây.
+
+170
+00:25:29,080 --> 00:25:34,920
+Bây giờ, hãy lấy một ví dụ về cách chúng ta cần phát triển chương trình ở đây, được chứ.
+
+171
+00:25:35,400 --> 00:25:41,800
+Vì vậy, có một số ứng dụng độc hại, bạn đang phát triển ứng dụng độc hại này, malapp,
+
+172
+00:25:41,800 --> 00:25:45,480
+Thật là độc ác.
+
+173
+00:25:45,480 --> 00:25:59,800
+Vì vậy, một khi bạn, một khi bạn gọi trong bất kỳ loại chức năng ADI, như hạt nhân 32 chức năng,
+
+174
+00:25:59,800 --> 00:26:06,840
+Giống như là viết ra tập tin, nên cái nút tiền chuộc của anh sẽ viết, đọc tôi.txt hay gì đó,
+
+175
+00:26:06,840 --> 00:26:12,360
+Được rồi. Vì vậy, hạt nhân 32DRL của bạn sẽ gọi tập tin viết tắt chức năng, bên phải.
+
+176
+00:26:12,360 --> 00:26:22,040
+Tập tin hàm phải, nhưng một khi tập tin ghi ra chức năng được gọi qua hạt nhân 32. DRL,
+
+177
+00:26:22,040 --> 00:26:32,920
+Vì vậy, nó sẽ được chuyển hướng về phía đầu của chống DRL, các chức năng có tên chống viết tắt.
+
+178
+00:26:32,920 --> 00:26:40,680
+Vậy, điều quan trọng chúng ta cần theo dõi, hệ thống EER sẽ bị móc, phản tác dụng từ chức năng,
+
+179
+00:26:40,680 --> 00:26:49,240
+Được rồi. Vì vậy, bây giờ, bất cứ khi nào chương trình của bạn gọi chống viết ra chức năng, EER biết những gì đã xảy ra
+
+180
+00:26:50,040 --> 00:26:54,280
+được chứ?
+
+181
+00:26:54,280 --> 00:27:00,360
+Vì vậy, bất cứ khi nào chương trình của bạn gọi, mad.exe của bạn gọi các chống viết tắt chức năng,
+
+182
+00:27:00,360 --> 00:27:06,040
+Vì vậy, hệ thống EDR đi vào cuộc chơi, và nó theo dõi những gì đang diễn ra bên trong chương trình, okay.
+
+183
+00:27:06,040 --> 00:27:12,120
+Nó có thể, nó có thể có một vài video dừng lại, chấm dứt quá trình của bạn, thậm chí nó có thể làm bất cứ điều gì, okay.
+
+184
+00:27:12,120 --> 00:27:19,320
+Vì vậy, bây giờ những gì chúng ta có thể làm, chúng ta cần phải đi qua bước này, đúng không? Chúng ta cần phải đi qua bước này.
+
+185
+00:27:20,040 --> 00:27:27,880
+Thay vì gọi các chức năng chống viết ra dưới mức AP, vì vậy những gì chương trình của chúng tôi cần làm,
+
+186
+00:27:27,880 --> 00:27:38,520
+Nó cần phải được gọi trực tiếp, được chứ? Thông qua số điện thoại, ví dụ,
+
+187
+00:27:38,520 --> 00:27:45,320
+là 0x65.
+
+188
+00:27:45,320 --> 00:27:52,360
+Hãy gọi đây là một số âm tiết của chống viết tắt chức năng, vì vậy chương trình của chúng tôi cần phải
+
+189
+00:27:52,360 --> 00:28:00,680
+Gọi số 0x55, và nó cần tiếp cận hạt nhân. Thay vì gọi một chức năng AP,
+
+190
+00:28:00,680 --> 00:28:07,240
+được chứ? Vì vậy, bằng cách gọi số điện thoại, bạn có thể dễ dàng vượt qua
+
+191
+00:28:08,280 --> 00:28:21,080
+Được rồi. Vì vậy, bây giờ EDR không biết những gì đang xảy ra bên trong, những gì đang xảy ra bên trong chương trình, okay.
+
+192
+00:28:39,240 --> 00:28:48,040
+Vì vậy, bạn sẽ đọc một cuộc gọi cộng hưởng, làm thế nào bạn có thể biết những gì là một số điện thoại, okay.
+
+193
+00:28:48,040 --> 00:28:57,080
+Vì vậy, bất cứ khi nào bạn bắt đầu chạy ứng dụng, được rồi, cho ứng dụng, bạn cần phải thu thập một địa chỉ cuộc gọi,
+
+194
+00:28:57,080 --> 00:29:02,840
+Được rồi. Vậy nên, địa chỉ cuộc gọi sẽ được giấu trong các chức năng chống lỗi toàn bộ,
+
+195
+00:29:02,840 --> 00:29:08,520
+Vì vậy, bạn cần phải đọc một cuộc gọi cộng hưởng từ anti-re all chức năng bất cứ khi nào bạn
+
+196
+00:29:08,520 --> 00:29:17,160
+Bất cứ khi nào anh bắt đầu thực hiện, bất cứ khi nào chương trình của anh ở chế độ thực thi, được chứ?
+
+197
+00:29:17,160 --> 00:29:21,560
+Vì vậy, đó sẽ là phương pháp duy nhất bạn có thể
+
+198
+00:29:26,360 --> 00:29:34,200
+được chứ? Vì vậy, đây sẽ là bước duy nhất.
+
+199
+00:29:34,200 --> 00:29:46,520
+Tôi hy vọng bạn có, bạn đã hiểu lời giải thích về móc câu, vì vậy làm thế nào nó sẽ xảy ra,
+
+200
+00:29:46,520 --> 00:29:52,760
+Được rồi. Vì vậy, các cuối thay vì gọi trực tiếp chức năng APA trực tiếp, chúng tôi có thể sử dụng một số âm tiết,
+
+201
+00:29:53,560 --> 00:30:01,080
+0-X-5-5 và chúng tôi có thể, đó là một ví dụ, 0-X-5 và chúng tôi có thể gọi hạt nhân. Đây là
+
+202
+00:30:01,080 --> 00:30:06,200
+được chứ?
+
+203
+00:30:06,200 --> 00:30:16,520
+Vì vậy, bạn cần phải đọc các số âm tiết mỗi khi chương trình của bạn đã được trong thời gian chạy
+
+204
+00:30:18,440 --> 00:30:26,200
+Và bạn cần phải gọi cho số điện thoại cộng hưởng và bạn có thể mà rất ngắn với hạt nhân,
+
+205
+00:30:26,200 --> 00:30:31,880
+Thay vì gọi hàm APA thấp hơn, được chứ. Vì vậy, tôi hy vọng bạn đã thích video này
+
+206
+00:30:31,880 --> 00:30:36,520
+và chúng tôi có thể thấy các bạn trong video tiếp theo. Tạm biệt.
+
