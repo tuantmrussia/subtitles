@@ -1,0 +1,235 @@
+1
+00:00:01,139 --> 00:00:05,440
+If you ever deploy the infrastructure manually, you know the feeling.
+
+2
+00:00:05,659 --> 00:00:09,060
+You click a few buttons and your Kubernetes clusters starts running.
+
+3
+00:00:09,220 --> 00:00:12,489
+But later on, if you try to repeat the same deployment,
+
+4
+00:00:12,659 --> 00:00:14,539
+you missed a couple of things here and there.
+
+5
+00:00:14,779 --> 00:00:18,500
+Infrastructure as a Code exists exactly to prevent that.
+
+6
+00:00:18,590 --> 00:00:22,010
+Let's see how we can use Terraform to deploy the
+
+7
+00:00:22,010 --> 00:00:25,329
+clusters and resources into Google Cloud.
+
+8
+00:00:25,450 --> 00:00:26,000
+For this,
+
+9
+00:00:26,129 --> 00:00:30,329
+I assume that you already have VS Code installed and in
+
+10
+00:00:30,329 --> 00:00:33,150
+that you have already added Terraform.
+
+11
+00:00:33,450 --> 00:00:34,689
+If you're not aware of it,
+
+12
+00:00:34,810 --> 00:00:40,690
+you simply go down to Google, and it is straightforward to install the VS Code,
+
+13
+00:00:40,690 --> 00:00:44,349
+and similarly it is straightforward to install Terraform.
+
+14
+00:00:44,470 --> 00:00:44,909
+Lastly,
+
+15
+00:00:44,990 --> 00:00:50,599
+I also assume that you have Google SDK also installed on your local machine.
+
+16
+00:00:50,750 --> 00:00:52,340
+Now I'm using the MacBook,
+
+17
+00:00:52,389 --> 00:00:56,069
+but this exercise can be easily done on a Windows machine as well.
+
+18
+00:00:56,189 --> 00:01:00,310
+Now in Terraform, we should have one file, main.tf.
+
+19
+00:01:00,509 --> 00:01:02,959
+This is to initialize the Terraform configuration.
+
+20
+00:01:03,592 --> 00:01:06,222
+I start defining by the Google provider.
+
+21
+00:01:06,513 --> 00:01:09,572
+Then, I'm enabling the required APIs,
+
+22
+00:01:09,623 --> 00:01:14,513
+and we are creating the VPC network and subnet through this specific code.
+
+23
+00:01:14,822 --> 00:01:15,822
+Now on similar lines,
+
+24
+00:01:15,913 --> 00:01:19,392
+I have the variables.tf that contains a couple of
+
+25
+00:01:19,392 --> 00:01:23,032
+variables where I have given the name, the project ID,
+
+26
+00:01:23,313 --> 00:01:23,913
+region,
+
+27
+00:01:24,032 --> 00:01:29,313
+and our network name and our subnetwork name as a variable. And we
+
+28
+00:01:29,313 --> 00:01:32,865
+have outputs.tf where we have defined the output,
+
+29
+00:01:33,396 --> 00:01:33,835
+network name,
+
+30
+00:01:34,026 --> 00:01:36,555
+subnetwork self‑link. And lastly, we have
+
+31
+00:01:36,555 --> 00:01:41,835
+terraform.tfvars where I'm providing the project ID where
+
+32
+00:01:41,835 --> 00:01:44,795
+I'm going to exactly create all of these.
+
+33
+00:01:44,875 --> 00:01:46,636
+It's time to go and run that.
+
+34
+00:01:46,875 --> 00:01:50,216
+So first thing which we need to do is Google Cloud authentication.
+
+35
+00:01:50,316 --> 00:01:51,776
+So here in the terminal,
+
+36
+00:01:51,875 --> 00:01:55,526
+I'm typing gcloud auth application‑default login and say Enter.
+
+37
+00:01:57,080 --> 00:02:00,209
+This will redirect, and I'll do the Google authentication.
+
+38
+00:02:00,360 --> 00:02:04,139
+Now, once the authentication has been done, I'm going to run terraform init.
+
+39
+00:02:05,389 --> 00:02:06,550
+That will initialize.
+
+40
+00:02:06,750 --> 00:02:10,190
+Then I'm going to run terraform plan. That will give me the
+
+41
+00:02:10,190 --> 00:02:11,990
+exact plan what you're going to create.
+
+42
+00:02:12,070 --> 00:02:15,169
+And then finally I'm going to say terraform apply.
+
+43
+00:02:15,279 --> 00:02:18,910
+Now this is the point where it goes and actually starts
+
+44
+00:02:18,910 --> 00:02:21,580
+deploying our resources into the Google Cloud.
+
+45
+00:02:21,649 --> 00:02:25,919
+Now you can see that it has successfully created our resources.
+
+46
+00:02:26,039 --> 00:02:31,160
+Now I go down to my Google Cloud, go down to my specific project, that is hpc1,
+
+47
+00:02:31,399 --> 00:02:34,639
+and inside that, if I go down to my VPC there,
+
+48
+00:02:34,800 --> 00:02:40,789
+so you can see that I got it, demo‑vpc‑1. And if I go inside the demo‑vpc‑1,
+
+49
+00:02:41,000 --> 00:02:46,580
+I should be able to see the subnet as well, that is demo‑subnet‑1.
+
+50
+00:02:46,779 --> 00:02:51,369
+So that's how our Terraform has created the resource into the Google Cloud.
+
+51
+00:02:51,500 --> 00:02:54,500
+On similar lines, we can also use the CFT.
+
+52
+00:02:54,699 --> 00:02:58,220
+CFT stands for Google Cloud Foundation Toolkit.
+
+53
+00:02:58,419 --> 00:03:02,500
+They are the already approved templates from Google which you can
+
+54
+00:03:02,500 --> 00:03:05,250
+use to create your Infrastructure as a Code.
+
+55
+00:03:05,350 --> 00:03:10,580
+For example, in this, I'm using the CFT network module from the CFT,
+
+56
+00:03:10,619 --> 00:03:13,949
+which is an approved module for creating the network resources.
+
+57
+00:03:14,149 --> 00:03:16,110
+So instead of writing your own code,
+
+58
+00:03:16,229 --> 00:03:20,419
+you can use the pre‑built templates from the Google CFT, and
+
+59
+00:03:20,419 --> 00:03:23,750
+you can use that for creating your resources.
