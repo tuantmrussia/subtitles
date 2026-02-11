@@ -1,0 +1,248 @@
+1
+00:00:00,000 --> 00:00:01,000
+ Hi.
+
+2
+00:00:01,000 --> 00:00:05,300
+ And this was some I want to talk with you about wind surf context.
+
+3
+00:00:05,300 --> 00:00:13,040
+ So context is anything is related to your question or your problem to the wind surf, everything
+
+4
+00:00:13,040 --> 00:00:20,480
+ makes sense to look any examples, additional information, which can help to improve the accuracy
+
+5
+00:00:20,480 --> 00:00:22,720
+ of the result.
+
+6
+00:00:22,720 --> 00:00:29,920
+ So let's talk about the default context, what wind surf automatically used as a context.
+
+7
+00:00:29,920 --> 00:00:37,040
+ So, it used as a context, a current file and other open files in your code editor, like
+
+8
+00:00:37,040 --> 00:00:43,680
+ it used the file names as a file structure to understand what is your problem about what
+
+9
+00:00:43,680 --> 00:00:46,360
+ is your project, what is your context.
+
+10
+00:00:46,360 --> 00:00:52,360
+ It also used your entire local code based, indexed to find some relevant code snippets
+
+11
+00:00:52,360 --> 00:00:58,520
+ as you work, because sometimes you know, specify the clear files you need to look and
+
+12
+00:00:58,520 --> 00:01:02,640
+ wind surf is looking for your code based to find the relevant information.
+
+13
+00:01:02,640 --> 00:01:10,200
+ Also, for pro users, there is more context length, so you can keep more files, more data
+
+14
+00:01:10,200 --> 00:01:16,840
+ as a context, you have bigger index limits and more custom opinion context, like you have
+
+15
+00:01:16,840 --> 00:01:19,720
+ more possibilities, it's for pro plan.
+
+16
+00:01:19,720 --> 00:01:26,020
+ Teams and enterprise also have all these features, they additionally are able to index
+
+17
+00:01:26,020 --> 00:01:31,720
+ remote repositories, like other projects and it might be helpful when you work in a cross
+
+18
+00:01:31,720 --> 00:01:34,320
+ multiple repost.
+
+19
+00:01:34,320 --> 00:01:39,160
+ So let's now talk about some best practice for opinion and context, what you need to
+
+20
+00:01:39,160 --> 00:01:46,400
+ pin, so you should pin only what you need, because if you pin too much, it can slow
+
+21
+00:01:46,400 --> 00:01:47,400
+ things down.
+
+22
+00:01:47,400 --> 00:01:53,520
+ So what is useful to pin some class or struct definitions files from other models, which
+
+23
+00:01:53,520 --> 00:01:56,320
+ should relate to your question.
+
+24
+00:01:56,320 --> 00:02:01,280
+ The framework library code examples, for example, if you created a new component, you
+
+25
+00:02:01,280 --> 00:02:06,520
+ can mention the old components just to be an example in what file you write code and what
+
+26
+00:02:06,520 --> 00:02:09,620
+ file you expect the component should be.
+
+27
+00:02:09,620 --> 00:02:15,400
+ You can place the files for specific interface, I know some configuration, which might
+
+28
+00:02:15,400 --> 00:02:24,160
+ help AI to understand better what you want to get from him.
+
+29
+00:02:24,160 --> 00:02:29,480
+ Also you can put as a context, some small folder with small files you work in, like if you
+
+30
+00:02:29,480 --> 00:02:35,680
+ work in a feature and you have feature folder, you can put all the feature folder to get
+
+31
+00:02:35,680 --> 00:02:41,720
+ an information about some related files, or you can put just the file what you're going
+
+32
+00:02:41,720 --> 00:02:49,500
+ to test, you can mention some details files, some small files, and just ask for AI to write
+
+33
+00:02:49,500 --> 00:02:55,240
+ the test, so we don't know what files you mean.
+
+34
+00:02:55,240 --> 00:03:03,880
+ There is a functions functionality in WinServe, I will show you later how to use it and where
+
+35
+00:03:03,880 --> 00:03:04,880
+ you find it.
+
+36
+00:03:04,880 --> 00:03:11,440
+ So when you chat in WinServe, you can use the mention to bring specific part of code
+
+37
+00:03:11,440 --> 00:03:16,840
+ by in the conversation, and as you mentioned, it will always be included in the response,
+
+38
+00:03:16,840 --> 00:03:25,160
+ so AI will analyze it, where you can mention, you can mention function classes in supported
+
+39
+00:03:25,160 --> 00:03:31,840
+ languages, so it supports really a lot of languages, you can mention files and directories
+
+40
+00:03:31,840 --> 00:03:38,680
+ in your code base, you can mention some remote repositories and you can mention some terminal
+
+41
+00:03:38,680 --> 00:03:44,000
+ contacts, some commands, etcetera, when you mean the remote repositories, you can mention
+
+42
+00:03:44,000 --> 00:03:50,240
+ just the link on repository, which should be an example, so now let's dive into WinServe
+
+43
+00:03:50,240 --> 00:03:59,000
+ and I will show you how to use it, so right here you see you can ask anything and mention,
+
+44
+00:03:59,000 --> 00:04:06,040
+ you should use this special symbol to mention, you can use it, and choose whatever you want,
+
+45
+00:04:06,040 --> 00:04:11,400
+ another option how to do it, you can click add a context and use for example you want to upload
+
+46
+00:04:11,400 --> 00:04:17,400
+ an image, you can trigger some workflow and you can use the mention, what you have, you
+
+47
+00:04:17,400 --> 00:04:23,680
+ have web, you can mention okay, you can search by web, you can mention some code content
+
+48
+00:04:23,680 --> 00:04:32,440
+ items, for example mention what exactly you want, you can mention some files, or you will
+
+49
+00:04:32,440 --> 00:04:39,560
+ see all your project files right here, you can mention the directories and mention the folder
+
+50
+00:04:39,560 --> 00:04:47,400
+ like I have not models folder, but I'm not sure if it's visible, yep, I see it's visible
+
+51
+00:04:47,400 --> 00:04:54,200
+ only the test folder, okay, what else you can mention, you can mention the documentation
+
+52
+00:04:54,200 --> 00:05:05,320
+ like I know we gonna use, let's say just documentation, it's not found right here, so some
+
+53
+00:05:05,320 --> 00:05:13,080
+ of the documentation you can just mention manually, imagine we gonna use a node, a node just
+
+54
+00:05:13,080 --> 00:05:20,000
+ so we just mention it and can ask question about this documentation, what else, you can
+
+55
+00:05:20,000 --> 00:05:27,040
+ use the MCP service and knowledge rules, we will talk about it in a future lessons, we
+
+56
+00:05:27,040 --> 00:05:34,560
+ should plan into add later, you can mention the conversations, have a conversations, if you
+
+57
+00:05:34,560 --> 00:05:43,400
+ like have something useful in them, what else, you can mention the browser, the terminal,
+
+58
+00:05:43,400 --> 00:05:50,440
+ so we can written documentation about the browser and terminal means, but the most popular
+
+59
+00:05:50,440 --> 00:05:58,240
+ it, as the files folder and the commentations, it's the most popular things I use in my daily
+
+60
+00:05:58,240 --> 00:06:07,840
+ routines, so I hope it was useful for you, now you know that you can mention the context,
+
+61
+00:06:07,840 --> 00:06:16,040
+ it's really often how we sort of provide much better answers and responses, so it's
+
+62
+00:06:16,040 --> 00:06:20,360
+ impact the code quality and see you in the next lessons.
+
