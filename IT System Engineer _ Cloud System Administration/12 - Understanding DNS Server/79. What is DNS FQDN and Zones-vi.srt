@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:06,920
+Chúng ta sẽ thảo luận về DNS là gì và DNS hoạt động như thế nào.
+
+2
+00:00:06,920 --> 00:00:14,200
+Máy phục vụ DNS dịch tên miền đầy đủ khả năng vào địa chỉ IP và có thể
+
+3
+00:00:14,200 --> 00:00:21,440
+đầu tư vào dịch địa chỉ IP sang tên miền hoàn toàn đủ tiêu chuẩn.
+
+4
+00:00:21,440 --> 00:00:28,680
+Ngoài các bản dịch DNS cũng được dùng để tìm dịch vụ trên mạng bằng DNS
+
+5
+00:00:28,680 --> 00:00:29,680
+Hồ sơ.
+
+6
+00:00:29,680 --> 00:00:35,440
+Vì vậy, chúng tôi sẽ tìm hiểu về hồ sơ DNS sau này trong khóa học này, vì vậy tôi sẽ cho bạn thấy
+
+7
+00:00:35,440 --> 00:00:43,400
+Một số hồ sơ DNS chúng tôi có, nhưng các dịch vụ được định vị bằng DNS có thể là miền
+
+8
+00:00:43,400 --> 00:00:51,000
+Điều khiển, máy chủ tên, máy chủ thư và một loạt các dịch vụ khác.
+
+9
+00:00:51,000 --> 00:00:57,100
+Một trường hợp chung nơi DNS đang được sử dụng để xác định dịch vụ là khi trên mạng công ty
+
+10
+00:00:57,100 --> 00:01:11,660
+Máy khách sử dụng máy phục vụ LDAP để ghi lại hồ sơ máy phục vụ để định vị bộ điều khiển miền.
+
+11
+00:01:11,660 --> 00:01:17,000
+Giả sử chúng ta có tên miền là kelvglobar.com.
+
+12
+00:01:17,000 --> 00:01:25,720
+Đây là trang web kelvglobar.com cho nhân viên đăng nhập.
+
+13
+00:01:25,720 --> 00:01:32,160
+Địa chỉ web sẽ là www.Kelvglobar.com.
+
+14
+00:01:32,160 --> 00:01:38,980
+Đây là tên miền đầy đủ của toàn bộ máy chủ nơi mà trang web đang chạy.
+
+15
+00:01:38,980 --> 00:01:46,220
+Trong tên miền đầy đủ khả năng này là fqdn, chấm com là miền cấp cao nhất.
+
+16
+00:01:46,220 --> 00:01:52,740
+Phần trung tâm là một klvglobar được biết đến là phần tên miền.
+
+17
+00:01:52,740 --> 00:02:01,380
+Và cuối cùng tất nhiên là www được gọi là người dẫn chương trình.
+
+18
+00:02:01,380 --> 00:02:05,520
+Vì vậy, nó phải đã nhìn thấy, nó phải có nhìn thấy một số nơi đó là tên miền hoàn toàn đủ điều kiện là
+
+19
+00:02:05,520 --> 00:02:09,260
+luôn luôn theo sau bởi dấu chấm.
+
+20
+00:02:09,260 --> 00:02:16,380
+Nhưng chấm này là một miền gốc và thường chấm này không phải là tất cả bạn sử dụng trên một trang web.
+
+21
+00:02:16,380 --> 00:02:21,040
+Bạn có thể thấy những ví dụ ở N của tất cả, bạn thấy nó chấm sau khi chấm com, cho
+
+22
+00:02:21,040 --> 00:02:25,140
+Ví dụ chấm, sau đó bạn thấy một chấm khác, nhưng chấm này không được sử dụng ở tất cả.
+
+23
+00:02:25,140 --> 00:02:30,040
+Nhưng chấm này, nếu bạn nhìn vào một máy chủ web, bạn sẽ thấy chấm này có, nhưng trên
+
+24
+00:02:30,040 --> 00:02:36,720
+dấu chấm này sẽ không được hiển thị.
+
+25
+00:02:36,720 --> 00:02:43,000
+Vì vậy vùng DNS là một phần của không gian tên DNS mà máy chủ tất cả, máy chủ một tập hợp DNS
+
+26
+00:02:43,000 --> 00:02:47,280
+Ghi chép như các bạn thấy trong hình ảnh này.
+
+27
+00:02:47,280 --> 00:02:54,320
+Theo ghi chép của DNS, như ghi chép của máy, tên của hồ sơ ghi chép của chúng tôi, hồ sơ PTR tất cả sẽ ở
+
+28
+00:02:54,320 --> 00:02:55,320
+trong vùng của nó.
+
+29
+00:02:55,320 --> 00:03:00,120
+Nó là một loại ảnh chứa tất cả các tập tin danh sách.
+
+30
+00:03:00,120 --> 00:03:05,400
+Vì vậy, chúng tôi sẽ xem tất cả các hồ sơ khác nhau sau đó trong huấn luyện này.
+
