@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:05,160
+Xin chào, trong bài học này chúng tôi sẽ yêu cầu phi công viết bài kiểm tra đơn vị.
+
+2
+00:00:05,160 --> 00:00:11,300
+Các thử nghiệm đơn vị đảm bảo ứng dụng của chúng tôi vẫn hoạt động đúng sau khi chúng tôi thực hiện thay đổi.
+
+3
+00:00:11,300 --> 00:00:17,340
+Họ tự động kiểm tra các bộ phận nhỏ của mã, do đó, mỗi tập tin, mỗi chức năng của các tập tin
+
+4
+00:00:17,340 --> 00:00:20,200
+rằng nó vẫn hoạt động chính xác.
+
+5
+00:00:20,200 --> 00:00:22,800
+Và bạn không nên kiểm tra nó bằng tay.
+
+6
+00:00:22,800 --> 00:00:30,760
+Trong bài học này, bạn yêu cầu một phi công để tạo ra một thử nghiệm đơn vị cho ứng dụng máy tính, sau đó xem xét
+
+7
+00:00:30,760 --> 00:00:31,760
+Họ.
+
+8
+00:00:31,760 --> 00:00:33,440
+Chúng tôi sẽ thay đổi nếu cần.
+
+9
+00:00:33,440 --> 00:00:39,400
+Chúng tôi sẽ áp dụng sửa chữa nếu nó không hiệu quả ở cuối, nhưng tất nhiên nó sẽ hiệu quả, và chúng tôi sẽ
+
+10
+00:00:39,400 --> 00:00:40,400
+xác nhận sự thay đổi.
+
+11
+00:00:40,400 --> 00:00:46,400
+Vì vậy, chúng tôi sẽ tập trung vào việc kiểm tra logic chính của ứng dụng bên trong thành phần ứng dụng
+
+12
+00:00:46,400 --> 00:00:47,400
+Đây.
+
+13
+00:00:47,400 --> 00:00:55,320
+Chúng tôi cũng sẽ tập trung vào việc kiểm tra các chi tiết, tất cả các chi tiết chúng tôi có, và chúng tôi sẽ hỏi một phi công
+
+14
+00:00:55,320 --> 00:00:57,480
+để lo các vụ án.
+
+15
+00:00:57,480 --> 00:01:05,320
+Chúng ta cũng sẽ tập trung vào việc thử nghiệm móc câu, chúng ta có rất nhiều logic trong móc câu.
+
+16
+00:01:05,320 --> 00:01:12,360
+Thành phần, thành phần lá bài, thành phần hiển thị, nút biểu tượng, tôi để ý
+
+17
+00:01:12,360 --> 00:01:18,360
+rằng một số thành phần chúng ta không sử dụng, thành phần bài chúng ta không sử dụng, nên tôi đơn giản là
+
+18
+00:01:18,360 --> 00:01:28,720
+Tôi chỉ cần quên nó, chúng ta chỉ có thể xóa thành phần này, không chỉ là biểu tượng sẽ không
+
+19
+00:01:28,720 --> 00:01:32,040
+Che nó bằng cái đó.
+
+20
+00:01:32,040 --> 00:01:38,400
+Tôi có thể cài nút khóa, phần then chốt, vì vậy chúng ta có một logic ở đây.
+
+21
+00:01:38,400 --> 00:01:46,360
+Được rồi, tôi đã chuẩn bị dấu nhắc, vì vậy tôi sẽ sử dụng một chế độ động cơ, tôi hỏi, phải, đơn vị thử nghiệm cho
+
+22
+00:01:46,360 --> 00:01:52,240
+ứng dụng máy tính sử dụng kiểm tra, đó là utl, bài kiểm tra đơn vị viết, tương tự
+
+23
+00:01:52,240 --> 00:01:59,480
+để chỉ, tôi yêu cầu bao gồm tất cả các trường hợp sử dụng chính cho tất cả các thành phần, móc, utits, và chính
+
+24
+00:01:59,480 --> 00:02:08,720
+lên logic, tất cả những gì tôi nhìn thấy là quan trọng để trang trải bằng kiểm tra, sử dụng.spec.ts hoặc các bóng ma,
+
+25
+00:02:08,720 --> 00:02:15,240
+Đầu đề thông thường trong tập tin bằng thử ra, cho tên và giữ tất cả các thử nghiệm gần tương ứng
+
+26
+00:02:15,240 --> 00:02:21,560
+Tập tin, vì vậy chúng tôi sẽ giúp kiểm tra tập tin gần, các thành phần khác, móc, vì vậy để có nhiều hơn
+
+27
+00:02:21,560 --> 00:02:23,560
+Dễ dàng cập nhật cho họ hơn.
+
+28
+00:02:23,560 --> 00:02:29,440
+Được rồi, hãy viết, hãy hỏi, quyền lực để viết bài kiểm tra đơn vị, và sau đó chúng ta có thể,
+
+29
+00:02:29,440 --> 00:02:36,480
+Xem xét nó từng người một, và xem xét nó, nếu nó được thỏa mãn hay không.
+
+30
+00:02:36,480 --> 00:02:45,320
+Hãy xem, ông lần đầu tiên phân tích gói, tập tin JSON, và kiểm tra nếu chúng tôi phải cài đặt
+
+31
+00:02:45,320 --> 00:02:54,160
+Bất kỳ thư viện nào, như v thử nghiệm, hoặc một số chi tiết kiểm tra, vì vậy những gì nó làm, mô hình muốn
+
+32
+00:02:54,160 --> 00:02:59,240
+Chỉnh sửa tập tin nhạy cảm, trở lại JSON, bạn có muốn cho phép điều này?
+
+33
+00:02:59,240 --> 00:03:08,720
+OK, hãy cho phép video của tôi, chỉ cần thêm một phiên bản thư viện mới, vì vậy chúng tôi sẽ thêm một v thử, một số
+
+34
+00:03:08,720 --> 00:03:16,200
+Kiểm tra trong tiểu, vân vân, được rồi, hãy đánh dấu việc tạo tập tin cấu hình vT, chúng tôi cũng cần nó, nó
+
+35
+00:03:16,200 --> 00:03:28,200
+Bạn có thể thấy tất cả những thay đổi ở đây, và bây giờ nó sẽ tạo ra tất cả
+
+36
+00:03:28,200 --> 00:03:41,560
+tất nhiên, trước hết chúng ta cần được sắp xếp, okay, tôi sẽ đóng hồ sơ này lại, okay,
+
+37
+00:03:41,560 --> 00:03:48,980
+Và bây giờ chúng tôi có bài kiểm tra đầu tiên cho các định dạng số, vì vậy chúng tôi chỉ cần kiểm tra các trường hợp khác nhau
+
+38
+00:03:48,980 --> 00:03:54,900
+làm thế nào chúng ta định dạng số nguyên
+
+39
+00:03:54,900 --> 00:04:02,180
+với 1000 dấu định giới, với số thập phân, và dấu trừ một, vì vậy chúng ta thấy một thực sự đẹp, thực sự
+
+40
+00:04:02,180 --> 00:04:10,880
+chỉnh sửa rất nhiều trường hợp kiểm tra, mà tôi thích, vì vậy chỉ cần chắc chắn rằng tất cả mọi thứ đều hiệu quả, okay, hãy
+
+41
+00:04:10,880 --> 00:04:17,640
+Kiểm tra phần còn lại của các thử nghiệm, chúng tôi có kiểm tra hiển thị, vì vậy chúng tôi chỉ cần thực hiện các thành phần
+
+42
+00:04:17,640 --> 00:04:25,160
+Và cố gắng tìm kiếm, vì vậy với giá trị, chỉ cần cố gắng để tìm thấy nó giải quyết các giá trị, và sau đó chúng tôi
+
+43
+00:04:25,160 --> 00:04:35,440
+kiểm tra rằng lịch sử được cung cấp, chúng tôi kiểm tra các tin nhắn tồn tại, tôi không biết tại sao tin nhắn
+
+44
+00:04:35,440 --> 00:04:41,320
+được hiển thị, oh yeah, bởi vì chúng tôi chỉ cung cấp một thông điệp, vì vậy, và không nên cung cấp trống
+
+45
+00:04:41,320 --> 00:04:47,360
+lịch sử, chúng ta có như các trường hợp, các nút khóa, vì vậy nó sẽ kiểm tra rằng nó sẽ trình bày
+
+46
+00:04:47,360 --> 00:04:53,960
+các nút khác nhau, nó sẽ nhấn hoạt động, và đặt bên phải áp dụng chính xác loại của nhà điều hành
+
+47
+00:04:53,960 --> 00:05:01,840
+Điều khiển số, để tính toán, chúng tôi có với bổ sung, dài hạn,
+
+48
+00:05:01,840 --> 00:05:10,320
+nhân, vì vậy chúng ta thấy kiểm tra, các trường hợp khác nhau, ngay cả với, thậm chí với thập phân, vì vậy tôi thích
+
+49
+00:05:10,320 --> 00:05:22,360
+Nó, còn gì nữa, chúng ta có móc câu, móc câu chúng ta có khá nhiều trường hợp thử nghiệm, nên chúng ta
+
+50
+00:05:22,360 --> 00:05:30,680
+có một kiểm tra rằng nó là giới hạn lên đến 10 số, và trong tỷ lệ phần trăm, tổng số dấu hiệu,
+
+51
+00:05:30,680 --> 00:05:39,120
+AC để xóa tất cả các văn bản, vì vậy tôi thích nó, okay, những gì khác, các nút khóa, chúng tôi đã có
+
+52
+00:05:39,120 --> 00:05:54,240
+thấy không, nên chúng tôi không viết tất cả các xét nghiệm, chúng tôi hỏi, tôi không biết tại sao, tôi không biết nếu chúng tôi
+
+53
+00:05:54,240 --> 00:06:06,020
+Xem các tập tin thử nghiệm, okay, tôi không giết, click giữ và dừng lại, vì vậy cho bây giờ tôi sẽ chỉ kiểm tra
+
+54
+00:06:06,020 --> 00:06:13,160
+Tất cả các bài kiểm tra đều thành công, tôi sẽ thực hiện kiểm tra npm, như ông ấy đã đề nghị, tôi sẽ chỉ kiểm tra npm,
+
+55
+00:06:13,160 --> 00:06:22,900
+Được rồi, trong cùng một, okay, tôi nghĩ rằng tôi cần đầu tiên để chạy npm cài đặt chỉ 10.000 mới
+
+56
+00:06:22,900 --> 00:06:32,320
+phụ thuộc, vì vậy nếu đây là một trường hợp mà AI không bao gồm tất cả các thành phần bạn mong đợi, bạn có thể
+
+57
+00:06:32,320 --> 00:06:37,480
+là cần thiết để di chuyển tất cả các thành phần như một bối cảnh, chúng tôi muốn để trang trải, chúng tôi chỉ cần đề cập
+
+58
+00:06:37,480 --> 00:06:45,040
+Họ, chúng tôi có tin nhắn, và sau đó bạn sẽ chắc chắn, ông sẽ bao gồm tất cả các thành phần, vì vậy
+
+59
+00:06:45,040 --> 00:06:55,980
+Hiện tại, chúng tôi đang tiến hành kiểm tra, và chúng tôi có 65 xét nghiệm, hãy gửi nó, mong đợi, mở rộng thành thục,
+
+60
+00:06:55,980 --> 00:07:06,360
+Được rồi, chúng ta hãy di chuyển nó, và yêu cầu tôi để sửa chữa nó, bởi vì tôi không thích, ông đã viết các bài kiểm tra
+
+61
+00:07:06,360 --> 00:07:11,680
+Và nó không hoạt động, vì vậy nếu bạn cần in lề các lỗi, bởi vì khi bạn cấu hình
+
+62
+00:07:11,680 --> 00:07:16,200
+với tính chất này cho bài kiểm tra thành phần của bạn, okay, nhưng bạn đã không cấu hình đúng,
+
+63
+00:07:16,200 --> 00:07:24,840
+nhưng không phải tất cả các bài kiểm tra đều thành công, OK, AI vẫn đang sửa chữa tất cả các bài kiểm tra,
+
+64
+00:07:24,840 --> 00:07:41,120
+Những gì chúng ta nên sửa chữa bây giờ, những thay đổi, okay, sửa chữa tất cả các xét nghiệm, chứng minh, chúng, không hiệu quả, vì vậy
+
+65
+00:07:41,120 --> 00:07:54,360
+Hãy xem nếu tôi không xác định kiểm tra, không làm việc, nếu bạn sửa chữa chúng, chúng tôi có thể sao chép
+
+66
+00:07:54,360 --> 00:08:00,760
+quá khứ, cho trường hợp này, bạn sẽ không sửa chữa nó đúng, bởi vì chúng tôi thấy một trường hợp cho
+
+67
+00:08:00,760 --> 00:08:05,520
+Nút khóa, một trường hợp dùng máy tính, và hai trường hợp cho ứng dụng, không hoạt động,
+
+68
+00:08:05,520 --> 00:08:17,040
+Vì vậy, hãy xem nếu anh ta sẽ không nhận ra nó đúng, bởi vì nếu chúng tôi nói chúng tôi sử dụng mô hình ô tô,
+
+69
+00:08:17,040 --> 00:08:25,160
+Tôi đơn giản chỉ sử dụng một số mô hình chip từ phi công, tôi không biết, và làm thế nào nó tốt để viết
+
+70
+00:08:25,160 --> 00:08:32,920
+Bài kiểm tra, nhưng nếu bạn muốn có một chất lượng tốt sử dụng một trong những mẫu mới nhất, như, tôi
+
+71
+00:08:32,920 --> 00:08:42,520
+Các tập tin GPT cho, trích dẫn, định dạng, các tập tin mở ngày nay trong các mô hình mới nhất, okay, ông đang sửa chữa
+
+72
+00:08:42,520 --> 00:08:55,640
+Một vài xét nghiệm, nó rất tốt, được rồi, tôi sẽ bắt đầu lại tất cả các xét nghiệm, okay, now
+
+73
+00:08:55,640 --> 00:09:06,780
+Cái nút chìa khóa không hoạt động chỉ một lần thử nghiệm, hãy chạy, tôi sẽ gỡ bỏ máy tính từ đây,
+
+74
+00:09:06,780 --> 00:09:16,880
+Sửa chữa, trong thành phần này, và tôi sẽ chỉ cần sao chép dán những gì là không làm việc, bạn cũng có thể làm
+
+75
+00:09:16,880 --> 00:09:30,920
+Như thế này, sau đó anh ta sẽ nhận ra nhanh hơn những gì không hiệu quả, và chúng ta sẽ sửa chữa nó, okay, anh ta thấy
+
+76
+00:09:30,920 --> 00:09:44,840
+Vấn đề tiềm năng, được rồi, bây giờ nó hoạt động, tôi sẽ dừng nó lại, vì vậy chỉ cần bạn muốn để trang trải
+
+77
+00:09:44,840 --> 00:09:51,360
+Thêm các thành phần bởi đơn vị SAO, chỉ cần di chuyển các tập tin đến bối cảnh, và bạn sẽ chỉ cần viết
+
+78
+00:09:51,360 --> 00:09:58,760
+Vấn đề, bao gồm tất cả các thành phần bởi đơn vị SAO, bạn có thể chỉ cần sao chép các dấu nhắc, chúng tôi
+
+79
+00:09:58,760 --> 00:10:04,560
+Đầu tiên, chỉ cần cập nhật nó để chế độ tất cả các móc, các thành phần, nhưng trên các trước đó
+
+80
+00:10:04,560 --> 00:10:12,120
+Tập tin, và sau đó lvo tạo ra cho bạn, vì vậy tôi sẽ giữ tất cả mọi thứ, hãy kiểm tra một số
+
+81
+00:10:12,120 --> 00:10:18,480
+Ví dụ, về logic máy tính, chúng tôi đã kiểm tra, nó có ý nghĩa,
+
+82
+00:10:18,480 --> 00:10:29,720
+Không phải thời gian tốt nhất của tôi, bạn để định dạng số, yeah, chúng tôi thấy, chúng tôi có nhiều trường hợp ở đây, chúng tôi
+
+83
+00:10:29,720 --> 00:10:38,120
+làm thập phân, điều đó không phải là không thể, trong lý thuyết, nhưng nó có thể xảy ra, xin lỗi, không phải là không thể
+
+84
+00:10:38,120 --> 00:10:47,920
+trên thực tế, okay, nhưng nó thực sự có ý nghĩa, bài kiểm tra này thực sự có ý nghĩa, bạn thấy, đôi khi
+
+85
+00:10:47,920 --> 00:10:54,200
+Bạn có thể sử dụng một số phương pháp bị phản bác, vì vậy bạn cũng cần phải cẩn thận, như khi bạn nhận được
+
+86
+00:10:54,200 --> 00:10:59,880
+Kết quả kiểm tra và bạn đôi khi cần phải phục hồi, do đó, bạn có thể yêu cầu rằng phương pháp này là không thích hợp
+
+87
+00:10:59,880 --> 00:11:07,800
+Vì vậy, điều này chọn để phục hồi nó, okay, nếu điều này là nhanh và nó là tất cả những gì tôi muốn hiển thị
+
+88
+00:11:07,800 --> 00:11:14,320
+Bạn, xin lỗi, đối với nền tảng dài, bạn thấy, tôi đã không nhấn từ qua thời gian, bạn cũng có thể
+
+89
+00:11:14,320 --> 00:11:21,280
+đối mặt với vấn đề này, nhưng bây giờ bạn thấy cách tiếp cận của tôi, làm thế nào tôi sửa bài kiểm tra, tôi cố gắng để cho bạn thấy một khác
+
+90
+00:11:21,280 --> 00:11:27,120
+Cách tiếp cận, là làm thế nào tôi làm là sao chép thông điệp thiết bị cuối, di chuyển tập tin đến bối cảnh, chỉ cần
+
+91
+00:11:27,120 --> 00:11:34,880
+Đã đề cập, sửa chữa tất cả các xét nghiệm, mà không hiệu quả và bạn có thể sử dụng cách tiếp cận này, okay,
+
+92
+00:11:34,880 --> 00:11:36,240
+Hẹn gặp lại trong bài học tiếp theo.
+
