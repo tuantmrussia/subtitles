@@ -1,0 +1,396 @@
+1
+00:00:00,000 --> 00:00:07,280
+ In this lesson we are diving into object typing and nested structures in TypeScript, which
+
+2
+00:00:07,280 --> 00:00:14,000
+ is a core skill for modeling real world data, to whether you are building a user profile
+
+3
+00:00:14,000 --> 00:00:20,160
+ or perhaps a product catalog or a configuration file, TypeScript is going to help us define
+
+4
+00:00:20,160 --> 00:00:27,400
+ clear, safe and scalable object shapes, so we are going to start off with a simple object
+
+5
+00:00:27,400 --> 00:00:28,400
+ type.
+
+6
+00:00:28,400 --> 00:00:34,880
+ Now we have already had a look at type AVs and interfaces, and you can model an object
+
+7
+00:00:34,880 --> 00:00:41,640
+ on either the type AVs or the interface, and I have just chosen to use the type and the
+
+8
+00:00:41,640 --> 00:00:49,160
+ AVs here for user, and we have three properties, id, name and is admin.
+
+9
+00:00:49,160 --> 00:00:56,040
+ So this defines the shape of a user object, and TypeScript is going to enforce that every
+
+10
+00:00:56,040 --> 00:01:00,720
+ object matches this structure.
+
+11
+00:01:00,720 --> 00:01:08,600
+ Now to use the actual object, we can create an object like, let's say Alice and Alice
+
+12
+00:01:08,600 --> 00:01:16,120
+ is of type user, and then we can define the properties for Alice, so we can set id, and
+
+13
+00:01:16,120 --> 00:01:28,440
+ the id could be maybe u123, and then the name of Alice, and finally is admin, and set
+
+14
+00:01:28,440 --> 00:01:31,920
+ to true.
+
+15
+00:01:31,920 --> 00:01:36,520
+ If we get to use a property, or we use the wrong type, TypeScript is going to help us
+
+16
+00:01:36,520 --> 00:01:37,680
+ out.
+
+17
+00:01:37,680 --> 00:01:45,120
+ Now, let's talk about optional and read only properties, and now we want to define
+
+18
+00:01:45,120 --> 00:01:48,360
+ perhaps an optional property.
+
+19
+00:01:48,360 --> 00:01:55,760
+ Let's say, for example, we want to have a description property, and we just give it
+
+20
+00:01:55,760 --> 00:01:59,200
+ a question mark, and then the actual type.
+
+21
+00:01:59,200 --> 00:02:05,440
+ So this now is optional, and you can see that TypeScript is not complaining that we haven't
+
+22
+00:02:05,440 --> 00:02:11,000
+ described, and we haven't supplied the description property, but of course, if we want
+
+23
+00:02:11,000 --> 00:02:18,840
+ to, we can add a description property here and say Alice in Wonderland or something.
+
+24
+00:02:18,840 --> 00:02:29,520
+ Let's now define another prior type, and let's have a type of product, and this type is
+
+25
+00:02:29,520 --> 00:02:35,320
+ going to have a string, just like before, you can have a name, and this time we're going
+
+26
+00:02:35,320 --> 00:02:42,720
+ to have a price, which is going to be a number, and also again might want to have a description
+
+27
+00:02:42,720 --> 00:02:48,240
+ property that's optional, so we have description.
+
+28
+00:02:48,240 --> 00:02:55,880
+ If a question mark, and it's a stop type string, now if we also want to have a read only
+
+29
+00:02:55,880 --> 00:03:03,200
+ property that we could obviously read from, then we need to change this syntax very slightly,
+
+30
+00:03:03,200 --> 00:03:08,920
+ and once we say read only, first of all, then give it the name of the property, so in this
+
+31
+00:03:08,920 --> 00:03:17,320
+ case, we're going to have a read only property called school, and the type is of type string.
+
+32
+00:03:17,320 --> 00:03:23,840
+ This cannot be changed, that'd be read.
+
+33
+00:03:23,840 --> 00:03:28,760
+ So the two things to bear in mind is the question mark for optional, and this read only
+
+34
+00:03:28,760 --> 00:03:34,520
+ syntax here, the specified a read only property.
+
+35
+00:03:34,520 --> 00:03:40,200
+ We also might want to have like a nested structure, because at the moment we have a very
+
+36
+00:03:40,200 --> 00:03:44,600
+ simple structure, just one level deep.
+
+37
+00:03:44,600 --> 00:03:49,800
+ Let's try a model, a customer, which has an address.
+
+38
+00:03:49,800 --> 00:03:59,360
+ So first of all, we're going to start off with just the address type, so the address type
+
+39
+00:03:59,360 --> 00:04:12,320
+ is going to have a street, or type string, city, and also a zip code, or type string.
+
+40
+00:04:12,320 --> 00:04:20,240
+ Now we're going to model our customer, so the customer is going to have a name, going to
+
+41
+00:04:20,240 --> 00:04:26,120
+ have an email address, while they're also going to have an address.
+
+42
+00:04:26,120 --> 00:04:31,800
+ Now for that, we can simply just give the name of the property, address, and then the actual
+
+43
+00:04:31,800 --> 00:04:39,920
+ type that we've already predefined, in this case, address.
+
+44
+00:04:39,920 --> 00:04:47,200
+ And of course, we could define a customer, because a const, Alice is a customer, and Alice
+
+45
+00:04:47,200 --> 00:04:59,400
+ is of type, customer, and now we can define our name, the name is Alice, she has an
+
+46
+00:04:59,400 --> 00:05:08,360
+ email address to Alice at something, and then we can define the actual address.
+
+47
+00:05:08,360 --> 00:05:15,400
+ So how do we actually specify the properties, the values for these address properties?
+
+48
+00:05:15,400 --> 00:05:21,920
+ We do that as a JSON object, so we specify the address, then the codey braces, and then
+
+49
+00:05:21,920 --> 00:05:27,480
+ we can give it the things like street, let's say street to one, two, three, and then
+
+50
+00:05:27,480 --> 00:05:33,720
+ be city, is city, et cetera, et cetera, et cetera.
+
+51
+00:05:33,720 --> 00:05:38,840
+ Of course, we can give it to keep its TypeScript happy, let's just give it a zip code
+
+52
+00:05:38,840 --> 00:05:43,040
+ of one, two, three.
+
+53
+00:05:43,040 --> 00:05:49,800
+ Let's now walk through another example, and this time we are going to create ourselves
+
+54
+00:05:49,800 --> 00:06:04,040
+ a profile object or profile type, so we have a type of profile, and in our profile type,
+
+55
+00:06:04,040 --> 00:06:10,480
+ we're going to have a username or type string, we're going to have some settings, and
+
+56
+00:06:10,480 --> 00:06:18,440
+ for this we can now specify a kind of deeply nested object, and under this we're going
+
+57
+00:06:18,440 --> 00:06:28,320
+ to have, use the curly braces, and we're going to have a theme property, the theme property
+
+58
+00:06:28,320 --> 00:06:40,960
+ can be light or the pipe symbol going to be dark, and also going to have a property of
+
+59
+00:06:40,960 --> 00:06:48,080
+ notifications, which is sets to type a boolean.
+
+60
+00:06:48,080 --> 00:06:55,520
+ Now we can also define our type as a nested types as well, so rather than as a separate
+
+61
+00:06:55,520 --> 00:07:03,000
+ type, like we did for address, we can kind of do it in line, so we could have a type
+
+62
+00:07:03,000 --> 00:07:12,840
+ as a property of username, which is set to a type of string, and we can have a settings,
+
+63
+00:07:12,840 --> 00:07:20,040
+ and we now create a curly brace, and inside our settings we're going to have a theme property,
+
+64
+00:07:20,040 --> 00:07:27,720
+ the theme property is going to have a string of light or dark, and we're also going to
+
+65
+00:07:27,720 --> 00:07:36,680
+ have a notification property, which is of type boolean, and now we can simply define a
+
+66
+00:07:36,680 --> 00:07:45,000
+ natural instance of the object, so const user, set to profile, and now we can specify the
+
+67
+00:07:45,000 --> 00:07:57,280
+ properties itself, so username, say Tim, settings, getting curly braces, we can specify this,
+
+68
+00:07:57,280 --> 00:08:12,800
+ so the theme is now light, and the notifications we are going to set to true, and now let's
+
+69
+00:08:12,800 --> 00:08:21,520
+ work on an even more complex example, which is a type of order, and this is going to have
+
+70
+00:08:21,520 --> 00:08:29,520
+ a customer object, or customer, a type inside it, as well as an array of items, so we set
+
+71
+00:08:29,520 --> 00:08:37,920
+ up a type of order, so inside our order type, we're going to have an order ID, or type
+
+72
+00:08:37,920 --> 00:08:48,200
+ string, then inside of that, then we're also going to have a type of customer, and the type
+
+73
+00:08:48,200 --> 00:08:57,120
+ of customer, is going to be an object in itself, which we're going to have a name property,
+
+74
+00:08:57,120 --> 00:09:06,120
+ and inside of that, we're going to have another type of contact, which is new address,
+
+75
+00:09:06,120 --> 00:09:13,880
+ and also a optional phone number, so again, put it a question mark to make it optional,
+
+76
+00:09:13,880 --> 00:09:22,880
+ type string, and we also want to have the items, or this particular order, which we can
+
+77
+00:09:22,880 --> 00:09:30,960
+ do by defining an array, and again, right back at the start, we learnt to an array by doing
+
+78
+00:09:30,960 --> 00:09:40,720
+ some curly, there's some square brackets here, so that is now an item array, which we
+
+79
+00:09:40,720 --> 00:09:53,400
+ can need, the product ID, or type string, and also a quantity, or type a number, and now
+
+80
+00:09:53,400 --> 00:10:01,840
+ you can see how we can do this, or nesting of the types, allows us to very nicely describe
+
+81
+00:10:01,840 --> 00:10:10,480
+ more complex objects through the TypeScript, now instead of defining the actual embedded
+
+82
+00:10:10,480 --> 00:10:17,720
+ types like this, just to make it clearer, and for the developers looking at your objects
+
+83
+00:10:17,720 --> 00:10:24,000
+ is better to be able to explicitly define the types into smaller chunks that we can then
+
+84
+00:10:24,000 --> 00:10:33,520
+ use in a more complex object, so we want to define first of all a type of contact, which
+
+85
+00:10:33,520 --> 00:10:45,280
+ has got our email, and also our optional phone, which has our email property, and also
+
+86
+00:10:45,280 --> 00:10:53,320
+ our optional phone number, and we can now change where we have this contact here, that
+
+87
+00:10:53,320 --> 00:11:02,040
+ becomes simply our type of contact, we now can work on the customer itself, so we can define
+
+88
+00:11:02,040 --> 00:11:15,040
+ a customer type, customer type has a name of string, and the contact information, name
+
+89
+00:11:15,040 --> 00:11:24,120
+ of string, and the contact of the type contact, so our customer can now be replaced,
+
+90
+00:11:24,120 --> 00:11:31,280
+ remove the customer, and this becomes a type of customer, and now we can define another
+
+91
+00:11:31,280 --> 00:11:47,880
+ type for all the items itself, now all the items has a product ID of string, the quantity
+
+92
+00:11:47,880 --> 00:12:03,600
+ of string, and the quantity of number, and now items array becomes an array of order item,
+
+93
+00:12:03,600 --> 00:12:09,200
+ and now looking at this object is a lot clearer to understand what's going on, rather than
+
+94
+00:12:09,200 --> 00:12:15,360
+ what we heard before, so again, it's better to break up our types into smaller types,
+
+95
+00:12:15,360 --> 00:12:23,600
+ and then build that up to make create more complex objects, so object typing is basically
+
+96
+00:12:23,600 --> 00:12:30,480
+ how we model real world data and TypeScript as an example here, we've learned how to define
+
+97
+00:12:30,480 --> 00:12:36,680
+ object shapes, and we've also learned about optional and read new properties, as well as
+
+98
+00:12:36,680 --> 00:12:42,360
+ nested structures which give clarity and safety, in the next lesson we're going to learn
+
+99
+00:12:42,360 --> 00:12:49,240
+ all about reusing components with type safety using a feature known as generics and TypeScript.
+
