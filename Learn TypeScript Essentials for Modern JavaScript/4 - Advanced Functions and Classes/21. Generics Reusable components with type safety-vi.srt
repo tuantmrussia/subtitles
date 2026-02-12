@@ -1,0 +1,428 @@
+1
+00:00:00,000 --> 00:00:05,200
+Chào mừng trở lại. Trong bài học này, chúng ta đang mở khóa một trong những siêu năng lực của TypeSUse, đó là
+
+2
+00:00:05,200 --> 00:00:11,000
+Chung chung. Chung chung cho phép chúng tôi viết một mã hợp lý mà hoạt động với nhiều loại, trong khi vẫn
+
+3
+00:00:11,000 --> 00:00:17,000
+Giữ cho mọi thứ được an toàn. Chúng tôi sẽ tìm hiểu làm thế nào để tạo ra chức năng chung, loại
+
+4
+00:00:17,000 --> 00:00:24,320
+và các thành phần thích nghi với bất cứ dữ liệu nào chúng ta đưa cho chúng. Chính xác thì cái chung là gì?
+
+5
+00:00:24,320 --> 00:00:31,320
+Một người chung chung là một người giữ chỗ cho một loại. Vì vậy, thay vì cứng lập trình một loại cụ thể,
+
+6
+00:00:31,320 --> 00:00:40,320
+Chúng tôi sử dụng một biến, mà thường xuyên, trường hợp là t. Và đó được điền vào khi chức năng
+
+7
+00:00:40,320 --> 00:00:47,320
+hoặc loại được sử dụng. Vì vậy, hãy để tôi chỉ cho bạn một ví dụ. Vì vậy, hãy tạo ra một chức năng và
+
+8
+00:00:47,320 --> 00:00:56,320
+một chức năng, có lẽ chúng ta sẽ gọi nó là danh tính. Và chúng tôi muốn một giá trị. Chúng tôi muốn cho đi
+
+9
+00:00:56,320 --> 00:01:05,320
+Nó là một loại. Bây giờ, danh tính của chúng ta có thể là một chuỗi hoặc có thể là một con số. Thì sao?
+
+10
+00:01:05,320 --> 00:01:14,320
+Chúng tôi muốn làm là chúng tôi có thể làm ít hơn ký hiệu ở đây. Và sau đó là một dấu hiệu lớn hơn. Và chúng ta
+
+11
+00:01:14,320 --> 00:01:22,320
+muốn biến t ở đây. Vì vậy, điều này trở thành chung như thế này, một loại chung ở đây. Và
+
+12
+00:01:22,320 --> 00:01:29,320
+Cho giá trị của chúng tôi, chúng tôi cũng muốn nó là một chung, có nghĩa là chúng tôi sẽ không quyết định
+
+13
+00:01:29,320 --> 00:01:35,320
+một sự tiến bộ về kiểu nào. Vì vậy, chúng tôi sẽ có một mã trên và sau đó đưa cho nó
+
+14
+00:01:35,320 --> 00:01:45,320
+biến t. Và cuối cùng, chúng tôi muốn trả lại một giá trị thực sự cho người gọi, nhưng chúng tôi cũng
+
+15
+00:01:45,320 --> 00:01:51,320
+muốn nó là một chung, có nghĩa là chúng tôi không muốn nó để xác định tại một thời điểm những gì
+
+16
+00:01:51,320 --> 00:01:58,320
+Loại sẽ là. Vì vậy, chúng tôi làm một ruột kết và cũng biến t. Và sau đó chúng tôi viết cơ thể hoặc
+
+17
+00:01:58,320 --> 00:02:05,320
+hàm số, mà ta có thể nói là trả lại giá trị. Trông hơi lạ, nhưng
+
+18
+00:02:05,320 --> 00:02:12,320
+Bây giờ chúng ta hãy tìm ra làm thế nào bạn có thể gọi chức năng này. Để chúng ta có thể nói về danh tính. Và giá trị
+
+19
+00:02:12,320 --> 00:02:18,320
+hiện chưa biết. Nó sẽ được cung cấp khi chúng tôi thực sự gọi
+
+20
+00:02:18,320 --> 00:02:26,320
+chức năng. Vì vậy, hãy nói rằng chúng tôi gọi các chức năng với một chuỗi. Và bây giờ gõ Sổ tay
+
+21
+00:02:26,320 --> 00:02:34,320
+biết rằng chúng tôi đang thực sự cung cấp một giá trị của một chuỗi hoặc loại halo như một chuỗi
+
+22
+00:02:34,320 --> 00:02:43,320
+cho chức năng của chúng ta. Bây giờ chúng ta hãy gọi hàm số một lần nữa, và chúng tôi nói danh tính, và chúng tôi đang đi
+
+23
+00:02:43,320 --> 00:02:50,320
+cung cấp một số. Vì vậy, bây giờ là các điều khoản mà chúng tôi cung cấp một số như là một giá trị, một
+
+24
+00:02:50,320 --> 00:02:57,320
+giá trị 42. Vì vậy, chức năng này hoạt động với bất kỳ loại, và gõ lưu theo dõi của những gì
+
+25
+00:02:57,320 --> 00:03:07,320
+Lần nào cũng vậy. Nhưng tại sao không dùng một cách khác để sử dụng chữ viết tắt?
+
+26
+00:03:07,320 --> 00:03:15,320
+Tại sao chúng ta không thể nói, ví dụ, một chuỗi hoặc nó có thể là một con số? Theo cách đó, chúng ta là
+
+27
+00:03:15,320 --> 00:03:22,320
+Chỉ giới hạn những loại mà chúng tôi thực sự cho phép chức năng của mình. Chúng tôi chỉ cho phép
+
+28
+00:03:22,320 --> 00:03:29,320
+Dây và số nguyên. Nhưng có lẽ tại thời điểm chạy chúng tôi không muốn chỉ cho phép các dòng và số điện thoại,
+
+29
+00:03:29,320 --> 00:03:34,320
+nhưng chúng ta cũng muốn có những điểm nổi hoặc cung cấp một vật thể. Và chúng tôi không thực sự
+
+30
+00:03:34,320 --> 00:03:41,320
+biết hình dạng của vật thể đó. Và đó là nơi mà những người chung chung đến là một lợi thế đặc biệt,
+
+31
+00:03:41,320 --> 00:03:47,320
+Bởi vì chúng tôi chỉ có thể nói, chúng tôi không biết, và chúng tôi không quan tâm trong thời gian biên dịch những gì
+
+32
+00:03:47,320 --> 00:03:54,320
+chức năng thực sự là. Về cơ bản, chúng tôi đang thực sự viết các mã, nhưng khi chúng tôi thực sự
+
+33
+00:03:54,320 --> 00:04:00,320
+Gọi cho mã, sau đó gõ "%s" sẽ biết tại thời điểm đó những gì các chức năng hoặc các
+
+34
+00:04:00,320 --> 00:04:07,320
+Loại là. Bạn có thể hỏi một câu, tại sao chúng ta không có một kiểu khác
+
+35
+00:04:07,320 --> 00:04:14,320
+Vì vậy, chúng tôi có như một chuỗi và sau đó chúng tôi nói, hoặc nó là một số. Nếu chúng ta làm theo cách đó thì
+
+36
+00:04:14,320 --> 00:04:20,320
+Chúng ta đang giới hạn bản thân chỉ hai loại, những thứ mà chúng ta chỉ định. Nhưng chúng tôi muốn
+
+37
+00:04:20,320 --> 00:04:29,320
+có khả năng đi qua như bất kỳ đối tượng hình dạng nào cho một chức năng. Và sau đó chúng tôi muốn sử dụng chung
+
+38
+00:04:29,320 --> 00:04:35,320
+bởi vì sau đó gõ "%s" sẽ xử lý loại sẽ là gì. Vì vậy, chung
+
+39
+00:04:35,320 --> 00:04:43,320
+sẽ giúp chúng ta tái sử dụng. Vì vậy, chúng tôi viết một chức năng và cho nhiều loại khác nhau.
+
+40
+00:04:43,320 --> 00:04:52,320
+Nhưng nó vẫn cho phép chúng ta có sự an toàn loại bởi vì TypeSUS vẫn sẽ
+
+41
+00:04:52,320 --> 00:04:59,320
+kiểm tra mọi thứ cho chúng tôi. Và cũng cung cấp cho rõ ràng bởi vì chúng tôi tài liệu của chúng tôi mục đích
+
+42
+00:04:59,320 --> 00:05:07,320
+mà không lập lại mật mã. Vì vậy, hãy chỉ cần làm một ví dụ ít không gian trên những gì
+
+43
+00:05:07,320 --> 00:05:16,320
+Chúng tôi đã làm ở đây. Hãy có một chức năng mà chúng tôi muốn gói một giá trị trong mảng, đơn giản là mất
+
+44
+00:05:16,320 --> 00:05:23,320
+một giá trị và sau đó chúng tôi muốn đặt nó vào một mảng. Vì vậy, chức năng của chúng tôi có thể được bao gồm trong mảng.
+
+45
+00:05:23,320 --> 00:05:35,320
+Chúng tôi sẽ cung cấp một loại chung t ở đây và một giá trị của loại t. Và kiểu quay trở lại
+
+46
+00:05:35,320 --> 00:05:41,320
+sẽ là một dãy. Vậy chúng ta làm điều đó như thế nào? Vâng, chúng tôi nói rằng nó sẽ trở lại một loại
+
+47
+00:05:41,320 --> 00:05:48,820
+nhưng nó là một chuỗi. Vì vậy, lấy t của chúng tôi và chúng tôi đặt hai dấu ngoặc, hai dấu ngoặc vuông
+
+48
+00:05:48,820 --> 00:05:55,820
+Và nó thay vì, ví dụ, một loạt các chuỗi hoặc dãy của một số hoặc một khởi động,
+
+49
+00:05:55,820 --> 00:06:03,820
+Ví dụ, chúng tôi chỉ cần đặt t bởi vì nó không rõ tại thời điểm đó. Sau đó chúng tôi có thể viết chức năng của chúng tôi
+
+50
+00:06:03,820 --> 00:06:11,820
+Và tất cả những gì chúng tôi muốn làm là lấy giá trị của chúng tôi và đặt nó vào một mảng. Và bây giờ chúng ta có thể gọi
+
+51
+00:06:11,820 --> 00:06:18,820
+hàm của chúng tôi kết thúc trong mảng và bạn có thể cung cấp một chuỗi và nó sẽ cung cấp
+
+52
+00:06:18,820 --> 00:06:28,820
+Chúng tôi sẽ gửi lại một dãy với Apple trong đó. Hoặc chúng ta có thể gọi báo cáo và nói,
+
+53
+00:06:28,820 --> 00:06:40,820
+Ví dụ như 99. Và nó sẽ trở lại một dãy với 99 trong đó. Vì vậy, hãy làm việc bây giờ
+
+54
+00:06:40,820 --> 00:06:46,820
+trên một chút nhiều hơn, phức tạp hơn và thực sự có một biệt danh loại chung nơi nó có thể
+
+55
+00:06:46,820 --> 00:06:53,820
+Sẽ hữu dụng hơn một chút. Vì vậy, hãy tưởng tượng bạn muốn có một phản ứng từ một AI,
+
+56
+00:06:53,820 --> 00:06:59,820
+Nhưng bạn thực sự không biết hình dạng của phản ứng đó là gì. Tất cả những gì anh muốn
+
+57
+00:06:59,820 --> 00:07:06,820
+có là dữ liệu cho phản ứng và thông điệp lỗi như một chuỗi. Để chúng ta có thể...
+
+58
+00:07:06,820 --> 00:07:16,820
+Một dạng phản ứng của API. Và chúng tôi không biết những chi tiết thực tế của dữ liệu. Vậy chúng ta là
+
+59
+00:07:16,820 --> 00:07:25,820
+Sẽ nói là nó không rõ. Và sau đó chúng tôi sẽ cung cấp tài sản dữ liệu của chúng tôi của một loại
+
+60
+00:07:25,820 --> 00:07:34,820
+không rõ. Nhưng những gì chúng tôi nghĩ rằng chúng tôi biết là chúng tôi sẽ có một lỗi, tùy chọn
+
+61
+00:07:34,820 --> 00:07:41,820
+Lỗi, chúng ta sẽ có một chuỗi. Vì vậy, bây giờ bạn có thể thấy dữ liệu này có thể mất nhiều
+
+62
+00:07:41,820 --> 00:07:49,820
+Hình dạng. Tôi sẽ phụ thuộc vào bất cứ phản ứng nào mà chúng ta nhận được. Vì vậy, chúng tôi có thể bây giờ
+
+63
+00:07:49,820 --> 00:07:58,820
+có, ví dụ, một phản ứng của một phản ứng của người dùng đến từ một AI. Vì vậy, đó là loại
+
+64
+00:07:58,820 --> 00:08:08,820
+Phản ứng ARI. Và sau đó chúng tôi xác định hình dạng thực tế của phản ứng đó khi chúng tôi thực sự
+
+65
+00:08:08,820 --> 00:08:17,820
+Sử dụng nó. Vì vậy, bên trong khung vuông, chúng tôi bây giờ xác định T thực sự là gì. Vì vậy, trong trường hợp này T là
+
+66
+00:08:17,820 --> 00:08:27,820
+Một vật thể mà chúng ta có một cái tên và chúng ta có một đặc tính dây. Sau đó chúng tôi hoàn tất danh sách của chúng tôi
+
+67
+00:08:27,820 --> 00:08:34,820
+và ký. Vì vậy, chúng tôi về cơ bản một lần nữa cung cấp chỉ hình dạng của T trong bit này là chỉ
+
+68
+00:08:34,820 --> 00:08:44,820
+Đây. Và bây giờ chúng ta có một dấu hiệu ngang nhau. Và chúng ta có thể thiết lập dữ liệu. Bây giờ chúng tôi xác định những gì mà
+
+69
+00:08:44,820 --> 00:08:52,820
+dữ liệu là. Vì vậy, chúng tôi có thể thấy tên là Alice. Bây giờ nếu bạn không làm thế để cung cấp thông tin đó.
+
+70
+00:08:52,820 --> 00:08:59,820
+Vì vậy, nếu chúng tôi đến đây và chúng tôi nói rằng nó dường như đến để khung, nó sẽ gạch dưới
+
+71
+00:08:59,820 --> 00:09:06,820
+Vì nó mong đợi chúng ta cung cấp hình dạng đó. Vì vậy, TypeCuter đã xem xét các loại
+
+72
+00:09:06,820 --> 00:09:13,820
+rằng chúng tôi đã cung cấp ở đây và bây giờ nó bắt buộc chúng tôi cung cấp loại, tất cả các tài sản
+
+73
+00:09:13,820 --> 00:09:19,820
+kiểu tên. Vì vậy, thực sự đây là nơi các sinh vật chung đến như rất
+
+74
+00:09:19,820 --> 00:09:26,820
+hữu ích vì nó cho phép chúng tôi sử dụng chung và gõ bí danh để mô hình cấu trúc linh hoạt
+
+75
+00:09:26,820 --> 00:09:35,820
+Giống như các phản ứng của ADI, các trạng thái hình thành hoặc có lẽ thuộc tính thành phần. Vì vậy, hãy chỉ làm việc
+
+76
+00:09:35,820 --> 00:09:42,820
+về một ví dụ khác. Và điều này chúng tôi sẽ tạo ra một giao diện chung của loại hộp.
+
+77
+00:09:42,820 --> 00:09:52,820
+Vì vậy, chúng tôi có thể có một giao diện. Và nó là một cái hộp có dạng chung. Và chiếc hộp đó đang đi
+
+78
+00:09:52,820 --> 00:09:59,820
+có một tài sản được gọi là nội dung với một loại chung. Và bây giờ chúng ta có thể có
+
+79
+00:09:59,820 --> 00:10:08,820
+một vài hộp khác nhau. Chúng ta có thể có một cái hộp dây. Hộp sẽ là loại chuỗi.
+
+80
+00:10:08,820 --> 00:10:14,820
+Và sau đó chúng tôi sẽ cung cấp nội dung và nội dung là sẽ có từ
+
+81
+00:10:14,820 --> 00:10:21,820
+Xin chào. Và bây giờ chúng ta có thể có một loại hộp khác. Chúng ta có thể gọi nó là một số
+
+82
+00:10:21,820 --> 00:10:32,820
+hộp. Hộp lần này là một số. Vì vậy, t gõ t bây giờ là một số. Và nội dung của chúng tôi, lần này
+
+83
+00:10:32,820 --> 00:10:41,820
+là một con số. Vì vậy giao diện hoạt động rất giống như loại biệt danh. Và chúng là
+
+84
+00:10:41,820 --> 00:10:52,820
+tuyệt vời cho các vật thể tái tạo hình dạng. Chúng ta cũng có thể hạn chế những loại được cho phép sử dụng
+
+85
+00:10:52,820 --> 00:10:58,820
+Kéo dài. Vì vậy, ví dụ, hãy tạo ra một chức năng khác. Và chúng tôi sẽ gọi nó là in
+
+86
+00:10:58,820 --> 00:11:07,820
+dài. Đây là loại t. Nhưng chúng tôi muốn hạn chế các loại được phép. Vậy
+
+87
+00:11:07,820 --> 00:11:13,820
+Đây là nơi tôi đã nói về nếu bạn muốn có thể có một chuỗi và một số chỉ hoặc chắc chắn
+
+88
+00:11:13,820 --> 00:11:20,820
+chúng ta có thể sử dụng khoảng cách ở đây. Vì vậy, chúng tôi có thể nói mở rộng. Và sau đó chúng tôi sẽ cung cấp
+
+89
+00:11:20,820 --> 00:11:32,820
+Một số dài. Và sau đó chúng tôi sẽ cung cấp các tham số của chúng tôi. Đây là mục. Và
+
+90
+00:11:32,820 --> 00:11:42,820
+Hàng có một loại t mà sẽ là giới hạn của hit chỉ ở đây. Và chức năng của chúng tôi
+
+91
+00:11:42,820 --> 00:11:48,820
+chúng tôi không muốn trả lại bất cứ thứ gì. Vì vậy, nếu chúng tôi không muốn trả lại bất cứ điều gì từ chức năng của chúng tôi,
+
+92
+00:11:48,820 --> 00:11:58,820
+Cứ cho là nó không có đạn. Và bên trong chức năng thực tế của chúng tôi, tôi sẽ làm một bản ghi bàn điều khiển và
+
+93
+00:11:58,820 --> 00:12:08,820
+Nói rằng mục độ dài chấm. Vì vậy, một lần nữa, vật của chúng tôi là loại t. Và t của chúng tôi được xác định là có những
+
+94
+00:12:08,820 --> 00:12:18,820
+thuộc tính hoặc hình này hoặc có chiều dài và sau đó một số. Bây giờ chúng ta có thể in chiều dài. Và nếu
+
+95
+00:12:18,820 --> 00:12:27,820
+Chúng tôi cố gắng in chuỗi cấp độ, chúng tôi sẽ có được một tài sản dài trên nó. Nhưng nó đang đi
+
+96
+00:12:27,820 --> 00:12:34,820
+để cung cấp cho chúng tôi độ dài của chuỗi. Tất nhiên, chúng tôi có thể in lại chiều dài. Và chúng ta
+
+97
+00:12:34,820 --> 00:12:41,820
+có, ví dụ, một, hai, ba như một mảng. Và độ dài tài sản sẽ được giải thích
+
+98
+00:12:41,820 --> 00:12:52,820
+đó là một dãy và cung cấp cho chúng tôi độ dài của dãy. Chúng tôi in chiều dài. Và chúng ta chỉ nói 42. Vậy
+
+99
+00:12:52,820 --> 00:12:58,820
+Nó không thực sự có tính chất dài. Như bạn thấy, điều này sẽ được ném
+
+100
+00:12:58,820 --> 00:13:06,820
+ra ngoài bởi TypeCuter. Vì vậy nó rất hữu ích sử dụng các mở rộng khi chúng tôi cần một số tính chất cụ thể để
+
+101
+00:13:06,820 --> 00:13:12,820
+tồn tại. Nếu bạn biết có một tính chất dài trên một mảng, hoặc bạn biết có một tính chất dài
+
+102
+00:13:12,820 --> 00:13:18,820
+trên một chuỗi, hoặc bạn biết có một bất động sản nhất định trên một đối tượng nhất định, sau đó bạn có thể sử dụng
+
+103
+00:13:18,820 --> 00:13:26,820
+mở rộng để đảm bảo tài sản đó tồn tại. Vì vậy, chung cơ bản cho phép chúng tôi viết
+
+104
+00:13:26,820 --> 00:13:33,820
+Có thể thu thập, mã tái sử dụng mà thêm các ứng dụng cho các loại khác nhau, cho dù nó đang mất loại
+
+105
+00:13:33,820 --> 00:13:40,820
+An toàn. Vì vậy, nếu học cách sử dụng chung và chức năng, loại, và giao diện, và làm thế nào để
+
+106
+00:13:40,820 --> 00:13:47,820
+Ép buộc họ khi cần thiết. Tiếp theo, chúng tôi sẽ xem xét các loại bản đồ khi làm thế nào để
+
+107
+00:13:47,820 --> 00:13:50,220
+Biến đổi các loại động lực.
+
