@@ -1,0 +1,656 @@
+1
+00:00:00,000 --> 00:00:02,780
+Vì vậy, chúng ta hãy nói về AI sáng tạo.
+
+2
+00:00:02,780 --> 00:00:04,740
+Trước khi chúng ta đến Amazon Bedrock,
+
+3
+00:00:04,740 --> 00:00:07,300
+Đó là một dịch vụ cho JNAI trên AWS,
+
+4
+00:00:07,300 --> 00:00:10,660
+Nhưng trước tiên tôi muốn lùi lại một bước và chỉ cần hiểu JNAI là gì.
+
+5
+00:00:10,660 --> 00:00:14,940
+Vì vậy, sáng tạo JI hoặc JNAI sẽ là một tập con của việc học hỏi sâu sắc,
+
+6
+00:00:14,940 --> 00:00:18,420
+Đó là một tập con của máy học, mà là một tập con của AI.
+
+7
+00:00:18,420 --> 00:00:21,020
+JNAI có tên,
+
+8
+00:00:21,020 --> 00:00:24,620
+được sử dụng để tạo ra dữ liệu mới mà sẽ được
+
+9
+00:00:24,620 --> 00:00:27,020
+Tương tự như dữ liệu nó được đào tạo.
+
+10
+00:00:27,020 --> 00:00:30,020
+Vậy những loại dữ liệu nào chúng ta có thể đào tạo JNAI?
+
+11
+00:00:30,020 --> 00:00:31,800
+Vâng, chúng tôi có thể đào tạo nó trên văn bản,
+
+12
+00:00:31,800 --> 00:00:34,540
+Về hình ảnh, âm thanh, mã hóa,
+
+13
+00:00:34,540 --> 00:00:37,740
+và video, và nhiều hơn nữa, bất cứ điều gì bạn nghĩ về thực sự.
+
+14
+00:00:37,740 --> 00:00:41,980
+Vì vậy, mô hình AI sáng tạo sẽ lấy rất nhiều dữ liệu tàu hỏa.
+
+15
+00:00:41,980 --> 00:00:46,780
+Đây là một ví dụ mà chúng tôi sẽ đưa cho nó rất nhiều hình ảnh chó.
+
+16
+00:00:46,780 --> 00:00:49,620
+Vì vậy, chúng tôi có tập dữ liệu tàu của chúng tôi sẽ là chó,
+
+17
+00:00:49,620 --> 00:00:52,820
+Nhưng chúng ta cũng sẽ cho chúng xem hoạt hình.
+
+18
+00:00:52,820 --> 00:00:56,420
+Vì vậy chúng ta sẽ có một loạt các hoạt hình khác nhau sẽ được vẽ bằng tay.
+
+19
+00:00:56,420 --> 00:01:01,460
+Và mô hình sáng tạo sẽ thấy rất nhiều dữ liệu về tàu.
+
+20
+00:01:01,460 --> 00:01:05,000
+Điều đó sẽ hiểu một con chó là gì, một bức tranh hoạt hình là gì.
+
+21
+00:01:05,000 --> 00:01:08,340
+Và sau đó nếu chúng tôi hỏi, bạn có thể tạo ra một con chó hoạt hình không?
+
+22
+00:01:08,340 --> 00:01:13,900
+Nó sẽ đủ thông minh để kết hợp cả hai với nhau và tạo ra một con chó trông giống như một bức tranh hoạt hình.
+
+23
+00:01:13,900 --> 00:01:16,780
+Và đó là toàn bộ sức mạnh của AI,
+
+24
+00:01:16,780 --> 00:01:21,660
+là nó có thể kết hợp kiến thức của nó thành những cách mới và độc đáo.
+
+25
+00:01:21,660 --> 00:01:25,900
+Vì vậy, chúng tôi sẽ bắt đầu với rất nhiều dữ liệu chưa được đánh dấu,
+
+26
+00:01:25,900 --> 00:01:28,420
+Và chúng ta sẽ thấy điều đó có nghĩa ở phần sau.
+
+27
+00:01:28,420 --> 00:01:31,620
+Và chúng tôi sẽ đào tạo mô hình nền tảng.
+
+28
+00:01:31,620 --> 00:01:35,820
+Và mô hình nền tảng rất rộng, rất lớn,
+
+29
+00:01:35,820 --> 00:01:39,300
+và chúng có thể thích nghi với nhiều loại nhiệm vụ chung.
+
+30
+00:01:39,300 --> 00:01:43,140
+Ví dụ, một mô hình nền tảng tốt có thể tạo ra một số văn bản,
+
+31
+00:01:43,140 --> 00:01:46,500
+có thể tóm tắt một số văn bản, có thể trích xuất thông tin,
+
+32
+00:01:46,500 --> 00:01:49,460
+có thể tạo ra hình ảnh, có thể trở thành một robot chat,
+
+33
+00:01:49,460 --> 00:01:52,460
+và có thể thêm vào bất kỳ loại câu hỏi nào bạn có.
+
+34
+00:01:52,460 --> 00:01:57,260
+Vì vậy, như một tổng thể, chúng tôi cảm thấy rất nhiều dữ liệu thành một mô hình nền tảng,
+
+35
+00:01:57,260 --> 00:02:00,900
+có lựa chọn làm rất nhiều việc khác nhau.
+
+36
+00:02:00,900 --> 00:02:04,860
+Bây giờ hãy nói về mô hình nền tảng.
+
+37
+00:02:04,860 --> 00:02:08,620
+Để tạo ra dữ liệu, như chúng ta đã nói, chúng ta cần có một mô hình nền tảng,
+
+38
+00:02:08,620 --> 00:02:11,660
+Và họ được huấn luyện về nhiều loại đầu vào.
+
+39
+00:02:11,660 --> 00:02:14,700
+Nhưng để cho bạn biết những mô hình này lớn như thế nào,
+
+40
+00:02:14,700 --> 00:02:17,540
+thông thường để đào tạo một mô hình nền tảng, một tốt nhất,
+
+41
+00:02:17,540 --> 00:02:23,380
+Nó có thể tốn hàng chục triệu đô la để đào tạo bởi vì nó rất nặng tính toán.
+
+42
+00:02:23,380 --> 00:02:26,740
+Cần rất nhiều thời gian để đào tạo nó và rất nhiều dữ liệu.
+
+43
+00:02:26,740 --> 00:02:32,380
+Vì vậy, chỉ có một vài công ty lớn thường tạo ra mô hình nền tảng riêng của họ.
+
+44
+00:02:32,380 --> 00:02:33,620
+Đây là một ví dụ.
+
+45
+00:02:33,620 --> 00:02:38,500
+Chúng ta có GPT40, đó là tên của mô hình nền tảng,
+
+46
+00:02:38,500 --> 00:02:43,420
+đằng sau chat GPT, đó là ứng dụng mà bạn có thể trò chuyện với AI.
+
+47
+00:02:43,420 --> 00:02:48,020
+Nhưng có sự lựa chọn rộng rãi các mô hình nền tảng từ các công ty khác nhau.
+
+48
+00:02:48,020 --> 00:02:53,260
+Vì vậy, chúng tôi có OpenAI, đây là một công ty đằng sau chat GPT và GPT40, ví dụ.
+
+49
+00:02:53,260 --> 00:02:56,780
+Chúng tôi có meta, vậy đây là công ty mới đằng sau Facebook.
+
+50
+00:02:56,780 --> 00:03:01,740
+Chúng ta có Amazon, Google, và Antropic, và tất nhiên nhiều hơn nữa.
+
+51
+00:03:01,740 --> 00:03:08,700
+Nhưng những công ty này khá lớn hoặc họ có rất nhiều tiền để đầu tư vào việc xây dựng những mô hình nền tảng này.
+
+52
+00:03:08,700 --> 00:03:10,940
+Vì vậy một số mô hình này sẽ là nguồn mở.
+
+53
+00:03:10,940 --> 00:03:15,740
+Ví dụ, GPT40, ví dụ, meta đang làm việc rất nhiều về mô hình mã nguồn mở.
+
+54
+00:03:15,740 --> 00:03:20,860
+Chúng tôi cũng có Google BOR, một trong những mô hình đầu tiên trong không gian GNAI,
+
+55
+00:03:20,860 --> 00:03:22,420
+Mà cũng là nguồn mở.
+
+56
+00:03:22,420 --> 00:03:25,220
+Nhưng một số được cấp bằng thương mại.
+
+57
+00:03:25,220 --> 00:03:30,980
+Ví dụ, OpenAI, bạn phải trả tiền để sử dụng GPT ở cấp Đông phương, nhiệt đới, vân vân.
+
+58
+00:03:30,980 --> 00:03:35,300
+Và vì vậy chúng ta sẽ xem làm thế nào chúng ta có thể truy cập những mô hình này trên AWS là tốt.
+
+59
+00:03:35,300 --> 00:03:40,620
+Tiếp theo, sau mô hình nền tảng, chúng ta có các mô hình ngôn ngữ lớn hoặc LM.
+
+60
+00:03:40,620 --> 00:03:46,060
+Vì vậy, LLMs là một loại AI mà đang dựa vào một mô hình nền tảng.
+
+61
+00:03:46,060 --> 00:03:49,660
+Nhưng được thiết kế để tạo ra những văn bản giống như con người.
+
+62
+00:03:49,660 --> 00:03:52,940
+Vậy là anh đã tiếp xúc với LM rất nhiều trước đây.
+
+63
+00:03:52,940 --> 00:04:01,020
+Một trong số đó là chat GPTT, loại GPT40 của mô hình nền tảng và LLM từ công ty, OpenAI.
+
+64
+00:04:01,020 --> 00:04:05,980
+Thế là tôi đến nói chuyện với GPT và hỏi, "Anh có phải là người Mỹ không?"
+
+65
+00:04:05,980 --> 00:04:09,500
+Và nó trả lời, "Vâng, tôi là một mô hình ngôn ngữ lớn được phát triển bởi OpenAI.
+
+66
+00:04:09,500 --> 00:04:13,820
+Và tôi có thể hiểu và tạo ra những văn bản giống con người dựa trên những dữ liệu tôi nhận được."
+
+67
+00:04:13,820 --> 00:04:20,860
+Và đây là văn bản trông giống như một con người-rotate được trả lời bởi GPT khi tôi hỏi nó, "Bạn có phải là một LLM?"
+
+68
+00:04:20,860 --> 00:04:26,780
+Vì vậy, cách mLM làm việc là họ được đào tạo trên rất nhiều dữ liệu văn bản.
+
+69
+00:04:26,780 --> 00:04:32,300
+Vì vậy, chúng thường rất, rất lớn, rất nặng, rất tính toán, rất nặng để sử dụng.
+
+70
+00:04:32,300 --> 00:04:34,220
+Chúng ta đang nói về hàng tỉ tham số.
+
+71
+00:04:34,220 --> 00:04:40,620
+Họ được đào tạo trên rất nhiều cuốn sách, bài viết, trang web, dữ liệu, hoặc bất kỳ loại dữ liệu văn bản nào
+
+72
+00:04:40,620 --> 00:04:44,300
+Nó được cho là đủ tốt cho huấn luyện LM.
+
+73
+00:04:44,300 --> 00:04:51,660
+Vì vậy nó có thể thực hiện bất kỳ phạm vi khác nhau liên quan đến ngôn ngữ như dịch thuật, tóm tắt,
+
+74
+00:04:51,660 --> 00:04:54,860
+Câu hỏi trả lời, sáng tạo nội dung, v.v...
+
+75
+00:04:54,860 --> 00:04:58,540
+Vậy nó hoạt động như thế nào khi sử dụng một LM?
+
+76
+00:04:58,540 --> 00:05:04,700
+Vì vậy, cho điều này, chúng tôi cung cấp cho nó một nhắc nhở. Vì vậy, các nhắc nhở là một câu hỏi, một bó của văn bản mà bạn đang đi
+
+77
+00:05:04,700 --> 00:05:10,220
+Để gửi đến mô hình GenAI, LLM. Ví dụ, AWS là gì? Đó là lời nhắc nhở.
+
+78
+00:05:10,220 --> 00:05:15,100
+Và chúng ta sẽ có toàn bộ một phần trong khóa học này để hiểu làm thế nào để tạo ra một dấu nhắc tốt.
+
+79
+00:05:15,100 --> 00:05:20,300
+Sau đó mô hình sẽ thúc đẩy tất cả nội dung tồn tại của nó,
+
+80
+00:05:20,300 --> 00:05:24,540
+học từ đó, và sau đó nó sẽ nhìn vào các dấu nhắc và trả lời nó.
+
+81
+00:05:24,540 --> 00:05:29,180
+Và khi tôi hỏi GPT của anh, AWS là gì? Tôi biết câu trả lời.
+
+82
+00:05:29,180 --> 00:05:33,340
+AWS là một nền tảng điện toán đám mây toàn diện do Amazon cung cấp,
+
+83
+00:05:33,340 --> 00:05:35,260
+và anh có thể đọc phần còn lại. Đó là một câu trả lời dài.
+
+84
+00:05:35,260 --> 00:05:38,940
+Nhưng bạn phải làm gì đó, và đó là một thuật ngữ bạn phải học,
+
+85
+00:05:38,940 --> 00:05:44,300
+Đó là kết quả, văn bản tạo ra, không xác định.
+
+86
+00:05:44,300 --> 00:05:48,460
+Điều đó có nghĩa là với mỗi người dùng sử dụng cùng một dấu nhắc,
+
+87
+00:05:48,460 --> 00:05:52,540
+Bạn sẽ không nhất thiết và thường không có câu trả lời giống nhau.
+
+88
+00:05:53,100 --> 00:05:57,100
+Thế là tôi đến lần thứ hai và mở một cửa sổ trò chuyện mới và hỏi,
+
+89
+00:05:57,100 --> 00:06:00,940
+Sao vậy, AWS? Và nếu bạn dành thời gian để đọc câu trả lời này,
+
+90
+00:06:00,940 --> 00:06:05,180
+Đây là GPT, bạn sẽ thấy rằng trong khi câu trả lời tương tự,
+
+91
+00:06:05,180 --> 00:06:10,860
+Và chúng giải thích tương tự, chúng không giống nhau.
+
+92
+00:06:10,860 --> 00:06:12,700
+Và đây là lý do tại sao nó không nhất quán.
+
+93
+00:06:12,700 --> 00:06:17,500
+Vì vậy, chúng ta hãy hiểu lý do tại sao mặc dù nó là không xác định.
+
+94
+00:06:17,500 --> 00:06:23,340
+Vì vậy, chúng ta hãy có một câu mà sẽ được xuất ra bởi aLM.
+
+95
+00:06:23,340 --> 00:06:26,380
+Và câu trả lời là sau cơn mưa.
+
+96
+00:06:26,380 --> 00:06:32,780
+Và những gì sẽ xảy ra là các LLM sẽ tạo ra một danh sách các từ tiềm năng
+
+97
+00:06:32,780 --> 00:06:39,100
+với xác suất. Vậy từ tiếp theo sẽ là gì trong câu này?
+
+98
+00:06:39,100 --> 00:06:42,060
+Vì vậy, mô hình tổng quát sẽ suy nghĩ, và nó sẽ nói, OK,
+
+99
+00:06:42,060 --> 00:06:47,340
+có thể nó ướt, và có một 0,4 trong một cơ hội mà sẽ được ướt.
+
+100
+00:06:47,660 --> 00:06:55,500
+Hoặc ngập, 0.25, trơn, 0.15, trống rỗng, bùn lầy, sạch sẽ, bị chặn, v.v...
+
+101
+00:06:55,500 --> 00:07:00,620
+Vì vậy, tất cả các câu nói có ý nghĩa, nhưng có xác suất.
+
+102
+00:07:00,620 --> 00:07:05,580
+Điều đó có nghĩa là một số từ này rất có thể là từ tiếp theo trong câu đó.
+
+103
+00:07:05,580 --> 00:07:10,300
+Và một thuật toán sẽ, tất nhiên, tính toán các xác suất.
+
+104
+00:07:10,300 --> 00:07:15,500
+Và một từ khác sẽ chọn một từ trong danh sách dựa trên xác suất.
+
+105
+00:07:15,500 --> 00:07:19,180
+Và ví dụ, chúng ta sẽ chọn từ bị ngập lụt.
+
+106
+00:07:19,180 --> 00:07:23,020
+Vì vậy, nó sẽ là sau khi mưa, các đường phố bị ngập.
+
+107
+00:07:23,020 --> 00:07:25,260
+Và tất cả đều được làm bởi người mẫu Jenny I.
+
+108
+00:07:25,260 --> 00:07:28,220
+Vì vậy, bây giờ chúng tôi có sau cơn mưa, các con đường bị ngập lụt.
+
+109
+00:07:28,220 --> 00:07:31,820
+Và quá trình tương tự lặp đi lặp lại.
+
+110
+00:07:31,820 --> 00:07:36,780
+Vậy từ tiếp theo có thể là gì, nhưng từ đó,
+
+111
+00:07:36,780 --> 00:07:38,540
+bởi vì và ngay cả một dấu chấm.
+
+112
+00:07:38,540 --> 00:07:42,780
+Sau cơn mưa, các con đường tràn ngập, chấm, và đó là kết thúc của câu.
+
+113
+00:07:42,780 --> 00:07:46,380
+Vì vậy, tất cả những điều này một lần nữa có xác suất liên quan.
+
+114
+00:07:46,380 --> 00:07:51,020
+Và từ tiếp theo sẽ được chọn dựa trên những xác suất này.
+
+115
+00:07:51,020 --> 00:07:56,620
+Vì vậy, đây là lý do tại sao khi bạn hỏi AI hai lần cùng một dấu nhắc, bạn có thể không nhận được cùng một câu trả lời.
+
+116
+00:07:56,620 --> 00:08:01,100
+Bởi vì câu đó đã được xác định, nhờ vào phương pháp thống kê,
+
+117
+00:08:01,100 --> 00:08:03,260
+và không có phương pháp xác định.
+
+118
+00:08:03,260 --> 00:08:07,260
+Vì vậy, đó là cho LMs, nhưng chúng ta hãy nói về hình ảnh là tốt.
+
+119
+00:08:07,260 --> 00:08:11,980
+Vì vậy, Gen Al cho hình ảnh hoạt động theo một cách mà, ví dụ, bạn có thể cho nó một lời nhắc nhở.
+
+120
+00:08:11,980 --> 00:08:17,260
+Chẳng hạn, tạo ra bầu trời xanh với mây trắng và từ "xin chào" được viết trên bầu trời.
+
+121
+00:08:17,260 --> 00:08:21,260
+Và mô hình gen AI sẽ thực sự cho bạn hình ảnh đó.
+
+122
+00:08:21,260 --> 00:08:23,100
+Đó là tất nhiên chúng tôi tạo ra cho khóa học này.
+
+123
+00:08:23,100 --> 00:08:27,900
+Chúng ta cũng có thể tạo ra hình ảnh từ hình ảnh.
+
+124
+00:08:27,900 --> 00:08:30,460
+Ở đây chúng tôi đưa ra hình ảnh một người chơi piano.
+
+125
+00:08:30,460 --> 00:08:34,940
+Và chúng ta đang nói đến việc biến hình hình ảnh này thành một trò giải trí Nhật Bản.
+
+126
+00:08:34,940 --> 00:08:38,140
+Và hình ảnh kết quả sẽ giống nhau.
+
+127
+00:08:38,140 --> 00:08:41,180
+Nhưng bây giờ có vẻ như nó xuất phát từ cây Manga.
+
+128
+00:08:42,140 --> 00:08:44,860
+Và sau đó chúng tôi cũng có thể tạo ra văn bản từ hình ảnh.
+
+129
+00:08:44,860 --> 00:08:48,220
+Vì vậy, chúng tôi đưa ra một dấu nhắc và nói bao nhiêu quả táo bạn thấy trong hình?
+
+130
+00:08:48,220 --> 00:08:51,340
+Và chúng tôi cho nó một bức ảnh với một quả cam và một quả táo.
+
+131
+00:08:51,340 --> 00:08:56,780
+Và sau đó Gen Al sẽ nhìn vào hình ảnh và nói,
+
+132
+00:08:56,780 --> 00:09:00,380
+Bức tranh cho thấy một quả táo và trái còn lại là một quả cam.
+
+133
+00:09:00,380 --> 00:09:03,740
+Vì vậy, chỉ để cho bạn biết làm thế nào mà hoạt động cho Gen Al cho hình ảnh.
+
+134
+00:09:03,740 --> 00:09:07,500
+Vì vậy, bạn có một ý tưởng về làm thế nào một cái gì đó có thể tạo ra một hình ảnh.
+
+135
+00:09:07,500 --> 00:09:11,340
+Dĩ nhiên có nhiều phương pháp khác nhau, nhưng ngày nay là một trong những phương pháp phổ biến.
+
+136
+00:09:11,340 --> 00:09:13,740
+là mô hình phân tán từ một công ty.
+
+137
+00:09:13,740 --> 00:09:16,380
+Ví dụ, sự lan truyền trên bảng, dùng mô hình này một cách nghiêm túc.
+
+138
+00:09:16,380 --> 00:09:20,060
+Vì vậy, hãy chụp một bức ảnh và đây là một bức ảnh của một con mèo.
+
+139
+00:09:20,060 --> 00:09:25,260
+Và chúng ta sẽ làm cái gọi là quá trình phân tán phía trước.
+
+140
+00:09:25,260 --> 00:09:29,340
+Điều đó có nghĩa là chúng tôi sẽ thêm một số tiếng ồn vào hình ảnh theo thời gian.
+
+141
+00:09:29,340 --> 00:09:33,100
+Đây là một chút tiếng ồn, nhưng đó là hình ảnh tương tự với một chút tiếng ồn.
+
+142
+00:09:33,100 --> 00:09:34,700
+Và sau đó chúng tôi thêm tiếng ồn.
+
+143
+00:09:34,700 --> 00:09:36,940
+Chúng ta hầu như không thể nhận ra lũ mèo.
+
+144
+00:09:36,940 --> 00:09:41,020
+Và sau đó chúng tôi thêm tiếng ồn và nó trông như con mèo đã biến mất hoàn toàn.
+
+145
+00:09:41,020 --> 00:09:42,300
+Và tất cả những gì chúng tôi nhận được là tiếng ồn.
+
+146
+00:09:42,300 --> 00:09:45,740
+Và chúng tôi làm điều này cho rất nhiều bức tranh.
+
+147
+00:09:45,740 --> 00:09:47,660
+Và điều này được gọi là quá trình lan truyền về phía trước.
+
+148
+00:09:47,660 --> 00:09:53,020
+Và một khi thuật toán được đào tạo để lấy hình ảnh và tạo ra tiếng ồn từ nó,
+
+149
+00:09:53,020 --> 00:09:54,460
+chúng ta làm ngược lại.
+
+150
+00:09:54,460 --> 00:09:58,460
+Vì vậy, khi chúng tôi muốn tạo ra một hình ảnh, chúng tôi sẽ bắt đầu với tiếng ồn,
+
+151
+00:09:58,460 --> 00:10:03,100
+Và chúng tôi cũng sẽ cho nó một dấu nhắc và nói, chúng tôi muốn một con mèo với một máy tính.
+
+152
+00:10:03,100 --> 00:10:04,860
+Và nó được gọi là sự lan truyền ngược.
+
+153
+00:10:04,860 --> 00:10:08,940
+Vì vậy bây giờ mà thuật toán đã nhìn thấy làm thế nào để đi từ một hình ảnh đến tiếng ồn,
+
+154
+00:10:08,940 --> 00:10:10,780
+Nó sẽ chuyển từ tiếng ồn sang hình ảnh.
+
+155
+00:10:10,780 --> 00:10:12,860
+Vì vậy, chúng tôi cho nó một số tiếng ồn ngẫu nhiên.
+
+156
+00:10:12,860 --> 00:10:17,660
+Và sau đó nó nói, OK, tôi sẽ làm giảm nó và nó sẽ bắt đầu giống như một con mèo.
+
+157
+00:10:17,660 --> 00:10:20,780
+Và sau đó làm giảm nó một lần nữa và sau đó làm giảm nó một lần nữa.
+
+158
+00:10:20,780 --> 00:10:23,020
+Và rồi chúng tôi có những con mèo có máy tính.
+
+159
+00:10:23,020 --> 00:10:26,780
+Hãy tưởng tượng đây là một hình ảnh mới được tạo ra bởi AI và không giống hệt nhau.
+
+160
+00:10:26,780 --> 00:10:28,300
+Tất nhiên là nó được huấn luyện.
+
+161
+00:10:28,300 --> 00:10:31,740
+Đây là cách Jenny tôi làm việc cho văn bản cho hình ảnh.
+
+162
+00:10:31,740 --> 00:10:37,020
+Chỉ cần nhớ khái niệm về một LLM, hãy nhớ khái niệm rằng nó không phải là xác định.
+
+163
+00:10:37,020 --> 00:10:41,420
+Nhưng bây giờ bạn đã có một tổng thể của Jenny I, và tôi hy vọng bạn thích nó.
+
+164
+00:10:41,420 --> 00:10:43,580
+Và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
