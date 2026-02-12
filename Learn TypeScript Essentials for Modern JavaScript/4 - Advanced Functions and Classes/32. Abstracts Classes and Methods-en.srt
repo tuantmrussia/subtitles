@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:06,800
+ Welcome back. In this lesson, we're going to learn about abstract classes and abstract methods in TypeScript.
+
+2
+00:00:06,800 --> 00:00:14,320
+ These are powerful tools using real-world applications to enforce structure, consistency,
+
+3
+00:00:14,320 --> 00:00:20,800
+ and design rules across our codebase. If you've ever wanted to have frameworks
+
+4
+00:00:20,800 --> 00:00:27,440
+ for us to implement certain methods, this is how they do it. Let's start with a problem.
+
+5
+00:00:27,440 --> 00:00:30,960
+ Imagine we're building an application with different types of uses.
+
+6
+00:00:30,960 --> 00:00:38,080
+ Apps, admins, regular users, and maybe guests. All users should have a login method,
+
+7
+00:00:38,080 --> 00:00:42,080
+ but the actual implementation might be different for each type.
+
+8
+00:00:42,080 --> 00:00:51,040
+ So we're going to need some shared structure, some different implementations and enforce rules.
+
+9
+00:00:51,040 --> 00:00:53,920
+ And that's exactly where abstract classes come in.
+
+10
+00:00:54,880 --> 00:01:00,800
+ An abstract class is a class that cannot be instantiated directly. It's meant to be extended
+
+11
+00:01:00,800 --> 00:01:08,160
+ by other classes. Abstract classes define what must exist, but not necessary how it works.
+
+12
+00:01:08,160 --> 00:01:17,840
+ Let's go to an example. So we do use the abstract keyword to abstract class and then user.
+
+13
+00:01:21,520 --> 00:01:29,920
+ We then provide a constructor. Our constructor might have a username, so let's do a public username,
+
+14
+00:01:29,920 --> 00:01:36,320
+ but type of string. Let's just leave the constructor blank at the moment.
+
+15
+00:01:36,320 --> 00:01:45,920
+ And now we want to define our mandatory method. We do abstract and then do login.
+
+16
+00:01:47,200 --> 00:01:52,400
+ This is our method and our method is going to return nothing, so basically void.
+
+17
+00:01:52,400 --> 00:01:56,080
+ So we define an abstract class called user.
+
+18
+00:01:56,080 --> 00:02:01,120
+ We notice that we use the abstract keyword here.
+
+19
+00:02:01,120 --> 00:02:09,920
+ Also notice that the login method has no body. So this method must be implemented by any class
+
+20
+00:02:09,920 --> 00:02:18,160
+ that extends user. So abstract methods enforce a contract. They guarantee that every subclass
+
+21
+00:02:18,160 --> 00:02:26,400
+ provides its own implementation. Again, if any subclass inherits from this particular masterclass,
+
+22
+00:02:26,400 --> 00:02:32,320
+ it must implement this particular method. If a subclass forgets implement this method,
+
+23
+00:02:32,320 --> 00:02:39,920
+ TypeScript is going to throw an error before our code even runs. Let's now do an example.
+
+24
+00:02:39,920 --> 00:02:49,760
+ So we do class and then admin user, and we say extends, extends our masterclass of user.
+
+25
+00:02:49,760 --> 00:02:56,560
+ Let's hover over and we see that TypeScript forces us to implement this particular method.
+
+26
+00:02:57,840 --> 00:03:07,600
+ So now let's do login. This returns a void. Now we can do whatever we want. So it perhaps
+
+27
+00:03:07,600 --> 00:03:10,560
+ console log and say log in.
+
+28
+00:03:10,560 --> 00:03:21,200
+ So in this example, the admin user extends user and is required to implement the login methods.
+
+29
+00:03:21,200 --> 00:03:27,520
+ Let's now create another user type. Let's do one called regular user.
+
+30
+00:03:27,520 --> 00:03:43,360
+ So class regular user extends user. Once again, TypeScript is going to force us to implement
+
+31
+00:03:43,360 --> 00:03:48,000
+ this method. I'm just going to copy this method and paste it into here.
+
+32
+00:03:48,000 --> 00:03:54,720
+ Now if class is full of the same structure, but that behavior can differ. So of course,
+
+33
+00:03:54,720 --> 00:04:00,880
+ if we don't want to do this, we could say have a logged in regular user.
+
+34
+00:04:00,880 --> 00:04:09,760
+ And now we can actually create our classes. So we could do const admin equals new admin user,
+
+35
+00:04:09,760 --> 00:04:17,120
+ and we can provide a string, perhaps Alice, and we can then do the same thing for the regular user
+
+36
+00:04:17,120 --> 00:04:27,040
+ and do const user equals new regular user and say bob. And now we can do admin dot log in
+
+37
+00:04:27,040 --> 00:04:38,560
+ user dot log in. Even though we can't create instances of the abstract user class directly,
+
+38
+00:04:38,560 --> 00:04:44,640
+ we can work with subclasses. So if we try and do something like this and do const test user
+
+39
+00:04:44,640 --> 00:04:51,040
+ equals new user, we're going to get this message that we can't create an instance of the abstract
+
+40
+00:04:51,040 --> 00:04:59,920
+ class. Now a common question is why not just use an interface? But there are some differences
+
+41
+00:04:59,920 --> 00:05:06,240
+ between it. In an abstract class, we can have constructors. We can have implemented methods
+
+42
+00:05:06,240 --> 00:05:13,440
+ and make an store state. Whereas in interfaces, we don't actually have any implementation.
+
+43
+00:05:13,440 --> 00:05:20,080
+ We have no constructors, and it's basically pure structure. So again, if we have an abstract class,
+
+44
+00:05:20,080 --> 00:05:27,120
+ we can define some default behavior in our actual master class, which we can't do when we're
+
+45
+00:05:27,120 --> 00:05:33,600
+ using an interface because we can't have any implementation. They use an interface when you only
+
+46
+00:05:33,600 --> 00:05:40,000
+ need structure, easily abstract class, when you need to have shared logic plus enforce rules.
+
+47
+00:05:42,000 --> 00:05:50,080
+ Now abstract classes can also contain regular methods. Let's just blast us away and do another example.
+
+48
+00:05:50,080 --> 00:05:57,600
+ Let's define a class called shape. So abstract class of shape.
+
+49
+00:05:57,600 --> 00:06:07,600
+ Now let's define a shared method to abstract area. This can return a number.
+
+50
+00:06:09,200 --> 00:06:14,240
+ Now we can define another method perhaps called describe, describe.
+
+51
+00:06:14,240 --> 00:06:25,200
+ This returns nothing, and we can do a little implementation here in say console, log, and say
+
+52
+00:06:25,200 --> 00:06:32,240
+ this is a shape. So this area method here, because it's marked by abstract,
+
+53
+00:06:32,240 --> 00:06:39,280
+ must be implemented by subclasses. What this method here describe is already implemented and shared.
+
+54
+00:06:39,280 --> 00:06:47,520
+ It doesn't necessarily have to be implemented. So let's try and implement this straight shape.
+
+55
+00:06:49,920 --> 00:07:03,360
+ We can define another class called circle, let me say extends shape. We can create a constructor
+
+56
+00:07:03,360 --> 00:07:11,840
+ and we can say for example private, radius, subtype number.
+
+57
+00:07:15,520 --> 00:07:23,280
+ So we can define our own constructor on our class. And then we need to call the super
+
+58
+00:07:23,280 --> 00:07:28,240
+ to call the constructor if it's defined on the shape, rotate super.
+
+59
+00:07:28,240 --> 00:07:38,800
+ And now if you hover over it, it says we must declare this method called area.
+
+60
+00:07:40,000 --> 00:07:46,560
+ So let's do that. And the area returns a number.
+
+61
+00:07:46,560 --> 00:07:59,520
+ Now we can do return math dot pi times this dot radius times this dot radius.
+
+62
+00:07:59,520 --> 00:08:07,520
+ So our circle class must implement the area method, or we get the error, which we saw,
+
+63
+00:08:08,400 --> 00:08:11,840
+ but it automatically inherits that describe method.
+
+64
+00:08:11,840 --> 00:08:18,080
+ Let's talk about some real world use classes. So abstract classes are commonly used in
+
+65
+00:08:18,080 --> 00:08:25,840
+ things like framework based classes, game engines, UI components, or maybe API service layers.
+
+66
+00:08:25,840 --> 00:08:30,880
+ They allow large teams to follow consistent rules while still allowing flexibility.
+
+67
+00:08:30,880 --> 00:08:37,760
+ So abstract classes to find what must be done, not necessarily how it's done.
+
+68
+00:08:38,480 --> 00:08:44,000
+ And there are powerful ways to enforce structure and build scalable TypeScript applications.
+
