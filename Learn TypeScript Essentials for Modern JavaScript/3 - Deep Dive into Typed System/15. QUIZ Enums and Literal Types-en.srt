@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:05,740
+ Before we move on let's have a quick quiz on the previous lesson to see how
+
+2
+00:00:05,740 --> 00:00:10,860
+ you've actually understood it and the idea is you're going to fill in the
+
+3
+00:00:10,860 --> 00:00:19,140
+ blanks on these questions. So number one is an enum is a way to define a set of
+
+4
+00:00:19,140 --> 00:00:27,580
+ beep values, question mark values. So what is the word missing from this
+
+5
+00:00:27,580 --> 00:00:38,600
+ particular sentence? And the answer is named value. So an enum is a way to define a
+
+6
+00:00:38,600 --> 00:00:48,760
+ set of named values. A question two, little types restrict a variable to a
+
+7
+00:00:48,760 --> 00:01:00,680
+ specific set of what question mark. And the answer is values. So little types
+
+8
+00:01:00,680 --> 00:01:10,260
+ restrict a variable to a specific set of values. Question three, string enums are
+
+9
+00:01:10,260 --> 00:01:18,760
+ more what question? Then numeric enums when debugging. So if it in the bank string
+
+10
+00:01:18,760 --> 00:01:30,600
+ enums are more question mark than numeric enums when debugging. And the right
+
+11
+00:01:30,600 --> 00:01:37,720
+ answer is readable. So string enums are more readable than numeric enums when
+
+12
+00:01:37,720 --> 00:01:45,360
+ debugging. Question four, a union of literal types looks like small
+
+13
+00:01:45,360 --> 00:01:56,960
+ medium large. This is called a what type. What's that called? It's called a
+
+14
+00:01:56,960 --> 00:02:04,640
+ literal union type. So a union of literal types of small medium large. This is
+
+15
+00:02:04,640 --> 00:02:12,840
+ called a literal union type. Okay, so hopefully you managed to do that. So now let's
+
+16
+00:02:12,840 --> 00:02:20,980
+ move on to part two, which is fixing the errors. So I'm going to give you an
+
+17
+00:02:20,980 --> 00:02:26,460
+ actual problem, and you're going to then solve it. So this is an enum, an
+
+18
+00:02:26,460 --> 00:02:43,860
+ enum of status. And we're going to have a success. Let's have another one, which is an error.
+
+19
+00:02:43,860 --> 00:02:56,220
+ One is pending. All right, so this is the issue. So let's current status status
+
+20
+00:02:56,220 --> 00:03:07,020
+ equals success. Okay, so it's complaining. So you need to fix work out why
+
+21
+00:03:07,020 --> 00:03:20,580
+ it's complaining. Perhaps give it go on the playground and then fix it. So by
+
+22
+00:03:20,580 --> 00:03:25,540
+ hovering over it, you can see what the actual issue is that the success in a
+
+23
+00:03:25,540 --> 00:03:32,380
+ big couple of success is not assignable to type status. So the mean status
+
+24
+00:03:32,380 --> 00:03:38,860
+ dot success. And yes, we did. So we just need to remove this and do status dot
+
+25
+00:03:38,860 --> 00:03:47,340
+ success. Okay, let's go for another one here. So I'm going to remove this and
+
+26
+00:03:47,340 --> 00:03:54,380
+ let's do type. This is going to be size. And we're going to have a size of small.
+
+27
+00:03:54,380 --> 00:04:06,020
+ The pipe size of medium pipe and large. I'm going to create a function. So let's
+
+28
+00:04:06,020 --> 00:04:28,820
+ say create box size is up type size and console log size size size size. We're going to call
+
+29
+00:04:28,820 --> 00:04:37,500
+ the function create box and try and call it a extra size. And of course, it's
+
+30
+00:04:37,500 --> 00:04:43,140
+ underlined. So take a moment here, have a go on the playground and see if you
+
+31
+00:04:43,140 --> 00:04:54,740
+ can fix this. So hovering over it, we can see we it's not recognizable because
+
+32
+00:04:54,740 --> 00:05:00,900
+ it's not one of these three options. We can simply just remove this and do
+
+33
+00:05:00,900 --> 00:05:08,420
+ something like large. Then the problem goes away and that's now fixed. Let's move
+
+34
+00:05:08,420 --> 00:05:16,180
+ on and have a look at part three of our tests. And this is kind of like a bit DIY
+
+35
+00:05:16,180 --> 00:05:22,900
+ or the order own. So what I want to do is create an enum for a weather condition.
+
+36
+00:05:22,900 --> 00:05:32,580
+ So weather condition. Now we'll do to have three values or for sorry, all values.
+
+37
+00:05:32,580 --> 00:05:50,180
+ Let's have sunny and let's have cloudy. That's a rainy. And let's have snowy. So if I go
+
+38
+00:05:50,180 --> 00:05:56,980
+ it's creating an enum for this particular thing. And then also as a bonus
+
+39
+00:05:56,980 --> 00:06:01,540
+ try and create a function that logs a message based on that condition.
+
+40
+00:06:01,540 --> 00:06:16,100
+ Okay, let's give it a go. So enum, the weather condition. And you want the four things in here.
+
+41
+00:06:16,100 --> 00:06:34,180
+ You want sunny, cloudy, rainy and snowy. And let's try doing a function. So let's say create
+
+42
+00:06:34,180 --> 00:06:43,460
+ weather. Going to need to pass in the weather. Turns a bit strange, but weather condition.
+
+43
+00:06:45,620 --> 00:06:52,500
+ And the console log. And say weather is a dollar weather.
+
+44
+00:06:52,500 --> 00:07:01,940
+ And then call the function. So great weather. And we can do for example, weather condition
+
+45
+00:07:01,940 --> 00:07:07,380
+ and then do whatever we want to take rainy, for example, which is always the case in UK.
+
+46
+00:07:07,380 --> 00:07:14,660
+ And we're going to run that. And we get the weather is the numerator value of our enumeration,
+
+47
+00:07:14,660 --> 00:07:22,020
+ say to for example, let's just change that to cloudy, run it again. And we get this here.
+
+48
+00:07:22,020 --> 00:07:29,220
+ And let's do part four, which is about literal types. So in this challenge, I want you to
+
+49
+00:07:29,220 --> 00:07:38,660
+ define a type called theme mode. That allows two options, a light and dark.
+
+50
+00:07:40,420 --> 00:07:46,500
+ And then write a function. And let's call it perhaps apply theme.
+
+51
+00:07:46,500 --> 00:07:52,740
+ Which accepts a mode and then logs that selected mode.
+
+52
+00:07:52,740 --> 00:08:08,500
+ Okay, so we can do type. And you can call type theme mode. And this is going to have a light.
+
+53
+00:08:09,860 --> 00:08:17,220
+ And with a pipe is also going to have a dark mode. And now we can create our function
+
+54
+00:08:17,220 --> 00:08:26,980
+ why theme. Now we're going to pass in our mode, which was on type theme mode.
+
+55
+00:08:26,980 --> 00:08:38,020
+ And we simply can do a console log. And say mode is dollar mode.
+
+56
+00:08:40,340 --> 00:08:47,060
+ That's a core function apply theme. And let's pass in one of the modes.
+
+57
+00:08:47,060 --> 00:08:51,700
+ And we say pass in, for example, light theme.
+
+58
+00:08:51,700 --> 00:08:55,220
+ Here the log here.
+
+59
+00:08:55,220 --> 00:09:02,260
+ And let's run it. And the mode is light.
+
+60
+00:09:02,260 --> 00:09:09,620
+ Okay, hopefully managed to do quite well on those little tests there. And I'll see you in the next
+
+61
+00:09:09,620 --> 00:09:10,620
+ Muchio.
+
