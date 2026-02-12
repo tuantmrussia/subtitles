@@ -1,0 +1,364 @@
+1
+00:00:00,000 --> 00:00:05,260
+Vì vậy, hãy xem xét sự tích hợp giữa Bedrock và Cloud Watch logs.
+
+2
+00:00:05,260 --> 00:00:08,380
+Vì vậy, chúng tôi sẽ đi dưới Thiết lập ở phía dưới bên trái,
+
+3
+00:00:08,380 --> 00:00:10,800
+Và bạn có mô hình ghi chép.
+
+4
+00:00:10,800 --> 00:00:14,440
+Vì vậy ở đây chúng tôi chắc chắn có thể kích hoạt nó,
+
+5
+00:00:14,440 --> 00:00:18,520
+và sau đó điều này sẽ thu thập tất cả các yêu cầu và đáp ứng siêu dữ liệu
+
+6
+00:00:18,520 --> 00:00:21,240
+cho tất cả các mô hình trong tài khoản của bạn.
+
+7
+00:00:21,240 --> 00:00:24,480
+Vì vậy, bạn có thể chọn loại dữ liệu bạn muốn bao gồm với các bản ghi,
+
+8
+00:00:24,480 --> 00:00:27,400
+Vì vậy, nó có thể là văn bản, hình ảnh, và các sơ hở.
+
+9
+00:00:27,400 --> 00:00:30,560
+Và sau đó điểm đến có thể là Amazon như xô miễn phí,
+
+10
+00:00:30,560 --> 00:00:32,960
+Hoặc chỉ có thể là Cloud Watch, hoặc là cả hai.
+
+11
+00:00:32,960 --> 00:00:34,880
+Vì vậy tôi sẽ chỉ sử dụng Cloud Watch,
+
+12
+00:00:34,880 --> 00:00:37,960
+và sau đó bạn cần xác định tên nhóm bản ghi.
+
+13
+00:00:37,960 --> 00:00:45,680
+Nên tôi gọi đây là chiếc Bedrock in crag Lobining.
+
+14
+00:00:45,680 --> 00:00:48,960
+Và sau đó tôi sẽ tạo ra một người dùng trong vai trò của bạn.
+
+15
+00:00:48,960 --> 00:00:53,520
+Vì vậy đây là vai trò mà Amazon Bedrock sẽ cần để gửi dữ liệu đến các bản ghi của Cloud Watch.
+
+16
+00:00:53,520 --> 00:01:01,160
+Nên tôi gọi đây là vai diễn "Bedrock in crag Lobining".
+
+17
+00:01:01,160 --> 00:01:02,240
+Được rồi.
+
+18
+00:01:02,240 --> 00:01:06,480
+Và tiếp theo, chúng ta có sự tái định cư cho việc giao hàng lớn hơn.
+
+19
+00:01:06,480 --> 00:01:10,840
+Vì vậy, trong trường hợp nó là hơn 100kg, sau đó nó có thể được xuất bản đến Amazon miễn phí.
+
+20
+00:01:10,840 --> 00:01:15,600
+Nhưng chúng ta không cần nó bây giờ, vì vậy chúng ta chỉ cần lưu những thiết lập này.
+
+21
+00:01:15,600 --> 00:01:18,880
+Vì vậy, chúng tôi nhận được một lỗi nói rằng nhóm bản ghi đã xác định không tồn tại.
+
+22
+00:01:18,880 --> 00:01:22,160
+Vì vậy, chúng tôi phải tạo ra nó bằng tay ở Cloud Watch trong trường hợp này.
+
+23
+00:01:22,160 --> 00:01:25,040
+Có lẽ cái này sẽ được sửa khi anh dùng cái này.
+
+24
+00:01:25,040 --> 00:01:28,360
+Nhưng hãy xem các bản ghi của Cloud Watch, các nhóm nhật ký.
+
+25
+00:01:28,360 --> 00:01:31,040
+Và rồi bạn sẽ tạo ra một nhóm bản ghi mới.
+
+26
+00:01:31,040 --> 00:01:35,360
+Và tên sẽ là cái này mà tôi sẽ sao chép và dán.
+
+27
+00:01:35,360 --> 00:01:36,600
+Để chúng ta có thể thiết lập một số thiết lập.
+
+28
+00:01:36,600 --> 00:01:38,840
+Bạn có muốn bản ghi hết hạn hay không?
+
+29
+00:01:38,840 --> 00:01:41,760
+Nhưng chúng ta chỉ cần nhấp chuột vào tạo hóa và đi tiếp.
+
+30
+00:01:41,760 --> 00:01:44,200
+OK, bây giờ nhóm nhật ký của tôi được tạo ra.
+
+31
+00:01:44,200 --> 00:01:45,440
+Nó ở đây.
+
+32
+00:01:45,440 --> 00:01:48,080
+Và hãy đi tới Amazon Bedrock.
+
+33
+00:01:48,080 --> 00:01:54,460
+Và chúng ta sẽ lưu những thiết lập này một lần nữa.
+
+34
+00:01:54,460 --> 00:01:58,680
+Và bây giờ chúng ta cần phải nói rằng chúng ta sẽ không sử dụng một vai trò hiện có.
+
+35
+00:01:58,680 --> 00:01:59,280
+Ngay đây.
+
+36
+00:01:59,280 --> 00:02:01,160
+Vì vậy, hãy để tôi đề cập đến điều này.
+
+37
+00:02:01,160 --> 00:02:05,520
+Điều này đôi khi hơi khó chịu khi bạn có vấn đề trên bảng điều khiển.
+
+38
+00:02:05,520 --> 00:02:08,520
+Nhưng nó đã được sửa chữa tại một thời điểm nào đó.
+
+39
+00:02:08,520 --> 00:02:09,040
+Đây rồi.
+
+40
+00:02:09,040 --> 00:02:13,240
+Bây giờ chúng tôi đã chọn vai trò hiện có đã được tạo ra và lưu các thiết lập.
+
+41
+00:02:13,240 --> 00:02:15,240
+Và chúng ta nên đi thôi.
+
+42
+00:02:15,240 --> 00:02:18,240
+OK, vậy thiết lập đã được lưu.
+
+43
+00:02:18,240 --> 00:02:22,920
+Và những gì tôi có thể làm bây giờ, như tôi có thể nói chuyện, tôi sẽ chọn một mô hình.
+
+44
+00:02:22,920 --> 00:02:25,320
+Và tôi sẽ nhấp chuột vào Run.
+
+45
+00:02:25,320 --> 00:02:29,320
+Và sau đó chúng tôi sẽ nhận được - vì vậy chúng tôi gửi một đầu vào.
+
+46
+00:02:29,320 --> 00:02:31,320
+Và sau đó chúng tôi nhận được một đầu ra.
+
+47
+00:02:31,320 --> 00:02:31,920
+Và chúng ta đã sẵn sàng.
+
+48
+00:02:31,920 --> 00:02:33,440
+Bây giờ hãy chờ một chút.
+
+49
+00:02:33,440 --> 00:02:36,560
+Và sau đó đi vào các bản ghi của Cloud Watch để xem nó có xuất hiện không.
+
+50
+00:02:36,560 --> 00:02:38,760
+Nên tôi sẽ xem nhật ký của Cloud Watch.
+
+51
+00:02:38,760 --> 00:02:40,520
+Và chúng ta sẽ làm lại trang này.
+
+52
+00:02:40,520 --> 00:02:42,680
+Và chúng ta có một dòng đăng nhập ở đây.
+
+53
+00:02:42,680 --> 00:02:45,560
+Cho chúng tôi mô hình nền để cầu khẩn.
+
+54
+00:02:45,560 --> 00:02:50,560
+Và ở đây chúng tôi có thông tin mà các quyền hạn đã đặt chính xác cho các bản ghi trên nền đá Amazon.
+
+55
+00:02:50,560 --> 00:02:54,440
+Và sau đó chúng tôi nhận được một số thông tin về một mô hình trong kêu gọi.
+
+56
+00:02:54,440 --> 00:02:56,840
+Chúng tôi có rất nhiều thông tin xung quanh nó.
+
+57
+00:02:56,840 --> 00:03:01,240
+Nhưng chúng tôi biết rằng, ví dụ, ID mô hình là Amazon text V1.
+
+58
+00:03:01,240 --> 00:03:04,160
+Đây là một cách để chúng ta nhận diện các mô hình mà chúng ta đang sử dụng.
+
+59
+00:03:04,160 --> 00:03:06,200
+Chúng tôi có thông tin về khu vực.
+
+60
+00:03:06,200 --> 00:03:08,760
+Và sau đó chúng tôi nhận được tin nhắn.
+
+61
+00:03:08,760 --> 00:03:10,280
+Vì vậy, chúng tôi có một người dùng đó là chúng tôi.
+
+62
+00:03:10,280 --> 00:03:12,880
+Và chúng tôi đã gửi thông tin này.
+
+63
+00:03:12,880 --> 00:03:18,520
+Và sau đó chúng tôi có một số thông tin xung quanh cấu hình này trong kêu gọi.
+
+64
+00:03:18,520 --> 00:03:21,680
+Và có bao nhiêu vật kỷ niệm, 271?
+
+65
+00:03:21,680 --> 00:03:24,760
+Và kết quả là thông điệp này.
+
+66
+00:03:24,760 --> 00:03:31,480
+Vì vậy, vai trò trợ lý có nghĩa là nó là chính nó và nội dung là điều này.
+
+67
+00:03:31,480 --> 00:03:38,000
+Và một lần nữa, chúng tôi nhận được thông tin rằng độ phân giải là 4,38 phần nghìn giây.
+
+68
+00:03:38,000 --> 00:03:40,000
+Chúng ta có thông tin xung quanh hiệu xuất.
+
+69
+00:03:40,000 --> 00:03:41,560
+Toàn bộ biểu tượng và vân vân.
+
+70
+00:03:41,560 --> 00:03:45,960
+Điều này rất hữu ích bởi vì, như bạn có thể thấy, rất nhiều thông tin được bao gồm ở đây.
+
+71
+00:03:45,960 --> 00:03:49,080
+Và chúng ta có thể sử dụng thông tin này sau này để gỡ lỗi tất cả mọi thứ.
+
+72
+00:03:49,080 --> 00:03:52,280
+Ví dụ, chúng ta có thể chạy báo động.
+
+73
+00:03:52,280 --> 00:03:57,560
+Và để nhìn vào nếu độ trễ luôn nằm dưới một số cụ thể.
+
+74
+00:03:57,560 --> 00:04:02,520
+Và nếu một ngày nào đó sự khó khăn đạt đến một con số cao, thì chúng ta có thể muốn gửi cảnh báo,
+
+75
+00:04:02,520 --> 00:04:05,600
+Này, yêu cầu của cậu hơi quá mức rồi đấy.
+
+76
+00:04:05,600 --> 00:04:07,680
+Và trải nghiệm của người dùng có thể bị suy thoái.
+
+77
+00:04:07,680 --> 00:04:08,640
+Đó là cách làm.
+
+78
+00:04:08,640 --> 00:04:14,080
+Nhưng hy vọng bạn có được ý tưởng hợp nhất các nền đá Amazon với các bản ghi của Cloud Watch.
+
+79
+00:04:14,080 --> 00:04:19,840
+Vì vậy, điều khác chúng tôi có thể làm là đi vào Cloud Watch và đi vào tất cả các mét và
+
+80
+00:04:19,840 --> 00:04:21,560
+Rồi nhấp vào đá nền.
+
+81
+00:04:21,560 --> 00:04:26,920
+Và bạn có thể có nhiều số lượng hơn tôi, nhưng chúng tôi có ở đây đo lường theo mô hình ID.
+
+82
+00:04:26,920 --> 00:04:29,920
+Bạn có thể nhìn vào nó hoặc trên tất cả các mô hình ID.
+
+83
+00:04:29,920 --> 00:04:33,680
+Và ví dụ, chúng ta có thể có một cái nhìn vào số lượng những lời cầu khẩn hoặc cho
+
+84
+00:04:33,680 --> 00:04:40,040
+Ví dụ, sự thờ ơ vô trách nhiệm. Và chúng ta có thể thấy ở đây rằng độ phân giải đang được vẽ lên
+
+85
+00:04:40,040 --> 00:04:44,360
+đồ thị này. Vì vậy, bây giờ, tất nhiên, nếu bạn đã có một duy trì sử dụng đá nền Amazon,
+
+86
+00:04:44,360 --> 00:04:47,480
+Sau đó bạn sẽ thấy một đường cong ở đây với nhiều điểm dữ liệu.
+
+87
+00:04:47,480 --> 00:04:51,600
+Nhưng có rất nhiều máy đo mét được gửi bằng đá nền tới những thước đo của Cloud Watch.
+
+88
+00:04:51,600 --> 00:04:56,840
+Và bạn có thể xây dựng các thước đo, đồ thị, bảng điều khiển và báo động trên đầu nó.
+
+89
+00:04:56,840 --> 00:05:00,440
+Trong trường hợp, ví dụ, việc cầu khẩn quá cao.
+
+90
+00:05:00,440 --> 00:05:02,400
+Vì vậy, hãy nói cho bài giảng này, tôi hy vọng bạn thích nó.
+
+91
+00:05:02,400 --> 00:05:04,340
+và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
