@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:07,220
+ In the previous lesson we had a look at generics and we touched briefly upon generic constraints
+
+2
+00:00:07,220 --> 00:00:10,320
+ with this log length method.
+
+3
+00:00:10,320 --> 00:00:15,640
+ In this lesson we're going to do a deeper dive into generic constraints in TypeScript.
+
+4
+00:00:15,640 --> 00:00:20,660
+ So generics gives us flexibility but sometimes we need to add rules.
+
+5
+00:00:20,660 --> 00:00:27,120
+ Generic constraints lets us to exactly that keep flexibility without squeezing safety.
+
+6
+00:00:27,120 --> 00:00:34,320
+ To let's start with a problem, generics allow any type but sometimes that freedom is too much.
+
+7
+00:00:34,320 --> 00:00:39,000
+ A generic constraint restricts the types that a generic can accept.
+
+8
+00:00:39,000 --> 00:00:43,640
+ It tells TypeScript that T must follow these rules.
+
+9
+00:00:43,640 --> 00:00:49,360
+ Basically we do T extends some type.
+
+10
+00:00:49,360 --> 00:00:54,240
+ The key word extends is used to apply constraints.
+
+11
+00:00:54,240 --> 00:00:56,920
+ So let's have a look at an interface.
+
+12
+00:00:56,920 --> 00:01:07,640
+ You can do interface as length, now length, be a number.
+
+13
+00:01:07,640 --> 00:01:13,000
+ This interface defines a rule, anything with a length property.
+
+14
+00:01:13,000 --> 00:01:18,360
+ Let's now rewrite this log length method to use our has length interface.
+
+15
+00:01:18,360 --> 00:01:31,920
+ To do function log length, T extends as length.
+
+16
+00:01:31,920 --> 00:01:40,880
+ Our value is coming in of type T and our function returns void.
+
+17
+00:01:40,880 --> 00:01:48,240
+ Now we're going to console log value.length.
+
+18
+00:01:48,240 --> 00:01:54,040
+ So the value length is coming from our has length interface here.
+
+19
+00:01:54,040 --> 00:01:59,440
+ The TypeScript guarantees that the value has a length property.
+
+20
+00:01:59,440 --> 00:02:13,360
+ So you can do log length and say hello, world, world, to log length and have an array
+
+21
+00:02:13,360 --> 00:02:17,800
+ 1, 2, 3, 4, 5, 6 and we had a look at this in our previous lesson.
+
+22
+00:02:17,800 --> 00:02:29,320
+ We can do log length and we can give it maybe an object and say length is 10.
+
+23
+00:02:29,320 --> 00:02:30,320
+ Let's execute this.
+
+24
+00:02:30,320 --> 00:02:38,920
+ Let's just click the log and execute it and we have our three logs here.
+
+25
+00:02:38,920 --> 00:02:42,120
+ All of these are going to work because they satisfy the constraint.
+
+26
+00:02:42,120 --> 00:02:44,920
+ They've all got a length property.
+
+27
+00:02:44,920 --> 00:02:51,880
+ If we change this object down here, let's say we remove this and we provide a value of
+
+28
+00:02:51,880 --> 00:03:02,380
+ number here, let me get an error because the number does not have a length property.
+
+29
+00:03:02,380 --> 00:03:08,320
+ So TypeScript is going to block this, but let's now have a look at a more realistic
+
+30
+00:03:08,320 --> 00:03:09,400
+ example.
+
+31
+00:03:09,400 --> 00:03:12,060
+ Let's just move this code here.
+
+32
+00:03:12,060 --> 00:03:23,240
+ Let's have a function, get ID, miss a t extends and now we're going to dynamically or create
+
+33
+00:03:23,240 --> 00:03:27,520
+ our type on the fly and we're going to do this in curly braces.
+
+34
+00:03:27,520 --> 00:03:36,780
+ We're going to say this type has a number property.
+
+35
+00:03:36,780 --> 00:03:45,180
+ Now we provide our parameters and item, it's going to be our type t, our function is going
+
+36
+00:03:45,180 --> 00:03:48,340
+ to return number.
+
+37
+00:03:48,340 --> 00:04:00,000
+ Now if we do return item, notice we now have this ID because we defined it up here.
+
+38
+00:04:00,000 --> 00:04:04,960
+ So this function is going to work with any object as long as it has an ID property.
+
+39
+00:04:04,960 --> 00:04:14,900
+ So we can do, for example, get ID and we can pass an object with the ID of one and maybe
+
+40
+00:04:14,900 --> 00:04:27,400
+ name of Alice, that's absolutely fine because this object has this ID property.
+
+41
+00:04:27,400 --> 00:04:33,680
+ If we try to get ID, this time we're just going to supply our object, but we're not going
+
+42
+00:04:33,680 --> 00:04:42,000
+ to provide the ID, we're just going to say name equals bob and notice we get this squarely
+
+43
+00:04:42,000 --> 00:04:47,120
+ underline here and it's complaining that we haven't supplied the ID in this particular
+
+44
+00:04:47,120 --> 00:04:48,600
+ object.
+
+45
+00:04:48,600 --> 00:04:56,240
+ So this pattern here, let's get ID, is extremely common in APIs and database code.
+
+46
+00:04:56,240 --> 00:05:00,360
+ You can also use multiple constraints by combining interfaces.
+
+47
+00:05:00,360 --> 00:05:13,020
+ So let's see an example of that, we do interface, let's say has ID, ID and number and
+
+48
+00:05:13,020 --> 00:05:26,960
+ maybe have interface as name, name, string, that's now define a function to use this.
+
+49
+00:05:26,960 --> 00:05:37,820
+ So let's say print entity, have a t type t, which is going to extend, extends our has
+
+50
+00:05:37,820 --> 00:05:43,000
+ ID, but it also is going to extend has name.
+
+51
+00:05:43,000 --> 00:05:49,600
+ As a reminder, we can do this by doing the app assigned and then has name for the seconds
+
+52
+00:05:49,600 --> 00:05:51,800
+ interface.
+
+53
+00:05:51,800 --> 00:05:58,220
+ Now we have our parameters, so if you have an entity of type t, which is our combined
+
+54
+00:05:58,220 --> 00:06:05,980
+ has ID and has name and the function is going to return void.
+
+55
+00:06:05,980 --> 00:06:19,120
+ Now we can put our body of our function to console log into entity.id and maybe entity.name.
+
+56
+00:06:19,120 --> 00:06:28,720
+ So the type bus satisfy base interfaces, the constraints also work with classes as we move
+
+57
+00:06:28,720 --> 00:06:29,720
+ this again.
+
+58
+00:06:29,720 --> 00:06:43,560
+ And so up class and say user, let's build a constructor, a public parameters ID and number,
+
+59
+00:06:43,560 --> 00:06:55,040
+ empty implementation, I'm going to do a function, I'm going to say log user type t is going
+
+60
+00:06:55,040 --> 00:07:14,400
+ to extend our user class, and we're going to supply a user of type t, function is going to
+
+61
+00:07:14,400 --> 00:07:17,760
+ return void, the console log user dot ID.
+
+62
+00:07:17,760 --> 00:07:24,880
+ So this ensures the generic type is user or any subclass of user.
+
+63
+00:07:24,880 --> 00:07:30,280
+ Now without constraints, generics can be rather too loose, but with comp with constraints
+
+64
+00:07:30,280 --> 00:07:37,600
+ they're becoming super powerful and safe, but when to use generic constraints, I suggest
+
+65
+00:07:37,600 --> 00:07:43,960
+ use generics constraints when you need flexibility, but with rules, your functional works
+
+66
+00:07:43,960 --> 00:07:50,840
+ with related types, you want safer, reasonable utilities, or maybe your building libraries
+
+67
+00:07:50,840 --> 00:07:51,840
+ or frameworks.
+
