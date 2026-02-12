@@ -1,0 +1,428 @@
+1
+00:00:00,000 --> 00:00:05,200
+ Welcome back. In this lesson, we're unlocking one of TypeScript's superpowers, which is
+
+2
+00:00:05,200 --> 00:00:11,000
+ generics. generics lets us write a reasonable code that works with many types, while still
+
+3
+00:00:11,000 --> 00:00:17,000
+ keeping everything type safe. We're going to learn how to create generic functions, types
+
+4
+00:00:17,000 --> 00:00:24,320
+ and components that adapt to whatever data we throw at them. So what exactly is a generic?
+
+5
+00:00:24,320 --> 00:00:31,320
+ Well, a generic is a placeholder for a type. So instead of hard coding a specific type,
+
+6
+00:00:31,320 --> 00:00:40,320
+ we use a variable, which in usual, usual case is t. And that gets filled in when the function
+
+7
+00:00:40,320 --> 00:00:47,320
+ or the type is used. So let me just show you an example. So let's create a function and
+
+8
+00:00:47,320 --> 00:00:56,320
+ a function, perhaps we're going to call it identity. And we want a value. We want to give
+
+9
+00:00:56,320 --> 00:01:05,320
+ it a type. Now, our identity could be perhaps a string or it could be a number. So what
+
+10
+00:01:05,320 --> 00:01:14,320
+ we want to do is we can do a less than sign here. And then a greater than sign. And we
+
+11
+00:01:14,320 --> 00:01:22,320
+ want the variable t in here. So this becomes the generic as this, a generic type here. And
+
+12
+00:01:22,320 --> 00:01:29,320
+ for our value, we also want to let it be a generic, which means we're not going to decide
+
+13
+00:01:29,320 --> 00:01:35,320
+ an advance what type it's going to be. So we're going to have a code on and then give it
+
+14
+00:01:35,320 --> 00:01:45,320
+ that variable t. And lastly, we want to return an actual value to the caller, but we also
+
+15
+00:01:45,320 --> 00:01:51,320
+ want it to be a generic, which means we don't want it to determine at one time what the
+
+16
+00:01:51,320 --> 00:01:58,320
+ type's going to be. So we do a colon and also variable t. And then we write the body or
+
+17
+00:01:58,320 --> 00:02:05,320
+ the function, which we can just say return a value. So it looks a little bit strange, but
+
+18
+00:02:05,320 --> 00:02:12,320
+ let's now work out how you can call this function. So we could say identity. And the value
+
+19
+00:02:12,320 --> 00:02:18,320
+ as a certain TypeScript is currently unknown. It will be supplied when we actually call
+
+20
+00:02:18,320 --> 00:02:26,320
+ the function. So let's say we call the function with a string. And now TypeScript
+
+21
+00:02:26,320 --> 00:02:34,320
+ knows that we are actually providing a value of a string or a type of halo as a string
+
+22
+00:02:34,320 --> 00:02:43,320
+ to our function. Let's now call the function again, and we say identity, and we're going
+
+23
+00:02:43,320 --> 00:02:50,320
+ to provide a number. So now is the terms that we are providing a number as a value, a
+
+24
+00:02:50,320 --> 00:02:57,320
+ value of 42. So this function works with any type, and TypeScript keeps track of what
+
+25
+00:02:57,320 --> 00:03:07,320
+ t is each time. But why not use a way of using the or in the alternative type in TypeScript?
+
+26
+00:03:07,320 --> 00:03:15,320
+ Why can't we say, for example, a string or it could be a number? Well, in that way we're
+
+27
+00:03:15,320 --> 00:03:22,320
+ just restricting what types we are actually allowing to our function. We are only allowing
+
+28
+00:03:22,320 --> 00:03:29,320
+ strings and integers. But maybe at run time we don't want to just allow strings and numbers,
+
+29
+00:03:29,320 --> 00:03:34,320
+ but we also want to have maybe floating points or provide an object. And we don't really
+
+30
+00:03:34,320 --> 00:03:41,320
+ know the shape of that object. And that's where generics come in is a particular advantage,
+
+31
+00:03:41,320 --> 00:03:47,320
+ because we can just say, we don't know, and we don't care during compile time what the
+
+32
+00:03:47,320 --> 00:03:54,320
+ actual function is. Basically, well, we're actually writing the code, but when we actually
+
+33
+00:03:54,320 --> 00:04:00,320
+ call the code, then TypeScript's going to know at that point what the function or the
+
+34
+00:04:00,320 --> 00:04:07,320
+ type is. You might ask a question, why don't we just have like an alternative type
+
+35
+00:04:07,320 --> 00:04:14,320
+ so we have like a string and then we say, or it's a number. Well, if we do that way, then
+
+36
+00:04:14,320 --> 00:04:20,320
+ we are restricting ourselves to just those two types, the ones we specify. But we want
+
+37
+00:04:20,320 --> 00:04:29,320
+ to have a ability to pass like any shape object to a function. And then we want to use generics
+
+38
+00:04:29,320 --> 00:04:35,320
+ because then TypeScript's going to handle what the type is going to be. So generics
+
+39
+00:04:35,320 --> 00:04:43,320
+ is going to give us reusability. So we write one function and for many different types.
+
+40
+00:04:43,320 --> 00:04:52,320
+ But it's also still allowing us to have type safety because TypeScript still is going to
+
+41
+00:04:52,320 --> 00:04:59,320
+ be checking everything for us. And also provides clarity because we document our intent
+
+42
+00:04:59,320 --> 00:05:07,320
+ without repeating code. So let's just do another kind of example little bit space on what
+
+43
+00:05:07,320 --> 00:05:16,320
+ we did here. Let's have a function where we want to wrap a value in array, simply take
+
+44
+00:05:16,320 --> 00:05:23,320
+ a value and then we want to put it into an array. So our function could be wrap in array.
+
+45
+00:05:23,320 --> 00:05:35,320
+ We're going to provide a generic type t here and a value of type t. And the return type
+
+46
+00:05:35,320 --> 00:05:41,320
+ is going to be an array. So how do we do that? Well, we say it's going to return a type
+
+47
+00:05:41,320 --> 00:05:48,820
+ of a t, but it's an array. So take our t and we put two brackets, two square brackets
+
+48
+00:05:48,820 --> 00:05:55,820
+ and it's rather than, for example, an array of strings or array of a number or a Boolean,
+
+49
+00:05:55,820 --> 00:06:03,820
+ for example, we just put t because it's unknown at that point. We can then write our function
+
+50
+00:06:03,820 --> 00:06:11,820
+ and all we want to do is take our value and put it inside an array. And now we can call
+
+51
+00:06:11,820 --> 00:06:18,820
+ our function wrap in array and you can provide a string and it's then going to provide
+
+52
+00:06:18,820 --> 00:06:28,820
+ we're going to return an array with Apple in it. Or we can call wrap in array and say,
+
+53
+00:06:28,820 --> 00:06:40,820
+ for example, 99. And that's going to return an array with 99 in it. So let's now work
+
+54
+00:06:40,820 --> 00:06:46,820
+ on a little bit more, more complex and actually have a generic type alias where it could
+
+55
+00:06:46,820 --> 00:06:53,820
+ be a little bit more useful. So just imagine you want to have a response from an API,
+
+56
+00:06:53,820 --> 00:06:59,820
+ but you don't actually know what that shape of that response is. All you're going to want
+
+57
+00:06:59,820 --> 00:07:06,820
+ to have is the data for the response and an error message as a string. So we could have
+
+58
+00:07:06,820 --> 00:07:16,820
+ a type of API response. And we don't know what the actual specifics of the data. So we're
+
+59
+00:07:16,820 --> 00:07:25,820
+ going to say it's unknown. And then we're going to provide our data property of a type
+
+60
+00:07:25,820 --> 00:07:34,820
+ of unknown. But what we think we do know is that we're going to have an error, optional
+
+61
+00:07:34,820 --> 00:07:41,820
+ error, where we are going to have a string. So now you can see this data could take in many
+
+62
+00:07:41,820 --> 00:07:49,820
+ forms. I would depending on whatever API response we're currently getting. So we can now
+
+63
+00:07:49,820 --> 00:07:58,820
+ have, for example, a response of a user response coming from an API. So that is of type
+
+64
+00:07:58,820 --> 00:08:08,820
+ API response. And then we specify the actual shape of that response when we actually
+
+65
+00:08:08,820 --> 00:08:17,820
+ utilize it. So inside Square brackets, we're now defining what T actually is. So in this case T is
+
+66
+00:08:17,820 --> 00:08:27,820
+ an object where we have a name and we have a string property. Then we finish off our list
+
+67
+00:08:27,820 --> 00:08:34,820
+ and sign. So we're basically again providing just the shape of the T in this bit is just
+
+68
+00:08:34,820 --> 00:08:44,820
+ here. And now we have an equal sign. And we can set up the data. Now we specify what that
+
+69
+00:08:44,820 --> 00:08:52,820
+ data is. So we can see the name is Alice. Now if you don't do it to provide that information.
+
+70
+00:08:52,820 --> 00:08:59,820
+ So if we come in here and we say it seems to come on to brackets, it's going to underline
+
+71
+00:08:59,820 --> 00:09:06,820
+ it because it's expecting us to provide that shape. So TypeScript has now looked at the type
+
+72
+00:09:06,820 --> 00:09:13,820
+ that we've provided here and it's now enforcing us to provide that type, all that property
+
+73
+00:09:13,820 --> 00:09:19,820
+ of type name. So really this is where generics come as very
+
+74
+00:09:19,820 --> 00:09:26,820
+ useful because it allows us to use generics and type aliases to model flexible structures
+
+75
+00:09:26,820 --> 00:09:35,820
+ like API responses, form states or perhaps component properties. So let's just work
+
+76
+00:09:35,820 --> 00:09:42,820
+ on another example. And this we're going to create a generic interface of type box.
+
+77
+00:09:42,820 --> 00:09:52,820
+ So we could have an interface. And it's a box with a generic type. And that box is going
+
+78
+00:09:52,820 --> 00:09:59,820
+ to have a property called content with a generic type. And now what we can do is we can have
+
+79
+00:09:59,820 --> 00:10:08,820
+ a few different boxes. We could have a string box. The box is going to be of type string.
+
+80
+00:10:08,820 --> 00:10:14,820
+ And then we're going to provide the content and the content is going to have the word
+
+81
+00:10:14,820 --> 00:10:21,820
+ hello in it. And now we could have another type of box. We could call it a number
+
+82
+00:10:21,820 --> 00:10:32,820
+ box. Box this time is a number. So t type t is now a number. And our content, this time
+
+83
+00:10:32,820 --> 00:10:41,820
+ is not a string but a number. So interfaces work very much like type aliases. And they're
+
+84
+00:10:41,820 --> 00:10:52,820
+ great for reusable objects shapes. We could also restrict what types are allowed using
+
+85
+00:10:52,820 --> 00:10:58,820
+ extends. So for example, let's create another function. And we're going to call it print
+
+86
+00:10:58,820 --> 00:11:07,820
+ length. This is going to be of type t. But we want to restrict the types are allowed. So
+
+87
+00:11:07,820 --> 00:11:13,820
+ this is where I spoke about if you want to maybe have a string and a number only or certain
+
+88
+00:11:13,820 --> 00:11:20,820
+ things, we can use the extends here. So we can say extends. And then we're going to provide
+
+89
+00:11:20,820 --> 00:11:32,820
+ a length of number. And we are then going to provide our parameters. So this is item. And
+
+90
+00:11:32,820 --> 00:11:42,820
+ item has a type of t which is going to be this restriction of hit just here. And our function
+
+91
+00:11:42,820 --> 00:11:48,820
+ we want to not return anything. So if we don't want to return anything from our function,
+
+92
+00:11:48,820 --> 00:11:58,820
+ let's say it returns void. And inside our actual function, I'm going to do a console log and
+
+93
+00:11:58,820 --> 00:12:08,820
+ say item dot length. So again, our item is of type t. And our t is defined as having these
+
+94
+00:12:08,820 --> 00:12:18,820
+ properties or this shape or having length and then a number. So now we can do print length. And if
+
+95
+00:12:18,820 --> 00:12:27,820
+ we try and to print level string, we're going to get a length property on it. But it's going
+
+96
+00:12:27,820 --> 00:12:34,820
+ to provide us with the length of the string. Of course, we could do print length again. And we
+
+97
+00:12:34,820 --> 00:12:41,820
+ have, for example, one, two, three as an array. And the length property is going to interpret
+
+98
+00:12:41,820 --> 00:12:52,820
+ that as an array and give us the length of array. We do print length. And we just say 42. Then
+
+99
+00:12:52,820 --> 00:12:58,820
+ this doesn't actually have a length property. As you can see, so this is going to be thrown
+
+100
+00:12:58,820 --> 00:13:06,820
+ out by TypeScript. So it's very useful using the extends when we need certain properties to
+
+101
+00:13:06,820 --> 00:13:12,820
+ exist. If you know there's a length property on an array, or you know there's a length property
+
+102
+00:13:12,820 --> 00:13:18,820
+ on a string, or you know there's a certain property on a certain object, then you can use
+
+103
+00:13:18,820 --> 00:13:26,820
+ the extends in order to make sure that property exists. So generics basically lets us write
+
+104
+00:13:26,820 --> 00:13:33,820
+ collectible, reusable code that adds apps to different types, whether it's losing type
+
+105
+00:13:33,820 --> 00:13:40,820
+ safety. So if learns how to use generics and functions, types, and interfaces, and how to
+
+106
+00:13:40,820 --> 00:13:47,820
+ constrain them when needed. Next up, we're going to be looking at map types when how to
+
+107
+00:13:47,820 --> 00:13:50,220
+ transform types dynamically.
+
