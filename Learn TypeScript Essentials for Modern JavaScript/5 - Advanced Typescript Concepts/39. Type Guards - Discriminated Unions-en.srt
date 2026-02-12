@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:05,600
+ Hello there and welcome back to the course, now in this lesson we're going to be exploring
+
+2
+00:00:05,600 --> 00:00:13,600
+ a discriminated union which is a powerful pattern for modeling data that can take multiple
+
+3
+00:00:13,600 --> 00:00:22,240
+ shapes. So whether you're working with form states or API responses or perhaps UI components,
+
+4
+00:00:22,240 --> 00:00:29,960
+ discriminated unions helps us write safe, expressive code that adapts to different cases.
+
+5
+00:00:29,960 --> 00:00:37,160
+ But what is a discriminated union? A discriminated union is a union of object types that
+
+6
+00:00:37,160 --> 00:00:43,200
+ each share a common literal property and this is called a discriminant.
+
+7
+00:00:43,200 --> 00:00:50,200
+ TypeScript uses that property to narrow type automatically. So with no further ado let's
+
+8
+00:00:50,200 --> 00:01:00,600
+ pull up our code and let's get righting. So let's have a type of loading state and the
+
+9
+00:01:00,600 --> 00:01:08,760
+ status is surprising enough loading. We're going to have that as a string. Now we can have
+
+10
+00:01:08,760 --> 00:01:18,520
+ a second type and the second type is going to be a success state that also has a property
+
+11
+00:01:18,520 --> 00:01:28,920
+ of status, that to success, but we're also going to give it another as the property and
+
+12
+00:01:28,920 --> 00:01:33,800
+ it's going to have a property of data which we're going to set as a type of string.
+
+13
+00:01:33,800 --> 00:01:40,920
+ I know it's great to declare a third type and this is going to be error state.
+
+14
+00:01:42,760 --> 00:01:49,320
+ This also has a status property of error, surprisingly enough and we're going to give it a property
+
+15
+00:01:49,320 --> 00:01:58,200
+ of error which is also a string. And now what we can do is we create another type called
+
+16
+00:01:58,200 --> 00:02:07,720
+ fetch state and this is a union of the three types above. So we're going to have the loading state
+
+17
+00:02:09,960 --> 00:02:18,600
+ and with a pipe character we then say it's also success state and it's also error state.
+
+18
+00:02:18,600 --> 00:02:25,000
+ Okay so now it's combination of these three types. But what is the common property
+
+19
+00:02:25,000 --> 00:02:33,480
+ between these three types? Well obviously it's status here. So this becomes discriminant for the union.
+
+20
+00:02:35,640 --> 00:02:40,920
+ So let's now actually use as an example. So we're going to create a function
+
+21
+00:02:40,920 --> 00:02:49,320
+ render and we have a parameter of state which is our fetch state.
+
+22
+00:02:49,320 --> 00:02:58,280
+ And now we can do if state status is loading,
+
+23
+00:03:01,160 --> 00:03:07,720
+ we just going to return loading and loading and loading.
+
+24
+00:03:07,720 --> 00:03:19,400
+ Else we can then expect the status property again if state status equals success.
+
+25
+00:03:24,280 --> 00:03:31,000
+ And to return, this time we're going to return dynamic string to data dollar,
+
+26
+00:03:31,000 --> 00:03:37,800
+ whoops data dollar, state dot data.
+
+27
+00:03:37,800 --> 00:03:50,280
+ Otherwise we can just going to return an error to error state dot error.
+
+28
+00:03:54,280 --> 00:03:58,280
+ You can see as we are going through here that IntelliSense was picking up the
+
+29
+00:03:58,280 --> 00:04:05,080
+ kind of doing logic through here and picking up the relevant property because it understood
+
+30
+00:04:05,080 --> 00:04:09,880
+ that when we're coming into here that we are looking at the error state and the third
+
+31
+00:04:09,880 --> 00:04:17,080
+ KOS, the error property. As we saw TypeScript automatically narrowed a type based on the stages value
+
+32
+00:04:17,080 --> 00:04:21,080
+ and we didn't need to do any casting at all. So that's one of the advantages.
+
+33
+00:04:22,040 --> 00:04:28,120
+ Why use discriminated unions? Well, the perfect for doing things like modeling state machines
+
+34
+00:04:28,120 --> 00:04:36,360
+ or handling API responses, managing UI component states and writing exhaustive switch statements.
+
+35
+00:04:36,360 --> 00:04:46,680
+ We could expand this loop function by adding the state never. So the never state in TypeScript,
+
+36
+00:04:46,680 --> 00:04:52,840
+ as the name suggests, is for when you don't have a situation where you're not actually going
+
+37
+00:04:52,840 --> 00:04:59,080
+ to return anything or return any sort of type. So for example, if you're throwing an error,
+
+38
+00:04:59,080 --> 00:05:06,200
+ you might do throwing a new error and you're not actually going to return a type for that
+
+39
+00:05:06,200 --> 00:05:11,720
+ particular function, maybe the function is going to return a Boolean or it's going to return a string
+
+40
+00:05:11,720 --> 00:05:17,720
+ or an object, but you get an API error. So you were going to throw an exception and that's why
+
+41
+00:05:17,720 --> 00:05:24,600
+ you could use the never state. So what we could do here is we could rewrite this to have a
+
+42
+00:05:24,600 --> 00:05:33,240
+ switch statement. So we could do switch and we could look at the status property and we have a
+
+43
+00:05:33,240 --> 00:05:46,680
+ cases for loading. Let's do our loading case. We're going to return loading and have the same for
+
+44
+00:05:46,680 --> 00:05:50,360
+ the other cases as well. So we're going to try and copy and paste this for speed.
+
+45
+00:05:50,360 --> 00:05:55,960
+ So it says that's going to be case loading. This is going to be success.
+
+46
+00:05:58,120 --> 00:06:11,480
+ This case is going to be error. We're going to return error message. So error state dot error.
+
+47
+00:06:11,480 --> 00:06:23,000
+ And now we're going to have our default case. So for a default case, we could grab a state check.
+
+48
+00:06:23,000 --> 00:06:33,800
+ So we can do exhaust, say exhaust, div, check. That's a type of never. So we're defaulting this
+
+49
+00:06:33,800 --> 00:06:41,720
+ state to the never state. So there's not actually going to have any actual state. That's what
+
+50
+00:06:41,720 --> 00:06:48,200
+ it's called never. And then we can just simply return an exhaustive check here through it's all.
+
+51
+00:06:48,760 --> 00:06:53,720
+ Now, what is this doing? Well, this is this pattern is sure that we've handled every single
+
+52
+00:06:53,720 --> 00:06:59,880
+ possible case. So we have our loading case. We have our success and we have our error,
+
+53
+00:06:59,880 --> 00:07:06,280
+ but we also then capture any other possible case. And because at the moment, we don't actually
+
+54
+00:07:06,280 --> 00:07:13,800
+ have any other cases defined, we can set this to never. But then when we add a new state later,
+
+55
+00:07:13,800 --> 00:07:21,320
+ types of script is going to alert us. So in summary, discriminated unions let us model
+
+56
+00:07:21,320 --> 00:07:28,200
+ variant data with clarity and safety. So we've learned how to define them and how to narrow them
+
+57
+00:07:28,200 --> 00:07:37,080
+ and enforce exhaustiveness. And in the next lesson, we're going to be looking at how to do
+
+58
+00:07:37,080 --> 00:07:44,120
+ advance utility types by building our own type transformations.
+
