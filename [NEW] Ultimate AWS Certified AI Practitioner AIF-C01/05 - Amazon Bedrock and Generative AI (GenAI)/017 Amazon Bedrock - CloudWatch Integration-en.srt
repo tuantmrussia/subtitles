@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:06,500
+ So now let's talk about the integration of Amazon bedrock and a service called CloudWatch.
+
+2
+00:00:06,500 --> 00:00:10,020
+ So CloudWatch is a way for you to do cloud monitoring.
+
+3
+00:00:10,020 --> 00:00:13,720
+ So CloudWatch has many services but you can have metrics,
+
+4
+00:00:13,720 --> 00:00:18,460
+ you can have alarms, you can have logs and so on in CloudWatch and you them all.
+
+5
+00:00:18,460 --> 00:00:22,020
+ And many services and areas have integration with CloudWatch.
+
+6
+00:00:22,020 --> 00:00:26,340
+ So for Amazon bedrock, what you can do is you can do model invocation logging.
+
+7
+00:00:26,340 --> 00:00:28,020
+ And that's something that can come up at the exam.
+
+8
+00:00:28,020 --> 00:00:31,560
+ So the idea is that you want to send all the invocations,
+
+9
+00:00:31,560 --> 00:00:39,760
+ so all the inputs and the outputs of model invocations into either CloudWatch logs or Amazon history.
+
+10
+00:00:39,760 --> 00:00:44,480
+ And this can include the text, the images as well as the embeddings.
+
+11
+00:00:44,480 --> 00:00:48,780
+ And this is very helpful because you get a history of everything that happened within bedrock.
+
+12
+00:00:48,780 --> 00:00:53,180
+ On top of it, you can analyze the data further and build alerting on top of it.
+
+13
+00:00:53,180 --> 00:01:00,100
+ Thanks to CloudWatch logs inside, which is a service which allows you to analyze the logs in real time from CloudWatch logs.
+
+14
+00:01:00,100 --> 00:01:05,860
+ So the idea here is that we get full tracing and monitoring of bedrock thanks to CloudWatch logs.
+
+15
+00:01:05,860 --> 00:01:08,780
+ The other one is CloudWatch metrics.
+
+16
+00:01:08,780 --> 00:01:14,500
+ So the idea is that Amazon bedrock is going to publish a lot of different metrics to CloudWatch.
+
+17
+00:01:14,500 --> 00:01:18,060
+ And then you can appear in CloudWatch metrics.
+
+18
+00:01:18,060 --> 00:01:24,540
+ And some of them may be for general usage of bedrock, but some of them may also be related to guardrails.
+
+19
+00:01:24,540 --> 00:01:32,180
+ So there's one called content filter count, which helps you understand if some content was filtered from a guardrail.
+
+20
+00:01:32,180 --> 00:01:36,500
+ And so we can do with it is that once you have these kind of metrics in CloudWatch metrics,
+
+21
+00:01:36,500 --> 00:01:40,580
+ you can build CloudWatch alarms on top of them to get alerted, for example,
+
+22
+00:01:40,580 --> 00:01:49,260
+ when something is caught by a guardrail or when Amazon bedrock is exceeding a specific threshold for a specific metric.
+
+23
+00:01:49,260 --> 00:01:57,180
+ So model invocation logging and CloudWatch metrics are very important in Amazon bedrock and there are topics that can appear in the exam.
+
+24
+00:01:57,180 --> 00:01:59,900
+ So I hope you liked it and I will see you in the next lecture.
+
