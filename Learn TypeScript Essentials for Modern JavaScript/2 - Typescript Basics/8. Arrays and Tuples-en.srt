@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:06,560
+ Welcome back. Now that you understand primitive types and type inference, it's time to
+
+2
+00:00:06,560 --> 00:00:14,320
+ level up our knowledge with arrays and tuples. These are essentially tools for working with
+
+3
+00:00:14,320 --> 00:00:21,840
+ collections of data in TypeScript. Whether we're storing a list of names or a pair of coordinates,
+
+4
+00:00:21,840 --> 00:00:27,120
+ TypeScripts are going to help us keep things organized as well as type safe.
+
+5
+00:00:28,080 --> 00:00:35,680
+ So first of all, let's talk about arrays. So let's just remind ourselves what are arrays exactly?
+
+6
+00:00:35,680 --> 00:00:44,800
+ Well an array is a list of values all of the same type and TypeScript lets us to clear what kind of
+
+7
+00:00:44,800 --> 00:00:53,600
+ values array should contain. So let's say for example we're going to create an array of routes.
+
+8
+00:00:55,200 --> 00:01:03,600
+ So we just give it a colon and we say this is an array of string which we do by doing the type
+
+9
+00:01:03,600 --> 00:01:12,400
+ string and then the two square brackets. And then we can define that array as a list of strings.
+
+10
+00:01:12,400 --> 00:01:22,800
+ So apple and banana and cherry. And of course all these items in array
+
+11
+00:01:23,840 --> 00:01:31,840
+ are the same type of string which is for string. Let's now work at how we can to store an array
+
+12
+00:01:31,840 --> 00:01:40,880
+ of numbers for example. So we can do say scores. We say this is a type of number. There's an array
+
+13
+00:01:40,880 --> 00:01:50,400
+ an array of numbers and then we can define the numbers in array say 85 92 and 78.
+
+14
+00:01:52,880 --> 00:01:58,400
+ And let's do another example and this time we're going to create an array of flags.
+
+15
+00:01:58,400 --> 00:02:09,840
+ The flags are going to be Boolean to Boolean an array. Let me set that array so you say true,
+
+16
+00:02:09,840 --> 00:02:11,920
+ false and true.
+
+17
+00:02:11,920 --> 00:02:21,440
+ Now that's one way of declaring arrays that is actually an alternative
+
+18
+00:02:21,440 --> 00:02:28,320
+ array or declaring arrays and that is used a generic syntax and it looks like this.
+
+19
+00:02:28,320 --> 00:02:38,000
+ Let's say for example we have an array of cities and rather than saying string like this we can
+
+20
+00:02:38,000 --> 00:02:49,840
+ say array and then give it a type in ankle brackets an array of string and then we define our strings
+
+21
+00:02:51,040 --> 00:02:57,360
+ just exactly like we did before. So we can say like London for example and Paris.
+
+22
+00:02:57,360 --> 00:03:06,880
+ And of course if we wanted to do numbers we could just just change this ankle brackets to number.
+
+23
+00:03:06,880 --> 00:03:14,400
+ And then we declare our array of numbers in the same way.
+
+24
+00:03:16,080 --> 00:03:21,760
+ Type scripts of course is going to prevent us from adding the wrong type to an array.
+
+25
+00:03:21,760 --> 00:03:26,720
+ So let's just for example just create an array of numbers.
+
+26
+00:03:26,720 --> 00:03:36,160
+ So number I'm just going to do it the first way and we say an array of say 25 and 30.
+
+27
+00:03:36,160 --> 00:03:45,040
+ And then if we try and modify that array let's say going to push something like a string to it.
+
+28
+00:03:47,040 --> 00:03:54,720
+ It's going to give us an error it's going to say it's not possible to assign that parameter
+
+29
+00:03:54,720 --> 00:04:01,440
+ to that array of course because it's an array of numbers but if we then change that to
+
+30
+00:04:01,440 --> 00:04:08,400
+ any other number like 89 it's going to be quite happy with that. So it's protects our code from
+
+31
+00:04:08,400 --> 00:04:13,120
+ unexpected bugs and it's going to make our data so much more predictable.
+
+32
+00:04:14,960 --> 00:04:21,040
+ So let's just do a very quick big steer array challenge. Now this should be pretty straightforward.
+
+33
+00:04:21,040 --> 00:04:28,560
+ Let's say we have some names and our strings and we have something like this.
+
+34
+00:04:28,560 --> 00:04:32,080
+ Alice and say Bob.
+
+35
+00:04:32,080 --> 00:04:43,600
+ Now check in here an error and of course we're going to get an error because we have a number
+
+36
+00:04:44,320 --> 00:04:50,480
+ in a string array. So of course we can just simply fix this by removing the offending item
+
+37
+00:04:50,480 --> 00:04:53,200
+ and it says we're going to put a string instead.
+
+38
+00:04:53,200 --> 00:05:00,000
+ Now we talked about arrays let's now talk about tuple so it's UPLE.
+
+39
+00:05:00,000 --> 00:05:08,320
+ So a tuple is just like an array but with a fixed length and specific types for each
+
+40
+00:05:08,320 --> 00:05:15,520
+ position. So kind of think of it's a little bit like a mini data structure. So let's have a look
+
+41
+00:05:15,520 --> 00:05:21,520
+ at what that look could look like. So if we're a user we want to store perhaps a string
+
+42
+00:05:21,520 --> 00:05:28,240
+ the name and maybe the age so we could define a tuple of having two things so we could
+
+43
+00:05:28,240 --> 00:05:37,920
+ store a string and also a number. So this could be a tuple happens to have the same square
+
+44
+00:05:37,920 --> 00:05:42,160
+ brackets as an array but it's now a tuple because we've got two things in it.
+
+45
+00:05:42,160 --> 00:05:51,920
+ We have a string of Alice and we can also store an array and you can see how this is a little
+
+46
+00:05:51,920 --> 00:05:59,120
+ bit different syntax than the array because we actually specifying the first type and also the
+
+47
+00:05:59,120 --> 00:06:05,920
+ second type which marries up with the string that we have here and also the number that we have here.
+
+48
+00:06:06,640 --> 00:06:13,840
+ So each position in our tuple has a defined type and we can't swap or add elements
+
+49
+00:06:13,840 --> 00:06:21,120
+ so we can't for example come in here and add another item to it because it's going to complain
+
+50
+00:06:21,120 --> 00:06:25,680
+ because you should only have two and the fact that we've got three in here.
+
+51
+00:06:25,680 --> 00:06:34,720
+ But we can also change the number of items in this particular tuple. We've got two to find here
+
+52
+00:06:34,720 --> 00:06:41,760
+ but let's say for example we also want to store a boolean then as soon as we do that it's going
+
+53
+00:06:41,760 --> 00:06:48,480
+ to complain because we haven't supplied that boolean so we could then come in here and make it happy
+
+54
+00:06:48,480 --> 00:06:58,160
+ by giving it a boolean flag like true for example. So how do we actually modify our tuple where we
+
+55
+00:06:58,160 --> 00:07:04,400
+ can simply give it the actual index of the thing we're trying to change. So let's say we want to
+
+56
+00:07:04,400 --> 00:07:13,360
+ change the person's name we can do user and then zero so that corresponds to the very first
+
+57
+00:07:13,360 --> 00:07:23,200
+ type inside our tuple. You'd say that is now Bob for example. We could also then change
+
+58
+00:07:23,200 --> 00:07:32,240
+ into the actual image so we could do user one and we could change it to say 41 for example.
+
+59
+00:07:33,360 --> 00:07:40,400
+ What are tuples used for? What sort of things? Well, they're particularly useful for things like
+
+60
+00:07:40,400 --> 00:07:49,200
+ coordinates or maybe key value pairs or label data. Let's have an example. Now let's say for
+
+61
+00:07:49,200 --> 00:07:59,360
+ example we want to store something like RGB, red, green and blue values. Now if we did something
+
+62
+00:07:59,360 --> 00:08:12,080
+ like this we could say let RGB and then we'd say in brackets number number and number.
+
+63
+00:08:12,080 --> 00:08:23,840
+ So let's say for example we want to store some values for red and blue and green and any color.
+
+64
+00:08:25,120 --> 00:08:32,080
+ And if we think we could do it this way we could think we could do let's red equals RGB
+
+65
+00:08:32,080 --> 00:08:42,080
+ and then specify the colors and brackets maybe like 23, 45 and 56. But we can think at an error
+
+66
+00:08:42,080 --> 00:08:51,200
+ saying it's a reverse value rather than type. So this is a nice idea. How exactly do we do this?
+
+67
+00:08:51,200 --> 00:08:58,080
+ Well we can use the keyword type. So rather than this but how using let because it thinks it's
+
+68
+00:08:58,080 --> 00:09:06,560
+ a natural value here what we do instead is we define RGB as a type of tuple which we do type
+
+69
+00:09:06,560 --> 00:09:14,800
+ with this and rather than colon we change that to an equal sign. This means we know to find an
+
+70
+00:09:14,800 --> 00:09:23,520
+ RGB type and now we can create like an instance of that type and say red is a type of RGB
+
+71
+00:09:23,520 --> 00:09:34,640
+ and it might be 255, 0 and 0 and maybe what to do like blue and blue is type of RGB
+
+72
+00:09:36,800 --> 00:09:48,000
+ and that would be something like 0, 0 and 255 for example. So you can now see that in TypeScript
+
+73
+00:09:48,000 --> 00:09:57,360
+ which is a kind of defining our own custom type and we're defining it as a tuple or where we specify
+
+74
+00:09:57,360 --> 00:10:04,400
+ the types all that produce particular things and then we can then create variables based on that type
+
+75
+00:10:05,040 --> 00:10:11,840
+ and then set the value accordingly. So arrays and tuples help us to manage collections
+
+76
+00:10:11,840 --> 00:10:19,600
+ and structure data with confidence. So arrays are flexible lists of one type,
+
+77
+00:10:19,600 --> 00:10:26,640
+ one of tuples are rigid structures with multiple types. In the next lesson we're going to explore
+
+78
+00:10:26,640 --> 00:10:34,800
+ inums and literal types and these are tuals that help us to find strict sets of values that
+
+79
+00:10:34,800 --> 00:10:38,160
+ make our code even more expressive.
+
