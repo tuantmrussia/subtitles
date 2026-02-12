@@ -1,0 +1,364 @@
+1
+00:00:00,000 --> 00:00:05,260
+ So let's have a look at the integration between Bedrock and CloudWatch logs.
+
+2
+00:00:05,260 --> 00:00:08,380
+ So we're going to go under Settings on the bottom left,
+
+3
+00:00:08,380 --> 00:00:10,800
+ and you have Model Invocation Logging.
+
+4
+00:00:10,800 --> 00:00:14,440
+ So here we can definitely enable it,
+
+5
+00:00:14,440 --> 00:00:18,520
+ and then this is going to collect all metadata requests and responses
+
+6
+00:00:18,520 --> 00:00:21,240
+ for all model invocations in your accounts.
+
+7
+00:00:21,240 --> 00:00:24,480
+ So you can select the type of data you want to include with logs,
+
+8
+00:00:24,480 --> 00:00:27,400
+ so it could be text, images, and embeddings.
+
+9
+00:00:27,400 --> 00:00:30,560
+ And then the destination could be Amazon as free buckets,
+
+10
+00:00:30,560 --> 00:00:32,960
+ or it could be CloudWatch only, or it could be both.
+
+11
+00:00:32,960 --> 00:00:34,880
+ So I'm just going to use CloudWatch only,
+
+12
+00:00:34,880 --> 00:00:37,960
+ and then you need to specify a log group name.
+
+13
+00:00:37,960 --> 00:00:45,680
+ So I call this one Bedrock Invocation Logging.
+
+14
+00:00:45,680 --> 00:00:48,960
+ And then I will create a user in your role.
+
+15
+00:00:48,960 --> 00:00:53,520
+ So this is the role that Amazon Bedrock will need to send data to CloudWatch logs.
+
+16
+00:00:53,520 --> 00:01:01,160
+ So I call this one Bedrock Invocation Logging Role.
+
+17
+00:01:01,160 --> 00:01:02,240
+ OK.
+
+18
+00:01:02,240 --> 00:01:06,480
+ And next, we have, as relocation for larger deliveries.
+
+19
+00:01:06,480 --> 00:01:10,840
+ So in case it's over 100 kilobytes, then it can be published to Amazon as free.
+
+20
+00:01:10,840 --> 00:01:15,600
+ But we don't need this right now, so we're going to just save these settings.
+
+21
+00:01:15,600 --> 00:01:18,880
+ So we get an error saying the specified log group doesn't exist.
+
+22
+00:01:18,880 --> 00:01:22,160
+ So we have to create it manually in CloudWatch in this instance.
+
+23
+00:01:22,160 --> 00:01:25,040
+ Maybe this will be fixed by the time you use this.
+
+24
+00:01:25,040 --> 00:01:28,360
+ But let's go into CloudWatch logs, log groups.
+
+25
+00:01:28,360 --> 00:01:31,040
+ And then you're going to create a new log group.
+
+26
+00:01:31,040 --> 00:01:35,360
+ And the name is going to be this one that I'm going to copy and paste.
+
+27
+00:01:35,360 --> 00:01:36,600
+ So we can set up some settings.
+
+28
+00:01:36,600 --> 00:01:38,840
+ Do you want the log to expire or not?
+
+29
+00:01:38,840 --> 00:01:41,760
+ But we're just going to click on Create and get going.
+
+30
+00:01:41,760 --> 00:01:44,200
+ OK, so now my log group is created.
+
+31
+00:01:44,200 --> 00:01:45,440
+ It is here.
+
+32
+00:01:45,440 --> 00:01:48,080
+ And let's go ahead in Amazon Bedrock.
+
+33
+00:01:48,080 --> 00:01:54,460
+ And we're going to save these settings one more time.
+
+34
+00:01:54,460 --> 00:01:58,680
+ And we now need to say that we won't use an existing service role.
+
+35
+00:01:58,680 --> 00:01:59,280
+ That is right here.
+
+36
+00:01:59,280 --> 00:02:01,160
+ So let me refer to this.
+
+37
+00:02:01,160 --> 00:02:05,520
+ This is sometimes a bit annoying when you have issues on the console.
+
+38
+00:02:05,520 --> 00:02:08,520
+ But it was may fix this at some point.
+
+39
+00:02:08,520 --> 00:02:09,040
+ So here we go.
+
+40
+00:02:09,040 --> 00:02:13,240
+ Now we have select the existing role that has been created and save the settings.
+
+41
+00:02:13,240 --> 00:02:15,240
+ And we should be good to go.
+
+42
+00:02:15,240 --> 00:02:18,240
+ OK, so the settings have been saved successfully.
+
+43
+00:02:18,240 --> 00:02:22,920
+ And what I can do now, as I can go in chat, I will select a model.
+
+44
+00:02:22,920 --> 00:02:25,320
+ And I will just click on Run.
+
+45
+00:02:25,320 --> 00:02:29,320
+ And then we're going to get-- so we send an input.
+
+46
+00:02:29,320 --> 00:02:31,320
+ And then we get an output.
+
+47
+00:02:31,320 --> 00:02:31,920
+ And we're good to go.
+
+48
+00:02:31,920 --> 00:02:33,440
+ Now let's wait a little bit.
+
+49
+00:02:33,440 --> 00:02:36,560
+ And then go into CloudWatch logs to see if it appears.
+
+50
+00:02:36,560 --> 00:02:38,760
+ So I'm going into CloudWatch logs.
+
+51
+00:02:38,760 --> 00:02:40,520
+ And we refresh this page.
+
+52
+00:02:40,520 --> 00:02:42,680
+ And we have one log stream here.
+
+53
+00:02:42,680 --> 00:02:45,560
+ Give us bedrock model invocations.
+
+54
+00:02:45,560 --> 00:02:50,560
+ And here we have the information that the permissions have set correctly for Amazon bedrock logs.
+
+55
+00:02:50,560 --> 00:02:54,440
+ And then we get some information about a model invocation.
+
+56
+00:02:54,440 --> 00:02:56,840
+ So we get a lot of information around it.
+
+57
+00:02:56,840 --> 00:03:01,240
+ But we know that, for example, the model ID is Amazon Titan Text Express V1.
+
+58
+00:03:01,240 --> 00:03:04,160
+ This is a way for us to identify the models that we're using.
+
+59
+00:03:04,160 --> 00:03:06,200
+ We get information about the region.
+
+60
+00:03:06,200 --> 00:03:08,760
+ And then we get the messages.
+
+61
+00:03:08,760 --> 00:03:10,280
+ So we have a user that's us.
+
+62
+00:03:10,280 --> 00:03:12,880
+ And we sent this input.
+
+63
+00:03:12,880 --> 00:03:18,520
+ And then we have some information around the configuration for this invocation.
+
+64
+00:03:18,520 --> 00:03:21,680
+ And how many tokens was it, 271?
+
+65
+00:03:21,680 --> 00:03:24,760
+ And the output is this message.
+
+66
+00:03:24,760 --> 00:03:31,480
+ So the assistant role means that it's the model itself and the content is this.
+
+67
+00:03:31,480 --> 00:03:38,000
+ And so again, we get the information that the latency was 4,38 millisecond.
+
+68
+00:03:38,000 --> 00:03:40,000
+ We get information around the output token.
+
+69
+00:03:40,000 --> 00:03:41,560
+ The total token and so on.
+
+70
+00:03:41,560 --> 00:03:45,960
+ So this is very helpful because, as you can see, a lot of information is included here.
+
+71
+00:03:45,960 --> 00:03:49,080
+ And we can use this information later on to debug everything.
+
+72
+00:03:49,080 --> 00:03:52,280
+ For example, we could, for example, run an alarm.
+
+73
+00:03:52,280 --> 00:03:57,560
+ And to look at if the latency is always beneath a specific number.
+
+74
+00:03:57,560 --> 00:04:02,520
+ And if one day the latency reaches a high number, then we may want to send an alert saying,
+
+75
+00:04:02,520 --> 00:04:05,600
+ hey, your latency requirements are a little too high now.
+
+76
+00:04:05,600 --> 00:04:07,680
+ And the user experience may be degraded.
+
+77
+00:04:07,680 --> 00:04:08,640
+ So that's the way of doing it.
+
+78
+00:04:08,640 --> 00:04:14,080
+ But hopefully you get the idea of integrating Amazon bedrock with CloudWatch logs.
+
+79
+00:04:14,080 --> 00:04:19,840
+ So the other thing we can do is go into CloudWatch and go into all metrics and
+
+80
+00:04:19,840 --> 00:04:21,560
+ then click on bedrock.
+
+81
+00:04:21,560 --> 00:04:26,920
+ And you may have more metrics than me, but we have here metrics by model ID.
+
+82
+00:04:26,920 --> 00:04:29,920
+ You can look at it or across all model ID.
+
+83
+00:04:29,920 --> 00:04:33,680
+ And for example, we can have a look at the number of invocations or for
+
+84
+00:04:33,680 --> 00:04:40,040
+ example, the invocation latency. And we can see here that the latency is being plotted on
+
+85
+00:04:40,040 --> 00:04:44,360
+ this graph. So now, of course, if you have a sustained usage of Amazon bedrock,
+
+86
+00:04:44,360 --> 00:04:47,480
+ then you will see a curve here with multiple data points.
+
+87
+00:04:47,480 --> 00:04:51,600
+ But a lot of metrics are being sent by bedrock into CloudWatch metrics.
+
+88
+00:04:51,600 --> 00:04:56,840
+ And you can then build metrics, graphs, dashboards and alarms on top of it as well.
+
+89
+00:04:56,840 --> 00:05:00,440
+ In case, for example, the invocation latency gets too high.
+
+90
+00:05:00,440 --> 00:05:02,400
+ So let's say for this lecture, I hope you liked it.
+
+91
+00:05:02,400 --> 00:05:04,340
+ and I will see you in the next lecture.
+
