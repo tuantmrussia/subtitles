@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:04,260
+ So let's have a look at more prompt engineering techniques to improve your
+
+2
+00:00:04,260 --> 00:00:07,580
+ prompt. So first of all, there is something called zero shut prompting.
+
+3
+00:00:07,580 --> 00:00:13,420
+ So this is to present a task to a model without providing any examples or
+
+4
+00:00:13,420 --> 00:00:16,180
+ explicit training for that specific task.
+
+5
+00:00:16,180 --> 00:00:19,620
+ So we have a very general Gen A model, a foundation model.
+
+6
+00:00:19,620 --> 00:00:25,340
+ And for example, we say write a short story about a dog that helps solve a
+
+7
+00:00:25,340 --> 00:00:28,380
+ mystery. And then we get a response from the Gen A model.
+
+8
+00:00:28,380 --> 00:00:32,500
+ For example, once upon a time, there was a clever dog named max and so on.
+
+9
+00:00:32,500 --> 00:00:39,140
+ So this is when we rely fully on the models general knowledge and the larger and
+
+10
+00:00:39,140 --> 00:00:43,460
+ the more capable the foundation model, the more likely we're going to get good
+
+11
+00:00:43,460 --> 00:00:47,300
+ results. It's called zero shut prompting because we go right away and we present
+
+12
+00:00:47,300 --> 00:00:50,500
+ our prompts. Next, we have few shots prompting.
+
+13
+00:00:50,500 --> 00:00:56,300
+ So here we provide examples of a task to the model to make sure we have guided
+
+14
+00:00:56,300 --> 00:01:00,260
+ its outputs. So that's why it's called few shots because we provide few shots
+
+15
+00:01:00,260 --> 00:01:05,060
+ to the model to perform the task. So let's take the exact same prompt as
+
+16
+00:01:05,060 --> 00:01:08,660
+ before, but now we're going to use the few shots prompting technique.
+
+17
+00:01:08,660 --> 00:01:14,540
+ So we say here are two examples of stories where animals help solve mysteries.
+
+18
+00:01:14,540 --> 00:01:19,260
+ And we talk about whiskers, the cats and we write the story and we talk about
+
+19
+00:01:19,260 --> 00:01:22,340
+ buddy the bird and we also write the story.
+
+20
+00:01:22,700 --> 00:01:26,940
+ So now we've provided a few examples to the Gen A model and now we say
+
+21
+00:01:26,940 --> 00:01:30,900
+ write a short story about a dog that helps solve a mystery.
+
+22
+00:01:30,900 --> 00:01:36,140
+ And because we have provided a few shots to the general model, then it's able
+
+23
+00:01:36,140 --> 00:01:42,260
+ to respond in a way that follows the few shots we have provided before.
+
+24
+00:01:42,260 --> 00:01:46,740
+ And so therefore, this is a good technique when you know exactly what kind
+
+25
+00:01:46,740 --> 00:01:50,940
+ of output you want and you want the model to write a new output based on
+
+26
+00:01:50,940 --> 00:01:55,380
+ examples you provide. Also, if you provide only one example,
+
+27
+00:01:55,380 --> 00:01:59,140
+ this is also called one shot or single shot prompting.
+
+28
+00:01:59,140 --> 00:02:02,820
+ Then we have chain of foot prompting.
+
+29
+00:02:02,820 --> 00:02:08,460
+ So here we divide the task into a sequence of reasoning steps leading to
+
+30
+00:02:08,460 --> 00:02:10,460
+ a more structure and coherence.
+
+31
+00:02:10,460 --> 00:02:15,340
+ So when we use a sentence in our prompt, such as think step by step,
+
+32
+00:02:15,340 --> 00:02:19,020
+ this will help the model go into a chain of foot prompting.
+
+33
+00:02:19,460 --> 00:02:23,300
+ So this is very helpful when you want to solve a problem as a human and
+
+34
+00:02:23,300 --> 00:02:25,260
+ that usually requires a several steps.
+
+35
+00:02:25,260 --> 00:02:31,140
+ So for example, let's again do our prompt that we'd say, let's write a story
+
+36
+00:02:31,140 --> 00:02:33,140
+ about a dog solving a mystery.
+
+37
+00:02:33,140 --> 00:02:37,900
+ But then we say first, describe the setting and the dog, then introduce the
+
+38
+00:02:37,900 --> 00:02:44,020
+ mystery, next show how the dog discovers clues and finally reveal how the dog
+
+39
+00:02:44,020 --> 00:02:46,180
+ solves the mystery and concludes the story.
+
+40
+00:02:46,780 --> 00:02:50,020
+ And so therefore we say, write a short story following this plant.
+
+41
+00:02:50,020 --> 00:02:54,940
+ Think step by step and the response will follow this structure and therefore
+
+42
+00:02:54,940 --> 00:02:56,500
+ this is chain of foot prompting.
+
+43
+00:02:56,500 --> 00:03:02,060
+ And this can be combined with zero shots or few shots prompting if you want it
+
+44
+00:03:02,060 --> 00:03:07,100
+ to. Next, we have retrieval augmented generation or rag.
+
+45
+00:03:07,100 --> 00:03:12,700
+ So here we combine the model's capability with external data sources in order
+
+46
+00:03:12,700 --> 00:03:16,100
+ to create a more informed and contextually rich response.
+
+47
+00:03:16,500 --> 00:03:20,580
+ So as a memory, as a reminder, we go and ask something to the
+
+48
+00:03:20,580 --> 00:03:25,220
+ geniam model and some parts of the model is going to retrieve relevant
+
+49
+00:03:25,220 --> 00:03:27,740
+ information from an external data source.
+
+50
+00:03:27,740 --> 00:03:32,260
+ And then we add this as an enhanced prompt and augmented prompt and then we
+
+51
+00:03:32,260 --> 00:03:33,260
+ get the answer from it.
+
+52
+00:03:33,260 --> 00:03:35,140
+ So this is the whole idea behind rag.
+
+53
+00:03:35,140 --> 00:03:38,660
+ So here we can have rag in a way like this.
+
+54
+00:03:38,660 --> 00:03:43,140
+ For example, we say write a short story about a dog solving a mystery and
+
+55
+00:03:43,140 --> 00:03:46,860
+ then use the following information from the text about dogs in their
+
+56
+00:03:46,860 --> 00:03:50,500
+ behavior and details about common mysteries involving theft.
+
+57
+00:03:50,500 --> 00:03:55,740
+ And so we provide a lot of information to the model such as the dogs have
+
+58
+00:03:55,740 --> 00:04:00,100
+ an excellent sense of smell, which they use to track sense and then common
+
+59
+00:04:00,100 --> 00:04:03,260
+ neighborhood mysteries often involve stolen or missing items.
+
+60
+00:04:03,260 --> 00:04:07,340
+ And then dogs can detect sense even from a day old and follow trails.
+
+61
+00:04:07,340 --> 00:04:08,260
+ We locate items.
+
+62
+00:04:08,260 --> 00:04:12,700
+ And so this information can come from an external data source and that is
+
+63
+00:04:12,700 --> 00:04:13,500
+ being added.
+
+64
+00:04:13,500 --> 00:04:16,980
+ This is what's called augmented generations being augmented into our main
+
+65
+00:04:16,980 --> 00:04:17,420
+ prompt.
+
+66
+00:04:17,420 --> 00:04:20,380
+ And therefore we say write the story considering this details.
+
+67
+00:04:20,380 --> 00:04:23,660
+ And of course, well, them, the stories is going to, of course, be guided
+
+68
+00:04:23,660 --> 00:04:28,380
+ towards dogs having a great sense of smell and locating missing items.
+
+69
+00:04:28,380 --> 00:04:30,900
+ So this is how rag works.
+
+70
+00:04:30,900 --> 00:04:34,660
+ We've seen it already at length in the bedrock session, but it was good for
+
+71
+00:04:34,660 --> 00:04:37,580
+ you to see it again here as a little reminder.
+
+72
+00:04:37,580 --> 00:04:40,940
+ So I hope you liked it and I will see you in the next lecture.
+
