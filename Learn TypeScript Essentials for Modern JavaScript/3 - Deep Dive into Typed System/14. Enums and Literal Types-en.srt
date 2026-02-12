@@ -1,0 +1,384 @@
+1
+00:00:00,000 --> 00:00:06,400
+ Welcome back. In this lesson we'll be exploring two powerful tools in TypeScript, Inums, and
+
+2
+00:00:06,400 --> 00:00:14,160
+ the literal types. So these help you define strict sets of values. Like, for example, user roles,
+
+3
+00:00:14,160 --> 00:00:21,520
+ directions, or maybe status codes, and this makes your code more expressive, predictable,
+
+4
+00:00:21,520 --> 00:00:26,640
+ and of course self documenting. So let's first of all talk about Inums.
+
+5
+00:00:28,240 --> 00:00:39,600
+ So what exactly are Inums? Well, an Inum is short for enumeration. So a way to define a name
+
+6
+00:00:39,600 --> 00:00:46,960
+ set of constants, so instead of using a magic string, so numbers, we give each value a meaningful name.
+
+7
+00:00:48,160 --> 00:00:57,600
+ So let's do Inum, and let's say, for example, we're doing roles. So role like this, and we then
+
+8
+00:00:57,600 --> 00:01:04,240
+ simply define the list of roles that we want to obtain it. So it may be an admin, user,
+
+9
+00:01:04,240 --> 00:01:14,400
+ editor, perhaps, a viewer. So that's our Inum set up. And then the next step we need to do is
+
+10
+00:01:14,960 --> 00:01:24,640
+ to actually use it is to assign a virtual user to this particular role. So we can do let's say
+
+11
+00:01:24,640 --> 00:01:37,760
+ user role. And this is of type a role. So that is a type of our Inum here. And then we can just
+
+12
+00:01:37,760 --> 00:01:44,800
+ simply assign the appropriate role by doing role dot. And then we have a dropdown that tells us
+
+13
+00:01:44,800 --> 00:01:53,680
+ our role. So we can say role equals admin, for example. So this role admin is just an alias
+
+14
+00:01:53,680 --> 00:02:01,440
+ all the number zero. So this one here, if I hover over it, has a value of zero, and then it's
+
+15
+00:02:01,440 --> 00:02:09,600
+ automatically the sequential. So the next one is one, and then the next one is two. So you can see
+
+16
+00:02:09,600 --> 00:02:18,960
+ the TypeScript assigns the values by default starting from zero. You can also assign custom values.
+
+17
+00:02:18,960 --> 00:02:25,040
+ So either numbers or strings. So if you're not happy with zero, one and two, for example,
+
+18
+00:02:25,040 --> 00:02:33,040
+ what you could do is you can start off and say, I want to start off at maybe 200. So the first one
+
+19
+00:02:33,040 --> 00:02:42,240
+ is going to be 200, and then 201, 202. But once if you want to have these as custom numbers as well,
+
+20
+00:02:42,240 --> 00:02:47,760
+ where you could do that, if you wanted to, so you could say, for example, that is 300.
+
+21
+00:02:47,760 --> 00:02:55,520
+ And they've got 300 of that, and it's going to continue 301. So let's say we wanted to do some
+
+22
+00:02:55,520 --> 00:03:02,480
+ status codes. That would make some more sense. So we could say status codes, and the first one could
+
+23
+00:03:02,480 --> 00:03:15,840
+ be success. And this has a number of 200. That's the HTTP code for that. And the next one maybe
+
+24
+00:03:15,840 --> 00:03:23,840
+ is not found. And this is the famous 404 error, if you're into development. And then we might
+
+25
+00:03:23,840 --> 00:03:32,960
+ have server error. And this is an error code of say 500. And now actually to find some custom
+
+26
+00:03:32,960 --> 00:03:41,360
+ numbers. So we could say that right to find a variable and say our status code is a type status
+
+27
+00:03:41,360 --> 00:03:52,640
+ codes. And we have a not found error or a success or whatever we want. By having this, these
+
+28
+00:03:52,640 --> 00:03:59,760
+ status codes is going to be much better for readability purposes and debugging. And numeric
+
+29
+00:03:59,760 --> 00:04:06,080
+ enums that we've seen here are particularly useful when working with APIs or status codes.
+
+30
+00:04:06,080 --> 00:04:14,160
+ But we could also have ones in strings as well. So let's say instead of status codes, we want to
+
+31
+00:04:14,160 --> 00:04:22,800
+ have an enum of direction. So this could be maybe up, it could be up like this in capitals. And
+
+32
+00:04:22,800 --> 00:04:35,360
+ down could be zone, let's say it could be left. So now to find some custom enumeration of strings.
+
+33
+00:04:35,360 --> 00:04:42,560
+ And then of course we just change this to direction. And then our direction is direction dots
+
+34
+00:04:42,560 --> 00:04:51,600
+ down left or up. So one thing to be bear in mind as the behaviour for enums is that when they're
+
+35
+00:04:51,600 --> 00:04:58,560
+ numeric, then they are bi-directional, but they're one way when using strings.
+
+36
+00:04:58,560 --> 00:05:04,400
+ Okay, so you might be thinking Tim, that's fantastic, but what do you mean by bi-directional
+
+37
+00:05:04,400 --> 00:05:11,040
+ and one way? Well, let's go through an example. Let's start off with a simple enum
+
+38
+00:05:12,240 --> 00:05:19,040
+ of colour. And this is going to be a numeric one. And we have read it at one and then green
+
+39
+00:05:19,040 --> 00:05:27,600
+ and then blue. Okay, so let's now do, for example, show you how what I mean by bi-directional.
+
+40
+00:05:27,600 --> 00:05:32,160
+ So we could do a console log and we take the colour red.
+
+41
+00:05:32,160 --> 00:05:41,440
+ Let's just run that and we have the value over here. Let's just bring it across of one. Okay,
+
+42
+00:05:42,080 --> 00:05:50,160
+ now if we do another console log and say the log is of colour and so we put this in square
+
+43
+00:05:50,160 --> 00:06:01,040
+ or square brackets, we say one, execute that. We get red. So that's bi-directional. So we can either
+
+44
+00:06:01,040 --> 00:06:09,520
+ use actual enum value, say one red and it's going to convert it to one and we can do the opposite,
+
+45
+00:06:09,520 --> 00:06:14,080
+ the bi-directional and actually give it the value of one and it's going to give us
+
+46
+00:06:14,080 --> 00:06:21,040
+ the actual numeration value of red. So that's how you can convert a kind of two ways between the
+
+47
+00:06:21,040 --> 00:06:28,400
+ integer and back again. But this is only true for a numeric value. So if you have a string,
+
+48
+00:06:28,400 --> 00:06:34,400
+ you know, like I just showed you, another example, you can't go two ways because it's strings,
+
+49
+00:06:34,400 --> 00:06:41,680
+ so kind of what's the point. So let's do a very simple and mini challenge. Do an enum
+
+50
+00:06:41,680 --> 00:06:50,080
+ and try a model, a traffic light. So obviously red, yellow and green for these particular traffic lights.
+
+51
+00:06:50,080 --> 00:06:57,360
+ Pause the video and just quickly tap that out on your TypeScript playground and then compare
+
+52
+00:06:57,360 --> 00:07:09,600
+ what I have. So a simple traffic light might be an enum traffic light and we could just have red
+
+53
+00:07:09,600 --> 00:07:19,760
+ set that to red. And next one would be say yellow, is yellow and
+
+54
+00:07:21,600 --> 00:07:28,160
+ there one of course is green. They're nice and easy, we could put yellow back in capitals, couldn't we?
+
+55
+00:07:28,160 --> 00:07:37,520
+ Keep things consistent. Okay, so we've covered enums, what about allitral types? So literal types,
+
+56
+00:07:37,520 --> 00:07:45,680
+ let us restrict a variable to a specific set of values. Imagine it like a drop down menu,
+
+57
+00:07:45,680 --> 00:07:50,800
+ we have say only three options. So I'm going to remove the code we have here,
+
+58
+00:07:51,600 --> 00:07:59,760
+ and we could have an example of alignment, perhaps you're trying to align text in a paragraph,
+
+59
+00:07:59,760 --> 00:08:08,320
+ you might have a left center, a line, right. So we could define alignment and alignments could be
+
+60
+00:08:08,320 --> 00:08:19,360
+ a few three options, we could have left. We could also have center, so we could put a pipe symbol,
+
+61
+00:08:20,800 --> 00:08:27,920
+ and we said center, another pipe symbol, and we can say right.
+
+62
+00:08:27,920 --> 00:08:37,040
+ Now you can also, interestingly enough, actually do an association, so you could say right,
+
+63
+00:08:37,040 --> 00:08:46,240
+ is effectively also center. So here we've defined an alignment variable, which only can have
+
+64
+00:08:46,240 --> 00:08:56,000
+ three possible values, left, center, and right. So let's actually have an example of some
+
+65
+00:08:56,000 --> 00:09:02,720
+ literal types of action. So we're going to define a different type of example, and this time it's
+
+66
+00:09:02,720 --> 00:09:12,400
+ going to be a button size. So you can say a button size, you can say we have a type
+
+67
+00:09:15,600 --> 00:09:22,080
+ of, and let's call it a button size, and it's going to have three possible values.
+
+68
+00:09:22,080 --> 00:09:30,720
+ We can have small, we can have medium, all what we can have large.
+
+69
+00:09:30,720 --> 00:09:42,480
+ And now we can actually create a button. So you can do this, kind of using normal JavaScript,
+
+70
+00:09:43,040 --> 00:09:48,000
+ but we're going to show you how to do an actual function, which we haven't really looked at
+
+71
+00:09:48,000 --> 00:09:53,920
+ at this current time. So it's fairly straightforward. Again, we just do function,
+
+72
+00:09:53,920 --> 00:10:01,840
+ we define the function in a normal way that we do in JavaScript. The difference is when we
+
+73
+00:10:01,840 --> 00:10:08,640
+ actually define the parameter, we can give it the actual type. So we have a parameter of size,
+
+74
+00:10:10,160 --> 00:10:16,320
+ then with the code on, we say that the parameter is of type button size.
+
+75
+00:10:16,320 --> 00:10:24,960
+ And now we can just simply just do what we want to do. So we can just pretend and say
+
+76
+00:10:25,680 --> 00:10:44,880
+ the console log, we can say creating a size should be dollar button. And now we can just simply
+
+77
+00:10:44,880 --> 00:10:53,680
+ execute our function. So we can say create button whoops, not on create button. And we can give
+
+78
+00:10:53,680 --> 00:10:59,600
+ it a size. So we can say the button is going to be medium.
+
+79
+00:10:59,600 --> 00:11:12,160
+ Let's execute that, creating a medium button. And if we try and give it a value that's not one of
+
+80
+00:11:12,160 --> 00:11:19,440
+ these three. And if we give it a value obviously create medium large, then we get an error,
+
+81
+00:11:19,440 --> 00:11:26,000
+ coming up saying the argwind of type medium large is not signable. This only going to allow us
+
+82
+00:11:26,000 --> 00:11:32,720
+ would not give us an error if we actually give it a value. So let's say it's allowed. Let's
+
+83
+00:11:32,720 --> 00:11:43,680
+ say large. If we execute that, we get creating a large button. So the lateral types are perfect
+
+84
+00:11:43,680 --> 00:11:50,880
+ for modeling options, perhaps states or modes. And then make our code so much safer and easy to
+
+85
+00:11:50,880 --> 00:11:58,320
+ understand. But lateral types are often used with union types to enforce strict value sets.
+
+86
+00:11:58,320 --> 00:12:06,320
+ So let's have an example of that. So we could have for example a type of mode. And this
+
+87
+00:12:06,320 --> 00:12:15,360
+ imagine that we have a user interface and we have a light theme or we have a dark theme. That's
+
+88
+00:12:15,360 --> 00:12:21,040
+ hard. What's all? Sorry, we have a light mode and a dark mode. And then we want to define a theme
+
+89
+00:12:21,040 --> 00:12:36,240
+ of modern and classic, let's see, perhaps another one of retro. So we have a theme, three options,
+
+90
+00:12:37,120 --> 00:12:44,160
+ and we have a mode of light or dark. So this gives us a fine grain control without needing a full
+
+91
+00:12:44,160 --> 00:12:51,920
+ enumeration. So in conclusion, both inums and literal types will pass model real-world
+
+92
+00:12:51,920 --> 00:13:00,240
+ constraints in our code. Now inums are great for named constants, while the literal types give us
+
+93
+00:13:00,240 --> 00:13:06,080
+ precise control over allowed values. So that's a difference. So inums are just going to give us
+
+94
+00:13:06,320 --> 00:13:12,640
+ kind of a series of options, whereas literal types really spell out what and what we can't
+
+95
+00:13:12,640 --> 00:13:19,040
+ actually put inside a variable. So in the next lesson, we're going to explore union
+
+96
+00:13:19,040 --> 00:13:27,120
+ and intersection types, which is how to combine the types to build a flexible yet safe structures.
+
