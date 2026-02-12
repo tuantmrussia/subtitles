@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:06,100
+ In this lesson, we're going to talk about generic interfaces and generic classes in TypeScript.
+
+2
+00:00:06,100 --> 00:00:11,700
+ Generics allow us to write reusable, flexible, and type-safe code.
+
+3
+00:00:11,700 --> 00:00:17,300
+ And it's heavily used in real-world TypeScript projects and frameworks.
+
+4
+00:00:17,300 --> 00:00:23,600
+ If you want to have functions like array, IT, or libraries like Angular and React,
+
+5
+00:00:23,600 --> 00:00:29,000
+ stay flexible while remaining type-safe, this is how.
+
+6
+00:00:29,000 --> 00:00:34,000
+ Let's start with a common problem, suppose you want to store values of different types,
+
+7
+00:00:34,000 --> 00:00:38,000
+ but we still want TypeScript to help us with type-safety.
+
+8
+00:00:38,000 --> 00:00:53,000
+ So for example, if we have function and then identity, and say value any, then return value,
+
+9
+00:00:53,000 --> 00:01:02,400
+ this works, but using the any removes or type-safety, TypeScript cannot be able to help us anymore.
+
+10
+00:01:02,400 --> 00:01:07,300
+ We want flexibility without losing type information.
+
+11
+00:01:07,300 --> 00:01:09,700
+ That's where generics come in.
+
+12
+00:01:09,700 --> 00:01:13,200
+ So a generic is a placeholder for a type.
+
+13
+00:01:13,200 --> 00:01:22,000
+ Instead of hard-coding a specific type, we use a type variable, commonly called T.
+
+14
+00:01:22,000 --> 00:01:29,200
+ generics let us write code at the works of many types while still preserving strong typing.
+
+15
+00:01:29,200 --> 00:01:34,400
+ So let's now change this function to use some generics.
+
+16
+00:01:34,400 --> 00:01:40,800
+ So we're going to change where we have value here to T.
+
+17
+00:01:40,800 --> 00:01:44,300
+ First of all, we need to define exactly what T is.
+
+18
+00:01:44,300 --> 00:01:48,100
+ We don't know what T is, but we can do it as generic T
+
+19
+00:01:48,100 --> 00:01:55,100
+ by doing an angle brackets here just after the function, we put T.
+
+20
+00:01:55,100 --> 00:01:59,100
+ So now in TypeScript happy because we define what T is.
+
+21
+00:01:59,100 --> 00:02:05,100
+ But we need to then use this function for TypeScript to know exactly what this type is going to be.
+
+22
+00:02:05,100 --> 00:02:08,600
+ I'm not going to show you how that works in just a moment.
+
+23
+00:02:08,600 --> 00:02:16,100
+ Maybe we want this function to return a type of the same type that we've actually sent in.
+
+24
+00:02:16,100 --> 00:02:21,100
+ We can do that by doing code on and then T.
+
+25
+00:02:21,100 --> 00:02:23,100
+ So this looks a bit strange.
+
+26
+00:02:23,100 --> 00:02:25,100
+ Let's see how this works in practice.
+
+27
+00:02:25,100 --> 00:02:33,100
+ If we do const and say number value, we can call this function identity
+
+28
+00:02:33,100 --> 00:02:36,100
+ and let's say we want to work with numbers.
+
+29
+00:02:36,100 --> 00:02:41,100
+ So we then do it in angle brackets and say number.
+
+30
+00:02:41,100 --> 00:02:47,100
+ Then we can call our function and notice now that TypeScript is prompting us
+
+31
+00:02:47,100 --> 00:02:51,100
+ to supply a number or a value of type number.
+
+32
+00:02:51,100 --> 00:02:59,100
+ So it's now used the number that we have specified here, matched it with the type T.
+
+33
+00:02:59,100 --> 00:03:06,100
+ And now this is expecting type T, which in this case is number, to be supplied to us.
+
+34
+00:03:06,100 --> 00:03:11,100
+ We can now do, for example, 10 then to a colon.
+
+35
+00:03:11,100 --> 00:03:17,100
+ And then this function is then going to return us a type, a number type.
+
+36
+00:03:17,100 --> 00:03:23,100
+ If we then try and change this value 10 to something that's not a number, let's say a string,
+
+37
+00:03:23,100 --> 00:03:28,100
+ it's then going to complain because it's expecting us to supply a number.
+
+38
+00:03:28,100 --> 00:03:31,100
+ Let's just change it back to 10.
+
+39
+00:03:31,100 --> 00:03:37,100
+ But we can then call the function again and change the actual type again.
+
+40
+00:03:37,100 --> 00:03:43,100
+ So we can do const and say string value equals identity.
+
+41
+00:03:43,100 --> 00:03:50,100
+ This time we're going to work with strings to put strings in angle brackets.
+
+42
+00:03:50,100 --> 00:03:59,100
+ Now if we try and provide a 10, it's not going to let us because it's expecting us to supply a parameter of string.
+
+43
+00:03:59,100 --> 00:04:04,100
+ We can now do, for example, hello, and that's going to be accepted.
+
+44
+00:04:04,100 --> 00:04:09,100
+ And of course we could do the same for any other type.
+
+45
+00:04:09,100 --> 00:04:17,100
+ Now TypeScript knows the exact return type, so no use of any and no guessing.
+
+46
+00:04:17,100 --> 00:04:22,100
+ Now with generics, TypeScript's going to keep track of the type for us,
+
+47
+00:04:22,100 --> 00:04:27,100
+ whereas using the any keyword, it doesn't.
+
+48
+00:04:27,100 --> 00:04:33,100
+ This is where generics are safer, and preferred when using professional code bases.
+
+49
+00:04:33,100 --> 00:04:38,100
+ Now let's move on from functions to generic interfaces.
+
+50
+00:04:38,100 --> 00:04:40,100
+ I'm going to remove this here.
+
+51
+00:04:40,100 --> 00:04:43,100
+ Let's define a new interface.
+
+52
+00:04:43,100 --> 00:04:50,100
+ Let's say let's say, for example, API response, a very common use for generics.
+
+53
+00:04:50,100 --> 00:04:58,100
+ We then provide a type T. Now we can start to find our interface.
+
+54
+00:04:58,100 --> 00:05:03,100
+ We're going to have a data method or data property.
+
+55
+00:05:03,100 --> 00:05:06,100
+ This is going to be our type T.
+
+56
+00:05:06,100 --> 00:05:10,100
+ Don't know at this point, then have a colon.
+
+57
+00:05:10,100 --> 00:05:12,100
+ And now we want the status.
+
+58
+00:05:12,100 --> 00:05:19,100
+ The status we're going to have as a number, for example, 200 or maybe 404.
+
+59
+00:05:19,100 --> 00:05:24,100
+ So this interface represents a generic API response.
+
+60
+00:05:24,100 --> 00:05:28,100
+ The data property can be of any type.
+
+61
+00:05:28,100 --> 00:05:33,100
+ So perhaps, for example, you could have a customer or maybe a product,
+
+62
+00:05:33,100 --> 00:05:35,100
+ or maybe lack of category.
+
+63
+00:05:35,100 --> 00:05:41,100
+ So let's do a couple examples into a const user response.
+
+64
+00:05:41,100 --> 00:05:50,100
+ This is going to be our type API response, and in our particular API for the user response,
+
+65
+00:05:50,100 --> 00:05:52,100
+ we're going to just return a string.
+
+66
+00:05:52,100 --> 00:05:55,100
+ So I'm going to put a string in here.
+
+67
+00:05:55,100 --> 00:05:59,100
+ Now we can define the actual members.
+
+68
+00:05:59,100 --> 00:06:02,100
+ So we can see data.
+
+69
+00:06:02,100 --> 00:06:09,100
+ And if we try and do a number, it's going to start to complain because it's expecting a string.
+
+70
+00:06:09,100 --> 00:06:15,100
+ So in our data, we're going to return Alice.
+
+71
+00:06:15,100 --> 00:06:21,100
+ And then the status we're going to set to 200.
+
+72
+00:06:21,100 --> 00:06:30,100
+ And now we can use this response again into const product response.
+
+73
+00:06:30,100 --> 00:06:40,100
+ I'll type API response, and this is going to expect a number equals our data.
+
+74
+00:06:40,100 --> 00:06:47,100
+ It has to be a number, we put number in here, and our status again could be 200.
+
+75
+00:06:47,100 --> 00:06:54,100
+ So the same interface works for different data types while remaining type safe.
+
+76
+00:06:54,100 --> 00:07:00,100
+ This pattern is extremely common when dealing with APIs, as we can see.
+
+77
+00:07:00,100 --> 00:07:03,100
+ It can be also very useful with classes.
+
+78
+00:07:03,100 --> 00:07:07,100
+ So let's do a class here.
+
+79
+00:07:07,100 --> 00:07:13,100
+ Let's do class and say storage.
+
+80
+00:07:13,100 --> 00:07:18,100
+ Let's put our generics in here.
+
+81
+00:07:18,100 --> 00:07:24,100
+ Now we're going to create some items, so private items.
+
+82
+00:07:24,100 --> 00:07:29,100
+ The items are going to be an array of a generic type.
+
+83
+00:07:29,100 --> 00:07:34,100
+ So we do t and then to square brackets.
+
+84
+00:07:34,100 --> 00:07:38,100
+ Let's initialize that array like this.
+
+85
+00:07:38,100 --> 00:07:40,100
+ Okay, so we have items.
+
+86
+00:07:40,100 --> 00:07:45,100
+ Now we can define a method to add.
+
+87
+00:07:45,100 --> 00:07:50,100
+ We want to supply an item of type T.
+
+88
+00:07:50,100 --> 00:07:55,100
+ The app method is going to return nothing, so we put void.
+
+89
+00:07:55,100 --> 00:08:00,100
+ And now we can put the implementation, which is going to be this dot items.
+
+90
+00:08:00,100 --> 00:08:03,100
+ Whoosh.
+
+91
+00:08:03,100 --> 00:08:07,100
+ App type T, so pushing our item.
+
+92
+00:08:07,100 --> 00:08:09,100
+ We can now do another method.
+
+93
+00:08:09,100 --> 00:08:14,100
+ For example, get all.
+
+94
+00:08:14,100 --> 00:08:21,100
+ We're going to return an array of our type T.
+
+95
+00:08:21,100 --> 00:08:29,100
+ Now we do is return this dot items.
+
+96
+00:08:29,100 --> 00:08:31,100
+ Everyone doing what this error is.
+
+97
+00:08:31,100 --> 00:08:36,100
+ It's because this storage just happens to be a duplicate identifier,
+
+98
+00:08:36,100 --> 00:08:37,100
+ use on this website.
+
+99
+00:08:37,100 --> 00:08:42,100
+ So I'm going to change this to something like my storage.
+
+100
+00:08:42,100 --> 00:08:47,100
+ That's just going to change, get rid of the error message.
+
+101
+00:08:47,100 --> 00:08:52,100
+ This class can store any type, but once the type is chosen,
+
+102
+00:08:52,100 --> 00:08:55,100
+ it's then enforced everywhere.
+
+103
+00:08:55,100 --> 00:09:02,100
+ Let's assign some examples, so we can do const string storage.
+
+104
+00:09:02,100 --> 00:09:09,100
+ This new my storage, and we can just store some strings.
+
+105
+00:09:09,100 --> 00:09:13,100
+ Now we can do string storage at.
+
+106
+00:09:13,100 --> 00:09:18,100
+ Add some string events, say apples.
+
+107
+00:09:18,100 --> 00:09:26,100
+ Then we can do string storage, get all.
+
+108
+00:09:26,100 --> 00:09:33,100
+ Then we can reuse this again into number storage equals new my storage.
+
+109
+00:09:33,100 --> 00:09:38,100
+ This time it's going to store some numbers.
+
+110
+00:09:38,100 --> 00:09:43,100
+ The number storage adds, let's give it a value, say 10.
+
+111
+00:09:43,100 --> 00:09:46,100
+ Then we can call our method again.
+
+112
+00:09:46,100 --> 00:09:50,100
+ Each instance is locked up a particular type,
+
+113
+00:09:50,100 --> 00:09:55,100
+ and TypeScripts can provide prevent mixing types.
+
+114
+00:09:55,100 --> 00:10:00,100
+ Now sometimes we want a generic, but we have rules.
+
+115
+00:10:00,100 --> 00:10:04,100
+ This is where we're talking about generic constraints.
+
+116
+00:10:04,100 --> 00:10:09,100
+ For example, if we do function, let's do log length,
+
+117
+00:10:09,100 --> 00:10:14,100
+ and what type of type T.
+
+118
+00:10:14,100 --> 00:10:20,100
+ This time it's going to extend this type,
+
+119
+00:10:20,100 --> 00:10:24,100
+ so we're going to now define the type we want to extend.
+
+120
+00:10:24,100 --> 00:10:29,100
+ Let's say we have length property of type number.
+
+121
+00:10:29,100 --> 00:10:34,100
+ To finish off the definition,
+
+122
+00:10:34,100 --> 00:10:39,100
+ we want to supply a value, so a value is going to be a type T,
+
+123
+00:10:39,100 --> 00:10:43,100
+ and the function is then going to return void.
+
+124
+00:10:43,100 --> 00:10:47,100
+ So this is looking, starting to look a little bit more complicated,
+
+125
+00:10:47,100 --> 00:10:50,100
+ but hopefully you can understand what we're doing here.
+
+126
+00:10:50,100 --> 00:11:00,100
+ Now we can do console, log, value, dot length.
+
+127
+00:11:00,100 --> 00:11:05,100
+ So what's this doing? Well, it's ensuring that our type T must have a length property.
+
+128
+00:11:05,100 --> 00:11:08,100
+ So now we can do, for example, log length.
+
+129
+00:11:08,100 --> 00:11:11,100
+ We can say hello.
+
+130
+00:11:11,100 --> 00:11:14,100
+ Let's execute this.
+
+131
+00:11:14,100 --> 00:11:20,100
+ We get a value of fire over here, this is making a big bigger.
+
+132
+00:11:20,100 --> 00:11:25,100
+ We turn the string to, like, hello world.
+
+133
+00:11:25,100 --> 00:11:27,100
+ Execute this.
+
+134
+00:11:27,100 --> 00:11:30,100
+ We get a value of 11.
+
+135
+00:11:30,100 --> 00:11:33,100
+ Let's do another use into log length,
+
+136
+00:11:33,100 --> 00:11:36,100
+ and this time we're going to supply an array,
+
+137
+00:11:36,100 --> 00:11:44,100
+ 1, 2, 3, 4 and 5. Let's execute that, and we get a value of 5,
+
+138
+00:11:44,100 --> 00:11:48,100
+ and let's just remove this one, stop us getting confused.
+
+139
+00:11:48,100 --> 00:11:52,100
+ Let's just clear the console.
+
+140
+00:11:52,100 --> 00:11:54,100
+ And now run.
+
+141
+00:11:54,100 --> 00:11:58,100
+ We get a value of 5 here, and of course we change the value of,
+
+142
+00:11:58,100 --> 00:12:06,100
+ I rent length of the array, maybe six and four, it run, we then get seven.
+
+143
+00:12:06,100 --> 00:12:08,100
+ So when should we use generics?
+
+144
+00:12:08,100 --> 00:12:13,100
+ So use generics when we want to use reasonable code.
+
+145
+00:12:13,100 --> 00:12:18,100
+ We want flexibility without any.
+
+146
+00:12:18,100 --> 00:12:22,100
+ We want the input and output types to be related,
+
+147
+00:12:22,100 --> 00:12:26,100
+ and maybe you might be building utilities or libraries.
+
