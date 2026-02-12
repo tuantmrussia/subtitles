@@ -1,0 +1,372 @@
+1
+00:00:00,000 --> 00:00:03,660
+ So now let's explore foundation models in greater detail.
+
+2
+00:00:03,660 --> 00:00:08,120
+ So let's have a look at providers in here and we can read a lot.
+
+3
+00:00:08,120 --> 00:00:14,120
+ So Amazon is going to be one of the cheapest foundation model on Amazon bedrock because it is provided by Amazon themselves,
+
+4
+00:00:14,120 --> 00:00:21,600
+ but you will have maybe slightly less quality I would say of output for now than other companies like Anthropic,
+
+5
+00:00:21,600 --> 00:00:26,420
+ which is a leading company in AI with a cloud three types of model.
+
+6
+00:00:26,420 --> 00:00:31,440
+ You get some open source models as well from meta and you can get more information.
+
+7
+00:00:31,440 --> 00:00:34,600
+ For example, on images, you can get stuff from stability AI,
+
+8
+00:00:34,600 --> 00:00:39,160
+ which is really good at creating images with something called stable diffusion.
+
+9
+00:00:39,160 --> 00:00:45,600
+ So each foundation model provider has their own capability and it's good for you to learn about them in your own time,
+
+10
+00:00:45,600 --> 00:00:51,960
+ but from an exam perspective, you are not expected to know the difference between Amazon and Anthropic and Metanswan,
+
+11
+00:00:51,960 --> 00:00:55,520
+ but you're supposed to know about the differences of capabilities of a model.
+
+12
+00:00:55,520 --> 00:01:00,180
+ For example, if a model can take a text, if it can take inputs, such as files,
+
+13
+00:01:00,180 --> 00:01:03,780
+ if it can generate images and so on, this is more important.
+
+14
+00:01:03,780 --> 00:01:09,160
+ But again, no need to know which models can do what this would be way over the board.
+
+15
+00:01:09,160 --> 00:01:13,640
+ Okay, so we have these providers right here and there are base models,
+
+16
+00:01:13,640 --> 00:01:16,280
+ but say we want to compare them from an AI perspective.
+
+17
+00:01:16,280 --> 00:01:19,200
+ So let's go back into your chat and we intersect a model.
+
+18
+00:01:19,200 --> 00:01:25,640
+ So we're going to have a look at Amazon Titan text G1 premiere, we're going to apply it.
+
+19
+00:01:25,640 --> 00:01:29,440
+ And here we're going to go into compare mode, and we're going to close this here right here,
+
+20
+00:01:29,440 --> 00:01:35,920
+ compare mode, and then select a second model, for example, Anthropic and then Claude 3 Haiku.
+
+21
+00:01:35,920 --> 00:01:41,960
+ Okay, and here we can see the first difference that this model does not support image upload.
+
+22
+00:01:41,960 --> 00:01:48,160
+ So if we upload an image, only the right hand side model will take it into account and this one doesn't.
+
+23
+00:01:48,160 --> 00:01:52,160
+ So this is pretty important because if you do have a use case with images,
+
+24
+00:01:52,160 --> 00:01:54,960
+ then the model on the left is obviously not enough.
+
+25
+00:01:54,960 --> 00:02:02,280
+ But let's say, what are the most popular AWS services?
+
+26
+00:02:02,280 --> 00:02:05,280
+ And then you look at code and run.
+
+27
+00:02:05,280 --> 00:02:10,920
+ So we give the same prompt here to both models and we get some answers.
+
+28
+00:02:10,920 --> 00:02:14,320
+ So this one is saying I cannot proceed with this request.
+
+29
+00:02:14,320 --> 00:02:16,840
+ Whereas here we get an answer.
+
+30
+00:02:16,840 --> 00:02:21,880
+ This is interesting as a use case actually, but bottom and is on the model metrics.
+
+31
+00:02:21,880 --> 00:02:26,880
+ We have a look and we can see here the latency so we can compare models based on latency.
+
+32
+00:02:26,880 --> 00:02:28,720
+ We can compare models based on pricing.
+
+33
+00:02:28,720 --> 00:02:34,320
+ So this took an eight token counts inputs while this one took a 16 inputs.
+
+34
+00:02:34,320 --> 00:02:37,640
+ And then output while it was zero because we're getting no answers right now.
+
+35
+00:02:37,640 --> 00:02:41,920
+ And 340 because we are getting a lot of answer right here.
+
+36
+00:02:41,920 --> 00:02:43,160
+ So let's do something a bit more simple.
+
+37
+00:02:43,160 --> 00:02:50,520
+ For example, what is the capital of France and click on run and we get Paris is the capital of France.
+
+38
+00:02:50,520 --> 00:02:52,400
+ And the capital of France is Paris.
+
+39
+00:02:52,400 --> 00:02:56,120
+ So again, you can have a look also at the quality of the output.
+
+40
+00:02:56,120 --> 00:02:59,880
+ Do you prefer this kind of wording or that can of wording?
+
+41
+00:02:59,880 --> 00:03:01,440
+ And you can go as complicated as you want.
+
+42
+00:03:01,440 --> 00:03:06,280
+ But the idea is that you can have a look and compare the models and getting a feel for it.
+
+43
+00:03:06,280 --> 00:03:09,320
+ And again, look at the metrics if you need it to.
+
+44
+00:03:09,320 --> 00:03:16,520
+ OK, so now let's go back into Amazon bedrock and I want to show you how to customize a model.
+
+45
+00:03:16,520 --> 00:03:19,920
+ So here custom model is for fine tuning.
+
+46
+00:03:19,920 --> 00:03:28,000
+ And so we find tuning, we want to take one of the base models and we want to enrich it with our own data to create a custom model.
+
+47
+00:03:28,000 --> 00:03:33,400
+ Why? Well, because maybe we want to give access to the model to data that it doesn't have yet.
+
+48
+00:03:33,400 --> 00:03:35,160
+ For example, internal data.
+
+49
+00:03:35,160 --> 00:03:42,520
+ And so therefore, we can customize a model and we have two options. We can do a fine tuning job or a continued pre-training job.
+
+50
+00:03:42,520 --> 00:03:46,520
+ So the difference here is that this is going to be continuous and it's going to retrain over time.
+
+51
+00:03:46,520 --> 00:03:50,640
+ Well, a fine tuning job is going to be just a one time thing.
+
+52
+00:03:50,640 --> 00:03:54,000
+ So let's create a fine tuning job just to see the options and to understand it.
+
+53
+00:03:54,000 --> 00:03:55,600
+ We're not going to do this.
+
+54
+00:03:55,600 --> 00:03:57,160
+ We need to select a model.
+
+55
+00:03:57,160 --> 00:03:59,560
+ So not all models can be fine tuned.
+
+56
+00:03:59,560 --> 00:04:05,640
+ We have Amazon cohere and META and some of them are not accessible. So that's where there's like a warning sign.
+
+57
+00:04:05,640 --> 00:04:12,360
+ But let's say we want to customize Titan text one express and apply it.
+
+58
+00:04:12,360 --> 00:04:14,880
+ And then we enter demo fine tuning.
+
+59
+00:04:14,880 --> 00:04:17,080
+ So this is the name of the model.
+
+60
+00:04:17,080 --> 00:04:22,240
+ Let's scroll down. So this is my fine tuning job.
+
+61
+00:04:22,240 --> 00:04:24,440
+ You can set some settings, but it's not important for us.
+
+62
+00:04:24,440 --> 00:04:26,880
+ And most importantly is the input data.
+
+63
+00:04:26,880 --> 00:04:33,680
+ So to fine tune a model, we need to have input data and the data has to be in what's called Amazon S3.
+
+64
+00:04:33,680 --> 00:04:42,800
+ So if you go in the search bar right here and type Amazon S3 and open the S3 service, here we go, the S3 console, Amazon S3.
+
+65
+00:04:42,800 --> 00:04:46,520
+ We can see right now if you click on buckets that we don't have any buckets in our accounts.
+
+66
+00:04:46,520 --> 00:04:53,680
+ So buckets are cloud directories in which we can start to put data and the data lives on the AWS cloud.
+
+67
+00:04:53,680 --> 00:05:03,680
+ And so what we're saying here is that the data that is needed to customize Amazon bedrock must be located in an Amazon S3 buckets.
+
+68
+00:05:03,680 --> 00:05:09,240
+ So if you wanted to, we need to create a bucket and then put data inside of the bucket.
+
+69
+00:05:09,240 --> 00:05:17,680
+ And then here you would reference the S3 location being S3 and then the bucket name and then finally the path to your training data.
+
+70
+00:05:17,680 --> 00:05:25,360
+ Optionally, you can have a validation data sets and then most importantly, once we have specified the data because this is a machine learning training job.
+
+71
+00:05:25,360 --> 00:05:27,760
+ We have what's called hyper parameters.
+
+72
+00:05:27,760 --> 00:05:35,120
+ So hyper parameters are configurations for your machine learning training job and this term will come back a few times in this course.
+
+73
+00:05:35,120 --> 00:05:38,760
+ And basically it tells you how the algorithm should behave.
+
+74
+00:05:38,760 --> 00:05:45,600
+ So we have a lot of different settings here that are too difficult to understand for this level of AI exam.
+
+75
+00:05:45,600 --> 00:05:49,520
+ But basically you can change them, such as epoch, the batch size.
+
+76
+00:05:49,520 --> 00:05:56,920
+ So how many samples must be processed at once before a dating model and the learning rate, how fast the model is going to learn or not.
+
+77
+00:05:56,920 --> 00:06:03,280
+ And these models will imply that your model is going to be a differently based on the type of learning it gets.
+
+78
+00:06:03,280 --> 00:06:05,680
+ And so this is just some advanced settings to customize it.
+
+79
+00:06:05,680 --> 00:06:13,360
+ But hyper parameters are very important when you are a data scientist because changing them can really change the quality of your outputs.
+
+80
+00:06:13,360 --> 00:06:18,320
+ Believe everything as a default. And then finally, where to store the evaluation output.
+
+81
+00:06:18,320 --> 00:06:28,000
+ So if we provided a validation data sets, we can also have the output data in Amazon S3 to be able to analyze it and make sure that it fits our use case.
+
+82
+00:06:28,000 --> 00:06:35,640
+ Next to access to do this kind of customization, Amazon bedrock will need access to Amazon S3 to write to it.
+
+83
+00:06:35,640 --> 00:06:38,360
+ And therefore, we need what's called a service role in AWS.
+
+84
+00:06:38,360 --> 00:06:42,440
+ It's what gives the permissions to Amazon bedrock to write to Amazon S3.
+
+85
+00:06:42,440 --> 00:06:45,120
+ Because we don't run one, we're not going to do this right now.
+
+86
+00:06:45,120 --> 00:06:50,840
+ And as you can see here, to create this fine tuning job, we need to purchase provision throughputs.
+
+87
+00:06:50,840 --> 00:06:53,480
+ And this is going to be very expensive.
+
+88
+00:06:53,480 --> 00:06:57,200
+ So we don't do this because this is built by the hour.
+
+89
+00:06:57,200 --> 00:07:04,080
+ And so therefore, just remember that for fine tune models to actually create them and to actually also run them,
+
+90
+00:07:04,080 --> 00:07:07,000
+ you will need to purchase provision throughputs.
+
+91
+00:07:07,000 --> 00:07:12,960
+ But here we've seen all the options to create a fine tune model and that was the most important thing.
+
+92
+00:07:12,960 --> 00:07:17,720
+ OK, so that's it for models, for base models as well as how to customize them.
+
+93
+00:07:17,720 --> 00:07:20,480
+ I hope you liked it and I will see you in the next lecture.
+
