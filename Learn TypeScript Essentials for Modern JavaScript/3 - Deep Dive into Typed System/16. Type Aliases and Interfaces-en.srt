@@ -1,0 +1,252 @@
+1
+00:00:00,000 --> 00:00:06,280
+ Hi and welcome back. In this lesson we're going to be looking at type aliases and interfaces
+
+2
+00:00:06,280 --> 00:00:12,040
+ in TypeScript. These two are very often confused, but they play very slightly different
+
+3
+00:00:12,040 --> 00:00:19,720
+ rules. First of all, let's have a look at type aliases. Type alias lets us give a custom
+
+4
+00:00:19,720 --> 00:00:28,200
+ name to a type. Think of it as a way to create your own shorthand for complex types.
+
+5
+00:00:28,200 --> 00:00:36,600
+ Let's create a type of user ID. Now the user ID could be of type string or it could
+
+6
+00:00:36,600 --> 00:00:43,640
+ be of type number. So kind of it's not a primitive, we're actually setting up as a complex
+
+7
+00:00:43,640 --> 00:00:49,160
+ object, a complex type here, because it's got two of these types. So this user ID is
+
+8
+00:00:49,160 --> 00:00:58,280
+ actually got two types string and number. And now what we can do is we can say let id1 is
+
+9
+00:00:58,280 --> 00:01:10,040
+ of type user ID. We can set that as 101 and then we can have id2 and that is also of type
+
+10
+00:01:10,040 --> 00:01:20,800
+ id. And that could be for example a123. So the user ID is basically a simple alias
+
+11
+00:01:20,800 --> 00:01:27,920
+ for either type of string or number. Now instead of repeating the string number everywhere,
+
+12
+00:01:27,920 --> 00:01:33,760
+ so instead of using it everywhere above our code, we can simply just refer to our user
+
+13
+00:01:33,760 --> 00:01:39,280
+ id. And it looks much neater when we're actually writing the code for other developers
+
+14
+00:01:39,280 --> 00:01:47,800
+ to understand. It could also be used for an aliases for objects. So let's have a look
+
+15
+00:01:47,800 --> 00:01:55,400
+ as an example of that. So if we have to find a type of type user and the user has an
+
+16
+00:01:55,400 --> 00:02:09,800
+ id of number and a name of type string and a flag of is admin, set to boolean. And then
+
+17
+00:02:09,800 --> 00:02:23,920
+ we could create a user and say user 1. That is of type user. You can set the id to 1.
+
+18
+00:02:23,920 --> 00:02:35,440
+ Set the name to Alice. And we can set the is admin flag to true. So this is acting
+
+19
+00:02:35,440 --> 00:02:44,640
+ as a simple alias to this type of user. Now let's have a look at an a interface, the
+
+20
+00:02:44,640 --> 00:02:50,920
+ difference. So an interface is primarily used to describe the shape of an object. It's
+
+21
+00:02:50,920 --> 00:02:56,840
+ very similar to type aliases for objects, but it does come with some extra powers. So it's
+
+22
+00:02:56,840 --> 00:03:04,480
+ best explained in an example. So let's have an interface of a user. And we can have the
+
+23
+00:03:04,480 --> 00:03:16,160
+ same properties as before. So id of type number name type string and is admin of type
+
+24
+00:03:16,160 --> 00:03:31,440
+ boolean. Now we're going to create an object or say user 2 of interface user. You can
+
+25
+00:03:31,440 --> 00:03:40,800
+ just set the id property, then going to get a name, say bob. And then set the is admin
+
+26
+00:03:40,800 --> 00:03:54,240
+ flag to false. So this pretty much looks the same as the alias example, but watch what
+
+27
+00:03:54,240 --> 00:04:01,320
+ happens next. So interfaces can be extended to create new ones. And that's the difference
+
+28
+00:04:01,320 --> 00:04:12,080
+ between this and its type alias. So we could do, for example, create an interface of employee,
+
+29
+00:04:12,080 --> 00:04:28,160
+ now extends the user. And then we could add, for example, employee id and set that to a number.
+
+30
+00:04:28,160 --> 00:04:35,160
+ Then we could create another user, say user 3. And that is of type employee this time.
+
+31
+00:04:35,160 --> 00:04:43,800
+ You can set the name property to say charlie. But this time it's going to be complaining
+
+32
+00:04:43,800 --> 00:04:54,600
+ because we need to specify id and is admin. So it's going to say id or maybe 4. And then
+
+33
+00:04:54,600 --> 00:05:02,240
+ is admin. We're going to set to false. But also notice is now complaining because we
+
+34
+00:05:02,240 --> 00:05:09,960
+ haven't specified the employee id. So we have to specify an additional property, employee
+
+35
+00:05:09,960 --> 00:05:16,440
+ id and say 101. So this is the key difference between the interface and the type
+
+36
+00:05:16,440 --> 00:05:24,880
+ alias is that the interfaces are also to extend the actual a previous interface. Whereas
+
+37
+00:05:24,880 --> 00:05:32,000
+ a type alias does not. This is perfect for being able to do objects inheritance in a
+
+38
+00:05:32,000 --> 00:05:39,920
+ type script. So let's have a look at a further examples just to illustrate this. So let's
+
+39
+00:05:39,920 --> 00:05:49,080
+ say we have an interface of type animal. And this species, we're going to set the type
+
+40
+00:05:49,080 --> 00:06:01,840
+ string. And then we're going to create another interface of dog that extends the interface
+
+41
+00:06:01,840 --> 00:06:10,160
+ for animal. And we're going to provide a method of bark. So on this interface, we're
+
+42
+00:06:10,160 --> 00:06:14,640
+ creating a method that's going to be overridden when we supply it, when we're actually
+
+43
+00:06:14,640 --> 00:06:22,400
+ construct the object. So let's now do an example with type aliases instead. So we're
+
+44
+00:06:22,400 --> 00:06:32,800
+ going to create a type, and let's say the type of animal type. And this has a property
+
+45
+00:06:32,800 --> 00:06:46,600
+ of species of type string. Then we can create a type of dog type, which is a combination
+
+46
+00:06:46,600 --> 00:07:00,340
+ of animal type. And it has a method called bark, which is a avoid method. So look at
+
+47
+00:07:00,340 --> 00:07:05,680
+ the different string sex between doing this. So this is like a combined type, where this
+
+48
+00:07:05,680 --> 00:07:11,960
+ is probably much neater in effect is much clearer, where we can actually extend it. Let's
+
+49
+00:07:11,960 --> 00:07:19,520
+ still have a look at another example, because interfaces can also be reopens and merged,
+
+50
+00:07:19,520 --> 00:07:28,000
+ whereas type aliases cannot. So let's create an interface called car. And this has a make
+
+51
+00:07:28,000 --> 00:07:34,880
+ property of type string. And then we're going to have another interface. And look at
+
+52
+00:07:34,880 --> 00:07:42,680
+ this, we're going to also call it car. But this has a property called model of type string.
+
+53
+00:07:42,680 --> 00:07:50,200
+ And this looks quite strange, right? Now what we can do is we can create a natural instance
+
+54
+00:07:50,200 --> 00:07:58,440
+ of my car of a de actual interface of car. And then we can combine the two together. So
+
+55
+00:07:58,440 --> 00:08:08,800
+ if we hover this, we can specify the make of say Toyota. I could spell it to Toyota. But
+
+56
+00:08:08,800 --> 00:08:15,480
+ the TypeScript has also telling us we need to also supply the model is combining both of these
+
+57
+00:08:15,480 --> 00:08:20,600
+ two interfaces together, because they've got the same name. So we can come in here and then
+
+58
+00:08:20,600 --> 00:08:32,320
+ say model and say gorilla. And now TypeScript is happy. If we try to do the same thing
+
+59
+00:08:32,320 --> 00:08:37,720
+ of a type aliases, then TypeScript will go absolutely crazy. It's not allowed to do that.
+
+60
+00:08:37,720 --> 00:08:45,440
+ If we try to do the same thing and merge with the type aliases, it's going to cause an error.
+
+61
+00:08:45,440 --> 00:08:51,120
+ So in summary, we should use type aliases when we want to, for example, to unions or
+
+62
+00:08:51,120 --> 00:08:57,400
+ primitives or tuples, whereas interfaces should be used when we want to describe the object
+
+63
+00:08:57,400 --> 00:09:02,760
+ shapes. And we also want to benefit from extension and emerging abilities.
+
