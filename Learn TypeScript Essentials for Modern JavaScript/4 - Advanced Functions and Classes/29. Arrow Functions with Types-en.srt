@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:05,920
+ In this lesson we're going to be exploring arrow functions, which is a modern and concise
+
+2
+00:00:05,920 --> 00:00:10,400
+ way to write your functions in JavaScript as well as TypeScript.
+
+3
+00:00:10,400 --> 00:00:15,880
+ So we're going to learn how to type their parameters and return values and how they differ
+
+4
+00:00:15,880 --> 00:00:20,640
+ from regular functions and when to use them in your code.
+
+5
+00:00:20,640 --> 00:00:24,320
+ So first of all, what exactly is an arrow function?
+
+6
+00:00:24,320 --> 00:00:31,040
+ So an arrow function is basically a shorthand syntax for writing our functions.
+
+7
+00:00:31,040 --> 00:00:38,200
+ And in particular they're useful for doing things like callbacks or just inline logic
+
+8
+00:00:38,200 --> 00:00:41,720
+ and if you're into a functional programming.
+
+9
+00:00:41,720 --> 00:00:47,560
+ So let's do a quick example and we're just going to have a normal greet function here
+
+10
+00:00:47,560 --> 00:00:53,960
+ where we supply a name and notice we say const rather than a function.
+
+11
+00:00:53,960 --> 00:01:01,400
+ So we greet, it takes our parameter of name, it returns a string.
+
+12
+00:01:01,400 --> 00:01:08,000
+ And this is where our arrow function definition comes in between equals and then a greater
+
+13
+00:01:08,000 --> 00:01:10,520
+ than sign.
+
+14
+00:01:10,520 --> 00:01:16,320
+ And then we define the actual function like this and just do return whatever the messages
+
+15
+00:01:16,320 --> 00:01:20,800
+ like hello and then the person's name, etc.
+
+16
+00:01:20,800 --> 00:01:28,040
+ Now you can also do this in line so rather than having a curly brace like this we could
+
+17
+00:01:28,040 --> 00:01:38,000
+ simply just do return then that hello and then the person's name.
+
+18
+00:01:38,000 --> 00:01:43,240
+ Now even shorter hand we're doing that if it's very straightforward is we can get rid
+
+19
+00:01:43,240 --> 00:01:48,720
+ of the curly brace completely, it rid of the return and simply do something like this
+
+20
+00:01:48,720 --> 00:01:56,920
+ and just do hello and then dollar then name.
+
+21
+00:01:56,920 --> 00:02:01,400
+ And it can happen all in one as you can see is nice and concise.
+
+22
+00:02:01,400 --> 00:02:05,960
+ Now this is also true for doing type inference as well.
+
+23
+00:02:05,960 --> 00:02:19,360
+ So if we have for example, so we could do constant and double this ethics number and then
+
+24
+00:02:19,360 --> 00:02:26,160
+ we can simply do x times 2 and of course the TypeScript's then going to immediately know
+
+25
+00:02:26,160 --> 00:02:30,080
+ that this is a number that we're trying to return.
+
+26
+00:02:30,080 --> 00:02:37,480
+ Let's look at a couple more examples and particularly using the aliases.
+
+27
+00:02:37,480 --> 00:02:44,440
+ So let's say we're trying to do a formatter, perhaps capitalizing the letter of a word.
+
+28
+00:02:44,440 --> 00:02:53,280
+ We could define a formatter shape like this so formatter this has taken a value which is
+
+29
+00:02:53,280 --> 00:02:59,840
+ of type string and this then returns a string.
+
+30
+00:02:59,840 --> 00:03:06,800
+ Then we could define our function, let's say capitalize capitalize.
+
+31
+00:03:06,800 --> 00:03:16,320
+ This is a type of alias of formatter where we take a say perhaps a supply that's some
+
+32
+00:03:16,320 --> 00:03:28,400
+ text and then just take our text and we'll just do something like 0 and then to uppercase
+
+33
+00:03:28,400 --> 00:03:30,440
+ and then the rest of the text, blah, blah, blah.
+
+34
+00:03:30,440 --> 00:03:36,280
+ But you can see I'm not going to finish the function, you can see how this is going to work.
+
+35
+00:03:36,280 --> 00:03:43,480
+ So you can see that here it's a kind of nice way of being able to carry on just like we did
+
+36
+00:03:43,480 --> 00:03:50,960
+ in the previous lesson for to finding kind of short functions in this kind of format by using
+
+37
+00:03:50,960 --> 00:03:52,000
+ the arrow function.
+
