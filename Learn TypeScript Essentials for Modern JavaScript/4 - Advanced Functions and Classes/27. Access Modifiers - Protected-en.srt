@@ -1,0 +1,164 @@
+1
+00:00:00,000 --> 00:00:07,520
+ We've already talked about access and modifies in tight script classes and in this lesson
+
+2
+00:00:07,520 --> 00:00:12,320
+ we're going to expand upon our knowledge even further.
+
+3
+00:00:12,320 --> 00:00:19,160
+ So TypeScript has a way of controlling which parts of a class are visible and accessible.
+
+4
+00:00:19,160 --> 00:00:25,560
+ We're going to already learn about public and provide it and we also are going to learn
+
+5
+00:00:25,560 --> 00:00:33,340
+ about protected which is used to enforce encapsulation and protect internal state and only
+
+6
+00:00:33,340 --> 00:00:37,240
+ expose what's necessary.
+
+7
+00:00:37,240 --> 00:00:46,240
+ So in terms of a class that are three access modifiers, public, private and protected.
+
+8
+00:00:46,240 --> 00:00:52,720
+ So the public which this code shows here is the default and that allows us to access
+
+9
+00:00:52,720 --> 00:00:55,800
+ the code from anywhere we like.
+
+10
+00:00:55,800 --> 00:01:02,440
+ So in this code here as an example we set up a public property here as well as a public
+
+11
+00:01:02,440 --> 00:01:09,960
+ method and that allows us then to access the code anywhere we want to.
+
+12
+00:01:09,960 --> 00:01:17,520
+ Now what about if you want to have just internal information, so now it's paste in example.
+
+13
+00:01:17,520 --> 00:01:23,840
+ So we have a bank account, now this is obviously we don't want anyone's access to balance
+
+14
+00:01:23,840 --> 00:01:24,840
+ directly.
+
+15
+00:01:24,840 --> 00:01:33,520
+ We have to use some approved methods, so we've now specified private on this property
+
+16
+00:01:33,520 --> 00:01:42,440
+ here and we have these two individual methods and again don't forget that if it's not
+
+17
+00:01:42,440 --> 00:01:49,600
+ actually specifically mentioned is public then these by default are going to be made public.
+
+18
+00:01:49,600 --> 00:01:56,400
+ So we can now create an instance of that particular class, let's say const account equals
+
+19
+00:01:56,400 --> 00:02:01,880
+ new bank account.
+
+20
+00:02:01,880 --> 00:02:08,680
+ And if we try to access the balance directly, we can't specify it, we have to of course
+
+21
+00:02:08,680 --> 00:02:11,520
+ use the two approved members.
+
+22
+00:02:11,520 --> 00:02:19,080
+ So private members are only accessible inside the class itself, which is great for protecting
+
+23
+00:02:19,080 --> 00:02:21,280
+ internal state.
+
+24
+00:02:21,280 --> 00:02:27,000
+ So now we've talked about public and we talked about private, so this just leaves us with
+
+25
+00:02:27,000 --> 00:02:32,080
+ the other access modifier which is protected.
+
+26
+00:02:32,080 --> 00:02:39,320
+ So protected allows our members inside our class to be accessible within the class and
+
+27
+00:02:39,320 --> 00:02:45,880
+ also any class that inherits from it but not outside if it doesn't inherit from it.
+
+28
+00:02:45,880 --> 00:02:52,840
+ So I'm just going to do a little example, let's have a class of animal, we're going
+
+29
+00:02:52,840 --> 00:03:00,040
+ to have a protected property called sound, which is going to be string and just set it
+
+30
+00:03:00,040 --> 00:03:09,920
+ to a generic sound on this particular animal, that's up a public method called make a sound.
+
+31
+00:03:09,920 --> 00:03:18,920
+ It's going to return a string and just simply do this sound.
+
+32
+00:03:18,920 --> 00:03:24,360
+ Now we're going to create the second class and the second class is going to extend the
+
+33
+00:03:24,360 --> 00:03:32,200
+ animal class and we're going to define a method called bark, which is a public method,
+
+34
+00:03:32,200 --> 00:03:43,000
+ which returns a string, we say return our return dog says dollar, this dot sound.
+
+35
+00:03:43,000 --> 00:03:51,400
+ So this sound of course is inheriting from our animal class.
+
+36
+00:03:51,400 --> 00:03:58,760
+ Now this is absolutely fine because we can access this because the dog is inheriting
+
+37
+00:03:58,760 --> 00:04:00,560
+ from our animal class.
+
+38
+00:04:00,560 --> 00:04:11,120
+ But if we try to create an instance of the animal class itself, let's do var my animal equals
+
+39
+00:04:11,120 --> 00:04:18,840
+ new animal and now we're going to try and access that property sound we can't because
+
+40
+00:04:18,840 --> 00:04:23,920
+ we are doing it, we're not actually inheriting from the animal directly.
+
+41
+00:04:23,920 --> 00:04:30,280
+ So access modifiers allow us us to control visibility and protect our class logics.
+
