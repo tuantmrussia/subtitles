@@ -1,0 +1,328 @@
+1
+00:00:00,000 --> 00:00:03,080
+ So now let's have a look at guardreels.
+
+2
+00:00:03,080 --> 00:00:08,160
+ So guardreels are way for you to filter things based on your requirements to have a more
+
+3
+00:00:08,160 --> 00:00:10,080
+ responsible AI.
+
+4
+00:00:10,080 --> 00:00:12,880
+ So let's create a guardreel and see the options we have.
+
+5
+00:00:12,880 --> 00:00:17,760
+ So this is my demo guardreel.
+
+6
+00:00:17,760 --> 00:00:20,240
+ And we have here a message for blood prone.
+
+7
+00:00:20,240 --> 00:00:24,080
+ So in case the prompt is blocked, what do you want to return to your user here?
+
+8
+00:00:24,080 --> 00:00:28,760
+ It's going to be, sorry, the model cannot answer this question.
+
+9
+00:00:28,760 --> 00:00:33,200
+ And this could apply as well the same message for responses or you can customize it.
+
+10
+00:00:33,200 --> 00:00:34,600
+ Let's look on next.
+
+11
+00:00:34,600 --> 00:00:37,920
+ And now we have options to configure a lot of things.
+
+12
+00:00:37,920 --> 00:00:43,640
+ So we could configure content filters, denied topics, word filters, sensitive information
+
+13
+00:00:43,640 --> 00:00:46,560
+ filters, and add contextual ground shaking.
+
+14
+00:00:46,560 --> 00:00:48,800
+ So a lot of different options.
+
+15
+00:00:48,800 --> 00:00:52,040
+ So let's configure one of them just so we understand how it works.
+
+16
+00:00:52,040 --> 00:00:54,240
+ But and look at the other categories.
+
+17
+00:00:54,240 --> 00:00:58,720
+ So here, for example, let's filter harmful categories.
+
+18
+00:00:58,720 --> 00:01:03,200
+ So here, for example, we have a filter strength to increase the likelihood of filtering
+
+19
+00:01:03,200 --> 00:01:06,040
+ harmful content in a given category.
+
+20
+00:01:06,040 --> 00:01:11,880
+ So for example, no hate, no insults, no sexual, no violence, and no misconduct.
+
+21
+00:01:11,880 --> 00:01:14,280
+ Let's click on next.
+
+22
+00:01:14,280 --> 00:01:16,200
+ What topics do we want to deny?
+
+23
+00:01:16,200 --> 00:01:22,200
+ So here I'm going to have call it recipes.
+
+24
+00:01:22,200 --> 00:01:26,960
+ And the definition of a topic is what you want the foundation model to understand what
+
+25
+00:01:26,960 --> 00:01:27,960
+ the topic is.
+
+26
+00:01:27,960 --> 00:01:38,800
+ Let's say, for example, the topic is food recipes are instructions on how to cook specific
+
+27
+00:01:38,800 --> 00:01:41,200
+ dishes.
+
+28
+00:01:41,200 --> 00:01:45,920
+ And we can also add simple phrases if we really wanted to allow the AI to understand the
+
+29
+00:01:45,920 --> 00:01:48,600
+ type of prompts we're trying to block.
+
+30
+00:01:48,600 --> 00:01:49,600
+ But no need for us.
+
+31
+00:01:49,600 --> 00:01:50,680
+ So let's confirm this.
+
+32
+00:01:50,680 --> 00:01:53,920
+ So we have recipes and then click on next.
+
+33
+00:01:53,920 --> 00:01:59,080
+ So do we want to have profanity filter, for example, if someone is using profane words?
+
+34
+00:01:59,080 --> 00:02:01,680
+ Are the custom words and phrases to be blocked?
+
+35
+00:02:01,680 --> 00:02:04,880
+ So you can upload them directly.
+
+36
+00:02:04,880 --> 00:02:11,200
+ And then do you want to remove any type of personally identifiable information, PI?
+
+37
+00:02:11,200 --> 00:02:16,920
+ So you can say, yes, I want to add a new PI, and for example, remove any type of email.
+
+38
+00:02:16,920 --> 00:02:21,400
+ So we'll say mask and to remove any type of email.
+
+39
+00:02:21,400 --> 00:02:25,760
+ And then rig experiment, so any type of information that follows a specific pattern should
+
+40
+00:02:25,760 --> 00:02:27,440
+ be removed as well.
+
+41
+00:02:27,440 --> 00:02:30,120
+ And then we have contextual grounding.
+
+42
+00:02:30,120 --> 00:02:34,240
+ So this is to make sure that you reduce the hallucinations.
+
+43
+00:02:34,240 --> 00:02:37,960
+ So when the model thinks that it's saying something, it takes its true, but it's actually
+
+44
+00:02:37,960 --> 00:02:39,120
+ not true.
+
+45
+00:02:39,120 --> 00:02:43,440
+ So I won't go into the settings here, but it's called grounding and relevance.
+
+46
+00:02:43,440 --> 00:02:48,120
+ So let's create it and create this guard rail.
+
+47
+00:02:48,120 --> 00:02:52,240
+ So now the guard rail is created and we can test it so we can select the model.
+
+48
+00:02:52,240 --> 00:02:55,320
+ For example, let's choose enthropic and sonet.
+
+49
+00:02:55,320 --> 00:03:04,760
+ And then we say here, please suggest me something to cook tonight.
+
+50
+00:03:04,760 --> 00:03:09,600
+ I love engine food.
+
+51
+00:03:09,600 --> 00:03:11,800
+ And let's click on run.
+
+52
+00:03:11,800 --> 00:03:16,840
+ And here, as you can see, it's a block topic because we said no food recipes.
+
+53
+00:03:16,840 --> 00:03:18,920
+ And the answer we get is sorry.
+
+54
+00:03:18,920 --> 00:03:22,160
+ The model cannot answer this question.
+
+55
+00:03:22,160 --> 00:03:24,160
+ Please, let's test it on the get time.
+
+56
+00:03:24,160 --> 00:03:32,720
+ So please draft an email for me, include my email, Stefan@example.com.
+
+57
+00:03:32,720 --> 00:03:46,560
+ And also include the other person's email, John@example.com, make sure we discuss important
+
+58
+00:03:46,560 --> 00:03:51,720
+ topics for our next business meeting.
+
+59
+00:03:51,720 --> 00:03:54,120
+ So let's click on run.
+
+60
+00:03:54,120 --> 00:03:58,080
+ And now we are prompting the model to draft us an actual email.
+
+61
+00:03:58,080 --> 00:04:02,760
+ This is great, but what I expect is for my emails to be masked because this is actual
+
+62
+00:04:02,760 --> 00:04:03,760
+ information.
+
+63
+00:04:03,760 --> 00:04:10,660
+ So as you can see here, the model response included a two Stefan@example.com and CC
+
+64
+00:04:10,660 --> 00:04:14,200
+ John@example.com with the relevant email.
+
+65
+00:04:14,200 --> 00:04:15,920
+ So here it discusses a lot of things.
+
+66
+00:04:15,920 --> 00:04:17,360
+ This is great.
+
+67
+00:04:17,360 --> 00:04:21,120
+ But the final response has been going through the guard rail.
+
+68
+00:04:21,120 --> 00:04:26,920
+ And as you can see, the email has been masked because we, this was personally identifiable
+
+69
+00:04:26,920 --> 00:04:28,120
+ information.
+
+70
+00:04:28,120 --> 00:04:29,400
+ But the rest is here.
+
+71
+00:04:29,400 --> 00:04:30,400
+ So this is great.
+
+72
+00:04:30,400 --> 00:04:32,760
+ We've seen how this guard rail works.
+
+73
+00:04:32,760 --> 00:04:34,800
+ And this was a good demo.
+
+74
+00:04:34,800 --> 00:04:36,800
+ And I just want to show you another way to test the guard rail.
+
+75
+00:04:36,800 --> 00:04:42,280
+ So if you go into text and choose, for example, again, we're going to choose anthropics
+
+76
+00:04:42,280 --> 00:04:47,800
+ on it, apply it on the bottom here, we can choose a guard rail and apply the demo guard
+
+77
+00:04:47,800 --> 00:04:48,800
+ rail.
+
+78
+00:04:48,800 --> 00:04:53,040
+ And actually, you can apply many guard rails at a time if you wanted to stack them up.
+
+79
+00:04:53,040 --> 00:04:54,040
+ So let's see for this lecture.
+
+80
+00:04:54,040 --> 00:04:55,040
+ I hope you liked it.
+
+81
+00:04:55,040 --> 00:04:58,280
+ You can leave this guard rail on this level and you cost you any money.
+
+82
+00:04:58,280 --> 00:04:59,920
+ And I will see you in the next lecture.
+
