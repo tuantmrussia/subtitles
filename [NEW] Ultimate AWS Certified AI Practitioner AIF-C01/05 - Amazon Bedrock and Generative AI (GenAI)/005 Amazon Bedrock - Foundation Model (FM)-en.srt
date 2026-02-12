@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:04,960
+ So, now, let's talk about the different options we have for base foundation models.
+
+2
+00:00:04,960 --> 00:00:09,600
+ So, we have to choose based on a lot of different factors.
+
+3
+00:00:09,600 --> 00:00:14,720
+ In the end, it's going to come down to the model types, the performance requirements you have,
+
+4
+00:00:14,720 --> 00:00:20,080
+ the capabilities of the model, the constraints you have, the compliance you need and so on.
+
+5
+00:00:20,080 --> 00:00:23,840
+ Also, some models may provide you different levels of customization.
+
+6
+00:00:23,840 --> 00:00:26,400
+ Some models may be smaller, others bigger.
+
+7
+00:00:26,400 --> 00:00:32,640
+ There could be different levels for inference, so how to basically get an output of the model.
+
+8
+00:00:32,640 --> 00:00:35,040
+ You may have different licensing agreements.
+
+9
+00:00:35,040 --> 00:00:38,560
+ You may have different requirements on context windows.
+
+10
+00:00:38,560 --> 00:00:43,760
+ So, how big you can send the, how much data you can send it to a foundation model,
+
+11
+00:00:43,760 --> 00:00:45,120
+ as well as latency.
+
+12
+00:00:45,120 --> 00:00:48,480
+ So, how fast the model will come back to you with an answer.
+
+13
+00:00:48,480 --> 00:00:53,760
+ You may also have different factors such as, is a model, is a model, a multi model,
+
+14
+00:00:53,760 --> 00:00:57,760
+ which means that it can take a wide combination of types of inputs.
+
+15
+00:00:57,760 --> 00:01:03,120
+ For example, audio, text and video together, and also give you very types of outputs.
+
+16
+00:01:03,120 --> 00:01:08,240
+ For example, again, images, audio, video, text, about altogether at the same time.
+
+17
+00:01:08,240 --> 00:01:13,040
+ So, it's, there's no clear answer, of course, it's a free to test.
+
+18
+00:01:13,040 --> 00:01:17,360
+ But there is something called Amazon Titan, and because this is an AWS certification,
+
+19
+00:01:17,360 --> 00:01:21,520
+ we're studying for, I believe, Amazon Titan is going to appear at the exam.
+
+20
+00:01:21,520 --> 00:01:23,120
+ So, what is Amazon Titan?
+
+21
+00:01:23,120 --> 00:01:28,320
+ Well, it is the high performing foundation model directly from AWS.
+
+22
+00:01:28,320 --> 00:01:31,040
+ So, you have different levels of Amazon Titan.
+
+23
+00:01:31,040 --> 00:01:36,480
+ But it can do images, texts, and you also have multimodal choices,
+
+24
+00:01:36,480 --> 00:01:41,280
+ all via the same API you have on Amazon Bedrock.
+
+25
+00:01:41,280 --> 00:01:43,920
+ As well, it can be customized with your own data.
+
+26
+00:01:43,920 --> 00:01:47,040
+ So, you can fine tune Amazon Titan, and that can be very handy.
+
+27
+00:01:47,040 --> 00:01:50,080
+ Also, for example, to make a decision on the model,
+
+28
+00:01:50,640 --> 00:01:54,720
+ usually the smaller models are going to be more cost-effective,
+
+29
+00:01:54,720 --> 00:01:57,440
+ but they usually know less things.
+
+30
+00:01:57,440 --> 00:02:03,600
+ So, it's a bunch of balancing acts really based on what your business needs is on.
+
+31
+00:02:03,600 --> 00:02:08,480
+ So, let's have a look at four models to see if we can understand a little bit how our
+
+32
+00:02:08,480 --> 00:02:10,000
+ process will go into.
+
+33
+00:02:10,000 --> 00:02:14,240
+ So, we have Amazon Titan, and we're going to compare Amazon Titan text express.
+
+34
+00:02:14,240 --> 00:02:18,560
+ We have, I'll call it Lama, but maybe Lama, Lama too,
+
+35
+00:02:19,440 --> 00:02:21,840
+ which is some model out of meta.
+
+36
+00:02:21,840 --> 00:02:24,400
+ We have cloud, out of from entropy.
+
+37
+00:02:24,400 --> 00:02:28,640
+ And then we have stability AI, which created something called stable diffusion.
+
+38
+00:02:28,640 --> 00:02:33,520
+ So, first of all, the last model is for image generation only.
+
+39
+00:02:33,520 --> 00:02:36,240
+ So, if you want to just image, maybe the last model we can build for you,
+
+40
+00:02:36,240 --> 00:02:39,760
+ but for the other ones, you have different kinds of capabilities.
+
+41
+00:02:39,760 --> 00:02:42,720
+ So, if we look at features, for example,
+
+42
+00:02:42,720 --> 00:02:48,560
+ well, Amazon Titan can do texts, and it can do it in 100 plus languages.
+
+43
+00:02:49,200 --> 00:02:53,680
+ Lama too can do large-scale tasks, dialogue, and in English.
+
+44
+00:02:53,680 --> 00:02:58,480
+ And cloud can have also text generation, and also multi language.
+
+45
+00:02:58,480 --> 00:03:02,080
+ So, it comes down to testing how the model reacts to your inputs.
+
+46
+00:03:02,080 --> 00:03:07,920
+ And one thing that may be very important is the number of tokens you can have
+
+47
+00:03:07,920 --> 00:03:09,520
+ as an input to the model.
+
+48
+00:03:09,520 --> 00:03:11,920
+ So, Amazon, we have 8k tokens.
+
+49
+00:03:11,920 --> 00:03:17,360
+ Lama too, we have 4k tokens, and cloud, we have 200k tokens.
+
+50
+00:03:17,360 --> 00:03:21,200
+ So, that means that on cloud, you can send a lot more words
+
+51
+00:03:21,200 --> 00:03:22,560
+ into your context windows.
+
+52
+00:03:22,560 --> 00:03:26,000
+ And so, cloud will have more memory and will be able to
+
+53
+00:03:26,000 --> 00:03:30,000
+ intake bigger inputs, which may be very important, for example.
+
+54
+00:03:30,000 --> 00:03:35,440
+ You may want to send a big context window when you're dealing with a big code base,
+
+55
+00:03:35,440 --> 00:03:40,000
+ or when you have to read an entire book, and ask questions about that book,
+
+56
+00:03:40,000 --> 00:03:41,760
+ then maybe cloud is going to be a better fit.
+
+57
+00:03:41,760 --> 00:03:46,240
+ So, the use cases really depends on the models, but to be fair,
+
+58
+00:03:46,240 --> 00:03:50,560
+ all these models start to look the same and have the same kind of capabilities.
+
+59
+00:03:50,560 --> 00:03:52,640
+ They're all converging towards the same thing.
+
+60
+00:03:52,640 --> 00:03:54,800
+ So, it's down to many, many testing.
+
+61
+00:03:54,800 --> 00:03:58,720
+ But so, Amazon Titan is going to be around content creation, classification,
+
+62
+00:03:58,720 --> 00:03:59,920
+ and education.
+
+63
+00:03:59,920 --> 00:04:03,440
+ Lama too is going to be around text generation and customer service.
+
+64
+00:04:03,440 --> 00:04:06,800
+ Cloud could be for analysis, for casting, and document comparison.
+
+65
+00:04:06,800 --> 00:04:11,520
+ This is mainly due to the fact it has a higher number of token as an inputs.
+
+66
+00:04:11,520 --> 00:04:16,160
+ And stability AI is going to be for image creation, for advertising,
+
+67
+00:04:16,160 --> 00:04:17,520
+ media, and so on.
+
+68
+00:04:17,520 --> 00:04:20,480
+ And so pricing can be a big factor again.
+
+69
+00:04:20,480 --> 00:04:25,200
+ So, here the pricing is given for 1,000 tokens given to the model.
+
+70
+00:04:25,200 --> 00:04:29,920
+ So, as you can see, Amazon Titan text express is very cheap.
+
+71
+00:04:29,920 --> 00:04:35,440
+ It's much cheaper than Lama too, and Lama too is much cheaper than cloud.
+
+72
+00:04:35,440 --> 00:04:37,760
+ So, again, this could be a big one because obviously,
+
+73
+00:04:37,760 --> 00:04:41,040
+ the more expensive models may give you better answers.
+
+74
+00:04:41,040 --> 00:04:44,640
+ But sometimes, the less expensive models can still give you good answers,
+
+75
+00:04:44,640 --> 00:04:47,200
+ but they're going to be a lot more cost effective.
+
+76
+00:04:47,200 --> 00:04:51,440
+ And as well, for stability AI, based on the image you generate,
+
+77
+00:04:51,440 --> 00:04:53,680
+ it may cost you as well some money.
+
+78
+00:04:53,680 --> 00:04:58,720
+ So, be conscious because you can very, very quickly accumulate a lot of costs with AI.
+
+79
+00:04:58,720 --> 00:05:02,640
+ So, I hope you liked it, and I will see you in the next lecture.
+
