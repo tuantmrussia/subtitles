@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:05,240
+ In this lesson, we're going to learn how to extend interfaces and TypeScript.
+
+2
+00:00:05,240 --> 00:00:11,700
+ So extending interfaces allows us to build on existing object structures instead of repeating
+
+3
+00:00:11,700 --> 00:00:16,600
+ ourselves, which is essential for writing clean and scalable code.
+
+4
+00:00:16,600 --> 00:00:22,000
+ This feature is used heavily in frameworks, libraries, and large code bases.
+
+5
+00:00:22,000 --> 00:00:24,000
+ Let's start with a common problem.
+
+6
+00:00:24,000 --> 00:00:30,500
+ We often have objects that share some properties, but also have their own unique fields.
+
+7
+00:00:30,500 --> 00:00:36,000
+ With its extension, we'd have to repeat the same properties over and over.
+
+8
+00:00:36,000 --> 00:00:43,000
+ So let's zoom in space like this and do interface, we've seen this before.
+
+9
+00:00:43,000 --> 00:00:51,000
+ I'll be user, the ID of number, and name of string.
+
+10
+00:00:51,000 --> 00:00:56,000
+ So this interface defines the basic structure of our user object.
+
+11
+00:00:56,000 --> 00:01:00,000
+ Now let's create a more specific type of user.
+
+12
+00:01:00,000 --> 00:01:02,000
+ We do that by adding interface.
+
+13
+00:01:02,000 --> 00:01:10,000
+ Let's say admin user, and we use the keyword extends, extends, and then the type.
+
+14
+00:01:10,000 --> 00:01:13,000
+ So extends our user type.
+
+15
+00:01:13,000 --> 00:01:19,000
+ And then we specify the property that we want to append, add onto this user object.
+
+16
+00:01:19,000 --> 00:01:26,000
+ Let's say we want to have a role object, a role property, we can set it to admin.
+
+17
+00:01:26,000 --> 00:01:32,000
+ So this extends keywords, allows our admin user to inherit all the properties from user,
+
+18
+00:01:32,000 --> 00:01:35,000
+ and it also adds its own.
+
+19
+00:01:35,000 --> 00:01:38,000
+ Okay, so that means we can create an object like this.
+
+20
+00:01:38,000 --> 00:01:45,000
+ We could do a const, admin user, we can specify it as our admin user,
+
+21
+00:01:45,000 --> 00:01:52,000
+ and then we specify our ID property, our name, let's say Alice,
+
+22
+00:01:52,000 --> 00:01:59,000
+ and then we have this extra property of role, which can then set to admin,
+
+23
+00:01:59,000 --> 00:02:01,000
+ or the live value.
+
+24
+00:02:01,000 --> 00:02:09,000
+ This object must satisfy both the user and the admin user interfaces when they're combined.
+
+25
+00:02:09,000 --> 00:02:13,000
+ Now an interface can extend multiple interfaces.
+
+26
+00:02:13,000 --> 00:02:18,000
+ So we have our user here, now let's just remove this code for moments,
+
+27
+00:02:18,000 --> 00:02:20,000
+ and we're going to define another interface.
+
+28
+00:02:20,000 --> 00:02:24,000
+ This is has permissions.
+
+29
+00:02:24,000 --> 00:02:28,000
+ Let's give it the permissions property.
+
+30
+00:02:28,000 --> 00:02:33,000
+ This is going to be an array of strings.
+
+31
+00:02:33,000 --> 00:02:35,000
+ Now we're going to have another interface.
+
+32
+00:02:35,000 --> 00:02:42,000
+ This is going to be a super admin interface, super admin, which extends both the user,
+
+33
+00:02:42,000 --> 00:02:49,000
+ interface, and also the has permissions interface, both these together.
+
+34
+00:02:49,000 --> 00:02:57,000
+ Now we can define the role and say role is super admin.
+
+35
+00:02:57,000 --> 00:03:06,000
+ Let's let's us to combine multiple behaviors of two interfaces into one single interface.
+
+36
+00:03:06,000 --> 00:03:11,000
+ Let's now have a look at a real-world example that you often see in APIs.
+
+37
+00:03:11,000 --> 00:03:18,000
+ We're going to define an interface, or say base response.
+
+38
+00:03:18,000 --> 00:03:24,000
+ This is going to have a status of number.
+
+39
+00:03:24,000 --> 00:03:31,000
+ And now let's define another interface, perhaps user response.
+
+40
+00:03:31,000 --> 00:03:36,000
+ This is going to extends our base response.
+
+41
+00:03:36,000 --> 00:03:43,000
+ And on this we're going to now define our data, as an object,
+
+42
+00:03:43,000 --> 00:03:51,000
+ as an ID of number, then perhaps a name of string.
+
+43
+00:03:51,000 --> 00:03:58,000
+ Now this pattern keeps our APIs consistent while allowing different payloads.
+
+44
+00:03:58,000 --> 00:04:01,000
+ Now that we've defined our user response,
+
+45
+00:04:01,000 --> 00:04:08,000
+ we could define other responses for other entities, perhaps, for example customer response or product response.
+
+46
+00:04:08,000 --> 00:04:14,000
+ And because he's now extended base response, all of them are going to inherit the status,
+
+47
+00:04:14,000 --> 00:04:20,000
+ and we're going to have the same shape with our data ID to keep things consistent.
+
