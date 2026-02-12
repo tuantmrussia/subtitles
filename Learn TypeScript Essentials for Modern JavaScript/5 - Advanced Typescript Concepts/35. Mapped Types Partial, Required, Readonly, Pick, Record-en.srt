@@ -1,0 +1,452 @@
+1
+00:00:00,000 --> 00:00:06,640
+ In the previous lesson we learned about generics and in this lesson we're going to be looking
+
+2
+00:00:06,640 --> 00:00:13,720
+ at something that's called map types. So let's just remove the code from the previous
+
+3
+00:00:13,720 --> 00:00:21,360
+ lesson and let's continue. So we're going to be looking at maps types which is another
+
+4
+00:00:21,360 --> 00:00:28,720
+ powerful feature in TypeScript and map types let's us transform existing types into
+
+5
+00:00:28,720 --> 00:00:35,080
+ new ones so that sounds pretty cool. So you can use it whenever you want to make
+
+6
+00:00:35,080 --> 00:00:41,240
+ every property operational or lock them as read only or perhaps just to extract a
+
+7
+00:00:41,240 --> 00:00:46,160
+ few keys. So this is exactly what map types is used for and it gives you that
+
+8
+00:00:46,160 --> 00:00:51,040
+ control. I actually find map types and we're going to be looking at each of
+
+9
+00:00:51,040 --> 00:00:58,040
+ these in a turn. So map types take as I said an existing type and creates a new
+
+10
+00:00:58,040 --> 00:01:04,160
+ version by applying a certain transformation to the properties. Think of it a
+
+11
+00:01:04,160 --> 00:01:10,280
+ little bit like a filter or perhaps a modifier for object shapes. So let's
+
+12
+00:01:10,280 --> 00:01:16,640
+ first of all let's have a look at the partial map type. So the partial map
+
+13
+00:01:16,640 --> 00:01:22,960
+ type makes all properties in a type optional. Let's just do an example let's
+
+14
+00:01:22,960 --> 00:01:30,320
+ have a type of user, user's going to have an IIT property and also a name
+
+15
+00:01:30,320 --> 00:01:39,280
+ property. So we can create a type and we can call it perhaps partial user.
+
+16
+00:01:39,280 --> 00:01:54,960
+ The partial user and then we can use the partial keyword and we say partial user.
+
+17
+00:01:54,960 --> 00:02:01,640
+ Next in order to use this we can actually create an actual object. So we do
+
+18
+00:02:01,640 --> 00:02:15,320
+ consts say updates user and this is a type of partial user and because we define
+
+19
+00:02:15,320 --> 00:02:25,120
+ as a partial it's basically allowing us to only provide certain properties. So
+
+20
+00:02:25,120 --> 00:02:34,640
+ if we provide a name property let's say name or Alice and then the IIT is
+
+21
+00:02:34,640 --> 00:02:45,240
+ effectively optional. Okay so that's why the type script is not complaining because
+
+22
+00:02:45,240 --> 00:02:52,780
+ we defined it as a partial object. Of course we didn't actually define as a
+
+23
+00:02:52,780 --> 00:02:58,880
+ partial we just had consts let's say another user and we just said that is a
+
+24
+00:02:58,880 --> 00:03:07,240
+ type of user then of course if we come into here and we say name Alice it's
+
+25
+00:03:07,240 --> 00:03:11,880
+ going to complain because we're not actually specifying the IIT. So that's
+
+26
+00:03:11,880 --> 00:03:16,800
+ exactly why we use the partial because we know if we're doing an update then
+
+27
+00:03:16,800 --> 00:03:24,440
+ perhaps we're not really interested in the IIT we're just wanting to update the user.
+
+28
+00:03:24,440 --> 00:03:30,040
+ So this is exactly why we could use the partial keyword for things like API's
+
+29
+00:03:30,040 --> 00:03:36,240
+ because in the API call we're going to provide the ID that we're going to
+
+30
+00:03:36,240 --> 00:03:42,840
+ update. So we don't need to provide the ID in the actual object itself because
+
+31
+00:03:42,840 --> 00:03:49,440
+ we just want to apply the properties that we want to update in this case maybe
+
+32
+00:03:49,440 --> 00:03:54,760
+ we want to just update the name or if we wanted to have for example a phone
+
+33
+00:03:54,760 --> 00:03:59,640
+ number let's have the phone number of string then we could actually come in here
+
+34
+00:03:59,640 --> 00:04:04,200
+ and just say I also want to update the phone number to whatever it's going to
+
+35
+00:04:04,200 --> 00:04:14,800
+ be. Now the next map type we can look at is required I'm just going to remove
+
+36
+00:04:14,800 --> 00:04:20,280
+ this and come up an example. So the required is the name to just makes all
+
+37
+00:04:20,280 --> 00:04:25,560
+ properties required even ones that weren't optional. So we're modifying our
+
+38
+00:04:25,560 --> 00:04:30,360
+ object and we're kind of overriding the optional part we're saying the
+
+39
+00:04:30,360 --> 00:04:35,600
+ optionals now need to become required. So let's say we have a type of
+
+40
+00:04:35,600 --> 00:04:44,160
+ settings and we have a theme and optional theme which we do with the
+
+41
+00:04:44,160 --> 00:04:52,720
+ question mark and also have say notifications notifications and they are
+
+42
+00:04:52,720 --> 00:04:59,360
+ optional as well and then we come into here and we say type strict settings
+
+43
+00:04:59,360 --> 00:05:09,040
+ and we want these to be required so required and then we provide the type so
+
+44
+00:05:09,040 --> 00:05:15,320
+ required settings and now if it provides or create an object so it
+
+45
+00:05:15,320 --> 00:05:21,960
+ const config and this time these are strict settings then it's going to
+
+46
+00:05:21,960 --> 00:05:27,120
+ immediately complain and ask us to require properties so we're going to set
+
+47
+00:05:27,120 --> 00:05:35,880
+ this to say dark and then notifications going to set to drew and then that then
+
+48
+00:05:35,880 --> 00:05:41,920
+ satisfies TypeScript and it's happy that all the roads have been
+
+49
+00:05:41,920 --> 00:05:50,480
+ accepted with values. The next one to look at is readoni so this pretty much
+
+50
+00:05:50,480 --> 00:05:56,480
+ locks or properties so they can't be reassigned so let's just do an example so
+
+51
+00:05:56,480 --> 00:06:04,560
+ you can see what that means so let's have a type or product and the product I do
+
+52
+00:06:04,560 --> 00:06:18,400
+ string and price say number but come up come up to that let's do an ID and set
+
+53
+00:06:18,400 --> 00:06:31,000
+ up a string and then price could be number right so we're going to create a
+
+54
+00:06:31,000 --> 00:06:43,080
+ type of say frozen product this is going to have the readoni map type of type
+
+55
+00:06:43,080 --> 00:06:51,240
+ product and then let's do something like book this is of type frozen
+
+56
+00:06:51,240 --> 00:07:00,160
+ product set the ID to something like beaky beaky beaky beaky beaky zero zero
+
+57
+00:07:00,160 --> 00:07:12,600
+ one price set to 1999 and now what happens is if we try to
+
+58
+00:07:12,600 --> 00:07:21,480
+ update that price let's set it to 24 99 it's going to complain because we are
+
+59
+00:07:21,480 --> 00:07:27,960
+ trying to change the number on a read only property and of course if it wasn't
+
+60
+00:07:27,960 --> 00:07:34,720
+ frozen product but that was instead product then it would allow us to update
+
+61
+00:07:34,720 --> 00:07:42,760
+ the price so when might you use readoni and just pretty good for creating
+
+62
+00:07:42,760 --> 00:07:49,120
+ various constants or perhaps snapshots of data or any times you don't want to
+
+63
+00:07:49,120 --> 00:07:56,160
+ change data any immutable data now we can move on we've had a look at three let's
+
+64
+00:07:56,160 --> 00:08:06,360
+ now have a look at the fourth one which is pick the ick so this pick allows us
+
+65
+00:08:06,360 --> 00:08:13,560
+ to create a brand new type by selecting specific keys Roman existing type so
+
+66
+00:08:13,560 --> 00:08:18,080
+ that might sound a bit confusing so let me show you what I mean if we have a
+
+67
+00:08:18,080 --> 00:08:29,480
+ type of user set up the properties again ID string name string and email
+
+68
+00:08:29,480 --> 00:08:38,560
+ string let's have a type and it's going to call it public profile and that's
+
+69
+00:08:38,560 --> 00:08:45,560
+ going to utilize two of the actual properties from this user we don't want to
+
+70
+00:08:45,560 --> 00:08:52,320
+ three just want to so you can say pick user and then we specify the properties
+
+71
+00:08:52,320 --> 00:09:00,200
+ that we want so we want name and use the pipe symbol so email so these are the
+
+72
+00:09:00,200 --> 00:09:06,280
+ two properties we want to be specified so now if you come and create an
+
+73
+00:09:06,280 --> 00:09:17,720
+ object of const profile and that's all type public profile we hover over it
+
+74
+00:09:17,720 --> 00:09:23,200
+ it's going to expect us to supply those two properties we defined name and
+
+75
+00:09:23,200 --> 00:09:31,880
+ email so of course we're going to do name Alice and email whatever it is then
+
+76
+00:09:31,880 --> 00:09:37,000
+ it of course it's going to satisfy that so we can use the pick and if you
+
+77
+00:09:37,000 --> 00:09:42,160
+ obviously want them to use APIs and we only want to update perhaps we have a
+
+78
+00:09:42,160 --> 00:09:50,400
+ large object and we want to then create an update version of that large
+
+79
+00:09:50,400 --> 00:09:56,160
+ object with just a certain number of properties like this example where we
+
+80
+00:09:56,160 --> 00:10:01,320
+ are creating a profile we might only want to update the name and the email we
+
+81
+00:10:01,320 --> 00:10:07,960
+ don't want to put updates or change the ID or other sensitive parts of the
+
+82
+00:10:07,960 --> 00:10:13,720
+ profile that we've already set so we can use this to expose pretty much safe
+
+83
+00:10:13,720 --> 00:10:19,400
+ all relevant fields as I said okay so that's the fourth one and the last one
+
+84
+00:10:19,400 --> 00:10:27,960
+ we want to look at is record so record like this so this record allows us to
+
+85
+00:10:27,960 --> 00:10:36,040
+ create a type with keys K and the values of type T so we are kind of using
+
+86
+00:10:36,040 --> 00:10:42,920
+ generics here so we don't actually necessarily specify in the type up front so
+
+87
+00:10:42,920 --> 00:10:49,960
+ again this is best explained to an example so let's have a type of role and
+
+88
+00:10:49,960 --> 00:11:08,080
+ we have a role of admin editor and viewer and set up another type type of
+
+89
+00:11:08,080 --> 00:11:24,400
+ permissions permissions and for this I want to use record using the type role but
+
+90
+00:11:24,400 --> 00:11:30,000
+ rather than being string I want to set it as a boolean so this is going to be
+
+91
+00:11:30,000 --> 00:11:38,560
+ kind of fun right let's see how this works so it creates an access object using
+
+92
+00:11:38,560 --> 00:11:59,440
+ type of permissions I'm going to set the admin to true editor to true and the viewer to false
+
+93
+00:11:59,440 --> 00:12:08,160
+ okay so we're getting some lines here and it looks like it's picking up
+
+94
+00:12:08,160 --> 00:12:13,840
+ permissions not just from our playground what we have here but also actually
+
+95
+00:12:13,840 --> 00:12:19,920
+ defined in TypeScript or other places as well so we can just change this from
+
+96
+00:12:19,920 --> 00:12:26,560
+ permissions to our permissions and that goes away and just update this to
+
+97
+00:12:26,560 --> 00:12:31,840
+ our permissions that's a trouble by using a playground is you often get
+
+98
+00:12:31,840 --> 00:12:36,160
+ and kind of errors that not actually got nothing to do with the code and just
+
+99
+00:12:36,160 --> 00:12:41,680
+ something to do with the environment itself now our actual errors have gone
+
+100
+00:12:41,680 --> 00:12:46,480
+ away you can see what we're trying to do here we're creating some string
+
+101
+00:12:46,480 --> 00:12:53,520
+ roles admin editor and viewer and then we are kind of wanting to set them
+
+102
+00:12:53,520 --> 00:12:58,880
+ as perhaps access permissions or something like that
+
+103
+00:12:58,880 --> 00:13:04,880
+ and we actually just defined the the actual objects or the the properties
+
+104
+00:13:04,880 --> 00:13:10,320
+ and we're then actually specifying as the roles of the person
+
+105
+00:13:10,320 --> 00:13:16,160
+ so admin is going to Boolean edit is Boolean and viewer is Boolean so they're
+
+106
+00:13:16,160 --> 00:13:20,880
+ kind of acting as flags okay so let's have a quick wrap-up so
+
+107
+00:13:20,880 --> 00:13:27,360
+ set them up types and our five of them let us reshape existing types
+
+108
+00:13:27,360 --> 00:13:32,480
+ with precision we've learned how to make our properties optional
+
+109
+00:13:32,480 --> 00:13:35,760
+ we've also learned how to make them required
+
+110
+00:13:35,760 --> 00:13:41,440
+ we've touched upon read only how to use select using pick
+
+111
+00:13:41,440 --> 00:13:48,720
+ and also now we've this record basically mapped
+
+112
+00:13:48,720 --> 00:13:53,440
+ next up we're going to learn how to do conditional types which is
+
+113
+00:13:53,440 --> 00:13:59,360
+ how to make types behave differently based on logic
+
