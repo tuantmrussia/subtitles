@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:06,880
+Trong bài học này, chúng ta sẽ khám phá ra hai nhà điều hành TypeCuter cực kỳ quan trọng,
+
+2
+00:00:06,880 --> 00:00:10,520
+Đó là chìa khóa và loại.
+
+3
+00:00:10,520 --> 00:00:19,000
+Những công cụ này là nền tảng cho các loại điều kiện và thao tác loại tiên tiến trong TypeSQL.
+
+4
+00:00:19,000 --> 00:00:24,760
+Nếu bạn muốn hiểu làm thế nào Type Thung lũng tạo ra các loại thông minh linh hoạt, thì bạn phải hiểu
+
+5
+00:00:24,760 --> 00:00:28,120
+hai từ khóa này.
+
+6
+00:00:28,120 --> 00:00:35,840
+Khi ứng dụng của chúng tôi phát triển chúng tôi thường muốn các loại thích nghi tự động khi dữ liệu của chúng tôi thay đổi.
+
+7
+00:00:35,840 --> 00:00:42,000
+Muốn tránh kiểu bản sao, ngăn chặn truy cập tài sản hợp lệ và chúng tôi cũng muốn
+
+8
+00:00:42,000 --> 00:00:45,680
+để đồng bộ hoá các loại với các vật thể.
+
+9
+00:00:45,680 --> 00:00:52,840
+Vì vậy, chìa khóa của và loại từ khóa cho phép gõ gõ để trích xuất thông tin từ đã có
+
+10
+00:00:52,840 --> 00:00:58,000
+Giá trị và kiểu thay vì viết lại chúng bằng tay.
+
+11
+00:00:58,000 --> 00:01:00,880
+Trước hết, hãy bắt đầu với loại.
+
+12
+00:01:00,880 --> 00:01:07,680
+Bạn có thể đã nhìn thấy loại của JavaScript, nhưng trong Type Thu nhỏ nó có ý nghĩa loại cấp
+
+13
+00:01:07,680 --> 00:01:09,640
+Cũng vậy.
+
+14
+00:01:09,640 --> 00:01:14,080
+Vì vậy, hãy nhìn vào đoạn mã này ở đây của đối tượng người dùng này.
+
+15
+00:01:14,080 --> 00:01:25,560
+Đây là một đối tượng JavaScript bình thường và bây giờ bên dưới nếu chúng tôi gõ, kiểu người dùng bằng kiểu
+
+16
+00:01:25,560 --> 00:01:35,600
+của người dùng, sau đó loại nó sẽ trích xuất loại đối tượng, không phải thời gian chạy
+
+17
+00:01:35,600 --> 00:01:36,600
+giá trị.
+
+18
+00:01:36,600 --> 00:01:49,400
+Bây giờ, nếu chúng tôi thực hiện một đối tượng khác, vì vậy chúng tôi thực hiện const một người dùng để và điều này trở thành một con sóng video
+
+19
+00:01:49,400 --> 00:02:01,640
+người dùng để, và điều này có một loại người dùng mới của chúng tôi, hãy chỉ cần đặt một số thuộc tính ở đây
+
+20
+00:02:01,640 --> 00:02:13,280
+Vậy ID bằng hai và nói tên Bob như biệt danh có thể sai.
+
+21
+00:02:13,280 --> 00:02:18,320
+Kiểu này sau đó cập nhật tự động và nó giữ mã của chúng tôi đồng bộ.
+
+22
+00:02:18,320 --> 00:02:20,480
+Vậy điều này có nghĩa là gì?
+
+23
+00:02:20,480 --> 00:02:27,200
+Chúng tôi có loại này để tìm ở đây bởi vì chúng tôi có loại người dùng và chúng tôi sử dụng các thuộc tính.
+
+24
+00:02:27,200 --> 00:02:33,200
+Nhưng nếu chúng tôi không thêm một tài sản bổ sung vào đây, hãy nói rằng chúng tôi đến đây và chúng tôi nói
+
+25
+00:02:33,200 --> 00:02:44,480
+Tên người dùng và chúng ta hãy đặt nó Alice123, chúng tôi bây giờ nhận được một lỗi ở đây bởi vì nó bây giờ mong đợi
+
+26
+00:02:44,480 --> 00:02:51,200
+Người dùng thứ hai của chúng tôi để có tài sản này và đó là bởi vì loại này của ở đây chúng tôi có
+
+27
+00:02:51,200 --> 00:02:58,440
+để tìm kiểu người dùng là một loại người dùng mà kiểu này là ở đây và người dùng thứ hai bây giờ
+
+28
+00:02:58,440 --> 00:03:03,800
+nhận được các định nghĩa thực tế của các tính chất mà chỉ được xác định trong gốc của chúng tôi
+
+29
+00:03:03,800 --> 00:03:05,120
+Loại.
+
+30
+00:03:05,120 --> 00:03:10,680
+Nhưng chính xác thì loại lợi thế này là gì?
+
+31
+00:03:10,680 --> 00:03:16,760
+Vì vậy, hãy nói rằng chúng tôi có loại mà chúng tôi thường xác định, chúng tôi có một loại người dùng với những
+
+32
+00:03:16,760 --> 00:03:17,960
+ba đặc tính.
+
+33
+00:03:17,960 --> 00:03:24,520
+Nó có thể nghĩ chính xác thì lợi thế của từ khóa.
+
+34
+00:03:24,520 --> 00:03:30,640
+Vì vậy, hãy xem xét một ví dụ nhỏ để có thể làm cho nó một chút rõ ràng hơn.
+
+35
+00:03:30,640 --> 00:03:37,320
+Hãy nói rằng đầu tiên của tất cả các bạn bắt đầu và bạn tạo cho mình các đối tượng người dùng và đó là
+
+36
+00:03:37,320 --> 00:03:45,000
+Thực ra chỉ cần loại bỏ một cái tồn tại ở đây để chúng ta không bị nhầm lẫn.
+
+37
+00:03:45,000 --> 00:03:51,960
+Giả sử chúng tôi có người dùng và chúng tôi xác định một bất động sản thẳng trên nó và chúng tôi nói ID của một và
+
+38
+00:03:51,960 --> 00:03:56,880
+Tên là Alice.
+
+39
+00:03:56,880 --> 00:04:03,600
+Bạn đang khá hạnh phúc làm điều đó và sau đó bạn quyết định sau hoặc tôi nghĩ rằng nó làm cho tinh thần để
+
+40
+00:04:03,600 --> 00:04:07,880
+tạo ra một loại từ người dùng này bây giờ chúng tôi đã có một đối tượng.
+
+41
+00:04:07,880 --> 00:04:15,480
+Vì vậy, bạn sẽ đến một chút sau đó và bạn quyết định tạo ra một loại người dùng.
+
+42
+00:04:15,480 --> 00:04:23,400
+Anh nói cái này cần có số và chứng minh thư rồi chúng ta có tên ngược dòng.
+
+43
+00:04:23,400 --> 00:04:29,440
+Cho đến nay mọi thứ đều khớp và mọi thứ đều tuyệt vời nhưng hãy tưởng tượng một vài tuần sau đó bạn
+
+44
+00:04:29,440 --> 00:04:38,360
+quyết định trong mã của bạn bạn tìm thấy đối tượng của bạn và bạn quyết định thêm một thuộc tính được gọi là admin Vì vậy,
+
+45
+00:04:38,360 --> 00:04:46,360
+Nó là Adam và bạn bật lên ở đây và bạn đặt nó thành sự thật.
+
+46
+00:04:46,360 --> 00:04:50,880
+Bây giờ điều này là tất cả rất tốt và nó sẽ tiếp tục được okay và bạn đã thêm vào
+
+47
+00:04:50,880 --> 00:04:57,680
+thuộc tính cho đối tượng người dùng của bạn nhưng có lẽ loại này bây giờ được định nghĩa trong tập tin riêng
+
+48
+00:04:57,680 --> 00:05:03,960
+Những nơi khác trong một dự án và nó phải hoàn toàn vượt quá giới hạn.
+
+49
+00:05:03,960 --> 00:05:12,000
+Vì vậy, đối tượng này bây giờ là thẩm quyền mới nhất cho loại thay vì chính nó.
+
+50
+00:05:12,000 --> 00:05:18,640
+Tất nhiên những gì bạn có thể làm bây giờ là cập nhật các trường hợp của đối tượng này
+
+51
+00:05:18,640 --> 00:05:25,160
+Và đặt điều này để một đối tượng người dùng như thế này và sau đó nó sẽ khiếu nại bởi vì bạn đã
+
+52
+00:05:25,160 --> 00:05:32,080
+đã biết để tìm kiếm tài sản này và bạn phải trở lại sau đó và thêm một tài sản cho
+
+53
+00:05:32,080 --> 00:05:40,840
+là quản lý kiểu của bạn nhưng cách tiếp cận này là tốt và nếu bạn có loại chúng tôi muốn
+
+54
+00:05:40,840 --> 00:05:47,160
+Loại là nguồn gốc của sự thật nhưng trong một số trường hợp trong thế giới thực bạn có thể
+
+55
+00:05:47,160 --> 00:05:52,440
+Thực sự muốn đối tượng là nguồn gốc của sự thật hơn là loại.
+
+56
+00:05:52,440 --> 00:05:58,600
+Vì vậy, hãy để tôi cho bạn thấy những gì tôi có nghĩa là bởi đó chỉ cần loại bỏ điều này ở đây chúng ta hãy xác định cho ví dụ
+
+57
+00:05:58,600 --> 00:06:08,520
+Một tập hợp vai trò và ở đây chúng tôi có admin chúng tôi đặt admin, hãy làm người dùng, hãy để cho đó
+
+58
+00:06:08,520 --> 00:06:16,840
+sử dụng ở đó và đoán đặt điều này để khách.
+
+59
+00:06:16,840 --> 00:06:22,000
+Bây giờ đối tượng này tất nhiên có thể tồn tại để chạy thời gian và chúng tôi có thể sử dụng nó trong vật chất
+
+60
+00:06:22,000 --> 00:06:30,720
+Giống như logic, tôi muốn tự hỏi mình một câu hỏi lẽ thật nên đến từ đâu?
+
+61
+00:06:30,720 --> 00:06:37,000
+Nó là đối tượng này hay nó có thể là một loại chữ viết tay?
+
+62
+00:06:37,000 --> 00:06:42,240
+Câu trả lời thực sự là đối tượng này.
+
+63
+00:06:42,240 --> 00:06:47,480
+Bây giờ hãy để tôi cho bạn thấy những gì xảy ra nếu chúng tôi cố gắng của chúng tôi tiếp cận chúng tôi chúng tôi đã làm trong ví dụ trước
+
+64
+00:06:47,480 --> 00:06:55,680
+Với người dùng, giả sử chúng tôi đến sau và chúng tôi quyết định lập một loại vai trò.
+
+65
+00:06:55,680 --> 00:07:05,760
+Điều này và sau đó chúng tôi nói manmin là chuỗi, chúng tôi có người dùng, thiết lập để chuỗi, chúng tôi có một tập khách
+
+66
+00:07:05,760 --> 00:07:09,320
+để kéo.
+
+67
+00:07:09,320 --> 00:07:16,520
+Bây giờ chúng tôi có hai nguồn của sự thật, nếu đối tượng của chúng tôi thay đổi loại phải được cập nhật bằng tay
+
+68
+00:07:16,520 --> 00:07:20,600
+Và điều này có nghĩa là nó rất yếu, khá dễ dàng để mắc sai lầm.
+
+69
+00:07:20,600 --> 00:07:27,360
+Nhưng loại sau đó giải quyết điều này bằng cách đảo ngược các mối quan hệ vì vậy thay vì loại
+
+70
+00:07:27,360 --> 00:07:33,480
+nguồn gốc của sự thật và vật thể phụ thuộc vào nó, nó đảo ngược mối quan hệ đó
+
+71
+00:07:33,480 --> 00:07:38,280
+Vì vậy, đối tượng trở thành một nguồn của sự thật thay vì loại.
+
+72
+00:07:38,280 --> 00:07:47,280
+Vì vậy, chúng tôi định nghĩa vai trò của chúng tôi giống như chúng tôi đã làm chỉ ở đây, nhưng thay vào đó chúng tôi xác định loại của chúng tôi
+
+73
+00:07:47,280 --> 00:07:57,200
+Sau đó và làm vai trò loại bằng loại vai trò.
+
+74
+00:07:57,200 --> 00:08:02,600
+Bây giờ những gì xảy ra là chúng tôi có loại của chúng tôi để viết từ đối tượng của chúng tôi và không phải khác
+
+75
+00:08:02,600 --> 00:08:03,600
+Đi vòng.
+
+76
+00:08:03,600 --> 00:08:09,560
+Bây giờ hãy xem xét một ví dụ khác. Bây giờ hãy nói ví dụ bạn đã có một loại
+
+77
+00:08:09,560 --> 00:08:17,480
+của người dùng một lần nữa và chúng tôi có một vai trò của chuỗi.
+
+78
+00:08:17,480 --> 00:08:26,720
+Và bây giờ những gì chúng tôi làm là chúng tôi lấy một đối tượng người dùng, chúng tôi ký nó để loại của chúng tôi người dùng và chúng tôi xác định
+
+79
+00:08:26,720 --> 00:08:35,440
+vai trò của chúng ta trong Adam. Chúng tôi có mã và khi chúng tôi làm điều này, gõ các kịch bản, mọi thứ bên trong
+
+80
+00:08:35,440 --> 00:08:47,960
+Vai trò đó là một chuỗi nhưng thực sự chúng tôi muốn đóng vai trưởng nhóm.
+
+81
+00:08:47,960 --> 00:08:54,680
+Chúng ta cần phải để cho các tập lệnh gõ vào suy luận đầu tiên và đây là nơi các loại từ khóa đi vào
+
+82
+00:08:54,680 --> 00:09:06,640
+a, để xác định người dùng của chúng tôi ở phía trên, loại bỏ loại vì vậy nó chỉ là một đối tượng động như
+
+83
+00:09:06,640 --> 00:09:23,000
+Điều này và sau đó thay vì điều này chúng tôi xác định loại của chúng tôi, loại người dùng bằng loại của người dùng đối tượng
+
+84
+00:09:23,000 --> 00:09:34,000
+và sau đó nội bộ thay vì là một chuỗi, văn lệnh gõ sẽ xem vai trò người dùng là admin
+
+85
+00:09:34,000 --> 00:09:36,720
+Thay vào đó.
+
+86
+00:09:36,720 --> 00:09:43,960
+Trở lại ví dụ ban đầu của chúng tôi, những gì đang thực sự xảy ra phía sau các cảnh là loại kịch bản
+
+87
+00:09:43,960 --> 00:09:50,560
+là loại người dùng của chúng tôi từ các đối tượng mà chúng tôi cung cấp.
+
+88
+00:09:50,560 --> 00:09:59,640
+Vì vậy, những gì nó đang làm loại đằng sau các cảnh là nó thực sự làm kiểu người dùng bằng
+
+89
+00:09:59,640 --> 00:10:12,080
+Và sau đó là thực tế như là số ID, chuỗi tên là biệt danh.
+
+90
+00:10:12,080 --> 00:10:18,440
+Và điều này được thực hiện trong dòng này vì vậy bạn đang nhận được hiệu quả nhưng sử dụng
+
+91
+00:10:18,440 --> 00:10:21,580
+Kiểu điều hành viên.
+
+92
+00:10:21,580 --> 00:10:28,440
+Bây giờ với điều này để tìm, hãy nói về các từ khóa tiếp theo đó là chìa khóa của và điều này là
+
+93
+00:10:28,440 --> 00:10:39,520
+sẽ được sử dụng để chiết xuất một số phím vì vậy chúng tôi sẽ làm gõ phím người dùng và nói khóa
+
+94
+00:10:39,520 --> 00:10:51,600
+hoặc kiểu người dùng, bây giờ điều này sẽ tạo ra một loại công đoàn như vậy đằng sau các cảnh, gõ văn lệnh
+
+95
+00:10:51,600 --> 00:11:12,200
+Làm việc hiệu quả gõ phím người dùng bằng ID và tên, cracks tên và nó là admin.
+
+96
+00:11:12,200 --> 00:11:20,200
+Vì vậy, chìa khóa biến các phím đối tượng thành tích hợp của các loại dây.
+
+97
+00:11:20,200 --> 00:11:32,780
+Bây giờ nếu chúng ta chỉ cần tìm thấy một số phím từ đó vì vậy chúng tôi làm cho phép khóa là chìa khóa người dùng, nếu chúng tôi làm khóa
+
+98
+00:11:32,780 --> 00:11:45,160
+bằng, ví dụ, ID, đó là tốt hoặc chìa khóa bằng tên, đó là tốt nhưng nếu chúng tôi làm khóa
+
+99
+00:11:45,160 --> 00:11:55,040
+bằng email, bây giờ không cho phép bởi vì nó không phải là một phần của kiểu người dùng của chúng tôi sử dụng
+
+100
+00:11:55,040 --> 00:12:02,920
+Người điều khiển quan trọng mà sau đó xem tất cả các thuộc tính ở đây như là một tập hợp các phím.
+
+101
+00:12:02,920 --> 00:12:09,360
+Vì vậy, chúng ta chỉ có thể sử dụng các phím thực sự tồn tại trong đối tượng này.
+
+102
+00:12:09,360 --> 00:12:15,640
+Vì vậy, chúng ta hãy có một ví dụ xa hơn của điều này, chúng ta hãy chỉ cần loại bỏ các mã ở đây và
+
+103
+00:12:15,640 --> 00:12:26,160
+sau đó để tìm một chức năng được gọi là tính chất, chúng tôi cung cấp một đối tượng đó là một loại người dùng
+
+104
+00:12:26,160 --> 00:12:39,520
+Loại và chúng tôi cung cấp cho một phím kiểu người dùng phím, sau đó những gì chúng tôi có thể làm là làm một đối tượng trả lại đơn giản
+
+105
+00:12:39,520 --> 00:12:44,200
+và lấy tài sản khớp với chìa khóa cung cấp.
+
+106
+00:12:44,200 --> 00:12:56,680
+Bây giờ tất nhiên chúng tôi có thể nhận được tài sản, chúng tôi có thể cung cấp đối tượng của chúng tôi của người dùng nếu nó tồn tại của tất nhiên
+
+107
+00:12:56,680 --> 00:13:02,880
+và sau đó chúng tôi có thể cung cấp tài sản chúng tôi quan tâm đến ví dụ tên và chúng tôi đang đi
+
+108
+00:13:02,880 --> 00:13:06,760
+để có được Alice trong trường hợp này.
+
+109
+00:13:06,760 --> 00:13:13,560
+Điều này ngăn chặn việc chạy lỗi thời gian như việc truy cập các tính chất không tồn tại.
+
+110
+00:13:13,560 --> 00:13:18,960
+Bây giờ chúng ta có thể thực sự làm cho chức năng này một chút đẹp hơn bằng cách này
+
+111
+00:13:18,960 --> 00:13:24,480
+Cách chúng ta có thể thực sự sử dụng sức mạnh của gen để làm cho điều này trở nên gọn gàng hơn.
+
+112
+00:13:24,480 --> 00:13:32,560
+Vì vậy, hãy làm chức năng một lần nữa, hãy nói rằng chức năng nhận được tài sản.
+
+113
+00:13:32,560 --> 00:13:41,320
+Bây giờ chúng tôi đang tìm kiếm loại T và chúng tôi cũng muốn một loại thứ hai chung mà sẽ
+
+114
+00:13:41,320 --> 00:13:51,300
+sau đó nói
+
+115
+00:13:51,300 --> 00:14:03,840
+Mở rộng và mở rộng chìa khóa của các tài sản hiệu quả của loại T của chúng tôi. Bây giờ chúng tôi cung cấp của chúng tôi
+
+116
+00:14:03,840 --> 00:14:15,360
+Tham số, do đó đối tượng của chúng tôi là loại T và chìa khóa của chúng tôi là loại K. K ví dụ
+
+117
+00:14:15,360 --> 00:14:21,360
+một số nguyên hoặc một chuỗi hoặc một Boolean.
+
+118
+00:14:21,360 --> 00:14:30,960
+Bây giờ chúng ta có thể trả lại chìa khóa đối tượng và chúng ta sẽ nhận được cùng một điều nhưng lần này chúng ta
+
+119
+00:14:30,960 --> 00:14:38,440
+có mã an toàn loại đầy đủ của chúng tôi nhưng nó thực sự được xác định là một chung.
+
+120
+00:14:38,440 --> 00:14:45,000
+Vì vậy, tóm lại chúng tôi sử dụng loại để chiết xuất từ một đối tượng và chìa khóa để trích xuất
+
+121
+00:14:45,000 --> 00:14:49,040
+phím hợp lệ trên kiểu đặc biệt đó.
+
+122
+00:14:49,040 --> 00:14:54,640
+Bây giờ hãy gõ văn lệnh ngăn chặn các thuộc tính hợp lệ truy cập vào thời điểm biên dịch.
+
