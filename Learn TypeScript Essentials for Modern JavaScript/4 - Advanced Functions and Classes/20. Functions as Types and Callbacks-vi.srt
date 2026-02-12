@@ -1,0 +1,348 @@
+1
+00:00:00,000 --> 00:00:04,640
+Trong bài học này, chúng ta sẽ khám phá một tính năng siêu mạnh của TypeCuble,
+
+2
+00:00:04,640 --> 00:00:10,880
+Mà là chức năng như loại và gọi lại. Cuối bài học này, bạn sẽ đến
+
+3
+00:00:10,880 --> 00:00:16,960
+hiểu làm thế nào để gõ các chức năng, làm thế nào để thông qua chức năng vào các chức năng khác,
+
+4
+00:00:16,960 --> 00:00:21,680
+và làm thế nào TypeSQL giúp ngăn chặn lỗi trước khi mã của bạn hoạt động.
+
+5
+00:00:23,680 --> 00:00:31,840
+Vì vậy, những gì chính xác chức năng như loại có nghĩa là gì? Vì vậy, trong chức năng JavaScript là hạng nhất
+
+6
+00:00:31,840 --> 00:00:37,680
+Các công dân, điều đó có nghĩa là bạn có thể lưu trữ chúng trong các biến số, chuyển chúng đến các chức năng khác,
+
+7
+00:00:37,680 --> 00:00:44,320
+và đưa họ trở lại từ các chức năng khác. Gõ vào mục lục mở rộng ý tưởng này bằng cách để chúng tôi mô tả
+
+8
+00:00:44,320 --> 00:00:51,600
+một hình hàm dùng kiểu. Hãy bắt đầu với một ví dụ rất đơn giản. Hãy làm chức năng,
+
+9
+00:00:52,400 --> 00:00:58,480
+Thêm, a là một số, và b là một số.
+
+10
+00:00:58,480 --> 00:01:04,480
+Tôi đơn giản là sẽ trả lại một cộng b.
+
+11
+00:01:04,480 --> 00:01:11,040
+Bây giờ chúng tôi đã gõ các tham số và giá trị trả về là inferred.
+
+12
+00:01:11,040 --> 00:01:16,320
+Nhưng nếu chúng ta muốn lưu trữ chức năng này như một biến số thì sao?
+
+13
+00:01:18,640 --> 00:01:22,320
+Chúng tôi có thể đơn giản làm điều này, chúng tôi có thể làm cho chức năng của tôi,
+
+14
+00:01:22,320 --> 00:01:32,480
+Và chúng tôi cung cấp cho nó các tham số nói x và có một số, và y là một số,
+
+15
+00:01:32,480 --> 00:01:41,600
+Và điều này sẽ trở lại với một mũi tên, cú pháp, một số.
+
+16
+00:01:44,640 --> 00:01:52,880
+Vì vậy, điều này thẳng hàng có nghĩa là chức năng của tôi là một chức năng mà mất hai số như một tham số
+
+17
+00:01:52,880 --> 00:02:03,040
+và trả lại số điện thoại. Bây giờ chúng ta hãy chỉ định một chức năng cho nó, vì vậy chúng tôi có thể nói chức năng của tôi bằng bổ sung.
+
+18
+00:02:06,640 --> 00:02:14,000
+Bây giờ bởi vì chức năng thêm vào cũng có hai tham số của cả hai trong số đó là số,
+
+19
+00:02:14,000 --> 00:02:21,200
+Và nó trả lại một số, mà được vô giá trị, nó có thể được chỉ định cho chức năng này bởi vì nó phù hợp
+
+20
+00:02:21,200 --> 00:02:30,240
+Cùng kiểu với những gã này. Kiểu 2up sẽ cho phép vì các kiểu khớp
+
+21
+00:02:30,240 --> 00:02:36,880
+Dấu hiệu chức năng. Và nếu chúng tôi cố gắng để chỉ định một chức năng với các loại sai,
+
+22
+00:02:36,880 --> 00:02:44,000
+"Sprime" sẽ cảnh báo chúng ta ngay lập tức. Bây giờ các dấu hiệu chức năng có thể được khá dài,
+
+23
+00:02:44,000 --> 00:02:48,960
+Vì vậy, gõ "%x" cho phép chúng tôi đơn giản hóa chúng bằng cách sử dụng các biệt danh kiểu.
+
+24
+00:02:48,960 --> 00:02:55,520
+Vì vậy, hãy chỉ cần đi xa hơn một chút, và chúng tôi sẽ thay đổi chức năng của chúng tôi ở đây,
+
+25
+00:02:55,520 --> 00:03:01,040
+bởi một số hàm sẽ thay đổi nó, vì vậy chúng tôi sẽ thay đổi điều này từ chức năng của tôi
+
+26
+00:03:01,040 --> 00:03:08,560
+để giải phẫu toán, và chúng ta cần thay đổi điều này thành một bí danh kiểu bằng cách xác định nó là một loại.
+
+27
+00:03:08,560 --> 00:03:16,160
+Vì vậy, chúng tôi có một hoạt động toán học, và chúng tôi vẫn cần làm cho điều này một dấu hiệu bằng, bằng số,
+
+28
+00:03:16,160 --> 00:03:24,960
+và một số, vì vậy đây không phải là một loại bí danh. Vì vậy, những gì chúng tôi có thể làm bây giờ là chúng tôi có thể xác định một số
+
+29
+00:03:24,960 --> 00:03:35,120
+hằng số và nói, ví dụ, trừ hoạt động, và phép trừ là một loại hoạt động toán học,
+
+30
+00:03:35,120 --> 00:03:44,640
+Mà có hai tham số, a và b, mà sẽ bản đồ lên với x và y về các thao tác toán học
+
+31
+00:03:44,640 --> 00:03:53,360
+Ở đây, sau đó chúng tôi xác định với thực tế thực hiện của hoạt động đó, vì vậy bạn có thể nói một trừ b.
+
+32
+00:03:54,800 --> 00:03:57,600
+Và chúng tôi có thể làm điều tương tự chúng tôi có thể có nhiều hơn để áp dụng.
+
+33
+00:03:57,600 --> 00:04:06,240
+Nó cũng là một hoạt động toán học nhận được trong hai tính chất, a và b,
+
+34
+00:04:06,240 --> 00:04:12,960
+Và sau đó chúng tôi xác định việc thực hiện điều đó, do đó, một lần b, oop, b.
+
+35
+00:04:12,960 --> 00:04:21,360
+Vì vậy, điều này làm cho đám mây của chúng tôi rất sạch sẽ và hợp lý hơn nhiều, đặc biệt khi chúng tôi đã có
+
+36
+00:04:21,360 --> 00:04:25,760
+Nhiều chức năng chia sẻ cùng một cấu trúc mà chúng ta có ở đây.
+
+37
+00:04:25,760 --> 00:04:32,720
+Bây giờ mà chúng ta biết rằng chức năng có thể được xử lý như dữ liệu, chúng tôi có thể sau đó vượt qua chúng
+
+38
+00:04:32,720 --> 00:04:39,920
+trong các chức năng khác, và điều này được gọi là gọi lại. Vì vậy, gọi ngược là chỉ là một hàm cho phép bạn
+
+39
+00:04:39,920 --> 00:04:44,480
+chuyển sang hàm khác để hàm nhận có thể gọi nó sau này.
+
+40
+00:04:47,520 --> 00:04:55,040
+Và có một số ví dụ về điều này, ví dụ, bạn có thể nhận thức được hoạt động.
+
+41
+00:04:55,040 --> 00:04:59,200
+Bản đồ chấm, vì vậy nó sử dụng một cuộc gọi trở lại, mà chúng tôi định nghĩa.
+
+42
+00:04:59,200 --> 00:05:07,200
+Cũng có những thứ như thính giả sự kiện, họ cũng sử dụng tiếng gọi ngược lại, và những thứ như đồng bộ
+
+43
+00:05:07,200 --> 00:05:13,920
+Mật mã thường dùng để gọi lại. Vì vậy, hãy tạo ra một chức năng mà chấp nhận một chức năng khác,
+
+44
+00:05:14,640 --> 00:05:23,680
+Vì vậy, chúng tôi có thể làm chức năng, nó được gọi là chào đón, và điều này sẽ có một tên và một định dạng.
+
+45
+00:05:23,680 --> 00:05:32,000
+Vì vậy, định dạng này sẽ là chức năng gọi ngược của chúng tôi sẽ cũng có một tên,
+
+46
+00:05:32,000 --> 00:05:35,600
+Và cái này sẽ trở lại.
+
+47
+00:05:35,600 --> 00:05:43,360
+Vì vậy, đó là kết thúc của chúng tôi chào mừng chức năng, và chức năng chào đón chính nó cũng sẽ
+
+48
+00:05:43,360 --> 00:05:52,400
+Nó sẽ trả lại một chuỗi. Bây giờ chúng ta có thể trở lại, chào hỏi, cộng với chúng tôi có thể gọi của chúng tôi
+
+49
+00:05:52,400 --> 00:05:57,360
+tất cả chức năng vật chất, và đưa tham số tên cho nó.
+
+50
+00:05:57,360 --> 00:06:07,120
+Vì vậy định dạng là một gọi lại, và nó phải là một chức năng mà mất một chuỗi và trở lại một chuỗi
+
+51
+00:06:07,120 --> 00:06:12,640
+là một con quái vật có thể nhìn thấy ở đây. Vì vậy, bây giờ chúng tôi có thể thực sự tạo ra rằng định dạng,
+
+52
+00:06:12,640 --> 00:06:19,120
+Vì vậy, chúng tôi có thể có chức năng, nói với trường hợp trên,
+
+53
+00:06:19,120 --> 00:06:30,640
+thì tên sẽ được đặt lên trên hết.
+
+54
+00:06:30,640 --> 00:06:37,920
+Vì vậy, bây giờ nó có nghĩa là chúng tôi có thể nhớ lại chức năng chào mừng của chúng tôi và chào hỏi,
+
+55
+00:06:40,320 --> 00:06:46,880
+Và cung cấp một tên, giả sử Alice, và chúng tôi cung cấp chức năng của chúng tôi để phía trên trường hợp,
+
+56
+00:06:46,880 --> 00:06:54,720
+mà sẽ phù hợp với chữ ký trên định nghĩa này, mà lấy một tên và trả lại một chuỗi,
+
+57
+00:06:54,720 --> 00:07:07,200
+Và đó sẽ là hai trường hợp trên. Đừng thực hiện điều đó, chúng ta sẽ nhận được lời chào Alice trong trường hợp trên.
+
+58
+00:07:10,480 --> 00:07:14,320
+Bây giờ nếu chúng ta cố gắng để vượt qua cuộc gọi đó với một cấu trúc sai,
+
+59
+00:07:14,320 --> 00:07:20,160
+Gõ vào "%x" sẽ ngăn chặn các lỗi sớm, vì vậy hãy thử làm một cái gì đó và phá vỡ nó,
+
+60
+00:07:20,160 --> 00:07:27,360
+Và nó sẽ đi vào đây, và chúng tôi sẽ nói rằng để gửi một giá trị n, mà sẽ đi
+
+61
+00:07:27,360 --> 00:07:33,040
+là một giá trị, một, hai, ba, và nó sẽ phàn nàn bởi vì nó không phải là một dấu hiệu cho một chuỗi.
+
+62
+00:07:35,120 --> 00:07:41,280
+Như trước đây, các kiểu gọi ngược cũng có thể được chiết xuất thành biệt danh kiểu riêng.
+
+63
+00:07:41,280 --> 00:07:51,120
+Vì vậy, chúng ta hãy nhanh chóng xóa đoạn mã này, và hãy lấy một ví dụ, vì vậy chúng ta có định dạng này để
+
+64
+00:07:51,120 --> 00:08:00,400
+tìm ở đây, và thay vì xác định những gì chúng tôi có định dạng thực sự của chúng tôi ở đây, hãy cắt lên
+
+65
+00:08:00,400 --> 00:08:11,920
+ở đây và làm định dạng tên, hoặc vật chất. Điều này sẽ mất chuỗi tên, và nó sẽ
+
+66
+00:08:11,920 --> 00:08:18,080
+quay lại sợi dây. Và bây giờ chúng ta phải tìm ra loại bí danh, chúng ta có thể loại bỏ những gì chúng ta có ở đây,
+
+67
+00:08:18,080 --> 00:08:25,920
+và thay đổi nó chỉ để định dạng tên. Như thế này, bạn có thể thấy, làm cho mật mã của chúng tôi rất nhiều
+
+68
+00:08:25,920 --> 00:08:34,000
+Dễ đọc và duy trì hơn, đặc biệt là khi chúng ta có nhiều mật mã lớn hơn. Tiếp theo hãy xem
+
+69
+00:08:34,000 --> 00:08:40,720
+tại một ví dụ điển hình của thế giới thực gọi ngược lại, và điều này sẽ được sử dụng và những điều như mô phỏng
+
+70
+00:08:40,720 --> 00:08:50,320
+Yêu cầu API. Vì vậy, bạn có một chức năng, lấy dữ liệu, điều này sẽ nhận được một cuộc gọi trở lại,
+
+71
+00:08:51,440 --> 00:08:58,720
+và các cuộc gọi trở lại sẽ nhận dữ liệu như chuỗi, và các cuộc gọi trở lại sẽ không trở lại
+
+72
+00:08:58,720 --> 00:09:05,760
+Bất cứ thứ gì, để chúng ta có thể nói là không có đạn. Chúng ta sẽ gọi thời hạn hẹn đơn giản,
+
+73
+00:09:05,760 --> 00:09:13,200
+Vì vậy, nó mô phỏng cuộc gọi AI ở đây, và sau đó chúng tôi sẽ nhận được dữ liệu của chúng tôi,
+
+74
+00:09:14,240 --> 00:09:21,920
+Và chúng tôi sẽ gọi lại, và nói rằng đây là dữ liệu, và sau đó chúng tôi chỉ nói sau một
+
+75
+00:09:21,920 --> 00:09:31,280
+1000 giây. Vì vậy, tiếng gọi ngược lại chính nó nói rằng chức năng này nhận được một chuỗi,
+
+76
+00:09:31,280 --> 00:09:34,960
+và sau đó không trả lại gì, vì vậy đây là định nghĩa của cuộc gọi trở lại ở đây.
+
+77
+00:09:34,960 --> 00:09:44,080
+Bây giờ chúng ta hãy thực sự nhớ lại điều này, vì vậy chúng ta có thể làm lấy dữ liệu, và chúng ta có thể nói rằng chúng ta sẽ
+
+78
+00:09:44,080 --> 00:09:51,760
+Cung cấp dữ liệu, và dữ liệu sau đó sẽ, trong khi chúng tôi nhận được dữ liệu, chúng tôi sẽ sau đó
+
+79
+00:09:51,760 --> 00:10:01,360
+có một cuộc gọi trở lại, mà sẽ đăng nhập vào bảng điều khiển, dữ liệu của chúng tôi nhận được, và sau đó cung cấp
+
+80
+00:10:01,360 --> 00:10:09,440
+dữ liệu bản thân, và tất nhiên đó nên được lấy dữ liệu với một chữ cái đầu tư, chúng tôi đi.
+
+81
+00:10:10,400 --> 00:10:17,360
+Vì vậy, đoạn mã này chỉ được gọi khi dữ liệu đến thông qua các cuộc gọi trở lại,
+
+82
+00:10:17,360 --> 00:10:26,160
+Và đây chính xác là cách mà không có JES API làm việc, và nó vẫn cực kỳ phổ biến trong khung trước.
+
+83
+00:10:26,160 --> 00:10:33,360
+Được rồi, vì vậy thời gian cho một recap nhanh chóng, do đó, trong TypeUse, chức năng có thể được xem là giá trị,
+
+84
+00:10:34,000 --> 00:10:41,600
+và chúng tôi cũng có thể mô tả một hình dạng chức năng sử dụng các loại chức năng, và CoreX chỉ là chức năng
+
+85
+00:10:41,600 --> 00:10:48,160
+chuyển sang các chức năng khác. Name
+
+86
+00:10:48,160 --> 00:10:56,080
+Chữ ký, và chúng tôi định nghĩa một ví dụ về chữ ký gọi ngược ở đây, và gõ biệt danh, như bạn đã thấy,
+
+87
+00:10:56,080 --> 00:10:59,520
+khiến các chức năng của chúng ta dễ sử dụng hơn.
+
