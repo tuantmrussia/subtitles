@@ -1,0 +1,488 @@
+1
+00:00:00,000 --> 00:00:06,880
+ In this lesson we are going to be exploring two extremely important TypeScript operators,
+
+2
+00:00:06,880 --> 00:00:10,520
+ which is key of and type of.
+
+3
+00:00:10,520 --> 00:00:19,000
+ These tools are the foundation for conditional types and advanced type manipulation in TypeScript.
+
+4
+00:00:19,000 --> 00:00:24,760
+ If you want to understand how TypeScript creates flexible smart types, then you must understand
+
+5
+00:00:24,760 --> 00:00:28,120
+ these two keywords.
+
+6
+00:00:28,120 --> 00:00:35,840
+ As our applications grow we often want types that adapt automatically when our data changes.
+
+7
+00:00:35,840 --> 00:00:42,000
+ Want to avoid duplicated types, prevent in the valid property access and we also want
+
+8
+00:00:42,000 --> 00:00:45,680
+ to keep types in sync with our objects.
+
+9
+00:00:45,680 --> 00:00:52,840
+ So the key of and the type of keywords allow TypeScript to extract information from existing
+
+10
+00:00:52,840 --> 00:00:58,000
+ values and types instead of rewriting them manually.
+
+11
+00:00:58,000 --> 00:01:00,880
+ Let's first of all start off with type of.
+
+12
+00:01:00,880 --> 00:01:07,680
+ You've probably seen type of in JavaScript, but in TypeScript it has type level meaning
+
+13
+00:01:07,680 --> 00:01:09,640
+ as well.
+
+14
+00:01:09,640 --> 00:01:14,080
+ So let's take a look at this code here of this user object.
+
+15
+00:01:14,080 --> 00:01:25,560
+ This is a normal JavaScript object and now underneath if we do type, user type equals type
+
+16
+00:01:25,560 --> 00:01:35,600
+ of user, then type of it's going to extract the type of the object, not the runtime
+
+17
+00:01:35,600 --> 00:01:36,600
+ value.
+
+18
+00:01:36,600 --> 00:01:49,400
+ Now, if we make another object, so we do const a user to and this becomes a video const
+
+19
+00:01:49,400 --> 00:02:01,640
+ user to, and this has a type of our new user type, let's just put some properties in here
+
+20
+00:02:01,640 --> 00:02:13,280
+ so id equals two and say name Bob as admin can be false.
+
+21
+00:02:13,280 --> 00:02:18,320
+ This type then updates automatically and it keeps our code in sync.
+
+22
+00:02:18,320 --> 00:02:20,480
+ So what does likely do I mean by this?
+
+23
+00:02:20,480 --> 00:02:27,200
+ Well we have this type to find up here because we have type of user and we use the properties.
+
+24
+00:02:27,200 --> 00:02:33,200
+ But if we don't add an additional property on here, let's say we come in here and we say
+
+25
+00:02:33,200 --> 00:02:44,480
+ username and let's set it to Alice123, we now get an error here because it's now expecting
+
+26
+00:02:44,480 --> 00:02:51,200
+ our second user to have this property and that's because of this type of here we have
+
+27
+00:02:51,200 --> 00:02:58,440
+ to find user type as a type of user which is this type here and this second user is now
+
+28
+00:02:58,440 --> 00:03:03,800
+ picking up the actual definition of the properties that's just defined in our original
+
+29
+00:03:03,800 --> 00:03:05,120
+ type.
+
+30
+00:03:05,120 --> 00:03:10,680
+ But what exactly is this type of an advantage over the existing way?
+
+31
+00:03:10,680 --> 00:03:16,760
+ So let's say we have this type that we normally define, we have a type of user with these
+
+32
+00:03:16,760 --> 00:03:17,960
+ three properties.
+
+33
+00:03:17,960 --> 00:03:24,520
+ It might be thinking what exactly is the advantage of the type of keyword.
+
+34
+00:03:24,520 --> 00:03:30,640
+ So let's go through a little example to maybe make it a little bit more clear.
+
+35
+00:03:30,640 --> 00:03:37,320
+ Let's say first of all you start off and you create yourself the user object and that's
+
+36
+00:03:37,320 --> 00:03:45,000
+ actually just remove the existing one here just so we don't get confused.
+
+37
+00:03:45,000 --> 00:03:51,960
+ Let's say we have user and we define a property straight on it and we say ID of one and
+
+38
+00:03:51,960 --> 00:03:56,880
+ the name is Alice.
+
+39
+00:03:56,880 --> 00:04:03,600
+ You're quite happy doing that and then you decide later or I think it makes sense to
+
+40
+00:04:03,600 --> 00:04:07,880
+ create a type from this user now that we have an object.
+
+41
+00:04:07,880 --> 00:04:15,480
+ So you're going to come a bit later and you decide to create a type called user.
+
+42
+00:04:15,480 --> 00:04:23,400
+ You say this needs a num and ID and then we have name upstream.
+
+43
+00:04:23,400 --> 00:04:29,440
+ So far everything matches and everything's great but imagine a few weeks later you then
+
+44
+00:04:29,440 --> 00:04:38,360
+ decide in your code you find your object and you decide to add a property called admin so
+
+45
+00:04:38,360 --> 00:04:46,360
+ it is admin and you pop on here and you set this to true.
+
+46
+00:04:46,360 --> 00:04:50,880
+ Now this is all very good and it's going to continue being okay and you've just added
+
+47
+00:04:50,880 --> 00:04:57,680
+ a property to your user objects but maybe this type is now defined in a separate file
+
+48
+00:04:57,680 --> 00:05:03,960
+ elsewhere in a project and that had to have come completely out of step.
+
+49
+00:05:03,960 --> 00:05:12,000
+ So this object is now the latest authority for the type rather than the actual type itself.
+
+50
+00:05:12,000 --> 00:05:18,640
+ Of course what you might think you could do is now is update the instances of this object
+
+51
+00:05:18,640 --> 00:05:25,160
+ and set this to a user object like this and then it's going to complain because you've
+
+52
+00:05:25,160 --> 00:05:32,080
+ known to finding this property and you have to go back later and add a property for
+
+53
+00:05:32,080 --> 00:05:40,840
+ is admin to your type but this approach is fine and if you have the type we want the
+
+54
+00:05:40,840 --> 00:05:47,160
+ type to be the source of truth but in some instances in some real world cases you might
+
+55
+00:05:47,160 --> 00:05:52,440
+ actually want the object to be the source of the truth rather than the type.
+
+56
+00:05:52,440 --> 00:05:58,600
+ So let me show you what I mean by that let's just remove this here let's define for example
+
+57
+00:05:58,600 --> 00:06:08,520
+ a set of roles and in here we have admin we set admin, let's do user, let that to
+
+58
+00:06:08,520 --> 00:06:16,840
+ use there and guess set this to guest.
+
+59
+00:06:16,840 --> 00:06:22,000
+ Now this object of course could exist to run time and we might be using it in things
+
+60
+00:06:22,000 --> 00:06:30,720
+ like logic, I want to ask yourself a question where should the truth come from?
+
+61
+00:06:30,720 --> 00:06:37,000
+ Is it this object or is it maybe a manually written type?
+
+62
+00:06:37,000 --> 00:06:42,240
+ The answer really is this object.
+
+63
+00:06:42,240 --> 00:06:47,480
+ Now let me show you what happens if we try our approach we did in the previous example
+
+64
+00:06:47,480 --> 00:06:55,680
+ with the user, let's say we come later and we decide to set up a type of roles.
+
+65
+00:06:55,680 --> 00:07:05,760
+ This and then we say admin is string, we have user, set to string, we have a guest set
+
+66
+00:07:05,760 --> 00:07:09,320
+ to string.
+
+67
+00:07:09,320 --> 00:07:16,520
+ Now we have two sources of truth, if our object changes the type must be updated manually
+
+68
+00:07:16,520 --> 00:07:20,600
+ and this means that it's weak, quite easy to make mistakes.
+
+69
+00:07:20,600 --> 00:07:27,360
+ But type of then solves this by reversing the relationship so instead of the type being
+
+70
+00:07:27,360 --> 00:07:33,480
+ the source of the truth and the object depending upon it, it reverses that relationship
+
+71
+00:07:33,480 --> 00:07:38,280
+ so the object becomes a source of truth rather than the type.
+
+72
+00:07:38,280 --> 00:07:47,280
+ So we define our roles just like we did just here, but instead we then define our type
+
+73
+00:07:47,280 --> 00:07:57,200
+ afterwards and do type role equals type of roles.
+
+74
+00:07:57,200 --> 00:08:02,600
+ Now what happens is that we have our type to write from our object and not the other
+
+75
+00:08:02,600 --> 00:08:03,600
+ way around.
+
+76
+00:08:03,600 --> 00:08:09,560
+ Let's now have a look at another example. Now let's say for example you've got a type
+
+77
+00:08:09,560 --> 00:08:17,480
+ of user again and we have a role of string.
+
+78
+00:08:17,480 --> 00:08:26,720
+ And now what we do is we take a user object, we sign it to our type of user and we specify
+
+79
+00:08:26,720 --> 00:08:35,440
+ our role of admin. We have our code and when we do this, type scripts, things internally
+
+80
+00:08:35,440 --> 00:08:47,960
+ that role is a string but really we want role to be admin.
+
+81
+00:08:47,960 --> 00:08:54,680
+ We need to let type scripts infer first and this is where the type of keyword comes into
+
+82
+00:08:54,680 --> 00:09:06,640
+ a, to define our user at the top, remove the type so it's just a dynamic object like
+
+83
+00:09:06,640 --> 00:09:23,000
+ this and then instead of this we define our type, type user equals type of object user
+
+84
+00:09:23,000 --> 00:09:34,000
+ and then internally rather than being a string, type script will see the user role as admin
+
+85
+00:09:34,000 --> 00:09:36,720
+ instead.
+
+86
+00:09:36,720 --> 00:09:43,960
+ So back of our original example, what's actually happening behind the scenes is type script
+
+87
+00:09:43,960 --> 00:09:50,560
+ is deriving our type of user type from the object that we supply.
+
+88
+00:09:50,560 --> 00:09:59,640
+ So what it's doing kind of behind the scenes is it's actually doing type user type equals
+
+89
+00:09:59,640 --> 00:10:12,080
+ and then it's doing the actual thing like ID number, name string is admin boolean.
+
+90
+00:10:12,080 --> 00:10:18,440
+ And this is done in this line here so you're effectively getting this but using the
+
+91
+00:10:18,440 --> 00:10:21,580
+ type of operator.
+
+92
+00:10:21,580 --> 00:10:28,440
+ Now with this to find, let's talk about the next keyword which is key of and this is
+
+93
+00:10:28,440 --> 00:10:39,520
+ going to be used to extract some keys so we're going to do type user keys and say key
+
+94
+00:10:39,520 --> 00:10:51,600
+ or user type, now this is going to produce a union type so behind the scenes, type script
+
+95
+00:10:51,600 --> 00:11:12,200
+ effectively doing type user keys equals ID and name, whoops name and it's admin.
+
+96
+00:11:12,200 --> 00:11:20,200
+ So the key of turns the object keys into union of string literal types.
+
+97
+00:11:20,200 --> 00:11:32,780
+ Now if we just find some keys from that so we do let key is user keys, if we do key
+
+98
+00:11:32,780 --> 00:11:45,160
+ equals, for example, ID, that's fine or key equals name, that's fine but if we do key
+
+99
+00:11:45,160 --> 00:11:55,040
+ equals email, that's now not allowed because it's not part of our user type using the
+
+100
+00:11:55,040 --> 00:12:02,920
+ key operator which is then looking at all the properties here as a set of keys.
+
+101
+00:12:02,920 --> 00:12:09,360
+ So we can only use the keys that actually exist in this object.
+
+102
+00:12:09,360 --> 00:12:15,640
+ So let's have a look at a further example of this, let's just remove the code here and
+
+103
+00:12:15,640 --> 00:12:26,160
+ then to find a function called get property, we supply an object which is a type of user
+
+104
+00:12:26,160 --> 00:12:39,520
+ type and we give a key of type user keys, then what we can do is do a simple return object
+
+105
+00:12:39,520 --> 00:12:44,200
+ and get the property matching the key that supplied.
+
+106
+00:12:44,200 --> 00:12:56,680
+ Now of course we can do get property, we can provide our object of user if it existed of course
+
+107
+00:12:56,680 --> 00:13:02,880
+ and then we can supply the property we're interested in for example name and we're going
+
+108
+00:13:02,880 --> 00:13:06,760
+ to get Alice in this case.
+
+109
+00:13:06,760 --> 00:13:13,560
+ This prevents us having run time bugs like accessing properties that don't actually exist.
+
+110
+00:13:13,560 --> 00:13:18,960
+ Now we can actually make this function a little bit nicer by rather than having this
+
+111
+00:13:18,960 --> 00:13:24,480
+ way we can actually use the power of genetics to actually make this much neater.
+
+112
+00:13:24,480 --> 00:13:32,560
+ So let's do function again, let's say function get property.
+
+113
+00:13:32,560 --> 00:13:41,320
+ Now we're looking for type T and we also want a generic secondary type which is going to
+
+114
+00:13:41,320 --> 00:13:51,300
+ be the key, we can do this by giving another letter say k or the d key, we then then say
+
+115
+00:13:51,300 --> 00:14:03,840
+ extends and extends the key of the property effectively of our type T. Now we provide our
+
+116
+00:14:03,840 --> 00:14:15,360
+ parameters, so our object is of type T and our key is of type K. K being for example
+
+117
+00:14:15,360 --> 00:14:21,360
+ an integer or a string or a Boolean.
+
+118
+00:14:21,360 --> 00:14:30,960
+ Now we can do return object key and we're going to get the same thing but this time we
+
+119
+00:14:30,960 --> 00:14:38,440
+ have our fully type safe code but it's actually now specified as a generic.
+
+120
+00:14:38,440 --> 00:14:45,000
+ So in summary we use type of to extracted type from an object and key of to extract the
+
+121
+00:14:45,000 --> 00:14:49,040
+ valid keys on that particular type.
+
+122
+00:14:49,040 --> 00:14:54,640
+ Now let's type script prevent in valid properties access at compile time.
+
