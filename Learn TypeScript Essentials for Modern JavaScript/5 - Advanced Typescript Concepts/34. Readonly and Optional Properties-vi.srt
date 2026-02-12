@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,400
+Trong bài học này, chúng ta sẽ tìm hiểu về tính chất chỉ đọc và tính chất tùy chọn
+
+2
+00:00:05,400 --> 00:00:06,400
+in TypeScy.
+
+3
+00:00:06,400 --> 00:00:13,000
+Vì vậy, những tính năng này giúp chúng tôi bảo vệ dữ liệu của chúng tôi và rõ ràng thể hiện những giá trị được thu thập
+
+4
+00:00:13,000 --> 00:00:15,000
+và đó là lựa chọn.
+
+5
+00:00:15,000 --> 00:00:19,000
+Vì vậy, trong ứng dụng thế giới thực, không phải dữ liệu "award" nên được thay đổi
+
+6
+00:00:19,000 --> 00:00:22,000
+và không có dữ liệu "award" luôn có sẵn.
+
+7
+00:00:22,000 --> 00:00:27,000
+Máy gõ giúp chúng ta diễn đạt trực tiếp cả hai ý tưởng này.
+
+8
+00:00:27,000 --> 00:00:33,000
+Đầu tiên, hãy bắt đầu với một số tính chất tùy chọn.
+
+9
+00:00:33,000 --> 00:00:38,000
+Vì vậy, các thuộc tính tùy chọn được dùng khi giá trị có thể hoặc không tồn tại.
+
+10
+00:00:38,000 --> 00:00:45,000
+Vì vậy, hãy xác định một giao diện hoặc người dùng.
+
+11
+00:00:45,000 --> 00:00:47,000
+Và chúng ta sẽ có một vài đặc tính ở đây.
+
+12
+00:00:47,000 --> 00:00:50,000
+Đầu tiên, ID, đó sẽ là một con số.
+
+13
+00:00:50,000 --> 00:00:56,000
+Sau đó chúng tôi sẽ có một tên đó là một chuỗi
+
+14
+00:00:56,000 --> 00:01:01,000
+và sau đó một email nhưng một email là tùy chọn.
+
+15
+00:01:01,000 --> 00:01:07,000
+Chúng tôi đặt câu hỏi theo tên và kiểu.
+
+16
+00:01:07,000 --> 00:01:13,000
+Thấy sự khác biệt không? Chúng ta có một dấu chấm hỏi và nó có nghĩa là tùy chọn.
+
+17
+00:01:13,000 --> 00:01:18,000
+Vì vậy, một lần nữa, bất kỳ đối tượng nào được tạo ra có thể hoặc không có tính chất này.
+
+18
+00:01:18,000 --> 00:01:24,000
+Như một ví dụ nhanh chóng, nếu chúng ta có một người dùng, giả sử người dùng một là loại người dùng.
+
+19
+00:01:24,000 --> 00:01:29,000
+Chúng ta có thể xác định danh tính một người và tên là Alice.
+
+20
+00:01:29,000 --> 00:01:34,000
+Sử dụng một bắt buộc.
+
+21
+00:01:34,000 --> 00:01:40,000
+Hãy tạo ra một người dùng như vậy bet user một trong những loại người dùng.
+
+22
+00:01:40,000 --> 00:01:47,000
+Vì vậy, chúng tôi có một bộ ID cho một và chúng tôi có tên của chúng tôi.
+
+23
+00:01:47,000 --> 00:01:54,000
+Vì vậy, Alice và nó gõ hai tính chất, sau đó đó đó là okay.
+
+24
+00:01:54,000 --> 00:02:02,000
+Nếu chúng ta muốn tạo một người dùng thứ hai của người dùng thứ hai, hãy đổi tên là Bob
+
+25
+00:02:02,000 --> 00:02:07,000
+và Bob có địa chỉ email và bây giờ chúng tôi có thể xác định địa chỉ email đó
+
+26
+00:02:07,000 --> 00:02:12,000
+hoặc Bob ở ví dụ.com.
+
+27
+00:02:12,000 --> 00:02:17,000
+Cả hai đối tượng này đều hợp lệ nhưng thuộc tính tùy chọn là hoàn hảo
+
+28
+00:02:17,000 --> 00:02:23,000
+cho các lĩnh vực như email, địa chỉ điện thoại hoặc có thể hồ sơ hình ảnh.
+
+29
+00:02:23,000 --> 00:02:26,000
+Nếu một tài sản khác bị mất,
+
+30
+00:02:26,000 --> 00:02:29,000
+Giá trị của nó sẽ không xác định.
+
+31
+00:02:29,000 --> 00:02:34,000
+Vì vậy, nếu chúng tôi đã làm một cái gì đó ở đây và làm bản ghi bàn điều khiển
+
+32
+00:02:34,000 --> 00:02:40,000
+Và chúng tôi cố truy cập địa chỉ email của người dùng một.
+
+33
+00:02:40,000 --> 00:02:42,000
+Tiến hành thôi.
+
+34
+00:02:42,000 --> 00:02:45,000
+Chúng tôi sẽ nhận được rằng là không xác định.
+
+35
+00:02:45,000 --> 00:02:48,000
+Vì vậy bây giờ chúng ta hãy nói về chỉ đọc các thuộc tính.
+
+36
+00:02:48,000 --> 00:02:56,000
+Vì vậy, những tính chất này chỉ có thể được thiết lập một lần và sau đó không thể được thay đổi sau đó.
+
+37
+00:02:56,000 --> 00:03:01,000
+Vì vậy, hãy chỉ cần loại bỏ thời điểm này để tìm một giao diện khác.
+
+38
+00:03:01,000 --> 00:03:04,000
+Nó là một giao diện gọi là sản phẩm.
+
+39
+00:03:04,000 --> 00:03:10,000
+Tôi sẽ có một tài sản nhận dạng nhưng cái này chỉ được đọc.
+
+40
+00:03:10,000 --> 00:03:15,000
+Vì vậy, chúng tôi sẽ chỉ xác định tính chất này khi chúng tôi tạo ra một sản phẩm.
+
+41
+00:03:15,000 --> 00:03:22,000
+Vì vậy, chỉ đọc và sau đó nhận dạng số.
+
+42
+00:03:22,000 --> 00:03:31,000
+Hãy để tôi có bất kỳ tính chất khác như chuỗi tên và có thể giá.
+
+43
+00:03:31,000 --> 00:03:39,000
+Vì vậy, bây giờ chúng ta hãy tạo ra một đối tượng để táo nhắc chấm để gõ sản phẩm.
+
+44
+00:03:39,000 --> 00:03:49,000
+Và ID của nó sẽ được thiết lập như 101 tên laptop
+
+45
+00:03:49,000 --> 00:03:55,000
+và bất cứ giá nào chúng ta muốn.
+
+46
+00:03:55,000 --> 00:04:02,000
+Bây giờ nếu chúng tôi cố gắng và thay đổi mà vì vậy nếu chúng tôi làm ID sản phẩm
+
+47
+00:04:02,000 --> 00:04:05,000
+và đặt nó thành 102.
+
+48
+00:04:05,000 --> 00:04:11,000
+Văn lệnh gõ sẽ phàn nàn vì nó chỉ là tài sản đọc.
+
+49
+00:04:11,000 --> 00:04:18,000
+Bây giờ một câu hỏi dấu phẩy là sự khác biệt giữa chỉ đọc và táo bón là gì?
+
+50
+00:04:18,000 --> 00:04:26,000
+Bây giờ các phím sẽ táo bạo bởi CRNST ngăn chặn tái lập biến
+
+51
+00:04:26,000 --> 00:04:35,000
+trong khi đọc chỉ ngăn chặn việc trao đổi tài sản trên vật thể.
+
+52
+00:04:35,000 --> 00:04:41,000
+Vì vậy, chúng tôi xác định như vậy bây giờ chúng tôi có một con táo bón ở đây là một sản phẩm táo bón.
+
+53
+00:04:41,000 --> 00:04:47,000
+Vật thể không thể tái tạo nhưng các tính chất vẫn có thể thay đổi.
+
+54
+00:04:47,000 --> 00:04:53,000
+Tất nhiên chúng ta chỉ có thể kết hợp đọc với tùy chọn.
+
+55
+00:04:53,000 --> 00:05:00,000
+Vì vậy, hãy có một giao diện của có lẽ tài khoản như một ví dụ.
+
+56
+00:05:00,000 --> 00:05:07,000
+Chúng ta sẽ chỉ có một tài sản nhận dạng như chúng ta đã làm trên sản phẩm.
+
+57
+00:05:07,000 --> 00:05:21,000
+Dùng tên ngược dòng và một tài sản tùy chọn với địa chỉ email của chuỗi.
+
+58
+00:05:21,000 --> 00:05:26,000
+Bây giờ có lẽ tự hỏi sự khác biệt giữa việc có một tài sản tùy chọn
+
+59
+00:05:26,000 --> 00:05:30,000
+và chỉ có một tài sản mà chúng ta có thể tìm thấy.
+
+60
+00:05:30,000 --> 00:05:37,000
+Vì vậy, nếu bạn có một ví dụ của nói giao diện và đây là chỉ là một trong đơn giản.
+
+61
+00:05:37,000 --> 00:05:43,000
+Hãy thực sự có một ví dụ cuộc gọi.
+
+62
+00:05:43,000 --> 00:05:50,000
+Và chúng ta sẽ có một giá trị mà là một tùy chọn đó là chuỗi.
+
+63
+00:05:50,000 --> 00:05:56,000
+Có gì khác nhau nếu chúng ta làm ví dụ một là loại ví dụ.
+
+64
+00:05:56,000 --> 00:06:00,000
+Và chúng tôi đặt nó chỉ là một đối tượng rỗng.
+
+65
+00:06:00,000 --> 00:06:04,000
+Và chúng tôi cá là ví dụ.
+
+66
+00:06:04,000 --> 00:06:11,000
+Chúng tôi xác định rõ ràng giá trị là không xác định.
+
+67
+00:06:11,000 --> 00:06:17,000
+Bây giờ cả hai đều là hợp lệ nhưng các thuộc tính tùy chọn mà chúng tôi có ở đây
+
+68
+00:06:17,000 --> 00:06:23,000
+nơi chúng tôi xác định nó, nó giao tiếp mục đích của chúng tôi rõ ràng hơn như bạn có thể thấy
+
+69
+00:06:23,000 --> 00:06:27,000
+bởi vì chúng tôi đang đặc biệt thiết lập giá trị như không xác định.
+
+70
+00:06:27,000 --> 00:06:36,000
+Trong khi đó chúng tôi có một đối tượng rỗng giá trị vẫn còn được thiết lập để xác định nhưng nó không rõ ràng như vậy.
+
+71
+00:06:36,000 --> 00:06:40,000
+Bây giờ nó là khá nhiều cho chỉ đọc và tính chất tùy chọn.
+
