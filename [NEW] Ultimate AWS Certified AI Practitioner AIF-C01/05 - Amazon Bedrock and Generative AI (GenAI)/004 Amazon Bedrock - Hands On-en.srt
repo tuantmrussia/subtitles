@@ -1,0 +1,504 @@
+1
+00:00:00,000 --> 00:00:05,000
+ So now we're going to get some practice on Amazon bedrock and the first thing
+
+2
+00:00:05,000 --> 00:00:09,240
+ I want you to do if you want to follow along is to switch the region and to go to
+
+3
+00:00:09,240 --> 00:00:14,160
+ US east Northern Virginia which is US east one. The reason why I want to be there for
+
+4
+00:00:14,160 --> 00:00:19,200
+ the whole course is that the availability of some AI services is restricted to
+
+5
+00:00:19,200 --> 00:00:23,760
+ some regions for now and so being in US east one will guarantee that you will be
+
+6
+00:00:23,760 --> 00:00:28,660
+ able to access all the services you need. Okay so now that we're good let's go
+
+7
+00:00:28,660 --> 00:00:34,300
+ into the search bar and let's tap Amazon bedrock. Next we're going to click on
+
+8
+00:00:34,300 --> 00:00:39,200
+ get started and we are into the Amazon bedrock UI. So let's close this and
+
+9
+00:00:39,200 --> 00:00:43,920
+ we're going to explore together. So here we go so we are in the overview and the
+
+10
+00:00:43,920 --> 00:00:48,040
+ first thing I want to show you is the providers list on the left hand side. So
+
+11
+00:00:48,040 --> 00:00:52,520
+ we have to choose a foundation model to get started with generated AI and we
+
+12
+00:00:52,520 --> 00:00:56,080
+ can choose the foundation model from many different types of providers. Here
+
+13
+00:00:56,080 --> 00:01:00,080
+ you have a list of all the providers available to you right now and this list
+
+14
+00:01:00,080 --> 00:01:03,200
+ makes sense so I have a look on your own time and if you see more providers
+
+15
+00:01:03,200 --> 00:01:07,120
+ don't worry the ones are the most important are covered in this course. So we
+
+16
+00:01:07,120 --> 00:01:13,040
+ have AI 21 labs we have Amazon we have anthropic and so on and so we're
+
+17
+00:01:13,040 --> 00:01:16,120
+ going to be using some of these models but the good thing about it is that when
+
+18
+00:01:16,120 --> 00:01:19,760
+ you click on one of the provider you get a lot of information about what the
+
+19
+00:01:19,760 --> 00:01:24,480
+ provider is so the models they have as well as some examples that you can use
+
+20
+00:01:24,480 --> 00:01:28,440
+ with some of these models and we'll explore them very very soon and then the
+
+21
+00:01:28,440 --> 00:01:32,640
+ types of models we have access directly from this provider as you can see for
+
+22
+00:01:32,640 --> 00:01:37,160
+ Amazon Titan we have access to all the models right here and for each model
+
+23
+00:01:37,160 --> 00:01:40,760
+ there's what's called a model card which explains to us what the model is
+
+24
+00:01:40,760 --> 00:01:44,920
+ about. So about the supported formats and then some attributes some
+
+25
+00:01:44,920 --> 00:01:48,720
+ languages that are supported and so on. If you scroll down you even get some
+
+26
+00:01:48,720 --> 00:01:53,200
+ information about API request. So when you use Amazon bedrock right now we're
+
+27
+00:01:53,200 --> 00:01:56,920
+ going to do everything in our browser but when you want to implement a real
+
+28
+00:01:56,920 --> 00:02:01,120
+ application you will have to write some code and so therefore they give you some
+
+29
+00:02:01,120 --> 00:02:05,640
+ simple code to use these specific models. So button when is Amazon bedrock
+
+30
+00:02:05,640 --> 00:02:09,600
+ is it's super easy for you to understand how to use and select the right
+
+31
+00:02:09,600 --> 00:02:14,520
+ models but so let's get access to some of these models and so to do so we're
+
+32
+00:02:14,520 --> 00:02:20,320
+ going to scroll down all the way here and click on model access. So here on
+
+33
+00:02:20,320 --> 00:02:24,160
+ this page you will conveniently see all the types of models you have access to
+
+34
+00:02:24,160 --> 00:02:29,800
+ on AWS and to be able to use them you must first enable the models. So as you
+
+35
+00:02:29,800 --> 00:02:33,840
+ can see right now there is all these models have are available to request some
+
+36
+00:02:33,840 --> 00:02:37,760
+ of them can be sometimes unavailable for some reason. You can should
+
+37
+00:02:37,760 --> 00:02:41,000
+ contact support some time and so on but we don't need access to all models but
+
+38
+00:02:41,000 --> 00:02:45,480
+ still if you want to make this quick just click on enable all models. So here
+
+39
+00:02:45,480 --> 00:02:49,320
+ we request access to all these models right here we're good to go just to come
+
+40
+00:02:49,320 --> 00:02:54,080
+ next and then you need to enter some use case details around your company
+
+41
+00:02:54,080 --> 00:02:58,200
+ name your URL and this is just some survey information it's not very very
+
+42
+00:02:58,200 --> 00:03:06,920
+ important so enter this. So here I put Stefan Merrick and I'll put www.stefanmerrick.com
+
+43
+00:03:06,920 --> 00:03:11,920
+ and then the industry I've operated is going to be education and then this is
+
+44
+00:03:11,920 --> 00:03:18,680
+ for my internal employees and then it's just testing Amazon bedrock. Let's click
+
+45
+00:03:18,680 --> 00:03:25,920
+ on next and now let's click on submit. So this doing enabling the models does
+
+46
+00:03:25,920 --> 00:03:30,920
+ not cost any money but using the models will cost some money. So in this course I
+
+47
+00:03:30,920 --> 00:03:36,360
+ tried to keep cost at a minimum but when you're using generative AI and AI
+
+48
+00:03:36,360 --> 00:03:40,080
+ overall it's going to be rarely free and so therefore if you want to follow
+
+49
+00:03:40,080 --> 00:03:44,360
+ along with me and perform the hands-on you will have to spend some money. At the
+
+50
+00:03:44,360 --> 00:03:47,800
+ beginning of the course I gave you access to the entire budget you will have
+
+51
+00:03:47,800 --> 00:03:51,720
+ for this course and that I've spent but it's good for you to make your own
+
+52
+00:03:51,720 --> 00:03:55,520
+ decision. Again you cannot just also see me do and it's going to be fine. You
+
+53
+00:03:55,520 --> 00:03:59,160
+ don't have to do everything as I do. So sometimes you will get access failed
+
+54
+00:03:59,160 --> 00:04:02,880
+ for example these ones we cannot access to because we should talk to Amazon
+
+55
+00:04:02,880 --> 00:04:07,200
+ support so don't worry too much about these are messages as long as you have
+
+56
+00:04:07,200 --> 00:04:11,160
+ access to some of these models you're good to go and to get access to the models
+
+57
+00:04:11,160 --> 00:04:14,800
+ it can take a few minutes so you can see some of them for example from Amazon
+
+58
+00:04:14,800 --> 00:04:19,760
+ are already granted but others are in progress for example from
+
+59
+00:04:19,760 --> 00:04:23,280
+ anthropic. And if you want to read the terms and conditions of the model you
+
+60
+00:04:23,280 --> 00:04:26,840
+ can click here and access it. So now let me just pause this video until I get
+
+61
+00:04:26,840 --> 00:04:30,720
+ access to all my models. Okay so it took about a minute but now as you can see
+
+62
+00:04:30,720 --> 00:04:35,160
+ everything is access granted except the few models from Mitra and from
+
+63
+00:04:35,160 --> 00:04:39,760
+ anthropic. Next let's go into the examples tab on the left-hand side. So now
+
+64
+00:04:39,760 --> 00:04:43,680
+ we have access to a lot of examples that Amazon Bedrock is giving us and they're
+
+65
+00:04:43,680 --> 00:04:47,440
+ good to explore from a learning perspective so you can explore a lot of them on
+
+66
+00:04:47,440 --> 00:04:51,240
+ your own if you wanted to and you can filter them by provider so the ones
+
+67
+00:04:51,240 --> 00:04:56,240
+ start for Amazon specifically and then the modality is it a text type of prompt
+
+68
+00:04:56,240 --> 00:05:00,240
+ or is it an image type of prompt so you can do some tests. And for every prompt
+
+69
+00:05:00,240 --> 00:05:04,960
+ right here you get access to some information so here this is a prompt to
+
+70
+00:05:04,960 --> 00:05:09,560
+ summarize a meeting transcript into action items and you see what the prompt is
+
+71
+00:05:09,560 --> 00:05:13,560
+ you see what the configuration was and then on the bottom you see what the
+
+72
+00:05:13,560 --> 00:05:16,880
+ response was. So you don't have to run the examples on your own if you don't
+
+73
+00:05:16,880 --> 00:05:21,000
+ want to you can just look at them to understand what was the prompt and what was
+
+74
+00:05:21,000 --> 00:05:24,960
+ the response. On top of it it provides you code samples to implement this into
+
+75
+00:05:24,960 --> 00:05:29,160
+ your own code if you need it to. So it's very handy and for example if we look
+
+76
+00:05:29,160 --> 00:05:35,480
+ at images we can see here blue back back on the table and it generates these
+
+77
+00:05:35,480 --> 00:05:39,560
+ kind of images. So this is cool because we can learn about AI without spending any
+
+78
+00:05:39,560 --> 00:05:44,480
+ money but we want to actually try it out. So let's go ahead and actually explore
+
+79
+00:05:44,480 --> 00:05:49,360
+ what's called the text playground. So here we need to first select a model so
+
+80
+00:05:49,360 --> 00:05:53,240
+ and when you close configuration and for example we need to select a model so
+
+81
+00:05:53,240 --> 00:05:59,000
+ I click on select model, I'll choose Amazon and then we can choose title G1
+
+82
+00:05:59,000 --> 00:06:04,000
+ express perfect and apply. So as you can see here the throughput is on demand
+
+83
+00:06:04,000 --> 00:06:08,160
+ that means that we're going to be paid on demand when we use the model and so
+
+84
+00:06:08,160 --> 00:06:11,600
+ as soon as we start using them all we are going to spend some money but let's
+
+85
+00:06:11,600 --> 00:06:20,640
+ try it out. Let's actually say what is Amazon Web Services and click on run
+
+86
+00:06:20,640 --> 00:06:29,960
+ and now we get the response directly from the model. So here we learn about
+
+87
+00:06:29,960 --> 00:06:34,480
+ Amazon Web Services and it's quite a detailed answer we're getting when data is
+
+88
+00:06:34,480 --> 00:06:38,680
+ generated over time as you can see we have a lot of information given to us
+
+89
+00:06:38,680 --> 00:06:43,320
+ by the model so we learn about overall AWS here then we learn about the
+
+90
+00:06:43,320 --> 00:06:47,800
+ compute aspects right here then the database says right here the analytics
+
+91
+00:06:47,800 --> 00:06:50,960
+ networking the mobile and it goes on and on and on and on so as you can see
+
+92
+00:06:50,960 --> 00:06:57,280
+ this type of model for example gives us a very lengthy type of answer. You can
+
+93
+00:06:57,280 --> 00:07:01,520
+ also have a look at the chat. So the chat here is again for you to select the
+
+94
+00:07:01,520 --> 00:07:05,320
+ model. So let's take another one let's take anthropic and then we're going to
+
+95
+00:07:05,320 --> 00:07:14,320
+ get a cloud three sonets and again I'm going to say what is AWS and we click
+
+96
+00:07:14,320 --> 00:07:19,960
+ on run and here we get the answer directly from the model. The cool thing
+
+97
+00:07:19,960 --> 00:07:23,520
+ about this page is that we're going to get some information around the model
+
+98
+00:07:23,520 --> 00:07:28,520
+ metrics as well. So as you can see here the latency was seven seconds this is
+
+99
+00:07:28,520 --> 00:07:33,640
+ number of input tokens so this is how much how much text went into the model
+
+100
+00:07:33,640 --> 00:07:38,720
+ so 12 input tokens exactly and we see the output token counts so about 300
+
+101
+00:07:38,720 --> 00:07:42,680
+ this is the length of the answer. So token is not exactly a word it's a bit
+
+102
+00:07:42,680 --> 00:07:47,840
+ more complicated but this is 300 this is a pretty lengthy answer and we also
+
+103
+00:07:47,840 --> 00:07:51,400
+ have some information around the configuration. Now this configuration we have
+
+104
+00:07:51,400 --> 00:07:55,680
+ to look at it in greater detail later on so we need to look at it but as you
+
+105
+00:07:55,680 --> 00:07:59,620
+ can see here I was able to ask a prompt and again I get an answer for AWS
+
+106
+00:07:59,620 --> 00:08:03,600
+ which stands for Amazon lip services and then we get some key points about
+
+107
+00:08:03,600 --> 00:08:07,640
+ AWS. The fact it is infrastructure as a service that has a wide range of
+
+108
+00:08:07,640 --> 00:08:11,360
+ services we're looking at the AI ones but there's so many and so on. So as you
+
+109
+00:08:11,360 --> 00:08:14,720
+ can see different models will give you different kind of answers and choosing
+
+110
+00:08:14,720 --> 00:08:19,480
+ the model is going to be a big part of your work. On top of it we can put
+
+111
+00:08:19,480 --> 00:08:24,800
+ text but we can also add files if you wanted to if the model supports it and for
+
+112
+00:08:24,800 --> 00:08:29,160
+ image finally so here this is going to cost you a lot more money to generate
+
+113
+00:08:29,160 --> 00:08:32,640
+ an image and to generate text so don't do it if you don't want to. We're talking
+
+114
+00:08:32,640 --> 00:08:37,000
+ about sense but still four cents or eight cents but still it is some money. So
+
+115
+00:08:37,000 --> 00:08:40,960
+ here's an example generate images from a prompt and we say blue backpack on the
+
+116
+00:08:40,960 --> 00:08:51,400
+ table and we click on rent on run and we get the output of three images right
+
+117
+00:08:51,400 --> 00:08:56,320
+ here of blue backpacks and they were fully generated by AI which is pretty
+
+118
+00:08:56,320 --> 00:08:59,920
+ cool. So again the configurations can be pretty vast so what type of
+
+119
+00:08:59,920 --> 00:09:03,240
+ orientation do we want? What size of the image we want? How many images do we
+
+120
+00:09:03,240 --> 00:09:08,600
+ want and so on and so this is how to tune this image playground. But here we've
+
+121
+00:09:08,600 --> 00:09:12,920
+ seen the basics of Amazon bedrock and chain AI so we were able to generate some
+
+122
+00:09:12,920 --> 00:09:17,800
+ text directly using the text feature or the chat feature. We were able to
+
+123
+00:09:17,800 --> 00:09:21,840
+ generate some images as well we're able to have a look at all the providers and
+
+124
+00:09:21,840 --> 00:09:26,960
+ some examples associated with them and also we saw how to enable access to the
+
+125
+00:09:26,960 --> 00:09:30,720
+ models. So that's it for the overview of Amazon bedrock. I hope you liked it
+
+126
+00:09:30,720 --> 00:09:35,000
+ and I will see you in the next lecture.
+
