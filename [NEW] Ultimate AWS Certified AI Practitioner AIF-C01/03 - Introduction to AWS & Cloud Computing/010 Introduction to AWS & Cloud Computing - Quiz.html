@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 86185139, "assessment_type": "multiple-choice", "prompt": {"question": "<p>You ONLY want to manage Applications and Data. Which type of Cloud Computing model should you use?</p>", "relatedLectureIds": "", "feedbacks": ["In the on-premises model, you manage everything from networking to applications.", "In the Infrastructure as a Service model, you manage the operating system, the middleware, the runtime, the data and the applications.", "In the Software as a Service model, everything is managed by 3rd-party.", "In the Platform as a Service model, you only manage the data and the applications."], "answers": ["<p>On-premises</p>", "<p>Infrastructure as a Service (IaaS)</p>", "<p>Software as a Service (SaaS)</p>", "<p>Platform as a Service (PaaS)</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "You ONLY want to manage Applications and Data. Which type of Cloud Computing model should you use?", "related_lectures": []}, {"_class": "assessment", "id": 86185357, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is the pricing model of Cloud Computing?</p>", "relatedLectureIds": "", "feedbacks": ["This is not the pricing model of Cloud Computing.", "In Cloud Computing, you are only charged for what you use.", "This is not the pricing model of Cloud Computing.", "This is not the pricing model of Cloud Computing."], "answers": ["<p>Discounts over time</p>", "<p>Pay-as-you-go pricing</p>", "<p>Pay once a year</p>", "<p>Flat-rate pricing</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What is the pricing model of Cloud Computing?", "related_lectures": []}, {"_class": "assessment", "id": 86185371, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which Global Infrastructure identity is composed of one or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure?</p>", "relatedLectureIds": "", "feedbacks": ["Edge Locations are caching sites to deliver content to end users with lower latency. They are located in Availability Zones. They are not used to deploy infrastructure, but for caching content.", "This is the definition of Availability Zones.", "AWS Regions are a cluster of data centers, and are geographical constructs composed of two or more Availability Zones."], "answers": ["<p>Edge Locations</p>", "<p>Availability Zones</p>", "<p>Regions</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Which Global Infrastructure identity is composed of one or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure?", "related_lectures": []}, {"_class": "assessment", "id": 86185575, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following is NOT one of the Five Characteristics of Cloud Computing?</p>", "relatedLectureIds": "", "feedbacks": ["This is one of the Five Characteristics of Cloud Computing. You quickly acquire resources as you need them and release resources when you no longer need them. You also scale quickly based on demand.", "This is one of the Five Characteristics of Cloud Computing. Cloud Computing supports a multi-tenant model, and multiple customers are serviced from the same physical resources.", "This is not one of the Five Characteristics of Cloud Computing. In the cloud, everything is self-service.", "This is one of the Five Characteristics of Cloud Computing. You can provision and use Cloud Computing resources without the need of human interaction from the service provider."], "answers": ["<p>Rapid elasticity and scalability</p>", "<p>Multi-tenancy and resource pooling</p>", "<p>Dedicated Support Agent to help you deploy applications</p>", "<p>On-demand self service</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Which of the following is NOT one of the Five Characteristics of Cloud Computing?", "related_lectures": []}, {"_class": "assessment", "id": 86185683, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which are the 3 pricing fundamentals of the AWS&nbsp;Cloud?</p>", "relatedLectureIds": "", "feedbacks": ["Data transfer in the AWS Cloud is free.", "Networking is not a pricing fundamental of the AWS Cloud.", "Compute, Storage, and data transfer out of the AWS\u00a0Cloud are the 3 pricing fundamentals of the AWS Cloud.", "Storage, Functions and data transfer in the AWS Cloud are not pricing fundamentals of the AWS Cloud."], "answers": ["<p>Compute, Storage, and Data transfer in the AWS&nbsp;Cloud</p>", "<p>Compute, Networking, and Data transfer out of the AWS&nbsp;Cloud</p>", "<p>Compute, Storage, and Data transfer out of the AWS&nbsp;Cloud</p>", "<p>Storage, Functions, and Data transfer in the AWS&nbsp;Cloud</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Which are the 3 pricing fundamentals of the AWS&nbsp;Cloud?", "related_lectures": []}, {"_class": "assessment", "id": 86185729, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following options is NOT a point of consideration when choosing an AWS Region?</p>", "relatedLectureIds": "", "feedbacks": ["Compliance with data governance and legal requirements should be considered when choosing an AWS Region. You might have location-specific data regulations.", "Proximity to customers (and therefore reduced latency) should be considered when choosing an AWS Region. You want to be as close as possible to your end users.", "Capacity is unlimited in the cloud, you do not need to worry about it. The 4 points of considerations when choosing an AWS Region are: compliance with data governance and legal requirements, proximity to customers, available services and features within a Region, and pricing.", "Pricing should be considered when choosing an AWS Region. It is transparent and varies from region to region. You might consider deploying your application in a Region with lower pricing."], "answers": ["<p>Compliance with data governance</p>", "<p>Latency</p>", "<p>Capacity availability</p>", "<p>Pricing</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Which of the following options is NOT a point of consideration when choosing an AWS Region?", "related_lectures": []}, {"_class": "assessment", "id": 86185749, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following is NOT&nbsp;an advantage of Cloud Computing?</p>", "relatedLectureIds": "", "feedbacks": ["This is advantage of Cloud Computing. With Cloud Computing you pay on-demand and benefit from reduced Total Cost of Ownership and Operational Expense (OPEX).", "You must train your employees more so they can use the cloud effectively.", "This is an advantage of Cloud Computing.", "This is an advantage of Cloud Computing."], "answers": ["<p>Trade capital expense (CAPEX) for operational expense (OPEX)</p>", "<p>Train your employees less</p>", "<p>Go global in minutes</p>", "<p>Stop spending money running and maintaining data centers</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Which of the following is NOT&nbsp;an advantage of Cloud Computing?", "related_lectures": []}, {"_class": "assessment", "id": 86185893, "assessment_type": "multiple-choice", "prompt": {"question": "<p>AWS&nbsp;Regions are composed of?</p>", "relatedLectureIds": "", "feedbacks": ["Edge Locations are used to distribute content closer to users.", "Availability Zones are composed of one or more discrete data centers.", "AWS Regions consist of multiple, isolated, and physically separate Availability Zones within a geographic area."], "answers": ["<p>Two or more Edge Locations</p>", "<p>One or more discrete data centers</p>", "<p>Three or more Availability Zones</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "AWS&nbsp;Regions are composed of?", "related_lectures": []}, {"_class": "assessment", "id": 86185905, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following services has a global scope?</p>", "relatedLectureIds": "", "feedbacks": ["EC2 is a regional service.", "IAM is a global service (encompasses all regions).", "Lambda is a regional service.", "Rekognition is a regional service."], "answers": ["<p>EC2</p>", "<p>IAM</p>", "<p>Lambda</p>", "<p>Rekognition</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Which of the following services has a global scope?", "related_lectures": []}, {"_class": "assessment", "id": 86185933, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following is the definition of Cloud Computing?</p>", "relatedLectureIds": "", "feedbacks": ["This is the definition of Agility, not Cloud Computing", "This is the definition of Elasticity, not Cloud Computing", "This is the definition of Cloud Computing", "This is the definition of Flexibility, not Cloud Computing"], "answers": ["<p>Rapidly develop, test and launch software applications</p>", "<p>Automatic and quick ability to acquire resources as you need them and release resources when you no longer need them</p>", "<p>On-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user</p>", "<p>Change resource types when needed</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Which of the following is the definition of Cloud Computing?", "related_lectures": []}, {"_class": "assessment", "id": 86185947, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What defines the distribution of responsibilities for security in the AWS Cloud?</p>", "relatedLectureIds": "", "feedbacks": ["The AWS Pricing Fundamentals describe the 3 fundamentals of the pay-as-you-go pricing model in AWS.", "The Shared Responsibility Model defines who is responsible for what in the AWS Cloud.", "The AWS Acceptable Use Policy describes prohibited uses of the web services offered by AWS.", "The AWS Management Console allows you to manage services in AWS."], "answers": ["<p>AWS&nbsp;Pricing Fundamentals</p>", "<p>The Shared Responsibility Model</p>", "<p>AWS Acceptable Use Policy</p>", "<p>The AWS&nbsp;Management Console</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What defines the distribution of responsibilities for security in the AWS Cloud?", "related_lectures": []}, {"_class": "assessment", "id": 86185965, "assessment_type": "multiple-choice", "prompt": {"question": "<p>A company would like to benefit from the advantages of the Public Cloud but would like to keep sensitive assets in its own infrastructure. Which deployment model should the company use?</p>", "relatedLectureIds": "", "feedbacks": ["Using only the Private Cloud does not allow you to benefit from the advantages of the Public Cloud.", "Using only the Public Cloud does not allow you to keep your sensitives assets in your own infrastructure.", "Using a Hybrid Cloud deployment model allows you to benefit from the flexibility, scalability and on-demand storage access while keeping security and performance of your own infrastructure. "], "answers": ["<p>Private Cloud</p>", "<p>Public Cloud</p>", "<p>Hybrid&nbsp;Cloud</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "A company would like to benefit from the advantages of the Public Cloud but would like to keep sensitive assets in its own infrastructure. Which deployment model should the company use?", "related_lectures": []}, {"_class": "assessment", "id": 86185977, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is NOT authorized to do on AWS&nbsp;according to the AWS&nbsp;Acceptable Use Policy?</p>", "relatedLectureIds": "", "feedbacks": ["You can build gaming applications on AWS, it's one of the common use cases.", "You can deploy a website on AWS, it's one of the common use cases.", "You can run analytics on AWS, but you cannot run analytics on fraudulent content. Refer to the AWS Acceptable Use Policy to see what is not authorized to do on AWS.", "You can backup your data on AWS, it's one of the common use cases."], "answers": ["<p>Building a gaming application </p>", "<p>Deploying a website</p>", "<p>Run analytics on stolen content</p>", "<p>Backup your data</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "What is NOT authorized to do on AWS&nbsp;according to the AWS&nbsp;Acceptable Use Policy?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>
