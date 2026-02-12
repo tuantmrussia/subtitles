@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:05,080
+ In this lesson we are going to be comparing two powerful tools for the finding structure
+
+2
+00:00:05,080 --> 00:00:11,040
+ in TypeScript, which is interfaces and abstract classes.
+
+3
+00:00:11,040 --> 00:00:17,800
+ Move help us enforce consistency across multiple types, but they also serve different purposes.
+
+4
+00:00:17,800 --> 00:00:24,320
+ Let's break down how they work, when to use them and how they complement each other.
+
+5
+00:00:24,320 --> 00:00:31,400
+ First of all, what is an interface? An interface defines a contract. It describes the shape
+
+6
+00:00:31,400 --> 00:00:37,880
+ of an object or a class, but it doesn't actually provide any implementation itself.
+
+7
+00:00:37,880 --> 00:00:46,720
+ So let's do a quick example. So we can do interface. Let's have an interface of shape.
+
+8
+00:00:46,720 --> 00:00:56,920
+ So the shape can define, for example, some methods, so we could do get area, and we could
+
+9
+00:00:56,920 --> 00:01:03,160
+ just say it returns the method returns the number, and we could also have some properties
+
+10
+00:01:03,160 --> 00:01:13,640
+ as well. So we could have shape, for example, sides, and we could have defined it as number.
+
+11
+00:01:13,640 --> 00:01:21,240
+ But any class that implements this particular interface, shape, must define the get area
+
+12
+00:01:21,240 --> 00:01:28,840
+ method, as well as providing the number at all the sides.
+
+13
+00:01:28,840 --> 00:01:36,280
+ Now an abstract class is basically a partially implemented blueprint can include both abstract
+
+14
+00:01:36,280 --> 00:01:42,960
+ methods, I know implementation, and also concrete methods with logic.
+
+15
+00:01:42,960 --> 00:01:48,820
+ So let's look at the difference between it. So we can have abstract, and say abstract
+
+16
+00:01:48,820 --> 00:01:57,720
+ class shape. So notice we have to use the word class here as well as abstract. And now
+
+17
+00:01:57,720 --> 00:02:05,320
+ we can say abstract, get area. So just like before, we are just defining a shape of
+
+18
+00:02:05,320 --> 00:02:12,920
+ a method, but not actually giving any implementation details, but we can also, in a abstract
+
+19
+00:02:12,920 --> 00:02:23,400
+ class, we could have some methods which do have an implementation, so we could say describe,
+
+20
+00:02:23,400 --> 00:02:33,240
+ and that returns a string, and we can say, for example, return this is a shape. So that
+
+21
+00:02:33,240 --> 00:02:40,280
+ means that this actually has a method, which is got some implementation. And for example,
+
+22
+00:02:40,280 --> 00:02:45,520
+ what we are doing things like in .NET, we have something called two string, and we could
+
+23
+00:02:45,520 --> 00:02:51,680
+ have a method like two string on the method. And that's pretty much sets in all the
+
+24
+00:02:51,680 --> 00:02:56,680
+ base classes with the implementation, but that's pretty much the only methods that's
+
+25
+00:02:56,680 --> 00:03:05,160
+ been defined on that class in an object in say .NET. Now we can't actually create an
+
+26
+00:03:05,160 --> 00:03:10,480
+ instance of an abstract class directly, it must always be extended. So that's a difference
+
+27
+00:03:10,480 --> 00:03:18,080
+ between that and the interface. So the interface we actually have to get a class to implement
+
+28
+00:03:18,080 --> 00:03:24,220
+ the interface, and for the abstract class, we can't actually create an instance of the
+
+29
+00:03:24,220 --> 00:03:32,840
+ abstract class directly, we must extend it. Let's learn how to extend this guy. So we're
+
+30
+00:03:32,840 --> 00:03:44,120
+ going to have a class here to class square, and this extends this abstract class shape.
+
+31
+00:03:44,120 --> 00:03:53,440
+ I'm going to have a constructor, and we can say public side number, actually use the
+
+32
+00:03:53,440 --> 00:04:00,680
+ super keyword to be able to call the constructor on the abstract class, which actually
+
+33
+00:04:00,680 --> 00:04:10,000
+ in this case doesn't actually have one, but if we did super, we're then going to call
+
+34
+00:04:10,000 --> 00:04:15,600
+ the constructor on here. So we could of course have a constructor to find on our shape class
+
+35
+00:04:15,600 --> 00:04:22,400
+ if you wanted to. And then we actually need to do override the get area method, and that's
+
+36
+00:04:22,400 --> 00:04:31,520
+ what's TypeScript is complaining about, to come in here and do get area. It needs to have
+
+37
+00:04:31,520 --> 00:04:40,200
+ the same return type, then begin to say return this side, multiply by two, or squared
+
+38
+00:04:40,200 --> 00:04:49,400
+ by two. So abstract classes are ideal when we want to share logic and enforce structure.
+
+39
+00:04:49,400 --> 00:04:56,160
+ Let's quickly undo this and go back to where we have our interface. And for this, we can
+
+40
+00:04:56,160 --> 00:05:04,360
+ actually show you how we can actually create a class that implements this interface. We can
+
+41
+00:05:04,360 --> 00:05:13,640
+ do this in the same sort of ways. So we could say class circle, this implements interface
+
+42
+00:05:13,640 --> 00:05:24,040
+ shape. And now we can define a construct on it. So we could say a public radius, which
+
+43
+00:05:24,040 --> 00:05:34,520
+ is a number. We're going to have an empty implementation for this. And now we can override
+
+44
+00:05:34,520 --> 00:05:46,160
+ the method get area, which returns a number. And for the implementation, we just do return
+
+45
+00:05:46,160 --> 00:05:58,960
+ math at dot pi times this radius squared of two. So interfaces are great for enforcing
+
+46
+00:05:58,960 --> 00:06:04,780
+ structure across unrelated classes. Let's talk about the different key differences between
+
+47
+00:06:04,780 --> 00:06:14,120
+ an interface and abstract class. So for an interface, it can't contain an implementation,
+
+48
+00:06:14,120 --> 00:06:22,960
+ but an abstract class can contain implementation. Now, on an interface, it can't be extended,
+
+49
+00:06:22,960 --> 00:06:29,760
+ but an abstract class can be extended. And both of the classes can be implemented by
+
+50
+00:06:29,760 --> 00:06:37,080
+ a class. What about multiple inheritance? Well, multiple inheritance can happen with an interface
+
+51
+00:06:37,080 --> 00:06:45,800
+ via the implements keyword, but the abstract class can only have one base class. So interfaces
+
+52
+00:06:45,800 --> 00:06:52,400
+ define contracts, whereas abstract classes define reusable blueprints. So we've learned
+
+53
+00:06:52,400 --> 00:06:59,000
+ how to implement interfaces, extends abstract classes and choose the right tool for the
+
+54
+00:06:59,000 --> 00:06:59,280
+ job.
+
