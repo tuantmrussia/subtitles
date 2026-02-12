@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:03,900
+ Okay, so let's practice how to do good prompting.
+
+2
+00:00:03,900 --> 00:00:06,340
+ So let's go in their chats and we're going to select a model.
+
+3
+00:00:06,340 --> 00:00:11,620
+ We're going to select an anthropic and then we select a Cloud 3 Hiku.
+
+4
+00:00:11,620 --> 00:00:17,280
+ We'll just write a prompt, write me a travel itinerary.
+
+5
+00:00:17,280 --> 00:00:21,140
+ This prompt is very naive, it's not very detailed.
+
+6
+00:00:21,140 --> 00:00:26,560
+ Here the model just responds, here is a seven-day trip and it shows
+
+7
+00:00:26,560 --> 00:00:28,700
+ Rome, Florence, and Venice, and Italy.
+
+8
+00:00:28,700 --> 00:00:32,520
+ So why not this is an answer that is possible for us to deal with,
+
+9
+00:00:32,520 --> 00:00:35,520
+ but it's not the one I want because I was not very precise.
+
+10
+00:00:35,520 --> 00:00:39,160
+ Instead, we want to use a framework we had of giving instructions,
+
+11
+00:00:39,160 --> 00:00:44,040
+ giving context, giving input data, and then giving an output format.
+
+12
+00:00:44,040 --> 00:00:47,800
+ So under our code, under prompting, I've created prompted.txt.
+
+13
+00:00:47,800 --> 00:00:50,120
+ And we're going to use the first format.
+
+14
+00:00:50,120 --> 00:00:53,060
+ So the instructions, the context, and the output.
+
+15
+00:00:53,060 --> 00:00:55,400
+ So let's have a look at what it is.
+
+16
+00:00:55,400 --> 00:00:59,880
+ So we're saying, hey, please create a three-day itinerary for Paris France.
+
+17
+00:00:59,880 --> 00:01:04,360
+ It should include visits to historical landmarks, art museums, and popular local restaurants.
+
+18
+00:01:04,360 --> 00:01:07,880
+ You want good balance, you want to have suggestions for breakfast, lunch, and dinner.
+
+19
+00:01:07,880 --> 00:01:08,840
+ Here's the context.
+
+20
+00:01:08,840 --> 00:01:13,480
+ So we've never traveled to Paris before and we want to experience both the well-known and hidden gems.
+
+21
+00:01:13,480 --> 00:01:16,680
+ So of course, some people who have already been to Paris may want something different.
+
+22
+00:01:16,680 --> 00:01:19,000
+ So the context is very important.
+
+23
+00:01:19,000 --> 00:01:22,200
+ And then input data right now is just a three-day trip to Paris,
+
+24
+00:01:22,200 --> 00:01:26,040
+ but we may want to add articles that we've read in the news,
+
+25
+00:01:26,040 --> 00:01:30,040
+ and this would be a good way to enhance the outcome of this prompt.
+
+26
+00:01:30,040 --> 00:01:32,600
+ And then our put indicator is, what do we want?
+
+27
+00:01:32,600 --> 00:01:37,880
+ We want the travel itinerary with specific times, location, descriptions, and dining recommendations.
+
+28
+00:01:37,880 --> 00:01:39,880
+ So this is quite a complete prompt.
+
+29
+00:01:39,880 --> 00:01:48,760
+ And as you can see, now the model is telling us a lot of things about what to do on each specific day.
+
+30
+00:01:48,760 --> 00:01:53,320
+ And this is quite nice because, well, we are getting the recommendations we want for the exact
+
+31
+00:01:53,320 --> 00:01:55,240
+ prompt we cared about.
+
+32
+00:01:55,240 --> 00:01:59,400
+ So it really shows you the difference of quality of a good and a bad prompt.
+
+33
+00:01:59,400 --> 00:02:05,000
+ Now, we also must include, if we want to, improve it, negative prompting.
+
+34
+00:02:05,000 --> 00:02:07,960
+ And negative prompting is, what do we not want to see?
+
+35
+00:02:07,960 --> 00:02:13,000
+ So here, for example, do not include activities that are primarily for children or families
+
+36
+00:02:13,000 --> 00:02:17,480
+ and avoid overly touristy restaurants, and include anything that requires too much travel,
+
+37
+00:02:17,480 --> 00:02:19,000
+ except Versailles.
+
+38
+00:02:19,000 --> 00:02:21,640
+ So let's paste it and run it.
+
+39
+00:02:21,640 --> 00:02:26,600
+ And again, you can have a look at if this output was better than the previous one,
+
+40
+00:02:26,600 --> 00:02:28,840
+ or not based on the negative prompting.
+
+41
+00:02:28,840 --> 00:02:31,880
+ And we can do any kind of creative negative prompting.
+
+42
+00:02:31,880 --> 00:02:34,680
+ For example, we can say, hey, here is the instructions.
+
+43
+00:02:34,680 --> 00:02:41,320
+ And then do not recommend more than three activities per day.
+
+44
+00:02:41,320 --> 00:02:43,160
+ And we run it.
+
+45
+00:02:43,160 --> 00:02:47,320
+ And again, with the negative prompting, now we're getting less activities per day.
+
+46
+00:02:47,320 --> 00:02:51,480
+ So it's a bit shorter day and maybe we'll have more time to do stuff in Paris.
+
+47
+00:02:51,480 --> 00:02:54,120
+ I cannot tell you if this is a good recommendation or not.
+
+48
+00:02:54,120 --> 00:02:57,560
+ I'll leave it in Paris, but AI can be sometimes surprising.
+
+49
+00:02:57,560 --> 00:03:00,440
+ Anyway, if you would trust AI to organize your next travel,
+
+50
+00:03:00,440 --> 00:03:04,200
+ you know how to do it now and you know how to properly build a prompt for it.
+
+51
+00:03:04,200 --> 00:03:05,560
+ So I hope you liked it.
+
+52
+00:03:05,560 --> 00:03:07,560
+ And I will see you in the next lecture.
+
