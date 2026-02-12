@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:02,200
+Vì vậy để chọn một mô hình,
+
+2
+00:00:02,200 --> 00:00:04,920
+Đôi khi bạn có thể muốn đánh giá mô hình đó.
+
+3
+00:00:04,920 --> 00:00:09,800
+Và bạn có thể muốn mang lại một số mức độ nghiêm ngặt khi bạn đánh giá mô hình đó.
+
+4
+00:00:09,800 --> 00:00:13,840
+Vì vậy, bạn có thể làm trên Amazon Bedrock được gọi là tự động đánh giá.
+
+5
+00:00:13,840 --> 00:00:16,640
+Vì vậy, đây là đánh giá một mô hình để kiểm soát chất lượng,
+
+6
+00:00:16,640 --> 00:00:18,800
+Và sau đó bạn sẽ giao cho nó một số nhiệm vụ.
+
+7
+00:00:18,800 --> 00:00:21,200
+Vì vậy, bạn có một số loại công việc xây dựng.
+
+8
+00:00:21,200 --> 00:00:26,040
+Ví dụ như, bài tập tóm tắt văn bản, câu hỏi và câu trả lời,
+
+9
+00:00:26,040 --> 00:00:30,480
+Phân loại văn bản, hoặc mở và làm thế hệ văn bản.
+
+10
+00:00:30,480 --> 00:00:32,760
+Và vì vậy bạn sẽ chọn một trong những loại nhiệm vụ này,
+
+11
+00:00:32,760 --> 00:00:35,840
+và sau đó bạn cần thêm một bộ dữ liệu nhắc.
+
+12
+00:00:35,840 --> 00:00:42,680
+Hoặc bạn có thể sử dụng một trong những bộ dữ liệu gợi ý có sẵn từ AWS trên Bedrock Amazon.
+
+13
+00:00:42,680 --> 00:00:47,240
+Và sau đó nhờ vào tất cả những điều này, điểm số sẽ được tính tự động.
+
+14
+00:00:47,240 --> 00:00:51,000
+Vì vậy, hãy để tôi cho bạn thấy những gì tôi có nghĩa là trong một biểu đồ vì vậy bạn thực sự hiểu những gì xảy ra.
+
+15
+00:00:51,000 --> 00:00:52,840
+Vậy là chúng ta có những câu hỏi chuẩn mực.
+
+16
+00:00:52,840 --> 00:00:58,720
+Và một lần nữa, bạn có thể tự trả lời các câu hỏi đánh dấu, hoặc bạn có thể sử dụng câu hỏi từ AWS.
+
+17
+00:00:58,720 --> 00:01:02,560
+Và sau đó tất nhiên, bạn có những câu hỏi, nhưng bởi vì bạn đã tạo ra điểm chuẩn,
+
+18
+00:01:02,560 --> 00:01:06,040
+Anh cần phải có những câu hỏi chuẩn mực cũng như những câu trả lời chuẩn mực.
+
+19
+00:01:06,040 --> 00:01:13,760
+Và câu trả lời chính là câu trả lời lý tưởng cho câu hỏi của anh.
+
+20
+00:01:13,760 --> 00:01:16,560
+Sau đó bạn có các mô hình để đánh giá.
+
+21
+00:01:16,560 --> 00:01:22,720
+Và bạn sẽ đưa tất cả các câu hỏi chuẩn vào mô hình cần được đánh giá,
+
+22
+00:01:22,720 --> 00:01:25,480
+Mà sẽ tất nhiên tạo ra một số câu trả lời.
+
+23
+00:01:25,480 --> 00:01:29,680
+Và những câu trả lời này được tạo ra bởi một mô hình AI.
+
+24
+00:01:29,680 --> 00:01:35,840
+Và sau đó tất nhiên, chúng tôi cần phải so sánh các câu trả lời chuẩn xác với các câu trả lời tạo ra của bạn.
+
+25
+00:01:35,840 --> 00:01:40,480
+Vì vậy, chúng tôi so sánh hai, và bởi vì chúng tôi đang trong một đánh giá tự động,
+
+26
+00:01:40,480 --> 00:01:45,400
+Sau đó nó sẽ là một mô hình khác, một mô hình AI khác được gọi là mô hình thẩm phán,
+
+27
+00:01:45,400 --> 00:01:50,960
+mà sẽ xem xét câu trả lời chuẩn xác và câu trả lời tạo ra.
+
+28
+00:01:50,960 --> 00:01:58,440
+Và nó sẽ được hỏi một cái gì đó dọc theo dòng, bạn có thể biết liệu những câu trả lời này có giống nhau hay không?
+
+29
+00:01:58,440 --> 00:02:01,160
+Và rồi nó sẽ cho điểm chấm điểm.
+
+30
+00:02:01,160 --> 00:02:03,920
+Và có nhiều cách để tính điểm chấm điểm này.
+
+31
+00:02:03,920 --> 00:02:10,560
+Thí dụ, số lượng chim hay F1 hay tương tự, nhưng hiện nay không cần phải dựa vào thuật ngữ đó.
+
+32
+00:02:10,560 --> 00:02:13,360
+Một ghi chú nhanh về các bộ dữ liệu chuẩn.
+
+33
+00:02:13,360 --> 00:02:14,480
+Nên chúng rất có ích.
+
+34
+00:02:14,480 --> 00:02:19,840
+Và một bộ dữ liệu dự phòng là một bộ sưu tập dữ liệu được quản lý được thiết kế đặc biệt để đánh giá
+
+35
+00:02:19,840 --> 00:02:22,080
+hiệu quả của mô hình ngôn ngữ.
+
+36
+00:02:22,080 --> 00:02:27,560
+Và nó có thể bao gồm nhiều chủ đề khác nhau, sự phức tạp hoặc thậm chí hiện tượng ngôn ngữ.
+
+37
+00:02:27,560 --> 00:02:29,720
+Vậy tại sao bạn lại sử dụng bộ dữ liệu dự phòng?
+
+38
+00:02:29,720 --> 00:02:33,480
+Vâng, chúng rất hữu ích bởi vì bạn có thể đo độ chính xác của mô hình,
+
+39
+00:02:33,480 --> 00:02:36,440
+tốc độ và năng suất và khả năng của mô hình,
+
+40
+00:02:36,440 --> 00:02:40,440
+Bởi vì bạn có thể đưa ra nhiều yêu cầu cùng một lúc.
+
+41
+00:02:40,440 --> 00:02:46,720
+Vì vậy, một số bộ dữ liệu đánh dấu được thiết kế để cho phép bạn nhanh chóng phát hiện bất kỳ loại thành kiến
+
+42
+00:02:46,720 --> 00:02:50,640
+và có khả năng bị phân biệt đối xử với một nhóm người mà mô hình của bạn có thể tạo ra.
+
+43
+00:02:50,640 --> 00:02:52,720
+Và đây là điều mà bài kiểm tra có thể hỏi bạn.
+
+44
+00:02:52,720 --> 00:02:58,800
+Và vì vậy, sử dụng một bộ dữ liệu premark cung cấp cho bạn một nỗ lực quản lý rất nhanh chóng
+
+45
+00:02:58,800 --> 00:03:01,840
+Để đánh giá mô hình của bạn cho thành kiến tiềm năng.
+
+46
+00:03:01,840 --> 00:03:07,840
+Tất nhiên, nó có thể cho bạn cũng tạo ra các bộ dữ liệu dự phòng của riêng bạn mà sẽ được cụ thể
+
+47
+00:03:07,840 --> 00:03:12,200
+nếu bạn cần có tiêu chuẩn kinh doanh cụ thể.
+
+48
+00:03:12,200 --> 00:03:14,120
+Dĩ nhiên, chúng ta cũng có thể đánh giá con người.
+
+49
+00:03:14,120 --> 00:03:19,000
+Đây chính là ý tưởng tương tự. Chúng tôi có những câu hỏi chuẩn mực và những câu trả lời chuẩn xác,
+
+50
+00:03:19,000 --> 00:03:24,960
+Nhưng sau đó một số nhân viên, ví dụ, từ đội lao động có thể là nhân viên công ty của bạn
+
+51
+00:03:24,960 --> 00:03:30,000
+Hoặc nó có thể là chủ đề chuyên gia hoặc SME hoặc bất cứ điều gì, sẽ xem xét các điểm chính
+
+52
+00:03:30,000 --> 00:03:32,360
+Câu trả lời và câu trả lời được tạo ra.
+
+53
+00:03:32,360 --> 00:03:36,920
+Và họ sẽ nói, OK, điều này có vẻ đúng hoặc sai.
+
+54
+00:03:36,920 --> 00:03:38,840
+Vậy làm thế nào họ có thể đánh giá?
+
+55
+00:03:38,840 --> 00:03:45,040
+Vâng, có loại đo lường khác nhau, có ngón cái lên hoặc ngón cái dưới, có xếp hạng
+
+56
+00:03:45,040 --> 00:03:49,080
+Và cứ thế, nó sẽ lại chấm điểm.
+
+57
+00:03:49,080 --> 00:03:53,520
+Vì vậy, lần này có một phần con người trong đó và bạn có thể thích nó.
+
+58
+00:03:53,520 --> 00:03:59,840
+Bạn có thể chọn một lần nữa từ các loại thử nghiệm hoặc bạn có thể tạo ra một nhiệm vụ tùy chỉnh bởi vì bây giờ con người đang đánh giá nó.
+
+59
+00:03:59,840 --> 00:04:02,320
+Vì vậy, bạn là một chút miễn phí.
+
+60
+00:04:02,320 --> 00:04:08,800
+Vì vậy, có một vài thước đo bạn có thể sử dụng để đánh giá kết quả của một FM từ một góc nhìn chung.
+
+61
+00:04:08,800 --> 00:04:12,960
+Chúng ta có Đỏ, vệt mờ, tỉ lệ sinh và sự phức tạp.
+
+62
+00:04:12,960 --> 00:04:17,760
+Và tôi sẽ cung cấp cho bạn một mức độ sử dụng cao để bạn hiểu chúng và điều này nên là nhiều hơn đủ cho kỳ thi.
+
+63
+00:04:17,760 --> 00:04:22,680
+Vì vậy, Đỏ được gọi là định hướng được nghiên cứu để đánh giá quà tặng.
+
+64
+00:04:22,680 --> 00:04:29,000
+Vì vậy, đây là mục đích của nó và tôi nghĩ rằng đó là những gì bạn cần phải hiểu từ góc nhìn của bài thi là để đánh giá
+
+65
+00:04:29,000 --> 00:04:32,640
+Hệ thống phiên dịch tự động và máy.
+
+66
+00:04:32,640 --> 00:04:37,400
+Vì vậy, rất tận tâm với hai điều này và chúng tôi có một loại đo lường khác nhau.
+
+67
+00:04:37,400 --> 00:04:46,840
+Chúng tôi có Đỏ N và N có thể thay đổi giữa một, hai, ba, bốn thường được sử dụng để đo số lượng khớp và gram giữa tham khảo và tạo ra văn bản.
+
+68
+00:04:46,840 --> 00:04:47,720
+Nghĩa là sao?
+
+69
+00:04:47,720 --> 00:04:49,640
+Nghĩa là anh có thẻ tham chiếu.
+
+70
+00:04:49,640 --> 00:04:57,520
+Đây là những gì bạn muốn đầu ra của mô hình cơ bản của bạn và sau đó bất cứ văn bản nào đã được tạo ra bởi các mô hình nền tảng.
+
+71
+00:04:57,520 --> 00:05:00,680
+Và Rouge sẽ xem có bao nhiêu và gram khớp.
+
+72
+00:05:00,680 --> 00:05:06,080
+Vậy nếu bạn lấy một gram, có nghĩa là có bao nhiêu từ khớp bởi vì một gram chỉ là một từ.
+
+73
+00:05:06,080 --> 00:05:10,440
+Nhưng nếu bạn lấy hai gram, có nghĩa là nó là sự kết hợp của hai từ.
+
+74
+00:05:10,440 --> 00:05:19,960
+Vì vậy, nếu bạn có quả táo rớt khỏi cây, bạn sẽ nhìn vào quả táo, quả táo thất bại, và cây cối.
+
+75
+00:05:19,960 --> 00:05:24,320
+Và một lần nữa, bạn nhìn thấy có bao nhiêu trùng khớp giữa văn bản tham khảo và văn bản tạo ra của bạn.
+
+76
+00:05:24,320 --> 00:05:27,200
+Bạn nên lấy một gram rất cao, chẳng hạn, 10 grams.
+
+77
+00:05:27,200 --> 00:05:33,600
+Bạn có 10 từ khớp chính xác theo thứ tự tương tự từ một tham khảo đến văn bản tạo ra.
+
+78
+00:05:33,600 --> 00:05:37,920
+Nhưng nó là một trong rất dễ dàng để tính toán và rất dễ dàng để làm cho tinh thần.
+
+79
+00:05:37,920 --> 00:05:44,280
+Và bạn có Đỏ L, mà sẽ tính toán chuỗi sub phổ biến dài nhất giữa tham chiếu và tạo ra văn bản.
+
+80
+00:05:44,280 --> 00:05:48,200
+Chuỗi từ dài nhất được chia sẻ giữa hai văn bản là gì?
+
+81
+00:05:48,200 --> 00:05:52,160
+Điều này làm cho rất nhiều ý nghĩa, ví dụ, bạn có hệ thống dịch máy móc.
+
+82
+00:05:52,160 --> 00:05:57,800
+Nhân tiện, bạn có thể đọc bằng tiếng Pháp và màu xanh bằng tiếng Pháp, nên tôi có một số màu.
+
+83
+00:05:57,800 --> 00:06:06,360
+Màu xanh là đánh giá hai thứ tiếng đang được nghiên cứu. Vì vậy ở đây, đây là để đánh giá chất lượng của văn bản tạo ra, đặc biệt là cho dịch thuật.
+
+84
+00:06:06,360 --> 00:06:15,040
+Vì vậy, điều này là rất cho các bản dịch và được xem là chính xác và sẽ là tốt cho quá nhiều ngắn gọn.
+
+85
+00:06:15,040 --> 00:06:18,400
+Vì vậy, nó sẽ xem xét một tổ hợp các engrams, công thức là một chút khác nhau.
+
+86
+00:06:18,400 --> 00:06:22,720
+Nhưng nếu bản dịch quá ngắn, chẳng hạn, sẽ có điểm xấu.
+
+87
+00:06:22,720 --> 00:06:28,640
+Vì vậy, nó là một mô hình đo lường tiên tiến hơn một chút, và tôi sẽ không làm cơ chế dưới nó bởi vì bạn sẽ biết nó.
+
+88
+00:06:28,640 --> 00:06:32,400
+Nhưng nó rất có ích cho các bản dịch và bạn nên nhớ nó.
+
+89
+00:06:32,400 --> 00:06:37,520
+Nhưng hai điều này, Đỏ và xanh, chúng chỉ nhìn vào từ ngữ, sự kết hợp của từ ngữ, và chúng nhìn vào sự so sánh.
+
+90
+00:06:37,520 --> 00:06:41,680
+Nhưng chúng tôi có một cái gì đó tiên tiến hơn, không phải vì AI, chúng tôi có điểm số của con chim.
+
+91
+00:06:41,680 --> 00:06:45,840
+Vì vậy, ở đây chúng tôi tìm kiếm sự tương đồng ngữ nghĩa giữa tạo ra văn bản.
+
+92
+00:06:45,840 --> 00:06:52,520
+Nghĩa là sao? Điều đó có nghĩa là bạn sẽ so sánh ý nghĩa thực sự của văn bản và xem liệu các nghĩa có giống nhau không.
+
+93
+00:06:52,520 --> 00:06:54,240
+Vậy chúng ta làm thế nào để có ý nghĩa?
+
+94
+00:06:54,240 --> 00:07:02,520
+Vâng, bạn đang gonna có một mô hình và nó sẽ so sánh các liên kết của cả hai văn bản và nó có thể tính toán tương tự cô sin giữa họ.
+
+95
+00:07:02,520 --> 00:07:08,520
+Vì vậy, các đường viền là một cái gì đó chúng tôi sẽ thấy rất, rất sớm và cách của họ để nhìn vào một bó các số đại diện cho văn bản.
+
+96
+00:07:08,520 --> 00:07:15,520
+Và nếu những con số này rất gần nhau giữa hai bản sao, thì có nghĩa là văn bản sẽ giống nhau về ngữ nghĩa.
+
+97
+00:07:15,520 --> 00:07:20,920
+Và ở đây với cốt lõi của loài chim, chúng ta không nhìn vào từng từ riêng lẻ, chúng ta đang nhìn vào bối cảnh và sắc thái giữa văn bản.
+
+98
+00:07:20,920 --> 00:07:24,200
+Vì vậy, nó là một rất tốt bây giờ bởi vì chúng tôi có truy cập vào AI.
+
+99
+00:07:24,200 --> 00:07:28,600
+Và sự phức tạp là làm thế nào tốt các mô hình sẽ dự đoán hiệu bài tiếp theo.
+
+100
+00:07:28,600 --> 00:07:29,800
+Vậy thấp hơn tốt hơn.
+
+101
+00:07:29,800 --> 00:07:36,440
+Và điều đó có nghĩa là nếu một mô hình rất tự tin về vật thể tiếp theo, có nghĩa là nó sẽ ít phức tạp hơn do đó chính xác hơn.
+
+102
+00:07:36,440 --> 00:07:41,720
+Vì vậy, để cung cấp cho bạn một biểu đồ, ở đây chúng tôi có một mô hình AI sáng tạo mà chúng tôi đào tạo trên dữ liệu bộ sưu tập,
+
+103
+00:07:41,720 --> 00:07:44,280
+Dữ liệu thẻ, đồ mua và phản hồi khách hàng.
+
+104
+00:07:44,280 --> 00:07:46,840
+Và chúng tôi sẽ tạo ra mô tả sản phẩm năng động.
+
+105
+00:07:46,840 --> 00:07:53,080
+Và vì vậy từ này, chúng tôi có thể sử dụng tham chiếu một so với một trong những tạo ra để tính toán rrouge hoặc mét màu xanh,
+
+106
+00:07:53,080 --> 00:07:57,320
+Cũng như nhìn vào một số điểm tương đồng về sắc thái với lõi chim.
+
+107
+00:07:57,320 --> 00:08:08,040
+Và tất cả những điều này có thể được kết hợp trở lại thành một vòng phản hồi để đảm bảo rằng chúng ta có thể trả lại mô hình và nhận được kết quả tốt hơn dựa trên chất lượng của số lượng của những thước đo này.
+
+108
+00:08:08,040 --> 00:08:15,640
+Trên hết là có những loại chấm điểm của một mô hình nền tảng, bạn có thể có số đo doanh nghiệp để đánh giá một mô hình.
+
+109
+00:08:15,640 --> 00:08:20,520
+Và những điều này là một chút khó khăn hơn để đánh giá, tất nhiên, nhưng nó có thể là sự hài lòng người dùng.
+
+110
+00:08:20,520 --> 00:08:25,400
+Vì vậy, bạn thu thập thông tin phản hồi người dùng và bạn đánh giá sự hài lòng trong phản ứng mô hình.
+
+111
+00:08:25,400 --> 00:08:32,280
+Vì vậy, ví dụ, người dùng hài lòng của một nền tảng e-commerce hoặc bạn có thể tính toán những gì là mức thu nhập trung bình cho mỗi người dùng.
+
+112
+00:08:32,280 --> 00:08:40,840
+Và tất nhiên, nếu ứng dụng Gen Al thành công, bạn hy vọng rằng thiết bị đo sẽ tăng hoặc vượt qua hiệu suất chính.
+
+113
+00:08:40,840 --> 00:08:48,280
+Vậy liệu mô hình có thể thực hiện trên nhiều nhiệm vụ khác nhau qua các miền khác nhau quyền chuyển đổi?
+
+114
+00:08:48,280 --> 00:08:51,960
+Vậy kết quả tôi muốn là gì? Tôi có muốn có quyền cải đạo cao hơn không?
+
+115
+00:08:51,960 --> 00:08:57,240
+Một lần nữa, tôi sẽ giám sát và đánh giá mô hình của tôi về điều đó hoặc hiệu quả.
+
+116
+00:08:57,240 --> 00:09:02,840
+Hiệu quả của mô hình là gì? Bao nhiêu? Tính toán có hiệu quả trong việc sử dụng tài nguyên không?
+
+117
+00:09:02,840 --> 00:09:08,280
+Và cứ thế. Vì vậy, đó là nó để đánh giá một mô hình nền tảng. Hy vọng anh thích.
+
+118
+00:09:08,280 --> 00:09:10,280
+và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
