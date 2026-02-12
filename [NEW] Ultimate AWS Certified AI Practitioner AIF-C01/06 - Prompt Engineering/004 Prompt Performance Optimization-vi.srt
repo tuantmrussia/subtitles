@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:05,140
+Bây giờ chúng ta hãy nói về làm thế nào chúng ta có thể cải thiện hiệu suất của các nhắc nhở trong mô hình của chúng ta.
+
+2
+00:00:05,140 --> 00:00:11,500
+Vì vậy, đầu tiên, chúng ta hãy trở lại và nhớ làm thế nào văn bản đang được tạo ra từ một LLM.
+
+3
+00:00:11,500 --> 00:00:20,040
+Vì vậy, ví dụ, chúng tôi có câu sau khi mưa, các đường phố đã, và sau đó chúng tôi có các từ tiếp theo mà sẽ được tính toán bởi các mô hình jiI.
+
+4
+00:00:20,040 --> 00:00:28,840
+Vì vậy chúng ta có thể bị ướt, ngập nước, trơn, trống rỗng, bùn lầy, sạch sẽ, bị chặn, và tất cả những từ này đều có liên quan.
+
+5
+00:00:28,840 --> 00:00:38,840
+Và làm thế nào có khả năng đây sẽ là từ được chọn tiếp theo, và vì vậy các mô hình jI sẽ làm một số xác suất và chúng tôi sẽ chọn một từ ngẫu nhiên, ví dụ, bị ngập lụt.
+
+6
+00:00:38,840 --> 00:00:47,960
+Đây là điều chúng tôi đã thấy, và tôi hy vọng các bạn nhớ nó, bởi vì bây giờ chúng tôi sẽ đào sâu vào quá trình cụ thể đó và xem làm thế nào chúng tôi có thể ảnh hưởng nhẹ đến nó.
+
+7
+00:00:47,960 --> 00:00:51,240
+Vì vậy, hãy đi vào việc tối ưu hóa hiệu suất nhanh chóng.
+
+8
+00:00:51,240 --> 00:00:58,840
+Đây là hình chụp từ đá nền Amazon, và như các bạn thấy, chúng ta có vài nút bấm để thay đổi.
+
+9
+00:00:58,840 --> 00:01:01,340
+Đầu tiên là hệ thống nhắc nhở.
+
+10
+00:01:01,340 --> 00:01:06,240
+Vì vậy, chúng tôi có thể xác định làm thế nào mô hình nên hành xử và trả lời.
+
+11
+00:01:06,240 --> 00:01:12,740
+Và trong ví dụ của tôi, tôi nói trả lời như thể bạn là một giáo viên trong không gian đám mây AWS.
+
+12
+00:01:12,740 --> 00:01:20,240
+Và tất nhiên, chúng tôi thiết lập âm thanh cho câu trả lời, và điều này sẽ thực sự giúp các LM đáp ứng theo cách chúng tôi muốn.
+
+13
+00:01:20,240 --> 00:01:22,240
+Tiếp theo là nhiệt độ.
+
+14
+00:01:22,240 --> 00:01:29,440
+Vì vậy, nó là một tập giá trị từ 0 đến 1 mà xác định sự sáng tạo của đầu ra của mô hình.
+
+15
+00:01:29,440 --> 00:01:41,240
+Vì vậy, nếu chúng tôi đặt nó một giá trị rất thấp, ví dụ, 0,2, sau đó các đầu ra sẽ là bảo thủ, lặp đi lặp lại, và nó sẽ được tập trung vào phản ứng có khả năng nhất.
+
+16
+00:01:41,240 --> 00:01:58,940
+Vì vậy, những từ với xác suất cao nhất. Nhưng nếu bạn đặt nó thành một giá trị cao, ví dụ, 1.0, thì kết quả sẽ trở nên đa dạng hơn, sáng tạo hơn, ít dự đoán hơn, và cũng có thể ít hơn, bởi vì nó sẽ chọn nhiều từ ít khả năng hơn theo thời gian.
+
+17
+00:01:58,940 --> 00:02:03,040
+Vì vậy, nó là cho bạn để cố gắng và xem nhiệt độ làm việc cho bạn.
+
+18
+00:02:03,040 --> 00:02:10,640
+Nhưng ít nhất hãy nghĩ, nếu bạn có nhiệt độ cao, mọi thứ di chuyển, và do đó, bạn có nhiều sáng tạo hơn.
+
+19
+00:02:10,640 --> 00:02:29,640
+Và tiếp theo, chúng ta có P hàng đầu. Vì vậy, p là một giá trị một lần nữa từ 0 đến 1, và nếu bạn có một p thấp, ví dụ, 0,25, có nghĩa là trong danh sách mà chúng tôi đã thấy trước về từ tiếp theo có thể được chọn, chúng tôi sẽ chỉ xem xét 25% có khả năng nhất.
+
+20
+00:02:29,640 --> 00:02:48,640
+Vì vậy, chúng ta sẽ có một phản ứng sâu sắc hơn, bởi vì chúng ta chỉ chọn những từ thực sự có ý nghĩa. Nếu chúng ta có một giá trị P cao, ví dụ, 0,99, sau đó chúng ta sẽ xem xét một phạm vi rất rộng của các từ có thể, và do đó, chúng ta có một danh sách dài để chọn từ, và vì vậy có thể chúng ta sẽ có một đầu ra sáng tạo hơn và đa dạng hơn.
+
+21
+00:02:48,640 --> 00:03:00,040
+Như bạn có thể thấy, nhiệt độ, P, và sau đó tất nhiên, top K và tất cả các thông số còn lại có thể được sử dụng với nhau. Vì vậy, hàng đầu K là giới hạn của số từ có thể.
+
+22
+00:03:00,040 --> 00:03:06,140
+Vì vậy, trong khi P đứng đầu xem xét các từ có khả năng nhất là phân phối, top K là một số.
+
+23
+00:03:06,140 --> 00:03:14,940
+Vì vậy, nếu bạn có một K thấp, ví dụ, bạn sẽ nhận được 10 từ đầu tiên có thể nhất, do đó, bạn sẽ nhận được có lẽ một phản ứng tích cực hơn.
+
+24
+00:03:14,940 --> 00:03:27,440
+Nhưng nếu bạn có một K rất cao, ví dụ, 500, bạn sẽ xem xét 500 từ hàng đầu, và do đó, có một cơ hội, nếu một trong số họ được chọn, bạn sẽ có một câu trả lời đa dạng hơn và sáng tạo hơn.
+
+25
+00:03:27,440 --> 00:03:33,440
+Và sau đó chúng tôi có chiều dài, do đó, chúng tôi xác định những gì là chiều dài tối đa của câu trả lời, vì vậy chúng tôi nói với các mô hình để dừng lại tại một số điểm.
+
+26
+00:03:33,440 --> 00:03:50,040
+Và cuối cùng, chuỗi số hàng đầu, một số vật kỷ niệm sẽ báo hiệu cho mô hình để dừng sản xuất, vì vậy nếu mô hình có dấu hiệu đó thì nó sẽ dừng lại. Và vì vậy, từ một góc nhìn kiểm tra, bạn cần phải nhớ định nghĩa của tất cả chúng, những gì chúng có nghĩa là cho giá trị thấp và cao.
+
+27
+00:03:50,040 --> 00:03:55,540
+Vì vậy, hãy nhớ nhiệt độ, P, top K, chiều dài, dấu nhắc hệ thống, và dừng chuỗi.
+
+28
+00:03:55,540 --> 00:04:09,640
+Vậy còn sự chậm trễ thì sao? Vâng, độ trễ có nghĩa là các mô hình sẽ phản ứng nhanh như thế nào với đầu vào của bạn. Và vì vậy nó được tác động bởi một vài tham số, ví dụ, kích thước mô hình, bao nhiêu lớn hoặc bao nhiêu nhỏ mô hình, và kích thước khác nhau của bạn chúng tôi đã nhìn thấy trước đây.
+
+29
+00:04:09,640 --> 00:04:22,640
+Ví dụ, kiểu mô hình của yema sẽ có một hiệu suất khác so với mây, ví dụ, và cũng là số lượng các vật kỷ niệm trong đầu vào, do đó, bạn cho càng nhiều ngữ cảnh trong cửa sổ ngữ cảnh, thì sẽ càng chậm hơn.
+
+30
+00:04:22,640 --> 00:04:40,840
+Và tất nhiên, sản lượng càng lớn, thì càng chậm, rất quan trọng để bạn biết, đây là những yếu tố rất quan trọng, nhưng bạn cũng nên biết rằng sự đa dạng không bị ảnh hưởng bởi P, top K, hay các thông số nhiệt độ, và tốt cho bạn biết bởi vì kỳ thi có thể hỏi bạn một số câu hỏi về nó.
+
+31
+00:04:40,840 --> 00:04:42,800
+Vì vậy, hãy nói cho bài giảng này, tôi hy vọng bạn thích nó.
+
+32
+00:04:42,800 --> 00:04:44,760
+Và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
