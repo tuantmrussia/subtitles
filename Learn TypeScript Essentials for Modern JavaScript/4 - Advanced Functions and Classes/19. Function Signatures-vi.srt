@@ -1,0 +1,280 @@
+1
+00:00:00,000 --> 00:00:06,440
+Chào mừng trở lại, trong bài học này chúng tôi sẽ tìm hiểu về các chức năng chữ ký và gõ.
+
+2
+00:00:06,440 --> 00:00:12,360
+Hàm ký hiệu cho phép chúng tôi mô tả một hàm nên như thế nào, nói cách khác, hình dạng của nó,
+
+3
+00:00:12,360 --> 00:00:18,520
+không phải lo lắng về việc thực hiện.
+
+4
+00:00:18,520 --> 00:00:25,080
+Điều này trở nên cực kỳ hữu ích cho việc gọi lại, ATIs, và những thứ như ứng dụng lớn.
+
+5
+00:00:25,080 --> 00:00:33,880
+Hãy tưởng tượng bạn đang làm việc với các chức năng được truyền đi khắp nơi, như gọi lại hoặc có thể là người quản lý sự kiện.
+
+6
+00:00:33,880 --> 00:00:39,200
+Vì vậy, làm thế nào để đảm bảo rằng mỗi chức năng theo cùng một cấu trúc?
+
+7
+00:00:39,200 --> 00:00:46,080
+Chúng tôi muốn chắc chắn rằng chúng tôi có cùng các tham số, cùng loại trở lại, và những điều như loại an toàn, tất nhiên.
+
+8
+00:00:46,080 --> 00:00:50,080
+Đây chính xác là những gì các chức năng ký hiệu giải quyết.
+
+9
+00:00:50,080 --> 00:00:56,560
+Do đó, một chức năng ký hiệu mô tả các tham số mà hàm số chấp nhận, các loại của các tham số,
+
+10
+00:00:56,560 --> 00:01:00,560
+và loại giá trị mà một chức năng trở lại.
+
+11
+00:01:00,560 --> 00:01:05,520
+Và nó có hiệu quả, như tôi đã nói, để tìm ra hình dạng của một chức năng.
+
+12
+00:01:05,520 --> 00:01:10,040
+Vì vậy, hãy làm một ví dụ rất đơn giản, và chúng ta sẽ có một chức năng.
+
+13
+00:01:10,040 --> 00:01:18,480
+Thêm, và nó sẽ có hai tham số, một số, b, số,
+
+14
+00:01:18,480 --> 00:01:21,160
+và nó sẽ trả lại một con số.
+
+15
+00:01:21,160 --> 00:01:25,040
+Vì vậy, chúng ta có thể sử dụng các mũi tên, cú pháp, và nói số.
+
+16
+00:01:25,040 --> 00:01:31,200
+Dòng này không thực sự xác định các chức năng, nhưng nó xác định những gì các chức năng phải như thế.
+
+17
+00:01:31,200 --> 00:01:37,840
+Nói cách khác, đó là hình dạng mà chúng tôi có hai tham số, và chúng tôi có một loại trở lại.
+
+18
+00:01:37,840 --> 00:01:41,280
+Bây giờ chúng tôi có thể chỉ định một chức năng khớp với dấu hiệu đó.
+
+19
+00:01:41,280 --> 00:01:47,920
+Để dòng này, nó là lên không phải tìm một chức năng được nêu ra, nó chỉ xác định những gì các chức năng phải trông như thế nào.
+
+20
+00:01:47,920 --> 00:01:59,920
+Chúng tôi có thể làm bây giờ để thêm x và y tham số, và sau đó chúng tôi sẽ có tìm thấy sự chuyển hướng bằng cách nói x cộng với y.
+
+21
+00:01:59,920 --> 00:02:06,920
+Bây giờ để chỉ định một chức năng, ở đây, thực sự phù hợp với chữ ký.
+
+22
+00:02:06,920 --> 00:02:10,640
+Nếu chúng ta thử một chức năng không khớp với chữ ký,
+
+23
+00:02:10,640 --> 00:02:14,160
+Máy đánh chữ sẽ ném chúng ta gần hơn.
+
+24
+00:02:14,160 --> 00:02:20,240
+Bây giờ thay vì lặp đi lặp lại chữ ký, chúng ta có thể tạo ra một biệt danh loại cho chức năng này.
+
+25
+00:02:20,240 --> 00:02:28,160
+Chúng ta chỉ cần bỏ nó cho thứ hai để gõ, và gõ là một hoạt động toán học,
+
+26
+00:02:28,160 --> 00:02:38,320
+Một số, và b, số, và hoạt động toán học của chúng tôi trở lại một số.
+
+27
+00:02:38,320 --> 00:02:46,160
+Bây giờ chúng tôi có thể tái sử dụng chức năng này ký hiệu bất cứ cách nào chúng tôi muốn, và chúng tôi có thể xác định các chức năng khác nhau để sử dụng này thao tác toán học.
+
+28
+00:02:46,160 --> 00:02:57,120
+Vì vậy, chúng tôi có thể thực hiện const nhân, ví dụ, và chức năng nhân của chúng tôi sẽ sử dụng này loại hoạt động toán học.
+
+29
+00:02:57,120 --> 00:03:03,520
+Chúng tôi mất hai tham số, a và b, và sau đó chúng tôi xác định các thực hiện của chức năng đó,
+
+30
+00:03:03,520 --> 00:03:11,280
+Vậy ta có thể nói a nhân b. Chúng ta có thể sử dụng lại cái này, và vì vậy các bạn có thể trừ đi
+
+31
+00:03:11,280 --> 00:03:19,840
+Đây cũng là một hoạt động toán học, mất cùng hai tham số, và sau đó chúng tôi xác định các thực hiện,
+
+32
+00:03:19,840 --> 00:03:26,400
+Vì vậy, chúng tôi nói một trừ b. Và sau đó chúng ta có thể tiếp tục như thêm và chia, vv.
+
+33
+00:03:26,400 --> 00:03:32,320
+Vì vậy, bạn sẽ thấy rằng chức năng ký hiệu là cực kỳ phổ biến với gọi lại.
+
+34
+00:03:32,320 --> 00:03:38,240
+Vì vậy, chúng ta chỉ cần nhấp chuột vào để tìm một ví dụ của một cú gọi trở lại để tính toán
+
+35
+00:03:38,240 --> 00:03:52,480
+để một số, một số, bây giờ chúng tôi cũng muốn đi qua trong một hoạt động, và nói hoạt động,
+
+36
+00:03:53,200 --> 00:04:03,120
+Và các hoạt động sẽ chấp nhận hai số, x và y, và các hoạt động sẽ trở lại
+
+37
+00:04:03,120 --> 00:04:12,080
+một số, và điều này sẽ là tất cả các phần trong định nghĩa của chúng tôi cho tính toán của chúng tôi.
+
+38
+00:04:14,080 --> 00:04:22,960
+Bây giờ tất cả những gì chúng ta cần làm là quay trở lại chiến dịch của chúng ta, và chúng ta có thể thực hiện chiến dịch của chúng ta, dù nó là gì,
+
+39
+00:04:22,960 --> 00:04:29,280
+Thực hiện, chỉ bằng cách thực hiện hoạt động một b. Điều này đảm bảo rằng chức năng gọi ngược,
+
+40
+00:04:29,280 --> 00:04:35,760
+Chiến dịch ở đây, có các tham số chính xác và gõ trở lại, và chúng tôi có thể gọi nó như thế này,
+
+41
+00:04:35,760 --> 00:04:44,000
+Chúng tôi có thể tính toán, thông qua một số, có lẽ 10 và 5 và sau đó chúng tôi xác định chức năng gọi lại của chúng tôi,
+
+42
+00:04:44,000 --> 00:04:51,280
+x và y, và chúng tôi nói những gì chúng tôi muốn với nó, vì vậy chúng tôi có thể nói x cộng với y, ví dụ,
+
+43
+00:04:51,280 --> 00:04:59,200
+Hoặc chúng ta có thể muốn làm điều tương tự một lần nữa, tính toán, và lần này chúng ta sẽ
+
+44
+00:04:59,200 --> 00:05:08,480
+Thay đổi nó thay vì x cộng với y, giả sử x chia cho y. Bây giờ để làm cho điều này thậm chí rõ ràng hơn,
+
+45
+00:05:08,480 --> 00:05:17,520
+Chúng ta có thể lấy được chữ ký. Nhưng trên cùng, tôi sẽ định nghĩa một loại hoạt động,
+
+46
+00:05:20,080 --> 00:05:31,600
+thao tác đã được có hai số, A và B, và trở lại một số, giống như chúng tôi đã có
+
+47
+00:05:31,600 --> 00:05:41,760
+Trước đó, nhưng hoạt động của chúng tôi, thay vì định nghĩa nó như thế này, chúng tôi có thể sử dụng các loại hoạt động,
+
+48
+00:05:41,760 --> 00:05:46,240
+Loại bỏ điều này và nói rằng hoạt động của chúng tôi là một loại hoạt động,
+
+49
+00:05:47,920 --> 00:05:52,960
+Và sau đó chúng ta có thể gọi nó theo cùng một cách, để bạn có thể thấy rằng nó là một rất nhiều
+
+50
+00:05:52,960 --> 00:06:00,480
+mét trong dễ dàng hơn để xác định một loại ở đây, và chỉ cần sử dụng trong tiếng gọi của chúng tôi cho chúng tôi
+
+51
+00:06:00,480 --> 00:06:18,800
+Chức năng gọi lại. Các nhà cải cách cũng có thể xác định các chức năng ký hiệu, nhưng chúng ta hãy có một giao diện, và giao diện
+
+52
+00:06:18,800 --> 00:06:24,080
+Có thể là người ghi chép, và họ sẽ có chuỗi thông điệp, và đó sẽ trở lại
+
+53
+00:06:24,080 --> 00:06:31,840
+về cơ bản tránh. Giao diện này mô tả một chức năng, nhưng không phải một đối tượng,
+
+54
+00:06:31,840 --> 00:06:38,960
+Vì vậy, bây giờ chúng ta hãy có thực hiện điều đó và làm táo bón, có lẽ đăng nhập, thông điệp, điều này có
+
+55
+00:06:38,960 --> 00:06:46,800
+hoặc là máy ghi chép loại bệnh, nơi chúng tôi cung cấp thông điệp, và bây giờ bạn có thể cung cấp thực tế thực hiện
+
+56
+00:06:46,800 --> 00:06:54,080
+là bản ghi bàn điều khiển, và sau đó là tin nhắn.
+
+57
+00:06:54,080 --> 00:07:00,480
+Hàm chữ ký cũng có thể bao gồm các tham số tùy chọn.
+
+58
+00:07:00,480 --> 00:07:12,080
+Vì vậy, một lần nữa, như một ví dụ, chúng ta hãy gõ lời chào, điều này có một độ tuổi chuỗi tên,
+
+59
+00:07:13,920 --> 00:07:22,480
+để số điện thoại, và nó sẽ trở lại một chuỗi, và chúng tôi muốn tạo ra sự lựa chọn về tuổi tác,
+
+60
+00:07:22,480 --> 00:07:27,520
+Đó là lý do tại sao tôi đặt dấu chấm hỏi ở đây, nếu chúng ta không có dấu chấm hỏi, đó sẽ là
+
+61
+00:07:27,520 --> 00:07:34,880
+Bắt buộc, vì vậy hãy để nó như một tùy chọn, vì vậy điều này có nghĩa là độ tuổi của chúng ta có thể hoặc không được cung cấp,
+
+62
+00:07:34,880 --> 00:07:45,040
+Tất nhiên, vì vậy bây giờ chúng ta hãy thực sự thử tin tức này bằng cách thực hiện sự chào đón kiểu con mồi. Bây giờ chúng ta
+
+63
+00:07:45,040 --> 00:07:51,840
+Sẽ mất của chúng tôi hai tham số tên và tuổi, và bây giờ chúng tôi có thể thực sự cung cấp cho nó thực hiện,
+
+64
+00:07:51,840 --> 00:07:59,680
+Vì vậy, nếu chúng ta có một tuổi, tuổi là hiện tại, sau đó chúng tôi sẽ làm một chuỗi đơn giản nói xin chào,
+
+65
+00:08:01,520 --> 00:08:12,160
+Tên đô la, tuổi là tuổi đô la. Nếu không, chúng tôi chỉ đơn giản là gửi lời chào bình thường, xin chào,
+
+66
+00:08:12,160 --> 00:08:23,360
+Tên đô la, và bạn sẽ tìm thấy rất thông thường rằng chức năng ký hiệu là khá nhiều
+
+67
+00:08:23,360 --> 00:08:31,280
+Tất cả mọi nơi trong khuôn khổ UI, và ví dụ điển hình nhất của điều này là bằng cách có một bộ điều khiển click chuột,
+
+68
+00:08:31,520 --> 00:08:39,680
+trên lỗ thông hơi, và trong sự kiện đặc biệt của chuột, sau đó nếu chúng tôi gõ, có lẽ click, và cho phép
+
+69
+00:08:39,680 --> 00:08:49,440
+(Cười)
+
+70
+00:08:49,440 --> 00:08:55,680
+Để trả lời một điểm, và đây là một định nghĩa rất điển hình cho một người quản lý click chuột,
+
