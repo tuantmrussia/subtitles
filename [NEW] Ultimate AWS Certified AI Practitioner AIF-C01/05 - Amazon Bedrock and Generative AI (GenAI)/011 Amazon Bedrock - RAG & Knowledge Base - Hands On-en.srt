@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:03,240
+ So let's go ahead and practice knowledge bases.
+
+2
+00:00:03,240 --> 00:00:07,040
+ So on the left-hand side, you have knowledge base and then here's our work.
+
+3
+00:00:07,040 --> 00:00:11,000
+ So we can first do a little sandbox environment when we can upload and chat,
+
+4
+00:00:11,000 --> 00:00:14,700
+ but then we can quit the knowledge base and test it and then use it.
+
+5
+00:00:14,700 --> 00:00:18,960
+ So first, I'm going to take it very easy and we're going to chat with a document.
+
+6
+00:00:18,960 --> 00:00:21,960
+ So you understand the idea behind knowledge bases.
+
+7
+00:00:21,960 --> 00:00:23,960
+ So you first need to select a model.
+
+8
+00:00:23,960 --> 00:00:27,040
+ So we have an anthropic cloud threesomenet right now.
+
+9
+00:00:27,040 --> 00:00:33,840
+ So we can use and we're not going to look at these parameters and we have a chat prompt template.
+
+10
+00:00:33,840 --> 00:00:36,240
+ So this demonstrates how RAG is working.
+
+11
+00:00:36,240 --> 00:00:42,200
+ So we're saying, hey, you are a question answering agents and I will provide you with a set of search results.
+
+12
+00:00:42,200 --> 00:00:46,720
+ And then your job is to answer the user's question thanks to this search result.
+
+13
+00:00:46,720 --> 00:00:48,160
+ And here are the search results.
+
+14
+00:00:48,160 --> 00:00:51,720
+ So they're going to be right here provided in this prompt.
+
+15
+00:00:51,720 --> 00:00:57,000
+ That's what it's called an augmented prompt is because this prompt is going to be augmented by the search results.
+
+16
+00:00:57,000 --> 00:01:00,720
+ Performed on our documents and this is the whole idea behind RAG.
+
+17
+00:01:00,720 --> 00:01:05,400
+ And this whole thing is going to be sent into your foundation model.
+
+18
+00:01:05,400 --> 00:01:08,200
+ So we don't touch this because this is great.
+
+19
+00:01:08,200 --> 00:01:12,040
+ And we're going to just provide some data.
+
+20
+00:01:12,040 --> 00:01:14,880
+ So the tech can be from your computer or Amazon S3.
+
+21
+00:01:14,880 --> 00:01:20,160
+ We'll use our computer and then I'm going to select in the code that you have downloaded in the beginning of the course.
+
+22
+00:01:20,160 --> 00:01:26,920
+ And you don't have the code, please go to the beginning of the course in section two and you will find the code and slides download.
+
+23
+00:01:27,600 --> 00:01:33,840
+ You download it and then you go into bedrock and evolution of the internet detail point PDF.
+
+24
+00:01:33,840 --> 00:01:36,880
+ And this is a document that I've actually generated using AI.
+
+25
+00:01:36,880 --> 00:01:42,480
+ So it's a PDF documented by AI, which contains some information around the internet.
+
+26
+00:01:42,480 --> 00:01:47,640
+ So we're going to chat with this document right now like if it was a RAG use case.
+
+27
+00:01:47,640 --> 00:01:54,040
+ And we say when and who invented the WWID.
+
+28
+00:01:56,160 --> 00:02:02,960
+ We run this and it's going to retrieve the relevant information in our documents.
+
+29
+00:02:02,960 --> 00:02:07,560
+ Pass it into this prompt to augment it and then answer the question.
+
+30
+00:02:07,560 --> 00:02:14,920
+ So here we have the information that the WWID was invented by Tim Berners-Lee in 1989.
+
+31
+00:02:14,920 --> 00:02:16,560
+ And then we get some information.
+
+32
+00:02:16,560 --> 00:02:18,560
+ So we have one and two.
+
+33
+00:02:18,560 --> 00:02:24,600
+ These are the sources from our document that gives us some information to answer our query.
+
+34
+00:02:24,600 --> 00:02:33,720
+ And we can click on show, show details and it's going to show you the source chunk one and the source chunk two that were used to answer our query.
+
+35
+00:02:33,720 --> 00:02:34,960
+ This is very nice.
+
+36
+00:02:34,960 --> 00:02:36,720
+ And then we can just try a little bit more.
+
+37
+00:02:36,720 --> 00:02:41,760
+ So what is the future of the internet with AI?
+
+38
+00:02:41,760 --> 00:02:50,480
+ And we run it and again, it's going to look in my PDF document that you can have a look at by the way on your own.
+
+39
+00:02:50,480 --> 00:02:54,960
+ And say, hey, here, AI is expected to play a more important role on the internet.
+
+40
+00:02:54,960 --> 00:02:59,600
+ For example, we'll have AI driven chatbots, recommendation systems and virtual assistants.
+
+41
+00:02:59,600 --> 00:03:02,080
+ And again, we can look at the quotes.
+
+42
+00:03:02,080 --> 00:03:05,840
+ And so here we have one, two and three quotes from our documents.
+
+43
+00:03:05,840 --> 00:03:07,600
+ So this is the idea behind RAG.
+
+44
+00:03:07,600 --> 00:03:12,040
+ And I'm going to stop this lecture because you've seen how it works from a document perspective.
+
+45
+00:03:12,040 --> 00:03:15,080
+ I'm going to create the next lecture to show you how you can set up a knowledge base.
+
+46
+00:03:15,080 --> 00:03:17,320
+ It's a bit more complicated and involved.
+
+47
+00:03:17,320 --> 00:03:21,400
+ So you can look at it if you wanted to, but from an exam perspective, you know enough on RAG.
+
+48
+00:03:21,400 --> 00:03:25,960
+ So I will see you in the next lecture to set up a RAG knowledge base entirely if you wanted to.
+
+49
+00:03:25,960 --> 00:03:27,920
+ But otherwise, you can skip it and move on.
+
+50
+00:03:27,920 --> 00:03:28,880
+ All right, that's it.
+
+51
+00:03:28,880 --> 00:03:30,480
+ I will see you in the next lecture.
+
