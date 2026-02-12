@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:04,260
+Vì vậy, hãy có một cái nhìn vào kỹ thuật nhanh chóng hơn để cải thiện của bạn
+
+2
+00:00:04,260 --> 00:00:07,580
+Nhắc lại. Đầu tiên, có một thứ gọi là không đóng cửa nhắc nhở.
+
+3
+00:00:07,580 --> 00:00:13,420
+Vì vậy, đây là để trình bày một nhiệm vụ cho một mô hình mà không cần cung cấp bất kỳ ví dụ hoặc
+
+4
+00:00:13,420 --> 00:00:16,180
+Sự huấn luyện rõ ràng cho nhiệm vụ đặc biệt đó.
+
+5
+00:00:16,180 --> 00:00:19,620
+Vì vậy, chúng tôi có một mô hình Gen A rất chung, một mô hình nền tảng.
+
+6
+00:00:19,620 --> 00:00:25,340
+Và ví dụ, chúng tôi nói viết một câu chuyện ngắn về một con chó giúp giải quyết một
+
+7
+00:00:25,340 --> 00:00:28,380
+Bí ẩn. Và rồi chúng ta nhận được phản hồi từ mô hình Gen A.
+
+8
+00:00:28,380 --> 00:00:32,500
+Ví dụ, ngày xửa ngày xưa, có một con chó thông minh tên là Max v.v...
+
+9
+00:00:32,500 --> 00:00:39,140
+Vì vậy, đây là khi chúng ta hoàn toàn dựa vào các mô hình kiến thức tổng quát và lớn hơn và
+
+10
+00:00:39,140 --> 00:00:43,460
+Các mô hình nền tảng càng có khả năng, càng có khả năng chúng tôi sẽ nhận được tốt
+
+11
+00:00:43,460 --> 00:00:47,300
+Kết quả. Nó được gọi là zero đóng cửa nhắc nhở bởi vì chúng tôi đi ngay lập tức và chúng tôi có mặt
+
+12
+00:00:47,300 --> 00:00:50,500
+những gợi ý của chúng ta. Tiếp theo, chúng ta có vài cảnh báo.
+
+13
+00:00:50,500 --> 00:00:56,300
+Vì vậy, ở đây chúng tôi cung cấp ví dụ về một nhiệm vụ để mô hình để đảm bảo rằng chúng tôi đã hướng dẫn
+
+14
+00:00:56,300 --> 00:01:00,260
+đầu ra của nó. Vì vậy, đó là lý do tại sao nó được gọi là một vài shot bởi vì chúng tôi cung cấp một vài cảnh quay
+
+15
+00:01:00,260 --> 00:01:05,060
+để mô hình để thực hiện nhiệm vụ. Vì vậy, hãy lấy chính xác cùng một dấu nhắc như
+
+16
+00:01:05,060 --> 00:01:08,660
+Trước đây, nhưng bây giờ chúng ta sẽ sử dụng kỹ thuật thúc đẩy vài cảnh quay.
+
+17
+00:01:08,660 --> 00:01:14,540
+Vì vậy, chúng tôi nói ở đây là hai ví dụ về câu chuyện nơi động vật giúp giải quyết bí ẩn.
+
+18
+00:01:14,540 --> 00:01:19,260
+Và chúng tôi nói về râu, mèo và chúng tôi viết câu chuyện và chúng tôi nói về
+
+19
+00:01:19,260 --> 00:01:22,340
+bạn thân chim và chúng tôi cũng viết câu chuyện.
+
+20
+00:01:22,700 --> 00:01:26,940
+Vì vậy, bây giờ chúng tôi đã cung cấp một vài ví dụ cho các mô hình Gen A và bây giờ chúng tôi nói
+
+21
+00:01:26,940 --> 00:01:30,900
+Viết một câu chuyện ngắn về một con chó giúp giải quyết một bí ẩn.
+
+22
+00:01:30,900 --> 00:01:36,140
+Và bởi vì chúng tôi đã cung cấp một vài cảnh quay cho các mô hình chung, sau đó nó có thể
+
+23
+00:01:36,140 --> 00:01:42,260
+để phản ứng theo cách mà chúng tôi đã cung cấp trước đây.
+
+24
+00:01:42,260 --> 00:01:46,740
+Và vì vậy, đây là một kỹ thuật tốt khi bạn biết chính xác loại nào
+
+25
+00:01:46,740 --> 00:01:50,940
+kết xuất bạn muốn và bạn muốn mô hình để viết một kết xuất mới dựa trên
+
+26
+00:01:50,940 --> 00:01:55,380
+Những ví dụ bạn cung cấp. Ngoài ra, nếu bạn chỉ cung cấp một ví dụ,
+
+27
+00:01:55,380 --> 00:01:59,140
+Đây cũng được gọi là một shot hoặc chỉ một nhắc nhở.
+
+28
+00:01:59,140 --> 00:02:02,820
+Sau đó, chúng tôi có dây chân thúc đẩy.
+
+29
+00:02:02,820 --> 00:02:08,460
+Vì vậy, ở đây chúng tôi chia bài tập thành một chuỗi các bước lý luận dẫn đến
+
+30
+00:02:08,460 --> 00:02:10,460
+một cấu trúc và sự đồng nhất.
+
+31
+00:02:10,460 --> 00:02:15,340
+Vì vậy, khi chúng tôi sử dụng một câu trong nhắc nhở của chúng tôi, như suy nghĩ từng bước,
+
+32
+00:02:15,340 --> 00:02:19,020
+Điều này sẽ giúp mô hình đi vào một chuỗi các nhắc chân.
+
+33
+00:02:19,460 --> 00:02:23,300
+Điều này rất hữu ích khi bạn muốn giải quyết một vấn đề như một con người và
+
+34
+00:02:23,300 --> 00:02:25,260
+mà thường đòi hỏi phải có vài bước.
+
+35
+00:02:25,260 --> 00:02:31,140
+Vì vậy, ví dụ, hãy một lần nữa làm nhắc nhở của chúng tôi mà chúng tôi sẽ nói, hãy viết một câu chuyện
+
+36
+00:02:31,140 --> 00:02:33,140
+Về một con chó đang giải quyết một bí ẩn.
+
+37
+00:02:33,140 --> 00:02:37,900
+Nhưng sau đó chúng tôi nói đầu tiên, mô tả bối cảnh và con chó, sau đó giới thiệu
+
+38
+00:02:37,900 --> 00:02:44,020
+Bí ẩn, tiếp theo hãy chỉ ra làm thế nào con chó phát hiện ra manh mối và cuối cùng tiết lộ con chó
+
+39
+00:02:44,020 --> 00:02:46,180
+Giải quyết bí ẩn và kết thúc câu chuyện.
+
+40
+00:02:46,780 --> 00:02:50,020
+Và vì vậy chúng tôi nói, viết một câu chuyện ngắn sau cây này.
+
+41
+00:02:50,020 --> 00:02:54,940
+Suy nghĩ từng bước một và phản ứng sẽ đi theo cấu trúc này và do đó
+
+42
+00:02:54,940 --> 00:02:56,500
+Đây là chuỗi dấu chân.
+
+43
+00:02:56,500 --> 00:03:02,060
+Và điều này có thể được phối hợp với không bức ảnh hoặc một vài cảnh báo trước nếu bạn muốn nó
+
+44
+00:03:02,060 --> 00:03:07,100
+đến. Tiếp theo, chúng ta sẽ thu hồi lại thế hệ hoặc giẻ rách.
+
+45
+00:03:07,100 --> 00:03:12,700
+Vì vậy ở đây chúng tôi kết hợp khả năng của mô hình với các nguồn dữ liệu bên ngoài theo thứ tự
+
+46
+00:03:12,700 --> 00:03:16,100
+để tạo ra một phản ứng có hiểu biết và văn cảnh phong phú hơn.
+
+47
+00:03:16,500 --> 00:03:20,580
+Vì vậy, như một ký ức, như một lời nhắc nhở, chúng tôi đi và hỏi một cái gì đó
+
+48
+00:03:20,580 --> 00:03:25,220
+Mô hình geniam và một số phần của mô hình sẽ thu hồi liên quan
+
+49
+00:03:25,220 --> 00:03:27,740
+Thông tin từ một nguồn dữ liệu bên ngoài.
+
+50
+00:03:27,740 --> 00:03:32,260
+Và sau đó chúng tôi thêm điều này như là một dấu nhắc tăng cường và tăng cường và sau đó chúng tôi
+
+51
+00:03:32,260 --> 00:03:33,260
+Tìm câu trả lời từ nó.
+
+52
+00:03:33,260 --> 00:03:35,140
+Đây là toàn bộ ý tưởng đằng sau giẻ rách.
+
+53
+00:03:35,140 --> 00:03:38,660
+Ở đây chúng ta có thể có một miếng vải theo một cách như thế này.
+
+54
+00:03:38,660 --> 00:03:43,140
+Ví dụ, chúng tôi nói viết một câu chuyện ngắn về một con chó giải quyết một bí ẩn và
+
+55
+00:03:43,140 --> 00:03:46,860
+Sau đó sử dụng các thông tin sau đây từ văn bản về chó trong họ
+
+56
+00:03:46,860 --> 00:03:50,500
+Hành vi và chi tiết về những bí ẩn chung liên quan đến trộm cắp.
+
+57
+00:03:50,500 --> 00:03:55,740
+Và vì vậy chúng tôi cung cấp rất nhiều thông tin cho các mô hình như chó có
+
+58
+00:03:55,740 --> 00:04:00,100
+một giác quan tuyệt vời của khứu giác, mà họ sử dụng để theo dõi giác quan và sau đó phổ biến
+
+59
+00:04:00,100 --> 00:04:03,260
+Bí ẩn trong khu phố thường liên quan đến việc ăn cắp hoặc mất đồ.
+
+60
+00:04:03,260 --> 00:04:07,340
+Và sau đó chó có thể phát hiện cảm giác ngay cả từ một ngày cũ và theo dấu vết.
+
+61
+00:04:07,340 --> 00:04:08,260
+Chúng tôi định vị được vật dụng.
+
+62
+00:04:08,260 --> 00:04:12,700
+Và thông tin này có thể đến từ một nguồn dữ liệu bên ngoài và đó là
+
+63
+00:04:12,700 --> 00:04:13,500
+được thêm vào.
+
+64
+00:04:13,500 --> 00:04:16,980
+Đây là những gì được gọi là tăng cường thế hệ được gia tăng vào chính của chúng tôi
+
+65
+00:04:16,980 --> 00:04:17,420
+Nhắc lại.
+
+66
+00:04:17,420 --> 00:04:20,380
+Và vì vậy chúng tôi nói viết câu chuyện về chi tiết này.
+
+67
+00:04:20,380 --> 00:04:23,660
+Và tất nhiên, họ, những câu chuyện sẽ, tất nhiên, được hướng dẫn
+
+68
+00:04:23,660 --> 00:04:28,380
+Đối với loài chó có khứu giác tuyệt vời và tìm kiếm những thứ bị mất.
+
+69
+00:04:28,380 --> 00:04:30,900
+Vậy đây là cách làm việc của giẻ rách.
+
+70
+00:04:30,900 --> 00:04:34,660
+Chúng tôi đã nhìn thấy nó đã có chiều dài trong các buổi làm nền, nhưng nó đã được tốt cho
+
+71
+00:04:34,660 --> 00:04:37,580
+Anh sẽ lại thấy ở đây như một lời nhắc nhở nho nhỏ.
+
+72
+00:04:37,580 --> 00:04:40,940
+Vì vậy, tôi hy vọng bạn thích nó và tôi sẽ nhìn thấy bạn trong bài giảng tiếp theo.
+
