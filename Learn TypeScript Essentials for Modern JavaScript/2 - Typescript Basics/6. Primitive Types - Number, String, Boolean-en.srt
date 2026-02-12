@@ -1,0 +1,276 @@
+1
+00:00:00,000 --> 00:00:05,300
+ Okay, welcome to the very first lesson of this module where we're going to be
+
+2
+00:00:05,300 --> 00:00:11,640
+ learning the very basics of the TypeScript language. Now, the TypeScript language
+
+3
+00:00:11,640 --> 00:00:19,000
+ has what's called primitives and if you're familiar with other languages, maybe
+
+4
+00:00:19,000 --> 00:00:26,500
+ JavaScript or maybe C# or other languages, then primitives will actually make a lot
+
+5
+00:00:26,500 --> 00:00:32,840
+ of sense because there are things like integers and strings and bootyens and
+
+6
+00:00:32,840 --> 00:00:38,000
+ floats and stuff like that. So, let's work out where they work in TypeScript.
+
+7
+00:00:38,000 --> 00:00:43,880
+ Now, if you want to follow along with what I'm doing in this course, so this
+
+8
+00:00:43,880 --> 00:00:50,520
+ site here, TypeScriptWang.org, is the actual website for learning TypeScript and
+
+9
+00:00:50,520 --> 00:00:55,880
+ they actually have this playground here. So, you can go to this, click on the
+
+10
+00:00:55,880 --> 00:01:01,160
+ playground and it's going to take you to this page where we can type the
+
+11
+00:01:01,160 --> 00:01:07,800
+ TypeScript language and get it executed. Okay, so let's fast start off and the
+
+12
+00:01:07,800 --> 00:01:13,320
+ first thing we're going to do is learn about integers and we can use the
+
+13
+00:01:13,320 --> 00:01:20,600
+ keywords let. So, we are creating a variable here and let's say my var or my
+
+14
+00:01:20,600 --> 00:01:28,800
+ variable and let's start it off with one. Nice and easy. So, this is going to
+
+15
+00:01:28,800 --> 00:01:34,360
+ effectively and because we've not actually specified a type but TypeScript
+
+16
+00:01:34,360 --> 00:01:40,520
+ is clever enough to figure out that we are actually setting it up as a number.
+
+17
+00:01:40,520 --> 00:01:49,080
+ And we can verify that by doing a console, log and we can say type of, so the
+
+18
+00:01:49,080 --> 00:01:54,520
+ type of command allows us obviously to see the type of a particular variable so
+
+19
+00:01:54,520 --> 00:02:03,680
+ we can do type of my var and then once we type it in we need to hit the run
+
+20
+00:02:03,680 --> 00:02:09,480
+ button here and you can see we get the type of number and that's again
+
+21
+00:02:09,480 --> 00:02:15,480
+ verified by the fact we hover over it and it says it's a number. Now, of course,
+
+22
+00:02:15,480 --> 00:02:21,080
+ TypeScript and the higher idea or the point of it is where she specified the
+
+23
+00:02:21,080 --> 00:02:28,440
+ types rather than in JavaScript where we kind of don't. So, how we specify a
+
+24
+00:02:28,440 --> 00:02:35,680
+ type in TypeScript is we get a variable and then we put a colon after it and
+
+25
+00:02:35,680 --> 00:02:40,440
+ then the actual type that we want. So, in this case we're going to explicitly
+
+26
+00:02:40,440 --> 00:02:46,680
+ set it to a number and if we execute it again we get the same thing. This time
+
+27
+00:02:46,680 --> 00:02:54,360
+ the TypeScript knows that we actually intend this to be a number. For example, if
+
+28
+00:02:54,360 --> 00:03:00,920
+ we now try and set that to a string, if we say for example one we can
+
+29
+00:03:00,920 --> 00:03:05,200
+ immediately get some feedback here saying that this string is not
+
+30
+00:03:05,200 --> 00:03:10,840
+ assignable to type number. So, you can see the immediate advantages of
+
+31
+00:03:10,840 --> 00:03:17,200
+ TypeScript is that we get this feedback straight away even before we've
+
+32
+00:03:17,200 --> 00:03:21,800
+ executed the code in the compiler and it compilers warning us that we're
+
+33
+00:03:21,800 --> 00:03:28,400
+ trying to specify a string as part of a number. So, let's try and set it to
+
+34
+00:03:28,400 --> 00:03:34,600
+ something like true and again we're going to get error because we can't make
+
+35
+00:03:34,600 --> 00:03:39,720
+ that a boolean because it's specified as a number whereas if we now change that
+
+36
+00:03:39,720 --> 00:03:50,880
+ to boolean, we get no error and if we execute that we get a type of boolean.
+
+37
+00:03:50,880 --> 00:03:57,680
+ So, let's now look at a few more different types or primitives in TypeScript.
+
+38
+00:03:57,680 --> 00:04:03,880
+ So, we learned about how to define a number and we've also learned how to
+
+39
+00:04:03,880 --> 00:04:10,480
+ define a boolean, a boolean being true, truthy and a falsey. So, if we want to
+
+40
+00:04:10,480 --> 00:04:16,080
+ specify a string, we can just do string like this and then give it to the name,
+
+41
+00:04:16,080 --> 00:04:26,480
+ for example, my name, Tim and we now have a string. Now, as I said in TypeScript the
+
+42
+00:04:26,480 --> 00:04:35,360
+ whole point generally is that we specify a type. So, these primitive types represent
+
+43
+00:04:35,360 --> 00:04:41,200
+ single values. They're not objects and they're not arrays. There are in fact the
+
+44
+00:04:41,200 --> 00:04:47,720
+ foundation of TypeScript's type system and we've already had a look at a few
+
+45
+00:04:47,720 --> 00:04:52,800
+ common ones. We've looked at string and we've looked at number and we've looked at
+
+46
+00:04:52,800 --> 00:05:01,280
+ boolean. We can also, for example, define it as type of null. If we don't actually
+
+47
+00:05:01,280 --> 00:05:08,160
+ know what we want it to be at that point, so we can say type, my vowel, but it's
+
+48
+00:05:08,160 --> 00:05:14,800
+ of type null and we are initializing it to null. Now, there may be of course some
+
+49
+00:05:14,800 --> 00:05:22,080
+ situations where we want to start off with a null primitive type. And in
+
+50
+00:05:22,080 --> 00:05:29,160
+ addition to null, we also have undefined. And again, we can specify that and set
+
+51
+00:05:29,160 --> 00:05:36,560
+ that to undefined if we particularly want to do. So, these are the main
+
+52
+00:05:36,560 --> 00:05:43,920
+ primitive types. We have string, we have a number and this could be, for example,
+
+53
+00:05:43,920 --> 00:05:54,640
+ integers or it could be floats. We could also have boolean and we could also
+
+54
+00:05:54,640 --> 00:06:02,840
+ have of type null and type undefined. Now, these are the main ones that we
+
+55
+00:06:02,840 --> 00:06:10,760
+ need to be aware of. Now, we've looked at the main types and we've also learnt
+
+56
+00:06:10,760 --> 00:06:16,160
+ that we have to define the types, but it is also possible that TypeScript can
+
+57
+00:06:16,160 --> 00:06:21,360
+ be clever enough to have gotten guess the type for you. Now, this is not
+
+58
+00:06:21,360 --> 00:06:27,600
+ generally the best thing to do because you are want to generally explicitly set
+
+59
+00:06:27,600 --> 00:06:32,000
+ the type, but if you didn't and you did something like this and you said it's
+
+60
+00:06:32,000 --> 00:06:40,320
+ London, for example, then it's going to guess that that is a string. But if you did
+
+61
+00:06:40,320 --> 00:06:46,680
+ something like one in speech marks, then again, that will be interpreted as a
+
+62
+00:06:46,680 --> 00:06:51,880
+ string, but of course, like in JavaScript, you might actually want this to become a
+
+63
+00:06:51,880 --> 00:06:57,440
+ number at some point and that's why you want to accept that you define that as a
+
+64
+00:06:57,440 --> 00:07:04,920
+ specific type. So, primitive types are effectively our first step towards
+
+65
+00:07:04,920 --> 00:07:10,840
+ writing safer and more predictable code. We've learned how to declare them
+
+66
+00:07:10,840 --> 00:07:16,520
+ and we've also learned how to type script in four system and how to fix column
+
+67
+00:07:16,520 --> 00:07:22,320
+ mistakes. In the next lesson, we're going to explore how TypeScript decides what
+
+68
+00:07:22,320 --> 00:07:27,720
+ type of variable has automatically and that's called type inference and it's
+
+69
+00:07:27,720 --> 00:07:31,160
+ surprisingly powerful.
+
