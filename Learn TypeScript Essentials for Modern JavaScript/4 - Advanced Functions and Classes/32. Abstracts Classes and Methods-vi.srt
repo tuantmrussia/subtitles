@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:06,800
+Chào mừng trở lại. Trong bài học này, chúng ta sẽ tìm hiểu về các lớp học trừu tượng và các phương pháp trừu tượng trong TypeUS.
+
+2
+00:00:06,800 --> 00:00:14,320
+Đây là những công cụ mạnh mẽ sử dụng các ứng dụng trong thế giới thực để thực thi cấu trúc, nhất quán,
+
+3
+00:00:14,320 --> 00:00:20,800
+và thiết kế luật lệ trên cơ sở mật mã. Nếu bạn đã bao giờ muốn có khuôn khổ
+
+4
+00:00:20,800 --> 00:00:27,440
+Để chúng tôi thực hiện một số phương pháp nhất định, đây là cách họ làm. Hãy bắt đầu với một vấn đề.
+
+5
+00:00:27,440 --> 00:00:30,960
+Hãy tưởng tượng chúng tôi đang xây dựng một ứng dụng với các loại sử dụng khác nhau.
+
+6
+00:00:30,960 --> 00:00:38,080
+Ứng dụng, quản trị, người dùng thông thường, và có thể là khách. Mọi người dùng nên có phương pháp đăng nhập,
+
+7
+00:00:38,080 --> 00:00:42,080
+nhưng thực tế thực hiện có thể khác nhau cho mỗi loại.
+
+8
+00:00:42,080 --> 00:00:51,040
+Vì vậy, chúng ta sẽ cần một số cấu trúc chung, một số khác nhau thực hiện và thực thi các quy tắc.
+
+9
+00:00:51,040 --> 00:00:53,920
+Và đó chính xác là nơi các lớp học trừu tượng xuất hiện.
+
+10
+00:00:54,880 --> 00:01:00,800
+Một lớp học trừu tượng là một lớp học mà không thể ngay lập tức. Nó phải được mở rộng
+
+11
+00:01:00,800 --> 00:01:08,160
+bởi những lớp khác. Những lớp học trừu tượng xác định điều gì phải có, nhưng không cần thiết phải làm như thế nào.
+
+12
+00:01:08,160 --> 00:01:17,840
+Hãy lấy một ví dụ. Vì vậy, chúng tôi sử dụng từ khóa trừu tượng cho lớp học trừu tượng và sau đó người dùng.
+
+13
+00:01:21,520 --> 00:01:29,920
+Sau đó chúng tôi cung cấp một nhà xây dựng. Người xây dựng của chúng tôi có thể có một tên người dùng, vì vậy hãy làm một tên người dùng công cộng,
+
+14
+00:01:29,920 --> 00:01:36,320
+nhưng kiểu dây. Hãy bỏ trống cái máy xây dựng.
+
+15
+00:01:36,320 --> 00:01:45,920
+Và bây giờ chúng tôi muốn xác định phương pháp bắt buộc của chúng tôi. Chúng tôi làm trừu tượng và sau đó đăng nhập.
+
+16
+00:01:47,200 --> 00:01:52,400
+Đây là phương pháp của chúng tôi và phương pháp của chúng tôi sẽ không trả lại gì, vì vậy về cơ bản là trống rỗng.
+
+17
+00:01:52,400 --> 00:01:56,080
+Vì vậy, chúng tôi xác định một lớp học trừu tượng gọi là người dùng.
+
+18
+00:01:56,080 --> 00:02:01,120
+Chúng tôi nhận thấy rằng chúng tôi sử dụng từ khóa trừu tượng ở đây.
+
+19
+00:02:01,120 --> 00:02:09,920
+Cũng chú ý rằng phương pháp đăng nhập không có cơ thể. Vì vậy, phương pháp này phải được thực hiện bởi bất kỳ lớp học
+
+20
+00:02:09,920 --> 00:02:18,160
+mà mở rộng người dùng. Vì vậy, các phương pháp trừu tượng thực thi một hợp đồng. Họ bảo đảm rằng mỗi tầng lớp ngầm
+
+21
+00:02:18,160 --> 00:02:26,400
+cung cấp thực hiện riêng. Một lần nữa, nếu bất kỳ tầng lớp ngầm nào thừa hưởng từ tầng lớp chủ nhân này,
+
+22
+00:02:26,400 --> 00:02:32,320
+nó phải thực hiện phương pháp đặc biệt này. Nếu một tầng lớp ngầm quên thực hiện phương pháp này,
+
+23
+00:02:32,320 --> 00:02:39,920
+Gõ vào "% 3" sẽ ném một lỗi trước khi mã của chúng tôi chạy. Bây giờ hãy làm một ví dụ.
+
+24
+00:02:39,920 --> 00:02:49,760
+Vì vậy, chúng tôi làm lớp học và sau đó admin user, và chúng tôi nói mở rộng, mở rộng lớp bậc thầy của chúng tôi người dùng.
+
+25
+00:02:49,760 --> 00:02:56,560
+Hãy cùng bay vòng vòng và chúng ta thấy rằng TypeCuter ép chúng ta thực hiện phương pháp cụ thể này.
+
+26
+00:02:57,840 --> 00:03:07,600
+Vì vậy, bây giờ chúng ta hãy đăng nhập. Cái này trả lại một khoảng trống. Giờ chúng ta có thể làm bất cứ gì chúng ta muốn. Có lẽ vậy.
+
+27
+00:03:07,600 --> 00:03:10,560
+bản ghi bàn điều khiển và nói đăng nhập.
+
+28
+00:03:10,560 --> 00:03:21,200
+Vì vậy, trong ví dụ này, người dùng admin mở rộng người dùng và là cần thiết để thực hiện các phương pháp đăng nhập.
+
+29
+00:03:21,200 --> 00:03:27,520
+Bây giờ hãy tạo một kiểu người dùng khác. Hãy làm một trong những gọi là thường xuyên sử dụng.
+
+30
+00:03:27,520 --> 00:03:43,360
+Vì vậy, lớp thường sử dụng mở rộng người dùng. Một lần nữa, TypeUS sẽ buộc chúng tôi phải thực hiện
+
+31
+00:03:43,360 --> 00:03:48,000
+Cách này. Tôi sẽ chỉ cần bắt chước phương pháp này và dán nó vào đây.
+
+32
+00:03:48,000 --> 00:03:54,720
+Bây giờ nếu lớp học có đầy đủ cùng một cấu trúc, nhưng hành vi đó có thể khác nhau. Vì vậy, tất nhiên,
+
+33
+00:03:54,720 --> 00:04:00,880
+Nếu chúng tôi không muốn làm điều này, chúng tôi có thể nói có một đăng nhập thông thường trong người dùng.
+
+34
+00:04:00,880 --> 00:04:09,760
+Và bây giờ chúng tôi có thể thực sự tạo ra các lớp học của chúng tôi. Vì vậy, chúng tôi có thể thực hiện condmin bằng người dùng Adam mới,
+
+35
+00:04:09,760 --> 00:04:17,120
+và chúng tôi có thể cung cấp một chuỗi, có lẽ Alice, và chúng tôi có thể sau đó làm điều tương tự cho người dùng thường xuyên
+
+36
+00:04:17,120 --> 00:04:27,040
+và thực hiện consest user bằng người dùng thường xuyên mới và nói Bob. Và bây giờ chúng tôi có thể làm admin đăng nhập vào
+
+37
+00:04:27,040 --> 00:04:38,560
+người dùng đăng nhập vào. Mặc dù chúng tôi không thể tạo ra các trường hợp của lớp học người dùng trừu tượng trực tiếp,
+
+38
+00:04:38,560 --> 00:04:44,640
+chúng ta có thể làm việc với các tiểu tiết. Vì vậy, nếu chúng tôi cố gắng và làm một cái gì đó như thế này và làm nhiệt hạch người dùng
+
+39
+00:04:44,640 --> 00:04:51,040
+bằng người dùng mới, chúng ta sẽ nhận được thông điệp này rằng chúng ta không thể tạo ra một thể hiện trừu tượng
+
+40
+00:04:51,040 --> 00:04:59,920
+lớp. Bây giờ một câu hỏi phổ biến là tại sao không chỉ sử dụng một giao diện? Nhưng có một số khác biệt
+
+41
+00:04:59,920 --> 00:05:06,240
+giữa nó. Trong một lớp học trừu tượng, chúng ta có thể có những người xây dựng. Chúng ta có thể thực hiện các phương pháp
+
+42
+00:05:06,240 --> 00:05:13,440
+Và tạo ra một cửa hàng. Trong khi giao diện, chúng tôi không thực sự có bất kỳ thực hiện.
+
+43
+00:05:13,440 --> 00:05:20,080
+Chúng ta không có những người xây dựng, và về cơ bản đó là cấu trúc tinh khiết. Một lần nữa, nếu chúng ta có một lớp học trừu tượng,
+
+44
+00:05:20,080 --> 00:05:27,120
+Chúng tôi có thể xác định một số hành vi mặc định trong lớp học thực tế của chúng tôi, mà chúng tôi không thể làm khi chúng tôi
+
+45
+00:05:27,120 --> 00:05:33,600
+sử dụng một giao diện bởi vì chúng tôi không thể có bất kỳ thực hiện. Họ sử dụng một giao diện khi bạn chỉ
+
+46
+00:05:33,600 --> 00:05:40,000
+cần có cấu trúc, dễ dàng trừu tượng lớp học, khi bạn cần chia sẻ logic cộng với các quy tắc thực thi.
+
+47
+00:05:42,000 --> 00:05:50,080
+Bây giờ các lớp học trừu tượng cũng có thể có các phương pháp đều đặn. Hãy đuổi chúng tôi đi và làm một ví dụ khác.
+
+48
+00:05:50,080 --> 00:05:57,600
+Hãy xác định một lớp gọi là hình dạng. Vì vậy, lớp học trừu tượng của hình dạng.
+
+49
+00:05:57,600 --> 00:06:07,600
+Bây giờ chúng ta hãy xác định một phương pháp chia sẻ để lĩnh vực trừu tượng. Cái này có thể trả lại số điện thoại.
+
+50
+00:06:09,200 --> 00:06:14,240
+Bây giờ chúng ta có thể định nghĩa một phương pháp khác có thể gọi là mô tả, mô tả.
+
+51
+00:06:14,240 --> 00:06:25,200
+Điều này không trả lại gì, và chúng tôi có thể thực hiện một chút ở đây trong bàn điều khiển, bản ghi, và nói
+
+52
+00:06:25,200 --> 00:06:32,240
+Đây là một hình dạng. Phương pháp này ở đây, bởi vì nó được đánh dấu bởi trừu tượng,
+
+53
+00:06:32,240 --> 00:06:39,280
+Phải được thực hiện bởi tiểu tiết. Những gì phương pháp này mô tả đã được thực hiện và chia sẻ.
+
+54
+00:06:39,280 --> 00:06:47,520
+Nó không nhất thiết phải được thực hiện. Vì vậy, hãy thử và thực hiện hình dạng thẳng này.
+
+55
+00:06:49,920 --> 00:07:03,360
+Chúng tôi có thể xác định một lớp khác được gọi là vòng tròn, hãy để tôi nói thêm hình dạng. Chúng ta có thể tạo ra một công cụ xây dựng
+
+56
+00:07:03,360 --> 00:07:11,840
+Và chúng tôi có thể nói ví dụ riêng, bán kính, con số phụ.
+
+57
+00:07:15,520 --> 00:07:23,280
+Vì vậy, chúng tôi có thể xác định thiết bị xây dựng riêng của chúng tôi trên lớp học của chúng tôi. Và sau đó chúng ta cần phải gọi cho chủ nhân
+
+58
+00:07:23,280 --> 00:07:28,240
+để gọi người xây dựng nếu nó được xác định trên hình dạng, quay siêu.
+
+59
+00:07:28,240 --> 00:07:38,800
+Và bây giờ nếu bạn lơ lửng trên nó, nó nói rằng chúng tôi phải tuyên bố phương pháp này gọi là diện tích.
+
+60
+00:07:40,000 --> 00:07:46,560
+Vì vậy, hãy làm điều đó. Và khu vực này trả lại một con số.
+
+61
+00:07:46,560 --> 00:07:59,520
+Bây giờ chúng tôi có thể làm trả lại toán học pi lần bán kính chấm này lần bán kính chấm này lần bán kính chấm này.
+
+62
+00:07:59,520 --> 00:08:07,520
+Vì vậy, lớp vòng tròn của chúng tôi phải thực hiện các phương pháp khu vực, hoặc chúng tôi nhận được các lỗi, mà chúng tôi thấy,
+
+63
+00:08:08,400 --> 00:08:11,840
+Nhưng nó tự động thừa kế phương pháp mô tả đó.
+
+64
+00:08:11,840 --> 00:08:18,080
+Hãy nói về một số thế giới thực sử dụng lớp học. Vì vậy, các lớp trừu tượng thường được sử dụng trong
+
+65
+00:08:18,080 --> 00:08:25,840
+Những thứ như các lớp học cơ bản, động cơ trò chơi, thành phần UI, hoặc có thể là các lớp dịch vụ bên trong.
+
+66
+00:08:25,840 --> 00:08:30,880
+Họ cho phép các đội lớn tuân theo luật lệ nhất quán trong khi vẫn cho phép linh hoạt.
+
+67
+00:08:30,880 --> 00:08:37,760
+Vì vậy, các lớp học trừu tượng để tìm những gì phải được thực hiện, không nhất thiết phải làm như thế nào.
+
+68
+00:08:38,480 --> 00:08:44,000
+Và có những cách mạnh mẽ để áp dụng cấu trúc và xây dựng các ứng dụng kiểu xếp chữ có thể số.
+
