@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:03,960
+ So now let's see how we can evaluate a model automatically.
+
+2
+00:00:03,960 --> 00:00:06,280
+ So this is a deeper type of evaluation,
+
+3
+00:00:06,280 --> 00:00:07,360
+ but on the left hand side,
+
+4
+00:00:07,360 --> 00:00:11,880
+ you can go under assessment and deployment and find model evaluation.
+
+5
+00:00:11,880 --> 00:00:15,080
+ So as you can see, we have three kinds of evaluation.
+
+6
+00:00:15,080 --> 00:00:18,800
+ We have the automatic evaluation to evaluate a model
+
+7
+00:00:18,800 --> 00:00:22,600
+ against recommended metrics and it's going to be fully automated
+
+8
+00:00:22,600 --> 00:00:24,920
+ as we've seen in diagram in the previous lecture.
+
+9
+00:00:24,920 --> 00:00:26,720
+ But we also have humans.
+
+10
+00:00:26,720 --> 00:00:29,960
+ You can bring your own work team and then humans are going to
+
+11
+00:00:29,960 --> 00:00:34,080
+ give you feedback and evaluate up to two miles at a time.
+
+12
+00:00:34,080 --> 00:00:35,480
+ And then you can also get humans,
+
+13
+00:00:35,480 --> 00:00:39,040
+ but this time they can be an AWS managed work team.
+
+14
+00:00:39,040 --> 00:00:40,280
+ So different kind of evaluations,
+
+15
+00:00:40,280 --> 00:00:43,240
+ but I just want to show you the flow on how to create one
+
+16
+00:00:43,240 --> 00:00:44,760
+ just so you can get a better idea.
+
+17
+00:00:44,760 --> 00:00:48,520
+ So let's go for automatic and I'll call this one demo evaluation.
+
+18
+00:00:48,520 --> 00:00:51,480
+ We're not going to run one, we just want to look at the options.
+
+19
+00:00:51,480 --> 00:00:53,200
+ But we need to select a model.
+
+20
+00:00:53,200 --> 00:00:55,480
+ For example, let's evaluate Amazon,
+
+21
+00:00:55,480 --> 00:00:58,760
+ Titan to text G1 Express.
+
+22
+00:00:58,760 --> 00:01:02,080
+ And next we need to choose what is the type of the model
+
+23
+00:01:02,080 --> 00:01:05,360
+ evaluation task that we're going to evaluate again.
+
+24
+00:01:05,360 --> 00:01:08,800
+ So do we want to understand if it's good at general text
+
+25
+00:01:08,800 --> 00:01:13,080
+ generation or if it's good at text summarization or question
+
+26
+00:01:13,080 --> 00:01:15,560
+ and answer or text classification?
+
+27
+00:01:15,560 --> 00:01:18,520
+ As you can see, you don't have any custom type of text type,
+
+28
+00:01:18,520 --> 00:01:20,680
+ just the ones are built in.
+
+29
+00:01:20,680 --> 00:01:24,040
+ So let's say we want to evaluate for general text generation.
+
+30
+00:01:24,040 --> 00:01:26,400
+ And then what do we want to evaluate for?
+
+31
+00:01:26,400 --> 00:01:30,400
+ So some metrics, so for example, we can have a look at toxicity
+
+32
+00:01:30,400 --> 00:01:34,720
+ to see if the model will generate harmful, offensive,
+
+33
+00:01:34,720 --> 00:01:36,720
+ or inappropriate content.
+
+34
+00:01:36,720 --> 00:01:40,880
+ So here we need to choose a prompt that I set to evaluate this metric.
+
+35
+00:01:40,880 --> 00:01:44,240
+ So you can either use an available built in data sets.
+
+36
+00:01:44,240 --> 00:01:47,840
+ And there's like the real toxicity prompts or the bold one,
+
+37
+00:01:47,840 --> 00:01:50,440
+ which will give some challenges to the AI.
+
+38
+00:01:50,440 --> 00:01:54,000
+ And we can have a look at the result of this evaluation.
+
+39
+00:01:54,000 --> 00:01:56,200
+ Or we can use our own prompt data sets.
+
+40
+00:01:56,200 --> 00:01:59,120
+ And again, it needs to be an Amazon S3.
+
+41
+00:01:59,120 --> 00:02:01,160
+ And then here we have more option because we can test
+
+42
+00:02:01,160 --> 00:02:03,960
+ against specific use cases of our business.
+
+43
+00:02:03,960 --> 00:02:07,760
+ So each either option are fine based on what you're trying to do.
+
+44
+00:02:07,760 --> 00:02:10,640
+ And also you can have other metrics such as accuracy.
+
+45
+00:02:10,640 --> 00:02:14,440
+ So is it good about factual knowledge for the real world?
+
+46
+00:02:14,440 --> 00:02:15,400
+ And robustness.
+
+47
+00:02:15,400 --> 00:02:17,600
+ And again, for each of these tests,
+
+48
+00:02:17,600 --> 00:02:21,200
+ you have some available data sets or you can build your own.
+
+49
+00:02:21,200 --> 00:02:21,880
+ OK.
+
+50
+00:02:21,880 --> 00:02:24,560
+ And then where do you want to store the evaluation results?
+
+51
+00:02:24,560 --> 00:02:26,520
+ Again, in Amazon S3.
+
+52
+00:02:26,520 --> 00:02:28,400
+ To perform this, you need an IM roll again
+
+53
+00:02:28,400 --> 00:02:30,760
+ to write to your Amazon S3 bucket.
+
+54
+00:02:30,760 --> 00:02:32,360
+ This can be automated right here.
+
+55
+00:02:32,360 --> 00:02:33,440
+ And then you click on Create.
+
+56
+00:02:33,440 --> 00:02:35,840
+ And it would actually do a model evaluation.
+
+57
+00:02:35,840 --> 00:02:37,280
+ Now we don't do it because, well,
+
+58
+00:02:37,280 --> 00:02:39,160
+ this is going to cost us a lot of money
+
+59
+00:02:39,160 --> 00:02:41,920
+ because we're going to run the JNAI prompts
+
+60
+00:02:41,920 --> 00:02:43,680
+ and then look at their outcome.
+
+61
+00:02:43,680 --> 00:02:46,440
+ So obviously there's a certain cost associated with it.
+
+62
+00:02:46,440 --> 00:02:50,600
+ But here we get some intention of how the model evaluation work.
+
+63
+00:02:50,600 --> 00:02:53,440
+ And you can explore on your own text summarization,
+
+64
+00:02:53,440 --> 00:02:56,360
+ question and answer, classification, and so on.
+
+65
+00:02:56,360 --> 00:02:59,440
+ Where, again, built in data sets are provided for you,
+
+66
+00:02:59,440 --> 00:03:01,880
+ which is super nice.
+
+67
+00:03:01,880 --> 00:03:03,240
+ And we want to have humans.
+
+68
+00:03:03,240 --> 00:03:05,920
+ We can create a human-based evaluation.
+
+69
+00:03:05,920 --> 00:03:08,280
+ So by humans.
+
+70
+00:03:08,280 --> 00:03:13,200
+ And here, the evaluation of all lower case.
+
+71
+00:03:13,200 --> 00:03:17,360
+ And here, we select again a model, so whichever you want.
+
+72
+00:03:17,360 --> 00:03:18,440
+ And then what is the task type?
+
+73
+00:03:18,440 --> 00:03:20,200
+ So you have the same as before, but also
+
+74
+00:03:20,200 --> 00:03:22,640
+ now you can create a custom task type.
+
+75
+00:03:22,640 --> 00:03:26,440
+ And this is for your team to use and to perform a specific task.
+
+76
+00:03:26,440 --> 00:03:28,920
+ Here, again, you would have some metrics
+
+77
+00:03:28,920 --> 00:03:30,560
+ that can be suggested.
+
+78
+00:03:30,560 --> 00:03:32,600
+ Or you can create your own metric if you want to.
+
+79
+00:03:32,600 --> 00:03:35,400
+ So you have a bit more control because now you have humans
+
+80
+00:03:35,400 --> 00:03:37,360
+ and humans can do whatever you want.
+
+81
+00:03:37,360 --> 00:03:39,040
+ So again, you select this.
+
+82
+00:03:39,040 --> 00:03:40,600
+ You select a rating method.
+
+83
+00:03:40,600 --> 00:03:44,120
+ Do you want humans to evaluate based on the thumb up or down
+
+84
+00:03:44,120 --> 00:03:49,160
+ or to write the answers on a five star method?
+
+85
+00:03:49,160 --> 00:03:52,080
+ And you can have multiple metrics if you want it to.
+
+86
+00:03:52,080 --> 00:03:55,000
+ And on top of it, you can add another model to compare
+
+87
+00:03:55,000 --> 00:03:58,240
+ between two models if you want it to, for example, these two.
+
+88
+00:03:58,240 --> 00:04:01,640
+ So a lot more customization is available for human-based
+
+89
+00:04:01,640 --> 00:04:04,840
+ evaluation, but the ID remains the same.
+
+90
+00:04:04,840 --> 00:04:07,360
+ So that's it for FM evaluation.
+
+91
+00:04:07,360 --> 00:04:08,560
+ I hope you liked it.
+
+92
+00:04:08,560 --> 00:04:11,720
+ And I will see you in the next lecture.
+
