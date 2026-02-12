@@ -1,0 +1,252 @@
+1
+00:00:00,000 --> 00:00:06,280
+Chào mừng trở lại. Trong bài học này chúng tôi sẽ xem xét các bí danh và giao diện
+
+2
+00:00:06,280 --> 00:00:12,040
+in TypeScy. Hai người này thường lẫn lộn, nhưng họ chơi rất khác nhau
+
+3
+00:00:12,040 --> 00:00:19,720
+luật. Trước hết, hãy xem qua các bí danh kiểu. Kiểu bí danh cho phép chúng tôi cung cấp một tùy chọn
+
+4
+00:00:19,720 --> 00:00:28,200
+tên của một loại. Hãy nghĩ về nó như một cách để tạo ra một tay ngắn cho những loại phức tạp.
+
+5
+00:00:28,200 --> 00:00:36,600
+Hãy tạo một loại ID người dùng. Bây giờ, ID người dùng có thể là loại chuỗi hoặc nó có thể
+
+6
+00:00:36,600 --> 00:00:43,640
+là loại số. Vì vậy, loại nó không phải là một nguyên thủy, chúng tôi đang thực sự thiết lập như một phức tạp
+
+7
+00:00:43,640 --> 00:00:49,160
+Đối tượng, một loại phức tạp ở đây, bởi vì nó có hai loại. Vì vậy, người dùng này ID là
+
+8
+00:00:49,160 --> 00:00:58,280
+Thực sự có hai loại chuỗi và số. Và bây giờ những gì chúng tôi có thể làm là chúng tôi có thể nói cho ID1 là
+
+9
+00:00:58,280 --> 00:01:10,040
+kiểu ID người dùng. Chúng tôi có thể thiết lập đó là 101 và sau đó chúng tôi có ID2 và đó cũng là loại
+
+10
+00:01:10,040 --> 00:01:20,800
+Được rồi. Và đó có thể là ví dụ A123. Vì vậy, ID người dùng về cơ bản là một bí danh đơn giản
+
+11
+00:01:20,800 --> 00:01:27,920
+cho cả hai loại chuỗi hoặc số. Bây giờ thay vì lặp lại số dây ở khắp nơi,
+
+12
+00:01:27,920 --> 00:01:33,760
+Vì vậy, thay vì sử dụng nó ở khắp mọi nơi trên mật mã của chúng tôi, chúng tôi có thể đơn giản chỉ cần đề cập đến người dùng của chúng tôi
+
+13
+00:01:33,760 --> 00:01:39,280
+Được rồi. Và nó trông gọn gàng hơn nhiều khi chúng tôi đang thực sự viết các mã cho các nhà phát triển khác
+
+14
+00:01:39,280 --> 00:01:47,800
+để hiểu. Nó cũng có thể được dùng làm bí danh cho đồ vật. Để xem nào
+
+15
+00:01:47,800 --> 00:01:55,400
+Như một ví dụ. Vì vậy, nếu chúng tôi phải tìm một loại người dùng và người dùng có một
+
+16
+00:01:55,400 --> 00:02:09,800
+id của số và một tên của chuỗi loại và một lá cờ là manmin, thiết lập để boolele. Và sau đó
+
+17
+00:02:09,800 --> 00:02:23,920
+chúng tôi có thể tạo ra một người dùng và nói người dùng 1. Đó là kiểu người dùng. Bạn có thể đặt mã căn cước thành 1.
+
+18
+00:02:23,920 --> 00:02:35,440
+Đặt tên cho Alice. Và chúng ta có thể đặt lá cờ này thành sự thật. Vậy đây là diễn xuất
+
+19
+00:02:35,440 --> 00:02:44,640
+là bí danh đơn giản cho kiểu người dùng này. Bây giờ hãy nhìn vào một giao diện,
+
+20
+00:02:44,640 --> 00:02:50,920
+khác biệt. Vì vậy, một giao diện được sử dụng chủ yếu để mô tả hình dạng của một đối tượng. Là...
+
+21
+00:02:50,920 --> 00:02:56,840
+Rất giống với việc gõ bí danh cho các đối tượng, nhưng nó có thêm sức mạnh. Vậy là
+
+22
+00:02:56,840 --> 00:03:04,480
+cách tốt nhất để giải thích trong một thí dụ. Vì vậy, hãy có một giao diện của một người dùng. Và chúng ta có thể có
+
+23
+00:03:04,480 --> 00:03:16,160
+cùng đặc tính như trước. Vì vậy, id loại số chuỗi tên và là admin loại
+
+24
+00:03:16,160 --> 00:03:31,440
+Thật kinh khủng. Bây giờ chúng ta sẽ tạo ra một đối tượng hoặc nói người dùng 2 của người dùng giao diện. Anh có thể
+
+25
+00:03:31,440 --> 00:03:40,800
+Cứ đặt căn cước, rồi lấy tên, nói Bob. Và sau đó thiết lập quảng cáo
+
+26
+00:03:40,800 --> 00:03:54,240
+Cờ sai. Vì vậy, điều này khá giống như các bí danh ví dụ, nhưng xem những gì
+
+27
+00:03:54,240 --> 00:04:01,320
+tiếp theo. Vì vậy giao diện có thể được mở rộng để tạo ra những giao diện mới. Và đó là sự khác biệt
+
+28
+00:04:01,320 --> 00:04:12,080
+giữa cái này và biệt danh kiểu của nó. Vì vậy, chúng tôi có thể làm, ví dụ, tạo ra một giao diện của nhân viên,
+
+29
+00:04:12,080 --> 00:04:28,160
+Bây giờ mở rộng người dùng. Và sau đó chúng tôi có thể thêm vào, ví dụ, nhân viên ID và đặt đó để một số.
+
+30
+00:04:28,160 --> 00:04:35,160
+Sau đó chúng tôi có thể tạo ra một người dùng khác, ví dụ người dùng 3. Và đó là loại nhân viên lần này.
+
+31
+00:04:35,160 --> 00:04:43,800
+Anh có thể đặt tên tài sản để nói Charlie. Nhưng lần này nó sẽ phàn nàn.
+
+32
+00:04:43,800 --> 00:04:54,600
+bởi vì chúng ta cần xác định ID và quản trị. Vì vậy, nó sẽ nói ID hoặc có thể là 4. Và sau đó
+
+33
+00:04:54,600 --> 00:05:02,240
+là Adam. Chúng ta sẽ sai. Nhưng cũng nhận thấy bây giờ phàn nàn bởi vì chúng tôi
+
+34
+00:05:02,240 --> 00:05:09,960
+Chưa xác định danh tính nhân viên. Vì vậy, chúng tôi phải xác định thêm một tài sản, nhân viên
+
+35
+00:05:09,960 --> 00:05:16,440
+ltal và 101. Vì vậy, đây là sự khác biệt quan trọng giữa giao diện và loại
+
+36
+00:05:16,440 --> 00:05:24,880
+Bí danh là các giao diện cũng là để mở rộng thực tế một giao diện trước đó. Trong khi
+
+37
+00:05:24,880 --> 00:05:32,000
+Một loại bí danh thì không. Điều này là hoàn hảo để có thể làm vật thể thừa kế trong một
+
+38
+00:05:32,000 --> 00:05:39,920
+Kiểu văn lệnh. Vì vậy, chúng ta hãy xem xét thêm một ví dụ chỉ để minh họa điều này. Vì vậy, hãy
+
+39
+00:05:39,920 --> 00:05:49,080
+Nói rằng chúng tôi có một giao diện của loại động vật. Và loài này, chúng tôi sẽ thiết lập loại
+
+40
+00:05:49,080 --> 00:06:01,840
+dây. Và sau đó chúng tôi sẽ tạo ra một giao diện khác của chó mà mở rộng giao diện
+
+41
+00:06:01,840 --> 00:06:10,160
+Vì động vật. Và chúng tôi sẽ cung cấp một phương pháp sủa. Vì vậy trên giao diện này, chúng tôi
+
+42
+00:06:10,160 --> 00:06:14,640
+Tạo ra một phương pháp mà sẽ bị đè bẹp khi chúng ta cung cấp nó, khi chúng ta thực sự
+
+43
+00:06:14,640 --> 00:06:22,400
+Tạo ra vật thể. Vì vậy, bây giờ chúng ta hãy làm một ví dụ với các biệt danh loại thay thế. Vậy chúng ta là
+
+44
+00:06:22,400 --> 00:06:32,800
+sẽ tạo ra một loại, và giả sử là loại động vật. Và đây có một tài sản
+
+45
+00:06:32,800 --> 00:06:46,600
+của các loại chuỗi. Sau đó chúng tôi có thể tạo ra một loại chó, đó là một tổ hợp
+
+46
+00:06:46,600 --> 00:07:00,340
+thuộc loại động vật. Và nó có một phương pháp gọi là vỏ cây, đó là một phương pháp tránh né. Vì vậy, nhìn vào
+
+47
+00:07:00,340 --> 00:07:05,680
+giới tính khác nhau giữa việc này. Vì vậy, đây là giống như một loại kết hợp, nơi đây
+
+48
+00:07:05,680 --> 00:07:11,960
+là có lẽ nhiều gọn gàng hơn trong hiệu quả là rõ ràng hơn, nơi chúng tôi có thể thực sự mở rộng nó. Nào
+
+49
+00:07:11,960 --> 00:07:19,520
+vẫn có một cái nhìn khác, bởi vì giao diện cũng có thể được mở lại và trộn lẫn,
+
+50
+00:07:19,520 --> 00:07:28,000
+trong khi loại bí danh không thể. Hãy tạo ra một giao diện gọi là xe hơi. Và điều này có một thực hiện
+
+51
+00:07:28,000 --> 00:07:34,880
+Bất động sản kiểu chuỗi. Và sau đó chúng ta sẽ có một giao diện khác. Và nhìn vào
+
+52
+00:07:34,880 --> 00:07:42,680
+chúng tôi sẽ gọi nó là xe hơi. Nhưng điều này có một bất động sản gọi là mô hình loại chuỗi.
+
+53
+00:07:42,680 --> 00:07:50,200
+Và điều này trông khá lạ, phải không? Bây giờ những gì chúng tôi có thể làm là chúng tôi có thể tạo ra một ví dụ tự nhiên
+
+54
+00:07:50,200 --> 00:07:58,440
+của chiếc xe của tôi. Và sau đó chúng ta có thể kết hợp cả hai với nhau. Vậy
+
+55
+00:07:58,440 --> 00:08:08,800
+Nếu chúng ta lơ lửng ở đây, chúng ta có thể xác định được cách làm của một chiếc máy tính. Tôi có thể đánh vần nó với máy tính. Nhưng
+
+56
+00:08:08,800 --> 00:08:15,480
+Các Type Thung Lũng cũng đã cho chúng tôi biết chúng tôi cần cũng cung cấp các mô hình kết hợp cả hai của những người này
+
+57
+00:08:15,480 --> 00:08:20,600
+Hai giao diện với nhau, bởi vì họ có cùng một tên. Để chúng ta có thể vào đây và sau đó
+
+58
+00:08:20,600 --> 00:08:32,320
+Nói kiểu người mẫu và nói là khỉ đột. Và bây giờ, TypeCuble là hạnh phúc. Nếu chúng ta cố gắng làm điều tương tự
+
+59
+00:08:32,320 --> 00:08:37,720
+một loại biệt danh, sau đó gõ mã sẽ phát điên. Nó không được phép làm thế.
+
+60
+00:08:37,720 --> 00:08:45,440
+Nếu chúng ta cố làm điều tương tự và kết hợp với các biệt danh loại, nó sẽ gây ra một lỗi.
+
+61
+00:08:45,440 --> 00:08:51,120
+Vì vậy, tóm lại, chúng ta nên sử dụng các bí danh gõ khi chúng tôi muốn, ví dụ, để công đoàn hoặc
+
+62
+00:08:51,120 --> 00:08:57,400
+Nguyên thủy hoặc tuples, trong khi giao diện nên được sử dụng khi chúng tôi muốn mô tả đối tượng
+
+63
+00:08:57,400 --> 00:09:02,760
+hình dạng. Và chúng tôi cũng muốn hưởng lợi ích từ những khả năng mở rộng và mới nổi.
+
