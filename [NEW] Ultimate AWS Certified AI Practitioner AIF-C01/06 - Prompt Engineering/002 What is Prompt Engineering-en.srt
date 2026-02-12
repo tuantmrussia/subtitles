@@ -1,0 +1,400 @@
+1
+00:00:00,000 --> 00:00:03,000
+ So, now let's talk about prompt engineering.
+
+2
+00:00:03,000 --> 00:00:04,400
+ So, what is prompt engineering?
+
+3
+00:00:04,400 --> 00:00:07,880
+ Well, say we have a knife prompt, for example,
+
+4
+00:00:07,880 --> 00:00:10,600
+ summarize what is AWS.
+
+5
+00:00:10,600 --> 00:00:13,600
+ And we submit this prompt to our LLM.
+
+6
+00:00:13,600 --> 00:00:15,120
+ So, this prompt is okay.
+
+7
+00:00:15,120 --> 00:00:17,280
+ We're going to get an answer from an LLM,
+
+8
+00:00:17,280 --> 00:00:19,480
+ but is it the answer we really want?
+
+9
+00:00:19,480 --> 00:00:23,320
+ So, prompting this type of prompt will give little guidance
+
+10
+00:00:23,320 --> 00:00:26,840
+ and leaves a lot to the model interpretation.
+
+11
+00:00:26,840 --> 00:00:28,640
+ So, we can do prompt engineering.
+
+12
+00:00:28,640 --> 00:00:30,360
+ That means we're going to develop design
+
+13
+00:00:30,360 --> 00:00:32,160
+ and optimize these kind of prompts
+
+14
+00:00:32,160 --> 00:00:34,160
+ to make sure that the foundation model
+
+15
+00:00:34,160 --> 00:00:36,560
+ have output will fit our need.
+
+16
+00:00:36,560 --> 00:00:39,080
+ So, to have an improved prompt technique,
+
+17
+00:00:39,080 --> 00:00:40,480
+ we have four blocks.
+
+18
+00:00:40,480 --> 00:00:42,640
+ The first one is the instructions.
+
+19
+00:00:42,640 --> 00:00:45,000
+ So, what is the task for the model to do?
+
+20
+00:00:45,000 --> 00:00:46,200
+ For example, we're going to describe
+
+21
+00:00:46,200 --> 00:00:48,240
+ how the model should perform the task.
+
+22
+00:00:48,240 --> 00:00:51,440
+ Then context, what is external information
+
+23
+00:00:51,440 --> 00:00:53,400
+ to guide the model?
+
+24
+00:00:53,400 --> 00:00:54,720
+ Then we have input data.
+
+25
+00:00:54,720 --> 00:00:57,880
+ So, what is the data for which we want a response?
+
+26
+00:00:57,880 --> 00:01:00,080
+ And finally, an output indicator.
+
+27
+00:01:00,080 --> 00:01:04,000
+ What is the type or the format of the output that we want?
+
+28
+00:01:04,000 --> 00:01:06,920
+ And all these things together is going to give us
+
+29
+00:01:06,920 --> 00:01:09,720
+ a much better prompt and a much better answer.
+
+30
+00:01:09,720 --> 00:01:12,120
+ So, here is a concrete example
+
+31
+00:01:12,120 --> 00:01:14,960
+ where we are going to improve our nice prompt.
+
+32
+00:01:14,960 --> 00:01:17,520
+ So, here I'm going to provide instructions.
+
+33
+00:01:17,520 --> 00:01:19,640
+ And instead of knowing what AWS is,
+
+34
+00:01:19,640 --> 00:01:22,360
+ we want to write a concise summary
+
+35
+00:01:22,360 --> 00:01:24,360
+ that captures the main points of an article
+
+36
+00:01:24,360 --> 00:01:26,000
+ about learning AWS.
+
+37
+00:01:26,000 --> 00:01:27,960
+ And we need to ensure that the summary is clear
+
+38
+00:01:27,960 --> 00:01:30,280
+ and informative, focusing on key services,
+
+39
+00:01:30,280 --> 00:01:32,000
+ and you can read the rest and so on.
+
+40
+00:01:32,000 --> 00:01:34,680
+ So, this is some very detailed instructions
+
+41
+00:01:34,680 --> 00:01:36,640
+ because we're very clear about what we want.
+
+42
+00:01:36,640 --> 00:01:38,400
+ Then we have some context.
+
+43
+00:01:38,400 --> 00:01:40,440
+ So, I am actually teaching a beginners course
+
+44
+00:01:40,440 --> 00:01:41,520
+ on AWS.
+
+45
+00:01:41,520 --> 00:01:44,480
+ And so, therefore, the model will respond in a way
+
+46
+00:01:44,480 --> 00:01:47,560
+ that it can be understood by beginners.
+
+47
+00:01:47,560 --> 00:01:49,320
+ Then we can give some input data.
+
+48
+00:01:49,320 --> 00:01:52,080
+ So, here is some input data about AWS.
+
+49
+00:01:52,080 --> 00:01:55,280
+ And this is what I want the foundation model
+
+50
+00:01:55,280 --> 00:01:56,880
+ to summarize.
+
+51
+00:01:56,880 --> 00:01:59,160
+ And finally, the output indicator.
+
+52
+00:01:59,160 --> 00:02:00,600
+ So, I want you to provide,
+
+53
+00:02:00,600 --> 00:02:04,440
+ I want the FM to provide a two, three sentence summary
+
+54
+00:02:04,440 --> 00:02:07,280
+ that will capture the essence of the article.
+
+55
+00:02:07,280 --> 00:02:09,160
+ So, here, this is great because I'm very clear,
+
+56
+00:02:09,160 --> 00:02:10,920
+ I have provided very clear instructions,
+
+57
+00:02:10,920 --> 00:02:14,680
+ good context, input data, and an output indicator.
+
+58
+00:02:14,680 --> 00:02:18,520
+ And so, therefore, when I will use it on my LLM,
+
+59
+00:02:18,520 --> 00:02:20,720
+ then I will get the expected output,
+
+60
+00:02:20,720 --> 00:02:22,720
+ which are two to three sentences,
+
+61
+00:02:22,720 --> 00:02:26,320
+ which summarize what is AWS based on this article
+
+62
+00:02:26,320 --> 00:02:28,480
+ from a beginner's context.
+
+63
+00:02:28,480 --> 00:02:29,640
+ So, hopefully, that makes sense.
+
+64
+00:02:29,640 --> 00:02:32,800
+ And this is something that AWS wants you to know.
+
+65
+00:02:32,800 --> 00:02:36,080
+ Next, we have the technique called negative prompting.
+
+66
+00:02:36,080 --> 00:02:40,000
+ So, this is a technique where we explicitly instruct the model
+
+67
+00:02:40,000 --> 00:02:43,320
+ on what not to include or to do in its response.
+
+68
+00:02:43,320 --> 00:02:45,200
+ So, when you have negative prompting,
+
+69
+00:02:45,200 --> 00:02:47,360
+ it helps to avoid unwanted contents.
+
+70
+00:02:47,360 --> 00:02:50,080
+ So, we specify explicitly what we don't want.
+
+71
+00:02:50,080 --> 00:02:53,160
+ And therefore, we reduce the chances of irrelevant
+
+72
+00:02:53,160 --> 00:02:54,960
+ or inappropriate contents.
+
+73
+00:02:54,960 --> 00:02:56,280
+ And we maintain the focus.
+
+74
+00:02:56,280 --> 00:02:59,520
+ We make sure that the prompt and the model
+
+75
+00:02:59,520 --> 00:03:01,680
+ will stay on the topic.
+
+76
+00:03:01,680 --> 00:03:03,320
+ Then we have enhanced clarity,
+
+77
+00:03:03,320 --> 00:03:04,800
+ because, well, for example, we can say,
+
+78
+00:03:04,800 --> 00:03:08,360
+ don't use complex terminology or don't use detail data
+
+79
+00:03:08,360 --> 00:03:11,080
+ so we can make the output clearer and so on.
+
+80
+00:03:11,080 --> 00:03:13,920
+ So, let's have a look at this enhanced prompting
+
+81
+00:03:13,920 --> 00:03:17,480
+ before, but now we're going to add on negative prompting.
+
+82
+00:03:18,720 --> 00:03:22,360
+ So, now the instructions are going to be exactly the same,
+
+83
+00:03:22,360 --> 00:03:23,640
+ but instead, I'm going to say,
+
+84
+00:03:23,640 --> 00:03:27,360
+ avoid discussing technical configurations,
+
+85
+00:03:27,360 --> 00:03:31,920
+ specific AWS tutorials or personal learning experiences.
+
+86
+00:03:31,920 --> 00:03:33,560
+ The context will say the same,
+
+87
+00:03:33,560 --> 00:03:35,960
+ the inputs data will stay the same.
+
+88
+00:03:35,960 --> 00:03:38,200
+ And for the output indicator,
+
+89
+00:03:38,200 --> 00:03:41,040
+ I'm going to say do not include technical terms
+
+90
+00:03:41,040 --> 00:03:43,840
+ in depth data analysis or speculation.
+
+91
+00:03:43,840 --> 00:03:46,200
+ And so, I'm not going to show you what the output of this
+
+92
+00:03:46,200 --> 00:03:47,040
+ is because there's no points,
+
+93
+00:03:47,040 --> 00:03:49,920
+ but as you can see, by adding negative prompting,
+
+94
+00:03:49,920 --> 00:03:52,880
+ we are even more clear about what we want
+
+95
+00:03:52,880 --> 00:03:56,760
+ and what we don't want in an output from an LLM.
+
+96
+00:03:56,760 --> 00:03:59,720
+ So, that's it for this lecture on prompt engineering.
+
+97
+00:03:59,720 --> 00:04:02,240
+ I suggest that you try a little bit on your own
+
+98
+00:04:02,240 --> 00:04:05,400
+ to see where you can and cannot get out of this technique.
+
+99
+00:04:05,400 --> 00:04:06,600
+ And I hope you liked it.
+
+100
+00:04:06,600 --> 00:04:08,400
+ I will see you in the next lecture.
+
