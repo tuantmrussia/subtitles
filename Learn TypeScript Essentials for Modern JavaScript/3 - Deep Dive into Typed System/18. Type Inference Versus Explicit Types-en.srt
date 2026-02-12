@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:06,240
+ Welcome back and in the last lesson we explicitly told TypeScript what types of variable
+
+2
+00:00:06,240 --> 00:00:07,240
+ should have.
+
+3
+00:00:07,240 --> 00:00:13,760
+ But what have I told you that TypeScript is smart enough to yes or figure out on its own
+
+4
+00:00:13,760 --> 00:00:15,640
+ what the type is.
+
+5
+00:00:15,640 --> 00:00:21,240
+ That's called type inference and it's one of the reasons TypeScript fills so natural
+
+6
+00:00:21,240 --> 00:00:22,240
+ to use.
+
+7
+00:00:22,240 --> 00:00:25,280
+ So what exactly is Type inference?
+
+8
+00:00:25,280 --> 00:00:31,800
+ That's when TypeScript can automatically determine the type of a variable based on its initial
+
+9
+00:00:31,800 --> 00:00:32,960
+ value.
+
+10
+00:00:32,960 --> 00:00:36,680
+ So we don't always need to annotate types manually.
+
+11
+00:00:36,680 --> 00:00:39,600
+ TypeScript does the happy lifting for us.
+
+12
+00:00:39,600 --> 00:00:45,960
+ Let's have a look at a few examples of this, so let's just remove what we have here.
+
+13
+00:00:45,960 --> 00:00:51,320
+ So we can do let my bar equals Alice.
+
+14
+00:00:51,320 --> 00:00:58,040
+ So if we hover over it we can see that isn't third that this is a string because the quote
+
+15
+00:00:58,040 --> 00:01:00,280
+ marks around it.
+
+16
+00:01:00,280 --> 00:01:06,320
+ Let's do a few more, let's age equal 30.
+
+17
+00:01:06,320 --> 00:01:12,840
+ If we hover over this we can see that isn't third that this is a number and you can do
+
+18
+00:01:12,840 --> 00:01:21,760
+ let's is admin equals true and if we hover over this we can see that it's inferred
+
+19
+00:01:21,760 --> 00:01:25,400
+ that this is of type boolean.
+
+20
+00:01:25,400 --> 00:01:31,560
+ When you sign a value to a variable, TypeScript analyzes the value and locks in the type.
+
+21
+00:01:31,560 --> 00:01:36,040
+ Now if you try and assign the type later it's going to throw an error.
+
+22
+00:01:36,040 --> 00:01:47,520
+ So for example if we come in here and we say for example my bar equals 30 then it's going
+
+23
+00:01:47,520 --> 00:01:53,720
+ to give us straight away a little red squiggly line that we can't now change the type
+
+24
+00:01:53,720 --> 00:01:58,640
+ because it's been assigned as a string at the beginning and now we're trying to change
+
+25
+00:01:58,640 --> 00:02:05,240
+ it to an integer and the same is the case of something like age.
+
+26
+00:02:05,240 --> 00:02:11,920
+ If we set that to maybe 30 we can get an error that we're trying to assign a string to
+
+27
+00:02:11,920 --> 00:02:19,680
+ it but if we try and set it to say 35 then that's absolutely fine because we're still
+
+28
+00:02:19,680 --> 00:02:26,120
+ modifying the existing variable and it's now set as a number.
+
+29
+00:02:26,120 --> 00:02:32,800
+ Now let's do a quick little game here which is called guess the type it's not the world's
+
+30
+00:02:32,800 --> 00:02:40,600
+ most exciting so let country equals uk now rather than hovering over it can you guess
+
+31
+00:02:40,600 --> 00:02:53,800
+ what these types are if I do temperature equals 21.5 let's do a lit is logged in equals
+
+32
+00:02:53,800 --> 00:03:05,520
+ false and some more types that we haven't yet talked about let's use a name is Bob with
+
+33
+00:03:05,520 --> 00:03:23,120
+ age of 25 and the last one let's colors equals red, green and maybe blue.
+
+34
+00:03:23,120 --> 00:03:28,280
+ Try and guess what these types will be inferred as and then you can see the actual results
+
+35
+00:03:28,280 --> 00:03:38,560
+ by hovering over it with the cursor or so let's do country that's a string this is a number
+
+36
+00:03:38,560 --> 00:03:46,040
+ even a fact it's actually a kind of floating number we then have a Boolean we then have
+
+37
+00:03:46,040 --> 00:03:55,320
+ an object or a type of user in this structure and we also have an array of strings so hopefully
+
+38
+00:03:55,320 --> 00:04:03,160
+ you managed to guess is all correctly so if types scripts can infer types why should
+
+39
+00:04:03,160 --> 00:04:10,760
+ we bother than writing them out now we should use inference when the value is pretty obvious
+
+40
+00:04:10,760 --> 00:04:18,280
+ so for example the one here is pretty obvious to us that is a string and this one specifically
+
+41
+00:04:18,280 --> 00:04:24,720
+ not also is obvious this is a Boolean or you're prototyping quickly so you know you're
+
+42
+00:04:24,720 --> 00:04:29,080
+ just doing something in a hurry you're just wanting to quickly throw something out as an
+
+43
+00:04:29,080 --> 00:04:36,040
+ experiment then perhaps you can't be bothered to explicitly set the types or you're working
+
+44
+00:04:36,040 --> 00:04:42,360
+ with a very simple data like in this case here and these ones is fairly obvious to anybody
+
+45
+00:04:42,360 --> 00:04:48,160
+ reading the code and to TypeScript what you're trying to do but you should use explicit
+
+46
+00:04:48,160 --> 00:04:55,640
+ types and that's when we actually specifically set it so for example Boolean this is an
+
+47
+00:04:55,640 --> 00:05:01,880
+ explicit type whereas these are implicit types so explicit type should be used when we want
+
+48
+00:05:01,880 --> 00:05:13,960
+ to clarify our intent so in that case where we have like let my var equals 1 now it's not entirely
+
+49
+00:05:13,960 --> 00:05:20,840
+ clear are we going to be using this as an integer at some point or are we wanting it strictly
+
+50
+00:05:20,840 --> 00:05:28,600
+ as a string so this is where we want to specifically say this is going to be a string because you
+
+51
+00:05:28,600 --> 00:05:33,160
+ know this could be yeah we want to try and add one to it at some point and that's not going to
+
+52
+00:05:33,160 --> 00:05:43,080
+ work it also you should use explicit types when you're designing public APIs or libraries or you're
+
+53
+00:05:43,080 --> 00:05:52,360
+ using complex or generic structures so think of inference as your default and explicit types as
+
+54
+00:05:52,360 --> 00:05:59,320
+ your precision tool that's the way I like to think of these things now one thing to be aware of
+
+55
+00:05:59,320 --> 00:06:06,760
+ is that TypeScript can infer return types or functions but not parameter types we need to
+
+56
+00:06:06,760 --> 00:06:14,840
+ annotate those manually so let's do a quick example of a function so function and of course if
+
+57
+00:06:14,840 --> 00:06:24,840
+ we've been writing JavaScript to be well aware what this could look like and say name and so we're
+
+58
+00:06:24,840 --> 00:06:31,320
+ going to define the structure like this or the function like this and notice we need to actually
+
+59
+00:06:31,320 --> 00:06:41,480
+ specify a want to specify a type for this so we need to say string and then we can do return
+
+60
+00:06:42,200 --> 00:06:50,840
+ hello and then something like hello well to all let's just do back ticks here and do hello
+
+61
+00:06:50,840 --> 00:07:02,760
+ dollar name is a better example right so name must be typed explicitly is the return type
+
+62
+00:07:02,760 --> 00:07:09,240
+ is actually inferred and you can see as we hover over it that the name is a string and the return
+
+63
+00:07:09,240 --> 00:07:15,160
+ type is what specified in the colon afterwards or the function which is also a string
+
+64
+00:07:15,160 --> 00:07:27,160
+ let's do a couple more different examples and let's do let product equals curly brace ID one title
+
+65
+00:07:28,200 --> 00:07:42,680
+ say book and price 999 to let's see what TypeScript infers this type has and it
+
+66
+00:07:42,680 --> 00:07:50,520
+ infers is a effectly a type of object structure let's try and change the title so product
+
+67
+00:07:51,240 --> 00:08:00,520
+ title let's set to maybe 23 and you can see now it's actually an unknown that the title property
+
+68
+00:08:00,520 --> 00:08:08,920
+ in this object is of type string again we try and change for example the price and let's set the price
+
+69
+00:08:08,920 --> 00:08:19,480
+ to 23 and it's also going to throw an error so you can see how TypeScript is protecting us from doing
+
+70
+00:08:19,480 --> 00:08:28,280
+ rubber city things let's do another example and do let discount equals null
+
+71
+00:08:28,280 --> 00:08:38,680
+ and let's now try and see what type TypeScript thinks as things is of type any so at this stage
+
+72
+00:08:38,680 --> 00:08:45,960
+ is not really sure what it could be so if we do discount equals 23 and it's going to allow
+
+73
+00:08:45,960 --> 00:08:53,160
+ that to come through because it knows that this we have actually specified what this type should be
+
+74
+00:08:53,160 --> 00:09:04,200
+ if we come in later and do discount equals 23 it's also going to allow that because
+
+75
+00:09:04,200 --> 00:09:11,400
+ we haven't actually specified the type again so this is where we want to explicitly set something
+
+76
+00:09:11,400 --> 00:09:17,800
+ because what is discount is a number or what is it so if we now set that to a number
+
+77
+00:09:17,800 --> 00:09:25,560
+ it's going to throw an error over here because we are trying to assign it to the string
+
+78
+00:09:25,560 --> 00:09:32,840
+ let's also going to complain because we are setting that as type null
+
+79
+00:09:35,160 --> 00:09:42,120
+ okay so you can see type inference makes TypeScript feel intuitive and flexible
+
+80
+00:09:42,120 --> 00:09:49,240
+ it allows us to write clean code without sacrificing safety so in the next lesson we're going to
+
+81
+00:09:49,240 --> 00:09:56,360
+ explore arrays and tuples and how to type them how to use them and how to avoid column mistakes
+
