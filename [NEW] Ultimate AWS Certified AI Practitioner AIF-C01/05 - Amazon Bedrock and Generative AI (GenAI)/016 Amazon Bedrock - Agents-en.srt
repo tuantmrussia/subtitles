@@ -1,0 +1,500 @@
+1
+00:00:00,000 --> 00:00:02,880
+ So now let's talk about Amazon bedrock agents.
+
+2
+00:00:02,880 --> 00:00:06,360
+ So the agent is going to be a very smart thing
+
+3
+00:00:06,360 --> 00:00:08,400
+ that is going to act a little bit like a human.
+
+4
+00:00:08,400 --> 00:00:10,400
+ The idea is that instead of just asking questions
+
+5
+00:00:10,400 --> 00:00:13,120
+ to a model, now the model is going to be able to start
+
+6
+00:00:13,120 --> 00:00:17,000
+ thinking a little bit and to perform various multi-step tasks.
+
+7
+00:00:17,000 --> 00:00:21,200
+ And these tasks may have an impact on our own databases
+
+8
+00:00:21,200 --> 00:00:22,520
+ or our own infrastructure.
+
+9
+00:00:22,520 --> 00:00:25,280
+ So the agent can actually create infrastructure.
+
+10
+00:00:25,280 --> 00:00:28,120
+ It can deploy applications and can do operations
+
+11
+00:00:28,120 --> 00:00:29,400
+ on our systems.
+
+12
+00:00:29,400 --> 00:00:31,600
+ So here now the agent doesn't provide us information.
+
+13
+00:00:31,600 --> 00:00:34,000
+ It also starts to think and act.
+
+14
+00:00:34,000 --> 00:00:36,320
+ So for example, it's going to look at tasks
+
+15
+00:00:36,320 --> 00:00:38,480
+ and then it's going to perform the task in the correct order
+
+16
+00:00:38,480 --> 00:00:40,120
+ and ensure that the correct information
+
+17
+00:00:40,120 --> 00:00:43,760
+ is passed within the task even if we haven't programmed
+
+18
+00:00:43,760 --> 00:00:45,240
+ the agent to do so.
+
+19
+00:00:45,240 --> 00:00:47,960
+ So what we do is that we are going to create
+
+20
+00:00:47,960 --> 00:00:49,800
+ what's called action groups.
+
+21
+00:00:49,800 --> 00:00:52,480
+ And the agent are going to be configured
+
+22
+00:00:52,480 --> 00:00:56,600
+ to understand what these action groups do and what they mean.
+
+23
+00:00:56,600 --> 00:00:58,120
+ And then automatically, the agent
+
+24
+00:00:58,120 --> 00:01:01,680
+ will be able to integrate with other systems, services databases
+
+25
+00:01:01,680 --> 00:01:04,560
+ and API to exchange data or to initiate action.
+
+26
+00:01:04,560 --> 00:01:06,760
+ And also, if it needs to get some information
+
+27
+00:01:06,760 --> 00:01:10,320
+ out of your systems in terms of unlabeled data,
+
+28
+00:01:10,320 --> 00:01:12,760
+ it can look at RAG to retrieve the information
+
+29
+00:01:12,760 --> 00:01:14,120
+ when necessary.
+
+30
+00:01:14,120 --> 00:01:15,080
+ So that sounds a little bit magical,
+
+31
+00:01:15,080 --> 00:01:17,240
+ but I will show you exactly how that works.
+
+32
+00:01:17,240 --> 00:01:20,280
+ So in Amazon Bedrock, you would go and create an agent
+
+33
+00:01:20,280 --> 00:01:23,480
+ and you are defining what the agent is responsible for.
+
+34
+00:01:23,480 --> 00:01:25,440
+ So for example, you are an agent responsible
+
+35
+00:01:25,440 --> 00:01:28,040
+ for accessing purchase history for our customers
+
+36
+00:01:28,040 --> 00:01:31,040
+ as well as recommendations into what they can purchase next.
+
+37
+00:01:31,040 --> 00:01:33,480
+ And you are responsible for placing new orders.
+
+38
+00:01:33,480 --> 00:01:35,680
+ So the agent knows that it can do all these things.
+
+39
+00:01:35,680 --> 00:01:38,200
+ So if the user is asking something for the agent
+
+40
+00:01:38,200 --> 00:01:41,040
+ or the model to do one of these things,
+
+41
+00:01:41,040 --> 00:01:42,120
+ Bedrock is smart is going to say,
+
+42
+00:01:42,120 --> 00:01:44,360
+ well, this agent probably is going to be responsible
+
+43
+00:01:44,360 --> 00:01:45,600
+ for these actions.
+
+44
+00:01:45,600 --> 00:01:48,160
+ Then the agent knows about a few action groups.
+
+45
+00:01:48,160 --> 00:01:49,680
+ So for example, we have defined an API,
+
+46
+00:01:49,680 --> 00:01:52,360
+ it's a way to interface with our system.
+
+47
+00:01:52,360 --> 00:01:55,240
+ And we have, for example, defined get recent purchases
+
+48
+00:01:55,240 --> 00:01:58,160
+ or get recommended purchases or get purchase details
+
+49
+00:01:58,160 --> 00:02:00,400
+ and then a specific purchase ID.
+
+50
+00:02:00,400 --> 00:02:02,680
+ So all these things are known to the agent
+
+51
+00:02:02,680 --> 00:02:06,880
+ in terms of what is the expected input for these APIs
+
+52
+00:02:06,880 --> 00:02:08,240
+ and what do these APIs do?
+
+53
+00:02:08,240 --> 00:02:09,720
+ What is the documentation around it?
+
+54
+00:02:09,720 --> 00:02:12,920
+ And all this is provided thanks to an open API schema.
+
+55
+00:02:12,920 --> 00:02:16,240
+ And so when done, well, the agent can invoke these
+
+56
+00:02:16,240 --> 00:02:18,720
+ and behind the scenes, of course, interact
+
+57
+00:02:18,720 --> 00:02:19,600
+ with our backend systems.
+
+58
+00:02:19,600 --> 00:02:22,240
+ For example, make changes to our database.
+
+59
+00:02:22,240 --> 00:02:24,320
+ The other way to set up an action group
+
+60
+00:02:24,320 --> 00:02:25,520
+ is to use Lambda functions.
+
+61
+00:02:25,520 --> 00:02:28,520
+ So Lambda functions are a way to run a little bit of code
+
+62
+00:02:28,520 --> 00:02:31,440
+ in AWS without provisioning infrastructure.
+
+63
+00:02:31,440 --> 00:02:35,040
+ So the Lambda functions again can be used to be created
+
+64
+00:02:35,040 --> 00:02:37,560
+ and place an order through Lambda function.
+
+65
+00:02:37,560 --> 00:02:40,240
+ And so it could use the same database or a new database.
+
+66
+00:02:40,240 --> 00:02:42,280
+ But the idea is that I wanted to show here
+
+67
+00:02:42,280 --> 00:02:44,720
+ that the agent can interact either with an external API
+
+68
+00:02:44,720 --> 00:02:48,400
+ or with Lambda functions on your AWS accounts.
+
+69
+00:02:48,400 --> 00:02:50,600
+ And finally, it has access to knowledge bases
+
+70
+00:02:50,600 --> 00:02:51,960
+ that we define, of course.
+
+71
+00:02:51,960 --> 00:02:54,000
+ And so for example, say we have a knowledge base
+
+72
+00:02:54,000 --> 00:02:56,840
+ around our company, a shipping policy
+
+73
+00:02:56,840 --> 00:02:58,520
+ and return policy, et cetera, et cetera.
+
+74
+00:02:58,520 --> 00:02:59,560
+ So we could have those.
+
+75
+00:02:59,560 --> 00:03:03,240
+ And so if the user is asking something about the return policy
+
+76
+00:03:03,240 --> 00:03:04,640
+ for an order it's about to do,
+
+77
+00:03:04,640 --> 00:03:08,120
+ the agent is smart enough to also provide that to the user.
+
+78
+00:03:08,120 --> 00:03:10,320
+ So the agents are very smart and they know what to access
+
+79
+00:03:10,320 --> 00:03:12,280
+ and then automatically we'll know how to do it.
+
+80
+00:03:12,280 --> 00:03:13,880
+ So how does that work behind the scenes?
+
+81
+00:03:13,880 --> 00:03:15,600
+ Well, say we have a task.
+
+82
+00:03:15,600 --> 00:03:18,000
+ And we give this task to a bedrock agent.
+
+83
+00:03:18,000 --> 00:03:20,240
+ Now the agent is going to look at the prompt.
+
+84
+00:03:20,240 --> 00:03:22,720
+ He looks into look at all the conversation history,
+
+85
+00:03:22,720 --> 00:03:24,880
+ look at all the actions available,
+
+86
+00:03:24,880 --> 00:03:26,600
+ as well as the knowledge bases.
+
+87
+00:03:26,600 --> 00:03:28,240
+ What are these structures and what is the task?
+
+88
+00:03:28,240 --> 00:03:31,560
+ I'm just going to take all this information together
+
+89
+00:03:31,560 --> 00:03:34,760
+ and send it to a generative AI model
+
+90
+00:03:34,760 --> 00:03:36,280
+ backed by Amazon bedrock.
+
+91
+00:03:36,280 --> 00:03:39,080
+ And say, please tell me how you would proceed
+
+92
+00:03:39,080 --> 00:03:42,280
+ to perform these actions given all this information.
+
+93
+00:03:42,280 --> 00:03:43,800
+ So it's using the chain of thoughts.
+
+94
+00:03:43,800 --> 00:03:46,480
+ So in the fact means that the output of the bedrock model
+
+95
+00:03:46,480 --> 00:03:48,400
+ is going to be a list of steps.
+
+96
+00:03:48,400 --> 00:03:49,720
+ So step one into this.
+
+97
+00:03:49,720 --> 00:03:50,760
+ Step two, do this.
+
+98
+00:03:50,760 --> 00:03:54,160
+ Step three, do this and step n, last step, do that.
+
+99
+00:03:54,160 --> 00:03:56,880
+ And so the steps are going to be executed by the agents.
+
+100
+00:03:56,880 --> 00:03:59,760
+ And so first one, call an API call on this action group
+
+101
+00:03:59,760 --> 00:04:00,600
+ and get the results.
+
+102
+00:04:00,600 --> 00:04:03,240
+ Step two, do it against step three, call another API,
+
+103
+00:04:03,240 --> 00:04:04,400
+ et cetera, et cetera.
+
+104
+00:04:04,400 --> 00:04:06,600
+ Maybe you could use search into a knowledge base
+
+105
+00:04:06,600 --> 00:04:07,600
+ and they get the results and so on.
+
+106
+00:04:07,600 --> 00:04:09,280
+ But so the agent is going to work
+
+107
+00:04:09,280 --> 00:04:12,720
+ and do all these things for us, thanks to the steps
+
+108
+00:04:12,720 --> 00:04:15,360
+ that were generated by the bedrock model, which is amazing.
+
+109
+00:04:15,360 --> 00:04:18,840
+ And then the final result is returned to the bedrock agent.
+
+110
+00:04:18,840 --> 00:04:21,880
+ The bedrock agent then sends the tasks and the results
+
+111
+00:04:21,880 --> 00:04:24,000
+ to another bedrock model.
+
+112
+00:04:24,000 --> 00:04:26,840
+ And the bedrock model is going to synthesize everything
+
+113
+00:04:26,840 --> 00:04:28,920
+ and give a final response to our user
+
+114
+00:04:28,920 --> 00:04:30,560
+ and we'll get the final response.
+
+115
+00:04:30,560 --> 00:04:32,480
+ So this is all happening behind the scenes.
+
+116
+00:04:32,480 --> 00:04:34,640
+ Of course us, we'll just use the agent and the agent
+
+117
+00:04:34,640 --> 00:04:37,400
+ that stuff and automatically we see the final response.
+
+118
+00:04:37,400 --> 00:04:39,160
+ The bedrock is really nice because you actually
+
+119
+00:04:39,160 --> 00:04:41,240
+ something called tracing on your agent
+
+120
+00:04:41,240 --> 00:04:43,840
+ and this allows you to see the list of steps
+
+121
+00:04:43,840 --> 00:04:45,040
+ that were done by the agent.
+
+122
+00:04:45,040 --> 00:04:47,320
+ So you can debug in case you don't like a way
+
+123
+00:04:47,320 --> 00:04:49,760
+ an agent performed something.
+
+124
+00:04:49,760 --> 00:04:51,920
+ So that's it for Amazon bedrock agents.
+
+125
+00:04:51,920 --> 00:04:54,920
+ I hope you liked it and I will see you in the next lecture.
+
