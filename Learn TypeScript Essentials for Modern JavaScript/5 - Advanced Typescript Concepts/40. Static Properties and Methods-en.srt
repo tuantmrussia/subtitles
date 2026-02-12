@@ -1,0 +1,220 @@
+1
+00:00:00,000 --> 00:00:04,960
+ In this lesson we're going to be exploring static properties and methods in TypeScript,
+
+2
+00:00:04,960 --> 00:00:11,840
+ and these are class members that belong to the class itself, but not to any instance.
+
+3
+00:00:11,840 --> 00:00:18,080
+ We're going to learn how to define static members, when to use them, and how to differ from
+
+4
+00:00:18,080 --> 00:00:26,320
+ instance members. So first of all, what exactly are static members? So static members are attached
+
+5
+00:00:26,320 --> 00:00:33,120
+ to the class itself, but not to any objects that are created from it. And we access them
+
+6
+00:00:33,120 --> 00:00:42,000
+ using the class name, not the keywords at this. So let's do an example. So let's have a class
+
+7
+00:00:42,000 --> 00:00:56,560
+ of the math, utils. I'm going to have a static property called pi, which is 3.14159.
+
+8
+00:00:56,560 --> 00:01:07,360
+ Now I'm going to have a static method, so it's not just properties themselves,
+
+9
+00:01:08,240 --> 00:01:15,520
+ that could be declared as static. We can also have static methods. So let's do static square.
+
+10
+00:01:15,520 --> 00:01:22,720
+ This is going to receive a number, as a parameter, and it's going to return a number.
+
+11
+00:01:22,720 --> 00:01:34,480
+ Let's simply going to do x times x. So how do we access this directly? Let's do a console log.
+
+12
+00:01:36,400 --> 00:01:44,560
+ Now we're going to console log mathitils.py. So notice we don't create a new instance of this
+
+13
+00:01:44,560 --> 00:01:51,840
+ particular class when they're static. We can just simply call mathitils.py, and we're going to do
+
+14
+00:01:51,840 --> 00:02:02,240
+ another console log. Let's say mathitils.square. So this is a static method this time, and we're going
+
+15
+00:02:02,240 --> 00:02:11,200
+ to square the number five. So now we can execute this, we'll run it, and we get our response
+
+16
+00:02:11,200 --> 00:02:21,680
+ over here, 3.14159 blah blah blah, and the answer to our square, 25. So let's do a comparison
+
+17
+00:02:21,680 --> 00:02:27,840
+ between instance members and static members. So I'm going to build a class called counter,
+
+18
+00:02:30,480 --> 00:02:38,240
+ and we're going to define first of all a static member. So static count, let's set that to zero,
+
+19
+00:02:38,240 --> 00:02:45,840
+ and we're going to define a member, which is an instance member. So we don't use the static keyword,
+
+20
+00:02:45,840 --> 00:02:53,760
+ let's going to be type number. We now need to have a constructor because this is complaining
+
+21
+00:02:53,760 --> 00:03:05,360
+ because we need to specify it. So let's just do this dot ID, and it's going to start off at plus plus
+
+22
+00:03:05,360 --> 00:03:18,560
+ our actual class. So counter whoops counter dot count. So notice the sort of slightly strange syntax
+
+23
+00:03:18,560 --> 00:03:26,240
+ here, we're actually just referring to our class name itself counter, and that means we can access
+
+24
+00:03:26,240 --> 00:03:33,600
+ any static properties, which of course this case is count. And all we're doing here is we're just
+
+25
+00:03:33,600 --> 00:03:39,680
+ taking that value and increasing it by one. So the ID is going to start off as one here.
+
+26
+00:03:41,040 --> 00:03:51,760
+ And now we can create an instance of our classroom to const a was new counter. If we do a console log
+
+27
+00:03:51,760 --> 00:03:59,680
+ a dot ID, let's just run that, we get one here, it's going to clear the screen,
+
+28
+00:03:59,680 --> 00:04:10,160
+ get a equals one. And if we do another instance, so if we do const b equals new counter,
+
+29
+00:04:11,120 --> 00:04:26,080
+ and we do a console log b dot ID, let's just clear the screen again, run this, we can see we
+
+30
+00:04:26,080 --> 00:04:35,600
+ now get an ID of two, because this is creating as a static class. So the actual count, when it's
+
+31
+00:04:35,600 --> 00:04:41,760
+ been instigated, when it's been actually created, because of the constructor, we're actually taking
+
+32
+00:04:41,760 --> 00:04:48,400
+ the previous value of count and adding one to it. So this of course is one, and then we have a second
+
+33
+00:04:48,400 --> 00:04:57,040
+ of two. So what we're doing here is we're building what's known as a singleton. So a singleton
+
+34
+00:04:57,040 --> 00:05:05,200
+ allows us to share in an actual single instance of a class, and we can call it multiple times, so we can
+
+35
+00:05:05,200 --> 00:05:14,320
+ access that single member, in this case, count. So in real life, we could build maybe a singleton
+
+36
+00:05:14,320 --> 00:05:22,480
+ as a database access class, where we have a singleton property to be able to access the database
+
+37
+00:05:22,480 --> 00:05:29,280
+ or perhaps a connection string. But other examples could be maybe we have some utility functions,
+
+38
+00:05:29,280 --> 00:05:39,680
+ perhaps math dot max is a classic example, but we also allow a singleton to be able to allow us
+
+39
+00:05:39,680 --> 00:05:48,400
+ to have shared constants, perhaps a config, like config default timeouts, for example, or maybe a
+
+40
+00:05:48,400 --> 00:05:54,800
+ factory methods, like we're just trying to have a class called user, and maybe a method called
+
+41
+00:05:54,800 --> 00:06:03,360
+ create guests. Let's also use for things like global counters registries. And let's actually build
+
+42
+00:06:03,360 --> 00:06:09,120
+ up an example. Let's build up that one about the user, so we could have a class of user,
+
+43
+00:06:10,400 --> 00:06:18,160
+ and we're going to have a constructor, we're going to have a parameter called name, and we're going
+
+44
+00:06:18,160 --> 00:06:26,160
+ to use this short hand this time. Let's actually say it's public, and also going to have another
+
+45
+00:06:26,160 --> 00:06:36,800
+ parameter of is guest. That's going to be simple Boolean, and we're going to have a static method
+
+46
+00:06:36,800 --> 00:06:45,680
+ called create guest. So we're kind of building a factory method here, which is going to return a user,
+
+47
+00:06:45,680 --> 00:07:02,880
+ and are simply return a new user of name of guest, default is guest property to true.
+
+48
+00:07:04,560 --> 00:07:11,760
+ Now if we come to here, and we do as a const guest, one equals user, create guest,
+
+49
+00:07:11,760 --> 00:07:22,480
+ we're now automatically going to get our property guest, assign to one to do console, log
+
+50
+00:07:22,480 --> 00:07:32,000
+ guest one is guest. Let's just clear the screen, execute that, and we get the answer true.
+
+51
+00:07:32,960 --> 00:07:38,960
+ So the static methods are perfect for building things like factories, and we've got an example
+
+52
+00:07:38,960 --> 00:07:45,680
+ here where we have a factory method, which is this case of the create guest, which allows us to
+
+53
+00:07:45,680 --> 00:07:52,880
+ encapsulate creation logic, as well as returning preconfigured instances, our preconfigured instance,
+
+54
+00:07:52,880 --> 00:08:01,600
+ in this case, is we have card coded or specify the is guest property to return true via the factory
+
+55
+00:08:01,600 --> 00:08:02,600
+ You met it.
+
