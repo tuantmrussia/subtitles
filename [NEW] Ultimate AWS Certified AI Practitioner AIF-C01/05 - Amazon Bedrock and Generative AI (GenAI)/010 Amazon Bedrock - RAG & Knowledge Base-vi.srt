@@ -1,0 +1,560 @@
+1
+00:00:00,000 --> 00:00:04,400
+Vì vậy bây giờ chúng ta hãy nói về RAG và nền tảng kiến thức.
+
+2
+00:00:04,400 --> 00:00:08,720
+Vậy RAG là gì? RAG là thế hệ tái sinh.
+
+3
+00:00:08,720 --> 00:00:12,960
+Đằng sau cái tên rất kỳ lạ này, có một khái niệm rất đơn giản.
+
+4
+00:00:12,960 --> 00:00:21,280
+Điều này cho phép mô hình của bạn tổ chức để tham khảo một nguồn dữ liệu từ bên ngoài của dữ liệu đào tạo của nó mà không được tinh chỉnh.
+
+5
+00:00:21,280 --> 00:00:22,600
+Vậy nó hoạt động như thế nào?
+
+6
+00:00:22,600 --> 00:00:27,560
+Vì vậy chúng tôi có một nền tảng kiến thức và nó đang được xây dựng và quản lý bởi Amazon Bedrock.
+
+7
+00:00:27,560 --> 00:00:30,200
+Để làm điều này, nó phải dựa vào một nguồn dữ liệu.
+
+8
+00:00:30,200 --> 00:00:32,200
+Ví dụ, Amazon là tự do.
+
+9
+00:00:32,200 --> 00:00:34,640
+Dữ liệu của bạn sẽ là một Amazon miễn phí.
+
+10
+00:00:34,640 --> 00:00:37,000
+Và sau đó tự động Bedrock sẽ làm một số phép màu.
+
+11
+00:00:37,000 --> 00:00:40,720
+Chúng ta sẽ xem nó hoạt động như thế nào, nhưng nó sẽ xây dựng một nền tảng kiến thức.
+
+12
+00:00:40,720 --> 00:00:45,200
+Và sau đó một người dùng sẽ đặt câu hỏi cho mô hình của bạn,
+
+13
+00:00:45,200 --> 00:00:47,880
+Nói ai là người quản lý sản phẩm cho John.
+
+14
+00:00:47,880 --> 00:00:50,360
+Vậy chắc là có liên quan đến công ty của anh ta.
+
+15
+00:00:50,360 --> 00:00:53,760
+Và tất nhiên, mô hình Tổ chức không biết gì về John,
+
+16
+00:00:53,760 --> 00:00:58,920
+Bởi vì John là một yêu cầu rất cụ thể cho công ty của tôi và dữ liệu của chính tôi.
+
+17
+00:00:58,920 --> 00:01:02,560
+Sẽ có một thứ gọi là tìm kiếm.
+
+18
+00:01:02,560 --> 00:01:07,120
+Và thông tin này sẽ được tìm kiếm trong cơ sở kiến thức.
+
+19
+00:01:07,120 --> 00:01:10,320
+Tất nhiên, điều này xảy ra một cách tự nhiên.
+
+20
+00:01:10,320 --> 00:01:15,200
+Nhưng nền tảng kiến thức này được hỗ trợ bởi một thứ gọi là cơ sở dữ liệu véc tơ.
+
+21
+00:01:15,200 --> 00:01:20,560
+Và để tạo dữ liệu trong cơ sở dữ liệu véc tơ, một lần nữa, Bedrock lo liệu mọi thứ.
+
+22
+00:01:20,560 --> 00:01:22,920
+Nó được gọi là tạo ra các đường viền véc tơ.
+
+23
+00:01:22,920 --> 00:01:24,960
+Và tôi sẽ cho bạn thấy nó hoạt động như thế nào sau này.
+
+24
+00:01:24,960 --> 00:01:28,280
+Nhưng về cơ bản, nhờ vào cơ sở dữ liệu vector này,
+
+25
+00:01:28,280 --> 00:01:33,840
+thì chúng ta có thể thu thập thông tin liên quan từ căn cứ kiến thức này.
+
+26
+00:01:33,840 --> 00:01:38,320
+Và ví dụ, chúng tôi nhận được một số văn bản trở lại từ này, nói rằng chúng tôi có một số thông tin
+
+27
+00:01:38,320 --> 00:01:41,440
+Về anh John, chẳng hạn như chúng tôi có một số liên lạc viên hỗ trợ.
+
+28
+00:01:41,440 --> 00:01:44,040
+Chúng tôi có một quản lý sản phẩm, đó là Jesse Smith.
+
+29
+00:01:44,040 --> 00:01:47,040
+Chúng tôi có một kỹ sư, Sarah Ronald.
+
+30
+00:01:47,040 --> 00:01:51,560
+Và vì vậy tất cả điều này sẽ đi như một dấu nhắc tăng cường.
+
+31
+00:01:51,560 --> 00:01:57,160
+Và vì vậy nó sẽ là các yêu cầu gốc, cũng như văn bản đã được lấy lại.
+
+32
+00:01:57,160 --> 00:02:02,120
+Chúng sẽ được chuyển sang mô hình cơ bản.
+
+33
+00:02:02,120 --> 00:02:06,160
+Và các mô hình nền tảng sẽ xem xét này dấu nhắc tăng cường.
+
+34
+00:02:06,160 --> 00:02:12,480
+Và tạo ra một câu trả lời, này, có vẻ như Jesse Smith là người quản lý sản phẩm cho John.
+
+35
+00:02:12,480 --> 00:02:15,400
+Và đó là cái mà nó được gọi là thế hệ tái tạo tăng cường.
+
+36
+00:02:15,400 --> 00:02:20,920
+Thu hồi bởi vì chúng ta thu thập dữ liệu bên ngoài mô hình nền tảng.
+
+37
+00:02:20,920 --> 00:02:26,040
+Và nó được tăng cường bởi vì chúng tôi tăng cường các dấu nhắc với dữ liệu bên ngoài
+
+38
+00:02:26,040 --> 00:02:27,040
+Nó đã được thu hồi.
+
+39
+00:02:27,040 --> 00:02:28,800
+Do đó, tên của RAG.
+
+40
+00:02:28,800 --> 00:02:34,800
+Và như vậy RAG trong nền tảng nền tảng của Amazon sẽ là một nền tảng kiến thức.
+
+41
+00:02:34,800 --> 00:02:40,680
+Điều này rất hữu ích khi bạn cần có dữ liệu cần được cung cấp.
+
+42
+00:02:40,680 --> 00:02:43,520
+Và đó là rất mới để cập nhật đó là trong thời gian thực.
+
+43
+00:02:43,520 --> 00:02:46,160
+Và nó cần được đưa vào mô hình nền tảng.
+
+44
+00:02:46,160 --> 00:02:47,280
+Vậy nó hoạt động như thế nào?
+
+45
+00:02:47,280 --> 00:02:52,520
+Vâng, ở đây chúng tôi có một ví dụ, cho tôi nói chuyện điểm cho lợi ích của du hành không khí.
+
+46
+00:02:52,520 --> 00:02:56,800
+Như bạn có thể thấy, một trong những điểm nói chuyện này có một chút trên đó.
+
+47
+00:02:56,800 --> 00:03:01,520
+Và một liên kết để du hành không khí PDF và PDF có thể trong lịch sử Amazon.
+
+48
+00:03:01,520 --> 00:03:06,560
+Vì vậy, đây là một ví dụ nơi các RAG và các cơ sở kiến thức đã được sử dụng để
+
+49
+00:03:06,560 --> 00:03:10,120
+Hãy trả lời một cách cụ thể.
+
+50
+00:03:10,120 --> 00:03:13,960
+Vì vậy, tất cả mọi thứ là đi vào một cơ sở dữ liệu vector.
+
+51
+00:03:13,960 --> 00:03:15,200
+Và chúng ta có một vài lựa chọn.
+
+52
+00:03:15,200 --> 00:03:20,600
+Vì vậy, cơ sở dữ liệu véc tơ trên nền AWS và Amazon có thể là nhiều loại.
+
+53
+00:03:20,600 --> 00:03:27,040
+Vì vậy, chúng tôi có hai dịch vụ trên AWS có thể sử dụng như cơ sở dữ liệu véc tơ của bạn.
+
+54
+00:03:27,040 --> 00:03:30,280
+Đầu tiên được gọi là dịch vụ tìm kiếm mở.
+
+55
+00:03:30,280 --> 00:03:33,040
+Và cái thứ hai được gọi là Aurora Amazon.
+
+56
+00:03:33,040 --> 00:03:38,000
+Vì vậy hãy nhớ những cái tên Amazon mở dịch vụ tìm kiếm hay Amazon Aurora.
+
+57
+00:03:38,000 --> 00:03:41,360
+Và chúng tôi có ba lựa chọn khác và có lẽ sẽ có nhiều hơn trong tương lai, nhưng
+
+58
+00:03:41,360 --> 00:03:44,960
+chúng ta có 3 lựa chọn khác để sử dụng cho cơ sở dữ liệu véc tơ.
+
+59
+00:03:44,960 --> 00:03:48,560
+Chúng ta có MongoDB, Redis hay PineCon.
+
+60
+00:03:48,560 --> 00:03:53,960
+Và vì vậy bạn có thể cấu hình một cơ sở dữ liệu kiến thức được hỗ trợ bởi bất kỳ loại dữ liệu vector.
+
+61
+00:03:53,960 --> 00:03:58,560
+Nhưng nếu bạn không xác định bất cứ điều gì, AWS sẽ tạo ra cho bạn và
+
+62
+00:03:58,560 --> 00:04:01,960
+Mở cơ sở dữ liệu dịch vụ không có máy phục vụ cho bạn.
+
+63
+00:04:01,960 --> 00:04:05,440
+Vì vậy, tiếp theo chúng ta cần có một mô hình bọc vàng.
+
+64
+00:04:05,440 --> 00:04:08,960
+Và đây là cách để chuyển dữ liệu thành các véc tơ này.
+
+65
+00:04:08,960 --> 00:04:13,000
+Và vì vậy nó có thể là Amazon Titan hoặc cohere.
+
+66
+00:04:13,000 --> 00:04:17,240
+Và nó không quan trọng nếu bạn không sử dụng những mô hình này như là mô hình nền tảng của bạn,
+
+67
+00:04:17,240 --> 00:04:20,640
+Mô hình lót và mô hình nền có thể khác nhau.
+
+68
+00:04:20,640 --> 00:04:25,080
+Vậy tài liệu S3 của anh sẽ bị lấy đi.
+
+69
+00:04:25,080 --> 00:04:27,920
+Và điều đó có nghĩa là chúng sẽ được chia thành nhiều phần khác nhau.
+
+70
+00:04:27,920 --> 00:04:31,280
+Và những phần này sẽ được đưa vào mô hình bọc lót,
+
+71
+00:04:31,280 --> 00:04:36,640
+mà sẽ tạo ra véc tơ và đặt các véc tơ này vào cơ sở dữ liệu véc tơ.
+
+72
+00:04:36,640 --> 00:04:40,600
+Và kết quả là bây giờ các véc tơ là dễ dàng tìm kiếm.
+
+73
+00:04:40,600 --> 00:04:43,280
+Và vì vậy khi RAG sẽ xem xét cơ sở dữ liệu véc tơ,
+
+74
+00:04:43,280 --> 00:04:48,560
+nó sẽ tìm thấy đoạn văn đúng trong tài liệu đúng để có thể tăng cường truy vấn.
+
+75
+00:04:48,560 --> 00:04:52,960
+Vì vậy, bài thi có thể yêu cầu bạn chọn cơ sở dữ liệu véc tơ RAG bên phải,
+
+76
+00:04:52,960 --> 00:04:54,280
+Ít nhất là từ cấp cao.
+
+77
+00:04:54,280 --> 00:04:55,920
+Vậy anh sẽ là chuyên gia về cơ sở dữ liệu.
+
+78
+00:04:55,920 --> 00:04:59,240
+Tôi sẽ cung cấp thêm thông tin cần thiết để tìm ra cơ sở dữ liệu.
+
+79
+00:04:59,240 --> 00:05:03,880
+Nhưng loại đầu tiên tôi sẽ nói sẽ là Amazon Open Search Service và
+
+80
+00:05:03,880 --> 00:05:05,560
+Tài liệu Amazon.
+
+81
+00:05:05,560 --> 00:05:09,760
+Dịch vụ Tìm kiếm Mở là một cơ sở dữ liệu tìm kiếm và phân tích.
+
+82
+00:05:09,760 --> 00:05:13,360
+Và nó là rất tốt là chắc chắn là các lựa chọn ưa thích.
+
+83
+00:05:13,360 --> 00:05:15,560
+Và bạn sẽ có những câu hỏi tương đồng thời gian thực và
+
+84
+00:05:15,560 --> 00:05:18,280
+Bạn có thể lưu trữ hàng triệu các đường viền véc tơ.
+
+85
+00:05:18,280 --> 00:05:20,800
+Lý do nó rất tốt, và đó có thể là câu hỏi kiểm tra,
+
+86
+00:05:20,800 --> 00:05:24,600
+là bạn có một bộ quản lý chỉ số rất tốt.
+
+87
+00:05:24,600 --> 00:05:28,800
+Và bạn cũng có khả năng tìm kiếm hàng xóm rất, rất nhanh,
+
+88
+00:05:28,800 --> 00:05:30,600
+cũng được gọi là KNN.
+
+89
+00:05:30,600 --> 00:05:35,440
+Một trong những hoạt động thực sự cao là Amazon DDB,
+
+90
+00:05:35,440 --> 00:05:38,960
+Với mục tiêu tương thích với mục tiêu, đó là một cơ sở dữ liệu « Không có đường cong ».
+
+91
+00:05:38,960 --> 00:05:41,600
+Và một lần nữa, bạn nhận được những câu hỏi tương đồng thời gian thực và
+
+92
+00:05:41,600 --> 00:05:44,000
+lưu trữ hàng triệu bản sao véc tơ.
+
+93
+00:05:44,000 --> 00:05:46,840
+Vì vậy tôi sẽ giữ chúng lại với nhau.
+
+94
+00:05:46,840 --> 00:05:51,320
+Sau đó chúng ta có rừng Amazon Aurora và Amazon RDS cho Postgres lix.
+
+95
+00:05:51,320 --> 00:05:55,440
+Cả hai đều là cơ sở dữ liệu có quan hệ.
+
+96
+00:05:55,440 --> 00:05:59,720
+Aurora là độc quyền của AWS, nhưng nó là đám mây thân thiện.
+
+97
+00:05:59,720 --> 00:06:03,120
+Và RDS cũng là cơ sở dữ liệu gốc cho Postgres.
+
+98
+00:06:03,120 --> 00:06:06,680
+Nhưng đó là nguồn mở, cả hai đều ổn.
+
+99
+00:06:06,680 --> 00:06:09,720
+Thông thường, nếu bạn thấy cơ sở dữ liệu liên quan, hãy nghĩ đến một trong hai cái này.
+
+100
+00:06:09,720 --> 00:06:12,560
+Và cuối cùng, nếu bạn thấy cơ sở dữ liệu đồ thị, hãy chọn Hải Vương Tinh.
+
+101
+00:06:12,560 --> 00:06:14,880
+Vì vậy, tôi không nghĩ rằng sẽ có bất kỳ câu hỏi yêu cầu bạn để chọn giữa
+
+102
+00:06:14,880 --> 00:06:17,560
+5 cơ sở dữ liệu cùng nhau.
+
+103
+00:06:17,560 --> 00:06:22,520
+Nhưng chắc chắn, bạn sẽ thấy một câu hỏi về việc chọn cơ sở dữ liệu quan hệ của chúng tôi
+
+104
+00:06:22,520 --> 00:06:24,080
+cho cơ sở dữ liệu véc- tơ.
+
+105
+00:06:24,080 --> 00:06:27,040
+Và bạn có thể phải chọn Aurora hoặc RDS cho Postgres lix.
+
+106
+00:06:27,040 --> 00:06:31,080
+Hoặc nếu bạn thấy một cái gì đó xung quanh hiệu suất cao và thời gian thực tương tự và
+
+107
+00:06:31,080 --> 00:06:33,840
+Hàng triệu véc tơ liên kết, sẽ là các khảo sát mã nguồn mở hoặc
+
+108
+00:06:33,840 --> 00:06:36,240
+Tài liệu B hoặc bạn thấy đồ thị Hải Vương Tinh.
+
+109
+00:06:36,240 --> 00:06:36,880
+Thế thôi.
+
+110
+00:06:36,880 --> 00:06:39,280
+Tôi không muốn đi sâu vào cơ sở dữ liệu.
+
+111
+00:06:39,280 --> 00:06:43,280
+Nhưng thế này là đủ cho bài kiểm tra cho cậu rồi.
+
+112
+00:06:43,280 --> 00:06:47,600
+Vậy chúng ta có thể sử dụng loại dữ liệu nào ở Amazon Bedrock?
+
+113
+00:06:47,600 --> 00:06:51,480
+Vâng, chúng tôi có Amazon S3, đó là một nơi mà bạn có thể đặt rất nhiều tập tin trong
+
+114
+00:06:51,480 --> 00:06:52,840
+thư mục đám mây.
+
+115
+00:06:52,840 --> 00:06:57,840
+Liên doanh, chia sẻ Microsoft, bán hàng, cũng như trang web.
+
+116
+00:06:57,840 --> 00:07:01,080
+Vì vậy, nó có thể là trang web của bạn, nó có thể là truyền thông xã hội của bạn, vân vân.
+
+117
+00:07:01,080 --> 00:07:02,840
+Bất cứ thứ gì trên mạng.
+
+118
+00:07:02,840 --> 00:07:07,800
+Một lần nữa, tôi khá chắc rằng Amazon Bedrock sẽ thêm nhiều nguồn hơn theo thời gian.
+
+119
+00:07:07,800 --> 00:07:12,440
+Nhưng từ một góc nhìn kiểm tra, tôi nghĩ rằng nhớ Amazon S3, và có lẽ những
+
+120
+00:07:12,440 --> 00:07:13,520
+Một cái là đủ rồi.
+
+121
+00:07:13,520 --> 00:07:17,520
+Và tất nhiên, nếu từ góc nhìn kiểm tra, bạn cần biết thêm về dữ liệu
+
+122
+00:07:17,520 --> 00:07:18,520
+Nguồn tin.
+
+123
+00:07:18,520 --> 00:07:21,240
+Tôi tất nhiên sẽ bao gồm nó trong slide này.
+
+124
+00:07:21,240 --> 00:07:24,400
+Vậy những trường hợp sử dụng cho Amazon Bedrock là gì?
+
+125
+00:07:24,400 --> 00:07:28,120
+Vâng, bạn có thể xây dựng một dịch vụ chatbot khách hàng nơi các cơ sở kiến thức sẽ được
+
+126
+00:07:28,120 --> 00:07:31,920
+sản phẩm của bạn, tính năng của bạn, đặc trưng của bạn, các hướng dẫn bắn rắc rối, và
+
+127
+00:07:31,920 --> 00:07:33,720
+thường xuyên đặt câu hỏi.
+
+128
+00:07:33,720 --> 00:07:38,280
+Và do đó ứng dụng giẻ rách của bạn có thể là chatbot mà sẽ trả lời các yêu cầu khách hàng
+
+129
+00:07:38,280 --> 00:07:40,760
+và nhìn lên nền tảng kiến thức này.
+
+130
+00:07:40,760 --> 00:07:44,920
+Nó có thể cho phân tích nghiên cứu pháp lý, nơi mà kiến thức cơ sở sẽ là luật
+
+131
+00:07:44,920 --> 00:07:49,840
+và quy định, vụ án tiền lệ, ý kiến pháp lý và phân tích chuyên gia.
+
+132
+00:07:49,840 --> 00:07:54,160
+Và lần này chúng tôi có thể có một chatbot mà sẽ có thông tin liên quan bất cứ lúc nào
+
+133
+00:07:54,160 --> 00:07:56,880
+Chúng tôi có một yêu cầu pháp lý cụ thể.
+
+134
+00:07:56,880 --> 00:07:59,000
+Và chúng tôi cũng có thể có một câu hỏi chăm sóc sức khỏe trả lời.
+
+135
+00:07:59,000 --> 00:08:03,840
+Một lần nữa, kiến thức cơ bản có thể là bệnh tật, điều trị, hướng dẫn lâm sàng, nghiên cứu
+
+136
+00:08:03,840 --> 00:08:06,040
+và dữ liệu bệnh nhân trước.
+
+137
+00:08:06,040 --> 00:08:11,400
+Và ứng dụng có thể là một chatbot sẽ trả lời các yêu cầu y tế phức tạp.
+
+138
+00:08:11,400 --> 00:08:16,880
+Vì vậy, giẻ rách mở ra rất nhiều khả năng cho JNAI trên AWS.
+
+139
+00:08:16,880 --> 00:08:18,280
+Nên tôi hy vọng anh thích nó.
+
+140
+00:08:18,280 --> 00:08:19,920
+Và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
