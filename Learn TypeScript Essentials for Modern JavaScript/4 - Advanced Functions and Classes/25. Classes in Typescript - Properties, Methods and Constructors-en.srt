@@ -1,0 +1,460 @@
+1
+00:00:00,000 --> 00:00:06,080
+ In today's lesson we are going to be diving into classes and constructors, which is
+
+2
+00:00:06,080 --> 00:00:11,720
+ TypeScript's way of modeling real world entities with reasonable blueprints.
+
+3
+00:00:11,720 --> 00:00:17,240
+ We are going to learn how to define a class, initialize it with a constructor and use
+
+4
+00:00:17,240 --> 00:00:21,920
+ access modifiers to control visibility and behaviour.
+
+5
+00:00:21,920 --> 00:00:25,160
+ So first thing, what exactly is a class?
+
+6
+00:00:25,160 --> 00:00:33,520
+ A class is a blueprint for creating objects with shared structure and what exactly is
+
+7
+00:00:33,520 --> 00:00:34,520
+ a class?
+
+8
+00:00:34,520 --> 00:00:38,960
+ A class is a blueprint for creating objects with shared structure and behaviour.
+
+9
+00:00:38,960 --> 00:00:41,480
+ So let's do an example.
+
+10
+00:00:41,480 --> 00:00:44,400
+ So let's build a class of user.
+
+11
+00:00:44,400 --> 00:00:51,520
+ So we use the class keyword here and then define the name and now we just give it the
+
+12
+00:00:51,520 --> 00:00:59,280
+ properties that we want. So we could have, for example, name of string and perhaps is admin.
+
+13
+00:00:59,280 --> 00:01:10,920
+ I'm going to set this boot in and notice after you hover over it, it comes up with this
+
+14
+00:01:10,920 --> 00:01:16,680
+ error message or warning saying property name has no initialiser and not definitely
+
+15
+00:01:16,680 --> 00:01:22,120
+ it assigns in the constructor. So what does that mean? Well, it means that it's expecting
+
+16
+00:01:22,120 --> 00:01:28,760
+ us to provide a value via a constructor for this particular class.
+
+17
+00:01:28,760 --> 00:01:35,560
+ But how do we actually make a constructor? Well, we use the constructor keyword, so constructor
+
+18
+00:01:35,560 --> 00:01:40,680
+ and the constructor takes some parameters. And the parameters that we're going to supply
+
+19
+00:01:40,680 --> 00:01:46,760
+ are the two properties that we need to supply which is name and is admin. So we could have
+
+20
+00:01:46,760 --> 00:01:59,040
+ name of string is admin boolean. So this is now defining our constructor and now we can
+
+21
+00:01:59,040 --> 00:02:04,760
+ just assign the parameter coming in or the value of the parameter coming in and assign
+
+22
+00:02:04,760 --> 00:02:10,600
+ it to our properties, which we do with the keyword called this. So otherwise, how does
+
+23
+00:02:10,600 --> 00:02:15,680
+ it know when we're talking about a name, which names it's talking about, is it talking
+
+24
+00:02:15,680 --> 00:02:21,400
+ about the parameter or the property? Well, you can see it's talking about the parameter.
+
+25
+00:02:21,400 --> 00:02:29,000
+ So in order to target the actual property, we use the keyword this. So this refers to
+
+26
+00:02:29,000 --> 00:02:41,760
+ the actual class constructor or the class itself. So this name equals name. And this is admin
+
+27
+00:02:41,760 --> 00:02:49,800
+ equals is admin. And now a TypeScript is happy that we defined the value. And inside
+
+28
+00:02:49,800 --> 00:02:56,320
+ this class, we can define whatever not only properties, but we can also define various
+
+29
+00:02:56,320 --> 00:03:02,880
+ functions that we want to give to the class. So we could say, for example, greet a function
+
+30
+00:03:02,880 --> 00:03:10,600
+ called greets, which we define as follows as following. We can say just return hello. And
+
+31
+00:03:10,600 --> 00:03:23,120
+ let's just do this as a tactics. So hello, dollar, this dot name. So if the class of user,
+
+32
+00:03:23,120 --> 00:03:29,940
+ we have to find the actual shape, which is specifying the properties and also the behavior
+
+33
+00:03:29,940 --> 00:03:37,640
+ in terms of providing functions and methods. So the constructor sets initial values and the
+
+34
+00:03:37,640 --> 00:03:45,360
+ greet is a method. But how do we actually create an instance of this class? So it comes
+
+35
+00:03:45,360 --> 00:03:53,280
+ here and we can do const Alice equals, and we give the keyword new. So this is creates
+
+36
+00:03:53,280 --> 00:04:02,460
+ a new instance of the actual class. So a new user. And now we have to find the values
+
+37
+00:04:02,460 --> 00:04:14,120
+ for our parameters. So we can say Alice. And we can say Alice is admin. And then of course
+
+38
+00:04:14,120 --> 00:04:26,480
+ we can actually call the behavior by doing so console log. And say Alice greet. Let's
+
+39
+00:04:26,480 --> 00:04:35,640
+ now run this and we get a console message over here saying hello Alice. The moments
+
+40
+00:04:35,640 --> 00:04:42,960
+ we have this way of assigning the value coming in by the parameter straight to the property
+
+41
+00:04:42,960 --> 00:04:50,080
+ defined on the class. And we're doing with this keyword this, but there's actually a short
+
+42
+00:04:50,080 --> 00:04:58,280
+ time way of doing that. So what we can do is we can actually create a property and the
+
+43
+00:04:58,280 --> 00:05:04,960
+ parameter at the same time by to declare the parameters as public. So what we do is we
+
+44
+00:05:04,960 --> 00:05:14,360
+ can remove the internal properties here, remove the assignment, and we put public in front
+
+45
+00:05:14,360 --> 00:05:23,040
+ of this and public in front of the property here. And this by putting public here, it automatically
+
+46
+00:05:23,040 --> 00:05:28,640
+ does the same thing by creating a property and assigning the value from the parameter coming
+
+47
+00:05:28,640 --> 00:05:38,160
+ in all in one hit. So by doing this like this, we have a very short and precise construct
+
+48
+00:05:38,160 --> 00:05:46,360
+ for doing the constructor. Okay, so next we want to talk about access modifiers. Let's
+
+49
+00:05:46,360 --> 00:05:53,480
+ say for example that you want to have some properties, but you want to control the visibility
+
+50
+00:05:53,480 --> 00:06:03,600
+ of these properties to other classes in your code or any other code running in externally.
+
+51
+00:06:03,600 --> 00:06:10,720
+ So how can we do this? Well, we're just going to undo what we have here so I can demonstrate.
+
+52
+00:06:10,720 --> 00:06:19,680
+ So let's say for example that we want to have the name is public, but this here is private.
+
+53
+00:06:19,680 --> 00:06:26,440
+ Now the default access modifier is public, which means all of these are visible to other
+
+54
+00:06:26,440 --> 00:06:33,360
+ codes. Now if we can also explicitly put the word public in front of this, and this property
+
+55
+00:06:33,360 --> 00:06:40,200
+ now becomes public, but the one underneath we can say for example private. That means
+
+56
+00:06:40,200 --> 00:06:50,680
+ we are on able to execute that or access that outside the class. We come into here and
+
+57
+00:06:50,680 --> 00:06:57,120
+ try and access the is admin property. Notice we don't have it available. And that's because
+
+58
+00:06:57,120 --> 00:07:03,360
+ we've marked it now as private, which means it's only visible to any methods inside
+
+59
+00:07:03,360 --> 00:07:08,560
+ the class. And as soon as we come out here, it's no longer visible. Of course, if I want
+
+60
+00:07:08,560 --> 00:07:13,760
+ to make it public, I can just change that back to public again. And we should be able to
+
+61
+00:07:13,760 --> 00:07:19,720
+ come to here and we can see how access to that property. But as I said, that the public
+
+62
+00:07:19,720 --> 00:07:25,760
+ is the default. So we don't actually have to explicitly set it to public. We can actually
+
+63
+00:07:25,760 --> 00:07:36,680
+ come in here that it's still visible to us. But we can also set this to read only as well.
+
+64
+00:07:36,680 --> 00:07:44,320
+ So let's say, for example, that we want to change this to be read only. We could, I'm
+
+65
+00:07:44,320 --> 00:07:54,560
+ in here and specify that as read only. Now, we are able to set the value of the is admin
+
+66
+00:07:54,560 --> 00:08:01,880
+ flag when we actually call the constructor. That's fine. But if we try to change the value
+
+67
+00:08:01,880 --> 00:08:10,000
+ outside, so if we do Alice, and say as is admin equals false, then we're going to get
+
+68
+00:08:10,000 --> 00:08:16,760
+ an error because we are trying to change a read only property. So again, as a recap, read
+
+69
+00:08:16,760 --> 00:08:24,160
+ only properties can only be set via the constructor. You can't then set them afterwards.
+
+70
+00:08:24,160 --> 00:08:30,000
+ So inside our class, we can start to build up some some conditional logic. Let me show
+
+71
+00:08:30,000 --> 00:08:36,640
+ you what I mean. So if we come into here and let's say we create a class called an account,
+
+72
+00:08:36,640 --> 00:08:42,960
+ we're going to have a constructor, we're going to use the shorthand way of finding
+
+73
+00:08:42,960 --> 00:08:52,640
+ some properties. So public username string. And let's have a balance or bank account. And
+
+74
+00:08:52,640 --> 00:08:58,680
+ we can automatically, and we can put the word private to say that it's going to create
+
+75
+00:08:58,680 --> 00:09:10,520
+ a private property called balance. We can have empty constructor. And now we can have a method
+
+76
+00:09:10,520 --> 00:09:23,000
+ called withdraw, where we specify the amount as a number. And this returns a string, which
+
+77
+00:09:23,000 --> 00:09:30,900
+ is going to be whether it's successful or not. And now we can put some conditional insight
+
+78
+00:09:30,900 --> 00:09:38,400
+ here. So we could say, for example, if the amount is greater than the property of the
+
+79
+00:09:38,400 --> 00:09:45,360
+ balance, which is now being defined, I'm here as past the constructor. So via this short
+
+80
+00:09:45,360 --> 00:09:54,120
+ time, the way of doing it, then we can say, for example, just return insufficient upon
+
+81
+00:09:54,120 --> 00:10:06,520
+ this. If it's not the case, and we have enough balance, we can have our balance and we
+
+82
+00:10:06,520 --> 00:10:18,400
+ can reduce it by the amount coming in. Let's return a message saying, say, let's do new
+
+83
+00:10:18,400 --> 00:10:36,280
+ balance, specify this dot balance. So when we're defining class, we can also as any logic,
+
+84
+00:10:36,280 --> 00:10:41,960
+ we want inside that class. So let's imagine we want to model a bank account. So we could
+
+85
+00:10:41,960 --> 00:10:50,280
+ do, for example, account. And we can have a constructor. And we're going to find some properties
+
+86
+00:10:50,280 --> 00:11:00,920
+ using the short hand way of doing it. So we can say public username. We have that as a string.
+
+87
+00:11:00,920 --> 00:11:06,320
+ We have a constructor. And we can use the short hand way of doing that. So we could have
+
+88
+00:11:06,320 --> 00:11:15,040
+ a property called username, which is a string. And we can have a balance on the account and
+
+89
+00:11:15,040 --> 00:11:22,600
+ we can use the private way. So we can't access it outside the class. Let's have a property
+
+90
+00:11:22,600 --> 00:11:31,440
+ called balance and set that to number. And then we have an empty constructor. We can now
+
+91
+00:11:31,440 --> 00:11:38,560
+ to find some behavior. So we could try and rip draw some money from the account. Let's
+
+92
+00:11:38,560 --> 00:11:48,040
+ pass in the amounts we want to have draw. And we want to return a string with a message
+
+93
+00:11:48,040 --> 00:11:54,020
+ whether we're successful or not. And now we can do some logic inside this. So we can
+
+94
+00:11:54,020 --> 00:12:02,320
+ check that the amount is greater than the internal balance, which is defined as a property
+
+95
+00:12:02,320 --> 00:12:18,480
+ here. And if it is, we can then return a message saying in sufficient funds. Otherwise we
+
+96
+00:12:18,480 --> 00:12:27,360
+ are have enough balance and we can just reduce the balance by the amount. And then return
+
+97
+00:12:27,360 --> 00:12:41,120
+ the new balance and say this dot balance. So this is a form of what's called encapsulation
+
+98
+00:12:41,120 --> 00:12:47,760
+ because encapsulations letting us protect internal states and we're protecting the actual
+
+99
+00:12:47,760 --> 00:12:56,360
+ property balance here and expose safe methods. So the caller can only access the balance
+
+100
+00:12:56,360 --> 00:13:04,520
+ via this method here. And hence why encapsulation is a very good practice for building into
+
+101
+00:13:04,520 --> 00:13:09,840
+ your classes. Now we talked about a number of things and one of the other things we can do
+
+102
+00:13:09,840 --> 00:13:17,120
+ on our class is we can set some properties and some default values. So let's say we have
+
+103
+00:13:17,120 --> 00:13:26,560
+ a class of point. And the class of point is going to have a couple of properties. We could
+
+104
+00:13:26,560 --> 00:13:38,160
+ have X. And what we can do is we can set it to a value initially. So we can set X to 0. And
+
+105
+00:13:38,160 --> 00:13:42,400
+ then TypeScript is going to understand straight away that this is a number because we've
+
+106
+00:13:42,400 --> 00:13:53,020
+ initialized it with a value. And we can do Y and set that to 0 for example. But alternatively
+
+107
+00:13:53,020 --> 00:14:01,640
+ we can also specify the default values in the constructor. So we could have X and set this
+
+108
+00:14:01,640 --> 00:14:10,160
+ type as number. We're going to Y set this type as number. Then we could have a constructor
+
+109
+00:14:10,160 --> 00:14:18,920
+ and we can say X defaults to 0 when it's passed in on Y defaults to 0. Then we can just
+
+110
+00:14:18,920 --> 00:14:26,760
+ do it this way. We wanted to and say this equals X. And this dot Y equals Y. And then
+
+111
+00:14:26,760 --> 00:14:33,520
+ of course it's going to set it to 0. And we could also use the shortcut way of doing
+
+112
+00:14:33,520 --> 00:14:40,200
+ it as well if you prefer that. Now classes are pretty critical to understand when doing
+
+113
+00:14:40,200 --> 00:14:45,520
+ type strits because it's going to be using them an awful lot when you're actually doing
+
+114
+00:14:45,520 --> 00:14:53,400
+ developments. So classes pretty much let us bundle and not only structure but also behavior
+
+115
+00:14:53,400 --> 00:14:55,200
+ into reusable blueprints.
+
