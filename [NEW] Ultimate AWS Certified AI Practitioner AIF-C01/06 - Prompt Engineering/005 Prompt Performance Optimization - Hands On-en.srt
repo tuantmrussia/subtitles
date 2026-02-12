@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:07,400
+ So let's practice using the configurations to see if we can influence the creativity of a model
+
+2
+00:00:07,400 --> 00:00:13,720
+ So let's say for example, we take an entropic and we take a cloud 3/7a apply and we're going to say
+
+3
+00:00:13,720 --> 00:00:16,600
+ Please write a story
+
+4
+00:00:16,600 --> 00:00:23,480
+ About a robot learning how to cook and we say it's a short story
+
+5
+00:00:23,840 --> 00:00:34,120
+ Okay, so we will maintain the maximum length to 600 something like this. This way. It's not too long and let's look at the randomness and diversity
+
+6
+00:00:34,120 --> 00:00:39,820
+ So we know that a low temperature a low top P and a low top K
+
+7
+00:00:39,820 --> 00:00:43,660
+ We'll really make a response a bit more
+
+8
+00:00:43,660 --> 00:00:47,720
+ conservative so let's run this and see how it works
+
+9
+00:00:47,720 --> 00:00:49,960
+ so here is
+
+10
+00:00:49,960 --> 00:00:51,960
+ the story so there's
+
+11
+00:00:52,440 --> 00:00:56,740
+ Kitchen there was a flurry activities as a chef and here is the story and
+
+12
+00:00:56,740 --> 00:00:59,960
+ It looks interesting and it's
+
+13
+00:00:59,960 --> 00:01:03,560
+ You know if we read the story probably it's very boring, you know
+
+14
+00:01:03,560 --> 00:01:08,680
+ And if we are now trying to increase the temperature
+
+15
+00:01:08,680 --> 00:01:16,880
+ We're going to get more creative output if we increase top P we're going to get more words that were maybe not cutting it in the first place
+
+16
+00:01:16,880 --> 00:01:19,880
+ So we'll put it at maximum almost and
+
+17
+00:01:20,920 --> 00:01:23,400
+ And in top K we're getting more words to choose from as well
+
+18
+00:01:23,400 --> 00:01:32,800
+ So we'll give it a maximum of 500 so now we are going to ask the playground the the model to create a much more creative output
+
+19
+00:01:32,800 --> 00:01:34,160
+ So let's do again
+
+20
+00:01:34,160 --> 00:01:37,500
+ Please write a short story about a low robot learning how to cook
+
+21
+00:01:37,500 --> 00:01:42,960
+ And now we are getting something very very creative
+
+22
+00:01:42,960 --> 00:01:50,440
+ So there's like optical sensors and there's like an instructor that doing creps and and the robot is now
+
+23
+00:01:50,920 --> 00:01:55,160
+ Eating and so on so this is a much more creative output if you want to compare these two
+
+24
+00:01:55,160 --> 00:01:57,840
+ I'm going to include those into the code
+
+25
+00:01:57,840 --> 00:02:01,400
+ directory so you can see a low
+
+26
+00:02:01,400 --> 00:02:04,160
+ Low temperature prompt and high temperature prompts
+
+27
+00:02:04,160 --> 00:02:09,560
+ But remember what all of these means so this is controlling the creativity of the model overall
+
+28
+00:02:09,560 --> 00:02:15,760
+ Top P is controlling the percentile of words considered based on their probabilities and
+
+29
+00:02:15,760 --> 00:02:19,520
+ Top K is how many words you want to be considered for choosing the next word
+
+30
+00:02:19,680 --> 00:02:22,880
+ So hopefully this makes sense. Hopefully you saw
+
+31
+00:02:22,880 --> 00:02:31,000
+ How these kind of configurations work and how the influence the model outputs so I hope you liked it and I will see you in the next lecture
+
