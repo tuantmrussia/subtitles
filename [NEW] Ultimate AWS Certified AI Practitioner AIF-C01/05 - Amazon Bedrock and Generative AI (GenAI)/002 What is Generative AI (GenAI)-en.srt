@@ -1,0 +1,656 @@
+1
+00:00:00,000 --> 00:00:02,780
+ So let's talk about generative AI.
+
+2
+00:00:02,780 --> 00:00:04,740
+ Just before we go into Amazon Bedrock,
+
+3
+00:00:04,740 --> 00:00:07,300
+ which is a service for JNAI on AWS,
+
+4
+00:00:07,300 --> 00:00:10,660
+ but I first want to take a step back and just understand what is JNAI.
+
+5
+00:00:10,660 --> 00:00:14,940
+ So generative JI or JNAI is going to be a subset of deep learning,
+
+6
+00:00:14,940 --> 00:00:18,420
+ which is a subset of machine learning, which is a subset of AI.
+
+7
+00:00:18,420 --> 00:00:21,020
+ So JNAI has the name indicates,
+
+8
+00:00:21,020 --> 00:00:24,620
+ is used to generate new data that is going to be
+
+9
+00:00:24,620 --> 00:00:27,020
+ similar to the data it was trained on.
+
+10
+00:00:27,020 --> 00:00:30,020
+ So what type of data can we train JNAI with?
+
+11
+00:00:30,020 --> 00:00:31,800
+ Well, we can train it on text,
+
+12
+00:00:31,800 --> 00:00:34,540
+ on images, on audio, on code,
+
+13
+00:00:34,540 --> 00:00:37,740
+ and video, and a lot more, whatever you think of really.
+
+14
+00:00:37,740 --> 00:00:41,980
+ So the generative AI model is going to take a lot of train data.
+
+15
+00:00:41,980 --> 00:00:46,780
+ Here's an example where we are going to give it a lot of dogs images.
+
+16
+00:00:46,780 --> 00:00:49,620
+ So we have our train data set which are going to be dogs,
+
+17
+00:00:49,620 --> 00:00:52,820
+ but also we're going to feed them cartoons.
+
+18
+00:00:52,820 --> 00:00:56,420
+ So we're going to have a bunch of different cartoons that are going to be hand-drawn.
+
+19
+00:00:56,420 --> 00:01:01,460
+ And the generative model is going to see so many of these train data.
+
+20
+00:01:01,460 --> 00:01:05,000
+ That is going to understand what is a dog, what is a cartoon.
+
+21
+00:01:05,000 --> 00:01:08,340
+ And then if we ask it, can you generate a cartoon dog?
+
+22
+00:01:08,340 --> 00:01:13,900
+ It's going to be smart enough to combine the two together and create a dog that looks like a cartoon.
+
+23
+00:01:13,900 --> 00:01:16,780
+ And that is the whole power of generative AI,
+
+24
+00:01:16,780 --> 00:01:21,660
+ is that it's able to combine its knowledge into new and unique ways.
+
+25
+00:01:21,660 --> 00:01:25,900
+ So we're going to start with a lot of unlabeled data,
+
+26
+00:01:25,900 --> 00:01:28,420
+ and we'll see that means in the later section.
+
+27
+00:01:28,420 --> 00:01:31,620
+ And we're going to train what's called a foundation model.
+
+28
+00:01:31,620 --> 00:01:35,820
+ And foundation model are very broad, they're very big, very wide,
+
+29
+00:01:35,820 --> 00:01:39,300
+ and they can adapt to different kinds of general tasks.
+
+30
+00:01:39,300 --> 00:01:43,140
+ For example, a good foundation model can generate some text,
+
+31
+00:01:43,140 --> 00:01:46,500
+ can summarize some text, can extract information,
+
+32
+00:01:46,500 --> 00:01:49,460
+ can generate images, can become a chatbot,
+
+33
+00:01:49,460 --> 00:01:52,460
+ and can insert any types of questions you have.
+
+34
+00:01:52,460 --> 00:01:57,260
+ So as a whole, we feel a lot of data into a foundational model,
+
+35
+00:01:57,260 --> 00:02:00,900
+ which has the option to do a lot of different tasks.
+
+36
+00:02:00,900 --> 00:02:04,860
+ So now let's talk about foundation models.
+
+37
+00:02:04,860 --> 00:02:08,620
+ So in order to generate data, as we said, we need to have a foundation model,
+
+38
+00:02:08,620 --> 00:02:11,660
+ and they're trained on variety of inputs.
+
+39
+00:02:11,660 --> 00:02:14,700
+ But to let you know how big these models are,
+
+40
+00:02:14,700 --> 00:02:17,540
+ usually to train a foundation model, a good one,
+
+41
+00:02:17,540 --> 00:02:23,380
+ it may cost tens of millions of dollars to train because it is very computational heavy.
+
+42
+00:02:23,380 --> 00:02:26,740
+ It takes a lot of time to train it and a lot of data.
+
+43
+00:02:26,740 --> 00:02:32,380
+ So only a few big companies usually are creating their own foundation model.
+
+44
+00:02:32,380 --> 00:02:33,620
+ So here is an example.
+
+45
+00:02:33,620 --> 00:02:38,500
+ So we have GPT40, that is the name of the foundation model,
+
+46
+00:02:38,500 --> 00:02:43,420
+ behind chat GPT, which is the application where you can chat with an AI.
+
+47
+00:02:43,420 --> 00:02:48,020
+ But there is a wide selection of foundation models from different companies.
+
+48
+00:02:48,020 --> 00:02:53,260
+ So we have OpenAI, this is a company behind chat GPT and GPT40, for example.
+
+49
+00:02:53,260 --> 00:02:56,780
+ We have meta, so this is the new company behind Facebook.
+
+50
+00:02:56,780 --> 00:03:01,740
+ We have Amazon, Google, and Anthropic, and of course a lot more.
+
+51
+00:03:01,740 --> 00:03:08,700
+ But these companies are pretty big or they have a lot of money to invest into building these foundation models.
+
+52
+00:03:08,700 --> 00:03:10,940
+ So some of these models are going to be open source.
+
+53
+00:03:10,940 --> 00:03:15,740
+ For example, the GPT40, for example, meta is working a lot on open source models.
+
+54
+00:03:15,740 --> 00:03:20,860
+ We have Google BERT as well, which was one of the first models in the GNAI space,
+
+55
+00:03:20,860 --> 00:03:22,420
+ which also is open source.
+
+56
+00:03:22,420 --> 00:03:25,220
+ But some are under a commercial license.
+
+57
+00:03:25,220 --> 00:03:30,980
+ For example, OpenAI, you have to pay to use GPT at Eastern level, anthropic, and so on.
+
+58
+00:03:30,980 --> 00:03:35,300
+ And so we're going to see how we can access these models on AWS as well.
+
+59
+00:03:35,300 --> 00:03:40,620
+ So next, after the foundation model, we have the large language models or LLM.
+
+60
+00:03:40,620 --> 00:03:46,060
+ So LLMs are a type of AI that is relying again on a foundation model.
+
+61
+00:03:46,060 --> 00:03:49,660
+ But designed to generate coherent human-like texts.
+
+62
+00:03:49,660 --> 00:03:52,940
+ So you've been exposed to LLMs a lot before.
+
+63
+00:03:52,940 --> 00:04:01,020
+ One of these is chat GPT, the GPT40 type of foundation model and LLM from the company, OpenAI.
+
+64
+00:04:01,020 --> 00:04:05,980
+ So I went to chat GPT and I asked it, "Are you an LLM?"
+
+65
+00:04:05,980 --> 00:04:09,500
+ And it replied, "Yes, I am a large language model developed by OpenAI.
+
+66
+00:04:09,500 --> 00:04:13,820
+ And I can understand and generate human-like texts based on the input I receive."
+
+67
+00:04:13,820 --> 00:04:20,860
+ So this was text that looks like a human-rotate that was answered by GPT when I asked it, "Are you an LLM?"
+
+68
+00:04:20,860 --> 00:04:26,780
+ So the way LLM works is that they're trained on very large amount of text data.
+
+69
+00:04:26,780 --> 00:04:32,300
+ So they're usually very, very, very big models, very heavy, very computational, heavy to use.
+
+70
+00:04:32,300 --> 00:04:34,220
+ We're talking about billions of parameters.
+
+71
+00:04:34,220 --> 00:04:40,620
+ They're trained on a lot of books, articles, websites, data, or any other type of text data
+
+72
+00:04:40,620 --> 00:04:44,300
+ that is deemed good enough for the LLM training.
+
+73
+00:04:44,300 --> 00:04:51,660
+ So it can perform any wide range of language-related tasks, such as translation, summarization,
+
+74
+00:04:51,660 --> 00:04:54,860
+ question answering, content creation, and so on.
+
+75
+00:04:54,860 --> 00:04:58,540
+ So how does it work to use an LLM?
+
+76
+00:04:58,540 --> 00:05:04,700
+ So for this, we give it a prompt. So the prompt is a question, a bunch of texts that you're going
+
+77
+00:05:04,700 --> 00:05:10,220
+ to send to the GenAI model, the LLM. For example, what is AWS? That's the prompt.
+
+78
+00:05:10,220 --> 00:05:15,100
+ And we'll have a whole section in this course to understanding how to create a good prompt.
+
+79
+00:05:15,100 --> 00:05:20,300
+ Then the model is going to leverage all the existing content it has internally,
+
+80
+00:05:20,300 --> 00:05:24,540
+ learned from, and then it's going to look at the prompt and answer it.
+
+81
+00:05:24,540 --> 00:05:29,180
+ And so when I asked your GPT, what is AWS? I get the answer.
+
+82
+00:05:29,180 --> 00:05:33,340
+ AWS is a comprehensive cloud computing platform provided by Amazon,
+
+83
+00:05:33,340 --> 00:05:35,260
+ and you can read the rest. It's a long answer.
+
+84
+00:05:35,260 --> 00:05:38,940
+ But you have to do something, and it's a term you have to learn,
+
+85
+00:05:38,940 --> 00:05:44,300
+ which is that the output, the generated text, is non-deterministic.
+
+86
+00:05:44,300 --> 00:05:48,460
+ That means that for every user that is using the same prompt,
+
+87
+00:05:48,460 --> 00:05:52,540
+ you will not necessarily and usually not get the same answer.
+
+88
+00:05:53,100 --> 00:05:57,100
+ So I went to second time and opened a new chat window and asked,
+
+89
+00:05:57,100 --> 00:06:00,940
+ what is it, AWS? And if you take some time to read this answer,
+
+90
+00:06:00,940 --> 00:06:05,180
+ this was a GPT, you will see that while the answers are similar,
+
+91
+00:06:05,180 --> 00:06:10,860
+ and they explain the same thing pretty much, they are not the same exact answers.
+
+92
+00:06:10,860 --> 00:06:12,700
+ And so this is why it's non-deterministic.
+
+93
+00:06:12,700 --> 00:06:17,500
+ So let's understand why though it is non-deterministic.
+
+94
+00:06:17,500 --> 00:06:23,340
+ So let's take a sentence that is going to be outputted by a LLM.
+
+95
+00:06:23,340 --> 00:06:26,380
+ And the sentence is after the rain, this treats were.
+
+96
+00:06:26,380 --> 00:06:32,780
+ And what's going to happen is that the LLM is going to generate a list of potential words
+
+97
+00:06:32,780 --> 00:06:39,100
+ with probabilities. So what is the next word that is going to be probably here in this sentence?
+
+98
+00:06:39,100 --> 00:06:42,060
+ So the general model is going to think, and it's going to say, okay,
+
+99
+00:06:42,060 --> 00:06:47,340
+ maybe it's wet, and there's a 0.4 out of one chance that is going to be wet.
+
+100
+00:06:47,660 --> 00:06:55,500
+ Or flooded, 0.25, slippery, 0.15, empty, muddy, clean, blocked, and so on.
+
+101
+00:06:55,500 --> 00:07:00,620
+ So all these sentences make sense, but there are probabilities.
+
+102
+00:07:00,620 --> 00:07:05,580
+ That means that some of these words are more likely to be the next word in that sentence.
+
+103
+00:07:05,580 --> 00:07:10,300
+ And an algorithm is going to, of course, compute these probabilities.
+
+104
+00:07:10,300 --> 00:07:15,500
+ And another one is going to select a word from that list based on the probabilities.
+
+105
+00:07:15,500 --> 00:07:19,180
+ And for example, we're going to choose the word flooded.
+
+106
+00:07:19,180 --> 00:07:23,020
+ So it's going to be after the rain, the streets were flooded.
+
+107
+00:07:23,020 --> 00:07:25,260
+ And this is all done by the Jenny I model.
+
+108
+00:07:25,260 --> 00:07:28,220
+ So now we have after the rain, the streets were flooded.
+
+109
+00:07:28,220 --> 00:07:31,820
+ And the same process happens over and over again.
+
+110
+00:07:31,820 --> 00:07:36,780
+ So what is the next word where it could be end with, but from until,
+
+111
+00:07:36,780 --> 00:07:38,540
+ because and even a dot.
+
+112
+00:07:38,540 --> 00:07:42,780
+ So after the rain, the streets were flooded, dot, and that's the end of the sentence.
+
+113
+00:07:42,780 --> 00:07:46,380
+ So all of these things again have associated probabilities.
+
+114
+00:07:46,380 --> 00:07:51,020
+ And then the next word is going to be selected based on these probabilities.
+
+115
+00:07:51,020 --> 00:07:56,620
+ So this is why when you ask the AI twice the same prompt, you may not get the same answer.
+
+116
+00:07:56,620 --> 00:08:01,100
+ It's because the sentence is determined, thanks to statistical methods,
+
+117
+00:08:01,100 --> 00:08:03,260
+ and not with deterministic methods.
+
+118
+00:08:03,260 --> 00:08:07,260
+ So that's for LLMs, but let's talk about images as well.
+
+119
+00:08:07,260 --> 00:08:11,980
+ So Gen AI for images works in a way that, for example, you can give it a prompt.
+
+120
+00:08:11,980 --> 00:08:17,260
+ For example, generate a blue sky with white clouds and the word hello written in the sky.
+
+121
+00:08:17,260 --> 00:08:21,260
+ And the Gen AI model is going to actually give you that image.
+
+122
+00:08:21,260 --> 00:08:23,100
+ That's of course we generated for this course.
+
+123
+00:08:23,100 --> 00:08:27,900
+ We can also have images generated from images.
+
+124
+00:08:27,900 --> 00:08:30,460
+ So here we give an image of someone playing piano.
+
+125
+00:08:30,460 --> 00:08:34,940
+ And we're saying transform this image in a Japanese anime style.
+
+126
+00:08:34,940 --> 00:08:38,140
+ And the outcome image is going to be something similar.
+
+127
+00:08:38,140 --> 00:08:41,180
+ But now it looks like it comes out of the manga of a manga.
+
+128
+00:08:42,140 --> 00:08:44,860
+ And then we can also generate texts from images.
+
+129
+00:08:44,860 --> 00:08:48,220
+ So we give it a prompt and say how many apples do you see in the picture?
+
+130
+00:08:48,220 --> 00:08:51,340
+ And we give it a picture with one orange and an apple.
+
+131
+00:08:51,340 --> 00:08:56,780
+ And then the Gen AI is going to look at the image and say, well,
+
+132
+00:08:56,780 --> 00:09:00,380
+ the picture shows one apple and the other fruit is an orange.
+
+133
+00:09:00,380 --> 00:09:03,740
+ So just to tell you how that works for Gen AI for images.
+
+134
+00:09:03,740 --> 00:09:07,500
+ So you get an idea of how something can generate an image.
+
+135
+00:09:07,500 --> 00:09:11,340
+ There's different methods of course, but one of the popular one nowadays
+
+136
+00:09:11,340 --> 00:09:13,740
+ is the diffusion model from a company.
+
+137
+00:09:13,740 --> 00:09:16,380
+ For example, named table diffusion, which is using that model heavily.
+
+138
+00:09:16,380 --> 00:09:20,060
+ So let's take a picture and this is a picture of a cat.
+
+139
+00:09:20,060 --> 00:09:25,260
+ And we're going to do what's called a forward diffusion process.
+
+140
+00:09:25,260 --> 00:09:29,340
+ That means that we're going to add some noise to the image over time.
+
+141
+00:09:29,340 --> 00:09:33,100
+ So this is with a little bit of noise, but it's the same image with a bit of noise.
+
+142
+00:09:33,100 --> 00:09:34,700
+ And then we add more noise.
+
+143
+00:09:34,700 --> 00:09:36,940
+ We can barely recognize the cats.
+
+144
+00:09:36,940 --> 00:09:41,020
+ And then we add more noise and it looks like the cat is entirely gone.
+
+145
+00:09:41,020 --> 00:09:42,300
+ And all we get is noise.
+
+146
+00:09:42,300 --> 00:09:45,740
+ And so we do this for a lot of pictures.
+
+147
+00:09:45,740 --> 00:09:47,660
+ And this is called the forward diffusion process.
+
+148
+00:09:47,660 --> 00:09:53,020
+ And once the algorithm is trained to take images and create noise out of it,
+
+149
+00:09:53,020 --> 00:09:54,460
+ we do the opposite.
+
+150
+00:09:54,460 --> 00:09:58,460
+ So when we want to generate an image, we're going to start with noise,
+
+151
+00:09:58,460 --> 00:10:03,100
+ and we're also going to give it a prompt and say, we want a cat with a computer.
+
+152
+00:10:03,100 --> 00:10:04,860
+ And it's called reverse diffusion.
+
+153
+00:10:04,860 --> 00:10:08,940
+ So now that the algorithm has seen how to go from an image to noise,
+
+154
+00:10:08,940 --> 00:10:10,780
+ it will go from noise to image.
+
+155
+00:10:10,780 --> 00:10:12,860
+ So we give it some noise randomly.
+
+156
+00:10:12,860 --> 00:10:17,660
+ And then it says, OK, I'm going to denoise it and it's going to start to look like a cat.
+
+157
+00:10:17,660 --> 00:10:20,780
+ And then denoise it again and then denoise it again.
+
+158
+00:10:20,780 --> 00:10:23,020
+ And then we have the cats with a computer.
+
+159
+00:10:23,020 --> 00:10:26,780
+ So imagine this is a new image generated by the AI and not the exact same.
+
+160
+00:10:26,780 --> 00:10:28,300
+ It was trained on, of course.
+
+161
+00:10:28,300 --> 00:10:31,740
+ So this is how Jenny I works for text for images.
+
+162
+00:10:31,740 --> 00:10:37,020
+ Just remember the concept of an LLM, remember the concept that it's non deterministic.
+
+163
+00:10:37,020 --> 00:10:41,420
+ But now you have a general overview of Jenny I, and I hope you liked it.
+
+164
+00:10:41,420 --> 00:10:43,580
+ And I will see you in the next lecture.
+
