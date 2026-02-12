@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:03,960
+Vì vậy, bây giờ chúng ta hãy xem làm thế nào chúng tôi có thể đánh giá một mô hình tự động.
+
+2
+00:00:03,960 --> 00:00:06,280
+Vì vậy, đây là một loại đánh giá sâu hơn,
+
+3
+00:00:06,280 --> 00:00:07,360
+Nhưng ở bên trái,
+
+4
+00:00:07,360 --> 00:00:11,880
+Anh có thể đánh giá và triển khai và tìm ra đánh giá mô hình.
+
+5
+00:00:11,880 --> 00:00:15,080
+Như bạn thấy, chúng tôi có 3 loại đánh giá.
+
+6
+00:00:15,080 --> 00:00:18,800
+Chúng tôi có đánh giá tự động để đánh giá một mô hình
+
+7
+00:00:18,800 --> 00:00:22,600
+chống lại các số đo và nó sẽ được tự động hóa đầy đủ
+
+8
+00:00:22,600 --> 00:00:24,920
+Như chúng ta đã thấy trong biểu đồ trong bài giảng trước.
+
+9
+00:00:24,920 --> 00:00:26,720
+Nhưng chúng ta cũng có con người.
+
+10
+00:00:26,720 --> 00:00:29,960
+Bạn có thể mang theo đội ngũ lao động của riêng bạn và sau đó con người sẽ đi
+
+11
+00:00:29,960 --> 00:00:34,080
+cung cấp cho bạn phản hồi và đánh giá đến 2 dặm mỗi lần.
+
+12
+00:00:34,080 --> 00:00:35,480
+Và sau đó bạn cũng có thể có con người,
+
+13
+00:00:35,480 --> 00:00:39,040
+Nhưng lần này họ có thể là một đội công tác của AWS.
+
+14
+00:00:39,040 --> 00:00:40,280
+Vì vậy, các loại đánh giá khác nhau,
+
+15
+00:00:40,280 --> 00:00:43,240
+Nhưng tôi chỉ muốn cho bạn thấy dòng chảy về cách tạo ra một
+
+16
+00:00:43,240 --> 00:00:44,760
+Chỉ để anh có một ý tưởng tốt hơn.
+
+17
+00:00:44,760 --> 00:00:48,520
+Vì vậy, hãy đi cho tự động và tôi sẽ gọi điều này một đánh giá thử nghiệm.
+
+18
+00:00:48,520 --> 00:00:51,480
+Chúng tôi sẽ không chạy, chúng tôi chỉ muốn xem xét các lựa chọn.
+
+19
+00:00:51,480 --> 00:00:53,200
+Nhưng chúng ta cần phải chọn một mô hình.
+
+20
+00:00:53,200 --> 00:00:55,480
+Ví dụ, hãy đánh giá Amazon,
+
+21
+00:00:55,480 --> 00:00:58,760
+Titan gọi tin G1 Express.
+
+22
+00:00:58,760 --> 00:01:02,080
+Và tiếp theo chúng tôi cần phải chọn những gì là loại của mô hình
+
+23
+00:01:02,080 --> 00:01:05,360
+Đánh giá nhiệm vụ mà chúng ta sẽ đánh giá lại.
+
+24
+00:01:05,360 --> 00:01:08,800
+Vì vậy, chúng tôi muốn hiểu nếu nó là tốt trong văn bản chung
+
+25
+00:01:08,800 --> 00:01:13,080
+Thế hệ hoặc nếu nó là tốt tại văn bản tóm tắt hoặc câu hỏi
+
+26
+00:01:13,080 --> 00:01:15,560
+Và câu trả lời hay phân loại văn bản?
+
+27
+00:01:15,560 --> 00:01:18,520
+Như bạn thấy, bạn không có bất kỳ loại văn bản tùy chỉnh,
+
+28
+00:01:18,520 --> 00:01:20,680
+chỉ những cái được xây dựng trong đó.
+
+29
+00:01:20,680 --> 00:01:24,040
+Vì vậy, hãy nói rằng chúng tôi muốn đánh giá cho thế hệ văn bản tổng quát.
+
+30
+00:01:24,040 --> 00:01:26,400
+Và sau đó chúng tôi muốn đánh giá cho những gì?
+
+31
+00:01:26,400 --> 00:01:30,400
+Ví dụ, chúng ta có thể xem xét về độc tính
+
+32
+00:01:30,400 --> 00:01:34,720
+Để xem liệu mô hình sẽ tạo ra những tác nhân có hại, gây xúc phạm,
+
+33
+00:01:34,720 --> 00:01:36,720
+hay nội dung không thích hợp.
+
+34
+00:01:36,720 --> 00:01:40,880
+Vì vậy, ở đây chúng ta cần phải chọn một dấu nhắc mà tôi thiết lập để đánh giá này đo lường.
+
+35
+00:01:40,880 --> 00:01:44,240
+Vì vậy, bạn có thể sử dụng một có sẵn trong bộ dữ liệu.
+
+36
+00:01:44,240 --> 00:01:47,840
+Và có những dấu hiệu độc hại thật sự hoặc táo bạo,
+
+37
+00:01:47,840 --> 00:01:50,440
+Nó sẽ mang lại một số thách thức cho AI.
+
+38
+00:01:50,440 --> 00:01:54,000
+Và chúng ta có thể xem xét kết quả của đánh giá này.
+
+39
+00:01:54,000 --> 00:01:56,200
+Hoặc chúng ta có thể sử dụng bộ dữ liệu nhắc nhở của riêng mình.
+
+40
+00:01:56,200 --> 00:01:59,120
+Và một lần nữa, nó cần phải là một chiếc Amazon S3.
+
+41
+00:01:59,120 --> 00:02:01,160
+Và sau đó ở đây chúng tôi có thêm lựa chọn bởi vì chúng tôi có thể kiểm tra
+
+42
+00:02:01,160 --> 00:02:03,960
+chống lại những vụ cụ thể của công việc.
+
+43
+00:02:03,960 --> 00:02:07,760
+Mỗi lựa chọn đều dựa trên những gì bạn đang cố gắng làm.
+
+44
+00:02:07,760 --> 00:02:10,640
+Và bạn cũng có thể có những thước đo khác như độ chính xác.
+
+45
+00:02:10,640 --> 00:02:14,440
+Vậy có tốt về kiến thức thực tế cho thế giới thực không?
+
+46
+00:02:14,440 --> 00:02:15,400
+Và mạnh mẽ.
+
+47
+00:02:15,400 --> 00:02:17,600
+Và một lần nữa, cho mỗi bài kiểm tra,
+
+48
+00:02:17,600 --> 00:02:21,200
+bạn có một số bộ dữ liệu sẵn có hoặc bạn có thể xây dựng của riêng bạn.
+
+49
+00:02:21,200 --> 00:02:21,880
+Được rồi.
+
+50
+00:02:21,880 --> 00:02:24,560
+Và sau đó bạn muốn lưu trữ các kết quả đánh giá?
+
+51
+00:02:24,560 --> 00:02:26,520
+Một lần nữa, ở Amazon S3.
+
+52
+00:02:26,520 --> 00:02:28,400
+Để thực hiện điều này, bạn cần một m roll một lần nữa
+
+53
+00:02:28,400 --> 00:02:30,760
+để viết thư cho cái xô ở Amazon S3.
+
+54
+00:02:30,760 --> 00:02:32,360
+Cái này có thể được tự động hóa ngay đây.
+
+55
+00:02:32,360 --> 00:02:33,440
+Và sau đó bạn nhấp chuột vào tạo hóa.
+
+56
+00:02:33,440 --> 00:02:35,840
+Và nó sẽ thực sự làm một đánh giá mô hình.
+
+57
+00:02:35,840 --> 00:02:37,280
+Bây giờ chúng ta không làm điều đó bởi vì, chà,
+
+58
+00:02:37,280 --> 00:02:39,160
+Sẽ tốn rất nhiều tiền đấy.
+
+59
+00:02:39,160 --> 00:02:41,920
+Bởi vì chúng tôi sẽ chạy các dấu nhắc JNAI
+
+60
+00:02:41,920 --> 00:02:43,680
+và sau đó nhìn vào kết quả của họ.
+
+61
+00:02:43,680 --> 00:02:46,440
+Rõ ràng là có một cái giá nhất định liên quan đến nó.
+
+62
+00:02:46,440 --> 00:02:50,600
+Nhưng ở đây chúng tôi nhận được một số ý định của làm thế nào các mô hình đánh giá hoạt động.
+
+63
+00:02:50,600 --> 00:02:53,440
+Và bạn có thể khám phá trên bản tóm tắt văn bản của riêng bạn,
+
+64
+00:02:53,440 --> 00:02:56,360
+câu hỏi và câu trả lời, phân loại, vân vân.
+
+65
+00:02:56,360 --> 00:02:59,440
+Nơi, một lần nữa, được xây dựng trong bộ dữ liệu được cung cấp cho bạn,
+
+66
+00:02:59,440 --> 00:03:01,880
+Thật tuyệt.
+
+67
+00:03:01,880 --> 00:03:03,240
+Và chúng tôi muốn có con người.
+
+68
+00:03:03,240 --> 00:03:05,920
+Chúng ta có thể tạo ra một đánh giá dựa trên con người.
+
+69
+00:03:05,920 --> 00:03:08,280
+Bởi con người.
+
+70
+00:03:08,280 --> 00:03:13,200
+Và ở đây, đánh giá các trường hợp thấp hơn.
+
+71
+00:03:13,200 --> 00:03:17,360
+Và ở đây, chúng tôi chọn một lần nữa một mô hình, vì vậy bất cứ điều gì bạn muốn.
+
+72
+00:03:17,360 --> 00:03:18,440
+Và rồi loại nhiệm vụ là gì?
+
+73
+00:03:18,440 --> 00:03:20,200
+Vì vậy, bạn có giống như trước, nhưng cũng có
+
+74
+00:03:20,200 --> 00:03:22,640
+bây giờ bạn có thể tạo một kiểu tác vụ riêng.
+
+75
+00:03:22,640 --> 00:03:26,440
+Và đây là cho đội của anh sử dụng và thực hiện một nhiệm vụ cụ thể.
+
+76
+00:03:26,440 --> 00:03:28,920
+Ở đây, một lần nữa, bạn sẽ có một số thước đo
+
+77
+00:03:28,920 --> 00:03:30,560
+có thể đề nghị.
+
+78
+00:03:30,560 --> 00:03:32,600
+Hoặc bạn có thể tự tạo ra thước đo nếu bạn muốn.
+
+79
+00:03:32,600 --> 00:03:35,400
+Vì vậy, bạn có một chút kiểm soát bởi vì bây giờ bạn đã có con người
+
+80
+00:03:35,400 --> 00:03:37,360
+và con người có thể làm bất cứ điều gì anh muốn.
+
+81
+00:03:37,360 --> 00:03:39,040
+Vì vậy, một lần nữa, bạn chọn điều này.
+
+82
+00:03:39,040 --> 00:03:40,600
+Bạn chọn phương pháp đánh giá.
+
+83
+00:03:40,600 --> 00:03:44,120
+Bạn có muốn con người đánh giá dựa trên ngón cái lên hoặc xuống
+
+84
+00:03:44,120 --> 00:03:49,160
+hay viết câu trả lời trên 5 sao?
+
+85
+00:03:49,160 --> 00:03:52,080
+Và bạn có thể có nhiều thước đo nếu bạn muốn.
+
+86
+00:03:52,080 --> 00:03:55,000
+Và trên đầu trang của nó, bạn có thể thêm một mô hình khác để so sánh
+
+87
+00:03:55,000 --> 00:03:58,240
+giữa hai mô hình nếu bạn muốn nó, ví dụ, hai.
+
+88
+00:03:58,240 --> 00:04:01,640
+Vì vậy, nhiều tùy biến hơn có sẵn cho con người
+
+89
+00:04:01,640 --> 00:04:04,840
+Đánh giá, nhưng ID vẫn như cũ.
+
+90
+00:04:04,840 --> 00:04:07,360
+Vì vậy, đó là nó cho đánh giá FM.
+
+91
+00:04:07,360 --> 00:04:08,560
+Hy vọng anh thích.
+
+92
+00:04:08,560 --> 00:04:11,720
+Và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
