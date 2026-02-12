@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:05,640
+ Hi and welcome back to this course where in this lesson we're going to be stepping into
+
+2
+00:00:05,640 --> 00:00:12,240
+ the world of conditional types which is a powerful feature that lets us write logic at
+
+3
+00:00:12,240 --> 00:00:14,080
+ the type level.
+
+4
+00:00:14,080 --> 00:00:21,040
+ So we're going to learn how to use extens to check types and the key word infer to extract
+
+5
+00:00:21,040 --> 00:00:26,760
+ parts of them and this is where TypeScript starts to feel like a proper programming language
+
+6
+00:00:26,760 --> 00:00:27,760
+ or types.
+
+7
+00:00:27,760 --> 00:00:34,720
+ First of all let's talk about what exactly is conditional types.
+
+8
+00:00:34,720 --> 00:00:39,340
+ So conditional type looks a bit like an if statement for types.
+
+9
+00:00:39,340 --> 00:00:45,800
+ It checks whether one type extends another and then returns different types based on
+
+10
+00:00:45,800 --> 00:00:46,800
+ that result.
+
+11
+00:00:46,800 --> 00:00:55,840
+ So let's do an example and we're going to define a type called is string and this is
+
+12
+00:00:55,840 --> 00:01:02,600
+ going to determine whether is a string by looking at another type so we use it utilize
+
+13
+00:01:02,600 --> 00:01:15,080
+ to generic t for this and if type t that we're testing extends a type of string that
+
+14
+00:01:15,080 --> 00:01:21,880
+ we're going to simply return yes otherwise we're going to return no.
+
+15
+00:01:21,880 --> 00:01:32,120
+ Let's do an example so if we have a type of A and we don't need to specify string by
+
+16
+00:01:32,120 --> 00:01:39,320
+ supplying the type t here as a string that's going to mean that's going to that's going
+
+17
+00:01:39,320 --> 00:01:45,040
+ to be yes basically because it's going to come into here and we are making it a type
+
+18
+00:01:45,040 --> 00:01:53,240
+ of string and it's going to return yes and conversely if we have another type and we call
+
+19
+00:01:53,240 --> 00:02:03,200
+ is string and we set this to say number the course this is going to be no because it's
+
+20
+00:02:03,200 --> 00:02:11,520
+ not extending type string so you can see what this is doing here we have a conditional
+
+21
+00:02:11,520 --> 00:02:20,360
+ type and is effectively allowing us to write a type that's adapting based on the actual
+
+22
+00:02:20,360 --> 00:02:27,520
+ type that's being passed in as an input and the extends key would here allows us to check
+
+23
+00:02:27,520 --> 00:02:32,960
+ where the one type is assignable to another.
+
+24
+00:02:32,960 --> 00:02:39,280
+ So let's do another example and this time we're going to follow on the idea and have
+
+25
+00:02:39,280 --> 00:02:46,520
+ a little helper that's going to allow us whether a type being passed to us is in a right
+
+26
+00:02:46,520 --> 00:03:03,880
+ or not so do type is array type t and this is where t extends a conditional type that's
+
+27
+00:03:03,880 --> 00:03:10,880
+ any so that's how you can say we don't really care what the array is so that's why
+
+28
+00:03:10,880 --> 00:03:19,880
+ we use the any key word here any type is bit an array we can then say it's true or
+
+29
+00:03:19,880 --> 00:03:32,680
+ false then we can have a type a we call helper and say this is a number and array of numbers
+
+30
+00:03:32,680 --> 00:03:43,600
+ that's of course going to say that's true and if we have a type of b and this is call
+
+31
+00:03:43,600 --> 00:03:50,760
+ is array and this is a string without an array then of course that's going to be false.
+
+32
+00:03:50,760 --> 00:03:58,000
+ So you can see how this conditional types are quite careful because it's perfect for allowing
+
+33
+00:03:58,000 --> 00:04:08,360
+ us to check and build type guards or utility types and also constrain generics to help
+
+34
+00:04:08,360 --> 00:04:14,680
+ us make sure we have a certain type of actual types coming in.
+
+35
+00:04:14,680 --> 00:04:22,240
+ Now let's actually have a look at another way of doing this and that's to use the key word
+
+36
+00:04:22,240 --> 00:04:32,280
+ infer so I f is infer so how do we actually use this we don't use it here as a start but
+
+37
+00:04:32,280 --> 00:04:39,040
+ we can actually build in on top of where we have our conditional type I'm going to build
+
+38
+00:04:39,040 --> 00:04:49,000
+ another little example here so let's have another check and do type elements type again
+
+39
+00:04:49,000 --> 00:04:57,360
+ it's generic and we're going to check using extends and this time we are going to infuse
+
+40
+00:04:57,360 --> 00:05:07,880
+ the keyword infer so the infer key word allows us to extract a type from a structure so it's
+
+41
+00:05:07,880 --> 00:05:15,160
+ a little bit like having a regular expression because it's going to allow us to do some pattern
+
+42
+00:05:15,160 --> 00:05:27,280
+ matching for types so do infer let's say we'll infer another generic type of u and so we
+
+43
+00:05:27,280 --> 00:05:36,720
+ have an array if it is we're going to just grab the actual type that six inside our array
+
+44
+00:05:36,720 --> 00:05:44,560
+ here otherwise we're going to grab the type t and this can look starts to look quite strange
+
+45
+00:05:44,560 --> 00:05:52,560
+ but let me show you how this works if we have a type a a generic type a let me call
+
+46
+00:05:52,560 --> 00:06:00,640
+ element type and let's say we have an array of strings going to it's array of strings like
+
+47
+00:06:00,640 --> 00:06:12,640
+ this the more happens here is our type our checker is going to apply or the array but it's
+
+48
+00:06:12,640 --> 00:06:18,600
+ going to be want to look at the actual type that's coming out of it and it's going
+
+49
+00:06:18,600 --> 00:06:28,320
+ to return the type that's part of the arrays in this case this will return string because
+
+50
+00:06:28,320 --> 00:06:34,280
+ that is what's part of that the type this inside the array if we take another thing and
+
+51
+00:06:34,280 --> 00:06:42,640
+ let me do type B is element type let me say this is an array of numbers actually function
+
+52
+00:06:42,640 --> 00:06:49,840
+ is going to return number because that's the part of the type that's of part of the
+
+53
+00:06:49,840 --> 00:06:59,160
+ array if we do something like type C and this element type in this time we don't supply
+
+54
+00:06:59,160 --> 00:07:07,280
+ a an array we just say number then this is also going to return number because it's
+
+55
+00:07:07,280 --> 00:07:15,240
+ going to come into our conditional but rather than extract the type of that's part of
+
+56
+00:07:15,240 --> 00:07:22,440
+ the array here is it's going to return the actual type itself which is coming back as
+
+57
+00:07:22,440 --> 00:07:31,560
+ t in this case number. Now we can use this sort of little structure to allow us to write
+
+58
+00:07:31,560 --> 00:07:40,520
+ a function to be able to flatten arrays so let's just come into here and let's build up
+
+59
+00:07:40,520 --> 00:07:53,440
+ a helper and say type Latin this is going to take a generic type t if it's going to extends
+
+60
+00:07:53,440 --> 00:08:00,440
+ the array we're passing through a type on ray of strings we're going to be interested
+
+61
+00:08:00,440 --> 00:08:12,040
+ in pulling out the type on that array if we have a type of integers and array of types
+
+62
+00:08:12,040 --> 00:08:18,400
+ can be quite difficult to or confusing to explain as well otherwise we're going to just
+
+63
+00:08:18,400 --> 00:08:27,440
+ get the type of t past it let's do type A do you call our flatten helper we're going
+
+64
+00:08:27,440 --> 00:08:37,880
+ to supply an array of strings and then this will become or infer the string which is
+
+65
+00:08:37,880 --> 00:08:46,840
+ part of the array and if we call our flatten again and we pass it number then this is
+
+66
+00:08:46,840 --> 00:08:53,600
+ also going to return number but rather than coming as part of the u because this is
+
+67
+00:08:53,600 --> 00:08:59,880
+ not an array it's going to return type t which is number so you can see that we are kind
+
+68
+00:08:59,880 --> 00:09:05,480
+ of stripping out if we happen array we're flattening it and just pulling out the existing
+
+69
+00:09:05,480 --> 00:09:11,880
+ type so it's pretty much the same as what we did before but this is more of a real
+
+70
+00:09:11,880 --> 00:09:19,920
+ world situation where you might want to use this actual conditional type so conditional
+
+71
+00:09:19,920 --> 00:09:25,520
+ types let us write logic pretty much at the type level we've learned how to check type
+
+72
+00:09:25,520 --> 00:09:33,600
+ we've extends we've also learned how to extract types even infer and also build some
+
+73
+00:09:33,600 --> 00:09:40,720
+ dynamic examples with utilities next up we're going to learn about the type cards which
+
+74
+00:09:40,720 --> 00:09:53,120
+ use like us to safely narrow types at runtime
+
