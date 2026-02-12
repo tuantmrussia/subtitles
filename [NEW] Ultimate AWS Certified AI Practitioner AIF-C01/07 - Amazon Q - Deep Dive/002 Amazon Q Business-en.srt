@@ -1,0 +1,384 @@
+1
+00:00:00,000 --> 00:00:03,200
+ So now let's talk about Amazon Q Business.
+
+2
+00:00:03,200 --> 00:00:06,320
+ So Amazon Q Business is a fully managed Gen AI
+
+3
+00:00:06,320 --> 00:00:08,960
+ assistant for your employees.
+
+4
+00:00:08,960 --> 00:00:11,920
+ What does that mean? Well, we have an assistant,
+
+5
+00:00:11,920 --> 00:00:16,720
+ but it's based entirely on your company's knowledge and data.
+
+6
+00:00:16,720 --> 00:00:21,520
+ So here, this is a very specific use case where Gen AI is for your company,
+
+7
+00:00:21,520 --> 00:00:23,840
+ and it's trained on your internal data.
+
+8
+00:00:23,840 --> 00:00:27,360
+ So for example, what can you ask Amazon Q Business?
+
+9
+00:00:27,360 --> 00:00:32,560
+ Well, you can say, write a job posting for a senior product manager role,
+
+10
+00:00:32,560 --> 00:00:37,360
+ where we have, of course, this role being very relevant to whatever our company is doing,
+
+11
+00:00:37,360 --> 00:00:42,640
+ or create a social media post under 50 words to advertise the new role,
+
+12
+00:00:42,640 --> 00:00:49,040
+ or for example, what was discussed during the team meeting in the week of the 4-12.
+
+13
+00:00:49,040 --> 00:00:53,120
+ And so, of course, all of this cannot be answered by a general foundation model.
+
+14
+00:00:53,120 --> 00:00:57,280
+ It needs to be a model that has been trained on your own internal data.
+
+15
+00:00:57,280 --> 00:00:59,200
+ With the right security, of course.
+
+16
+00:00:59,200 --> 00:01:02,880
+ So as a whole, Amazon Q Business can answer questions,
+
+17
+00:01:02,880 --> 00:01:06,080
+ provide summaries and generate content and automate tasks,
+
+18
+00:01:06,080 --> 00:01:08,880
+ as well as perform routine actions, such as, for example,
+
+19
+00:01:08,880 --> 00:01:13,920
+ doing self, such as submitting timer request, or sending meeting invites.
+
+20
+00:01:13,920 --> 00:01:18,640
+ Behind the scene, Amazon Q Business is built on Amazon bedrock,
+
+21
+00:01:18,640 --> 00:01:22,960
+ but we have less control so we cannot choose what is the underlying foundation model.
+
+22
+00:01:22,960 --> 00:01:29,280
+ And actually, Amazon Q Business is built on multiple foundation model from Amazon bedrock.
+
+23
+00:01:29,280 --> 00:01:32,240
+ So this is a service that's a little bit higher level,
+
+24
+00:01:32,240 --> 00:01:38,160
+ geared toward a very specific use case, of using and exposing your company internal data
+
+25
+00:01:38,160 --> 00:01:41,120
+ from an LLM genii perspective.
+
+26
+00:01:41,120 --> 00:01:46,560
+ So here's an example, we're saying, what is the annual total out-of-pocket maximum
+
+27
+00:01:46,560 --> 00:01:48,560
+ mentioned in the health plan summary?
+
+28
+00:01:48,560 --> 00:01:51,760
+ So this is for our company, we're in the medical space.
+
+29
+00:01:51,760 --> 00:01:56,480
+ And we have a company document, a PDF, that has the very answer.
+
+30
+00:01:56,480 --> 00:02:00,960
+ And so Amazon Q Business is able to look up that document,
+
+31
+00:02:00,960 --> 00:02:06,400
+ look at what the document says, and then we give us the answer in our chats,
+
+32
+00:02:06,400 --> 00:02:08,240
+ similar to rag, of course.
+
+33
+00:02:08,240 --> 00:02:13,360
+ And then, of course, we will have a sources section where we say, hey, the sources of
+
+34
+00:02:13,360 --> 00:02:18,080
+ this is the health plan PDF document, and you can click on it and find it right away.
+
+35
+00:02:19,360 --> 00:02:23,120
+ So let's have a look at a diagram to better understand Amazon Q Business.
+
+36
+00:02:23,120 --> 00:02:24,160
+ So here it is.
+
+37
+00:02:24,160 --> 00:02:26,320
+ We have first some data connectors.
+
+38
+00:02:26,320 --> 00:02:32,640
+ So data connectors are fully managed rag, and you can connect to over 40 popular enterprise
+
+39
+00:02:32,640 --> 00:02:33,920
+ data sources.
+
+40
+00:02:33,920 --> 00:02:37,520
+ So you don't have to learn about them all, but it's good to see some of them.
+
+41
+00:02:37,520 --> 00:02:42,480
+ So we have Amazon S3, where we can store data files onto AWS.
+
+42
+00:02:42,480 --> 00:02:44,080
+ It's a very popular service.
+
+43
+00:02:44,080 --> 00:02:47,040
+ We have Amazon RDS, it's a database service.
+
+44
+00:02:47,040 --> 00:02:52,400
+ We have Aurora, another database service, and work docs a service used specifically for
+
+45
+00:02:52,400 --> 00:02:54,160
+ documents on AWS.
+
+46
+00:02:54,160 --> 00:03:01,360
+ And then we have non AWS services, such as Microsoft 365, Salesforce, Google Drive,
+
+47
+00:03:01,360 --> 00:03:05,120
+ Gmail, Slack, SharePoint, etc, etc.
+
+48
+00:03:05,120 --> 00:03:10,960
+ And the idea is that Amazon Q Business will have built-in integrations with these services,
+
+49
+00:03:10,960 --> 00:03:15,920
+ and then once the integration is made, then it will crawl these sources
+
+50
+00:03:15,920 --> 00:03:20,640
+ and do what it's supposed to do to allow you to search them and query them.
+
+51
+00:03:20,640 --> 00:03:23,200
+ Next, we have also plugins.
+
+52
+00:03:23,200 --> 00:03:28,160
+ So before data connectors was about retrieving data and understanding what is the knowledge
+
+53
+00:03:28,160 --> 00:03:33,360
+ inside of our company, but next we have plugins and plugins allow Amazon Q Business
+
+54
+00:03:33,360 --> 00:03:36,800
+ to actually interact with third party services.
+
+55
+00:03:36,800 --> 00:03:42,480
+ For example, we have zero, service now, Zendesk, Salesforce, etc, etc.
+
+56
+00:03:42,480 --> 00:03:46,080
+ And the idea is that, for example, if we say to Amazon Q Business,
+
+57
+00:03:46,080 --> 00:03:52,240
+ hey, create a Jira issue, this is to create a ticket so we can track a problem in our company,
+
+58
+00:03:52,240 --> 00:03:58,800
+ then Amazon Q Business will leverage the plugin and automatically create that Jira issue for us.
+
+59
+00:03:58,800 --> 00:04:05,760
+ So on top of reading data, Amazon Q Business has the ability to create and move data in your
+
+60
+00:04:05,760 --> 00:04:06,560
+ company as well.
+
+61
+00:04:06,560 --> 00:04:11,440
+ And you can extend it because you can create custom plugins to connect to any third party
+
+62
+00:04:11,440 --> 00:04:14,320
+ application using APIs.
+
+63
+00:04:14,320 --> 00:04:16,960
+ Now, how do we access Amazon Q Business?
+
+64
+00:04:16,960 --> 00:04:22,720
+ Well, our users are going to be authenticated through something called IAM Identity Center.
+
+65
+00:04:22,720 --> 00:04:27,280
+ So I am the center is a way for users to log in and we'll see how.
+
+66
+00:04:27,280 --> 00:04:32,000
+ And then once user are logged in, then they will only have access to the documents
+
+67
+00:04:32,000 --> 00:04:33,600
+ to should have access to.
+
+68
+00:04:33,600 --> 00:04:39,520
+ So by using your whole company data with Amazon Q Business, you still have the certainty
+
+69
+00:04:39,520 --> 00:04:43,360
+ that someone with less privilege will not be able to access all your documents.
+
+70
+00:04:43,360 --> 00:04:46,560
+ Otherwise, that would be, of course, a big security risks.
+
+71
+00:04:46,560 --> 00:04:52,720
+ So here we have IAM Identity Center and our users are going to log into it by just having a
+
+72
+00:04:52,720 --> 00:04:56,560
+ signing box where you enter a username and a password and you go to go.
+
+73
+00:04:56,560 --> 00:05:01,760
+ And then you have what's called an authenticated user with its own permissions because I am an
+
+74
+00:05:01,760 --> 00:05:05,520
+ Identity Center knows what the user is able to access or not.
+
+75
+00:05:05,520 --> 00:05:10,800
+ And then the user can ask questions to Amazon Q Business, which is a web application.
+
+76
+00:05:10,800 --> 00:05:14,880
+ And of course, access only the documents it should have access to.
+
+77
+00:05:14,880 --> 00:05:22,000
+ On top of it, you can integrate IAM Identity Center with what's called external identity providers
+
+78
+00:05:22,000 --> 00:05:28,320
+ or IDP. And it could be, for example, a Google login or a microsoft Active Directory and so on.
+
+79
+00:05:28,320 --> 00:05:33,600
+ And so that means that instead of logging in and getting an AWS-based signing page,
+
+80
+00:05:33,600 --> 00:05:37,840
+ you're going to log in with a system where users are already created.
+
+81
+00:05:37,840 --> 00:05:42,480
+ For example, it could be your Active Directory where you have your microsoft login or it could be
+
+82
+00:05:42,480 --> 00:05:48,640
+ your Google login. For example, if you're using the G Suite type of workspace for your company.
+
+83
+00:05:48,640 --> 00:05:53,920
+ So this is very handy and it's really going hand in hand with whatever security systems you have in
+
+84
+00:05:53,920 --> 00:06:00,720
+ place in your company. Next, we have admin controls. So these are controls used to customize
+
+85
+00:06:00,720 --> 00:06:07,520
+ responses based on what your organization needs. So admin controls are pretty much the exact same
+
+86
+00:06:07,520 --> 00:06:13,200
+ thing as guardrails in Amazon bedrock. So, for example, if we have a blocked topic such as gaming
+
+87
+00:06:13,200 --> 00:06:18,720
+ consoles and our employees asking, hey, how can I configure a brand new Nintendo Switch, then you're
+
+88
+00:06:18,720 --> 00:06:23,600
+ going to use the Amazon Q Business is going to say, well, this is a restricted topic. So we can
+
+89
+00:06:23,600 --> 00:06:31,200
+ block specific words or topics and we can also choose for Amazon Q to respond only with internal
+
+90
+00:06:31,200 --> 00:06:36,880
+ information versus using also external knowledge. So if we specify it to only use internal
+
+91
+00:06:36,880 --> 00:06:43,600
+ information, then only your company documents will be used to respond to a query. If not,
+
+92
+00:06:43,600 --> 00:06:48,960
+ then we have access to the broader knowledge of the foundation model. You can also make sure to
+
+93
+00:06:48,960 --> 00:06:54,480
+ set up these admin controls either on the global control global level. That means for all type of
+
+94
+00:06:54,480 --> 00:07:01,680
+ topics and all type of subjects or you can set up more specifically at a topic level. So you have
+
+95
+00:07:01,680 --> 00:07:07,360
+ more specific admin controls, but they are the same as just at what level do you want to apply them?
+
+96
+00:07:07,360 --> 00:07:12,880
+ So that's it for Amazon Q Business. I hope you liked it and I will see you in the next lecture.
+
