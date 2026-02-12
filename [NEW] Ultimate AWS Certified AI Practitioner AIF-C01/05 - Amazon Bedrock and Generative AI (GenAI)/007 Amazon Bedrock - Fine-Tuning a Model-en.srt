@@ -1,0 +1,604 @@
+1
+00:00:00,000 --> 00:00:04,000
+ So now let's talk about fine-tuning on Amazon bedrock.
+
+2
+00:00:04,000 --> 00:00:07,200
+ So fine-tuning is going to be a big part of your exam.
+
+3
+00:00:07,200 --> 00:00:11,600
+ So the idea is that you're going to adapt a copy of a foundation model,
+
+4
+00:00:11,600 --> 00:00:14,000
+ and you're going to add your own data.
+
+5
+00:00:14,000 --> 00:00:15,400
+ So when you fine-tuning a model,
+
+6
+00:00:15,400 --> 00:00:20,000
+ it's actually going to change the underlying weights of the base foundation model.
+
+7
+00:00:20,000 --> 00:00:24,600
+ So you need to provide training data and it needs to adhere to a specific format,
+
+8
+00:00:24,600 --> 00:00:27,200
+ and it needs to be stored into Amazon S3.
+
+9
+00:00:27,200 --> 00:00:30,000
+ So the idea is that, for example, you have the LAMA2 model,
+
+10
+00:00:30,000 --> 00:00:32,400
+ and you're going to add data from Amazon S3,
+
+11
+00:00:32,400 --> 00:00:38,400
+ such as this data or that data and we'll have a look at this data very specifically in the next slides.
+
+12
+00:00:38,400 --> 00:00:40,800
+ And then bedrock is going to do it something,
+
+13
+00:00:40,800 --> 00:00:44,200
+ and you're going to get a fine-tuned version of LAMA2,
+
+14
+00:00:44,200 --> 00:00:46,400
+ which has your own data as well.
+
+15
+00:00:46,400 --> 00:00:49,800
+ So in order to use a fine-tuned custom model,
+
+16
+00:00:49,800 --> 00:00:51,800
+ you must use what's called provision throughput,
+
+17
+00:00:51,800 --> 00:00:54,400
+ which is a different pricing model than on-demand.
+
+18
+00:00:54,400 --> 00:00:57,400
+ And note that not all models can be fine-tuned,
+
+19
+00:00:57,400 --> 00:01:00,400
+ but you can end the usually open source.
+
+20
+00:01:00,400 --> 00:01:02,400
+ So how can we fine-tuning a model?
+
+21
+00:01:02,400 --> 00:01:05,400
+ Well, we have instruction-based fine-tuning.
+
+22
+00:01:05,400 --> 00:01:09,600
+ And here, this is to improve the performance on the pre-trained foundation model,
+
+23
+00:01:09,600 --> 00:01:11,400
+ on domain-specific tasks.
+
+24
+00:01:11,400 --> 00:01:14,200
+ So what does it mean domain-specific tasks is that you'll see an exam?
+
+25
+00:01:14,200 --> 00:01:19,800
+ That means it's going to be further trained on a particular field or area of knowledge.
+
+26
+00:01:19,800 --> 00:01:23,600
+ And here, the trick you need to go and look for the exam
+
+27
+00:01:23,600 --> 00:01:28,200
+ is that instruction-based fine-tuning is going to use what's called labeled examples,
+
+28
+00:01:28,200 --> 00:01:30,800
+ and they're going to be prompt responses pairs.
+
+29
+00:01:30,800 --> 00:01:32,800
+ So it's for labeled data,
+
+30
+00:01:32,800 --> 00:01:35,200
+ and the prompt response pairs look at this,
+
+31
+00:01:35,200 --> 00:01:37,800
+ the prompt is who is the fanarek, for example,
+
+32
+00:01:37,800 --> 00:01:40,200
+ and the completion, so the response is,
+
+33
+00:01:40,200 --> 00:01:43,200
+ stiff fanarek is an able-to-structure who dedicates his time
+
+34
+00:01:43,200 --> 00:01:45,400
+ to make the best AWS courses,
+
+35
+00:01:45,400 --> 00:01:49,400
+ so that his students can pass all certifications with flying colors.
+
+36
+00:01:49,400 --> 00:01:53,800
+ So here, on top of giving information to the model,
+
+37
+00:01:53,800 --> 00:01:58,000
+ we are also throwing the model how he wants it to order some questions,
+
+38
+00:01:58,000 --> 00:01:59,400
+ such as who is the fanarek.
+
+39
+00:01:59,400 --> 00:02:02,600
+ Maybe the answer the model had would be already similar,
+
+40
+00:02:02,600 --> 00:02:04,400
+ but with a different tone.
+
+41
+00:02:04,400 --> 00:02:07,400
+ So this is where instruction-based fine-tuning is helpful.
+
+42
+00:02:07,400 --> 00:02:10,000
+ Next, we have continued pre-training.
+
+43
+00:02:10,000 --> 00:02:14,600
+ So here, the idea is that we continue the training of the foundation model.
+
+44
+00:02:14,600 --> 00:02:16,600
+ So here, because we know foundation model
+
+45
+00:02:16,600 --> 00:02:19,800
+ I've been tried using unlabeled data, we need to provide as well
+
+46
+00:02:19,800 --> 00:02:22,400
+ for continued pre-training unlabeled data.
+
+47
+00:02:22,400 --> 00:02:24,400
+ And so this is something you look for in the exam,
+
+48
+00:02:24,400 --> 00:02:28,200
+ if you have unlabeled data, this is a kind of fine-tuning you need.
+
+49
+00:02:28,200 --> 00:02:31,600
+ And so it's also called domain adaptation fine-tuning
+
+50
+00:02:31,600 --> 00:02:34,400
+ to make a model an expert in a specific domain.
+
+51
+00:02:34,400 --> 00:02:38,600
+ For example, I'm going to feed the entire AWS documentation
+
+52
+00:02:38,600 --> 00:02:42,400
+ to a model, and then the model is going to be an expert on AWS.
+
+53
+00:02:42,400 --> 00:02:45,000
+ So here, we're just giving all documentation
+
+54
+00:02:45,000 --> 00:02:47,800
+ with its unlabeled data, so this is continued pre-training.
+
+55
+00:02:47,800 --> 00:02:52,000
+ And now, the model has become a domain expert.
+
+56
+00:02:52,000 --> 00:02:53,800
+ So here's the kind of input you have here.
+
+57
+00:02:53,800 --> 00:02:57,200
+ As you see, there's no prompt output, there's just inputs.
+
+58
+00:02:57,200 --> 00:03:00,000
+ And the input is just a lot of information.
+
+59
+00:03:00,000 --> 00:03:03,600
+ So here, this information is around financial data.
+
+60
+00:03:03,600 --> 00:03:05,400
+ And as you can see, if you want to read through it,
+
+61
+00:03:05,400 --> 00:03:07,200
+ it has a lot of acronyms.
+
+62
+00:03:07,200 --> 00:03:09,400
+ And so this is very good to teach acronyms
+
+63
+00:03:09,400 --> 00:03:13,000
+ or feed industry-specific terminology into a model.
+
+64
+00:03:13,000 --> 00:03:15,800
+ And then you can keep on training the model,
+
+65
+00:03:15,800 --> 00:03:20,000
+ it's called continued pre-training, as more data becomes available.
+
+66
+00:03:20,000 --> 00:03:23,800
+ OK, next, you may encounter as well single-turn messaging
+
+67
+00:03:23,800 --> 00:03:25,600
+ and multi-turn messaging.
+
+68
+00:03:25,600 --> 00:03:28,600
+ So this is a subset of instruction-based fine-tuning.
+
+69
+00:03:28,600 --> 00:03:31,200
+ But the idea is that here, we're going to give a hint
+
+70
+00:03:31,200 --> 00:03:34,000
+ into a user and an assistant.
+
+71
+00:03:34,000 --> 00:03:36,400
+ What the user is asking and what the assistant,
+
+72
+00:03:36,400 --> 00:03:38,200
+ so the bot should be replying.
+
+73
+00:03:38,200 --> 00:03:39,600
+ So here we have system.
+
+74
+00:03:39,600 --> 00:03:42,000
+ This is optional context for the conversation.
+
+75
+00:03:42,000 --> 00:03:45,200
+ Messages, which is going to contain various messages.
+
+76
+00:03:45,200 --> 00:03:48,000
+ Each will have a role, which is the user of the assistant,
+
+77
+00:03:48,000 --> 00:03:51,000
+ and the content, which is the text content of the message.
+
+78
+00:03:51,000 --> 00:03:55,000
+ So here we're fine-tuning how a chatbot should be replying.
+
+79
+00:03:55,000 --> 00:03:58,600
+ And for multi-turn messaging, this is the same idea,
+
+80
+00:03:58,600 --> 00:04:01,000
+ but this time we have a conversation.
+
+81
+00:04:01,000 --> 00:04:02,600
+ So we have multiple turns.
+
+82
+00:04:02,600 --> 00:04:05,600
+ And so here we alternate between user and assistant roles.
+
+83
+00:04:05,600 --> 00:04:10,000
+ And we have a conversation and this helps the model understand
+
+84
+00:04:10,000 --> 00:04:13,600
+ how to handle conversations with bigger contexts.
+
+85
+00:04:13,600 --> 00:04:16,200
+ So good to know for fine-tuning.
+
+86
+00:04:16,200 --> 00:04:18,400
+ First of all, retraining and financial model
+
+87
+00:04:18,400 --> 00:04:22,000
+ requires a higher budget because you need to spend
+
+88
+00:04:22,000 --> 00:04:23,600
+ some computations on it.
+
+89
+00:04:23,600 --> 00:04:27,600
+ So instruction-based fine-tuning is usually going to be cheaper
+
+90
+00:04:27,600 --> 00:04:29,600
+ because the computations are less intense.
+
+91
+00:04:29,600 --> 00:04:32,200
+ And usually, you have less data required.
+
+92
+00:04:32,200 --> 00:04:35,000
+ You're just trying to fine-tune how the model
+
+93
+00:04:35,000 --> 00:04:38,200
+ is replying based on specific instructions.
+
+94
+00:04:38,200 --> 00:04:41,400
+ If you use continued pre-training, it's usually more expensive
+
+95
+00:04:41,400 --> 00:04:44,000
+ because you need to have a lot more data.
+
+96
+00:04:44,000 --> 00:04:47,000
+ Also, it requires you to have an experienced machine-learning
+
+97
+00:04:47,000 --> 00:04:49,400
+ engineer to perform the task, even though the drug
+
+98
+00:04:49,400 --> 00:04:51,000
+ makes it easy for you.
+
+99
+00:04:51,000 --> 00:04:54,200
+ And you must prepare the data, you must do the fine-tuning,
+
+100
+00:04:54,200 --> 00:04:56,000
+ and also evaluate the model.
+
+101
+00:04:56,000 --> 00:04:58,200
+ And finally, because you have a fine-tuned model,
+
+102
+00:04:58,200 --> 00:05:01,600
+ it's also more expensive because you have to use provision throughput.
+
+103
+00:05:01,600 --> 00:05:04,080
+ So now let's talk about transfer learning.
+
+104
+00:05:04,080 --> 00:05:07,400
+ So transfer learning is a bit broader than fine-tuning.
+
+105
+00:05:07,400 --> 00:05:10,600
+ It is the concept of using a pre-trained model
+
+106
+00:05:10,600 --> 00:05:13,600
+ to adapt it to a new related task.
+
+107
+00:05:13,600 --> 00:05:15,800
+ For example, we have Cloud 3, and then we're
+
+108
+00:05:15,800 --> 00:05:19,400
+ going to do transfer learning to adapt it to a new task.
+
+109
+00:05:19,400 --> 00:05:22,200
+ So you say maybe it's very similar to fine-tuning,
+
+110
+00:05:22,200 --> 00:05:23,000
+ and it is.
+
+111
+00:05:23,000 --> 00:05:25,400
+ But for example, for image classification,
+
+112
+00:05:25,400 --> 00:05:27,640
+ we may want to use a pre-trained model
+
+113
+00:05:27,640 --> 00:05:31,000
+ that knows how to recognize edges and images.
+
+114
+00:05:31,000 --> 00:05:33,560
+ But we may want to do transfer learning
+
+115
+00:05:33,560 --> 00:05:37,760
+ to apply it to recognize specifically a kind of image.
+
+116
+00:05:37,760 --> 00:05:41,480
+ Or for language processing type of models, for example,
+
+117
+00:05:41,480 --> 00:05:43,160
+ birth or GPT.
+
+118
+00:05:43,160 --> 00:05:45,760
+ Again, they know how to process the language.
+
+119
+00:05:45,760 --> 00:05:47,880
+ So now that we have the language figured out,
+
+120
+00:05:47,880 --> 00:05:50,680
+ let's just find to them or use transfer learning
+
+121
+00:05:50,680 --> 00:05:52,920
+ to adapt it to newer tasks.
+
+122
+00:05:52,920 --> 00:05:55,080
+ So transfer learning is in this lecture,
+
+123
+00:05:55,080 --> 00:05:57,840
+ because it can appear in the exam as a general machine
+
+124
+00:05:57,840 --> 00:06:00,520
+ learning concept that will be used, for example,
+
+125
+00:06:00,520 --> 00:06:04,120
+ to, as the definition says, adapt a model to a new task.
+
+126
+00:06:04,120 --> 00:06:05,680
+ So if you don't see fine-tuning,
+
+127
+00:06:05,680 --> 00:06:09,360
+ just know that the general answer is to use transfer learning,
+
+128
+00:06:09,360 --> 00:06:13,600
+ because fine-tuning is a specific kind of transfer learning.
+
+129
+00:06:13,600 --> 00:06:15,320
+ So the use cases of fine-tuning is,
+
+130
+00:06:15,320 --> 00:06:17,440
+ for example, to have a chatbot designed
+
+131
+00:06:17,440 --> 00:06:19,640
+ with a particular person, our tone,
+
+132
+00:06:19,640 --> 00:06:21,400
+ or get towards a specific purpose,
+
+133
+00:06:21,400 --> 00:06:25,000
+ such as assisting customer, or crafting advertisements.
+
+134
+00:06:25,000 --> 00:06:27,800
+ It's also to have trained at more up-to-date
+
+135
+00:06:27,800 --> 00:06:30,160
+ than what the model previously accessed.
+
+136
+00:06:30,160 --> 00:06:33,320
+ Also, is to train it with exclusive data that you have only.
+
+137
+00:06:33,320 --> 00:06:36,440
+ For example, historical emails or messages,
+
+138
+00:06:36,440 --> 00:06:38,560
+ or records for customer service interaction.
+
+139
+00:06:38,560 --> 00:06:41,200
+ Of course, base foundation models do not have access to this,
+
+140
+00:06:41,200 --> 00:06:42,840
+ because this is your data.
+
+141
+00:06:42,840 --> 00:06:46,040
+ And for target use cases such as categorization,
+
+142
+00:06:46,040 --> 00:06:47,880
+ or assessing accuracy.
+
+143
+00:06:47,880 --> 00:06:49,280
+ So let's see for fine-tuning.
+
+144
+00:06:49,280 --> 00:06:51,360
+ The exam will ask you about when the fine-tuning
+
+145
+00:06:51,360 --> 00:06:53,680
+ is a good idea, and the kind of fine-tuning you will need
+
+146
+00:06:53,680 --> 00:06:55,880
+ based on the type of data you get, for example,
+
+147
+00:06:55,880 --> 00:06:57,560
+ labeled or unlabeled data,
+
+148
+00:06:57,560 --> 00:06:59,640
+ as well as maybe some pricing questions.
+
+149
+00:06:59,640 --> 00:07:00,480
+ All right, that's it.
+
+150
+00:07:00,480 --> 00:07:01,600
+ I hope you liked it.
+
+151
+00:07:01,600 --> 00:07:03,640
+ And I will see you in the next lecture.
+
