@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:05,840
+Chào mừng đến với phần đầu tiên của khóa học này, trong đó tôi sẽ giới thiệu cho bạn đám mây và máy tính toán đám mây.
+
+2
+00:00:05,840 --> 00:00:10,160
+Vì vậy, phần này sẽ không phải là tay trên, nó chỉ là một số lý thuyết và một số slide, nhưng hy vọng
+
+3
+00:00:10,160 --> 00:00:16,080
+Nó sẽ đặt một số bối cảnh vào lý do tại sao đám mây hữu ích và cách nó hoạt động. Vì vậy, hãy trở lại với
+
+4
+00:00:16,080 --> 00:00:22,960
+Rất cơ bản. Trang web hoạt động thế nào? Vâng, chúng tôi có một máy chủ ở đâu đó và chúng tôi là một trình duyệt web
+
+5
+00:00:22,960 --> 00:00:28,800
+muốn truy cập vào máy chủ đó để hình dung một trang web. Chúng ta sẽ làm gì với tư cách là khách hàng?
+
+6
+00:00:28,800 --> 00:00:35,760
+là sử dụng mạng, một mạng giữa chúng ta và máy chủ. Và khách hàng sẽ tìm thấy mạng lưới
+
+7
+00:00:35,760 --> 00:00:41,760
+và sẽ sử dụng một mạng để di chuyển các gói tin, dữ liệu vào máy chủ, sau đó máy phục vụ sẽ áp dụng cho
+
+8
+00:00:41,760 --> 00:00:47,040
+Chúng tôi và chúng tôi sẽ nhận được phản hồi và chúng tôi có thể xem một trang web. Tôi sẽ nói rằng nó rất đơn giản,
+
+9
+00:00:47,040 --> 00:00:52,480
+nhưng điều đó cho bạn một ý tưởng. Bây giờ để khách hàng tìm ra máy chủ và máy chủ để tìm khách hàng,
+
+10
+00:00:52,480 --> 00:01:00,240
+Anh cần phải có địa chỉ IP. Một khách hàng có địa chỉ IP và một máy chủ cũng có địa chỉ IP.
+
+11
+00:01:00,240 --> 00:01:05,680
+Và ý tưởng là khi bạn sử dụng một địa chỉ IP, bạn có thể gửi một yêu cầu đến bất cứ nơi nào bạn muốn
+
+12
+00:01:05,680 --> 00:01:12,480
+cho máy phục vụ bạn muốn và máy chủ có thể biết làm thế nào để tìm bạn trở lại. Điều này là rất giống như khi
+
+13
+00:01:12,480 --> 00:01:17,200
+Anh đang viết thư cho bạn anh. Ví dụ, bạn sẽ viết một lá thư và đó sẽ
+
+14
+00:01:17,200 --> 00:01:23,040
+là dữ liệu của bạn và bạn sẽ là khách hàng. Sau đó, khi bạn gửi một lá thư, bạn đặt nó trong hộp thư của bạn
+
+15
+00:01:23,040 --> 00:01:28,480
+Và rồi mạng lưới sẽ là mạng lưới của bưu điện. Sau đó, bưu điện sẽ sử dụng mạng
+
+16
+00:01:28,480 --> 00:01:35,520
+Và địa chỉ bạn đặt trên lá thư để chuyển thư của bạn đến đích, trong trường hợp này,
+
+17
+00:01:35,520 --> 00:01:40,800
+Máy chủ. Và sau đó nếu phóng viên của bạn muốn trả lời bạn trở lại, họ có thể sử dụng địa chỉ của bạn
+
+18
+00:01:40,800 --> 00:01:46,880
+để phía sau phong bì để viết lại cho anh. Và một lần nữa, sử dụng cùng một mạng để nhận được các chữ cái
+
+19
+00:01:46,880 --> 00:01:54,720
+quay lại với anh. Máy chủ giống như mạng lưới thư điện tử của bạn. Hy vọng đó là một sự so sánh tốt.
+
+20
+00:01:54,720 --> 00:02:03,520
+Vậy trong máy chủ có gì? Vâng, một máy chủ sẽ chứa một CPU và một CPU là một mảnh nhỏ
+
+21
+00:02:03,520 --> 00:02:08,960
+Nó sẽ làm một số phép tính. Sẽ rất hữu ích để làm một số phép tính và tìm thấy
+
+22
+00:02:08,960 --> 00:02:15,760
+Kết quả. Và sau đó máy chủ của bạn cũng cần RAM hoặc bộ nhớ. Điều này sẽ là rất, rất nhanh trí nhớ,
+
+23
+00:02:15,760 --> 00:02:21,920
+Nó sẽ cho phép chúng ta lưu trữ thông tin và lấy nó rất nhanh. Vì vậy, khi chúng tôi có một CPU
+
+24
+00:02:21,920 --> 00:02:29,120
+Chúng ta có gì đây? Chúng ta có một bộ não. Hãy nghĩ về bộ não của bạn, phải không? ♪ Khi bạn
+
+25
+00:02:29,120 --> 00:02:34,560
+Nghĩ đi, bạn đang thực sự tính toán. Rất phức tạp, nhưng có những tính toán.
+
+26
+00:02:34,560 --> 00:02:40,240
+Nhưng sau đó bạn cần phải giữ lại một số thông tin. Và một lần nữa, chúng ta có những ký ức và những ký ức
+
+27
+00:02:40,240 --> 00:02:46,560
+nằm trong não của chúng ta. Vì vậy, nếu chúng ta cùng nhau nghĩ về CPU và RAM, chúng giống như một bộ não.
+
+28
+00:02:46,560 --> 00:02:52,480
+Bây giờ, chúng ta cũng cần lưu trữ dữ liệu lâu dài hơn. Rõ ràng là vẫn chưa
+
+29
+00:02:52,480 --> 00:02:58,480
+Não bộ là con người, nhưng trong máy tính, chúng tôi đã bao gồm một số lưu trữ đặc biệt để lưu trữ dữ liệu, ví dụ,
+
+30
+00:02:58,480 --> 00:03:04,640
+Hồ sơ. Và sau đó nếu chúng ta muốn lưu trữ dữ liệu theo một cách có cấu trúc hơn, chúng ta sẽ sử dụng một cơ sở dữ liệu.
+
+31
+00:03:04,640 --> 00:03:10,720
+Và một cơ sở dữ liệu sẽ được định dạng theo cách mà chúng ta có thể dễ dàng tìm kiếm và truy vấn nó.
+
+32
+00:03:10,720 --> 00:03:15,600
+Cuối cùng, trong máy chủ, chúng tôi cũng sẽ có một số mong đợi mạng lưới, okay? Vì vậy, nó sẽ được
+
+33
+00:03:15,600 --> 00:03:20,880
+Bộ định tuyến, công tắc, máy chủ DNS, và đừng lo. Tất cả những điều khoản này sẽ được nhìn thấy chúng sau này trong
+
+34
+00:03:20,880 --> 00:03:27,200
+khóa học này. Vì vậy, trong một máy chủ, chúng tôi có một khía cạnh của tính toán, bộ nhớ, lưu trữ, có lẽ máy chủ của chúng tôi đôi khi
+
+35
+00:03:27,200 --> 00:03:32,400
+là một cơ sở dữ liệu, và chúng tôi có một khía cạnh mạng lưới. Tất cả những thứ này sẽ trở nên siêu quan trọng
+
+36
+00:03:32,400 --> 00:03:38,800
+Về phía trước bởi vì đám mây sẽ cho chúng ta những thứ này ngay lập tức. Vì vậy, nếu chúng tôi chỉ muốn
+
+37
+00:03:38,800 --> 00:03:44,240
+Định nghĩa một chút từ IT trước khi chúng ta bắt đầu, mạng lưới là một đống cáp,
+
+38
+00:03:44,240 --> 00:03:49,520
+Bộ định tuyến, và máy chủ sẽ được kết nối với nhau. Và bộ định tuyến là một cụ thể
+
+39
+00:03:49,520 --> 00:03:54,720
+thiết bị sẽ chuyển gói dữ liệu giữa máy tính và mạng. Và họ sẽ
+
+40
+00:03:54,720 --> 00:03:59,120
+Biết nơi để gửi gói tin của bạn trên internet, giống như dịch vụ bưu điện của bạn.
+
+41
+00:03:59,120 --> 00:04:04,800
+Bây giờ khi chúng tôi có một gói và đến điểm đến, có một công tắc, và công tắc
+
+42
+00:04:04,800 --> 00:04:10,480
+sẽ gửi gói tin đến ứng dụng khách chính xác trên mạng. Vì vậy, nếu chúng ta đặt tất cả những điều này lại với nhau,
+
+43
+00:04:10,480 --> 00:04:16,080
+Nó trông như thế này. Khách hàng của chúng tôi sẽ gửi dữ liệu đến một bộ chỉ đường, rver sẽ tìm ra cách của nó
+
+44
+00:04:16,080 --> 00:04:22,080
+và công tắc sẽ biết máy tính nào trong mạng của bạn để gửi dữ liệu đến.
+
+45
+00:04:22,880 --> 00:04:28,880
+Vậy tại sao tôi lại giới thiệu những thứ này? Hãy quay lại công nghệ thông thường. Khi mọi người
+
+46
+00:04:28,880 --> 00:04:35,280
+sử dụng để mở trang web hoặc các công ty trước đây, họ sử dụng để làm điều đó trong nhà hoặc ga ra của họ.
+
+47
+00:04:35,280 --> 00:04:41,120
+Và vì vậy họ sẽ thực sự đi đến cửa hàng bởi một máy chủ và họ đặt máy chủ trong nhà của họ.
+
+48
+00:04:41,120 --> 00:04:45,760
+Bạn có thể có các chương trình CTV, bạn có thể đã đọc một số tài liệu trên internet mô tả
+
+49
+00:04:45,760 --> 00:04:53,280
+Cách Google được tạo ra. Google bắt đầu trong một ga-ra. Bây giờ khi trang web của bạn tăng lên, bạn cần phải
+
+50
+00:04:53,280 --> 00:04:59,760
+Thêm nhiều máy chủ để phục vụ nhu cầu. Và nhà bạn bắt đầu đầy các máy chủ.
+
+51
+00:04:59,760 --> 00:05:03,520
+Vậy là tệ lắm phải không? Nhưng công ty của anh đang phát triển, anh đang tạo ra tiền.
+
+52
+00:05:03,520 --> 00:05:08,800
+Vì vậy, bạn sẽ chuyển đến văn phòng của riêng bạn và bạn quyết định đặt một phòng đặc biệt,
+
+53
+00:05:08,800 --> 00:05:13,840
+là trung tâm dữ liệu. Trong một trung tâm dữ liệu, bạn sẽ có, một lần nữa,
+
+54
+00:05:13,840 --> 00:05:18,560
+Máy chủ của bạn và bạn sẽ có thể tỷ lệ chúng bằng cách thêm và mua nhiều hơn và nhiều hơn nữa
+
+55
+00:05:18,560 --> 00:05:24,560
+Máy chủ. Điều này hiệu quả và hiệu quả trong rất nhiều năm, nhưng có một số vấn đề với điều này
+
+56
+00:05:24,560 --> 00:05:29,440
+Tiếp cận. Số một là khi bạn có một trung tâm dữ liệu hoặc nhà riêng của bạn, bạn sẽ có
+
+57
+00:05:29,440 --> 00:05:34,800
+để trả tiền thuê nhà. Sau đó bạn sẽ phải thêm nguồn cung cấp điện, làm mát và bảo trì,
+
+58
+00:05:34,800 --> 00:05:39,760
+Vì nó cần điện để chạy máy chủ. Nó cần được làm mát bởi vì
+
+59
+00:05:39,760 --> 00:05:44,320
+Máy chủ rất nóng và đôi khi bị hỏng. Vậy anh cần ai đó để bảo trì.
+
+60
+00:05:44,320 --> 00:05:49,680
+Trên đỉnh của nó, nếu bạn muốn thêm hay thay thế máy chủ, nó sẽ mất rất nhiều thời gian vì bạn
+
+61
+00:05:49,680 --> 00:05:54,960
+Phải ra lệnh cho chúng và rồi anh phải móc chúng vào giữa trung tâm. Da bị giới hạn.
+
+62
+00:05:54,960 --> 00:05:59,280
+Nếu ngày mai bạn tăng thêm 10 lần, bạn sẽ cần thêm 10 lần máy chủ,
+
+63
+00:05:59,280 --> 00:06:05,360
+nhưng có thể bạn không có thời gian hoặc không gian để làm điều đó. Bạn cũng cần phải thuê một đội đang đi
+
+64
+00:06:05,360 --> 00:06:10,160
+lúc nào cũng ở đó 24/7 để giám sát cơ sở hạ tầng phòng khi có chuyện không ổn.
+
+65
+00:06:10,160 --> 00:06:15,680
+Và nếu có một thảm họa thì sao? Nếu có động đất thì sao? Nếu có sự tắt điện
+
+66
+00:06:15,680 --> 00:06:22,960
+hay thậm chí là lửa? Thế thì tệ lắm, phải không? Vậy chúng ta có thể ngoại biên tất cả những thứ này không? Và câu trả lời là có.
+
+67
+00:06:22,960 --> 00:06:28,000
+Và đó sẽ là đám mây. Vì vậy, tôi sẽ nhìn thấy bạn trong bài giảng tiếp theo để thảo luận thêm một chút
+
+68
+00:06:28,000 --> 00:06:29,040
+về đám mây.
+
