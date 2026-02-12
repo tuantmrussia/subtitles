@@ -1,0 +1,348 @@
+1
+00:00:00,000 --> 00:00:04,640
+ In this lesson we're going to be exploring a super powerful feature of TypeScript,
+
+2
+00:00:04,640 --> 00:00:10,880
+ which is functions as types and callbacks. By the end of this lesson you're going to
+
+3
+00:00:10,880 --> 00:00:16,960
+ understand how to type functions, how to pass functions into other functions,
+
+4
+00:00:16,960 --> 00:00:21,680
+ and how TypeScript helps prevent bugs before your code even runs.
+
+5
+00:00:23,680 --> 00:00:31,840
+ So what does exactly does functions as types mean? So in JavaScript functions are first-class
+
+6
+00:00:31,840 --> 00:00:37,680
+ citizens, that means you can store them in variables, pass them to other functions,
+
+7
+00:00:37,680 --> 00:00:44,320
+ and return them from other functions. TypeScript extends this idea by letting us describe
+
+8
+00:00:44,320 --> 00:00:51,600
+ a function shape using types. So let's start with a very simple example. Let's do function,
+
+9
+00:00:52,400 --> 00:00:58,480
+ add, a is a number, and b is a number.
+
+10
+00:00:58,480 --> 00:01:04,480
+ I'm simply going to return a plus b.
+
+11
+00:01:04,480 --> 00:01:11,040
+ Now we've typed the parameters and the return value is inferred.
+
+12
+00:01:11,040 --> 00:01:16,320
+ But what if we want to store this function as a variable?
+
+13
+00:01:18,640 --> 00:01:22,320
+ We can simply do this, we can do let my function,
+
+14
+00:01:22,320 --> 00:01:32,480
+ and we give it the parameters say x and there's a number, and y is a number,
+
+15
+00:01:32,480 --> 00:01:41,600
+ and this is going to return with an arrow, syntax, a number.
+
+16
+00:01:44,640 --> 00:01:52,880
+ So this align means that my function is a function that takes two numbers as a parameter
+
+17
+00:01:52,880 --> 00:02:03,040
+ and returns a number. Now let's assign a function to it, so we can say my function equals add.
+
+18
+00:02:06,640 --> 00:02:14,000
+ Now because function add also has two parameters of both of which are numbers,
+
+19
+00:02:14,000 --> 00:02:21,200
+ and it returns a number, which is inferred, it could be assigned to this function because it matches
+
+20
+00:02:21,200 --> 00:02:30,240
+ the same type as these guys here. Type2ups are going to allow this because the types match
+
+21
+00:02:30,240 --> 00:02:36,880
+ the function signature. And if we try to assign a function with the wrong types,
+
+22
+00:02:36,880 --> 00:02:44,000
+ TypeScript is going to immediately warn us. Now function signatures can get quite long,
+
+23
+00:02:44,000 --> 00:02:48,960
+ so TypeScript allows us to simplify them using type aliases.
+
+24
+00:02:48,960 --> 00:02:55,520
+ So let's just take this a bit further, and we're going to rename our function here,
+
+25
+00:02:55,520 --> 00:03:01,040
+ by a function number is going to change it, so we're going to change this from my function
+
+26
+00:03:01,040 --> 00:03:08,560
+ to math operation, and we need to change this to a type alias by just defining it as a type.
+
+27
+00:03:08,560 --> 00:03:16,160
+ So we have a math operation, and we still need to make this an equals sign, equals number,
+
+28
+00:03:16,160 --> 00:03:24,960
+ and a number, so this is no a type alias. So what we can do now is we can define some
+
+29
+00:03:24,960 --> 00:03:35,120
+ constants and say, say, subtract operation, and the operation subtract is a type math operation,
+
+30
+00:03:35,120 --> 00:03:44,640
+ which has two parameters, a and b, which is going to map up with the x and y on the math operation
+
+31
+00:03:44,640 --> 00:03:53,360
+ here, then we define with the actual implementation of that operation, so you can say a minus b.
+
+32
+00:03:54,800 --> 00:03:57,600
+ And we can do the same thing we could have more to apply.
+
+33
+00:03:57,600 --> 00:04:06,240
+ It's also a math operation receives in two properties, a and b,
+
+34
+00:04:06,240 --> 00:04:12,960
+ and then we define the implementation of that, so a times b, oops, b.
+
+35
+00:04:12,960 --> 00:04:21,360
+ So this makes our cloud so much cleaner and much more reasonable, especially when we have
+
+36
+00:04:21,360 --> 00:04:25,760
+ multiple functions that share the same structure that we have up here.
+
+37
+00:04:25,760 --> 00:04:32,720
+ Now that we know that functions can be treated like data, we can then pass them
+
+38
+00:04:32,720 --> 00:04:39,920
+ into other functions, and this is called a callback. So callback is just a function that lets you
+
+39
+00:04:39,920 --> 00:04:44,480
+ pass to another function so that the receiving function can call it later.
+
+40
+00:04:47,520 --> 00:04:55,040
+ And there are some examples of this, for example, you may be aware of the operation.map on an array,
+
+41
+00:04:55,040 --> 00:04:59,200
+ dot map, so this uses a callback, which we defined.
+
+42
+00:04:59,200 --> 00:05:07,200
+ Also have things like event listeners, they also use callbacks, as well as things like a synchronous
+
+43
+00:05:07,200 --> 00:05:13,920
+ code can often use callback. So let's create a function that accepts another function,
+
+44
+00:05:14,640 --> 00:05:23,680
+ so we can do function, it's called greet, and this is going to have a name and a formatter.
+
+45
+00:05:23,680 --> 00:05:32,000
+ So this format that's going to be our callback function is going to also have a name,
+
+46
+00:05:32,000 --> 00:05:35,600
+ and this is going to return string.
+
+47
+00:05:35,600 --> 00:05:43,360
+ So that's the end of our greet, greet function, and the greet function itself is also going to
+
+48
+00:05:43,360 --> 00:05:52,400
+ infer that it's going to return a string. Now we can do return, say hello, plus we can call our
+
+49
+00:05:52,400 --> 00:05:57,360
+ all matter function, and pass the name parameter to it.
+
+50
+00:05:57,360 --> 00:06:07,120
+ So formatter is a callback, and it must be a function that takes a string and returns a string
+
+51
+00:06:07,120 --> 00:06:12,640
+ as the beast can be seen here. So now we can actually create that formatter,
+
+52
+00:06:12,640 --> 00:06:19,120
+ so we could have function, say to upper case,
+
+53
+00:06:19,120 --> 00:06:30,640
+ this will receive a name, and all we do is return name to upper case.
+
+54
+00:06:30,640 --> 00:06:37,920
+ So now it means we can recall our greet function and do greet,
+
+55
+00:06:40,320 --> 00:06:46,880
+ and supply a name, let's say Alice, and we supply our function to upper case,
+
+56
+00:06:46,880 --> 00:06:54,720
+ which is going to match the signature on this defined here, which takes a name and returns a string,
+
+57
+00:06:54,720 --> 00:07:07,200
+ and that becomes two upper case. Let's not execute that, and we get hello Alice in upper case.
+
+58
+00:07:10,480 --> 00:07:14,320
+ Now if we were to try and pass that callback with a wrong structure,
+
+59
+00:07:14,320 --> 00:07:20,160
+ TypeScript's going to prevent the errors early, so let's try and do something and break it,
+
+60
+00:07:20,160 --> 00:07:27,360
+ and it's going to come into here, and we're going to say going to send a value n, which is going
+
+61
+00:07:27,360 --> 00:07:33,040
+ to be a value, one, two, three, and it's going to complain because it's not a signable to a string.
+
+62
+00:07:35,120 --> 00:07:41,280
+ So just like before, callback types can also be extracted into the own type alias.
+
+63
+00:07:41,280 --> 00:07:51,120
+ So let's just quickly undo this code, and let's take an example, so we have this formatter to
+
+64
+00:07:51,120 --> 00:08:00,400
+ find up here, and instead of defining what we have our actual formatter here, let's cut up to
+
+65
+00:08:00,400 --> 00:08:11,920
+ here and do type name formatter, or matter. This is going to take name string, and it's going to
+
+66
+00:08:11,920 --> 00:08:18,080
+ return a string. And now we have to find the type alias, we can remove what we have here,
+
+67
+00:08:18,080 --> 00:08:25,920
+ and change it just to name formatter. As this, as you can probably see, makes our code so much
+
+68
+00:08:25,920 --> 00:08:34,000
+ easier to read and maintain, especially when we have much larger code bases. Let's next have a look
+
+69
+00:08:34,000 --> 00:08:40,720
+ at a typical real world callback example, and this is going to be used and things like simulating
+
+70
+00:08:40,720 --> 00:08:50,320
+ API requests. So you have a function, say fetch data, this will receive a callback,
+
+71
+00:08:51,440 --> 00:08:58,720
+ and the callback is going to receive data as string, and the callbacks not going to return
+
+72
+00:08:58,720 --> 00:09:05,760
+ anything, so we can just say returns void. We're going to call the straightforward set timeout,
+
+73
+00:09:05,760 --> 00:09:13,200
+ so it's simulating API call here, and then we're going to receive our data,
+
+74
+00:09:14,240 --> 00:09:21,920
+ and we're going to call our callback, and say here is the data, and then we just say after one
+
+75
+00:09:21,920 --> 00:09:31,280
+ thousand at milliseconds. So the callback itself type says this function receives a string,
+
+76
+00:09:31,280 --> 00:09:34,960
+ and then returns nothing, so this is the definition of the callback here.
+
+77
+00:09:34,960 --> 00:09:44,080
+ Now let's actually recall this, so we can do fetch data, and we can say we're going to
+
+78
+00:09:44,080 --> 00:09:51,760
+ supply data, and the data is then going to, while we receive the data, we're going to then
+
+79
+00:09:51,760 --> 00:10:01,360
+ have a callback, which is going to log to the console, our data received, and then supply the
+
+80
+00:10:01,360 --> 00:10:09,440
+ data itself, and of course that should be fetch data with a capital letter, there we go.
+
+81
+00:10:10,400 --> 00:10:17,360
+ So this here code is only going to be called once the data arrives via the callback,
+
+82
+00:10:17,360 --> 00:10:26,160
+ and this is exactly how older no JES API works, and it's still extremely common in front end frameworks.
+
+83
+00:10:26,160 --> 00:10:33,360
+ Okay, so time for a quick recap, so in TypeScript, functions can be treated as values,
+
+84
+00:10:34,000 --> 00:10:41,600
+ and we can also describe a function shape using function types, and CoreX are just functions
+
+85
+00:10:41,600 --> 00:10:48,160
+ passed into other functions. TypeScript also ensures the callbacks are matched to the expected
+
+86
+00:10:48,160 --> 00:10:56,080
+ signature, and we define an example of a callback signature here, and type aliases, as you've seen,
+
+87
+00:10:56,080 --> 00:10:59,520
+ makes our functions types much easier to use.
+
