@@ -1,0 +1,356 @@
+1
+00:00:00,000 --> 00:00:06,400
+ Okay, so in this lesson, we're going to be diving into how TypeScript handles function
+
+2
+00:00:06,400 --> 00:00:09,480
+ parameters and return types.
+
+3
+00:00:09,480 --> 00:00:15,680
+ So functions are the heart of our logic and TypeScript, of course, helps us make sure that
+
+4
+00:00:15,680 --> 00:00:18,440
+ they behave exactly as expected.
+
+5
+00:00:18,440 --> 00:00:24,960
+ So we're going to learn how to annotate inputs, control outputs, and catch bugs before
+
+6
+00:00:24,960 --> 00:00:26,120
+ they happen.
+
+7
+00:00:26,120 --> 00:00:29,480
+ So why type our functions?
+
+8
+00:00:29,480 --> 00:00:33,040
+ Typing functions is going to give us three big wins.
+
+9
+00:00:33,040 --> 00:00:39,960
+ First, the clarity, so we know exactly what goes in and what comes out of our functions.
+
+10
+00:00:39,960 --> 00:00:46,080
+ Secondly, safety, because TypeScript's going to catch our mismatches before we discover
+
+11
+00:00:46,080 --> 00:00:48,480
+ things in runtime.
+
+12
+00:00:48,480 --> 00:00:55,200
+ And thirdly, tooling, because we're going to get better autocomplete, refactoring, and
+
+13
+00:00:55,200 --> 00:00:57,440
+ also documentation.
+
+14
+00:00:57,440 --> 00:01:04,200
+ So let's have a look at a very basic function, so we're going to do function, and perhaps
+
+15
+00:01:04,200 --> 00:01:12,760
+ just do a simple greet function, and we want to give or supply a person's name.
+
+16
+00:01:12,760 --> 00:01:18,440
+ So we can just do name, and just like normally, we can do a colon, and then supply the
+
+17
+00:01:18,440 --> 00:01:26,520
+ type, so in this case string, and then, so if we want to specify the return type of the
+
+18
+00:01:26,520 --> 00:01:31,920
+ function, we can then do another colon, and then we specify the return type.
+
+19
+00:01:31,920 --> 00:01:38,240
+ So in this case, we want to turn a type of string.
+
+20
+00:01:38,240 --> 00:01:44,840
+ Now we can define our function in a normal way with some curly braces, and of course TypeScript
+
+21
+00:01:44,840 --> 00:01:52,400
+ is already complaining, because we haven't actually defined or returned a simple string.
+
+22
+00:01:52,400 --> 00:02:04,160
+ So let's now do return, and just do back ticks, hello, and perhaps dollar, and then
+
+23
+00:02:04,160 --> 00:02:09,240
+ name, and then a colon, and that seems to do that.
+
+24
+00:02:09,240 --> 00:02:15,920
+ So of course we're going to get our TypeScript is going to be one happy puppy.
+
+25
+00:02:15,920 --> 00:02:22,280
+ In addition to explicitly specifying the return type for our function, TypeScript, just
+
+26
+00:02:22,280 --> 00:02:27,640
+ like I've already mentioned earlier in the course, can also infer the type from our
+
+27
+00:02:27,640 --> 00:02:28,640
+ return type.
+
+28
+00:02:28,640 --> 00:02:35,400
+ So let's do another function here, and let's say we have a function of the double, and
+
+29
+00:02:35,400 --> 00:02:43,280
+ we want to supply number, and we've got curly bother to give it the return type, but
+
+30
+00:02:43,280 --> 00:02:46,280
+ we can let TypeScript figure it out.
+
+31
+00:02:46,280 --> 00:02:55,640
+ So if we do return, and then say x multiplied by 2, then TypeScript is going to be able
+
+32
+00:02:55,640 --> 00:03:01,760
+ to figure out, as you can see here, that this is returning a number.
+
+33
+00:03:01,760 --> 00:03:07,920
+ But generally it's not great practice to not actually specify the type, because that's
+
+34
+00:03:07,920 --> 00:03:12,320
+ kind of the whole point of TypeScript, otherwise we're falling back into the JavaScript
+
+35
+00:03:12,320 --> 00:03:18,960
+ world, so it's always helpful to annotate them explicitly, especially in things like public
+
+36
+00:03:18,960 --> 00:03:23,840
+ APIs or when doing complex logic.
+
+37
+00:03:23,840 --> 00:03:30,760
+ Now let's move on and have a look at another feature, which is optional and default parameters
+
+38
+00:03:30,760 --> 00:03:32,400
+ in TypeScript.
+
+39
+00:03:32,400 --> 00:03:38,480
+ Now we can do this, I'm not going to clear this screen here, let's say we have a function,
+
+40
+00:03:38,480 --> 00:03:48,280
+ and we have a log function, and we want to supply a message of type string, and perhaps
+
+41
+00:03:48,280 --> 00:03:56,840
+ we also want to supply a level of type string, we want to default this second parameter
+
+42
+00:03:56,840 --> 00:04:03,160
+ to an actual type of string, so if we don't, we can't be bothered to supply it, then it's
+
+43
+00:04:03,160 --> 00:04:05,640
+ going to fill it in for us.
+
+44
+00:04:05,640 --> 00:04:11,920
+ We could do that by doing an equal sign, and then specify in the actual string, so let's
+
+45
+00:04:11,920 --> 00:04:20,560
+ say we want to set it to info, then we can start to find our function, we can just do
+
+46
+00:04:20,560 --> 00:04:26,240
+ anything we want here, like console log, blah, blah, blah, blah, blah, and then to find
+
+47
+00:04:26,240 --> 00:04:30,840
+ and just output the message in a normal way.
+
+48
+00:04:30,840 --> 00:04:35,520
+ And of course, when we actually come to call the function, we would just do log to supply
+
+49
+00:04:35,520 --> 00:04:43,200
+ a message, perhaps like service started, and if we can't be bothered to, then actually
+
+50
+00:04:43,200 --> 00:04:50,480
+ output or supply the string, then of course it's going to be supplied for us, but we could
+
+51
+00:04:50,480 --> 00:04:58,760
+ also then override it and do like server crashed, and then we can actually give it a type,
+
+52
+00:04:58,760 --> 00:05:05,200
+ or us another string, and say for example error, and it's then obviously going to override
+
+53
+00:05:05,200 --> 00:05:12,960
+ the value that we have set as a default here, so that's if we want to do some default
+
+54
+00:05:12,960 --> 00:05:16,640
+ parameters, but what about optional parameters?
+
+55
+00:05:16,640 --> 00:05:25,320
+ Now for that, let's just do another quick example here, so I'm going to call up a function,
+
+56
+00:05:25,320 --> 00:05:32,320
+ let's say greet, and let's just say we can't be bothered to actually supply the name, so
+
+57
+00:05:32,320 --> 00:05:40,080
+ what we can do is we can give it a question mark, and then the type, so this then becomes
+
+58
+00:05:40,080 --> 00:05:48,520
+ an optional parameter, that allows us to do something like double check that it's been actually
+
+59
+00:05:48,520 --> 00:05:55,760
+ being passed in, and if it is, then we just do our sort of hello message and supply the
+
+60
+00:05:55,760 --> 00:06:05,080
+ person's name, name, whatever it is, otherwise we can just say hello, a guest, or something
+
+61
+00:06:05,080 --> 00:06:07,920
+ like this.
+
+62
+00:06:07,920 --> 00:06:14,440
+ Now one thing to also bear in mind is you could also to find reusable function shapes
+
+63
+00:06:14,440 --> 00:06:21,960
+ using what we've already seen before, which is the aliases, now as a kind of reminder of this,
+
+64
+00:06:21,960 --> 00:06:29,640
+ we could for example have a really complex map operation, it's going to be so complex we're
+
+65
+00:06:29,640 --> 00:06:38,280
+ going to just literally supply two things, in A and B as a number, and we can then say
+
+66
+00:06:38,280 --> 00:06:49,920
+ that this returns a type of number, and then we can actually define a natural function
+
+67
+00:06:49,920 --> 00:06:59,320
+ like this and say multiply, the multiply is going to take these two numbers, and then it's
+
+68
+00:06:59,320 --> 00:07:07,480
+ going to return this number, we then say it's a mathematical operation, or type of mathematical
+
+69
+00:07:07,480 --> 00:07:18,600
+ operation, of which we then supply the x and y parameters, and then we can define the
+
+70
+00:07:18,600 --> 00:07:25,560
+ actual function or the implementation of that type, so for the case of multiply we might
+
+71
+00:07:25,560 --> 00:07:34,920
+ do x times y, and then we can do for example carry on, let's say we want to do have an
+
+72
+00:07:34,920 --> 00:07:43,480
+ add function, we would then do an add, use of type, or use in a type alias of math up,
+
+73
+00:07:43,480 --> 00:07:49,600
+ we then also supply the x and y number, and then we define that implementation, let's
+
+74
+00:07:49,600 --> 00:07:59,080
+ say x plus y, and we can do one more, let's say for example divide, and of course you
+
+75
+00:07:59,080 --> 00:08:07,440
+ can see what's going to happen here is we have a math up, we can type correctly, we
+
+76
+00:08:07,440 --> 00:08:14,040
+ supply the x and the y, and then we define the implementation for the function x divided
+
+77
+00:08:14,040 --> 00:08:21,560
+ by y, now you can see hopefully you can see how this can become quite useful if you have
+
+78
+00:08:21,560 --> 00:08:27,400
+ a number of different operations, rather than having to keep on typing this every single
+
+79
+00:08:27,400 --> 00:08:34,560
+ time you define the function, you can just refer to that shape of the function and using
+
+80
+00:08:34,560 --> 00:08:42,720
+ this syntax here, functions don't necessarily have to only return one thing, we can also
+
+81
+00:08:42,720 --> 00:08:49,720
+ return multiple things, so let's say for example we have a function here, and called
+
+82
+00:08:49,720 --> 00:09:00,560
+ pass input, we supply an input of type string, now this pass we could maybe want to return
+
+83
+00:09:00,560 --> 00:09:12,120
+ a number, or you want to return, let's say a no value, so you can say it returns a number
+
+84
+00:09:12,120 --> 00:09:20,880
+ or it returns a no value, then we define our function, let's say we do an implementation
+
+85
+00:09:20,880 --> 00:09:32,440
+ such as pass, equals a number, inputs, and then if that is not a number, using standard
+
+86
+00:09:32,440 --> 00:09:43,680
+ none, is none of our past, then we just return a no, otherwise we return the number, and
+
+87
+00:09:43,680 --> 00:09:49,960
+ that then is satisfied, satisfies type scripts that we're supplying over the number, or
+
+88
+00:09:49,960 --> 00:09:57,200
+ the actual no value, so not just variables can actually be our union type, we can also
+
+89
+00:09:57,200 --> 00:10:00,100
+ to find a union's hype on this function.
+
