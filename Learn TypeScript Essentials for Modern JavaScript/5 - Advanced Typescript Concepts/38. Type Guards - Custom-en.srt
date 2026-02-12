@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,640
+ Okay, in this lesson we're going to be tackling a key skill with working with union
+
+2
+00:00:05,640 --> 00:00:11,160
+ types and that is how to do type guards and narrowing.
+
+3
+00:00:11,160 --> 00:00:18,160
+ So when a variable could be multiple types, types groups need some help, figure out which
+
+4
+00:00:18,160 --> 00:00:22,240
+ one it is and that's where type guards come in for us.
+
+5
+00:00:22,240 --> 00:00:29,120
+ They let us safely narrow down the type and unlock the right behaviour that we want.
+
+6
+00:00:29,120 --> 00:00:35,800
+ Not exactly is type and narrowing, but type narrowing means reducing a union type to a more
+
+7
+00:00:35,800 --> 00:00:41,800
+ specific type based on runtime checks that we write.
+
+8
+00:00:41,800 --> 00:00:47,280
+ So TypeScript carefully watches our logic and then narrows the type automatically and
+
+9
+00:00:47,280 --> 00:00:48,760
+ this sounds pretty cool.
+
+10
+00:00:48,760 --> 00:00:53,320
+ So I've always let's do an example of this.
+
+11
+00:00:53,320 --> 00:01:00,920
+ So let's have a function and call it perhaps print ID and this is going to take a union
+
+12
+00:01:00,920 --> 00:01:11,000
+ type where we have an ID of string or it's a number.
+
+13
+00:01:11,000 --> 00:01:19,240
+ Now we can do is we can use the type of function here, so we can use the type of keyword
+
+14
+00:01:19,240 --> 00:01:34,120
+ here, the check the type, so if type of, so t, t, y, p, e, booby, type of ID is a string,
+
+15
+00:01:34,120 --> 00:01:39,640
+ then we can do whatever we want to do, we can just do console log, let's say, console
+
+16
+00:01:39,640 --> 00:01:50,560
+ log ID to uppercase, because we know it's a string, otherwise we can do whatever we want
+
+17
+00:01:50,560 --> 00:01:59,600
+ to do here, so we can do say console log ID to fixed and notice the intelligence and
+
+18
+00:01:59,600 --> 00:02:04,960
+ you here that we're coming to this code and automatically give us our two fixed function
+
+19
+00:02:04,960 --> 00:02:13,600
+ here and we can set that to whatever, so the type of acts as the R type guard is basically
+
+20
+00:02:13,600 --> 00:02:20,120
+ a runtime check that helps TypeScript narrow the type.
+
+21
+00:02:20,120 --> 00:02:26,160
+ So we've learnt about type of and how we can use it and there is also another one called
+
+22
+00:02:26,160 --> 00:02:36,120
+ instance of, so instance of like this, instance of, so let's do another function just
+
+23
+00:02:36,120 --> 00:02:42,720
+ so you can see how that works, so function this time we're going to call it handle
+
+24
+00:02:42,720 --> 00:02:56,000
+ date, going to receive in an input type string which is also a date and now we can check
+
+25
+00:02:56,000 --> 00:03:06,560
+ the input instance of is an instance of a date, so we're even checking the actual do type
+
+26
+00:03:06,560 --> 00:03:11,440
+ of, we're actually checking to see whether we actually have a date being passed in and
+
+27
+00:03:11,440 --> 00:03:17,520
+ then if we have we can do what we want to do here, console log, let's say input and do
+
+28
+00:03:17,520 --> 00:03:27,160
+ say two ISO string, blah blah blah, otherwise going to come into here and we know that
+
+29
+00:03:27,160 --> 00:03:38,160
+ we have a string rather than a date, so you can do console log and then say new date, take
+
+30
+00:03:38,160 --> 00:03:49,960
+ our inputs and say two ISO string, so now we're converting that string into a date, so
+
+31
+00:03:49,960 --> 00:03:57,480
+ instance of is useful for doing like class based checks, like perhaps checking for data
+
+32
+00:03:57,480 --> 00:04:03,660
+ or checking for error or any customer classes rather than using type of which is more for
+
+33
+00:04:03,660 --> 00:04:13,640
+ checking primitive types, now if we have a string, we have a boolean or a number for example,
+
+34
+00:04:13,640 --> 00:04:21,400
+ we can also have a third way of doing a type guard that sees the keyword in, so if we're
+
+35
+00:04:21,400 --> 00:04:33,200
+ checking that something is in an actual object we can do that, so let's have a type of dog
+
+36
+00:04:33,200 --> 00:04:42,280
+ and the dog as a method called bark and do user keyword void, so basically it means we're
+
+37
+00:04:42,280 --> 00:04:48,960
+ not defining the implementation for this function and it just returns nothing, then we have
+
+38
+00:04:48,960 --> 00:05:02,240
+ a type of cat, cat says meow, dysfunction, also returns nothing, let's have a function make
+
+39
+00:05:02,240 --> 00:05:09,220
+ it sound and we're going to pass an animal in an in more, so parameter and the animal is
+
+40
+00:05:09,220 --> 00:05:19,120
+ over a dog or it's a cat, so far so good, and now we can check whether the method, there's
+
+41
+00:05:19,120 --> 00:05:25,680
+ a method called bark, there's exists on that animal that passing in, that's why we use
+
+42
+00:05:25,680 --> 00:05:36,520
+ in, so if there's a method called bark, we put adding quotes in animal, then we can do
+
+43
+00:05:36,520 --> 00:05:49,240
+ call animal bark, otherwise we're going to call animal dot meow, again you can see in
+
+44
+00:05:49,240 --> 00:05:55,160
+ silence coming here and already working through the code and giving us the actual function that
+
+45
+00:05:55,160 --> 00:06:01,560
+ we can call, so the in operator allows us to check for property existence, which is really
+
+46
+00:06:01,560 --> 00:06:09,080
+ good for if you have discriminated unions or any situation where you want to have two different
+
+47
+00:06:09,080 --> 00:06:18,400
+ types and you can't necessarily guarantee the functions exists on either those two objects,
+
+48
+00:06:18,400 --> 00:06:24,480
+ let's now take this one step further and work in a more complex example, so let's have
+
+49
+00:06:24,480 --> 00:06:34,160
+ a type of fish and we're going to have swim, this is also going to return void, another
+
+50
+00:06:34,160 --> 00:06:47,720
+ type of bird, this is fly, okay now we're going to have a function called is fish and we're
+
+51
+00:06:47,720 --> 00:07:00,160
+ going to buy a pet, a pet is a type fish or is a type bird and now if it's a fish,
+
+52
+00:07:00,160 --> 00:07:12,160
+ we're going to force it to return a colon and going to force it by doing is fish and then
+
+53
+00:07:12,160 --> 00:07:21,160
+ if it is fish, so we're checking to see if it's fish, then we can now do our return and
+
+54
+00:07:21,160 --> 00:07:31,920
+ cast the pet as a fish, the pet as fish and then we can call a method swim and just if
+
+55
+00:07:31,920 --> 00:07:39,240
+ it's called a method swim, if it's not undefined, we can also then have a function called
+
+56
+00:07:39,240 --> 00:07:54,480
+ move and the move and to supply the pet which is either a fish or a bird and then if we call
+
+57
+00:07:54,480 --> 00:08:06,720
+ our function is fish and if it is fish, where we supply the pet, then we call our method
+
+58
+00:08:06,720 --> 00:08:19,000
+ swim because we've narrowed the actual pet as a fish by calling our function here, otherwise
+
+59
+00:08:19,000 --> 00:08:29,440
+ we can then do pet fly, okay, so this person is pretty powerful as you can see for whenever
+
+60
+00:08:29,440 --> 00:08:35,480
+ we have a complex union and when we're working external data, obviously we're talking
+
+61
+00:08:35,480 --> 00:08:41,600
+ about the fishes and birds here, but you can see substitute these for more appropriate
+
+62
+00:08:41,600 --> 00:08:50,400
+ types in your particular situation and now let's work with an even more appropriate example
+
+63
+00:08:50,400 --> 00:08:58,280
+ and let's say you wanted to get an area of perhaps a circle or a square, so let's create
+
+64
+00:08:58,280 --> 00:09:06,280
+ a type of shape and we can this time we're going to use a discriminated union which
+
+65
+00:09:06,280 --> 00:09:12,760
+ you've learned right and towards the start where we put a pipe here, we're going to say
+
+66
+00:09:12,760 --> 00:09:22,320
+ our shape as a kind and the kind is over going to be circle or square, so if it's a circle
+
+67
+00:09:22,320 --> 00:09:30,080
+ and then we're going to have a radius, radius has a number or we're going to have another
+
+68
+00:09:30,080 --> 00:09:44,720
+ kind and this is going to be square which we have a number of sides and that is a number,
+
+69
+00:09:44,720 --> 00:09:54,440
+ we can have a function called get area where we supply our shape, now this is type of shape
+
+70
+00:09:54,440 --> 00:10:04,880
+ and this is going to return a number where there's a radius or a side, now if the kind
+
+71
+00:10:04,880 --> 00:10:14,040
+ of our shape is circle then we're going to return our little bit of maths here, so you can
+
+72
+00:10:14,040 --> 00:10:30,600
+ do math pi times shape radius times two, all the times two, all the square up two, otherwise
+
+73
+00:10:30,600 --> 00:10:39,120
+ if we have a square, we can simply do return shape, count the number of sides and turn
+
+74
+00:10:39,120 --> 00:10:48,640
+ the square of those, so type guards let us safely work with union types by narrowing
+
+75
+00:10:48,640 --> 00:10:53,480
+ them down at run time and we've learned trying to use type of, we've also learned about
+
+76
+00:10:53,480 --> 00:11:01,480
+ instance of and in as well as doing a custom guard here and also a custom guard in order
+
+77
+00:11:01,480 --> 00:11:04,320
+ to make sure that we do the right behaviour.
+
