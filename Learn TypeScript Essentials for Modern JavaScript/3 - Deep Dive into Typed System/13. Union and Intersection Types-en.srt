@@ -1,0 +1,268 @@
+1
+00:00:00,000 --> 00:00:06,800
+ Welcome back. In this lesson, we are locking two powerful tools and TypeScript, Union types,
+
+2
+00:00:06,800 --> 00:00:13,920
+ and intersection types. So these let us combine types to create flexible, expressive, and
+
+3
+00:00:13,920 --> 00:00:21,120
+ safe data structures. So whether you're modeling user inputs, perhaps API responses, or even
+
+4
+00:00:21,120 --> 00:00:28,240
+ component props, these tools are essential for you. So first of all, let's have a look at Union
+
+5
+00:00:28,240 --> 00:00:36,720
+ types. So Union type, let's have value B or one of several types. And that sounds a bit strange,
+
+6
+00:00:36,720 --> 00:00:45,040
+ but think of it as saying, this type can be either A or it could be B. That's kind of weird, right?
+
+7
+00:00:45,040 --> 00:00:51,280
+ To be this kind of one or the other. So let me show you what I mean. So let me do let ID,
+
+8
+00:00:52,720 --> 00:01:00,320
+ colon, and it could be a string, or that's with a pipe symbol, it could be a number,
+
+9
+00:01:00,320 --> 00:01:06,400
+ like I have a string or a number, because one of those two things. So you could do, for example,
+
+10
+00:01:06,400 --> 00:01:15,200
+ ID, and it could be maybe like one. That's fine, because there's a string, or we could do ID equals one,
+
+11
+00:01:16,240 --> 00:01:28,640
+ and it's a number, or we could do ID equals APC, 123, and it could be ID equals 42 as a number.
+
+12
+00:01:28,640 --> 00:01:39,200
+ If we do ID equals a boolean, like this, we get an issue. In fact, the ID is not allowed,
+
+13
+00:01:39,200 --> 00:01:44,880
+ because there's not a signable to either a string or a number. And of course, we could fix this
+
+14
+00:01:44,880 --> 00:01:51,520
+ by saying it could be a boolean as well, but coming up to here, and then the error goes away.
+
+15
+00:01:51,520 --> 00:01:59,520
+ So this is a perfect for cases where a valley might come from multiple formats, perhaps an ID
+
+16
+00:01:59,520 --> 00:02:06,000
+ from a database, or perhaps someone types it on an input box, for example, and then it's a string.
+
+17
+00:02:06,000 --> 00:02:12,720
+ So let's have a look at a few things. So let's have a look at another example. So this
+
+18
+00:02:12,720 --> 00:02:18,880
+ perhaps we could have a union type with the literal values. So like we did from the last lesson,
+
+19
+00:02:18,880 --> 00:02:28,480
+ we could have a type of alignment, and the alignment could be a left. It would be center,
+
+20
+00:02:28,480 --> 00:02:40,080
+ or it could be right. And then we can have a variable. So you text a line of type,
+
+21
+00:02:40,880 --> 00:02:49,680
+ alignment, and we can assign it to center. That's fine. But if we try and assign it to something
+
+22
+00:02:49,680 --> 00:02:58,080
+ like justify, then it's going to complain, because it's not one of those three options.
+
+23
+00:02:58,080 --> 00:03:06,880
+ We could also say, for example, that we have alignment, and it could also be a number.
+
+24
+00:03:09,040 --> 00:03:13,840
+ Not sure why, but you might want to do like that. And you could do, for example, test, text a line,
+
+25
+00:03:13,840 --> 00:03:23,200
+ equals, it could be left, and no errors there. We could also assign it to a number, perhaps, 23.
+
+26
+00:03:23,200 --> 00:03:31,440
+ And that also works because we've got alignment and number, of course, so spell alignment wrong.
+
+27
+00:03:31,440 --> 00:03:36,560
+ So it just could be fixed. There we go, alignment or number.
+
+28
+00:03:37,920 --> 00:03:44,480
+ Now let's move on and have a look at intersection types. So an intersection type combines
+
+29
+00:03:44,480 --> 00:03:53,200
+ multiple types into one. So think of it as saying, this must be a and b. So where we has the
+
+30
+00:03:53,200 --> 00:04:01,680
+ previous one, which is union types, which was a or b, an intersection type is a and b.
+
+31
+00:04:02,640 --> 00:04:10,800
+ So let's have to make examples, of course. So let's have a type of person. And the name,
+
+32
+00:04:10,800 --> 00:04:12,640
+ let's set this string.
+
+33
+00:04:12,640 --> 00:04:20,960
+ And we're going to have another type of employee.
+
+34
+00:04:20,960 --> 00:04:30,160
+ And the employee ID is a number.
+
+35
+00:04:33,600 --> 00:04:40,080
+ And now let's do something like staff, remember a staff, that this a staff is a person,
+
+36
+00:04:40,080 --> 00:04:46,800
+ but usually they are, unless the AI nowadays, and we also have an employee.
+
+37
+00:04:46,800 --> 00:04:55,600
+ So both of these types need to be true through a staff type.
+
+38
+00:04:56,880 --> 00:05:05,760
+ So now we can actually define, say, for example, Bob, Bob is a teacher, and he is a member of staff.
+
+39
+00:05:05,760 --> 00:05:22,160
+ And his name is Bob, which is a string, and he is employee ID number 101.
+
+40
+00:05:24,080 --> 00:05:28,640
+ Now what happens if we take away one of these properties, let's take away the employee ID.
+
+41
+00:05:28,640 --> 00:05:35,120
+ And then we usually get an error that it's not a signable because we are missing
+
+42
+00:05:35,120 --> 00:05:39,600
+ or one of the properties. Now you can start to see how type scripts really
+
+43
+00:05:39,600 --> 00:05:46,240
+ start and become quite powerful because it's enforcing us to have to have one of these
+
+44
+00:05:46,240 --> 00:05:53,760
+ particular properties. So now as soon as we put our employee ID back, then it's happy.
+
+45
+00:05:54,320 --> 00:06:00,720
+ Of course, if we try to assign it to a string, say 101, it's not going to be happy about that,
+
+46
+00:06:00,720 --> 00:06:11,200
+ only if it's a string and a number. So let's take a look at another example of this intersection
+
+47
+00:06:11,200 --> 00:06:19,360
+ type in action. So we're going to define a type. Once I can spell it, there it is of, say,
+
+48
+00:06:19,360 --> 00:06:29,600
+ contact info. And the contact info, we're going to have a string for now, for an email,
+
+49
+00:06:29,600 --> 00:06:39,760
+ and we're also going to have a login info. And this has two properties, a username,
+
+50
+00:06:39,760 --> 00:06:52,000
+ of type string, the password, of type string. And now we want to use a account,
+
+51
+00:06:52,000 --> 00:07:00,960
+ the user account is going to be made up of contact information. And maybe we can put
+
+52
+00:07:00,960 --> 00:07:12,400
+ bounds in here, log in info. So both of those to be user accounts. And now we can define a user,
+
+53
+00:07:12,400 --> 00:07:22,880
+ the user is of type user account. And we need to find these. So we need the first one,
+
+54
+00:07:22,880 --> 00:07:30,880
+ the email, what satisfies email. So let's just put us at example.com.
+
+55
+00:07:30,880 --> 00:07:46,080
+ And also need the username. So Alice. And also need the password, super strong password,
+
+56
+00:07:46,080 --> 00:07:52,800
+ or password. And now it satisfies that and a red line goes away. So we're managing to
+
+57
+00:07:52,880 --> 00:08:00,240
+ define two properties this time on this login information, we're both the type in contact info
+
+58
+00:08:00,240 --> 00:08:10,400
+ and the login info. Let's have a look at some comparisons when to use union versus when to use
+
+59
+00:08:10,400 --> 00:08:16,640
+ intersection. So you should use union when you want to allow multiple possibilities when
+
+60
+00:08:16,640 --> 00:08:24,480
+ something is something when something is something when something is either A or B. But you use
+
+61
+00:08:24,480 --> 00:08:31,920
+ intersection when you want to combine multiple requirements together. And the back on union,
+
+62
+00:08:31,920 --> 00:08:38,560
+ you want to use union when we're modeling input formats, perhaps all status varies values,
+
+63
+00:08:38,560 --> 00:08:45,920
+ whereas intersection could be used or merging interfaces or perhaps composing data models.
+
+64
+00:08:46,640 --> 00:08:53,920
+ And you can also use union when you want to handle optional or variants properties,
+
+65
+00:08:53,920 --> 00:09:02,160
+ whereas intersection is more useful for building reusable or layered types. So both union and
+
+66
+00:09:02,160 --> 00:09:10,800
+ intersection types gives us control on how types interacts union say basically either slash or
+
+67
+00:09:10,800 --> 00:09:14,160
+ whereas intersection say both slash and.
+
