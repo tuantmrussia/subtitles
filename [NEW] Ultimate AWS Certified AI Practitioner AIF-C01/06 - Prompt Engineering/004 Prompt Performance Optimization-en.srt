@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:05,140
+ So now let's talk about how we can improve the performance of our prompts in our model.
+
+2
+00:00:05,140 --> 00:00:11,500
+ So first, let's step back and remember how text is being generated from an LLM.
+
+3
+00:00:11,500 --> 00:00:20,040
+ So for example, we have the sentence after the rain, the streets were, and then we have the next word that will be computed by the JNII model.
+
+4
+00:00:20,040 --> 00:00:28,840
+ So we can have wet, flooded, slippery, empty, muddy, clean, blocked, and all of these words have associated probabilities.
+
+5
+00:00:28,840 --> 00:00:38,840
+ And to how likely this is going to be the next picked word, and so the JNII model will do some probability and we'll select a word randomly, for example, flooded.
+
+6
+00:00:38,840 --> 00:00:47,960
+ So this is something we've seen, and I hope you remember it, because now we're going to do a deep dive into that specific process and see how we can slightly influence it.
+
+7
+00:00:47,960 --> 00:00:51,240
+ So let's go into the prompt performance optimization.
+
+8
+00:00:51,240 --> 00:00:58,840
+ So this is a screenshot from Amazon bedrock, and as you can see, we have a few knobs that we can change.
+
+9
+00:00:58,840 --> 00:01:01,340
+ The first one is the system prompts.
+
+10
+00:01:01,340 --> 00:01:06,240
+ So we can specify how the model should behave and reply.
+
+11
+00:01:06,240 --> 00:01:12,740
+ And in my example, I say reply as if you are a teacher in the AWS cloud space.
+
+12
+00:01:12,740 --> 00:01:20,240
+ And of course, we set the tone for the answer, and this will really help the LLM to respond the way we want to.
+
+13
+00:01:20,240 --> 00:01:22,240
+ Next, we have the temperature.
+
+14
+00:01:22,240 --> 00:01:29,440
+ So it's a value set from 0 to 1 that defines the creativity of the model's output.
+
+15
+00:01:29,440 --> 00:01:41,240
+ So if we set it to a very low value, for example, 0.2, then the outputs are going to be more conservative, repetitive, and it's going to be focused on the most likely response.
+
+16
+00:01:41,240 --> 00:01:58,940
+ So the words with the highest probability. But if you set it to a high value, for example, 1.0, then the outputs are going to be more diverse, more creative, less predictable, and also maybe less coherent, because it's going to select more words that would be less likely over time.
+
+17
+00:01:58,940 --> 00:02:03,040
+ So it's for you to try and see what temperature works for you.
+
+18
+00:02:03,040 --> 00:02:10,640
+ But think at least, if you have a high temperature, everything moves, and so therefore, you have more creativity.
+
+19
+00:02:10,640 --> 00:02:29,640
+ And next, we have top P. So top P is a value again from 0 to 1, and if you have a low P, for example, 0.25, that means that in the list that we saw before about the next word that can be selected, we will only consider the 25% most likely word.
+
+20
+00:02:29,640 --> 00:02:48,640
+ So therefore, we'll have a more coherent response, because we only select the words that really make sense. If we have a high P value, for example, 0.99, then we're going to consider a very broad range of possible words, and therefore, we have a long list to choose from, and so possibly we're going to get a more creative and more diverse output.
+
+21
+00:02:48,640 --> 00:03:00,040
+ As you can see, temperature, top P, and then of course, top K and all the rest of these parameters can be used together. So top K is the limits of the number of probable words.
+
+22
+00:03:00,040 --> 00:03:06,140
+ So while top P is considering the most likely words as a distribution, top K is a number.
+
+23
+00:03:06,140 --> 00:03:14,940
+ So if you have a low K, for example, 10, you're going to get the top 10 most probable words, so you're going to get probably a more coherent response.
+
+24
+00:03:14,940 --> 00:03:27,440
+ But if you have a very high K, for example, 500, you're going to consider the top 500 words, and so therefore, there's a chance, if one of them is selected, that you get a more diverse and more creative answer.
+
+25
+00:03:27,440 --> 00:03:33,440
+ And then we have length, so we define what is the maximum length of the answer, so we tell the model to stop at some point.
+
+26
+00:03:33,440 --> 00:03:50,040
+ And finally, top sequences, what are some of the tokens that will signal the model to stop generating output, so if the model has that token that it stops. And so from an exam perspective, you need to remember the definition of all of these, what they mean for low and high value.
+
+27
+00:03:50,040 --> 00:03:55,540
+ So remember temperature, top P, top K, length, system prompts, and stop sequences.
+
+28
+00:03:55,540 --> 00:04:09,640
+ So what about prompt latency? Well, latency means how fast the model is going to respond to your inputs. And so it's impacted by a few parameters, for example, the model size, so how big or how small the model is, and your different sizes we've seen before.
+
+29
+00:04:09,640 --> 00:04:22,640
+ The model type itself, for example, yama is going to have a different performance than cloud, for example, and also the number of tokens in the input, so the more context you give in the context window, the slower is going to be.
+
+30
+00:04:22,640 --> 00:04:40,840
+ And of course, the bigger the output, the slower as well is going to be, so important for you to know, these are very important factors, but you should know as well that latency is not impacted by top P, top K, or the temperature parameters, and it's good for you to know because the exam may ask you some questions about it.
+
+31
+00:04:40,840 --> 00:04:42,800
+ So let's say for this lecture, I hope you liked it.
+
+32
+00:04:42,800 --> 00:04:44,760
+ And I will see you in the next lecture.
+
