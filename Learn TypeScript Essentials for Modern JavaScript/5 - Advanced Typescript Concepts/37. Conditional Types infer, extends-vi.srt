@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:05,640
+Xin chào và chào mừng trở lại khóa học này nơi mà trong bài học này chúng tôi sẽ bước vào
+
+2
+00:00:05,640 --> 00:00:12,240
+Thế giới của các loại điều kiện mà là một tính năng mạnh mẽ mà cho phép chúng tôi viết logic
+
+3
+00:00:12,240 --> 00:00:14,080
+Cấp độ loại.
+
+4
+00:00:14,080 --> 00:00:21,040
+Vì vậy, chúng tôi sẽ tìm hiểu làm thế nào để sử dụng extens để kiểm tra các loại và các từ quan trọng infer để trích xuất
+
+5
+00:00:21,040 --> 00:00:26,760
+Một phần của chúng và đây là nơi Type Thu nhập bắt đầu cảm thấy giống như một ngôn ngữ lập trình thích hợp
+
+6
+00:00:26,760 --> 00:00:27,760
+hoặc loại.
+
+7
+00:00:27,760 --> 00:00:34,720
+Trước hết chúng ta hãy nói về những gì chính xác là điều kiện.
+
+8
+00:00:34,720 --> 00:00:39,340
+Vì vậy, loại điều kiện trông giống như một tuyên bố nếu loại.
+
+9
+00:00:39,340 --> 00:00:45,800
+Nó kiểm tra nếu một loại mở rộng khác và sau đó trả về các loại khác nhau dựa trên
+
+10
+00:00:45,800 --> 00:00:46,800
+là kết quả.
+
+11
+00:00:46,800 --> 00:00:55,840
+Vì vậy, hãy làm một ví dụ và chúng tôi sẽ xác định một loại được gọi là chuỗi và đây là
+
+12
+00:00:55,840 --> 00:01:02,600
+sẽ xác định cho dù là một chuỗi bằng cách nhìn vào một loại khác vì vậy chúng tôi sử dụng nó
+
+13
+00:01:02,600 --> 00:01:15,080
+để chung t cho điều này và nếu loại t mà chúng tôi đang thử nghiệm mở rộng một loại chuỗi mà
+
+14
+00:01:15,080 --> 00:01:21,880
+Nếu không chúng tôi sẽ không quay lại.
+
+15
+00:01:21,880 --> 00:01:32,120
+Hãy làm một ví dụ vì vậy nếu chúng tôi có một loại A và chúng tôi không cần xác định chuỗi bằng
+
+16
+00:01:32,120 --> 00:01:39,320
+Cung cấp loại t ở đây như một chuỗi có nghĩa là sẽ đi đến đó
+
+17
+00:01:39,320 --> 00:01:45,040
+là có bởi vì nó sẽ đi vào đây và chúng tôi đang làm cho nó một loại
+
+18
+00:01:45,040 --> 00:01:53,240
+chuỗi và nó sẽ trở lại có và ngược lại nếu chúng tôi có loại khác và chúng tôi gọi
+
+19
+00:01:53,240 --> 00:02:03,200
+là chuỗi và chúng tôi thiết lập điều này để nói số khóa học này sẽ là không bởi vì nó là
+
+20
+00:02:03,200 --> 00:02:11,520
+không kéo dài chuỗi kiểu để bạn có thể thấy những gì đang làm ở đây chúng tôi có một điều kiện
+
+21
+00:02:11,520 --> 00:02:20,360
+Loại và là hiệu quả cho phép chúng tôi viết một loại đó là thích nghi dựa trên thực tế
+
+22
+00:02:20,360 --> 00:02:27,520
+Loại đang được thông qua như là một đầu vào và mở rộng khóa ở đây sẽ cho phép chúng tôi kiểm tra
+
+23
+00:02:27,520 --> 00:02:32,960
+nơi người này được giao cho người khác.
+
+24
+00:02:32,960 --> 00:02:39,280
+Vì vậy, chúng ta hãy làm một ví dụ khác và lần này chúng tôi sẽ làm theo ý tưởng và có
+
+25
+00:02:39,280 --> 00:02:46,520
+một trợ giúp nhỏ mà sẽ cho phép chúng tôi cho dù một loại được thông qua cho chúng tôi là ở một bên phải
+
+26
+00:02:46,520 --> 00:03:03,880
+Hoặc không làm như vậy loại là mảng t và đây là nơi t mở rộng một loại điều kiện đó là
+
+27
+00:03:03,880 --> 00:03:10,880
+Bất kỳ vì vậy đó là làm thế nào bạn có thể nói chúng tôi không thực sự quan tâm những gì các mảng vì vậy đó là lý do tại sao
+
+28
+00:03:10,880 --> 00:03:19,880
+Chúng tôi sử dụng bất kỳ từ khóa ở đây bất kỳ loại là bit một mảng chúng tôi có thể sau đó nói nó là đúng hoặc
+
+29
+00:03:19,880 --> 00:03:32,680
+sai sau đó chúng tôi có thể có một loại a chúng tôi gọi trợ giúp và nói đây là một số và dãy số
+
+30
+00:03:32,680 --> 00:03:43,600
+Đó là tất nhiên sẽ nói rằng đó là đúng và nếu chúng tôi có một loại b và đây là cuộc gọi
+
+31
+00:03:43,600 --> 00:03:50,760
+là mảng và đây là một chuỗi không có một dãy sau đó tất nhiên đó sẽ là sai.
+
+32
+00:03:50,760 --> 00:03:58,000
+Vì vậy, bạn có thể thấy làm thế nào các loại điều kiện khá cẩn thận bởi vì nó là hoàn hảo cho phép
+
+33
+00:03:58,000 --> 00:04:08,360
+chúng tôi để kiểm tra và xây dựng loại bảo vệ hoặc các loại tiện ích và cũng ép buộc chung để giúp đỡ
+
+34
+00:04:08,360 --> 00:04:14,680
+chúng ta phải chắc chắn rằng chúng ta có một loại loại thực sự đang đến.
+
+35
+00:04:14,680 --> 00:04:22,240
+Bây giờ chúng ta hãy thực sự có một cái nhìn vào một cách làm điều này và đó là sử dụng từ khóa
+
+36
+00:04:22,240 --> 00:04:32,280
+Vì vậy, tôi f là suy luận Vì vậy, làm thế nào chúng tôi thực sự sử dụng điều này chúng tôi không sử dụng nó ở đây là một bắt đầu nhưng
+
+37
+00:04:32,280 --> 00:04:39,040
+Chúng tôi có thể thực sự xây dựng trên đầu trang của nơi chúng tôi có điều kiện của chúng tôi tôi sẽ xây dựng
+
+38
+00:04:39,040 --> 00:04:49,000
+Một ví dụ nhỏ ở đây Vì vậy, hãy có một kiểm tra và làm gõ các yếu tố loại một lần nữa
+
+39
+00:04:49,000 --> 00:04:57,360
+Nó là chung và chúng tôi sẽ kiểm tra sử dụng mở rộng và lần này chúng tôi sẽ truyền
+
+40
+00:04:57,360 --> 00:05:07,880
+từ khóa suy luận vì vậy từ khóa suy luận cho phép chúng tôi để trích xuất một loại từ một cấu trúc vì vậy nó là
+
+41
+00:05:07,880 --> 00:05:15,160
+một chút giống như có một biểu thức chính quy bởi vì nó sẽ cho phép chúng tôi để làm một số mẫu
+
+42
+00:05:15,160 --> 00:05:27,280
+khớp với loại vì vậy làm trongfer chúng ta sẽ suy luận một loại chung của u và vì vậy chúng tôi
+
+43
+00:05:27,280 --> 00:05:36,720
+có một mảng nếu nó là chúng tôi sẽ chỉ cần lấy các loại thực tế sáu bên trong của chúng tôi mảng
+
+44
+00:05:36,720 --> 00:05:44,560
+Ở đây nếu không chúng tôi sẽ lấy loại t và điều này có thể nhìn bắt đầu để trông khá lạ
+
+45
+00:05:44,560 --> 00:05:52,560
+Nhưng hãy để tôi chỉ cho bạn làm thế nào điều này hoạt động nếu chúng tôi có một loại một loại chung một để tôi gọi
+
+46
+00:05:52,560 --> 00:06:00,640
+Các yếu tố loại và hãy nói rằng chúng tôi có một loạt các chuỗi đi đến nó của chuỗi như
+
+47
+00:06:00,640 --> 00:06:12,640
+Điều này càng xảy ra ở đây là loại chúng tôi checker của chúng tôi sẽ áp dụng hoặc các mảng nhưng nó là
+
+48
+00:06:12,640 --> 00:06:18,600
+Sẽ muốn xem xét các loại thực tế mà đi ra khỏi nó và nó đi
+
+49
+00:06:18,600 --> 00:06:28,320
+để trả lại loại đó là một phần của các mảng trong trường hợp này điều này sẽ trở lại chuỗi bởi vì
+
+50
+00:06:28,320 --> 00:06:34,280
+Đó là những gì là một phần của đó loại này bên trong các mảng nếu chúng tôi lấy một điều khác và
+
+51
+00:06:34,280 --> 00:06:42,640
+Hãy để tôi gõ B là loại yếu tố Hãy để tôi nói đây là một mảng số thực sự chức năng
+
+52
+00:06:42,640 --> 00:06:49,840
+sẽ trở lại số bởi vì đó là một phần của loại đó là một phần của
+
+53
+00:06:49,840 --> 00:06:59,160
+Nếu chúng tôi làm một cái gì đó như loại C và phần tử này loại trong thời gian này chúng tôi không cung cấp
+
+54
+00:06:59,160 --> 00:07:07,280
+Một dãy chúng tôi chỉ cần nói số sau đó điều này cũng sẽ trở lại số bởi vì nó là
+
+55
+00:07:07,280 --> 00:07:15,240
+sẽ đi vào điều kiện của chúng tôi nhưng thay vì trích xuất các loại đó là một phần của
+
+56
+00:07:15,240 --> 00:07:22,440
+Các mảng ở đây là nó sẽ trở lại chính nó mà đang quay trở lại như
+
+57
+00:07:22,440 --> 00:07:31,560
+t trong trường hợp này số. Bây giờ chúng ta có thể sử dụng cấu trúc nhỏ này để cho phép chúng tôi viết
+
+58
+00:07:31,560 --> 00:07:40,520
+một hàm để có thể làm phẳng các mảng vì vậy chúng ta hãy chỉ đến ở đây và hãy xây dựng
+
+59
+00:07:40,520 --> 00:07:53,440
+Một trợ lý và nói kiểu Latin điều này sẽ mất một loại chung t nếu nó sẽ mở rộng
+
+60
+00:07:53,440 --> 00:08:00,440
+Các mảng chúng tôi đang đi qua một loại trên tia của chuỗi chúng tôi sẽ được quan tâm
+
+61
+00:08:00,440 --> 00:08:12,040
+trong kéo loại trên mảng đó nếu chúng tôi có một loại số nguyên và dãy các loại
+
+62
+00:08:12,040 --> 00:08:18,400
+có thể khá khó khăn để hoặc bối rối để giải thích là tốt nếu không chúng tôi sẽ chỉ
+
+63
+00:08:18,400 --> 00:08:27,440
+Lấy loại t qua nó Hãy làm gõ A bạn gọi trợ giúp phẳng của chúng tôi chúng tôi đang đi
+
+64
+00:08:27,440 --> 00:08:37,880
+để cung cấp một loạt chuỗi và sau đó điều này sẽ trở thành hoặc suy luận chuỗi đó là
+
+65
+00:08:37,880 --> 00:08:46,840
+Một phần của mảng và nếu chúng tôi gọi của chúng tôi phẳng một lần nữa và chúng tôi vượt qua nó số sau đó đây là
+
+66
+00:08:46,840 --> 00:08:53,600
+cũng sẽ trở lại số nhưng thay vì đến như một phần của u bởi vì điều này là
+
+67
+00:08:53,600 --> 00:08:59,880
+không phải là một mảng nó sẽ trở lại loại t mà là số vì vậy bạn có thể thấy rằng chúng tôi đang loại
+
+68
+00:08:59,880 --> 00:09:05,480
+của thoát ra nếu chúng tôi xảy ra mảng chúng tôi đang san bằng nó và chỉ cần kéo ra tồn tại
+
+69
+00:09:05,480 --> 00:09:11,880
+Loại vì vậy nó là khá giống như những gì chúng tôi đã làm trước đây nhưng điều này là nhiều hơn một thực tế
+
+70
+00:09:11,880 --> 00:09:19,920
+Tình hình thế giới nơi bạn có thể muốn sử dụng điều kiện thực tế này như vậy điều kiện
+
+71
+00:09:19,920 --> 00:09:25,520
+Loại cho phép chúng tôi viết logic khá nhiều ở mức độ loại chúng tôi đã học cách để kiểm tra loại
+
+72
+00:09:25,520 --> 00:09:33,600
+Chúng tôi đã mở rộng chúng tôi cũng đã học làm thế nào để trích xuất các loại thậm chí infer và cũng xây dựng một số
+
+73
+00:09:33,600 --> 00:09:40,720
+Ví dụ động với tiện ích tiếp theo lên chúng tôi sẽ tìm hiểu về các loại bài mà
+
+74
+00:09:40,720 --> 00:09:53,120
+sử dụng như chúng tôi để an toàn thu hẹp các loại trong thời gian chạy
+
