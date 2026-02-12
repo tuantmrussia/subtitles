@@ -1,0 +1,384 @@
+1
+00:00:00,000 --> 00:00:06,400
+Chào mừng trở lại. Trong bài học này, chúng ta sẽ khám phá hai công cụ mạnh mẽ trong Type Thu nhập, Inums, và
+
+2
+00:00:06,400 --> 00:00:14,160
+theo nghĩa đen. Vì vậy, những giúp đỡ bạn xác định các bộ nghiêm ngặt các giá trị. Ví dụ như, vai trò người dùng,
+
+3
+00:00:14,160 --> 00:00:21,520
+hướng, hoặc có thể là mã trạng thái, và điều này làm cho mật mã của bạn có tính biểu cảm hơn, dễ đoán,
+
+4
+00:00:21,520 --> 00:00:26,640
+và tất nhiên tự ghi lại. Vì vậy, trước hết chúng ta hãy nói về Inums.
+
+5
+00:00:28,240 --> 00:00:39,600
+Chính xác thì Inums là gì? Vâng, một Inum là ngắn để liệt kê. Vì vậy, một cách để xác định một tên
+
+6
+00:00:39,600 --> 00:00:46,960
+tập hợp hằng số, vì vậy thay vì sử dụng một chuỗi ma thuật, vì vậy số lượng, chúng tôi cung cấp mỗi giá trị một tên có ý nghĩa.
+
+7
+00:00:48,160 --> 00:00:57,600
+Vì vậy, hãy làm Inum, ví dụ, chúng ta đang làm vai trò. Vì vậy vai trò như thế này, và chúng tôi sau đó
+
+8
+00:00:57,600 --> 00:01:04,240
+Chỉ cần xác định danh sách các vai trò mà chúng ta muốn có. Vì vậy, nó có thể là một admin, người dùng,
+
+9
+00:01:04,240 --> 00:01:14,400
+Có lẽ là biên tập viên. Vì vậy, đó là Inum thiết lập của chúng tôi. Và bước tiếp theo chúng ta cần làm là
+
+10
+00:01:14,960 --> 00:01:24,640
+để thực sự sử dụng nó là để chỉ định một người dùng ảo cho vai trò đặc biệt này. Vậy chúng ta có thể nói
+
+11
+00:01:24,640 --> 00:01:37,760
+vai trò người dùng. Và đây là một vai trò. Đó là một loại Inum của chúng tôi ở đây. Và rồi chúng ta có thể...
+
+12
+00:01:37,760 --> 00:01:44,800
+Chỉ đơn giản chỉ định vai trò thích hợp bằng cách làm dấu chấm. Và sau đó chúng tôi có một thả xuống cho chúng tôi biết
+
+13
+00:01:44,800 --> 00:01:53,680
+vai trò của chúng ta. Vì vậy, chúng tôi có thể nói vai trò bằng mandmin, ví dụ. Vậy đây là vai diễn Adam chỉ là một bí danh
+
+14
+00:01:53,680 --> 00:02:01,440
+tất cả số 0. Vì vậy, điều này ở đây, nếu tôi lơ lửng trên nó, có một giá trị của zero, và sau đó nó là
+
+15
+00:02:01,440 --> 00:02:09,600
+Tự động chuyển giao. Vậy tiếp theo là một, và tiếp theo là hai. Bạn có thể thấy
+
+16
+00:02:09,600 --> 00:02:18,960
+Kiểu MIME chỉ định các giá trị theo mặc định bắt đầu từ số không. Bạn cũng có thể chỉ định giá trị tùy chọn.
+
+17
+00:02:18,960 --> 00:02:25,040
+Vì vậy, hoặc số hoặc chuỗi. Vì vậy, nếu bạn không hài lòng với số không, một và hai, ví dụ,
+
+18
+00:02:25,040 --> 00:02:33,040
+Điều bạn có thể làm là bạn có thể bắt đầu và nói, tôi muốn bắt đầu lúc 200. Vì vậy, đầu tiên
+
+19
+00:02:33,040 --> 00:02:42,240
+sẽ là 200, và 201, 202. Nhưng một khi bạn muốn có những con số này là tùy chỉnh số,
+
+20
+00:02:42,240 --> 00:02:47,760
+Nơi bạn có thể làm điều đó, nếu bạn muốn, ví dụ, bạn có thể nói, đó là 300.
+
+21
+00:02:47,760 --> 00:02:55,520
+Và họ đã có 300 cái như vậy, và nó sẽ tiếp tục tăng 301. Vì vậy, hãy nói rằng chúng tôi muốn làm một số
+
+22
+00:02:55,520 --> 00:03:02,480
+Mã tình trạng. Điều đó sẽ có ý nghĩa hơn. Vì vậy, chúng tôi có thể nói mã trạng thái, và đầu tiên có thể
+
+23
+00:03:02,480 --> 00:03:15,840
+được thành công. Và đây là một số 200. Đó là mã HTTP. Và người tiếp theo có thể
+
+24
+00:03:15,840 --> 00:03:23,840
+không tìm thấy. Và đây là sai lầm 404 nổi tiếng, nếu bạn muốn phát triển. Và sau đó chúng ta có thể
+
+25
+00:03:23,840 --> 00:03:32,960
+gặp lỗi máy phục vụ. Và đây là một mã lỗi của 500. Và bây giờ thực sự để tìm thấy một số tùy chỉnh
+
+26
+00:03:32,960 --> 00:03:41,360
+Con số. Vì vậy, chúng tôi có thể nói rằng quyền để tìm một biến và nói rằng mã trạng thái của chúng tôi là một loại trạng thái
+
+27
+00:03:41,360 --> 00:03:52,640
+Mật mã. Và chúng tôi không tìm thấy lỗi, một thành công hoặc bất cứ điều gì chúng tôi muốn. Bằng cách có cái này, cái này
+
+28
+00:03:52,640 --> 00:03:59,760
+Mã trạng thái sẽ tốt hơn cho mục đích đọc và gỡ lỗi. Và số
+
+29
+00:03:59,760 --> 00:04:06,080
+Các bản liệt kê mà chúng ta đã thấy ở đây đặc biệt hữu ích khi làm việc với hệ thống APIs hay mã trạng thái.
+
+30
+00:04:06,080 --> 00:04:14,160
+Nhưng chúng tôi cũng có thể có một trong các dây. Vì vậy, hãy nói rằng thay vì mã trạng thái, chúng tôi muốn
+
+31
+00:04:14,160 --> 00:04:22,800
+có một danh sách hướng dẫn. Vì vậy, điều này có thể lên, nó có thể được lên như thế này ở vốn. Và
+
+32
+00:04:22,800 --> 00:04:35,360
+có thể là vùng, cứ cho là nó có thể còn lại. Vì vậy, bây giờ để tìm một số loạt dây tùy chỉnh.
+
+33
+00:04:35,360 --> 00:04:42,560
+Và sau đó tất nhiên chúng ta chỉ cần thay đổi điều này theo hướng. Và sau đó hướng của chúng tôi là chấm hướng
+
+34
+00:04:42,560 --> 00:04:51,600
+xuống trái hoặc lên. Vì vậy, một điều phải ghi nhớ trong tâm trí như là hành vi cho enums là khi họ
+
+35
+00:04:51,600 --> 00:04:58,560
+Số lượng, sau đó chúng là hai chiều, nhưng chúng là một cách khi sử dụng dây.
+
+36
+00:04:58,560 --> 00:05:04,400
+Được rồi, vậy bạn có thể nghĩ Tim, thật tuyệt vời, nhưng ý bạn là sao khi nói hai chiều
+
+37
+00:05:04,400 --> 00:05:11,040
+Và một cách? Hãy xem xét một ví dụ. Chúng ta hãy bắt đầu với một enum đơn giản
+
+38
+00:05:12,240 --> 00:05:19,040
+màu sắc. Và đây sẽ là một số một. Và chúng tôi đã đọc nó tại một và sau đó màu xanh lá cây
+
+39
+00:05:19,040 --> 00:05:27,600
+và rồi màu xanh. OK, bây giờ chúng ta hãy làm, ví dụ, cho bạn thấy làm thế nào những gì tôi có nghĩa là hai hướng.
+
+40
+00:05:27,600 --> 00:05:32,160
+Chúng tôi có thể làm bản ghi bàn điều khiển và lấy màu đỏ.
+
+41
+00:05:32,160 --> 00:05:41,440
+Hãy chạy nó và chúng ta có giá trị ở đây. Hãy đưa nó qua một cái. Được rồi.
+
+42
+00:05:42,080 --> 00:05:50,160
+Bây giờ nếu chúng tôi làm một bản ghi bàn điều khiển khác và nói rằng bản ghi của màu sắc và vì vậy chúng tôi đặt điều này trong hình vuông
+
+43
+00:05:50,160 --> 00:06:01,040
+hoặc khung vuông, chúng tôi nói một, thực hiện điều đó. Chúng ta sẽ đỏ lên. Đó là hai chiều. Vì vậy, chúng tôi có thể cả hai
+
+44
+00:06:01,040 --> 00:06:09,520
+Sử dụng giá trị thực tế, giả sử một màu đỏ và nó sẽ chuyển đổi nó thành một và chúng ta có thể làm ngược lại,
+
+45
+00:06:09,520 --> 00:06:14,080
+hai chiều và thực sự cho nó giá trị của một và nó sẽ cung cấp cho chúng tôi
+
+46
+00:06:14,080 --> 00:06:21,040
+giá trị chính xác của màu đỏ. Vì vậy, đó là cách bạn có thể chuyển đổi một loại hai cách giữa
+
+47
+00:06:21,040 --> 00:06:28,400
+Số nguyên và trở lại. Nhưng điều này chỉ đúng với giá trị số. Vì vậy, nếu bạn có một chuỗi,
+
+48
+00:06:28,400 --> 00:06:34,400
+Bạn biết đấy, như tôi đã cho bạn thấy, một ví dụ khác, bạn không thể đi hai cách bởi vì nó là dây,
+
+49
+00:06:34,400 --> 00:06:41,680
+Vậy vấn đề là gì? Vì vậy, hãy làm một thách thức rất đơn giản và nhỏ. Làm một bản liệt kê
+
+50
+00:06:41,680 --> 00:06:50,080
+Và thử mô hình, đèn giao thông. Vì vậy, rõ ràng là màu đỏ, vàng và xanh lá cây cho các đèn giao thông cụ thể.
+
+51
+00:06:50,080 --> 00:06:57,360
+Tạm dừng video và nhanh chóng truy cập ra đó trên sân chơi Typeming của bạn và sau đó so sánh
+
+52
+00:06:57,360 --> 00:07:09,600
+những gì tôi có. Vì vậy, một đèn giao thông đơn giản có thể là một đèn giao thông enum và chúng ta có thể chỉ cần có màu đỏ
+
+53
+00:07:09,600 --> 00:07:19,760
+Đặt nó thành màu đỏ. Và tiếp theo là màu vàng và
+
+54
+00:07:21,600 --> 00:07:28,160
+Có một cái màu xanh lá cây. Chúng dễ thương và dễ thương, chúng ta có thể đặt vàng lại vào vốn, phải không?
+
+55
+00:07:28,160 --> 00:07:37,520
+Giữ mọi thứ ổn định. Được rồi, vậy chúng ta đã bao gồm các bản sao, thế còn các loại xoắn ốc? Vì vậy, theo nghĩa đen,
+
+56
+00:07:37,520 --> 00:07:45,680
+Chúng ta hãy giới hạn một biến với một tập hợp các giá trị cụ thể. Hãy tưởng tượng nó giống như một thực đơn thả xuống,
+
+57
+00:07:45,680 --> 00:07:50,800
+Chúng ta chỉ có 3 lựa chọn. Vì vậy, tôi sẽ loại bỏ các mã chúng tôi có ở đây,
+
+58
+00:07:51,600 --> 00:07:59,760
+Và chúng ta có thể có một ví dụ về sự thẳng hàng, có lẽ bạn đang cố gắng sắp xếp văn bản trong một đoạn văn,
+
+59
+00:07:59,760 --> 00:08:08,320
+Bạn có thể có một trung tâm trái, một đường thẳng, bên phải. Vì vậy, chúng tôi có thể xác định thẳng hàng và thẳng hàng có thể là
+
+60
+00:08:08,320 --> 00:08:19,360
+ta có thể đi. Chúng tôi cũng có thể có trung tâm, vì vậy chúng tôi có thể đặt một biểu tượng ống,
+
+61
+00:08:20,800 --> 00:08:27,920
+Và chúng tôi nói trung tâm, một biểu tượng đường ống khác, và chúng tôi có thể nói đúng.
+
+62
+00:08:27,920 --> 00:08:37,040
+Bây giờ bạn cũng có thể, thú vị thay, thực sự làm một hiệp hội, để bạn có thể nói,
+
+63
+00:08:37,040 --> 00:08:46,240
+cũng là trung tâm. Vì vậy, ở đây chúng tôi đã xác định một biến thẳng hàng, mà chỉ có thể có
+
+64
+00:08:46,240 --> 00:08:56,000
+3 giá trị khả thi, trái, trung tâm, và phải. Vì vậy, hãy thực sự có một ví dụ của một số
+
+65
+00:08:56,000 --> 00:09:02,720
+Những hành động theo nghĩa đen. Vì vậy, chúng tôi sẽ xác định một loại khác nhau của ví dụ, và lần này nó là
+
+66
+00:09:02,720 --> 00:09:12,400
+Sẽ có kích cỡ nút. Vì vậy, bạn có thể nói một kích thước nút, bạn có thể nói chúng tôi có một loại
+
+67
+00:09:15,600 --> 00:09:22,080
+và hãy gọi nó là một kích thước nút, và nó sẽ có ba giá trị có thể.
+
+68
+00:09:22,080 --> 00:09:30,720
+Chúng ta có thể có nhỏ, trung bình, tất cả những gì chúng ta có thể có.
+
+69
+00:09:30,720 --> 00:09:42,480
+Và bây giờ chúng ta có thể tạo ra một cái nút. Vì vậy, bạn có thể làm điều này, sử dụng JavaScript bình thường,
+
+70
+00:09:43,040 --> 00:09:48,000
+Nhưng chúng tôi sẽ chỉ cho bạn làm thế nào để thực hiện một chức năng thực tế, mà chúng tôi đã không thực sự xem xét
+
+71
+00:09:48,000 --> 00:09:53,920
+tại thời điểm hiện tại. Nó khá đơn giản. Một lần nữa, chúng tôi chỉ làm chức năng,
+
+72
+00:09:53,920 --> 00:10:01,840
+Chúng tôi xác định chức năng theo cách thông thường mà chúng tôi làm trong JavaScript. Khác biệt là khi chúng ta
+
+73
+00:10:01,840 --> 00:10:08,640
+Thực sự xác định tham số, chúng tôi có thể cung cấp cho nó loại thực tế. Vì vậy, chúng tôi có một tham số của kích thước,
+
+74
+00:10:10,160 --> 00:10:16,320
+sau đó với mã vào, chúng tôi nói rằng tham số là kích thước nút gõ.
+
+75
+00:10:16,320 --> 00:10:24,960
+Và bây giờ chúng ta có thể đơn giản làm những gì chúng ta muốn. Để chúng ta có thể giả vờ và nói
+
+76
+00:10:25,680 --> 00:10:44,880
+bản ghi bàn điều khiển, chúng tôi có thể nói rằng tạo ra một kích thước nên là nút đồng đô la. Và giờ chúng ta có thể đơn giản là
+
+77
+00:10:44,880 --> 00:10:53,680
+Thực hiện chức năng của chúng ta. Vì vậy, chúng ta có thể nói tạo tiếng huýt gió, chứ không phải trên nút tạo. Và chúng ta có thể cho đi
+
+78
+00:10:53,680 --> 00:10:59,600
+Nó có kích thước. Vì vậy, chúng tôi có thể nói rằng nút này sẽ là trung bình.
+
+79
+00:10:59,600 --> 00:11:12,160
+Hãy thực hiện nó, tạo ra một nút trung bình. Và nếu chúng ta cố gắng và cho nó một giá trị mà không phải là một trong
+
+80
+00:11:12,160 --> 00:11:19,440
+Ba người này. Và nếu chúng ta cho nó một giá trị rõ ràng tạo ra trung bình lớn, sau đó chúng ta nhận được một lỗi,
+
+81
+00:11:19,440 --> 00:11:26,000
+không thể ký được. Điều này chỉ cho phép chúng tôi
+
+82
+00:11:26,000 --> 00:11:32,720
+sẽ không cho chúng ta một lỗi nếu chúng ta thực sự cho nó một giá trị. Vì vậy, hãy nói rằng nó được cho phép. Nào
+
+83
+00:11:32,720 --> 00:11:43,680
+Nói to lên. Nếu chúng ta thực hiện, chúng ta sẽ tạo ra một cái nút lớn. Vì vậy, các loại bên hông là hoàn hảo
+
+84
+00:11:43,680 --> 00:11:50,880
+Cho các tùy chọn mô hình, có thể là trạng thái hoặc chế độ. Và sau đó làm cho mật mã của chúng tôi an toàn hơn và dễ dàng để
+
+85
+00:11:50,880 --> 00:11:58,320
+Hiểu rồi. Tuy nhiên, người ta thường dùng những loại tôn giáo khác để áp đặt giá trị nghiêm ngặt.
+
+86
+00:11:58,320 --> 00:12:06,320
+Vì vậy, hãy có một ví dụ về điều đó. Vì vậy, chúng tôi có thể có một loại chế độ. Và đây
+
+87
+00:12:06,320 --> 00:12:15,360
+Tưởng tượng rằng chúng ta có một giao diện người dùng và chúng ta có một chủ đề sáng hoặc chúng ta có một chủ đề tối. Đó là
+
+88
+00:12:15,360 --> 00:12:21,040
+Khó đấy. Tất cả là gì? Xin lỗi, chúng tôi có chế độ ánh sáng và chế độ tối. Và sau đó chúng tôi muốn xác định một chủ đề
+
+89
+00:12:21,040 --> 00:12:36,240
+của hiện đại và cổ điển, chúng ta hãy xem, có lẽ một trong những ngược lại. Chúng ta có một chủ đề, ba lựa chọn,
+
+90
+00:12:37,120 --> 00:12:44,160
+và chúng ta có một chế độ ánh sáng hay bóng tối. Vì vậy, điều này cung cấp cho chúng tôi một kiểm soát ngũ cốc tốt mà không cần một đầy đủ
+
+91
+00:12:44,160 --> 00:12:51,920
+Tính toán. Vì vậy, trong kết luận, cả ẩn số và các loại nghĩa đen sẽ vượt qua mô hình thế giới thực
+
+92
+00:12:51,920 --> 00:13:00,240
+Những hạn chế trong mật mã. Bây giờ inums là tuyệt vời cho hằng số, trong khi các loại nghĩa đen cho chúng ta
+
+93
+00:13:00,240 --> 00:13:06,080
+kiểm soát chính xác các giá trị cho phép. Đó là sự khác biệt. Vì vậy, inums sẽ chỉ cung cấp cho chúng tôi
+
+94
+00:13:06,320 --> 00:13:12,640
+loại một loạt các tùy chọn, trong khi các loại theo nghĩa đen thực sự đánh vần những gì và những gì chúng tôi không thể
+
+95
+00:13:12,640 --> 00:13:19,040
+Thực sự đặt vào một biến. Vì vậy, trong bài học tiếp theo, chúng tôi sẽ khám phá công đoàn
+
+96
+00:13:19,040 --> 00:13:27,120
+và các kiểu giao nhau, là cách kết hợp các loại để xây dựng một cấu trúc an toàn nhưng linh hoạt.
+
