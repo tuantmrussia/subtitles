@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:05,240
+Trong bài học này, chúng tôi sẽ tìm hiểu làm thế nào để mở rộng giao diện và gõ.
+
+2
+00:00:05,240 --> 00:00:11,700
+Vì vậy, mở rộng giao diện cho phép chúng tôi xây dựng trên cấu trúc đối tượng đã có thay vì lặp lại
+
+3
+00:00:11,700 --> 00:00:16,600
+Bản thân chúng ta, điều cần thiết để viết những dòng mã sạch và có thể mở rộng.
+
+4
+00:00:16,600 --> 00:00:22,000
+Đặc điểm này được dùng rất nhiều trong khuôn khổ, thư viện và các mã lớn.
+
+5
+00:00:22,000 --> 00:00:24,000
+Hãy bắt đầu với một vấn đề chung.
+
+6
+00:00:24,000 --> 00:00:30,500
+Chúng ta thường có những vật thể có chung một số đặc tính, nhưng cũng có những cánh đồng độc đáo riêng.
+
+7
+00:00:30,500 --> 00:00:36,000
+Với sự mở rộng của nó, chúng ta phải lặp đi lặp lại những tính chất giống nhau.
+
+8
+00:00:36,000 --> 00:00:43,000
+Vì vậy, hãy phóng to không gian như thế này và làm giao diện, chúng ta đã thấy điều này trước đây.
+
+9
+00:00:43,000 --> 00:00:51,000
+Tôi sẽ là người dùng, mã số và tên chuỗi.
+
+10
+00:00:51,000 --> 00:00:56,000
+Vì vậy, giao diện này xác định cấu trúc cơ bản của đối tượng người dùng của chúng tôi.
+
+11
+00:00:56,000 --> 00:01:00,000
+Bây giờ chúng ta hãy tạo ra một loại người dùng cụ thể hơn.
+
+12
+00:01:00,000 --> 00:01:02,000
+Chúng tôi làm điều đó bằng cách thêm giao diện.
+
+13
+00:01:02,000 --> 00:01:10,000
+Hãy nói rằng người dùng quảng cáo, và chúng tôi sử dụng các từ khóa mở rộng, mở rộng, và sau đó loại.
+
+14
+00:01:10,000 --> 00:01:13,000
+Vì vậy, mở rộng loại người dùng của chúng tôi.
+
+15
+00:01:13,000 --> 00:01:19,000
+Và sau đó chúng tôi xác định các tài sản mà chúng tôi muốn phụ thêm, thêm vào đối tượng người dùng này.
+
+16
+00:01:19,000 --> 00:01:26,000
+Hãy nói rằng chúng tôi muốn có một đối tượng vai trò, một tài sản đóng vai trò, chúng tôi có thể thiết lập nó để quản trị.
+
+17
+00:01:26,000 --> 00:01:32,000
+Vì vậy, điều này mở rộng các từ khóa, cho phép người dùng quản trị của chúng tôi để thừa kế tất cả các thuộc tính từ người dùng,
+
+18
+00:01:32,000 --> 00:01:35,000
+Và nó cũng thêm vào.
+
+19
+00:01:35,000 --> 00:01:38,000
+Vậy có nghĩa là chúng ta có thể tạo ra một vật thể như thế này.
+
+20
+00:01:38,000 --> 00:01:45,000
+Chúng tôi có thể thực hiện một consost, admin user, chúng tôi có thể xác định nó là người dùng quản trị của chúng tôi,
+
+21
+00:01:45,000 --> 00:01:52,000
+Và sau đó chúng tôi xác định tài sản ID của chúng tôi, tên của chúng tôi, hãy nói Alice,
+
+22
+00:01:52,000 --> 00:01:59,000
+Và sau đó chúng tôi có thêm tài sản của vai trò, sau đó có thể chuyển thành Adam,
+
+23
+00:01:59,000 --> 00:02:01,000
+hay giá trị sống.
+
+24
+00:02:01,000 --> 00:02:09,000
+Đối tượng này phải thỏa mãn cả người dùng lẫn các giao diện admin khi họ đang kết hợp.
+
+25
+00:02:09,000 --> 00:02:13,000
+Bây giờ một giao diện có thể mở rộng nhiều giao diện.
+
+26
+00:02:13,000 --> 00:02:18,000
+Vì vậy, chúng tôi có người dùng của chúng tôi ở đây, bây giờ chúng ta hãy chỉ cần loại bỏ mã này cho thời điểm,
+
+27
+00:02:18,000 --> 00:02:20,000
+và chúng tôi sẽ xác định một giao diện khác.
+
+28
+00:02:20,000 --> 00:02:24,000
+Đây là giấy phép.
+
+29
+00:02:24,000 --> 00:02:28,000
+Hãy cho nó quyền sở hữu.
+
+30
+00:02:28,000 --> 00:02:33,000
+Đây sẽ là một chuỗi dây.
+
+31
+00:02:33,000 --> 00:02:35,000
+Bây giờ chúng ta sẽ có một giao diện khác.
+
+32
+00:02:35,000 --> 00:02:42,000
+Đây sẽ là một giao diện siêu manmin, siêu manmin, mở rộng cả hai người dùng,
+
+33
+00:02:42,000 --> 00:02:49,000
+Giao diện, và cũng có giao diện quyền hạn, cả hai cùng nhau.
+
+34
+00:02:49,000 --> 00:02:57,000
+Bây giờ chúng ta có thể định nghĩa vai trò và nói vai trò là siêu manmin.
+
+35
+00:02:57,000 --> 00:03:06,000
+Chúng ta hãy kết hợp nhiều hành vi của hai giao diện thành một giao diện.
+
+36
+00:03:06,000 --> 00:03:11,000
+Bây giờ chúng ta hãy xem xét một ví dụ thực tế mà bạn thường thấy trong ADIs.
+
+37
+00:03:11,000 --> 00:03:18,000
+Chúng tôi sẽ xác định một giao diện, hoặc nói phản ứng cơ bản.
+
+38
+00:03:18,000 --> 00:03:24,000
+Điều này sẽ có một số lượng.
+
+39
+00:03:24,000 --> 00:03:31,000
+Và bây giờ chúng ta hãy xác định một giao diện khác, có lẽ người dùng trả lời.
+
+40
+00:03:31,000 --> 00:03:36,000
+Điều này sẽ mở rộng phản ứng cơ bản của chúng ta.
+
+41
+00:03:36,000 --> 00:03:43,000
+Và chúng ta sẽ định nghĩa dữ liệu của chúng ta, như một vật thể,
+
+42
+00:03:43,000 --> 00:03:51,000
+là một số, sau đó có thể là một tên của chuỗi.
+
+43
+00:03:51,000 --> 00:03:58,000
+Bây giờ, mô hình này giữ cho hệ điều hành của chúng ta không thay đổi trong khi cho phép các trọng tải khác nhau.
+
+44
+00:03:58,000 --> 00:04:01,000
+Bây giờ mà chúng tôi đã xác định phản ứng người dùng của chúng tôi,
+
+45
+00:04:01,000 --> 00:04:08,000
+Chúng ta có thể định nghĩa các phản ứng khác cho các thực thể khác, ví dụ như phản ứng của khách hàng hoặc phản ứng của sản phẩm.
+
+46
+00:04:08,000 --> 00:04:14,000
+Và bởi vì ông đã mở rộng phản ứng cơ sở, tất cả họ sẽ thừa kế vị trí,
+
+47
+00:04:14,000 --> 00:04:20,000
+Và chúng ta sẽ có cùng hình dạng với ID dữ liệu để giữ mọi thứ ổn định.
+
