@@ -1,0 +1,700 @@
+1
+00:00:00,000 --> 00:00:04,240
+ So here we go. We're going to set up rag and an knowledge base on Amazon bedrock.
+
+2
+00:00:04,240 --> 00:00:07,320
+ Now this hands-on is a bit more complicated than the other ones.
+
+3
+00:00:07,320 --> 00:00:10,520
+ So you've learned what you need to know from a knowledge base perspective.
+
+4
+00:00:10,520 --> 00:00:14,240
+ This is just technical stuff if you were very curious into how things worked.
+
+5
+00:00:14,240 --> 00:00:18,240
+ So to create a knowledge base, we need to move away from let's call the root user.
+
+6
+00:00:18,240 --> 00:00:19,880
+ This is the root user right now. We connected to it.
+
+7
+00:00:19,880 --> 00:00:23,120
+ We just see the account ID and we go into an IAM user.
+
+8
+00:00:23,120 --> 00:00:27,880
+ So you type IAM in your services and then you go to the IAM console.
+
+9
+00:00:27,880 --> 00:00:32,080
+ And you're going to go under users and you're going to create a user.
+
+10
+00:00:32,080 --> 00:00:33,680
+ The user name is whatever you want.
+
+11
+00:00:33,680 --> 00:00:39,840
+ I'm going to name it Stefan and I'm going to provide user access to the AWS management console.
+
+12
+00:00:39,840 --> 00:00:44,360
+ Now I know that the recommended user type is here in Identity Center.
+
+13
+00:00:44,360 --> 00:00:47,400
+ This is something we'll see later on right now when I make it super simple.
+
+14
+00:00:47,400 --> 00:00:53,600
+ So I want to just create an IAM user and then you can use a custom password that you must know.
+
+15
+00:00:53,600 --> 00:00:56,360
+ And I'm going to just enter a password that I know.
+
+16
+00:00:56,360 --> 00:01:01,280
+ So here I go and I'm good to go.
+
+17
+00:01:01,280 --> 00:01:04,480
+ Okay. And then we can un-take this.
+
+18
+00:01:04,480 --> 00:01:08,280
+ I don't need to create a new password at login.
+
+19
+00:01:08,280 --> 00:01:13,320
+ Then next click on next and we're going to attach policies directly.
+
+20
+00:01:13,320 --> 00:01:16,000
+ And the one we're looking for is administrator access.
+
+21
+00:01:16,000 --> 00:01:19,840
+ So we're going to give full admin power to this user.
+
+22
+00:01:19,840 --> 00:01:25,600
+ Then we click on next and then create user and our user is successfully created.
+
+23
+00:01:25,600 --> 00:01:30,840
+ Now we have an access to a console sign in URL with a user name and our password.
+
+24
+00:01:30,840 --> 00:01:36,600
+ So let's go into the sign in URL right now and press enter.
+
+25
+00:01:36,600 --> 00:01:39,080
+ And now we have this new signing page.
+
+26
+00:01:39,080 --> 00:01:41,480
+ So the account ID will leave as is.
+
+27
+00:01:41,480 --> 00:01:47,080
+ The user name is whatever you had before and then the password is your actual password.
+
+28
+00:01:47,080 --> 00:01:49,800
+ And then click on sign in.
+
+29
+00:01:49,800 --> 00:01:52,200
+ So here we go. Now I am into the console.
+
+30
+00:01:52,200 --> 00:01:57,000
+ And I know that I am logged in using an IM user because, well, it says I am user.
+
+31
+00:01:57,000 --> 00:01:59,400
+ It's defined and there is my account ID.
+
+32
+00:01:59,400 --> 00:02:04,040
+ So now we're ready to go back into Amazon bedrock and then get started.
+
+33
+00:02:04,040 --> 00:02:09,840
+ Go on the left hand side onto knowledge bases and create a knowledge base.
+
+34
+00:02:09,840 --> 00:02:12,720
+ So the knowledge base name will just leave it as is.
+
+35
+00:02:12,720 --> 00:02:16,400
+ The IM permissions we're going to select create and use a new service role.
+
+36
+00:02:16,400 --> 00:02:18,200
+ So we leave the defaults.
+
+37
+00:02:18,200 --> 00:02:22,120
+ Then we choose Amazon S3 and then we can see actually the options we have.
+
+38
+00:02:22,120 --> 00:02:27,200
+ So we have Amazon S3, but you can also have other data sources such as a web crawler
+
+39
+00:02:27,200 --> 00:02:32,400
+ to extract data from a web page or it could be third party data sources such as confidence
+
+40
+00:02:32,400 --> 00:02:37,440
+ where you can store your information or a Salesforce for your own CRM or SharePoint to have
+
+41
+00:02:37,440 --> 00:02:40,920
+ a look at your documents hosted on SharePoint.
+
+42
+00:02:40,920 --> 00:02:44,280
+ But we'll use Amazon S3 right now and our little PDF file.
+
+43
+00:02:44,280 --> 00:02:47,360
+ Let's click on next and next we need to create data source.
+
+44
+00:02:47,360 --> 00:02:51,440
+ So it's going to be Amazon S3 on this account and we need to select an S3 bucket.
+
+45
+00:02:52,280 --> 00:02:57,640
+ So now let's go into Amazon S3 and actually create an S3 bucket.
+
+46
+00:02:57,640 --> 00:03:03,080
+ So we need to create a bucket and we need to make sure we are in U.S. East one still.
+
+47
+00:03:03,080 --> 00:03:06,200
+ And it's a general purpose type of buckets and you just have to give it a name.
+
+48
+00:03:06,200 --> 00:03:15,800
+ So my demo buckets knowledge base stiffen and you see this name is very long and
+
+49
+00:03:15,800 --> 00:03:19,320
+ complicated because if you just enter a name that is already taken, for example,
+
+50
+00:03:19,320 --> 00:03:23,560
+ test and then you click on create buckets, you're going to get an error saying,
+
+51
+00:03:23,560 --> 00:03:26,240
+ hey, this bucket name already exists.
+
+52
+00:03:26,240 --> 00:03:30,680
+ So the bucket name doesn't exist in my accounts, but it exists in someone else's accounts.
+
+53
+00:03:30,680 --> 00:03:33,240
+ And so this is a problem on Amazon S3.
+
+54
+00:03:33,240 --> 00:03:37,280
+ The bucket name needs to be unique and therefore you need to enter a unique name.
+
+55
+00:03:37,280 --> 00:03:42,760
+ So if you copy this entire bucket name, it's not going to work because I have created this bucket myself.
+
+56
+00:03:42,760 --> 00:03:44,640
+ So choose a name that is going to be unique to you.
+
+57
+00:03:45,920 --> 00:03:51,560
+ Then you scroll all the way down, we don't need any of these options and we create these buckets.
+
+58
+00:03:51,560 --> 00:03:56,040
+ So now my bucket is created and I'm going to just click on it.
+
+59
+00:03:56,040 --> 00:03:59,520
+ And within it, this is where we can upload objects.
+
+60
+00:03:59,520 --> 00:04:04,280
+ So let's upload a first object is going to be our evolution of the internet's
+
+61
+00:04:04,280 --> 00:04:07,080
+ detailed and click on upload.
+
+62
+00:04:07,080 --> 00:04:10,960
+ So it's a very simple interface to upload files onto the cloud.
+
+63
+00:04:10,960 --> 00:04:15,720
+ And now if we look at it in our buckets, we have one object which is our PDF.
+
+64
+00:04:15,720 --> 00:04:17,400
+ So this is great.
+
+65
+00:04:17,400 --> 00:04:24,920
+ And now I just go into back into Amazon bedrock and we need to select an S3 URI.
+
+66
+00:04:24,920 --> 00:04:29,120
+ So we browse Amazon S3, we refresh this, doesn't work, okay.
+
+67
+00:04:29,120 --> 00:04:33,680
+ So let's cancel this, refresh and recreate an knowledge base.
+
+68
+00:04:33,680 --> 00:04:38,520
+ We scroll down, click on next and then click on browse S3 and here we go.
+
+69
+00:04:38,520 --> 00:04:43,840
+ Now we can select this Amazon S3 bucket, so we choose it and now this is filled.
+
+70
+00:04:43,840 --> 00:04:47,320
+ So next we go, click on next, we need to select an embedding model.
+
+71
+00:04:47,320 --> 00:04:50,200
+ So this is how to convert your data into a vector.
+
+72
+00:04:50,200 --> 00:04:54,600
+ So different options here, but I'm just going to take the one from Amazon,
+
+73
+00:04:54,600 --> 00:04:59,560
+ this Titan text embedding V2 and we don't touch anything on the vector dimension.
+
+74
+00:04:59,560 --> 00:05:03,000
+ Now for the vector database, so we have several options.
+
+75
+00:05:03,000 --> 00:05:08,000
+ If you wanted to go all the way free, then you would select PineCon.
+
+76
+00:05:08,000 --> 00:05:11,760
+ Because PineCon, if you go on the website of PineCon, so PineCon.io.
+
+77
+00:05:13,200 --> 00:05:17,640
+ And you go on the pricing, you see that there is a free tier, so you can start free.
+
+78
+00:05:17,640 --> 00:05:21,000
+ And you can have up to two gigabytes of storage and then write units and
+
+79
+00:05:21,000 --> 00:05:23,080
+ read units all the way, you're good.
+
+80
+00:05:23,080 --> 00:05:27,640
+ So this is a setup I'm not going to do because I'm trying to demonstrate the AWS
+
+81
+00:05:27,640 --> 00:05:31,760
+ services, of course, but if you want to stay free, I would recommend PineCon.
+
+82
+00:05:31,760 --> 00:05:35,080
+ Now I'm going to pay some money for what I'm going to do right now.
+
+83
+00:05:35,080 --> 00:05:39,600
+ But I'm going to do a quick create with a new vector store because this is
+
+84
+00:05:39,600 --> 00:05:43,800
+ going to use Amazon OpenSearch Serverless, which is an AWS service,
+
+85
+00:05:43,800 --> 00:05:46,320
+ and something they most likely want you to use.
+
+86
+00:05:46,320 --> 00:05:49,320
+ Other services on AWS, for example, is Amazon Aura.
+
+87
+00:05:49,320 --> 00:05:53,080
+ But so we're going to do a quick create of a new vector store.
+
+88
+00:05:53,080 --> 00:05:57,000
+ And actually, you can see that even though they say it's cost efficient,
+
+89
+00:05:57,000 --> 00:05:58,960
+ I really don't believe it.
+
+90
+00:05:58,960 --> 00:06:04,240
+ So for Amazon OpenSearch Serverless pricing, it's used by computing OCU and
+
+91
+00:06:04,240 --> 00:06:08,240
+ you have a minimum billable of two OCUs.
+
+92
+00:06:08,240 --> 00:06:10,920
+ And OCUs are quite expensive.
+
+93
+00:06:10,920 --> 00:06:18,600
+ So you get $0.24 per OCU per hour, which is around $172 per month.
+
+94
+00:06:18,600 --> 00:06:22,200
+ So it's quite expensive and then you also pay for the storage.
+
+95
+00:06:22,200 --> 00:06:26,320
+ And so what I want to share is that we are going to be conscious in this course
+
+96
+00:06:26,320 --> 00:06:30,400
+ and make sure that we delete OpenSearch Service right after using it.
+
+97
+00:06:30,400 --> 00:06:33,680
+ So we'll pay a minimal amount if you do the hands-on with me.
+
+98
+00:06:33,680 --> 00:06:37,960
+ Again, good for you to know and if you follow along and you create a vector store
+
+99
+00:06:37,960 --> 00:06:41,680
+ with me on Amazon OpenSearch Serverless, you are going to pay some money.
+
+100
+00:06:41,680 --> 00:06:43,680
+ So please, don't forget to delete things.
+
+101
+00:06:43,680 --> 00:06:46,680
+ Otherwise, this is going to be a very sad moment.
+
+102
+00:06:46,680 --> 00:06:51,480
+ Okay, so let's click on create knowledge base and now we're good to go.
+
+103
+00:06:51,480 --> 00:06:54,560
+ Again, you will get an error if you're not using an IAM user.
+
+104
+00:06:54,560 --> 00:06:56,720
+ So this was very important to do.
+
+105
+00:06:56,720 --> 00:07:01,200
+ So this will take a little bit of time and I'm going to pause the video until we are done.
+
+106
+00:07:01,200 --> 00:07:05,720
+ Okay, so my knowledge base is now created.
+
+107
+00:07:05,720 --> 00:07:08,880
+ And I can click on go to data sources to have a look at it.
+
+108
+00:07:08,880 --> 00:07:12,600
+ So it says that yes, my data source is available.
+
+109
+00:07:12,600 --> 00:07:18,600
+ And then what I'm going to do is click on it and then sync it to perform a synchronization
+
+110
+00:07:18,600 --> 00:07:24,640
+ of the data that I have in my extra buckets to my database in OpenSearch.
+
+111
+00:07:24,640 --> 00:07:29,720
+ So as you can see here, I can click on OpenSearch Service and have a look at it
+
+112
+00:07:29,720 --> 00:07:33,320
+ and confirm that on the left hand side under dashboard,
+
+113
+00:07:33,320 --> 00:07:38,480
+ I have access to my collection, which is my bedrock knowledge base.
+
+114
+00:07:38,480 --> 00:07:39,600
+ So it's pretty cool.
+
+115
+00:07:39,600 --> 00:07:41,320
+ So I want to show you a little bit how this works.
+
+116
+00:07:41,320 --> 00:07:45,080
+ This is obviously way advanced knowledge, but I'm always curious.
+
+117
+00:07:45,080 --> 00:07:50,280
+ So if you click on this connection collection, you can see right here that we have access
+
+118
+00:07:50,280 --> 00:07:55,560
+ to our endpoint and we have an OpenSearch dashboard URL that we can look at to look
+
+119
+00:07:55,560 --> 00:07:58,080
+ at what's within our collection.
+
+120
+00:07:58,080 --> 00:08:03,600
+ And we can have a look as well as indexes to see that an index was created.
+
+121
+00:08:03,600 --> 00:08:06,040
+ And there is one vector with six documents.
+
+122
+00:08:06,040 --> 00:08:10,960
+ So if we go into OpenSearch dashboard and here we are, so we can visualize our data.
+
+123
+00:08:10,960 --> 00:08:17,000
+ So to do it, we go on the left hand side under discover.
+
+124
+00:08:17,000 --> 00:08:19,160
+ And then you have index pattern.
+
+125
+00:08:19,160 --> 00:08:21,760
+ So we click on create index pattern.
+
+126
+00:08:21,760 --> 00:08:30,800
+ And then we paste this name of the index in here, click on next step and then create
+
+127
+00:08:30,800 --> 00:08:33,880
+ index pattern.
+
+128
+00:08:33,880 --> 00:08:39,120
+ This is to, we can tell OpenSearch dashboards to look for our data.
+
+129
+00:08:39,120 --> 00:08:45,080
+ And here we can see all the fields that were created automatically by Amazon bedrock.
+
+130
+00:08:45,080 --> 00:08:46,880
+ So this is very handy.
+
+131
+00:08:46,880 --> 00:08:53,160
+ Now let's go in here and go here, we click on dashboards.
+
+132
+00:08:53,160 --> 00:08:55,520
+ We go, sorry, into discover.
+
+133
+00:08:55,520 --> 00:08:59,160
+ And then we can have a look here into our knowledge base.
+
+134
+00:08:59,160 --> 00:09:02,840
+ And here we have access to the actual vectors.
+
+135
+00:09:02,840 --> 00:09:09,040
+ So this is some information around what was the text chunk of my PDF that is in here.
+
+136
+00:09:09,040 --> 00:09:10,560
+ What is the ID?
+
+137
+00:09:10,560 --> 00:09:14,280
+ And then what is the actual bedrock knowledge base vector?
+
+138
+00:09:14,280 --> 00:09:18,360
+ And so all these numbers were created by the embeddings model.
+
+139
+00:09:18,360 --> 00:09:21,480
+ So this is advanced, I know, but I want to show you the deep down things of high works.
+
+140
+00:09:21,480 --> 00:09:26,360
+ Basically, my document was chunked and then for each chunk, a vector was created.
+
+141
+00:09:26,360 --> 00:09:32,120
+ And so you have about one, two, three, four, five, six chunks right now for my documents.
+
+142
+00:09:32,120 --> 00:09:37,880
+ But by the way, now I can go into Amazon bedrock and I can start testing my knowledge base.
+
+143
+00:09:37,880 --> 00:09:45,800
+ So let's configure a model.
+
+144
+00:09:45,800 --> 00:09:47,720
+ We're going to take, for example, again, an anthropic haiku or sonets.
+
+145
+00:09:47,720 --> 00:09:50,400
+ Let's apply it, perfect.
+
+146
+00:09:50,400 --> 00:10:01,800
+ And here we say who invented the world wide web click on run.
+
+147
+00:10:01,800 --> 00:10:03,680
+ And then it's going to retrieve and share a response.
+
+148
+00:10:03,680 --> 00:10:07,440
+ As you can see, we have pretty much the same answer as before.
+
+149
+00:10:07,440 --> 00:10:12,360
+ And in terms of sources, we can see that now we have a link to evolution of the internet
+
+150
+00:10:12,360 --> 00:10:14,400
+ detailed point PDF.
+
+151
+00:10:14,400 --> 00:10:20,680
+ And if I click on it, this takes me directly into Amazon S3 into my PDF file that have uploaded.
+
+152
+00:10:20,680 --> 00:10:24,240
+ So it's quite cool because now we have set up a full rag.
+
+153
+00:10:24,240 --> 00:10:28,480
+ And if you want to set up properly, you would add more documents, of course, in your Amazon
+
+154
+00:10:28,480 --> 00:10:32,000
+ S3 bucket and then you would click on the sync button.
+
+155
+00:10:32,000 --> 00:10:34,480
+ So it's here we've practiced how to use rag.
+
+156
+00:10:34,480 --> 00:10:38,920
+ I'm going to clean it up and to do so, I delete the knowledge base.
+
+157
+00:10:38,920 --> 00:10:41,920
+ So click on delete and it's going to delete the knowledge base.
+
+158
+00:10:41,920 --> 00:10:44,400
+ But this doesn't delete your open search database.
+
+159
+00:10:44,400 --> 00:10:47,360
+ So let's wait for this to be done.
+
+160
+00:10:47,360 --> 00:10:48,800
+ And next, this was very quick.
+
+161
+00:10:48,800 --> 00:10:51,680
+ And next, let's go into open search service.
+
+162
+00:10:51,680 --> 00:10:54,600
+ And under here for this collection, you're going to delete it.
+
+163
+00:10:54,600 --> 00:10:57,960
+ Otherwise, this will incur some cost in the long run.
+
+164
+00:10:57,960 --> 00:10:58,960
+ So that's it.
+
+165
+00:10:58,960 --> 00:11:02,360
+ We've practiced creating an open search serverless database.
+
+166
+00:11:02,360 --> 00:11:05,360
+ We have created a knowledge base, we've uploaded some files onto Amazon S3.
+
+167
+00:11:05,360 --> 00:11:07,760
+ You can keep your S3 bucket running.
+
+168
+00:11:07,760 --> 00:11:08,760
+ This is fine.
+
+169
+00:11:08,760 --> 00:11:10,320
+ This is not going to cost you anything.
+
+170
+00:11:10,320 --> 00:11:13,800
+ And then we were both to demonstrate how knowledge bases and rag worked.
+
+171
+00:11:13,800 --> 00:11:14,960
+ So I'm very excited.
+
+172
+00:11:14,960 --> 00:11:16,600
+ This was a long hands on and very advanced.
+
+173
+00:11:16,600 --> 00:11:18,400
+ I know, but good to see.
+
+174
+00:11:18,400 --> 00:11:19,800
+ I hope you liked it.
+
+175
+00:11:19,800 --> 00:11:21,480
+ And I will see you in the next lecture.
+
