@@ -1,0 +1,204 @@
+1
+00:00:00,000 --> 00:00:05,600
+ Hello again, welcome back and this lesson and we're going to be exploring inheritance,
+
+2
+00:00:05,600 --> 00:00:12,720
+ which is TypeScript's way of letting us use one class, we'll use the logic of another.
+
+3
+00:00:12,720 --> 00:00:18,800
+ We're going to learn how to use the extends keyword to build class hierarchies over
+
+4
+00:00:18,800 --> 00:00:25,040
+ our behaviour and share common functionality across related objects.
+
+5
+00:00:25,040 --> 00:00:28,640
+ First of all, let's understand what is inheritance.
+
+6
+00:00:28,640 --> 00:00:34,000
+ In inheritance, let's one class extends the behaviour of another,
+
+7
+00:00:34,000 --> 00:00:38,400
+ gaining access to its properties and methods along the way.
+
+8
+00:00:38,400 --> 00:00:45,520
+ So I've got a class here, as you can see, called animal, and we just got a simple property called name,
+
+9
+00:00:45,520 --> 00:00:52,880
+ and I've used a short hands way of using on the constructor, and we have a method called speak.
+
+10
+00:00:54,320 --> 00:00:59,680
+ Now let's say we want to have a class called dog to extend the animal.
+
+11
+00:00:59,680 --> 00:01:08,720
+ So class dog, let me use the extends keyword, so extends animal.
+
+12
+00:01:08,720 --> 00:01:17,600
+ And now what we can do is we can over write the function that's been defined here,
+
+13
+00:01:17,600 --> 00:01:21,520
+ and we can define it again specifically for our dog.
+
+14
+00:01:21,520 --> 00:01:27,600
+ So we can do speak, and the speak method now returns,
+
+15
+00:01:27,600 --> 00:01:37,440
+ let's have the tactics and foot, dollar this name box,
+
+16
+00:01:37,440 --> 00:01:45,760
+ and we could have another class, so you can't extend any more.
+
+17
+00:01:47,600 --> 00:01:51,440
+ We can also have the method which we're going to override of speak.
+
+18
+00:01:51,440 --> 00:01:56,320
+ We're going to change this from bark to meow.
+
+19
+00:01:56,320 --> 00:02:06,720
+ But both of these also still have the name property, which is inherited from the parent class
+
+20
+00:02:06,720 --> 00:02:14,800
+ being animal. But in addition to this, we can also pick up the access of parent logic.
+
+21
+00:02:17,840 --> 00:02:21,680
+ So for example, rather than having the actual, exactly the same
+
+22
+00:02:21,680 --> 00:02:28,640
+ text here, what we can do inside here is we can use the super keyword.
+
+23
+00:02:28,640 --> 00:02:34,800
+ So you could say super, speak, we could call that a function,
+
+24
+00:02:34,800 --> 00:02:40,560
+ and we could then also add something else at the end, say for example meow.
+
+25
+00:02:43,120 --> 00:02:50,160
+ So the super keyword allows us to call the parent class constructor or its methods,
+
+26
+00:02:50,160 --> 00:02:52,080
+ which we've done in this particular example.
+
+27
+00:02:52,080 --> 00:02:59,440
+ So this class here is called the child class, and the class at the top is called the parent class.
+
+28
+00:02:59,440 --> 00:03:05,840
+ We've talked about using the super keyword to be able to access the methods to find on the
+
+29
+00:03:05,840 --> 00:03:14,480
+ parent, but the child could also add an additional custom functionality, as well as overriding the
+
+30
+00:03:14,480 --> 00:03:20,800
+ methods to find on the parent. Let's work through a little bit more a different example.
+
+31
+00:03:20,800 --> 00:03:24,960
+ And let's create a class, a parent class called a vehicle.
+
+32
+00:03:24,960 --> 00:03:34,160
+ We're going to have a constructor, and we're going to have a public property of make,
+
+33
+00:03:35,440 --> 00:03:38,880
+ and another public property called model.
+
+34
+00:03:38,880 --> 00:03:46,160
+ Let's just have a simple method on here called start.
+
+35
+00:03:46,160 --> 00:03:49,360
+ And the method is just going to return.
+
+36
+00:03:49,360 --> 00:03:57,520
+ Let's have let's say back text and say this make.
+
+37
+00:03:59,440 --> 00:04:10,080
+ And this model is starting. Okay, so we've got some properties defined here.
+
+38
+00:04:10,080 --> 00:04:15,520
+ We shouldn't of course have a code on here, that's what's complaining.
+
+39
+00:04:15,520 --> 00:04:22,960
+ And now we can define another vehicle, so we can have an electric car, so electric
+
+40
+00:04:24,800 --> 00:04:31,200
+ r, we can use the extends keyword extends vehicle.
+
+41
+00:04:31,200 --> 00:04:39,280
+ And now we can have some natural properties that's only available on an electric car.
+
+42
+00:04:39,280 --> 00:04:47,120
+ Perhaps it makes sense to have a battery level, so we can have battery level, which is a number.
+
+43
+00:04:48,240 --> 00:04:55,840
+ We're going to default it to 100, which you can do with the equals. Now we can also have
+
+44
+00:04:55,840 --> 00:05:01,440
+ an additional function, so we can call a charge, or create one called a charge,
+
+45
+00:05:03,200 --> 00:05:22,160
+ and have return, be charging, which tactics, charging, dollar, this make, and this model to 100%.
+
+46
+00:05:22,160 --> 00:05:27,360
+ Make sure I finish off the brackets here.
+
+47
+00:05:29,200 --> 00:05:37,360
+ So you can see here that we have also got access to the methods here, so I could come in here
+
+48
+00:05:37,360 --> 00:05:44,800
+ and I could do starts and I could override that if I particularly wanted to, or I could utilize it
+
+49
+00:05:44,800 --> 00:05:50,400
+ when I'm creating an instance of that class, but in addition to that for electric car,
+
+50
+00:05:50,400 --> 00:05:57,520
+ we've also added an additional property and it also got the extra custom functionality.
+
+51
+00:05:59,440 --> 00:06:05,920
+ So inheritance lets us reuse logic and also build scalable class hierarchies.
+
