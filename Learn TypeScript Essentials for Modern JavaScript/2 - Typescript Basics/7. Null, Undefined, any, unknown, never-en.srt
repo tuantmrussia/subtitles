@@ -1,0 +1,416 @@
+1
+00:00:00,000 --> 00:00:05,000
+ In this lesson we're going to explore some of TypeScripts core types.
+
+2
+00:00:05,000 --> 00:00:11,000
+ Now, undefined, any, unknown, and never.
+
+3
+00:00:11,000 --> 00:00:14,000
+ Then by the end of this lesson you're going to know
+
+4
+00:00:14,000 --> 00:00:19,000
+ when to use each of these types in real-world scenarios.
+
+5
+00:00:19,000 --> 00:00:22,000
+ First of all, let's have a look at now.
+
+6
+00:00:22,000 --> 00:00:27,000
+ You may already be familiar with this when using JavaScript.
+
+7
+00:00:27,000 --> 00:00:34,000
+ Let's go through a bit of an explanation just to make sure you're aware.
+
+8
+00:00:34,000 --> 00:00:40,000
+ The null type represents an intentional absence of any value.
+
+9
+00:00:40,000 --> 00:00:42,000
+ So let's do an example.
+
+10
+00:00:42,000 --> 00:00:48,000
+ Let's do let middle name of type string.
+
+11
+00:00:48,000 --> 00:00:52,000
+ It could be string or it could be null.
+
+12
+00:00:52,000 --> 00:00:55,000
+ And we're going to default it to null.
+
+13
+00:00:55,000 --> 00:01:01,000
+ So in this particular example, if we have a person and we have a middle name,
+
+14
+00:01:01,000 --> 00:01:04,000
+ they may not actually have a middle name.
+
+15
+00:01:04,000 --> 00:01:07,000
+ So we can actually default it to null.
+
+16
+00:01:07,000 --> 00:01:13,000
+ But we can then actually sign it to a value later on.
+
+17
+00:01:13,000 --> 00:01:20,000
+ So of course we could do middle name equals, let's say, an, for example.
+
+18
+00:01:20,000 --> 00:01:27,000
+ So again, the null is used here to indicate that we have some absence,
+
+19
+00:01:27,000 --> 00:01:34,000
+ but we may actually want to assign it to a value later on.
+
+20
+00:01:34,000 --> 00:01:38,000
+ Now let's have a look at undefinedness and comparison.
+
+21
+00:01:38,000 --> 00:01:42,000
+ Undefined type represents a variable that exists,
+
+22
+00:01:42,000 --> 00:01:46,000
+ but it hasn't actually been initialized yet.
+
+23
+00:01:46,000 --> 00:01:56,000
+ So let's do some real-world example. Let's have a last login.
+
+24
+00:01:56,000 --> 00:02:04,000
+ And this could be set to date or it could be undefined.
+
+25
+00:02:04,000 --> 00:02:13,000
+ We do a console log at the moment of our last login date.
+
+26
+00:02:13,000 --> 00:02:18,000
+ We're of course going to sit as undefined.
+
+27
+00:02:18,000 --> 00:02:26,000
+ But then later on, we could then log in and do last login equals new date.
+
+28
+00:02:26,000 --> 00:02:33,000
+ And if we then log that to the console, we're going to get our date.
+
+29
+00:02:33,000 --> 00:02:41,000
+ Now the difference between this and now is that undefined usually means that something is missing
+
+30
+00:02:41,000 --> 00:02:45,000
+ and it's going to be assigned later.
+
+31
+00:02:45,000 --> 00:02:50,000
+ So in this particular example, a user hasn't yet logged in,
+
+32
+00:02:50,000 --> 00:02:54,000
+ so we don't actually know their login time.
+
+33
+00:02:54,000 --> 00:02:59,000
+ Whereas null, for example, we use that in the case of that middle name,
+
+34
+00:02:59,000 --> 00:03:05,000
+ because they may never ever assign a value to that value.
+
+35
+00:03:05,000 --> 00:03:15,000
+ So the difference here is of course when someone's logged in, they might actually more likely going to log in at some point.
+
+36
+00:03:15,000 --> 00:03:20,000
+ And that's why we can set it to undefined because we don't know it at the current stage,
+
+37
+00:03:20,000 --> 00:03:24,000
+ but it's more likely to be have a value later on.
+
+38
+00:03:24,000 --> 00:03:28,000
+ Whereas if we're null in a case of a middle name,
+
+39
+00:03:28,000 --> 00:03:34,000
+ they may never have a middle name, which means it kind of makes a small sense to assign it to null.
+
+40
+00:03:34,000 --> 00:03:38,000
+ And now let's have a look at any.
+
+41
+00:03:38,000 --> 00:03:45,000
+ So the any type allows a variable to hold, as the name suggests, any value.
+
+42
+00:03:45,000 --> 00:03:50,000
+ And this turns off TypeScript's type checking ability.
+
+43
+00:03:50,000 --> 00:03:54,000
+ This can be useful when we're working with any legacy code,
+
+44
+00:03:54,000 --> 00:03:58,000
+ or perhaps under type third party libraries.
+
+45
+00:03:58,000 --> 00:04:07,000
+ But we also need to be careful because over using the any type basically removes the safety net that TypeScript provides.
+
+46
+00:04:07,000 --> 00:04:12,000
+ So it's going to be used as it kind of last resort.
+
+47
+00:04:12,000 --> 00:04:14,000
+ So let's do it in quick example.
+
+48
+00:04:14,000 --> 00:04:18,000
+ Let's say we have a variable of data.
+
+49
+00:04:18,000 --> 00:04:21,000
+ We're going to assign it to any type.
+
+50
+00:04:21,000 --> 00:04:25,000
+ And then as the name suggests, we can assign any values.
+
+51
+00:04:25,000 --> 00:04:28,000
+ We could say like 42.
+
+52
+00:04:28,000 --> 00:04:31,000
+ We could then say data equals hello.
+
+53
+00:04:31,000 --> 00:04:37,000
+ Or maybe data equals true.
+
+54
+00:04:37,000 --> 00:04:41,000
+ So we can see that we are now just morphing the type from a number,
+
+55
+00:04:41,000 --> 00:04:47,000
+ or the way through to string to Boolean and TypeScript really doesn't care.
+
+56
+00:04:47,000 --> 00:04:57,000
+ So again, just use the any whenever you maybe you absolutely have to if you're working with some legacy code, for example.
+
+57
+00:04:57,000 --> 00:05:02,000
+ But now be careful because of the ways there's no point doing TypeScript.
+
+58
+00:05:02,000 --> 00:05:07,000
+ And now let's have a look at Unknown.
+
+59
+00:05:07,000 --> 00:05:18,000
+ So we could have a same response of Unknown.
+
+60
+00:05:18,000 --> 00:05:21,000
+ And we can assign any values to it.
+
+61
+00:05:21,000 --> 00:05:24,000
+ We cannot use it directly without a type check.
+
+62
+00:05:24,000 --> 00:05:33,000
+ So this is perfect for doing things like dynamic input or perhaps passing API responses.
+
+63
+00:05:33,000 --> 00:05:39,000
+ When you need to validate the type before using the value.
+
+64
+00:05:39,000 --> 00:05:43,000
+ So imagine receiving data from an API.
+
+65
+00:05:43,000 --> 00:05:48,000
+ Now you don't actually know that type yet when you're receiving a data.
+
+66
+00:05:48,000 --> 00:05:56,000
+ So using Unknown forces us to check the type before we're doing some performing operations.
+
+67
+00:05:56,000 --> 00:05:58,000
+ So let's just do a quick example.
+
+68
+00:05:58,000 --> 00:06:08,000
+ So let's have a function and the function could be just a throw error.
+
+69
+00:06:08,000 --> 00:06:12,000
+ And we have a message.
+
+70
+00:06:12,000 --> 00:06:23,000
+ And we are going to throw the type is going to be never because we don't actually know what the type of that error is going to be at the point.
+
+71
+00:06:23,000 --> 00:06:29,000
+ But we can do throw error or throw new error.
+
+72
+00:06:29,000 --> 00:06:31,000
+ And just pass the message.
+
+73
+00:06:31,000 --> 00:06:36,000
+ So this is a very typical pattern for obviously during errors.
+
+74
+00:06:36,000 --> 00:06:40,000
+ Another example where we could have a function like an infinite loop.
+
+75
+00:06:40,000 --> 00:06:45,000
+ Not quite sure why you do that in practice, but here's how you could do it.
+
+76
+00:06:45,000 --> 00:06:49,000
+ So we have a function where it returned never.
+
+77
+00:06:49,000 --> 00:06:55,000
+ And then we just do while true and we just loop around the opposite infinitely.
+
+78
+00:06:55,000 --> 00:07:03,000
+ And because we're never going to return from this function, we can then assign the return type of never.
+
+79
+00:07:03,000 --> 00:07:10,000
+ Now let's look through a little bit of a better example of perhaps using a natural API.
+
+80
+00:07:10,000 --> 00:07:13,000
+ So you can see it's used.
+
+81
+00:07:13,000 --> 00:07:20,000
+ So we're going to find an interface of user.
+
+82
+00:07:20,000 --> 00:07:24,000
+ Let's have an ID number.
+
+83
+00:07:24,000 --> 00:07:28,000
+ And a name of string.
+
+84
+00:07:28,000 --> 00:07:32,000
+ We have a middle name.
+
+85
+00:07:32,000 --> 00:07:35,000
+ And a middle name just like had the previous example.
+
+86
+00:07:35,000 --> 00:07:42,000
+ We're going to have type string also null because it's effectively like an optional.
+
+87
+00:07:42,000 --> 00:07:46,000
+ And then we're going to define a last logging date.
+
+88
+00:07:46,000 --> 00:07:55,000
+ This will have a type of date, but also could be undefined, which we can do by the question mark here.
+
+89
+00:07:55,000 --> 00:08:03,000
+ Or if we didn't want to do it that way, we could also do a pipe and do undefined.
+
+90
+00:08:03,000 --> 00:08:11,000
+ And now we're going to have a function to handle our response from our imaginary API.
+
+91
+00:08:11,000 --> 00:08:18,000
+ Our response is coming in, but we, it could be several different types or several different entities.
+
+92
+00:08:18,000 --> 00:08:26,000
+ So we're going to take the response from from API as a generic function effectively where we have a response.
+
+93
+00:08:26,000 --> 00:08:31,000
+ And we don't actually know the type is unknown at the type is being called.
+
+94
+00:08:31,000 --> 00:08:38,000
+ But what we can do is we can then look at the type of the response and we use the type of.
+
+95
+00:08:38,000 --> 00:08:46,000
+ If type of response equals object.
+
+96
+00:08:46,000 --> 00:08:52,000
+ And response that doesn't equal now.
+
+97
+00:08:52,000 --> 00:09:02,000
+ And we're going to then try and cast that user or cast user equals response as user.
+
+98
+00:09:02,000 --> 00:09:14,000
+ And then of course we can do whatever we want, so we could do say console log user dot name for example.
+
+99
+00:09:14,000 --> 00:09:22,000
+ Or we could actually pick the last logging dates and do console log user last logging.
+
+100
+00:09:22,000 --> 00:09:26,000
+ And if we have a value, we don't have a value.
+
+101
+00:09:26,000 --> 00:09:32,000
+ We're just going to act, but never logged in.
+
+102
+00:09:32,000 --> 00:09:40,000
+ Otherwise, if it's not the type of user, we're going to then do something like say throwing you error.
+
+103
+00:09:40,000 --> 00:09:46,000
+ In valid response.
+
+104
+00:09:46,000 --> 00:09:49,000
+ if the response type is not recognized.
+
