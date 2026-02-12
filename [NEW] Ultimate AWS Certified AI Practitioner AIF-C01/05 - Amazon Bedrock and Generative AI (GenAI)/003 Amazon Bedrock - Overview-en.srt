@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:02,640
+ So now let's talk about Amazon Bedrock.
+
+2
+00:00:02,640 --> 00:00:06,200
+ So Amazon Bedrock is the one service on AWS.
+
+3
+00:00:06,200 --> 00:00:10,160
+ They're going to use to build generative AI applications.
+
+4
+00:00:10,160 --> 00:00:15,240
+ So it's very powerful and it allows you through an interface to play with many models
+
+5
+00:00:15,240 --> 00:00:18,240
+ and configure them in order to get the outcome you want.
+
+6
+00:00:18,240 --> 00:00:21,840
+ So it's called a fully managed service that means that for you,
+
+7
+00:00:21,840 --> 00:00:23,680
+ there is no service into managed.
+
+8
+00:00:23,680 --> 00:00:28,480
+ You just use the service on AWS and Amazon Web Services will make sure
+
+9
+00:00:28,480 --> 00:00:31,040
+ that the service is working for you.
+
+10
+00:00:31,040 --> 00:00:36,240
+ So you're going to keep control of all the data you're going to use to train the model
+
+11
+00:00:36,240 --> 00:00:38,640
+ because it all happens within your account.
+
+12
+00:00:38,640 --> 00:00:40,720
+ It never leaves your accounts.
+
+13
+00:00:40,720 --> 00:00:43,520
+ You're going to have a paper use pricing model
+
+14
+00:00:43,520 --> 00:00:46,880
+ but we'll go into the pricing model later on as well.
+
+15
+00:00:46,880 --> 00:00:50,880
+ There's a unified API so that means that to access Amazon Bedrock
+
+16
+00:00:50,880 --> 00:00:53,200
+ and the many models behind Amazon Bedrock,
+
+17
+00:00:53,200 --> 00:00:55,600
+ you only have one way of doing it which is standardized.
+
+18
+00:00:56,320 --> 00:00:59,200
+ You can leverage a wide array of foundation models.
+
+19
+00:00:59,200 --> 00:01:02,160
+ We'll have a look at them in a second and on top of it,
+
+20
+00:01:02,160 --> 00:01:06,480
+ you have advanced features such as RAG or LLM agents
+
+21
+00:01:06,480 --> 00:01:12,080
+ and you get security, privacy, governance and responsible AI features as well
+
+22
+00:01:12,080 --> 00:01:13,200
+ within Amazon Bedrock.
+
+23
+00:01:13,200 --> 00:01:15,520
+ So we're going to spend a bit of time learning about it
+
+24
+00:01:15,520 --> 00:01:17,200
+ and practicing together.
+
+25
+00:01:17,200 --> 00:01:23,280
+ So what type of foundation models do we have access to on Amazon Bedrock?
+
+26
+00:01:23,280 --> 00:01:29,760
+ Well, many companies have agreements with AWS to publish their models on Bedrock.
+
+27
+00:01:29,760 --> 00:01:34,480
+ So we have AI21 Lab, we have cohere,
+
+28
+00:01:34,480 --> 00:01:37,680
+ we have stability AI, we have of course Amazon themselves,
+
+29
+00:01:37,680 --> 00:01:42,480
+ we have anthropic, meta, and of course over time,
+
+30
+00:01:42,480 --> 00:01:45,520
+ more foundation models and more companies behind these models
+
+31
+00:01:45,520 --> 00:01:47,840
+ are going to be added into Amazon Bedrock.
+
+32
+00:01:47,840 --> 00:01:50,880
+ So the way it works that whenever you use one of these models,
+
+33
+00:01:50,880 --> 00:01:56,240
+ Amazon Bedrock is going to make a copy of the foundation model, the FM,
+
+34
+00:01:56,240 --> 00:01:58,240
+ and it's going to be only available to you.
+
+35
+00:01:58,240 --> 00:02:01,760
+ And then in some cases, you're going to be able to use your own data
+
+36
+00:02:01,760 --> 00:02:03,600
+ to fine tune the model to your needs.
+
+37
+00:02:03,600 --> 00:02:07,280
+ Again, you need to know that none of your data
+
+38
+00:02:07,280 --> 00:02:10,640
+ is going to be used and sent back to one of these providers
+
+39
+00:02:10,640 --> 00:02:12,240
+ to train the foundation model.
+
+40
+00:02:12,240 --> 00:02:16,800
+ What you get happens all within your account and only within your accounts.
+
+41
+00:02:17,600 --> 00:02:21,600
+ So it's always helpful to get a diagram to understand a service.
+
+42
+00:02:21,600 --> 00:02:23,440
+ So I mean one for Amazon Bedrock.
+
+43
+00:02:23,440 --> 00:02:26,560
+ So we have at the center of it foundation models.
+
+44
+00:02:26,560 --> 00:02:29,680
+ And those are the ones we've seen and we'll have a look in the hands-on
+
+45
+00:02:29,680 --> 00:02:31,920
+ to see how we can select them.
+
+46
+00:02:31,920 --> 00:02:34,480
+ And we're going to have an interactive playground
+
+47
+00:02:34,480 --> 00:02:37,440
+ that we're going to have a look at it as well in the next lecture
+
+48
+00:02:37,440 --> 00:02:41,600
+ in which, as a user, we're going to select a model we want to use.
+
+49
+00:02:41,600 --> 00:02:45,120
+ And then we're going to start asking questions to the model, for example.
+
+50
+00:02:45,120 --> 00:02:48,240
+ What is the most popular dish in Italy?
+
+51
+00:02:48,240 --> 00:02:51,760
+ And then maybe the playground is going to respond pizza and pasta.
+
+52
+00:02:51,760 --> 00:02:55,520
+ On top of it, this is just for the basic interactions,
+
+53
+00:02:55,520 --> 00:02:58,720
+ but we can have also knowledge bases or rag.
+
+54
+00:02:58,720 --> 00:03:01,200
+ And we'll have a full lecture dedicated to this.
+
+55
+00:03:01,200 --> 00:03:03,440
+ So don't worry if you don't understand it right now.
+
+56
+00:03:03,440 --> 00:03:07,200
+ But the idea is that we're going to be able to provide more relevant
+
+57
+00:03:07,200 --> 00:03:11,920
+ and more accurate responses by fetching data from external data sources
+
+58
+00:03:11,920 --> 00:03:14,080
+ that may have the answer for us.
+
+59
+00:03:14,080 --> 00:03:18,160
+ Don't worry, we'll have a deep dive into knowledge bases as well.
+
+60
+00:03:18,160 --> 00:03:20,640
+ We can fine tune our foundation model.
+
+61
+00:03:20,640 --> 00:03:23,040
+ That means that we're going to bring our own data
+
+62
+00:03:23,040 --> 00:03:26,560
+ and we're going to update the foundation model in our account again
+
+63
+00:03:26,560 --> 00:03:31,920
+ with our data to make sure that it's more adapted to our use case
+
+64
+00:03:31,920 --> 00:03:33,440
+ and our data.
+
+65
+00:03:33,440 --> 00:03:38,240
+ And finally, to access all of these things is going to be a unified API.
+
+66
+00:03:38,240 --> 00:03:39,680
+ So it's going to be the same for all models.
+
+67
+00:03:39,680 --> 00:03:41,680
+ That means that all your applications
+
+68
+00:03:41,680 --> 00:03:44,160
+ just took in one way to Amazon bedrock
+
+69
+00:03:44,160 --> 00:03:47,200
+ and then Amazon bedrock will do the magic for us.
+
+70
+00:03:47,200 --> 00:03:48,800
+ So that's it for this lecture.
+
+71
+00:03:48,800 --> 00:03:51,680
+ I hope you liked it and I will see you in the next lecture
+
+72
+00:03:51,680 --> 00:03:54,880
+ for some practice on Amazon bedrock.
+
