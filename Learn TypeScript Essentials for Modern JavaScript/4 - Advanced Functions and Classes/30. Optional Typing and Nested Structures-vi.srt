@@ -1,0 +1,396 @@
+1
+00:00:00,000 --> 00:00:07,280
+Trong bài học này, chúng ta đang lặn vào vật thể đánh máy và làm tổ trong các cấu trúc TypeSQL,
+
+2
+00:00:07,280 --> 00:00:14,000
+là một kỹ năng cốt lõi để mô phỏng dữ liệu thực tế, cho dù bạn đang xây dựng một hồ sơ người dùng
+
+3
+00:00:14,000 --> 00:00:20,160
+hoặc có lẽ một danh mục sản phẩm hoặc một tập tin cấu hình, TypeUse sẽ giúp chúng tôi xác định
+
+4
+00:00:20,160 --> 00:00:27,400
+Các vật thể rõ ràng, an toàn và có thể sinh sôi, vì vậy chúng tôi sẽ bắt đầu với một đối tượng đơn giản
+
+5
+00:00:27,400 --> 00:00:28,400
+Loại.
+
+6
+00:00:28,400 --> 00:00:34,880
+Bây giờ chúng tôi đã có một cái nhìn vào loại AV và giao diện, và bạn có thể mô hình một đối tượng
+
+7
+00:00:34,880 --> 00:00:41,640
+Trên một trong hai loại AVs hoặc giao diện, và tôi đã chỉ chọn sử dụng các loại và
+
+8
+00:00:41,640 --> 00:00:49,160
+AV ở đây cho người dùng, và chúng tôi có ba tính chất, ID, tên và là Adam.
+
+9
+00:00:49,160 --> 00:00:56,040
+Vì vậy, điều này xác định hình dạng của một đối tượng người dùng, và Type Thu nhập sẽ thực thi mà mỗi
+
+10
+00:00:56,040 --> 00:01:00,720
+Đối tượng khớp với cấu trúc này.
+
+11
+00:01:00,720 --> 00:01:08,600
+Bây giờ để sử dụng các đối tượng thực tế, chúng tôi có thể tạo ra một đối tượng như, hãy nói Alice và Alice
+
+12
+00:01:08,600 --> 00:01:16,120
+là loại người dùng, và sau đó chúng tôi có thể xác định các thuộc tính cho Alice, vì vậy chúng tôi có thể thiết lập ID, và
+
+13
+00:01:16,120 --> 00:01:28,440
+ID có thể là u123, và sau đó tên của Alice, và cuối cùng là manmin, và thiết lập
+
+14
+00:01:28,440 --> 00:01:31,920
+sự thật.
+
+15
+00:01:31,920 --> 00:01:36,520
+Nếu chúng tôi nhận được để sử dụng một bất động sản, hoặc chúng tôi sử dụng các loại sai, TypeUS sẽ giúp chúng tôi
+
+16
+00:01:36,520 --> 00:01:37,680
+ra ngoài.
+
+17
+00:01:37,680 --> 00:01:45,120
+Bây giờ, chúng ta hãy nói về tùy chọn và chỉ đọc thuộc tính, và bây giờ chúng tôi muốn xác định
+
+18
+00:01:45,120 --> 00:01:48,360
+Có lẽ là một tài sản tùy chọn.
+
+19
+00:01:48,360 --> 00:01:55,760
+Ví dụ, chúng tôi muốn có một tài sản mô tả, và chúng tôi chỉ cung cấp cho nó
+
+20
+00:01:55,760 --> 00:01:59,200
+một dấu chấm hỏi, và rồi loại thật.
+
+21
+00:01:59,200 --> 00:02:05,440
+Vì vậy, điều này bây giờ là tùy chọn, và bạn có thể thấy rằng Type Thu nhập không phàn nàn rằng chúng tôi đã không
+
+22
+00:02:05,440 --> 00:02:11,000
+Mô tả, và chúng tôi đã không cung cấp tài sản mô tả, nhưng tất nhiên, nếu chúng tôi muốn
+
+23
+00:02:11,000 --> 00:02:18,840
+để, chúng tôi có thể thêm một đặc tính mô tả ở đây và nói Alice ở Wonderland hoặc một cái gì đó.
+
+24
+00:02:18,840 --> 00:02:29,520
+Bây giờ chúng ta hãy xác định một loại khác trước, và chúng ta hãy có một loại sản phẩm, và loại này là
+
+25
+00:02:29,520 --> 00:02:35,320
+sẽ có một chuỗi, giống như trước đây, bạn có thể có một tên, và lần này chúng tôi sẽ đi
+
+26
+00:02:35,320 --> 00:02:42,720
+để có một giá, mà sẽ là một số, và cũng có thể một lần nữa có thể muốn có một mô tả
+
+27
+00:02:42,720 --> 00:02:48,240
+Đó là tùy chọn, vì vậy chúng tôi có mô tả.
+
+28
+00:02:48,240 --> 00:02:55,880
+Nếu một dấu chấm câu hỏi, và nó là một chuỗi dừng, bây giờ nếu chúng tôi cũng muốn có một đọc chỉ
+
+29
+00:02:55,880 --> 00:03:03,200
+Bất động sản mà chúng tôi có thể đọc từ, sau đó chúng tôi cần phải thay đổi cú pháp này một chút,
+
+30
+00:03:03,200 --> 00:03:08,920
+và một khi chúng tôi nói chỉ đọc, đầu tiên của tất cả, sau đó cho nó tên của bất động sản, vì vậy trong này
+
+31
+00:03:08,920 --> 00:03:17,320
+Trường hợp, chúng ta sẽ có một đọc chỉ bất động sản gọi là trường học, và loại là loại chuỗi.
+
+32
+00:03:17,320 --> 00:03:23,840
+Chuyện này không thể thay đổi được.
+
+33
+00:03:23,840 --> 00:03:28,760
+Vì vậy, hai điều cần ghi nhớ là dấu chấm hỏi cho tùy chọn, và này chỉ đọc
+
+34
+00:03:28,760 --> 00:03:34,520
+Quyền pháp ở đây, chỉ đọc tài sản đã ghi rõ.
+
+35
+00:03:34,520 --> 00:03:40,200
+Chúng tôi cũng có thể muốn có một cấu trúc lồng nhau, bởi vì tại thời điểm này chúng tôi có rất
+
+36
+00:03:40,200 --> 00:03:44,600
+cấu trúc đơn giản, chỉ sâu một tầng.
+
+37
+00:03:44,600 --> 00:03:49,800
+Hãy thử một mô hình, một khách hàng, có địa chỉ.
+
+38
+00:03:49,800 --> 00:03:59,360
+Vì vậy, trước hết, chúng tôi sẽ bắt đầu với chỉ địa chỉ loại, vì vậy các địa chỉ gõ
+
+39
+00:03:59,360 --> 00:04:12,320
+là sẽ có một đường phố, hoặc loại chuỗi, thành phố, và cũng có một mã zip, hoặc gõ chuỗi.
+
+40
+00:04:12,320 --> 00:04:20,240
+Bây giờ chúng tôi sẽ mô hình khách hàng của chúng tôi, vì vậy khách hàng sẽ có một tên, đi
+
+41
+00:04:20,240 --> 00:04:26,120
+có địa chỉ email, trong khi họ cũng sẽ có địa chỉ.
+
+42
+00:04:26,120 --> 00:04:31,800
+Bây giờ cho điều đó, chúng tôi đơn giản chỉ cần cung cấp tên của các tài sản, địa chỉ, và sau đó thực tế
+
+43
+00:04:31,800 --> 00:04:39,920
+gõ mà chúng tôi đã xác định trước, trong trường hợp này, địa chỉ.
+
+44
+00:04:39,920 --> 00:04:47,200
+Và tất nhiên, chúng tôi có thể xác định một khách hàng, bởi vì một con táo bón, Alice là một khách hàng, và Alice
+
+45
+00:04:47,200 --> 00:04:59,400
+là loại, khách hàng, và bây giờ chúng tôi có thể xác định tên của chúng tôi, tên là Alice, cô có một
+
+46
+00:04:59,400 --> 00:05:08,360
+Địa chỉ email cho Alice tại một cái gì đó, và sau đó chúng tôi có thể xác định địa chỉ thực tế.
+
+47
+00:05:08,360 --> 00:05:15,400
+Vì vậy, làm thế nào chúng tôi thực sự xác định các thuộc tính, các giá trị cho các thuộc tính địa chỉ?
+
+48
+00:05:15,400 --> 00:05:21,920
+Chúng tôi làm điều đó như là một đối tượng JSON, vì vậy chúng tôi xác định địa chỉ, sau đó các dây chuyền mật mã, và sau đó
+
+49
+00:05:21,920 --> 00:05:27,480
+Chúng ta có thể cho nó những thứ như đường phố, giả sử đường phố cho một, hai, ba, và sau đó
+
+50
+00:05:27,480 --> 00:05:33,720
+Thành phố, thành phố, vân vân, vân vân, vân vân.
+
+51
+00:05:33,720 --> 00:05:38,840
+Tất nhiên, chúng tôi có thể cung cấp cho nó để giữ cho Typeming hạnh phúc, hãy chỉ cần cung cấp cho nó một mã zip
+
+52
+00:05:38,840 --> 00:05:43,040
+của một, hai, ba.
+
+53
+00:05:43,040 --> 00:05:49,800
+Bây giờ chúng ta hãy đi qua một ví dụ khác, và lần này chúng ta sẽ tạo ra chính mình
+
+54
+00:05:49,800 --> 00:06:04,040
+một đối tượng hồ sơ hoặc kiểu hồ sơ, vì vậy chúng tôi có một loại hồ sơ, và trong kiểu hồ sơ của chúng tôi,
+
+55
+00:06:04,040 --> 00:06:10,480
+Chúng tôi sẽ có một tên người dùng hoặc loại chuỗi, chúng tôi sẽ có một số thiết lập, và
+
+56
+00:06:10,480 --> 00:06:18,440
+Đối với điều này bây giờ chúng tôi có thể xác định một loại của đối tượng lồng nhau sâu, và dưới đây chúng tôi đang đi
+
+57
+00:06:18,440 --> 00:06:28,320
+để có, sử dụng các dây cột cong, và chúng tôi sẽ có một chủ đề tài sản, chủ đề tài sản
+
+58
+00:06:28,320 --> 00:06:40,960
+có thể là ánh sáng hoặc biểu tượng ống sẽ được tối, và cũng sẽ có một tài sản của
+
+59
+00:06:40,960 --> 00:06:48,080
+Thông báo, mà được thiết lập để gõ một boolele.
+
+60
+00:06:48,080 --> 00:06:55,520
+Bây giờ chúng tôi cũng có thể xác định loại của chúng tôi là một tổ giống, vì vậy thay vì là một tách biệt
+
+61
+00:06:55,520 --> 00:07:03,000
+gõ, như chúng tôi đã làm cho địa chỉ, chúng tôi có thể loại làm điều đó trong dòng, vì vậy chúng tôi có thể có một loại
+
+62
+00:07:03,000 --> 00:07:12,840
+là một thuộc tính của tên người dùng, mà được đặt thành một loại chuỗi, và chúng tôi có thể có một thiết lập,
+
+63
+00:07:12,840 --> 00:07:20,040
+Và bây giờ chúng tôi tạo ra một thanh chắn cong, và bên trong thiết lập của chúng tôi chúng tôi sẽ có một chủ đề tài sản,
+
+64
+00:07:20,040 --> 00:07:27,720
+Tính chất chủ đề sẽ có một chuỗi ánh sáng hay bóng tối, và chúng tôi cũng sẽ
+
+65
+00:07:27,720 --> 00:07:36,680
+có một tài sản thông báo, đó là loại boolean, và bây giờ chúng tôi có thể đơn giản xác định a
+
+66
+00:07:36,680 --> 00:07:45,000
+Ví dụ tự nhiên của đối tượng, như vậy const người dùng, thiết lập để hồ sơ, và bây giờ chúng tôi có thể xác định
+
+67
+00:07:45,000 --> 00:07:57,280
+thuộc tính của nó, vì vậy tên người dùng, Tim, thiết lập, nhận được thanh nâng cao, chúng tôi có thể xác định điều này,
+
+68
+00:07:57,280 --> 00:08:12,800
+Vì vậy, chủ đề bây giờ là ánh sáng, và các thông báo chúng tôi sẽ thiết lập để đúng, và bây giờ chúng ta hãy
+
+69
+00:08:12,800 --> 00:08:21,520
+Làm việc trên một ví dụ thậm chí phức tạp hơn, đó là một loại trật tự, và điều này sẽ có
+
+70
+00:08:21,520 --> 00:08:29,520
+một đối tượng khách hàng, hoặc khách hàng, một loại bên trong nó, cũng như một mảng các mục, vì vậy chúng tôi đặt
+
+71
+00:08:29,520 --> 00:08:37,920
+Lên một loại trật tự, vì vậy bên trong loại lệnh của chúng tôi, chúng tôi sẽ có một ID lệnh, hoặc loại
+
+72
+00:08:37,920 --> 00:08:48,200
+dây, sau đó bên trong đó, sau đó chúng tôi cũng sẽ có một loại khách hàng, và loại
+
+73
+00:08:48,200 --> 00:08:57,120
+của khách hàng, sẽ là một đối tượng trong chính nó, mà chúng tôi sẽ có một tài sản tên,
+
+74
+00:08:57,120 --> 00:09:06,120
+Và bên trong đó, chúng ta sẽ có một loại liên lạc khác, đó là địa chỉ mới,
+
+75
+00:09:06,120 --> 00:09:13,880
+Và cũng là một số điện thoại tùy chọn, vì vậy một lần nữa, đặt nó một dấu hỏi để làm cho nó tùy chọn,
+
+76
+00:09:13,880 --> 00:09:22,880
+Kiểu chuỗi, và chúng tôi cũng muốn có các mục, hoặc thứ tự cụ thể này, mà chúng tôi có thể
+
+77
+00:09:22,880 --> 00:09:30,960
+làm bằng cách xác định một mảng, và một lần nữa, ngay tại đầu, chúng tôi học tập để một mảng bằng cách làm
+
+78
+00:09:30,960 --> 00:09:40,720
+Một số cong, có một số dấu ngoặc vuông ở đây, do đó bây giờ là một mảng mục, mà chúng tôi
+
+79
+00:09:40,720 --> 00:09:53,400
+có thể cần, ID sản phẩm, hoặc loại chuỗi, và cũng có thể là một số lượng, hoặc gõ một số, và bây giờ
+
+80
+00:09:53,400 --> 00:10:01,840
+Bạn có thể thấy làm thế nào chúng tôi có thể làm điều này, hoặc tổ của các loại, cho phép chúng tôi để mô tả rất rõ ràng
+
+81
+00:10:01,840 --> 00:10:10,480
+các vật thể phức tạp hơn thông qua Kiểu Tài liệu Mở, bây giờ thay vì định nghĩa các vật thể nhúng
+
+82
+00:10:10,480 --> 00:10:17,720
+Loại như thế này, chỉ để làm cho nó rõ ràng hơn, và cho các nhà phát triển nhìn vào đối tượng của bạn
+
+83
+00:10:17,720 --> 00:10:24,000
+là tốt hơn để có thể xác định rõ ràng các loại thành bit nhỏ hơn mà chúng tôi có thể sau đó
+
+84
+00:10:24,000 --> 00:10:33,520
+sử dụng trong một đối tượng phức tạp hơn, vì vậy chúng tôi muốn xác định đầu tiên của tất cả một loại liên lạc, mà
+
+85
+00:10:33,520 --> 00:10:45,280
+đã nhận email của chúng tôi, và cũng có điện thoại tùy chọn của chúng tôi, mà có tài sản email của chúng tôi, và cũng có
+
+86
+00:10:45,280 --> 00:10:53,320
+Số điện thoại tùy chọn của chúng tôi, và bây giờ chúng tôi có thể thay đổi nơi chúng tôi có liên lạc ở đây, rằng
+
+87
+00:10:53,320 --> 00:11:02,040
+trở thành đơn giản loại liên lạc của chúng tôi, chúng tôi bây giờ có thể làm việc trên chính khách hàng của mình, vì vậy chúng tôi có thể xác định
+
+88
+00:11:02,040 --> 00:11:15,040
+Kiểu khách hàng, kiểu khách hàng có tên chuỗi, và thông tin liên lạc, tên
+
+89
+00:11:15,040 --> 00:11:24,120
+để khách hàng của chúng tôi có thể được thay thế,
+
+90
+00:11:24,120 --> 00:11:31,280
+loại bỏ khách hàng, và điều này trở thành một loại khách hàng, và bây giờ chúng tôi có thể xác định khác
+
+91
+00:11:31,280 --> 00:11:47,880
+Gõ cho tất cả các mục, bây giờ tất cả các mục có một ID sản phẩm của chuỗi, số lượng
+
+92
+00:11:47,880 --> 00:12:03,600
+chuỗi, và số lượng số lượng, và bây giờ các mục mảng trở thành một chuỗi các mục thứ tự,
+
+93
+00:12:03,600 --> 00:12:09,200
+Và bây giờ nhìn vào đối tượng này là rõ ràng hơn nhiều để hiểu những gì đang xảy ra, hơn là
+
+94
+00:12:09,200 --> 00:12:15,360
+Những gì chúng ta đã nghe trước đây, vì vậy một lần nữa, tốt hơn hết là chia nhóm người của chúng ta thành những loại nhỏ hơn,
+
+95
+00:12:15,360 --> 00:12:23,600
+và sau đó xây dựng nó lên để tạo ra những vật thể phức tạp hơn, vì vậy đối tượng gõ là về cơ bản
+
+96
+00:12:23,600 --> 00:12:30,480
+Làm thế nào chúng tôi mô phỏng dữ liệu thực tế và gõ gõ tắt như một ví dụ ở đây, chúng tôi đã học cách định nghĩa
+
+97
+00:12:30,480 --> 00:12:36,680
+Đối tượng hình thù, và chúng tôi cũng đã tìm hiểu về tùy chọn và đọc các thuộc tính mới, cũng như
+
+98
+00:12:36,680 --> 00:12:42,360
+Các cấu trúc tổ tạo ra sự rõ ràng và an toàn, trong bài học tiếp theo
+
+99
+00:12:42,360 --> 00:12:49,240
+Tất cả về tái sử dụng các thành phần với loại an toàn sử dụng một tính năng được gọi là gen chung và Type.
+
