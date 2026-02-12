@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:06,000
+Trong bài học này, chúng ta sẽ tập trung vào các chức năng chung và các chức năng gõ.
+
+2
+00:00:06,000 --> 00:00:12,360
+Để chức năng chung, cho phép chúng tôi viết, tập tin có thể và có thể sử dụng lại chức năng trong khi vẫn giữ
+
+3
+00:00:12,360 --> 00:00:13,840
+Hoàn toàn an toàn.
+
+4
+00:00:13,840 --> 00:00:20,000
+Và bạn sẽ sử dụng nó bất cứ khi nào bạn có thể muốn để bị cám dỗ để đạt được từ khóa
+
+5
+00:00:20,000 --> 00:00:23,600
+bất cứ ai nhưng cảm thấy không thoải mái khi làm thế.
+
+6
+00:00:23,600 --> 00:00:32,400
+Vì vậy, hãy tưởng tượng ví dụ chúng tôi có một chức năng, và chức năng của chúng tôi của nhân dạng, và chúng tôi muốn cung cấp
+
+7
+00:00:32,400 --> 00:00:43,600
+Bất kỳ giá trị, bất kỳ loại nào, có thể đơn giản là trả lại giá trị và hãy trả lại giá trị.
+
+8
+00:00:43,600 --> 00:00:49,240
+Bây giờ điều này có hiệu quả, nhưng TypeUse sẽ mất tất cả các thông tin về giá trị này
+
+9
+00:00:49,240 --> 00:00:55,640
+là loại. Vì vậy, nếu nó trở lại một chuỗi, TypeCuter thậm chí không biết điều đó nữa.
+
+10
+00:00:55,640 --> 00:01:00,240
+Và đây là nơi chúng tôi sẽ giới thiệu hoặc có một chức năng chung, cho phép chúng tôi
+
+11
+00:01:00,240 --> 00:01:03,400
+để xác định vị trí giữ chỗ cho bất kỳ loại nào.
+
+12
+00:01:03,400 --> 00:01:15,000
+Và chúng tôi làm điều đó bằng cách sử dụng góc độ, và sau đó T. Điều này là về cơ bản định dạng
+
+13
+00:01:15,000 --> 00:01:21,520
+hoặc để tìm một loại chung. Bây giờ chúng ta hãy biến chức năng của chúng tôi, cùng một chức năng danh tính của chúng tôi
+
+14
+00:01:21,520 --> 00:01:27,080
+để trở thành một chức năng chung, vì vậy chức năng idenity, đó là giống nhau.
+
+15
+00:01:27,080 --> 00:01:35,000
+Và bây giờ chúng tôi thực sự làm góc dấu T, và sau đó khung của chúng tôi cho các tham số của chúng tôi, vì vậy giá trị,
+
+16
+00:01:35,000 --> 00:01:42,400
+Và chúng tôi nói giá trị, thay vì bất kỳ là bất kỳ bây giờ của loại chung T. Hàm có thể
+
+17
+00:01:42,400 --> 00:01:50,640
+cũng trả lại bất kỳ loại hoặc loại chung của chúng tôi, vì vậy đó cũng là loại T của chúng tôi.
+
+18
+00:01:50,640 --> 00:01:57,600
+Bởi vì chúng tôi có một loại T, điều này có nghĩa là tham số của chúng tôi và loại trở lại của chúng tôi, cả hai
+
+19
+00:01:57,600 --> 00:02:09,640
+Bây giờ chúng ta chỉ cần trả lại giá trị của mình, và đó là chức năng chung của chúng ta.
+
+20
+00:02:09,640 --> 00:02:17,040
+Và hãy xem nó hoạt động như thế nào. Hãy nói rằng chúng tôi có con số con số, chúng tôi gọi của chúng tôi
+
+21
+00:02:17,040 --> 00:02:24,000
+Chức năng nhận dạng, và chúng ta cần tìm loại thực tế muốn ở đây. Nên chúng tôi muốn
+
+22
+00:02:24,000 --> 00:02:30,000
+là một con số trong trường hợp này. Chúng tôi đặt số trong ngoặc, góc khung, và sau đó chúng tôi có thể
+
+23
+00:02:30,000 --> 00:02:36,800
+Xác định các tham số thật. Và nhận thấy rằng TypeCuble đang thúc đẩy chúng tôi cho giá trị
+
+24
+00:02:36,800 --> 00:02:42,240
+là một số, bởi vì chúng tôi xác định nó ở đây. Bây giờ bạn có thể chỉ cần làm 10, hãy đi vào trở lại
+
+25
+00:02:42,240 --> 00:02:50,600
+chúng ta, một số nguyên. Nhưng hãy nói rằng chúng tôi muốn bây giờ vượt qua chuỗi của nó, hơn là
+
+26
+00:02:50,600 --> 00:02:57,760
+Một số, chúng tôi có thể làm văn bản táo bón bằng danh tính một lần nữa, và trong khung góc, chúng tôi đang đi
+
+27
+00:02:57,760 --> 00:03:03,720
+để nói loại chuỗi. Và bây giờ hãy nhìn xem, những gì Type mont làm, sau đó nó nhắc chúng tôi cho
+
+28
+00:03:03,720 --> 00:03:08,840
+là một chuỗi, chúng tôi xin chào, và nó sẽ đi vào trở lại một chuỗi. Để anh có thể
+
+29
+00:03:08,840 --> 00:03:15,240
+Ngay lập tức thấy rằng mặc dù điều này trông khá phức tạp ở đây, nó thực sự khá đơn giản
+
+30
+00:03:15,240 --> 00:03:23,040
+Bằng cách chỉ cần tìm loại chúng tôi muốn bên trong các dấu ngoặc góc ở đây. Chúng tôi cũng có thể sử dụng suy luận
+
+31
+00:03:23,040 --> 00:03:29,920
+Cũng vậy. Vì vậy, nếu chúng tôi đã làm, ví dụ, thay vì chuỗi, chúng tôi chỉ cần loại bỏ chuỗi từ đây,
+
+32
+00:03:29,920 --> 00:03:35,000
+Loại vi khuẩn có thể đủ thông minh để hiểu rằng đó là bởi vì chúng ta đang cung cấp một chuỗi
+
+33
+00:03:35,000 --> 00:03:41,640
+Ở đây, chúng ta đang đối phó với những sợi dây. Và nếu tôi thay đổi nó để nói một số, như
+
+34
+00:03:41,640 --> 00:03:49,080
+10, một lần nữa, nó biết rằng điều này sẽ là một số ra khỏi nó.
+
+35
+00:03:49,080 --> 00:03:56,560
+Chúng tôi cũng có thể sử dụng chức năng của chúng tôi để làm việc như một mảng. Ví dụ,
+
+36
+00:03:56,560 --> 00:04:05,200
+Chúng tôi đã có một chức năng như thế này, và một chức năng nhận được đảo ngược, và sẽ sử dụng t một lần nữa,
+
+37
+00:04:05,200 --> 00:04:16,560
+Nhưng chúng tôi sẽ thời gian này cung cấp một mảng của các loại t chung để làm t, nhưng chúng tôi có thể bây giờ
+
+38
+00:04:16,560 --> 00:04:24,960
+làm hai dấu ngoặc vuông sau đó. Vì vậy, chúng tôi có một mảng loại t. Chức năng của chúng tôi đang đi
+
+39
+00:04:24,960 --> 00:04:34,400
+để trở lại t. Đây là để trả lời một loạt. Và bây giờ chúng tôi có thể thực hiện mảng các nguyên tố đầu tiên
+
+40
+00:04:34,400 --> 00:04:42,400
+Bằng cách gây án. Bây giờ chúng ta có thể gọi hàm đầu tiên của chúng tôi, và chúng tôi có thể cung cấp một mảng
+
+41
+00:04:42,400 --> 00:04:50,200
+như 123. Và điều đó, tất nhiên, sẽ trở lại. Chúng ta có thể làm trước, và sau đó có thể
+
+42
+00:04:50,200 --> 00:04:58,960
+làm một loạt chuỗi, như một, làm ba, hoặc bất cứ điều gì, một và hai. Và nó đang đi
+
+43
+00:04:58,960 --> 00:05:10,400
+để trở lại lần đầu tiên trong danh sách đó. Nhưng một chức năng chung cũng có thể chứa nhiều hơn
+
+44
+00:05:10,400 --> 00:05:17,760
+Hơn một loại. Chúng ta chỉ có một ví dụ cụ thể này. Vì vậy, hãy làm một chức năng khác,
+
+45
+00:05:17,760 --> 00:05:24,040
+Và chúng ta sẽ có hai loại. Vậy chúng ta làm điều đó như thế nào? Chúng ta có chức năng, nên kết hợp,
+
+46
+00:05:24,040 --> 00:05:34,880
+Chúng tôi có chữ T. Và bây giờ theo quy ước, từ thứ hai để y là u, nhưng đó là theo quy ước.
+
+47
+00:05:34,880 --> 00:05:44,920
+Làm thôi. Bây giờ chúng tôi có tham số đầu tiên của chúng tôi là loại t. Và tham số thứ hai của chúng tôi
+
+48
+00:05:44,920 --> 00:05:55,840
+là loại u. Và sau đó chúng tôi có thể đơn giản trả lại một dãy. Để chúng ta có thể trở lại nếu đầu tiên và
+
+49
+00:05:55,840 --> 00:06:03,720
+thứ hai là một dãy. Bây giờ chúng ta hãy thử và sử dụng chức năng này để có thể làm một cái gì đó như cặp.
+
+50
+00:06:03,720 --> 00:06:14,760
+Và chúng tôi kết hợp có thể một, nói một số nguyên, và có thể táo. Vì vậy, nó không nhất thiết phải giống nhau
+
+51
+00:06:14,760 --> 00:06:19,360
+Loại. Chúng ta có thể có, một lần nữa, một số và một chuỗi như chúng ta có ở đây. Nó có thể là hai số
+
+52
+00:06:19,360 --> 00:06:28,320
+Có thể là hai dây. Nhưng mỗi loại tham số được theo dõi độc lập. Nhưng
+
+53
+00:06:28,320 --> 00:06:35,120
+Hãy thực sự cố gắng và đặt điều đó vào một số bối cảnh bằng cách làm một ví dụ từ thực tế. Vậy chúng ta là
+
+54
+00:06:35,120 --> 00:06:44,680
+sẽ có một chức năng khác ở đây. Chúng ta sẽ gọi nó là thu thập dữ liệu, giống như một hệ điều hành,
+
+55
+00:06:44,680 --> 00:06:56,320
+loại chung t. Dữ liệu sẽ là loại t. Và điều này sẽ trả lại một lời hứa.
+
+56
+00:06:56,320 --> 00:07:08,640
+Một lời hứa, lời hứa sẽ trở lại. Bây giờ chúng ta trở về với lời hứa, phải không?
+
+57
+00:07:08,640 --> 00:07:15,280
+Và sau đó chúng tôi sẽ giải quyết dữ liệu của chúng tôi. Và đây là một thực hành rất phổ biến khi
+
+58
+00:07:15,280 --> 00:07:16,920
+làm việc với APIs.
+
