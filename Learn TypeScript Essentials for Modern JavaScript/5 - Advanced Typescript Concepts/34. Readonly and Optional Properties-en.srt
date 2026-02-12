@@ -1,0 +1,284 @@
+1
+00:00:00,000 --> 00:00:05,400
+ In this lesson, we're going to learn about read-only properties and optional properties
+
+2
+00:00:05,400 --> 00:00:06,400
+ in TypeScript.
+
+3
+00:00:06,400 --> 00:00:13,000
+ So these features help us protect our data and clearly express which values are acquired
+
+4
+00:00:13,000 --> 00:00:15,000
+ and which are optional.
+
+5
+00:00:15,000 --> 00:00:19,000
+ So in real-world applications, not "award" data should be changeable
+
+6
+00:00:19,000 --> 00:00:22,000
+ and not "award" data is always available.
+
+7
+00:00:22,000 --> 00:00:27,000
+ TypeScript lets us express both of these ideas directly in our types.
+
+8
+00:00:27,000 --> 00:00:33,000
+ So let's first of all start off with some optional properties.
+
+9
+00:00:33,000 --> 00:00:38,000
+ So optional properties are used when the value may or may not exist.
+
+10
+00:00:38,000 --> 00:00:45,000
+ So let's define an interface or the user.
+
+11
+00:00:45,000 --> 00:00:47,000
+ And we're going to have a few properties here.
+
+12
+00:00:47,000 --> 00:00:50,000
+ First of all, ID, that's going to be a number.
+
+13
+00:00:50,000 --> 00:00:56,000
+ Then we're going to have a name which is a string
+
+14
+00:00:56,000 --> 00:01:01,000
+ and then an email but one the email to be optional.
+
+15
+00:01:01,000 --> 00:01:07,000
+ We put that with a question mark after the name and then the type.
+
+16
+00:01:07,000 --> 00:01:13,000
+ See the difference? We have a question mark and that means it's optional.
+
+17
+00:01:13,000 --> 00:01:18,000
+ So again, any objects being created may or may not have this property.
+
+18
+00:01:18,000 --> 00:01:24,000
+ As a quick example, if we have a user, let's say user one is of type user.
+
+19
+00:01:24,000 --> 00:01:29,000
+ We can do an ID of one and a name could be Alice.
+
+20
+00:01:29,000 --> 00:01:34,000
+ Use a mandatory.
+
+21
+00:01:34,000 --> 00:01:40,000
+ Let's create a user so const user one of type user.
+
+22
+00:01:40,000 --> 00:01:47,000
+ So we have an ID set to one and we have our name.
+
+23
+00:01:47,000 --> 00:01:54,000
+ So Alice and it's into type these two properties, then that's okay.
+
+24
+00:01:54,000 --> 00:02:02,000
+ If we want to create a second user of user two, change the name to Bob
+
+25
+00:02:02,000 --> 00:02:07,000
+ and Bob has got an email address and now we can specify that email address
+
+26
+00:02:07,000 --> 00:02:12,000
+ or Bob at example.com.
+
+27
+00:02:12,000 --> 00:02:17,000
+ Both of these objects are valid but optional properties are perfect
+
+28
+00:02:17,000 --> 00:02:23,000
+ for fields like email, phone address or maybe profile images.
+
+29
+00:02:23,000 --> 00:02:26,000
+ If an optional property is missing,
+
+30
+00:02:26,000 --> 00:02:29,000
+ it's value is going to be undefined.
+
+31
+00:02:29,000 --> 00:02:34,000
+ So if we did something here and do console log
+
+32
+00:02:34,000 --> 00:02:40,000
+ and we try and access user one's email address.
+
+33
+00:02:40,000 --> 00:02:42,000
+ Let's execute that.
+
+34
+00:02:42,000 --> 00:02:45,000
+ We're going to get that as undefined.
+
+35
+00:02:45,000 --> 00:02:48,000
+ So now let's talk about read only properties.
+
+36
+00:02:48,000 --> 00:02:56,000
+ So these properties can only be set once and they then cannot be changed afterwards.
+
+37
+00:02:56,000 --> 00:03:01,000
+ So let's just remove this moment to find another interface.
+
+38
+00:03:01,000 --> 00:03:04,000
+ It's an interface called product.
+
+39
+00:03:04,000 --> 00:03:10,000
+ I'm going to have an ID property but this is going to be read only.
+
+40
+00:03:10,000 --> 00:03:15,000
+ So we're going to specify this property only when we create a product.
+
+41
+00:03:15,000 --> 00:03:22,000
+ So read only and then ID number.
+
+42
+00:03:22,000 --> 00:03:31,000
+ Let me have any other properties like name string and maybe price.
+
+43
+00:03:31,000 --> 00:03:39,000
+ So let's now create an object to const prompt dot to type product.
+
+44
+00:03:39,000 --> 00:03:49,000
+ And its ID is going to be set as 101 name laptop
+
+45
+00:03:49,000 --> 00:03:55,000
+ and price whatever we want.
+
+46
+00:03:55,000 --> 00:04:02,000
+ Now if we try and change that so if we do product product ID
+
+47
+00:04:02,000 --> 00:04:05,000
+ and set that to maybe 102.
+
+48
+00:04:05,000 --> 00:04:11,000
+ Type script stand going to complain because it's a read only property.
+
+49
+00:04:11,000 --> 00:04:18,000
+ Now a comma question is what's the difference between read only and const?
+
+50
+00:04:18,000 --> 00:04:26,000
+ Now the key would const by CRNST prevents reassignment of variables
+
+51
+00:04:26,000 --> 00:04:35,000
+ whereas to read only prevents reassignment of properties on objects.
+
+52
+00:04:35,000 --> 00:04:41,000
+ So we defined so now we have a const here as a const product.
+
+53
+00:04:41,000 --> 00:04:47,000
+ The object itself can't be reassigned but the properties can still change.
+
+54
+00:04:47,000 --> 00:04:53,000
+ We can of course combine read only with optional.
+
+55
+00:04:53,000 --> 00:05:00,000
+ So let's have an interface of maybe account as an example.
+
+56
+00:05:00,000 --> 00:05:07,000
+ We're going to have a read only ID property just like we did on the product.
+
+57
+00:05:07,000 --> 00:05:21,000
+ Using name upstream and an optional property with the email address of string.
+
+58
+00:05:21,000 --> 00:05:26,000
+ Now maybe wondering what's the difference between having an optional property
+
+59
+00:05:26,000 --> 00:05:30,000
+ and just having a property that we can set to find.
+
+60
+00:05:30,000 --> 00:05:37,000
+ So if you have an example of say interface and this is just a straightforward one.
+
+61
+00:05:37,000 --> 00:05:43,000
+ Let's actually have a call example.
+
+62
+00:05:43,000 --> 00:05:50,000
+ And we're going to have a value which is an optional that is string.
+
+63
+00:05:50,000 --> 00:05:56,000
+ What's the difference if we do for example a is type of example.
+
+64
+00:05:56,000 --> 00:06:00,000
+ And we set this just to an empty object.
+
+65
+00:06:00,000 --> 00:06:04,000
+ And we do const be is example.
+
+66
+00:06:04,000 --> 00:06:11,000
+ We specify the value explicitly as undefined.
+
+67
+00:06:11,000 --> 00:06:17,000
+ Now both of these are actually valid but the optional properties that we have here
+
+68
+00:06:17,000 --> 00:06:23,000
+ where we specify it, it communicates our intent more clearly as you can see
+
+69
+00:06:23,000 --> 00:06:27,000
+ because we are specifically setting the value as undefined.
+
+70
+00:06:27,000 --> 00:06:36,000
+ Whereas where we have an empty object the value still gets set to undefined but it's not as explicit.
+
+71
+00:06:36,000 --> 00:06:40,000
+ Now it's pretty much it for read only and optional properties.
+
