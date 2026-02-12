@@ -1,0 +1,324 @@
+1
+00:00:00,000 --> 00:00:06,560
+Bây giờ, hãy nhìn vào lịch sử của đám mây AWS, vì vậy nó đã được khởi động vào năm 2002 bên trong
+
+2
+00:00:06,560 --> 00:00:11,280
+Tại Amazon.com bởi vì họ nhận ra rằng bộ phận IT có thể được ngoại biên hóa.
+
+3
+00:00:11,280 --> 00:00:16,080
+Cơ sở hạ tầng Amazon của họ là một trong những nguồn sức mạnh cốt lõi của họ và họ nói, "Các bạn biết không?
+
+4
+00:00:16,080 --> 00:00:21,680
+Có lẽ chúng ta có thể làm nó cho người khác, cho người khác." Vì vậy, họ bắt đầu đề nghị đầu tiên của họ
+
+5
+00:00:21,680 --> 00:00:28,000
+Công khai, SQS vào năm 2004. Vào năm 2006, họ mở rộng lễ vật và họ lại bơm lại
+
+6
+00:00:28,000 --> 00:00:34,800
+có SQS, S3 và EC2. Đừng lo, chúng ta sẽ thấy tất cả các dịch vụ trong khóa học này.
+
+7
+00:00:34,800 --> 00:00:39,920
+Rồi chi phí nói, "Anh biết không? Chúng ta không chỉ ở Mỹ. Chúng ta có thể ở Châu Âu."
+
+8
+00:00:39,920 --> 00:00:45,360
+Và sau đó, nhanh chóng cho đến ngày hôm nay, chúng tôi có rất nhiều ứng dụng mà đã từng chạy hoặc vẫn đang chạy
+
+9
+00:00:45,360 --> 00:00:53,200
+Trên AWS, chẳng hạn như Dropbox, Netflix, Airbnb, hoặc ngay cả NASA. Bây giờ, hãy xem xét nơi của AWS ngày nay.
+
+10
+00:00:53,840 --> 00:01:00,560
+Nếu bạn nhìn vào góc phần tư ảo thuật từ Gartner, bạn có thể thấy rằng AWS là một nhà lãnh đạo.
+
+11
+00:01:00,560 --> 00:01:07,920
+Và nó đã xảy ra trong nhiều năm. Vì vậy, AWS bây giờ có 90 tỷ USD doanh thu
+
+12
+00:01:07,920 --> 00:01:16,960
+khoảng 31% thị trường ở Q1, 2024, với Microsoft là thứ hai
+
+13
+00:01:16,960 --> 00:01:24,640
+với 25%. Đó là người tiên phong và là người lãnh đạo của thị trường trong 13 năm liên tiếp
+
+14
+00:01:24,640 --> 00:01:29,520
+Và nó có hơn 1 triệu người dùng hoạt động. Học AWS thực sự giúp bạn thành công
+
+15
+00:01:29,520 --> 00:01:34,640
+trong thế giới đám mây. Vậy, bạn có thể xây dựng gì trên AWS? Hầu hết mọi thứ.
+
+16
+00:01:34,640 --> 00:01:39,600
+AWS sẽ cho phép bạn xây dựng các ứng dụng phức tạp và có thể nhân rộng và chúng được áp dụng
+
+17
+00:01:39,600 --> 00:01:44,560
+cho nhiều ngành công nghiệp khác nhau. Mỗi công ty đều có một vụ sử dụng đám mây.
+
+18
+00:01:44,560 --> 00:01:49,200
+Vì vậy, Netflix, McDonald's, 21st Century Fox, Activision, tất cả đều sử dụng đám mây.
+
+19
+00:01:49,200 --> 00:01:54,880
+Và sử dụng trường hợp có thể bao gồm chỉ cần chuyển công ty IT của bạn hoặc sử dụng đám mây như một dự phòng
+
+20
+00:01:54,880 --> 00:02:01,040
+trong kho hoặc làm một số phân tích dữ liệu lớn. Bạn cũng có thể cầm một trang web hoặc tạo một hậu phương
+
+21
+00:02:01,040 --> 00:02:05,920
+cho điện thoại di động và các ứng dụng xã hội. Hoặc, bạn có thể có toàn bộ máy chủ trò chơi
+
+22
+00:02:05,920 --> 00:02:13,120
+chạy trên đám mây. Đơn xin là vô tận. Bây giờ, AWS là toàn cầu và đây là nơi chúng tôi
+
+23
+00:02:13,120 --> 00:02:18,240
+sẽ tìm hiểu cụ thể hơn về cách nó hoạt động. Vì vậy, chúng tôi có khu vực AWS,
+
+24
+00:02:18,240 --> 00:02:24,240
+Chúng tôi có các khu vực sẵn có, trung tâm dữ liệu, vị trí cạnh và điểm hiện diện và tất cả những thứ này
+
+25
+00:02:24,240 --> 00:02:28,960
+có thể được đại diện trên bản đồ ngay đây. Vì vậy, chúng ta hãy vào trang web này để xem qua nó.
+
+26
+00:02:28,960 --> 00:02:35,760
+Đây là một bản đồ tuyệt vời bởi vì trên trang web này chúng ta có thể thấy AWS toàn cầu như thế nào. Nếu tôi bấm vào nó,
+
+27
+00:02:35,760 --> 00:02:41,600
+Tôi có thể di chuyển thế giới và xem chuyện gì đang xảy ra. Vì vậy, chúng ta có thể thấy rằng AWS có nhiều vùng
+
+28
+00:02:41,600 --> 00:02:47,840
+và chúng màu cam và ở khắp nơi trên thế giới. Chẳng hạn, Paris, Tây Ban Nha và Ohio
+
+29
+00:02:47,840 --> 00:02:56,480
+Ở Sao Paulo, Cape Town, Mumbai và nhiều nơi khác. AWS thực sự là một dịch vụ toàn cầu. Trên đỉnh của
+
+30
+00:02:56,480 --> 00:03:01,840
+nó, mỗi khu vực sẽ được kết nối qua mạng lưới. Vì vậy, đây là những mạng lưới kết nối lại
+
+31
+00:03:01,840 --> 00:03:07,680
+Các khu vực và đây là một mạng lưới riêng của AWS. Và sau đó, trong mỗi vùng, ví dụ,
+
+32
+00:03:07,680 --> 00:03:13,840
+Nếu tôi thực sự di chuyển vào vùng Cape Town, chúng ta có thể thấy rằng chúng tôi có chấm xanh và mỗi
+
+33
+00:03:13,840 --> 00:03:18,720
+chấm xanh sẽ có sẵn cho các vùng mà chúng tôi sẽ mô tả trong slide tiếp theo. Như chúng ta thấy,
+
+34
+00:03:18,720 --> 00:03:24,240
+Điều tôi muốn đưa bạn ra khỏi đây là AWS thực sự là toàn cầu và chúng ta có thể thúc đẩy cơ sở hạ tầng
+
+35
+00:03:24,240 --> 00:03:30,640
+của nhà cung cấp đám mây làm cho chúng tôi ứng dụng toàn cầu. Khái niệm quan trọng đầu tiên của AWS
+
+36
+00:03:30,640 --> 00:03:35,360
+là các vùng. Vì vậy, các khu vực trên toàn thế giới và chúng tôi đã thấy nó trên bản đồ từ trước.
+
+37
+00:03:35,360 --> 00:03:42,240
+Vùng này có tên. Nó có thể là chúng tôi phía đông một, EU phía tây ba và chúng tôi có thể thấy bản đồ của
+
+38
+00:03:42,240 --> 00:03:47,920
+Tên vùng này là code trên bảng điều khiển mà chúng ta sẽ thấy trong phút nữa. Bây giờ, một vùng
+
+39
+00:03:47,920 --> 00:03:53,200
+Có gì trong đó? Nó sẽ là một nhóm các trung tâm dữ liệu. Vì vậy, nhiều trung tâm dữ liệu khác nhau
+
+40
+00:03:53,200 --> 00:04:00,160
+Chẳng hạn, gần Ohio, Singapore, Sydney hoặc Tokyo. Khi chúng ta dùng dịch vụ AWS,
+
+41
+00:04:00,160 --> 00:04:05,680
+Hầu hết các dịch vụ sẽ được nối kết với một vùng cụ thể. Có nghĩa là nếu chúng tôi sử dụng một
+
+42
+00:04:05,680 --> 00:04:10,880
+Phục vụ trong một vùng và chúng tôi cố gắng sử dụng nó ở khu vực khác, nó sẽ giống như một thời gian mới của
+
+43
+00:04:10,880 --> 00:04:16,640
+sử dụng dịch vụ. Bây giờ, một câu hỏi có thể được nêu lên trong kỳ thi là làm thế nào để bạn chọn một khu vực AWS?
+
+44
+00:04:16,640 --> 00:04:21,920
+Vì vậy, giả sử bạn đang mở một đơn xin mới, bạn nên làm điều đó ở đâu? Nếu bạn làm điều đó ở Mỹ,
+
+45
+00:04:21,920 --> 00:04:27,920
+ở Châu Âu, Nam Mỹ hay Úc? Câu trả lời là, dĩ nhiên, còn tùy.
+
+46
+00:04:27,920 --> 00:04:33,440
+Nhưng hãy xem xét một số yếu tố có thể ảnh hưởng đến lựa chọn của bạn về khu vực AWS. Cái đầu tiên.
+
+47
+00:04:33,440 --> 00:04:39,280
+là tuân thủ. Vì vậy, đôi khi chính phủ muốn dữ liệu là địa phương đến đất nước bạn đang triển khai
+
+48
+00:04:39,280 --> 00:04:45,200
+đăng ký. Ví dụ, bạn bè, dữ liệu ở Pháp có thể phải ở lại Pháp và vì vậy
+
+49
+00:04:45,200 --> 00:04:51,760
+Anh nên đăng ký ở Pháp. Ngoài ra, còn có một khái niệm về sự khoan dung.
+
+50
+00:04:51,760 --> 00:04:57,280
+Vì vậy, nếu hầu hết các người dùng sẽ ở Mỹ, nó làm cho rất nhiều ý nghĩa để triển khai ứng dụng của bạn
+
+51
+00:04:57,280 --> 00:05:01,840
+Ở Mỹ gần với người dùng của bạn, bởi vì họ sẽ có một sự giảm nhẹ. Nếu anh triển khai
+
+52
+00:05:01,840 --> 00:05:06,560
+Ứng dụng ở Úc và người dùng của bạn đang ở Mỹ, họ sẽ có rất nhiều chậm sử dụng của bạn
+
+53
+00:05:06,560 --> 00:05:15,040
+ứng dụng. Ngoài ra, không phải tất cả các vùng đều có dịch vụ. Một số vùng không có dịch vụ, và do đó,
+
+54
+00:05:15,040 --> 00:05:18,880
+Rõ ràng, nếu bạn đang áp dụng dịch vụ với đơn xin việc của bạn, bạn cần phải đảm bảo rằng
+
+55
+00:05:18,880 --> 00:05:26,960
+khu vực bạn đang triển khai có sẵn và có dịch vụ đó. Và cuối cùng, giá cả. Vì vậy, giá cả
+
+56
+00:05:26,960 --> 00:05:33,440
+và bạn cần tham khảo các trang phục vụ giá trị để xem những gì
+
+57
+00:05:33,440 --> 00:05:38,320
+Các khác biệt giữa các vùng, nhưng điều này có thể rõ ràng là một yếu tố mà có thể tác động
+
+58
+00:05:38,320 --> 00:05:45,200
+Việc anh đưa đơn xin vào một khu vực cụ thể. Bây giờ, những vùng có sẵn thực sự là những gì
+
+59
+00:05:45,200 --> 00:05:50,400
+đang tiến vào khu vực. Mỗi khu vực sẽ có rất nhiều khu vực có sẵn. Thường là ba.
+
+60
+00:05:50,400 --> 00:05:56,400
+Tối thiểu là ba, và tối đa là sáu, nhưng thực sự, thường là ba. Vì vậy, hãy đi Sydney
+
+61
+00:05:56,400 --> 00:06:02,800
+là một ví dụ. Mã vùng Sydney là AP South 2. Vì vậy, chúng tôi có ba sẵn có
+
+62
+00:06:02,800 --> 00:06:11,840
+Khu vực Sydney. AP South East 2a, AP East 2b, và AP East 2c. Bây giờ, mỗi cái sẵn có
+
+63
+00:06:11,840 --> 00:06:18,400
+Các khu vực sẽ là một hay nhiều trung tâm dữ liệu rời rạc mà sẽ có nguồn điện dư thừa, mạng lưới,
+
+64
+00:06:18,400 --> 00:06:24,480
+và kết nối. Điều đó có nghĩa là ở Đông Nam 2a, tôi có thể có hai trung tâm dữ liệu, có thể là tốt
+
+65
+00:06:24,480 --> 00:06:28,720
+Hai trong 2b và hai trong 2c, nhưng có thể là một, có thể là ba, có thể là bốn, chúng tôi không thực sự
+
+66
+00:06:28,720 --> 00:06:34,400
+Biết. Nó luôn không cho chúng ta biết điều đó. Nhưng những gì chúng ta biết là những vùng có sẵn này
+
+67
+00:06:34,400 --> 00:06:39,680
+tách biệt với nhau để họ được tách biệt khỏi những thảm họa. Vì vậy, nếu có điều gì xảy ra với
+
+68
+00:06:39,680 --> 00:06:48,400
+AP Đông Nam 2a, chúng tôi biết rằng nó được thiết kế để không rơi vào AP East 2b hoặc AP East 2c. Vậy,
+
+69
+00:06:48,400 --> 00:06:53,520
+chúng thực sự bị tách biệt khỏi thảm họa. Và sau đó, những trung tâm dữ liệu này, những vùng có sẵn,
+
+70
+00:06:53,520 --> 00:06:59,280
+Chúng được kết nối với một mạng lưới tần số cao, cực thấp, và do đó,
+
+71
+00:06:59,280 --> 00:07:06,080
+nó sẽ hình thành một vùng. Được rồi, tiếp theo, điều duy nhất chúng ta cần biết
+
+72
+00:07:06,080 --> 00:07:11,200
+về AWS cho cơ sở hạ tầng toàn cầu là điểm hiện diện hoặc vị trí cạnh.
+
+73
+00:07:11,200 --> 00:07:16,960
+Chúng tôi sẽ thấy họ chi tiết trong phần toàn cầu của khóa học này, nhưng bạn nên biết rằng AWS
+
+74
+00:07:16,960 --> 00:07:22,400
+có hơn 400 điểm hiện diện ở 90 thành phố trên 40 quốc gia, và điều này sẽ rất là
+
+75
+00:07:22,400 --> 00:07:27,520
+hữu ích khi chúng ta cung cấp nội dung cho người dùng cuối cùng với mức độ thấp nhất có thể. Và đây là những gì
+
+76
+00:07:27,520 --> 00:07:32,640
+bạn thấy trên bản đồ này. Bây giờ, một lần nữa, tôi sẽ nhanh chóng vượt qua điều này bởi vì chúng ta sẽ thấy điều này tại
+
+77
+00:07:32,640 --> 00:07:38,800
+giữa khóa học này. Vậy, bây giờ, chúng ta chơi một vòng và làm một chuyến tham quan bàn điều khiển nhé?
+
+78
+00:07:38,800 --> 00:07:45,760
+Chúng ta sẽ thấy rằng AWS có dịch vụ toàn cầu, như IM, khoảng 53, Cloudfront, và WAF, nhưng chúng ta sẽ thấy
+
+79
+00:07:45,760 --> 00:07:52,160
+Và hầu hết các dịch vụ AWS sẽ được giám sát khu vực, như Amazon EC2, Elustic Beansl,
+
+80
+00:07:52,400 --> 00:07:58,240
+Lambda, và công nhận. Cuối cùng, để biết nếu một dịch vụ có sẵn trong khu vực của bạn,
+
+81
+00:07:58,240 --> 00:08:01,120
+Có một bàn vùng mà anh nên mang ra đây.
+
