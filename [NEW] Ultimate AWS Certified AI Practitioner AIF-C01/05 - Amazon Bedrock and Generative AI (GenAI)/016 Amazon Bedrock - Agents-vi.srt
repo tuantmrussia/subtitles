@@ -1,0 +1,500 @@
+1
+00:00:00,000 --> 00:00:02,880
+Bây giờ chúng ta hãy nói về các đặc vụ Amazon.
+
+2
+00:00:02,880 --> 00:00:06,360
+Vì vậy, tác nhân sẽ là một điều rất thông minh
+
+3
+00:00:06,360 --> 00:00:08,400
+Nó sẽ hành động giống như một con người.
+
+4
+00:00:08,400 --> 00:00:10,400
+Ý tưởng là thay vì chỉ đặt câu hỏi
+
+5
+00:00:10,400 --> 00:00:13,120
+để một mô hình, bây giờ mô hình sẽ có thể bắt đầu
+
+6
+00:00:13,120 --> 00:00:17,000
+suy nghĩ một chút và thực hiện nhiều nhiệm vụ đa bước.
+
+7
+00:00:17,000 --> 00:00:21,200
+Và những công việc này có thể ảnh hưởng đến cơ sở dữ liệu của chúng tôi
+
+8
+00:00:21,200 --> 00:00:22,520
+hay cơ sở hạ tầng của chính chúng ta.
+
+9
+00:00:22,520 --> 00:00:25,280
+Vì thế tác nhân có thể tạo ra cơ sở hạ tầng.
+
+10
+00:00:25,280 --> 00:00:28,120
+Nó có thể triển khai ứng dụng và có thể thực hiện thao tác
+
+11
+00:00:28,120 --> 00:00:29,400
+trên hệ thống của chúng ta.
+
+12
+00:00:29,400 --> 00:00:31,600
+Giờ thì đặc vụ không cung cấp thông tin.
+
+13
+00:00:31,600 --> 00:00:34,000
+Nó cũng bắt đầu suy nghĩ và hành động.
+
+14
+00:00:34,000 --> 00:00:36,320
+Ví dụ, nó sẽ xem xét các công việc
+
+15
+00:00:36,320 --> 00:00:38,480
+và sau đó nó sẽ thực hiện nhiệm vụ theo thứ tự chính xác
+
+16
+00:00:38,480 --> 00:00:40,120
+và đảm bảo rằng thông tin chính xác
+
+17
+00:00:40,120 --> 00:00:43,760
+được thông qua trong nhiệm vụ ngay cả khi chúng tôi không lập trình
+
+18
+00:00:43,760 --> 00:00:45,240
+đặc vụ làm thế.
+
+19
+00:00:45,240 --> 00:00:47,960
+Vì vậy, những gì chúng tôi làm là chúng tôi sẽ tạo ra
+
+20
+00:00:47,960 --> 00:00:49,800
+cái được gọi là nhóm hành động.
+
+21
+00:00:49,800 --> 00:00:52,480
+Và các đặc vụ sẽ được cấu hình
+
+22
+00:00:52,480 --> 00:00:56,600
+để hiểu những nhóm hành động này làm gì và chúng có ý nghĩa gì.
+
+23
+00:00:56,600 --> 00:00:58,120
+Và sau đó tự động, các tác nhân
+
+24
+00:00:58,120 --> 00:01:01,680
+sẽ có khả năng tích hợp với các hệ thống khác, cơ sở dữ liệu dịch vụ
+
+25
+00:01:01,680 --> 00:01:04,560
+và API để trao đổi dữ liệu hoặc để bắt đầu hành động.
+
+26
+00:01:04,560 --> 00:01:06,760
+Và cũng nếu nó cần một số thông tin
+
+27
+00:01:06,760 --> 00:01:10,320
+Ngoài hệ thống của bạn về dữ liệu chưa được dán nhãn,
+
+28
+00:01:10,320 --> 00:01:12,760
+nó có thể nhìn vào RAG để lấy thông tin
+
+29
+00:01:12,760 --> 00:01:14,120
+khi cần thiết.
+
+30
+00:01:14,120 --> 00:01:15,080
+Nghe có vẻ hơi kỳ diệu,
+
+31
+00:01:15,080 --> 00:01:17,240
+nhưng tôi sẽ chỉ cho các bạn chính xác cách nó hoạt động.
+
+32
+00:01:17,240 --> 00:01:20,280
+Ở Amazon Bedrock, bạn sẽ đi và tạo ra một tác nhân
+
+33
+00:01:20,280 --> 00:01:23,480
+Và anh đang xác định đặc vụ phải chịu trách nhiệm cho cái gì.
+
+34
+00:01:23,480 --> 00:01:25,440
+Vì vậy, ví dụ, bạn là một đặc vụ chịu trách nhiệm
+
+35
+00:01:25,440 --> 00:01:28,040
+Để truy cập vào lịch sử mua sắm cho khách hàng của chúng tôi
+
+36
+00:01:28,040 --> 00:01:31,040
+cũng như đề nghị mua những gì họ có thể mua tiếp.
+
+37
+00:01:31,040 --> 00:01:33,480
+Và anh phải chịu trách nhiệm về việc ra lệnh mới.
+
+38
+00:01:33,480 --> 00:01:35,680
+Vì vậy, các đặc vụ biết rằng nó có thể làm tất cả những điều này.
+
+39
+00:01:35,680 --> 00:01:38,200
+Vì vậy, nếu người dùng đang yêu cầu một cái gì đó cho các đại lý
+
+40
+00:01:38,200 --> 00:01:41,040
+hoặc mô hình để làm một trong những điều này,
+
+41
+00:01:41,040 --> 00:01:42,120
+Đá trải giường thông minh sẽ nói,
+
+42
+00:01:42,120 --> 00:01:44,360
+Vâng, đặc vụ này có lẽ sẽ chịu trách nhiệm
+
+43
+00:01:44,360 --> 00:01:45,600
+vì những hành động này.
+
+44
+00:01:45,600 --> 00:01:48,160
+Rồi đặc vụ biết về vài nhóm hành động.
+
+45
+00:01:48,160 --> 00:01:49,680
+Vì vậy, ví dụ, chúng tôi đã xác định một AI,
+
+46
+00:01:49,680 --> 00:01:52,360
+Đó là cách để giao tiếp với hệ thống của chúng ta.
+
+47
+00:01:52,360 --> 00:01:55,240
+Và chúng tôi có, ví dụ, xác định được mua gần đây
+
+48
+00:01:55,240 --> 00:01:58,160
+hoặc nhận được đề nghị mua hoặc nhận được chi tiết mua
+
+49
+00:01:58,160 --> 00:02:00,400
+và rồi một chứng minh thư cụ thể.
+
+50
+00:02:00,400 --> 00:02:02,680
+Vì vậy, tất cả những điều này được biết đến bởi các đại lý
+
+51
+00:02:02,680 --> 00:02:06,880
+trong điều kiện của những gì là đầu vào mong đợi cho các APIs
+
+52
+00:02:06,880 --> 00:02:08,240
+Và chúng làm gì?
+
+53
+00:02:08,240 --> 00:02:09,720
+Tài liệu xung quanh là gì?
+
+54
+00:02:09,720 --> 00:02:12,920
+Và tất cả những thứ này được cung cấp nhờ vào một bản tóm tắt mở.
+
+55
+00:02:12,920 --> 00:02:16,240
+Và vì vậy, khi thực hiện, tốt, tác nhân có thể kêu gọi những
+
+56
+00:02:16,240 --> 00:02:18,720
+và đằng sau cảnh, tất nhiên, tương tác
+
+57
+00:02:18,720 --> 00:02:19,600
+với hệ thống hậu phương.
+
+58
+00:02:19,600 --> 00:02:22,240
+Chẳng hạn, hãy thay đổi cơ sở dữ liệu.
+
+59
+00:02:22,240 --> 00:02:24,320
+Cách khác để thiết lập một nhóm hành động
+
+60
+00:02:24,320 --> 00:02:25,520
+là dùng hàm Lambda.
+
+61
+00:02:25,520 --> 00:02:28,520
+Vì vậy, chức năng Lambda là một cách để chạy một chút mã
+
+62
+00:02:28,520 --> 00:02:31,440
+ở AWS mà không cần cung cấp cơ sở hạ tầng.
+
+63
+00:02:31,440 --> 00:02:35,040
+Vì thế, Lambda có thể hoạt động trở lại
+
+64
+00:02:35,040 --> 00:02:37,560
+và ra lệnh thông qua đội Lambda.
+
+65
+00:02:37,560 --> 00:02:40,240
+Và nó có thể sử dụng cùng một cơ sở dữ liệu hoặc một cơ sở dữ liệu mới.
+
+66
+00:02:40,240 --> 00:02:42,280
+Nhưng ý tưởng là tôi muốn hiển thị ở đây
+
+67
+00:02:42,280 --> 00:02:44,720
+Rằng tác nhân có thể tương tác với một AI bên ngoài
+
+68
+00:02:44,720 --> 00:02:48,400
+hoặc với Lambda hoạt động trong tài khoản AWS.
+
+69
+00:02:48,400 --> 00:02:50,600
+Và cuối cùng, nó có thể truy cập vào các cơ sở kiến thức
+
+70
+00:02:50,600 --> 00:02:51,960
+tất nhiên.
+
+71
+00:02:51,960 --> 00:02:54,000
+Ví dụ, chúng ta có một cơ sở kiến thức
+
+72
+00:02:54,000 --> 00:02:56,840
+ở công ty chúng tôi, một chính sách vận chuyển
+
+73
+00:02:56,840 --> 00:02:58,520
+và quay lại chính sách, vân vân, vân vân.
+
+74
+00:02:58,520 --> 00:02:59,560
+Để chúng ta có thể có chúng.
+
+75
+00:02:59,560 --> 00:03:03,240
+Và vì vậy nếu người dùng đang yêu cầu một cái gì đó về chính sách trả về
+
+76
+00:03:03,240 --> 00:03:04,640
+để làm một mệnh lệnh,
+
+77
+00:03:04,640 --> 00:03:08,120
+Đặc vụ đủ thông minh để cung cấp điều đó cho người dùng.
+
+78
+00:03:08,120 --> 00:03:10,320
+Vì vậy, các đặc vụ rất thông minh và họ biết những gì để truy cập
+
+79
+00:03:10,320 --> 00:03:12,280
+và sau đó tự động chúng tôi sẽ biết làm thế nào để làm điều đó.
+
+80
+00:03:12,280 --> 00:03:13,880
+Vậy nó hoạt động như thế nào?
+
+81
+00:03:13,880 --> 00:03:15,600
+Chúng ta có một nhiệm vụ.
+
+82
+00:03:15,600 --> 00:03:18,000
+Và chúng tôi giao nhiệm vụ này cho một đại lý nền móng.
+
+83
+00:03:18,000 --> 00:03:20,240
+Bây giờ các đại lý sẽ xem xét các dấu nhắc.
+
+84
+00:03:20,240 --> 00:03:22,720
+Anh ta nhìn vào lịch sử cuộc trò chuyện,
+
+85
+00:03:22,720 --> 00:03:24,880
+nhìn vào tất cả các hành động có sẵn,
+
+86
+00:03:24,880 --> 00:03:26,600
+cũng như nền tảng kiến thức.
+
+87
+00:03:26,600 --> 00:03:28,240
+Những cấu trúc này là gì và nhiệm vụ là gì?
+
+88
+00:03:28,240 --> 00:03:31,560
+Tôi sẽ đem tất cả các thông tin này lại với nhau.
+
+89
+00:03:31,560 --> 00:03:34,760
+Và gửi nó đến một mô hình AI phát triển
+
+90
+00:03:34,760 --> 00:03:36,280
+Được hậu thuẫn bởi đá phiến Amazon.
+
+91
+00:03:36,280 --> 00:03:39,080
+Và nói rằng, xin vui lòng cho tôi biết làm thế nào bạn sẽ tiến hành
+
+92
+00:03:39,080 --> 00:03:42,280
+để thực hiện những hành động này cho tất cả những thông tin này.
+
+93
+00:03:42,280 --> 00:03:43,800
+Nó sử dụng chuỗi suy nghĩ.
+
+94
+00:03:43,800 --> 00:03:46,480
+Vì vậy, trong thực tế có nghĩa là kết quả của các mô hình nền
+
+95
+00:03:46,480 --> 00:03:48,400
+sẽ là một danh sách các bước.
+
+96
+00:03:48,400 --> 00:03:49,720
+Bước một vào đây.
+
+97
+00:03:49,720 --> 00:03:50,760
+Bước hai, làm điều này.
+
+98
+00:03:50,760 --> 00:03:54,160
+Bước ba, làm điều này và bước n, bước cuối cùng, làm điều đó.
+
+99
+00:03:54,160 --> 00:03:56,880
+Và vì vậy các bước sẽ được thực hiện bởi các đặc vụ.
+
+100
+00:03:56,880 --> 00:03:59,760
+Và vì vậy một trong những đầu tiên, gọi cho một cuộc gọi AI trên nhóm hành động này
+
+101
+00:03:59,760 --> 00:04:00,600
+và lấy kết quả.
+
+102
+00:04:00,600 --> 00:04:03,240
+Bước hai, làm điều đó chống lại bước ba, gọi một ADI khác,
+
+103
+00:04:03,240 --> 00:04:04,400
+vân vân.
+
+104
+00:04:04,400 --> 00:04:06,600
+Có lẽ bạn có thể sử dụng tìm kiếm vào một cơ sở kiến thức
+
+105
+00:04:06,600 --> 00:04:07,600
+và họ nhận được kết quả và vân vân.
+
+106
+00:04:07,600 --> 00:04:09,280
+Nhưng vì vậy các đại lý sẽ làm việc
+
+107
+00:04:09,280 --> 00:04:12,720
+Hãy vì chúng tôi làm mọi điều ấy, Cảm tạ các bước Chúa,
+
+108
+00:04:12,720 --> 00:04:15,360
+Nó được tạo ra bởi mô hình nền, thật tuyệt vời.
+
+109
+00:04:15,360 --> 00:04:18,840
+Và sau đó kết quả cuối cùng được trả lại cho tác nhân đá nền.
+
+110
+00:04:18,840 --> 00:04:21,880
+Các đại lý nền tảng sau đó gửi các nhiệm vụ và kết quả
+
+111
+00:04:21,880 --> 00:04:24,000
+cho một người mẫu khác.
+
+112
+00:04:24,000 --> 00:04:26,840
+Và mô hình nền sẽ tổng hợp tất cả mọi thứ
+
+113
+00:04:26,840 --> 00:04:28,920
+và đưa ra đáp ứng cuối cùng cho người dùng của chúng tôi
+
+114
+00:04:28,920 --> 00:04:30,560
+và chúng ta sẽ có phản hồi cuối cùng.
+
+115
+00:04:30,560 --> 00:04:32,480
+Vậy tất cả những điều này xảy ra phía sau.
+
+116
+00:04:32,480 --> 00:04:34,640
+Tất nhiên, chúng tôi sẽ chỉ sử dụng các đại lý và các đại lý
+
+117
+00:04:34,640 --> 00:04:37,400
+Những thứ đó và tự động chúng ta thấy phản ứng cuối cùng.
+
+118
+00:04:37,400 --> 00:04:39,160
+Cái nền này thật sự rất đẹp bởi vì anh thật sự...
+
+119
+00:04:39,160 --> 00:04:41,240
+Cái gì đó được gọi là truy tìm người đại diện của anh.
+
+120
+00:04:41,240 --> 00:04:43,840
+Và điều này cho phép bạn xem danh sách các bước
+
+121
+00:04:43,840 --> 00:04:45,040
+Cái đó được làm bởi đặc vụ.
+
+122
+00:04:45,040 --> 00:04:47,320
+Vì vậy, bạn có thể gỡ lỗi trong trường hợp bạn không thích một cách
+
+123
+00:04:47,320 --> 00:04:49,760
+một đặc vụ đã thực hiện điều gì đó.
+
+124
+00:04:49,760 --> 00:04:51,920
+Vậy là xong cho các đặc vụ Amazon.
+
+125
+00:04:51,920 --> 00:04:54,920
+Tôi hy vọng bạn thích nó và tôi sẽ nhìn thấy bạn trong bài giảng tiếp theo.
+
