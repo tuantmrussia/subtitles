@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:06,160
+ Okay, so now that we've seen JNAI and how to use it, let's look at bigger concepts around JNAI,
+
+2
+00:00:06,160 --> 00:00:10,560
+ more theoretical, but their importance understand and the exam can ask you things about it.
+
+3
+00:00:10,560 --> 00:00:16,560
+ So first is the process of tokenization. It's the idea of converting raw text into a sequence
+
+4
+00:00:16,560 --> 00:00:22,320
+ of tokens. What does that mean? Well, here is a sentence. Wow, learning it was with the
+
+5
+00:00:22,320 --> 00:00:29,040
+ fun is immensely fun. And here we have different ways of converting this words into tokens.
+
+6
+00:00:29,040 --> 00:00:34,880
+ So we can do word-based tokenization. And the text is going to be split into individual words,
+
+7
+00:00:34,880 --> 00:00:40,080
+ or we can have subword tokenization. And some words sometimes can be split too,
+
+8
+00:00:40,080 --> 00:00:45,360
+ which is very helpful for long words. And for the model, you have less number of tokens,
+
+9
+00:00:45,360 --> 00:00:51,280
+ because some tokens, for example, you say unacceptable is acceptable with you and in the beginning.
+
+10
+00:00:51,280 --> 00:00:56,880
+ And so therefore, you just need to understand that un is a negative and acceptable is the token
+
+11
+00:00:56,880 --> 00:01:02,480
+ acceptable. Hopefully that makes sense. So you can experiment at opening our website called tokenizer
+
+12
+00:01:02,480 --> 00:01:07,200
+ and I put the sentence while learning it was just a fun is immensely fun. As you can see,
+
+13
+00:01:07,200 --> 00:01:15,120
+ the while was a token. The comma itself is a token as well, learning it was with step
+
+14
+00:01:15,120 --> 00:01:20,240
+ analysis. So step and was split into because probably step and step and step are very close.
+
+15
+00:01:20,240 --> 00:01:26,400
+ Step is just my diminutive and un is probably just a French way of having my name. So it was split.
+
+16
+00:01:27,120 --> 00:01:32,160
+ Maric right now are is being split as well, probably an error, but the model will figure this out
+
+17
+00:01:32,160 --> 00:01:38,160
+ as it goes. And then is immensely fun. All of these are tokens and as well, the exclamation
+
+18
+00:01:38,160 --> 00:01:44,560
+ point is also a token. So tokenization is converting this words into tokens because now each token
+
+19
+00:01:44,560 --> 00:01:49,200
+ has an ID and it's much more easier to deal with IDs than to deal with the broad text itself.
+
+20
+00:01:49,200 --> 00:01:56,000
+ So the context window is super important. This is the number of tokens that an
+
+21
+00:01:56,000 --> 00:02:02,560
+ NLM can consider when generating text. So different models have different context windows and so
+
+22
+00:02:02,560 --> 00:02:08,080
+ the larger the context window, the more information and coherence. And so it's kind of a race now
+
+23
+00:02:08,080 --> 00:02:13,840
+ to have the greatest context window because the more context window you have, the more information
+
+24
+00:02:13,840 --> 00:02:23,360
+ you can feed to your JNAI model. So if you look at GPT for turbo, it's 128,000 tokens, cloud 2,100,000
+
+25
+00:02:23,360 --> 00:02:32,000
+ tokens. But for example, Google Gemini 1.5 Pro has 1 million tokens and up to 10 million token in the
+
+26
+00:02:32,000 --> 00:02:38,000
+ context window in research. And that means that for one million token, you can have a one-hour
+
+27
+00:02:38,000 --> 00:02:44,880
+ video fed to your model or 11 hours of audio or over 30,000 lines of code or 700,000 words.
+
+28
+00:02:44,880 --> 00:02:50,880
+ So this is very important because well, this really tells us that it's a very important factor.
+
+29
+00:02:50,880 --> 00:02:55,600
+ Now, when you have a large context window, I will say you're going to get more benefit out of it,
+
+30
+00:02:55,600 --> 00:03:00,560
+ but it will require more memory and more processing power, of course, and therefore it may cost
+
+31
+00:03:00,560 --> 00:03:06,720
+ a little more. So when you consider a model, the context window is going to be probably the first
+
+32
+00:03:06,720 --> 00:03:12,960
+ factor to consider, making sure that it fits your use case. Next, we have the concept of embeddings.
+
+33
+00:03:12,960 --> 00:03:17,200
+ So we've seen that a little bit with rag, but now we're going to go deep into how that works.
+
+34
+00:03:17,200 --> 00:03:22,160
+ So the idea is that you want to create vector and a vector is an array of numerical values,
+
+35
+00:03:22,160 --> 00:03:28,320
+ so many numerical values out of text images or audio. So for example, let's take some texts
+
+36
+00:03:28,320 --> 00:03:34,400
+ and we have the cat set on the mat. So first, we're going to do tokenization. So each word in this
+
+37
+00:03:34,400 --> 00:03:40,400
+ example is going to be extracted. The cat set on the mat. And then because we have tokenization,
+
+38
+00:03:40,400 --> 00:03:45,760
+ every word is going to be converted into a token ID. It's just a dictionary that says that
+
+39
+00:03:45,760 --> 00:03:52,560
+ the word there is a 165 and so on. Next, we're going to have an embeddings model. So this is where
+
+40
+00:03:52,560 --> 00:03:58,800
+ we're going to create a vector for each token. So as you can see here, the word cats, the token cats,
+
+41
+00:03:58,800 --> 00:04:05,520
+ if I may say, is going to be converted into a vector of many values here 0.025 and so on.
+
+42
+00:04:05,520 --> 00:04:11,200
+ And the word that is going to have its own vector and the vectors can be very big. It could be
+
+43
+00:04:11,200 --> 00:04:16,960
+ 100 values if we wanted to and all these vectors are going to be stored in a vector database.
+
+44
+00:04:16,960 --> 00:04:24,560
+ So why do we convert these tokens into vectors? Well, when we have the vectors with a very high
+
+45
+00:04:24,560 --> 00:04:30,800
+ dimensionality, we can actually encode many features for one input token. So we can have the
+
+46
+00:04:30,800 --> 00:04:36,560
+ meaning of the word. We can have the syntactic role, the sentiment, if it's a positive or negative
+
+47
+00:04:36,560 --> 00:04:42,160
+ word and so much more. And so the models is able to capture a lot of information about the word
+
+48
+00:04:42,160 --> 00:04:48,000
+ just by storing it into a high dimensionality vector. And this is what's used for vector databases
+
+49
+00:04:48,000 --> 00:04:54,400
+ and RAG. Finally, because embeddings model can be easily searchable thanks to nearest neighbor
+
+50
+00:04:54,400 --> 00:05:00,400
+ capability in vector databases, it is a very good way to use an embeddings model to power a search
+
+51
+00:05:00,400 --> 00:05:05,360
+ application. And that is something that can come up in the exam. So I will do my best to show you this.
+
+52
+00:05:05,360 --> 00:05:10,480
+ So words that have a semantic relationship that means they're similar will have similar embeddings.
+
+53
+00:05:10,480 --> 00:05:17,600
+ So if we take the token, dog, puppy, cat and houses, and we make a vector say with 100 dimension
+
+54
+00:05:17,600 --> 00:05:25,440
+ in them. So we may have 100 numerical values for each and every word or token. And so of course,
+
+55
+00:05:25,440 --> 00:05:31,200
+ for us, it's very difficult as humans to visualize 100 dimensions, we're very good at two dimensions.
+
+56
+00:05:31,200 --> 00:05:35,600
+ It's a sheet of paper. Three dimensions, we're very good at it because we can visualize things
+
+57
+00:05:35,600 --> 00:05:41,040
+ with our eyes in three dimensions. But 100 dimensions is very difficult. And so to visualize
+
+58
+00:05:41,040 --> 00:05:45,920
+ these things, sometimes we do what's called a dimensionality reduction. So we reduce these 100
+
+59
+00:05:45,920 --> 00:05:51,120
+ dimensions, for example, two or three dimensions. So if we did it, for example, we would see
+
+60
+00:05:51,120 --> 00:05:59,120
+ something like this. And in this two dimension diagram, we see that it looks like a puppy and a dog
+
+61
+00:05:59,120 --> 00:06:04,960
+ are related. Yes, because a puppy is a small dog. And we look like the cat is not too far away
+
+62
+00:06:04,960 --> 00:06:09,600
+ from a dog. Well, that's because it's an animal. But houses is very different. So it's going to
+
+63
+00:06:09,600 --> 00:06:16,000
+ be far away on that diagram. So of course, with two dimensions, we don't capture any kind of
+
+64
+00:06:16,000 --> 00:06:20,960
+ subtleness. But when we have 100 dimensions, we can really say which words relate to each other
+
+65
+00:06:20,960 --> 00:06:28,240
+ and why. Another way to visualize a high dimension vector is to use colors. So for example, we use
+
+66
+00:06:28,240 --> 00:06:33,120
+ color embedding and say each combination of numbers is going to make a color. And visually,
+
+67
+00:06:33,120 --> 00:06:38,000
+ we can see, for example, in this very simplified one, that the puppy and the dog, they're very
+
+68
+00:06:38,000 --> 00:06:43,040
+ similar because they have very similar colors. But house is very different. And so intuitively,
+
+69
+00:06:43,040 --> 00:06:49,360
+ you can say that, yes, there is a semantic relationship between tokens with similar embeddings.
+
+70
+00:06:49,360 --> 00:06:52,960
+ And that's why we use them. And that's why once we have them in a vector database,
+
+71
+00:06:52,960 --> 00:06:58,480
+ we can then do a similarity search on the vector database. So we give a dog and automatically
+
+72
+00:06:58,480 --> 00:07:04,720
+ we'll be able to pull out all the tokens that have a similar embedding as the dog. And that's it.
+
+73
+00:07:04,720 --> 00:07:09,280
+ So let's say for more concepts on gen AI, but they appear at the exam. So hopefully now you
+
+74
+00:07:09,280 --> 00:07:14,400
+ understand them, you'll be all good then. I hope you liked it. And I will see you in the next lecture.
+
