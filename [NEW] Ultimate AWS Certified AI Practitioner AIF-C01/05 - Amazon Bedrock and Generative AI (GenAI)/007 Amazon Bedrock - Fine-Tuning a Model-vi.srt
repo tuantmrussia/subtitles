@@ -1,0 +1,604 @@
+1
+00:00:00,000 --> 00:00:04,000
+Bây giờ chúng ta hãy nói về việc tinh chỉnh trên nền đất Amazon.
+
+2
+00:00:04,000 --> 00:00:07,200
+Vì vậy, tinh chỉnh sẽ là một phần lớn trong kỳ thi của bạn.
+
+3
+00:00:07,200 --> 00:00:11,600
+Vì vậy, ý tưởng là bạn sẽ điều chỉnh một bản sao của một mô hình nền tảng,
+
+4
+00:00:11,600 --> 00:00:14,000
+và bạn sẽ thêm dữ liệu của riêng bạn.
+
+5
+00:00:14,000 --> 00:00:15,400
+Vì vậy, khi bạn chỉnh sửa một mô hình,
+
+6
+00:00:15,400 --> 00:00:20,000
+Nó sẽ thực sự thay đổi khối lượng cơ bản của mô hình nền tảng.
+
+7
+00:00:20,000 --> 00:00:24,600
+Vì vậy, bạn cần cung cấp dữ liệu đào tạo và nó cần phải tuân theo một định dạng cụ thể,
+
+8
+00:00:24,600 --> 00:00:27,200
+Và nó cần được lưu trữ vào Amazon S3.
+
+9
+00:00:27,200 --> 00:00:30,000
+Vì vậy, ý tưởng là, ví dụ, bạn có mô hình LAMA2,
+
+10
+00:00:30,000 --> 00:00:32,400
+Và bạn sẽ thêm dữ liệu từ Amazon S3,
+
+11
+00:00:32,400 --> 00:00:38,400
+Ví dụ như dữ liệu này hoặc dữ liệu đó và chúng tôi sẽ có một cái nhìn vào dữ liệu này rất cụ thể trong các slide tiếp theo.
+
+12
+00:00:38,400 --> 00:00:40,800
+Và sau đó sàn nhà sẽ làm điều gì đó,
+
+13
+00:00:40,800 --> 00:00:44,200
+Và bạn sẽ nhận được một phiên bản tốt của LAMA2,
+
+14
+00:00:44,200 --> 00:00:46,400
+cũng có dữ liệu của riêng bạn.
+
+15
+00:00:46,400 --> 00:00:49,800
+Vì vậy, để sử dụng một mô hình tùy chỉnh tốt,
+
+16
+00:00:49,800 --> 00:00:51,800
+Anh phải sử dụng thứ được gọi là thiết bị thông qua,
+
+17
+00:00:51,800 --> 00:00:54,400
+Đó là một mô hình giá cả khác so với demand.
+
+18
+00:00:54,400 --> 00:00:57,400
+Và lưu ý rằng không phải tất cả các mô hình đều có thể được tinh chỉnh,
+
+19
+00:00:57,400 --> 00:01:00,400
+Nhưng anh có thể kết thúc nguồn mở thông thường.
+
+20
+00:01:00,400 --> 00:01:02,400
+Vậy làm thế nào chúng ta có thể tinh chỉnh một mô hình?
+
+21
+00:01:02,400 --> 00:01:05,400
+Vâng, chúng tôi có hướng dẫn tốt.
+
+22
+00:01:05,400 --> 00:01:09,600
+Và ở đây, đây là để cải thiện hiệu suất trên mô hình trước khi đào tạo,
+
+23
+00:01:09,600 --> 00:01:11,400
+trong các nhiệm vụ cụ thể về miền.
+
+24
+00:01:11,400 --> 00:01:14,200
+Vì vậy, nó có nghĩa là gì nhiệm vụ cụ thể miền là bạn sẽ nhìn thấy một kỳ thi?
+
+25
+00:01:14,200 --> 00:01:19,800
+Điều đó có nghĩa là nó sẽ được đào tạo trên một lĩnh vực cụ thể hoặc lĩnh vực kiến thức.
+
+26
+00:01:19,800 --> 00:01:23,600
+Và ở đây, bạn cần phải đi và tìm kiếm cho kỳ thi
+
+27
+00:01:23,600 --> 00:01:28,200
+là hướng dẫn sử dụng tốt được gọi là ví dụ được dán nhãn,
+
+28
+00:01:28,200 --> 00:01:30,800
+và chúng sẽ nhanh chóng phản ứng theo cặp.
+
+29
+00:01:30,800 --> 00:01:32,800
+Vì vậy, nó là cho dữ liệu dán nhãn,
+
+30
+00:01:32,800 --> 00:01:35,200
+Và các cặp trả lời nhanh chóng nhìn vào điều này,
+
+31
+00:01:35,200 --> 00:01:37,800
+Dấu nhắc là ai là fanerk, ví dụ,
+
+32
+00:01:37,800 --> 00:01:40,200
+và hoàn thành, nên câu trả lời là,
+
+33
+00:01:40,200 --> 00:01:43,200
+Fanarek cứng là một người có khả năng kết cấu người dành thời gian của mình
+
+34
+00:01:43,200 --> 00:01:45,400
+Để tạo ra những khóa học tốt nhất,
+
+35
+00:01:45,400 --> 00:01:49,400
+Để học sinh của anh ta có thể vượt qua mọi bằng chứng bằng màu sắc bay.
+
+36
+00:01:49,400 --> 00:01:53,800
+Và ở đây, trên hết là cung cấp thông tin cho mô hình,
+
+37
+00:01:53,800 --> 00:01:58,000
+Chúng tôi cũng đang ném mô hình như thế nào ông muốn nó đặt ra một số câu hỏi,
+
+38
+00:01:58,000 --> 00:01:59,400
+chẳng hạn như người hâm mộ.
+
+39
+00:01:59,400 --> 00:02:02,600
+Có lẽ câu trả lời cho mô hình sẽ giống nhau,
+
+40
+00:02:02,600 --> 00:02:04,400
+nhưng với một giọng điệu khác.
+
+41
+00:02:04,400 --> 00:02:07,400
+Vì vậy, đây là nơi hướng dẫn dựa trên tốt nhất có ích.
+
+42
+00:02:07,400 --> 00:02:10,000
+Tiếp theo, chúng ta tiếp tục luyện tập.
+
+43
+00:02:10,000 --> 00:02:14,600
+Vì vậy ở đây, ý tưởng là chúng tôi tiếp tục đào tạo mô hình nền tảng.
+
+44
+00:02:14,600 --> 00:02:16,600
+Vì vậy ở đây, bởi vì chúng ta biết mô hình nền tảng
+
+45
+00:02:16,600 --> 00:02:19,800
+Tôi đã được thử sử dụng dữ liệu không có nhãn, chúng tôi cũng cần cung cấp
+
+46
+00:02:19,800 --> 00:02:22,400
+để tiếp tục trước khi đào tạo dữ liệu không có nhãn.
+
+47
+00:02:22,400 --> 00:02:24,400
+Và đây là một cái gì đó bạn tìm kiếm trong kỳ thi,
+
+48
+00:02:24,400 --> 00:02:28,200
+Nếu bạn có dữ liệu chưa được đánh dấu, đây là một loại tinh chỉnh bạn cần.
+
+49
+00:02:28,200 --> 00:02:31,600
+Và vì vậy nó cũng được gọi là mô phỏng miền tốt
+
+50
+00:02:31,600 --> 00:02:34,400
+Để làm một mô hình một chuyên gia về một lĩnh vực cụ thể.
+
+51
+00:02:34,400 --> 00:02:38,600
+Ví dụ, tôi sẽ cung cấp toàn bộ tài liệu về AWS
+
+52
+00:02:38,600 --> 00:02:42,400
+để một mô hình, và sau đó mô hình sẽ là một chuyên gia về AWS.
+
+53
+00:02:42,400 --> 00:02:45,000
+Vì vậy, ở đây, chúng tôi chỉ cung cấp cho tất cả các tài liệu
+
+54
+00:02:45,000 --> 00:02:47,800
+với dữ liệu chưa được đánh dấu, vì vậy đây là tiếp tục trước khi đào tạo.
+
+55
+00:02:47,800 --> 00:02:52,000
+Và bây giờ, mô hình đã trở thành một chuyên gia lĩnh vực.
+
+56
+00:02:52,000 --> 00:02:53,800
+Đây là loại đầu vào bạn có ở đây.
+
+57
+00:02:53,800 --> 00:02:57,200
+Như các bạn thấy, không có dấu chấm phẩy, chỉ có đầu vào.
+
+58
+00:02:57,200 --> 00:03:00,000
+Và đầu vào chỉ là rất nhiều thông tin.
+
+59
+00:03:00,000 --> 00:03:03,600
+Vì vậy, ở đây, thông tin này là xung quanh dữ liệu tài chính.
+
+60
+00:03:03,600 --> 00:03:05,400
+Và như bạn thấy, nếu bạn muốn đọc thông qua nó,
+
+61
+00:03:05,400 --> 00:03:07,200
+Nó có rất nhiều từ viết tắt.
+
+62
+00:03:07,200 --> 00:03:09,400
+Và vì vậy điều này là rất tốt để dạy các từ viết tắt
+
+63
+00:03:09,400 --> 00:03:13,000
+hoặc đưa thuật ngữ cụ thể công nghiệp vào mô hình.
+
+64
+00:03:13,000 --> 00:03:15,800
+Và sau đó bạn có thể tiếp tục đào tạo mô hình,
+
+65
+00:03:15,800 --> 00:03:20,000
+Nó được gọi là việc huấn luyện liên tục, khi có nhiều dữ liệu hơn.
+
+66
+00:03:20,000 --> 00:03:23,800
+Ok, tiếp theo, bạn có thể gặp phải một tin nhắn đơn
+
+67
+00:03:23,800 --> 00:03:25,600
+và nhiều tin nhắn.
+
+68
+00:03:25,600 --> 00:03:28,600
+Vì vậy, đây là một tập hợp phụ của hướng dẫn tốt.
+
+69
+00:03:28,600 --> 00:03:31,200
+Nhưng ý tưởng ở đây, chúng tôi sẽ cho một gợi ý
+
+70
+00:03:31,200 --> 00:03:34,000
+vào một người dùng và một trợ lý.
+
+71
+00:03:34,000 --> 00:03:36,400
+Người dùng đang hỏi gì và trợ lý là gì,
+
+72
+00:03:36,400 --> 00:03:38,200
+Nên con robot phải trả lời.
+
+73
+00:03:38,200 --> 00:03:39,600
+Ở đây chúng ta có hệ thống.
+
+74
+00:03:39,600 --> 00:03:42,000
+Đây là bối cảnh cho cuộc nói chuyện.
+
+75
+00:03:42,000 --> 00:03:45,200
+Thông điệp sẽ chứa đựng nhiều thông điệp.
+
+76
+00:03:45,200 --> 00:03:48,000
+Mỗi sẽ có một vai trò, đó là người dùng của trợ lý,
+
+77
+00:03:48,000 --> 00:03:51,000
+và nội dung là nội dung của thông điệp.
+
+78
+00:03:51,000 --> 00:03:55,000
+Vì vậy, ở đây chúng tôi đang tốt hơn so với cách một robot chat trả lời.
+
+79
+00:03:55,000 --> 00:03:58,600
+Và đối với nhiều tin nhắn, đây là cùng một ý tưởng,
+
+80
+00:03:58,600 --> 00:04:01,000
+Nhưng lần này chúng ta sẽ nói chuyện.
+
+81
+00:04:01,000 --> 00:04:02,600
+Chúng ta có nhiều lượt.
+
+82
+00:04:02,600 --> 00:04:05,600
+Và ở đây chúng tôi xen kẽ giữa người dùng và trợ lý vai trò.
+
+83
+00:04:05,600 --> 00:04:10,000
+Và chúng tôi có một cuộc trò chuyện và điều này giúp các mô hình hiểu
+
+84
+00:04:10,000 --> 00:04:13,600
+Làm thế nào để xử lý cuộc trò chuyện với bối cảnh lớn hơn.
+
+85
+00:04:13,600 --> 00:04:16,200
+Thật tốt khi biết điều đó.
+
+86
+00:04:16,200 --> 00:04:18,400
+Trước hết, huấn luyện lại và mô hình tài chính
+
+87
+00:04:18,400 --> 00:04:22,000
+Cần có ngân sách cao hơn vì bạn cần phải chi tiêu
+
+88
+00:04:22,000 --> 00:04:23,600
+Một số phép tính trong đó.
+
+89
+00:04:23,600 --> 00:04:27,600
+Vì vậy, dạy dỗ dựa trên tốt thường sẽ được rẻ hơn
+
+90
+00:04:27,600 --> 00:04:29,600
+Bởi vì các phép tính ít mạnh hơn.
+
+91
+00:04:29,600 --> 00:04:32,200
+Và thông thường, bạn có ít dữ liệu đòi hỏi hơn.
+
+92
+00:04:32,200 --> 00:04:35,000
+Bạn đang cố gắng tinh chỉnh làm thế nào mô hình
+
+93
+00:04:35,000 --> 00:04:38,200
+là trả lời dựa trên những chỉ dẫn cụ thể.
+
+94
+00:04:38,200 --> 00:04:41,400
+Nếu bạn sử dụng tiếp tục trước khi đào tạo, nó thường đắt hơn
+
+95
+00:04:41,400 --> 00:04:44,000
+Bởi vì bạn cần có nhiều dữ liệu hơn.
+
+96
+00:04:44,000 --> 00:04:47,000
+Hơn nữa, nó đòi hỏi bạn phải có một kinh nghiệm học máy tính
+
+97
+00:04:47,000 --> 00:04:49,400
+Kỹ sư để thực hiện nhiệm vụ, mặc dù thuốc
+
+98
+00:04:49,400 --> 00:04:51,000
+Làm cho nó dễ dàng cho bạn.
+
+99
+00:04:51,000 --> 00:04:54,200
+Và bạn phải chuẩn bị dữ liệu, bạn phải thực hiện việc tinh chỉnh,
+
+100
+00:04:54,200 --> 00:04:56,000
+và cũng đánh giá các mô hình.
+
+101
+00:04:56,000 --> 00:04:58,200
+Và cuối cùng, bởi vì bạn có một mô hình tinh chỉnh,
+
+102
+00:04:58,200 --> 00:05:01,600
+Nó cũng tốn kém hơn bởi vì bạn phải sử dụng các thiết bị dự trữ thông qua.
+
+103
+00:05:01,600 --> 00:05:04,080
+Bây giờ chúng ta hãy nói về việc chuyển đổi học tập.
+
+104
+00:05:04,080 --> 00:05:07,400
+Vì vậy, chuyển đổi học tập là một chút rộng hơn so với tinh chỉnh.
+
+105
+00:05:07,400 --> 00:05:10,600
+Đó là khái niệm sử dụng một mô hình đã được đào tạo.
+
+106
+00:05:10,600 --> 00:05:13,600
+để thích nghi với một nhiệm vụ mới.
+
+107
+00:05:13,600 --> 00:05:15,800
+Ví dụ, chúng ta có Mây 3 và sau đó chúng ta là
+
+108
+00:05:15,800 --> 00:05:19,400
+sẽ chuyển nó sang một nhiệm vụ mới.
+
+109
+00:05:19,400 --> 00:05:22,200
+Vì vậy, bạn nói có thể nó rất giống với tinh tế,
+
+110
+00:05:22,200 --> 00:05:23,000
+và đúng vậy.
+
+111
+00:05:23,000 --> 00:05:25,400
+Nhưng để phân loại hình ảnh,
+
+112
+00:05:25,400 --> 00:05:27,640
+Chúng ta có thể sử dụng một mô hình đã được đào tạo.
+
+113
+00:05:27,640 --> 00:05:31,000
+mà biết cách nhận diện các cạnh và hình ảnh.
+
+114
+00:05:31,000 --> 00:05:33,560
+Nhưng chúng tôi có thể muốn chuyển tiếp học tập
+
+115
+00:05:33,560 --> 00:05:37,760
+để áp dụng nó để nhận ra một loại hình ảnh đặc biệt.
+
+116
+00:05:37,760 --> 00:05:41,480
+Hoặc cho việc xử lý ngôn ngữ, ví dụ,
+
+117
+00:05:41,480 --> 00:05:43,160
+Sinh con hoặc GPT.
+
+118
+00:05:43,160 --> 00:05:45,760
+Một lần nữa, họ biết cách xử lý ngôn ngữ.
+
+119
+00:05:45,760 --> 00:05:47,880
+Vì vậy, bây giờ chúng tôi đã có ngôn ngữ tìm ra,
+
+120
+00:05:47,880 --> 00:05:50,680
+Hãy chỉ cần tìm đến họ hoặc sử dụng chuyển học tập
+
+121
+00:05:50,680 --> 00:05:52,920
+để thích nghi với những nhiệm vụ mới hơn.
+
+122
+00:05:52,920 --> 00:05:55,080
+Vì vậy, chuyển đổi học tập là trong bài giảng này,
+
+123
+00:05:55,080 --> 00:05:57,840
+Bởi vì nó có thể xuất hiện trong kỳ thi như một cỗ máy chung
+
+124
+00:05:57,840 --> 00:06:00,520
+Học tập khái niệm mà sẽ được sử dụng, ví dụ,
+
+125
+00:06:00,520 --> 00:06:04,120
+để, như định nghĩa nói, thích nghi một mô hình với một nhiệm vụ mới.
+
+126
+00:06:04,120 --> 00:06:05,680
+Vì vậy, nếu bạn không nhìn thấy tốt-tuning,
+
+127
+00:06:05,680 --> 00:06:09,360
+Chỉ cần biết rằng câu trả lời chung là sử dụng việc học chuyển tiếp,
+
+128
+00:06:09,360 --> 00:06:13,600
+bởi vì tinh chỉnh là một loại chuyển giao học tập cụ thể.
+
+129
+00:06:13,600 --> 00:06:15,320
+Vì vậy, các trường hợp sử dụng tốt nhất là,
+
+130
+00:06:15,320 --> 00:06:17,440
+Ví dụ, để có một trò chơi chat được thiết kế
+
+131
+00:06:17,440 --> 00:06:19,640
+Với một người đặc biệt, giọng điệu của chúng ta,
+
+132
+00:06:19,640 --> 00:06:21,400
+hoặc đi đến một mục đích cụ thể,
+
+133
+00:06:21,400 --> 00:06:25,000
+chẳng hạn như hỗ trợ khách hàng, hoặc làm quảng cáo.
+
+134
+00:06:25,000 --> 00:06:27,800
+Nó cũng là để đào tạo tại nhiều hơn lên đến cập nhật
+
+135
+00:06:27,800 --> 00:06:30,160
+Hơn những gì mô hình trước đây truy cập.
+
+136
+00:06:30,160 --> 00:06:33,320
+Ngoài ra, là để đào tạo nó với dữ liệu độc quyền mà bạn chỉ có.
+
+137
+00:06:33,320 --> 00:06:36,440
+Ví dụ như, email lịch sử hay tin nhắn,
+
+138
+00:06:36,440 --> 00:06:38,560
+hoặc hồ sơ cho dịch vụ phục vụ khách hàng.
+
+139
+00:06:38,560 --> 00:06:41,200
+Tất nhiên, mô hình cơ bản không có quyền truy cập vào điều này,
+
+140
+00:06:41,200 --> 00:06:42,840
+bởi vì đây là dữ liệu của bạn.
+
+141
+00:06:42,840 --> 00:06:46,040
+Và cho mục tiêu sử dụng trường hợp như phân loại,
+
+142
+00:06:46,040 --> 00:06:47,880
+hoặc đánh giá độ chính xác.
+
+143
+00:06:47,880 --> 00:06:49,280
+Vì vậy, hãy xem cho tinh chỉnh.
+
+144
+00:06:49,280 --> 00:06:51,360
+Bài kiểm tra sẽ hỏi anh khi nào thì hát tốt
+
+145
+00:06:51,360 --> 00:06:53,680
+là một ý tưởng tốt, và loại tinh chỉnh bạn sẽ cần
+
+146
+00:06:53,680 --> 00:06:55,880
+dựa trên loại dữ liệu bạn nhận được, ví dụ,
+
+147
+00:06:55,880 --> 00:06:57,560
+@ info/ rich
+
+148
+00:06:57,560 --> 00:06:59,640
+cũng như vài câu hỏi giá trị.
+
+149
+00:06:59,640 --> 00:07:00,480
+Được rồi.
+
+150
+00:07:00,480 --> 00:07:01,600
+Hy vọng anh thích.
+
+151
+00:07:01,600 --> 00:07:03,640
+Và tôi sẽ gặp lại bạn trong bài giảng tiếp theo.
+
