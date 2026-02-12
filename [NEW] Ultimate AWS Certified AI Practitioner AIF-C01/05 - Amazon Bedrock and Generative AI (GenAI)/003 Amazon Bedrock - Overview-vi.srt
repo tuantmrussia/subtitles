@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:02,640
+Giờ hãy nói về Amazon Bedrock.
+
+2
+00:00:02,640 --> 00:00:06,200
+Vậy Amazon Bedrock là một dịch vụ ở AWS.
+
+3
+00:00:06,200 --> 00:00:10,160
+Họ sẽ sử dụng để xây dựng ứng dụng AI sáng tạo.
+
+4
+00:00:10,160 --> 00:00:15,240
+Vì vậy, nó rất mạnh mẽ và nó cho phép bạn thông qua một giao diện để chơi với nhiều mô hình
+
+5
+00:00:15,240 --> 00:00:18,240
+và cấu hình chúng để có được kết quả bạn muốn.
+
+6
+00:00:18,240 --> 00:00:21,840
+Nó được gọi là dịch vụ quản lý đầy đủ có nghĩa là cho bạn,
+
+7
+00:00:21,840 --> 00:00:23,680
+Không có dịch vụ nào được quản lý.
+
+8
+00:00:23,680 --> 00:00:28,480
+Bạn chỉ cần sử dụng dịch vụ trên AWS và dịch vụ mạng Amazon sẽ đảm bảo
+
+9
+00:00:28,480 --> 00:00:31,040
+Rằng dịch vụ đang làm việc cho anh.
+
+10
+00:00:31,040 --> 00:00:36,240
+Vì vậy, bạn sẽ giữ kiểm soát tất cả các dữ liệu bạn sẽ sử dụng để đào tạo mô hình
+
+11
+00:00:36,240 --> 00:00:38,640
+Bởi vì nó xảy ra trong tài khoản của anh.
+
+12
+00:00:38,640 --> 00:00:40,720
+Nó không bao giờ rời tài khoản của anh.
+
+13
+00:00:40,720 --> 00:00:43,520
+Bạn sẽ có một tờ giấy sử dụng giá trị mô hình
+
+14
+00:00:43,520 --> 00:00:46,880
+Nhưng chúng ta sẽ đi vào mô hình giá cả sau này.
+
+15
+00:00:46,880 --> 00:00:50,880
+Có một hệ thống AI thống thống nhất vì vậy mà có nghĩa là để truy cập Amazon Bedrock
+
+16
+00:00:50,880 --> 00:00:53,200
+Và rất nhiều mô hình phía sau Bedrock Amazon,
+
+17
+00:00:53,200 --> 00:00:55,600
+bạn chỉ có một cách để làm điều đó mà được chuẩn hóa.
+
+18
+00:00:56,320 --> 00:00:59,200
+Bạn có thể tận dụng một loạt các mô hình cơ bản.
+
+19
+00:00:59,200 --> 00:01:02,160
+Chúng ta sẽ kiểm tra chúng trong một giây và trên đầu trang của nó,
+
+20
+00:01:02,160 --> 00:01:06,480
+bạn có các tính năng nâng cao như là RAG hoặc LM đại diện
+
+21
+00:01:06,480 --> 00:01:12,080
+Và bạn nhận được an ninh, riêng tư, quản lý và có trách nhiệm AI cũng
+
+22
+00:01:12,080 --> 00:01:13,200
+ở Amazon Bedrock.
+
+23
+00:01:13,200 --> 00:01:15,520
+Vì vậy, chúng tôi sẽ dành một chút thời gian tìm hiểu về nó
+
+24
+00:01:15,520 --> 00:01:17,200
+và tập luyện cùng nhau.
+
+25
+00:01:17,200 --> 00:01:23,280
+Vậy chúng ta có thể truy cập vào nền tảng nào của Amazon Bedrock?
+
+26
+00:01:23,280 --> 00:01:29,760
+Nhiều công ty có thỏa thuận với AWS để xuất bản mô hình của họ trên Bedrock.
+
+27
+00:01:29,760 --> 00:01:34,480
+Vì vậy, chúng tôi có Al21 Lab, chúng tôi có cohere,
+
+28
+00:01:34,480 --> 00:01:37,680
+Chúng ta có AI ổn định, chúng ta có Amazon riêng,
+
+29
+00:01:37,680 --> 00:01:42,480
+Chúng ta có thuốc giảm đau, meta, và tất nhiên theo thời gian,
+
+30
+00:01:42,480 --> 00:01:45,520
+thêm các mô hình nền tảng và nhiều công ty phía sau các mô hình này
+
+31
+00:01:45,520 --> 00:01:47,840
+sẽ được thêm vào Amazon Bedrock.
+
+32
+00:01:47,840 --> 00:01:50,880
+Vì vậy, cách nó hoạt động mà bất cứ khi nào bạn sử dụng một trong những mô hình này,
+
+33
+00:01:50,880 --> 00:01:56,240
+Amazon Bedrock sẽ làm một bản sao của mô hình nền tảng, FM,
+
+34
+00:01:56,240 --> 00:01:58,240
+Và nó sẽ chỉ dành cho anh.
+
+35
+00:01:58,240 --> 00:02:01,760
+Và sau đó trong một số trường hợp, bạn sẽ có thể sử dụng dữ liệu của riêng bạn
+
+36
+00:02:01,760 --> 00:02:03,600
+để điều chỉnh tốt các mô hình cho phù hợp với nhu cầu của bạn.
+
+37
+00:02:03,600 --> 00:02:07,280
+Một lần nữa, bạn cần biết rằng không có dữ liệu của bạn
+
+38
+00:02:07,280 --> 00:02:10,640
+sẽ được sử dụng và gửi trở lại cho một trong những nhà cung cấp
+
+39
+00:02:10,640 --> 00:02:12,240
+để đào tạo mô hình nền tảng.
+
+40
+00:02:12,240 --> 00:02:16,800
+Những gì bạn nhận được sẽ xảy ra tất cả trong tài khoản của bạn và chỉ trong tài khoản của bạn.
+
+41
+00:02:17,600 --> 00:02:21,600
+Vì vậy, nó luôn luôn có ích để có được một sơ đồ để hiểu một dịch vụ.
+
+42
+00:02:21,600 --> 00:02:23,440
+Tôi muốn nói một cái cho Amazon Bedrock.
+
+43
+00:02:23,440 --> 00:02:26,560
+Vì vậy, chúng tôi có trung tâm của nó mô hình nền tảng.
+
+44
+00:02:26,560 --> 00:02:29,680
+Và đó là những người chúng tôi đã thấy và chúng tôi sẽ có một cái nhìn trong tay
+
+45
+00:02:29,680 --> 00:02:31,920
+Để xem chúng ta có thể chọn chúng như thế nào.
+
+46
+00:02:31,920 --> 00:02:34,480
+Và chúng ta sẽ có một sân chơi tương tác
+
+47
+00:02:34,480 --> 00:02:37,440
+rằng chúng ta sẽ có một cái nhìn vào nó cũng như trong bài giảng tiếp theo
+
+48
+00:02:37,440 --> 00:02:41,600
+Trong đó, là một người dùng, chúng tôi sẽ chọn một mô hình mà chúng tôi muốn sử dụng.
+
+49
+00:02:41,600 --> 00:02:45,120
+Và sau đó chúng tôi sẽ bắt đầu đặt câu hỏi cho mô hình, ví dụ.
+
+50
+00:02:45,120 --> 00:02:48,240
+Món ăn phổ biến nhất ở Ý là gì?
+
+51
+00:02:48,240 --> 00:02:51,760
+Và rồi có thể sân chơi sẽ trả lời pizza và mì ống.
+
+52
+00:02:51,760 --> 00:02:55,520
+Trên hết, điều này chỉ cho các tương tác cơ bản,
+
+53
+00:02:55,520 --> 00:02:58,720
+Nhưng chúng ta cũng có thể có nền tảng kiến thức hoặc giẻ rách.
+
+54
+00:02:58,720 --> 00:03:01,200
+Và chúng ta sẽ có một bài giảng đầy đủ dành cho điều này.
+
+55
+00:03:01,200 --> 00:03:03,440
+Nên đừng lo nếu bây giờ anh không hiểu.
+
+56
+00:03:03,440 --> 00:03:07,200
+Nhưng ý tưởng là chúng tôi sẽ có thể cung cấp nhiều hơn liên quan
+
+57
+00:03:07,200 --> 00:03:11,920
+và phản ứng chính xác hơn bằng cách lấy dữ liệu từ dữ liệu bên ngoài
+
+58
+00:03:11,920 --> 00:03:14,080
+Nó có thể có câu trả lời cho chúng ta.
+
+59
+00:03:14,080 --> 00:03:18,160
+Đừng lo, chúng ta cũng sẽ đào sâu vào nền tảng kiến thức.
+
+60
+00:03:18,160 --> 00:03:20,640
+Chúng ta có thể điều chỉnh nền tảng tốt.
+
+61
+00:03:20,640 --> 00:03:23,040
+Điều đó có nghĩa là chúng tôi sẽ mang lại dữ liệu của riêng chúng tôi
+
+62
+00:03:23,040 --> 00:03:26,560
+và chúng tôi sẽ cập nhật các mô hình nền tảng trong tài khoản của chúng tôi một lần nữa
+
+63
+00:03:26,560 --> 00:03:31,920
+với dữ liệu của chúng tôi để chắc chắn rằng nó thích nghi hơn với trường hợp sử dụng của chúng tôi
+
+64
+00:03:31,920 --> 00:03:33,440
+và dữ liệu của chúng tôi.
+
+65
+00:03:33,440 --> 00:03:38,240
+Và cuối cùng, để truy cập tất cả những điều này sẽ được thống nhất lại.
+
+66
+00:03:38,240 --> 00:03:39,680
+Vì vậy, nó sẽ giống nhau cho tất cả các mô hình.
+
+67
+00:03:39,680 --> 00:03:41,680
+Điều đó có nghĩa là tất cả các ứng dụng của bạn
+
+68
+00:03:41,680 --> 00:03:44,160
+Chỉ đi theo một cách đến Amazon ruprock
+
+69
+00:03:44,160 --> 00:03:47,200
+và sau đó là đá phiến Amazon sẽ làm phép màu cho chúng ta.
+
+70
+00:03:47,200 --> 00:03:48,800
+Vậy là xong cho bài giảng này.
+
+71
+00:03:48,800 --> 00:03:51,680
+Tôi hy vọng bạn thích nó và tôi sẽ nhìn thấy bạn trong bài giảng tiếp theo
+
+72
+00:03:51,680 --> 00:03:54,880
+để luyện tập trên nền đá Amazon.
+
