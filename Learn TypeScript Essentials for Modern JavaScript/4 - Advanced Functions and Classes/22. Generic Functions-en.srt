@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:06,000
+ In this lesson we're going to be focusing on generic functions and TypeScript.
+
+2
+00:00:06,000 --> 00:00:12,360
+ To generic functions, let us write, file-exable and reusable functions while still keeping
+
+3
+00:00:12,360 --> 00:00:13,840
+ full-type safety.
+
+4
+00:00:13,840 --> 00:00:20,000
+ And you're going to use this whenever you might want to be tempted to reach for the keyword
+
+5
+00:00:20,000 --> 00:00:23,600
+ any but felt uncomfortable doing so.
+
+6
+00:00:23,600 --> 00:00:32,400
+ So imagine for example we have a function, and our function of identity, and we want to supply
+
+7
+00:00:32,400 --> 00:00:43,600
+ it any value, any type, might simply do return the value and let's do return value.
+
+8
+00:00:43,600 --> 00:00:49,240
+ Now this works, but TypeScript's going to lose all the information about this value
+
+9
+00:00:49,240 --> 00:00:55,640
+ is type. So if it returns a string, TypeScript doesn't even know that anymore.
+
+10
+00:00:55,640 --> 00:01:00,240
+ And this is where we're going to introduce or have a generic function, which allows us
+
+11
+00:01:00,240 --> 00:01:03,400
+ to define a placeholder for any type.
+
+12
+00:01:03,400 --> 00:01:15,000
+ And we do that by using the angle, and then T. This is going to basically the format
+
+13
+00:01:15,000 --> 00:01:21,520
+ or to finding a generic type. Let's now turn our function, our same identity function
+
+14
+00:01:21,520 --> 00:01:27,080
+ into a generic function, so function_identity, that's the same.
+
+15
+00:01:27,080 --> 00:01:35,000
+ And now we actually do angle brackets T, and then our brackets for our parameters, so value,
+
+16
+00:01:35,000 --> 00:01:42,400
+ and we say the value, rather than any is now of this generic type T. The function can
+
+17
+00:01:42,400 --> 00:01:50,640
+ also return any type or our typed generic type, so that's also our type T.
+
+18
+00:01:50,640 --> 00:01:57,600
+ Because we have a type T, this means that our parameter and our return type, both the
+
+19
+00:01:57,600 --> 00:02:09,640
+ same type of T. Now we just return our value, and that's our generic function.
+
+20
+00:02:09,640 --> 00:02:17,040
+ And let's see how that works. Let's say we have const num, for numbers, we call our
+
+21
+00:02:17,040 --> 00:02:24,000
+ identity function, and we need to find the actual type that wants here to be. So we want
+
+22
+00:02:24,000 --> 00:02:30,000
+ it to be a number in this case. We put number in brackets, angle brackets, and then we can
+
+23
+00:02:30,000 --> 00:02:36,800
+ define the actual parameters. And notice that TypeScript is now prompting us for the value
+
+24
+00:02:36,800 --> 00:02:42,240
+ as a number, because we defined it here. Now you can just do 10, let's go into return
+
+25
+00:02:42,240 --> 00:02:50,600
+ us, an integer of number. But let's say we want to now pass its string, rather than
+
+26
+00:02:50,600 --> 00:02:57,760
+ a number, we can do const text equals identity again, and in angle brackets, we're going
+
+27
+00:02:57,760 --> 00:03:03,720
+ to say the type of string. And now look, what TypeScript does, it then prompts us for the
+
+28
+00:03:03,720 --> 00:03:08,840
+ value as a string, we do hello, and it's going to go into return a string. So you can
+
+29
+00:03:08,840 --> 00:03:15,240
+ immediately see that although this looks quite complicated here, it actually is quite straightforward
+
+30
+00:03:15,240 --> 00:03:23,040
+ by just finding the type we want inside the angle brackets here. We could also use inference
+
+31
+00:03:23,040 --> 00:03:29,920
+ as well. So if we did, for example, rather than string, we just remove string from here,
+
+32
+00:03:29,920 --> 00:03:35,000
+ TypeScripts can be smart enough to understand that it's because we're by supplying a string
+
+33
+00:03:35,000 --> 00:03:41,640
+ here, that we are dealing with strings. And if I then change it to say a number, like
+
+34
+00:03:41,640 --> 00:03:49,080
+ 10, again, it then knows that this is going to be a number that's coming out of it.
+
+35
+00:03:49,080 --> 00:03:56,560
+ We could also use our function for doing things as an array. So let's say, for example,
+
+36
+00:03:56,560 --> 00:04:05,200
+ we've got a function like this, and a function getverse, and going to use our t again,
+
+37
+00:04:05,200 --> 00:04:16,560
+ but we're going to this time supply an array of generic t's types to do t, but we can now
+
+38
+00:04:16,560 --> 00:04:24,960
+ do a two square brackets after it. So we have an array of type t. Our function is going
+
+39
+00:04:24,960 --> 00:04:34,400
+ to return t. This is to return an array. And now we can do our array of first elements
+
+40
+00:04:34,400 --> 00:04:42,400
+ by doing our ar.0. Now we can call our get first function, and we can supply an array
+
+41
+00:04:42,400 --> 00:04:50,200
+ like 123. And that, of course, will return one. We could do gets first, and then maybe
+
+42
+00:04:50,200 --> 00:04:58,960
+ do an array of strings, like one, doing three, or whatever, one and two. And it's going
+
+43
+00:04:58,960 --> 00:05:10,400
+ to return the very first one of that array. But a generic function can also contain more
+
+44
+00:05:10,400 --> 00:05:17,760
+ than one type. We've only got one in this particular example. So let's do another function,
+
+45
+00:05:17,760 --> 00:05:24,040
+ and we're going to now have two types. So how do we do that? We have function, so pair,
+
+46
+00:05:24,040 --> 00:05:34,880
+ we have letter t. And now by convention, the second word to the y is u, but that's by convention.
+
+47
+00:05:34,880 --> 00:05:44,920
+ Let's do that. Now we have our first parameter is of type t. And our second parameter
+
+48
+00:05:44,920 --> 00:05:55,840
+ is of type u. And then we can simply return an array. So we can return if first and the
+
+49
+00:05:55,840 --> 00:06:03,720
+ second as an array. Let's now try and use this function to might do something like pair.
+
+50
+00:06:03,720 --> 00:06:14,760
+ And we pair maybe one, say an integer, and maybe apple. So it doesn't have to be the same
+
+51
+00:06:14,760 --> 00:06:19,360
+ type. We could have, again, a number and a string like we have here. It could be two numbers
+
+52
+00:06:19,360 --> 00:06:28,320
+ could be two strings. But each of the type parameters is then tracked independently. But
+
+53
+00:06:28,320 --> 00:06:35,120
+ let's actually try and put that into some context by doing a real word example. So we're
+
+54
+00:06:35,120 --> 00:06:44,680
+ going to have another function here. We're going to call it fetch data, like an API,
+
+55
+00:06:44,680 --> 00:06:56,320
+ a generic type t. The data is going to be of type t. And this is going to return a promise.
+
+56
+00:06:56,320 --> 00:07:08,640
+ A promise, the promise is going to return type t. Now we do return promise resolve, right?
+
+57
+00:07:08,640 --> 00:07:15,280
+ And then we're going to take resolve our data. And this is a very common practice when
+
+58
+00:07:15,280 --> 00:07:16,920
+ working with APIs.
+
