@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:04,920
+Trong bài học này, chúng tôi sẽ tìm hiểu làm thế nào để tổ chức của chúng tôi loại mật mã bằng mô-đun và
+
+2
+00:00:04,920 --> 00:00:05,920
+Không gian tên.
+
+3
+00:00:05,920 --> 00:00:11,840
+Chúng tôi sẽ tập trung chủ yếu vào các mô-đun và sử dụng các từ khóa nhập khẩu và xuất khẩu bởi vì
+
+4
+00:00:11,840 --> 00:00:16,560
+Đó là cách mà các ứng dụng hiện đại của Type phân loại được cấu trúc.
+
+5
+00:00:16,560 --> 00:00:21,920
+Một tổ chức mật mã tốt cũng quan trọng như đánh máy tốt.
+
+6
+00:00:21,920 --> 00:00:26,600
+Khi ứng dụng của chúng tôi đang phát triển, đặt tất cả mọi thứ vào một file nhanh chóng trở thành
+
+7
+00:00:26,600 --> 00:00:31,080
+Không quản lý được bởi vì, tất nhiên, sẽ rất khó để đọc, rất khó để duy trì.
+
+8
+00:00:31,080 --> 00:00:37,880
+Chúng ta sẽ có rất nhiều ảo ảnh về mật danh và nó sẽ rất khó để
+
+9
+00:00:37,880 --> 00:00:38,880
+sử dụng.
+
+10
+00:00:38,880 --> 00:00:46,160
+Vì vậy chúng ta sẽ cần một cách để chia mã của chúng ta thành những bước đi hợp lý.
+
+11
+00:00:46,160 --> 00:00:54,080
+Vì vậy, trong TypeUS, mô-đun của chúng tôi chỉ đơn giản là một tập tin sử dụng các từ khóa nhập khẩu hoặc xuất khẩu.
+
+12
+00:00:54,080 --> 00:00:57,560
+Vì vậy, về cơ bản một tập tin bằng một mô-đun.
+
+13
+00:00:57,560 --> 00:01:03,160
+Và mỗi mô-đun sẽ có phạm vi riêng giúp ngăn chặn xung đột đặt tên.
+
+14
+00:01:03,160 --> 00:01:07,560
+Vì vậy, hãy bắt đầu bằng cách xuất khẩu một cái gì đó cho một tập tin.
+
+15
+00:01:07,560 --> 00:01:10,920
+Vì vậy, tôi sẽ loại bỏ những gì chúng tôi có ở đây.
+
+16
+00:01:10,920 --> 00:01:19,280
+Hãy tạo ra một hàm số ở đây, xuất khẩu, hàm số, và nó sẽ mất hai tham số,
+
+17
+00:01:19,280 --> 00:01:26,400
+a và b, chúng ta đã thấy điều này trước đây, nhiều lần khóa học, a và b, và nó chỉ đi
+
+18
+00:01:26,400 --> 00:01:28,040
+để trả lại số điện thoại.
+
+19
+00:01:28,040 --> 00:01:38,280
+Và chúng ta hãy chỉ cung cấp cho thực hiện trả lại một cộng b.
+
+20
+00:01:38,280 --> 00:01:43,760
+Bây giờ khi bạn lơ lửng trên này, hãy chú ý bây giờ chúng tôi nhận được một thông điệp bởi vì nó nói rằng chúng tôi
+
+21
+00:01:43,760 --> 00:01:51,520
+không thể sử dụng việc sửa đổi giá trị của chúng tôi để tính toán mà không sử dụng tùy chọn này.
+
+22
+00:01:51,520 --> 00:01:58,120
+Vì vậy, điều này có nghĩa là chúng ta cần phải tìm hiểu để tìm ra nó như là một loại thay vì chỉ là một minh bạch
+
+23
+00:01:58,120 --> 00:01:59,120
+chức năng.
+
+24
+00:01:59,120 --> 00:02:09,400
+Đây là sự thay đổi trong phiên bản kiểu MIME gần đây hơn để thực hiện chức năng xuất khẩu.
+
+25
+00:02:09,400 --> 00:02:18,640
+Bây giờ chúng ta hãy xác định một chức năng khác, có lẽ, một chức năng thể thao gọi là trừ nó trong hai
+
+26
+00:02:18,640 --> 00:02:31,120
+Số, số a và b, và nó cũng sẽ trả lại một số, và chúng tôi sẽ trở lại
+
+27
+00:02:31,120 --> 00:02:35,480
+a trừ b.
+
+28
+00:02:35,480 --> 00:02:41,280
+Từ khoá xuất khẩu này làm cho các chức năng của chúng tôi có sẵn cho các tập tin khác.
+
+29
+00:02:41,280 --> 00:02:47,360
+Vì vậy, bây giờ chúng ta hãy nhập những chức năng này vào một tập tin khác, vì vậy tôi sẽ chỉ tạo ra một
+
+30
+00:02:47,360 --> 00:02:57,520
+Hồ sơ ở đây, hãy gọi nó là "xin chào" với những cái tên vớ vẩn, nhưng hãy cứ làm theo nó.
+
+31
+00:02:57,520 --> 00:03:06,520
+Bây giờ để nhập khẩu, hãy chắc chắn rằng tôi thấy tập tin trái ngược với nhập khẩu, bây giờ chúng tôi xác định, chúng tôi sẽ
+
+32
+00:03:06,520 --> 00:03:14,080
+mang các chức năng vào, vì vậy nó phải thêm và trừ.
+
+33
+00:03:14,080 --> 00:03:24,880
+Điều này đến từ tập tin chấm ts của chúng tôi, điều này đến từ cùng một thư mục và sau đó
+
+34
+00:03:24,880 --> 00:03:34,880
+Hãy để chúng tôi nói nó 30 xu, xin chào ở đây, thêm và trừ, bây giờ chúng tôi có thể làm bản ghi bàn điều khiển gọi là
+
+35
+00:03:34,880 --> 00:03:44,880
+Các chức năng, thêm và cung cấp hai tham số, năm và ba, sau đó bản ghi bàn điều khiển, trừ.
+
+36
+00:03:44,880 --> 00:03:54,320
+Hãy làm như vậy, năm và ba, và điều này sẽ cho phép chúng tôi sử dụng lại mã của chúng tôi
+
+37
+00:03:54,320 --> 00:04:01,400
+để tìm thấy trong mô-đun này bất cứ nơi nào khác chúng tôi muốn mà không cần sao chép nó, một mô-đun cũng có thể có
+
+38
+00:04:01,400 --> 00:04:09,000
+một xuất khẩu mặc định, tôi sẽ chỉ đến chào hỏi của chúng tôi một lần nữa, và hãy chỉ cần tạo ra một mặc định
+
+39
+00:04:09,000 --> 00:04:18,440
+xuất khẩu, bằng cách xuất khẩu hàm mặc định, hãy có một hàm được gọi là log, chúng ta hãy
+
+40
+00:04:18,440 --> 00:04:26,760
+Chỉ cần gửi một thông điệp của chuỗi, nó sẽ không trả lại bất cứ thứ gì, vì vậy trống, chỉ cần làm bảng điều khiển
+
+41
+00:04:26,760 --> 00:04:34,200
+thông điệp ghi lưu cho một hàm rất đơn giản ở đây, bây giờ đây là một mặc định, bởi những gì chúng tôi làm, chúng tôi đến
+
+42
+00:04:34,200 --> 00:04:41,160
+là thay vì đẩy một cái ngoặc, những gì chúng ta làm là chúng ta chỉ,
+
+43
+00:04:41,160 --> 00:04:47,000
+đặt từ hàm chúng ta cần, đó là log, đó là hàm mặc định, vì vậy không có khung
+
+44
+00:04:47,000 --> 00:04:55,760
+Ở đây, bây giờ chúng tôi có thể làm bất cứ điều gì chúng tôi muốn và chỉ cần làm bản ghi, xin chào, cũng như ví dụ,
+
+45
+00:04:55,760 --> 00:05:03,960
+nhưng đôi khi bạn cũng có thể thấy rằng có thể có một số mâu thuẫn tên khi chúng tôi đã có
+
+46
+00:05:03,960 --> 00:05:11,400
+một đống các tập tin khác nhau, vì vậy bạn có thể thực sự tạo ra một bí danh, những gì chúng tôi làm là
+
+47
+00:05:11,400 --> 00:05:20,980
+sử dụng từ như, do đó đăng nhập như, làm cho chúng tôi nói đăng nhập, ví dụ, bạn cũng có thể tìm thấy thỉnh thoảng
+
+48
+00:05:20,980 --> 00:05:25,440
+mà bạn nhận được một số cuộc xung đột đặt tên, nếu bạn có rất nhiều mô-đun, có lẽ có
+
+49
+00:05:25,440 --> 00:05:31,460
+Một hàm khác được gọi là quảng cáo, và bạn đang có nhiều nhập khẩu, vì vậy làm thế nào để bạn có được
+
+50
+00:05:31,460 --> 00:05:40,840
+xung quanh đó, do đó, bạn có thể sau đó đặt biệt danh nó bằng cách sử dụng như, và vì vậy như, hãy nói con số quảng cáo, bây giờ
+
+51
+00:05:40,840 --> 00:05:48,540
+Chúng ta chỉ cần thay đổi nó để thêm số, như nó đã có ở đây, thêm số, oops, đó là của tôi
+
+52
+00:05:48,540 --> 00:05:54,140
+Hoàn toàn có cảm giác, không thực sự làm việc rất tốt ngày hôm nay, vì vậy họ đang đi về phía trước khi bạn
+
+53
+00:05:54,140 --> 00:05:59,120
+bắt đầu có một dự án lớn hơn, nhưng bạn sẽ không gọi file của bạn chào, và đó là
+
+54
+00:05:59,120 --> 00:06:04,080
+rất ngớ ngẩn, bạn sẽ cho nó một cái tên tốt hơn, chỉ để loại ném
+
+55
+00:06:04,080 --> 00:06:12,800
+Một dự án, nhưng những gì tôi đề nghị bạn làm là tạo cho mình một cấu trúc, và đầu tiên
+
+56
+00:06:12,800 --> 00:06:19,080
+tất cả, tôi sẽ tạo ra một thư mục tên là nguồn, và bên trong nguồn của bạn, những gì có thể muốn
+
+57
+00:06:19,080 --> 00:06:26,720
+để tạo một thư mục cho các mô-đun, hãy gọi nó là mô-đun, bạn sẽ đặt tất cả
+
+58
+00:06:26,720 --> 00:06:34,560
+tập tin DOS bên trong mô- đun đó, và bạn có thể có một thư mục khác để làm
+
+59
+00:06:34,560 --> 00:06:47,040
+Tiện ích, vì vậy nó tạo ra một thư mục khác, và gọi nó là utits, ví dụ, và vì vậy nguồn của tôi
+
+60
+00:06:47,040 --> 00:06:52,480
+thư mục, tôi sẽ tạo một thư mục khác được gọi là u tích cho bất cứ thứ gì khác, điều này sẽ xảy ra
+
+61
+00:06:52,480 --> 00:06:56,280
+để giữ mật mã của anh lại với nhau cũng như dễ tìm.
+
